@@ -57,3 +57,13 @@ R25 SCE001/MIX004内部交叉审查通过其named/conditional范围，下一larg
 | R0026_next_matrix_affine_target.md | R27先macro，再审实际ell3 observed A的ρ⁻² barrier和真实matrixAFF₃，未证 |
 
 R26 GVT001/MIX005只闭合有matrixAFF₃准备的非二次proper branch，不产生AFF₃或完整五维。下一不继续三点/clock/τ常数；一般维度Goal保持。
+
+| 文件 | 已核范围与边界 |
+| --- | --- |
+| R0027_observed_matrix_source_audit.md | actual W厚y二维桶/code真实ρ幂、usedlaw、4D observed/2Fst/allcoarsefibre、fineD事件粗化 |
+| R0027_matrix_observed_counterattack.md | 原joint D全affine2plane cap独证、同g质量；数字mask真sum/carry弱接口反例 |
+| R0027_matrix_translation_plane_gate.md | orthogonalblock二择及source h=ρ2ε0，任意offset/base合法，不自动growth |
+| R0027_digital_observed_boundary.md | 任意η/all-dyadic visible graph/2Fst/hyperplane cap与任意小增长兼容；不保原D分解 |
+| R0027_next_matrix_time_action_target.md | 下一唯一保共同ν/M/H的真实matrix-time增长/提取，genericlaw bridge已冻，AFF₃未证 |
+
+R27 OBS001/002内部独审通过各自范围；不是>2gain/AFF₃或完整五维。下一必须用原matrix-time乘法一致性，不继续genericlaw非平面/entropy改名。

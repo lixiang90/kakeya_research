@@ -67,3 +67,7 @@
 | --- | --- | --- | --- |
 | local_constant_fiber_is_global_tau_candidate | 一个q/ρ-window的丰富近常fit就直接改进globalτ | R26全局阈值绝对δ^ηnext|Z|，单窗可仅Oρ；旧g也可全部集中被删bad窗 | GVT001以所有窗口fitfiber并的质量二择修补，并按整time闭包重新生成g；固定同一半开partition |
 | large_tau_working_scale_still_epsilon0_controlled | 改诚实wL后仍用w≤ρ^ε₀支付nonfit | R26 wL=K[ρ+ρ³/τ]上界仅Kρ^ζ₁ | named13.5 precision先定，再取physical ε₁≪ζ₁e，η backward hierarchy；不能复用旧阈值 |
+
+| 指纹 | 已否定的说法 | 严格证据 | 重新开启条件 |
+| --- | --- | --- | --- |
+| nonplanar_increment_plus_multiscale_visible_graph_forces_growth | 原增量只保任意nonplanar law、A保2Fst/allcoarsevisible fibres就自动有fixed>2 gain | R27 OBS002 binaryblockmask：A=A0+A0，真sum/carry，K/graphloss任意小且D0全hyperplane cap fixed1/2；增长指数随base大趋0 | 必须继续使用原D=((t−s)ψ,−∆Mψ)共同ν/M/H作用及真实g提取；数字模型没有该分解，非source/Kakeya反例 |
