@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-10-16",
-  "latest_round": "R0003",
+  "latest_round": "R0004",
   "goal_solved": false,
   "major_intermediate_result_claimed": false,
   "items": [
@@ -171,13 +171,80 @@
     },
     {
       "id": "N5-POLY-CAP-01",
-      "status": "next_task",
+      "status": "one_round_complete_existing_precision_insufficient_palette_version_frozen",
       "kind": "full_direction_mass_budget_under_actual_assignments_and_true_floors",
       "specification": "STATE.md",
       "stop_after_main_rounds_without_new_input": 1,
       "depends_on": [
         "DIR-001",
         "original assignment and label structure"
+      ],
+      "kakeya_result": false,
+      "results": [
+        "DIR-002",
+        "BND-001",
+        "ENT-001"
+      ]
+    },
+    {
+      "id": "DIR-002",
+      "status": "internally_reviewed",
+      "kind": "true_floor_weighted_direction_mass_budget",
+      "file": "results/reviewed/DIR-002_true_floor_direction_budget.md",
+      "independent_review": "research/reviews/R0004_direction_entropy_review.md",
+      "source_application_review": "research/reviews/R0004_source_review.md",
+      "depends_on": [
+        "same prior full-assignment lower mass",
+        "fixed visible affine map per event",
+        "same-layer world and time budget",
+        "branch and incidence domination factors"
+      ],
+      "novelty": "not_claimed",
+      "kakeya_result": false,
+      "existing_native_threshold_gives_smallness": false
+    },
+    {
+      "id": "BND-001",
+      "status": "internally_reviewed_d_equals_one_boundary",
+      "kind": "actual_pointwise_known_true_packets_with_large_global_palette",
+      "file": "results/reviewed/BND-001_known_true_packets_large_palette.md",
+      "independent_review": "research/reviews/R0004_boundary_entropy_review.md",
+      "depends_on": [
+        "a=q",
+        "q^2<=eta<=q",
+        "intercept noise much smaller than eta"
+      ],
+      "novelty": "not_claimed",
+      "kakeya_result": false,
+      "d_less_than_one": false,
+      "horizon_computed": false,
+      "native_hessian_origin_verified": false
+    },
+    {
+      "id": "ENT-001",
+      "status": "internally_reviewed_conditional",
+      "kind": "adaptive_direction_event_information_and_common_palette_domination",
+      "file": "results/reviewed/ENT-001_adaptive_direction_selection.md",
+      "independent_review": "research/reviews/R0004_boundary_entropy_review.md",
+      "depends_on": [
+        "same probability law and original finite direction mesh",
+        "almost-sure list or explicit selection cost",
+        "common palette domination only for the power bound"
+      ],
+      "novelty": "not_claimed",
+      "kakeya_result": false,
+      "critical_full_slope_information_bound_proved": false
+    },
+    {
+      "id": "N5-ENT-01",
+      "status": "next_task",
+      "kind": "native_coefficient_entropy_rate_and_original_hidden_slope_budget",
+      "specification": "STATE.md",
+      "stop_after_main_rounds_without_new_input": 1,
+      "depends_on": [
+        "ENT-001",
+        "original Def2.1 native coefficient bounds",
+        "same-prior coefficient bin estimates (6.6)"
       ],
       "kakeya_result": false
     }

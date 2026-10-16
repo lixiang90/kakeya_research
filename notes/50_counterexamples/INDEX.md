@@ -11,5 +11,8 @@
 | native-coupling-finite-caps-restores-quadric | native耦合、真实长线、非退化q及有限upper cap即可恢复二次 | ALG-004直纹三次模型：任意二次小值迫使隐藏导数退化 | 统一S0/a精度界、额外完整先验或多项式非集中 |
 | original-guard-free-tangent-refinement | 原始N0幂界可免费支撑旧切线熵窗口的任意速度细化 | SCL-001：εU>=m与UDε→0不兼容 | 新统一切线幅度界或另付标签熵的窗口 |
 | full-directions-survive-parent-for-free | 原始全斜率密度可无代价变成各parent多项式非集中 | DIR-001：薄层分为η^-1个parent，质量合计仍1 | 真实加权预算或原始多项式palette控制 |
+| pointwise-true-floor-global-palette | 不加d<1/native来源，仅真实list/floor就保证小全局多项式palette | BND-001：d=1边界、完整斜率密度1、真实floor与常数覆盖仍需η^-1个 | 真正使用d<1、native Hessian或criticality的新输入 |
+| branch-inherits-full-parent-floor | 质量仅f比例的native分支可免费使用原父floor | DIR-002：固定分支比例界须付f^-1，多个事件另付并集预算 | 更强分支质量或同一prior的新预算 |
+| visible-window-controls-hidden-total | 可见方向的小窗口增量自动控制W或祖先总信息 | ENT-001同网格链式展开保留隐藏项与祖先成本 | 真实full-slope/原生系数的新增熵率及几何约束 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。
