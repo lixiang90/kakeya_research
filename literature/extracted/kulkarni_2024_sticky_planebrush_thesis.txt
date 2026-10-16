@@ -1,0 +1,2945 @@
+A Kakeya estimate for sticky sets using a planebrush
+
+
+
+                             Thesis by
+               Neeraja Raghavendra Kulkarni
+
+
+         In Partial Fulfillment of the Requirements for the
+                             Degree of
+               Doctor of Philosophy in Mathematics
+
+
+
+
+        CALIFORNIA INSTITUTE OF TECHNOLOGY
+                  Pasadena, California
+
+
+
+                             2024
+                      Defended June 7, 2024
+                                                   ii
+
+
+
+
+                    © 2024
+        Neeraja Raghavendra Kulkarni
+        ORCID: 0000-0001-7747-9177
+All rights reserved except where otherwise noted
+                                                                                    iii
+                          ACKNOWLEDGEMENTS
+
+
+I am very grateful to my advisor, Professor Nets Katz, for suggesting this thesis topic
+and supervising the project. Thanks also to Professor David Conlon, for acting as
+my advisor during my last quarter at Caltech, and to Professors Tom Graber and Phil
+Isett, for being on my dissertation committee. I am grateful to Professor Joshua Zahl
+for many helpful discussions and for telling me that the x-ray estimate in Chapter
+4 of this thesis could be derived as a corollary of his 𝑘-linear Kakeya theorem. I
+would also like to thank Polona Durcik and Shukun Wu for teaching me about many
+topics in harmonic analysis. Finally, I am glad to have a chance to thank my father,
+my mother, my sister, and my grandmother, for their loving support through all the
+years of my education.
+                                                                                   iv
+                                  ABSTRACT
+
+
+A Besicovitch set is defined as a compact subset of R𝑛 which contains a line segment
+of length 1 in every direction. The Kakeya conjecture says that every Besicovitch set
+has Minkowski and Hausdorff dimensions equal to 𝑛. This thesis gives an improved
+Hausdorff dimension estimate, 𝑑 ě 0.60376707287 𝑛 + O (1), for Besicovitch sets
+displaying a special structural property called “stickiness.” The improved estimate
+comes from using an incidence geometry argument called a “𝑘-planebrush,” which
+is a higher dimensional analogue of Wolff’s “hairbrush” argument from 1995.
+
+In addition, an x-ray transform estimate is obtained as a corollary of Zahl’s 𝑘-linear
+estimate in 2019. The x-ray estimate, together with the estimate for sticky sets,
+implies that all Besicovitch sets in R𝑛 must have Minkowski dimension greater than
+     ?
+(2 ´ 2 + 𝜀)𝑛. Though this Minkowski dimension estimate is not as good as one
+previously known from Katz-Tao (2000), it provides a new proof of the same result.
+                                                                                      v
+                           TABLE OF CONTENTS
+
+
+
+
+Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       iii
+Abstract . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   iv
+Table of Contents . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     v
+Chapter I: Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     1
+   1.1 Outline of thesis and summary of notation . . . . . . . . . . . . . .          1
+   1.2 From Kakeya needle sets to the Kakeya maximal conjecture . . . . .             2
+   1.3 Formulation of the Kakeya maximal conjecture . . . . . . . . . . . .           3
+   1.4 Importance of the Kakeya maximal conjecture . . . . . . . . . . . .            5
+   1.5 Equivalent versions of the Kakeya maximal conjecture . . . . . . . .           6
+   1.6 Proof of the Kakeya maximal conjecture in R2 . . . . . . . . . . . .          10
+   1.7 Proof that the Kakeya maximal conjecture implies the Kakeya set
+         conjecture . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    11
+   1.8 Introduction to the x-ray transform estimate and sticky sets . . . . . .      13
+Chapter II: Recent progress in the 𝑘-linear Kakeya conjecture . . . . . . . . .      15
+   2.1 The multilinear Kakeya theorem . . . . . . . . . . . . . . . . . . . .        15
+   2.2 Polynomial partitioning method . . . . . . . . . . . . . . . . . . . .        17
+   2.3 Polynomial Wolff axioms . . . . . . . . . . . . . . . . . . . . . . .         18
+Chapter III: New Kakeya estimate for 𝑘-plany sets . . . . . . . . . . . . . . .      20
+   3.1 Two-ends reduction . . . . . . . . . . . . . . . . . . . . . . . . . .        21
+   3.2 Broad-narrow reduction . . . . . . . . . . . . . . . . . . . . . . . .        24
+   3.3 Volume of a planebrush . . . . . . . . . . . . . . . . . . . . . . . .        28
+   3.4 Proof of k-planebrush estimate . . . . . . . . . . . . . . . . . . . .        34
+Chapter IV: New Kakeya estimate for sticky sets . . . . . . . . . . . . . . . .      37
+   4.1 Shading and refinement of sticky sets . . . . . . . . . . . . . . . . .       38
+   4.2 Extremal sticky sets . . . . . . . . . . . . . . . . . . . . . . . . . .      40
+   4.3 Kakeya estimate for sticky sets . . . . . . . . . . . . . . . . . . . . .     45
+   4.4 Relation to sticky sets in Wang-Zahl . . . . . . . . . . . . . . . . . .      49
+   4.5 An x-ray estimate derived as a corollary of Zahl’s k-linear estimate .        52
+Bibliography . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     59
+                                                                                    1
+                                   Chapter 1
+
+
+                               INTRODUCTION
+
+
+1.1   Outline of thesis and summary of notation
+Chapter 1 of this document contains a brief exposition of the Kakeya problem. It
+introduces the Kakeya set conjecture and the Kakeya maximal conjecture along
+with the concept of a “sticky set,” providing context for the results proved in later
+chapters. Chapter 2 introduces some variants of the Kakeya problem, including the
+multilinear Kakeya problem and the 𝑘-linear Kakeya problem, and outlines some
+recent results in the 𝑘-linear Kakeya problem (Hickman-Rogers-Zhang [12] and
+Zahl [27]) which are used in Chapters 3 and 4.
+
+Chapter 3 gives a Kakeya maximal estimate, at a dimension depending on a param-
+eter 𝑘, for sets of 𝛿-tubes obeying a special structural property called 𝑘-planiness.
+Chapter 4 combines the results of Chapter 3 with recent results in the 𝑘-linear Kakeya
+conjecture to prove an improved Hausdorff dimension estimate for sticky sets. In
+the final section of Chapter 4, an x-ray transform estimate is obtained as a corollary
+of Zahl ([27]). The x-ray transform estimate is used to give a Minkowski dimension
+                       ?
+estimate, 𝑑 ě (2 ´ 2) + 10´10 )𝑛 + O (1), for all Besicovitch sets. Though this
+Minkowski dimension estimate is not as good as one previously known (from Katz
+and Tao [18]), it provides a different proof of the result.
+
+                          Table 1.1: Summary of notation
+                   𝐴≲𝐵                D𝐶 ą 0 : 𝐴 ď 𝐶𝐵
+                   𝐴„𝐵                 𝐴 ≲ 𝐵 and 𝐵 ≲ 𝐴
+                   𝐴⪅𝐵             D𝐶𝜀 ą 0 : 𝐴 ď 𝐶𝜀 𝛿´𝜀 𝐵
+                   𝐴«𝐵                 𝐴 ⪅ 𝐵 and 𝐵 ⪅ 𝐴
+                 dim𝐻 (𝐸)         Hausdorff dimension of 𝐸
+                 dim 𝑀 (𝐸)        Minkowski dimension of 𝐸
+                 dim 𝑀 (𝐸)     upper Minkowski dimension of 𝐸
+                 dimP (𝐸)          Packing dimension of 𝐸
+                    |𝐸 |           Lebesgue measure of 𝐸
+                     𝜈        normalized surface measure on S𝑛´1
+                    #𝐸                 Cardinality of 𝐸
+                  𝑁 𝛿 (𝐸)            𝛿-neighborhood of 𝐸
+                                                                                    2
+1.2   From Kakeya needle sets to the Kakeya maximal conjecture
+In 1920, the Russian mathematician A.S. Besicovitch studied the following problem
+in a paper ([3]) published in a Russian monthly periodical:
+
+
+Given a function of two variables, Riemann integrable on a plane domain, does
+there always exist a pair of mutually perpendicular directions such that the repeated
+simple integration along the two directions exists and gives the value of the integral
+over the domain?
+
+
+This problem reduced to proving the existence a set of Lebesgue plane measure 0
+which contained a line segment of length ě 1 in every direction. Besicovitch solved
+the problem, answering the above question in the negative, by demonstrating the
+construction of such a set. Later, in 1928, Besicovitch wrote that he had become
+aware of a “twin problem” posed by the Japanese mathematician S. Kakeya in 1917
+([2]). The problem had never before come to his attention because of the isolation
+of Russia following the civil war. Kakeya’s problem was this:
+
+
+In the class of figures in which a line segment of length 1 can be rotated by 360𝑜
+without ever leaving the figure, which one has the smallest area?
+
+
+Each of these two problems was concerned with sets containing a line segment of
+length 1 in every direction, with Kakeya’s problem imposing the additional constraint
+that there should be a continuous transition.
+
+Definition 1. A Kakeya needle set is a set in R𝑛 in which a line segment of length 1
+can be rotated continuously by 360𝑜 without leaving the set.
+
+Definition 2. A Besicovitch set is a compact set in R𝑛 which contains a line segment
+of length 1 in every direction.
+
+In his paper [2], Besicovitch gave a modified version of his construction of a measure
+zero Besicovitch set in [3] to solve Kakeya’s problem, thereby disproving Kakeya’s
+original conjecture that the smallest figure in which one could continuously rotate a
+unit line segment by 360𝑜 was the hypocycloid of area 𝜋/8 ([13]).
+                                                                                     3
+Decades later, in 1971, Besicovitch sets resurfaced in the work of Charles Fefferman,
+who was studying the following question.
+
+
+If 𝑇 is an operator on 𝐿 𝑝 (R𝑛 ) defined by 𝑇c𝑓 = 𝜒𝐵 𝑓ˆ, where 𝜒𝐵 is the characteristic
+function of the unit ball in R𝑛 , for which values of 𝑝 is it the case that, for all
+ 𝑓 P 𝐿 𝑝 (R𝑛 ),
+                             ||𝑇 𝑓 || 𝐿 𝑝 (R𝑛 ) ď 𝐶 || 𝑓 || 𝐿 𝑝 (R𝑛 ) ?
+
+The “disc conjecture” stated the the above estimate holds for all
+                                  2𝑛      2𝑛
+                                     ă𝑝ă     ;
+                                 𝑛+1     𝑛´1
+these necessary conditions were demonstrated by Hertz using the example where 𝑓
+is a Schwartz function whose Fourier transform is identically 1 on the unit ball. Prior
+to Fefferman’s work, the disc conjecture was known to be true in R1 . It thus came as
+a surprise when Fefferman showed that the disc conjecture is false whenever 𝑝 ≠ 2
+(𝑛 ą 1) using, as a lemma, Besicovitch’s construction of measure zero Besicovitch
+sets ([9]). The work of Fefferman and Hertz led to the following further conjecture,
+which has come to be called the Kakeya set conjecture, about Besicovitch sets:
+
+Conjecture 3 (Kakeya set conjecture). Every Besicovitch set in R𝑛 has Minkowski
+and Hausdorff dimensions equal to 𝑛.
+
+The Kakeya set conjecture in R2 was solved by Davies ([8]) but remains open for
+𝑛 ě 3. The best known results are due to Katz-Zahl ([19]) in R3 and due to Katz-
+Zahl ([14]) in R4 . The best known bounds in higher dimensions are due to Katz-Tao
+([18]). Corollary 47 of this thesis gives an new proof of a Minkowski dimension
+estimate for Besicovitch sets which was previously known from [18].
+
+The current state-of-the-art for the Kakeya set conjecture (Hausdorff dimension
+version) is given in Table 1.2. The motivation for the Kakeya set conjecture is
+discussed in Section 1.3 below.
+
+1.3   Formulation of the Kakeya maximal conjecture
+The Kakeya maximal conjecture is a more quantitative formulation of the Kakeya
+set conjecture in terms of a maximal operator. The formulation of the conjecture
+given below was given by Bourgain [5], though a similar formulation had been given
+by Córdoba [7], who also proved the conjecture in R2 .
+                                                                                                4
+                   Table 1.2: State of the art for the Kakeya conjecture
+                      𝑛     dim𝐻 (𝐾) ě                  Proved by
+                      3       2.5 + 𝜀                 Katz-Zahl [15]
+                      4      3.058. . .               Katz-Zahl [14]
+                      5         3.6?             Hickman-Rogers-Zhang [12]
+                      6      7´2 2                     Katz-Tao [18]
+                      7        34/7              Hickman-Rogers-Zhang [12]
+                      ..         ..
+                       .          .
+
+For any small number 𝛿 ą 0, 𝑒 P S𝑛´1 and 𝑎 P R𝑛 , define 𝑇𝑒𝛿 (𝑎) to be the 𝛿-
+neighborhood of a line segment pointing in direction 𝑒 and centered at point 𝑎, so
+                                                                   1 (R𝑛 ), its Kakeya
+𝑇𝑒𝛿 (𝑎) is a tube (or cylinder) of radius 𝛿 and length 1. If 𝑓 P 𝐿 loc
+maximal function 𝑓𝛿˚ : S𝑛´1 Ñ R is defined by
+                                                 ∫
+                               ˚         1´𝑛
+                              𝑓𝛿 (𝑒) = 𝛿     sup       | 𝑓 |.
+                                                        𝑎 PR 𝑛   𝑇𝑒𝛿 (𝑎)
+
+If 𝑓 is the indicator function of the set 𝑁 𝛿 (𝐵), where 𝐵 is any Besicovch set, any
+bound of the type
+                                  || 𝑓𝛿˚ || 𝑞 ď 𝐶 || 𝑓 || 𝑝
+with 1 ă 𝑞 ă 8, 𝑝 ă 8, and 𝐶 independent of 𝛿, fails to hold. In addition, if
+𝑓 is the indicator function of the set 𝑁 𝛿 (𝐵), where 𝐵 is any Besicovch set of zero
+Lebesgue measure, a bound of the form
+
+                                         || 𝑓𝛿˚ || 𝑝 ď 𝐶𝜀 𝛿´𝜀 || 𝑓 || 𝑝
+
+cannot hold if 𝑝 ą 𝑛. Thus the strongest estimate which may be expected is of the
+following form.
+
+Conjecture 4 (Kakeya maximal conjecture, version 1). For every 𝜀 ą 0, there is a
+constant 𝐶𝜀 ą 0 such that for all 𝛿 ą 0 and 𝑓 P 𝐿 𝑛 (R𝑛 ),
+
+                                || 𝑓𝛿˚ || 𝐿 𝑛 (S𝑛´1 ) ď 𝐶𝜖 𝛿´𝜀 || 𝑓 || 𝐿 𝑛 (R𝑛 ) .
+
+Interpolating this (by the Riesz-Thorin interpolation theorem) with the trivial esti-
+mate
+                          || 𝑓𝛿˚ || 𝐿 8 (S𝑛´1 ) ≲ 𝛿1´𝑛 || 𝑓 || 𝐿 1 (R𝑛 ) ,
+one obtains a conjecture
+
+    || 𝑓𝛿˚ || 𝐿 𝑞 (S𝑛´1 ) ⪅ 𝛿1´𝑛/𝑝 || 𝑓 || 𝐿 𝑝 (R𝑛 )    where 1 ď 𝑝 ď 𝑛 and 𝑞 = (𝑛 ´ 1) 𝑝 1 .
+                                                                                             5
+Partial progress in the Kakeya conjecture is given by estimates of this form. The full
+Kakeya maximal conjecture is solved only in R2 ([7]) and remains open in higher
+dimensions. The Kakeya maximal conjecture implies the Kakeya set conjecture, as
+is demonstrated in Section 1.5 below. Table 1.3 gives the best known results for the
+Kakeya maximal conjecture in higher dimensions.
+
+            Table 1.3: State of the art for the Kakeya maximal conjecture
+                      𝑛     dim𝐻 (𝐾) ě             Result proved by
+                       2         2                    Córdoba
+                       3      5/2 + 𝜀                 Katz-Zahl
+                       4      3.057. . .              Katz-Zahl
+                       5        18/5            Hickman-Rogers-Zhang
+                       6         4                      Wolff
+                       7        34/7            Hickman-Rogers-Zhang
+                       8        21/4            Hickman-Rogers-Zhang
+                       9         6              Hickman-Rogers-Zhang
+                      10        13/2            Hickman-Rogers-Zhang
+                       ..                                  ..
+                        .                                   .
+
+
+1.4   Importance of the Kakeya maximal conjecture
+There are many prominent open conjectures in diverse areas of math which have
+been shown, if they are true, to each imply that the Kakeya set conjecture and the
+Kakeya maximal conjecture are true. Some of these conjectures are mentioned
+below.
+
+Restriction conjecture.
+If 𝜎 is the surface measure on the unit sphere S𝑛´1 , is there an estimate
+
+                                   𝑓 𝑑𝜎|| 𝐿 𝑝 (R𝑛 ) ≲ || 𝑓 || 𝐿 𝑝 (𝑑𝜎)
+                                || 
+
+for all 𝑝 ě 𝑛2𝑛
+             ´1 . (There are also versions of the restriction conjecture for other
+hypersurfaces with boundary, rather than the sphere.)
+
+It was proved by Fefferman in [9] that the restriction conjecture implies the Kakeya
+maximal conjecture.
+
+Bochner-Riesz conjecture.
+                                                             𝛿 𝑓 (𝜉) = (1´|𝜉 | 2 ) 𝛿 𝜒 (𝜉) 𝑓ˆ(𝜉),
+If 𝛿 ą 0, and if 𝑆 𝛿 is an operator on 𝐿 𝑝 (R𝑛 ) defined by 𝑆d                        𝐵
+                                                                   𝑛
+where 𝜒𝐵 is the characteristic function of the unit ball in R , then
+
+                               ||𝑆 𝛿 𝑓 || 𝐿 𝑝 (R𝑛 ) ď 𝐶 || 𝑓 || 𝐿 𝑝 (R𝑛 )
+                                                                                   6
+
+for all 𝑝 satisfying 1𝑝 ´ 12 ď 2𝛿+1
+                                2𝑛 .
+
+Tao showed that the Bochner Riesz conjecture implies the restriction conjecture
+([22]). The greater importance of the Kakeya maximal conjecture is that there are
+methods, first developed by Bourgain in 1991, whereby progress on the Kakeya
+maximal conjecture would imply progress on the Bochner-Riesz conjecture and
+restriction conjecture ([6]). However, even if the Kakeya maximal conjecture were
+proved in full, the Bochner Riesz and restriction conjectures would not be completely
+solved.
+
+Local smoothing conjecture.
+Let 𝑢 be the solution of the initial value problem for the wave equation in 𝑛 space
+dimensions:
+                                                 B𝑢
+                       □𝑢 = 0, 𝑢(¨, 0) = 𝑓 ,        (¨, 0) = 0.
+                                                 B𝑡
+Then
+                @𝜀 ą 0 D𝐶𝜀 ą 0 : ||𝑢|| 𝐿 𝑝 (R𝑛 ˆ [1,2]) ď 𝐶𝜀 || 𝑓 || 𝑝,𝜀 ,
+
+for all 𝑝 P [2, 𝑛2𝑛
+                 ´1 ]. Here || ¨ || 𝑝,𝜀 is the inhomogeneous 𝐿 Sobolev norm with 𝜀
+                                                              𝑝
+
+derivatives.
+
+This conjecture was made by Sogge and is known to imply the Bochner Riesz
+conjecture ([20]).
+
+Montgomery’s conjecture.
+Assume 𝑇 ď 𝑁 2 . Let
+                                               𝑁
+                                              ∑︁
+                                  𝐷 (𝑠) =           𝑎 𝑛 𝑛𝑖𝑠
+                                              𝑛=1
+where ||{𝑎 𝑛 }|| ℓ8 ď 1. Let T be a 1-separated subset of [0, 𝑇]. Then is there an
+estimate                            ∑︁
+               @𝜀 ą 0 D𝐶𝜀 ą 0 :         |𝐷 (𝑡)| 2 ď 𝐶𝜀 𝑁 1+𝜀 (𝑁 + |T |)?
+                                       𝑡 PT
+Bourgain showed in [4] that Montgomery’s conjecture implies the Kakeya set con-
+jecture.
+
+1.5   Equivalent versions of the Kakeya maximal conjecture
+For the following sections, it may be more convenient to work with some equivalent
+formulations of the Kakeya maximal conjecture, which are written below.
+                                                                                         7
+Conjecture 5 (Kakeya maximal conjecture, version 2). For every 𝜀 ą 0, if T is a
+family of 𝛿-tubes pointing in 𝛿-separated directions, there is a number 𝐶𝜀 ą 0 such
+that                   ∑︁                            ∑︁  (𝑛´1)/𝑛
+                    ||    𝜒𝑇 || 𝐿 𝑛 (R𝑛´1 ) ď 𝐶𝜀 𝛿´𝜀   |𝑇 |       .
+                      𝑇 PT                                 𝑇 PT
+
+Conjecture 6 (Kakeya maximal conjecture, version 3). For every 𝜀 ą 0, if
+
+ (i) T is a set of 𝛿-tubes in R𝑛 that point in 𝛿-separated directions, and
+
+ (ii) 𝑌 (𝑇) is a subset of 𝑇 for every 𝑇 P T, and 0 ď 𝜆 ď 1 is a number such that
+      |𝑌 (𝑇)| ě 𝜆|𝑇 | for every 𝑇 P T,
+
+then there exists a constant 𝐶𝜀 ą 0 such that
+                                Ø                          ∑︁
+                                       𝑌 (𝑇) ě 𝐶𝜖 𝛿 𝜀 𝜆𝑛          |𝑇 |.           (1.1)
+                                𝑇 PT                       𝑇 PT
+
+Theorem 7. The three versions of the Kakeya conjecture are equivalent.
+
+It will be shown that version 3 ñ version 2 ñ version 1 ñ version 3.
+
+Proof that version 3 implies version 2. Assume that version 3 of the Kakeya con-
+jecture is true. Let T be a set of 𝛿-tubes pointing in 𝛿-separated directions. For
+every nonnegative integer 𝑘, define
+
+                        𝐸 𝑘 = {𝑥 P R𝑛 : 2𝑘 ď #T(𝑥) ă 2 𝑘 ´1 }.
+
+The statement of version 2 of the Kakeya conjecture is equivalent to
+                     ∑︁                                  ∑︁
+                         |𝐸 𝑘 |2 𝑘𝑛/(𝑛´1) ď 𝐶𝜖 𝛿´𝜖/(𝑛´1)    |𝑇 |
+                        𝑘                                             𝑇 PT
+
+By the pigeonhole principle, there exists a value of 𝑘 for which
+                                               1   ∑︁
+                    |𝐸 𝑘 |2 𝑘𝑛/(𝑛´1) ≳                |𝐸 𝑘 |2 𝑘𝑛/(𝑛´1) .
+                                           log(1/𝛿) 𝑘
+
+Since log(1/𝛿) ≲ 𝛿 𝜀 for any 𝜀 ą 0, it is sufficient to show that for this value of 𝑘,
+                                                                      ! 𝑛´1
+                                                        ∑︁
+                             |𝐸 𝑘 | 𝑛´1 2 𝑘𝑛 ď 𝐶𝜖 𝛿´𝜀          |𝑇 |
+                                                        𝑇 PT
+                                                                                       8
+For each 𝑇 P T, define a shading 𝑌𝑘 (𝑇) by
+
+                                        𝑌𝑘 (𝑇) = 𝑇 X 𝐸 𝑘 .
+
+Note that for a certain value of ℓ, we have
+                      ∑︁                1 ∑︁ ´ℓ             1 Ø
+       |𝐸 𝑘 | ¨ 2 𝑘 „      |𝑌𝑘 (𝑇)| „            2 |𝑇 | „      |     𝑌𝑘 (𝑇)| ¨ 2 𝑘 ,
+                      𝑇 PT
+                                      log 𝛿 𝑇 PT          log 𝛿 𝑇 PT
+                                                       ℓ                      ℓ
+
+where
+                        Tℓ = {𝑇 P T : 2´ℓ´1 ă |𝑌𝑘 (𝑇)| ď 2´ℓ }.
+This leads to two conclusions, first
+                                                   Ø
+                                      |𝐸 𝑘 | « |           𝑌𝑘 (𝑇)|
+                                                   𝑇 PTℓ
+
+and second
+                                       2´ℓ 𝛿 𝑛´1 #Tℓ
+                                      2𝑘 «           .
+                                           |𝐸 𝑘 |
+From the second conclusion, the statement to show becomes
+                                                              ! 𝑛 ´1
+                   2´ℓ𝑑 ( 𝑇 PTℓ |𝑇 |) 𝑛
+                         Í                          ∑︁
+                                        ď 𝐶𝜖 𝛿 ´𝜖        |𝑇 |        .
+                          |𝐸 𝑘 |                    𝑇 PT
+
+Rearranging and using the first conclusion above, this is
+                           Ø                       ∑︁
+                         |      𝑌𝑘 (𝑇)| ≳ 𝛿 𝜖 2´ℓ𝑛    |𝑇 |,
+                              𝑇 PTℓ                            𝑇 PTℓ
+
+which is true from version 3 of the Kakeya conjecture.                                 □
+
+                                                                          1 (R𝑛 ).
+Proof that version 2 implies version 1. Let 𝜀 ą 0 be given, and let 𝑓 P 𝐿 loc
+Let Ω Ď S𝑛´1 be a maximal 𝛿-separated set of directions. For every 𝑒 P Ω define
+𝑇𝑒 as the 𝛿-tube centered at the position that achieves the supremum
+                                     ∫
+                                sup         | 𝑓 (𝑥)| 𝑑𝑥,
+                                    𝑎 PR𝑛    𝑇𝑒𝛿 (𝑎)
+
+and then set T := {𝑇𝑒 : 𝑒 P Ω}. From version 2 of the conjecture,
+                                 ∑︁
+                              ||    𝜒𝑇 || 𝐿 𝑛 (R𝑛 ) ≲ 𝛿´𝜀 .
+                                      𝑇 PT
+
+The crucial observation used is that, provided |𝑒 ´ 𝑒 1 | ă 𝛿, there is some 𝐶 ą 0
+such that | 𝑓𝛿˚ (𝑒)| „ | 𝑓𝐶˚𝛿 (𝑒 1 )|. Thus
+                                  ∑︁ ∫                              ∑︁
+               ˚ 𝑛
+           || 𝑓𝛿 || 𝐿 𝑛 (S𝑛´1 ) ≲           | 𝑓𝛿˚ (𝜔)| 𝑛 𝑑𝜔 ≲ 𝛿 𝑛´1       ˚
+                                                                       | 𝑓𝐶𝛿 (𝑒)| 𝑛 .
+                             𝑒 PΩ     𝑁 𝛿 ({𝑒})                        𝑒 PΩ
+                                                                                                                                9
+Using duality between ℓ𝑛 and ℓ𝑛1 , there exist numbers {𝑦 𝑒 } 𝑒PΩ such that
+                                                                           ! 1/𝑛                                       ! 1/𝑛1
+                   ∑︁                               ∑︁                                      ∑︁                     1
+          𝛿 𝑛 ´1          𝑦 𝑒 𝑓𝛿˚ (𝑒) = 𝛿 𝑛´1              | 𝑓𝛿˚ (𝑒)| 𝑛            𝛿 𝑛 ´1               |𝑦 𝑒 | 𝑛
+                   𝑒 PΩ                             𝑒 PΩ                                    𝑒 PΩ
+
+and furthermore                                      ∑︁                1
+                                            𝛿 𝑛 ´1          |𝑦 𝑒 | 𝑛 = 1.
+                                                     𝑒 PΩ
+In the following estimates we will abuse notation by using 𝑦 𝑒 interchangably with
+𝑦𝑇 , where 𝑇 P T is understood to be 𝑇𝑒 as defined above in the proof.
+                                                                                ! 1/𝑛
+                                                         ∑︁
+                    || 𝑓𝛿˚ || 𝐿 𝑛 (S𝑛´1 ) ≲ 𝛿 𝑛´1              | 𝑓𝛿˚ (𝑒)| 𝑛
+                                                         𝑒 PΩ
+                                                        ∑︁
+                                                 𝑛 ´1
+                                          ≲𝛿                 𝑦 𝑒 ¨ | 𝑓𝛿˚ (𝑒)|
+                                               𝑒 PΩ
+                                            ∫ ∑︁
+                                          ≲       𝜒𝑇 (𝑥) ¨ 𝑦𝑇 ¨ 𝑓 (𝑥) 𝑑𝑥
+                                                𝑇 PT
+                                               ∑︁
+                                          ď ||     𝑦𝑇 ¨ 𝜒𝑇 || 𝑛/(𝑛´1) ¨ || 𝑓 || 𝐿 𝑛 (R𝑛 ) .
+                                                  𝑇 PT
+
+It now remains to show that
+                                         ∑︁
+                                    ||          𝑦𝑇 ¨ 𝜒𝑇 || 𝑛/(𝑛´1) ≲ 𝛿´𝜀 .
+                                         𝑇 PT
+
+By dyadic pigeonholing, it is possible to choose a subset T1 Ď T for which
+                    ∑︁                          ∑︁
+                 ||     𝑦𝑇 ¨ 𝜒𝑇 || 𝑛/(𝑛´1) ⪆ ||    𝑦𝑇 ¨ 𝜒𝑇 || 𝑛/(𝑛´1)
+                            𝑇 PT1                                  𝑇 PT
+
+and for which there is number 𝑁 P N such that 𝑦𝑇 „ 2𝑁 for all 𝑇 P T1 . It now
+follows that
+                   ∑︁                              ∑︁
+                ||    𝑦𝑇 ¨ 𝜒𝑇 || 𝑛/(𝑛´1) ≲ 2𝑁 ¨ ||    𝜒𝑇 || 𝑛/(𝑛´1)
+                          𝑇 PT                                       𝑇 PT1
+                                                                   ´ 𝜀 𝑛 ´1                       1
+                                                         ≲ 2𝑁 𝛿            (𝛿      #T1 ) 1/𝑛
+                                                                                                      ! 1/𝑛1
+                                                                                ∑︁                1
+                                                         „ 𝛿 ´ 𝜀 𝛿 𝑛 ´1                 |𝑦𝑇 | 𝑛
+                                                                                𝑇 PT1
+                                                              ´𝜀
+                                                         ď𝛿        ,
+
+and this completes the proof.                                                                                                   □
+                                                                                               10
+Proof that version 1 implies version 3. Let 𝜀 ą 0 be given, and let T be a set of
+𝛿-tubes which point in 𝛿-separated directions. Let 𝑌 (𝑇) Ď 𝑇 be given for every
+𝑇 P T and let 0 ă 𝜆 ă 1 be chosen so that |𝑌 (𝑇)| ě 𝜆|𝑇 | for every 𝑇 P T. By dyadic
+pigeonholing, it is possible to find a number 𝜆1 and a subset T1 Ă T for which
+
+                    𝜆1 |𝑇 | ď |𝑌 (𝑇)| ă 2𝜆1 |𝑇 |               for all 𝑇 P T1
+
+and                      ∑︁                         1    ∑︁
+                                |𝑌 (𝑇)| ≳                     |𝑌 (𝑇)|.
+                                                log(1/𝛿) 𝑇 PT
+                        𝑇 PT1
+The above statement implies that
+
+                                        𝜆1 ≳ 𝜆/log(1/𝛿).                                     (1.2)
+
+Let 𝑓 be the indicator function of 𝑇 PT1 𝑌 (𝑇). Let Ω = {dir(𝑇) : 𝑇 P T1 } and let
+                                    Ð
+
+𝑇𝑒 P T1 be the 𝛿-tube pointing in direction 𝑒 for every 𝑒 P Ω. Now
+                          ∑︁             ∑︁ ∫
+             1 𝑛 ´1   1
+            𝜆 𝛿 #T „          |𝑌 (𝑇)| ≲          𝑓 (𝑥) 𝑑𝑥
+                         𝑇 PT1                  𝑒 PΩ 𝑇𝑒
+                                                ∑︁
+                                            ≲          𝛿 𝑛´1 𝑓𝛿˚ (𝑒)
+                                                𝑒 PΩ
+                                                ∑︁ ∫
+                                            ≲                      𝑓𝛿˚ (𝜔) 𝑑𝜎(𝜔)
+                                              𝑒 PΩ 𝑁 𝛿 ({𝑒})
+
+                                            ≲ || 𝑓𝛿˚ || 𝐿 𝑛 (S𝑛´1 ) ¨ (𝛿 𝑛´1 #Ω) (𝑛´1)/𝑛 .
+
+Thus, from version 1 of the conjecture,
+
+                           || 𝑓 || 𝐿 𝑛 (R𝑛 ) ⪆ 𝜆1 (𝛿 𝑛´1 #T1 ) 1/𝑛 .
+
+From (1.2),                                                            !
+                                Ø                           ∑︁
+                                                   𝜀 𝑛
+                           |           𝑌 (𝑇)| ≳ 𝛿 𝜆                |𝑇 | ,
+                                𝑇 PT                        𝑇 PT
+which is the conclusion of version 3 of the Kakeya maximal conjecture.                          □
+
+1.6   Proof of the Kakeya maximal conjecture in R2
+In this section, it will be shown that version 2 of the Kakeya conjecture is true for
+R2 . The statement to prove is the following. For every 𝜀 ą 0, there is a constant
+𝐶𝜀 ą 0 such that whenever T is a set of 𝛿-tubes pointing in 𝛿-separated directions
+in R2 ,                       ∫ ∑︁
+                                 |    𝜒𝑇 | 2 ď 𝐶𝜀 𝛿´𝜀 𝛿#T.
+                                 R 𝑛 𝑇 PT
+                                                                                   11
+The above statement may be re-written as
+              ∫   ∑︁              ∑︁
+                       𝜒𝑇1 𝜒𝑇2 =       |𝑇1 X 𝑇2 | ď 𝐶𝜀 𝛿´𝜀 (𝛿#T) 2 .             (1.3)
+                R𝑛 𝑇 ,𝑇 PT         𝑇1 ,𝑇2 PT
+                    1   2
+
+Let 𝜀 ą 0 be given. Observe that for any two 𝛿-tubes 𝑇1 and 𝑇2 , the area of the
+intersection 𝑇1 X 𝑇2 depends on the angle 𝜃 = ∠(dir(𝑇1 ), dir(𝑇2 )):
+                                                 𝛿2    𝛿2
+                              |𝑇1 X 𝑇2 | ď            ≲ .
+                                                sin 𝜃  𝜃
+For each dyadic number 𝜃, let
+
+                T𝜃 [𝑇1 ] = {𝑇2 P T : 𝜃 ď ∠(dir(𝑇1 ), dir(𝑇2 )) ă 2𝜃}.
+
+Since the tubes in T point in 𝛿-separated directions, #T𝜃 [𝑇1 ] ≲ 𝜃𝛿´1 for every
+𝑇1 P T. Thus,
+                       ∑︁                   ∑︁ ∑︁ ∑︁ 𝛿2
+                               |𝑇1 X 𝑇2 | ≲
+                     𝑇1 ,𝑇2 PT              𝑇1 PT 𝜃 𝑇2 PT 𝜃 [𝑇1 ]
+                                                                  𝜃
+                                            ∑︁ ∑︁
+                                          ≲         𝛿.
+                                               𝑇1 PT 𝜃
+
+Since there are „ log(1/𝛿) possible values of 𝜃, and since there always exists a
+constant 𝐶𝜀 ą 0 such that log(1/𝛿) ď 𝐶𝜀 𝛿´𝜀 , this proves (1.3).
+
+1.7   Proof that the Kakeya maximal conjecture implies the Kakeya set conjec-
+      ture
+Slightly different versions of the following proof have been written down by Wolff
+([24]) and by Tao ([21]) in collections of lecture notes. The proof will show that
+version 3 of the Kakeya maximal conjecture implies that every Besicovitch set in R𝑛
+has Hausdorff dimension equal to 𝑛. Since the Minkowski dimension of a set is never
+less than its Hausdorff dimension, this will prove that that every Besicovitch set in
+R𝑛 also has Minkowski dimension 𝑛. The reader will observe that the full strength
+of the Kakeya maximal conjecture (version 3) will not be needed in the proof; rather,
+the subcase of the Kakeya maximal conjecture where 𝜆 ≳ (1/log(1/𝛿)) 2 will be
+sufficient.
+
+Let 𝐵 be a Besicovitch set in R𝑛 and let 𝜀 ą 0 be arbitrary. The goal is to prove that
+the (𝑛 ´ 𝜀)-dimensional Hausdorff measure H 𝑛´𝜀 (𝐵) is infinite. For each direction
+𝜔 P S𝑛´1 , let ℓ𝜔 be a unit line segment which is contained in 𝐵 and which points in
+the direction 𝜔. For any set 𝐸 Ď R𝑛 , define a measure 𝜇 by
+                                      ∫
+                               𝜇(𝐸) =      |𝐸 X ℓ𝜔 | 𝑑𝜔,
+                                       S𝑛´1
+                                                                                     12
+where |𝐸 X ℓ𝜔 | is the 1-dimensional Lebesgue measure of 𝐸 X ℓ𝜔 . Thus 𝜇(𝐵) = 1.
+This measure is sometimes called the canonical measure associated to a Besicovitch
+set.
+
+Let 𝛿0 ą 0 be given and let U be a covering of 𝐵 by balls of any radius smaller than
+𝛿0 . For any 𝑘 P Z, let U𝑘 be the subcollection of balls given by
+
+                     U𝑘 = {𝑈 P U : 2´ 𝑘 ´1 ă diam(𝑈) ď 2´ 𝑘 }
+
+and define 𝐵 𝑘 be the union of all 𝑈 P U𝑘 . Since
+                                     ∑︁      1
+                                               2
+                                                 ≲ 1,
+                                      ´𝑘
+                                             𝑘
+                                 𝑘 PZ : 2     ă𝛿 0
+
+there must exist a value of 𝑘 for which
+                                                      1
+                                     𝜇(𝐵 𝑘 ) ≳           .
+                                                      𝑘2
+Fix 𝛿 := 2´ 𝑘 . Let T0 be the collection of 𝛿-tubes 𝑇𝜔 , each defined as the 𝛿-
+neighborhood of the line segment ℓ𝜔 , for every 𝜔 P S𝑛´1 . Observe that
+                                       ∫   ∫
+                                  1´ 𝑛
+                      𝜇(𝐵 𝑘 ) = 𝛿              1𝑇𝜔 (𝑥) 𝑑𝑥 𝑑𝜔.
+                                            S 𝑛 ´1   𝐵𝑘
+
+Consider the following tiling of S𝑛´1 : let R𝑛´1 be tiled by 𝛿-cubes given by translates
+(0, 𝛿] 𝑛´1 placed end-to-end and let a “tile” on the sphere be given by the image of
+                                             a
+one of these 𝛿-cubes via the map 𝜉 ÞÑ (𝜉, 1 ´ |𝜉 | 2 ) sending R𝑛´1 to the northern
+hemisphere. Thus the sphere S𝑛´1 may be covered by tiles 𝜃 so that
+                                       ∑︁ ∫ ∫
+                                  1´ 𝑛
+                      𝜇(𝐵 𝑘 ) = 𝛿                 1𝑇𝜔 (𝑥) 𝑑𝑥 𝑑𝜔.
+                                        𝜃        𝜃   𝐵𝑘
+
+Further, it may arranged that half of all the tiles 𝜃 are removed from the sum above
+without reducing the right hand side above by a factor of more than one half, so that
+any two tiles are separated by a distance of at least 𝛿. For every remaining tile 𝜃,
+                                   ∫                    ∫ ∫
+there must exist 𝜔 P 𝜃 such that 𝐵 1𝑇𝜔 (𝑥) 𝑑𝑥 ě 𝜃 𝐵 1𝑇𝜔 (𝑥) 𝑑𝑥 𝑑𝜔. Let T be
+                                      𝑘                     𝑘
+the subcollection of T0 consisting of this choice of 𝜔 for every tile 𝜃; then there are
+„ 𝛿1´𝑛 tubes in T and they point in 𝛿-separated directions. Define a shading for
+each tube 𝑇 P T by
+                                  𝑌 (𝑇) := 𝑇 X 𝐵 𝑘 ,
+where 𝑘 = log(1/𝛿) is the chosen value of 𝑘 above, for which 𝜇(𝐵 𝑘 ) ≳ 𝑘 ´2 . Thus
+                                                            2
+                  ∑︁                                    1
+                       |𝑌 (𝑇) X 𝐵 𝑘 | ≳ 𝜇(𝐵 𝑘 ) ě               .
+                  𝑇 PT
+                                                    log(1/𝛿)
+                                                                                     13
+Using dyadic pigeonholing, it is possible to find a refinement T1 Ď T and a number
+0 ă 𝜆 ă 1 such that |𝑌 (𝑇)| „ 𝜆|𝑇 | for every 𝑇 P T1 , and further 𝑇 PT1 |𝑌 (𝑇)| ≳
+                                                                        Í
+    1   Í                                          1
+log(1/𝛿) 𝑇 PT 𝑌 (𝑇). From this, and the fact that T continues to be direction separated,
+it follows that 𝜆 ≳ (1/log(1/𝛿)) 3 . With an appropriate implicit constant, it may
+then be arranged that 𝜆 ≳ 𝛿 𝜀/4𝑛 , and if the Kakeya maximal conjecture is true,
+                                     Ø
+                                   |   𝑌 (𝑇)| ≳ 𝛿 𝜀/2 ,
+                                   𝑇 PT
+
+then it follows that |𝐵 𝑘 | ≳ 𝛿 𝜀 . Since each ball in U𝑘 has volume „ 𝛿 𝑛 , it must be
+that #U𝑘 ≳ 𝛿´𝑛+𝜀/2 . Thus,
+                                     ∑︁
+                                         𝛿 𝑛´𝜀 ě 𝛿´𝜀/2 ,
+                                 𝑈 PU𝑘
+
+and H 𝑛´𝜀 (𝐵) = 8. This completes the proof.
+
+1.8   Introduction to the x-ray transform estimate and sticky sets
+In 1998, Wolff observed a certain estimate involving the x-ray transform, defined
+below, had a close connection to the Kakeya problem ([25]). The question considered
+by Wolff about the x-ray transform is written below:
+
+Let G be the space of all lines ℓ = ℓ𝑥,𝑣 Ă R𝑛 , where 𝑥, 𝑣 are points within the unit
+ball centered at the origin in R𝑛´1 , and ℓ𝑥,𝑣 is parametrized by
+
+                           ℓ𝑥,𝑣 = {(𝑥 + 𝑣𝑡, 𝑡) : 𝑡 P [0, 1]}.
+
+For any function 𝑓 P 𝐿 1 (R𝑛 ), the x-ray transform 𝑋 𝑓 : G Ñ R is defined by
+                                              ∫
+                                    𝑋 𝑓 (ℓ) =    𝑓.
+                                                       ℓ
+
+For which 1 ď 𝑝, 𝑞, 𝑟 ď 8 and 𝛼 ě 0 does the estimate
+
+                                ||𝑋 𝑓 || 𝐿 𝑞𝜈 𝐿 𝑟𝑥 ď || 𝑓 || 𝐿 𝛼𝑝 ,
+              𝑝                                  ?
+hold? Here 𝐿 𝛼 is the Sobolev space (1 +          ´Δ) ´𝛼 𝐿 𝑝 .
+
+
+Various estimates of this kind have been proved (e.g. [25]) and more are conjectured
+to hold. The relation of this question to the Kakeya problem becomes more evident
+in the following equivalent formulation of a certain mixed norm x-ray estimate:
+                                                                                         14
+Definition 8. We say there is an x-ray estimate at dimension 𝑑 if there exist 0 ď
+𝛼, 𝛾 ď 1 for which the following statement holds: for any 𝛿-separated set Ω of
+directions and any collection T of 𝛿-tubes pointing in directions in Ω, of which no
+tube is contained in the tenfold dilate of another tube, the following estimate holds:
+                           ∑︁                 𝑛
+                        ||    𝜒𝑇 || 𝑑 1 ⪅ 𝛿1´ 𝑑 𝑚 1´𝛼 (𝛿 𝑛´1 #Ω) 𝛾 ,
+                                  𝑇 PT
+where 𝑚 is the directional multiplicity of T.
+
+It was first observed by Katz, Łaba and Tao that an x-ray transform estimate could
+be used to deduce the prevalence of special structure in “extremal” Besicovitch sets.
+More precisely, the following result is proved in [17]:
+
+Proposition 9. Suppose that an x-ray transform estimate holds at dimension 𝑑 in
+R𝑛 . If there exists a Besicovitch set 𝐵 satisfying dim 𝑀 (𝐵) ď 𝑑 + 𝜀, then there exists
+a set of 𝛿-tubes T with the following properties:
+
+  (i) The tubes in T point in 𝛿-separated directions,
+
+ (ii) There exists a set of 𝛿1/2 -tubes T𝛿1/2 and a partition of T into sets T[𝑇𝛿1/2 ] given
+      by
+                                T[𝑇𝛿1/2 ] = {𝑇 P T : 𝑇 Ď 𝑇𝛿1/2 };
+      satisfying the following properties:
+                                                   #T « 𝛿1´𝑛 ,
+                                             #T𝛿1/2 « 𝛿 (1/2) (1´𝑛)   and
+                                         #T[𝑇𝛿1/2 ] « 𝛿 (1/2) (1´𝑛)
+
+(iii) |
+          Ð              𝑛 ´ 𝑑 ´𝜀 .
+          𝑇 PT 𝑇 | ⪅ 𝛿
+
+(iv) |
+          Ð                       1/2 ) 𝑛´𝑑 ´𝜀 .
+          𝑇 𝛿 1/2 PT 𝛿 𝑇 | ⪅ (𝛿
+
+
+The proof of a slightly different version of this proposition is given in Section 4.5.
+Sets of 𝛿-tubes satisfying properties (i) and (ii) in the list above are called sticky sets.
+Katz-Łaba-Tao ([17]) demonstrated that sticky sets have a self-similar structure and
+exploited the structural properties of sticky sets to give an improved Minkowski
+dimension estimate for Besicovitch sets in R3 .
+Very recently, the Kakeya conjecture was proved by Wang and Zahl ([23]) in the
+special case of sticky sets in R3 . Chapter 4 in this thesis gives an improved Hausdorff
+dimension estimate for sticky sets in higher dimensions.
+                                                                                             15
+                                  Chapter 2
+
+
+          RECENT PROGRESS IN THE 𝑘-LINEAR KAKEYA
+                       CONJECTURE
+
+
+2.1   The multilinear Kakeya theorem
+The most recent results in the higher-dimensional Kakeya problem have been proved
+by means of progress on a variant of the Kakeya problem called the multilinear
+Kakeya problem. The multilinear variant of the Kakeya problem was first introduced
+by Benett, Carbery and Tao in [1]. The following theorem was proved up to endpoint
+in [1] and the endpoint was proved by Guth in [10].
+
+Theorem 10 (Multilinear Kakeya theorem). Let 2 ď 𝑘 ď 𝑛. There exists a constant
+𝐶 so that, if T1 , . . . , T 𝑘 are collections of 𝛿-tubes in R𝑛 , then
+   ∑︁       ∑︁                                                   1/𝑘
+||     ¨¨¨          𝜒𝑇1 ¨ ¨ ¨ 𝜒𝑇𝑘 |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )|       || 𝑘/(𝑘 ´1)
+ 𝑇1 PT1   𝑇𝑘 PT 𝑘
+                                                                     𝑘
+                                                                     Ö ∑︁
+                                                                 𝑛                           1/𝑘
+                                                         ď 𝐶𝛿1´ 𝑘                   |𝑇𝑖 |           .
+                                                                     𝑖=1   𝑇𝑖 PT𝑖
+
+
+As was observed by Bourgain and Guth in 2010, the multlinear Kakeya estimates
+could lead to estimates for the Kakeya maximal function, but the resulting estimates
+were weaker than the maximal estimates proved previously by Wolff ([26]) using
+incidence geometry techniques.
+
+Though the multilinear Kakeya theorem is sharp, the multilinear variant of the
+Kakeya problem does not impose the requirement that the 𝛿-tubes point in 𝛿-
+separated directions. The direction-separated multilinear Kakeya conjecture is still
+open. The best known estimates for this problem are due to Zahl ([28]). A very
+similar though slightly weaker estimate was proved by Hickman-Rogers-Zhang in
+[12].
+
+Theorem 11 (Zahl, 𝑘-linear estimate). Let 2 ď 𝑘 ď 𝑛. For every 𝜖 ą 0, if T is a set
+of 𝛿-tubes pointing in 𝛿-separated directions, then there is a constant 𝐶𝜖 ą 0 such
+                                                                                                                          16
+that, for all 𝑑 ď 𝑛 +𝑛+𝑘
+                             2
+                            ´𝑘          2
+                      2𝑛       ,
+             ∑︁
+        ||(        1𝑇1 ¨ ¨ ¨ 1𝑇𝑘 |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| 𝑘/𝑑 ) 1/𝑘 || 𝑑/(𝑑 ´1)
+             𝑇1 ,...,𝑇𝑘 PT
+                                                                               𝑛
+                                                                                       ∑︁
+                                                                  ď 𝐶 𝜖 𝛿 1´ 𝑑 ´ 𝜖 (          |𝑇 |) 𝑛(𝑑 ´1)/(𝑛´1)𝑑 .
+                                                                                       𝑇 PT
+
+
+The next two sections (on polynomial partitioning and the polynomial Wolff axioms)
+mention some of the prominent insights in the proof of the above theorem. Directly
+below is a corollary of Zahl’s 𝑘-linear estimate that will be applied in Chapter 4.
+
+Corollary 12. Let 2 ď 𝑘 ď 𝑛. For every 𝜖 ą 0, if T is a set of 𝛿-tubes satisfying
+the following hypotheses:
+
+  i. The tubes in T point in 𝛿-separated directions,
+
+ ii. 𝑌 is a shading of T satisfying |𝑌 (𝑇)| ě 𝜆|𝑇 | for every 𝑇 P T,
+                                        Ð
+iii. At every point 𝑥 P                     𝑇 PT 𝑌 (𝑇),
+
+                                                                                                         1
+       #{(𝑇1 , . . . , 𝑇𝑘 ) P T 𝑘 (𝑥)) : |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| ą 𝛽} ≳                                 #T 𝑘 (𝑥),
+                                                                                                     log(1/𝛿)
+      where 𝛽 ą 0 is a fixed constant that does not depend on 𝛿,
+
+then there is a constant 𝐶𝜖 ą 0 such that for all 𝑑 ď 𝑛 +𝑛+𝑘 ´𝑘                    2          2
+                                                          2𝑛    ,
+
+                                 Ø                                     ∑︁
+                                        𝑌 (𝑇) ě 𝐶𝜖 𝛽𝜆 𝑑 𝛿 𝑛´𝑑+𝜖 (             |𝑇 |) (𝑛´𝑑)/(𝑛´1) .
+                                 𝑇 PT                                  𝑇 PT
+
+
+Proof of Corollary 12 from Zahl’s 𝑘-linear theorem. Let 𝜖 ą 0 be given, and let T
+be a set of 𝛿-tubes that obeys hypotheses i, ii and iii. Then, from condition ii,
+        ∑︁                                                                                   ∑︁
+  ||(          1𝑌 (𝑇1 ) ¨ ¨ ¨ 1𝑌 (𝑇𝑘 ) |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| 𝑘/𝑑 ) 1/𝑘 || 𝐿 1 ě 𝛽1/𝑑    𝜆|𝑇 |.
+       𝑇1 ,...,𝑇𝑘 PT                                                                                         𝑇 PT
+
+By Hölder’s inequality,
+    ∑︁
+||(      1𝑌 (𝑇1 ) ¨ ¨ ¨ 1𝑌 (𝑇𝑘 ) |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| 𝑘/𝑑 ) 1/𝑘 || 1
+   𝑇1 ,...,𝑇𝑘 PT
+                                 ∑︁                                                                                    Ø
+                   ď ||(                    1𝑇1 ¨ ¨ ¨ 1𝑇𝑘 |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| 𝑘/𝑑 ) 1/𝑘 || 𝑑/(𝑑 ´1) ¨ |             𝑌 (𝑇)| 1/𝑑 .
+                           𝑇1 ,...,𝑇𝑘 PT                                                                               𝑇 PT
+                                                                                                    17
+Applying Theorem 11 to the statement above, one obtains
+                     ∑︁                                        Ø
+              𝛽𝜆 𝑑 (    |𝑇 |) 𝑑 ´𝑛(𝑑 ´1)/(𝑛´1) ď 𝐶𝜖 𝛿 𝑑 ´𝑛´𝜖 |   𝑌 (𝑇)|.
+                          𝑇 PT                                         𝑇 PT
+
+Rearranging this gives the statement
+                   Ø                             ∑︁
+                 |    𝑌 (𝑇)| ě 𝐶𝜖 𝛽𝛿 𝑛´𝑑+𝜖 𝜆 𝑑 (    |𝑇 |) (𝑛´𝑑)/(𝑛´1) .
+                       𝑇 PT                              𝑇 PT
+                                                                                                      □
+
+2.2    Polynomial partitioning method
+The techniques used for proving Zahl’s 𝑘-linear estimate involve polynomial parti-
+tioning, which was introduced by Guth and Katz ([11]) in 2014.
+
+For any polynomial 𝑃 : R𝑛 Ñ R, the zero set of 𝑃, 𝑍 (𝑃) := {𝑥 P R𝑛 :
+𝑃(𝑥) = 0}, partitions R𝑛 into “cells”, which are the disjoint connected com-
+ponents of R𝑛 z𝑍 (𝑃). Further, a 𝛿-shrunken cell is a connected component of
+R𝑛 z𝑁 𝛿 (𝑍 (𝑃)). The “idea” of the polynomial partitioning technique is to con-
+sider the contributions to the norm of the function to be bounded (in this case,
+   Í
+||( 𝑇1 ,...,𝑇𝑘 PT 1𝑇1 ¨ ¨ ¨ 1𝑇𝑘 |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| 𝑘/𝑑 ) 1/𝑘 || 𝑑/(𝑑 ´1) ) from the different
+cells, and from 𝑁 𝛿 (𝑍 (𝑃)), which is the 𝛿-neighborhood of an algebraic variety. If
+the polynomial 𝑃 is correctly chosen, the contribution to the function norm in every
+cell is roughly equal. If the contribution from the cells dominates, the “cellular
+case” is said to hold; alternatively, if the dominant contribution comes from the
+𝛿-neighborhood of the zero set of the polynomial, then the “algebraic case” is said
+to hold.
+
+The following polynomial partitioning theorem is due to Guth.
+
+Theorem 13. Fix 0 ă 𝛿 ă 𝑟, 𝑥 0 P R𝑛 and suppose 𝐹 P 𝐿 1 (R𝑛 ) is nonnegative and
+supported on 𝐵(𝑥 0 , 𝑟) X 𝑁4𝛿 Z where Z is an 𝑚-dimensional transverse complete
+intersection with deg Z ď 𝑑. At least one of the following cases holds:
+
+   1. Cellular case. There exists a polynomial 𝑃 : R𝑛 Ñ R of degree 𝑂 (𝑑) with
+      the following properties:
+
+          a) #cell(𝑃) „ 𝑑 𝑚 and each 𝑂 P cell(𝑃) has diameter at most 𝑟/2.
+          b) One may pass to a refinement of cell(𝑃) such that if H is defined as a
+             family of 𝛿-shrunken cells as above, then
+                               ∫             ∫
+                                          ´𝑚
+                                   𝐹„𝑑           𝐹 for all 𝑂 P H.
+                                       𝑂                R𝑛
+                                                                                     18
+   2. Algebraic case. There exists an (𝑚 ´ 1)-dimensional algebraic variety Y of
+      degree at most 𝑂 (𝑑) such that
+                         ∫                     ∫
+                                     𝐹 ≲ log 𝑑            𝐹.
+                            𝐵(𝑥 0 ,𝑟) X 𝑁4 𝛿 Z       𝐵(𝑥 0 ,𝑟) X 𝑁 𝛿 𝑌
+
+In the cellular case, Bezout’s theorem is used to deduce that the number of 𝛿-tubes
+entering each cell can be controlled since by Bezout’s theorem, a 𝛿-tube 𝑇 can cross
+𝑍 (𝑃) at most deg 𝑃 times. Thus, each 𝛿-tube 𝑇 can enter at most deg 𝑃 + 1 shrunken
+cells. As long as the cellular case holds, each cell can be re-partitioned into smaller
+cells, until the cells have radius „ 𝛿 and the contribution from each cell is bounded.
+
+In the algebraic case, one can obtain a chain of nested algebraic varieties, of decreas-
+ing dimensions, through which passing 𝛿-tubes makes the dominant contribution to
+the norm of the function to be estimated. In this case, a “multi-scale” polynomial
+Wolff axiom, discussed briefly in the next section, is used to estimate the maximum
+number of 𝛿-tubes that lie at a tangent to several nested algebraic varieties.
+
+2.3   Polynomial Wolff axioms
+The following estimate for the cardinality of a family of direction-separated 𝛿-tubes
+partially contained in a semialgebraic subset of R𝑛 is a key result used in proving
+Theorem 11. The following theorem was proved for 𝑛 = 3 by Larry Guth, for 𝑛 = 4
+by Zahl ([27]), and for 𝑛 ě 5 by Katz and Rogers ([16]).
+
+Theorem 14 (Polynomial Wolff axioms). Let 𝑛 and 𝐸 be integers, with 𝑛 ě 2, and
+let 𝜖 ą 0.Then there is a constant 𝐶 (𝑛, 𝐸, 𝜖) so that for every semialgebraic set
+𝑆 Ă R𝑛 of complexity at most 𝐸 and for every set T of direction-separated 𝛿-tubes,
+we have
+              #{𝑇 P T : 𝑇 X 𝑆| ě 𝜆|𝑇 |} ď 𝐶 (𝑛, 𝐸, 𝜖)|𝑆|𝛿1´𝑛´𝜖 𝜆´𝑛
+
+The new feature used in Zahl’s 𝑘-linear estimate, and in Hickman-Rogers-Zhang
+([12]), is the “multiscale polynomial Wolff axiom”, which provides a sharp bound
+for the cardinality of a set of 𝛿-separated 𝛿-tubes that intersect several algebraic
+varieties of different dimensions at once.
+
+Theorem 15 (Multiscale polynomial Wolff axioms). For all 𝑛 ě 𝑚 ě 𝑘 ď 1 and
+𝜖 ą 0, there is a constant 𝐶𝑛,𝑑,𝜖 such that
+  𝑚                                                     𝑚 ´1        𝑛 ´𝑚
+  Ù                                                   ©Ö 𝜌 ª 𝜌
+# {𝑇 P T : |𝑇 X 𝐵𝜆 𝑗 X 𝑁 𝜌 Z 𝑗 | ě 𝜆 𝑗 |𝑇 |} ď 𝐶𝑛,𝑑,𝜖 ­         ®          𝛿´ (𝑛´1) ´𝜖
+ 𝑗=𝑘
+                                                             𝜆 𝑗 𝜆𝑚
+                                                      « 𝑗=𝑘     ¬
+                                                                                      19
+whenever 0 ă 𝛿 ď 𝑝 ď 𝜆 𝑘 ď ¨ ¨ ¨ ď 𝜆 𝑚 ď 1, T is a direction-separated family of
+𝛿-tubes, Z 𝑗 Ă R𝑛 are 𝑗-dimensional algebraic varieties of degree ď 𝑑 and the balls
+𝐵𝜆 𝑗 are nested: 𝐵𝜆 𝑘 Ď . . . Ď 𝐵𝜆 𝑚 Ă R𝑛 .
+
+This theorem is proved using tools from real algebraic geometry. There are some
+open questions related to the polynomial Wolff axioms which, if solved, could lead
+to progress in proving x-ray transform estimates at higher dimensions. Namely, is
+there a cardinality bound for sets of 𝛿-tubes partially contained in the neighborhood
+of an algebraic variety, which do not necessarily satisfy the hypothesis that the tubes
+point in 𝛿-separated directions, but instead, satisfy the hypothesis that the directional
+multiplicity of tubes is at most 𝛿´ 𝛽𝑛 for some number 𝛽 between 0 and 1? Such a set
+of 𝛿-tubes would also have to satisfy the condition that no tube in the set contains
+the 5-fold dilate of another one.
+                                                                                    20
+                                   Chapter 3
+
+
+          NEW KAKEYA ESTIMATE FOR 𝑘-PLANY SETS
+
+
+The Kakeya estimate obtained in this chapter is proved using a geometric structure
+called the “𝑘-planebrush”. A planebrush structure has been used before to prove
+Kakeya maximal estimates in R4 by Katz and Zahl in [14]. The planebrush is a
+higher-dimensional analogue of the “hairbrush” appearing in Wolff ([26]). Wolff’s
+hairbrush consisted of all 𝛿-tubes intersecting a single, central 𝛿-tube 𝑇 at large an-
+gles in R3 . Each 𝛿-tube passing through 𝑇 at a large angle lies in the 𝛿-neighborhood
+of a plane that contains the axis of 𝑇. The 𝛿-thickened planes containing the axis
+of 𝑇 are disjoint from each other away from 𝑇, and the each tube in the hairbrush
+lies in exactly one thickened 𝑘-plane. The Kakeya maximal estimate for the plane is
+applied separately to each thickened plane to get a Kakeya estimate for all the tubes
+in the hairbrush.
+
+In the argument used in this chapter, the 𝑘-planebrush consist of all tubes 𝑇 1 which
+intersect at least one of many tubes 𝑇 lying tangent to a (𝑘 ´ 1)-plane 𝑉. The tubes
+in the planebrush each lie in exactly one of up to 𝛿´𝑛+𝑘 𝛿-thickened 𝑘-planes that
+all contain 𝑉. Away from a neighborhood of 𝑉, the different thickened 𝑘-planes
+are disjoint, and the best known result for the Kakeya maximal conjecture in R 𝑘 is
+applied to separately to each thickened 𝑘-plane.
+
+In order to ensure that each 𝑘-planebrush contains enough 𝛿-tubes to give a good
+estimate, the 𝑘-planebrush technique requires the hypothesis that the collection of
+T is (𝑘 ´ 1)-plany. The meaning of this term is explained below:
+
+Definition 16 (m-Planiness). A family of 𝛿-tubes T with shading 𝑌 is called 𝑚-
+plany if for every 𝛿-cube 𝑄, there exists an 𝑚-plane 𝑉 (𝑄) such that for every 𝑇 P T
+satisfying 𝑌 (𝑇) X 𝑄 ≠ H,
+                                  ∠(𝑇, 𝑉 (𝑄)) ≲ 𝛿.
+
+The main result in this chapter is the following:
+
+Proposition 17. Let 3 ď 𝑘 ď 𝑛. For any 𝜀 ą 0, if T is a set of (𝑘 ´ 1)-plany 𝛿-tubes
+pointing in 𝛿-separated directions, and if each 𝑇 P T has a shading 𝑌 (𝑇) Ď 𝑇
+                                                                                           21
+satisfying |𝑌 (𝑇)| ě 𝜆|𝑇 |, then there exists a constant 𝐶𝜀 ą 0 such that
+                               Ø                      ∑︁
+                             |   𝑌 (𝑇)| ≳ 𝜆 𝑑 𝛿 𝑛´𝑑+𝜀    |𝑇 |,
+                                 𝑇 PT                       𝑇 PT
+                   ?
+where 𝑑 ď 2𝑛+2´ (3 2´1)𝑘 .
+
+The above result is obtained by combining the next proposition with the Kakeya
+maximal estimate obtained from Hickman-Rogers-Zhang. The proof of Proposition
+17 is given at the end of this chapter.
+
+Proposition 18. Let 𝜀 ą 0. If T is a set of 𝛿-tubes satisfying the following hypothe-
+ses:
+
+ i. The tubes in T point in 𝛿-separated directions,
+
+ ii. Each tube 𝑇 P 𝑇 has a subset 𝑌 (𝑇) and |𝑌 (𝑇)| ě 𝜆|𝑇 | for all 𝑇 P T,
+
+iii. The family T with shading 𝑌 is (𝑘-1)-plany,
+
+then there exists a constant 𝐶𝜖 ą 0 such that
+                  Ø                                                      ∑︁
+                         𝑌 (𝑇) ě 𝐶𝜖 𝛿 (𝑛´2+𝑘 ´𝑑 (𝑘))/3+𝜖 𝜆 𝑑 (𝑘)/3+1 (          |𝑇 |),   (3.1)
+                  𝑇 PT                                                   𝑇 PT
+
+where 𝑑 (𝑘) is the largest exponent for which a Kakeya maximal estimate holds in
+R𝑘 .
+
+This proposition is proved in section 3.4 of this chapter.
+
+3.1   Two-ends reduction
+The “two-ends reduction” was first introduced by Wolff ([25]) and has been reused
+by many others in proving Kakeya estimates. The proof given below imitates one
+given by Tao’s lecture notes [21].
+
+Definition 19 (Two-ends condition). Let 𝜖 ą 0. A set 𝐹 Ď R𝑛 obeys the “two-ends”
+condition with exponent 𝜖 if
+
+                                        |𝐹 X 𝐵(𝑥, 𝑟)| ≲ 𝑟 𝜖 |𝐹 |
+
+for all balls 𝐵(𝑥, 𝑟).
+                                                                                          22
+Proposition 20. Let 𝜖 ą 0. If T is a set of 𝛿-tubes satisfying the following hypothe-
+ses:
+
+  i. The tubes in T point in 𝛿-separated directions,
+
+ ii. Each tube 𝑇 P 𝑇 has a subset 𝑌 (𝑇) and |𝑌 (𝑇)| ě 𝜆|𝑇 | for all 𝑇 P T,
+
+iii. The family T with shading 𝑌 is (𝑘-1)-plany,
+
+iv. For every 𝑇 P T, 𝑌 (𝑇) obeys the two-ends conjecture with exponent 𝜖,
+
+then there exists a constant 𝐶𝜖 ą 0 such that
+                 Ø                                                        ∑︁
+                                       (𝑛´2+𝑘 ´𝑑 (𝑘))/3+𝜖 𝑑 (𝑘)/3+1
+                        𝑌 (𝑇) ě 𝐶𝜖 𝛿                     𝜆            (          |𝑇 |),
+                 𝑇 PT                                                     𝑇 PT
+
+where 𝑑 (𝑘) is the largest exponent for which a Kakeya maximal estimate holds in
+R𝑘 .
+
+Lemma 21 (Two-ends reduction). Proposition 20 implies Proposition 18.
+
+Proof. Let 𝜖 ą 0 be given. Suppose that Proposition 20 is true, and let T be a set of
+𝛿-tubes obeying hypotheses i, ii and iii in the statement of Proposition 18. For any
+tube 𝑇 P T, consider the ratio
+                                       |𝑌 (𝑇) X 𝐵(𝑥, 𝑟)|
+                                                                                          (‹)
+                                              𝑟𝜖
+where 𝐵(𝑥, 𝑟) is a ball of radius 𝑟 centered at point 𝑥. If 𝛿 ď 𝑟 ď 1, then
+|𝑌 (𝑇) X 𝐵(𝑥, 𝑟)| ď 𝛿 𝑛´1𝑟 ď 𝑟 𝜖 , so (‹) is bounded above by 1. If 𝑟 ă 𝛿, then
+|𝑌 (𝑇) X 𝐵(𝑥, 𝑟)| ≲ 𝑟 𝑛 ď 𝑟 𝜖 . Thus, the set
+                                                                    
+                   |𝑌 (𝑇) X 𝐵(𝑥, 𝑟)|
+                                       : 𝐵(𝑥, 𝑟) is a ball with 𝑟 ď 1 .
+                          𝑟𝜖
+is bounded above and has a supremum. If 𝑟 = 1, and the point 𝑥 is chosen so that
+𝐵(𝑥, 𝑟) contains 𝑌 (𝑇), one can see that the supremum must exceed 𝜆|𝑇 |. For each
+𝑇 P T, it is possible to choose a ball 𝐵(𝑥𝑇 , 𝑟𝑇 ) that comes within a factor of 2 of the
+supremum, so that
+                                                      𝑟 𝜖 𝜆|𝑇 |
+                            |𝑌 (𝑇) X 𝐵(𝑥𝑇 , 𝑟𝑇 )| ě 𝑇           .                   (3.2)
+                                                          2
+Since |𝑌 (𝑇) X 𝐵(𝑥𝑇 , 𝑟𝑇 )| ≲ 𝑟𝑇𝑛 , and since 𝜆 ě 𝛿1´𝜖 , the above statement implies
+that 𝑟𝑇 ≳ 𝛿. For each 𝑇, define a new shading 𝑌1 (𝑇) by
+
+                               𝑌1 (𝑇) = 𝑌 (𝑇) X 𝐵(𝑥𝑇 , 𝑟𝑇 ).
+                                                                                             23
+By performing dyadic pigeonholing on 𝑟𝑇 , we may choose a subcollection T1 Ď T
+of tubes such that
+                        𝜌 ď 𝑟𝑇 ă 2𝜌 for every 𝑇 P T1 ,
+where 𝜌 is a number between 𝛿1´𝜖 and 1, and
+                                                1
+                                     #T1 ≳           #T.
+                                             log 1/𝛿
+Then for every 𝑇 P T1 , (3.2) implies that
+                                                             |𝑇 X 𝐵(𝑥𝑇 , 𝑟𝑇 )|
+                  |𝑌1 (𝑇)| ≳ 𝜌 𝜖 𝜆|𝑇 | ě 𝛿 𝜖 𝜆|𝑇 | ≳ 𝛿 𝜖 𝜆                     .          (3.3)
+                                                                   𝜌
+The intersection 𝑇 X 𝐵(𝑥𝑇 , 𝑟𝑇 ) is contained in a tube of radius 𝛿 and length 2𝜌.
+By means of an isotropic linear rescaling 𝜎 which takes 𝑥 ÞÑ 𝑥/2𝜌, each set
+𝑇 X 𝐵(𝑥𝑇 , 𝑟𝑇 ) may be scaled to a (𝛿/𝜌)-tube 𝑇.˜ Then 𝜎(𝑌1 (𝑇)) Ď 𝑇˜ and from
+(3.3),
+                                              𝜆
+                                𝜎(𝑌1 (𝑇))| ⪆ |𝑇˜ |.
+                                              𝜌
+We will now show that each 𝛿/𝜌-tube 𝑇˜ with shading 𝜎(𝑌1 (𝑇)) satisfies the two-ends
+condition. For any ball 𝐵(𝑥 1 , 𝑟 1 ), we have
+|𝑌1 (𝑇) X 𝐵(𝑥 1 , 𝑟 1 )|   |𝑌 (𝑇) X 𝐵(𝑥 1 , 𝑟 1 )|   2 ¨ |𝑌 (𝑇) X 𝐵(𝑥𝑇 , 𝑟𝑇 )|
+          1
+                         ď          1
+                                                   ď                           ď 2𝜌 ´𝜖 |𝑌1 (𝑇)|,
+        (𝑟 ) 𝜖                    (𝑟 ) 𝜖                       (𝑟𝑇 ) 𝜖
+because of the way 𝐵(𝑥𝑇 , 𝑟𝑇 ) were previously chosen. Re-arranging the previous
+statement gives                               1 𝜖
+                                     1 1      𝑟
+                      |𝑌1 (𝑇) X 𝐵(𝑥 , 𝑟 )| ≲         |𝑌1 (𝑇)|.
+                                               𝜌
+This implies that
+                                              1 𝜖
+                                    1 1      𝑟
+                  𝜎 𝑌1 (𝑇) X 𝐵(𝑥 , 𝑟 ) ≲            |𝜎 (𝑌1 (𝑇))| ,
+                                              𝜌
+which means that 𝜎(𝑌1 (𝑇)) obeys the two-ends condition because 𝜎(𝐵(𝑥 1 , 𝑟 1 ))
+is a ball of radius 𝑟 1 /𝜌. Since the number of 𝛿/𝜌 tubes 𝑇˜ is #T1 , which is „
+1/log(1/𝛿) ¨ #T, we will need to choose a subcollection T2 Ď T1 so that the re-
+scaled tubes 𝑇˜ = 𝜎(𝑇) for 𝑇 P T2 will point in 𝛿/𝜌-separated directions. Observe
+that
+                             #T2 ≳ 𝜌 𝑛´1 #T1 ⪆ 𝜌 𝑛´1 #T.
+We may now apply the conclusion of Proposition 20 to the rescaled tubes from T2
+to get
+                                      𝑑   𝑛´𝑑+𝜖 ∑︁
+                Ø                    𝜆     𝛿
+                    𝜎 (𝑌1 (𝑇)) ě 𝐶𝜖                 (      |𝑇˜ |).
+               𝑇 PT
+                                     𝜌     𝜌          𝑇 PT
+                        2                                              2
+                                                                                                          24
+Reversing the rescaling 𝜎, we now find
+           Ø                                                                           ∑︁
+                  𝑌 (𝑇) ě 𝐶𝜖 𝜆 𝑑 𝛿 𝑛´𝑑+𝜖 (#T2 )(𝛿/𝜌) 𝑛´1 ⪆ 𝐶𝜖 𝜆 𝑑 𝛿 𝑛´𝑑+𝜖 (                   |𝑇 |),
+          𝑇 PT2                                                                        𝑇 PT
+
+which is the desired conclusion for Proposition 18.                                                        □
+
+3.2    Broad-narrow reduction
+                                                                                              Ð
+If T is a family of 𝛿-tubes with shading 𝑌 , we will say that a point 𝑥 P                       𝑇 PT 𝑌 (𝑇) is
+𝑠-narrow if there exists a unit vector 𝑣 𝑥 P S𝑛´1 such that
+                                                       1
+                     {𝑇 P T(𝑥) : ∠(dir(𝑇), 𝑣 𝑥 ) ď 𝑠} ě #T(𝑥).
+                                                       2
+                                       Ð
+If this condition fails at a point 𝑥 P 𝑇 PT 𝑌 (𝑇), then we say that the point 𝑥 is
+𝑠-broad.
+
+Proposition 22. Let 𝜖 ą 0. If T is a set of 𝛿-tubes satisfying the following hypothe-
+ses:
+
+ i. The tubes in T point in 𝛿-separated directions,
+
+ ii. Each tube 𝑇 P 𝑇 has a subset 𝑌 (𝑇) and |𝑌 (𝑇)| ě 𝜆|𝑇 | for all 𝑇 P T,
+
+iii. The family T with shading 𝑌 is (𝑘-1)-plany,
+
+iv. For every 𝑇 P T, 𝑌 (𝑇) obeys the two-ends conjecture with exponent 𝜖,
+                               Ð
+ v. There is a set 𝐸 Ď           𝑇 PT 𝑌 (𝑇) satisfying the condition
+                                ∑︁                          1    ∑︁
+                                       |𝑌 (𝑇) X 𝐸 | ≳                 |𝑌 (𝑇)|,
+                                𝑇 PT
+                                                        log(1/𝛿) 𝑇 PT
+
+      for which any point 𝑥 P 𝐸 satisfies:
+                                                                                   1
+       #{(𝑇1 , 𝑇2 ) P T(𝑥) ˆ T(𝑥) : ∠(dir(𝑇1 ), dir(𝑇2 )) ≳ 𝛿 𝜖 } ≳                     # (T(𝑥)) 2 ;
+                                                                               log(1/𝛿)
+
+then there exists a constant 𝐶𝜖 ą 0 such that
+                     Ø                                                      ∑︁
+                            𝑌 (𝑇) ě 𝐶𝜖 𝛿 (𝑛´2+𝑘 ´𝑑 (𝑘))/3+𝜖 𝜆 𝑑 (𝑘)/3+1 (          |𝑇 |)
+                     𝑇 PT                                                   𝑇 PT
+
+where 𝑑 (𝑘) is the largest exponent for which a Kakeya maximal estimate holds.
+
+Lemma 23 (Broad-narrow reduction). Proposition 22 implies Proposition 20.
+                                                                                     25
+To prove the broad-narrow reduction, we will first make some observations on broad
+and narrow points in the following simple lemmas.
+                         Ð
+Lemma 24. If a point 𝑥 P 𝑇 PT 𝑌 (𝑇) is 𝑠-broad, then
+                                                       
+                                                          3
+   # (𝑇1 , 𝑇2 ) P T(𝑥) ˆ T(𝑥) : ∠(dir(𝑇1 ), dir(𝑇2 ) ą 𝑠 ě # (T(𝑥)) 2 .            (3.4)
+                                                          4
+
+Proof. If a point 𝑥 is 𝑠-broad with respect to (T, 𝑌 ), then one may find a set of
+                                     𝐶𝑠1´𝑛 , where 𝐶 „ 1 is a fixed constant, such that
+4𝑠-separated directions {𝑣 𝑖 P S𝑛´1 }𝑖=1
+for every 𝑖,
+                                                         1
+                    #{𝑇 P T(𝑥) : ∠(dir(𝑇), 𝑣 𝑖 ) ď 𝑠} ď #T(𝑥).
+                                                         2
+                                                 1´ 𝑛
+Since the set of directions {𝑣 𝑖 P S𝑛´1 }𝑖=1𝐶𝑠    is 4𝑠-separated, we observe that if
+𝑇𝑖 P {𝑇 P T : ∠(dir(𝑇), 𝑣𝑖 ) ď 𝑠}, 𝑇 𝑗 P {𝑇 P T : ∠(dir(𝑇), 𝑣 𝑗 ) ď 𝑠}, and 𝑖 ≠ 𝑗, then
+
+                                 ∠(dir(𝑇𝑖 ), dir(𝑇 𝑗 )) ě 𝑠.
+
+The total number of ordered pairs (𝑇1 , 𝑇2 ) P T(𝑥) ˆ T(𝑥) in which both 𝑇1 and 𝑇2
+come are in the 𝑠-neighborhood of the same direction is less than 1/4 (#T(𝑥)) 2 , and
+the conclusion follows.                                                             □
+
+Lemma 25. If T is a family of 𝛿-tubes with shading 𝑌 , there is a number 𝑠 and a set
+   Ð
+𝐸 Ď 𝑇 PT 𝑌 (𝑇) such that
+                       ∑︁                          1    ∑︁
+                              |𝑌 (𝑇) X 𝐸 | ≳                 |𝑌 (𝑇)|
+                       𝑇 PT
+                                               log(1/𝛿) 𝑇 PT
+
+and every point 𝑝 P 𝐸 satisfies two conditions:
+
+ (i) 𝑝 is 𝑠-narrow, and
+
+ (ii) we have
+                                                                
+                                                               𝑠    3
+          # (𝑇1 , 𝑇2 ) P T(𝑥) ˆ T(𝑥) : ∠(dir(𝑇1 ), dir(𝑇2 )) ě     ě (#T(𝑥)) 2 .
+                                                               4    4
+
+Proof. For every point 𝑝, define 𝑘 𝑝 by
+                                                                                       
+                           𝑛 ´1                                            ´𝑘   1
+𝑘 𝑝 = max 𝑘 P Z : D𝑣 𝑝 P S      such that #{𝑇 P T( 𝑝) : ∠(𝑣 𝑝 , dir(𝑇)) ≲ 2 } ě #T( 𝑝).
+                                                                                2
+                                                                               (3.5)
+                                                                                 26
+Note that this maximum must always exist since 𝑘 must lie between 0 and „
+log(𝛿´1 ). By dyadic pigeonholing, we may choose a value of 𝑠 such that
+                                     𝑠
+                                       ď 2´ 𝑘 𝑝 ă 𝑠                            (3.6)
+                                     2
+                                  Ð
+for every point 𝑝 in a set 𝐸 Ď 𝑇 PT 𝑌 (𝑇), such that the Lebesgue measure of 𝐸
+satisfies             ∑︁                      1    ∑︁
+                           |𝑌 (𝑇) X 𝐸 | ≳               |𝑌 (𝑇)|.
+                      𝑇 PT
+                                          log(1/𝛿) 𝑇 PT
+We claim that every point 𝑝 P 𝐸 satisfies the two required conditions. To see
+this, note from (3.5) and (3.6) that 𝑝 satisfies the first condition. For the second
+condition, we observe from the definition of 𝑘 𝑝 that at every 𝑝 P 𝐸,
+                                                          
+                     𝑛 ´1                                𝑠     1
+              @𝑣 P S      : # 𝑇 P T( 𝑝) : ∠(dir(𝑇), 𝑣) ě     ě #T( 𝑝),
+                                                         4     2
+
+which means 𝑝 is 𝑠/4-broad. By applying the result of Lemma 24, we have
+                                                          
+                                                         𝑠    3
+       # (𝑇1 , 𝑇2 ) P T(𝑥) ˆ T(𝑥) : dir(𝑇1 ), dir(𝑇2 ) ą     ě (#T( 𝑝)) 2 .
+                                                         4    4
+                                                                                  □
+
+Proof of Lemma 23. Assume that Proposition 22 is true. Let 𝜀 ą 0 be given and let
+T be a family of 𝛿-tubes that satisfies hypotheses (i)–(iv) of Proposition 20. Apply
+Lemma 25 and let 𝐸 and 𝑠 be as in the statement of that lemma. For every point
+𝑝 P 𝐸, let 𝑣 𝑝 P S𝑛´1 be as in (3.5). Define a new shading by
+
+                   𝑌 1 (𝑇) = {𝑝 P 𝑌 (𝑇) X 𝐸 : ∠(𝑣 𝑝 , dir(𝑇) ď 𝑠},
+
+and correspondingly define
+
+                             T1 ( 𝑝) = {𝑇 P T : 𝑝 P 𝑌 1 (𝑇)}.
+
+From Lemma 25 we have, for every 𝑝 P 𝐸,
+                                                 1
+                         #{𝑇 P T : 𝑝 P 𝑌 1 (𝑇)} ě #T( 𝑝),
+                                                 2
+and from this we can see that
+         ∑︁            ∫                ∫             ∑︁
+               1              1
+             |𝑌 (𝑇)| „     #T ( 𝑝) 𝑑𝑝 ≳   #T( 𝑝) 𝑑𝑝 „    |𝑌 (𝑇) X 𝐸 |.
+         𝑇 PT            𝐸                    𝐸                 𝑇 PT
+                                                                                              27
+Also from Lemma 25,
+                   ∑︁                                 1    ∑︁
+                                |𝑌 (𝑇) X 𝐸 | ≳                  |𝑌 (𝑇)|.
+                         𝑇 PT
+                                                  log(1/𝛿) 𝑇 PT
+
+Combining the above two statements, we obtain
+                      ∑︁                   1    ∑︁
+                           |𝑌 1 (𝑇)| ≳               |𝑌 (𝑇)|.                              (3.7)
+                      𝑇 PT
+                                       log(1/𝛿) 𝑇 PT
+
+Next we may choose a shading 𝑌 2 of T such that 𝑌 2 (𝑇) Ď 𝑌 1 (𝑇) for every 𝑇 P T,
+there is a number 0 ă 𝜆1 ă 1 such that
+
+                                  |𝑌 2 (𝑇)| „ 𝜆1 |𝑇 | for all 𝑇 P T
+
+and in addition            ∑︁                       1    ∑︁
+                                  |𝑌 2 (𝑇)| ≳                 |𝑌 1 (𝑇)|.                   (3.8)
+                           𝑇 PT
+                                                log(1/𝛿) 𝑇 PT
+From (3.7), (3.8) and hypothesis (ii) of Proposition 20, we can conclude that
+                                                     𝜆
+                                       𝜆1 ≳                    .                           (3.9)
+                                                (log(1/𝛿)) 2
+It is possible to cover the upper hemisphere of S𝑛´1 with „ 𝑠1´𝑛 finitely overlapping
+tiles of side length 𝑠, where a tile of side length 𝑠 means the image via the map
+           a
+𝜉 ÞÑ (𝜉, 1 ´ |𝜉 | 2 ) of translates of tiles [0, 𝑠) 𝑛´1 tiling R𝑛´1 . For each tile 𝜏 of
+radius 𝑠 covering the sphere, define
+
+                                T(𝜏) := {𝑇 P T : dir(𝑇) P 𝜏}.
+
+Let 𝜏1 and 𝜏2 be two non-adjacent tiles so dist(𝜏1 , 𝜏2 ) ą 2𝑠. If 𝑇1 P T(𝜏1 ) and
+𝑇2 P T(𝜏2 ), the angle between the tubes would be greater than 2𝑠:
+
+                                         ∠(𝑇1 , 𝑇2 ) ą 2𝑠.
+
+By the definition of the shading 𝑌 2 , this means that 𝑌 2 (𝑇1 ) X 𝑌 2 (𝑇2 ) = H. Under
+the shading 𝑌 2 , the collections T(𝜏1 ) and T(𝜏2 ) are disjoint. Within each 𝑠-tile 𝜏
+covering S𝑛´1 , there are up to (𝑠/𝛿) 𝑛´1 𝛿-tubes. Without loss of generality, we
+may assume that the center of the tile 𝜏 is the north pole of the sphere, i.e. the
+point (0, . . . , 0, 1). Perform a non-isotropic rescaling 𝜙 which takes (𝑥 1 , . . . , 𝑥 𝑛 ) ÞÑ
+(𝑥 1 /𝑠, . . . , 𝑥 𝑛´1 /𝑠, 𝑥 𝑛 ). After this rescaling, 𝜙(𝑇) is contained in the 𝑛-fold dilate of
+a 𝛿/𝑠-tube 𝑇˜ that points in the same direction as 𝑇. Define a shading 𝑌˜ for each 𝑇˜
+by
+                                              ˜ := 𝜙(𝑌 2 (𝑇)).
+                                          𝑌˜ (𝑇)
+                                                                                          28
+From (3.9), we have
+                                               ˜ „ 𝜆1 |𝑇˜ |.
+                                          |𝑌˜ (𝑇)|
+We now claim that (𝑇,    ˜ 𝑌˜ ) satisfies hypotheses (i) — (v) in the statement of Propo-
+sition 22. Hypothesis (ii) has already been shown, and hypothesis (i) holds because
+of the non-isotropic way in which the re-scaling 𝜙 was done. The family 𝑇˜ is
+(𝑘 ´ 1)-plany because the family T is assumed to be (𝑘 ´ 1)-plany. For hypothesis
+(iv), we observe that since 𝑌 (𝑇) obeys the two-ends condition with exponent 𝜀 for
+every 𝑇 P T, so does 𝑌 2 (𝑇), and it follows that 𝑌˜ (𝑇)  ˜ obeys the two-ends condition
+with exponent 𝜀 as well. To show that 𝑇,      ˜ 𝑌˜ satisfy hypothesis (v), consider that at
+every point 𝑝 P 𝑇 PT[𝜏] 𝑌 1 (𝑇), we know from Lemma 25 that
+                   Ð
+                                                                 
+                       1           1                            𝑠      3         2
+       # (𝑇1 , 𝑇2 ) P T ( 𝑝) ˆ T ( 𝑝) : ∠(dir(𝑇1 ), dir(𝑇2 )) ≳     ě # T1 ( 𝑝) .
+                                                                4      4
+Finally, we observe that after the rescaling,
+
+             ∠(dir(𝑇1 ), dir(𝑇2 )) ě 𝑠/4 implies that ∠(dir(𝑇˜1 , 𝑇˜2 ) ě 𝑐 𝜖 𝛿 𝜖
+
+for some 𝑐 𝜖 ą 0. Thus the family ( T̃, 𝑌˜ ) satisfies hypothesis (v), and by Proposition
+22, there exists 𝐶𝜀 ą 0 such that
+                          Ø                                     ∑︁
+                                       ˜ ě 𝐶𝜀 (𝛿/𝑠) 𝑛´𝑑+𝜀 𝜆 𝑑
+                                   𝑌˜ (𝑇)                                |𝑇˜ |.
+                          𝑇˜ PT̃                                𝑇˜ PT̃
+
+Undoing the rescaling 𝜙 (which has the effect of multiplying both sides of the above
+equation by 𝑠𝑛´1 ), we obtain the estimate
+
+                     Ø                                                   ∑︁
+                              𝑌 2 (𝑇) ě 𝐶𝜀 𝛿 𝑛´𝑑+𝜀 𝑠´𝑛+𝑑 ´𝜀 𝜆 𝑑                   |𝑇 |.
+                    𝑇 PT(𝜏)                                         𝑇 PT[𝜏]
+
+Sum over a collection of pairwise non-adjacent tiles covering the sphere to get
+                       Ø                                            ∑︁
+                              𝑌 2 (𝑇) ě 𝐶𝜀 𝛿 𝑛´𝑑+𝜀 𝑠´𝑛+𝑑 ´𝜖 𝜆 𝑑              |𝑇 |.
+                       𝑇 PT                                         𝑇 PT
+
+Since 𝑠 ă 1, this estimate is stronger than the desired estimate by a factor of 𝑠´𝑛+𝑑 ´𝜀 .
+This completes the proof.                                                              □
+
+3.3   Volume of a planebrush
+In this section, an estimate will be given for the volume of 𝛿-tubes in the 𝑘-
+planebrush. It will first be needed to give an estimate for the number of tubes
+contained in the 𝑘-planebrush.
+                                                                                         29
+
+
+
+
+                          Figure 3.1: A 𝑘-planebrush at a point 𝑥
+
+                                          Ð
+Definition 26 (𝑘-planebrush). If 𝑝 P       𝑇 PT 𝑌 (𝑇) and 0 ă 𝜌 ă 1, a 𝑘-planebrush at
+point 𝑝 and angle 𝜌 is a set of tubes
+
+      Tplanebrush ( 𝑝, 𝜌) = {𝑇 P T : ∠(𝑇, 𝑉 ( 𝑝)) „ 𝜌 and D𝑇 1 P T( 𝑝) : 𝑇 X 𝑇 1 ≠ H}.
+
+
+Lemma 27 (Constant multiplicity refinement). Let T be a family of 𝛿-tubes pointing
+in 𝛿-separated directions. Assume that every tube 𝑇 P T has a subset 𝑌 (𝑇) and
+0 ă 𝜆 ă 1 is a number such that |𝑌 (𝑇)| ě 𝜆|𝑇 | for every 𝑇 P T. Then there exists a
+refinement T1 Ă T and a new shading 𝑌 1 (𝑇) Ď 𝑌 (𝑇) for each 𝑇 P T1 , which satisfy
+the following properties:
+
+                                                                      Ð        1
+  i There is a dyadic number 𝜇 such that for every point 𝑥 P            𝑇 PT1 𝑌 (𝑇), 𝜇 ď
+    T(𝑥) ă 2𝜇.
+      Í         1        Í
+        𝑇 PT1 |𝑌 (𝑇)| ≳ ( 𝑇 PT |𝑌 (𝑇)|) /log(1/𝛿) .
+ ii                                              2
+
+
+iii 𝜇 ≳ 𝜆𝛿 𝑛´1 #T/|
+                      Ð
+                        𝑇 PT 𝑌 (𝑇)|.
+
+
+Proof. For every integer 𝑘 between 1 and log 𝛿1´𝑛 , let 𝐸 𝑘 Ď 𝑇 PT 𝑌 (𝑇) be the set
+                                                               Ð
+
+of points with multiplicity around 2 𝑘 , i.e.
+                               Ø                              
+                                              𝑘            𝑘+1
+                    𝐸𝑘 = 𝑝 P       𝑌 (𝑇) : 2 ď #T( 𝑝) ă 2        .
+                                   𝑇 PT
+
+For each 𝑘, define a shading 𝑌𝑘 by 𝑌𝑘 (𝑇) := 𝑌 (𝑇) X 𝐸 𝑘 . For each integer ℓ between
+0 and log(𝜆/𝛿), let T 𝑘,ℓ be the collection of tubes 𝑇 whose for which the shading
+𝑌𝑘 (𝑇) has density around 2´ℓ 𝜆, i.e.
+                                                                   
+                                   ´ℓ                     ´ℓ+1
+                 T 𝑘,ℓ = 𝑇 P T : 2 𝜆|𝑇 | ď |𝑌𝑘 (𝑇)| ă 2        𝜆|𝑇 | .
+                                                                                             30
+From the definitions of 𝑘 and ℓ, one can observe that
+
+              ∑︁                                    log(1/𝛿)
+                                                      ∑︁ log(1/𝛿)
+                                                             ∑︁
+                                         𝑛 ´1
+                     |𝑌 (𝑇)| „ #T ¨ 𝜆𝛿          „                   #T 𝑘,ℓ 2´ℓ 𝜆𝛿 𝑛´1 .
+              𝑇 PT                                   𝑘=0    ℓ=0
+
+By the pigeonhole principle, there exists at least one pair (𝑘, ℓ) that satisfies
+                                                     1
+                         #T 𝑘,ℓ 2´ℓ 𝜆𝛿´1 ≳                   #T ¨ 𝜆𝛿´1 .                  (3.10)
+                                                (log(1/𝛿)) 2
+
+Take 𝜇 = 2 𝑘 , define the shading 𝑌 1 by 𝑌𝑘 and define T1 as T 𝑘,ℓ for this choice of 𝑘 and
+ℓ. From here, points (i) and (ii) in the statement of the lemma follow immediately
+from (3.10). One can also observe that
+
+                            𝜆 ¨ #T 𝑘,ℓ ¨ 2´ℓ 𝛿 𝑛´1
+                            𝑘                             𝜆
+                      𝜇=2 ě      Ð                 ⪆ Ð             ,
+                                | 𝑇 PT 𝑌 (𝑇)|        | 𝑇 PT 𝑌 (𝑇)|
+which is statement (iii).                                                                     □
+
+Lemma 28 (Planebrush multiplicity). Let T be a family of direction-separated 𝛿-
+tubes with shading 𝑌 that obeys the hypotheses of Proposition 22. In addition,
+assume that                    ∑︁
+                                   |𝑌 (𝑇)| ≳ 𝜆.
+                                         𝑇 PT
+Then there exist an angle 𝜌 ą 0 and a point 𝑝 such that
+
+                                                     𝜆 3 𝜌 𝛿 ´1
+                            #Tplanebrush ( 𝑝, 𝜌) ⪆ Ð               .
+                                                   | 𝑇 PT 𝑌 (𝑇)| 2
+
+Proof. Let T1 , 𝑌 1 be the constant multiplicity refinement of T, 𝑌 given by Lemma
+27. Let 𝑝 be any point for which #T1 ( 𝑝) ≳ 𝜇. To see that such a point 𝑝 must exist,
+suppose to the contrary that at all points, #T1 ( 𝑝) ă 𝑐𝜇 for a fixed constant 𝑐 to be
+chosen later. Then it follows that
+                                                         Í
+               ∑︁
+                       1
+                                    Ø
+                                            1           𝑐 𝑇 PT |𝑌 (𝑇)|
+                     |𝑌 (𝑇)| ď 𝑐𝜇 ¨        𝑌 (𝑇) ă 𝑐𝜆 ≲                .        (3.11)
+               𝑇 PT1                𝑇 P T1
+                                                          log(1/𝛿) 2
+
+On the other hand, by point (ii) in Lemma 27,
+                                          Í
+                           ∑︁                   |𝑌 (𝑇)|
+                                 |𝑌 (𝑇)| ≳ 𝑇 PT
+                                   1
+                                                        .                                 (3.12)
+                           𝑇 PT1
+                                           log(1/𝛿) 2
+
+This contradicts (3.11) if the constant 𝑐 is chosen to be smaller than the implicit con-
+stant in (3.12). For such a point 𝑝, one can count the number of triples (𝑇1 , 𝑄 1 , 𝑇2 )
+                                                                                             31
+where 𝑇1 is a tube whose shading intersects 𝑝 and 𝑇2 is a tube whose shading
+intersects the shading of 𝑇1 in a 𝛿-cube 𝑄 1 . More precisely,
+
+ #{(𝑇1 , 𝑄 1 , 𝑇2 ) P T1 ˆ Q ˆ T : 𝑇1 P T1 ( 𝑝), 𝑄 1 Ď 𝑌 1 (𝑇1 ) X 𝑌 1 (𝑇2 )} ≳ 𝜇 ¨ 𝜆1 𝛿´1 ¨ 𝜇
+                                                                             ⪆ 𝜇2𝜆𝛿´1 .
+
+By the pigeonhole principle, there exists an angle 𝜌 with 𝛿 ď 𝜌 ď 1 such that
+
+#{(𝑇1 , 𝑄 1 , 𝑇2 ) P T1 ˆ Q ˆ T : 𝑇1 P T1 ( 𝑝), 𝑄 1 Ď 𝑌 1 (𝑇1 ) X 𝑌 1 (𝑇2 ), ∠(𝑇2 , 𝑉 ( 𝑝)) „ 𝜌}
+                                                                                   ⪆ 𝜇2𝜆𝛿´1 .
+
+Since the tube 𝑇1 must pass through both 𝑝 and 𝑄 1 , and since the tubes passing
+through 𝑝 are assumed to be (1, 𝛿𝜖 )-broad, it follows that the choice of 𝑄 1 determines
+𝑇1 entirely. Thus, for each 𝑄 1 , there is precisely one 𝑇1 that is a triple counted in the
+previous step.
+
+#{(𝑄 1 , 𝑇2 ) P QˆT : 𝑇1 P T1 ( 𝑝), (𝑇1 , 𝑄 1 , 𝑇2 ) is a triple in the previous step } ≳ 𝜇2𝜆𝛿´1 .
+
+Since the tube 𝑇2 makes angle 𝜌 with 𝑉 ( 𝑝), there are „ 𝜌 ´1 𝛿-cubes contained
+in 𝑇2 that are also contained in a 𝛿-neighborhood of 𝑉 ( 𝑝). Thus, for each 𝛿-tube
+𝑇2 that makes angle 𝜌 with 𝑉 ( 𝑝), there are potentially up to 𝜌 ´1 cubes 𝑄 1 for
+which (𝑄 1 , 𝑇2 ) is a pair counted in the previous statement, i.e. a pair for which
+𝑄 1 Ď 𝑌 1 (𝑇2 ) X 𝑁 𝛿 (𝑉 ( 𝑝)) and 𝑄 1 Ď 𝑌 1 (𝑇1 ) for some 𝑇1 P T( 𝑝) . It follows that
+
+#{𝑇2 P T : D𝑇1 P T( 𝑝) such that 𝑌 1 (𝑇1 ) X 𝑌 1 (𝑇2 ) ≠ H and ∠(𝑇2 , 𝑉 ( 𝑝)) „ 𝜌}
+                                                                                  ⪆ 𝜇2𝜆𝛿´1 𝜌.
+
+This precisely counts the tubes in Tplanebrush ( 𝑝, 𝜌) and demonstrates the correct
+multiplicity of tubes in the planebrush Tplanebrush ( 𝑝, 𝜌).                     □
+
+Lemma 29 (Volume of a single planebrush). Let Tplanebrush ( 𝑝, 𝜌) be a planebrush
+at point 𝑝 and angle 𝜌. Then
+                  Ø
+                           𝑌 (𝑇) ≳ 𝐶𝜖 𝛿 (𝑛´2+𝑘 ´𝑑 (𝑘))/3+𝜖 𝜆 𝑑 (𝑘)/3+1 𝜌 1/3 .
+               𝑇 PTplanebrush ( 𝑝,𝜌)
+
+
+Proof. Choose a maximal set of 𝛿/𝜌-separated points {𝛼 𝑗 } 𝑗 in the unit sphere in
+the space 𝑉 ( 𝑝) K = {𝑣 P R𝑛 : ⟨𝑣, 𝑉 ( 𝑝)⟩ = 0}, which is an (𝑛 ´ 𝑘 + 1)-dimensional
+space. For each 𝛼 𝑗 , define a 𝑘-plane 𝑉 𝑗 by 𝑉 𝑗 = span(𝑉 ( 𝑝), 𝛼 𝑗 ). The resulting
+collection of 𝑘-planes {𝑉 𝑗 } 𝑗 satisfies the following two conditions.
+                                                                                          32
+(A) Every tube 𝑇 P Tplanebrush ( 𝑝, 𝜌) is contained in N𝐶2 𝛿𝑉 𝑗 , with 𝐶2 „ 1, for some
+    𝑗.
+
+(B) If a point 𝑥 P R𝑛 satisfies dist(𝑥, 𝑉 ( 𝑝)) ě 𝐶3 𝜌), then 𝑥 P N𝐶2 𝛿𝑉 𝑗 for at most
+    „ (𝐶2 /𝐶3 ) 𝑛´ 𝑘+1 choices of 𝑘-plane 𝑉 𝑗 .
+
+To show that (A) holds, let 𝑇 P Tplanebrush ( 𝑝, 𝜌) and write dir(𝑇 1 ) = 𝑣 || + 𝑣 K ,
+where 𝑣 || P 𝑉 ( 𝑝) and 𝑣 K P (𝑉 ( 𝑝)) K . Choose 𝛼 𝑗 such that ∠(𝛼 𝑗 , 𝑣 K ) ď 𝛽/𝜌.
+This is possible because of the maximality of the set {𝛼 𝑗 }. Write 𝑣 K = 𝑣 1 + 𝑣 2 ,
+where 𝑣 1 lies in the direction of 𝛼 𝑗 and ⟨𝑣 2 , 𝛼 𝑗 ⟩ = 0. Since ∠(𝑇 1 , 𝑉 (𝑄 0 )) ď 𝜌,
+                            
+|𝑣 K | = sin ∠(𝑇 1 , 𝑉 ( 𝑝)) ≲ 𝜌. Now
+                                                              
+               sin ∠(dir(𝑇), 𝑉 𝑗 ) = |𝑣 2 | = sin ∠(𝑣 2 , 𝑣 K ) ¨ |𝑉 K | ≲ 𝛿,
+                                   
+
+
+so (A) is proved.
+
+To show (B), let a point 𝑥 satisfy dist(𝑥, 𝑉 ( 𝑝)) ě 𝐶3 𝜌). If 𝑥 = 𝑥 || + 𝑥 K , where 𝑥 ||
+lies in 𝑉 ( 𝑝) and ⟨𝑥 K , 𝑥 || ⟩ = 0, then |𝑥 K | ≳ 𝐶3 𝜌. Suppose that 𝑥 P N𝐶2 𝛿𝑉 𝑗 for some
+𝑗. Then                                    K        
+                                            𝑥            𝐶2 𝛽
+                                     dist     K
+                                                 , 𝛼𝑗 ≲       .                        (3.13)
+                                           |𝑥 |          𝐶3 𝑝
+Since the directions {𝛼 𝑗 } are 𝛿/𝜌-separated, there are only at most „ (𝐶2 /𝐶3 ) 𝑛´ 𝑘+1
+choices of 𝛼 𝑗 that can satisfy (3.13). This proves (B).
+
+For each 𝑘-plane 𝑉 𝑗 , let T 𝑗 be the family of tubes given by
+
+                         T 𝑗 = {𝑇 P T 𝑝 𝑏( 𝑝, 𝜌) : 𝑇 Ă N𝐶2 𝛿𝑉 𝑗 }.
+
+Define the set 𝐸 𝑗 by                Ø
+                              𝐸𝑗 =            𝑌 (𝑇)zN𝐶3 𝜌𝑉 (𝑄 0 ).
+                                     𝑇 PT 𝑗
+
+By the conclusion of Lemma 21, we may assume that each tube 𝑇 P T 𝑗 satisfies
+
+                         |𝑌 (𝑇) X 𝐵(𝑥, 𝐶2 𝜌)| ≲ (𝐶2 𝜌) 𝜖1 |𝑌 (𝑇)|
+
+for every 𝜖1 ą 0. By choosing 𝜖1 small enough,
+                                                        𝜆
+                                  |𝑌 (𝑇) X 𝐸 𝑗 | ≳        |𝑇 |.
+                                                        2
+Summing over all 𝑇 P T 𝑗 , we obtain
+                           ∫ ∑︁
+                                             𝜆
+                                     𝜒𝑌 (𝑇) ě 𝛽𝑛´1 #T 𝑗 .                             (3.14)
+                            𝐸 𝑗 𝑇 PT         2
+                                        𝑗
+                                                                                                                           33
+On the other hand, by applying Hölder’s inequality we obtain
+                ∫ ∑︁                 ∑︁
+                         𝜒𝑌 (𝑇) ď ||    𝜒𝑇 || 𝐿 𝑑 (𝑘 ) 1 (R𝑛 ) ¨ |𝐸 𝑗 | 1/𝑑 (𝑘) ,                                       (3.15)
+                             𝐸 𝑗 𝑇 PT                   𝑇 PT 𝑗
+                                        𝑗
+
+
+where 𝑑 (𝑘) is chosen to be the highest dimension for which a Kakeya maximal esti-
+mate is known to hold in R 𝑘 , and 𝑑 (𝑘) 1 is the Hölder conjugate of 𝑑 (𝑘). Specifically,
+                                                                     
+                                                     𝑘 2 + 𝑘 + ℓ2 ´ ℓ
+                   𝑑 (𝑘) = max min 𝑘 ´ ℓ + 2,                           .
+                          2ďℓ ď 𝑘                           2𝑘
+                                                            Í
+We will now apply a Kakeya maximal estimate to || 𝑇 PT 𝑗 𝜒𝑇 || 𝐿 𝑑 (𝑘 ) 1 . Let 𝜌𝑉 𝑗 be
+the orthogonal projection function from R𝑛 onto 𝑉 𝑗 . Since each 𝑇 P T 𝑗 satisfies
+𝑇 Ă N𝐶2 𝛿𝑉 𝑗 , we observe that ∠(𝑇, 𝑉 𝑗 ) ≲ 𝐶2 𝛿. This implies that 𝜌𝑉 𝑗 (𝑇) is a cylinder
+of radius 𝛽 and length ≳ 𝐶2´1 and is contained in a „ 𝐶2´1 -dilation of a 𝛿-tube in
+R 𝑘 . Thus, we may write
+
+                                                 ∫        ∫                            1/𝑑 (𝑘) 1
+               ∑︁                                                 ∑︁                 1ª
+          ||          𝜒𝑇 || 𝐿 𝑑 (𝑘 ) 1 (R𝑛 ) = ­              |           𝜒𝑇 | 𝑑 (𝑘) ®
+                                               ©
+               𝑇 PT 𝑗                             R 𝑛 ´ 𝑘 R 𝑘 𝑇 PT
+                                               «                       𝑗              ¬
+                                                 ∫                   ∫ ∑︁                           1/𝑑 (𝑘) 1
+                                                                                                1
+                                             =­                             |         𝜒𝑇 | 𝑑 (𝑘) ®
+                                               ©                                                  ª
+                                                  [´𝐶2 𝛿,𝐶2 𝛿] 𝑛 ´ 𝑘     𝑉 𝑗 𝑇 PT
+                                               «                                    𝑗             ¬
+                                                                 ∫ ∑︁                                     1/𝑑 (𝑘) 1
+                                                             1 ©                                       1ª
+                                             ≲ 𝛿 (𝑛´ 𝑘)/𝑑 (𝑘) ­          |        𝜒𝐶2 𝜌𝑉 𝑗 (𝑇) | 𝑑 (𝑘) ®            .
+                                                                    𝑉 𝑗 𝑇 PT
+                                                               «                𝑗                       ¬
+After applying the Kakeya maximal estimate, this gives
+            ∑︁                                         1                                     1
+         ||     𝜒𝑇 || 𝐿 𝑑 (𝑘 ) 1 (R𝑛 ) ⪅ 𝛿 (𝑛´ 𝑘)/𝑑 (𝑘) 𝛿´ 𝑘/𝑑 (𝑘)+1´𝜖 (𝛿 𝑘 ´1 #T 𝑗 ) 1/𝑑 (𝑘) .
+                 𝑇 PT 𝑗
+
+Combining this estimate with (3.14) and (3.15), we obtain
+           𝜆 𝑛 ´1                   1                                     1
+             𝛿 #T 𝑗 ⪅ 𝛿 (𝑛´ 𝑘)/𝑑 (𝑘) 𝛿´ 𝑘/𝑑 (𝑘)+1´𝜖 (𝛿 𝑘 ´1 #T 𝑗 ) 1/𝑑 (𝑘) ¨ |𝐸 𝑗 | 1/𝑑 (𝑘) ,
+           2
+which simplifies to
+                                            |𝐸 𝑗 | ⪆ 𝛿 𝑛´1𝜆 𝑑 (𝑘) 𝛿 𝑘 ´𝑑 (𝑘) #T 𝑗 .                                     (3.16)
+
+Summing (3.16) over all 𝑗 and using properties (A) and (B) above, we obtain
+
+                           Ø
+                                            𝑌 (𝑇) ⪆ 𝛿 𝑛´1𝜆 𝑑 (𝑘) 𝛿 𝑘 ´𝑑 (𝑘) #Tplanebrush ( 𝑝, 𝜌).                       (3.17)
+                   𝑇 PTplanebrush ( 𝑝,𝜌)
+                                                                                                            34
+Combining (3.17) with Lemma 28 gives
+                                                   3
+                           Ø
+                                           𝑌 (𝑇) ⪆ 𝛿 𝑛´2𝜆 𝑑 (𝑘)+3 𝛿 𝑘 ´𝑑 (𝑘) 𝜌.                        (3.18)
+                   𝑇 PTplanebrush ( 𝑝,𝜌)
+
+                                                                                                             □
+
+3.4   Proof of k-planebrush estimate
+The goal of this section is to prove Proposition 22. Below is described an algorithm
+that decomposes the set of 𝛿-tubes T into a collection of “planebrushes.”
+
+Algorithm:
+
+  Input. The input to the algorithm consists of:
+
+             (i) A number 𝛿 ą 0.
+           (ii) A family of 𝛿-tubes T with shading 𝑌 satisfying |𝑌 (𝑇)| ě 𝜆|𝑇 | for
+                every 𝑡 P T, for some number 0 ď 𝜆 ă 1.
+          (iii) A shading 𝑌 1 of T satisfying 𝑌 1 (𝑇) Ď 𝑌 (𝑇) for every 𝑇 P T and
+                                                       ∑︁                   𝜆
+                                                              |𝑌 1 (𝑇)| ě     .
+                                                       𝑇 PT
+                                                                            2
+
+          (iv) An index 𝑖, initially equal to 1.
+
+
+Output. The output of the algorithm will be:
+
+          (i) A sequence ( 𝑝𝑖 , 𝜌𝑖 )𝑖=1
+                                    𝑁 where 𝑝 is a point in R𝑛 and 0 ă 𝜌 ă 1 for
+                                             𝑖                          𝑖
+              every 1 ď 𝑖 ď 𝑁
+                                             𝑁 ´1
+          (ii) A collection of shadings {𝑌𝑖 }𝑖=0  of T
+
+        together satisfying the following properties:
+                                                       Ð
+        (P1) The sets (“planebrushes”)                    𝑇 PTplanebrush ( 𝑝 𝑖 ,𝜌𝑖 ) 𝑌𝑖 ´1 (𝑇) are pairwise dis-
+             joint, and
+        (P2) The “planebrushes” together cover more than half the “incidences”,
+             i.e.
+                              𝑁
+                            ∑︁        ∑︁                   𝜆
+                                               |𝑌𝑖´1 (𝑇)| ě .
+                                                           2
+                             𝑖=1             𝑇 PTplanebrush ( 𝑝 𝑖 ,𝜌𝑖 )
+                                                                                                   35
+The algorithm consists of the following steps:
+
+Step 1. Apply Lemma 28 to the family (T𝑖´1 , 𝑌𝑖´1 ) to obtain 𝑝𝑖 and 𝜌𝑖 such that
+
+                                                                   𝜆 3 𝜌 𝑖 𝛿 ´1
+                                      #Tplanebrush ( 𝑝𝑖 , 𝜌𝑖 ) ⪆ Ð               .
+                                                                 | 𝑇 PT 𝑌 (𝑇)| 2
+
+Step 2. Define T𝑖 := T𝑖´1 zTplanebrush ( 𝑝𝑖 , 𝜌𝑖 ). Define the shading 𝑌𝑖 as follows:
+
+                                         𝑌𝑖 (𝑇) = 𝑌𝑖´1 (𝑇)z𝑁 𝜌𝑖 (𝑉 ( 𝑝𝑖 )).
+
+        For any angle 𝜃, the number of tubes making angle 𝜃 or less to the (𝑘 ´ 1)-
+        plane 𝑉 ( 𝑝𝑖 ) is ≲ 𝜃 𝑖´𝑛+𝑘 ´1 𝛿1´𝑛 . If a tube 𝑇 P T𝑖 makes an angle 𝜃 to
+        the (𝑘 ´ 1)-plane 𝑉 ( 𝑝𝑖 ), then a 𝜌𝑖 /𝜃-fraction of 𝑇 is contained in a 𝜌𝑖 -
+        neighborhood of 𝑉 ( 𝑝𝑖 ). Therefore the maximum number of incidences
+        removed is
+        ∑︁        ∑︁                                    ∑︁          𝜌𝑖
+                            |𝑌𝑖 (𝑇) X 𝑁 𝜌 (𝑉 ( 𝑝𝑖 ))| ď    𝜃 ´𝑛+𝑘 ´1 𝛿 𝑛´1 ď 2𝜌𝑖 𝛿 𝑘 ´1 .
+                                                                    𝜃
+          𝜃  𝑇 PT,∠(𝑇,𝑉 ( 𝑝 𝑖 )) „𝜃                      𝜃
+
+        On the other hand, by the two ends condition,
+        ∑︁       ∑︁                                  ∑︁            𝜌 𝜖
+                                                        𝜃 ´𝑛+𝑘 ´1        𝜆𝛿 𝑛´1 ď 2𝜌𝑖𝜖 𝜆𝛿 𝑘 ´1 .
+                                                                     𝑖
+                           |𝑌𝑖 (𝑇)X𝑁 𝜌 (𝑉 ( 𝑝𝑖 ))| ď
+                                                                    𝜃
+         𝜃  𝑇 PT,∠(𝑇,𝑉 ( 𝑝 𝑖 )) „𝜃                    𝜃
+
+        Taking the geometric mean of the two estimates above,
+              ∑︁       ∑︁
+                                |𝑌𝑖 (𝑇) X 𝑁 𝜌 (𝑉 ( 𝑝𝑖 ))| ď 2𝜌𝑖(1+𝜖)/2𝜆1/2 𝛿 𝑘 ´1 .
+                   𝜃 𝑇 PT,∠(𝑇,𝑉 ( 𝑝 𝑖 )) „𝜃
+
+
+        Terminate the algorithm if
+                                             𝑖
+                                            ∑︁                               𝜆
+                                                  𝜌 (1+𝜖)/2
+                                                    𝑗       𝜆1/2 𝛿 𝑘 ´1 ě      ,
+                                            𝑗=1
+                                                                             2
+
+        otherwise we observe that
+                                                                     𝑖
+                         ∑︁                    ∑︁                   ∑︁                       𝜆
+                                 |𝑌𝑖 (𝑇)| ě            |𝑌0 (𝑇)| ´         𝜌 (1+𝜖)/2
+                                                                            𝑗       𝜆1/2 ě     ,
+                         𝑇 PT𝑖                𝑇 P T0                𝑗=1
+                                                                                             2
+
+        so we return to Step 1 with 𝑖 increased by 1 and repeat.
+                                                                                                                36
+Proof of Proposition 22. Define T0 := T and 𝑌0 := 𝑌 . Then apply the above
+algorithm with beginning input (T0 , 𝑌0 ) and starting with 𝑖 = 1.
+
+After applying the algorithm, a collection of “planebrushes” ( 𝑝𝑖 , 𝜌𝑖 )𝑖=1
+                                                                        𝑁 is obtained,
+
+and from (P1), it follows that
+
+                                Ø                  𝑁
+                                                  ∑︁                  Ø
+                            |          𝑌 (𝑇)| ě         |                                𝑌𝑖´1 (𝑇)|.
+                                𝑇 PT              𝑖=1       𝑇 PTplanebrush ( 𝑝 𝑖 ,𝜌𝑖 )
+
+By applying Lemma 29,
+                                                                                             𝑁
+                                                                                                          !
+                   Ø                                                                        ∑︁
+               |          𝑌 (𝑇)| ě 𝐶𝜖 𝛿 (𝑛´2+𝑘 ´𝑑 (𝑘))/3+𝜖 𝜆 𝑑 (𝑘)/3+1                            𝜌𝑖𝑑 (𝑘)/3 .
+                   𝑇 PT                                                                     𝑖=1
+
+Since
+                                    𝑖              𝑖
+                                   ∑︁             ∑︁                         1
+                                           𝑘
+                                         𝜌 ě          𝜌 (1+𝜖)/2
+                                                        𝑗       𝜆1/2 𝛿 𝑘 ´1 ě ,
+                                   𝑗=1            𝑗=1
+                                                                             2
+          Í𝑁    𝑑 (𝑘)/3
+we have    𝑖=1 𝜌𝑖       ě 21 , and this completes the proof.                                                    □
+
+Proof of Proposition 18. This is given by combining Proposition 22 with Lemma
+21 and Lemma 23.                                                            □
+
+Proof of Proposition 17. Let 𝜀 ą 0 and let T, 𝑌 be as stated in the hypothesis of the
+proposition. By applying Proposition 18 with
+                                                                       ?
+                                               𝑑 (𝑘) = (2 ´             2)𝑘,
+
+which is the estimate given by Hickman-Rogers-Zhang, we obtain the estimate
+                  Ø                  ?                ?        ∑︁
+                |   𝑌 (𝑇)| ≳ 𝛿 (𝑛´2+( 2´1)𝑘)/3+𝜀 𝜆 (2´ 2)𝑘/3+1    |𝑇 |,
+                     𝑇 PT                                                                         𝑇 PT
+
+which is the result needed.                                                                                     □
+                                                                                     37
+                                      Chapter 4
+
+
+           NEW KAKEYA ESTIMATE FOR STICKY SETS
+
+
+Definition 30 (Sticky set). A set T of 𝛿-tubes pointing in 𝛿-separated directions is
+sticky if, for any 𝜀 ą 0, whenever 𝛿1´𝜀 ≲ 𝜃 ă 1, there is a family T𝜃 of 𝜃-tubes
+pointing in 𝜃-separated directions so that T and T𝜃 satisfy the following conditions:
+
+ i. #T ≳ 𝛿1´𝑛+𝜀 ,
+
+ ii. #T𝜃 ≳ 𝜃 1´𝑛+𝜀 , and
+
+iii. T can be partitioned into sets
+
+                               T[𝑇𝜃 ] := {𝑇 P T : 𝑇 Ď 𝑇𝜃 },
+
+    with
+                                  #T[𝑇𝜃 ] ≳ (𝛿/𝜃) 1´𝑛+𝜀
+
+    for every 𝑇𝜃 P T𝜃 .
+
+The family T𝜃 in this definition will be called the 𝜃-parents of T.
+
+The major result of the this chapter is the following proposition.
+
+Proposition 31. For every 𝜀 ą 0, whenever T is a sticky family of 𝛿-tubes with
+shading 𝑌 , which satisfies |𝑌 (𝑇)| ≳ 𝛿 𝜀 |𝑇 | for all 𝑇 P T,
+                                 Ø
+                               |    𝑌 (𝑇)| ≳ 𝛿 𝑛´𝑑+(𝑑+1)𝜀 ,
+                               𝑇 PT
+
+where
+                           𝑑 ď 0.60376707287 𝑛 + O (1).
+
+Sections 4.1, 4.2 and 4.3 are devoted to the proof of this proposition. Section 4.4 in
+this chapter gives the relation between sticky sets as defined in this thesis and sticky
+Besicovitch sets as defined recently by [23]. Section 4.5 proves an x-ray transform
+estimate as a corollary of Zahl’s 𝑘-linear Kakeya estimate in [28].
+                                                                                     38
+4.1   Shading and refinement of sticky sets
+
+Lemma 32 (Shading of sticky sets). Let 𝜖 ą 0 and let T be a sticky family of 𝛿-tubes.
+Suppose that every 𝑇 P T has a shading 𝑌 (𝑇) Ď 𝑇 such that
+
+                                    |𝑌 (𝑇)| ě 𝐶𝜀 𝛿 𝜀 |𝑇 |.
+
+Then for any 𝛿 ď 𝜃 ď 𝛿1´𝜖 , there is a shading 𝑌 of the 𝜃-parent family T𝜃 such that
+for every 𝑇𝜃 P T𝜃 ,
+                             |𝑌 (𝑇𝜃 )| ě 𝐶𝜀 𝜃 𝜀/(1´𝜀) |𝑇𝜃 |
+and 𝑌 (𝑇) Ď 𝑌 (𝑇𝜃 ) for every 𝑇 P T[𝑇𝜃 ].
+
+Proof. For any 𝑇𝜃 P T𝜃 , define a shading by
+
+                            Ø                    © Ø
+                                                                         
+                𝑌 (𝑇𝜃 ) =                                     𝑌 (𝑇) ® ≠ H .
+                                                                    ª
+                                 𝑄 𝜃 : 𝑄 𝜃 X 𝑇𝜃 X ­
+                                                  «𝑇 PT[𝑇 𝜃 ]       ¬
+Since |𝑌 (𝑇)| ě 𝐶𝜀 𝛿 𝜖 |𝑇 | for every 𝑇 P T[𝑇𝜃 ], there are at least 𝐶𝜀 𝛿´1+𝜖 𝛿-cubes in
+each 𝑌 (𝑇). Thus,
+
+                 #{(𝑄, 𝑇) : 𝑇 P T[𝑇𝜃 ], 𝑄 Ď 𝑌 (𝑇)} „ 𝐶𝜀 𝜃 𝑛´1 𝛿´𝑛+𝜀 .
+
+Each 𝜃-cube 𝑄 𝜃 Ď 𝑇𝜃 contains at most (𝜃/𝛿) 𝛿-cubes in any one 𝛿-tube 𝑇, so
+
+           #{(𝑄 𝜃 , 𝑇) : 𝑇 P T[𝑇𝜃 ], 𝑄 𝜃 X 𝑇 ≠ H} ď 𝐶𝜀 𝜃 ´1 (𝜃 𝑛´1 𝛿1´𝑛+𝜀 ).
+
+Since there are „ 𝜃 𝑛´1´𝜀 𝛿1´𝑛+𝜀 tubes in T[𝑇𝜃 ], we can conclude that there are at
+least
+                                    „ 𝛿 𝜀 𝜃 ´1
+𝜃-cubes 𝑄 𝜃 in 𝑌 (𝑇𝜃 ). Since 𝜃 ď 𝛿1´𝜀 , we have
+
+                               𝛿 𝜀 ď 𝜃 𝜀 ď (𝛿1´𝜀 ) 𝜀 = 𝛿 𝑐𝜀 ,
+
+where 𝑐 = 1 ´ 𝜀. This shows that |𝑌 (𝑇𝜃 )| ≳ 𝛿 𝜀/𝑐 .                                  □
+
+Remark 33. Lemma 32 will need to be applied inductively, by covering a family T
+of 𝛿-tubes by 𝛿1´𝜀 -tubes, and then covering these by (𝛿1´𝜀 ) 1´𝜀 -tubes, and so on,
+until we can work with a family of 𝛽-tubes, where 𝛽 „ 1. This means that Lemma
+32 will be applied log(1/𝛿) many times. For small enough 𝛿,
+                                                                1
+                            (1 ´ 𝜀) log(1/𝛿) ď (1 ´ 𝜀) 1/𝜀 ≲      .
+                                                                𝑒
+                                                                                       39
+Therefore
+                                       1
+                                                  ≳ 𝑒,
+                                 (1 ´ 𝜀) log(1/𝛿)
+and the family of 𝛽-tubes will have a shading of density 𝛽 𝑒𝜀 .
+
+A refinement of a set of 𝛿-tubes T with shading 𝑌 is a set of 𝛿-tubes T1 with shading
+𝑌 1 such that T1 Ď T, 𝑌 (𝑇) Ď 𝑌 1 (𝑇) for every 𝑇 P T1 , and
+                          ∑︁
+                                1             1    ∑︁
+                              |𝑌 (𝑇)| ≳                 |𝑌 (𝑇)|.
+                            1
+                                          log(1/𝛿) 𝑇 PT
+                         𝑇 PT
+Lemma 34. Let T be a sticky family of tubes with shading 𝑌 . Suppose that, for
+any 𝜀 ą 0, 𝑌 satisfies the condition |𝑌 (𝑇)| ≳ 𝛿 𝜀 |𝑇 | for every 𝑇 P T. If T1 , 𝑌 1 is a
+refinement of T, 𝑌 , then T1 is also sticky.
+
+Proof. Let 𝜀 ą 0 be given. Suppose T be a sticky family of tubes with shading 𝑌
+satisfying
+                               |𝑌 (𝑇)| ≳ 𝛿 𝜀 |𝑇 |
+for every 𝑇 P T. Suppose that T1 , 𝑌 1 is a refinement of T, 𝑌 , i.e. T1 Ď T and
+𝑌 1 (𝑇) Ď 𝑌 (𝑇) for every 𝑇 P T1 and
+                          ∑︁                  1    ∑︁
+                              |𝑌 1 (𝑇)| ≳               |𝑌 (𝑇)|.
+                            1
+                                          log(1/𝛿) 𝑇 PT
+                         𝑇 PT
+
+First, consider the cardinality of T1 . Since
+                               ∑︁
+                                   |𝑌 1 (𝑇)| ≳ 𝛿 𝑛´1+2𝜀 #T,
+                                 𝑇 P T1
+we know that
+                                  #T1 ≳ 𝛿2𝜀 #T ≳ 𝛿1´𝑛+3𝜀 .
+Next, let 𝛿1´𝜀 ě 𝜃 ă 1 be any number and let T𝜃 be the 𝜃-parent family of T. Since
+T1 is a subset of T, there is an inherited partition of T1 into sets
+
+                                T1 [𝑇𝜃 ] = {𝑇 P T1 : 𝑇 Ď 𝑇𝜃 }.
+
+Now define a refinement T1𝜃 Ď 𝑇𝜃 by
+
+                      T1𝜃 = {𝑇𝜃 P T𝜃 : T1 [𝑇𝜃 ] ≳ 2(𝛿/𝜃) 1´𝑛+3𝜀 }.
+
+Since #T1 ≳ 𝛿1´𝑛+3𝜀 , it follows that
+                                            1
+                                  # T𝜃 zT1𝜃 ≲ 𝜃 1´𝑛+3𝜀 ,
+                                             2
+so #T1𝜃 ≳ 12 𝜃 1´𝑛+3𝜀 , which makes T1𝜃 a valid set of 𝜃-parents for T1 . This proves that
+T𝜃 is sticky.                                                                           □
+                                                                                      40
+4.2   Extremal sticky sets
+The following definitions build up the concept of an “extremal sticky set,” which
+will be used in the following propositions to prove a Hausdorff dimension estimate
+for sticky sets of 𝛿-tubes. Define 𝑀 (𝛿) by
+                                                 Ø
+                                𝑀 (𝛿) := inf            𝑌 (𝑇)
+                                           T,𝑌
+                                                 𝑇 PT
+
+where the infimum is taken over all sets T, 𝑌 satisfying the following conditions:
+
+  i. T is a sticky set of 𝛿 tubes, and
+
+ ii. 𝑌 is a shading of T satisfying |𝑌 (𝑇)| ≳ 𝛿 𝜀 |𝑇 | for every 𝑇 P T.
+
+Define 𝜎 by
+                                                 log 𝑀 (𝛿)
+                               𝜎 := lim sup                .
+                                         𝛿 Ñ0      log 𝛿
+Definition 35 (Extremal sticky set). For any 𝜀 ą 0, if T is a sticky set of 𝛿-tubes
+with shading 𝑌 satisfying, firstly, |𝑌 (𝑇)| ≳ 𝛿 𝜀 |𝑇 | for every 𝑇 P T, and secondly,
+                               Ø
+                             |     𝑌 (𝑇)| ≲ 𝛿 𝑛´𝜎+𝜀 (𝛿 𝜀 ) 𝜎 ,                        (˚)
+                              𝑇 PT
+
+then T will be called an 𝜀-extremal sticky set, or just an 𝜀-extremal set.
+
+From the definition of 𝜎, it is immediate that 𝜀-extremal sets of 𝛿-tubes exist, if
+𝛿 is small enough, for every 𝜀 ą 0. The following two lemmas will show that
+𝜀-extremal sticky sets exhibit a kind of self-similarity, provided 𝜀 is small enough.
+The following notation will be used in the lemmas.
+
+Notation. For any point 𝑥 P R𝑛 , we define:
+
+                           T𝜃 (𝑥) := {𝑇𝜃 P T𝜃 : 𝑥 P 𝑌𝜃 (𝑇𝜃 )}
+
+                     and    T[𝑇𝜃 ] (𝑥) := {𝑇 P T[𝑇𝜃 ] : 𝑥 P 𝑌 (𝑇)}.
+
+The following notation will be used to denote multiplicity:
+
+                                     𝜇 𝛿 (𝑥) := #T(𝑥),
+
+                                     𝜇𝜃 (𝑥) := #T𝜃 (𝑥),
+
+                             and 𝜇 𝛿 [𝑇𝜃 ] (𝑥) := #T[𝑇𝜃 ] (𝑥).
+                                                                                           41
+Lemma 36 (Multiplicities in extremal sticky sets). There exists 𝜀0 ą 0 such that,
+for every 0 ă 𝜀 ă 𝜀0 , if T is an 𝜀-extremal family of 𝛿-tubes with shading 𝑌 , then
+there exists a refined shading 𝑌 1 of T (i.e. 𝑌 1 (𝑇) Ď 𝑌 (𝑇) for every 𝑇 P T) such that
+
+                                            |𝑌 1 (𝑇)| ≳ 𝛿2𝜀 |𝑇 |
+
+for every 𝑇 P T, and whenever 𝜃 is a number satisfying 𝛿 ă 𝜃 ď 𝛿1´𝜀 , there is a
+family of 𝜃-tubes T𝜃 with shading 𝑌𝜃 such that
+
+ (i) (Fine multiplicity) 𝜇 𝛿 ( 𝑝) ≳ 𝛿´𝑛+𝜎´𝜀 .
+
+ (ii) (Coarse multiplicity) 𝜇𝜃 ( 𝑝) ≳ 𝜃 ´𝑛+𝜎´𝜀 .
+
+(iii) (Inner multiplicity) 𝜇 𝛿 [𝑇𝜃 ] ( 𝑝) ≳ (𝜃/𝛿) ´𝑛+𝜎´𝜀 .
+
+Proof. Let 𝜀 ą 0 and suppose that T is an 𝜀-extremal set of 𝛿-tubes with shading 𝑌 .
+Let T1 , 𝑌1 be a constant multiplicity refinement of (T, 𝑌 ) with multiplicity 𝜇 𝛿 . The
+details of how to obtain this refinement are given below.
+
+For every positive integer 𝑘, let 𝐸 𝑘 be the set of points at which the multiplicity of
+𝛿-tubes in T is „ 2 𝑘 , i.e.
+                                Ø
+                     𝐸 𝑘 = {𝑥 P     𝑌 (𝑇) : 2𝑘 ´1 ă #T(𝑥) ď 2 𝑘 }.
+                                         𝑇 PT
+        Í                           Í
+            𝑘 PN |𝐸 𝑘 | ¨ 2         𝑇 PT |𝑌 (𝑇)| ≳ 𝛿 , there is an integer 𝑘 such that
+Since                         𝑘 „                   𝜀
+
+                                                             1
+                                        |𝐸 𝑘 | ¨ 2 𝑘 ≳            𝛿𝜀 .
+                                                         log(1/𝛿)
+Set 𝜇 𝛿 := 2 𝑘 for this value of 𝑘. Now define a new shading 𝑌1 of T by
+
+                                    𝑌1 (𝑇) = 𝑌 (𝑇) X 𝐸 𝑘 ,       @𝑇 P T.
+
+For every 0 ă 𝜆 ă 1, define a new family T1,𝜆 by
+
+                               T1,𝜆 = {𝑇 P T : 𝜆|𝑇 | ď |𝑌1 (𝑇)| ă 2𝜆|𝑇 |}.
+
+By the pigeonhole principle, there exists some 𝜆 such that
+              ∑︁                   1      ∑︁                 1
+                   |𝑌1 (𝑇)| ě                 |𝑌1 (𝑇)| ≳          2
+                                                                    𝛿𝜀 .                 (4.1)
+             𝑇 PT
+                               log(𝜃/𝛿)   𝑇 T
+                                                         log(1/𝛿)
+                         1,𝜆                             P
+
+Let T1 := T1,𝜆 for this chosen value of 𝜆, and further observe from (4.1) that
+                                                      1
+                                           𝜆≳                𝛿𝜀 .
+                                                 (log(1/𝛿) 2
+                                                                                        42
+This shows how to obtain the constant multiplicity refinement, and we now need to
+show that this refinement obeys the multiplicity bound in part (i) in the statement of
+this lemma. Using the hypothesis that T is an 𝜀-extremal set, we see that
+                       Ø              Ø
+                     |    𝑌1 (𝑇)| ď |   𝑌 (𝑇)| ≲ 𝛿 𝑛´𝜎+𝜖 (𝛿 𝜀 ) 𝜎 .
+                       𝑇 PT1                 𝑇 PT
+
+On the other hand, from the definition of 𝜎 and because T1 is also a sticky set by
+Lemma 34,                   Ø
+                          |    𝑌1 (𝑇)| ≳ 𝛿 𝑛´𝜎+𝜖 (𝛿 𝜀 ) 𝜎 .
+                                 𝑇 PT1
+
+Since                            Ø                   ∑︁
+                        𝜇𝛿 ¨ |           𝑌1 (𝑇)| „           |𝑌1 (𝑇)| ≳ 𝛿2𝜀 ,
+                                 𝑇 PT1               𝑇 PT1
+
+we conclude that
+                                   𝜇 𝛿 ≳ 𝛿´𝑛+𝜎´𝜖 (𝛿 𝜀 ) 1´𝜎 .                        (4.2)
+
+Fix a tube 𝑇𝜃 P T𝜃 and consider the set of 𝛿-tubes T1 [𝑇𝜃 ] with shading 𝑌 1 . Let T1 [𝑇𝜃 ]
+be a constant multiplicity refinement of T1 [𝑇𝜃 ] with shading 𝑌1 and multiplicity
+𝜇 𝛿 [𝑇𝜃 ]. (The details of how to obtain the constant multiplicity refinement are very
+similar to those given in detail for T above, so they are not repeated.) We will prove
+an upper bound on 𝜇 𝛿 [𝑇𝜃 ] by observing the structure of the set T1 [𝑇𝜃 ].
+
+Let 𝑒 = dir(𝑇𝜃 ). Let 𝜙 : R𝑛 Ñ R𝑛 be the anisotropic rescaling defined by
+
+                                                         𝑥 ¨ 𝑒K
+                                    𝜙(𝑥) = 𝑥 ¨ 𝑒 +              .
+                                                            𝜃
+Observe that 𝜙(𝑇𝜃 ) equals a cylinder of radius 1 and length 1. Every 𝛿-tube 𝑇 in
+T1 [𝑇𝜃 ] no longer has the shape of a tube. Since ∠(dir(𝑇), 𝑒) ≲ 𝜃, we know that
+|dir(𝑇) ¨ 𝑒 K | ≲ 𝜃, and thus |𝜙(dir(𝑇))| ď 2. This implies that 𝜙(𝑇) is contained in
+the 2-fold dilate of a 𝛿/𝜃-tube 𝑇˜ which has the same center as 𝑇 but points in the
+direction as the vector 𝜙(dir(𝑇)). Similarly 𝑇˜ is contained in the 2-fold dilate of
+𝜙(𝑇). Through the identification 𝜙(𝑇) ÞÑ 𝑇,  ˜ one may speak of 𝜙(𝑇) as a 𝛿/𝜃-tube,
+which we will now do by an abuse of notation. Let T̃𝛿/𝜃 denote the collection of
+𝛿/𝜃-tubes 𝜙(𝑇) contained in 𝜙(𝑇𝜃 ).
+
+Since T1 [𝑇𝜃 ] consists of tubes pointing in 𝛿-separated directions, 𝑇˜𝛿/𝜃 consists of
+(𝛿/𝜃)-tubes which are (𝛿/𝜃)-separated, It will be now shown that T̃𝛿/𝜃 is a sticky
+family of 𝛿/𝜃-tubes. To see this, consider the set T1 [𝑇𝜃 ] and let 𝜂 be an “intermediate”
+scale, i.e. let 𝛿 ă 𝜂 ă 𝜃. Since T is sticky, there is an 𝑒𝑡𝑎-parent family T𝜂 of
+                                                                                           43
+𝜂-tubes covering every 𝑇 P T. There are „ 𝜂1´𝑛+𝜖 𝜂-tubes in T𝜂 , which means that
+for all except at most 𝜃 ´𝜖 𝜃-tubes 𝑇𝜃 , there are 𝜃 𝑛´1 𝜂1´𝑛 𝜂-tubes covering all T(𝑇𝜃 ).
+Finally, observe that if an 𝜂-tube 𝑇𝜂 contains a 𝛿-tube 𝑇 P T1 [𝑇𝜃 ], then ∠(𝑇𝜂 , 𝑇𝜃 ) ≲ 𝜃,
+and thus 𝑇𝜂 is contained in a 2-fold dilate of 𝑇𝜃 .
+
+Applying the rescaling 𝜙 to each 𝑇𝜂 , one sees that 𝜙(𝑇𝜂 ) is an 𝜂/𝜃-tube containing
+« 𝜂 𝑛´1 (𝛿/𝜃) 1´𝑛 (𝛿/𝜃)-tubes in it. This shows that the family 𝑇˜𝛿/𝜃 is sticky.
+
+For every 𝑇˜ P T̃𝛿/𝜃 , let 𝑌˜ be the shading given by
+
+                                               ˜ = 𝜙(𝑌1 (𝑇)).
+                                           𝑌˜ (𝑇)
+
+By the definition of 𝜎, and also because |𝑌 (𝑇)| ≳ 𝛿2𝜀 |𝑇 | for every 𝑇 P T[𝑇𝜃 ], we
+know that                 Ø
+                        |          ˜ ≳ (𝛿/𝜃) 𝑛´𝜎+𝜖 (𝛿2𝜀 ) 𝜎 .
+                               𝑌˜ (𝑇)|
+                             𝑇˜ PT̃ 𝛿/𝜃
+
+Since                                  Ø                      ∑︁
+                     𝜇 𝛿 [𝑇𝜃 ] ¨ |                𝑌˜ (𝑇)|
+                                                      ˜ «                    ˜ „ 𝛿2𝜀 ,
+                                                                        |𝑌˜ (𝑇)|
+                                     𝑇˜ PT̃ 𝛿/𝜃             𝑇˜ P𝑇˜𝛿/𝜃
+
+we conclude that
+                            𝜇 𝛿 [𝑇𝜃 ] ≲ (𝛿/𝜃) ´𝑛+𝜎´2𝜀 (𝛿2𝜀 ) 1´𝜎 .                       (4.3)
+
+Now consider the set of tubes T𝜃 , which is the 𝜃-parent family to the set T1 . Let 𝑌𝜃
+be the shading for T𝜃 that is given by applying Lemma 32 to (T1 , 𝑌 1 ). Let T𝜃,1 , 𝑌𝜃,1
+be a constant multiplicity refinement of (T𝜃 , 𝑌𝜃 ) with multiplicity 𝜇𝜃 . Then since
+T𝜃,1 is sticky, we have, using the definition of 𝜎 as above,
+
+                                      𝜇𝜃 ≲ 𝜃 ´𝑛+𝜎´𝜖 (𝜃 𝑒𝜖 ) 1´𝜎 .                        (4.4)
+
+
+Finally, by taking another refinment of T𝜃,2 of T𝜃,1 , it is possible to ensure that for
+all 𝑇𝜃 P T𝜃,2 ,
+                                 𝜇 𝛿 [𝑇𝜃 ] „ 𝜇 𝛿 [T𝜃 ]
+
+for a constant 𝜇 𝛿 [T𝜃 ], which also satisfies
+
+                            𝜇 𝛿 [T𝜃 ] ≲ (𝛿/𝜃) ´𝑛+𝜎´2𝜀 (𝛿2𝜀 ) 1´𝜎 .                       (4.5)
+
+We will use the observation that at a point 𝑥,
+
+                                  𝜇 𝛿 (𝑥) ď 𝜇𝜃 (𝑥) ¨ 𝜇 𝛿 [𝑇𝜃 ] (𝑥).
+                                                                                            44
+For this observation to be applicable, it is necessary to take a refinement T2 , 𝑌2 of
+T1 , 𝑌1 such that           Ø                Ø
+                                𝑌2 (𝑇2 ) Ď        𝑌𝜃 (𝑇𝜃 ).
+                                     𝑇 P T2              𝑇𝜃 PT 𝜃 ,2
+
+Now putting together (4.2), (4.4) and (4.5), and using the observation at any point
+𝑥, and for any tube 𝑇𝜃 P T𝜃 , we can conclude the following statements:
+
+                                         𝜇 𝛿 ≳ 𝛿´𝑛+𝜎´𝜖 (𝛿 𝜀 ) 1´𝜎
+
+                                         𝜇𝜃 ≳ 𝜃 ´𝑛+𝜎´𝜖 (𝛿 𝜀 ) 1´𝜎
+
+                               𝜇 𝛿 [T𝜃 ] (𝑥) ≳ (𝛿/𝜃) ´𝑛+𝜎´𝜀 (𝛿 𝜀 ) 1´𝜎 .
+
+                                                                                             □
+
+Lemma 37 (Self-similarity of extremal sticky sets). There exists 𝜀0 ą 0 such that
+for any 0 ă 𝜀 ă 𝜀0 , if T is an 𝜀-extremal family of 𝛿-tubes with shading 𝑌 , then the
+𝜃-parent family T𝜃 , with the induced shading from Lemma 32, is 𝜀(1 ´ 𝜀)-extremal,
+provided 𝛿 ă 𝜃 ď 𝛿1´𝜀 .
+
+Proof. This is a direct consequence of Lemma 36. Let 𝜀 ą 0 and suppose that T
+is an 𝜀-extremal family of 𝛿-tubes with shading 𝑌 . Let T𝜃 be the 𝜃-parent set of T
+and let 𝑌𝜃 be the shading given by Lemma 32. By Lemma 36, there is a refinement
+T1 , 𝑌 1 of T, 𝑌 and a refinement T1𝜃 , 𝑌𝜃1 of T𝜃 , 𝑌𝜃 such that for all 𝑥 P 𝑇 PT1 𝑌 1 (𝑇), and
+                                                                            Ð
+
+any 𝑇𝜃 P T1𝜃 (𝑥),
+
+                                      𝜇(𝑥) „ 𝜇 ≳ 𝛿´𝑛+𝜎´𝜀
+                                     𝜇𝜃 (𝑥) „ 𝜇𝜃 ≳ 𝜃 ´𝑛+𝜎´𝜀
+                          𝜇 𝛿 [𝑇𝜃 ] (𝑥) „ 𝜇 𝛿 [T1𝜃 ] ≳ (𝛿/𝜃) ´𝑛+𝜎´𝜀 ,
+
+for some numbers 𝜇, 𝜇𝜃 and 𝜇 𝛿 [T1𝜃 ]. Since we have
+                    Ø             ∑︁                    ∑︁
+             𝜇𝜃 ¨ |   𝑌 1 (𝑇)| „        |𝑌 1 (𝑇)| ≳ 𝛿 𝜀    |𝑌 (𝑇)| ≳ 𝛿2𝜀 ,
+                      𝑇 P T1                    𝑇 PT1                 𝑇 PT
+
+it follows that                      Ø
+                                 |           𝑌 1 (𝑇)| ≲ 𝜃 2𝜀(1´𝜀) 𝜃 𝑛´𝜎+𝜀 ,
+                                     𝑇 PT1
+which is the desired conclusion.                                                             □
+                                                                                                45
+Lemma 38 (Balanced cover). For any 𝜀 ą 0, if T is an 𝜀-extremal sticky set of
+𝛿-tubes with shading 𝑌 and if T𝜃 is the 𝜃-parent set of T for some 𝛿1´𝜀 ď 𝜃 ď 𝛿1´2𝜀 ,
+and if 𝑌𝜃 is the shading of T𝜃 induced by Lemma 32, then there are refinements
+(T1 , 𝑌 1 ) of (T, 𝑌 ) and (T1𝜃 , 𝑌𝜃1 ) of (T𝜃 , 𝑌𝜃 ) such that every 𝜃-cube 𝑄 𝜃 P 𝑇𝜃 PT1 𝑌𝜃1 (𝑇𝜃 )
+                                                                                  Ð
+                                                                                        𝜃
+contains „ (𝜃/𝛿) 𝜎´𝜀 𝛿-cubes in 𝑇 PT 𝑌 (𝑇).
+                                            Ð
+
+
+Proof. Let 𝜀 ą 0 be given. Let T, 𝑌 , T𝜃 and 𝑌𝜃 be as described in the hypothesis in
+the lemma statement. Since (T, 𝑌 ) is 𝜀-extremal, the number of 𝛿-cubes contained
+in 𝑇 PT 𝑌 (𝑇) is ≲ 𝛿´𝜎+𝜀 . By Lemma 37, the number of 𝜃-cubes in 𝑇𝜃 PT 𝜃 𝑌𝜃 (𝑇𝜃 )
+   Ð                                                                  Ð
+
+is ≲ 𝜃 ´𝜎+𝜀 . By dyadic pigeonholing, there is a set 𝐸 Ď 𝑇𝜃 PT 𝜃 𝑌𝜃 (𝑇𝜃 ) such that
+                                                              Ð
+
+every 𝜃-cube 𝑄 𝜃 contained in 𝐸 contains „ 𝑁 𝛿-cubes and
+                       ∑︁                         ∑︁
+                            |𝑌𝜃 (𝑇𝜃 ) X 𝐸 | ≳ 𝜃 𝜀    |𝑌𝜃 (𝑇𝜃 )|.
+                           𝑇𝜃 PT 𝜃                       𝑇 PT 𝜃
+
+Define a new shading of T𝜃 by 𝑌𝜃1 (𝑇𝜃 ) := 𝑌𝜃 (𝑇𝜃 ) X 𝐸 for every 𝑇𝜃 P T𝜃 . Define a
+subset T1𝜃 Ď T𝜃 so that |𝑌𝜃1 (𝑇𝜃 )| „ 𝜆 𝜃 |𝑇𝜃 | for all 𝑇𝜃 P T𝜃 and
+                           ∑︁                        ∑︁
+                                  |𝑌𝜃1 (𝑇𝜃 )| ≳ 𝜃 2𝜀      |𝑌𝜃 (𝑇𝜃 )|.
+                             𝑇𝜃 PT1𝜃                   𝑇 PT 𝜃
+
+
+It follows that (#T1𝜃 ) ¨ 𝜆 𝜃 ¨ |𝑇𝜃 | ≳ 𝜃 3𝜀 , which allows us to conclude that #T1𝜃 ≳ 𝜃 3𝜀 #T𝜃
+and 𝜆 𝜃 ≳ 𝜃 3𝜀 . Now define a refined shading of T, 𝑌 by
+
+                                         𝑌 1 (𝑇) := 𝑌 (𝑇) X 𝐸,
+
+and take T1 Ď T such that |𝑌 1 (𝑇)| „ 𝜆|𝑇 | for all 𝑇 P T1 , all so that
+                            ∑︁                   ∑︁
+                                 |𝑌 1 (𝑇)| ≳ 𝛿 𝜀    |𝑌 (𝑇)|.
+                                 𝑇 PT1                𝑇 PT
+
+Similarly, it follows that #T ≳ 𝛿 𝜀 #T and 𝜆 ≳ 𝛿 𝜀 . From the definition of 𝜎, we know
+that 𝑇 PT1 𝑌 1 (𝑇) contains at least 𝛿´𝜎+𝜀 𝛿-cubes. But since T, 𝑌 was 𝜀-extremal,
+     Ð
+
+the number of 𝛿-cubes in 𝑇 PT1 𝑌 1 (𝑇) must be „ 𝛿´𝜎+𝜀 . Similarly, the number
+                             Ð
+
+of 𝜃-cubes in 𝑇𝜃 PT1 𝑌𝜃1 (𝑇𝜃 ) is „ 𝜃 𝜎𝜀 . Every 𝜃-cube in 𝑇𝜃 PT1 𝑌𝜃1 (𝑇𝜃 ) contains the
+                Ð                                           Ð
+                      𝜃                                           𝜃
+same number of delta cubes, so 𝑁 „ (𝛿/𝜃) ´𝑑+𝜖 .                                        □
+
+4.3   Kakeya estimate for sticky sets
+
+Lemma 39. If T 𝛽 is a set of 𝛽-tubes that point in 𝛽-separated directions, with 𝛽 „ 1,
+and 𝑌𝛽 is a shading of T 𝛽 , then there is a refinement T1𝛽 , 𝑌𝛽1 such that one of the
+following cases holds:
+                                                                                                                46
+(a) (T1𝛽 , 𝑌𝛽1 ) is (𝑘 ´ 1)-plany.
+                           Ð                1
+(b) At every point 𝑥 P             𝑇𝛽 PT1𝛽 𝑌𝛽 (𝑇𝛽 ),
+                                                                                           
+     # ((𝑇1 , . . . , 𝑇𝑘 ) P       T1𝛽 (𝑥)) 𝑘       : |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| ą 𝛽   𝑘
+                                                                                                  ≳ #(T1𝛽 (𝑥)) 𝑘 .
+                                                                                                             (4.6)
+
+Proof. Let T 𝛽 be a set of 𝛽-tubes that point in 𝛽-separated directions, and let 𝑌𝛽 be
+                                                 Ð
+a shading of T 𝛽 . We will say that a point 𝑥 P 𝑇𝛽 PT𝛽 𝑌𝛽 (𝑇𝛽 ) satisfies the 𝑘-plane
+condition if there exists a (𝑘 ´ 1)-plane 𝑉 (𝑥) such that
+                                                                             1
+                  #{𝑇𝛽 P T 𝛽 (𝑥) : ∠(dir(𝑇𝛽 ), 𝑉 (𝑥)) ≲ 𝛽} ≳                   #T 𝛽 (𝑥),                     (4.7)
+                                                                             𝑁
+where 𝑁 is any number greater than 𝑘. For example, one could use 𝑁 = 𝑛. Observe
+                        Ð
+that at any point 𝑥 P 𝑇𝛽 PT𝛽 𝑌𝛽 (𝑇𝛽 ) which does not satisfy the 𝑘-plany condition,
+the condition (4.6) is satisfied. To see this, let {𝑉𝑖 } be a maximal collection of
+„ 𝛽-separated (𝑘 ´ 1)-planes, all passing through the point 𝑥, in R𝑛 . We may
+partition T 𝛽 (𝑥) into sets
+
+                     T 𝛽 (𝑥) [𝑉𝑖 ] := {𝑇𝛽 P T 𝛽 (𝑥) : ∠(dir(𝑇𝛽 , 𝑉𝑖 ) ≲ 𝛽}.
+
+If 𝑇1 is chosen from T 𝛽 (𝑥) [𝑉𝑖1 ], . . ., and 𝑇𝑘 is chosen from T 𝛽 (𝑥) [𝑉𝑖 𝑘 ], and if
+𝑖1 , . . . , 𝑖 𝑘 are pairwise distinct, then
+
+                                    |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| ≳ 𝛽 𝑘 .
+
+Since 𝑥 does not satisfy the 𝑘-plany condition, there are at least
+                                   1         2            𝑘
+                       (1 ´          ) ¨ (1 ´ ) ¨ ¨ ¨ (1 ´ ) ¨ (#T 𝛽 (𝑥)) 𝑘
+                                   𝑁         𝑁            𝑁
+such 𝑘-tuples that can be chosen, and this shows (4.6). Denote
+                        Ø
+            𝐸 = {𝑥 P        𝑌𝛽 (𝑇𝛽 ) : 𝑥 satisfies the 𝑘-plany condition}.
+                           𝑇𝛽 PT 𝛽
+
+Now we will consider two cases separately. First, suppose it is the case that
+                               ∑︁                              1 ∑︁
+                                       |𝑌𝛽 (𝑇𝛽 ) X 𝐸 | ě              |𝑌𝛽 (𝑇𝛽 )|.                            (4.8)
+                           𝑇𝛽 PT 𝛽
+                                                               2 𝑇 PT
+                                                                  𝛽   𝛽
+
+
+Then we will define
+
+                   𝑌𝛽1 (𝑇𝛽 ) = {𝑥 P 𝑌𝛽 (𝑇𝛽 ) X 𝐸 : ∠(dir(𝑇𝛽 ), 𝑉 (𝑥)) ≲ 𝛽}
+                                                                                       47
+and define T1𝛽 = T 𝛽 , and now (T1𝛽 , 𝑌𝛽1 ) is (𝑘 ´ 1)-plany, so condition (a) holds. On
+the other hand, if (4.8) is not true, then it must be that
+                             ∑︁                  1 ∑︁
+                                 |𝑌𝛽 (𝑇𝛽 )z𝐸 | ě        |𝑌𝛽 (𝑇𝛽 )|.
+                            𝑇 PT
+                                                 2 𝑇 PT
+                             𝛽    𝛽                        𝛽   𝛽
+
+
+In this case we will define
+                                           𝑌𝛽1 (𝑇𝛽 ) = 𝑌𝛽 (𝑇𝛽 )z𝐸
+and T1𝛽 = T 𝛽 , and now condition (b) is satisfied.                                     □
+
+Proposition 40. Let 3 ď 𝑘 ď 𝑛. For every 𝜀 ą 0, whenever T is a sticky family
+of 𝛿-tubes with shading 𝑌 , which satisfies |𝑌 (𝑇)| ≳ 𝛿 𝜀 |𝑇 | for all 𝑇 P T, there exists
+𝐶 ą 0 such that                  Ø
+                               |   𝑌 (𝑇)| ≳ 𝛿 𝑛´𝑑+𝐶𝜀 ,
+                                          𝑇 PT
+where                                ?                        
+                           2𝑛 + 2 ´ ( 2 ´ 1)𝑘 𝑛2 + 𝑘 2 + 𝑛 ´ 𝑘
+               𝑑 ď max min                   ,                   .
+                  3ď 𝑘 ď 𝑛          3                2𝑛
+
+Proof. Fix 3 ď 𝑘 ď 𝑛. The proof is by induction on the scale 𝛿. In the base case,
+the hypothesis is that T is a family of 𝛽-tubes, where 𝛽 „ 1 is the constant appearing
+in the definition of 𝑘-linear tubes. By Lemma 39, T is either (𝑘 ´ 1)-plany, or else
+satisfies (4.6). If T is (𝑘 ´ 1)-plany, Proposition 18 gives the result. If T satisfies
+(4.6), the result is given by Corollary 12 with 𝐶 = 𝑑 + 1.
+
+The induction hypothesis is the following: for every 𝜀 ą 0 and every 𝜃 in the interval
+[𝛿/𝛽, 𝛽), if
+
+  (i) T𝜃 is a sticky set of 𝜃-tubes with shading 𝑌𝜃 , and
+
+ (ii) |𝑌𝜃 (𝑇𝜃 )| ≳ 𝜃 𝜀 |𝑇𝜃 | for all 𝑇𝜃 P T𝜃 ,
+
+then there is a constant 𝐶𝜀 ą 0 such that
+                                  Ø
+                                           𝑌𝜃 (𝑇𝜃 ) ě 𝐶𝜀 𝜃 𝑛´𝑑+(𝑑+1)𝜀 .
+                                 𝑇𝜃 PT 𝜃
+
+Let 𝜀 ą 0 and assume that T is a sticky family of 𝛿-tubes, with shading 𝑌 , such that
+|𝑌 (𝑇)| ě 𝛿 𝜀 |𝑇 | for all 𝑇 P T.
+
+From the definition of 𝜎, it is enough to consider the case where (T, 𝑌 ) is an 𝜀-
+extremal family of 𝛿-tubes. Since T is sticky, it is possible to cover T by a family
+                                                                                       48
+T𝜃 of 𝜃-tubes pointing in 𝜃-separated directions, with 𝜃 = 𝛿/𝛽. Let 𝑌𝜃 be the
+shading given by Lemma 32. By Lemma 37, the family (T𝜃 , 𝑌𝜃 ) admits a refinement
+(T1𝜃 , 𝑌𝜃1 ) which is 𝜀(1 ´ 𝜀)-extremal. Since (T, 𝑌 ) is 𝜀-extremal and (T1𝜃 , 𝑌𝜃1 ) is
+𝜖 (1 ´ 𝜀)-extremal,
+            Ø                             Ø
+          |   𝑌 (𝑇)| ≲ 𝛿 𝑛´𝜎+(𝜎+1)𝜀 and |   𝑌𝜃1 (𝑇𝜃 )| ≲ 𝜃 𝑛´𝜎+(𝜎+1)𝜀(1´𝜀) .     (4.9)
+        𝑇 PT                                     𝑇𝜃 PT1𝜃
+
+By Lemma 38, there is a refinement (T1 , 𝑌 1 ) of (T, 𝑌 ) and a refinement (T2𝜃 , 𝑌𝜃2 ) of
+(T1𝜃 , 𝑌𝜃1 ), and a number 𝑁 ą 0 such that
+                                 Ø
+                               |    𝑌 1 (𝑇) X 𝑄 𝜃 | „ 𝑁𝛿 𝑛                        (4.10)
+                                     𝑇 PT1
+                        Ð          2
+for all 𝜃-cubes 𝑄 𝜃 Ă     𝑇𝜃 PT2𝜃 𝑌𝜃 (𝑇𝜃 ). From the definition of 𝜎,
+                                   Ø
+                              |             𝑌𝜃2 (𝑇𝜃 )| ≳ 𝜃 𝑛´𝜎+(𝜎+1)𝜀 .
+                                  𝑇𝜃 PT2𝜃
+
+This statement, together with (4.10) and (4.9), gives the conclusion that
+
+               (𝛿/𝜃) ´𝜎+(𝜎+1)𝜀 „ 𝛽´𝜎+(𝜎+1)𝜀 ≲ 𝑁 ≲ 𝛽´𝜎+(𝜎+1)𝜀 𝜃 ´ (𝜎+1)𝜀 .
+                                                                           2
+
+
+
+
+By the induction hypothesis,
+                          Ø
+                        |    𝑌𝜃2 (𝑇𝜃 )| ě 𝐶𝜀 𝜃 𝑛´𝑑+(𝑑+1)𝜀 .
+                              𝑇𝜃 PT2𝜃
+
+With (4.9), this implies that 𝜎 ´ (𝜎 ´ 1)𝜀 + (𝜎 ´ 1)𝜀 2 ě 𝑑 ´ (𝑑 ´ 1)𝜀 and thus
+𝑁 ≳ 𝛽´𝑑+(𝑑+1)𝜀´ (𝜎+1)𝜀 . Together with (4.10) and the induction hypothesis, this
+                       2
+
+
+gives                    Ø
+                            𝑌 (𝑇)| ≳ 𝐶𝜖 𝛿 𝑛´𝑑+(𝑑+1)𝜖 𝛽 (𝜎+1)𝜀 .
+                                                             2
+                       |
+                            𝑇 PT
+
+If 𝛽 is chosen to be small enough that 𝛽 (𝜎+1)𝜀 times the implicit constant in the
+                                                            2
+
+
+statement above is smaller than 1, this closes the induction.                    □
+
+The proof of Proposition 31 follows immediately from this result.
+
+Proof of Proposition 31. Let 𝜀 ą 0 and let T, 𝑌 be as in the hypothesis of the
+proposition. The result follows immediately by finding the value of 𝑘 for which the
+maximum is obtained in the following expression:
+                                      ?                         
+                             2𝑛 + 2 ´ ( 2 ´ 1)𝑘 𝑛2 + 𝑘 2 + 𝑛 ´ 𝑘
+                max min                         ,                  .
+               3ď 𝑘 ď 𝑛               3                 2𝑛
+                                                                                      49
+The optimal value of 𝑘 is given by
+                 ?     a        ?
+             1´ 2+ 6´2 2
+        𝑘=                         𝑛 + O (1) « 0.45555915723 𝑛 + O (1).
+                       3
+This gives
+                            𝑑 ě 0.60376707287 𝑛 + O (1).
+
+In the worst case scenario, given any 𝜀 ą 0, there are infinitely many dimensions
+for which 𝑑 ď 0.60376707287 𝑛 + O (1) ´ 𝜀.                                      □
+
+4.4   Relation to sticky sets in Wang-Zahl
+Recently, Wang and Zahl introduced the concept of a sticky Besicovitch set using the
+packing definition of Besicovitch sets ([23]). In this section of the paper, the relation
+between sticky sets of 𝛿-tubes and sticky Besicovitch sets as defined by Wang and
+Zahl is outlined. A version of this result is proved in [23].
+
+Definition 41. A sticky Besicovitch set is a compact set 𝐾 Ď R𝑛 obeying the
+following hypotheses: there is a set of lines 𝐿 in R𝑛 such that
+
+ i. 𝐿 has a line in every direction,
+
+ ii. 𝐾 X ℓ contains a unit line segment for every ℓ P L, and
+
+iii. 𝐿 has packing dimension 𝑛 ´ 1.
+
+Let L be the set of all lines in R𝑛 . Every non-vertical line ℓ P L can be represented
+as
+                                     ℓ = (a, 0) + R𝑒
+
+where 𝑒 P S𝑛´1 and a P R𝑛´1 . In this section ℓ will be represented as
+
+                                        ℓ = (aℓ , 𝑒 ℓ ).
+
+The distance between two lines ℓ and ℓ 1 in L is defined by
+
+                          dist(ℓ, ℓ 1 ) = |aℓ ´ aℓ1 | + ∠(𝑒 ℓ , 𝑒 ℓ1 ).
+
+A measure 𝜆 is defined on L to be the product of the Lebesgue measure on R𝑛´1
+and the normalized surface measure 𝜈 on S𝑛´1 . With these definitions, the packing
+dimension of a set 𝐿 Ď L agrees with its upper modified box dimension.
+                                                                                   50
+Proposition 42. For any 𝜀 ą 0, if 𝐾 is a sticky Besicovitch set in R𝑛 , then there
+exists 𝛿0 ą 0 such that
+
+(1) for any 𝛿 ă 𝛿0 , there is a set of 𝛿-tubes T which is sticky; and
+                                                                                 ´2
+(2) if dim𝐻 (𝐾) = 𝑑, then there is a shading𝑌 (𝑇) satisfying𝑌 (𝑇)| ≳ log(1/𝛿)          |𝑇 |
+    for every 𝑇 P T, such that
+                                    Ø
+                                        𝑌 (𝑇) ≲ 𝛿 𝑛´𝑑+𝜀 .
+                                     𝑇 PT
+
+Proof. Let 𝜖 ą 0 be given and let 𝐾 be a sticky Besicovitch set. Since the packing
+dimension of 𝐿 coincides with its upper modified box dimension, 𝐿 can be written
+as a countable union of closed sets {𝐿 𝑖 } such that
+                                                          𝜀
+                                dim 𝑀 (𝐿 𝑖 ) ď 𝑛 ´ 1 +
+                                                          4
+                                                        
+for all 𝑖. There exists an index 𝑖 for which 𝜈 dir(𝐿 𝑖 ) ą 0. From the upper Minkowski
+dimension of 𝐿 𝑖 , there eixsts 𝛿1 ą 0 such that for all 𝛿 ă 𝛿1 ,
+
+                           𝜆(𝑁 𝛿 (𝐿 𝑖 )) ď 𝛿 (2𝑛´2) ´ (𝑛´1) ´𝜀/2 .
+
+We will say that a direction 𝑒 P S𝑛´1 is over-represented at scale 𝛿 if
+
+                      |{a P R𝑛´1 : (a, 𝑒) P 𝑁 𝛿 (𝐿 𝑖 )}| ą 𝛿 𝑛´1´𝜀 .
+
+By Fubini’s theorem, it follows that
+
+              𝜈 {𝑒 P S𝑛´1 : 𝑣 is over-represented at scale 𝛿} ď 𝛿 𝜀/2 .
+                                                             
+
+
+By making 𝛿1 smaller if necessary, we can then ensure that
+       ∑︁                                                       1
+                𝜈 {𝑒 P S𝑛´1 : 𝑣 is over-represented at scale 𝛿} ď 𝜈(dir(𝐿 𝑖 )).
+   dyadic 𝛿:𝛿ă𝛿
+                                                                 2
+               1
+
+
+Now define a subset 𝐿 1 Ď 𝐿 𝑖 by
+                 Ø
+    𝐿 1 = 𝐿𝑖 z           dir´1 {𝑒 P S𝑛´1 : 𝑣 is over-represented at scale 𝛿} .
+                                                                            
+               dyadic 𝛿:𝛿ă𝛿0
+
+By the definition of Hausdorff dimension, there exists a number 𝛿0 ą 0 (which we
+can ensure is smaller than 𝛿1 above) and a cover Q of 𝐾, where
+                                        Ø
+                                Q=             Q𝛿 ,
+                                        dyadic𝛿:𝛿ă𝛿0
+                                                                                       51
+where Q𝛿 is a collection of 𝛿-cubes and
+
+                                       #Q 𝑘 ≲ 𝛿´𝑑+𝜀/2 .
+
+For each ℓ P 𝐿 1 , since |𝐾 X ℓ| ě 1, there exists at least one 𝛿 such that
+                                 Ø                   1
+                           ℓX          𝑄 ě                   2 .                  (4.11)
+                                𝑄 PQ 𝛿       100 log(1/𝛿)
+For each dyadic number 𝛿, let 𝐿 𝛿 Ď 𝐿 1 be the set of lines for which (4.11) holds.
+                                                                                   2
+Then there exists a dyadic scale 𝛿 ă 𝛿0 for which 𝜈(𝐿 𝛿 ) ą 𝜈(𝐿 1 )/100 log(1/𝛿) .
+Fix this value of 𝛿 and rename 𝐿 𝛿 as 𝐿 2 . Now we define E to be a 𝛿-separated subset
+of dir(𝐿 2 ), then
+                                           𝜈(𝐿 1 )𝛿1´𝑛
+                              #E ě                     2 .
+                                      100 log(1/𝛿)
+Define T be a set of 𝛿-tubes pointing in directions in E, with centers and shading
+𝑌 (𝑇) chosen so that, using (4.11),
+                                 Ø                Ø
+                                     𝑌 (𝑇) =          𝑄
+                                     𝑇 PT        𝑄 PQ 𝛿
+                               2
+and |𝑌 (𝑇)| ≳ |𝑇 |/ log(1/𝛿)        for every 𝑇 P T. Since this implies that
+                                      Ø
+                                    |    𝑌 (𝑇)| ≲ 𝛿 𝑛´𝑑+𝜀 ,
+                                     𝑇 PT
+conclusion (2) in the statement of the proposition is shown. It now remains to show
+that T is sticky. Let 𝜌 be a number such that 𝛿 ă 𝜌 ă 1.
+
+If 𝜌 ě 𝛿0 : since 𝛿0 may be considered an admissible constant, if T 𝜌 is any set of
+maximal 𝜌-separated tubes, it is trivial that #T 𝜌 « 𝜌 1´𝑛 and #T[𝑇𝜌 ] « (𝛿/𝜌) 1´𝑛 .
+
+If 𝜌 ă 𝛿0 : We will greedily cover 𝐿 2 with 𝜌-balls, so that 𝜌/3-balls at the same
+centers would be disjoint. Define T 𝜌 to be the set of tubes pointing in the directions
+of the lines in the cover and with centers inside the set on the left-hand-side of (4.11).
+From this definition, it is clear that every 𝑇 P T is contained in some 𝑇𝛽 P T 𝜌 .
+
+Since 𝛿0 ă 𝛿1 , and since dir(𝐿 2 ) has no directions over-represented at any scale
+less than 𝛿1 , there are at ≲ 𝛿´𝜀 tubes 𝑇𝜌 P T 𝜌 that point in the same direction. To
+make the directions 𝜌-separated, choose any one tube out of the possible 𝛿´𝜀 tubes
+in the cover pointing in a given direction, and remove the other tubes pointing in
+that direction from T 𝜌 . Then #T 𝜌 « 𝜌 1´𝑛 . To ensure T is still covered by T 𝜌 , we
+will take a refinement T1 Ă T, losing at most a 𝜌 ´𝜀 ď 𝛿´𝜀 -fraction of T. Then T1
+will be a sticky set, and it can be easily seen that conclusion (2) still holds for this
+refinement.                                                                           □
+                                                                                                   52
+Corollary 43. The Hausdorff dimension of every sticky Besicovitch set in R𝑛 must
+exceed 0.60376707287 𝑛 + O (1).
+
+4.5   An x-ray estimate derived as a corollary of Zahl’s k-linear estimate
+In this section, an 𝑥-ray estimate is obtained as a corollary of Zahl’s 𝑘-linear estimate.
+The proof is similar to that of Proposition 4.2 in [12].
+
+For convenience, the definition of an x-ray estimate is repeated here. An x-ray
+estimate at dimension d holds in R𝑛 if there exist 0 ď 𝛼, 𝛾 ă 1 such that the
+following statement is true. For any 𝜀 ą 0, if E is a set of 𝛿-separated directions in
+S𝑛´1 and T is a set of 𝛿-tubes obeying the following properties:
+
+  i. No tube in T is contained in the 10-fold dilate of another one.
+
+ ii. Every tube in T points in a direction in E and no more than 𝛿´ 𝛽 tubes in T point
+     in any given direction,
+
+then there is a constant 𝐶𝜀 ą 0 such that
+                      ∑︁                    𝑛
+                   ||    𝜒𝑇 || 𝑑 1 ď 𝐶𝜀 𝛿1´ 𝑑 ´𝜀 (𝛿´ 𝛽 ) 1´𝛼 (𝛿 𝑛´1 #Ω) 𝛾
+                       𝑇 PT
+
+Proposition 44. An x-ray estimate holds in R𝑛 at dimension 𝑑 = max2ď 𝑘 ď𝑛 min{𝑛2 +
+𝑛 + 𝑘 2 ´ 𝑘)/2𝑛, 𝑛 ´ 𝑘 + 2}.
+
+Lemma 45. Suppose that 𝛿0 ą 0 is a small number (e.g. 𝛿0 ă 𝑛/109 ). Let
+2 ď 𝑘 ď 𝑛 and let 𝑑 ď 𝑛 ´ 𝑘 + 2 + 𝛿0 . Suppose that for every 𝜀 ą 0, whenever T is
+a set of 𝛿-tubes pointing in 𝛿-separated directions, then there is a constant 𝐶𝜖 ą 0
+such that
+         ∑︁
+    ||(        1𝑇1 ¨ ¨ ¨ 1𝑇𝑘 |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| 𝑘/𝑑 ) 1/𝑘 || 𝑑/(𝑑 ´1)
+      𝑇1 ,...,𝑇𝑘 PT
+                                                       𝑛
+                                                                ∑︁                              (4.12)
+                                           ď 𝐶 𝜖 𝛿 1´ 𝑑 ´ 𝜖 (          |𝑇 |) 𝑛(𝑑 ´1)/(𝑛´1)𝑑 .
+                                                                𝑇 PT
+
+Then an x-ray estimate holds at any dimension 𝑑0 := 𝑑 ´ 𝛿0 .
+
+Proof of Lemma 45. Fix 2 ď 𝑘 ď 𝑛 and let 𝑑 ď 𝑛 ´ 𝑘 + 2. Assume that the 𝑘-linear
+estimate in the lemma hypothesis holds. Let 𝜀 ą 0 be given. The argument uses
+induction on scale 𝛿.
+
+The induction hypothesis is that there exist 0 ă 𝛼, 𝛾 ă 1 and 𝐶𝜀1 ą 0, whose values
+will be specified later, such that the following statement holds:
+                                                                                                  53
+If T̃ is a set of (𝛿/𝑠)-tubes obeying properties i and ii in the definition of an x-ray
+estimate, then there exists 𝐶𝜀 ą 0 such that
+                  ∑︁                          𝑛
+               ||    𝜒𝑇˜ || 𝑑 1 ď 𝐶𝜀 (𝛿/𝑠) 1´ 𝑑 ´𝜀 (𝛿/𝑠) ´ 𝛽 ) 1´𝛼 ((𝛿/𝑠) 𝑛´1 #E) 𝛾 .
+                      𝑇˜ P𝑇˜
+
+
+Let E be a set of 𝛿-separated directions in S𝑛´1 and let T be a set of 𝛿-tubes obeying
+properties i and ii in the definition of the x-ray estimate. Let 𝑠 „ 1 be an admissible
+constant whose value will be specified later.
+                             Ð
+Define a set Narrow𝑘 Ď 𝑇 PT 𝑇 as a set of all points 𝑥 for which there exists a
+(𝑘 ´ 1)-plane 𝑉 (𝑥) such that
+                                                                  1
+                           #{𝑇 P T(𝑥) : ∠(dir(𝑇), 𝑉 (𝑥)) ≲ 𝑠} ≳ #     T(𝑥).
+                                                                 10𝑛
+                                  Ð                                      Ð
+Define another set Broad 𝑘 Ď 𝑇 PT 𝑇 as the set of all points 𝑥 P 𝑇 PT at which this
+condition is not satisfied. Observe that for every point 𝑥 P Broad 𝑘 , this leads to the
+conclusion
+                                                                    
+  # (𝑇1 , . . . , 𝑇𝑘 ) P (T(𝑥)) : |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| ą 𝑠 ≳ (#T1 (𝑥)) 𝑘 . (4.13)
+                               𝑘                                   𝑘
+
+
+
+(For a more detailed justification of the last claim, see the proof of Lemma 39, where
+the same claim is explained in detail.) Now
+          ∑︁                  ∫       ∑︁                  ∫        ∑︁
+                   𝑑/(𝑑 ´1)                    𝑑/(𝑑 ´1)
+       ||    𝜒𝑇 || 𝑑/(𝑑 ´1) ď       |     𝜒𝑇 |          +        |     𝜒𝑇 | 𝑑/(𝑑 ´1) .
+           𝑇 PT                      Broad 𝑘 𝑇 PT                      Narrow 𝑘 𝑇 PT
+
+In the right-hand-side above, we will call the first term the “𝑘-broad contribution”
+and the second term the “𝑘-narrow contribution”. If the 𝑘-broad contribution
+dominates, then it can be estimated by using the the 𝑘-linear estimate on 𝛿´ 𝛽 sets
+of direction-separated tubes partitioning T, as follows.
+         ∫        ∑︁                 ∫         ∑︁
+                          𝑑/(𝑑 ´1)                                   1/𝑘 𝑑/(𝑑 ´1)
+                |    𝜒𝑇 |          =                  𝜒𝑇1 ¨ ¨ ¨ 𝜒𝑇𝑘                .
+            Broad 𝑘 𝑇 PT                     Broad 𝑘   𝑇1 ,...,𝑇𝑘 PT
+
+From property 4.13 above, we can ignore the contribution of 𝑘-tuples (𝑇1 , . . . , 𝑇𝑘 )
+unless |dir(𝑇1 ) ^ ¨ ¨ ¨ ^ dir(𝑇𝑘 )| ą 𝑠 𝑘 . Then, by using the 𝑘-linear estimate on the
+norm applied to these 𝑘-tuples alone,
+        ∑︁                                                           𝑛                       𝑛(𝑑 ´1)
+                                   || 𝐿 𝑑/(𝑑´1) (Broad𝑘 ) ď 𝐶𝜖 𝛿 (1´ 𝑑 ´𝜖) (𝛿´ 𝛽 )(𝛿 𝑛´1 #E) (𝑛´1) 𝑑 .
+                              1/𝑘
+  ||           𝜒𝑇1 ¨ ¨ ¨ 𝜒𝑇𝑘
+      𝑇1 ,...,𝑇𝑘 PT
+                                                                                                                       54
+Using Riesz-Thorin interpolation between this estimate and a known x-ray estimate
+at dimension (𝑛 + 2)/2, from Theorem 1.2 of [{\L }aba1999xray], we obtain
+      ∑︁                                                                                  𝑛(𝑑 ´1)
+                           1/𝑘                                  (1´ 𝑛 ´𝜖)
+ ||         𝜒𝑇1 ¨ ¨ ¨ 𝜒𝑇𝑘       || 𝐿 𝑑0 /(𝑑0 ´1) (Broad𝑘 ) ď 𝐶𝜖 𝛿 𝑑0 (𝛿´ 𝛽 ) 𝛼 (𝛿 𝑛´1 #E) (𝑛´1) 𝑑
+      𝑇1 ,...,𝑇𝑘 PT
+
+provided that 𝛼 and 𝛾 have the following values:
+                        1    1
+                                !
+                        𝑑0 ´ 𝑑       (𝑛 + 1)             𝑑0 ´ 1
+                 𝛼= 2         1 (𝑛 ´ 1)(𝑛 + 2)
+                                                 and 𝛾 =        .
+                       𝑛+2 ´  𝑑
+                                                           𝑑 0
+
+This shows the conclusion if the 𝑘-broad contribution dominates. On the other hand,
+if the 𝑘-narrow contribution dominates, we will use the following tiling of S𝑛´1 : let
+R𝑛´1 be tiled by 𝑠-cubes given by translates (0, 𝑠] 𝑛´1 placed end-to-end and let a
+“tile” 𝜃 on the sphere be given by the image of one of these 𝑠-cubes via the map
+          a
+𝜉 ÞÑ (𝜉, 1 ´ |𝜉 | 2 ) sending R𝑛´1 to the northern hemisphere. Let T be partitioned
+into sets
+                            T[𝜃] = {𝑇 P T1 : dir(𝑇) P 𝜃}.
+
+Then we may write
+            ∫                       ∑︁              ∫                ∑︁ ∑︁
+                                           1
+                                          𝑌 (𝑇) „                |              𝜒𝑌 1 (𝑇) (𝑥)| 𝑑𝑥.
+                         Narrow 𝑘 𝑇 PT1               Narrow 𝑘       𝜃 𝑇 PT 𝜃
+
+Consider that at any point 𝑥 P Narrow 𝑘 , the following statements hold, first by the
+definition of Narrow 𝑘 , and then by Hölder’s inequality,
+   ∑︁ ∑︁                  ∑︁       ∑︁
+             𝜒𝑇 (𝑥) =                   𝜒𝑇 (𝑥)
+       𝜃 𝑇 PT 𝜃                  𝜃:∠(𝜃,𝑉 (𝑥))≲𝑠 𝑇 PT[𝜃]
+                                                     1/𝑑0                                           (𝑑0 ´1)/𝑑0
+                                       ∑︁                    ©∑︁ ∑︁
+                                                                 |       𝜒𝑇 (𝑥)| 𝑑0 /(𝑑0 ´1) ®
+                             ©               ª                                               ª
+                            ď­              1®              ¨­                                                     .
+                             «𝜃:∠(𝜃,𝑉 (𝑥))≲𝑠 ¬               « 𝜃 𝑇 PT[𝜃]                     ¬
+For any (𝑘 ´1)-plane, the number of caps 𝜃 making angle ≲ 𝑠 with the (𝑘 ´1)-plane
+is „ 𝑠´ 𝑘+2 . Thus,
+   ∫           ∑︁ ∑︁                                               ∑︁ ∑︁
+                                                                                   /(𝑑0 ´1)
+             |       𝜒𝑌 1 (𝑇) (𝑥)| 𝑑0 /(𝑑0 ´1) ď 𝑠 (´ 𝑘+2)/(𝑑0 ´1)   ||  𝜒𝑇 || 𝑑𝑑0 /(𝑑  ´1)                0   0
+      Narrow 𝑘        𝜃 𝑇 PT 𝜃                                                     𝜃    𝑇 PT[𝜃]
+
+and
+                                                                                          (𝑑0 ´1)/𝑑0
+         ∑︁                                     ©∑︁ ∑︁                    /(𝑑0 ´1) ª
+      ||       𝜒𝑇 || 𝑑0 /(𝑑0 ´1) ď 𝑠 (´ 𝑘+2)/𝑑0 ­   ||          𝜒𝑇 || 𝑑𝑑0 /(𝑑                          .       (4.14)
+                                                                              0 ´1)
+                                                                        0
+                                                                                    ®
+         𝑇 PT1                                  « 𝜃    𝑇 P T[𝜃]                     ¬
+                                                                                                                  55
+To estimate the quantity on the right hand side above, we will use the inductive
+hypothesis. For any tile 𝜃, let 𝑒 𝜃 P S𝑛´1 be the center of 𝜃. Perform an anisotropic
+re-scaling of all tubes T[𝑇𝜃 ] via the map
+
+                               𝜉 ÞÑ (𝜉 ¨ 𝑒 𝜃 ) + 𝑠´1 ¨ 𝑠´1 (𝜉 ´ 𝜉 ¨ 𝑒 𝜃 ).
+
+The image of every 𝛿-tube 𝑇 is contained in a 2𝛿/𝑠-tube which will be denoted 𝑇.     ˜
+To ensure that the set of directions in which the tubes 𝑇˜ are (𝛿/𝑠)-separated, we will
+take a subset E 1 Ă E such that E 1 is 𝛿/𝑠-separated. Then
+
+                                              #E 1 „ 𝑠𝑛´1 #E.
+
+Let T̃ be the set of all tubes 𝑇, ˜ where 𝑇 P T and dir(𝑇) P E 1 . Now it is immediate
+that 𝑇˜ satisfies properties i and ii in the hypothesis of the x-ray transform, and that
+𝑇˜ has the following relation to T[𝜃]:
+                   ∑︁                                            ∑︁
+                ||     𝜒𝑇 || 𝑑0 /(𝑑0 ´1) = 𝑠 (𝑛´1) (𝑑0 ´1)/𝑑0 ||    𝜒𝑇˜ || 𝑑0 /(𝑑0 ´1) .
+                 𝑇 PT[𝜃]                                                         𝑇˜ PT̃
+
+By the induction hypothesis, the right-hand-side above is majorized by
+                                                                    𝛾
+              (𝑛´1) (𝑑0 ´1)/𝑑0       1´ 𝑑𝑛 ´𝜀 ´ 𝛽 𝛼     𝑛´1    1
+            𝑠                  (𝛿/𝑠)      0  (𝛿 ) (𝛿/𝑠) (#E X 𝜃)
+                                                                  𝛾
+                                         1´ 𝑛 ´𝜀
+             „ 𝑠 (𝑛´1) (𝑑0 ´1)/𝑑0 (𝛿/𝑠) 𝑑0 (𝛿´ 𝛽 ) 𝛼 𝛿 𝑛´1 (#E X 𝜃) .
+
+After putting this together with (4.14), and our choice of 𝛾 = (𝑑0 ´ 1)/𝑑0 , we find
+       Í
+that || 𝑇 PT 𝜒𝑇 || 𝑑0 /(𝑑0 ´1) is majorized by
+
+                                                                                           𝛾𝑑0 /(𝑑0 ´1) (𝑑0 ´1)/𝑑0
+                                                                                                        !
+                         ´1+ 𝑑𝑛 ´𝜀
+                                                             ∑︁ 
+ 𝑠 𝜀+(𝑛´ 𝑘+2´𝑑0 )/𝑑0 𝛿         0     (𝛿´ 𝛽 ) 𝛼 𝑠𝑛´1                 𝛿 𝑛´1 #(#E X 𝜃)
+                                                              𝜃
+                             𝑛                                         𝛾
+       𝜀+(𝑛´ 𝑘+2´𝑑0 )/𝑑0 ´1+ 𝑑0 ´𝜀           ´𝛽 𝛼           𝑛 ´1
+  =𝑠                       𝛿            (𝛿     )        𝛿          #E        .
+
+By hypothesis, 𝑑0 ď 𝑛 ´ 𝑘 + 2, and the exponent of 𝑠 is positive. Thus 𝑠 may be
+chosen to satisfy
+                                                1
+                           𝑠 𝜀+(𝑛´ 𝑘+2´𝑑0 )/𝑑0 ď 𝐶𝜀1 .
+                                                2
+    1
+If 𝐶𝜀 is chosen such that
+                             𝐶𝜀 ą 2 max{𝐶𝜀 , 𝐶𝜀2 },
+
+then the induction hypothesis closes after adding the estimates obtain above for the
+𝑘-broad and the 𝑘-narrow contributions.                                            □
+                                                                                    56
+Proof of Proposition 44. Let 𝛿0 ą 0 be a small number (e.g. smaller than 𝑛/109 ).
+Let 𝑘 0 be the value of 𝑘 for which the maximum
+                                2                        
+                                𝑛 + 𝑛 + 𝑘2 ´ 𝑘
+                     max min                   , 𝑛 ´ 𝑘 + 2 =: 𝑑0
+                    2ď 𝑘 ď 𝑛           2𝑛
+
+is achieved. Let 𝑘 1 be the value of 𝑘 for which the maximum
+                             2                              
+                              𝑛 + 𝑛 + 𝑘2 ´ 𝑘
+                 max min                     , 𝑛 ´ 𝑘 + 2 + 𝛿0 =: 𝑑1 .
+                2ď 𝑘 ď 𝑛            2𝑛
+
+is achieved. Note that
+                                    𝑑0 ă 𝑑1 ă 𝑑0 + 𝛿0 .
+
+By Theorem 11, the 𝑘 1 -linear estimate (4.12) holds for
+
+                                    𝑛2 + 𝑛 + 𝑘 12 ´ 𝑘 1
+                             𝑑=                         ď 𝑑1 .
+                                           2𝑛
+Now, by Lemma 45, an x-ray estimate holds at dimension 𝑑0 , since 𝑑0 ě 𝑑1 ´𝛿0 .      □
+
+The following proposition is essentially the same as Proposition 3.3 from [17]. It
+has been provided here for completeness since the definition of stickiness is slightly
+different from the definition appearing in that paper.
+
+Proposition 46. Suppose that there is an x-ray estimate at dimension 𝑑 and that
+there exists a Besicovitch set 𝐵 with dim 𝑀 (𝐸) ď 𝑑 + 𝜀, for some 𝜀 ě 10´10 . Then,
+for any sufficiently small 𝛿 ą 0, there is a sticky collection T of 𝛿-tubes satisfying
+                                     Ø
+                                   |   𝑇 | ≲ 𝛿 𝑛´𝑑+𝜀 .
+                                     𝑇 PT
+
+
+In the following proof, the same notation as in previous section will be used to
+parametrize lines in R𝑛 .
+
+Proof. Let 𝐵 be a Besicovitch set with dim 𝑀 (𝐸) ď 𝑑 + 𝜀. From the definition of
+upper Minkowski dimension, this means
+
+                         |𝑁𝜃 (𝐵)| ≲ 𝜃 𝑛´𝑑+𝜀 for all 𝛿 ď 𝜃 ă 1.                   (4.15)
+
+Let 𝐿 be a set of lines such that
+
+  i. 𝐿 contains a line in every direction (except the vertical direction), and
+                                                                                     57
+ ii. 𝐵 X ℓ contains a unit line segment for every ℓ P 𝐿.
+
+Every line in ℓ can be parametrized as
+
+                                        ℓ = (a, 0) + R𝑒
+
+where a P R𝑛´1 is a point and 𝑒 P S𝑛´1 is the direction in which ℓ points; and thus
+ℓ will be denoted (𝑎, 𝑒).
+
+Call a direction 𝑒 P S𝑛´1 sticky at scale 𝜃 if
+
+                      |{a P R𝑛´1 : (a, 𝑒) P 𝑁𝜃 (𝐿)}| ≲ 𝜃 𝑛´1´𝐶1 𝜀 .              (4.16)
+
+Let E Ď S𝑛´1 be the set of directions given by
+                       Ù
+            E=                   {𝑒 P S𝑛´1 : 𝑒 is sticky at scale 2´ 𝑘 }.
+                   𝑘 PZ:1≲𝑘 ≲log(1/𝛿)
+
+For each 𝑒 P S𝑛´1 zE, there exists a scale 𝜃 𝑒 ą 0 such that (4.16) fails. By dyadic
+pigeonholing, there is a set E0 Ď S𝑛´1 zE and a number 𝜃 ą 0 such that 𝜃 𝑒 „ 𝜃 for
+all 𝑒 P E0 and
+                                              1
+                             𝜈(E0 ) ≳               𝜈(S𝑛´1 zE).
+                                         log(1/𝛿)
+Let E1 be a maximal 𝜃-separated subset of E0 . Since every 𝑒 P E1 is fails to be sticky
+at scale 𝜃, there are ≳ 𝜃 ´𝐶1 𝜀 𝜃-separated points a for which the line (a, 𝑒) P 𝑁𝜃 (𝐿).
+Let T0 be the set of 𝜃-tubes given by taking the 𝜃-neighborhoods of the unit line
+segments contained in 𝐵Xℓ for each of these lines ℓ = (a, 𝑒). By the x-ray transform
+estimate, there exist numbers 0 ă 𝛼, 𝛾 ă 1 such that
+                      ∑︁                  𝑛
+                   ||    𝜒𝑇 || 𝑑 1 ≲ 𝜃 1´ 𝑑 ´𝜀 (𝜃 ´𝐶1 𝜀 ) 1´𝛼 (𝜃 𝑛´1 #E1 ) 1´𝛾 .
+                    𝑇 PT0
+
+By an application of Hölder’s inequality, this implies that
+                       Ø
+                     |    𝑇 | ≳ 𝜃 𝑛´𝑑+𝜀 𝜃 ´𝑑𝐶1 𝜀𝛼 (𝜃 𝑛´1 #E1 ) 𝑑𝛾 .
+                            𝑇 PT0
+          Ð
+Since |   𝑇 PT0 𝑇 | Ď 𝑁2𝜃 (𝐵), it follows from (4.15) that
+
+                                    #E1 ≲ 𝜃 1´𝑛 𝜃 𝐶1 𝜀𝛼/𝛾 .
+
+Since E1 is a maximal 𝜃-separated subset of E0 , this implies that 𝜈(E0 ) ≲ 𝜃 𝐶1 𝜀𝛼/𝛾
+and thus
+                       𝜈(E) ≳ 1 ´ log(1/𝛿)𝜃 𝐶1 𝜀𝛼/𝛾 ≳ 1,
+                                                                                           58
+provided 𝐶1 is chosen to be sufficiently large.
+
+Now let E 𝛿 be a maximal 𝛿-separated subset of E. Let T be the set of 𝛿-tubes given
+by the 𝛿-neighborhoods of the unit line segments contained in 𝐵 X ℓ for every ℓ P 𝐿
+pointing in a direction 𝑒 P E 𝛿 , then T „ 𝛿1´𝑛 . It will be shown that a subset T1 of T
+is sticky.
+
+Choose a set of 𝜃-tubes 𝑇𝜃 so every tube 𝑇 P T is contained in at least one 𝑇𝜃 P T𝜃 .
+It can be ensured that T𝜃 is minimal, i.e. every 𝑇𝜃 P T𝜃 contains at least one 𝑇 P T
+which is not contained in any other 𝜃-tube in T𝜃 . Consider the set of coaxial lines of
+tubes in 𝑇𝜃 . Suppose that there are several of these lines ℓ1 , ¨ ¨ ¨ , ℓ𝑁 that are “almost
+parallel,”, i.e. all the lines ℓ1 , ¨ ¨ ¨ , ℓ𝑁 point in directions making at most angle 𝜃 with
+a single direction 𝑒 P S𝑛´1 . For each 1 ď 𝑖 ď 𝑁, the line ℓ𝑖 = (a𝑖 , 𝑒𝑖 ) is contained
+in 𝑁𝜃 (dir´1 (E)). Thus, the 𝜃-tubes with coaxial lines ℓ1 , . . . , ℓ𝑁 all lie in
+
+                           dir´1 (𝑁2𝜃 ({𝑒})) X 𝑁2𝜃 (dir´1 (E)).
+
+It follows that
+                                                           
+                         ´1                        ´1
+                  𝜆 dir       (𝑁2𝜃 ({𝑒}) X 𝑁2𝜃 (dir     (E)) ≳ 𝑁𝜃 2(𝑛´1)
+
+and then, by Fubini’s theorem, there must exist 𝑒 1 P 𝑁2𝜃 ({𝑒}) X E such that
+
+                        |{a P R𝑛´1 : (a, 𝑒 1 ) P 𝑁𝜃 (𝐿)}| ≳ 𝑁𝜃 𝑛´1 .
+
+From (4.16), 𝑁 ≲ 𝜃 ´𝐶1 𝜀 . Thus, it is possible to choose a 𝜃-direction-separated
+subset T1𝜃 Ď T𝜃 such that #T1𝜃 ≳ 𝜃 𝐶1 𝜀 #T𝜃 . After taking another refinement T2𝜃 , it is
+possible to ensure that every 𝑇𝜃 P T2𝜃 contains ≳ (𝜃/𝛿) 1´𝑛+𝐶2 𝜀 𝛿-tubes for a suitable
+constant 𝐶2 ą 0. If T1 is chosen to be
+
+                        T1 := {𝑇 P T : D𝑇𝜃 P T2𝜃 such that 𝑇 Ď 𝑇𝜃 },
+
+it follows that T1 is sticky and that #T1 ≳ 𝛿1´𝑛+𝐶3 𝜀 .                                     □
+
+Together with Proposition 46 and Proposition 31, Proposition 44 gives the following
+corollary.
+
+Corollary 47. The Minkowski dimension of every Besicovitch set in R𝑛 must exceed
+      ?
+𝑑 ě (2 2 + 𝜀)𝑛, for a certain value of 𝜀 greater than 10´10 .
+
+Though this estimate is not as strong as one previously proved in [18], it provides a
+new proof of the result.
+                                                                               59
+                             BIBLIOGRAPHY
+
+
+ [1] Jonathan Bennett, Anthony Carbery, and Terence Tao. “On the multilinear
+     restriction and Kakeya conjectures”. In: Acta Mathematica 196.2 (2006),
+     pp. 261–302. doi: 10.1007/s11511-006-0006-4. url: https://doi.
+     org/10.1007/s11511-006-0006-4.
+ [2] A.S Besicovitch. “On Kakeya’s problem and a similar one”. In: Math. Zeitschrift
+     27 (1928), pp. 312–320.
+ [3] A.S Besicovitch. “Sur deux questions de l’int egrabilit e”. In: Journal de la
+     Soci et e des Math. et de Phys. II (1920).
+ [4] J Bourgain. “On the Distribution of Dirichlet Sums”. In: Journal d’Analyse
+     Mathematique 60 (1993), pp. 21–32. doi: 10 . 1007 / BF03341964. url:
+     https://doi.org/10.1007/BF03341964.
+ [5] J. Bourgain. “Besicovitch Type Maximal Operators and Applications to
+     Fourier Analysis.” In: Geometric and functional analysis 1.2 (1991), pp. 147–
+     187. url: http://eudml.org/doc/58112.
+ [6] J. Bourgain. “Mathematics: Frontiers and perspectives”. In: IMU/Amer. Math.
+     Society, 2000. Chap. Harmonic analysis and combinatorics: How much may
+     they contribute to each other?, pp. 13–32.
+ [7] Antonio Córdoba. “The Kakeya Maximal Function and the Spherical Summa-
+     tion Multipliers”. In: American Journal of Mathematics 99.1 (1977), pp. 1–
+     22. issn: 00029327, 10806377. url: http://www.jstor.org/stable/
+     2374006 (visited on 05/23/2024).
+ [8] Roy O. Davies. “Some remarks on the Kakeya problem”. In: Mathematical
+     Proceedings of the Cambridge Philosophical Society 69 (1971), p. 417.
+ [9] Charles Fefferman. “The Multiplier Problem for the Ball”. In: Annals of
+     Mathematics 94 (1971), p. 330. url: https://api.semanticscholar.
+     org/CorpusID:123837541.
+[10] Larry Guth. “The endpoint case of the Bennett–Carbery–Tao multilinear
+     Kakeya conjecture”. In: Acta Mathematica 205.2 (2010), pp. 263–286. doi:
+     10.1007/s11511- 010- 0055- 6. url: https://doi.org/10.1007/
+     s11511-010-0055-6.
+[11] Larry Guth and Nets Katz. “On the Erdos distinct distance problem in the
+     plane”. In: Annals of Mathematics 181 (Nov. 2010). doi: 10.4007/annals.
+     2015.181.1.2.
+[12] John L. Hickman, Keith M. Rogers, and Ruixiang Zhang. “Improved bounds
+     for the Kakeya maximal conjecture in higher dimensions”. In: American
+     Journal of Mathematics 144 (2019), pp. 1511–1560.
+                                                                               60
+[13] S Kakeya. “Some problems on maximum and minimum regarding ovals”. In:
+     Tohoku Science Reports 6 (1917), pp. 71–88.
+[14] Nets Katz and Joshua Zahl. “A Kakeya maximal function estimate in four
+     dimensions using planebrushes”. In: Revista Matemática Iberoamericana 37
+     (Aug. 2020). doi: 10.4171/rmi/1219.
+[15] Nets Katz and Joshua Zahl. “An improved bound on the Hausdorff dimension
+     of Besicovitch sets in ³”. In: Journal of the American Mathematical Society
+     32.1 (Aug. 2018), pp. 195–259. issn: 1088-6834. doi: 10.1090/jams/907.
+     url: http://dx.doi.org/10.1090/jams/907.
+[16] Nets H. Katz and Keith M. Rogers. “On the polynomial Wolff axioms”.
+     In: arXiv e-prints, arXiv:1802.09094 (Feb. 2018), arXiv:1802.09094. doi:
+     10.48550/arXiv.1802.09094. arXiv: 1802.09094 [math.CA].
+[17] Nets Hawk Katz, Izabella Łaba, and Terence Tao. “An Improved Bound on the
+     Minkowski Dimension of Besicovitch Sets in R3”. In: Annals of Mathematics
+     152.2 (2000), pp. 383–446. issn: 0003486X. url: http://www.jstor.
+     org/stable/2661389 (visited on 03/23/2023).
+[18] Nets Hawk Katz and Terence Tao. “New bounds for Kakeya problems”. In:
+     Journal d’Analyse Mathématique 87 (Dec. 2002), pp. 231–263. doi: 10 .
+     1007/BF02868476.
+[19] Nets Hawk Katz and Joshua Zahl. “An improved bound on the Hausdorff
+     dimension of Besicovitch sets in ³”. In: Journal of the American Mathematical
+     Society (2017). url: https://api.semanticscholar.org/CorpusID:
+     119322412.
+[20] Christopher D. Sogge. “Propagation of singularities and maximal functions
+     in the plane”. In: Inventiones mathematicae 104 (1 1991), pp. 349–376. doi:
+     10.1007/BF01245080. url: https://doi.org/10.1007/BF01245080.
+[21] Terence Tao. Lecture notes for Math 254B. 1999. url: https://www.math.
+     ucla.edu/~tao/254b.1.99s/.
+[22] Terence Tao. “The Bochner-Riesz conjecture implies the restriction con-
+     jecture”. In: Duke Mathematical Journal 96.2 (1999), pp. 363–375. doi:
+     10.1215/S0012-7094-99-09610-2. url: https://doi.org/10.1215/
+     S0012-7094-99-09610-2.
+[23] Hong Wang and Joshua Zahl. “Sticky Kakeya sets and the sticky Kakeya
+     conjecture”. In: 2022. url: https : / / api . semanticscholar . org /
+     CorpusID:252968285.
+[24] T.H. Wolff, I. Łaba, and C. Shubin. Lectures on Harmonic Analysis. Universi
+     Series. American Mathematical Soc. isbn: 9780821882863. url: https :
+     //books.google.com/books?id=i56jcHMvXuUC.
+                                                                             61
+[25] Thomas Wolff. “A mixed norm estimate for the X-ray tranform.” eng. In:
+     Revista Matemática Iberoamericana 14.3 (1998), pp. 561–600. url: http:
+     //eudml.org/doc/39560.
+[26] Thomas Wolff. “An improved bound for Kakeya type maximal functions.”
+     eng. In: Revista Matemática Iberoamericana 11.3 (1995), pp. 651–674. url:
+     http://eudml.org/doc/39495.
+[27] Joshua Zahl. “A discretized Severi-type theorem with applications to har-
+     monic analysis”. In: Geometric and Functional Analysis 28 (2018), pp. 1131–
+     1181. url: https://api.semanticscholar.org/CorpusID:55358107.
+[28] Joshua Zahl. “New Kakeya estimates using Gromov’s algebraic lemma”.
+     In: Advances in Mathematics 380 (2021), p. 107596. issn: 0001-8708. doi:
+     https://doi.org/10.1016/j.aim.2021.107596. url: https://www.
+     sciencedirect.com/science/article/pii/S0001870821000347.
+

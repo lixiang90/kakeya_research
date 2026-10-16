@@ -24,5 +24,8 @@
 | zero_depth_density_one_restores_j3_horizon | 上述formal j3类另有实际n0~1就保证H≤L或有限统一k | HOR-002：内部quadric-level mixture加一次性随机hidden标签，actual f≡0、S1，全部二次tests统一界迫M/6≤H≤M；M任意大 | 冻结n0-only修补；改研究实际祖先方向成本，不能靠density平移或另加同义统计条件 |
 | bounded_visible_directions_give_uniform_horizon | actual visible-slope density≤N₀^(κ+o1)加f≡0/S1就有H≤C(L+κ)，C独立任意tempered复杂度 | HOR-003：level-dependent shear u₂=αλ−pq，Q=λ(1+αt²)；真实visible density≤C、κ0且M/6≤H≤M，M任意大，full(V,W)仍η⁻¹ | 整个visible-cost completion策略冻结；需不同的实际前端几何及已验证闭合操作，不继续追加同义统计条件或改善toy指数 |
 | quadratic_rank2_affine_codim1_lift | B=diag(1,2)的曲线族可由任意smooth空间仿射/原clock的(1,0)-lift降到R4 | LIFT-005：完整w域强制共同右逆，ρ/y无除法消元给rankB≤1，完整方向rank进一步迫rankB²1；全类必要充分为B0或rankB=rankB²1 | 本窄类完成并冻结；非线性π/时间换元/单selector不在排除范围，重开须不同的真实管几何机制，勿继续等价normal form |
+| rich_central_axis_forces_constant_three_plane | 真实δ⁻⁴方向/full marks/central正比例δ⁻²rich cubes迫沿轴同一plane | NAR001：光滑D场、hot三参数刷加full方向补全，plane Eτ gap≈|τ−σ|，固定plane仅O1 cubes | 需使用小union和全局贡献mass的derived averaged信息；本例union≈1且hot总mass小，不反驳NG |
+| four_plane_packet_negative_power_improvement | 仅增强同种H4包下界即可获五维固定幂gain | NAR002：H4点发δ⁻³方向unit bush的ambient union≤Cδ，排除统一δ^(4−σ)#T；两步刷模板仅δ¹ | 真正跨包/高阶incidence gain；勿把局部包当满四参数NG反例 |
+| single_block_ae_time_free_tensorization | full四参数方向加两个单块a.e.-t定理就自动joint满维 | R0013 coupled接口：f=c,g0的参数条件fiber仅1维；输出条件fiber随t改变，不能交换固定集合量词 | 保同一P和shared t的新joint投影/能量估计；product或独立t平均不能替代 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

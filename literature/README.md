@@ -15,3 +15,5 @@ R0007新增 `guth_2025_kakeya_introduction_v1.pdf`（21页，原PDF与全文均�
 R0011新增第8篇PDF：Nadjimzadah-curved-lifting-2026v1，`primary/nadjimzadah_2026_curved_to_linear_lifting_v1.pdf`，15页、961012字节；提取全文与版本/校验元数据分别存extracted、metadata同名前缀。读过Definition 2.1、Propositions 2.2/2.5及相关证明和§6；不是全文独立重证。其lifting由高维直线输入推出低维曲线结论，未提供逆向五维约化。具体下一项检验见 `notes/20_dimension_lifting/curved_lifting/R0011_source_and_next_test.md`。R0010的abstract-only检索记录保留为当时状态，不追溯改写。
 
 R0012无新增PDF，仍为8篇。新增阅读包括Wang–Zakharov §2.3/§17的高维sticky配置、HRZ Theorem4.1与Proposition4.2、Zahl综述§4.3–4.4；精确阅读范围与web-only候选存 `metadata/R0012_source_check.json`。有限检索不用于认证新颖性。新主任务转向真实R5管的三平面窄端点，未将sticky配置假设免费赋给一般方向分离管。
+
+R0013新增3篇，现共11篇PDF：Kulkarni-2024-planebrush-thesis（66页）、Katz-Zahl-2019-planebrush-v3（40页）和Fassler-Orponen-horizontal-SL2-2022v1（7页）。每篇原文、全文提取、SHA256和精确read_scope/proof_status均已存档。KZ v3修正旧Lemma7.1后maximal约3.049与Hausdorff约3.059不可混淆。Kulkarni Prop18打印证明的具体待补证位置见R0013_primary_narrow_audit.md，不标整定理verified。FO单块定理不是共享时间两块耦合或任意dense shading定理。metadata/R0013_source_check.json记录本轮范围，未作穷尽前沿或新颖性认证。
