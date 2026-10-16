@@ -29,3 +29,5 @@ R0017无新增PDF，仍18篇。补读Wang–Zakharov §19.1(148)–(152)、§21 
 R0018新增Hochman1503.09043v2（98页，官方版本2017-06-05），现19篇PDF。已保存原PDF、全文、bytes/SHA256与metadata；选读Defs2.1-2.6、Theorem2.8/Remark2.9、Theorem2.14及§4.6最后证明步，PDF19图已核，未全文重证。Theorem2.8要求独立卷积小熵增长，不能由原受限W图小像直接调用；common V_i只在每层公共，不是全局平面。source支持R依赖有核；具体W归一frame已bounded。source§22.4读到scalar恢复/convex-Wolff终步，用于下一mixed42候选，未宣称已推广。详细范围metadata/R0018_source_check.json。
 
 R0019无新PDF，仍19篇。补核GGW2211.09508v2 Theorem2.1（PDF3图）和GWZ2601.14411v2 Definitions3.1–3.5/Lemma3.7（PDF7图），原权全局投影实际用后者，未重跑完整证明或Lean。WZ2609.22035v1 §19/21/22的量词、三维horizontal原质量和PDF98–99逐算式审查存metadata/R0019_source_check.json；(192)后过强指数已有保守修复，不是四维定理反驳。官方版本2026-10-17复核GGW仍v2、GWZ仍v2（Oct11）、WZ仍v1，未声称穷尽前沿/认证新颖性。
+
+R0020无新PDF，仍19篇，无新在线版本声明。补读WZ Def3.9/map(20)/Obs3.2–3.4及实际配置点AD、degree、marks尺度，直接重算五维parent抵消和投影端点，不把印刷R3声明免费当任意维定理。GWZ Lemma3.7的density门槛另有自包含bush校准。精确范围metadata/R0020_source_check.json；未重证全文，没有完整mixed分支或维数结果。

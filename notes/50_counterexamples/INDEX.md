@@ -40,5 +40,8 @@
 | fullgrain_reaveraging_erases_rho_squared_error | 对原(155)含rho²误差再作fullgrain平均就能把row oscillation从rho提到rho² | R19 Δrow=(0,rho,0)、x宽rho、Y含0，全部原query仍落N_rho²Y；是真observable反校准非source反例 | 真实支付direction到rho²或另一独立原约束，不自行降低误差 |
 | post_tau_collapse_yields_rho_two_plus_epsilon_row | source(192)代入(195)与已列Delta界直接得row rho^{2+epsilon/2} | R19原PDF99核版：Delta/rho仅rho^{1+epsilon}；E+swap修为rho^{1+c epsilon}仍足scalarCW正幂 | 使用保守修复或真正更强推导；不是四维结论反驳，不引用原rho^-kappa强化 |
 | exact_transport_or_global_projection_is_free_local_source | 全clock固定Cantor运输或全局固定kernel排除自动覆盖实际mixed局部frame | R19真实非线性线族本身CW失h^-kappa；MIX001全局CW投影已付，但local q条件化除mass及blur≫δ未付 | 原mass/wholeconvexprism/尺度/marks真实预算，不能添加transport或抹去其他row误差 |
+| short_window_parent_CW_automatically_meets_GWZ_shading | 完整parent空间缩放保CW后，一个ρ-window正常形就够namedGWZ | R20 bush迫etaG≤epsG/2，稳健s≥ρ^{1+cε}时λ≤C(ρ+s)不足s^etaG | 真额外marks、误差消去或不同已付输入，不能放大etaG或降低认证blur |
+| ambient_full_directions_and_local_grain_give_small_projected_CW | 环境full4方向/AD/CW加局部full3grain、原marks和单尺度slicecover自动给strict投影余量 | R20真线(d+ta,tb,(1+t)c,td,t)，原massρ²、最优D≈ρ^-1且λ≈1；缺完整source薄集AD/Phi | 必须用缺失的真实source结构；此非source或Kakeya反例，不继续同例调指数 |
+| point_AD_cover_alone_improves_local_kappa_endpoint | 原点AD5−κ和John-cover自身能将D_s≤K s^-κ改进固定正幂 | R20 Leb4×Cantor(1−κ)在lifted slab集中比A^-κ，point-cover单步sharp | 须新增tube/ξ/Φ等关系，非仅point维数；不把该point模型当fullsource |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

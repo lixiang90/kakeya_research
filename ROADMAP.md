@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0019保留实际mixed42条件归约与MIX-001全局固定核排除；下一攻local投影原质量/CW/误差接口。旧冻结仍生效。无新Kakeya维数下界，长期Goal未解决。
+更新2026-10-17，R0020取得实际parent抵消与MIX-002局部投影端点，无strict κ-gap，local mixed42/GWZ冻结。下一唯一候选转实际mixed32 quadratic的bounded-degree vector polynomial/tube-KT。旧冻结仍生效。无新Kakeya维数下界，长期Goal未解决。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -17,11 +17,12 @@
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
 | M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
-| O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、保守source99修复；MIX001排全局任意bounded残余，local仍未付 | 同N5-MIXED42-Q01下一一轮实际local GWZ/CW/shading/error预算；勿重复canonical/固定transport模型 |
+| O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
+| P | 实际五维mixed(3,2)二次分支 | scalarΦ/vectorY，r标量无正交row残余；vector polynomial/tube-KT有限命题及source回传均待证 | N5-MIXED32-Q01唯一下一候选，R21定期macro后攻；不预设任意Lip是C² |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
 
 R0016的MNL001依赖WZ Theorem13.5且要求明确小epsilon0，不称重大结果。原Lemma19.2 neighborhood-to-convex-Wolff仍未全面重证；mixed/general-to-sticky/Hausdorff仍open。完整应用见notes/40_multiscale/sticky_matrix/R0016_source_linewise_application.md。
 
-R0018宏观冻结W/BSG/common-plane，Theorem21.2仍scalar乘数。R0019提前macro见research/reviews/R0019_macro.md：新已付3D输入支持下一轮真实local接口，但全局commonkernel不能免费替局部近似frame。source(192)→(195)的过强指数用保守E+swap修复，不再无补证调用该处rho^-kappa强化。完整源、高维mixed非二次及Hausdorff仍open。
+R0018宏观冻结W/BSG/common-plane，Theorem21.2仍scalar乘数。R0019 source(192)→(195)过强指数用保守E+swap修复，不再无补证调用该处rho^-kappa强化。R0020提前macro已停止local GWZ端点迭代，下一spec为notes/40_multiscale/sticky_mixed/R0020_next_mixed32_polynomial_target.md；这是待证不同实际分支，不是新弱Goal。完整源、高维mixed非二次及Hausdorff仍open。
