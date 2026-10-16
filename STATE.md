@@ -1,41 +1,39 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0025。长期Goal active；n>=5/general Kakeya未解决，无新维数界、真实Kakeya反例或认证重大结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0026。长期Goal active；n>=5/general Kakeya未解决，无新维数界、真实Kakeya反例或认证重大结果。
 
-## 恢复与宏观
+## 固定恢复与宏观
 
-R25起点R24 commitaa64ab7116debf544880225773af048f3a78655d，tree823f2ab36caaaf455b9267942dcd65424b25cceb；371文件回执、sameHEAD/origin和clean已核。收尾ignored tmp/sync/R0025.json须核远端完整tree/精确import/全部blobbytesSHA256/clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/最新round并运行python scripts/context.py。不要从最后proof局部继续。
+R26起点R25 commit bd475daa2d00f3cc7fab4c47b0dcdca6c89d5214，tree b2f49d26b5b04557cda99f2d58f728d2c3e3409a，386文件receipt、HEAD/origin/clean已核。收尾ignored tmp/sync/R0026.json须核remote完整tree/精确import/全部blob bytesSHA256/clean。下一先核receipt/git，再读GOAL/STATE/ROADMAP/registry/最新round，运行python scripts/context.py。禁止从最后proof局部直接继续。
 
-R24为progress（actual原角gate），R25为progress（weightedengine和conditionalmiddleτ），均非重大/完整高维。因源radial uniform/multiplicity责任已作R25提前macro并实质修补，R27常规macro保留；关键失败提前。每轮一main至多两互补代理，归档/独审/安全同步，不force不重问授权。
+R24/25/26均progress但不是重大高维结果。R27必须先定期macro，重看已付条件与真实剩余障碍，再开唯一main；关键失败提前。每轮至多两个互补代理，统一归档/独审/安全同步，不force，不重复请求已给授权。目标仍完整高维或经独立意义/文献评估的重大结果。
 
-## R25新已核：SCE-001与MIX-004
+## R26新已核：GVT-001与MIX-005
 
-主proof同目录notes/40_multiscale/sticky_mixed/下R0025_weighted_time_reduction.md、R0025_scalar_curvature_engine.md、R0025_conditional_mixed43_middle_tau.md；独立sampling B稿R0025_weighted_engine_counterattack.md，A separated/repair稿R0025_scalar_engine_source_audit.md；两独审和root整合在research/reviews。
+主proof同目录notes/40_multiscale/sticky_mixed/下 R0026_global_vector_tau_gate.md、R0026_conditional_large_tau_exclusion.md；A源审计 R0026_global_tau_source_audit.md、B独立finite/攻击 R0026_global_tau_counterattack.md；两独审和root整合在research/reviews。
 
-SCE001 finiteweightedscalarengine条件于namedWZ BSG13.7、uniformrefinement5.1、radial22.2（完整高级proof未全独审）。原ν只需r≥workingw intervalcap；同一F/G标量unitbounded、全部weightedquadraticnonfit、scalarAcarddeficit1−κ、ratio与原boundedg。结论这些输入小loss下不相容。
+GVT001真正支付global量词：τj在原global δ^ηj-dense time候选上min，固定半开dyadicρ partition查所有同窗vector E。先删locally-light mass≤δ2ηj；每bad窗有β-rich affinefit，原coefficientweightedNQ迫small slope→完整vector近常。各窗所选fiber并若达δ^ηnext原绝对mass，则所有同窗E收缩反stable；否则badwindowmass<δ^ηnext/β，删后保global≥δ^ηj/2且每剩window all-real vector affine nonfit。q子集要多付Kβ，原NQ分母不可重置。δfloor、任意actualanchor与保守2/M稳定链均付。
 
-细time归约真正付：删lightcell得mixturedensity上下，独立每cell同原标签携带t/F/G；diagg置0付1/N。rootadmissibleλ>0归一参数网加Hoeffding同时保所有fit，B有独立ghost/arrangement proof。clockround只改S timeprefactor；normM时CMw不能省。prepared uniform B不是旧ν restriction，代表旧atomicmass可任意小；后续周期在preparedprior重生。
+重建图而不假旧g存活。R22整time闭包适用；源22.1(179)及proof只需E upper，不需该q达到globalτ。故沿同选角前vectorτ重做good-q/L/g，canonical FJ=(ρ/τ)E(z,cJ)消q依赖。
 
-先用R23 scalarpointcap给balanced Sj的#≥w^-c0，不循环radial；BSGenergy X=Sj/Y=A匹配，平衡cell使S'cardlower转回H edgep。Q(C4)−Q(C4)用n=m4有限iterates控制。
+MIX005条件actuallargeτ：删G要honest eL=K^C[ρ+ρ³/τ]，同步空间归一w=eL/L后ρ²≤w≤ρ^(ζ1/2)，不用旧ε₀-controlled mesh。三点maxannihilator保同原slabprior角与g，得allreal scalar affine nonfit。空间full-Y两侧AD packing/heavycells复用已付操作。fine-time sampler另给unweighted affine系数net：richfit time span控slope≤CKt/q；rounding付CKt w/q≪w^e，Hoeffding net与graph正概率可同时满足。不是旧ν restriction。named13.5 C={1}，F→−F修符号，η_reg独立mass指数、η_graph依mass指数分别取小。
 
-源22.2要求真正separated uniformP，multiset及原(208)almostall不免费调用。先选有共同right邻居d0≥p²/2的leftpairs，再actualPimages+uniformsubset；每点保原pairwitness及degree。新P²×right²中CS给Wmass=d0⁴=p8/16（d0²只一sharedright），输出仍在同BSG小集。radial所有bad只对新Pprior计费。
+参数：先13.5 e、R25 engine e_quad，再ζ1≪ε₀e_quad、A=ζ1e/100、ε1≪A、M>16/A、physicalε2；terminalηM小，从后向前b_j=ηnext/100、ηj≪µb_j及本j所有角/13.5阈值，原source/AFFloss最后小。故stablechain middle/large可兼容。tinyτ物理linearfit矛盾。
 
-A自证weightedKaufmanlaw：参数2Fst stripcover×target1Fst collision积分，两Markov保原targetlabels投影mass，不把imagesetcap当multiplicity。≤6chart lightmass<w^u付≤6w^u，heavyKΛ≤Cw^-ζ-u，ζ+u+η0<βK/8；去smallnorm后原w-output归一宽w/|vi|付w^-q。所有异常在同P²×right²，l远小于exception指数。scalarAcover亏损κ给最终矛盾。
+连同R25 MIX004，只排除**有globally dense wholematrixAFF₃准备**的非二次proper分支；AFF₃存在、quadratic alternative、fullmixed43仍未证，高级named全文未全独审，不把条件应用升级高维定理。
 
-actual MIX004仍conditional wholematrixAFF3及vectornonquad/真实retention。QSC001先给同usedproxyψ的F/G/g，A/F/G同步÷L，w=e/L，须L*hnew≤旧σ。full原Y ADlower disjointballpacking+enlargedpatchupper付coarsecover，heavyfinecapacity上下换UniformA/ratio，κ/2buffer。engineε先依κ定，physicalp=2eps1+ζ1再小、β再定、所有source/AFFloss最后小。排rho^(3+2eps1)<tau≤rho^(3−ζ1) proper alternative，不证明AFF3存在。
+## 唯一下一main：先R27宏观，再付真实matrixAFF₃
 
-## 唯一下一main：largeτ的vector/global稳定性
+spec notes/40_multiscale/sticky_mixed/R0026_next_matrix_affine_target.md。当前高维实质障碍是ell3 observed A upper Kρ⁻²，scalarABC lowerρ⁻¹⁻κ不足（κ≤1）。保二维visible x与ξ、原W bounded graph和matrix time作用，核实际平移((t−s)ψ,−[M(t)−M(s)]ψ)、重数及used原slabprior；再检验是否可得>2的cardinality gain并推出globalrich wholematrixAFF。展示式需先源逐项支付，不先假新matrixABC/rank2/独立乘积。
 
-仍N5-MIXED43-NQ01，spec notes/40_multiscale/sticky_mixed/R0025_next_large_tau_target.md。攻tau>rho^(3−ζ1)时在**vectorFrow**上先付all-real affine nonfit，physicalnonquad迫richaffinefit slope小→vector近常→合法全局nexttimecandidate的tau缩小。主难是跨窗口globaldensity；一个q的fit或Eψ缩小不够。稳定化仍用选ψ前的vectorτ，不能重设projectedτ后沿用原loss。
+一轮必须真实gain/严格finite门槛反例或不同的actual结构缺口；先查是否重命名冻结Y-only、抹g独立化、linewiseMNL。新输入必须是实际二维visible坐标+原time作用。不要继续三点、sampling、τ常数。R27宏观比较其他五维与general/Hausdorff，未解mixed43 quadratic仍记账但不自动再选一个有AFF条件分支。
 
-大τ删G仅有rawK rho³，必须用wL=K[rho+rho³/tau]重付阈值。若vector/globalgate成立，再用原slab先验三点affine选择保g及named13.5。三点finite变体本身不算main进展；一轮无真实mass新输入立即止并macro，不继续sampling/chart常数。R27定期macro保留。
+## R25保留接口与旧冻结
 
-## 仍未解与冻结
+SCE001 finiteweighted scalarengine在namedBSG13.7/uniform5.1/radial22.2下成立。原weightedν同F/G选择同时保g与所有weightedquadfit，preparedprior重生；actualseparateduniformP先保common-rightdegree，Wmass=d0⁴=p8/16；weightedKaufman直接控target原pushforwardlaw，charts/norm费用在同新prior。MIX004只conditionalmiddleτ，原space/A/F/G同步L精度需Lhnew≤σ，full-Y packing不得只用pointupper。
 
-AFF001只ell2；ell3 observedA upperrho^-2，scalarABC lower仅rho^-1-κ不足，matrixAFF3仍突出未付。largeτ、mixed43 quadratic、其他五维case、general-to-sticky/Hausdorff未解，OpenAI175页及WZ高级inputs未全独审。
+QSC001 actualused角slab与proxylabel保留；不是fixed exactfinepair密集slice。AFF001仅ell2；原scalarABC不能给AFF3。PCT001常数在2/γ幂内，原uniformγ幂外C严格否定；SCAL001 bounded范围/weighted门槛、sign/Lf修复、Ksrc/Kprep隔离、整time闭包保留。
 
-R21–22 PCT001/MIX003 quadraticproper alternative在AFF001及named21.2/19.2/19.4/19.5下闭合，非全mixed32；PCT常数在2/γ幂内，原uniformγ幂外C有限反例保留。SCAL001 boundedaffine费b^-4、heavytime/coarsex、符号Lf修复、整time闭包、Ksrc/Kprep隔离保留。QSC001原used角slab+proxylabelgate保留，不称fixedexactfinepair slice有density。
+NQP001只mixed32 pointball/partialline；Qline≠Sline，新cycles不保原c，缺原prior二维growth，无输入rank局部重写冻结。MIX001全局commonkernel条件3D应用；MIX002 localGWZ端点冻结。matrixY-only/W独立化、CP/PM改名、LIFT005窄类、HORvisiblecost、NAR捷径冻结；MNL001仅特殊linewise。详ROADMAP/失败INDEX。
 
-NQP001只mixed32 pointball/partialline，Qline≠Sline、新cycles不保原c/line，无新原prior二维gain不重开rank局部重写。MIX001 globalcommonkernel既有3D条件应用，MIX002 localendpoint/GWZ冻结。matrixY-only/W独立化、CP/PM改名、LIFT005窄类、HORvisiblecost、NAR捷径冻结；MNL001仅特殊linewise。详ROADMAP/失败INDEX。
-
-文献19PDF/全文/bytesSHA256，本轮无新PDF/在线版本/新颖性声明，scope metadata/R0025_source_check.json。长期Goal完成标准不降低。
+五维(3,3)/(3,2)/(4,2)/(4,3)其余部分、general-to-sticky/Hausdorff均未完成；OpenAI175页及高级源inputs未全面独审。文献19PDF/全文/bytesSHA256不变，本轮无在线版本或新颖性声明；metadata/R0026_source_check.json。Goal标准不降低。

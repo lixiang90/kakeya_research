@@ -47,3 +47,13 @@ R23 NQP-001只登记原质量接口；mixed32完整非二次未证。无输入ra
 R24 QSC001通过原角finite/conditional实际gate，完整mixed43仍open；下一须原weighted scalar engine，不继续插值常数。
 
 R25 SCE001/MIX004内部交叉审查通过其named/conditional范围，下一largeτ，matrixAFF3仍未付，非完整高维结果。
+
+| 文件 | 已核范围与边界 |
+| --- | --- |
+| R0026_global_vector_tau_gate.md | 原全局candidate最小化、light/bad窗口质量二择、vector近常、δfloor与2/M稳定链 |
+| R0026_global_tau_counterattack.md | 独立finiteweighted证明与global/local/anchor/g集中反例攻击，明确候选族与原分母 |
+| R0026_global_tau_source_audit.md | source22.5量词与22.1仅upper，canonical FJ及整time重建g接口 |
+| R0026_conditional_large_tau_exclusion.md | honestmesh、三点原slab、同F affine sampler、13.5符号/两η，带AFF₃条件排largeτ |
+| R0026_next_matrix_affine_target.md | R27先macro，再审实际ell3 observed A的ρ⁻² barrier和真实matrixAFF₃，未证 |
+
+R26 GVT001/MIX005只闭合有matrixAFF₃准备的非二次proper branch，不产生AFF₃或完整五维。下一不继续三点/clock/τ常数；一般维度Goal保持。

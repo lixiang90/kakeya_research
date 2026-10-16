@@ -62,3 +62,8 @@
 | image_set_Frostman_is_original_projection_law | projected distinctcell set1Fst自动控制原target重数 | setcard不记录原fibres；R25证明weightedKaufmanlaw直接控旧标签推前 | 保真实law并付target删选/参数exception，不能只用image-set术语 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。
+
+| 指纹 | 已否定的说法 | 严格证据 | 重新开启条件 |
+| --- | --- | --- | --- |
+| local_constant_fiber_is_global_tau_candidate | 一个q/ρ-window的丰富近常fit就直接改进globalτ | R26全局阈值绝对δ^ηnext|Z|，单窗可仅Oρ；旧g也可全部集中被删bad窗 | GVT001以所有窗口fitfiber并的质量二择修补，并按整time闭包重新生成g；固定同一半开partition |
+| large_tau_working_scale_still_epsilon0_controlled | 改诚实wL后仍用w≤ρ^ε₀支付nonfit | R26 wL=K[ρ+ρ³/τ]上界仅Kρ^ζ₁ | named13.5 precision先定，再取physical ε₁≪ζ₁e，η backward hierarchy；不能复用旧阈值 |

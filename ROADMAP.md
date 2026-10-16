@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0025以SCE001付原weighted scalarcurvatureengine、MIX004排有matrixAFF准备的actualmiddleτ；named高级证明仍条件。下一攻largeτ vector/global稳定性，AFF3和完整mixed43仍未解。提前macro已执行，R27常规macro保留，无新维数界。
+更新2026-10-17，R0026以GVT001付原vectorτ的真实跨窗质量gate、MIX005排带准备largeτ；与R25只关闭有AFF₃准备的非二次分支。AFF₃和完整mixed43仍未解。下一先作R27定期macro，再攻实际ell3矩阵observed集合的ρ⁻²障碍，不继续scalar/τ常数。无新维数界。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -19,7 +19,7 @@
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
-| Q | 实际五维mixed(4,3) | QSC001原角gate、SCE001 weightedengine、MIX004 conditionalmiddleτ已付 | 下一largeτ vector/global稳定；ell3AFF/二次/fullcase未证，不免费继承ell2 |
+| Q | 实际五维mixed(4,3) | QSC001/SCE001与MIX004/005、GVT001关闭有AFF₃准备的nonquad proper分支 | 下一R27 macro与真实matrixAFF₃/observed二维gain；二次/fullcase未证，不免费继承ell2 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
@@ -37,3 +37,5 @@ R0023提前macro：原weightedQ ballcap与densecycleline提取已付，但Qline/
 R0024定期macro已执行：不同actual(4,3)的scalarY/row2角机制获得真实原先验gate，不是mixed32免费投影。QSC001更强uniform版无timegap逆幂；weighted版需w≪b²/Kt²。下一spec notes/40_multiscale/sticky_mixed/R0024_next_weighted_scalar_engine.md，须真正支付fine ν到scalar projection输入及g/cycle质量。matrixAFF3、largeτ与高维总目标仍open，下一常规macroR27。
 
 R0025提前macro与source修补：fine同F/G选择后preparedprior重生；uniformP从actualpair共同邻居提取，W=d0⁴；weightedKaufmanlaw/charts/norm真实计费。SCE001在named13.7/5.1/22.2下成立，MIX004仅有matrixAFF准备的middleτ排除。下一spec notes/40_multiscale/sticky_mixed/R0025_next_large_tau_target.md，必须付vector/globaltime稳定，不能局部Eψ或三点finite变体代替。
+
+R0026付global量词：locally-light先删、richfit迫vector近常、fitfiber并达nextthreshold则反稳定，否则badwindowmass有upper；删后整time配置重新生成g。named22.1只需τ upper，不要求q内达到；largeτ诚实wL和三点原角/affine sampler/13.5两η已付。下一spec notes/40_multiscale/sticky_mixed/R0026_next_matrix_affine_target.md；R27先macro，matrixobserved保二维visible和原time作用，禁止Y-only或抹g独立化改名。
