@@ -14,5 +14,7 @@
 | pointwise-true-floor-global-palette | 不加d<1/native来源，仅真实list/floor就保证小全局多项式palette | BND-001：d=1边界、完整斜率密度1、真实floor与常数覆盖仍需η^-1个 | 真正使用d<1、native Hessian或criticality的新输入 |
 | branch-inherits-full-parent-floor | 质量仅f比例的native分支可免费使用原父floor | DIR-002：固定分支比例界须付f^-1，多个事件另付并集预算 | 更强分支质量或同一prior的新预算 |
 | visible-window-controls-hidden-total | 可见方向的小窗口增量自动控制W或祖先总信息 | ENT-001同网格链式展开保留隐藏项与祖先成本 | 真实full-slope/原生系数的新增熵率及几何约束 |
+| native-bins-preserve-raw-W-resolution | d<1原生系数箱及mixed熵率自动给同精度W列表 | NAT-001：H(Wp\|Bp)≥logS，L-list成功≤L/S；H0且非raw来源 | 使用正horizon/source结构，或明确支付p/S与point信息 |
+| two-time-recovery-is-overlap-gain | 同一轨道两时刻恢复就提供KT式几何增益 | R0005 KT对照：给定V后两时刻等同y0；改进需跨轨道重合 | 新的共享point纤维、重叠计数或真正独立信息 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。
