@@ -21,3 +21,5 @@ R0013新增3篇，现共11篇PDF：Kulkarni-2024-planebrush-thesis（66页）、
 R0014新增4篇，现共15篇PDF：GGW2211.09508v2、CSWZ2610.13682v1（2026-10-09）、Du2510.16671v2、Gan2308.07675v2。前缀均以R0014_开头，原PDF/全文/metadata一一对应；SHA256、版本和精确阅读范围可查。确有finite/shading定理，但本联合family的Grassmann rank、model-hyperplane/pencil或无子空间塌缩假设不合；未凭标题当CP输入。详见metadata/R0014_source_check.json及R0014_primary_projection_audit.md，未认证穷尽前沿或新颖性。
 
 R0015新增2篇，现共17篇PDF：He1611.09639v2（29页）与He–de Saxcé1806.06375v3（23页），均以R0015_前缀存原PDF、全文和来源/校验元数据。读Theorems2/3与表示版本Theorems2.3/2.4、Prop2.5等明确假设；未将实际L-tuples的matrix作用免费当其输入，未重证全文。Wang–Zakharov真实d5/k=ell3矩阵分支的精确source阅读范围见metadata/R0015_source_check.json。
+
+R0016新增Shmerkin2308.09846v3（19页），现共18篇PDF。原PDF、全文、SHA256、版本及精确read_scope均已保存。仅核Theorems1.2/1.5与Section4.3的声明/接口，未重证全文；其固定porosity应用不能直接套用原delta^-eta常数，未据此闭合一般矩阵分支。实际有限图直线分支使用Wang–Zakharov Theorem13.5，仍显式依赖该既有标量输入。

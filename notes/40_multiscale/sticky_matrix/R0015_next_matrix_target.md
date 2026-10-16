@@ -16,3 +16,7 @@
 主目标是整项(SM)排除结论。新向量和积引理若只适用于额外irreducible系数，必须同时说明可约分支如何从原source推出grain改善；不能据此宣布主目标成立。He及He–de Saxcé工具的假设/闭包成本在R0015_source_matrix_reset.md列出，未验证前不能直接使用。
 
 下一轮先working_spec，至多两个互补审查：一项核真实L-tuples/线性branch及原权重，另一项攻击向量和积或可约分支。须有真实联合扩张估计、原配置反例或严格收缩的未闭合分支；不以线性代数校准或scalar projection满维充数。若一主轮无实质新信息，宏观换机制，不退回无来源的formal j3模型。成功也只解sticky关键分支，不自动完成mixed cases、一般五维/Hausdorff或长期Goal。
+
+## R0016明确的参数与进展补注
+
+既有标量13.5的调用需要epsilon0先足够小依gamma。R16只在该明确范围内证明逐差直线分支（实际共同像及单矩阵pencil）的排除，没有证明任意epsilon0字面版本或一般Mat2结论。固定kappa未缩小，原source/SM及all-real系数均保留。实际质量接口与应用见R0016_source_linewise_application.md；主目标继续开放于不落O(rho)直线邻域的平面曲线，不把它们免费当有定量曲率或irreducible。

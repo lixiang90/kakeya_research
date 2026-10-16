@@ -31,4 +31,7 @@
 | every_long_cycle_forces_further_direction_drop | 从三四五环退化可无限推全部闭环低于full4 | CPJ001六cycle有限差分构造真实full4方向rank且可满来源补全；五环仅3、四环固定首边2 | 不继续逐边polygon；必须从原incidences推出有效cycle质量或新的可检验机制 |
 | uniform_shading_lower_and_low_mass_are_different_tasks | 对全部原P_j统一CP只给union，不能反推出PM，故PM是独立更小新路线 | R0015删high whole cells后再次应用CP，任意τ<σ获≥S/2更严格低重数mass；与反向合成正gain等价 | 冻结CP/PM局部改名；此是量词纠错而非Kakeya反例，逐管门槛须另核闭包 |
 
+| unused_coarse_direction_cells_inherit_slab | Phi_p包含在粗Phi_q邻域就使全部Phi_q uniform slab-Frostman | R0016源审查：包含关系不控制unused cells；已用原incidence混合heavy辅助H及L边际upper合法修补 | 必须保原质量证明辅助方向/差prior的cap，不可直接重置原Phi_q |
+| tube_KT_subpower_constant_gives_fixed_porosity | 原delta^-eta tube-KT常数直接给独立delta的line-porosity从而套一般卷积corollary | R0016_matrix_span_boundary的短连续δ网格满足相应Y假设而无固定尺度porosity；仅Y接口测试非完整source反例 | 需从完整原time/coherence证明额外跨尺度输入，不能仅引用inverse theorem题名 |
+
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

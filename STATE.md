@@ -1,38 +1,34 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0015。长期Goal active；未解决n≥5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0016。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
 
 ## 恢复与宏观状态
 
-R0015起点R0014 commit 565016ef8fc9ecf9c36a09b6e57dd5387b6f235d，233文件回执、local=origin/main及clean tree已核。本轮沿此父同步；完成回执tmp/sync/R0015.json在完整远端核验和精确本地导入后生成。下一轮核回执/git，再读GOAL、STATE、ROADMAP、registry与R0015正式轮次，运行python scripts/context.py；不从局部末段恢复。
+R0016起点R0015 commit 15483e64fd9d825a834dbb319fe7217f936ad188，251文件回执、HEAD与clean tree已核。本轮沿此父同步；完成后ignored回执tmp/sync/R0016.json记录完整远端tree/path/mode/blob、本地SHA256、同一commit及clean tree。下一轮先核该回执和git，再读GOAL/STATE/ROADMAP/registry/最近轮次，运行python scripts/context.py；不从局部尾段恢复。
 
-上一Goal turn分类progress。本轮是第三轮macro节点并实际执行停止规则：没有新质量估计或Kakeya界；通过证据纠正PM新路线的误判、冻结等价迭代，转真实多尺度矩阵分支。初等等价不新增result ID，也不作为数学突破。AGENTS新增开轮合法restriction闭包与双向蕴含检查。
+上一Goal turn分类progress。R0015宏观纠错及CP/PM停止仍生效。本轮真正新增一个条件分支排除和原计数接口，并未缩减长期Goal。MNL-001是小范围、依赖既有标量定理的内部审查结论，不能以其完成一般猜想或宣传重大突破。
 
-## R0015量词纠正及冻结
+## R0016已经得到什么
 
-原CP对同一full方向图P的全部合法P_j统一量化。保留high重数whole cells后，原平均密度仍可用η余量吸收常数1/2，得到新的合法选择，P/anchors/单位轴/clock均不变。因此CP(σ)推出任意τ<σ下至少S/2原mass满足m≤δ^(−1+τ)；PM(τ)反推CP(τ)已核。存在正gain层面CP⇔PM；精确endpoint不等同。完整证明notes/40_multiscale/coupled_projections/R0015_uniform_shading_closure.md，两代理独立核验及research/reviews/R0015_*。
+MNL-001排除归一化dense translation graph中逐差F(B)psi落直线（或O(rho)直线邻域）的质量分支。先从同一原g做fiber cardinal-ratio删除，得到tube Katz-Tao给小于1维的标量输入fiber；Wang-Zakharov Theorem13.5强制每个good差的标量affine fit。原差先验的slab cap挑两独立差，其fit在同一B上的交集由Cauchy-Schwarz保住，右乘重构all-real matrix fit而违反SM。没有假设不可约、Y+aY闭包或最大fiber质量。
 
-R0014“单次union计数不直接给mass”仍正确，但原问题可删选后再次调用，所以不能把PM当不同新机制。历史候选已加更正。CP/PM本身仍open，没有反例；其光滑D场子类局部迭代冻结，不以inverse、entropy、relative或重数阈值改名重开。论证依平均密度闭包，逐管long-marks的输入未必闭包，不能移用DIR003。
+实际source接回：R0016_original_tuple_audit.md用原I_q选good q；R=sum d_T²和grain sum B_g²补V/J，signature CS填L20.1省略；以原关联混合μ的heavy bins构造辅助H并用L边际upper支付删除，避免把unused Phi_q当slab。graph恢复表给最大fiber K N_y F_L rho^(2kappa)，固定终端点upper K F_Lm²支付heavy slice/grain。选择实际tube witnesses时每fine Phi-bin取原见证，原ambient T仅用joint AD upper；不把删选族重设为完整配置。
 
-两步path端点恢复F+(a+b)D−abB=0及原方向rank-one cone cap≤C(θ+δ)只是边界。路径终点law按路径数重权，缺对原prior的domination，不能把cap当mass删剪；不继续局部条件数/阈值推演。
+root又用Y0总mass+原Y的packing upper选good tau-window，补clipping gate。weighted quotient用同一个source-cell中心时间网B；归一化F范数O(delta^eta)抵消delta^-eta时间位移，保O(rho)输出误差。large-hit fit给R上界后合法回传原fine times，heavy fibers支付mass。全部接口及独审见本轮notes和research/reviews。
 
-## 唯一下一主任务：N5-STICKY-MATRIX-01
+因此，在完整原d5/k=ell3配置、原SM、source-allowed rho及明确小epsilon0范围下，排除f(z)=F0+h(z)M（一维matrix pencil，可满秩）和f(z)=F0+v r(z)（共同像直线）两个实际斜率族。依赖WZ Theorem13.5正确；其完整证明未在本项目独立重证。精确应用R0016_source_linewise_application.md；有限结论results/reviewed/MNL-001_linewise_translation_branch.md。MNL001也给同一输入下linewise标签原图质量的固定小幂upper，不能无来源改换prior。
 
-返回Wang–Zakharov arXiv2609.22035v1 Definitions17.2–17.4的真实d5/k=ℓ3配置，f:Z→Mat(2,2)。完整tube(4,δ⁻η)-AD、CCW≤δ⁻η、cross-scale原管/Φ_p/ξ_p相容、dense2D grains、Y_z的(2−κ)-AD及(1−γ)-tube Katz–Tao、Φ_p的κ-AD及γ-slab Frostman全部保留。一般方向分离管不自动sticky，source约化也未在本项目全面重证。
+参数细化必须保留：epsilon0先足够小依赖gamma，a=3epsilon0<a0(gamma)，b0=epsilon/2，epsilon小，最后eta小于全部loss阈值；delta0可依eta。固定kappa未缩小。没有证明R0015字面任意epsilon0版本。exact linewise矩阵跨度分类只校准两个families，不是定量近分类。
 
-下一候选是原Lemma20.3的完整Mat(2,2)非线性版本：固定source参数ζ,κ,γ,ε₀,μ，适当ε、η及依η的δ₀；某source允许ρ∈[δ^(1/4),δ^μ]上，对所有z₀及dyadicρ-interval J、所有实矩阵R,U，满足
+## 唯一下一主任务：继续N5-STICKY-MATRIX-01的剩余平面曲线
 
-    #{z∈Z∩J:||f(z)−zR−U||∞≤ρ^(1+ε₀)}≤ρ^ε(ρ/δ)
+完整真实Definitions17.2-17.4的Mat(2,2)非线性结论仍open；下一轮直接攻原同一联合图上F(B)psi不落O(rho)直线邻域的部分。这里“平面曲线”不声称其维数2；非linewise也不自动给定量曲率、矩阵不可约、He作用闭包或独立输入/输出。
 
-是否推出κ≤ζ？R,U不限entries；κ在source允许0<κ≤2范围，不能途中缩原亏损。精确目标notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md，输入审计R0015_source_matrix_reset.md。下一轮先working_spec，再从真实L-tuples/原质量推进联合二维扩张或可约分支。
+本轮新增源质量/有限分支输入允许再做一个主轮：寻求保原g/prior的联合向量扩张，或严格反模型否定所用vector strengthening；不追加C2/irreducible等方便假设后代替原主目标。必须给新mass估计、实质可证机制或严格障碍；若该轮无新信息，立即宏观换机制，不接着做scalar projection/线性分类/阈值改名。完整目标仍R0015_next_matrix_target.md及其R16参数补注。
 
-已有正向输入不为空：source Lemma20.2 pp86–87明确适用所有矩阵尺寸，已处理dense local-affine branch；其V-tuple/19.2依赖仍须核，非线性分支另用L-tuples。Lemma20.3 pp88–89的scalar方法靠Y维数1−κ矛盾；本分支Y维数2−κ，尤其κ<1时单个标量projection满1不够，两投影也不能免费相加。原V/L-tuples给Y平移由(z−z')(f(z)−f(z'))(Φ−Φ)控制，这是实际来源，不是CP的替代假设。
+其他mixed (3,2),(4,2),(4,3)、一般到sticky及Hausdorff多尺度覆盖均未解。原Lemma20.2的大slope几何接口已核；Lemma19.2的neighborhood-growth到convex Wolff仍source依赖，不能称完整20.2已独立验证。
 
-He矩阵和积、He–de Saxcé Lie表示定理可作参考，但不可约/商非集中/远离stabilizers与submodules及多次作用闭包都须从原数据证明。后者允许某些可约表示，不可一概排除；也不许添加irreducibility丢掉合法分支。原更新作用Φ差，不能直接当Y+aY。下一主轮至多两互补审查，一项真实L-tuples及affine输入，一项向量扩张/可约反例；需实际joint估计或严格分支收缩，无新信息再macro，不回formal j3。
-
-这只是五维sticky一个关键分支；(3,2),(4,2),(4,3) mixed cases、一般到sticky及Hausdorff多尺度覆盖仍未解决，不替代最终一般Kakeya目标。成功后仍需独立完整审查与一手新颖性比对才能评估重大性。
-
-文献库现17篇PDF；新增He1611.09639v2（29页）及He–de Saxcé1806.06375v3（23页），均原PDF/全文/SHA256/精确read_scope。metadata/R0015_source_check.json区分声明阅读和全文独立重证；两篇均未直接用作无条件新证明输入。核心175页proof仍未全面独立重证，SRC001/DIR003继续conditional。
+文献库18篇PDF：R16新增Shmerkin2308.09846v3（19页），原件/全文/校验metadata齐。仅核Theorems1.2/1.5和Section4.3声明与应用范围；固定porosity不能从delta^-eta的tube-KT常数直接赋予，未用作一般matrix定理。metadata/R0016_source_check.json记精确范围，未作穷尽新颖性认证。
 
 ## 保留与冻结
 

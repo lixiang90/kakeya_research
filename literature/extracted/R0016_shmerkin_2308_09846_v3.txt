@@ -1,0 +1,794 @@
+                                              INVERSE THEOREMS FOR DISCRETIZED SUMS AND Lq NORMS OF
+                                                               CONVOLUTIONS IN Rd
+arXiv:2308.09846v3 [math.CA] 23 Sep 2024
+
+
+
+
+                                                                                   PABLO SHMERKIN
+
+                                                   A BSTRACT. We prove inverse theorems for the size of sumsets and the Lq norms of
+                                                   convolutions in the discretized setting, extending to arbitrary dimension an earlier
+                                                   result of the author in the line. These results have applications to the dimensions
+                                                   of dynamical self-similar sets and measures, and to the higher dimensional fractal
+                                                   uncertainty principle. The proofs are based on a structure theorem for the entropy of
+                                                   convolution powers due to M. Hochman.
+
+
+
+
+                                                                      1. I NTRODUCTION AND MAIN RESULTS
+                                              In order to state and discuss our main results, we introduce some notation. We
+                                           let Dk be the family of half-open dyadic cubes of side length 2−k in Rd (the value of
+                                           d will be implicit from context). For x ∈ Rd , the only element of Dk containing x is
+                                           denoted Dk (x). More generally, if A ⊂ Rd , then Dk (A) denotes the family of cubes in
+                                           Dk intersecting A, and we denote |A|2−k = |Dk (A)|.
+                                              We write [S] = {0, 1, . . . , S − 1} for short; if S is not an integer, then [S] := [⌊S⌋].
+                                           Logarithms are always to base 2.
+                                           Definition 1.1. Given m ∈ N, a 2−m -set is a subset of 2−m Zd ∩ [0, 1)d , and a 2−m -
+                                           measure is a probability measure supported on 2−m Zd ∩ [0, 1)d.
+                                              A 2−SL -set is called (L, S)-uniform if there is a sequence (Rs )s∈[S] such that for each
+                                           s and each I ∈ DsL (A) it holds that
+                                                                                  |A ∩ I|2−(s+1)L = Rs .
+                                              In this case, we refer to Rs as the branching numbers of A, and we also say that A
+                                           is (L, (Rs )s∈[S])-uniform.
+                                              Given a finitely supported measure µ and q ∈ [1, +∞), we define the (discrete) Lq
+                                           norm of µ as
+                                                                                    X
+                                           (1.1)                            kµkqq =    µ(x)q .
+                                                                                              x
+
+
+                                              2020 Mathematics Subject Classification. 28A80 (Primary), 11B30, 42B10 (Secondary).
+                                              Key words and phrases. Inverse theorems, sumsets, convolutions, energy, discretized estimates, frac-
+                                           tal uncertainty.
+                                              Partially supported by an NSERC Discovery Grant.
+                                                                                             1
+2                                       PABLO SHMERKIN
+
+We denote the Grassmanians of linear and affine k-dimensional planes in Rd by
+G(d, k) and A(d, k), respectively. Let πW denote the orthogonal projection onto a
+subspace W ≤ Rd . If c > 0 and I is a cube, we denote by cI the cube with the same
+center as I and side length c times the side length of I.
+  We can now state our main result, which has informally been announced in [14,
+§3.8.3].
+Theorem 1.2. For each q ∈ (1, ∞) and δ > 0 the following holds if L ≥ L(δ) ∈ N and
+ε < ε(L), for all sufficiently large S = S(δ, L, ε):
+  Let m = SL. Suppose µ, ν are 2−m -measures on [0, 1)d such that
+                                     kµ ∗ νkq ≥ 2−εm kµkq .
+Then there exist 2−m -sets A ⊂ supp µ and B ⊂ supp ν and a sequence (ks )s∈[S] taking
+values in [0, d] such that:
+ (A1) kµ|A kq ≥ 2−δm kµkq .
+ (A2) µ(x) ≤ 2µ(y) for all x, y ∈ A.
+ (A3) A is (L, (Rs )s∈[S] )-uniform for some sequence (Rs ).
+ (A4) For each s ∈ [S] and each I ∈ DsL (A), there is WI ∈ G(d, d − ks ) such that
+                              Rs ≥ 2(ks −δ)L |πWI (A ∩ I)|2−(s+1)L .
+    (B1) kν|B k1 = ν(B) ≥ 2−δm .
+    (B2) ν(x) ≤ 2ν(y) for all x, y ∈ B.
+    (B3) B is (L, S)-uniform.
+    (B4) For each s ∈ [S] and each I ∈ DsL (B), there is VI ∈ A(d, ks ) such that
+                                     I ∩ B ⊂ D(s+1)L (VI ).
+   Moreover, if A ∪ B ⊂ [1/3, 2/3)d then, after translating A and B by suitable vectors in
+[−1/3, 1/3)d, we may also assume that
+  (C1) x ∈ 31 DsL (x) for each x ∈ A ∪ B and s ∈ [S].
+    We make some remarks on the meaning and novelty of this statement.
+Remark 1.3. Condition (A4) says that A ∩ I is densely contained in the product of
+a ks -dimensional subspace and another (arbitrary) set - we refer to this behavior as
+“almost saturation”. On the other hand, (B4) states that B ∩ I is contained in a ks -
+dimensional plane at the appropriate scale. Thus, Theorem 1.2 can be roughly sum-
+marized as saying that if no Lq flattening occurs in µ ∗ ν then, after passing to regular
+subsets A, B that capture, respectively, a “large” proportion of the Lq norm and the
+mass, at each scale 2−sL the measure µ is “almost saturated” on a ks -dimensional
+subspace, while ν is “almost contained” in a ks -dimensional affine plane.
+Remark 1.4. The one dimensional version of this result is [13, Theorem 2.1]. In the
+case d = 1, the only possibilities are ks = 0 and ks = 1, corresponding to B having
+“no branching” and A having “almost full branching”, respectively. In higher di-
+mensions, the possibility that 0 < ks < d makes the situation more complicated. Lack
+                                  INVERSE THEOREMS IN Rd                                 3
+
+of smoothing can indeed happen due to saturation on intermediate-dimensional
+subspaces. For example if µ = ν is the uniform measure λk on some subspace of di-
+mension k ∈ [1, d − 1] or, more generally, if µ is (roughly) a product measure λk × µ′ ,
+where µ′ is arbitrary, and ν is concentrated on supp λk . It is also possible to con-
+struct examples where the conclusion of Theorem 1.2 fails, and µ = ν is roughly the
+uniform measure on a plane at each scale, with the dimension of the plane varying
+according to the scale; see the discussion [13, p.338], which extends to higher dimen-
+sions in a straightforward manner. This can be extended to show that (A4) and (B4)
+are necessary in Theorem 1.2 even for µ and ν of very different sizes. In this sense,
+Theorem 1.2 is conceptually fairly tight, but we underline that we are making no
+claims on how the different subspaces are related to each other - one would expect
+that in some rather strong sense, all the planes arising at a given scale are “essentially
+the same” up to translation, but are currently unable to prove this.
+   Theorem 1.2 can be seen as an Lq analog of Hochman’s higher dimensional inverse
+theorem for entropy [8, Theorem 2.8]. Indeed, our proof is based on Hochman’s
+machinery, but we do not apply [8, Theorem 2.8] directly. Instead, we appeal to
+[8, Theorem 4.12] (recalled as Theorem 3.3 below) to prove the following inverse
+theorem for sumsets first. We denote the r-neighborhood of a set X by X(r).
+Theorem 1.5. For each δ > 0 the following holds if L ≥ L0 (δ) ∈ N, 0 < σ < σ(L), and
+S ≥ S0 (δ, L, σ):
+  Let m = SL. Let A be a 2−m set in [0, 1)d such that
+                                     |A + A| ≤ 2σm |A|.
+Then there exists a subset A′ ⊂ A such that the following holds:
+  (i) A′ is (L, (Rs )s∈[S] )-uniform for some sequence (Rs )s∈[S].
+ (ii) |A′ | ≥ 2−δm |A|.
+(iii) For each s ∈ [S], there is ks ∈ {0, 1, . . . , d} such that
+                                     log Rs ≥ L(ks − δ),
+     and for each I ∈ DsL (A′ ) there is a ks -dimensional affine plane WI such that
+                                                          
+                                  A′ ∩ I ⊂ WI 2−(s+1)L .
+Remark 1.6. Theorem 1.5 is closely related to Freiman’s Theorem in additive combina-
+torics [16, Theorem 5.32], which roughly states that a set with small sumset has large
+intersection with a generalized arithmetic progression. However, even the strongest
+known quantitative version of Freiman’s Theorem [12, Theorem 1.4] does not seem,
+by itself, to be sufficient for our purposes.
+Acknowledgements. I thank Emilio Corso, Eino Rossi and Tuomas Sahlsten for use-
+ful discussions. I am also grateful to two anonymous referees for their careful read-
+ing of the manuscript that helped considerably improve the presentation.
+4                                     PABLO SHMERKIN
+
+                             2. U NIFORMIZATION LEMMAS
+  In this section we collect some “uniformization lemmas” that will be used in the
+proof of Theorem 1.5. The following basic result appears implicitly in several papers
+of J. Bourgain and was explicitly recorded in [9, Lemma 3.4].
+Lemma 2.1. Let L, S ∈ N, and let A be a 2−m -set in [0, 1)d , where m = SL. Then there
+exists an (L, S)-uniform subset A′ ⊂ A such that
+                          |A′ | ≥ (2Ld)−S |A| = 2(− log(2Ld)/L)m |A|.
+  Given a set A ⊂ [0, 1)d and a dyadic cube I ∈ Dk , we define the renormalization
+    I
+A as
+                                     AI = HI (A ∩ I),
+where HI is the orientation-preserving homothety mapping I to [0, 1)d . If ℓ ≤ k, we
+also let AIℓ be the 2−ℓ -set corresponding to AI :
+                                 
+                           AIℓ = j2−ℓ : 2−ℓ [j + [0, 1)d ) ∩ AI 6= ∅ .
+The same idea behind Lemma 2.1 yields the following more general result:
+Lemma 2.2. Let (Fs )s∈[S] be functions defined on 2−L -sets and taking ≤ V values. Then for
+any 2−SL -set A0 , there exists a (L, S)-uniform subset A such that:
+     • |A| ≥ (2LV d)−S |A0 |,
+     • For each s ∈ [S], the function Fs is constant on AIL over all I ∈ DsL (A).
+Proof. The idea is to prune the A0 -tree backwards, ensuring the desired uniformity
+and constancy at each scale.
+  To begin, we pigeonhole a value k ∈ [dL] such that
+            X
+                 |A0 ∩ I| : I ∈ D(S−1)L , |A0 ∩ I|L ∈ (2k−1, 2k ]} ≥ (dL)−1 |B|.
+For each I with |A0 ∩ I|L ∈ (2k−1 , 2k ], let BLI be a subset of (A0 )IL of size 2k−1 (so, the
+size drops by at most a factor of 2), and let B  eS−1 be the union of all such B I . Then,
+                                                                                   L
+
+                                |BeS−1 | ≥ (2dL)−1 |A0 |.
+Next, we pigeonhole a value vS−1 in the range of FS−1 such that
+          Xn                                             o
+                                            eS−1 )I = vS−1 ≥ V −1 |B
+              |B ∩ I| : I ∈ D(S−1)L , FS−1 (B                      eS−1 |.
+                                                  L
+
+                             eS−1 ∩ I appearing in the left-hand side. Thus,
+Let BS−1 be the union of the B
+                                      eS−1| ≥ (2dV L)−1 |A0 |.
+                       |BS−1| ≥ V −1 |B
+  We replace A0 by BS−1 and continue by backwards induction in s. Eventually we
+reach a set B0 , and define A := B0 . Clearly, |A| ≥ (2LV d)−S |A0 |.
+  By construction, if I ∈ DsL (A) for 0 ≤ s ≤ S − 1, then I ∈ DsL (Bs ), and AIL =
+(Bs )IL . Thus, the constancy of F and the branching number at each level is preserved
+throughout the process, and holds for A as well.                                     
+                                   INVERSE THEOREMS IN Rd                                      5
+
+  Given a√set A ⊂ [0,
+                     1)d and L ∈ N, let DL (A) be the smallest integer j such that
+A ⊂ W ( d + 1)2−L for some W ∈ A(d, j). Since j = d always works, this is well-
+defined and takes values in [d + 1]. Applying Lemma 2.2 to F = DL and V = d + 1,
+we get:
+Lemma 2.3. Let L, S ∈ N, and let A0 be a 2−SL -set in [0, 1)d . Then there exists a (L, S)-
+uniform subset A ⊂ A0 such that
+                                  |A| ≥ (2d(d + 1)L)−S |A0 |,
+and, for each s ∈ [S], the dimension DL (AIL ) is constant over all I ∈ DsL (A).
+   The same idea yields the following lemma, asserting that one can always find a
+large subset for which all points are near the center of dyadic cubes, after translation.
+Lemma 2.4. Let A ⊂ [1/3, 2/3)d be a 2−SL -set. There are A′ ⊂ A with |A′ | ≥ 3−2dS |A| and
+a vector y ∈ [−1/3, 1/3)d such that x ∈ 31 DsL (x) for all x ∈ A′ + y and s ∈ [S].
+Proof. Given a cube I in [0, 1)d , let {I (j) }j∈{−1,0,1}d be the partition of I into 3d non-
+overlapping cubes of side length a third that of I, indexed in the natural way. For
+example, I (0,...,0) = 31 I.
+  Let AS = A. Once As+1 has been defined for s ∈ [S], we define As as follows: for
+each I ∈ DsL (As+1 ), pigeonhole an index j(I) ∈ {−1, 0, 1}d such that
+                               As+1 ∩ I (j(I)) | ≥ 3−d |As+1 ∩ I|.
+Then select j(s) such that
+                      X
+                          {|As+1 ∩ I| : j(I) = j(s)} ≥ 3−d |As+1|.
+Set                               [
+                           As =     As+1 ∩ I (j(s)) : j(I) = j(s) .
+                                                                            PS−1 −(s+1)
+Then |As | ≥ 3−2d |As+1 |. The claim holds with A′ = A1 and y = −            s=1 3      j(s).
+                                                                                           
+  We conclude this section by recalling another simple but useful result, stating that
+one can always “collapse the branching” of a uniform set at a subset of scales.
+Lemma 2.5. Given L, S ∈ N the following holds. Let A0 be (L, S, Rs )-uniform. Let S ⊂ [S]
+be any set, and for each s ∈ S and I ∈ DsL (A0 ) let X I ⊂ (A0 )IL be a subset with |X I | = Rs′
+(independent of I).
+   Then, there exists a (L, S, Rs′′ )-uniform set A ⊂ A0 , such that:
+(a) If s ∈ S, then AIL = X I for all I ∈ DsL (A). In particular, Rs′′ = Rs′ .
+         / S, then AIL = (A0 )IL for all I ∈ DsL (A). In particular, Rs′′ = Rs .
+(b) If s ∈
+(c)                                                   !
+                                              Y R′
+                                                    s
+                                      |A| ≥             · |A0 |.
+                                              s∈S
+                                                  R s
+6                                     PABLO SHMERKIN
+
+Proof. The case where X I is a singleton (equivalently, Rs′ = 1) for s ∈ S is [13, Lemma
+3.7]. The general case follows in the same way, pruning the tree backwards, replacing
+AIL by X I at each step when s ∈ S.                                                    
+
+                               3. P ROOF OF T HEOREM 1.5
+3.1. Hochman’s theorem on saturation of self-convolutions. The proof of Theorem
+1.5 is based on M. Hochman’s work on inverse theorems for the entropy of convo-
+lutions [8], and specifically [8, Theorem 4.2]. We start by reviewing the concepts
+required to state this result.
+  We write Pd for the Borel probability measures on [0, 1)d . Given µ ∈ Pd and x, k
+such that µ(Dk (x)) > 0, we denote
+                                       1                   
+                             µx,k =           Hx,k µ|Dk (x) ,
+                                    µ(Dk (x))
+where Hx,k is the (orientation-preserving) homothety mapping Dx,k to [0, 1)d.
+  Given a finite set I ⊂ N and a family of measures M ⊂ P([0, 1)d ), we use the
+notation
+                                          1 X
+                       Pi∈I (µx,i ∈ M) =         µ{x : µx,i ∈ M}.
+                                         |I| i∈I
+Likewise, if F : P([0, 1)d ) → R is a Borel function, we denote
+                                                  Z
+                                   x,i     1 X
+                         Ei∈I (F (µ )) =            F (µx,i ) dµ(x).
+                                          |I| i∈I
+
+    Given a measure µ ∈ P([0, 1)d ) and m ∈ N, we denote by
+                                          1
+                                  Hm (µ) =  H(µ, Dm)
+                                         m
+the normalized entropy of µ on the dyadic partition Dm .
+  The following simple but fundamental lemma relates global and local entropies;
+see [8, Section 3.2].
+Lemma 3.1 (Hochman). Let µ ∈ P([0, 1)d ). Then
+                                HSL (µ) = Ei∈L[S] HL (µx,i ).
+Definition 3.2. Fix a measure µ ∈ P(Rd ), a linear subspace V ≤ Rd , and ε > 0, L ∈ N.
+ We say that µ is (V, ε)-concentrated if there is x such that
+                                   µ(x + V (ε) ) ≥ 1 − ε,
+where X (ε) denotes the open ε-neighborhood of X.
+ We say that µ is (V, L)-saturated if
+                                                                C
+                           HL (µ) ≥ HL (ΠV ⊥ µ) + dim(V ) −       ,
+                                                                L
+                                       INVERSE THEOREMS IN Rd                                      7
+
+where C is a suitable constant depending only on the ambient dimension d. 1
+  The following corollary of [8, Theorem 4.12] is our main tool in the proof of the
+inverse theorem:
+Theorem 3.3. Given η > 0 and L ∈ N, there is a number k = k(η, L) > 0 such that the
+following holds for large enough S: let µ ∈ P([0, 1)d ) and let τ = µ∗k be its k-th convolution
+power. Then there are subspaces (VsL )s∈[S] of Rd such that
+                                PL[S] (τ x,i is (Vi , L)-saturated ) ≥ 1 − η,
+                             PL[S] (µx,i is (Vi , η)-concentrated ) ≥ 1 − η
+  This is the same statement of [8, Theorem 4.12], except that we have [S]L instead
+of [SL + 1]. The version above follows from the observation that if I ⊂ J then
+                                                     |J|
+                                 PI (ν x,i ∈ M) ≤        PJ (ν x,i ∈ M).
+                                                     |I|
+3.2. Proof of Theorem 1.5. We use standard O(·) notation to hide unimportant con-
+stants. All the implicit constants below may depend on the ambient dimension d. Let
+L be large enough to be fixed later. Let k = k(L) be the number given by Theorem
+3.3 for
+(3.1)                                        η := 2−(d+1)L
+Suppose |A + A| ≤ 2σm |A|. By the Plünnecke-Ruzsa inequalities (see e.g. [16, Corol-
+lary 6.28]), this implies
+(3.2)                                      |kA| ≤ 2σkm |A|.
+Applying Lemma 2.3 and recalling that m = SL, let A0 be an L-uniform subset of A
+such that
+(3.3)                                |A0 | ≥ (2d(d + 1)L)−S |A|,
+and there are numbers ks ∈ [d + 1] such that for all I ∈ DsL (A0 ) there is a minimal
+affine subspace WI of dimension ks such that
+                                       √                
+(3.4)                    A0 ∩ I ⊂ WI ( d + 1)2−(s+1)L .
+Recalling that m = LS, we get that
+                                                           
+                     (3.2)                   Od (1) + log L
+                                             (3.3)
+           log |kA0 | ≤ σkm + log |A| ≤ σk +                  m + log |A0 |.
+                                                    L
+We pick σ = σ(L) = (kL)−1 log L (recall that k = k(L)). Hence, we have
+(3.5)                                 |kA0 | ≤ 2O(log L/L)m |A0 |.
+  1
+   In [8], the definition of saturation has an additional parameter ε > 0; however, in order for the
+proof of [8, Theorem 4.2] to work, one has to take ε = O(1/L), which matches our definition.
+8                                            PABLO SHMERKIN
+
+  Let ν be the uniform probability measure on A0 . Set also τ = ν ∗k . By Theorem 3.3,
+there exist subspaces V0 , VL , . . . , V(S−1)L ≤ Rd such that
+(3.6)                    Pi∈L[S] (τ x,i is (Vi , L)-saturated ) > 1 − η,
+(3.7)                 Pi∈L[S] (ν x,i is (Vi , η)-concentrated ) > 1 − η.
+    Let
+               S = {s ∈ [S] : ν x,sL is (VsL , η)-concentrated for some x}.
+It follows from (3.7) that
+(3.8)                                        |[S] \ S| ≤ ηS.
+   Since the set A0 is (L, S)-uniform, the measures ν x,sL are all uniform (they give
+the same mass to all points in their support). √     We claim that if ν x,sL is (VsL , η)-
+concentrated, then ν x,sL must be supported on a ( d + 1)2−(s+1)L -neighborhood of a
+translate of VsL . Indeed, otherwise there is a cube J ∈ DL with ν x,sL (J) > 0 that does
+not meet the 2−(d+1)L neighborhood of the translate of VsL given by the definition of
+concentration. But then
+                                                          (3.1)
+                                        ν x,sL (J) ≥ 2−dL > η,
+as all cubes in DL (supp(ν x,sL )) have equal mass and there are at most 2dL of them.
+This yields a contradiction with the definition of concentration.
+  In light of the claim and the minimality of WI in (3.4), we deduce that
+(3.9)                           ks ≤ dim(VsL ) for all s ∈ S.
+  It follows directly from Definition 3.2 that if ρ is (V, L)-saturated then HL (ρ) ≥
+dim(V ) − O(1/L). Applying Lemma 3.1 and (3.6), and recalling that η = 2−(d+1)L ≤
+1/L, we get that
+                                                
+                        1 X                                        1 X
+    Hm (τ ) ≥ (1 − η)      dim(VsL ) − O(1/L) ≥ −O(1/L) +              dim(VsL ).
+                        S                                          S
+                             s∈[S]                                                       s∈[S]
+
+Since τ is supported on kA0 ,
+                                                                         X
+                log |kA0 | ≥ H(τ, Dm ) ≥ −O(1/L)m + L                            dim(VsL ).
+                                                                         s∈[S]
+
+Recalling (3.5), we deduce that
+                                                                  X
+                      log |A0 | ≥ −O(log L/L)m + L                      dim(VsL ).
+                                                                  s∈S
+
+Writing (Rs )s∈[S] for the branching numbers of A0 , we also have
+                                 Y                        X
+                     log |A0 | =   log Rs ≤ |[S] \ S|dL +    log Rs .
+                                     s∈[S]                               s∈S
+                                     INVERSE THEOREMS IN Rd                                   9
+
+Since
+                                              (3.8)     (3.1)
+                           |[S] \ S|dL ≤ ηdSL < (log L/L)m,
+we see that          X                                            X
+                           log Rs ≥ −O(log L/L)m +                      L dim(VsL ).
+                     s∈S                                          s∈S
+
+On the other hand, we get from (3.4) and (3.9) that
+                           log Rs ≤ O(1) + L dim(VsL ),                 s ∈ S.
+Thus, by Markov’s inequality,
+              |{s ∈ S : log Rs < L(dim VsL − L−1/2 )}| ≤ O(L−1/2 log L)S.
+In light of (3.8), the above also holds if we replace S by [S] on the left-hand side. The
+desired set A′ is obtained from A0 by using Lemma 2.5 to “collapse the branching”
+of A0 to 1 at the scales s for which log Rs < L(dim VsL − L−1/2 ). We redefine Rs to be
+1 and ks to be 0 for these collapsed scales.
+   To conclude, take L large enough that CL−1/2 log L ≤ δ for a large constant C
+(possibly depending on d). Property (i) holds by construction. To verify (ii), note
+that (using (3.8) once again), we have
+                               −1/2 log L)m                  −1/2 log L)m
+                |A′ | ≥ 2O(L                  |A0 | ≥ 2O(L                  |A| ≥ 2−δm |A|.
+Finally, (iii) follows from (3.9) and the fact that, by construction, either ks = 0 or
+log Rs ≥ L(dim VsL − L−1/2 ).
+
+3.3. Proof of Theorem 1.2. Equipped with Theorem 1.5, the proof of Theorem 1.2
+follows roughly the same steps as the proof of the inverse theorem from [13, Theorem
+2.1]. We apply several lemmas from [13]; some were stated in [13] only in dimension
+1 but the same proof works in higher dimensions. We keep allowing all implicit
+constants to depend on the ambient dimension d.
+  Let τ > 0 be a small parameter to be chosen shortly in terms of L, and define ε by
+                                            τ
+                                  ε=                  ,
+                                       2 max(q, q ′ )
+where q ′ is the dual exponent of q (i.e. q = q/(q − 1)). Assume that µ, ν are as in the
+statement of Theorem 1.2, and
+                                       kµ ∗ νkq ≥ 2−εm kµkq .
+Applying [13, Lemmas 3.3 and 3.4], we get 2−m -sets A1 , B1 such that:
+(a) µ, ν are constant up to a factor of 2 on A1 , B1 respectively.
+(b) k1A1 ∗ 1B1 k22 ≥ 2−τ m |A1 ||B1 |2 , where 1X denotes the indicator function of a set X,
+    and k · k2 is the L2 norm of a finitely supported measure as defined in (1.1).
+(c) kµ|A1 kq ≥ 2−2εm kµkq and kν|B1 k1 ≥ 2−2εm .
+10                                      PABLO SHMERKIN
+
+Let L be large enough in terms of δ that Theorem 1.5 applies, and let σ = σ(L) be
+the number provided by Theorem 1.5. Let τ = τ (σ) be the number provided by the
+Asymmetric Balog-Szemerédi-Gowers Theorem in the form given in [13, Theorem
+3.2] (with σ in place of κ). Even though stated in [13] in the real line, this theorem
+holds in any Abelian group. The inequality (b) is precisely the assumption of the
+Asymmetric Balog-Szemerédi-Gowers Theorem. Note that the parameters follow
+the chain of dependencies δ → L → σ → τ → ε (and ε depends additionally on q);
+later we will impose additional constraints of some on the parameters that respect
+these dependencies.
+   Applying the asymmetric Balog-Szemerédi-Gowers Theorem, we get 2−m -sets H0 , X
+such that:
+   (i) |H0 + H0 | ≤ 2σm |H0 |.
+  (ii) |A1 ∩ (X + H0 )| ≥ 2−σm |A1 | ≥ 2−2σm |X||H0|.
+ (iii) |B1 ∩ H0 | ≥ 2−σm |B1 |.
+   Let H be the set obtained by applying Theorem 1.5 to H0 , with branching numbers
+(Rs )s∈[S], and dimension sequence (ks )s∈[S]. Our choice of parameters ensures that
+Theorem 1.5 is indeed applicable.
+   At this stage we apply Lemma 2.4 to A1 ∩ (X + H0 ) and B1 ∩ H0 ; since the sets
+A, B will ultimately be subsets of these sets, this ensures that claim (C1) holds. This
+refinement only decreases the size of A1 ∩(X +H0 ) and B1 ∩H0 by a factor that can be
+absorbed into 2−σm (at the cost of halving the value of σ), so for notational simplicity
+we keep denoting these refinements by A1 ∩ (X + H0 ) and B1 ∩ H0 .
+   Now comes the most significant change with respect to [13]. Instead of splitting
+the scales s according to a full branching/no branching dichotomy, we need to con-
+sider all the possible dimensions ks coming from Theorem 1.5. Given s ∈ [S] and a
+2−L -set Y , we let
+                                                                
+               Fs (Y ) = inf {log |πV Y |2−L : V ∈ G(d, d − ks )} ∈ [0, Ld].
+Unpacking the definition, this means that
+                        |πV Y |2−L ≥ 2Fs (Y )   for all V ∈ G(d, d − ks ),
+and there is V ∈ G(d, d − ks ) such that |πV Y |2−L ≤ 2Fs (Y )+1 .
+  Applying Lemma 2.2 to A1 ∩ (X + H0), we get a uniform subset A ⊂ A1 ∩ (X + H0)
+such that Fs is constant on each AIL , I ∈ DsL (A), and
+                                                        (ii)
+(3.10)           |A| ≥ 2−O(log L/L)m |A1 ∩ (X + H0 )| ≥ 2−(O(log L/L)+σ)m |A1 |.
+We make σ smaller if needed to ensure that σ ≤ log L/L. Since A + H ⊂ X + H0 + H0 ,
+it follows that
+                                         (i)              (ii)        (3.10)
+(3.11)        |A + H| ≤ |X||H0 + H0 | ≤ 2σm |X||H0| ≤ 22σm |A1 | ≤ 2O(log L/L)m |A|.
+     Let Ms be the constant value of Fs at the sets AIL , I ∈ DsL (A).
+                                   INVERSE THEOREMS IN Rd                            11
+
+Lemma 3.4. There exists a constant c ∈ (0, 1) such that
+                                                  S−1
+                                                  Y
+                                              S
+(3.12)                          |A + H| ≥ c             2(1−δ)Lks · 2Ms .
+                                                  s=0
+
+Proof. Fix s ∈ [S], I ∈ DsL (A), J ∈ DsL (H). By Theorem 1.5, Rs ≥ 2(1−δ)Lks and there
+is WJ ∈ A(d, ks) such that H J ⊂ WJ (Cd 2−L ). Since the projection of AI to WJ⊥ has
+2−L -covering number ≥ 2Ms , it follows that
+          |(A ∩ I) + (H ∩ J)|2−(s+1)L = |AI + H J |2−L & Rs 2Ms ≥ 2(1−δ)Lks 2Ms .
+We emphasize that this bound is independent of I, J (for a given s). It follows that,
+given I ∈ DsL (A), J ∈ DsL (H), there are & 2(1−δ)Lks 2Ms pairwise disjoint sets of the
+form I ′ + J ′ , where I ′ ∈ D(s+1)L (A ∩ I), J ′ ∈ D(s+1)L (H ∩ J).
+  Applying this with s = 0, we obtain a collection K0 ⊂ DL (A) × DL (H) such that:
+(a) {I + J : (I, J) ∈ K0 } are pairwise disjoint,
+(b) |K0 | ≥ c · 2(1−δ)Lk0 2M0 .
+For each (I, J) ∈ K0 , we apply the same argument to obtain a family
+                             K(I,J) ⊂ D2L (A ∩ I) × D2L (H ∩ J),
+                                                            S
+such that the analogous properties hold. Let K1 = (I,J)∈K0 K(I,J) . Then K1 ⊂
+D2L (A) × D2L (H), and
+(a) {I + J : (I, J) ∈ K1 } are pairwise disjoint,
+(b) |K1 | ≥ c2(1−δ)Lk0 2M0 · c2(1−δ)Lk1 2M1 .
+The claim follows by iterating this argument.                               
+  Let (Rs′ )s∈[S] be the branching numbers of A. By definition of Ms , for any I ∈
+DsL (A), there is an orthogonal projection π onto a (d − ks )-dimensional plane such
+that |π(AI )|2−L ≤ 2Ms +1 , so we have
+(3.13)                            log Rs′ ≤ Lks + Ms + O(1).
+Combining (3.11) and (3.12), and taking L large enough in terms of δ that log L/L ≤ δ,
+we get                X
+                          Lks + Ms − log Rs′ + O(1) ≤ O(δ)m.
+                        s∈[S]
+Recalling (3.13) and applying Markov’s inequality, we deduce that
+                                log Rs′ ≥ (1 − δ 1/2 )(Lks + Ms )
+for all s outside an exceptional set E with
+                                X
+                                    log Rs′ ≤ δ 1/2 log |A|.
+                                   s∈E
+
+Collapsing the branching for scales in E to 1 via Lemma 2.5, we get all the desired
+properties for A (with δ 1/2 in place of δ).
+12                                   PABLO SHMERKIN
+
+  To construct B (from B1 ) we proceed in a similar fashion. We uniformize B1 ∩ H0
+so that Fs (same function as above) is constant on each scale s. Then, since B ⊂
+B1 ∩ H0 ⊂ H0 ,
+                                                                     S−1
+                                                                     Y
+         |B + H| ≤ |H0 + H0 | ≤ 2δm |H0| ≤ 2(δ+σ)m |H| ≤ 2(δ+σ)m           2Lks +O(1) .
+                                                                     s=0
+
+Let us denote again by Ms the value of F at scale s, now for the set B. Then Lemma
+3.4, this time applied to B, yields that
+                                           S−1
+                                           Y
+                              |B + H| &          2(1−δ)Lks · 2Ms .
+                                           s=0
+
+Thus, comparing upper and lower bounds for |B + H|, and taking σ ≤ δ as we may,
+                                    S−1
+                                    Y
+(3.14)                                    2Ms ≤ O(δ)m.
+                                    s=0
+
+Note that, by definition of Ms , for each I ∈ DsL (B) there is a (d − ks )-dimensional
+subspace WI such that |πWI BLI |2−L ≤ 2Ms+1 . By pigeonholing, there is an affine plane
+VI of dimension ks such that
+                                    √          
+                         BLI ∩ VI ( d + 1)2−L & 2−Ms |BLI |.
+Thus, we can apply Lemma 2.5, replacing each BLI by a suitable subset, so that (B4)
+holds for this choice of VI (and uniformity is preserved). Doing so reduces the cardi-
+nality of each BLI by a factor . 2Ms , and so by (3.14) the total loss in cardinality is an
+acceptable factor 2O(δ)m . This finishes the proof of Theorem 1.2.
+
+                        4. C ONNECTIONS AND APPLICATIONS
+4.1. Lq dimensions of dynamical self-similar measures, and applications. In [13],
+the author applied the one-dimensional version of Theorem 1.2 to compute the Lq
+dimensions of a class of dynamically driven self-similar measures under a very mild
+exponential separation assumption. In a joint work with E. Corso [4], we make cru-
+cial use of Theorem 1.2 to extend this result to arbitrary dimensions, under suitable
+assumptions. Just as in the one-dimensional case, this has a broad range of applica-
+tions to the dimension theory of self-similar sets and measures, their projections and
+their slices. We refer the reader to [4] for details, and to [14, §3.8] for an announce-
+ment of some of these applications.
+4.2. Khalil’s inverse theorem. Recently, O. Khalil [10, Proposition 11.10] proved a
+related inverse theorem for the Lq norms of convolutions, motivated by a striking
+application to exponential mixing of geodesic flows. Roughly speaking, Khalil con-
+siders the case in which ν is a 2−m -measure such that
+                                          
+(4.1)                   ν H(ηr) ∩ B(x, r) ≤ C η β ν(B(x, r))
+                                 INVERSE THEOREMS IN Rd                                13
+
+for some C, β > 0, all η > 0, all hyperplanes H in [0, 1)d , and “almost all” points x
+and scales r ∈ [2−m , 1] (recall that X(r) stands for the r-neighborhood of a set X).
+He shows that under this assumption, if µ is any 2−m -measure with kµkq ≤ 2−εqm for
+some ε > 0, then
+(4.2)                             kµ ∗ νkq ≤ 2−σm kµkq ,
+where σ = σ(q, β, ε) > 0. The nature of the “almost all” points and scales condition
+in Khalil’s theorem has no direct correlate in Theorem 1.2. Nevertheless, at least at
+a moral level Theorem 1.2 is more general: the assumption (4.1) ensures that (in the
+context of Theorem 1.2), if (4.2) fails, then ks = d for “almost all” scales s, and this
+can be seen to imply that kµkq > 2−εqm .
+  Khalil’s proof also relies on the results of M. Hochman [8], but he applies a differ-
+ent result of Hochman, namely [8, Theorem 2.8]. As pointed out in the introduction,
+this is a result that can be seen as an entropy version of Theorem 1.2.
+  We remark that the application of Theorem 1.2 to the Lq dimensions of dynamical
+self-similar measures in [4] requires the full strength of Theorem 1.2, and cannot be
+deduced from Khalil’s result. Indeed, in the application of Theorem 1.2 in [4], the
+only information we have about ν is that kνkq ≤ 2−ρm for some small parameter
+ρ > 0; in particular, nothing prevents ν from being supported on a single line, let
+alone a hyperplane.
+4.3. Additive energy of discretized sets. Given a finite set X ⊂ Rd , we define its
+additive energy by
+                E(X, X) = #{(x1 , x2 , y1, y2 ) ∈ X 4 : x1 + y1 = x2 + y2 } .
+This is a key concept in additive combinatorics, with applications throughout math-
+ematics; see [16, Section 2] for an introduction.
+  When X is a 2−m -set, the additive energy can be expressed as the L2 norm of
+convolutions. Indeed, if µ is the counting measure on X (not normalized), then
+                                  E(X, X) = kµ ∗ µk22 .
+A trivial bound for E(X, X) is given by |X|3 (given x1 , y1, x2 , the parameter y2 is
+uniquely determined). In many applications one would like to know that there is a
+gain over this trivial bound. The results of this article provide mild conditions under
+which an exponential gain over |X|3 is achieved. While it is possible to deduce this
+from Theorem 1.2, the statement follows directly by combining Theorem 1.5 with the
+(standard) Balog-Szemerédi-Gowers Theorem.
+Corollary 4.1. For each δ > 0 the following holds if L ≥ L0 (δ) ∈ N and 0 < σ < σ(L), for
+all sufficiently large S = S(δ, L, σ):
+   Let m = SL. Let X be a 2−m set in [0, 1)d such that
+                                  E(X, X) ≥ 2−σm |X|3 .
+Then there exists a subset A ⊂ X such that the following holds:
+14                                     PABLO SHMERKIN
+
+  (i) A is (L, S, (Rs ))-uniform for some sequence (Rs )s∈[S] .
+ (ii) |A| ≥ 2−δm |X|.
+(iii) For each s ∈ [S], there is ks ∈ [0, d] such that
+                                     log Rs ≥ L(ks − δ),
+     and for each I ∈ DsL (A′ ) there is WI ∈ A(d, ks ) such that
+                                                         
+                                   A ∩ I ⊂ WI 2−(s+1)L .
+Proof. By the Balog-Szemerédi-Gowers Theorem [16, Theorem 2.29], the assumption
+on the additive energy implies that there is Y ⊂ X with |Y | & 2−O(σ)m |X| such that
+                                    |Y + Y | . 2O(σ)m |Y |.
+The claim follows by applying Theorem 1.5 to Y .                                           
+  Roughly speaking, the above corollary says that if X has nearly maximal additive
+energy in the exponential sense, then at almost all scales it looks locally like an affine
+plane (with the dimension of the plane depending only on the scale).
+  We say that a 2−m -set X is Ahlfors-regular between scales 2−m and 1 if there exist
+constants C ≥ 1, t ∈ [0, d] such that, for each x ∈ X and r ∈ [2−m , 1],
+                        C −1 r t |X| ≤ |X ∩ B(X, r)|2−m ≤ C r t |X|.
+In dimension d = 1, S. Dyatlov and J. Zahl [6] proved that Ahlfors-regular sets in
+the sense above with t ∈ (0, 1) admit an exponential additive energy improvement,
+with the exponent depending quantitatively on the constants C, t. In an unpublished
+manuscript, B. Murphy [11] obtained nearly sharp bounds for the exponential decay
+exponent in this context. L. Cladek and T. Tao [2] developed a different quantitative
+approach in d = 1 and obtained the first results in higher dimension: they proved
+that Ahlfors-regular sets have a quantitative exponential additive energy gain if t ∈ /
+Z (this condition is necessary in general - a counterexample is a set that looks nearly
+like a d-dimensional subspace). It is not hard to recover a non-quantitative form of
+this result using Corollary 4.1. As a further example, we deduce additive energy
+flattening for sets that are “porous on k-planes”. If B is a ball, we denote its radius
+by r(B).
+Definition 4.2. Let k ∈ {1, . . . , d} and ρ, η ∈ (0, 1). We say that a set X ⊂ Rd is (k, ρ)-
+porous between scales η and 1 if for every W ∈ A(d, k), and every ball B with radius
+r(B) ∈ [η, 1] centered in W , there is y ∈ B ∩ W such that
+                                  B(y, ρ · r) ∩ X ∩ W = ∅.
+We say that X is k-porous between scales η and 1 if it is (k, ρ)-porous between scales
+η and 1 for some ρ > 0, and drop reference to the scales if η = 0 or is understood
+from context.
+                                  INVERSE THEOREMS IN Rd                                     15
+
+  This definition is equivalent to X ∩ W being upper ρ-porous (in the classical sense)
+for all k-planes W . If X ⊂ Rd−k+1 is 1-porous (for example, we can take X = C d−k+1 ,
+where C is the middle-thirds Cantor set), then [0, 1]k−1 × X is k-porous, but it is not
+(k − 1)-porous.
+Proposition 4.3. Given k ∈ {1, . . . , d}, ρ ∈ (0, 1) and λ > 0, there is σ = σ(k, ρ, λ) > 0
+such that the following holds for all sufficiently large m ≥ m0 (k, ρ, λ): Let X ⊂ [0, 1)d be a
+2−m set which is (k, ρ)-porous between scales 2−m and 1, and such that
+                                      |X| ≥ 2(k−1+λ)m .
+Then
+(4.3)                              E(X, X) ≤ 2−σm |X|3 .
+Proof. To begin, we claim that, for every j ∈ [m], each W ∈ A(d, k), and every I ∈
+Dj (W ),
+              1                                          ρk      O(d, ρ)
+(4.4)           log W ∩ I ∩ X(2−j+L) 2−(j+L) ≤ k − cd          +         .
+              L                                       log(1/ρ)     L
+Let Q0 be a cube in W of side length ℓ0 = d1/2 2−j such that W ∩ I ⊂ Q0 . Let p be
+the smallest integer such that 2−p ≤ 14 d−1/2 ρ. We consider the 2−p -adic grid (Qi )i≥0 of
+sub-cubes of Q0 (thus, Q0 is the only element of Q0 , and cubes in Qi have side length
+2−ip ℓ0 ).
+  Fix i such that 2−pi ℓ0 ρ/2 > 2−(j+L) and Q′ ∈ Qi . Then Q′ contains a ball BQ with
+r(BQ ) = 2−pi ℓ0 /2. Applying the definition of porosity to BQ , we deduce that there is
+           ′
+a ball BQ    ⊂ BQ ⊂ Q′ with r(Bq′ ) = ρ · r(Bq ) such that
+                                      ′
+                                     BQ ∩ X ∩ W = ∅.
+                            ′′                                 ′
+By the assumption on i, if BQ  is the ball concentric with BQ    and half the radius (thus,
+    ′′     −pi
+r(BQ ) = ρ2 ℓ0 /4), then
+                                 ′′
+                               BQ   ∩ X(2−(j+L)) ∩ W = ∅.
+                                          ′′
+In turn, by our choice of p, the ball BQ     contains a cube Q′′ ∈ Qi+1 . In short, each
+cube in Qi contains a cube in Qi+1 which is disjoint from X(2−(j+L)) ∩ W . Iterating
+this, we deduce that Q0 ∩ X can be covered by (2pk − 1)i cubes in Qi . The largest
+allowed value imax of i satisfies 2−pimax ℓ0 ρ ∼p 2−(j+L) ; recalling the definitions of ℓ0
+and p, we get that imax ≥ L/p − Od,ρ (1). In turn, each cube in Qimax can be covered by
+2d standard dyadic cubes of side length ∼d 2−imax p ℓ0 . We deduce that
+                                                                            L
+          |W ∩ I ∩ X(2−(j+L) )|2−(j+L) ≤ |Q0 ∩ X|2−(j+L) .d,ρ (2pk − 1)1/p .
+From here a small calculation yields the claim.
+  Now let                                            
+                                        cd   ρk     λ
+                             δ = min              ,     ,
+                                        4 log(1/ρ) 2
+16                                        PABLO SHMERKIN
+
+where cd is the constant from (4.4). Let L0 = L0 (δ) be the constant from Corollary 4.1
+and take L ≥ L0 large enough that
+                                          2dO(d, ρ) ≤ δL,
+where O(d, ρ) is the implicit constant from (4.4). We have arranged things so that,
+for each I ∈ DsL and each k-plane W ,
+(4.5)                     W ∩ I ∩ X(2−(s+1)L ) 2−(s+1)L ≤ 2(k−2dδ)L .
+   Assume for sake of contradiction that (4.3) does not hold, with σ given by Corol-
+lary 4.1 applied with the chosen values of δ and L. Let Y be the set provided by the
+corollary, with branching numbers (Rs )s∈[S] and dimension sequence (ks )s∈S .
+   Note that
+            X        X
+          L     ks ≥    log Rs = log |Y | ≥ log |X| − δm = (k − 1 + λ − δ)m.
+            s∈[S]      s∈S
+
+Thus, since δ ≤ λ/2,
+                                   X
+                                          ks ≥ (k − 1 + λ/2)S.
+                                  s∈[S]
+
+In particular, there is some ks ≥ k. By Corollary 4.1(iii), there are s ∈ [S], I ∈ Ds and a
+                                                                                             ′
+k ′ -plane W ′ , with k ′ ≥ k, such that Y ∩I ⊂ W ′ (2−(s+1)L ). Since |Y ∩I| ≥ Rs ≥ 2(1−δ)Lk ,
+after translating W ′ if needed we get
+                                           (                            ′
+                         |W ′ ∩ I ∩ X 2 −(s+1)L) |2−(s+1)L ≥ 2(1−δ)Lk .
+Pigeonholing, there is a k-plane W ⊂ W ′ such that
+                          |W ∩ I ∩ X ( 2−(s+1)L )|2−(s+1)L & 2(1−δ)Lk .
+This contradicts (4.5). This contradiction finishes the proof.                              
+  The assumption that |X| ≥ 2(k−1+λ)m is required since a (k − 1)-plane is k-porous
+and has essentially maximal additive energy. Proposition 4.3 can be improved in
+several ways. An inspection of the proof shows that one does not need to have
+porosity at all scales, but only at most scales, with “most” depending on the value
+of λ. Under further assumptions on X, for example if X is Ahlfors-regular between
+scales 2−m and 1, one only needs porosity at a positive proportion of scales. One can
+deduce these facts from Corollary 4.1 using locally entropy averages in the spirit of
+[15] in order to establish analogs of (4.4) at a subset of scales. We defer a detailed
+discussion to a future work.
+  We remark that Theorem 1.2 can be used to show flattening of additive energy in
+more general settings. Given two Borel probability measures µ, ν on Rd , we define
+their additive energy at scale r > 0 by
+             Er (µ, ν) = (µ2 × ν 2 ){(x1 , x2 , y1 , y2 ) : |x1 + y1 − x2 − y2 | ≤ r} .
+                                 INVERSE THEOREMS IN Rd                                  17
+
+Again this is, up to constants, the same as the L2 norm of convolutions. We leave the
+proof of the following standard lemma to the reader. Given a Radon measure µ on
+Rd , we denote by µ(m) any reasonable 2−m -discretization of µ; for concreteness, let
+                                                           
+                          µ(m) (x) = µ x + 2−m [−1/2, 1/2)d .
+Lemma 4.4. Let µ, ν be Radon measures on [0, 1]d. Then, for every m ∈ N,
+                              E2−m (µ, ν) ∼d kµ(m) ∗ ν (m) k22 .
+4.4. Application to the Fractal Uncertainty Principle. One particular problem in
+which additive energy in the fractal setting is relevant is the Fractal Uncertainty Prin-
+ciple (FUP). Given a small scale h ∈ (0, 1), let
+                                                 Z
+                                                      1
+                                           −d/2
+                        Fh f (x) = (2πh)           ei h x·y f (y) dy
+
+be the semiclassical Fourier transform on Rd . A FUP is a non-trivial estimate of the
+form
+                       k1X Fh 1Y kL2 (Rd )→L2 (Rd ) ≤ hβ as h → 0,
+under suitable assumptions on the (typically Cantor-type) sets X, Y ⊂ Rd defined at
+resolution h. Here the “trivial” estimate is
+                                                              1/2   1/2
+(4.6)            k1X Fh 1Y kL2 (Rd )→L2 (Rd ) ≤ min 1, hd/2 |X|h |Y |h ,
+see e.g. [5, Before Eq. (2.7) and Eq. (6.3)]. Note that a FUP for X, Y says that f cannot
+be supported on Y in physical space, and simultaneously on X in frequency space.
+See [5] for an introduction to the subject, and [7, 2, 1, 3] for recent progress on the
+FUP in dimension d ≥ 2.
+  It was shown by S. Dyatlov and J. Zahl [6, Theorem 4.2] (see also [5, Proposition
+5.4]) that additive energy estimates imply FUP estimates near the critical threshold
+|X|h |Y |h = h−d . While the results of [6, 5] are stated in the context of Ahlfors-regular
+sets in the line, the proof of [5, Proposition 5.4] yields the following general estimate:
+Proposition 4.5. Let h be a small dyadic number. Let X, Y ⊂ [0, 1]d be h-sets, and suppose
+                                    E(X, X) ≤ hσ |X|3h
+for some σ > 0. Then, denoting Zh = Z + [0, h],
+                             k1Xh Fh 1Yh kL2 (Rd )→L2 (Rd ) ≤ hβ ,
+for
+                                                            
+                               3          log(|X|h |Y |h )           σ
+                            β=         d−                        +     .
+                               8               log h                 8
+  Note that Proposition 4.5 improves upon the trivial estimate (4.6) whenever
+                              hσ/3 < hd |X|−1    −1
+                                           h |Y |h < h
+                                                      −σ
+                                                         .
+18                                         PABLO SHMERKIN
+
+It then follows from the discussion in §4.3 that Proposition 4.5 gives a FUP near the
+critical parameter for wide classes of sets, for example whenever X is covered by
+Proposition 4.3.
+   We remark that A. Cohen [3] proved that, in the regime |X|h |Y |h ≥ h−d , the FUP
+holds whenever X is porous on lines and Y is d-porous between scales h and 1.
+Porosity on lines in the sense of [3] is slightly stronger than 1-porosity in the sense of
+Definition 4.2. Proposition 4.3 applies to more general pairs X, Y , since X is allowed
+to contain lines as long as |X|h > h−1−λ for some λ > 0, and Y is arbitrary. Of course,
+the price to pay is that the FUP is only established very close to the critical value.
+
+
+
+                                            R EFERENCES
+ [1] Aidan Backus, James Leng, and Zhongkai Tao. The fractal uncertainty principle via Dolgopyat’s
+     method in higher dimensions. Preprint, https://arxiv.org/abs/2302.11708, 2023. 17
+ [2] Laura Cladek and Terence Tao. Additive energy of regular measures in one and higher dimen-
+     sions, and the fractal uncertainty principle. Ars Inven. Anal., pages Paper No. 1, 38, 2021. 14,
+     17
+ [3] Alex       Cohen.       Fractal      uncertainty      in      higher     dimensions.        Preprint,
+     https://arxiv.org/abs/2305.05022, 2023. 17, 18
+ [4] Emilio Corso and Pablo Shmerkin. Dynamical self-similarity, Lq -dimensions and Furstenberg
+     slicing in Rd . In preparation, 2024. 12, 13
+ [5] Semyon Dyatlov. An introduction to fractal uncertainty principle. J. Math. Phys., 60(8):081505, 31,
+     2019. 17
+ [6] Semyon Dyatlov and Joshua Zahl. Spectral gaps, additive energy, and a fractal uncertainty prin-
+     ciple. Geom. Funct. Anal., 26(4):1011–1094, 2016. 14, 17
+ [7] Rui Han and Wilhelm Schlag. A higher-dimensional Bourgain-Dyatlov fractal uncertainty prin-
+     ciple. Anal. PDE, 13(3):813–863, 2020. 17
+ [8] Michael Hochman. On self-similar sets with overlaps and inverse theorems for entropy in Rd .
+     Mem. Amer. Math. Soc., 2017. 3, 6, 7, 13
+ [9] Tamás Keleti and Pablo Shmerkin. New bounds on the dimensions of planar distance sets. Geom.
+     Funct. Anal., 29(6):1886–1948, 2019. 4
+[10] Osama       Khalil.     Exponential      mixing     via     additive    combinatorics.      Preprint,
+     https://arxiv.org/abs/2305.00527, 2023. 12
+[11] Brendan Murphy. The additive energy of Ahlfors-David regular sets. Unpublished manuscript,
+     2019. 14
+[12] Tom Sanders. The structure theory of set addition revisited. Bull. Amer. Math. Soc. (N.S.), 50(1):93–
+     127, 2013. 3
+[13] Pablo Shmerkin. On Furstenberg’s intersection conjecture, self-similar measures, and the Lq
+     norms of convolutions. Ann. of Math. (2), 189(2):319–391, 2019. 2, 3, 6, 9, 10, 12
+[14] Pablo Shmerkin. Slices and distances: on two problems of Furstenberg and Falconer. In ICM—
+     International Congress of Mathematicians. Vol. 4. Sections 5–8, pages 3266–3290. EMS Press, Berlin,
+     2023. 2, 12
+[15] Pablo S. Shmerkin. The dimension of weakly mean porous measures: a probabilistic approach.
+     Int. Math. Res. Not. IMRN, 2012(9):2010–2033, 2012. 16
+[16] Terence Tao and Van Vu. Additive combinatorics, volume 105 of Cambridge Studies in Advanced
+     Mathematics. Cambridge University Press, Cambridge, 2006. 3, 7, 13, 14
+                              INVERSE THEOREMS IN Rd              19
+
+D EPARTMENT OF M ATHEMATICS , U NIVERSITY OF B RITISH C OLUMBIA
+Email address: pshmerkin@math.ubc.ca
+URL: http://www.pabloshmerkin.org
+
