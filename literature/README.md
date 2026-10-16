@@ -33,3 +33,5 @@ R0019无新PDF，仍19篇。补核GGW2211.09508v2 Theorem2.1（PDF3图）和GWZ2
 R0020无新PDF，仍19篇，无新在线版本声明。补读WZ Def3.9/map(20)/Obs3.2–3.4及实际配置点AD、degree、marks尺度，直接重算五维parent抵消和投影端点，不把印刷R3声明免费当任意维定理。GWZ Lemma3.7的density门槛另有自包含bush校准。精确范围metadata/R0020_source_check.json；未重证全文，没有完整mixed分支或维数结果。
 
 R0021无新PDF，仍19篇。重核WZ Def17.3/17.4的physical tube-KT baseδ、19.4的cluster/CW范围及22.1/22.4计数；vector polynomial机制采用自包含PCT，不声称source已有向量quadratic定理。原21.1印刷all-scale声明和fixed-scale全局准备责任分开。官方arXiv history本日仍仅v1；有限一手检索空结果不认证新颖性。精确read/search scope见metadata/R0021_source_check.json。
+
+R0022无新PDF，仍19篇，无新在线版本声明。逐核原W/observed A/B与scalarABC，PDF78/91/92已渲染并核符号、两个η参数和同步L_f；局部可修的错配不反源主定理。实际fixedρ准备以自包含time closure/rich triples及named21.2/19.2支付，不靠allscale形式否定。22.5仅为下一vector非二次目标选读，未称已推广。read/视觉核边界见metadata/R0022_source_check.json。

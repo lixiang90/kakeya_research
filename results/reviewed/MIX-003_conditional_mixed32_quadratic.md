@@ -15,3 +15,5 @@ PCT给向量系数bound，原有限稳定化得τ≤ρ^{3+ε/2}。whole affine v
 证明/源接口：notes/40_multiscale/sticky_mixed/R0021_conditional_quadratic_exclusion.md、R0021_mixed32_source_audit.md。独审：research/reviews/R0021_source_application_review.md、R0021_polynomial_review.md；root整合：R0021_root_integration_review.md。
 
 **未解决的责任：** 原Lemma21.1印刷all-scale非集中声明的形式否定不提供所需fixed-scale全局affine集合；whole速度和全局删选亦须合法取得。不能因此把整个N5-MIXED32-Q01登记为无条件已证。非二次、其他mixed、一般归约及Hausdorff仍open，长期Goal active。
+
+R0022更新：上述fixed-scale affine、whole-velocity和整时间stable闭包责任已由AFF-001具体支付，没有使用形式否定。先固定ε/稳定化长度，再选a_aff足够小，随后选quadratic retained loss及原η小到可调用AFF-001，最后δ小，原quadratic property在整时间子集上保留。因此本二次alternative在明确named Theorem21.2、Lemmas19.2/19.4/19.5等输入下接通；这些高级输入仍未独立全文重跑。非二次及完整高维目标仍open，不能把此更新称一般Kakeya结论。

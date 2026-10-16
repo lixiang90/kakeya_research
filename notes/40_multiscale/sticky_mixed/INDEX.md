@@ -17,5 +17,10 @@ N5-MIXED42-Q01 是完整实际 d5/k4/ell2 的二次 alternative，尚未解决�
 | R0021_mixed32_source_audit.md | 原horizontal2 V/J/L、同vectorY、physical δ-base和条件19.4接口 |
 | R0021_conditional_quadratic_exclusion.md | 明确fixed-scale affine/nondegeneracy准备下mixed32条件二次排除；非完整branch |
 | R0021_next_affine_localization_target.md | 唯一下一任务支付实际fixed-scale准备、原time restriction及scalarization；均待证 |
+| R0022_scalarization_counterattack.md | weighted bounded-range rich-triple lemma，Euclidean输出付b⁻⁴；任意A反例与真实fibre正向lemma |
+| R0022_observed_graph_source_audit.md | 原W恢复、heavy-time lower、coarse-x fibres、符号/同步Lf修复及ABC两阈值 |
+| R0022_time_restriction_closure.md | 删整层保cross-time AD、allowed子格；原19.2合法排全局低whole速度 |
+| R0022_fixed_scale_affine_preparation.md | 真正fixedρ LOCAL-AFF，K_src/K_prep隔离；支付R21准备gate，named高级输入保留 |
+| R0022_next_mixed32_nonquadratic_target.md | 唯一下一actual vector非二次L/polarization与rank/mass机制，尚待证 |
 
-条件全局结论另存 results/reviewed/MIX-001_global_common_kernel_exclusion.md；它是既有三维定理应用，不宣称新颖性或重大结果。局部预算与边界另存 MIX-002_local_projection_endpoint.md。PCT-001有限引理及MIX-003条件应用分别登记，不能相互升级scope。固定Cantor运输不是实际source免费假设，local近似形式不能直接当global精确形式。R20冻结local mixed42/GWZ；R21付新vector polynomial机制，下一只审未付固定尺度准备，不继续端点改名。
+条件全局结论另存 results/reviewed/MIX-001_global_common_kernel_exclusion.md；它是既有三维定理应用，不宣称新颖性或重大结果。局部预算与边界另存 MIX-002_local_projection_endpoint.md。PCT-001有限引理、MIX-003二次链、SCAL-001/AFF-001实际准备分别登记，不能升级完整Kakeya或重大性。R20局部mixed42冻结；R22支付准备后下一转actual非二次，仍不得免费scalar化vectorY。

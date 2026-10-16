@@ -44,5 +44,9 @@
 | ambient_full_directions_and_local_grain_give_small_projected_CW | 环境full4方向/AD/CW加局部full3grain、原marks和单尺度slicecover自动给strict投影余量 | R20真线(d+ta,tb,(1+t)c,td,t)，原massρ²、最优D≈ρ^-1且λ≈1；缺完整source薄集AD/Phi | 必须用缺失的真实source结构；此非source或Kakeya反例，不继续同例调指数 |
 | point_AD_cover_alone_improves_local_kappa_endpoint | 原点AD5−κ和John-cover自身能将D_s≤K s^-κ改进固定正幂 | R20 Leb4×Cantor(1−κ)在lifted slab集中比A^-κ，point-cover单步sharp | 须新增tube/ξ/Φ等关系，非仅point维数；不把该point模型当fullsource |
 | uniform_gamma_PCT_constant_outside_power | finite polynomial tubeKT可得C(D,m)(Kθ^-C)^{2/γ}且幂外C与γ无关 | R21 m=D1、γ1/(2n)、e=d2^-n有限全网，全部tube查询K=2^γ，原式迫2^n≤4C | 修正版把C放幂内并已证明；先固定γ时可吸常数，但不能称原一致形式通过，不是source/Kakeya反例 |
+| arbitrary_set_graph_keeps_projection_cardinality | 只要集合可写(x,xi(x))就使任意保x的Pi保coarse cardinal | R22 x极密tiny-range、xi填三维r网，Pi覆盖≤Cr^-1但原≥r^-3；集合graph不提供coarse-x fibre cap | 原observed A用ξ-coherence另付每coarse x≤K cells后结论才真；此非source反例 |
+| upper_time_cell_capacity_transfers_uniform_nonfit | fine原nonfit和coarsecell占用upper足以给uniform coarseB非集中 | R22很多轻cells各一个原time可在fit上，fine mass小而coarsecard大；upper聚合仅保gmean | 删n_b<PK^-B轻格，靠g≤1付两time边际后才有lower capacity；AFF001已付 |
+| vertical_affine_band_coarsens_without_slope_cost | 任意slopeR的verticalband粗化误差总O(s) | 实际误差有(1+|R|)s；R22终稿先传Euclidean vector tube cap再由boundedbox转band | 用Euclidean增厚或另控rich-fit slope，不能无费用称bandcap继承 |
+| source_dyadic_Lip_is_Euclidean_Lip | 原dyadic oscillation可直接套全局Euclidean Lipschitz scalarization | 相邻dyadic边界允许跳变；R22用bounded-range版本真实付b^-4 | 只用已付bounded/timepacking；不得恢复便宜Lip版本后抹费用 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。
