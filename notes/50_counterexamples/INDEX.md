@@ -22,5 +22,6 @@
 | arbitrary_4d_plank_cap_gives_dense_union | 所有全时框加权cap即可给四维D^ε阴影估计 | PLK-001全框QCAP及固定权δ^.5，满marks访问D^(7/2)但cells≤CD³ | 真正排除quadric/方向退化的source条件；加权与mesh等价改写无效 |
 | source_free_j3_has_terminal_horizon | literal j3完整tempered、d<1及S1角cap保证H≤L | HOR-001：full8平滑quadric×有限1/2-Cantor，任意二次chart真实floor迫H≥M/6，显式atlas给H≤M；M>6L | 保留真实full-slope/多项式来源并验证操作闭合；不得仅重写greedy输入或改善toy指数 |
 | zero_depth_density_one_restores_j3_horizon | 上述formal j3类另有实际n0~1就保证H≤L或有限统一k | HOR-002：内部quadric-level mixture加一次性随机hidden标签，actual f≡0、S1，全部二次tests统一界迫M/6≤H≤M；M任意大 | 冻结n0-only修补；改研究实际祖先方向成本，不能靠density平移或另加同义统计条件 |
+| bounded_visible_directions_give_uniform_horizon | actual visible-slope density≤N₀^(κ+o1)加f≡0/S1就有H≤C(L+κ)，C独立任意tempered复杂度 | HOR-003：level-dependent shear u₂=αλ−pq，Q=λ(1+αt²)；真实visible density≤C、κ0且M/6≤H≤M，M任意大，full(V,W)仍η⁻¹ | 整个visible-cost completion策略冻结；需不同的实际前端几何及已验证闭合操作，不继续追加同义统计条件或改善toy指数 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

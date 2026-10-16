@@ -1,0 +1,726 @@
+                                           LIFTING CURVED KAKEYA SETS TO LINEAR KAKEYA SETS
+
+                                                                              ARIAN NADJIMZADAH
+
+
+                                                  Abstract. We prove that many curved Kakeya problems, originally motivated
+                                                  by Hörmander’s oscillatory integral problem, lift to the classical Kakeya problem
+                                                  in higher dimensions.
+arXiv:2609.06299v1 [math.CA] 5 Sep 2026
+
+
+
+
+                                                     As a consequence, if the classical Kakeya set conjecture were true in all di-
+                                                  mensions, the families of curves whose curved Kakeya sets have full dimension are
+                                                  dense among Hörmander-type families. This is in contrast to the nowhere dense
+                                                  Bourgain’s condition, which is a necessary condition for best-case curved Kakeya
+                                                  maximal function estimates. Furthermore the linear Kakeya set conjecture would
+                                                  imply a fairly complete understanding of Kakeya sets of quadratic curves, as first
+                                                  studied systematically by Wisewell. These results give a better understanding of
+                                                  a question posed by Guo–Guth–Nadjimzadah–Shen–Zhang, and they more gener-
+                                                  ally show that the classical Kakeya conjecture in high dimensions rests on a broad
+                                                  range of curved Kakeya problems in lower dimensions.
+
+
+
+
+                                                                                1. Introduction
+
+                                             The Kakeya set conjecture in Rn asserts that a compact set with a line segment
+                                          in each direction has Hausdorff dimension n. Wang and Zahl recently proved this
+                                          conjecture in R3 [WZ25]. The geometry of lines in R3 is just special enough that their
+                                          proof did not need to grapple with any curved objects. However already in R4 , there
+                                          are certain quadric surfaces that are “near misses” to the Kakeya conjecture [Gut25],
+                                          so one is essentially forced to establish Kakeya-type estimates for curved objects.
+                                             The purpose of this paper is to make this intuition concrete, and show that strong
+                                          results for Kakeya sets of curves would follow from the resolution of the classical
+                                          linear Kakeya set conjecture in higher dimensions. These Kakeya sets of curves are
+                                          motivated by Hörmander’s oscillatory integral problem, and they may have exotic
+                                          behavior as was first discovered by Bourgain. We will see that under the assumption
+                                          of the linear Kakeya set conjecture in all dimensions, the families of curves whose
+                                          curved Kakeya sets have full dimension are dense in the Hörmander-type families. At
+                                          the same time Bourgain’s condition, which is closed nowhere dense, is necessary for
+                                          optimal curved Kakeya maximal function estimates. Conditional on linear Kakeya,
+                                          we also fully classify the minimal dimensions of Kakeya sets of quadratic curves in
+                                          Rn , as first studied in depth by Wisewell [Wis05], in particular showing that they are
+                                          all integers. Both these results support a question posed in [GGN+ 26].
+                                             Our strategy is to lift a Kakeya set of curves to a Kakeya set of lines by lifting each
+                                          of its curves to a ruled surface. Roughly speaking, the more “complicated” a family
+                                          of curves is, the more dimensions one requires to lift its Kakeya sets to linear Kakeya
+                                          sets. Before giving the formal definitions and statements of results, we present a
+                                          simple example that illustrates the mechanism.
+                                                                                          1
+2                                       ARIAN NADJIMZADAH
+
+1.1. A basic example of the lifting mechanism. Consider the 4-parameter fam-
+ily of curves
+                 γy,w = {(w1 + ty1 + t2 y1 , w2 + ty2 , t) : |t| ⩽ 1/10} ⊂ R3 ,           (1.1)
+where the “direction” is y, and |y| ⩽ 1/10, |w| ⩽ 10. Without the perturbation
+“t2 y2 ”, this would be the standard family of lines in the linear Kakeya problem. A
+corresponding curved Kakeya set K contains a curve ℓy,w(y) for each y. Let us now
+see how to lift the curved Kakeya set K ⊂ R3 to a linear Kakeya set K  e ⊂ R4 .
+  Define the submersion π : R4 → R3 by π(x1 , x2 , s, t) = (x1 + ts, x2 , t) and the
+5-parameter family of line segments
+                 Ly,w,r = {(w1 , w2 , r, 0) + t(y1 − r, y2 , y1 , 1) : |t| ⩽ 1/10}.       (1.2)
+The ruling parameter is rS∈ [−1/10, 1/10].             The sets π −1 (γ
+                                                            y,w ) are 2-dimensional
+quadric surfaces ruled by r Ly,w,r . For a compact set Ω0 large enough to contain
+the family of line segments, define the lifted set
+                                  e = π −1 (K) ∩ Ω0 .
+                                  K                                           (1.3)
+Since K is a Kakeya set of the curves γy,w ,
+                             [                    [
+                        e ⊃
+                        K       π −1 (γy,w(y) ) ⊃   Ly,w(y),r .                           (1.4)
+                                    y                   y,r
+
+The slope map (y1 , y2 , r) 7→ (y1 − r, y2 , y1 ) has full rank. Hence the lifted lines have
+an open set of directions in R4 , and finitely many rotated copies of K     e form a linear
+Kakeya set. Since π is a submersion with 1-dimensional fibers,
+                                 dimH K e ⩽ dimH K + 1.                                 (1.5)
+Thus if the linear Kakeya set conjecture held in R4 , these curved Kakeya sets would
+have full Hausdorff dimension 3.
+    Figure 1.1 is a cartoon of this mechanism, drawn in one lower dimension.
+
+1.2. Main results. We use the definition of Hörmander-type families of curves from
+[GGN+ 26], which is a natural generalization of the families of characteristic curves
+that arise in Hörmander’s oscillatory integral problem. Let n ⩾ 2 and fix compact
+balls W, Y ⊂ Rn−1 and a compact interval I ⊂ R. Set Q = W × I × Y and consider
+the space C ∞ (Q; Rn−1 ) equipped with the Fréchet topology induced by the norms
+                               ∥X∥C r (Q) := max ∥∂ α X∥L∞ (Q) .                          (1.6)
+                                               |α|⩽r
+
+Let H ⊂ C ∞ (Q; Rn−1 ) be the set of maps satisfying Hörmander’s conditions 1:
+                det ∇w X(w, t; y) ̸= 0,     det ∂t [(∇w X)−1 ∂y X](w, t; y) ̸= 0          (1.7)
+on Q. The set H is open in C ∞ (Q; Rn−1 ). A map X ∈ H defines a 2(n−1)-parameter
+family of curves C(X) consisting of
+                            γy,w = {(X(w, t; y), t) : t ∈ I} ⊂ Rn                         (1.8)
+for (y, w) ∈ Y × W . We write γy,w (t) := (X(w, t; y), t) for their parameterizations.
+We call y the direction of the curve. We will often add the superscripts (n) to H, X,
+and related objects, to remove any ambiguity as to the dimension n.
+    1This is a slight reformulation of [GGN+ 26, Definition 1.14], and one can see that they are
+equivalent by using the Schur complement.
+               LIFTING CURVED KAKEYA SETS TO LINEAR KAKEYA SETS                       3
+
+
+
+
+                      “
+
+
+                                 默
+                                 M
+                                             ↓   in
+
+
+
+
+                                                       XVyw
+                       k( *
+                                        X
+                  Figure 1.1. Cartoon of the lifting mechanism.
+
+  We say that a compact set K ⊂ Rn is an X-Kakeya set if for each y ∈ Y , there is
+w(y) ∈ W such that γy,w(y) ⊂ K. Define the minimal Hausdorff dimension
+                  dKak (X) = inf{dimH K : K is an X-Kakeya set}.                  (1.9)
+By the curved version of Bourgain’s bush argument in [Wis05] and the even-dimensional
+curved Kakeya result in [BG11],
+                                      (
+                                       (n + 1)/2 n odd,
+                          dKak (X) ⩾                                          (1.10)
+                                       (n + 2)/2 n even.
+Equality is attained by explicit quadratic families; see the remark following Theorem
+1.3 (see also [GHI19] for a construction with cubic curves). There is a related Kakeya
+maximal function,
+                                               Z
+                     X                  1
+                   Kδ f (y) = sup                          |f |, y ∈ Y,          (1.11)
+                               w∈W |Nδ (γy,w )| Nδ (γy,w )
+
+where Nδ (γy,w ) denotes the δ-neighborhood of γy,w . By understanding the Lp bounds
+of these operators, one can make progress on oscillatory integral problems, and the
+framework includes several further maximal functions of interest in their own right
+(see [GGN+ 26] for further details).
+   The linear Kakeya problem arises from the choice Xlin (w, t; y) = w + ty, and the
+                                                       (n)
+linear Kakeya set conjecture in Rn asserts that dKak (Xlin ) = n. The stronger Kakeya
+maximal function conjecture asserts
+                           ∥KδXlin f ∥Ln (Y ) ≲ε δ −ε ∥f ∥Ln (Rn )              (1.12)
+Here and below, all parameter domains are fixed compact sets, and the implicit
+constants may depend on them. We write A ≲ε B when A ⩽ C(ε)B. Since linear
+4                                     ARIAN NADJIMZADAH
+
+Kakeya sets play a distinguished role in this paper, we define
+                                                                            (n)
+                                              (n)                       X
+                         dlin (n) := dKak (Xlin ),       Kδlin,n := Kδ lin .        (1.13)
+For most X, the critical Ln → Ln maximal function estimate of the form (1.12) fails,
+as Bourgain first showed and as later work generalized [Bou91, GWZ24, GGN+ 26].
+In fact, Bourgain’s condition is necessary for this critical estimate.
+Definition 1.1 (Bourgain’s condition [GGN+ 26]). We say that X ∈ H satisfies
+Bourgain’s condition if there exists a scalar function λ(w, t, ξ) such that
+                          ∂t2 ((∇w X)−1 ∇y X) = λ∂t ((∇w X)−1 ∇y X)                 (1.14)
+on Q. Let B ⊂ H be the set of maps satisfying Bourgain’s condition.
+
+  It is conjectured that Bourgain’s condition is also sufficient for optimal maximal
+function estimates [Nad26, GWZ24], and in particular for dKak (X (n) ) = n.
+  Our first result says that, conditional on the linear Kakeya set conjecture in all
+dimensions, Bourgain’s condition is far from necessary for the full-dimensional curved
+Kakeya set conclusion.
+Theorem 1.2. Suppose that the linear Kakeya set conjecture holds in all dimensions.
+Fix n ⩾ 3. Then there is a dense set P(n) ⊂ H(n) such that, for each X ∈ P, every
+X-Kakeya set has Hausdorff dimension n.
+   Moreover, B ⊂ H is closed nowhere dense. Consequently P \ B is dense in H,
+and for each X ∈ P \ B, every X-Kakeya set has Hausdorff dimension n, whereas
+the critical estimate
+                                 ∥KδX f ∥Ln (Y ) ≲ε δ −ε ∥f ∥Ln (Rn )               (1.15)
+fails.
+
+   For X ∈ H \ B, the critical Kakeya maximal estimate fails because there are
+δ-discretized X-Kakeya sets with small portions that can compress near a surface.
+However one often has access to at least a weak form of the polynomial Wolff axioms
+that prevents global compression near a surface; see for example [GGN+ 26, CGG+ 25].
+Theorem 1.2 says that, if one believes linear Kakeya in higher dimensions, then at
+least in P \ B there is no way to coordinate this local compression in many places
+in some “fractal way” to obtain an X-Kakeya set of Hausdorff dimension < n. This
+supports the intuition that a counterexample to a curved Kakeya problem should
+arise only for “algebraic” reasons.
+   Theorem 1.2 supports a question posed in [GGN+ 26, Section 1.9] as well. It seems
+plausible that dKak (X (n) ) = n is a generic property (in the sense that is holds on a
+dense open set) conditional on the linear Kakeya set conjecture in all dimensions. For
+odd n, Guo-Liu-Xi already gave an improvement over the universal bound (1.10) for
+generic families of curves coming from Hörmander-type phase functions [GLX25].2
+  When we restrict to quadratic families of curves, we can say much more about the
+corresponding Kakeya sets. Let n ⩾ 3 and B an (n − 1) × (n − 1) matrix. Consider
+the defining function XB : WB × IB × [−1, 1]n−1 → Rn−1 given by
+                               XB (w, t; y) = (w + (tI + t2 B)y).                   (1.16)
+    2It seems plausible that their argument can be adapted to the larger class H.
+               LIFTING CURVED KAKEYA SETS TO LINEAR KAKEYA SETS                        5
+
+Here WB is a compact ball chosen large enough to make the construction of the
+compression examples in Theorem 1.3 clean, and IB = [−τB , τB ] is chosen small
+enough so that XB ∈ H. Quadratic curves are general enough to exhibit Bourgain’s
+compression phenomenon, and the study of Kakeya sets of quadratic curves was
+initiated by Wisewell [Wis05].
+  Our second result shows that, conditional on linear Kakeya in all dimensions, we
+                                            (n)
+can compute the minimal dimensions dKak (XB ) exactly.
+Theorem 1.3. Let B be a (n−1)×(n−1) matrix. If the linear Kakeya set conjecture
+holds in dimension n + rankB 2 , then
+                                  (n)
+                          dKak (XB ) = n − rankB + rankB 2 .                     (1.17)
+The minimum is attained by an XB -Kakeya set contained in a smooth variety of
+dimension n − rankB + rankB 2 . In particular, conditional on linear Kakeya set
+                                                 (n)
+conjecture in all dimensions, the numbers dKak (XB ) are integers.
+Remark 1.4. In the special case B 2 = 0, Wisewell already found XB -Kakeya sets
+                 (n)
+that show dKak (XB ) ⩽ n − rankB [Wis05, Proposition 29].
+Remark 1.5. Sometimes one can use a lower-dimensional linear Kakeya input than
+in Theorem 1.3. For example if B is a multiple of I, one can check that C(XB ) is
+equivalent to the family of lines C(Xlin ) after a diffeomorphism in t, so one can apply
+linear Kakeya in dimension n instead of in dimension n + rankB 2 = 2n.
+Remark 1.6. Theorem 1.3 recovers the universal lower bounds in 1.10. If n = 2k+1,
+take B to be the direct sum of k copies of the 2 × 2 nilpotent Jordan block J2 (0).
+Then rankB = k and B 2 = 0, so dKak (XB ) = k + 1 = (n + 1)/2. If n = 2k, take
+B to be the direct sum of k − 1 copies of J2 (0) and one 1 × 1 zero block; then
+dKak (XB ) = k + 1 = (n + 2)/2.
+
+  Our final result concerns the tan-example from [Nad26]. Define the map
+                (n)
+              Xtan : [−0.1, 0.1]n−1 × [0.9, 1.1] × [−0.1, 0.1]n−1 → Rn−1 ,       (1.18)
+              Xtan (w, t; y) = (w′ − t2 y ′ , tan−1 (wn−1 /t) − tyn−1 ),         (1.19)
+where w = (w′ , wn−1 ) and y = (y ′ , yn−1 ). The map Xtan comes from a phase function
+                                                                                    (n)
+ϕtan satisfying Bourgain’s condition, so Xtan ∈ B. We are able to show that Xtan
+lifts to a linear Kakeya set in R2n .
+Theorem 1.7. Fix n ⩾ 3. If the linear Kakeya set conjecture holds in dimension
+                (n)
+2n, then dKak (Xtan ) = n.
+
+   Note that one cannot directly apply linear Kakeya in Rn , because C(Xtan ) is not
+diffeomorphic to a family of lines [Nad26]. Theorem 1.7 also complements the main
+result of [Nad26]: when a Xtan -Kakeya set is additionally sticky, one can take ad-
+vantage of a linear Kakeya estimate in dimension n—one does not need to reach for
+dimension 2n. As we will see, the lift to dimension 2n takes advantage of the special
+structure of Xtan , so it is not clear whether one should expect a similar theorem to
+hold for each X ∈ B.
+   Since Xtan ∈ B, it is conjectured that the optimal Ln → Ln maximal function
+estimate holds. This raises an interesting question: can one use the linear Kakeya
+maximal estimate in higher dimensions to prove the Ln → Ln maximal function
+6                                  ARIAN NADJIMZADAH
+
+estimate for Xtan ? More ambitiously, could the restriction conjecture in higher di-
+mensions imply the optimal Lp bounds for the oscillatory integral operator with the
+phase function ϕtan ? We believe this may be an interesting direction.
+
+1.3. Outline. In Section 2 we set up the lifting mechanism in general, state its
+dimension and maximal function consequences (Proposition 2.2), and state the ex-
+amples of lifts that lead to Theorems 1.2, 1.3, and 1.7 (Proposition 2.5). Theorem
+1.7 is proved there too. In Section 3 we prove Proposition 2.2. In Section 4 we prove
+Proposition 2.5. In Section 5 we prove Theorem 1.2. In Section 6 we prove Theorem
+1.3.
+Acknowledgements. The author would like to thank Terence Tao, Ruixiang Zhang,
+and Shaoming Guo for their encouragement. The author was supported in part by
+NSF DMS-2347850.
+AI use statement. The central idea of lifting curved Kakeya sets to higher-
+dimensional linear Kakeya sets is due to the author. OpenAI’s ChatGPT (GPT-5.6
+Pro) was subsequently used to help work out various examples of the lifting construc-
+tion, and it was used in proofreading and revision. The author takes full responsibility
+for the content and correctness of the paper.
+
+                        2. The general lifting mechanism
+
+   We now describe the lifting mechanism which generalizes the example in Section
+1.1, and leads to Theorems 1.2, 1.3, and 1.7.
+Definition 2.1 ((s, ν)-lift of X (n) ). We say that X (n) has an (s, ν)-lift if the following
+holds. Define N = n + s. There exist
+     (i) a compact ball R ⊂ Rs ,
+    (ii) an open set Ω ⊂ RN −1 × R and a smooth submersion
+                        π : Ω → Rn−1 × R,       π(z, t) = (πt (z), t),                 (2.1)
+    (iii) smooth maps
+                    a : Y × W × R → RN −1 ,       Θ : Y × R → RN −1 ,                  (2.2)
+        such that, for every (y, w, ρ, t) ∈ Y × W × R × I,
+                        Ly,w,ρ (t) := (a(y, w, ρ) + tΘ(y, ρ), t) ∈ Ω                   (2.3)
+        and
+                                  π(Ly,w,ρ (t)) = γy,w (t).                            (2.4)
+        Define Ly,w,ρ = {Ly,w,ρ (t) : t ∈ I}. Additionally on Y × R,
+                               rankDΘ(y, ρ) = N − 1 − ν.                               (2.5)
+
+  We call s the codimension of the lift and ν ⩾ 0 the direction loss. The example in
+Section 1.1 is a (1, 0)-lift.
+Proposition 2.2 (Lift consequences). Fix n ⩾ 3 and consider X ∈ H(n) with an
+(s, ν)-lift. Then
+                            dKak (X (n) ) ⩾ dlin (n + s − ν) − s.                      (2.6)
+               LIFTING CURVED KAKEYA SETS TO LINEAR KAKEYA SETS                           7
+
+In particular if the linear Kakeya set conjecture holds in dimension n + s − ν, then
+dKak (X (n) ) ⩾ n − ν. If moreover ν = 0, then dKak (X (n) ) = n.
+  Suppose ν = 0. There is a compact ball Ye ⊂ RN −1 such that for every p ∈ [1, ∞),
+                        (n)
+                 ∥KδX         ∥Lp (Rn )→Lp (Y ) ≲ ∥Kδlin,n+s−ν ∥Lp (Rn )→Lp (Ye ) .   (2.7)
+
+Remark 2.3. We will see that there are many X with (s, 0)-lifts that fail Bourgain’s
+condition, and hence fail the critical Ln → Ln maximal function estimate. The
+estimate (2.7) is still consistent with the linear Kakeya maximal conjecture in Rn+s
+because the critical exponent there is p = n + s, not p = n.
+Remark 2.4. One can prove a version of (2.7) with ν > 0, but we leave those details
+to the interested reader. The estimate (2.7) is not used in the main arguments—its
+purpose is to demonstrate the quantitative strength of our notion of a lift.
+
+  The following Proposition records the lifts of the families of curves that lead to
+Theorems 1.2, 1.3, and 1.7.
+Proposition 2.5 (Examples of lifts of families of curves).
+   (i) (Quadratic) Fix n ⩾ 3. The defining function XB from (1.16) has a (rankB, rankB−
+       rankB 2 )-lift.
+  (ii) (Polynomial) Fix n ⩾ 3, D ⩾ 1, compact balls W, Y ⊂ Rn−1 , and a compact
+       interval I ⊂ R. Consider the defining function XD : W × I × Y given by
+    XD (w, t; y) := A0 (w, y) + tA1 (w, y) + · · · + tD−1 AD−1 (w, y) + tD B(y),      (2.8)
+       where the Ai are smooth functions, det DB ̸= 0, and XD is Hörmander-type.
+       Then XD has a ((D − 1)(n − 1), 0)-lift.
+ (iii) (tan-example) The defining function Xtan from (1.19) has an (n, 0)-lift.
+
+   We prove Proposition 2.2 in the next section. Theorem 1.7 follows immediately
+from Proposition 2.5(iii) and Proposition 2.2. Theorems 1.2 and 1.3 require extra
+work, and they occupy their own sections.
+
+                               3. Proof of Proposition 2.2
+
+  We first prove the Hausdorff dimension statement (2.6).
+
+Proof of (2.6). Let K be an X-Kakeya set. For each y ∈ Y , choose w(y) ∈ W such
+that γy,w(y) ⊂ K. Fix a compact set Ω0 ⊂ Ω containing every lifted segment Ly,w,ρ ,
+and define
+                               e = π −1 (K) ∩ Ω0 .
+                               K                                            (3.1)
+By (2.4),
+                                 Ly,w(y),ρ ⊂ K,
+                                             e        y ∈ Y, ρ ∈ R.                   (3.2)
+Since π : Ω → Rn is a submersion with s-dimensional fibers, it is locally bi-Lipschitz
+equivalent to the coordinate projection Rn × Rs → Rn . Using the standard identity
+dimH (E × [0, 1]s ) = dimH E + s and (3.1), we obtain
+                                          e ⩽ dimH K + s.
+                                     dimH K                                           (3.3)
+8                                        ARIAN NADJIMZADAH
+
+                                          e has dimension N − 1 − ν. We project
+   At this stage the set of directions in K
+Ke onto N − ν dimensions so that we get a full Kakeya set in RN −ν . Note that
+this step is only necessary when ν ⩾ 1. Define r = N − 1 − ν. Choose an interior
+point (y0 , ρ0 ) ∈ Y × R. Since rankDΘ(y0 , ρ0 ) = r, there is a coordinate projection
+P : RN −1 → Rr such that
+                                     rankD(P ◦ Θ)(y0 , ρ0 ) = r.                                 (3.4)
+By the submersion theorem, the image of P ◦ Θ : Y × R → Rr contains a nonempty
+open set V ⊂ Rr . Define the linear projection Π : RN −1 × R → Rr × R, Π(x, t) =
+(P (x), t). For every (y, ρ) in a small neighborhood of (y0 , ρ0 ),
+       Π(Ly,w(y),ρ ) = {(P (a(y, w(y), ρ)) + tP (Θ(y, ρ)), t) : t ∈ I} ⊂ Π(K).
+                                                                           e                     (3.5)
+
+Thus Π(K) e contains a line segment in an open set of directions on S r , so up to taking
+                                  e we obtain a Kakeya set in Rr+1 . Consequently
+finitely many rotated copies of Π(K),
+                                                e ⩽ dimH K.
+                          dlin (r + 1) ⩽ dimH Π(K)       e                                       (3.6)
+Using r + 1 = n + s − ν and (3.3), we obtain
+                                   dlin (n + s − ν) ⩽ dimH K + s.                                (3.7)
+Taking an infimum over all X-Kakeya sets K proves (2.6).
+                                                                                                    □
+
+  Now we prove the maximal function statement (2.7), which is the final part of
+Proposition 2.2 left to be shown.
+
+Proof of (2.7). Assume ν = 0 and set N = n + s. Let χ be the indicator of Ω0 ,
+a compact set containing all the segments Ly,w,ρ for (y, w, ρ) ∈ Y × W × R. For
+f ∈ Lp (Rn ), define f˜ = (f ◦ π)χ ∈ Lp (RN ). Let Jπ be the n-dimensional Jacobian of
+π. Since π is a submersion, Jπ ∼ 1. The coarea formula then gives
+                                      Z
+                           p
+                         ˜
+                       ∥f ∥Lp (RN ) ≲    |f (x)|p Hs (π −1 (x) ∩ Ω0 )dx          (3.8)
+                                            Rn
+                                       ≲ ∥f ∥pLp (Rn ) .                                         (3.9)
+Here Hs is the s-dimensional Hausdorff measure. Now we compare the curved tubes
+with the lifted linear tubes. By compactness and the local normal form for π as a
+projection, there exists a constant A ⩾ 1 such that for sufficiently small δ we have
+                          Hs (π −1 (x) ∩ NAδ (Ly,w,ρ ) ∩ Ω0 ) ≳ δ s ,                           (3.10)
+whenever x ∈ Nδ (γy,w ). Indeed in local coordinates where π is a projection, the set
+on the left contains an s-dimensional ball of radius ∼ δ. By the coarea formula and
+(3.10),
+                           Z                     Z
+                                      |f˜| ≳ δ s       |f |.                   (3.11)
+                                   NAδ (Ly,w,ρ )           Nδ (γy,w )
+
+We also have |Nδ (γy,w )| ∼ δ n−1 and |NAδ (Ly,w,ρ )| ∼ δ N −1 . Thus as N − 1 = n − 1 + s,
+we obtain
+                               Z                                    Z
+                     1                                 1
+                                          |f | ≲                                        |f˜|.   (3.12)
+                |Nδ (γy,w )|   Nδ (γy,w )        |NAδ (Ly,w,ρ )|        NAδ (Ly,w,ρ )
+                  LIFTING CURVED KAKEYA SETS TO LINEAR KAKEYA SETS                                9
+
+After covering the tube NAδ (Ly,w,ρ ) with OA (1) parallel δ-tubes and taking a supre-
+mum over w ∈ W , we obtain
+                            KX f (y) ≲ Klin,N f˜(Θ(y, ρ)).
+                                    δ               δ                           (3.13)
+Let Ye be a compact ball containing Θ(Y × R). Raising both sides of (3.13) to p,
+integrating over Y × R, and using that Θ : Y × R → RN −1 has full rank, we obtain
+                  Z                  Z
+                       X       p
+                     |Kδ f (y)| dy ≲        |Kδlin,N f˜(Θ(y, ρ))|p dydρ     (3.14)
+                   Y                  Y ×R
+                                     Z
+                                   ≲    |Kδlin,N f˜(θ)|dθ.                  (3.15)
+                                               Ye
+Thus
+       ∥KδX f ∥Lp (Y ) ≲ ∥Kδlin,N f˜∥Lp (Ye ) ⩽ ∥Kδlin,N ∥Lp (RN )→Lp (Ye ) ∥f˜∥Lp (RN ) .   (3.16)
+Together with (3.8), this proves (2.7).                                                          □
+
+                               4. Proof of Proposition 2.5
+
+  We begin with Proposition 2.5(i), which is the most concrete.
+
+Proof of Proposition 2.5(i). Let B be an (n − 1) × (n − 1) matrix, let (s, ν) =
+(rankB, rankB − rankB 2 ), and define q = rankB. Consider the rank factorization
+          B = U V,       U : Rq → Rn−1 injective,           V : Rn−1 → Rq surjective.         (4.1)
+Consider the coordinates (x, z, t) ∈ Rn−1 × Rq × R = RN and define
+                             π(x, z, t) = (x + tU z, t) ∈ Rn−1 × R.                           (4.2)
+This is a submersion because Dπ has rank n.                Let R ⊂ Rq be a compact ball.       For
+ρ ∈ R, set
+                       a(y, w, ρ) = (w, ρ),         Θ(y, ρ) = (y − U ρ, V y).                 (4.3)
+We may compute
+                  π((a, 0) + t(Θ, 1)) = (w + t(y − U ρ) + tU (ρ + tV y), t)                   (4.4)
+                                                           2
+                                         = (w + (tI + t B)y, t),                              (4.5)
+so (2.4) holds.
+  Now we show that rankDΘ = N − 1 − ν = (n − 1) + rankB 2 . The kernel of DΘ
+consists of pairs (h, k) satisfying
+                                     h − U k = 0,       V h = 0,                              (4.6)
+so ker DΘ is naturally identified with ker(V U ). Thus dim ker(V U ) = dim ker(DΘ).
+Since U is injective and V is surjective,
+                          rank(V U ) = rank(U V U V ) = rank(B 2 ).                           (4.7)
+Then by applying rank-nullity to V U and to DΘ, we obtain
+                                rankDΘ = (n − 1) + rank(B 2 )                                 (4.8)
+                                            = N − 1 − ν.                                      (4.9)
+                                                                                                 □
+
+  Now we move on to Proposition 2.5(ii).
+10                                       ARIAN NADJIMZADAH
+
+Proof of Proposition 2.5(ii). Consider
+                                   D−1
+                                   X
+                XD (w, t; y) =           tj Aj (w, y) + tD B(y),            det DB(y) ̸= 0.   (4.10)
+                                   j=0
+
+Set s = (D − 1)(n − 1), so N − 1 = D(n − 1). Use the coordinates (z0 , . . . , zD−1 ) ∈
+(Rn−1 )D . Define the submersion
+                                                                D−1
+                                                                X
+                                π(z0 , . . . , zD−1 , t) := (         tj zj , t).             (4.11)
+                                                                j=0
+
+Write ρ = (ρ1 , . . . , ρD−1 ) and define
+          a(y, w, ρ) := (A0 (w, y), A1 (w, y) − ρ1 , . . . , AD−1 (w, y) − ρD−1 )             (4.12)
+             Θ(y, ρ) := (ρ1 , . . . , ρD−1 , B(y)).                                           (4.13)
+We have the telescoping sum
+                     D−1
+                     X
+                            tj (aj + tΘj )                                                    (4.14)
+                      j=0
+                                      D−1
+                                      X                         D−1
+                                                                X
+                            = A0 +           tj (Aj − ρj ) +           tj ρj + tD B(y)        (4.15)
+                                      j=1                        j=1
+                            = XD (w, t; y).                                                   (4.16)
+Thus we obtain (2.4):
+                                   π((a, 0) + t(Θ, 1)) = γy,w (t).                            (4.17)
+We have that
+                                                                 
+                                                I(D−1)(n−1)  0
+                               DΘ(y, ρ) =                                                     (4.18)
+                                                    0       DB(y)
+is invertible because DB(y) is invertible. Thus XD has a ((D − 1)(n − 1), 0)-lift.                □
+
+     Finally we handle Proposition 2.5(iii).
+
+Proof of Proposition 2.5(iii). Set k = n − 2 and write y = (y ′ , yn−1 ) ∈ Rk × R,
+w = (w′ , wn−1 ). Recall that
+                     Xtan (w, t; y) = (w′ − t2 y ′ , tan−1 (wn−1 /t) − tyn−1 ).               (4.19)
+
+Consider the coordinates (b, c, u, v, q, t) ∈ Rk × Rk × R4 = R2n , and define
+                        π(b, c, u, v, q, t) = (b + tc, tan−1 (u/v) + q, t).                   (4.20)
+This is a submersion, as is immediate from the derivatives in the b, q and t variables.
+Let the ruling parameter be (r, α, λ) ∈ Rk × R × R and choose the compact ball R
+centered at (0, 0, 1) sufficiently small; radius 1/100 will do. Define
+                 a(y, w, r, α, λ) := (w′ , r, λwn−1 cos α, −λwn−1 sin α, −α),                 (4.21)
+                                                  ′
+                    Θ(y, r, α, λ) := (−r, −y , λ sin α, λ cos α, −yn−1 ).                     (4.22)
+                 LIFTING CURVED KAKEYA SETS TO LINEAR KAKEYA SETS                         11
+
+Then
+π(Ly,w,r,α,λ (t))                                                                     (4.23)
+ = π(w′ − tr, r − ty ′ , λ(wn−1 cos α + t sin α), λ(−wn−1 sin α + t cos α), −α − tyn−1 , t)
+                                                                                    (4.24)
+                             λ(wn−1 cos α + t sin α)
+ = (w′ − t2 y ′ , tan−1 (                            ) − α − tyn−1 , t).              (4.25)
+                            λ(−wn−1 sin α + t cos α)
+Let us handle the tan−1 -term. Set β = tan−1 (wn−1 /t), so tan β = wn−1 /t. The
+tangent addition formula gives
+                 λ(wn−1 cos α + t sin α)    tan β + tan α
+                                         =                 = tan(β + α),              (4.26)
+                λ(−wn−1 sin α + t cos α)   1 − tan β tan α
+and therefore
+                             λ(wn−1 cos α + t sin α)
+                 tan−1 (                             ) = tan−1 (wn−1 /t) + α.         (4.27)
+                            λ(−wn−1 sin α + t cos α)
+We used that β + α ∈ (−π/2, π/2), which is guaranteed by our range of parameters.
+Plugging (4.27) back into (4.25) gives π(Ly,w,r,α,λ (t)) = γy,w (t).
+  It remains to check the direction rank. With the variables ordered as (y ′ , yn−1 , r, α, λ),
+the y ′ , yn−1 , and r blocks of DΘ are identity matrices up to a sign, while the (α, λ)
+block is
+                                                   
+                                     λ cos α sin α
+                                                      ,                              (4.28)
+                                     −λ sin α cos α
+whose determinant is λ ̸= 0. Thus DΘ is invertible, and Xtan has an (n, 0)-lift.          □
+
+                                     5. Proof of Theorem 1.2
+
+   There are two main components. First we identify the dense set P ⊂ H so that
+conditional on linear Kakeya in all dimensions, dKak (X (n) ) = n for each X ∈ P.
+Second, we prove that B ⊂ H is closed nowhere dense. These are Lemmas 5.1 and
+5.2 respectively below.
+
+5.1. The dense set P ⊂ H.
+Lemma 5.1. Let n ⩾ 3. There is a dense set P(n) ⊂ H(n) such that, conditional on
+the linear Kakeya set conjecture in all dimensions, dKak (X) = n for each X ∈ P(n) .
+                               (n)
+Proof. For D ⩾ 1, let PD consist of the Hörmander-type maps
+     XD (w, t; y) := A0 (w, y) + tA1 (w, y) + · · · + tD−1 AD−1 (w, y) + tD B(y),      (5.1)
+where the Ai are smooth functions and det DB(y) ̸= 0. Define
+                                        [ (n)
+                                P(n) :=    PD                                          (5.2)
+                                                  D⩾1
+
+                                                                    (n)
+  By Proposition 2.5(ii) and Proposition 2.2, every X ∈ PD satisfies
+                    dKak (X) ⩾ dlin (n + (D − 1)(n − 1)) − (D − 1)(n − 1)              (5.3)
+Under the linear Kakeya set conjecture, the light hand side equals n, and hence
+dKak (X) = n.
+12                                  ARIAN NADJIMZADAH
+
+  It remains to prove density. It suffices to show that for each X ∈ H, integer r ⩾ 1,
+and ε > 0, there is P ∈ P such that ∥X − P ∥C r (Q) ⩽ ε.
+  Since H ⊂ C ∞ (Q; Rn−1 ) is open and polynomials are dense in C ∞ (Q; Rn−1 ), we
+can find a polynomial S : R2n−1 → Rn−1 such that S ∈ H and ∥X − S∥C r (Q) ⩽ ε/2.
+We can then write
+                                                D−1
+                                                X
+                                S(w, t; y) =          ti Ai (w, y)                    (5.4)
+                                                i=0
+
+for some D ⩾ 1, where the Ai are polynomials and in particular are smooth functions.
+Again using that H is open, there is δ > 0 and s so that for any perturbation R
+satisfying ∥R∥C s (Q) ⩽ δ, one has S + R ∈ H. We choose R(w, t; y) = ηtD y with η > 0
+taken small enough that ∥R∥C max(s,r) (Q) ⩽ min(δ, ε/2). Set P := S + R ∈ H. We
+therefore have P ∈ P since P takes the form
+                                          D−1
+                                          X
+                           S(w, t; y) =         ti Ai (w, y) + tD ηy,                 (5.5)
+                                          i=0
+
+the leading coefficient B(y) = ηy satisfies det DB = η n−1 ̸= 0. Also ∥X − P ∥C r (Q) ⩽
+ε, so we have shown that P ⊂ H is dense.
+                                                                                         □
+
+5.2. Bourgain’s condition is closed nowhere dense.
+Lemma 5.2. Let n ⩾ 3. The set B(n) is closed nowhere dense in H(n) .
+
+Proof. For X ∈ H, define SX := (∇w X)−1 ∇y X. Since ∂t SX is invertible by Hörmander’s
+condition, Bourgain’s condition is equivalent to
+                                 (∂t SX )−1 ∂t2 SX = λIn−1 ,                          (5.6)
+for a smooth scalar function λ. For an m × m matrix A, define the trace-free part by
+tf(A) := A − tr(A)                                           −1 2
+               m Im . Then (5.6) is equivalent to tf((∂t SX ) ∂t SX ) = 0. Define the
+operator
+             B : H → C ∞ (Q; Matn−1 (R)),          B(X) := tf((∂t SX )−1 ∂t2 SX ),    (5.7)
+The map B is continuous on H because A 7→ tf(A), differentiation, matrix inversion,
+and matrix multiplication are continuous in C ∞ . We have
+                                B = {X ∈ H : B(X) = 0},                               (5.8)
+so B is closed in H.
+   We will now show that B has empty interior, and hence is nowhere dense since B
+is also closed. To this end fix X ∈ B and p0 = (w0 , t0 ; y0 ) in the interior of Q. Define
+A0 = ∇w X(p0 ), T0 = ∂t SX (p0 ), and choose a non-zero trace-free (n − 1) × (n − 1)
+matrix M . For ε > 0, define the perturbation
+                                             ε
+                 Xε (w, t; y) := X(w, t; y) + (t − t0 )2 A0 T0 M (y − y0 ).           (5.9)
+                                             2
+For ε small enough, Xε ∈ H. We may compute
+                  ∂t SXε (p0 ) = T0 ,   ∂t2 SXε (p0 ) = ∂t2 SX (p0 ) + εT0 M.        (5.10)
+               LIFTING CURVED KAKEYA SETS TO LINEAR KAKEYA SETS                              13
+
+Since X ∈ B, ∂t2 SX (p0 ) = λ0 T0 for some scalar λ0 . Thus
+                             B(Xε )(p0 ) = tf(λ0 Im + εM )                               (5.11)
+                                          = εM ̸= 0,                                     (5.12)
+so Xε ∈
+      / B. Since we can take ε > 0 arbitrarily small, there is no open neighborhood
+of X in H which is contained in B. As X ∈ H was arbitrary, B has empty interior
+in H, and is therefore nowhere dense.                                             □
+
+
+                             6. Proof of Theorem 1.3
+                                                                   (n)
+  Fix an (n−1)×(n−1) matrix B. By Proposition 2.5(i), XB has a (rankB, rankB−
+rankB 2 )-lift. By Proposition 2.2 and the assumed linear Kakeya set conjecture in
+dimension n + rankB 2 , we obtain
+                          dKak (XB ) ⩾ n − rankB + rankB 2 .                              (6.1)
+
+  Now we prove the upper bound dKak (XB ) ⩽ n − rankB + rankB 2 by constructing
+an XB -Kakeya set contained in a smooth variety of dimension (n − rankB + rankB 2 ).
+Set
+                                 d = rankB − rankB 2 .                                    (6.2)
+On a nilpotent Jordan block Jℓ (0),
+                                                   (
+                                                    1,         ℓ ⩾ 2,
+                        rankJℓ (0) − rankJℓ (0)2 =                                        (6.3)
+                                                    0,         ℓ = 1,
+while every block associated with a nonzero eigenvalue contributes zero. This d is
+the number of nilpotent Jordan blocks of size at least two.
+  Choose S ∈ GLn−1 (R) that puts B into Jordan form,
+                                         d
+                                         M
+                      J := S −1 BS = (         Jℓj (0)) ⊕ A,    ℓj ⩾ 2,                   (6.4)
+                                         j=1
+
+                                                     (m)
+where A contains all remaining blocks. Let Eij             be the m × m matrix with a 1 in
+the (i, j)-entry and 0 everywhere else. Let
+                              d
+                                 (ℓj )
+                             M
+                       CJ = (   Eℓj ,ℓ j −1
+                                            ) ⊕ 0,    C = SCJ S −1 .                      (6.5)
+                              j=1
+
+Choose WB large enough that C(YB ) ⊂ WB , and set
+                     K = {((C + tI + t2 B)y, t) : y ∈ YB , t ∈ IB }.                      (6.6)
+This is an XB -Kakeya set.
+                                                                           ′(j)   ′(j)
+  Consider the coordinates x′ = S −1 x and y ′ = S −1 y. Write xk , yk for the
+coordinates of x′ , y ′ corresponding to the k-th coordinate of the j-th block. Points of
+K satisfy
+                                x′ = (CJ + tI + t2 J)y ′ .                                (6.7)
+14                                     ARIAN NADJIMZADAH
+
+     For the j-th selected Jordan block,
+                                                         t t2
+                                                                                              
+                                                                         ..
+                                                         t
+                                                                             .          
+                                                                                         
+                    (ℓj )                  2
+                   Eℓj ,ℓ      + tI ℓj + t   J ℓj (0) =
+                                                                        ..        ..    .
+                                                                                         
+                                                                                                    (6.8)
+                          j −1
+                                                        
+                                                                             .       .  
+                                                                                   t t2 
+                                                                                    1 t
+Hence the final two coordinates in this block obey
+                                       ′(j)            ′(j)          ′(j)
+                                    xℓj −1 = tyℓj −1 + t2 yℓj                                       (6.9)
+                                        ′(j)          ′(j)        ′(j)
+                                       xℓj = yℓj−1 + tyℓj .                                        (6.10)
+Therefore
+                                ′(j)           ′(j)
+                               xℓj −1 − txℓj = 0,               1 ⩽ j ⩽ d.                         (6.11)
+Define the polynomials
+                                                         (j)                      (j)
+                            Qj (x, t) = (S −1 x)ℓj−1 − t(S −1 x)ℓj .                               (6.12)
+Then
+                                                       d
+                                                       \
+                                   K ⊂ V :=                   {Qj = 0}.                            (6.13)
+                                                       j=1
+                                                                                        ′(j)
+In the coordinates x′ , Qj has derivative 1 with respect to xℓj −1 , and every other Qi
+has derivative 0 in that coordinate. Thus ∇Q1 , . . . , ∇Qd are linearly independent
+everywhere, so V is a smooth variety of codimension d and dimension
+                               n − d = n − rankB + rankB 2 .                                       (6.14)
+Consequently,
+                             dKak (XB ) ⩽ n − rankB + rankB 2 .                                    (6.15)
+Combining this with the lower bound proves the theorem.
+
+                                              References
+[BG11]    Jean Bourgain and Larry Guth. Bounds on oscillatory integral operators based on mul-
+          tilinear estimates. Geom. Funct. Anal., 21(6):1239–1295, 2011.
+[Bou91]   J. Bourgain. Lp -estimates for oscillatory integrals in several variables. Geom. Funct.
+          Anal., 1(4):321–374, 1991.
+[CGG+ 25] Mingfeng Chen, Shengwen Gan, Shaoming Guo, Jonathan Hickman, Marina Iliopoulou,
+          and James Wright. Oscillatory integral operators and variable Schrödinger propagators:
+          beyond the universal estimates. Geom. Funct. Anal., 35(6):1425–1525, 2025.
+[GGN+ 26] Shaoming Guo, Larry Guth, Arian Nadjimzadah, Minxing Shen, and Ruixiang Zhang.
+          Curved Kakeya problems and the projective geometry of paths, 2026.
+[GHI19]   Larry Guth, Jonathan Hickman, and Marina Iliopoulou. Sharp estimates for oscillatory
+          integral operators via polynomial partitioning. Acta Math., 223(2):251–376, 2019.
+[GLX25] Shaoming Guo, Diankun Liu, and Yakun Xi. Curved Kakeya sets for generic phases in
+          odd dimensions, 2025.
+[Gut25]   Larry Guth. Introduction to the proof of the Kakeya conjecture, 2025.
+[GWZ24] Shaoming Guo, Hong Wang, and Ruixiang Zhang. A dichotomy for Hörmander-type
+          oscillatory integral operators. Invent. Math., 238(2):503–584, 2024.
+[Nad26]   Arian Nadjimzadah. Bourgain’s condition, sticky Kakeya, and new examples. Geom.
+          Funct. Anal., 2026. https://doi.org/10.1007/s00039-026-00750-4 (online first).
+               LIFTING CURVED KAKEYA SETS TO LINEAR KAKEYA SETS                             15
+
+[Wis05]   L. Wisewell. Kakeya sets of curves. Geom. Funct. Anal., 15(6):1319–1362, 2005.
+[WZ25]    Hong Wang and Joshua Zahl. Volume estimates for unions of convex sets, and the Kakeya
+          set conjecture in three dimensions, 2025.
+
+  UCLA Department of Mathematics, Los Angeles, CA 90095.
+  Email address: anad@math.ucla.edu
+

@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-10-17",
-  "latest_round": "R0010",
+  "latest_round": "R0011",
   "goal_solved": false,
   "major_intermediate_result_claimed": false,
   "items": [
@@ -531,9 +531,9 @@
     },
     {
       "id": "N5-DIR-COST-01",
-      "status": "next_task_unproved_actual_direction_cost_finite_horizon_candidate",
+      "status": "one_round_complete_uniform_visible_cost_bound_refuted_even_kappa_zero",
       "kind": "genealogical_visible_direction_density_cost_vs_uniform_horizon_bound",
-      "specification": "STATE.md",
+      "specification": "research/rounds/R0011_working_spec.md",
       "stop_after_main_rounds_without_new_input": 1,
       "depends_on": [
         "actual per-world visible-slope density ceiling N0^(kappa+o(1))",
@@ -542,7 +542,58 @@
       ],
       "kakeya_result": false,
       "target": "H(E) <= C_(d0,S,eta) (L+kappa), uniformly in arbitrary tempered complexity exponents",
-      "closure_warning": "The previously proved density Jacobians are bookkeeping only; current normalized worlds cannot be assigned kappa=0 for free and restricted optimizer closure is not proved."
+      "closure_warning": "The previously proved density Jacobians are bookkeeping only; current normalized worlds cannot be assigned kappa=0 for free and restricted optimizer closure is not proved.",
+      "results": [
+        "HOR-003"
+      ],
+      "decision": "research/reviews/R0011_macro.md"
+    },
+    {
+      "id": "HOR-003",
+      "status": "internally_cross_reviewed_formal_j3_countermodel",
+      "kind": "bounded_actual_visible_slope_density_flat_profile_arbitrarily_high_horizon",
+      "file": "results/reviewed/HOR-003_bounded_visible_directions_high_horizon.md",
+      "independent_reviews": [
+        "research/reviews/R0011_direction_smoothing_review.md",
+        "research/reviews/R0011_visible_cost_interface_review.md"
+      ],
+      "root_review": "research/reviews/R0011_root_integration_review.md",
+      "depends_on": [
+        "R0010 uniform random-tag lemma with a fresh table for the new fixed layer laws",
+        "PLK-001 and R0008 uniformly smoothed all-width cap",
+        "literal j3 exact/chart/true-floor definitions"
+      ],
+      "novelty": "not_claimed",
+      "kakeya_result": false,
+      "major_intermediate_result": false,
+      "actual_profile": "f(r)=0 at every depth",
+      "countermodel_cap_d": 0.5,
+      "angular_S": 1,
+      "visible_slope_density_exponent": 0,
+      "actual_visible_density_ceiling": "O(1), independently of M and U",
+      "horizon_lower": "M/6",
+      "horizon_upper": "M",
+      "uniform_H_le_C_L_plus_kappa_refuted": true,
+      "bounded_visible_density_all_model_supremum": "infinite",
+      "original_j2_paper_refuted": false,
+      "raw_full_slope_source": false,
+      "full_slope_density_exponent": "U"
+    },
+    {
+      "id": "N5-CURVE-LIFT-01",
+      "status": "next_task_unproved_codimension_one_spatial_affine_lift_test",
+      "kind": "coherent_curved_to_linear_lifting_for_n3_invertible_quadratic_family",
+      "specification": "notes/20_dimension_lifting/curved_lifting/R0011_source_and_next_test.md",
+      "stop_after_main_rounds_without_new_input": 1,
+      "depends_on": [
+        "Definition 2.1 of Nadjimzadah-curved-lifting-2026v1",
+        "arbitrary smooth spatial-affine time-preserving submersion",
+        "intercept-independent slopes and full ruling-direction rank"
+      ],
+      "target": "For B=diag(1,2), construct or rigorously exclude a (1,0)-lift with pi_t(z)=T(t)z+c(t), rank T=2; arbitrary smooth a and Theta, Theta independent of w and D_(y,rho)Theta rank 3.",
+      "scope_warning": "A negative result is restricted to spatial-affine time-preserving lifts. A positive result would imply a three-dimensional curved consequence conditional on OAI4, not a reverse proof of five-dimensional Kakeya.",
+      "kakeya_result": false,
+      "major_intermediate_result": false
     }
   ]
 }

@@ -1,56 +1,47 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0010。长期Goal active。尚未解决高维Kakeya，没有新维数下界或经文献确认的重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0011。长期Goal active；尚无高维Kakeya证明、真实反例、新维数下界或经文献确认的重大中间结果。
 
 ## 恢复与宏观状态
 
-R0009已同步b705edb6d73ff62821552d554e0f97d68714da80；R0010开轮150文件回执及干净树已核，上一goal turn分类progress。先读GOAL、STATE、ROADMAP、results/registry.json及最近正式轮次；运行python scripts/context.py，不从局部草稿末句恢复。
+R0010起点为03d0f962cf4551f82bbce6ab9e05dfd9fe808e8d，160文件及干净树已核。R0011以它为父同步，完成回执在tmp/sync/R0011.json；下一轮核该回执及git状态。先读GOAL、STATE、ROADMAP、results/registry.json及最近正式轮次，运行python scripts/context.py，不从局部草稿末句恢复。
 
-R0010关键候选n0~1⇒H≤L失败，立即macro，见research/reviews/R0010_macro.md。停止所有无来源/仅density归一化的completion修补，不再优化旧toy指数。十轮仍未达到数学完成标准，不能把形式模型反例当作Kakeya反例或重大中间结果。
+本轮关键候选N5-DIR-COST-01失败，已立即执行research/reviews/R0011_macro.md：冻结整个无source/n0-only/visible-direction-cost completion策略，不把下一轮变成再加full-slope统计假设的修补。不再改善toy的H指数、随机误差或颜色算法。重开必须有不同的实际前端几何定理及验证过的闭合操作。
 
-文献库仍7篇PDF；本轮官方四维paper的blob45ec20e423db2a9c70fd6303510bac361e6e9e8a复查未变。有限前沿检索的abstract-only候选及状态存literature/metadata/R0010_frontier_check.json，未作新证明输入、无新增PDF。175页四维proof尚未全面独立验证；实际j2，j3始终是拟推广。
+文献库现8篇PDF。新Nadjimzadah-curved-lifting-2026v1的PDF、提取全文、版本与校验元数据均已归档，15页/961012字节；selected证明已读，非全文独审。核心175页四维proof仍未全面独立重证，实际j2，j3均为literal拟推广。SRC-001及DIR-003仍条件于完整四维证明及输入正确，不能仅凭Hausdorff标题调用。
 
-## R0010已核验结果：HOR-002
+## R0011已核验结果：HOR-003
 
-对任意固定L>0、M>6L，存在literal j3 version2的单world完整8维tempered概率prior，nativew/B1、selected mass1/4，所有深度**实际f(r)≡0**、joint-angular S1，仍有
+对任意固定L>0、M>6L，存在literal j3 version2单world完整8维tempered概率prior，nativew/B1、selected mass1/4，所有depth实际f(r)≡0、joint-angular S1，**实际原visible-slope density ceiling O(1)**（κ=0），仍有
 
-M/6 ≤ H(E) ≤ M。
+    M/6 ≤ H(E) ≤ M.
 
-L1/M12为2≤H≤12。profile属于任意固定C(d<1)，需d>0可取1/2。M任意大说明即使固定f0=0，原all-model supremum k(d)仍为∞。不是density常数平移、world权重平均或真实系统为空。
+L=1、d₀=1/2、S1及angular范围固定，M任意大，严格否定H≤C_(d₀,S,angular)(L+κ)的uniform有限常数；bounded-visible-density子类的all-model k仍无限。结果入口results/reviewed/HOR-003_bounded_visible_directions_high_horizon.md；两代理互审及root独核见R0011_*review。
 
-- 可见Q=tY2+Y1Y3=λ的δ-grid levels在单world内部混合；每层三参数grid加六系数δ噪声，δ=N0^-M。exactY定位O1 λ，g_t≤C，每Y只O1 hidden bins，所以每深度observed density≤C且support reference-volume≤C，积分给typical lower。
-- hiddenw0=cλ+微噪声、W极细均匀；颜色表一次性固定，非逐轨道重采样。所有8系数有有限分段常density，angular两尺度计数给S1。
-- 先选forall chart参数/颜色的分析quadrature，再用固定维hyperplane patterns及ghost/swap得到一个同时适用全部二次tests的好颜色表。复杂assignments先扩大为单chart geometry/current-test事件，不进入参数维数。
-- 对任意chart有m/q≤K^C[a_L+(logN0)²δ^.5q^-3]J+r_N，r_N超多项式小。原floor nL=1且tempered J≥N0^-B迫H≥M/6。
-- q=δ时good midpoint Y-cube×原w0终端bin有常量覆盖、原floor和O1 own-list，直接给H≤M，不输出内部λ。
-- 其实际visible-slope ceiling≈δ^-1=N0^M，full(V,W)成本更大；n0=1并未提供真实full-direction来源。
+λ-dependent shear取u=(p,αλ−pq,q)、α=.1，b仍为(s,−sq−λp/s,λ/s)。Q=tY₂+Y₁Y₃=λ(1+αt²)，所以exactbase仍定位O1 λ；同时实际V定位O1的p,q,λ，grid权δ³与速度noise densityδ⁻³抵消，actualA=O1。这不同于HOR-002的A≈δ⁻¹，也不同于独立copies混合后通常出现的d1。
 
-入口results/reviewed/HOR-002_zero_depth_one_high_horizon.md。模型、profile、uniformλ cap与upper经root独核；root随机lemma另经独立代理逐步审查，RL4/RL5又交叉审查，见research/reviews/R0010_*及模型稿§9。内部审查，未外部同行评审、不声称新颖性。
+每λ的shear只平移affine center，保持同D/J的single-layer cap。R0010独审的uniform random-tag lemma对新固定Πλ重新选一张表，给全部二次tests/assignments的统一m/q upper；原floor迫H≥M/6。qδ good-midpoint-cube×原w₀-bin atlas有常量覆盖、原floor和O1 own-list，给H≤M，不输出λ。
 
-正向shortcut的stripe边界例虽满足f≡0/S2，却只是isotropic cube group欠floor；该例H0，勿与HOR-002混同。quadratic-inverse colors也能被一个全局二次test消去，随机标签证明已统一处理此陷阱。
+完整(V,W)的density ceiling仍≈η⁻¹=N₀ᵁ，因此没有真实五维完整方向来源。不是Kakeya反例、不反驳原j2稿、不声称新颖性或重大结果。HOR-001、HOR-002、HOR-003是不同限制下的形式模型障碍，不可混淆。
 
 ## 保留工具与冻结版本
 
-保留DIR-002 truefloor预算、ENT-002同prior mixed entropy、FLAG-002条件外积/对齐、PLK-001全框QCAP、PLK-002固定维度转换、SRC-001及DIR-003。DIR-003是条件于完整四维proof的方向格加权输入Σω#J≤Cε αδ^-ε#E，实际三维方向密度A对应α=C Aδ³；只能带实际成本调用。
+保留DIR-002 truefloor预算、ENT-002同prior mixed entropy、FLAG-002条件外积/对齐、PLK-001全框QCAP、PLK-002固定维转换、SRC-001及DIR-003。DIR-003的方向格权重输入Σω#J≤Cε αδ⁻ε#E必须付实际bin质量成本；实际三维方向density A对应α=C Aδ³。HOR-003说明此projected工具不足以自动补回泛类completion，并不否定其专用source范围。
 
-HOR-001是n0=N0^M、d1/2模型；HOR-002是实际f≡0的不同模型。FLAG-003原H0/投影H=L，FLAG-001的d1边界例H未算，不能混同。
+冻结：满维投影免费加一、无条件次数恢复、guard-only旧窗口、小palette、无损native-to-W、双短轴自动matching/投影、genericWP4、所有上述泛类completion与有限critical k修补。原FLAG-003 H0/投影H=L、FLAG-001 d1且H未算，勿误写为本轮正horizon模型。
 
-冻结：满维投影加一、无条件次数恢复、guard-only旧窗口、小palette、无损native-to-W、双短轴自动matching/投影、无方向WP4直接加维、无source及n0-only completion、在这些泛类上有限critical k的假设。重开须真实新来源；不再给同一模板追加同义统计条件。
+## 下一轮唯一任务：N5-CURVE-LIFT-01
 
-## 下一轮唯一任务：N5-DIR-COST-01
+从新的曲线lifting几何出发：固定n=3、B=diag(1,2)，X_B(w,t;y)=w+(tI+t²B)y。检验是否存在Definition2.1的(1,0)-lift，限定**保留时间且空间仿射**
 
-回到真实祖先方向预算，检验uniform有限性：固定d0<1、S、angular范围，j3 exact E∈C(d≤d0)，每world原visible-slope prior实际density ceiling≤N0^(κ+o(1))、κ≥0固定，是否
+    π_t(z)=T(t)z+c(t), z∈R³, rank T(t)=2,
 
-H(E) ≤ C_{d0,S,η}(L+κ)，
+允许T,c及a(y,w,ρ),Θ(y,ρ)任意光滑，但Θ必须独立w，D_(y,ρ)Θ rank3，整个ρ域的coherent rulings都投影到同一曲线。参数域有内点，时间为含0的小区间。主验收是显式构造或在整个指定类中严格不可能证明；不能只检验标准π=x+tUz。
 
-常数独立于prior piece数/噪声尺度等任意tempered exponent？κ=0对应真实source的subpower预算；HOR-002实际κ=M必须付代价，故不反驳此候选。此命题未证，不预先声称sharp H≤L或optimizer闭合。
+Proposition2.2的真实方向是d_Kak(X)≥d_lin(n+s−ν)−s。标准B可逆的(2,0)-lift需5维输入；若本轮找到(1,0)，直接收益也仅是以四维输入推出一个三维曲线结果，不能倒推五维Kakeya。若排除，则只排除空间仿射、保留时间这一类；一般非线性π及时间重参数未被排除，标量B的换元例外必须保留。详见notes/20_dimension_lifting/curved_lifting/R0011_source_and_next_test.md。
 
-必须同时保留原law与κ的实际变换：未归一化restriction保cap，visible parent normalization乘J/[q³ν(parent)]，full(V,W)另乘J/[q⁴ν(parent)]。这些已核Jacobian重算不计新进展；主验收为上式uniform有限性证明或严格反例。独立攻击可用多shear copies压方向成本，但须重算hidden profile，若变d=1不得忽略。
-
-只给一主轮；若方向预算也不足，冻结该completion策略并转向新的几何/已登记curved-to-linear lifting具体审计，不无限追加条件。长期目标仍是n≥5或general Kakeya。
+只给一主轮。若无超出标准rank计算的信息增益，不沿此窄类继续细节优化，重新宏观选路。每轮写working_spec并独立审查、归档、同步。Goal最终数学标准不降低。
 
 ## 同步与执行
 
-R0010以R0009为父增量同步；完整tree、全部blob/path/mode与SHA256、同一local/remote commit和干净树的回执写tmp/sync/R0010.json。下一轮先核回执及git状态。create_tree用已核验base及变化条目，再比较完整tree；CLI网络不可用时用已连接GitHub API，不force push。
-
-每轮先写working_spec；三轮、关键反例或两轮无信息增益即macro。系统Python中文用-X utf8。Goal只按GOAL.md最终数学标准审定，当前active。
+以已验证base tree及变化条目增量同步，核完整tree、全部path/mode/blob与SHA256；同一local/remote commit及干净树回执写tmp/sync/R0011.json。CLI网络不可用时使用已连接GitHub API，不force push、不覆写他人历史。系统Python中文用-X utf8。三轮、关键失败或两轮无信息增益立即macro。

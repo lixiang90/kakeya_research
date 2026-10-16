@@ -1,6 +1,8 @@
 # 一般维度 Kakeya 研究
 
-目标：以 OpenAI 四维 Hausdorff Kakeya 预印本为研究起点，寻求欧氏空间 n >= 5 或一般维度猜想的证明、证伪或重大中间结果。当前项目仅已启动，**没有声称解决高维猜想**。
+目标：以 OpenAI 四维 Hausdorff Kakeya 预印本为研究起点，寻求欧氏空间 n >= 5 或一般维度猜想的证明、证伪或重大中间结果。已完成十一轮研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
+
+R0011的HOR-003排除了实际可见方向密度有界时的一项泛类completion候选；它是形式模型障碍，不是Kakeya反例。下一任务转向曲线lifting的具体几何检验，当前唯一优先与冻结路线以STATE.md为准。文献库现保存8篇PDF及其提取文本/来源记录。
 
 每次恢复研究，依次读 [GOAL.md](GOAL.md)、[STATE.md](STATE.md)、[ROADMAP.md](ROADMAP.md)、[最近轮次](research/rounds/)；执行 `python scripts/context.py` 可生成精简交接摘要。
 
