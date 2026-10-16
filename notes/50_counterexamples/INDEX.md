@@ -37,5 +37,8 @@
 | digit_derivative_automatically_preserves_real_Leibniz | 数字coefficient导数可忽略进位并当成真实乘法derivation | R17合法网格tuple有1/(NQ²)残差，远大r^a；只排此跳步不排dense restricted模型 | 需实际carry载体与整张原g质量/cover估计，不能拿formal algebra当finite source |
 | dense_restricted_W_gives_independent_marginal_convolution | 原dense bounded graph的2D小输出直接让两边际独立卷积小熵增量 | R18双平面matching worlds：restricted输出2D、independent卷积熵3；timeaction/固定κ版仍有固定growth，SM失败故非完整source反例 | 必须支付BSG提取及同原time/direction回传，不能抹掉g或只引用common-subspace定理 |
 | vector_contraction_controls_entire_mixed_slope_row | source22.4的scalar r1恢复可直接换成vector r并恢复全部tildef2 row | r=(1,0)、rows(0,t) contraction恒零却row变化；只排线代跳步，非实际mixed配置反例 | 用完整actual geometry/mass控制正交row或合法降grain，不能dot替换/免费投影 |
+| fullgrain_reaveraging_erases_rho_squared_error | 对原(155)含rho²误差再作fullgrain平均就能把row oscillation从rho提到rho² | R19 Δrow=(0,rho,0)、x宽rho、Y含0，全部原query仍落N_rho²Y；是真observable反校准非source反例 | 真实支付direction到rho²或另一独立原约束，不自行降低误差 |
+| post_tau_collapse_yields_rho_two_plus_epsilon_row | source(192)代入(195)与已列Delta界直接得row rho^{2+epsilon/2} | R19原PDF99核版：Delta/rho仅rho^{1+epsilon}；E+swap修为rho^{1+c epsilon}仍足scalarCW正幂 | 使用保守修复或真正更强推导；不是四维结论反驳，不引用原rho^-kappa强化 |
+| exact_transport_or_global_projection_is_free_local_source | 全clock固定Cantor运输或全局固定kernel排除自动覆盖实际mixed局部frame | R19真实非线性线族本身CW失h^-kappa；MIX001全局CW投影已付，但local q条件化除mass及blur≫δ未付 | 原mass/wholeconvexprism/尺度/marks真实预算，不能添加transport或抹去其他row误差 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

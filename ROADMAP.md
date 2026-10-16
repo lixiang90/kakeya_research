@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0018冻结W/BSG/common-plane局部机制；下一实际mixed42 quadratic分支。旧冻结仍生效。无新Kakeya维数下界，长期Goal未解决。
+更新2026-10-17，R0019保留实际mixed42条件归约与MIX-001全局固定核排除；下一攻local投影原质量/CW/误差接口。旧冻结仍生效。无新Kakeya维数下界，长期Goal未解决。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -17,11 +17,11 @@
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
 | M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
-| O | 实际五维mixed(4,2)二次分支 | 标量Y/Phi、3D grain与两slope；source22.4的scalar恢复留下row正交分量 | 下一唯一N5-MIXED42-Q01；一轮真geometry/mass攻击，禁止dot替换/免费投影 |
+| O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、保守source99修复；MIX001排全局任意bounded残余，local仍未付 | 同N5-MIXED42-Q01下一一轮实际local GWZ/CW/shading/error预算；勿重复canonical/固定transport模型 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
 
 R0016的MNL001依赖WZ Theorem13.5且要求明确小epsilon0，不称重大结果。原Lemma19.2 neighborhood-to-convex-Wolff仍未全面重证；mixed/general-to-sticky/Hausdorff仍open。完整应用见notes/40_multiscale/sticky_matrix/R0016_source_linewise_application.md。
 
-R0017宏观决定见research/reviews/R0017_macro.md。source W保实际额外点/offset数据；Theorem21.2仍scalar乘数，不因ambient扩展变vector。下一R0018须先macro，不能只记录cover或Widentity后称数学进展完成。
+R0018宏观冻结W/BSG/common-plane，Theorem21.2仍scalar乘数。R0019提前macro见research/reviews/R0019_macro.md：新已付3D输入支持下一轮真实local接口，但全局commonkernel不能免费替局部近似frame。source(192)→(195)的过强指数用保守E+swap修复，不再无补证调用该处rho^-kappa强化。完整源、高维mixed非二次及Hausdorff仍open。
