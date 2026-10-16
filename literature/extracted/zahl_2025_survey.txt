@@ -1,0 +1,961 @@
+                                                                      A Survey of the Kakeya conjecture, 2000-2025
+
+                                                                                                  Joshua Zahl∗
+
+
+                                               Abstract. We survey progress on the Kakeya conjecture in Euclidean space.
+
+                                               1 Introduction. A Besicovitch set is a compact set K ⊂ Rn that contains a unit line segment pointing
+arXiv:2512.09397v1 [math.CA] 10 Dec 2025
+
+
+
+
+                                           in every direction. In [4], Besicovitch constructed a Besicovitch set K ⊂ R2 with Lebesgue measure 0. As
+                                           a consequence, for every η > 0 there exists δ > 0 and a set T of rectangles of dimensions 1 × δ pointing in
+                                           δ-separated directions with the property that
+                                                                                     X                [
+                                                                                         |T | ≥ 1,      T < η.
+                                                                                            T                    T
+
+                                           We say that such a set T exhibits the Besicovitch compression phenomenon.
+                                               The Kakeya conjecture is a family of closely related conjectures that seek to understand and quantify the
+                                           Besicovitch compression phenomenon.
+                                              Conjecture 1.1 (Kakeya set conjecture).              Every Besicovitch set K ⊂ Rn has Minkowski and Hausdorff
+                                           dimension n.
+                                                Conjecture 1.1 is typically studied by first discretizing the set K at a small scale δ > 0. Nδ (K) contains a δ
+                                           tube (the δ-neighbourhood of a unit line segment) pointing in every direction, and in particular Nδ (K) contains
+                                           a δ tube pointing in each δ-separated direction. This gives rise to a discretized analogue of Conjecture 1.1, which
+                                           we state as Conjecture 1.2 below. Before stating the conjecture, we introduce the following notation: if f and
+                                           g are functions of δ, we say f ⪅ g if for all ε > 0, there exists Cε (which may also depend on the ambient
+                                           dimension n) so that f ≤ Cε δ −ε g. For example log 1/δ ⪅ 1. For the purpose of this survey we will sometimes
+                                           be intentionally vague when distinguishing between inequalities of the form A ≲ B (or A = O(B)) and A ⪅ B.
+                                           In contrast to delicate questions such as the Lp boundedness of operators related to the Hilbert transform, the
+                                           distinction between A = O(B) and A ⪅ B is usually unimportant for Kakeya-type problems.
+                                               Conjecture 1.2. (A): Let T be a set of δ tubes in Rn pointing in δ-separated directions. Then
+                                                                                         [        X
+                                                                                            T ⪆      |T |.
+                                                                                                   T         T
+
+
+                                               (B): For each T ∈ T, let Y (T ) ⊂ T be measurable with |Y (T )| ≥ (log 1/δ)−1 |T |. Then
+                                                                                           [        X
+                                                                                              T ⪆       |T |.
+                                                                                                   T         T
+
+                                           Conjecture 1.2(A) implies that every Besicovitch set in R has Minkowski dimension n, while Conjecture 1.2(B)
+                                                                                                            n
+
+                                           implies that every Besicovitch set in Rn has Hausdorff dimension n.
+                                              The following variant of the Kakeya conjecture quantifies the size of the region in which the tubes from T
+                                           may substantially overlap:
+                                               Conjecture 1.3 (Kakeya maximal function conjecture). Let T be a set of δ tubes in Rn pointing in δ-
+                                           separated directions. Then
+                                                                              X                        n
+                                           (1.1)                                 χT ⪅ 1, 1 ≤ p ≤          .
+                                                                                      p              n−1
+                                                                                           T
+
+                                             ∗ Chern Institute of Mathematics, Nankai University (jzahl@nankai.edu.cn).
+     Conjecture 1.3 is called the Kakeya maximal function conjecture. When p = 1, (1.1) follows from the fact
+that #T ≤ δ 1−n . By considering the example where T consists of δ 1−n tubes that contain the origin, it is
+straightforward to verify that (1.1) is false for p > n/(n − 1). It is sometimes more convenient to write Conjecture
+1.3 in the following equivalent form:
+    Conjecture 1.3′ . Let T be a set of δ tubes in Rn pointing in δ-separated directions. Let λ ∈ [δ, 1] and for
+each T ∈ T, let Y (T ) ⊂ T be measurable with |Y (T )| ≥ λ|T |. Then
+                                             [                 X
+                                                 Y (T ) ⪅ λn      |T |.
+                                                   T               T ∈T
+
+   Finally, as the name suggests, we can express Conjecture 1.3 as a statement about the Lp boundedness of the
+Kakeya maximal operator : for δ > 0, f : Rn → C and e ∈ S n−1 , define the Kakeya maximal operator
+                                                                Z
+                                                             1
+                                            Kδ f (e) = sup         |f |,
+                                                       T ∥e |T | T
+
+where the supremum is taken over all δ tubes T pointing in the direction e.
+   Conjecture 1.3′′ .
+
+                                             ∥Kδ f ∥Ln (S n−1 ) ⪅ ∥f ∥Ln (Rn ) .
+
+    Conjectures 1.3, 1.3′ and 1.3′′ are equivalent. They imply Conjecture 1.2(B), which in turn implies Conjecture
+1.2(A).
+    The Kakeya conjecture is closely connected to several open problems in Fourier analysis. A seminal paper
+by Bourgain [5] from 1991 explored the connection between the Kakeya maximal function conjecture and Stein’s
+Fourier restriction conjecture. For f : Rn−1 → C and x ∈ Rn , we define the Fourier extension operator
+                                         Z
+                                                                                      2
+                               Ef (x) =         f (ω)e2πi(x1 ω1 +...+xn−1 ωn−1 +xn |ω| ) dω.
+                                          B(0,1)
+
+    In its adjoint form, Stein’s Fourier restriction conjecture asserts that
+                                                                                    2n
+                                  ∥Ef ∥Lp (Rn ) ≤ Cn,p ∥f ∥Lp (Rn−1 ) ,       p>       .
+                                                                                   n−1
+The conjecture was proved by Fefferman and Stein [21] for n = 2, and remains open in dimension n ≥ 3.
+Bourgain analyzed the extensionPoperator Ef by first localizing to a large ball B(0, R), and then decomposing
+the function f into a sum f =          fi , where each fi is supported on a disk θi of radius R−1/2 . The functions
+Efi can be decomposed into a sum of wave packets Efi = j gi,j , where each gi,j is essentially supported on a
+                                                                P
+long (relatively) thin tube whose direction is determined by the location of the disk θi . Thus in order to analyze
+the extension operator Ef , it suffices to understand the possible intersection patterns of families of tubes in Rn
+pointing in different directions (this is closely related to the Kakeya conjecture), plus the possible patterns of
+constructive and destructive interference between the functions supported on these tubes.
+    The goal of this article is to survey progress on Conjectures 1.1 and 1.3, with an emphasis on developments that
+occurred after the excellent 2002 survey paper [40]. In particular, we will not discuss the techniques and results
+of Davies [15] and Cordoba [14], who proved Conjectures 1.1 and 1.3 in R2 . Nor will we discuss the geometric
+arguments of Drury [17]; Christ-Duoandikoetxea-Rubio de Francia [13]; and Bourgain [5], or the arguments from
+additive combinatorics introduced by Bourgain [6] and Katz-Tao [38, 39]. We refer the reader to the previous
+surveys [55, 40] for a discussion of these earlier developments, and to Chapter 10 of Wolff’s excellent book [56]
+for an introduction and further background on the Kakeya problem. Finally, we will restrict attention to the
+Kakeya conjecture in Euclidean space; in particular we will not discuss Dvir’s solution to the finite field Kakeya
+conjecture [18], or the subsequent developments [47, 19, 11, 1, 16] in the finite field and p-adic setting.
+    2 Kakeya in R3 . In [53], Wolff proved a Kakeya maximal function estimate in Rn at dimension n+2            2 .
+Wolff’s argument not only applies to sets of δ tubes pointing in δ-separated directions, but also applies to sets of
+tubes that satisfy the following non-clustering condition:
+    Definition 2.1. Let T be a set of δ tubes in Rn . We say that T satisfies the Convex Wolff Axioms if every
+convex set W ⊂ Rn contains O(|W |δ 1−n ) tubes from T.
+In the discussion below it will sometimes be helpful to weaken Definition 2.1 and instead require that each convex
+set W contains ⪅ |W |δ 1−n tubes from T. We also remark that [51] uses the terminology Katz-Tao Convex Wolff
+Axioms for this definition; we will use the terms “Convex Wolf Axioms” and “Katz-Tao Convex Wolff Axioms”
+interchangeably.
+    Theorem 2.2 (Wolff [53]).       Let n ≥ 2 and let T be a set of δ tubes in Rn that satisfy the Convex Wolff
+Axioms. Then
+                                                   [               n−2   X
+(2.1)                                                  T ⪆δ 2                  |T |,
+                                                   T                     T
+
+and
+                                         X                    1  nd −1               n+2
+(2.2)                                         χT         ⪅                 ,    d=         .
+                                                    d
+                                                   d−1
+                                                               δ                        2
+                                          T
+
+    In R3 , Theorem 2.2 says that every Besicovitch set has Hausdorff dimension              5/2, and every union
+                                                                                 S at least 1/2
+of δ tubes of cardinality δ −2 satisfying the Convex Wolff Axioms has volume       T T ⪆  δ     . Wolff’s argument
+only uses simple facts about the volume of intersections of tubes and other thickened neighbourhoods of affine
+subspaces of Rn . As we will discuss below, in R3 Theorem 2.2 is best-possible if one only uses these tools.
+     2.1 Near misses to the Kakeya conjecture in R3 : the Heisenberg group and SL2 examples. A
+near miss to the Kakeya set conjecture is a set that has properties in common with a Besicovitch set, but which
+has dimension (or some suitable analogue, such as cardinality) smaller than what is predicted by the Kakeya
+set conjecture. A near miss to the Kakeya set conjecture helps us understand the limitations of certain proof
+techniques—if a proof technique cannot distinguish between a genuine Kakeya set in Rn and a near-miss, then
+this proof technique cannot prove the Kakeya set conjecture. A near miss to the Kakeya set conjecture thus forms
+a barrier to proving the Kakeya set conjecture. This is (loosely) analogous to the relativization, natural proofs,
+and algebrization barriers from complexity theory.
+     In [36], Katz, Łaba, and Tao discovered the Heisenberg group example:
+
+(2.3)                                  H = {(x, y, z) ∈ C3 : Im(z) = Im(xȳ)}.
+
+For a, b, c, d ∈ R, we can verify that the line
+                                          
+                                     L = (0, c + di, a) + s(1, b, c − di)s : s ∈ C
+
+is contained in H. Let ρ = δ 1/2 and let E be the closure of Nρ (H) ∩ B(0, 1). E is a compact subset of C3 that
+contains a set of δ −2 (complex) tubes (i.e. sets T ⊂ C3 that are the thickened neighbourhood of a (complex)
+unit line segment, with |T | ∼ δ 2 ) that satisfy the Convex Wolff Axioms. On the other hand, we have |E| ∼ δ 1/2 .
+We say that the Heisenberg group example is a near miss to the Kakeya set conjecture in three dimensions, at
+dimension 5/2.
+     In [36], Katz, Łaba, and Tao proved that every Besicovitch set in R3 has upper Minkowski dimension at least
+5/2 + c0 for a (small) absolute constant c0 ; we will discuss their proof below. They did this by exploiting the fact
+that a Besicovitch set contains a line pointing in every direction in R3 . The (complex) lines in the Heisenberg
+group example, on the other hand, point in a positive codimension set of directions in C3 .
+     In [41], Katz and the author discovered a second near-miss to the Kakeya conjecture at dimension 5/2. They
+named this the SL2 example. Let R be the ring Fp [t]/(t2 ). Define
+
+(2.4)                      X = {(x1 + x2 t, y1 + y2 t, z1 + z2 t) ∈ R3 : z2 = x1 y2 − x2 y1 }.
+
+We have that #X = p5 = (#R)5/2 . We can verify that for a, b, c, d, e ∈ Fp with ad − bc = 1, the line
+                            
+                         L = (a + eat, b + ebt, 0) + (c + ect, d + edt, 1)s : s ∈ R
+is contained in X. Thus X contains a set of roughly p4 = (#R)2 lines, and these lines satisfy an analogue of the
+Convex Wolff Axioms (specifically, every plane contains O(#R) lines).
+      The intuition for this example is as follows. Each number x ∈ [0, 1] ⊂ R can be written as x =
+δ 1/2 x1 + δx2 + O(δ), where x1 and x2 are integers between 0 and ⌊δ −1/2 ⌋. The ring R is meant to model this
+two-scale decomposition of the interval [0, 1]. Elements of Fp ⊂ Fp [t]/(t2 ) represent the coarse (i.e. δ 1/2 ) scale,
+while elements of t · Fp represent the fine (i.e. δ) scale. In particular, the SL2 example resembles a Besicovitch
+set in R3 that has Hausdorff dimension 5/2, but upper Minkowski dimension 3. It is for this reason that Katz,
+Łaba, and Tao did not encounter the SL2 example near-miss when proving that every Besicovitch set in R3 has
+upper Minkowski dimension 5/2 + c0 .
+    2.2   Upper Minkowski dimension 5/2 + c0 : Overcoming the Heisenberg group example.
+    Theorem 2.3 (Katz-Łaba-Tao [36]). Let T be a set of δ tubes in R3 of cardinality δ −2 pointing in δ-separated
+directions. Then for at least one scale ρ ∈ {δ, δ 1/2 , δ 1/4 } we have
+                                                    [ 
+(2.5)                                          Nρ          T ≳ ρ1/2−c0 ,
+                                                           T
+
+where c0 > 0 is an absolute constant. In particular, every Besicovitch set in R3 has upper Minkowski dimension
+at least 5/2 + c0 .
+    As discussed above, Katz, Łaba, and Tao’s proof of Theorem 2.3 used the fact that a Besicovitch set in
+R3 contains a line pointing in every direction—this is a property that does not hold for the Heisenberg group
+example. To make use of this property, Katz, Łaba, and Tao used the following “sums versus differences” result
+from additive combinatorics:
+   Theorem 2.4. Let G be an Abelian group, and let A, B ⊂ G with #A ≤ N, #B ≤ N, and #(A + B) ≤ N .
+Then #(A − B) ≲ N 2−c , where c > 0 is an absolute constant.
+A weaker form of Theorem 2.4 with o(N 2 ) in place of N 2−c was first proved by Balog and Szemerédi [2], and the
+version stated above follows from the work of Gowers [22]. Theorem 2.4 as stated was proved and first used in
+the context of the Kakeya problem by Bourgain [6].
+    The idea is to apply Theorem  S 2.4 to three slices of the Besicovitch set—the sets A, B, and (A + B)/2
+correspond to the intersection of T T with the planes {x = 0}, {x = 1}, and {x = 1/2} respectively, while A − B
+represents the set of directions of the tubes in T. However, a naive application of this method only establishes
+that Besicovitch sets in R3 have dimension at least 2 + c for a small constant c > 0.
+    To prove Theorem 2.3, Katz, Łaba and Tao analyzed the structure of a (hypothetical) Besicovitch set in R3
+with Minkowski dimension exactly 5/2. If such a Besicovitch set is discretized at scale δ, it yields a set T of δ tubes
+pointing in δ-separated directions with the following property: #T ∼ δ −2 , and for both ρ = δ 1/2 and ρ = δ 1/4 ,
+there exists a set Tρ of ρ tubes pointing in ρ-separated directions with the property that each T ∈ T is contained
+in a ρ tube, and each ρ tube contains about (ρ/δ)2 tubes from T. This motivates the following definition. In
+what follows, we say that a set of ρ tubes Tρ (or more generally, a collection of convex sets) is a cover 1 of T if
+each tube in T is contained in at least one, and at most O(1) tubes from Tρ , and each tube from Tρ contains
+approximately the same number of tubes from T.
+    Definition 2.5. Let T be a set of δ tubes in Rn of cardinality #T ∼ δ 1−n . We say that T is sticky if for all
+δ ≤ ρ ≤ 1, there exists a cover Tρ of T that satisfies the Convex Wolff Axioms.
+Stickiness was first introduced in [36], though our definition above is motivated by more recent results and is
+slightly anachronistic.
+                                                                                         S structural properties
+     Next, Katz, Łaba, and Tao proved that the set of tubes T described above must have two
+that they named planiness and graininess. Planiness says that for a typical point x ∈ T T , most of the tubes
+containing x make angle ≤ θ with a common affine plane Hx , for some θ << 1. We now know, as a consequence
+of the multilinearSKakeya theorem (see Theorem 4.3 P                                  S for every set of δ tubes
+                                                        below), that this property holds
+in R3 for which     T T is substantially smaller than    T |T |. Graininess says that  T T can be decomposed as
+a union of mostly-disjoint rectangular prisms, called grains, of dimensions δ × δ 1/2 × δ 1/2 ; nearby prisms have
+
+  1 more precisely, an almost-balanced, almost-partitioning cover
+almost parallel normal vectors, in the sense that the normal vectors of rectangular prisms inside a common δ 1/2
+                                                  S proved that a similar property P
+ball agree up to resolution δ 1/2 . Guth [26] later                                     holds for every set of δ tubes
+in R3 (satisfying mild hypotheses) for which        T T is substantially   smaller than   T |T |, though the size of the
+corresponding grains becomes smaller as              approaches
+                                              S                 P
+                                                T T                T |T |.
+     Finally, after showing that a (hypothetical) Besicovitch set in R3 with upper Minkowski dimension 5/2 gives
+rise to a set of δ tubes that are sticky, plany, and grainy, Katz, Łaba, and Tao completed their proof of Theorem
+2.3 by constructing an Abelian group G and sets A, B ⊂ G that violate the conclusion of Theorem 2.4.
+     We conclude this section by briefly discussing extensions of the above ideas to the Kakeya problem in higher
+dimensions. Łaba and Tao [44] showed that every Besicovitch set in Rn with upper Minkowski dimension close
+to n+2
+     2   must be sticky, plany, and grainy. They used this to establish an analogue of Theorem 2.3 for n ≥ 4.
+Bourgain [6] and subsequently Katz-Tao [38, 39] applied Theorem 2.3 and the “three slices” idea described above
+(later extended to a larger number of slices) to obtain new estimates in the direction of Conjectures 1.1 and 1.3.
+    2.3   Hausdorff dimension 5/2 + c1 : Overcoming the SL2 example.
+    Theorem 2.6 (Katz-Zahl [41]). Let T be a set of δ tubes in R3 of cardinality δ −2 that satisfy the Convex
+Wolff Axioms. For each T ∈ T, let Y (T ) ⊂ T with |Y (T )| ≥ (log 1/δ)−1 |T |. Then
+                                              [
+(2.6)                                            Y (T ) ≳ δ 1/2−c1 ,
+                                                  T
+
+where c1 > 0 is an absolute constant. In particular, every Besicovitch set in R3 has Hausdorff dimension at least
+5/2 + c1 .
+Rather than requiring that the tubes in T point in δ-separated directions, Theorem 2.6 only requires that the
+tubes satisfy the Convex Wolff Axioms. Katz and the author’s proof of Theorem 2.6 makes crucial use of the fact
+that the tubes in R are subsets of real Euclidean space—this is a property that does not hold for the Heisenberg
+group example. To make use of this property, Katz, and the author used the following discretized projection
+theorem due to Bourgain [8]:
+   Theorem 2.7. Let E ⊂ [0, 1]2 be a union of δ balls, with |E| ∼ δ. Suppose that E satisfies the Frostman
+non-concentration condition
+
+                               |E ∩ B(x, r)| ⪅ r|E|    for all balls B(x, r), δ ≤ r ≤ 1.
+
+Let Λ ⊂ [0, 1] be a union of δ-intervals satisfying the Frostman non-concentration condition
+
+                                   |Λ ∩ I| ⪅ |I|1/100 |Λ|   for all intervals I ⊂ S 1 .
+
+Then there exists λ ∈ Λ so that
+                                               |E · (1, λ)| ⪆ |E|1/2−c2 ,
+where c2 > 0 is an absolute constant.
+     The analogue of Theorem 2.7 is false over C: define ER to be the δ-neighbourhood of (R × R) ∩ B(0, 1) ⊂ C2
+and define ΛR = [0, 1] ⊂ R ⊂ C. Then ER and ΛR satisfy the hypotheses of Theorem 2.7 (suitably modified), but
+we have |ER · (1, λ)| ∼ |ER |1/2 for all λ ∈ ΛR . When proving Theorem 2.6, there is a key step where Theorem 2.7
+is used. If one instead applies the proof of Theorem 2.6 step-by-step to the Heisenberg group example H, then at
+the step where Theorem 2.7 is used, the inputs E and Λ to the theorem are (closely related to) ER and ΛR . In
+particular, the conclusion of Theorem 2.7 is false at this key step.
+     Katz and the author’s proof of Theorem 2.6 loosely parallels an analogous proof in the finite field setting due
+to Bourgain, Katz, and Tao [10] (this latter proof uses a finite field analogue of the Erdős-Szemerédi sum-product
+theorem [20] in place of Theorem 2.7). In brief, the proof is as follows. Suppose for contradiction that there is a
+set T of δ satisfying the hypotheses of Theorem 2.7 for which (2.6) fails. After pigeonholing it is possible to find
+pairs of tubes T1 , T2 and TA , TB and a set T1,2 ⊂ T (resp. TA,B ⊂ T) of cardinality roughly δ −1 that intersect
+both T1 and T2 (resp. TA and TB ). Each tube in T1,2 intersects roughly δ −1/2 tubes from TA,B , and vice-versa.
+The situation thus far is consistent with both the Heisenberg group and SL2 examples. If one applies these
+arguments to the Heisenberg group example, then for a typical tube T ∈ T1,2 , the points of intersection from
+tubes in T ′ ∈ TA,B , i.e. the set {T ′ ∩ T : T ′ ∈ TA.B } are spread-out along T . In fact they obey a Frostman-type
+non-concentration condition. At the opposite extreme, if one applies these arguments to the SL2 example, then
+the set {T ′ ∩ T : T ′ ∈ TA.B } is concentrated into a short tube segment (the analogue of a tube segment of length
+δ 1/2 ).
+      Guided by the behavior of these two examples, Katz and the author showed that every counter-example to
+Theorem 2.6 must be either of “Heisenberg type” or “SL2 type.” Different arguments are used to handle these
+two cases.
+      If T is of Heisenberg type, then we can identify each tube T ∈ TA,B with a δ ball in R2 , and we can identify
+the tubes in T1,2 with δ intervals in [0, 1] (this latter identification is not one-to-one), so that the corresponding
+union of points and intervals violates Theorem 2.7. This is impossible, and we conclude that the original set T
+must have satisfied (2.6).
+      If T is of SL2 type, then elementary geometric arguments are used to show that the tubes in T must cluster
+into twisting planks called regulus strips, and these regulus strips must intersect in a carefully prescribed manner
+that violates (a curved variant of) the Szemerédi-Trotter theorem. This is impossible, and we (again) conclude
+that the original set T must have satisfied (2.6).
+      While the ideas used to prove Theorem 2.6 did not play a substantial role in the resolution of Conjecture 1.1
+in R3 , the analysis of unions of regulus strips continues to be an area of active study that is closely related to
+questions in projection theory in Euclidean space and the first Heisenberg group.
+    3 Hausdorff dimension 3: the Wang-Zahl proof. In the trilogy of papers [52, 50, 51], Wang and the
+author proved the Kakeya set conjecture in R3 . The precise statement is as follows.
+    Theorem 3.1. Let T be a set of δ tubes in R3 that satisfy the Convex Wolff Axioms. Then
+                                               [        X
+                                                  T ⪆        |T |.
+                                                  T ∈T      T ∈T
+
+As a consequence, Conjectures 1.1 and 1.2 are true for n = 3.
+In particular, other than the Heisenberg group and SL2 examples, there do not appear to be any additional
+near misses to the Kakeya set conjecture in R3 (though there may still be as-yet undiscovered near misses to the
+Kakeya maximal function conjecture in R3 ). A recent article by Guth [29] does an excellent job both explaining
+the key ideas of the proof of Theorem 3.1, and also presenting substantial new and innovative simplifications to
+the core of the argument. As such, we will be brief in our remarks here and encourage the reader to consult [29]
+(and after that [52, 50, 51]), for further details.
+     3.1 The sticky case. In the early 2000s, Katz and Tao formulated a program for proving the Kakeya
+set conjecture in R3 . They hypothesized that every counter-example to Conjecture 1.2(A) in R3 must have the
+structural properties stickiness, planiness, and graininess described in Section 2.2. They then formulated a plan
+to leverage these properties to show that a counter-example to Conjecture 1.2(A) would imply the existence of
+a set that violates Bourgain’s discretized sum-product theorem [7] which was a precursor to (and close relative
+of) Theorem 2.7. In a talk and accompanying blog post [48], Tao explained the Katz-Tao program for solving
+the Kakeya set conjecture in R3 . At the time, it was not clear whether every (hypothetical) counter-example to
+Conjecture 1.2(A) must be sticky. In particular, the discovery of the SL2 example suggested that in order to
+prove the Kakeya set conjecture in R3 , it would be necessary to study sets that are far from being sticky.
+     In [52], Wang and the author side-stepped this issue by restricting attention to sticky sets of tubes T in R3 ,
+i.e. sets satisfying (a variant of) Definition 2.5.
+    Theorem 3.2 (Wang-Zahl [52]). Let T be a sticky set of δ tubes in R3 that point in δ-separated directions,
+with #T ∼ δ −2 . For each T ∈ T, let Y (T ) ⊂ T with |Y (T )| ≥ (log 1/δ)−1 |T |. Then
+                                                  [
+                                                     Y (T ) ⪆ 1.
+                                                     T
+
+We remark that while the statement of Theorem 3.2 requires that the tubes point in δ-separated directions, the
+proof does not use this fact in an essential way. In follow-up work (see Proposition 3.5) this hypothesis is removed.
+    We will briefly describe the proof. For simplicity, we will suppose that Y (T ) = T for each tube T ∈ T. The
+proof follows the initial steps of the argument outlined in [48] to show that a (hypothetical) counter-example to
+Theorem 3.2 must have certain structural properties analogous to those in the Heisenberg group example. We
+begin with the following observation Sof Katz and Tao: suppose that Theorem 3.2 is false, and let T be the “worst”
+counter-example, in the sense that       T = δ σ for some σ > 0, and for all ρ > 0 and all sticky collections Tρ of
+                                        TP
+ρ-tubes, we have      Tρ Tρ ≥ ρ . Since
+                                σ
+                                           T |T | ∼ 1, we have that on average, about δ
+                                                                                          −σ
+                                                                                             tubes intersect a typical
+                    S
+
+point of T T , i.e. the tubes in T have typical intersection multiplicity δ ; we will denote this quantity by µT .
+                                                                             −σ
+         S
+                                                                                       of T that satisfies the Convex
+    Since T is sticky, for every intermediate scale ρ ∈ [δ, 1] there exists a cover Tρ S
+Wolff Axioms. After a refinement, we can show that Tρ is also sticky, and thus           Tρ Tρ ≥ ρ , or equivalently,
+                                                                                                   σ
+
+µTρ ≲ ρ . Furthermore for each Tρ ∈ Tρ , there is an (anisotropic) rescaling so that the tubes in the set
+         −σ
+
+T[Tρ ] := {T ∈ T : T ⊂ Tρ } become δ/ρ tubes inside the unit ball. Define TTρ to be the image of the tubes in
+T[Tρ ] under this rescaling. Then TTρ forms a sticky collection of δ/ρ tubes, and hence µT[Tρ ] ≲ (δ/ρ)−σ . We now
+have the key observation
+
+(3.1)                          δ −σ ∼ µT ≤ µTρ sup µT[Tρ ] ≲ ρ−σ (δ/ρ)−σ = δ −σ .
+                                                              
+                                                    T ∈Tρ
+
+     The first inequality follows from the observation that the number of δ tubes intersecting a point x ∈ T T is
+                                                                                                                 S
+at most the number of ρ tubes from Tρ that intersect x, times the maximum intersection multiplicity of δ tubes
+inside a ρ tube. But since the LHS and RHS of Inequality (3.1) are equal, we have µTρ ∼ ρ−σ and µT[Tρ ] ∼ (δ/ρ)−σ
+for each ρ tube in Tρ (when performing this proof rigorously, a similar but slightly weaker statement is true).
+This means that both Tρ and the sets TTρ are also “worst” counter-examples to Theorem 3.2. We conclude that
+T is coarsely (or statistically) self-similar: every structural property of T at scale δ is mirrored at all locations
+and scales.
+     A consequence of the multilinear Kakeya theorem plus coarse self-similarity is that T T is grainy. The
+                                                                                                  S
+locations of the grains at scale δ can be encoded as a (discretized) one-dimensional set F ⊂ R2 . The locations
+of the grains at the coarser scale δ 1/2 can be encoded as a (discretized) one-dimensional set G S    ⊂ R2 . Examining
+the interplay between grains at these two scales, it is possible to find many closed paths inside T T that encode
+arithmetic identities between the sets F and G: we conclude that there is an discretized (almost) Ahlfors-regular
+set E ⊂ [0, 1] of dimension dim (E) < 1 so that most of (F − F ) · G is contained in E.
+     The set (F − F ) · G contains a scaled copy of the orthogonal projection of G ⊂ R2 onto each one-dimensional
+subspace spanned by vectors of the form ex1 ,x2 := (x1 − x2 )/|x1 − x2 | for x1 , x2 ∈ F . In particular, for most
+pairs x1 , x2 ∈ F , ex1 ,x2 · G is contained in a discretized (almost) Ahlfors regular set of dimension strictly smaller
+than 1. Recent tools in projection theory [45] (which at their core use Theorem 2.7) show that this is impossible,
+unless F and G are contained in orthogonal lines. This is the key step where we use the fact that the tubes in
+T are subsets of R3 rather than C3 , and thus we distinguish T from the Heisenberg group example: Over C, the
+sets F = G = R2 ∩ B(0, 1) ⊂ C2 are not contained in orthogonal lines, but ex1 ,x2 · G ⊂ R (this latter set is Ahlfors
+regular and has dimension dim (R) = 1 < 2 = dim (C)) for every x1 , x2 ∈ FS.
+     Finally, if F and G are contained   S in orthogonal lines, then this forces T T to (almost) look like a Cartesian
+product [0, 1] × W . More precisely, T T is the image of a Cartesian product [0, 1] × W under a map that is linear
+on eachS{z = z0 } slice, and twists (with controlled first and second derivatives) as z varies. This allows us to
+project T T to a plane in such a way that the fibers of the projection are unit intervals. The image of each tube
+in T becomes the δ neighbourhood of a C 2 curve. To finish the proof we apply a variant [46] of Wolff’s circular
+maximal function estimate [54] to conclude        that the union of these thickened plane curves has volume ≈ 1, and
+hence (since each fiber is an interval) T T has volume ≈ 1.
+                                           S
+
+    3.2   The general case. In [50], Wang and the author considered the following variant of Definition 2.1.
+
+                                                   . We say that T satisfies the Frostman Convex Wolff Axioms
+     Definition 3.3. Let T be a set of δ tubes in Rn
+                            n
+if every convex set W ⊂ R contains O |W |(#T) tubes from T.
+     We say that T satisfies the Frostman Convex Wolff Axioms relative to the convex set V if the tubes in T are
+contained in V , and every convex set W ⊂ V contains O (|W |/|V |)(#T) tubes from T.
+Note that if #T ∼ δ 1−n , then T satisfies the Katz-Tao Convex Wolff Axioms (in the sense of Definition 2.1) if
+and only if it satisfies the Frostman Convex Wolff Axioms. If #T << δ 1−n then it is impossible for T to satisfy
+the Frostman Convex Wolff Axioms, while if #T >> δ 1−n (and if the tubes are contained in the unit ball) then
+it is impossible for T to satisfy the Katz-Tao Convex Wolff Axioms. Next, we introduce the following multi-scale
+version of Definition 3.3, which generalizes the definition of stickiness (Definition 2.5).
+    Definition 3.4. Let T be a set of δ tubes in Rn . We say that T satisfies the Frostman Convex Wolff Axioms
+at every scale if for all δ ≤ ρ ≤ 1, there exists a cover Tρ of T with the property that for each Tρ ∈ Tρ , the set
+T[Tρ ] satisfies the Frostman Convex Wolff Axioms relative to Tρ .
+    Definition 3.4 generalizes Definition 2.5, since if #T ∼ δ 1−n then T is sticky if and only if it satisfies the
+Frostman Convex Wolff Axioms at every scale. In [50], Wang and the author modified the arguments from [52]
+to obtain the following generalization of Theorem 3.2:
+    Proposition 3.5. Let T be a set of δ tubes in R3 that satisfy the Frostman Convex Wolff Axioms at every
+scale. For each T ∈ T, let Y (T ) ⊂ T with |Y (T )| ≥ (log 1/δ)−1 |T |. Then
+                                                    [
+                                                       Y (T ) ⪆ 1.
+                                                       T
+
+    In [51], Wang and the author combined Proposition 3.5 with several types of induction on scale to prove
+Theorem 3.1. As is often the case when employing induction, it is crucial to select the correct induction hypothesis.
+In hindsight, the condition that δ tubes point in δ-separated directions is not preserved under the types of
+truncation and rescaling arguments that were used to prove Theorem 3.1. Instead, the Katz-Tao and Frostman
+Convex Wolff Axioms proved to be more amenable to these types of transformations. In [50], Wang and the
+author introduced two assertions that quantify partial progress towards Theorem 3.1. These definitions were later
+simplified by Guth [29]. We present Guth’s version below.
+    Definition 3.6. Let σ > 0.
+   • We say that Assertion D(σ) is true if the following holds:
+     Let T be a set of δ tubes that satisfy the Katz-Tao Convex Wolff Axioms. Then
+                                                [              X 
+     (3.2)                                         T ⪆ (#T)−σ       T .
+                                                 T                    T ∈T
+
+
+   • We say that Assertion E(σ) is true if the following holds:
+     Let T be a set of δ tubes that satisfy the Frostman Convex Wolff Axioms. Then
+                                                 [           X     σ
+     (3.3)                                          T ⪆ δ 2σ    |T | .
+                                                  T              T ∈T
+
+
+   Assertion D(1) is clearly true. To prove Theorem 3.1, we must show that Assertion D(σ) is true for every
+σ > 0. We will prove this by iterating the following two results:
+    Proposition 3.7. For σ > 0, Assertion D(σ) implies Assertion E(σ).
+   Proposition 3.8. There is a continuous function g : (0, 1] → (0, 1] with g(σ) < σ so that for σ > 0, Assertion
+D(σ) plus Assertion E(σ) implies Assertion D(g(σ)).
+    Proposition 3.8 is the more interesting (and challenging) of the two steps; we will discuss a few of the ideas
+used in the proof. Fix σ > 0 and suppose that Assertions D(σ) and E(σ) are true. Let T be a set of δ tubes
+that satisfy the Katz-Tao Convex Wolff Axioms.       To simplify our discussion, we will consider the special case
+where #T ∼ δ −2 . Our goal is to prove that T T has volume substantially larger than what is guaranteed by the
+                                             S
+estimate (3.2), i.e. we wish to obtain an inequality of the form
+                                                   [
+(3.4)                                                  T ⪆ δ 2σ−α ,
+                                                     T ∈T
+
+for some α > 0 that depends continuously on σ. Equivalently, we must show that
+
+(3.5)                                                µT ⪅ δ −2σ+α .
+
+                                   to show there exists a scale τ >> δ (here τ >> δ means that τ is substantially
+    A second way to obtain (3.4) isS
+larger than δ) such that the union T T has larger than expected density at scale τ ; we will return to this later
+in the argument.
+      Recall that if T is sticky, then for each scale δ < ρ < 1 it is possible to find a set Tρ consisting of about ρ−2
+essentially distinct ρ tubes (we say that two ρ tubes T, T ′ are essentially distinct if |T ∩ T ′ | ≤ (1/2)|T |), each of
+which contain about (δ/ρ)2 tubes from T. In this case we can apply the sticky Kakeya theorem (or more precisely,
+Proposition 3.5) to immediately obtain (3.4).
+      Let us instead consider an opposite extreme, where for every scale δ < ρ < 1, every cover Tρ of T contains
+far more than ρ−2 tubes (i.e. every cover contains at least ρ−2−ν tubes, and each set T[Tρ ] contains at most
+δ ν (δ/ρ)−2 tubes, for some small quantity ν > 0).
+A fine-scale estimate.
+Fix a scale ρ ∈ [δ, 1]. For each Tρ ∈ Tρ , the δ/ρ tubes in TTρ satisfy the Katz-Tao Convex Wolff Axioms. Applying
+Assertion D(σ, ω), we conclude that
+(3.6)                          µfine := sup µT[Tρ ] ⪅ sup (#T[Tρ ])σ ≤ δ νσ (δ/ρ)−2σ .
+                                        Tρ ∈Tρ          Tρ ∈Tρ
+
+    Inequality (3.6) bounds the typical intersection multiplicity ofSthe δ tubes inside a common ρ tube. Next,
+we define the quantity µcoarse as follows. For a typical point x ∈ T T , there are about µcoarse distinct ρ tubes
+Tρ ∈ Tρ with the property that x ∈ T[Tρ ] T . With this definition, we have
+                                     S
+
+(3.7)                                              µT ≲ µfine µcoarse .
+    In the past, researchers considered a less efficient variant of (3.7) of the form µ ≲ µfine µTρ , where µTρ is
+the typical intersection multiplicity of the tubes in Tρ . Our use of the more efficient estimate (3.7) is a key new
+ingredient in the proof.
+A coarse-scale estimate.
+Our goal in this section is to establish the estimate
+(3.8)                                               µcoarse ⪅ ρ−2σ .
+Combining (3.6) and (3.8), we will obtain (3.5) with α = νσ. Fix a tube Tρ ∈ Tρ . An argument due to Guth [26]
+says that the δ/ρ tubes in TTρ arrange themselves into grains, i.e. rectangular prisms; S in this case these prisms
+will have dimensions δ/ρ × c × c for some c >> δ/ρ. This means that we can cover TTρ T Tρ by a set of (mostly)
+disjoint rectangular prisms of dimensions δ/ρ × c × c; see Figure 3.1 (left).
+     Undoing the anisotropic rescaling that sent the tubes in T[Tρ ] to the tubes in TTρ , we have that T[Tρ ] T can
+                                                                                                          S
+
+be covered by a set of (mostly) disjoint rectangular prisms of dimensions δ × ρc × c; see Figure 3.1 (right). The
+same statement is true for each Tρ ∈ Tρ . Let G denote the set of all such δ × ρc × c prisms, from all ρ tubes in
+Tρ . In order to bound µcoarse , it suffices to bound the typical intersection multiplicity of the prisms in G.
+     Each δ × ρc × c prism in G has an associated tangent plane, which is well-defined up to accuracy δ/(ρc).
+If a typical pair of prisms intersect transversely, in the senseSthat their normal vectors make angle much larger
+than δ/(ρc), then a straightforward L2 argument shows that T T has larger than expected density at some scale
+τ >> δ (the scale τ depends on the typical angle of intersection between prisms in G), and as discussed above, we
+immediately obtain (3.4).
+     Suppose instead that whenever two prisms G, G′ ∈ G intersect, their corresponding tangent planes agree up
+to accuracy δ/(ρc). We will call this the tangential case. This means that for each point x, the set of prisms from
+G containing xFare contained in a common prism of dimensions roughly δ/ρ × c × c. Thus we can partition G
+into sets, G = Gi , with the property that if two prisms intersect then they are contained in a common set, and
+the δ × ρc × c prisms in each set Gi are contained in a common prism □i of dimensions roughly δ/ρ × c × c; see
+Figure 3.2 (left). This means that in order to bound µcoarse , it suffices to bound the intersection multiplicity of
+the prisms within each set Gi .
+     Fix a set Gi , and let □i be the associated δ/ρ × c × c prism. The image of each G ∈ Gi under the anisotropic
+rescaling sending □i to the unit cube will be a prism of dimensions roughly ρ × ρ × 1 (see Figure 3.2 (right)); this
+is (morally) the same as a ρ tube, i.e. we can pretend that this set of prisms is actually a set of ρ tubes; we will
+call this set T̃. Our task of estimating µcoarse now reduces to estimating the typical intersection multiplicity of
+the tubes in T̃; our goal is to establish the bound
+(3.9)                                                 µT̃ ⪅ ρ−2σ .
+Figure 3.1: Left: The set of tubes TTρ and the corresponding grains. For clarity, we have only drawn the grains
+and tubes that intersect the black tube (and even most of these have been omitted; the set of red tubes passing
+through the red grain fill out a substantial portion of the red grain, and similarly for the other grains); the
+situation is similar for each tube in TTρ .
+Right: The image of Figure 3.1 (left) after undoing the anisotropic rescaling that sent the tubes in T[Tρ ] to the
+tubes in TTρ . The dimensions of each grain have changed from δ/ρ × c × c to δ × ρc × c.
+
+
+
+
+Figure 3.2: Left: two sets of δ × ρc × c prisms from the partition of G (blue and red, respectively), and the
+associated δ/ρ × c × c prisms □ and □ that contain them.
+Right: The anisotropic rescaling that maps the blue δ/ρ × c × c prism □ to the unit cube maps each blue δ × ρc × c
+prism to a ρ × ρ × 1 prism (this is comparable to a ρ tube).
+
+
+    We now consider the special case where the tubes in T̃ satisfy the Katz-Tao Convex Wolff Axioms. If this is
+the case, then by applying Assertion D(σ) we conclude that
+
+(3.10)                                        µT̃ ⪅ (#T̃)σ ≲ ρ−2σ ,
+
+and we are done; for the second inequality we used the fact that every set of ρ tubes satisfying the Katz-Tao
+Convex Wolff axioms has size O(ρ−2 ). An important observation in the above argument is that after a suitable
+localization and rescaling, problem of understanding the intersection multiplicity of arrangements of grains can
+be converted into a problem of understanding the intersection multiplicity of arrangements of tubes; the latter
+can be studied using Assertion D (this is a form of induction).
+     Finally, we will briefly discuss what happens when the tubes in T̃ do not satisfy the Katz-Tao Convex Wolff
+Axioms. A key new idea is a structure theorem that finds a cover W of T̃ with the property that W satisfies (a
+suitable analogue of) the Katz-Tao Convex Wolff Axioms, and for each W ∈ W, the set T̃[W ] = {T̃ ∈ T̃ : T̃ ⊂ W }
+satisfies the Frostman Convex Wolff Axioms. If the sets in W are “thin,” in the sense that their thinnest dimension
+is comparable to δ, then we use an argument similar to the one described above with the sets in W in place of our
+previous grains. Otherwise, S we apply (a suitably rescaled analogue of) Assertion E(σ) to each set of tubes T̃[W ],
+W ∈ W to conclude that T T has larger than expected density at a scale τ >> δ (the choice of τ will depend on
+the thickness of the sets in W), and as discussed above, we immediately obtain (3.4).
+     In the above proof, a few key new ideas stand out. First, we replace the hypothesis that tubes point in
+δ-separated directions with the non-concentration conditions “Katz-Tao Convex Wolff Axioms” and “Frostman
+Convex Wolff Axioms.” These non-concentration conditions are carefully chosen to match the output of our
+structure theorem; after applying the structure theorem to an arbitrary collection of convex sets, we obtain a
+two-scale decomposition that satisfies the Katz-Tao Convex Wolff axioms at the coarse scale, and the Frostman
+Convex Wolff Axioms at the fine scale. Second, we use the efficient Inequality (3.7) to combine estimates across
+different scales. Third, we apply induction on scale (specifically Assertion D) to control the interactions between
+(anisotropic) grains coming from different (coarse scale) tubes.
+      3.3 Future directions. There appear to be several obstructions preventing the arguments in [52, 50, 51]
+from being adapted to solve the Kakeya maximal function conjecture in R3 . Chief among them is the following
+issue: at many points in the argument, we must consider a set T of δ tubes, S      along with a shading Y (T ) ⊂ T
+satisfying |Y (T )| ≥ λ|T |. In a small neighbourhood of a typical      point  x ∈   T Y (T ), we apply a variant of
+Cordoba’s two-dimensional Kakeya estimate to conclude that T Y (T ) fills out a sizeable fraction of a δS× a × b
+                                                                 S
+rectangular prism, for some δ << a ≤ b ≤ 1. Unfortunately, Cordoba-type arguments typically show that T Y (T )
+fills out a λ2 -density fraction of this prism, rather than a λ-density fraction. After various rescaling arguments,
+this prism becomes a ρ tube (for some δ ≤ ρ ≤ 1); we then apply induction on scale to this set of ρ tubes,
+with their associated ≥ λ2 density shading. If this induction step occurs many times, then the original λ-density
+                         N
+shading becomes a λ2 density shading, for some very large N . An interesting open problem is whether the
+arguments in [52, 50, 51] can be performed in a more efficient manner (perhaps with stronger hypotheses about
+the shadings Y (T )) to prevent the losses described above. A second interesting question is to what extent the
+ideas from [51] can be used to understand the Fourier restriction problem in R3 .
+    4   Kakeya in higher dimensions.
+    4.1 Varieties containing many lines, and the polynomial Wolff axioms. A plane in R3 contains a
+two-dimensional  family of lines. Similarly, the slab [0, 1]2 ×[−δ, δ] contains a set of δ tubes T of cardinality roughly
+δ , with
+ −2
+              T T ∼ δ. This is not an interesting near-miss to the Kakeya set conjecture, because T (badly!) fails
+            S
+to satisfy the Convex Wolff Axioms. It is straightforward to show that a plane is the only (irreducible) algebraic
+variety in R3 containing a two-dimensional family of lines, and thus the thin neighbourhood of an algebraic variety
+in R3 is never an interesting near-miss to the Kakeya set conjecture.
+    In higher dimensions, however, the situation is more problematic. Define
+
+(4.1)                        Z = {(a, b, c, d) ∈ R4 : ad − bc = 1},   E = Nδ (Z) ∩ B(0, 1).
+
+Z is a quadric hypersurface that contains a 3-dimensional family of lines, and E contains roughly δ −3 essentially
+distinct δ tubes. For each x ∈ E, there are approximately δ −1 distinct δ tubes that contain x; their union
+forms the δ-neighbourhood of a cone with vertex x. The set E contains about δ −3 essentially distinct tubes, but
+these tubes do not satisfy the Convex Wolff Axioms. To see this, fix a point x ∈ E, and let Ex be the union
+of δ-tubes that contain x and are contained in E; this forms a thickened cone. Let R be a δ × δ × δ 1/2 × 1
+rectangular prism that contains x and is tangent to this cone; after a rotation and translation, we may suppose
+that R = [0, δ] × [0, δ] × [0, δ 1/2 ] × [0, 1], and x = (0, 0, 0, 0). R contains about δ −1/2 essentially distinct tubes
+that contain x and are contained in E. After replacing E by its δ neighbourhood, we can verify that each of
+the δ-separated points xj = (0, 0, δj, 0), j = 1, . . . , δ −1/2 are also contained in E, and for each of these points xj ,
+there are about δ −1/2 essentially distinct δ tubes that contain xj and are contained in E. This gives us δ −1/2
+families, each with δ −1/2 tubes, for a total of δ −1 tubes (after a harmless refinement, these tubes are essentially
+distinct) contained inside a prism of volume δ 5/2 . In summary, the above computation shows that the density of
+tubes inside R is too large by a multiplicative factor of δ −1/2 .
+     Let T′ be a set of roughly δ −5/2 tubes obtained by randomly selecting each tube contained in E with probability
+δ . For a typical x ∈ E ′ , the set of tubes from T′ containing x are still contained in the aforementioned thickened
+ 1/2
+
+cone, but now (with a small number of exceptions), they point in δ 1/2 -separated directions. We can verify that
+the tubes in T′ satisfy the Convex Wolff Axioms.
+     Finally, it is straightforward to construct a set T consisting of roughly δ −1/2 translated or rotated   copies of
+T , so that T has cardinality roughly δ −3 , satisfies the Convex Wolff Axioms, and has volume
+  ′
+                                                                                                               ∼ δ 1/2 .
+                                                                                                        S
+                                                                                                          T T
+Such a set T is a near-miss to the Kakeya set conjecture, and in particular Theorem 3.1 is false in dimension
+n ≥ 4. In higher dimensions the situation becomes even worse, as the number and complexity of infinitely ruled
+surfaces increases.
+     While the above example shows that the analogue of Theorem 3.1 is false in dimension n ≥ 4, it is possible
+that the statement can be salvaged if we broaden the non-concentration condition to also exclude clustering inside
+sets such as (4.1).
+    Definition 4.1. Let T be a set of δ tubes in Rn . We say that T satisfies the Polynomial Wolff Axioms if for
+every semi-algebraic set S and every δ ≤ λ ≤ 1, we have
+
+                                       #{T ∈ T : |T ∩ S| ≥ λ} ≲ λ−n |S|δ 1−n ,
+
+where the implicit constant may depend on n and the complexity of S (i.e. the number and degrees of the
+polynomials used to define S).
+    Conjecture 4.2. (A): Let T be a set of δ tubes in Rn that satisfy the Polynomial Wolff Axioms. Then
+                                                    [          X
+                                                         T ⪆         |T |.
+                                                     T          T
+
+
+
+    (B): For each T ∈ T, let Y (T ) ⊂ T with |Y (T )| ≥ (log 1/δ)−1 |T |. Then
+                                                    [          X
+                                                         T ⪆         |T |.
+                                                     T          T
+
+
+
+    (C):
+                                                    X
+                                                          χT    n
+                                                                     ⪅ 1.
+                                                               n−1
+                                                   T ∈T
+
+Every set of tubes pointing in δ-separated directions satisfies the polynomial Wolff axioms. This was proved for
+n = 3 by Guth [27]; n = 4 by the author [57], and for all n by Katz and Rogers [37]. Thus versions (A) and (B) of
+Conjecture 4.2 imply the Minkowski and Hausdorff dimension version of the Kakeya set conjecture, while version
+(C) implies the Kakeya maximal function conjecture. The remainder of this section will survey progress on the
+Kakeya conjecture for families of tubes satisfying the Polynomial Wolff Axioms.
+      4.2 Multilinear Kakeya and the Bourgain-Guth multilinear → linear argument. Recall that in
+[36], Katz, Łaba, and Tao proved that if K is a (hypothetical) Besicovitch set in R3 with upper Minkowski
+dimension close to 5/2, then the discretization of K at scale δ leads to a set T of δ tubes that are plany. The
+Bennett-Carbery-Tao                    P theorem [3] asserts that this is true for every set of tubes for which
+                         multilinear Kakeya
+         is substantially smaller than
+ S
+    T T                                  T |T |.
+     There are now three substantially different proofs of the multilinear Kakeya theorem. The original proof
+by Bennett, Carbery, and Tao used methods related to heat flow; an endpoint estimate by Guth [24] used tools
+from algebraic topology, which later inspired the proof of the joints theorem [30] and subsequent developments
+in incidence geometry [31]; the third proof used the Loomis–Whitney inequality and induction on scale [25]. The
+version stated below is due to Carberry and Valdimarsson [12], whose proof is based on the second technique
+described above.
+    Theorem 4.3 (Multilinear Kakeya theorem). Let T be a set of δ tubes in Rn and let 2 ≤ k ≤ n. Then
+                    X                                          k1             1  nk −1 X
+(4.2)                         χT1 · · · χTn |v1 ∧ . . . ∧ vk |          ≤ C(n)               |T |.
+                                                                     k
+                                                                    k−1
+                                                                                 δ
+                           T1 ,...,Tk ∈T                                                    T ∈T
+
+In the above expression vi = dir(Ti ) is the direction of the tube Ti , and |v1 ∧ . . . ∧ vk | is the k-dimensional volume
+of the parallelepiped spanned by v1 , . . . , vk .
+     Specializing to the case where #T = δ 1−n , we conclude that if                      n−k
+                                                                                               θ for some 0 < θ < 1, then
+                                                                               S
+                                                                                 TT ≤ δ
+for a typical point x ∈ T T and a typical tuple (T1 , . . . , Tk ) of tubes containing x, we must have that T1 , . . . , Tk
+                        S
+are contained in the θ1/(k−1) -neighbourhood         of an affine (k − 1)-plane that contains x. After pigeonholing, we
+conclude that for a typical point x ∈ T T there exists an affine (k − 1)-plane Hx containing x with the property
+                                         S
+that most of the tubes {T ∈ T : x ∈ T } are contained in the θ1/(k−1) -neighbourhood of Hx . We remark that
+this is consistent with the Heisenberg, SL2 , and quadric hypersurface examples (for k = 3, k = 3, and k = 4,
+respectively) discussed in Sections 2.1 and 4.1.
+     In [9], Bourgain and Guth introduced a new method, which we will call the Bourgain-Guth multilinear →
+linear argument, to prove new bounds for the Fourier restriction conjecture. In the context of the Kakeya problem,
+the Bourgain-Guth multilinear → linear argument           is as follows. Let T be a set of δ tubes in Rn with #T = δ 1−n ,
+and let 2 ≤ k ≤ n be an integer. Let x ∈ T T be a typical point, and let (T1 , . . . , Tk ) be a typical k-tuple of
+                                                   S
+tubes that contain x.
+     At one extreme, the tubes T1 , . . . , Tk point in (quantitatively) linearly independent directions, in the sense
+                 S vectors satisfy |v1 ∧ · · · ∧ vk | ∼ 1. If this is the case, then we can apply Theorem 4.3 to
+that their direction
+conclude that | T T | ≳ δ n−k .
+     At the opposite extreme, suppose that the tubes T1 , . . . , Tk are contained in the δ-neighbourhood of an affine
+(k − 1)-plane. Since at most O(δ 2−k ) essentially distinct δ tubes can contain a common point and be contained
+in the δ neighbourhood of a (k − 1)-plane, we conclude that                     k−2
+                                                                                    .
+                                                                      S
+                                                                         TT ≳δ
+     We therefore have the estimate
+                                                   [                        
+(4.3)                                                T ≳ min δ n−k , δ k−2 .
+                                                T
+
+The first estimate on the RHS of (4.3) is called a multilinear estimate or broad estimate, and the second is called
+aSnarrow estimate. By selecting k = (n + 2)/2 for n even and k = (n + 1)/2 for n odd, we conclude that
+   TT ≳δ
+            ⌊n/2⌋+1
+                    . To make the above argument rigorous, one must also consider intermediate scenarios between
+the two extremes described above. This can be done using induction on scale.
+    The argument described above uses very little information about Besicovitch sets—it exploits neither the
+direction-separated hypothesis, the Convex Wolff Axioms, nor the Polynomial Wolff Axioms. Indeed, it only
+makes use of the Frostman non-concentration condition that for δ ≤ ρ ≤ 1, each ρ tube contains ≲ (ρ/δ)n−1
+tubes from T. In this sense, the above argument is sharp—see [59] for a precise formulation.
+    In the next two sections we will discuss improvements to both the broad and narrow estimates, which make
+use of additional information about Besicovitch sets.
+    4.3 Broad estimates. Theorem 4.3 makes no assumptions on the tubes in T. At this level of generality
+the result is sharp. When applying Theorem 4.3 in the multilinear → linear argument sketched above, however, we
+typically have additional information about T. For example, the tubes in T might point in δ-separated directions,
+and/or satisfy the Polynomial Wolff Axioms. With this additional constraint, it is possible to improve Theorem
+4.3 as follows.
+    Theorem 4.4. Let T be a set of δ tubes in Rn that satisfy the polynomial Wolff axioms, and let 2 ≤ k ≤ n.
+Then
+                   X                                            k1        1  nd −1  X       n(d−1)
+                                                                                                (n−1)d
+                                                              k
+(4.4)                        χT1 · · · χTn |v1 ∧ . . . ∧ vk | d          ⪅                 |T |         ,
+                                                                      d
+                                                                     d−1
+                                                                             δ
+                        T1 ,...,Tk ∈T                                                T ∈T
+
+where
+                                                         n2 + k 2 + n − k
+                                                    d=                    .
+                                                                2n
+    Corollary 4.5. Let 2 ≤ k ≤ n and let T beSa set of δ tubes in Rn pointing in δ-separated directions, with
+#T ∼ δ 1−n . Suppose that for a typical point x ∈ T T and a typical k-tuple T1 , . . . , Tk of tubes containing x, we
+have |v1 ∧ . . . ∧ vk | ∼ 1. Then
+                                     [                    n2 + k 2 + n − k
+                                        T ⪆ δ n−d ,   d=                   .
+                                                                 2n
+                                       T
+
+     Theorem 4.4 was proved for n = 4, k = 3 by Guth and the author [32]. In higher dimensions Theorem 4.4 was
+proved independently and concurrently by the author [58] and by Hickman, Rogers, and Zhang [34] (the latter
+paper proves a k-broad rather than k-multilinear estimate). The results in [58, 34] are stated for sets of tubes
+pointing in δ-separated directions, but they also apply to sets of tubes satisfying the Polynomial Wolff Axioms.
+     When the broad estimate from Theorem 4.4 is used as input to the Bourgain-Guth multilinear → linear
+argument, it gives an improved Kakeya maximal function bound for n ≥ 7; it also gives new Hausdorff dimension
+bounds in certain dimensions n ≥ 7 (for certain other dimensions n ≥ 7 and for Minkowski dimension bounds,
+the best-known estimate comes from arguments based on Theorem 2.4; see [39] for details).
+     The proof of Theorem 4.4 uses a technique developed by Guth [27] in the context of the restriction conjecture.
+The idea is as follows. First, we consider the case k =S n − 1. Let T be a set of δ tubes. Using the Guth-Katz
+polynomial partitioning technique from [31], we cover T T by a union of semi-algebraic grains—a semi-algebraic
+grain is a set of the form S = B(x, r) ∩ Nδ (Z), where Z = Z(P ) is the zero-set of a low degree polynomial. This
+is called a grains decomposition of T. The Guth-Katz polynomial partitioning technique controls the number of
+grains in this decomposition, as well as the number of tubes from T that intersect each grain. We then apply
+Theorem 4.3 to the tubes that intersect each grain, and sum the resulting contributions. The estimate becomes
+stronger as the number of grains increases. We use the assumption that the tubes satisfy the Polynomial Wolff
+Axioms to ensure that the number of grains is suitably large. For k < n − 1, we further decompose each grain in
+the above grains decomposition to obtain a multi-level grains decomposition of T. The main new difficulty is to
+control the number of tubes that intersect each nested sequence of grains in this multi-level decomposition.
+    4.4   Narrow estimates. In [42], Katz and the author obtained the following narrow estimate in R4 :
+    Theorem 4.6. Let S T be a set of δ tubes in R4 that point in δ-separated directions, with #T ∼ δ −3 . Suppose
+that for each point x ∈ T T , there is an affine 2-plane Hx so that all tubes {T ∈ T : x ∈ T } are contained in the
+O(δ)-neighbourhood of Hx . Then
+                                                    [
+(4.5)                                                  T ⪆ δ 2/3 .
+                                                          T
+When combined with the broad estimate from Theorem 4.4, this yields new bounds on the dimension of Besicovitch
+sets in R4 ; see [43] for related work in higher dimensions.
+     The idea behind Theorem 4.6 is as follows. Suppose that roughly µ tubes from T intersect each point x ∈ T T .
+                                                                                                                  S
+Fix a point x, and let T1 . . . , Tµ be the tubes from T that intersect x. All of these tubes are contained in the O(δ)
+neighbourhood of a common affine 2-plane Hx . Let T′ be the set of tubes that intersect Hx . Each of T1 , . . . , Tµ
+intersect about δ −1 µ tubes from T, and thus we should expect that #T′ ≳ µ(δ −1 µ) = δ −1 µ2 . If the tubes in T′
+are mostly disjoint, then we have
+                                           [         [
+                                              T ≥      T ≳ |T |δ −1 µ−2 ∼ δ 2 µ−2 .
+                                        T            T′
+
+On the other hand, we have                 . Comparing these estimates we obtain (4.5).
+                                            −1
+                               S
+                                 TT ∼µ
+    Now  suppose   instead that the tubes in T′ are not mostly disjoint. At the opposite extreme, for each point
+y ∈ T′ T there are at least two tubes T, T ∈ T′ that intersect y and make angle ∼ 1 at this point of intersection.
+                                           ′
+    S
+But recall that all of the tubes containing y are contained in the O(δ) neighbourhood of a common plane Hy ,
+and hence Hy is the plane spanned by the directions of T and T ′ . This 2-plane has one-dimensional intersection
+with Hx . This in turn means that all of the tubes from T intersecting y are contained in T′ . We thus obtain a
+decomposition                                [       [        [
+                                                 T =    T ⊔       T.
+                                                 T            T′   T\T′
+We obtain a lower bound for the first term using a variant of Wolff’s hairbrush argument, and we handle the
+second term by induction.
+    4.5 Future directions. It is an interesting question what improvements are possible for the broad and
+narrow estimates described above, and whether such improvements will play a role in the resolution of the Kakeya
+set conjecture in higher dimensions. The Bourgain-Guth multilinear → linear argument was developed in the
+context of the Fourier restriction conjecture. The improved broad estimate from Theorem 4.4 was applied to
+the Fourier restriction conjecture by Hickman and the author [35] (see also [27, 28, 33] for previous work in this
+direction), though this has since been superseded by different methods [23, 49]. It seems plausible that improved
+broad and narrow estimates may play a role in future work on the restriction conjecture.
+    5 Thanks. The author would like to thank Larry Guth and Hong Wang for comments and suggestions on
+an earlier draft of this manuscript. The author’s research was supported by Discovery and Alliance grants from
+the Natural Sciences and Engineering Research Council of Canada; by the Fundamental Research Funds for the
+Central Universities (Project No. 100-63253272); and by the Nankai Zhide Foundation.
+    References
+
+ [1] B. Arsovski. The p-adic Kakeya conjecture. J. Amer. Math. Soc., 37:69–80, 2024.
+
+ [2] A. Balog and E. Szemerédi. A statistical theorem of set addition. Combinatorica, 14:263–268, 1994.
+
+ [3] J. Bennett, A. Carbery, and T. Tao. On the multilinear restriction and Kakeya conjectures. Acta Math.,
+     196:261–302, 2006.
+
+ [4] A. Besicovitch. Sur deux questions d’integrabilite des fonctions. J. Soc. Phys. Math., 2:105–123, 1919.
+
+ [5] J. Bourgain. Besicovitch type maximal operators and applications to Fourier analysis. Geom. Funct. Anal.,
+     1:147–187, 1991.
+
+ [6] J. Bourgain. On the dimension of Kakeya sets and related maximal inequalities. Geom. Funct. Anal.,
+     9(2):256–282, 1999.
+
+ [7] J. Bourgain. On the Erdős-Volkmann and Katz-Tao ring conjectures. Geom. Funct. Anal., 13:334–365, 2003.
+
+ [8] J. Bourgain. The discretized sum-product and projection theorems. J. Anal. Math, 112(1):193–236, 2010.
+
+ [9] J. Bourgain and L. Guth. Bounds on oscillatory integral operators based on multilinear estimates. Geom.
+     Funct. Anal., 21:1239–1295, 2011.
+
+[10] J. Bourgain, N.H. Katz, and T. Tao. A sum-product estimate in finite fields, and applications. Geom. Funct.
+     Anal., 14:27–57, 2004.
+
+[11] B. Bukh and T.W. Chao. Sharp density bounds on the finite field Kakeya problem. Discrete Anal., 26, 2021.
+
+[12] A. Carbery and S. Valdimarsson. The endpoint multilinear Kakeya theorem via the Borsuk-Ulam theorem.
+     J. Funt. Anal., 264:1643–1663, 2012.
+
+[13] M. Christ, J. Duoandikoetxea, and J.L. Rubio de Francia. Maximal operators associated to the Radon
+     transform and the Calderón-Zygmund method of rotations. Duke Math. J., 53:189–209, 1986.
+
+[14] A. Cordoba. The Kakeya maximal function and the spherical summation multipliers. Am. J. Math., 99:1–22,
+     1977.
+
+[15] R.O. Davies. Some remarks on the Kakeya problem. Math. Proc. Cambridge Philos. Soc., 69(3):417–421,
+     1971.
+
+[16] M. Dhar. The Kakeya set conjecture for Z/N Z for general N . Adv. Combin., 2, 2024.
+
+[17] S. Drury. Lp estimates for the x-ray transform. Ill. J. Math., 27:125–129, 1983.
+
+[18] Z. Dvir. On the size of Kakeya sets in finite fields. J. Amer. Math. Soc., 22:1093–1097, 2009.
+[19] Z. Dvir, S. Kopparty, S. Saraf, and M. Sudan. Extensions to the method of multiplicities, with applications
+     to Kakeya sets and mergers. SIAM J. Comput., 42:2305–2328, 2013.
+
+[20] P. Erdős and E. Szemerédi. On sums and products of integers. In Studies in Pure Mathematics, page 213–218.
+     Birkhauser, Basel, 1983.
+
+[21] C. Fefferman. Inequalities for strongly singular convolution operators. Acta Math., 124:9–36, 1970.
+
+[22] T. Gowers. A new proof of Szemerédi’s theorem for arithmetic progressions of length four. Geom. Funct.
+     Anal., 8:529–551, 1998.
+
+[23] S. Guo, H. Wang, and R. Zhang. A dichotomy for Hörmander-type oscillatory integral operators. Invent.
+     Math., 238:503–584, 2024.
+
+[24] L. Guth. The endpoint case of the Bennett-Carbery-Tao multilinear Kakeya conjecture. Acta Math., 205:263–
+     286, 2010.
+
+[25] L. Guth. A short proof of the multilinear Kakeya inequality. Math. Proc. Camb. Phil. Soc., 158:147–153,
+     2015.
+
+[26] L. Guth. Degree reduction and graininess for Kakeya-type sets in R3 . Rev. Mat. Iberoam., 32:447–494, 2016.
+
+[27] L. Guth. A restriction estimate using polynomial partitioning. J. Amer. Math. Soc., 29(2):371–413, 2016.
+
+[28] L. Guth. Restriction estimates using polynomial partitioning II. Acta Math., 221(1):81–142, 2018.
+
+[29] L. Guth. Introduction to the proof of the Kakeya conjecture. arXiv:2505.07695, 2025+.
+
+[30] L. Guth and N.H. Katz. Algebraic methods in discrete analogs of the Kakeya problem. Adv. Math., 225:2828–
+     2839, 2010.
+
+[31] L. Guth and N.H. Katz. On the Erdős distinct distances problem in the plane. Ann. of Math., 181:155–190,
+     2015.
+
+[32] L. Guth and J. Zahl. Polynomial Wolff axioms and Kakeya-type estimates in R4 . Proc. London Math. Soc.,
+     117:192–220, 2018.
+
+[33] J. Hickman and K.M. Rogers. Improved Fourier restriction estimates in higher dimensions. Camb. J. Math.,
+     7:219–282, 2019.
+
+[34] J. Hickman, K.M. Rogers, and R. Zhang. Improved bounds for the Kakeya maximal conjecture in higher
+     dimensions. Am. J. Math., 144:1511–1560, 2022.
+
+[35] J. Hickman and J. Zahl. A note on Fourier restriction and nested polynomial Wolff axioms. J. Anal. Math.,
+     150:19–52, 2024.
+
+[36] N.H. Katz, I. Łaba, and T. Tao. An improved bound on the Minkowski dimension of Besicovitch sets in R3 .
+     Ann. of Math., 152:383–446, 2000.
+
+[37] N.H. Katz and K. Rogers. On the polynomial Wolff axioms. Geom. Funct. Anal., 28:1706–1716, 2018.
+
+[38] N.H. Katz and T. Tao. Bounds on arithmetic projections, and applications to the Kakeya conjecture. Math.
+     Res. Letters, 6:625–630, 1999.
+
+[39] N.H. Katz and T. Tao. New bounds on Kakeya problems. J. Anal. Math., 87:231–263, 2002.
+
+[40] N.H. Katz and T. Tao. Recent progress on the Kakeya conjecture. Publ. Mat., 46:161–179, 2002.
+
+[41] N.H. Katz and J. Zahl. An improved bound on the Hausdorff dimension of Besicovitch sets in R3 . J. Amer.
+     Math. Soc., 32:195–259, 2019.
+[42] N.H. Katz and J. Zahl. A Kakeya maximal function estimate in four dimensions using planebrushes. Rev.
+     Mat. Iberoam., 37:317–359, 2021.
+[43] N. Kulkarni. A Kakeya Estimate for Sticky Sets Using a Planebrush. PhD thesis, California Institute of
+     Technology, 2024.
+[44] I. Łaba and T. Tao. An improved bound for the Minkowski dimension of Besicovitch sets in medium
+     dimension. Geom. Funct. Anal., 11:773–806, 2001.
+[45] T. Orponen, P. Shmerkin, and H. Wang. Kaufman and Falconer estimates for radial projections and a
+     continuum version of Beck’s theorem. Geom. Funct. Anal., 30:989–1062, 2024.
+
+[46] M. Pramanik, T. Yang, and J. Zahl. A Furstenberg-type problem for circles, and a Kaufman-type restricted
+     projection theorem in R3 . To appear, Am. J. Math. arXiv:2207.02259, 2022+.
+[47] S. Saraf and M. Sudan. An improved lower bound on the size of Kakeya sets over finite fields. Anal. PDE,
+     1:375–379, 2008.
+
+[48] T. Tao.    Stickiness, graininess, planiness, and a sum-product approach to the kakeya prob-
+     lem. https://terrytao.wordpress.com/2014/05/07/stickiness-graininess-planiness-and-a-sum-
+     product-approach-to-the-kakeya-problem, 2014.
+[49] H. Wang and S. Wu. Restriction estimates using decoupling theorems and two-ends Furstenberg inequalities.
+     arXiv:2411.08871, 2024+.
+
+[50] H. Wang and J. Zahl. The Assouad dimension of Kakeya sets in R3 . Invent. Math., 241:153–206, 2025.
+[51] H. Wang and J. Zahl. Volume estimates for unions of convex sets, and the Kakeya set conjecture in three
+     dimensions. arXiv:2502.17655, 2025+.
+[52] H. Wang and J. Zahl. Sticky Kakeya sets and the sticky Kakeya conjecture. J. Amer. Math. Soc., 39:515–585,
+     2026.
+[53] T Wolff. An improved bound for Kakeya type maximal functions. Rev. Mat. Iberoam., 11:651–674, 1995.
+[54] T Wolff. A Kakeya-type problem for circles. Am. J. Math., 119:985–1026, 1997.
+
+[55] T. Wolff. Recent work connected with the Kakeya problem. In Prospects in mathematics (Princeton, NJ,
+     1996), pages 129–162. Amer. Math. Soc., Providence, RI, 1999.
+[56] T. Wolff. Lectures on Harmonic Analysis. American Mathematical Society, 2003.
+[57] J. Zahl. A discretized Severi-type theorem with applications to harmonic analysis. Geom. Funct. Anal.,
+     28:1131–1181, 2018.
+
+[58] J. Zahl. New Kakeya estimates using Gromov’s algebraic lemma. Adv. Math., 380, 2021.
+[59] J. Zahl. Unions of lines in Rn . Mathematika, 69:473–481, 2023.
+

@@ -1,0 +1,2769 @@
+                                             A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3
+
+
+                                                                     LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+                                                   Abstract. We present a streamlined and simplified proof of the Kakeya set conjecture in R3 .
+arXiv:2601.14411v2 [math.CA] 11 Oct 2026
+
+
+
+
+                                                                     1. Introduction to the Kakeya problem
+                                              A Besicovitch set is a compact set K ⊂ Rn that contains a unit line segment pointing in every
+                                           direction. The Kakeya set conjecture asserts that every Besicovitch set in Rn has Minkowski and
+                                           Hausdorff dimension n. We refer the reader to [6] and the references therein for an introduction
+                                           to the Kakeya conjecture and its connections to problems in harmonic analysis.
+                                              The Kakeya set conjecture was proved in dimension two by Davies [1], and was recently proved
+                                           in dimension three by the second and third authors in a sequence of papers [8, 9, 10]. The purpose
+                                           of this paper is to present a new, streamlined proof of the main result from the third paper [10].
+                                              The first paper, [8], proves an important special case of this conjecture called the sticky Kakeya
+                                           conjecture. The sticky case was formulated by Katz and Tao, who also outlined an approach to
+                                           proving it, cf. [7]. The paper [8] proves the sticky case of the Kakeya conjecture, approximately
+                                           following the outline from [7] but dealing with significant technical issues. The second paper
+                                           [9] obtains a mild generalization of the sticky Kakeya theorem, and uses it to prove that every
+                                           Besicovitch set in R3 has Assouad dimension 3; this is a weak form of the Kakeya set conjecture.
+                                           The third paper, [10], reduces the general case of the Kakeya conjecture in R3 to the sticky case
+                                           that was proved in [8, 9]. In this paper, we present a streamlined version of this reduction.
+                                              We begin with several definitions. Suppose that T is a set of tubes in R3 with radius δ and
+                                           length 1. We write                                  [
+                                                                                      U (T) =      T.
+                                                                                                  T ∈T
+                                              Our goal is to understand |U (T)|, the volume of U (T). We write |T| for the cardinality of
+                                           T and we write |T | for the volume of a tube T ∈ T. We will prove that if T satisfies suitable
+                                           anti-clustering hypotheses, then |U (T)| is almost as large as |T||T |.
+                                              In order to describe these anti-clustering hypotheses, we need some language that describes
+                                           how much convex sets cluster in other convex sets. Suppose that W is a finite set of convex sets
+                                           in Rn and suppose that K is another convex set. We define
+
+                                           (1)                                  W[K] = {W ∈ W : W ⊂ K},
+                                           and
+                                                                                               P
+                                                                                                  W ∈W[K] |W |
+                                           (2)                                   ∆(W, K) =                       .
+                                                                                                     |K|
+                                              We can think of ∆(W, K) as a kind of density that measures how W concentrates in K. We
+                                           define a maximal density
+
+                                           (3)                                 ∆max (W) =       max ∆(W, K).
+                                                                                              K convex
+                                                                                                1
+2                          LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+The quantity ∆max (W) measures the extent to which the sets from W cluster into larger convex
+sets. Quantities of this type were first introduced by Tom Wolff in [11].
+   If W is a set of convex sets, we say that Y is a shading of W if Y (W ) ⊂ W for each W ∈ W.
+We define
+
+                                                     [
+(4)                                   U (W, Y ) =          Y (W ).
+                                                    W ∈W
+
+  If the shading Y is clear from context, we sometimes write U (W) for U (W, Y ). We also
+measure how full the shading Y is:
+                                              P
+                                               W ∈W |Y (W )|
+(5)                                 λ(W, Y ) = P             .
+                                                W ∈W |W |
+
+    With these definitions, we can now state the main result from [10].
+Theorem 1.1 (Kakeya set conjecture in R3 ). For every β > 0, there is some η > 0 so that the
+following holds for all sufficiently small δ > 0.
+   If T is a set of δ-tubes in R3 with ∆max (T) ≤ δ −η , and Y is a shading of T with λ(T, Y ) ≥ δ η ,
+then
+
+
+(6)                                    |U (T, Y )| ≥ δ β |T||T |.
+Remark 1.2. The original Kakeya conjecture concerns direction-separated tubes. One version
+says that if T is a set of δ −(n−1) δ-tubes in Rn with δ-separated directions, then |U (T)| ⪆ 1. It is
+straightforward to check that if the tubes of T are direction separated, then ∆max (T) ≲ 1, and so
+Theorem 1.1 implies a similar estimate for direction separated tubes in R3 . The volume bound
+(6) thus implies that every Besicovitch set in R3 has Minkowski and Hausdorff dimension 3.
+   The goal of this paper is to give a detailed proof of Theorem 1.1. A key ingredient is the
+sticky Kakeya theorem from [8, 9]. We give a self-contained proof that Theorem 1.1 follows from
+the sticky Kakeya theorem. Our proof of Theorem 1.1 has the same main ideas as the one in
+[10], but it has been reorganized to make it more concise. A couple parts of the argument in
+[10], such as polynomial partitioning, are no longer needed.
+   The introduction of [10] gives an overview of the main ideas of the proof. The expository
+paper [4] gives an overview of the Kakeya problem, the sticky case, and the reduction to the
+sticky case. The expository paper [5] gives a detailed outline of the reduction from the general
+case to the sticky case. The current paper closely follows that outline.
+
+1.1. Formal Verification and Thanks. The arguments in this paper have been formally ver-
+ified in Lean by Yichuan Cao, Weikun He, Yihe Huang, Yunfei Li, Xiao Ma, and Jiaqi Wang [2].
+This paper makes crucial use of the sticky Kakeya theorem; this result has been formally verified
+in Lean by Mingfeng Chen, Shaoming Guo, Yixuan Pang, Minxing Shen, Zhihong Wang, Zheng
+Yuan, Huanyu Zheng, and Thomas Zhu [3]. These efforts have since been combined to give a
+complete formalization of Theorem 1.1 in Lean. Both groups made extensive use of AI tools for
+autoformalization.
+    While formalizing these results, the mathematicians from these two groups shared comments
+and corrections to an earlier version of this manuscript; we are grateful to both groups for their
+efforts in formalizing this result, and also for their comments and corrections. We are also grateful
+to Alex Cohen for sharing comments and corrections to an earlier version of this manuscript.
+                  A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                 3
+
+
+                                   2. Notation and Definitions
+2.1. Convex sets and shadings. We will use blackboard bold letters to denote finite families
+of convex subsets of Rn , and their non-bold equivalents to denote members of these sets, i.e. V
+will be a family of convex sets, and V1 , V2 or V, V ′ will denote  P                    Similarly for W
+                                                                          elements of V. P
+and W , and for T and T . We will often use the notation V f (V ) in place of V ∈V f (V ), etc.
+If V is a family of convex sets, each of which have comparable volume, then we will write |V | to
+denote the volume of a convex set from V.
+    If V is a convex set, the “dimensions” of V will be the lengths of the axes of its outer John
+ellipsoid, listed in increasing order. We will denote this by v1 × v2 × . . . × vn . A δ-tube is the δ
+neighbourhood of a unit line segment in Rn . A box is a translated and rotated image of the set
+[0, v1 ] × . . . × [0, vn ]. In R3 , a slab is a box of dimensions θ × 1 × 1, for some 0 < θ ≤ 1, and a
+plank is a box of dimensions a × b × 1 for some 0 < a ≤ b ≤ 1. We say two convex sets V, V ′
+are essentially distinct if |V ∩ V ′ | < 21 min(|V |, |V ′ |). We say a set V of convex sets is essentially
+distinct if every pair of elements is essentially distinct.
+    A shading of a set V is a measurable set Y (V ) ⊂ V . We will use (V, Y ) to denote a family
+of convex sets and their associated shadings {Y (V ) : V ∈ V}. For brevity we will sometimes say
+“let (V, Y ) be a family of convex subsets of Rn ,” or “let (T, Y ) be a set of δ-tubes.”
+    We define the multiplicity of a set of convex sets W with a shading Y as
+                                                       P
+                                                               |Y (W )|
+(7)                                        µ(W, Y ) = W ∈W              .
+                                                         |U (W, Y )|
+When the shading Y is clear from the context, we write µ(W) instead.
+   Information about µ(W) is essentially equivalent to information about |U (W)|, but it can be
+more intuitive to think about one than the other. For instance, in Theorem 1.1, it would be
+equivalent to replace the conclusion by µ(T) ≲ δ −β .
+   For x ∈ Rn , we define VY (x) = {V ∈ V : x ∈ Y (V )} and µ(V, Y )(x) = |VY (x)|. We say that
+(V, Y ) has constant multiplicity if µ(V, Y )(x) is roughly the same for all x ∈ U (V, Y ). We say
+that (V′ , Y ′ ) is a refinement of (V, Y ) if V′ ⊂ V and ′
+                                                                        ) for each V ∈ V′ . For c > 0,
+                                                       P Y (V′ ) ⊂ Y (V P
+                   ′   ′
+we say that (V , Y ) is a c-refinement of (V, Y ) if V′ |Y (V )| ≥ c V |Y (V )|. If Y is a shading
+on V and V′ is a subset of V, we will often abuse notation and continue to use Y to refer to the
+restriction of the shading to V′ .
+
+2.2. Pigeonholing and ⪅ notation. Many steps in our proof involve dyadic pigeonholing of
+the following types:
+   (i) If V is a family of convex subsets of Rn , each of which has a John ellipsoid with axes of
+       lengths between δ and δ −1 , then we wish to pigeonhole to find numbers v1 ≤ . . . ≤ vn and
+       a subset V′ consisting of convex sets whose JohnP      ellipsoids have axes ofPlengths roughly
+       v1 × . . . × vn . We can always find a subset with V′ |V | ≳ (log 1/δ)−n V |V | with this
+       property.
+  (ii) If V is a family of convex subsets ofPRn with a shading Y , then we wish to find a subset
+       X ⊂ Rn and a number ν such that V χY (V ) (x) ∼ ν on X. We can always find such a set
+       so that ν|X| ≳ (log |V|)−1 V |Y (V )|.
+                                    P
+ (iii) If (V, Y ) is a family of convex subsets of Rn and their associated shading, then we wish to
+       find a subset V′ consisting of convex sets whose shadings {Y (V ) : V ∈ V} have roughly the
+       same measure. If a = min{|Y (V )| : V ∈ V, Y (V ) ̸= ∅} and A = maxV |Y (V )|, then we can
+       always find such a set so that (V′ , Y ) is a ≳ (1 + log(A/a))−1 -refinement of (V, Y ).
+ (iv) Sometimes we wish to perform the pigeonholing from several of the above items simul-
+       taneously. For example if (V, Y ) is a family of convex subsets of Rn , each of which
+       has a John ellipsoid with axes of lengths between δ and δ −1 , then there exists a set V′
+4                           LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+        as in Item (i), and a P    subset X ⊂ Rn and a number ν as in Item (ii), so that ν|X| ≳
+                   −1         −n
+        (log |V|) (log 1/δ)           V |Y (V )|.
+Quantities of the form log(1/δ) or log |V| are harmless distractions, and in practice any shading
+Y (V ) with small measure (i.e. |Y (V )| ≤ δ n ) can be replaced by Y (V ) = ∅ without affecting our
+arguments. To streamline our arguments, if X and Y are functions of ρ, then we introduce the
+notation “X ⪅ Y ” to mean that for all ϵ > 0, there is a constant C = C(ϵ) so that X ≤ Cϵ ρ−ϵ Y .
+The quantity ρ will often be implicit—here is how ⪅ notation is applied to the items described
+above.
+   (i′ ) For inequalities involving a convex set, or a collection of convex sets V, we will implicitly
+         define ρ to be minV δ(V ), where δ(V ) is the ratio of the shortest to the longest axes of the
+         John ellipsoid of V (up to harmless constants, we could also take δ(V ) to be the ratio of
+         the diameter of the largest ball contained   Pinside V P to the smallest ball that contains V ).
+         Thus for Item (i) above, we could write V′ |V | ⪆ V |V |.
+  (ii′ ) For inequalities involving the cardinality of a set P V, we will implicitly define ρ to be |V|−1 .
+         Thus for Item (ii) above, we could write ν|X| ⪆ V |Y (V )|.
+ (iii′ ) For inequalities involving a family (V, Y ) of convex sets and their associated shading, we
+         will implicitly define ρ to be a/A, as described in Item (iii). Thus for Item (iii) above,
+         (V′ , Y ) is a ⪆ 1 refinement of (V, Y ).
+     ′
+ (iv ) Items (i′ ), (ii′ ), and (iii′ ) combine as described in Item (iv) above.
+2.3. Uniform sets of tubes. It will sometimes be useful to consider sets T that are uniform in
+the following sense.
+Definition 2.1. Let δ > 0, let M = ⌈log log 1/δ⌉, and let T be a set of δ-tubes in B1 ⊂ Rn . We
+say that T is uniform if for each scale of the form ρ = δ k/M , k = 0, . . . , M , there is a set of
+ρ-tubes Tρ so that
+             S
+     (i) T = Tρ T[Tρ ].
+    (ii) The tubes Tρ are essentially distinct. Therefore each T ∈ T lies in Tρ for ∼ 1 choice of
+         Tρ ∈ Tρ .
+   (iii) |T[Tρ ]| is constant up to a factor ∼ 1 as Tρ varies in Tρ .
+We call the numbers Nk = |T[Tρk ]| the branching numbers of T.
+Definition 2.2. Let δ > 0, let M = ⌈log log 1/δ⌉, and let (T, Y ) be a set of δ-tubes in B1 ⊂ Rn
+and their associated shading. We say that (T, Y ) is uniform if the following holds:
+     • T is uniform.
+     • For each point x ∈ U (T, Y ), the sets {T ∈ T : x ∈ Y (T )} are uniform, and have roughly
+        the same branching numbers.
+   The reason for setting M = log log(1/δ) in our above definitions is as follows. First, since
+(log |T|)log log(1/δ) ⪅ 1, by pigeonholing, every set T of δ-tubes in B1 ⊂ Rn has a subset T′ of
+cardinality |T′ | ⪆ |T| that is uniform, and every pair (T, Y ) has a ≈ 1-refinement that is uniform.
+   Second, if T is uniform, then for every scale ρ ∈ [δ, 1], there is a set of essentially distinct
+ρ-tubes Tρ that satisfies items (i) and (ii) from Definition 2.1, and satisfies the following slightly
+weaker analogue of (iii): there is a number Nρ so that |T[Tρ ]| ≈ Nρ for all Tρ ∈ Tρ . Similarly for
+Definition 2.2; the second bullet point is weakened to: the branching numbers Nk are roughly
+the same up to a ≈ 1 factor.
+
+                                  3. Partial Kakeya estimates
+  In this section, we consider Kakeya-type estimates for sets of tubes obeying two important
+non-clustering conditions. These non-clustering conditions are called Katz-Tao conditions and
+                A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                             5
+
+
+Frostman conditions. They are both descended from the non-concentration conditions introduced
+by Wolff in [11].
+Definition 3.1. A family of convex sets V is called C-convex-Katz-Tao (or C-Katz-Tao for
+short) if ∆max (V) ≤ C. Informally, we say V is Katz-Tao if ∆max (V) ⪅ 1.
+Definition 3.2. If V is a set of convex sets in K, we define
+                                                        supK ′ ⊂K ∆(V, K ′ )
+(8)                                  CF (V, K) =                             ,
+                                                            ∆(V, K)
+where the supremum is taken over all convex subsets of K. We say that V is C-convex-Frostman
+(or C-Frostman for short) in K if CF (V, K) ≤ C. Informally, we say that V is Frostman in K
+if CF (V, K) ⪅ 1. If K is the unit ball, then we abbreviate this as CF (V), and we say that V is
+C-Frostman.
+Remark 3.3.
+(A) The property of being Frostman is inherited upwards: Suppose V = ⊔W VW is C-Frostman
+inside K, where each W ∈ W is contained in K and V ⊂ W for each VP∈ VW . Then there is a
+subset W′ ⊂ W that is ⪅ C-Frostman in K. If in addition the quantity VW |V |/|W | is approx-
+imately the same for each W ∈ W, then we may take W′ = W, and in fact W is O(C)-Frostman
+in K.
+(B) The property of being Katz-Tao is inherited downwards: If V is C-Katz-Tao, then every
+subset V′ ⊂ V is also C-Katz-Tao.
+                                                            P
+                                                              V ∈VW |V |
+Proof. We prove (A). Recall that ∆(VW , W ) =                   |W |       . Define
+
+                             WD = {W ∈ W : ∆(VW , W ) ∼ D}.
+                                              P       P            P
+  There are ⪅ 1 values of D. Choose D so that W ∈WD V ∈VW |V | ≈ V ∈V |V |.
+  Now consider a convex set U ⊂ K. Since V is C-Frostman in K, we have
+                                     P                        P
+                                        V ∈V[U ] |V |            V ∈V[K] |V |
+(9)                                                      ≤C                     .
+                                             |U |                  |K|
+  Now
+                         X                     X         X                  X
+                                   |V | ≥                       |V | ∼                D|W |.
+                        V ∈V[U ]            W ∈WD [U ] V ∈VW             W ∈WD [U ]
+
+   Plugging this equation into the last, we see that
+                              P                         P
+                                 W ∈WD [U ] D|W |         V ∈V[K] |V |
+                                                  ≲C                   .
+                                      |U |                   |K|
+                                            P              P         P                 P
+   On the other hand, since V = V[K],         V ∈V |V | ≈     W ∈WD       V ∈VW |V | ∼  W ∈WD D|W |.
+Plugging this into the right-hand of the last equation and cancelling a factor of D leaves
+                              P                      P
+                                W ∈WD [U ] |W |         W ∈WD [K] |W |
+                                                ⪅C                      .
+                                    |U |                   |K|
+   In other words, CF (WD , K) ⪅ C = CF (V, K). In the special case that W = WD , the
+argument above shows that CF (W, K) ≲ C = CF (V, K).
+   To prove (B), just note that
+6                            LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+
+                                    P                           P
+                         ′             V ∈V′ [K] |V |              V ∈V[K] |V |
+                 ∆max (V ) = max                        ≤ max                     = ∆max (V).     □
+                                K         |K|             K          |K|
+
+Definition 3.4. We write KKT (β) for the following statement. For any ϵ > 0, there exists
+η = η(ϵ, β) > 0 so that the following holds for any 0 < δ ≤ δ(ϵ, β). Let T be a set of δ-tubes in
+B1 ⊂ R3 with the following properties.
+       • ∆max (T) ≤ δ −η .
+       • Y is a shading of T with λ(T, Y ) ≥ δ η .
+Then
+                                                               β/2
+(10)                                 µ(T, Y ) ≤ δ −ϵ |T |−1 |T|     .
+  Note that KKT (1) is trivial. It is not hard to prove KKT (β) for some β slightly less than 1.
+Our goal is to prove KKT (0). One important case is when |T| ∼ δ −2 . In this case, KKT (β) gives
+µ(T) ≲ δ −2β−ϵ , which is equivalent to |U (T)| ≳ δ 2β+ϵ .
+Definition 3.5. We write KF (β) for the following statement. For any ϵ > 0, there exists
+η = η(ϵ, β) > 0 so that the following holds for any 0 < δ ≤ δ(ϵ, β). Let T be a set of essentially
+distinct δ-tubes in B1 ⊂ R3 with the following properties.
+       • CF (T, B1 ) ≤ δ −η .
+       • Y is a shading of T with λ(T, Y ) ≥ δ η .
+Then
+                                                                 1−β/2
+(11)                                µ(T) ≤ δ −ϵ δ −2β (|T| |T |)              .
+Or equivalently,
+                                                                    β/2
+                                     |U (T)| ≥ δ ϵ δ 2β (|T| |T |)        .
+   Let us parse the algebra in this bound. Since CF (T, B1 ) ≤ δ −η , we have |T| ≥ δ −2+η . One
+important case is when |T| ∼ δ −2 . In this case, the bound CF (T, B1 ) ≲ δ −η is equivalent to
+the bound ∆max (T) ≲ δ −η . So T is both Frostman and Katz-Tao. In this case, KKT (β) gives
+|U (T)| ≳ δ 2β+ϵ , and KF (β) gives the same bound |U (T)| ≳ δ 2β+ϵ . When |T| ≫ δ −2 , then KF (β)
+                                                                   β/2
+gives a stronger volume bound, because the last factor (|T| |T |)      is ≫ 1. The exact exponent
+β/2 in this final factor is not crucial in our analysis, and the argument would work equally well
+with any positive exponent cβ, 0 < c < 1. There is one step (see Remark 8.2) where it is
+important that c < 1.
+Remark 3.6. If KKT (β) holds, then we get for free the following slightly more general version
+of KKT (β): For any ϵ > 0, there exists η = η(ϵ, β) > 0 so that the following holds for any
+0 < δ ≤ δ(ϵ, β). Suppose T is a set of δ-tubes in B1 ⊂ R3 , τ ≤ δ, and
+       • ∆max (T) ≤ τ −η .
+       • Y is a shading of T with λ(T, Y ) ≥ τ η .
+Then
+                                                               β/2
+                                     µ(T, Y ) ≤ τ −ϵ |T |−1 |T|     .
+   Similarly, KF (β) implies a slightly more general version of KF (β) for essentially distinct
+tubes.
+   These slightly more general versions will be useful when we replace a set of δ-tubes (T, Y ) with
+a thickening (Tρ , Yρ ), for which we only know that λ(Tρ , Yρ ) ≥ δ η .
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                7
+
+
+Proof. Suppose β, ϵ > 0 and suppose KKT (β) holds. Let η1 (β, ϵ) > 0 and δ(β, ϵ) > 0 be the
+                                                                      1
+constants given by the definition KKT (β), and define η(β, ϵ) = 100      ϵη1 (β, ϵ).
+                −1
+                           −ϵ      −100
+   If τ ≤ δ 100ϵ
+                   , then τ ≥ δ         and the conclusion is trivial. Otherwise, ∆max (T) ≤ τ −η ≤
+                                                                          β/2                   β/2
+δ −η1 and λ(T, Y ) ≥ τ η ≥ δ η1 , and so we get µ(T, Y ) ≤ δ −ϵ |T |−1 |T|      ≤ τ −ϵ |T |−1 |T|     .
+   The argument using KF (β) is similar.                                                                □
+
+   The two main lemmas in the proof are
+Main Lemma 1. KKT (β) implies KF (β).
+Main Lemma 2. If β > 0 and KKT (β) and KF (β) hold, then KKT (β −ν) holds for ν = ν(β) >
+0. Moreover ν(β) is monotone in β.
+   Since the bound KKT (1) is trivial, the two main lemmas imply that KKT (β) and KF (β) hold
+for all β > 0, which implies the Kakeya conjecture, Theorem 1.1.
+
+3.1. Multiplicity bounds for larger values of ∆max (T) or CF (T). The next two results say
+that KKT (β) and KF (β) imply multiplicity bounds for sets of tubes with any value of ∆max (T)
+or CF (T).
+Lemma 3.7. Suppose that KKT (β) holds. Then for any ϵ > 0, there exists η = η(ϵ, β) > 0 such
+that the following holds for any 0 < δ < δ(ϵ, β). Suppose that (T, Y ) is a set of δ-tubes in B1
+with a shading with λ(T) ≥ δ η . Then
+                                                                     β/2
+                             µ(T, Y ) ≤ δ −ϵ ∆max (T)1−β/2 |T |−1 |T|     .
+
+Proof. Choose a random subset T′ ⊂ T with cardinality ∆max     1
+                                                                 (T) |T|. It is straightforward to
+                                                                                                 β/2
+check that ∆max (T′ ) ⪅ 1, and so by KKT (β) with ϵ/2 in place of ϵ, µ(T′ ) ≤ δ −ϵ/2 |T |−1 |T′ |     .
+But then
+                                                                          β/2
+                   µ(T) ⪅ ∆max (T)µ(T′ ) ≤ δ −ϵ ∆max (T)1−β/2 |T |−1 |T|       .                    □
+
+Lemma 3.8. Suppose that T is a set of (essentially distinct) δ-tubes in B1 ⊂ Rn . Let R1 , ..., RJ
+                                                                        SJ
+be random rigid motions of size 1, with J = CF (T), and let T′ = j=1 Rj (T). Then with high
+probability the tubes of T′ are essentially distinct up to multiplicity ⪅ 1 and also CF (T′ ) ⪅ 1.
+After refining T′ to make the tubes essentially distinct, we have |T′ | ≈ CF (T)|T| and CF (T′ ) ⪅ 1.
+   We will prove Lemma 3.8 in Appendix A, where we collect a couple of related probability
+lemmas.
+Lemma 3.9. Suppose that KF (β) holds. Then for any ϵ > 0, there exists η = η(ϵ, β) > 0 such
+that the following holds for any 0 < δ < δ(ϵ, β). Suppose that (T, Y ) is a set of essentially distinct
+δ-tubes in B1 with a shading with λ(T) ≥ δ η .
+   Then
+                            µ(T, Y ) ≤ δ −ϵ CF (T)1−β/2 δ −2β (δ 2 |T|)1−β/2 .
+Proof. Let T′ be the union of CF (T) random rigid motions of T. By Lemma 3.8, with high
+probability CF (T′ ) ⪅ 1 and |T′ | ≈ CF (T)|T|. After a harmless refinement, the tubes in T′ are
+essentially distinct. Applying KF (β) with ϵ/2 in place of ϵ, we have
+           µ(T) ≤ µ(T′ ) ⪅ δ −ϵ/2 δ −2β (δ 2 |T′ |)1−β/2 ≤ δ −ϵ CF (T)1−β/2 δ −2β (δ 2 |T|)1−β/2 .     □
+
+   We note that the analogue of Remark 3.6 holds for Lemmas 3.7 and 3.9
+8                         LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+                                    4. Organizing convex sets
+   If V is a family of convex sets with ∆max (V) ≫ 1, it turns out to be useful to consider the
+convex sets W so that ∆(V, W ) is near maximal. These convex sets W can be used to organize
+V.
+Lemma 4.1 (Maximal density factoringP lemma). P Let V be a finite family of convex subsets of
+Rn . Then there is a set V′ ⊂ V with V′ |V | ⪆ V |V |; a family W of convex sets in Rn , each
+of approximately the same dimensions; and a partition
+                                             G
+(12)                                   V′ =      VW ,
+                                                  W ∈W
+where each set in VW is contained in W . This partition has the following properties.
+  (i) W is Katz-Tao, i.e. ∆max (W) ∼ 1.
+ (ii) VW is Frostman in W , i.e. CF (VW , W ) ≲ 1 for each W ∈ W. Furthermore ∆(VW , W ) ∼
+      ∆max (V′ ).
+                                                P
+Proof. After replacing V by a subset for which V |V | is preserved up to a ≈ 1 factor, we may
+suppose that each convex set in V has approximately the same dimensions. We may also suppose
+that each set in V is compact (if not, then we replace each set by its closure, and then undo
+this step at the end of the proof). We choose sets Wj one at a time by a greedy algorithm. Set
+V0 = V. Choose W0 to maximize ∆(V, W0 ) (a maximizer exists, since V is finite and the sets in
+V are compact). Then set V1 = V \ V[W0 ]. Now choose W1 to maximize ∆(V1 , W1 ). Continue
+in this way until Vs is empty. Then stop. For each j, we set VWj = Vj [Wj ]; the sets VWj are
+disjoint.
+   Next we pigeonhole ∆(Vj , WjS  ). For each dyadic ν with 1 ≤ νF ≲ |V|, we set J(ν) = {j :
+∆(Vj , Wj ) ∼ ν}. We set Vν = j∈J(ν) VWj . We note that V = ν Vν . We choose ν so that
+      F |V|. Choose a subset W of {Wj }j∈J(ν) of approximately the same dimensions, so that
+|Vν | ⪆
+V′ = W VW satisfies |V′ | ⪆ |Vν |, and replace J(ν) with the set of indices j such that Wj ∈ W.
+Observe thatPwe have the desired bound on the size of V′ .
+   We have VW |V | ∼ ν|Wj | for each j ∈ J(ν). Since V ∈ V and each W ∈ W has approxi-
+                 j
+mately the same dimensions, |VWj | is comparable for each j ∈ J(ν).
+   Note that ∆(Vj , Wj ) = ∆max (Vj ) is non-increasing. Set j1 to be the first number in J(ν).
+Since V′ ⊂ Vj1 and VWj ⊂ V′ , we have
+
+(13)                 ∆max (V′ ) ≤ ∆max (Vj1 ) = ∆(VWj1 , Wj1 ) ≤ ∆max (V′ ).
+Therefore, all the inequalities above are equalities, and thus Item (ii) is satisfied for Wj1 . But
+since each set VWj has approximately the same cardinality, and each set Wj has approximately
+the same volume, we have that ∆(VW , W ) is approximately the same for all W ∈ W, and thus
+Item (ii) is satisfied for all W ∈ W.
+   It remains to verify Item (i). Let U ⊂ Rn be a convex set. Then
+                          X             X                |W |                      |W |
+             |V′ [U ]| ≥        |VW | ≳      ∆(VW , W )       ≳ |W[U ]|∆max (V′ )        .
+                                                         |V |                       |V |
+                     W ∈W[U ]          W ∈W[U ]
+
+Re-arranging, we obtain
+                                     |V′ [U ]| |V |   ∆max (V′ )|U |    |U |
+                        |W[U ]| ≲             ′
+                                                    ≤                =       .                   □
+                                    ∆max (V )|W |     ∆max (V′ )|W |   |W |
+Remark 4.2. An examination of the proof shows that if every convex set in V has a John
+ellipsoid with axes of lengths between δ and δ −1 , then the implicit function cϵ δ ϵ in the bound
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                  9
+
+                                                    −100
+|V′ | ⪆ |V| may be replaced by log(δ −1 ) log |V|           . Also, if the sets V are tubes or boxes, then
+the sets W may be taken to be boxes.
+Remark 4.3. In general, if V′ is a collection of convex sets and V′′ ⊂ V′ with |V′′ | = c|V′ |, then
+CF (V′′ ) ≤ c−1 CF (V′ ), but there is no matching lower bound—CF (V′′ ) might be substantially
+smaller than CF (V′ ). However, if V′ satisfies the conclusions of Lemma 4.1, then we do have a
+matching lower bound, i.e. cCF (V′ ) ⪅ CF (V′′ ) ≤ c−1 CF (V′ ).
+
+Definition
+    S      4.4. Let V and W be families of convex subsets of Rn , and suppose there is a partition
+V = W VW . We say that W factors V if the following is true:
+     • W is Katz-Tao, i.e. ∆max (W) ∼ 1.
+     • VW is Frostman in W , i.e. CF (VW , W ) ≲ 1 for each W ∈ W. Furthermore ∆(VW , W ) ∼
+       ∆max (V).
+     • Each W ∈ W has approximately the same dimensions, and each set in VW is contained
+       in W .
+    In the above definition, we choose the implicit constants to match those coming from Lemma
+4.1. Thus Lemma 4.1 says that W factors V′ . We call the set W coming from Lemma 4.1 the
+maximal density factoring of V, and we call Lemma 4.1 the maximal density factoring lemma.
+    Let us now discuss what we gain from the maximal density factoring lemma. We began with
+an arbitrary set of convex sets V. The set V does not obey any “non-clustering condition” such
+as ∆max (V) ⪅ 1. Using the factoring lemma, we can often reduce the problem of understanding
+V to the problem of understanding the Frostman sets VW for W ∈ W, and the problem of
+understanding the Katz-Tao set W.
+    Our goal is to prove a bound on µ(T) when T is Katz-Tao. Our proof is by induction, and
+along the way we will see other sets of tubes and more generally other sets of convex sets. At
+first sight, these other sets are not Katz-Tao or Frostman, but by using the maximal density
+factoring we can reduce matters to Katz-Tao sets and Frostman sets, and we can study these by
+induction.
+
+                      5. Multiplicities, refinements, and factoring
+   As discussed in the previous section, if V is a family of convex sets then we will bound µ(V)
+by applying the maximal density factoring lemma and then bounding µ(VW ) and µ(W). In this
+section, we explain exactly how µ(V) is related to µ(VW ) and µ(W).
+   Intuitively, it makes sense to have a bound of the form µ(V) ⪅ µ(VW )µ(W). However, our
+set V has a shading Y and it is important to keep track of the shading. So we are looking for
+an inequality of the form µ(V, Y ) ⪅ µ(VW , Y )µ(W, YW ). We will need to define YW . In our
+applications, we are usually given a lower bound for λ(V, Y ), and for our product estimate to
+be useful, we will need to have a lower bound for λ(W, YW ). The main work in this section is to
+carefully choose YW and prove a lower bound for λ(W, YW ).
+   One main result is the following.
+                                                           F
+Proposition 5.1 (Factoring and multiplicity). Let V = W VW , where V is a family of convex
+sets and W is a family of boxes in R3 , and each family VW is C-Frostman in W . Suppose that
+the convex sets in V have approximately the same dimensions, and similarly for W. Let Y be a
+shading on V.
+   Then there is a refinement (V′ , Y ′ ) and a subset W′ ⊂ W with a shading YW′ so that the
+following holds. Define V′W = VW ∩ V′ so that V′ = ⊔W ∈W′ V′W .
+     (1) (V′ , Y ′ ) is a ⪆ 1 refinement of (V, Y ).
+     (2) λ(W′ , YW′ ) ⪆ C −1 λ(V, Y )2 .
+10                            LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+     (3) For each W ∈ W′ , (V′W , Y ′ ) has constant multiplicity. This multiplicity is also the same
+         for all W ∈ W′ .
+     (4) For all W ∈ W′ , we have
+(14)                                 µ(V, Y ) ⪅ µ(W′ , YW′ )µ(V′W , Y ′ ).
+     (5) For every x ∈ U (V′ , Y ′ ),
+                                                         [
+(15)                                    V′Y ′ (x) ⊂             (V′W )Y ′ (x).
+                                                       W ∈W′
+                                                      x∈YW′ (W )
+
+     (6) |U (V′ , Y ′ ) ∩ B(x, w1 )| is roughly the same for every x ∈ U (W′ , YW′ ), up to a factor ≲ 1
+         (here w1 × w2 × w3 represent the lengths of the axes of the boxes in W).
+Remark 5.2. Proposition 5.1 is stated in R3 . It is possible that a similar result holds in higher
+dimensions, but in order to obtain a lower bound on λ(W, YW ) we use a variant of Cordoba’s
+maximal function estimate in the plane. To prove a version of Proposition 5.1 in Rn , we would
+require a suitable Kakeya estimate in Rn−1 .
+Remark 5.3. The hypothesis that VW is C-Frostman in W can be replaced by the following
+weaker requirement. Let W ∈ W have dimensions w1 × w2 × w3 . Then instead of requiring that
+VW is Frostman in W , we require that the w1 -thickening of each V ∈ VW is C-Frostman in W .
+Remark 5.4. The shading YW′ on W′ is compatible with the shading Y ′ on V, in the sense that
+YW′ (W ) = W ∩ Nw1 (U (VW , Y ′ )), where w1 is the shortest dimension of W .
+   Before proving Proposition 5.1, we first introduce some basic facts about shadings. The
+following lemma says that a mild refinement cannot substantially decrease the multiplicity of an
+arrangement.
+Lemma 5.5. Let (W, Y ) be a family of convex sets, and let (W′ , Y ′ ) be a c-refinement. Then
+(16)                                       µ(W, Y ) ≤ c−1 µ(W′ , Y ′ ).
+In particular, if (W′ , Y ′ ) is a ⪆ 1 refinement of (W, Y ), then µ(W, Y ) ⪅ µ(W′ , Y ′ ).
+Proof. We have |U (W′ , Y ′ )| ≤ |U (W, Y )|, and thus
+                                                  ′                   ′
+                  P                     P                     P
+                        |Y (W )|              ′ |Y (W )|          ′ |Y (W )|
+       µ(W, Y ) = W               ≤ c−1 W                ≤ c−1 W ′ ′         = c−1 µ(W′ , Y ′ ).      □
+                   |U (W, Y )|            |U (W, Y )|         |U (W , Y )|
+  We remark that if (W′ , Y ′ ) is a ⪆ 1 refinement of Y , then it can happen that µ(W′ , Y ′ ) ≫
+µ(W, Y ), but this is okay in our argument because the inequality goes in a favorable direction.
+We say that (V, Y ) is not empty if there is some V ∈ V with Y (V ) non-empty. We begin with a
+basic lemma about multiplicity.
+Lemma 5.6. Suppose that (V, Y ) is not empty. If µ(V, Y )(x) ≥ µlower for every x ∈ U (V, Y ),
+then µ(V, Y ) ≥ µlower . If µ(V, Y )(x) ≤ µupper for every x ∈ U (V, Y ), then µ(V, Y ) ≤ µupper .
+Proof. For the lower bound, we have
+                                               Z                                 X
+                       µlower |U (V, Y )| ≤                 µ(V, Y )(x)dx =             |Y (V )|.
+                                                 U (V,Y )                        V ∈V
+     For the upper bound, we have
+                        X                  Z
+                              |Y (V )| =              µ(V, Y )(x)dx ≤ µupper |U (V, Y )|.             □
+                       V ∈V                U (V,Y )
+                A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                           11
+
+
+   Proposition 5.1 involves a shading YW′ on W′ . This shading will come from the shading Y on
+V according to the following procedure.
+Definition 5.7. Let V = W VW , where V and W are families of convex subsets of Rn of
+                                F
+dimensions roughly v1 × . . . × vn and w1 × . . . × wn respectively. Suppose that each V ∈ VW is
+contained in W . Let YV be a shading on V. We define the induced shading
+                                                                  
+                                   YW (W ) = W ∩ Nw1 U (VW , YV ) .
+                                                                        F
+Note that the induced shading YW depends on the choice of partition W VW . This choice will
+be stated explicitly if it is not clear from context.
+  We need a small variation of Lemma 5.6 for induced shadings.
+Lemma 5.8. Let (V, Y ) be a non-empty collection of convex
+                                                        F      sets and their associated shading.
+Suppose we have a set of boxes W and a partition V = W VW as in Definition 5.7, and let YW
+be the induced shading on W. If µ(W, YW )(x) ≥ µlower for every x ∈ U (V, Y ), then µ(W, YW ) ≳
+µlower .
+                                                                                           
+Proof. For each W ∈ W, define A1 (W ) = Nw1 U (VW , Y ) and A2 (W ) = N2w1 U (VW , Y ) . We
+have YW (W ) = A1 (W ) ∩ W , and |A2 (W )| ≲ |YW (W )|; this is because |W ∩ B| ≳ |B| for every
+ball B of radius w1 with center in W (here W has dimensions roughly w1 × . . . × wn ). Note: at
+      P it is important that the sets in W are boxes, rather than arbitrary convex sets. We also
+this step
+have W χA2 (W ) (x) ≥ µlower on Nw1 (U (V, Y )); denote the latter set by X. We now argue as in
+Lemma 5.6. We have
+                                      Z X                    Z                    X
+   µlower |U (W, YW )| ≤ µlower |X| ≤       χA2 (W ) (x)dx ≲     µ(W, YW )(x) =        |YW (W )|. □
+                                      X W ∈W                     Rn               W ∈W
+
+   The key estimate for the proof of Proposition 5.1 is the following lower bound for the density
+of the induced shading (W, YW ). This estimate is special for R3 , whereas all the preceding
+discussion worked in any dimension.
+Lemma 5.9. Let V = W VW be a collection of convex sets in R3 , where the sets of VW are
+                        F
+contained in W . Let Y be a shading on V, and let YW be the induced shading on W, as in
+Definition 5.7. Suppose that for each W ∈ W, the set VW is C-Frostman in W . Then for each
+W ∈ W, we have
+(17)                             |YW (W )| ⪆ C −1 λ(VW , Y )2 |W |.
+Proof. The argument is similar to Cordoba’s L2 proof of the Kakeya maximal function conjecture
+in R2 . After dyadic pigeonholing, we may select a set V′W ⊂ VW , dimensions v1 ≤ v2 ≤ v3 , and
+                                              ′
+a number λ ⪆ λ(VW ) soPthat each set in
+                ′
+                                         PVW has dimensions roughly v1 × v2 × v3 , |Y (V )| ∼ λ|V |
+for each V ∈ VW , and V′ |Y (V )| ⪆ VW |Y (V )|. We thus have
+                             W
+                                   X                   X
+                  λ|V′W | ≳ |V |−1   |Y (V )| ⪆ |V |−1   |Y (V )| ⪆ λ(VW , Y )|VW |.
+                                V′W                  VW
+
+In particular, since VW is C-Frostman relative to W , we have that V′W is ⪅ λ(VW λ
+                                                                                   ,Y ) C-Frostman
+relative to W .
+   Let w1 × w2 × w3 be the dimensions of the set W that we fixed above. We have vi ≤ wi
+for i = 1, 2, 3. Define pi = max(vi , w1 ), and define P = {Nw1 (V ) : V ∈ V′W }; each P ∈ P has
+dimensions comparable to p1 × p2 × p3 . (We note that  S the sets P ∈ P need not be essentially
+distinct. We have |P| = |V′W |. ) Define YP (P ) = P ∩ V′ Nw1 (Y (V )).
+                                                           W
+12                           LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+   Since each P ∈ P contains a set V ∈ V′W [P ] with |Y (V )| ≥ λ|V |, and since v1 ≤ w1 , we have
+that the w1 -covering number of Y (V ) satisfies
+                                        λw1−2 v2 v3 , if v2 ≥ w1 ,
+                                       
+
+                        Ew1 (Y (V )) ≳    λw1−1 v3 ,   if v3 ≥ w1 > v2 ,
+                                          1,           if w1 > v3 .
+                                       
+
+In each of the above scenarios, we have |YP (P )| ≳ w13 Ew1 (Y (V )) ≳ λ|P | for each P ∈ P.
+   By Remark 3.3, there is a subset P′ ⊂ P that is ⪅ λ(VW   λ
+                                                              ,Y ) C-Frostman relative to W . Define
+           p2                           ′   ′               ′
+θ0 = min(w2 ,p3 ) . Observe that if P, P ∈ P with |P ∩ P | ≥ θ|P | for some θ ∈ [θ0 , 1], then P ′
+must be contained in the rectangular prism of dimensions comparable to p1 × θ−1 p2 × p3 given by
+                                                                                             θ −1 |P | ′
+Nθ−1 p2 (P ) ∩ W . This prism has volume roughly θ−1 |P |, and thus contains ⪅ λ(VW  λ
+                                                                                       ,Y ) C |W | |P |
+sets from P′ . We now compute
+                       X       2    X X           X
+                           χP =                            |P ∩ P ′ |
+                               2
+                     P ∈P′             P ∈P′ θ∈[θ0 ,1]    P ′ ∈P′
+                                             θ dyadic |P ∩P ′ |∼θ|P |
+                                       X        X            λ             θ−1 |P | ′      
+                                   ⪅                                    C           |P | θ|P |
+                                                         λ(VW , Y )          |W |
+                                       P ∈P′ θ∈[θ0 ,1]
+                                             θ dyadic
+                                            λ
+                                   ⪅                C|P′ |2 |P |2 /|W |.
+                                       λ(VW , Y )
+Finally, by Cauchy-Schwarz and the fact that λ ⪆ λ(VW ), we have
+                                                          2  X          2
+                    |YW (W )| ≥ |U (P′ , YP )| ≳ λ|P ||P′ | /     χYP (P )
+                                                                                          2
+                                                                              P ∈P′
+
+                                ⪆ C −1 λλ(VW , Y )|W | ≥ C −1 λ(VW , Y )2 |W |.                       □
+Remark 5.10. Observe that the hypothesis that VW is C-Frostman in W can be replaced with
+the weaker hypothesis that the w1 -thickening of each V ∈ VW is C-Frostman in W (here w1
+is the smallest dimension of W ). Indeed, the quantities p1 , p2 , p3 from the above proof are not
+changed if we thicken each V ∈ VW by w1 , and the set P remains unchanged by this procedure.
+     We now have the tools to prove Proposition 5.1.
+Proof of Proposition 5.1. Let us abbreviate λ = λ(V, Y ).
+   By pigeonholing, we can select a set V′ ⊂ V and    ′               ′
+                                                 F W ′⊂ W so that (V , Y′ ) is a ⪆ 1 refinement
+                                           ′   ′
+of (V, Y ), |Y (V )| ⪆ λ|V | for each V ∈ V , V = W′ VW , and each set VW has approximately
+                                                          ′
+                                                          W is ⪅ C-Frostman in W .
+the same cardinality. We can do this so that each family VF
+                                           ′            ′
+   By Lemma 5.5 we have µ(V, Y ) ⪅ µ(V , Y ). Since V = W′ V′W , we have
+                                                         X
+                                   µ(V′ , Y )(x) =            µ(V′W , Y )(x).
+                                                         W′
+   For each x ∈ U (V′ , Y ) we can choose µinner , µouter , and µ̃ with µouter ≤ µ̃ so that
+     (i) µ(V′ , Y )(x) ≈ µinner µouter .
+    (ii) There are ∼ µouter sets W ∈ W′ so that µ(V′W , Y )(x) ∼ µinner .
+   (iii) There are ∼ µ̃ sets W ∈ W′ so that µ(V′W , Y )(x′ ) ∼ µinner for some x′ ∈ B(x, w1 ).
+   Next we pigeonhole the values of µinner , µouter , and µ̃. Define Ω(µinner , µouter , µ̃) to be
+the set of x obeying Items (i) and (ii) and (iii) above. U (V′ , Y ) is equal to the union of ≲
+(log |V|)(log |W|)2 many sets Ω(µinner , µouter , µ̃). We choose µinner , µouter , and µ̃ so that
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                    13
+
+
+
+                         Z                                             Z
+                                                      ′
+(18)                                              µ(V , Y )(x)dx ≈           µ(V′ , Y )(x)dx.
+                          Ω(µinner ,µouter ,µ̃)                         Rn
+
+   Next we define the shading Y ′ on V′ . If V ∈ V′W , we define
+               Y ′ (V ) = Y (V ) ∩ Ω(µinner , µouter , µ̃) ∩ {x : µ(V′W , Y )(x) ∼ µinner }.
+We define YW′ to be the shading on W′ induced by the shading Y ′ on V′ = W′ V′W (recall
+                                                                                           F
+Definition 5.7). We have now defined all the characters and we have to check the six items in
+the conclusion of Proposition 5.1.
+   Since YW′ is induced by the shading Y ′ , it follows Item 5 and the claim in Remark 5.4 are
+satisfied. We have µ(V′W , Y ′ )(x) ∼ µinner on U (V′W , Y ′ ). This gives Item 3. Note that YW′ (W )
+is non-empty if and only if (VW , Y ′ ) is non-empty. In this case, by Lemma 5.6, we get
+(19)                                           µ(VW , Y ′ ) ⪆ µinner .
+  By Item (ii) we have µ(W′ , YW′ )(x) ≳ µouter for all x ∈ U (V′ , Y ′ ), and thus by Lemma 5.8 we
+have
+(20)                                           µ(W′ , YW′ ) ⪆ µouter .
+  We have µ(V′ , Y ′ )(x) ≲ µinner µouter on U (V′ , Y ′ ). Thus by Lemma 5.6, (19), and (20), we
+conclude that for each W ∈ W′ we get Item 4:
+(21)                 µ(V, Y ) ⪅ µ(V′ , Y ′ ) ⪅ µinner µouter ⪅ µ(W′ , YW′ )µ(V′W , Y ′ ).
+   Next we check Item 1: (V′ , Y ′ ) is a ⪆ 1 refinement of (V, Y ). Since (V′ , Y ) is a ⪆ 1 refinement
+of (V, Y ), we have to check that (V′ , Y ′ ) is a ⪆ 1 refinement of (V′ , Y ), which means that
+                                      X                 X
+(22)                                       |Y ′ (V )| ⪆     |Y (V )|.
+                                         V ∈V′                 V ∈V′
+
+   To check the claim, the key point is that if x ∈ Ω(µinner , µouter , µ̃), then µ(V′ , Y )(x) ⪅
+µinner µouter ≲ µ(V′ , Y ′ )(x). Combining this with (18), we see that
+                 X                Z                  Z
+                      |Y ′ (V )| = µ(V′ , Y ′ )(x) ≥                 µ(V′ , Y ′ )(x) ⪆
+                 V ∈V′                                         Ω(µinner ,µouter ,µ̃)
+
+                     Z                                          Z                      X
+                                                  ′
+                 ⪆                            µ(V , Y )(x) ≈        µ(V′ , Y )(x) =            |Y (V )|.
+                      Ω(µinner ,µouter ,µ̃)                                            V ∈V′
+This proves Item 1.
+    In order to check Item 6, we make one more refinement. We cover U (W′ , YW′ ) by boundedly
+overlapping balls of radius w1 . After dyadic pigeonholing, we may select a ≈ 1 refinement of Y ′ ,
+obtained by replacing each set Y ′ (V ) by Y ′ (V ) ∩ Z for a common set Z, so that |U (V′ , Y ′ ) ∩ Bw1 |
+is roughly the same for each of these balls. By abuse of notation, we will still call this refinement
+Y ′ . There is a corresponding refinement of YW′ from applying Lemma 5.8, and we will still call
+it YW′ . These refinements do not disturb the items we have already established, and they give
+us Item 6. In particular, since we have made only a ⪆ 1 refinement of (V′ , Y ′ ), (22) and Item 1
+still hold.
+    Finally we check Item 2: λ(W′ , YW′ ) ⪆ C −1 λ2 . For dyadic τ , we define W′τ as
+                                                X
+                          W′τ = W ∈ W′ :             |Y ′ (V )| ∼ τ λ|V ||V′W | .
+                                 
+
+                                                      V ∈V′W
+14                           LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+     Combining (22) and the assumption that |Y (V )| ⪆ λ|V | for every V ∈ V′ , we see that
+            X X                      X              X             X X
+                     τ λ|V ||V′W | ∼   |Y ′ (V )| ⪆    |Y (V )| ⪆          λ|V ||V′W |.
+               τ   W ∈W′τ                V ∈V′                     V ∈V′              τ   W ∈W′τ
+
+Since |V′W | are essentially constant in W , we can simplify this formula to
+                                         X
+(23)                                         τ |W′τ | ⪆ |W′ |.
+                                                 τ
+
+     This implies that
+                                      X                   X
+(24)                                         τ |W′τ | ≳           τ |W′τ | ⪆ |W′ |.
+                                      τ ⪆1                τ
+
+If W ∈ W′τ , then since V′W is ⪅ C-Frostman in W , Lemma 5.9 gives the bound
+                                         |YW′ (W )| ⪆ C −1 τ 2 λ2 |W |.
+     Now we are ready to estimate λ(W′ , YW′ ).
+                              X                 X
+                                  |YW′ (W )| ≥    |W′τ |C −1 τ 2 λ2 |W |.
+                                W ∈W′                         τ
+                                                              2
+We can bound this using (24). If τ ⪆ 1, then τ ⪆ τ , and so
+              X                             X
+                   |W′τ |C −1 τ 2 λ2 |W | ⪆   |W′τ |τ C −1 λ2 |W | ⪆ |W′ |C −1 λ2 |W |.
+                      τ                           τ ⪆1
+
+In total, we have
+                                      X
+                                             |YW′ (W )| ⪆ |W′ |C −1 λ2 |W |.
+                                    W ∈W′
+                               ′
+Rearranging this gives λ(W , YW′ ) ⪆ C −1 λ2 as desired.                                             □
+
+   We also state an easier variant of Proposition 5.1 in the special case when V and W are both
+sets of tubes.
+Lemma 5.11. Suppose T isSa uniform set of δ-tubes and Y is a shading on T.
+   Let ρ ∈ [δ, 1] and let T = Tρ ∈Tρ T[Tρ ]. Let Y be a shading on T with |Y (T )| ∼ λ|T | for each
+T ∈ T.
+   Then there is a subset T′ρ ⊂ Tρ and a shading YT′ρ on T′ρ with λ(T′ρ , YT′ρ ) ⪆ λ. There is a
+shading Y ′ on T′ = T′ρ T[Tρ ] so that (T′ , Y ′ ) is a ≈ 1 refinement of (T, Y ), and for all Tρ ∈ T′ρ
+                      F
+
+we have
+(25)                                µ(T, Y ) ⪅ µ(T′ρ , YT′ρ )µ(T[Tρ ], Y ′ ).
+     We also have the pointwise containment
+                                                          [
+(26)                                 TY ′ (x) ⊂                    (T[Tρ ])Y ′ (x).
+                                                       Tρ ∈T′ρ
+                                                     x∈YT′ (Tρ )
+                                                          ρ
+
+
+     Furthermore, for each x ∈ U (T′ρ , YT′ρ ) we have
+                                                                   |U (T, Y ′ ) ∩ B(x, ρ)|
+(27)                        |U (T, Y ′ )| ⪆ |U (T′ρ , YT′ρ )|                              .
+                                                                         |B(x, ρ)|
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                              15
+
+
+   The proof of (25) is the same as the proof of Proposition 5.1, except in place of Lemma 5.9 we
+use the fact that if Tρ ⊃ T , then |Tρ ∩ Nρ (Y (T ))| ≳ |Y|T(T| )| |Tρ |. Thus we do not need to assume
+that TTρ is C-Frostman in Tρ , and we obtain the estimate λ(T′ρ , YT′ρ ) ⪆ λ, which is stronger than
+its analogue in Proposition 5.1.
+
+                     6. Multiplicity estimates for slabs and planks
+   In Section 5 we reduced the problem of controlling µ(V, YV ) for an arbitrary collection of
+convex sets in R3 to the problem of controlling the multiplicity of two new families of convex
+sets, one of which is Katz-Tao and the other is Frostman. The estimates KKT (β) and KF (β)
+control the intersection multiplicity of sets of tubes in R3 that are Katz-Tao and Frostman,
+respectively. In this section we will show that incidence bounds for arbitrary convex sets in R3
+can be systematically reduced to incidence bounds for tubes.
+Katz-Tao multiplicity estimates. Lemma 6.1 below says that the Kakeya estimate KKT (β)
+implies an analogous estimate for planks of dimensions a×b×1. Furthermore, a stronger estimate
+holds when a << b, provided that the planks do not concentrate into slabs (i.e. sets of dimensions
+θ × 1 × 1 for θ << 1). To make this latter statement precise, we must define what it means for
+planks to concentrate into slabs.
+   If P is a set of planks in R3 of dimensions a × b × 1, θ ∈ [a/b, 1], and S is a θ × 1 × 1 slab, then
+we define
+(28)                        PS = {P ∈ P : P ⊂ S and ∠(T P, T S) ≤ θ}.
+In the above, ∠(T P, T S) refers to the angle between the planes T P, T S, where T P is the plane
+spanned by the two longest axes of P , and similarly for S (this is defined up to accuracy θ).
+Lemma 6.1. Suppose that KKT (β) holds. Then for every ϵ > 0, there exists η, b0 > 0 such that
+the following holds for any 0 < a ≤ b ≤ b0 . Let P be a set of a × b × 1 planks in B1 , and let YP be
+a shading on P with density λ(P, YP ) ≥ aη . Suppose that the planks do not concentrate into slabs,
+in the following sense: there exists 0 ≤ γ ≤ 1 so that for every θ ∈ [a/b, 1] and every θ × 1 × 1
+plank S, |PS | ≤ a−η θγ |P|.
+   If P is Katz-Tao, then
+                                          a (1+γ)β/2            β/2
+                             µ(P) ≤ a−ϵ                 (ab)−1 |P|     .
+                                           b
+More generally, we have
+                                                  a (1+γ)β/2            β/2
+(29)                  µ(P) ≤ a−ϵ ∆max (P)1−β/2                  (ab)−1 |P|     .
+                                                   b
+Remark 6.2. We will only apply Lemma 6.1 in the special cases γ = 0 (in which case the non-
+concentration condition is vacuous, and can be ignored), and γ = 1. When a = b, P is Katz-Tao,
+and γ = 0, the RHS of (29) is ⪅ (a−2 |P|)β/2 , which matches the estimate KKT (β) for a-tubes.
+Remark 6.3. The inequality automatically holds in the case when µ(P) ≤ a−η . The right-hand
+side of (29) is always ≥ a−η , because the hypothesis implies that |P| ≥ aη (b/a)γ and η is much
+less than ϵ.
+
+Frostman multiplicity estimates. Lemma 6.4 below says that the Kakeya estimate KF (β)
+implies an analogous estimate for planks of dimensions a × b × 1, provided we avoid the following
+bad scenario: Let P be a set of planks of dimensions a×b×1, let P ∈ P, let θ ∈ [a/b, 1]. We define
+the “thickened plank” Pθ = Nθb (P ), i.e. Pθ has dimensions roughly θb × b × 1. If Pθ contains
+a very large number of planks from P, then this can cause an unacceptably large intersection
+16                        LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+multiplicity µ(P). The next result says that this is the only obstruction to obtaining an analogue
+of KF (β) for planks.
+Lemma 6.4. Suppose that KF (β) holds. Then for every ϵ > 0, there exists η, b0 > 0 such that
+the following holds for any 0 < a ≤ b ≤ b0 . Let P be a set of a × b × 1 planks in B1 , and let Y
+be a shading on P with density λ(P, Y ) ≥ aη . Suppose that the planks do not concentrate into
+thickened planks, in the following sense: there is a number M ≥ 1 so that for each θ ∈ [a/b, 1]
+and every P ∈ P, we have |P[Pθ ]| ≤ M θ. Then
+                                                                      β/2
+(30)                      |U (P, Y )| ≥ aϵ CF (P)β/2−1 b2β M −1 b2 |P|     ,
+and
+                                                    a           1−β/2
+(31)                    µ(P) ≤ a−ϵ CF (P)1−β/2 M β/2 b−2β b2 |P|       .
+                                                    b
+Remark 6.5. Both inequalities automatically hold in the case when µ(P) ≤ a−η . To see this,
+                                                          1
+note that M ≥ b/a (by taking θ = a/b) and that CF (P) ≳ |P|ab .
+
+Tubes that factor through planks. Lemmas 6.1 and 6.4 allow us to obtain improved mul-
+tiplicity bounds for families of tubes that factor through planks. The precise statement is as
+follows.
+Proposition 6.6. Suppose that KKT (β) and KF (β) hold. Then for all ϵ > 0, there exists
+η, δ0 > 0 so that the following holds for all δ ≤ δ0 . Let (T, Y ) be uniform, with λ(T, Y ) ≥ δ η .
+(A) Suppose T is essentially distinct and there is a scale ρ so that for each Tρ ∈ Tρ , there is a
+family of a × b × 1 planks that factors T[Tρ ]. Then
+                                                  a 3β/2 −2β 2 1−β/2
+(32)                  µ(T, Y ) ≤ δ −ϵ CF (T)1−β/2        δ     δ |T|       .
+                                                   b
+(B) Suppose there is a scale ρ and a family of a × b × 1 planks that factors Tρ . Then
+                                                      a 3β/2 −2 β/2
+(33)                    µ(T, Y ) ≤ δ −ϵ ∆max (T)1−β/2         δ |T|     .
+                                                      b
+   Note that the analogue of Remark 3.6 applies to Lemmas 6.1 and 6.4, and to Proposition 6.6.
+The remainder of this section is devoted to proving Lemmas 6.1 and 6.4, and Proposition 6.6.
+6.1. Slabs. A standard L2 method gives strong bounds for the incidences of slabs. A key
+character is the notion of typical intersection angle. Suppose that S is a set of δ × 1 × 1 slabs
+with a shading Y . Define the set of incidence triples
+
+                           T ri(S) = {(x, S1 , S2 ) : x ∈ Y (S1 ) ∩ Y (S2 )}.
+   There is a natural measure on T ri(S) coming from the volume measure for x and the counting
+measure for S1 , S2 . We can define the angle between two slabs S1 , S2 , which is well defined up
+to additive error δ. Then we define
+
+                      T riθ (S) = {(x, S1 , S2 ) ∈ T ri(S) : angle(S1 , S2 ) ∼ θ}.
+Definition 6.7. We say that θ is a typical angle of intersection for S if |T riθ (S)| ≈ |T ri(S)| up
+to log(1/δ) factors. If µ(S) ≥ 2, then S always has a typical intersection angle θ ∈ [δ, 1].
+Lemma 6.8. Suppose S is a set of δ × 1 × 1 slabs contained in S̃, a θ × 1 × 1 slab, with δ ≤ θ ≤ 1.
+Suppose the slabs of S are shaded with λ(S, Y ) ≥ δ η . If θ is a typical intersection angle for S,
+then |U (S, Y )| ⪆ δ 2η |S̃|.
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                 17
+
+                    P
+Proof. We let f =      S∈S 1Y (S) . Note that
+                             Z                         X
+                                 f 2 = |T ri(S)| =               |Y (S1 ) ∩ Y (S2 )|.
+                                                     S1 ,S2 ∈S
+  By hypothesis, we have
+
+                                                                                                 δ2
+             Z                                  X
+                 f 2 = |T ri(S)| ≈                                  |Y (S1 ) ∩ Y (S2 )| ≤ |S|2      .
+                                                                                                 θ
+                                      S1 ,S2 ∈S,angle(S1 ,S2 )∼θ
+
+                                            f ≳ |S||S|δ η = |S|δ 1+η . By Cauchy-Schwarz, since f is
+                                        R
+On the other hand, we know that
+supported in U (S),
+
+                                            ( f )2
+                                             R
+                                                      |S|2 δ 2+2η
+                              Z
+                                            2
+                                        f ≥         ≈             .
+                                            |U (S)|     |U (S)|
+  Comparing, we get
+
+                                        |U (S)| ⪆ θδ 2η = |S̃|δ 2η .                                    □
+          2
+   This L bound leads to sharp estimates for the analogue of Theorem 1.1 where tubes are
+replaced by slabs that have thickness δ and length and width close to 1.
+   Finally, we record the following variant of Cordoba’s maximal function estimate in the plane.
+The proof is similar to that of Lemma 6.8, so we will only provide a brief sketch.
+Lemma 6.9. Suppose S is a set of δ × b × c slabs in B1 shaded with λ(S) ≥ δ η . If b, c ≥ δ η and
+∆max (S) ≤ δ −η , then µ(S, Y ) ≲ δ −8η . If CF (S) ≤ δ −η , then |U (S)| ≥ δ 8η .
+Proof. Let f = S∈S 1Y (S) . Let k0 = ⌈log 1/δ⌉. For each S1 ∈ S and k = 0, . . . , k0 , let S1k =
+                  P
+
+N2k δ (S1 ) ∩ B1 denote the intersection of the 2k δ-neighbourhood of S1 with the unit ball; this set
+is contained in a box of dimensions 2k+1 δ × 2 × 2. Define S1−1 = ∅. Note that if S2 ∈ S with
+S2 ∈ N2k δ (S1 )\N2k−1 δ (S1 ), then |S1 ∩ S2 | ≲ 2−k δ. We have
+          Z         X                  X X    k0    X                     X X    k0
+             f2 ≤         |S1 ∩ S2 | ≤                       |S1 ∩ S2 | ≲           2−k δ|S[S1k ]|.
+                 S1 ,S2 ∈S             S1 ∈S k=0       S2 ∈S                      S1 ∈S k=0
+                                                   S2 ∈S1k \S1k−1
+
+  If ∆max (S) ≤ δ −η , then |S[S1k ]| ≲ δ −η |S1k ||S|−1 R≲ δ −3η 2k , and thus f 2 ⪅ δ 1−3η |S|. If
+                                                                                R
+
+CF (S) ≤ δ −η , then an analogous computation     yields f 2 ⪅ δ 1−3η |S||S|2 .
+                                                 η
+                                  R
+  Comparing these bounds with f ≳ |S||S|δ , with |S| ∼ δbc, completes the proof                   □
+6.2. Planks. Next we suppose that P is a set of a × b × 1 planks in B1 . We will study µ(P)
+by relating it to incidence problems involving slabs and tubes. In a sense, an incidence problem
+for planks can be broken down into an incidence problem for slabs and an incidence problem
+for tubes. The incidence problem for slabs is solved completely using Lemma 6.8. Assuming
+KKT (β) or KF (β) we get information about the incidence problem for tubes. In this way, we
+are able to prove estimates for µ(P) based on various geometric assumptions about P.
+   Let us describe this process informally first and then state a formal lemma. Given two inter-
+secting planks, P1 , P2 , define the angle of intersection as the angle between the planes T P1 , T P2 ,
+where T P is the plane spanned by the two longest axes of P . If the planks P1 and P2 have
+dimensions a × b × 1, then this angle is meaningfully defined up to accuracy a/b. Let θ denote a
+“typical” angle of intersection for P.
+   First we note that if the angle between P1 and P2 is ≫ θ, then their intersection will not play
+an important role. Therefore, we can subdivide P into smaller collections of planks as follows. If
+18                         LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+S is a θ × 1 × 1 slab in B1 , we define PS as in (28). We can now decompose P as P = ⊔S PS , where
+S varies over some essentially distinct slabs S. If θ is a typical angle of intersection of (P, Y ),
+then morally the sets U (PS , Y ) are disjoint and we can study them separately. Fix a single S
+and we study PS .
+   Next let Q denote a θb × b × b box, and let PQ be the set of planks P ∈ PS so that P ∩ Q
+has dimensions a × b × b. In other words, PQ are the planks that intersect Q “tangentially”,
+making the intersection as large as possible. Assuming that µ(P) ≫ 1 and assuming that PQ is
+not empty, then morally Lemma 6.8 tells us that |U (PS , Y ) ∩ Q| ≈ |Q|. For each plank P ∈ PS ,
+the θb-neighborhood of P can be covered by boxes Q as above, and so we see that morally most
+of this neighborhood is contained in U (PS , Y ). This motivates defining thickened version of PS
+as follows.
+Definition 6.10. For each P ∈ P, define Pθ to be the θb-neighborhood of P . Define Pθ to be a
+set of essentially distinct prisms of the form Pθ , so that each P ′ ∈ P is contained in a set Pθ ∈ Pθ
+for which Pθ′ is comparable to Pθ . Note that if Pθ and Pθ′ are comparable, then they are contained
+in comparable slabs S and S ′ . Thus Pθ decomposes into a boundedly overlapping union S Pθ,S ,
+                                                                                              S
+where the union is taken over incomparable slabs of dimensions θ × 1 × 1.
+   In the previous paragraph, we saw that if θ is a typical angle of intersection for P, then morally
+U (PS ) is almost the same as U (Pθ,S ).
+   Next we have to study U (Pθ,S ). There is a change of variables that takes S to the unit ball
+and takes each Pθ ∈ Pθ,S to a tube of radius b. Therefore, the problem of estimating |U (Pθ,S )|
+is equivalent to a problem about tubes which we can bound using KKT (β) and/or KF (β).
+   The following two lemmas give a precise version of the moral statements above. First we
+carefully define the typical angle of intersection.
+Lemma 6.11. Let (P, Y ) be a family of a × b × 1 planks and their associated shading. Let η > 0
+and suppose that µ(P, Y ) ≥ a−η . Then there is an ≈ 1 refinement (P,        ′
+                                                                         √Y ) −1 of (P, Y ) and a number
+                                                                           log a
+θ ∈ [a/b, 1] with the following properties. In what follows, let A = e             .
+      • (P, Y ′ ) has constant multiplicity on U (P, Y ′ ) up to a factor ∼ 1.
+      • If PY ′′ (x) ⊂ PY ′ (x) with |PY ′′ (x)| ≥ A1 |PY ′ (x)|, then
+
+                                        max            ∠(T P1 , T P2 ) ≈ θ.
+                                   P1 ,P2 ∈PY ′′ (x)
+
+Proof. First we replace (P, Y ) with an ≈ 1 refinement (P, Y1 ) that has constant multiplicity.
+Next, fix a point x ∈ U (P, Y1 ).
+                  −1 3/4
+   Let B = e(log a ) . The point here is just that AN ≪ B and B N ≪ a−1 for any real number
+N.
+   For a subset P′ ⊂ PY1 (x), we define the maximal angle of P′ as
+
+                                   M (P′ ) = max ′ ∠(T P1 , T P2 ).
+                                               P1 ,P2 ∈P
+
+   We first check if there is a subset P1 ⊂ PY1 (x) so that |P1 | ≥ A1 |PY1 (x)| and with M (P1 ) ≤ B1 .
+If not, we set PYalmost (x) = PY1 (x) and θ(x) = 1.
+   If there is such a P1 , we select such a set P1 , and we check if there is a subset P2 ⊂ P1 so that
+|P2 | ≥ A1 |P1 | and M (P2 ) ≤ (1/B)M (P1 ). If not, we output PYalmost (x) = P1 and θ(x) = M (P1 ).
+   Since |PY1 (x)| ≈ µ(P, Y1 ) ⪆ µ(P, Y ) ⪆ a−η and since M (Pk ) ≥ a/b ≥ a for every k, this
+process must stop eventually at some Pk with k ≲ logB a−1 and |Pk | ≥ A−k |PY1 (x)| ⪆ |PY1 (x)|.
+Then we output PYalmost (x) = Pk . Since we have |PYalmost (x)| ⪆ |PY1 (x)| for each x ∈ U (P, Y1 ),
+we see that Yalmost is a ⪆ 1 refinement of Y1 .
+                  A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                19
+
+
+  At this moment, we have θ(x) which may be different at different points x. We let Y ′ be a
+≳ log 1a−1 refinement of Yalmost so that θ(x) is roughly constant on U (P, Y ′ ) (up to a factor ∼ 1)
+and so that |PYalmost (x)| is roughly constant on U (P, Y ′ ) (up to a factor ∼ 1).                □
+
+Remark 6.12. For some applications, it will be helpful to work at “resolution a” in the following
+sense: if each shading Y (P ) is a union of grid-aligned a/100 cubes, then we can choose the shading
+Y ′ (P ) so that the same is true. Indeed, in the above proof, we consider each grid-aligned a/100
+cube Q, rather than each point x.
+Definition 6.13. We say that θ is a typical angle of intersection for (P, Y ) if (P, Y ) satisfies
+                                                  −1 1/4
+the conclusions of Lemma 6.11 for some A ≥ e(log(a )) .
+   In particular, if (P, Y ′ ) and θ are the output of Lemma 6.11, then θ is a typical angle of
+intersection for (P, Y ′ ). We made the definition of “typical angle of intersection” a little bit
+looser than the conclusion of Lemma 6.11 so that some mild refinements of (P, Y ′ ) will still
+have typical angle of intersection θ. This definition of typical angle of intersection for planks is
+stronger than the definition that we used for typical intersection angle of slabs, Definition 6.7.
+In this definition for planks, at every point x ∈ U (P, Y ), the intersecting planks have angle at
+most θ and there are many pairs of planks with angle ∼ θ. Furthermore, this remains true if the
+shading Y is replaced by a mild refinement.
+Lemma 6.14. Let η > 0 and let (P, Y ) be a set of a × b × 1 planks in the unit ball with
+λ(P, Y ) ≥ aη and µ(P, Y ) ≥ a−η .
+   Then there is a ⪆ 1 refinement (P′ , Y ′ ) of (P, Y ) with |P′ | ⪆ aη |P| and λ(P′ , Y ′ ) ⪆ λ(P, Y ), a
+number N ≥ 1, a number θ ∈ [a/b, 1], and a set of θ × 1 × 1 slabs S so that the following           holds.
+For each S ∈ S, let P′S and P′θ,S be as defined in (28) and Definition 6.10. P′ = S∈S P′S . Then
+                                                                                         S
+
+each Pθ ∈ P′θ,S contains ∼ N planks P ∈ P′S . Furthermore, there is a shading Yθ,S on P′θ,S so
+that
+    (1) If U (P′ , Y ′ ) ∩ Bθb is non-empty, then |U (P′ , Y ′ ) ∩ Bθb | ⪆ a4η |Bθb |.
+    (2) For each S ∈ S, λ(P′θ,S , Yθ,S ) ⪆ a4η and for each Pθ ∈ P′θ,S , Yθ,S (Pθ ) ⊂ U (P′S , Y ′ )
+    (3) |U (P, Y )| ⪆ S∈S |U (P′θ,S , Yθ,S )|.
+                         P
+
+    (4) µ(P, Y ) ⪅ maxS∈S a−4η aN         ′
+                                    bθ µ(Pθ,S , Yθ,S ).
+
+Remark 6.15. If (P, Y ) has a typical angle of intersection θ, then Lemma 6.14 holds for this
+value of θ. The analogue of Remark 6.12 also holds in this setting—if each Y (P ) is a union of
+grid-aligned a/100 cubes, then we can ensure that the same is true for the refinement Y ′ (P ).
+Proof. We begin with a pair (P, Y ) with µ(P, Y ) ≥ a−η . Apply Lemma 6.11 to (P, Y ). This yields
+a refinement (P, Y1 ) and a typical angle of intersection θ obeying the conclusions of Lemma 6.11:
+       • Our set (P, Y1 ) has roughly constant multiplicity: for each x ∈ U (P, Y1 ), |PY1 (x)| ∼ m.
+       • For each x ∈ U (P, Y1 ), maxP1 ,P2 ∈PY1 (x) ∠(T P1 , T P2 ) ∼ θ
+                                                     √     −1
+       • If PY ′′ (x) ⊂ PY1 (x) with |PY ′′ (x)| ≥ e− log(a ) m, then
+
+
+(34)                                     max            ∠(T P1 , T P2 ) ≈ θ.
+                                    P1 ,P2 ∈PY ′′ (x)
+
+As per Remark 6.15, if (P, Y ) already has a typical angle of intersection, then we can skip this
+step.
+   In the rest of the proof, we will continue to refine P and Y1 . We will consider various P̃ ⊂ P
+and Ỹ refining Y1 . For each refinement (P̃, Ỹ ) that we consider, we will check that
+20                         LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+
+                              X                                  X
+(35)                                |Ỹ (P )| ≥ (log 1/a)−O(1)       |Y1 (P )|
+                               P̃                                P
+
+   We will call a refinement good if it obeys (35). If Ỹ is a good refinement, we will further refine
+Ỹ to have roughly constant multiplicity:
+
+(36)                     For each x ∈ U (P̃, Ỹ ), |PỸ (x)| ≳ (log 1/a)−O(1) m.
+Combining (36) and (34), we see that θ is a typical angle of intersection for (P̃, Ỹ ). Equation
+(35) also implies that each shading enjoys λ(P̃, Ỹ ) ⪆ λ(P, Y ) ≥ aη and |P̃| ⪆ λ(P, Y )|P| ≥ aη |P|.
+    Informally, we find good refinements either by pigeonholing or by removing parts of our shaded
+set that are far below average in some respect. Now we turn to the details.
+    By pigeonholing, we may find a good refinement (P2 , Y2 ) and a number N ≥ 1 so that each set
+Pθ contains about N prisms P ∈ P2 . Next we consider slabs S ⊂ B1 with dimensions θ × 1 × 1.
+For a given θ × 1 × 1 slab S, define (P2 )S as in (28). We note that P2 = ⊔S P2,S , where the union
+is over all essentially distinct θ × 1 × 1 slabs S ⊂ B1 .
+    Because the maximal angle of intersecting planks in (P2 , Y2 ) is ≲ θ, each point x ∈ U (P2 , Y2 )
+lies in U (P2,S , Y2,S ) for ≲ 1 sets S. We know that |P2,Y2 (x)| ≥ (log 1/a)−O(1) m and so there must
+be some S so that |P2,S,Y2 (x)| ≥ (log 1/a)−O(1) m. Now we can find a good refinement (P2 , Y3 )
+so that for each S and each x ∈ U (P2,S , Y3,S ), we have |P2,S,Y3,S (x)| ≳ (log 1/a)−O(1) m.
+    Let S be the set of S so that λ(P2,S , Y3,S ) ⪆ λ(P2 , Y3 ) ⪆ aη . Now define P′ = ⊔S∈S P2,S and
+PS = P2,S . Note that (P′ , Y3 ) is a good refinement of (P2 , Y3 ).
+  ′
+
+    Now consider a box Q of dimensions θb × b × b. Define
+                                    P′Q = {P ∈ P′ : |P ∩ Q| ≈ ab2 }.
+If P ∈ P′Q , then P ∩ Q is a slab of dimensions a × b × b. We want to use our estimates about
+slabs to study these slabs inside of Q. Let SQ = {P ∩ Q : P ∈ P′Q }. (Note that the slabs in SQ
+need not be essentially distinct.)
+   The slabs of SQ come with a natural shading Y3,Q , where Y3,Q (P ∩ Q) = Y3 (P ) ∩ Q. We will
+apply Lemma 6.8 to estimate |U (SQ , Y3,Q )|. We know that θ is a typical angle of intersection for
+P′Y3 in the sense of Definition 6.13, and this implies that θ is also a typical angle of intersection
+for (SQ , Y3,Q ) in the sense of Definition 6.7. To apply our Lemma 6.8 about slabs, we need to
+estimate λ(Y3,Q ). Say Q is dense if λ(Y3,Q ) ⪆ λ(Y3,S ) ⪆ aη . If Q is dense, then Lemma 6.8 gives
+the key inequality:
+
+(37)                       |U (P′S , Y3,S ) ∩ Q| ≥ |U (SQ , Y3,Q )| ⪆ a3η |Q|.
+   Notice that there is an essentially unique slab S of dimensions θ × 1 × 1 so that Q ⊂ S and
+∠(T Q, T S) ≲ θ. For this slab S, P′Q ⊂ P′S . Moreover, we can tile S with a set QS of boxes Q so
+that for each P ∈ P′S ,
+
+                                   P = ⊔Q∈QS P ∩ Q,
+           ′
+where P ∈ PQ whenever P ∩ Q is non-empty.
+   Note that a plank P lies in PQ for many boxes Q, and these Q form an essentially disjoint
+cover of P . Let QP = {Q : P ∈ P′Q }. We define
+                                             [
+                               Y4 (P ) =          Y3 (P ) ∩ Q.
+                                             Q∈QP ,Q dense
+                   A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                           21
+
+
+   Next we show that Y4,S is a good refinement of Y3,S for each S ∈ S. To see this, we note that
+                                     X                                      X
+                                             |Y3,S (P )| = λ(P′S , Y3,S )            |P |.
+                                    P ∈P′S                                  P ∈P′S
+
+   On the other hand,
+                   X                                            X             X
+                           |Y3,S (P ) \ Y4,S (P )| =                                  |Y3,S (P ) ∩ Q| ≤
+                  P ∈P′S                               Q∈QS ,Q not dense P ∈P′Q
+                                         X X                                                        X
+                (1/100)λ(P′S , Y3,S )                   |P ∩ Q| = (1/100)λ(P′S , Y3,S )                     |P |.
+                                        Q∈QS P ∈P′Q                                                P ∈P′S
+
+   If Bθb ⊂ Q, we say Bθb is dense if |U (P′S , Y4,S ) ∩ Bθb | ⪆ a4η |Bθb |. We let D(Q) ⊂ Q be the
+union of the dense balls Bθb . We can now further refine Y4 so that it is contained in the union
+of these dense balls: if P ∈ P′S , we define
+                                                       [
+                                    Y ′ (P ) =                     Y4,S (P ) ∩ D(Q).
+                                          Q∈QP ,Q dense
+
+  Note that if Q is dense, then |U (P′ , Y4 ) ∩ Q \ U (P′ , Y ′ ) ∩ Q| ≪ |U (P′ , Y ′ ) ∩ Q|. Since the
+multiplicity of (P′S , Y4,S ) is roughly constant, removing low density balls is a good refinement.
+                   ′    ′
+So all together (P , Y ) is a ⪆ 1 refinement of (P, Y ).
+  The definition of Y ′ in terms of dense balls gives item 1.
+  And now for each plank Pθ ∈ P′θ,S , define
+(38)                                         Yθ,S (Pθ ) = U (P′S , Y ′ ) ∩ Pθ .
+With this definition, it follows immediately that U (P′θ,S , Yθ,S ) = U (P′S , Y ′ ).
+  If P ⊂ Pθ ∈ P′θ,S , then
+                           |Yθ,S (Pθ )|       #{Q ⊂ Pθ , Q dense}       |Y ′ (P )|
+                                        ⪆ a3η                     ≥ a3η            .
+                              |Pθ |              #{Q ⊂ Pθ }               |P |
+Recall that for each Pθ ∈ P′θ,S , there are ∼ N planks P ∈ P′S with P ⊂ Pθ . Therefore, we have
+
+(39)                                  λ(P′θ,S , Yθ,S ) ⪆ a3η λ(P′S , Y ′ ) ⪆ a4η
+   This proves item 2.
+   We also have
+                                                       X                          X
+(40)               |U (P′ , Y )| ≥ |U (P′ , Y ′ )| ≳         |U (P′S , YS′ )| =         |U (P′θ,S , Yθ,S )|.
+                                                       S∈S                        S∈S
+
+   This proves item 3.
+   We can also use this setup to control µ(P′ , Y ). Notice that since each point x lies in U (P′S , YS′ )
+for ≲ 1 slabs S ∈ S, we have
+                                    µ(P′ , Y ) ⪅ max µ(P′S , YS′ ).
+                                                             S∈S
+   Next we estimate µ(P′S , YS′ ) using that U (P′S , YS′ ) = U (P′θ,S , Yθ,S ). We know that
+                                   ′
+                       P                    P
+             ′   ′       P ∈P′S |Y (P )|       P ∈P′S |P |       |P′S ||P |           |P′S ||P |
+         µ(PS , YS ) =                   ⪅                   =                  =                     ,
+                        |U (P′S , YS′ )|    |U (P′S , YS′ )|   |U (P′S , YS′ )|   |U (P′θ,S , Yθ,S )|
+and
+22                              LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+                                P                                      P
+                                    Pθ ∈P′θ,S |Yθ,S (Pθ )|                Pθ ∈P′θ,S |Pθ |               |P′θ,S ||Pθ |
+           µ(P′θ,S , Yθ,S ) =                                ⪆a   4η
+                                                                                             = a4η                       .
+                                    |U (P′θ,S , Yθ,S )|                |U (P′θ,S , Yθ,S )|           |U (P′θ,S , Yθ,S )|
+We have
+                                                              1 ′
+                                                     |P′θ,S | ≈ |P |,
+                                                             N S
+                                                             θb
+                                                      |Pθ | = |P |.
+                                                             a
+Plugging in gives
+
+                                                                          aN
+                                µ(P, Y ) ⪅ µ(P′S , YS′ ) ⪅ a−4η              µ(P′θ,S , Yθ,S ).
+                                                                          bθ
+     This proves item 4.                                                                                                     □
+   By a linear change of variables, we can convert Pθ,S from a set of θb × b × 1 planks in S into a
+set T of b-tubes in B1 . To see this more carefully, recall that Pθ,S consists of θb × b × 1 planks P
+in the slab S so that T P is tangent to T S. The slab S has dimensions θ × 1 × 1. Let L : S → B1
+be a linear change of variables. Because of the tangency condition on P , L(P ) has dimensions
+b × b × 1.
+   To summarize, we have reduced the original incidence problem for P to an incidence problem
+for Pθ,S , which is equivalent to an incidence problem for tubes T. If we assume KKT (β) or
+KF (β), then we can get bounds for µ(T) and hence bounds for µ(P). We are now ready to prove
+Lemmas 6.1 and 6.4.
+6.3. A Katz-Tao multiplicity estimate.
+Proof of Lemma 6.1. We may suppose that µ(P, Y ) ≥ a−η , since otherwise we are done by
+Remark 6.3. Apply Lemma 6.14. Abusing notation, we will continue to refer to the resulting
+refinement by (P, Y ). By Lemma 6.14, there is a number θ ∈ [a/b, 1], a number N , and a slab S
+of dimensions θ × 1 × 1 so that we have
+
+                                               aN
+(41)                                      µ(P, Y ) ⪅ a−4η
+                                                   µ(Pθ,S , Yθ,S ).
+                                                bθ
+     Lemma 6.14 also gives a density lower bound
+
+                                        λ(Pθ,S , Yθ,S ) ⪆ a4η .
+   By a linear change of variables, we can convert Pθ,S to a set of b-tubes T in B1 . Since convex
+sets are invariant with respect to linear change of variables, we have
+
+                                                           bθ
+                          ∆max (T) = ∆max (Pθ,S ) ≤ ∆max (Pθ ) ≤
+                                                              ∆max (P).
+                                                          aN
+   Now apply Lemma 3.7 (noting Remark 3.6) with b, ϵ/2 in place of δ, ϵ. If η and b0 are chosen
+sufficiently small, then
+
+                                                                  β/2
+                     µ(Pθ,S ) = µ(T) ≤ a−ϵ/2 ∆max (T)1−β/2 b−2 |T|
+                                                        1−β/2
+                                                      bθ
+                              ⪅ a−ϵ/2 ∆max (P)1−β/2             b−β (|Pθ,S |)β/2
+                                                      aN
+                                                        1−β/2
+                                 −ϵ/2                 bθ
+                              ≲a      ∆max (P)1−β/2
+                                                                b−β (N −1 |PS |)β/2 .
+                                                      aN
+                  A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                     23
+
+
+   And so plugging in (41), we get
+
+                                     aN
+                   µ(P, Y ) ⪅ a−4η      µ(Pθ,S )
+                                     bθ
+                                                            −β/2
+                                                              
+                                  −ϵ/2−4η                bθ
+(42)                          ≤a         ∆max (P)    1−β/2
+                                                                   b−β (N −1 |PS |)β/2
+                                                         aN
+                                                        a β/2
+                              ≤ a−ϵ/2−4η ∆max (P)1−β/2          b−β |PS |β/2 .
+                                                        bθ
+   We know a ≤ bθ, and |PS | ≤ a−η θγ |P|. Plugging these bounds into (42), we get
+                                                         a (1+γ)β/2              β/2
+                        µ(P) ≤ a−ϵ ∆max (P)1−β/2                         (ab)−1 |P|     .    □
+                                                          b
+6.4. A Frostman multiplicity estimate.
+
+Proof of Lemma 6.4. We may suppose that µ(P, Y ) ≥ a−η , since otherwise we are done by
+Remark 6.5. Apply Lemma 6.14. Abusing notation, we will continue to refer to the resulting
+refinement by (P, Y ).
+   By Lemma 6.14, there is a number θ ∈ [a/b, 1] and a set S of θ × 1 × 1 slabs so that
+
+                                       |U (P, Y )| ⪆ |S||U (Pθ,S , Yθ,S )|.
+   Lemma 6.14 also gives a density lower bound
+
+                                             λ(Pθ,S , Yθ,S ) ⪆ a4η .
+   Define C = CF (P, B1 ). This does not imply that CF (Pθ,S , S) ≤ C. So we have to work
+out what we know about Pθ,S . Let Pθ be formed by thickening the planks of P to dimensions
+θb × b × 1. By Lemma 6.14, there is a number N ≤ M θ so that each plank Pθ ∈ Pθ contains ∼ N
+planks of P (recall that we have replaced P by a ≈ 1 refinement, but the refinement preserves
+the upper bound |P[Pθ ]| ≤ M θ).
+   By Remark 3.3(A), CF (Pθ , B1 ) ⪅ CF (P, B1 ) = C, and so
+                                         |Pθ,S | ≤ |Pθ [S]| ≤ Cθ|Pθ |.
+  The set Pθ,S is not necessarily Frostman, but since Pθ is Frostman, we do know that for any
+convex K ⊂ S,
+
+
+(43)                        ∆(Pθ,S , K) ≤ ∆(Pθ , K) ≤ C∆(Pθ , B1 ) ∼ C|Pθ ||Pθ |.
+Since |Pθ | ≈ |S||Pθ,S |,
+                                                    |Pθ ||Pθ,S |
+                            ∆(Pθ,S , K) ⪅ C|S||S|                = C|S||S|∆(Pθ,S , S).
+                                                        |S|
+Therefore CF (Pθ,S , S) ⪅ C|S||S|.
+   Now by a linear change of variables, we can convert Pθ,S to a set of (essentially distinct)
+b-tubes T in B1 . Let YT be the image of the shading Yθ,S under this change of variables. Since
+convex sets are invariant with respect to linear change of variables, CF (T) ⪅ C|S||S|. Also,
+λ(T, YT ) = λ(Pθ,S , Yθ,S ) ⪆ a4η .
+24                         LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+   If η and b0 are chosen sufficiently small depending on ϵ, then by Lemma 3.9 (noting Remark
+3.6) we have
+                         |U (T)| ⪆ aϵ/2 (C|S||S|)β/2−1 b2β (b2 |T|)β/2
+                                 ≈ aϵ/2 C β/2−1 (|S||S|)−1 b2β (b2 |S||Pθ |)β/2
+                                 = aϵ/2 C β/2−1 (|S||S|)−1 b2β (b2 θ|P|/N )β/2
+                                 ≥ aϵ/2 C β/2−1 (|S||S|)−1 b2β (M −1 b2 |P|)β/2 .
+Therefore if b0 > 0 is sufficiently small, we have
+              |U (P)| ≈ |S||U (Pθ,S )| ≈ |S| |S| |U (T)| ≥ aϵ C β/2−1 b2β (M −1 b2 |P|)β/2 .
+This gives the desired lower bound for |U (P)|. To get an upper bound for µ(P), we relate µ(P)
+to |U (P)|. This part is just algebra and we leave the details to the reader.               □
+6.5. Tubes that factor through planks. In this section we will prove Proposition 6.6.
+Part (A). Let C = CF (T). After refining Tρ by a O(1) factor (this induces a harmless re-
+finement on T), we may suppose that each T ∈ T is contained in exactly one tube Tρ ∈ Tρ .
+By hypothesis,
+            F      for each Tρ ∈ Tρ , there is a set WTρ of a × b × 1 planks that
+                                                                                F factors T[Tρ ], i.e.
+T[Tρ ] = WT T[Tρ ]W , where T[Tρ ]W is ∼ 1 Frostman in W . Define W = Tρ WTρ . There is a
+                 ρ                    F
+corresponding decomposition T = W TW , where TW is ∼ 1 Frostman in W . After pigeonholing
+and refining T and W, we may suppose that |Y (T )| is approximately the same for each T ∈ T,
+and |TW | is approximately the same for each W ∈ W. After this step we have that CF (T) ⪅ C,
+and λ(T, Y ) ⪆ δ η .
+   Apply Proposition 5.1 to the pair (T, Y ) and W; we obtain a set W′ ⊂ W, and    S a shading YW
+                                                                                                     ′
+
+on W′ with λ(W′ , YW′ ) ⪆ δ 2η . We also obtain a shading Y ′ (T ) ⊂ Y (T ) on T′ = W′ TW , so that
+(T′ , Y ′ ) is an ≈ 1 refinement of (T, Y ), and
+(44)                     µ(T, Y ) ⪅ µ(W′ , YW′ )µ(TW , Y ′ ) for all W ∈ W′ .
+We have CF (TW , W ) ≲ 1 for each W ∈ W′ . Since CF (T′ ) ⪅ C and |TW | is approximately the
+same for all W ∈ W′ , by Remark 3.3(A) we have that CF (W′ ) ⪅ C. Thus we will use Lemma
+6.4 to bound each of the terms on the RHS of (44). In order to apply Lemma 6.4, we need to
+control to what extent the planks in W′ can concentrate into thicker planks, and similarly for
+the (rescaled) tubes in TW (this is the quantity “M ” from Lemma 6.4).
+   We begin with W′ . For each θ ∈ [a/b, 1] we need to bound the maximum number of a × b × 1
+planks from W′ that are contained in a θb × b × 1 plank. Denote this number by N (θ). Fix a
+plank W ∈ W′ . Recall that W ∈ WTρ for some Tρ ∈ Tρ . Let Wθ be the corresponding θb × b × 1
+plank. Let W ′ ∈ W′ [Wθ ]. Since W ′ contains at least one tube from T, and each tube in T
+is contained in exactly one tube from Tρ , we have Tρ is the unique tube containing W ′ , and
+thus W ′ ∈ WTρ . We conclude that W′ [Wθ ] = WTρ [Wθ ]. Recall that ∆max (WTρ ) ≲ 1, and thus
+|WTρ [Wθ ]| ≲ |Wθ |/|W | = θb×b×1
+                           a×b×1 = θ(b/a). Thus |WTρ [Wθ ]| ≤ M θ for M = b/a. Applying
+Lemma 6.4 (and recalling Remark 3.6), we have
+(45)               µ(W′ , YW′ ) ⪅ δ −ϵ/2 CF (T)1−β/2 (a/b)1−β/2 b−2β (b2 |W|)1−β/2 .
+We remark that in order to apply Lemma 6.4, we need to verify that b is sufficiently small (b ≤ δ ϵ
+will suffice). But if this is not the case, then (32) follows from Lemma 6.9.
+   Next we consider TW . Fix a prism W ∈ W′ . We first have to make a change of coordinates
+that maps W to B1 and each δ tube T ∈ TW to a b−1 δ × a−1 δ × 1 plank. Next we need to
+bound the number of b−1 δ × a−1 δ × 1 planks in a θa−1 δ × a−1 δ × 1 thick plank. Undoing the
+coordinate change, this is the number of tubes of TW in a δ × θb     a δ × 1 plank. Since the tubes
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                               25
+
+                                              2
+of T are essentially distinct, there are ≲ θb
+                                           a     ≤ (b/a)2 θ such tubes. Applying Lemma 6.4
+and remembering that the dimensions of each plank are b−1 δ × a−1 δ × 1 (and using our bound
+M ≤ (b/a)2 ), we get
+(46)                 µ(TW , Y ′ ) ≤ δ −ϵ/2 (a/b)1−β (a−1 δ)−2β (a−2 δ 2 |TW |)1−β/2 .
+Combining (44), (45), and (46), we get (32).
+                                                                                      F
+Part (B). By hypothesis, there is a set W of a × b × 1 prisms that factors
+                                                                      F Tρ , i.e. Tρ = W Tρ,W ,
+and Tρ,W is ∼ 1 Frostman in W . This induces a decomposition T = W TW . Apply Proposition
+5.1 to (T, Y ) and W; while TW might not be Frostman in W , we have that Tρ,W is Frostman
+in W . By Remark 5.3, this is enough to apply the proposition. We obtain a set F     W′ ⊂ W, a
+                       ′          ′     2η                    ′                  ′
+shading YW on W with λ(W ) ⪆ δ , and a sub-shading Y (T ) ⊂ Y (T ) on T = W′ TW , so
+               ′
+
+that (T′ , Y ′ ) is an ≈ 1 refinement of (T, Y ), and
+(47)                     µ(T, Y ) ⪅ µ(W′ , YW′ )µ(TW , Y ′ ) for all W ∈ W′ .
+We have ∆max (TW ) ≤ ∆max (T), and ∆max (W) ≲ 1. We will bound the two terms on the RHS
+of (47) using Lemma 6.1 with γ = 0 and γ = 1, respectively.
+   We begin with W. Applying Lemma 6.1 with γ = 0 (and recalling Remark 3.6), we obtain
+                                                   a β/2            β/2
+(48)                       µ(W′ , YW′ ) ≲ δ −ϵ/2           (ab)−1 |W|         .
+                                                    b
+   Next we consider TW . Select a set W ∈ W so that λ(TW , Y ′ ) ⪆ δ η . To apply Lemma 6.1
+with γ = 1, we make a change of coordinates that maps W to B1 . This change of coordinates
+converts TW , a set of δ-tubes T ⊂ W , to P, a set of b−1 δ × a−1 δ × 1 planks P ⊂ B1 . Notice that
+                                    −1
+the eccentricity of the planks is ab −1δδ = ab . Let YP be the image of the shading Y (T ) after this
+transformation.
+   Next we need to check that P obeys the assumptions of Lemma 6.1 with γ = 1. The first
+assumption of Lemma 6.1 says that if θ ∈ [a/b, 1] and S is a θ × 1 × 1 plank, then |PS | ⪅
+(b−1 δ)−η θ|P|. If we change coordinates back from B1 to W , then S is converted to a convex
+                                                                      |S ′ |
+set S ′ ⊂ W and our desired bound becomes |T[S ′ ]| ⪅ (b−1 δ)−η |W                                ′
+                                                                           | |TW |. Suppose that S has
+              ′    ′   ′       ′      ′    ′                   ′
+dimensions a × b × c with a ≤ b ≤ c . We claim that a ⪆ a ≥ ρ. We will come back to this
+claim below. Assuming this claim, we have
+
+                          |T[S ′ ]|   |Tρ [S ′ ]|   |S ′ |                  |S ′ |
+                                    ≈             ⪅        CF (Tρ,W , W ) ⪅        .
+                           |TW |       |Tρ,W |      |W |                    |W |
+This gives the desired bound on |T[S ′ ]|.
+    To finish we have to check that a′ ≥ a. Choose coordinates x1 , x2 , x3 on W so that W is the
+rectangular box 0 ≤ x1 ≤ a, 0 ≤ x2 ≤ b, and 0 ≤ x3 ≤ 1. The change of coordinates ϕ mapping
+W to B1 is ϕ(x1 , x2 , x3 ) = ( xa1 , xb2 , x3 ).
+    We can assume that PS is non-empty, and so there is at least one P ∈ P with T P = T S (up
+to angle θ). Suppose P = L(T ) where T is a tube from T[W ].
+    Recall that T S is a 2-plane. Let T S ′ = ϕ∗ (T S), another 2-plane. Choose unit vectors
+v1 , v2 to make a basis for T S ′ with v1 in the (x1 , x2 )-plane and v2 parallel to T . We have
+|v1 ∧ v2 | ∼ 1, since T is transverse to the (x1 , x2 ) plane. Since ϕ maps T S ′ to T S = T P , we
+have |ϕ(v1 ) ∧ ϕ(v2 )| ∼ a−1 . Since |ϕ(v2 )| ∼ 1 we see |ϕ(v1 )| ∼ a−1 , and so v1 is transverse to the
+x2 -direction. Let n(S ′ ) be the vector normal to T S ′ . Since v2 is almost in the x3 direction and
+v1 is transverse to the x2 -direction, we have n(S ′ ) transverse to the x1 direction. Now W can be
+covered by θ−1 parallel copies of S ′ and so a′ θ−1 ≳ b and so a′ ≥ θb ⪆ a. This confirms the first
+assumption in 6.1 with γ = 1.
+26                         LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+   We can now apply Lemma 6.1 with γ = 1. Recall that ∆max (P) = ∆max (TW ) ≤ ∆max (T).
+We have
+                                                       a β  ab      β/2
+(49)              µ(TW , Y ′ ) ≤ δ −ϵ/2 ∆max (T)1−β/2             |TW |     .
+                                                        b      δ2
+     Combining (47), (48), and (49), we obtain (33).
+
+                 7. Sticky Kakeya and a sticky / non-sticky dichotomy
+   In this section we will discuss two variants of the sticky Kakeya theorem. Let T be a uniform
+set of δ-tubes. Let ρ ∈ [δ, 1] and let Tρ be the thickening of T at scale ρ. We begin with the
+following two observations
+    (A) If T is Frostman, then by Remark 3.3(A), Tρ is Frostman. In general, however, the tubes
+         in T[Tρ ] will not be Frostman inside Tρ .
+    (B) If T is Katz-Tao, then by Remark 3.3(B), the tubes in T[Tρ ] will be Katz-Tao. In general,
+         however, the tubes in Tρ will not be Katz-Tao.
+   It will be helpful to consider the special cases where the sets T[Tρ ] are Frostman in Tρ , or the
+set Tρ is Katz-Tao.
+Definition 7.1. Let T be a set of δ-tubes in Rn .
+(A) We say that T is Frostman at every scale with error C if for every scale δ ≤ ρ ≤ 1, we have
+
+                              CF (T[Tρ ], Tρ ) ≤ C    for every Tρ ∈ Tρ .
+(B) We say that T is Katz-Tao at every scale with error C if for every scale δ ≤ ρ ≤ 1, we have
+
+                                           ∆max (Tρ ) ≤ C.
+   We will usually consider sets of tubes that are uniform, in the sense of Definition 2.1, but this
+is not required in the above definition.
+Remark 7.2. Definition 7.1(A) is closely related to Definition 2.12 from [9]: if ϵ > 0 and δ > 0
+is sufficiently small depending on ϵ, and if T is a uniform set of δ-tubes that is Frostman at every
+scale with error δ −ϵ , then T “satisfies the Convex Wolff Axioms at every scale with error δ −ϵ ”
+in the sense of [9], Definition 2.12.
+   Recall that a set T is sticky if it is both Frostman at every scale and Katz-Tao at every
+scale. In that case, the sticky Kakeya theorem says that |U (T)| ⪆ 1 and µ(T) ⪅ 1. A mild
+generalization of this result says that if T is Frostman at every scale then |U (T)| ⪆ 1, while if T
+is Katz-Tao at every scale, then µ(T) ⪅ 1.
+Theorem 7.3. For all ϵ > 0, there exists η, δ0 > 0 so that the following holds for all δ ∈ (0, δ0 ].
+Let (T, Y ) be a uniform set of δ-tubes in B1 ⊂ R3 , with λ(T, Y ) ≥ δ η .
+(A) If T is Frostman at every scale with error δ −η , then
+                                           |U (T, Y )| ≥ δ ϵ .
+(B) If T is Katz-Tao at every scale with error δ −η , then
+                                           µ(T, Y ) ≤ δ −ϵ .
+    Theorem 7.3(A) is Theorem 5.2 from [9] (note that [9] defines “Frostman at every scale”
+slightly differently, but this is not a problem—see Remark 7.2). To prove Theorem 7.3(B), we
+first need a simple multiscale lemma about ∆max .
+                A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                    27
+
+
+Lemma 7.4. Let T be a set of δ-tubes in B1 ⊂ Rn and let δ = ρM ≤ ρM −1 ≤ ... ≤ ρ1 ≤ ρ0 = 1
+be a sequence of scales. Suppose that T is uniform at each scale ρk , in the sense that there is a
+set Tρk of ρk -tubes for which Items (i), (ii) and (iii) from Definition 2.1 hold. Then
+                                                 M
+                                                 Y
+                              ∆max (T) ≤ C(n)M          ∆max (Tρm [Tρm−1 ]).
+                                                 m=1
+
+Proof. Suppose that K ⊂ B1 is a convex set. We have to estimate ∆(T, K) = |T ||T[K]|
+                                                                               |K|   .
+   Let Km denote the ρm -neighborhood of K. For a tube T ∈ T, let Tρm be the corresponding
+thickened tube in Tρm , and notice that if T ⊂ K then Tρm ⊂ Km . So if T ⊂ K, then Tρ1 ⊂ K1 ,
+and Tρ2 ⊂ Tρ1 ∩ K2 and in general Tρm ⊂ Tρm−1 ∩ Km . So
+
+                     M                                      M
+                     Y
+                                                        M
+                                                            Y                           |Km ∩ Tρm−1 |
+(50)      |T[K]| ⪅         |Tρm [Tρm−1 ∩ Km ]| ≤ C(n)             ∆max (Tρm [Tρm−1 ])                 .
+                     m=1                                    m=1
+                                                                                           |Tρm |
+  Now
+
+                 |Km ∩ Tρm−1 |    |Km ∩ Tρm−1 | |Tρm−1 |      |Km | |Tρm−1 |
+                               =                 ·        =          ·       .
+                     |Tρm |          |Tρm−1 |      |Tρm |    |Km−1 | |Tρm |
+  Plugging this into (50) and simplifying the telescoping product, we get
+                                        " M                      #
+                                          Y                        |K|
+                        |T[K]| ≤ C(n)M        ∆max (Tρm [Tρm−1 ])       .                                 □
+                                          m=1
+                                                                   |T |
+Lemma 7.5. Let ϵ, δ > 0 and let T be a set of δ-tubes in B1 ⊂ Rn . Suppose that T is uniform
+at each of the scales δ = ρM < . . . < ρ0 = 1, in the sense that there is a set Tρk of ρk -tubes for
+which Items (i), (ii) and (iii) from Definition 2.1 hold. Suppose furthermore that for each k we
+have
+         ρk
+      • ρk−1 ⪆ δϵ .
+                                    ϵ
+      • ∆max (Tρk [Tρk−1 ]) ⪅ ρk−1ρk    .
+   Then provided that δ > 0 is sufficiently small depending     on ϵ, M , and n, there is a set of
+translations Rj of cardinality ⪅ δ −ϵ (|T ||T|)−1 so that j Rj (T) is Frostman at every scale with
+                                                         S
+
+error δ −(n+3)ϵ .
+   To prove Lemma 7.5, we will use random translations Rj . If v ∈ Rn , we let Rv (x) = x + v. A
+random translation of size ≤ ρ is a translation Rv by a vector v ∈ Bρ selected randomly from the
+uniform measure on Bρ . We will use the following probability lemma, which is a small variation
+on Lemma 3.8.
+Lemma 7.6. Let δ ≤ ρ ≤ 1. Suppose that T is a set of essentially distinct δ-tubes in Tρ ⊂
+           |T |
+Rn with |T||Tρ δ | ∼ J ≥ 1. Let R1 , ..., RJ be a set of J random translations of size ≤ ρ. Let
+       SJ
+T′ = j=1 Rj (T). Let A ≥ 1. Then with probability at least 1 − (ρ/δ)O(1) e−A , the tubes of
+T′ are essentially distinct up to a factor ≲ A and we have ∆max (T′ ) ≲ A∆max (T). After
+refining T′ to make the tubes essentially distinct, we have with high probability |T′ | ≈ J|T| and
+∆max (T′ ) ⪅ ∆max (T)
+   We will prove Lemma 7.6 in Appendix A, where we collect a couple of related probability
+arguments. Now we are ready to prove Lemma 7.5. The proof consists of using Lemma 7.6 at
+many scales.
+28                           LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+Proof of Lemma 7.5. For each k = 1, . . . , M , let Rk be a set of random translations of size
+∼ ρk−1 , with cardinality
+
+                                             n (ρ /ρ       −(n−1) o
+                                                 k   k−1 )
+(51)                              |Rk | ∼ max 1,                   .
+                                                 |Tρk [Tρk−1 ]|
+
+           S set of translations {Rj } as R1 ◦ R2 ◦ · · · ◦ RM for Rk ∈ Rk , k = 1, . . . , M . Recall
+   Define the
+that T′ = j Rj (T).
+   Write dk = (ρk /ρk−1 )n−1 |Tρk [Tρk−1 ]|. Our hypothesis on ∆max (Tρk [Tρk−1 ]) gives dk ⪅
+                                             QM
+(ρk−1 /ρk )ϵ . Since T is uniform, we have k=1 dk ≈ |T | |T|. Thus
+                                     M         QM
+                                    Y               max{1, dk }      δ −ϵ
+                          |{Rj }| ≤     |Rk | ⪅ k=1QM            ⪅          .
+                                                    k=1 dk
+                                                                   |T | |T|
+                                    k=1
+
+   We will bound ∆max (T′ ) using Lemma 7.4. To do that, we need to estimate ∆max (T′ρm [Tρ′ m−1 ]).
+Suppose Tρ′ m−1 ∈ T′ρm−1 . Then we must have Tρ′ m−1 ∼ R1 ◦ ... ◦ Rm−1 (Tρm−1 ) for some
+Tρm−1 ∈ Tρm−1 . By Lemma 7.6, with high probability, the choice of R1 , ..., Rm−1 is ⪅ 1. There-
+fore with probability at least 3/4 we have, for each m = 1, . . . , M ,
+                                                                 [                          
+(52)                 ∆max (T′ρm [Tρ′ m−1 ]) ⪅ ∆max                    Rm Tρm [Tρm−1 ]             .
+                                                             Rm ∈Rm
+
+Fix a tube Tρm−1 . The family Tρm [Tρm−1 ] is essentially distinct by Item (ii) of Definition 2.1.
+Applying Lemma 7.6 with A = δ −ϵ/M , we have that with probability 1 − δ −O(1) exp[−δ −ϵ/M ],
+                                                                                        ϵ
+              [                                                                 ρm−1
+                      Rm Tρm [Tρm−1 ] ≲ δ −ϵ/M ∆max Tρm [Tρm−1 ] ⪅ δ −ϵ/M
+                                                                      
+(53)    ∆max                                                                                .
+                                                                                    ρm
+                 Rm ∈Rm
+
+There are (ρm−1 /ρm )O(1) ≤ δ −O(1) many tubes. Thus if δ > 0 is sufficiently small depending on
+ϵ, M and n, we conclude that with probability at least 3/4, (53) holds for every Tρm−1 ∈ Tρm−1 .
+   Combining (52) and (53), we see that for each m,
+                                                                  ϵ
+                                                              ρm−1
+                            ∆max (T′ρm [Tρ′ m−1 ]) ⪅ δ −ϵ/M           .
+                                                               ρm
+     Now we can apply Lemma 7.4 to show that for each m,
+                                                 M
+                                                 Y
+(54)                  ∆max (T′ [Tρ′ m ]) ⪅               ∆max (T′ρm′ [Tρ′ m′ −1 ]) ⪅ δ −2ϵ .
+                                               m′ =m+1
+
+On the other hand, (51) shows that
+                                                                                          −(n−1)
+                                          [                                          ρm
+                  |T′ρm [Tρ′ m−1 ]| ≈
+                                                                
+                                                 Rm Tρm [Tρm−1 ] ≳                                    ,
+                                                                                    ρm−1
+                                        Rm ∈Rm
+which implies that
+                                                                 −(n−1)
+                                                              δ
+(55)                                       ′
+                                        |T [Tρ′ m ]| ⪆                      .
+                                                             ρm
+     Combining (54) and (55), we see that for each m,
+
+                                         CF (T′ [Tρ′ m ], Tρ′ m ) ⪅ δ −2ϵ .
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                               29
+
+
+  Finally consider an arbitrary ρ ∈ [δ, 1]. We can choose m so that ρm ≤ ρ ≤ ρm−1 . Since
+ρm ≥ δ ϵ ρm−1 , using the last equation for m and m − 1 we can conclude that
+
+                                        CF (T′ [Tρ′ ], Tρ′ ) ⪅ δ −(n+3)ϵ .                             □
+Proof of Theorem 7.3. Recall that Part (A) is Theorem 5.2 from [9]. We now turn to Part (B).
+Fix ϵ > 0 and let η1 > 0 be the corresponding value from Theorem 7.3(A), with ϵ/2 in place of
+ϵ. Let η2 = min{η1 /12, ϵ/4}. Choose an integer N ≥ 1/η2 , and let η = η2 /(2N ). Let (T, Y ) be
+a set of δ-tubes and their corresponding shading that is Katz-Tao at every scale with error δ −η ,
+and with λ(T, Y ) ≥ δ η . After a harmless refinement, we may suppose that µ(T, Y )(x) is roughly
+the same for all x ∈ U (T, Y ). Thus it suffices to prove that |U (T, Y )| ≥ δ ϵ |T | |T|.
+    Consider the sequence of scales ρk = δ k/N , k = N, . . . , 0. We have ρk /ρk−1 = δ 1/N ≥ δ η2 ,
+and ∆max (Tρk [Tρk−1 ]) ≤ ∆max (Tρk ) ≤ δ −η = (ρk−1 /ρk )η2 /2 . Apply Lemma 7.5 with η2 in place
+                                                                       −η2
+of ϵ. We obtain a set of M rigid motions {Rj }M      j=1 , with M ⪅ δ       (|T ||T|)−1 , so that the set
+  ′
+      SM                                                      −6η2    −η1 /2
+T = j=1 Rj (T) is Frostman at every scale with error δ             ≤δ        . Define the shading Y ′ on
+T′ in the obvious way: If T ′ = Rj (T ) for some T ∈ T and 1 ≤ j ≤ M , then Y ′ (T ′ ) = Rj (Y (T )).
+Then λ(T′ , Y ′ ) = λ(T, Y ), and hence (T′ , Y ′ ) satisfies the hypotheses of Theorem 7.3(A). For
+part (B), we have
+                            M                        M
+                         1 X                      1 X
+         |U (T, Y )| =         |Rj (U (T, Y ))| =       |(U (Rj T, Rj Y ))|
+                         M j=1                    M j=1
+                            M
+                         1 [                       1                   1 ϵ/2
+                    ≥     |   (U (Rj T, Rj Y ))| =   |U (T′ , Y ′ )| ≥   δ   ⪆ δ ϵ/2+η2 |T | |T|.      □
+                         M j=1                     M                   M
+
+7.1. A multi-scale decomposition of T. In order to apply Theorem 7.3(A) or Theorem 7.3(B),
+our collection of tubes must be Frostman at every scale or Katz-Tao at every scale, respectively.
+The next result says that either this is true, or else there is a long sequence of scales that are far
+from being Frostman (resp. Katz-Tao).
+                                                          √
+Lemma 7.7. Let N ≥ 1 be an integer. Define ϵ = 1/ N , and let η = η0 ≤ η1 ≤ . . . ≤ ηN ≤ ϵ,
+with ηj ≤ ϵηj+1 for each index j. Let δ > 0 and let T be a set of δ-tubes.
+(A) If CF (T) ≤ δ −η , then after replacing T by a ⪆ 1 refinement, at least one of the following
+holds.
+  (i) T is ⪅ δ −5ϵ Frostman at every scale.
+ (ii) There are scales δ ≤ τ ≤ θ ≤ 1 with τ ≤ δ ϵ θ, and an integer 1 ≤ j ≤ N so that for every
+      ⪆ 1 refinement T′ of T, the following holds after replacing T′ by a further ⪆ 1 refinement:
+        • CF (T′ [Tτ ], Tτ ) ⪅ (τ /δ)ηj−1 for all Tτ ∈ T′τ .
+        • CF (T′τ [Tθ ], Tθ ) ⪅ (θ/τ )ηj−1 for all Tθ ∈ T′θ .
+        • For all ρ ∈ [τ (θ/τ )ϵ , θ(τ /θ)ϵ ], we have CF (T′τ [Tρ ], Tρ ) ≥ (ρ/τ )ηj for all Tρ ∈ T′ρ .
+
+(B) If ∆max (T) ≤ δ −η , then after replacing T by a ⪆ 1 refinement, at least one of the following
+holds.
+  (i) T is ⪅ δ −ϵ Katz-Tao at every scale.
+ (ii) There are scales δ ≤ τ ≤ θ ≤ 1 with τ ≤ δ ϵ θ, and an integer 1 ≤ j ≤ N so that for every
+      ⪆ 1 refinement T′ of T, the following holds after replacing T′ by a further ⪆ 1 refinement:
+        • ∆max (T′θ ) ⪅ θ−ηj−1 .
+        • ∆max (T′τ [Tθ ]) ⪅ (θ/τ )ηj−1 for all Tθ ∈ T′θ
+        • For all ρ ∈ [τ (θ/τ )ϵ , θ(τ /θ)ϵ ], we have ∆max (T′ρ [Tθ ]) ≥ (θ/ρ)ηj for all Tθ ∈ T′θ .
+30                             LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+Remark 7.8. Note that Item (ii) (in both parts (A) and (B)) contains nested quantifiers that
+involve “⪅,” which in turn is a statement involving nested quantifiers. The precise interpretation
+is as follows: for every function f (δ) ⪆ 1, there is a function g(δ) ⪆ 1 so that for every set T′ ⊂ T
+with |T′ | ≥ f (δ)|T|, there exists a subset T′′ ⊂ T′ with |T′′ | ≥ g(δ)|T′ | such that....” In practice,
+f (δ) will be a fixed power of (log 1/δ)−1 .
+Proof. We begin with part (A). First, we replace T by a refinement with the following property:
+T is uniform, the Frostman constant CF (T[Tρ ], Tρ ) is the same (up to a ⪅ 1 factor) for all scales
+ρ and all Tρ ∈ Tρ , and furthermore, while this property might be destroyed if T is replaced by
+a ⪆ 1 refinement T′ , the property can be restored by replacing T′ by a further ⪆ 1 refinement
+(c.f. Remark 7.8). To obtain such a refinement, first replace T by a uniform set of T, then apply
+Lemma 4.1 (maximal density factoring) to each set T[Tρ ], Tρ ∈ Tρ , for all ρ of the form ρ = δ k/M ,
+k = 0, . . . , M , M = ⌈log log 1/δ⌉, and then finally replace the surviving set by a uniform set of
+tubes. Remarks 4.2 and 4.3 ensure that the surviving set has the claimed properties.
+   Next, we check if there is a scale ρ ∈ [δ 1−ϵ , δ ϵ ] so that CF (T[Tρ ], Tρ ) ≤ (ρ/δ)η1 . If there is no
+such scale we stop. If there is such a scale, then we define T1 to be T[Tρ ] modified by a change
+of variables that takes Tρ to B1 , and we set T2 = Tρ . We get the following output with J = 2:
+     (1) For each j = 1, ..., J, Tj is a set of δj -tubes in B1 .
+          QJ
+     (2) j=1 δj ≈ δ.
+          QJ
+     (3) j=1 |Tj | ≈ |T|.
+                         −η
+     (4) CF (Tj ) ≤ δj J−1 .
+General step. Suppose that for some J we have Tj obeying the criteria listed just above. We
+check whether there is a j ∈ {1, ..., J} and a scale ρ so that the following holds:
+       • δj < δ ϵ and
+       • ρ ∈ [δj1−ϵ , δjϵ ], and
+       • CF (Tj [Tρ ], Tρ ) ≤ (δj /ρ)−ηJ .
+   If there is no such j and ρ, we stop. If there is such a j, ρ, then we replace Tj by Tj,ρ and
+Tj [Tρ ] (rescaled to be a set of tubes in the unit ball). After this replacement, we can relabel our
+sets of tubes to give T1 , ..., TJ+1 , which obey all the criteria listed above.
+                           2          QJ
+   Since each δj < δ ϵ and since j=1 δj ≈ δ, we have J ≤ N = 1/ϵ2 , and therefore this process
+terminates after at most N steps, with some sets of tubes T1 , ..., TJ , with J ≤ N . Each of these
+sets obeys the criteria listed above (1 to 4) and also for each j, either δj ≥ δ ϵ , or else
+(56)                  For each ρ ∈ [δj1−ϵ , δjϵ ], we have CF (Tj [Tρ ], Tρ ) ≥ (δj /ρ)−ηJ .
+   Unwinding the stopping time argument, there is a sequence of δ = ρJ ≤ ... ≤ ρ1 ≤ ρ0 = 1 so
+that Tj corresponds to Tρj [Tρj−1 ]. By our stopping criteria, we see that
+                            CF (Tρj [Tρj−1 ], Tρj−1 ) ≤ (ρj−1 /ρj )ηJ ≤ (ρj−1 /ρj )ϵ .
+By Lemma 7.4, we have that CF (T[Tρj ], Tρj ) ≲ δ −ϵ for each index j.
+   First we consider the case where every δj obeys δj ≥ δ ϵ . Then each ratio ρj /ρj−1 is at least
+δ . We claim that T is ⪅ δ −5ϵ Frostman at every scale, and hence Conclusion (i) holds. To verify
+ ϵ
+
+this, let ρ ∈ [δ, 1] and choose j so that ρj+1 ≤ ρ ≤ ρj . Then
+                                             |T[Tρj ]|                       |T[Tρj ]|          ρ j 4
+     CF (T[Tρ ], Tρ ) ≤ CF (T[Tρj ], Tρj )             ≤ CF (T[Tρj ], Tρj )             ≲ δ −ϵ         ≤ δ −5ϵ .
+                                              |T[Tρ ]|                      |T[Tρj+1 ]|        ρj+1
+   Next we consider the case where there exists at least one index j with δj < δ ϵ and Tj obeys
+(56). Then Conclusion (ii) holds with τ = ρj and θ = ρj−1 .
+     The proof of Part (B) is nearly identical, and we leave the details for the reader.                           □
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                              31
+
+
+                                         8. Main Lemma 1
+  In this section, we sketch the proof of Main Lemma 1. We first recall the statement.
+Main Lemma. KKT (β) implies KF (β).
+   Let’s first digest what the lemma is saying. Suppose that T is a set of essentially distinct
+δ-tubes in B1 with CF (T) ≤ δ −η . We have to prove the bound
+
+                                                              1−β/2
+(57)                              µ(T) ≤ δ −ϵ (δ −2 )β δ 2 |T|       .
+Since CF (T, B1 ) ≤ δ −η , we have |T| ≥ δ −2+η . If |T| ≈ δ −2 , then CF (T, B1 ) ≤ δ −η is equivalent
+to ∆max (T) ⪅ δ −η , and then KKT (β) gives µ(T) ≤ δ −ϵ δ −2β , which is the desired bound. So the
+case |T| ≈ δ −2 is trivial. So the content of the lemma is in the case when |T| ≫ δ −2 .
+   If |T| ≫ δ −2 , then ∆max (T) ≫ 1, so we can not immediately apply KKT (β) to T. If T̃ ⊂ T
+is a random subset with |T̃| ∼ δ −2 , then it’s not hard to check that ∆max (T̃) ⪅ 1. We can
+apply KKT (β) to T̃, and we get µ(T̃) ⪅ δ −2β which is equivalent to |U (T̃)| ⪆ δ 2β . We have
+|U (T)| ≥ |U (T̃)|, and this translates into
+
+                                       µ(T) ⪅ (δ −2 )β δ 2 |T|
+                                                              
+(58)
+    Comparing (58) with our goal (57), we see that we need to reduce the exponent on the last
+factor from 1 to 1 − β/2. In the proof of Kakeya, any exponent strictly less than 1 will work. We
+can also describe the lemma in terms of |U (T)|, which may be more intuitive. Since we assume
+KKT (β), we already know that if CF (T) ⪅ 1 and |T| ∼ δ −2 , then |U (T)| ⪆ δ 2β . Now we need
+to show that if CF (T) ⪅ 1 and if |T| is far larger than δ −2 , then |U (T)| is a little larger than
+δ 2β . While this may sound intuitive, it is not at all trivial to prove, and the proof will depend
+crucially on sticky Kakeya.
+    We organize the proof as a bootstrapping or self-improving argument.
+Lemma 8.1. Suppose that KKT (β) holds and that KF (γ) holds for some γ > β. Then KF (γ −ν)
+holds for ν = ν(γ, β) > 0. For β fixed, ν = ν(γ, β) > 0 is monotone in γ.
+  Since KF (1) holds trivially, Lemma 8.1 implies Main Lemma 1.
+Proof of Lemma 8.1. Let ϵ0 and δ0 be the output of Theorem    √ 7.3 with γ/2 in place of ϵ. Let
+N ≥ 25/ϵ20 be an integer to be chosen later, and define ϵ = 1/ N . Let η ≤ η1 ≤ . . . ≤ ηN ≤ ϵ/5
+be a sequence of numbers to be chosen later. We choose the constants from biggest to smallest
+and each ηj will be selected very small depending on ηj+1 and β.
+   Apply Lemma 7.7(A) to T, with N as above. If Conclusion (i) holds, then T is δ −ϵ0 Frostman
+at every scale, and hence by Theorem 7.3(A) we have
+                                                                        (γ/2)/2
+                            |U (T, Y )| ≥ δ γ/2 ≥ δ 2(γ/2) (|T| |T |)             ,
+where we used essential distinctness of the tubes in T to obtain |T| ≤ δ −4 . In particular,
+|U (T, Y )| satisfies the volume estimate corresponding to KF (γ/2). In this case, Lemma 8.1
+holds with ν = γ/2.
+                                                                                                    ω
+Remark 8.2. Recall that the statement KF (β) asserts the estimate |U (T)| ⪆ δ 2β (|T| |T |) ,
+with ω = β/2. In the argument described above, we must have ω < β.
+  Henceforth we shall assume that Conclusion (ii) of Lemma 7.7(A) holds. Let δ ≤ τ ≤ θ ≤ 1
+and 1 ≤ j ≤ N be the output of that lemma. We apply Lemma 5.11 to (T, Y ) and Tτ . We obtain
+a ≈ 1 refinement of (T, Y ), a subset of Tτ , and a shading YTτ on Tτ . Abusing notation, we will
+continue to refer to these refinements as (T, Y ) and Tτ . Apply Lemma 5.11 to (Tτ , YTτ ) and
+32                           LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+Tθ . We obtain a ≈ 1 refinement of (Tτ , YTτ ), a subset of Tθ , and a shading YTθ on Tθ . Abusing
+notation, we will continue to refer to these refinements as (Tτ , YTτ ) and Tθ . After a further
+refinement, we may suppose that all sets of the form (T[Tτ ], Y ), (Tτ [Tθ ], YTτ ) and (Tθ , YTθ ) are
+uniform, and have the Frostman constants claimed in Conclusion (ii) of Lemma 7.7(A). Lemma
+5.11 implies that for all Tτ ∈ Tτ and Tθ ∈ Tθ ,
+(59)                      µ(T, Y ) ⪅ µ(T[Tτ ], Y ) µ(Tτ [Tθ ], YTτ ) µ(Tθ , YTθ ).
+   Our goal is to estimate the three quantities on the RHS of (59). For each Tτ ∈ Tτ we have
+CF (T[Tτ ], Tτ ) ≤ δ −ηj−1 . Thus by applying Lemma 3.9 (with η1 in place of ϵ) to the re-scaled,
+essentially distinct sets T[Tτ ], we see that for each Tτ ∈ Tτ , we have
+                µ(T[Tτ ], Y ) ≤ (δ/τ )−η1 δ −(1−γ/2)ηj−1 ((δ/τ )−2 )γ ((δ/τ )2 |T[Tτ ]|)1−γ/2
+(60)
+                              ≤ δ −2ηj−1 ((δ/τ )−2 )γ ((δ/τ )2 |T[Tτ ]|)1−γ/2 .
+   By Remark 3.3(A), CF (Tθ ) ⪅ δ −η . Thus by applying KF (γ) (again, with η1 in place of ϵ) we
+have
+                                                     γ
+(61)                     µ(Tθ , YTθ ) ≤ δ −ηj−1 (θ)−2 (θ2 |Tθ |)1−γ/2 .
+  Thus in order to prove Lemma 8.1 with ν = η1 , it suffices to show that for each Tθ ∈ Tθ , we
+have
+(62)                  µ(Tτ [Tθ ], YTτ ) ≤ δ 10ηj−1 ((τ /θ)−2 )γ ((τ /θ)2 |Tτ [Tθ ]|)1−γ/2 .
+We will show that this holds, provided each ηj−1 is selected sufficiently small compared to ηj .
+    Fix a tube Tθ ∈ Tθ , and let (T̃, Ỹ ) be the image of the tubes in Tτ [Tθ ] (and their shadings)
+under the rescaling taking Tθ to a tube of thickness 1. Hence T̃ is a family of δ̃-tubes, where
+δ̃ = τ /θ. Recall that δ̃ ≤ δ ϵ , and thus to prove (62) we must show that
+(63)                             µ(T̃, Ỹ ) ≤ δ̃ 10ηj−1 /ϵ δ̃ −2γ (δ̃ 2 |T̃|)1−γ/2 .
+Recall that CF (T̃) ≤ δ̃ −ηj−1 /ϵ , and
+(64)                  CF (T̃[Tρ ], Tρ ) ≥ (ρ/δ̃)ηj     for all Tρ ∈ T̃ρ , ρ ∈ [δ̃ 1−ϵ , δ̃ ϵ ].
+Select ρ = δ̃ ϵ . Apply Lemma 4.1 to each set T̃[Tρ ]; after pigeonholing, we may suppose that the
+planks in the resulting set WTρ have roughly the same dimensions a × b × 1 for all Tρ ∈ T̃ρ .
+    Applying Proposition 6.6(A) with ηj−1 in place of ϵ and γ in place of β, we have
+                                                    a 3γ/2 −2 γ  2 1−γ/2
+                          µ(T̃, Ỹ ) ≤ δ̃ −2ηj−1 /ϵ        (δ̃ ) δ̃ |T̃|    .
+                                                    b
+In particular, either (63) holds (and hence we are done), or else a is not too much smaller than
+b, i.e.
+                                                          10ηj−1
+                                                 a ≥ δ̃     ϵγ     b.
+     We have
+
+                              ∆(T̃, Tb ) ≥ (a/b)∆(T̃, W ) ≈ (a/b)∆max (T̃).
+Therefore,
+
+                                                                        10ηj−1
+(65)                                 CF (T̃[Tb ], Tb ) ⪅ b/a ≤ δ̃ −       ϵγ     .
+Since b ≤ ρ = δ̃ ϵ , if we select ηj−1 sufficiently small depending on ηj , and γ (and depending on ϵ,
+which in turn depends on γ), then we must have b ≤ δ̃ 1−ϵ —if not, then (65) would violate (64)
+(with b in place of ρ).
+                  A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                     33
+
+           ′        10ηj−1
+   Define ηj−1 =      ϵγ , so
+
+                                                                     ′
+                                           CF (T̃[Tb ], Tb ) ⪅ δ̃ −ηj−1 .
+Apply Lemma 5.11 to (T̃, Ỹ ) and T̃b (abusing notation, we will continue to refer to the associated
+refinements of (T̃, Ỹ ) and Tb , and after a refinement we can assume that these sets are still
+uniform). Applying Lemma 3.9 to bound µ(T̃[Tb ], Ỹ ), we conclude that in order to establish
+(63), it suffices to prove that
+                                                        ′
+(66)                             µ(T̃b , YT̃b ) ≤ δ̃ 10ηj−1 b−2γ (b2 |T̃b |)1−γ/2 .
+   Since each tube Tb ∈ T̃b [Tρ ] contains at least one W ∈ WTρ , we have
+
+                                                 |Tb |              b       ′
+                            ∆max (T̃b [Tρ ]) ≲         ∆max (WTρ ) ≲ ≲ δ̃ −ηj−1 .
+                                                 |W |               a
+   Therefore
+                                                                                      ′
+                              ∆max (T̃b ) ≲ (ρ)−4 ∆max (T̃b [Tρ ]) ≲ δ̃ −4ϵ−ηj−1 .
+Applying Lemma 3.7, we have
+                          ′              β/2  −4ϵ−η′ 2(γ−β) 2                       
+ µ(T̃b , YT̃b ) ≤ δ̃ −4ϵ−ηj−1 b−2 |T̃b |     = δ̃    j−1 b         (b |T̃b |)(β+γ)/2−1 b−2γ (b2 |T̃b |)1−γ/2 .
+
+We wish to bound the first bracketed term. The key point is that (b2 |T̃b |) is close to 1. To see
+this, we note that
+                           ′                                                              ′
+                         δ̃ ηj−1 ⪅ CF (T̃b )−1 ≤ b2 |T̃b | ≲ ∆max (T̃b ) ≲ δ̃ −4ϵ−ηj−1 ,
+Now we do not know the sign of (β + γ)/2 − 1, but using the above upper and lower bounds for
+b2 |T̃b | we get
+                                                 ′
+                       µ(T̃b , YT̃b ) ≤ δ̃ −8ϵ−2ηj−1 +2(γ−β) b−2γ (b2 |T̃b |)1−γ/2 .
+                                                                √
+Provided we select N sufficiently large (recall that ϵ = 1/ N ) and ηN sufficiently small (recall
+                              ′
+ηj−1 ≤ ηN ) so that −8ϵ − 2ηj−1     + 2(γ − β) ≥ (γ − β), we have
+                                  µ(T̃b , YT̃b ) ⪅ δ̃ (γ−β) b−2γ (b2 |T̃b |)1−γ/2 .
+                                                                                           ′
+This implies our desired bound (66), provided we choose ηj−1 sufficiently small so that 10ηj−1 ≤
+(γ − β)/2.                                                                                     □
+
+                                             9. Main Lemma 2
+   Our last goal is to prove Main Lemma 2. We recall the statement.
+Main Lemma. If β > 0 and KKT (β) and KF (β) hold, then KKT (β − ν) holds, where ν =
+ν(β) > 0 is monotone.
+9.1. Reduction to the strongly non-sticky case. The sticky Kakeya theorem plays a crucial
+role in this proof. By using sticky Kakeya, we are able to reduce the problem to a situation which
+is not sticky in a strong sense.
+Lemma 9.1. (Very not sticky case of Main Lemma 2) For all β > 0, there is some ϵscale =
+ϵscale (β) > 0 so that for all ζ > 0, there is some ν = ν(β, ζ) > 0 and η = η(β, ζ) > 0 so that the
+following is true:
+   If KKT (β) and KF (β) hold and if (T, Y ) is a uniform set of δ-tubes in B1 obeying
+        • ∆max (T) ≤ δ −η and λ(T, Y ) ≥ δ η .
+        • For each ρ ∈ [δ 1−ϵscale , δ ϵscale ], |Tρ | ≥ ρ−2−ζ .
+34                         LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+     Then
+                                                             β/2
+                                      µ(T, Y ) ≤ δ ν δ −2 |T|     .
+   Our goal in this section is to show that Lemma 9.1 implies Main Lemma 2. The proof is
+similar to the proof of Main Lemma 1, using Lemma 7.7(B), Proposition 6.6(B), and Theorem
+7.3(B) instead of their Part (A) counterparts.
+
+Proof of Main Lemma 2 using Lemma 9.1. Fix ϵ > 0 and ν = ν(β) > 0. Let η = η(ϵ, β) > 0
+and δ0 = δ0 (ϵ, β) be quantities to be chosen below. Let T be a set of δ-tubes in B1 ⊂ R3 with
+∆max (T) ≤ δ −η and λ(T, Y ) ≥ δ η . Our goal is to show that if η and δ0 are chosen appropriately,
+then
+                                                          (β−ν)/2
+(67)                              µ(T, Y ) ≤ δ −ϵ δ −2 |T|         .
+We can assume without loss of generality that (T, Y ) is uniform. Let ϵ1 and δ1 be the output
+of Theorem 7.3(B) with β/2 in place of ϵ. We will choose δ0 with δ0 ≤ δ1 . Let ϵscale = ϵscale (β)
+be the quantity from Lemma 9.1 with β as above. Let ϵ2 = ϵ2 (ϵ1 , ϵscale , β) be a number to be
+chosen later (since ϵ1 and ϵscale depend only on β, ϵ2 depends only on β). Define N = ⌈25/ϵ22 ⌉,
+and let 0 < η0 ≤ η1 ≤ . . . ≤ ηN ≤ N −1/2 be a sequence of numbers to be chosen later, depending
+only on β. Each ηj , 0 ≤ j < N , will be selected very small depending on ηj+1 , ϵ2 , and β,
+with ηj ≤ N −1/2 ηj+1 . Set ν = min{β/2, η0 /10}. We will eventually select η sufficiently small,
+depending on ϵ and these parameters.
+   Apply Lemma 7.7(B) to T, with η0 in place of η. If Conclusion (i) holds, then (provided we
+select ϵ2 ≤ ϵ1 /5) we have that T is δ −ϵ1 Katz-Tao at every scale, and hence by Theorem 7.3(B)
+we have
+                                                            (β−ν)/2
+                                µ(T, Y ) ≤ δ −β/2 ≤ δ −2 |T|         ,
+where we used |T| ≥ 1 and ν ≤ β/2. Thus (67) is satisfied.
+   Henceforth we shall assume that Conclusion (ii) of Lemma 7.7(B) holds. Let δ ≤ τ ≤ θ ≤ 1
+and 1 ≤ j ≤ N be the output of that lemma. We apply Lemma 5.11 to (T, Y ) at scale τ and
+then apply it again to (Tτ , YTτ ) at scale θ. We obtain some ≈ 1 refinements of these sets of
+tubes, but we will abuse notation and continue to use the same names. Lemma 5.11 gives that
+for all Tτ ∈ Tτ , Tθ ∈ Tθ , we have
+(68)                     µ(T, Y ) ⪅ µ(T[Tτ ], Y ) µ(Tτ [Tθ ], YTτ ) µ(Tθ , YTθ ),
+and
+(69)                          λ(Tθ , YTθ ), λ(Tτ , YTτ ) ⪆ λ(T, Y ) ≥ δ η .
+   Our goal is to estimate the three quantities on the RHS of (68).
+   By Remark 3.3(B), for each Tτ ∈ Tτ we have ∆max (T[Tτ ]) ≤ δ −η . Also, we can choose Tτ so
+that λ(T[Tτ ], Y ) ⪆ λ(T, Y ) ⪆ δ η . Thus by applying KKT (β) (with η0 in place of ϵ), for this Tτ ,
+we have
+                                                                    β/2
+                              µ(T[Tτ ], Y ) ≤ δ −η0 (δ/τ )−2 |T[Tτ ]|     .
+Since ∆max (Tθ ) ≤ δ −ηj−1 , by applying Lemma 3.7 (again, with η0 in place of ϵ), we conclude
+that
+                                                                  β/2
+                                µ(Tθ , YTθ ) ⪅ δ −2ηj−1 θ−2 |Tθ |      .
+Thus in order to establish (67) with ν chosen above, it suffices to show that for each Tθ ∈ Tθ ,
+we have
+                                                                        β/2
+(70)                     µ(Tτ [Tθ ], YTτ ) ≤ δ 10ηj−1 (τ /θ)−2 |Tτ [Tθ ]|     .
+                     A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                               35
+
+
+Indeed, η0 ≤ ηj−1 gives a net gain of δ 7η0 in (68), while |T| ≲ δ −2−η allows the factor (δ −2 |T|)ν/2
+to be absorbed into this gain. We will show that this holds, provided each ηj−1 is selected
+sufficiently small compared to ηj .
+    Fix a tube Tθ ∈ Tθ , and let (T̃, Ỹ ) be the image of the tubes in Tτ [Tθ ] (and their shadings)
+under the rescaling taking Tθ to a tube of thickness 1. Hence T̃ is a family of δ̃-tubes, where
+δ̃ = τ /θ. Recall that δ̃ ≤ δ ϵ2 , and thus to prove (70) we must show that
+                                                                         β/2
+(71)                                µ(T̃, Ỹ ) ≤ δ̃ 10ηj−1 /ϵ2 δ̃ −2 |T̃|     .
+Recall that
+(72)                                             ∆max (T̃) ≤ δ̃ −ηj−1 /ϵ2 ,
+and
+(73)                                ∆max (T̃ρ ) ≥ ρ−ηj         for all ρ ∈ [δ̃ 1−ϵ2 , δ̃ ϵ2 ].
+
+   We set ρ = δ̃ 1−ϵ2 . Apply Lemma 4.1 to T̃ρ and let V be the resulting set of planks. Lemma
+4.1 replaces the set T̃ρ with an ≈ 1 refinement. This in turn induces a ≈ 1 refinement on (T̃, Ỹ ).
+Abusing notation, we will continue to refer to these new objects as T̃ρ and Ỹ . Suppose the planks
+of V have dimensions a × b × 1. We have two cases, depending on these dimensions.
+The eccentric case.
+
+                                       ′              ′                                                             ′
+   We pick another small constant ηj−1   with ηj−1 ≪ ηj−1 ≪ ηj .                            In fact, we pick it by ηj−1 =
+12ηj−1
+  ϵ2 β . We are in the eccentric case if
+
+                                                                  ′
+(74)                                                    b ≥ δ̃ −ηj−1 a.
+                                                                                                          12ηj−1
+     Applying Proposition 6.6(B) with ηj−1 in place of ϵ and recalling that a/b ≤ δ̃                        ϵ2 β
+                                                                                                                   , we have
+                                           a 3β/2 −2 β/2                            β/2
+                µ(T̃, Ỹ ) ≤ δ̃ −2ηj−1 /ϵ2         δ̃ |T̃| ≤ δ̃ 10ηj−1 /ϵ2 δ̃ −2 |T̃|      .
+                                           b
+Thus (71) holds, and we are done.
+                                           ′
+  Henceforth we shall assume that b < δ̃ −ηj−1 a.
+The non-eccentric case.
+
+   Recall that ρ = δ̃ 1−ϵ2 , V is the maximal density factoring of T̃ρ , and each V ∈ V has dimensions
+a × b × 1, with
+
+                                                                  ′
+                                                        b ≤ δ̃ −ηj−1 a.
+     We first apply Lemma 5.11 to (T̃, Ỹ ) and T̃b , and, we obtain a shading ỸT̃b on T̃b so that
+
+                                         µ(T̃, Ỹ ) ⪅ µ(T̃b , ỸT̃b )µ(T̃′ [Tb ], Ỹ ′ ).
+  Here (T̃′ , Ỹ ′ ) is a ⪆ 1 refinement of (T̃, Ỹ ). By further pigeonholing, we can replace V by
+ ′
+V ⊂ V with |V′ | ⪆ |V| and so that for each V ∈ V′ ,
+        • |T̃′ [V ]| ⪆ |T̃[V ]|
+        • λ(T̃′ [V ], Ỹ ′ ) ⪆ λ(T̃[V ], Ỹ ).
+36                              LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+   At this point, to ease the notation, we write (T̃, Ỹ ) for (T̃′ , Ỹ ′ ) and V for V′ .
+   Applying Lemma 3.7 with ηj−1 in place of ϵ (and recalling our bound on ∆max (Tb ) from (76)),
+we have
+                                                        ′             β/2
+(75)                            µ(T̃b , ỸT̃b ) ≤ δ̃ −2ηj−1 b−2 |T̃b |     .
+
+     The main part of the proof is to estimate µ(T̃[Tb ], Ỹ ). First we estimate
+                                                     |Tb |                 ′
+(76)                                ∆max (T̃b ) ≤          ∆max (V) ≤ δ̃ −ηj−1 .
+                                                     |V |
+                                                                                  ′
+We will select ηj−1 small enough (depending on ηj , ϵ2 , and β) so that ηj−1        ≤ ηj ϵ2 . Comparing
+                                                           ϵ2
+(73) and (76), we obtain a contradiction unless b ≥ δ̃ . We will suppose henceforth that b ≥ δ̃ ϵ2 .
+   Next we estimate
+                                         |V |                    ′
+                          ∆(T̃ρ , Tb ) ≥       ∆(T̃ρ , V ) ⪆ δ̃ ηj−1 ∆max (T̃ρ ),
+                                         |Tb |
+                            ′
+i.e. CF (T̃ρ [Tb ], Tb ) ≲ δ̃ −ηj−1 , and thus by Remark 3.3(A), we have
+                                                           ′
+(77)                            CF (T̃σ [Tb ], Tb ) ≲ δ̃ −ηj−1       for all σ ∈ [ρ, b].
+
+   On the other hand, using (73) and applying Lemma 7.4 at the scales σ ∈ [δ̃ 1−ϵ2 , δ̃ ϵ2 ], we have
+that
+                                                                                                   ′
+                σ −ηj ≤ ∆max (T̃σ ) ≲ ∆max (T̃σ [Tb ])∆max (T̃b ) ≤ ∆max (T̃σ [Tb ])δ̃ −ηj−1 ,
+i.e.
+                                                                     ′
+(78)                                      ∆max (T̃σ [Tb ]) ≳ δ̃ ηj−1 σ −ηj .
+
+Comparing (77) and (78), we conclude that
+                                             ′
+(79)                      |T̃σ [Tb ]| ≳ δ̃ 2ηj−1 b2 σ −2−ηj      for all σ ∈ [δ̃ 1−ϵ2 , δ̃ ϵ2 ].
+
+   We will bound µ(T̃[Tb ], Ỹ ) using Lemma 9.1, with ζ = ηj /2. In order to apply Lemma 9.1, we
+need to first rescale Tb to B1 , converting T̃[Tb ] to a new set of tubes T′ of radius δ ′ = δ̃/b ≤ δ̃ 1−ϵ2 .
+We have to check that for every σ ′ ∈ [(δ ′ )1−ϵscale , (δ ′ )ϵscale ] we have |T′σ′ | ≥ (σ ′ )−2−ζ . We choose
+ϵ2 ≤ ϵscale /2. Then this estimate follows from (79).
+   Now let η ′ be the value of η from Lemma 9.1, with β as above and ζ = ηj /2. Recall that we have
+a bound on ∆max (T̃[Tb ]) from (72). To ensure that the hypotheses of Lemma 9.1 are satisfied, we
+                                                                                                              ′
+select ηj−1 sufficiently small compared to ηj , β, and ϵ2 so that ∆max (T′ ) = ∆max (T̃[Tb ]) ≤ δ̃ −η .
+Lemma 9.1 also requires that the shading Ỹ be sufficiently dense, and this follows if we select η
+sufficiently small. Applying Lemma 9.1 to T′ and then changing coordinates back to T̃[Tb ], we
+conclude that there exists ν(β, ηj ) > 0 so that
+                                                                                β/2
+(80)                             µ(T̃[Tb ], Ỹ ) ≤ δ̃ ν(β,ηj ) (δ̃/b)−2 |T̃[Tb ]|     .
+
+     Multiplying (80) and (75), we have
+                                                                 ′              β/2
+                                    µ(T̃, Ỹ ) ⪅ δ̃ ν(β,ηj )−2ηj−1 δ̃ −2 |T̃|          .
+                                                                                      ′
+We will choose ηj−1 sufficiently small (depending on β and ηj ) so that ν(β, ηj ) − 2ηj−1 ≥
+10ηj−1 /ϵ2 . This establishes (71).                                                       □
+                A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                           37
+
+
+9.2. Maximal density factoring revisited. In Lemma 4.1, we chose sets W to maximize
+∆(V, W ). For some families V of convex sets (for example if V is both Katz-Tao and Frostman),
+there might be many equally valid candidates for W . To prove Lemma 9.1, it is important to
+choose carefully in the case of a tie or a near tie. When the maximum density is achieved by two
+convex sets with very different sizes, we choose W to be the convex set of smaller volume. More
+precisely, we adjust our maximization process as follows. We let ηbias > 0 be a tiny exponent to
+be chosen later. Then, instead of choosing W to maximize ∆(V, W ), we choose W to maximize
+
+                                     |W |−ηbias ∆(V, W ).
+  This leads to a variation of Lemma 4.1 with two small changes:
+Lemma 9.2. (Biased maximal density factoring lemma) Let V be a finite family of convex
+subsets       n
+     P of R contained    in a convex set U , and suppose ηbias > 0. Then there is a set V′ ⊂ V
+                           a family W of convex sets in Rn , each of approximately the same
+                  P
+with    V′ |V | ⪆  V |V |;
+dimensions; and a partition
+                                               G
+(81)                                     V′ =      VW ,
+                                                         W ∈W
+
+where each set in VW is contained in W . This partition has the following properties:
+   If K ⊂ W ∈ W,
+                                                η
+                                            |K| bias
+(82)                        ∆(VW , K) ⪅               ∆(VW , W ).
+                                            |W |
+In particular, CF (VW , W ) ≲ 1.               ηbias
+                                        |W |
+  For each W ∈ W, ∆(VW , W ) ≳           |U |            ∆max (V′ ).
+                                                                      −ηbias
+                                                               |W |
+(83)                               ∆max (W) ≲                                    .
+                                                                |U |
+The proof of Lemma 9.2 is the same as Lemma
+                                          F       4.1, so we omit the details.
+   We will call the decomposition V = W VW a maximal F          density factoring with bias ηbias .
+Observe that we can still apply Proposition 5.1 to the factoring W VW —Proposition 5.1 requires
+that VW be C-Frostman in W , and this remains the case with C ∼ 1.
+9.3. Setup for the proof of Lemma 9.1. To prove Lemma 9.1, we will study how T behaves
+in smaller balls at various scales. Our goal is to prove that
+
+                                                            β/2
+(84)                               µ(T, Y ) ⪅ δ ν |T |−1 |T|     ,
+where ν = ν(β, ζ) > 0. This goal can be written equivalently as
+
+                                                                   −β/2
+(85)                         |U (T, Y )| ⪆ δ −ν |T | |T| |T |−1 |T|      ,
+where ν = ν(β, ζ) > 0.
+   The argument has several cases. In some cases, we will prove (84) and in some cases we
+will prove (85). In some of the cases, we will prove (85) by showing that U (T, Y ) fills a larger
+than expected fraction of a typical a-ball that intersects U (T, Y ), and we will pair this with an
+estimate on U (Ta ).
+   We have to do some pigeonholing to prepare for our argument. First we refine (T, Y ) so
+that for each x ∈ U (T, Y ), the set TY (x) is uniform. We identify TY (x) with a subset of S 2
+corresponding to the directions of the tubes. Then for each x, we can choose a uniform subset
+38                            LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+of Ux ⊂ TY (x) with |Ux | ⪆ |TY (x)|. Then we define Y ′ so that x ∈ Y ′ (T ) if and only if T ∈ Ux .
+This is a ⪆ 1 refinement. Because of the uniformity, there is a function µ(ρ) so that for any
+T0 ∈ T and x ∈ Y ′ (T0 ),
+
+(86)                            #{T ∈ TY ′ (x) : angle(T, T0 ) ≤ ρ} ≈ µ(ρ)
+   In particular, we have µ(T, Y ) ⪅ µ(T, Y ′ ) ≈ µ(1). Moreover, for each Tρ ∈ Tρ , we have
+µ(T[Tρ ], Y ′ ) ≈ µ(ρ). Abusing notation, we will refer to Y ′ as Y from here on.
+   Next we apply Lemma 5.11 to (T, Y ) and Ta , for a = δ ηj , j = 1, . . . , η −1 . We obtain a ≈ 1
+refinement of (T, Y ) (abusing notation, we will continue to refer to this as (T, Y ) ) so that for
+each x ∈ U (Ta , YTa ), we have
+
+                                                              |U (T, Y ) ∩ B(x, a)|
+(87)                          |U (T, Y )| ⪆ |U (Ta , YTa )|                         .
+                                                                    |B(x, a)|
+     Recall that λ(Ta , YTa ) ⪆ λ(T, Y ) ≥ δ η . We also have
+                                                                (a/δ)2
+                                          ∆max (Ta ) ≤ δ −η              .
+                                                                |T[Ta ]|
+Applying Lemma 3.7 with ν/10 in place of ϵ, we have (provided η > 0 is chosen sufficiently small)
+(88)
+                                      |T |/|T | 1−β/2              β/2          a 2β                    −β/2
+                                             a
+|U (Ta , YTa )| ≳ δ ν/9 |Ta | |Ta |                         |Ta |−1 |Ta |       = δ ν/9       |T | |T| |T |−1 |T|      .
+                                            |T[Ta ]|                                    δ
+Chaining (87) and (88), we conclude that in order to obtain our desired estimate (85), it suffices
+to prove that there exists an a-ball Ba with
+                                                          2β
+                                    |U (T) ∩ Ba |    −2ν   δ
+(89)                                              ⪆δ             .
+                                        |Ba |             a
+   With these preparations, we are ready to set up the main objects in the proof. Let r1 = δ ϵscale .
+Divide U (Tr1 , YTr1 ) into boundedly overlapping balls B of radius r1 .
+   For each ball B, we define TB to be a set of essentially distinct δ × δ × r1 -tubes contained in
+B of the form T ∩ B with T ∈ T. For each TB ∈ TB , we let T(TB ) be the set of tubes T ∈ T so
+that T ∩ B is comparable to TB .
+   Next we define a shading on TB . For each TB ∈ TB , we consider the multiplicity |T(TB )Y (x)|.
+We choose YB (TB ) ⊂ TB by pigeonholing the multiplicity |T(TB )Y (x)|. Finally we refine Y so
+that if T ∈ T(TB ), Y (T ) ∩ TB ⊂ YB (TB ). This is a ⪆ 1 refinement. Next we refine (TB , YB ) by
+pigeonholing |YB (TB )|. Again we refine Y so that Y (T ) ∩ TB ⊂ YB (TB ) and again this is a ⪆ 1
+refinement.
+   We let B be the set of balls B with λ(TB , YB ) ⪆ λ(T, Y ). Then we refine Y by removing the
+parts of Y (T ) that are not in the balls of B. Again this is a ⪆ 1 refinement.
+   In the sequel, we will use the following properties of the shading (TB , YB ):
+      • λ(TB , YB ) ⪆ δ η for each B ∈ B.
+      • |YB (TB )| is roughly the same for all TB ∈ TB .
+      • If Y (T ) ∩ B is non-empty, then T ∈ T(TB ) for some TB ∈ TB and Y (T ) ∩ TB ⊂ YB (TB ).
+      • The multiplicity |T(TB )Y (x)| is roughly constant for x ∈ YB (TB ); this constant is the
+         same for all TB .
+   Now we apply the biased maximal density factoring, Lemma 9.2, to TB , and we let WB be
+the resulting family of convex sets (the maximal density factoring replaces TB by a large subset,
+but we will abuse notation and continue to refer to this set as TB ; this is harmless because of
+all the uniformity in the bullet points above). By pigeonholing, we can suppose that for each B,
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                              39
+
+
+the convex sets W ∈ WB haveFdimensions a × b × r1 , with a ≤ b ≤ r1 . Thus for each ball B we
+obtain a decomposition TB = WB TB,W .
+   The way we proceed depends on the dimensions of W . We let τ > 0 be a new small parameter,
+to be chosen later. If a ≥ δ 1−τ , then we are in the thick case. In this case we will show that
+U (T, Y ) is large by proving (89). If a ≤ δ 1−τ , then we are in the thin case. This case divides
+into several sub-cases. In the most important sub-case, we will estimate µ(WB ) by an induction
+on scales. We deal with these cases in the next two sections.
+9.4. The thick case. In this section, we prove Lemma 9.1 in the thick case. Recall that we
+applied the maximal density factoring lemma with bias ηbias . Thus by (82), for any W ∈ WB
+and any convex set K ⊂ B,
+                                                                              ηbias
+                                                                        |W |
+(90)                        ∆(TB,W , W )/∆(TB,W , K) ⪆                                  .
+                                                                        |K|
+  In particular, taking K = TB , we have
+                                          η                       η
+                                     |W | bias                 |W | bias
+                    ∆(TB,W , W ) ⪆             ∆(TB , TB ) ≈             ,
+                                     |TB |                     |TB |
+and so
+
+                                                               1+ηbias
+                                                        |W |
+(91)                                 |TB,W | ⪆                             .
+                                                        |TB |
+  In the thick case, we will prove (89) for balls of radius a:
+                                                            2β
+                                    |U (T) ∩ Ba |      −2ν   δ
+                                                   ⪆δ              .
+                                         |Ba |               a
+    This inequality says that U (T, Y ) fills a surprisingly large fraction of a typical a-ball, and it
+implies our goal as explained in Subsection 9.3. For the remainder of Section 9.4 we will fix an
+r1 -ball B for which λ(TB , YB ) ⪆ δ η . Since each W ∈ WB has thickness a, in order to establish
+(89) it suffices to prove that there exists at least one W ∈ WB for which
+                                                               2β
+                                 |U (TB , YB ) ∩ W |            δ
+(92)                                                 ⪆ δ −2ν          .
+                                         |W |                   a
+We will fix a choice of W for which λ(TB,W , YB ) ⪆ δ η .
+9.4.1. Warmup: A simple case. We begin with a special case to illustrate the main ideas of the
+proof. The simplest scenario in the thick case is when W is an r1 -ball (i.e. W = B), and hence
+a = r1 . The strong estimate (82) implies that CF (TB , B) ⪅ 1, and so we can apply KF (β) to
+TB . Strictly speaking, to do the application we rescale B = B(x, r) to the unit ball B1 , which
+sends TB to a set T̃B of δ/a-tubes, and transforms the shading YTB accordingly. Then we get
+
+        |U (TB , YB ) ∩ W |     |U (T̃B , YT̃B )|                                               β/2
+                            =                     ∼ |U (T̃B , YT̃B )| ≥ δ ϵ (δ/a)2β |T̃B ||T̃B |      ,
+                |W |                 |B1 |
+where ϵ > 0 is a parameter we are free to choose (provided η is sufficiently small depending on
+ϵ). We will choose ϵ = τ ηbias β/2. By (91), we know that
+
+                                                       1+ηbias                   1+ηbias
+                                                 |B|                       |B1 |
+(93)                    |TB | = |TB,W | ⪆                          =                           ,
+                                                |TB |                      |T̃B |
+40                            LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+   and so the factor in parentheses in the preceding volume estimate is ⪆ (δ/a)−2ηbias . All
+together we have
+
+                               |U (TB , YB )|   |U (TB )|       δ 2β−ηbias β
+                                              ⪆           ⪆ δϵ                 .
+                                    |B|            |B|           a
+     Since a ≥ δ 1−τ , this gives
+
+                                  |U (TB , YB )|                     δ 2β
+                                                 ⪆ δ ϵ δ −τ ηbias β         .
+                                       |B|                            a
+     This gives (92) if we choose ν < τ ηbias β/8 since r1 = δ ϵscale > δ 1/2 .
+9.4.2. The thick case, general version. In the general version of the thick case, W has dimensions
+a × b × r1 , with δ 1−τ ≤ a ≤ b ≤ r1 .
+   We need to prove (92). To do so, we make a linear change of variables to convert W to B1 .
+This converts TB,W to a set of planks P in B1 . Let YP denote the image of the shading YB under
+                                |U (TB,W ,YB )|
+this transformation. We have         |W |       ∼ |U (P, YP )|, so it suffices to prove
+                                                        2β
+                                                         δ
+                                         |U (P, YP )| ⪆ δ −2ν    .
+                                                         a
+   If W has dimensions a × b × r1 , then a plank P ∈ P has dimensions δb × aδ × 1. Note that
+CF (P, B1 ) ∼ CF (TB,W , W ) ⪅ 1 by (82), and λ(P, YP ) ∼ λ(TB,W , YB ) ⪆ δ η .
+   Now we apply Lemma 6.4. Before doing so, we must estimate the quantity “M ” from that
+lemma. For any θ ∈ [a/b, 1], let P ∈ P, and let Pθ be the corresponding θ aδ × aδ × 1 thickened
+plank, as described in Definition 6.10. From the statement of Lemma 6.4 we can choose any M
+with M ≥ 1 and M θ ≥ |P[Pθ ]| for each θ ∈ [a/b, 1]. So we need to estimate P[Pθ ].
+   Recall that P is related to TB,W by a linear change of variables. When we undo that change of
+variables, the planks P become TB,W and each plank P becomes a δ × δ × r1 tube. The thickened
+plank Pθ becomes a rectangular solid Tθ with dimensions δ × b′ × r1 with δ ≤ b′ ≤ r1 (the value
+of b′ depends on the orientation of the plank P ).
+   It is here that we make crucial use of the modified maximal density factoring lemma. By (90),
+we have                                                    η
+                                   ∆(TB,W , W )       |W | bias
+                                                 ⪆                 .
+                                   ∆(TB,W , Tθ )      |Tθ |
+Since W has dimensions a × b × r1 and Tθ has dimensions δ × b′ × r1 with b′ ≤ b, we have
+                                             η
+                                        |W | bias  a ηbias
+                                                  ≥            .
+                                        |Tθ |          δ
+and hence                                                             ηbias
+                        ∆(P, Pθ )                                     δ
+                                  = ∆(TB,W , Tθ )/∆(TB,W , W ) ⪅              .
+                        ∆(P, B1 )                                     a
+   Now we are ready to estimate P[Pθ ]. Note that |P[Pθ ]| = |TB,W [Tθ ]| and |P| = |TB,W | and so
+
+                                                                 1+ηbias                                 1+ηbias       2+ηbias
+                                                                                                     δ2
+                                                                                               
+|P[Pθ ]|   |TB,W [Tθ ]|   ∆(TB,W , Tθ ) |Tθ |            |Tθ |                    1+ηbias                                δ
+         =              =              ·      ⪅                             = |Pθ |         =       θ 2              ≤θ            .
+  |P|        |TB,W |      ∆(TB,W , W ) |W |              |W |                                        a                   a
+   Recalling that Pθ has dimensions θ aδ × aδ ×1, we see that |P[Pθ ]|
+                                                                |P|    ≤ θ(δ/a)2+ηbias , and rearranging
+gives
+
+                                        |P[Pθ ]|/θ ⪅ (δ/a)2+ηbias |P|.
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                               41
+
+
+   Let us verify that (δ/a)2+ηbias |P| ≥ 1, i.e. |P| ≥ (a/δ)2+ηbias . This follows from (91), which
+says that
+                                    1+ηbias                1+ηbias
+                               |W |                a × b × r1
+             |P| = |TB,W | ⪆                   =                       ≥ (a/δ)2+2ηbias .
+                               |TB |               δ × δ × r1
+Thus we can apply Lemma 6.4 with M = (δ/a)2+ηbias |P| ≥ 1. We conclude that
+                                        δ 2β        δ 2 β/2       δ 2β−ηbias β/2
+                    |U (P, YP )| ⪆ δ ϵ           M −1       |P|   = δϵ                   .
+                                         a              a                a
+Since a ≥ δ 1−τ , if we select ϵ < ηbias βτ /4, then this yields (92) with ν = ηbias βτ /8. This finishes
+the proof in the thick case.
+Remark 9.3. Notice that in the thick case, the exponent ν obeys
+                                               ν ∼ τ ηbias β.
+   This value of ν does not directly depend on ζ. But in the thin case, we will have to choose
+ηbias and τ much smaller than ζ, so indirectly ν depends on ζ.
+9.5. The thin case. Now we consider the thin case when a ∈ [δ, δ 1−τ ]. Fix a ball B. Recall that
+each set W ∈ WB has dimensions a×b×r1 , with r1 = δ ϵscale . We also have that each tube segment
+TB ∈ TB has roughly the same density of shading, i.e. |YB (TB )| ∼ λ(TB , YB )|TB | ⪆ δ η |TB | for
+each TB ∈ TB . After a harmless refinement we can suppose that YB (TB ) is covered by a union
+of δ-balls, each of which satisfies
+(94)                                  |Bδ ∩ YB (TB )| ⪆ δ η |Bδ |.
+   Apply Proposition 5.1 to TB = WB TB,W . We obtain a shading YB′ (TB ) ⊂ YB (TB ) on TB
+                                     F
+
+so that (TB , YB′ ) is an ≈ 1 refinement of (TB , YB ); a subset W′B of WB ; and a shading YW′B on
+WB so that
+
+(95)                                       λ(W′B , YW′B ) ⪆ δ 2η ,
+and
+                                                     [
+(96)                            (TB )YB′ (x) ⊂               (TB,W )YB′ (x).
+                                                  W ∈W′B
+                                                 x∈YW′ (W )
+                                                     B
+
+   Recall from Remark 5.4, that YW′B (W ) is the a-neighborhood of U (TB,W , YB′ ). Combining
+this with (94) we have that
+(97)              |U (TB , YB′ )| ≳ (δ/a)3 δ η |U (W′B , YW′B )| ≳ δ 3τ +η |U (W′B , YW′B )|.
+   After a further harmless refinement, we may suppose that TB,W |Q ∩ YB′ (TB )| is roughly
+                                                                           P
+
+constant for each grid-aligned a/100 cube Q that intersects U (TB,W , Y ′ ), as W ranges over the
+elements of W′B , and that each shading YW′B (W ) is the union of such a/100 cubes.
+9.5.1. Slab case. Recall that r1 = δ ϵscale , where ϵscale > 0 is the constant from Lemma 9.1, which
+is a tiny constant that we get to choose. We define the slab case to be the case b ≥ δ ϵscale r1 =
+δ 2ϵscale . In this case, W is a giant slab of dimensions at least a × δ 2ϵscale × δ ϵscale .
+    Applying Lemma 6.9 to (W′B , YW′B ), we have µ(W′B , YW′B ) ⪅ δ −8η−8ϵscale , i.e.
+                                |U (W′B , YW′B )| ⪆ δ 8η+8ϵscale |W′B | |W |.
+Combining this with (97), we have
+                              |U (TB , YB′ )| ⪆ δ 8η+8ϵscale +3τ δ η |W′B | |W |,
+42                             LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+where the final inequality used the fact that we are in the thin case, and thus δ/a ≥ δ τ .
+   Next we estimate ∆max (TB ). Each tube TB ∈ TB is contained in a tube T ∈ T. If TB ⊂ K,
+then the corresponding tube T is contained in r1−1 K, the dilation of K by a factor r1−1 . Therefore
+∆max (TB ) ≤ r1−2 ∆max (T). Using this, we can see that
+
+                          |W′B | |W | ⪆ ∆max (TB )−1 |TB | |TB | ≥ δ η r12 |TB | |TB |.
+Summing over the r1 -balls B, we conclude that
+
+              |U (T, Y )| ⪆ δ 8η+8ϵscale +3τ δ 2η r12 δ O(ϵscale ) |T| |T | ≳ δ 10η+O(ϵscale )+3τ |T| |T |.
+
+We choose τ, η, and ϵscale ≪ β, and so this estimate implies our goal.
+  This finishes the case b ≥ δ ϵscale r1 , and so from now on, we can assume that b ≤ δ ϵscale r1 .
+
+9.5.2. Transverse case. Fix a ball B. We will study the typical angle of intersection of the slabs
+of W′B by applying Lemma 6.11 to (W′B , YW′B ). This gives an ≈ 1 refinement, (W′′B , YW′′B ) and a
+typical angle of intersection θ ∈ [a/b, 1].
+   Let τ ′ be a small parameter to be determined, with ζ ≫ τ ′ > τ . We define the transverse
+                                     ′
+case to be the case that θ ≥ δ −τ a/b.
+   When θ is the typical angle of intersection, Lemma 6.14 tells us that U (W′′B , YW′′B ) morally
+almost fills each ball of radius θb. More precisely, Lemma 6.14 says that (W′′B , YW′′B ) has a ⪆ 1
+refinement (W′′′B , YW′′′
+                      B
+                          ) so that for every ball Bθb that intersects U (W′′′
+                                                                           B , YW′′′
+                                                                                 B
+                                                                                     ), we have
+
+                |U (W′B , YW′B ) ∩ Bθb | ≥ |U (W′′′
+                                                B , YW′′′
+                                                      B
+                                                          ) ∩ Bθb | ⪆ a4η |Bθb | ≥ δ 4η |Bθb |.
+   (Here θ is the typical angle in the paragraph above – see Remark 6.15 .)
+   Recall that YW′B consists of a union of a-balls that intersect U (T, Y ). Therefore, using (94),
+for any ball Br of radius r ≥ a, we have
+
+                              |U (T, Y ) ∩ Br | ⪆ δ η (δ/a)3 |U (W′B , YW′B ) ∩ Br |.
+  Since we are in the thin case, we have a ≤ δ 1−τ . So for any ball Br of radius at least a, we
+have
+
+                                |U (T, Y ) ∩ Br | ⪆ δ 3τ +η |U (W′B , YW′B ) ∩ Br |.
+     In particular, for the ball Bθb above, we have
+
+
+(98)                                    |U (T, Y ) ∩ Bθb | ⪆ δ 3τ +5η |Bθb |.
+
+   Informally, this equation shows that U (T, Y ) almost fills Bθb . Formally, we choose a radius r
+                                                            ′
+of the form r = δ ηj with θb ≤ r ≤ δ −η θb. Since θb ≥ δ 1−τ , we have
+
+                                                                                  2β
+                            |U (T, Y ) ∩ Br |                   ′                 δ
+(99)                                          ⪆ δ 3τ +8η ≥ δ −2τ β+3τ +8η              .
+                                  |Br |                                           r
+Since we choose τ ′ ≫ τ, η, Equation (99) gives (89) with a value of ν = τ ′ β − O(τ + η). Equation
+(89) implies our conclusion, as explained in Subsection 9.3.
+                                  ′                                                         ′
+   This finishes the case θ ≥ δ −τ a/b, and so from now on, we can assume that θ ≤ δ −τ a/b.
+                  A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                43
+
+
+9.5.3. Tangential case. Recall from the start of the transverse case that we fixed a ball B and
+studied the typical angle of intersection of the slabs of W′B by applying Lemma 6.11 to (W′B , YW′B ).
+This gave a constant multiplicity ≈ 1 refinement (W′′B , YW′′B ) with typical angle of intersection
+θ ∈ [a/b, 1]. Let τ ′ be a small parameter to be determined, with ζ ≫ τ ′ > τ . We defined the
+                                                 ′
+transverse case to be the case that θ ≥ δ −τ a/b. Now we consider the tangential case, when
+        ′
+θ < δ −τ a/b.
+   Recall from (96) that
+                                                         [
+                                 (TB )YB′ (x) ⊂                (TB,W )YB′ (x),
+                                                    W ∈W′B
+                                                   x∈YW′ (W )
+                                                         B
+
+   Next we refine (TB , YB′ ) to make it compatible with (W′′B , YW′′B ). Suppose that TB ∈ TB,W .
+                                                                   / W′′B , we set YB′′ (TB ) to be empty.
+If W ∈ W′′B , we set YB′′ (TB ) = YB′ (TB ) ∩ YW′′B (W ), and if W ∈
+                      ′′                                    ′
+We have that (TB , YB ) is a ⪆ 1 refinement of (TB , YB ), and
+                                                         [
+                                (TB )YB′′ (x) ⊂                (TB,W )YB′′ (x).
+                                                    W ∈W′′ B
+                                                   x∈YW′′ (W )
+                                                         B
+
+We claim that (TB , YB′′ ) is a ⪆ 1 refinement of (TB , YB′ ) because of the uniformity on axis-aligned
+a/100 cubes that we established earlier.
+  Next we refine (T, Y ) to make it compatible with (TB , YB′′ ). Recall that |T(TB )Y (x)| is roughly
+constant among x ∈ YB (TB ). We know that (TB , YB′′ ) is a ⪆ 1 refinement of (TB , YB ). If
+T ∈ T(TB ), we define Y ′ (T ) = Y (T ) ∩ YB′′ (TB ). Because of the uniformity above, (T, Y ′ ) is a
+⪆ 1 refinement of (T, Y ). From the definition of Y ′ we see that
+                                                         [
+                                        TY ′ (x) ⊂                  T(TB ).
+                                                      TB ∈TB
+                                                     x∈YB′′ (TB )
+
+   and so
+                                                   [             [
+                                 TY ′ (x) ⊂                              T(TB ).
+                                               W ∈W′′ B
+                                                          TB ∈TB,W
+                                              x∈YW′′ (W ) x∈YB′′ (TB )
+                                                     B
+
+   The angle between any two tubes in TB,W is ⪅ b/r1 . Define ρ2 = b/r1 . This means that for
+each W , there exists a unit vector v(W ) so that each T ∈ TB,W makes angle at most ρ2 with
+v(W ). Thus for each x ∈ U (T, Y ′ ) we have
+
+                                         [
+(100)                   TY ′ (x) ⊂              {T ∈ TY (x) : ∠(T, v(W )) ≤ ρ2 }.
+                                      W ∈W′′ B
+                                     x∈YW′′ (W )
+                                          B
+
+
+  Now the cardinality of the inner set is ⪅ µ(ρ2 ) ≈ µ(T[Tρ2 ], Y ) for any Tρ2 ∈ Tρ2 . Since
+(W′′B , YW′′B ) is a refinement of (W′B , YW′B ) and the former has constant multiplicity µ(W′′B , YW′′B ),
+we get that for any Tρ2 ∈ Tρ2 ,
+
+
+(101)                            µ(T, Y ) ≤ µ(W′′B , YW′′B )µ(T[Tρ2 ], Y ).
+44                           LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+   Using KKT (β) with ηbias in place of ϵ, we have
+                                                                     β/2
+(102)                    µ(T[Tρ2 ], Y ) ≲ δ −ηbias (δ/ρ2 )−2 |T[Tρ2 ]|     .
+
+  Next we consider |Tρ2 |. Since we are not in the slab case, b ≤ δ ϵscale r1 , and so ρ2 = b/r1 ≤
+ ϵscale
+δ    . On the other hand, b ≥ δ and so ρ2 = b/r1 ≥ δ/r1 = δ 1−ϵscale . So ρ2 ∈ [δ 1−ϵscale , δ ϵscale ],
+and so by the hypothesis of Lemma 9.1, we have
+
+                                               |Tρ2 | ≥ ρ−2−ζ
+                                                         2    .
+  Our next goal is to estimate µ(W′′B , YW′′B ). Recall that θ is a typical angle of intersection for
+(W′′B , YW′′B ). In particular, if W1 , W2 ∈ W′′B and if x ∈ YW′′B (W1 ) ∩ YW′′B (W2 ), then
+
+                                                                       ′
+(103)                                ∠(T W1 , T W2 ) ≲ θ ≤ δ −τ a/b.
+   Let S denote a slab of dimensions (a/b)r1 ×r1 ×r1 , and let S denote a maximal set of essentially
+distinct slabs S ⊂ B. Recall from (28) that we defined
+
+                           W′′S = {W ∈ W′′B : W ⊂ S and ∠(T W, T S) ≤ θ},
+     and that
+
+                                              W′′B = ⊔S∈S W′′S .
+                                                              ′
+     By (103), W′′YW′′ (x) is contained in at most δ −O(τ ) sets W′′S . Therefore,
+                    B
+
+                                                         ′
+                               µ(W′′B , YW′′B ) ⪅ δ −O(τ ) max µ(W′′S , YW′′S ).
+                                                             S∈S
+   However, we would like to only include S with λ(W′′S , YW′′S ) not too small. Recall from (95)
+that λ(W′′B , YW′′B ) ⪆ λ(W′B , YW′B ) ⪆ δ 2η . Define
+
+                        Sdens = {S ∈ S : λ(W′′S , YW′′S ) ≥ (1/100)λ(W′′B , YW′′B )}.
+Then we can define W′′′                ′′
+                      B = ⊔S∈Sdens WS and YW′′′
+                                            B
+                                                = YW′′B , and we see that (W′′′
+                                                                            B , YW′′′
+                                                                                  B
+                                                                                      ) is a ⪆ 1
+                ′′
+refinement of (WB , YW′′B ). Therefore
+                                                                   ′
+                     µ(W′′B , YW′′B ) ⪅ µ(W′′′
+                                           B , YW′′′
+                                                 B
+                                                     ) ⪅ δ −O(τ ) max µ(W′′S , YW′′S ).
+                                                                       S∈Sdens
+
+    Select S ∈ Sdens . We know that λ(W′′S , YW′′S ) ⪆ δ 2η .
+    We can make a linear change of variables that converts S to B1 and converts W′′S to a set T̃ of
+ρ2 -tubes in B1 . By the maximal density factoring lemma, we know that ∆max (W′′S ) ≤ ∆max (WB )
+is small. With the original lemma, we would have ∆max (WB ) ⪅ 1. With our modified lemma,
+Lemma 9.2, we have ∆max (WB ) ⪅ δ −O(ηbias ) . This implies ∆max (W′′S ) ⪅ δ −O(ηbias ) , and so
+
+                                          ∆max (T̃) ⪅ δ −O(ηbias ) .
+     We also have
+
+                                     λ(T̃, YT̃ ) = λ(W′′S , YW′′S ) ⪆ δ 2η .
+   Since T̃ is a set of ρ2 -tubes in B1 with ∆max (T̃) ⪅ δ −O(ηbias ) , we have |T̃| ⪅ δ −O(ηbias ) ρ−2
+                                                                                                     2 . If
+η > 0 is sufficiently small (recalling Remark 3.6) we can bound µ(T̃, YT̃ ) using Lemma 3.7 with
+ηbias in place of ϵ, which gives
+                  A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                      45
+
+
+
+
+(104)
+                                               β/2                                                  β/2
+                                                    ⪅ δ −O(ηbias ) ρ−2β
+                                                                                        βζ/2 −2
+  µ(T̃, YT̃ ) ⪅ δ −ηbias ∆max (T̃)1−β/2 ρ−2
+                                         2 |T̃|                     2   ≤ δ −O(ηbias ) ρ2   ρ2 |Tρ2 |     .
+   Therefore, we get
+
+                                           ′                            ′    βζ/2               β/2
+(105)            µ(W′′B , YW′′B ) ⪅ δ −O(τ ) µ(T̃, YT̃ ) ≤ δ −O(ηbias +τ ) ρ2       ρ−2
+                                                                                     2 |Tρ2 |          .
+   Combining (101), (102), and (105), we conclude that
+                                ′   βζ/2 −2   β/2                ′                      β/2
+        µ(T, Y ) ⪅ δ −O(ηbias +τ ) ρ2    δ |T|     ≤ δ −O(ηbias +τ )+ϵscale βζ/2 δ −2 |T|     ,
+where for the final inequality we used the fact that we are not in the slab case, and thus ρ2 =
+b/r1 < δ ϵscale . We choose τ, τ ′ , ηbias ≪ ϵscale βζ, and this gives the desired bound with a gain
+ν = (1/4)ϵscale βζ.
+
+                          Appendix A. Appendix: Probability lemmas
+  In this appendix, we give probability arguments to prove Lemma 3.8 and Lemma 7.6. The
+proofs are based on a simple probability lemma which is a small variation on Chernoff’s inequality.
+Lemma A.1. Suppose that X1 , ..., XN are i.i.d. random variables. Suppose that 0 ≤ X1 ≤ M
+almost surely and that m = E(X1 ). If N m ≥ M , then for every S,
+                                                                            S
+                               P[X1 + ... + XN > S] ≤ e10 e− N m .
+   If N m < M , then for every S,
+                                                                            S
+                                     P[X1 + ... + XN > S] ≤ e10 e− M .
+Proof. Let λ ∈ R be a parameter to choose later. For each λ ∈ R, using the Markov inequality
+and independence, we see that
+
+                                                                            N
+                                                                            Y
+        P[X1 + ... + XN > S] ≤ e−λS E[e(X1 +...XN )λ ] = e−λS E(                  eλXn ) = e−λS E(eλX1 )N .
+                                                                            n=1
+                                               λx
+  For each λ ∈ R, the function x 7→ e               is convex, and so given our distributional information
+about X1 we can bound
+                                                       m λM     m
+                                       E(eλX1 ) ≤        e  +1−   .
+                                                       M        M
+   Plugging in, we get
+                                                              m  m N
+                         P[X1 + ... + XN > S] ≤ e−λS               eλM + 1 −
+                                                                        .
+                                                   M              M
+  We first consider the regime N m ≥ M . In this regime, we choose λ = N1m . Since N m ≥ M ,
+                                    M
+we have 0 ≤ NMm ≤ 1, and so eλM = e N m ≤ 1 + 10 NMm . Plugging in and simplifying, we get
+                                                           N
+                                                         10
+                                                          S              S
+                       P[X1 + ... + XN > S] ≤ e− N m 1+        ≤ e10 e− N m .
+                                                         N
+   This gives the conclusion in the regime N m ≥ M . On the other hand, if N m < M , we define
+N ′ so that N ′ m = M . Since Xn ≥ 0 almost surely, we can bound
+                                                                                      S                S
+              P[X1 + ... + XN > S] ≤ P[X1 + ... + XN ′ > S] ≤ e10 e− N ′ m = e10 e− M .                       □
+46                         LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+   Now we consider random translations and rigid motions of Rn . If v ∈ Rn , we let Rv (x) = x+v.
+A random translation of size ≤ ρ is a translation Rv by a vector v ∈ Bρ selected randomly from
+the uniform measure on Bρ . A random rigid motion is a random rotation composed with a
+random translation of size ≤ 1.
+   Now we restate and prove Lemma 3.8:
+Lemma 3.8. Suppose that T is a set of (essentially distinct) δ-tubes in B1 ⊂ Rn . Let R1 , ..., RJ
+                                                                        SJ
+be random rigid motions of size 1, with J = CF (T), and let T′ = j=1 Rj (T). Then with high
+probability the tubes of T′ are essentially distinct up to multiplicity ⪅ 1 and also CF (T′ ) ⪅ 1.
+After refining T′ to make the tubes essentially distinct, we have |T′ | ≈ CF (T)|T| and CF (T′ ) ⪅ 1.
+Proof. By assumption, the tubes of T are essentially distinct. It could happen that two different
+tubes of T′ are not essentially distinct. However, we will show that with high probability, this
+effect is very mild. We will show that with high probability, for any δ-tube T0 , there are ⪅ 1
+tubes of T′ contained in 100T0 .
+   We define Xj = |Rj (T)[100T0 ]|, which we think of as a random variable. Note that |T′ [100T0 ]| =
+PJ
+   j=1 Xj .
+   Since the tubes of T are essentially distinct, we have Xj = |Rj (T)[100T0 ]| = |T[Rj−1 (100T0 )]| ≲
+1. We choose M ≲ 1 and note that 0 ≤ Xj ≤ M almost surely.                 P
+   Next we want to estimate E(Xj ). By linearity of expectation, E(Xj ) = T ∈T P [Rj (T ) ⊂ 100T0 ].
+Since Rj is a random rigid motion, we note that for each T ∈ T,
+
+(106)                               P [Rj (T ) ⊂ 100T0 ] ≲ |Tδ |2 .
+Therefore,
+
+                                    m = E(Xj ) ≲ |T||Tδ |2 .
+   We claim that Jm ≲ 1 = M . To see this, we note that Jm ≲ CF (T)|T||Tδ |2 . Now suppose
+                                                                                ∆(T,K)    |T[K]|
+that ∆max (T) = ∆(T, K) for some convex set K ⊂ B1 . Then we have CF (T) = ∆(T,B     1)
+                                                                                        = |T||K| .
+But since the tubes of T are essentially distinct, we have |T[K]| ≲ (|K|/|Tδ |)2 . Therefore we
+have
+
+                                                 |T[K]||Tδ |2
+                          Jm ≲ CF (T)|T||Tδ |2 =              ≲ |K| ≲ 1.
+                                                     |K|
+     Therefore, if S ≥ 1, then Lemma A.1 (or the standard Chernoff bound) gives
+                            P[X1 + ... + XJ > S] ≤ e10 e−S/M ∼ e−S .
+In other words, P[|T′ [100T0 ]| > S] ≲ e−S . The number of essentially distinct T0 is at most
+δ −O(1) , and so we can choose S ⪅ 1 so that with high probability |T′ [100T0 ]| ≤ S for every T0 .
+   If we refine T′ to be a set of essentially distinct tubes then we still have |T′ | ≈ CF (T)|T|.
+   Next we estimate CF (T′ ). Refining T′ to make the tubes essentially distinct will affect CF (T′ )
+by a factor ⪅ 1, so we can ignore the refinement.
+   Let K ⊂ B2 ⊂ Rn be a convex set of dimensions k1 ×. . .×kn−1 ×1, with δ ≤ k1 ≤ . . . ≤ kn−1 ≤
+                                                                                            PJ
+1. Let Xj = |Rj (T)[K]|, which we think of as a random variable. Note that |T′ [K]| = j=1 Xj .
+We will show that (for each K),
+                                                            
+                                 J
+                               X                       |K| 
+(107)                        P     Xj > CA∆(T′ , B1 )         ≲ e−A ,
+                                j=1
+                                                       |Tδ |
+                A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                            47
+
+
+    where C ≥ 1 is an absolute constant. Since there are only (1/δ)O(1) essentially different
+choices for the convex set K ⊂ B1 , we have that with probability at least 1 − (1/δ)O(1) e−A , for
+                                        |K|
+every K we have |T′ [K]| ≲ A∆(T′ , B1 ) |Tδ|
+                                             and so CF (T′ ) ≲ A. We can choose A ⪅ 1 so that
+the probability is at least 99/100.
+    We will check (107) using Lemma A.1. Note that ∆max (T) ∼ CF (T)∆(T, B1 ) ∼ ∆(T′ , B1 ) ∼
+  ′
+|T ||Tδ |. Define
+
+                            ∆(T′ , B1 )|K|   ∆max (T)|K|
+               M = |T′ ||K| =              =             ≥ |T[Rj−1 (K)]| = Xj .
+                                |Tδ |           |Tδ |
+  Clearly Xj ≥ 0, so 0 ≤ Xj ≤ M almost surely. For each T ∈ T, we claim that
+
+(108)                                  P[Rj (T ) ⊂ K] ≲ |K|.
+To see this, pick a point x ∈ T (for example x could be the center of T ) and bound
+
+                                                                 |K|
+                        P(Rj (T ) ⊂ K) ≤ P(Rj (x) ∈ K) ≲                ∼ |K|.
+                                                               |B1 (x)|
+  By linearity of expectation, (108) gives the bound
+
+                                     E(Xj ) ≲ |T||K|.
+Define m = E(Xj ). Since J = CF (T) we have Jm ≲ CF (T)|T||K| = |T′ ||K| = M . Therefore,
+Lemma A.1 tells us that for every S,
+
+                                 P[X1 + ... + XJ > S] ≲ e−cS/M .
+                               |K|
+  We plug in S = CA∆(T′ , B1 ) |Tδ|
+                                    = CAM , with C sufficiently large, and we get (107).          □
+Finally, we restate and prove Lemma 7.6.
+Lemma 7.6. Let δ ≤ ρ ≤ 1. Suppose that T is a set of essentially distinct δ-tubes in Tρ ⊂
+           |T |
+Rn with |T||Tρ δ | ∼ J ≥ 1. Let R1 , ..., RJ be a set of J random translations of size ≤ ρ. Let
+         J
+T′ = j=1 Rj (T). Let A ≥ 1. Then with probability at least 1 − (ρ/δ)O(1) e−A , the tubes of
+       S
+  ′
+T are essentially distinct up to a factor ≲ A and we have ∆max (T′ ) ≲ A∆max (T). After
+refining T′ to make the tubes essentially distinct, we have with high probability |T′ | ≈ J|T| and
+∆max (T′ ) ⪅ ∆max (T)
+  The proof ideas are the same as for Lemma 3.8 above.
+Proof. First we check that with high probability, for any δ-tube T0 ⊂ Tρ , |T′ [100T0 ]| ⪅ 1. This
+will show that after refining T′ to be essentially distinct, we still have |T′ | ≈ J|T|.
+   We define Xj = |Rj (T)[100T0 ]|, which we think of as a random variable. Note that |T′ [100T0 ]| =
+PJ
+   j=1 Xj .
+   Since the tubes of T are essentially distinct, we have Xj = |Rj (T)[100T0 ]| = |T[Rj−1 (100T0 )]| ≲
+1. We choose M ≲ 1 and note that 0 ≤ Xj ≤ M almost surely.                   P
+   Next we want to estimate E(Xj ). By linearity of expectation, E(Xj ) = T ∈T P [Rj (T ) ⊂ 100T0 ].
+Since Rj is a random translation of size ρ, we note that for each T ∈ T,
+
+                                                             |Tδ |
+(109)                               P [Rj (T ) ⊂ 100T0 ] ≲         .
+                                                             |Tρ |
+Therefore,
+48                             LARRY GUTH, HONG WANG, AND JOSHUA ZAHL
+
+
+
+
+                                 m = E(Xj ) ≲ |T||Tδ |/|Tρ |.
+   We claim that Jm ≲ 1 = M . To see this, we note that Jm ≲ J|T||Tδ |/|Tρ | ∼ 1 by our
+assumption about J.
+   Therefore, if S ≥ 1, then Lemma A.1 (or the standard Chernoff bound) gives
+
+                            P[X1 + ... + XJ > S] ≤ e10 e−S/M ∼ e−S .
+                           ′
+   In other words, P[|T [100T0 ]| > S] ≲ e−S . The number of essentially distinct T0 is at most
+δ −O(1) , and so we can choose S ⪅ 1 so that with high probability |T′ [100T0 ]| ≤ S for every T0 .
+   Next we estimate ∆max (T′ ).
+   Let K ⊂ 2Tρ be a convex set of dimensions k1 × . . . × kn−1 × 1, with δ ≤ k1 ≤ . . . ≤ kn−1 ≤ ρ.
+                                                                                          PJ
+Let Xj = |Rj (T)[K]|, which we think of as a random variable. Note that |T′ [K]| = j=1 Xj .
+We will show that (for each K),
+                                                             
+                                     J
+                                   X                    |K| 
+(110)                            P     Xj > CA∆max (T)         ≲ e−A .
+                                    j=1
+                                                        |Tδ |
+
+   Since there are only (ρ/δ)O(1) essentially different choices for the convex set K ⊂ Tρ , we have
+                                                                                                |K|
+that with probability at least 1 − (ρ/δ)O(1) e−A , for every K we have |T′ [K]| ≲ A∆max (T) |T    δ|
+and so ∆max (T′ ) ≲ A∆max (T).
+   We will check (110) using Lemma A.1. Define M = ∆max (T)|K|/|Tδ |. Note that
+
+                                   M ≥ |T[Rj−1 (K)]| = Xj .
+     Clearly Xj ≥ 0, so 0 ≤ Xj ≤ M almost surely. For each T ∈ T, we claim that
+
+(111)                                  P[Rj (T ) ⊂ K] ≲ |K|/|Tρ |.
+To see this, pick a point x ∈ T (for example x could be the center of T ) and bound
+
+                                                  |Bρ (x) ∩ K|   k1 · · · kn−1 · ρ   |K|
+               P(Rj (T ) ⊂ K) ≤ P(Rj (x) ∈ K) ≤                ≤                   ∼       .
+                                                    |Bρ (x)|             ρn          |Tρ |
+     By linearity of expectation, (111) gives the bound
+
+                                                       |T||K|
+                                            E(Xj ) ≲          .
+                                                        |Tρ |
+                                                       |K|             |K|
+Define m = E(Xj ). By our definition of J we have Jm ≲ |Tδ|
+                                                            ≲ ∆max (T) |Tδ|
+                                                                            = M . Therefore,
+Lemma A.1 tells us that
+
+                                    P[X1 + ... + XJ > S] ≲ e−cS/M .
+                               |K|
+     We plug in S = CA∆max (T) |Tδ|
+                                    = CAM , with C sufficiently large, and we get (110).          □
+
+                                         Acknowledgements
+   Larry Guth is supported by a Simons Investigator Award. Hong Wang is supported by NSF
+CAREER DMS-2238818 and NSF DMS-2055544. Joshua Zahl is supported by Discovery and
+Alliance grants from the Natural Sciences and Engineering Research Council of Canada, by the
+Fundamental Research Funds for the Central Universities (Project No. 100-63253272), and by
+the Nankai Zhide Foundation.
+                 A STREAMLINED PROOF OF THE KAKEYA SET CONJECTURE IN R3                                  49
+
+
+                                               AI Usage
+  All results in this paper were proved by the authors, and the paper was written by the authors.
+AI tools (specifically OpenAI’s Astra) were used to proof-read the paper.
+
+                                             References
+ [1] Roy Davies. “Some remarks on the Kakeya problem,” Proc. Cambridge Philos. Soc. 69(3): 417–421. 1971.
+ [2] Yichuan Cao, Weikun He, Yihe Huang, Yunfei Li, Xiao Ma, and Jiaqi Wang. Formalizing Kakeya in Lean
+     https://github.com/project-numina/kakeya-3d.
+ [3] Mingfeng Chen, Shaoming Guo, Yixuan Pang, Minxing Shen, Zhihong Wang, Zheng Yuan, Huanyu Zheng,
+     and Thomas Zhu. Formalizing sticky Kakeya in Lean https://github.com/M32026/3d-sticky-kakeya.
+ [4] Larry Guth, “Introduction to the proof of the Kakeya conjecture,” https://arxiv.org/abs/2505.07695,
+     2025.
+ [5] Larry Guth, “Outline of the Wang-Zahl proof of the Kakeya conjecture in R3 ,” arXiv:2508.05475, 2025.
+ [6] Jonathan Hickman, “The Kakeya Conjecture: where does it come from and why is it important?,”
+     arXiv:2512.09842, 2025.
+ [7] Terence Tao, Blog post “Stickiness, graininess, planiness, and a sum-product approach to the Kakeya
+     problem” , https://terrytao.wordpress.com/2014/05/07/stickiness-graininess-planiness-and-a-sum-product-
+     approach-to-the-kakeya-problem/
+ [8] Hong Wang and Joshua Zahl, “Sticky Kakeya sets and the sticky Kakeya conjecture,” J. Amer. Math. Soc.
+     39(2): 515–585, 2026.
+ [9] Hong Wang and Joshua Zahl, “The Assouad dimension of Kakeya sets in R3 ,” Invent. Math. 241(1):153–206,
+     2025.
+[10] Hong Wang and Joshua Zahl, “Volume estimates for unions of convex sets, and the Kakeya set conjecture
+     in three dimensions,” arXiv:2502.17655, 2025.
+[11] Thomas Wolff, “An improved bound for Kakeya type maximal functions,” Rev. Mat. Iberoam. 11:651–674,
+     1995.
+
+  LG: Department of Mathematics, Massachusetts Institute of Technology, Cambridge, MA USA
+
+  HW: Department of Mathematics, New York University, New York, NY USA; and IHES, Université
+Paris-Saclay, Bures-sur-Yvette, France.
+
+  JZ: Chern Institute of Mathematics and LPMC, Nankai University, Tianjin 300071, China; and The
+University of British Columbia, Vancouver, BC, Canada.
+

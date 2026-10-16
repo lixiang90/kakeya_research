@@ -1,0 +1,2630 @@
+                                                  IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL
+                                                      CONJECTURE IN HIGHER DIMENSIONS
+arXiv:1908.05589v1 [math.CA] 14 Aug 2019
+
+
+
+
+                                                    JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+                                                   Abstract. We adapt Guth’s polynomial partitioning argument for the Fourier
+                                                   restriction problem to the context of the Kakeya problem. By writing out the
+                                                   induction argument as a recursive algorithm, additional multiscale geomet-
+                                                   ric information is made available. To take advantage of this, we prove that
+                                                   direction-separated tubes satisfy a multiscale version of the polynomial Wolﬀ
+                                                   axioms. Altogether, this yields improved bounds for the Kakeya maximal con-
+                                                   jecture in Rn with n = 5 or n > 7 and improved bounds for the Kakeya set
+                                                   conjecture for an inﬁnite sequence of dimensions.
+
+
+
+
+                                                                                  1. Introduction
+                                             For n > 2 and small δ > 0, a δ-tube is a cylinder T ⊂ Rn of unit height
+                                           and radius δ, with arbitrary position and arbitrary orientation dir(T ) ∈ S n−1 . A
+                                           family T of δ-tubes is direction-separated if {dir(T ) : T ∈ T} forms a δ-separated
+                                           subset of the unit sphere.
+                                                                                                    n
+                                           Conjecture 1.1 (Kakeya maximal conjecture). Let p > n−1     . For all ε > 0, there
+                                           exists a constant Cε,n > 0 such that
+                                                             X                                    X      1/p
+                                                                 χT         6 Cε,n δ −(n−1−n/p)−ε    |T |              ( Kp )
+                                                                       Lp (Rn )
+                                                             T ∈T                                         T ∈T
+                                           whenever 0 < δ < 1 and T is a direction-separated family of δ-tubes.
+                                             By an application of Hölder’s inequality, one may readily verify that if ( Kp )
+                                                          n
+                                           holds for p = n−1 , then, for all ε > 0, there exists a constant cε,n > 0 such that
+                                                                           [                X
+                                                                               T > cε,n δ ε      |T |.
+                                                                            T ∈T               T ∈T
+                                           This can be interpreted as the statement that any direction-separated family of
+                                           δ-tubes is ‘essentially disjoint’. A more refined argument shows that if ( Kp ) holds
+                                           for a given p, then every Kakeya set in Rn (that is, every compact set that contains
+                                           a unit line segment in every direction) has Hausdorff dimension at least p′ , the con-
+                                           jugate exponent of p. Thus, Conjecture 1.1 would imply the Kakeya set conjecture,
+                                           that Kakeya sets in Rn have Hausdorff dimension n; see, for instance, [5, 42, 28].
+                                              For n = 2, the set conjecture was proven by Davies [12] and the maximal con-
+                                           jecture was proven by Córdoba [11] in the seventies. Both conjectures remain
+                                           challenging and important open problems in higher dimensions; for partial results,
+                                           see [13, 9, 10, 5, 41, 34, 39, 6, 26, 24, 31, 27, 4, 14, 16, 17, 15, 29] and references
+                                           therein.
+                                           Supported by the MINECO grants SEV-2015-0554 and MTM2017-85934-C3-1-P and the ERC
+                                           grant 834728.
+                                                                                         1
+2            JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+        n=         p>                                    n=         p>
+         2           2            Córdoba [11]            9        6/5        Theorem 1.2
+         3       5/3 − ε       Katz–Zahl [29, 30]         10       13/11       Theorem 1.2
+         4      1.4794...        Katz–Zahl [30]           11        7/6        Theorem 1.2
+         5        18/13           Theorem 1.2             12       31/27       Theorem 1.2
+         6         4/3              Wolff [41]            13      106/93       Theorem 1.2
+         7        34/27           Theorem 1.2             14        9/8        Theorem 1.2
+         8        21/17           Theorem 1.2             15       47/42       Theorem 1.2
+
+          Figure 1. The state-of-the-art for the Kakeya maximal conjecture
+          in low dimensions. New results are highlighted.
+
+   In 1999, Bourgain [6] improved the state-of-the-art in higher dimensions using
+sum-difference theory from additive combinatorics. This technique was refined
+by Katz and Tao [26, 27, 28], proving that Conjecture 1.1 is true in the range
+p > 1 + 47 n−1
+            1
+               . The purpose of the present article is to extend this range using a
+different approach.
+Theorem 1.2. Conjecture 1.1 is true in the range
+                             n           2n             1     o
+          p > 1 + min max                          ,           .                                   (1)
+                  26k6n         (n − 1)n + (k − 1)k n − k + 1
+  When k = n, the first entry of the maximum of (1) takes the conjectured value;
+however, the second entry only reaches this value at the other extreme, when k = 2.
+A√reasonable compromise can be found by taking k to be the closest integer to
+( 2 − 1)n + 1, at which point we find, for instance, that the Kakeya maximal
+conjecture holds in the range1
+                                          1      1
+                               p>1+        √         ,                          (2)
+                                      2− 2n−1
+which is an improvement over the Katz–Tao maximal bound [27]. See Figure 1 for
+the state-of-the-art in low dimensions. Theorem 1.2 also implies improved bounds
+for the Kakeya set conjecture in certain dimensions. Further discussion of the
+numerology is contained in the final section of the article.
+   The proof of Theorem 1.2 is based on the polynomial method, which was intro-
+duced in the context of the Kakeya problem by Dvir in his celebrated proof [14]
+of Wolff’s finite field Kakeya conjecture [42]. The polynomial method has been
+adapted to analyse Kakeya sets in Euclidean space in, for instance, works of Guth
+[16, 17] and Guth and Zahl [22]. A key tool here is polynomial partitioning, in-
+troduced by Guth and Katz in their resolution of the two dimensional Erdős dis-
+tance conjecture [21]. Of most relevance to the present article is the recent work
+of Guth [18, 19] which adapted the partitioning technique to the context of the
+Fourier restriction problem.
+   In [18, 19, 22], polynomial partitioning was used to study collections of direction-
+separated tubes. This led to the consideration of configurations of tubes that are
+1In all dimensions the range (1) is in fact strictly larger than (2): the latter is included to provide
+a ready comparison with the maximal bounds from [27].
+             IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                       3
+
+
+partially contained in the neighbourhood of a real algebraic variety. Guth proved
+the following cardinality estimate for direction-separated tubes in three dimensions
+[18, Lemma 4.9] and conjectured that it should hold in higher dimensions [19,
+Conjecture B.1]. This was confirmed by Zahl [44] in four dimensions and then in
+general by Katz and the second author [25].
+Theorem 1.3 ([18, 44, 25]). For all n > k > 1, d > 1 and ε > 0, there is a
+constant Cn,d,ε > 0 such that
+         n                                   o          ρ n−k
+       # T ∈ T : |T ∩ Bλk ∩ Nρ Zk | > λk |T | 6 Cn,d,ε          δ −(n−1)−ε
+                                                        λk
+whenever 0 < δ 6 ρ 6 λk 6 1, T is a direction-separated family of δ-tubes and
+Zk ⊂ Rn is a k-dimensional algebraic variety of degree 6 d.
+   Here Nr E denotes the r-neighbourhood of E for any r > 0 and E ⊆ Rn and Br
+is a choice of ball in Rn of radius r. The relevant algebraic definitions are recalled
+in Section 3.1 below. In the language of [19], this theorem states that direction-
+separated tubes satisfy the polynomial Wolff axioms; this terminology is recalled
+and discussed in further detail in the final section of the paper.
+   After adapting Guth’s restriction argument [18, 19] to the context of the Kakeya
+maximal problem, one finds that Theorem 1.3 can be used to obtain improved
+bounds in certain intermediate dimensions: see the final section for more details.
+However, by rewriting Guth’s induction argument as a recursive algorithm, one is
+readily able to take advantage of the the following strengthened version of Theo-
+rem 1.3.
+Theorem 1.4. For all n > m > k > 1, d > 1 and ε > 0, there is a constant
+Cn,d,ε > 0 such that
+    m n
+    \                                         o          m−1
+                                                          Y ρ  ρ n−m
+#         T ∈ T : |T ∩ Bλj ∩ Nρ Zj | > λj |T | 6 Cn,d,ε                 δ −(n−1)−ε
+                                                              λj λm
+    j=k                                                j=k
+
+whenever 0 < δ 6 ρ 6 λk 6 . . . 6 λm 6 1, T is a direction-separated family of
+δ-tubes, Zj ⊂ Rn are j-dimensional algebraic varieties of degree 6 d and the balls
+Bλj are nested: Bλk ⊆ . . . ⊆ Bλm ⊂ Rn .
+   Taking the varieties Zj to be nested j-planes reveals that the cardinality estimate
+of Theorem 1.4 is sharp up to the factor of Cn,d,ε δ −ε . The proof will follow the
+argument of [25] once a relevant Wongkew-type volume bound (in the spirit of
+[43]) has been established. The mixture of trigonometric and algebraic arguments
+involved in the proof of this volume bound constitutes the most novel part of the
+article.
+Remark 1.5. In a late stage of the development of this project, the authors discov-
+ered that J. Zahl has proved the same maximal results as Theorem 1.2 using similar
+methods. In particular, J. Zahl has independently established Theorem 1.4 and,
+moreover, was able to use this result to prove a strengthened version of Theorem 4.1
+involving k-linear (as opposed to k-broad) estimates.
+    The remainder of the article is organised as follows:
+
+      • In Section 2 some notational conventions are fixed.
+4          JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+     • In Section 3 the proof of Theorem 1.4 is presented after first establishing
+       the relevant Wongkew-type volume bound.
+     • In Section 4 the proof of Theorem 1.2 is reduced to estimating the so-
+       called k-broad norms for the Kakeya maximal function, paralleling work on
+       oscillatory integrals from [7, 18, 19].
+     • In Section 5 basic properties of k-broad norms are reviewed.
+     • In Section 6 the polynomial partitioning theorem from [19] is recalled and
+       applied to the k-broad norms.
+     • In Section 7 the recursive algorithm is described, culminating in a structural
+       statement of algebraic nature for the Kakeya maximal problem.
+     • In Section 8 the structural statement is combined with Theorem 1.4 to
+       conclude the proof of Theorem 1.2.
+     • In Section 9 the applications to the Kakeya set conjecture and other related
+       problems are discussed.
+     • Appended is a review of some facts from real algbraic geometry used in
+       Section 3.
+
+Acknowledgement. The first author thanks both Larry Guth and Joe Karmazyn
+for helpful discussions during the development of this project.
+
+                          2. Notational conventions
+   We call an n-dimensional ball Br of radius r an r-ball. The intersection of S n−1
+with a ball is called a cap. The δ-neighbourhood of a set E will be denoted by Nδ E.
+   The arguments will involve the admissible parameters n, p and ε and the con-
+stants in the estimates will be allowed to depend on these quantities. Moreover, any
+constant is said to be admissible if it depends only on the admissible parameters.
+Given positive numbers A, B > 0 and a list of objects L, the notation A .L B,
+B &L A or A = OL (B) signifies that A 6 CL B where CL is a constant which
+depends only on the objects in the list and the admissible parameters. We write
+A ∼L B when both A .L B and B .L A.
+   The cardinality of a finite set A is denoted by #A. A set A′ is said to be a
+refinement of A if A′ ⊆ A and #A′ & #A. In many cases it will be convenient
+to pass to a refinement of a set A, by which we mean that the original set A is
+replaced with some refinement.
+
+    3. Multiscale polynomial Wolff axioms: Proof of Theorem 1.4
+   In this section we prove Theorem 1.4. A minor modification of the argument
+used to prove Theorem 1.3 in [25] reduces matters to establishing a “Wongkew-type
+lemma”. The details of this reduction are described in Section 3.3 below. In the
+simplest case where k = m (which corresponds to Theorem 1.3), after the reduction
+all that is needed is Wongkew’s original lemma [43], which is used to bound the
+volume of the semialgebraic set Zk ∩ Bλk . In the general case the problem is to
+obtain bounds for the volume of other semialgebraic sets Sm (Im , ρ) which do not
+fall directly under the scope of [43]. These sets arise from the multiscale hypotheses
+and are defined in Section 3.2.
+
+3.1. Algebraic definitions. Before continuing, it is perhaps useful to clarify some
+of the terminology featured in the statement of Theorem 1.4 and also in the proof.
+             IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                5
+
+
+Definition 3.1. A set Z ⊆ Rn will be referred to as a variety if it can be expressed
+as Z = Z(P1 , . . . , Pr ) for a collection of polynomials Pi : Rn → R for 1 6 i 6 r
+where2
+              Z(P1 , . . . , Pr ) := {x ∈ Rn : P1 (x) = · · · = Pr (x) = 0}.     (3)
+   For the case of interest (namely, where Z is a transverse complete intersection:
+see Definition 5.1 below), Z will always be a real smooth submanifold of Rn . Here
+the dimension dim Z is defined to be the dimension of Z as a real smooth manifold.
+The results of this section hold for more general varieties which potentially admit
+singular points, with a suitably generalised definition of dimension, although we
+will not discuss the details of this definition here (see, for instance, [1]).
+Definition 3.2. Given a variety Z the degree of Z is
+                                                  r
+                                                  X
+                                   deg Z := inf         deg Pj ,
+                                                  j=1
+
+where the infimum is taken over all possible representations of Z of the form (3).
+   The proof of Theorem 1.4 will involve the analysis of a more general class of sets.
+Definition 3.3. A set S ⊂ Rn is semialgebraic if there exists a finite collection of
+polynomials Pi,j , Qi,j : Rn → R for 1 6 i 6 r, 1 6 j 6 s such that
+       r
+       [ 
+  S=      x ∈ Rn : Pi,1 (x) = · · · = Pi,s (x) = 0, Qi,1 (x) > 0, . . . , Qi,s (x) > 0 . (4)
+       i=1
+
+Definition 3.4. Given a semialgebraic set S ⊂ Rn the complexity of S is
+                             X                      
+                         inf     deg Pi,j + deg Qi,j
+                                       i,j
+
+where the infimum is taken over all possible representations of S of the form (4).
+   A number of fundamental results in the theory of semialgebraic sets will be used
+in the proof of Theorem 1.4, including the Tarski–Seidenberg projection theorem
+and Gromov’s algebraic lemma. For the reader’s convenience, the relevant state-
+ments are recorded in the appendix.
+3.2. A Wongkew-type lemma. The main new ingredient in the proof of The-
+orem 1.4 will be a bound for the Lebesgue measure of certain semialgebraic sets
+Sm (Im , ρ) given by unions of line segments. Before defining these sets some basic
+reductions are made and some useful notion is introduced.
+   We choose our coordinates in such a way that the λm -ball Bλm is centred at the
+origin and a reasonably large proportion of our direction-separated δ-tubes have
+core lines which can be parametrised by
+                            la,d (t) := (a, 0) + t(d, 1),          t ∈ R,
+for some a, d ∈ [−1, 1]n−1 . Then, for each j = k, . . . , m, we partition the orthog-
+onal projection of Bλj onto the t-axis into 4nd disjoint intervals Ij ⊂ [−1, 1] of
+length λj /(2nd), where d bounds the degree of our varieties Zk , . . . , Zm .
+
+2Note that here, in contrast with much of the algebraic geometry literature, the ideal generated
+by the Pi is not required to be irreducible.
+6            JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+
+
+                                                                   la,d (J)
+
+          Nρ Zj ∩ Bλj
+
+                                                                              Sm (J, ρ)
+
+
+                         la,d (Ij )
+
+                         Ij                                                   J
+
+          Figure 2. The set Sm (J, ρ) is formed by a union of line segments
+          la,d (J) which have the property that la,d (Ij ) ⊆ Nρ Zj ∩ Bλj for
+          k 6 j 6 m.
+
+
+    Given any interval J ⊆ R, we define
+                   m
+                   \ 
+    Sm (J, ρ) :=          la,d (t) : t ∈ J, (a, d) ∈ [−1, 1]2(n−1) , la,d (Ij ) ⊆ Nρ Zj ∩ Bλj ;
+                   j=k
+
+see Figure 2 for a diagrammatic description of this set. The key problem will be to
+estimate the measure of these sets. Note that the measure of Sm (Im , ρ) depends
+                                         ; however,̊ our bounds will be uniform over any
+on the specific choice of Ik , . . . , Im˚
+choice and so we suppress this dependence in the notation. An example of such
+a bound follows from the m-dimensional version of Wongkew’s theorem [43] (see
+Theorem A.1 in the appendix), which immediately implies that
+                              |Sm (Im , ρ)| 6 |Nρ Zm ∩ Bλm | .d λm
+                                                                 mρ
+                                                                    n−m
+                                                                        .                     (5)
+This estimate only uses the m-dimensional information, and our first task is to
+improve this bound using the additional lower dimensional information.
+   In order to improve (5), we will consider both Sℓ (Iℓ , ρ) and Sℓ (Iℓ+1 , ρ), the latter
+of which need not be contained in either Nρ Zℓ ∩ Bλℓ or Nρ Zℓ+1 ∩ Bλℓ+1 . Roughly
+speaking, there are two steps to the argument:
+Step 1 : We bound |Sℓ+1 (Iℓ+1 , ρ)| in terms of |Sℓ (Iℓ+1 , 2ρ)| using trigonometry and
+         Wongkew’s theorem [43].
+Step 2 : We bound |Sℓ (Iℓ+1 , 2ρ)| in terms of |Sℓ (Iℓ , 4ρ)| using an algebraic argument
+         that borrows ideas from [25].
+Iterating these steps yields a bound for |Sm (Im , ρ)| in terms of |Sk (Ik , 4m−k ρ)|,̊ at
+which point we can use the k-dimensional version of Wongkew’s theorem rather
+than the m-dimensional version. The resulting bound is presented in the following
+lemma.
+Lemma 3.5. For all n > m > k > 1, d > 1 and ε > 0,
+                                                         Y ρ
+                                                        m−1
+                                |Sm (Im , ρ)| .d ρ−ε               λm
+                                                                    mρ
+                                                                       n−m
+                                                              λj
+                                                        j=k
+           IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                   7
+
+
+whenever 0 < ρ/4 6 λk 6 . . . 6 λm 6 1, the j-dimensional varieties Zj ⊂ Rn have
+degree 6 d and Bλk ⊂ . . . ⊂ Bλm ⊂ Rn .
+   Taking the j-dimensional varieties Zj to be nested j-planes reveals that the
+estimate is sharp up to the factor of Cn,d,ε ρ−ε .
+
+Proof (of Lemma 3.5). The proof is somewhat involved and is broken into stages.
+
+Initial reductions. We may assume without loss of generality that
+                                         ρ 6 4k−m+1 λk .                                     (6)
+Indeed, otherwise there exists a largest k ′ such that k + 1 6 k ′ 6 m + 1 and
+ρ > 4k−m+1 λj for all k 6 j 6 k ′ − 1. If k ′ = m + 1, then the result is trivial. If
+k ′ < m + 1, then we may drop the jth condition in Sm (Im , ρ) for k 6 j 6 k ′ − 1.
+Relabelling k ′ as k, (6) now holds.
+    It will also be useful to assume that the intervals Ij have lengths given by some
+dyadic number: that is,
+                                        λj
+                                            ∈ 2Z .                                 (7)
+                                       2nd
+This is possible by slightly enlarging the set by appropriately rounding up the λj ’s.
+
+Setting up the induction. For all k 6 ℓ 6 m we will prove that
+                                                     ℓ−1
+                                                      Y ρ
+                             |Sℓ (Iℓ , ρ)| .d ρ−ε               λℓℓ ρn−ℓ                     (8)
+                                                           λj
+                                                     j=k
+
+whenever ρ 6 4k−ℓ+1 λk and the λj satisfy (7). To do this, we induct on ℓ. For
+technical reasons, it will be useful to slightly enlarge the sets by redefining
+                 ℓ
+                 \ 
+  Sℓ (J, ρ) :=         la,d (t) : t ∈ J, (a, d) ∈ Q2(n−1) (ρ), la,d (Ij ) ⊆ Nρ Zj ∩ Bλj +ρ
+                 j=k
+
+where Q2(n−1) (ρ) := [−1 − ρ, 1 + ρ]2(n−1) . Clearly, any bound of the form (8) for
+these enlarged sets implies the same bound holds for the original Sℓ (Iℓ , ρ).
+   By the k-dimensional version of Wongkew’s theorem [43] (see Theorem A.1),
+                                   |Sk (Ik , ρ)| .d λkk ρn−k
+whenever ρ 6 4λk and this serves as the base case for the induction argument.
+  Assuming (8) holds for some k 6 ℓ 6 m − 1, it suffices to prove that
+                                           λ    ℓ+1
+                                             ℓ+1
+                  |Sℓ+1 (Iℓ+1 , ρ)| .d ρ−ε            |Sℓ (Iℓ , 4ρ)|
+                                             λℓ
+whenever ρ 6 4k−ℓ λk and λj /(2nd) ∈ 2Z . We may also assume the non-degeneracy
+hypothesis that
+                                         Y
+                                          ℓ
+                                            ρ  ℓ+1 n−ℓ−1
+                 |Sℓ+1 (Iℓ+1 , ρ)| > 8         λ ρ        > 8λℓ+1 ρn−1 ,                     (9)
+                                            λj ℓ+1
+                                          j=k
+
+as otherwise the induction step would have closed already.
+8           JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+Dyadic decomposition. Recall from our initial reductions that the Ij are dyadic
+intervals. To prove the induction step we partition Iℓ+1 into the part close to Iℓ ,
+                              {t ∈ Iℓ+1 : dist(t, Iℓ ) 6 |Iℓ |},                  (10)
+and dyadic parts further from Iℓ ,
+               
+                 t ∈ Iℓ+1 : 2i |Iℓ | 6 dist(t, Iℓ ) 6 2i+1 |Iℓ | ,   i > 0.       (11)
+Let J denote the collection of all maximal dyadic subintervals of the sets in (10)
+or (11). We have
+                               [                [
+             Sℓ+1 (Iℓ+1 , ρ) =    Sℓ+1 (J, ρ) ⊂   Sℓ (J, ρ) ∩ Nρ Zℓ+1 ,
+                                 J∈J                 J∈J
+
+where the final inclusion follows directly from the definitions. Since the J ∈ J are
+contained in Iℓ+1 and are pairwise disjoint,
+                                               X
+        |Sℓ+1 (Iℓ+1 , ρ)| 6 4λℓ+1 ρn−1 +                 |Sℓ (J, ρ) ∩ Nρ Zℓ+1 |.
+                                                    J∈J
+                                            |Sℓ (J,ρ)|>4|J|ρn−1
+
+By (9), the first term on the right-hand side of the above display is at most half
+the term on the left-hand side. Thus, it suffices to estimate the right-hand sum.
+   Given that the balls are nested, Bλk ⊂ . . . ⊂ Bλm ⊂ Rn , we have
+                                    
+              maxdist(Iℓ , J) := sup |t − t′ | : t ∈ Iℓ , t′ ∈ J . λℓ+1 ,
+
+so there are no more than 2 log(λℓ+1 /|Iℓ |) .d log(ρ−1 ) intervals J ∈ J . Thus, it
+will suffice to prove that
+                                                  |J| ℓ+1
+                   |Sℓ (J, ρ) ∩ Nρ Zℓ+1 | .d ρ−ε            |Sℓ (Iℓ , 4ρ)| ,   (12)
+                                                   |Iℓ |
+whenever J ∈ J satisfies |Sℓ (J, ρ)| > 4|J|ρn−1 .
+
+Inductive step: the first bound. We now turn to the precise version of Step 1 from
+the proof sketch at the beginning of the section.
+Lemma 3.6. If J ∈ J satisfies dist(Iℓ , J) > |J|, then
+                                          |J| ℓ+1−n
+               |Sℓ (J, ρ) ∩ Nρ Zℓ+1 | .d              |Sℓ (J, 2ρ)|.
+                                           |Iℓ |
+Proof. We first claim that it is possible to cover Sℓ (J, ρ) by a collection B of balls
+of radius ρ|J|/|Iℓ | with cardinality
+                                       |I | n
+                                          ℓ
+                              #B .d             |Sℓ (J, 2ρ)|.                     (13)
+                                       ρ|J|
+Temporarily assuming that this is so, one may argue as follows. For each of the
+balls B ∈ B one may apply Wongkew’s theorem [43] (see Theorem A.1) to deduce
+that
+                                        ρ|J| ℓ+1
+                     |B ∩ Nρ Zℓ+1 | .d             ρn−(ℓ+1) .
+                                         |Iℓ |
+            IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                           9
+
+
+                                                                          x ∈ la,d (J)
+
+
+         lã,d̃ (Iℓ )                                                                      |J|
+                                                                                    .ρ
+.ρ                                                                                         |Iℓ |
+                        z
+         la,d (Iℓ )
+                                                                          y ∈ lã,d̃ (J)
+                                                                                                   xn
+                        Iℓ                                                      J
+                                             ∼ |J|
+                             Figure 3. The trigonometric argument.
+
+Thus, by (13), altogether we find that
+                                   X
+          |Sℓ (J, ρ) ∩ Nρ Zℓ+1 | 6   |B ∩ Nρ Zℓ+1 |
+                                       B∈B
+                                           ρ|J| ℓ+1               |I | n
+                                                                      ℓ
+                                     .d                 ρn−(ℓ+1)               |Sℓ (J, 2ρ)|,
+                                            |Iℓ |                   ρ|J|
+as desired.
+   It remains to verify the claim. Letting rℓ := ρ|J|/(4nd|Iℓ |), by an elementary
+covering argument it suffices to show that
+                                                  
+                       Nrℓ Sℓ (J, ρ) ∩ Rn−1 × J ⊆ Sℓ (J, 2ρ).                     (14)
+                                            
+Fix a point y ∈ Nrℓ Sℓ (J, ρ) ∩ Rn−1 × J so there exists some x ∈ Sℓ (J, ρ) with
+|x − y| < rℓ . Furthermore, by the definition of Sℓ (J, ρ), there exists some (a, d) ∈
+Q2(n−1) (ρ) and t0 ∈ J such that x = la,d (t0 ) and la,d (Ij ) ⊆ Nρ Zj ∩ Bλj . Let z
+denote the midpoint of the line segment la,d (Iℓ ) and θ the angle ∠xzy; see Figure 3.
+The separation between J and Iℓ implies that |x − z|, |y − z| > |J| and therefore
+                                         rℓ     1     ρ
+                             | tan θ| 6     =       ·    .                        (15)
+                                        |J|   4nd |Iℓ |
+The line passing through z and y can be parametrised by t 7→ lã,d̃ (t) for some choice
+of (ã, d̃) ∈ Q2(n−1) (2ρ) and y = lã,d̃ (t1 ) for some t1 ∈ J. Moreover, the angle bound
+(15) implies that the segment lã,d̃ (Ij ) is contained in a ρ-neighbourhood of la,d (Ij )
+for k 6 j 6 ℓ. Thus, lã,d̃ (Ij ) ⊆ N2ρ Zj ∩ Bλj +2ρ for k 6 j 6 ℓ and, consequently,
+                                    y ∈ lã,d̃ (J) ⊆ Sℓ (J, 2ρ).
+This establishes (14) and concludes the proof.                                                      
+Inductive step: the second bound. We now turn to the precise version of Step 2 from
+the proof sketch at the beginning of the section. Loosely speaking, the following
+lemma tells us that our line segments can never expand at an unexpectedly fast
+rate, even after leaving the constricted region.
+Lemma 3.7. If J ∈ J satisfies |Sℓ (J, ρ)| > 4|J|ρn−1 , then
+                                        |J| n
+                    |Sℓ (J, ρ)| .d ρ−ε          |Sℓ (Iℓ , 2ρ)|.
+                                         |Iℓ |
+10           JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+   To prove Lemma 3.7, we will apply the following elementary lemma which states
+that, although it is not possible to bound a polynomial at a point in terms of the
+value that it takes at another point (which could be a root), such a bound holds on
+average.
+Lemma 3.8. Let P : R → R be a polynomial of degree m, I ⊂ R be an interval
+and t ∈ R. Then
+                          max{|I|, dist(t, I)} m 1
+                                                     ˆ
+              |P (t)| 6 8m                              |P (t′ )| dt′ .
+                                  |I|             |I| I
+   The simple proof of this result is postponed until the end of the subsection.
+   At this point it is also worth recalling that the ρ-neighbourhoods Nρ Zj of alge-
+braic varieties Zj = Z(P1 , . . . , Pn−j ) are semialgebraic sets. To see this we consider
+the auxiliary set
+                 n                                                            o
+           Yj = (x, y) ∈ R2n : P1 (x), . . . , Pn−j (x) = 0, |y − x| < ρ
+which is clearly semiaglebraic. Then the Tarski–Seidenberg theorem (see Theo-
+rem A.2) tells us that the orthogonal projection Π(Yj ) = Nρ Zj , where Π : (x, y) 7→
+y, is also semialgebraic with compexity bounded in terms of n and d.
+Proof (of Lemma 3.7). Consider slices of Sℓ (J, ρ) of the form
+                                                     
+                Sℓ (J, ρ)t := Sℓ (J, ρ) ∩ Rn−1 × {t} ,      t ∈ R,
+so that, by Fubini’s theorem,
+                                                ˆ
+                                     n−1
+               |Sℓ (J, ρ)| 6 2|J|ρ          +                               |Sℓ (J, ρ)t | dt.
+                                                {t∈J:|Sℓ (J,ρ)t |>2ρn−1 }
+
+By the hypothesis of the lemma, the first term on the right-hand side is at most
+half the left-hand term. Therefore, is suffices to prove that
+                                             |J| n−1 |S (I , 2ρ)|
+                                                         ℓ ℓ
+                      |Sℓ (J, ρ)tℓ | .d ρ−ε                                 (16)
+                                              |Iℓ |        |Iℓ |
+whenever tℓ ∈ J and |Sℓ (J, ρ)tℓ | > 2ρn−1 .
+   In order to prove (16), we write a′ = a + tℓ d and la′ ′ ,d (t) := (a′ + (t − tℓ )d, t) so
+that la′ ′ ,d (t) = la,d (t) and Sℓ (J, ρ) can be rewritten as
+     ℓ
+     \ 
+           la′ ′ ,d (t) : t ∈ J, (a′ − tℓ d, d) ∈ Q2(n−1) (ρ), la′ ′ ,d (Ij ) ⊆ Nρ Zj ∩ Bλj +ρ .
+     j=k
+
+Consider the associated sets of lines Lℓ (ρ, tℓ ) ≡ Lℓ (ρ, tℓ , Ik , . . . , Im ) defined by
+                  ℓ
+                  \  ′
+ Lℓ (ρ, tℓ ) :=      (a , d) : (a′ − tℓ d, d) ∈ Q2(n−1) (ρ), la′ ′ ,d (Ij ) ⊆ Nρ Zj ∩ Bλj +ρ .
+                  j=k
+
+From the definitions,
+                   (a′ , d) ∈ Lℓ (ρ, tℓ )   if and only if     la′ ′ ,d (J) ⊆ Sℓ (J, ρ)         (17)
+                                                                                            ′
+and, in particular, if either of these equivalent statements holds, then a ∈ Sℓ (J, ρ)tℓ .
+   Recall from our earlier discussion that the sets Nρ Zj ∩ Bλj +ρ are semialgebraic.
+By quantifier elimination (that is, the Tarski–Seidenberg theorem), the sets Lℓ (ρ, tℓ )
+are also semialgebraic (see [25, Lemma 1.1] for an argument of this type). By an
+application of Lemma 2.2 of [25] (see also Corollary A.3 of the appendix), we can
+              IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                 11
+
+
+
+
+                                             (F (x), tℓ )
+
+                                                                                          lx′
+
+
+
+
+                  tℓ ∈ J                                               tℓ ∈ J
+
+           Figure 4. Forming a semialgebraic section of the lines. Roughly
+           speaking, the slice Sℓ (J, ρ)tℓ (shown as a blue vertical line above)
+           is parametrised by a polynomial mapping F : Rn−1 → Rn−1 . We
+           can find another polynomial mapping G : Rn−1 → Rn−1 which
+           “selects” a single line through each point (F (x), tℓ ) ∈ Sℓ (J, ρ)tℓ .
+           Indeed, the line lx′ := {(F (x) + (t − tℓ )G(x), t) : t ∈ R} has this
+           property.
+
+
+take a semialgebraic section of Lℓ (ρ, tℓ ) with complexity bounded by C(n, d), so that
+there is only one direction d for each possible position a′ (this is in contrast with [25],
+where the section was taken to leave only one position for each direction). Calling
+this section L′ℓ (ρ, tℓ ), we may use Gromov’s algebraic lemma (see Lemma A.4), as in
+[25, Section 3], to parametrise L′ℓ (ρ, tℓ ). In particular, taking s to be the first integer
+larger than 2n2 /ε, there exists some N ∈ N, depending only on the dimension n,
+degree d and ε, and a collection of C s functions F i , Gi : [0, 1]n−1 → Rn−1 for
+1 6 i 6 N such that:
+     [N
+  i)     (F i , Gi )([0, 1]n−1 ) = L′ℓ (ρ, tℓ ),
+     i=1
+ ii) sup k∂ α F i k∞ , sup k∂ α Gi k∞ 6 1,        i = 1, . . . , N .
+     |α|6s                 |α|6s
+
+   Again following [25, Section 3], we partition [0, 1]n−1 into cubes Q of small
+diameter cρε/n , with c to be chosen below. On each cube Q, we approximate the
+C s functions F i , Gi : [0, 1]n−1 → Rn−1 by polynomials FQi , GQi : Rn−1 → Rn−1 of
+degree s using Taylor’s theorem. Indeed, letting yQ denote the centre of Q, Taylor’s
+theorem yields polynomials that satisfy
+                                                       1
+           |F i (y) − FQi (y)|, |Gi (y) − GQi (y)| 6      |y − yQ |s 6 csρ2n ,   y ∈ Q.   (18)
+                                                       s!
+12            JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+Using (17) and unpacking all the definitions,
+                                                     N [
+                                                     [
+                                   Sℓ (J, ρ)tℓ ⊆              F i (Q).
+                                                     i=1 Q
+
+Furthermore, by (18), the boundary of F i (Q) belongs to the csρ2n -neighbourhood
+of the boundary of FQi (Q) and, in particular,
+                               F i (Q) ⊆ Ncsρ2n FQi (∂Q) ∪ FQi (Q).
+The set FQi (∂Q) is contained in a union of 2n algebraic hypersurfaces so that, by
+Wongkew’s theorem [43] (see Theorem A.1),
+                              |F i (Q)| 6 C(n, s)csρ2n + |FQi (Q)|.
+By taking c sufficiently small, depending only on n, d and ε,
+                                                            N X
+                                                            X
+                                                  n−1
+                             |Sℓ (J, ρ)tℓ | 6 ρ         +           |FQi (Q)|                  (19)
+                                                            i=1 Q
+
+and, by the nondegeneracy hypothesis |Sℓ (J, ρ)tℓ | > 2ρn−1 , we have
+                                                     N X
+                                                     X
+                                                                 i
+                                |Sℓ (J, ρ)tℓ | 6 2             |SQ (J)tℓ |                     (20)
+                                                     i=1 Q
+
+where                    n                                                     o
+              i
+             SQ (J) :=       (FQi (y) + (t − tℓ )GQi (y), t) ∈ Rn−1 × J : y ∈ Q .
+                                           i
+    On the other hand, we also have that SQ  (Iℓ ) ⊆ Sℓ (Iℓ , 2ρ). Indeed, fixing y ∈ Q,
+                                       i
+it follows from the definition of the F and Gi , (17) and (18) that
+     (FQi (y) + (t − tℓ )GQi (y), t) ∈ N2ρ Zj ∩ Bλj +2ρ             for all t ∈ Ij and k 6 j 6 ℓ.
+In particular, if t ∈ Iℓ then (FQi (y) + (t − tℓ )GQi (y), t) ∈ Sℓ (Iℓ , 2ρ). Given that there
+are fewer than C(n, d, ε)ρ−ε summands in (20), it therefore suffices to show
+                                             |J| n−1 |S i (Iℓ )|
+                              i                             Q
+                            |SQ (J)tℓ | .d                                                (21)
+                                              |Iℓ |         |Iℓ |
+for any fixed choice of i and Q. Suppose F, G : Rn−1 → Rn−1 are polynomials of
+degree at most s such that det DF is not the zero polynomial, where DF denotes
+the (n − 1) × (n − 1) Jacobian matrix of F . It thus suffices to prove, more generally,
+that
+                                       max{|I|, maxdist(I, J)} n−1 |S(I)|
+           |S(J)tℓ | 6 (8(n − 1)s)n−1                                             (22)
+                                                  |I|                   |I|
+where I, J ⊆ R are arbitrary intervals, Q ⊂ [0, 1]n−1 is any measureable set and
+                       n                                                o
+             S(I) := (F (y) + (t − tℓ )G(y), t) ∈ Rn−1 × I : y ∈ Q .
+
+Indeed, it follows from (19) that the polynomials det DFQi are not zero and for the
+choice of intervals Iℓ and J above we have max{|Iℓ |, maxdist(Iℓ , J)} 6 3|J|. Hence
+(21) follows as a special case of (22).
+   Now, by Bézout’s theorem, F + (t − tℓ )G is at most sn−1 -to-one on
+                        
+                  Qt = y ∈ Q : det(DF + (t − tℓ )DG)(y) 6= 0 .
+              IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                        13
+
+
+Furthermore, since, by hypothesis, the polynomial (y, t) 7→ det(DF + tDG)(y) is
+non-zero, it follows by Fubini’s theorem that Q\Qt is a Lebesgue null set for almost
+every t ∈ R. Consequently,
+  1
+     ˆ ˆ                                       ˆ
+            | det(DF + (t − tℓ )DG)(y)| dydt 6 |(F + (t − tℓ )G)(Qt )| dt 6 |S(I)|.
+sn−1 I Q                                         I
+
+On the other hand, by an application of Lemma 3.8, we have that
+                       ˆ
+ |S(J)tℓ | = |F (Q)| 6   | det DF (y)| dy
+                              Q
+          n−1 max{|I|, maxdist(I, J)}n−1
+                                          ˆ ˆ
+6 8(n − 1)                                     | det(DF + (t − tℓ )DG)(y)| dtdy.
+                          |I|n             Q I
+
+Combining these displayed inequalities, via an application of Fubini’s theorem,
+yields (22) which completes the proof.                                       
+
+Closing the induction. By the initial reductions, to close the inductive step (and
+thereby finish the proof of Lemma 3.5), it suffices to show (12). There are two cases
+to consider:
+      • If J is a subinterval of (10), then |J| = |Iℓ | and maxdist(Iℓ , J) 6 2|Iℓ |. In
+        this case, (12) immediately follows from Lemma 3.7.
+      • If J is a subinterval of one of the sets in (11), then dist(Iℓ , J) = |J| and
+        maxdist(Iℓ , J) 6 3|J|. In this case, (12) follows from a successive applica-
+        tion of Lemma 3.6 and Lemma 3.7.
+This concludes the proof of Lemma 3.5.                                                                 
+
+The elementary polynomial bound. It remains to prove the elementary Lemma 3.8,
+which was used in the proof of Lemma 3.7.
+
+Proof (of Lemma 3.8). By translating so that I = [−λ, λ] for some λ > 0, factoris-
+ing the resulting polynomial, scaling t → t/λ and using the fact that the resulting
+inequality is symmetric over the origin, this reduces to proving
+                                                     m 1 ′
+                                                       ˆ
+    |(t − z1 ) · · · (t − zm )| 6 8m max{|t − 1|, 2}     |(t − z1 ) · · · (t′ − zm )| dt′
+                                                                 −1
+
+whenever z1 , . . . , zk ∈ C. Supposing that |z1 |, . . . , |zk | > 2 and |zk+1 |, . . . , |zm | < 2,
+as we may, we first note that
+ ˆ 1                                     1 k                   ˆ 1
+         ′               ′          ′
+      |(t − z1 ) · · · (t − zm )| dt >         |z1 | · · · |zk |      |(t′ − zk+1 ) · · · (t′ − zm )| dt′
+   −1                                     2                        −1
+                                         1 k                        1      m−k
+                                      >        |z1 | · · · |zk |                     ,                (23)
+                                          2                        2(m − k)
+where the second inequality follows because most values of t′ ∈ [−1, 1] must be
+reasonably far from the roots. Now the small roots, when j = k + 1, . . . , m, satisfy
+                       |t − zj | 6 |t − 1| + |1 − zj | 6 4 max{|t − 1|, 2},
+and the large roots, when j = 1, . . . , k, satisfy
+      |zj |            |zj |              n |z |        |zj | o          1
+                                                j
+             >                     > min            ,           >                   .
+   |t − zj |   |t − 1| + |1 − zj |          2|t − 1| 2|1 − zj |   2 max{|t − 1|, 2}
+14                JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+Together we find that
+                                                       1          m
+                       |z1 | · · · |zk | >                            |(t − z1 ) · · · (t − zm )|
+                                                 4 max{|t − 1|, 2}
+which can be plugged into (23) to complete the proof.                                                                   
+3.3. Proof of Theorem 1.4. Theorem 1.4 now follows by a minor adaptation of
+the argument from [25], applying Lemma 3.5 in one key step.
+Proof (of Theorem 1.4). Note first that when
+                                             |T ∩ Bλj ∩ Nρ Zj | > λj |T |,                                         (24)
+there necessarily exists a line in the direction of T for which the one-dimensional
+Lebesgue measure of the line intersected with Bλj ∩ Nρ Zj is greater than or equal
+to λj . By Bézout’s theorem, this line can cross Zj at most d times, so that if
+T ∩ Bλj ∩ Nρ Zj satisfies (24), it must contain a line segment in the direction of
+T of length λj /(d + 1). Fattening this line segment, we obtain a truncated δ-tube
+contained in Bλj ∩ N2ρ Zj that projects onto an interval in the t-axis of length >
+λj /(nd). This interval must contain one of the intervals Ij of length λj /(2nd) with
+which we partitioned the orthogonal projection of Bλj . Recalling that
+                                  m n
+                                  \                                                     o
+  Lm (2ρ, 0, Ik , . . . , Im ) :=     (a, d) ∈ [−1, 1]2(n−1) : la,d (Ij ) ⊆ N2ρ Zj ∩ Bλj ,
+                                         j=k
+
+we find that
+        m
+        \                                                                  X
+                                                                                                                   
+δ n−1 #      T ∈ T : |T ∩ Bλj ∩ Nρ Zj | > λj |T |                      .              Π Lm (2ρ, 0, Ik , . . . , Im ) ,
+           j=k                                                           Ik ,...,Im
+
+where Π : (a, d) 7→ d denotes the orthogonal projection onto the directions. This is
+because, for each of the δ-tubes of the original discrete set, there is a whole     δ-ball’s
+worth of different directions contained in one of Π Lm (2ρ, 0, Ik , . . . , Im ) , and these
+balls finitely overlap due to the fact that T is direction-separated.
+   Now by the Tarski–Seidenberg projection theorem, we can take another semi-
+algebraic section of Lm (2ρ, 0, Ik , . . . , Im ), this time leaving only one position a for
+each d as in [25, Lemma 1.2] (see Corollary A.3). Following the notation of [25],
+we call this section L′ (Ik , . . . , Im ), and so we also have
+                 m
+                 \                                                               X
+                                                                                                                  
+     δ   n−1
+               #    T ∈ T : |T ∩ Bλj ∩ Nρ Zj | > λj |T |                   .                Π L′ (Ik , . . . , Im ) .
+                 j=k                                                           Ik ,...,Im
+                                                                                          (25)
+Noting that there are no more than (4nd)m−k+1 summands in this sum, it re-
+mains to bound |Π(L′ (Ik , . . . , Im ))| independently of the choice of Ik , . . . , Im . For
+this we use Gromov’s algebraic lemma as in the previous section to parametrise
+L′ (Ik , . . . , Im ) with C s functions F i and Gi ;
+                                   N
+                                   [
+                                       (F i , Gi )([0, 1]n−1 ) = L′ (Ik , . . . , Im ).
+                                   i=1
+
+Then we partition [0, 1]n−1 into cubes Q again, this time of diameter cδ ε/n , and
+approximate the functions F i and Gi by polynomials FQi and GQi of degree s 6
+C(n, ε) using Taylor’s theorem. Assuming that |Π(L′ (Ik , . . . , Im )| > δ n−1 , as we
+           IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                         15
+
+
+may, these polynomial approximations do not alter the total measure significantly
+and we find that
+                                  N X
+                                  X                 N Xˆ
+                                                    X
+                             
+      Π L′ (Ik , . . . , Im ) 6 2     |GQi (Q)| 6 2       | det DGQi (y)| dy.
+                               i=1 Q                        i=1 Q     Q
+
+For any fixed y ∈ Rn−1 , provided det DGQi (y) 6= 0, the polynomial t 7→ det(DFQi +
+tDGQi )(y) can be expressed as
+                                                  n−1
+                                                  Y
+                              det DGQi (y) ·            (t − zj )
+                                                  j=1
+
+for some family of complex roots z1 , . . . , zn−1 ∈ C. There exists a subset of Im of
+measure at least λm /2 upon which
+                                     λm
+                     |t − zj | >                  for j = 1, . . . , n − 1.
+                                   4(n − 1)
+On this set, it follows that | det(DFQi + tDGQi )(y)| . λmn−1
+                                                              | det DGQi (y)| and, con-
+sequently,
+                              N X
+                              X
+                           
+                                        ˆ ˆ
+         ′                           −n
+     Π L (Ik , . . . , Im ) .       λm         | det(DFQi + tDGQi )(y)| dydt.      (26)
+                             i=1 Q            Im Q
+
+   Now by an application of Bézout’s theorem as in the previous section, the poly-
+nomials FQi + tGQi are at most sn−1 -to-one, so that each of the integrals on the
+right-hand side of (26) can be bounded by
+                      ˆ
+                 sn−1     |(FQi + tGQi )(Q)| dt 6 sn−1 |Sm (Im , 4ρ)|.
+                        Im
+
+Given that there are fewer than C(n, d, ε)δ −ε summands in (26), this yields
+                                           
+                    Π L′ (Ik , . . . , Im ) .d δ −ε λ−n
+                                                     m |Sm (Im , 4ρ)|.
+
+Then the proof is completed by combining this with (25), bounding |Sm (Im , 4ρ)|
+by an application of Lemma 3.5.                                               
+
+                      4. Reduction to k-broad estimates
+    Rather than attempt to prove ( Kp ) directly, it is useful to work with a class
+of weaker inequalities known as k-broad estimates. This type of inequality was in-
+troduced by Guth [18, 19] in the context of oscillatory integral operators (and, in
+particular, the Fourier restriction conjecture) and was inspired by the earlier mul-
+tilinear theory developed in [4] (see also [3] for a detailed discussion of multilinear
+Kakeya inequalities or Proposition 5.7 below for a precise statement relating the
+k-broad and k-linear theory).
+    In order to introduce the k-broad estimates, we decompose the unit sphere S n−1
+into finitely-overlapping caps τ of diameter β, an admissible constant satisfying
+δ ≪ β ≪ 1. We then perform a corresponding decomposition of T by writing the
+family as a disjoint union of subcollections
+                                          [
+                                     T=      T[τ ]
+                                              τ
+16         JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+where each T[τ ] satisfies dir(T ) ∈ τ for all T ∈ T[τ ]. The ambient euclidean space
+is also decomposed into tiny balls Bδ of radius δ. In particular, fix Bδ a collection
+of finitely-overlapping δ-balls which cover Rn . For Bδ ∈ Bδ define
+                                                                        !
+                                                          X       p
+            µT (Bδ ) :=       min              max             χT p       ,
+                         V1 ,...,VA ∈Gr(k−1,n)    τ :∠(τ,Va )>β              L (Bδ )
+                                                   for 16a6A      T ∈T[τ ]
+
+where A ∈ N and Gr(k−1, n) is the Grassmannian manifold of all (k−1)-dimensional
+subspaces in Rn . Here ∠(τ, Va ) denotes the infimum of the (unsigned) angles
+∠(v, v ′ ) over all pairs of non-zero vectors v ∈ τ and v ′ ∈ Va . For U ⊆ Rn the
+k-broad norm over U is then defined to be
+                                                                !1/p
+                    X                      X |Bδ ∩ U |
+                        χT             :=               µT (Bδ )     .
+                             BLp
+                               k,A (U)
+                                                  |Bδ |
+                  T ∈T                           Bδ ∈Bδ
+
+The k-broad norms are not norms in any familiar sense, but they do satisfy weak
+analogues of various properties of Lp -norms. The basic properties of these objects
+are described in Section 5 below.
+   The main ingredient in the proof of Theorem 1.2 is the following estimate for
+k-broad norms.
+                               2n
+Theorem 4.1. Let p > 1 + (n−1)n+(k−1)k . For all ε > 0, there is an A ∼ 1 such
+that                                              X        1/p
+              X
+                  χT    p
+                                . δ −(n−1−n/p)−ε
+                                                       |T |             (BLpk )
+                              BLk,A (Rn )
+                  T ∈T                                              T ∈T
+whenever 0 < δ < 1 and T is a direction-separated family of δ-tubes.
+   The proof of Theorem 4.1, which is based on the polynomial partitioning method
+and closely follows the arguments of [18, 19, 23], will be presented in Sections 5–8.
+   The key feature which distinguishes the k-broad norm from its Lp counterpart
+is that the former vanishes whenever the tubes of T cluster around a (k − 1)-
+dimensional set (see Lemma 5.3 for a precise statement of this property). Owing
+to this special behaviour, the inequality (BLpk ) is substantially weaker than ( Kp ).
+Nevertheless, a mechanism introduced by Bourgain and Guth [7] allows one to pass
+from k-broad to linear estimates, albeit under a rather stringent condition on the
+exponent.
+                                                           n−k+2
+Proposition 4.2 (Bourgain–Guth [7], Guth [19]). Let p > n−k+1    , ε > 0 and
+A ∼ 1. Suppose that
+                 X                               X       1/p
+                    χT  p   n
+                              .   δ −(n−1−n/p)−ε
+                                                     |T |              (BLpk )
+                              BLk,A (R )
+                  T ∈T                                              T ∈T
+whenever 0 < δ < 1 and T is a direction-separated family of δ-tubes. Then
+                  X                                X         1/p
+                      χT p n . δ −(n−1−n/p)−ε            |T |                          (Kp )
+                                L (R )
+                    T ∈T                                          T ∈T
+whenever 0 < δ < 1 and T is a direction-separated family of δ-tubes.
+   Thus, combining Theorem 4.1 and Proposition 4.2 yields Theorem 1.2. In con-
+trast with the range of Lebesgue exponents in Theorem 4.1, the range in which
+Proposition 4.2 applies shrinks as k increases. The optimal compromise between
+the constraints in Theorem 4.1 and Proposition 4.2 is given by (1).
+                IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                                    17
+
+
+   We end this section with a proof of Proposition 4.2, which is a minor modification
+of the argument in [7] (see also [19]).
+Proof (of Proposition 4.2). The proof is by an induction-on-scale argument.
+   For the base case, fix δ ∼ 1 and let T be a family of direction-separated δ-tubes.
+If B is a cover of Rn by finitely-overlapping balls of radius 1, then
+         X       p         X X             p         X
+            χT          6               χT        .       #{T ∈ T : T ⊂ 3B}p .
+                   Lp (Rn )                             Lp (B)
+         T ∈T                      B∈B      T ∈T                      B∈B
+                                          T ∩B6=∅
+
+The direction separation condition implies that #T . 1 and, consequently, (Kp )
+follows from Hölder’s inequality and the fact that any tube T ∈ T can belong to at
+most O(1) of the balls 3B.
+   Now let C be a fixed constant, chosen sufficiently large so as to satisfy the
+requirements of the forthcoming argument, and fix some small δ > 0.
+Induction hypothesis: Suppose the inequality
+                  X                              X      1/p
+                      χTe p n 6 Cδ̃ −(n−1−n/p)−ε    |Te|
+                                   L (R )
+                         e
+                      e ∈T
+                      T                                                        e
+                                                                            e ∈T
+                                                                            T
+
+                                e is a direction-separated family of δ̃-tubes.
+holds whenever δ̃ ∈ [2δ, 1) and T
+   Let T be a direction-separated family of δ-tubes. Fix a δ-ball Bδ ∈ Bδ and
+subspaces V1 , . . . , VA ∈ Gr(n, k − 1) which obtain the minimum in the definition of
+µT (Bδ ); thus
+                                                 X        p
+                          µT (Bδ ) =   max             χT p    .
+                                           τ :∠(τ,Va )>β                    L (Bδ )
+                                            for 16a6A      T ∈T[τ ]
+
+Since A ∼ 1 and #{τ : ∠(τ, Va ) 6 β} ∼ β −(k−2) , by the triangle inequality followed
+by Hölder’s inequality,
+  ˆ     X            ˆ      X        X             XA ˆ         X       X
+                p                            p                                    p
+            χT .                          χT +                                χT
+    Bδ   T ∈T             Bδ   τ :∠(τ,Va )>β T ∈T[τ ]             a=1       Bδ     τ :∠(τ,Va )6β T ∈T[τ ]
+                                for 16a6A
+                                                                        Xˆ             X              p
+                     . β −(n−1)p µT (Bδ ) + β −(k−2)(p−1)                                        χT .
+                                                                        τ     Bδ      T ∈T[τ ]
+
+Summing the estimate over all the balls Bδ ∈ Bδ , we find that
+ X      p                  X        p                        X                                    X            p
+    χT p n . β −(n−1)p          χT     p   n
+                                             + β −(k−2)(p−1)
+                                                                                                          χT              .
+           L (R )                                   BLk,A (R )                                                 Lp (Rn )
+ T ∈T                                T ∈T                                               τ        T ∈T[τ ]
+
+   The first term on the right-hand side of the above display is estimated using
+the hypothesised broad estimate. For the second term, we apply a linear rescaling
+L : Rn → Rn so that
+                    X        p                X          p
+                         χT        = β n−1        χL(T )                     (27)
+                                         Lp (Rn )                                  Lp (Rn )
+                        T ∈T[τ ]                             T ∈T[τ ]
+
+where {L(T ) : T ∈ T[τ ]} is essentially a collection of δ̃-tubes with δ̃ := β −1 δ. To be
+more precise, let ω ∈ S n−1 denote the centre of the cap τ and choose L so that it
+fixes the 1-dimensional space spanned by ω and acts as a dilation by a factor of β −1
+18            JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+on the orthogonal complement ω ⊥ . Writing x ∈ Rn as x = (x′ , xn ) with x′ ∈ ω ⊥ ,
+for any T ∈ T[τ ] with v := dir(T ) there exists some u ∈ Rn such that
+          
+      T ⊆ x ∈ Rn : |x′ − u′ − tv ′ | . δ for some |t| 6 1 and |xn − un | 6 1/2 ,
+Applying L one obtains
+       
+L(T ) ⊆ y ∈ Rn : |y ′ −β −1 u′ −tβ −1 v ′ | . β −1 δ for some |t| 6 1 and |yn −un | 6 1/2
+and the right-hand side can be covered by a bounded number of δ̃-tubes. Further-
+more, the family of δ̃-tubes L(T ) is also direction-separated.
+  Combining (27) with the induction hypothesis we find that
+           X        p
+               χT           . β n−1 Cp (β −1 δ)−(n−1)p+n−pε (β −1 δ)n−1 #T[τ ].
+                        Lp (Rn )
+          T ∈T[τ ]
+                P
+Recalling that    τ #T[τ ] = #T, by plugging the preceding estimate into our
+Lp (Rn )-norm bound,
+        X      p                                                X     
+            χT       6 C Cb (β) + Cp β e(p,n,k)+pε δ −(n−1)p+n−pε    |T | ;
+                 Lp (Rn )
+       T ∈T                                                                            T ∈T
+
+here Cb (β) depends, amongst other things, on the implied constant in (BLpk ) whilst
+C is a constant depending only on n and p (and, in particular, is independent of
+the choice of β) and
+                            e(p, n, k) := (n − k + 1)p − (n − k + 2).
+   By assumption, p > n−k+2
+                        n−k+1 and therefore e(p, n, k) > 0. Consequently, β may be
+chosen sufficiently small, depending only on the admissible parameters n, p and ε,
+so that
+                                                  1
+                                 Cβ e(p,n,k)+pε 6 .
+                                                  2
+Moreover, if C is chosen sufficiently large from the outset, it follows that
+                    X        p                          X        
+                       χT           6 Cp δ −(n−1)p+n−pε       |T | ,
+                                   Lp (Rn )
+                        T ∈T                                          T ∈T
+
+which closes the induction and completes the proof.                                             
+
+                     5. Basic properties of the k-broad norms
+Vanishing property. The proof of Theorem 4.1 will involve analysing collections of
+tubes which enjoy certain tangency properties with respect to algebraic varieties.
+Definition 5.1. Given any collection of polynomials P1 , . . . , Pn−m : Rn → R, recall
+that the common zero set
+              Z(P1 , . . . , Pn−m ) := {x ∈ Rn : P1 (x) = · · · = Pn−m (x) = 0}
+is referred to as a variety. It will often be convenient to work with varieties which
+satisfy the additional property that
+                 n−m
+                  ^
+                        ∇Pj (z) 6= 0          for all z ∈ Z = Z(P1 , . . . , Pn−m ).          (28)
+                  j=1
+
+In this case the zero set forms a smooth m-dimensional submanifold of Rn with a
+(classical) tangent space Tz Z at every point z ∈ Z. A variety Z which satisfies (28)
+is said to be an m-dimensional transverse complete intersection.
+            IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                       19
+
+
+Definition 5.2. Let 0 < δ < r < 1, x0 ∈ Rn and Z ⊆ Rn be a transverse complete
+intersection. A δ-tube T ⊂ Rn is tangent to Z in B(x0 , r) if
+  i) T ∩ B(x0 , r) ∩ Nδ Z 6= ∅ ;
+ ii) If x ∈ T and z ∈ Z ∩ B(x0 , 2r) satisfy |z − x| 6 8δ, then
+                                                        δ
+                                ∠(dir(T ), Tz Z) 6 ctang .
+                                                        r
+   Here 0 < ctang is an admissible constant which is chosen small enough to ensure
+that, whenever i) and ii) hold,
+                                  T ∩ B(x0 , 2r) ⊆ N4δ Z.                        (29)
+The fact that such a choice is possible follows from a simple calculus exercise (see,
+for instance, [20, Proposition 9.2] for details of an argument of this type).
+   The raison d’être for the k-broad norms is the following lemma, which roughly
+states that the broad norms vanish if the tubes in T cluster around a low dimensional
+variety.
+Lemma 5.3 (Vanishing property). Given ε◦ > 0 and 0 < β < 1 there exists some
+0 < c < 1 such that the following holds. Let 0 < δ < c, r > δ 1−ε◦ , x0 ∈ Rn and
+Z ⊆ Rn be a transverse complete intersection of dimension at most k − 1. Then
+                             X
+                                χT     p
+                                                  =0
+                                            BLk,A (B(x0 ,r))
+                                 T ∈T
+
+whenever T is a family of δ-tubes which are tangent to Z in B(x0 , r).3
+Proof. Fix Bδ ∈ Bδ with Bδ ∩ B(x0 , r) 6= ∅. Recalling the definition of the k-broad
+norm, it suffices to show that there exists some V ∈ Gr(k − 1, n) such that
+                                     ˆ      X       p
+                             max                χT = 0.
+                             τ :∠(τ,V )>β   Bδ   T ∈T[τ ]
+
+This would follow if V has the property that
+                 if T ∈ T satisfies T ∩ Bδ 6= ∅, then ∠(dir(T ), V ) 6 β.        (30)
+   Without loss of generality, one may assume there exists some T0 ∈ T such that
+T0 ∩ Bδ 6= ∅ (otherwise (30) vacuously holds for any choice of (k − 1)-dimensional
+subspace). By the containment property resulting from the tangency hypothesis,
+                            T0 ∩ Bδ ⊆ T0 ∩ B(x0 , 2r) ⊆ N4δ Z
+and therefore there exists some z0 ∈ Z such that |z0 −y0 | < 4δ for some y0 ∈ T0 ∩Bδ .
+Let V be a (k − 1)-dimensional subspace containing Tz0 Z. Given any T ∈ T, if
+x ∈ T ∩ Bδ then |x − z0 | < 8δ and property ii) of the tangency hypothesis implies
+                                                            δ
+                                    ∠(dir(T ), V ) .          .
+                                                            r
+Since r > δ 1−ε◦ , it follows that ∠(dir(T ), V ) 6 β provided δ is sufficiently small
+depending only on ε◦ and β, which completes the proof.                              
+
+3Here the parameter β appears implicitly in the deﬁnition of the k-broad norm.
+20            JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+Triangle and logarithmic convexity inequalities. The k-broad norms satisfy weak
+variants of certain key properties of Lp -norms.
+
+Lemma 5.4 (Finite subadditivity). Let U1 , U2 ⊆ Rn , 1 6 p < ∞ and A ∈ N.
+Then
+      X       p                 X      p             X      p
+          χT     p
+                           6       χT      p
+                                                 +      χT    p
+                          BLk,A (U1 ∪U2 )                   BLk,A (U1 )                     BLk,A (U2 )
+           T ∈T                                 T ∈T                           T ∈T
+
+whenever T is a family of δ-tubes.
+
+Lemma 5.5 (Triangle inequality). Let U ⊆ Rn , 1 6 p < ∞ and A ∈ N. Then
+        X                        X                    X
+              χT     p
+                            .         χT   p
+                                                  +      χT    p
+                               BLk,2A (U)                    BLk,A (U)                          BLk,A (U)
+          T ∈T1 ∪T2                             T ∈T1                           T ∈T2
+
+whenever T1 and T2 are families of δ-tubes.
+
+Lemma 5.6 (Logarithmic convexity). Let U ⊆ Rn , 1 6 p, p0 , p1 < ∞ and A ∈ N.
+Suppose that θ ∈ [0, 1] satisfies
+                                            1   1−θ  θ
+                                              =     + .
+                                            p    p0  p1
+Then
+                   X                            X           1−θ           X             θ
+                          χT                .          χT     p0
+                                                                                 χT         p
+                               BLp
+                                 k,2A (U)                   BLk,A (U)                      1 (U)
+                                                                                        BLk,A
+                   T ∈T                         T ∈T                      T ∈T
+
+whenever T is a family of δ-tubes.
+
+   These estimates are entirely elementary. The proofs are identical to those used
+to analyse broad norms in the context of the Fourier restriction problem [19]. It is
+remarked that the parameter A appears in the definition of the k-broad norm to
+allow for these weak triangle and logarithmic convexity inequalities.
+
+k-broad versus k-linear estimates. Although not required for the proof of Theo-
+rem 1.2, it is perhaps instructive to note the relationship between the k-broad
+norms and the multilinear expressions appearing in the work of Bennett–Carbery–
+Tao [4].
+
+Proposition 5.7. Let T be a collection of δ-tubes in Rn . Then
+                                                        k  X
+                                                                                                           !1/p
+       X                                    X           Y                              1/k p
+              χT                  .                                          χN2δ Tj
+                   BLp     n
+                     k,A (R )                                                                   Lp (Rn )
+       T ∈T                               (τ1 ,...,τk ) j=1     Tj ∈T[τj ]
+                                        ∼ β k−1−trans.
+
+where the sum is over all k-tuples (τ1 , . . . , τk ) of caps of diameter β which are
+                                        Vk
+∼ β k−1 -transversal in the sense that | j=1 ωj | & β k−1 for all ωj ∈ τj .
+
+   Thus, any k-linear inequality of the type featured in [4, 16, 7] is stronger than
+the corresponding k-broad estimate (given that β is admissible).
+   The proof of Proposition 5.7 is a simple exercise and is omitted (see [20] for
+similar results in the (more complicated) context of oscillatory integral operators).
+           IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                        21
+
+
+                             6. Polynomial partitioning
+   In this section the algebraic and topological ingredients for the proof of The-
+orem 4.1 are reviewed. In particular, the key polynomial partitioning theorem is
+recalled, which is adapted from [18, 19] (see also [40]) and previously appeared
+explicitly in [23].
+   Given a polynomial P : Rn → R consider the collection cell(P ) of connected
+components of Rn \ Z(P ). Each O′ ∈ cell(P ) is referred to as a cell cut out by
+the variety Z(P ) and the cells are thought of as partitioning the ambient euclidean
+space into a finite collection of disjoint regions.
+   In order to account for the choice of scale δ > 0 appearing in the definition of
+the δ-tubes, it will be useful to consider the family of δ-shrunken cells defined by
+                               
+                         Ø := O′ \ Nδ Z(P ) : O′ ∈ cell(P ) .                    (31)
+An important consequence of this definition is the following simple observation:
+        A δ-tube T can enter at most deg P +1 of the shrunken cells O ∈ Ø.
+Indeed, this is a simple and direct consequence of the fundamental theorem of
+algebra (or Bézout’s theorem) applied to the core line of T .
+Theorem 6.1 (Guth [19]). Fix 0 < δ < r, x0 ∈ Rn and suppose F ∈ L1 (Rn ) is
+non-negative and supported on B(x0 , r) ∩ N4δ Z where Z is an m-dimensional trans-
+verse complete intersection with deg Z 6 d. At least one of the following cases holds:
+
+Cellular case. There exists a polynomial P : Rn → R of degree O(d) with the follow-
+ing properties:
+  i) #cell(P ) ∼ dm and each O ∈ cell(P ) has diameter at most r/2.
+ ii) One may pass to a refinement of cell(P ) such that if Ø is defined as in (31),
+     then              ˆ            ˆ
+                                 −m
+                           F ∼d         F      for all O ∈ Ø.
+                         O                 Rn
+Algebraic case. There exists an (m − 1)-dimensional transverse complete intersec-
+tion Y of degree at most O(d) such that
+                     ˆ                      ˆ
+                                  F . log d              F.
+                        B(x0 ,r)∩N4δ Z            B(x0 ,r)∩Nδ Y
+
+   This theorem is based on an earlier discrete partitioning result which played a
+central role in the resolution of the Erdős distance conjecture [21]. The proof is
+essentially topological, involving the polynomial ham sandwich theorem of Stone–
+Tukey [36], which is itself a consequence of the Borsuk–Ulam theorem (see, for
+instance, [32]), combined with a pigeonholing argument.
+   The theorem is applied to k-broad norms by taking
+                                    X             1
+                              F =       µT (Bδ )      χB .
+                                                 |Bδ | δ
+                                    Bδ ∈Bδ
+
+     • If the cellular case holds, then it follows that
+         X        p                            X       p
+             χT      p
+                                      . dm         χT    p
+                                                                    for all O ∈ Ø
+                  BLk,A (B(x0 ,r)∩N4δ Z)                BLk,A (O)
+         T ∈T                                   T ∈T
+
+        where Ø is the collection of cells produced by Theorem 6.1.
+22         JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+      • If the algebraic case holds, then it follows that
+           X       p                              X       p
+               χT     p
+                                        . log d       χT    p
+                    BLk,A (B(x0 ,r)∩N4δ Z)                       BLk,A (B(x0 ,r)∩Nδ Y)
+           T ∈T                                         T ∈T
+
+        where Y is the variety produced by Theorem 6.1.
+
+                        7. Finding polynomial structure
+   In this section, the recursive argument used to study the Fourier restriction
+problem in [23] (which, in turn, is adapted from [19]) is reformulated so as to apply
+to the Kakeya problem. As in [23], the argument will be presented as two separate
+algorithms:
+      • [alg 1] effects a dimensional reduction, essentially passing from an m-
+        dimensional to an (m − 1)-dimensional situation.
+      • [alg 2] consists of repeated application of the first algorithm to reduce to
+        a minimal dimensional case.
+   The final outcome is a method of decomposing any given k-broad norm into
+pieces which are either easily controlled or enjoy special algebraic structure. This
+decomposition applies to arbitrary families of δ-tubes. In the following section, we
+will specialise to the case where the tube family is direction-separated and use this
+additional information to prove Theorem 4.1.
+
+The first algorithm. Throughout this section let p > 1 and 0 < ε◦ ≪ ε ≪ 1 be
+fixed.
+
+Input. [alg 1] will take as its input:
+      • A choice of small scale 0 < δ ≪ 1 and large scale r0 ∈ [δ 1−ε◦ , δ ε◦ ].
+      • A transverse complete intersection Z of dimension m ∈ {2, . . . , n}.
+      • A family T of δ-tubes which are tangent to Z on a ball Br0 of radius r0 .
+      • A large integer A ∈ N.
+Output. [alg 1] will output a finite sequence of sets (Ej )Jj=0 , which are constructed
+via a recursive process. Each Ej is referred to as an ensemble and contains all the
+relevant information coming from the jth step of the algorithm. In particular, the
+ensemble Ej consists of:
+      • A word hj of length j in the alphabet {a, c}, referred to as a history.
+        The a is an abbreviation of “algebraic” and c “cellular”. The words hj
+        are recursively defined by successively adjoining a single letter. Each hj
+        records how the cells Oj ∈ Øj were constructed via repeated application of
+        the polynomial partitioning theorem.
+      • A large scale rj ∈ [δ 1−ε◦ , δ ε◦ ]. The rj will in fact be completely determined
+        by the initial scales and the history hj . In particular, let σk : [0, 1] → [0, 1]
+        be given by
+                             
+                              r2           if the kth letter of hj is c
+                  σk (r) :=
+                              r1+ε◦ if the kth letter of h is a
+                                                                  j
+
+        for each 1 6 k 6 j. With these definitions,
+                                  rj := σj ◦ · · · ◦ σ1 (r0 ).
+           IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                           23
+
+
+        Note that each σk is a decreasing function and
+                                              #a (j)
+                          rj 6 δ ε◦ (1+ε◦ )            and rj 6 2−#c (j) δ ε◦                       (32)
+
+       where #a (j) and #c (j) denote the number of occurrences of a and c in the
+       history hj , respectively.
+     • A family of subsets Øj of Rn which will be referred to as cells. Each cell
+       Oj ∈ Øj is contained in Br0 and will have diameter at most 2rj .
+     • An assignment of a subfamily T[Oj ] of δ-tubes to each of the cells Oj .
+     • A large integer d ∈ N which depends only on deg Z and the admissible
+       parameters n, p and ε.
+   Moreover, the components of the ensemble are defined so as to ensure that, for
+certain coefficients
+                                  Cj (d) := d#c (j)ε◦ d#a (j)(n+ε◦ )
+
+and Aj := 2−#a (j) A ∈ N, the following properties hold:
+                                P
+Property I. The function            T ∈T χT on Br0 can be compared with functions defined
+over the T[Oj ]:
+              X            p                            X         X              p
+                     χT                   6 Cj (d)                          χT                 .     (I)j
+                           BLp
+                             k,A (Br0 )                                          BLp
+                                                                                   k,A (Oj )
+              T ∈T                                     Oj ∈Øj   T ∈T[Oj ]             j
+
+
+
+
+Property II. The tube families T[Oj ] satisfy
+                                 X
+                                        #T[Oj ] 6 Cj (d)d#c (j) #T.                                 (II)j
+                               Oj ∈Øj
+
+
+Property III. Furthermore, each individual T[Oj ] satisfies
+
+                               #T[Oj ] 6 Cj (d)d−#c (j)(m−1) #T.                                   (III)j
+
+
+The initial step. The initial ensemble E0 is defined by taking:
+     • h := ∅ to be the empty word;
+     • r0 to be the large scale;
+     • Ø0 the collection consisting of the single ball O0 := Br0 ;
+     • T[O0 ] := T.
+All the desired properties then vacuously hold.
+   At this point it is also convenient to fix some large d ∈ N, to be determined later,
+which depends only on deg Z and the admissible parameters n, p and ε.
+   With these definitions, it is trivial to verify that Properties I, II and III hold.
+
+The recursive step. Assume the ensembles E0 , . . . , Ej have been constructed for
+some j ∈ N0 and that they all satisfy the desired properties.
+      24            JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+     Stopping conditions. The algorithm has two stopping conditions which are la-
+     belled [tiny] and [tang].
+Stop:[tiny] The algorithm terminates if rj 6 δ 1−ε◦ .
+Stop:[tang] Let Ctang and Calg be fixed constants, chosen large enough to satisfy the
+             forthcoming requirements of the proof. The algorithm terminates if the
+             inequalities
+           X        X        p                        X   X        p
+                          χT   p
+                                      6 Ctang log d            χT    p
+                                     BLk,A (Oj )                                                  BLk,A /2 (B[S])
+           Oj ∈Øj     T ∈T[Oj ]               j                          S∈S     T ∈T[S]               j
+
+
+              and
+                                     X                                   X
+                                         #T[S] 6 Ctang δ −nε◦                  #T[Oj ];
+                                   S∈S                               Oj ∈Øj
+
+                                  max #T[S] 6 Ctang max #T[Oj ]
+                                  S∈S                           Oj ∈Øj
+
+               hold for some choice of:
+            • S a collection of transverse complete intersections in Rn all of equal dimen-
+               sion m − 1 and degree at most Calg d;
+            • An assignment of a subfamily T[S] of T and a max{rj1+ε◦ , δ 1−ε◦ }-ball B[S]
+               to each S ∈ S with the property that each T ∈ T[S] is tangent to S in B[S]
+               in the sense of Definition 5.2.
+         The stopping condition [tang] can be roughly interpreted as forcing the algo-
+      rithm to terminate if one can pass to a lower dimensional situation. Indeed, by the
+      inclusion property (29), the broad norm over B[S] could instead be taken over a
+      4δ-neighbourhood of S.
+         If either of the above conditions hold, then the stopping time is defined to be
+      J := j. Recalling (32), the stopping condition [tiny] implies that the algorithm
+      must terminate after finitely many steps and, moreover,
+                            #a (J) . ε◦−1 log(ε◦−1 ) and #c (J) . log δ −1 .
+      Note that there can be relatively few algebraic steps #a (j) but there can many
+      cellular steps #c (j). The first of the above estimates can also be used to show that
+                                                                                −2
+      Cj (d) .d,ε◦ d#c (j)ε◦ always holds. Furthermore, by choosing A > 2ε◦ , say, one
+      may ensure that the Aj defined above are indeed integers.
+
+      Recursive step. Suppose that neither stopping condition [tiny] nor [tang] is
+      met. One proceeds to construct the ensemble Ej+1 as follows.
+        Given Oj ∈ Øj , apply the polynomial partitioning theorem with degree d to
+                     X         p                     X         p
+                           χT     p
+                                              =            χ T   p
+                                                                       .
+                                         BLk,A (Oj ∩N4δ Z)                            BLk,A (Oj )
+                         T ∈T[Oj ]                j                  T ∈T[Oj ]                j
+
+
+      For each Oj ∈ Øj either the cellular or the algebraic case holds, as defined in
+      Theorem 6.1. Let Øj,cell denote the subcollection of Øj consisting of all cells for
+              Pcellular case holds and Øj,alg := Øj \ Øj,cell . Thus, by (I)j , one may
+      which the
+      bound k T ∈T χT kpBLp (Br ) by
+                          k,A   0
+               h X          X        p               X         X        p          i
+         Cj (d)                   χT    p
+                                               +                   χ T    p
+                                                                                    ;
+                                                      BLk,A (Oj )                                    BLk,A (Oj )
+                    Oj ∈Øj,cell   T ∈T[Oj ]                j        Oj ∈Øj,alg    T ∈T[Oj ]                j
+           IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                                25
+
+
+the analysis is splits into two cases depending on which term in the above sum
+dominates.
+
+◮ Cellular-dominant case. Suppose that the inequality
+         X      X        p             X         X                                        p
+                     χT    p
+                                  6                   χT
+                                     BLk,A (Oj )                                          BLp
+                                                                                            k,A (Oj )
+        Oj ∈Øj,alg    T ∈T[Oj ]             j           Oj ∈Øj,cell       T ∈T[Oj ]               j
+
+
+holds so that
+            X           p                               X             X               p
+                   χT                  6 2Cj (d)                                χT                    .   (33)
+                        BLp
+                          k,A (Br0 )                                                  BLp
+                                                                                        k,A (Oj )
+            T ∈T                                    Oj ∈Øj,cell     T ∈T[Oj ]                 j
+
+
+Definition of Ej+1 . Define hj+1 by adjoining the letter c to the word hj . Thus, it
+follows from the definitions that
+         rj+1 = 21 rj ,        #c (j + 1) = #c (j) + 1 and #a (j + 1) = #a (j).                           (34)
+   The next generation of cells Øj+1 arise from the cellular decomposition guar-
+anteed by Theorem 6.1. Fix Oj ∈ Øj,cell so that there exists some polynomial
+P : Rn → R of degree O(d) with the following properties:
+  i) #cell(P ) ∼ dm and each O ∈ cell(P ) has diameter at most 2rj+1 .
+ ii) One may pass to a refinement of cell(P ) such that if
+                                  
+                     Øj+1 (Oj ) := O \ Nδ Z(P ) : O ∈ cell(P )}
+    denotes the corresponding collection of δ-shrunken cells, then
+                 X        p                    X        p
+                      χT    p
+                                     . dm           χT     p
+                                  BLk,A (Oj )                                 BLk,A (Oj+1 )
+                   T ∈T[Oj ]            j                     T ∈T[Oj ]               j
+
+
+    for all Oj+1 ∈ Øj+1 (Oj ).
+Given Oj+1 ∈ Øj+1 (Oj ), define
+                                       
+                            T[Oj+1 ] := T ∈ T[Oj ] : T ∩ Oj+1 6= ∅ .
+Recall that, by the fundamental theorem of algebra (or Bézout’s theorem), any
+δ-tube T can enter at most O(d) cells Oj+1 ∈ Øj+1 (Oj ) and, consequently,
+                          X
+                                   #T[Oj+1 ] . d · #T[Oj ].                (35)
+                             Oj+1 ∈Øj+1 (Oj )
+
+By the pigeonhole principle, one may pass to a refinement of Øj+1 (Oj ) such that
+            #T[Oj+1 ] . d−(m−1) #T[Oj ]                       for all Oj+1 ∈ Øj+1 (Oj ).                  (36)
+Finally, define
+                                                   [
+                                   Øj+1 :=                    Øj+1 (Oj ).
+                                                Oj ∈Øj,cell
+
+This completes the construction of Ej+1 and it remains to check that the new
+ensemble satisfies the desired properties. In view of this, it is useful to note that
+                          Cj (d) = d−ε◦ Cj+1 (d) and Aj = Aj+1 ,                                          (37)
+which follows immediately from (34) and the definition of the Cj (d) and Aj .
+26           JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+Property I. Fix Oj ∈ Øj,cell and observe that #Øj+1 (Oj ) ∼ dm and
+                X         p                    X          p
+                     χT      p
+                                     . dm            χT     p
+                                  BLk,A (Oj )                                 BLk,A (Oj+1 )
+                  T ∈T[Oj ]               j               T ∈T[Oj+1 ]                 j
+
+
+for all Oj+1 ∈ Øj+1 (Oj ). Averaging,
+            X        p                             X                 X                p
+                 χT     p
+                                .                                               χT
+                            BLk,A (Oj )                                               BLp
+                                                                                        k,A (Oj+1 )
+            T ∈T[Oj ]             j           Oj+1 ∈Øj+1 (Oj )    T ∈T[Oj+1 ]                     j
+
+
+and, recalling (33) and (37), one deduces that
+     X       p                             X                             X                p
+         χT     p
+                       6 Cd−ε◦ Cj+1 (d)                                           χT                                  .
+                BLk,A (Br0 )                                                              BLp
+                                                                                            k,A             (Oj+1 )
+     T ∈T                                            Oj+1 ∈Øj+1     T ∈T[Oj+1 ]                       j+1
+
+
+
+Provided d is chosen large enough so as to ensure that the additional d−ε◦ factor
+absorbs the unwanted constant C, one deduces (I)j+1 . This should be compared
+with the approach of Solymosi and Tao to polynomial partitioning [35].
+
+Property II. By the construction,
+                 X                  X                             X
+                        #T[Oj+1 ] =                                           #T[Oj+1 ]
+                  Oj+1 ∈Øj+1                      Oj ∈Øj Oj+1 ∈Øj+1 (Oj )
+                                                      X
+                                               . d            #T[Oj ],
+                                                     Oj ∈Øj
+
+where the inequality follows from a term-wise application of (35). Thus, (II)j , (34)
+and (37) imply that
+                    X
+                           #T[Oj+1 ] . d−ε◦ Cj+1 (d)d#c (j+1) #T.
+                        Oj+1 ∈Øj+1
+
+Provided d is chosen sufficiently large, one deduces (II)j+1 .
+
+Property III. Fix Oj+1 ∈ Øj+1 (Oj ) and recall from (36) that
+
+                                  #T[Oj+1 ] . d−(m−1) #T[Oj ].
+Thus, (III)j , (34) and (37) imply that
+
+                        #T[Oj+1 ] . d−ε◦ Cj+1 (d)d−#c (j+1)(m−1) #T[Oj ].
+Provided d is chosen sufficiently large as before, one deduces (III)j+1 .
+
+◮ Algebraic-dominant case. Suppose the hypothesis of the cellular-dominant
+case fails so that
+              X     p              X        X         p
+                 χT   p
+                        6 2Cj (d)                 χT    p
+                                                                .     (38)
+                           BLk,A (Br0 )                                              BLk,A (Oj )
+               T ∈T                                  Oj ∈Øj,alg   T ∈T[Oj ]                   j
+
+
+Each cell in Øj,alg satisfies the condition of the algebraic case of Theorem 6.1; this
+information is used to construct the (j + 1)-generation ensemble.
+               IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                                  27
+
+
+Definition of Ej+1 . Define hj+1 by adjoining the letter a to the word hj . Thus, it
+follows from the definitions that
+      rj+1 = rj1+ε◦ ,       #c (j + 1) = #c (j) and #a (j + 1) = #a (j) + 1.                                    (39)
+The next generation of cells is constructed from the varieties which arise from the
+algebraic case in Theorem 6.1. Fix Oj ∈ Øj,alg so that there exists a transverse
+complete intersection Yj of dimension m − 1 and deg Yj 6 Calg d such that
+              X        p                       X        p
+                    χT    p
+                                   . log d         χT     p
+                                                                        .
+                               BLk,A (Oj )                             BLk,A (Oj ∩Nδ Yj )
+                T ∈T[Oj ]            j                 T ∈T[Oj ]                 j
+
+
+Let B(Oj ) be a cover of Oj ∩ Nδ Yj consisting of finitely-overlapping balls of radius
+max{rj+1 , δ 1−ε◦ }. For each B ∈ B(Oj ) let TB denote the family of T ∈ T[Oj ] for
+which T ∩ B ∩ Nδ Yj 6= ∅. This set is partitioned into the subsets
+                
+    TB,tang := T ∈ TB : T is tangent to Yj on B , TB,trans := TB \ TB,tang ;
+here the notion of tangency is that given in Definition 5.2.
+  By hypothesis, [tang] fails and, consequently, one may deduce that
+    X         X         p                    X         X         p
+                    χT    p
+                                  .   log d                  χ T   p
+                                                                                                                (40)
+                              BLk,A (Oj )                                             BLk,A         (Bj )
+  Oj ∈Øj,alg    T ∈T[Oj ]           j               Oj ∈Øj,alg     T ∈TB,trans                j+1
+                                                    B∈B(Oj )
+
+where, for notational convenience, Bj := B ∩ Nδ Yj . Indeed, provided Ctang > 0 is
+sufficiently large,
+                  X      X                             X
+                              #TB,tang 6 Ctang δ −nε◦       #T[Oj ];
+                  Oj ∈Øj,alg B∈B(Oj )                                 Oj ∈Øj
+
+                     max       max #TB,tang 6 max #T[Oj ].                                                      (41)
+                  Oj ∈Øj,alg B∈B(Oj )                  Oj ∈Øj
+
+Consequently, the failure of the stopping condition [tang] forces
+       X     X          X         p                1   X      X                                p
+ log d                       χT                <                  χT
+                                  BLp
+                                    k,Aj+1 (B)
+                                                 Ctang                                         BLp
+                                                                                                 k,A (Oj )
+      Oj ∈Øj B∈B(Oj )       T ∈TB,tang                              Oj ∈Øj       T ∈T[Oj ]              j
+
+
+(since the estimates in (41) show all other conditions for [tang] are met for S, T[S]
+and B[S] appropriately defined). On the other hand, by the triangle inequality for
+broad norms (Lemma 5.5), using the fact that Aj+1 = Aj /2, the left-hand side
+of (40) is dominated by
+          X       X h         X         p                   X        p
+                                                                                  i
+   log d                           χT BLp       (B )
+                                                     +          χ T  BLp
+                                                                             (B )
+                                                                                   .
+                                                   k,Aj+1   j                                k,Aj+1         j
+       Oj ∈Øj,alg B∈B(Oj )       T ∈TB,tang                           T ∈TB,trans
+
+For a suitable choice of constant Ctang , combining the information in the two pre-
+vious displays yields (40).
+   For Oj ∈ Øj,alg define
+                                    
+                       Øj+1 (Oj ) := B ∩ Nδ Yj : B ∈ B(Oj )
+and let T[Oj+1 ] := TB,trans for Oj+1 = B ∩ Nδ Yj ∈ Øj+1 (Oj ). The collection of
+cells Øj+1 is then given by
+                                       [
+                            Øj+1 :=        Øj+1 (Oj ).
+                                              Oj ∈Øj,alg
+28            JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+It remains to verify that the ensemble Ej+1 satisfies the desired properties. In view
+of this, it is useful to note that
+                                    Cj (d) = d−(n+ε◦ ) Cj+1 (d),                                           (42)
+which follows directly from the definition of Cj (d) and (39).
+
+Property I. By combining (40) together with the various definitions one obtains
+   X         X        p                    X          X           p
+                  χT    p
+                                 . log d                     χT     p
+                                                                                .
+                               BLk,A (Oj )                                             BLk,A       (Oj+1 )
+ Oj ∈Øj,alg   T ∈T[Oj ]             j              Oj+1 ∈Øj+1         T ∈T[Oj+1 ]            j+1
+
+
+
+Recalling (38) and (42), if c(d) := Cd−(n+ε◦ ) log d for an appropriate choice of
+admissible constant C, then
+     X       p                          X            X         p
+         χT     p
+                        6 c(d)Cj+1 (d)                     χT    p
+                                                                            .
+                BLk,A (Br0 )                                                         BLk,A       (Oj+1 )
+     T ∈T                                        Oj+1 ∈Øj+1     T ∈T[Oj+1 ]                j+1
+
+
+Provided d is sufficiently large, c(d) 6 1 and one thereby deduces (I)j+1 .
+
+Property II. Fix Oj ∈ Øj,alg and note that
+                       X                                     X
+                                 #T[Oj+1 ] =                           #TB,trans                           (43)
+                          Oj+1 ∈Øj+1 (Oj )              B∈B(Oj )
+
+by the definition of T[Oj+1 ]. To estimate the latter sum one may invoke the fol-
+lowing algebraic-geometric result of Guth, which appears in Lemma 5.7 of [19].
+Lemma 7.1 ([19]). Suppose T is an infinite cylinder in Rn of radius δ and central
+axis ℓ and Y is a transverse complete intersection. For α > 0 let
+                               
+                       Y>α := y ∈ Y : ∠(Ty Y, ℓ) > α .
+                                                        
+The set Y>α ∩ T is contained in a union of O (deg Y)n balls of radius δα−1 .
+    Since T ∩ B ∩ Nδ Y 6= ∅ by the definition of TB , a tube T ∈ TB belongs to TB,trans
+                S angle condition ii) from Definition 5.2 fails to be satisfied. Thus,
+if and only if the
+given any T ∈ B∈B TB,trans , it follows from the definitions that
+                                                                δ
+                                        ∠(dir(T ), Ty Y) &
+                                                              rj+1
+for some y ∈ Y ∩ 2B with |y − x| . δ for some x ∈ T . This implies that
+                                    NCδ T ∩ 2B ∩ Y>αj+1 6= ∅
+                                                                                S
+where αj+1 ∼ δ/rj+1 . Consequently, by Lemma 7.1, any T ∈                           B∈B(Oj ) TB,trans lies
+in at most O(dn ) of the sets TB,trans and so
+                            X
+                                   #TB,trans . dn #T[Oj ].
+                                 B∈B(Oj )
+
+Combining this inequality with (43) and summing over all Oj ∈ Øj,alg ,
+                       X                      X
+                              #T[Oj+1 ] . dn      #T[Oj ].
+                           Oj+1 ∈Øj+1                        Oj ∈Øj
+           IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                    29
+
+
+Applying (II)j , (39) and (42), one concludes that
+                     X
+                            #T[Oj+1 ] . d−ε◦ Cj+1 (d)d#c (j+1) #T.
+                  Oj+1 ∈Øj+1
+
+Provided d is chosen to be sufficiently large to absorb the implicit constant, one
+deduces (II)j+1 .
+
+Property III. Fix Oj ∈ Øj,alg and Oj+1 ∈ Øj+1 (Oj ). By definition, T[Oj+1 ] ⊆
+T[Oj ] and so
+                #T[Oj+1 ] 6 #T[Oj ] 6 Cj+1 (d)d−#c (j+1)(m−1) #T,
+by (III)j and (39).
+
+The second algorithm. The algorithm [alg 1] is now applied repeatedly in
+order to arrive at a final decomposition of the k-broad norm. This process forms
+part of a second algorithm, referred to as [alg 2].
+   Throughout this section let pℓ , with k 6 ℓ 6 n, denote some choice of Lebesgue
+exponents satisfying pk > pk+1 > . . . > pn =: p > 1. The numbers 0 6 Θℓ 6 1 are
+then defined in terms of the pℓ by
+                                         1 −1     1
+                             Θℓ := 1 −           1−
+                                         pℓ          p
+so that Θn = 1. Also fix 0 < ε◦ ≪ ε ≪ 1 as in the previous section.
+   There are two stages to [alg 2], which can roughly be described as follows:
+                                P
+      • The recursive stage: T ∈T χT is repeatedly decomposed into pieces with
+        favourable tangency properties with respect to varieties of progressively
+        lower dimension. P
+      • The final stage:      T ∈T χT is further decomposed into very small scale
+        pieces.
+To begin, the recursive stage of [alg 2] is described.
+
+Input. [alg 2] will take as its input:
+     • A choice of small scale 0 < δ ≪ 1.
+     • A large integer A ∈ N.
+     • A family of δ-tubes T which are non-degenerate in the sense that
+                               X
+                                   χT   p   n
+                                              6= 0.                                           (44)
+                                              BLk,A (R )
+                                    T ∈T
+
+Note that the process applies to essentially arbitrary families of δ-tubes (in partic-
+ular, the direction-separated hypothesis does not appear at this stage).
+
+Output. The (n + 1 − ℓ)th step of the recursion will produce:
+     • An (n + 1 − ℓ)-tuple of:
+         – scales ~δℓ = (δn , . . . , δℓ ) satisfying δ ε◦ = δn > · · · > δℓ > δ 1−ε◦ ;
+         – large and (in general) non-admissible parameters D             ~ ℓ = (Dn , . . . , Dℓ );
+                      ~
+         – integers A = (An , . . . , Aℓ ) satisfying A = An > An−1 > · · · > Aℓ .
+       Each of these (n + 1 − ℓ)-tuples is formed by adjoining a component to the
+       corresponding (n − ℓ)-tuple from the previous stage.
+30               JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+      • A family S~ℓ of (n + 1 − ℓ)-tuples of transverse complete intersections S      ~ℓ =
+        (Sn , . . . , Sℓ ) satisfying dim Si = i and deg Si = O(1) for ℓ 6 i 6 n.
+      • An assignment of a δℓ -ball B[S                             ~ℓ ] of δ-tubes to each
+                                             ~ℓ ] and a subfamily T[S
+        ~       ~                                                 ~
+        Sℓ ∈ Sℓ with the property that the tubes T ∈ T[Sℓ ] are tangent to Sℓ in
+        B[S~ℓ ] (here Sℓ is the final component of S     ~ℓ ).
+This data is chosen so that the following properties hold:
+Notation. Throughout this section a large number of harmless δ −ε◦ -factors appear
+in the inequalities. For notational convenience, given A, B > 0 let A / B or B ' A
+denote A . δ −cε◦ B for some c > 0 depending only on n and p.
+Property 1. The inequality
+     X                                                        X          X         pℓ                Θp ℓ
+            χT                     ~ ℓ ; ~δℓ )[δ n #T]1−Θℓ
+                               / C(D                                           χT                        ℓ
+                                                                                      pℓ
+                  BLp     n
+                    k,A (R )                                                        BLk,A    ~ℓ ])
+                                                                                          (B[S
+     T ∈T                                                         ~ℓ
+                                                             ~ ℓ ∈S
+                                                             S               ~ℓ ]
+                                                                        T ∈T[S           ℓ
+
+                                                                                                         (45)
+holds for
+                                         Y
+                                         n−1
+                                               δi Θi+1 −Θi (1+ε◦ )(Θi+1 −Θℓ )+ε◦
+                        ~ ℓ ; ~δℓ ) :=
+                      C(D                                  Di                     .
+                                               δ
+                                         i=ℓ
+Property 2. For ℓ 6 n − 1, the inequality
+                      X                     X
+                          #T[S ~ℓ ] / D1+ε◦                               ~ℓ+1 ]
+                                                                       #T[S
+                                        ℓ
+                                 ~ℓ
+                            ~ ℓ ∈S
+                            S                                 ~ℓ+1
+                                                        ~ℓ+1 ∈S
+                                                        S
+
+holds.
+
+Property 3. For ℓ 6 n − 1, the inequality
+                                   ~ℓ ] / D−ℓ+ε◦ max
+                            max #T[S                                      ~ℓ+1 ]
+                                                                       #T[S
+                                           ℓ
+                                ~ℓ
+                           ~ ℓ ∈S
+                           S                                  ~ℓ+1
+                                                        ~ℓ+1 ∈S
+                                                        S
+
+holds.
+
+   By the inclusion property (29), the broad norms over B[S~ℓ ] on the right-hand
+side of (45) could be replaced by broad norms over 4δ-neighbourhoods of Sℓ .
+
+First step. Vacuously, the tubes belonging to T are tangent to the n-dimensional
+             Let B◦ denote a collection of finitely-overlapping balls of radius δ ε◦
+variety Rn . S
+which cover T ∈T T and define
+      • δn := δ ε◦ ; Dn := 1 and An := A;
+      • Sn is the collection consisting of repeated copies of the 1-tuple (Rn ), with
+        one copy for each ball in B◦ ;
+      • For each S                          ~n ] ∈ B◦ and let
+                    ~n ∈ Sn assign a ball B[S
+                                   
+                            ~n ] := T ∈ T : T ∩ B[S~n ] 6= ∅ .
+                          T[S
+By a straightforward orthogonality argument (identical to that used to establish
+the base case in the proof of Proposition 4.2), Property 1 can be shown to hold
+with C(D~ n ; ~δn ) = 1 and Θn = 1.
+                            IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                                        31
+
+
+          (n + 2 − ℓ)th step. Let ℓ > 1 and suppose that the recursive algorithm has ran
+          through n+1−ℓ steps. Since each family T[S~ℓ ] consists of δ-tubes which are tangent
+                     ~
+          to Sℓ on B[Sℓ ], one may apply [alg 1] to bound the k-broad norm
+                                         X
+                                              χT     pℓ
+                                                                .
+                                                                              ~ℓ ])
+                                                                     BLk,A (B[S
+                                                            ~ℓ ]
+                                                       T ∈T[S               ℓ
+
+
+
+          One of two things can happen: either [alg 1] terminates due to the stopping
+          condition [tiny] or it terminates due to the stopping condition [tang]. The cur-
+          rent recursive process terminates if the contributions from terms of the former type
+          dominate:
+
+          Stopping condition. The recursive stage of [alg 2] has a single stopping condi-
+          tion, which is denoted by [tiny-dom].
+Stop:[tiny-dom] Suppose that the inequality
+              X      X        pℓ                                       X              X              pℓ
+                          χT     pℓ
+                                            6 2                                                 χT        p
+                                                                                                                                (46)
+                                                      ~ℓ ])
+                                             BLk,A (B[S                                                 ℓ
+                                                                                                     BLk,A    ~ℓ ])
+                                                                                                           (B[S
+                      ~ℓ
+                 ~ ℓ ∈S
+                 S               ~ℓ ]
+                            T ∈T[S                 ℓ                ~ ℓ ∈S
+                                                                    S    ~ℓ,tiny         ~ℓ ]
+                                                                                    T ∈T[S                    ℓ
+
+
+
+                     holds, where the right-hand summation is restricted to those Sℓ ∈ S~ℓ for
+                     which [alg 1] terminates owing to the stopping condition [tiny]. Then
+                     [alg 2] terminates.
+            Assume that the condition [tiny-dom] is not met. Necessarily,
+               X     X         pℓ               X         X        pℓ
+                           χT     pℓ
+                                           6 2                 χT     pℓ
+                                                                                                                         ,      (47)
+                                                      ~ℓ ])
+                                             BLk,A (B[S                                                       ~ℓ ])
+                                                                                                     BLk,A (B[S
+                      ~ℓ
+                 ~ ℓ ∈S
+                 S               ~ℓ ]
+                            T ∈T[S                 ℓ               ~ ℓ ∈S
+                                                                   S    ~ℓ,tang         ~ℓ ]
+                                                                                   T ∈T[S                     ℓ
+
+
+
+          where the right-hand summation is restricted to those Sℓ ∈ S~ℓ for which [alg 1]
+          does not terminate owing to [tiny] and therefore terminates owing to [tang].
+                                 ~ℓ ∈ S~ℓ,tang the inequalities
+          Consequently, for each S
+               X        pℓ                          X           X       pℓ
+                                           ε◦
+                    χT     pℓ
+                                     / Dℓ−1                        χT      pℓ
+                                                                                        ,
+                                        ~ℓ ])
+                               BLk,A (B[S                                                              BLk,2A              ~ℓ−1 ])
+                                                                                                                        (B[S
+                     ~ℓ ]
+                T ∈T[S                  ℓ                                 ~ℓ ]
+                                                              Sℓ−1 ∈Sℓ−1 [S             ~ℓ−1 ]
+                                                                                   T ∈T[S                         ℓ−1
+
+                                                                                                                                (48)
+          and
+                                             X
+                                                                        1+ε◦
+                                                           #T[Sℓ−1 ] / Dℓ−1  #T[Sℓ ];                                           (49)
+                                                    ~ℓ ]
+                                        Sℓ−1 ∈Sℓ−1 [S
+                                                                             −(ℓ−1)+ε◦
+                                             max           #T[Sℓ−1 ] / Dℓ−1                #T[Sℓ ]                              (50)
+                                                    ~ℓ ]
+                                        Sℓ−1 ∈Sℓ−1 [S
+
+          hold for some choice of:
+                  • Scale δℓ−1 satisfying δℓ > δℓ−1 > δ 1−ε◦ ; non-admissible number Dℓ−1 and
+                    large integer Aℓ−1 satisfying Aℓ−1 ∼ Aℓ ;
+                  • Family Sℓ−1 [S ~ℓ ] of (ℓ − 1)-dimensional transverse complete intersections of
+                    degree O(1);
+                  • Assignment of a subfamily T[S               ~ℓ ][Sℓ−1 ] of δ-tubes for every Sℓ−1 ∈
+                                                     ~ℓ−1 ] = T[S
+                          ~                            ~
+                    Sℓ−1 [Sℓ ] such that each T ∈ T[Sℓ−1 ] is tangent to Sℓ−1 on B[S      ~ℓ−1 ].
+32               JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+Each inequality (48), (49) and (50) is obtained by combining the definition of the
+stopping condition [tang] with Properties I, II and III from [alg 1], respectively.
+Indeed, we take
+                 r0 := δℓ ,     δℓ−1 := max{rJ1+ε◦ , δ 1−ε◦ },                 and Dℓ−1 := d#c (J) ,
+using the notation from [alg 1].
+   The δℓ−1 , Dℓ−1 and Aℓ−1 can depend on the choice of S        ~ℓ , but this dependence
+can be essentially removed by pigeonholing. In particular, #c (J) depends on S        ~ℓ ,
+but satisfies #c (J) = O(log δ −1 ). Thus, since there are only logarithmically many
+possible different values, one may find a subset of the Sℓ,tang over which the Dℓ−1 all
+have a common value and, moreover, the inequality (46) still holds except that the
+constant 1/2 is now replaced with, say, δ −ε◦ . A brief inspection of [alg 1] shows
+that both δℓ−1 and Aℓ−1 are determined by Dℓ−1 and so the desired uniformity is
+immediately inherited by these parameters.
+   Letting S~ℓ−1 denote the structured set
+                       
+               S~ℓ−1 := (S              ~ℓ ∈ S~ℓ,tang and Sℓ−1 ∈ Sℓ−1 [S
+                          ~ℓ , Sℓ−1 ) : S                               ~ℓ ] ,
+
+where S~ℓ,tang is understood to be the refined collection described in the previous
+paragraph, it remains to verify that the desired properties hold for the newly con-
+structed data. Property 2 follows immediately from (49) and Property 3 from (50),
+so it remains only to verify Property 1.
+   By combining the inequality (45) from the previous stage of the algorithm
+with (47) and (48), one deduces that
+     X                                                                                  X             Θℓ
+            χT                     ε◦
+                                / Dℓ−1   ~ ℓ ; ~δℓ )[δ n #T]1−Θℓ
+                                       C(D                                                     χT             p
+                 BLp     n
+                   k,A (R )                                                                           ℓpℓ BLk,2A
+                                                                                                             ℓ              ~ℓ−1 )
+                                                                                                                           (S
+     T ∈T                                                                            ~ℓ−1 ]
+                                                                                T ∈T[S                               ℓ−1
+
+
+
+where, for any 1 6 q < ∞ and M ∈ N, we write
+                                                                                                                      !1/q
+            X                                                  X               X               q
+                     χT                         :=                                        χT                                  .
+                          ℓq BLqk,M (S
+                                     ~ℓ−1 )                                                    BLqk,M (B[S
+                                                                                                         ~ℓ−1 ])
+            ~ℓ−1 ]
+       T ∈T[S                                                 ~ℓ−1
+                                                        ~ℓ−1 ∈S
+                                                        S                     ~ℓ−1 ]
+                                                                         T ∈T[S
+
+Taking q = pℓ and M = 2Aℓ−1 , the logarithmic convexity inequality (Lemma 5.6)
+dominates the preceding expression by
+             X         1−Θℓ−1 /Θℓ         X         Θℓ−1 /Θℓ
+                   χT                           χ T         pℓ−1      .
+                           1         ℓ1 BLk,A        p~ℓ−1 )
+                                                     (S                                 ℓ ℓ−1 BLk,A         ~ℓ−1 )
+                                                                                                           (S
+                       ~ℓ−1 ]
+                  T ∈T[S                      ℓ−1                    ~ℓ−1 ]
+                                                                T ∈T[S                              ℓ−1
+
+
+
+Observe that, trivially, one has
+              X                                                     δ                  X
+                                                                         ℓ−1                          ~ℓ−1 ].
+                     χT                                         .                  δn              #T[S
+                              1      ℓ1 BLk,A          ~ℓ−1 )
+                                                      (S                 δ
+                       ~ℓ−1 ]
+                  T ∈T[S                        ℓ−1                                       ~ℓ−1
+                                                                                    ~ℓ−1 ∈S
+                                                                                    S
+
+                                                   ~i ∈ S~i } for ℓ − 1 6 i 6 n − 1, it
+                                            ~i ] : S
+and, by Property 2 for the tube families {T[S
+follows that
+                      X                                             δ          n−1
+                                                                                  Y               
+                                                                         ℓ−1
+                                χT                              .                           Di1+ε◦ δ n #T.
+                                     ℓ1 BL1k,A         ~ℓ−1 )
+                                                      (S                 δ
+                       ~ℓ−1 ]
+                  T ∈T[S                        ℓ−1                                 i=ℓ−1
+               IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                                       33
+
+
+One may readily verify that
+                                      δ         n−1
+                                                 Y                Θℓ −Θℓ−1
+                ε◦    ~ ℓ ; ~δℓ ) ·        ℓ−1                                      ~ ℓ−1 ; ~δℓ−1 )
+               Dℓ−1 C(D                                  Di1+ε◦                 = C(D
+                                           δ
+                                                 i=ℓ−1
+
+and so, combining the above estimates,
+  X                                                                         X                  Θℓ−1
+        χT                     ~ ℓ−1 ; ~δℓ−1 )[δ n #T]1−Θℓ−1
+                           / C(D                                                     χT                p                    ,
+              BLp     n
+                k,A (R )                                                                       ℓpℓ−1 BLk,A
+                                                                                                        ℓ−1        ~ℓ−1 )
+                                                                                                                  (S
+ T ∈T                                                                         ~ℓ−1 ]
+                                                                         T ∈T[S                             ℓ−1
+
+
+
+which is Property 1.
+
+The final stage. If the algorithm has not stopped by the kth step, then it neces-
+sarily terminates at the kth step. Indeed, otherwise (45) would hold for ℓ = k − 1
+and families T[S~k−1 ] of δk−1 -tubes which are tangent to some transverse complete
+intersection of dimension k − 1. By the vanishing property of the k-broad norms as
+described in Lemma 5.3, one would then have
+                             X
+                                    χT     pk−1          = 0,
+                                                       BLk,A          ~k−1 ])
+                                                                   (B[S
+                                     ~k−1 ]
+                                T ∈T[S                       k−1
+
+
+
+which, by (45), would contradict the non-degeneracy hypothesis (44).
+    Suppose the recursive process terminates at step m, so that m > k. For each
+~m ∈ S~m,tiny let Ø[S
+S                    ~m ] denote the final collection of cells output by [alg 1] (that
+is, the collection denoted by ØJ in theP   notation of the previous subsection) when
+applied to estimate the broad norm k T ∈T[S~m ] χT kBLpm (B[S~m ]) . By Properties
+                                                            k,Am
+I, II and III of [alg 1] one has
+               X         pm                  X         X         pm
+                    χT      pm
+                                        .                    χ T    pm
+                                                                            ,
+                                        ~m ])
+                              BLk,Am (B[S                                              BLk,A          (O)
+                    ~m ]
+               T ∈T[S                                        ~m ]
+                                                         O∈Ø[S         T ∈T[O]                  m−1
+
+
+
+for some Am−1 ∼ Am where the families T[O] satisfy
+                       X
+                              #T[O] . Dm−11+ε◦
+                                               #T[S~m ]                                                             (51)
+                                     ~m ]
+                                 O∈Ø[S
+
+and
+                                                            −(m−1)+ε◦         ~m ]
+                               max #T[O] . Dm−1                            #T[S                                     (52)
+                                 ~m ]
+                             O∈Ø[S
+
+for Dm−1 a large and (in general) non-admissible parameter. Once again, by pi-
+geonholing, one may pass to a subcollection of Sm,tiny and thereby assume that the
+Dm−1 (and also the Am−1 ) all share a common value.
+   If Ø denotes the union of the Ø[S              ~m belonging to subcollection of
+                                    ~m ] over all S
+Sm,tiny described above, then [alg 2] outputs the following inequality.
+
+First key estimate.
+                                                                                                                  ! Θp m
+  X                                                                   X          X              pm                    m
+
+         χT                  ~ m ; ~δm )[δ #T]
+                         / C(D                    n       1−Θm
+                                                                                          χT                            .
+              BLp      n
+                k,A (R )                                                                        BLk,Am−1 (O)
+  T ∈T                                                               O∈Ø        T ∈T[O]
+34           JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+                                     8. Proof of Theorem 4.1
+    Henceforth, fix T to be a direction-separated family of δ-tubes in Rn . Without
+loss of generality, we may assume that T satisfies the non-degeneracy hypothe-
+sis (44). The algorithms described in the previous section can be applied to this
+tube family, leading to the final decomposition of the broad norm described in the
+first key estimate. One therefore wishes to show, using the direction-separated hy-
+pothesis, that the quantity on the right-hand side of the first key estimate can be
+effectively bounded, provided that the exponents pk , . . . , pn are suitably chosen.
+    Since each O ∈ Ø is contained in a ball of radius at most δ 1−ε◦ , trivially one
+may bound
+                         X        pm                           pm
+                              χT     pm
+                                              / δ n #T[O]          .
+                                            BLk,A             (O)
+                             T ∈T[O]                    m−1
+
+
+Recalling that Θm (1 − p1m ) = 1 − 1p , this yields
+                                                ! Θp m
+       X      X              pm                    m
+                                                                                1− p1  n X        Θp m
+                                                                                                       m
+                       χT                                /      max #T[O]               δ    #T[O]        .
+                             BLp m
+                               k,A        (O)                   O∈Ø
+       O∈Ø   T ∈T[O]               m−1                                                      O∈Ø
+
+Now (51) and repeated application of Property 2 from [alg 2] imply
+                                  X                       n−1
+                                                           Y              
+                                        #T[O] /                     Di1+ε◦ #T.
+                                  O∈Ø                     i=m−1
+
+Combining this with the first key estimate and the definition of C(D ~ m ; ~δm ), one
+concludes that
+            X                                        1 X            p1
+               χT             / C( ~ ~δ ) max #T[O] 1− p δ
+                                   D;                           |T |             (53)
+                     p
+                            BLk,A (Rn )                        O∈Ø
+              T ∈T                                                                        T ∈T
+
+where, taking δm−1 := δ, the constant takes the form
+                                        n−1
+                                        Y         δ Θi+1 −Θi        Θi+1 −(1− p1 )+O(ε◦ )
+                     ~ ~δ ) :=                      i
+                   C(D;                                             Di                           .
+                                      i=m−1
+                                                   δ
+
+  In order to bound the maximum appearing on the right-hand side of (53), by (52)
+and repeated application of Property 3 of [alg 2], it follows that
+                                                 ℓ−1
+                                                  Y                     
+                         max #T[O] /                          Di−i+ε◦              ~ℓ ]
+                                                                            max #T[S
+                         O∈Ø                                                     ~ℓ
+                                                                            ~ ℓ ∈S
+                                                                            S
+                                                   i=m−1
+
+whenever m 6 ℓ 6 n. Recall, for each tube family T[S     ~ℓ ] produced by [alg 2]
+                                                        ~
+and each ℓ 6 i 6 n − 1 there exists a δi -ball Bδi := B[Si ] such that every δ-tube
+      ~ℓ ] is tangent to Si in Bδi ; in particular,
+T ∈ T[S
+         T ∩ Bδi ∩ Nδ Si 6= ∅           and T ∩ 2Bδi ⊆ N4δ Si                         for ℓ 6 i 6 n − 1.
+Here Si is a transverse complete intersection of dimension i and deg Si depends
+only on the admissible parameters n, p and ε. Thus, Theorem 1.4 implies that
+                   \n
+                   n−1                                             o           Y  δi −1
+                                                                               n−1
+        ~ℓ ] 6 #
+     #T[S                   T ∈ T : |T ∩ 2Bδi ∩ N4δ Si | > 2δi |T | / δ −(n−1)            ,
+                                                                                   δ
+                   i=ℓ                                                                               i=ℓ
+               IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                           35
+
+
+where the first inequality follows from elementary geometric considerations. Com-
+bining these observations,
+                                        ℓ−1
+                                         Y                        Y  δi −1
+                                                                   n−1
+                    max #T[O] /                   Di−i+ε◦ δ −(n−1)            .
+                    O∈Ø
+                                            i=m−1
+                                                                       δ
+                                                                        i=ℓ
+
+for all m 6 ℓ 6 n. Finally, these n − m + 1 different estimates can be combined
+into a single inequality by taking a weighted geometric mean, yielding:
+                                                        P
+Second key estimate. Let 0 6 γm , . . . , γn 6 1 satisfy nj=m γj = 1. Then
+
+                       Y  δi − Pij=m γj −i(1−Pi γj )+O(ε◦ ) 
+                     n−1
+        max #T[O] /                      Di     j=m
+                                                               δ −(n−1) .
+        O∈Ø
+                     i=m−1
+                           δ
+                                        Pi
+  When i = m − 1 the (δi /δ)− j=m γj factor is understood to be equal to 1.
+  Substituting the second key estimate into (53), one obtains
+
+        X                               Y  δi Xi Y +O(ε ) 
+                                      n−1                            n
+                                                                          X       p1
+               χT                /                Di i   ◦
+                                                             δ −(n−1− p )    |T |
+                    BLp     n
+                      k,A (R )
+                                            δ
+        T ∈T                          i=m−1                                       T ∈T
+
+where
+                                                   X
+                                                    i             1
+                          Xi := Θi+1 − Θi −               γj     1−   ;
+                                                    j=m
+                                                                    p
+                                                         i
+                                                          X             1
+                          Yi := Θi+1 − 1 + i 1 −                γj      1−    .
+                                                          j=m
+                                                                           p
+
+One now chooses the various exponents so that Xi , Yi = 0 for all m 6 i 6 n − 1 and
+Ym−1 = 0. This ensures that the (δi /δ)Xi and DiYi factors in the above expression
+                                                          O(ε )
+are admissible but does not allow one to control the Di ◦ factors, which may still
+                                        O(ε )
+be non-admissible. To deal with the Di ◦ one may perturb the p exponent which
+results under the conditions Xi , Yi = 0, so that Yi becomes negative, and then
+choose ε◦ sufficiently small depending on the choice of perturbation. This yields an
+open range of k-broad estimates, which can then be trivially extended to a closed
+range via interpolation through logarithmic convexity (the interpolation argument
+relies on the fact that one is permitted an δ −ε -loss in the constants in the k-broad
+inequalities).
+   The condition Xi = 0 is equivalent to
+                                     1 −1          1 −1   X i
+                                1−               − 1−       =     γj                     (54)
+                                     pi+1             pi      j=m
+
+whilst the condition Yi−1 = 0 is equivalent to
+                                    1 −1               Xi−1
+                                  1−       = i − (i − 1)      γj .                       (55)
+                                     pi                  j=m
+36         JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+                m
+Choose pm := m−1    so that (55) holds in the i = m case. The remaining pi are then
+defined in terms of the γj by the equation
+                                    1 −1     Xi−1
+                                1−         =m+      (i − j)γj                      (56)
+                                     pi        j=m
+
+so that each of the n − m constraints in (54) is met.
+   It remains to solve for the n − m + 1 variables γm , . . . , γn . By comparing the
+right-hand sides of (55) and (56), it follows that
+                  i−1
+                  X
+                        (2i − j − 1)γj = i − m      for m + 1 6 i 6 n.             (57)
+                  j=m
+
+To solve this linear system, let κi denote the left-hand side of (57) and observe that
+      κi+1 + κi−1 − 2κi = (i + 1)γi − (i − 2)γi−1         for m + 1 6 i 6 n − 1,
+where κm := 0. On the other hand, by considering the right-hand side of (57), it
+is clear that κi+1 + κi−1 − 2κi = 0. Combining these observations gives a recursive
+relation                              i − 2
+                        1
+              γm :=        ,     γi =         γi−1 for m + 1 6 i 6 n
+                     m+1               i+1
+and from this one deduces that
+                       j−1
+                   1 Y i−1            (m − 1)m
+          γj =                   =                        for m 6 j 6 n − 1.
+                 m + 1 i=m i + 2   (j − 1)j(j + 1)
+   It remains to check that these parameter values give the correct value of pn ,
+corresponding to the exponent featured in Theorem 4.1. It follows from (55) that
+                      1 −1
+                                                   n−1
+                                                   X          1
+                 1−          = n − (n − 1)(m − 1)m
+                      pn                           j=m
+                                                       (j − 1)j(j + 1)
+                               (n − 1)n − (m − 1)m
+                             =n−                      .
+                                         2n
+This is smallest when m = k, which directly yields the desired range of p, as stated
+in Theorem 4.1, completing the proof.
+
+           9. Remarks on the numerology and related results
+   In this section we discuss the relationship between the main result of this paper
+and the existing literature on the Kakeya set conjecture. The first step is to obtain a
+more explicit range of exponents for Theorem 1.2, which is treated in the following
+subsection. Later, we also discuss applications of the method of this article to
+certain variants of the Kakeya maximal problem.
+9.1. Numerology. Recall that the range of exponents in Theorem 1.2 is given by
+                             n          2n              1     o
+           p > 1 + min max                         ,           .          (58)
+                  26k6n        n(n − 1) + k(k − 1) n − k + 1
+As claimed in the introduction, this guarantees that Conjecture 1.1 holds in the
+range
+                                        1      1
+                             p>1+        √         .                        (59)
+                                      2− 2   n − 1
+            IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                37
+
+
+In fact, in many dimensions a somewhat better bound is obtained. To see this,
+allowing k to be non-integer for a moment, one finds that the minimum value in
+(58) is attained when k = k1 where k1 = k1 (n) is chosen so that
+                                    2n                  1
+                                                  =            .
+                           n(n − 1) + k1 (k1 − 1)   n − k1 + 1
+Solving the quadratic, one deduces that
+                     √           1 √         1  1 1/2    
+               k1 = ( 2 − 1)n + + 2n 1 + + 2            −1
+                                 2            n 8n
+                     √           1    1     1
+                  6 ( 2 − 1)n + + √ + √ ,
+                                 2      2 8 2n
+where the upper bound follows by Bernoulli’s inequality. Let k̃1 denote the √ expres-
+sion appearing on the last line of the above display. Since the sequence ( 2 − 1)n
+is equidistributed modulo 1, for any ε > 0 there exist infinitely many values of n
+for which the interval [k̃1 , k̃1 + ε] contains an integer. For any such value of n it
+follows that Conjecture 1.1 is true in the range
+                                            1
+                       p>1+          √                      + ε.
+                                 (2 − 2)n + 2 − √12 − 8√12n
+                                            1
+
+
+On the other hand, considering the worst case scenario, when k is not close to an
+integer, we can at least find an integer in [k0 , k0 + 1], with k0 = k0 (n) chosen so
+that
+                              2n                        1
+                                            =                    .
+                     n(n − 1) + k0 (k0 − 1)   n − (k0 + 1) + 1
+Calculating k0 and bounding from above using Bernoulli’s inequality as before, we
+find that, in any dimension, Conjecture 1.1 is true in the range
+                                                1
+                             p>1+          √                 .
+                                       (2 − 2)n − 21 − 8√12n
+This range is always larger than the one stated in (59).
+
+9.2. Implications for the Kakeya set conjecture. As mentioned in the intro-
+duction, a maximal estimate of the form ( Kp ) implies that the Hausdorff dimension
+of any Kakeya set must be greater than or equal to p′ , where 1/p + 1/p′ = 1. It is
+instructive to compare the Hausdorff dimension bounds obtained from Theorem 1.2
+with the current best known high dimensional results on the Kakeya set conjecture
+due to Katz and Tao [27]. In particular, in [27] it was shown
+                                                         √    that Kakeya sets in Rn
+have Hausdorff dimension greater than or equal to (2− 2)(n−4)+3.4 Considering
+the best case scenario from the previous section, we are able to obtain the following
+improvement.
+Corollary 9.1. For every ε > 0 there exists an infinite sequence of dimensions n
+such that every Kakeya set K ⊆ Rn satisfies
+                                    √        3     1
+                      dimH K > (2 − 2)n + − √ − ε.
+                                             2      2
+4This is an improved range over what can be obtained directly from the maximal estimate in [27];
+an even larger bound for the Minkowski dimension is obtained in [27] for dimensions n > 24.
+38             JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+       n=        dimH >                           n=       dimH >
+         2          2            Davies [12]        9           6          Theorem 1.2
+                                                                 √
+         3       5/2 + ε      Katz–Zahl [29]       10      15 − 6 2        Katz–Tao [27]
+                                                                 √
+         4       3.0858...    Katz–Zahl [30]       11      17 − 7 2        Katz–Tao [27]
+         5        18/5         Theorem 1.2         12        31/4          Theorem 1.2
+                     √                                           √
+         6       7−2 2        Katz–Tao [27]        13      21 − 9 2        Katz–Tao [27]
+         7        34/7         Theorem 1.2         14           9          Theorem 1.2
+                      √                                          √
+         8      11 − 4 2      Katz–Tao [27]        15     25 − 11 2        Katz–Tao [27]
+
+             Figure 5. The state-of-the-art for the Kakeya set conjecture in
+             low dimensions. New results are highlighted.
+
+
+   Provided ε > 0 is sufficiently small, this bound is stronger than that obtained
+by Katz–Tao [27]. On the other hand, the Hausdorff dimension bound provided by
+Theorem 1.2 is also weaker than the result [27] for infinitely many dimensions. In
+our worst case scenario, arguing as in the previous subsection, given any ε > 0 we
+can find infinitely many dimensions n for which our results do not provide a better
+bound than
+                                             √         1
+                           dimH K > (2 − 2)n + + ε.
+                                                       2
+Provided ε > 0 is sufficiently small, this is strictly worse than the Katz–Tao Haus-
+dorff dimension estimate. See Figure 5 for the state-of-the-art in lower dimensions.
+                       √ that the polynomial partitioning approach of this article
+It is perhaps interesting
+yields the same (2 − 2)n + O(1) numerology as the (completely different) sum-
+difference approach employed by Katz and Tao [27].
+9.3. Further variants of the Kakeya problem. It is an interesting problem to
+determine what can be said when the direction-separation hypothesis in Conjec-
+ture 1.1 is weakened; indeed, results of this kind have greatly influenced the current
+understanding of the Kakeya conjecture (see, for instance, [38]). One classical the-
+orem in this direction is due to Wolff [41] and considers families of tubes which
+satisfy the following hypothesis.
+Definition 9.2. Let N > 1 and T be a family of δ-tubes in Rn . We say that T
+satisfies the (N )-linear Wolff axiom if
+                           
+                          # T ∈ T : T ⊆ E 6 N δ −(n−1) |E|
+whenever E ⊆ Rn is a rectangular box of arbitrary dimensions.
+     In [41], Wolff showed that the maximal inequality
+                   X                                   n
+                                                             X      1/p
+                       χT        .n,ε N 1−1/p δ −(n−1− p )−ε    |T |                         (60)
+                             Lp (Rn )
+                   T ∈T                                             T ∈T
+
+holds for the restricted range p > n+2 n whenever T satisfies the (N )-linear Wolff
+axiom.5 Furthermore, it is not difficult to see that any direction-separated T satisfies
+5Strictly speaking, Wolﬀ’s theorem [41] holds under a slightly less restrictive condition referred
+to simply as the Wolff axiom. See [22] for a comparison of these conditions.
+            IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                 39
+
+
+the (N )-linear Wolff axiom for some N ∼ 1 and so his result provided similar
+progress for Conjecture 1.1.
+   Interestingly, there exist examples of tube families T in dimensions n > 4 that
+satisfy the (N )-linear Wolff axiom with N ∼ 1, but for which (60) fails to hold for
+                        n
+the whole range p > n−1    ; see [37]. In particular, when n = 4 one may construct
+such T for which (60) is only valid in Wolff’s range p > 3/2. Examples of this
+kind are not direction-separated and therefore do not provide counterexamples to
+Conjecture 1.1.
+   To go beyond p > 3/2 in four dimensions, Guth and Zahl [22] considered families
+of tubes which satisfy a more restrictive version of the (N )-linear Wolff axiom.
+Definition 9.3. We say that T satisfies the (D, N )-polynomial Wolff axiom if
+                 
+                # T ∈ T : |T ∩ E| > λ|T | 6 N δ −(n−1) λ−n |E|
+whenever λ > δ and E ⊆ Rn is a semialgebraic set of complexity at most D.
+  In this language, Theorem 1.3 states that for all D ∈ N and all ε > 0 there is a
+constant C(D, ε, n) such that any direction-separated family T satisfies the (D, N )-
+polynomial Wolff axiom with N = C(D, ε, n)δ −ε . Thus, the following conjecture of
+Guth and Zahl [22, Conjecture 1.1] is stronger than the Kakeya maximal conjecture.
+                                              n
+Conjecture 9.4 (Guth–Zahl [22]). Let p > n−1    . Then, for all ε > 0, there is a
+complexity D = Dε,n ∈ N and a constant Cε,n > 0 such that
+             X                                          X        1/p
+                χT        6 Cε,n N 1−1/p δ −(n−1−n/p)−ε      |T |
+                          Lp (Rn )
+                T ∈T                                                 T ∈T
+
+whenever 0 < δ < 1, N > 1 and T satisfies the (D, N )-polynomial Wolff axiom.6
+   It is easy to adapt Córdoba’s L2 -argument [11] to prove Conjecture 9.4 for n = 2.
+Guth and Zahl [22] showed that in four dimensions, under the polynomial Wolff
+axioms, the p > 3/2 bound can be improved to p > 121/81.7 Later, Katz and Zahl
+[29] obtained a slight improvement over the Wolff bound p > 5/3 for Conjecture 9.4
+in three dimensions. In all other dimensions the Wolff bound p > n+2 n provides the
+previous best known result under the polynomial Wolff axioms alone. By carrying
+out the analysis of this paper, but only using the polynomial Wolff axiom rather
+than the nested estimates from Theorem 1.3, one obtains the following range of
+estimates.
+Theorem 9.5. Conjecture 9.4 is true in the range
+                                   n  n n−k        n−1 o 1
+                p > 1 + min max                   ,                  .            (61)
+                        26k6n          n−1          n−k+1 n−1
+   The above range of exponents is larger than Wolff’s when n = 5 or n > 7. To
+see this, note that for any 0 < r < 1 there exists some integer 2 6 k 6 n satisfying
+                                                                       αn
+k ∈ [r(n − 1) + 1, r(n − 1) + 2). Writing the endpoint in (61) as 1 + n−1 , it follows
+that
+                         n        1 (n−1)(1−r)     1 o
+        αn < inf max         1+                   ,        6 Ω−1 = 1.763....
+              0<r<1              n−1                1−r
+6Strictly speaking, the conjecture of [22] is slightly weaker than Conjecture 9.4 in some regards
+and stronger in others.
+7The original paper [22] claimed the range p > 85/57 but contained an arithmetic error, as
+highlighted in [29].
+40         JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+     n=        p>                             n=        p>
+       2        2            Córdoba [11]      9    1 + 94 /85       Theorem 9.5
+                                                            5    6
+       3     5/3 − ε        Katz–Zahl [29]     10    1 + 10 /9        Theorem 9.5
+       4     121/81         Guth–Zahl [22]     11       7/6           Theorem 9.5
+                    2   3                                   6     7
+       5    1 + 5 /4         Theorem 9.5       12   1 + 12 /11        Theorem 9.5
+       6       4/3            Wolff [41]       13       8/7           Theorem 9.5
+                    3   4                                   7     8
+       7    1 + 7 /6         Theorem 9.5       14   1 + 14 /13        Theorem 9.5
+                    4   5                                   8     9
+       8    1 + 8 /7         Theorem 9.5       15   1 + 15 /14        Theorem 9.5
+
+        Figure 6. The current state-of-the-art for Conjecture 9.4 in low
+        dimensions.
+
+Here the omega constant Ω ∈ (1/2, 1) is the solution to eΩ = Ω−1 . In particular,
+                                                                     Ω−1
+Theorem 9.5 implies that Conjecture 9.4 is true in the range p > 1 + n−1 , yielding
+an improvement over Wolff’s bound when n > 9. Calculating the precise value
+of pn for lower n, we find that Theorem 9.5 also improves the state-of-the-art for
+Conjecture 9.4 in dimensions n = 5, 7, 8; see Figure 6 for some explicit values for
+(61).
+
+            Appendix A. Tools from real algebraic geometry
+   For the reader’s convenience, here we recall the definitions and results from real
+algebraic geometry that play a role in our arguments in Section 3.
+Wongkew’s theorem. We make considerable use of the following theorem of Wongkew
+[43] (see also [18, 45]), which bounds the volume of neighbourhoods of algebraic va-
+rieties.
+Theorem A.1 (Wongkew [43]). Suppose Z is an m-dimensional variety in Rn with
+deg Z 6 d. For any 0 < ρ 6 λ and λ-ball Bλ the neighbourhood Nρ (Z ∩ Bλ ) can be
+covered by Od ((λ/ρ)m ) balls of radius ρ.
+The Tarski–Seidenberg projection theorem. A fundamental result in the theory of
+semialgebraic sets is the Tarski–Seidenberg projection theorem, which is also re-
+ferred to as “quantifier elimination”. A useful reference for this material is [2].
+Theorem A.2 (Tarski–Seidenberg). Let Π be the orthogonal projection of Rn into
+its first n − 1 coordinates. Then for every E > 1, there is a constant C(n, E) > 0
+so that, for every semialgebraic S ⊂ Rn of complexity at most E, the projection
+Π(S) has complexity at most C(n, E).
+   We repeatedly use Theorem A.2 to form semialgebraic sections of semialgebraic
+sets.
+Corollary A.3. Let S ⊂ R2n be a compact semialgebraic set of complexity at most
+E. Let Π be the orthogonal projection into the final n coordinates (a, d) 7→ d. Then
+there is a constant C(n, E) > 0, depending only on n and E, and a semialgebraic
+set Z, of complexity at most C(n, E), so that
+                               Z ⊂ S,        Π(Z) = Π(S),
+             IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                                   41
+
+
+and so that for each d, there is at most one a with (a, d) ∈ Z.
+   This is Lemma 2.2 from [25]. It is a direct consequence of Theorem A.2, as
+discussed in [25].
+Gromov’s algebraic lemma. The final key tool is the existence of useful parameter-
+isations of semialgebraic sets, as guaranteed by the following lemma.
+Lemma A.4 (Gromov). For all integers E, n, r > 1, there exists M (E, n, r) < ∞
+with the following properties. For any compact semialgebraic set A ⊂ [0, 1]n of
+dimension m and complexity at most E, there exists an integer N 6 M (E, n, r)
+and C r maps φ1 , . . . , φN : [0, 1]m −→ [0, 1]n such that
+               N
+               [
+                     φj ([0, 1]m ) = A   and    kφj kC r := max k∂ α φj k∞ 6 1.
+                                                             |α|6r
+               j=1
+
+  This result was originally stated by Gromov. Detailed proofs were later given
+by Pila and Wilkie [33] and Burguet [8].
+
+                                         References
+ [1] J. Bochnak, M. Coste and M.-F. Roy, Real algebraic geometry, Ergebnisse der Mathematik
+     und ihrer Grenzgebiete (3) [Results in Mathematics and Related Areas (3)], 36, Springer-
+     Verlag, Berlin, 1998.
+ [2] S. Basu, R. Pollack and M.-F. Roy, Algorithms in real algebraic geometry, Algorithms and
+     Computation in Mathematics, 10, Springer-Verlag, Berlin, 2003.
+ [3] J. Bennett, Aspects of multilinear harmonic analysis related to transversality, in Harmonic
+     Analysis and PDE, 1–28, Contemp. Math. 612, Amer. Math. Soc., Providence, RI.
+ [4] J. Bennett, A. Carbery and T. Tao, On the multilinear restriction and Kakeya conjectures,
+     Acta Math. 196 (2006), no. 2, 261–302.
+ [5] J. Bourgain, Besicovitch-type maximal operators and applications to Fourier analysis, Geom.
+     Funct. Anal. 22 (1991), no. 2, 147–187.
+ [6]         , On the dimension of Kakeya sets and related maximal inequalities, Geom. Funct.
+     Anal. 9 (1999), no. 2, 256–282.
+ [7] J. Bourgain and L. Guth, Bounds on oscillatory integral operators based on multilinear
+     estimates, Geom. Funct. Anal. 21 (2011), no. 6, 1239–1295.
+ [8] D. Burguet, A proof of Yomdin–Gromov’s algebraic lemma, Israel J. Math. 168 (2008),
+     291–316.
+ [9] M. Christ, Estimates for the k-plane transform, Indiana Univ. Math. J. 33 (1984), no. 6,
+     891–910.
+[10] M. Christ, J. Duoandikoetxea and J. L. Rubio de Francia, Maximal operators associated to
+     the Radon transform and the Calderón-Zygmund method of rotations, Duke Math. J. 53
+     (1986), no. 1, 189–209.
+[11] A. Córdoba, The Kakeya maximal function and the spherical summation multipliers, Amer.
+     J. Math. 99 (1977), no. 1, 1–22.
+[12] R. O. Davies, Some remarks on the Kakeya problem, Proc. Cambridge Philos. Soc. 69 (1971),
+     417–421.
+[13] S. W. Drury, Lp estimates for the X-ray transform, Illinois J. Math. 27 (1983), no. 1, 125–129.
+[14] Z. Dvir, On the size of Kakeya sets in finite fields, J. Amer. Math. Soc. 22 (2009), no. 4,
+     1093–1097.
+[15] B. Green and I. Z. Ruzsa, On the arithmetic Kakeya conjecture of Katz and Tao, Preprint:
+     arXiv:1712.02108.
+[16] L. Guth, The endpoint case of the Bennett-Carbery-Tao multilinear Kakeya conjecture, Acta
+     Math. 205 (2010), no. 2, 263–286.
+[17]         , Degree reduction and graininess for Kakeya-type sets in R3 , Rev. Mat. Iberoam. 32
+     (2016), no. 2, 447–494.
+[18]         , A restriction estimate using polynomial partitioning, J. Amer. Math. Soc. 29 (2016),
+     no. 2, 371–413.
+42          JONATHAN HICKMAN, KEITH M. ROGERS, AND RUIXIANG ZHANG
+
+
+[19]         , Restriction estimates using polynomial partitioning II, Acta Math. 221 (2018), 81–
+     142.
+[20] L. Guth, J. Hickman and M. Iliopoulou, Sharp estimates for oscillatory integral operators
+     via polynomial partitioning, Preprint: arXiv:1710.10349.
+[21] L. Guth and N. H. Katz, On the Erdös distinct distances problem in the plane, Ann. of Math.
+     (2) 181 (2015), no. 1, 155–190.
+[22] L. Guth and J. Zahl, Polynomial Wolff axioms and Kakeya-type estimates in R4 , Proc. Lond.
+     Math. Soc. (3) 117 (2018), no. 1, 192–220.
+[23] J. Hickman and K. M. Rogers, Improved Fourier restriction estimates in higher dimensions,
+     Preprint: arXiv:1807.10940.
+[24] N. H. Katz, I. Laba and T. Tao, An improved bound on the Minkowski dimension of Besi-
+     covitch sets in R3 , Ann. of Math. (2) 152 (2000), no. 2, 383–446.
+[25] N. H. Katz and K. M. Rogers, On the polynomial Wolff axioms, Geom. Funct. Anal. 28
+     (2018), 1706–1716.
+[26] N. H. Katz and T. Tao, Bounds on arithmetic projections, and applications to the Kakeya
+     conjecture, Math. Res. Lett. 6 (1999), no. 5-6, 625–630.
+[27]         , New bounds for Kakeya problems, J. Anal. Math. 87 (2002), 231–263, Dedicated to
+     the memory of Thomas H. Wolﬀ.
+[28]         , Recent progress on the Kakeya conjecture, in Harmonic Analysis and Partial Diﬀer-
+     ential Equations (El Escorial, 2000). Publ. Mat. 2002, 161–179.
+[29] N. H. Katz and J. Zahl, An improved bound on the Hausdorff dimension of Besicovitch sets
+     in R3 , J. Amer. Math. Soc. 32 (2019), no. 1, 195–259.
+[30]         , A Kakeya maximal function estimate in four dimensions using planebrushes,
+     arXiv:1902.00989.
+[31] I. Laba and T. Tao, An improved bound for the Minkowski dimension of Besicovitch sets in
+     medium dimension, Geom. Funct. Anal. 11 (2001), 773–806.
+[32] J. Matoušek, Using the Borsuk-Ulam theorem, Universitext, Lectures on topological methods
+     in combinatorics and geometry, Written in cooperation with Anders Björner and Günter M.
+     Ziegler, Springer-Verlag, Berlin, 2003, xii+196.
+[33] J. Pila and A. Wilkie, The rational points of a definable set, Duke Math. J. 133 (2006),
+     591–616.
+[34] W. Schlag, A geometric inequality with applications to the Kakeya problem in three dimen-
+     sions, Geom. Funct. Anal. 8 (1998), no. 3, 606–625.
+[35] J. Solymosi and T. Tao, An incidence theorem in higher dimensions, Discrete Comput. Geom.
+     48 (2012), no. 2, 255–280.
+[36] A. H. Stone and J. W. Tukey, Generalized “sandwich” theorems, Duke Math. J. 9 (1942),
+     356–359.
+[37] T. Tao, A new bound for finite field Besicovitch sets in four dimensions, Paciﬁc J. Math.
+     222 (2005), no. 2, 337–363.
+[38] T. Tao, Stickiness, graininess, planiness, and a sum-product approach to the Kakeya problem,
+     blog post: https://terrytao.wordpress.com/2014/05/07/.
+[39] T. Tao, A. Vargas and L. Vega, A bilinear approach to the restriction and Kakeya conjectures,
+     J. Amer. Math. Soc. 11 (1998), no. 4, 967–1000.
+[40] H. Wang, A restriction estimate in R3 using brooms, Preprint: arXiv:1802.04312.
+[41] T. Wolﬀ, An improved bound for Kakeya type maximal functions, Rev. Mat. Iberoamericana
+     11 (1995), no. 3, 651–674.
+[42]         , Recent work connected with the Kakeya problem, Prospects in mathematics (Prince-
+     ton, NJ, 1996), Amer. Math. Soc., Providence, RI, 1999, pp. 129–162.
+[43] R. Wongkew, Volumes of tubular neighbourhoods of real algebraic varieties, Paciﬁc J. Math.
+     159 (1993), no. 1, 177–184.
+[44] J. Zahl, A discretized Severi-type theorem with applications to harmonic analysis, Geom.
+     Funct. Anal. 28 (2018), no. 4, 1131–1181.
+[45] R. Zhang, Polynomials with dense zero sets and discrete models of the Kakeya conjecture
+     and the Furstenberg set problem, Selecta Math. 23 (2017), no. 1, 275–292.
+           IMPROVED BOUNDS FOR THE KAKEYA MAXIMAL CONJECTURE                      43
+
+
+  School of Mathematics, James Clerk Maxwell Building, The King’s Buildings, Peter
+Guthrie Tait Road Edinburgh, EH9 3FD, UK
+  E-mail address: jonathan.hickman@ed.ac.uk
+
+  Instituto de Ciencias Matemáticas CSIC-UAM-UC3M-UCM, Madrid 28049, Spain
+  E-mail address: keith.rogers@icmat.es
+
+   Department of Mathematics, University of Wisconsin-Madison, 480 Lincoln Dr, Madi-
+son, WI-53706, USA
+   E-mail address: rzhang347@wisc.edu
+
