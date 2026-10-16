@@ -15,5 +15,9 @@
 | R0017_vector_counterattack.md | 固定损失门槛、formal derivation与精确real carry、全grid稳定性 |
 | R0017_original_W_reset.md | 返回原(x,xi)数据；固定grain图cover及scalar21.2边界 |
 | R0017_next_W_target.md | 下一同N5主目标的原W方法，不是新的弱Goal |
+| R0018_W_mass_extraction.md | 实际厚grain的W有界joint graph、endpoint/product frame及raw prior实际费用；无growth |
+| R0018_W_inverse_attack.md | same-g水平增量1+gamma cap，带实际timeaction的独立化捷径反例；SM失败 |
+| R0018_entropy_inverse_gate.md | Hochman共同子空间定理的真实前提、双平面混合熵严格校准；W局部停止 |
+| R0018_next_mixed42_quadratic_target.md | 新实际mixed42 quadratic候选及row正交分量，非新结果或弱Goal |
 
 可调用的有限图结论另归档为 results/reviewed/MNL-001_linewise_translation_branch.md；不是一般 Kakeya 定理或已确认重大中间结果。实际源接口与该有限命题分开审查，不能把其中的显式质量门槛省掉。

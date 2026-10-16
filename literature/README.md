@@ -25,3 +25,5 @@ R0015新增2篇，现共17篇PDF：He1611.09639v2（29页）与He–de Saxcé180
 R0016新增Shmerkin2308.09846v3（19页），现共18篇PDF。原PDF、全文、SHA256、版本及精确read_scope均已保存。仅核Theorems1.2/1.5与Section4.3的声明/接口，未重证全文；其固定porosity应用不能直接套用原delta^-eta常数，未据此闭合一般矩阵分支。实际有限图直线分支使用Wang–Zakharov Theorem13.5，仍显式依赖该既有标量输入。
 
 R0017无新增PDF，仍18篇。补读Wang–Zakharov §19.1(148)–(152)、§21 Theorem21.2/Remark21.3及§22方法范围，精确记录metadata/R0017_source_check.json；未据ambient extension假设vector multiplier，未验证全文或声称已有新向量和积输入。
+
+R0018新增Hochman1503.09043v2（98页，官方版本2017-06-05），现19篇PDF。已保存原PDF、全文、bytes/SHA256与metadata；选读Defs2.1-2.6、Theorem2.8/Remark2.9、Theorem2.14及§4.6最后证明步，PDF19图已核，未全文重证。Theorem2.8要求独立卷积小熵增长，不能由原受限W图小像直接调用；common V_i只在每层公共，不是全局平面。source支持R依赖有核；具体W归一frame已bounded。source§22.4读到scalar恢复/convex-Wolff终步，用于下一mixed42候选，未宣称已推广。详细范围metadata/R0018_source_check.json。

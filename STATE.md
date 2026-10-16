@@ -1,6 +1,20 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0017。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0018。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
+
+## R0018恢复入口与路线决定
+
+本轮起点R0017 commit eeda7c651e54a384eec84ad6e0d6667829968ef2，280文件完整回执、同一HEAD/clean核过，完成每三轮macro。收尾回执tmp/sync/R0018.json须在远端完整tree与本地精确import、全blob SHA256复核后产生。下一轮先读该回执和git状态，再读GOAL/STATE/ROADMAP/registry/最近轮次；宏观目标不变。下次定期macro为R0021，路线无信息增益/关键步骤失败则提前。R0018分类progress仅指严格跳步反例和质量接口，非重大结果。
+
+原W被精确压成sigma=rho²厚grain中的bounded joint graph，#A约rho^-2；固定原terminal上界支付endpoint 2-Frostman。恢复表支付共同H×H product reference domination；raw同p差prior在选bucket后当前仍付m(rho/sigma)^(2-kappa)，不能混同。完整source还没有被替成独立端点或精确grain。same-g截断后水平增量有1+gamma Frostman cap，constant r^(-C_gamma h)，保持相对mass p的restriction另付p^-1。此lemma只需长度≥r的time interval upper，原fine times已够；η≪μh支付K成本，只保所选bucket原权的一半。只有global entropy下界，没有每个conditionalcomponent结论。
+
+严格two-plane counter保dense bounded graph、2D水平图、实际matrix-time作用与真实方向差law，两个matching worlds输出仍2D，而其独立边际卷积有固定熵增长。fixedκ1/2版本也可保>1增量，明确SM失败且不构造完整source。它只排直接抹掉g的捷径，不排正确支付的BSG或主命题。root版本exact entropy3，B稿补timeaction/固定κ。Hochman1503.09043v2 Theorem2.8确有每层共同V_i；其前提是独立卷积小熵增量，并非原受限graph小像。精确W frame已bounded支持；真正未付是独立提取、componentplane到原时间及power-precision affine回传。该输入未全文重证。
+
+无jointgrowth、完整matrix结论或κ改进。执行closingmacro：冻结W/BSG/common-plane局部迭代，重开须新实质估计支付上述门槛，不继续threshold/entropy/inverse改名。N5-STICKY-MATRIX-01保持open，MNL001条件proper分支保留。新增Hochman98页官方PDF，文献库19篇；阅读范围/bytes/SHA256有元数据。
+
+下一唯一主任务：notes/40_multiscale/sticky_matrix/R0018_next_mixed42_quadratic_target.md 的实际d5/k4/ell2 quadratic alternative，N5-MIXED42-Q01（新候选任务，非结果）。Y和Phi均标量，水平grain维3，有两slope consistency；依赖完整source而非formal horizon。source22.4 scalar r1恢复tildef2在r∈R²时只控b r，剩orthogonalrow且r=0也需处理。必须用actual geometry/mass处理该分量或严格否定所需步骤，不能dot替换或免费投影。只准一轮实质攻击；若仅重述该线代障碍再macro换路。mixed非二次、其他5D分支、general-to-sticky及Hausdorff均未解。
+
+## R0017保留的历史交接（当前优先任务以上节为准）
 
 ## 恢复与宏观状态
 
@@ -22,7 +36,7 @@ R0017起点R0016 commit a55a750f05b6209fdf04eeb5ae67a6ba0150cece，269文件回�
 
 MNL001仍为内部交叉审查的条件finite graph排除：同原g的fiber ratio删除、WZ Theorem13.5、两独立差在同B的fit交集及all-real matrix恢复。实际source共同像f=F0+v r(z)和一维matrix pencil f=F0+h(z)M在明确小epsilon0、sourceallowedrho下被排除；没有完整Mat2定理或任意epsilon0版本。高级scalar输入未在项目完整独立重证，kappa未缩小。R16原Igoodq、V/J/L signature、H原边际、graph恢复upper、τ-window、coarse centers及SM fine回传继续保留；Lemma19.2 neighborhood-to-CW及完整20.2仍source依赖。
 
-## 唯一下一主任务：同一N5矩阵目标的原W联合机制
+## R0017当时的主任务：原W联合机制（R0018已审并冻结局部迭代）
 
 不把原目标改成新弱Goal。下一主轮返回完整Definitions17.2-17.4，使用原W paths保留的实际(x,xi)联合终点、同一个Phi差及full水平二维grain。原(151)给
 

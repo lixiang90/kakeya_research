@@ -1,0 +1,17 @@
+# R0018 scheduled macro review (opening)
+
+2026-10-17. Current R0017 commit eeda7c651e54a384eec84ad6e0d6667829968ef2 and clean 280-file receipt checked. Previous Goal turn: progress, because it established honest original-graph mass bounds, verified a strict additive-endpoint obstruction, and changed the next available mechanism. These standard facts are not a new dimension bound or a major result. The long-term Goal remains unachieved and active.
+
+Review of R0015-R0017: CP/PM local equivalence iteration was stopped; the actual source yielded a conditional proper linewise branch, but the remaining Y-only vector problem did not close. The Cantor example shows that further additive iterates without the actual time/action structure cannot finish it. Do not reopen those routes under new names.
+
+This round tests a genuinely retained original source mechanism: W paths keep joint (x,xi) endpoints and their common Phi differences, while full horizontal grains and xi coherence control a two-dimensional graph. The desired result is still the full five-dimensional matrix conclusion, not graph preparation or a flat special case. No scalar multiplier theorem is silently generalized to vector multipliers.
+
+A single main round is authorized by the new source information. It must produce actual joint growth or a strict obstruction to a necessary extraction/estimate. If it produces only the already written identity/cover facts or more conditional flatness algebra, freeze this local mechanism too and select a different substantive input at the closing macro. No bookkeeping, source restatement or assumed smoothness counts as achieving the mathematical Goal.
+
+## Closing decision
+
+New facts: a bounded actual W quotient in a sigma-thick terminal grain, explicit endpoint/product-frame domination and raw-prior localization costs; a same-g horizontal increment exponent1+gamma; and a strict two-plane counterexample to directly replacing the restricted graph by the independent convolution of its marginals. The latter also admits the actual matrix-time action but fails SM. Hochman1503.09043v2 Theorem2.8 supplies genuine common component subspaces only after a small independent-convolution entropy increase. Its gate, original time law and power-precision affine return remain unpaid. No actual joint expansion, matrix conclusion or kappa improvement was obtained.
+
+Classify this round as progress in the limited sense of a strict failed-step certificate and resolved mass interfaces; do not count it as a major result. Regardless of that classification, execute the intended stop: freeze the W/BSG/common-plane local mechanism until a new substantive estimate pays extraction and original-time return. Do not iterate support R, threshold, entropy terminology or flat special cases next round.
+
+Select a different actual configuration: d5/k4/ell2 mixed quadratic alternative, N5-MIXED42-Q01, precisely specified in notes/40_multiscale/sticky_matrix/R0018_next_mixed42_quadratic_target.md. Unlike the frozen vector-Phi matrix problem, both Phi and Y are scalar, horizontal grains are three-dimensional and two slope functions obey a consistency relation. Source22.4's scalar recovery fails to recover the row component orthogonal to r; the actual geometry must control it or support a strict obstruction. One substantive attack is allowed; mere scalar-to-dot substitution or rediscovery of this residual component triggers another stop. The full matrix target and all general/Hausdorff gaps remain open. Final Goal unchanged and active.
