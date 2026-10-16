@@ -1,0 +1,965 @@
+                                                INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE
+
+
+                                                                                       LARRY GUTH
+
+
+
+                                              In the recent preprint [18], Hong Wang and Joshua Zahl announced a proof of the 3-dimensional
+arXiv:2505.07695v1 [math.CA] 12 May 2025
+
+
+
+
+                                           Kakeya conjecture. I have been studying the proof, and I am going to try to write an introduction
+                                           to the main ideas in the proof. (I do not claim to have checked every detail, but I do think I
+                                           understand the main ingredients in the argument.)
+                                              I hope this note might be helpful for people who are interested in the proof of Kakeya, and also
+                                           that it might help a little in the process of digesting and checking the proof. I am currently working
+                                           on digesting and checking the proof. If you are also working on digesting and checking the proof
+                                           and you would like to be in touch, feel free to reach out to me.
+                                              We will begin by introducing the problem and discussing previous work on it and some of the
+                                           issues that make it difficult. Then we will describe the new ideas in the recent work.
+
+                                             Acknowledgements. Thanks to Hong Wang and Josh Zahl for many interesting conversations
+                                           about these ideas, and also for some helpful comments about this survey.
+
+                                                                                1. The Kakeya problem
+                                              Suppose that T is a set of δ-tubes in Rn with length 1. We write U (T) for ∪T ∈T T . One version
+                                           of the Kakeya conjecture in dimension n says
+                                           Conjecture 1.1. For every ϵ > 0, there is a constant c(n, ϵ) so that if T is a set of ∼ δ −(n−1)
+                                           δ-tubes in Rn in δ-separated directions, then
+
+                                                                                    |U (T)| ≥ c(n, ϵ)δ ϵ .
+                                           Wang and Zahl proved this conjecture in dimension n = 3.
+                                              In fact, they proved a more general estimate called the Kakeya conjecture with convex Wolff
+                                           axioms. This therem roughly says that the only way a set of tubes in R3 can overlap a lot is by
+                                           clustering into convex sets. If K ⊂ R3 is a convex set, we define
+
+                                                                                 TK := {T ∈ T : T ⊂ K}.
+                                           We define the density of T in K as
+                                                                                              P
+                                                                                                  T ∈TK |T |
+                                                                                 ∆(T, K) =       .
+                                                                                          |K|
+                                           The density of T in K measures how much the tubes of T pack into K. Next we consider the
+                                           maximum density over all convex sets K.
+
+                                                                                ∆max (T) := max ∆(T, K).
+                                                                                                  K
+                                             Let us define the typical multiplicity of T as
+                                                                                              1
+2                                              LARRY GUTH
+
+
+                                                     P
+                                                         T ∈T |T |
+                                           µ(T) =         .
+                                                 |U (T)|
+  The main theorem of [18] is the following version of the Kakeya conjecture which says that µ(T)
+can only be large when the density of T in some convex set is large.
+Theorem 1.2. (Wang-Zahl, [18]) If T is a set of δ-tubes in R3 , and ∆max (T) ⪅ 1, then
+
+                                                 µ(T) ⪅ 1.
+   This is the Wolff axioms version of the Kakeya conjecture, which easily implies Conjecture 1.1
+for n = 3. Given Theorem 1.2, a simple sampling argument shows that if T is any set of δ-tubes in
+R3 , then µ(T) ⪅ ∆max (T).
+   The proof in [18] builds on important contributions by Wolff, Bourgain, Katz, Laba, and Tao.
+First we will describe these older contributions. These contributions were interesting and striking,
+but a proof of the Kakeya conjecture still looked very difficult. Second we describe the situation
+before the recent work and discuss the remaining difficulties. Then we describe the new contribution
+in [18].
+   The goal of this survey is to describe the general strategy of the proofs, and we will leave out
+technical details such as pigeonholing arguments and keeping careful track of small parameters.
+
+                          2. A key obstacle: the Heisenberg group
+   We begin our story with one of the key obstacles. There are cousin problems that sound quite
+similar to the Kakeya conjecture but behave differently. The Heisenberg group example, introduced
+by Katz-Laba-Tao in [7], is an important example of this type. It concerns the complex analogue
+of the Kakeya problem with convex Wolff axioms.
+   We define a complex tube in Cn with radius δ and length r by taking a complex line in Cn ,
+intersecting it with a ball of radius r, and then taking its δ-neighborhood. We define volume on Cn
+by identifying it with R2n , so if T is a δ-tube in Cn of length 1, then |T | ∼ δ 2(n−1) . The quantities
+∆(T, K) and ∆max (T) can be defined as above.
+   In C3 , there is a set of complex δ-tubes T with ∆max (T) ⪅ 1 and µ(T) ≈ δ −1 . This example
+shows that the complex analogue of Theorem 1.2 is false. This example is called the Heisenberg
+group example. It is based on a quadratic real algebraic hypersurface in C3 . There are a couple
+choices for this hypersurface. One is the surface H defined by
+
+                              H = {(z1 , z2 , z3 : |z1 |2 + |z2 |2 − |z3 |2 = 1}
+This hypersurface contains many complex lines. For example, if α is a unit complex number, then
+the line defined by z1 = 1, z3 = αz2 lies in H. All these lines pass through the point (1, 0, 0) ∈ H.
+The surface H is very symmetric (it is symmetric under the action of the group U (2, 1)). By
+homogeneity there are infinitely many lines thru every point of H. Taking δ-neighorhoods of these
+lines gives a set of tubes T where ∆max (T) ⪅ 1 and yet µ(T) ≈ δ −1 . Ruling out examples like this
+one will be a key part of our story.
+
+                                     3. The idea of stickiness
+  The proof of the Kakeya conjecture is heavily based on looking at sets of tubes at multiple scales.
+Given a scale ρ ∈ [δ, 1], we let Tρ denote the set of ρ-tubes formed by thickening the δ-tubes of T.
+                   INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                                3
+
+
+When we thicken two distinct δ-tubes, we may get nearly identical ρ-tubes. When this happens we
+identify the ρ-tubes. So we typically have |Tρ | ≪ |T|.
+   For each Tρ ∈ Tρ , we define
+
+                                      TTρ = {T ∈ T : T ⊂ Tρ }.
+  Here is a picture illustrating these different sets of tubes.
+
+
+
+
+The tubes of T are in red, and the tubes of Tρ are in green. In the picture, each set TTρ consists
+of 3 δ-tubes.
+   Our original set of tubes T is the disjoint union of TTρ :
+                                                  G
+                                           T=            TTρ .
+                                                Tρ ∈Tρ
+
+  After some pigeonholing arguments, we can assume that |TTρ | is roughly constant for all Tρ ∈ Tρ .
+So for any Tρ ∈ Tρ , we get
+
+                                           |T| ≈ |TTρ ||Tρ |.
+   By looking at TTρ and Tρ , we see many different sets of tubes that are all related to our original
+set of tubes T. The key to the proof is to think about all these different sets of tubes and how they
+relate to each other.
+   I believe that Tom Wolff was the first person to think about this multi-scale structure in the
+Kakeya problem, in unpublished work shortly before his death. He shared his ideas with Katz,
+Laba, and Tao, who developed them further in the remarkable paper [7].
+4                                             LARRY GUTH
+
+
+   The “sticky” case is an important special case of the Kakeya problem. Because ∆max (T) ⪅ 1,
+                                      2
+we see that for every Tρ , |TTρ | ⪅ ρδ2 . A Kakeya set is called sticky if this upper bound is roughly
+tight for all ρ and all Tρ ∈ Tρ . In other words, a Kakeya set is sticky if the tubes of T pack into
+fatter tubes Tρ as much as they are allowed to do so given that ∆max (T) ⪅ 1.
+   If T is near-worst-case among sticky Kakeya sets, then it must have a some rigid structure. Recall
+that U (T) denotes ∪T ∈T T . Suppose that x ∈ U (T). Typically, x belongs to ≈ µ(T) tubes T ∈ T.
+Fix a scale ρ. We can now factor this multiplicity µ(T) as
+
+(1)                  µ(T) ≈ µ(TTρ ) · #{Tρ ∈ Tρ : x ∈ U (TTρ )} ≤ µ(TTρ )µ(Tρ ).
+   Define γsticky to be the infimal number so that µ(T) ⪅ δ −γsticky whenever ∆max (T) ⪅ 1 and
+T is sticky. Suppose that we are looking at a nearly-worst-case sticky Kakeya set, so we have
+µ(T) ≈ δ −γsticky . After a linear coordinate transformation, TTρ can be thought of as a set of δ/ρ
+tubes. Since ∆max (T) ⪅ 1, it follows that ∆max (TTρ ) ⪅ 1 as well. Next, since ∆(TTρ , Tρ ) ≈ 1, it
+follows that ∆max (Tρ ) ⪅ 1 as well. And by the definition of sticky, TTρ and Tρ are both sticky
+also. So all together we have
+
+                δ −γsticky ≈ µ(T) ⪅ µ(TTρ )µ(Tρ ) ⪅ (δ/ρ)−γsticky ρ−γsticky = δ −γsticky .
+   We see that the inequalities above must be approximate equalities. In particular, the inequality
+in (1) must be approximately equality. This gives some striking information! It tells us that for a
+typical point x in our Kakeya set,
+
+                                 #{Tρ ∈ Tρ : x ∈ U (TTρ )} ≈ µ(Tρ ).
+   Consider a point x ∈ U (T) and look at B(x, ρ). The ball B(x, ρ) lies in ≈ µ(Tρ ) ≈ ρ−γsticky
+fat tubes Tρ ∈ Tρ . For most of these Tρ , x ∈ U (TTρ ) ∩ B(x, ρ). That means that the sets
+U (TTρ ) ∩ B(x, ρ) must overlap almost perfectly, as Tρ varies among the many tubes in Tρ that pass
+through B(x, ρ).
+   Developing these ideas, Katz, Laba, and Tao showed in [7] that such a sticky Kakeya set must
+have many remarkable structural properties. For instance, U (T) ∩ B(δ 1/2 ) must consist of a union
+of δ × δ 1/2 × δ 1/2 plates, called grains (like the grains in wood). And all the grains within B(δ 1/2 )
+must be parallel to each other, which is called plaininess.
+   The Heisenberg group example in C3 is sticky, plainy, and grainy, as explained in [7]. So we have
+seen that any sticky Kakeya set must have a great deal of structure in common with the Heisenberg
+group. The existence of the Heisenberg group is related to the fact that R is a subring of C, and
+the Hausdorff dimension of R is half that of C.
+   Katz and Tao developed a strategy to prove that any sticky Kakeya set in R3 with large µ(T)
+must be associated to something like a fractal approximate subring of R. This would be a fractal
+subset A ⊂ R which is approximately closed under both addition and multiplication. Bourgain’s
+discretized sum product theorem in [1] shows that no such set exists. This strategy would then
+show that any sticky Kakeya set must have µ(T) ⪅ 1.
+   Katz and Tao did not publish a paper with their strategy, but Tao put an outline on his blog
+[15]. In [17], Wang and Zahl fleshed out this outline (overcoming significant technical issues), and
+proved that every sticky Kakeya set obeys the Kakeya conjecture.
+Theorem 3.1. (Sticky Kakeya, [17]) If T obeys ∆max (T) ⪅ 1 and if |TTρ | ≈ (ρ/δ)2 for every ρ
+and every Tρ ∈ Tρ , then
+                   INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                                5
+
+
+
+
+                                              µ(T) ⪅ 1.
+
+The proof of the sticky Kakeya theorem in [17] uses some important recent developments in pro-
+jection theory that build on Bourgain’s discretized sum-product theorem, especially [11] and [13].
+   This work shows a remarkable connection between the sticky case of the Kakeya problem and
+mathematical structures like the Heisenberg group, subrings of R, and sum-product inequalities. It
+is certainly interesting mathematics. But it was not so clear how much progress these results make
+towards the general Kakeya conjecture. Is the sticky case a crucial case? Or is it just a rare special
+case?
+
+
+                                    4. Sticky vs. not sticky
+    Should we expect the “worst” Kakeya set to be sticky? Can we reduce the general problem to
+the sticky case?
+    On the one hand, it might feel intuitive that the ‘sticky’ case is the worst. If we are trying to
+arrange tubes to overlap a lot, then perhaps we ought to put them close to each other as much as
+possible. If we consider a set of tubes T without the restriction ∆max (T) ⪅ 1, then it is easy to
+arrange that µ(T) is large by packing many tubes into a convex set. Since the condition ∆(T, K) ⪅ 1
+is limiting us from arranging a lot of overlap, it may be intuitive that we should pack tubes into
+convex sets as much as we are allowed to.
+    Analysts have considered many cousins of the Kakeya problem. For many years, the worse known
+example for every cousin problem was sticky. In [2] Bourgain considered a variation of the Kakeya
+problem for curved tubes in R3 . In this curved version, the smallest possible volume of |U (T)| is
+∼ δ, and the worst case example is sticky. In [7], Katz, Laba, and Tao gave the Heisenberg group
+example, which showed that the analogue of the Kakeya problem with convex Wolff axioms is false
+in C3 . The Heisenberg group example is sticky. In [16], Tao noticed that the Kakeya problem with
+convex Wolff axioms is also false in R4 . The worst case example comes from a degree 2 algebraic
+hypersurface, and it is also sticky. It seemed plausible that for a broad class of problems of this
+type, the worst case is sticky.
+
+   However, it has been difficult to turn this intuition into a rigorous proof. Katz and Tao and
+others wondered whether the general Kakeya problem could be reduced to the sticky case, but
+they didn’t see any way to do it. In 2017, in [10], Orponen proved the sticky case of the Falconer
+conjecture, another longstanding problem in geometric measure theory which is a kind of cousin
+of the Kakeya problem. This remarkable proof had a lot of influence in the field, but no one has
+managed to reduce the general Falconer conjecture to the sticky case.
+   In 2019 in [8], Katz and Zahl found a new cousin of the Kakeya problem, and gave evidence
+that the worse case example is not sticky. They considered the Wolff axioms version of the Kakeya
+problem over a different ring – they replaced R by the ring A = Fp [x]/(x2 ). The ring A has a
+natural notion of distance with two distinct length scales. There is a cousin of the Heisenberg
+group in A3 and it leads to a counterexample to the analogue of Theorem 1.2. But unlike in C3 , the
+Heisenberg group cousin in A3 is not sticky. It appears likely that in A3 , the sticky case of (Wolff
+axiom) Kakeya conjecture is true, but the general conjecture is false.
+   As of a couple years ago, I was quite pessimistic about reducing the general case of Kakeya to
+the sticky case.
+6                                                     LARRY GUTH
+
+
+   The first indication that the sticky case may play a crucial role in problems of this type was
+the solution of the Furstenberg set conjecture by Orponen-Shmerkin and Ren-Wang in 2024. The
+Furstenberg set conjecture is another important problem in geometric measure theory. In the
+late 90s, Tom Wolff identified the Kakeya problem, the Falconer problem, and the Furstenberg
+set problem as cousin problems involving related issues. In 2024, in [12], Orponen and Shmerkin
+proved the sticky case of the Furstenberg set conjecture. Shortly afterwards, in [14], Ren and Wang
+proved the full Furstenberg conjecture. Their proof reduces the general problem to the sticky case
+and a case which is far from sticky, which they call the semi-well-spaced case. They resolve the
+semi-well-spaced case using Fourier analytic methods building on [6]. And they give a short and
+elegant multiscale argument which reduces the general Furstenberg conjecture to these two cases.
+   It was quite surprising to me that the general Furstenberg problem reduces to these two cases.
+This work gave a hint that the sticky case might be a key case in other problems as well.
+
+   In 2025, Wang and Zahl did indeed reduce the general case of the Kakeya problem to the sticky
+case.
+
+                                             5. The L2 method
+   Before discussing the work of Wang and Zahl, let us briefly recall the classical L2 method which
+plays a supporting role in their work.
+   If T1 and T2 are two δ-tubes in Rn that intersect at a point and the angle between their core
+lines is θ ≥ δ, then
+
+
+(2)                                           |T1 ∩ T2 | ∼ δ n θ−1 .
+    If T is a set of δ-tubes in B1 , then we can use (2) to upper bound
+                                  Z         X                    X
+                                        |            1T |2 =               |T1 ∩ T2 |.
+                                   B1       T ∈T               T1 ,T2 ∈T
+
+    Assuming that |T| ≈ δ −(n−1) and that ∆max (T) ⪅ 1, this method gives the sharp bound
+                                        Z            X
+                                                 |          1T |2 ⪅ δ −(n−2) .
+                                            B1       T ∈T
+
+(This bound is sharp when T has one tube in each direction and they all go through the origin.)
+   If n = 2, this L2 bound and Cauchy-Schwarz gives a lower bound on |U (T)|. If T is a set of
+δ-tubes in R2 with |T| ≈ δ −1 and ∆max (T) ⪅ 1, this method shows that |U (T)| ⪆ 1, which is
+equivalent to µ(T) ⪅ 1.
+   In higher dimensions, while this L2 estimate is sharp, it does not lead to good information about
+|U (T)| or µ(T).
+   On the other hand, this L2 method also works well for slabs in R3 . For instance, using the same
+method, we can prove that if S is a set of δ ×1×1 slabs in B1 ⊂ R3 with |S| ∼ δ −1 and ∆max (S) ⪅ 1,
+then µ(S) ⪅ 1 and |U (S)| ⪆ 1.
+   This method can handle many questions about tubes in R2 and slabs in R3 . In the proof sketch
+below, we will meet a few problems of this type, and we will mention that they can be handled by
+the L2 method.
+                   INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                                7
+
+
+                            6. New ideas for the not sticky case
+   We now begin to discuss the paper [18], which reduces the general case of the Kakeya conjecture
+to the sticky case. We will describe a small variation of the argument from [18], which hopefully
+simplifies some minor details. This part of our survey will be more detailed than before, but the
+writeup does not include all details and is not completely precise. Our goal is to describe the new
+ideas in the proof.
+   Define β to be the infimal number so that, whenever ∆max (T) ⪅ 1, we have
+
+
+(3)                                         µ(T) ⪅ |T|β
+   Now suppose that T is arranged in a worst case way, so ∆max (T) ⪅ 1 and µ(T) ≈ |T|β . Without
+loss of generality, we can assume that the tubes of T lie in the unit ball B1 . Because ∆max (T) ⪅ 1,
+we know that ∆(T, B1 ) ⪅ 1 and so |T| ⪅ δ −2 . For these notes, we focus on the case that |T| ≈ δ −2 .
+This case involves most of the ideas in the general proof and is technically simpler.
+   Our goal is to prove that the worst case is sticky. Assuming that β > 0 and that T is not sticky,
+we will prove that µ(T) ≪ |T|β . (We use the notation µ(T) ≪ |T|β to mean that µ(T) is much less
+than |T|β ). This contradicts our assumption that µ(T) ≈ |T|β , and so we conclude that T must be
+sticky. But then the sticky Kakeya theorem implies that β = 0.
+   In order to use the definition of β, we need to relate T with other sets of tubes. We relate T to
+some other set of tubes T′ with ∆max (T′ ) ⪅ 1 and we use that µ(T′ ) ⪅ |T′ |β . Over the course of
+the proof, we will bring into play several other sets of tubes T′ . One key point is to see which sets
+of tubes T′ we can bring into play.
+   Since |T| ∼ δ −2 , if T is not sticky it means that there is some scale ρ ∈ [δ, 1] so that |TTρ | ≪
+(ρ/δ)−2 and so |Tρ | ≫ ρ−2 . We will assume that T is not-sticky-at-all-scales, meaning that for
+every ρ in the range δ ≪ ρ ≪ 1, we have
+
+                                 |TTρ | ≪ (ρ/δ)−2 and |Tρ | ≫ ρ−2 .
+At the very end, we will discuss how to reduce the not-sticky case to the not-sticky-at-all-scales
+case.
+
+6.1. Some ideas that don’t work. Before turning to the ideas in [18], let me mention some ideas
+that don’t work. First, you might imagine trying to slide the tubes of T around in order to make T
+more sticky while also increasing µ(T). I have no idea how to do that. A hypothetical Kakeya set
+has a very delicate structure that causes tubes to overlap a lot, and I don’t see any way of sliding
+the tubes around without breaking the structure and decreasing µ(T).
+   Next let’s consider the multiscale argument that we used at the start of the sticky case. Let
+ρ ∈ [δ, 1] be an intermediate scale and consider TTρ and Tρ . As in (1) above, we can factor the
+multiplicity as
+
+
+(4)                  µ(T) ≈ µ(TTρ ) · #{Tρ ∈ Tρ : x ∈ U (TTρ )} ≤ µ(TTρ )µ(Tρ ).
+  Because we are not in the not-sticky-at-all-scales case, we know that for each scale ρ with
+δ ≪ ρ ≪ 1,
+
+                                          |TTρ | ≪ (ρ/δ)−2 ,
+8                                           LARRY GUTH
+
+
+
+
+                                        |Tρ | ≫ ρ−2 .
+Since TTρ ⊂ T, we know that ∆max (TTρ ) ≤ ∆max (T) ⪅ 1, and so by the definition of β, we can
+bound
+
+(5)                                       µ(TTρ ) ⪅ |TTρ |β .
+   On the other hand, ∆max (Tρ ) is NOT ⪅ 1, since |Tρ | ≫ ρ−2 . This is a key feature of the non-
+sticky case. We are thus led to consider sets of tubes with high density. Given that ∆max (T) ⪅ 1
+and |T| ≈ δ −2 , we get the following information about the density of Tρ : for any convex K ⊂ B1 ,
+
+(6)                              ∆(Tρ , K) ⪅ ∆(Tρ , B1 ) ∼ ρ2 |Tρ |.
+   The condition (6) plays an important role in the story. We say that the set of tubes Tρ is
+Frostman if it obeys (6). Wang and Zahl picked this name because the bound in (6) is similar to
+the bound that appears in Frostman’s lemma in geometric measure theory.
+   Given that β is the best exponent so that µ(T) ⪅ |T|β when ∆max (T) ⪅ 1, and given that Tρ
+obeys the Frostman condition (6), what can we say about µ(Tρ ) ? One scenario is that the tubes of
+Tρ may pack into thick tubes Tσ , so that ∆max (Tσ ) ≈ 1 and for each Tσ ⊂ Tσ , Tρ contains every
+ρ-tube in Tσ . In this scenario, after a short computation, we get
+
+(7)                                 µ(Tρ ) ≈ (ρ−2 )β (ρ2 |Tρ |)1−β
+Wang and Zahl proved that this is the largest possible value of µ(Tρ ):
+Lemma 6.1. (High density lemma) Suppose that the exponent β is as defined above. If Tρ obeys
+the Frostman condition (6), then the multiplicty of Tρ is bounded by
+
+                                    µ(Tρ ) ⪅ (ρ−2 )β (ρ2 |Tρ |)1−β .
+   The proof of this lemma is based on a subtle multiscale analysis, and it also uses the sticky
+Kakeya theorem. We will return to it in Section 7.
+   Now that we have thought through µ(TTρ ) and µ(Tρ ), we can return to (4). Plugging in our
+bounds, we see that the right-hand side is much larger than the left-hand side. In the sticky case,
+the two sides were comparable which gave us a lot of rigidity. In the non-sticky case, we don’t have
+that rigidity, and this approach doesn’t seem to give really helpful information.
+   However, during this discussion, we did meet the high density lemma, which will be crucial in
+the main argument.
+6.2. Looking at T inside a small ball. Let ρ be an intermediate scale with δ ≪ ρ ≪ 1. We will
+ultimately pick ρ to be quite close to δ.
+   To bound µ(T) in the sticky case, we considered TTρ and Tρ . In the non-sticky case, Wang and
+Zahl also consider a new set of tubes formed by intersecting tubes of T with a smaller ball B ⊂ B1 .
+   To set this up, let’s first let’s think about how the tubes of TTρ intersect each other. Consider
+the multiplicity function
+                                                    X
+                                      µTTρ (x) =            1T (x).
+                                                   T ∈TTρ
+                   INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                                 9
+
+
+Note that µTTρ is morally constant on shorter tubes, of dimensions δ × δ × δ/ρ. Now let B be a
+ball of radius δ/ρ and consider how these shorter tubes overlap inside of B. Let TTρ ,B be the set of
+these shorter tubes in B. So each tube TB ∈ TTρ ,B is a δ × δ × δ/ρ tube in B which lies in ≈ µ(TTρ )
+tubes of TTρ . Here is a picture.
+
+
+
+
+   In this picture, the long tubes belong to TTρ , the short red tubes belong to TTρ ,B , and the green
+disk is B.
+   Next we define
+
+                                                  [
+                                      TB =                     TTρ ,B .
+                                             Tρ ∈Tρ ,T ∩B̸=∅
+
+
+  Here is a picture showing TB :
+10                                         LARRY GUTH
+
+
+  In this picture, the green circle is B, the short red tubes belong to TB , and we see that each
+tube of TB comes from ∼ µ(TTρ ) longer tubes of T. Therefore, we can bound µ(T) by
+
+
+(8)                                    µ(T) ⪅ µ(TTρ )µ(TB ).
+  We know that µ(TTρ ) ⪅ |TTρ |β , and since we are in the not-sticky-at-all-scales case, we also
+know that |TTρ | ≪ (ρ/δ)2 . So we have
+
+                                        µ(TTρ ) ≪ (ρ/δ)2β .
+  Next, we have to bound µ(TB ). Here it is much less clear what to do. To get started, let’s
+consider the special case ∆max (TB ) ⪅ 1.
+  IF it happens that ∆max (TB ) ⪅ 1, then we would get
+
+                                     µ(TB ) ⪅ |TB |β ⪅ (ρ−2 )β .
+All together, we would have
+
+                       µ(T) ⪅ µ(TTρ )µ(TB ) ≪ (ρ/δ)2β ρ−2β = δ −2β ≈ |T|β .
+Since we assumed that µ(T) ≈ |T|β , this would give a contradiction.
+   Now the hypothesis that TB has ∆max (TB ) ⪅ 1 is a big IF (that’s why I wrote IF in all caps).
+The fact that ∆max (T) ⪅ 1 does NOT imply that ∆max (TB ) ⪅ 1.
+
+6.3. A surprising induction. This is a key philosophical moment in the proof. We are going to
+try to control TB using induction. But the set of tubes TB need not obey ∆max (TB ) ⪅ 1. This
+makes it surprising to try to use TB in an inductive proof.
+   To put this moment in context, let us recall some background about the multilinear Kakeya
+problem. The multilinear Kakeya problem is a cousin of the Kakeya probelm that was solved by
+Bennett-Carbery-Tao in [4]. The proof was simplified in [5], and the proof there is only a few pages
+long. Multilinear Kakeya involves n sets of tubes Tj in Rn , where the tubes of Tj are approximately
+parallel to the xj axis. Multilinear Kakeya is important because it is much easier than Kakeya but
+still has many applications - for instance in work of Bourgain-Demeter on decoupling theory [3].
+   The key feature that makes multilinear Kakeya much easier than Kakeya is that if we intersect
+the tubes of each Tj with a small ball B, then the resulting sets of tubes Tj,B obey the hypotheses
+of multilinear Kakeya. Therefore, we can easily apply induction to study the intersections of tubes
+in each small ball B. In contrast, the hypotheses of the Kakeya probem do not behave well when
+we restrict the tubes of T to a small ball B.
+   Nevertheless, Wang and Zahl were able to use TB in an inductive argument. While TB itself
+does not obey ∆max (TB ) ⪅ 1, Wang and Zahl manage to relate TB to some other sets of tubes T̃
+with ∆max (T̃) ⪅ 1, and then we can use that µ(T̃) ⪅ |T̃|β . We will explore how they carry out this
+induction.
+
+  So far, we have discussed the special case ∆max (TB ) ⪅ 1. Now we have to analyze the case
+∆max (TB ) ≫ 1.
+  If ∆max (TB ) ≫ 1, it means that for some convex set K ⊂ B, ∆(TB , K) ≫ 1. Wang and Zahl
+consider the set K that maximizes ∆(TB , K). The argument depends on the shape of K. We will
+consider a few important shapes.
+                   INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                              11
+
+
+   The first case we will consider is when K = B. We will study this case in Section 6.4. Roughly
+we will show that in this case, the Kakeya set U (T) contains a large fraction of B, and we will use
+this to close the induction.
+   The second case we will consider is the case when K is a slab of dimensions a × r × r, where r
+is the radius of B and δ ≪ a ≪ r. This case is the most important case in the argument. We will
+discuss it in Section 6.5.
+   We also briefly mention the case when K is a very thin slab, of dimensions ≈ δ × r × r. Because
+of this case, it helps to choose ρ very close to δ, so that r = δ/ρ is very close to 1. This case can
+now be handled by the L2 method (without any induction). The intersection of tubes inside of
+each thin slab is basically the 2-dimensional Kakeya problem. And the intersection of the thin slabs
+inside Br is well understood by the L2 method. Since r is very close to 1, this is sufficient to show
+that |U (T)| is almost 1.
+6.4. Density of the Kakeya set in small balls. Upper bounds for the multiplicity of the Kakeya
+set are equivalent to lower bounds for the volume of the Kakeya set. In the course of the proof, we
+will pay attention to the volume of the Kakeya set intersected with small balls.
+   Let us write
+
+                                           U (T) = ∪T ∈T T.
+(Or if there is a shading Y (T ), we would have U (T) = ∪T ∈T Y (T ).)
+  By double counting, we have
+
+                                                       |T||T |
+                                           |U (T)| ≈           .
+                                                        µ(T)
+  Assuming |T| ≈ δ −2 ,
+
+(9)                          µ(T) ⪅ |T|β is equivalent to |U (T)| ⪆ δ 2β .
+  If Br is a “typical’ ball of radius r intersecting the Kakeya set, then we can write
+
+                                                           |U (T) ∩ Br |
+                                   |U (T)| ≈ |U (Tr )| ·
+                                                               |Br |
+  We will refer to |U (T)∩B
+                       |Br |
+                             r|
+                                as the density of the Kakeya set in Br .
+  Given that ∆max (T) ⪅ 1 and |T| ≈ δ −2 , it is not hard to show that for all δ ≤ r ≤ 1 we have
+
+(10)                                        |U (Tr )| ⪆ r2β .
+  Therefore, in order to prove that µ(T) ≪ |T|β , it suffices to find a scale r ≫ δ and prove a
+density lower bound
+
+                                                            2β
+                                       |U (T) ∩ Br |        δ
+(11)                                                 ≫           .
+                                           |Br |            r
+   Before we go on, let us discuss the high density lemma in this context. If T is a Frostman set
+of δ-tubes in B1 , then it is not hard to check that |U (T)| ⪆ δ 2β . The high density lemma, Lemma
+6.1, gives an upper bound for µ(T) and hence a lower bound for |U (T)|. If ∆max (T) ≫ 1, then it
+implies that |U (T)| ≫ δ 2β .
+12                                          LARRY GUTH
+
+
+   This argument allows us to handle the special case when ∆max (TB ) ≫ 1 and ∆(TB , K) is
+maximized when K = B. In this case, TB is Frostman in B. Just using that TB is Frostman, it
+follows that the density of TB in B is ⪆ (δ/r)2β . But since ∆max (TB ) ≫ 1, the high density lemma
+implies that the density of TB in B is ≫ (δ/r)2β , giving (11) and closing the induction in this case.
+   So far, we have closed the induction in two special cases: the case when ∆max (TB ) ⪅ 1 and the
+case when ∆max (TB ) ≈ ∆(TB , B) ≫ 1.
+
+6.5. When TB clusters into slabs. The most difficult and important case of the Wang-Zahl
+argument occurs when TB clusters into slabs. This means that ∆max (TB ) ≫ 1 and ∆(TB , K) is
+maximized when K is a slab of dimensions a × r × r, where r is the radius of B and a ≪ r.
+   We should mention that in the Heisenberg group example (over C), the tubes of TB indeed
+cluster into slabs in this way. Therefore, this scenario was already regarded in the community as
+the most difficult and important scenario. We will see that this scenario can also be handled by
+the ideas in the last couple subsections, but with one new wrinkle.
+   Let us first describe this scenario a little more carefully. Suppose that K is a set of a × r × r
+slabs in B so that ∆(TB , K) ≈ ∆max (TB ) for each K ∈ K. With some pigeonholing, we can choose
+K so that each TB ∈ TB lies in ∼ 1 slab K ∈ K. Because the slabs of K have maximal density, it
+follows that ∆max (K) ⪅ 1. Then the L2 method implies that µ(K) ⪅ 1. Therefore, we can study
+the slabs K ∈ K one at a time. For each K ∈ K, define TK ⊂ TB as TK = {TB ∈ TB : TB ⊂ K}.
+Now we have µ(TB ) ≈ µ(TK ).
+   We know that ∆(TK , K) ≫ 1, and we know that
+
+(12)                      ∆(TK , K ′ ) ⪅ ∆(TK , K) for all convex K ′ ⊂ K.
+This setup is a natural generalization of the Frostman condition (6), so we say that TK is Frostman
+in K.
+   We might first try to study the density of small balls as in the last subsection. The most direct
+version of this approach does not work, but it can be made to work by adding an extra wrinkle.
+   The most natural radius to consider is a. To close our induction, it suffices to prove the density
+                                2β
+                  K )∩Ba |
+lower bound |U (T|B a|
+                           ≫ aδ     . If we average over all Ba ⊂ K, it suffices to prove
+
+                                                       2β
+                                        |U (TK )|      δ
+(13)                                              ≫         .
+                                           |K|         a
+   At first, we might hope to show that (13) follows from the fact that TK obeys the Frostman
+condition (12) and that ∆(TK , K) ≫ 1. This does not work for the following reason. Suppose
+that for every δ, there was a set Tδ of δ-tubes in B1 with ∆max (Tδ ) ⪅ 1 and |Tδ | ≈ δ −2 and
+µ(Tδ ) ≈ |Tδ |β . Then we could use these examples to build a bad set of tubes TK in K so that
+      • ∆(TK , K) ≫ 1.
+      • TK obeys the Frostman condition (12)
+                       2β
+      • |U |K|
+           (TK )|
+                  ≈ aδ
+   This bad example plays an important role in the story, and we will take time to describe it. Both
+the bad example and the way of dealing with it depend on understanding how tubes in K relate to
+tubes in a unit ball.
+   Recall that K has dimensions a × r × r, and each tube TK ∈ TK has dimensions δ × δ × r. Let
+L be a linear map from the unit cube to K. The map L turns a tube of dimensions s × s × 1 into a
+                   INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                              13
+
+
+plank of dimensions as × rs × r. The most relevant scale is when the plank has thickness δ, so we
+set as = δ, and so s = aδ . Each s-tube in B1 corresponds to a plank in K of dimensions δ × aδ r × r.
+Not every plank in K with these dimensions corresponds to an s-tube in B1 – the plank has to be
+oriented in an appropriate way. Roughly speaking, if a plank P ⊂ K corresponds to a tube in B1 ,
+then the broadest face of P should be approximately tangent to the broadest face of K. We will
+call this class of planks horizontal planks. To summarize we have a correspondence
+
+
+                            Horizontal planks in K ←→ s-tubes in B1 .
+
+  Here is a picture illustrating this correspondence:
+
+
+
+
+   The red plank on the left represents a horizontal plank P in K. Under the linear change of
+variables, the plank P corresponds to the red s-tube on the right.
+   Now we can describe our bad example. Let Ts with ∆max (Ts ) ⪅ 1 and |Ts | ≈ s−2 and µ(Ts ) ≈
+|Ts |β . Using our change of variables, convert Ts to a set of horizontal planks P in K. We have
+
+                                                               2β
+                                |U (P)|   |U (Ts )|            δ
+                                        =           ≈ s2β =         .
+                                  |K|       |B1 |              a
+
+Since the dimensions of a plank P are δ× ar δ×r, each plank P ∈ P contains ∼ (r/a)2 distinct δ-tubes.
+Define TK to contain all the δ-tubes in P for each P ∈ P. Now we have ∆(TK , K) ∼ (r/a) ≫ 1.
+It’s not hard to check that TK is Frostman in K. And |U |K|(TK )|
+                                                                  = |U|K|
+                                                                       (P)|
+                                                                            ≈ (δ/a)2β .
+   This finishes the construction of our bad example. The bad example shows that a direct gener-
+alization of the density argument from the last subsection does not work.
+   The bad feature of our bad example is that the tubes of TK cluster heavily in horizontal planks
+P . The case when the tubes of TK cluster into horizontal planks is an important case in the Wang-
+Zahl argument. In these notes, we will focus on this scenario. We make this precise as follows. We
+suppose P is a set of horizontal planks. For each P ∈ P, let TK,P be a set of δ-tubes in P . The
+way that TK,P overlaps in P is a 2-dimensional Kakeya type problem and the possible behaviors
+are well understood by the L2 method. We will consider the case that U (TK,P ) = P . This case
+includes the bad example above, in which TK,P consists of all the δ-tubes in P .
+14                                           LARRY GUTH
+
+
+   Wang and Zahl deal with this scenario by adding the following observation. The angle between
+any two short tubes in the same horizontal plank P is ≲ δ/a. Therefore, the way the tubes of TK,P
+intersect is related to the intersection of tubes in TTδ/a , and it can be controlled by studying TTδ/a .
+   For each plank P , we let P̃ denote the corresponding δ/a-tube in B1 . And we let P̃ be the set of
+δ/a-tubes corresponding to P ∈ P. Since TK obeys the Frostman condition (12), it follows that P is
+Frostman and so P̃ is also Frostman. There are now two cases, depending on |P|. If |P| ≫ (δ/a)−2 ,
+then we are in the high density planks case. If |P| ⪅ (δ/a)−2 , then we are in the low density planks
+case.
+
+    High density planks case. In this case, P is Frostman in K and |P| ≫ (δ/a)−2 . Therefore,
+P̃ is a Frostman set of δ/a-tubes in B1 , and |P̃| ≫ (δ/a)−2 . In this case, the high density lemma
+implies that |U (P̃)| ≫ (δ/a)2β , and so
+
+                                      |U (P)|   |U (P̃)|
+                                              =          ≫ (δ/a)2β .
+                                        |K|      |B1 |
+We are focusing on the case that U (TK,P ) = P , and so U (TK ) = U (P). Therefore, we have
+|U (TK )|
+   |K|    ≫ (δ/a)2β , which gives (13) and closes the induction.
+
+   Low density planks case. In this case, P is Frostman in K and ∆(P, K) ⪅ 1, and so ∆max (P) ⪅
+1. In the low density planks case, we will upper bound µ(T) using that
+
+                           µ(T) ⪅ µ(TTρ )µ(TB ) ⪅ µ(TTρ )µ(TK,P )µ(P).
+  A typical point of our Kakeya set lies in µ(TK,P ) short tubes from TK,P . The angle between
+two short tubes TK ∈ TK,P is at most δ/a. Each of these short tubes belongs to µ(TTρ ) long tubes.
+Therefore, µ(TTρ )µ(TK,P ) ⪅ µ(TTδ/a ). Plugging in, we get
+
+                                         µ(T) ⪅ µ(TTδ/a )µ(P).
+   Now we bound µ(P) = µ(P̃). Since we are in the low density case, |P| = |P̃| ⪅ (δ/a)−2 . Since P̃
+is Frostman, we conclude that ∆max (P̃) ⪅ 1, and so
+
+                                   µ(P) = µ(P̃) ⪅ |P̃|β ⪅ (δ/a)−2β .
+     So all together, we have
+
+                                       µ(T) ⪅ |TTδ/a |β (δ/a)−2β .
+   Since we are in the not-sticky-at-all-scales case, |TTδ/a | ≪ a−2 , and so, µ(T) ≪ δ −2β ≈ |T|β .
+This closes the induction.
+   Notice that we really needed the assumptions of the not-sticky-at-all-scales case here. We don’t
+have any control of the scale a except that δ ≪ a ≤ r. The not-sticky-at-all-scales case tells us that
+|TTδ/a | ≪ a−2 for all a in this range.
+6.6. How do we reduce to the not-sticky-at-all-scales case? We saw in the argument above
+that it was important to reduce to the not-sticky-at-all-scales case. In this subsection, we explain
+how to do that. We start by recalling the sticky case, the not-sticky case, and the not-sticky-at-all-
+scales case.
+   Recall that T is a set of δ-tubes in B1 with ∆max (T) ⪅ 1 and that |T| ≈ δ −2 .
+                    INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                                  15
+
+
+    The sticky case means that for every ρ ∈ [δ, 1], ∆max (Tρ ) ⪅ 1. Since |T| ≈ δ −2 , this is equivalent
+to |TTρ | ≈ (δ/ρ)−2 .
+    If T is not sticky, it means that there is some ρ ∈ [δ, 1] so that |TTρ | ≪ (δ/ρ)−2 . Such a ρ must
+lie in the range δ ≪ ρ ≪ 1.
+    We say that T is not-sticky-at-all-scales if |TTρ | ≪ (δ/ρ)−2 for every ρ in the range δ ≪ ρ ≪ 1.
+    Here is the rough idea how to reduce the not-sticky case to the not-sticky-at-all-scales case.
+Suppose that there is some scale ρ so that |TTρ | ≈ (δ/ρ)−2 . It follows that ∆max (Tρ ) ⪅ 1. Now we
+can bound
+
+                                         µ(T) ⪅ µ(TTρ )µ(Tρ ),
+which reduces our original problem to two similar problems at smaller scales. We try to keep
+reducing in this way. If one of the smaller problems is not-sticky-at-all-scales then we are stuck and
+we cannot reduce further. Otherwise we can reduce further. If can keep reducing this way to very
+small problems, it means that our original set of tubes T was sticky, and we can handle it using the
+sticky Kakeya theorem. Otherwise, we get stuck with a problem that is not-sticky-at-all-scales and
+we can handle it using the argument we have sketched in this section.
+   (This reduction requires some care with small parameters to do in a rigorous way.)
+
+                                    7. The high density lemma
+   The proof of the high density lemma, Lemma 6.1, involves some important new ideas in its own
+right. The high density lemma is about the sets of tubes that obey an important packing condition
+called the Frostman condition. First let us recall this packing condition and put it in a more general
+context.
+   Suppose that W is a set of convex sets all contained in a given convex set C. Recall that for a
+convex set K,
+
+                                      WK := {W ∈ W : W ⊂ K},
+                                                     P
+                                                        W ∈WK |W |
+                                      ∆(W, K) :=            .
+                                                    |K|
+  We say that W is Frostman in C if W is a set of convex sets in C and
+
+
+(14)                             ∆(W, K) ⪅ ∆(W, C) for all K ⊂ C
+  Now we recall the statement of Lemma 6.1:
+Lemma. (High density lemma) Suppose that β is the critical exponent for sets of tubes with
+∆max (T) ⪅ 1, defined in (3). Suppose that T is a Frostman set of δ-tubes in B1 . Then
+
+                                       µ(T) ⪅ (δ −2 )β (δ 2 |T|)1−β .
+   The exact bound on the right-hand side is not crucial. The key point is to improve on the
+following trivial estimate. Randomly decompose T as a disjoint union T = ∪j Tj , where |Tj | ∼ δ −2 .
+Since T is Frostman, it follows that for each j, ∆max (Tj ) ⪅ 1, and so µ(T) ⪅ |Tj |β = (δ −2 )β . Now
+the trivial bound is
+16                                              LARRY GUTH
+
+
+
+                                           X
+(15)                              µ(T) ≤        µ(Tj ) ⪅ (δ −2 )β (δ 2 |T|)
+                                            j
+
+We see that if β > 0, the bound in Lemma 6.1 improves on (15). Even a small improvement is
+enough to power the inductive argument in the last section. If (15) were sharp, it would mean that
+for each j, |U (T)| ≈ |U (Tj )|. This sounds intuitively unlikely: when |T| is far bigger than |Tj |, we
+might expect |U (T)| to be at least a little bigger than |U (Tj )|. However, it is not easy to prove
+this.
+   Let γ be the smallest exponent so that, if T is a Frostman set of tubes in B1 , then
+
+
+(16)                                    µ(T) ⪅ (δ −2 )β (δ 2 |T|)γ .
+So Lemma 6.1 says that γ = 1 − β. To power the inductive argument in the last section, we just
+need to prove that if β < 1, then γ < 1. We say that T is a worse case example for Lemma 6.1 if
+
+
+(17)                                    µ(T) ≈ (δ −2 )β (δ 2 |T|)γ .
+    A crucial input to the proof is the sticky Kakeya theorem. One scenario is that T contains a
+sticky Kakeya set T′ . In this case, |U (T)| ≥ |U (T′ )| ⪆ 1, and this leads to a very strong bound for
+µ(T). When does T contain a sticky Kakeya set?
+    Suppose that 1 = ρ0 > ρ1 > ... > ρN = δ is a sequence of scales. We can study T at all these
+scales. Recall that Tρ is the set of thickenings of T at scale ρ. And we let Tρj ,Tρj−1 be the set of
+all Tρj ∈ Tρj lying in the thicker tube Tρj−1 ∈ Tρj−1 . If the sequence of scales ρj is very dense, and
+if each Tρj ,Tρj−1 is Frostman in Tρj−1 , then T contains a sticky Kakeya set.
+    This raises the question whether we can find such a sequence of scales. We can try to build such a
+sequence of scales by adding one scale at a time, and so it boils down to asking: is there a scale ρ with
+1 ≫ ρ ≫ δ so that Tρ is Frostman and TTρ is Frostman? Since T is Frostman, Tρ is automatically
+Frostman, because whenever K is a convex set that contains a ρ-tube, ∆(Tρ , K) ≈ ∆(T, K). But
+TTρ are not necessarily Frostman. We do know that for any convex set K, ∆(T, K) ⪅ ∆(T, B1 ).
+But if ∆(T, Tρ ) ≪ ∆(T, B1 ), then there could be some K ⊂ Tρ with ∆(T, K) ≫ ∆(T, Tρ ).
+    It is helpful to choose sets of maximal density. For each Tρ , let W(Tρ ) be a set of convex sets
+W ⊂ Tρ with maximal value of ∆(T, W ). Because of the maximal density, TW is Frostman in W
+for each W ∈ W(Tρ ). After some pigeonholing and pruning the set W(Tρ ), we can assume that
+each tube T ∈ TTρ lies in ∼ 1 set W ∈ W(Tρ ), and each set W ∈ W(Tρ ) contains about the same
+number of tubes TS∈ TTρ .
+    Now let W = Tρ ∈Tρ W(Tρ ). Each W ∈ W has dimensions a × b × 1, where δ ≤ a ≤ b ≤ ρ.
+Note that if W ∈ W(Tρ ), then Tρ is essentially the ρ-neighborhood of W , and so each W belongs
+to W(Tρ ) for ∼ 1 Tρ ∈ Tρ . So each tube T ∈ T lies in ∼ 1 set W ∈ W. And by pigeonholing, we
+can assume that each W ∈ W contains around the same number of tubes T ∈ T.
+    Since T is Frostman in B1 , it follows that W is also Frostman in B1 .
+    Now we can bound µ(T) by
+
+
+(18)                                     µ(T) ⪅ µ(TW )µ(W).
+Since TW and W are both Frostman, we can try to bound each factor by induction.
+                    INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                                 17
+
+
+   We note that the sets W are convex sets but not necessarily tubes. After some pigeonholing,
+we can assume that each W ∈ W has dimensions ∼ a × b × 1 with δ ≤ a ≤ b ≤ 1. Therefore, we
+have to generalize the setup of our problem to include not just intersecting tubes but intersecting
+convex sets. Wang and Zahl systematically develop a theory of intersecting convex sets instead of
+just intersecting tubes. One extreme example is when each W is a slab of dimensions a × 1 × 1.
+Sharp bounds for intersecting slabs have been known for a long time by the L2 method. So the
+case of slabs is fully understood. If W has dimensions a × b × 1 with a ≪ b ≪ 1, then the shape of
+W is intermediate between a tube and a slab. Leveraging the sharp bounds for slabs, the bounds
+for this intermediate case are stronger than the bounds for actual tubes. Therefore, if a ≪ b, then
+when we apply induction to (18), we get a gain. If we assume that T was a worst case example for
+Lemma 6.1, then this scenario cannot occur and we must essentially have a = b.
+   Another scenario is that W could be an original tube δ × δ × 1. In this case, we have not
+decomposed our original problem at all. If we choose ρ so that ∆(T, Tρ ) ≫ 1, then we get ∆(T, W ) ≳
+∆(T, Tρ ) ≫ 1, and so W must be significantly larger than a single tube.
+   To summarize, if T is a worse case example for the high density lemma, and if |T| ≫ δ −2 , then
+there is a scale a with δ ≪ a ≪ 1 so that TTa is Frostman and Ta is Frostman. Moreover, Ta and
+TTa will also be worse case examples for the high density lemma, which helps to iterate.
+   On the other hand, if T is a Frostman set of tubes in B1 with |T| ≈ δ −2 , then we have ∆max (T) ≈
+1 and so we can bound µ(T) ⪅ (δ −2 )β .
+   Iterating this argument, we can choose a sequence of scales 1 = ρ0 ≫ ρ1 ≫ ρ2 ≫ ... ≫ ρN = δ
+so that Tρj ,Tρj−1 is always Frostman, and for each j one of the following holds:
+
+
+
+    (1) ρj /ρj+1 is very small, or
+    (2) ∆max (Tρj ,Tρj−1 ) ⪅ 1, and so µ(Tρj ,Tρj−1 ) ⪅ (ρj−1 /ρj )2β .
+
+
+
+  Here is a picture showing how this sequence of scales may look:
+
+
+
+
+   Here each short vertical line represents a scale ρj . These scales are generally quite close together,
+except for two significant gaps. Each significant gap must be in case (2), and so we labelled them
+(2).
+   If |T| ≫ δ −2 , not every interval can be in case 2 – a definite fraction of intervals must be in
+case 1. Since the intervals in case 1 are very small, a definite fraction of scales must consist of
+many small intervals. On any such block of small intervals, we can apply sticky Kakeya, giving a
+very strong bound. In our picture, we have drawn two such blocks of small intervals, and they are
+labelled “use sticky Kakeya”.
+   To bound µ(T), we begin by factoring µ(T) into contributions coming from different scale ranges.
+For instance, in the scenario illustrated above, we would first name key scales as in the picture below:
+18                                           LARRY GUTH
+
+
+
+
+Now we can bound µ(T) by
+
+(19)                   µ(T) ⪅ µ(TTδ1 )µ(Tδ1 ,Tδ2 )µ(Tδ2 ,Tδ3 )µ(Tδ3 ,Tδ4 )µ(Tδ4 ).
+The five factors on the right-hand side correspond to five scale ranges in the picture. Note that
+if we used the trivial bound (15) to bound each factor on the right-hand side, then we would get
+back the trivial bound. Instead, we use sticky Kakeya on the scale ranges labelled sticky, and we
+use item (2) above on the scale ranges labelled (2). This leaves some small scale ranges where we
+have to use the trivial bound (15), corresponding to γ = 1. Since β < 1, the bound in the sticky
+case is better than the trivial bound, and so our overall bound for µ(T) is better than the trivial
+bound (15). A careful calculation gives the bound γ = 1 − β.
+   This finishes our outline of the proof that sticky Kakeya implies Kakea.
+
+   Notice that in this argument, we broke the scales from δ to 1 into several ranges in a strategic
+way. The idea of choosing these ranges strategically was introduced by Keleti and Shmerkin in [9],
+and it has become a major tool in this circle of problem. For instance, it plays a key role in the
+solution of the Furstenberg set problem in [9] and [14].
+
+   Over the last two sections, we have outlined the argument from [18], reducing the general case of
+Kakeya to the sticky case. It can be considered as an argument by induction on scales. We define
+β as the best exponent so that if ∆max (T) ⪅ 1, then µ(T) ⪅ |T|β . If T is not sticky, we show (using
+induction), that µ(T) ≪ |T|β . This shows that the worst case is sticky, and so reduces the general
+Kakeya problem to sticky Kakeya.
+   The set of tubes TB played a key role in this inductive argument. Recall that we defined TB by
+intersecting the tubes of T with a smaller ball B. Since we don’t know whether ∆max (TB ) ⪅ 1, it
+sounded difficult to involve TB in an inductive argument.
+   How did we control TB using induction? In the argument, TB is treated as an arbitrary set of
+tubes. There are several cases. In the most interesting case, we related TB to a set of planks P.
+After a linear change of variables, P becomes a set of tubes T′ obeying a Frostman condition, and
+we estimate µ(T′ ) using the high density lemma. When we look inside the proof of the high density
+lemma, we examine T̃′ at various scales. We eventually find some sets of tubes T̃ with ∆max (T̃) ⪅ 1.
+We can apply our inductive assumption to each such T̃. In this subtle way, we were able to study
+TB using induction.
+
+                          8. What about the Katz-Zahl example?
+    As we mentioned in Section 4, Katz and Zahl found a cousin problem to the Kakeya problem
+where the analogue of Kakeya does not hold but the analogue of the sticky case appears likely to
+hold. That example made me think it was unlikely that the Kakeya problem could be reduced to
+the sticky case. Wang and Zahl did reduce the general Kakeya problem to the sticky case, and so
+it is natural to ask why their method does not apply to the Katz-Zahl example.
+                   INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                                 19
+
+
+   The Katz-Zahl example concerns a cousin of the Kakeya problem where R is replaced by the
+ring A = Fp [x]/(x2 ). The ring A has a natural notion of distance with two distinct length scales.
+If a + bx ∈ A with a, b ∈ Fp , we define
+                                            
+                                            1
+                                                    if a ̸= 0
+                                ∥a + bx∥A := p−1 if a = 0, b ̸= 0
+                                            
+                                              0      if a = b = 0
+                                            
+
+There is a cousin of the Heisenberg group in A3 and it leads to a counterexample to the analogue
+of Theorem 1.2. But unlike in C3 , the Heisenberg group cousin in A3 is not sticky. It appears likely
+that in A3 , the sticky case of Wolff axiom Kakeya conjecture is true, but the general conjecture is
+false.
+   Looking back at the proof of Wang-Zahl, the key distinction between R and the ring A is that the
+ring A has only two distinct non-zero scales. The proof of the Kakeya conjecture requires discussing
+many scales in order to run the multiscale analysis.
+   (When we run the Wang-Zahl argument on the Katz-Zahl example, I think that it shows that the
+intersection of U (T) with a ball of radius p−1 consists of a union of slabs of dimensions δ ×p−1 ×p−1 .
+The Katz-Zahl example has this property. When we study Kakeya over R, we would also consider
+balls of other radii, like maybe p−1/100 . And in some cases of the argument we would show that
+the intersection of U (T) with a ball of radius p−1/100 consists of a union of slabs of dimensions
+δ × p−1/100 × p−1/100 . However, working over the ring A, we cannot carry this out because there is
+no such scale p−1/100 .)
+   There is an analogous ring AN which has many scales. Define AN = Fp [x]/(xN ). An element r
+                                        PN −1
+in the ring AN can be written as r = j=0 aj xj with aj ∈ Fp . If j(r) is the least j so that aj ̸= 0,
+then ∥r∥AN = p−j . I think that if N is sufficiently large, then the argument reducing Kakeya to
+sticky Kakeya has a good chance to work in the ring AN .
+   More broadly, we can ask: “For which problems of Kakeya type is the worst case sticky?” From
+the Katz-Zahl example, we learn that we should consider problems with many different scales. As
+far as I know, it looks plausible that for a broad range of Kakeya type problems involving many
+scales, the worst case is sticky. On the other hand, in the Furstenberg set problem, the known
+worst case example comes from a grid, and it is not sticky. It looks plausible that examples which
+are sticky in a strong sense cannot match the worse case in the Furstenberg set problem. It would
+be interesting to explore how much the proof from [18] can be generalized.
+
+                              9. What about higher dimensions?
+   It is natural to ask about generalizing this work to higher dimensions. No one knows yet how
+to do that. There is one key difference in dimension n ≥ 4. Our whole discussion has been based
+around the convex Wolff axioms. But it is well known that in dimension at least 4, the analogue of
+the Kakeya conjecture with convex Wolff axioms is not true. Let us write down a precise question
+and then recall the example.
+   Our definitions of density and ∆max make sense in any dimension.
+   Suppose that T is a set of δ tubes in Rn . For any convex set K ⊂ Rn , we define the density the
+density of T in K as
+                                                  P
+                                                          |T |
+                                      ∆(T, K) = T ∈TK          .
+                                                      |K|
+20                                               LARRY GUTH
+
+
+Then we define
+
+                                         ∆max (T) := max ∆(T, K).
+                                                         K
+And we define the typical multiplicity of T as
+                                                       P
+                                                     T ∈T |T |
+                                              µ(T) =           .
+                                                   | ∪T ∈T |
+   In dimension 4, there is an example of a set of δ-tubes T with ∆max (T) ≲ 1 and µ(T) = δ −1 . In
+this example, the tubes are all contained in the δ-neighborhood of a degree 2 algebraic hypersurface,
+such as
+
+                                 Z = {x ∈ R4 : x21 + x22 − x23 − x24 = 1}
+A typical point of Z lies in a 1-parameter family of lines in Z. For instance, if we intersect Z with
+the hyperplane x1 = 1, then we get a 2-dimensional cone defined by x22 − x23 − x24 = 0, and this cone
+contains a 1-parameter family of lines. So the point (1, 0, 0, 0) lies in a 1-parameter family of lines
+in Z. But the variety Z is very symmetric. The Lie group O(2, 2) acts transitively on Z. Since
+this is a linear action, the action maps lines to lines. And so every point of Z lies in a 1-parameter
+family of lines in Z.
+   The tubes of T are δ-neighborhoods of these lines. There are δ −3 tubes of T. The set U (T) is
+the δ-neighborhood of Z, and so |U (T)| ∼ δ and so µ(T) ∼ δ −1 .
+   The tubes of T cluster near the algebraic surface Z, but they don’t cluster in any convex set. It
+is not difficult to check that for any convex set K, ∆(T, K) ≲ 1, and so ∆max (T) ≲ 1.
+   There are two possible ways around this example. One way is to focus on the original version of
+the Kakeya conjecture with direction-separated tubes. In this setup, we suppose that T is a set of
+δ −(n−1) δ-tubes in Rn in δ-separated directions. (The example above is not a counterexample to this
+direction separated Kakeya conjecture, because the directions of the tubes in the example all lie near
+a degree 2 algebraic surface in S 3 . ) Working with convex Wolff axioms played an important role
+in the reduction to the sticky case. Can it be made to work in the directon-separated framework?
+   The second way around this example is to replace the convex Wolff axioms with more general
+polynomial Wolff axioms that take account of how tubes of T pack into neighborhoods of low degree
+algebraic varieties. I think this is a natural direction to pursue. But replacing convex sets by semi-
+algebraic sets is a significant issue and is not just a technical modification of the 3-dimensional
+proof.
+
+                                               10. Next steps
+  As I mentioned at the start of this survey, I am currently working on digesting and checking the
+proof. My next step is to write a detailed outline of the proof in [18], which includes all the cases
+and all the steps. I hope to have something that I can share by end of June.
+
+                                                 References
+
+ [1] Jean Bourgain, “On the Erdős-Volkmann and Katz-Tao ring conjectures.” GAFA 13 (2003): 334-365.
+ [2] , Bourgain, J. “Lp estimates for oscillatory integrals in several variables.” Geometric & Functional Analysis
+     GAFA 1 (1991): 321-374.
+ [3] Bourgain, Jean, and Ciprian Demeter. “The proof of the l 2 decoupling conjecture.” Annals of mathematics
+     (2015): 351-389.
+                      INTRODUCTION TO THE PROOF OF THE KAKEYA CONJECTURE                                          21
+
+
+ [4] Bennett, Jonathan, Anthony Carbery, and Terence Tao. “On the multilinear restriction and Kakeya conjectures.”
+     (2006): 261-302.
+ [5] Guth, Larry. “A short proof of the multilinear Kakeya inequality.” Mathematical Proceedings of the Cambridge
+     Philosophical Society. Vol. 158. No. 1. Cambridge University Press, 2015.
+ [6] Guth, Larry, Noam Solomon, and Hong Wang. “Incidence estimates for well spaced tubes.” Geometric and
+     Functional Analysis 29.6 (2019): 1844-1863.
+ [7] Netx Katz, Izabella Laba, and Terence Tao. “An improved bound on the Minkowski dimension of Besicovitch
+     sets in R 3.” Annals of Mathematics (2000): 383-446.
+ [8] Katz, Nets, and Joshua Zahl. “An improved bound on the Hausdorff dimension of Besicovitch sets in R3 .”
+     Journal of the American Mathematical Society 32.1 (2019): 195-259.
+ [9] Keleti, Tamás, and Pablo Shmerkin. ”New bounds on the dimensions of planar distance sets.” Geometric and
+     Functional Analysis 29.6 (2019): 1886-1948.
+[10] Orponen, Tuomas. “On the distance sets of Ahlfors–David regular sets.” Advances in Mathematics 307 (2017):
+     1029-1045.
+[11] Orponen, Tuomas, and Pablo Shmerkin. “On the Hausdorff dimension of Furstenberg sets and orthogonal
+     projections in the plane.” Duke Mathematical Journal 172.18 (2023): 3559-3632.
+[12] Orponen, Tuomas, and Pablo Shmerkin. “Projections, Furstenberg sets, and the ABC sum-product problem.”
+     arXiv preprint arXiv:2301.10199 (2023).
+[13] Orponen, Tuomas, Pablo Shmerkin, and Hong Wang. “Kaufman and Falconer estimates for radial projections
+     and a continuum version of Beck’s theorem.” Geometric and Functional Analysis 34.1 (2024): 164-201.
+[14] Ren, Kevin, and Hong Wang. “Furstenberg sets estimate in the plane.” arXiv preprint arXiv:2308.08819 (2023).
+[15] Terence Tao, Blog post “Stickiness, graininess, planiness, and a sum-product approach to the Kakeya problem”
+     , https://terrytao.wordpress.com/2014/05/07/stickiness-graininess-planiness-and-a-sum-product-approach-to-
+     the-kakeya-problem/
+[16] Tao, Terence. “A new bound for finite field Besicovitch sets in four dimensions.” Pacific journal of mathematics
+     222.2 (2005): 337-363.
+[17] Hong Wang and Josh Zahl, “Sticky Kakeya sets and the sticky Kakeya conjecture,” arXiv:2210.09581
+[18] Hong Wang and Josh Zahl, “Volume estimates for unions of convex sets, and the Kakeya set conjecture in three
+     dimensions,” arXiv:2502.17655
+

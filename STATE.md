@@ -1,39 +1,42 @@
 # 当前研究交接
 
-更新2026-10-16，最近轮次R0006。长期Goal active；尚无高维Kakeya解决、新维数下界或经文献确认的重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0007。长期Goal active。尚未解决高维Kakeya，没有新维数下界或经文献确认的重大中间结果。
 
-## 宏观状态与恢复入口
+## 恢复与宏观状态
 
-R0005已同步352bd6d3d031dedbbf1c191ccefc35805842d9f6；R0006开轮工作树干净，先作固定宏观审视。六轮的局部工具和路线排除均不计作重大中间结果。R0006收尾审视已改选不同主输入审计，见research/reviews/R0006_macro.md。不得仅从上轮最后一个代数式继续。
+上一轮R0006已同步61e983535f25dbf70d8e78a988fd2b36c5d749bd；R0007开轮工作树干净，上一goal turn分类progress。先读GOAL、STATE、ROADMAP、results/registry.json及最近正式轮次；python scripts/context.py不再误选working_spec。
 
-文献库6篇PDF、提取文本与关键源码保持；本轮无新下载。核心四维PDF与06-isotropic.tex核对过官方blob，但175页证明与外部输入未全面独立验证。原稿version2为j=2；j=3五维拟推广的初始化、cap类、极值闭合均未建立。
+七轮的条件工具和路线排除不是数学完成。R0007主输入被否定触发提前宏观审视，见research/reviews/R0007_macro.md；当前一般j3机制的初始化已出现实质问题，不能继续仅修补后期flag。旧笔记早知convex障碍，本轮没有把已知例子当新发现。
 
-## R0006实质结果
+文献库现7篇PDF及全文、元数据和部分官方源码。新增Guth2025介绍v1：21页，960668字节，SHA256 86e9d96ab3d8bccc9c1a539c880f14c0902bff00fba6e66c5ca073866d4b9755。其p20与Zahl pp11–12的quadric数字差异已按渲染原页核对，强断言未用作输入。核心175页四维证明尚未全面独立验证，j=2为原稿，j=3仍是拟推广。
 
-- FLAG-001：原10.2的near-parallel同时匹配法向、法向位置及中心速度。给定双完整signature及同一当前p_L的小列表，可条件性构造全时交框J≈g0g1/σ，保留完整prior和有限次采样质量。两个参考时刻各有小列表不够。
-- full8的d=1边界例实现真实own-depth列表、νQ≈q³g²、n(g)≈g、J≈q³g及常量覆盖；任意一长两短全时known atlas覆盖≤CK^C Lε。即使长轴全局固定仍有中心运动残余。此例horizon未计算；不具critical认证。
-- FLAG-002：外积负log超可加而非可加；固定网格的段下界/terminal上界可夹逼全部节点及拼接缺陷。谱隙r=σ(k+1)/σk和近乘积比ρ给实际复合top-k左奇异plane的sin最大principal angle≤r/ρ。
-- 真实j=3同步det/外积二级极值、coarsening闭合、共同原始列表和谱隙准备仍缺。条件矩阵工具不是已建critical path。
-- FLAG-003：d=1/2有限Cantor full8模型P*=w−StY3实现同prior native箱lower、全时双薄轴、真实列表/floor、常量覆盖及原H=0。丢敏感短轴Y3、仅免费提供几何cell后，得到Z=u+tv、w̄=c+tD。
-- 即使免费给完整投影可见仿射线，任意whole-block二次测试known atlas也有M≤C_d L K^{2d}(a/q)^d。沿线Markov+Frostman积分无额外q^-1。显式终端q=a true系统给投影H=L_depth，隐藏profile为1。不能免费携带旧c-bin。
-- 原FLAG-003有H=0且raw full-slope来源未保留，不是positive-horizon/critical/Kakeya反例。三份独立审查与root整合复核位于research/reviews/R0006_*review.md；未改变的旧实验不重跑。
+## R0007已核验结果
+
+- PLK-001：显式M(t)=(s+pt,−sq−p/s−pqt,1/s+qt)位于ty+xz=1。所有正交frame/affine center/fulltime空间框都有连续μ(P)≤Cw1 min(w2,w3²)；包含相切框和二次系数近零case。
+- δ-grid全框计数≤Ccap δ^-1/2(w1w2w3/δ³)，统一每index权δ^1/2/Ccap后全部WP4 cap满足A=1。满D时间marks给加权访问量≥cD^(7/2)，而#E≤CD³；ε<1/2时WP4不可能，任何η都无法挽救。
+- 未加权完整族确有(δ,δ,√δ)坏框，loss δ^-1/2上下匹配。全框upper是解析证明，有限有理网格脚本只辅助bad-frame lower，不能替代它。反例机制已知、不具满方向、不反驳Kakeya。
+- PLK-002：固定维度、有界chart中的WP/weighted convex-shading/unweighted near-clustering输入可调整εη互推。任意measurable shade→marks须付重cells δ^-κ；平均/逐管密度转换有两个η；短非固定时间窗另有真实幂成本。
+- SRC-001：若整篇四维proof及其输入正确，其finite proof可条件性读出方向丰富的有限尺度估计。它能处理五维初始source保留full visible-slope density的g00专用调用；不能替代2.16在任意conditional group/residual中的无方向输入。
+- 原2.17正horizon最后须把eligible slope-volume乘原始full-slope density；带N0^κ时gain先付κ。归一化后full-slope ceiling成本C J/[q^(j+1)ν(A)]；一般C(d)优化不保原方向来源。§6 support依赖既有critical path，不能倒用来补初始化。
+
+独立审查：R0007_quadric_plank_review、R0007_source_input_review、R0007_union_equivalence_review；root另核QCAP、离散边界、时间量词和坏框。详见research/reviews及results/reviewed对应入口。没有独立重证整篇四维定理。
 
 ## 保留工具与冻结版本
 
-ENT-002同prior mixed-scale系数熵率、DIR-002真实floor加权预算及FLAG-002条件外积工具保留。NAT-001仍区分native箱与raw W精度，exact current point的信息不可漏。原始N0幂界不自动成为统一切线幂界。
+保留DIR-002 truefloor加权预算、ENT-002同prior mixed entropy、FLAG-002条件外积夹逼/对齐、PLK-002转换与QCAP。R0006的FLAG-003只给原H0/投影H=L，FLAG-001的d1边界例horizon未算，不能混同。
 
-冻结：朴素投影加一、无条件局部次数恢复、guard-only旧窗口修补、小全局palette、无损native-to-W桥接，以及本轮“仅两个短轴即可无损投影/自动当前signature matching”的版本。重开flag须有针对完整signature或sensitivity×discarded-width的新可检验输入；不得只换轴名、外积名或反复完善H0 toy。
+冻结：满维投影加一、无条件次数恢复、guard-only旧窗口、小全局palette、无损native-to-W、仅双短轴的自动matching/无损投影，以及本轮无方向WP4的直接加维。重开须有排除明确反模型的新输入。不能把初始raw full-slope ceiling免费送给normalized optimizer worlds。
 
-## 下一轮唯一优先任务：N4-PLANK-01
+## 下一轮唯一任务：N5-HOR-01
 
-问题转到五维初始化前的必要几何输入。源四维论文Lemma2.15调用的是三维加权fulltime plank估计，而四维Hausdorff结论不自动给四维加权凸聚集/阴影并集估计。
+目前仅严格否定generic j3 H≤L的原greedy证明输入，尚未否定H≤L结论。下轮检验具体定量候选，见R0007_macro：可见quadric δ-grid在全部b,u独立δ盒平滑，δ=N0^-M；隐藏w0=c取full-density有限d-Cantor，W在远小terminal a=N0^-L的窄区间，nativeP*=w，完整八系数prior。选中固定内层时间段。
 
-先逐项核查现有四维论文是否真能提供下述更强输入，或需要何项新增结构：M_i(t)=b_i+t u_i∈R³，δ=D^-1；对所有全时空间框，cell宽1≤a1≤a2≤a3≤D，有Σ_{M_i⊂P}ω_i≤A a1a2a3。每条index保留至少D^{1−η}个time bins；E是所访四维mesh cells。目标为对每ε>0存在η>0及C，使Σ_iω_i#J_i≤CA D^ε #E，常数独立于indices、重复轨道及权重。
+目标证明或证伪：典型n(r)≈log δ^-1 a_r^d；平滑全宽度cap νvis(P)≤Cδ^-1/2 J；短块外推给νvis(P_I)≤K0^Cδ^-1/2 q^-3 J。独立隐藏Frostman及任意quadratic test的选中导数下界预计给m/q≤K0^C a_r^dνvis(P_I)，同prior truefloor迫q³≤K0^Cδ^1/2，即H≥M/6。取M>6L可能H>L。
 
-验收：明确它是否由已归档四维结果严格推出；给量词完整的推导或满足全部plank/shading假设的反例，或定位唯一缺失而非同义的原始几何条件。先查原文方向Frostman/cap、极值和阴影密度来源，禁止以Hausdorff满维直接替代上述统一有限尺度估计。一个审计主轮后根据证据重新选择，不以重述目标为结果。
+以上全是未核验候选，不登记为定理。优先验证完整tempered density、δ网格/平滑孔洞与典型base density（不能仅由支撑体积断言lower）、任意新二次test而非指定native，以及原始m/q floor。暂不附带未证明的angular/maximizing-source条件；若要声称C(d)必须另核。一个主轮验收后重新审视，不继续无限改善toy。
 
-## 操作
+## 同步与执行
 
-恢复依次读GOAL、STATE、ROADMAP、results/registry.json与最近正式轮次；python scripts/context.py已排除working_spec误选。每轮先写工作命题，三轮或关键反例触发宏观审视。系统Python中文用-X utf8。
+R0007以R0006为父增量同步，校验完整tree、全部文件SHA、同一local/remote commit和干净树，回执tmp/sync/R0007.json。新增PDF须精确字节上传；create_tree使用已核验base及变化条目，避免全表大请求。CLI网络不可用时用已连接GitHub API，不force push。
 
-R0006以R0005为父增量同步；核对完整远端tree、同一local/remote commit与干净树，回执tmp/sync/R0006.json。Git CLI网络不可用时沿用已连接GitHub API及精确commit导入，不force push。长期Goal仅达到GOAL.md数学标准才可complete。
+每轮先写working_spec；三轮、关键反例或两轮无信息增益时宏观审视。系统Python中文用-X utf8。长期Goal仅按GOAL.md数学完成标准审定，当前active。

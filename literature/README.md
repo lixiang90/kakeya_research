@@ -9,3 +9,5 @@
 引用论文时使用稳定文献ID，写出定理/引理编号与页码。不同版本不得悄然替换：升级时保存新文件并记录编号变动。下载失败的条目只记元数据，不能标记为本地全文。
 
 查找：`rg -n 'Lemma 6.6|Projection to four|weighted.*plank' literature/extracted`。
+
+R0007新增 `guth_2025_kakeya_introduction_v1.pdf`（21页，原PDF与全文均保存）；其p.20的quadric数字与Zahl综述§4.1分开记录，见 `notes/10_source_audit/R0007_quadric_source_discrepancy.md`。可调用的全框cap与加权反例采用本轮自包含证明，不依赖未经核验的更强文献措辞。
