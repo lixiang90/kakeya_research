@@ -1,47 +1,47 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0011。长期Goal active；尚无高维Kakeya证明、真实反例、新维数下界或经文献确认的重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0012。长期Goal active；尚未解决n≥5/general Kakeya，没有新维数下界、真实反例或经文献确认的重大中间结果。
 
 ## 恢复与宏观状态
 
-R0010起点为03d0f962cf4551f82bbce6ab9e05dfd9fe808e8d，160文件及干净树已核。R0011以它为父同步，完成回执在tmp/sync/R0011.json；下一轮核该回执及git状态。先读GOAL、STATE、ROADMAP、results/registry.json及最近正式轮次，运行python scripts/context.py，不从局部草稿末句恢复。
+R0012起点R0011 commit d42a978a226f11b7702b6b105c76fa88de047198，173文件及干净树已核。R0012以它为父同步；完成回执在tmp/sync/R0012.json，下一轮先核该回执及git状态。恢复读GOAL、STATE、ROADMAP、results/registry.json和最近正式轮次，运行python scripts/context.py；不从最后一段局部计算恢复。
 
-本轮关键候选N5-DIR-COST-01失败，已立即执行research/reviews/R0011_macro.md：冻结整个无source/n0-only/visible-direction-cost completion策略，不把下一轮变成再加full-slope统计假设的修补。不再改善toy的H指数、随机误差或颜色算法。重开必须有不同的实际前端几何定理及验证过的闭合操作。
+上一Goal turn分类progress。本轮是第三轮检查节点，已执行R0012_macro。LIFT-005解决指定任意smooth空间仿射lift类后即停止窄类细节；下一轮不只扩时钟、换normal form或换非线性Π。此前所有completion修补继续冻结，不把原始full-slope条件再追加为泛类修补。
 
-文献库现8篇PDF。新Nadjimzadah-curved-lifting-2026v1的PDF、提取全文、版本与校验元数据均已归档，15页/961012字节；selected证明已读，非全文独审。核心175页四维proof仍未全面独立重证，实际j2，j3均为literal拟推广。SRC-001及DIR-003仍条件于完整四维证明及输入正确，不能仅凭Hausdorff标题调用。
+文献库仍8篇PDF。本轮新阅读Nadjimzadah Def2.1/Prop2.5、Wang–Zakharov §2.3/§17高维配置、primary HRZ Thm4.1及Prop4.2、Zahl综述§4.3–4.4。精确范围和web-only候选存literature/metadata/R0012_source_check.json。GGN+2026只读abstract/intro，无PDF、未作证明输入；有限搜索不认证新颖性。核心175页四维proof尚未全面独立重证；SRC-001/DIR-003仍条件于完整证明及其输入正确。
 
-## R0011已核验结果：HOR-003
+## R0012已核验结果：LIFT-005
 
-对任意固定L>0、M>6L，存在literal j3 version2单world完整8维tempered概率prior，nativew/B1、selected mass1/4，所有depth实际f(r)≡0、joint-angular S1，**实际原visible-slope density ceiling O(1)**（κ=0），仍有
+X_B(w,t;y)=w+(tI_m+t²B)y，m=n−1≥2。对任意smooth空间仿射、保留原时钟π_t(z)=T(t)z+c(t)，以及任意smooth a(y,w,ρ),Θ(y,ρ)，ρ一维，要求Θ独立w、全部ρ的coherence及D_(y,ρ)Θ rank m+1。此类(1,0)-lift存在的必要充分条件是
 
-    M/6 ≤ H(E) ≤ M.
+    B=0，或 rank B=rank B²=1.
 
-L=1、d₀=1/2、S1及angular范围固定，M任意大，严格否定H≤C_(d₀,S,angular)(L+κ)的uniform有限常数；bounded-visible-density子类的all-model k仍无限。结果入口results/reviewed/HOR-003_bounded_visible_directions_high_horizon.md；两代理互审及root独核见R0011_*review。
+所以n3 B=diag(1,2)不能由此类四维lift实现。不是只检查标准x+tUz的rank，任意非线性a/Θ与非标准T已覆盖。完整证明及独审入口results/reviewed/LIFT-005_affine_codimension_one_classification.md。
 
-λ-dependent shear取u=(p,αλ−pq,q)、α=.1，b仍为(s,−sq−λp/s,λ/s)。Q=tY₂+Y₁Y₃=λ(1+αt²)，所以exactbase仍定位O1 λ；同时实际V定位O1的p,q,λ，grid权δ³与速度noise densityδ⁻³抵消，actualA=O1。这不同于HOR-002的A≈δ⁻¹，也不同于独立copies混合后通常出现的d1。
+w微分给所有t共用的固定右逆，常数ambient GL变换后T=[I,h(t)]。y/ρ微分并乘(u+tv)消h，无除法的poly identity以t³项给vB0；B非零则v0,u非零，t²项uB=−qℓ给rank1。方向Jacobian det=−ℓq=u traceB，故trace非零。B0及非nilpotent秩一均给直接充分构造。root和两代理独立推导、交叉独审已通过；无数值替代证明。
 
-每λ的shear只平移affine center，保持同D/J的single-layer cap。R0010独审的uniform random-tag lemma对新固定Πλ重新选一张表，给全部二次tests/assignments的统一m/q upper；原floor迫H≥M/6。qδ good-midpoint-cube×原w₀-bin atlas有常量覆盖、原floor和O1 own-list，给H≤M，不输出λ。
+边界：不排除一般非线性π、时间重参数或仅一张不规则selector w(y)的弱lifting。标量B换τ=t+bt²化直线与本类否定不矛盾。标准(2,0)-lift仍存在，原五维输入没有由本分类证明；不声称新颖/重大。
 
-完整(V,W)的density ceiling仍≈η⁻¹=N₀ᵁ，因此没有真实五维完整方向来源。不是Kakeya反例、不反驳原j2稿、不声称新颖性或重大结果。HOR-001、HOR-002、HOR-003是不同限制下的形式模型障碍，不可混淆。
+## 保留工具与冻结记录
 
-## 保留工具与冻结版本
+HOR-003：literal j3 full8、actualf≡0/S1、实际visible density O1（κ0），仍M/6≤H≤M，M可任大。完整(V,W)方向成本η⁻¹，缺真实full-direction来源；不是Kakeya反例，不可用于否定下一真实管命题。HOR-001/002/003适用限制不同，勿混淆。
 
-保留DIR-002 truefloor预算、ENT-002同prior mixed entropy、FLAG-002条件外积/对齐、PLK-001全框QCAP、PLK-002固定维转换、SRC-001及DIR-003。DIR-003的方向格权重输入Σω#J≤Cε αδ⁻ε#E必须付实际bin质量成本；实际三维方向density A对应α=C Aδ³。HOR-003说明此projected工具不足以自动补回泛类completion，并不否定其专用source范围。
+保留DIR-002 truefloor预算、ENT-002同prior entropy、FLAG-002条件外积、PLK-001全框QCAP、PLK-002固定维转换、SRC-001与DIR-003。DIR-003须付实际direction-bin质量，density A对应α=C Aδ³；它不自动提供generic completion。
 
-冻结：满维投影免费加一、无条件次数恢复、guard-only旧窗口、小palette、无损native-to-W、双短轴自动matching/投影、genericWP4、所有上述泛类completion与有限critical k修补。原FLAG-003 H0/投影H=L、FLAG-001 d1且H未算，勿误写为本轮正horizon模型。
+冻结：免费投影加一、无条件次数恢复、guard-only旧窗口、小palette、native-to-W无损桥、双轴自动matching/投影、generic WP4、所有无source/n0-only/visible-cost completion及有限critical k修补。本轮亦冻结codim1 affine/原clock类别的等价normal form细节。重开须真实新几何信息，不能换统计条件名。
 
-## 下一轮唯一任务：N5-CURVE-LIFT-01
+## 下一轮唯一任务：N5-NARROW-GAIN-01
 
-从新的曲线lifting几何出发：固定n=3、B=diag(1,2)，X_B(w,t;y)=w+(tI+t²B)y。检验是否存在Definition2.1的(1,0)-lift，限定**保留时间且空间仿射**
+直接研究真实R5方向分离单位δ管族T，#T≈δ⁻⁴，原shading Y满足Σ|Y(T)|≥δ^ηΣ|T|。每个shaded δ-cube Q有一个任意变化的线性3-plane V_Q，使所有参与Q的dir(T)距V_Q≤Cδ。检验是否存在固定σ>0，使每ε>0可选η>0满足
 
-    π_t(z)=T(t)z+c(t), z∈R³, rank T(t)=2,
+    |U(T,Y)| ≥ c_(ε,C,C₀) δ^(1−σ+ε).
 
-允许T,c及a(y,w,ρ),Θ(y,ρ)任意光滑，但Θ必须独立w，D_(y,ρ)Θ rank3，整个ρ域的coherent rulings都投影到同一曲线。参数域有内点，时间为含0的小区间。主验收是显式构造或在整个指定类中严格不可能证明；不能只检验标准π=x+tUz。
+完整量词和边界见notes/40_multiscale/narrow_five_dimensional/R0012_next_geometric_target.md。开轮先固定dyadic shading参与定义；不在途中切换full marks与dense shading。反例须保真实满量级方向分离，旧quadric模型不足。
 
-Proposition2.2的真实方向是d_Kak(X)≥d_lin(n+s−ν)−s。标准B可逆的(2,0)-lift需5维输入；若本轮找到(1,0)，直接收益也仅是以四维输入推出一个三维曲线结果，不能倒推五维Kakeya。若排除，则只排除空间仿射、保留时间这一类；一般非线性π及时间重参数未被排除，标量B的换元例外必须保留。详见notes/20_dimension_lifting/curved_lifting/R0011_source_and_next_test.md。
+primary HRZ Thm4.1 n5/k4已有对偶阈值21/5的四横截broad输入；Prop4.2的broad-to-linear损失未闭合。新工作瞄准随point变化的三平面窄几何，先核已知高维planebrush是否覆盖。Wang–Zakharov d5三span的matrix2×2结构可参考，但一般方向分离管不自动AD-regular/sticky，不能免费调用其§17配置。
 
-只给一主轮。若无超出标准rank计算的信息增益，不沿此窄类继续细节优化，重新宏观选路。每轮写working_spec并独立审查、归档、同步。Goal最终数学标准不降低。
+一主轮尝试真正的几何幂gain或从原管推出有新信息且带明确损失的局部兼容性命题，不追加任意统计irreducibility。即使极窄端点成立，中间角宽、重标度和Hausdorff多尺度覆盖仍需独立证明，不能宣称一般n5改进。若无信息增益即macro另选，不继续等价Jacobian/density改写。
 
 ## 同步与执行
 
-以已验证base tree及变化条目增量同步，核完整tree、全部path/mode/blob与SHA256；同一local/remote commit及干净树回执写tmp/sync/R0011.json。CLI网络不可用时使用已连接GitHub API，不force push、不覆写他人历史。系统Python中文用-X utf8。三轮、关键失败或两轮无信息增益立即macro。
+每轮先working_spec、至多两项互补审查、关键失败/三轮/两轮无信息即macro，最终Goal标准不降低。本轮以已核base tree加变化条目同步，回读完整tree及全部blob/path/mode和本地SHA256，同一local/remote commit与clean tree回执tmp/sync/R0012.json。CLI网络不可用可用已连接GitHub API，不force push。系统Python中文用-X utf8。

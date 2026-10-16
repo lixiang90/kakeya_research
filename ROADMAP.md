@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0011关键候选失败后的即时宏观审视已完成。无新Kakeya维数下界，长期Goal未解决。
+更新2026-10-17，R0012第三轮宏观审视已完成。无新Kakeya维数下界，长期Goal未解决。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -13,7 +13,8 @@
 | H | 多轴flag | 条件外积工具保留，current signature及投影有严格障碍 | generic自动匹配/投影frozen；先解决前端初始化 |
 | I | 四维加权plank | PLK-001严格否WP4；PLK-002转换无新几何，专用source调用另论 | 一般加维版本frozen |
 | J | j3 horizon与前端completion | HOR-003在实际f≡0/S1及原visible density有界下仍M/6≤H≤M；uniform H≤C(L+κ)在κ0也失败 | 整个visible-cost completion策略frozen；不得接着追加同义统计条件 |
-| K | 曲线到直线的coherent lifting | 新文献标准quadratic lift对可逆2×2 B需R5；forward条件结论不等于反向证明 | 唯一优先N5-CURVE-LIFT-01：B=diag(1,2)的保留时间/空间仿射(1,0)-lift构造或严格排除 |
+| K | 曲线到直线的coherent lifting | LIFT-005完整分类任意smooth空间仿射/原clock的codim1：B0或rankB=rankB²=1；diag(1,2)排除 | 本窄类已完成并frozen，不继续clock/normal form细节；一般非线性π未排除 |
+| L | 真实五维管的三平面窄几何 | primary HRZ四横截broad对偶阈值21/5；窄结构的幂gain未证，WZ中间span出现matrix2×2 | 唯一优先N5-NARROW-GAIN-01：真实满量级δ方向管及dense shading的Oδ三平面窄端点 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
-DIR-003保留为有实际方向格质量的条件finite工具；HOR-003使visible-cost泛类的有限critical k也失败，不再优化toy或再补full-slope条件。下一任务转向新曲线lifting，严格保持Definition2.1的intercept/slope/coherence量词：是否可在整个任意光滑空间仿射submersion类中将B=diag(1,2)的标准R5提升降到R4？时间重参数和一般非线性submersion在本项限定之外，否定结论不得越界。只给一主轮，若仅重算标准rank就无新信息增益，应停止窄类。失败指纹见notes/50_counterexamples/INDEX.md，审视模板见research/reviews/TEMPLATE.md。
+DIR-003保留其条件finite范围，所有completion统计修补继续冻结。LIFT-005已严格解决全指定类并停止细节，不能将其扩成一般lift最小性或五维定理。下一轮回到真实R5单位管、δ-separated满量级方向及原dense shading，检验任意pointwise三平面Oδ窄结构能否给volume≥δ^(1−σ+ε)。先核现有planebrush，使用WZ配置时不得免费赋sticky/AD正则。中间角宽、重标度、Hausdorff覆盖不自动闭合。失败指纹见notes/50_counterexamples/INDEX.md，审视模板见research/reviews/TEMPLATE.md。
