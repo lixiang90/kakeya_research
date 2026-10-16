@@ -1,0 +1,50 @@
+{
+  "scope": "finite-grid prior and list identities; no full critical-path or Kakeya claim",
+  "sympy_version": "1.14.0",
+  "parameters": {
+    "beta": "S/h^2",
+    "rho": "a/(S h)",
+    "kappa": "beta*rho=a/h^3"
+  },
+  "required_uniform_list_regime": "0<kappa<=1 and 0<rho<=1 on fixed bounded parameter boxes",
+  "full_coefficient_map_jacobian": 1,
+  "spatial_flow_jacobian": 1,
+  "full_coefficient_order": [
+    "y1",
+    "y2",
+    "y3",
+    "theta",
+    "theta**2 + z2",
+    "-rho*(-2*theta*y1 + y2) + theta**3 + z3",
+    "-beta*y1*y2 + c",
+    "-beta*rho*y1**2 + beta*(-theta**2*y1 - theta*y2 + y3) + zW"
+  ],
+  "input_order": [
+    "y1",
+    "y2",
+    "y3",
+    "theta",
+    "c",
+    "z2",
+    "z3",
+    "zW"
+  ],
+  "native_signal_coefficients": [
+    "c",
+    "-beta*rho*y1**2 + beta*y1*z2 + zW",
+    "-2*beta*rho*theta*y1 + beta*rho*y2 + beta*theta*z2 - beta*z3"
+  ],
+  "visible_polynomial_defect": "V2-V1^2=z2",
+  "exact_model_inverse_projection": [
+    "Y0",
+    "V1=theta",
+    "X0=c"
+  ],
+  "noise_condition": "(1+beta)*eta much smaller than every prepared mesh and required witness tolerance",
+  "not_verified": [
+    "complete original Kakeya provenance",
+    "membership of the full cap class",
+    "positive horizon",
+    "critical path extremality"
+  ]
+}
