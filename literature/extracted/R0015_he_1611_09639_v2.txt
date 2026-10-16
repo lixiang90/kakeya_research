@@ -1,0 +1,1630 @@
+                                                 DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX
+                                                                  ALGEBRAS
+
+                                                                                WEIKUN HE
+
+
+                                                   Abstract. We generalize Bourgain’s discretized sum-product theorem to ma-
+arXiv:1611.09639v2 [math.CO] 17 Oct 2017
+
+
+
+
+                                                   trix algebras.
+
+
+
+
+                                                                             1. Introduction
+                                             Let E be a ring. For subsets A and B of E, write
+                                                                            −A = {−a | a ∈ A} ,
+                                                                      A + B = {a + b | a ∈ A, b ∈ B}
+                                           and
+                                                                       A · B = {ab | a ∈ A, b ∈ B} .
+                                           Let s be a positive integer, we write sA for the s-fold sum-set A + · · · + A and As
+                                           for the s-fold product-set A · · · A. Moreover, we deﬁne recursively hAi1 = A ∪ (−A)
+                                           and for all positive integers s,
+                                                                                                            
+                                                              hAis+1 = hAis ∪ hAis + hAi1 ∪ hAis · hAi1 .
+                                           In other words, hAis is the set of elements obtained from at most s elements of
+                                           A ∪ (−A) by adding and multiplying them.
+                                              Roughly speaking, the sum-product problem asks, given a set A, whether A
+                                           grows fast under addition, multiplication and subtraction and if not, what are the
+                                           obstructions. Thus, a sum-product estimate is a lower bound for the size of hAis
+                                           with s ≥ 2. The ﬁrst result of this type is due to Erdős and Szemerédi [18] for
+                                           the ring of reals R. Since then, numerous works followed, either establishing sum-
+                                           product estimates for broader classes of rings or improving existing bounds. See [30]
+                                           for an elegant treatment and more history. In most of these estimates, the size of
+                                           a set is measured by its cardinality.
+
+                                           1.1. Bourgain’s discretized sum-product theorem. In [23], Katz and Tao in-
+                                           troduced the δ-discretized setting where the size of a set is measured by its covering
+                                           number by δ-balls. More precisely, assume that the ring E comes with a distance.
+                                           We denote by B(x, ρ) the closed ball with center x ∈ E and radius ρ > 0. Let δ > 0
+                                           be a positive real number, which will be referred to as the scale. For a bounded sub-
+                                           set A of E, its covering number Nδ (A) is the minimal number of points x1 , . . . , xN
+                                           such that closed balls B(x1 , δ), . . . , B(xN , δ) cover A. Katz and Tao conjectured a
+                                           sum-product estimate in this discretized setting for the ring R. The conjecture was
+                                           solved by Bourgain in [3, 4] :
+                                           Theorem 1 (Bourgain [4]). Given κ > 0 and σ < 1, there is ǫ > 0 such that the
+                                           following holds for δ > 0 sufficiently small. Let A be a subset of R, assume that
+                                                 (i) A ⊂ B(0, δ −ǫ ),
+                                                (ii) ∀ρ ≥ δ, Nρ (A) ≥ δ ǫ ρ−κ ,
+                                               (iii) Nδ (A) ≤ δ −σ−ǫ .
+                                                                                       1
+2                                        WEIKUN HE
+
+
+Then,
+(1)                       Nδ (A + A) + Nδ (A · A) ≥ δ −ǫ Nδ (A).
+   This theorem is of very diﬀerent nature from its discrete analogue [18]. Its
+proof required an involved multi-scale analysis. Additive structure is analyzed at
+each level (using a quantitative version of Freiman’s theorem due to Chang [13] in
+Bourgain’s ﬁrst proof in [3]) and then multiplicative information is used to show
+growth in size.
+   When the discretized setting was introduced in [23], it was conceived as a general
+strategy for proving results in the continuous regime (where sets are measured
+by its Hausdorﬀ dimension) while using ideas and results in the discrete regime
+where we have well-developed theory such as arithmetic combinatorics. Thus, one
+of the original motivations of Bourgain’s theorem was the Erdős-Volkmann ring
+conjecture [19] which asserts that no Borel measurable subring of R has Hausdorﬀ
+dimension strictly between 0 and 1. This conjecture was also settled by Edgar and
+Miller [17] using diﬀerent ideas. However, their proof is not quantitative. Moreover,
+as anticipated in [23], Bourgain’s theorem also makes progress in geometric measure
+theory, namely on the Falconer distance problem and the Furstenberg conjecture.
+   It turns out that the inﬂuence of Bourgain’s theorem does not stop here. More
+deep works have been done using this theorem. For example, it allowed Bour-
+gain and Yehudayoﬀ [10] to construct explicit monotone expanders. And, in [6, 7],
+Bourgain and Gamburd showed a spectral gap result in SU(d), d ≥ 2. Benoist and
+Saxcé [1] extended this work to all compact simple Lie groups. Introducing the
+notion of local spectral gap, Boutonnet-Ioana-Salehi Golseﬁdy [11] further gener-
+alized the result to non-compact settings. Both of these generalizations build on
+Saxcé’s discretized product theorem [15], whose proof uses Bourgain’s theorem in
+a crucial way. Let us also mention that combining Saxcé’s product theorem with
+Fourier analysis on Lie groups, Lindenstrauss-Saxcé [25] and Saxcé [16] obtained
+Erdős-Volkmann type results for Borel measurable subgroups in simple Lie groups.
+   In the same paper [4], Bourgain deduced from his sum-product theorem a Marstrand
+type projection theorem in the discretized setting. This result is one of the main in-
+gredients in the Bourgain-Furman-Lindenstrauss-Mozes theorem [5] on the equidis-
+tribution for orbits of subsemigroups of SLd (Z) on the torus. This last result can
+be used to study stationary measures. Namely, they obtained a stiﬀness result. It’s
+worth noting that the Bourgain-Furman-Lindenstrauss-Mozes theorem was applied
+by Bourgain and Varjú in [9] to show expansion in SLd (Z/qZ) with q an arbitrary
+integer.
+
+1.2. Statement of the main results. The aim of this article is to generalize
+Bourgain’s discretized sum-product theorem to matrix algebras. Let E be a real
+algebra of ﬁnite dimension endowed with a norm that makes it a normed vector
+space. Such a structure will be called a normed algebra. We want to understand,
+given a bounded subset A ⊂ E satisfying similar properties as in Theorem 1, how
+Nδ (hAis ) grows and whether (1) or similar estimates hold.
+   If we ask these questions for general real algebras, they can be as hard as the
+Freiman problem1 as illustrated by the following example. Let A0 be a bounded
+subset of R containing 0. Consider A the set of matrices of the form 10 a1 with
+                                                                              
+
+a ∈ A0 . Then for any positive integer s, every element in hAis is of the form k0 ak
+
+   1Freiman problem asks, in a given abelian group, which subsets grow slowly under addition.
+Freiman’s Theorem asserts that they are "close" to generalized arithmetic progressions. Obtain-
+ing a polynomial bound for this theorem is one of the fundamental open problems in additive
+combinatorics. See [31, Chapter 5].
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                       3
+
+
+with a ∈ s′ A0 and k ∈ {−s′ , . . . , s′ } where s′ is an integer depending on s. And
+conversely, for every a ∈ sA0 , we have s0 as ∈ hAis . Hence
+                          Nδ (sA0 ) ≤ Nδ (hAis ) ≪s Nδ (s′ A0 ).
+This means the growth of A under addition and multiplication is to some extent
+equivalent to the growth of A0 under only addition.
+   For this reason, we will restrict our attention to simple algebras. Recall that by
+the Wedderburn structure theorem and the Frobenius theorem, a simple real algebra
+of ﬁnite dimension is isomorphic to Mn (R), Mn (C) or Mn (H), the algebra of n× n
+matrices over the real numbers, the complex numbers, or the quaternions, for some
+n ≥ 1.
+Theorem 2. Let E be a normed simple real algebra of finite dimension. Given
+κ > 0 and σ < dim(E), there is ǫ > 0 depending on E, κ and σ such that the
+following holds for δ > 0 sufficiently small. Let A be a subset of E, assume that
+      (i) A ⊂ B(0, δ −ǫ ),
+     (ii) ∀ρ ≥ δ, Nρ (A) ≥ δ ǫ ρ−κ ,
+    (iii) Nδ (A) ≤ δ −σ−ǫ ,
+    (iv) for every proper subalgebra W ⊂ E, there is a ∈ A such that d(a, W ) ≥ δ ǫ .
+Then,
+(2)                   Nδ (A + A) + Nδ (A + A · A) ≥ δ −ǫ Nδ (A).
+   The case E = C is due to Bourgain and Gamburd [6]. So our result is new for
+dim(E) > 2. Let us also mention the work of Chang [14] who investigated the sum-
+product problem for real matrices and the result of Tao in [30] concerning general
+algebras, both in the discrete context.
+   The assumption (ii) is a non-concentration condition. It is to avoid the situation
+where A is a union of a bounded number of small balls. A subset A ⊂ E satisfying
+the condition (iv) will be said to be δ ǫ -away from subalgebras. This is the additional
+condition compared to the one-dimensional case. Without it A can be trapped in
+a small neighborhood of a proper subalgebra. Note the conclusion (2) is slightly
+weaker than that of Theorem 1. Here, instead of A · A, we need A + A · A to see
+the growth. Actually, the estimate (1) fails under the same assumptions as soon as
+dim(E) is greater than 1. Indeed, if A is a union of a segment of unit length and
+an orthonormal basis of E, then the set A satisﬁes the assumptions2 of Theorem 2
+but A + A and A · A are both unions of a bounded number of unit segments. Thus
+(1) fails for such A.
+   Our second result concerns linear actions on Euclidean spaces. Let X be a
+bounded subset of the Euclidean space Rn . Let A ⊂ End(Rn ) be a collection of
+linear endomorphisms. We can ask whether X grows under addition and transfor-
+mation by elements of A, provided that A is suﬃciently rich.
+Theorem 3. Let n be a positive integer. Given κ > 0 and σ < n, there is ǫ > 0
+such that the following holds for δ > 0 sufficiently small. Let A be a subset of
+End(Rn ) and X a subset of Rn , assume that
+     (i) A ⊂ B(0, δ −ǫ ),
+    (ii) ∀ρ ≥ δ, Nρ (A) ≥ δ ǫ ρ−κ ,
+   (iii) for every proper nonzero linear subspace W ⊂ Rn , there is a ∈ A and
+         w ∈ W ∩ B(0, 1) such that d(aw, W ) ≥ δ ǫ .
+   (iv) X ⊂ B(0, δ −ǫ ),
+    (v) ∀ρ ≥ δ, Nρ (X) ≥ δ ǫ ρ−κ ,
+   (vi) Nδ (X) ≤ δ −σ−ǫ .
+  2The condition dim(E) > 1 is needed to have assumption (iii).
+4                                       WEIKUN HE
+
+
+Then,
+(3)                  Nδ (X + X) + max Nδ (X + aX) ≥ δ −ǫ Nδ (X),
+                                     a∈A
+
+where aX = {ax | x ∈ X}.
+   This improves a previous result of Bourgain and Gamburd [7, Proposition 1]
+where a constant is required instead of δ ǫ in the irreducibility condition (iii). The
+proof of Bourgain and Gamburd seems to rely on this irreducibility hypothesis at
+all scales in a crucial way. Relaxing this hypothesis is the most important technical
+challenge in the proof of Theorem 3. A reason for which this improvement is
+important is that this kind of estimates are often used together with the Balog-
+Szemerédi-Gowers theorem, which requires restricting the sets we work with to
+subsets of size δ ǫ times the original size. This usually destroys all information
+above the scale δ ǫ .
+   As a simple corollary, we can obtain a "sum-bracket" estimate in simple Lie
+algebras. If A is a subset of a Lie algebra g, write [A, A] = {[a, b] | a, b ∈ A}.
+Corollary 4. Let g be a normed3 simple Lie algebra of finite dimension. Given
+κ > 0 and σ < dim(g), there is ǫ > 0 such that the following holds for δ > 0
+sufficiently small. Let A be a subset of g, assume that
+     (i) A ⊂ B(0, δ −ǫ ),
+    (ii) ∀ρ ≥ δ, Nρ (A) ≥ δ ǫ ρ−κ ,
+   (iii) Nδ (A) ≤ δ −σ−ǫ ,
+    (iv) for every proper Lie subalgebra W of g, there is a ∈ A such that d(a, W ) ≥
+         δǫ.
+Then,
+                     Nδ (A + A) + Nδ (A + [A, A]) ≥ δ −ǫ Nδ (A).
+1.3. Motivation. Theorem 3 is an interesting result on its own right, and we hope
+it leads to fruitful applications, just like the one dimensional case did. In particular,
+our work is primarily motivated by the following speciﬁc application. In [2], Benoist
+and Quint have generalized the stiﬀness result of Bourgain-Furman-Lindenstrauss-
+Mozes [5] to a much broader class of dynamical systems. In particular, for linear
+actions on tori, they do not need the proximality assumption in [5]. However, the
+results in [2] are not quantitative.
+    The approach in [5] is Fourier-analytic. While a subgroup Γ ⊂ SLd (Z) acts
+on the torus, its transpose t Γ acts on Fourier coeﬃcients. A large part of the
+proof in [5] focuses on the study of large Fourier coeﬃcients under this action.
+By the theory of random matrix products, if Γ is proximal, then large random
+products in Γ behave like rank one projections composed with rotations, if viewed
+at an appropriate scale. That is how Bourgain’s discretized projection theorem
+comes into play. It is clear that if one wants to avoid the proximality assumption
+in the Bourgain-Furman-Lindenstrauss-Mozes theorem, a higher rank discretized
+projection theorem is required. And as the rank one projection theorem follows
+from the sum-product theorem in R, a higher rank projection theorem can be
+proved using Theorem 3. This is the subject of a subsequent paper [21].
+1.4. Outline of the proofs. Both Theorem 2 and Theorem 3 are deduced from
+the following theorem.
+Theorem 5. Let E be a normed simple real algebra of finite dimension. Given
+κ > 0 and ǫ0 > 0, there is ǫ > 0 and an integer s ≥ 1 such that the following holds
+for δ > 0 sufficiently small. Let A be a subset of E, assume that
+    3We mean a norm which makes the underlying linear structure a normed vector space.
+            DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                           5
+
+
+    (i) A ⊂ B(0, δ −ǫ ),
+   (ii) ∀ρ ≥ δ, Nρ (A) ≥ δ ǫ ρ−κ ,
+  (iii) A is δ ǫ -away from subalgebras.
+Then,
+                             B(0, δ ǫ0 ) ⊂ hAis + B(0, δ).
+   Note that each of the conditions (ii) and (iii) rules out one obvious obstruction
+for hAis to grow. Indeed, ﬁrstly, if A is covered by a bounded number of balls of
+radius ρ with ρ < δ ǫ0 , then hAis is covered by Os (1) balls of radius ρ. Secondly, if
+A is contained in the unit ball4 and in the ρ-neighborhood of a proper subalgebra
+with ρ < δ ǫ0 , then hAis is contained in the Os (ρ)-neighborhood of the same proper
+subalgebra.
+   The main ingredient in the proof of Theorem 5 is a sum-product theorem [7,
+Corollary 8] due to Bourgain-Gamburd concerning the ring Cn , the n-fold direct
+product of C with itself. Let n be a positive integer. We denote by ∆ the set of
+diagonal matrices in Mn (C).
+Theorem 6 (Bourgain-Gamburd [7]). Given κ > 0 and n a positive integer, there
+is a positive integer s ≥ 1 such that, for δ > 0 sufficiently small, the following holds.
+Let A be a subset of Mn (C). Assume that
+     (i) A ⊂ B(0, 1),
+    (ii) Nδ (A) ≥ δ −κ ,
+   (iii) A ⊂ ∆ + B(0, δ).
+Then there is η ∈ ∆ with kηk = 1 such that
+                              [0, δ α ]η ⊂ hAis + B(0, δ α+β ),
+with some 0 ≤ α < C(n, κ) and some β > c(n, κ) > 0.
+   Let us sketch the proof of Theorem 5. In the following paragraphs, each s
+stands for some unspeciﬁed integer that can be bounded in terms of E and κ.
+In order to use the Bourgain-Gamburd theorem above, we need ﬁrst to embed the
+algebra E in Mn (C) and then produce a lot of nearly simultaneously diagonalizable
+elements in hAis . The standard way (since the work of Helfgott [22]) to produce
+such elements is to use the fact that the centralizer of a matrix with n distinct
+eigenvalues is simultaneously diagonalizable. Since the set of matrices with at least
+one multiple eigenvalue is an algebraic subvariety of Mn (C), to ﬁnd an element a ∈
+hAis with n distinct eigenvalues we use the technique of "escape from subvarieties",
+ﬁrst developed in [20]. For our discretized setting, a quantitative version of this
+technique is required since distance matters. For Lie groups, this is established
+in [15]. Here we adapt the argument in the sum-product setting.
+   Once we have such an element a, we consider the map ϕ : x 7→ ax − xa. We
+distinguish two cases.
+                                          ′
+                                                                 κ
+    (a) If ϕ(A) is large (Nδ (ϕ(A)) ≥ δ κ Nδ (A) with κ′ = 3 dim(E)  ), then we will
+                                   ′
+        prove Nδ (hAis ) ≥ δ −κ Nδ (A) in this case. We remark that all element
+        in ϕ(A) have zero trace. Hence if B is a set of matrices with a lot of
+        diﬀerent traces, then ϕ(A) + B contains a lot of disjoint translates of ϕ(A).
+        In particular, Nδ (ϕ(A) + B) ≫ Nδ (ϕ(A))Nδ (tr(B)). Thus, it suﬃces to
+        establish a lower bound on the size of the set of traces of hAis . Indeed, we
+                                   ′
+        can prove tr(hAis ) ≥ δ −2κ using the fact that the bilinear form (x, y) 7→
+        tr(xy) is non-degenerate.
+
+   4In this example, the norm on E is submultiplicative, i.e. ∀x, y ∈ E, kxyk ≤ kxkkyk. This
+assumption is not restrictive since every norm on E is equivalent to a submultiplicative one.
+6                                    WEIKUN HE
+
+
+    (b) Otherwise the set A must have a large intersection with a ﬁber of ϕ, i.e.
+                                                                ′
+        there is y ∈ Mn (C) such that A ∩ ϕ−1 (B(y, δ)) ≥ δ −κ . The diﬀerence set
+        of the above intersection consists of nearly simultaneously diagonalizable
+        matrices. And we can apply Theorem 6 to get a small segment at a smaller
+        scale (the segment is inside the δ α+β -neighborhood of hAis ).
+What we do is to repeat the same argument to hAis if case (a) happens. After a
+bounded number of times, case (a) won’t be possible because hAis ⊂ B(0, Os (δ −Os (ǫ) )).
+Hence eventually, case (b) is true, i.e. inside hAis , there is a segment of direction ξ
+and length δ α at scale δ α+β . Then, using the fact that the two-sided ideal generated
+by ξ is the whole algebra E, we can prove that the small segment will grow into a
+small ball under left and right multiplication by elements of A.
+    This almost ﬁnishes the proof. The only problem is that the ball obtained is not
+large enough and it is at a scale other than δ. As in [15], this issue can be solved
+                                                                       1       ǫ0
+by applying the above argument at various scales ranging from δ α+β to δ α .
+    That is how the proof of Theorem 5 goes. To deduce Theorem 2 from it, we
+argue by contradiction and use the fact that if both A + A and A + A · A are small
+(i.e. (2) fails), then for every s, hAis is small, and thus cannot grow into a large
+ball as Theorem 5 asserts.
+    To prove Theorem 3, a little more work is needed. First, in the special case where
+the collection of endomorphisms is so large that for every x ∈ X, Ax = {ax | a ∈ A}
+contains a ball of radius kxk, a Fubini-type argument yields (3). Then, using
+additive combinatorics, we can show that if (3) fails, then we have an upper bound
+for Nδ (X + aX) for every a ∈ hAis , s ≥ 1. Therefore, the idea of the proof is to
+apply Theorem 5 to make A grow into a fat ball in some subalgebra E ⊂ Mn (R)
+so that we can use the special case. Here the subalgebra E can be understood as
+the subalgebra approximately generated by the set A. It inherits the irreducibility
+property (assumption (iii) in Theorem 3) from A. In particular, Rn is an irreducible
+representation of E. Hence, by the Wedderburn structure theorem, E is isomorphic
+to Mn (R) or M n2 (C) or M n4 (H). Here, a technical issue appears : in Theorem 5,
+the result depends on the norm on E. In the present situation, the norm on E
+is induced from that on Mn (R). To have a control on it, we need a quantitative
+version of the Wedderburn theorem. Indeed, we show that under the quantitative
+irreducibility condition (iii) of Theorem 3, the normed algebra E is isomorphic
+to one of the three matrix algebras endowed with standard operator norm via a
+bi-Lipschitz map with the Lipschitz constant controlled independently of A.
+
+
+1.5. Organization of the paper. In Section 2 we introduce some deﬁnitions and
+notations and then recall some useful tools from additive combinatorics and the
+theory of semianalytic sets. Sections 3–5 prepare for the proof of the main results.
+More precisely, Section 3 is dedicated to the "escape from subvariety" technique.
+Section 4 deals with a lower bound on the size the set of traces. And in Section 5 we
+establish an eﬀective version of the Wedderburn structure theorem. We complete
+the proof of Theorem 5 and deduce Theorem 2 in Section 6. Finally Theorem 3 is
+proved in Section 7 and Corollary 4 is deduced in Section 8.
+
+
+Acknowledgements. This work is part of my Ph.D. thesis. I would like to thank
+my advisors Emmanuel Breuillard and Péter Varjú for guiding me during my re-
+search. I am also grateful to Nicolas de Saxcé for very helpful discussions. I thank
+all of them as well as the anonymous referee for their invaluable advice which im-
+proved greatly the presentation of this paper.
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                         7
+
+
+                                  2. Preliminaries
+  We ﬁrst set up notation and terminology and then recall some tools that we shall
+need such as the Ruzsa calculus and the Łojasiewicz inequality.
+
+2.1. Notations and definitions. Throughout this paper, n denotes a positive
+integer. We use Landau notations f = O(g) and Vinogradov notations f ≪ g.
+Most of our estimates are about objects in some ambient space (a normed vector
+space or a normed algebra) and we write f ≪V g and f = OV (g) to indicate that
+the implied constant depends not only on the dimension of V but also on the norm
+of V . And we omit the subscript when it depends only on the dimension n.
+   We endow the space Rn with its usual Euclidean norm k · k and Cn and Hn with
+their respective l2 -norm. All algebras are over R and unitary. In an algebra E, 1E
+denotes the multiplicative identity. All subalgebras of E contain 1E . When K is
+a division algebra over R, denote by Mn (K) the algebra of n by n matrices with
+coeﬃcients in K. For a real linear space V , denote by End(V ) the algebra of real
+endomorphisms of V . We identify End(Rn ) with Mn (R) in the usual way. For
+0 ≤ k ≤ dim(V ), denote by Gr(k, V ) the Grassmannian of k-dimensional subspaces
+in V . In any normed vector space, d( · , · ) stands for the distance induced by the
+norm and B(x, r) stands for the closed ball with center x and radius r.
+   Let δ > 0. As mentioned in the introduction, if A is a bounded subset of a normed
+vector space V , we denote by Nδ (A) its external covering number by δ-balls. This
+number is also known as the metric entropy of A. We say A is δ-separated if for
+any a ∈ A, a is the only element in the intersection B(a, δ) ∩ A. The following
+properties are used throughout this paper. If Ã is a maximal δ-separated subset of
+A, then
+                         Nδ (A) ≤ |Ã| ≤ N δ (A) ≪V Nδ (A).
+                                            2
+
+Let W be a normed vector space of dimension n. Let 0 < ρ ≤ 1 be a parameter. If
+ϕ : V → W is a ρ−1 -Lipschitz map, then
+                           Nδ ϕ(A) ≪W ρ−n Nδ (A).
+                                    
+
+   Since all our spaces are normed, we will need a notion of good bases : those whose
+vectors are well spaced. When V is Rn or Cn endowed with an l2 -norm, recall that
+its norm induces an l2 -norm on each of its exterior powers. In this case the best
+bases are clearly orthonormal ones. Note that a basis (a1 , . . . , an ) is orthonormal
+if and only if ∀k, kak k ≤ 1 and ka1 ∧ · · · ∧ an k ≥ 1. If we loosen this condition,
+we get a notion of good bases. However, the norm on an exterior power of V is
+properly deﬁned only when V is equipped with an l2 -norm and we will deal with
+other norms such as the operator norm on End(Rn ). Thus, we need an equivalent
+formulation.
+Lemma 7. Let (a1 , . . . , an ) be a basis of a normed vector space V over R or C,
+then the following conditions are equivalent in the sense that if the i-th condition
+                                                                           O(1)
+holds for some 0 < ρi ≤ 1 then the j-th condition holds for some ρj ≫V ρi .
+    (i) For all k = 1, . . . , n, kak k ≤ ρ−1
+                                           1 and d(ak , Span(a1 , . . . , ak−1 )) ≥ ρ1 .
+   (ii) For all k = 1, . . . , n, kak k ≤ ρ−1
+                                           2 and all x ∈ V , its coordinates (xk )k in the
+        basis (ak )k satisfy, ∀k, |xk | ≤ ρ−12 kxk.
+And moreover, if the norm on V is an l2 -norm, then they are also equivalent to the
+following conditions.
+  (iii) For all k = 1, . . . , n, kak k ≤ ρ−1
+                                           3 and ka1 ∧ · · · ∧ an k ≥ ρ3 .
+  (iv) Any endomorphism that maps an orthonormal basis to (a1 , . . . , an ) is ρ−1
+                                                                                 4 -
+        bi-Lipschitz.
+8                                       WEIKUN HE
+
+
+   In condition (i), we adhere to the convention that Span(∅) means the zero sub-
+space. This lemma is already known in [20, Lemma 7.5] and [15, Lemma 2.16]. We
+give an alternative proof.
+Proof. Every norm on a ﬁnite dimensional linear space is equivalent to an l2 -norm.
+Hence it suﬃces to prove the equivalences in the case where V = Rn or Cn endowed
+with the standard norm. First, (i) implies (iii) since we have
+                                      n
+                                      Y
+                 ka1 ∧ · · · ∧ an k =   d(ak , Span(a1 , . . . , ak−1 )).
+                                       k=1
+   To see that (iii) implies (ii), let x ∈ E, then x = x1 a1 + · · · + xn an with (xi )i
+the coordinates of x in (ai )i . On the one hand,
+                                                                  −(n−1)
+                kx ∧ a2 ∧ · · · ∧ an k ≤ kxkka2 k · · · kan k ≤ ρ3         kxk.
+On the other hand, x ∧ a2 ∧ · · · ∧ an = x1 a1 ∧ · · · ∧ an so
+                kx ∧ a2 ∧ · · · ∧ an k = |x1 | ka1 ∧ · · · ∧ an k ≥ ρ3 |x1 |.
+               −n
+Hence |x1 | ≤ ρ3 kxk and the proof is similar for the other coordinates.
+   Equivalence between (ii) and (iv) is clear.
+   Finally, (iv) implies (i) because the inequality in (i) holds for an orthonormal
+basis with ρ1 = 1 and a ρ−1                                                   −1
+                            4 -bi-Lipschitz map will only introduce a factor ρ4  or
+ρ4 to these inequalities.                                                        
+Remark. From the proof we see that the implied constant in the notation ≫V in
+the lemma can be 1 if V is endowed with an l2 -norm. Also, if V0 is a ﬁxed normed
+vector space, then this implied constant is uniform for all subspaces V of V0 .
+    Lemma 7 suggests the following deﬁnition.
+Definition. Let 0 < ρ ≤ 1 be a parameter. We say a basis (a1 , . . . , an ) of a normed
+vector space V is ρ-almost orthonormal if it satisﬁes the condition (i) in Lemma 7
+with ρ1 = ρ.
+Definition. Let 0 < ρ ≤ 1 be a parameter. Let V be a normed vector space. We
+say that a subset A ⊂ V is ρ-away from linear subspaces if for every proper linear
+subspace W ⊂ V , there is a ∈ A such that d(a, W ) ≥ ρ.
+   Let E be a normed algebra. We say that a subset A ⊂ E is ρ-away from subal-
+gebras if for every proper subalgebra W ⊂ E, there is a ∈ A such that d(a, W ) ≥ ρ.
+   In a similar way, we deﬁne the notion of being ρ-away from Lie subalgebras.
+    We have the following observation.
+Lemma 8. Let 0 < ρ ≤ 21 be a parameter. In a normed vector space V of fi-
+nite dimension, if a subset A ⊂ B(0, ρ−1 ) is ρ-away from linear subspaces, then
+A contains a ρ-almost orthonormal basis. Conversely, if A contains a ρ-almost
+orthonormal basis, then A is ρOV (1) -away from subspaces.
+Proof. Assume that A ⊂ B(0, ρ−1 ) is ρ-away from linear subspaces. We can con-
+struct a ρ-basis from the set A by induction. For k = 1, . . . , dim(V ), suppose that
+a1 , . . . , ak−1 are constructed, then Span(a1 , . . . , ak−1 ) is a proper subspace of V .
+Hence there is ak ∈ A such that d(ak , Span(a1 , . . . , ak−1 )) ≥ ρ.
+    Conversely, assume that A contains a ρ-almost orthonormal basis (ai ). For any
+proper linear subspace W ⊂P       V , there is x ∈ V such that kxk = d(x, W ) = 1. By
+Lemma 7, we can write x = i xi ai , with |xi | ≤ ρ−OV (1) , for all i. Consequently,
+                                X                              X
+                     d(x, W ) ≤    |xi |d(ai , W ) ≤ ρ−OV (1)      d(ai , W ).
+                               i                              i
+                                             OV (1)
+Hence there is i such that d(ai , W ) ≥ ρ             .                                  
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                      9
+
+
+Definition. Let 0 < ρ ≤ 1 be a parameter. Let A be a subset of End(Rn ). We
+say that A acts ρ-irreducibly on Rn if for every proper nonzero linear subspace
+W ⊂ Rn , there is a ∈ A and w ∈ W ∩ B(0, 1) such that d(aw, W ) ≥ ρ.
+   We say that a subalgebra E ⊂ End(Rn ) acts ρ-irreducibly on Rn if the set
+E ∩ B(0, 1) acts ρ-irreducibly on Rn .
+2.2. Additive combinatorial tools. Let us denote by O(N ) an unspeciﬁed ﬁnite
+set of cardinality O(N ). Let δ > 0 be the scale. Each of the following combinatorial
+facts has a (better-known) counterpart in the discrete setting. We will need them
+in the discretized setting. Throughout this subsection, A and B denote bounded
+subsets of a normed vector space (or algebra when multiplication is involved). All
+implied constants in Landau and Vinogradov notations depend on the implicit
+ambient space.
+Lemma 9 (Ruzsa’s covering lemma). For all 0 < ρ < 1, if Nδ (A+B) ≤ ρ−1 Nδ (A),
+then
+                          B ⊂ A − A + O(ρ−1 ) + B(0, δ).
+Proof. Let B0 be a maximal subset of B such that the translates b+A+B(0, 2δ ) b∈B
+                                                                                 
+                                                                                     0
+are disjoint. On the one hand, for every b ∈ B, the translate b + A + B(0, 2δ ) is not
+disjoint from b′ +A+B(0, 2δ ) for some b′ ∈ B0 which means b ∈ A−A+B0 +B(0, δ).
+On the other hand, by the disjointness,
+                           Nδ (A + B) ≫ N δ (A + B0 ) ≥ |B0 |N δ (A).
+                                            2                     2
+
+                  −1
+Hence |B0 | ≪ ρ        .                                                            
+Lemma 10 (Plünnecke-Ruzsa inequality). For any parameter 0 < ρ ≤ 12 , if Nδ (A+
+A) ≤ ρ−1 Nδ (A) then for all integers k ≥ 0 and l ≥ 0,
+                               Nδ (kA − lA) ≪ ρ−O(k+l) Nδ (A).
+Proof. Consider the case where A ⊂ Rn with l∞ -norm on Rn . We will approximate
+A by points on the lattice δ · Zn . Let
+                   A′ = a ∈ δ · Zn | A ∩ a + B(0, δ) 6= ∅ .
+                                                   
+
+The sets A and A′ are close in Hausdorﬀ distance : A ⊂ A′ + B(0, δ) and A′ ⊂
+A + B(0, δ). As a consequence, A′ + A′ ⊂ A + A + B(0, 2δ), and hence
+                   |A′ + A′ | ≪ Nδ (A + A) ≤ ρ−1 Nδ (A) ≪ ρ−1 |A′ |.
+Moreover, for any k ≥ 0 and any l ≥ 0, kA − lA ⊂ kA′ − lA′ + B(0, (k + l)δ), and
+hence
+                            Nδ (kA − lA) ≪k,l |kA′ − lA′ |.
+We conclude the proof by applying the classical Plünnecke-Ruzsa inequality (see [31,
+Proposition 2.26] or [27]) to the set A′ in the discrete additive group (δ · Zn , +) 
+   The following lemma is the sum-product analogue of the "small tripling implies
+small n-pling" property in groups. This discretized version can be proved by mim-
+icking the proof of its discrete counterpart in [12, Lemma 5.5].
+Lemma 11. For any parameter 0 < ρ ≤ 21 , if A ⊂ B(0, ρ−1 ) and Nδ (A + A) +
+Nδ (A + A · A) ≤ ρ−1 Nδ (A), then for any positive integer s,
+                                  Nδ (hAis ) ≤ ρ−Os (1) Nδ (A).
+Definition. Let n and m be positive integers. For a bounded subset A ⊂ Rn and
+a Lipschitz map ϕ : Rn → Rm . Deﬁne the ϕ-energy of A at scale δ to be
+             ω δ (ϕ, A) = Nδ {(a, a′ ) ∈ A × A | kϕ(a) − ϕ(a′ )k ≤ δ} .
+                                                                     
+10                                             WEIKUN HE
+
+
+    Here we view A × A as a subset of Rn × Rn ≃ R2n . Thus, the distance on A × A
+is induced by the Euclidean distance on R2n .
+
+Lemma 12. Let n and m be positive integers. Let A ⊂ Rn be a bounded subset
+and ϕ : Rn → Rm a ρ−1 -Lipschitz map.
+     (i) We have
+                                            Nδ (A)2
+                                   Nδ ϕ(A) ≫           .
+                                             ωδ (ϕ, A)
+     (ii) Let Ã be a maximal δ-separated subset of A. Then
+                         n                                                  o
+           ωδ (ϕ, A) ≪ # (a, a′ ) ∈ Ã × Ã | kϕ(a) − ϕ(a′ )k ≤ (1 + 2ρ−1 )δ .
+
+Proof. Let Ã be a maximal δ-separated subset of A.
+     (i) Let Y be a ﬁnite subset of Rm such that ϕ(A) is covered by the balls of
+         radius 2δ centered at points in Y . Then
+                                         X                  δ 
+                                |Ã| ≤         Ã ∩ ϕ−1 B(y, ) ,
+                                                            2
+                                         y∈Y
+
+         and
+                          X                   δ 2
+                                 Ã ∩ ϕ−1 B(y, )   ≪ ω δ (ϕ, A).
+                                              2
+                          y∈Y
+
+         It follows from the Cauchy-Schwarz inequality that
+
+                                                     |Ã|2
+                                         |Y | ≫              .
+                                                  ω δ (ϕ, A)
+
+     (ii) For each a ∈ A, choose ã ∈ Ã such that ka−ãk ≤ δ. Let Ω be a maximal 8δ-
+          separated subset of {(a, a′ ) ∈ A × A | kϕ(a) − ϕ(a′ )k ≤ δ}. Then the map
+          (a, a′ ) 7→ (ã, ã′ ) is injective from Ω to the set on the right-hand side of the
+          desired inequality.                                                              
+
+2.3. Łojasiewicz inequality. The Łojasiewicz inequality [26, Théorème 2, page
+62] is a powerful tool which allows us to extract quantitative estimates from alge-
+braic facts. Let us recall it here. Consider
+
+Theorem 13 (Łojasiewicz inequality). Let M be a real analytic manifold endowed
+with a Riemannian distance d. Let f : M → R be a real analytic map. If K is a
+compact subset of M , then there is C > 0 depending on K and f such that for all
+x ∈ K,
+                                    1
+                          |f (x)| ≥ min{d(x, Z)C , 1}
+                                    C
+where Z = {x ∈ M | f (x) = 0}.
+
+   Above we adhere to the convention that min{d(x, Z)C , 1} = 1 if Z is the empty
+set. This theorem is stated in [26] for M which are open sets of Euclidean spaces.
+To see that is also valid for real analytic manifolds endowed with a Riemannian
+distance, it suﬃces to read the map f in coordinate charts and observe that a
+coordinate chart of a Riemannian manifold is necessarily bi-Lipschitz to its image
+(endowed with the distance induced from the Euclidean space).
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                       11
+
+
+                         3. Escaping from subvarieties
+   In this section we show that if a subset A of a simple algebra is not trapped in
+any subalgebra then we can escape from any subvariety within a bounded number
+of steps using addition and multiplication. The number of necessary steps depends
+only on the subvariety and the ambient algebra. This is achieved in two steps. First,
+using only multiplication we can escape from linear subspaces (Proposition 16).
+Then, once the set is away from linear subspaces, we can escape from subvarieties
+using only addition (Lemma 17). Note that everything is quantitative. By escaping
+from a subvariety we mean getting outside a neighborhood of that subvariety.
+3.1. Escaping from linear subspaces. Let A be a subset of a normed algebra
+E. Obviously, if A is away from linear subspaces, then it is away from subalgebras.
+We will see in this subsection that the converse is true if we are allowed to replace
+A with its product set As .
+   The following is the subalgebra version of [15, Lemma 2.5]. The proof is essen-
+tially the same.
+Lemma 14. Let 0 < ρ ≤ 21 be a parameter. Let A be a subset of a normed
+algebra E of finite dimension. If A ⊂ B(0, ρ−1 ) and A is ρ-away from subalgebras,
+then A contains a subset of cardinality at most dim(E) which is ρOE (1) -away from
+subalgebras.
+Proof. Let C ≥ 1 be a large constant. Suppose that a1 , . . . , ak−1 are constructed.
+If {a1 , . . . , ak−1 } is ρC -away from subalgebras, then we are done. Otherwise there
+is a proper subalgebra W such that for all i = 1, . . . , k − 1, d(ai , W ) < ρC . Then
+choose from A an element ak such that d(ak , W ) ≥ ρ.
+   We prove by induction that at each step (a1 , . . . , ak ) is a ρOE (1) -almost or-
+thonormal basis of its linear span Vk = Span(a1 , . . . , ak ). This is obvious for
+k = 1. For k ≥ 2, suppose that (a1 , . . . , ak−1 ) is a ρOE (1) -almost orthonormal
+basis of Vk−1 . We can write ak = x1 a1 + · · · + xk−1 ak−1 + a′k with xi ∈ R and
+ka′k k = d(ak , Vk−1 ). But x1 a1 + · · · + xk−1 ak−1 is the decomposition of the vector
+ak − a′k in the ρOE (1) -almost orthonormal basis (a1 , . . . , ak−1 ). Hence for every
+i = 1, . . . k − 1, |xi | ≤ 2ρ−OE (1) kak k ≤ ρ−OE (1) . And then
+                                     k−1
+                                     X
+                  ρ ≤ d(ak , W ) ≤         |xi |d(ai , W ) + ka′k k
+                                     i=1
+                                      −OE (1)
+                                ≤ρ                  max d(ai , W ) + ka′k k
+                                                 1≤i≤k−1
+
+                                ≤ ρC−OE (1) + ka′k k
+When C is large enough, this implies d(ak , Vk−1 ) = ka′k k ≥ ρ2 . It follows that
+(a1 , . . . , ak ) is a ρOE (1) -almost orthonormal basis of Vk .
+   We conclude that the construction must stop after at most dim(E) steps.      
+  Then we have the analogue of [15, Proposition 2.7].
+Lemma 15. Let 0 < ρ ≤ 21 be a parameter. Let A be a subset of a normed simple
+algebra E of finite dimension. If A ⊂ B(0, ρ−1 ) and A is ρ-away from subalgebras,
+then for every proper nonzero linear subspace W of E, there is w ∈ W ∩ B(0, 1)
+and a ∈ A such that
+                   d(aw, W ) ≥ ρOE (1)         or    d(wa, W ) ≥ ρOE (1) .
+Proof. In view of Lemma 14, we can assume that A has exactly n = dim(E)
+elements a1 , . . . , an . We can further assume that A ⊂ B(0, 1) for we can replace A
+with a contraction ρ · A. We will treat the case where the norm on E is Euclidean.
+12                                         WEIKUN HE
+
+
+The general case follows easily since every norm on E is equivalent to an Euclidean
+one. Suppose the lemma were false. Then there would be a linear subspace W0
+of dimension 0 < k < n such that for all w ∈ W0 ∩ B(0, 1) and all i = 1, . . . , n,
+d(ai w, W0 ) < ρC and d(wai , W0 ) < ρC for some large C. The actual value of this
+constant will be determined by the Łojasiewicz inequality used below.
+   Consider the map f : Gr(k, E) × E n → R deﬁned by
+                                        n Z
+                                        X
+             f (W ; x1 , . . . , xn ) =     d(xi w, W )2 + d(wxi , W )2 dw
+                                     i=1   W ∩B(0,1)
+
+where the integration dw is with respect to the k-dimensional Lebesgue measure
+on W ∩ B(0, 1). This map is well-deﬁned and real analytic. This can be seen by
+observing that the tautological bundle π : T → Gr(k, E) of the Grassmannian has
+around every point a real analytic local trivialization ϕ : U × Rk → π −1 (U) such
+that ∀W ∈ U, ϕ(W, · ) : Rk → π −1 ({W }) ≃ W is an isometry of Euclidean spaces.
+   From the choice of W0 it follows that f (W0 ; a1 , . . . , an ) ≪ ρC . Hence by the
+Łojasiewicz inequality (Theorem 13) applied to the compact set Gr(k, E)×B(0, 1)n ,
+there is W1 ∈ Gr(k, E) and b1 , . . . , bn ∈ E such that f (W1 ; b1 , . . . , bn ) = 0 and
+∀i = 1, . . . , n, kai − bi k < ρ if the constant C is chosen large enough. The map f
+vanishing at (W1 ; b1 , . . . , bn ) is equivalent to every bi being in the subalgebra
+                    EW1 = {x ∈ E | xW1 ⊂ W1 and W1 x ⊂ W1 } .
+  Now our set A is not ρ-away from the subalgebra EW1 . Hence EW1 must be the
+whole algebra E, which in turn implies that W1 is a two-sided ideal in E. This
+contradicts the assumption that E is simple.                                
+
+Proposition 16. Let 0 < ρ ≤ 12 be a parameter. Let A be a subset of a normed
+simple algebra E of dimension n. Assume that A ⊂ B(0, ρ−1 ) and A is ρ-away
+from subalgebras. Write A1 = {1E } ∪ A. Then for any η ∈ E with ρ ≤ kηk ≤ ρ−1 ,
+the set An1 ηAn1 contains a ρOE (1) -almost orthonormal basis of E. And, equivalently,
+An1 ηAn1 is ρOE (1) -away from linear subspaces in E.
+Proof. We construct the basis inductively. First, let η1 = η. Then for k = 1, . . . , n−
+1, suppose that after k steps, we have constructed η1 , . . . , ηk ∈ Ak ηAk such that
+(η1 , . . . , ηk ) is a ρOE (1) -almost orthonormal basis of Wk = Span(η1 , . . . , ηk ). By
+Lemma 15, there is w ∈ Wk ∩B(0, 1) and a ∈ A such that either d(aw, W ) ≥ ρOE (1)
+or d(wa, W ) ≥ ρOE (1) . Let us deal with the former case, the latter case being
+similar. We can write w in the ρOE (1) -almost orthonormal basis (η1 , . . . , ηk ),
+                                  w = w1 η1 + · · · + wk ηk .
+By Lemma 7, the coeﬃcients wi satisfy ∀i, |wi | ≤ ρ−OE (1) . Hence
+                           k
+                           X
+            d(aw, Wk ) ≤         |wi |d(aηi , Wk ) ≤ ρ−OE (1) max d(aηi , Wk ).
+                                                                i=1,...,k
+                           i=1
+
+Hence it is possible to pick i∗ ∈ {1, . . . , k} so that, writing ηk+1 = aηi∗ , we have
+d(ηk+1 , Wk ) ≥ ρOE (1) . Then (η1 , . . . , ηk+1 ) is a ρOE (1) -almost orthonormal basis of
+its linear span Wk+1 . This ﬁnishes the proof of the inductive step.                       
+
+3.2. Escaping from subvarieties, Rn case. In this subsection we show how to
+escape from subvarieties using addition starting from a set which is away from linear
+subspaces. Clearly it suﬃces to deal with the case of a hypersurface. Note that if
+the hypersurface is deﬁned by a polynomial P then a point a ∈ Rn is far away from
+it if |P (a)| is large. Here is the statement.
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                       13
+
+
+Lemma 17. Let V be a normed vector space and P : V → R a nonzero polynomial
+map. Then there is an positive integer s depending only on the degree of P and the
+dimension of V such that the following holds for all parameters 0 < ρ ≤ 12 . Let A
+be a subset of V with A ⊂ B(0, ρ−1 ). If A is ρ-away from linear subspaces then
+there is a ∈ s(A ∪ {0}) such that
+                                 |P (a)| ≫V,P ρOV,P (1) .
+  It is a straightforward consequence of Lemma 8 and the following lemma.
+Lemma 18. Let d ≥ 1 and 0 < ρ < 1. Let (a1 , . . . , an ) be a ρ-almost orthonormal
+basis of Rn . Define
+                       
+                   Γd = x1 a1 + · · · + xn an | ∀i, xi ∈ {0, . . . , d} .
+For any polynomial function P : Rn → R of degree at most d, we have
+                        sup |P (x)| ≪n,d ρ−On,d (1) max|P (γ)|.
+                      x∈B(0,1)                         γ∈Γd
+
+Proof. We write Rd [Xi ]1≤i≤n for the space of polynomials on Rn of degree at most
+d. First consider the case where (a1 , . . . , an ) is the standard basis. Let
+                   Λd = (x1 , . . . , xn ) ∈ Rn | ∀i, xi ∈ {0, . . . , d} .
+                        
+
+By a simple induction on the number of variables n, we see that if P ∈ Rd [Xi ]1≤i≤n
+and vanishes on Λd then it must be the zero polynomial. Therefore the linear map
+                           Rd [Xi ]1≤i≤n   →       RΛd
+                                P          7 → (P (λ))λ∈Λd ,
+is injective. Hence the coeﬃcients of P are controlled by maxλ∈Λd |P (λ)| and con-
+sequently for all r ≥ 1,
+(4)                         sup |P (x)| ≪n,d rd max |P (λ)|.
+                          x∈B(0,r)                 λ∈Λd
+
+   For the general case consider ψ : Rn → Rn the unique linear map which sends the
+standard basis to (a1 , . . . , an ). Thus ψ(Λd ) = Γd and, by Lemma 7, ψ(B(0, ρ−O(1) )) ⊇
+B(0, 1). We obtain the desired estimate by applying inequality (4) to the polyno-
+mial P ◦ ψ and r = ρ−O(1) .                                                            
+
+                             4. Trace set estimates
+   To each ﬁnite-dimensional real algebra E we can associate a trace function trE
+and a bilinear form τE . Let x be an element of E, we deﬁne trE (x) to be the trace of
+the left multiplication by x as an endomorphism of E. For example, if E = Mn (R),
+then trE is n times the usual trace for matrices.
+   Let x, y ∈ E. We deﬁne τE (x, y) = trE (xy). Thus τE : E ×E → R is a symmetric
+bilinear form. Observe that its kernel ker τE is a two-sided ideal of R. It follows
+that τE is non-degenerate if E is semisimple, i.e. direct sum of simple algebras.
+Note that the converse is also true, but we won’t need this fact here.
+   Let A be a bounded subset of a semisimple algebra E. In this section, we are
+interested in the size of the trace set of A2 :
+                           trE (A2 ) = {trE (ab) | a, b ∈ A} .
+The aim is to establish a lower bound under appropriate conditions. Here is the
+result.
+Lemma 19. Given ǫ > 0, the following is true for sufficiently small δ > 0. Let E
+be a normed semisimple algebra. Let A be a subset of E such that
+      · A ⊂ B(0, δ −ǫ ),
+14                                        WEIKUN HE
+
+
+        · A is δ ǫ -away from linear subspaces in E.
+                                         1
+Then Nδ (trE (A2 )) ≫E δ O(ǫ) Nδ (A) n , where n = dim(E).
+     We begin with a lemma.
+Lemma 20. Let 0 < ρ ≤ 21 be a parameter. Let V be a normed vector space
+of dimension n and τ : V × V → R a non-degenerate bilinear form. If (ai ) is a
+ρ-almost orthonormal basis of V , then for all x ∈ V ,
+                               kxk ≪V,τ ρ−O(1) max|τ (ai , x)|.
+                                                    i
+
+   The V and τ in the subscript indicate that the implied constant depends not
+only on V but also on the bilinear form.
+
+Proof. It suﬃces to deal with the special case where V = Rn endowed with the
+standard Euclidean norm. Let g be the endomorphism which maps the standard
+basis to the ρ-almost orthonormal basis (ai ). By Lemma 7, kg −1 k ≤ ρ−O(1) . Let
+s be the matrix of τ in the standard basis. Then a straightforward computation
+shows that for any x ∈ V , tgsx is the column vector (τ (ai , x))i . Hence
+                   kxk ≤ ks−1 kktg −1 kktgsxk ≪n,τ ρ−O(1) max|τ (ai , x)|.                  
+                                                                i
+
+Proof of Lemma 19. By Lemma 8, A contains a δ ǫ -almost orthonormal basis (ai )1≤i≤n
+of E. Thus, by Lemma 20 applied to the non-degenerate bilinear form τE , for all
+x ∈ E, kxk < δ 1−O(ǫ) whenever |trE (ai x)| < δ for all i = 1, . .. , n.
+   Consider the map Θ : A → Rn deﬁned by x 7→ trE (ai x) i . On the one hand,
+this map is "almost injective" with the δ-blurred vision : for all x, y ∈ A, if kΘ(x) −
+Θ(y)k < δ then kx − yk < δ 1−O(ǫ) . It follows that
+                       Nδ (Θ(A)) ≫n Nδ1−O(ǫ) (A) ≫E δ O(ǫ) Nδ (A).
+On the other hand, the set Θ(A) is contained in the n-fold Cartesian product
+tr(A2 ) × · · · × tr(A2 ), hence
+                                Nδ (Θ(A)) ≪n Nδ (tr(A2 ))n .
+We obtain the desired estimate by combining the two inequalities above.                     
+
+                         5. Effective Wedderburn theorem
+   The Wedderburn theorem (see [24, Chapter XVII, §3] or [29]) states that if Rn is
+an irreducible representation of an algebra E, then E is isomorphic to either Mn (R)
+or M n2 (C) or M n4 (H). In this section we prove a quantiﬁed version of this algebraic
+fact. From now on, we endow these matrix algebras with operator norms5. And
+throughout this paper, M n2 (C)R denotes a ﬁxed embedding of M n2 (C) in Mn (R)
+and M n4 (H)R a ﬁxed embedding of M n4 (H) in Mn (R).
+
+Proposition 21. Let 0 < ρ ≤ 12 be a parameter. Let E be a subalgebra of Mn (R)
+acting ρ-irreducibly on Rn . Then either E = Mn (R) or E is conjugate to M n2 (C)R
+or to M n4 (H)R by a change of basis matrix g ∈ GL(Rn ) satisfying kgk + kg −1 k ≤
+ρ−O(1) .
+   In particular, E is isomorphic to Mn (R) or M n2 (C) or M n4 (H) by an isomor-
+phism which is ρ−O(1) -bi-Lipschitz.
+     This result will be useful in the proof of Theorem 3.
+
+     5Each matrix is seen as an endomorphism of the Euclidean space Rn , Cn ≃ R2n or Hn ≃ R4n .
+            DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                             15
+
+
+5.1. Effective diagonalization. The following lemma is implicit in [20, proof of
+Proposition 7.4]. We include its proof for the sake of completeness.
+Lemma 22. Let 0 < ρ ≤ 21 be a parameter. Let a ∈ Mn (C) be a diagonalizable
+matrix. Assume that kak ≤ ρ−1 and its spectrum is a ρ-separated set (it may
+contain multiple eigenvalues). Then a is diagonal in a ρO(1) -almost orthonormal
+basis of Cn .
+Proof. Let λ1 , . . . , λn be the eigenvalues of a (they appear with the corresponding
+multiplicity). Let v1 , . . . , vn be the corresponding eigenvectors. Each vi can be
+chosen to be of unit length and we can further assume that (vi , vj ) = 0 whenever
+i 6= j but λi = λj . For k = 1, . . . , n, write Vk = Span(v1 , . . . , vk ). We will prove by
+induction on k that (v1 , . . . , vk ) is a ρOk (1) -almost orthonormal basis of Vk . This is
+clear for k = 1.
+    Let k ∈ {1, . . . , n − 1}. Suppose that (v1 , . . . , vk ) is a ρOk (1) -almost orthonormal
+basis of Vk . Let us show that d(vk+1 , Vk ) ≥ ρOk (1) and thus (v1 , . . . , vk , vk+1 )
+is a ρOk (1) -almost orthonormal basis of Vk+1 . Without loss of generality we can
+assume that among the the eigenvalues λ1 , . . . , λk , only λl+1 , . . . , λk are equal to
+λk+1 for some l ≤ k. Considering the orthogonal projection of vk+1 onto Vk , we
+can decompose the vector vk+1 into
+                                                  k
+                                                  X
+                                                                   ′
+(5)                                      vk+1 =           xi vi + vk+1 ,
+                                                    i=1
+                               ′
+where x1 , . . . , xk ∈ C and vk+1                                          ′
+                                   ∈ Vk⊥ . In particular, d(vk+1 , Vk ) = kvk+1 k. We can
+then express avk+1 in two diﬀerent ways :
+                                                     k
+                                                     X
+                                                                                ′
+                      avk+1 = λk+1 vk+1 =                    λk+1 xi vi + λk+1 vk+1 ,
+                                                       i=1
+
+and
+                                                 k
+                                                 X
+                                                                    ′
+                                       avk+1 =         λi xi vi + avk+1 .
+                                                 i=1
+It follows that
+                          l
+                          X
+                                                              ′       ′
+                                    (λk+1 − λi )xi vl = λk+1 vk+1 − avk+1 .
+                              i=1
+  Denote by wk+1 the vector on the right-hand side. Its norm can be bounded :
+                  ′
+kwk+1 k ≤ 2kakkvk+1    k ≤ ρ−2 kvk+1  ′
+                                          k. The left-hand side gives the coordinates of
+wk+1 in the basis (v1 , . . . , vk ) which is ρOk (1) -almost orthonormal by the induction
+hypothesis. Hence, by Lemma 7,
+         ∀i = 1, . . . , l,     |λk+1 − λi ||xi | ≤ ρ−Ok (1) kwk+1 k ≤ ρ−Ok (1) kvk+1
+                                                                                  ′
+                                                                                      k.
+Hence for all i = 1, . . . , l, |xi | ≤ ρ−Ok (1) kvk+1
+                                                   ′
+                                                         k thanks to the assumption |λk+1 −
+λi | ≥ ρ.
+    In order to bound |xj | for j ≥ l + 1, we take the scalar product with vj on both
+sides of (5). We obtain
+                                         Xl
+                                      0=     xi (vj , vi ) + xj .
+                                              i=1
+
+Hence for all j = l + 1, . . . k, |xj | ≤ ρ−Ok (1) kvk+1
+                                                     ′
+                                                         k. Using (5) again we obtain
+                −Ok (1)
+1 = kvk+1 k ≪ ρ         kvk+1 k and then kvk+1 k ≥ ρOk (1) . This ﬁnishes the proof of
+                          ′                 ′
+
+the inductive step.                                                                 
+16                                      WEIKUN HE
+
+
+5.2. Effective Wedderburn theorem in Mn (R). For x ∈ Mn (R) and A ⊂
+Mn (R) denote by C(x) and C(A) their respective centralizers, i.e.
+                            C(x) = {y ∈ Mn (R) | xy = yx} ,
+                       C(A) = {y ∈ Mn (R) | ∀x ∈ A, xy = yx} .
+Lemma 23. Let 0 < ρ ≤ 1 be a parameter. For all g ∈ SLn (R), if kgk > ρ−n , then
+the subalgebra C(g) does not act ρ-irreducibly on Rn .
+Proof. Let g = kal be the Cartan decomposition of g, with k, l ∈ SO(n) and
+a = diag(a1 , . . . , an ) where its singular values a1 , . . . , an are arranged so that a1 ≥
+a2 ≥ · · · ≥ an > 0. Assume that a1 = kgk > ρ−n . Since a1 · · · an = det(g) = 1,
+there is p ∈ {1, . . . , n − 1} such that
+                                           ap+1
+                                                 < ρ.
+                                            ap
+Put W = k Span(e1 , . . . , ep ). It is a nonzero proper linear subspace of Rn . We
+claim that for all x ∈ C(g) ∩ B(0, 1) and all w ∈ W ∩ B(0, 1), d(xw, W ) < ρ.
+   Indeed, decomposing every vector v ∈ Rn as v = v ′ +v ′′ with v ′ ∈ l−1 Span(e1 , . . . , ep )
+and v ′′ ∈ l−1 Span(ep+1 , . . . en ), we see that
+                              d(gv, W ) = kav ′′ k ≤ ap+1 kvk.
+Moreover, for all w ∈ W ,
+                                    kg −1 wk ≤ a−1
+                                                p kwk.
+  Consequently, for all x ∈ C(g) ∩ B(0, 1) and all w ∈ W ∩ B(0, 1), we have
+xw = gxg −1 w, and thus
+                                                          ap+1
+             d(xw, W ) ≤ ap+1 kxg −1 wk ≤ ap+1 kg −1 wk ≤      < ρ.      
+                                                           ap
+Lemma 24. Let 0 < ρ ≤ 21 be a parameter. If two real matrices x and y ∈ Mn (R)
+are conjugate by a complex matrix g ∈ GLn (C) with kgk+kg −1k < ρ−1 then there is
+a real matrix h ∈ GLn (R) which also conjugates them and moreover khk + kh−1k ≤
+ρ−O(1) .
+Proof. Assume that gxg −1 = y with x, y ∈ Mn (R) and g ∈ GLn (C). We write
+g = gℜ + igℑ with gℜ , gℑ ∈ Mn (R) its real and imaginary part. From gx = yg
+we see that gℜ x = ygℜ and gℑ x = ygℑ . For λ ∈ C, consider hλ = gℜ + λgℑ . For
+all λ ∈ C, we have hλ x = yhλ . Hence whenever det(hλ ) 6= 0, hλ conjugates x and
+y. What remains to do is to ﬁnd appropriate λ ∈ R such that hλ and h−1      λ have
+bounded norms.
+   Deﬁne P (λ) = det(hλ ). It is a polynomial with real coeﬃcients and its degree is
+at most n. We know that
+                |P (i)| = |det(g)| = |det(g −1 )|−1 ≫ kg −1 kO(1) ≫ ρO(1) .
+It is easy to see that the coeﬃcients of P are controlled by maxλ∈[0,1] |P (λ)|. Hence
+                                  |P (i)| ≪ max |P (λ)|.
+                                             λ∈[0,1]
+
+And so there is λ0 ∈ [0, 1] such that P (λ0 ) ≫ ρO(1) . Take h = hλ0 . we have
+                         khk ≤ kgℜ k + |λ0 |kgℑ k ≤ 2kgk ≪ ρ−1 .
+and det(h) ≫ ρO(1) , which implies
+                          kh−1 k ≤ khkn−1 det(h)−1 ≪ ρ−O(1) .
+Here the ﬁrst inequality can be seen from the Cartan decomposition of h.                   
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                         17
+
+
+Proof of Proposition 21. Consider K = C(E) the centralizer of E in Mn (R). From
+(the proof of) Wedderburn’s theorem, K is a division algebra over R and E is equal
+to C(K), the centralizer of K. By the Frobenius theorem, the real division algebra
+K is isomorphic to R, C or H. The action of K on Rn makes Rn a K linear space.
+Hence n is even if K ≃ C and a multiple of 4 if K ≃ H.
+    If K ≃ R then E = Mn (R), we are done. If K ≃ C or respectively if K ≃ H,
+then E is isomorphic to M n2 (C) or respectively to M n4 (H). The Skolem-Noether
+theorem (see [28, §12.6]) tells us all embeddings of M n2 (C) or M n4 (H) in Mn (R)
+are conjugate (by a matrix in GL(Rn )). We are going to show that under our
+quantitative irreducibility assumption, the change of basis matrix can be nicely
+chosen.
+    From the discussion above, we see that an embedding of M n2 (C) is uniquely
+determined by an embedding of C in Mn (R). Moreover, if K is conjugate to a
+ﬁxed embedding of C, then E is conjugate to a ﬁxed embedding of M n2 (C) by
+the same change of basis matrix. The same applies to the quaternion case. That
+is why we are going to study embeddings of C and of H. Let ϕ0 : C → Mn (R)
+denote the embedding of C such that C(ϕ0 (C)) = M n2 (C)R and ψ0 : H → Mn (R)
+the embedding of H such that C(ψ0 (H)) = M n4 (H)R .
+    When K is isomorphic to C, denote by ϕ : C → Mn (R) the embedding of C
+whose image is K. The homomorphism ϕ is uniquely determined by ϕ(i) and
+we have E = C(ϕ(i)). From Lemma 23 and the irreducibility assumptions on
+E, we have kϕ(i)k ≪ ρ−O(1) . The matrix ϕ(i) satisﬁes ϕ(i)2 = − Idn , which
+implies that ϕ(i) is diagonalizable over C and its eigenvalues can only be i or
+−i. Its trace is real. Therefore the multiplicities of the two eigenvalues must
+be equal. We conclude that ϕ(i) is conjugate (over C) to the diagonal matrix
+diag(i Id n2 , −i Id n2 ). By Lemma 22, ϕ(i) is conjugate to this matrix by a change
+of basis matrix g ∈ GLn (C) satisfying kgk + kg −1 k ≪ ρ−O(1) . The same is true
+for ϕ0 (i). We conclude that ϕ(i) is conjugate to ϕ0 (i) by a change of basis matrix
+g ′ ∈ GLn (C) with kg ′ k + kg ′−1 k ≪ ρ−O(1) . Finally, thanks to Lemma 24, g ′ can be
+chosen to be real. This ﬁnishes the proof for the case where K ≃ C.
+    When K is isomorphic to H, denote by ψ : H → Mn (R) the embedding of H
+whose image is K. The homomorphism ψ : H → Mn (R) is uniquely determined by
+ψ(i) and ψ(j) and E = C(ψ(i)) ∩ C(ψ(j)). As in the case where K ≃ C, Lemma 23
+gives the estimates kϕ(i)k, kϕ(j)k ≪ ρ−O(1) .
+    The two matrices ψ(i) and ψ(j) satisfy
+
+(6)              ψ(i)2 = ψ(j)2 = − Idn and ψ(i)ψ(j) = −ψ(j)ψ(i).
+Repeating the argument in the complex case, we see that ψ(i) is conjugate to
+diag(i Id n2 , −i Id n2 ) by a change of basis matrix satisfying the desired norm estimate.
+Write ψ(i) and ψ(j) in this new basis,
+                                                                        
+                               i Id n2    0                        A B
+                  ψ(i) =                          and ψ(j) =                 .
+                                  0    −i Id n2                    C D
+
+The condition (6) is then equivalent to A = D = 0 and BC = CB = − Id n2 . It is
+easy to check that the conjugation by the block diagonal matrix g ′ = diag(C, Id n2 )
+preserve ψ(i) and conjugates ψ(j) to
+                                               
+                                    0   − Id n2
+                                                  .
+                                  Id n2    0
+
+Note that kg ′ k + kg ′−1 k = kCk + kBk ≪ kϕ(j)k ≪ ρ−O(1) . To conclude the proof
+we use Lemma 24 to make sure the change of basis matrix is real.               
+18                                      WEIKUN HE
+
+
+                 6. Sum-product estimate in simple algebras
+     We prove Theorem 5 and Theorem 2 in this section.
+6.1. Sum-product theorem in Cn . We will use Bourgain-Gamburd’s sum-product
+theorem in Cn (Theorem 6) in a slightly stronger form.
+Corollary 25. Given κ > 0 and n ≥ 1, there is α ≥ 0, β > 0 and a positive
+integer s ≥ 1 such that, for ǫ > 0 sufficiently small and δ > 0 sufficiently small, the
+following holds. Let A be a subset of Mn (C). Assume that
+      (i) A ⊂ B(0, δ −ǫ ),
+     (ii) Nδ (A) ≥ δ −κ ,
+    (iii) A ⊂ ∆ + B(0, δ 1−ǫ ).
+Then there exists η in the algebra generated by A such that kηk = 1 and
+(7)                           [0, δ α ]η ⊂ hAis + B(0, δ α+β ).
+   The corollary mainly says that the segment length δ α and the new scale δ α+β in
+Theorem 6 can be chosen independently of A. This will be very useful when we use
+this diagonal case. Recall that ∆ denotes the set of diagonal matrices in Mn (C).
+In the following proof, πi (a) denotes the i-th diagonal entry of a for i ∈ {1, . . . , n}
+and a ∈ Mn (C).
+Proof. In this proof, let πi (a) denote the i-th diagonal entry of a for any i = 1, . . . , n
+and any a ∈ Mn (C). Partitioning A into at most δ −On (ǫ) parts of diameter 1 and
+choosing the part with the largest δ-covering number, we see that Nδ (B(0, 1)∩(A−
+A)) ≥ δ −κ+On (ǫ) . Thus we can assume that A ⊂ B(0, 1). By working at scale δ 1−ǫ ,
+we can further assume A ⊂ ∆ + B(0, δ). Theorem 6 says that (7) is true for some
+α and β which may depend on A. Nevertheless, they can be bounded by constants
+depending only on n and κ. What we need to show is that they can actually be
+chosen independently of A. This is evident for β since (7) gets only weaker when
+β becomes smaller. Hence there exist 0 ≤ α0 < C = C(n, κ), s0 = s0 (n, κ) ≥ 1 and
+η ∈ ∆ such that kηk = 1 and
+(8)                         [0, δ α0 ]η ⊂ hAis0 + B(0, δ α0 +β ).
+By replacing α0 with α0 + 12 β and β with 12 β we can assume that α0 ≥ β. Fix an
+index i such that |πi (η)| ≫n 1. Consider for any s ≥ 1, the set
+                                                                1
+  Ωs = ω ∈ R+ | ∃ξ ∈ hAis , kξk ≤ sδ ω , d(ξ, ∆) ≤ sδ ω+ 2 β ,
+         
+
+                                               1
+                                     |πi (ξ)| ≥ δ ω and [0, 1]ξ ⊂ hAis + B(0, sδ ω+β ) .
+                                               s
+We need to prove existence of α > 0 and s ≥ 1 depending only on n and κ such
+that α ∈ Ωs .
+   It follows from (8) that α0 ∈ Ωs0 . Now we show that if ω ∈ Ωs for some s ≥ 1
+then there is s′ = s′ (s, n, κ) ≥ 1 such that [ω + α0 , ω + α0 + 12 β] ⊂ Ωs′ . Indeed, for
+any γ ∈ [α0 , α0 + 21 β], by (8), there exists a ∈ hAis0 such that δ γ η ∈ a+B(0, δ α0 +β ).
+                                  1
+Thus d(a, ∆) ≤ δ α0 +β ≤ δ γ+ 2 β and
+                                δ γ ≪n πi (a) ≤ kak ≪ δ γ .
+By multiplying a to the relation [0, 1]ξ ⊂ hAis + B(0, sδ ω+β ) we obtain
+         [0, 1]ξa ⊂ hAis+s0 + B(0, skakδ ω+β ) ⊂ hAis+s0 + B(0, O(s)δ ω+γ+β ).
+Moreover, kξak ≪n kξkkak ≪ sδ ω+γ and
+                                                                       1
+                 d(ξa, ∆) ≪n d(ξ, ∆)kak + kξkd(a, ∆) ≪ sδ ω+γ+ 2 β ,
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                     19
+
+
+and for δ > 0 suﬃciently small,
+                                                        1 ω+γ                   1
+|πi (ξa)| ≥ |πi (ξ)||πi (a)| − On (d(ξ, ∆)d(a, ∆)) ≫n     δ   − On (δ ω+γ+β ) ≫n δ ω+γ
+                                                        s                       s
+Hence ω + γ ∈ Ωs′ for some s′ = s′ (s, n, κ).
+  A simple induction yields that there exists a sequence (sk )k≥0 depending only
+on n and κ such that for all k ≥ 0,
+                                                k
+                       [(k + 1)α0 , (k + 1)α0 + β] ⊂ Ωsk .
+                                                2
+  Recall that α0 depends on A but it is bounded by β ≤ α0 ≤ C where lβ and
+                                                                         m C are
+constants given by Theorem 6 and depend only on n and κ. Put α = 2C
+                                                                             
+                                                                       β  +1 C
+         l m
+and K = 2α  β . For any choice of α0 ∈ [β, C], the equation
+
+                                                       k
+                           (k + 1)α0 ≤ α ≤ (k + 1)α0 +   β
+                                                       2
+has a solution k satisfying k ≤ K. It follows that α ∈ Ωsk ⊂ ΩsK . This concludes
+the proof since α and sK depend only on n and κ.                               
+6.2. Small segment. The key step in the proof of Theorem 5 is to produce a small
+segment in hAis .
+Proposition 26. Given a normed finite-dimensional simple algebra E and κ > 0,
+there is s ≥ 1 and ǫ > 0, α, β > 0 such that the following is true for δ > 0
+sufficiently small. Let A be a subset of E. Assume that
+     (i) A ⊂ B(0, δ −ǫ ),
+    (ii) Nδ (A) ≥ δ −κ ,
+   (iii) A is δ ǫ -away from subalgebras.
+Then there is η ∈ E, kηk = 1 such that
+(9)                          [0, δ α ]η ⊂ hAis + B(0, δ α+β ).
+Proof of Proposition 26. First observe that we can assume without loss of generality
+that E is a real subalgebra of Mn (C) for some positive integer n and it contains
+a least one element with n distinct eigenvalues. Indeed, this is evident if E is
+isomorphic to Mn (C) or Mn (R) since for the latter case we can embed naturally
+Mn (R) in Mn (C). We don’t need to worry about the norm because all linear
+isomorphisms are bi-Lipschitz and bi-Lipschitz maps only change the constants
+in the assumptions and the conclusion of the proposition. If E is isomorphic to
+Mn (H), then we can embed Mn (H) in M          2n (C) by sending each entry x + iy +
+                                   x+iy z+iw 
+jz + kw ∈ H to a 2 × 2 block −z+iw      x−iy . It is easy to check that this embedding
+of E contains a diagonal matrix with distinct diagonal entries.
+     In this proof, s stands for an unspeciﬁed positive integer depending on n and κ
+that may increase from one line to another. Since A is δ ǫ -away from subalgebras,
+hAis is δ O(ǫ) -away from linear subspaces by Proposition 16 applied to any η ∈ A
+with kηk ≥ δ ǫ . Therefore, without loss of generality, we can assume that A is
+δ ǫ -away from linear subspaces in E.
+     Consider P : Mn (C) → C deﬁned by
+                                          Y
+(10)                              P (x) =    (λi − λj )2
+                                          i<j
+
+where λ1 , . . . , λn are eigenvalues of x ∈ Mn (C) (the n roots of the characteristic
+polynomial of x). The right-hand side of (10) is symmetric in (λi ) and thus poly-
+nomial in the coeﬃcients of the characteristic polynomial of x. Hence x 7→ |P (x)|2
+is a real polynomial on Mn (C). Apply Lemma 17 to |P |2 restricted to E. Since
+20                                      WEIKUN HE
+
+
+E contains an element with n distinct eigenvalues, we obtain an element a ∈ hAis
+such that |P (a)| > δ O(ǫ) and consequently the eigenvalues λ1 , . . . , λn of a satisfy
+                             ∀i 6= j,    |λi − λj | > δ O(ǫ) .
+     Now consider the map
+                            ϕ:    Mn (C)        → Mn (C)
+                                   x           7→ ax − xa.
+Let κ′ = 9nκ2 . We distinguish two cases according to the size of the image ϕ(A).
+First consider the case where
+                                             ′
+                              Nδ ϕ(A) ≥ δ 2κ Nδ (A).
+                                      
+
+In this case we can show a growth estimate. By Lemma 19, there is a subset
+                                                                          ′
+A′ ⊂ A2 such that trE (A′ ) is δ-separated and of size |trE (A′ )| ≥ δ −4κ . Here, we
+                                2
+used the fact that dim(E) ≤ 2n . Observe that trE (ϕ(x)) = 0 for all x ∈ E, hence
+                                                             ′
+               Nδ ϕ(A) + A′ ≫ Nδ (ϕ(A))|tr E (A′ )| ≥ δ −2κ Nδ (A).
+                              
+
+Consequently,
+                                             ′
+                               Nδ hAis ≥ δ −κ Nδ (A).
+                                      
+(11)
+     Otherwise, we have
+                                             ′
+                               Nδ ϕ(A) < δ 2κ Nδ (A),
+                                      
+
+then by cutting A into "radius δ" ﬁbers, we see that
+                 Nδ (A) ≪ Nδ ϕ(A) max Nδ ϕ−1 B(y, δ) ∩ A .
+                                                      
+                                           y
+                                                                          ′
+Hence there is y∗ ∈ Mn (C) such that Nδ ϕ−1 B(y∗ , δ) ∩ A ≥ δ −κ . Put A′′ =
+                                                                 
+                                                                   ′
+ϕ−1 B(y∗ , δ) ∩ A − ϕ−1 B(y∗ , δ) ∩ A so that Nδ (A′′ ) ≥ δ −κ and for all x ∈ A′′ ,
+                                      
+
+kϕ(x)k ≪ δ.
+   Recall that |λi − λj | > δ O(ǫ) for all i 6= j. Hence we can apply Lemma 22 to the
+matrix a. We obtain a change of basis matrix g ∈ GLn (C) such that kgk + kg −1k <
+δ −O(ǫ) and gag −1 is diagonal. Conjugation by g will change any estimate only by
+a factor of δ −O(ǫ) or δ O(ǫ) . That’s why we can assume without loss of generality
+that a = diag(λ1 , . . . , λn ). Then an explicit computation gives an expression for ϕ
+in the standard basis : if x = (xij )i,j ∈ Mn (C), then
+                                                       
+                                  ϕ(x) = (λi − λj )xij i,j .
+
+Therefore if kϕ(x)k ≪ δ then d(x, ∆) < δ 1−O(ǫ) . Hence A′′ ⊂ ∆ + B(0, δ 1−O(ǫ) ).
+Then Corollary 25 gives constants α, β > 0 and integer s ≥ 1 depending only on n
+and κ′ and a unit vector η ∈ Mn (C) such that (9) holds.
+   What we have proved is that either the proposition holds or we have (11). If
+we are in the latter case, we can iterate the same argument to hAis . After at most
+     2
+O( nκ′ ) iterations, (11) cannot be possible anymore, hence the proposition must be
+true.                                                                            
+
+6.3. Proof of Theorem 5. Once hAis contains a segment, it takes only a few
+more steps to produce a small ball.
+Proposition 27. Under the same assumptions, the conclusion of Proposition 26
+can be improved to
+(12)                        B(0, δ α ) ⊂ hAis + B(0, δ α+β ).
+            DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                            21
+
+
+Proof. Suppose that η ∈ E is a unit vector satisfying (9). Since A is δ ǫ -away from
+subalgebras, by Proposition 16, there is a δ O(ǫ) -almost orthonormal basis of E of the
+form (ai ηbi )i with ai , bi ∈ hAidim(E) . Then (9) implies that for all i = 1, . . . , dim(E),
+
+                    [0, δ α ]ai ηbi ⊂ hAis+2 dim(E) + B(0, δ α+β−O(ǫ) ).
+Moreover, Lemma 7 yields
+                                                 X
+                             B(0, δ α+O(ǫ) ) ⊂         [−δ α , δ α ]ai ηbi .
+                                                   i
+
+Hence (12) holds for suﬃciently small ǫ and slightly worse α, β and s.                      
+Proof of Theorem 5. The idea is to apply Proposition 27 at various scales ranging
+from lδ to δ ǫ . Let mǫ1 , α, β and s be the constants given by Proposition 27. Let
+                                                               1    α   k
+          ln(ǫ0 )
+r = ln(α)−ln(α+β)       and for k = 0, . . . , r, deﬁne δk = δ α ( α+β ) so that δ0α = δ,
+δ ǫ0 ≤ δrα and δkα+β = δk−1
+                        α
+                             for all k = 1, . . . , r.
+    We can require ǫ < α1 ( α+βα
+                                  )r ǫ1 so that the assumptions of Proposition 26 are
+satisﬁed at all the scales δk , k = 1, . . . , r. Thus
+                                                         α
+                               B(0, δkα ) ⊂ hAis + B(0, δk−1 ).
+Hence,
+                        B(0, δ ǫ0 ) ⊂ B(0, δrα )
+                                                  α
+                                   ⊂ hAis + B(0, δr−1 )
+                                                         α
+                                   ⊂ hAis + hAis + B(0, δr−2 )
+                                   ···
+                                   ⊂ hAis + · · · + hAis + B(0, δ0α )
+Hence, B(0, δ ǫ0 ) ⊂ hAirs + B(0, δ).                                                       
+6.4. Proof of Theorem 2. We deduce Theorem 2 from Theorem 5 and Lemma 11.
+Proof of Theorem 2. Suppose that A ⊂ E is a set satisfying the assumptions of
+Theorem 2 but
+                   Nδ (A + A) + Nδ (A + A · A) ≤ δ −ǫ Nδ (A).
+   On the one hand, applying Theorem 5 with ǫ0 = dim(E)−σ
+                                                      2 dim(E) , we obtain an integer
+s ≥ 1 such that
+                           B(0, δ ǫ0 ) ⊂ hAis + B(0, δ).
+Hence
+                        1
+(13)                δ − 2 (dim(E)+σ) = δ −(1−ǫ0 ) dim(E) ≪E Nδ (hAis ).
+   On the other hand, by Lemma 11,
+(14)                   Nδ (hAis ) ≪E δ −Os (ǫ) Nδ (A) ≪ δ −σ−Os (ǫ) .
+The inequalities (13) and (14) lead to a contradiction when ǫ is suﬃciently small. 
+Remark. Conversely, a growth statement like Theorem 2 always implies a state-
+ment like Theorem 5. The idea is to use the growth statement repeatedly until the
+set is nearly "full-dimensional" and then Fourier analysis shows that within a few
+more steps, it grows to "full dimension". For instance, [4, Theorem 6] deals with
+the one-dimensional case.
+
+                            7. Growth under linear action
+   We prove Theorem 3 in this section.
+22                                        WEIKUN HE
+
+
+7.1. Acting on Rn , probabilistic method. We endow End(Rn ) with its usual
+operator norm. Recall that we denote by M n2 (C)R the standard embedding of
+M n2 (C) in End(Rn ) and by M n4 (H)R that of M n4 (H). First we study the special
+case where the collection of endomorphisms A is the unit ball in End(Rn ) or one
+of these two subalgebras. Actually, the lemma below is a direct consequence of [7,
+Proposition 1]. Here, we present an elementary proof of this easier fact.
+Lemma 28. Given κ > 0 and σ < n, there is ǫ > 0 such that the following holds
+for δ > 0 sufficiently small. Let E be End(Rn ) or M n2 (C)R or M n4 (H)R . Let X be
+a subset of Rn . Assume that
+       (i) X ⊂ B(0, δ −ǫ ),
+      (ii) ∀ρ ≥ δ, Nρ (X) ≥ δ ǫ ρ−κ ,
+     (iii) Nδ (X) ≤ δ −σ−ǫ ,
+then
+                              max       Nδ (X + f X) ≥ δ −ǫ Nδ (X).
+                          f ∈B(0,1)∩E
+
+Proof. Let µ be the normalized Lebesgue measure on B(0, 1)∩E. It is easy to verify
+that µ satisﬁes the assumptions of the following proposition with τ = n. Note that
+B(0, 1) ∩ E contains the identity Id.                                           
+
+Proposition 29. Given κ > 0 and 0 < σ < τ , there is ǫ > 0 such that the
+following holds for δ > 0 sufficiently small. Let X be a subset of Rn and µ a
+probability measure on End(Rn ). If
+       (i) X ⊂ B(0, δ −ǫ ),
+      (ii) ∀ρ ≥ δ, Nρ (X) ≥ δ ǫ ρ−κ ,
+     (iii) Nδ (X) ≤ δ −σ−ǫ ,
+     (iv) The support of µ, Supp(µ) ⊂ B(0, δ −ǫ ),
+      (v) For all ρ ≥ δ and all v, w ∈ Rn with kvk = 1,
+                     µ {f ∈ End(Rn ) | f v ∈ w + B(0, ρ)} ≤ δ −ǫ ρτ ,
+                                                         
+
+then
+                   Nδ (X + X) +         max      Nδ (X + f X) ≥ δ −ǫ Nδ (X).
+                                    f ∈Supp(µ)
+
+Proof. Let X and µ be as in the statement. Assume that Nδ (X + X) ≤ δ −ǫ Nδ (X).
+For all ρ ≥ δ we have
+                      Nδ (X + X) ≫ Nρ (X) maxn Nδ (X ∩ B(w, ρ)).
+                                                  w∈R
+
+Therefore, by assumption (ii),
+(15)                    max Nδ (X ∩ B(w, ρ)) ≤ δ −O(ǫ) ρκ Nδ (X).
+                          w
+
+     Let f be a random variable following the law µ. Deﬁne ϕf : Rn × Rn → Rn by
+                                     ϕf (x, y) = x + f y.
+This map is δ −ǫ -Lipschitz by assumption (iv). Consider the ϕf -energy of X × X.
+By Lemma 12(i),
+                                             Nδ (X)4
+                          Nδ (X + f X) ≫                 .
+                                         ωδ (ϕf , X × X)
+Hence by Jensen’s inequality,
+                                                      Nδ (X)4
+                         E Nδ (X + f X) ≫                          .
+                                                   E ωδ (ϕf , X × X)
+            DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                          23
+
+                                                                                
+   The rest of the proof consists of bounding the expectation E ω δ (ϕf , X × X)
+from above. Fix X̃ a maximal δ-separated subset of X. By Lemma 12(ii),
+                                X
+                                       P f (y − y ′ ) ∈ x′ − x + B(0, δ 1−2ǫ ) .
+                                                                           
+       E ω δ (ϕf , X × X) ≪
+                                 x,x′ ,y,y ′ ∈X̃
+
+   Let ρ ≥ δ be a scale to be chosen later. We split the sum into two parts according
+to whether ky − y ′ k ≥ ρ. If it is the case then the assumption (v) yields for any
+x, x′ ∈ X̃,
+                P f (y − y ′ ) ∈ x′ − x + B(0, δ 1−2ǫ ) ≤ δ −O(ǫ) ρ−τ δ τ .
+                                                      
+
+   To estimate the other part we note that the number of pairs (y, y ′ ) such that
+ky − y ′ k ≤ ρ can be bounded using (15).
+               #{(y, y ′ ) ∈ X̃ × X̃ | ky − y ′ k ≤ ρ} ≤ δ −O(ǫ) ρκ Nδ (X)2 .
+Moreover, for any x, y, y ′ ∈ X̃,
+                 X 
+                      P f (y − y ′ ) ∈ x′ − x + B(0, δ 1−2ǫ ) ≤ δ −O(ǫ)
+                                                             
+
+                  x′ ∈X̃
+
+since the events on the left-hand side can occur simultaneously for at most δ −O(ǫ)
+diﬀerent x′ ∈ X̃.                                                         τ −σ
+   By combining these inequalities and assumption (iii) and taking ρ = δ τ +κ , we
+obtain
+                E ωδ (ϕf , X × X) ≤ δ −O(ǫ) ρ−τ δ τ |X̃|4 + ρκ |X̃|3
+                                                                   
+
+                                         ≤ δ −O(ǫ) (δ τ −σ ρ−τ + ρκ )Nδ (X)3
+                                               κ(τ −σ)
+                                   ≤ δ τ +κ −O(ǫ) Nδ (X)3 .
+It follows that when ǫ is small enough, E Nδ (X + f X) ≥ δ −ǫ Nδ (X).
+                                                      
+                                                                                          
+7.2. Acting on Rn , using sum and product. Before using Theorem 5 we need
+to know how matrix addition and multiplication aﬀects the estimate (3). In this
+subsection we show that in order to establish (3), it suﬃces to prove it with hAis +
+B(0, δ) in place of A for some s ≥ 1.
+   Let ǫ > 0. Let X ⊂ Rn be a bounded subset. Similarly to the consideration of
+good elements in [8, Proposition 3.3] and the basic construction in [30, Proposition
+3.1], we deﬁne at scale δ > 0,
+       Sδ (X; δ −ǫ ) = f ∈ B(0, δ −ǫ ) ∩ End(Rn ) | Nδ (X + f X) ≤ δ −ǫ Nδ (X) .
+                      
+
+   The set Sδ (X; δ −ǫ ) exhibits the structure of an "approximate ring".
+Lemma 30. Let X ⊂ B(0, δ −ǫ ) be a subset of Rn , we have
+    (i) If a ∈ Sδ (X; δ −ǫ ) and b ∈ End(Rn ) such that ka − bk ≤ δ 1−ǫ , then b ∈
+        Sδ (X; δ −O(ǫ) )
+   (ii) If Id, a, b ∈ Sδ (X; δ −ǫ ), then a + b, a − b and ab all belong to Sδ (X; δ −O(ǫ) ).
+  (iii) Suppose that a invertible and ka−1 k ≤ δ −ǫ . If a ∈ Sδ (X; δ −ǫ ), then a−1 ∈
+        Sδ (X; δ −O(ǫ) ).
+  (iv) If Id, a1 , . . . , as ∈ Sδ (X; δ −ǫ ), then
+                     Nδ (X + a1 X + · · · + as X) ≤ δ −O(sǫ) Nδ (X).
+    (v) If Id, a ∈ Sδ (X; δ −ǫ ), then for all ρ ≥ δ, we have
+                             Nρ (X + aX) ≤ δ −O(ǫ) Nρ (X).
+        In other words, a ∈ Sρ (X; δ −O(ǫ) ).
+24                                        WEIKUN HE
+
+
+Proof.       (i) If Nδ (X + aX) ≤ δ −ǫ Nδ (X) and ka − bk ≤ δ 1−ǫ , then
+                           X + bX ⊂ X + aX + B(0, δ 1−2ǫ ).
+          Hence Nδ (X + bX) ≤ δ −O(ǫ) Nδ (X).
+     (ii) Let a, b ∈ Sδ (X; δ −ǫ ). By Ruzsa’s covering lemma (Lemma 9),
+                           aX ⊂ X − X + O(δ −ǫ ) + B(0, δ),
+         and
+                           bX ⊂ X − X + O(δ −ǫ ) + B(0, δ).
+         Hence,
+                   X + (a + b)X ⊂ 3X − 2X + O(δ −2ǫ ) + B(0, 2δ),
+
+                   X + (a − b)X ⊂ 3X − 2X + O(δ −2ǫ ) + B(0, 2δ).
+         And ﬁnally by the Plünnecke-Ruzsa inequality (Lemma 10),
+               Nδ (X + (a + b)X), Nδ (X + (a − b)X) ≤ δ −O(ǫ) Nδ (X).
+            Moreover, since kak ≤ δ −ǫ ,
+                  X + abX ⊂ X + a(X − X + O(δ −ǫ ) + B(0, δ))
+                             ⊂ X + aX − aX + O(δ −ǫ ) + B(0, δ 1−ǫ )
+                             ⊂ 3X − 2X + O(δ −3ǫ ) + B(0, 3δ 1−ǫ )
+
+           Hence, Nδ (X + abX) ≤ δ −O(ǫ) Nδ (X).
+     (iii) If a ∈ GLn (R) and ka−1 k ≤ δ −ǫ , then X + a−1 X = a−1 (X + aX) and hence
+           Nδ (X + a−1 X) ≤ δ −O(ǫ) Nδ (X + aX).
+     (iv) The argument is similar as in (ii).
+      (v) For all ρ ≥ δ we have
+                         Nδ (X) ≤ maxn Nδ (X ∩ B(x, ρ))Nρ (X)
+                                    x∈R
+                             n
+         and for any x ∈ R ,
+                  Nδ (X + X + aX) ≫ Nδ (X ∩ B(x, ρ))Nρ (X + aX).
+         If Id, a ∈ Sδ (X; δ −ǫ ), then by (iv),
+                           Nδ (X + X + aX) ≤ δ −O(ǫ) Nδ (X).
+         We obtain the desired estimate by combining the three inequalities above.
+                                                                                
+
+7.3. Almost-generating a subalgebra. Now we can focus on the growth of A
+as a set of matrices. We cannot use Theorem 5 yet since we do not know if A is
+away from subalgebras. In this subsection, we show that we can ﬁnd a subalgebra
+E0 of End(Rn ) such that, at some scale, A is contained in E0 and is eﬀectively
+away from subalgebras in E0 . This subalgebra E0 can be viewed as approximately
+generated by A. Moreover, under the quantitative irreducibility condition, E0 shall
+be described by Proposition 21.
+Proposition 31. Given ǫ1 > 0, there is c > 0 such that for any 0 < ǫ < c, the
+following holds for all δ > 0 sufficiently small. Let A be a subset of End(Rn ). If
+       · A ⊂ B(0, δ −ǫ ),
+       · A acts δ ǫ -irreducibly on Rn ;
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                       25
+
+
+then there exists δ1 ∈ [δ, δ c ] and g ∈ GLn (R) with kgk + kg −1 k ≤ δ −O(ǫ) such that
+for E = End(Rn ), M n2 (C)R or M n4 (H)R ,
+
+                                    gAg −1 ⊂ E + B(0, δ1 )
+and for all proper subalgebras F of E,
+                                  ∃a ∈ A, d(gag −1 , F ) > δ1ǫ1 .
+Proof. Let l0 be the largest among all integers l ∈ N such that there exists a
+                                                                               ǫ1 l
+subalgebra E of End(Rn ) of codimension l and such that A ⊂ E + B(0, δ ( 4 ) ). We
+                                                             1 ǫ1 l0
+know l0 exists since 0 is clearly such an l. Set δ1 = δ 2 ( 4 ) . Thus δ ≤ δ1 ≤ δ c1
+                     2
+with c1 = 21 ( ǫ41 )n . By the deﬁnition of l0 there is a subalgebra E0 of End(Rn ) such
+that
+(16)                                  A ⊂ E0 + B(0, δ12 )
+and for any proper subalgebra F of E0 , there is a ∈ A such that
+                                                        ǫ1
+(17)                                     d(a, F ) > δ12
+   We shall apply Proposition 21 to this subalgebra E0 in order to conjugate it
+into one of the three "model" subalgebras. For any nonzero linear subspace W
+of Rn , since A acts δ ǫ -irreducibly , there is w ∈ W ∩ B(0, 1) and a ∈ A such
+that d(aw, W ) > δ ǫ . Then there is a′ ∈ E0 such that ka − a′ k < δ1 . Hence
+ka′ k < δ −ǫ + δ1 < δ −2ǫ and
+                       a′
+                 d(         w, W ) > δ 2ǫ (δ ǫ − δ1 ) ≥ δ 2ǫ (δ ǫ − δ c1 ) > δ 4ǫ
+                      ka′ k
+provided ǫ ≤ c21 . Thus E0 acts δ 4ǫ -irreducibly on Rn . We conclude that there is
+g ∈ GLn (R) with kgk + kg −1 k < δ −O(ǫ) and E = gE0 g −1 is one of these three
+subalgebras : End(Rn ), M n2 (C)R , M n4 (H)R .
+   The map x 7→ gxg −1 is δ −O(ǫ) -bi-Lipschitz. Hence by (16) and (17),
+                                gAg −1 ⊂ E + B(0, δ −O(ǫ) δ12 )
+                       ǫ1
+and gAg −1 is δ O(ǫ) δ12 -away from proper subalgebras of E. When ǫ is small enough
+compared to c1 ǫ1 , we have both
+                                                              ǫ1
+                            δ −O(ǫ) δ12 ≤ δ1   and δ O(ǫ) δ12 ≥ δ1ǫ1 .
+And this completes the proof.                                                         
+
+Remark. From the proof we see that the new scale δ1 can be chosen such that δ
+is an integer power of δ1 .
+7.4. Proof of Theorem 3. The proof consists of putting together what precedes.
+The only technical diﬃculty is due to the change of the working scale required by
+Proposition 31.
+
+Proof of Theorem 3. Assume for a contradiction that A ∪ {Id} ⊂ Sδ (X; δ −ǫ ).
+   Let ǫ1 > 0 be a small constant to be chosen later. By applying Proposition 31
+to the set A, we get a constant c > 0 depending on ǫ1 , a new scale δ1 ∈ [δ, δ c ], an
+isomorphism g ∈ GLn (R) and a subalgebra E = End(Rn ) or M n2 (C)R or M n4 (H)R
+such that kgk + kg −1 k ≤ δ −O(ǫ) and
+                                    gAg −1 ⊂ E + B(0, δ1 )
+26                                      WEIKUN HE
+
+
+and the projection of gAg −1 on E, which we will denote by A′ , is δ1ǫ1 -away from
+subalgebras in E. Moreover, we can verify the other assumptions of Theorem 5 for
+the scale δ1 and parameter ǫ1 : we have
+(18)                            A′ ⊂ gAg −1 + B(0, δ1 ).
+Thus
+                                                                   −O( ǫ )
+                        A′ ⊂ B(0, δ −O(ǫ) + δ1 ) ⊂ B(0, δ1 c ).
+And for all ρ ≥ δ1 , since gAg −1 ⊂ A′ + B(0, ρ), we have
+                                                                             O( ǫ )
+           Nρ (A′ ) ≫ Nρ (gAg −1 ) ≫ δ O(ǫ) Nρ (A) ≥ δ O(ǫ) ρ−κ ≥ δ1 c ρ−κ .
+So when ǫ is suﬃciently small depending on ǫ1 and c, we have both A′ ⊂ B(0, δ1−ǫ1 )
+and ∀ρ ≥ δ1 , Nρ (A′ ) ≥ δ1ǫ1 ρ−κ .
+   Let ǫ0 > 0 be a small constant to be chosen later in the proof. Applying The-
+orem 5 to the set A′ at scale δ1 inside the algebra E, we obtain an integer s ≥ 1
+depending only on n, κ and ǫ0 such that
+(19)                       E ∩ B(0, δ1ǫ0 ) ⊂ hA′ is + B(0, δ1 ),
+if ǫ1 is chosen small enough depending on n, κ and ǫ0 .
+    From A ⊂ Sδ (X; δ −ǫ ), we get for all a ∈ A,
+      Nδ (gX + gag −1 gX) = Nδ g(X + aX) ≤ δ −O(ǫ) Nδ (X) ≤ δ −O(ǫ) Nδ (gX).
+                                              
+
+In other words, gAg −1 ⊂ Sδ (gX, δ −O(ǫ) ). From Lemma 30(v), it follows that
+gAg −1 ⊂ Sδ1 (gX; δ −O(ǫ) ). Then by Lemma 30(i),
+                                         −O( cǫ )
+                        A′ ⊂ Sδ1 (gX; δ1            ) ⊂ Sδ1 (gX; δ1−ǫ1 ).
+Repeated use of Lemma 30(ii) yields
+                                                       −Os (ǫ1 )
+                               hA′ is ⊂ Sδ1 (gX; δ1                ).
+Then by (19) and Lemma 30(i),
+                                                            −Os (ǫ1 )
+                          E ∩ B(0, δ1ǫ0 ) ⊂ Sδ1 (gX; δ1                 ).
+                                   −Os (ǫ1 )
+In particular, δ1ǫ0 Id ∈ Sδ1 (gX; δ1           ). Hence, by Lemma 30(iii),
+                                                     −Os (ǫ1 )−O(ǫ0 )
+                           δ1−ǫ0 Id ∈ Sδ1 (gX; δ1                       ).
+                                                   −O (ǫ )−O(ǫ0 )
+And again by Lemma 30(ii), E ∩ B(0, 1) ⊂ Sδ1 (gX; δ1 s 1          ).
+   Hence for any given ǫ2 > 0, we can choose suﬃciently small ǫ0 > 0 and ǫ1 > 0
+accordingly so that
+(20)                         E ∩ B(0, 1) ⊂ Sδ1 (gX; δ1−ǫ2 ).
+Take ǫ2 to be the constant given by Lemma 28 depending on σ and κ. We would
+like to apply Lemma 28 to the set gX at scale δ1 . It’s easy to see that when ǫ is
+small enough,
+                        gX ⊂ B(0, δ −O(ǫ) ) ⊂ B(0, δ1−ǫ2 ),
+and for all ρ ≥ δ1 ,
+                    Nρ (gX) ≥ δ O(ǫ) Nδ (X) ≥ δ O(ǫ) ρ−κ ≥ δ1ǫ2 ρ−κ .
+So the ﬁrst two assumptions in Lemma 28 are satisﬁed but the conclusion fails
+by (20). This means the assumption (iii) must fail, namely, Nδ1 (gX) > δ1−σ−ǫ2 .
+Therefore,
+(21)                            Nδ1 (X) ≥ δ O(ǫ) δ1−σ−ǫ2 .
+   In other words, at scale δ1 , the set X is almost full in B(0, δ −ǫ ). The idea of the
+rest of the proof is to use multiplication of elements of A to propagate estimate (21)
+           DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                      27
+
+
+to smaller scales until we reach the original scale δ where we have the assumption
+Nδ (X) ≤ δ −σ−ǫ .
+   We have by (19) and (18),
+                1
+              δ12 Id ∈ hA′ is + B(0, δ1 ) ⊂ g hAis g −1 + B(0, δ −Os (ǫ) δ1 ).
+                                                      1
+Hence there exists a ∈ hAis such that a ∈ δ12 Id + B(0, δ −Os (ǫ) δ1 ). Taking the
+                                                 3
+square, we obtain a2 ∈ δ1 Id + B(0, δ −Os (ǫ) δ12 ). Thus, when ǫ is suﬃciently small,
+                                                 δ1
+                                 a2 ∈ δ1 Id + B(0,  ).
+                                                  2
+For all ρ > 0, the multiplication by a2 will transform a ρ-separated set in Rn into
+a δ12ρ -separated set. Hence,
+                                 Nδ1 ρ (a2 X) ≫ Nρ (X).
+Moreover a2 X ⊂ B(0, δ −2ǫ δ1 ). So
+       Nδ1 ρ (X + a2 X) ≥ δ O(ǫ) Nδ−2ǫ δ1 (X)Nδ1 ρ (a2 X) ≥ δ O(ǫ) Nδ1 (X)Nρ (X).
+Lemma 30 tells us a2 ∈ Sδ (X, δ −Os (ǫ) ) and for all ρ ≥ δ1−1 δ,
+                         Nδ1 ρ (X + a2 X) ≤ δ −Os (ǫ) Nδ1 ρ (X).
+Combining the two estimates above, we obtain
+(22)                       Nδ1 ρ (X) ≥ δ Os (ǫ) Nδ1 (X)Nρ (X)
+whenever δ1 ρ ≥ δ.
+   According to the remark after the proof of Proposition 31, we can assume that
+there is an integer k with 1 ≤ k ≤ 1c such that δ = δ1k . Applying (22) to ρ = δ1i ,
+i = 1, . . . , k − 1, we obtain
+                              Nδ1k (X) ≥ δ Os (kǫ) Nδ1 (X)k .
+Hence, by (21) and the assumption on X,
+                          δ −σ−ǫ ≥ Nδ (X) ≥ δ −σ−ǫ2 +Os (kǫ) ,
+which is clearly impossible when ǫ is small enough and this ﬁnishes the proof.       
+Remark. Theorem 3 together with Lemma 15 yields another proof of Theorem 2.
+It suﬃces to consider the action of left and right multiplications of elements of A on
+the set A. Actually, this proves something slightly stronger. Namely, the conclusion
+of Theorem 2 can be improved to
+        Nδ (A + A) + max Nδ (A + a · A) + max Nδ (A + A · a) ≥ δ −ǫ Nδ (A).
+                       a∈A                      a∈A
+
+             8. A sum-product estimate in simple Lie algebras
+    In this last section, we prove Corollary 4. Let g be a normed ﬁnite-dimensional
+real simple Lie algebra. We consider the adjoint representation ad : g → End(g),
+i.e. ad(a)x = [a, x] for all a, x ∈ g.
+Proof of Corollary 4. It suﬃces to apply Theorem 3 to the set A ⊂ g and the set
+of endomorphisms ad(A) ⊂ End(g). Note that the kernel of ad is the center of g
+which is trivial for g is simple. Therefore, ad is a bi-Lipschitz map from g to its
+image. This gives the non-concentration condition on ad(A). And the quantitative
+irreducibility condition of Theorem 3 is guaranteed by the following lemma.      
+Lemma 32. Let 0 < ρ ≤ 12 be a parameter. Let A be a subset in a normed simple
+Lie algebra g of finite dimension. Assume that A ⊂ B(0, ρ−1 ) and that A is ρ-away
+from Lie subalgebras in g. Then ad(A) acts ρOg (1) -irreducibly on g.
+28                                         WEIKUN HE
+
+
+Proof. Without loss of generality, we can assume the norm on g to be Euclidean.
+The statement and proof of Lemma 14 remains valid when the word "subalgebra"
+is replaced by "Lie subalgebra". Actually this fact is implicit in [15, Lemma 2.5].
+Therefore, as in the proof of Lemma 15, we can assume that A is ﬁnite of cardinality
+at most n and contained in B(0, 1). Write A = {a1 , . . . , an }.
+   Suppose the conclusion does not hold, which means there is a linear subspace
+W0 of dimension 0 < k < n such that for all w ∈ W0 ∩ B(0, 1) and all i = 1, . . . , n,
+d(ad(ai )w, W0 ) < ρC where C is a large constant to be determined by the use of
+the Łojasiewicz inequality below. Consider the following real analytic map :
+                        Gr(k, g) × gn       →                       R
+                f:                                n Z
+                                                  X
+                      (W ; x1 , . . . , xn ) 7→              d(ad(xi )w, W )2 dw
+                                                  i=1   W ∩B(0,1)
+
+From the above we have f (W0 ; a1 , . . . , an ) ≪ ρC . Application of the Łojasiewicz
+inequality (Theorem 13) to the compact set Gr(k, g) × B(0, 1)n gives W1 ∈ Gr(k, g)
+and b1 , . . . , bn ∈ g such that f (W1 ; b1 , . . . , bn ) = 0 and ∀i = 1, . . . , n, kai − bi k < ρ
+when the constant C is chosen large enough. The fact f (W1 ; b1 , . . . , bn ) = 0 is
+equivalent to every bi being in the Lie subalgebra
+                              gW1 = {x ∈ g | ad(x)W1 ⊂ W1 } .
+   Now our set A is not ρ-away from the Lie subalgebra gW1 . Hence gW1 must be
+g, which in turn implies that W1 is an ideal in g. This contradicts the simplicity of
+g.                                                                                 
+
+                                          References
+ [1] Y. Benoist and N. de Saxcé. A spectral gap theorem in simple Lie groups. Invent. Math.,
+     205(2):337–361, 2016.
+ [2] Y. Benoist and J.-F. Quint. Mesures stationnaires et fermés invariants des espaces homogènes.
+     Ann. of Math. (2), 174(2):1111–1162, 2011.
+ [3] J. Bourgain. On the Erdős-Volkmann and Katz-Tao ring conjectures. Geom. Funct. Anal.,
+     13(2):334–365, 2003.
+ [4] J. Bourgain. The discretized sum-product and projection theorems. J. Anal. Math., 112:193–
+     236, 2010.
+ [5] J. Bourgain, A. Furman, E. Lindenstrauss, and S. Mozes. Stationary measures and equidistri-
+     bution for orbits of nonabelian semigroups on the torus. J. Amer. Math. Soc., 24(1):231–280,
+     2011.
+ [6] J. Bourgain and A. Gamburd. On the spectral gap for ﬁnitely-generated subgroups of SU(2).
+     Invent. Math., 171(1):83–121, 2008.
+ [7] J. Bourgain and A. Gamburd. A spectral gap theorem in SU(d). J. Eur. Math. Soc. (JEMS),
+     14(5):1455–1511, 2012.
+ [8] J. Bourgain, N. Katz, and T. Tao. A sum-product estimate in ﬁnite ﬁelds, and applications.
+     Geom. Funct. Anal., 14(1):27–57, 2004.
+ [9] J. Bourgain and P. P. Varjú. Expansion in SLd (Z/qZ), q arbitrary. Invent. Math., 188(1):151–
+     173, 2012.
+[10] J. Bourgain and A. Yehudayoﬀ. Expansion in SL2 (R) and monotone expanders. Geom. Funct.
+     Anal., 23(1):1–41, 2013.
+[11] R. Boutonnet, A. Ioana, and A. S. Golseﬁdy. Local spectral gap in simple lie groups and
+     applications. Invent. math., 2016.
+[12] E. Breuillard. Lectures on approximate groups. IHP, Paris, February-March 2011, available
+     at http://www.math.u-psud.fr/~breuilla/ClermontLectures.pdf .
+[13] M.-C. Chang. A polynomial bound in Freiman’s theorem. Duke Math. J., 113(3):399–419,
+     2002.
+[14] M.-C. Chang. Additive and multiplicative structure in matrix spaces. Combin. Probab. Com-
+     put., 16(2):219–238, 2007.
+[15] N. de Saxcé. A product theorem in simple Lie groups. Geom. Funct. Anal., 25(3):915–941,
+     2015.
+[16] N. de Saxcé. Borelian subgroups of simple Lie groups. Duke Math. J., 166(3):573–604, 2017.
+             DISCRETIZED SUM-PRODUCT ESTIMATES IN MATRIX ALGEBRAS                               29
+
+
+[17] G. A. Edgar and C. Miller. Borel subrings of the reals. Proc. Amer. Math. Soc., 131(4):1121–
+     1129, 2003.
+[18] P. Erdős and E. Szemerédi. On sums and products of integers. In Studies in pure mathematics,
+     pages 213–218. Birkhäuser, Basel, 1983.
+[19] P. Erdős and B. Volkmann. Additive Gruppen mit vorgegebener Hausdorﬀscher Dimension.
+     J. Reine Angew. Math., 221:203–208, 1966.
+[20] A. Eskin, S. Mozes, and H. Oh. On uniform exponential growth for linear groups. Invent.
+     Math., 160(1):1–30, 2005.
+[21] W. He. Orthogonal projections of discretized sets. ArXiv e-prints, Oct. 2017.
+[22] H. A. Helfgott. Growth and generation in SL2 (Z/pZ). Ann. of Math. (2), 167(2):601–623,
+     2008.
+[23] N. H. Katz and T. Tao. Some connections between Falconer’s distance set conjecture and
+     sets of Furstenburg type. New York J. Math., 7:149–187, 2001.
+[24] S. Lang. Algebra, volume 211 of Graduate Texts in Mathematics. Springer-Verlag, New York,
+     third edition, 2002.
+[25] E. Lindenstrauss and N. de Saxcé. Hausdorﬀ dimension and subgroups of SU (2). Israel J.
+     Math., 209(1):335–354, 2015.
+[26] S. Łojasiewicz. Ensembles semi-analytiques, 2006. Notes from a course given in Orsay, avail-
+     able at https://perso.univ-rennes1.fr/michel.coste/Lojasiewicz.pdf.
+[27] G. Petridis. New proofs of Plünnecke-type estimates for product sets in groups. Combinator-
+     ica, 32(6):721–733, 2012.
+[28] R. S. Pierce. Associative algebras, volume 88 of Graduate Texts in Mathematics. Springer-
+     Verlag, New York-Berlin, 1982. Studies in the History of Modern Science, 9.
+[29] J.-P. Serre. Applications algébriques de la cohomologie des groupes. ii : théorie des algèbres
+     simples. In Séminaire Henri Cartan, 1950/51, Exp. 6, pages 1–9. Secrétariat mathématique,
+     Paris, 1950/1951. Available at http://www.numdam.org/item?id=SHC_1950-1951__3__A6_0.
+[30] T. Tao. The sum-product phenomenon in arbitrary rings. Contrib. Discrete Math., 4(2):59–
+     82, 2009.
+[31] T. Tao and V. H. Vu. Additive combinatorics, volume 105 of Cambridge Studies in Ad-
+     vanced Mathematics. Cambridge University Press, Cambridge, 2010. Paperback edition [of
+     MR2289012].
+
+   Laboratoire de Mathématiques d’Orsay, Univ. Paris-Sud, Université Paris-Saclay,
+91405 Orsay, France.
+   E-mail address: weikun.he@math.u-psud.fr
+

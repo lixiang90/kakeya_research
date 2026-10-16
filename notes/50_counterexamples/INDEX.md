@@ -29,5 +29,6 @@
 | single_block_ae_time_free_tensorization | full四参数方向加两个单块a.e.-t定理就自动joint满维 | R0013 coupled接口：f=c,g0的参数条件fiber仅1维；输出条件fiber随t改变，不能交换固定集合量词 | 保同一P和shared t的新joint投影/能量估计；product或独立t平均不能替代 |
 | unpruned_joint_L2_has_power_gain | 对全部原dense marks统一E₂≤δ^(−6+σ) | CPJ002真实full4网、f=−τd/g=−τe使E₂≈δ⁻⁶；actualcover≈δ⁻⁵λ³ | 需从原marks证明质量可保的修剪；该例坏时间可删，不是CP或truncated反例 |
 | every_long_cycle_forces_further_direction_drop | 从三四五环退化可无限推全部闭环低于full4 | CPJ001六cycle有限差分构造真实full4方向rank且可满来源补全；五环仅3、四环固定首边2 | 不继续逐边polygon；必须从原incidences推出有效cycle质量或新的可检验机制 |
+| uniform_shading_lower_and_low_mass_are_different_tasks | 对全部原P_j统一CP只给union，不能反推出PM，故PM是独立更小新路线 | R0015删high whole cells后再次应用CP，任意τ<σ获≥S/2更严格低重数mass；与反向合成正gain等价 | 冻结CP/PM局部改名；此是量词纠错而非Kakeya反例，逐管门槛须另核闭包 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

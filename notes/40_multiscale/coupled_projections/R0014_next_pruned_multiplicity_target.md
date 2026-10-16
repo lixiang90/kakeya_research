@@ -27,3 +27,5 @@ R0014 caustic构造严格阻止不剪原marks的统一L2改善，但其坏时刻
 一手GGW/CSWZ/Du/Gan的已核定理没有直接提供这项相对质量结论；新primary审计所列pencil退化不能靠删dense time family消掉。若用新文献，需要重新核其对原图与原shading的量词。
 
 只给一主轮：检验PM证明或保所有原量词的反例，至少须得到严格的质量收缩/修剪估计。重复caustic算术、只改阈值、smooth例、先假定无坏cycles、仅将目标叫relative nonconcentration都不计信息增益。无实质质量进展则macro冻结此子类的局部迭代，回到一般五维几何/源证明新机制。没有新维数界或重大结果，长期Goal active。
+
+2026-10-17 R0015更正：上文“未证等价”是R0014当时状态。原CP量化所有P_j，允许保留完整high cells后再次调用，故CP(σ)推出任意τ<σ的PM，甚至常数1/2低重数质量。结合反向，存在正gain层面等价；详见R0015_uniform_shading_closure.md及独审。未证明其中任何一个，停止把PM当独立新机制的局部迭代。

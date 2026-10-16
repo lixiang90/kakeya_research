@@ -1,36 +1,42 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0014。长期Goal active；未解决n≥5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0015。长期Goal active；未解决n≥5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
 
 ## 恢复与宏观状态
 
-R0014起点R0013 commit b20939b36287b9973dbac9dad9eb8e58f4ff80af，208文件回执、local=origin/main和clean tree已核。以该commit为父同步；完成回执tmp/sync/R0014.json由完整远端核验及精确本地导入后生成。下一轮先核回执及git，再读GOAL、STATE、ROADMAP、registry和R0014正式轮次，运行python scripts/context.py；不从最后算式恢复。
+R0015起点R0014 commit 565016ef8fc9ecf9c36a09b6e57dd5387b6f235d，233文件回执、local=origin/main及clean tree已核。本轮沿此父同步；完成回执tmp/sync/R0015.json在完整远端核验和精确本地导入后生成。下一轮核回执/git，再读GOAL、STATE、ROADMAP、registry与R0015正式轮次，运行python scripts/context.py；不从局部末段恢复。
 
-上一Goal turn分类progress；本轮CP仍open，但首次得到真正shared-time闭环约束及未修剪energy障碍。关键捷径失败触发R0014_macro。已停止三四五六polygon层级细节；下一主轮必须从原marks推出可保留的质量，不继续增边/调阈值。每主轮至多两项互补审查；三轮、关键失败或连续两轮无信息即macro。最终完成标准不降。
+上一Goal turn分类progress。本轮是第三轮macro节点并实际执行停止规则：没有新质量估计或Kakeya界；通过证据纠正PM新路线的误判、冻结等价迭代，转真实多尺度矩阵分支。初等等价不新增result ID，也不作为数学突破。AGENTS新增开轮合法restriction闭包与双向蕴含检查。
 
-## R0014可调用结果与缺口
+## R0015量词纠正及冻结
 
-CPJ001：γ=(1,t,−t²)、Π_t=A_t⊕A_t。互距≥ρ的times下，每边joint residual≤ε的四环，方向距同一首边确定的2-plane≤500ερ⁻²，不除首边大小；固定首边原candidate方向数≤C min(δ⁻⁴,ρ⁻⁴δ⁻²)。五环方向近某可变3-plane，稳定同Oερ⁻²；六环已有真实full4方向rank例。完整解析证明和独审在results/reviewed/CPJ-001_shared_time_cycle_rank_constraints.md。没有原dense系统足量有效cycles的质量下界，不能从上界推出CP。
+原CP对同一full方向图P的全部合法P_j统一量化。保留high重数whole cells后，原平均密度仍可用η余量吸收常数1/2，得到新的合法选择，P/anchors/单位轴/clock均不变。因此CP(σ)推出任意τ<σ下至少S/2原mass满足m≤δ^(−1+τ)；PM(τ)反推CP(τ)已核。存在正gain层面CP⇔PM；精确endpoint不等同。完整证明notes/40_multiscale/coupled_projections/R0015_uniform_shading_closure.md，两代理独立核验及research/reviews/R0015_*。
 
-CPJ002：原full4方向网、f=−τd,g=−τe、τ1/2的caustic使未修剪E₂≈δ⁻⁶；统一δ^(−6+σ) upper为假。实际cover≈δ⁻⁵λ³，删|t−τ|<s仅损O(s/λ)质量、余E₂≤Cδ⁻⁵/s，所以不是CP反例，也未排truncated路线。入口results/reviewed/CPJ-002_untruncated_energy_caustic_obstruction.md。
+R0014“单次union计数不直接给mass”仍正确，但原问题可删选后再次调用，所以不能把PM当不同新机制。历史候选已加更正。CP/PM本身仍open，没有反例；其光滑D场子类局部迭代冻结，不以inverse、entropy、relative或重数阈值改名重开。论证依平均密度闭包，逐管long-marks的输入未必闭包，不能移用DIR003。
 
-新一手审计确认GGW Thm2.1和CSWZ Thm1.6/1.7确有finite/shading/robust量词；不是笼统的a.e.-Hausdorff缺口。但联合Grassmann导数rank2不能变为GGW单曲线osculating rank1；CSWZ的rank-one model hyperplane与Schubert pencil包含整个本族，small-loss spread-out条件失败，其他universal增益调用也与4→3的Z校准矛盾。Du theorem维数/无子空间塌缩条件不合，Gan BL亏损仍含≥4−3p。Z=B₁⊕Re_c方向投影仅3，不是CP反例。原full方向图的4-Frostman upper与相对D-deficient cap都保留，尚无使用它们的joint质量定理。
+两步path端点恢复F+(a+b)D−abB=0及原方向rank-one cone cap≤C(θ+δ)只是边界。路径终点law按路径数重权，缺对原prior的domination，不能把cap当mass删剪；不继续局部条件数/阈值推演。
 
-两代理互补任务、交叉独审及root整合在research/reviews/R0014_*，均未认证新颖/重大。新存4篇PDF：GGW2211.09508v2、CSWZ2610.13682v1（2026-10-09）、Du2510.16671v2、Gan2308.07675v2；文献库共15篇，含全文、字节/SHA256、read_scope及未全面独立重证状态。metadata/R0014_source_check.json记录版本和有限检索边界。核心175页四维proof仍未全面独立重证。
+## 唯一下一主任务：N5-STICKY-MATRIX-01
 
-## 唯一下一主任务：N5-PRUNED-MULTIPLICITY-01
+返回Wang–Zakharov arXiv2609.22035v1 Definitions17.2–17.4的真实d5/k=ℓ3配置，f:Z→Mat(2,2)。完整tube(4,δ⁻η)-AD、CCW≤δ⁻η、cross-scale原管/Φ_p/ξ_p相容、dense2D grains、Y_z的(2−κ)-AD及(1−γ)-tube Katz–Tao、Φ_p的κ-AD及γ-slab Frostman全部保留。一般方向分离管不自动sticky，source约化也未在本项目全面重证。
 
-保持原CP全部数据：Ωδ四参数真实方向δ-separated且#P≈δ⁻⁴，bounded任意耦合anchors，Euclidean单位axes L_v(t)=(t,bt−d,ct−e,f+dt,g+et)的clock[0,1/|(1,v)|]。小slopes共同覆盖I=[1/4,3/4)，原dense marks已经在I内，不能免费删endpoint tails。P={(b,d,f,c,e,g)}同一固定图；Π_t=A_t⊕A_t，A_t=[[t,−1,0],[0,t,1]]。同一δ-midpoint时钟t_j及原任意P_j，S=Σ#P_j≥δ^η#Pδ⁻¹。
+下一候选是原Lemma20.3的完整Mat(2,2)非线性版本：固定source参数ζ,κ,γ,ε₀,μ，适当ε、η及依η的δ₀；某source允许ρ∈[δ^(1/4),δ^μ]上，对所有z₀及dyadicρ-interval J、所有实矩阵R,U，满足
 
-在固定outputδ网格令m(j,Q)=#{p∈P_j:Π_tj p∈Q}。检验是否存在固定τ∈(0,1)，每ε∈(0,τ/4)可选η，使至少cεδ^ε S原incidence mass位于m≤Cεδ^(−1+τ−ε)的cells。它若成立，cells≥δ^(−4−τ+η+2ε)，按先最终误差后内部ε/η给CP固定gain。完整量词及停止条件见notes/40_multiscale/coupled_projections/R0014_next_pruned_multiplicity_target.md。
+    #{z∈Z∩J:||f(z)−zR−U||∞≤ρ^(1+ε₀)}≤ρ^ε(ρ/δ)
 
-这是待证的原质量结论，不是附加统计假设。单凭CP的union计数不能形式反推此mass，未证明二者等价或真实系统中的严格逻辑分离。原方向cap对dimD(Z)=l<4的affine Z给μ(NρZ)≤Cρ^(4−l)，ρ≥δ；若正规化小subset须付原质量倒数。尚未证明坏mass会集中到这些Z。
+是否推出κ≤ζ？R,U不限entries；κ在source允许0<κ≤2范围，不能途中缩原亏损。精确目标notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md，输入审计R0015_source_matrix_reset.md。下一轮先working_spec，再从真实L-tuples/原质量推进联合二维扩张或可约分支。
 
-下一轮只给一主轮真实质量修剪/反例尝试；互补核退化路径和full来源。可用四环首边packing，但必须付Cδρ⁻²时间损失，并证明原质量如何进入有效cycles。重复caustic算术、改阈值、增加polygon、先假定无坏cycles、relative标签改写都不计进展。无质量信息增益立即macro冻结该局部子类迭代，转不同的一般五维机制。
+已有正向输入不为空：source Lemma20.2 pp86–87明确适用所有矩阵尺寸，已处理dense local-affine branch；其V-tuple/19.2依赖仍须核，非线性分支另用L-tuples。Lemma20.3 pp88–89的scalar方法靠Y维数1−κ矛盾；本分支Y维数2−κ，尤其κ<1时单个标量projection满1不够，两投影也不能免费相加。原V/L-tuples给Y平移由(z−z')(f(z)−f(z'))(Φ−Φ)控制，这是实际来源，不是CP的替代假设。
 
-CP和一般N5-NARROW-GAIN-01均保持open。CP只是光滑D场的真实窄子类；没有一般V_Q全局正规化/抽取。即使CP成功，仍缺一般narrow、中间角宽、重标度、Hausdorff多尺度覆盖。
+He矩阵和积、He–de Saxcé Lie表示定理可作参考，但不可约/商非集中/远离stabilizers与submodules及多次作用闭包都须从原数据证明。后者允许某些可约表示，不可一概排除；也不许添加irreducibility丢掉合法分支。原更新作用Φ差，不能直接当Y+aY。下一主轮至多两互补审查，一项真实L-tuples及affine输入，一项向量扩张/可约反例；需实际joint估计或严格分支收缩，无新信息再macro，不回formal j3。
+
+这只是五维sticky一个关键分支；(3,2),(4,2),(4,3) mixed cases、一般到sticky及Hausdorff多尺度覆盖仍未解决，不替代最终一般Kakeya目标。成功后仍需独立完整审查与一手新颖性比对才能评估重大性。
+
+文献库现17篇PDF；新增He1611.09639v2（29页）及He–de Saxcé1806.06375v3（23页），均原PDF/全文/SHA256/精确read_scope。metadata/R0015_source_check.json区分声明阅读和全文独立重证；两篇均未直接用作无条件新证明输入。核心175页proof仍未全面独立重证，SRC001/DIR003继续conditional。
 
 ## 保留与冻结
+
+CPJ001四/五cycle约束与六cyclefull4例保留；CPJ002未修剪E₂≈δ⁻⁶障碍保留。两者均无原mass下界，不是CP反例。CP↔PM的原平均shading等价已核，因此冻结该子类局部改名，重开须不同实质输入。
 
 NAR001：full4实际unit tubes/full marks可沿central rich轴旋转plane；union≈1，hot mass Oδ，central hot incidences Oδ²，只排直接沿轴固定plane，不排averaged删剪。NAR002：固定H4整管包、原subpower逐管marks在DIR003条件下给δ^(4+ε)λ#T，假设两步brush/密度/重叠也只δ¹；H4 δ⁻³方向bush排包级统一负幂增强，不是主NG反例。
 

@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0014关键能量失败宏观审视已完成。无新Kakeya维数下界，长期Goal未解决。
+更新2026-10-17，R0015第三轮纠错与实际停止宏观审视已完成。无新Kakeya维数下界，长期Goal未解决。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -15,7 +15,8 @@
 | J | j3 horizon与前端completion | HOR-003在实际f≡0/S1及原visible density有界下仍M/6≤H≤M；uniform H≤C(L+κ)在κ0也失败 | 整个visible-cost completion策略frozen；不得接着追加同义统计条件 |
 | K | 曲线到直线的coherent lifting | LIFT-005完整分类任意smooth空间仿射/原clock的codim1：B0或rankB=rankB²=1；diag(1,2)排除 | 本窄类已完成并frozen，不继续clock/normal form细节；一般非线性π未排除 |
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
-| M | 共享时间双块受限投影 | CPJ001四环固定2-plane/五环3/六环full4；CPJ002未修剪energy障碍；CP仍open | 唯一优先N5-PRUNED-MULTIPLICITY-01：同一全部原数据，证明可保低重数质量；不续polygon细节 |
+| M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
+| N | 真实sticky五维矩阵分支 | d5/k=ℓ3的完整AD/CCW/slab/tube-KT配置；Lemma20.2有affine输入，二维非线性expansion未证 | 唯一优先N5-STICKY-MATRIX-01：Mat(2,2)版本Lemma20.3，保全部实际来源 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
-DIR003仍条件于完整四维proof，所有completion修补/LIFT005窄类细节冻结。R0014新的joint约束有真实方向packing，但无原mass推出有效cycles的下界；六环允许full4，停止逐边加polygon。新GGW/CSWZ等finite工具的几何前提不满足，不因题名直接调用。下一PM保持任意anchors与原P_j，检验低重数的subpower质量保留；它尚未证，不能加作假设。若一主轮无质量进展即macro换一般五维机制。CP/NG及一般V_Q抽取、中间角宽和Hausdorff覆盖均open。
+DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
