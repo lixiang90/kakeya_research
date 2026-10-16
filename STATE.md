@@ -1,42 +1,47 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0007。长期Goal active。尚未解决高维Kakeya，没有新维数下界或经文献确认的重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0008。长期Goal active。尚未解决高维Kakeya，没有新维数下界或经文献确认的重大中间结果。
 
 ## 恢复与宏观状态
 
-上一轮R0006已同步61e983535f25dbf70d8e78a988fd2b36c5d749bd；R0007开轮工作树干净，上一goal turn分类progress。先读GOAL、STATE、ROADMAP、results/registry.json及最近正式轮次；python scripts/context.py不再误选working_spec。
+R0007已同步0a6821588209f257fed4d0d838d37b8792b4e9bd；R0008开轮工作树干净，上一goal turn分类progress。先读GOAL、STATE、ROADMAP、results/registry.json及最近正式轮次；运行python scripts/context.py，不从某份草稿末句恢复。
 
-七轮的条件工具和路线排除不是数学完成。R0007主输入被否定触发提前宏观审视，见research/reviews/R0007_macro.md；当前一般j3机制的初始化已出现实质问题，不能继续仅修补后期flag。旧笔记早知convex障碍，本轮没有把已知例子当新发现。
+八轮的条件工具和路线排除不是数学完成。R0008不仅否定generic j3 horizon上界的证明输入，还给出H>L的完整形式模型，已立即宏观审视：research/reviews/R0008_macro.md。停止改善该quadric toy的精确指数，转向带真实方向来源的正向输入。
 
-文献库现7篇PDF及全文、元数据和部分官方源码。新增Guth2025介绍v1：21页，960668字节，SHA256 86e9d96ab3d8bccc9c1a539c880f14c0902bff00fba6e66c5ca073866d4b9755。其p20与Zahl pp11–12的quadric数字差异已按渲染原页核对，强断言未用作输入。核心175页四维证明尚未全面独立验证，j=2为原稿，j=3仍是拟推广。
+文献库7篇PDF及全文、元数据和部分官方源码，本轮无新增下载。核心paper.pdf为175页四维稿；整篇证明尚未全面独立验证。原稿实际j=2，本轮j=3是字面拟推广，不反驳原四维论文。Guth2025介绍p20与Zahl pp11–12的quadric数字差异已在R0007核对，未采用有疑点的强断言。
 
-## R0007已核验结果
+## R0008已核验结果：HOR-001
 
-- PLK-001：显式M(t)=(s+pt,−sq−p/s−pqt,1/s+qt)位于ty+xz=1。所有正交frame/affine center/fulltime空间框都有连续μ(P)≤Cw1 min(w2,w3²)；包含相切框和二次系数近零case。
-- δ-grid全框计数≤Ccap δ^-1/2(w1w2w3/δ³)，统一每index权δ^1/2/Ccap后全部WP4 cap满足A=1。满D时间marks给加权访问量≥cD^(7/2)，而#E≤CD³；ε<1/2时WP4不可能，任何η都无法挽救。
-- 未加权完整族确有(δ,δ,√δ)坏框，loss δ^-1/2上下匹配。全框upper是解析证明，有限有理网格脚本只辅助bad-frame lower，不能替代它。反例机制已知、不具满方向、不反驳Kakeya。
-- PLK-002：固定维度、有界chart中的WP/weighted convex-shading/unweighted near-clustering输入可调整εη互推。任意measurable shade→marks须付重cells δ^-κ；平均/逐管密度转换有两个η；短非固定时间窗另有真实幂成本。
-- SRC-001：若整篇四维proof及其输入正确，其finite proof可条件性读出方向丰富的有限尺度估计。它能处理五维初始source保留full visible-slope density的g00专用调用；不能替代2.16在任意conditional group/residual中的无方向输入。
-- 原2.17正horizon最后须把eligible slope-volume乘原始full-slope density；带N0^κ时gain先付κ。归一化后full-slope ceiling成本C J/[q^(j+1)ν(A)]；一般C(d)优化不保原方向来源。§6 support依赖既有critical path，不能倒用来补初始化。
+- 完整8维有限分段常密度tempered先验：可见quadric δ-grid均匀index概率约δ³，六系数独立δ盒平滑；完整visible block与有限1/2-Cantor隐藏C、极细均匀W三组独立。native P*=w，B=1，未将incidence质量1/4归一化。
+- 固定内层时间g_t≤Cδ^-1，支撑体积≤Cδ；积分给 sampled typical lower，不能声称所有支撑点都有lower。隐藏bins给典型n(r)≈log δ^-1 a_r^(1/2)，f(r)=r/2−M；全速度bin两尺度计数给S1 angular cap。形式定义允许f(0)=−M。
+- 所有正宽度、所有frame/affine center的原概率cap为νvis(P)≤Cδ^-1/2 J。短时间块q外推付q^-3，矩阵SVD付K³。不得将它免费替换成归一化conditional cap。
+- 对任意二次test及任何assignment/selection，同一原product prior上的一元small-value/derivative估计给m/q≤K^C a^(1/2)νvis(P_I)。原真实floor给m/q≥K^-1δ^-1a^(1/2)J，因此q³≤CK^Cδ^(1/2)，H≥M/6。
+- 直接构造q=δ的真实终端atlas，good midpoint cells×原C-bins质量与n(r)J匹配，current observation给O(1) own-list，得到H≤M。L=1、M=12时2≤H≤12；进一步inverse-subpower选择与subsequence不能逃过lower。
 
-独立审查：R0007_quadric_plank_review、R0007_source_input_review、R0007_union_equivalence_review；root另核QCAP、离散边界、时间量词和坏框。详见research/reviews及results/reviewed对应入口。没有独立重证整篇四维定理。
+证明入口results/reviewed/HOR-001_smoothed_quadric_high_horizon.md。prior/profile、spatial cap经独立交叉审查，任意test/floor/显式atlas另经root逐步审查；见research/reviews/R0008_*。内部复核，未经外部同行评审，不声称新颖性。
+
+该数据没有原始full-slope subpower来源，也不含全部方向。它否定无来源条件的formal j3 H≤L模板，不是Kakeya反例、不是原j2定理反例，不构成重大中间结果。
 
 ## 保留工具与冻结版本
 
-保留DIR-002 truefloor加权预算、ENT-002同prior mixed entropy、FLAG-002条件外积夹逼/对齐、PLK-002转换与QCAP。R0006的FLAG-003只给原H0/投影H=L，FLAG-001的d1边界例horizon未算，不能混同。
+保留DIR-002 truefloor加权预算、ENT-002同prior mixed entropy、FLAG-002条件外积夹逼/对齐、PLK-002固定维度转换、PLK-001全框QCAP及SRC-001方向丰富finite条件读出。SRC-001以整篇四维proof及输入正确为条件，不能仅从Hausdorff定理陈述读出。
 
-冻结：满维投影加一、无条件次数恢复、guard-only旧窗口、小全局palette、无损native-to-W、仅双短轴的自动matching/无损投影，以及本轮无方向WP4的直接加维。重开须有排除明确反模型的新输入。不能把初始raw full-slope ceiling免费送给normalized optimizer worlds。
+R0006 FLAG-003是原H0/投影H=L；FLAG-001的d1边界例horizon未计算。不得与HOR-001混同。
 
-## 下一轮唯一任务：N5-HOR-01
+冻结：满维投影加一、无条件次数恢复、guard-only旧窗口、小全局palette、无损native-to-W、双短轴自动matching/无损投影、无方向WP4直接加维，以及无source j3通用completion/H≤L模板。重开须有排除明确模型的新假设，并检验normalization、coarsening、completion及selection闭合。初始raw full-slope ceiling不能免费送给normalized optimizer worlds。
 
-目前仅严格否定generic j3 H≤L的原greedy证明输入，尚未否定H≤L结论。下轮检验具体定量候选，见R0007_macro：可见quadric δ-grid在全部b,u独立δ盒平滑，δ=N0^-M；隐藏w0=c取full-density有限d-Cantor，W在远小terminal a=N0^-L的窄区间，nativeP*=w，完整八系数prior。选中固定内层时间段。
+## 下一轮唯一任务：N4-DIR-01
 
-目标证明或证伪：典型n(r)≈log δ^-1 a_r^d；平滑全宽度cap νvis(P)≤Cδ^-1/2 J；短块外推给νvis(P_I)≤K0^Cδ^-1/2 q^-3 J。独立隐藏Frostman及任意quadratic test的选中导数下界预计给m/q≤K0^C a_r^dνvis(P_I)，同prior truefloor迫q³≤K0^Cδ^1/2，即H≥M/6。取M>6L可能H>L。
+在SRC-001方向丰富finite读出（条件于整篇四维proof正确）之上，证明或否定带明确线性方向bin质量上界α的加权输入。固定bounded四维graph chart，每个δ方向bin总权≤α；若三维visible-slope物理密度≤A·Lebesgue，则α=C Aδ³。每个index保留至少δ^(-1+η)个time marks，目标
 
-以上全是未核验候选，不登记为定理。优先验证完整tempered density、δ网格/平滑孔洞与典型base density（不能仅由支撑体积断言lower）、任意新二次test而非指定native，以及原始m/q floor。暂不附带未证明的angular/maximizing-source条件；若要声称C(d)必须另核。一个主轮验收后重新审视，不继续无限改善toy。
+Σ_index ω_index #J_index ≤ C_ε α δ^(-ε) #E，即物理密度单位下C_ε Aδ^(3−ε)#E。
+
+要求对任意权重、重复indices及极稀疏方向质量一致。不能回到已否定的无方向WP4；HOR-001仍满足大A≈δ^-1，但须支付该幂成本，不满足subpower A来源。拟检验direction-bin抽样/去重及随机旋转复制补足near-full方向，必须处理m/(αδ^-3)极小、graph/time转换、shading与ε/η量词，以及SRC-001复制后重分箱/选择接口。全程跟踪实际A，不将归一化parent免费设A=1。独审发现草案漏δ³会成为平凡计数，已修正且未将其算作结果。
+
+一主轮给出严格条件桥接或明确失败环节；这是正向source输入检验，不预先声称新几何或重大结果。如成立，才逐调用核对实际source中哪些部分可替代；不因此宣布所有极值闭合。
 
 ## 同步与执行
 
-R0007以R0006为父增量同步，校验完整tree、全部文件SHA、同一local/remote commit和干净树，回执tmp/sync/R0007.json。新增PDF须精确字节上传；create_tree使用已核验base及变化条目，避免全表大请求。CLI网络不可用时用已连接GitHub API，不force push。
+R0008以R0007为父增量同步；完整tree、全部文件blob SHA及SHA256、同一local/remote commit和干净树的回执写tmp/sync/R0008.json。下一轮先查回执及git状态。新增PDF须精确字节上传；create_tree使用已核验base及变化条目，随后比较完整tree。CLI网络不可用时用已连接GitHub API，不force push。
 
 每轮先写working_spec；三轮、关键反例或两轮无信息增益时宏观审视。系统Python中文用-X utf8。长期Goal仅按GOAL.md数学完成标准审定，当前active。
