@@ -33,8 +33,17 @@ N5-MIXED42-Q01 是完整实际 d5/k4/ell2 的二次 alternative，尚未解决�
 | R0024_original_angle_scalarization.md | coefficientweighted扩展及√w边界、实际middleτ同图选择gate，保所有条件 |
 | R0024_next_weighted_scalar_engine.md | 下一原fine weightedν的scalarcurvature nonexpansion；未证，不整套source22.5 |
 
+| R0025_weighted_time_reduction.md | finite admissible参数网，同F/G代表同时保图/weightednonfit；preparedprior不冒旧原子restriction |
+| R0025_weighted_engine_counterattack.md | 独立ghost/arrangement抽样、heavycell/clock费用，旧atomicmass严格边界 |
+| R0025_scalar_engine_source_audit.md | balancedS/BSG、actualuniformP共同邻居新prior、weightedKaufmanlaw与charts完整修补 |
+| R0025_scalar_curvature_engine.md | named13.7/5.1/22.2下完整原weighted scalarengine，逐prior计cycle质量 |
+| R0025_conditional_mixed43_middle_tau.md | 同步L/workingw、fullYpacking/heavyA与κbuffer；实际middleτ仍有matrixAFF条件 |
+| R0025_next_large_tau_target.md | 下一largeτ vector affine nonfit及合法globalτ改进，未证，不局部重置τ |
+
 条件全局结论另存 results/reviewed/MIX-001_global_common_kernel_exclusion.md；它是既有三维定理应用，不宣称新颖性或重大结果。局部预算与边界另存 MIX-002_local_projection_endpoint.md。PCT-001有限引理、MIX-003二次链、SCAL-001/AFF-001实际准备分别登记，不能升级完整Kakeya或重大性。R20局部mixed42冻结；R22支付准备后下一转actual非二次，仍不得免费scalar化vectorY。
 
 R23 NQP-001只登记原质量接口；mixed32完整非二次未证。无输入rank局部重写停止，下一转actual mixed43而不免费scalar化二维Y。
 
 R24 QSC001通过原角finite/conditional实际gate，完整mixed43仍open；下一须原weighted scalar engine，不继续插值常数。
+
+R25 SCE001/MIX004内部交叉审查通过其named/conditional范围，下一largeτ，matrixAFF3仍未付，非完整高维结果。

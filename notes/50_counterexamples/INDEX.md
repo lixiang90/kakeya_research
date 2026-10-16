@@ -57,4 +57,8 @@
 | ell2_AFF_scalar_ABC_covers_ell3_for_free | AFF001换成matrixf即可产生ell3全局affine质量 | R24 observedA上界rho^-2，原scalarABC lower仅rho^-1-κ，当前κ≤1不矛盾 | 新的实际matrix/额外grain估计；整time操作闭包可用不代表AFF也可用 |
 | projected_constant_shrinks_preselected_vector_tau | 选ψ后Fψ近常就可反vectorτ稳定性 | actualτ由row E全norm在选角前定义，单projection只控Eψ | 另证vector→scalar稳定或预先完整控制所有coords，不改τ后沿用旧loss |
 
+| one_representative_per_cell_retains_old_atomic_mass | 逐workingcell一代表自动保旧ν及旧ν4/ν6小幂质量 | R25 uniformNfine原子/ncells，代表旧mass n/Nfine可任意小；周期旧mass更小 | 用已证明的selection验证prepared输入并重新生成cycle，不冒原measure restriction |
+| multiset_P_is_uniform_radial_input_for_free | Vdiff前两坐标可逆就使原multiset满足22.2uniform并给原B4almostall | R25 22.2精确要求separateduniform；原first2仅付Fst，量词不足 | actualpair共同邻居degree→uniformP保witness→同新prior周期，SCE001已付，不反源主定理 |
+| image_set_Frostman_is_original_projection_law | projected distinctcell set1Fst自动控制原target重数 | setcard不记录原fibres；R25证明weightedKaufmanlaw直接控旧标签推前 | 保真实law并付target删选/参数exception，不能只用image-set术语 |
+
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。
