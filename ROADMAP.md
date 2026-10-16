@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0013关键失败宏观审视已完成。无新Kakeya维数下界，长期Goal未解决。
+更新2026-10-17，R0014关键能量失败宏观审视已完成。无新Kakeya维数下界，长期Goal未解决。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@
 | J | j3 horizon与前端completion | HOR-003在实际f≡0/S1及原visible density有界下仍M/6≤H≤M；uniform H≤C(L+κ)在κ0也失败 | 整个visible-cost completion策略frozen；不得接着追加同义统计条件 |
 | K | 曲线到直线的coherent lifting | LIFT-005完整分类任意smooth空间仿射/原clock的codim1：B0或rankB=rankB²=1；diag(1,2)排除 | 本窄类已完成并frozen，不继续clock/normal form细节；一般非线性π未排除 |
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
-| M | 共享时间双块受限投影 | 真实光滑D场保full4方向、任意anchors；FO单块不能免费tensorize | 唯一优先N5-COUPLED-PROJ-01：一个主轮检验联合finite dense投影gain |
+| M | 共享时间双块受限投影 | CPJ001四环固定2-plane/五环3/六环full4；CPJ002未修剪energy障碍；CP仍open | 唯一优先N5-PRUNED-MULTIPLICITY-01：同一全部原数据，证明可保低重数质量；不续polygon细节 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
-DIR-003保留其条件finite范围，所有completion统计修补继续冻结。LIFT005窄类已完成，不再延伸normal form。R0013_macro决定研究一个真实三平面窄子类的新joint机制：两块共享同一clock、同一fixed P和完整四参数方向，保原dense marks。不得先假定product/conditional独立；一般V_Q到该场的抽取未证，主NG仍开放。即使子类成功也不自动解决中间角宽与Hausdorff覆盖。精确下一目标见notes/40_multiscale/narrow_five_dimensional/R0013_next_coupled_target.md，失败指纹见notes/50_counterexamples/INDEX.md。
+DIR003仍条件于完整四维proof，所有completion修补/LIFT005窄类细节冻结。R0014新的joint约束有真实方向packing，但无原mass推出有效cycles的下界；六环允许full4，停止逐边加polygon。新GGW/CSWZ等finite工具的几何前提不满足，不因题名直接调用。下一PM保持任意anchors与原P_j，检验低重数的subpower质量保留；它尚未证，不能加作假设。若一主轮无质量进展即macro换一般五维机制。CP/NG及一般V_Q抽取、中间角宽和Hausdorff覆盖均open。

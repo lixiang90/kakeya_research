@@ -17,3 +17,5 @@ R0011新增第8篇PDF：Nadjimzadah-curved-lifting-2026v1，`primary/nadjimzadah
 R0012无新增PDF，仍为8篇。新增阅读包括Wang–Zakharov §2.3/§17的高维sticky配置、HRZ Theorem4.1与Proposition4.2、Zahl综述§4.3–4.4；精确阅读范围与web-only候选存 `metadata/R0012_source_check.json`。有限检索不用于认证新颖性。新主任务转向真实R5管的三平面窄端点，未将sticky配置假设免费赋给一般方向分离管。
 
 R0013新增3篇，现共11篇PDF：Kulkarni-2024-planebrush-thesis（66页）、Katz-Zahl-2019-planebrush-v3（40页）和Fassler-Orponen-horizontal-SL2-2022v1（7页）。每篇原文、全文提取、SHA256和精确read_scope/proof_status均已存档。KZ v3修正旧Lemma7.1后maximal约3.049与Hausdorff约3.059不可混淆。Kulkarni Prop18打印证明的具体待补证位置见R0013_primary_narrow_audit.md，不标整定理verified。FO单块定理不是共享时间两块耦合或任意dense shading定理。metadata/R0013_source_check.json记录本轮范围，未作穷尽前沿或新颖性认证。
+
+R0014新增4篇，现共15篇PDF：GGW2211.09508v2、CSWZ2610.13682v1（2026-10-09）、Du2510.16671v2、Gan2308.07675v2。前缀均以R0014_开头，原PDF/全文/metadata一一对应；SHA256、版本和精确阅读范围可查。确有finite/shading定理，但本联合family的Grassmann rank、model-hyperplane/pencil或无子空间塌缩假设不合；未凭标题当CP输入。详见metadata/R0014_source_check.json及R0014_primary_projection_audit.md，未认证穷尽前沿或新颖性。

@@ -1,0 +1,1165 @@
+                                                   A RESTRICTED PROJECTION PROBLEM FOR FRACTAL SETS IN Rn
+
+                                                                       SHENGWEN GAN, SHAOMING GUO, AND HONG WANG
+arXiv:2211.09508v2 [math.CA] 21 Jan 2024
+
+
+
+
+                                                   Abstract. Let γ : r´1, 1s Ñ Rn be a smooth curve that is non-degenerate. Take m ď n and a Borel
+                                                   set E Ă r0, 1sn . We prove that the orthogonal projection of E to the m-th order tangent space of γ at
+                                                   θ P r´1, 1s has Hausdorff dimension mintm, dimpEqu for almost every θ P r´1, 1s.
+
+
+
+                                                                                           1. Introduction
+                                                        n
+                                             Let V Ă R be a m–dimensional subspace, the orthogonal projections πV is defined as
+                                                                                     PV : Rn Ñ Rm ,       PV pxq :“ v
+                                                            À
+                                           where Rn “ V     U and x “ v ` u is the unique decomposition with v P V and u P U .
+                                             Given a Borel subset Λ Ă Grpm, Rn q, the Grassmannian of m-dimensional linear subspaces, and a
+                                           compact Borel set E Ă Rn , a general question about orthogonal projection is to determine
+                                                                                            sup dimpPV pEqq
+                                                                                            V PΛ
+
+                                           in terms of dimpΛq and dimpEq. The classical Marstrand’s projection theorem ([Mar54], [Mat15]) states
+                                           that
+                                           (1.1)                     dimpPV pEqq “ mintdimpEq, mu for a.e. V P Grpm, Rn q,
+                                           The question for general Borel subset of subpaces Λ Ă Grpm, Rn q was later studied intensively, including
+                                           Mattila [Mat75], Falconer [Fal80], Bourgain [Bou10], Peres and Schlag [PS00]. Analogous to (1.1), one
+                                           may conjecture that
+                                           (1.2)                          dimpPV pEqq “ mintdimpEq, mu for a.e. V P Λ,
+                                           where “a.e.” is with respect to certain probability measure supported on Λ, chosen naturally depending
+                                           on the choice of Λ.
+                                               However, (1.2) fails if we do not make further assumptions on Λ. We discuss some examples in R3 .
+                                           The examples in higher dimensions can be constructed in the same way. When m “ 1, let E be the
+                                           x3 -axis and let Λ consist of lines in the px1 , x2 q-plane. We see that dimpEq “ 1, while dimpPV pEqq “ 0
+                                           for all V P Λ which violates (1.2). When m “ 2, let E be the px1 , x2 q-plane and let Λ consist of planes
+                                           containing the x3 -axis. We see that dimpEq “ 2, while dimpPV pEqq “ 1 for all V P Λ which violates (1.2).
+                                           It is natural to ask whether one can quantitatively exclude the above degenerate scenario and provide
+                                           good estimates about supV PΛ dimpPV pEqq.
+                                               One such example is the following conjecture by Fässler and Orponen [FO14].
+                                           Conjecture 1.1 (Fässler-Orponen). Let I Ă R be a compact interval and let γ : I Ñ S2 be a C 2 curve
+                                           that “escapes the great circle”
+                                           (1.3)                            spantγpθq, γ 1 pθq, γ 2 pθqu “ R3   for all θ P I.
+                                           Let E Ă R3 be analytic. Then for almost every θ P I,
+                                               (a) dimpPγpθq Eq “ mintdimpEq, 1u.
+                                               (b) dimpPγpθqK Eq “ mintdimpEq, 2u.
+                                                                                                     1
+2                                             GAN, GUO, AND WANG
+
+
+   This conjecture was studied by Fässler and Orponen [FO14], Orponen [Orp15], Oberlin and Oberlin
+[OO15], Orponen and Venieri [OV20] and Harris [Har19, Har21, Har22]. Part (a) of Conjecture 1.1
+was resolved by Käenmäki, Orponen and Venieri [KOV17] in the case where γ is a small circle, and by
+Pramanik, Yang and Zahl [PYZ22] for the case of general C 2 curves, and also later by Gan, Guth and
+Maldague [GGM22] independently. Indeed these papers prove something much stronger, in the sense
+that they contain very good exceptional set estimates. Part (b) of Conjecture 1.1 was resolved by Gan,
+Guo, Guth, Harris, Maldague and Wang [GGG22].
+   The restricted projection problem has applications in ergodic theory, see the work of Lindenstrauss
+and Mohammadi [LM22], Lindenstrauss, Mohammadi, Wang and Yang [LMWY23], and a special case
+of the Kakeya problem, see recent works of Fässler and Orponen [FO22] and Katz, Wu and Zahl [KWZ22].
+
+    We prove a generalization of Conjecture 1.1 for higher dimensions. In Rn , let
+(1.4)                                            γ : r´1, 1s Ñ Rn
+be a smooth non-degenerate curve, that is,
+(1.5)                                     detrγ 1 pθq, . . . , γ pnq pθqs ‰ 0,
+for every θ P r´1, 1s. For 1 ď m ď n, define the m-th order tangent space of γ at θ by
+                                          pmq
+(1.6)                                Tangθ      :“ spanrγ 1 pθq, . . . , γ pmq pθqs.
+        pmq                                                pmq
+Let Πθ        denote the orthogonal projection to Tangθ          .
+Theorem 1.2. Let n ě 2, 1 ď m ď n and γ : r´1, 1s Ñ Rn be a non-degenerate curve. Let E Ă r0, 1sn
+be a Borel measurable set. Then
+                                             pmq
+(1.7)                                 dimpΠθ       pEqq “ mintdimpEq, mu,
+for almost every θ P r´1, 1s. Here dim refers to the Hausdorff dimension.
+   The role that γ plays in Conjecture 1.1 is replaced by that of the derivative γ 1 in Theorem 1.2. For
+instance, if we take
+(1.8)                                        γpθq “ pθ, θ2 {2!, θ3 {3!q,
+then
+(1.9)                                           γ 1 pθq “ p1, θ, θ2 {2q.
+Recall that γ from Conjecture 1.1 takes values in S2 . We normalize (1.9), and direct computations show
+that it satisfies (1.3).
+   The study of restricted projections in general dimensions Rn , similar to the ones in Theorem 1.2,
+already appeared in Järvenpää, Järvenpää, Ledrappier and Leikas [JJLL08], Järvenpää, Järvenpää and
+Keleti [JJK14]. The notion of “non-degenerate curves” in the current paper is a lot stronger than the
+ones in [JJLL08] and [JJK14], and therefore covers a smaller family of curves. On the other hand, the
+results obtained in Theorem 1.2 is also relatively stronger than those in [JJLL08] and [JJK14].
+   Our approach follows the framework in [GGG22], where Fourier analysis methods were used to study
+incidences between points and fat k–planes. The main difficulty in the current paper lies in the decom-
+position of frequencies and the application of decoupling inequalities. Our frequency decomposition can
+be viewed as some generalization of the frequency decomposition in [GWZ]. It is worth mentioning that
+to obtain Theorem 1.2, we do not need the sharp Lp ranges of decoupling inequalities as in [BDG16] or
+[BGH21]; every sufficiently large p, depending on n and m, will work, and for convenience we will work
+with p “ npn ` 1q (see the paragraph above (2.27)).
+
+Notation.
+  (1) For two positive real numbers R1 and R2 , we say that R1 À R2 if there exists a large constant
+      C, depending on relevant parameters, such that R1 ď CR2 ; we say that R1 ! R2 if R1 ď R2 {C.
+                     A RESTRICTED PROJECTION PROBLEM FOR FRACTAL SETS IN Rn                                3
+
+
+    (2) Let µ be a compactly supported Borel measure on Rn . Take α ą 0. Define
+                                                                µpBpx, rqq
+(1.10)                                 cα pµq :“       sup                 ,
+                                                    xPRn ,rą0      rα
+        where Bpx, rq is the ball of radius r centered at x P Rn .
+    (3) For a set E Ă Rn and r ą 0, we let r ¨ E denote the set trx : x P Eu. Let T Ă Rn be a rectangular
+        box, we let rT be the r-dilation of T with respect to the center of T .
+    (4) We make the convention that k! “ 8 for every k P Z, k ă 0. Under this convention, the monomial
+        tj {k! is always constantly zero whenever k ă 0.
+    (5) We use ξ, η to denote frequency variables; they are all n-tuples of real numbers.
+
+Acknowledgment. S. Guo is partly supported by NSF-1800274 and NSF-2044828. H. Wang is sup-
+ported by NSF Grant DMS-2055544. The authors would like to thank Terry Harris, Changkeun Oh,
+Dominique Maldague and Larry Guth for inspiring discussions. They would also like to thank the referee
+for carefully reading the paper, for various suggestions on the exposition of the paper, and for catching
+several very important typos.
+
+                                           2. Idea of the proof
+  We will prove Theorem 1.2 for the case
+                                                   θ θ2         θn
+(2.1)                                      γpθq “ p  , , . . . , q.
+                                                   1! 2!        n!
+The proof for the general case is essentially the same; the main tool we will be using, the tool of Fourier
+decoupling inequalities, is stable under perturbations.
+
+  For θ P r´1, 1s, let Tθ denote a collection of disjoint rectangular boxes of dimensions
+(2.2)                                            ˆ . . . δ ˆ looomooon
+                                              δlooomooon     1 ˆ ...1
+                                              m copies       n´m copies
+
+                                                                                          pmq
+covering Rn , and the short sides of these rectangular boxes are parallel to Tangθ . For T P Tθ , we define
+its dual box τ “ τ pT q to be the rectangular box of dimensions
+                                             ´1
+(2.3)                                            ˆ . . . δ ´1 ˆ 1looomooon
+                                           δloooooomoooooon        ˆ ...1
+                                              m copies          n´m copies
+
+                                                                     pmq
+centered at the origin, whose long sides are parallel to Tangθ             . Sometimes we write τ “ τθ .
+   For δ ą 0, we say that Λδ Ă r´1, 1s is a δ-net of r´1, 1s if
+(2.4)                              δ ď |θ1 ´ θ2 |, @θ1 , θ2 P Λδ , θ1 ‰ θ2 ,
+and for every θ P r´1, 1s, we can find θ1 P Λδ such that δ ď |θ ´ θ1 | ă 2δ.
+Theorem 2.1. Let δ ą 0 and Λδ be a δ-net of r´1, 1s. Given ǫ ą 0 and α P p0, mq, let µ be a finite
+non-zero Borel measure supported in the unit ball in Rn with cα pµq ă 8. Take Wθ Ă Tθ and denote
+W :“ YWθ . Suppose that
+                                  ÿ
+(2.5)                                χT pxq Á δ ǫ´1 , @x P supppµq.
+                                    T PW
+
+Then
+                                                                                ?
+(2.6)                           |W| ě Cǫ,n,α ¨ µpRn qcα pµq´1 δ ´1´α δ Op ǫq .
+                                                                               ?
+     it is important that the constant Cǫ,n,α does not depend on δ. The term Op ǫq can be taken to be
+Here ?
+1010n ǫ.
+4                                              GAN, GUO, AND WANG
+
+
+Proof of Theorem 1.2 by assuming Theorem 2.1. Let α P p0, nq and α˚ P p0, mintm, αuq. Let µ be a
+finite non-zero Borel measure supported on the unit ball in Rn with cα pµq ď 1. Let δ ą 0 be a small
+                                                                                                  ˚
+number. Let Λδ be a δ-net. For each θ P Λδ , let Dθ be a disjoint collection of at most µpRn qδ ´α balls
+                 pmq                  ` pmq ˘                                       pmq
+of radius δ in Πθ pRn q, and let µθ :“ Πθ ˚ µ be the pushforward measure on Πθ pRn q. Then there
+exists ε0 ą 0, depending only on α and α˚ , such that
+                                     ÿ    ´ ď ¯
+(2.7)                             δ    µθ        D Àα,α˚ µpRn qδ ε0 ,
+                                      θPΛδ         DPDθ
+
+where the implicit constant depends on α, α˚ , but not on δ. The proof of (2.7) is the same as that of
+Corollary 2 in [GGG22], and is therefore left out.
+
+   Assume without loss of generality that m ě dimpEq ą 0. Let ǫ1 ą 0 be small and let α “ dimpEq ´ ǫ1 .
+Using Frostman’s lemma (see for instance [Mat95, page 112]), we can find a nonzero, finite Borel measure
+µ on E with cα pµq ď 1. Suppose that Θ Ď r0, 1s is such that
+                                             pmq
+                                     dimpΠθ        psupppµqqq ď s :“ α ´ 2ǫ1 ,
+for every θ P Θ. Let ǫ2 ą 0 be small. For each θ P Θ, we apply [Mat95, Lemma 4.6] and find
+                               ! ´                    ¯)8
+                                      pmq
+(2.8)                           B Πθ pxj pθqq, rj pθq      , xj pθq P Rn ,
+                                                                        j“1
+               pmq
+a covering of Πθ psupppµqq by discs of dyadic radii smaller than ǫ2 , such that
+                                                   ÿ               1
+(2.9)                                                  rj pθqs`ǫ ă 1.
+                                                   j
+                                     2
+For each θ P Θ and each k ě |log2 ǫ |, let
+                                         ´               ¯
+                                           pmq
+(2.10)                     Dθ,k :“ tB Πθ pxj pθqq, rj pθq : rj pθq “ 2´k u,
+and
+                                                                 ď
+(2.11)                                           Dθ,k :“                   D.
+                                                               DPDθ,k
+
+Then for each θ P Θ, it holds that               ÿ
+                                                            µθ pDθ,k q Áµ 1.
+                                             kě|log2 ǫ2 |
+
+By Vitali’s covering lemma, for each θ P Θ and each k, we can find a disjoint subcollection D1θ,k Ă Dθ,k
+such that                                      ÿ
+                                        1 Àµ         µθ pD2θ,k q,
+                                                    kě|log2 ǫ2 |
+
+where
+                                                             ď
+(2.12)                                       D2θ,k :“                  p10n D1 q.
+                                                        D1 PD1θ,k
+
+As a consequence, we obtain                                        ż
+                                                        ÿ
+                                     H1 pΘq Àµ                           µθ pD2θ,k q dθ.
+                                                    kě|log2 ǫ2 | Θ
+                                                                                           1
+By (2.9), for each θ and k the set D1θ,k is the union of at most 2kps`ǫ q disjoint discs of radius 2´k . By
+(2.7) and the triangle inequality, we can find ǫ0 ą 0 independent of k and ǫ2 , such that
+                                                      ÿ
+                                         H1 pΘq À           2´kǫ0 .
+                                                            kě|log2 ǫ2 |
+                          A RESTRICTED PROJECTION PROBLEM FOR FRACTAL SETS IN Rn                               5
+
+
+Letting ǫ2 Ñ 0 gives H1 pΘq “ 0. Hence
+                                            pmq                       pmq
+                                     dimpΠθ       pEqq ě dimpΠθ             psupppµqqq ě α ´ 2ǫ1
+for almost every θ P r0, 1s. The theorem follows by letting ǫ1 Ñ 0 along a countable sequence.                 
+   In the rest of the paper we will prove Theorem 2.1. The proof is via an induction on ǫ. The base case
+ǫ » 1 of the induction is trivial. To prove Theorem 2.1 for ǫ, let us assume that we have proven it for
+ǫ “ 1´ǫ?ǫ .
+r
+
+   For each T P Tθ , let φT : Rn Ñ R be an L8 normalized non-negative smooth bump function associated
+to T with φpT supported on τθ and
+(2.13)                                                   φT pxq Á 1, @x P T.
+Note that by the assumption (2.5), we have
+                                  ÿ
+(2.14)                               φT pxq Á δ ´1`ǫ , @x P supppµq.
+                                            T PW
+                                                                                                       ?
+           R Ñ R be a smooth bump function that is supported on Bp0, 2δ ´1` ǫ q Ă Rn and equals 1 on
+           n
+Let ψ0,δ : ?
+       ´1` ǫ
+Bp0, δ       q Ă Rn . We write
+(2.15)                                          φpT “ φpT ¨ ψ0,δ ` φpT ¨ p1 ´ ψ0,δ q.
+The former term is called the low frequency part of φT , and the latter term is called the high frequency
+part of φT . We can find a Borel set F satisfying µpF q Á µpRn q such that either
+                                          ˇ ÿ ´            ¯ ˇ
+                                          ˇ                    ˇ
+(2.16)                           δ ´1`ǫ À ˇ      φT ˚ ψq0,δ pxqˇ, @x P F,
+                                                         T PW
+or
+                                              ˇ ÿ ´                 ¯ ˇ
+                                              ˇ                         ˇ
+(2.17)                               δ ´1`ǫ À ˇ    φT ˚ p1 ´ ψ0,δ q_ pxqˇ, @x P F,
+                                                   T PW
+
+                                                                             }
+  Let us assume we are in the former case. For each T P W, the function φT ˚ ψ0,δ is essentially supported
+on a rectangular box of dimensions
+(2.18)                                      pρ´1 δq ˆ ¨ ¨ ¨ ˆ pρ´1 δq ˆ looooomooooon
+                                            looooooooooooomooooooooooooon 1ˆ ¨¨¨ ˆ 1
+                                                         m copies               pn´mqcopies
+           ?
+with ρ :“ δ ; we use Tr to denote this rectangular box. We define a relation. Take Tr1 and Tr2 . We say
+            ǫ
+
+                                                                Ă be a collection of the enlarged boxes Tr
+that Tr1 „ Tr2 if Tr2 Ă 10n Tr1 or the other way around. We let W
+satisfying that
+(2.19)                                                                   Ă , Tr1 ‰ Tr2 ,
+                                                Tr1  Tr2 , @Tr1 , Tr2 P W
+                                                  Ă such that Tr „ Tr1 . Write W
+and for every T P W , there exists T 1 with Tr1 P W                            Ă as a disjoint union
+                                                        ğ
+(2.20)                                    WĂ“W   Ăheavy   Ălight ,
+                                                          W
+                                                                                                           ?
+where we use WĂlight to collect the enlarged boxes Tr that contains ď C ´1 ρ´m´1` ǫ many boxes from W.
+Here C is a large universal constant that is much larger than the implicit universal constant in (2.16).
+Note that
+            › ÿ           ÿ                 ›   ÿ         ÿ      ›        ›                    ?
+            ›                               ›                    › 1 q›
+(2.21)      ›                    φT 1 ˚ ψqδ › ď                  ›φT ˚ ψδ › ! pδ ´1 ρqρm ρ´m´1` ǫ .
+                                                     8                                         8
+                    Ălight T 1 PW:T 1 ĂTr
+                Tr PW                                           Ălight T 1 PW:T 1 ĂTr
+                                                            Tr PW
+
+As a consequence, we see that
+                                            ˇ      ÿ            ÿ                         ˇ
+                                            ˇ                                             ˇ
+(2.22)                              δ ǫ´1 À ˇ                               φT 1 ˚ ψqδ pxqˇ, @x P F.
+                                                    Ăheavy T 1 PW:T 1 ĂTr
+                                                Tr PW
+6                                               GAN, GUO, AND WANG
+
+
+Note that each Tr contains at most ρ´m´1 many boxes from W. We can conclude that
+                                     ÿ
+(2.23)                                    χTr pxq Á δ ǫ´1 ρ, @x P F.
+                                           Ăheavy
+                                       Tr PW
+
+Write
+                                                                           ǫ
+(2.24)                                δ ´1`ǫ ρ “ pδρ´1 q´1`rǫ , r
+                                                                ǫ“           ? .
+                                                                         1´ ǫ
+             Ăheavy satisfy the induction hypothesis at the scale pδρ´1 q with the new parameter r
+The boxes in W                                                                                   ǫ. Hence
+                                            ?                                      10n
+                                                                                         ?        ?
+(2.25)                  Ăheavy |ρ´m´1` ǫ Á µpRn qcα pµq´1 pδ ´1 ρqα`1´10
+                 |W| Á |W                                                                 ǫr ´m´1` ǫ
+                                                                                           ρ           .
+Elementary computations yield that
+                                                             10n ?
+                                                                 ǫq ´m`α 1010n 3ǫ   10n
+(2.26)                 |W| Á µpRn qcα pµq´1 δ ´pα`1´10               ρ     δ   4 ´10    ǫ`ǫ
+                                                                                               .
+Since α ď m, the induction closes.
+
+   We turn to the case (2.17). This case will be handled directly, without using induction. Let p :“
+npn ` 1q. We raise both sides to the p-th power, integrate with respect to dµ, replace dµ by the Lebesgue
+measure and obtain
+                                                        ż ˇÿ                  ˇp
+                                                          ˇ                   ˇ
+(2.27)                    µpRn qcα pµq´1 δ ´p`pǫ δ n´α À ˇ φT ˚ p1 ´ ψ0,δ q_ ˇ .
+                                                                     T
+
+Here we used the definition of cα pµq in (1.10) and the fact that the integrated function is essentially
+constant on δ-balls. By decomposing the support of 1 ´ ψ0,δ into dyadic annuli and applying the triangle
+inequality, we can without loss of generality assume that
+                                                                  ż ˇÿ         ˇp
+                                                                    ˇ     }    ˇ
+(2.28)                   µpRn qcα pµq´1 | log δ|´p δ ´p`pǫ δ n´α À ˇ φT ˚ ψ1,δ ˇ ,
+                                                                             T
+                   8
+where ψ1,δ is an L -normalized bump function supported on tξ P Rn : |ξ| » δ ´1 u. To simplify further
+notation, we will rescale the right hand side so that frequency variables take values on a compact set
+Bp0, Cq for some constant C » 1. More precisely,
+                                  ż ˇÿż                          ˇp
+                                    ˇ                            ˇ
+                         (2.28) À ˇ      φpT pξqψ1,δ pξqeix¨ξ dξ ˇ dx
+                                        T
+(2.29)                                          ż ˇÿż                                   ˇp
+                                                  ˇ                                     ˇ
+                                Àδ    ´pn`n
+                                                  ˇ   φpT pδ ´1 ξqψ1,δ pδ ´1 ξqeix¨ξ dξ ˇ dx
+                                                    T
+
+Define
+(2.30)                            φ˝T pxq :“ φT pδxq, ψ1 pξq :“ ψ1,δ pδ ´1 ξq,
+and
+(2.31)                                          φx
+                                                 `        x˝
+                                                 T pξq :“ φT pξqψ1 pξq.
+
+Under the new notation, (2.29) can be written as
+                                             ż ˇÿż                 ˇp
+                                               ˇ                   ˇ
+(2.32)                          (2.28) À δ n
+                                               ˇ   φx
+                                                    `
+                                                    T pξqe
+                                                           ix¨ξ
+                                                                dξ ˇ dx.
+                                                        T
+
+It therefore remains to prove
+                             ż ˇÿż                 ˇp
+                               ˇ                   ˇ
+(2.33)                         ˇ   φx
+                                    `
+                                    T pξqe ix¨ξ
+                                                dξ ˇ dx Àǫ,p,n,α δ ´p`1 δ ´ǫ |W|.
+                                  T
+
+Similarly to (2.30), define
+(2.34)                                      T ˝ :“ δ ¨ T, τ ˝ :“ δ ´1 ¨ τ.
+                        A RESTRICTED PROJECTION PROBLEM FOR FRACTAL SETS IN Rn                                          7
+
+
+After the above rescaling, we see that for ξ P supppφx
+                                                     `
+                                                     T q with T P Tθ , it can be written as
+
+(2.35)                                         λ1 γ 1 pθq ` ¨ ¨ ¨ ` λn γnpnq pθq,
+with
+(2.36)                            |λι | ď 1, |λι1 | ď δ, 1 ď ι ď m, m ` 1 ď ι1 ď n.
+and
+                                                        ÿ
+(2.37)                                                       |λι | » 1.
+                                                         ι
+
+The support of φp`                       `                                                        `
+                  T will be denoted by ΩT . In the next few sections, we will decompose ΩT into smaller
+pieces and apply decoupling inequalities. Roughly speaking, the decomposition is guided by the scales
+at which decoupling inequalities in [BDG16] and [BGH21] can be applied. For instance, the first step of
+the decomposition (see (3.2) below) is to decide the largest ι P t1, 2, . . . , mu in (2.37) satisfying |λι | » 1.
+We use m1 to denote this largest ι (see (3.1) below). Once m1 is decided, we will not decompose the
+direction corresponding to λm1 . Moreover, it is key to observe here that all the directions corresponding
+to λι2 with ι2 ă m1 do not need to be decomposed either. 1 The second step of the decomposition is
+guided by the scales that appear in decoupling inequalities (see (3.5)). After these two steps, we will
+apply decoupling inequalities in [BDG16] and [BGH21] (see Claim 3.1). For each decoupled frequency
+regions, we will repeat the whole process again.
+
+              3. Frequency decomposition and decoupling inequalities: Step One.
+   For m1 ď m, denote
+                     ÿ
+                     n
+(3.1)    Ω`T,m1 :“ t   λι γ pιq pθq : T P Wθ , |λι2 | À 1, @ι2 ă m1 , |λm1 | » 1, |λι1 | ! 1, @m1 ă ι1 ď mu.
+                        ι“1
+
+To slightly simplify future notation, we make the convention that whenever we have a sum as in (3.1)
+that runs over all 1 ď ι ď n, we will simply neglect the range of ι; moreover, if λι takes values in the
+largest possible range, that is, |λι | À 1, then we would not specify the range of λι . We have
+                                                     ď
+(3.2)                                          Ω`
+                                                T “       Ω`
+                                                           T,m1 .
+                                                             m1 ďm
+
+Define φ`                                     `     `
+        T,m1 to be a frequency projection of φT to ΩT,m1 so that
+                                                              ÿ
+(3.3)                                                 φ`
+                                                       T “         φ`
+                                                                    T,m1 .
+                                                              m1
+
+We further decompose Ω`
+                      T,m1 . We discuss the case m1 ą m and the case m1 “ m separately. For m1 ą m
+and positive dyadic numbers s1 with
+                                                                      1
+(3.4)                                                1 " s1 ě δ n´m1 ,
+denote
+                                  ÿ                                                     ´pm´m1 q
+(3.5)            Ω`
+                  T,m1 ,s1 :“ t       λι γ pιq pθq P Ω`       ´1
+                                                      T,m1 : s1 |λm1 `1 | ` ¨ ¨ ¨ ` s1             |λm | » 1u,
+                                  ι
+                                                                             1
+with a modification that » is replaced by À when s1 “ δ n´m1 . If we are in the case m1 “ m, then s1
+                         1
+takes only one value δ n´m1 , and we denote
+(3.6)                                              Ω`            `
+                                                    T,m1 ,s1 :“ ΩT,m1 .
+
+In other words, in the case m1 “ m, we do not decompose Ω`   T,m1 , and will apply decoupling inequalities
+directly (Claim 3.1 below); the reason of introducing s1 in this case is that s1 will tell us at what scale
+
+   1Reflected in the definition in (3.1), what we do is to put all frequencies |λ 2 | À 1 together, whenever ι2 ă m .
+                                                                                    ι                              1
+8                                               GAN, GUO, AND WANG
+
+
+decoupling inequalities will be applied.
+
+    By the decomposition in (3.5), we have
+                                                           ď
+(3.7)                                           Ω`
+                                                 T,m1 “          Ω`
+                                                                  T,m1 ,s1 .
+                                                            s1
+
+We define φ`                                         `                   `
+           T,m1 ,s1 to be a frequency projection of φT,m1 to the region ΩT,m1 ,s1 so that
+                                                           ÿ
+(3.8)                                           φ`
+                                                 T,m1 “          φ`
+                                                                  T,m1 ,s1 .
+                                                            s1
+
+Claim 3.1. Let Wθ Ă Tθ . We have
+               › ÿ ÿ                ›   ´ 1 ¯1´ Dn´m 1 ´            ÿ        ›     ÿ       ÿ                ›p ¯1{p
+               ›           `        ›             p                          ›                              ›
+(3.9)          ›          φT,m1 ,s1 › Æ                                      ›                    φ`
+                                                                                                   T,m1 ,s1 ›       .
+                 θPΛ T PW
+                                      p  s1                                      θPΛδ XΘ1 T PWθ
+                                                                                                             p
+                    δ     θ                                      ℓpΘ1 q“s1
+
+Here and below, Æ means we are allowed to lose δ ´ε and ε can be chosen to be arbitrarily small, and
+                                                          ιpι ` 1q ` 2
+(3.10)                                           Dι :“                 .
+                                                                2
+Proof of Claim 3.1. The proof is essentially contained in [BGH21], and we only give a sketch of the
+proof. The proof uses the decoupling inequality in [BDG16] and the bootstrapping argument in [PS07].
+To simplify notation, let us write
+                                               ÿ     ÿ
+(3.11)                              FΘ1 :“               φ`
+                                                          T,m1 ,s1 .
+                                                    θPΛδ XΘ1 T PWθ
+                                1
+Note that, because s1 ě δ        , the support of F
+                              n´m1                  y Θ1 is contained in
+                ÿ
+(3.12)         t λι γ pιq pθq : θ P Θ1 , |λm1 | » 1, |λm1 `1 | À s1 , . . . , |λn | À sn´m
+                                                                                       1
+                                                                                           1
+                                                                                             u “: ΩΘ1 .
+                    ι
+
+The region Ωθ1 is essentially a rectangular box of dimensions
+(3.13)                                    1 ˆ ¨ ¨ ¨ ˆ 1 ˆ s1 ˆ ¨ ¨ ¨ ˆ sn´m
+                                                                        1
+                                                                            1
+                                                                              .
+For an interval Θ with |Θ| ě s1 , we define
+                                                             ÿ
+(3.14)                                            FΘ :“            FΘ1 .
+                                                           Θ1 ĂΘ
+
+Let ε ą 0 be a small number. By the triangle inequality, we can cut the region ΩΘ1 into smaller regions
+of dimensions
+(3.15)                                   sε1 ˆ ¨ ¨ ¨ ˆ sε1 ˆ s1 ˆ ¨ ¨ ¨ ˆ sn´m
+                                                                           1
+                                                                               1
+                                                                                 ,
+and restrict Θ1 to a small interval of length sε1 , say r0, sε1 s. Without loss of generality, let us assume that
+λm1 P r1, 1 ` sε1 s. To avoid introducing new notation, we still use ΩΘ1 to denote a region of the scale
+(3.15) with λm1 P r1, 1 ` sε1 s, and still use the notation FΘ1 and FΘ . We need to prove
+                                   ›    ›   ´ ¯1´       Dn´m
+                                                             1    ´ ÿ ›    › ¯1{p
+(3.16)                             ›FI1 › Æ 1             p
+                                                                      ›FΘ1 ›p     ,
+                                          p  s1                             p
+                                                                    Θ1 ĂI1
+
+where I1 :“ r0, sε1 s. To prove (3.16), first observe that the Fourier transform of FI1 is “close” to the
+cylinder
+       "                         ´                                                                                   *
+         1              1                      θ            θn´m1 ¯ |λ11 ´ a1 |, . . . , |λ1m1 ´1 ´ am1 ´1 | ď sǫ1 ,
+(3.17) λ1~e1 ` ¨ ¨ ¨ ` λm1 ~em1 ` 0, . . . , 0, , . . . ,            : 1                                              .
+                                               1!         pn ´ m1 q!   λm1 P r1, 1 ` sε1 s, θ P I1
+                        A RESTRICTED PROJECTION PROBLEM FOR FRACTAL SETS IN Rn                                   9
+
+
+Here ~ej are coordinate vectors, and a1 , . . . , am1 ´1 are numbers lying in r´1, 1s. Let us be more precise.
+A point from ΩΘ1 can be written as
+                              1 ´1
+                             mÿ                                              ÿ
+                                                                             n
+(3.18)                               λι γ pιq pθq ` λm1 γ pm1 q pθq `               λι γ pιq pθq “: Q.
+                              ι“1                                         ι“m1 `1
+
+Let us compute the distance of this point to the following point on the cylinder (3.17):
+                  ´                                        θm1 ´1            pλm1 θq2       pλm1 θqn´m1 ¯
+(3.19)     Q1 :“ λ1 , λ2 ` λ1 θ, . . . , λm1 ` ¨ ¨ ¨ ` λ1           , λm1 θ,          ,...,              .
+                                                          pm1 ´ 1q!             2!           pn ´ m1 q!
+Write
+(3.20)                                 Q “ pQ1 , . . . , Qn q, Q1 “ pQ11 , . . . , Q1n q.
+We have that
+(3.21)                                         |Qι ´ Q1ι | “ 0, @1 ď ι ď m1 ,
+and
+                                                         εpι´m1 `1q
+(3.22)                                   |Qι ´ Q1ι | À s1                , @ι ě m1 ` 1.
+By an anisotropic rescaling in the frequency variables of FI1 and applying the decoupling inequality2 in
+[BDG16] to the cylinder (3.17), we obtain
+                   ›    ›    ´ 1 ¯ε2 ´ 1 ¯1´ Dn´m   1 ´         ÿ         ›    › ¯1
+(3.23)             ›    ›
+                     FI1 p À              ε
+                                                  p
+                                                                          ›FI2 ›p p .
+                               δ                                                p
+                                      s1n´m1                           ε
+                                                                     n´m1
+                                                                        I2 ĂI2 ,|I2 |“|I1 |s1
+
+Note that this decoupling
+               ›    ›      inequality can be iterated, in an essentially the same way as done above, for each
+resulting term ›FI2 ›p . After pn ´ m1 q{ε many steps, we will eventually obtain the desired estimate. 
+   After applying decoupling, we apply rescaling to
+                                           ÿ      ÿ
+(3.24)                                              φ`
+                                                     T,m1 ,s1 .
+                                                   θPΛδ XΘ1 T PWθ
+
+Without loss of generality, we assume that we are working with Θ1 “ r0, s1 s. On the frequency side, we
+do the scaling
+(3.25)                ξ1 ÞÑ η1 , . . . , ξm1 ÞÑ ηm1 , ξm1 `1 ÞÑ s1 ηm1 `1 , . . . , ξn ÞÑ sn´m
+                                                                                           1
+                                                                                               1
+                                                                                                 ηn .
+For each T P Wθ , θ P Λδ X Θ1 , we study the support of the function
+(3.26)                   φp` pηq :“ φp`
+                             Ts1            pη1 , . . . , ηm , s1 ηm `1 , . . . , sn´m1 ηn q.
+                                             T,m1 ,s1               1           1               1
+
+Note that a frequency point under consideration can be written as
+(3.27)              ξ “ λ1 γ 1 pθq ` ¨ ¨ ¨ ` λm1 γ pm1 q pθq ` λm1 `1 γ pm1 `1q pθq ` . . . λn γ pnq pθq,
+with
+                                              |λm1 `1 |           |λm |
+(3.28)                                                  ` ¨ ¨ ¨ ` m´m1 » 1,
+                                                s1               s1
+                                               1
+and » is replaced by À when s1 “ δ n´m1 . Under the above change of variables, it becomes
+                      ´ÿ       θ1´ι            ÿ      θm1 ´ι
+                          λι          , . . . , λι              ,
+                        ι
+                             p1 ´ ιq!          ι
+                                                   pm1 ´ ιq!
+(3.29)                     ÿ        θm1 `1´ι                ´pn´m1 q
+                                                                     ÿ     θn´ι ¯
+                       s´1
+                        1     λι                 , . . . , s1          λι          “: η
+                           ι
+                                 pm1 ` 1 ´ ιq!                       ι
+                                                                          pn ´ ιq!
+
+   2Decoupling inequalities in [BDG16] are stated for the moment curve, but the proof there works for general non-
+degenerate curves. One can also use the bootstrapping argument in [PS07], as is done in Lemma 3.6 in [GLYZ21].
+10                                                        GAN, GUO, AND WANG
+
+
+We rename variables
+                                               λm1 `1                      λn
+(3.30)                                                ÞÑ λm1 `1 , . . . , n´m1 ÞÑ λn ,
+                                                s1                       s1
+and write
+                             ´ÿ              θ1´ι            ÿ    θm1 ´ι
+                       η“             λι            , . . . , λι           ,
+                                  ι
+                                           p1 ´ ιq!          ι
+                                                                 pm1 ´ ιq!
+                                       ÿ1
+                                       m
+                                                     θm1 `1´ι      ÿ
+                                                                   n
+                                                                                       θm1 `1´ι
+(3.31)                           s´1
+                                  1           λι                `       s1ι´m1 ´1 λι               ,
+                                       ι“1
+                                                   pm1 ` 1 ´ ιq! ι“m `1              pm1 ` 1 ´ ιq!
+                                                                               1
+
+                                                   ÿ                           ÿ            θn´ι ¯
+                                                   m1                 n´ι      n
+                                           ´pn´m q                   θ
+                                 . . . , s1          1
+                                                               λι           `      sι´n λι
+                                                         ι“1
+                                                                    pn ´ ιq! ι“m `1 1      pn ´ ιq!
+                                                                                     1
+
+In the end, we rename θ ÞÑ s1 θ, and write
+                       1                                   pm q                          pm `1q                            pnq
+                      γm 1 ,s1
+                               pθq                        γm1 1,s1 pθq          γm1 1,s1 pθq             γm1 ,s1 pθq
+(3.32)       η “ λ1                   ` ¨ ¨ ¨ ` λm1         m1 ´1      ` λm1 `1    m1 ´1     ` ¨ ¨ ¨ ` λn m
+                         s11´1                             s1                     s1                      s1 1 ´1
+where
+(3.33)                                              γm1 ,s1 pθq :“ pRm1 ,s1 ˝ γqpθq,
+                               ´     θ               θk                   θm1 m1 ´1 θm1 `1                      θn ¯
+                                                                     1 ´1                                  1 ´1
+(3.34)      pRm1 ,s1 ˝ γqpθq :“ s11´1 , . . . , sk´1
+                                                 1      , . . . , sm
+                                                                   1           , s1           , . . . , sm
+                                                                                                         1          ,
+                                     1!              k!                   m1 !      pm1 ` 1q!                   n!
+and
+(3.35)                                |λ1 |, . . . , |λm1 ´1 | À 1, |λm1 | » 1,
+(3.36)                                |λm1 `1 | ` ¨ ¨ ¨ ` |λm | » 1,
+                                                         ´pm`1´m1 q                          ´pn´m1 q
+(3.37)                                |λm`1 | À s1                       δ, . . . , |λn | À s1            δ,
+with » in (3.36) replaced by À when sn´m
+                                       1
+                                            1
+                                              “ δ. Moreover, if for λ “ pλ1 , . . . , λn q, we define
+                                       ´ λ            λm1 λm1 `1               λn ¯
+                                            1
+(3.38)                   Dm1 ,s1 pλq :“ 1´1 , . . . , m1 ´1 , m1 ´1 , . . . , m1 ´1 ,
+                                         s1          s1      s1              s
+then (3.32) can be simplified to
+                                                        ´                               ¯
+                                                          1                    pnq
+(3.39)                                 η “ Dm1 ,s1 pλq ¨ γm  ,s
+                                                            1 1
+                                                                pθq, . . . , γ m  ,s
+                                                                                 1 1
+                                                                                     pθq  .
+
+The expression (3.32) looks complicated. However, the most important terms there are the ones corre-
+sponding to coefficients λm1 , . . . , λn , and they can be written as
+(3.40)                                             λm1 γ pm1 q pθq ` ¨ ¨ ¨ ` λn γ pnq pθq.
+So far we have done a change of variables so that
+                    › ÿ       ÿ              ›              ›                         ÿ               ÿ            ›
+                    ›                        ›              ›                                                      ›
+(3.41)              ›             φ`T,m1 ,s1 › À Jacps1 q ¨ ›                                                  φ`
+                                                                                                                Ts ›
+                                                               p                                                  1    p
+                         θPΛδ XΘ1 T PWθ                                            θPΛ ´1 T PWθ ps1 ;Θ1 q
+                                                                                      s  δ
+                                                                                         1
+
+where Wθ ps1 ; Θ1 q is what Wθ is transformed to after renaming parameters θ ÞÑ s1 θ,
+                                                                         1
+                                                                     p1´ p qp1`2`¨¨¨`pn´m1 qq
+(3.42)                                         Jacps1 q :“ s1                                     ,
+and the support of φp`                  `               `
+                     Ts1 is denoted as ΩTs1 , that is, ΩTs1 collects all the η satisfying (3.32). The form of
+the Jacobian factor in (3.42) is not important, as we will revert the change of variables done above, and
+the Jacobian factor will be cancelled out.
+                        A RESTRICTED PROJECTION PROBLEM FOR FRACTAL SETS IN Rn                                                     11
+
+
+   Before we proceed to the next step, we record a few pieces of information from this step. Denote
+                                                                                  ´pm`1´m1 q                     ´pn´m1 q
+                      m1 “ pm1 q, s1 “ ps1 q, thick1 “ ps1                                           δ, . . . , s1           δq,
+(3.43)
+
+                                                                       ´pn´m1 q
+and n1 :“ n. Moreover, we record the relation s1                                   ď δ ´1 .
+
+           4. Frequency decomposition and decoupling inequalities: General steps
+   Let j ě 1 be an integer. Suppose we have finished the j-th step of the frequency decomposition. So
+far we have collected j-tuples of integers mj “ pm1 , . . . , mj q satisfying
+(4.1)                                                  m1 ď m2 ď ¨ ¨ ¨ ď mj ,
+j-tuples of dyadic numbers sj “ ps1 , . . . , sj q, dimension parameters nj P tm, m ` 1, . . . , nu, an pn ´ mq-
+tuple
+                                   ´ ź      j
+                                                  ´pm`1´mj1 q
+                                                                     j
+                                                                     ź  ´pn´mj1 q
+                                                                                  ¯
+(4.2)                     thickj “ δ            sj 1          ,...,δ   sj 1         ,
+                                                 j 1 “1                                    j 1 “1
+
+and a relation
+                                                       j
+                                                       ź         ´pnj ´mj1 q
+(4.3)                                                           sj 1               ď δ ´1 .
+                                                       j 1 “1
+
+Moreover, by combining (3.9), (3.41) and the triangle inequality, we obtain
+                                                                              Dn ´m
+                           ›ÿ ›     ÿÿ´ ź     j            ¯´ ź  j ´
+                                                                      1 ¯1´
+                                                                                j1   j1 ¯
+                           ›   `›                                                 p
+                           › φT › Æ              Jacpsj 1 q
+                             T
+                                  p
+                                    mj sj j 1 “1             j 1 “1
+                                                                     sj 1
+(4.4)                               ´ ÿ › ÿ                  ÿ             ›p ¯1{p
+                                              ›                            ›
+                                              ›                      φ` Ts ›       ,
+                                                                                                      j     p
+                                            ℓpΘj q“ℓj            θPΛ ´1 T PWθ psj ;Θj q
+                                                                    ℓ  δ
+                                                                          j
+
+              śj                                                y`
+where ℓj :“      j 1 “1 sj 1 , and for each η in the support of φTsj , it can be written as
+                                                    ´                                  ¯
+                                                      1                      pnq
+(4.5)                              η “ Dmj ,sj pλq ¨ γm j ,sj
+                                                              pθq, . . . , γ mj ,sj pθq  ,
+where
+(4.6)                                  Dmj ,sj pλq :“ Dmj ,sj ˝ ¨ ¨ ¨ ˝ Dm1 ,s1 pλq,
+and
+(4.7)                                    γmj ,sj :“ Rmj ,sj ˝ ¨ ¨ ¨ ˝ Rm1 ,s1 ˝ γ,
+with θ P r0, 1s and λ “ pλ1 , . . . , λn q satisfying
+                         |λ1 |, . . . , |λmj ´1 | À 1, |λmj | » 1, |λmj `1 | ` ¨ ¨ ¨ ` |λm | » 1,
+                                       j
+                                       ź                                                         j
+                                                                                                 ź
+(4.8)                                            ´pm`1´mj1 q                                               ´pnj ´mj1 q
+                         |λm`1 | À δ            sj 1                      , . . . , |λnj | À δ            sj 1           ,
+                                       j 1 “1                                                    j 1 “1
+
+with » replaced by À when
+                                                           j
+                                                           ź            nj ´mj1
+(4.9)                                                                  sj 1        “ δ.
+                                                           j 1 “1
+
+We use Ω`                                 y`
+         Tsj to denote the the support of φTsj . So far we have finished collecting all the useful data from
+previous steps.
+12                                                             GAN, GUO, AND WANG
+
+
+   We continue our algorithm for the frequency decomposition in step pj`1q. To simplify our presentation,
+we will work with Θj “ r0, ℓj s, where Θj is from the right hand side of (4.4). Define
+                                         #             śj        nj ´mj1
+                                           nj       if   j 1 “1 sj 1     ą δ,
+(4.10)                           nj`1 :“               śj        nj ´mj1
+                                           nj ´ 1 if     j 1 “1 sj 1     “ δ.
+If nj`1 “ m, then we terminate our algorithm. If nj`1 ą m, then we proceed as follows.
+
+     If we are in the former case in (4.10), then (4.8) tells us that
+(4.11)                                                       |λmj `1 | ` ¨ ¨ ¨ ` |λm | » 1.
+For integers mj`1 satisfying m ě mj`1 ą mj , define
+                               !                    ´                                   ¯
+                Ω`Tsj ,mj`1 :“   η “ Dmj ,sj pλq  ¨   γ 1
+                                                        mj ,sj pθq, . . . , γ pnq
+                                                                              mj ,sj pθq  :
+(4.12)                                                                                            )
+                               T P Wθ psj ; Θj q, η P Ω`  Ts , |λmj`1 | » 1, |λι | ! 1, @ι ą mj`1
+                                                                                  j
+
+Next, for positive dyadic numbers sj`1 with
+                                                   ´ źj             ¯     1
+                                                         ´pnj ´mj1 q nj`1 ´mj`1
+(4.13)                                   1 " sj`1 ě δ   sj 1                    ,
+                                                                     j 1 “1
+
+define
+                                            !                ´                                   ¯
+                         Ω`
+                          Ts ,mj`1 ,sj`1 :“  η “ Dm ,s
+                                                   j j pλq ¨   γ 1
+                                                                 mj ,sj pθq, . . . , γ pnq
+                                                                                       mj ,sj pθq  :
+                              j
+
+(4.14)                                                                        |λmj`1 `1 |            |λm |    )
+                                                 η P Ω`
+                                                      Ts ,mj`1 ,                          ` ¨ ¨ ¨ ` m´mj`1 » 1 ,
+                                                                 j              sj`1               sj`1
+with » replaced by À when ě in (4.13) is an equality. We define φ`
+                                                                 Ts ,mj`1 ,sj`1 to be a frequency projection
+                                                                                                    j
+
+of φ`                 `
+    Ts to the region ΩTs ,mj`1 ,sj`1 so that
+        j                         j
+                                                                     ÿ            ÿ
+(4.15)                                       φ`
+                                              Ts “                                    φ`
+                                                                                       Ts ,mj`1 ,sj`1 .
+                                                 j                                       j
+                                                              měmj`1 ąmj sj`1
+
+Claim 4.1. Under the above notation, we have
+                     ›     ÿ            ÿ                                     ›        ÿ ÿ ´ 1 ¯1´
+                                                                                                                Dn
+                                                                                                                   j`1 ´mj`1
+                     ›                                                   ›                                            p
+                     ›                                  φ`
+                                                         Tsj ,mj`1 ,sj`1 › Æ
+                         θPΛℓ´1 δ T PWθ psj ;Θj q
+                                                                          p
+                                                                                      m  s
+                                                                                            sj`1
+                                                                                       j`1    j`1
+                              j
+(4.16)                                   ›                                                            ›p ¯ p1
+                     ´            ÿ                     ÿ                 ÿ
+                                         ›                                                            ›
+                                         ›                                            φ`
+                                                                                       Ts ,mj`1 ,sj`1 ›
+                                                                                          j               p
+                         ℓpΘj`1 q“sj`1       θPΛ ´1 XΘj`1 T PWθ psj ;Θj q
+                                                ℓ        δ
+                                                    j
+
+
+Proof of Claim 4.1. The proof of this claim is essentially the same as that of Claim 3.1, and is therefore
+left out.                                                                                               
+
+   After this step of decoupling, we will apply a similar scaling to the one in (3.25). To explain this
+scaling, let us take Θj`1 “ r0, sj`1 s; other intervals can be handled similarly. Let ξ denote a point in the
+Fourier support of
+                                         ÿ            ÿ
+(4.17)                                                       φ`
+                                                              Ts ,mj`1 ,sj`1 .            j
+                                             θPΛ ´1 XΘj`1 T PWθ psj ;Θj q
+                                                ℓ        δ
+                                                    j
+
+
+We apply the change of variables
+                                                                                                                     n´m
+(4.18)          ξ1 ÞÑ η1 , . . . , ξmj`1 ÞÑ ηmj`1 , ξmj`1 `1 ÞÑ sj`1 ηmj`1 `1 , . . . , ξn ÞÑ sj`1 j`1 ηn .
+                         A RESTRICTED PROJECTION PROBLEM FOR FRACTAL SETS IN Rn                                                 13
+
+
+Let us make a remark here that in (4.18) we indeed have multiple ways of doing changes of variables.
+For instance, another option would be
+                                                                                                 j`1   n      ´mj`1
+              ξ1 ÞÑ η1 , . . . , ξmj`1 ÞÑ ηmj`1 , ξmj`1 `1 ÞÑ sj`1 ηmj`1 `1 , . . . , ξnj`1 ÞÑ sj`1                   ηnj`1 ,
+(4.19)
+              ξnj`1 `1 ÞÑ ηnj`1 `1 , . . . , ξn ÞÑ ηn .
+In other words, we keep all the variables ξι with ι ą nj`1 unchanged. The idea is that, after arriving
+at the pj ` 1q-th step of the algorithm, all the frequency directions ξι with ι ą nj`1 will no longer
+play any role in any further decoupling inequalities, and instead we will simply use Fubini theorem along
+those directions. Here to make our notation consistent with previous ones, we still use the scaling in (4.18).
+
+   After the above change of variables, we define
+                                sj`1 :“ ps1 , . . . , sj , sj`1 q, mj`1 “ pm1 , . . . , mj , mj`1 q,
+(4.20)                                     ´ j`1
+                                              ź ´pm`1´m 1 q        ź ´pn´m 1 q ¯
+                                                                   j`1
+                                                       j                    j
+                                thickj`1 :“ δ    sj 1       ,...,δ     sj 1     ,
+                                                  j 1 “1                              j 1 “1
+
+and also define
+                                                                                                   n´mj`1
+(4.21)            φp`
+                    Ts      pηq :“ φp`
+                                     Ts ,mj`1 ,sj`1 pη1 , . . . , ηmj`1 , sj`1 ηmj`1 `1 , . . . , sj`1    ηn q.
+                      j`1                 j
+
+
+Note from (4.13) we see that the relation (4.3) is upgraded to
+                                                           j`1
+                                                           ź       nj`1 ´mj1
+(4.22)                                                            sj 1         ď δ;
+                                                       j 1 “1
+
+here we used the fact that nj “ nj`1 . Moreover, we combine (4.4) and Claim 4.1, and see that (4.4)
+holds with j replaced by j ` 1, with ℓj`1 :“ ℓj ¨ sj`1 . For a frequency point η in the support of
+φp`
+  Tsj`1 , one can check directly that it is of the form (4.5)–(4.9), with every j there replaced by j ` 1.
+
+In the end, we let Ω`     denote the support of φp` , and finish the analysis for the former case in (4.10).
+                      Tsj`1                                        Tsj`1
+
+
+   We consider the latter case in (4.10). The analysis for this case is similar to the former case, and we
+only explain the differences. Recall from (4.8) that
+(4.23)                                            |λmj `1 | ` ¨ ¨ ¨ ` |λm | À 1.
+For integers mj`1 satisfying m ě mj`1 ě mj , define
+                              !                   ´                               ¯
+                Ω`                                   1                 pnq
+                  Tsj ,mj`1 :“ η “ Dmj ,sj pλq ¨ γmj ,sj pθq, . . . , γmj ,sj pθq :
+(4.24)                                                                                            )
+                              T P Wθ psj ; Θj q, η P Ω`Ts , |λm j`1 | » 1, |λ ι | ! 1, @ι ą m j`1
+                                                                           j
+
+Note that here mj`1 could be equal to mj , which is different the previous case. Next, for positive dyadic
+numbers sj`1 with
+                                                 ´ źj               ¯     1
+                                                       ´pnj ´1´mj1 q nj`1 ´mj`1
+(4.25)                                 1 " sj`1 ě δ   sj 1                      ,
+                                                               j 1 “1
+
+define
+                                         !                ´                                   ¯
+                      Ω`
+                       Ts ,mj`1 ,sj`1 :“  η “ Dm ,s
+                                                j j pλq ¨   γ 1
+                                                              mj ,sj pθq, . . . , γ pnq
+                                                                                    mj ,sj pθq  :
+                            j
+
+(4.26)                                                                   |λmj`1 `1 |            |λm |    )
+                                              η P Ω`
+                                                   Ts ,mj`1 ,                        ` ¨ ¨ ¨ ` m´mj`1 » 1 ,
+                                                           j               sj`1               sj`1
+with » replaced by À when ě in (4.25) is an equality. If we compare (4.25) with (4.13), then we see that
+nj in (4.13) is replaced by nj ´ 1 “ nj`1 . The principle behind it is that we always pick the right most
+14                                            GAN, GUO, AND WANG
+
+
+component in the vector thickj that is strictly smaller than one. The rest of the argument remains the
+same.
+
+                                        5. Output of the algorithm
+     The above algorithm outputs J-tuples of integers mJ “ pm1 , . . . , mJ q with
+(5.1)                                         m1 ď ¨ ¨ ¨ ď mJ ď m,
+J-tuples of dyadic numbers sJ “ ps1 , . . . , sJ q, dimensions parameters pn1 , . . . , nJ q satisfying
+(5.2)                                          n1 ě ¨ ¨ ¨ ě nJ ą m,
+for each J “ 1, 2, . . . , J, with |J| Àn 1. The bound for J follows from the fact that after each step of
+running our algorithm, either the dimension parameter nj reduces by one, or the parameter mj increases
+by one. Moreover,
+                          ›ÿ ›      J ÿ ÿ´ ź
+                                    ÿ           J          ¯´ źJ ´        Dn ´m
+                                                                   1 ¯1´ p ¯
+                                                                            j   j
+                          ›   `›
+                          › φT › Æ                 Jacpsj q
+                            T
+                                 p
+                                   J“1 mJ sJ   j“1            j“1
+                                                                   sj
+(5.3)                              ´ ÿ       ›                        ›p ¯1{p
+                                             › ÿ            ÿ         ›
+                                             ›                    φ`
+                                                                   Ts ›       .
+                                                                                    J   p
+                                         ℓpΘJ q“ℓJ      θPΛ ´1 T PWθ psJ ;ΘJ q
+                                                           ℓ  δ
+                                                                 J
+
+That the algorithm terminates after producing the parameters mJ , sJ , etc. means that nJ “ m ` 1, and
+                                                     ź
+                                                     J
+                                                        n ´m
+(5.4)                                                  sj J j “ δ.
+                                                   j“1
+
+For the term φ`TsJ , we revert all the changes of variables as in (4.18) and (3.25), and write the resulting
+             `
+function as φT ˚ ψ~ τ,sJ , where τ “ τ pT q is the dual of T , and we use ψτ,sJ to collect all the frequency
+cut-offs in (4.15). In other words, each ψτ,sJ is supported on a dyadic rectangular box that is a subset of
+τ . The estimate (5.3) becomes
+                            ›ÿ ›      J ÿ ÿ´ ź
+                                      ÿ           J ´      Dn ´m
+                                                      1 ¯1´ p ¯
+                                                             j   j
+                            ›   `›
+                            › φT › Æ
+                              T
+                                   p
+                                     J“1 mJ sJ   j“1
+                                                      sj
+(5.5)                                ´ ÿ › ÿ                            ›p ¯1{p
+                                               ›         ÿ
+                                                            φ`     ~›
+                                               ›              T ˚ ψτ,sJ ›       .
+                                                                                            p
+                                           ℓpΘJ q“ℓJ          θPΛδ XΘJ T PWθ
+
+Let us write down again the family of relations in (4.3)
+                                              j
+                                              ź         ´pnj ´mj1 q
+(5.6)                                                  sj 1              ď δ ´1 ,
+                                              j 1 “1
+
+which holds for every J-tuple mJ , sJ and every j ď J. Moreover, if at a given j, it holds that nj`1 “ nj ´1,
+then
+                                                  j
+                                                  ź            nj ´mj1
+(5.7)                                                         sj 1       “ δ,
+                                                  j 1 “1
+
+that is, we have equality in the previous relation.
+   We continue to bound (5.5). At this point, we do not have any non-trivial decoupling to use, and we
+simply use the triangle inequality. Note that (5.4) implies that ℓJ ě δ. By the triangle inequality,
+              ›ÿ ›     ÿJ ÿ ÿ´ źJ ´
+                                    1 ¯1´ p ¯´ ´1 ¯1´ p1 ´ ÿ ›› ÿ ` ~ ››p ¯1{p
+                                         Dn ´m
+                                           j   j
+              ›   `›
+(5.8)         › φT › Æ                           ℓJ δ         ›      φT ˚ ψτ,sJ ›   .
+                T
+                     p
+                       J“1 m s j“1
+                                    sj                    θPΛ   T PW
+                                                                                  p
+                                J   J                                                       δ   θ
+                         A RESTRICTED PROJECTION PROBLEM FOR FRACTAL SETS IN Rn                                             15
+
+
+To bound the last Lp , note that ψ~
+                                  τ,sJ is independent of T P Wθ for each fixed θ. Therefore, by Young’s
+inequality,
+               ›ÿ ›       ÿJ ÿ ÿ´ źJ ´
+                                       1 ¯1´ p ¯´ ´1 ¯1´ p1 ´ ÿ ›› ÿ ` ››p ¯1{p
+                                            Dn ´m
+                                              j   j
+               ›    `›
+(5.9)          ›   φT›  Æ                           ℓJ δ         ›      φT ›    .
+                 T
+                      p
+                          J“1 m s j“1
+                                       sj                    θPΛ   T PW
+                                                                            p
+                                     J   J                                               δ       θ
+
+Recall that we need to prove (2.33). It therefore remains to prove that
+                             ´ź J ´
+                                     1 ¯p´Dnj ´mj ¯´ ℓJ ¯p´1 m´n
+(5.10)                                                      δ     À δ ´p`1 ,
+                               j“1
+                                    s j               δ
+which is equivalent to
+                                                 ź
+                                                 J
+                                                    Dn ´m ´1
+(5.11)                                             sj j j À δ n´m .
+                                                 j“1
+
+By the definition of Dι , it suffices to prove
+                                               ź
+                                               J
+                                                  1`¨¨¨`pnj ´mj q
+(5.12)                                           sj               À δ n´m .
+                                               j“1
+
+However, this follows immediately from multiplying all the pn ´ mq identities in (5.7).
+
+                                                       References
+[BGH21] Beltran, D.; Guo, S.; Hickman, J.; Seeger, A. Sobolev improving for averages over curves in R4 . Adv. Math.
+ (2021).
+[Bou10] Bourgain, J. The discretized sum-product and projection theorems. J. Anal. Math. 112 (2010): 193-236.
+[BDG16] Bourgain, J.; Demeter, C. and Guth, L. Proof of the main conjecture in Vinogradov’s mean value theorem for
+ degrees higher than three. Ann. of Math. (2016).
+[Fal80] Falconer, K. Continuity properties of k-plane integrals and Besicovitch sets. Math. Proc. Cambridge Philos. Soc.
+ (1980).
+[FO14] Fässler, K.; Orponen, T. On restricted families of projections in R3 . Proc. Lond. Math. Soc. (3) 109 (2014), no. 2,
+ 353–381.
+[FO22] Fässler, K.; Orponen, T. A note on Kakeya sets of horizontal and SLp2q lines. arXiv preprint arXiv: 2210.09955
+[GGG22] Gan, S.; Guo, S.; Guth, L.; Harris, T.; Maldague, D; Wang, H. On restricted projections to planes in R3 . arXiv
+ preprint arXiv:2207.13844.
+[GGM22] Gan, S.; Guth, L; and Maldague, D. An exceptional set estimate for restricted projections to lines in R3 . arXiv
+ preprint arXiv:2209.15152.
+[GLYZ21] Guo, S.; Li, Z.; Yung, Po-Lam and Zorin-Kranich, P. A short proof of ℓ2 decoupling for the moment curve.
+ American Journal of Mathematics, Volume 143, Number 6, December 2021, pp. 1983–1998.
+[GWZ] Guth, L; Wang, H; and Zhang, R. A sharp square function estimate for the cone in R3 . Ann. of Math. (2) 192
+ (2020): 551–581.
+[Har19] Harris, T. Improved bounds for restricted projection families via weighted Fourier restriction. arXiv preprint
+ arXiv:1911.00615 (2019).
+[Har21] Harris, T. Restricted families of projections onto planes: the general case of nonvanishing geodesic curvature. Rev.
+ Mat. Iberoamericana (2022).
+[Har22] Harris, T. Length of sets under restricted families of projections onto lines. arXiv preprint arXiv:2208.06896 (2022).
+[JJK14] Järvenpää, E.; Järvenpää, M.; Keleti, T. Hausdorff dimension and non-degenerate families of projections. J. Geom.
+ Anal. 24 (2014), no. 4, 2020–2034.
+[JJLL08] Järvenpää, E.; Järvenpää, M. ; Ledrappier, F.; Leikas, M. One-dimensional families of projections. Nonlinearity
+ 21 (2008), no. 3, 453–463.
+[KOV17] Käenmäki, A.; Orponen, T.; Venieri, L. A Marstrand-type restricted projection theorem in R3 . To appear in Amer.
+ J. Math.
+[KWZ22] Katz, N.; Wu, S. and Zahl, J. Kakeya sets from lines in SL2 . arXiv:2211.05194.
+[LM22] Lindenstrauss, E.; Mohammadi, A. Polynomial effective density in quotients of H3 and H2 ˆ H2 . To appear in
+ Invent. Math.
+[LMWY23] Lindenstrauss, E.; Mohammadi, A.; Wang, Z. and Yang, L. An effective version of the Oppenheim conjecture
+ with a polynomial error rate. arXiv:2305.18271.
+[Mar54] Marstrand, J. M. Some fundamental geometrical properties of plane sets of fractional dimensions. Proc. London
+ Math. Soc. (3) 4 (1954), 257–302.
+16                                              GAN, GUO, AND WANG
+
+
+[Mat75] Mattila, P. Hausdorff dimension, orthogonal projections and intersections with planes. Ann. Acad. Sci. Fenn. Ser.
+ A I Math. 1 (1975), no. 2, 227–244.
+[Mat95] Mattila, P. Geometry of sets and measures in Euclidean spaces. Cambridge Studies in Advanced Mathematics, 44.
+ Cambridge University Press, Cambridge, (1995).
+[Mat15] Mattila, P. Fourier analysis and Hausdorff dimension. Cambridge Studies in Advanced Mathematics, 150. Cam-
+ bridge University Press, Cambridge, (2015).
+[OO15] Oberlin, D.; Oberlin, R. Application of a Fourier restriction theorem to certain families of projections in R3 . J.
+ Geom. Anal. 25 (2015), no. 3, 1476–1491.
+[Orp15] Orponen, T. Hausdorff dimension estimates for restricted families of projections in R3 . Adv. Math. 275 (2015):
+ 147–183.
+[OV20] Orponen, T.; Venieri, L. Improved bounds for restricted families of projections to planes in R3 . Int. Math. Res.
+ Not. IMRN (2020), no. 19, 5797–5813.
+[PS07] Pramanik, M. and Seeger, A. Lp regularity of averages over curves and bounds for associated maximal operators.
+ Amer. J. Math. (2007).
+[PYZ22] Pramanik, M.; Yang, T.; Zahl, J. A Furstenberg-type problem for circles, and a Kaufman-type restricted projection
+ theorem in R3 . arXiv preprint arXiv:2207.02259 (2022).
+[PS00] Peres, Y. and Schlag, W. Smoothness of projections, Bernoulli convolutions, and the dimension of exceptions. Duke
+ Math. J. 2000.
+
+     Department of Mathematics, Massachusetts Institute of Technology, Cambridge, MA 02142-4307, USA
+     Email address: shengwen@mit.edu
+
+     Department of Mathematics, University of Wisconsin-Madison, Madison, WI-53706, USA
+     Email address: shaomingguo@math.wisc.edu
+
+     Department of Mathematics, UCLA, Los Angeles, CA 90095, USA
+     Email address: hongwang@math.ucla.edu
+

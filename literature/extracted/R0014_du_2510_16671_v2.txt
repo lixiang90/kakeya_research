@@ -1,0 +1,1229 @@
+                                             RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL
+                                                          FAMILIES OF LINEAR SUBSPACES
+
+
+                                                                                              JIAHAN DU
+
+
+                                                   Abstract. This paper investigates a refinement of Marstrand’s projection theorem; more specif-
+arXiv:2510.16671v2 [math.CA] 23 Oct 2025
+
+
+
+
+                                                   ically, let Πt , t ∈ [0, 1] be a family of m dimensional subspaces of the Euclidean space Rn and let
+                                                   Pt : R4 7→ Πt be the orthogonal projections onto Πt . We hope to determine the conditions on Πt
+                                                   under which, for any Borel A ⊂ Rn , dimH Pt (A) = min(m, dimH A) holds for almost every t. We
+                                                   propose a conjectured condition on Πt and provide partial progress towards its resolution. We
+                                                   first establish a version of the polynomial Wolff axiom, and then apply polynomial partitioning to
+                                                   derive a version of the Lp Kakeya inequality. Finally, we use a discretization procedure to obtain
+                                                   the desired bound.
+
+
+
+
+                                                                                         1. Introduction
+                                              In 1954, Marstrand [1] proved the following theorem, starting a long line of research on projection
+                                           theorems.
+                                           Theorem 1.1 (Marstrand [1]). Let A ⊂ R2 be a Borel measurable set, and Pt : R2 → R, t ∈ [0, 2π]
+                                           be the orthogonal projection onto the span of (cos t, sin t). Then dimH Pt (A) = min(dimH A, 1) for
+                                           almost every t ∈ [0, 2π].
+                                              Here and in the future, we use dimH to denote Hausdorff dimension in Euclidean spaces.
+                                           Marstrand’s original proof is elementary but somewhat complex. Later, Kauffman [2] provided
+                                           a much simpler proof of Marstrand’s result using potential theory. His method also generalizes to
+                                           higher dimensions:
+                                           Theorem 1.2 (Kaufman[2]). Let A ⊂ Rn be a Borel measurable set and 1 ≤ m ≤ n, if K ∈
+                                           G(n, m), and we denote the orthogonal projection from Rn onto K to be PK , then dimH PK (A) =
+                                           min(dimH A, m) for almost every K ∈ G(n, m).
+                                              Here G(n, m) is the Grassmannian of m dimensional subspaces of Rn . Since then, researchers
+                                           have discovered various generalizations and refinements of Marstrand’s original result, and connec-
+                                           tions to other problems in mathematics, e.g. the sum product theorem by Bourgain [3].
+                                              Later, Gan, Guo, Guth, Harris, Maldague and Wang in [4] introduced new tools from harmonic
+                                           analysis into the study of this topic. They used the so called decoupling inequalities to prove the
+                                           following refinement of theorem 1.2. Using similar methods, Gan, Guo and Wang proved a further
+                                           generalization in [5]:
+                                           Theorem 1.3 (Restricted projection theorem [5]). Let γ : [0, 1] → Rn be a smooth curve such that
+                                           det(γ(t), ..., γ (n−1) (t)) ̸= 0 for all t ∈ [0, 1] and 1 ≤ m ≤ n − 1. Let Pt be the orthogonal projection
+                                           onto span(γ(t), ..., γ m (t)) and let A ⊂ Rn be Borel, then dimH Pt (A) = min(dimH A, m) for almost
+                                           every t ∈ [0, 1].
+
+                                             Date: October 24, 2025.
+                                                                                                    1
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES2
+
+
+   Their method actually proves a stronger statement. Their method shows that if A ⊂ Rn is Borel
+measurable and its Hausdorff dimension is greater than a for some a > 0. Let s ∈ [0, m), define
+                                                          s−a
+E = {t ∈ [0, 1]| dimH (Pt (A)) < s}, then dimH E ≤ 1 + n−m    . However we will not be concerned
+with stronger estimates like this here.
+   The proof of theorem 1.3 uses the following result in harmonic analysis:
+Theorem 1.4 (Decoupling inequality for the moment curve [6]). Let γ : [0, 1] → Rn be the smooth
+curve given by γ(t) = (t, t2 , ..., tn ) and 1 ≤ k ≤ n. Let δ > 0 and P (δ) be a partition of [0, 1] into dis-
+joint intervals of length δ. For each interval I, we let cI be the center of I, let UI be the parallelpiped
+of dimensions |I| × ... × |I|k whose center if γ(cI ) and sides parallel to ∂ 1 (γ)(cI ), ..., ∂ k (γ)(cI ). Then
+if for each I, fI is a smooth function with Fourier support in UI , then for p ∈ [2, k(k + 1)], then
+for any ϵ > 0, there exists a constant Cϵ independent of the fI ’s, such that
+                                     X                      X               1/2
+                                           fI    ≤ Cϵ δ −ϵ        ||fI ||2Lp
+                                               Lp
+                                 I∈P (δ)                         I∈P (δ)
+
+We comment that a similar result holds for any smooth curve γ : [0, 1] → Rn such that
+                                           det |γ (1) (t), ..., γ (n) (t)| > 0
+for all t.
+   In summary, Gan, Guo, Guth, Harris, Maldague and Wang first converted the original problem
+about Hausdorff dimension into trying to prove an Lp inequality about sum of indicator of paral-
+lelpipeds, then they divided up the support of the Fourier transform of those indicator functions
+into different regions. Each region can either be estimated directly, or be estimated using the de-
+coupling inequality. Due to the form of the decoupling inequality from above, Gan, Guo and Wang
+only considered families of subspaces of the form span(γ, ..., γ (k) ).
+   In this paper, we ask the following question, given a family of linear maps Pt : Rn → Rm , t ∈ [0, 1],
+n ≥ m, when is it true that if A ⊂ Rn is Borel, we have dimH (Pt (A)) = min(dimH A, m) for
+almost every t ∈ [0, 1]? We make the following conjecture, which essentially says if the restricted
+Marstrand’s theorem does not hold, then there must be counterexamples among subspaces:
+Conjecture 1.5. Suppose Pt : Rn → Rm is an analytic family of linear maps, in the sense
+that its coordinate functions are analytic functions of t, and assume that for any subspace π of
+Rn , dim Pt (π) = min(dim π, m) for all but finitely many t ∈ [0, 1]. We have dimH Pt (A) =
+min(dimH A, m) for almost every t whenever A ⊂ Rn is Borel.
+   A more general version of the above conjecture is:
+Conjecture 1.6. Suppose Pt : Rn → Rm is an analytic family of linear maps. Let f : [0, n] → R be
+defined as follows. If x ∈ [0, n] is an integer, f (x) is the largest integer such that for any subspace
+A of Rn with dim A = x, dim Pt (A) ≥ f (x) for all but finitely many t ∈ [0, 1]. If x is not an integer,
+f is defined to be linear on the interval [⌊x⌋, ⌊x⌋ + 1]. We conjecture that if A ⊂ Rn is Borel, then
+dimH Pt (A) ≥ f (dimH A) for almost every t.
+   For example, consider the linear maps Pt : R2n 7→ Rn given by Pt ((x1 , y1 , ..., xn , yn )) = (x1 +
+ty1 , ..., xn + tyn ), then we can prove that if A is Borel, dimH (Pt (A)) ≥ f (dimH A) for almost every
+t. Here f (x) = ⌊ x+1   2 ⌋ if x is an integer, and f is linear between integers. We will be focusing on
+the less general conjecture 1.5 in this paper.
+   We give the following partial progress, which is the main result of the paper:
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES3
+
+
+Theorem 1.7. Suppose Πt , t ∈ [0, 1] is a family of two dimensional subspaces of R4 and let Pt :
+R4 → Πt be the orthogonal projection onto Πt . Furthermore assume that we have b1 (t), b2 (t) :
+[0, 1] → R4 such that Πt = span (b1 (t), b2 (t)) and each coordinate function of bi is a polynomial
+in t. Furthermore, assume that for any subspace π of R4 , dim Pt (π) = min(dim π, 2) for all but
+finitely many t ∈ [0, 1]. Then there exists a constant ϵ > 0 depending only on Pt , such that
+dimH (Pt (A)) > 1 + ϵ for almost all t whenever A is a Borel subset of R4 and dimH A = 2. Here,
+because of the inefficiency of the argument, ϵ is a positive constant that is small if the degrees of
+the coordinate functions of b1 (t) and b2 (t) are large.
+Comment 1.8. It is not hard to see that orthogonal projection onto span(b1 (t), b2 (t)) and the
+linear map R4 → R2 given by x 7→ (x · b1 (t), x · b2 (t)) are releated by a fixed linear transformation.
+Therefore, the Hausdorff dimensions of a Borel subset A ⊂ R4 under the orthogonal projection Pt
+and under x 7→ (x · b1 (t), x · b2 (t)) are identical.
+Example 1.9. We can take Pt to be the orthogonal projection onto the span of [1, 0, t, t2 ] and
+[0, 1, t2 , −t3 ]. A direct computation shows that this case satisfies the assumptions of theorem 1.7
+but is not covered by theorem 1.3. Later we show see that for every Borel A ⊂ R4 , we have
+dimH Pt (A) ≥ 1 + 51 for almost every t ∈ [0, 1].
+Lemma 1.10. Under the assumptions of theorem 1.7, suppose Πt = span (γ1 (t), γ2 (t)) such that
+all coordinate functions of γi are analytic functions. We may assume that
+                                   det([γ1 (t), γ2 (t), γ1′ (t), γ2′ (t)]) ̸= 0
+for all t ∈ [0, 1].
+Proof. The determinant f (t) = det(γ1 (t), γ2 (t), γ1′ (t), γ2′ (t)) is an analytic function of t, hence it
+either has finitely many zeros or is constant zero on [0, 1]. In the first case by redefining the domain
+of t, we may assume f (t) ̸= 0 for all t ∈ [0, 1] by restricting to subintervals of [0, 1]. In the second
+case there must exist analytic functions a(t), b(t), c(t), d(t) : [0, 1] → R of t such that
+                                          aγ1 + bγ2 = cγ1′ + dγ2′
+and a(t), b(t), c(t), d(t) must not be simultaneously zero for any t ∈ [0, 1]. Let γ = cγ1 + dγ2 , then
+                        span(γ, γ ′ ) = span(cγ1 + dγ2 , aγ1 + bγ2 + c′ γ1 + d′ γ2 )
+                                 = span(cγ1 + dγ2 , (a + c′ )γ1 + (b + d′ )γ2 ).
+                        ′
+   The function c(b + d ) − d(a + c′ ), being an analytic function of t has finitely many zeros or is the
+constant zero function. In the first case span(γ, γ ′ ) = Pt for all but finitely many t ∈ [0, 1], and the
+conjecture has been reduced to a special case already proven by theorem 1.3. In the second case we
+have c(b + d′ ) = d(a + c′ ). If c is the constant zero function, then ad = 0. But d(t) must be nonzero
+for any t ∈ [0, 1] for otherwise we have a(t)γ1 (t) + b(t)γ2 (t) = 0, hence a(t) = b(t) = c(t) = d(t) = 0
+and a contradiction. Hence a is the constant zero function. This implies bγ2 = dγ2′ , from which
+we can solve γ2 (t) = ⃗c · exp( db t) for some constant vector ⃗c ∈ R4 . The projection of the three
+dimensional subspace perpendicular to ⃗c onto Pt is then at most one dimensional for all t. This
+contradicts the assumption. Therefore c is not the constant zero function, so it only has finitely
+many zeros. Similarly d only has finitely many zeros. By restricting to subintervals of [0, 1] if
+necessary, we can find an analytic function λ of t such that a + c′ = λc, b + d′ = λd, hence
+                                (λc − c′ )γ1 + (λd − d′ )γ2 = cγ1′ + dγ2′ ,
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES4
+
+
+hence λ(cγ1 + dγ2 ) = (cγ1 + dγ2 )′ , then cγ1 + dγ2 is a constant vector times etλ , in this case the
+projection of the three dimensional subspace perpendicular to this constant vector to Pt is at most
+one dimensional for all t. This contradicts the assumption. The above discussion then shows that
+we may assume det(γ1 (t), γ2 (t), γ1′ (t), γ2′ (t)) ̸= 0 for any t ∈ [0, 1].                        □
+   We are unable to prove the full conjecture above due to inefficiencies in the polynomial parti-
+tioning argument at the moment when this was written. However, the recent resolution of three
+dimensional Kakeya conjecture by Hong Wang and Joshua Zahl in [7] might be able to be adapted
+to our case, provided that their argument for straight tubes can be generalized to curved tubes.
+However, it is nontrivial to generalize their method to curved tubes, and it might involve making
+their arguments work for semialgebraic sets instead of convex sets.
+   We devote the rest of the paper to proving theorem 1.7. The method we use was first invented
+in [8] and used again in [9]. To briefly illustrate the idea, let Pt : Rn → Rm be a family of
+linear maps and A ⊂ Rn be Borel measurable, then consider the collection of curves in Rm+1
+given by ca : [0, 1] 7→ Rm+1 , ca (t) = (t, Pt (a)) for each a ∈ A, then roughly speakingS to prove
+that dimH Pt (A) = min(m, dimH A) for almost every t, we only need to show that dimH a∈A ca =
+min(m+1, dimA +1). This problem has the same form as the curved variant of the Kakeya problem,
+studied for example in [10]. In [8] and [9], the authors studied projections from R3 to R, which
+correspond to unions of curves in R2 . Because of the low dimension (dimension 2), the authors
+were able to study tangencies directly.
+   In theorem 1.7, however, we need to deal with curves that lie in R3 , and we use the polynomial
+partitioning method first invented by Larry Guth to make progress on the restriction conjecture.
+We will first adapt an argument by Nets Katz and Keith Rogers in [11] to prove a version of the
+polynomial Wolff axiom, and use the polynomial Partitioning method to convert it to the needed
+curved Kakeya bound. Similar curved Kakeya problems have also been studied recently in [12],
+where the authors applied the polynomial Wolff axioms for curves to make partial progress on a
+conjecture involving Lp bounds of certain Hormander operators.
+   For the rest of the proof, in section 2 we prove a version of polynomial Wolff axiom, in section 3
+we use the polynomial Wolff axiom to derive a multilinear Kakeya inequality, in section 4 we use the
+well known "broad narrow" method to convert the multilinear Kakeya inequality to a linear Kakeya
+quality, and in the last section we discuss how to go from linear Kakeya inequality to restricted
+problem.
+   Before we end the introduction, we see a non-example. We take Pt : t ∈ [0, 1] as the orthogonal
+projection onto the span of (1, 0, −2t2 , −2t), (0, 1, −2t, 0) . Then the corresponding unions of curve
+problem is the following:
+   Let A ⊂ R4 be Borel, for each x = (x1 , x2 , x3 , x4 ) ∈ A, we define a curve γx : [0, 1] → R3 by
+                                  γx (t) = (t, x1 − 2t2 x3 − 2tx4 , x2 − 2tx3 ),
+                                                 S
+is it true that the Hausdorff dimension of x∈A γx is dimH A + 1?
+    The answer is false and a counterexample is provided by Laura Wisewell in [10]: we can simply
+pick A to be the subspace given by x1 = 0 and x2 = −2x4 ; all curves γx would then lie on the
+surface x = yz in R3 . Alternative,      we can check the restricted projection problem also fails with
+A = span (1, 0, 0, 0), (0, 0, 0, 1) as expected.
+    Acknowledgment: The author is deeply grateful to Hong Wang, who introduced me to this
+topic and taught me much of what I know. I also want to thank Arian Nadjimzadah for pointing
+out Laura Wisewell’s thesis on the curved Kakeya problem to me.
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES5
+
+
+   Notations: In the following paper, we shall use C > 0 to denote a large constant that depends
+only on Pt , and we use C(X, Y, ...) to denote a large constant that depends only on quantities
+X, Y, .... We use X ≲ Y to denote X ≤ CY , and we use X ⪅ Y to denote X ≲ (log δ −1 )C Y.
+
+                       2. Polynomial Wolff Axioms for Curved Tubes
+  Our goal this section is to establish a version of the polynomial Wolff axiom for curved tubes.
+We start with the following lemma:
+Lemma 2.1. Let Pt : Rn → Rm , t ∈ [0, 1] be a family of linear maps given by
+                      Pt (x, v) = (x · β1 (t), ..., x · βm (t)) + (v · γ1 (t), ..., v · γm (t)),
+where n = 2m, x ∈ Rm , v ∈ Rm and each βi (t), γi (t) : [0, 1] → Rm is a vector of polynomial
+functions in t. Furthermore, we assume that for every linear subspace A ⊂ Rn , we have dim Pt (A) =
+min(m, dim A) for all but finitely many t ∈ [0, 1]. Denote the map
+                      (x, v, t) 7→ (x · β1 (t), ..., x · βm (t)) + (v · γ1 (t), ..., v · γm (t))
+                n+1
+by Φ(x, v, t) : R  7→ Rm . Given a new positively oriented orthonormal basis e1 , ..., en of Rn , there
+is a constant C > 0 such that for every α ∈ [0, 1], λ ∈ [0, 1 − α] and m × m matrix M , we have
+                        Z α+λ
+                                 det(∇e1 ,...,em Φ · M + ∇em+1 ,...,en Φ) dt ≥ CλN .
+                         α
+Here N ∈ Z+ depends on the degrees of coordinate functions of βi ’s and γi ’s only, and we adopt the
+convention that for a function f : Rn → Rm , ∇e1 ,...,ek f is the m×k matrix given by (∇e1 ,...,ek f )ij =
+∇ej f i .
+                                                                                       
+                                                                                A1 A2
+Proof. Let A denote the orthogonal matrix [e1 , ..., en ]−1 and we write A =             , where each
+                                                                                A3 A4
+                                                                                       β1 
+Ai is a square matrix of dimension m × m. Define the square matrix β by β := β...2 and γ by
+       γ1                                                                             βm
+          γ2
+γ := ... ; we can calculate by change of variable:
+       γm
+ Z α+λ                                                      Z α+λ
+                                                                                                       
+         det(∇e1 ,...,em Φ · M + ∇em+1 ,...,en Φ) dt =                det β(A1 M + A2 ) + γ(A3 M + A4 ) dt
+  α                                                          α
+                                       Z α+γ                  A1 M +A2  
+                                   =           det [β γ] ·       A3 M +A4      dt.
+                                      α
+                               A1 M +A   
+Denote the n × m matrix A3 M +A4 by K, then the integrand above is a polynomial in t, with
+                                        2
+
+
+coefficients as polynomials of entries of K. Assume
+                                                         B
+                                           A1 M +A2   X
+                              det [β γ] · A  3 M +A 4
+                                                        =   ph (Kij )th ,
+                                                                   h=0
+where B is the degree of the above polynomial in t depending on γi ’s only, each ph (yij ) is a
+polynomial in nm variables yij : 1 ≤ i ≤ n, 1 ≤ j ≤ m, and we use ph (Kij ) to denote ph (yij )
+evaluated at Kij . By assumption, the polynomials ph satisfy the following condition: if for some
+choice of yij , 1 ≤ i ≤ n, 1 ≤ j ≤ m, we have ph (yij ) is zero for each h = 1, ..., B, then the n × m
+matrix [yij ] has rank strictly less than m.
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES6
+
+
+   Next, We note a simple equality about determinants: if A1 , ..., Am are a list of n by n matrices,
+then
+                                        X         X
+(1)                                 det(   Ai ) =    det Kf
+                                                i                f
+
+where the summation is over all functions f : {1, ..., , n} 7→ {1, ..., m}; Kf is the matrix whose ith
+row is the ith row of Af (i) . This equality can be derived using multilinearity of determinants with
+                                                                       (j)
+respect to rows as follows: denote the jth row of Ai by Ai , then
+                                         P (1)                     (1)
+                                                                          
+                                            i Ai   !                Ai      !
+                                         P (2)                  P (2) 
+                         X               i Ai         X         i Ai 
+                    det(    Ai ) = det            =      det 
+                                         ...                    ... 
+                                                                          
+                          i               P (n)          i        P (n)
+                                            i Ai                    i Ai
+In the second equality above we expanded the determinant with respect to the first row, taking
+advantage of multilinearity. Equation 1 follows by performing the same expansion across all other
+rows.
+   We can rewrite equation 1 as follows:
+                                            X            X
+(2)                                  det(       Ai ) =           c(f ) det Af ,
+                                            i                f
+
+where the summation is over all functions f : {1, ..., n} → {1, ..., m} × {1, ..., n}. Here c(f ) is a
+constant that depends only on f (actually it can be taken to be either one or zero). Af is the n × n
+matrix whose ith row is f (i)(2)th row of Af (i)(1) .
+   If instead we have four square matrices A, X, B, Y of dimension n × n, then can first expand XB
+into sum of multiple matrices as follows:
+                                                 X                X
+                         det(XA + Y B) = det(         Xij Iij A +   Yij Iij B),
+                                                     i,j                     i,j
+
+here Iij is the n by n matrix that is 1 for the (i, j) element but zero elsewhere. We can then apply
+equation 1 to this new sum. After discarding matrices that have at least one row with only zeros,
+we can conclude                                  X
+                             det(XA + Y B) =          pg (Xij , Yij ) det Kg ,
+                                                         g
+where the summation is over all functions g : {1, ..., n} 7→ {1, 2} × {1, ..., n}. Kg is the n × n matrix
+whose i-th row is the g(i)(2)th row of A if g(i)(1) = 1, and the g(i)(2)th row of B if g(i)(1) = 2.
+pg is a polynomial over matrixelements      of X whose form depends on g only. For example, in the
+case n = 2, let A = [ aa12 ], B = bb12 where a1 , a2 , b1 , b2 are all row vectors of length 2, then we can
+                                      
+
+calculate:
+                                                                                          a 
+           det(XA + Y B) = (X11 X22 − X12 X21 ) det[ aa12 ] + (X11 Y21 − X21 Y11 ) det b11
+                                                        a                              a 
+                              + (X11 Y22 − X21 Y12 ) det b21 + (X12 Y22 − X22 Y12 ) det b22
+                                                                                            a 
+                                  + (Y11 Y22 − Y12 Y21 ) det bb12 + (X12 Y21 − X22 Y11 ) det b12 .
+                                                               
+                                                              n
+   For any n × m matrix Q, we denote by QI ∈ R(m) the vector of m × m minors. Apply the
+matrix equality above to det β(A1 M + A2 ) + γ(A3 M + A4 ) , we see that each polynomial ph can
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES7
+
+                                                           n
+be rewritten to be ch · KI for some constant vector ch ∈ R(m) . Therefore we can rewrite
+                                                             B
+                                                           X
+                         det β(A1 M + A2 ) + γ(A3 M + A4 ) =   (ch · KI )th .
+                                                                     h=0
+So far we have rewritten ph as a polynomial of the m × m minors KI ’s of K. Moreover each ph is
+a linear combination of KI ’s.
+   We now record an observation in [11]:
+Lemma 2.2 ([11]). Given some n ∈ Z+ , there is a constant C > 0 such that given a polynomial
+                                                          R1
+P (t) of the form P (t) = tn + lower degree terms, we have 0 |P (t)| ≥ C.
+Proof. Let z1 , ..., zn be the (possibly complex) roots of P (t), then P (t) = (t − z1 )...(t − zn ), then
+                                  1
+the set {t ∈ [0, 1], |t − zi | < 4n for some i} has Lebesgue measure at least 1/2.                      □
+   We proceed with proof by contradiction. Assuming our lemma is false for any positive N . By
+choosing the power N in lemma 5 sufficiently large and using lemma 2.2, we have a sequence of
+                                      (i)
+K (i) , i = 1, 2, ... such that ch · KI := ϵh ∈ R → 0 for each h, and we would like to show that this
+                                         (i)
+implies that each coordinate of KI goes to zero as i → ∞. Let S be the image of the Plucker’s
+                                                                            n
+embedding, which we may identify with a subset of the unit sphere of R(m) , then S is a compact
+subset of the unit sphere. Furthermore, we know by assumption there does not exist an x ∈ S such
+that ch · x = 0 for all h, for otherwise we can find an n × m matrix K such that [β, γ] · K = 0.
+The m dimensional subspace A spanned by the column vectors of K then violates the assumption
+of the lemma. Since S is compact, each ph is a continuous function on the compact set S that is
+nowhere zero. This implies that there exists ϵ > 0 such that ||ch · x|| > ϵ for all h and any x ∈ S.
+                             (i)                                           (i)
+However we have ||ch · KI || → 0 as i → ∞, which implies that ||KI || → 0 as i → ∞.
+   However, it is impossible for all m × m minors of K (i) to converge to zero as i → ∞. For each
+                                                       the differential form x1 dx1 + .... + xn dxn . Then
+column vector (x1 , ..., xn ), we can identify it with
+the wedge product of all column vectors of A      A3 and all column vectors of K is the wedge product
+                                                    1
+
+
+of all column vectors of A. This is a contradiction as the coefficients of A are constants, and do not
+tend to zero as i → ∞.                                                                                    □
+   We shall need the case n = 4, m = 2 of the lemma above. We now use the above integral
+inequality to show a version of the polynomial Wolff axiom for curved tubes as in [11] and later
+[12]. Follow the setup of the previous lemma, we define Φ(x, v, t) : R2 × R2 × R → R2 by
+                                                                     
+                                               x · β1 (t)    v · γ1 (t)
+                                Φ(x, v, t) =               +
+                                               x · β2 (t)    v · γ2 (t)
+given a Borel set A ⊂ R4 , we have a set of curves given by t 7→ (Φ(x, v, t), t) for (x, v) ∈ A. Later
+in section 5 we will have the following situation: we have a collection A′ of points (x, v) and their
+associated curves t 7→ (Φ(x, v, t), t), unfortunately the directions v are not necessarily δ disjoint.
+However there exists a two dimensional subspace Π ⊂ R4 , such that the image of A′ under the
+orthogonal projection P : R4 7→ Π is δ separated. Let (e1 , e2 , e3 , e4 ) be another standard basis of
+R4 , such that e3 , e4 span Π and e1 , e2 span Π⊥ , then Φ(x, v, t) can be rewritten using a change of
+variable into e1 , e2 , e3 , e4 and t. We will rename e1 , e2 , e3 , e4 to be (x, v) for notational simplicity,
+where x = (e1 , e2 ), v = (e3 , e4 ). For δ > 0, α > 0 and λ ∈ [0, 1 − α], we define the following curved
+δ tube:
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES8
+
+
+
+
+(3)            Tx,v,[α,α+λ],δ = {(x′ , t) ∈ R3 | |x′ − Φ(x, v, t)| ≤ δ, x′ ∈ R2 , t ∈ [α, α + λ]}
+and we say a λ × δ tube like this has position x, direction v. The curved tubes are defined using
+the new coordinate
+                         and in this new coordinate system of course Φ has the same form
+                        system,
+              x · β1 (t)     v · γ1 (t)
+Φ(x, v, t) =              +             as above, but with different βi (t) and γi (t).
+              x · β2 (t)     v · γ2 (t)
+   The point of this change of variables is as follows: for each λ × δ tube we associate a "label"
+(x, v) ∈ R4 to it, and we (essentially arbitrarily) assign v to be the direction. Later we shall show
+that separation of the "direction" v in the "label" implies good separation property on the tubes.
+Proposition 2.3. Let E be a positive integer and ϵ > 0, then there is a constant C(E, ϵ) > 0 so
+that for every set T of λ × δ tubes in [0, 1]3 , pointing in δ separated directions, we have
+                                 #{T ∈ T : T ⊂ S} ≤ C(E, ϵ)|S|δ −2−ϵ λ−N
+whenever S is a semialgebraic set of complexity at most E and λ ≥ δ > 0. Note the loss λ−N is
+worse than the loss for straight Kakeya tubes. Here N is the same large integer as in lemma 2.1.
+   The method we use is invented by Nets Katz and Keith Rogers in [11]. Their method has been
+used and refined in for example [12] and [13]. Before we start the proof, we first record some basic
+facts about semialgebraci sets and a few results from [11].
+Definition 2.4 (Complexity). Let E ⊂ Rn be a semialgebraic set given by finite unions of sets
+of the form {(x1 , ..., xn ) ∈ Rn | P (x1 , ..., xn ) = 0} and {(x1 , ..., xn ) ∈ Rn | Q(x1 , ...., xn ) > 0} where
+P, Q are multivariate polynomials. The complexity of E is the minimum of the sum of degrees of
+all defining polynomials.
+Definition 2.5 (Dimension). Let S ⊂ Rn be a semialgebraic set, the dimension of S is the largest
+integer d such that there exists an injective semialgebraic map from [0, 1]d into S.
+   The following Tarski’s projection theorem says the collection of semialgebraic sets forms what
+logicians call an o-minimal structure.
+Theorem 2.6 (Tarski). For any positive integers n ≥ 2 and E, there is a constant C(n, E) such
+that for every semialgebraic set S ⊂ Rn of complexity at most E, the projection of S onto the first
+n − 1 coordinates has complexity at most C(n, E).
+  From Tarski’s projection theorem, [11] showed the the following lemma for straight tubes. The
+proof carries over to our curved tubes.
+Lemma 2.7 (curved case of [11]). Let S ⊂ R3 be a semialgebraic set of complexity at most E and
+let α ∈ R, Ls = {(x, v) ∈ [0, 1]4 , Tx,v,[α,α+λ],δ ⊂ S} is a semialgebraic set of complexity at most
+C(E), where C(E) is a constant depending on E only.
+   The following lemma shows that you can always pick a semialgebraic slice.
+Lemma 2.8 ([11]). Let n ∈ Z+ and S ⊂ R2n be a compact semialgebraic set of complexity at most
+E, then there is a semialgebraic set Z ⊂ R2n of complexity at most C(n, E) such that Π(Z) = Π(S)
+and Π is a bijection on Z, where Π is the projection of R2n onto its first n coordinates and C(n, E)
+is a constant depending on n and E only.
+  We also need the following lemma, first proved by Yomdin and subsequently generalized by
+Gromov:
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES9
+
+
+Lemma 2.9 (Gromov). For any semialgebraic set A ⊂ [0, 1]n of dimension d and complexity at
+most E and positive integer r, we can find maps ϕ1 , .., ϕN : [0, 1]d → [0, 1]n so that
+                          N
+                          [
+                               ϕi ([0, 1]d ) = A and ||ϕj ||C r = max ||∂ α ϕj ||∞ ≤ 1,
+                                                                  |α|≤r
+                         i=1
+here N is bounded by a constant depending on n, r, E only.
+   We also need a version of the Bezout’s theorem from theorem 5.2 of [14]:
+Theorem 2.10 (Bezout’s theorem). Let f1 , ..., fn be n polynomials with coefficients in R over n
+variables x1 , ..., xn , a zero X = (x∗1 , ..., x∗n ) is an called an isolated root if det(∇f )(X) ̸= 0. If the
+total degree of fi is di , then the number of isolated zeros to the system of equations fi (x1 , ..., xn ) =
+0, i = 1, ..., n is bounded above by d1 · ... · dn .
+   Now we go back to the proof of proposition 2.3.
+Proof. We first cover [0, 1] with intervals I1 , ..., In of length λ/2 such that different Ii , Ij overlap if
+and only if i + 1 = j. The projection of T ∈ T into the third coordinate must contain some Ik . For
+each k, we let Tk be the collection of curved tubes in T whose projection onto the third coordinate
+contains Ik . We let Sk be the subset of S consisting of points whose projection on to the third
+coordinate is a in Ik−1 ∪ Ik ∪ Ik+1 . Then it suffices to prove
+                               #{T ∈ Tk : T ⊂ Sk } ≤ C(E, ϵ)|Sk |δ −2−ϵ λ−N
+for each k. Clearly, we can assume |Sk | ≥ λδ 2 , for otherwise Sk cannot contain a single curved tube.
+We now use proof by contradiction: suppose for each constant C ∗ > 0, we can find a collection of
+λ × δ tubes T with δ separated directions such that
+                                  #{T ∈ T : T ⊂ Sk } > C ∗ |Sk |δ −2−ϵ λ−N .
+Choose a big constant C > 0, depending on p, q, r and s. Let α be the left end point of Ik and
+consider the set
+                         L = {(x, v) ∈ [0, 1]4 : Tx,v,[α,α+λ], δ ⊂ Sk },
+                                                                          C
+this set is a semialgebraic set by lemma 2.7. Furthermore, we can check by direct computation that
+Tx,v′ ,[α,α+λ], δ ⊂ Tx,v,[α,α+λ],δ if |v ′ −v| <= Cδ . Next we can use lemma 2.8 to obtain a semialgebraic
+                 C
+section L′ ⊂ L consisting of a single (x, v) for each v appearing in L. Let Π denote the projection
+(x, v) → v, then |Π(L′ )| = |Π(L)| > C ∗ |Sk |δ −ϵ λ−N by our proof by contradiction hypothesis, where
+the constants C ∗ might be different from each other by a factor depending only on ϵ and E. The
+semialgebraic dimension of L′ is 2, because the projection onto v restricted to L′ is a semialgebraic
+bijection to a two dimensional set. By Gromov’s algebraic lemma, we can break L′ into N pieces
+such that for each piece Lj , there is a map (Fj , Gj ) : [0, 1]2 → [0, 1]4 with (Fj , Gj )([0, 1]2 ) = Lj and
+                                                2
+||(Fj , gj )||C r ≤ 1, where we take r = ⌊ Cϵ ⌋ and N is bounded above by a number depending on ϵ
+and E only. The pigeonhole principle then implies that there exists j such that
+                                  |Gj ([0, 1]2 )| = |Π(Lj )| > C ∗ |Sk |δ −ϵ λ−N .
+                                                                                          ϵ
+This implies that we have a ball B ⊂ [0, 1]2 centered at some x0 and of radius δ 4 so that
+                                                                  ϵ
+                                          |Gj (B)| > C ∗ |Sk |δ − 2 λ−N .
+Now replace (Fj , Gj ) by (F, G) the (r − 1)th Taylor approximation. Note that the length of the
+                                               ϵ
+boundary of G(B) is bounded above by O(δ 4 ) and recall we assume |Sk | > δλ2 , this implies
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES10
+
+
+that |G(B)| > C ∗ |Sk |λ−N at least if C is large enough since we have |(Fj , Gj )(x) − (F, G)(x)| ≤
+                C2
+|x − x0 |r ≤ δ 4 . Moreover, since the tube TFj (x),Gj (x),[α,α+λ], δ is contained in Sk for x ∈ B by
+                                                                    C
+assumption, we see that (Φ((F (x), G(x), t), t) ∈ Sk if x ∈ B and t ∈ I. This implies
+                                       Z
+(4)                             |Sk | ≥ |Φ(F (x), G(x), t)(B)| dt.
+                                              I
+We would like to deal with Φ(F (x), G(x), t)(B) by a change of variable in x. However x 7→
+Φ(F (x), G(x), t) might not be a diffeomorphism onto its image as it can be a many to one function
+and may not even be a local diffeomorphism. To remedy this, let Bt ⊂ B be the subset of x where
+∇x Φ(F (x), G(x), t) is invertible. We have |Φ(F (x), G(x), t)(B)| = |Φ(F (x), G(x), t)(Bt )| by Sard’s
+theorem. Furthermore, by Bezout’s theorem, for each t, Φ(F (x), G(x), t) is at most an (r − 1)2 to
+one function on Bt . Therefore, we conclude that:
+                Z                                     Z Z
+                                                  1
+      |Sk | ≥        |Φ(F (x), G(x), t)(B)| dt ≥              | det ∇x Φ(F (x), G(x), t)| dx dt
+                I                             (r − 1)2 I Bt
+                                                      Z Z
+                                                  1
+                                           =                 | det ∇x Φ(F (x), G(x), t)| dx dt
+                                              (r − 1)2 I B
+                                                      Z Z
+                                                  1
+                                           =                 | det(∇x Φ · ∇F + ∇v Φ · ∇G)| dx dt
+                                              (r − 1)2 I B
+We can now use lemma 2.1 to bound the RHS to be
+                               Z            Z
+                         1
+                   ≥                det ∇G     | det(∇x Φ · ∇F · ∇G−1 + ∇v Φ)| dt dx
+                      (r − 1)2 B             I
+
+                                                                             C ∗ |Sk |
+                                 Z
+                           1                   N          1            N
+                     ≳              | det ∇G|λ   dx ≥           G(B)λ     >            ,
+                       (r − 1)2 B                     (r − 1)2              (r − 1)2
+note in the first inequality, on the set where det ∇G(x) = 0 for Rx ∈ B the inequality is true trivially
+as the integrand on the right is 0, and the third inequality B | det ∇G| ≥ G(B) is true by the
+change of variable formula. Now we simply set C ∗ > 0 to be large enough we have a contradiction.
+This completes the proof.                                                                             □
+   The version of polynomial Wolff axiom we need is slightly more general. The proof for the
+straight case as in [11] carries over, except for some technicalities which can be checked.
+   The following is the next step towards the needed polynomial Wolff axiom. If A is a subset of a
+Euclidean space and δ > 0 is small, then we use Aδ to denote the δ neighborhood of A.
+Lemma 2.11. Let S ⊂ R3 be a semialgebraic set of complexity at most E, and let ϵ > 0, then there
+is a constant C(E, ϵ), such that for every collection T of tubes of shape 1 × δ, we have
+                           #({T ∈ T : |T ∩ S| ≥ λ|T |}) ≤ C(E, ϵ)|Sδ |δ −2−ϵ λ−N .
+Here N is the same large integer as in lemma 2.1.
+Proof. Let Π be projection onto the third coordinate. Note that if |T ∩ S| ≥ λ|T |, then the Fubini
+theorem implies that there is a parallel translate l of the central curve t 7→ Φ(x, v, t) of T such that
+l is contained in T and |l ∩ S| ≥ λ. The fundamental theorem of algebra then implies that l ∩ S has
+at most C(E) connected components for a constant C(E) depending on E only. Therefore there is
+a connected component of length at least C(E)−1 λ; hence Tδ ∩ Sδ contains a C(E)−1 λ × δ curved
+tube with the same central curve as T , apply the previous proposition then concludes the proof. □
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES11
+
+
+   Next, we replace |Sδ | by |S| and obtain the polynomial Wolff axiom we need. Before that, we
+record a result due to Wongkew:
+Theorem 2.12 (Wongkew [15]). Let m be the codimension of a real algebraic variety whose defining
+polynomials are all bounded in degree by d. And let B be an arbitrary n-ball in Rn with radius R.
+There exist constants ci which depend only on n, so that for all positive ρ the following is true:
+                                                  n
+                                                  X
+                                vol ((V ∩ B)ρ ) ≤     cj dj ρj Rn−j .
+                                                      j=m
+
+  For the next proposition, we need a technical condition on e1 , e2 , e3 and e4 . Assume
+                                                (x, v) · (β1∗ , γ1∗ )
+                                                                    
+                                  Φ(x, v, t) =
+                                                (x, v) · (β2∗ , γ2∗ )
+in this new coordinates. Of course each coordinate function of βi∗ , γi∗ is a linear combination of
+coordinate functions of βi ’s and γi ’s. We require that γ1∗ (t), γ2∗ (t) are independent for each t. This
+holds true for almost every choice of the basis vectors (ei ). This condition is necessary to ensure
+that given a maximally δ separated set V of v and given a fixed x, the set {Φ(x, v, t)| v ∈ V } is also
+maximally ∼ δ separated.
+Proposition 2.13. Given E ∈ Z+ and ϵ > 0, there is a constant C(E, ϵ) > 0 depending on E and ϵ
+only such that for every collection T of 1 × δ tubes with δ separated directions and any semialgebrac
+set E ⊂ R3 of complexity at most E, we have
+                          #{T ∈ T : |T ∩ S| ≥ λ|T |} ≤ C(E, ϵ)|S|δ −2−ϵ λ−N .
+Proof. It would be nice if there is an upper bound of |Sδ | in terms of |S|. First we may assume
+without loss of generality that |S| ≥ λδ 2 . Let η > 0 be arbitrary, we have |Sη | ≤ |S| + |(∂S)η |
+where ∂S is the boundary of S. By the Milnor-Thom theorem 3.4, (∂S)η is contained in the η
+neighborhood of at most C(E) hypersurfaces of degree at most E. Wongkew’s result cited above
+then shows that |(∂S)η | ≤ C(E)η. Since |S| ≥ δ 3 , if we take η = δ 3 , we then have |Sη | ≤ C(E)|S|.
+   Therefore, it suffices to show that under the given assumptions in proposition 2.13, we can
+upgrade lemma 2.11 to:
+(5)                     #({T ∈ T : |T ∩ S| ≥ λ|T |}) ≤ C(E, ϵ)|Sη |δ −2−ϵ λ−N .
+   Here we need to make an elementary observation: we define a bush to be a collection of 1 × η
+curved tubes that have η separated directions. Then there exists an absolute constant K, such
+that for any given 1 × δ tube Tx,v,[a,a+1],δ , we can find ≤ K number of bushes that together cover
+Tx,v,[a,a+1],δ , with each bush containing ≤ (δ/η)2 number of curved 1 × η tubes. Furthermore, the
+direction of each η tube is within δ of the direction of the thicker tube Tx,v,[a,a+1],δ . To see why, note
+that the collection of tubes Tx,v,[a,a+1],η for η in an η separated subset of B(v, δ) together covers
+Tx,v,[a+1−1/C,a+1],δ/C for some absolute constant C large enough. Tx,v,[a,a+1],δ can be covered by
+≲ 1 number of such radius Cδ tubes, with different x’s but the same v.
+   Denote c = 1/K.PLet Tλ = {T ∈ T : |T ∩ S| ≥ λ|T         S |}, and for each T ∈ Tλ , we can find a
+bush YT such that Y ∈YT |Y ∩ S| ≥ cλδ 2 . Let Y = T ∈Tλ YT , and we partition Y into subsets
+Yk = {Y ∈ Y, 2−k λ|Y | ≤ |Y ∩ S| < 2−k+1 λ|Y |}, k ≥ log2 λ, k ∈ Z. Note that on the one hand, we
+sum to get
+                            X X                   X X
+(6)                                   |Y ∩ S| =              |Y ∩ S| ≥ cλδ 2 #Tλ .
+                        k≥log2 λ Y ∈Yk           T ∈Tλ Y ∈YT
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES12
+
+
+On the other hand, for each k ≥ log2 λ we have
+                      X               X X
+                          |Y ∩ S| <            2−k+1 λ|Y | ≤ 2−k+1 λδ 2 #Tλ .
+                      Y ∈Yk              T ∈Tλ Y ∈YT
+
+Here the second inequality is because #YT ≤ (δ/η)2 . This means that there is a large constant N
+such that                         X X                c
+                                          |Y ∩ S| < λδ 2 #Tλ .
+                                                     2
+                                      k≥N Y ∈Yk
+Along with equation 6, we see that there exists some k ≤ N such that
+                            X
+                                |Y ∩ S| > c(log2 λ−1 + N )−1 λδ 2 #Tλ .
+                              Y ∈Yk
+
+But Y ∈Yk |Y ∩ S| ≤ 2−k+1 λ|Y |#Yk ≤ 2−k+1 λη 2 · (C(E, ϵ)|Sη |η −2−ϵ (2−k λ)−N ), from which we
+     P
+
+conclude #Tλ ≤ C(E, ϵ)δ −2−3ϵ λ−N |Sη |, recalling η = δ 3 and C(E, ϵ) changes from line to line. The
+log2 λ−1 factor is irrelevant as we may assume λ ≥ δ. This concludes the proof of equation 5 and
+the proof of the proposition.                                                                      □
+
+                        3. The Polynomial Partitioning Argument
+   Once we have the polynomial Wolff axioms, we can use polynomial partitioning to derive the
+necessary Kakeya bound. The original argument was invented by Guth to make progress in the
+restriction conjecture, but there have been many improvements since then. In this paper we apply
+the argument given by Guth and Zahl in [16]. Since the adaptation is completely straightforward,
+we merely sketch how their method works without reproducing the proofs of every single lemma.
+   First, we record some definitions:
+Definition 3.1 (Grain). A grain of complexity d in R3 is the Cδ neighborhood of a real algebraic
+variety in R3 of dimension 2 and complexity ≤ d.
+  Note that each grain is also a semialgebraic set.
+Definition 3.2 (Grain decomposition). Let Q be a collection of disjoint δ cubes in R3 , a grain
+decomposition of degree d of error ϵ is a set of grains G, each of which has complexity ≤ d, such
+that the following holds:
+      • For each grain G ∈ G, there is a subset QG of Q such that δ cube
+                                                                     P in QG is contained in G,
+        the QG ’s are disjoint for different G. Furthermore we have G∈G #QG ≥ δ ϵ #Q and for
+        each grain G ∈ G, we have δ ϵ #Q
+                                       #G ≤ #QG ≤ δ
+                                                      −ϵ #Q
+                                                         #G .
+                                                                                           1
+     • If T is a curved tube, then #{G ∈ G, ∃Q ∈ QG such that Q ∩ T ̸= ∅} ≤ Cϵ δ −ϵ #G 3 .
+  In [16], Guth and Zahl proved the existence of a grain decomposition by repeatedly using poly-
+nomial partitioning. Their proof was written for the straight case but adapts without change to
+our tubes, since our tubes are given by polynomials of bounded degree.
+Proposition 3.3 (Existence of a grains decomposition[16]). Let Q be a collection of disjoint δ
+tubes, then for any ϵ > 0, there is a grain decomposition of degree d(ϵ) and error ϵ.
+  We will also need the following theorem is due to Milnor and Thom; it gives a bound on the
+number of connected components of a semialgebraic set in terms of its complexity.
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES13
+
+
+Theorem 3.4 (Milnor-Thom Theorem). Let fi (x1 , ..., xn ) be a finite collection of real polynomials
+                                                               fi ≥ 0 for all i, then the number of
+over x1 , ..., xn , let set S be the semialgebraic set given byP
+connected of S is at most 21 (D + 2)(D + 1)n−1 , where D = i deg fi .
+  Now, we will use the grains decomposition to prove a version of the multilinear Kakeya inequality:
+Lemma 3.5. Suppose T is a collection of tubes of the form Tx,v,[0,1],δ such that T together has δ
+separated directions, we will now show that
+                         Z        X                            β
+                                                                       5     3
+                                                              α
+(7)                                         χT1 χT2 |v1 ∧ v2 |     ⪅ δ 2 |T| 2 .
+                                B(0,1)     T1 ∈T,T2 ∈T
+                                                               2N           3N −2
+Here we take N to be the same positive integer as before, α = 3N −2 and β = 4N −4 . We also assume
+            −c
+that #T ∼ δ for some constant c ∈ (1, 2).
+Proof. To prove this, first notice that we may ignore all tuples (T1 , T2 ) with |v1 ∧ v2 | < δ 100 ; by
+dyadic pigeonholing, we can then find some θ ∈ [δ 100 , 1) such that
+        Z      X                               β Z               X                      β
+                                              α                                          α
+(8)                        χT1 χT2 |v1 ∧ v2 |     ⪅                            χT1 χT2 θ      .
+         B(0,1)   T1 ∈T,T2 ∈T                                       B(0,1)
+                                                                             T1 ,T2 ∈T, θ2 <|v1 ∧v2 |≤θ
+
+   Now we may replace each tube T in T with a collection of disjoint δ cubes that intersect T ,
+so that χT now denotes the indicator function of the union of a collection of disjoint δ cubes; in
+particular each χT restricted to any δ cube is either constantly 1 or 0. We use Q to denote the
+union of all δ tubes for all T ∈ T. Since there are at most δ −3 disjoint delta cubes, we may ignore
+δ cubes Q such that
+                             Z          X                       β
+                                                               α
+(9)                                                  χT1 χT2 θ      ≤ δ 100 .
+                                  Q
+                                         T1 ,T2 ∈T, θ2 <|v1 ∧v2 |≤θ
+
+Using the dyadic pigeonholing principle again, we may take a subcollection A of those delta cubes
+such that there exists some γ > 0 so that
+                               Z                                 β
+                          γ                X
+                                                                α
+(10)                         ≤                        χT1 χT2 θ      <γ
+                          2     Q          θ
+                                                 T1 ,T2 ∈T, 2 <|v1 ∧v2 |≤θ
+
+for all Q ∈ A and
+         XZ                  X                               β       XZ                   X                              β
+(11)                                             χT1 χT2 θα        ⪅                                           χT1 χT2 θα        .
+        Q∈Q   Q                                                        Q∈A   Q
+                    T1 ,T2 ∈T, θ2 <|v1 ∧v2 |≤θ                                    T1 ,T2 ∈T, θ2 <|v1 ∧v2 |≤θ
+
+To make calculation cleaner later, we will pick a µ > 0 be so that
+(12)                                                     γ = µ2β θαβ δ 3
+Therefore, we need to show that for every ϵ > 0, we have
+                                                                         5    3
+(13)                                              #Aµ2β θαβ δ 3 ⪅ δ 2 #T 2 .
+Ultimately the proof of above inequality rests on the following Multilinear Kakeya inequality (in our
+case this can be proven directly): let T be a collection of curved tubes with δ separated directions,
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES14
+
+
+then by the "transversality" condition as equation 43, we have
+                               Z X
+(14)                                      χT1 χT2 |v1 ∧ v2 | ≤ δ 3 #T2 .
+                                        T1 ,T2 ∈T
+
+However, to make efficient use of equation 14, we will consider shorter "subtubes" of T ∈ T, and
+obtain a tighter upper bound using the polynomial Wolff axiom than simply T.
+   Namely, we apply the grains decomposition lemma from above to A. For any ϵ > 0, this gives a
+collection of grains G with error ϵ and complexities bounded above by d(ϵ). We can then rewrite
+our integral as
+           Z            X                  β   XZ              X                 β
+(15)                             χT1 χT2 θα    ⪅                          χT1 χT2 θα .
+             ∪Q∈A Q    T1 ∈T,T2 ∈T                            G∈G   ∪Q⊂G Q       T1 ∈T,T2 ∈T
+                      θ                                                         θ
+                      2 ≤|v1 ∧v2 |<θ                                            2 ≤|v1 ∧v2 |<θ
+
+Note that on the right hand side of above, we are no longer dealing with full length tubes; rather
+we are dealing with the intersection of tubes and grains, which in general will be sets of smaller
+diameter. If K is any set and x ∈ K, we denote CC(K, x) the connected component of K containing
+x, and we use CC(K) to denote all connected components of K. Apply the dyadic pigeonholing
+principle again, we can find l1 , l2 ≥ 0 such that
+       XZ                X                    β
+(16)                                χT1 χT2 θα
+       G∈G   ∪Q⊂G Q     T1 ∈T,T2 ∈T
+                       θ
+                       2 ≤|v1 ∧v2 |<θ
+
+                                                        XZ                             X                               β
+                                                    ⪅                                                      χT1 χT2 θα
+                                                        G∈G   ∪Q⊂G Q
+                                                                                Ti ∈T, θ2 ≤|v1 ∧v2 |<θ
+                                                                                           l
+                                                                           Ki ∈CC(Ti ∩G), 2i ≤diamKi <li
+
+Here for the inner sum on the right hand side, we are summing over T1 , T2 , and over CC(T1 ∩ G)
+and CC(T2 ∩ G). Assume l1 ≥ l2 , we cover R3 with a collection B of finitely overlapping radius
+100l1 balls, such that every subset of R3 with diameter < l1 is contained in one of the balls. We
+call a set of the form B ∩ G, B ∈ B, G ∈ G a subgrain and denote the collection of subgrains G ′ . For
+each subgrain G′ , we denote QG′ = {Q ∈ A| Q ⊂ G′ }. We may use the dyadic pigeonhole principle
+on #QG′ for each subgrain G′ ; after discarding some subgrains G′ , we may assume that there exists
+t > 0 such that
+                                           t
+(17)                                         ≤ #QG′ < t
+                                           2
+for each subgrain G′ , and
+                                          X
+(18)                                          #QG′ ⪆ #A.
+                                               G′ ∈G ′
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES15
+
+
+By equation 10, we then have
+      XZ                           X                                         β
+(19)                                                        χT1 χT2 θα
+        G∈G   ∪Q⊂G Q
+                            Ti ∈T, θ2 ≤|v1 ∧v2 |<θ
+                                       l
+                       Ki ∈CC(Ti ∩G), 2i ≤diamKi <li
+
+                                                     X Z                                      X                                  β
+                                                                                                                              α
+                                              ⪅                                                                   χT1 χT2 θ
+                                                  G′ ∈G ′       ∪Q∈Q      Q
+                                                                       G′              Ti ∈T, θ2 ≤|v1 ∧v2 |<θ
+                                                                                                  l
+                                                                                  Ki ∈CC(Ti ∩G), 2i ≤diamKi <li
+
+By assumption we can deduce that for each T ∈ T, G ∈ G and K ∈ CC(T ∩ G), if diam K ∈ [ l2i , li )
+for some i = 1, 2, then K is contained in a subgrain G′ . For each subgrain G′ ∈ G ′ that is the
+intersection of a grain G and a ball B ∈ B, we define
+                                                                           hl               
+                                                                               i
+(20)     Ti,G′ = T ∩ G′ |T ∈ T, ∃K ∈ CC(T ∩ G) such that diam K ∈                , li , K ⊂ G′ .
+                                                                             2
+We now apply the dyadic pigeonhole principle on #Ti,G′ ; there exist N1 , N2 > 0 such that after
+discarding some subgrains, for each G′ ∈ G ′ and i = 1, 2 we have
+                                            Ni
+(21)                                           ≤ #Ti,G′ < Ni ;
+                                             2
+and equation 18, and hence equation 19 still hold. Now notice that if T is a curved tube and G is
+a grain, then T ∩ G is a semialgebraic set of bounded complexity, hence it has O(d(ϵ)) connected
+components by the Milnor-Thom theorem. In particular, the number of elements in CC(T ∩ G)
+with diameter in [ l2i , li ) is bounded above by O(d(ϵ)). Recall the balls B are finitely overlapping,
+this implies that each such K ∈ CC(T ∩ G) is contained in O(1) number of subgrains. Hence a
+double counting argument and the fact that G is a grain decomposition imply that
+                                                                              1
+(22)                                            Ni #G ′ ⪅ #T#G 3 ,
+hence
+                                                                          2
+(23)                                              Ni ⪅ #T#G ′− 3 .
+We now do one more round of dyadic pigeonholing. After discarding some δ cubes, we may assume
+that there exist µ1 , µ2 > 0 such that if Q ∈ A is a δ cube contained in some subgrain G′ , and for
+each i = 1, 2, we have
+                                   µi
+(24)                                  < #{T ∈ Ti,G′ | Q ⊂ T } < µi ;
+                                   2
+furthermore equation 18 and hence equation 19 still hold. Recall each indicator function χT is
+either 1 or 0 on a δ cube in A. Equation 10 implies that
+                             µ2            X
+(25)                            ≤                     χT1 (x)χT2 (x) < µ2
+                              2            θ
+                                      T1 ,T2 ∈T, 2 ≤|v1 ∧v2 |<θ
+
+whenever x ∈ Q for some Q ∈ A. Therefore, we can conclude
+                                                            1
+(26)                                       µ ≲ (µ1 µ2 ) 2 ≤ max(µ1 , µ2 ).
+In choosing µ1 , µ2 we discarded some δ cubes contained in each G ′ , we now do another round of
+dyadic pigeonholing by discarding some subgrains in G ′ to restore equation 17 while maintaining
+equations 18 and 19.
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES16
+
+
+  We will need one more ingredients. Firstly, by Wongkew’s lemma, for each subgrain G′ , we have
+  ′
+|G | ≲ϵ l12 δ. This implies that
+(27)                                         Ni ⪅ l12 δδ −2 li−N = l12 δ −1 li−N .
+Now, we denote A′ to be the collection of δ cubes in A that are contained in some subgrain G′ ∈ G ′ .
+Then as a result of all the dyadic pigeonholing above, we have
+(28)                                         RHS of 19 ≈ #A′ µ2β θαβ δ 3 .
+  Moreover, for each i = 1, 2 we have
+                                                                   X       X
+(29)                                    µi #A′ δ 3 ≲                                 |T ∩ G′ |
+                                                                  G′ ∈G ′ T ∈Ti,G′
+
+(30)                                                         ≲ #G ′ Ni li δ 2
+                                                                       1
+(31)                                                         ≲ #G ′ 3 #Tli δ 2
+  In particular, since we agreed that l1 ≥ l2 , this gives
+
+                                                                                         1
+(32)                                 l1 ≳ max(µ1 , µ2 )#A′ δ(#G ′ )− 3 #T−1
+  Together with equation 27, we have
+                         −(N −2)                                                                            N −2
+(33)         N1 ≲ δ −1 l1           ≲ max(µ1 , µ2 )−(N −2) #A′−(N −2) δ −(N −1) #G ′ 3 #TN −2 .
+  Lastly, for each subgrain G′ , we apply equation 14 to T1,G′ and T2,G′ ; this gives us
+                            Z           X                                                    Y
+(34)                                                          χT1 χT2 |v1 ∧ v2 | ≤ δ 3           #Ti,G′ .
+                                T1 ∈T1,G′ ,T2 ∈T2,G′                                         i
+
+This implies by equation 25
+                                    #A′ 2 3
+(35)                                     µ δ θ ≲ δ 3 (N1 N2 ).
+                                    #G ′
+We can now collect all the inequalities we have derived. By equation 28 and equation 13, the
+inequality we are after is:
+                                                                               5         3
+(36)                                             #A′ µ2β θαβ δ 3 ⪅ δ 2 #T 2 .
+This follows from
+(37)
+#A′ (#G ′ )−1 θδ 3 µ2 ≲ δ 3 (N1 N2 )                          by 35
+                                            1
+                                       ′− 2 1− N                                                           N −2     1
+(38)                 ≲ δ 3 #T#G          3                   max(µ1 , µ2 )−(N −2) #A′−(N −2) δ −(N −1) #G ′ 3 #TN −2 N
+                                                 2
+                                · #T#G ′− 3
+                                                     
+(39)
+                             N −1            3                2                2
+(40)                 ≲ δ 3− N #T3− N µ−(1− N ) #A′−(1− N ) G ′−1
+where for the second line we used equation 33 and for the last line we used the fact that µ ≲
+max(µ1 , µ2 ). This gives
+                                                         2         2                 1       3
+(41)                                    #A′2− N µ3− N θ ⪅ δ −(1− N ) T3− N
+and finishes the proof, recalling the values of α and β.                                                            □
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES17
+
+
+                                  4. From Multilinear To Linear
+   To go from multilinear Kakeya inequality to linear Kakeya inequality, we can simply use the
+broad narrow argument by Bourgain and Guth in [17]. The end result is the following
+Proposition 4.1. Let T be a collection of tubes of the form Tx,v,[0,1],δ with ∼ δ separated directions
+v’s in [0, 1]2 and such that #T ⪆ δ −s for some s ∈ (1, 2], then there exists C > 0 such that
+                                                           4β− 1
+                                                               2
+                                        X
+(42)                                        χ p ≤ Cδ −2+ p
+                                               T ∈T
+                                                     2N            3N −2
+whenever p ≥ 2β. Here and in the proof later α = 3N    −2 and β = 4N −4 as previously defined. Here
+we make the constant C > 0 explicit so the proof is more easily understandable.
+Proof. To upper bound || T ∈T χT ||Lp . We divide [0, 1]2 into finitely overlapping caps of radius
+                           P
+ρ ≥ δ and use τP ρ to denote the collection of tubes in T with directions lying in a cap; we instead
+upper bound || T ∈τρ χT ||Lp for each cap τρ . Here we use T ∈ τρ to denote that the direction of T
+lies in τρ . We need to show the stronger result:
+                                                                 4β− 1         3−αβ−4β
+                                                                     2
+                                    X
+                                          χT    Lp
+                                                      ≤ Cδ −2+     p     ρ2+      p      .
+                                  T ∈τρ
+                                                                                             5 −αβ
+                                                                   2                         2
+   We first notice note that if ρ = δ, then LHS = δ p and RHS = δ p , and the result holds
+                                    2N     1
+trivially in this case since αβ = 4N −4 > 2 . This will serve as the base case for the induction. Next,
+we do induction on ρ in the same way as done by Bourgain and Guth in dealing with the curved
+Kakeya problem. To do this we break τρ into smaller caps τρ/K for some large constant K to be
+chosen later. A point x ∈ R3 will be called narrow if there are ≤ 104 caps accounting for more than
+half of the tubes containing x. That is, there is a subset C(x) of τρ/K ’s with cardinality ≤ 104 such
+that                        X                                    1
+                                  |{T : x ∈ T, v(T ) ∈ τρ/K }| ≥ |{T : x ∈ T }|.
+                                                                 2
+                       τρ/K ∈C(x)
+
+A point x ∈ R3 will be called broad otherwise.
+  The induction hypothesis directly controls the contribution of the Lp norm of T ∈τρ χT on the
+                                                                               P
+
+narrow subset: if x is narrow, then by definition we have
+                                X               X       X
+                                    χ(x) ≤ 2                χT (x).
+                                  T ∈τρ                τρ/K ∈C(x) T ∈τρ/K
+
+  Holder’s inequality and the fact that x is narrow then imply that
+                        X                   X  X                  p  p1
+                            χ(x) ≤ 2 · 104                   χT (x)         .
+                          T ∈τρ                       τρ/K ∈C(x)       T ∈τρ/K
+
+  Integrate, this gives
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES18
+
+
+
+         Z          X          p             Z                 X             X                  p
+                            χ(x) ≤ (2 · 104 )p                                            χT (x)
+           narrow   T ∈τρ                           narrow τ                    T ∈τρ/K
+                                                               ρ/K ∈C(x)
+                                                                                                 2p+3−αβ−4β
+                                              4 p     p
+                                                              X
+                                                                             −2p+4β− 21       ρ
+                                   ≤ (2 · 10 ) · C                       δ
+                                                                                              K
+                                                          all the τρ/K
+                                                                                                        1
+                                   ≤ (2 · 104 )p · C p · 100 · K αβ+4β−1−2p δ −2p+4β− 2 ρ2p+3−αβ−4β .
+Here we use the induction hypothesis to derive the second inequality, and the last inequality is
+because there are at most 100K 2 caps τρ/K . We let K > 0 be a constant large enough; the
+induction closes when x is narrow because we assumed p > 2β and a simple calculation gives
+αβ + 4β − 1 − 2p < 0. If we take K > 0 to be a sufficiently large constant, then we can assume that
+                                                C p −2p+4β− 1 2p+3−αβ−4β
+                        Z        X       p
+                                     χ(x) ≤         δ         2ρ
+
+                          narrow                 2
+                                      T ∈τρ
+   Next, to deal with the Lp norm for broad points, we need to the following observation: if we have
+a point contained in the intersection of two curved tubes Tx,v,[0,1],δ and Tx′ ,v′ ,[0,1],δ , the point can
+be expressed as Φ(x,v, t) +ϵ and Φ(x′ , v ′, t) + ϵ′ , where ϵ, ϵ′ are vectors of length ≤ δ. Remember
+                         β (t)                   β (t)
+the notation b1 (t) = 1         and b2 (t) = 2            we have
+                         γ1 (t)                  γ2 (t)
+                                                                                               
+                                                              1                       1
+        d                    d
+(43)      (t, Φ(x, v, t)) ∧ (t, Φ(x′ , v ′ , t)) = (x, v) · b′1 (t) ∧ (x′ , v ′ ) · b′1 (t)
+       dt                    dt
+                                                        (x, v) · b′2 (t)    (x′ , v ′ ) · b′2 (t)
+                                                                                                                ′
+                                                                                                                 
+                                                                                              ′  x1 − x1′
+                                                                                               b1 (t)  x2 − x 2 
+                                                                                     ≥          ′     ·
+                                                                                                         v1 − v1′ 
+                                                                                                                  
+                                                                                               b2 (t)  
+                                                                                                         v2 − v2′
+However, we already know that |Φ(x, v, t) − Φ(x′ , v ′ , t)| ≤ 2δ, which means that
+                                                           ′
+                                                            
+                                            x1 − x1′
+                                      b1 (t)    x2 − x 2 
+                                             ·               ≤ 2δ.
+                                      b2 (t)    v1 − v1′ 
+                                                 v2 − v2′
+                                                         
+                                                  b1 (t)
+                                                 b2 (t)
+However, lemma 1.10 implies that the matrix     b′1 (t) is invertible for all t, so if we assume v and
+                                                          
+
+                                                  b′2 (t)
+ ′
+v are Cδ separated for a constant C > 0 large enough, then we must have
+                                               ′
+                                                
+                             ′  x1 − x1′
+                             b1 (t)   x2 − x 2  ≥ c||(x, v) − (x′ , v ′ )||
+                              ′     ·
+                             b2 (t)    v1 − v1′ 
+                                        v2 − v2′
+for c > 0 a small constant. This gives the transversality needed for the "broad-narrow" argument.
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES19
+
+
+   If x is a broad point, by definition of a broad point and the observation above, we see that for
+                                                        ρ
+most tuples of tubes in C(x), we have v1 (x) ∧ v2 (x) ≳ K , where v1 , v2 are the unit tangent vectors
+to the central curves at x. Therefore, we have
+                        X           2             X
+                            χT (x) ≲ K α ρ−α           χT1 χT2 |v1 (x) ∧ v2 (x)|α
+                         T ∈τρ                              T1 ,T2 ∈τρ
+
+if x is a broad point. We then deduce that
+             Z      X          2β   Z                                     X                                       β
+                        χT (x)    ≲      K αβ ρ−αβ                                    χT1 χT2 |v1 (x) ∧ v2 (x)|α
+             Broad   T ∈τρ                    Broad                      T1 ,T2 ∈τρ
+                                                            5                                  1
+                                       ≲ K αβ ρ−αβ δ ρ3 δ −3 = K αβ ρ3−αβ δ − 2
+                                                            2
+
+
+where the second inequality comes from the multilinear bound. Furthermore, we have the trivial
+bound
+                                    X
+                                       χT (x)      ≲ (ρδ −1 )2 .
+                                              T ∈τρ             L∞
+
+Interpolating, we get
+                             Z                        p
+                                                                                                   1
+                                     X
+                                             χT (x)       ≲ K αβ ρ2p+3−αβ−4β δ −2p+4β− 2 .
+                             Broad   T ∈τρ
+
+Since K has been chosen to be a constant independent of C, if we have chosen C > 0 to be a
+sufficiently large constant, then we have
+                                             C p −2p+4β− 1 2p+3−αβ−4β
+                          Z      X       p
+                                      χ(x) ≤    δ        2ρ           .
+                           broad              2
+                                      T ∈τρ
+
+Together the narrow and broad estimates close the induction. This concludes the argument of
+Bourgain and Guth.                                                                       □
+
+                                        5. Finishing the Argument
+   Our last step is converting the Lp Kakeya bound into a restricted projection bound. The argu-
+ment uses a discretized version of the Frostman’s lemma, similar arguments are very common in
+the literature, see for example section 2.1 of [4] and section 1.2 of [9]. The discretization procedure
+we use is a combination of both approaches. First we need a discrete version of Frostman’s lemma;
+a proof is contained in lemma 3.13 of [18]:
+Definition 5.1. Let δ, s > 0 and P ⊂ Rn be a finite δ > 0 separated
+                                                                 s set, we say P is a (δ, s)
+separated set for every ball B(x, r), we have #(P ∩ B(x, r)) ≲ rδ .
+Lemma 5.2 (Frostman’s Lemma, Discrete). Let δ, s > 0 and B ⊂ Rn be a Borel measurable subset
+           s
+with a := H∞ (B) > 0, then there is a (δ, s) subset P ⊂ B such that #P ≳ aδ −s . Here H∞
+                                                                                       s
+                                                                                         denotes
+the Hausdorff content.
+  We will also need the Frostman’s lemma for analytic sets.
+Lemma 5.3 (Frostman’s Lemma). Let B ⊂ Rn be analytic and s > 0, then H s (B) > 0 if and only
+if there is a probability measure µ supported on B such that for every ball B(x, r) ⊂ Rn , we have
+µ(B(x, r)) ≤ rs . Here H s denotes the Hausdorff measure of dimension s. We call µ a Frostman’s
+measure of dimension s.
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES20
+
+
+   Frostman’s lemma can be directly proved for closed sets, and a proof is presented in chapter 3 of
+[19], where Frostman’s lemma for analytic sets in general is also stated. A proof of the lemma for
+Borel sets is in Theorem B.2.5 of [19], where it is shown that if A ⊂ Rn is Borel and H s (A) > 0,
+then A contains a compact subset K with H s (K) > 0.
+   Lastly, we will make use of two elementary measure theory facts:
+Lemma 5.4.
+1) If A ⊂ Rn is Borel measurable, s ≥ 0 and H∞   s
+                                                   (A) = 0,Pthen for any ϵ > 0, we can cover A with
+dyadic cubes D ∈ D with side length r(D) < ϵ such that D∈D r(D)s < ϵ and the interiors of the
+dyadic cubes are disjoint.
+2) Let B ⊂ R be a Borel measurable set with positive Lebesgue measure and δ > 0. Then any
+maximally δ separated subset Bδ of B has cardinality ≳ |B|δ −1 .
+Proof. For 1), clearly we can assume s > 0 and we only need to make sure D∈D r(D)s < ϵ. Then
+                                                                            P
+1) follows from the definition of Hausdorff content and the observations that any set of diameter
+bounded by some δ > 0 is contained in a dyadic cube of side length at most 100δ and if A, B are
+two dyadic cubes (of maybe different side lengths), then either A contains B, or B contains A, or
+the interiors of A and B are disjoint.
+   For 2), if #Bδ < 1001
+                         |B|δ −1 , by maximality B is contained in the δ neighborhood Bδ of B, so
+                   1
+|B| ≤ 2δ · #Bδ < 50 |B|, contradiction.                                                          □
+   Equipped with these lemmas, we now move to the restricted projection result theorem 1.7 we
+are after in this paper. We restate the result for convenience with explicit ϵ.
+Theorem 5.5. Suppose Πt , t ∈ [0, 1] is a family of two dimensional subspaces of R4 and let Pt :
+R4 → Πt be the orthogonal projection onto Πt . Furthermore assume that we have b1 (t), b2 (t) :
+[0, 1] → R4 such that Πt = span (b1 (t), b2 (t)) and each coordinate function of bi is a polynomial in
+t. Furthermore, assume that for any subspace π of R4 , dim Pt (π) = min(dim π, 2) for all but finitely
+many t ∈ [0, 1]. Then dimH (Pt (A)) ≥ 1 + N1 for almost all t whenever A is a Borel subset of R4
+and dimH A = 2. Here, N is a large integer depending only on the degrees of coordinate functions
+of βi ’s and γi ’s.
+Proof. Without loss of generality we may assume A ⊂ [0, 1]4 . We can also redefine Pt to be the
+                                                                                ′
+map (x, v) 7→ Φ(x, v, t). Let s ∈ n                              o We can pick s ∈ (s, 2). For any
+                                  (0, 2) be arbitrarily close to 2.
+positive a < 1 + N1 , we let Θ =    t ∈ [0, 1] dimH (Pt (A)) < a   be the exception set and assume
+for contradiction that |Θ| > 0. Let ν be the Lebesgue outer measure on [0, 1] restricted to Θ since
+we do not know if Θ is Lebesgue measurable. Fix ϵ > 0. Since by definition dimH A = inf{w ≥
+     w                       a
+0, H∞  (A) = 0}, we have H∞    (Pt (A)) = 0 for each t ∈ Θ. For each t ∈ Θ we can cover Pt (A) with
+                                                                         −j
+collections of disjoint dyadic cubes Dt , each of which has side
+                                                               P length 2 a for some positive integer
+            −j
+j so that 2     < ϵ. Furthermore, we can make sure that D∈Dt r(D) < ϵ. For each positive
+integer k, we let Dk,t denote the set of dyadic cubes of side length 2−k in Dt . Then we must have
+#Dk,t ≤ ϵ2ak for each k ∈ Z+ .
+   Let νA be a Frostman’s measure of dimension s′ supported on A. For each t ∈ Θ, we let
+Tt = S {Pt−1 (D), D ∈ Dt } and               −1
+                              S Tk,t = {Pt (D), D ∈ Dk,t } where k ∈ Z and 2
+                                                                              +       −k
+                                                                                          < ϵ, then
+Tt = k∈Z+ Tk,t and A ⊂ T ∈Tt T for each t ∈ Θ. Therefore, for each t ∈ Θ, there exists a
+k(t) ∈ Z+ such that
+                                 \                   1                1
+                           νA A ∪T ∈Tk(t) T ≥              νA (A) =         .
+                                                   10k(t)2          10k(t)2
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES21
+
+
+For each positive integer k we define Θk = {k(t) = k|t ∈ Θ}, then again we can conclude that there
+exists a fixed k such that the Lebesgue outer measure ν(Θk ) > 0. We fix this k and set δ = 2−k ,
+then δ < ϵ by our assumptions. Furthermore, we let Θ′ be a maximum δ separated subset of Θk ,
+then #Θ′ ≳ δ −1 by 2 of lemma 5.4.
+   Next, we consider the set S defined as {(z, t) ∈ A × Θ′ : z ∈ ∪T ∈Tk,t T }, and we use µ to
+denote the counting measure on Θ′ . Furthermore, define sections as Sz = {t ∈ Θ′ |(z, t) ∈ S} and
+St = {z ∈ A|(z, t) ∈ S}. Then by definition of Θ′ we have
+                                                       1
+                                     (νA × µ)(S) ≥          µ(Θ′ ),
+                                                     10k 2
+which implies that
+                                                     1       ′
+                                                                            1
+                     (νA × µ) (z, t) ∈ S : µ(Sz ) ≥        µ(Θ   )    ≥        µ(Θ′ );
+                                                     20k 2               20k 2
+which further implies that
+                                                             
+                                                 1        ′           1
+                              νA z : µ(Sz ) ≥       2
+                                                      µ(Θ )      ≥         .
+                                                20k                  20k 2
+                                                         ′
+This implies that dimH {z : µ(Sz ) ≥ 20k         1
+                                                    2 µ(Θ ) > s′ as νA is a Frostman measure. By the
+Kauffman’s version of Marstrand’s theorem, we can find a two dimensional subspace Π ⊂ R4 , such
+                                1       ′          ′            4
+that dimH P ({z : µ(Sz ) ≥ 20k    2 µ(Θ ) ) ≥ s , where P : R 7→ Π is the orthogonal projection onto Π.
+                                                                     1       ′
+We can then apply lemma 5.2 to the image P ({z : µ(Sz ) ≥ 20k         2 µ(Θ ) ). This gives a δ separated
+          ′                                    ′            ′     −s
+subset A ⊂ z ∈ A : µ(Sz ) ≥ 20k2 µ(Θ ) with #A ⪆ δ , and such that P is a bijection on A′
+                                      1
+
+and P (A′ ) is a δ separated subset of Π.
+   Unpacking the definitions, we see that for each z ∈ A′ and t ∈ Sz , Pt (z) is contained in a
+side length δ square in Dk,t . Furthermore a straightforward calculation shows that there exists a
+sufficiently large C > 0 such that |Φ(x, v, t) − Φ(x′ , v ′ , t)| ≤ δ if |t′ − t| ≤ Cδ . For each t ∈ Θ′ , let
+Ek,t ⊂ R3 be the three dimensional cube given by the product of [t − Cδ , t + Cδ ] and the squares
+in Dk,t . Since points in Sz are δ separated, we see that if we let Γz : t → (Pt (z), t) then the
+Cδ neighborhood ΓCδ    z   of Γz contains #µ(Sz ) number of sidelength ≈ δ 3-dimensional cubes. Let
+E = ∪t∈Θ′ Ek,t . All such cubes for different z ∈ A′ are disjoint with each other because Θ′ is δ
+separated. Therefore we are able to conclude that
+Z X                           XZ
+         1ΓCδ
+            z
+              (t, y) dy dt =          1ΓCδz
+                                            (t, y) dy dt ≥ #A′ · lower bound for the cardinality of Sz · δ 3
+ E z∈A′                     z∈A′    E
+
+                                        ⪆ δ −s · δ 3 · δ −1 = δ 2−s .
+On the other hand we have |E| ≲ δ · #Θ′ · upper bound for #Dk,t ⪅ δ 3 × δ −1 × ϵδ −a ≤ δ 2−a ,
+                                              3
+
+Holder’s inequality then implies that
+                               X                                            1
+                                   1ΓCδ
+                                      z
+                                         (t, y)        ⪆ δ 2−s δ −(2−a)(1− 2β ) .
+                                   z∈A′           L2β
+                                          ′
+   Notice that if we write z ∈ A as z = (x, v) where x, v ∈ R2 , then Γz (t) = (Φ(x, v, t), t).
+The collection of z ∈ A′ might not have δ separated directions v, but by construction P (A′ ) is δ
+separated. Therefore we may apply proposition 42 with p = 2β, and compare with the inequality
+                           4β− 1                   1
+                               2
+above, we see that δ −2+ 2β ⪆ δ 2−s−(2−a)(1− 2β ) . Now remember by definition δ < ϵ, so by letting
+                          1             1
+ϵ ↓ 0 and s ↑ 2, we have 4β ≥ (2−a)(1− 2β ), which simplies to a ≥ 1+ N1 . This is impossible since we
+ RESTRICTED MARSTRAND’S PROJECTION THEOREM FOR GENERAL FAMILIES OF LINEAR SUBSPACES22
+
+                                   n                     o
+assumed a < 1+ N1 . This shows that t ∈ [0, 1] Pt (A) < a has Lebesgue outer measure 0 whenever
+a < 1 + N1 , taking a rational sequence that increases to 1 + N1 , we see that dimH Pt (A) ≥ 1 + N1 for
+almost every t ∈ [0, 1].                                                                             □
+   This concludes the proof.
+
+                                                   References
+ [1] J. M. Marstrand, “Some fundamental geometrical properties of plane sets of fractional dimensions,” Proceedings
+     of the London Mathematical Society, vol. s3-4, pp. 257–302, 01 1954.
+ [2] R. Kaufman, “On hausdorff dimension of projections,” Mathematika, vol. 15, no. 2, p. 153–155, 1968.
+ [3] J. Bourgain, “The discretized sum-product and projection theorems,” Journal of the Australian Mathematical
+     Society, vol. 112, pp. 193–236, 2010.
+ [4] S. Gan, S. Guo, L. Guth, T. L. Harris, D. Maldague, and H. Wang, “On restricted projections to planes in R3 ,”
+     arXiv preprint arXiv:2207.13844, 2022.
+ [5] S. Gan, S. Guo, and H. Wang, “A restricted projection problem for fractal sets in Rn ,” arXiv preprint
+     arXiv:2211.09508, 2022.
+ [6] J. Bourgain, C. Demeter, and L. Guth, “Proof of the main conjecture in vinogradov’s mean value theorem for
+     degrees higher than three,” Annals of Mathematics, pp. 633–682, 2016.
+ [7] H. Wang and J. Zahl, “Volume estimates for unions of convex sets, and the kakeya set conjecture in three
+     dimensions,” arXiv preprint arXiv:2502.17655, 2025.
+ [8] A. Käenmäki, T. Orponen, and L. Venieri, “A marstrand-type restricted projection theorem in R3 ,” American
+     Journal of Mathematics, vol. 147, pp. 81–123, 02 2025.
+ [9] M. Pramanik, T. Yang, and J. Zahl, “A furstenberg-type problem for circles, and a kaufman-type restricted
+     projection theorem in R3 ,” arXiv preprint arXiv:2207.02259, 2022.
+[10] L. Wisewell, “Kakeya sets of curves,” Geometric & Functional Analysis GAFA, vol. 15, no. 6, pp. 1319–1362,
+     2005.
+[11] N. H. Katz and K. M. Rogers, “On the polynomial wolff axioms,” Geometric and Functional Analysis, vol. 28,
+     pp. 1706–1716, Dec 2018.
+[12] S. Guo, H. Wang, and R. Zhang, “A dichotomy for hörmander-type oscillatory integral operators,” Inventiones
+     mathematicae, vol. 238, no. 2, pp. 503–584, 2024.
+[13] J. Zahl, “New kakeya estimates using gromov’s algebraic lemma,” Advances in Mathematics, vol. 380, p. 107596,
+     Mar. 2021.
+[14] X. Chen, N. Kayal, and A. Wigderson, “Partial derivatives in arithmetic complexity and beyond,” Foundations
+     and Trends in Theoretical Computer Science, vol. 6, no. 1-2, pp. 1–138, 2011.
+[15] R. Wongkew, “Volumes of tubular neighbourhoods of real algebraic varieties,” Pacific Journal of Mathematics,
+     vol. 159, no. 1, pp. 177–184, 1993.
+[16] L. Guth and J. Zahl, “Polynomial wolff axioms and kakeya-type estimates in R4 ,” Proceedings of the London
+     Mathematical Society, vol. 117, no. 1, pp. 192–220, 2018.
+[17] J. Bourgain and L. Guth, “Bounds on oscillatory integral operators based on multilinear estimates,” Geometric
+     and Functional Analysis, vol. 21, no. 6, pp. 1239–1295, 2011.
+[18] K. Fässler and T. Orponen, “On restricted families of projections in R3 ,” Proceedings of the London Mathematical
+     Society, vol. 109, no. 2, pp. 353–381, 2014.
+[19] C. J. Bishop and Y. Peres, Fractals in Probability and Analysis. Cambridge Studies in Advanced Mathematics,
+     Cambridge University Press, 2016.
+
+   University of California, Los Angeles
+   Email address: jiahandu@math.ucla.edu
+

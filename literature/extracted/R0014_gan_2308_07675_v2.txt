@@ -1,0 +1,1553 @@
+                                           EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB
+                                                              INEQUALITY
+
+
+                                                                                 SHENGWEN GAN
+arXiv:2308.07675v2 [math.CA] 9 Feb 2024
+
+
+
+
+                                                  Abstract. Fix integers 1 ≤ k < n, and numbers a, s satisfying 0 < s <
+                                                  min{k, a}. The problem of exceptional set estimate is to determine
+                                                         T (a, s) :=       sup       dim({V ∈ G(k, n) : dim(πV (A)) < s}).
+                                                                       A⊂Rn dimA=a
+
+                                                  In this paper, we prove a new upper bound for T (a, s) by using Brascamp-Lieb
+                                                  inequality. As one of the corollaries, we obtain the estimate
+                                                                              k
+                                                                        T (a, a) ≤ k(n − k) − min{k, n − k},
+                                                                              n
+                                                                                            k
+                                                  which improves a previous result T (a, n    a) ≤ k(n − k) − 1 of He.
+                                                      By constructing examples, we can determine the explicit value of T (a, s)
+                                                  for certain (a, s):
+                                                      When k ≤ n  2
+                                                                                             k
+                                                                    , β ∈ (0, 1] and γ ∈ (β, n (1 + β)], we have
+                                                                              T (1 + β, γ) = k(n − k) − k.
+                                                     When k ≥ n
+                                                              2
+                                                                                              k
+                                                                , β ∈ (0, 1] and γ ∈ (β, (1 − n    k
+                                                                                                )+ n β], we have
+                                                                   T (n − 1 + β, k − 1 + γ) = k(n − k) − (n − k).
+
+
+
+                                                                                 1. Introduction
+                                             Let G(k, n) be the set of m-dimensional subspaces in Rn . For V ∈ G(k, n), define
+                                          πV : Rn → V to be the orthogonal projection onto V . Throughout the paper, we
+                                          use dim X to denote the Hausdorff dimension of the set X.
+                                             There is a classical result proved by Marstrand [11], who showed that if A is a
+                                          Borel set in R2 , then the projection of A onto almost every line through the origin
+                                          has Hausdorff dimension min{1, dim A}. This was generalized to higher dimensions
+                                          by Mattila [12], who showed that if A is a Borel set in Rn , then the projection of A
+                                          onto almost every k-dimensional plane through the origin has Hausdorff dimension
+                                          min{k, dim A}.
+                                             There is a finer question known as the exceptional set estimate. It is formulated
+                                          as follows. Fix integers 1 ≤ k < n. For a, s satisfying 0 < s < min{k, a}, find
+                                          (1)       T (a, s) :=         sup       dim({V ∈ G(k, n) : dim(πV (A)) < s}).
+                                                                  A⊂Rn dimA=a
+
+                                          To avoid the measurability issue, we assume the set A is Borel throughout the
+                                          paper. We remark that T (a, s) also depends on another two parameters k, n, but
+                                          since k, n are fixed, we just drop them from the notation for simplicity.
+
+                                             2020 Mathematics Subject Classification. 28A75, 28A78.
+                                             Key words and phrases. orthogonal projection, exceptional set estimate, Brascamp-Lieb
+                                          inequality.
+                                                                                           1
+2                                  SHENGWEN GAN
+
+
+    We call the set
+(2)                   Es (A) := {V ∈ G(k, n) : dim(πV (A)) < s}
+the exceptional set. Roughly speaking, the exceptional set is the set of directions
+where the projection is small. We call T (a, s) the dimension of the exceptional set.
+Of course, we trivially have T (a, s) ≤ dim(G(k, n)) = k(n − k). Here are some
+nontrivial results on the upper bound of T (a, s).
+      (i) T (a, s) ≤ k(n − k) + s − k.
+     (ii) T (a, s) ≤ max{k(n − k) + s − a, 0}.
+    (iii) T (a, nk a) ≤ k(n − k) − 1.
+The estimate (i) was first proved by Kaufman in R2 (see [9]), and proved by Mattila
+in higher dimensions (see [12]). For the the estimate (ii), it was originally obtained
+by Falconer (see [3]) in a slightly different formulation. Peres-Schlag also proved the
+result (see [16]). The estimate (iii) was obtained by He (see [8]). We remark that
+                                                                  1
+estimate (iii) beats estimate (i) and (ii) if k = 1, a ∈ (0, 1 + n−1 ) or k = n − 1, a ∈
+             1
+(n − 1 − n−1 , n).
+   In the special case n = 2, k = 1, there were some work by Bourgain [1], Orponen
+and Shmerkin [15], [14]. Shortly after this paper, this special case was completely
+resolved by Ren and Wang [17]. They proved that T (a, s) = max{0, 2s − a} when
+n = 2, k = 1.
+   In this paper, we will explore a new type of the exceptional set estimate, and as
+one of the result, we can improve (iii).
+1.1. Statement of the main result. We fix two integers 1 ≤ k < n throughout
+this paper. The first theorem is an improvement over the estimate (iii).
+Theorem 1. Suppose T (a, s) is defined in (1). We have
+                        k
+(3)               T (a, a) ≤ k(n − k) − min{k, n − k}.
+                        n
+   We would like to compare the estimate of T (a, nk a) given by Theorem 1 with
+that given by (i) and (ii).
+   When k ≤ n/2, Theorem 1 gives T (a, nk a) ≤ k(n − k) − k. This automatically
+                                                   nk
+beats (i). And it beats (ii) in the range a ∈ (0, n−k ).
+                n                          k
+   When k ≥ 2 , Theorem 1 gives T (a, n a) ≤ k(n − k) − (n − k). It beats (i) if
+a > (2k−n)n
+        k    , and it beats (ii) if a < n. Therefore, it beats both (i) and (ii) in the
+range a ∈ ( (2k−n)n
+                k   , n).
+
+  To prove Theorem 1, we will prove a more technical theorem. To handle the
+numerology, we need to set up some notation.
+Lemma 2. Let 0 ≤ m ≤ n, 1 ≤ k, l ≤ n be integers. Let L ∈ G(l, n). We have
+        dim({V ∈ G(k, n) : dim(πL (V )) ≤ m}) =
+        
+         0                                      m < max{0, l + k − n}
+(4)        k(n − k) − (k − m)(l − m) max{0, l + k − n} ≤ m ≤ min{l, k}
+           k(n − k)                                      m > min{l, k}
+        
+
+Proof. Since dim(πL (V )) ≥ max{0, l + k − n}, we have
+                      dim({V ∈ G(k, n) : dim(πL (V )) ≤ m}) = 0
+         EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                    3
+
+
+for m < max{0, l + k − n}.
+   Since dim(πL (V )) ≤ min{l, k}, we have
+                  dim({V ∈ G(k, n) : dim(πL (V )) ≤ m}) = k(n − k)
+for m > min{l, k}.
+   It remains to consider the case when max{0, l + k − n} ≤ m ≤ min{l, k}. First
+by Lemma 35, we have dim(πL (V )) = dim(πV (L)). We are going to apply Lemma
+36 with W = L and the roles of l and m switched. We can verify the conditions of
+Lemma 36 are satisfied: n − k ≥ l − m, m ≤ k, l. Therefore,
+(5) dim({V ∈ G(k, n) : dim(πL (V )) ≤ m}) = d(k − m, n − l) + d(m, n − (k − m)).
+Here, d(k, n) = k(n − k). We can calculate
+        dim({V ∈ G(k, n) : dim(πL (V )) ≤ m}) = k(n − k) − (k − m)(l − m).
+                                                                                     □
+
+Definition 3 (Definition of E(m, l)). We define E(m, l) to be the number in (4).
+We remark that E(m, l) also depends on n, k, but n, k are fixed throughout the paper
+so we drop them from the notation for simplicity.
+Definition 4 (Definition of m(t, l)). For 0 ≤ t < k(n − k) and integer 1 ≤ l ≤ n,
+we define m(t, l) to be the smallest non-negative integer so that
+                                  E(m(t, l), l) > t.
+   By (4), we see 0 ≤ m(t, l) ≤ min{l, k} + 1. We also see that m(⌊t⌋, l) = m(t, l),
+since E(m, l) ∈ Z.
+   Now, we state our technical theorem.
+Theorem 5. Fix integers 1 ≤ k < n. For 0 < s < min{k, a} and A ⊂ Rn with
+dim A = a, define
+                     Es (A) := {V ∈ G(k, n) : dim(πV (A)) < s}.
+If s, t satisfy
+                                                             
+                                                 a−l
+(6)                    s = sup       inf             + m(t, l) ,
+                           1≤p≤∞ l∈Z∩[0,n]        p
+then
+                                  dim(Es (A)) ≤ t.
+Remark 6. The relationship between s and t in (6) has a somewhat weird ex-
+pression in terms of sup and inf, because we will apply Brascamp-Lieb inequality
+during the proof, and the Brascamp-Lieb constant has this form (see (68)).
+   It seems hard to find an explicit way to express the right hand side of (6) (without
+using sup, inf). In this paper, we only calculate a special case s = nk a which gives
+Theorem 1. It is conceivable that we may obtain some other interesting exceptional
+set estimates by carefully analyzing (6).
+  In Section 6, we will find the lower bound of T (a, s) by constructing examples.
+Together with Theorem 1, we will see for certain range of (a, s), the upper bound
+and lower bound of T (a, s) are the same, which gives the exact value of T (a, s).
+This is the following theorem.
+4                                    SHENGWEN GAN
+
+
+Theorem 7. When k ≤ n2 , β ∈ (0, 1] and γ ∈ (β, nk (1 + β)], we have
+                              T (1 + β, γ) = k(n − k) − k.
+    When k ≥ n2 , β ∈ (0, 1] and γ ∈ (β, (1 − nk ) + nk β], we have
+                    T (n − 1 + β, k − 1 + γ) = k(n − k) − (n − k).
+Remark 8. From Theorem 7, we see that Theorem 1 is sharp for a ∈ (1, 2] if
+k ≤ n2 , and for a ∈ (n − 1, n] if k ≥ n2 ,
+   Here is the structure of the paper. In Section 2, we prove Theorem 1 using
+Theorem 5. In Section 3, we give a heuristic proof of Theorem 5. In Section 4 and
+5, we prove Theorem 5. In Section 6, we discuss the lower bound of T (a, s) and
+prove Theorem 7.
+
+Acknowledgement. The author would like to thank Prof. Larry Guth for many
+helpful discussions. The author would also like to thank referees for useful sugges-
+tions.
+
+                              2. Proof of Theorem 1
+Proof of Theorem 1 using Theorem 5. We set
+                                                                                     
+                                                                         a−l
+      u = min{k, n − k}, t = k(n − k) − u, s = sup           inf             + m(t, l) .
+                                                   1≤p≤∞ l∈Z∩[0,n]        p
+Theorem 5 implies that
+                                      T (a, s) ≤ t.
+To prove Theorem 1, it suffices to show
+                                                               
+                        k                          a−l
+(7)                       a ≤ sup     inf              + m(t, l) .
+                        n    1≤p≤∞ l∈Z∩[0,n]        p
+By choosing p = nk , it is further reduced to
+                                                             
+                          k                 (a − l)k
+(8)                         a ≤ inf                  + m(t, l) .
+                          n     l∈Z∩[0,n]      n
+By the definition of u, we have
+(9)                             k ∈ {u, n − u}, n ≥ 2u.
+  We will find an explicit expression for m(t, l). Recall the definition of m(t, l) in
+Definition 4. m = m(t, l) is the smallest non-negative integer satisfying
+                            k(n − k) − (k − m)(l − m) > t,
+or equivalently,
+                        m2 − (k + l)m + kl + t − k(n − k) < 0.
+We obtain that
+                                     p
+                              k+l−    (k − l)2 + 4(k(n − k) − t)
+               m = sup{0, ⌊                                      ⌋ + 1}.
+                                              2
+Plugging t = k(n − k) − u, we get
+                                            p
+                                     k+l−       (k − l)2 + 4u
+(10)                  m = sup{0, ⌊                            ⌋ + 1}.
+                                                 2
+       EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                  5
+
+
+To prove (8), we just need to prove for any 0 ≤ l ≤ n,
+                                            p
+                  k     (a − l)k     k + l − (k − l)2 + 4u
+                    a≤           +⌊                         ⌋ + 1.
+                  n        n                   2
+Equivalently,
+                                       p
+                        lk     k + l − (k − l)2 + 4u
+(11)                       ≤⌊                        ⌋ + 1.
+                        n                 2
+   We discuss two cases.
+ Case 1: 0 ≤ l ≤ k We write l = k − µ with µ ≥ 0. Then the right hand side of
+(11) is
+                                    p
+                              −µ − µ2 + 4u
+                            ⌊                ⌋ + k + 1.
+                                     2
+                                                 √
+                                               µ+ µ2 +4u
+Let α be the biggest integer such that α <               , or in other words, α =
+        √                                          2
+   −µ− µ2 +4u
+−⌊       2     ⌋ − 1. Then (11) boils down to
+(12)                          (k − µ)k ≤ n(k − α).
+There are two subcases.       √
+                            µ+ µ2 +4u
+  When u ≤ µ, then α <           2      ≤ 2µ+2
+                                            2 , so α ≤ µ. We see (12) holds since
+n > k.
+  When u ≥ µ + 1, we just need to verify (12) at two endpoints k = u, k = n − u.
+For k = u, (12) becomes (u − µ)u ≤ n(u − α). Using the bound n ≥ 2u, we just
+need to show u + µ ≥ 2α. Noting µ2 + 4u ≤ (u + 1)2 , we have α < µ+u+1  2   , and
+hence α ≤ µ+u
+            2  . For k =  n − u,  (12) becomes (n − u − µ)(n − u) ≤ n(n − u −  α),
+which is equivalent to u(u + µ) ≤ n(u + µ − α). Using the bound n ≥ 2u, it boils
+down to u + µ ≥ 2α which has been proved.
+
+ Case 2: k ≤ l ≤ n We write l = k + µ with µ ≥ 0. Then the right hand side of
+(11) is
+                                 p
+                              µ − µ2 + 4u
+                            ⌊               ⌋ + k + 1.
+                                    2
+                                              √ 2
+                                                µ +4u−µ
+Let α be the biggest integer such that α <              , or in other words, α =
+      √ 2                                          2
+   µ− µ +4u
+−⌊      2    ⌋ − 1. Then (11) boils down to
+(13)                          (k + µ)k ≤ n(k − α).
+There are two subcases. √
+                             µ2 +4u−µ
+  When u ≤ µ, then α <          2      ≤ µ+2−µ
+                                            2  , so α ≤ 0. We see (13) holds since
+n ≥ l = k + µ.
+  When u ≥ µ + 1, we just need to verify (13) at two endpoints k = u, k = n − u.
+For k = u, (13) becomes (u + µ)u ≤ n(u − α). Using the bound n ≥ 2u, we just
+need to show u − µ ≥ 2α. Noting µ2 + 4u ≤ (u + 1)2 , we have α < u+1−µ   2   , and
+hence α ≤ u−µ
+            2  . For k =  n − u,  (13) becomes (n − u + µ)(n − u) ≤ n(n −  u −  α),
+which is equivalent to u(u − µ) ≤ n(u − µ − α). Using the bound n ≥ 2u, it boils
+down to u − µ ≥ 2α which has been proved.
+                                                                                 □
+6                                      SHENGWEN GAN
+
+
+                       3. A heuristic proof of Theorem 5
+   The main idea in the proof of Theorem 5 is as follows. Suppose there is a set A
+satisfying the condition in Theorem 5 such that
+                                   dim(Es (A)) = τ > t,
+then we will derive a contradiction.
+   We consider the following heuristic setting. A is a disjoint union of δ-balls with
+cardinality δ −a . Our exceptional set E is a δ-separated subset of G(k, n) with
+cardinality δ −τ . We also assume E satisfies the (δ, τ )-condition:
+(14)                               #(E ∩ Qr ) ≤ (r/δ)τ ,
+for any Qr ⊂ G(k, n) being a ball of radius r. The condition that dim(πV (A)) < s
+is characterized in the following way. For each V ∈ E, we have a set of (n − k)-
+dimensional δ-slabs TV = {T } orthogonal to V . In other words, each T ∈ TV is
+a rectangle of dimensions δ × · · · × δ × 1 × · · · × 1 (with n − k manyS1’s), and the
+longest n − k directions are orthogonal to V . We also assume A ⊂ T ∈TV T and
+#TV ≤ δ −s+ε0 . Under these conditions, one is able to deduce some relationships
+among the parameters n, k, a, s, t. We consider the integral
+                                 ˆ X X
+(15)                                 (           1T )p ,
+                                       A V ∈E T ∈T
+                                                   V
+                                                     S
+where 1 ≤ p ≤ ∞ is to be determined later. Since A ⊂ T ∈TV T , a straightforward
+observation gives
+                   ˆ X X
+                      (         1T )p ∼ |A|(#E)p ∼ δ n−a−τ p .
+                         A V ∈E T ∈T
+                                   V
+
+
+On the other hand, we will also obtain an upper bound for the integral. Obtaining
+an upper bound for the integral is more complicated. Let us first take a look at
+a single δ-ball Bδ ⊂ A. By our assumption, for each V ∈ E, there is a T ∈ TV
+such that T ∩ Bδ ̸= ∅. Let K be a scale such that δ ≪ K −1 ≪ 1, and we partition
+G(k, n) into K −1 -balls Q = {Q} (here K −1 -ball means ball of radius K −1 ). Denote
+the number J = ⌊K τ /2⌋. The key observation is the following inequality.
+                                       X       Y J              1/J
+(16)            δ −τ = #E ≲ K O(1)                  #(Qj ∩ E)         .
+                                        Q1 ,...,QJ ∈Q     j=1
+
+Here, Q1 , . . . , QJ are different.
+  We give a proof for (16). Label the balls Q1 , Q2 , . . . , QJ , . . . in Q so that #(Q1 ∩
+E) ≥ #(Q2 ∩ E) ≥ · · · ≥ #(QJ ∩ E) ≥ . . . . We just need to prove #(QJ ∩ E) ≳
+                          PJ
+K −O(1) #E. By (14), j=1 #(Qj ∩ E) ≤ J/(Kδ)τ ≤ #E/2. Therefore,
+                            1 X              1
+          #(QJ ∩ E) ≥           #(Qj ∩ E) ≥    #E/2 ≳ K −O(1) #E.
+                           #Q               #Q
+                                j≥J+1
+
+   By (16), we can bound the integral (15) by the multilinear form
+         ˆ X X                          X      ˆ YJ      X X         p/J
+(17)        (         1T )p ≲ K O(1)                               1T      .
+           A V ∈E T ∈T                    Q1 ,...,QJ ∈Q     j=1   V ∈Qj ∩E T ∈TV
+                       V
+       EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                     7
+
+
+The transversality property of these J patches allows us to obtain a nice upper
+bound. The main tool we use to handle this J-linear integral is the Brascamp-Lieb
+inequality. In the end, we will check the numerology and see the contradiction if
+τ > t.
+
+   Let us work on a very easy case when n = 2, k = 1. We give a heuristic proof
+for the estimate
+                               dim(Ea/2 (A)) = 0.
+We just follow the argument as above. We will choose p = 2.
+   Suppose by contradiction that dim(Ea/2 (A)) > 0. Then there exists ε0 > 0 such
+that dim(Ea/2−ε0 (A)) = τ > 0. On the one hand,
+                          ˆ X X
+                             (        1T )2 ∼ δ 2−a−2τ .
+                            A V ∈E T ∈T
+                                        V
+
+For the upper bound, we notice that J = ⌊K τ /2⌋ ≥ 2 (if K is large), so we could
+just use the bilinear integral as an upper bound:
+ˆ X X                  ˆ  X         X      X     X       
+   (          1T )2 ≲                   1T               1T ≲ δ 2 (#Eδ −a/2+ε0 )2 ,
+ A V ∈E T ∈T              V ∈Q1 ∩E T ∈TV         V ∈Q2 ∩E T ∈TV
+            V
+
+                                  1
+where Q1 , Q2 are two arcs of S with distance ∼ 1 from each other. Note that
+#E = δ −τ . Combining the two estimates gives 1 ≲ δ 2ε0 which is a contradiction.
+
+   For the proof of general n and k, our argument is similar. The full details will
+be given in the next section.
+
+                          4. The proof of Theorem 5
+4.1. Preliminary. We recall some properties of affine Grassmannians from [5, Sec-
+tion 1.2].
+   Let G(k, n) be the set of k-dimensional subspaces in Rn . For every k-plane V ,
+we can uniquely write it as
+                                     V = dir(V ) + xV ,
+where dir(V ) ∈ G(k, n) and xV ∈ V ⊥ . dir(V ) refers to the direction of V , as can
+be seen that dir(V ) = dir(V ′ ) ⇔ V ∥ V ′ .
+   In this paper, we use A(k, n) to denote the set of k-planes V such that xV ∈
+B n (0, 1/2). (B n (0, 1/2) is the ball of radius 1/2 centered at the origin in Rn .)
+          A(k, n) = {V : V is a k dimensional plane , xV ∈ B n (0, 1/2)}.
+Usually A(k, n) denotes all the k-planes in other references, but for our purpose we
+only care about those V that lie near the origin.
+   Next, we discuss the metrics on G(k, n) and A(k, n). For V1 , V2 ∈ G(k, n), we
+define
+                               d(V1 , V2 ) = ∥πV1 − πV2 ∥.
+Here, πV1 : Rn → V1 is the orthogonal projection. We have another characterization
+for this metric. Define ρ(V1 , V2 ) to be the smallest number ρ such that B n (0, 1) ∩
+V1 ⊂ Nρ (V2 ). We have the comparability of d(·, ·) and ρ(·, ·).
+Lemma 9. There exists a constant C > 0 (depending on k, n) such that
+                        ρ(V1 , V2 ) ≤ d(V1 , V2 ) ≤ Cρ(V1 , V2 ).
+8                                   SHENGWEN GAN
+
+
+Proof. Suppose B n (0, 1) ∩ V1 ⊂ Nρ (V2 ), then for any v ∈ Rn , we have
+                               |πV1 (v) − πV2 (v)| ≲ ρ|v|,
+which implies d(V1 , V2 ) ≲ ρ. On the other hand, if for any |v| ≤ 1 we have
+                               |πV1 (v) − πV2 (v)| ≤ d|v|,
+then we obtain that πV1 (v) ⊂ Nd (V2 ). Letting v ranging over B n (0, 1) ∩ V1 , we get
+B n (0, 1) ∩ V1 ⊂ Nd (V2 ), which means ρ(V1 , V2 ) ≤ d.                             □
+    We can also define the metric on A(k, n) given by
+(18)                 d(V, V ′ ) = d(dir(V ), dir(V ′ )) + |xV − xV ′ |.
+Here, we still use d to denote the metric on A(k, n) and it will not make any
+confusion.
+   Similarly, for V, V ′ ∈ A(k, n) we can define ρ(V, V ′ ) to be the smallest number
+ρ such that B n (0, 1) ∩ V ⊂ Nρ (V ′ ). We also have the following lemma. We left the
+proof to the interested readers.
+Lemma 10. There exists a constant C > 0 (depending on k, n) such that for
+V, V ′ ∈ A(k, n),
+                  C −1 d(V, V ′ ) ≤ ρ(V, V ′ ) ≤ Cd(V, V ′ ).
+Definition 11. For V ∈ A(k, n) and 0 < r < 1, we define
+                               Vr := Nr (V ) ∩ B n (0, 1).
+    We see that Vr is morally a slab of dimensions r × · · · × r × 1 × · · · × 1. We
+                                                   | {z } | {z }
+                                                             n−k times    k times
+usually call Vr a k-dimensional r-slab. When k is already clear, we simply call Vr
+an r-slab. If W is a convex set such that C −1 W ⊂ Vr ⊂ CW , then we also call W
+an r-slab. Here, the constant C will be a fixed large constant.
+Definition 12. We say two r-slabs Vr and Vr′ are comparable if C −1 Vr ⊂ Vr′ ⊂
+CVr . We say they are essentially distinct if they are not comparable.
+   In this paper, we will also consider the balls and δ-neighborhood in A(k, n).
+Recall that we use Br (x) to denote the ball in Rn of radius r centered at x. To
+distinguish the ambient space, we will use letter Q to denote the balls in A(k, n).
+For V ∈ A(k, n), we use Qr (V ) to denote the ball in A(k, n) of radius r centered at
+V . More precisely,
+                       Qr (V0 ) := {V ∈ A(k, n) : d(V, V0 ) ≤ r}.
+For a subset X ⊂ A(k, n), we use the fancy letter N to denote the neighborhood
+in A(k, n):
+                        Nr (X) := {V ∈ A(k, n) : d(V, X) ≤ r}.
+Here, d(V, X) = inf V ′ ∈X d(V, V ′ ).
+
+    Next, we briefly recall how to define the Hausdorff dimension for subsets of
+a metric space. Let (M, d) be a metric space. For X ⊂ M , we denote the s-
+dimensional Hausdorff measure of X under the metric d to be Hs (X; d). We see that
+if d′ is another metric on M such that d(·, ·) ∼ d′ (·, ·), then Hs (X; d) ∼ Hs (X; d′ ).
+It make sense to define the Hausdorff dimension of X which is independent of the
+choice of comparable metrics:
+                          dim X := sup{s : Hs (X; d) > 0}.
+        EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                   9
+
+
+4.2. δ-discretization.
+Definition 13. For a number δ > 0 and any set X (in a metric space), we use
+|X|δ to denote the maximal number of δ-separated points in X.
+Definition 14 ((δ, s)-set). Let δ, s > 0. For A ⊂ Rn , we say A is a (δ, s, C)-set if
+A is δ-separated and satisfies the following estimate:
+                              #(A ∩ Br (x)) ≤ C(r/δ)s
+for any x ∈ Rn and r ≥ δ. For the purpose of this paper, the constant C is not
+important, so we simply say A is a (δ, s)-set if it satisfies
+                               #(A ∩ Br (x)) ≲ (r/δ)s .
+Remark 15. Throughout the rest of this paper, We will use #E to denote the
+cardinality of a set E and |·| to denote the measure of a region.
+  We state two lemmas:
+                                                       s
+Lemma 16. Let δ, s > 0 and let B ⊂ Rn be any set with H∞ (B) =: κ > 0. Then,
+                                            −s
+there exists a (δ, s)-set P ⊂ B with #P ≳ κδ .
+Proof. See [4] Lemma 3.13.                                                         □
+Lemma 17. Fix a > 0. Let ν be a probability measure satisfying ν(Br ) ≤ Cra
+for any Br being a ball of radius r. If A is a set satisfying ν(A) ≥ κ (κ > 0),
+then for any δ > 0 there exists a subset F ⊂ A such that F is a (δ, a)-set and
+#F ≳ κC −1 δ −a .
+Proof. By the previous lemma, we just need to show H∞    a
+                                                           (A) ≳ κC −1 . We just
+check it by definition. For any covering {B} of A, we have
+                                X            X
+                            κ≤      ν(B) ≤ C     r(B)a .
+                                  B              B
+Ranging over all the covering of A and taking infimum, we get
+                                   κC −1 ≲ H∞
+                                            a
+                                              (A).
+                                                                                   □
+  A key step in the proof of Theorem 5 is the following estimate.
+                                                                           1
+Proposition 18. Let 0 < τ ≤ k(n − k), 0 < σ ≤ k. For any γ ∈ (0, 10          ), there
+exists δ0 (γ) > 0 depending on γ such that for any δ < δ0 (γ), the following is true.
+   Suppose E ⊂ G(k, n) is a (δ, τ )-set with #E ≳ | log δ|−2 δ −τ . Suppose for any
+V ∈ E, there is a set of (n − k)-dimensional δ-slabs TV . Each T ∈ TV lies in
+B n (0, 1) which has dimensions
+                           δ × δ × ··· × δ×1 × 1 × ··· × 1
+                           |     {z      } |     {z      }
+                               k times          n−k times
+
+such that the 1 × · · · × 1-side is orthogonal to V , and
+(19)                                  #TV ≤ δ −σ .
+Let W = ⊔Bδ ⊂ B n (0, 1) be a disjoint union of δ-balls such that for any Bδ ⊂ W ,
+                                   [          
+(20)           # V ∈ E : Bδ ∩            T ̸= ∅ ≥ | log δ|−3 #E.
+                                      T ∈TV
+10                                   SHENGWEN GAN
+
+
+For 1 ≤ p < ∞, set λp := supl∈Z∩[0,n] (l − p · m(t, l)) (recalling m(t, l) in Definition
+(4)). We have
+                ˆ X X            p
+(21)                           1T ≤ Cγ,p δ −γ δ n δ −λp (δ −σ−τ )p .
+                   W    V ∈E T ∈TV
+
+
+  We will prove Theorem 5 assuming Proposition 18, and then come back to the
+proof of Proposition 18. Before starting the proof, we state a very useful lemma.
+We use the following notation. Fix a dimension m. For any δ = 2−k (k ∈ N+ ), let
+Dδ denote the lattice δ-cubes in [0, 1]m .
+Lemma 19. Suppose X ⊂ [0, 1]m with dim X < s. Then for any ε > 0, there exist
+dyadic cubes C2−k ⊂ D2−k (k > 0) so that
+             S     S
+   (1) X ⊂ k>0 D∈C −k D,
+                        2
+                             s
+        P     P
+   (2)    k>0   D∈C2−k r(D) ≤ ε,
+   (3) C2−k satisfies the s-dimensional condition: For l < k and any D ∈ D2−l ,
+        we have #{D′ ∈ C2−k : D′ ⊂ D} ≤ 2(k−l)s .
+Proof. See [6] Lemma 2.                                                               □
+Remark 20. Besides [0, 1]m , this Lemma also works for other compact metric
+spaces, for example Sm and G(k, m), which we will use throughout the rest of the
+paper.
+Proof of Theorem 5. Fix p ∈ [1, ∞). Let s be given by
+                                                     
+                                         a−l
+                        s = inf              + m(t, l) .
+                             l∈Z∩[0,n]    p
+Our goal is to prove
+(22)                                 dim(Es (A)) ≤ t.
+If this is true, then we also obtain (22) for
+                                                           
+                                               a−l
+                        s = sup       inf          + m(t, l)
+                             1≤p≤∞ l∈Z∩[0,n]    p
+by a limiting argument.
+   By a standard argument, we may assume A ⊂ B n (0, 1). We will do a series of
+reductions. Noting that               [
+                           Es (A) =       Eσ (A)
+                                          σ<s,σ∈Q
+which is a countable union, we just need to prove
+(23)                                 dim(Eσ (A)) ≤ t
+for any σ < s.
+   We choose α < dim(A), τ < dim(Eσ (A)). By Frostman’s lemma there exists
+a probability measure νA supported on A satisfying νA (Br ) ≤ CA,α rα for any
+Br being a ball of radius r. There exists a probability measure νE supported on
+Eσ (A) ⊂ G(k, n) satisfying νE (Qr ) ≤ CEσ (A),τ rτ for any Qr being a ball of radius
+r in G(k, n). Since our sets A, Eσ (A), and numbers α, τ are fixed, we may simply
+write the Frostman’s condition as
+(24)                        νA (Br ) ≲ rα , νE (Qr ) ≲ rτ .
+       EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                    11
+
+
+Here the implicit constants depend on A, Eσ (A), α, τ . We will later introduce two
+scales 0 < δ ≪ K −1 ≪ 1, and what important here is that the implicit constants
+never depend on K −1 , δ.
+   We only need to prove
+                                     τ ≤ t,
+as we can send τ → dim(Eσ (A)), which gives (23). If this is not true, then there
+exists ε1 > 0 such that
+(25)                                    τ > 2ε1 + t.
+We may make ε1 smaller so that
+(26)                                    s > 2ε1 + σ.
+We will derive a contradiction.
+   Now we start the δ-discretization. Fix a V ∈ Eσ (A). By definition, we have
+dim(πV (A)) < σ. We also fix a small number ϵ◦ which we will later send to 0.
+By Lemma 19, we can find a covering of πV (A) by dyadic cubes DV = {D}, each
+of which has side-length 2−j for some integer j > | log2 ϵ◦ |. DV also satisfies the
+following property. Define DV,j := {D ∈ DV : r(D) = 2−j }. Then we have:
+                                  X
+(27)                                  r(D)s < 1,
+                                       D∈DV
+
+and for each j and r-ball Br ⊂ V , we have
+                                                        r σ
+(28)                    #{D ∈ DV,j : D ⊂ Br } ≤              .
+                                                      2−j
+After finding such a DV , we can define a set of δ-slabs by lifting DV using the map
+πV . More precisely,  we define the set of slabs TV,j := {πV−1 (D) : D ∈ DV,j } ∩
+  n
+                S
+B (0, 2), TV = j TV,j . Each slab in TV,j roughly has dimensions
+                      2−j × 2−j × · · · × 2−j × 1 × 1 × · · · × 1
+                      |        {z           } |       {z        }
+                                k times                n−k times
+
+such that the 1 × · · · × 1-side is orthogonal
+                                            S    to V . We will use T to denote the
+slabs in TV,j . One easily sees that A ⊂ T ∈TV T . By pigeonholing, there exists an
+integer j(V ) > | log2 ϵ◦ | such that
+                               [               1                 1
+(29)             νA (A ∩ (           T )) ≥          νA (A) =          .
+                                            10j(V )2          10j(V )2
+                         T ∈TV,j(V )
+
+For each j > | log2 ϵ◦ |, define Eσ,j (A) := {V ∈ Eσ (A) : j(V ) = j}. Then we obtain
+a partition of Eσ (A):
+                                            G
+                                  Eσ (A) =     Eσ,j (A).
+                                              j
+By pigeonholing again, there exists j such that
+                                                    1
+(30)                             νE (Eσ,j (A)) ≥         .
+                                                   10j 2
+In the rest of the proof, we fix this j. We also set δ = 2−j . We remark that δ ≤ ϵ◦ .
+Therefore, we can make δ → 0 by letting ϵ◦ → 0.
+   By Lemma 17, there exists a (δ, τ )-set E ⊂ Eσ,j (A) with cardinality
+(31)                              #E ≳ | log δ|−2 δ −τ .
+12                                        SHENGWEN GAN
+
+                                                        S
+   Next, we consider the set S := {(x, V ) ∈ A × E : x ∈ T ∈TV,j T }. We also use
+µ to denote the counting measure on E. Define the sections of S:
+               Sx = {V ∈ E : (x, V ) ∈ S},           SV := {x ∈ A : (x, V ) ∈ S}.
+By (29) and Fubini, we have
+                                             X                    1
+(32)                     (νA × µ)(S) =              νA (SV ) ≥         #E.
+                                                                 10j 2
+                                             V ∈E
+This implies
+                       n                                        o
+                                                         1             1
+(33)           (νA × µ) (x, V ) ∈ S : µ(Sx ) ≥                #E    ≥       #E,
+                                                        20j 2         20j 2
+since
+                       n                                        o
+                                                         1             1
+(34)           (νA × µ) (x, V ) ∈ S : µ(Sx ) ≤                #E    ≤       #E.
+                                                        20j 2         20j 2
+By (33), we have
+                        n                                    o
+                                                      1             1
+(35)                  νA x ∈ A : µ(Sx ) ≥                  #E    ≥       .
+                                                     20j 2         20j 2
+   Recall δ = 2−j . By (35) and Lemma 17, we can find a δ-separated set H ⊂ {x ∈
+             1
+A : #Sx ≥ 20j  2 #E} with cardinality
+
+
+(36)                                 #H ≳ | log δ|−2 δ −α .
+
+   For simplicity, we will omit the subscript j and use TV to denote TV,j which is
+a set of (n − k)-dimensional δ-slabs that are orthogonal to V . Also by (28),
+(37)                                       #TV ≤ δ −σ .
+Now we focus on the estimate of the integral
+                           ˆ       X X                         p
+                                                           1T        .
+                                    Nδ (H)    V ∈E T ∈TV
+
+   The lower bound is easy. By the definition of H, we see that for any x ∈ H, there
+are ≳ | log δ|−2 #E many slabs from ∪V ∈E TV that intersect x. In other words,
+                          X X
+                                   1T (x) ≳ | log δ|−2 #E.
+                              V ∈E T ∈TV
+
+Therefore, we get the lower bound
+                 ˆ      X X        p
+(38)                              1T ≳ | log δ|−2p δ n #H#E p .
+                    Nδ (H)    V ∈E T ∈TV
+
+   Next, we use Proposition 18 to obtain an upper bound. Noting that H is δ-
+separated, Nδ (H) is a disjoint union of δ-balls. We let the W in Proposition 18 to
+be Nδ (H). We can also check the other conditions in Proposition 18 are satisfied.
+Therefore, we obtain
+               ˆ       X X           p
+(39)                               1T ≤ Cγ,p δ −γ δ n δ −λp (δ −σ−τ )p .
+                   Nδ (H)    V ∈E T ∈TV
+
+     Comparing with the lower bound (38), we obtain
+(40)                δ n δ −α δ −τ p ≲γ,p δ −γ | log δ|O(1) δ n δ −λp (δ −σ−τ )p ,
+        EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                       13
+
+
+where λp = supl∈Z∩[0,n] (l − p · m(t, l)). Letting δ → 0 and then γ → 0 gives that
+                                                   α − λp
+(41)                                         σ≥           .
+                                                     p
+On the other hand, by our choice of σ,
+                                                  a−l
+(42)                   σ < s − 2ε1 =         inf     (+ m(t, l)) − 2ε1 .
+                                        l∈Z∩[0,n]  p
+Combining with (41), we obtain
+                         α−l                       a−l
+(43)             inf    (    + m(t, l)) < inf (        + m(t, l)) − 2ε1 .
+               l∈Z∩[0,n]  p              l∈Z∩[0,n]  p
+This gives a contradiction by letting α → a.
+                                                                                        □
+
+                                5. Proof of Proposition 18
+   We have
+        ˆ X X   p     X
+(44)           1T ≲ δ n   #{T ∈ ∪V ∈E TV : Bδ ∩ T ̸= ∅}p .
+           W     V ∈E T ∈TV                  Bδ ⊂W
+
+For Bδ ⊂ W , we define the set
+                                                              \
+(45)                        E(Bδ ) := {V ∈ E : Bδ ∩               T ̸= ∅}.
+                                                          T ∈TV
+
+Since for each Bδ and V ∈ E, there are ≲ 1 tubes in TV that intersect Bδ , we have
+                        #{T ∈ ∪V ∈E TV : Bδ ∩ T ̸= ∅} ≲ #E(Bδ ).
+By the condition of W , we have
+                                   #E(Bδ ) ≳ | log δ|−3 δ −τ .
+   We can bound (44) by
+                  ˆ X X   p     X
+(46)                     1T ≲ δ n   #E(Bδ )p .
+                            W   V ∈E T ∈TV               Bδ ⊂W
+
+   Fix a Bδ ⊂ W . We will do the broad-narrow argument for the set E(Bδ ).
+   Fix a large dyadic number K ≫ 1 which is to be determined later. (Logically, K
+is chosen before δ and δ ≪ K −1 .) For integers r ∈ N, we choose QK −r = {QK −r }
+to be a set of K −r -balls that form a partition of G(k, n). (Since G(k, n) is locally
+diffeomorphic to [0, 1]k(n−k) , the K −r -cubes in the partition of [0, 1]k(n−k) gives the
+partition of QK −r .) For r < r′ and QK −r ∈ QK −r , we denote
+                       QK −r′ (QK −r ) := {Q ∈ QK −r′ : Q ⊂ QK −r }.
+
+
+  From now on, we use M, d to denote the integers that satisfy
+(47)                            M ∼ log log δ −1 , d = ⌊K τ −ε ⌋.
+We have the following lemma.
+14                                   SHENGWEN GAN
+
+                             1
+Lemma 21. Fix 0 < ε < 100      . Suppose E ⊂ G(k, n) is a (δ, τ )-set with #E ≥
+        −3 −τ
+| log δ| δ . If K is large enough depending on ε, and δ is small enough depending
+on K, then there exists an integer r ≤ M such that the following is true. There
+exists QK −r+1 ∈ QK −r+1 such that
+                                                                
+(48)         # QK −r ∈ QK −r (QK −r+1 ) : #(E ∩ QK −r ) ≥ δ −τ +ε ≥ d.
+
+  To prove Lemma 21, we just need to prove the following lemma, which has more
+complicated numerology but is easier for induction.
+                                1
+Lemma 22. Fix 0 < ε < 100         . Suppose E ⊂ G(k, n) is a (δ, τ )-set with #E ≥
+        −3 −τ
+| log δ| δ . If K is large enough depending on ε, then there exists an integer
+r ≲ log log δ −1 such that the following is true. There exists QK −r+1 ∈ QK −r+1 such
+that
+           
+          # QK −r ∈ QK −r (QK −r+1 ) :
+(49)                                                                   
+                                  −n4         −3 ε(r−1) −r+1    r−1 −τ
+             #(E ∩ QK −r ) ≥ K        | log δ| K       2     (K    δ)    ≥ K τ −ε .
+
+Proof of Lemma 22. We show that if (49) fails for 1, . . . , r0 , then there exists QK −r0 ∈
+QK −r0 such that
+(50)                #(E ∩ QK −r0 ) ≥ | log δ|−3 K εr0 2−r0 (K r0 δ)−τ .
+For 0 ≤ r ≤ r0 , we will inductively find QK −r ∈ QK −r so that
+(51)                  #(E ∩ QK −r ) ≥ | log δ|−3 K εr 2−r (K r δ)−τ .
+When r = 0, noting Q0 = G(k, n), (51) holds by the assumption. Suppose we have
+done (51) for r − 1, so there exists QK −r+1 such that
+(52)             #(E ∩ QK −r+1 ) ≥ | log δ|−3 K ε(r−1) 2−r+1 (K r−1 δ)−τ .
+   Fix this QK −r+1 . For simplicity, we define the significant balls at scales K −r
+contained in QK −r+1 as follows.
+                                      SK −r :=
+                                                                                  
+                                               4
+  QK −r ∈ QK −r (Q−r+1 ) : #(E∩QK −r ) ≥ K −n | log δ|−3 K ε(r−1) 2−r+1 (K r−1 δ)−τ .
+
+We also let
+                            c
+                           SK −r := QK −r (QK −r+1 ) \ SK −r .
+
+
+The reason we call them significant balls is that the cardinality #(E ∩QK −r ) almost
+reaches the Frostman upper bound: #(E ∩ QK −r ) ≲ (K r δ)−τ .
+   We have
+(53)                  X                              X
+#(E ∩ QK −r+1 ) =              #(E ∩ QK −r ) +               #(E ∩ QK −r ) =: I + II.
+                     QK −r ∈SK −r                  QK −r ∈S c −r
+                                                           K
+
+
+     Since by the assumption (49) fails, we have
+(54)          I ≤ #SK −1 max #(E ∩ QK −r ) ≤ K τ −ε max #(E ∩ QK −r ).
+                         QK −r                          QK −r
+        EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                    15
+
+
+We also have the estimate for II.
+                                             4
+(55)       II ≤ #QK −r (QK −r+1 )K −n | log δ|−2 K ε(r−1) 2−r+1 (K r−1 δ)−τ
+                1
+              ≤ | log δ|−3 K ε(r−1) 2−r+1 (K r−1 δ)−τ ,
+                2
+if K > 10.
+   Plugging (54), (55) into (53) and noting (52), we obtain
+          1
+(56)        | log δ|−3 K ε(r−1) 2−r+1 (K r−1 δ)−τ ≤ K τ −ε max #(E ∩ QK −r ).
+          2                                                QK −r
+
+In other words, there exists QK −r ∈ QK −r such that
+                        #(E ∩ QK −r ) ≥ | log δ|−2 K εr 2−r (K r δ)−τ .
+This finishes the proof of (51).
+   Now, we finish the proof of lemma. If (49) fails for all r ≲ log log δ −1 , then by
+(51) and noting E is a (δ, τ )-set, we have
+(57)                       (K r δ)−τ ≳ | log δ|−2 K εr 2−r (K r δ)−τ ,
+                                                                              ε
+for some r ∼ log log δ −1 which gives a contradiction, provided K2 ≫ 1.              □
+
+
+  The following is the broad estimate.
+                            1
+Lemma 23. Fix 0 < ε < 100     . Suppose E(Bδ ) ⊂ G(k, n) is a (δ, τ )-set with
+                  −3 −τ
+#E(Bδ ) ≥ | log δ| δ . If K is large enough depending on ε, and δ is small
+enough depending on K, then we have
+(58)
+                  M                                    d
+                                                                          1
+                  X       X               X           Y
+               −ε
+  #E(Bδ ) ≲ε δ                                           #(E(Bδ ) ∩ Ui ) d .
+                      r=1 QK −r+1 ∈QK −r+1 U1 ,...,Ud ∈QK −r (QK −r+1 ) i=1
+
+Here in the 3rd summation, U1 , . . . , Ud are different.
+Remark 24. We explain why it is called the broad estimate. We first observe that
+the number of terms in the summation on the RHS of (58) is ≤ M CK (CK is some
+large constant depending on K), which is negligible compared to δ −ε if K is a fixed
+large constant. (Recall M in (47).) Therefore, we may assume one term on the
+RHS dominates the LHS. In other words, there exist patches U1 , . . . , Ud in G(k, n)
+such that
+                                    d
+                                                       1
+                                   Y
+                         #E(Bδ ) ⪅     #(E(Bδ ) ∩ Ui ) d .
+                                           i=1
+It is equivalent to
+                                 #E(Bδ ) ⪅ #(E(Bδ ) ∩ Ui ),
+for i = 1, . . . , d. This shows that E(Bδ ) is not concentrated in a single patch Ui ,
+but instead has a significant portion in a “broad” range of patches {Ui }di=1 .
+Proof of Lemma 23. Apply Lemma 21 to the set E = E(Bδ ). There exists an
+integer r ≤ M , QK −r+1 ∈ QK −r+1 , and U1 , . . . , Ud ∈ QK −r (QK −r+1 ) such that
+(59)                               #(E(Bδ ) ∩ Ui ) ≥ δ −τ +ε
+16                                            SHENGWEN GAN
+
+
+for i = 1, . . . , d. Since E(Bδ ) is a (δ, τ )-set, we have #E(Bδ ) ≲ δ −τ . Therefore, we
+obtain
+                                                d
+                                                                   1
+                                               Y
+                             #E(Bδ ) ≲ δ −ε        #(E(Bδ ) ∩ Ui ) d ,
+                                                      i=1
+which finishes the proof of (58).                                                                                   □
+     Plugging to (46), we obtain
+           ˆ    X X               p
+                              1T
+            W    V ∈E T ∈TV
+                     M                                                               d
+                     X       X                   X                      X            Y                       p
+
+(60)       ≲ε δ −ε                                                              δn         #(E(Bδ ) ∩ Ui ) d
+                     r=1 Q∈QK −r+1 U1 ,...,Ud ∈QK −r (Q) Bδ ⊂W                       i=1
+                    M                                               ˆ            d
+                    X        X                   X                               Y         X        X         p
+           ≲ δ −ε                                                                     (                  1T ) d .
+                    r=1 Q∈QK −r+1 U1 ,...,Ud ∈QK −r (Q)             B n (0,1) i=1 V ∈E∩U T ∈T
+                                                                                                i    V
+
+
+In the first inequality, we use the fact that the number of summands is ≤ M CK
+which can be controlled by δ −ε . In the last inequality, we use the fact that 1T is
+locally constant on δ-balls for T ∈ TV .
+
+5.1. Rescaling. We will discuss the rescaling in this subsection. While the nota-
+tion may be complicated, the geometry behind it is simple. In this subsection, our
+notation is: we use letter V for a point in G(k, n), i.e., a k-dimensional plane, while
+letter U for some small ball in G(k, n).
+   Fix a Q ∈ QK −r+1 and U1 , . . . , Ud ∈ QK −r (Q). We will write
+                            ˆ          d
+                                      Y    X X              p
+(61)                                     (             1T ) d
+                                   B n (0,1) i=1 V ∈E∩U T ∈T
+                                                                i       V
+
+in a rescaled version.
+   Let V ◦ ∈ G(k, n) be the center of Q. In other words, Q = QK −r+1 (V ◦ ). Let
+   ◦ ⊥
+(V )K −r+1 be the K −r+1 -neighborhood of (V ◦ )⊥ that is truncated in B n (0, 1) (see
+Definition 11). Then (V ◦ )⊥
+                           K −r+1 is roughly a rectangle of dimensions
+
+                    K −r+1 × K −r+1 × · · · × K −r+1 × 1 × 1 × · · · × 1 .
+                    |            {z                } |       {z        }
+                                       k times                                  n−k times
+
+For any V ∈ Q, by Lemma 10, we have V ∩ B (0, 1) ⊂ CVK◦ −r+1 . Therefore, any
+                                                                    n
+
+T ∈ TV appeared in (61) is contained in a translation of C(V ◦ )⊥  K −r+1 .
+   To estimate (61), we will first partition the integration domain. We partition
+B n (0, 1) into slabs denoted by T = {τ }. Here each τ is a translation of (V ◦ )⊥
+                                                                                 K −r+1 ,
+and #T ∼ (K r−1 )k . Since for each fixed T ∈ TV , there exists a τ ∈ T such that
+T ⊂ Cτ for some constant C. Therefore,
+(62)                               #{τ ∈ T : T ∩ τ ̸= ∅} ≲ 1.
+   We have
+        ˆ            d                                      Xˆ Y
+                                                               d
+                     Y       X         X          p                             X              X              p
+(63)                     (                    1T ) d =                      (                            1T ) d .
+            B n (0,1) i=1 V ∈E∩U T ∈T                       τ       τ i=1 V ∈E∩U T ∈T ,T ∩τ ̸=∅
+                                   i      V                                     i    V
+        EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                           17
+
+
+
+
+                                  Figure 1. Rescaling
+
+
+   Next, we will do the rescaling for each τ . We first translate τ to the origin
+and do K r−1 -dilation in the orthogonal directions of τ , so that τ roughly becomes
+B n (0, 1). We denote this rescaling map by Lτ = L ◦ Tτ , where Tτ is the translation
+and L is the dilation. After the rescaling, we see that each T such that T ∩ τ ̸= ∅
+becomes a δK r−1 × · · · × δK r−1 × 1 × · · · × 1-slab contained in B n (0, 1). We define
+them to be Te. See Figure 1. Taking into consideration of the rescaling factor, we
+have
+(64)
+ˆ Y  d                                               ˆ        d
+           X       X             p                           Y     X           X            p
+       (                    1T ) d = K −(r−1)(n−k)              (                     1Te ) d .
+ τ i=1 V ∈E∩U T ∈T ,T ∩τ ̸=∅                          B n (0,1) i=1 V ∈E∩U T ∈T ,T ∩τ ̸=∅
+             i    V                                                       i    V
+
+
+   We want to rewrite the right hand side. Note that if T ∈ TV , then the core of
+T is orthogonal to V , and hence parallel to V ⊥ . Therefore, after the rescaling, the
+core of Te is parallel to L(V ⊥ ), and hence orthogonal to (L(V ⊥ ))⊥ . This motivates
+us to define the following map
+                                 L∗ : G(k, n) → G(k, n)
+                                    L∗ (V ) = (L(V ⊥ ))⊥ .
+
+We see that if T ∈ TV , then the core of Te is orthogonal to L∗ (V ).
+  Next, we note that under the map L∗ , the K −r -ball Ui in G(k, n) becomes an
+O(K −1 )-ball which we denote by
+                           ei := L∗ (Ui ) = {L∗ (V ) : V ∈ Ui }.
+                           U
+
+Actually, one can verify that if Ui = QK −r (Vi ), then U ei is morally an O(K −1 )-
+                    ∗
+ball centered at L (Vi ). We briefly explain the reason: Since taking orthogonal
+complement gives an identification between G(k, n) and G(n − k, n), we can view
+{V ⊥ : V ∈ Ui } as a K −r -ball in G(n−k, n) centered at Vi⊥ ; Then by Lemma 10, we
+see that {L(V ⊥ ) : V ∈ Ui } is morally an O(K −1 )-ball centered at L(Vi⊥ ); Finally
+by taking the orthogonal complement back, we see that U   ei = {(L(V ⊥ ))⊥ : V ∈ Ui }
+                    −1                    ∗
+is morally an O(K )-ball centered at L (Vi ).
+18                                     SHENGWEN GAN
+
+
+              ei , there is a V ∈ Ui such that L∗ (V ) = Ve . Define
+     For Ve ∈ U
+
+(65)                          e e := {Te : T ∈ TV , T ∩ τ ̸= ∅}.
+                              TV ,τ
+
+By (62), we have
+                                     X
+(66)                                        e e ≲ #TV .
+                                           #TV ,τ
+                                      τ
+
+Now we can rewrite (64) as
+(67)
+ˆ Y d                                           ˆ                   d
+        X        X            p                                     Y         X         X              p
+      (                  1T ) d = K −(r−1)(n−k)                         (                        1Te ) d .
+ τ i=1 V ∈E∩U T ∈T ,T ∩τ ̸=∅                              B n (0,1) i=1 e
+             i    V                                                     V ∈L∗ (E∩Ui ) Te∈T
+                                                                                         ee
+                                                                                          V ,τ
+
+
+The reason we do the rescaling is to use Brascamp-Lieb inequality at scale K −1 ,
+as can be seen on the right hand side of (67) that L∗ (E ∩ Ui ) is contained in a
+O(K −1 )-ball in G(k, n). We will talk about it in the next subsection.
+
+
+5.2. Brascamp-Lieb inequality. The version of Brascamp-Lieb inequality we are
+going to use is due to Maldague. See Theorem 2 in [10].
+Theorem 25 (Maldague). Let Wj ∈ G(k, n) for j = 1, . . . , J. Fix p ∈ [1, J].
+Define
+                                                               J
+                                                          pX
+(68)               BL({Wj }Jj=1 , p) := sup (dim L −            dim πWj (L)).
+                                          L≤Rn            J j=1
+
+Here, L ≤ Rn means L is a subspace of Rn , and πWj : Rn → Wj is the orthogonal
+projection.
+   There exists ν > 0 depending on {Wj }Jj=1 , so that the following is true. For any
+ε > 0 and for any Vj = {Vj } ⊂ A(n − k, n) (j = 1, . . . , J) being sets of (n − k)-
+planes, such that each Vj ∈ Vj is orthogonal to some W ∈ Qν (Wj ) ⊂ G(k, n), we
+have
+          ˆ       J  X            Jp                          J       Jp
+                                          n−ε −BL({Wj }J
+                  Y                                             Y
+                                                            ,p)
+(69)                        1Vj,δ      ≲δ    δ          j=1         #Vj      .
+             [−1,1]n j=1    Vj ∈Vj                                      j=1
+
+     By a compactness argument, we deduce the following result.
+Theorem 26. Let Wj ⊂ G(k, n) be a compact set for j = 1, . . . , J. Fix p ∈ [1, ∞).
+Define
+(70)               BL({Wj }Jj=1 , p) :=          sup           BL({Wj }Jj=1 , p).
+                                          W1 ∈W1 ,...,WJ ∈WJ
+
+Fix any ε > 0. Then for any Vj = {Vj } ⊂ A(n − k, n) (j = 1, . . . , J) being sets of
+(n − k)-planes, such that each Vj ∈ Vj is orthogonal to some W ∈ Wj , we have
+(71)
+  ˆ        J  X            Jp                                           J       Jp
+                                                     n−ε −BL((Wj )J
+          Y                                                               Y
+                                                                      ,p)
+                     1Vj,δ      ≤ C({Wj }, p, ε) · δ    δ         j=1         #Vj      .
+     [−1,1]n j=1   Vj ∈Vj                                                       j=1
+        EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                                            19
+
+
+   We briefly explain how to use compactness argument to deduce Theorem 26 from
+Theorem 25. For any W    ⃗ = (W1 , . . . , WJ ) ∈ W1 × · · · × WJ , we use Theorem 25 to
+find a small number ν, so that (71) is true when all the slabs are in ν-neighborhood
+of Wj⊥ . In other words, there exists a O(ν)-neighborhood of (W1 , . . . , WJ ), for
+which we call B(W  ⃗ ), so that (71) is true when all the slabs are in B(W  ⃗ ). Then we
+use the compactness of W1 × · · · × WJ to find a finite covering using B(W     ⃗ ). Using
+this finite covering and splitting the LHS of (71) by triangle inequality, the proof
+of (71) is not hard.
+
+   We continue the estimate of (64). We recall (67) here:
+(72)
+ˆ Y d                                           ˆ        d
+        X        X           p                          Y                             X           X            p
+                                    −(r−1)(n−k)
+      (                  1T ) = K
+                             d                             (                                             1Te ) d .
+ τ i=1 V ∈E∩U T ∈T ,T ∩τ ̸=∅                                   B n (0,1) i=1 e
+             i    V                                                          V ∈L∗ (E∩Ui ) Te∈T
+                                                                                              ee
+                                                                                               V ,τ
+
+
+Note that for each i, L∗ (E ∩ Ui ) ⊂ L∗ (Ui ) = U ei is an O(K −1 )-ball. Applying
+                                            S
+Theorem 26 with J = d, Wi = U ei , {Vi,δ } = e ∗            e ,τ , we obtain
+                                              V ∈L (E∩Ui ) TV
+
+(73)
+   ˆ        d                                                             d
+            Y         X            X           p              2           Y           X                  p
+                (                          1Te ) d ≤ CK δ n−ε δ −BL            (                 ee )d
+                                                                                                #TV ,τ
+    B n (0,1) i=1 e                                                       j=1 V
+                  V ∈L∗ (E∩Ui ) Te∈T
+                                   ee
+                                    V ,τ
+                                                                              e ∈L∗ (E∩Ui )
+                                                              2               X
+                                                   ≤ CK δ n−ε δ −BL (                   e e )p
+                                                                                       #TV ,τ
+                                                                          e ∈L∗ (E)
+                                                                          V
+
+Here,
+                                                                      d
+                                                               pX
+(74)                BL =         sup           sup (dim L −          dim πVj (L)).
+                           V1 ∈U           ed L≤Rn
+                               e1 ,...,Vd ∈U                   d j=1
+
+  Combining (63), (64), (67), (73), and noting that we just bound the non-
+important factor K −(r−1)(n−k) in (67) by 1, we obtain
+        ˆ        d
+                 Y    X X              p           2      X X
+                   (              1T ) d ≤ CK δ n−ε δ −BL  (  #Te e )p
+                                                                 V ,τ
+            B n (0,1) i=1 V ∈E∩U T ∈T                                         τ    e ∈L∗ (E)
+                                   i       V                                       V
+                                                             n−ε2 −BL
+                                                                              X       X
+(75)                                                ≤ CK δ        δ       (                     e e )p
+                                                                                               #TV ,τ
+                                                                               τ   e ∈L∗ (E)
+                                                                                   V
+                                                             n−ε2 −BL
+                                                                              X
+                                       (by (66)) ≲ CK δ           δ       (          #TV )p
+                                                                              V ∈E
+
+  Next, we consider the quantity BL. Fix L ∈ G(l, n). Recalling the definition of
+m(t, l) in Definition 4, we have
+(76)                                    E(m(t, l) − 1, l) ≤ t.
+Noting that E(m, l) is given by (4). For L ∈ G(l, n), we have
+(77)     dim({V ∈ G(k, n) : dim(πL (V )) ≤ m(t, l) − 1}) = E(m(t, l) − 1, l) ≤ t.
+This means that
+(78)                 ML := {V ∈ G(k, n) : dim(πL (V )) ≤ m(t, l) − 1}
+20                                    SHENGWEN GAN
+
+
+is at most a t-dimensional submanifold of G(k, n). We also remark that for different
+L ∈ G(l, n), the submanifolds (78) are isometric by symmetry. Noting that U       ei
+(1 ≤ i ≤ d) are disjoint K −1 -balls in G(k, n), we have
+
+(79)                                 ei ∩ ML ̸= ∅} ≲ K t ≤ K τ −2ε .
+                     ei : 1 ≤ i ≤ d, U
+                   #{U
+
+The last inequality is from (25). Returning to (74), we see that for any Vi ∈ U   ei
+                                                            τ −2ε
+(1 ≤ i ≤ d) and L ∈ G(l, n), there are more than d − CK           many Ui such that
+                                                                       e
+dim(πL (Vi )) ≥ m(t, l), where C is a constant. Also recall that d = ⌊K τ −ε ⌋. As a
+result, we have
+                                        p
+                     BL ≤ sup (l − (d − CK τ −2ε )m(t, l))
+                           l∈Z∩[0,n]    d
+                          ≤     sup (l − p(1 − 2CK −ε )m(t, l))
+(80)                          l∈Z∩[0,n]
+
+                          ≤     sup (l − p · m(t, l)) + ε
+                              l∈Z∩[0,n]
+                          = λp + ε,
+if K is large enough.
+   Combining (60) and (75), and noting that there are ≲ δ −ε terms on the RHS of
+(60), we obtain
+
+                  ˆ    X X               p
+(81)                                 1T        ≲ε,p δ −O(ε) δ n δ −λp (δ −σ−τ )p .
+                   W    V ∈E T ∈TV
+
+Renaming O(ε) to be γ will give (21).
+
+                           6. Lower bounds for T (a, s)
+   In this section, we prove some lower bounds for T (a, s) (see (1)). For each pair
+(a, s), we will construct an example A ⊂ Rn and calculate the dimension of the
+exceptional set
+                       dim({V ∈ G(k, n) : dim(πV (A)) < s}).
+We remark that in the setting of finite field, examples were built for some specific
+pairs (a, s) in [2].
+
+     We first recall the theorem of Ren and Wang [17]:
+Theorem 27. Let A ⊂ R2 with dim(A) = a. For θ ∈ G(1, R2 ), let πθ : R2 → θ be
+the orthogonal projection onto line θ. For 0 < s < max{1, a}, define Es (A) := {θ :
+dim(πθ (A)) < s}. Then
+(82)                        dim(Es (A)) ≤ max{0, 2s − a}.
+   For our purpose, we are interested in the sharp example A ⊂ R2 for which
+(82) holds with “≤” replaced by “=”. Actually, there exists As,a ⊂ R2 with
+dim(As,a ) = a such that E s,a := Es (As,a ) has Hausdorff dimension ≥ 2s − a.
+For this example, see Section 5.4 in [13]. We would like to formally state it as a
+proposition.
+        EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                      21
+
+
+Proposition 28. For 0 < a < 2, a2 ≤ s < min{1, a}. There exists a set As,a ⊂ R2
+with dim(As,a ) = a such that
+(83)                  E s,a := {θ ∈ G(1, 2) : dim(πθ (As,a )) < s}
+has Hausdorff dimension 2s − a.
+   The sets As,a and E s,a will serve as building blocks when we construct examples
+for all n. We would like to spend some time explaining a construction of As,a and
+E s,a in the finite setting. It is exactly the sharp example of the Szemerédi-Trotter
+theorem.
+Example 29. Let N be a large number. We assume 2s ≥ a. Consider a set of
+lines L = {lk,m : |k| ≤ N 2s−a , |m| ≤ 10N s } in R2 . Here, k and m are integers and
+lk,m is given by
+                                  lk.m : y = kx + m.
+We see that L consists of lines from ∼ N 2s−a many directions, and in each of these
+directions there are ∼ N s many lines. We denote these directions by E, and for
+θ ∈ E, let Lθ be the lines in L that are in direction θ.
+   Consider the set A := {(x, y) ∈ Z2 : |x| ≤ N a−s , |y| ≤ N s }. For any |k| ≤ N 2s−a ,
+we see that any (x, y) ∈ A satisfies |y − kx| ≤ 10N s . This means that for any
+direction θ ∈ E, A is covered by Lθ . Therefore we have for each θ ∈ E,
+                                #πθ (A) ≤ #Lθ ≲ N s .
+We obtain the following estimate:
+                       #{θ : #πθ (A) ≲ N s } ≥ #E ∼ N 2s−a .
+Such A and E are like the discrete analogue of As,a and E s,a .
+
+
+6.1. Examples in R3 . To give more insight, we first focus on the projection to
+lines and planes in R3 . In other words, we consider the case n = 3, k = 1 or 2.
+Example 30 (Projections to lines in R3 ).
+    (1) When a ≤ 1, let A be contained in the x3 -axis. We see that for any
+        line ℓ that is parallel to the (x1 , x2 )-plane, the projection of A onto ℓ has
+        dimension 0(< s). Therefore dim(Es (A)) ≥ 1.
+    (2) Consider the case 1 < a ≤ 2.
+           • When a−1 2 < s < a − 1, we choose A = As,a−1 × R. This looks like
+        the left picture in Figure 2. We only look at those directions θ that are
+        parallel to the (x1 , x2 )-plane. This is just the problem in R2 . We see that
+        Es (A) ⊃ Es,a−1 , so
+             dim(Es (A)) ≥ max{0, 2s − (a − 1)} = max{0, 1 + 2s − a}.
+           • When a − 1 < s < 1, we choose A = A′ × R, where A′ ⊂ R2 is any set
+        with dim(A′ ) = a − 1. We see that if θ is parallel to the (x1 , x2 )-plane, then
+        πθ (A) = πθ (A′ ) has dimension less than dim(A′ ) = a − 1 < s. Therefore,
+                                   dim(Es (A)) ≥ 1.
+22                                  SHENGWEN GAN
+
+
+
+
+                                                                               ℓθ
+
+
+               θ
+
+
+
+
+                             As−1,a−1 ⊆ R2
+                             A = As−1,a−1 × R
+
+
+
+                           Figure 2. Projection to planes
+
+
+     (3) Consider the case 2 < a ≤ 3. When a−1   2 < s < 1, we choose A = As,a−1 ×
+         R (then dim(A) = dim(As,a−1 ) + dim(R) = a). We only look at those
+         directions θ that are parallel to the (x1 , x2 )-plane. This is just the problem
+         in R2 . We see that Es (A) ⊃ E s,a−1 , so
+
+             dim(Es (A)) ≥ max{0, 2s − (a − 1)} = max{0, 1 + 2s − a}.
+
+
+Example 31 (Projections to planes in R3 ).
+     (1) When a ≤ 1, let A = As,a × {0}. For θ ∈ S 2 , we use Vθ to denote the plane
+         orthogonal to θ. We only look at the projection of A to those Vθ where θ
+         is parallel to the (x1 , x2 )-plane. This exactly becomes a projection-to-line
+         problem in R2 , so we have that dim(Es (A)) ≥ dim(E s,a ) ≥ max{0, 2s − a}.
+     (2) Consider the case 1 < a ≤ 2.
+            • When s ≤ 1, we use the same example as in the last paragraph.
+            • When 1 < s ≤ a+1                                         2
+                                 2 , we choose A to be a subset of R × {0}. Then for
+         those θ parallel to (x1 , x2 )-axis, the projection of A onto Vθ is contained in
+         the line (R2 × {0}) ∩ Vθ which has dimension ≤ 1 < s. This means that
+         these Vθ are in the exceptional set. So, dim(Es (A)) ≥ 1.
+            • When a+1 2 < s < a, we choose A = As−1,a−1 × R (see Figure 2). For
+         a direction θ that is parallel to the (x1 , x2 )-plane, we use ℓθ to denote the
+         line contained in R2 × {0} that is orthogonal to θ, i.e., ℓθ = Vθ ∩ (R2 × {0}).
+         Suppose ℓθ is in E s−1,a−1 , i.e., dim(πℓθ (As−1,a−1 )) < s − 1. Then noting
+         that πVθ (As−1,a−1 × R) = πℓθ (As−1,a−1 ) × R, we have dim(πVθ (A)) =
+         dim(πℓθ (As−1,a−1 )) + 1 < s. On the right hand side of Figure 2, we draw a
+         bunch of planes that contain ℓθ but not contain the x3 -axis. We can view
+         these planes as
+
+(84)                                   RP1 \ {∗},
+
+         where ∗ corresponds to the (x1 , x2 )-plane. The geometric observation is
+         that the projection of A onto these planes are the same, and hence has
+       EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                    23
+
+
+        dimension < s. We see that
+                  dim(Es (A)) ≥ dim(E s−1,a−1 × (RP1 \ {∗}))
+                               = dim(E s−1,a−1 ) + dim(RP1 \ {∗})
+                               ≥ 2(s − 1) − (a − 1) + 1 = 2s − a.
+        We used that dim(E s−1,a−1 ) ≥ max{0, 2(s−1)−(a−1)} = 2(s−1)−(a−1)
+        since a+1
+               2 < s.
+    (3) Consider the case 2 < a ≤ 3.
+           • When a − 1 < s < a+1                                     2
+                                  2 , we choose A to be contained in R × I, where
+        I ⊂ R has dimension a − 2. Then for those θ parallel to (x1 , x2 )-axis,
+        the projection of A onto Vθ is contained in ℓθ × I which has dimension
+        ≤ 1 + a − 2 = a − 1 < s. This means that these Vθ are in the exceptional
+        set. So, dim(Es (A)) ≥ 1.
+           • When a+12 < s < 2, we just use the same example A = As−1,a−1 × R
+        as above to get the lower bound dim(Es (A)) ≥ 2s − a.
+  We summarize our examples as follows.
+Proposition 32 (Projections to lines in R3 ). Consider the projection to lines in
+R3 , so Es (A) is given by (2) with k = 1, n = 3. We have
+    (1) When a ≤ 1 : T (a, s) ≥ 1;
+    (2) When 1 < a ≤ 2 :
+                                
+                                0
+                                              s ≤ a−1
+                                                    2
+                      T (a, s) ≥ 1 + 2s − a a−1  2 <  s≤a−1
+                                
+                                  1            a−1<s<1
+                                
+
+   (3) When 2 < a ≤ 3 :
+                                    (
+                                        0            s ≤ a−1
+                                                          2
+                       T (a, s) ≥                    a−1
+                                        1 + 2s − a     2 <  s<1
+Proposition 33 (Projections to planes in R3 ). Consider the projection to planes
+in R3 , so Es (A) is given by (2) with k = 2, n = 3. We have
+    (1) When a ≤ 1 : T (a, s) ≥ max{0, 2s − a};
+    (2) When 1 < a ≤ 2 :
+                                               s ≤ a2
+                                     
+                                     
+                                      0
+                                     2s − a a < s ≤ 1
+                                     
+                          T (a, s) ≥            2
+                                     
+                                     
+                                      1       1  < s ≤ a+1
+                                                          2
+                                       2s − a a+1   <  s <  a
+                                     
+                                                  2
+   (3) When 2 < a ≤ 3 :
+                                 
+                                 0
+                                               s≤a−1
+                       T (a, s) ≥ 1             a − 1 < s ≤ a+1
+                                                             2
+                                                a+1
+                                 
+                                   2s − a           <  s < 2
+                                 
+                                                  2
+Remark 34. To construct analogous examples in higher dimensions, we can play
+                                                                 ′
+the same trick. For example, choose A = As′ ,a′ × Rl , or I × Rl . Then we may find
+the lower bound of T (a, s) are of forms m + 2s − a, or m′ , for some integers m, m′ .
+We will talk about the examples in higher dimensions in the next subsection.
+24                                    SHENGWEN GAN
+
+
+6.2. Examples in higher dimensions. We discuss the examples of the excep-
+tional sets in higher dimensions. There will be four types of the examples. We will
+use d(m, n) to denote dim(G(m, n)), namely d(m, n) = m(n − m). We first list
+some well known facts.
+Lemma 35. Suppose V, W ⊂ Rn are two subspaces. Then
+                                dim(πV (W )) = dim(πW (V )),
+and
+                       dim(πV (W )) = dim(W ) − dim(W ∩ V ⊥ ).
+Proof. Since the linear map πV : W → V has kernel W ∩ V ⊥ , we have
+                       dim(πV (W )) = dim(W ) − dim(W ∩ V ⊥ ).
+To prove the first equality, we note
+           dim(πV (W )) = dim(W ) − dim(W ∩ V ⊥ )
+                                                       
+                                                  ⊥ ⊥
+                                                      
+                        = dim W − n − dim (W ∩ V )
+
+                          = dim W − n + dim(W ⊥ + V )
+                          = dim W − n + dim W ⊥ + dim V − dim(W ⊥ ∩ V )
+                          = dim V − dim(V ∩ W ⊥ )
+                          = dim(πW (V )).
+                                                                                           □
+Lemma 36. Let 0 ≤ l ≤ n, 1 ≤ k, m ≤ n be integers satisfying n − k ≥ m − l and
+l ≤ k, m. If W ∈ G(m, n), then
+      dim{V ∈ G(k, n) : dim(πV (W )) ≤ l} = d(k − l, n − m) + d(l, n − (k − l)).
+Proof. By Lemma 35, we have
+      {V ∈ G(k, n) : dim(πV (W )) ≤ l} = {V ∈ G(k, n) : dim(V ∩ W ⊥ ) ≥ k − l},
+By condition l ≤ k, we see dim(V ∩ W ⊥ ) ≥ k − l makes sense. Actually, {V ∈
+G(k, n) : dim(V ∩ W ⊥ ) ≥ k − l} is a Schubert cycle whose dimension is not hard
+to calculate (see [7] Chapter 1, Section 5). Here, we provide a sketch of proof.
+The condition n − k ≥ m − l says that dim(W ⊥ ) ≥ k − l. The condition l ≤ m
+yields that generic V ∈ G(k, n) satisfies dim(V ∩ W ⊥ ) = dim(V ) + dim(W ⊥ ) − n =
+k + n − m − n ≤ k − l (imagine the generic case is when V and W ⊥ are as transverse
+as possible). Therefore, generic V ∈ {V ∈ G(k, n) : dim(V ∩ W ⊥ ) ≥ k − l} will
+satisfy dim(V ∩ W ⊥ ) = k − l. It is equivalent to calculate the dimension of
+                         {V ∈ G(k, n) : dim(V ∩ W ⊥ ) = k − l}.
+Note that we can identify V with (v1 , . . . , vk ), where {vi }ki=1 are orthonormal basis
+of V . We first choose v1 , . . . , vk−l ∈ W ⊥ , which is equivalent to choosing an (k −
+l)-plane in W ⊥ . It gives d(k − l, n − m)-dimensional choices. Next, we choose
+vk−l+1 , . . . , vk from span{v1 , . . . , vk−l }⊥ , which gives d(l, n − (k − l))-dimensional
+choices. Adding together, gives the dimension d(k − l, n − m) + d(l, n − (k − l)). □
+     We state the key result.
+        EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                      25
+
+
+Proposition 37. Fix 0 < k < n. For A ⊂ Rn , define
+                     Es (A) := {V ∈ G(k, n) : dim(πV (A)) < s}.
+For 0 < a < n and 0 < s ≤ min{k, a}, define
+                           T (a, s) :=     sup      dim(Es (A)).
+                                         dim(A)=a
+
+Then we have the following lower bound for T (a, s). We write a = m + β, s = l + γ
+where m, l ∈ N and β, γ ∈ (0, 1].
+    (1) Type 1: 1 ≤ m ≤ n + l − k, γ > β+1
+                                        2
+
+(85)      T (m + β, l + γ) ≥ d(k − l, n − m) + d(l, n − (k − l)) + 2γ − (β + 1)
+                            = k(n − k) − (m − l)(k − l) + 2γ − (β + 1).
+
+    (2) Type 2: m ≤ n + l − k, γ > β
+(86)            T (m + β, l + γ) ≥ d(k − l, n − m) + d(l, n − (k − l))
+                                  = k(n − k) − (m − l)(k − l).
+
+    (3) Type 3: m ≤ n + l − k − 1, γ > β2
+
+(87)     T (m + β, l + γ) ≥ d(k − l, n − m − 1) + d(l, n − (k − l)) + 2γ − β
+                          = k(n − k) − (m + 1 − l)(k − l) + 2γ − β.
+
+    (4) Type 4: 1 ≤ l, m ≤ n + l − k − 1
+(88)     T (m + β, l + γ) ≥ d(k − (l − 1), n − m) + d(l − 1, n − (k − l + 1))
+                          = k(n − k) − (m − l + 1)(k − l + 1).
+Proof. Type 2: When n − m ≥ k − l, γ > β, then
+(89) T (m + β, l + γ) ≥ d(k − l, n − m) + d(l, n − (k − l)) = k(n − k) − (m − l)(k − l).
+  We choose A = Rm × I × { (0, . . . , 0) }, where I ⊂ R has Hausdorff dimension
+                           | {z }
+                                 (n−m−1)×0
+β. For simplicity, we just write A = Rm × I. We want to find those V ∈ G(k, n)
+such that dim(πV (A)) < l + γ. We note that if V satisfies dim(πV (Rm )) ≤ l, then
+dim(πV (Rm × I)) ≤ l + β < l + γ, which means V ∈ Es (A). This shows that
+                     Es (A) ⊃ {V ∈ G(k, n) : dim(πV (Rm )) ≤ l}.
+By Lemma 36, the right hand side has dimension d(k − l, n − m) + d(l, n − (k − l)).
+This gives (89).
+Type 3: When n − m − 1 ≥ k − l, γ > β2 , then
+(90)     T (m + β, l + γ) ≥ d(k − l, n − m − 1) + d(l, n − (k − l)) + 2γ − β
+                          = k(n − k) − (m + 1 − l)(k − l) + 2γ − β.
+  We choose A = Aγ,β × Rm × { (0, . . . , 0) }. Recall that Aγ,β ⊂ R2 is the example
+                              | {z }
+                                   (n−m−2)×0
+discussed in Proposition 28. We will use R2 to denote R2 × {(0, . . . , 0)}. We use
+                                                            | {z }
+                                                                     (n−2)×0
+26                                 SHENGWEN GAN
+
+
+Rm to denote {(0, 0)} × Rm × {(0, . . . , 0)}. For each direction θ parallel to R2 , we
+use ℓθ to denote the line parallel to R2 but orthogonal to θ. We define
+Uθ = {V ∈ G(k, n) : dim(πV (Rθ⊕Rm )) ≤ l, dim(πV (Rm )) = l, dim(πV (R2 ×Rm )) = l+1},
+                    Vθ = {V ∈ G(k, n) : dim(πV (Rθ ⊕ Rm )) ≤ l},
+     Wθ = {V ∈ Vθ : dim(πV (Rm )) ≤ l − 1} ∪ {V ∈ Vθ : dim(πV (R2 × Rm ) ≤ l}.
+It is not hard to see Uθ = Vθ \ Wθ . To get some intuition on these sets, we suggest
+readers to look back at (84). Uθ , Vθ and Wθ are higher dimensional analog of
+RP1 \ {∗}, RP1 and {∗}.
+   Let Eγ,β = {θ ∈ S 1 : dim(πlθ (Aγ,β )) < γ}. We claim that if θ ∈ Eγ,β , then
+Vθ ⊂ El+γ (A). In other words, any V ∈ Vθ satisfies dim(πV (A)) < l + γ. We first
+note that Aγ,β ⊂ πlθ (Aγ,β ) + Rθ, so
+         A = Aγ,β × Rm ⊂ (πlθ (Aγ,β ) + Rθ) × Rm = πlθ (Aγ,β ) + (Rθ ⊕ Rm ).
+Therefore,
+           dim(πV (A)) ≤ dim(πlθ (Aγ,β )) + dim(πV (Rθ ⊕ Rm )) < γ + l.
+                            S
+   We see that El+γ (A) ⊃ θ∈Eγ,β Vθ . Vθ may intersect with each other, so we
+delete a tiny portion Wθ from Vθ , so that the remaining part Uθ = Vθ \ Wθ are
+disjoint with each other. Then we have
+                                            G
+                              El+γ (A) ⊃        Uθ .
+                                            θ∈Eγ,β
+
+To make the argument precise, we first apply Lemma 36 to see
+dim(Vθ ) = d(k − l, n − m − 1) + d(l, n − (k − l)) = k(n − k) − (m + 1 − l)(k − l).
+To calculate dim(Wθ ), we apply Lemma 36 again to see
+ dim({V ∈ G(k, n) : dim(πV (Rm )) ≤ l − 1}) = k(n − k) − (m − l + 1)(k − l + 1),
+and
+     dim({V ∈ G(k, n) : dim(πV (R2 × Rm )) ≤ l}) = k(n − k) − (m + 2 − l)(k − l).
+Therefore, dim(Wθ ) < dim(Vθ ) and hence
+             dim(Uθ ) = dim(Vθ ) = d(k − l, n − m − 1) + d(l, n − (k − l)).
+  Next we show Uθ ∩ Uθ′ = ∅ for θ ̸= θ′ . By contradiction, suppose V ∈ Uθ ∩ Uθ′ .
+By definition, V satisfies
+                                 dim(πV (Rθ ⊕ Rm )) ≤ l,
+                                 dim(πV (Rθ′ ⊕ Rm )) ≤ l,
+                                       dim(πV (Rm )) = l,
+                             dim(πV (R2 × Rm )) = l + 1.
+The first and third conditions imply πV (Rθ) ⊂ πV (Rm ). Similarly, the second and
+third conditions imply πV (Rθ′ ) ⊂ πV (Rm ). Noting that span{Rθ, Rθ′ } = R2 , we
+have
+                             πV (R2 × Rm ) ⊂ πV (Rm ),
+which has dimension = l, contradicting the fourth condition.
+       EXCEPTIONAL SET ESTIMATE THROUGH BRASCAMP-LIEB INEQUALITY                    27
+
+                                 F
+  We have shown that El+γ (A) ⊃ θ∈Eγ,β Uθ , which has dimension dim(Eγ,β ) +
+dim(Uθ )
+              = 2γ − β + d(k − l, n − m − 1) + d(l, n − (k − l)).
+This gives (90).
+Type 1 : When m ≥ 1, n − m ≥ k − l, γ > β+1
+                                         2 , then
+(91)      T (m + β, l + γ) ≥ d(k − l, n − m) + d(l, n − (k − l)) + 2γ − (β + 1)
+(92)                       = k(n − k) − (m − l)(k − l) + 2γ − (β + 1).
+  The trick is to write T (m + β, l + γ) = T ((m − 1) + (β + 1), l + γ) and then apply
+Type 2 construction. We will choose
+                        A = Aγ,β+1 × Rm−1 × {(0, . . . , 0)}.
+It will give the bound (91).
+Type 4 : When l ≥ 1, n − m ≥ k − l + 1, then
+(93)    T (m + β, l + γ) ≥ d(k − (l − 1), n − m) + d(l − 1, n − (k − l + 1))
+                         = k(n − k) − (m − l + 1)(k − l + 1).
+  The idea is to apply Type 1 construction. Note that here we do not have the
+condition γ > β, so we cannot directly apply Type 1. The trick is to write
+                     T (m + β, l + γ) ≥ T (m + β, (l − 1) + 1).
+Now our new l becomes l − 1, and our new γ becomes 1. We apply Type 1, and
+obtain (93).                                                             □
+
+
+  Given a = m + β, s = l + γ, we compare the lower bounds of these four types
+and see that
+                 Type 1 ≥ Type 2 ≥ Type 3 ≥ Type 4.
+Therefore, the strategy to find the lower bound of T (a, s) is by testing the require-
+ment of Type 1, Type 2,... one by one, and use the lower bound as soon as the
+requirement is satisfied. If neither requirement is satisfied, then we only expect the
+trivial lower bound T (a, s) ≥ 0.
+   For our application in Theorem 7, we only use Type 2 example.
+
+
+6.3. Proof of Theorem 7. We will use Type 2 bound in Proposition 37. We
+consider the case k ≤ n2 . Suppose β ∈ (0, 1], γ ∈ (β, nk (1 + β)]. By Theorem 1, we
+have
+                                         k
+(94)             T (1 + β, γ) ≤ T (1 + β, (1 + β)) ≤ k(n − k) − k.
+                                         n
+To obtain a lower bound, we use Type 2. We choose m = 1, l = 0, so a = 1 + β
+and s = γ. We can verify the condition that m ≤ n + l − k, γ > β. Therefore, we
+obtain
+(95)                           T (1 + β, γ) ≥ k(n − k) − k.
+This finishes the proof that
+(96)                           T (1 + β, γ) = k(n − k) − k.
+28                                     SHENGWEN GAN
+
+
+   Next, we consider the case k ≥ n2 . Suppose β ∈ (0, 1], γ ∈ (β, (1 − nk ) + nk β]. By
+Theorem 1, we have
+                                             k
+(97) T (n − 1 + β, k − 1 + γ) ≤ T (n − 1 + β, (n − 1 + β)) ≤ k(n − k) − (n − k).
+                                             n
+To obtain a lower bound, we use Type 2. We choose m = n − 1, l = k − 1, so
+a = n−1+β and s = k−1+γ. We can verify the condition that m ≤ n+l−k, γ > β.
+Therefore, we obtain
+(98)                 T (n − 1 + β, k − 1 + γ) ≥ k(n − k) − (n − k).
+This finishes the proof that
+(99)                 T (n − 1 + β, k − 1 + γ) = k(n − k) − (n − k).
+
+                                        References
+ [1] J. Bourgain. The discretized sum-product and projection theorems. J. Anal. Math.,
+     112(1):193–236, 2010.
+ [2] P. Bright and S. Gan. Exceptional set estimates in finite fields. arXiv preprint
+     arXiv:2302.13193, 2023.
+ [3] K. Falconer. Hausdorff dimension and the exceptional set of projections. Mathematika,
+     29(1):109–115, 1982.
+ [4] K. Fässler and T. Orponen. On restricted families of projections in R3 . Proc. Lond. Math.
+     Soc., 109(2):353–381, 2014.
+ [5] S. Gan. Hausdorff dimension of unions of k-planes. arXiv preprint arXiv:2305.14544, 2023.
+ [6] S. Gan, S. Guo, L. Guth, T. L. Harris, D. Maldague, and H. Wang. On restricted projections
+     to planes in R3 . arXiv preprint, 2022.
+ [7] P. Griffiths and J. Harris. Principles of algebraic geometry. John Wiley & Sons, 2014.
+ [8] W. He. Orthogonal projections of discretized sets. J. Fractal Geom., 7(3):271–317, 2020.
+ [9] R. Kaufman. On hausdorff dimension of projections. Mathematika, 15(2):153–155, 1968.
+[10] D. Maldague. Regularized Brascamp–Lieb inequalities and an application. Q. J. Math.,
+     73(1):311–331, 2022.
+[11] J. M. Marstrand. Some fundamental geometrical properties of plane sets of fractional dimen-
+     sions. Proc. Lond. Math. Soc., 3(1):257–302, 1954.
+[12] P. Mattila. Hausdorff dimension, orthogonal projections and intersections with planes. Ann.
+     Acad. Sci. Fenn. Ser. AI Math, 1(2):227–244, 1975.
+[13] P. Mattila. Fourier analysis and Hausdorff dimension, volume 150. Cambridge University
+     Press, 2015.
+[14] T. Orponen and P. Shmerkin. On the Hausdorff dimension of Furstenberg sets and orthogonal
+     projections in the plane. arXiv preprint arXiv:2106.03338, 2021.
+[15] T. Orponen and P. Shmerkin. Projections, Furstenberg sets, and the ABC sum-product
+     problem. arXiv preprint arXiv:2301.10199, 2023.
+[16] Y. Peres and W. Schlag. Smoothness of projections, Bernoulli convolutions, and the dimension
+     of exceptions. Duke Math. J., 2000.
+[17] K. Ren and H. Wang. Furstenberg sets estimate in the plane. arXiv preprint
+     arXiv:2308.08819, 2023.
+
+  Department of Mathematics, Massachusetts Institute of Technology, Cambridge,
+MA 02142-4307, USA
+  Email address: shengwen@mit.edu
+
