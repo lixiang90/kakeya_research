@@ -49,4 +49,8 @@
 | vertical_affine_band_coarsens_without_slope_cost | 任意slopeR的verticalband粗化误差总O(s) | 实际误差有(1+|R|)s；R22终稿先传Euclidean vector tube cap再由boundedbox转band | 用Euclidean增厚或另控rich-fit slope，不能无费用称bandcap继承 |
 | source_dyadic_Lip_is_Euclidean_Lip | 原dyadic oscillation可直接套全局Euclidean Lipschitz scalarization | 相邻dyadic边界允许跳变；R22用bounded-range版本真实付b^-4 | 只用已付bounded/timepacking；不得恢复便宜Lip版本后抹费用 |
 
+| large_tau_deletes_G_at_unchanged_mesh | 仅tau>rho^(3−ζ1)即可在原w=K[rho+rho^(3+eps0)/tau]删G | R23原PDF101中raw G误差仅K rho³，未被tau*w覆盖；可保G或用wL=K[rho+rho³/tau] | 重新付mesh及nonfit/稳定化阈值；此中间误差责任不反源主定理 |
+| dense_Q_line_is_S_line_or_closed_cycle_prior | 原dense c的Q近线就给S同线，或Fubini后所有新cycles仍近线 | R23只恢复normal F的quadratic fit；G/right carrier仍自由，原c在T²不保密度 | 真正translation/cycle闭包估计；不是完整source反例或已否定全rank二分 |
+| bounded_FG_gives_free_coarse_single_values | bounded F/G可直接从fine B取w代表且保原nonfit与g | R23 normalized F的cell振荡只知K(rho²/tau)w，可能大于w，G无细Lip | 保原weighted indices，或另证同时保g及全部coefficient-weighted quadratic caps的选择 |
+
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

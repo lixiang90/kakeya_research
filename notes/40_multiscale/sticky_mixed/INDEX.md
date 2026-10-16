@@ -23,4 +23,11 @@ N5-MIXED42-Q01 是完整实际 d5/k4/ell2 的二次 alternative，尚未解决�
 | R0022_fixed_scale_affine_preparation.md | 真正fixedρ LOCAL-AFF，K_src/K_prep隔离；支付R21准备gate，named高级输入保留 |
 | R0022_next_mixed32_nonquadratic_target.md | 唯一下一actual vector非二次L/polarization与rank/mass机制，尚待证 |
 
+| R0023_nonquadratic_source_audit.md | 原nonquad特有r下界、τpatch与physicalKT、largeτ/G误差及粗B选择责任 |
+| R0023_rank_and_prior_counterattack.md | 原cycle点球cap、全部Hcycles共同线强特例；不自动MNL/二维增长 |
+| R0023_weighted_cycle_concentration.md | 任意dense cycle近affineline的原T/g预算、smallτ direct-H点球排除 |
+| R0023_next_mixed43_angle_target.md | 下一唯一actual(4,3)原slab角先验quadratic scalarization，未证 |
+
 条件全局结论另存 results/reviewed/MIX-001_global_common_kernel_exclusion.md；它是既有三维定理应用，不宣称新颖性或重大结果。局部预算与边界另存 MIX-002_local_projection_endpoint.md。PCT-001有限引理、MIX-003二次链、SCAL-001/AFF-001实际准备分别登记，不能升级完整Kakeya或重大性。R20局部mixed42冻结；R22支付准备后下一转actual非二次，仍不得免费scalar化vectorY。
+
+R23 NQP-001只登记原质量接口；mixed32完整非二次未证。无输入rank局部重写停止，下一转actual mixed43而不免费scalar化二维Y。
