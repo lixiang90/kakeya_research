@@ -1,47 +1,49 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0008。长期Goal active。尚未解决高维Kakeya，没有新维数下界或经文献确认的重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0009。长期Goal active。尚未解决高维Kakeya，没有新维数下界或经文献确认的重大中间结果。
 
 ## 恢复与宏观状态
 
-R0007已同步0a6821588209f257fed4d0d838d37b8792b4e9bd；R0008开轮工作树干净，上一goal turn分类progress。先读GOAL、STATE、ROADMAP、results/registry.json及最近正式轮次；运行python scripts/context.py，不从某份草稿末句恢复。
+R0008已同步51c5f320d9760ec5d54e8d3c88e57b29566e2ce4；R0009开轮工作树干净，140文件回执已核，上一goal turn分类progress。先读GOAL、STATE、ROADMAP、results/registry.json及最近正式轮次；运行python scripts/context.py，不从局部草稿末句恢复。
 
-八轮的条件工具和路线排除不是数学完成。R0008不仅否定generic j3 horizon上界的证明输入，还给出H>L的完整形式模型，已立即宏观审视：research/reviews/R0008_macro.md。停止改善该quadric toy的精确指数，转向带真实方向来源的正向输入。
+第九轮按三轮规则作宏观审视，见research/reviews/R0009_macro.md。九轮有条件工具与路线排除，但最终数学目标仍未达到。本轮完成带真实方向成本的正向finite输入；下一任务检验有来源动机的零深度密度条件是否足以恢复受限completion，禁止继续优化旧quadric toy。
 
-文献库7篇PDF及全文、元数据和部分官方源码，本轮无新增下载。核心paper.pdf为175页四维稿；整篇证明尚未全面独立验证。原稿实际j=2，本轮j=3是字面拟推广，不反驳原四维论文。Guth2025介绍p20与Zahl pp11–12的quadric数字差异已在R0007核对，未采用有疑点的强断言。
+文献库仍7篇PDF及全文、元数据和部分官方源码；本轮检索记录literature/metadata/R0009_search_notes.json，无新PDF下载。paper.pdf为175页四维稿，整篇证明尚未全面独立验证；原稿实际j=2，j=3仍是拟推广。
 
-## R0008已核验结果：HOR-001
+## R0009：DIR-003已核验的条件桥接
 
-- 完整8维有限分段常密度tempered先验：可见quadric δ-grid均匀index概率约δ³，六系数独立δ盒平滑；完整visible block与有限1/2-Cantor隐藏C、极细均匀W三组独立。native P*=w，B=1，未将incidence质量1/4归一化。
-- 固定内层时间g_t≤Cδ^-1，支撑体积≤Cδ；积分给 sampled typical lower，不能声称所有支撑点都有lower。隐藏bins给典型n(r)≈log δ^-1 a_r^(1/2)，f(r)=r/2−M；全速度bin两尺度计数给S1 angular cap。形式定义允许f(0)=−M。
-- 所有正宽度、所有frame/affine center的原概率cap为νvis(P)≤Cδ^-1/2 J。短时间块q外推付q^-3，矩阵SVD付K³。不得将它免费替换成归一化conditional cap。
-- 对任意二次test及任何assignment/selection，同一原product prior上的一元small-value/derivative估计给m/q≤K^C a^(1/2)νvis(P_I)。原真实floor给m/q≥K^-1δ^-1a^(1/2)J，因此q³≤CK^Cδ^(1/2)，H≥M/6。
-- 直接构造q=δ的真实终端atlas，good midpoint cells×原C-bins质量与n(r)J匹配，current observation给O(1) own-list，得到H≤M。L=1、M=12时2≤H≤12；进一步inverse-subpower选择与subsequence不能逃过lower。
+固定bounded四维graph chart，每条至少δ^(-1+η)个time marks，每个δ方向格的原正权总和≤α，则
 
-证明入口results/reviewed/HOR-001_smoothed_quadric_high_horizon.md。prior/profile、spatial cap经独立交叉审查，任意test/floor/显式atlas另经root逐步审查；见research/reviews/R0008_*。内部复核，未经外部同行评审，不声称新颖性。
+Σ_index ω_index #J_index ≤ Cε αδ^-ε #E。
 
-该数据没有原始full-slope subpower来源，也不含全部方向。它否定无来源条件的formal j3 H≤L模板，不是Kakeya反例、不是原j2定理反例，不构成重大中间结果。
+对任意正权、重复indices、极小总质量和任意权重跨度一致。**深输入为SRC-001，条件于整篇四维proof及其全部输入正确**；方向放大/加权化约自身初等，不声称新颖性、重大结果或新的几何界。
 
-## 保留工具与冻结版本
+- 有界slope平移对应S_a(t,y)=(t,y+t a)，保持time。K≤Cδ^-3/M个copies填固定正方向体积，抽出≈δ^-3 separated directions，重分固定倍网格只损失常数，union cells≤CK#E。实际调用SRC-001后得到对所有稀疏M一致的#E≥c Mδ^(-1+σ)。
+- 同色方向格任选原代表，保留其自己的marks，由unweighted bound控制非空格数；再用每格质量≤α及#J≤δ^-1得到加权式。无需权重分层或以小总质量归一化。连续law可用正质量格的实际代表。
+- 物理visible-slope密度≤A·Lebesgue推出α=C Aδ³；原子bin cap不等价于实际Lebesgue密度。R0008模型A≈δ^-1必须支付该代价。
+- 专用source zero-depth调用：A subpower时排除固定幂密度增益，A=N0^κ时只给κ成本后的上界。generic group比较只给n(L)q³≲A加保留比例及损失，不输出违反greedy stopping的plank。
+- normalized parent的visible ceiling成本A J/[q³ν(parent)]；full(V,W)成本另为C J/[q⁴ν(parent)]。未归一化restriction与归一化conditional law不能混用。
 
-保留DIR-002 truefloor加权预算、ENT-002同prior mixed entropy、FLAG-002条件外积夹逼/对齐、PLK-002固定维度转换、PLK-001全框QCAP及SRC-001方向丰富finite条件读出。SRC-001以整篇四维proof及输入正确为条件，不能仅从Hausdorff定理陈述读出。
+入口results/reviewed/DIR-003_weighted_direction_mass_input.md；两份证明互相独审，root另核全部接口与连续law。review见research/reviews/R0009_*。内部复核，未经外部同行评审。
 
-R0006 FLAG-003是原H0/投影H=L；FLAG-001的d1边界例horizon未计算。不得与HOR-001混同。
+## 必须保留的失败结果与工具
 
-冻结：满维投影加一、无条件次数恢复、guard-only旧窗口、小全局palette、无损native-to-W、双短轴自动matching/无损投影、无方向WP4直接加维，以及无source j3通用completion/H≤L模板。重开须有排除明确模型的新假设，并检验normalization、coarsening、completion及selection闭合。初始raw full-slope ceiling不能免费送给normalized optimizer worlds。
+HOR-001：formal j3 full8、d1/2、S1模型可有M/6≤H≤M；L1/M12为2≤H≤12。它否定无来源generic H≤L，本例n(0)=N0^M，非真实source subpower full-slope law，不反驳原j2论文或Kakeya。停止改善此toy的精确H。
 
-## 下一轮唯一任务：N4-DIR-01
+保留DIR-002 truefloor预算、ENT-002同prior mixed entropy、FLAG-002条件外积/对齐、PLK-001全框QCAP、PLK-002固定维度转换、SRC-001及DIR-003。FLAG-003是原H0/投影H=L，FLAG-001的d1边界例H未算，不能混同。
 
-在SRC-001方向丰富finite读出（条件于整篇四维proof正确）之上，证明或否定带明确线性方向bin质量上界α的加权输入。固定bounded四维graph chart，每个δ方向bin总权≤α；若三维visible-slope物理密度≤A·Lebesgue，则α=C Aδ³。每个index保留至少δ^(-1+η)个time marks，目标
+冻结：满维投影加一、无条件次数恢复、guard-only旧窗口、小全局palette、无损native-to-W、双短轴自动matching/无损投影、无方向WP4直接加维、无source j3通用completion模板。重开须有排除明确模型的新假设，不可仅换名。初始方向密度不能免费送给normalized optimizer。
 
-Σ_index ω_index #J_index ≤ C_ε α δ^(-ε) #E，即物理密度单位下C_ε Aδ^(3−ε)#E。
+## 下一轮唯一任务：N5-HOR-ZERO-01
 
-要求对任意权重、重复indices及极稀疏方向质量一致。不能回到已否定的无方向WP4；HOR-001仍满足大A≈δ^-1，但须支付该幂成本，不满足subpower A来源。拟检验direction-bin抽样/去重及随机旋转复制补足near-full方向，必须处理m/(αδ^-3)极小、graph/time转换、shading与ε/η量词，以及SRC-001复制后重分箱/选择接口。全程跟踪实际A，不将归一化parent免费设A=1。独审发现草案漏δ³会成为平凡计数，已修正且未将其算作结果。
+检验明确的新候选：literal j3 version2 homogeneous exact problem属于C(d<1)，并有**实际n(0)~log1**时，是否必有H≤L？S、angular范围与所有原exact/chart/floor/knowledge量词固定。证明，或给满足该额外条件的完整反模型；不得仅把f整体减常数当作物理归一化。
 
-一主轮给出严格条件桥接或明确失败环节；这是正向source输入检验，不预先声称新几何或重大结果。如成立，才逐调用核对实际source中哪些部分可替代；不因此宣布所有极值闭合。
+动机已经核对：native small-value/selected derivative及Lemma2.9使每个exact base只有subpower个单位hidden bins；bounded base、总inverse-subpower selected mass与homogeneity给n(0)≥inverse-subpower。真实source的R9 zero-depth upper再给n(0)~log1。Lemma2.13的prepared true parents明确也有n′(0)~log1。此条件排除HOR-001，未见一行反例，但本候选尚未证明。
+
+进一步选择与coarsening保留n0指数，prepared true normalization保留它；**known但未必true atlas的normalization没有这个保证**，原4.2 extension即用到这类atlas。故即使候选成立，也不能直接宣称restricted optimizer闭合。R10只检验此主命题，一轮给实质证据或明确反例；不得不断追加无来源的假设逃避失败。
 
 ## 同步与执行
 
-R0008以R0007为父增量同步；完整tree、全部文件blob SHA及SHA256、同一local/remote commit和干净树的回执写tmp/sync/R0008.json。下一轮先查回执及git状态。新增PDF须精确字节上传；create_tree使用已核验base及变化条目，随后比较完整tree。CLI网络不可用时用已连接GitHub API，不force push。
+R0009以R0008为父增量同步，完整tree、全部blob/path/mode及SHA256、同一local/remote commit和干净树的回执写tmp/sync/R0009.json。下一轮先核回执及git状态。create_tree用已核验base及变化条目，再比较完整tree；CLI网络不可用时用已连接GitHub API，不force push。
 
-每轮先写working_spec；三轮、关键反例或两轮无信息增益时宏观审视。系统Python中文用-X utf8。长期Goal仅按GOAL.md数学完成标准审定，当前active。
+每轮先写working_spec；三轮、关键反例或两轮无信息增益即宏观审视。系统Python中文用-X utf8。Goal只按GOAL.md最终数学标准审定，当前active。
