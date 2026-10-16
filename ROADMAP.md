@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0009三轮宏观审视已完成。无新Kakeya维数下界，长期Goal未解决。
+更新2026-10-17，R0010关键候选失败后的即时宏观审视已完成。无新Kakeya维数下界，长期Goal未解决。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -12,7 +12,7 @@
 | G | 原生与隐藏熵 | ENT-002正确，NAT-001剩余W信息 | 无损桥接frozen |
 | H | 多轴flag | 条件外积工具保留，current signature及投影有严格障碍 | generic自动匹配/投影frozen；先解决前端初始化 |
 | I | 四维加权plank | PLK-001严格否WP4；PLK-002转换无新几何，专用source调用另论 | 一般加维版本frozen |
-| J | j3 horizon与前端completion | HOR-001否generic上界；实际n0~1排除该例，prepared true parents有此条件 | 唯一优先N5-HOR-ZERO-01，受限H≤L仍未证；generic版frozen |
+| J | j3 horizon与前端completion | HOR-002在实际f≡0/S1下仍M/6≤H≤M，n0-only及泛类有限k失败；actual方向成本κ=M | 唯一优先N5-DIR-COST-01，检验带真实方向成本的uniform有限性；旧修补frozen |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
-DIR-003已条件证明稀疏/任意权重一致的Σω#J≤Cε αδ^-ε#E，α=C Aδ³，不能用于无方向WP4。下一任务检验literal j3 C(d<1)另具实际n(0)~log1时H≤L；此条件有source zero-depth及prepared true parent动机，尚未证明。known非true atlas的归一化不保此条件，restricted optimizer闭合仍待另证。失败指纹见notes/50_counterexamples/INDEX.md，审视模板见research/reviews/TEMPLATE.md。
+DIR-003保留为有实际方向格质量的条件finite工具；HOR-002已否n0-only completion，不再继续优化toy。下一任务检验每world实际visible-slope ceiling≤N0^(κ+o1)时H≤C_{d0,S,η}(L+κ)，常数独立任意tempered复杂度。原law、parent Jacobian与条件质量成本必须保留；重算旧Jacobian不算进展，κ不能免费归零。若一主轮后该方向也失败，冻结该completion策略、转向不同几何路线。失败指纹见notes/50_counterexamples/INDEX.md，审视模板见research/reviews/TEMPLATE.md。

@@ -21,5 +21,6 @@
 | determinant-determines-each-short-axis | 总det窄度决定每根短轴的累计窄度 | FLAG-002：diag交叉缩放反例；外积只能条件性补充 | 同步合法外积极值和实际谱隙闭合 |
 | arbitrary_4d_plank_cap_gives_dense_union | 所有全时框加权cap即可给四维D^ε阴影估计 | PLK-001全框QCAP及固定权δ^.5，满marks访问D^(7/2)但cells≤CD³ | 真正排除quadric/方向退化的source条件；加权与mesh等价改写无效 |
 | source_free_j3_has_terminal_horizon | literal j3完整tempered、d<1及S1角cap保证H≤L | HOR-001：full8平滑quadric×有限1/2-Cantor，任意二次chart真实floor迫H≥M/6，显式atlas给H≤M；M>6L | 保留真实full-slope/多项式来源并验证操作闭合；不得仅重写greedy输入或改善toy指数 |
+| zero_depth_density_one_restores_j3_horizon | 上述formal j3类另有实际n0~1就保证H≤L或有限统一k | HOR-002：内部quadric-level mixture加一次性随机hidden标签，actual f≡0、S1，全部二次tests统一界迫M/6≤H≤M；M任意大 | 冻结n0-only修补；改研究实际祖先方向成本，不能靠density平移或另加同义统计条件 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。
