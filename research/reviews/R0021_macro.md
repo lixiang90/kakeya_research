@@ -1,0 +1,19 @@
+# R0021 opening macro: different actual mixed branch and bounded degree
+
+2026-10-17. Verified local HEAD/origin main 73d444cc1990ae51d6763ae559fe471820cfc23a, clean; R20 receipt has 319 files and exact import complete. Recovery entries read; context.py run at opening. Previous Goal turn is progress: actual-source parent cancellation/endpoint and strict interface evidence changed the next action. It did not achieve a new dimension bound or certified major intermediate result.
+
+The long Goal is unchanged: Euclidean Kakeya n>=5/general, a genuine full-direction counterexample, or independently reviewed major mathematical progress with primary-source comparison. Elementary finite lemmas and exclusions alone do not meet this standard. The complete four-dimensional inputs have not all been independently re-proved.
+
+R20 froze local mixed42/GWZ at a paid kappa endpoint. No new parent/clock/threshold variation is authorized as a fresh main task. Frozen matrix W/BSG, CP/PM and smooth affine lifting routes remain frozen. R21 instead tests the actual d5/k3/ell2 quadratic branch: scalar Phi and scalar affine velocity r, vector hidden set in R2 with tube-KT. There is no orthogonal row after nonzero r is established, but scalar interval filling no longer applies.
+
+The concrete new mechanism is finite-degree polynomial curvature: actual Section22.4 yields a vector cubic. A finite dense sample of a bounded-degree curve lies in a short tangent tube; original tube-KT may force its oscillation down to its error width. This is an additional geometric input and a different actual branch, not scalar-to-vector notation or an equivalent lambda/D criterion. It assumes no C2 regularity for arbitrary source functions.
+
+Root must prove/refute the precise PCT finite lemma and then pay all source interfaces, not stop at an unrelated convenient lemma. Audit A checks original V/J/L mass, vector quadratic normalization, scalar r nondegeneracy and Lemma19.4. Counterattack B tests the finite statement, its discrete density/coarsening, and later source application. Maximum two complementary agents. Only assigned files are edited by agents.
+
+One main round is authorized. It must produce a strict proof/counterexample or a materially new actual-source gap. Do not register an unproved branch as reviewed; a conditional application must name every unaudited input and all parameter order. If the finite statement works but source-scale costs do not, retain the lemma with its exact scope and macro-select a substantive next action; do not relabel the unresolved interface as success. Archive and verify GitHub synchronization before ending this round. Goal remains active.
+
+## Closing decision
+
+The finite target's original uniform-gamma constant placement was strictly refuted; the corrected inside-power form has a self-contained proof, an independent proof and independent audit. It genuinely pays the vector-Y tube-KT cubic step in physical source units. Under the explicit fixed-scale affine/nondegeneracy and lawful graph preparation, the rest reaches whole tildef slow variation and named19.4 positive CW gain. This is proper conditional progress, not an entire branch or dimension theorem.
+
+The actual fixed-scale globally dense affine preparation remains unpaid; its issue is logical/source scope, not another polynomial constant. One further main round is justified by the newly proved PCT and usable conditional chain: prove/refute LOCAL-AFF by inspecting fixed-scale proof21.1, time restriction and a quantitative time-preserving scalarization of the same observed A/B graph. Precise next spec is notes/40_multiscale/sticky_mixed/R0021_next_affine_localization_target.md. Do not simply negate the all-scale statement, assume generic projection preserves arbitrary A, or continue PCT parameter polishing. Failure to obtain new evidence triggers immediate macro; the long Goal and previous frozen routes remain unchanged.

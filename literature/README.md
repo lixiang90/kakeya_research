@@ -31,3 +31,5 @@ R0018新增Hochman1503.09043v2（98页，官方版本2017-06-05），现19篇PDF
 R0019无新PDF，仍19篇。补核GGW2211.09508v2 Theorem2.1（PDF3图）和GWZ2601.14411v2 Definitions3.1–3.5/Lemma3.7（PDF7图），原权全局投影实际用后者，未重跑完整证明或Lean。WZ2609.22035v1 §19/21/22的量词、三维horizontal原质量和PDF98–99逐算式审查存metadata/R0019_source_check.json；(192)后过强指数已有保守修复，不是四维定理反驳。官方版本2026-10-17复核GGW仍v2、GWZ仍v2（Oct11）、WZ仍v1，未声称穷尽前沿/认证新颖性。
 
 R0020无新PDF，仍19篇，无新在线版本声明。补读WZ Def3.9/map(20)/Obs3.2–3.4及实际配置点AD、degree、marks尺度，直接重算五维parent抵消和投影端点，不把印刷R3声明免费当任意维定理。GWZ Lemma3.7的density门槛另有自包含bush校准。精确范围metadata/R0020_source_check.json；未重证全文，没有完整mixed分支或维数结果。
+
+R0021无新PDF，仍19篇。重核WZ Def17.3/17.4的physical tube-KT baseδ、19.4的cluster/CW范围及22.1/22.4计数；vector polynomial机制采用自包含PCT，不声称source已有向量quadratic定理。原21.1印刷all-scale声明和fixed-scale全局准备责任分开。官方arXiv history本日仍仅v1；有限一手检索空结果不认证新颖性。精确read/search scope见metadata/R0021_source_check.json。

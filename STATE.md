@@ -1,35 +1,35 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0020。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0021。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
 
-## 恢复与宏观
+## 恢复、宏观与同步
 
-R20起点R19 commit 55a6e6b6d237399c7bf4ad12ae82e241e04b86d3，307文件回执、本地/远端同commit与clean已核。收尾ignored回执tmp/sync/R0020.json须核remote完整tree、本地精确import及全部blob字节/SHA256。下轮先核回执/git，再读GOAL/STATE/ROADMAP/results/registry/最新round，运行python scripts/context.py（输出可重定向tmp）。
+R21起点R20 commit 73d444cc1990ae51d6763ae559fe471820cfc23a，319文件回执、local/origin同commit和clean已核。已执行定期opening macro，R20归类progress。本轮收尾回执为ignored tmp/sync/R0021.json；下轮核remote/local精确commit、完整tree与全部blob字节SHA256，再读GOAL/STATE/ROADMAP/results/registry/最新round，运行python scripts/context.py（可重定向tmp）。
 
-R19为有边界条件归约/既有3D输入应用进展；R20为真实parent抵消、source端点和严格接口障碍，均不是最终重大结果。R19只准一轮local extension，现已执行R20提前macro并冻结。R21仍须定期macro，先审下一候选的source适配，不从上轮末尾继续参数微调。
+R21是有限几何新输入和实际-source条件链的进展，非最终重大结果。local mixed42/GWZ继续frozen；没有parent/clock/threshold改名。R22只准一轮实际fixed-scale affine准备攻击，具体下一spec；无实质新证据就macro，不在条件间迭代。下次常规定期macro为R24，遇新主缺口/失效提前审视。
 
-## 唯一下一主任务：N5-MIXED32-Q01
+## 当前N5-MIXED32-Q01：PCT已付，条件二次排除已付，实际准备仍open
 
-精确待证spec：notes/40_multiscale/sticky_mixed/R0020_next_mixed32_polynomial_target.md。改攻实际d5/k3/ell2 quadratic alternative，horizontal grain2、scalar Phi、vector tildeY∈R2且tube-KT指数1-gamma。u、r标量，v/a/b为二维列，v=a+bu；非零r能控制整列b，没有mixed42的正交row残余。
+真实d5/k3/ell2：horizontal grain2、scalar Phi、vector tildeY∈R2，u/r标量，v/a/b二维列，v=a+bu。PCT-001修正版有限引理有root自包含proof、B独证/反例和A独审：
 
-首个可证伪输入PCT：有限次数向量polynomial在theta-dense离散times上的像落N_eY，e>=d0*osc(P)，是否由tube-KT给osc(P)/e<=poly(K,theta^-1)^{2/gamma}？候选用derivative sublevel、长度sqrt(e/R)窗口和Taylor直tube计数，必须审离散badinterval边界/密度/尺度。它和整个source应用都**尚未证明**，不要当已有引理。实际22.4产生cubic可用有限degree，不把任意dyadicLip曲线假设C2。
+    osc(P)/e <= [C(D,m) K theta^{-C(D,m)}]^{2/gamma}.
 
-随后才核原V/J/L质量、同一个y/z'/Phi pair的vector P、e=K*tau*rho+delta+rho*Delta、d0=delta/rho、tau稳定细化、(189)/(190)、scalar r非退化和保守整列慢变，最后19.4。named固定尺度affine alternative必须正确条件化，不能allscale21.1形式否定免费提供。只解此分支也不解五维/general-to-sticky/Hausdorff。最多两个互补代理，一轮无新输入即macro。
+原草案C在幂外且要求uniform gamma的精确形式已被严格有限二进网格反例否定：m=D1、gamma1/(2n)、e=d2^-n、P=t、B=Y全网、K=2^gamma，原式迫2^n<=4C。不能把它追溯说成已证。修正版通过derivative sublevel有限分支、离散边界、preimage重数和sqrt(e/R)时间窗的Taylor短tube计数证明；没有假设一般dyadicLip源函数C2。
 
-## R20 MIX-002：已付source预算及精确停止位置
+MIX-003是明确固定尺度准备下的条件排除。原horizontal2 V/J/L与同vectorY graph/code原权均付；先固定gamma，直接physical tildeY的tubeKT base delta，domain归一d=delta/rho。quadratic系数插值先给全windowR<=K rho²，所以dR<=delta<=e=K(tau*rho+delta+rho*Delta)。PCT给vector coefficients，合法stable refinement得tau<=rho^{3+epsilon/2}。whole(r,s)非退化加分离times先推scalar r非零，再E+swap控制整个b；原坐标exact Δa=E+(b'−b)u控制a。sigma=rho^{1+epsilon/4}入named19.4给正CWgain delta^{C_gamma loss/gamma}rho^{-kappa epsilon/4}。不用原PDF99未补证的过强row指数。
 
-notes/40_multiscale/sticky_mixed/R0020_parent_packet_audit.md：原good-q的incidence和Phi/xi coherence给K-dense真实h-parent子族；完整parent mass h4与四空间轴det h^-4真抵消。保持clock仅一个h-window，lambda≈h而稳健s>=h^{1+c epsilon}；GWZ bush必要etaG<=epsG/2，不能直接套dense shading输入。
+完整source高级inputs未全文重证。尤其globally dense fixed-scale wholef affine/nondegeneracy准备与stable原graph的全局闭包仍明确列依赖；原印刷21.1allscale声明的逻辑否定不能免费提供它。完整N5-MIXED32-Q01仍open，不能从有限PCT或条件MIX003升级整个branch。
 
-追加clock/h得到unit短管，whole-old-tube continuation给projected D<=K h^-2；原点AD5-kappa、parent内degreeκ和同原marks双计数进一步给D_s<=K s^-kappa、lambda_s>=K^-C，原weights/coarserepresentatives均付。端点lambda/D≈s^kappa没有strictgap；scalar tildeY跨时间coarsening upper仍另需付，即便最有利upper也不足。point AD的cover单步被Leb4×Cantor校准为sharp，非完整source反例。
+## 唯一下一主任务：实际fixed-scale affine localization
 
-R0020_local_transfer_counterattack.md：真线(d+ta,tb,(1+t)c,td,t)保环境full4 directions/joint4AD/wholeCW，真q自然mass≈h²，full3grain和原共同marks。指定投影保原权合并得最优D≈h^-1、lambda≈1、union≈h；h=s^{kappa*}时单尺度deficit恰被耗尽。缺源跨尺度薄集AD和宏观Phi-AD（已量化），不是实际mixed/source/Kakeya反例。
+notes/40_multiscale/sticky_mixed/R0021_next_affine_localization_target.md。对每个原rho-window最大affinefit cardinal M_J，欲证κ>ζ及smallCW迫Σ M_J>=delta^{theta_aff}|Z|，再合法删除whole velocity过小windows。须提取proof21.1在固定rho真正使用的输入；原同observed A/B图的coarsening、time restriction和两端projection都付。
 
-因此完整N5-MIXED42-Q01仍open，**local GWZ extension frozen**。重开须新增实际Phi/xi/跨窗口原质量等机制，严格改善端点或额外marks；不可改parent/clock/threshold/lambdaD名称继续。MIX-001全局固定frame任意boundedbeta排除仍保留，是GWZ既有定理条件应用非重大结果。
+新候选为保留时间/observable第一坐标的Pi_lambda(x,xi)=(x,lambda·xi)，用原xi coherence核A每个coarse x的fibre cap，避免未经支付generic projection保持任意A-cardinality。B的vector affine nonconc是否给某lambda scalar tube nonconc，用三时刻residual/rich triples的真实概率检验。该机制尚待证明，不是R21结果，不重开CP/PM/WBSG/freeprojection。删times还需核Def17.2 coarse跨时间Y-union AD及allowed scales，不能只查逐层cardinality。
 
-## R19源修复与其他长期边界
+## 其他保留与冻结
 
-R19在actual mixed42原V/J/L保条件tau-collapse，分离times给|r|>=K^-C，E+swap与anchor给parallel b慢变rho^{1+c epsilon}、a慢变rho²。PDF99由(192)+(195)写更强rho^{2+epsilon/2}没有被显示的Delta/rho支持；保守修复够原scalar19.4正CW增益，非四维结论反驳。完整175页及WZ高级输入未独立全文重证。
+MIX001全局commonkernel任意boundedbeta是既有3D定理条件应用。MIX002原good-q选K-dense parent，mass h4抵消空间det h^-4；clock不缩短窗lambda不足GWZ，clock缩后真实D_s<=K s^-kappa和lambda>=K^-C只有端点。局部mixed42/GWZ冻结，完整mixed42仍open，重开须新实际source结构严格改善端点/marks。R20满方向真管counter缺source薄集AD/Phi；point AD-Cantor只校准cover步，都非source/Kakeya反例。
 
-N5-STICKY-MATRIX-01仍open；MNL001只排linewise/commonimage/pencil且依赖13.5和显式small epsilon0。R17 Y-only additiveclosure、R18 W/BSG/common-plane局部迭代冻结；抹g独立卷积counter不满足SM，不是fullsource。CP/PM统一shading正gain等价，局部改名冻结。LIFT005 smooth空间affine/原clock窄类已完成冻结；HOR003 visiblecost completion冻结；NAR局部反例不反主NG。SRC001/DIR003条件全四维输入、DIR002/ENT002/FLAG002/PLK001/002保留。
+N5-STICKY-MATRIX-01 open；MNL001只排linewise/commonimage/pencil且依赖13.5和small epsilon0。Y-only additiveclosure、W/BSG/common-plane冻结；抹g卷积counter不满足SM。CP/PM统一shading正gain等价，局部改名冻结；LIFT005 smooth空间affine/原clock窄类、HOR003 visiblecost completion、NAR直接捷径均冻结。SRC001/DIR003条件全四维、DIR002/ENT002/FLAG002/PLK001/002保留。175页及WZ高级inputs未独立全审。
 
-全部失败指纹见notes/50_counterexamples/INDEX.md和registry，勿由最后toy恢复方向。文献19篇原PDF/全文/bytesSHA256保留，本轮无新增下载、无新版本声明；精确局部阅读范围见metadata/R0020_source_check.json。每轮完整归档、独审、macro和安全GitHub同步，逐path/mode/blob验证、不force、不重复请求已授权同步。Python中文用-X utf8。
+失败指纹见notes/50_counterexamples/INDEX.md和registry；不从最后toy恢复宏观。文献19篇原PDF/全文/校验保留；R21无新PDF，官方WZv1重查及有限检索范围见metadata/R0021_source_check.json，不认证新颖性。每轮归档、独审、macro和安全GitHub同步，逐path/mode/blob核、不force、不重复请求已授权同步。Python中文用-X utf8。

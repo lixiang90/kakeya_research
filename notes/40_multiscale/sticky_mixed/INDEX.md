@@ -12,5 +12,10 @@ N5-MIXED42-Q01 是完整实际 d5/k4/ell2 的二次 alternative，尚未解决�
 | R0020_local_transfer_counterattack.md | 满方向真管族的局部投影D≈ρ⁻¹、λ≈1；明确缺source薄集AD与宏观Φ |
 | R0020_projection_budget_and_stop.md | 原clock的GWZ density障碍、zoom端点与提前宏观冻结 |
 | R0020_next_mixed32_polynomial_target.md | 唯一下一候选d5/k3/ell2向量多项式/tube-KT，有限命题与source应用均待证 |
+| R0021_polynomial_tube_KT.md | 修正版finite PCT自包含证明，常数在2/γ幂内；离散/短tube费用全部保留 |
+| R0021_polynomial_counterattack.md | 原uniformγ幂外C精确式的有限网格反例；修正版独证与核验 |
+| R0021_mixed32_source_audit.md | 原horizontal2 V/J/L、同vectorY、physical δ-base和条件19.4接口 |
+| R0021_conditional_quadratic_exclusion.md | 明确fixed-scale affine/nondegeneracy准备下mixed32条件二次排除；非完整branch |
+| R0021_next_affine_localization_target.md | 唯一下一任务支付实际fixed-scale准备、原time restriction及scalarization；均待证 |
 
-条件全局结论另存 results/reviewed/MIX-001_global_common_kernel_exclusion.md；它是既有三维定理应用，不宣称新颖性或重大结果。局部预算与边界另存 MIX-002_local_projection_endpoint.md。固定Cantor运输不是实际source的免费假设，local近似形式也不能直接当global精确形式。R20已经冻结local mixed42/GWZ extension；下一候选改实际mixed32，不继续端点改名。
+条件全局结论另存 results/reviewed/MIX-001_global_common_kernel_exclusion.md；它是既有三维定理应用，不宣称新颖性或重大结果。局部预算与边界另存 MIX-002_local_projection_endpoint.md。PCT-001有限引理及MIX-003条件应用分别登记，不能相互升级scope。固定Cantor运输不是实际source免费假设，local近似形式不能直接当global精确形式。R20冻结local mixed42/GWZ；R21付新vector polynomial机制，下一只审未付固定尺度准备，不继续端点改名。

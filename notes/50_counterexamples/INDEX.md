@@ -43,5 +43,6 @@
 | short_window_parent_CW_automatically_meets_GWZ_shading | 完整parent空间缩放保CW后，一个ρ-window正常形就够namedGWZ | R20 bush迫etaG≤epsG/2，稳健s≥ρ^{1+cε}时λ≤C(ρ+s)不足s^etaG | 真额外marks、误差消去或不同已付输入，不能放大etaG或降低认证blur |
 | ambient_full_directions_and_local_grain_give_small_projected_CW | 环境full4方向/AD/CW加局部full3grain、原marks和单尺度slicecover自动给strict投影余量 | R20真线(d+ta,tb,(1+t)c,td,t)，原massρ²、最优D≈ρ^-1且λ≈1；缺完整source薄集AD/Phi | 必须用缺失的真实source结构；此非source或Kakeya反例，不继续同例调指数 |
 | point_AD_cover_alone_improves_local_kappa_endpoint | 原点AD5−κ和John-cover自身能将D_s≤K s^-κ改进固定正幂 | R20 Leb4×Cantor(1−κ)在lifted slab集中比A^-κ，point-cover单步sharp | 须新增tube/ξ/Φ等关系，非仅point维数；不把该point模型当fullsource |
+| uniform_gamma_PCT_constant_outside_power | finite polynomial tubeKT可得C(D,m)(Kθ^-C)^{2/γ}且幂外C与γ无关 | R21 m=D1、γ1/(2n)、e=d2^-n有限全网，全部tube查询K=2^γ，原式迫2^n≤4C | 修正版把C放幂内并已证明；先固定γ时可吸常数，但不能称原一致形式通过，不是source/Kakeya反例 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

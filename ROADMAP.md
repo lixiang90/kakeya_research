@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0020取得实际parent抵消与MIX-002局部投影端点，无strict κ-gap，local mixed42/GWZ冻结。下一唯一候选转实际mixed32 quadratic的bounded-degree vector polynomial/tube-KT。旧冻结仍生效。无新Kakeya维数下界，长期Goal未解决。
+更新2026-10-17，R0021付修正版PCT-001有限引理及MIX-003实际mixed32条件二次排除，固定尺度全局affine/nondegeneracy准备仍open。下一唯一任务支付该实际来源，不继续多项式常数微调。local mixed42/GWZ和旧路线继续冻结。无新Kakeya维数下界，长期Goal未解决。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -18,7 +18,7 @@
 | M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
-| P | 实际五维mixed(3,2)二次分支 | scalarΦ/vectorY，r标量无正交row残余；vector polynomial/tube-KT有限命题及source回传均待证 | N5-MIXED32-Q01唯一下一候选，R21定期macro后攻；不预设任意Lip是C² |
+| P | 实际五维mixed(3,2)二次分支 | PCT001修正版有限证明/原式严格反例；MIX003条件链付cubic、scalar r和全tildef至19.4 | N5-MIXED32-Q01整体open；下一一轮实际fixed-scale affine localization，不能allscale形式否定/免费generic投影 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
@@ -26,3 +26,5 @@ DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015�
 R0016的MNL001依赖WZ Theorem13.5且要求明确小epsilon0，不称重大结果。原Lemma19.2 neighborhood-to-convex-Wolff仍未全面重证；mixed/general-to-sticky/Hausdorff仍open。完整应用见notes/40_multiscale/sticky_matrix/R0016_source_linewise_application.md。
 
 R0018宏观冻结W/BSG/common-plane，Theorem21.2仍scalar乘数。R0019 source(192)→(195)过强指数用保守E+swap修复，不再无补证调用该处rho^-kappa强化。R0020提前macro已停止local GWZ端点迭代，下一spec为notes/40_multiscale/sticky_mixed/R0020_next_mixed32_polynomial_target.md；这是待证不同实际分支，不是新弱Goal。完整源、高维mixed非二次及Hausdorff仍open。
+
+R0021已执行定期macro。PCT常数在2/γ幂内，原uniformγ幂外C版本被有限网格严格否定；修正版可在physical vector tildeY的原δ-base调用。条件二次排除不是完整branch，下一spec为notes/40_multiscale/sticky_mixed/R0021_next_affine_localization_target.md，核time restriction、原observed A/B和保第一坐标scalarization；该新机制尚待证。
