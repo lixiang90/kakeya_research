@@ -53,4 +53,8 @@
 | dense_Q_line_is_S_line_or_closed_cycle_prior | 原dense c的Q近线就给S同线，或Fubini后所有新cycles仍近线 | R23只恢复normal F的quadratic fit；G/right carrier仍自由，原c在T²不保密度 | 真正translation/cycle闭包估计；不是完整source反例或已否定全rank二分 |
 | bounded_FG_gives_free_coarse_single_values | bounded F/G可直接从fine B取w代表且保原nonfit与g | R23 normalized F的cell振荡只知K(rho²/tau)w，可能大于w，G无细Lip | 保原weighted indices，或另证同时保g及全部coefficient-weighted quadratic caps的选择 |
 
+| uniform_quadfit_implies_free_coefficient_weighted_quadfit | uniformnonfit可无门槛用于w(1+|p1|+|p2|)误差 | R24任意bounded signal在长c√w interval上以巨大R(t−t0)²拟合；3richgap控coeff须w≪b²/Kt² | 明确保该门槛及boundedrange；这不是QSC有限或source反例 |
+| ell2_AFF_scalar_ABC_covers_ell3_for_free | AFF001换成matrixf即可产生ell3全局affine质量 | R24 observedA上界rho^-2，原scalarABC lower仅rho^-1-κ，当前κ≤1不矛盾 | 新的实际matrix/额外grain估计；整time操作闭包可用不代表AFF也可用 |
+| projected_constant_shrinks_preselected_vector_tau | 选ψ后Fψ近常就可反vectorτ稳定性 | actualτ由row E全norm在选角前定义，单projection只控Eψ | 另证vector→scalar稳定或预先完整控制所有coords，不改τ后沿用旧loss |
+
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

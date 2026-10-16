@@ -1,35 +1,39 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0023。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或认证重大结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0024。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或认证重大结果。
 
 ## 恢复与宏观
 
-R23起点R22 commit766dbfd19ad9dacae7bc2e2bb7ae4f47059e5c6b，treec21481a3ea0d6904abeb9b484ef3a1569165f8e3；347文件回执、same HEAD/origin和clean已核。收尾ignored tmp/sync/R0023.json须核远端完整tree、精确本地import、全部blob bytes/SHA256和clean。下轮先核回执/git，再读GOAL/STATE/ROADMAP/registry/最新round，运行python scripts/context.py；不能仅从最后一个引理恢复。
+R24起点R23 commit62a54804ceae8acc9dc44a94acc23fce9e9772f0，treec5d8d09dd1afd4ae45115500ef9aa6e0301be351；359文件回执、same HEAD/origin与clean已核。收尾ignored tmp/sync/R0024.json须核远端完整tree、精确import、全部blob bytes/SHA256及clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/最新round，运行python scripts/context.py，不能仅从最后lemma恢复。
 
-R22为progress（实际AFF准备），R23也有原mass新信息，但均非完整高维或重大结果。本轮source尺度/高维projection门槛触发提前macro；停止没有新几何输入的rank2-or-line局部重写，未称此二分已被反例否定。R24定期macro仍执行。每轮一main、最多两互补代理；每轮安全同步，不force、不重问授权。
+R23为progress（原cycle质量接口），R24为progress（不同actualcase的原角scalarization gate），均非重大/完整Kakeya。R24常规定期macro已执行，比较(3,3)/(3,2)/(4,2)/(4,3)及named边界；下一常规R27，关键失败提前。每轮一main、最多两互补代理、完整归档/独审/安全同步，不force不重问授权。
 
-## R23新已核：NQP-001与实际非二次接口
+## R24新已核：QSC-001及实际used-angle先验
 
-主proof notes/40_multiscale/sticky_mixed/R0023_weighted_cycle_concentration.md；source及强共同线版本同目录R0023_nonquadratic_source_audit.md、R0023_rank_and_prior_counterattack.md。两独审和root整合在research/reviews。
+主proof notes/40_multiscale/sticky_mixed/R0024_original_angle_scalarization.md，B独立finite稿R0024_quadratic_scalarization_counterattack.md，A sourceR0024_mixed43_source_audit.md；两独审/root整合在research/reviews。
 
-原ν intervalcap Kt（长度≥d）、vector quadratic h-nonfit质量≤a、原0≤c≤1质量D，给Q ballcap≤(a+2Kt*g0)/D，g0≥d、e≤g0h。固定s1,s2,t2后Q对F(t1)的系数是Δs I2，无独立卷积或rank假设。实际smallτ直接用原L boundedg的heavy-H（未用未付vectorBSG）得D≥K^-C；dδ/ρ≤ρ³，w/h≤K^C[rho^(1−2eps1−ζ1)+rho^(eps0−4eps1−ζ1)]，先ζ1+4eps1<eps0、loss后取小，严格排全部direct-H Q落一个workingball。
+finite原ν intervalcap Kt（长度≥d）、vector所有quadratic h-fit≤a、原π slabγ。4distinct times richmass≥b4/2，重复位置用Kt*d；maxVandermonde权归一使annihilator coefficients≤1，smallresidual按4个index各≤a，large用slab。uniform scalarfit badprob≤C b^-4[a+Kψ(Cw/h)^γ]，无需timegap逆幂；实际slab低于base须取max，超上界只能trivial1。
 
-若任意dense c的Q近固定affineline，先删degree<sqrtD/4 rows与近rightpairs，Fubini提T原质量m≥3D/4；normal F|T近quad、alongline scalar h/4-nonfit≤a/m，timecap Kt/m。若H由E_Ag≥λ得，原g绝对mean≥3λD^1.5/16；新生Hcycles原mass≥9D4/4096。它们未必仍nearline，原c未必在T²dense；Qline≠Sline。MNL001另要求同B/affineSM和二维差law，当前mixed32 Φ是scalar，不能免费套用。二维cover/translationgain仍未付。
+coefficientweighted scalarfit误差w(1+|p1|+|p2|)需bounded|F|≤M、|ψ|≤L与w≤c b²/Kt²，3richgap控coeff后转uniformwidth C(1+ML)Kt²w/b²。任意boundedsignal在长√w interval可由巨大quadratic按weighted容差拟合，故该门槛不能省。badangleprob≤m/4后goodg质量≥3m/4，存在goodpair conditionalmean≥m/2；不假g/time/ψ独立。
 
-源原AFF whole速度(r,s)非退化与vector coefficient-weighted nonquad可直接推出r≥K^-C，不借R21 taucollapse。tinyτ≤rho^(3+2eps1)给原vectorlinearfit矛盾。锚定F/G norm有界不需先除r。真实heavyτpatch保inputmass，physical absolute tubeKT无额外tau概率因子。
+actual d5/k4/ell3：u/v/a row2、bscalar，v=a+bu，tildeY本来scalar AD1−κ，Phi⊂R²原slabγ。horizontal3的F_L=δ^-4κτκ(ρ/δ)^3(τ/δ)^3、Mcode=K F_Lρ2κ(ρ/δ)^3付原g。初始incidence混合β由原Φp继承slab，固定一incidence的Lextensionsupper给P_L(anglebad)≤Kβ；先删lightused角cells，再选末层/τpatch。uniformH及其differenceπ得到q≥Cρ的slab；unusedPhiq不赋cap。
 
-源5315早dropδ不成立，但保δ到最终w=K[rho+rho^(3+eps0)/tau]可吸收，因为δ≤rho4≤rho^(3+eps0)。largeτ删G的误差K rho3不受该w覆盖，需wL=K[rho+rho3/tau]并重付参数；PDF101已目视。fine B→w-separated F/G代表选择也未免费通过。scalar radial22.2/Kaufman22.3未提供Mat(2,4)二维增长。这些中间责任不反源主定理。
+选择的是used-cell proxy anglepair，不是固定exactfine pair。原code各有不同fine差，Oρ已付进rawO(τρ)，g仍是原路径恢复归一得到的同product-reference图，所有相关性留在g。
 
-## 下一唯一main：N5-MIXED43-NQ01
+条件于wholematrixAFF及vectornonquad：vectorτ在ψ前固定，Frow/Grow先定义，h0≈K^-Cρp、p=2eps1+ζ1；选weightedprecisionσρ2p、bρβ，β≪min(eps2,γp)，lossℓ后小，使badprob<m/4。slab用Q*≥max(Cρ,qraw)合法上界query，不由h0lower推qrawlower；Kψ幂外费Oγℓ。6eps1+2ζ1<eps0给grapherror≪σ。实际中τoriginal-angle gate已付。
 
-精确spec notes/40_multiscale/sticky_mixed/R0023_next_mixed43_angle_target.md。不同的actual d5/k4/ell3：f1/f2/tildea是row2，tildeb scalar；Phi⊂R²原slabγ，tildeY scalar AD1−κ。检验原角difference law下控制所有adaptive quadratic fits且保原g的定量scalarization。不得从unused coarsePhi免费赋slab，不得认为ell2 AFF-001自动适用于ell3。
+## 尚未付与唯一下一main
 
-候选finitebound见spec，先反例攻击rich4time插值/gap及mass费用，再核原角law/系数容差。主目标是一轮支付真实gate或严格反例；不预设scalarization或完整mixed43已成。若只有SCAL改名而不改变实际输入，立即停止。mixed32的无输入rank改写冻结，重开须真正原prior二维增长/translation共同线输入。
+仍为N5-MIXED43-NQ01；spec notes/40_multiscale/sticky_mixed/R0024_next_weighted_scalar_engine.md。攻source22.5 Steps5–7在原fine weightedν上的scalar curvature nonexpansion engine；输出A是真scalar1−κ预算、F/G同ψ、全部weighted quadraticnonfit及g已给。允许named scalarBSG13.7/radial22.2/Kaufman22.3，但必须支付fine原time不能免费叫w-separateduniformB、F/G cell内粗糙、g/全部nonfit及cycles/K4,2质量。不能只换weighted符号登记通过，不能继续插值常数。
 
-## 仍保留的R21–22结果与冻结
+actual应用仍conditional middleτ：ell3 globallydense wholematrixAFF未付，AFF001只ell2；observedA上界从rho^-1变rho^-2，scalarABC lower rho^-1-κ在κ<1不足，不能免费推广。fine/coarse scalarprojection引擎未付；largeτ删G误差和projected近常→vectorτ缩小也未付。原finite图不是新d4完整source配置，不能整段套22.5。
 
-PCT-001常数在2/gamma幂内，原uniformγ幂外C有有限网格严格反例。MIX-003 quadratic proper alternative在AFF-001与named21.2/19.2/19.4/19.5等输入下闭合；高级源证明未全独立重跑。SCAL-001 bounded-range rich-triple概率付b^-4，不能用源dyadicLip冒充EuclideanLip。AFF原coarse-x fibre/heavytime lower/真实fine代表、符号和Lf同步修补、Euclidean tube粗化、整time restriction闭包及K_src/K_prep隔离均保留。正确density次序不可回灌a-loss。
+## 保留与冻结
 
-MIX001全局commonkernel是既有3D条件应用；MIX002 actualparent抵消和local D_s≤K s^-κ只有端点，localmixed42/GWZ冻结。MNL001仅linewise/commonimage/pencil，依赖scalar13.5；matrix、mixed32非二次、mixed43及其他case未解决。Y-only加法闭包、W独立化、CP/PM改名、LIFT005窄类、HOR003 visiblecost、NAR直接捷径均冻结，详ROADMAP及notes/50_counterexamples/INDEX.md。
+R21–22 PCT001/MIX003 quadratic proper alternative在AFF001和named21.2/19.2/19.4/19.5下闭合，高级证明未全独审；PCT常数在2/γ幂内、原一致γ幂外式有严格有限反例。SCAL001 bounded-range affine投影付b^-4、heavy-time/coarse-x/source符号Lf修复、整time闭包与K_src/K_prep隔离均保留。
 
-五维还包括(3,3)/(3,2)/(4,2)/(4,3)未覆盖部分；proper分支不能替全五维。OpenAI175页及WZ高级源输入未全独审，general-to-sticky/Hausdorff仍open。文献19PDF/全文/bytesSHA256，本轮无新PDF/在线版本声明，范围metadata/R0023_source_check.json。长期完成标准不降低。
+R23 NQP001给任意原cycle点球cap及densecycleline提取，仅排direct-H一ball，不给二维增长。Qline≠Sline，regeneratedcycles不保原c/line；MNL001另需二维差law，mixed32scalarPhi不符。无新原prior二维增长或translation共同线输入，不重开mixed32rank局部改写。
+
+MIX001全局commonkernel是既有3D条件应用；MIX002 local D_s≤K s^-κ只有端点，localmixed42/GWZ冻结。matrix/Y-only加法闭包、W独立化、CP/PM改名、LIFT005窄类、HOR003visiblecost、NAR直接捷径冻结。MNL001只特殊linewise。其他五维case、general-to-sticky/Hausdorff及OpenAI175页/WZ高级source完整独审仍open。详ROADMAP/失败INDEX。
+
+文献19PDF/全文/bytesSHA256保留，本轮无新PDF/在线版本或新颖性声明；范围metadata/R0024_source_check.json。完整Goal成功标准不降低。

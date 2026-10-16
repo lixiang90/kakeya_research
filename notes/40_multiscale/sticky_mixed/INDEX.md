@@ -28,6 +28,13 @@ N5-MIXED42-Q01 是完整实际 d5/k4/ell2 的二次 alternative，尚未解决�
 | R0023_weighted_cycle_concentration.md | 任意dense cycle近affineline的原T/g预算、smallτ direct-H点球排除 |
 | R0023_next_mixed43_angle_target.md | 下一唯一actual(4,3)原slab角先验quadratic scalarization，未证 |
 
+| R0024_quadratic_scalarization_counterattack.md | maxVandermonde归一的原slab先验uniformquadfit bound，无gap逆幂；保correlatedg |
+| R0024_mixed43_source_audit.md | horizontal3原L/code恢复、β边际domination、heavyusedH及proxy差law；AFF3未付 |
+| R0024_original_angle_scalarization.md | coefficientweighted扩展及√w边界、实际middleτ同图选择gate，保所有条件 |
+| R0024_next_weighted_scalar_engine.md | 下一原fine weightedν的scalarcurvature nonexpansion；未证，不整套source22.5 |
+
 条件全局结论另存 results/reviewed/MIX-001_global_common_kernel_exclusion.md；它是既有三维定理应用，不宣称新颖性或重大结果。局部预算与边界另存 MIX-002_local_projection_endpoint.md。PCT-001有限引理、MIX-003二次链、SCAL-001/AFF-001实际准备分别登记，不能升级完整Kakeya或重大性。R20局部mixed42冻结；R22支付准备后下一转actual非二次，仍不得免费scalar化vectorY。
 
 R23 NQP-001只登记原质量接口；mixed32完整非二次未证。无输入rank局部重写停止，下一转actual mixed43而不免费scalar化二维Y。
+
+R24 QSC001通过原角finite/conditional实际gate，完整mixed43仍open；下一须原weighted scalar engine，不继续插值常数。
