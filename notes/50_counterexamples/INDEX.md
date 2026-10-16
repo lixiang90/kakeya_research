@@ -16,5 +16,8 @@
 | visible-window-controls-hidden-total | 可见方向的小窗口增量自动控制W或祖先总信息 | ENT-001同网格链式展开保留隐藏项与祖先成本 | 真实full-slope/原生系数的新增熵率及几何约束 |
 | native-bins-preserve-raw-W-resolution | d<1原生系数箱及mixed熵率自动给同精度W列表 | NAT-001：H(Wp\|Bp)≥logS，L-list成功≤L/S；H0且非raw来源 | 使用正horizon/source结构，或明确支付p/S与point信息 |
 | two-time-recovery-is-overlap-gain | 同一轨道两时刻恢复就提供KT式几何增益 | R0005 KT对照：给定V后两时刻等同y0；改进需跨轨道重合 | 新的共享point纤维、重叠计数或真正独立信息 |
+| two-time-lists-give-current-signature | 两参考时刻各自小列表自动使当前point知道全时双signature | FLAG-001：d1 full8真实floor/list，任意全时双短轴atlas覆盖≤CK^C Lε；horizon未算 | 新的同观测完整center-motion匹配或真实critical输入 |
+| two-short-axes-project-without-native-cost | true双短轴与完整原列表/floor自动给无损投影 | FLAG-003：d1/2原H0，任意新二次projected atlas覆盖≤CL K^{2d}(a/q)^d，投影H=L | 敏感度×丢轴宽度控制、原c-label恢复或新投影定理 |
+| determinant-determines-each-short-axis | 总det窄度决定每根短轴的累计窄度 | FLAG-002：diag交叉缩放反例；外积只能条件性补充 | 同步合法外积极值和实际谱隙闭合 |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

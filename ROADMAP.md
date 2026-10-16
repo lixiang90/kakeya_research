@@ -1,18 +1,19 @@
 # 路线台账
 
-更新：2026-10-16，轮次 R0005；关键桥接被否定，已提前宏观审视，R0006仍作固定审视。
+更新2026-10-16，R0006固定及收尾宏观审视完成。长期目标未解决，不把条件工具或路线排除累计为重大结果。
 
-| ID | 方向 | 关键缺口/检验 | 状态 | 停止或转向条件 |
-| --- | --- | --- | --- | --- |
-| A | 四维输入审计 | 175页证明和三维plank输入的依赖、维度特定环节 | active | 输入有实质缺口则先验证/修复，不盲目推广 |
-| B | 投影与切片归纳 | 从四维投影恢复额外维数需要新纤维信息 | 朴素版本frozen | LIFT-001/002已否定捷径；新输入出现前不重试 |
-| C | 高维方向代数 | native耦合、异常理想与真实长线 | 局部恢复版本frozen | ALG-004在非退化q下仍给障碍；先核查完整假设 |
-| D | 原始/切线精度 | S0/a与旧熵窗口 | guard-only修补frozen | 只有新幅度或不同熵输入才重启；SCL-001 |
-| F | 全方向质量与多项式palette | DIR-002真实floor消Jacobian；现有Kh与branch阈值不闭合 | 当前小palette版本frozen | 新的真实非集中、来源闭合或更强可付阈值才重启 |
-| G | 全斜率隐藏熵 | ENT-002 mixed-scale rate成立；NAT-001显示W逆映射残熵 | 无损桥接版本frozen | 正horizon/来源控制或实际tuple闭合后重启 |
-| H | 多轴flag几何 | 两时刻条带能否给一长两短known atlas及极值增益 | active，N5-FLAG-01 | 保留真实list/floor、质量及每轴预算；只矩阵秩不算结果 |
-| E | 真正反例 | 检验结构引理反例是否有机会同时满足全部Kakeya方向 | queued | 子引理反例不自动升级为Kakeya反例 |
+| ID | 方向 | 当前证据与缺口 | 状态/重开条件 |
+| --- | --- | --- | --- |
+| A | 四维输入审计 | 175页主证明未全面验证；五维初始化另需四维加权plank/shading输入 | active，下一轮N4-PLANK-01 |
+| B | 投影与切片归纳 | LIFT-001/002排除满维投影加一；FLAG-003排除纯双短轴无损投影 | 朴素版本frozen；需新纤维/敏感度控制 |
+| C | 高维方向代数 | ALG-004局部native耦合仍可直纹三次 | 局部恢复frozen；需完整来源新条件 |
+| D | 原始/切线精度 | SCL-001原始幂界与旧窗口量词有差异 | guard-only frozen；需真统一切线界或新窗口 |
+| F | 全方向质量与多项式palette | DIR-002保留true floor加权预算，现有Kh及branch f成本不闭合 | 小palette版本frozen |
+| G | 原生与隐藏熵 | ENT-002正确；NAT-001同精度W逆映射残熵 | 无损桥接frozen；需正horizon/source或可付逆信息 |
+| H | 多轴flag | FLAG-001当前完整signature额外需求；FLAG-002外积条件工具；FLAG-003任意二次投影覆盖界 | 自动matching/无损投影版本frozen；真实critical闭合open |
+| I | 四维加权fulltime plank | 源3D union输入的4D升级是否由当前Hausdorff主定理提供？ | 唯一优先N4-PLANK-01，量词见STATE |
+| E | 真正反例 | 当前toy无全方向单位线段或positive-horizon资格 | queued；不升级子引理反例 |
 
-当前宏观问题：三维可见空间的法向条带交仍留一条长方向，能否用真实fulltime flag atlas与合法极值排除它？原生熵率已严格化，但raw W桥接未闭合；见R0005_macro。局部反模型继续只作候选攻击工具。
+下一轮避免继续完善H0玩具或重写外积目标。先审计四维加权几何输入，明确方向假设、重复indices、shading密度及统一ε/η顺序；缺失时不免费宣称五维结构约化已经存在。
 
-宏观审视模板：见 research/reviews/TEMPLATE.md。每三轮评估路线是否产生新的约束、是否仅剩目标等价命题、是否存在更强已有定理、是否需要切换主线。
+宏观审视按research/reviews/TEMPLATE.md执行，三轮、关键反例或两轮无新信息即触发。各冻结版本指纹保存在notes/50_counterexamples/INDEX.md。

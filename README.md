@@ -17,6 +17,8 @@
 | `notes/30_algebraic_geometry/` | 方向簇、张量测试与退化结构 |
 | `notes/40_multiscale/` | 多尺度、管丛、熵与质量预算 |
 | `notes/50_counterexamples/` | 候选引理的反例、失败机制 |
+| `notes/60_entropy/` | 同一先验的系数熵率与信息成本 |
+| `notes/70_flags/` | 多轴几何、外积目标、列表匹配与审查边界 |
 | `results/` | 分状态存档的可审查结论 |
 | `experiments/` | 可重复计算及原始输出 |
 | `research/rounds/` | 每轮问题、证据、结论、交接 |
