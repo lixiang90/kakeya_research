@@ -30,8 +30,10 @@
 | unpruned_joint_L2_has_power_gain | 对全部原dense marks统一E₂≤δ^(−6+σ) | CPJ002真实full4网、f=−τd/g=−τe使E₂≈δ⁻⁶；actualcover≈δ⁻⁵λ³ | 需从原marks证明质量可保的修剪；该例坏时间可删，不是CP或truncated反例 |
 | every_long_cycle_forces_further_direction_drop | 从三四五环退化可无限推全部闭环低于full4 | CPJ001六cycle有限差分构造真实full4方向rank且可满来源补全；五环仅3、四环固定首边2 | 不继续逐边polygon；必须从原incidences推出有效cycle质量或新的可检验机制 |
 | uniform_shading_lower_and_low_mass_are_different_tasks | 对全部原P_j统一CP只给union，不能反推出PM，故PM是独立更小新路线 | R0015删high whole cells后再次应用CP，任意τ<σ获≥S/2更严格低重数mass；与反向合成正gain等价 | 冻结CP/PM局部改名；此是量词纠错而非Kakeya反例，逐管门槛须另核闭包 |
-
 | unused_coarse_direction_cells_inherit_slab | Phi_p包含在粗Phi_q邻域就使全部Phi_q uniform slab-Frostman | R0016源审查：包含关系不控制unused cells；已用原incidence混合heavy辅助H及L边际upper合法修补 | 必须保原质量证明辅助方向/差prior的cap，不可直接重置原Phi_q |
 | tube_KT_subpower_constant_gives_fixed_porosity | 原delta^-eta tube-KT常数直接给独立delta的line-porosity从而套一般卷积corollary | R0016_matrix_span_boundary的短连续δ网格满足相应Y假设而无固定尺度porosity；仅Y接口测试非完整source反例 | 需从完整原time/coherence证明额外跨尺度输入，不能仅引用inverse theorem题名 |
+| small_additive_growth_and_tube_KT_force_contradiction | 只有BSG小加法增长、AD与tube-KT固定亏损就足以结束matrix证明 | R17 fixedκ1/2的Cantor积保Y维数1.5/Phi维数.5及真实差prior，全部预定有限加法iterates可任意小幂增长；缺time/F/SM故非主反例 | 必须重新使用真实time-matrix关系或原W点/方向数据，冻结Y-only闭包迭代 |
+| rectangle_secant_cancels_affine_matrix | 四边形R4除两个time gaps后自动消去affine斜率 | R17精确代入F=bR+U得到2R；真实sink是2Aplus-2Aplus，error还付gap逆平方 | 需要不同已核恒等式及原mass/sink控制，不能仅改写secant |
+| digit_derivative_automatically_preserves_real_Leibniz | 数字coefficient导数可忽略进位并当成真实乘法derivation | R17合法网格tuple有1/(NQ²)残差，远大r^a；只排此跳步不排dense restricted模型 | 需实际carry载体与整张原g质量/cover估计，不能拿formal algebra当finite source |
 
 这是候选引理反例库，不是Kakeya集合反例库。尚无满足全方向单位线段且维数低于环境维数的构造。

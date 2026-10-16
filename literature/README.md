@@ -23,3 +23,5 @@ R0014新增4篇，现共15篇PDF：GGW2211.09508v2、CSWZ2610.13682v1（2026-10-
 R0015新增2篇，现共17篇PDF：He1611.09639v2（29页）与He–de Saxcé1806.06375v3（23页），均以R0015_前缀存原PDF、全文和来源/校验元数据。读Theorems2/3与表示版本Theorems2.3/2.4、Prop2.5等明确假设；未将实际L-tuples的matrix作用免费当其输入，未重证全文。Wang–Zakharov真实d5/k=ell3矩阵分支的精确source阅读范围见metadata/R0015_source_check.json。
 
 R0016新增Shmerkin2308.09846v3（19页），现共18篇PDF。原PDF、全文、SHA256、版本及精确read_scope均已保存。仅核Theorems1.2/1.5与Section4.3的声明/接口，未重证全文；其固定porosity应用不能直接套用原delta^-eta常数，未据此闭合一般矩阵分支。实际有限图直线分支使用Wang–Zakharov Theorem13.5，仍显式依赖该既有标量输入。
+
+R0017无新增PDF，仍18篇。补读Wang–Zakharov §19.1(148)–(152)、§21 Theorem21.2/Remark21.3及§22方法范围，精确记录metadata/R0017_source_check.json；未据ambient extension假设vector multiplier，未验证全文或声称已有新向量和积输入。

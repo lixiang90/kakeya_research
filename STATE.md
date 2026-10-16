@@ -1,34 +1,37 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0016。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
+更新2026-10-17（Asia/Shanghai），最近轮次R0017。长期Goal active；尚未解决n>=5/general Kakeya，无新维数界、真实Kakeya反例或已确认重大中间结果。
 
 ## 恢复与宏观状态
 
-R0016起点R0015 commit 15483e64fd9d825a834dbb319fe7217f936ad188，251文件回执、HEAD与clean tree已核。本轮沿此父同步；完成后ignored回执tmp/sync/R0016.json记录完整远端tree/path/mode/blob、本地SHA256、同一commit及clean tree。下一轮先核该回执和git，再读GOAL/STATE/ROADMAP/registry/最近轮次，运行python scripts/context.py；不从局部尾段恢复。
+R0017起点R0016 commit a55a750f05b6209fdf04eeb5ae67a6ba0150cece，269文件回执、同一HEAD及clean tree已核。完成后ignored tmp/sync/R0017.json记录远端完整tree/path/mode/blob及本地staged SHA256、同commit/clean。下一轮先核回执/git，再读GOAL/STATE/ROADMAP/registry/最近轮次，运行python scripts/context.py。R0018开头必须做每三轮macro，本轮提前审视不免除该项。
 
-上一Goal turn分类progress。R0015宏观纠错及CP/PM停止仍生效。本轮真正新增一个条件分支排除和原计数接口，并未缩减长期Goal。MNL-001是小范围、依赖既有标量定理的内部审查结论，不能以其完成一般猜想或宣传重大突破。
+上一Goal turn R0016分类progress。本轮有新的同原图计数和严格endpoint校准，改变下一行动；这些是标准CS与初等校准，不作为重大成果，也不新增result ID。完整finite vector strengthening未证明、未证伪，main N5-STICKY-MATRIX-01开放。已实际执行R0017_macro的停止规则，不继续Y-only BSG/cycle/sink的局部迭代。
 
-## R0016已经得到什么
+## R0017实质证据及边界
 
-MNL-001排除归一化dense translation graph中逐差F(B)psi落直线（或O(rho)直线邻域）的质量分支。先从同一原g做fiber cardinal-ratio删除，得到tube Katz-Tao给小于1维的标量输入fiber；Wang-Zakharov Theorem13.5强制每个good差的标量affine fit。原差先验的slab cap挑两独立差，其fit在同一B上的交集由Cauchy-Schwarz保住，右乘重构all-real matrix fit而违反SM。没有假设不可约、Y+aY闭包或最大fiber质量。
+同一个0<=g<=1、原差先验ν、n=#Aminus,m=#B给integrated energy>=r^(3h)n m^4。固定同一a和差标签的weighted C4>=r^(4h)n m^4；B的一维Frostman upper让四time可两两r^(6h)分离，仍保至少1/2原lower。矩阵rectangle R4=(e-c)(F(b)-F(d))+(d-b)(F(c)-F(e))只落2Aplus-2Aplus，不是原KT support。除两gap后是两secant之和，affine F给2R，非affine cancellation；error变r^(1-12h)。原graphconditional marginal另付r^-4h，不能换prior。
 
-实际source接回：R0016_original_tuple_audit.md用原I_q选good q；R=sum d_T²和grain sum B_g²补V/J，signature CS填L20.1省略；以原关联混合μ的heavy bins构造辅助H并用L边际upper支付删除，避免把unused Phi_q当slab。graph恢复表给最大fiber K N_y F_L rho^(2kappa)，固定终端点upper K F_Lm²支付heavy slice/grain。选择实际tube witnesses时每fine Phi-bin取原见证，原ambient T仅用joint AD upper；不把删选族重设为完整配置。
+严格Cantor endpoint校准：N=L0^4,D=L0^3，Y=A_n为digit product，AD维数3/2即固定kappa1/2；H更小digit product维数1/2，真实ordered H×H差prior有slab cap。固定正gamma_T=1/8、gamma_Phi=1/4，全width tube-KT成立。先给任意fixed M,h再选base，全部p+q<=M的additiveiterates可仅r^-h增长；任意eta的常数由depth大吸收。a+(H-H)满质量落Aplus=A+H-H，甚至output有正KT亏损。没有构造规定time law (b-b')(F(b)-F(b'))psi和SM，因此不是finite strengthening、真实source或Kakeya反例。它严格否定BSG仅加法闭包即可结束的推断。
 
-root又用Y0总mass+原Y的packing upper选good tau-window，补clipping gate。weighted quotient用同一个source-cell中心时间网B；归一化F范数O(delta^eta)抵消delta^-eta时间位移，保O(rho)输出误差。large-hit fit给R上界后合法回传原fine times，heavy fibers支付mass。全部接口及独审见本轮notes和research/reviews。
+反例攻击还量化近time、同affinepiece、逐pair近核带的固定幂成本，不能覆盖任意小h。形式derivation给精确矩阵平移及直线identity，但bounded real interval版本必退化，finite covers/AD/coherence均未实现。base-Q数字derivative的carry缺陷为1/(NQ)、-(Q-2)/(NQ)，减linear后仍1/(NQ²)>>r^a；这些只否定自动Leibniz跳步，不给整张g的mass上界。complete-grid近加法2theta稳定性已证，却不能用于任意dense restricted graph。不要再做carry阈值局部修补或把formal模型升级source。
 
-因此，在完整原d5/k=ell3配置、原SM、source-allowed rho及明确小epsilon0范围下，排除f(z)=F0+h(z)M（一维matrix pencil，可满秩）和f(z)=F0+v r(z)（共同像直线）两个实际斜率族。依赖WZ Theorem13.5正确；其完整证明未在本项目独立重证。精确应用R0016_source_linewise_application.md；有限结论results/reviewed/MNL-001_linewise_translation_branch.md。MNL001也给同一输入下linewise标签原图质量的固定小幂upper，不能无来源改换prior。
+完整proof/攻击/独审见R0017_joint_expansion_attempt.md、R0017_vector_counterattack.md及research/reviews/R0017_*。本轮无新增PDF，18篇仍齐，source阅读范围metadata/R0017_source_check.json；没有调用未经核验的新向量定理。
 
-参数细化必须保留：epsilon0先足够小依赖gamma，a=3epsilon0<a0(gamma)，b0=epsilon/2，epsilon小，最后eta小于全部loss阈值；delta0可依eta。固定kappa未缩小。没有证明R0015字面任意epsilon0版本。exact linewise矩阵跨度分类只校准两个families，不是定量近分类。
+## 保留R0016的真正条件分支
 
-## 唯一下一主任务：继续N5-STICKY-MATRIX-01的剩余平面曲线
+MNL001仍为内部交叉审查的条件finite graph排除：同原g的fiber ratio删除、WZ Theorem13.5、两独立差在同B的fit交集及all-real matrix恢复。实际source共同像f=F0+v r(z)和一维matrix pencil f=F0+h(z)M在明确小epsilon0、sourceallowedrho下被排除；没有完整Mat2定理或任意epsilon0版本。高级scalar输入未在项目完整独立重证，kappa未缩小。R16原Igoodq、V/J/L signature、H原边际、graph恢复upper、τ-window、coarse centers及SM fine回传继续保留；Lemma19.2 neighborhood-to-CW及完整20.2仍source依赖。
 
-完整真实Definitions17.2-17.4的Mat(2,2)非线性结论仍open；下一轮直接攻原同一联合图上F(B)psi不落O(rho)直线邻域的部分。这里“平面曲线”不声称其维数2；非linewise也不自动给定量曲率、矩阵不可约、He作用闭包或独立输入/输出。
+## 唯一下一主任务：同一N5矩阵目标的原W联合机制
 
-本轮新增源质量/有限分支输入允许再做一个主轮：寻求保原g/prior的联合向量扩张，或严格反模型否定所用vector strengthening；不追加C2/irreducible等方便假设后代替原主目标。必须给新mass估计、实质可证机制或严格障碍；若该轮无新信息，立即宏观换机制，不接着做scalar projection/线性分类/阈值改名。完整目标仍R0015_next_matrix_target.md及其R16参数补注。
+不把原目标改成新弱Goal。下一主轮返回完整Definitions17.2-17.4，使用原W paths保留的实际(x,xi)联合终点、同一个Phi差及full水平二维grain。原(151)给
 
-其他mixed (3,2),(4,2),(4,3)、一般到sticky及Hausdorff多尺度覆盖均未解。原Lemma20.2的大slope几何接口已核；Lemma19.2的neighborhood-growth到convex Wolff仍source依赖，不能称完整20.2已独立验证。
+    (Delta x,Delta xi)=((z'-z)I2 ; f(z)-f(z'))Delta phi
+                                      +O(delta^-O(eta)rho²).
 
-文献库18篇PDF：R16新增Shmerkin2308.09846v3（19页），原件/全文/校验metadata齐。仅核Theorems1.2/1.5和Section4.3声明与应用范围；固定porosity不能从delta^-eta的tube-KT常数直接赋予，未用作一般matrix定理。metadata/R0016_source_check.json记精确范围，未作穷尽新颖性认证。
+Y-only finite graph曾将x、xi及其coherence积分掉；这是实际额外几何输入，不是新的inverse命名。固定完整grain的R4 graph有N_sigma~delta^(Oeta)sigma^-2与2-Frostman upper，但不保证任意clippedpatchADlower，也不支付W按路径重权的marginal。sourceTheorem21.2/Remark21.3仍scalar multiplier，不能因outputambient提高就套到vectorPhi。
+
+完整下一任务notes/40_multiscale/sticky_matrix/R0017_next_W_target.md。要求朝原kappa<=zeta取得真实jointgrowth或严格障碍；仅写Widentity、cover或boundedgraph准备不算主轮成功。不得免费加C2、irreducible、独立endpoints或忽略source依赖。若该主轮没有新mass/growth或严格反模型，宏观冻结该local机制并选不同实质输入。其他mixed(3,2),(4,2),(4,3)、general-to-sticky及Hausdorff步骤均仍未解。
 
 ## 保留与冻结
 

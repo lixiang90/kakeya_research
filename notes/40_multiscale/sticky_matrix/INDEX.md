@@ -11,5 +11,9 @@
 | R0016_weighted_coarsening.md | coarse time centers、fine fibers、全实矩阵拟合回传 |
 | R0016_source_linewise_application.md | 完整原配置的共同像/pencil族条件排除；明确小epsilon0 |
 | R0016_matrix_span_boundary.md | 精确 linewise 分类、一般卷积逆定理的范围边界 |
+| R0017_joint_expansion_attempt.md | 同原g energy/C4与固定维数Cantor加法终点反校准；无完整vector结论 |
+| R0017_vector_counterattack.md | 固定损失门槛、formal derivation与精确real carry、全grid稳定性 |
+| R0017_original_W_reset.md | 返回原(x,xi)数据；固定grain图cover及scalar21.2边界 |
+| R0017_next_W_target.md | 下一同N5主目标的原W方法，不是新的弱Goal |
 
 可调用的有限图结论另归档为 results/reviewed/MNL-001_linewise_translation_branch.md；不是一般 Kakeya 定理或已确认重大中间结果。实际源接口与该有限命题分开审查，不能把其中的显式质量门槛省掉。
