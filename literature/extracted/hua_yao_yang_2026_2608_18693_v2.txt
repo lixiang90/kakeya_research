@@ -1,0 +1,2048 @@
+                                                PROFILE-STABLE BUFFERED MULTIPLICITY
+                                                   FACTORING IN FOUR DIMENSIONS
+
+                                                       ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+arXiv:2608.18693v2 [math.CA] 27 Aug 2026
+
+
+
+
+                                               Abstract. Multiplicity factoring is usually formulated for child families
+                                               at comparable scales. For children of mixed geometry, thickening at
+                                               the shortest parent scale produces nonuniform inflation ratios, and a
+                                               single worst-case replacement does not preserve the natural density
+                                               normalization.
+                                                  We prove a multiplicity-factoring theorem for finite indexed convex
+                                               parent–child families in R4 that accommodates arbitrary child shapes,
+                                               scales, orientations, aspect ratios, and repetitions. The local geometry
+                                               of each assigned family is encoded by a thickening-weighted Frostman
+                                               coefficient and a mean-normalized inflation efficiency, both determined
+                                               by the base family before any shading refinement. The resulting coarse
+                                               density satisfies
+                                                                         L−Aε (w1 /w4 )ε Pε λKε ,
+                                               up to the stated parameter-dependent constant, where Pε is an explicit
+                                               profile of the parent loads and local efficiencies.
+                                                  The proof thickens arbitrary measurable shadings, projects along
+                                               a shortest parent direction, establishes an indexed three-dimensional
+                                               convex-union estimate in the presence of collisions, and lifts the resulting
+                                               density response back to four dimensions. A weighted Hölder inequality
+                                               then assembles the nonuniform parent data, while a common cellular
+                                               refinement regularizes the fine and coarse multiplicities and yields the
+                                               stated parentwise multiplicity-product estimate.
+                                                   Under a relative convex Frostman hypothesis, the profile is expressed
+                                               explicitly in the minimum, mean, and maximum inflation ratios. The
+                                               comparable-scale regime follows as a specialization after a preliminary
+                                               load selection. Thus the theorem supplies a structural factoring input
+                                               for four-dimensional overlap arguments; deriving new Kakeya maxi-
+                                               mal or Hausdorff-dimension estimates would require additional analytic
+                                               ingredients.
+
+
+
+
+                                                                             Contents
+                                           1. Introduction                                                                     2
+                                           2. Indexed families and the profile theorem                                         5
+                                           2.1. Convex bodies and indexed notation                                             5
+                                           2.2. Local profile data determined by the base family                               6
+                                           2.3. The four-dimensional profile theorem                                           7
+                                           3. A codimension-one density-response lift                                          9
+                                           4. Indexed convex unions in three dimensions                                       11
+
+                                                                                    1
+2               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+    4.1. The essentially-distinct input                                  11
+    4.2. Affine-adapted canonical boxes                                  13
+    4.3. Collision cancellation                                          15
+    4.4. The local Frostman form                                         17
+    5. The local four-dimensional transfer                               18
+    5.1. Convex thickening                                               18
+    5.2. Shortest-direction projection                                   20
+    5.3. Mean-normalized weighted Frostman inheritance                   20
+    5.4. The nonuniform local theorem                                    22
+    6. Weighted profile assembly and cellular factoring                  23
+    6.1. The weighted profile inequality                                 23
+    6.2. A common cellular refinement                                    24
+    6.3. From the local response to the main theorem                     28
+    7. Consequences and the comparable-scale regime                      29
+    7.1. Balanced profiles and mixed child geometry                      29
+    7.2. The comparable-scale specialization                             30
+    8. Structural limitations and model examples                         32
+    8.1. Why the coarse shading lives in the external buffer             32
+    8.2. Indexed multiplicity under coincident geometry                  32
+    8.3. Mean-normalized density conversion                              33
+    8.4. Load imbalance and the profile coefficient                      33
+    8.5. Choice of projection direction                                  34
+    8.6. Affine orientation and cell-mass selection                      34
+    Appendix A. Dependence of constants and logarithmic losses           34
+    A.1. Local analytic losses                                           34
+    A.2. Cellular and profile losses                                     35
+    A.3. Base-family profile quantities                                  35
+    A.4. Uniformity in the nominal parent scale                          35
+    Appendix B. Derivation of the three-dimensional input                36
+    Appendix C. Supplementary boundary cases                             37
+    C.1. Coarse shadings and fine fibres                                 37
+    C.2. The global null cleanup                                         38
+    C.3. Limits of unweighted Frostman inheritance                       38
+    References                                                           39
+
+
+
+                            1. Introduction
+   Multiplicity factoring separates two sources of overlap in a parent–child
+family: the overlap among the parents and the overlap among the children
+assigned to one parent. This separation is a recurring feature of Kakeya
+arguments, from the overlap methods of Córdoba and Wolff through Katz–
+Łaba–Tao, Katz–Tao, and the multilinear polynomial method [3, 12, 8, 9,
+4]; see also [13]. The convex-set framework of Wang and Zahl and the
+                  PROFILE-STABLE MULTIPLICITY FACTORING                       3
+
+factoring perspective of Guth, Wang, and Zahl provide the three-dimensional
+background for the argument below [10, 5].
+   A comparable-scale formulation makes this factorization particularly trans-
+parent. When the children have uniformly comparable John axes, thickening
+them at a fixed radius changes their volumes by comparable factors, and a
+single local density can be passed through the argument. That normalization
+is too rigid once the assigned children have genuinely different geometries.
+At the shortest parent scale h, the quantities
+                                        |Nh (V )|
+                              rW (V ) =
+                                          |V |
+may vary widely, even within one parent. Replacing them by the largest
+inflation ratio loses the mean information needed to compare the original
+and thickened densities, while discarding the weights breaks the relative
+Frostman normalization.
+   The phenomenon is not limited to children of different volumes. If τ ≪ h,
+consider equal-volume bodies with John-axis quadruples
+                       (τ 3 , τ, τ, τ )   and   (τ 2 , τ 2 , τ, τ ).
+Their coordinatewise axis ratios become unbounded as τ → 0, but both
+h-neighborhoods have volume comparable to h4 . Thus their inflation ratios
+are comparable although the usual coordinatewise hypothesis fails. Example
+7.2 gives the precise calculation. This model suggests that the relevant local
+datum is the behavior under thickening, rather than a direct comparison of
+the child axes.
+   We implement this idea by weighting each child with its inflation ratio.
+For an assigned family, the minimum, volume-weighted mean, and maximum
+inflation ratios are denoted by
+                                   −         +
+                                  rW ≤ rW ≤ rW .
+                                                       wt (V , W ) measures
+The thickening-weighted relative Frostman coefficient CF,h  W
+how the weighted body mass can concentrate in a convex subregion of the
+parent. Together with the mean-normalized density conversion it gives the
+local efficiency κW . Under an ordinary relative Frostman hypothesis, this
+efficiency is bounded below by the explicit quantity
+                                                     !K
+                                                 −
+                               (K) rW           rW
+                              ηW = +                      .
+                                   rW           rW
+All of these are base-family data: they are determined before the shading is
+refined and remain fixed throughout the construction.
+   Theorem 2.2 applies this local normalization to finite indexed convex
+parent–child families in R4 . The parents have comparable John dimensions,
+but the children may have arbitrary shapes, scales, aspect ratios, orientations,
+and indexed repetitions. At the common analytic radius h = w1 /100, each
+parent is replaced by the stable buffer W ♯ = Nw1 (W ). A single refinement
+then regularizes the inner, global, and coarse multiplicities, satisfies the
+4               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+parentwise multiplicity product, and produces compatible fine and coarse
+fibres. The density of the coarse shading has the form
+                                    ε
+                              −Aε w1
+                             L             Pε λKε ,
+                                    w4
+up to the stated dependence on ε and the parent comparability constant.
+Here Pε is an explicit profile of the local efficiencies and parent loads.
+   The load profile is needed because the main theorem keeps every parent
+with positive initial shaded mass. If DW = TW /|W | denotes the child load
+of a parent, the weighted Hölder coefficient
+                                           P          K
+                                       (   W pW DW )
+               PK (D, α; p) = P           K/(K−1) −1/(K−1) K−1
+                               ( W p W DW         αW        )
+assembles the nonuniform local estimates without first selecting a common
+load level. It records the actual obstruction created by the fixed coarse
+denominator; when the loads and local efficiencies are balanced, it reduces
+to a positive constant of the expected size.
+   The local argument has three geometric components. First, arbitrary
+measurable shadings are thickened with their exact inflation weights. The
+resulting bodies are projected along a shortest John direction of the parent,
+which makes the volume of each thickened body comparable to h times its
+projected volume without restricting the orientations of the children. The
+projected family need not be essentially distinct: different indexed children
+may produce the same three-dimensional body. We therefore pass from the
+essentially-distinct convex-union estimate of Wang and Zahl to an indexed
+estimate by means of affine-adapted canonical boxes. On each collision layer,
+the loss in geometric body mass is canceled by the gain in indexed Katz–Tao
+density. Finally, a layer-cake and Jensen argument lifts the three-dimensional
+density response back to four dimensions without changing its exponent.
+   The global argument combines these parentwise estimates through one
+cellular refinement. Two initial selections make the inner and global fine
+multiplicities uniform. A global null cleanup aligns pointwise membership
+with positive-measure cell activity. The remaining selections regularize the
+indexed active-parent count and the fine mass of a cell. Because every stage
+restricts all children by a common union of half-open cells, the multiplicity
+conclusions, fibre relation, local union uniformity, and density estimate hold
+for the same refinement. The weighted Hölder inequality then converts the
+sum of the local responses into the displayed profile density.
+   Comparable child geometry reappears as a specialization rather than as
+an input to the main theorem. Corollary 7.3 first selects a dyadic parent-
+load level; coordinatewise child-axis comparability then makes the inflation
+efficiencies uniformly positive. The general profile consequently collapses to
+the familiar comparable-scale conclusion, with the corresponding selected
+coarse normalization. The distinction between the two normalizations is
+essential when the original loads are highly unbalanced.
+                  PROFILE-STABLE MULTIPLICITY FACTORING                            5
+
+   The result is intended as a structural factoring theorem for four-dimensional
+overlap arguments. It does not by itself supply the restriction, two-ends,
+transversality, or other analytic input needed for a new four-dimensional
+Kakeya maximal or Hausdorff-dimension estimate.
+   Section 2 introduces the indexed conventions and profile data and states
+the main results. Section 3 develops the codimension-one lift. Section 4
+proves the indexed three-dimensional convex-union estimate, and Section 5
+converts it into the nonuniform local theorem in four dimensions. Section 6
+contains the Hölder assembly and cellular construction. Section 7 treats
+balanced profiles and the comparable-scale regime, while Section 8 explains
+the geometric and normalization choices through model examples. The
+appendices collect quantitative dependence, the derivation of the external
+input, and supplementary boundary cases.
+
+            2. Indexed families and the profile theorem
+   This section fixes the indexed conventions and the quantities used to
+describe the geometry inside one parent. The order is important: the body
+family determines the inflation and concentration data first, and subsequent
+shading refinements are measured against those fixed denominators. We then
+state the main theorem in a form that keeps the initial positive-mass parent
+support visible in the coarse normalization.
+2.1. Convex bodies and indexed notation. A convex body in Rn is com-
+pact, convex, nonempty, and has positive n-dimensional Lebesgue measure.
+If K is a convex body, its John ellipsoid is the maximal-volume ellipsoid
+EK ⊂ K [7]. We normalize it by
+(1)                                    EK ⊂ K ⊂ nEK .
+Its ordered semiaxis lengths are a1 (K) ≤ · · · ≤ an (K). A John box is aligned
+with the principal axes and has side lengths comparable to these semiaxes.
+   All families are finite and indexed. Thus A = (Ai )i∈I may contain
+Ai = Aj for i = ̸ j, and sums and multiplicities count indices. For a shading
+Y (Ai ) ⊂ Ai , write
+                        [                                       X
+          U (A, Y ) =         Y (Ai ),            M (A, Y ) =         |Y (Ai )|,
+                        i∈I                                     i∈I
+                        X                                       M (A, Y )
+             T (A) =          |Ai |,               λ(A, Y ) =             ,
+                        i∈I
+                                                                 T (A)
+                        X                                       M (A, Y )
+         mA,Y (x) =           1Y (Ai ) (x),        µ(A, Y ) =               .
+                        i∈I
+                                                                |U (A, Y )|
+The last quantity is used only for positive-measure unions. The fibre at x is
+                         (A)Y (x) = {i ∈ I : x ∈ Y (Ai )}.
+A refinement satisfies Y ′ (Ai ) ⊂ Y (Ai ) for every index. The base family
+continues to carry all of its indices, with empty refined shading on a discarded
+6                 ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+index, except when a theorem first restricts to its positive-mass input support
+and then explicitly extends the output back to the original family.
+   For a positive-volume convex test body K, define
+                       1 X
+          ∆(A, K) =              |Ai |,    ∆max (A) = sup ∆(A, K).
+                      |K| i:A ⊂K                          K
+                              i
+
+If every Ai ⊂ W , the relative Frostman constant is
+                                              ∆(A, K)
+(2)                CF (A, W ) =      sup               .
+                                     K⊂W      ∆(A, W )
+                                   K a convex body
+
+This is imposed only on nonempty families. For h > 0, let Nh (A) = {x :
+dist(x, A) ≤ h}, and put log+ t = max{0, log t}.
+2.2. Local profile data determined by the base family. Let VW be a
+nonempty assigned indexed family of convex bodies V ⊂ W . Thickening at
+radius h changes the volume of each child by a factor that depends on its
+shape and scale. The quantities below retain the minimum, maximum, and
+body-mass-weighted mean of these inflation factors, while DW records the
+total child load in the parent. Set
+                  X                  TW                 |Nh (V )|
+          TW =         |V |,   DW =       ,   rW (V ) =           ,
+                 V ∈V
+                                     |W |                 |V |
+                       W
+
+
+                                                                V rW (V )|V |
+                                                              P
+       −                       +
+(3)   rW = min    rW (V ),    rW = max rW (V ),        rW =                     .
+          V ∈VW                    V ∈V    W                       TW
+            −               +
+Thus 0 < rW     ≤ r W ≤ rW     < ∞. For any measurable shading or later
+refinement Y , define
+                      V |Y (V )|
+                    P                         P
+                                    wt         V rW (V )|Y (V )|
+(4)      dW (Y ) =               , dW,h (Y ) = P                 .
+                        TW                       V rW (V )|V |
+                 −
+Since rW (V ) ≥ rW ,
+                                        −
+                                       rW
+(5)                          dwt
+                              W,h (Y ) ≥    dW (Y ).
+                                       rW
+The denominator in the weighted density is the total thickened body mass.
+This is why the conversion in (5) involves the mean rW rather than the worst
+           +
+inflation rW .
+   The same weights also alter the relative Frostman distribution. The next
+coefficient measures how much of the weighted body mass can concentrate
+in a convex subregion of W , normalized by its density in the full parent.
+                 PROFILE-STABLE MULTIPLICITY FACTORING                            7
+
+Definition 2.1 (Weighted relative Frostman coefficient). Define
+                                              |K|−1
+                                                        X
+                                                                rW (V )|V |
+                                                       V ∈VW
+            wt                                          V ⊂K
+(6)        CF,h (VW , W ) =        sup                                        .
+                                              |W |−1
+                                                        X
+                                   K⊂W                          rW (V )|V |
+                              K a convex body
+                                                       V ∈VW
+
+   Testing K = W           wt ≥ 1.
+                    shows CF,h        This coefficient and all quantities in
+(3) depend only on the base family, not on a shading. The two efficiencies
+below combine weighted concentration with the density conversion. The first
+retains the exact weighted Frostman coefficient; the second is its explicit
+counterpart under an ordinary relative Frostman hypothesis. For K > 1, put
+                                                           !K
+                                                       −
+                    (K)        wt           −1       rW
+(7)                κW =       CF,h (VW , W )                    ,
+                                                      rW
+                                         !K
+                                     −                 − K
+                    (K) rW          rW               (rW )
+(8)                ηW = +                     =    +          .
+                        rW          rW            rW (rW )K−1
+Both numbers lie in (0, 1].
+   The local efficiencies must eventually be combined across parents whose
+loads may be very different. For positive DW , αW and probability weights
+pW , define
+                                          P       K
+                                        W pW DW )
+                                         (
+(9)         PK (D, α; p) = P                               .
+                                       K/(K−1) −1/(K−1) K−1
+                                                       
+                                   p D
+                                  W W W       α W
+
+2.3. The four-dimensional profile theorem. Let
+                              [˙
+                          V=         VW
+                                         W ∈W
+be a disjoint union by indices. Repetitions are not identified. Given the
+input shading, define its initial positive-mass parent support
+                                                                   
+                                                                   
+                             (0)                  X
+(10)           W0 = W ∈ W : MW :=                     |Y (V )| > 0 .
+                                                                   
+                                              V ∈VW
+When the global shaded mass is positive, W0 is nonempty. All profile sums
+and the frozen coarse denominator below are over W0 . Removing the other
+parent groups preserves shaded mass and can only increase the fine density.
+We denote the indexed buffer family (W ♯ )W ∈W0 by W0♯ .
+Theorem 2.2 (Profile-stable buffered factoring in R4 ). Fix ΛW ≥ 1 and
+0 < w1 ≤ w2 ≤ w3 ≤ w4 . Suppose that:
+  (H1) V ⊂ W whenever V ∈ VW ;
+  (H2) every parent satisfies
+                 Λ−1
+                  W wj ≤ aj (W ) ≤ ΛW wj ,             1 ≤ j ≤ 4;
+8                  ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+    (H3) the Y (V ) ⊂ V are measurable and
+                                      V ∈V |Y (V )|
+                                     P
+                                   λ= P             > 0.
+                                            V ∈V |V |
+There is no comparability hypothesis on child axes, volumes, aspect ratios, or
+orientations. Set h = w1 /100, W ♯ = Nw1 (W ), and
+            L = 2 + log(2 + #V) + log(2 + #W) + log(2 + w4 /w1 ).
+For every ε > 0 there are Kε ≥ 2 and Aε < ∞ such that the following holds.
+For W ∈ W0 , form the frozen data above at radius h, put
+                              |W |                Kε
+                  pW = P             ′
+                                        , qε =         ,
+                           W ′ ∈W0 |W |         Kε − 1
+and define
+                                        P                   K ε
+                                            W ∈W0 pW DW
+(11)             Pint
+                  ε = P                                             Kε −1 .
+                                            qε    (K )
+                                                 ε −1/(Kε −1)
+                                  W ∈W0 pW DW (κW )
+
+Then there exist one refinement Y ′ , coarse shadings Z(W ♯ ) ⊂ W ♯ for every
+W ∈ W0 , a nonempty final positive-mass set
+                                                                        
+                                                                        
+                                     ′
+                                                            |Y ′ (V )| > 0 ,
+                                                        X
+                 W+ =      W ∈ W0 : MW :=
+                                                                        
+                                                   V ∈VW
+
+positive dyadic a, b, c, and σ > 0, with Z(W ♯ ) = ∅ for W ∈
+                                                           / W+ , such that
+                          |Y ′ (V )| ≳ L−Aε
+                     X                         X
+(12)                                               |Y (V )|,
+                      V              V
+                   ′      ♯          ′
+(13)              UW ⊂ Z(W ) ⊂ Nw1 (UW ) ∩ W♯                    (W ∈ W+ ),
+                                                            ε
+                                                     w1
+                                                    
+(14)                   λ(W0♯ , Z) ≳ε,ΛW L−Aε             Pint Kε
+                                                           ε λ ,
+                                                     w4
+                                                    ′
+(15)             a ≤ mVW ,Y ′ (x) < 2a        (x ∈ UW , W ∈ W+ ),
+(16)               c ≤ mV,Y ′ (x) < 2c        (x ∈ U (V, Y ′ )),
+(17)              b ≤ mW ♯ ,Z (x) < 2b        (x ∈ U (W0♯ , Z)).
+                              0
+      ′ =               ′
+                 V ∈VW Y (V ). For every W ∈ W+ ,
+             S
+Here UW
+(18)                 µ(V, Y ) ≲ε,ΛW LAε µ(W0♯ , Z)µ(VW , Y ′ ).
+For every x ∈ R4 ,
+                                         ˙
+                                         [
+(19)                      (V)Y ′ (x) =        W ∈W0 (VW )Y ′ (x).
+                                             x∈Z(W ♯ )
+Moreover,
+(20)              |U (V, Y ′ ) ∩ B(x, w1 )| ≍ σ         (x ∈ U (W0♯ , Z)),
+(21)                               ∆max (W0♯ ) ≲ΛW ∆max (W).
+                 PROFILE-STABLE MULTIPLICITY FACTORING                           9
+
+Coarse normalization. The set W0 is fixed by the input shading, whereas
+W+ records the parents that P retain positive mass after the refinement. The
+density denominator remains W ∈W0 |W ♯ |; parents in W0 \ W+ carry empty
+coarse shading but stay in that denominator. Moreover, Z(W ♯ ) is a union of
+selected cells, so a point may belong to a coarse shading even when its fine
+fibre for that parent is empty. The fibre identity is formulated accordingly.
+Corollary 2.3 (Elementary C-Frostman profile). In Theorem 2.2, suppose
+additionally that every VW , W ∈ W0 , is C-Frostman in W for one C ≥ 1.
+Define
+                                      P                       K ε
+                                          W ∈W0 pW DW
+(22)          Pelem
+               ε    = P                                                     .
+                                             (Kε ) −1/(Kε −1) Kε −1
+                                                             
+                                         qε
+                               W ∈W0 pW DW (ηW )
+
+The same objects may be chosen so that
+                                                     ε
+                                                w1
+                                            
+(23)            λ(W0♯ , Z) ≳ε,ΛW L−Aε                     C −1 Pelem
+                                                                ε    λKε .
+                                                w4
+   The indexed formulation permits arbitrary repetitions. Their contributions
+remain visible in the cardinalities entering L, in the multiplicities, and in
+the displayed profile data, while the implicit constants require no separate
+bound on duplicate multiplicity. Likewise, the child minimum scales and
+child axis ratios enter through the explicit inflation and profile quantities
+rather than through L or an implicit constant.
+
+             3. A codimension-one density-response lift
+   The local four-dimensional estimate will be obtained from a three-
+dimensional union bound after projection. The following measure-theoretic
+lemma returns the projected response to the original dimension. It uses only
+layer cake and convexity of the response function, so the density exponent is
+preserved without introducing a new geometric loss.
+Theorem 3.1 (Density-response lift). Let I ⊂ R be an interval of length
+H > 0, and let Q = (Qi )i∈J be a nonempty finite indexed family of measurable
+subsets of Rd with               X
+                           D :=     |Qi | ∈ (0, ∞).
+                                     i∈J
+Suppose that for every measurable Ei ⊂ Qi one has
+                                           i |Ei |
+                        [              P          
+(24)                   | Ei | ≥ A(Q) Ψ               ,
+                        i
+                                           D
+where A(Q) ≥ 0 is finite and independent of the shadings, Ψ : [0, 1] → [0, ∞)
+is convex, and Ψ(0) = 0. Then, for every measurable Si ⊂ I × Qi ,
+                                                          i |Si |
+                           [                     P                 
+(25)                   |       Si | ≥ HA(Q) Ψ                           .
+                           i
+                                                      HD
+10                    ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+Proof. For almost every z ∈ Rd , define the one-dimensional fibre and its
+length by
+              (Si )z = {s ∈ I : (s, z) ∈ Si },                         fi (z) = |(Si )z |.
+Tonelli’s theorem gives measurable representatives with 0 ≤ fi ≤ H, with
+fi = 0 almost everywhere off Qi , and
+                                         Z
+(26)                                                fi (z) dz = |Si |.
+                                              Rd
+The fibre of the finite union contains each individual fibre, so
+                                         [
+                                     |(            Si )z | ≥ max fi (z)
+                                                              i
+                                              i
+for almost every z. Put
+                                                                    i |Ei (t)|
+                                                                  P
+       Ei (t) = {z : fi (z) > t},                    ,     0 < t < H.
+                                                       ρ(t) =
+                                                D
+The sets Ei (t) are measurable subsets of Qi , and layer cake gives
+               [                Z
+(27)          |       Si | ≥         max fi (z) dz
+                                Rd        i
+                  i
+                                Z H [                                    Z H
+(28)                        =        |            Ei (t)| dt ≥ A(Q)            Ψ(ρ(t)) dt.
+                                0        i                               0
+
+Normalized Jensen on [0, H] and a second layer-cake computation yield
+              Z H                                             Z H            !
+                                       1
+                       Ψ(ρ(t)) dt ≥ HΨ                              ρ(t) dt ,
+                  0                    H                      0
+                       Z H
+                                       1 X                1 X
+                                                          Z
+                             ρ(t) dt =        fi (z) dz =     |Si |.
+                        0              D i Rd             D i
+Substitution in (28) proves (25). The normalization uses the fixed body mass
+HD rather than the shaded mass. Consequently the same argument includes
+the zero-density case, where Ψ(0) = 0.                                    □
+   Repeated indices pass through the lift unchanged: the union and fibre
+maximum are geometric, whereas D and the density numerator retain the
+indexed sums. The lower-dimensional estimate must therefore already be
+valid for the indexed family. Section 4 establishes precisely that input before
+the lift is applied.
+Proposition 3.2 (Product sharpness). Fix measurable Ei ⊂ Qi and take
+Si = I × Ei . Then every inequality in the fibre and Jensen part of the
+proof of Theorem 3.1 is an equality. Consequently, neither the factor H nor
+the response at the mean density can be improved uniformly by the lifting
+argument alone.
+                  PROFILE-STABLE MULTIPLICITY FACTORING                       11
+
+Proof. For almost every 0 < t < H, one has fi = H1Ei and Ei (t) = Ei .
+Therefore
+                                               |Ei |
+                                             P
+                                      ρ(t) = i
+                   [         [
+                  | Si | = H| Ei |,                  .
+                   i         i
+                                               D
+The fibre comparison and Jensen are both equalities. Any uniform improve-
+ment in (25) would therefore give the same improvement in (24).        □
+Remark 3.3 (Nonconvex responses). Without convexity, (28) remains valid,
+but the value of Ψ at the mean need not be controlled. If co(Ψ) denotes the
+lower convex envelope, the automatic conclusion is
+                                               i |Si |
+                     [                     P          
+                    | Si | ≥ HA(Q) co(Ψ)                 .
+                      i
+                                              HD
+In the application below, Ψ(t) = tKε with Kε ≥ 1, so the response is convex
+and its exponent is preserved exactly.
+
+           4. Indexed convex unions in three dimensions
+   Projection creates the first indexing difficulty in the local argument. The
+three-dimensional convex-union theorem is formulated for essentially-distinct
+bodies, while two different four-dimensional child indices may have the same
+projection. Passing to a geometric set of representatives would discard
+precisely the multiplicities that the final factorization must retain. We
+instead derive the localized essentially-distinct estimate needed here, organize
+coincident projections by affine-adapted canonical boxes, and recover the
+indexed normalization through a collision-layer cancellation.
+4.1. The essentially-distinct input. Two measurable sets Q, Q′ ⊂ R3 are
+essentially distinct if
+                                    1
+(29)                     |Q ∩ Q′ | ≤ max(|Q|, |Q′ |).
+                                    2
+This is the convention of Wang and Zahl [10]. We begin with their set-valued
+hypothesis; the indexed extension is proved later in this section.
+Proposition 4.1 (Localized essentially-distinct union estimate). Let 0 <
+q1 ≤ q2 ≤ q3 , and let Q be a nonempty essentially-distinct family of convex
+bodies contained in a ball of radius O(q3 ). Suppose their ordered John
+semiaxes are comparable, with fixed constants, to q1 , q2 , q3 . For measurable
+E(Q) ⊂ Q, put
+                          Q∈Q |E(Q)|
+                        P
+                   ρ=                  ,    m = ∆max (Q).
+                            Q∈Q |Q|
+                          P
+
+For every ε > 0 there is Kε ≥ 1 such that
+                                  ε
+                                   q1
+                                        ρKε m−1
+                    [                           X
+(30)              |     E(Q)| ≳ε                    |Q|.
+                   Q∈Q
+                                   q3           Q∈Q
+12                    ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+The constants depend on the fixed axis-comparability constants and on the
+fixed constant hidden in the ambient radius O(q3 ).
+Proof. It suffices to prove the claim for 0 < ε ≤ 1, since for 0 < a ≤ 1 the
+bound with exponent min{ε, 1} implies the bound with exponent ε. After
+an affine scaling of all lengths by q3−1 , write a = q1 /q3 , b = q2 /q3 , and let
+N = #Q and v ≍ ab be the common volume. We use the positive-parameter
+assertion F (t, t) for 0 < t ≤ 2/3. In the source notation, it is obtained as
+follows. Their Theorem 1.9 gives D(0, 0); at σ = ω = t, Definition 1.5 makes
+D(t, t) weaker by the factor (#T )−t ≤ 1. Proposition 1.6 gives E(t, t), and
+Proposition 5.14 gives F (t, t) [10]. In the source notation it gives, for families
+of density at least aη , where η := ηWZ (ε/2; t, t) > 0,
+                                                              −t
+                     E(Q)| ≳ aε/2 bt m−1 N v m−3/2 ℓN v 1/2         D(Q)−t ,
+                 [
+(31)         |
+                 Q
+where ℓ is the source’s Frostman slab constant and D is its geometric con-
+centration quantity.
+  The localization gives N v ≲ m, while testing m on a member of the
+family gives m ≳ 1. A slab containing an a × b × 1 John-normalized
+body has thickness and volume ≳ a, and hence ℓ ≲ a−1 . For every Q,
+the localized subfamily Q[Nb (Q)] has Katz–Tao constant at most m by
+subfamily monotonicity. Remark 5.6, Situation 2, therefore gives D(Q) ≲
+m1/2 . Consequently, with B := m−3/2 ℓN v 1/2 ,
+                        BD(Q) ≲ m−1 ℓN v 1/2 ≲ ℓv −1/2 ≲ a−2 .
+Choose t = ε/10. Since b ≥ a,
+                                                −t
+                     bt B −t D(Q)−t = bt BD(Q)        ≳ bt a2t ≥ a3t .
+For 0 < a ≤ 1, the exponent ε/2 + 3ε/10 = 4ε/5 is smaller than ε; thus (31)
+is at least the right side of (30) whenever ρ ≥ aη , because ρK ≤ 1.
+   It remains to remove the source density threshold. If 0 < ρ < aη , one
+shading has measure ≳ ρv, and v ≍ ab ≥ a2 . Since m−1 N v ≲ 1, any
+                                            2
+                                   Kε ≥ 1 +
+                                            η
+satisfies
+                        | E(Q)| ≳ ρa2 ≳ aε ρKε m−1 N v.
+                         [
+
+                            Q
+The zero-density case is immediate, completing the all-density localized
+estimate. The source’s “outer John ellipsoid” is used with the fixed-dilate
+convention of Section 2, which changes only the fixed comparability constants.
+                                                                           □
+   Thus Proposition 4.1 is the localized all-density consequence needed below.
+Its reduction keeps the positive source parameters explicit and supplies the
+remaining small-density range by the largest-shading argument. Appendix B
+records the full notation dictionary for this derivation.
+                    PROFILE-STABLE MULTIPLICITY FACTORING                       13
+
+4.2. Affine-adapted canonical boxes. A Euclidean net in all Euler angles
+does not give aspect-ratio-uniform collision control. For example, boxes
+of shape δ × δ × 1 with a common center and long axis, rotated in roll
+increments of size δ, form a clique of size comparable to δ −1 in the non-
+essential-distinctness graph. The parameter metric must therefore measure
+the relative affine transform at the scale of the box itself.
+   We first isolate the parameter-space fact used in the discretization. Put
+C = [−1, 1]3 and, for a fixed positive diagonal matrix D, write
+                 B(c, U ) = c + U DC,         c ∈ R3 ,    U ∈ SO(3).
+Let
+                      HD = {S ∈ SO(3) : SDC = DC}.
+This is the orientation-preserving signed-permutation symmetry group of the
+rectangular box, and #HD ≤ 24. For two frame representations define
+                    A = D−1 U T U ′ D,       b = D−1 U T (c′ − c),
+Here |·| is the Euclidean norm on vectors and ∥·∥ is its induced operator norm
+on matrices. Both norms are fixed before D is chosen, so all dependence on
+the affine shape appears explicitly through the conjugation by D. Set
+(32)       d0 ((c, U ), (c′ , U ′ )) = max{∥A − I∥, ∥A−1 − I∥, |b|, |A−1 b|}.
+Minimize (32) over the left and right actions of HD and denote the resulting
+symmetric gauge on geometric boxes by dD .
+Lemma 4.2 (Local affine parameter packing). There are dimensional con-
+stants η∗ > 0 and C < ∞, independent of the condition number of D, with
+the following properties.
+     (i) The gauge dD is independent of the frame representations of the
+         two geometric boxes. If dD (B, B ′ ) ≤ η ≤ η∗ , then, after choosing
+         representatives realizing the minimum,
+                     B ′ ⊂ (1 + Cη)B,          B ⊂ (1 + Cη)B ′ ,
+           where the dilations are about the respective centers.
+      (ii) If LB denotes dilation about the center by L ≥ 1, then
+                         dLD (LB, LB ′ ) ≥ L−1 dD (B, B ′ ).
+   (iii) Fix B0 of shape D and 0 < ζ ≤ 1. If boxes Bβ of the same shape
+         satisfy dD (Bβ , Bγ ) > ζ for β ̸= γ and
+                                 |B0 ∩ Bβ | > 12 |B0 |,
+         then their number is O(ζ −12 ), with a dimensional implicit constant.
+Proof. All frame representations of one chosen geometric box differ by right
+multiplication by an element of HD . Such an element is a signed permutation
+among equal diagonal entries of D, so it commutes with D. Consequently a
+change of the two representatives sends (b, A) to one of the declared finite
+left/right transforms. The minimum is therefore a function of the geometric
+14               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+boxes. Swapping the boxes sends (b, A) to (−A−1 b, A−1 ), so the four terms
+in (32) also prove symmetry.
+   In the coordinates of the first box, the second is b + AC. If the gauge is
+at most η, choose minimizing representatives. For x ∈ C,
+                                              
+                 b + Ax = x + b + (A − I)x ∈ (1 + Cη)C.
+The two inverse terms give the reverse containment, establishing (i). Under
+common dilation, A is unchanged and b is replaced by b/L. For each fixed
+pair of symmetry representatives, the maximum in (32) decreases by at most
+the factor L; taking the finite minimum proves (ii).
+   For (iii), normalize B0 affinely to C. A neighbor has the form b + AC with
+det A = 1. The set
+                           Ω = {y ∈ C : b + Ay ∈ C}
+has measure greater than |C|/2. If ar is a row of A, then Ω lies in the
+slab {y ∈ C : |br + ar · y| ≤ 1}. Slicing in a coordinate on which ar has
+largest absolute component shows that the volume of this slab inside C
+is O(1/∥ar ∥∞ ). Thus every row of A is bounded. Nonempty intersection
+gives b = x − Ay for some x, y ∈ C, and hence bounds b. Since det A = 1,
+the cofactor formula bounds A−1 as well. All neighboring parameters (b, A)
+therefore lie in one fixed compact subset of R12 .
+   Choose for each neighbor a representative in this central chart. For two
+such parameters,
+                  Aβγ = A−1
+                         β Aγ ,        bβγ = A−1
+                                              β (bγ − bβ ).
+On the fixed compact set, the identity-representative value of d0 is at most a
+dimensional constant times |bβ − bγ | + ∥Aβ − Aγ ∥. Since dD is the minimum
+over representatives, dD (Bβ , Bγ ) > ζ forces ordinary Euclidean separation
+≳ ζ of these parameters. Euclidean packing in the compact subset of R12
+now gives O(ζ −12 ) neighbors.                                              □
+Corollary 4.3 (Condition-number-independent collision degree). Let D be
+any positive diagonal matrix and let 0 < ζ ≤ 1. If a family of shape-D boxes
+is ζ-separated in dD , then the graph joining two boxes whose intersection has
+more than half the volume of either box has maximum degree O(ζ −12 ). The
+implicit constant is dimensional and is independent of ∥D∥∥D−1 ∥.
+Proof. Fix a vertex B0 . All boxes have the same volume, so every neighbor
+satisfies the intersection hypothesis in Lemma 4.2(iii). That lemma counts
+the neighbors of B0 by O(ζ −12 ), uniformly in D.                       □
+Lemma 4.4 (Canonical boxes). Fix C0 ≥ 1. Let (Qi )i∈I be a finite indexed
+family of convex bodies in R3 whose ordered John semiaxes lie in [qj , C0 qj ],
+1 ≤ j ≤ 3. There are an assignment i 7→ α(i) and boxes Rα such that:
+    (i) Qi ⊂ Rα(i) and |Qi | ≍C0 |Rα(i) |;
+   (ii) the distinct geometric boxes Rα can be colored with OC0 (1) colors so
+        that boxes of one color are essentially distinct;
+                     PROFILE-STABLE MULTIPLICITY FACTORING                            15
+
+   (iii) the number of colors is independent of q3 /q1 .
+Proof. Fix a small dimensional η0 > 0 and round each John semiaxis upward
+to the least number of the form qj (1 + η0 )k . There are at most
+                                         l              m3
+(33)                                1 + log1+η0 C0
+rounded triples. We use disjoint color palettes for different triples and work
+with one exact triple. Choose an arbitrary John eigenframe for each member;
+when eigenvalues repeat this is merely a tie-break, and all estimates below
+are uniform in that choice. After incorporating a fixed John dilation, every
+member lies in a box
+                B(c, U ) = c + U D[−1, 1]3 ,            D = diag(q1 , q2 , q3 ),
+of comparable volume.
+   The group HD in Lemma 4.2 identifies only different frame representations
+of a resulting geometric box; it is not being used to remove the continuous
+eigenframe tie-break. Choose greedily a maximal η-separated set of distinct
+input boxes in the symmetric gauge dD , where η > 0 is a sufficiently small
+dimensional constant. Maximality assigns every input box Bi to a selected
+box Bα0 at distance at most η. Lemma 4.2(i) gives
+                            Bi ⊂ LBα0 ,             L = 1 + Cη.
+Set Rα = LBα0 . The containment and volume comparison follow. Common
+dilation leaves the selected boxes at least L−1 η-separated by Lemma 4.2(ii).
+If Rβ is not essentially distinct from Rα , their equal volumes give |Rα ∩Rβ | >
+|Rα |/2. Corollary 4.3 bounds the degree of this collision graph independently
+of the aspect ratio. A bounded greedy coloring, followed by the finite number
+of palettes in (33), completes the proof.                                      □
+4.3. Collision cancellation. We now return to the original indices. Canon-
+ical boxes merge geometrically close projections, but the size of a collision
+cluster is retained as indexed mass. On a layer where the cluster sizes are
+comparable, the same cluster size improves the Katz–Tao density of the
+geometric representatives. These two effects cancel in the union estimate.
+   For an indexed family Q = (Qi )i∈I with comparable John dimensions,
+choose canonical boxes as in Lemma 4.4. Let
+                                                                      [
+                 Iα = {i : α(i) = α},            nα = #Iα ,    Fα =          Ei ,
+                                                                      i∈Iα
+and put
+            X                   X
+       S=       |Qi |,     M=           |Ei |,       ρ = M/S,         m = ∆max (Q).
+            i                       i
+
+Lemma 4.5 (Density gain on a collision layer). If n ≤ nα < 2n on a set An
+of canonical boxes, then
+(34)                       ∆max ({Rα : α ∈ An }) ≲ m/n.
+16              ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+Proof. For every convex body K, containment and two-sided volume com-
+parison give
+                     X           1 X X
+                         |Rα | ≲           |Qi |
+                    α∈A
+                                 n α∈A i∈I
+                          n                       n       α
+                    Rα ⊂K                  Rα ⊂K
+                                          1 X             m
+                                      ≤            |Qi | ≤ |K|.
+                                          n i:Q ⊂K        n
+                                              i
+
+The middle implication uses only Rα ⊂ K ⇒ Qi ⊂ Rα ⊂ K.                     □
+Theorem 4.6 (Essentially-distinct to indexed). Under the hypotheses of
+Proposition 4.1, but allowing arbitrary indexed repetitions, let N = #I and
+LN = 1 + ⌈log2 N ⌉. Then
+                               ε
+                                q1
+                                     L−1  Kε −1
+                    [                            X
+(35)               | Ei | ≳ε           N ρ m         |Qi |.
+                     i
+                                q3                 i
+The estimate remains true without a common ambient ball.
+Proof. First suppose that the family is localized. On a collision layer An =
+{α : n ≤ nα < 2n}, write Sn , Mn for the body and shading masses of the
+corresponding indices and ρn = Mn /Sn . The elementary estimate
+                                  |Fα | ≥ n−1
+                                                  X
+                                           α             |Ei |
+                                                  i∈Iα
+and volume comparison imply
+                  X                                   X
+(36)                    |Rα | ≍ Sn /n,                    |Fα | ≳ Mn /n.
+                 α∈An                             α∈An
+Split the canonical boxes into the bounded number of colors supplied by
+Lemma 4.4. For a color ν, let Sn,ν and Mn,ν be the body and shading masses
+of its assigned input indices, and put ρn,ν = Mn,ν /Sn,ν when Sn,ν > 0.
+Within that color, Proposition 4.1, Lemma 4.5, and (36) give the lower
+bound                         ε
+                              q1
+                                    m−1 Sn,ν ρK ε
+                                              n,ν
+                              q3
+for the union of its merged shadings. The color unions need not be disjoint,
+so we do not add these bounds. Instead, weighted Jensen gives
+                              X
+                                      Sn,ν ρK         Kε
+                                            n,ν ≥ Sn ρn .
+                                              ε
+
+                                  ν
+Because the number of colors is bounded, one color ν∗ contributes a fixed
+fraction of the right-hand side. The union over the entire collision layer
+contains the union for ν∗ , and therefore
+                                      ε
+                        [             q1      −1
+(37)                  |      Fα | ≳ε      ρKε
+                                           n m Sn .
+                       α∈A
+                                      q 3
+                              n
+
+At the level of powers, the factor 1/n in canonical-box mass is canceled by
+the factor n in (m/n)−1 .
+                 PROFILE-STABLE MULTIPLICITY FACTORING                     17
+
+   There are at most LN nonempty layers. Since Kε ≥ 1, weighted Jensen
+gives
+                                                  !Kε
+                   X                X Sn
+(38)                    Sn ρK
+                            n ≥S
+                              ε
+                                             ρn         = SρKε .
+                    n                n   S
+Hence one layer contributes at least L−1     Kε
+                                        N Sρ , and (35) follows from (37).
+   For a nonlocalized family, assign each body by its John center to a
+cube of a q3 -lattice. A fixed enlargement of that cube contains the whole
+body. Color the lattice with a dimensional number of colors so that equal-
+color enlargements are disjoint. Apply the localized argument in each cube.
+Within a fixed lattice color, the resulting union lower bounds add because
+the enlargements are disjoint; weighted Jensen combines their body-mass
+densities. Across lattice colors the unions can overlap, so weighted Jensen
+followed by a bounded-color pigeonhole selects one color; the full union
+contains that selected color’s union. This costs only a dimensional constant.
+The global bound m dominates each local Katz–Tao density, which gives the
+final assertion.                                                          □
+  Complete duplication illustrates the normalization. If all Qi = Q and all
+Ei = E, then m = N , and the right side of (35) is bounded by a constant
+multiple of ρKε |Q| ≤ |E|. If the shadings are disjoint, the cluster union
+bound is conservative but valid. Throughout the construction the original
+indices remain in the mass and Katz–Tao quantities.
+4.4. The local Frostman form. The preceding theorem assumes compara-
+ble John dimensions. For the projected family arising in Section 5, each body
+instead contains an h-ball and lies in a common box of longest side R. Dyadic
+decomposition of the three John axes reduces this more flexible setting to
+Theorem 4.6; relative Frostman control supplies the uniform Katz–Tao bound
+in every bin.
+Theorem 4.7 (Indexed local Frostman union estimate). Let B ′ ⊂ R3 be
+a box of longest side R, and let Q = (Qi )i∈I be a nonempty finite indexed
+family of convex bodies contained in B ′ . Suppose every Qi contains a ball of
+radius h, has diameter O(R), and CF (Q, B ′ ) ≤ CF . For measurable Ei ⊂ Qi ,
+let
+                                  |Ei |
+                              P
+                         ρ = Pi         ,     N = #I,
+                                i |Qi|
+and set                                                        3
+             LN = 1 + ⌈log2 N ⌉,          Jh = 1 + ⌈log+ (R/h)⌉ .
+Then, for every ε > 0,
+                               ε
+                                h
+                                        L−1   −1 −1 Kε    ′
+                     [
+(39)                | Ei | ≳ε             N Jh CF ρ |B |.
+                     i
+                                R
+18               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+Proof. Put S = i |Qi | and D = S/|B ′ |. The relative Frostman hypothesis
+                 P
+
+implies the absolute indexed bound
+(40)                          ∆max (Q0 ) ≤ CF D
+for every subfamily Q0 . Indeed, for a convex test body K, the bodies counted
+in K are also counted in K ∩ B ′ , while |K| ≥ |K ∩ B ′ |; use (2) and subfamily
+monotonicity.
+   Because Qi contains an h-ball and lies in B ′ , its shortest John semiaxis
+is ≳ h and its longest semiaxis is O(R). Divide the three ordered semiaxes
+into dyadic triples. There are at most O(Jh ) nonempty bins. For bin j, let
+Sj , Mj be its body and shading masses and ρj = Mj /Sj . Theorem 4.6 and
+(40) give
+                         ε                      ε
+                         h    −1                    h                ′ Sj Kε
+                                      −1   Kε
+                                                          L−1   −1
+         [
+    |           Ei | ≳ε      LN (CF D) Sj ρj =              N CF |B |    ρ .
+     i in bin j
+                         R                         R                   S j
+Finally,
+                                        Kε
+                     X Sj K      X Sj
+                         ρj ε ≥      ρj  = ρKε .
+                      j
+                          S           j
+                                          S
+One of the at most O(Jh ) bins therefore gives (39). When h ≳ R there is one
+bin, and the same proof applies. Empty shadings give zero right side.     □
+  The denominator in Theorem 4.7 is the body mass of the fixed indexed
+family, including indices whose current shading is empty. Consequently the
+same estimate can be applied to every measurable refinement produced later
+by the cellular construction.
+
+               5. The local four-dimensional transfer
+   We now convert the indexed three-dimensional estimate into a parentwise
+statement in four dimensions. The main issue is that thickening children
+of different geometry produces different volume weights. We first quantify
+thickening for arbitrary measurable shadings, then project along a shortest
+parent direction so that the volume of each thickened body is comparable to
+h times its projected volume. The resulting weighted Frostman data can be
+passed to Theorem 4.7 and lifted back by Theorem 3.1.
+5.1. Convex thickening. The cellular argument will apply the local esti-
+mate after several measurable refinements. We therefore need a thickening
+bound that depends on the density of an arbitrary measurable shading, rather
+than on any regularity of that shading.
+Lemma 5.1 (Thickening an arbitrary measurable shading). For every convex
+body V ⊂ Rn , every measurable Y ⊂ V , and every h > 0,
+                                       |Y |
+(41)                    |Nh (Y )| ≥ cn      |Nh (V )|.
+                                       |V |
+                 PROFILE-STABLE MULTIPLICITY FACTORING                            19
+
+Proof. Use John coordinates with semiaxes a1 , . . . , an . From (1) and a
+containing rectangular box,
+                            Y                                     Y
+(42)             |V | ≍n         aj ,       |Nh (V )| ≲n              (aj + h).
+                             j                                    j
+
+Let L be the span of the axes with aj ≥ h and S = L⊥ . Write m = dim S
+andQlet Yx be the S-fibre over x ∈ L. The John box bounds every fibre by
+Cn aj <h aj . If X = {x : |Yx | > 0}, Fubini gives
+                                                   |Y |
+(43)                                |X| ≳n Q                  .
+                                                aj <h aj
+
+For every x ∈ X, the corresponding fibre of Nh (Y ) contains the h-
+neighborhood in S of a nonempty set and hence has m-volume at least
+ωm hm . Integrating,
+                                          Y h
+(44)                   |Nh (Y )| ≳n |Y |        .
+                                             a
+                                         a <h j       j
+
+When m = 0, this is simply |Nh (Y )| ≥ |Y |. On the other hand, (42) gives
+                            |Y |                    Y h
+                                 |Nh (V )| ≲n |Y |        .
+                            |V |                       a
+                                                   a <h j j
+
+Together with (44), this proves the result at every intermediate scale. If Y
+is null, the right side of (41) is zero.                                   □
+  The same John-box argument, now using a box inside EV and a box inside
+the Euclidean h-ball, gives the two-sided estimate
+                                             n
+                                             Y
+(45)                       |Nh (V )| ≍n          (aj (V ) + h).
+                                             j=1
+
+Lemma 5.2 (Buffered parent stability). Let (Wα ) be a finite indexed family
+in Rn , let 0 < rα ≤ C0 a1 (Wα ), and put Wα♯ = Nrα (Wα ). Then
+(46)      |Wα♯ | ≍n,C0 |Wα |,           ∆max ({Wα♯ }) ≲n,C0 ∆max ({Wα }).
+Proof. The volume comparison follows from (45). If Wα♯ ⊂ K, then Wα ⊂ K,
+and hence
+                X                       X
+                         |Wα♯ | ≲             |Wα | ≤ ∆max ({Wα })|K|.
+              α:Wα♯ ⊂K              α:Wα ⊂K
+
+Take the supremum over positive-volume convex K. Every sum retains the
+parent indices.                                                     □
+  The buffer lemma allows the coarse shading to live in a genuine neighbor-
+hood of the parent while preserving both its volume scale and its indexed
+Katz–Tao density. Section 8 explains why an intersection with the original
+parent would not provide an aspect-uniform substitute.
+20              ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+5.2. Shortest-direction projection. Projection is useful only if the lost
+fibre direction has length comparable to the analytic radius. Choosing a
+shortest John direction of the parent provides this comparison simultaneously
+for every child, regardless of the child’s own orientation.
+Lemma 5.3 (Projection–volume comparison). Let e be a unit vector, let π
+be orthogonal projection onto e⊥ , and set
+                          P = Nh (V ),      Q = π(P ).
+Then
+(47)               cn h|Q| ≤ |P | ≤ (widthe (V ) + 2h)|Q|.
+In particular, if V ⊂ W and widthe (W ) ≤ C0 h, then |P | ≍n,C0 h|Q|.
+Proof. Let K = π(V ). Orthogonal projection commutes with Minkowski
+addition by a ball, so Q = K + Be⊥ (0, h). If z ∈ K + B(0, h/2), choose
+x ∈ K with |z − x| < h/2 and a point (t, x) ∈ V in coordinates      ⊥
+                                                            √ Re × e . The
+fibre over z of the h-ball around (t, x) has length at least 3h. Thus
+                                √
+                          |P | ≥ 3h|K + B(0, h/2)|.
+Convexity, with any x0 ∈ K, gives K +B(0, h) ⊂ x0 +2[(K +B(0, h/2))−x0 ];
+hence the two projected volumes differ by at most 2n−1 , giving the lower
+bound. The entire e-coordinate range of P has length at most widthe (V )+2h,
+which proves the upper bound by Fubini.                                   □
+  Let W ⊂ R4 have John semiaxes u1 ≤ u2 ≤ u3 ≤ u4 , choose a shortest
+John direction e1 , and let h = c0 u1 . Since W ⊂ 4EW , widthe1 (W ) ≤ 8u1 =
+8h/c0 . Therefore Lemma 5.3 applies uniformly to every V ⊂ W , without
+any condition on the orientation of V . Moreover, in the same coordinates
+the product box
+                              4
+              B = I × B′ =
+                              Y
+(48)                              [cj − (4uj + h), cj + (4uj + h)]
+                              j=1
+
+contains Nh (W ) and satisfies
+(49)    H := |I| ≍c0 h,       R := longside(B ′ ) ≍c0 u4 ,    |B| ≍c0 |W |.
+5.3. Mean-normalized weighted Frostman inheritance. Thickening
+replaces the body mass |V | by rW (V )|V |. The relative Frostman coefficient
+must therefore be computed with the same weights. The next two lemmas
+compare this weighted coefficient with the original family and show that it
+survives shortest-direction projection.
+Lemma 5.4 (Comparison with the unweighted coefficient). Let VW be
+nonempty and CF (VW , W ) ≤ C. Then
+                             wt               r+
+(50)                        CF,h (VW , W ) ≤ C W .
+                                              rW
+                       PROFILE-STABLE MULTIPLICITY FACTORING                                              21
+
+Proof. For a convex K ⊂ W ,
+                      X
+                                           +
+                                                          X
+                                                                         +     TW
+                            rW (V )|V | ≤ rW                     |V | ≤ rW C        |K|.
+                     V ⊂K                                 V ⊂K
+                                                                               |W |
+The weighted total density equals
+                           V rW (V )|V |
+                        P
+                                              TW
+                                         = rW      .
+                              |W |            |W |
+Division proves (50). This concentration step uses the maximum-to-mean ra-
+tio; the minimum inflation enters separately when shaded density is converted
+in Corollary 5.7.                                                          □
+Lemma 5.5 (Weighted thickening and projection inheritance). Let (Vi )
+be a nonempty indexed family in a convex body W , put Pi = Nh (Vi ) ⊂ B,
+assume    |B| P≤ CB |W |, and write ri = |Pi |/|Vi |, r+ = maxi ri , and r =
+( i ri |Vi |)/( i |Vi |). Then
+ P
+
+                                                   wt
+(51)                           CF ({Pi }, B) ≤ CB CF,h ({Vi }, W ).
+If CF ({Vi }, W ) ≤ C, then
+                                               r+
+(52)                                CF ({Pi }, B) ≤ CB C
+                                                    .
+                                                 r
+Suppose also that B = I × B ′ , Qi = π(Pi ) ⊂ B ′ , and
+                                  cP h|Qi | ≤ |Pi | ≤ CP h|Qi |.
+Then
+                                                           CP
+(53)                           CF ({Qi }, B ′ ) ≤             CF ({Pi }, B).
+                                                           cP
+Proof. Set
+                                         i ri |Vi |                         i |Pi |
+                                       P                                P
+                             Dr =                    .,          DP =
+                             |W |               |B|
+                             −1
+Then DP = Dr |W |/|B| ≥ CB      Dr . If Pi ⊂ K ⊂ B, then Vi ⊂ K ∩ W . If
+the relevant sum is nonzero, K ∩ W is a positive-volume convex body, and
+Definition 2.1 gives
+                 X              X
+                                                   wt                 wt
+                     |Pi | =           ri |Vi | ≤ CF,h Dr |K ∩ W | ≤ CF,h Dr |K|.
+             Pi ⊂K             Pi ⊂K
+The zero-sum case is immediate. Division by DP |K| proves (51); Lemma 5.4
+gives (52).
+   For projection, Qi ⊂ K ′ ⊂ B ′ implies Pi ⊂ I × K ′ . With H = |I|,
+                           CF ({Pi }, B)DP H|K ′ |                                     i |Qi |
+                                                                                 P
+        X                                                                                        DP H
+                 |Qi | ≤                           ,                  DQ :=                    ≥      .
+       Qi ⊂K ′
+                                     cP h                                             |B ′ |     CP h
+After division, the factors H/h cancel exactly, proving (53).                                             □
+22                     ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+5.4. The nonuniform local theorem. We can now keep the full inflation
+profile in the local response. The theorem below is stated for a fixed base
+family so that its weighted coefficient and denominators remain available
+uniformly after any later refinement.
+Theorem 5.6 (Intrinsic nonuniform local transfer). Let W ⊂ R4 have John
+semiaxes u1 ≤ u2 ≤ u3 ≤ u4 , fix c0 > 0, and put h = c0 u1 . Let VW = (Vi )i∈J
+be an arbitrary nonempty finite  indexed family      of convex bodies Vi ⊂ W . Write
+ri = |Nh (Vi )|/|Vi | and r = ( i ri |Vi |)/( i |Vi |). For measurable Yi ⊂ Vi , use
+                               P             P
+
+(4) and Definition 2.1, and put
+                   u1
+           δW =        ,    LW = 2 + log(2 + #J) + log(2 + u4 /u1 ).
+                   u4
+For every ε > 0 there are Kε ≥ 2 and A0,ε < ∞ such that
+                  [               −A      ε  wt                           −1               K ε
+(54)    |Nh (         Yi )| ≳ε,c0 LW 0,ε δW CF,h (VW , W )                      dwt
+                                                                                 W,h (Y )          |W |.
+                  i
+The estimate is uniform over every measurable refinement of the fixed base
+                                wt , and T
+family; the quantities ri , r, CF,h       W remain frozen.
+
+Proof. Set Pi = Nh (Vi ) and Si = Nh (Yi ). For a finite family,
+                                       [                    [
+(55)                                        Si = Nh (             Yi ).
+                                        i                    i
+Lemma 5.1 gives                       X                 X
+                                            |Si | ≳          ri |Yi |.
+                                        i               i
+  Use the shortest-direction product box (48), let π be projection onto e⊥
+                                                                         1,
+and put Qi = π(Pi ). Then Si ⊂ Pi ⊂ I × Qi and
+(56)                                        |Pi | ≍c0 h|Qi |.
+Equations (51) and (53) give
+(57)                         CF ({Qi }, B ′ ) ≲c0 CF,h
+                                                   wt
+                                                       (VW , W ).
+Each Qi contains a three-ball of radius h and has diameter O(R).
+  Apply Theorem 4.7 to arbitrary measurable Ei ⊂ Qi . If its exponent is less
+than 2, replace it by 2: since its density lies in [0, 1], this only weakens the
+lower bound. The explicit cardinality and projected-axis losses are bounded
+           −A
+below by LW 0,ε . Theorem 3.1, with Ψ(t) = tKε , then gives
+                                                                                |Si | Kε
+                                                        ε                   P
+                                                    h
+                                                                                     
+                                  ′ −A                            wt −1
+                                                                              Pi
+              [
+(58)      |       Si | ≳ε,c0 H|B | LW 0,ε                        CF,h                    .
+              i
+                                                    R                           H   i |Qi |
+
+By (56) and H ≍ h,
+                                |Si |            ri |Yi |
+                              P               P
+                              Pi            ≳ Pi          = dwt
+                                                             W,h (Y ).
+                     H i |Qi |   i ri |Vi |
+            ′
+Finally, H|B | ≍ |W | and h/R ≍ u1 /u4 by (49); use (55).     Since every Qi
+contains an h-ball and lies in a box of longest side O(u4 ), the dyadic axis
+                   PROFILE-STABLE MULTIPLICITY FACTORING                     23
+
+ranges are controlled by u4 /h. This gives the stated local logarithm without
+introducing a child minimum scale.                                         □
+Corollary 5.7 (Unweighted local efficiencies). In the setting of Theorem 5.6,
+                         [                −A     ε   (K )
+(59)             |Nh (       Yi )| ≳ε,c0 LW 0,ε δW κW ε dW (Y )Kε |W |.
+                         i
+If CF (VW , W ) ≤ C, then
+                                         −A            (K )
+                                               C −1 ηW ε dW (Y )Kε |W |.
+                     [
+                                             ε
+(60)         |Nh (       Yi )| ≳ε,c0 LW 0,ε δW
+                     i
+
+Proof. Insert (5) into (54) to obtain (59). Lemma 5.4 gives
+                                         !Kε                       !Kε
+                                     −                         −
+                      wt −1        rW               rW       rW
+                     CF,h                      ≥ C −1 +                  ,
+                                    rW               rW       rW
+which is (60).                                                               □
+   The two factors in the elementary coefficient have different origins.
+                                                 +
+Weighted Frostman inheritance contributes rW /rW   once, whereas conversion
+                                                                      −
+from the original shaded density to the weighted density contributes rW /rW
+with the response exponent Kε . Keeping these mechanisms separate yields
+the mean-normalized expression in (60).
+
+       6. Weighted profile assembly and cellular factoring
+   The local theorem supplies a response for each parent, but the child loads
+DW and the local efficiencies αW need not be comparable. Selecting a com-
+mon load level would change the coarse normalization of the main theorem.
+The weighted Hölder inequality below instead measures the cost of assembling
+all parents in a single explicit coefficient. The cellular construction then
+arranges that the local estimates, fine multiplicities, and coarse multiplicity
+all refer to one refinement.
+6.1. The weighted profile inequality. The coefficient PK compares the
+global body-mass-weighted shaded density with the sum of the parentwise
+responses αW dK W . Its denominator penalizes precisely those parents for which
+a large load is paired with a weak local efficiency.
+Lemma 6.1 (Profile Hölder inequality).P
+                                        Let K > 1 and q = K/(K − 1).
+On a finite index set, suppose pW > 0, W pW = 1, DW > 0, αW > 0, and
+dW ≥ 0. Then
+                                                     P           K
+                                                       W pW DW dW
+            X
+(61)             pW αW dK
+                        W ≥ PK (D, α; p)               P             .
+             W                                              W p W DW
+
+Moreover,
+(62)                               0 < PK ≤ max αW .
+                                                 W
+24               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+If Dmax /Dmin ≤ ΛD and αW ≥ α0 , then
+(63)                            PK ≥ Λ−K
+                                      D α0 .
+If DW ≡ D0 and αW ≡ α0 , then PK = α0 .
+Proof. Write
+               X                 X         1/K                 −1/K
+                    pW DW dW =        pW (αW dW )(DW αW               ).
+                W                 W
+Hölder gives
+                                        !1/K                               !1/q
+       X                 X                       X        q  −1/(K−1)
+           pW DW dW ≤        pW αW dK
+                                    W                p W DW αW                    .
+       W                 W                       W
+Rearranging gives (61).
+                                  −1/(K−1)       −1/(K−1)                q
+                                             ≥ α∗                            ≥
+                                                                P
+   Let α∗ = maxW αW . Since αW                             and     pW DW
+ P          q                                    −1  P          K
+( pW DW ) , the denominator in (9) is at least α∗ ( pW DW ) , and hence
+(62); in particular PK ≤ 1 when αW ≤ 1. Under the balanced hypotheses,
+                            K , while the denominator is at most D K α−1 ,
+the numerator is at least Dmin                                         max 0
+proving (63). Direct substitution gives the constant-profile identity.       □
+Remark 6.2 (Equality and optimal scalar coefficient). Equality in (61) holds
+precisely, on the positive indices, when
+                αW dK−1
+                    W   is proportional to DW ,
+                                               DW 1/(K−1)
+                                                      
+                      dW is proportional to                  .
+                                                αW
+Thus PK is the optimal coefficient for this scalar Hölder assembly inequality.
+This optimality concerns the assembly step; the geometric argument may
+carry additional losses.
+6.2. A common cellular refinement. We next isolate the global construc-
+tion. The input is a family of parentwise local responses whose coefficients
+were fixed before refinement. Four mass-weighted restrictions are used: the
+first two regularize the inner and global fine multiplicities, the third regular-
+izes the indexed number of active parents in a cell, and the fourth regularizes
+the fine mass of a cell. A null cleanup between the second and third restric-
+tions makes positive-measure cell activity compatible with pointwise fibres.
+Since every later restriction is by a common union of whole half-open cells,
+it preserves Sthe multiplicity information obtained earlier.
+   Let V = ˙ W ∈W VW be finite indexed families of bounded bodies in R4 ,
+with Y (V ) ⊂ V ⊂ W . Assume every parent group has positive initial shaded
+mass; initial zero-mass groups may be removed before invoking the theorem.
+Write
+         X                      X                   X                      TW
+  M0 =       |Y (V )|,    T0 =       |V |,  TW =         |V |,     DW =         .
+        V ∈V                    V ∈V              V ∈V
+                                                                           |W |
+                                                           W
+                  PROFILE-STABLE MULTIPLICITY FACTORING                   25
+
+The TW and DW remain frozen through every refinement. Suppose the
+parent volumes and ordered John semiaxes are uniformly comparable to
+fixed scales w1 ≤ · · · ≤ w4 . Put
+                     ℓ = h = w1 /100,         W ♯ = Nw1 (W ),
+and assume |W ♯ | ≍ |W |.
+   For each parent fix, before any refinement, a number αW ∈ (0, 1]. Assume
+that for every measurable refinement and every parent with positive refined
+mass,
+                                                        ′
+                                                V ∈VW |Y (V )|
+                                             P
+              ′            K
+(64) |Nh (UW )| ≥ ΓαW dW |W |,          dW =                   , K > 1,
+                                                    TW
+with common Γ > 0 and K. Let N = #V, P = #W, and
+(65)         G = 2 + log(2 + N ) + log(2 + P ) + log(2 + w4 /w1 ).
+Lemma 6.3 (Grid-neighbor covering). Let Qℓ be the half-open grid of side
+ℓ in Rd , and let U be measurable such that the grid cube containing every
+point of U has positive-measure intersection with U . If
+                                  [
+                     Zℓ (U ) =     {Q ∈ Qℓ : |U ∩ Q| > 0},
+then
+(66)                   |Nh (U )| ≤ Cd (1 + h/ℓ)d |Zℓ (U )|,
+and Zℓ (U ) ⊂ N√d ℓ (U ).
+Proof. If y ∈ Nh (U ), choose x ∈ U with |x − y| < 2h. The lattice indices of
+their half-open grid cubes differ in each coordinate by at most 2 + ⌈2h/ℓ⌉.
+The cube of x is active, so the cube of y lies among at most Cd (1 + h/ℓ)d
+neighbors of an active cube. Disjointness and equal grid √ volume prove the
+first assertion. If Q is active, every point of Q is within d ℓ of a point of
+U ∩ Q.                                                                     □
+Theorem 6.4 (Profile cellular factoring). Under the preceding hypotheses,
+there are a single refinement Y ′ , coarse shadings Z(W ♯ ) for every parent
+index, a nonempty positive final-mass set
+                              ′
+                                                    |Y ′ (V )| > 0},
+                                             X
+                   W+ = {W : MW =
+                                            V ∈VW
+
+positive dyadic a, b, c, M , and σ = M/c > 0 such that Z(W ♯ ) = ∅ for
+W ∈/ W+ and
+                                  |Y ′ (V )| ≳ G −4 M0 .
+                             X
+(67)
+                              V
+The containment (13), the pointwise conclusions (15)–(17), the fibre equality
+(19), and local uniformity (20) hold with the full frozen coarse family W ♯ .
+For every W ∈ W+ ,
+(68)                   µ(V, Y ) ≲ G 4 µ(W ♯ , Z)µ(VW , Y ′ ),
+26               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+and
+(69)             λ(W ♯ , Z) ≳ ΓG −4K PK (D, α; p)λ(V, Y )K ,
+where
+                                         |W |
+                                pW = P         ′
+                                                  .
+                                         W ′ |W |
+Proof. We construct the refinement through four nested mass-weighted selec-
+tions. The first two act directly on the fine multiplicities. After removing
+null cell pieces, the third records how many parent indices are active in a
+cell, and the fourth makes the fine mass comparable across the retained cells.
+Each selection is charged to the current fine shaded mass, while the common
+restrictions preserve all uniformities already obtained.
+Inner multiplicity. For the current shadings define
+                                        X
+                         mW (x) =            1Y (V ) (x).
+                                     V ∈VW
+                  R
+The identity W mW = V |Y (V )| and 1 ≤ mW ≤ N on the fine union
+             P              P
+
+permit a dyadic choice of a carrying a logarithmic fraction of the fine mass.
+Intersecting every shading in a parent with {a ≤ mW < 2a} makes the inner
+multiplicity uniform on the surviving parent union.
+                                                           P
+Global fine multiplicity. For the refined shading let m = W mW . Select
+one dyadic c by fine mass and intersect every shading with the common set
+{c ≤ m < 2c}. Because the same set is used for every child, the inner count
+obtained in the preceding step remains valid at every surviving point.
+                                          (2)
+Positive-measure cell activity. Let UW be the parent union after these
+selections and partition R4 into half-open cubes Q of side ℓ. Remove from
+every child shading the same null set
+                                   [            (2)
+(70)                     E=                 (UW ∩ Q).
+                                    W,Q
+                                  (2)
+                                |UW ∩Q|=0
+
+Only finitely many cells meet the bounded parents, so E is null and the
+previous mass and multiplicity conclusions are unchanged. After removing it
+from every child, any surviving fine point makes its assigned parent active in
+its cell in the positive-measure sense required by the grid argument.
+                                                               (2)
+Indexed active-parent multiplicity. Call W active in Q if |UW ∩ Q| > 0, and
+let bQ be the number of active parent indices. On every positive-fine-mass
+cell, 1 ≤ bQ ≤ P . Select a dyadic b by the fine cell masses
+                                   X
+                           MQ =         |Y (V ) ∩ Q|,
+                                    V
+and retain the cells with b ≤ bQ < 2b. This whole-cell restriction preserves
+the two fine multiplicity ranges and makes the indexed coarse count uniform
+on every retained cell.
+                 PROFILE-STABLE MULTIPLICITY FACTORING                      27
+
+                            P
+Cell fine mass. Let A = Q MQ > 0 after the third selection and let J be
+the number of cells with MQ > 0. Discard cells with
+                                       A
+(71)                            MQ <     .
+                                      2J
+This loses less than A/2. The remaining positive masses have ratio at most
+2J, so one dyadic level
+(72)                            M ≤ MQ < 2M
+carries a logarithmic fraction of the mass. Intersect every child shading with
+the same union of selected whole cells. The final cell masses are therefore
+comparable without disturbing any of the three multiplicity ranges.
+  The number of cells satisfies
+                                    4
+                                    Y
+(73)                         J ≲P        (1 + wj /w1 ).
+                                    j=1
+
+Indeed, a cube meeting W lies in N2ℓ (W ), and disjointness of the grid and
+the John-box estimate give
+                                                          4
+                                                          Y
+             #{Q : Q ∩ W ̸= ∅}ℓ4 ≤ |N2ℓ (W )| ≲               (wj + ℓ).
+                                                          j=1
+Thus each of the four selections costs at most a factor controlled by G, which
+gives (67). The construction has used the pointwise and cellular quantities,
+while retaining the complete range of parent loads for the profile assembly.
+   Let W+ be the parents with positive final mass. For every parent, including
+those outside W+ , define
+                                                       ′
+                     [
+(74)     Z(W ♯ ) =    {Q : Q is finally selected and |UW ∩ Q| > 0}.
+This is empty for W ∈   / W+ . If a parent was active in a finally selected
+cell, the whole-cell restriction preserves its positive-measure fine piece, so
+it belongs to W+ . Consequently the coarse multiplicity on a selected cell is
+the previously selected bQ ∈ [b, 2b). Parents outside W+ contribute empty
+coarse shadings but remain in the fixed denominator. Since a grid cube has
+diameter 2ℓ < w1 ,
+                          ′                   ′
+                         UW ⊂ Z(W ♯ ) ⊂ Nw1 (UW ) ∩ W ♯.
+The common whole-cell restrictions preserve the inner and global counts.
+  At a final fine point, let p(x) count assigned parent indices contributing a
+child. Then
+                c ≤ mV,Y ′ (x) < 2a p(x),        p(x) ≤ bQ < 2b,
+and hence
+(75)                                c < 4ab.
+For W ∈ W+ and for the full coarse family,
+                a ≤ µ(VW , Y ′ ) < 2a,        b ≤ µ(W ♯ , Z) < 2b.
+28               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+Writing M ′ =        ′            ′         ′
+                 V |Y (V )| and U = U (V, Y ), we have
+                P
+
+                                 M0        M′
+                       µ(V, Y ) ≤ ′ ≲ G 4 ′ < 2G 4 c.
+                                 |U |     |U |
+Together with (75), this proves (68).
+   Unique half-open cell ownership, the global null cleanup, and the disjoint
+assigned index union give
+                                  ˙
+                                  [
+                     (V)Y ′ (x) =     W ∈W (VW )Y ′ (x).
+                                      x∈Z(W ♯ )
+On a selected cell,
+             c|U ′ ∩ Q| ≤ MQ < 2c|U ′ ∩ Q|,           M ≤ MQ < 2M,
+so |U ′ ∩ Q| ≍ σ = M/c. A ball of radius w1 centered in the coarse union
+contains its center cell and meets only O(1) grid cells, proving local uniformity.
+   For the density conclusion, the null cleanup gives the pointwise hypothesis
+of Lemma 6.3, and Z(W ♯ ) = Zℓ (UW   ′ ). Since h = ℓ,
+
+                                               ′
+(76)                         |Z(W ♯ )| ≳ |Nh (UW )|.
+                 / W+ . The local input, summation, and |W ♯ | ≍ |W | give
+Put dW = 0 for W ∈
+                                           X
+(77)                     λ(W ♯ , Z) ≳ Γ         pW αW dK
+                                                       W.
+                                           W
+Moreover,
+            X                   M′              X             T0
+                pW DW dW = P           ,             pW DW = P       .
+            W                   W |W |           W            W |W |
+
+Thus
+                                    M′
+                      P
+                       W pW DW dW
+(78)                   P          =    ≳ G −4 λ(V, Y ).
+                         W pW DW           T0
+Apply Lemma 6.1 to (77) and use (78), which yields (69); the four-selection
+loss is raised to K.                                                      □
+6.3. From the local response to the main theorem. It remains to
+match the local geometric response from Section 5 with the abstract cellular
+theorem. The initial reduction to W0 provides the positive-mass hypothesis,
+parent comparability makes the local constants uniform, and the fixed local
+efficiencies become the coefficients in the Hölder profile.
+Proof of Theorem 2.2. Restrict first to the parent groups in W0 from (10).
+Every discarded input shading is null; finiteness therefore preserves both the
+shaded mass and the measure of the fine union. Let V0 be the remaining
+assigned child family and set
+                                   V ∈V0 |Y (V )|
+                                 P
+                            λ0 = P                .
+                                      V ∈V0 |V |
+Then λ0 ≥ λ.
+                  PROFILE-STABLE MULTIPLICITY FACTORING                       29
+
+  Fix ℓ = h = w1 /100. For every W ∈ W0 ,
+                   h          1      ΛW         a1 (W )      w1
+                                      
+                       ∈           ,     ,              ≍ΛW     .
+               a1 (W )     100ΛW 100            a4 (W )      w4
+The local logarithm is bounded by L, uniformly in W . Corollary 5.7, in its
+intrinsic form, supplies (64) for every later measurable refinement with
+                              ε
+                       −A0,ε w1                    (K )
+            Γ ≳ε,ΛW L                ,    αW = κW ε ,       Kε ≥ 2.
+                               w4
+The coefficient αW ∈ (0, 1] is determined before the cellular refinement.
+Lemma 5.2 gives |W ♯ | ≍ΛW |W | and the required Katz–Tao stability.
+   Apply Theorem 6.4 to W0 and V0 , and extend its output to the original
+indexed family by setting Y ′ (V ) = ∅ for V ∈ V \ V0 . The extension is
+a refinement. Since the discarded input shadings form a finite null union,
+µ(V, Y ) = µ(V0 , Y ); the empty outputs also remove those indices from
+                                               (K )
+every refined pointwise fibre. With αW = κW ε , the cellular profile is (11).
+Since λK        Kε
+        0 ≥ λ , its density estimate proves (14). Its mass, compatibility,
+          ε
+
+multiplicity, product, fibre, and local-uniformity conclusions prove (12)–(20)
+after increasing one Aε to dominate the local and four-selection logarithmic
+powers. Finally,
+                  ∆max (W0♯ ) ≲ΛW ∆max (W0 ) ≤ ∆max (W),
+which gives (21) and completes the proof.                                     □
+Proof of Corollary 2.3. Lemma 5.4 and (7)–(8) give, parentwise,
+                               (K )         (K )
+                              κW ε ≥ C −1 ηW ε .
+Substitution into the denominators of (11) and (22) yields
+                                    −1 elem
+                              Pint
+                               ε ≥C   Pε .
+Theorem 2.2 now gives (23) with the same refinement and all the same
+structural conclusions.                                            □
+
+        7. Consequences and the comparable-scale regime
+   The profile theorem becomes more familiar when the parent loads and local
+inflation efficiencies are balanced. We first record this direct consequence and
+use a mixed geometry example to show that inflation balance is weaker than
+coordinatewise axis comparability. We then recover the comparable-scale
+conclusion by selecting a load level before applying the main theorem.
+7.1. Balanced profiles and mixed child geometry.
+Corollary 7.1 (Balanced elementary profile). In Corollary 2.3, suppose
+         maxW ∈W0 DW               (K )
+                       ≤ ΛD ,     ηW ε ≥ η0 > 0 (W ∈ W0 ).
+         minW ∈W0 DW
+30                 ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+Then the same refinement satisfies
+                                                           ε
+                                                      w1
+                                                  
+(79)             λ(W0♯ , Z) ≳ε,ΛW L−Aε                          C −1 Λ−K ε  Kε
+                                                                      D η0 λ .
+                                                      w4
+                                  (K )
+Proof. Apply (63) to αW = ηW ε in (22).                                          □
+     The parallel-volume estimate (45) gives the useful criterion
+                                            4
+                                                                     !
+                                            Y               h
+(80)                      rW (V ) ≍                   1+         .
+                                            j=1
+                                                         aj (V )
+Thus, if the products on the right are uniformly comparable among the
+                                  −          +       (K )
+children in a fixed parent, then rW ≍ rW ≍ rW   and ηW ε ≍ 1. This product
+condition allows coordinatewise axis ratios to be unbounded.
+Example 7.2 (Mixed sub-buffer shapes). Let τ ≪ h and take equal-volume
+convex children whose John-axis quadruples are
+                         (τ 3 , τ, τ, τ )     or       (τ 2 , τ 2 , τ, τ ).
+Both products of the four axes equal τ 6 , whereas the first two coordinatewise
+axis ratios between the two shapes are τ and τ −1 . Hence no fixed coor-
+dinatewise comparability constant survives as τ → 0. Since all axes are
+o(h),
+                                                      h4
+                     |Nh (V )| ≍ h4 ,      rW (V ) ≍      .
+                                                     |V |
+Equal child volumes therefore make all inflation ratios comparable and give
+ (K )
+ηW ε ≍ 1. Whenever the parent loads are also balanced, Corollary 7.1 gives
+a nondegenerate conclusion although no uniform coordinatewise child-axis
+comparison is available.
+7.2. The comparable-scale specialization.
+Corollary 7.3 (Comparable-scale buffered factoring). Assume the hypotheses
+of Corollary 2.3 and, in addition, fix ΛV ≥ 1 such that for every pair of child
+indices V, V ′ and every 1 ≤ j ≤ 4,
+                        Λ−1     ′                      ′
+                         V aj (V ) ≤ aj (V ) ≤ ΛV aj (V ).
+Then there is a nonempty selected parent subfamily W ′ ⊂ W for which all
+the structural conclusions of Theorem 2.2 hold, every retained coarse index
+has positive final mass, and
+                                               ε
+                                               w1
+(81)               λ(W ′♯ , Z) ≳ε,ΛV ,ΛW L−Aε        C −1 λKε .
+                                               w4
+In particular, the conclusion includes the one-refinement, multiplicity-product,
+fibre, local-uniformity, and Katz–Tao properties of Theorem 2.2, now on the
+selected parent family.
+                 PROFILE-STABLE MULTIPLICITY FACTORING                      31
+
+Proof. Discard first the initial zero-shaded-mass parent groups. This pre-
+serves the numerator of the fine density and decreases its denominator.
+Coordinatewise child-axis comparability and the John-volume estimate imply
+that all child volumes are comparable to one value v. Parent-axis com-
+parability makes all parent volumes comparable as well. If nW = #VW ,
+then
+                                   TW                    v
+(82)                     DW =           ≍ΛV ,ΛW nW         .
+                                   |W |              |W |
+For a nonempty group, 1 ≤ nW ≤ N = #V, so the positive loads occupy
+OΛV ,ΛW (1 + log(2 + N )) dyadic levels.
+   Choose a load level D ≤ DW < 2D carrying a reciprocal-logarithmic
+fraction of the original shaded mass, and call its parent Sfamily W1 . If
+M1 , T1 are the selected shaded and body masses, let V1 = ˙ W ∈W1 VW and
+U1 = U (V1 , Y ) and Ufull = U (V, Y ). Then
+                                                M1   M1
+                 M1 ≳ L−1 M0 ,          λ1 =       ≥       ≳ L−1 λ.
+                                                T1    T0
+The selected loads are 2-comparable. Since U1 ⊂ Ufull , the retained-mass
+estimate also compares the original and selected average multiplicities:
+                           M0           M1         M1
+              µ(V, Y ) =           ≲L           ≤L        = Lµ(V1 , Y ).
+                          |Ufull |     |Ufull |    |U1 |
+  At the common radius h = w1 /100, (80) and the global coordinatewise
+child-axis hypothesis imply
+                  −             +             (K )
+                 rW ≍ΛV rW ≍ΛV rW ,          ηW ε ≳ΛV ,Kε 1
+for every W ∈ W1 . Lemma 6.1, or Corollary 7.1, therefore bounds the
+selected elementary profile below by a positive constant depending only on
+ΛV , ΛW , ε.
+   Apply Corollary 2.3 to the selected family (W1 , V1 ), and extend its output
+by Y ′ (V ) = ∅ for V ∈ V \ V1 . Its mass conclusion, combined with M1 ≳
+L−1 M0 , gives the mass bound relative to the original family after increasing
+Aε . Its density conclusion contains λK   ε
+                                        1 ≳ L
+                                                −Kε λKε , and hence yields (81)
+
+after the same increase. The displayed comparison of average multiplicities
+and the selected-family product give the full-family multiplicity product
+with one further factor L, which is absorbed by the same increase of Aε .
+The empty extension makes all full-family pointwise multiplicity and fibre
+statements literal.
+   The profile theorem keeps final zero-mass parent buffers in the denominator
+fixed by the selected input family. Delete precisely those empty-shading coarse
+indices. The coarse numerator, coarse union, all pointwise multiplicities, and
+fibre equality are unchanged; coarse density can only increase and ∆max can
+only decrease. The remaining parent family W ′ consists precisely of positive
+final-mass parents, so every average multiplicity in the corollary is defined.
+All structural conclusions are therefore inherited by W ′ .                  □
+32               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+Remark 7.4. Corollary 7.3 normalizes the coarse family after selecting a
+parent-load level. Theorem 2.2, by contrast, keeps the entire initial positive-
+mass support and records load imbalance through its profile. The two
+conclusions agree in the balanced regime but use different denominators
+before that specialization.
+
+          8. Structural limitations and model examples
+   The definitions in the main theorem reflect several distinct geometric and
+normalization constraints. The examples below explain them one at a time:
+the external buffer, indexed counting, mean-normalized inflation, the parent-
+load profile, the projection direction, and the two cellular discretizations.
+Each model addresses a particular mechanism rather than asserting global
+optimality of the full theorem.
+8.1. Why the coarse shading lives in the external buffer. Fix L ≫
+r > 0 and, in R × R3 , consider the cone
+(83)               W = {(t, y) : 0 ≤ t ≤ L, |y| ≤ (r/L)t}.
+Its shortest John scale is comparable to r. At the apex,
+                                      3
+                                                  r7
+                          Z r
+                                 rt                      |B(0, r) ∩ W |
+(84)   |B(0, r) ∩ W | ≍                    dt ≍      ,                  ≍ (r/L)3 .
+                          0      L                L3       |B(0, r)|
+For the lower bound one may integrate only over r/4 ≤ t ≤ r/2; the upper
+bound uses the cone cross-section directly. Let Uη = W ∩ B(0, η) with
+0 < η ≪ r. Because the apex belongs to Uη , the full neighborhood Nr (Uη )
+contains B(0, r). In contrast,
+                      W ∩ Nr (Uη ) ⊂ W ∩ B(0, r + η),
+and the same integration gives an O((r/L)3 ) fraction of an r-ball. Thus
+no aspect-independent comparison can replace the coarse shading in the
+external buffer Nr (W ) by W ∩ Nr (Uη ). Lemma 5.2 provides the alternative
+used in Theorem 2.2: the external buffer has comparable parent volume and
+stable Katz–Tao density.
+8.2. Indexed multiplicity under coincident geometry. Let there be
+R different parent indices with identical geometric parent W , and assign to
+each one a single identical child and identical nonnull shading. The global
+fine multiplicity is R, the inner multiplicity in every assigned group is 1,
+and the indexed coarse multiplicity is R. Hence the multiplicity product is
+exact up to constants. If the coarse parents were geometrically deduplicated
+without weights, the coarse multiplicity would become 1 and the product
+would fail by the arbitrary factor R. This example forces indexed counting
+in (17), (18), and (21).
+   The same mechanism appears in Theorem 4.6. If Qi = Q and Ei = E for
+all N indices, then the indexed Katz–Tao density is m = N , whose inverse
+cancels the indexed body mass N |Q|. This balance is the reason the passage
+                 PROFILE-STABLE MULTIPLICITY FACTORING                      33
+
+from the essentially-distinct theorem to the indexed theorem is carried out
+inside the paper.
+8.3. Mean-normalized density conversion. Let W = [0, 1]4 , fix h =
+c0 a1 (W ), include V0 = W , and partition W into N = m4 congruent cubes
+V1 , . . . , VN of side m−1 . The indexed family has bounded relative Frostman
+constant: its total body density in W is 2, a proper convex test body cannot
+contain V0 , and the disjoint small cubes contained in such a test body have
+total volume at most the test volume.
+   For large m,
+                         r0 ≍ 1,      rj ≍ N (1 ≤ j ≤ N ).
+Since the large child and all small children each contribute total body mass
+1,
+                                 r0 |W | + N j=1 rj |Vj |
+                                           P
+               −                                                +
+              rW ≍ 1,     rW =                            ≍ N, rW ≍ N.
+                                          2|W |
+Shade only V0 . Then
+            1                          r0 |W |                r−
+        dW = ,        dwt
+                       W,h =             PN           ≍ N −1 ≍ W dW .
+            2                  r0 |W | + j=1 rj |Vj |         rW
+Thus (5) is sharp up to constants. The elementary local efficiency is
+                                           !K
+                                       −
+                         (K) rW       rW
+                        ηW = +                  ≍ N −K .
+                             rW       rW
+Thus the example saturates the mean-normalized conversion without pro-
+ducing an additional outer inflation-ratio factor.
+8.4. Load imbalance and the profile coefficient. Take P pairwise dis-
+joint congruent parents with probability weights pj = 1/P . Let D1 = R,
+Dj = 1 for j ≥ 2, and αj = 1. Concentrate the fine shaded density on the
+first parent. When R ≫ P , the global fine density can be close to 1, but a
+coarse denominator frozen over all P parents has density at most O(P −1 ) if
+only the first parent carries substantial coarse shading. Algebraically,
+                    ((R + P − 1)/P )K
+         PK =                              ≍ P −1          (R ≫ P ).
+                ((RK/(K−1) + P − 1)/P )K−1
+The displayed profile therefore decays like P −1 in this regime. The
+comparable-scale corollary first selects one load level and consequently uses
+a different coarse normalization. By Remark 6.2, the profile is optimal for
+the scalar Hölder step; this example does not address optimality of the
+remaining geometric losses.
+34               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+8.5. Choice of projection direction. Let V = W be a box with side
+lengths w1 ≪ w2 ≤ w3 ≪ w4 , take h = w1 , and project along the longest
+direction. Then
+                                 |Nh (V )|
+                                           ≍ w4 ,
+                                |πNh (V )|
+not h. The upper estimate in Lemma 5.3 contains the width in the projection
+direction. Choosing a shortest John direction turns that width into O(h)
+while still permitting arbitrarily tilted children.
+8.6. Affine orientation and cell-mass selection. The affine parameteri-
+zation in Section 4 is needed even when all boxes have the same center and
+long axis. For
+       Rϕ = Rote3 (ϕ)([−δ, δ]2 × [−1, 1]),     ϕ = jδ,   0 ≤ ϕ ≤ π/4,
+all boxes have the same center and long axis, and any two square cross-sections
+overlap in more than half their area. The non-essential-distinctness graph
+contains a clique of size comparable to δ −1 . Lemma 4.4 avoids this aspect
+loss by measuring relative affine transforms modulo the finite symmetry
+group of the box.
+                                                                k
+   Finally, arbitrary measurable shadings can place masses 2−2 in successive
+grid cells. Their positive dyadic levels are not bounded by a logarithm of the
+family cardinality or aspect ratio. The relative cutoff (71) removes less than
+half the current mass and leaves a mass ratio at most 2J; this is why the
+fourth profile selection costs O(log(2 + J)) and remains valid for densities
+smaller than every fixed scale power.
+   Finally, the product construction in Proposition 3.2 shows that the
+codimension-one lift preserves, rather than improves, both the factor H
+and the density response inherited from the lower-dimensional theorem.
+
+ Appendix A. Dependence of constants and logarithmic losses
+   Theorem 2.2 collects several logarithmic factors into one exponent Aε . We
+record their origins here and state the uniformity of the remaining constants.
+A.1. Local analytic losses. For a local assigned family of cardinality NW ,
+the indexed collision reduction contributes
+                         L−1                   −1
+                          NW = (1 + ⌈log2 NW ⌉) .
+The three ordered projected John axes range between h and R, so their
+dyadic binning contributes
+                         Jh−1 ≳ (1 + log+ (R/h))−3 .
+Since NW ≤ #V and, uniformly in W , R/h ≍ΛW w4 /w1 , their product is
+bounded below by a fixed negative power of
+          L = 2 + log(2 + #V) + log(2 + #W) + log(2 + w4 /w1 ).
+Thus the cardinality and axis-binning losses remain in L, separately from
+the power (w1 /w4 )ε .
+                   PROFILE-STABLE MULTIPLICITY FACTORING                     35
+
+A.2. Cellular and profile losses. The four mass-weighted selections in
+the cellular theorem have at most
+ O(log(2 + #V)),      O(log(2 + #V)),      O(log(2 + #W)),       O(log(2 + J))
+choices, respectively. They leave all parent loads in the Hölder profile. The
+cell count satisfies
+                                    4
+                                    Y
+                           J ≲ #W        (1 + wj /w1 ),
+                                    j=1
+and therefore
+          log(2 + J) ≲ 1 + log(2 + #W) + 4 log(2 + w4 /w1 ) ≲ L.
+The retained mass is thus ≳ L−4 times the incoming mass. The profile
+Hölder normalization raises this fraction to Kε , giving L−4Kε in the coarse
+density. The comparable-scale specialization uses one additional parent-load
+selection. One admissible exponent covering both the profile theorem and
+that specialization is
+                           Aε ≥ A0,ε + 5Kε + 6.
+For the profile theorem itself, the four cellular selections account for the
+global selection loss.
+A.3. Base-family profile quantities. For each parent in the initial positive-
+mass support, the following quantities are determined before the cellular
+refinement:
+                            −              +      wt
+            TW ,    DW ,   rW ,   rW ,    rW ,   CF,h ,   κW ,   ηW .
+The exponent Kε ≥ 2 comes from the three-dimensional response and is
+unchanged by the lift. The parent probabilities pW , the profile Pε , and
+the fine density use the denominators fixed in Section 2. The data profile
+therefore remains displayed separately from L−Aε and the implicit constant.
+A.4. Uniformity in the nominal parent scale. The proof uses the
+common analytic radius h = w1 /100, whereas Theorem 5.6 is written with
+h = c0 a1 (W ). The parent comparison hypothesis gives
+                                h           1     ΛW
+                                                    
+                        c0 =         ∈          ,      .
+                             a1 (W )     100ΛW 100
+Every geometric constant in Lemmas 5.3–5.5 is uniform on this compact
+interval. Also
+                    a1 (W )       w1
+                            ≍ΛW      ,     w1 ≤ ΛW a1 (W ),
+                    a4 (W )       w4
+which justifies both the common aspect factor and the common buffer radius.
+   The profile theorem’s implicit constants may depend on ε, the dimension,
+and ΛW ; the comparable-scale specialization may additionally depend on
+ΛV . They are uniform in λ, the family cardinalities, duplicate multiplicity,
+child orientation, child aspect ratio, and child minimum scale. The explicit
+profiles and logarithms retain the corresponding base-family data.
+36               ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+     Appendix B. Derivation of the three-dimensional input
+   Proposition 4.1 combines several statements from Wang and Zahl with a
+short localization and density-threshold argument. This appendix gives the
+notation dictionary for that derivation and distinguishes the source inputs
+from the indexed extension proved in Section 4.
+a, b (manuscript) ←→ a, b (source). These are the normalized John dimen-
+sions in Definitions 3.1 and 5.4; here a = q1 /q3 and b = q2 /q3 .
+N, v ←→ #P, |P |. These are the cardinality and comparable body-volume
+scale in (5.5), with v ≍ ab after normalizing the longest dimension to one.
+ρ ←→ the dense-shading     parameter.  Definition 3.1 uses the same average-
+mass notion, P |Y (P )| ≥ ρ P |P |, and Definition 5.4 assumes ρ ≥ aη .
+                P             P
+
+m = ∆max (Q) ←→ CKT−CW (P). The source locations are Definition 1.3′ (A),
+equation (4.1), and Remark 4.2(A). The quantities agree after identifying
+P = Q; the source family at this stage is a set, not our later indexed multiset.
+ℓ ←→ CF−SW (P). The source locations are Definition 1.3′ (B), equation (4.2),
+and Remark 4.2(A), with the test collection restricted to slabs. This auxiliary
+slab constant is not the relative convex Frostman constant CF (Q, B ′ ) used
+later in the paper.
+D(Q) ←→ D(P). The source locations are Definition 5.4, equation (5.6), and
+Remark 5.6. The calligraphic letter here avoids collision with the manuscript’s
+other density symbols.
+t, t ←→ σ, ω. These are the positive parameters in F (σ, ω), Definition 5.4.
+In Proposition 4.1 both are chosen as t = ε/10, while the source’s displayed
+aε loss is invoked with ε = ε/2; thus the source threshold exponent is
+ηWZ (ε/2; t, t).
+   With this dictionary, (5.5) agrees with (31) up to the fixed John compa-
+rability constants and the source constant κ. The facts N v ≲ m, m ≳ 1,
+and ℓ ≲ a−1 come, respectively, from the fixed ambient localization, testing
+the Katz–Tao constant on one member, and the elementary slab-volume
+test. For every P , subfamily monotonicity gives CKT−CW (P[Nb (P )]) ≤ m, so
+Remark 5.6, Situation 2, gives D ≲ m1/2 . Hence, writing B = m−3/2 ℓN v 1/2 ,
+                      BD ≲ m−1 ℓN v 1/2 ≲ ℓv −1/2 ≲ a−2 .
+Thus the positive source parameters are absorbed into aε by the derivation
+following (31), yielding (30). The branch 0 < ρ < aη uses the largest shading
+and is internal to Proposition 4.1. The source chain begins at D(0, 0), but
+the convex assertion used in the union estimate is F (t, t) with t = ε/10 > 0.
+   The relevant source result chain is precise. Theorem 1.9 gives D(0, 0). At
+σ = ω = t, Definition 1.5 makes D(t, t) weaker by the factor (#T )−t ≤ 1.
+Proposition 1.6 gives E(t, t), and Proposition 5.14 gives F (t, t) for 0 < t ≤ 2/3
+[10]. Remark 5.6, Situation 2, supplies the separate bound for the geometric
+factor D used above.
+                  PROFILE-STABLE MULTIPLICITY FACTORING                         37
+
+     (1) Wang and Zahl’s three-dimensional convex assertion F (σ, ω) is used
+         for positive σ and ω, together with their endpoint theorem and
+         equivalence result [10]. The source assertion assumes an essentially-
+         distinct family and a positive density threshold. Proposition 4.1
+         converts it to the required all-density form by positive-parameter
+         absorption and the separate largest-shading argument.
+     (2) The source definition of essential distinctness is (29), so coincident
+         indexed bodies lie outside its scope. Lemma 4.4 and Theorem 4.6
+         provide the indexed extension, with the explicit loss L−1   N .
+     (3) Guth, Wang, and Zahl formulate the three-dimensional factoring
+         architecture and develop its induced-shading density mechanism [5].
+         Subsequent analysis of the printed non-cellular transitions gives a
+         conditional cellular replacement for the relevant compatibility in-
+         terface [6]. These works motivate the factoring architecture; the
+         four-dimensional theorem uses the self-contained cellular argument
+         of Section 6.
+     (4) The sticky works of Wang–Zahl and Choudhuri contain compatible
+         coarse/fine refinements and multiplicity products [11, 2]. They pro-
+         vide context for the coarse/fine organization, while Theorem 2.2 is
+         proved without their extremal or sticky hypotheses.
+     (5) The four-dimensional maximal theorem of Borges, Chan, Chen, Liu,
+         Xi, and Zhan [1] locates the structural result within the broader
+         four-dimensional problem. The factoring proof itself is independent
+         of its restriction, two-ends, plany, and transversality conclusions.
+   The division of roles is therefore explicit: F (t, t) is used at positive param-
+eters, the small-density branch is proved in Proposition 4.1, and the passage
+from essentially-distinct bodies to indexed families is carried out by Theorem
+4.6.
+
+             Appendix C. Supplementary boundary cases
+  The main text emphasizes the mechanisms that drive the estimates. The
+examples here clarify three set-theoretic and normalization conventions used
+by the common refinement.
+C.1. Coarse shadings and fine fibres. Let a parent have positive fine
+shading in a small measurable subset of a selected cell Q. By definition,
+Z(W ♯ ) contains the whole cell. At a point x ∈ Q outside the fine shading
+one has x ∈ Z(W ♯ ) but (VW )Y ′ (x) = ∅. Thus (19) is valid because empty
+fibres contribute nothing, but the stronger parent-set identity
+                  {W : (VW )Y ′ (x) ̸= ∅} = {W : x ∈ Z(W ♯ )}
+is false in general.
+38                 ZHIXU HUA, XINSHUN YAO, AND XIUFAN YANG
+
+C.2. The global null cleanup. Start with several parents having positive
+shading in each of several cells. Add one parent with positive shading in one
+such cell and with nonempty null dust in the other cells. Positive-measure
+activity counts the added parent only in its positive cell, but the set-theoretic
+neighborhood of its union sees the dust in all cells. Without deleting the dust,
+neither the pointwise implication from fine contribution to active parent nor
+the grid-neighbor comparison (76) is valid everywhere.
+   Deleting null pieces separately for each parent is insufficient at points
+shared by different parents, because it can change the global count while
+leaving the point in the global union. The single set E in (70) is a finite
+union of null parent–cell pieces and is removed from every child. It preserves
+every mass and all previously selected pointwise multiplicities.
+C.3. Limits of unweighted Frostman inheritance. Let W = [0, 1]4 ,
+include V0 = W , and let
+                       Vj = Ij × [0, 1]3 ,       1 ≤ j ≤ N,
+where the consecutive disjoint intervals Ij have length η = N −4 . The original
+indexed family has bounded relative Frostman constant: a proper convex
+test body cannot contain V0 , while the small slabs it contains have disjoint
+interiors and total volume at most that of their convex hull.
+   Take h = N −2 and Pj = Nh (Vj ). The convex body
+                              K = Nh ([0, N η] × [0, 1]3 )
+contains P1 , . . . , PN but not P0 . Since N η ≪ h,
+                                                  PN
+                                                     j=1 |Pj |
+                   |K| ≍ h,        |Pj | ≍ h,           ≍ N.
+                                                |K|
+Meanwhile the total thickened-body density in a fixed containing box is
+bounded. Thus the relative Frostman constant after thickening can grow
+like N , showing that an inflation-sensitive coefficient is unavoidable; that
+geometric calculation alone does not identify the sharp universal ratio.
+   The intrinsic quantity for the transfer is the exact weighted coefficient
+  wt from (6). The universal comparison
+CF,h
+                                    wt
+                                   CF,h ≤ C r+ /r
+is the proof-valid upper bound of Lemma 5.4. Here the relevant scales are
+         r0 ≍ 1,      rj ≍ h/η = N 2 ,          r− ≍ r ≍ 1,      r+ ≍ N 2 .
+Indeed, the small slabs have total weighted mass N    j=1 rj |Vj | ≍ N h = N
+                                                                             −1 ,
+                                                         P
+
+whereas the large child contributes mass comparable to 1. Testing the
+weighted coefficient on the unthickened convex strip [0, N η] × [0, 1]3 gives
+weighted density comparable to N 2 . This example isolates the need for
+an inflation-sensitive coefficient; it does not assert sharpness of the full
+inheritance or profile theorem. Its radius is not tied to the shortest scale of
+                    PROFILE-STABLE MULTIPLICITY FACTORING                               39
+
+the unit parent. The scale-compatible construction in Section 8 separately
+treats the mean-normalized density conversion when h ≍ a1 (W ).
+                                     References
+ 1. Tainara Borges, Tiklung Chan, Mingfeng Chen, Diankun Liu, Yakun Xi, and Yufei
+    Zhan, Restriction and Kakeya maximal estimates in R4 , 2025, arXiv v1, submitted 28
+    November 2025.
+ 2. Mukul Rai Choudhuri, An improved bound on the Hausdorff dimension of sticky Kakeya
+    sets in R4 , Revista Matemática Iberoamericana 42 (2026), no. 4, 1227–1256, Published
+    5 May 2026; arXiv v1 submitted 31 October 2024.
+ 3. Antonio Córdoba, The Kakeya maximal function and the spherical summation multi-
+    pliers, American Journal of Mathematics 99 (1977), no. 1, 1–22.
+ 4. Larry Guth, The endpoint case of the Bennett–Carbery–Tao multilinear Kakeya con-
+    jecture, Acta Mathematica 205 (2010), no. 2, 263–286.
+ 5. Larry Guth, Hong Wang, and Joshua Zahl, A streamlined proof of the Kakeya set
+    conjecture in R3 , 2026, arXiv v1, submitted 20 January 2026.
+ 6. Zhixu Hua and Xiufan Yang, Cellular maximal-density factoring and a conditional
+    repair of the streamlined three-dimensional Kakeya reduction, 2026, arXiv v3, revised
+    26 August 2026.
+ 7. Fritz John, Extremum problems with inequalities as subsidiary conditions, Studies
+    and Essays Presented to R. Courant on His 60th Birthday, January 8, 1948 (K. O.
+    Friedrichs, O. E. Neugebauer, and J. J. Stoker, eds.), Interscience Publishers, Inc.,
+    New York, 1948, pp. 187–204.
+ 8. Nets Hawk Katz, Izabella Łaba, and Terence Tao, An improved bound on the Minkowski
+    dimension of Besicovitch sets in R3 , Annals of Mathematics 152 (2000), no. 2, 383–446.
+ 9. Nets Hawk Katz and Terence Tao, New bounds for Kakeya problems, Journal d’Analyse
+    Mathématique 87 (2002), no. 1, 231–263.
+10. Hong Wang and Joshua Zahl, Volume estimates for unions of convex sets, and the
+    Kakeya set conjecture in three dimensions, 2025, arXiv v1, submitted 24 February
+    2025.
+11.         , Sticky Kakeya sets and the sticky Kakeya conjecture, Journal of the American
+    Mathematical Society 39 (2026), no. 2, 515–585, Published electronically 5 November
+    2025; arXiv v2 dated 7 October 2025.
+12. Thomas H. Wolff, An improved bound for Kakeya type maximal functions, Revista
+    Matemática Iberoamericana 11 (1995), no. 3, 651–674.
+13. Joshua Zahl, A survey of the Kakeya conjecture, 2000–2025, Proceedings of the
+    International Congress of Mathematicians 2026—Volume 4: Invited Lectures (Sections
+    5–8), Society for Industrial and Applied Mathematics, 2026, Open-access proceedings
+    version published 13 July 2026; arXiv v1 submitted 10 December 2025, pp. 270–287.
+
+  Changkong College, Nanjing University of Aeronautics and Astronautics,
+Nanjing, Jiangsu, China
+  Email address: hzx001@nuaa.edu.cn
+
+  College of General Aviation and Flight, Nanjing University of Aeronautics
+and Astronautics, Liyang, Jiangsu, China
+  Email address: 1586847002@QQ.COM
+
+  School of Science, Nanjing University of Posts and Telecommunications,
+Nanjing, Jiangsu, China
+  Email address: B25100020@njupt.edu.cn
+

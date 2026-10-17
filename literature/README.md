@@ -35,3 +35,5 @@ R0020无新PDF，仍19篇，无新在线版本声明。补读WZ Def3.9/map(20)/O
 R0021无新PDF，仍19篇。重核WZ Def17.3/17.4的physical tube-KT baseδ、19.4的cluster/CW范围及22.1/22.4计数；vector polynomial机制采用自包含PCT，不声称source已有向量quadratic定理。原21.1印刷all-scale声明和fixed-scale全局准备责任分开。官方arXiv history本日仍仅v1；有限一手检索空结果不认证新颖性。精确read/search scope见metadata/R0021_source_check.json。
 
 R0022无新PDF，仍19篇，无新在线版本声明。逐核原W/observed A/B与scalarABC，PDF78/91/92已渲染并核符号、两个η参数和同步L_f；局部可修的错配不反源主定理。实际fixedρ准备以自包含time closure/rich triples及named21.2/19.2支付，不靠allscale形式否定。22.5仅为下一vector非二次目标选读，未称已推广。read/视觉核边界见metadata/R0022_source_check.json。
+
+R0033新增3篇2026 primary PDF，共23篇：Choudhuri2610.12480v1(19页)、Moreira2610.06181v1(25页)、Hua–Yao–Yang2608.18693v2(39页)，原PDF/全文/单篇metadata均保存，pdfinfo/bytesSHA256/首页视觉核通过。Choudhuri primary/bannerAug30与PDFtitleOct12日期异常原样记录；HYY v1/v2题名及scope不混。仅读声明/所列scope，不认证全文或把它们当新高维input。官方OAI4本日目录同PDFblob/bytes，README/history/formalization目录状态已核但不等于proof正确性。原2.7/2.13/2.15–2.16、4.1–4.3与companionweighted直接链本轮内部重证，保GWZ set namedinput，详细metadata/R0033_source_check.json。有限前沿一手复核不认证六维17/4新颖性。

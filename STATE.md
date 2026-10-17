@@ -1,12 +1,24 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0032。Goal active；一般/五维满维数未解决，无条件新高维界、真实Kakeya反例及重大性/新颖性认证均未达成。
+更新2026-10-17（Asia/Shanghai），最近轮次R0033。Goal active；一般/五维满维数未解决，无条件新高维界、真实Kakeya反例及重大性/新颖性认证均未达成。
 
 ## 恢复、同步和宏观
 
-R32起点R31 commit335e60e6c4ba64d573aa35cf0206857ea8edd333、tree8d3bbae0e699b7dc565925fde17a8cac8f7ff282，467文件receipt/HEAD/origin/clean一致。上一Goal turn progress（ASM001原3.1/3.2/3.4完整内部重证/交叉独审/安全同步），非最终或重大成果。R32收尾回执tmp/sync/R0032.json须核remote全tree/local精确commit/所有blob bytesSHA256/clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/latest round/AGENTS并运行python scripts/context.py。
+R33起点R32 commit244f83b22238678112255157fa37e8906c7e56c6、treec23b989b79f1f43384cedbeac1276e98e1fb0a2b，479文件receipt/HEAD/origin/clean一致。上一Goal turn progress（TEX完整原两模型/独审/安全同步），非最终或重大成果。R33收尾receipt tmp/sync/R0033.json须核远端全tree/local exactcommit/每blob bytesSHA256/clean；恢复先核receipt/git，读固定入口/registry/latest/AGENTS并运行python scripts/context.py。
 
-**R33必须先定期macro**，不是先沿当前label或source最后一步继续。R30 macro已执行；R32真实terminal/knowledge接口认证为progress，但sourceaudit本身不替代最终高维目标。每轮唯一main、最多两个互补代理，只写指定文件，root独审整合后统一提交/安全同步，不force，不重复请求已有授权。全部旧冻结保持。
+R33定期macro已先完成research/reviews/R0033_macro.md，A当前一手frontier/B dependencyroute审计完成。有限检索未正面消除条件17/4潜在收益，但不认证优先权；旧五维frozen无newinput均保持。选择有界4.3阶段，完成后已重新列剩余源责任及下一唯一gate，不自动沿论文续审。下一常规macro R36，连续两轮无实质信息或同一障碍则提前。每轮唯一main、最多两互补代理，只写指定文件，root统一提交/安全同步，不force、不重复已有授权。
+
+## R33：CRP001完整critical paths，保GWZ具名输入
+
+完整proof notes/10_source_audit/critical_paths/R0033_critical_paths_full_proof.md；A extremal_and_narrowness、B normalization_and_initial_horizon同目录。正式独审research/reviews/R0033_critical_quantifiers_review.md、R0033_prior_and_lifting_review.md及rootintegration实读通过，未经外部同行评审，源既有结果重证无新颖性/重大性声明。
+
+原v1/j1或v2/j2、固定Sη、有bad problems下：0<k≤1；全部maximizing sequences relativeprofile uniform d*r；每fixedfinitepositive-lengthgrid的actualnestedtrue layers/priors/witness、cumulativehorizon kr/段relativek，coarsened和remaining都maximizing；finiteℓ以baseω≤ℓ+ζ及最终composedupper减complementlower给窄度linear Oζ，∞逐outerthreshold选任意大段increments。每fixedi先innerexactN、后outeri，不假sup/infattain/f0绝对有界，归一用各自actualsegmentlength。
+
+完整付2.7 goodnumerator先sum/oldpuredenominator；2.13新worldweightωqν/Z、within-worldJ/ν及M/Z success、terminalequality/earlierupper/knownpr时equality、true lift及temperedfullassignment。2.15经Bernoulli/Johnnet/repeatedindexlongshading/fulltimeplank，2.16经原wholecellwitness/currentresidual分开、逐usedtracelongmarks/j1staticpadding uv/W/ξ慢diagonal。**GWZ2026 Thm1.1集合估计保named高级input，未审全proof；无需companion整个3Dmaximal。** 4.1/4.2实际composition/正k已付。
+
+每层保frozenfullassignment/prior/ownselectedwitness；finalpath无需saturate旧floor。B初稿误追认2.11为R32已审已纠正：本轮不调用finalcurrent多层floor修复；未来真需时另付，不虚增旧scope。无保全部原条件的counter。SRC/DIR/FSD/DIM partialgateways增CRP001，完整OAI4/KT条件保留。
+
+官方currentPDF仍blob45ec20e…/1371486bytes匹配；currentREADME/history无本稿修订通知，lean/formalization.yaml全文未见Kakeya条目，仅是所查目录状态、不证明正确。新增Choudhuri2610.12480v1(19页，abs/bannerAug30与titleOct12日期异常原样记)、Moreira2610.06181v1(25页)、HuaYaoYang2608.18693v2(39页)，文献共23PDF。三篇声明仅4D，未把其proof或scope当新高维input。metadata/R0033_source_check.json与Afrontier记正面6D基线7−2sqrt2/有限搜索边界，不认证最新最优或新颖性。
 
 ## R32：TEX001原Lemma3.5完整两版本
 
@@ -28,11 +40,13 @@ TCM001见notes/10_source_audit/two_color_matching/INDEX.md：一般fixedD/J>D/d0
 
 ASM001见notes/10_source_audit/scalar_sheet_matching/INDEX.md：原3.1无height lower normalfamily/逐点finitejet/closure，独立3.2实际parity/QE supremum到A^C，完整Cor3.4原π Fubini及eps→0统一R0。Cor3.4不调用3.2；3.2后续commonanchor真实使用已由TEX支付。fixeddegree/margin删除例仅反弱化版，不反原命题。无需继续这些工具的局部常数。
 
-## 唯一下一入口：R33先macro，后决定criticalpath候选
+## 唯一下一入口：R34原尺度actual-improvement transfer
 
-spec notes/10_source_audit/terminal_extension/R0032_next_macro_and_critical_path_target.md。必须重新评估六维17/4候选的当前一手前沿/优先权及完整源责任；若已有同等/更强结果，不以清空源条件得到已有界作为总Goal主路线。比较继续source关键路径与五维真缺口收益，旧frozen无input不解冻。
+spec notes/10_source_audit/critical_paths/R0033_remaining_source_responsibilities_and_next_gate.md。阶段退出后重列2.17完整归约、4.4–4.12原尺度转换、§5–10几何branches、外部G/projection/Furstenberg及具名KT的真实剩余责任，未凭已核前50页推源全文正确。
 
-若macro仍支持，候选main为原Prop4.3四项criticalpaths，并先付2.7/2.13 normalization/lift、4.1 composition及4.2；原2.16 weightedplank/3Dmax输入若未核须明确残余条件。重心是relativeprofiles/minimizer/coarsenedcap、fixedi内N极限先于外i、nested truewholelayers/priors/witness、actualsegmentlength、finite/infiniteℓ优化。不能只重复3.5或用一条(i,N)diagonal抹掉量词。未认证整篇或无条件高维。
+下一main原4.11完整candidate→originalknownatlas接口（实际需4.5–4.10/4.12），理由是所有后续局部gain都须支付此处originalmass/list/slack/complexity与predeclaredguard，旧SCL001已识别tangent幂界不等于原统一界。先核全称合法restriction/shading closure与双向蕴含；若只是旧uniform命题再调用，则只记推论不新方向。不能只证4.12的TV小lemma就宣称4.11通过。
+
+反攻scenario固定/greedycoverage、arbitraryresidual每子列量词、tiny ppath、analyticmask→原temperedlaw、wholeblockassignments、posthocrepresentativecoefficientbound、i/N/n及Mguard选取顺序、tangentK与允许Kpath^r、fixedgain γnεn。严格stage验收或合法gap，失败不靠index/tolerance改名续轮；仍保全部source/KT条件和一般高维目标。
 
 ## R29：条件任意ambient种子与六维17/4
 

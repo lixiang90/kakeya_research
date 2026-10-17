@@ -1,0 +1,1043 @@
+                                                 New bound on the Hausdorff dimension of Kakeya sets in R4
+                                                                                   Mukul Rai Choudhuri
+
+                                                                                      October 12, 2026
+arXiv:2610.12480v1 [math.CA] 30 Aug 2026
+
+
+
+
+                                                                                           Abstract
+                                                    We obtain a slight improvement to the trilinear bound of Guth-Zahl by application of Wang-
+                                                 Zahl’s resolution of 3-D Kakeya to tubes inside a thickened neighborhood of a variety. This is
+                                                 combined with the planebrush argument of Katz and Zahl to obtain the new bound of 3.073.
+
+
+                                           1     Introduction
+                                           A Besicovitch set (also called a Kakeya set) in Rn is a compact subset of Rn containing a unit line
+                                           segment in every direction. The Kakeya conjecture asserts that every Besicovitch set in Rn must
+                                           have Hausdorff dimension n. For n = 2, the conjecture was proved by Davies in 1971 [4]. The
+                                           3-dimensional case was proved by Wang and Zahl [13, 14, 15] in a major recent breakthrough. The
+                                           conjecture remains open for n ≥ 4, though partial results exist. See [20] for a recent survey of
+                                           progress on the Kakeya conjecture by Zahl.
+                                               In this paper, we make some partial progress towards the Kakeya conjecture in R4 . Specifically,
+                                           we will prove the following result.
+                                                                                                                                           √
+                                                                                                                       12951−54 10593
+                                           Theorem 1. Every Besicovitch set in R4 has Hausdorff dimension at least 13
+                                                                                                                   4 −      41972     =
+                                           3.073854....
+                                                Let us briefly discuss the recent history of progress on the Kakeya conjecture in R4 . In 2018,
+                                           Guth and Zahl [5] (in conjunction with the results of Zahl [18], and independently Katz-Rogers [7])
+                                           proved that Kakeya sets in R4 have Hausdorff dimension at least 3.025. The primary ingredients
+                                           used are the polynomial Wolff axioms and grains decomposition, which were used to obtain a new
+                                           trilinear Kakeya estimate.
+                                                Following this, Katz and Zahl [8] improved the Hausdorff dimension bound to 3.059 using the
+                                           planebrush argument. This was a higher dimensional analogue of Wolff’s hairbrush argument [16].
+                                           This in fact yields a Hausdorff dimension bound of 3, which was the longstanding record before the
+                                           bound of Guth and Zahl [5]. Katz and Zahl [8] also used the trilinear bound of Guth-Zahl in their
+                                           induction. A finite field version of the planebrush argument can be found in the expository paper
+                                           [9].
+                                                For our result, we will be obtaining a slight improvement to the trilinear bound of Guth-Zahl
+                                           [5] by application of Wang-Zahl’s resolution of 3-D Kakeya [15]. This is then plugged in to the
+                                           induction of Katz and Zahl [8] to obtain the new bound of 3.073.
+                                                We will be working in the ambient space R4 throughout this paper.
+
+                                           1.1   Acknowledgement
+                                           The author would like to thank Joshua Zahl for many helpful suggestions during the preparation
+                                           of this manuscript. Some AI assistance was also used in figuring out various parts of the proof.
+
+                                                                                               1
+2     Technical preliminaries and tools
+Since we will be obtaining our result by tweaking the induction architecture of Katz and Zahl [8],
+we borrow their setup.
+
+2.1    Tubes, shadings, and refinements
+Definition 2. A δ-tube is the δ-neighborhood of a unit line segment in R4 . Every δ-tube has
+measure ∼ δ 3 . We say that two δ-tubes are essentially identical if the 2-fold dilate of one of the
+tubes contains the other. If two tubes are not essentially identical then we say they are essentially
+distinct.
+
+Definition 3. A δ-cube is a set of the form Q = [0, δ)4 + v, where v ∈ (δZ)4 . Observe that the set
+of                   4
+P all δ-cubes tile R . The symbol Q will always refer to a δ-cube, so for example the expression
+   Q⊂A f (Q) will refer to a sum taken over all δ-cubes contained in the set A.
+
+Definition 4. Let T be a δ-tube. A shading of T is a set Y (T ) that is a union of δ-cubes, each of
+which intersect T . Let T be a set of δ-tubes; for each T ∈ T, let Y (T ) be a shading of T . We refer
+to the pair (T, Y ) as a set of tubes and their associated shading.
+
+    For each δ-cube Q, define
+                                     TY (Q) = {T ∈ T : Q ⊂ Y (T )}.
+   If (T, Y ) is a set of tubes and their associated shading, define Q(Y ) to be the set of δ-cubes
+that are contained in at least one shading Y (T ) for some T ∈ T.
+   If (T, Y ) is a set of tubes and their associated shading, define
+
+                                                    1 X |Y (T )|
+                                          λY =                   ,
+                                                   |T|    |T |
+                                                         T ∈T
+
+and define
+                                                 1           X
+                                      µY =                          |TY (Q)|.
+                                               |Q(Y )|
+                                                         Q∈Q(Y )
+
+λY is the average shading density of a tube from (T, Y ), and µY is the average multiplicity of a
+cube from Q(Y ) (i.e. the average number of tubes from (T, Y ) whose shading contains Q).
+
+Definition 5 (Refinements). Let (T, Y ) be a set of tubes and their associated shading and let t > 0.
+We say that a pair (T′ , Y ′ ) is a t-refinement of (T, Y ) if T′ ⊂ T, Y ′ (T ) ⊂ Y (T ) for each T ∈ T′ ,
+and                                     X                  X
+                                            |Y ′ (T )| ≥ t   |Y (T )|.
+                                       T ∈T′                 T ∈T
+
+     For example, if (T, Y ) is a set of tubes and their associated shading, then there exists a ∼
+| log δ|−1 -refinement (T′ , Y ′ ) so that µY ′ ≤ |T′Y ′ (Q)| ≤ 2µY ′ for all Q ∈ Q(Y ′ ). Since | log δ|−1 -
+refinements will frequently occur in our proof, sometimes we will abuse notation and simply refer
+to them as refinements.
+
+
+
+
+                                                         2
+2.2   The two-ends reduction
+Definition 6 (Two-ends condition). Let (T, Y ) be a set of δ-tubes and their associated shading.
+We say that (T, Y ) is (ε1 , C1 )-two-ends if for all T ∈ T and all δ ≤ r ≤ 1, we have
+                  |{Q : Q ⊂ Y (T ) ∩ B(x, r)}| ≤ rε1 C1 λY δ −1   for all balls B(x, r).             (1)
+   For 0 ≤ d ≤ n, a > 0, and 0 ≤ b ≤ 1, define Assertion TE(d, a, b) to be the following statement:
+Assertion TE(d, a, b). Let δ > 0 and let (T, Y ) be a set of δ-tubes in R4 pointing in δ-separated
+directions and their associated shading. Suppose that (T, Y ) is (ε1 , 100)-two-ends. Then for each
+ε > 0,                             [
+                                      Y (T ) ≥ cλaY δ 4−d+ε (δ 3 |T|)b ,                        (2)
+                                       T ∈T
+where c > 0 is a constant that depends only on d, a, b, ε, and ε1 .
+    Note that if Assertion TE(d, a, b) is true, then Assertion TE(d, a′ , b) is also true for all a′ ≥ a.
+The two-ends reduction says that Assertion TE(d, d, b) implies a Kakeya maximal function estimate
+at dimension d.
+Proposition 7 (The two-ends reduction). Suppose that TE(d, d, b) is true for some 1 ≤ d ≤ 4 and
+0 ≤ b ≤ 1. Then for each ε > 0, there exists a constant cε so that the following holds. Let (T, Y )
+be a set of tubes pointing in δ-separated directions and their associated shading. Then
+                                   [
+                                       Y (T ) ≥ cε λdY δ 4−d+ε (δ 3 |T|)b .                    (3)
+                                   T ∈T
+
+   We refer the interested reader to [8] if they wish to see the proof.
+
+2.3   The robust transversality reduction
+Definition 8 (Robust transversality). Let (T, Y ) be a set of tubes and their associated shading.
+We say that (T, Y ) is (ε2 , C2 )-robustly transverse if for all δ-cubes Q, all vectors v, and all δ ≤ 1,
+we have the following bound on the number of tubes passing through Q and making small angle r
+with v, for any r with δ < r < 1.
+                             |{T ∈ TY (Q) : ∠(v(T ), v) ≤ r}| ≤ rε2 C2 µY .                          (4)
+Assertion RT(d, a, b). Let δ > 0 and let (T, Y ) be a set of δ-tubes in R4 pointing in δ-separated
+directions and their associated shading. Suppose that (T, Y ) is (ε1 , C1 )-two-ends and (ε2 , 100)-
+robustly transverse. Then for each ε > 0,
+                                                 −C/ε1 4−d+ε 3
+                               [
+                                  Y (T ) ≥ cλaY C1    δ      (δ |T|)b ,                          (5)
+                                T ∈T
+
+where C = C(d, a, b) is a constant that depends only on d, a, and b, and c > 0 is a constant that
+depends only on d, a, b, ε, ε1 , and ε2 (in particular, both constants are independent of δ).
+  Note that if Assertion RT(d, a, b) is true, then Assertion RT(d, a, b′ ) is also true for all b′ ≥ b.
+We have the following proposition.
+Proposition 9. Suppose that Assertion RT(d, a, b) is true for some 1 ≤ d ≤ 4, a ≥ 0, and
+d−1
+ 3 ≤ b ≤ 1. Then Assertion TE(d, a, b) is true.
+
+   Again, we refer the interested reader to [8] if they wish to see the proof.
+
+                                                   3
+3     Previous Kakeya-type estimates in R4
+We recall some results that will be needed in our proof.
+
+3.1    Wolff ’s hairbrush estimate
+In [16], Wolff proved new Kakeya maximal function estimates using a geometric argument called
+the “hairbrush” argument. Here is a consequence of Wolff’s hairbrush argument. The formulation
+presented here is described in [11], and for the proof one can look at [11] or [8].
+Theorem 10. Assertion RT(3, 2, 1/2) is true.
+
+3.2    Laba-Tao’s X-ray estimate
+We recall Theorem 1.2 from [10]:
+Theorem 11. Let T be a set of essentially distinct δ-tubes in R4 . Suppose that for each vector v,
+there are at most m tubes from T with ∠(v, v(T )) ≤ δ. Then for each ε > 0, there is a constant Cε
+so that                        X                    1      5            7
+                                   χT      ≤ Cε δ − 3 −ε m 36 (δ 3 |T|) 9 .                     (6)
+                                            3/2
+                                   T ∈T
+
+    It will be more convenient for us to phrase this result as a multiplicity bound on unions of tubes.
+Corollary 12. Let (T, Y ) be a set of essentially distinct δ-tubes and their associated shading, and
+let Ω ⊂ S 3 be a δ-separated set. Define m = |T|/|Ω|. Suppose that each tube from T points in a
+direction from Ω, and ∼ m tubes from T point in each direction from Ω. Suppose |TY (Q)| ≤ 10µY
+for all Q ∈ Q(Y ). Then
+                                 µY ≤ Cε λ−2 δ −1−ε m3/4 (δ 3 |Ω|)1/3 .                           (7)
+
+
+4     Applying Wang-Zahl inside a polynomial grain
+In this section, we will be working with tubes which are contained in the δ-neighborhood of a low
+degree variety in R4 (also called a grain, see Definition 24). After various technical manipulations,
+we will apply the 3-dimensional Wang-Zahl result [15] to this configuration of tubes. This is the
+key new ingredient in the proof, eventually yielding the improved dimension bound.
+
+4.1    Preliminaries
+A set of tubes is said to satisfy the Wolff axioms if not too many tubes from the set can concentrate
+into the thickened neighborhood of an affine subspace. More precisely, we have the following.
+Definition 13. Let T be a collection of δ-tubes. We say that it satisfies the linear Wolff axioms if at
+most Ct1 t2 . . . tn−1 δ 1−n tubes are contained in a rectangular prism of dimensions 1×t1 ×t2 ×. . . tn−1 .
+    A set of tubes is said to satisfy the polynomial Wolff axioms if not too many tubes from the
+set can concentrate into the thickened neighborhood of an algebraic variety, or more generally a
+semi-algebraic set. This will play a crucial role in reaching our objective.
+Definition 14. Let T be a collection of δ-tubes. We say that it satisfies the polynomial Wolff
+axioms if for every semialgebraic set S ⊂ Rn of complexity at most E, and every δ ≤ λ ≤ 1,
+
+                             |{T ∈ T : |T ∩ S| ≥ λ|T |}| ≤ KE |S|δ 1−n λ−n .                            (8)
+
+                                                     4
+   In [18] and [7], Zahl, and independently Katz and Rogers showed that collections of direction-
+separated tubes satisfy these requirements for n = 4. Here is the formal statement.
+
+Theorem 15. Let n, E ≥ 2 be integers and ϵ > 0. Then there is a constant C(n, E, ϵ) > 0 so that,
+for every set T of δ-tubes in Rn , pointing in δ-separated directions.
+
+                          #({T ∈ T : |T ∩ S| ≥ λ|T |}) ≤ C(n, E, ϵ)|S|δ 1−n−ϵ λ−n                         (9)
+
+whenever S is a semi-algebraic set of complexity at most E, and λ ≥ δ > 0.
+
+    Next we state a special case of the theorem of Wang and Zahl [15] which we will be using.
+
+Theorem 16. Let T be a collection of δ-tubes in R3 which satisfies the linear Wolff axioms. Then
+we get
+                                      [
+                                         T ≥ Cϵ δ ϵ (δ 2 |T|)                                (10)
+                                               T ∈T
+
+
+4.2    The result
+Here we state the proposition that we get by applying Wang-Zahl inside a polynomial grain.
+
+Proposition 17. Let P ∈ R[x1 , x2 , x3 , x4 ] be a non-zero polynomial of degree at most d, and let
+Z = Z(P ) ∩ [−1, 1]4 . Let T be a collection of δ-tubes with T ⊂ Nδ (Z) for all T ∈ T. Further
+suppose that the tubes of T point in δ-separated directions. Then we have
+
+                                               [
+                                                      T ≥ Cϵ,d δ ϵ (δ 3 |T|).                            (11)
+                                              T ∈T
+
+
+4.3    Reduction to a graphical decomposition lemma
+Working with the variety Z(P ) directly is complicated, so we break it up into more regular pieces
+and then work with those. The following definition will help us build these regular pieces.
+
+Definition 18. A semi-algebraic subset M of Rk is a smooth semi-algebraic manifold of dimension
+l if for every x ∈ M , there exists a semi-algebraic open set U of Rk and a smooth semi-algebraic
+diffeomorphism φ from U to a semi-algebraic open neighborhood Ω of x ∈ Rk such that φ(0) = x
+and
+                                     φ(U ∩ (Rl × {0})) = M ∩ Ω
+(where Rl × {0} = {(a1 , a2 , . . . , al ) ∈ Rl }).
+
+   See [1, 2] for more background. With this definition, we are ready to state our decomposition
+lemma. We will use the notation e1 = (1, 0, 0, 0), e2 = (0, 1, 0, 0), e3 = (0, 0, 1, 0) and e4 = (0, 0, 0, 1).
+The statement can be seen as a variant of Proposition 3.1 from [19], tailored to our purpose.
+
+Lemma 19. (Graphical decomposition) Let P ∈ R[x1 , x2 , x3 , x4 ] be a non-zero polynomial of degree
+at most d, and let Z = Z(P ) ∩ [−1, 1]4 . Then there exists N, C ≲d 1, and vn ∈ {e1 , e2 , e3 , e4 } for
+1 ≤ n ≤ N , and connected smooth semi-algebraic manifolds Sn ⊂ Z; such that
+
+  (a) we have Z = N
+                   S
+                     n=1 Sn .
+
+  (b) each Sn has complexity at most C.
+
+                                                             5
+ (c) for all p ∈ Sn , we have projNp Sn (vn ) ≥ 1/2.
+
+ (d) if πn : R4 → vn⊥ denotes the orthogonal projection, then Sn is a graph in the vn direction of a
+     function with Lipschitz constant at most C.
+
+ (e) the set Sn,δ = Nδ (Sn ) is semi-algebraic of complexity at most C (uniformly in δ), and
+
+                                               H1 (Sn,δ ∩ πn−1 (y)) ≤ Cδ                                   (12)
+
+      for all y ∈ vn⊥ .
+   This lemma gives us the technical support needed to proceed.
+                                                                                            SN
+Proof of Proposition 17 assuming Lemma 19. By Lemma 19, we write Z =                         n=1 Sn with all the
+properties stated. We also have
+                                             N
+                                             [
+                                    Nδ (Z) ⊂   Nδ (Sn ).                                                   (13)
+                                                            n=1
+Therefore, each T ∈ T satisfies
+                                   N
+                                   [                         N
+                                                             X
+                             T ⊂         Nδ (Sn ) =⇒               |T ∩ Nδ (Sn )| ≥ |T |.                  (14)
+                                   n=1                       n=1
+
+So there exists n(T ) such that
+                                         |T ∩ Nδ (Sn(T ) )| ≥ N −1 |T |.                                   (15)
+Pigeonholing in n(T ), there exists T0 ⊂ T and n0 such that
+
+                            |T0 | ≥ N −1 |T|     and        |T ∩ Nδ (Sn0 )| ≥ N −1 |T |.                   (16)
+
+We restrict our attention to the tubes in T0 . This is harmless since |T0 | ≳d |T| as we just saw.
+Furthermore, we relabel T ∈ T0 to mean T ∩ Nδ (Sn0 ). This is a slight abuse of notation, since
+T ∩ Nδ (Sn0 ) has Od (1) many connected components (see [1, 2]) and we mean to pick one. Again,
+this is acceptable since |T ∩ Nδ (Sn0 )| ≳d |T |. We now have a collection of tubes T0 contained in the
+δ-neighborhood of a smooth semi-algebraic manifold Sn0 of complexity at most C ≲d 1. Without
+loss of generality, we may assume that vn0 = e4 . Therefore (c) tells us the normal in roughly
+vertical, (d) tells us that the manifold is a graph of a Lipschitz function with constant C ≲d 1 and
+(e) tells us the intersection of Nδ (Sn0 ) with any vertical line is ≲d δ.
+    Now let π4 (x1 , x2 , x3 , x4 ) = (x1 , x2 , x3 ). Then let T′0 be the projected set of tubes in [−1, 1]3
+(this is a legal move because of (c)). Now, we claim that that this collection satisfies the linear
+Wolff axioms. Take a 1 × t1 × t2 rectangular prism R. The number of tubes of T′0 inside R is given
+by the number of tubes of T0 inside π4−1 (R) ∩ Nδ (Sn0 ). This is a semi-algebraic set of complexity
+≲d 1. Every vertical line in the cube [−1, 1]4 intersects Nδ (Sn0 ) in an interval of length ≲d δ by
+(e). Therefore the volume of this semi-algebraic set is ≲ t1 t2 δ. Therefore, by applying Theorem 15,
+we get the number of tubes contained is ≲ (t1 t2 δ)δ −3 = t1 t2 δ −2 . This establishes the linear Wolff
+axioms claim.
+    Finally, by applying the Wang-Zahl result (Theorem 16), we get
+                                                 [
+                                                          T ′ ⪆ δ 2 |T′0 |.                                (17)
+                                               T ′ ∈T′0
+
+Again, retracing the fiber, we get a factor of δ which completes the proof.
+
+                                                             6
+4.4   Proof of graphical decomposition lemma
+We will now prove the graphical decomposition lemma.
+
+Proof of Lemma 19. We can write
+                                                       A
+                                                       G
+                                                Z=          Zα ,                                (18)
+                                                      α=1
+
+where each Zα is a connected smooth semi-algebraic manifold of dimension dα ≤ 3 and A ≲d 1.
+This follows from Theorem 5.38 of [1], or from Proposition 2.9.10 of [2]. It can be seen as a form of
+cylindrical decomposition of semi-algebraic sets and should be compared with Theorem 3.2 of [19].
+    Fix a manifold M = Zα . For p ∈ M , let Tp M be the tangent space to M at p. Correspondingly,
+we have the normal space
+                                         Np M = (Tp M )⊥ .                                       (19)
+Now, if projNp M denotes the orthogonal projection, then
+
+                         4
+                         X
+                               | projNp M (ej )|2 = trace(projNp M ) = 4 − dα ≥ 1.              (20)
+                         j=1
+
+So there exists j such that | projNp M (ej )| ≥ 1/2. We define
+
+                                  Mj = {p ∈ M : | projNp M (ej )| ≥ 1/2}.                       (21)
+
+Then we get that M = M1 ∪ M2 ∪ M3 ∪ M4 . These are semi-algebraic sets of bounded complexity.
+Therefore we obtain a refinement of (18) with the the added condition that for each α, there exists
+j such that | projNp Zα (ej )| ≥ 1/2 for all p ∈ Zα . We may also assume that for this j, the semi-
+algebraic manifold Zα is the graph of a function in the ej direction. At this point (a), (b) and (c)
+have been established, we now work towards establishing (d) and (e).
+    Again, fix an α (and corresponding j), and let M = Zα . We have the projection map πj : R4 →
+e⊥
+ j . Let us now restrict this map to Tp M . For v ∈ Tp M , we have
+
+                                        |πj (v)|2 = |v|2 − |(v, ej )|2 .                        (22)
+
+Also, by (21), we get that
+                                                                          3
+                             | projTp M (ej )|2 = 1 − | projNp M (ej )|2 ≤ .                    (23)
+                                                                          4
+                                          √
+In particular, we have | projTp M (ej )| ≤ 3/2. This implies
+                                                            √
+                                                             3
+                                             |(v, ej )| ≤      |v|.                             (24)
+                                                            2
+Plugging this into (22), we get that
+                                                      1
+                                            |πj (v)| ≥ |v|.                                    (25)
+                                                      2
+Therefore, if f is the function corresponding to M , we have |Df | ≤ 3. Now by applying Proposition
+3.6 from [19], we get the Lipschitz property (d), and (e) follows from (d).
+
+
+
+
+                                                       7
+5    New variant of Guth-Zahl’s trilinear Kakeya estimate
+By applying Proposition 17 as a new ingredient, we obtain a slight improvement to the trilinear
+estimate (Proposition 3.1) of Guth and Zahl [5], namely that that the exponent of the wedge
+product changes from 12/13 to 9/13.
+Theorem 20 (Trilinear Kakeya in R4 ). For each ϵ > 0, there exists a constant Cϵ so that the
+following holds. Let T be a set of δ-tubes in R4 that point in δ-separated directions. Then
+             Z  X                                         13/27
+                           χT1 χT2 χT3 |v1 ∧ v2 ∧ v3 |9/13        ≤ Cϵ δ −1/3−ϵ (δ 3 |T|)4/3 , (26)
+                     T1 ,T2 ,T3 ∈T
+
+where in the above expression vi is the direction of the tube Ti .
+    Correspondingly, we get an improved corollary. Note that the exponent of theta changes from
+1 to 3/4 when you compare with Corollary 20 in [8]. The proof of the corollary follows the same
+route.
+Corollary 21. For each ϵ > 0, there exists a constant Cϵ so that the following holds. Let (T, Y )
+be a set of δ-tubes in R4 that point in δ-separated directions and their associated shading. Suppose
+that for each Q ∈ QY (T ), we have
+                          |{(T1 , T2 , T3 ) ∈ TY (Q) : |v1 ∧ v2 ∧ v3 | ≥ θ}| ≥ s|TY (Q)|3 .
+Then
+                                                                        13/4 3/4 3/4
+                                     [
+                                            Y (T ) ≥ cε δ ε s9/4 λY        δ   θ       (δ 3 |T|)1/4 .             (27)
+                                     T ∈T
+    Equivalently, we get a pointwise bound
+                      |TY (Q)| ⪅ λ−9/4 s−9/4 θ−3/4 δ −3/4 (δ 3 |T|)3/4                  for all Q ∈ Q(Y ).        (28)
+Proof. After refining (T, Y ), we can suppose that |TY (Q)| ∼ µY for each Q ∈ QY (T ). Then
+                                   13/27
+             δ 4 |Q(Y )| µ3Y θ9/13
+                    X                          13/27
+              ∼            |Q| |TY (Q)|3 θ9/13
+                    Q∈QY (T )
+                      X                                                                                  13/27
+                ∼               |Q| s−1 |{T1 , T2 , T3 ∈ TY (Q) : |v1 ∧ v2 ∧ v3 | ∼ θ}| θ9/13
+                    Q∈QY (T )
+                            X                       X                                    13/27                   (29)
+                ≤ s−1                |Q|                          |v1 ∧ v2 ∧ v3 |9/13
+                         Q∈QY (T )           T1 ,T2 ,T3 ∈TY (Q)
+                         Z          X                                                   13/27
+                ≤ s−1                           χT1 χT2 χT3 |v1 ∧ v2 ∧ v3 |9/13
+                                T1 ,T2 ,T3 ∈T
+                        −1 −1/3−ϵ
+                ≤ Cϵ s     δ           (δ 3 |T|)4/3 .
+Rearranging, we get
+                                       9 −9 −3−9ε −3 4
+                             µ13Y ≤ Cε s δ         θ (δ |Q(Y )|)−9 (δ 3 |T|)12 .
+Since µY | T ∈T Y (T )| ≈ λY (δ 3 |T|) and δ 4 |Q(Y )| ∼ | T ∈T Y (T )|, we have
+          S                                               S
+                                 [                                   [
+              λ−13
+                Y  (δ 3
+                        |T|)13
+                               |    Y (T )| −13
+                                                ≤ C 9 −9 −3−9ε −3
+                                                    ε s δ      θ   |     Y (T )|−9 (δ 3 |T|)12 .
+                                     T ∈T                                               T ∈T
+
+Re-arranging, we obtain (27).
+
+                                                                    8
+5.1     Strategy for the proof of Theorem 20
+The structure of the proof will be very similar to the proof of Proposition 3.1 in Guth-Zahl [5]. We
+will be borrowing heavily from there, and applying the new Proposition 17 in the middle to get the
+improvement. We now state some tools which we will be using.
+
+5.1.1    Multilinear Kakeya
+Theorem 22 (Bourgain-Guth, [3], Theorem 6). Let T1 , T2 , T3 be three sets of δ–tubes in R4 . Then
+         Z        X                                   1/2
+                              χT1 χT2 χT3 v1 ∧ v2 ∧ v3       ≲ δ 4 (|T1 | |T2 | |T3 |)1/2 .    (30)
+                 T1 ,T2 ,T3 ∈T1 ×T2 ×T3
+
+Remark 23. Theorem 6 from [3] states this result for the case |T1 | = |T2 | = |T3 |, but the proof
+gives the estimate above when the three cardinalities are not equal.
+
+5.1.2    Grains decomposition
+This was developed in Guth-Zahl [5]. We refer the reader there for more details/expanded discus-
+sion.
+
+Definition 24 (Grain). A grain (of complexity d) in Rn is the Cδ–neighborhood of a semi-algebraic
+set of dimension ≤ n − 1 and complexity ≤ d.
+
+Definition 25 (Grains decomposition). Let Q be a set of cubes in Rn . A Grains decomposition of
+Q of degree d and error ϵ is a set of grains G, each of which has complexity ≤ d. This decomposition
+has the following properties.
+
+   • The cubes are evenly-distributed across the grains: For each G ∈ G, there is a set QG ⊂ Q.
+     The sets {QG } are disjoint; if Q ∈ QG then Q ⊂ G. We have
+                                          X
+                                               |QG | ≥ δ ϵ |Q|,                             (31)
+                                                 G∈Q
+
+        and
+                                          δ ϵ |Q|/|G| ≤ |QG | ≤ δ −ϵ |Q|/|G|.                  (32)
+
+   • A tube doesn’t intersect too many grains: If T is a δ–tube, then
+
+                          |{G ∈ G : T ∩ Q ̸= ∅ for some Q ∈ QG }| ≤ Cϵ δ −ϵ |G|1/n .           (33)
+
+Proposition 26. Let Q be a set of δ-cubes in Rn . Then for each ϵ > 0, there exists a grains
+decomposition of Q of degree d(ϵ) and error ϵ.
+
+   This proposition is proved by polynomial partitioning (see [5] for proof). We will only use
+Proposition 26 in the special case n = 4.
+
+
+
+
+                                                       9
+5.2       Proof of Theorem 20
+Proof of Theorem 20. Fix ϵ > 0. Let d(·) be the function from Proposition 26.
+    For simplicity of notation, we will replace each tube T ∈ T with the union of all δ–cubes that
+intersect T ; thus we should think of each T ∈ T as a union of cubes.
+    Now we do some dyadic pigeonholing. First we dyadic pigeonhole |v1 ∧ v2 ∧ v3 |. There is a
+dyadic θ so that
+
+Z        X                                                13/27       Z          X                                         13/27
+                                                    9/13
+                      χT1 χT2 χT3 |v1 ∧v2 ∧v3 |                     ∼                         χT1 χT2 χT3 |v1 ∧v2 ∧v3 |9/13            .
+      T1 ,T2 ,T3 ∈T                                                           T1 ,T2 ,T3 ∈T
+                                                                              v1 ∧v2 ∧v3 ∼θ
+
+    Next we divide B(0, 2) into δ-cubes Q and we dyadic pigeonhole their contribution to the last
+integral. We can choose a set of cubes Q with ∪Q∈Q Q = A so that
+
+Z                X                                              13/27       Z        X                                           13/27
+                                                          9/13
+                              χT1 χT2 χT3 |v1 ∧v2 ∧v3 |                   ∼                         χT1 χT2 χT3 |v1 ∧v2 ∧v3 |9/13            ,
+ B(0,2)       T1 ,T2 ,T3 ∈T                                                   A     T1 ,T2 ,T3 ∈T
+                                                                                    v1 ∧v2 ∧v3 ∼θ
+
+and so that each Q ∈ Q makes a roughly equal contribution to the right-hand side.
+      Let G be a grains decomposition of Q with error ϵ and degree d = d(ϵ). Next we consider how
+much a tube intersects a grain. The intersection of a tube with a grain could have a few different
+connected components, perhaps with different lengths. Since the grain is a semi-algebraic set of
+complexity at most d, the number of these components is Od (1), and there is no harm in treating
+them separately. If W ⊂ R4 , then we write CC(W, x) for the Euclidean connected component of
+W containing x. If G is a grain and T is a tube, then note that diam(CC(T ∩ G, x)) is the length
+of the component of T ∩ G thru the point x. Next we dyadic pigeonhole these lengths: we can find
+ℓ1 , ℓ2 , ℓ3 so that
+                               XZ               X                              13/27
+                  (LHS (26)) ⪅                                θ9/13 χT1 χT2 χT3        .      (34)
+                                        G∈G   G∩A             T1 ,T2 ,T3 ∈T
+                                                             v1 ∧v2 ∧v3 ∼θ
+                                                      ℓi ≤diam(CC(Ti ∩G,x))≤2ℓi
+
+     Without loss of generality, we can assume that ℓ1 = max(ℓ1 , ℓ2 , ℓ3 ). Cover each grain G by
+balls of radius Cℓ1 so that the balls are O(1) overlapping, and any subset of G of diameter ≤ 2ℓ1
+is entirely contained within one of the balls. The intersection of G with a ball of this type will be
+called a sub-grain G′ with parent G. If G′ is a sub-grain of G, let QG′ = {Q ∈ QG : Q ⊂ G′ }. Let
+G ′ denote the set of sub-grains.
+     Note that if T is a δ–tube and G ∈ G is a grain satisfying T ∩ G ̸= ∅, then there are Od (1)
+sub-grains G′ ∈ G ′ with G′ ⊂ G that contain a point x ∈ T ∩ G′ with diam(CC(Ti ∩ G), x) ≤ 2ℓi .
+This is because T ∩ G is a semi-algebraic set of bounded-complexity, so it is a union of Od (1)
+connected sets (see [2] for further information and background on semi-algebraic sets). Each of
+these sets with diameter ≤ 2ℓi intersects at most O(1) sub-grains G′ . Furthermore, if there exists
+x ∈ T ∩ G with ℓi ≤ diam(CC(Ti ∩ G), x) ≤ 2ℓi , then there exists at least one sub-grain G′ with
+cd ℓi ≤ diam(CC(Ti ∩ G′ ), x) ≤ 2ℓi , where cd > 0 depends only on d. For each sub-grain G′ , define
+
+    Ti,G′ = {T ∩ G′ : there exists a component W ⊂ T ∩ G with W ⊂ G′ , cd ℓi ≤ diam(W ) ≤ 2ℓi }.
+
+
+
+                                                                    10
+  Thus for each i = 1, 2, 3,
+ X                                                                           X
+   |{T ∈ T : there exists a component W ⊂ T ∩G with ℓi ≤ diam(W ) ≤ 2ℓi }| ∼   |Ti,G′ |. (35)
+ G∈G                                                                                      G′ ∈G ′
+
+    After dyadic pigeonholing and refining the grains in G ′ , we can assume that (31), (32), and (33)
+hold for G ′ (doing this may have made |G ′ | smaller by a factor of ⪅ 1). Furthermore, since each
+grain G′ ∈ G ′ is contained in a ball of radius ℓ1 , we have
+
+                                                       |G′ | ≲ ℓ31 δ                                (36)
+
+for all G′ ∈ G ′ , where the implicit constant depends only on d(ϵ), which in turn depends only on ϵ
+(see e.g. [17]).
+    After further dyadic pigeonholing the grains G ∈ G ′ , we can find numbers N1 , N2 , N3 so that
+Ni ≤ |Ti,G′ | ≤ 2Ni for each G′ ∈ G ′ . Since G ′ obeys (33),
+
+                                             Ni |G ′ | ⪅ Cϵ δ −ϵ |T| |G ′ |1/4 ,
+
+i.e.
+                                    Ni ⪅ Cϵ δ −ϵ |T| |G ′ |−3/4 ,          i = 1, 2, 3.             (37)
+   Let Q′ = G ′ QG . After dyadic pigeonholing, we can find numbers µ and µ1 , µ2 , µ3 so that if
+                 S
+we refine Q′ and the associated sets QG′ , then if Q ∈ ∪QG′ for some G′ ∈ G ′ and if x ∈ Q, then
+                                  X
+                                                  χT1 (x)χT2 (x)χT3 (x) ∼ µ3 ,
+                            (T1 ,T2 ,T3 )∈T1,G′ ×T2,G′ ×T3,G′
+                                        v1 ∧v2 ∧v3 ∼θ
+
+and ∼ µi tubes from Ti pass through x for each i = 1, 2, 3. Note that
+
+                                                  µ ≤ (µ1 µ2 µ3 )1/3 .                              (38)
+
+Remark 27. The LHS of (38) might be much smaller than the RHS if (for example) the main
+contribution to (26) from a typical point comes from triples with v1 ∧ v2 ∧ v3 ∼ 1, but at the same
+time most triples through a typical point have v1 ∧ v2 ∧ v3 much smaller than 1.
+   After a further refinement of G ′ to throw away those grains for which |QG | is small, we can
+assume that |Q         ′    ′               ′
+               G | ≈ |Q |/|G | for all G ∈ G .
+   Let A′ = Q′ Q. Then |A′ | ≈ |A|. Because of all the dyadic pigeonholing, we have
+            S
+
+
+                                           (LHS (26)) ≈ |A′ |µ13/9 θ1/3 .                           (39)
+       To prove (26), it suffices to show that
+
+                                          |A′ |9 µ13 θ3 ≲ δ −3−9ε (δ 3 |T|)12 .                     (40)
+       Let i0 be the index so that µi0 = max(µ1 , µ2 , µ3 ). So in particular, (38) implies
+
+                                                        µ ≤ µi0 .                                   (41)
+
+
+
+
+                                                            11
+   We note that
+                                                      X       X
+                                       µi |A′ | ≲                       |T ∩ A′ ∩ G′ |
+                                                     G′ ∈G ′ T ∈Ti,G
+                                                      X        X
+                                                 ≤                      |T ∩ G′ |
+                                                                                                                   (42)
+                                                     G′ ∈G ′ T ∈Ti,G′
+
+                                                 ≤ |G ′ |Ni ℓi δ 3
+                                                 ⪅ Cϵ δ −ϵ |G ′ |1/4 ℓi (δ 3 |T|),
+where on the last line we used (37). Thus
+                                       ℓi ⪆ cϵ δ ϵ µi |A′ | |G ′ |−1/4 (δ 3 |T|)−1 .
+In particular, since ℓ1 = max(ℓ1 , ℓ2 , ℓ3 ), we have
+                                       ℓ1 ⪆ cϵ δ ϵ µi0 |A′ | |G ′ |−1/4 (δ 3 |T|)−1 .                              (43)
+    Everything up until this point was the same as in the proof of Proposition 3.1 in [5]. Over here
+the proof diverges. Instead of applying polynomial Wolff axioms to get an upper bound on N1 , we
+use Wang-Zahl [15] inside a grain to do the same. Polynomial Wolff axioms of course show up in
+the proof of applying Wang-Zahl inside a grain (namely Proposition 17), so it is baked inside here
+as well.
+    Let G′ ∈ G ′ . By applying Proposition 17, we get that
+                                                      |A′ |
+                                                             ⪆ δ 3 N1 l14 .                                        (44)
+                                                      |G ′ |
+Rearranging and applying (43), we get
+                                              |A′ |
+                                   N1 ⪅                   ⪅ δ −3 µ−4   ′ −3 3    4
+                                                                  i0 |A | (δ |T|) .                                (45)
+                                            |G ′ |δ 3 l14
+   Furthermore,
+                                   Z                         X                                    1/2
+           ′    ′ −1 3/2 1/2
+         |A | |G |   µ   θ     ≈                                                    θχT1 χT2 χT3
+                                   G′ ∩A′       T1 ,T2 ,T3 ∈T1,G′ ×T2,G′ ×T3,G′
+                                                           v1 ∧v2 ∧v3 ∼θ
+
+                               ≲ δ 4 (N1 N2 N3 )1/2
+                                                                                                                   (46)
+                                       3           1/3 1/6
+                                                 ′ −3/4
+                               ⪅ δ(δ |T|)|G |     N1 N1
+                                    3      ′ −3/4
+                               ⪅ δ(δ |T|)|G |          ′ −3/4 1/3
+                                                          (|T| |G |           )   (δ −3 µ−4   ′ −3 3    4 −2 1/6
+                                                                                         i0 |A | (δ |T|) )δ )
+                                                     −4/6
+                               ⪅ δ −1/2 |G ′ |−1 µi0        |A′ |−1/2 (δ 3 |T|)2 ,
+where on the third line we used Theorem 22, on the fourth line we used (37), and on the fifth
+line we used (37) and (45). Instead of splitting the exponent of N1 in the form 3/8+1/8=1/2 as
+in Guth-Zahl [5], splitting it as 1/6+1/3=1/2 the way we have done above is what works for the
+numerology we have at hand.
+    Re-arranging and using (41) and the fact that |A′ | ≈ |A|, we have
+                                            |A|9 µ13 θ3 ⪅ δ −3 (δ 3 |T|)12 .
+This establishes (40) and completes the proof of Theorem 20.
+
+
+                                                              12
+6      The Planebrush argument
+In this section, we shall state the results from the paper of Katz and Zahl [8] that we will be using.
+Proofs will be omitted for the sake of brevity and can be found in the aforementioned reference.
+First we need the following definition.
+
+Definition 28 (Planyness). Let (T, Y ) be a set of δ-tubes and their associated shading. We say
+that (T, Y ) is plany if for each δ-cube Q, there is a plane Π(Q) so that for all T ∈ TY (Q) we have
+∠(v(T ), Π(Q)) ≲ δ.
+
+   Next we need the following technical lemma which states that tubes are either plany or trilinear.
+This is Lemma 33 from Katz-Zahl [8].
+
+Lemma 29. Let (T, Y ) be a set of δ-tubes and their associated shading. Suppose that (T, Y ) is
+(ϵ1 , C1 )-two-ends and (ϵ2 , C2 )-robustly transverse.
+     Then there exists a number δ ≤ θ ≤ 1; a refinement (T′ , Y ′ ) of (T, Y ); a set Ω ⊂ S 3 of θ-
+separated points; a set (Tθ , Yθ ) of essentially distinct θ-tubes and their associated shading; and
+numbers B, B1 , B2 ≥ 1 with B1 ≥ B2 and B1 /B2 ≤ B so that the following holds.
+
+ (a) For each Q ∈ Q(Y ′ ), there is a plane Π(Q) so that ∠(v(T ), Π(Q)) ≤ θ for all T ∈ TY (Q).
+
+ (b) For each Q ∈ Q(Y ′ ),
+
+                         |{T1 , T2 , T3 ∈ TY ′ (Q) : |v(T1 ) ∧ v(T2 ) ∧ v(T3 )| ≳ θ}| ⪆ |TY ′ (Q)|3 .           (47)
+
+ (c) Every tube in Tθ points in a direction from Ω. For each v ∈ Ω, there are ∼ |Tθ |/|Ω| tubes
+     from Tθ that point in direction v.
+
+ (d) Each tube Tθ ∈ Tθ contains ∼ |T′ |/|Tθ | tubes from T′ , and each tube from T′ is contained in
+     exactly one tube from Tθ .
+
+ (e) If T ∈ T, Tθ ∈ Tθ , and T ⊂ Tθ , then Y ′ (T ) ⊂ Yθ (Tθ ).
+
+    (f ) λYθ ⪆ λY ′ .
+
+ (g) (Tθ , Yθ ) is (ε1 , C1′ )-two-ends, with C1′ ⪅ 1.
+
+ (h) For each δ-cube Q ∈ Q(Y ), we have |TY ′ (Q)| ∼ µY ′ . For each θ-cube Q ∈ Q(Yθ ) we have
+     |Tθ (Q)| ∼ µYθ .
+
+    (i) There is a number µfine so that for each Tθ ∈ Tθ , we have µYTθ ∼ µfine .
+
+    (j) For each θ-cube Qθ ∈ Q(Yθ ), there are planes Π1 (Qθ ), . . . , ΠB1 (Qθ ) and collections of tubes
+        T1,θ (Qθ ), . . . , TB1 ,θ ⊂ Tθ (Qθ ) so that for each index i, the tubes in Ti,θ (Qθ ) satisfy ∠(Tθ , Πi (Qθ )) ≤
+        θ and |Ti,θ | = µYθ /B. Each tube T ∈ Tθ (Q) is contained in B2 of sets {Ti,θ (Qθ )}.
+
+ (k) We have the multiplicity bound
+                                                    µY ′ ⪅ µYθ µfine /B.
+
+   The planebrush argument, roughly speaking, states that a plany Kakeya set in R4 has dimension
+10/3. This was proved by Katz and Zahl [8]. We now state a technical version of this result which
+we will use. This is Proposition 34 from Katz-Zahl [8]. Note that hypotheses have been chosen to
+match the conclusions of Lemma 29.
+
+                                                          13
+Proposition 30. Let 0 < θ < 1 and let 0 < ε1 < 1. Let Ω ⊂ S 3 be a set of θ-separated directions.
+Let (T, Y ) be a set of essentially distinct plany θ-tubes and their associated shading. Suppose that
+
+    • There are ∼ |T|/|Ω| tubes from T pointing in each direction v ∈ Ω.
+
+    • (T, Y ) is (ε1 , C1 )-two-ends.
+
+    • There are numbers B, B1 , B2 with B1 ≥ B2 and B1 /B2 ≤ B so that for each Q ∈ Q(Y ),
+      there are planes Π1 (Q), . . . , ΠB1 (Q) and collections of tubes T1 (Q), . . . , TB1 (Q) ⊂ T(Q) so
+      that for each index i, the tubes in Ti (Q) satisfy ∠(T, Πi (Q)) ≤ θ and |Ti | = µY /B. Each tube
+      T ∈ T(Q) is contained in B2 sets from {Ti (Q)}.
+
+Then for each ε > 0, we have
+                                         −C/ε1 ε 4/3 2/3 −4/3 3     1/3 3 2/3
+                        [
+                              Y (T ) ≥ cC1    θ λY θ B        θ |Ω|      θ |T|  .                   (48)
+                       T ∈T
+
+Here C is an absolute constant and c > 0 depends on ε and ε1 .
+
+
+7    Proof of Theorem 1
+In this section we will prove Theorem 1. We will be borrowing the induction architecture from
+Katz-Zahl, adapting to the new 3/4 exponent of θ (instead of 1 previously) in Corollary 21. This
+improvement in the exponent yields the improved dimension bound. We begin with a lemma
+that lets us upgrade certain assertions of the form TE(d, a, b) to stronger assertions TE(d′ , a′ , b′ ).
+Theorem 1 will eventually be proved by iterating this lemma.
+
+Lemma 31. Let k = 2.69. Suppose that Assertion TE(4 − α, k, 1 − α/3) is true for some 0.84 ≤
+α ≤ 0.97. Define
+
+                      −76α2 + 24α + 189
+                                                                      
+                                                3      63            3
+                 α′ =                   , α′′ = +                α−      .               (49)
+                         315 − 174α             4 100α − 21          4
+
+Then Assertion TE(4 − α′′ , 13/4, 1) is true. If α′ ≤ α, then Assertion TE(4 − α′ , k, 1 − α′ /3) is
+true.
+
+Proof. To obtain the above assertions, it suffices (by Proposition 9) to prove that Assertion RT(4−
+                                                                                                  ′
+α′′ , 13/4, 1) and Assertion RT(4 − α′ , k, 1 − α′ /3) is true. For the latter, note that (4−α3 )−1 =
+1 − α′ /3 ≤ 1, so the hypotheses of Proposition 9 are met. To this end, let (T, Y ) be a set of δ-tubes
+and their associated shading that is (ε1 , C1 )-two-ends and (ε2 , 100)-robustly transverse, and let
+ε > 0.
+      Apply Lemma 29 to (T, Y ) and let θ, Ω, (T′ , Y ′ ), (Tθ , Yθ ), and µfine be the output from that
+Lemma. By Item (h) from Lemma 29, we have that each cube Q ∈ Q(Y ′ ) satisfies |TY ′ (Q)| ≲ µY ′ .
+Thus
+                                      [               [
+                                          Y (T )| ≥        Y ′ (T )|
+                                        T ∈T         T ∈T′
+                                                                                                    (50)
+                                                  ≳ µ−1        3 ′
+                                                     Y ′ λY (δ |T |)
+                                                            ′
+
+
+                                                  ⪆ µ−1       3
+                                                     Y ′ λY (δ |T|),
+
+
+
+
+                                                   14
+where on the final line we used the fact that (T′ , Y ′ ) is a refinement of (T, Y ); this implies that
+λY ′ (δ 3 |T′ |) ⪆ λY (δ 3 |T|), and that
+                                           λY ⪅ λY ′ .                                             (51)
+Thus it suffices to prove that
+                                                                                      
+                                          C/ε1        −(k−1) −α′ 3          −9/4    ′′
+                       µY ′ ⪅ δ −ε/2 C1          min λY ′   δ (δ |T|)α/3 , λY ′ δ −α ,            (52)
+
+where the constant C may depend on α, and the implicit constant may depend on ε, ε1 , ε2 , and α.
+Indeed, combining (50), (51), and (52), we obtain the volume bound
+                                                                              
+                              ε/2 −C/ε1        k α′ 3 ′ 1−α/3     13/4 α′′ 3 ′
+               [
+                   Y (T ) ⪆ δ C1        max λY δ (δ |T |)      , λY δ (δ |T |) .             (53)
+                T ∈T
+
+This volume bound is precisely what is needed to establish Assertion RT(4 − α′′ , 13/4, 1), and it
+also establishes Assertion RT(4 − α′ , k, 1 − α′ /3) provided α′ ≤ α.
+    The remainder of the proof will be devoted to establishing (52). Define A = |Tθ |/|Ω| and define
+B = µY ′ /µfine . From Proposition 30, we have the bound
+                                                  −C/ε1 −1/3 −2/3−ε/2 1/3 4/3
+                                     µYθ ⪅ C1          λYθ θ         A B .
+
+From Corollary 12 we have the bound
+
+                                     µYθ ⪅ λ−2
+                                            Yθ θ
+                                                 −1−ε/2 3/4 3
+                                                       A (θ |Ω|)1/3
+                                            = λ−2
+                                               Yθ θ
+                                                    −1−ε/2 3/4 3 −1
+                                                          A (θ A |Tθ |)1/3
+
+Combining these, we obtain the bound
+
+                   −C/ε1 −1/3 −2/3−ε/2 1/3 4/3 3/4
+                                                                                1/4
+          µ Yθ ⪅ C 1    λ Yθ θ        A B          λ−2
+                                                    Yθ θ −1−ε/2 3/4 3 −1
+                                                               A   (θ A  |Tθ |)1/3
+                                                                                                  (54)
+                  −C/ε1 −3/4 −3/4−ε/2 7/16
+              ≤ C1     λ Yθ θ        A     B(θ3 A−1 |Tθ |)1/12 .
+
+   From Items (f) and (k) of Lemma 29, we have that
+
+                          µY ′ ⪅ µYθ µfine /B
+                                 −C/ε1 −3/4 −3/4−ε/2 7/16 3 −1
+                              ⪅ C1    λ Yθ θ        A    (θ A |Tθ |)1/12 µfine                    (55)
+                                 −C/ε1 −3/4 −3/4−ε/2 7/16 3 −1
+                              ⪅ C1    λY ′ θ        A    (θ A |Tθ |)1/12 µfine .
+
+Since the tubes whose shading contains a δ-cube Q ∈ Q(Y ′ ) must lie in the θ neighborhood of a
+plane, we also have the bound
+
+                                                      µY ′ ≤ θ−1 µfine .                          (56)
+   Combining (55) and (56), we obtain the bound
+                                                                 16α            1− 16α
+                   −C/ε1 −3/4 −3/4−ε/2 7/16 3 −1
+                                                                         θ−1 µfine
+                                                                    21                  21
+           µY ′ ⪅ C1    λY ′ θ        A    (θ A |Tθ |)1/12 µfine
+                                                                                                  (57)
+                               −4α       4α−21            17α               4α
+                   −C/ε1                       −ε/2               3
+                ⪅ C1     λY 7′       θ     21         A    63   (θ |Tθ |)   63   µfine .
+
+
+
+                                                                   15
+    Since Assertion TEδ (4 − α, k, 1 − α/3) is true, we can apply it to the tubes contained in each
+of the θ-tubes Tθ ∈ Tθ . We conclude that
+                                                                                                        α/3
+                                         −C/ε1 −(k−1)
+                       µfine ≲ C1             λY ′    (δ/θ)−α−ε/2                    (δ/θ)3 |T|/|Tθ |
+                                                                                                        4α/63                     (58)
+                                      −C/ε1 −(k−1)
+                                   ≲ C1    λY ′    (δ/θ)−α−ε/2                            3
+                                                                                     (δ/θ) |T|/|Tθ |              A   −17α/63
+                                                                                                                                ,
+
+where the implicit constant depends on ε, ε1 , ε2 , and α. On the second line we used the fact that
+there are ∼ A tubes in Tθ pointing in each θ-separated direction, and each of these θ-tubes contain
+≲ A−1 (θ/δ)3 tubes from T′ .
+   Combining (57) and (58), we have
+                                               −4α       4α−21            17α                4α
+                                                                                                   
+                                        −C/ε1                   −ε/2                  3
+                      µ   Y′   ⪅       C1     λY 7′   θ     21(θ |Tθ |)A    63                63
+
+                                                                             4α/63          
+                                      −C/ε1 −(k−1)                                                                                  (59)
+                                   · C1    λY ′    (δ/θ)−α−ε/2 (δ/θ)3 |T|/|Tθ |       A−17α/63
+                                               4α
+                                       −C/ε1 − 7 −(k−1) 25α−21 −α−ε/2 3
+                               ≤ C1         λY ′       θ 21 δ        (δ |T|)4α/63 .
+
+   By Corollary 21, we also have the estimate
+                                                           −9/4
+                                               µY ′ ⪅ λY ′ θ−3/4 δ −3/4−ε/2 (δ 3 |T|)3/4 .                                          (60)
+
+Interpolating these two estimates, we have
+                                   4α                                                                     63
+                           −C/ε1 − 7 −(k−1) 25α−21 −α−ε/2 3
+                                                                                                  
+                                                                                                       100α−21
+         µ   Y′   ⪅       C1    λY ′       θ 21 δ        (δ |T|)4α/63
+                                                           1− 63
+                         −9/4                                                                                                       (61)
+                      · λY ′ θ−3/4 δ −3/4−ε/2 (δ 3 |T |)3/4
+                                                               100α−21
+
+                                                
+                                   63
+                          − 9 + 100α−21      9
+                                               − 4α
+                                                                                                                      
+                                                    −(k−1)        3      63   3      ϵ              4α     3       63
+                  ⪅ λY ′4                    4    7
+                                                              δ − 4 + 100α−21 4 −α − 2 (δ 3 |T|) 100α−21 + 4 1− 100α−21 .
+
+   Observe that for 0.84 ≤ α ≤ 0.97 and k = 2.69 we can graphically check that
+                                                                     63
+                                                            0≤              ≤ 1,                                                    (62)
+                                                                  100α − 21
+and                                                                  
+                                           9    63      9 4α              9
+                                          − +            −   − (k − 1) ≥ − ,                                                        (63)
+                                           4 100α − 21 4   7              4
+and                                                                     
+                                                 4α      3        63
+                                                       +    1−             > 0.                                                     (64)
+                                              100α − 21 4      100α − 21
+Thus we get
+                                                                  C/ε1 −ε/2 −9/4 −α′′
+                                                      µY ′ ⪅ C1       δ    λY ′ δ     .                                             (65)
+This inequality is the second term in (52), so we have proved half of the inequality. Our next task
+is to establish the remaining half of (52).
+    From Theorem 10, we have the estimate
+
+                                                          µY ′ ⪅ λ−1   −1 3
+                                                                  Y ′ δ (δ |T|)
+                                                                               1/2
+                                                                                   .                                                (66)
+
+
+                                                                           16
+Interpolating these two estimates, we have
+
+        − 9 + 63     9
+                                                                                            (4α−6)(100α−21)
+                        − 4α
+                                                     
+                             −(k−1) − 3 +   63   3      ϵ              4α     3       63
+                                     δ 4 100α−21 4 −α − 2 (δ 3 |T|) 100α−21 + 4 1− 100α−21
+            4 100α−21 4    7                                                                      348α−630
+ µY ′ ⪅ λ Y ′
+                            (4α−6)(100α−21)
+                          1 1−
+        · λ−1   −1 3             348α−630
+           Y′ δ   (δ |T|) 2
+
+                   (462−322α−126k)(2α−3)
+          −C/ε1                          −1       76α2 −24α−189
+       ≤ C1       λY ′    348α−630
+                                              δ     315−174α      (δ 3 |T|)α/3 .
+                                                                                                           (67)
+
+   Note that if 0.84 ≤ α ≤ 0.97 and k = 2.69, then one can graphically check that
+
+                                                  (4α − 6)(100α − 21)
+                                       0≤                             ≤ 1,                                 (68)
+                                                      348α − 630
+and
+                              (462 − 322α − 126k)(2α − 3)
+                                                          − 1 > −(k − 1).                                  (69)
+                                      348α − 630
+Thus
+                                              C/ε1 −ε/2 −(k−1) −α′ 3
+                                 µY ′ ⪅ C1        δ    λY ′   δ (δ |T|)α/3 .                               (70)
+The estimates (65) and (70) give us (52).
+                      1
+                                √                             √
+                                                      12951−54 10593
+Lemma 32. Let α = 196    (291 − 10593), let d0 = 13
+                                                  4 −      41972     and let k = 2.69. Then for
+each ε > 0,                                                 
+                         Assertion TE 4 − α − ε, k, 1 − α/3 is true,                       (71)
+and                                                                           
+                                 Assertion TE d0 − ε, 13/4, 1                      is true.                (72)
+
+Proof. We will begin√with (71). In Katz-Zahl, while proving (111), we cross below the threshold
+α = 0.97 since 257−12817665 = 0.964551..., and we have 2.69 > 75/28 also. Therefore Assertion
+TEδ (4 − α1 , k, 1 − α1 /3) holds for some α1 just below 0.97 which we can start with. For each j ≥ 1
+suppose that Assertion TE(4 − αj , k, 1 − αj /3) is true, and define
+
+                                                      −76αj2 + 24αj + 189
+                                       αj+1 =                             .
+                                                         315 − 174αj
+
+Since αj+1 ≤ αj , Lemma 31 implies that Assertion TE(4 − αj+1 , k, 1 − αj+1 /3) is true. Observe
+that αj ↘ α. Thus for each ε > 0, there is an index j so that αj ≤ α + ε. We conclude that (71)
+holds.
+   For (72), note that for each ε > 0, (72) follows from Lemma 31 and (71).
+
+   We are now ready to prove Theorem 1.
+
+Proof of Theorem 1. This follows from (72).
+
+
+
+
+                                                             17
+References
+ [1] S. Basu, R. Pollack, and M. F. Roy. Algorithms in Real Algebraic Geometry (2nd ed.). Springer-
+     Verlag, Berlin, 2006.
+
+ [2] J. Bochnak, M. Coste, and M.-F. Roy. Real algebraic geometry. Springer-Verlag, Berlin, 1998.
+
+ [3] J. Bourgain and L. Guth. Bounds on oscillatory integral operators based on multilinear esti-
+     mates. Geom. Funct. Anal., 21:1239–1295, 2011.
+
+ [4] R. Davies. Some remarks on the Kakeya problem. Proc. Cambridge Philos. Soc., 69:417–421,
+     1971.
+
+ [5] L. Guth and J. Zahl. Polynomial Wolff axioms and Kakeya-type estimates in R4 . Proc. London
+     Math. Soc., 117:192–220, 2018.
+
+ [6] N. Katz, I. Laba, and T. Tao. An improved bound on the Minkowski dimension of Besicovitch
+     sets in R3 . Ann. of Math., 152:383–446, 2000.
+
+ [7] N. Katz and K. Rogers. On the polynomial Wolff axioms. Geom. Funct. Anal., 28:1706–1716,
+     2018.
+
+ [8] N. Katz and J. Zahl. A Kakeya maximal function estimate in four dimensions using plane-
+     brushes. Rev. Mat. Iberoam., 37:317–359, 2021.
+
+ [9] I. Laba, M. Rai Choudhuri and J. Zahl. A bound for plany Kakeya sets in F4q using the
+     planebrush method. Res. Math. Sci. special issue on Fractal Geometry and Harmonic Analysis
+     13:Paper No. 13, 2026.
+
+[10] I. Laba and T. Tao. An X-ray transform estimate in Rn . Rev. Mat. Iberoam., 17:375–407,
+     2001.
+
+[11] T. Tao. Lecture notes for math 254b, spring 1999: Restriction theorems and applications.
+     http://www.math.ucla.edu/ tao/254b.1.99s/notes6.dvi, 1999.
+
+[12] T. Tao.           The two-ends reduction for the kakeya maximal conjecture.
+     https://terrytao.wordpress.com/2009/05/15/the-two-ends-reduction-for-the-kakeya-maximal-
+     conjecture, 2009.
+
+[13] H. Wang and J. Zahl. The Assouad dimension of Kakeya sets in R3 . Invent. Math., 241:153-206,
+     2025.
+
+[14] H. Wang and J. Zahl. Sticky Kakeya sets and the sticky Kakeya conjecture. J. Amer. Math.
+     Soc., 39:515–585, 2026.
+
+[15] H. Wang and J. Zahl. Volume estimates for unions of convex sets, and the Kakeya set conjecture
+     in three dimensions. https://arxiv.org/abs/2502.17655, 2025.
+
+[16] T. Wolff. An improved bound for Kakeya type maximal functions. Rev. Mat. Iberoam., 11:651–
+     674, 1995.
+
+[17] R. Wongkew. Volumes of tubular neighbourhoods of real algebraic varieties. Pacific J. Math.,
+     159:177–184, 2003.
+
+
+                                                18
+[18] J. Zahl. A discretized Severi-type theorem with applications to harmonic analysis. Geom.
+     Funct. Anal., 28:1131–1181, 2018.
+
+[19] J. Zahl. On maximal functions associated to families of curves in the plane Duke Math. J.,
+     175(2):199–286, 2026.
+
+[20] J. Zahl. A Survey of the Kakeya conjecture, 2000-2025 Proc. Int. Congr. Math., 4:270–287,
+     2026.
+
+
+
+
+                                              19
+

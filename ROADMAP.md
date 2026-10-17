@@ -1,10 +1,10 @@
 # 路线台账
 
-更新2026-10-17，R0032 TEX001认证原Lemma3.5完整两版本knownatlas/旧pL知识/wholeassignments/temperedness，继TCM/ASM。完整OAI4高级源及具名KT其余条件保持，六维17/4仍条件，无无条件高维新界/重大性。下一R33必须先macro重判前沿/路线，再决定criticalpath候选，不继续label常数。
+更新2026-10-17，R0033定期macro/当前官方与一手frontier复核后，CRP001认证原4.3四项及实际2.7/2.13/4.1/4.2、2.15–2.16有限链，保GWZ集合估计为named输入。TCM/ASM/TEX/CRP均源既有结果重证，完整OAI4及KT余责不消除，六维17/4仍条件，无无条件新高维界/重大性。阶段后重新列责任，下一R34唯一gate原尺度actual-improvement transfer（4.11实际全接口），不自动沿论文续审；常规下次macro R36。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
-| A | 四维输入审计 | SRC-001加DIR-003条件性加权方向质量输入；TCM001/ASM001/TEX001认证原3.1–3.5与列明基础；其它高级证明未全面验证 | bridge完成，保留专用source调用；不补generic completion |
+| A | 四维输入审计 | SRC-001加DIR-003条件性加权方向质量输入；TCM/ASM/TEX认证原3.1–3.5，CRP认证原4.3及实际归一化/有限初始界（保G）；原尺度转换/其它高级证明未全面验证 | bridge完成，保留专用source调用；不补generic completion |
 | B | 投影与切片 | LIFT-001/002及FLAG-003排除纯投影加一/免费短轴 | 朴素版本frozen；需真纤维/敏感度输入 |
 | C | 高维方向代数 | ALG-004直纹三次局部模型 | 局部无条件恢复frozen |
 | D | 原始/切线精度 | SCL-001量词差别，原始幂界非统一切线界 | guard-only frozen |
@@ -20,7 +20,7 @@
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28 ACT001共同box、CAR001平均carry门槛，无AFF₃ | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
-| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX已付；R33先macro/前沿，再定下一任务，仍不认证无条件新界/重大性 |
+| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP已付列明部分；R33macro已执行，R34先核原尺度实际转换，仍不认证无条件新界/重大性 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
