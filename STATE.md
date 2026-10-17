@@ -1,23 +1,27 @@
 # 当前研究交接
 
-更新2026-10-18，R0064。root12/A13/B9、两formal6/rootintegration6/macro8/next6已实际全文审。Goal active；ordinary n>=5/general或major未达。下一唯一 notes/00_map/R0064_next_actual_output_coupling_gate.md，原A-output耦合未付，数学前锁规格，同轮必须实际施工。
+更新2026-10-18，R0065。root14/A10/B9、两formal6/rootintegration6/macro6/next6实际全文审通过。Goal active；ordinary n>=5/general或major未达。下一唯一 notes/00_map/R0065_next_periodic_full_goal_review.md，R66先周期宏观复核，防连续extra-regularity子类代替完整问题，再锁真正未付机制并同轮数学。
 
-## 本轮已证与严格范围
+## 本轮已证及边界
 
-notes/40_multiscale/sticky_matrix/R0064_weighted_rank_one_difference_reduction.md：任意原probability与bounded Mat2，raw nu²坏det-pairs<=q，三anchors/SVD删4sqrt(q)后落nearconstant a-ball或同一affine image/kernel plane误差100R²sqrt(epsilon)/a。epsilon0/q0、atoms/nullsets均完整；原bounded g损8sqrt(q)，ancillary priors明确概率，时间upper/SM命中付P^-1，实际normalization s_t s_F/s_y和workingr/SM余量仍须核。三原子例证明sqrt(q)尺度不能一般提高。raw分类不是actual source已付rank提取。
+notes/40_multiscale/sticky_matrix/R0065_rational_two_time_curvature_and_output_incidence.md。fixed D/M rational Fi、controlled denominator及Jac numerator coefficient>=r^theta，原time interval cap和angle slab，任意相关bounded g、低维absolute Aplus output给三项原图质量上界K r^(theta gamma/2)+K²r^(theta/(2d))+K³r^(kappa-3theta)，d6D+4。原atomic time jitter、角二次小值集、二元插值、regular complex fibers的经典Bézout重数和change-of-variables全部付；不声whole raw law2Fst。
 
-## 独立反攻和来源界
+## 实际source与严格校准
 
-真1AD两interval时间网、boundedLip reciprocal matrix hyperbolas、全real weighted-affine非拟合及dense symmetric cross g，所有used det差0，但任意单plane的h邻域保原图<=C(h+delta²)，小nearconstant ball保0。此为真实有限图量词反例，不是数值实验；未构造A-output、whole T/xi/CW或fullDef17，所以不反完整正kappa source/Kakeya。
+R16 fine原priors直接可接：time floor delta/rho<=rho=r，used H slab floorr，full Y的AD packing给absolute N_rAplus<=K^C r^-2+kappa；输入sigma任意，不需重做coarse-time或新AD lower。normalization F=(rho/tau)(f-fref)，physical模型误差e_phys需<=C tau r/rho。fixed rational approximation与量化N lower仍extra input，不能从完整source推出；原tuple准备沿旧审查层次引用。
 
-53PDF/53sources/78IDs，不新增PDF、source条目或数学ID。官方1402.4790v2 §2已给经典exact affine row/column maximal adjacent sets；sourcecheck保存bounded比较指针，无定量首创或major认证。原WZ Def3.6/3.9/17.2–17.4/(157)–(159)及R16 O(r)稳定接口实际复核；source高级wholeproof未新增独证。两代理actual互审及formal/root集成通过，未经外部同行评审。
+R64双branch rational cross J的[t5s]N=2psi1²，故不能补低维A-output且保subpower原图质量。真H-H差law的raw零ball>=cr，commonkernel抛物线raw零ball>=c sqrt(r)，所以必须收费删critical参数；R58 Lip plateau反例因complexity增长未被否定。没有完整Def17反例、一般commonkernel扩张或高维维数增益。
 
-## 下一及冻结
+## 来源与独审
 
-notes/00_map/R0064_next_actual_output_coupling_gate.md。只有原A输出/wholeline/xi的未付共同质量可能区分本轮反例与完整source；先排R18 W/R23 cycles/R28 box/R45 good-star/R58 standalone D。无预认证新机制；不能仅选择报告结案。raw fullrank质量不自动落g，dense g/SM/slab也不自动给raw小q。
+53PDF/54sources/78IDs。新增Tao2011作者web记录及literature note hash，无新PDF；实际Theorem1/Cor2复零维界，本文证明其regular实fiber应用桥。源高级wholeproof未新增独证。A/B实际互审、两formal及root集成通过，未经外部同行评审。经典工具proper-subclass结论不认证首创/major，不新增数学ID。
 
-停止raw分类a/epsilon/q常数、edge-only同义和stationarity。CP/PM、matrix W/Y-only/action/carry、LIFT005 smooth、固定endpoint/加臂、poly degree/palette、scalarK、D/slab/plateau、projective独立方向及HRZ norm/rho继续冻结；R63同轴/planebrush参数不续。R60/R62保原范围。共同PW4 gain、common-kernel、mixed、ordinary高维/general、general-to-sticky未解。下次周期macroR66，关键失败/连续两轮无信息提前。
+## 下一与冻结
 
-## 同步与恢复
+notes/00_map/R0065_next_periodic_full_goal_review.md。R66先周期macro，对ordinary高维、general-to-sticky、sticky/mixed各真输入和反例边界作账本，主动防只在更易regularity模型进展；未预认证候选。数学前排R18/W、R23cycle、R28box、R45star、R58D、R64raw、stationarity及双向正幂闭包，下一仍须实际数学，不能筛选报告结案。
 
-本轮父HEAD=origin=remote9730d88d2bc289cc5b74c0eb4c9eaea92c981b72/tree9c8cda92f1d8f13487bec6d95c88ee5578dc59d0、965旧tracked clean。最终tmp/sync/R0064.json须pendingfalse/samecommit/clean/allstagedSHA256/fulltree。恢复先python scripts/context.py及固定入口/78状态/R64round/macro/next/receipt+freshref，不重跑已通过计算。Goal不自行complete/pause/blocked。
+本轮fixed rational D/M/theta/h/critical阈值和近pencil误差停止。CP/PM、W/Y-only/action/carry、LIFT005smooth、fixedarms、poly degree/palette、scalarK、D/slab/plateau、projective独立gain、HRZ norm/rho、R63同轴参数仍冻结；R60/R62保原范围。普通高维/general、共同PW4、generic commonkernel、mixed及general-to-sticky仍open。
+
+## 同步恢复
+
+父HEAD=origin=remote364a374d419bb29c90ec157ebcdfdba644645a20/tree285ec5ff27844a82bee5cc9b93163a7d705fcdf0、977旧tracked clean。最终tmp/sync/R0065.json须pendingfalse/samecommit/clean/fulltree/allstagedSHA256。恢复先python scripts/context.py及固定入口/78状态/R65round/macro/next/receipt+freshref，不重跑通过计算。Goal保持active，不自行complete/pause/blocked。

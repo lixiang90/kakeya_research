@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0064 raw weighted近秩一差分类、原g/metric条件回传及edge-only严格反攻已付；没有actual source小q输入或ordinary gain。下一唯一 notes/00_map/R0064_next_actual_output_coupling_gate.md，先核原A-output/wholeline/xi与冻结等价再锁数学。53PDF/53sources/78IDs，Goal active。
+更新2026-10-18，R0065 fixed-rational/J曲率的原低维输出图上界、fine-source/absolute-Y-cover桥与R64反图不能补output已付；额外模型/曲率未从完整source提取。下一唯一 notes/00_map/R0065_next_periodic_full_goal_review.md，R66周期完整Goal macro后锁新实际数学。53PDF/54sources/78IDs，Goal active，ordinary高维未解。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -138,3 +138,5 @@ R0062：四维weightedbase/commonrandomgrid保原Lebesgueλ5/单log，任意管�
 R0063：fixed n共脊RP^(n−3) overlap、真实r/a切片、平均lambda/Jensen、Q角删选及nearcarrier校准；fixedQ0 wholeaxis+原R4 lightlabel平方收费+honestN1/A0给备用theta10 rho p lambda7 N1³/(A0 C_loc)。原PW只John-box projected CW，cube envelope不授fat fullPW；source(63)/R4全preprocessing仍具名。无uniform rho p lambda³/(C_loc theta) gain，不续p/rho/阈值，下一实际完整d5 source筛冻结/同义，不制造跨kernel定理。
 
 R0064：raw nu² bad-det q→删4sqrt(q)的固定image/kernel/常值alternative，error100R²sqrt(epsilon)/a；原图损8sqrt(q)、metric/SM阈值明确，三原子sqrtq sharp。真1AD/Lip/weightedSM双曲线cross图严格否edge-only升级，任意单plane保g<=C(h+delta²)，无A-output/TxiCW completion。exact分类primary已知，不新ID/major；冻结参数和stationarity，下一原输出耦合不能只筛查结案。
+
+R0065：fixed rational/Jcoefficient extra input下的三项原g上界，atomicν r-smear/角二次与二元插值/regular复fiber Bézout重数支付；原R16 fine priors和absolute Aplus packing/physicalτ可接。R64双curve模型低维A-output被排，整raw2Fst仍由cr及sqrt(r)零ball反攻。未从source提取有理模型/曲率，不新ID/major；停止degree/阈值，R66先防proper-subclass漂移的周期macro。
