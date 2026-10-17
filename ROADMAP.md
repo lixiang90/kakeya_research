@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0071条件κ细packet经完整tensor/fibre/frame及native/角/time/floor审计，未得可用jointmass/precision；主机制no-information并冻结，不以lower证书不足冒actualupper。局部Cantor sharpness非fullsource反例。下一唯一 notes/00_map/R0071_next_periodic_full_goal_and_new_mechanism.md，R72必须full-goal宏观后不同实际数学。53PDF/54sources/78IDs，Goal active。
+更新2026-10-18，R0072先完整宏观/fresh官方三核心身份再实际commonkernel双时响应；原core/mass/recovery及γ>1/2源子范围已付，但basicness/商lower未得。按spec主机制noinfo，R71/R72连续2，冻结两marginal→basicness。下一唯一 notes/00_map/R0072_next_full_goal_reset_after_two_stops.md，R73先full-goal重置后不同数学；53PDF/54sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@
 | K | 曲线到直线的coherent lifting | LIFT-005经R50同P全时第一变分覆盖一般smooth保clock的parameter-linear目标；s≥rankB，s1/fullrank iff B0或rankB=rankB²1 | 完整类frozen；R12/R49 affine-only范围已更正，不续Hessian/clock邻近轮 |
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
 | M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
-| N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
+| N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论；R72 sameTube/core及γ>1/2 commonkernel子范围，basicness未付 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66 tiny lower、R67天然joint图、R68无AFF/NQ的large upper；R69双法向四输出数值恢复、冻结后AFF推论严格失败，R70 raw零球及κ+γ>1子范围排除，γ≤1−κ contact/wholeAFF₃仍未付；R71 direct fine packet全账无可用gain、已冻结 | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
@@ -152,3 +152,5 @@ R0069：周期宏观与fresh官方三核心版本核；原d不聚集/同g双锚�
 R0070：原有向zero-ball同fan/whole f常cluster、global原mass/newallowed/named19.2排坏窗，重构q零球cap；smallD先删再outputcover/own角slab，r=τ√ρ完成κ+γ>1子范围。γ≤1−κ全branch/ordinary未解；R69中央全变量dense native完成被排，非完整source反例。停止阈值/有理模型，下一actual fine joint packet，R72先宏观。
 
 R0071：原pointκ cover/末角UNION/tensor/matching/fibre全账，σ=τ/R_Bρ²仅保证λ，理想共同patch仍λκ；floor/角time/zeroD/bundle/粗聚合已核。Cantor localunion饱和乘积但非完整source反例。按spec主机制no-information并冻结directpacket，R72先周期全目标/一手输入审视后锁不同实际数学；无ordinary/major。
+
+R0072：完整commonkernel的δ-thick fibre/point/tube core与sameTube双终时mass/marginal、native x1/恢复精度已核；原KT/slab+named19.4排γ>1/2参数子范围，未得basicness/商ADlower或全branch。local digit校准明确失败全clock/CW/terminalξ，非source反例。主机制依preset noinfo/冻结，连续2轮触R73全目标重置；last actual官方三核心fresh核R72，无ordinary/major。

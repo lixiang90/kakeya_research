@@ -25,3 +25,5 @@
 R0019起下一实际mixed42研究单独存notes/40_multiscale/sticky_mixed/INDEX.md；不是本目录Mat2/vector-Phi命题的改名。当前本目录Y-only与W/BSG/common-plane局部机制冻结，主Mat2命题仍open。
 
 R0058新增原common-kernel割线门槛见 R0058_secant_slab_dichotomy_and_dimension_ceiling.md：非零offsetslabupper、nearzero保g片及真factorization下二维预处理反攻；未排完整Mat2/commonkernel。coarse line不免费回R16，原A-D耦合仍待。
+
+R0072：[R0072_kernel_velocity_two_time_budget_and_stop.md](R0072_kernel_velocity_two_time_budget_and_stop.md)，actual commonkernel同管双时响应/core与γ>1/2子范围；未得ξbasicness/商lower，严格localmask非fullsourcecounter，按spec主机制noinfo/冻结。下一notes/00_map/R0072_next_full_goal_reset_after_two_stops.md，Goal active。
