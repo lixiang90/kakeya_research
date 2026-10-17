@@ -14,3 +14,6 @@
 ## R0043当前入口
 
 notes/40_multiscale/R0043_actual_PW_coarsening_and_extremal_class_closure.md：共同translate kernel证明finePW→coarse，uniform law及bounded parent的K²/K⁴预算显式。实际§18其余geometry仍具名，uniform/有界scope及原ΔJ记号问题保留。下一 notes/40_multiscale/R0043_next_actual_polynomial_grain_test.md，只一次实际polynomial-grain gain尝试；不调closure常数，不假lowcomplexity或免费改tube prior。
+
+
+R0044当前入口：notes/40_multiscale/R0044_actual_endpoint_palette_and_polynomial_budget.md。actual endpoint/slope标签与原mass全付，affine pieces精确回原CW，localclamp非affine证书也无新κ限制；一主轮停止已执行。下一 notes/40_multiscale/R0044_next_four_arm_transversality_gate.md，先核不同原tube四臂BL的actual提取及overlap，不以generic横截代替。

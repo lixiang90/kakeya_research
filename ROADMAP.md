@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0043付fine-PW到coarse的共同translation核及原mass a，uniformcoarse K²和有界wholeparent合成K⁴费用。actual§18操作/relativeδ/shading预算已审，原其余结构推导具名、旧ΔJ索引问题未假称全修；任意ν或无界localAD免费localization不获认证。真实visited-union complexity没有strictsaving。停止closure常数迭代，下一唯一notes/40_multiscale/R0043_next_actual_polynomial_grain_test.md：实际增长degree curvedgrain测试，先排旧20.2 affine/Taylor和R40flatflake同义，无实际关联/预算即一轮停止。无新ID/major，Goal active。
+更新2026-10-17，R0044完成actual goodq→heavy→共同endpoint原质量，单Y_z* fine palette；natural/fine affine-offset pieces完整施工但PW逐片界与原CW同幂，κ≤2为原native范围。local-clamp/Bernstein真正nonaffine证书也仅平凡预算，piece重数/clock/degree均付。执行一主轮停止，冻结polynomial-envelope D/e/ρ迭代，不否所有未来非affine方法。下一唯一 notes/40_multiscale/R0044_next_four_arm_transversality_gate.md，四根不同原管在不同原time的grain多线性横截性gate；R45先周期macro/primary精确版本。无新ID/维数界/major，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -82,3 +82,6 @@ R0042 macro research/reviews/R0042_macro.md，主稿 notes/40_multiscale/R0042_s
 
 
 R0043 research/reviews/R0043_macro.md；主稿 notes/40_multiscale/R0043_actual_PW_coarsening_and_extremal_class_closure.md，A/B实际审计与formalreviews见literature/metadata/R0043_source_check.json。coarse无费不是NρS不可能性，raw事件先保a^(4/5)再共同translate；source需uniformcounting、有界jointchart或真实总count输入，clock保原ψ和dyadic树。不能用T′大ηell费用调用更小ε1的Step4；原T/Y及代表parent平均接口分别付。下一不是加allcoarse/低complexity/祖先公设，无fullκgain。
+
+
+R0044 research/reviews/R0044_macro.md；主稿 notes/40_multiscale/R0044_actual_endpoint_palette_and_polynomial_budget.md，两实际施工/反攻与formalreviews见literature/metadata/R0044_source_check.json。自然eρ²只κ≤2，fine e需二维normal slope网，wholeclock凸box正好复原CW。真正nonaffine localclamp证书保M≥cpρ但A_tot≤pL，预算ρ^(4−2κ)≤K C0(D+1)^A L4仍平凡。不能以这些upper证明所有策略不可能。冻结本路线；下一不预设四臂横截/独立time/原mass，三臂及同T四time的线性代数障碍先排除。

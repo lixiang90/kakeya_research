@@ -64,3 +64,6 @@ R0042新增BS2609.24135v1（9页），现31PDF/34来源；原PDF、全文、版�
 
 
 R0043仍31PDF/34sources，无新PDF或在线版次认证；versioned WZ2609.22035v1整§17–18及(19)/(20)/Obs3.2–3.4实际细读，root实看PDF18/69/72/74/76、A70/72。新增PW粗化传播独立证明，原其余结构推导仍具名；PDF70/72的ΔJ/√δell记号不一致如实保存，不据此宣源主定理反例。精确scope见metadata/R0043_source_check.json，最新onlinefrontier仍R42。
+
+
+R0044仍31PDF/34sources，无新PDF/渲染/online版次认证；实际读WZ Def17.2–17.4、§19.1 goodq/coherence、19.2及20.2，沿用R16独立计数与R42/43 PW输入。scope见metadata/R0044_source_check.json，最新onlinefrontier仍R42。下一Kakeya–BL调用前须先核一手精确版本，本轮未调用未经核定理。
