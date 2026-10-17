@@ -1,10 +1,10 @@
 # 路线台账
 
-更新2026-10-17，R0029付实际arbitraryambient有限seed及unsaturated预算，条件性经KT6.2得到compact六维Hausdorff≥17/4。完整OAI4/SRC/DIR与具名KT条件未消除，无无条件新界/重大性认证。下一R30先macro，再认证原Lemma3.3共同源gateway，不继续投影/thinning常数。
+更新2026-10-17，R0030原Lemma3.3一般固定阶matching完成内部重证TCM001。R29任意ambient种子及compact六维17/4仍条件于完整OAI4/SRC/DIR和具名KT；无无条件新高维界/重大性。下一唯一main原Cor3.4实际代数norm-to-jet与原pi切片；R33常规macro，关键失败提前。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
-| A | 四维输入审计 | SRC-001加DIR-003条件性加权方向质量输入；175页证明未全面验证 | bridge完成，保留专用source调用；不补generic completion |
+| A | 四维输入审计 | SRC-001加DIR-003条件性加权方向质量输入；R30 TCM001认证原Lemma3.3；175页其它高级证明未全面验证 | bridge完成，保留专用source调用；不补generic completion |
 | B | 投影与切片 | LIFT-001/002及FLAG-003排除纯投影加一/免费短轴 | 朴素版本frozen；需真纤维/敏感度输入 |
 | C | 高维方向代数 | ALG-004直纹三次局部模型 | 局部无条件恢复frozen |
 | D | 原始/切线精度 | SCL-001量词差别，原始幂界非统一切线界 | guard-only frozen |
@@ -20,7 +20,7 @@
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28 ACT001共同box、CAR001平均carry门槛，无AFF₃ | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
-| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；R30先macro后审Lemma3.3，不认证无条件新界/重大性 |
+| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；R30 macro/TCM001已付；下一Cor3.4，仍不认证无条件新界/重大性 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
@@ -48,3 +48,6 @@ R0028提前macro：已付原reference的全16边box及真实乘法低overflow的
 
 
 R0029使用实际已存R7/R9 finite输入，而非dim_H statement换名。新Gaussian collision/independentset、nonshort/共同clock/原marks/cover完成任意s≥3有限转移，DIR003给λ²/K与s−4指数的任意条数预算，真实对准KT6.7第二输入。严格次临界K(n4−ζ)避开未证线性损失模数。经具名KT6.2给compact六维17/4条件链，未认证无条件界或新颖性；20PDF/GLX2025基线和官方OAI同blob已核。下一spec notes/10_source_audit/R0029_next_matching_certificate_target.md：R30先macro，再逐式认证Lemma3.3 general fixed-order two-color matching，是移除共同源条件的一步，不代表全部源已证。
+
+
+R0030定期macro后完整认证原Lemma3.3：preselection mass/任意pi/heat-bath/共同Λ/backward upper与signed endpoint/regular multiplicity/child体积均通过两独审；每步b^(5/4)可求和、全piece entropy constants已核。TCM001为来源原工具引理重证，非新方向/重大结果。反攻只给d=1、fixed-power和删高阶导数边界，非原counter。下一spec notes/10_source_audit/two_color_matching/R0030_next_scalar_sheet_target.md，核Cor3.4 norm-to-jet/原pi切片及真实所需holomorphic输入；Lemma3.2续接责任单列，勿误称Cor3.4必调用。五维旧缺口与全部冻结保持，R33下次常规macro。

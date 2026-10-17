@@ -18,3 +18,6 @@ R0029进展：以下转移链已内部交叉独审，完整OAI4/SRC001/DIR003及
 | R0029_conditional_seed_and_six_dimensional_bound.md | 旧finite源责任到任意n≥4种子，再KT得到compact六维17/4条件链；未消除源条件 |
 
 下一R30先macro，再按notes/10_source_audit/R0029_next_matching_certificate_target.md认证原Lemma3.3，不继续投影常数或thinning改名。
+
+
+R0030更新：原Lemma3.3一般固定阶已内部重证TCM001，见notes/10_source_audit/two_color_matching/INDEX.md。它只认证一个共同gateway，FSD/DIM完整源条件保持；下一实际Cor3.4代数匹配，不继续有限投影/λ²常数。R30定期macro已执行，R33下次常规macro。

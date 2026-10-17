@@ -1,12 +1,28 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0029。Goal active；一般/五维满维数未解决，无条件新高维界、真实Kakeya反例及重大性/新颖性认证均未达成。
+更新2026-10-17（Asia/Shanghai），最近轮次R0030。Goal active；一般/五维满维数未解决，无条件新高维界、真实Kakeya反例及重大性/新颖性认证均未达成。
 
 ## 恢复、同步和宏观
 
-R29起点R28 commit3dc500e74d1ff803a29c7b72cfc1052160def3a0、tree8c510c3e6efe2ca9b68a4dec2a1454f84680acb0；427文件receipt、HEAD/origin/clean已核。上一Goal turn progress（独审归档/安全同步完成），非最终结果。收尾回执tmp/sync/R0029.json须核remote全tree/local精确commit/全部blob bytesSHA256/clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/latest round/AGENTS并运行python scripts/context.py。
+R30起点R29 commit3aa1768d983bda38b26d9ec0360a628c92620604、tree417dceb5e611ae101d2a1091ecc87f5ebb108611；441文件receipt、HEAD/origin/clean已核。上一Goal turn progress（条件六维链独审归档/安全同步），非最终结果。R30收尾回执tmp/sync/R0030.json须核remote全tree/local精确commit/全部blob bytesSHA256/clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/latest round/AGENTS并运行python scripts/context.py。
 
-R29有实质有条件高维推导progress，**不是无条件新界或重大性认证**。R30必须先定期macro；R28已冻结的action/BSG/carry计数不无输入重开。每轮唯一main、至多两个互补代理、独审归档安全同步，不force不重复请求已有授权，最终标准不降。
+R30定期macro已执行，下一常规R33，关键失败随时提前。R30是原工具引理的实质完整认证progress，非新高维界或重大成果；不能以源审计替代最终目标，也不重开R28已冻action/BSG/carry计数。每轮唯一main、至多两个互补代理、独审后root统一提交/安全同步，不force、不重复请求已有授权。
+
+## R30：原Lemma3.3一般固定阶重证TCM001
+
+proof notes/10_source_audit/two_color_matching/R0030_matching_full_proof.md；A matching_counterattack、B matching_prior_refresh_audit同目录。两终稿独审research/reviews/R0030_matching_geometry_review.md、R0030_matching_probability_review.md，root integration同目录。一般固定D>=1、整数J>D、d0<1完整statement已内部独审通过，未经外部同行评审；来源已有结果，不主张新颖性/重大性。
+
+两C^(J+1) lists各card<=N^(d0+o1)，0…J+1导数<=K=N^o1，P(i1,i2,t)每色index-time marginal<=K pi_i dt；events值差<=K/N而某1…D导数差>=1/K。任意pi、相关events下不存在N→∞sequence，也有依D/J/d0的existential足够小fixed-power版，无显式模数。它不假完整OAI4或后续排除。
+
+pre-selection原atom masses而非final posterior给child count；restriction保原pi并付分母。active-piece entropy先全局汇总，再用保P的heat-bath和adaptive two-color固定2^p支配，仅平均扣bad events。真实retained arm分母给time density；成功law始终未归一化。共同Λ只依exact start的有限coarse邻域；完整past下逐步upper与backward必要test避免虚构独立性。signed nilpotent dynamics和switch误差由strict Taylor gaps付；endpoint Vandermonde/regular孤立解数而非全局单射，真实child体积给Δu>=b(1+1/m)−C_J b^(5/4)，全O(1/b)步误差O_J(b^(1/4))。fixed grid先N极限，后trim/b，与u1<=d0+r1矛盾。
+
+反攻未得原counter：pair upper C_DK4 N^-1/D只直接覆盖d0<1/D；d=1 exact双marginal例、fixed-power oscillator给必要loss门槛，删D以上导数singleton例严格失败弱化版。各例均明确不反原subpower命题。不得把D1证明或数值samples当一般认证。
+
+TCM001通过仅消除一个共同source gateway。Cor3.4代数norm-to-jet、Lemma3.2 continuation/3.5 atlas回传、critical branches仍待核；SRC001/DIR003/FSD001/DIM001完整OAI4及具名KT条件保留，六维17/4仍条件。文献库20PDF，本轮无新PDF/最新版本断言，sourcecheck记录本地PDF29–35完整读范围，R29最近官方blob核验不冒称本轮新检索。
+
+## 唯一下一main：原Cor3.4实际代数图匹配
+
+spec notes/10_source_audit/two_color_matching/R0030_next_scalar_sheet_target.md。先核Cor3.4真正需要的Lemma3.1无height lower norm/jet与degree closure、原pi的Fubini slice及全部ε预算；Lemma3.2 continuation独立责任按实际调用核，不能假Cor3.4必用它。退化系数、branch tube、normgap到每点finitejet、basepoint conditional分母是主要counter测试。通过也不等整篇OAI4/无条件六维。无需重做TCM001 kernel常数、D1或旧投影细节。
 
 ## R29：条件任意ambient种子与六维17/4
 
@@ -25,10 +41,6 @@ R7已有SRC001 near-full separated R4 directions/长marks有限读出；R9已有
 取n6,d=d'=4−ζ：K6(4−ζ)+K(5−ζ,4−ζ)⇒K6(17/4−ζ/4)，ζ→0对**compact**六维Kakeya得条件dim_H≥17/4=4.25。不是五维full、一般满维数或任意不可测高维集合结论。原KT6.6 proof疑似d−1排印与statement d-collection/ball cap d相合，但KT全文不因此称已独立重证。
 
 KT/HRZ及新入GLX2025 Table1正面基线六维7−2sqrt2≈4.171573；条件17/4更大，但2025表/有限2026检索不认证最新全前沿或优先权。OpenAI官方当前blob仍45ec20e...，本地1371486bytes匹配。文献20PDF，新GLX873137bytes/23页已pdfinfo/text/第12页表格视觉核；metadata/R0029_source_check.json。
-
-## 唯一下一main候选：R30先macro，再认证原Lemma3.3
-
-spec notes/10_source_audit/R0029_next_matching_certificate_target.md。宏观先评估条件六维链/前沿/源责任，若仍支持，主审OAI4 Lemma3.3 two-color matching（PDF29起），它是后续small-list比较/延长的共同关键输入。要么逐式重证general fixed D,J,d0 的原marginal/jet/resampling/Jacobian链，要么给完整合法counter；只D1/每对sublevel/数值例或改名不够。这个gate通过也不等于整篇原proof或全高维已认证。
 
 ## 旧已核链与冻结保持
 
