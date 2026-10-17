@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0027定期macro后付actual ell3 observed/W/usedlaw与OBS001原matrix增量全2plane cap；OBS002严格否只保generic非平面law的增长桥。AFF₃及>2gain未证，下一保原共同time/M/H作用，不重命名genericflattening。无新维数界，R30下一常规macro。
+更新2026-10-17，R0028提前macro。ACT001付原g共同base/四time/四角16边box，CAR001付原time×angle平均overflow门槛；仍无>2growth/AFF₃。自然shear/BSG/只carry数量的无新输入局部迭代冻结，下一审OAI4到KT任意ambient有限种子的真实量词桥。无新维数界，R30下一常规macro。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -19,7 +19,8 @@
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
-| Q | 实际五维mixed(4,3) | 有AFF₃准备nonquad proper链；R27 OBS001付真observed与matrixD-plane gate，OBS002否genericlaw增长 | AFF₃/>2gain仍open，下一保原共同time/M/H作用；genericflattening冻结，二次/fullcase未证 |
+| Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28 ACT001共同box、CAR001平均carry门槛，无AFF₃ | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
+| R | 定量种子与高维递推 | KT6.2所需arbitraryambient/实n/saturated shading种子尚未从OAI4付出 | 下一唯一main核finite bridge；六维17/4只是条件算术，不作新界/新颖性声明 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
@@ -41,3 +42,6 @@ R0025提前macro与source修补：fine同F/G选择后preparedprior重生；unifo
 R0026付global量词：locally-light先删、richfit迫vector近常、fitfiber并达nextthreshold则反稳定，否则badwindowmass有upper；删后整time配置重新生成g。named22.1只需τ upper，不要求q内达到；largeτ诚实wL和三点原角/affine sampler/13.5两η已付。下一spec notes/40_multiscale/sticky_mixed/R0026_next_matrix_affine_target.md；R27先macro，matrixobserved保二维visible和原time作用，禁止Y-only或抹g独立化改名。
 
 R0027定期macro和反例后收尾重审：原W厚y二维桶/codeρ幂、同步Lf、used角domination、A2Fst及all-coarsevisiblefibre已付。原matrix-time D全2plane cap成立，但数字mask保所有这些generic observable约束仍任意小增量增长；其λ不保D原分解，故不能反source。下一spec notes/40_multiscale/sticky_mixed/R0027_next_matrix_time_action_target.md，只检验真共同time/角作用的graph提取/gain或factorized有限反例，不将D换任意非平面law；一轮无新输入即停。
+
+
+R0028提前macro：已付原reference的全16边box及真实乘法低overflow的固定正幂质量上界，但没有迭代action域、修正熵或growth。自然shear的trivial quotient使He相关假设直接失败；heavy-used H只有κ-cover/Frostman-upper/slab，非自动κ-AD lower。R18同Wframe不再重复记成果。停止当前局部迭代，重开条件见macro。下一spec notes/20_dimension_lifting/finite_seed_transfer/R0028_next_finite_seed_target.md，必须付KT K(n,d)任意ambient/真实方向参数/finite shading；dim_H=4不足以被本项目直接调用为该种子。六维17/4条件潜力与n5递推ceiling4分清，最新前沿待一手核；Goal active。

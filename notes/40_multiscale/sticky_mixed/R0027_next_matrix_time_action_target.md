@@ -24,3 +24,6 @@
 本任务只允许一轮无实质新输入的尝试；若仅把R27 plane gate改名为inverse entropy/BSG，则停止并macro重选其他实际高维输入。验收必须是新原graph提取/原作用gain、严格factorized finite反例或实质不同的source结构缺口，不登记generic additive工具的条件重述。
 
 Root攻真实action/图提取；A审源参数与原law回传；B攻击共同time、角和实数carry。最多两个互补代理。R30下次定期macro，关键失败提前；R27已因generic bridge反例重审并将其冻结。mixed43 quadratic、其他五维case和general-to-sticky/Hausdorff始终未解，不因本方向局部门槛消失。每轮独审归档并安全同步GitHub，Goal保持active。
+
+
+R0028 source复核更正（2026-10-17）：上文将原used H简称κAD过强；已付为κ-cover/Frostman-upper/slab，heavy-used subset的逐点κ-AD lower没有自动继承。本轮有限box/carry及R27plane gate不使用该lower。完整actual源先验保留，但后续如需H lower必须另证合法保g refinement。

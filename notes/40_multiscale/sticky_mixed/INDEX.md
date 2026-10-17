@@ -67,3 +67,12 @@ R26 GVT001/MIX005只闭合有matrixAFF₃准备的非二次proper branch，不�
 | R0027_next_matrix_time_action_target.md | 下一唯一保共同ν/M/H的真实matrix-time增长/提取，genericlaw bridge已冻，AFF₃未证 |
 
 R27 OBS001/002内部独审通过各自范围；不是>2gain/AFF₃或完整五维。下一必须用原matrix-time乘法一致性，不继续genericlaw非平面/entropy改名。
+
+
+| 文件 | 已核范围与边界 |
+| --- | --- |
+| R0028_original_action_extraction_audit.md | 原g同base/四times/四angles全16边box、m16质量及frame error；不是迭代closure |
+| R0028_factorized_action_counterattack.md | 真实time×angle平均overflow门槛，任意g只付1/mean；carry数非修正熵 |
+| R0028_actual_action_boundary.md | root整合、source H upper/slab修正、自然shear表示假设失败和局部停止 |
+
+R28 ACT001/CAR001仅有限内部独审结果，没有AFF₃/>2gain/完整factorized反例。无输入局部action迭代已冻；下一唯一main在notes/20_dimension_lifting/finite_seed_transfer/R0028_next_finite_seed_target.md，审真实finite种子桥。
