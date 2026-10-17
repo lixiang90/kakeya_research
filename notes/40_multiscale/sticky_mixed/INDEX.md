@@ -80,3 +80,5 @@ R28 ACT001/CAR001仅有限内部独审结果，没有AFF₃/>2gain/完整factori
 R0066：[R0066_two_slope_residual_and_original_mass_gate.md](R0066_two_slope_residual_and_original_mass_gate.md)：all-ordered residual二斜率sqrt epsilon逆引理、absolute heavy窗、newallowed R中的old-window cluster比例与named19.2/19.4的无AFF tiny tau排除；不是完整AFF3/mixed gain，no新ID/major，停止tiny参数。下一见根STATE及notes/00_map/R0066_next_full_native_mixed43_affine_test.md。
 
 R0067：[R0067_shared_trunk_hybrid_and_affine_attempt.md](R0067_shared_trunk_hybrid_and_affine_attempt.md)：原W/nativeL共同初管、tensor Gram及天然尺度two-end normal matching得同frame joint g；实际AFF测试缺第二row/coupled分辨，非wholeAFF3或ordinary增益。A18/B10及两formal独审，下一见根STATE及notes/00_map/R0067_next_whole_matrix_affine_from_original_joint_data.md。
+
+R0068：[R0068_unprepared_large_residual_gate.md](R0068_unprepared_large_residual_gate.md)：原V/nativeKT/global fastfit与slow并、无AFF直接L/13.5，得每指定原ρ足全局time S上large residual upper T≤ρ^(3−ζ)；非wholeAFF/contact/ordinary增益。A12/B10及两formal内部独审，下一notes/00_map/R0068_next_periodic_full_goal_and_contact_test.md先周期full-goal审视。
