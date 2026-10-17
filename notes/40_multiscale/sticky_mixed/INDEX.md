@@ -88,3 +88,5 @@ R0069：[R0069_original_clock_four_output_and_affine_failure.md](R0069_original_
 R0070：[R0070_raw_zero_ball_source_and_scalar_incidence.md](R0070_raw_zero_ball_source_and_scalar_incidence.md)：global raw零球同fan/19.2/redo q及native实际关联，κ+γ>1完整参数子范围排除；γ≤1−κ与全mixed/ordinary仍open。R69中央全变量output完成被排，非fullsource counter。A10/B8及两formal独审，下一notes/00_map/R0070_next_actual_fine_joint_packet_test.md。
 
 R0071：[R0071_conditional_fine_packet_full_budget_and_stop.md](R0071_conditional_fine_packet_full_budget_and_stop.md)：条件pointκ/末角UNION/tensor/fibre/全frame未得可用joint增益；局部Cantor saturation非fullsource反例。主机制no-information/冻结，A12/B10两formal独审，下一notes/00_map/R0071_next_periodic_full_goal_and_new_mechanism.md，R72先macro再实际数学。
+
+R0073：[R0073_mixed32_native_incidence_application.md](R0073_mixed32_native_incidence_application.md)：完整mixed32原global/local量词及sameT fineδ应用完成，具名19.2/19.4下排κ+γ>1，含κ1任意fixedγ。旧R70转置应用非新ID/major/ordinary界；κ+γ≤1仍open，不续zero球阈值。两formal内部独审，下一notes/00_map/R0073_next_mixed42_zero_label_source_gate.md仅mixed42κ1 AD0原标签候选，Goal active。
