@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0073先full-goal宏观后完成mixed32原fine单管应用，具名19.2/19.4及完整source下排κ+γ>1（含κ1每fixedγ），属于既有工具用途补全，无newID/major/ordinary增益；主任务noinfo streak0，旧freeze保留。下一唯一 notes/00_map/R0073_next_mixed42_zero_label_source_gate.md，mixed42κ1 AD0原label提取只是候选；53PDF/54sources/78IDs，Goal active。
+更新2026-10-18，R0074完成bounded完整mixed42κ1原AD0标签→真实管子族→统一压缩→whole-T CW用途，固定d限定κ1读出，无ordinary/major/newID。root12/A13/B10两formal独审；mainnoinfo0，旧freeze保持。下一唯一 notes/00_map/R0074_next_full_goal_and_critical_source_gate.md，R75全目标后不同实际数学；54PDF/56sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -17,7 +17,7 @@
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
 | M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论；R72 sameTube/core及γ>1/2 commonkernel子范围，basicness未付 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
-| O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
+| O | 实际五维mixed(4,2) | R74以原AD0标签付完整bounded κ1 source-to-CW；两质量提取/全pencil压缩/fine误差/原N分母均付，标准QE及经典compression范围明确 | 其余κ仍open，无ordinary/major/newID；旧local GWZ与当前AD0端点阈值优化冻结，须不同原联合输入 |
 | P | 实际五维mixed(3,2) | 旧proper工具保留；R73原raw/global/local分母和sameT fineδ用途完成，在具名19.2/19.4及完整source下排κ+γ>1（含κ1每fixedγ），无额外AFF/NQ | 既有工具应用，非新ID/major/ordinary增益；κ+γ≤1和完整branch仍open，停止zero球阈值续轮 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66 tiny lower、R67天然joint图、R68无AFF/NQ的large upper；R69双法向四输出数值恢复、冻结后AFF推论严格失败，R70 raw零球及κ+γ>1子范围排除，γ≤1−κ contact/wholeAFF₃仍未付；R71 direct fine packet全账无可用gain、已冻结 | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
 | R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP/AIM/ISO/UNB/FIN已付列明部分；R38 RED001付完整归约/拼接/有限读出与任意集合Hausdorff桥；R39先macro，仍不认证无条件新界/重大性 |
@@ -156,3 +156,5 @@ R0071：原pointκ cover/末角UNION/tensor/matching/fibre全账，σ=τ/R_Bρ²
 R0072：完整commonkernel的δ-thick fibre/point/tube core与sameTube双终时mass/marginal、native x1/恢复精度已核；原KT/slab+named19.4排γ>1/2参数子范围，未得basicness/商ADlower或全branch。local digit校准明确失败全clock/CW/terminalξ，非source反例。主机制依preset noinfo/冻结，连续2轮触R73全目标重置；last actual官方三核心fresh核R72，无ordinary/major。
 
 R0073：mandatory宏观后mixed32完整source用途补全，κ+γ>1含κ1每fixedγ排除；local19.4/globalevery-anchor19.2、finalK无v、sameT与fixedpair/finebaseline/Φκ×nativeKT均付。旧工具不改名新方向，无ordinary/major；下一mixed42κ1 AD0原same-grain标签候选未证，禁止ordinary4→joint4 extremalκ免费桥。last actual三核心官方身份核R72。
+
+R0074：bounded完整mixed42κ1排除、固定d k=d−1κ1限定源读出。原label/time/tube质量返回真实H、nearS和统一power到whole-T CW p/h已核；经典compression/幂比较不新立ID。κ1表不送extremal≤1或ordinary桥，matrix33/generalκ仍open。R75先全目标再不同实际数学，不续AD0阈值。新WongPDF及Costeweb范围入库54PDF/56sources，last actual官方三核心核R72。

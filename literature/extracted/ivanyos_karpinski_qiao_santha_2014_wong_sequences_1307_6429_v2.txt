@@ -1,0 +1,1185 @@
+                            Generalized Wong sequences
+           and their applications to Edmonds’ problems
+
+  G´abor Ivanyos∗      Marek Karpinski†     Youming Qiao‡      Miklos Santha§
+
+
+
+
+                                                    Abstract
+           We design two deterministic polynomial-time algorithms for variants of a problem
+       introduced by Edmonds in 1967: determine the rank of a matrix M whose entries are
+       homogeneous linear polynomials over the integers.  Given a linear subspaceB of the
+       n× n matrices over some ﬁeld F, we consider the following problems: symbolic matrix
+       rank  (SMR) is the problem to determine the maximum rank among matrices inB,
+       while symbolic determinant identity testing (SDIT) is the question to decide whether
+       there exists a nonsingular matrix inB. The constructive versions of these problems are
+       asking to ﬁnd a matrix of maximum rank, respectively a nonsingular matrix, if there
+       exists one.
+           Our ﬁrst algorithm solves the constructive SMR whenB is spanned by unknown
+       rank one matrices,  answering an open question of Gurvits.   Our second algorithm
+       solves the constructive SDIT whenB is spanned by triangularizable matrices, but the
+       triangularization is not given explicitly. Both algorithms work over ﬁelds of size at least
+       n+1, and the ﬁrst algorithm actually solves (the non-constructive) SMR independent
+       of the ﬁeld size.  Our framework is based on a generalization of Wong sequences, a
+       classical method to deal with pairs of matrices, to the case of pairs of matrix spaces.  1
+
+1    Introduction
+
+In 1967, Edmonds introduced the following problem [9]: Given a matrix M whose entries are
+homogeneous linear polynomials over the integers, determine the rank of M. The problem is
+the same as determining the maximum rank of a matrix in a linear space of matrices over the
+
+   ∗Institute  for  Computer  Science  and  Control,  Hungarian  Academy  of  Sciences,  Budapest,  Hungary
+(Gabor.Ivanyos@sztaki.mta.hu).
+   †Department of Computer Science, University of Bonn, Bonn, Germany (marek@cs.uni-bonn.de).
+   ‡Centre for Quantum Computation and Intelligent Systems University of Technology, Sydney; and Centre
+for Quantum Technologies, National University of Singapore, Singapore 117543. (jimmyqiao86@gmail.com)
+   §LIAFA, Univ.  Paris 7, CNRS, 75205 Paris, France; and Centre for Quantum Technologies, National
+University of Singapore, Singapore 117543 (miklos.santha@liafa.jussieu.fr).
+   1 A preliminary report on this work appeared in [21].
+
+
+
+                                                         1
+
+
+rationals. In this paper we consider this question and its certain variants over more general
+ﬁelds.
+    Let us denote by M(n, F) the linear space of n×  n matrices over a ﬁeld F.  We call a
+linear subspaceB≤  M(n, F) a matrix space.  We deﬁne the symbolic matrix rank problem
+(SMR) over F as follows:  given{B1,...,B        m}⊆   M(n, F), determine the maximum rank
+among matrices inB =⟨B1,...,B        m⟩, the matrix space spanned by Bi’s.  The constructive
+version of SMR is to ﬁnd a matrix of maximum rank inB (this is called the maximum rank
+matrix completion problem in [15] and in [22]).  We refer to the weakening of SMR, when
+the question is to decide whether there exists a nonsingular matrix inB, as the symbolic
+determinant identity testing problem (SDIT), the name used by [23] (in [18] this variant is
+called Edmonds’ problem).  The constructive version in that case is to ﬁnd a nonsingular
+matrix, if there is one inB.   We will occasionally refer to any of the above problems as
+Edmonds’ problem.
+    The complexity of theSDIT depends crucially onthe size of the underlying ﬁeld F. When
+|F|is a constant then it is NP-hard [5].  On the other hand if the ﬁeld size is large enough
+(say≥  2n) then by the Schwartz-Zippel lemma [29, 34] it admits an eﬃcient randomized
+algorithm [25].  Obtaining a deterministic polynomial-time algorithm for the SDIT would
+be of fundamental importance, since Kabanets and Impagliazzo [23] showed that such an
+algorithm would imply strong circuit lower bounds which seem beyond current techniques.
+    PreviousworksonEdmonds’problemsmostlydealtwiththecasewhenthegivenmatrices
+B1,...,B        m satisfy certain property.  For example, Lov´asz [26] considered several cases of
+SMR, including when the Bi’s are of rank 1, and when they are skew symmetric matrices
+of rank 2. These classes were then shown to have deterministic polynomial-time algorithms
+[15, 27, 19, 16, 14, 22], see Section 1.1 for more details.
+    Another direction also studied is when instead of the given matrices, the spanned matrix
+spaceB =⟨B1,...,B        m⟩ satisﬁes certain property.  Since such a property is just a subset of
+all matrix spaces, we also call it a class of matrix spaces. Gurvits [18] presented an eﬃcient
+deterministic algorithm for the SDIT over subﬁelds of C, when the matrix space falls in a
+special class, what we call the Edmonds-Rado class.  We shall review the deﬁnition of this
+class in Section 1.1. In this paper, our main goal is to consider Edmonds’ problems for the
+following two classes.
+    • The class of rank-1 spanned matrix spaces, R1: a matrix spaceB≤  M(n, F) is in R1,
+       ifB has a basis consisting of rank-1 matrices over F′, where F′is some extension ﬁeld
+       of F.2
+    • The class of (upper) triangularizable matrix spaces, UT: a matrixB≤  M(n, F) is in
+       UT, if there exist nonsingular C,D∈ M(n, F′), where F′is some extension ﬁeld of F,
+       such that for all B∈B, the matrix DBC− 1 is upper-triangular.
+It is known that the Edmonds-Rado class includes R1 and UT.  See Section 1.1 for more
+details. While Gurvits presented an eﬃcient deterministic SDIT algorithm for the Edmonds-
+Rado class over subﬁelds of C, the same problem over (large enough) ﬁnite ﬁelds is still open,
+
+   2Note that it is possible forB to have a rank-1 basis over F′but no such over F. See [17] for an example.
+
+                                                       2
+
+
+even for special classes like R1 and UT.  In fact, Gurvits stated as an open question the
+complexity of the SMR for R1 over ﬁnite ﬁelds [18, page 456].
+    The diﬀerence between properties of matrices and properties of matrix spaces is critical
+for Edmonds’ problems. In particular, whether a matrix space satisﬁes a certain property or
+not, should not depend on choices of basis. We are not aware of any result on the complexity
+of ﬁnding rank one generators for a subspaceB in R1 if it is given by a basis consisting of
+not necessarily rank one matrices. We believe that the problem is hard. Thus the existence
+of algorithms for SMR when the Bi’s are rank-1 does not immediately imply algorithms for
+matrix spaces in R1.
+    Furthermore, most properties we encounter in practice respect the following equivalence
+relation of matrix spaces.  Two matrix spacesA andB in M(n, F) are equivalent, if there
+exist nonsingular C,D∈ M(n, F), s.t.A = CBD :={CBD|B∈B}. Edmonds-Rado class,
+R1 and UT all respect this equivalence relation.  Again, given matrices B1,...,B        m, and
+supposeB =⟨B1,...,B        m⟩ is in UT, it is not clear how diﬃcult is computing matrices C,D
+that triangularizeB. The problem does not look as hard as ﬁnding rank one generators, see
+Section 7 for some details.  Thus while SDIT for upper-triangular Bi’s is easy, it does not
+immediately suggest an algorithm for matrix spaces in UT.
+    To ease the description of our results, we make a few deﬁnitions and notations.   We
+denote by rank(B) the rank of a matrix B, and we set corank(B) = n−  rank(B).  For a
+matrix spaceB we set rank(B) = max{rank(B)|B∈B} and corank(B) = n− rank(B). We
+say thatB is singular if rank(B) < n, that is ifB does not contain a nonsingular element,
+and nonsingular otherwise.
+    For a subspace U≤  Fn, we setB(U) =⟨B(u)|B∈B,u∈ U⟩.  Let c be a nonnegative
+integer. We say that U is a c-singularity witness ofB, if dim(U)− dim(B(U))≥  c, and U is
+a singularity witness ofB if for some c > 0, it is a c-singularity witness.  Note that if there
+exists a singularity witness ofB thenB can only be singular. Let us deﬁne the discrepancy
+ofB as disc(B) = max{c∈  N|∃ c-singularity witness ofB}.  Then it is also clear that
+corank(B)≥  disc(B).
+    Our main results are algorithms that run in polynomial time on an algebraic RAM [24],
+a random access machine in which the ﬁeld operations as well as testing equality of ﬁeld
+elements are performed at unit cost. Over ﬁnite ﬁelds, the straightforward implementations
+of these algorithms automatically have polynomial (in logF and n) Boolean (“bit”) complex-
+ity. With some eﬀort, we are also able to present deterministic algorithms over the rationals
+which have Booleancomplexity polynomial in the number of bits representing the input data.
+We now state our main theorems.
+
+Theorem 1. There are deterministic algorithms which solve the SMR on an algebraic RAM
+for F or over Q, respectively, in polynomial time ifB is spanned by rank-1 matrices. If the
+size of the base ﬁeld is at least n+1, the algorithm solves the constructive SMR, and it also
+outputs a corank(B)-singularity witness.
+
+Theorem  2. Assume that the size of the base ﬁeld F is at least n + 1.   Then there are
+deterministic polynomial-time algorithms which solve the constructive SDIT on an algebraic
+
+
+                                                      3
+
+
+RAM for F or over Q, respectively, ifB is triangularizable. Furthermore, whenB is singular,
+the algebraic RAM algorithm also outputs a singularity witness.
+
+    Theorem 1 can be slightly strengthened as follows:  instead of assuming that the whole
+spaceB is rank-1 spanned, it is suﬃcient to suppose that a subspace ofB of co-dimension
+one is spanned by rank-1 matrices. See Remark 15 (2) for the work needed to achieve this.
+    Let us comment brieﬂy on the framework for our algorithms. We generalize the ﬁrst and
+second Wong sequences for matrix pencils (essentially two-dimensional matrix spaces) which
+haveturnedouttobeusefulamongothersintheareaoflineardiﬀerential-algebraicequations
+(see the recent survey [30]). These were originally deﬁned in [33] for a pair of matrices (A,B ),
+and were recently used to compute the Kronecker normal form in a numerical stable way
+[2, 3].  We generalize Wong sequences to the case (A,B) whereA andB are matrix spaces,
+and show that they have analogous basic properties to the original ones.   We relate the
+generalized Wong sequences to Edmonds’ problems via singularity witnesses.   Essentially
+this connection allows us to design the algorithm for R1 using the second Wong sequence,
+and the algorithm for UT using the ﬁrst Wong sequence. We remark that the application of
+the second Wong sequence is not new. Similar techniques were used in [22] to ﬁnd maximum
+rank matrices in the case where rank one generators forB were given.  Furthermore, while
+preparing the present version, we became aware of the paper [13] by Fortin and Reutenauer
+in which essentially the same method is used for testing existence of corank(B)-singularity
+witnesses (on a randomized algebraic RAM).
+
+1.1    Comparison with previous works
+The idea of singularity witnesses was already present in Lov´asz’s work [26].  Among other
+things, Lov´asz showed that for the rank-1 spanned case, the equality corank(B) = disc(B)
+holds, by reducing it to Edmonds’ Matroid Intersection theorem [10], which in turn can be
+deduced from Rado’s matroidal generalization of Hall’s theorem [28] (see also [32]). Inspired
+bythisfact,GurvitsintroducedthetermEdmonds-Radoproperty formembershipintheclass
+of matrix spaces which are either nonsingular, or have a singularity witness.  Throughout
+this paper we refer to this class as the Edmonds-Rado class. Gurvits listed several subclasses
+of the Edmonds-Rado class, including R1 (by the aforementioned result of Lov´asz) and UT.
+A well-known example of a matrix space outside the Edmonds-Rado class is the linear space
+of skew symmetric matrices of size 3 [26].
+    As we stated already, Gurvits has presented a polynomial-time deterministic algorithm
+for the SDIT over subﬁelds of C for matrix spaces in the Edmonds-Rado class.  Therefore
+over these ﬁelds, his algorithm covers the SDIT for R1 and for UT. Our algorithms (in the
+algebraicRAMmodel)arevalidover arbitrarysuﬃciently largeﬁelds. Inthetriangularizable
+case we also deal with the SDIT, but for R1 we solve the more general SMR. In fact, it is not
+hard to reduce SMR for the general to SMR for the triangularizable case (see Lemma 27), so
+solving SMR for UT is as hard as the general case.  In both cases the algorithms solve the
+constructive version of the problems, and they also construct singularity witnesses. Finally,
+they work in polynomial time when the ﬁeld size is at least n + 1.  Moreover, for R1 the
+
+                                                      4
+
+
+algorithm solves the non-constructive SMR in polynomial time even over arbitrarily small
+ﬁnite ﬁelds, settling an open problem of Gurvits.
+    Over ﬁelds of constant size, the SMR has certain practical implications [19, 20], but is
+shown to be NP-hard [5] in general.  Some special cases have been studied, mostly in the
+form of the mixed matrices, that is linear matrices where each entry is either a variable or
+a ﬁeld element.  Then by restricting the way variables appear in the matrices some cases
+turn out to have eﬃcient deterministic algorithms, including when every variable appears
+at most once ([19], building on [15, 27]), and when the mixed matrix is skew-symmetric
+and every variable appears at most twice ([16, 14]). Finally in [22], Ivanyos, Karpinski and
+Saxena present adeterministic polynomial-timealgorithmforthecase when amongtheinput
+matrices B1,...,B        m all but B1 are of rank 1.
+    As a computational model of polynomials, determinants with aﬃne polynomial entries
+turn out to be equivalent to algebraic branching programs (ABPs) [31, 4] up to a polynomial
+overhead.  Thus the identity test for ABPs is the same as SDIT. For restricted classes of
+ABPs, (quasi)polynomial-time deterministic identity test algorithms have been devised (cf.
+[12] and the references therein).  Note that identity test results for SDIT and ABPs are in
+general incomparable.  For an application of SDIT to quantum information processing see
+[7].
+
+Organization.   In Section 2 we deﬁne Wong sequences of a pair of matrix spaces, and
+presenttheirbasicproperties. InSection3theconnectionbetweenthesecondWongsequence
+andsingularity witnesses isshown. Basedonthisconnection weintroduce thepower overﬂow
+problem, and reduce the SMR to it.  We also prove here Theorem 1 under the hypothesis
+that there is a polynomial time algorithm for the power overﬂow problem.  In Section 4 we
+show an algorithm for the power overﬂow problem that works in polynomial time for rank-1
+spanned matrix spaces.  Section 5 is devoted to the algorithm for triangularizable matrix
+spaces, proving Theorem 2.  Finally, in Section 6 we propose and investigate some natural
+subclasses of the Edmonds-Rado class.
+
+2    Wong sequences for pairs of matrix spaces
+
+For n∈  N, we set [n] ={1,...,n }.   We use 0 to denote the zero vector space.   In this
+section we generalize the classical Wong sequences of matrix pencils to the situation of pairs
+of matrix subspaces.  This is the framework for the algorithms in this work.  Let V  and V ′
+be ﬁnite dimensional vector spaces over a ﬁeld F, and let Lin(V,V  ′) be the vector space of
+linear maps from V  to V ′. Suppose n = dim(V) and n′= dim(V ′).
+    Let U≤  V  and W≤  V ′ be subspaces of V  and V ′, respectively.  For A∈  Lin(V,V  ′),
+the image of U  under A is A(U) ={A(u)|u∈  U}, and the preimage of W  under A is
+A− 1(W) ={v∈ V|A(v)∈ W}. To deﬁne generalized Wong sequences, the ﬁrst step is to
+generalize the deﬁnitions of image and preimage under a single linear map A, to those under
+a matrix spaceA≤  Lin(V,V  ′).
+
+
+                                                      5
+
+
+    Naturally, the image of U underA is the span of the images of U under every A∈A, that
+isA(U) =⟨∪A∈AA(U)⟩ =⟨{A(u)|A∈A,u∈ U}⟩.  On the other hand, the preimage of W
+underA may be somewhat unexpected. It turns out that we need to take the intersection of
+the preimages of W under every A∈A, that isA− 1(W) =∩A∈AA− 1(W) ={v∈ V|∀A∈
+A,A (v)∈ W}. Note thatA(U) (resp.A− 1(W)) is a subspace of V ′(resp. V). Moreover, if
+A is spanned by{A1,...,A        m}, thenA(U) =⟨∪i∈[m]Ai(U)⟩, andA− 1(W) =∩i∈[m]A− 1i  (W).
+Some easy and useful facts are the following.
+
+Lemma 3. ForA,B≤  Lin(V,V  ′), and U,S≤  V, W,T≤  V ′, we have:
+
+   1. If U⊆  S and W⊆  T, thenA(U)⊆A (S) andA− 1(W)⊆A − 1(T);
+
+   2. IfB(U)⊆A (U) andB(S)⊆A (S), thenB(⟨U∪ S⟩)⊆A (⟨U∪ S⟩);
+
+   3. IfB− 1(W)⊇A − 1(W) andB− 1(T)⊇A − 1(T), thenB− 1(W∩ T)⊇A − 1(W∩ T);
+
+   4.A− 1(A(U))⊇  U, andA(A− 1(W))⊆  W.
+
+    We now deﬁne two Wong sequences for a pair of matrix subspaces.
+
+Deﬁnition 4. LetA,B≤  Lin(V,V  ′).  The sequence of subspaces (Ui)i∈N of V  is called the
+ﬁrst Wong sequence of (A,B), where U0 = V, and Ui+1 =B− 1(A(Ui)).  The sequence of
+subspaces (Wi)i∈N of V ′ is called the second Wong sequences of (A,B), where W0 = 0, and
+Wi+1 =B(A− 1(Wi)).
+
+    WhenA =⟨A⟩ andB =⟨B⟩ are one dimensional matrix spaces, the Wong sequences for
+(A,B) coincide with the classical Wong sequences for the matrix pencil Ax− B [33, 2]. The
+following properties are straightforward generalizations of those for classical Wong sequences.
+We start by considering the ﬁrst Wong sequence.
+
+Proposition 5. Let (Ui)i∈N be the ﬁrst Wong sequence of (A,B).  Then for all i∈  N, we
+have Ui+1⊆  Ui. Furthermore, Ui+1 = Ui if and only ifB(Ui)⊆A (Ui).
+
+Proof. Firstly we show that Ui+1⊆  Ui, for every i∈ N.  For i = 0, this holds trivially.  For
+i > 0, by Lemma 3 (1) we get Ui+1 =B− 1(A(Ui))⊆B − 1(A(Ui− 1)) = Ui, since Ui⊆  Ui− 1.
+    Suppose now thatB(Ui)⊆A (Ui), for some i.  Then Ui⊆B − 1(B(Ui))⊆B − 1(A(Ui))
+respectively by Lemma 3 (4) and (1), which gives Ui+1 = Ui.  IfB(Ui)̸⊆A (Ui) then there
+exist B∈B  and v∈ Ui such that B(v)̸∈A(Ui). Thus v̸∈B − 1(A(Ui)) = Ui+1, which gives
+Ui+1⊂  Ui.
+    Given Proposition 5,  we see that the ﬁrst Wong sequence stabilizes after at most n
+steps at some subspace.   That is,  for any (A,B), there exists ℓ∈{0,...,n }, such that
+U0⊃  U1⊃···⊃Uℓ = Uℓ+1 =···. In this case we call the subspace Uℓ the limit of (Ui)i∈N,
+and we denote it by U∗.
+
+Proposition 6. U∗ is the largest subspace T≤  V  such thatB(T)⊆A (T).
+
+
+                                                    6
+
+
+Proof. By Proposition 5 we know that U∗ satisﬁesB(U∗)⊆A (U∗).  Consider an arbitrary
+T≤  V such thatB(T)⊆A (T), we show by induction that T⊆  Ui, for all i. When i = 0 this
+trivially holds. Suppose that T⊆  Ui, for some i. Then by repeated applications of Lemma 3
+we have T⊆B − 1(B(T))⊆B − 1(A(T))⊆B − 1(A(Ui)) = Ui+1.
+    Analogous properties hold for the second Wong sequence (Wi)i∈N.   In particular the
+sequence stabilizes after at most n′ steps, and there exists a limit subspace W∗ of (Wi)i∈N.
+We summarize them in the following proposition.
+
+Proposition 7. Let (Wi)i∈N be the second Wong sequence of (A,B). Then
+
+   1. Wi+1⊇  Wi, for all i∈ N. Furthermore, Wi+1 = Wi if and only ifB− 1(Wi)⊇A − 1(Wi).
+
+   2. The limit subspace W∗ is the smallest subspace T≤  V ′ s.t.B− 1(T)⊇A − 1(T).
+
+    It is worth noting that the second Wong sequence can be viewed as the dual of the ﬁrst
+one in the following sense. Assume that V  and V ′are equipped with nonsingular symmetric
+bilinear forms, both denoted by⟨,⟩. For a linear map A : V→   V ′let AT : V ′→   V  stand for
+thetransposeofAwithrespect to⟨,⟩. Thisistheuniquemapwiththeproperty⟨AT(u),v⟩ =
+⟨u,A (v)⟩, for all u∈ V ′and v∈ V. For a matrix spaceA, letAT be the space{AT|A∈A}.
+For U≤  V, the orthogonal subspace of U is deﬁned as U⊥  ={v∈  V|⟨v,u⟩ = 0 for all
+u∈ U}.  Similarly we deﬁne W⊥  for W≤  V ′.  Then we have ((AT)− 1(U))⊥  =A(U⊥ ), and
+(AT(V))⊥  =A− 1(V ⊥ ).  It can be veriﬁed that if (Wi)i∈N is the second Wong sequence of
+(A,B) and (Ui)i∈N the ﬁrst Wong sequence of (AT,BT), then Wi = U⊥i .  We note that the
+duality of Wong sequences was already derived in [2] for pairs of matrices.
+    For a matrix spaceA and a subspace U≤  V  given in terms of a basis we can compute
+A(U) by applying the basis elements forA to those of U and then selecting a maximal set of
+linearly independent vectors. A possible way of computingA− 1(U) for U≤  V ′is to compute
+ﬁrst U⊥ , thenAT(U⊥ ) and ﬁnallyA− 1(U) = (AT(U⊥ ))⊥ . Therefore we have
+
+Proposition 8. Wong sequences can be computed in time using (n+n′)O(1) on an algebraic
+RAM.
+
+    Unfortunately, we are unable to prove that over the rationals the bit length of the entries
+of the bases describing the Wong sequences remain polynomially bounded in the length of
+the data forA andB.  However, in Section 3.1 we show that ifA =⟨A⟩, then the ﬁrst
+few members of the second Wong sequence which happen to be contained in im(A) can be
+computed in polynomial time using an iteration of multiplying vectors by matrices from a
+basis forB and by a pseudo-inverse of A.
+    We also observe that if we consider the bases forA andB as matrices over an extension
+ﬁeld F′ of F then the members of the Wong sequences over F′ are just the F′-linear spaces
+spanned by the corresponding members of the Wong sequences over F.  In particular, the
+limit of the ﬁrst Wong sequence over F is nontrivial if and only if the limit of the ﬁrst Wong
+sequence over F′is nontrivial.
+
+
+
+                                                      7
+
+
+3    The second Wong sequence and rank-1 spanned ma-
+      trix spaces
+
+3.1    Second Wong sequences and singularity witnesses
+As in Section 2, let V  and V ′be ﬁnite dimensional vector spaces over a ﬁeld F, of respective
+dimensions n and n′.   For A∈  Lin(V,V  ′) we set corank(A)  =  dim(ker(A)).   ForB≤
+Lin(V,V  ′), the concepts of c-singularity witnesses, disc(B) and corank(B), deﬁned for the
+case when n = n′, can be generalized naturally toB. We also have that corank(B)≥  disc(B),
+and that a corank(B)-singularity witness ofB does not exist necessarily.  Let A∈B, and
+consider (Wi)i∈N, the second Wong sequence of (A,B). The next lemma states that the limit
+W∗ is basically such a witness under the condition that it is contained in the image of A.
+Moreover, in this speciﬁc case the limit can be computed eﬃciently.
+
+Lemma 9. Let A∈B≤  Lin(V,V  ′), and let W∗ be the limit of the second Wong sequence of
+(A,B). There exists a corank(A)-singularity witness ofB if and only if W∗⊆  im(A). If this
+is the case, then A is of maximum rank and A− 1(W∗) is a corank(B)-singularity witness.
+Proof. We prove the equivalence. Firstly suppose that W∗⊆  im(A). Then dim(A− 1(W∗)) =
+dim(W∗)+dim(ker(A)). Since W∗ =B(A− 1(W∗)) and dim(ker(A)) = corank(A), it follows
+that A− 1(W∗) is a corank(A)-singularity witness ofB.
+    Let us nowsuppose that some U≤  V isacorank(A)-singularity witness, that isdim(U)−
+dim(B(U))≥  corank(A). Then dim(U)− dim(A(U))≥  corank(A) because A∈B. Since the
+reverse inequality always holds without any condition on U, we have dim(U)− dim(A(U)) =
+corank(A). Similarlywehavedim(U)− dim(B(U)) = corank(A),whichimpliesthatdim(A(U)) =
+dim(B(U)), and therefore A(U) =B(U).   For a subspace S≤  V  the equality dim(S)−
+dim(A(S)) = corank(S) is equivalent to ker(A)⊆  S, thus we have ker(A)⊆  U from which it
+follows that U = A− 1(A(U)).  But thenB− 1(A(U)) =B− 1(B(U))⊇  U = A− 1(A(U)).  Since
+W∗ is the smallest subspace T≤  V ′ satisfyingB− 1(T)⊇  A− 1(T), we can conclude that
+W∗⊆  A(U).
+    The existence of a corank(A)-singularity witness obviously implies that A is of maximum
+rank, and when W∗⊆  im(A) we have already seen that A− 1(W∗) is a corank(A)-singularity
+witness ofB. Since corank(A) = corank(B), it is also a corank(B)-singularity witness.
+
+    We remark that in [13],  a slightly diﬀerent version of this statement is proved.   We
+decided to keep our original proof for completeness.  In our terminology, Theorem 3 of [13]
+states that the existence of a corank(A)-singularity witness is equivalent to the equality
+dim(A− 1(W∗)) = dim(W∗) + dim(ker(A)).  Both versions oﬀer a straightforward method
+for testing existence of (and computing) corank(A)-singularity witnesses.  Besides that our
+version resembles the concept of augmenting paths in algorithms for matchings in bipartite
+graphs, itoﬀersthepossibility ofstoppingtheconstructionoftheWongsequence atthepoint
+after which (while working over the rationals) data blowup can occur; this data blowup can
+occur if we adopt the naive way of computing the preimage of a subspace under A.  Before
+that point, we will make use of a pseudo-inverse of A. We describe now this method.
+
+                                                     8
+
+
+    Let n = dim(V) and n′= dim(V ′). First of all we assume without loss of generality that
+n = n′. Indeed, if n < n′we can add as a direct complement a suitable space to V  on which
+B acts as zero, and if n > n′, we can embed V ′into a larger space. In terms of matrices, this
+means augmenting the elements ofB by zero columns or zero rows to obtain square matrices.
+This procedure aﬀects neither the ranks of the matrices inB nor the singularity witnesses.
+    We say that a nonsingular linear map A′ :  V ′→    V  is a pseudo-inverse  of A if the
+restriction of A′ to im(A) is the inverse of the restriction of A to a direct complement of
+ker(A).  Such a map can be eﬃciently constructed as follows.  Choose a direct complement
+U  of ker(A) in V  as well as a direct complement U′ of im(A) in V ′.  Then take the map
+A′0 : im(A)→   U such that AA′0 is the identity of im(A) and take an arbitrary nonsingular
+linear map A′1 : U′→   ker(A). Finally let A′be the direct sum of A′0 and A′1.
+
+Lemma 10. Let A∈B≤   Lin(V,V  ′) and let A′ be a pseudo-inverse of A.  There exists a
+corank(A)-singularity witness ofB if and only if (BA′)i(ker(AA′))⊆  im(A),  for all i∈  [n].
+In the algebraic RAM model as well as over Q, this can be tested in deterministic polynomial
+time, and if the condition holds then A is of maximum rank and A′(W∗) is a corank(B)-
+singularity witness which also can be computed deterministically in polynomial time.
+
+Proof. It follows from Lemma 9 that a corank(A)-singularity witness exists if and only if
+Wi⊆  im(A), for i = 1,...,n     .  Observing that (BA′)i(ker(AA′))⊆  Wi for i = 1,...,n     , to
+prove theequivalence it issuﬃcient toshow thatif (BA′)i(ker(AA′))⊆  im(A) fori = 1,...,n
+then Wi = (BA′)i(ker(AA′)) for i = 1,...,n     .  The proof is by induction.  For i = 1 the
+claim W1 =BA′(ker(AA′)) holds since ker(AA′) = A′−1(ker(A)).  For i > 1, by deﬁnition
+Wi =BA− 1(Wi− 1). Since every subspace W≤  im(A) satisﬁes A− 1W = A′W+ker(A), where
++denotesthedirectsum, wegetWi⊆B A′(Wi− 1)+B(ker(A)). ObservethatB(ker(A)) = W1.
+We will show that W1⊆B A′(Wi− 1) and then we conclude by the inductive hypothesis. We
+know that W1⊆  Wi− 1 from the properties of the Wong sequence, therefore it is suﬃcient
+to show that Wi− 1⊆B A′(Wi− 1).  But Wi− 1 = AA′(Wi− 1) since Wi⊆  im(A) and A′ is the
+inverse of A on im(A).
+    Based on this equivalence, testing the existence of a corank(A)-singularity witness can
+be accomplished by a simple algorithm.  First compute a basis forB, and then multiply it
+by A′ to obtain a basis forBA′.  Compute also a basis for ker(AA′).  We now describe how
+to compute bases for the subspaces in the second Wong sequence until either we ﬁnd i such
+that Wi̸⊆  im(A) or we compute W∗. A basis for W1 can be obtained by applying the basis
+elements ofBA′to the basis elements of kerAA′and then selecting a maximal set of linearly
+independent vectors.  Having computed a basis for Wi, we stop if it contains an element
+outside im(A).  Otherwise we apply the basis elements ofBA′ to the basis elements of Wi,
+and select a maximal set of linearly independent vectors to obtain a basis for Wi+1.  When
+Wi+1 = Wi we can stop since W∗ = Wi.
+    If we ﬁnd that the condition holds then A′(W∗) by Lemma 9 is a corank(B)-singularity
+witness, and it can be easily computed from W∗.
+
+
+
+
+                                                       9
+
+
+3.2    The power overﬂow problem
+For A∈B≤   Lin(V,V  ′),  we would like to know whether A is of maximum rank inB.
+With the help of the limit W∗ of the second Wong sequence of (A,B) we have established
+a suﬃcient condition:  we know that if W∗⊆  im(A) then A is indeed of maximum rank.
+Our results until now do not give a necessary condition for the maximum rank.  Now we
+show that the second Wong sequence actually allows to translate this question to the power
+overﬂow  problem (PO) which we deﬁne below.  As a consequence an eﬃcient solution of
+the PO guarantees an eﬃcient solution for the SMR. The reduction is mainly based on a
+theorem of Atkinson and Stephens [1] which essentially says that over large enough ﬁelds, in
+2-dimensional matrix spacesB, the equality corank(B) = disc(B) holds.
+
+Fact 11 ([1]). Assume that|F|> n, and let A,B∈  Lin(V,V  ′).  If A is a maximum rank
+element of⟨A,B⟩ then there exists a corank(A)-singularity witness of⟨A,B⟩.
+
+    Combining Lemma 10 and Fact 11 we get also an equivalent condition for A being of
+maximum rank.
+
+Lemma 12. Assume that|F|> n. Let A∈B≤   Lin(V,V  ′), and let A′ be a pseudo-inverse
+of A.  Then A is of maximum rank inB if and only if for every B∈B  and for all i∈  [n],
+we have
+                                     (BA′)i(ker(AA′))⊆  im(A).
+
+Proof. First observe that A is of maximum rank inB if and only if for every B∈B, it is
+of maximum rank in⟨A,B⟩.  For a ﬁxed B, by Fact 11 and Lemma 10, A is of maximum
+rank in⟨A,B⟩ exactly when (⟨B,A⟩A′)i(ker(AA′))⊆  im(A),  for all i∈  [n].  From that we
+can conclude since A′is the inverse of A on im(A).
+
+    This lemma leads us to reduce the problems of deciding if A is of the maximum rank, and
+ﬁnding a matrix of rank larger than A when this is not the case, to the following question.
+
+Problem 13 (The power overﬂow problem). GivenD≤  M(n, F), U≤  Fn and U′≤  Fn,
+output D∈D  and ℓ∈ [n] s.t. Dℓ(U)̸⊆  U′, if there exists such (D,ℓ). Otherwise say no.
+
+    The power overﬂow problem admits an eﬃcient randomized algorithm when|F|= Ω(n).
+For the rank-1 spanned case we show a deterministic solution regardless of the ﬁeld size.
+
+Theorem 14. LetD≤  M(n, F) be spanned by rank-1 matrices.  Then there exists D∈D
+and ℓ∈  [n] such that Dℓ(U)̸⊆  U′ if and only if there exists ℓ∈  [n] such thatDℓ(U)̸⊆  U′.
+The power overﬂow problem forD can be solved deterministically in polynomial time on an
+algebraic RAM as well as over Q.
+
+    Using this result whose proof is given in Section 4 we are now ready to prove Theorem 1.
+Proof of Theorem 1. First we suppose that|F|≥ n+1. Let A be an arbitrary matrix in
+B. The algorithm iterates the following process until A becomes of maximum rank.
+
+
+                                                    10
+
+
+    We run the algorithm of Lemma 10 to test whether (BA′)i(ker(AA′))⊆  im(A) for i∈ [n].
+If this condition holds then A is of maximum rank, and the algorithm also gives a corank(B)-
+singularity witness. Otherwise we know by Theorem 14 that there exists B∈B  and i∈ [n]
+such that (BA′)i(ker(AA′))̸⊆  im(A).  We apply the algorithm of Theorem 14 with input
+BA′, ker(AA′) and im(A), which ﬁnds such a couple (B,i ).  Lemma 12 applied to⟨A,B⟩
+implies that A is not of maximum rank in⟨A,B⟩.  If A has rank r≤  n−  1 which is not
+maximal in⟨A,B⟩, then the determinant of an appropriate (r+1)× (r+1) minor of A+λB
+is a nonzero polynomial of degree at most r+1 which has at most r+1≤  n roots. We then
+pick n+1 arbitrary ﬁeld elements λ1,...,λ        n+1, and we know that for some 1≤  j≤  n+1
+we have rank(A+λjB) > rank(A). We replace A by A+λjB and restart the process.
+    Over Q, at the end of each iteration, by a reduction procedure described in [8] we can
+achieve thatthematrixA, writtenasalinear combinationofB1,...,B        m hascoeﬃcients from
+a ﬁxed subset K⊆  Q of size n+1 (say, K ={0,...,n }). In fact, if A = α1B1 +α2B2...    +
+αmBm has rank r then for at least one κ1∈ K the matrix κ1B1+α2B2...   +αmBm has rank
+at least r. This way all the coeﬃcients αj can be replaced with an appropriate element from
+K.
+    As in each iteration we either stop (and conclude with A being of maximal rank), or
+increase the rank of A by at least 1, the number of iterations is at most n.   Also, each
+iteration takes polynomial many steps since the processes of Lemma 10 and Theorem 14 are
+polynomial. Therefore the overall running time is also polynomial. This ﬁnishes the case for
+|F|≥ n+1.
+    When|F|< n+1, we can compute the maximum rank by running the above procedure
+over a suﬃciently large extension ﬁeld.  The maximum rank will not grow if we go over an
+extension.  This follows from the fact that the equality corank(B) = disc(B) holds over any
+ﬁeld ifB is spanned by an arbitrary matrix and by rank one matrices, see [22].
+
+Remark 15. As mentioned in the introduction, we can generalize to the setting whenB is
+spanned by rank-1 matrices and an arbitrary matrix, as follows.  LetB′ be the subspace of
+B generated by rank-1 matrices. As indicated in Lemma 18 in the next section, in this case
+the algorithm for power overﬂow problem with special U = ker(AA′) and U′= im(A) is still
+guaranteed to succeed if A̸∈B ′.  Furthermore, in the update step, the resulting matrix of
+higher rank keeps the property of not inB′.  So from the given basis B1,...,B        m forB, we
+apply the procedure in Theorem 1 using Bi as the starting point, for each Bi.  Then it is
+ensured that for those Bi̸∈B ′ this procedure will succeed in ﬁnding a matrix with maximal
+rank.  Otherwise if Bi∈B ′, then power overﬂow problem will either get no, or detect that
+Hℓ···H1(U)⊆  U′, so ending with a safe return.
+
+4    The power overﬂow problem for rank-1 spanned ma-
+      trix spaces
+
+In this section we prove Theorem 14.
+
+
+                                                    11
+
+
+The setting.   Given subspaces U,U  ′ of Fn as well as a basis{D1,...,D        m} for a matrix
+spaceD≤  M(n, F), we will show is that in polynomial time we can decide ifDℓ(U)̸⊆  U′
+for some ℓ, and if this holds then ﬁnd D∈D  s.t. Dℓ(U)̸⊆  U′.
+    Formally let ℓ= ℓ(D) be the smallest integer j s.t.Dj(U)̸⊆  U′if such an integer exists,
+and n otherwise.  We start by computing ℓ and for 1≤  j≤  ℓ, basesTj forDj.  SetT1 =
+{D1,...,D        m}. IfDj(U)̸⊆  U′then we set ℓ= j and stop constructing further bases. If j = n
+andDn(U)⊆  U′then we stop the algorithm and output no. Otherwise we computeTj+1 by
+selecting a maximal linearly independent set form the products of elements inTj andT1.
+
+Helpful subspaces ofD.   Recall that our goal is to ﬁnd D such that Dℓ(U)̸⊆  U′.  To
+achieve this goal, for i∈  [ℓ], we deﬁne subspacesHi ofD, which play a crucial role in the
+algorithm:
+
+              Hi ={X∈D|Dℓ− jXDj− 1(U)⊆  U′, j  = 1,...,i −  1,i +1,...,ℓ }.
+
+Let us examine the meaning for some matrix X to be inHi. Let P be a product of ℓelements
+fromD, and suppose X appears in P. Then X∈Hi implies that, as long as X appears in
+P at the jth position, j̸= i, then it must be that P(U)⊆  U′.  In other words, for P to be
+able to pull U out of U′, it is necessary that X appears at the ith position.
+    The following lemma explains whyHi’s are useful for the purpose of powerﬂow problem.
+
+Lemma 16. For a matrix X = X1 + ...    + Xℓ with Xi∈Hi, we have Xℓ(U)⊆  U′ if and
+only if Xℓ···X2X1(U)⊆  U′.
+
+Proof. We have Xℓ = ∑σ Xσ(ℓ)···Xσ(1), where the summation is over the maps σ : [ℓ]→   [ℓ].
+When σ  is not the identity map then there exists an index j such that σ(j)̸= j.  Then
+Xσ(ℓ)···Xσ(1)(U)⊆  U′by the deﬁnition ofHσ(j).
+
+    Furthermore,Hi’s can be computed eﬃciently on an algebraic RAM as well as over Q
+as follows.   Let x1,...,x        m be formal variables, an element inD can be written as X  =
+∑
+   k∈[m]xkDk.  The conditionDℓ− jXDj− 1(U)⊆  U′ is equivalent to the set of the following
+homogeneous linear equations in the variables xk:⟨Z(∑k∈[m]xkDk)Z′u,v⟩ = 0,  where Z is
+fromTℓ− j, Z′ is fromTj− 1, u is from a basis for U and v is from a basis for U′⊥ .  ThusHi
+can be computed by solving a system of polynomially many homogeneous linear equations.
+Note that the coeﬃcients of the equations are scalar products of vectors from a basis for U′⊥
+by vectors obtained as applying products of ℓmatrices from{D1,...,D        m} to basis elements
+for U.
+
+Back to rank-1 spanned setting.   In general,Hi can be 0.  In our setting, due to the
+existence of a basis of rank-1 matrices, fortunately this is far from the case.
+
+Lemma 17. SupposeB is rank-1 spanned, and ℓis the smallestinteger such thatDℓ(U)̸⊆  U′.
+Then the following hold: (1)∀i∈ [ℓ],Hi̸= 0; (2)Hℓ···H1(U)̸⊆  U′.
+
+
+                                                     12
+
+
+Proof. Assume thatD is spanned by the rank one matrices C1,...,C        m, where Ci may be
+over an extension ﬁeld F′of F.
+    Let us ﬁrst consider the case when Ci’s are matrices over F.  Then there exist indices
+k1,...,k        ℓ such Ckℓ···Ck1(U)̸⊆  U′.  We show that Cki∈Hi, for i∈  [ℓ], proving (1).  This
+also implies immediatelyHℓ···H1(U)̸⊆  U′, proving (2).
+    Assume by contradiction that Cki̸∈Hi, for some i∈  [ℓ].   ThenDℓ− jCkiDj− 1(U)̸⊆
+U′,  for some j̸= i.   On the other hand Cki  satisﬁesDℓ− iCkiDi− 1(U)̸⊆   U′.  Since Cki  is
+of rank 1 we have CkiDj− 1(U)  = CkiDi− 1(U),  which yields that neitherDℓ− iCkiDj− 1(U)
+norDℓ− jCkiDi− 1(U) is contained in U′.  However one of these products is shorter than ℓ,
+contradicting the minimality of ℓ.
+    To generalize to Ci’s over an extension ﬁeld F′, it suﬃces to lift all objects (D,Hi, U
+and U′) to their spans with the extension ﬁeld F′ (denoted as F′D, F′Hi, FU  and FU′).
+After going through the above argument, we have F′Hi̸= 0 and F′Hℓ···F′H1(F′U)̸⊆  F′U′.
+We then haveHi̸=  0 andHℓ···H1(U)̸⊆   U′,  as it is not hard to see that F′Hi,  and
+F′Hℓ···F′H1(F′U), are spans ofHi andHℓ···H1(U) with the extension ﬁeld F′.
+    That is, inout setting, notonlyHi̸= 0, butHℓ···H1 isabletopull U outsideU′(instead
+of using the full power ofDℓ).
+    To ﬁnish the algorithm, we compute bases for productsHi···H1, for i∈  [n], in a way
+similar to computing bases forDi.  Then we search the basis ofHℓ for an element Z such
+that ZHℓ− 1···H1(U)̸⊆   U′.   We put Xℓ =  Z  and continue searching the basis ofHℓ− 1
+for an element Z such that XℓZHℓ− 2···H1(U)̸⊆  U′.  Continuing the iteration, Lemma 17
+ensures that eventually we ﬁnd Xi∈Hi, for i∈  [ℓ], such that Xℓ···X1(U)̸⊆  U′.  We set
+D = X1 + ...    + Xℓ, then by Lemma 16 we have Dℓ(U)̸⊆  U′.  We return D and ℓ.  This
+ﬁnishes the proof of Theorem 14.
+    Finally, we introduce the following slight extension of Lemma 17 for special subspaces
+U,U  ′, as applicable to Remark 15 (2).
+Lemma 18. Assume thatD is spanned by rank one matrices and a projection to U′having
+kernel U. ThenHℓ···H1U̸⊆  U′.
+Proof. Identical with the proof of Lemma 17, based on the observation that a projection
+with the prescribed properties can be deleted from any product mapping U outside U′.
+
+5    The ﬁrst Wong sequence and triangularizable matrix
+      spaces
+
+5.1    The connection
+To tackle thetriangularizable matrix spaces, our starting point is the following lemma, which
+connects ﬁrst Wong sequences with singularity witnesses.
+Lemma  19. Let A∈B≤   M(n, F), and let U∗  be the limit of the ﬁrst Wong sequence
+of (A,B).  Set d = dim(U∗).  Then either U∗ is a singularity witness ofB, or there exist
+
+                                                    13
+
+
+                                                                                                  [ X   Y   ]
+nonsingular matrices P,Q∈ M(n, F), such that∀B∈B, QBP− 1 is of the form                              0    Z   ,
+where X is of size d×  d, andB is nonsingular in the X-block.
+Proof. If dim(U∗) > dim(B(U∗)) then U∗ is a singularity witness. If dim(U∗) = dim(B(U∗))
+then the choice of P and Q corresponds to an appropriate basis change transformation. To
+see thatB is nonsingular in the X-block, note that A∈B  and A(U∗) =B(U∗).
+    Lemma 19 suggests a recursive algorithm:  take an arbitrary A∈B  and compute U∗,
+the limit of the ﬁrst Wong sequence of (A,B).  If we get a singularity witness, we are done.
+Otherwise, if U∗̸= 0, as the X-block is already nonsingular, we only need to focus on the
+nonsingularity of Z-block which is of smaller size. To make this idea work, we have to satisfy
+essentially two conditions. We must ﬁnd some A such that U∗̸= 0, and to allow for recursion
+the speciﬁc property of the matrix spaceB we are concerned with has to be inherited by the
+subspace corresponding to the Z-block. It turns out that in the triangularizable case these
+two problems can be taken care of by the following lemma.
+Lemma  20. LetB≤   F be given by a basis{B1,...,B        m},  and suppose that there exist
+nonsingular matrices C,D∈ M(n, F′) such that Bi = DB′iC− 1, and B′i∈ M(n, F′) is upper
+triangular for every i∈ [m]. Then we have the following.
+   1. Either∩i∈[m]ker(Bi)̸= 0, or∃j∈ [m] and 0̸= U≤  Fn s.t. Bj(U) =B(U).
+   2. Suppose there exist j∈  [m] and 0̸= U≤  Fn s.t.   Bj(U) =B(U), and dim(U) =
+       dim(Bj(U)). Let B∗i  : Fn/U→   Fn/B(U) be the linear map induced by Bi, for i∈ [m].
+      ThenB∗ =⟨B∗1,...,B        ∗m⟩ is triangularizable over F′.
+Proof. 1.  Let{ei|i∈ [n]} be the standard basis of F′n, and ci = C(ei) and di = D(ei) for
+i∈ [n]. If B′i(1, 1) = 0 for all i∈ [m] then c1 is in the kernel of every Bi’s. If there exists j
+such that B′j(1, 1)̸= 0, we set U′=⟨c1⟩≤  F′n. Then it is clear that⟨d1⟩ = Bj(U′) =B(U′).
+It follows that the ﬁrst Wong sequence of (Bj,B) over F′ has nonzero limit, and therefore
+the same holds over F. We can choose for U this limit.
+    2.  First we recall that for a vector space V  of dimension n, a complete ﬂag of V  is a
+nested sequence of subspaces 0 = V0⊂  V1⊂···⊂ Vn  = V.   ForA≤  Lin(V,V  ′) with
+dim(V) = dim(V ′) = n, the matrix spaceA is triangularizable if and only if∃ complete ﬂags
+0 = V0⊂  V1⊂···⊂Vn = V  and 0 = V ′0⊂  V ′1⊂···⊂V ′n = V ′s.t.A(Vi)⊆  V ′i  for i∈ [n].
+    For U≤  Fn, let F′U be the linear span of U in F′n. We think of Bi’s and B∗i’s as linear
+maps over F′in a natural way. Let ℓ= dim(F′n/ F′U). For 0≤  i≤  n set Si =⟨c1,...,c        i⟩ and
+Ti =⟨d1,...,d        i⟩. ObviouslyB(Si)⊆  Ti for 0≤  i≤  n. Let S∗i = Si/ F′U and T∗i  = Ti/B(F′U),
+and consider S∗0⊆···⊆S∗n and T∗0⊆···⊆T∗n. We claim that∀i∈ [n], dim(S∗i)≥  dim(T∗i ).
+This is because as Ti∩B(F′U)⊇  Bj(Si∩ F′U), by dim(F′U) = dim(Bj(F′U)), dim(Bj(Si∩
+F′U))≥  dim(Si∩ F′U).  Thus dim(Si∩ F′U)≤  dim(Ti∩B(F′U)), and dim(S∗i)≥  dim(T∗i ).
+AsB∗(S∗i)⊆  T∗i , dim(S∗i+1)−  dim(S∗i)≤  1, and dim(T∗i+1)−  dim(T∗i )≤  1, there exist two
+nested sequences S∗0⊂  S∗j1⊂···⊂S∗jℓ = S∗n and T∗0⊂  T∗k1⊂···⊂T∗kℓ = T∗n, s.t. dim(Sjh) =
+dim(Tkh) = h. Furthermore, by dim(S∗i)≥  dim(T∗i ), jh≤  kh, thusB∗(S∗jh)⊆B ∗(S∗kh)⊆  T∗kh,
+∀h∈  [ℓ].  That is, the two nested sequences are complete ﬂags, andB∗ is triangularizable
+over F′.
+
+                                                      14
+
+
+5.2    An algorithm on an algebraic RAM
+Suppose we are given a basis{B1,...,B        m} forB≤  M(n, F) which is triangularizable over
+an extension ﬁeld F′ of F, i. e., Bi = DB′iC− 1 for some nonsingular C,D∈  M(n, F′), and
+B′i∈  M(n, F′) is upper triangular for every i∈  [m].  Our problem is to determine whether
+there exists a nonsingular matrix inB or not and ﬁnding such a matrix if exists.
+    GiventhepreparationofLemma20, hereistheoutlineofanalgorithmusingpolynomially
+many arithmetic operations.  The algorithm recurses on the size of the matrices, with the
+base case being the size 1.  It checks at the beginning whether∩i∈[m]ker(Bi) = 0.  If this
+is the case then it returns∩i∈[m]ker(Bi) which is a singularity witness.  Otherwise, for all
+i∈ [m], it computes the limit U∗i  of the ﬁrst Wong sequence for (Bi,B).  By Lemma 20 (1)
+there exists j∈ [m] such that U∗j̸= 0 and Bj(U) =B(U).  The algorithm then recurses on
+the induced actions B∗i’s of Bi’s, which are also triangularizable by Lemma 20 (2). WhenB
+is nonsingular the algorithm should return a nonsingular matrix.  This nonsingular matrix
+is built step by step by the recursive calls, at each step we have to construct a nonsingular
+linear combination of Bj and the matrix returned by the call.  For this we need n+1 ﬁeld
+elements.
+    We expand the above idea into a rigorous algorithm, called TriAlgo and present it
+in Algorithm 1.   This algorithm requires polynomially many arithmetic operations,  and
+therefore of polynomial complexity in ﬁnite ﬁelds.  The input of the algorithm can be an
+arbitrary matrix space (not necessarily triangularizable), but it may fail in certain cases.
+For triangularizable matrix spaces the algorithm would not fail due to Lemma 20.  Note
+that though the algorithm works assuming triangularizability over some extension ﬁeld, the
+algorithm itself does not need to deal with the ﬁeld extension explicitly by Lemma 20, given
+that F is large enough.  To allow for recursion, the output of the algorithm can be one of
+the following: the ﬁrst is an explicit linear combination of the given matrices, which gives a
+nonsingular matrix. The second is a singular subspace witness. The third one isFail.
+    Regarding implementation, it might be needed to comment on Line 13. At this point we
+have that dim(U∗)≤  dim(B(U∗))≤  dim(Bj(U∗))≤  dim(U∗). Thus dim(B(U∗)) = dim(U∗),
+and note that Bi(U∗)⊆B (U∗), for all i∈  [m].  Then two bases of Fn can be formed by
+extending bases of U∗ andB(U∗) respectively, and w.r.t. these two bases the induced action
+Bi from Fn/U   ∗ to Fn/B(U∗) can be read oﬀ easily.
+    For correctness we distinguish among the types of output of the algorithm, and show
+that they indeed have the required property.
+
+If (α1,...,α        m) is returned:   This case occurs in Line 2 and Line 20. Line 2 is trivial. If the
+      algorithm reaches Line 20, we claim that there exists (λ,µ )∈ Λ×  Λ s.t. λBj +µE is
+      nonsingular. Let P and Q be the matrices from Lemma 19. Thus∀i∈ [m], QBiP− 1 is[ Xi   Yi]
+      oftheform:         0    Zi   ,  whereXi isofsize(n− ℓ)× (n− ℓ)andZi isofsizeℓbyℓ. AsXj
+      is nonsingular and ∑i∈[m]αiZi is nonsingular, det(xBj +yE) is a nonzero polynomial,
+      thus from Schwartz-Zippel lemma the existence of (λ,µ ) in Λ×  Λ is ensured.
+
+If a subspace of Fn is returned:   This case occurs in Line 2, 4, 8 and 16. All are straightfor-
+
+                                                     15
+
+
+ Algorithm 1: TriAlgo(B1,...,B        m)
+   Input:B =⟨B1,...,B        m⟩⊆  M(n, F).
+   Output: One of the following: (1) (α1,...,α        m)∈ Fm s.t. ∑i∈[m]αiBi is nonsingular.
+                (2) A singular subspace witness U≤  Fn. (3)Fail.
+   // Base case
+ 1 if n = 1 then
+ 2       If∃ nonzero Bi, return (0,...,      1,...,      0) where 1 is at the ith position. Otherwise
+        return Fn.
+   // Start ofthe recursive step.
+   // If∩i∈[m]ker(Bi)̸= 0 then∩i∈[m]ker(Bi)is asingular witness itself.
+ 3 if∩i∈[m]ker(Bi)̸= 0 then
+ 4       return∩i∈[m]ker(Bi).
+
+ 5 forall the i∈ [m] do
+ 6       U∗i←   the limit of the ﬁrst Wong sequence of (Bi,B).
+
+ 7 if∃i∈ [m], dim(B(U∗i )) < dim(U∗i ) then
+ 8       return U∗i
+
+ 9 if̸∃j s.t. dim(U∗j) > 0 then
+10       returnFail
+
+11 U∗←   U∗j  where U∗j  satisﬁes that dim(U∗j) > 0;
+
+12 forall the i∈ [m] do
+13       B∗i←   the induced linear map of Bi from Fn/U   ∗ to Fn/B(U∗).
+   // Recursive call.
+14 X←   TriAlgo(B∗1,...,B        ∗m);
+15 if X is a singular subspace witness W/U   ∗ then
+16       return the full preimage of W/U   ∗ in the canonical projection Fn→   Fn/U   ∗.
+
+17 else if X is (α1,...,α        m) then
+18       Λ←   a set of ﬁeld element of size n+1;
+19       E←   ∑i∈[m]αiBi;
+
+20       Choose (λ,µ )∈ Λ×  Λ, s.t. λBj +µE is nonsingular;
+21       return (µα 1,...,µα         j− 1,µα  j +λ,µα   j+1,...,µα         m)
+
+22 else if X =Fail then
+23       returnFail
+
+
+
+
+
+
+                                                        16
+
+
+       ward.
+
+The case ofFail:   After Line 3∩i∈[m]ker(Bi)  =  0.   Then Lemma 20 ensures thatFail
+       cannot be returned for triangularizable matrix spaces.
+
+5.3    An algorithm over the rationals
+To obtain a polynomial-time algorithm over rationals, we give ﬁrst a characterization of
+triangularizability of a nonsingular matrix space.
+
+Lemma 21. AssumeB≤  M(n, F) contains a nonsingular matrix S.  ThenB is triangu-
+larizable over F if and only if there exists a nonsingular matrix D∈  M(n, F) such that
+D− 1BS− 1D consists of upper triangular matrices.
+
+Proof.⇒  :  Assume that D− 1BC consists of upper triangular matrices.  Then C− 1S− 1D =
+(D− 1SC)− 1 is upper triangular as well, whence – as products of upper triangular matrices
+remain upper triangular – D− 1BS− 1D = (D− 1BC)(C− 1S− 1D) also consists of upper trian-
+gular matrices.
+⇐  : Assume that D− 1BS− 1D consists of upper triangular matrices. Put C = S− 1D.
+
+    We have the following criterion of triangularizability:
+
+Lemma  22. LetA≤  M(n, F) containing the identity matrix and let F′ be the algebraic
+closure of F. Then there exists D∈ M(n, F′) such that D− 1AD consists of upper triangular
+matrices (over F′) if and only if
+
+                                         (An2[A,A]An2)n = (0).
+
+Here [A,A] is the space spanned by the commutators [X,Y ] = XY−  YX (X,Y∈A).
+
+Proof. PutD =An2. ThenD is the matrix algebra generated byA. The formula expresses
+that the two-sided  ideal ofD  generated by the commutators fromA is nilpotent.   Let
+D′= F′⊗D .  Then the formula is also equivalent to that the ideal ofD′ generated by the
+commutators is nilpotent. This is further equivalent to that the factor algebraD′/Rad (D′) is
+commutative. However, over an algebraically closed ﬁeld a matrix algebra is nilpotent if it is
+a conjugate of a subalgebra of the upper triangular matrices. (To see one direction, observe
+that the whole algebra of the upper triangular matrices and hence every subalgebra of it
+has this property.  As for reverse implication, note that all the irreducible representations
+of an algebra over an algebraically closed ﬁeld which is commutative by its radical are one-
+dimensional and hence a composition series gives a complete ﬂag consisting of invariant
+subspaces.)
+
+Corollary 23. Assume that we are given a nonsingular S∈B. Then there is a polynomial
+time algorithm (on an algebraic RAM as well as the case F = Q) which decides whether or
+not there exists an extension of F over whichB is triangularizable.
+
+
+                                                     17
+
+
+    Again, we actuallyhaveanalgorithmusing apolynomial number ofarithmeticoperations
+and equality tests in the black box model for F.
+    With these preparations we are now ready to prove Theorem 2.
+
+Proof  of  Theorem  2.   On an algebraic RAM Algorithm 1 is all we need.   Over ratio-
+nals we shall perform a reduction to ﬁnite ﬁelds via Lemma 22.
+    We assume thatB is given by matrices B1,...,B        m over Q.  Multiplying by a common
+denominator for the entries, we can achieve the situation when the entries of B1,...,B        m are
+integers.  Let b be a bound on the of absolute values of the entries of B1,...,B        m.  Then a
+polynomial-time algorithm should run in time polynomial in n and logb. IfB is nonsingular
+thenthereexist integers λ1,...,λ        m, eachbetween 0andnsuchthatS = λ1B1+...   +λmBm is
+nonsingular. Theabsolute valueofthedeterminant ofS isanonzero integer whose logarithm
+is bounded by a polynomial in logb and n. It follows that there is a prime p bounded by an
+(explicit) polynomial in logb and n that does not divide the determinant of S.
+    Let S′ =  det(S)S− 1.   We reduce the problem modulo p.   We see that S  and S′ are
+integral  matrices  and  both  are  invertible  module  p.    Furthermore,  ifB  is  triangulariz-
+able over an extension of Q, by Lemma 22 all length-n products of elements of the form
+Bi1S′···Bin2S′[Bj1S′,B j2S′]Bk1S′···Bkn2S′ vanish, and this will be the case modulo p as
+well. It follows that the subspace of matrices over Fp, spanned by the matrices BiS′, reduced
+modulo p, can be triangularized over an extension ﬁeld of Fp.  But then the space spanned
+by Bi is also triangularizable (over the same extension).
+    Thus ifB is nonsingular and triangularizable over an extension of Q then there is a
+prime p greater than n but smaller than the value of an explicit polynomial function in
+logb and n, such that the reduction modulo p gives a nonsingular matrix space which is
+triangularizable over an extension ﬁeld of Fp. The algorithm consists of taking the primes p
+up to the polynomial limit and applying the generic method over Fp to the reduced setting.
+The method either ﬁnds a p and an integer combination of B1,...,B        m which is nonsingular
+even modulo p or, concludes thatB cannot be nonsingular and triangularizable at the same
+time.                                                                                                                                                ✷
+
+6    On the Edmonds-Rado class and some subclasses
+
+6.1    Matrix spaces not in the Edmonds-Rado class
+Recall thatB≤   M(n, F) is in the Edmonds-Rado class if eitherB contains nonsingular
+matrices, orB is singular and there exists a singularity witness ofB. Recall that in Section 1
+we deﬁned the discrepancy disc(B) = max{c∈  N|∃c-singularity witness ofB}, and from
+the deﬁnition it is clear that corank(B)≥  disc(B).   In terms of discrepancy,B is in the
+Edmonds-Rado class, if disc(B) = 0⇐⇒      corank(B) = 0.
+    A well-known example of a matrix space not in the Edmonds-Rado class is the class sk3
+
+
+
+
+                                                      18
+
+
+of 3 dimensional skew symmetric matrices, generated for example by the following:
+                            ⟨     0    1   0      0    0    0       0    0   1  ⟩
+                     sk3 =       − 1   0   0  ,   0    0    1  ,    0    0   0    .
+                                   0    0   0        0− 1   0           − 1   0   0
+
+    Consider the following problem:  if a matrix spaceB has a basis consisting of matrices
+with certain property, does it imply thatB is in the Edmonds-Rado class?   Gurvits has
+observed that ifB hasa basis consisting of triangularor semideﬁnite matrices then it isin the
+Edmonds-Rado class.  We now show that the other two basis properties, namely consisting
+of projections or positive matrices, do not necessarily imply thatB is in the Edmonds-Rado
+class. Recall that a matrix over R is positive if every entry in it is positive.
+    LetB =⟨B1,...,B        m⟩≤  M(n, F), and let A∈ M(n, F) be an arbitrary nonsingular ma-[ A   Bi][  0   0]
+trix. For i∈ [m],  we deﬁne Yi =          0    0     and Z =       A   0   , and letA =⟨Y1,...,Y        m,Z⟩.
+
+Lemma 24. We have disc(A) = disc(B).
+
+Proof. Let E1≤  F2n be the coordinate subspace generated by the ﬁrst n coordinates, and
+E2≤  F2n be the coordinate subspace generated by the last n coordinates.
+    To show that disc(A)≥   disc(B), we take a disc(B)-discrepancy witness U  ofB, and
+embed U into E2. Then⟨E1∪ U⟩ is a disc(B)-singularity witness ofA.
+    To show that disc(A)≤  disc(B), let W  be disc(A)-singularity witness ofA.  Let W′1 =
+W′∩ E1 and W′2 = W′∩ E2. Due to the form of the Yi’s and Z, W′= W′1⊕ W′2. In particular
+note that W′2 = Z(W), and A is nonsingular.  So if we set R ={w∈  W|Z(w) = 0}, we
+have R≤  E2, dim(R) = dim(W)−  dim(W′2), and dim(W′1)≥  dim(B(R)).  Thus disc(A) =
+dim(W)− dim(W′) = (dim(W)− dim(W′2))− dim(W′1)≤  dim(R)− dim(B(R))≤  disc(B).
+
+Proposition 25. There exist matrix spaces generated by projections or positive matrices
+outside the Edmonds-Rado class                                     [ A   Bi +A      ]            [  0    0  ]
+
+Proof. Fori∈ [m],  wedeﬁneY ′i,Z  ′∈ M(2n, F)byY ′i =                 0        0      andZ′=        A   A     ,
+and letA′ =⟨Y ′1,...,Y         ′m,Z  ′⟩.   It is easy to see that the Y ′i’s and Z′ can be obtained
+from the Yi’s and Z via simultaneous row and column operations.  Note that simultaneous
+row and column operations do not change the rank or the discrepancy of a space, that is
+corank(A′) = corank(A) and disc(A′) = disc(A). Observe that corank(A) = corank(B), and
+by Lemma 24 we have disc(A) = disc(B).  Therefore taking someB not in the Edmonds-
+Rado class (for example sk3) it follows thatA andA′ are not in the Edmonds-Rado class.
+To ﬁnish the proof just note that if A = I, then Y ′i’s and Z′ are projections, and if A is a
+positive matrix with entries at least the absolute values of the entries in the Bi’s, then Y ′i’s
+and Z′are positive matrices.
+
+
+
+
+
+                                                      19
+
+
+6.2    Compression spaces
+If maxrk(B) is of primary interest, in analogy with the Edmonds-Rado class we can deﬁne
+the following matrix class. Here we allow non-square matrices from M(n× n′, F). Recall that
+for A∈ M(n× n′, F), its rank is dim(im(A)), its corank is dim(ker(A)), and A is nonsingular
+if rank(A) = min(n,n ′).
+    Following the terminology used in [11, 13], we call a matrix spaceB≤  M(n×  n′, F) a
+compression space ifB possesses corank(B)-singularity witnesses. In terms of discrepancy,B
+is a compression space if corank(B) = disc(B).  Thus, by the result of Lov´asz discussed in
+Subsection 1.1, and by the result of Atkinson and Stephens used in Subsection 3.2, rank-one
+spanned matrix spaces as well as two-dimensional matrix spaces over suﬃciently large base
+ﬁelds are compression spaces.  As to Wong sequences, from Lemma 9 we immediately have
+that ifB≤  M(n× n′, F) is a compression space, then for any A∈B, A is of maximum rank
+if and only if the limit of the second Wong sequence of (A,B) is contained in im(A).
+    It is clear that when n = n′, ifB is a compression space then it is in the Edmonds-Rado
+class. The converse is not true.
+
+Proposition 26. There exists a matrix space in the Edmonds-Rado class which is not a
+compression space.
+
+    The proof of Proposition 26 relies on the following lemma, which also explains why we
+do not expect to achieve rank maximization for upper triangular matrices in Theorem 2.
+
+Lemma 27. Rank maximization of matrix spaces can be reduced to rank maximization of
+matrix spaces with a basis of pairwise commuting, and strictly upper triangular matrices.
+
+Proof. ForB =⟨B1,...,B        m⟩≤  M(n×  n′, F) we ﬁrst pad 0’s to make it a matrix space
+of M(max(n,n ′), F).  Then consider the matrix space in M(2·max(n,n ′), F) generated by[ 0   Bi]
+C1,...,C        m where Ci =   0    0   .
+
+Proof of Proposition 26. Consider  the following matrix space:   apply the construction  in
+Lemma 27 with sk3,  and let the resulting matrix space beB≤   M(6, Q).B  is in the
+Edmonds-Rado class as it is spanned by upper-triangular matrices. On the other handB is
+not in the Edmonds-Rado class as corank(B) = 4 while disc(B) = 3.
+
+6.3    The black-box Edmonds-Rado class
+Deﬁnition 28. LetB≤  M(n×  n′, F).B is in the black-box Edmonds-Rado class if the
+following two conditions hold:  (1) there exists a corank(B)-singularity witness; (2) for any
+A∈B, either A is of maximum rank, orB(ker(A))̸⊆  im(A).
+
+    By theﬁrst condition, theblack-box Edmonds-Rado class isasubclass ofthecompression
+spaces. Also note thatB(ker(A)) is just the ﬁrst item in the second Wong sequence of (A,B).
+The second condition says that if A is non-maximum rank then already the ﬁrst item in the
+
+
+                                                     20
+
+
+second Wong sequence excludes existence of corank(A)-singularity witnesses.  In this case
+for any matrix B fromB with B(ker(A))̸⊆  im(A), we have rank(B) > rank(A). Therefore
+in matrix spaces in this class the following simple algorithm ﬁnds an element of maximum
+rank over suﬃciently large base ﬁelds.
+
+Proposition 29. LetB≤  M(n, F) be in the black-box Edmonds-Rado class, and assume
+|F|= Ω(n).  Then there exists a deterministic algorithm that solves the constructive SMR
+forB using polynomial number of arithmetic operations.
+
+Proof. Given A∈B, we compute the rank of A+λB where λ is from a subset of F of size
+rank(A)+1 and B is from a basis ofB. If none of these matrices have rank larger than A,
+conclude that A is of maximum rank.  Otherwise replace A with an A+λB of larger rank.
+Iterate the above procedure to obtain A∈B  of maximum rank.
+    As a justiﬁcation for the name of the subclass, observe that this algorithm does not make
+use of any properties of matrices other that their rank.  It even works in the setting that
+instead of inputting the basis B1,...,B        m explicitly, we only know m and have an oracle
+which, on input (α1,...,α        m) returns the rank of α1B1 +...    +αmBm.
+
+6.3.1    Some matrix spaces in the black-box Edmonds-Rado class.
+While this class seems quite restrictive, it contains some interesting cases.
+    A  ﬁrst  example  is  whenB  has  a  basis  of  positive  semideﬁnite  matrices.    LetB  =
+⟨B1,...,B        m⟩≤  M(n, R), where Bi’s are positive semideﬁnite.  Then it is seen easily that
+A is of maximum rank if and only if ker(A) =∩i∈[m]ker(Bi).  In particular if A is not of
+maximum rank then there exists v∈ ker(A) such that Bj(v)̸∈ im(A), for some j∈ [m].
+    Another more interesting scenario is from [6] (see also [22], Lemma 4.2).  Let G be a
+ﬁnite dimensional associative algebra over F and let V,V  ′ be semisimple G-modules.  Let
+B = HomG(V,V  ′).  Recall that a semisimple module is the direct sum of simple modules
+and that in a semisimple module every submodule has a direct complement. We know that
+A∈B  is of maximum rank if and only if for every isomorphism type S of simple modules
+for A, the multiplicity of S in im(A) is the minimum of the multiplicities of S in U and V.
+    If A is not of maximum rank, then for some simple module S there is an isomorphic copy
+S1 of S in ker(A) and there is a copy S2 of S in V ′intersecting im(A) trivially. Also, there
+are nontrivial homomorphisms mapping the ﬁrst copy of S to the second one. For instance,
+any isomorphism S1→   S2 can be extended to a homomorphism V→   V ′ by the zero map
+on a direct complement of S1.
+    On the other hand, if A is of maximum rank then for every simple submodule in ker(A),
+the copies in V ′isomorphic to it are in im(A), therefore no simple constituent can be moved
+out of im(A) via the second Wong sequence.
+
+
+
+
+
+
+                                                     21
+
+
+7    Concluding remarks
+
+Our main results are deterministic polynomial time algorithms for the constructive version
+of Edmond’s problem (that is, ﬁnding nonsingular matrices) in certain subclasses of the
+Edmonds-Rado class.  In the light of Gurvits’ result on the non-constructive version, prob-
+ably the most interesting open problem is the deterministic complexity of the constructive
+version for thewhole Edmonds-Rado class. Regarding the Boolean complexity of some of our
+algorithms, the bottleneck is our limited knowledge about the possible blowup of the sizes of
+bases for the Wong sequences. We are not even aware of any good bound on the size of bases
+for singularity witnesses (except for the rank one generated case).  In particular, we do not
+know the Boolean complexity of ﬁnding singularity witnesses for singular triangularizable
+matrix spaces over the rationals.
+    Thedeterministic orrandomizedcomplexity ofﬁnding rankonematricesspanning arank-
+one generated space is another question which is open to our knowledge. We believe that the
+problem is hard. In contrast, triangularizing a triangularizable matrix space may be easier.
+In the special case when the space is triangularizable over the base ﬁeld F and it contains a
+nonsingular matrix (which can be eﬃciently found even deterministically), Lemma 21 gives
+a reduction to ﬁnding composition series for matrix algebras which is further reducible to
+factorization of polynomials over F.   It would also be interesting ﬁnding maximum rank
+matrices over very small ﬁelds in the rank-one spanned case. The algorithm of [22] does the
+job when rank-one generators are at hand.
+
+Acknowledgements.   We would like to thank the anonymous reviewers for careful read-
+ing and pointing out some gaps in an earlier version of the paper.  Most of this work was
+conducted when G. I., Y. Q. and M. S. were at the Centre for Quantum Technologies (CQT)
+in Singapore, and partially funded by the Singapore Ministry of Education and the National
+Research Foundation, also through the Tier 3 Grant “Random numbers from quantum pro-
+cesses” (MOE2012-T3-1-009).  Research partially supported by the European Commission
+IST STREP project Quantum Algorithms (QALGO) 600700, by the French ANR Blanc
+program under contract ANR-12-BS02-005 (RDAM project), by the Hungarian Scientiﬁc
+Research Fund (OTKA), and by the Hausdorﬀ grant EXC59-1/2.
+
+References
+
+ [1] M. D.Atkinson andN. M. Stephens. Spaces ofmatrices of boundedrank. The Quarterly
+     Journal of Mathematics, 29(2):221–223, 1978.
+
+ [2] T. Berger and S. Trenn.  The quasi-Kronecker form for matrix pencils.  SIAM Journal
+     on Matrix Analysis and Applications, 33(2):336–368, 2012.
+
+ [3] Thomas Berger and Stephan Trenn. Addition to “the quasi-Kronecker form for matrix
+     pencils”. SIAM Journal on Matrix Analysis and Applications, 34(1):94–101, 2013.
+
+
+                                                     22
+
+
+ [4] Stuart J. Berkowitz. On computing the determinant in small parallel time using a small
+     number of processors. Information Processing Letters, 18(3):147–150, 1984.
+
+ [5] Jonathan F. Buss, Gudmund S. Frandsen, and Jeﬀrey O. Shallit.  The computational
+     complexity of some problems of linear algebra.  J. Comput. Syst. Sci., 58(3):572–596,
+     1999.
+
+ [6] Alexander L. Chistov, G´abor Ivanyos, and Marek Karpinski.   Polynomial time algo-
+     rithms for modules over ﬁnite dimensional algebras. In ISSAC, pages 68–74, 1997.
+ [7] EricChitambar, Runyao Duan, and YaoyunShi. Multipartite-to-bipartiteentanglement
+     transformationsand polynomial identity testing. Physical Reveiw A, 81(5):052310, 2010.
+ [8] Willem A. de Graaf, G´abor Ivanyos, and Lajos R´onyai. Computing Cartan subalgebras
+     of Lie algebras.   Applicable Algebra in Engineering, Communication and Computing,
+     7(5):339–349, 1996.
+
+ [9] Jack Edmonds. Systems of distinct representatives and linear algebra. J. Res. Nat. Bur.
+     Standards Sect. B, 71:241–245, 1967.
+
+[10] Jack Edmonds.  Submodular functions, matroids, and certain polyhedra.  In N. Sauer
+     R. K. Guy, H. Hanani and J. Sch¨onheim, editors, Combinatorial Structures and their
+     Appl., pages 69–87, New York, 1970. Gordon and Breach.
+
+[11] David Eisenbud and Joe Harris.  Vector spaces of matrices of low rank.  Advances in
+     Mathematics, 70(2):135–155, 1988.
+
+[12] Michael A. Forbes and Amir Shpilka.   Quasipolynomial-time identity testing of non-
+     commutative and read-once oblivious algebraic branching programs. In FOCS, 2013.
+
+[13] Marc Fortin and Christophe Reutenauer. Commutative/noncommutative rank of linear
+     matrices and subspaces of matrices of low rank.  S´eminaire Lotharingien de Combina-
+     toire, 52:B52f, 2004.
+
+[14] James Geelen and Satoru Iwata. Matroid matching via mixed skew-symmetric matrices.
+     Combinatorica, 25(2):187–215, 2005.
+
+[15] James F. Geelen.  Maximum rank matrix completion.  Linear Algebra and its Applica-
+     tions, 288:211–217, 1999.
+
+[16] James F. Geelen, Satoru Iwata, and Kazuo Murota.  The linear delta-matroid parity
+     problem. Journal of Combinatorial Theory, Series B, 88(2):377–398, 2003.
+
+[17] Leonid Gurvits. Quantum matching theory (with new complexity theoretic, combinato-
+     rial and topological insights on the nature of the quantum entanglement), 2002.
+
+[18] LeonidGurvits. Classical complexity andquantum entanglement. J. Comput. Syst. Sci.,
+     69(3):448–484, 2004.
+
+                                                     23
+
+
+[19] Nicholas J. A. Harvey, David R. Karger, and Kazuo Murota.  Deterministic network
+     coding by matrix completion.  In Proceedings of SODA, pages 489–498. ACM-SIAM,
+     2005.
+
+[20] NicholasJ.A.Harvey, DavidR.Karger, andSergeyYekhanin. Thecomplexity ofmatrix
+     completion. In Proceedings of SODA, pages 1103–1111. ACM-SIAM, 2006.
+
+[21] G´abor Ivanyos, Marek Karpinski, Youming Qiao, and Miklos Santha. Generalized wong
+     sequences and their applications to edmonds’ problems. In Ernst W. Mayr and Natacha
+     Portier, editors, STACS,volume25ofLIPIcs,pages397–408.SchlossDagstuhl-Leibniz-
+     Zentrum fuer Informatik, 2014.
+[22] G´abor Ivanyos, Marek Karpinski, and Nitin Saxena.   Deterministic polynomial time
+     algorithms for matrix completion problems. SIAM J. Comput., 39(8):3736–3751, 2010.
+[23] Valentine Kabanets and Russell Impagliazzo. Derandomizing polynomial identity tests
+     means proving circuit lower bounds. Computational Complexity, 13(1-2):1–46, 2004.
+[24] Erich Kaltofen.  Greatest common divisors of polynomials given by straight-line pro-
+     grams. J. ACM, 35(1):231–264, 1988.
+
+[25] L´aszl´o Lov´asz.  On determinants, matchings, and random algorithms.  In FCT, pages
+     565–574, 1979.
+
+[26] L´aszl´o Lov´asz. Singular spaces of matrices and their application in combinatorics. Bo-
+     letim da Sociedade Brasileira de Matem´atica-Bulletin/Brazilian Mathematical Society,
+     20(1):87–99, 1989.
+[27] Kazuo Murota. Matrices and matroids for systems analysis. Springer, 2000.
+
+[28] Richard Rado. A theorem on independence relations. The Quarterly Journal of Math-
+     ematics, Oxford Ser., 13(1):83–89, 1942.
+
+[29] Jacob T. Schwartz.   Probabilistic algorithms for veriﬁcation of polynomial identities.
+     In Edward W. Ng, editor, Symbolic and Algebraic Computation, volume 72 of Lecture
+     Notes in Computer Science, pages 200–215. Springer Berlin Heidelberg, 1979.
+
+[30] Stephan Trenn. Solution concepts for linear DAEs: A survey. In Achim Ilchmann and
+     Timo Reis, editors, Surveys in Diﬀerential-Algebraic Equations I, Diﬀerential-Algebraic
+     Equations Forum, pages 137–172. Springer Berlin Heidelberg, 2013.
+[31] Leslie G. Valiant. Completeness classes in algebra. In STOC, pages 249–261, 1979.
+
+[32] D. J. A. Welsh.  On matroid theorems of Edmonds and Rado.  Journal of the London
+     Mathematical Society, 2(2):251–256, 1970.
+
+[33] Kai-Tak Wong.  The eigenvalue problem λTx +Sx.  Journal of Diﬀerential Equations,
+     16(2):270 – 280, 1974.
+
+                                                     24
+
+
+[34] Richard Zippel. Probabilistic algorithms for sparse polynomials. In Edward W. Ng, edi-
+     tor, Symbolic and Algebraic Computation, volume 72 of LNCS, pages 216–226. Springer,
+     1979.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                      25

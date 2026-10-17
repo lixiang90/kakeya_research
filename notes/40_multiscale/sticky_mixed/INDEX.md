@@ -90,3 +90,5 @@ R0070：[R0070_raw_zero_ball_source_and_scalar_incidence.md](R0070_raw_zero_ball
 R0071：[R0071_conditional_fine_packet_full_budget_and_stop.md](R0071_conditional_fine_packet_full_budget_and_stop.md)：条件pointκ/末角UNION/tensor/fibre/全frame未得可用joint增益；局部Cantor saturation非fullsource反例。主机制no-information/冻结，A12/B10两formal独审，下一notes/00_map/R0071_next_periodic_full_goal_and_new_mechanism.md，R72先macro再实际数学。
 
 R0073：[R0073_mixed32_native_incidence_application.md](R0073_mixed32_native_incidence_application.md)：完整mixed32原global/local量词及sameT fineδ应用完成，具名19.2/19.4下排κ+γ>1，含κ1任意fixedγ。旧R70转置应用非新ID/major/ordinary界；κ+γ≤1仍open，不续zero球阈值。两formal内部独审，下一notes/00_map/R0073_next_mixed42_zero_label_source_gate.md仅mixed42κ1 AD0原标签候选，Goal active。
+
+R0074：[R0074_AD0_native_labels_to_CW_exclusion.md](R0074_AD0_native_labels_to_CW_exclusion.md)：两种原AD0质量提取及全m统一compression/whole-T CW p/h，排explicit bounded完整mixed42κ1，含固定d同型限定源读出。经典工具已一手比对，无新ID/ordinary/major；全κ仍open，停止端点阈值。下一notes/00_map/R0074_next_full_goal_and_critical_source_gate.md，Goal active。
