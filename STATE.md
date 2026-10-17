@@ -1,42 +1,38 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0031。Goal active；一般/五维满维数未解决，无条件新高维界、真实Kakeya反例及重大性/新颖性认证均未达成。
+更新2026-10-17（Asia/Shanghai），最近轮次R0032。Goal active；一般/五维满维数未解决，无条件新高维界、真实Kakeya反例及重大性/新颖性认证均未达成。
 
 ## 恢复、同步和宏观
 
-R31起点R30 commit a964d9e7f95efc30d7003d9441e5d1cfcd3615c1、tree96385a660c9df71dc157402c52978124d177b142；455文件receipt、HEAD/origin/clean核一致。上一Goal turn progress（原Lemma3.3完整内部重证/独审/安全同步），非最终成果。收尾回执tmp/sync/R0031.json须核remote全tree/local精确commit/所有blob bytesSHA256/clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/latest round/AGENTS并运行python scripts/context.py。
+R32起点R31 commit335e60e6c4ba64d573aa35cf0206857ea8edd333、tree8d3bbae0e699b7dc565925fde17a8cac8f7ff282，467文件receipt/HEAD/origin/clean一致。上一Goal turn progress（ASM001原3.1/3.2/3.4完整内部重证/交叉独审/安全同步），非最终或重大成果。R32收尾回执tmp/sync/R0032.json须核remote全tree/local精确commit/所有blob bytesSHA256/clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/latest round/AGENTS并运行python scripts/context.py。
 
-R30定期macro已执行，下一常规R33，关键失败随时提前。R31又完成真实source gateways认证progress，但不是新的高维定理或重大中间结果；不能把源审计本身变成Goal最终标准。每轮唯一main、至多两个互补代理，只编辑分配文件，root整合独审后统一提交/安全同步；不force、不重复请求已有授权。全部旧五维冻结保留。
+**R33必须先定期macro**，不是先沿当前label或source最后一步继续。R30 macro已执行；R32真实terminal/knowledge接口认证为progress，但sourceaudit本身不替代最终高维目标。每轮唯一main、最多两个互补代理，只写指定文件，root独审整合后统一提交/安全同步，不force，不重复请求已有授权。全部旧冻结保持。
 
-## R31：ASM001原代数norm、continuation及Cor3.4
+## R32：TEX001原Lemma3.5完整两版本
 
-主稿notes/10_source_audit/scalar_sheet_matching/R0031_scalar_sheet_matching_full_proof.md；A R0031_algebraic_norm_audit、B R0031_continuation_and_slice_audit同目录。两终稿独审research/reviews/R0031_analytic_matching_review.md、R0031_prior_norm_review.md及root integration，逐式实读通过。原作者工具重证bundle ASM001，未经外部同行评审、非新颖性/重大性声明。
+完整proof notes/10_source_audit/terminal_extension/R0032_terminal_extension_full_proof.md；A frame_graph_matching与B anchor_assignment同目录。两正式独审research/reviews/R0032_geometry_extension_review.md、R0032_prior_frame_review.md及rootintegration，均实读通过；主稿作者自审不计独审。登记TEX001，未经外部同行评审，来源已有结果，无新颖性/重大性声明。
 
-Lemma3.1：固定degree、Ω ball/polydisc、real ball及compact margin，无任何coefficient-height lower。coefficient极限不得W-independent；root-free circle只追chosen branch，允许unused roots逃逸；跨leading-zero set用全维平移complex disk最大模。normal family/Cauchy及去W因子后的nonzero constant coefficient给每点<=D阶jet lower、fixed derivatives upper；finite real directions/sublevel/Remez及evaluations/derivatives/affine-line degree closure完整支付。
+固定d0<1、S/η、原version1 j1/w−F或version2 j2/degree2，E∈C(d) lengthL有h>0 true terminal；对每fixed0<e<min(h,cL)给h−e knownatlas、0<L′<L、L−L′<=Ce，旧pL subpowerlist、wholeblock fits/disjointtrajectoryassignments、原weighted inverse-subpowermass及全部原sequence temperedness。C独立E/L/complexity，N阈值可依E和fixed e，不声称e_N→0 uniform；不额外声称newtruefloor，不升j3。
 
-Cor3.4实际只用3.1/closure+TCM001，**不调用3.2**。actualmember减reference/除M，difference resultant totaldegree<=2D²；每event normgap给每点positivejet，finite directions与边界外伸fixed boxes保质量。joint densities先finite-null-union保两色原pi，再Fubini取mass>=cR^-eps的fiber，最后normalize付分母，marginal<=C R^(2eps) pi dt。d1 margin+TCM固定eta给eps*/R0，常数吸入eta/2而非趋零eps，所以R0 uniform as eps→0。任意pi/相关events原量词完整通过。
+Root补2.3/2.4的Jac1坐标step-translation L1与cellaveraging TV、原jointlawposterior最大listtable；analysis cap只证存在高success selector，不把masked law冒tempered。2.9/2.10真floor/crossinglist/wholechart半损失保floor完整；原3.5实际还调用2.12 fullness，用knownpL候选velocitybins/jointangularcap/purelower排最大轴fixedpower亏损，不能从Def2.8 upper直接得q0轴。
 
-独立Lemma3.2：fixed格式affine/linear/simple quadratic(constant leading coefficient)、fixed pieces boundedpath、A^-1 tube无denominator/discriminant零；fixed-A比较C^O(A)只给finite/localbound。实际S=2cW+b平方根genericray crossing parity编码continued germ，append段编码endpoint norms，QE后sup semialgebraic再给A^C。明确标准fixed-format real QE/cell/growth为基础，不声称这些基础全重证。boundedregion可扩大fixed ball作upper族，不假原region形状。tiny c/monodromy/unused roots均核。
+原pairedprior Jensen/one-time domination均未归一化。oldfloor仅数oldlabels；A′source entry是原source marginal的restriction，无条件分母。二维normalexception与relativeframe作用中心差；C_entry→disccoeffs/CU→groupoptions→C_index→C*分开，不循环。M>1原native只容subpower unitbins，tiny mG′用predeletion rawweights付分母套Cor3.4。
 
-两修订已由两独审核：Ω仅同一connected ball/polydisc；margin删除test用fixed B=[0,1]、a=R^-2、f=a/(1+a−z)、Ωa=|z|<1+a/2，保degree2/ball形状，只有uniformmargin失败。degree删除test z^ceil(2log₂R)也保其余完整single-index law。均不是原Cor反例。
+commonanchor异常只逐pair平均；paired jetbins boundedneighbor。representativetable先于freeze t0，只source polynomial evaluations回传，不要求代表实根或return-safe。每A≤2代表控制source-disclower，C3先于T。freeze仅global weightedmass；输出重建wholetrajectoryassignment、mergeoldsource、laterselection去analytic masks，仍含successes且旧pL知真正subpowerlabel。低高curvature/vlogbins及原wholeprior删时付Def2.8；tiny c只quantify storedrange内root/jet，不存farroot或巨大1/c，finiteformat保持tempered。
 
-通过只认证这些source gateways，Lemma3.5真实atlas/old-pL knowledge/temperedness、critical paths及后续高级branches未核。SRC/DIR/FSD/DIM partial verified gateways为TCM001/ASM001，但完整OAI4与具名KT条件保持，六维17/4仍条件，无无条件新高维界。文献20PDF，本轮无新PDF/最新版本断言，读范围和源责任在metadata/R0031_source_check.json。
+没有保原全部假设的counter。以上只认证3.5及明确基础，criticalpaths/后续排除未核；SRC/DIR/FSD/DIM partialverified gateways为TCM001/ASM001/TEX001，完整OAI4和具名KT其余条件保持，六维17/4仍条件。文献20PDF，本轮无新PDF/最新版本断言，读范围与残余责任见metadata/R0032_source_check.json。
 
-## 唯一下一main：原Lemma3.5 terminal extension
+## R30–31已核工具（避免重复）
 
-spec notes/10_source_audit/scalar_sheet_matching/R0031_next_terminal_extension_target.md。完整两原model版本的h−e knownatlas、L−L′<=Ce、旧pL subpower list及原sequence temperedness。先付2.9/2.10实际preparation与cap/tempered定义；真pairedprior/heavy pre-deletion entries/normal-frame/3.4 groups/commonanchor代表表、source evaluations回传、freeze source/全block trajectory assignment和低高curvature。C须独立于L/问题complexity，analytical masks不能直接进入最终selection，known atlas不要求新truefloor。只graph comparison或N^O(e) knowledge不验收；不免费升到5D j3，不重开旧matrix-action或投影常数。
+TCM001见notes/10_source_audit/two_color_matching/INDEX.md：一般fixedD/J>D/d0的原3.3，任意π/相关events、preselectionmass/原heatbath/共同Λ/未归一化backwardupper/signedJacobian及可求和b^(5/4)误差，existential小幂版无显式模数。不是只D1，也没有原合法counter。
 
-## R30：原Lemma3.3一般固定阶重证TCM001
+ASM001见notes/10_source_audit/scalar_sheet_matching/INDEX.md：原3.1无height lower normalfamily/逐点finitejet/closure，独立3.2实际parity/QE supremum到A^C，完整Cor3.4原π Fubini及eps→0统一R0。Cor3.4不调用3.2；3.2后续commonanchor真实使用已由TEX支付。fixeddegree/margin删除例仅反弱化版，不反原命题。无需继续这些工具的局部常数。
 
-proof notes/10_source_audit/two_color_matching/R0030_matching_full_proof.md；A matching_counterattack、B matching_prior_refresh_audit同目录。两终稿独审research/reviews/R0030_matching_geometry_review.md、R0030_matching_probability_review.md，root integration同目录。一般固定D>=1、整数J>D、d0<1完整statement已内部独审通过，未经外部同行评审；来源已有结果，不主张新颖性/重大性。
+## 唯一下一入口：R33先macro，后决定criticalpath候选
 
-两C^(J+1) lists各card<=N^(d0+o1)，0…J+1导数<=K=N^o1，P(i1,i2,t)每色index-time marginal<=K pi_i dt；events值差<=K/N而某1…D导数差>=1/K。任意pi、相关events下不存在N→∞sequence，也有依D/J/d0的existential足够小fixed-power版，无显式模数。它不假完整OAI4或后续排除。
+spec notes/10_source_audit/terminal_extension/R0032_next_macro_and_critical_path_target.md。必须重新评估六维17/4候选的当前一手前沿/优先权及完整源责任；若已有同等/更强结果，不以清空源条件得到已有界作为总Goal主路线。比较继续source关键路径与五维真缺口收益，旧frozen无input不解冻。
 
-pre-selection原atom masses而非final posterior给child count；restriction保原pi并付分母。active-piece entropy先全局汇总，再用保P的heat-bath和adaptive two-color固定2^p支配，仅平均扣bad events。真实retained arm分母给time density；成功law始终未归一化。共同Λ只依exact start的有限coarse邻域；完整past下逐步upper与backward必要test避免虚构独立性。signed nilpotent dynamics和switch误差由strict Taylor gaps付；endpoint Vandermonde/regular孤立解数而非全局单射，真实child体积给Δu>=b(1+1/m)−C_J b^(5/4)，全O(1/b)步误差O_J(b^(1/4))。fixed grid先N极限，后trim/b，与u1<=d0+r1矛盾。
-
-反攻未得原counter：pair upper C_DK4 N^-1/D只直接覆盖d0<1/D；d=1 exact双marginal例、fixed-power oscillator给必要loss门槛，删D以上导数singleton例严格失败弱化版。各例均明确不反原subpower命题。不得把D1证明或数值samples当一般认证。
-
-TCM001通过仅消除一个共同source gateway。Cor3.4代数norm-to-jet、Lemma3.2 continuation/3.5 atlas回传、critical branches仍待核；SRC001/DIR003/FSD001/DIM001完整OAI4及具名KT条件保留，六维17/4仍条件。文献库20PDF，本轮无新PDF/最新版本断言，sourcecheck记录本地PDF29–35完整读范围，R29最近官方blob核验不冒称本轮新检索。
+若macro仍支持，候选main为原Prop4.3四项criticalpaths，并先付2.7/2.13 normalization/lift、4.1 composition及4.2；原2.16 weightedplank/3Dmax输入若未核须明确残余条件。重心是relativeprofiles/minimizer/coarsenedcap、fixedi内N极限先于外i、nested truewholelayers/priors/witness、actualsegmentlength、finite/infiniteℓ优化。不能只重复3.5或用一条(i,N)diagonal抹掉量词。未认证整篇或无条件高维。
 
 ## R29：条件任意ambient种子与六维17/4
 

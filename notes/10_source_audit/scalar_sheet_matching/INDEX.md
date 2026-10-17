@@ -12,3 +12,6 @@
 Cor3.4实际只用Lemma3.1/closure+TCM001，不调用3.2；后者服务下一步common complex anchor。两独审research/reviews/R0031_analytic_matching_review.md、R0031_prior_norm_review.md；root integration同目录。
 
 source完整责任和长期Goal保持：这些函数工具的“一般base维度”不是一般Kakeya证明。SRC/DIR/FSD/DIM保完整OAI4条件，六维17/4仍条件；后续terminal/critical branches未核。R33常规macro，关键失败提前。
+
+
+R0032更新：原Lemma3.5已由TEX001完整两版本内部重证，见相邻terminal_extension/INDEX.md。R0031_next_terminal_extension_target.md是已完成目标的历史spec；当前下一R33先macro，按terminal_extension/R0032_next_macro_and_critical_path_target.md评估后决定。完整源条件保持。

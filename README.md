@@ -1,8 +1,8 @@
 # 一般维度 Kakeya 研究
 
-目标：以 OpenAI 四维 Hausdorff Kakeya 预印本为研究起点，寻求欧氏空间 n >= 5 或一般维度猜想的证明、证伪或重大中间结果。已完成三十一轮研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
+目标：以 OpenAI 四维 Hausdorff Kakeya 预印本为研究起点，寻求欧氏空间 n >= 5 或一般维度猜想的证明、证伪或重大中间结果。已完成三十二轮研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
 
-R0031完成原四维论文Lemma3.1/3.2与Corollary3.4的内部重证和交叉独审（ASM-001），接上R0030的two-color matching认证。退化系数、原先验切片、解析延拓及小损失量词均逐项核验；这些是原工具引理的认证。R0029的compact六维Hausdorff至少17/4结论仍以完整四维证明及全部输入正确为条件，尚未认证无条件新界或重大性。文献库20篇PDF；下一核原Lemma3.5的terminal atlas与旧观察标签知识。
+R0032完成原Lemma3.5两版本的真正terminal extension内部重证及交叉独审（TEX-001），包括旧观察的短标签列表、整段轨迹分配和原序列复杂度控制；原3.1–3.4工具已由TCM/ASM认证。这些均为来源已有结果的核验。完整四维证明及其它输入尚未全面独审，compact六维17/4仍是条件结论；未认证无条件新界或重大性。文献20篇PDF。下一轮先宏观审视当前前沿和路线，再决定critical-path候选。
 
 每次恢复研究，依次读 [GOAL.md](GOAL.md)、[STATE.md](STATE.md)、[ROADMAP.md](ROADMAP.md)、[最近轮次](research/rounds/)；执行 `python scripts/context.py` 可生成精简交接摘要。
 
