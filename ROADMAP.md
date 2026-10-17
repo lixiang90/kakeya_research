@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0069周期全目标/官方版本核后，原d不聚集、同g双锚/双角四输出及whole矩阵数值恢复已付；真实label费用和严格postfreeze校准阻止AFF跳步。非完整source反例，无wholeAFF/完整mixed/ordinary新界。下一唯一 notes/00_map/R0069_next_unfrozen_native_kernel_test.md，保留未冻结原anchor核，最迟R72周期宏观。53PDF/54sources/78IDs，Goal active。
+更新2026-10-18，R0070原raw零球global质量排除、redo q后native关联完成κ+γ>1参数子范围；γ≤1−κ/wholeAFF/完整mixed仍open，无ordinary新界。R69中央校准的全变量native图完成亦被严格排，非fullsource反例。下一唯一 notes/00_map/R0070_next_actual_fine_joint_packet_test.md；R72先周期宏观。53PDF/54sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -19,7 +19,7 @@
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
-| Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66 tiny lower、R67天然joint图、R68无AFF/NQ的large upper；R69双法向四输出数值恢复、冻结后AFF推论严格失败，contact/wholeAFF₃仍未付 | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
+| Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66 tiny lower、R67天然joint图、R68无AFF/NQ的large upper；R69双法向四输出数值恢复、冻结后AFF推论严格失败，R70 raw零球及κ+γ>1子范围排除，γ≤1−κ contact/wholeAFF₃仍未付 | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
 | R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP/AIM/ISO/UNB/FIN已付列明部分；R38 RED001付完整归约/拼接/有限读出与任意集合Hausdorff桥；R39先macro，仍不认证无条件新界/重大性 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
@@ -148,3 +148,5 @@ R0067：三类原incidence core及tensor Gram保共享trunk，天然τ≈Kρ²�
 R0068：原global fastfit见证并用真实V endpoint码/own角law/native scalar quadraticKT排除，slow并降原稳定minimum；直接Lip付cross后L/三点/sampler/named13.5给每指定原ρ的T(S)≤ρ^(3−ζ)、S≥δ^a*Z。无需wholeAFF/NQ，但各ρ各S、contact耦合及ordinary未解，不新ID/major。停止阈值小修，下一R69先周期全目标复核再实际数学。
 
 R0069：周期宏观与fresh官方三核心版本核；原d不聚集/同g双锚双角共同四输出、whole rows数值恢复及真实4label cover。严格physical-clock两pole校准否postfreeze AFF推论，非fullsource counter；无ordinary/major。停止更多固定stars/proper rational，下一保变量anchor的原核集中实测，不以四点恒等式单独结案。
+
+R0070：原有向zero-ball同fan/whole f常cluster、global原mass/newallowed/named19.2排坏窗，重构q零球cap；smallD先删再outputcover/own角slab，r=τ√ρ完成κ+γ>1子范围。γ≤1−κ全branch/ordinary未解；R69中央全变量dense native完成被排，非完整source反例。停止阈值/有理模型，下一actual fine joint packet，R72先宏观。
