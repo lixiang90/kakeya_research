@@ -1,10 +1,10 @@
 # 路线台账
 
-更新2026-10-17，R0034 AIM001认证原4.11完整candidate→originalknownatlas及实际4.4–4.9/4.12/2.11预算；原law map须先将finalselected失败赋non-listablefailure，已修后双独审通过。TCM/ASM/TEX/CRP/AIM均源既有工具认证；每residual真实candidate存在/几何branches、完整OAI4/KT余责保留，六维17/4仍条件，无无条件新高维界/重大性。阶段退出后选下一R35原6.1完整isotropic候选引擎，非再调guard/TV；R36必须macro重判源audit高维价值。
+更新2026-10-17，R0035 ISO001在具名WZ/CV/GWZ输入下完整重证原Theorem6.1 isotropic candidate及Cor6.9 scalar H0，修后双全文独审通过。TCM/ASM/TEX/CRP/AIM/ISO均来源既有工具/分支认证，无无条件新高维或重大性主张；原j2正有限/无限窄分支、完整2.17/finite读出和外部/KT余责保留，六维17/4仍条件。下一R36必须先macro比较路线价值，入口isotropic/R0035_remaining_source_responsibilities_and_macro_gate.md，不自动逐节续审。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
-| A | 四维输入审计 | SRC-001加DIR-003条件性加权方向质量输入；TCM/ASM/TEX认证原3.1–3.5，CRP认证原4.3及实际归一化/有限初始界（保G）；AIM付原尺度转换；真实几何candidate/其它高级证明未全面验证 | bridge完成，保留专用source调用；不补generic completion |
+| A | 四维输入审计 | SRC-001加DIR-003条件性加权方向质量输入；TCM/ASM/TEX认证原3.1–3.5，CRP认证原4.3及实际归一化/有限初始界（保G）；AIM付原尺度转换；ISO付完整isotropic候选，余几何/高级证明未全面验证 | bridge完成，保留专用source调用；不补generic completion |
 | B | 投影与切片 | LIFT-001/002及FLAG-003排除纯投影加一/免费短轴 | 朴素版本frozen；需真纤维/敏感度输入 |
 | C | 高维方向代数 | ALG-004直纹三次局部模型 | 局部无条件恢复frozen |
 | D | 原始/切线精度 | SCL-001量词差别，原始幂界非统一切线界 | guard-only frozen |
@@ -20,7 +20,7 @@
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28 ACT001共同box、CAR001平均carry门槛，无AFF₃ | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
-| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP/AIM已付列明部分；R33macro已执行，R35先核原isotropic真实candidate存在，仍不认证无条件新界/重大性 |
+| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP/AIM/ISO已付列明部分；R35完整isotropic通过，R36先macro再选唯一main，仍不认证无条件新界/重大性 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
@@ -57,3 +57,5 @@ R0031按真正不同代数输入认证Cor3.4，非TCM改名：无height lower no
 
 
 R0032完整原3.5两版本已独审：补2.4原jointlaw TV表/2.10真floor与真实2.12 fullness，原pair/sourceentry/两heavy常数/M>1native/groupπ、anchor代表返回、globalfreeze/wholeassignment/oldpLsubpower、curvature与tiny-c有限编码均付。TEX001为来源已有定理重证，不升j3或给newtruefloor，不清空完整源条件。下一spec notes/10_source_audit/terminal_extension/R0032_next_macro_and_critical_path_target.md，R33必须先macro正面核前沿/优先权和路线价值，再决定2.13/4.1–4.3；全部旧冻结不无input改名重开。
+
+R0035完整原isotropic链通过：4.13/§5到proper degree2 candidate、relative qualification、同ν° floors、same-P signed kernels、最近long-witness heavy groups及R3 real conic restoration；一般weighted label双比较/whole-row witness/Cartesian finer precision显式付费。原PDF inverse正确、text误读撤销。新增两primary后25PDF/28sources，两个高级全proof保named。下一R36必须macro，余责/三路线比较见notes/10_source_audit/isotropic/R0035_remaining_source_responsibilities_and_macro_gate.md；完整source与五维/一般目标未达成。

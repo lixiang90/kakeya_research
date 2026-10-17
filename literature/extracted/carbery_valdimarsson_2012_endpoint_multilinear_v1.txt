@@ -1,0 +1,1030 @@
+                                          THE ENDPOINT MULTILINEAR KAKEYA THEOREM VIA THE
+                                                       BORSUK–ULAM THEOREM
+arXiv:1205.6371v1 [math.CA] 29 May 2012
+
+
+
+
+                                                         ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+                                                  Abstract. We give an essentially self-contained proof of Guth’s recent end-
+                                                  point multilinear Kakeya theorem which avoids the use of somewhat sophis-
+                                                  ticated algebraic topology, and which instead appeals to the Borsuk–Ulam
+                                                  theorem.
+
+
+
+
+                                                                              1. Introduction
+                                          The multilinear Kakeya problem was introduced in [1], and its study began in
+                                          earnest in [2], where the natural conjecture was established up to the endpoint.
+                                          Working in Rn , we suppose that we are given n transverse families T1 , . . . , Tn of
+                                          1-tubes, which means that each T ∈ Tj is a 1-neighbourhood of a doubly-infinite
+                                          line in Rn with direction e(T ) ∈ Sn−1 , and that the directions e(T ) for T ∈ Tj all
+                                          lie within a small fixed neighbourhood (depending only on the dimension n) of the
+                                          j’th standard basis vector ej .
+                                          The question is whether for each q ≥ 1/(n − 1) we have the inequality
+                                          Z                                         !q                                  !q
+                                                X                      X                           X              X
+                                                     aT1 χT1 (x) · · ·   aTn χTn (x)   dx ≤ Cn,q        aT1 · · ·   aTn
+                                           Rn   T1 ∈T1               Tn ∈Tn                              T1 ∈T1        Tn ∈Tn
+
+                                          for nonnegative coefficients aTj . In [2] this was proved for each q > 1/(n − 1) using
+                                          a heat-flow technique which, because of certain error terms arising, did not apply
+                                          at the endpoint q = 1/(n − 1). (For further background on this problem consult
+                                          [2].)
+                                          More recently, Guth in [10] established the endpoint case q = 1/(n − 1) using com-
+                                          pletely different techniques motivated in part by the polynomial method used by
+                                          Dvir [9] to solve the finite field Kakeya set problem, but which also relied upon
+                                          a fairly heavy dose of algebraic topology, and which were therefore perhaps a lit-
+                                          tle intimidating to the analyst or combinatorialist. In particular, Guth used the
+                                          technology of cohomology classes, cup products and the Lusternik–Schnirelmann
+                                          vanishing lemma in establishing his result. We believe that the endpoint multilinear
+                                          Kakeya theorem is of such significance and importance that a proof free of these
+                                          techniques should be available, and so the purpose of this paper is to provide an
+                                          argument leading to Guth’s result which does not rely upon such sophisticated al-
+                                          gebraic topology, but whose input is instead the Borsuk–Ulam theorem. It is hoped
+                                          therefore that this paper might lead to further exploitation of Guth’s techniques
+                                          in a more flexible setting. (For some recent works applying the multilinear Kakeya
+                                          perspective in other contexts, see [3], [4] and [6].)
+
+                                            Date: 22nd May 2012.
+                                                                                      1
+2                       ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+The Borsuk–Ulam theorem, while topological in nature, nevertheless has many
+proofs accessible to the analyst – see for example [12], and also [7] for a recent such
+proof. (See Section 5 below for its statement.) The use of the Borsuk–Ulam theorem
+in the context of Kakeya theorems is by now natural, as it can be considered as
+a topological analogue of the elementary linear-algebraic statement that there are
+no linear injections T : V → W if V and W are finite-dimensional vector spaces
+with dim V > dim W ; this was a key element of Dvir’s solution [9] of the finite
+field Kakeya problem. It also features explicitly in Guth’s warm-up discussion to
+the full result of [10].
+In order to proceed, we place matters in a more general context which does not
+impose conditions on the directions of the tubes, nor requires the level of multi-
+linearity to equal the dimension of the underlying euclidean space. Thus we now
+suppose that we are given d arbitrary families of 1-tubes T1 , . . . , Td in Rn , where
+d ≤ n. For v1 , . . . vd ∈ Rn let v1 ∧ · · · ∧ vd denote the unsigned (i.e. nonnegative)
+d-dimensional volume of the parallelepiped whose sides are given by the vectors
+v1 , . . . , vd .
+Theorem 1 (The Multilinear Kakeya Theorem). Let 2 ≤ d ≤ n. Then there exists
+a constant Cd,n such that if T1 , . . . , Td are families of 1-tubes in Rn , we have
+       Z                                                                       !1/(d−1)
+              X                     X
+                  aT1 χT1 (x) · · ·         aTd χTd (x) e(T1 ) ∧ · · · ∧ e(Td )         dx
+            Rn     T1 ∈T1                      Td ∈Td
+(1)                                                              !1/(d−1)
+                              X                    X
+                 ≤ Cd,n               aT1 · · ·            aTd              .
+                             T1 ∈T1               Td ∈Td
+
+
+(The case d = 2 is of course trivial.)
+The situation where the level of multilinearity is less than the ambient euclidean
+dimension was already addressed in [2], where once again the result was established
+up to the endpoint. The incorporation of the factor e(T1 ) ∧ · · · ∧ e(Td ) on the
+left-hand side is natural in view of the affine-invariant formulation of the Loomis–
+Whitney inequality, and was considered in Section 7 of [5], where Theorem 1 was
+first proved. Indeed, when d = n, the statement of Theorem 1 is affine-invariant.1
+A variant of Theorem 1 where lines are replaced by algebraic curves of bounded
+degree was also proved in [5] (and can likewise be established by replacing Guth’s
+original argument for Theorem 2 below by that of the current paper). On the other
+hand, the results of [2] have a somewhat more general scope in so far as they apply
+    1The multilinear Kakeya theorem can also be cast in the following equivalent form when d = n.
+For a unit vector ω ∈ Rn let Πω denote the hyperplane in Rn which is perpendicular to ω and
+which contains the origin. Let πω : Rn → Πω be the orthogonal projection map. Then for
+nonnegative gj we have
+                                                                                  1/(n−1)
+     Z     Z          Z     Yn
+                 ...         gj (ωj , πωj x) ω1 ∧ · · · ∧ ωn dσ(ω1 ) . . . dσ(ωn )        dx
+       Rn        Sn−1       Sn−1   j=1
+
+                                   n      Z          Z                          !1/(n−1)
+                                   Y
+                            ≤ Cn                            gj (ωj , ξ)dξdσ(ωj )           .
+                                   j=1        Sn−1   Π ωj
+                     MULTILINEAR KAKEYA VIA BORSUK–ULAM                             3
+
+
+to 1-neighbourhoods of k-planes for arbitrary k, rather than just 1-neighbourhoods
+of lines, i.e. tubes, as in the present discussion.
+The principal notion that Guth employs in proving the endpoint theorem is that
+of the visibility vis (Z) of a hypersurface Z ⊆ Rn – see Section 3 below for the
+definition, which differs from Guth’s in so far as in our treatment it (roughly)
+scales as does (n − 1)-dimensional Hausdorff measure Hn−1 – and the centrepiece
+of Guth’s argument is the following result:
+Theorem 2. Given a nonnegative function M defined on the lattice Q of unit cubes
+of Rn , there exists a non-zero polynomial p such that
+                                                   1/n
+                                         X
+                           deg p ≤ Cn       M (Q)n 
+                                         Q∈Q
+
+and such that if we set Z = Zp = {x ∈ Rn : p(x) = 0}, then for all Q ∈ Q we
+have
+                            vis (Z ∩ Q) ≥ Cn M (Q).
+
+It is in the proof of this result that Guth uses algebraic-topological techniques,
+and the main contribution of the present paper is to provide a proof of Theorem
+2 which does not use such topological machinery, but is instead a consequence of
+the Borsuk–Ulam theorem. (In fact, in our proof of Theorem 2, we do not use the
+Borsuk–Ulam theorem per se but instead an equivalent Lusternik–Schnirelmann
+type covering statement. See Section 5.) On the other hand, we must acknowledge
+that many of the arguments and constructions of the present paper are inspired by
+those of Guth’s approach.
+In view of the connection between visibility and (n − 1)-dimensional Hausdorff
+measure, and as a warm-up to our proof of Theorem 2, we indicate how the Borsuk–
+Ulam theorem can be used to establish the following morally weaker variant of
+Theorem 2.
+Proposition 1. Given a finitely supported function M defined on the lattice Q
+of unit cubes of Rn and taking nonzero values in [1, ∞), there exists a non-zero
+polynomial p such that
+                                                1/n
+                                      X
+                        deg p ≤ Cn       M (Q)n 
+                                         Q∈Q
+
+and such that for all Q ∈ Q
+                              Hn−1 (Z ∩ Q) ≥ Cn M (Q).
+                                   n
+          P up each nQ into ∼ M (Q) congruent subcubes S; note that altogether
+Proof. Break
+we have ∼ Q M (Q) small cubes S of various sizes. Consider the map
+                              (Z          Z          )
+                     F : p 7→         1−           1
+                                   {p>0}∩S       {p<0}∩S
+                                                             S
+defined on the vector space Pk of polynomials of degree at most k in n real variables,
+which has dimension ∼ k n . Clearly F is continuous, homogeneous of degree 0 and
+odd.
+4                 ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+So we can think of F as
+                                       F : SN → RJ
+                           P
+where N ∼ k n and J ∼                 n
+                               Q M (Q) .
+                                                P           1/n
+                                                           n
+So provided N ≥ J – which we can arrange if k ∼    Q  M (Q)       – the Borsuk–
+Ulam theorem tells us that F vanishes at some p. This means that the zero set Z
+of p exactly bisects each S.
+Now if S is a subcube of Q, S will have volume ∼ M (Q)−n and diameter ∼ M (Q)−1
+and hence any bisecting surface will meet it in a set of (n−1)-dimensional measure &
+M (Q)−(n−1) . This will be true for each of the M (Q)n disjoint S’s whose union is Q,
+so Z will meet Q in a set of (n−1)-dimensional measure & M (Q)n ×M (Q)−(n−1) =
+M (Q), as was needed.                                                              
+
+In the proof we used the “geometrically obvious” fact that a hypersurface bisecting
+the unit cube must have large surface area inside the cube. For a discussion of
+this in the context of the unit ball, see Lemma 11 in the Appendix. Note that in
+the statements of both Theorem 2 and Proposition 1, a polynomial has the desired
+properties if and only if any non-zero scalar multiple of it does; for this reason we
+may choose to search for a suitable polynomial within the unit sphere of the class
+of polynomials of a given degree.
+Proposition 1 is morally weaker than Theorem 2 because not only does it place
+stronger conditions on M , but more importantly, in many situations of interest, we
+have vis (Z ∩ Q) ≤ Cn Hn−1 (Z ∩ Q) – see (7) below.
+On an informal level, the fundamental difference between the proof of Theorem 2
+and that of Proposition 1 is that, roughly speaking, we no longer chop each cube
+Q into ∼ M (Q)n congruent subcubes, but we instead select, for each Q, an ellipsoid
+E(Q) of volume ∼ M (Q)−n , so that ∼ M (Q)n translates of E(Q) essentially tessel-
+late Q. However the shape and orientation of the ellipsoid E(Q0 ) will depend not
+only on the value of M (Q0 ) but on the whole ensemble {M (Q)}Q , and is in effect
+an output of the Borsuk–Ulam theorem at the same time as it produces the desired
+polynomial. At the risk of over-simplifying matters, we now give an informal exam-
+ple which illustrates why, if we want the broad thrust of the proof of Proposition
+1 to work in the context of Theorem 2, the shape of the ellipsoid selected must
+depend on the totality of the function M (Q). This example may be safely ignored
+on a first reading of the paper.
+Informal example. Let n = 2 and consider the function M (Q) which is supported
+on a row of N unit cubes centred at (k − 1/2, 1/2) for 1 ≤ k ≤ N , and takes the
+                                          P             1/2
+value N 1/2 on each of these cubes. Then      Q M (Q)
+                                                       2
+                                                              = N . Consider the
+polynomial
+    p(x) = (x1 − 1) . . . (x1 − N ) · (x2 − 1/2N )(x2 − 3/2N ) . . . (x2 − (2N − 1)/2N )
+which has degree 2N , and let Z denote its zero set. For a subset Z ′ ⊆ Z of Z, and
+for each Q2 in the support of M , consider the projections counted with multiplicities
+
+  2In this example we assume that the right-hand edge of a rectangle belongs to the rectangle
+while the left-hand edge does not.
+                       MULTILINEAR KAKEYA VIA BORSUK–ULAM                           5
+
+
+of Z ′ ∩ Q, in the directions of the two standard basis vectors e1 and e2 ; let their
+total lengths be a1 (Z ′ ∩ Q) and a2 (Z ′ ∩ Q) respectively, and let
+                       W (Z ′ ∩ Q) := {a1 (Z ′ ∩ Q)a2 (Z ′ ∩ Q)}1/2
+be their geometric mean. Now it transpires that the quantity W (Z ′ ∩ Q) is closely
+related to vis(Z ′ ∩ Q) – see Section 3 below – and we shall pretend (for the rest of
+this example) that W really is the visibility. Note that if Z1 and Z2 are disjoint
+subsets of Z ∩ Q we have3
+                             W (Z1 ∪ Z2 ) ≥ W (Z1 ) + W (Z2 ).
+Now a1 (Z ∩ Q) = 1 and a1 (Z ∩ Q) = N so that W (Z ∩ Q) = N 1/2 . We consider
+whether it is possible to break up each Q into rectangles Rj of area 1/N so that
+                                                       1/2
+if p bisects each
+              P rectangle then we can deduce that N        = W (Z ∩ Q) by using
+W (Z ∩ Q) ≥ j W (Z ∩ Rj ).
+Firstly, we could break up Q into subcubes Rj of side N −1/2 . Now for all Rj except
+those which meet the right-hand edge of Q we shall have W (Z ∩ Rj ) = 0, while for
+those which do meet the right hand edge of Q we have W (Z ∩ Rj ) = N −1/4 , which
+                         P
+only gives W (Z ∩ Q) ≥ j W (Z ∩ Rj ) = N 1/4 ; this is not adequate.
+Next, we could try breaking up Q into vertical rectangles Rj of sides 1/N × 1. Only
+the rectangle R0 meeting the right-hand edge of Q willP have a non-zero value of
+W (Z ∩ Rj ), and W (Z ∩ R0 ) = 1, giving W (Z ∩ Q) ≥ j W (Z ∩ Rj ) = 1, which is
+even worse.
+Finally, we could try breaking up Q into horizontal rectangles Rj of sides 1 × 1/N .
+In this case each W (Z ∩ Rj ) = N −1/2 , resulting in the desired W (Z ∩ Q) ≥
+P                    1/2
+  j W (Z ∩ Rj ) ≥ N      .
+So only the third decomposition into horizontal rectangles is compatible with our
+needs. Once we have accepted that the polynomial p above is more or less “canon-
+ical” for this M , we are essentially forced to break up each Q into horizontal rect-
+angles of sides 1 × 1/N in order for our strategy to be successful. Crucially, observe
+that this decomposition reflects the global shape of the function M : if the support
+of M had been along the x2 -axis we would have had to instead decompose each
+Q into vertical rectangles. The decomposition must therefore be aligned with the
+“global profile” of M .                                                             
+
+To simplify the constructions in the proof we actually stop just short of fully devel-
+oping the moral outline given above. In fact we do not spend any time constructing
+ellipsoids at the scale ∼ M (Q)−n which would be needed to really nail down the
+zero set of the polynomial we get from the Borsuk–Ulam theorem. Instead we let
+ourselves be satisfied with finding a good polynomial p with zero set Zp which satis-
+fies a given lower bound on the visibility vis (Zp ∩Q) for all cubes Q. This we get by
+constructing ellipsoids for all bad polynomials, which are those polynomials whose
+zero sets have visibility less than desired on some cube. Using these ellipsoids we
+show that the bad polynomials cannot cover the unit sphere in the space of poly-
+nomials and in this way we see that there must be a good polynomial, which gives
+the lower bounds mentioned above. Herein lies the reason for using the covering
+
+  3The corresponding property for visibility fails.
+6               ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+statement instead of the Borsuk–Ulam theorem itself. This very informal outline
+is developed more fully in Section 6.
+For completeness, we also indicate in the following sections how Theorem 1 follows
+from Theorem 2, so that we give what is in essence a fully self-contained proof of
+Theorem 1 (subject to the appeal to the Borsuk–Ulam theorem). Throughout, C
+and c will denote generic constants which depend only on the dimension n and the
+degree of multilinearity d ≤ n; P . Q and P & Q mean P ≤ CQ and P ≥ CQ
+respectively, and P ∼ Q means both P . Q and P & Q.
+Acknowledgements: Both authors would like to thank Jon Bennett and Jim
+Wright for many illuminating conversations on the topics of this paper, and helpful
+remarks on early drafts of it. The first author would like to thank Larry Guth for
+sharing his insights into the philosophy behind the endpoint multilinear Kakeya
+theorem in Hyderabad in August 2010.
+
+                           2. A Preliminary reduction
+
+Recall that we have collections Tj , 1 ≤ j ≤ d, of 1-tubes T in Rn with directions
+e(T ) ∈ Sn−1 . Let Q denote the lattice of unit cubes in Rn .
+Proposition 2. In order to prove Theorem 1, it suffices to establish the following
+assertion: for every finitely supported nonnegative function M : Q → R satisfying
+P          n
+   Q M (Q) = 1, there exist nonnegative functions Sj : Q × Tj → R such that for
+all Tj ∈ Tj with Tj ∩ Q 6= ∅,
+(2)            e(T1 ) ∧ · · · ∧ e(Td ) M (Q)n ≤ CS1 (Q, T1 ) . . . Sd (Q, Td )
+and, for all j and all Tj ∈ Tj
+                                     X
+(3)                                             Sj (Q, Tj ) ≤ C.
+                                 Q : Tj ∩Q6=∅
+
+Proof. Firstly, if we can find Sj as in the statement of the proposition, homogeneity
+dictates that for every finitely supported nonnegative function M : Q → R there
+exist nonnegative functions Sj : Q×Tj → R such that for all Tj ∈ Tj with Tj ∩Q 6= ∅,
+                                                                              (n−d)/n
+                                                                      X
+(4) e(T1 ) ∧ · · · ∧ e(Td ) M (Q)n ≤ CS1 (Q, T1 ) . . . Sd (Q, Td )    M (Q)n 
+                                                                          Q
+
+and, for all j and all Tj ∈ Tj
+                                                                    1/n
+                        X                                X
+(5)                                Sj (Q, Tj ) ≤ C          M (Q)n        .
+                    Q : Tj ∩Q6=∅                         Q
+
+
+Secondly, we note that by the l1 nature of the right hand side in Theorem 1, we
+may assume that the sets Tj are finite and that all the coefficients aTj are equal to
+1.
+For a unit cube Q let
+                                       X
+                   F (Q) =                            e(T1 ) ∧ · · · ∧ e(Td ).
+                             Tj ∈Tj with Tj ∩Q6=∅
+                           MULTILINEAR KAKEYA VIA BORSUK–ULAM                                   7
+
+
+It then suffices to prove
+                      X                                                   1/(d−1)
+                                F (Q)1/(d−1) ≤ C (#T1 . . . #Td )                   .
+                           Q
+
+Let M (Q)n = F (Q)1/(d−1) = F (Q)(1/(d−1)−1/d)d, so that
+    X                  X
+        F (Q)1/(d−1) =    F (Q)1/d M (Q)n/d
+      Q                          Q
+                                                           1/d
+      X                 X
+  =                                   e(T1 ) ∧ · · · ∧ e(Td )       M (Q)n/d
+      Q         Tj ∈Tj with Tj ∩Q6=∅
+                                                                         1/d
+      X                 X
+  =                                   e(T1 ) ∧ · · · ∧ e(Td ) M (Q)n 
+      Q         Tj ∈Tj with Tj ∩Q6=∅
+                                                                              (n−d)/n 1/d
+      X                X                                              X                 
+≤C                                    S1 (Q, T1 ) . . . Sd (Q, Td )    M (Q)n         
+      Q         Tj ∈Tj with Tj ∩Q6=∅                                      Q
+                                                     1/d          (n−d)/dn
+      X         d
+                Y           X                               X
+=C                                        Sj (Q, Tj )      M (Q)n 
+      Q         j=1 Tj ∈Tj with Tj ∩Q6=∅                          Q
+                                                     1/d          (n−d)/dn
+      d
+      Y         X           X                               X
+≤C                                        Sj (Q, Tj )      M (Q)n 
+      j=1        Q Tj ∈Tj with Tj ∩Q6=∅                           Q
+                                                  1/d                      (n−d)/dn
+      d
+      Y         X           X                                 X
+=C                                      Sj (Q, Tj )            M (Q)n 
+      j=1       Tj ∈Tj Q with Tj ∩Q6=∅                        Q
+                        1/n          (n−d)/dn
+   d
+   Y            X              X
+           1/d 
+≤C   (#Tj )       M (Q)n       M (Q)n 
+      j=1                  Q                      Q
+                              1/d
+   d
+   Y            X
+=C   (#Tj )1/d   F (Q)1/(d−1) 
+      j=1                  Q
+
+where the inequalities follow from (4), Hölder’s inequality and (5) respectively.
+Rearranging, we obtain
+                                    (d−1)/d
+                    X                             Yd
+                                                           1/d
+                        F (Q)1/(d−1)         ≤C     (#Tj ) ,
+                            Q                                     j=1
+
+from which the result follows.                                                                  
+
+Interestingly, the line of argument here can be reversed in certain circumstances:
+assuming that the special case of the multilinear Kakeya theorem for transverse
+8                 ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+families of tubes Tj holds, it follows that for all M one can find Sj satisfying (4)
+and (5). See [8] for more details.
+
+                   3. Directional surface area and visibility
+
+We follow Guth [10] and Bourgain–Guth [5] in defining the functions Sj and es-
+tablishing their desired properties (2) and (3). In order to do this some geometric
+notions are required. We first recall the notion of directional surface area (termed
+“directed volume” by Guth) of a hypersurface Z ⊆ Rn in the direction of a unit
+vector e. If the element of surface area of Z is denoted by dS = dHn−1 |S , and e is
+a unit vector, the element of the component of surface area of Z perpendicular to
+e is |e · n(x)|dS(x) where n(x) is the unit normal at x (which is assumed to make
+sense for Hn−1 –almost every x ∈ Z). Thus the directional surface area of Z in
+the direction e ∈ Sn−1 is defined as
+                                        Z
+                            surfe (Z) =   |e · n(x)| dS(x).
+                                               Z
+ If Z is given by the graph of a function Γ : Ω ⊆ Rn−1 → R above the hyperplane
+ xn = 0, then its directional surface area in the direction en is simply the (n − 1)-
+ dimensional area of Ω. If Z is given by disjoint graphs of functions above the
+Rhyperplane xn = 0 then its directional surface area in the direction en is just
+  Rn−1 J(y) dy where J(y) is the number of times the line through y parallel to
+en passes through Z. These considerations lead immediately to Guth’s “cylinder
+estimate”:
+Lemma 1 (Guth’s cylinder estimate). If T is a 1-tube in Rn and Z = {x : p(x) =
+0} is the zero hypersurface of a non-zero polynomial p of degree at most k, then
+                                    surf e(T ) (Z ∩ T ) ≤ Ck.
+
+Secondly, we associate a fundamental centrally-symmetric convex body K(Z) to a
+hypersurface Z. Indeed, with B denoting the unit ball of Rn , define
+(6)                       K(Z) := {u ∈ B : surfub (Z) ≤ 1/|u|}.
+Here u b is the unit vector in the direction of u. (Notice that if Z is such that
+surfe (Z) ≥ 1 for all unit vectors e, then the requirement that u lie in B is superflu-
+ous.) It is clear that K(Z) is symmetric. To R see that it is in fact convex, note that
+u satisfies surfub (Z) ≤ 1/|u| if and only if Z |u · n| dS ≤ 1; this condition is clearly
+retained under convex combinations of u’s. We then define 4 the visibility of Z as
+                                                           −1/n
+                                  vis(Z) := (vol K(Z))            .
+Note that since K(Z) ⊆ B we always have vis(Z) ≥ C.
+The next lemma allows us to relate visibilty to geometric means of directional
+surface areas.
+   4Guth’s definition of visibility is the n’th power of the one given here, but we find the current
+definition more natural for three reasons: firstly it allows us to emphasise the “Ln ”-aspect of the
+statement of Theorem 2 which, at least when n = d, is no coincidence, and is a reflection of the
+fact that the optimal Lp estimate for the linear Kakeya problem in Rn is conjectured to be at
+p = n; secondly it scales roughly as does (n − 1)-dimensional Hausdorff measure which permits the
+comparison with Proposition 1; and thirdly, in the theory of finite-dimensional Banach spaces, if
+K is a convex body in isotropic position, the quantity (vol K)−1/n arises naturally as its isotropic
+constant.
+                        MULTILINEAR KAKEYA VIA BORSUK–ULAM                                            9
+
+
+Lemma 2. Suppose that for all unit vectors e ∈ Rn we have 1 . surf e (Z) . D. If
+v1 , . . . , vd , (1 ≤ d ≤ n) are unit vectors, then
+                             1/n                                                            1/n
+        (v1 ∧ · · · ∧ vd )         vis(Z) ≤ CD(n−d)/n (surf v1 (Z) . . . surf vd (Z))             .
+Proof. We may assume that {v1 , . . . , vd } is linearly independent and we extend it to
+a basis {v1 , . . . , vn } where vd+1 , . . . , vn are mutually orthogonal unit vectors which
+are also orthogonal to the span of {v1 , . . . , vd }.
+Since surfe (Z) & 1 for all e, we have that ±cvj / surf vj (Z) ∈ K(Z) for all j, so that
+by convexity of K(Z)
+                                              n
+                                              Y
+        vol K(Z) ≥ C v1 ∧ · · · ∧ vn                surf vj (Z)−1
+                                              j=1
+                                              d
+                                              Y                      n
+                                                                     Y
+                    = C v1 ∧ · · · ∧ vd             surf vj (Z)−1           surf vj (Z)−1
+                                              j=1                   j=d+1
+                                                         d
+                                                         Y
+                    ≥ CD−(n−d) v1 ∧ · · · ∧ vd                 surf vj (Z)−1 ,
+                                                         j=1
+
+from which the result follows.                                                                        
+
+It is not hard to show that under the assumption that surfe (Z) & 1 for all e,
+                                                 n
+                                                 Y
+                                      vis(Z) ∼         surfej (Z)1/n
+                                                 j=1
+
+where e1 , . . . , en are the principal directions of the John ellipsoid associated to K(Z)
+(i.e. the ellipsoid of maximal volume contained in K(Z) – see [11]) and hence
+                                                        Yn
+(7)              vis(Z) ∼                  inf              surffj (Z)1/n
+                               {fj } approx orthonormal j=1
+
+where we say that the unit vectors f1 , . . . , fn are “approximately orthonormal” if
+their wedge product satisfies f1 ∧ · · · ∧ fn ≥ cn for a suitable dimensional constant
+cn . By the arithmetic-geometric mean inequality the right-hand side of (7) is in
+turn dominated by Hn−1 (Z). This shows in particular that Theorem 2 is morally
+stronger than Proposition 1.
+The John ellipsoid E of a symmetric convex body K satisfies E ⊆ K ⊆ n1/2 E, and
+combining the latter inclusion with Lemma 1 we obtain:
+Lemma 3. Let p be a non-zero polynomial such that for some unit vector e,
+surf e (Zp ∩ Q) . 1. Then
+                                    vis(Zp ∩ Q)n/(n−1) ≤ C deg p.
+Proof. Let E be the John ellipsoid associated to K(Zp ∩ Q) and let l1 ≥ l2 ≥
+· · · ≥ ln be the lengths of the principal axes of E. Let A = vis(Zp ∩ Q). By
+hypothesis and the fact that K(Zp ∩ Q) ⊆ n1/2 E, we have l1 & 1. Moreover we
+have (l1 . . . ln )−1/n ∼ A, so l2 . . . ln . A−n and therefore ln . A−n/(n−1) . So if en is
+the direction with which ln is associated, we have that surf en (Zp ∩ Q) & An/(n−1) .
+The cylinder estimate now gives deg p & An/(n−1) .                                        
+10                ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+In order to deal with a continuity issue later in the argument (in Lemma 10 of
+Section 9), we need (as does Guth) to define variants of the directional surface area
+and visibility which are continuous functionals of Z = Zp when the polynomial p is
+allowed to vary. In view of the fact that the class of polynomials with the desired
+properties for Theorem 2 is invariant under multiplication by non-zero scalars, it
+is natural to consider the unit sphere of the class Pk of polynomials of degree at
+most k in n real variables. Indeed, Pk is a vector space of dimension ∼ k n , and so
+its unit sphere Pk∗ is homeomorphic to SN where N = N (k) ∼ k n . So with k fixed,
+we allow p to vary within Pk∗ .5 The continuity property needed is most simply
+achieved by replacing surfe (Z) for surfaces of the form Z = Zp ∩ U (where p ∈ SN
+and U is open in Rn ) by surf e,ε (Z) which we define as the average of surfe (Z ′ ) with
+Z ′ = Zp′ ∩ U over p′ in a ball of radius ε centred at p in SN . From this we define
+Kε (Z) and visε (Z) in analogy to K(Z) and vis(Z). In the argument we will have
+to choose ε sufficiently small so that these entities behave in certain ways similarly
+to the unmollified versions.
+It is a routine matter to verify that Kε (Z) is convex and that the three lemmas
+of this section hold with these mollified variants. To be precise, fixing k and the
+associated definitions of surf e,ε (Z), Kε (Z) and visε (Z) as above for Pk∗ , we have,
+(with implicit constants independent of ε > 0):
+Lemma 4. If T is a 1-tube in Rn and Z = {x : p(x) = 0} is the zero hypersurface
+of a polynomial p ∈ Pk∗ , then for all ε > 0,
+                                         surf e(T ),ε (Z ∩ T ) ≤ Ck.
+Lemma 5. Suppose that p ∈ Pk∗ and that Z = Zp ∩ U as above. Also suppose
+that for some ε > 0 and all unit vectors e ∈ Rn we have 1 . surf e,ε (Z) . D. If
+v1 , . . . , vd , (1 ≤ d ≤ n) are unit vectors, then,
+                            1/n                                                            1/n
+       (v1 ∧ · · · ∧ vd )         visε (Z) ≤ CD(n−d)/n (surf v1 ,ε (Z) . . . surf vd ,ε (Z))     .
+Lemma 6. Suppose p ∈ Pk∗ is such that for some ε > 0 and some unit vector e,
+surf e,ε (Zp ∩ Q) . 1. Then
+                                       visε (Zp ∩ Q)n/(n−1) ≤ Ck.
+
+The reader may wish to proceed with the unmollified variants in mind on a first
+reading.
+
+        4. Application of the main result to multilinear Kakeya
+The version of Theorem 2 that we will actually need is:
+Theorem 3. Given a nonnegative function M : Q → R, there exists a nonnegative
+integer k, a polynomial p ∈ Pk∗ and an ε > 0 such that
+                                               1/n
+                                     X
+                             k ≤C       M (Q)n 
+                                                   Q
+
+
+   5From now on we shall use the notations P ∗ and SN where N = N (k) interchangeably, the
+                                               k
+former when we are thinking of individual polynomials, the latter when continuity and topological
+considerations are foremost.
+                           MULTILINEAR KAKEYA VIA BORSUK–ULAM                                  11
+
+
+and such that for all Q ∈ Q
+                                    visε (Zp ∩ Q) ≥ CM (Q).
+(Note that since it is always the case that visε (Zp ∩ Q) & 1, the latter condition
+has content only for those Q with M (Q) & 1.)
+In this section we show how this result implies the conditions of Proposition 2,
+that
+P is, given    a finitely supported nonnegative function M : Q → R satisfying
+           n
+   Q M  (Q)  = 1, there exist nonnegative functions Sj : Q × Tj → R such that (2)
+and (3) hold.
+                                                                  P
+Given such a finitely supported nonnegative function M (Q) with Q M (Q)n = 1,
+we define M0 (Q) = λM (Q) for some λ ≫ 1 which is required to satisfy λ ≥ M (Q)−n
+for all Q in the support of M . Apply Theorem 3 with data M0 to obtain a k, a
+p ∈ Pk∗ and an ε > 0 such that
+(8)                                          k ≤ Cλ
+and
+(9)                                visε (Zp ∩ Q) ≥ CλM (Q).
+
+Using (8), (9) and our requirement on λ, we have
+                 k ≤ Cλ = Cλn/(n−1) λ−1/(n−1)
+                                     n/(n−1)
+                        visε (Zp ∩ Q)                  −1/(n−1)
+                   ≤C                          M (Q)−n
+                            M (Q)
+                   = C visε (Zp ∩ Q)n/(n−1) .
+
+Using Lemma 6 we deduce that for all cubes Q in the support of M and all unit
+vectors e we have surf e,ε (Zp ∩Q) & 1.6 This in turn will permit us to apply Lemma 5
+(relating visibility to geometric means of directional surface areas) below.
+We turn to the verification of (3). By Lemma 4 and (8) we have, for all e ∈ Sn−1 ,
+(10)                                 surf e,ε (Zp ∩ Q) ≤ Cλ
+and moreover
+            X
+(11)                       surfe(Tj ),ε (Zp ∩ Q) ≤ C surfe(Tj ),ε (Zp ∩ T̃j ) ≤ Ck ≤ Cλ,
+            Q : Q∩Tj 6=∅
+
+(where T̃ denotes the expansion of a tube T about its axis by a dimensional factor).
+We now define
+                       Sj (Q, Tj ) := λ−1 surfe(Tj ),ε (Zp ∩ Q)
+and observe that (11) immediately implies
+                                 X
+                                        Sj (Q, Tj ) ≤ C,
+                                   Q : Q∩Tj 6=∅
+
+which establishes (3).
+   6Another way of achieving this is to multiply the polynomial which Theorem 3 produces with
+a polynomial whose zero set consists of hyperplanes parallel to the coordinate hyperplanes which
+pass through the cubes in the support of M . This has an insignificant effect on the degree of the
+polynomial provided λ is large enough. However, some care must be taken when considering how
+this augmentation interacts with the mollification.
+12                ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+On the other hand, to see that (2) is satisfied, note that (9) and (10) together with
+Lemma 5 give
+                                                                                        1/n
+                           Cλ(n−d)/n surf e(T1 ),ε (Zp ∩ Q) . . . surf e(Td ),ε (Zp ∩ Q)
+CλM (Q) ≤ visε (Zp ∩Q) ≤                                               1/n
+                                                                                             ,
+                                              (e(T1 ) ∧ · · · ∧ e(Td ))
+and so
+                                                        d
+                                                        Y
+                  S1 (Q, T1 ) . . . Sd (Q, Td ) = λ−d         surfe(Tj ),ε (Zp ∩ Q)
+                                                        j=1
+is at least
+       Cλ−d λn M (Q)n λd−n e(T1 ) ∧ · · · ∧ e(Td ) = CM (Q)n e(T1 ) ∧ · · · ∧ e(Td ),
+and thus (2) is established.
+Consequently, the multilinear Kakeya theorem is reduced to proving Theorem 3.
+
+              5. The Borsuk–Ulam theorem and a covering lemma
+The Borsuk–Ulam theorem is as follows:
+Theorem 4 (Borsuk–Ulam). Suppose that N ≥ J and that F : SN → RJ is
+continuous and satisfies F (−x) = −F (x) for all x ∈ SN . Then there is an x ∈ SN
+such that F (x) = 0.
+For a delightful discussion of this theorem and its applications, see [12]. See also [7]
+for a recent proof of the Borsuk–Ulam theorem using only point-set topology and
+Stokes’ theorem. Included in [12] there is a discussion of various equivalent forms
+of this theorem, some of which (known as Lusternik–Schnirelmann results) take the
+form of covering statements for the sphere. In this section we formulate another
+such equivalent covering statement which we shall use in our proof of Theorem 3.
+Lemma 7. Suppose that Ai ⊆ SN for 1 ≤ i ≤ J, and suppose that for each i,
+Ai ∩ (−Ai ) = ∅. If J ≤ N , then the 2J sets Ai and −Ai do not cover SN .
+Note that no topological hypothesis on the sets Ai is needed.
+Proof. Let Fi (x) = d(x, −Ai ) − d(x, Ai ) for 1 ≤ i ≤ J. Then, with F : SN → RJ
+defined by F (x) = (F1 (x), . . . , FJ (x)), we have that F is continuous and F (−x) =
+−F (x) for all x, so by the Borsuk–Ulam theorem there is an x with F (x) = 0. We
+claim that this x does not belong to any Ai or to −Ai . For if x ∈ Ai we have
+d(x, Ai ) = 0, hence d(x, −Ai ) = 0, hence x ∈ −Ai , a contradiction. Likewise, since
+by hypothesis Ai ∩ (−Ai ) = ∅, x ∈ −Ai gives x ∈ Ai , another contradiction.         
+
+Remark. The converse argument also holds: if we assume the assertion of the
+lemma, but only for open sets Ui , we can recover the Borsuk–Ulam theorem. Indeed,
+suppose F : SN → RJ is continuous, F (−x) = −F (x) and N ≥ J. Let Ui be the
+open set {x : Fi (x) > 0}. Then −Ui = {x : Fi (x) < 0}, so that −Ui ⊆ {x :
+Fi (x) ≤ 0} and so Ui ∩ (−Ui ) = ∅. By assumption there is an x which is not in any
+of the Ui or −Ui . So Fi (x) ≤ 0 for all i and Fi (x) ≥ 0 for all i. Hence Fi (x) = 0
+for all i, that is, F (x) = 0.7
+   7That the assertion of Lemma 7 for open sets U logically implies the same statement for sets
+                                                     i
+Ai with no topological restrictions can easily be seen directly from the fact that the metric space
+                          MULTILINEAR KAKEYA VIA BORSUK–ULAM                                    13
+
+
+                        6. Outline of the proof of Theorem 3
+We now describe the scheme of the proof of Theorem 3. The function M is given,
+and we will be working with the class Pk∗ = SN of normalised polynomials p : Rn →
+R of degree bounded by some k ∈ N. Recall that N ∼ k n . For each such polynomial
+p, its zero set is the algebraic hypersurface Zp = {x : p(x) = 0}, and we let
+                         S(Q) = {p ∈ Pk∗ : visε (Zp ∩ Q) ≤ M (Q)}.
+                                                                        P
+Following Guth [10], the aim is to show that if we take a suitable k ∼ ( Q M (Q)n )1/n ,
+and a suitable ε > 0, then we can find a polynomial in Pk∗ which is not in any of
+the S(Q). (Note that S(Q) = ∅ for those Q such that M (Q) . 1.) Our method to
+establish this diverges somewhat from that of Guth, but there are of course many
+points of contact between the two lines of argument.
+Let, for r ≥ 0,
+                      S (r) (Q) = {p ∈ Pk∗ : visε (Zp ∩ Q) ∼ 2−r M (Q)}.
+Then                                             [
+                                  S(Q) =                  S (r) (Q)
+                                             1.2r .M(Q)
+          (r)                            r
+since S         (Q) = ∅ for r such that 2 & M (Q).
+We shall introduce a collection C of “colours” Θ whose cardinality is bounded by
+C. For each colour Θ we shall define subsets S (r),Θ (Q) of S (r) (Q) which have the
+property that
+                                         [
+(12)                         S (r) (Q) =   S (r),Θ (Q).
+                                                 Θ∈C
+
+For each fixed Q and r such that 1 . 2r . M (Q) we will define an indexing set
+                                                                     (r),Θ
+AQ,r of cardinality C2−rn M (Q)n , and for each α ∈ AQ,r , a subset Sα (Q) of
+  (r),Θ
+S       (Q) such that
+                                        [
+(13)                     S (r),Θ (Q) =       Sα(r),Θ (Q).
+                                               α∈AQ,r
+
+To ensure that this decomposition is well-defined, it will transpire that ε must be
+taken to be small.
+                                         (r),Θ
+Finally we shall decompose each Sα               (Q) as
+                            Sα(r),Θ (Q) = Sα(r),Θ+ (Q) ∪ Sα(r),Θ− (Q),
+where
+(14)                              Sα(r),Θ− (Q) = −Sα(r),Θ+(Q)
+in such a way that for all Q, r, Θ and α,
+                                                   (r),Θ−
+(15)                            Sα(r),Θ+ (Q) ∩ Sα           (Q) = ∅.
+
+(The closure here refers to the natural topology of Pk∗ = SN .)
+
+SN satisfies appropriate separation axioms. More precisely, if two subsets A and B of a metric
+space are separated in the sense that the closure of either does not meet the other, then there are
+open sets U and V with the same property such that A ⊆ U and B ⊆ V .
+14                ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+The reason for the introduction of colours is to ensure that there is sufficient sepa-
+                         (r),Θ±
+ration between the sets Sα      (Q) and their antipodes for (15) to hold.
+In summary then,
+       [         [            [        [     [                                   
+(16)      S(Q) =                                       Sα(r),Θ+ (Q) ∪ Sα(r),Θ− (Q) ,
+           Q           Q 1.2r .M(Q) Θ∈C α∈AQ,r
+
+        (r),Θ+            (r),Θ−
+where Sα         (Q) and Sα        (Q) satisfy (14) and (15).
+Lemma 7 then implies that if the cardinality of the set indexing the union on the
+right hand side of (16) is less than or equal to N , then the sets in the union cannot
+cover SN = Pk∗ .
+Now the number of terms indexing the union is at most
+          XX X X                  XX                     X
+        C                   1≤C          2−rn M (Q)n ≤ C   M (Q)n .
+               Q r≥0 Θ∈C α∈AQ,r            Q r≥0                        Q
+                         P
+So provided that N & Q M (Q) , amongst the polynomials in SN = Pk∗ , there
+                                       n
+
+will exist one which is not in any of the S(Q). Since N ∼ k n , we can therefore
+                P             1/n
+take k with k ∼     Q M  (Q) n
+                                    and a p ∈ Pk∗ which, for suitable ε > 0, satisfies
+visε (Zp ∩ Q) > M (Q) for all Q, as was needed.
+It remains now to define the various decompositions introduced above, and establish
+the assertions we have made concerning them.
+
+                                       7. Colours
+In this section we describe how to establish (12) in such a way that the indexing
+set C has cardinality at most C.
+Let E denote the class of centred ellipsoids in Rn , that is images of the unit ball
+B by affine linear maps A. Each ellipsoid A(B) is determined by an orthonormal
+basis of principal axes or directions given by the normalised eigenvectors of At A,
+and corresponding semiaxes, the squares of whose lengths are the eigenvalues of
+At A. Thus E is a manifold of dimension n(n − 1)/2 + n = n(n + 1)/2.
+Let K denote the class of centrally symmetric convex bodies in Rn . By the John
+ellipsoid theorem [11], every member K of K is close to some ellipsoid E in the
+sense that n−1/4 E ⊆ K ⊆ n1/4 E.
+There is a natural metric (the Banach–Mazur metric) to put on the class K, given
+by
+                   d(K, L) = log inf{α ≥ 1 : α−1 K ⊆ L ⊆ αK}.
+The John ellipsoid theorem asserts that every convex body is distant at most
+(log n)/4 . 1 from some ellipsoid. An ellipsoid with semiaxes of lengths 2k1 , . . . , 2kn
+where k1 +· · ·+kn = 0 will be distant . max |kj | from the unit ball. Two congruent
+ellipses in R2 with semiaxes of lengths 1 and N and principal directions differing
+by θ will be distant . θN apart.
+To set the scene for the covering property of ellipsoids that we need, note that in
+RN , given a scale ρ > 0 and a pre-assigned number γ > 1, we can find a set X of
+ρ-separated points xi ∈ RN such that every point of RN is in some B(xi , ρ), and
+such that X can be partitioned into ON (γ N ) families (colours), so that points of X
+                      MULTILINEAR KAKEYA VIA BORSUK–ULAM                               15
+
+
+of the same colour are distant at least γρ from each other. This property expresses
+the idea that the dimensionality of RN as a metric space is N . We can then assign
+to each x ∈ RN one or more colours according to whether d(x, xi ) < ρ for some
+xi ∈ X of that particular colour.
+Similarly it is not hard to verify that given ρ > 0 and γ > 1, there exists a ρ-
+separated subset E0 of E such that {B(E, ρ) : E ∈ E0 } covers E and such that we
+can partition E0 into at most On (γ n(n+1)/2 ) families (colours) such that any two
+ellipsoids in E0 of the same colour are distant at least γρ from each other.
+Choosing ρ = 1 and γ sufficiently large depending only on the dimension n, and
+using the John ellipsoid theorem, we obtain the following:
+Lemma 8. Supose αn > 1 is sufficiently large. Then there exists a set E0 ⊆ E with
+the property that for every K ∈ K there is an E ∈ E0 such that
+(17)                              α−1
+                                   n K ⊆ E ⊆ αn K
+
+and such that the set E0 can be partitioned into at most C = C(n, αn ) colours in
+such a way that every K ∈ K satisfies (17) for at most one E ∈ E0 of a given
+colour.
+
+Given n we now fix αn sufficiently large, and fix our palette C consisting of at most
+C(n, αn ) colours once and for all so that the conclusion of Lemma 8 holds. We say
+that two convex bodies E and K are close if (17) holds. So every K ∈ K is close
+to some member of E0 , but there is at most one E ∈ E0 of a given colour to which
+it is close. For a colour Θ ∈ C let
+                           E0Θ = {E ∈ E0 : E is of colour Θ}.
+
+Finally, given Q and r ≥ 0, let
+       S (r),Θ (Q) = {p ∈ S (r) (Q) : Kε (Zp ∩ Q) is close to a member of E0Θ };
+then we have                                 [
+                               S (r) (Q) =         S (r),Θ (Q),
+                                             Θ∈C
+and (12) is established.
+
+                                    8. Translates
+We now fix Q, r ≥ 0 and a colour Θ ∈ C. In this section we establish (13) for
+                  (r),Θ
+suitable subsets Sα (Q) ⊆ S (r),Θ (Q) which are indexed by α ∈ AQ,r , where AQ,r
+has cardinality ∼ 2−rn M (Q)n . We can assume that S (r),Θ (Q) 6= ∅.
+If p ∈ S (r),Θ (Q), the convex body Kε (Zp ∩ Q) ⊆ B has volume ∼ 2rn /M (Q)n . 1,
+and it is close to a unique member E(p) of E0Θ of comparable volume. Hence we can
+fit ∼ 2−rn M (Q)n disjoint parallel translates of E(p) inside Q, with the translations
+along the principal directions of E(p). Likewise, if η < 1 is a numerical scaling
+factor, we can fit ∼ η −n 2−rn M (Q)n disjoint parallel translates of ηE(p) inside Q,
+with the translations again along the principal directions of E(p). Indeed, if the
+lengths of the semiaxes of E(p) are l1 , . . . , ln ≤ c, and the principal directions are
+e1 , . . . , en , we can place the centres of the translated copies of ηE(p) at the points
+16                ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+        P
+xQ + η j mj lj ej for mj ∈ 2Z and |mj | ≤ cη −1 lj−1 ; here xQ is the centre of Q. In
+this construction the number of translated copies equals the product
+(18)                        cη −n (l1 . . . ln )−1 = cη −n 2−rn M (Q)n .
+
+Lemma 9. There is a dimensional constant Cn such that if p ∈ S (r),Θ (Q) and
+η < 1, then Zp bisects at most Cn η −(n−1) 2−rn M (Q)n disjoint translates of ηE(p)
+in Q.
+Proof. Suppose that E(p) has principal directions {ej } and corresponding semiaxes
+with lengths {lj }. If Zp bisects a translate ηE(p) + ξ of ηE(p), then for at least one
+j we will have8
+       surfej (Zp ∩ (ηE(p) + ξ)) ≥ Cn vol(ηE(p) + ξ)/ηlj = Cn η n−1 vol E(p)/lj .
+This is just the affine-invariant formulation of the fact that a hypersurface which
+bisects the unit ball must have large (n − 1)-dimensional Hausdorff measure inside
+the ball – see Lemma 11 in the Appendix. So
+                   n
+                   X
+                         lj surf ej (Zp ∩ (ηE(p) + ξ)) ≥ Cn η n−1 vol E(p).
+                   j=1
+
+If now Zp bisects as many as A2−rn M (Q)n disjoint copies of ηE(p) in Q, we will
+have
+             Xn
+                 lj surf ej (Zp ∩ Q) ≥ Cn Aη n−1 vol E(p) 2−rn M (Q)n .
+                j=1
+
+
+If p′ is another polynomial in SN sufficiently close to p, and if p bisects an ellispoid
+E, we can conclude that p′ approximately bisects E in the sense that p′ is positive
+on at least 40% of E and negative on at least 40% of E. Since we are only interested
+in a finite number of ellipsoids here, namely the translates ηE + ξ for E ∈ E0 with
+M (Q)−n . vol E . 1 for the relevant Q, then by choosing ε small enough we will
+have this approximate bisection property for all polynomials which affect the value
+of surf e,ε in the expressions above. Therefore we have the estimate
+               n
+               X
+                     lj surf ej ,ε (Zp ∩ Q) ≥ Cn Aη n−1 vol E(p) 2−rn M (Q)n .
+               j=1
+
+
+The definition (cf. (6)) of Kε (Zp ∩ Q) together with the fact that Kε (Zp ∩ Q) and
+E(p) are close implies that
+                                   lj surf ej ,ε (Zp ∩ Q) ≤ Cn
+
+for each j, and moreover, as p ∈ S (r),Θ (Q),
+                                    vol E(p) ∼ 2rn /M (Q)n .
+Therefore A must satisfy A ≤ Cn η −(n−1) .                                                      
+
+   8Here and in the next two displayed equations we are using the unmollified notion of directional
+surface area surfe .
+                     MULTILINEAR KAKEYA VIA BORSUK–ULAM                              17
+
+
+Choose η sufficiently small so that Cn η < c. Here Cn is the constant from Lemma 9
+and c is the constant in (18). Then for each p ∈ S (r),Θ (Q), Zp can bisect only a
+proportion Cn η/c < 1 of the cη −n 2−rn M (Q)n disjoint copies of ηE(p) in Q. In
+particular, Zp will not bisect all of the available disjoint copies of ηE(p) in Q.
+For each E(p) ∈ E0Θ of volume ∼ 2rn /M (Q)n , the set of translated ellipsoids which
+are placed into Q in the construction above is of cardinality c2−rn M (Q)n . We
+label these ellipsoids with an index α from AQ,r = {1, . . . , c2−rn M (Q)n }. Now
+                         (r),Θ
+take a polynomial p ∈ Sα (Q). Then p is close to a unique member E(p) ∈ E0Θ of
+volume comparable to 2rn /M (Q)n and we can ask whether or not p bisects the α’th
+translate of ηE(p). Note that for this question to be meaningful the uniqueness in
+the previous sentence is important and if we had not already restricted attention
+to a single colour then the uniqueness would not hold.
+For α ∈ AQ,r we can thus define
+Sα(r),Θ (Q) := S (r),Θ (Q) ∩ {Zp does not bisect the α’th translate of ηE(p) in Q}
+
+Then, since Zp cannot bisect all of the translates of ηE(p) in Q, we have
+                                          [
+                          S (r),Θ (Q) =        Sα(r),Θ (Q)
+                                              α∈AQ,r
+                                  −rn
+as required, where there are c2         M (Q)n terms in the indexing set AQ,r . Thus
+(13) is established.
+
+                                      9. Antipodes
+
+In this section we establish (15).
+                                                          (r),Θ
+Fix Q, r ≥ 0, Θ ∈ C and α ∈ AQ,r . For p ∈ Sα (Q) let E(p) be as before the
+unique member of E0Θ to which Kε (Zp ∩ Q) is close. Let Eα = Eα (p) denote the
+α’th translate of ηE(p) in Q. Since Zp does not bisect Eα , we have either
+                     vol ({p > 0} ∩ Eα ) > vol({p < 0} ∩ Eα )
+                                     (r),Θ+
+(in which case we say that p ∈ Sα             (Q)), or
+                    vol ({p > 0} ∩ Eα ) < vol({p < 0} ∩ Eα ),
+                                     (r),Θ−
+(in which case we say that p ∈ Sα             (Q)).
+Then
+                       Sα(r),Θ (Q) = Sα(r),Θ+ (Q) ∪ Sα(r),Θ− (Q).
+Moreover
+                            Sα(r),Θ− (Q) = −Sα(r),Θ+ (Q),
+and so to establish (15) we wish to show that for all α,
+                                                 (r),Θ−
+                           Sα(r),Θ+ (Q) ∩ Sα              (Q) = ∅.
+
+To see this, suppose for a contradiction that for some α ∈ AQ,r there is a p ∈
+  (r),Θ+                             (r),Θ−
+Sα       (Q) and a sequence of pm ∈ Sα      (Q) which converges to p in SN . That
+is, we suppose that
+(19)              vol ({p > 0} ∩ Eα (p)) > vol({p < 0} ∩ Eα (p))
+18              ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+and
+              vol ({pm > 0} ∩ Eα (pm )) < vol({pm < 0} ∩ Eα (pm ))
+where pm converges to p in SN .
+Lemma 10. Fix Q, r and Θ. Suppose that p ∈ S (r),Θ (Q), pm ∈ S (r),Θ (Q) for
+m ∈ N and that pm converges to p in SN . Then for all sufficiently large m we
+                                                         (r),Θ
+have E(pm ) = E(p). If α ∈ AQ,r and in addition p, pm ∈ Sα (Q), then for m
+sufficiently large, Eα (pm ) = Eα (p).
+Proof. Since we are using the mollified version of the directional surface area and
+quantities defined in terms of it, the convergence of pm to p in SN implies that the
+convex bodies Kε (Zpm ∩ Q) converge to Kε (Zp ∩ Q) as m → ∞9 and in particular
+Kε (Zpm ∩ Q) and Kε (Zp ∩ Q) are close for m sufficiently large. Since p and pm
+are members of S (r),Θ (Q) then Kε (Zpm ∩ Q) and Kε (Zp ∩ Q) must be close to
+some member of E0Θ and thus, for m sufficiently large, they are close to the same
+member of E0Θ , which must be E(p). In particular, for m sufficiently large, we have
+E(pm ) = E(p) and consquently Eα (pm ) = Eα (p) for all α.                        
+(It is at the end of the proof of this lemma, and in the construction of the sets
+  (r),Θ
+Sα (Q), where the relevance of the earlier decomposition into colours becomes
+clear.)
+So, for m sufficiently large we have
+                vol ({pm > 0} ∩ Eα (p)) < vol({pm < 0} ∩ Eα (p))
+which, upon taking limits and using the fact that vol ({p = 0}) = 0 as p is non-zero,
+implies
+                vol ({p > 0} ∩ Eα (p)) ≤ vol({p < 0} ∩ Eα (p)),
+which is in contradiction with (19). Hence
+                                            (r),Θ−
+                            Sα(r),Θ+ (Q) ∩ Sα        (Q) = ∅,
+and we are therefore finished.
+
+                        10. Appendix – Bisecting balls
+
+In this appendix we indicate a simple proof of the (geometrically obvious) fact that
+a hypersurface which bisects the unit ball must have large surface area inside the
+ball. Let B be the closed unit ball in Rn and suppose p : Rn → R is a polynomial.
+Let
+                             E = {x ∈ B : p(x) ≤ 0}
+and
+                              F = {x ∈ B : p(x) ≥ 0}.
+Lemma 11. If vol (E) = a vol (B) and vol (F ) = b vol (B) where a + b = 1, then
+                                 1  (n−1)/n                 
+   Hn−1 ({x ∈ B : p(x) = 0}) >      a         + b(n−1)/n − 1 Hn−1 (Sn−1 ).
+                                 2
+   9in the sense that there is a sequence γ ≥ 1 with γ → 1 such that γ −1 K (Z
+                                           m          m               m    ε   pm ∩ Q) ⊆
+Kε (Zp ∩ Q) ⊆ γm Kε (Zpm ∩ Q)
+                        MULTILINEAR KAKEYA VIA BORSUK–ULAM                                       19
+
+
+Proof. It is easy to see that ∂E ∪ ∂F = Sn−1 ∪ (E ∩ F ) and ∂E ∩ ∂F = E ∩ F. Since
+           Hn−1 (∂E ∪ ∂F ) = Hn−1 (∂E) + Hn−1 (∂F ) − Hn−1 (∂E ∩ ∂F )
+and
+  Hn−1 (Sn−1 ∪ (E ∩ F )) = Hn−1 (Sn−1 ) + Hn−1 (E ∩ F ) − Hn−1 (Sn−1 ∩ E ∩ F )
+we have
+2Hn−1 (E ∩ F ) = Hn−1 (∂E) + Hn−1 (∂F ) − Hn−1 (Sn−1 ) + Hn−1 (Sn−1 ∩ E ∩ F ),
+and so
+                                 1                                      
+            Hn−1 (E ∩ F ) ≥        Hn−1 (∂E) + Hn−1 (∂F ) − Hn−1 (Sn−1 ) .
+                                 2
+By the isoperimetric inequality we have
+                            Hn−1 (∂E) ≥ a(n−1)/n Hn−1 (Sn−1 )
+and
+                          Hn−1 (∂F ) ≥ b(n−1)/n Hn−1 (Sn−1 ),
+(with strict inequality in at least one place) so that
+                                1  (n−1)/n               
+              Hn−1 (E ∩ F ) >      a        + b(n−1)/n − 1 Hn−1 (Sn−1 )
+                                2
+as required.                                                                                     
+
+Since for n ≥ 2 and 0 < a, b < 1 with a + b = 1 we have (a + b)(n−1)/n <
+a(n−1)/n + b(n−1)/n , this establishes the desired bound.
+
+The following question may be of interest. Let K ⊆ Rn be a symmetric convex
+body, which we can normalise so that its John ellipsoid is the unit ball. Within the
+class of polynomial hypersurfaces Z which cut K in the proportions a : b, how do
+we minimise the surface area of Z ∩ K?
+
+                                         References
+           [1] J. Bennett, A trilinear restriction problem for the paraboloid in R3 , Electron. Res.
+               Announc. Amer. Math. Soc. 10 (2004), 97 – 102.
+           [2] J. Bennett, A. Carbery and T. Tao, On the multilinear restriction and Kakeya
+               conjectures, Acta Mathematica 196, 2 (2006), 261 – 302.
+           [3] J. Bourgain, Moment inequalities for trigonometric polynomials with spectrum in
+               curved hypersurfaces, arXiv:1107.1129v1 [math.CA]
+           [4] J. Bourgain, On the Schrodinger maximal function in higher dimension,
+               arXiv:1201.3342v1 [math.AP]
+           [5] J. Bourgain and L. Guth, Bounds on oscillatory integral operators based on mul-
+               tilinear estimates, Geom. Funct. Anal. 21 (2011), no. 6, 1239 – 1295.
+           [6] J. Bourgain, P. Shao, C.D. Sogge and X. Yao On Lp -resolvent estimates and
+               the density of eigenvalues for compact Riemannian manifolds, arXiv:1204.3927v2
+               [math.AP]
+           [7] A. Carbery, The Brouwer fixed point theorem and the Borsuk–Ulam theorem,
+               arXiv:1205.4540v01 [math.AT]
+           [8] A. Carbery and S.I. Valdimarsson, Multilinear duality, manuscript in preparation.
+           [9] Z. Dvir, On the size of Kakeya sets in finite fields, J. Amer. Math. Soc. 22 (2009),
+               1093 – 1097.
+          [10] L. Guth, The endpoint case of the Bennett–Carbery–Tao multilinear Kakeya con-
+               jecture, Acta Mathematica 205 (2) (2010), 263 – 286.
+20              ANTHONY CARBERY AND STEFÁN INGI VALDIMARSSON
+
+
+         [11] F. John, Extremum problems with inequalities as subsidiary conditions, Studies
+              and essays presented to R. Courant on his 60th birthday, January 8, 1948, 187 –
+              204. Interscience Publishers, Inc., (New York NY), 1948.
+         [12] J. Matoušek, Using the Borsuk–Ulam theorem, Springer (Heidelberg), 2003.
+
+   Anthony Carbery, School of Mathematics and Maxwell Institute for Mathematical
+Sciences, University of Edinburgh, JCMB, King’s Buildings, Mayfield Road, Edinburgh,
+EH9 3JZ, Scotland.
+   E-mail address: A.Carbery@ed.ac.uk
+
+  Stefán Ingi Valdimarsson, Science Institute, University of Iceland, Dunhagi 3, 107
+Reykjavik, Iceland.
+  E-mail address: siv@hi.is
+
