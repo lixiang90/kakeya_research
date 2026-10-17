@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0060先周期macro/HRZ价值核验后§7转题，以majority projections+indexed critical/randomgrid完整付general n≥4、wholeaxis近realdim≤3 S、全部λ³/weightsα，具名OAI3critical/KR/Paw wholeproof仍依赖。ordinary高维未解。下一唯一 notes/00_map/R0060_next_full_density_source_norm_gate.md，50PDF/51sources/78IDs，Goal active。
+更新2026-10-18，R0061 phaseI真实范数/HRZ终端饱和后按spec§7转射影机制：固定格式≤3维joint line-parameter载体子类角恢复已付，完整PW4 adaptive未付。ordinary高维未解。下一唯一 notes/00_map/R0061_next_unrestricted_projective_rich_mass_gate.md，51PDF/52sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -130,3 +130,5 @@ R0058：非零offset原Q/D概率≤C√K[(ε/|c|)^(1/6)+√r]；nearzero同原g�
 R0059：全局Lip graph由regularcells+RCF统一格式付，原jointsemialgebraic PW传absolute3D凸浓集；原重数、平均heavy与真实measurablefiber阈值全收费，得到|unionYi|≥cδ^(n−1+ε)N。仅Yi近S足够，原物理δ方向分离或独立小loss absolutePW不可少。R55 angularcounter仍正确；全λ/weights/HRZ实际leaf未自动付，不能把k4/m3空broad终端当ordinary五维增益。
 
 R0060：sameπ多graph union逐点多数覆盖，同时保wholeTi/Yi常数体积，PW固定a1/2免λ^-n，投影indices全部保留；finite h0统一常数+共同randomshift格付任意Lebesgue fullCW cubic，f全levels/Jensen付全G3。旧R55angularcounter仍正确，R59仅Yi近S的全λ未冒用。HRZ局部ρ^(1−n)和parent/norm门槛不消失，无newordinary界/major认证。
+
+R0061：allλ→strongL3/2仅闭包，ρ/Kp/parent及flat H3⊂H4饱和冻结直接替换。新Σ子类用area/Crofton/原PW bad-mass+finiteclock/sameπ inverseGraphs/原jointballs实现原cap，不能把Σ授任意点族。完整projective因子化和transverse费用已核，无newordinary界/major认证；下一无Σ的全adaptive原质量门槛。
