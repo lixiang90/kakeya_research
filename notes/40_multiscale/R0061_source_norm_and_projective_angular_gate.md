@@ -1,3 +1,5 @@
+> R0062范围更新：本文Σ子类保持；当时未付的U4→fullgate逆向现由 notes/40_multiscale/R0062_finite_Nikodym_transfer_and_PW_responsibility.md 延轴/真实far-slice构造支付。三种gain表述同一主要障碍，未证明共同gain。
+
 # R0061：真实范数饱和与低复杂度直线参数的射影方向恢复
 
 2026-10-18，root整合。Goal active。working_spec先写、phase I失败后正式§7转题。以下区分旧输入的闭包、真实负向校准、经独立审查的受限几何结论和一般未证门槛。未经外部同行评审；不认证新颖性、重大性或高维猜想完成。

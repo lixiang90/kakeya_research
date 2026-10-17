@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0061 phaseI真实范数/HRZ终端饱和后按spec§7转射影机制：固定格式≤3维joint line-parameter载体子类角恢复已付，完整PW4 adaptive未付。ordinary高维未解。下一唯一 notes/00_map/R0061_next_unrestricted_projective_rich_mass_gate.md，51PDF/52sources/78IDs，Goal active。
+更新2026-10-18，R0062真实finiteNikodym/fixedR doubling及一般n同半径PW延轴log^n已付，fullprojective经far-slice真逆向识别为同unshadedPW4正幂问题，停止独立改名。ordinary高维未解。下一唯一 notes/00_map/R0062_next_macro_and_cross_carrier_selection.md，R63先周期macro，53PDF/53sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -132,3 +132,5 @@ R0059：全局Lip graph由regularcells+RCF统一格式付，原jointsemialgebrai
 R0060：sameπ多graph union逐点多数覆盖，同时保wholeTi/Yi常数体积，PW固定a1/2免λ^-n，投影indices全部保留；finite h0统一常数+共同randomshift格付任意Lebesgue fullCW cubic，f全levels/Jensen付全G3。旧R55angularcounter仍正确，R59仅Yi近S的全λ未冒用。HRZ局部ρ^(1−n)和parent/norm门槛不消失，无newordinary界/major认证。
 
 R0061：allλ→strongL3/2仅闭包，ρ/Kp/parent及flat H3⊂H4饱和冻结直接替换。新Σ子类用area/Crofton/原PW bad-mass+finiteclock/sameπ inverseGraphs/原jointballs实现原cap，不能把Σ授任意点族。完整projective因子化和transverse费用已核，无newordinary界/major认证；下一无Σ的全adaptive原质量门槛。
+
+R0062：四维weightedbase/commonrandomgrid保原Lebesgueλ5/单log，任意管族逐管nearfull fixedR doubling不需PW/Σ。一般n semi-shadow t^-n+PWmean→same-radius continuation/log^n；U4→farunit/slice/origheavy/outsidepole支付P4逆向，与S4同gain难题。旧projective独立方向冻结；无共同PW4/ordinary新界/major，下一必须真实跨carrier/多尺度新机制。

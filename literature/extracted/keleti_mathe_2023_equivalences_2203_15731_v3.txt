@@ -1,0 +1,884 @@
+                                                 EQUIVALENCES BETWEEN DIFFERENT FORMS OF THE KAKEYA
+                                                  CONJECTURE AND DUALITY OF HAUSDORFF AND PACKING
+                                                         DIMENSIONS FOR ADDITIVE COMPLEMENTS
+
+                                                                               TAMÁS KELETI AND ANDRÁS MÁTHÉ
+
+
+                                                    Abstract. The Kakeya conjecture is generally formulated as one the following statements: every
+                                                    compact/Borel/arbitrary subset of Rn that contains a (unit) line segment in every direction has
+                                                    Hausdorff dimension n; or, sometimes, that every closed/Borel/arbitrary subset of Rn that
+arXiv:2203.15731v3 [math.MG] 17 Jul 2023
+
+
+
+
+                                                    contains a full line in every direction has Hausdorff dimension n. These statements are generally
+                                                    expected to be equivalent. Moreover, the condition that the set contains a line (segment) in
+                                                    every direction is often relaxed by requiring a line (segment) for a “large” set of directions only,
+                                                    where large could mean a set of positive (n − 1)-dimensional Lebesgue measure.
+                                                       Here we prove that all the above forms of the Kakeya conjecture are indeed equivalent. In
+                                                    fact, we prove that there exist d ≤ n and a compact set C ⊂ Rn of Hausdorff dimension d
+                                                    that contains a unit line segment in every direction (and also a closed set of dimension d that
+                                                    contains a line in every direction) such that every set S ⊂ Rn that contains a line segment in
+                                                    every direction of a set of Hausdorff dimension n − 1, must have dimension at least d.
+                                                       A crucial lemma we use is the following: For every Borel set A ⊂ Rn of positive Lebesgue
+                                                    measure there exists a compact set E of upper Minkowski dimension zero such that the Minkowski
+                                                    sum A + E has non-empty interior.
+                                                       This lemma can be also used to obtain results on the duality of Hausdorff and packing
+                                                    dimensions via additive complements: For any non-empty Borel set A ⊂ Rn we show that
+                                                                     dimH A = n − inf{dimP B : B ⊂ Rn Borel, A + B = Rn }, and
+                                                                     dimP A = n − inf{dimH B : B ⊂ Rn Borel, A + B = Rn }.
+
+
+
+
+                                                                                          1. Introduction
+                                           1.1. Equivalent forms of the Kakeya conjecture. The Kakeya conjecture is a famous open
+                                           problem in geometric measure theory, related to harmonic analysis and additive combinatorics. It
+                                           is frequently stated in many different forms, most of which (at least the more conservative ones)
+                                           are generally expected to be to equivalent to each other. The aim of this paper is to show that
+                                           many of these are indeed equivalent.
+                                               Let us agree on what we mean by the Kakeya conjecture in this paper. We will say that a
+                                           subset of Rn is a Besicovitch set if it contains a unit line segment in every direction. The Kakeya
+                                           conjecture is the statement that every Besicovitch set has Hausdorff dimension n. This trivially
+                                           holds for n = 1, known to be true for n = 2 (Davies [4]) and open for n ≥ 3.
+                                               The Kakeya conjecture is sometimes stated for compact Besicovitch sets only. The variant in
+                                           which we require full lines instead of line segments also appears often (in which case, we might
+                                           want to require the set to be closed).
+                                               It is widely believed that all of these variants are equivalent. Moreover, it is also believed that
+                                           the condition of having a line segment in every direction can be relaxed: requiring a line segment
+                                           in a set of directions of positive (n − 1)-dimensional Lebesgue measure should give rise to an
+                                           equivalent conjecture. Those lower bounds for the Hausdorff dimension of compact Besicovitch
+                                           sets that are obtained via partial results for the Kakeya maximal function conjecture give the very
+                                           same bounds for compact sets that contain line segments in directions forming a set of positive
+                                           (n − 1)-dimensional Lebesgue measure.
+
+                                               2010 Mathematics Subject Classification. Primary 28A78; Secondary: 11B13.
+                                               Key words and phrases. Besicovitch set, Kakeya conjecture, Hausdorff dimension, packing dimension, duality,
+                                           Minkowski sum, sumset, additive complement.
+                                               This research was supported by the Hungarian National Research, Development and Innovation Office – NKFIH,
+                                           124749. The first author is grateful to the Alfréd Rényi Institute, where he was a visiting researcher during a part
+                                           of this project. He was also partially supported by the Hungarian National Research, Development and Innovation
+                                           Office – NKFIH, 104178.
+                                                                                                     1
+2                               TAMÁS KELETI AND ANDRÁS MÁTHÉ
+
+
+   In this paper we show that these forms of the Kakeya conjecture are equivalent. In fact, we
+prove that the Hausdorff dimension of all sets mentioned above (that could feature in a form of
+the Kakeya conjecture) are minimized by the Hausdorff dimension of a compact Besicovitch set.
+More precisely, we prove the following theorem.
+Theorem 1.1. For every n there is a unique real number d ≤ n with the following properties.
+  (1) There exists a compact Besicovitch set of Hausdorff dimension d, that is, a compact set
+      that contains a unit line segment in every direction.
+  (2) There exists a closed set of Hausdorff dimension d that contains a line in every direction.
+  (3) Let D be a set of directions (a subset of RPn−1 ) of Hausdorff dimension n − 1, and let S
+      be an arbitrary subset of Rn that contains a line segment in every direction of D. Then S
+      has Hausdorff dimension at least d.
+   In particular, this theorem implies that for every compact Besicovitch set there is a closed set
+of the same Hausdorff dimension that contains lines in every direction. It appears that this was
+not known. Our proof of this is rather short, the Baire category theorem in a carefully designed
+complete metric space gives this result (in Lemma 2.1).
+   In fact, it turns out that a typical compact Besicovitch set in the Baire category sense (see
+Section 2 for the precise setup) has the above minimal Hausdorff dimension d. This implies that it
+is enough to solve the Kakeya problem for compact Besicovitch sets that have the same properties
+as the typical compact Besicovitch sets. For example, it is not hard to show that in a typical
+compact Besicovitch set B ⊂ Rn the collection L of the lines of the unit line segments of B has
+Hausdorff dimension n − 1 and packing dimension 2n − 2. Thus it is enough to prove the Kakeya
+conjecture for compact Besicovitch sets with these properties. Recently, Wang and Zahl [16] posed
+the Sticky Kakeya conjecture, which is the dimP L = n − 1 special case of the Kakeya conjecture,
+and they proved it for the n = 3 case. As we saw above, the dimH L = n− 1 or the dimP L = 2n− 2
+special case would imply the Kakeya conjecture.
+   Some steps in the proof of Theorem 1.1 are of course straightforward, and some are not. For
+example, it is known that given an arbitrary Besicovitch set, there is always a Borel Besicovitch set
+with the same Hausdorff dimension (see the proof of Lemma 2.4). Given a Borel Besicovitch set
+B, one could hope that techniques from descriptive set theory could yield a compact Besicovitch
+set B ′ of the same dimension, perhaps as a subset of B. This is impossible. Still, this is almost
+what we do. The Borel Besicovitch set B can assumed to be Gδ (the intersection of countably
+many open sets). Then we can obtain a compact subset B ′ ⊂ B that contains unit line segments
+in directions of D, where D is some set of directions of positive (n − 1)-dimensional measure. So
+B ′ is compact, has small dimension, but does not contain line segments in every direction. One
+question remains: Given a set B ′ that contains many line segments, can we obtain a set B ′′ (of the
+same dimension) that contains line segments in all directions? The set of directions, D, in general,
+is a nowhere dense compact set, therefore taking the union of countably many affine images of B ′
+will not help. Still, perhaps surprisingly, the answer is positive. The key observation is that the
+following lemma could be true and it is all we need to complete the proof.
+Lemma 1.2. Let A ⊂ Rd be measurable with positive Lebesgue measure. Then there is a compact
+set E of upper Minkowski dimension zero such that A + E has non-empty interior.
+    The proof of this lemma, perhaps unsurprisingly, is a random construction, building on analogous
+covering statements for finite sets/groups.
+    Theorem 1.1 and the techniques used in this paper have their limits, of course. The Kakeya
+maximal function conjecture is generally considered to be stronger than the Kakeya conjecture,
+so it is no surprise that we do not prove here that the latter implies the former. However, the
+Kakeya maximal function conjecture implies that certain other “almost Besicovitch” sets have
+full Hausdorff dimension as well, but the techniques in this paper do not seem to handle some of
+these. For example, this is the case with those compact sets C ⊂ Rn for which there is a line in
+every direction that intersects C in a set of positive 1-dimensional Lebesgue measure. The Kakeya
+maximal function conjecture implies that these sets C have Hausdorff dimension n. It is unclear
+if the Kakeya conjecture implies the same. (One might think that Lemma 1.2 is applicable here
+as well and could give us a Besicovitch set of the same dimension as C. Unfortunately, this is not
+the case.)
+                                EQUIVALENT KAKEYA CONJECTURES                                       3
+
+
+1.2. Extending line segments to lines and more conjectures. We have seen above that
+the distinction between full lines and line segments does not play any role in the Kakeya conjec-
+ture. Indeed, for every set containing line segments in all directions there is another set, of equal
+Hausdorff dimension, that contains lines in all directions. However, from another perspective, the
+distinction between lines and line segments is at the heart of the Kakeya conjecture: what happens
+if we insist on extending the line segments we have to full lines?
+   In [9], one of us formulated the Line segment extension conjecture, which states that for any
+collection of line segments the Hausdorff dimension of their union is the same as the Hausdorff
+dimension of the union of the corresponding lines. In [9] it is proved that this holds in the plane
+and the general case would imply that any Besicovitch set in Rn has Hausdorff dimension at least
+n − 1 and Minkowski dimension n.
+   In this paper, we prove that the following conjecture is equivalent to the Kakeya conjecture:
+Conjecture 1.3 (General Kakeya conjecture). Let E be an arbitrary subset of Rn and let D be
+the set of directions in which E contains a line segment. Then
+                                      dimH E ≥ dimH D + 1,
+provided D is non-empty.
+   We claim that Conjecture 1.3 implies the above mentioned Line segment extension conjecture
+of [9]. Indeed, let S be the union of a collection of line segments in Rn , let L be the union of
+the collection of the corresponding lines, let s = dimH L and fix ε > 0. Then, using a result of
+Mattila [13, 10.10. Theorem] about the Hausdorff dimension of intersections of a given set with
+planes, there exists a hyperplane H such that dimH L ∩ H > s − 1 − ε. By taking a projective
+transformation ψ that maps H to the hyperplane at infinity (see e.g. [9] for a similar argument)
+we get ψ(S), which contains a line segment in a set of directions of Hausdorff dimension s − 1 − ε.
+Then, using that projective transformations preserve Hausdorff dimension, and Conjecture 1.3, we
+obtain dimH S = dimH ψ(S) ≥ s − 1 − ε + 1 = s − ε = dimH L − ε ≥ dimH S − ε, which completes
+the proof of the claim.
+   The above mentioned connections can be summarised as follows.
+  Kakeya conjecture ⇐⇒ General Kakeya conjecture
+                                           w
+                                           
+                                Line segment extension conjecture
+                                               w
+                                               
+               Every Besicovitch set in Rn has Hausdorff dimension at least n − 1
+                                               w
+                                               
+                                             Kakeya Conjecture for upper Minkowski dimension
+   We remark that by modifying the proof in [17] of the fact that the Kakeya maximal function
+conjecture implies the Kakeya conjecture, one can prove directly that the Kakeya maximal function
+conjecture also implies Conjecture 1.3.
+   The equivalence of Conjecture 1.3 and the Kakeya conjecture actually follows from the following
+strengthening of Theorem 1.1.
+Theorem 1.4. For every n ≥ 2 there exist a compact Besicovitch set B ⊂ Rn and a closed set
+F ⊂ Rn that contains a line in every direction such that dimH B = dimH F and the following holds.
+   If E is an arbitrary subset of Rn and D is a non-empty set of directions such that E contains
+a line segment in every direction of D, then
+                              dimH E ≥ dimH B − (n − 1 − dimH D).
+   In fact, a typical choice of B and F are good, in the sense of the Baire category theorem, applied
+in a suitable metric space.
+Remark 1.5. By a result in [6], if L is a non-empty family of lines that cover a set E ⊂ Rn such
+that every line of L intersects E in a set of Hausdorff dimension 1, then dimH E = dim L + 1,
+provided that dim L ≤ 1. Since the map that assigns to every line its direction is Lipschitz, this
+result implies Theorem 1.4 for n = 2 and also that the General Kakeya Conjecture above holds
+4                               TAMÁS KELETI AND ANDRÁS MÁTHÉ
+
+
+whenever dimH D ≤ 1. (Thus a possible way to get closer to the General Kakeya Conjecture and
+so also to the Kakeya conjecture is to weaken the restriction dimH D ≤ 1 to dimH D ≤ t for larger
+t. Clearly, the equivalence of the Kakeya conjecture and the General Kakeya Conjecture can be
+even more useful if one tries to disprove the Kakeya conjecture.)
+1.3. Duality between the Hausdorff and packing dimension of additive complements.
+Our main tool for proving Theorem 1.4 (and thus Theorem 1.1) is the following extension of
+Lemma 1.2.
+Lemma 1.6.
+     (1) Let A ⊂ Rn be measurable with positive Lebesgue measure. Then there is a compact set E
+         of upper Minkowski dimension zero such that A + E has non-empty interior.
+     (2) Let A ⊂ Rn be a non-empty Borel set of Hausdorff dimension greater than s. Then there
+         is a compact set E of upper Minkowski dimension n − s such that A + E has non-empty
+         interior.
+   To prove (1), a universal random set E will be constructed such that for any fixed set A the
+random set E has all the required properties, almost surely. We will see that (2) follows from (1)
+by techniques that are now fairly standard.
+   This second part of Lemma 1.6 motivates a spin-off project, unrelated to the Kakeya conjecture.
+The following two theorems show a striking duality between Hausdorff and packing dimensions via
+additive complements.
+Theorem 1.7. For every non-empty Borel set A ⊂ Rn ,
+                dimH A = n − inf{dimM B : B ⊂ Rn is compact, int (A + B) 6= ∅}
+(1.1)                   = n − inf{dimP B : B ⊂ Rn is compact, int (A + B) 6= ∅}
+                        = n − inf{dimP B : B ⊂ Rn is Borel, A + B = Rn }.
+Theorem 1.8. For any non-empty Borel set A ⊂ Rn ,
+                  dimP A = n − inf{dimH B : B ⊂ Rn compact, int (A + B) 6= ∅}
+(1.2)
+                          = n − inf{dimH B : B ⊂ Rn Borel, A + B = Rn }.
+    The first of these, Theorem 1.7, follows from Lemma 1.6.
+
+Proof of Theorem 1.7. It is well known (see e.g. in [13]) that for any Borel sets U and V we have
+dimH (U × V ) ≤ dimH (U ) + dimP (V ). Since A + B is a projection of A × B, this implies that
+whenever A and B are Borel sets and A + B = Rn then dimH (A) + dimP (B) ≥ n. Therefore the
+last expression is at most dimH A, so it remains to prove “≤” instead of the equalities. The first one
+clearly follows from Lemma 1.6 (2), the second from the well-known fact that packing dimension
+is always less than or equal to the upper Minkowski dimension, and the third one from the fact
+that Rn can be covered by countably many translates of any set with non-empty interior.             
+
+   The proof of Theorem 1.8 is nearly identical, but the reference to Lemma 1.6 (2) has to be
+replaced by a reference to the following theorem.
+Theorem 1.9. For any A ⊂ Rn Borel (or analytic) set with dimP A > s there exists a compact
+set B ⊂ Rn such that B has zero (n − s)-dimensional Hausdorff measure and A + B has non-empty
+interior.
+  This theorem will be proved in Section 3.
+  Theorem 1.8 is not without history. The identity (1.2) is closely related to the following identity,
+which was proved independently by Bishop and Peres [1] and by Y. Xiao [18].
+Theorem 1.10 (Bishop–Peres, Xiao (1996)). For any non-empty Borel set A ⊂ Rn ,
+                   dimP (A) = sup{dimH (A × B) − dimH B : B ⊂ Rn compact}.
+   Note that Theorem 1.8 implies the Bishop–Peres–Xiao theorem. So we actually obtain a new
+(and in fact much shorter) proof of Theorem 1.10.
+                                EQUIVALENT KAKEYA CONJECTURES                                        5
+
+
+Remark 1.11. One might wonder whether infimum can be replaced by minimum in Theorems 1.7
+and 1.8. We claim that in general the answer is negative for both.
+   For Theorem 1.7 this is witnessed by a set A = ∪∞  n=1 An , where each An is a Borel set with
+dimH An < dimH A. Indeed, by the product theorem we used before, for any Borel B with
+dimP B = n − dimH A we have dim(An + B) < n, so A + B = ∪∞           n=1 An + B is a set of mea-
+sure zero, so it cannot have non-empty interior.
+   By switching dimH and dimP we get a construction for Theorem 1.8 as well.
+1.4. Structure of the paper. The paper is organised as follows. In Section 2 we prove Theo-
+rem 1.4 using Lemma 1.6. We prove Theorem 1.9 in Section 3, and Lemma 1.6 in Section 4.
+
+1.5. Fractal percolation and non-empty interior of sumsets. After the initial publication
+of this work, Pablo Shmerkin informed us that part (2) of Lemma 1.6 follows from his results
+with Ville Suomala on spatially independent martingales and fractal percolation [15]. Indeed, part
+(2) of Lemma 1.6 is a very special case of [15, Theorem 13.1] (modulo an unimportant technical
+condition). On the other hand, the first half of Lemma 1.6 (that is, Lemma 1.2) does not seem to
+follow from their results.
+   In Section 4 we reduce part (2) of Lemma 1.6 to part (1) in five sentences, and then prove part
+(1). Our direct proof of Lemma 1.6 is much shorter than the proof of the very general result of
+Shmerkin–Suomala [15].
+
+                         2. Proof of Theorem 1.4 using Lemma 1.6
+2.1. Baire category argument in the compact case. Our first goal is proving the following.
+Lemma 2.1. For any non-empty compact set of directions E ⊂ RPn−1 the following hold:
+  (1) Among those compact subsets of Rn that contain a unit line segment in every direction in
+E there exists one, Bmin , with minimal Hausdorff dimension.
+  (2) There exists a closed set F ⊂ Rn that contains a line in every direction in E and dimH F =
+dimH Bmin .
+   To prove Lemma 2.1 we use a Baire category argument. We use a setup similar to that in [2].
+Fix n ≥ 1. For non-empty compact sets C ⊂ Rn and E ⊂ RPn−1 let
+                         K(C, E) = {K ⊂ C × E compact : proj2 K = E},
+where proj2 denotes projection to the second coordinate. Note that proj2 K = E means that for
+each e ∈ E there is a p ∈ C with (p, e) ∈ K.
+   By fixing a natural metric on RPn−1 and then on the product Rn × RPn−1 we equip K(C, E)
+with the Hausdorff metric. Clearly, K(C, E) is a closed subset of the space of all compact subsets
+of C × E, and hence it is a complete metric space. In particular, Baire category theorem holds for
+K(C, E), so we can speak about a typical K ∈ K(C, E) in the Baire category sense: a property P
+holds for a typical K ∈ K(C, E) if
+                                 {K ∈ K(C, E) : P holds for K}
+is residual in K(C, E), or equivalently, if there is a dense Gδ set G ⊂ K(C, E) such that the property
+holds for every K ∈ G.
+    For K ∈ K(C, E) and ℓ ∈ (0, ∞] let
+                                                     [
+                                       Sℓ (K) =           s(p, e, ℓ),
+                                               (p,e)∈K
+
+where s(p, e, ℓ) denotes the closed line segment of length ℓ with midpoint p and direction e for finite
+ℓ, and the line through p and direction e for ℓ = ∞. Clearly, Sℓ (K) is a compact set that contains
+a line segment in any direction e ∈ E for finite ℓ, and it a closed set which contains a line in every
+direction for ℓ = ∞. In particular, S1 (K) is a compact Besicovitch set for any K ∈ K(C, RPn−1 )
+for any compact C ⊂ Rn .
+   By the above observations, the last claim of the following lemma completes the proof of Lemma 2.1
+by taking Bmin = S1 (K) and F = S∞ (K) for a typical K ∈ K([0, 1]n , E).
+6                               TAMÁS KELETI AND ANDRÁS MÁTHÉ
+
+
+Lemma 2.2. Let E ⊂ RPn−1 be a non-empty compact set of directions and let B ⊂ Rn be a
+compact set which contains a unit line segment in every direction e ∈ E. Then the following
+statements hold.
+    (1) For any ℓ ∈ (0, ∞) and compact set C ⊂ Rn with non-empty interior there exists K ∈
+        K(C, E) such that dimH Sℓ (K) ≤ dimH B.
+    (2) For a typical K ∈ K([0, 1]n , E) we have dimH Sℓ (K) ≤ dimH (B) for every ℓ ∈ (0, ∞].
+    (3) For a typical K ∈ K([0, 1]n , E) we have dimH Sℓ (K) ≤ dimH (B ′ ) for every ℓ ∈ (0, ∞] and
+        any compact set B ′ ⊂ Rn which contains a unit line segment in every direction e ∈ E.
+Proof. (1) Let B(a, r) be a ball contained in C. Choose finitely many compact subsets B1 , . . . , Bk
+of B such that every unit line segment in B is contained in at least one of the sets Bi , and for each
+i the midpoints of the unit line segments are contained in a ball of radius r/ℓ. By translating each
+Bi such that the center of the corresponding ball goes to a, taking their union and magnifying by
+ℓ from a we get a compact set B ′ of Hausdorff dimension at most dimH B which contains a line
+segment of length ℓ with midpoint in B(a, r) ⊂ C in every direction. Then letting K = {(p, e) ∈
+C × E : s(p, e, ℓ) ⊂ B ′ } we obtain K ∈ K(C, E) such that dimH Sℓ (K) ≤ dimH B ′ ≤ dimH B. (A
+similar argument can be found in [5].)
+   (2) Since S∞ = ∪∞  ℓ=1 Sℓ and countable intersection of residual sets is residual, it is enough to
+prove the claim for finite ℓ.
+   Let d = dimH (B) and let
+                           G = {K ∈ K([0, 1]n , E) : dimH Sℓ (K) ≤ d}.
+A standard straightforward argument (see e.g. in [2, Proof of Lemma 2.2]) gives that G is a Gδ set
+in K([0, 1]n , E). Thus it is enough to prove that G is dense in K([0, 1]n , E).
+   So fix δ > 0 and K ∈ K([0, 1]n , E). We need to find a K ′ ∈ G with dH (K ′ , K) < δ. Choose
+finitely many compact sets Ci ⊂ [0, 1]n and Ei ⊂ E all with diameter less than δ/2 such that
+                                                k
+                                                [
+                                          K⊂         Ci × Ei
+                                               i=1
+and that (Ci × Ei ) ∩ K and int Ci are non-empty for each i.
+   For each i, by applying the first part of the lemma for C = Ci and E = (proj2 K)∩Ei , we obtain
+a non-empty compact set Ki ⊂ Ci × Ei such that proj2 Ki = (proj2 K) ∩ Ei and dimH Sℓ (Ki ) ≤ d.
+Then K ′ = K1 ∪ . . . ∪ Kk is a set in G with dH (K ′ , K) < δ.
+   (3) Let s be the infimum of the Hausdorff dimension of those compact sets that contain a unit
+line segment in every direction of E. Let Bk be a sequence of such sets with dimH Bk → s. Then
+applying (2) to each Bk and using that having countably many typical property is still typical we
+obtain (3).                                                                                     
+    Applying (3) of Lemma 2.2 for E = RPn−1 we obtain the following result.
+Corollary 2.3. Among compact Besicovitch sets, there exists one with minimal Hausdorff dimen-
+sion.
+   This result is not new, although perhaps it has not been published before. Its proof does not
+require the specific complete metric space we used here. Instead, one could just use the space
+of compact Besicovitch sets in the Hausdorff metric, and prove that a typical set has minimal
+Hausdorff dimension. (This follows the general rule that typical sets, in any setting, always have
+minimal Hausdorff dimension.) A similar space was considered by T. Körner [11]; he proved that
+a typical compact Besicovitch set has zero Lebesgue measure, giving a new proof for the existence
+of Besicovitch sets of zero measure.
+2.2. Getting compactness. The next step is to make a compact construction from a general
+one.
+Lemma 2.4. Let B ⊂ Rn be an arbitrary set which contains a line segment in a set of directions
+of positive outer measure. Then there exists a compact set E ⊂ Rn with dimH E ≤ dimH B which
+contains a line segment in a compact set of directions of positive measure.
+   We can also guarantee the existence of a line such that the projection of each of these line
+segments to this line has at least a fixed length.
+                                 EQUIVALENT KAKEYA CONJECTURES                                       7
+
+
+Proof. We can choose two parallel hyperplanes such that the direction of those line segments in
+B that have endpoints on these hyperplanes span a set of positive (n − 1)-dimensional Lebesgue
+outer measure. We may assume that these parallel hyperplanes are {0} × Rn−1 and {1} × Rn−1 .
+By the regularity of the Hausdorff measure, B is contained in a Gδ -set B ′ of the same Hausdorff
+dimension. Let
+                           X = {(a, b) × Rn−1 × Rn−1 : S(a, b) ⊂ B ′ },
+where
+                                  S(a, b) = {(t, at + b) : t ∈ [0, 1]}.
+It is straightforward to check that the fact that B ′ is Gδ implies that X is Gδ as well. Let
+A′ = proj1 X. Being a projection of a Borel set, A′ is analytic, therefore Lebesgue measurable. By
+our assumptions about B and B ′ , and since a determines the direction of S(a, b), the set A′ has
+positive (n − 1-dimensional) measure.
+   Applying the Jankov–von Neumann theorem (see e.g. in [8]) to X ⊂ Rn−1 × Rn−1 we get a
+Lebesgue measurable function f : A′ → Rn−1 with graph(f ) ⊂ X. By Luzin’s theorem there
+exists a compact set A ⊂ A′ of positive measure such that the restriction g = f |A : A → Rn−1 is
+continuous. Let                              [
+                                       E=        S(a, g(a)).
+                                               a∈A
+Since g is continuous and A is compact, E is compact as well. Note also that by construction,
+E ⊂ B ′ , so dimH E ≤ dimH B ′ = dimH B. Finally, clearly the projection of each S(a, g(a)) to the
+first axis has unit length.                                                                     
+2.3. Getting all directions. For a, b ∈ Rn−1 consider the line and its “slope”
+(2.1)                 ℓ(a, b) = {(t, at + b) : t ∈ R}      and       D(ℓ(a, b)) = a.
+                                                     n
+Note that this way we get exactly those lines of R that are not perpendicular to the first coordinate
+axis. Clearly D(ℓ(a, b)) determines the direction of the line and in fact there is a locally Lipschitz
+bijection between the directions and the D of these lines.
+   The following lemma explains the setting in which Lemma 1.6 will be applied. Basically, given
+a set containing many line segments, we will use Lemma 1.6 to construct a not-much-larger set
+that contains even more line segments.
+Lemma 2.5. Let L be a collection of lines in Rn such that none of them are perpendicular to the
+first coordinate axis. Let E ⊂ Rn be arbitrary and C ⊂ Rn−1 be a bounded set.
+    Then there exist a collection L′ of lines in Rn and a set E ′ ⊂ Rn with the following properties.
+    (1) dimH E ′ ≤ dimH E + dimM C.
+    (2) D(L′ ) = D(L) + C.
+    (3) For every ℓ′ ∈ L′ there exists ℓ ∈ L such that proj1 (E ∩ ℓ) ⊂ proj1 (E ′ ∩ ℓ′ ).
+    Furthermore, if E and C are compact, then so is E ′ .
+Proof. Let
+                        h((t, u), v) = (t, u + tv)       (t ∈ [0, 1], u, v ∈ Rn−1 )
+and
+                                            E ′ = h(E × C).
+If E and C are compact then E ′ is clearly compact.
+   Using that h : ((R × Rn−1 ) × Rn−1 ) → Rn is locally Lipschitz and a well known dimension
+estimate on product sets (see e.g. in [13]), we get
+                          dimH E ′ ≤ dimH (E × C) ≤ dimH E + dimM C,
+which gives (1).
+  By defining
+                               L′ = {ℓ(a + c, b) : ℓ(a, b) ∈ L, c ∈ C},
+(2) clearly holds.
+   To prove (3) let ℓ′ ∈ L′ . Then ℓ′ = ℓ(a + c, b) for some ℓ(a, b) ∈ L and c ∈ C. It is enough to
+show that
+                             proj1 (E ∩ ℓ(a, b)) ⊂ proj1 (E ′ ∩ ℓ(a + c, b)).
+8                                 TAMÁS KELETI AND ANDRÁS MÁTHÉ
+
+
+So let t ∈ proj1 (E ∩ ℓ(a, b)). Then (t, at + b) ∈ E. Thus h((t, at + b), c) ∈ E ′ . Since
+                            h((t, at + b), c) = (t, at + b + ct) ∈ ℓ(a + c, b)
+as well, this implies that indeed t ∈ proj1 (E ′ ∩ ℓ(a + c, b), which completes the proof.          
+
+    Now we can prove, from Lemma 1.6, the following weak version of Theorem 1.1.
+Theorem 2.6. Let d be the Hausdorff dimension of a set in Rn that contains a line segment in a
+set of directions with positive outer measure. Then
+     (1) there is a compact set of Hausdorff dimension at most d that contains a unit line segment
+         in every direction;
+     (2) and there is a closed set of Hausdorff dimension at most d that contains a line in every
+         direction.
+Proof. By Lemma 2.1, it is enough to prove the first part of the theorem.
+   Let B ⊂ Rn be a set of Hausdorff dimension d that contains a line segment in a set of directions
+of positive outer measure. By Lemma 2.4, there is a compact set E with dimH E ≤ dimH B that
+contains a line segment in a compact set of directions of positive measure such that the projections
+of these line segments to a fixed line has at least a fixed length. We may assume that this line is
+the first axis and this length is 1.
+   Let L be the collection of the lines of these line segments. Then, using the notation (2.1),
+D(L) is a compact set of positive (n − 1-dimensional Lebesgue) measure and for every ℓ ∈ L the
+projection proj1 (E ∩ ℓ) contains an interval of length 1.
+   By Lemma 1.6, there exists a compact C ⊂ Rn−1 with dimM C = 0 and int (D(L) + C) 6= ∅.
+Let L′ be the collection of the lines and E ′ be the set we obtain by applying Lemma 2.5.
+   Then E ′ is compact,
+                          dimH E ′ ≤ dimH E + dimM C ≤ dimH B + 0 = d,
+and every line of L′ intersects E ′ in a line segment of length at least 1. Since D(L′ ) = D(L) + C
+has non-empty interior this implies that a suitable finite union of rotated copies of E ′ is a compact
+set of Hausdorff dimension at most d which contains a unit line segment in every direction.         
+
+2.4. Besicovitch set from an arbitrary set and the proof of Theorem 1.4. First we con-
+struct a Besicovitch set from an arbitrary set. Note that the following result clearly implies that
+the General Kakeya Conjecture (Conjecture 1.3) is equivalent to the Kakeya conjecture.
+Theorem 2.7. Let E be a subset of Rn and let D be the set of directions in which E contains a
+line segment. If D 6= ∅ then there exists a compact Besicovitch set B in Rn with
+                                dimH B ≤ n − 1 + dimH E − dimH D.
+Proof. By suitably rotating E we can suppose that removing from D the directions that are
+perpendicular to the first coordinate axis does not decrease the Hausdorff dimension of D. Let L
+be the collection of those lines in Rn that are not perpendicular to the first coordinate axis and
+intersect E in a set that contains a line segment. By our assumptions and using notation (2.1),
+dimH D(L) = dimH D.
+   Fix s < dimH D(L) = dimH D. By applying (2) of Lemma 1.6 for D(L) ⊂ Rn−1 we obtain a
+compact set C with dimM C = n − 1 − s such that D(L) + C has non-empty interior. Let L′ be
+the collection of the lines and E ′ be the set we obtain by applying Lemma 2.5. Then
+(2.2)                              dimH E ′ ≤ dimH E + n − 1 − s,
+and E ′ contains line segments with directions in a set of positive measure. Then, by Theorem 2.6,
+this implies that there is a compact Besicovitch set of Hausdorff dimension at most dimH E + n −
+1 − s. Since s < dimH D was arbitrary and by Corollary 2.3 there exists a compact Besicovitch set
+in Rn with minimal Hausdorff dimension, this implies that in Rn there exists a compact Besicovitch
+set of Hausdorff dimension at most n − 1 + dimH E − dimH D.                                     
+
+    Now it is easy to prove our most general result, which clearly implies Theorem 1.1 as well.
+                                   EQUIVALENT KAKEYA CONJECTURES                                            9
+
+
+Proof of Theorem 1.4. Let B and F be the (typical) sets we obtain when Lemma 2.1 is applied to
+RPn−1 (as E). Then clearly B is a compact Besicovitch set with minimal Hausodorff dimension,
+F is a closed set which contains a line in every direction and dimH F = dimH B.
+  Let E and D be as in the statement of Theorem 1.4. By Theorem 2.7 there exists a compact
+Besicovitch set B1 ⊂ Rn such that dimH B1 ≤ n − 1 + dimH E − dimH D. Since B is a compact
+Besicovitch set with minimal Hausdorf dimension, dimH B ≤ dimH B1 , which completes the proof.
+                                                                                            
+
+                                      3. Proof of Theorem 1.9
+   The proof is based on a variant of a theorem of Lorentz [12] in additive combinatorics. For
+completeness we present a full proof of the statement we need, by using a simple argument of
+I. Z. Ruzsa [14]. The following lemma and its short proof is a straightforward modification of
+Lemma 5.2 of [14], which is a more general statement but only in Zq .
+Lemma 3.1 (Ruzsa). Let G be a finite Abelian group of order q and let A be a subset of G with
+cardinality |A| ≥ tq for some 0 < t < 1 and let k = ⌈(log q)/t⌉.
+   Then there exists B ⊂ G with cardinality k such that A + B = G.
+Proof. The proof is the same as in [14], it is included for completeness. Choose B as a random
+k-element subset of G, by taking each kq k-element subset of G with equal probability. Fix g ∈ G.
+Since g 6∈ A + B if and only if B ∩ (g − A) = ∅, the probability of this event is
+                                                     
+                           q − |A|     q        q(1 − t)    q
+(3.1)                               /      ≤             /     < (1 − t)k .
+                               k       k           k        k
+Thus the expected value of |G \ (A + B)| is less than (1 − t)k q ≤ e−tk q ≤ 1, so with positive
+probability A + B = G.                                                                       
+Lemma 3.2 (Higher dimensional variant of a theorem of Lorentz [12]). Let U ⊂ {0, 1, . . . , m − 1}n
+with |U | ≥ mα . Then there exists V ⊂ {−(m − 1), −(m − 2), . . . , m − 1}n such that U + V ⊃
+{0, 1, . . . , m − 1}n and |V | ≤ 2n ⌈n · mn−α · log m⌉.
+Proof. We apply Lemma 3.1 to G = Znm , q = mn , t = mα−n to obtain a set B ⊂ Znm such that
+U + B = Zm and |B| ≤ ⌈(log mn )/mα−n ⌉ = ⌈n · mn−α · log m⌉. By taking 2n copies of B we get a
+V ⊂ {−m, −(m − 1), . . . , m − 1}n with the right cardinality and with U + V ⊃ {0, 1, . . . , m − 1}n .
+Note that for the last containment any v ∈ V with any −m coordinate would be superfluous, so
+we can can suppose that V ⊂ {−(m − 1), −(m − 2), . . . , m − 1}n , which completes the proof. 
+   The following technical lemma would be obvious without taking the interiors of the cubes, this
+version requires some care.
+Lemma 3.3. If Q ⊂ Rn is a closed cube, A ⊂ int Q and dimM A > s then there exists arbitrarily
+large m such that subdividing Q into mn closed cubes of equal size, the interior of at least ms of
+them intersect A.
+Proof. Let Qm denote the set of closed cubes we get by subdividing Q into mn grid cubes of equal
+size, let Qm consist of the interiors of the cubes of Qm and let Gm be the union of the open cubes
+of Qm . The condition dimM A > s implies that for every constant C there are arbitrarily large N
+such that A contains at least CN s points that are covered by different cubes of QN . Let these be
+{x1 , . . . , xk }, where k ≥ CN s . We will use this for C = (n + 1)2n 2(n+1)s .
+   By Chebyshev’s theorem there exist distinct primes p1 , . . . , pn+1 between N and M = 2n+1 N .
+                                                                                             CN s
+Then A ⊂ int Q = ∪n+1     i=1 Gpi , so there exists an m = pi such that Gm contains at least n+1 points
+of {x1 , . . . , xk } ⊂ A. Since any open cube of Qm intersects at most 2n cubes of QN , we get that
+               CN s        s
+at least (n+1)2     n ≥ M    ≥ ms open cubes of Qm intersect A.                                      
+
+Lemma 3.4. Let A ⊂ (0, 1)n be a non-empty compact set such that dimM (A ∩ Q) > s for any open
+cube Q that intersects A. Then there exists a compact set B ⊂ [0, 2]n such that A + B ⊃ [1, 2]n
+and the n − s-dimensional Hausdorff measure of B is zero.
+Proof. For every k = 0, 1, . . . we construct a finite collection Ik of cubes in [0, 1]n , a finite collection
+Jk of cubes in [0, 2]n and a set Ek ⊂ Ik × Jk such that for every k we have the following:
+10                                TAMÁS KELETI AND ANDRÁS MÁTHÉ
+
+
+      (1) The sidelength of each cube in Ik and Jk is at most 2/2k .
+      (2) The interior of any I ∈ Ik intersects A.
+      (3) Every cube J ∈ Jk is a subset of some cube J ′ ∈ Jk−1 (if k ≥ 1).
+      (4)                          X                    √
+                                        (diam J)n−s < (2 n)n−s−k .
+                                   J∈Jk
+      (5) If (I, J) ∈ Ek then the sidelength of J is twice the sidelength of I.
+      (6)
+                                                  [ 1
+                                       [1, 2]n ⊂          (I + J),
+                                                        3
+                                                      (I,J)∈Ek
+
+          where 13 (I + J) denotes the cube we obtain by shrinking the cube I + J from its center by
+          1/3.
+     First we show that if we have a construction with the above properties then
+                                                \∞ [
+                                           B=            J
+                                                        k=0 J∈Jk
+
+satisfies all the requirements. It is clear that B is a compact subset of [0, 2]n . By (4) we get that
+the n − s-dimensional Hausdorff measure of B is zero. To prove that [1, 2]n ⊂ A + B, let x ∈ [1, 2]n .
+By (6), for each k there exists uk ∈ ∪I∈Ik I and vk ∈ ∪J∈Jk J such that uk + vk = x. By taking
+convergent subsequences and using (1) and (2), we get limits u ∈ A and v ∈ B such that u + v = x.
+   We construct Ik , Jk and Ek with properties (1)-(6) by induction. Let I0 = {[0, 1]n }, J0 =
+{[0, 2]n} and E0 = I0 ×J0 . Suppose that k ≥ 1 and we have already defined Ik , Jk and Ek such that
+                           √
+(1),..,(6) hold. Let ε = (2 n)n−s−(k+1) /|Ek |. For each e = (I, J) ∈ Ek we will choose a collection
+I e of subcubes of I and a collection J e of subcubes of J and we will define Ik+1 = ∪e∈Ek I e ,
+Jk+1 = ∪e∈Ek J e and Ek+1 = ∪e∈Ek I e × J e . Then (3) clearly holds. To show (4) for k + 1 it is
+enough to show that for each e ∈ Ek we have
+                                          X
+(3.2)                                         (diam J ′ )n−s < ε.
+                                          J ′ ∈J e
+
+To show that (6) for k implies that (6) also holds for k + 1 it is enough to prove that for any
+e = (I, J) ∈ Ek we have
+                              1                 [      1 ′
+(3.3)                           (I + J) ⊂                (I + J ′ ).
+                              3                   e  e
+                                                       3
+                                           ′  ′      (I ,J )∈I ×J
+
+   Fix = (I, J) ∈ Ek . By (5) there exists a, b ∈ Rn and h > 0 such that I = a + [0, h]n and
+J = b + [−h, h]n . Note that 13 (I + J) = 13 (a + b + [−h, 2h]n ) = a + b + [0, h]n .
+   By (2) and the assumption of the lemma we have dimM (A ∩ int I) > s, so we can fix s′ such
+that s < s′ < dimM (A ∩ int I). Since s < s′ there exists an m0 ≥ 2 such that for any m ≥ m0 we
+have
+                                                        √ h n−s
+                                                             
+                                             ′
+(3.4)                         2n ⌈n · mn−s · log m⌉ 2 n              < ε.
+                                                            m
+By Lemma 3.3, there exists m ≥ m0 such that subdividing I into mn equal closed subcubes, the
+                       ′
+interior of at least ms of them intersect A. Let I e consist of these closed subcubes. Then (2) will
+automatically hold for k + 1.
+   Let
+                  U = {u ∈ {0, . . . , m − 1}n : a + (h/m)u + (0, h/m)n ∩ A 6= ∅}.
+                                                                           
+
+Then
+                             I e = {a + (h/m)u + [0, h/m]n : u ∈ U },
+                     ′
+so |U | = |I e | ≥ ms . By applying Lemma 3.2 to U we get V ⊂ {−m + 1, . . . , m − 1}n such that
+U + V ⊃ {0, 1, . . . , m − 1}n and
+                                                                 ′
+(3.5)                                 |V | ≤ 2n ⌈n · mn−s · log m⌉.
+Then let
+                            J e = {b + (h/m)v + [−h/m, h/m]n : v ∈ V }.
+                                         EQUIVALENT KAKEYA CONJECTURES                                                   11
+
+
+Then (1) and (5) clearly holds for k + 1, so it remains to show (3.2) and (3.3). Note that (3.2)
+follows from (3.4) and (3.5).
+   It remains to check (3.3). Note that
+   {(1/3)(I ′ + J ′ ) : (I ′ , J ′ ) ∈ I e × J e } = {a + b + (h/m)(u + v) + [0, h/m]n : u ∈ U, v ∈ V }.
+Since U + V ⊃ {0, 1, . . . , m − 1}n , the union of these cubes indeed cover 31 (I + J) = a + b + [0, h]n ,
+which completes the proof of (3.3) and the lemma.                                                       
+Proof of Theorem 1.9. By a result of H. Joyce and D. Preiss [7] there exists a compact set A′ ⊂ A
+with dimP A′ > s. We can clearly suppose that A′ ⊂ (0, 1)n . Let C be the collection of those open
+cubes that intersect A′ in a set of packing dimension at most s, and let C ′ be those cubes in C that
+have vertices with rational coordinates only. Then cubes in C and C ′ have the very same union U
+and, since C ′ is countable, dimP (A′ ∩ U ) ≤ s. Thus A′′ = A′ \ U is a non-empty compact subset
+of [0, 1]n such that for any open cube Q that intersects A′′ , dimM (Q ∩ A′′ ) ≥ dimP (Q ∩ A′′ ) > s.
+Therefore Lemma 3.4 can be applied to A′′ .                                                        
+
+                                                 4. Proof of Lemma 1.6
+   Our first goal is to show that (1) implies (2) in Lemma 1.6. For this we need the following
+lemma. This argument was also used in [10, Theorem 2.9].
+Lemma 4.1. For every s, t ∈ [0, n] and non-empty Borel set A ⊂ Rn of Hausdorff dimension s
+there is a compact set B ⊂ Rn of upper Minkowski dimension t such that A + B has Hausdorff
+dimension min(s + t, n). If s + t > n, it has positive Lebesgue measure.
+Proof. Let B1 be a compact set (for example a self-similar set) with dimH B1 = dimM B1 = t.
+Then dimH (A × B1 ) = s + t, so by the projection theorem of Marstrand and Mattila, its orthogonal
+projection to almost every n-dimensional subspace of R2n has Hausdorff min(s + t, n) and it has
+positive Lebesgue measure if s + t > n. This implies that a suitable affine copy of B1 has all the
+properties we wanted for B.                                                                     
+Proof of (1)⇒(2) in Lemma 1.6. Let A ⊂ Rn be a non-empty Borel set of Hausdorf dimension
+greater than s. By a theorem of Davies [3], A contains a compact subset of Hausdorf dimension
+greater than s, so we can suppose that A is compact. By Lemma 4.1 there exists a compact set
+B1 ⊂ Rn of upper Minkowski dimension n − s such that A + B has positive Lebesgue measure.
+By applying (1) of Lemma 1.6 to the compact set A + B we obtain a compact set E1 of upper
+Minkowski dimension zero such that (A + B) + E1 has non-empty interior. Then E = B + E1 is a
+compact set of upper Minkowski dimension n − s such that A + E has non-empty interior.      
+    It remains to prove (1) of Lemma 1.6. Let dj and mj be increasing sequences of integers. Let
+1 ≤ mj ≤ dnj . We now define a random compact set. For each positive integer d we divide [0, 1]n
+into dn grid cubes of equal side length and denote by f1d , . . . , fddn the homothetic maps that map
+[0, 1]n onto these cubes. Consider the finite sequences
+                                  (i1 , . . . , ik ) ∈ {1, . . . , m1 } × . . . × {1, . . . , mk }
+and to each of them we assign a random number j(i1 , . . . , jk ) ∈ {1, . . . , dnk } by choosing for each
+(i1 , . . . , ik−1 ) distinct j(i1 , . . . , ik−1 , 1), . . . , j(i1 , . . . , ik−1 , mk ) randomly such that each selection
+                        dn
+                            −1
+has probability m         k
+                          k
+                                . Let
+                                    m
+                                    [1           m
+                                                 [k
+                                                          d1       d2                  dk
+                           Ek =            ...           fj(i1)
+                                                                ◦ fj(i1 ,i2 )
+                                                                              . . . ◦ fj(i1 ,...,ik )
+                                                                                                      ([0, 1]n )
+                                   i1 =1         ik =1
+                T
+and let E = Ek .
+  With this construction, the upper Minkowski dimension of E (always) satisfies
+                              log(m1 . . . mk )                       log((m1 . . . mk )mk+1 )
+(4.1)               lim sup                      ≤ dimM (E) ≤ lim sup                      1/n
+                                                                                                 .
+                       k       log(d1 . . . dk )                 k     log((d1 . . . dk )m     )                   k+1
+We will only use the upper bound.
+  Fix
+                                                                 dk = 2k
+12                               TAMÁS KELETI AND ANDRÁS MÁTHÉ
+
+
+and
+                                       mk = min(k 2n+5 , dnk );
+this is a choice that will work but it is not optimal in any sense. Then the random compact set
+E has Minkowski dimension zero by (4.1). Thus the following theorem will complete the proof of
+Lemma 1.6.
+Theorem 4.2. Let A ⊂ Rn be a Lebesgue measurable set of positive Lebesgue measure. Let E be
+the random compact set as described above. Then A + E has non-empty interior almost surely.
+Proof. It is enough to show that the probability in question is positive since Kolmogorov’s zero–one
+law can be applied: We claim that it is a tail event that the set A + E has non-empty interior.
+That is, if we change the construction of E arbitrarily in finitely many levels to obtain E ′ , then
+A + E has non-empty interior if and only if A + E ′ has non-empty interior. Indeed, E ′ can be
+covered by finitely many translates of E and vice versa. Therefore the same applies to A + E and
+A + E ′ . The Baire category theorem concludes the argument.
+   The following statement enables us to replace the set A with another that has uniform lower
+bounds on the local densities around every point.
+Lemma 4.3. Let rk , εk be decreasing sequences of positive reals tending to zero such that
+                                         X
+                                            εk < ∞.
+Let A0 ⊂ Rn be a Lebesgue measurable set of positive measure. Then there is a non-empty compact
+subset A ⊂ A0 such that
+(4.2)              ∃k0 ≥ 1 ∀k ≥ k0 ∀x ∈ A λ(A ∩ (x + [−rk , rk ]n )) ≥ (2rk )n εk .
+Proof. By regularity we may assume that A0 is compact. Note that if (4.2) holds for A then it
+also holds for its closure, so we do not need to guarantee the compactness of A.
+   By modifying εk , we may assume that each rk is an integer power of 1/2 and it is enough to
+prove that the density of A in every closed dyadic grid cube of side length rk it intersects is at
+least εk (for every sufficiently large k).
+   By applying Lebesgue’s density theorem, choose k0 and a dyadic grid cube I of side length rk0
+such that
+                                                            X∞
+(4.3)                       λ(A0 ∩ I) ≥ λ(I)/2     and          εk < 1/4,
+                                                              k=k0
+
+and let A1 = A0 ∩I. We define a finite or infinite sequence of nested sets A1 ⊃ A2 ⊃ · · · recursively.
+Suppose that Aj is already defined. Take a maximal (closed) dyadic grid cube Jj ⊂ I with side
+length rkj such that Jj intersects Aj and the density of Aj in Jj is less than εkj . If there is no
+such cube, then we let A = Aj . Otherwise let Aj+1 = Aj \ Jj and continue the procedure. If this
+procedure does not terminate after finitely many steps then let A = ∩∞      j=1 Aj .
+   If the sequence terminates after finitely many steps, then the density of A in every dyadic grid
+cube of side length rk it intersects is at least εk for every k ≥ k0 . Otherwise, although the sequence
+kj is not necessarily non-decreasing, it must be unbounded since there are only finitely many dyadic
+grid cubes of given size in I. Using also that we always took maximal cubes, this implies that the
+density of A in every dyadic grid cube of side length rk it intersects is at least εk for every k ≥ k0 .
+   It remains to prove that A is non-empty. Using first the fact that for each k the subtracted
+cubes Jj of side length rk are nonoverlapping subcubes of I and then (4.3), we obtain
+                                               ∞
+                                               X
+                        λ(A) ≥ λ(A1 ) − λ(I)          εk ≥ λ(I)/2 − λ(I)/4 > 0.
+                                               k=k0
+
+                                                                                                      
+
+     We continue with the proof of Theorem 4.2. Recall that dk and mk are already defined. Let
+                                                              εk
+                             εk = 1/k 2    and     rk =                 .
+                                                         20nd1 · · · dk
+By applying Lemma 4.3, we may assume that the set A is compact for which (4.2) holds.
+                                EQUIVALENT KAKEYA CONJECTURES                                     13
+
+
+  Our aim is, essentially, to show that if
+                                          A + Ek ⊃ [0, 1]n ,
+then with large probability,
+                                       A + Ek+1 ⊃ [0, 1]n .
+We will prove a similar implication, but we will need to consider some additional sets. Let
+                                         αk = 1 − εk /(10n),
+and
+                                        βk = 1 − 2εk /(10n).
+For each k ≥ 0, consider the m1 · · · mk many cubes forming Ek and replace each of these with
+another cube of the same midpoint but of side length αk /(d1 · · · dk ). Take their union to obtain
+the set Ek′ . We also form Ek′′ from Ek in the same way but replacing αk with βk .
+Claim 4.4. There exists k0 such that for every k ≥ k0 ,
+                                       ′
+                                P A + Ek+1 ⊃ A + Ek′ ) ≥ 1 − 2−k .
+In fact the same estimate holds conditionally if we fix Ek arbitrarily.
+Proof. Assume that Ek is fixed. Fix any x ∈ A + Ek′ . First we will estimate the probability that
+                                                      ′′
+                                             x ∈ A + Ek+1 .
+   Since x ∈ A + Ek′ , we can fix a ∈ A and e ∈ Ek′ such that x = a + e. Let I ′ be the cube of Ek′
+that contains e. Let I be the corresponding cube of Ek . Consider the dnk+1 many grid cubes that
+I is divided into during the construction of the random set Ek+1 . Let these be Ij (1 ≤ j ≤ dnk+1 ).
+We will denote the corresponding βk -shrinked versions of these by Ij′′ . Then the random set
+                                                ′′
+                                               Ek+1 ∩I
+contains the union of mk+1 many of these cubes Ij′′ chosen uniformly randomly.
+  Denoting side lengths of cubes by | · |, now consider the cube
+                          J = [−|I|εk /(20n), |I|εk /(20n)]n = [−rk , rk ]n .
+By the choice of αk , we have
+                                              I ′ + J = I.
+Since e ∈ I ′ , we have
+                                               e + J ⊂ I.
+Let I be the collection of those cubes Ij that are contained in e + J. Similarly, let I ′′ be the
+collection of those cubes Ij′′ that are contained by e + J. Then we have
+                                                                              n
+                                [ 
+                                                          n     n        20n
+                  λ (e + J) ∩       I ≥ (|J| − 2|I|/dk+1 ) = |J| 1 −
+                                                                       εk dk+1
+and
+                                                           n                      n
+                       [                            20n                      20n
+            λ (e + J) ∩  I ′′ ≥        βkn |J|n 1 −            ≥ |J|n βk −
+                                                    εk dk+1                  εk dk+1
+                                                     n                
+                                                  3εk                3εk
+(4.4)                             ≥    |J|n 1 −          ≥ |J|n 1 −        ,
+                                                  10n                10
+assuming, in the penultimate inequality, that k (and thus dk ) is large enough so that
+                                            20n      εk
+                                                  <
+                                          εk dk+1   10n
+holds.
+  If k is large enough, by (4.2), we have
+                                      λ(A ∩ (a − J)) ≥ εk |J|n .
+Using that x = a + e and that Lebesgue measure is isometry invariant, we obtain
+                                                  
+(4.5)                           λ (e + J) ∩ (x − A) ≥ εk |J|n .
+14                                TAMÁS KELETI AND ANDRÁS MÁTHÉ
+
+
+Combining (4.4) and (4.5) we obtain
+                              [ 
+(4.6)   λ (e + J) ∩ (x − A) ∩     I ′′ ≥ (εk − 3εk /10)|J|n ≥ 7εk |J|n /10 = cn εn+1
+                                                                                 k   |I|n ,
+
+where cn = 7/(10n+1nn ). This implies that x − A intersects at least
+                                                  cn εn+1
+                                                      k   dnk
+                                ′′
+many cubes Ij′′ (of I ′′ ). If Ek+1 contains one of these, say Ij′′ , then
+                                                                   ′′
+                                  ∅ 6= (x − A) ∩ Ij′′ ⊂ (x − A) ∩ Ek+1
+                              ′′                             ′′
+and therefore x ∈ A + Ek+1       . Since by construction Ek+1    contains uniformly randomly chosen
+               ′′          ′′                                                    ′′
+mk+1 many of I1 , . . . , Idn , as in (3.1) we obtain that the probability that Ek+1 does not contain
+                          k+1
+
+any of the at least cn εn+1
+                        k   dnk+1 many Ij′′ that intersect x − A is at most
+                                            (1 − cn εn+1
+                                                     k   )mk+1 .
+                                      ′′
+Therefore the probability of x ∈
+                               / A + Ek+1 is at most
+(4.7)                                       (1 − cn εn+1
+                                                     k   )mk+1 .
+     Now let
+                                δ = εk+1 /(20nd1 · · · dk+1 ).
+Comparing δ with αk+1 and βk+1 we obtain
+                                               ′′          ′
+(4.8)                                       B(Ek+1 , δ) ⊂ Ek+1 .
+    For simplicity, assume that A ⊂ [0, 1]n . Let S be a maximal δ-separated subset of A + Ek′ ⊂
+[0, 2]n . Then
+                                             |S| ≤ Cn δ −n
+for some constant Cn depending on n only, and we have
+(4.9)                                       A + Ek′ ⊂ B(S, δ).
+                               ′′
+     Now note that if S ⊂ A + Ek+1 (which may or may not hold), then (by (4.8) and (4.9)),
+                 A + Ek′ ⊂ B(S, δ) ⊂ B(A + Ek+1
+                                            ′′                ′′
+                                                , δ) = A + B(Ek+1             ′
+                                                                  , δ) ⊂ A + Ek+1 .
+                                                                              ′′
+     Now vary x over the points of S. By (4.7), the probability that S ⊂ A + Ek+1 is at least
+                                        1 − |S|(1 − cn εn+1
+                                                        k   )mk+1 .
+Therefore
+                                           ′
+                          P(A + Ek′ ⊂ A + Ek+1 ) ≥ 1 − |S|(1 − cn εn+1
+                                                                   k   )mk+1
+where the probability can be understood conditional on fixing Ek arbitrarily. The choice of dk = 2k
+and mk = k 2n+5 (for large enough k) gives that
+                                              2                     2
+                                |S| ≤ Cn′ 2nk /εnk+1 = Cn′ 2nk (k + 1)2n
+and
+                                                               (k+1)2n+5
+                                                        7                       ′′ 3
+                     (1 − cn εn+1
+                              k   )mk+1 =    1−                            ≤ 2−Cn k ,
+                                                 (10k 2 )n+1 nn
+where the constants Cn′ , Cn′′ (and later Cn′′′ as well) are positive and depend only on n. Therefore
+                                                                2       ′′ 3   ′′′ 3
+           P(A + Ek′ ⊂ A + Ek+1
+                            ′
+                                ) ≥ 1 − Cn′ (k + 1)2n 2nk 2−Cn k ≥ 1 − 2−Cn k ≥ 1 − 2−k
+when k is large enough. This finishes the proof of the Claim.                                      
+     Applying the claim for k ≥ k0 , we obtain that with positive probability,
+                                      A + Ek′ 0 ⊂ A + Ek′ 0 +1 ⊂ · · · .
+Therefore, with positive probability,
+                                            A + Ek′ 0 ⊂ A + E.
+Since Ek′ 0 and thus A + Ek′ 0 have non-empty interior, this finishes the proof of Theorem 4.2.    
+                                     EQUIVALENT KAKEYA CONJECTURES                                                  15
+
+
+Remark 4.5. It is possible to reduce this problem on the group R to a similar one on the group
+                                             Y
+                                        G=      Z/dk Z.
+                                                         k
+Then the above argument can be simplified as there is no need to introduce the sets Ek′ or Ek′′ .
+
+                                                   References
+ [1] C. J. Bishop and Y. Peres, Packing dimension and Cartesian products, Trans. Amer. Math. Soc. 348 (1996),
+     4433-4445.
+ [2] A. Chang, M. Csörnyei, K. Héra and T. Keleti, Small unions of affine subspaces and skeletons via Baire category,
+     Adv. Math. 328 (2018), 801–821.
+ [3] R. O. Davies, Subsets of finite measure in analytic sets, Indag. Math. 14 (1952), 488–489.
+ [4] R. O. Davies, Some remarks on the Kakeya problem, Proc. Cambridge Phil. Soc. 69 (1971), 417–421.
+ [5] J. M. Fraser, E. J. Olson, and J. C. Robinson, Some results in support of the Kakeya conjecture, Real Anal.
+     Exchange 42 (2017), 253–268.
+ [6] K. Héra, T. Keleti and A. Máthé, Hausdorff dimension of unions of affine subspaces and of Furstenberg sets J.
+     Fractal Geom. 6 (2019), 263–284.
+ [7] H. Joyce and D. Preiss, On the existence of subsets of finite positive packing measure, Mathematika 42 (1995),
+     15–24.
+ [8] A. S. Kechris, Classical Descriptive Set Theory, Graduate Texts in Mathematics 156, Springer-Verlag, 1994.
+ [9] T. Keleti, Are lines much bigger than line segments?, Proc. Amer. Math. Soc. 144 (2016), 1535–1541.
+[10] T. Keleti, Small union of large set of centers, In: Barral J., Seuret S. (eds) Recent Developments in Fractals
+     and Related Fields. FARF3 2015. Trends in Mathematics, Birkhäuser, Cham (2017), 189–216.
+[11] T. W. Körner, Besicovitch via Baire, Studia Mathematica 158 (2003), 65–78.
+[12] G. G. Lorentz, On a problem of additive number theory, Proc. Amer. Math. Soc. 5 (1954), 838–841.
+[13] P. Mattila, Geometry of sets and measures in Euclidean spaces, Cambridge University Press, 1995.
+[14] I. Z. Ruzsa, More differences than multiple sums, arXiv:1601.04146, 2016.
+[15] P. Shmerkin, V. Suomala, Spatially independent martingales, intersections, and applications, Memoirs of the
+     American Mathematical Society 251, no. 1195 (2018).
+[16] H. Wang and J. Zahl, Sticky Kakeya sets and the sticky Kakeya conjecture, arXiv:2210.09581, 2022.
+[17] T. Wolff, Recent work connected with the Kakeya problem. Prospects in mathematics (Princeton, NJ, 1996),
+     129-162, Amer. Math. Soc., Providence, RI, 1999.
+[18] Y. Xiao, Packing dimension, Hausdorff dimension and Cartesian product sets, Math. Proc. Cambridge Philos.
+     Soc. 120 (1996), 535–546.
+
+  Institute of Mathematics, Eötvös Loránd University, Pázmány Péter sétány 1/c, H-1117 Budapest,
+Hungary
+  Email address: tamas.keleti@gmail.com
+
+   Mathematics Institute, University of Warwick, Coventry, CV4 7AL, UK
+   Email address: a.mathe@warwick.ac.uk
+
