@@ -1,0 +1,1165 @@
+                      LIPSCHITZ CELL DECOMPOSITION
+                        IN O-MINIMAL STRUCTURES. I
+
+
+
+
+                                     WiesÃlaw PawÃlucki
+                      Uniwersytet Jagielloński, Instytut Matematyki
+                        ul. Reymonta 4, 30-059 Kraków, Poland
+
+
+                                       September 4, 2007
+
+        Abstract. A main tool in studying topological properties of sets definable in o-
+        minimal structures is the Cell Decomposition Theorem. The present paper proposes
+        its metric counterpart based on the idea of a Lipschitz cell. In contrast to earlier
+        results, we give an algorithm of a Lipschitz cell decomposition involving only permu-
+        tations of variables as changes of coordinates.
+
+
+
+
+1.Introduction.
+   A main tool in studying topological properties of sets definable in o-minimal
+structures is the Cell Decomposition Theorem (cf. [vdD]). The present paper pro-
+poses its metric counterpart based on the idea of a Lipschitz cell, called here an
+M -cell. Of course, in general a decomposition into such cells requires linear changes
+of coordinate systems (cf. [K, P]). We will give an algorithm showing that in fact
+permutations of coordinates suffice as changes of coordinate systems.
+  The present article deals only with Lipschitz cell decomposition of open sets.
+The case of general o-minimal sets, easily reducible to the previous one, with some
+additional properties and applications will be treated in a separate paper.
+   Fix any o-minimal structure on a real closed field R (for the definition and
+fundamental properties of o-minimal structures the reader is referred to [vdD]). Let
+n be a positive integer.
+   A subset S of Rn will be called an (open) cell in Rn iff
+
+(1.1)              S = {(x0 , xn ) ∈ Rn : x0 ∈ ∆, ϕ1 (x0 ) < xn < ϕ2 (x0 )},
+
+where x0 = (x1 , . . . , xn−1 ), ∆ is an open definable subset of Rn−1 , every ϕi (i ∈
+{1, 2}) is either a definable continuous function ϕi : ∆ −→ R or ϕi ≡ −∞ or
+ϕi ≡ +∞ and, for each x0 ∈ ∆, ϕ1 (x0 ) < ϕ2 (x0 ).
+
+   2000 Mathematics Subject Classification: Primary 32B20, 14P10. Secondary 32S60, 51N20,
+51F99.
+Key words and phrases: M -cell, semi-M -cell, M -disc, Lipschitz mapping, cell decomposition.
+Research partially supported by the grant of the Polish Ministry of Research and Education
+0325/PO3/2004/27 and the European Community IHP-Network RAAG (HPNR-CT-2001-00271)
+                                                 1
+2                                         WIESÃLAW PAWÃLUCKI
+
+
+   For any positive M ∈ R, a definable continuous function ϕ : ∆ −→ R defined on
+an open subset ∆ of Rn−1 will be called an M -function iff
+                     ¯ ∂ϕ     ¯
+                     ¯        ¯
+(1.2)                ¯     (a)¯ ≤ M     (j ∈ {1, . . . , n − 1}),
+                       ∂xj
+at each point a ∈ ∆ in a neighborhood of which ϕ is of class C 1 .
+   An cell S in Rn will be called an M -cell (a semi-M -cell ) iff, for each i ∈ {1, 2}
+(for at least one i ∈ {1, 2}), if ϕi is finite, it is an M -function. A cell S in Rn will
+be called a regular M -cell iff it is any open interval in the case n = 1 and, in the
+case n > 1, for each i ∈ {1, 2}, if ϕi is finite it is an M -function of class C 1 on ∆
+and the projection ∆ of S into Rn−1 is a regular M -cell in Rn−1 .
+   An M -cell will be called an M -disc iff it is any open interval in the case n = 1
+and, in the case n > 1, the both ϕi (i ∈ {1, 2}) are finite and admit continuous
+extensions
+(1.3)                                            ϕi : ∆ −→ R
+onto the closure of ∆ in Rn−1 , and
+(1.4)                                       ϕ1 = ϕ2         on ∂∆.
+Proposition 1. Let S be a regular M -cell in Rn and let ϕ : S −→ R be an L-
+function ( L > 0 ) of class C 1 .
+   Then
+   (1) for any two different points a, b ∈ S, there is a definable continuous mapping
+                                λ = (λ1 , . . . , λn ) : [0 , |a − b|] −→ S
+        such that λ(0) = a, λ(|a − b|) = b and |λ0j (t)| ≤ (j − 1)!M j−1 , for any
+        j ∈ {1, . . . , n} and any t such that λ0j (t) exists 1 ;
+    (2) for any two points a, b ∈ S,
+                                  |ϕ(a) − ϕ(b)| ≤ n!M n−1 L|a − b|.
+
+Proof. (1) Let S be as in (1.1). Arguing by induction and assuming that a0 6= b0 ,
+one can find a mapping
+                              ω = (ω1 , . . . , ωn−1 ) : [0 , |a0 − b0 |] −→ ∆
+such that ω(0) = a0 , ω(|a0 − b0 |) = b0 and |ωj0 (τ )| ≤ (j − 1)!M j−1 , for any j ∈
+{1, . . . , n − 1} and any τ such that ωj0 (τ ) exists. Let ε > 0 be such that
+                  ϕ1 (ω(τ )) + ε < ϕ2 (ω(τ )) − ε,             for any τ ∈ [0 , |a0 − b0 |],
+and
+           ϕ1 (a0 ) + ε < an < ϕ2 (a0 ) − ε               and ϕ1 (b0 ) + ε < bn < ϕ2 (b0 ) − ε.
+Now, it suffices to put
+                                          |a0 − b0 |
+                         λj (t) = ωj (t              ),     for j ∈ {1, . . . , n − 1},
+                                           |a − b|
+and
+            © ¡ ¡ |a0 − b0 | ¢¢         © ¡ ¡ |a0 − b0 | ¢¢             bn − an ªª
+λn (t) = max ϕ1 ω t             + ε, min ϕ2 ω t             − ε, an + t            .
+                    |a − b|                     |a − b|                  |a − b|
+    (2) follows from (1), by the Mean Value Theorem (see [vdD, Chapter 7, (2.3)]).
+                  qP
+    1 |a − b| =      n                2
+                     j=1 (aj − bj )
+                           LIPSCHITZ CELL DECOMPOSITION                              3
+
+
+Kurdyka-Parusiński Theorem ([K, P]). Any open definable subset G of Rn
+has a finite decomposition
+
+                                   G = S1 ∪ · · · ∪ Sk ∪ Σ,
+
+where every Sν is a regular Mn -cell in some linear coordinate system in Rn and Σ
+is nowhere dense, Mn being a constant depending only on n.
+
+   The aim of the present article is to give an algorithm showing that in fact per-
+mutations of coordinates are sufficient in the above theorem. We will prove simul-
+taneously by induction on n the following three theorems.
+Theorem 1n (2n , 3n ). Any open definable subset G of Rn has a finite decomposi-
+tion
+
+(1.5)                              G = S1 ∪ · · · ∪ Sk ∪ Σ,
+
+where every Sν is an M1n -cell (M2n -disc, a regular M3n -cell) in Rn after a permu-
+tation of coordinates and Σ is nowhere dense, M1n (M2n , M3n ) being a constant
+≥ 1 depending only on n.
+
+    For simplicity we will often skip the adjective definable, when considering subsets
+of spaces Rn and mappings between such subsets. Also, we adopt the following
+conventions. A local property (w) of a mapping f : A −→ Rm , where A ⊂ Rn ,
+is said to be satisfied almost everywhere iff there is a closed subset E of A such
+that dim E < dim A and (w) is satisfied at each point of A \ E. A finite sequence
+B1 , . . . , Bk of subsets of a set A ⊂ Rn is said to be¡ an almost decomposition
+                                                                              ¢    of A
+iff Bν (ν = 1, . . . , k) are pairwise disjoint and dim A \ (B1 ∪ · · · ∪ Bk ) < dim A.
+This will be denoted by writing
+
+                                     A ' B1 ∪ · · · ∪ Bk .
+
+Since Theorem 2n together with 3n−1 easily imply both Theorems 1n and 3n , it
+suffices to derive first Theorem 1n from Theorem 2n−1 and then Theorem 2n from
+Theorems 1n , 2n−1 and 3n−1 . From now on, we will assume that n ≥ 2 is fixed.
+
+2. A preparation.
+Lemma 1. If G ⊂ Rn−1 is open and E ⊂ ∂G is closed of dimension < n − 2 and
+Theorem 2n−1 is true, then G has an almost decomposition
+
+                                     G ' ∆1 ∪ · · · ∪ ∆p ,
+
+where every ∆ν , after a permutation of coordinates in Rn−1 , is an M2n−1 -disc:
+
+              ∆ν = {(x00 , xn−1 ) : x00 ∈ Ων , σν (x00 ) < xn−1 < ρν (x00 )}2 ,
+
+such that the both (graphs of )3 σν and ρν are disjoint with E.
+  2 x00 = (x , . . . , x
+            1           n−2 )
+  3 We will identify functions with their graphs.
+4                                        WIESÃLAW PAWÃLUCKI
+
+
+Proof. Take the projections
+
+            πj : Rn−1 3 (x1 , . . . , xn−1 ) 7→ (x1 , . . . , xj−1 , xj+1 , . . . , xn−1 ) ∈ Rn−2 ,
+
+for j ∈ {1, . . . , n − 1}, and set
+                                                          [
+                                 Z = the closure of            πj−1 (πj (E)).
+                                                           j
+
+
+Then dim Z ≤ n − 2 and it suffices to use Theorem 2n−1 to G \ Z.
+        As a corollary one easily gets (see [vdD]) the following
+Lemma 2. If G ⊂ Rn−1 is open and ϕ : G −→ R is continuous, then G has an
+almost decomposition
+                          G ' ∆1 ∪ · · · ∪ ∆p ,
+
+where every ∆ν , after a permutation of coordinates in Rn−1 , is an M2n−1 -disc
+
+                    ∆ν = {(x00 , xn−1 ) : x00 ∈ Ων , σν (x00 ) < xn−1 < ρν (x00 )}
+
+such that ϕ|∆ν has a continuous extension
+
+                            ϕν : ∆ν ∪ σν ∪ ρν −→ R = R ∪ {−∞, +∞}
+
+such that ϕν (σν ) ⊂ R or ϕν (σν ) = {−∞}, or ϕν (σν ) = {+∞} and the same
+for ρν .
+
+Proposition 2. Let f : S −→ R be a definable C 1 -function defined on a cell
+
+                        S = {(x0 , xn ) ∈ Rn : x0 ∈ ∆, ϕ(x0 ) < xn < ψ(x0 )}
+
+in Rn such that ϕ : ∆ −→ R is of class C 1 .
+               ∂f
+        Assume that  has a finite limit value 4 at (almost) each point of ϕ ( for
+               ∂xn
+              ∂f
+example, when      is bounded ).
+              ∂xn
+  Then there is a closed nowhere dense subset Z of ϕ such that f extends to a
+    1
+C -function
+                            f : S ∪ (ϕ \ Z) −→ R
+
+to S ∪ (ϕ \ Z) as a C 1 -submanifold with boundary.
+Proof. It is left to the reader as an exercise (cf [vdD]).
+
+
+
+        4 An element α ∈ R is a limit value of a function g : S −→ R at a ∈ S iff there is an arc
+
+γ : (0, 1) −→ S such that lim γ(t) = a and lim g(γ(t)) = α.
+                              t→0                t→0
+                         LIPSCHITZ CELL DECOMPOSITION                                5
+
+
+Lemma 3. Let L, M, N, P ∈ R be positive and let
+
+                   G = {(x0 , xn ) : x0 ∈ ∆, ϕ1 (x0 ) < xn < ϕ2 (x0 )}
+
+be a semi-M -cell in Rn such that ∆ is an N -cell in Rn−1 , ϕi : ∆ −→ R, for each
+i ∈ {1, 2},and the following conditions are satisfied almost everywhere in ∆:
+                     ¯     ¯
+                     ¯ ∂ϕ1 ¯
+(2.1)                ¯     ¯
+                     ¯ ∂xj ¯ ≤ M,       for each j ∈ {1, . . . , n − 1};
+
+
+                               ¯       ¯       ¯       ¯
+                               ¯ ∂ϕ1 ¯         ¯       ¯
+(2.2)                          ¯       ¯ < L < ¯ ∂ϕ2 ¯;
+                               ¯ ∂xn−1 ¯       ¯ ∂xn−1 ¯
+
+
+                      ¯     ¯
+                      ¯ ∂ϕ2 ¯
+                      ¯     ¯
+                      ¯ ∂xj ¯
+(2.3)               ¯         ¯
+                    ¯ ∂ϕ2 ¯ ≤ P,         for each j ∈ {1, . . . , n − 1};
+                    ¯         ¯
+                    ¯ ∂xn−1 ¯
+
+
+                                         ∂ϕ2
+(2.4)                             sgn         = const.
+                                        ∂xn−1
+
+  Then G admits an almost decomposition
+
+                                  G ' S1 ∪ · · · ∪ Sk ,
+
+where every Sν is an M̃ -cell, possibly after transposition (xn−1 , xn ), where M̃ is a
+positive constant depending only on L, M, N and P .
+Proof. Put
+                 ∆ = {(x00 , xn−1 ) : x00 ∈ Ω, σ(x00 ) < xn−1 < ρ(x00 )}.
+One can assume that
+                                         ∂ϕ2
+(2.5)                                         > 0;
+                                        ∂xn−1
+
+the other case will follow by a modification. Because of (2.2) and (2.5), it is clear
+that σ : Ω −→ R. By a subdivision of Ω one can assume that σ is of class C 1 and
+that (2.2) is satisfied almost everywhere on every segment {(x00 , xn−1 ) : σ(x00 ) <
+xn−1 < ρ(x00 )}, where x00 ∈ Ω and that ϕi admit continuous extensions
+
+                            ϕi : ∆ ∪ σ −→ R           (i = 1, 2)
+
+and
+                              ϕ2 : ∆ ∪ ρ −→ R ∪ {+∞}
+such that ϕ2 (ρ) ⊂ R or ϕ2 (ρ) = {+∞}.
+6                                       WIESÃLAW PAWÃLUCKI
+
+
+    By Proposition 2, ϕ1 is of class C 1 almost everywhere on σ. Put
+
+        ψ(x00 , xn−1 ) = ϕ1 (x00 , σ(x00 )) + L(xn−1 − σ(x00 )),       for (x00 , xn−1 ) ∈ ∆.
+
+Then ψ is an max(M + M N + LN, L)-function and ϕ1 < ψ < ϕ2 .
+   Now G ' S1 ∪ S2 , where S1 = {(x0 , xn ) : ϕ1 (x0 ) < xn < ψ(x0 )} and S2 =
+{(x00 , xn−1 , xn ) : x00 ∈ Ω, Φ1 (x00 , xn ) < xn−1 < Φ2 (x00 , xn )}, where
+                            −1 00
+                            ψ (x , xn ) = L−1 (xn − ϕ1 (x00 , σ(x00 ))) + σ(x00 ),
+                           
+                           
+                                       if ϕ1 (x00 , σ(x00 )) < xn < ψ(x00 , ρ(x00 ))
+          Φ2 (x00 , xn ) =
+                           
+                           
+                           
+                             ρ(x00 ), if ψ(x00 , ρ(x00 )) ≤ xn < ϕ2 (x00 , ρ(x00 ))
+
+and
+                         ½
+             00
+                             σ(x00 ),         if ϕ1 (x00 , σ(x00 )) < xn ≤ ϕ2 (x00 , σ(x00 ))
+        Φ1 (x , xn ) =
+                             ϕ−1  00               00    00              00    00
+                              2 (x , xn ), if ϕ2 (x , σ(x )) < xn < ϕ2 (x , ρ(x )),
+
+
+where ψ −1 and ϕ−1
+                2 stand for inversions with respect to xn−1 .
+
+
+Lemma 4. Let A ⊂ Rn−1 be open and let M ∈ R, M > 0. Let fα : A −→ R
+(α ∈ {1, . . . , k + l}) be M -functions on A each of which has a continuous extension
+to A:
+                                       fα : A −→ R.
+Assume that for each a ∈ ∂A there are α ≤ k and β > k such that fβ (a) ≤ fα (a).
+    Then the set
+
+             S = {(x0 , xn ) ∈ A × R : max fα (x0 ) < xn <              min    fβ (x0 )}
+                                           1≤α≤k                     k<β≤k+l
+
+
+is an M -disc in Rn .
+Proof. Indeed,
+
+            S = {(x0 , xn ) ∈ B × R : max fα (x0 ) < xn <              min     fβ (x0 )},
+                                           1≤α≤k                     k<β≤k+l
+
+
+where B is the natural projection of S to A. It is clear that max fα =                      min      fβ
+                                                                          1≤α≤k            k<β≤k+l
+on ∂B and the lemma follows.
+
+
+Lemma 5. Let α1 , α2 ∈ R, α1 < α2 and let f, g, h : (α1 , α2 ) −→ R be three
+continuous definable functions such that
+
+(2.6)                                   g≤f     on (α1 , α2 );
+
+
+(2.7)       for each i ∈ {1, 2}, if αi ∈ R, then          lim g(t) = lim h(t) ∈ R;
+                                                          t→αi          t→αi
+                            LIPSCHITZ CELL DECOMPOSITION                                        7
+
+
+(2.8)               sgnf 0 (t) = const     almost everywhere in (α1 , α2 ),
+
+and there is ² > 0 such that
+
+(2.9)   |f 0 (t)| ≥ |g 0 (t)| + ² and |f 0 (t)| > |h0 (t)|   almost everywhere in (α1 , α2 ).
+
+  Then h < f on (α1 , α2 ).
+Proof. One can assume that f 0 (t) > 0. Then α1 ∈ R, since otherwise by (2.9),
+ lim (f (t) − g(t)) = −∞, a contradiction with (2.6). By (2.9), f − h is strictly
+t→−∞
+increasing and, by (2.6) and (2.7),
+
+                        lim (f (t) − h(t)) ≥ lim (g(t) − h(t)) = 0.
+                       t→α1                       t→α1
+
+Hence, f − h > 0 on (α1 , α2 ).
+
+
+3. Reduction of Theorem 1n to a special case of semi-M -cells.
+  By the standard cell decomposition theorem (see [vdD]) and since
+                       n
+                       [
+                n
+              R =          {(x1 , . . . , xn ) ∈ Rn : |xk | ≤ |xj |, for any k 6= j},
+                      j=1
+
+it suffices to derive Theorem 1n for any cell G in Rn such that
+
+(3.1)                G = {(x0 , xn ) : x0 ∈ ∆, ϕ1 (x0 ) < xn < ϕ2 (x0 )},
+
+where ϕi : ∆ −→ R (i = 1, 2) are continuous.
+   For given positive L, P ∈ R such a cell G will be called an (L, P )-cell (with
+respect to the variable xr ), where r ∈ {1, . . . , n − 1}, iff
+                                                   ¯     ¯
+                                                   ¯ ∂ϕi ¯
+                            ¯     ¯                ¯     ¯
+                            ¯ ∂ϕi ¯                ¯ ∂xj ¯
+                            ¯     ¯
+(3.2)                       ¯ ∂xr ¯ ≥ L and ¯¯ ∂ϕi ¯¯ ≤ P ,
+                                                   ¯     ¯
+                                                   ¯ ∂xr ¯
+
+almost everywhere on ∆, for i ∈ {1, 2}, j ∈ {1, . . . , n − 1}.
+Proposition 3.
+  (1) Any open cell G ⊂ Rn has an almost decomposition
+
+(3.3)                                  G ' S1 ∪ · · · ∪ Sk ,
+
+       where every Sν is either a semi-Mn -cell or an (Ln , Pn )-cell after a permu-
+       tation of coordinates, where positive constants Mn , Ln and Pn depend only
+       on n.
+   (2) If a cell G is an (L, P )-cell, then G has an almost decomposition (3.3) with
+       only semi-M -cells, where a constant M depends only on n, L and P .
+
+  To prove Proposition 3 we first have the following
+8                                      WIESÃLAW PAWÃLUCKI
+
+
+Lemma 6. Let H be an open subset of Rn and let E be a closed subset of ∂H such
+that dim E < n − 1. Let ri ∈ {1, . . . , n − 1} (i ∈ {1, 2}). Assume that L, P ∈ R are
+positive and such that, for each a ∈ ∂H \ E:
+
+(3.4 − i) there exists a neighborhood U of a in Rn such that ∂H ∩ U is (the graph
+of) a C 1 -function ψ : V −→ R defined on an open V ⊂ Rn−1 and such that
+                                      ¯     ¯
+                                      ¯ ∂ψ ¯
+           ¯      ¯                   ¯     ¯
+           ¯ ∂ψ ¯                     ¯ ∂xj ¯
+           ¯      ¯                   ¯     ¯
+           ¯ ∂xr ¯ ≥ L        and     ¯ ∂ψ ¯ ≤ P          on V for j ∈ {1, . . . , n − 1},
+                i                     ¯     ¯
+                                      ¯ ∂xr ¯
+                                             i
+
+
+for i = 1 or i = 2.
+    Then:
+    (1) H admits an almost decomposition
+
+(3.5)                                    H ' S1 ∪ · · · ∪ Sk ,
+
+        where every Sν after transposition (xr1 , xn ) is either a semi-max(L−1 , P )-
+        cell or a (P −1 , max(L−1 , P ))-cell in Rn with respect to xr2 .
+    (2) If r1 = r2 = r, H has such an almost decomposition (3.5) that every Sν is
+        a max(L−1 , P )-cell after transposition (xr , xn ).
+
+Proof of Lemma 6. After transposition (xr1 , xn ) take a C 1 -cell decomposition com-
+patible with each of the sets
+
+                          Λi = {a ∈ ∂H \ E : a satisfies (3.4 − i)}
+
+(i = 1, 2) and with E. This gives an almost decomposition
+
+                                         H ' S1 ∪ · · · ∪ Sk ,
+
+where every cell Sν is of the following form
+
+         Sν = {ϕ1ν (x1 , . . . , x̂r1 , . . . , xn ) < xr1 < ϕ2ν (x1 , . . . , x̂r1 , . . . , xn )},
+
+such that, for i ∈ {1, 2}, either ϕiν ⊂ Λ1 or ϕiν ⊂ Λ2 , or ϕiν ≡ −∞, or ϕiν ≡ +∞.
+    One can assume that for each i either ϕiν ⊂ Λ1 or ϕiν ⊂ Λ2 , since otherwise Sν
+is trivially a semi-max(L−1 , P )-cell.
+    If ϕiν ⊂ Λ1 , for at least one i, then Sν is a semi-max(L−1 , P )-cell.
+    If ϕiν ⊂ Λ2 , for each i ∈ {1, 2}, and r1 6= r2 , then it is easy to check that Sν is
+an (P, max(L−1 , P ))-cell with respect to xr2 .
+
+Proof of Proposition 3. One can assume that G is as in (3.1). The proof will be by
+descending induction on the number
+
+               X2   ½ ¯          ¯                                                               ¾
+                          ¯ ∂ϕi ¯
+         hGi =     ] j : ¯¯      ¯ < 1 + 2M2n−1
+                                 ¯                            almost everywhere on ∆ .
+               i=1
+                            ∂x j
+                         LIPSCHITZ CELL DECOMPOSITION                                 9
+
+
+If hGi = 2(n − 1), G is a (1 + 2M2n−1 )-cell, so assume that hGi < 2(n − 1). Observe
+        ˜ ⊂ ∆ is open, then for G̃ = G ∩ (∆
+that if ∆                                       ˜ × R), hG̃i ≥ hGi. Hence, one can
+assume that every ϕi is C 1 and
+
+                                                       ∂ϕi
+(3.6)           for each j ∈ {1, . . . , n − 1}, sgn       = const on ∆;
+                                                       ∂xj
+
+                                                         ¯     ¯
+                                                         ¯ ∂ϕi ¯
+(3.7)       for each j ∈ {1, . . . , n − 1},     either ¯¯     ¯ < 1 + 2M2n−1
+                                                           ∂xj ¯
+                ¯     ¯                            ¯     ¯
+                ¯ ∂ϕi ¯                            ¯ ∂ϕi ¯
+            or ¯¯     ¯ > 1 + 2M2n−1 ,         or ¯¯     ¯ = 1 + 2M2n−1        on ∆
+                  ∂xj ¯                              ∂xj ¯
+
+  and there is ri ∈ {1, . . . , n − 1} such that
+                                                  ¯     ¯ ¯        ¯
+                                                  ¯ ∂ϕi ¯ ¯ ∂ϕi ¯
+(3.8)         for each j ∈ {1, . . . , n − 1},    ¯     ¯ ¯        ¯
+                                                  ¯ ∂xj ¯ ≤ ¯ ∂xr ¯    on ∆.
+                                                                 i
+
+
+
+Moreover, one can assume that
+                 ¯      ¯
+                 ¯ ∂ϕi ¯
+(3.9)            ¯      ¯
+                 ¯ ∂xr ¯ ≥ 4M2n−1 (1 + 2M2n−1 ),             for i ∈ {1, 2},
+                      i
+
+
+
+since otherwise G is a semi-4M2n−1 (1 + 2M2n−1 )-cell. Besides, by Lemma 2, one
+can assume that
+
+                 ∆ = {(x00 , xn−1 ) : x00 ∈ Ω, σ(x00 ) < xn−1 < ρ(x00 )}
+
+is an M2n−1 -disc and every ϕi has a continuous extension
+
+                                  ϕi : ∆ ∪ σ ∪ ρ −→ R
+
+such that
+
+        ϕi (σ) ⊂ R or ϕi (σ) = {−∞} or ϕi (σ) = {+∞}, and the same for ρ.
+
+  Observe that if
+                                   ∂ϕ1   ∂ϕ2
+                                       ¦      ≤ 0,
+                                  ∂xn−1 ∂xn−1
+then clearly G is a semi-M2n−1 -cell after transposition (xn−1 , xn ), so without any
+loss of generality one can assume that
+
+                          ∂ϕi
+                               > 0 on ∆,             for i ∈ {1, 2}.
+                         ∂xn−1
+
+   We will first show how to reduce our proposition to the case of any (L, P )-cell
+with respect to any variable xr , so assume Proposition 3 true for any (L, P )-cell.
+10                                WIESÃLAW PAWÃLUCKI
+
+
+   By (3.7), one can distinguish the following three cases:
+                     ¯       ¯
+                     ¯ ∂ϕi ¯
+(3.10)               ¯       ¯
+                     ¯ ∂xn−1 ¯ ≤ 1 + 2M2n−1 , for i ∈ {1, 2};
+
+                       ¯       ¯
+                       ¯ ∂ϕi ¯
+(3.11)                 ¯       ¯
+                       ¯ ∂xn−1 ¯ ≥ 1 + 2M2n−1 ,        for    i ∈ {1, 2};
+
+
+         ¯       ¯                         ¯       ¯
+         ¯ ∂ϕ1 ¯                           ¯ ∂ϕ2 ¯
+(3.12)   ¯       ¯                         ¯       ¯ > 1 + 2M2n−1
+         ¯ ∂xn−1 ¯ < 1 + 2M2n−1        and ¯
+                                             ∂xn−1 ¯
+                                                                              (or vice-versa).
+
+
+
+   Case (3.10 ) In fact we will be using only that every ϕi : ∆ ∪ σ ∪ ρ −→ R is
+continuous and there is a closed nowhere dense Z ⊂ ∆ such that ϕi is C 1 on ∆ \ Z
+and
+                      ¯       ¯
+                      ¯ ∂ϕi ¯
+(3.13)                ¯       ¯
+                      ¯ ∂xn−1 ¯ ≤ 1 + 2M2n−1 , on ∆ \ Z;
+
+                ¯     ¯    ¯      ¯
+                ¯ ∂ϕi ¯    ¯ ∂ϕi ¯
+(3.14)          ¯     ¯    ¯      ¯
+                ¯ ∂xj ¯ ≤ 3¯ ∂xr ¯     on ∆ \ Z            (j = 1, . . . , n − 1)
+                                i
+
+
+and
+                      ¯      ¯
+                      ¯ ∂ϕi ¯
+(3.15)                ¯      ¯
+                      ¯ ∂xr ¯ ≥ 2M2n−1 (1 + 2M2n−1 )           on ∆ \ Z.
+                           i
+
+
+Put
+         H = {(x00 , xn−1 , xn ) ∈ G : ϕ2 (x00 , σ(x00 )) < xn < ϕ1 (x00 , ρ(x00 ))} =
+                   {(x0 , xn ) ∈ Rn : x0 ∈ D, Φ1 (x0 ) < xn < Φ2 (x0 )},
+where
+               D = {(x00 , xn−1 ) ∈ ∆ : ϕ2 (x00 , σ(x00 )) < ϕ1 (x00 , ρ(x00 ))},
+                  Φ1 (x00 , xn−1 ) = max(ϕ2 (x00 , σ(x00 )), ϕ1 (x00 , xn−1 ))
+and
+                  Φ2 (x00 , xn−1 ) = min(ϕ2 (x00 , xn−1 ), ϕ1 (x00 , ρ(x00 ))).
+Observe that Φ1 = Φ2 on (∂D) ∩ (∆ ∪ σ ∪ ρ), so almost everywhere on ∂D.
+Besides, by Proposition 2, ϕ2 (x00 , σ(x00 )) 6≡ −∞ and
+
+          ∂                       ∂ϕ2 00               ∂ϕ2                  ∂σ 00
+             ϕ2 (x00 , σ(x00 )) =     (x , σ(x00 )) +       (x00 , σ(x00 ))     (x ),
+         ∂xj                      ∂xj                 ∂xn−1                 ∂xj
+
+almost everywhere on Ω, for j ∈ {1, . . . , n − 2}. Hence, by (3.13) and (3.15)
+                   ¯                     ¯      ¯               ¯
+                   ¯ ∂                   ¯ 7 ¯ ∂ϕ2 00           ¯
+                   ¯          00    00 ¯        ¯            00 ¯
+                   ¯ ∂xj ϕ2 (x , σ(x ))¯ ≤ 2 ¯ ∂xr (x , σ(x ))¯
+                                                    2
+                              LIPSCHITZ CELL DECOMPOSITION                                         11
+
+
+and
+          ¯                   ¯     ¯                ¯
+          ¯ ∂                 ¯ 1 ¯ ∂ϕ2 00           ¯
+          ¯          00    00 ¯     ¯             00 ¯
+          ¯ ∂xr ϕ2 (x , σ(x ))¯ ≥ 2 ¯ ∂xr (x , σ(x ))¯ ≥ M2n−1 (1 + 2M2n−1 ).
+               2                                 2
+
+
+Consequently,
+             ¯                           ¯
+             ¯ ∂                         ¯
+             ¯      ϕ   (x 00
+                              , σ(x 00 ¯
+                                      ))
+             ¯ ∂x     2                  ¯
+            ¯ j                           ¯ ≤ 7,      for any j ∈ {1, . . . , n − 1}.
+            ¯ ∂                           ¯
+            ¯       ϕ    (x 00
+                               , σ(x 00 ¯
+                                       ))
+            ¯ ∂xr     2                   ¯
+                  2
+
+
+In the same way, ϕ1 (x00 , ρ(x00 )) 6≡ +∞ and almost everywhere on D
+                   ¯                           ¯
+                   ¯ ∂                         ¯
+                   ¯         ϕ   (x00
+                                      , ρ(x00 ¯
+                                             ))
+                   ¯ ∂xr       1               ¯ ≥ M2n−1 (1 + 2M2n−1 )
+                           1
+
+
+and              ¯                          ¯
+                 ¯ ∂                        ¯
+                 ¯      ϕ  (x 00
+                                 , ρ(x 00 ¯
+                                         ))
+                 ¯ ∂x    1                  ¯
+                ¯ j                          ¯ ≤ 7,   for any j ∈ {1, . . . , n − 1}.
+                ¯ ∂                          ¯
+                ¯       ϕ   (x 00
+                                  , ρ(x 00 ¯
+                                          ))
+                ¯ ∂xr     1                  ¯
+                      1
+
+By Lemma 6 (1), H admits an almost decomposition
+
+(3.16)                                    H ' S1 ∪ · · · ∪ Sk ,
+
+                                                  1
+where every Sν is either a semi-7-cell or a ( , 7)-cell in Rn after transposition
+                                                  7
+(xr1 , xn ).
+   Since G \ H easily almost decomposes into a finite union of semi-M2n−1 -cells
+after transposition (xn−1 , xn ), (3.16) extends to a similar decomposition of G.
+
+   Case (3.11 ) Let ϕ−1
+                      i denotes the inversion of ϕi with respect to xn−1 (i ∈ {1, 2}).
+                   ¯     ¯
+                   ¯ ∂ϕi ¯
+                   ¯
+   Observe that if ¯     ¯ < 1 + 2M2n−1 , then
+                     ∂xj ¯
+                                    ¯     ¯
+                                    ¯ ∂ϕi ¯
+                       ¯ −1 ¯       ¯     ¯
+                       ¯ ∂ϕi ¯      ¯ ∂xj ¯
+                       ¯      ¯
+                       ¯ ∂xj ¯ = ¯¯ ∂ϕi ¯¯ < 1 < 1 + 2M2n−1
+                                  ¯         ¯
+                                  ¯ ∂xn−1 ¯
+
+and, moreover,             ¯ −1 ¯
+                           ¯ ∂ϕi ¯
+                           ¯     ¯ = ¯ 1 ¯ < 1 < 1 + 2M2n−1 .
+                           ¯ ∂xn ¯ ¯ ∂ϕi ¯
+                                     ¯       ¯
+                                     ¯ ∂xn−1 ¯
+
+Hence,
+   ½ ¯       ¯             ¾   ½ ¯ −1 ¯                   ¾
+       ¯ ∂ϕi ¯                      ¯ ∂ϕi ¯
+  ] j:¯¯     ¯                      ¯
+               < 1 + 2M2n−1 < ] ν : ¯      ¯ < 1 + 2M2n−1                        for i ∈ {1, 2}.
+         ∂xj ¯                         ∂xν ¯
+12                                 WIESÃLAW PAWÃLUCKI
+
+
+Again it suffices to decompose the cell H defined as in Case (3.10). Observe that
+after transposition (xn−1 , xn ), H is the following cell
+
+         H = {(x00 , xn , xn−1 ) : x00 ∈ Ω,   ϕ1 (x00 , σ(x00 )) < xn < ϕ2 (x00 , ρ(x00 )),
+
+                           ϕ−1  00                −1 00
+                            2 (x , xn ) < xn−1 < ϕ1 (x , xn )}.
+
+Since hHi > hGi , the induction hypothesis gives the desired decomposition.
+
+     Case (3.12 ) Then ϕ1 (σ) ⊂ R and define
+
+             ψ(x00 , xn−1 ) = ϕ1 (x00 , σ(x00 )) + (1 + 2M2n−1 )(xn−1 − σ(x00 )),
+
+for (x00 , xn−1 ) ∈ ∆. Now G splits into two cells:
+
+                     S1 = {(x0 , xn ) : x0 ∈ ∆,    ϕ1 (x0 ) < xn < ψ(x0 )}
+
+and
+                    S2 = {(x0 , xn ) : x0 ∈ ∆,    ψ(x0 ) < xn < ϕ2 (x0 )}.
+Observe that                      ·                      ¸
+                      ∂ψ    ∂ϕ1      ∂ϕ1                   ∂σ
+                          =     +         − (1 + 2M2n−1 )      ,
+                      ∂xj   ∂xj     ∂xn−1                  ∂xj
+for j ∈ {1, . . . , n − 2}, almost everywhere on ∆.
+   Hence, by (3.8), (3.12) and (3.9),
+                     ¯     ¯ ¯      ¯                            ¯      ¯
+                     ¯ ∂ψ ¯ ¯ ∂ϕ1 ¯                              ¯      ¯
+                     ¯     ¯≤¯      ¯ + 2M2n−1 (1 + 2M2n−1 ) ≤ 3 ¯ ∂ϕ1 ¯
+                     ¯ ∂xj ¯ ¯ ∂xr ¯                           2 ¯ ∂xr1 ¯
+                                  1
+
+
+and
+  ¯      ¯ ¯       ¯                           ¯      ¯
+  ¯ ∂ψ ¯ ¯ ∂ϕ1 ¯                             1 ¯ ∂ϕ1 ¯
+  ¯      ¯ ¯       ¯                           ¯      ¯
+  ¯ ∂xr ¯ ≥ ¯ ∂xr ¯ − 2M2n−1 (1 + 2M2n−1 ) ≥ 2 ¯ ∂xr ¯ ≥ 2M2n−1 (1 + 2M2n−1 ).
+       1         1                                  1
+
+
+Therefore,                                ¯      ¯
+                                          ¯ ∂ψ ¯
+                                          ¯      ¯
+                                          ¯ ∂xj ¯
+                                         ¯        ¯
+                                         ¯ ∂ψ ¯ ≤ 3,
+                                         ¯        ¯
+                                         ¯ ∂xr ¯
+                                               1
+
+for any j ∈ {1, . . . , n − 2}. Thus S1 satisfies the conditions (3.13)–(3.15) and the
+case (3.10) applies.
+     On the other hand, if j ∈ {1, . . . , n − 2} and
+                                ¯       ¯
+                                ¯ ∂ϕ1 ¯
+                                ¯       ¯
+                                ¯ ∂xj ¯ < 1 + 2M2n−1 ,
+
+then
+                      ¯     ¯   ¯     ¯
+                      ¯ ∂ψ ¯    ¯ ∂ϕ1 ¯
+         ¯ −1 ¯       ¯     ¯   ¯     ¯
+         ¯ ∂ψ ¯       ¯ ∂xj ¯   ¯ ∂xj ¯ + 2M2n−1 (1 + 2M2n−1 )
+         ¯     ¯
+         ¯ ∂xj ¯ = ¯¯ ∂ψ ¯¯ ≤             1 + 2M
+                                                               < 1 + 2M2n−1 ;
+                    ¯         ¯                 2n−1
+                    ¯ ∂xn−1 ¯
+                        LIPSCHITZ CELL DECOMPOSITION                              13
+
+
+hence,
+           ½  ¯     ¯             ¾   ½ ¯ −1 ¯                  ¾
+              ¯ ∂ϕ1 ¯                      ¯ ∂ψ ¯
+              ¯
+          ] j:¯     ¯                      ¯
+                      < 1 + 2M2n−1 ≤ ] ν : ¯      ¯ < 1 + 2M2n−1 ,
+                ∂xj ¯                         ∂xν ¯
+
+while      ½     ¯     ¯             ¾   ½ ¯ −1 ¯                  ¾
+                 ¯ ∂ϕ2 ¯                      ¯ ∂ϕ2 ¯
+          ] j : ¯¯     ¯ < 1 + 2M2n−1 < ] ν : ¯     ¯
+                                              ¯ ∂xν ¯ < 1 + 2M2n−1
+                   ∂xj ¯
+and we finish by the induction hypothesis as in Case (3.11).
+
+   In the case of any (L, P )-cell with respect to xr it is enough to repeat all the
+argument with suitable changes; in particular, one should put r1 = r2 = r and a
+coefficient P instead of 3 in (3.15). Moreover, one can assume that
+                              ¯     ¯          ¯       ¯
+                              ¯ ∂ϕi ¯          ¯ ∂ϕi ¯
+                              ¯     ¯          ¯       ¯
+                              ¯ ∂xr ¯ ≥ 2M2n−1 ¯ ∂xn−1 ¯,
+
+for each i ∈ {1, 2}, since otherwise we could assume the opposite inequality, which
+easily gives a representation of G as a semi-2M2n−1 max(L−1 , P )-cell.
+
+4. Theorem 1n for a semi-M -cell.
+Proposition 4. Any semi-M -cell G in Rn (where M > 0) admits an almost de-
+composition
+
+(4.1)                             G ' S1 ∪ · · · ∪ Sk ,
+
+where every Sν is an M 0 -cell after a permutation of coordinates and M 0 ≥ 1 is a
+constant depending only on M and n.
+Proof. One can assume that G is in the form (3.1), where ϕi : ∆ −→ R (i = 1, 2)
+are continuous and
+          ¯     ¯
+          ¯ ∂ϕ1 ¯
+(4.2)     ¯     ¯
+          ¯ ∂xj ¯ < M almost everywhere on ∆, for j ∈ {1, . . . , n − 1}.
+
+Indeed, in the case ϕ1 ≡ −∞ or ϕ1 ≡ +∞ reduces to the above by assuming
+first that ∆ is an M2n−1 -disc and applying next transposition (xn−1 , xn ).
+  The proof will be by descending induction on the number
+                  ½      ¯     ¯                               ¾
+                         ¯ ∂ϕ2 ¯
+          [G] = ] j : ¯  ¯     ¯ ≤ M2n−1 almost everywhere on ∆ .
+                           ∂xj ¯
+
+If [G] = n − 1, G is a max(M, M2n−1 )-cell, so assume that [G] < n − 1. Notice
+                                  ˜ × R), [G̃] ≥ [G].
+        ˜ ⊂ ∆, then for G̃ = G ∩ (∆
+that if ∆
+  Fix any L > max(M, M2n−1 ) and any M ∗ > M + (L + M )M2n−1 . Dividing ∆,
+one can assume that every ϕi is C 1 on ∆ and
+
+                                                           ∂ϕi
+(4.3)             for each j ∈ {1, . . . , n − 1},   sgn       = const;
+                                                           ∂xj
+14                                    WIESÃLAW PAWÃLUCKI
+                                              ¯     ¯                           ¯     ¯
+                                              ¯ ∂ϕ2 ¯                           ¯ ∂ϕ2 ¯
+(4.4)    for each j ∈ {1, . . . , n − 1},     ¯     ¯                           ¯     ¯
+                                              ¯ ∂xj ¯ > L     on ∆         or   ¯ ∂xj ¯ ≤ L   on ∆
+
+and
+                                                              ¯     ¯ ¯     ¯
+                                                              ¯ ∂ϕ2 ¯ ¯ ∂ϕ2 ¯
+(4.5)                                                         ¯
+                there exists r ∈ {1, . . . , n − 1} such that ¯     ¯ ≥ ¯   ¯
+                                                                ∂xr ¯ ¯ ∂xj ¯
+                                                    ¯     ¯              ¯     ¯
+                                                    ¯ ∂ϕ2 ¯              ¯ ∂ϕ2 ¯
+ for each j ∈ {1, . . . , n − 1}, and either        ¯     ¯     ∗        ¯     ¯ ≤ M∗
+                                                    ¯ ∂xr ¯ ≥ M       or ¯
+                                                                           ∂xr ¯
+                                                                                              on ∆.
+
+Clearly, one can assume that
+                                      ¯     ¯
+                                      ¯ ∂ϕ2 ¯
+(4.6)                                 ¯     ¯     ∗
+                                      ¯ ∂xr ¯ ≥ M         on ∆.
+
+Finally, by Theorem 2n−1 and Lemma 2, one can assume that
+
+                   ∆ = {(x00 , xn−1 ) : x00 ∈ Ω,       σ(x00 ) < xn−1 < ρ(x00 )}
+
+is an M2n−1 -disc in Rn−1 and every ϕi admits a continuous extension
+
+                                       ϕi : ∆ ∪ σ ∪ ρ −→ R
+
+such that ϕi (σ) ⊂ R or ϕi (σ) = {−∞}, or ϕi (σ) = {+∞}, and the same for ρ.
+Because of (4.2), ϕ1 : ∆ ∪ σ ∪ ρ −→ R.
+                   ¯       ¯
+                   ¯ ∂ϕ2 ¯
+     Case I :      ¯       ¯
+                   ¯ ∂xn−1 ¯ > L        on    ∆.
+
+                  ∂ϕ2                  ∂ϕ2
+     Assume that        > L; the case       < −L will follow by a modification.
+                 ∂xn−1                ∂xn−1
+Consider the following function
+
+(4.7)                  ψ(x00 , xn−1 ) = ϕ1 (x00 , σ(x00 )) + L(xn−1 − σ(x00 )),
+
+for (x00 , x0 ) ∈ ∆.
+     Then ϕ1 < ψ < ϕ2 and G ' S1 ∪ S2 , where
+
+                       S1 = {(x0 , xn ) : x0 ∈ ∆,     ϕ1 (x0 ) < xn < ψ(x0 )}
+
+is an M ∗ -cell and
+
+                       S2 = {(x0 , xn ) : x0 ∈ ∆,     ψ(x0 ) < xn < ϕ2 (x0 )}
+
+can be interpreted after transposition (xn−1 , xn ) as
+
+          S2 = {(x00 , xn−1 , xn ) : x00 ∈ Ω, ϕ1 (x00 , σ(x00 )) < xn < ϕ2 (x00 , ρ(x00 )),
+
+                                θ2 (x00 , xn ) < xn−1 < θ1 (x00 , xn )},
+                               LIPSCHITZ CELL DECOMPOSITION                                      15
+
+
+where
+                         ½
+            00
+                             σ(x00 ) ,         if ϕ1 (x00 , σ(x00 )) < xn ≤ ϕ2 (x00 , σ(x00 ))
+        θ2 (x , xn ) =
+                             ϕ−1  00
+                              2 (x , xn ) ,    if ϕ2 (x00 , σ(x00 )) < xn < ϕ2 (x00 , ρ(x00 ))
+
+and
+                         ½
+              00             ψ −1 (x00 , xn ) , if ϕ1 (x00 , σ(x00 )) < xn ≤ ψ(x00 , ρ(x00 ))
+        θ1 (x , xn ) =
+                             ρ(x00 ) ,          if ψ(x00 , ρ(x00 )) < xn < ϕ2 (x00 , ρ(x00 )),
+
+and where ϕ−12   (and ψ −1 ) stands for the inversion of ϕ2 (and ψ) with respect to
+xn−1 . Now, if j ∈ {1, . . . , n − 2} and
+                                          ¯     ¯
+                                          ¯ ∂ϕ2 ¯
+                                          ¯     ¯
+                                          ¯ ∂xj ¯ ≤ M2n−1 ,
+
+then                                      ¯     ¯
+                                          ¯ ∂ϕ2 ¯
+                             ¯ −1 ¯       ¯     ¯   ¯     ¯
+                             ¯ ∂ϕ2 ¯      ¯ ∂xj ¯   ¯ ∂ϕ2 ¯
+                             ¯     ¯                ¯     ¯
+                             ¯ ∂xj ¯ = ¯¯ ∂ϕ2 ¯¯ < ¯ ∂xj ¯ ≤ M2n−1
+                                        ¯         ¯
+                                        ¯ ∂xn−1 ¯
+
+and, moreover,                 ¯ −1 ¯
+                               ¯ ∂ϕ2 ¯        1      1
+                               ¯     ¯
+                               ¯ ∂xn ¯ = ¯¯ ∂ϕ2 ¯¯ < L < M2n−1 .
+                                          ¯       ¯
+                                          ¯ ∂xn−1 ¯
+
+Hence, [S2 ] > [G] and the induction hypothesis ends the proof in this case.
+                   ¯       ¯
+                   ¯ ∂ϕ2 ¯
+  Case II :        ¯       ¯
+                   ¯ ∂xn−1 ¯ ≤ L         on     ∆.
+
+  By (4.6) and (4.3), one can assume without any loss of generality that
+
+                     ∂ϕ2                   ∂ϕ2                     ∂ϕ1
+                         ≥ M∗ ,                 > 0 and                 > 0;
+                     ∂xr                  ∂xn−1                   ∂xn−1
+
+other possibilities will follow by simple modifications.
+  Since M ∗ > L , r ∈ {1, . . . , n − 2}. By Proposition 2, we have almost everywhere
+on ∆:
+                             ¯                                               ¯
+       ∂                     ¯ ∂ϕ2 00               ∂ϕ2              ∂σ 00 ¯¯
+               00    00
+          ϕ2 (x , σ(x )) = ¯ ¯               00
+                                     (x , σ(x )) +          00   00
+                                                         (x , σ(x ))     (x )¯ ≥
+      ∂xr                       ∂xr                ∂xn−1             ∂xr
+
+                                          M ∗ − LM2n−1 ,
+while
+
+¯                   ¯                                    ¯                   ¯
+¯ ∂                 ¯                                    ¯ ∂                 ¯
+¯          00    00 ¯                                    ¯          00    00 ¯
+¯ ∂xr ϕ1 (x , σ(x ))¯ ≤ M + M M2n−1              and     ¯ ∂xr ϕ1 (x , ρ(x ))¯ ≤ M + M M2n−1 .
+16                                    WIESÃLAW PAWÃLUCKI
+
+
+     Thus, by Lemma 5,
+
+                         ϕ2 (x00 , σ(x00 )) > ϕ1 (x00 , ρ(x00 ))    on     Ω.
+
+Hence,
+                                        G ' S1 ∪ S2 ∪ S3 ,
+where
+
+      S1 = {(x00 , xn−1 , xn ) : (x00 , xn−1 ) ∈ ∆, ϕ1 (x00 , xn−1 ) < xn < ϕ1 (x00 , ρ(x00 ))},
+
+           S2 = {(x00 , xn−1 , xn ) : x00 ∈ Ω, ϕ1 (x00 , ρ(x00 )) < xn < ϕ2 (x00 , σ(x00 )),
+                                     σ(x00 ) < xn−1 < ρ(x00 )}
+and
+
+      S3 = {(x00 , xn−1 , xn ) : (x00 , xn−1 ) ∈ ∆, ϕ2 (x00 , ρ(x00 )) < xn < ϕ2 (x00 , xn−1 )}.
+
+S1 is an M ∗ -cell, while S2 is an M2n−1 -cell after transposition (xn−1 , xn ). We will
+investigate S3 . Put
+
+              ˜ = {(x00 , xn ) : x00 ∈ Ω, ϕ2 (x00 , σ(x00 )) < xn < ϕ2 (x00 , ρ(x00 ))}.
+              ∆
+
+Now,
+
+                                                    ˜ ϕ−1 (x00 , xn ) < xn−1 < ρ(x00 )},
+           S3 = {(x00 , xn−1 , xn ) : (x00 , xn ) ∈ ∆, 2
+
+
+where ϕ−1
+       2 stands for the inversion of ϕ2 with respect to xn−1 .
+
+     We will use Lemma 3 to get a desired decomposition of S3 . Observe first that
+
+                  ∂ϕ2    ∂ϕ2                                     ¯     ¯
+      ∂ϕ−1        ∂xr    ∂xr   M∗   M + (L + M )M2n−1            ¯ ∂ρ ¯
+         2
+           =           ≥     ≥    >                   > M2n−1 ≥ ¯¯     ¯
+       ∂xr        ∂ϕ2     L    L            L                      ∂xr ¯
+                 ∂xn−1
+
+and                  ¯ −1 ¯   ¯      ¯
+                     ¯ ∂ϕ2 ¯  ¯ ∂ϕ2 ¯
+                     ¯     ¯  ¯      ¯
+                     ¯ ∂xj ¯  ¯ ∂xj ¯
+                     ¯ −1 ¯ = ¯¯     ¯ ≤ 1,
+                                     ¯                  for j ∈ {1, . . . , n − 2},
+                     ¯ ∂ϕ2 ¯   ¯ ∂ϕ2 ¯
+                     ¯     ¯   ¯ ∂xr ¯
+                     ¯ ∂xr ¯
+
+and                              ¯ −1 ¯
+                                 ¯ ∂ϕ2 ¯
+                                 ¯     ¯
+                                 ¯ ∂xn ¯     1     1
+                                 ¯ −1 ¯ = ¯ −1 ¯ ≤ ∗ < 1.
+                                 ¯ ∂ϕ2 ¯  ¯ ∂ϕ2 ¯ M
+                                 ¯     ¯  ¯     ¯
+                                 ¯ ∂xr ¯  ¯ ∂xr ¯
+
+Now it suffices to check that ∆ has an almost decomposition into N -cells with
+respect to the variable xr , where a constant N depends only on M, L, M ∗ and
+M2n−1 . We will check this using Lemma 6 (2).
+                              LIPSCHITZ CELL DECOMPOSITION                                            17
+
+
+   We have almost everywhere on Ω:
+                                             µ           ¶
+          ∂       00    00    ∂ϕ2 00      00      LM2n−1
+             ϕ2 (x , σ(x )) ≥     (x , σ(x )) 1 −    ∗
+                                                           ≥ M ∗ − LM2n−1
+         ∂xr                  ∂xr                  M
+
+and
+  ¯                         ¯  ¯                                                           ¯
+  ¯ ∂                       ¯  ¯ ∂ϕ2 00                   ∂ϕ 2                  ∂σ         ¯
+  ¯     ϕ  (x00
+                 , σ(x00
+                         )) ¯  ¯     (x   , σ(x 00
+                                                   )) +        (x 00
+                                                                     , σ(x00
+                                                                             ))     (x 00
+                                                                                          )¯
+  ¯ ∂xj  2                  ¯  ¯ ∂xj                    ∂xn−1                   ∂xj        ¯   M∗
+  ¯                         ¯≤         ¯                    ¯                                ≤    .
+  ¯ ∂                       ¯          ¯ ∂ϕ2 00             ¯
+                                                         00 ¯ M (1 + M2n−1 )                   M
+  ¯           00       00 ¯            ¯
+  ¯ ∂xr ϕ2 (x , σ(x ))¯                ¯ ∂xr (x , σ(x ))¯             M∗
+
+The same is true for ρ in the place of σ. Moreover, by the assumption of Case II,
+
+             |ϕ2 (x00 , σ(x00 )) − ϕ2 (x00 , ρ(x00 ))| ≤ |σ(x00 ) − ρ(x00 )|    on    Ω.
+
+Hence,
+                           lim [ϕ2 (x00 , σ(x00 )) − ϕ2 (x00 , ρ(x00 ))] = 0,
+                         x00 →a00
+
+for any a00 ∈ ∂Ω, so the assumptions of Lemma 6 (2) are satisfied.
+
+5. Proof of Theorem 2n for any M -cell.
+   Let
+                     G = {(x0 , xn ) : x0 ∈ ∆ ,       ϕ1 (x0 ) < xn < ϕ2 (x0 )}
+be any M -cell, where M ∈ R, M ≥ 1. Observe that all possible cases reduce to the
+case ϕi : ∆ −→ R (i ∈ {1, 2}). Indeed, suppose for example that ϕ1 : ∆ −→ R
+and ϕ2 ≡ +∞. Then one can assume first that ϕ1 is C 1 on ∆ and, for each
+j ∈ {1, . . . , n − 1},
+                               ∂ϕ1
+                           sgn     = const   on ∆,
+                               ∂xj
+and next that
+
+                   ∆ = {(x00 , xn−1 ) : x00 ∈ Ω,       σ(x00 ) < xn−1 < ρ(x00 )}
+
+is an M2n−1 -disc in Rn−1 such that ϕ1 has a continuous extension
+
+                                      ϕ1 : ∆ ∪ σ ∪ ρ −→ R.
+
+                            ∂ϕ1
+Then, assuming that              > 0,
+                           ∂xn−1
+
+                                            G ' S1 ∪ S2 ,
+
+where
+
+     S1 = {(x00 , xn−1 , xn ) : (x00 , xn−1 ) ∈ ∆, ϕ1 (x0 , xn−1 ) < xn < ϕ1 (x00 , ρ(x00 ))}
+
+is an M (1 + M2n−1 )-cell, while
+
+    S2 = {(x00 , xn−1 , xn ) : x00 ∈ Ω, ϕ1 (x00 , ρ(x00 )) < xn , σ(x00 ) < xn−1 < ρ(x00 )}
+18                                  WIESÃLAW PAWÃLUCKI
+
+
+is an M2n−1 -cell after transposition (xn−1 , xn ).
+  Consequently, assume that ϕi : ∆ −→ R (i ∈ {1, 2}) and that they are C 1 .
+By Theorem 3n−1 , one can assume that ∆ is a regular M3n−1 -cell and then, by
+Proposition 1, that every ϕi has a continuous extension
+
+                                 ϕi : ∆ −→ R          (i ∈ {1, 2}).
+
+Now, still keeping the last property, one can assume that
+
+                  ∆ = {(x00 , xn−1 ) : x00 ∈ Ω,       σ(x00 ) < xn−1 < ρ(x00 )}
+
+is an M2n−1 -disc. Put
+
+                  λ1 (x00 , xn−1 ) = ϕ1 (x00 , σ(x00 )) + 2M (xn−1 − σ(x00 )),
+
+                   λ2 (x00 , xn−1 ) = ϕ1 (x00 , ρ(x00 )) − 2M (xn−1 − ρ(x00 )),
+                   λ3 (x00 , xn−1 ) = ϕ2 (x00 , ρ(x00 )) + 2M (xn−1 − ρ(x00 )),
+and
+                  λ4 (x00 , xn−1 ) = ϕ2 (x00 , σ(x00 )) − 2M (xn−1 − σ(x00 )),
+for any (x00 , xn−1 ) ∈ Ω×R. Every λi has a continuous extension to Ω×R and is an
+M (1 + 3M2n−1 )-function. Its inversion λ−1
+                                          i   with respect to xn−1 has a continuous
+                                        1
+extension to Ω × R as well and is a (1 + 3M2n−1 )-function.
+                                        2
+   For any subset I ⊂ {1, 2, 3, 4}, put
+
+       SI = {(x0 , xn ) ∈ G : xn < λi (x0 ), if i ∈ I        and λi (x0 ) < xn , if i 6∈ I}.
+
+
+     Then                                       [
+                                          G'          SI .
+                                                  I
+
+
+  It suffices to show that every SI is an M (1 + 3M2n−1 )-disc after perhaps trans-
+position (xn−1 , xn ).
+     Fix any I ⊂ {1, 2, 3, 4}.
+     If {1, 2} ⊂ I, then
+
+         SI = {(x0 , xn ) ∈ ∆ × R : ϕ1 (x0 ) < xn < ϕ2 (x0 ), xn < λi (x0 ), if i ∈ I,
+
+                                                             λi (x0 ) < xn , if i 6∈ I},
+and λ1 = ϕ1 on σ, while λ2 = ϕ1 on ρ and Lemma 4 applies.
+     Similarly, when {3, 4} ∩ I = ∅.
+   If {1, 2} 6⊂ I and {3, 4} ∩ I 6= ∅, we have 1 6∈ I and 3 ∈ I or 1 6∈ I and 4 ∈ I (or,
+similarly, 2 6∈ I and 3 ∈ I or 2 6∈ I and 4 ∈ I).
+                            LIPSCHITZ CELL DECOMPOSITION                                           19
+
+
+  Suppose first that 1 6∈ I and 3 ∈ I. Then
+
+(5.1)     SI = {(x00 , xn−1 , xn ) : x00 ∈ Ω,      ϕ1 (x00 , σ(x00 )) < xn < ϕ2 (x00 , ρ(x00 )),
+
+σ(x00 ) < xn−1 < ρ(x00 ), xn−1 < λ−1  00             ˜ −1 00                        ˜
+                                  i (x , xn ) if i ∈ I, λi (x , xn ) < xn−1 if i 6∈ I},
+
+where I˜ ⊂ {1, 2, 3, 4} is defined by the formula:
+  i ∈ I˜ if and only if i ∈ I and i is even or i 6∈ I and i is odd.
+  Since
+                              λ−1  00      00    00       00
+                               1 (x , ϕ1 (x , σ(x )) = σ(x )
+
+and
+                              λ−1  00      00    00       00
+                               3 (x , ϕ2 (x , ρ(x )) = ρ(x ),
+
+for each x00 ∈ Ω and
+                                        σ(x00 ) = ρ(x00 ),
+for each x00 ∈ ∂Ω, we are done by Lemma 4.
+  Let now 1 6∈ I and 4 ∈ I. Then (5.1) holds and since
+
+        λ−1  00      00    00       00
+         1 (x , ϕ1 (x , σ(x )) = σ(x ),             λ−1  00      00    00       00
+                                                     4 (x , ϕ2 (x , σ(x )) = σ(x ),
+
+
+for each x00 ∈ Ω and σ(x00 ) = ρ(x00 ), for each x00 ∈ ∂Ω, we are again done due to
+Lemma 4.
+20                                 WIESÃLAW PAWÃLUCKI
+
+
+                                         References
+[vdD] L. van den Dries, Tame Topology and O-minimal Structures, Cambridge University Press,
+      1998.
+[K]   K. Kurdyka, On a subanalytic stratification satisfying a Whitney property with exponent 1,
+      Proc. Conference Real Algebraic Geometry – Rennes 1991, Springer LNM 1524, pp. 316–
+      322.
+[P]   A. Parusiński, Lipschitz stratification of subanalytic sets, Ann. Scient. Ec. Norm. Sup. 27
+      (1994), 661–696.
+

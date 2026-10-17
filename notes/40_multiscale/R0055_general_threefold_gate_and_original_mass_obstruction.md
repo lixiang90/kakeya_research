@@ -1,3 +1,5 @@
+> R0059范围更新：unweighted原δ方向分离的nearfull平均shading区域已由 notes/40_multiscale/R0059_joint_PW_graph_transfer_nearfull_threefold.md 的新jointPW机制闭合（n=5）；本文旧global angular投影反攻仍正确。本文全λ统一λ³及任意权α目标仍未据此解决，不把nearfull替代全密度。
+
 # R0055：一般threefold门槛、全局投影反攻与原质量账本
 
 2026-10-17，root。G3全类仍未证未否；本稿的严格结果是原量词闭包、small-density区和一条具体转移路径的反例。未经外部同行评审；不新增数学ID或普通高维界，不以条件packet公设冒充G3证明。

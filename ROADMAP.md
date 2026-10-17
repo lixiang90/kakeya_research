@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0058先macro再spec§7实际完成commonkernel原secant slab门槛、保g零offset片与真matrix-time-angle二维预处理反攻。完整Mat2/commonkernel/H5仍open；coarse nearline未付R16回传，2Fst不是ellipsecapacity必要。下一唯一 notes/00_map/R0058_next_original_coupling_critical_path_gate.md。48PDF/49sources/78IDs，Goal active。
+更新2026-10-17，R0059先macro/spec后正式§7转题，完成general n中real dim≤3 nearfull measurable-shading jointPW–graph–GWZ转移。具名wholeproof保依赖，全λ³/原HRZleaf/ordinaryH5仍open。下一唯一 notes/00_map/R0059_next_actual_recursive_value_and_terminal_gate.md，R60先周期macro与真实递推价值核验。50PDF/51sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -126,3 +126,5 @@ R0056 notes/30_algebraic_geometry/R0056_euclidean_multiplicity_and_leading_form_
 R0057 notes/40_multiscale/R0057_charged_joint_capacity_envelope_and_stop.md；A10/B8/twoformal/rootintegration/macro详literature/metadata/R0057_source_check.json。原p0分母、最终p及actual θ≥p、q*下界与保证指数区分、unitclock/fineatomic范围已付。全包络费下界不是actualjointatom lower；连续swap真实densityO1。停止本source scalar-envelope组合，不把已知joint-support余责加公设当新结果。
 
 R0058：非零offset原Q/D概率≤C√K[(ε/|c|)^(1/6)+√r]；nearzero同原g片保νmass≳σ、edge mass≳σ²，粗尺度尚需付费。uniformLip plateau近parabola、真1AD/SM/coarselineescape及真Cantor角给整D cover指数β<1.225，任何dominatedselection不能小费升级2Fst。反攻未建A/g/Def17全source，不反Kakeya。停止D独立2Fst/rank/plateau参数迭代，原A-D耦合或wholemetric需真新机制；不重开旧Y-only/BSG。
+
+R0059：全局Lip graph由regularcells+RCF统一格式付，原jointsemialgebraic PW传absolute3D凸浓集；原重数、平均heavy与真实measurablefiber阈值全收费，得到|unionYi|≥cδ^(n−1+ε)N。仅Yi近S足够，原物理δ方向分离或独立小loss absolutePW不可少。R55 angularcounter仍正确；全λ/weights/HRZ实际leaf未自动付，不能把k4/m3空broad终端当ordinary五维增益。
