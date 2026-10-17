@@ -1,16 +1,30 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），R0035数学/归档完成，Goal active。最终标准仍为n≥5/一般Euclidean Kakeya完整解决/真实反例，或有一手比对与独审支持的重大中间结果；均未达成。无无条件新高维界；六维17/4仍条件；来源工具/分支重证不作新颖/重大成果。
+更新2026-10-17（Asia/Shanghai），R0036数学/归档完成，Goal active。最终标准仍为n≥5/一般Euclidean Kakeya完整解决/真实反例，或有一手比对与独审支持的重大中间结果；均未达成。无无条件新高维界；六维17/4仍条件；来源工具/分支重证不作新颖/重大成果。
 
 ## 恢复与同步
 
-R35开轮核R34 commitb9612e84b931c4558ff09bf8f1536671e0fefb5d、tree2f70f10677ce6d13d73d0682e35b2a26f47dc045、515文件receipt/HEAD/origin/clean一致，固定入口和context.py已执行。R35收尾沿该父安全同步；最终结果以tmp/sync/R0035.json为准，必须fullremote tree/逐path-mode-blob、local exactcommit、每blob bytesSHA256、pending=false/same=true/clean=true全核才报告。下一轮先读GOAL/STATE/ROADMAP/registry/R35round/AGENTS，运行python scripts/context.py，核该receipt/git，不重做已过计算/搭库。
+R36开轮核R35 commit8f27de104128c4d2fb9760d15b8b032da8c1b60e、treeb2372071d3c67a629fc8f29b2cdd25549c64d5b4、533文件receipt/HEAD/origin/remote main/clean一致，固定入口与context.py执行。R36收尾沿该父安全同步，最终以tmp/sync/R0036.json为准，必须fullremote tree/逐path-mode-blob、local exactcommit、每blob bytesSHA256、pending=false/same=true/clean=true全核才报告。下一轮先读GOAL/STATE/ROADMAP/registry/R36round/AGENTS，运行python scripts/context.py，核receipt/git，不重跑已过计算/搭库。
 
-本轮实质progress为完整isotropic candidate/Cor6.9及双全文独审，不是最终/重大成果。每轮唯一main，最多两互补代理，只指定文件/noGit，root统一整合提交同步。原p_A/π/fullν_Q与上一层prior不因删选重设。
+本轮实质progress为macro依赖cut改变下一行动、完整8.2+∞排除及双全文独审，不是最终/重大成果。每轮唯一main，最多两互补代理，只指定文件/noGit，root统一整合提交同步。原p_A/π/fullν_Q与上一层prior不因删选重设。
 
-## 唯一下一入口：R36必须先macro
+## R36：UNB001共享scalar mesh与完整∞排除
 
-R33定期macro有效至本轮；R36必须先宏观审视（连续两轮无信息/源gap则提前规则仍在）。入口notes/10_source_audit/isotropic/R0035_remaining_source_responsibilities_and_macro_gate.md：重列source余责、条件6D出口的价值/代价与优先权、直接五维实际模型是否有真newinput，再选唯一main并先写量词/closure/反攻/停止条件。不能因刚完§6而自动审下一lemma；不能靠threshold/index改名或旧toy解冻。
+强制macro research/reviews/R0036_macro.md已执行；A source_strategy与B frontier_and_route独立意见。实读依赖确认8.2+10.1约18页不调用§7/9，故没有自动从§7续页。ISO不能直接给finite4D种子；R29 conditional17/4仍需完整源/读出/KT。直接五维没有本轮newprimary可付AFF₃，旧冻结保持；常规下一macroR39，源gap/两轮无信息提前。
+
+主稿notes/10_source_audit/unbounded_narrowness/R0036_unbounded_narrowness_full_proof.md §§1–17，A scalar_projection_and_nested_normalization、B native_graphs_and_actual_recovery同目录。正式全稿独审research/reviews/R0036_scalar_projection_and_normalization_review.md、R0036_graphs_and_actual_atlas_review.md修后通过，rootintegration完成；未经外部同行评审。
+
+原8.2完整输入fixedν、arbitrary rawµact≤Kνdt、extra coords、all-depth scalar caps/terminal support，输出disjointwholeassignments/fullunittimequadratic/perlabelca^dβ/K，optionalangularβ~1；只作ISO finite接口不立新方向。完整Prop10.1在原CRP setup反ℓ∞：nestedQ1/Q2→wholecenter-motion原p1-known fulltimeC→C/A相对density抵消→fixedqAνA projectedcaps/support→每residual8.2/greedyconstantcoverage→rawposteriorcomparison/3.4→originalp1-known depthc′actualatlas/timeexponent→0→2.13 terminalcompletion矛盾。不是只证localization小lemma。
+
+实际责任：markthreshold是整个tag×timebin原µact；commonjitter前冻Σlabel预算，fix同u后恢复原active并重新lightlabel-floor，不能沿用旧逐label lower。d≥0须用p=1cap×terminalsupport，单terminal-width两幂相消不够。pairedsampling异常先删后count，C含normal/截距/velocity三类完整知识；absolute f′(0)可巨大，νA/JA只two-limit subpower。oldQ1whole-domain witness与core norm witness分开；projected timeerror先消g1再逆tinyaxis，固定M不依绝对g1。rawΠ/bA分母、uniformreferenceρ、selectedtests→non-listablefailure、4.12实际table/预guard/lateN0顺序均付。最后newlabel c=(A,b)用fullν_c≠ν_A，terminalequality/earlierupper因子JA/ν_c取消，无需parenttruefloor可恢复truechild。
+
+官方paper本轮同blob45ec20e…/1371486bytes，README无所查修订声明，仅identity非correctness。25PDF/28sources不变；新增两exactTeX（07 finite/09 unbounded，编号比PDF节号少1）bytes/Gitblob/SHA256全核；前者只认证8.2。PDF120/121/163/166图核，metadata/R0036_source_check.json。Gan2026出版对应2023v2、cylinder2606.29993 p>2不填AFF₃；Tang spherearea*zeta volumeclaim被centerunitsegment球直接反，非Kakeya反例/重大结果。有限primary检索不认证17/4最新最优或优先权。
+
+SRC/DIR/FSD/DIM partialgateways增UNB，remaining描述已纠正为positivefinite+完整读出，ISO/UNB已付不再错误列未付。已发表WZ/CV可具名已知theorem，不无限递归全重写；新GWZ2026/OAI其它/KT明确责任保留。fullsource/unconditionalDIM/major仍false。
+
+## 唯一下一入口：R37完整正finite窄度分支
+
+notes/10_source_audit/unbounded_narrowness/R0036_remaining_finite_branch_and_next_target.md。完整原version2 0<ℓ<∞，§7 retained-edge/§8 threewideinterval-horizontal/§9 critical与subcritical endpoint均须付，每substantialresidual propercandidate→AIM actualcontradiction；复用8.2不重证新名字。9.1只是floorLemma，不能只付它或7.1算整branch。重点保原edges/g/clock、rawc与sameprior、wholeassignments、criticalsame-law路径、G(u)每dense input与loss累积/endpoint、originalobservations/actualguards。旧genericincrement数字例不保sourcefactorization，不直接反source。停于完整分支通过双审或合法gap，不靠小量改名续命。通过后仍核2.17/finite-Hausdorff与新GWZ/KT责任，不能直接清fullsource。
 
 ## R35：ISO001完整原isotropic引擎
 
@@ -24,7 +38,7 @@ R33定期macro有效至本轮；R36必须先宏观审视（连续两轮无信息
 
 具名高级输入：WZ2210.09581v2 Def4.2/Thm5.2 upper-only AD/every restricted triple；CV1205.6371v1 Thm1 weighted doubly-infinite straight tubes/wedge，d=n，n2/3/4；CRP已具名GWZ set→2.15。核确切statement/application但未独证这些高级全proof。新增两PDF后25PDF/28sources，原PDF/全文/版本/bytesSHA256/单篇metadata已入库；WZ17/31、CV2、OAI97图核，scope见metadata/R0035_source_check.json。无新OAI4onlineidentity声明，lastR33同原blob。
 
-SRC/DIR/FSD/DIM partialgateways=TCM/ASM/TEX/CRP/AIM/ISO，但fullsource=false；AIM旧候选全branch存在flag仍false，另挂laterISO，不追改原certificate范围。
+R35时SRC/DIR/FSD/DIM partialgateways=TCM/ASM/TEX/CRP/AIM/ISO（R36另增UNB），fullsource=false；AIM旧候选全branch存在flag仍false，另挂laterISO，不追改原certificate范围。
 
 ## 既有源工具与尚余责任
 
@@ -34,7 +48,7 @@ SRC/DIR/FSD/DIM partialgateways=TCM/ASM/TEX/CRP/AIM/ISO，但fullsource=false；
 - CRP001：critical_paths/INDEX.md，原4.3四项/2.7/2.13/2.15–16/4.1–2，保namedGWZ。J/ν withinworld；terminal equality/earlierupper/knownpr equality；relativeprofile无f0绝对界；actualnested layers/ownwitness；fixedi内N先于outeri，finite/infinite supinf不假attain。原证书actualtransferflag仍false，另挂AIM。
 - AIM001：actual_improvements/INDEX.md，原4.11完整actualconversion及4.4–9/4.12、实际2.11本轮R34新付。每subsequence每substantialresidual propercandidate假设→fixedscenario originalmass≥ppath/logN0、列表/geometry≤(Kpath logN0)^rS、复杂度PS(Mpath)最终落指数guard2^((Mpath+n)^2)。wholepiececoverage后固定scenario才删derivbad；µprep内T须乘pprep才≤原µ，tinybadgroups/rawπ/aggregatejets/wholeassignments、jointTV/实际有限table全付。finalgeommap含selectedtests failure且failure不入posterior lists；9/10无效a–1/10有效b校准只反错误实现。analyticK非actualslack；原N0系数幂不推SCL uniformtangentheight。
 
-以上均是来源已有工具认证。仍余j2正finite/∞ narrow branches、§7 retained-edge工具、§8 scalarprojection实际标签/后续critical与limitingconstruction、完整2.17/finite与Hausdorff读出、高级输入全proof/KT责任。ISO不能把这些自动清零。
+以上均是来源已有工具/分支认证。UNB已付8.2/§10；仍余j2正finite branch的§7 retainededges、§8几何projection/horizontal reduction、§9 critical/bootstrap，以及完整2.17/finite-Hausdorff读出、新GWZ/具名KT明确责任。ISO/UNB不能把这些自动清零。
 
 ## R29条件高维出口与文献边界
 

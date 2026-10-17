@@ -41,3 +41,5 @@ R0033新增3篇2026 primary PDF，共23篇：Choudhuri2610.12480v1(19页)、More
 R0034无新PDF，仍23篇；无新online版本/前沿声明，最后onlinecheck保R33。实读原2.11有限预算及4.4–4.12完整statement/proof（PDF50–70），52/53/68图核；guard是2^((M_path+n)^2)，extract上标丢失不可误读quadratic。AIM001完整conversion在原假设/明列inputs下双独审通过；每residual真实candidate存在/后续branches未付，详细metadata/R0034_source_check.json。
 
 R0035新增Wang–Zahl2210.09581v2（69页）与Carbery–Valdimarsson1205.6371v1（20页），共25PDF/28sources。原PDF/全文/单篇版本、bytesSHA256、statement/read_scope均存档；WZ Def4.2 upper-only AD/Thm5.2 every-restricted-triple及§8重述，CV Thm1 weighted doubly-infinite straight tubes/determinant逐核，相关17/31/2页图核。两个外部高级定理全proof保namedinput，未独证全文。原OAI4 PDF70–108完整isotropic链实读；97页A0^{-1}u上标图核正确，txt串行不可当源笔误。完整scope见metadata/R0035_source_check.json，源全文/无条件高维/新颖性仍未认证。
+
+R0036无新PDF，仍25PDF/28sources；补入官方07-finite-narrowness.tex与09-unbounded-narrowness.tex且Gitblob/bytesSHA256核一致，partial源码状态保持。完整原8.2及§10 ℓ∞排除通过内部双全文独审；120/121/163/166页图核。官方paper同blob/bytes仅证明身份。新增Gan旧v2的2026出版、Germain–Latocca cylinder及Tang volumeclaim仅web-primary筛查，明确未下载PDF/不作advancedinput；具体scope与直接反证见metadata/R0036_source_check.json及B宏观稿。未认证positivefinite分支、全源或17/4优先权。
