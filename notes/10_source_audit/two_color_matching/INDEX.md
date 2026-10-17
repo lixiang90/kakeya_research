@@ -10,3 +10,6 @@
 | R0030_next_scalar_sheet_target.md | 下一唯一主任务：原Cor3.4及所需代数norm/continuation输入 |
 
 结果TCM-001；几何和概率独审在research/reviews/R0030_matching_geometry_review.md、R0030_matching_probability_review.md。不得把只认证该gateway写成整篇OAI4已核或无条件六维17/4；完整源、KT及高维branch责任保留。恢复仍先读根GOAL/STATE/ROADMAP/registry/latest round并运行context.py。
+
+
+R0031交接：R0030_next_scalar_sheet_target.md所列main已由ASM001内部重证，见相邻scalar_sheet_matching/INDEX.md；当前下一唯一main原Lemma3.5，勿重做matching或原π切片常数。完整源条件保持。

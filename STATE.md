@@ -1,12 +1,30 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），最近轮次R0030。Goal active；一般/五维满维数未解决，无条件新高维界、真实Kakeya反例及重大性/新颖性认证均未达成。
+更新2026-10-17（Asia/Shanghai），最近轮次R0031。Goal active；一般/五维满维数未解决，无条件新高维界、真实Kakeya反例及重大性/新颖性认证均未达成。
 
 ## 恢复、同步和宏观
 
-R30起点R29 commit3aa1768d983bda38b26d9ec0360a628c92620604、tree417dceb5e611ae101d2a1091ecc87f5ebb108611；441文件receipt、HEAD/origin/clean已核。上一Goal turn progress（条件六维链独审归档/安全同步），非最终结果。R30收尾回执tmp/sync/R0030.json须核remote全tree/local精确commit/全部blob bytesSHA256/clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/latest round/AGENTS并运行python scripts/context.py。
+R31起点R30 commit a964d9e7f95efc30d7003d9441e5d1cfcd3615c1、tree96385a660c9df71dc157402c52978124d177b142；455文件receipt、HEAD/origin/clean核一致。上一Goal turn progress（原Lemma3.3完整内部重证/独审/安全同步），非最终成果。收尾回执tmp/sync/R0031.json须核remote全tree/local精确commit/所有blob bytesSHA256/clean。下轮先核receipt/git，再读GOAL/STATE/ROADMAP/registry/latest round/AGENTS并运行python scripts/context.py。
 
-R30定期macro已执行，下一常规R33，关键失败随时提前。R30是原工具引理的实质完整认证progress，非新高维界或重大成果；不能以源审计替代最终目标，也不重开R28已冻action/BSG/carry计数。每轮唯一main、至多两个互补代理、独审后root统一提交/安全同步，不force、不重复请求已有授权。
+R30定期macro已执行，下一常规R33，关键失败随时提前。R31又完成真实source gateways认证progress，但不是新的高维定理或重大中间结果；不能把源审计本身变成Goal最终标准。每轮唯一main、至多两个互补代理，只编辑分配文件，root整合独审后统一提交/安全同步；不force、不重复请求已有授权。全部旧五维冻结保留。
+
+## R31：ASM001原代数norm、continuation及Cor3.4
+
+主稿notes/10_source_audit/scalar_sheet_matching/R0031_scalar_sheet_matching_full_proof.md；A R0031_algebraic_norm_audit、B R0031_continuation_and_slice_audit同目录。两终稿独审research/reviews/R0031_analytic_matching_review.md、R0031_prior_norm_review.md及root integration，逐式实读通过。原作者工具重证bundle ASM001，未经外部同行评审、非新颖性/重大性声明。
+
+Lemma3.1：固定degree、Ω ball/polydisc、real ball及compact margin，无任何coefficient-height lower。coefficient极限不得W-independent；root-free circle只追chosen branch，允许unused roots逃逸；跨leading-zero set用全维平移complex disk最大模。normal family/Cauchy及去W因子后的nonzero constant coefficient给每点<=D阶jet lower、fixed derivatives upper；finite real directions/sublevel/Remez及evaluations/derivatives/affine-line degree closure完整支付。
+
+Cor3.4实际只用3.1/closure+TCM001，**不调用3.2**。actualmember减reference/除M，difference resultant totaldegree<=2D²；每event normgap给每点positivejet，finite directions与边界外伸fixed boxes保质量。joint densities先finite-null-union保两色原pi，再Fubini取mass>=cR^-eps的fiber，最后normalize付分母，marginal<=C R^(2eps) pi dt。d1 margin+TCM固定eta给eps*/R0，常数吸入eta/2而非趋零eps，所以R0 uniform as eps→0。任意pi/相关events原量词完整通过。
+
+独立Lemma3.2：fixed格式affine/linear/simple quadratic(constant leading coefficient)、fixed pieces boundedpath、A^-1 tube无denominator/discriminant零；fixed-A比较C^O(A)只给finite/localbound。实际S=2cW+b平方根genericray crossing parity编码continued germ，append段编码endpoint norms，QE后sup semialgebraic再给A^C。明确标准fixed-format real QE/cell/growth为基础，不声称这些基础全重证。boundedregion可扩大fixed ball作upper族，不假原region形状。tiny c/monodromy/unused roots均核。
+
+两修订已由两独审核：Ω仅同一connected ball/polydisc；margin删除test用fixed B=[0,1]、a=R^-2、f=a/(1+a−z)、Ωa=|z|<1+a/2，保degree2/ball形状，只有uniformmargin失败。degree删除test z^ceil(2log₂R)也保其余完整single-index law。均不是原Cor反例。
+
+通过只认证这些source gateways，Lemma3.5真实atlas/old-pL knowledge/temperedness、critical paths及后续高级branches未核。SRC/DIR/FSD/DIM partial verified gateways为TCM001/ASM001，但完整OAI4与具名KT条件保持，六维17/4仍条件，无无条件新高维界。文献20PDF，本轮无新PDF/最新版本断言，读范围和源责任在metadata/R0031_source_check.json。
+
+## 唯一下一main：原Lemma3.5 terminal extension
+
+spec notes/10_source_audit/scalar_sheet_matching/R0031_next_terminal_extension_target.md。完整两原model版本的h−e knownatlas、L−L′<=Ce、旧pL subpower list及原sequence temperedness。先付2.9/2.10实际preparation与cap/tempered定义；真pairedprior/heavy pre-deletion entries/normal-frame/3.4 groups/commonanchor代表表、source evaluations回传、freeze source/全block trajectory assignment和低高curvature。C须独立于L/问题complexity，analytical masks不能直接进入最终selection，known atlas不要求新truefloor。只graph comparison或N^O(e) knowledge不验收；不免费升到5D j3，不重开旧matrix-action或投影常数。
 
 ## R30：原Lemma3.3一般固定阶重证TCM001
 
@@ -19,10 +37,6 @@ pre-selection原atom masses而非final posterior给child count；restriction保�
 反攻未得原counter：pair upper C_DK4 N^-1/D只直接覆盖d0<1/D；d=1 exact双marginal例、fixed-power oscillator给必要loss门槛，删D以上导数singleton例严格失败弱化版。各例均明确不反原subpower命题。不得把D1证明或数值samples当一般认证。
 
 TCM001通过仅消除一个共同source gateway。Cor3.4代数norm-to-jet、Lemma3.2 continuation/3.5 atlas回传、critical branches仍待核；SRC001/DIR003/FSD001/DIM001完整OAI4及具名KT条件保留，六维17/4仍条件。文献库20PDF，本轮无新PDF/最新版本断言，sourcecheck记录本地PDF29–35完整读范围，R29最近官方blob核验不冒称本轮新检索。
-
-## 唯一下一main：原Cor3.4实际代数图匹配
-
-spec notes/10_source_audit/two_color_matching/R0030_next_scalar_sheet_target.md。先核Cor3.4真正需要的Lemma3.1无height lower norm/jet与degree closure、原pi的Fubini slice及全部ε预算；Lemma3.2 continuation独立责任按实际调用核，不能假Cor3.4必用它。退化系数、branch tube、normgap到每点finitejet、basepoint conditional分母是主要counter测试。通过也不等整篇OAI4/无条件六维。无需重做TCM001 kernel常数、D1或旧投影细节。
 
 ## R29：条件任意ambient种子与六维17/4
 
