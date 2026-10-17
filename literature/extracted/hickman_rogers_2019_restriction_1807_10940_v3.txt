@@ -1,0 +1,2821 @@
+                                                     IMPROVED FOURIER RESTRICTION ESTIMATES
+                                                              IN HIGHER DIMENSIONS
+
+                                                                JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+                                                    Abstract. We consider Guth’s approach to the Fourier restriction problem
+arXiv:1807.10940v3 [math.CA] 25 Sep 2019
+
+
+
+
+                                                    via polynomial partitioning. By writing out his induction argument as a re-
+                                                    cursive algorithm and introducing new geometric information, known as the
+                                                    polynomial Wolff axioms, we obtain improved bounds for the restriction conjec-
+                                                    ture, particularly in high dimensions. Consequences for the Kakeya conjecture
+                                                    are also considered.
+
+
+
+
+                                                                                1. Introduction
+                                              We consider the Fourier transform defined, initially on integrable functions, by
+                                                                               ˆ
+                                                                      fb(ξ) :=   f (x) e−ihx,ξi dx.
+                                                                                     Rn
+                                           Letting σ denote the surface measure on a truncated piece of the paraboloid, Stein’s
+                                           restriction conjecture [31] asserts that the a priori estimate
+                                                                          kfbkLp′(dσ) 6 Cn,p kf kLp′(Rn )                            (Rp )
+                                                              2n
+                                           holds for all p > n−1 , where 1/p+1/p′ = 1. This was proved by Fefferman and Stein
+                                           in two dimensions [10], but remains open in higher dimensions despite extensive
+                                           study; see, for example, [1, 2, 6, 8, 9, 11, 12, 24, 28, 33, 35, 36, 37, 38, 39, 40, 44]
+                                           and the references therein.
+                                              The strongest partial results are based on the polynomial partitioning method,
+                                           introduced to the problem by Guth [11, 12]. In this article further progress is
+                                           obtained by augmenting the method with additional geometric inequalities recently
+                                           established in work of Katz and the second author [18].
+                                              Our results are most easily compared with the previous literature in the high
+                                           dimensional context. If the restriction conjecture were true, (Rp ) would hold for
+                                                                            p > 2 + 2n−1 + O(n−2 ),
+                                           and so we consider λ > 2 for which we can confirm that (Rp ) holds in the range
+                                                                            p > 2 + λn−1 + O(n−2 ).                                   (1)
+                                           A consequence of the work of Tomas [39] is that λ can be taken to be 4. Although
+                                           many refinements were made since (including the work of Tao [35] which removed
+                                           the O(n−2 )-term with λ = 4), the linear coefficient was not improved for some
+                                           thirty-five years when Bourgain and Guth [6] showed that it can be lowered to 3.
+                                           Most recently, Guth [12] proved that λ can be taken to be 8/3. We improve this as
+                                           follows:
+                                                                                                        √
+                                           Theorem 1.1. (Rp ) holds in the range (1) with λ = 4/(5 − 2 3).
+
+                                           Key words and phrases. Fourier transform, Fourier restriction, Kakeya, polynomial partitioning.
+                                           Mathematics Subject Classification: 42B20.
+                                           Partially supported by the EPSRC standard grant EP/R015104/1, the NSF grant DMS-1440140,
+                                           and the MINECO grants SEV-2015-0554 and MTM2017-85934-C3-1-P.
+                                                                                          1
+2                    JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+    We also obtain concrete improvements on the range of exponents for (Rp ) in all
+dimensions n > 3 except n = 3, 6, 8, 10 or 12. In these exceptional cases the current
+best results are due to Wang [40] when n = 3 and Guth [12] when n = 6, 8, 10 or 12.
+The current state-of-the-art for the restriction problem in various low dimensions
+is tabulated below in Figure 1.
+    The proof of Theorem 1.1 relies on geometric information coming from a recent
+result in [18]. This geometric information, which we will refer to as the polynomial
+Wolff axioms, bounds the number of direction-separated line segments that can be
+contained in the neighbourhood of a real algebraic variety.
+    The present analysis extends that previously performed by Guth [11] in R3 ,
+who proved and applied the polynomial Wolff axiom for a two dimensional variety.
+Guth’s induction argument [11] can be combined with later developments from [12]
+and thereby directly extended to higher dimensions, using a single application of the
+(n − 1)-dimensional polynomial Wolff axioms (see, for example, [9] or [18]), however
+this yields weaker results than those obtained here. We will take advantage of the
+polynomial Wolff axioms more often.
+    By combining the arguments of this article with results from [13], one may also
+establish a version of Theorem 1.1 for general positively-curved surfaces, including
+the unit sphere. It is also possible that the methods could be applied to study other
+oscillatory integral operators, such as those arising in the study of Bochner–Riesz
+multipliers, but this has not been fully explored. Finally, by a standard argument
+relating the restriction and Kakeya conjectures, Theorem 1.1 implies estimates for
+the Kakeya maximal function. This bound is new with n = 9, however it does not
+improve the dimension estimate for Kakeya sets due to Katz–Tao [20]. Perhaps of
+more interest is the fact that these estimates provide an asymptotic improvement
+over the classical Wolff bound [42] via a very different approach to that used in [20].
+    The article is organised as follows:
+
+
+
+     • A number of reductions are performed in the sequel. Following [6, 11, 12],
+       the problem is reduced to establishing the so-called k-broad estimates for
+       the extension operator.
+     • After setting up some notational conventions in Section 3, a sketch of the
+       proof of the main theorem is provided in Section 4.
+     • In Sections 5-7, the basics of broad norms, polynomial partitioning and the
+       wave packet decomposition are recalled.
+     • In Section 8, we show how the polynomial Wolff axiom theorem can be used
+       to improve certain estimates for averaged norms at different scales.
+     • In Section 9, Guth’s polynomial partitioning argument from [11, 12] is
+       reformulated as a recursive algorithm.
+     • In Section 10, the new estimates are combined with the recursive algorithm
+       to improve the range of estimates for the restriction problem.
+     • The final section contains a discussion of restriction to other hypersurfaces,
+       some remarks on the numerology, and possible directions in which the argu-
+       ment could be strengthened. Finally, the application to the Kakeya problem
+       is described.
+
+
+
+
+Acknowledgement. The first author thanks Larry Guth and Hong Wang for some
+interesting discussions which greatly helped the development of this project. The
+authors also thank an anonymous referee for a thorough and helpful report.
+                      FOURIER RESTRICTION IN HIGHER DIMENSIONS                                    3
+
+
+                         2. Reduction to k-broad estimates
+   Restriction estimates are typically proven via duality, with the adjoint operator E
+defined by                 ˆ
+                                                                             2
+                    Eg(x) :=             g(ξ) ei(x1 ξ1 +...+xn−1 ξn−1 +xn |ξ| ) dξ.
+                                 |ξ|61
+
+Noting that now ξ ∈ Rn−1 (and x ∈ Rn as before), this is often referred to as
+the extension operator. It follows that the estimate (Rp ) for a given value of p is
+equivalent to the inequality
+                               kEgkLp(Rn ) 6 Cn,p kgkLp(Rn−1 ) .
+Moreover, by a now standard ε-removal argument (see [34]) and factorisation theory
+(see [2] or [7, Lemma 1]), this holds for all p in an open range if and only if for all
+ε > 0 and all R ≫ 1 the local estimates
+                            kEgkLp (BR ) 6 Cn,p,ε Rε kgkL∞ (Rn−1 )                            (R∗p )
+hold in the same range. Here BR denotes an arbitrary ball of radius R in Rn .
+   Rather than attempt to prove (R∗p ) directly, it is useful to work with a class of
+weaker inequalities known as k-broad estimates. These inequalities were introduced
+by Guth [11, 12] and were inspired by the earlier multilinear restriction theory
+developed in [1]. The k-broad estimates take the form
+                           kEgkBLpk (BR ) 6 Cn,p,ε Rε kgkL∞(Rn−1 ) ,                        (BLpk )
+where the expression on the left-hand side is known as a k-broad norm. The precise
+definition of the k-broad norm is a little complicated and is deferred until Section 5.
+We remark, however, that the key advantage of working with kEgkBLpk (BR ) rather
+than kEgkLp(BR ) is that the former expression is very small whenever the mass
+of Eg is concentrated near a (k − 1)-dimensional set (see Lemma 8.2 below for a
+precise statement of this property).
+   The main result of this article is the following theorem.
+Theorem 2.1. Let 2 6 k 6 n − 1 and
+                                                     8(2n − 1)
+                    p > pn (k) := 2 +                                    .                      (2)
+                                           n(5n + 2k − 9) + k(k − 3) + 4
+Then (BLpk ) holds for all ε > 0 and R ≫ 1.
+   When n = 3 and k = 2 this corresponds to the main result from [11] and
+stronger estimates are now known in this case [40]. In all other dimensions n > 4,
+Theorem 2.1 offers an improvement over what was previously known. When n = 4
+and k = 3, the range (2) extends that given by [9, Theorem 3.2].1 When n > 5,
+Theorem 2.1 strengthens a (corollary of a) theorem of Guth [12] which showed that
+the inequality (BLpk ) holds whenever p > 2 + n+k−2  4
+                                                        ;2 observe that the range (2) in
+Theorem 2.1 is strictly larger than this.
+   Unfortunately, since the k-broad estimates are weaker than the corresponding
+linear estimates, it is difficult to pass directly from an inequality of the form (BLpk )
+to one of the form (R∗p ). Nevertheless, a mechanism developed by Bourgain and
+
+1In [9] it is shown that the n = 4 and k = 3 case of Theorem 2.1 would follow from a strengthened
+version of the polynomial Wolff axiom theorem from [18] involving a polynomial dependence on
+the degree. For the purposes of this article, no such explicit dependence on the degree is required,
+and therefore the 3-broad inequality in R4 is established in a larger range than that stated in [9].
+2In [12], strengthened versions of (BLp ) are established with L2 rather than L∞ norms appearing
+                                      k
+on the right-hand side, and so our estimates are stronger in one sense and weaker in another.
+4                      JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+      n=        p>                                     n=        p>
+                                                                   14
+       2          4        Fefferman–Stein [10]        11      2 + 55      Theorem 2.1
+                     3                                              4
+       3       3 + 13            Wang [40]             12      2 + 17       Guth [12]
+                   1407                                            100
+       4      2 + 1759         Theorem 2.15            13      2 + 471     Theorem 2.1
+                    12
+       5       2 + 19          Theorem 2.1             14      2 + 108
+                                                                   541     Theorem 2.1
+       6       2 + 21            Guth [12]             15      2 + 116
+                                                                   637     Theorem 2.1
+                    52                                             62
+       7      2 + 123          Theorem 2.1             16      2 + 359     Theorem 2.1
+                     4                                              4
+       8       2 + 11            Guth [12]             17      2 + 25      Theorem 2.1
+                    34                                              7
+       9      2 + 107          Theorem 2.1             18      2 + 46      Theorem 2.1
+      10       2 + 72            Guth [12]             19       2 + 71     Theorem 2.1
+
+         Figure 1. The current state-of-the-art for the restriction problem
+         in low dimensions. New results are highlighted and in most cases
+         are deduced by combining Theorem 2.1 with Proposition 2.2.5
+
+
+Guth [6] allows this passage under certain constraints on the exponent p. In par-
+ticular, the following proposition is a consequence of the method developed in [6],
+as observed in [12, Proposition 9.1].
+Proposition 2.2 (Bourgain–Guth [6], Guth [12]). Let n > 3 and
+                                      4           2
+                               2+          6p62+     .
+                                    2n − k       k−2
+Then (BLpk ) implies (R∗p ).
+   The original method of Bourgain–Guth [6] was developed to convert certain
+multilinear inequalities of Bennett–Carbery–Tao [1] into linear estimates. It was
+later observed by Guth [12] that the method of [6] does not require the full strength
+of the k-linear theory, but may instead take k-broad estimates as its input (which
+appear to be somewhat easier to prove3).
+   Theorem 1.1 follows as a direct consequence of Theorem 2.1 and Proposition 2.2.
+When applying Proposition 2.2, the upper bound on p is unimportant. However
+the lower bound,
+                                               4
+                                    p>2+           ,                                (3)
+                                            2n − k
+is a limiting factor in the arguments, along with the condition (2) on the exponents
+in the k-broad inequality. In order to improve the state-of-the-art for the restriction
+conjecture one must choose an optimal k so that neither of these two conditions is
+overly restrictive. For instance, if n = 5 and k = 3, then
+                                    4                  12
+                             2+         6 p5 (3) = 2 + ;
+                                 10 − 3                19
+3See [13, Section 6.2] for a detailed discussion of the relationship between k-broad and k-linear
+inequalities.
+4This is deduced by combining Theorem 2.1 with a more sophisticated version of Proposition 2.2:
+see Remark 11.1 below.
+5These computations were carried out using the following Maple [23] code:
+
+n := [insert dimension];
+p_broad := 2+8*(2n-1)/(n*(5n+2k-9)+k*(k-3) +4):   p_limit :=2+ 4/(2*n-k):
+p_seq := [seq(max(eval(p_broad, k = i), eval(p_limit, k = i)), i = 2 .. n)]:
+new_exponent := min(p_seq);
+                   FOURIER RESTRICTION IN HIGHER DIMENSIONS                          5
+
+
+Theorem 2.1 and Proposition 2.2 therefore imply that the restriction inequality
+holds for p > 2 + 12
+                  19 when n = 5. Other low dimensional cases can also be analysed
+directly and some examples can be found in Figure 1 above.
+   In high dimensions, to derive the λ coefficient featured in Theorem 1.1, we write
+k = νn + O(1) for some 0 < ν < 1, so that, asymptotically,
+                                          16
+                      pn (k) = 2 +                n−1 + O(n−2 ).                  (4)
+                                     5 + 2ν + ν 2
+On the other hand, with k = νn + O(1), the condition (3) can be rewritten as
+                                      4
+                            p>2+         n−1 + O(n−2 ).                           (5)
+                                     2−ν
+The linear coefficients in (4) and (5) are then equal when ν is the positive solution
+of the quadratic equation
+                                   x2 + 6x − 3 = 0.
+Plugging this solution back into (5) yields (Rp ) in the range
+                              p > 2 + λn−1 + O(n−2 )
+           4
+with λ = 2−ν   = 5−24√3 .
+   It remains to prove Theorem 2.1, which will be the focus of the remainder of the
+article.
+
+                          3. Notational conventions
+    From now on, we work with smooth, bounded functions f , g or h that map
+from the unit ball B n−1 of Rn−1 to the complex numbers, and we sometimes write
+x ∈ Rn as x = (x′ , xn ) where x′ ∈ Rn−1 . We call an n-dimensional ball Br of
+radius r an r-ball and an (n − 1)-dimensional ball θ of radius r−1/2 an r−1/2 -cap.
+We call a cylinder of length r and radius r1/2 an r-tube. The δ-neighbourhood of a
+set E will be denoted by Nδ E.
+    The arguments will involve the admissible parameters n, p and ε and the con-
+stants in the estimates will be allowed to depend on these quantities. Given pos-
+itive numbers A, B > 0 and a list of objects L, the notation A .L B, B &L A or
+A = OL (B) signifies that A 6 CL B where CL is a constant which depends only
+on the objects in the list and the admissible parameters. We write A ∼L B when
+both A .L B and B .L A. We will also write A ≪ B or B ≫ A to denote that
+A 6 C −1 B for some choice of C > 1 which can be taken to be as large as desired
+provided it is admissible.
+    The cardinality of a finite set A is denoted by #A. A set A′ is said to be a
+refinement of A if A′ ⊆ A and #A′ & #A. In many cases it will be convenient
+to pass to a refinement of a set A, by which we mean that the original set A is
+replaced with some refinement.
+
+                                     4. Overview
+4.1. The polynomial Wolff axioms. The key new geometric ingredient is the
+following theorem, which amounts to a confirmation of the Kakeya conjecture in a
+very specialised ‘algebraic’ situation. It follows by combining [18, Theorem 1.1] with
+Wongkew’s lemma [45], the latter of which bounds the measure of a neighbourhood
+of a real algebraic variety over a ball.
+Theorem 4.1 (Polynomial Wolff axioms [18]). Let δ > 0 and c, r > 1. Let Z ⊆ Rn
+denote an m-dimensional algebraic variety and let T denote a collection of r-tubes
+6                    JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+contained in a ball of radius 2r. If the central axes of the tubes point in r−1/2 -
+separated directions, then
+                   n                      o                m−1
+                 # T ∈ T : T ⊆ Ncr1/2 Z .deg Z,δ cn−m r 2 +δ .
+
+   This theorem was proven for n = 3 by Guth [11] who later conjectured the
+general statement in [12] (see also [15]). The n = 4 case was solved by Zahl before
+a proof in general dimensions was given in [18]. Theorem 4.1 is referred to as the
+polynomial Wolff axioms since the result can be interpreted as a verification that
+families of direction-separated tubes satisfy a natural polynomial generalisation of
+the classical (linear) Wolff axiom introduced in [42] (see [15] for further details).
+
+4.2. A brief description of the proof. The proof of Theorem 2.1 extends an
+argument of Guth [11] in R3 , by combining it with the later developments in higher
+dimensions from [12]. Both the articles [11] and [12] give comprehensive and highly
+readable introductory overviews of the core arguments; readers unfamiliar with
+these topics are encouraged to consult these sources for a detailed description of
+the main ideas. In high dimensions some complications arise which are not present
+in R3 . For this reason, the proof given in Sections 5 - 10 is structured somewhat
+differently from the proofs presented in [11, 12]. These differences are highlighted
+and explained in the following subsection.
+   The key ingredients of the proof of Theorem 2.1 are as follows:
+
+Wave packet decomposition. The first step of the argument is to employ the stan-
+dard technique of decomposing the input function f as a sum of localised pieces
+called wave packets. In particular, fixing a large scale R ≫ 1, one decomposes the
+domain B n−1 as a union of R−1/2 -balls denoted by θP  and referred to as R−1/2 -caps.
+The function is then written as a sum of pieces f = (θ,v) fθ,v where each fθ,v has
+support in the cap θ and the inverse Fourier transform of fθ,v is concentrated in an
+R1/2 -ball centred at v ∈ Rn−1 . There are two key properties of this decomposition:
+      • Orthogonality: Given any collection of wave packets W one has
+                             X          2     X
+                                   fθ,v ∼           kfθ,v k22 .                    (6)
+                                         2
+                            (θ,v)∈W           (θ,v)∈W
+
+      • Spatial concentration: On the ball B(0, R), the function Efθ,v is es-
+         sentially supported on an R-tube Tθ,v with direction governed by θ and
+         position governed by v.
+More precisely, the direction of Tθ,v is given by the normal direction   Pto the parabo-
+loid at the point (ξθ , |ξθ |2 ), where ξθ is the centre of θ. Thus, Ef = (θ,v) Efθ,v can
+be thought of as a sum of oscillating, normalised characteristic functions of tubes,
+which point in many different directions. Understanding the incidence geometry of
+these tubes is a key consideration in the restriction problem.
+
+Polynomial partitioning. A useful tool for studying the incidence-geometric prob-
+lems arising from the wave packet decomposition is the polynomial partitioning
+method. This method was introduced by Guth and Katz [14] in their resolution
+of the Erdős distance conjecture and was first applied to the restriction problem
+by Guth in [12] (the latter work also incorporated a refinement to the original
+partitioning method of [14] due to Solymosi and Tao [30]). The basic idea is a
+divide-and-conquer-style argument: one begins by finding a polynomial P of low
+degree which partitions the mass of kEf kBLpk (BR ) into equal size pieces. More pre-
+cisely, let Z(P ) := {z ∈ Rn : P (z) = 0} denote the zero set of P and cell(P ) the set
+of connected components of Rn \Z(P ). These connected components are referred to
+                      FOURIER RESTRICTION IN HIGHER DIMENSIONS                                       7
+
+
+as cells. The polynomial P can then be chosen so that the kEf kBLpk (O′ ) are (essen-
+tially) equal as O′ varies over cell(P ). Due to geometric (and underlying uncertainty
+principle) considerations, one actually works with a ‘blurred out’ version of the vari-
+ety Z(P ) given by the R1/2 -neighbourhood W := NR1/2 Z(P ) and referred to as the
+wall. Defining the collection of slightly shrunken cells O := {O′ \ W : O′ ∈ cell(P )},
+the following simple, yet vital, geometric property holds:
+   Whenever Tθ,v enters a shrunken cell O = O′ \ W , the core line necessarily
+                                                                                                   (7)
+   enters the original cell O′ .
+   Unlike the original cells, collectively the O ∈ O may only account for a small
+proportion of the mass of kEf kBLpk (BR ) . There are two cases to consider:
+
+   Cellular case: The mass of kEf kBLpk (BR ) concentrates on the O ∈ O in the
+sense that                              X
+                      kEf kpBLp (BR ) .    kEf kpBLp (O) .
+                                        k                          k
+                                                    O∈O
+                                                P
+In this situation, one defines fO := (θ,v)∈TO fθ,v where TO denotes the collection
+of wave packets (θ, v) for which Tθ,v ∩ O 6= ∅. By the spatial concentration property
+of the wave packets
+                                            X
+                          kEf kpBLp (BR ) .    kEfO kpBLp (O) .
+                                       k                           k
+                                                    O∈O
+
+The key observation here is that each (θ, v) can only belong to a small number (in
+particular, deg P + 1) of the sets TO . This is due to (7) and the fact that, by the
+fundamental theorem of algebra (or Bézout’s theorem), the core line of a tube Tθ,v
+can only enter deg P + 1 cells from cell(P ). This observation can be interpreted
+as saying the sets TO are ‘almost disjoint’ which implies, via (6), that the fO are
+‘almost orthogonal’. Consequently, one can pass to the cells and analyse them in-
+dividually. This forms the basis of a recursive procedure.6
+
+   Algebraic case: The mass of kEf kBLpk (BR ) concentrates on the wall in the sense
+that
+                        kEf kpBLp (BR ) . kEf kpBLp (W ) .
+                                            k                  k
+
+Here it suffices to consider only those wave packets (θ, v) for which Tθ,v ∩ W 6= ∅. A
+tube Tθ,v can intersect W in one of two ways: either tangentially or transversally.
+The analysis is further divided into two subcases depending on whether the main
+contribution to kEf kpBLp (BR ) arises from tangential or transverse wave packets.
+                          k
+   In the transversal subcase the tubes can be thought of as passing directly through
+the wall. This situation can be treated in a manner similar to the cellular case, this
+time using a continuum version of Bézout’s theorem to show that any given tube
+can intersect W transversally in relatively few places.
+   It remains to study the tangential subcase. Here the Tθ,v can be thought of
+as being contained in W and making a small angle with tangent spaces at nearby
+points of the variety Z(P ).
+
+Dimensional reduction. The polynomial partitioning argument sketched above can
+be interpreted as a dimensional reduction. If either the cellular or the transverse
+algebraic case holds, then one can obtain acceptable estimates for kEf kBLpk (BR ) .
+Thus, it suffices to consider the situation where the wave packets of f are all tangent
+
+6This part of the argument is fairly delicate and the almost orthogonal property needs to be
+precisely quantified in terms of deg P . For the purposes of this sketch, the full details are omitted.
+8                      JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+to some variety of dimension n − 1. By iterating this dimensional reduction proce-
+dure,7 it becomes important to understand what can be said when the wave packets
+of f are all tangent to some variety of dimension m for any value 0 6 m 6 n − 1.
+
+Key estimates in the tangential case. The reduction to tangential situations, as
+outlined above, can be exploited in a number of ways:
+      • Vanishing property of the k-broad norms: The definition of the k-
+        broad norms implies that if the wave packets of f are all tangential to a
+        variety of dimension m < k, then kEf kBLpk (BR ) essentially vanishes. Thus,
+        one need only consider tangency properties with respect to varieties of di-
+        mension at least k. Using this fact alone, one may prove k-broad estimates
+                           2k
+        in the range p > k−1   corresponding to the Bennett–Carbery–Tao multilin-
+        ear restriction theorem [1].8
+      • Transverse equidistribution estimates: These inequalities were intro-
+        duced by Guth [12] and heavily exploit the curvature properties of the
+                                                                      2k
+        paraboloid, allowing for k-broad estimates beyond the p > k−1     range. The
+        basic idea behind the transverse equidistribution estimates is recalled below
+        in Section 8.3.
+      • The polynomial Wolff axioms: Given a family T of R-tubes lying in
+        the R1/2 -neighbourhood of a variety, the polynomial Wolff axioms limit the
+        number of different directions in which the T ∈ T can lie. Thus, if the
+        wave packets of f are all tangent to some low dimensional variety, then f
+        must be supported on very few caps θ (since the caps θ correspond to the
+        directions of the tubes Tθ,v ). The small support of f can be exploited via
+        Hölder’s inequality to obtain favourable k-broad estimates.
+
+4.3. Induction versus recursion. When applying the polynomial Wolff axioms
+to the restriction problem in high dimensions, a number of complications arise which
+are not present in the R3 case treated in [11]. The root of these complications lies
+in the fact that, in contrast with R3 where one only need consider tangency condi-
+tions with respect to 2-surfaces, in higher dimensions one must consider tangency
+conditions with respect to surfaces of many different dimensions.
+   The core argument sketched in the previous subsection can be implemented as
+either an induction or a recursion argument. The original articles [11] and [12]
+make heavy use of mathematical induction (inducting on a number of quantities
+including the choice of scale R); this has the advantage of yielding a clean and
+concise argument, but unfortunately useful structural properties are potentially
+hidden. From the perspective of a recursive algorithm one may gain a more detailed
+understanding of the argument at each stage of the iterative process; this is the
+approach taken in the present article.
+   There is certainly a precedent for the recursive approach: for instance, in the
+fourth section of [6], Bourgain and Guth reformulate their key induction-on-scale
+argument as a recursive procedure to allow for the use of additional information
+coming from X-ray transform estimates (see also [22, 38] for an elaboration of
+this argument). Similarly, in a recent article of Wang [40], the induction-on-scale
+procedure of [11] was rewritten as a recursion; this permitted a more detailed
+
+7A number of serious complications arise in implementing this iteration scheme and, in particular,
+in dealing with the transverse algebraic case. This part of the argument requires what are known
+as transverse equidistribution estimates: these inequalities are briefly mentioned below, see the
+introductory discussion in [12] for further details.
+8Indeed, this follows by applying the argument of [12] but ignoring gains coming from transverse
+equidistribution (see the following bulletpoint).
+                      FOURIER RESTRICTION IN HIGHER DIMENSIONS                                    9
+
+
+analysis of the underlying geometry of the extension operator and led to the current
+best known bounds for the restriction conjecture in R3 .
+   When written in the form of a recursive algorithm, the polynomial partitioning
+argument of [12] can be interpreted as a structural statement. Following the dis-
+cussion in the previous subsection, one may think of the input function f as being
+broken into many different pieces where, roughly, each piece is made up of wave
+packets tangential to a low dimensional variety at some scale (there may be other
+pieces which do not have this property, but they arise from the cellular or transverse
+algebraic cases and satisfy favourable estimates). Thus, the structural statement
+allows one to focus on estimating the ‘tangential’ pieces {ftang } of the function.
+This ‘tangential reduction’ is then exploited via the key estimates described in the
+previous subsection.
+   In high dimensional cases, however, the ftang tend to enjoy further structural
+properties which one could potentially utilise in order to improve the range of es-
+timates guaranteed by Theorem 2.1. Indeed, typically a given ftang is not only
+tangent to a single variety Z at a single scale r, but it satisfies certain tangency
+conditions with respect to a whole sequence of scales rm < · · · < rn and a corre-
+sponding sequence of varieties Zm , . . . , Zn with dim Zi = i for m 6 i 6 n. These
+‘nested’ conditions could potentially lead to further gains for the restriction ex-
+ponent. To carry out such a programme, however, one would have to effectively
+analyse properties of the ftang across many distinct scales rm < · · · < rn ; this situ-
+ation lends itself more naturally to a recursive algorithm, rather than an inductive
+argument.
+
+                                       5. Broad norms
+   Here we recall the definition and basic properties of the k-broad norms from [11]
+and [12]. For a detailed motivation of this definition and its relation to the multi-
+linear restriction theory of [1] the reader is referred to [12] and [13, Section 6.2].
+   Fix some large R ≫ 1 and a ball BR ⊂ Rn . Decompose the unit ball B n−1 into
+finitely-overlapping balls τ of radius K −1 , where K is a large constant satisfying
+                                                                        −1
+1 ≪ K ≪ R. These (n − 1)-dimensional balls are       Preferred to as K -caps. Given
+a function f , supported on B n−1 , we write f = τ fτ where fτ := f ψτ for (ψτ )τ
+a partition of unity subordinate to the caps τ . Let G : B n−1 → S n−1 denote the
+Gauss map associated to the paraboloid, given explicitly by
+                                          1                 
+                           G(ξ) :=           2  1/2
+                                                     − 2ξ, 1 .                       (8)
+                                    (1 + 4|ξ| )
+Given a pair of non-zero vectors v, v ′ ∈ Rn , let ∠(v, v ′ ) denote the (unsigned) angle
+between them. If V ⊆ Rn is a linear subspace, then let ∠(G(τ ), V ) denote the
+minimum of ∠(v, v ′ ) over all pairs of non-zero vectors v ∈ V and v ′ ∈ G(τ ).
+   The spatial ball BR is also decomposed into relatively small balls BK 2 of ra-
+dius K 2 . In particular, fix BK 2 a collection of finitely-overlapping K 2 -balls which
+are centred in and cover BR . Then, for BK 2 ∈ BK 2 , define
+                                                                                 !
+  µEf (BK 2 ) :=           min                          max                  kEfτ kpLp (B 2 ) ; (9)
+                   V1 ,...,VA ∈Gr(k−1,n)    τ :∠(G(τ ),Va )>K −1 for 16a6A             K
+
+
+
+here Gr(k − 1, n) is the Grassmannian manifold of all (k − 1)-dimensional subspaces
+in Rn . For U ⊆ Rn the k-broad norm over U can then be defined as
+                                                                 !1/p
+                                    X |BK 2 ∩ U |
+               kEf kBLpk,A (U) :=                     µEf (BK 2 )     .        (10)
+                                            |BK 2 |
+                                           BK 2 ∈BK 2
+10                   JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+With this definition, the inequality (BLpk ) from Section 2 is understood to hold for
+kEf kBLpk (U) := kEf kBLpk,A (U) for some choice of A ∼ 1.
+   Before continuing it is perhaps useful to clarify the relative sizes of the param-
+eters. Given any p and ε, when proving a broad norm estimate (BLpk ) it is always
+assumed that K and A are large but admissible (that is, they depend only on n,
+p and ε). The parameter K must be chosen large in order for Proposition 2.2 to
+hold (see [12] and [6]) whilst the parameter A must be chosen large in order to
+facilitate multiple applications of Lemma 5.2 and Lemma 5.3, as described below.
+Nevertheless, it is always possible to make admissible choices of K and A. The
+parameter R, on the other hand, is an arbitrarily large number which will be, in
+general, non-admissible.
+   As mentioned in Section 2, the key advantage of working with k-broad norms
+rather than the classical Lp -norms is that, roughly, they vanish whenever the mass
+of Ef is concentrated around a set of dimension less than k. This property is
+fundamental to the proof of Theorem 2.1, but to make it precise requires a number
+of preliminary definitions and therefore the details are postponed until Lemma 8.2
+below.
+
+
+5.1. Basic properties. It is easy to see that kEf kBLpk,A (U) is not a norm in any
+traditional sense. Nevertheless, as noted in [12], it does satisfy weak variants of
+certain key properties of Lp -norms.
+
+Lemma 5.1 (Finite subadditivity). Let U1 , U2 ⊆ Rn , 1 6 p < ∞, and A ∈ N.
+Then
+                kEf kpBLp                6 kEf kpBLp           + kEf kpBLp
+                         k,A (U1 ∪U2 )             k,A (U1 )                k,A (U2 )
+
+
+holds for all integrable f : B n−1 → C.
+
+    This is an immediate consequence of the definition of the k-broad norms. A
+slightly less trivial observation is that kEf kBLpk,A (U) also satisfies weak versions of
+the triangle and logarithmic convexity inequalities.
+
+Lemma 5.2 (Triangle inequality). Let U ⊆ Rn , 1 6 p < ∞ and A ∈ N. Then
+
+              kE(f1 + f2 )kBLpk,2A (U) . kEf1 kBLpk,A (U) + kEf2 kBLpk,A (U)
+
+holds for all integrable f1 , f2 : B n−1 → C.
+
+Lemma 5.3 (Logarithmic convexity). Let U ⊆ Rn , 1 6 p, p0 , p1 < ∞ and A ∈ N.
+Suppose that 0 6 α 6 1 satisfies
+
+                                         1   1−α  α
+                                           =     + .
+                                         p    p0  p1
+
+Then
+                    kEf kBLpk,2A (U) . kEf k1−α
+                                              p
+                                            BL 0 (U)
+                                                     kEf kα p
+                                                          BL 1 (U)
+                                                   k,A                k,A
+
+
+holds for all integrable f : B n−1 → C.
+
+  The proofs of these estimates are entirely elementary and can be found in [12].
+The parameter A appears in the definition of the k-broad norm to allow for these
+weak triangle and logarithmic convexity inequalities.
+                       FOURIER RESTRICTION IN HIGHER DIMENSIONS                       11
+
+
+5.2. Linear versus k-broad estimates. Any k-broad estimate is weaker than
+the corresponding linear estimate. For instance, assuming that the local extension
+estimate (R∗p ) holds, given ε > 0 and 1 6 r 6 R, it follows that
+                                                            !1/p
+                            X         X            p
+    kEf kBLpk,A (Br ) 6                     kEfτ kLp (B 2 )      . K O(1) rε kf k∞ ;
+                                                              K
+                           τ :K −1 −cap BK 2 ∈BK 2
+                                       BK 2 ∩Br 6=∅
+
+since K is just a constant (in particular, it is chosen independently of R ≫ 1), this
+implies (BLpk ).
+   From the preceding observation, Lp estimates for the extension operator translate
+into k-broad inequalities. In view of this, it is useful to briefly recall some standard
+L2 estimates for the extension operator. Plancherel’s theorem implies the familiar
+conservation of energy identity
+                       ˆ
+                              |Ef (x′ , xn )|2 dx′ = (2π)n−1 kf k22                 (11)
+                           Rn−1
+and one may integrate in the xn variable and take square roots to conclude that
+                                  kEf kL2(Br ) . r1/2 kf k2
+for any r-ball Br . Arguing as above, one immediately arrives at the k-broad variant
+                                kEf kBL2k,A (Br ) . r1/2 kf k2 ,                   (12)
+valid for all r > 1.
+
+                             6. Polynomial partitioning
+6.1. Basic partitioning. In this section the relevant algebraic and topological
+ingredients for the proof of Theorem 2.1 are reviewed. In particular, the key poly-
+nomial partitioning theorem is stated, which is adapted from previous works of
+Guth [11, 12] on the restriction conjecture.
+Definition 6.1. Given any collection of polynomials P1 , . . . , Pn−m : Rn → R the
+common zero set
+                                 n                                       o
+         Z(P1 , . . . , Pn−m ) := x ∈ Rn : P1 (x) = · · · = Pn−m (x) = 0
+
+will be referred to as a variety.9 Given a variety Z = Z(P1 , . . . , Pn−m ), define its
+(maximum) degree to be the number
+                          deg Z := max{deg P1 , . . . , deg Pn−m }.
+   It will often be convenient to work with varieties which satisfy the additional
+property that
+                 n−m
+                  ^
+                       ∇Pj (z) 6= 0      for all z ∈ Z = Z(P1 , . . . , Pn−m ).    (13)
+                 j=1
+
+In this case the zero set forms a smooth m-dimensional submanifold of Rn with a
+(classical) tangent space Tz Z at every point z ∈ Z. A variety Z which satisfies (13)
+is said to be an m-dimensional transverse complete intersection.
+    Of particular interest is the case of hypersurfaces, where m = n − 1. Given a
+polynomial P : Rn → R consider the collection cell(P ) of connected components of
+Rn \ Z(P ). As in Section 4, each O ∈ cell(P ) is referred to as a cell cut out by
+the variety Z(P ) and the cells are thought of as partitioning the ambient euclidean
+space into a finite collection of disjoint regions.
+9The ideal generated by the P is not required to be irreducible.
+                             j
+12                   JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+Theorem 6.2 (Guth [11]). Fix d ∈ N and suppose F ∈ L1 (Rn ) is non-negative.
+Then there exists a polynomial P : Rn → R of degree at most d such that:
+  i) #cell(P ) ∼ dn´;
+ ii) The integrals O F for O ∈ cell(P ) are all equal.
+   This theorem is based on an earlier discrete partitioning result which played a
+central role in the resolution of the Erdős distance conjecture [14]. The proof is
+essentially topological, involving the polynomial ham sandwich theorem of Stone–
+Tukey [32], which is itself a consequence of the Borsuk–Ulam theorem.
+   Under the hypotheses of Theorem 6.2, it trivially follows that
+       ˆ          X ˆ                      ˆ
+           F =               F = #cell(P )    F      for any O∗ ∈ cell(P ).   (14)
+        Rn      O∈cell(P )   O                O∗
+
+
+In view of the forthcoming applications of the polynomial partitioning theorem,
+precise equality is not required in (14), but merely comparability. By relaxing the
+inequality, one may, for instance, ensure that Z(P ) is given by a finite union of
+transverse complete intersections: see Theorem 5.5 of [12]. Furthermore, often one
+may freely pass to some refinement of the collection of cells which satisfy additional
+properties. This observation naturally lends itself to pigeonholing arguments, and
+two examples along these lines are discussed presently.
+
+Passing to shrunken cells. It will be necessary to work with a ‘blurred out’ version
+of the variety Z(P ) given by the r1/2+δ◦ -neighbourhood Nr1/2+δ◦ Z(P ) for different
+choices of r > 0 and small parameter δ◦ > 0. The set Nr1/2+δ◦ Z(P ) is referred to as
+the wall. A simple pigeonholing argument shows that at least one of two cases hold:
+
+Cellular case. One may pass to a refinement of cell(P ) such that if O denotes the
+collection of r1/2+δ◦ -shrunken cells
+                           n                                  o
+                      O := O′ \ Nr1/2+δ◦ Z(P ) : O′ ∈ cell(P ) ,              (15)
+
+then the mass of F is essentially evenly distributed across these shrunken cells:
+                       ˆ            ˆ
+                                 −n
+                          F ∼d          F      for all O ∈ O.
+                             O        Rn
+
+Algebraic case. The contribution to the integral from the wall dominates:
+                            ˆ         ˆ
+                                F .                 F.
+                                 Rn        Nr1/2+δ◦ Z(P )
+
+
+Controlling the size of the cells. A simple but useful observation, appearing in [40],
+is that one may also apply a pigeonholing argument to yield some natural control
+on the size of the cells. Here the analysis is localised to a fixed r-ball Br and,
+in particular, it is assumed that supp F ⊂ Br . In this situation one may, after
+passing to various refinements and relaxing the equalities in (14), assume that each
+O ∈ cell(P ) has diameter at most r/d. In the present article, this reduction is
+made more for convenience rather than out of necessity and only a bound of r/2 is
+needed on the diameter of the cells; the precise details of this argument are therefore
+omitted (see [40] for further information).
+
+6.2. Partitioning over lower dimensional sets. Theorem 6.2 alone is insuffi-
+cient for the purposes of this article and a more involved partitioning result, which
+is implicit in [12], will be used.
+                   FOURIER RESTRICTION IN HIGHER DIMENSIONS                            13
+
+
+Theorem 6.3 (Guth [12]). Fix r ≫ 1, d ∈ N and suppose F ∈ L1 (Rn ) is non-
+negative and supported on Br ∩ Nr1/2+δ◦ Z for some 0 < δ◦ ≪ 1, where Z is an
+m-dimensional transverse complete intersection of degree at most d. At least one
+of the following cases holds:
+
+Cellular case. There exists a polynomial P : Rn → R of degree O(d) with the follow-
+ing properties:
+  i) #cell(P ) ∼ dm and each O ∈ cell(P ) has diameter at most r/2.
+ ii) One may pass to a refinement of cell(P ) such that if O is defined as in (15),
+     then             ˆ           ˆ
+                                F ∼ d−m           F     for all O ∈ O.
+                            O                Rn
+Algebraic case. There exists an (m − 1)-dimensional transverse complete intersec-
+tion Y of degree at most O(d) such that
+                       ˆ                  ˆ
+                                    F .                F.
+                             Br ∩Nr1/2+δ◦ Z           Br ∩Nr1/2+δ◦ Y
+
+   The choice of scales r and r1/2+δ◦ is not particularly special in the sense that
+the theorem holds true in greater generality: the result is presented in this specific
+case only in anticipation of later applications.
+   The statement of this theorem does not explicitly appear in [12], but it can be
+easily deduced from the argument described in Section 8.1 of that article together
+with the simple pigeonholing arguments discussed earlier in this subsection. The
+key difference between Theorem 6.3 and Theorem 6.2 is that in the latter one has
+the additional hypothesis that F is supported in a r1/2+δ◦ -neighbourhood of the
+m-dimensional variety Z. This allows one to construct a partitioning polynomial
+which cuts out only O(dm ) cells rather than the O(dn ) guaranteed by Theorem 6.2.
+   Theorem 6.3 is then applied to the relevant broad norm by taking
+                         X                    1
+                  F =           µEf (BK 2 )        1B ∩B ∩N       Z
+                                            |BK 2 | K 2 r r1/2+δ◦
+                          BK 2 ∈BK 2
+
+for some 0 < δ◦ ≪ 1.
+      • If the cellular case holds, then it follows that
+          kEf kpBLp      (Br ∩Nr1/2+δ◦ Z)
+                                            . dm kEf kpBLp       (O)
+                                                                       for all O ∈ O
+                   k,A                                     k,A
+
+
+        where O is the collection of cells produced by the theorem.
+      • If the algebraic case holds, then it follows that
+                kEf kpBLp                         . kEf kpBLp
+                           k,A (Br ∩Nr1/2+δ◦ Z)              k,A (Br ∩Nr1/2+δ◦ Y)
+
+
+        where Y is the variety produced by the theorem.
+
+                           7. Wave packet decompositions
+7.1. Definition and basic properties. Let r ≫ 1 and cover the domain B n−1 by
+a family Θr of finitely-overlapping balls of radius r−1/2 . As noted in Section 4, these
+(n − 1)-dimensional balls are referred to as r−1/2 -caps and ξθ is used to denote the
+centre of θ. Fix (ψθ )θ∈Θr a smooth partition of unity for B n−1 , subordinate to the
+cover Θr , such that each function ξ 7→ ψθ (ξθ + r−1/2 ξ) is supported in [−π, π]n−1
+and
+                   k∂xα ψθ kL∞ (Rn−1 ) .α r|α|/2    for all α ∈ N0n−1 .
+14                    JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+  Given our smooth, bounded input function f : B n−1 → C, by performing a
+Fourier series decomposition, we have
+                              r1/2 n−1 X
+                f · ψθ (ξ) =                     eihv,ξi (f · ψθ )∧ (v).
+                                2π       1/2 n−1
+                                               v∈r     Z
+                          1/2   n−1
+Writing T[r] := Θr × r          Z     , this yields
+                                                 X
+                                         f=                fθ,v                   (16)
+                                              (θ,v)∈T[r]
+
+where
+                                     r1/2 n−1
+                     fθ,v (ξ) :=         eihv,ξi (f · ψθ )∧ (v)ψ̃θ (ξ)
+                                2π
+for ψ̃θ a bump function which is also adapted to θ ∈ Θr but which is equal to 1 on
+the support of ψθ . The sum (16) is referred to as the wave packet decomposition
+of f at scale r. The functions fθ,v and the pairs (θ, v) ∈ T[r] will both be referred
+to as (scale r) wave packets.
+   The key properties of this decomposition are as follows:
+
+Orthogonality between the wave packets. Recall that the ψθ have almost
+disjoint supports. Combining this observation with the Plancherel identity for
+Fourier series, one concludes that
+                             X         2  X
+                                   fθ,v ∼     kfθ,v k22
+                                                2
+                                (θ,v)∈W               (θ,v)∈W
+
+for any collection of wave packets W ⊆ T[r].
+   It is worth noting that there is a local version of this orthogonality relation. In
+particular, for 1 6 ρ 6 r and a ρ−1/2 -cap θ∗ , one may readily verify that
+                         X         2           X
+                              fθ,v 2      .         kfθ,v k2L2 (3θ∗ )
+                                          L (θ∗ )
+                          (θ,v)∈W                    (θ,v)∈W
+
+where the right-hand norm is over the cap 3θ∗ concentric to θ∗ but with thrice the
+radius. A reverse form of this inequality also holds (with θ∗ on the left and 3θ∗ on
+the right-hand side), and together they imply the more symmetric estimate
+                        X          2                     X
+            max               fθ,v 2     ∼      max            kfθ,v k2L2 (θ∗ ) ,
+         θ∗ :ρ−1/2 −cap                   L (θ∗ )    θ∗ :ρ−1/2 −cap
+                          (θ,v)∈W                                     (θ,v)∈W
+
+where the maximum is over all ρ−1/2 -caps.
+
+Spatial concentration. Given any wave packet (θ, v) ∈ T[r], on the ball B(0, r)
+the function Efθ,v is essentially supported on the tube
+                     n                                         o
+                        x ∈ B(0, r) : |x′ + 2xn ξθ + v| 6 r1/2
+
+in the sense that |Efθ,v (x)| decays rapidly as x ∈ B(0, r) moves away from this set.
+More precisely, a simple stationary phase analysis shows that
+                                    n−1
+             |Efθ,v (x)| .N r− 4 (1 + r−1/2 |x′ + 2xn ξθ + v|)−N kfθ,v k2
+for all N ∈ N and x ∈ Rn with |xn | < r; see, for example, [35, Lemma 4.1]. In
+particular, given 0 < δ ≪ 1, the function |Efθ,v | is very small away from the slightly
+fattened tube
+                        n                                           o
+                 Tθ,v := x ∈ B(0, r) : |x′ + 2xn ξθ + v| 6 r1/2+δ ,
+                   FOURIER RESTRICTION IN HIGHER DIMENSIONS                         15
+
+
+satisfying
+                     |Efθ,v (x)1B(0,r)\Tθ,v (x)| .δ,N r−N kfθ,v k2               (17)
+for all N ∈ N and x ∈ Rn with |xn | < r. Note that Tθ,v as defined above is a tube
+with direction G(ξθ ) (where G is the Gauss map as defined in (8)) which passes
+through the point (−v, 0) ∈ Rn .
+   Rapidly decaying terms of the kind seen in (17) are a regular feature of the
+forthcoming analysis and it is convenient to introduce the notation RapDec(r) to
+denote a non-negative term which is rapidly decreasing in r: that is,
+                      RapDec(r) .δ,N r−N             for all N ∈ N.
+Thus, with this definition, the estimate in (17) can be succinctly written as
+                   |Efθ,v (x)1B(0,r)\Tθ,v (x)| = RapDec(r)kfθ,v k2
+for all x ∈ Rn with |xn | < r.
+
+7.2. Comparing wave packet decompositions at different scales. For r as
+above, consider a smaller scale ρ satisfying r1/2 6 ρ 6 r and a ball B(y, ρ) with
+centre y ∈ B(0, r). We decompose f into wave packets over the ball B(y, ρ) at this
+smaller spatial scale. The first step is to apply a transformation to recentre B(y, ρ)
+at the origin. In particular, write Ef (x) = E f˜(x̃) where x = y + x̃ for some
+x̃ ∈ B(0, ρ) and
+                                                       2
+                             f˜(ξ) := ei(hy , ξi+yn |ξ| ) f (ξ).
+                                           ′
+
+
+
+
+The function f˜ is now decomposed into scale ρ wave packets;
+                                      X
+                               f˜ =          f˜θ̃,ṽ .                           (18)
+                                      (θ̃,ṽ)∈T[ρ]
+
+   A basic question, studied in detail in [12, Section 7], is to understand how the
+two wave packet decompositions (16) and (18) relate to one another. For instance,
+suppose the significant contributions to f come from a subcollection W of the scale r
+wave packets; which scale ρ wave packets contribute significantly to f ? To make
+this question precise, we introduce the following definition.
+Definition 7.1. The function f : B n−1 → C is said to be concentrated on wave
+packets from W if
+                        X
+                              fθ,v ∞ = RapDec(r)kf k2 .
+                           (θ,v)∈W
+                                /
+
+  With this definition, the following lemma provides a relationship between wave
+packet concentration properties at distinct scales.
+
+Lemma 7.2 ([12]). If f is concentrated on scale r wave packets W ⊆ T[r], then f˜
+is concentrated on a set of wave packets f W ⊆ T[ρ] with the following property: for
+every (θ̃, ṽ) ∈ f
+                 W there exists a wave packet (θ, v) ∈ W such that
+                                     
+  i) distH Tθ̃,ṽ + y, Tθ,v ∩ B(y, ρ) . r1/2+δ ;
+ ii) ∠(G(ξθ ), G(ξθ̃ )) . ρ−1/2 .
+Here distH denotes the Hausdorff distance.
+
+   The lemma tells us that every small scale wave packet (θ̃, ṽ) ∈ fW has a ‘parent’
+large scale wave packet (θ, v) ∈ W such that Tθ̃,ṽ both lies close to Tθ,v and points
+in a similar direction to Tθ,v . This behaviour is represented in Figure 2.
+16                       JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+
+                                     G(ξθ̃ )      G(ξθ )
+
+
+
+
+                                Tθ̃,ṽ + y
+
+
+                                                Tθ,v ∩ B(y, ρ)
+
+
+
+
+                                                                  B(y, ρ)
+
+
+
+         Figure 2. For every (θ̃, ṽ) ∈ f W there exists a ‘parent’ wave packet
+         (θ, v) ∈ W such that: i) Tθ̃,ṽ +y (denoted here in blue ) is contained
+         a fixed dilate of Tθ,v ∩ B(y, ρ) (denoted here in yellow ) and ii) the
+         angle between the directions is O(ρ−1/2 ).
+
+
+                               8. Tangential wave packets
+   We begin by giving the precise definition of what it means for a tube Tθ,v to
+be tangent to Z; throughout this section Z ⊂ Rn will denote an m-dimensional
+transverse complete intersection and 0 < δ ≪ δm ≪ 1 are fixed small parameters,
+where δ is as in the previous section.
+Definition 8.1. Letting r ≫ 1 and y ∈ BR , a (translated) tube Tθ,v + y for
+(θ, v) ∈ T[r] is said to be r−1/2+δm -tangent to Z in B(y, r) if:
+  i) Tθ,v + y ⊆ Nr1/2+δm Z ∩ B(y, r);
+ ii) For any x ∈ Tθ,v + y and z ∈ Z ∩ B(y, r) with |z − x| . r1/2+δm one has
+                                  ∠(G(θ), Tz Z) . r−1/2+δm .
+   Throughout this section, we consider a function g which is concentrated on
+tangential wave packets in the sense that
+                              X
+                       g=            gθ,v + RapDec(r)kgk2                 (19)
+                                 (θ,v)∈TZ [r]
+
+where
+                    n                                                            o
+        TZ [r] :=       (θ, v) ∈ T[r] : Tθ,v is r−1/2+δm -tangent to Z in B(0, r) .
+An important ingredient in the proof of Theorem 2.1 will be to understand what
+can be said about Eg under this tangency hypothesis. Recall from the discussion
+in Section 4 that there are three useful estimates at our disposal:
+      • Vanishing property of the k-broad norms,
+      • Transverse equidistribution estimates,
+                   FOURIER RESTRICTION IN HIGHER DIMENSIONS                         17
+
+
+      • Bounds arising from the polynomial Wolff axioms.
+The purpose of this section is to provide the precise details of all three of these
+estimates. The first two were observed and used by Guth [12] to prove restriction
+estimates in high dimensions. The polynomial Wolff axioms were also applied earlier
+by Guth [11] in the special case of 2-surfaces in R3 to study the restriction problem
+in 3-dimensions.
+
+8.1. Vanishing property of the k-broad norms. The key advantage of working
+with k-broad norms rather than classical Lp inequalities is that the former satisfy
+the following property.
+Lemma 8.2. Let r ≫ 1, let 1 6 m < k 6 n, and let Z be m-dimensional. Suppose
+that g is concentrated on wave packets from TZ [r]. Then
+                         kEgkBLpk,A (Br ) = RapDec(r)kgk2 .
+
+   The lemma follows fairly directly from the definition of the k-broad norms and
+the basic properties of the wave packet decomposition. The simple argument can
+be readily extracted from the beginning of the proof of Proposition 8.1 in [12].
+
+8.2. Comparing tangency properties at different scales. The description of
+the transverse equidistribution estimates is a little involved and will require some
+preliminary definitions. In Section 7.2 we compared wave packet concentration
+properties at different spatial scales; we now pursue this investigation further in
+the tangential scenario.
+   As above, suppose g is concentrated on wave packets from TZ [r]. Once again, let
+r1/2 6 ρ 6 r be a choice of smaller spatial scale and consider some ρ-ball B(y, ρ)
+with centre y ∈ B(0, r). Lemma 7.2 can be used to analyse the tangency properties
+of the scale ρ wave packets defined over the ball B(y, ρ). To see this, first write
+                                           ′          2
+                             g̃(ξ) := ei(hy ,ξi+yn |ξ| ) g(ξ),
+as in Section 7.2. By Lemma 7.2, the function g̃ is concentrated on scale ρ wave
+packets which each admit a ‘parent’ wave packet in TZ [r]. The scale ρ wave packets
+therefore inherit tangency properties from their parents. It turns out that the angle
+condition inherited by the scale ρ wave packets is very strong, but the containment
+property is too weak to ensure that the scale ρ wave packets are tangent to Z itself.
+However, as shown in [12, Section 7], the function g̃ is concentrated on scale ρ
+wave packets Tθ̃,ṽ which are tangent to various translates of Z. A schematic of this
+behaviour is provided in Figures 3 and 4 below.
+   To make the preceding discussion more precise, given b ∈ Rn let Tb [ρ] be the
+subcollection of T[ρ] consisting of those wave packets which are ρ−1/2+δm -tangent
+to Z + b − y in B(0, ρ). At least heuristically, there is a finite set of translates
+B ⊆ B(0, r1/2+δm ) such that the {Tb [ρ] : b ∈ B} are pairwise disjoint and
+                 X                                             X
+            g̃ =     g̃b + RapDec(r)kgk2 , where g̃b :=              g̃θ̃,ṽ .   (20)
+                b∈B                                              (θ̃,ṽ)∈Tb [ρ]
+
+  By the spatial concentration property of the wave packets, it follows that
+                Eg̃b (x̃) = 1Nρ1/2+δm (Z+b) (x)Eg(x) + RapDec(r)kgk2
+whenever x = x̃ + y for some x̃ ∈ B(0, ρ). The decomposition in (20) there-
+fore breaks Eg̃ into pieces with the property that each piece is concentrated on a
+ρ1/2+δm -neighbourhood of some translate of Z.
+   Finding the set of translates B involves some technicalities and the precise state-
+ments are perhaps not quite as clean as the above discussion suggests. A rigorous
+18                   JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+
+
+         Tθ,v                                     Nr1/2+δm Z
+
+
+                                                                             Z
+
+
+
+                                                                         B(y, ρ)
+
+
+
+        Figure 3. The large scale tube Tθ,v is r−1/2+δm -tangent to Z in
+        B(0, r). Here we consider its intersection with B(y, ρ).
+
+
+version of (20) is given by the following proposition, which is implicit in [12] and
+is described more explicitly in [13].
+Proposition 8.3. Let B(y, ρ) ∩ Nρ1/2+δm Z 6= ∅ and let g be concentrated on wave
+packets from TZ [r]. Then there is a set of translates B ⊂ B(0, r1/2+δm ) such that
+                           X
+kEgkpBLp (B(y,ρ)) . log2 r    kEg̃b kpBLp (B(0,ρ)∩N 1/2+δ (Z−y+b)) +RapDec(r)kgk22
+        k,A                                    k,A           ρ   m
+                            b∈B
+
+and                                   X
+                                            kg̃b k22 . kgk22 .
+                                      b∈B
+
+  The lemma can be proved by independently selecting the translates b at ran-
+dom, although this argument involves some technicalities. See the proof of [12,
+Proposition 8.1] or [13, Lemma 10.5] for further details.
+8.3. Transverse equidistribution estimates. If h : B n−1 → C is concentrated
+on wave packets from TZ [r], then this property constrains the support of h (since
+points of the support of h roughly correspond to directions of the wave packets).
+This in turn influences the behaviour of Eh via the uncertainty principle. In particu-
+lar, it transpires that Eh is essentially constant at scale r1/2 in directions transverse
+to the variety Z. This phenomenon is encapsulated in the transverse equidistribu-
+tion estimate of [12, Section 6] which roughly states that
+                      1                                    1
+                                ˆ                               ˆ
+                                               |Eh|2 .                 |Eh|2         (21)
+              |Nρ1/2 Z ∩ Br1/2 | N 1/2 Z∩B 1/2          |Br1/2 | B 1/2
+                                  ρ           r                      r
+
+         1/2
+for any r -ball Br1/2 and 1 6 ρ 6 r. An informative case to have in mind is given
+by taking Z to be a plane in the co-ordinate hyperplane perpendicular to en ; in this
+situation, a rigorous version of the above inequality can be readily verified along the
+lines discussed above. For the general case, the reader is referred to Sections 2 and 6
+                         FOURIER RESTRICTION IN HIGHER DIMENSIONS                                      19
+
+
+
+
+      Tθ̃,ṽ + y                                                                           Z+b
+
+                                                                                             Z
+
+
+
+                                                                                       B(y, ρ)
+
+
+
+         Figure 4. The scale ρ wave packets are partitioned into collec-
+         tions Tb [ρ]. For each (θ̃, ṽ) ∈ Tb [ρ] the corresponding tube Tθ̃,ṽ + y
+         is tangent to the translate Z + b in B(y, ρ).
+
+
+of [12] for a more detailed discussion of the transverse equidistribution phenomenon,
+which plays a fundamental role in [12] and also here.
+    It is of particular interest to apply these observations to h := g̃b , where g̃b is one
+of the functions introduced in the previous subsection. Indeed, by the discussion
+in Section 8.2, the operator |Eg̃b | is concentrated in Nρ1/2+δm (Z − y + b) and so
+expressions of the form of the left-hand side of (21) naturally arise in this context.
+    Estimates for L2 quantities involving Eg̃b can be related to L2 estimates for
+the input function g̃b via Plancherel’s theorem or, more precisely, the energy iden-
+tity (11). The following consequence of transverse equidistribution will be useful,
+which is established in Section 7 of [12].
+
+Lemma 8.4 (Guth [12]). Let 1 6 ρ′ 6 ρ 6 r and |b| . r1/2+δm . Let Z be m-
+dimensional and let g be concentrated on wave packets from TZ [r]. Then
+                                                           r − n−m
+                                                                  2
+           max           kg̃b k2L2 (θ) .deg Z   rO(δm )                 max           kgk2L2 (θ) ,   (22)
+      θ:(ρ′ )−1/2 −cap                                     ρ       θ:(ρ′ )−1/2 −cap
+
+where g̃b is defined with respect to scale ρ wave packets as in (20).
+
+   Note that the factor gained in (22) is the ratio of the volumes of the sets of
+integration in (21). The inequality (22) is explicitly stated in [12, Lemma 7.6] for
+the case ρ′ = 1; the version for general 1 6 ρ′ 6 ρ can be deduced via similar
+arguments (see also the equation (8.26) from [12]).
+
+8.4. Applying the polynomial Wolff axioms. Theorem 4.1 can be expressed
+in terms of wave packets.
+20                   JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+Proposition 8.5 ([18]). Let δ > 0, c, r > 1 and Z ⊆ Rn be m-dimensional. If
+W ⊆ T[r] is such that Tθ,v ⊆ Ncr1/2 Z for all (θ, v) ∈ W, then
+          n                                          o         m−1
+        # θ : (θ, v) ∈ W for some v ∈ r1/2 Zn−1 .deg Z cn−m r 2 +δ .
+
+     From this geometric bound, we deduce an estimate involving the averaged norm
+                                           1 ˆ              1/2
+                         kf kL2avg (θ) :=        |f (ξ)|2 dξ      ,
+                                           |θ| θ
+
+which is a higher dimensional generalisation of an inequality that featured promi-
+nently in [11].
+
+Lemma 8.6. Let δ > 0, c, r > 1 and Z ⊆ Rn be m-dimensional. If g is concentrated
+on wave packets (θ, v) ∈ T[r] satisfying Tθ,v ⊆ Ncr1/2 Z, then
+                                                n−m
+               kgk2L2(B n−1 ) .deg Z cn−m r−     2 +δ           max        kgk2L2avg(θ) .
+                                                           θ:r −1/2 −cap
+
+Proof. By the concentration hypothesis one may write
+                             X
+                       g=         gθ,v + RapDec(r)kgk2
+                               (θ,v)∈W
+
+
+where W are scale r wave packets satisfying Tθ,v ⊆ Ncr1/2 Z. Given an r−1/2 -cap θ,
+define
+                              n                             o
+                     TZ (θ) := v ∈ r1/2 Zn−1 : (θ, v) ∈ W
+
+and let ΘZ denote the collection of all r−1/2 -caps θ for which TZ (θ) 6= ∅. Thus, by
+the orthogonality and support properties of the wave packets,
+                              X        X               2       X
+                    kgk22 ∼                     gθ,v       .           kgk2L2(θ) .
+                                                       2
+                              θ∈ΘZ   v∈TZ (θ)                  θ∈ΘZ
+
+To prove the lemma it therefore suffices to show that
+                                                           m−1
+                               #ΘZ .deg Z cn−m r            2 +δ   ,
+
+but this immediately follows from Proposition 8.5.                                          
+
+
+                       9. Finding polynomial structure
+   The purpose of this section is to reformulate the core of the (inductive) proofs
+in [11, 12] as a recursive process. The argument will in fact be presented as two
+separate algorithms:
+       • [alg 1] is the more involved of the two and is presented in the current
+         section. It effects a dimensional reduction, essentially passing from an m-
+         dimensional to an (m − 1)-dimensional situation.
+       • [alg 2] is described in Section 10 below. It consists of repeated application
+         of the first algorithm to reduce to a minimal dimensional case.
+Comparing the present analysis with the original induction arguments of Guth,
+[alg 1] corresponds to the induction on the radius in the proof of Proposition 8.1
+of [12], whilst [alg 2] corresponds to the induction on dimension.
+                     FOURIER RESTRICTION IN HIGHER DIMENSIONS                                 21
+
+
+The first algorithm. Throughout this section let p > 2, 0 < ε ≪ 1 be fixed and
+                       εC 6 δ ≪ δn ≪ δn−1 ≪ · · · ≪ δ1 ≪ δ0 ≪ ε                            (23)
+                                                                           10            10
+be a family of small parameters. Taking, for instance, δ0 := ε                  , δj := δj−1 for
+                                                                                              10
+1 6 j 6 n and δ := δn10 suffices. These parameters play a rather technical role
+and are chosen so as to satisfy the requirements of the forthcoming proof.
+
+Input. [alg 1] will take as its input:
+     • An r-ball Br ⊂ Rn for some choice of large scale r ≫ 1.
+     • A transverse complete intersection Z of dimension m > 2.
+     • A function f ∈ B n−1 → C concentrated on wave packets which are r−1/2+δm -
+       tangent to Z in Br .
+     • An admissible large integer A ∈ N.
+Remark 9.1. The integer A corresponds to the A parameter featured in the defini-
+tion of the broad norm. It is chosen large enough to facilitate repeated application
+of Lemma 5.2 and Lemma 5.3. These lemmas will be used no more than δ −2 times
+                                 −2
+and so it suffices to take A > 2δ : see the discussion following (28) below.
+
+. The description of the output of the algorithm is, unfortunately, far more involved.
+
+Output. [alg 1] will output a finite sequence of sets (Ej )Jj=0 , which are constructed
+via a recursive process. Each Ej is referred to as an ensemble and contains all the
+relevant information coming from the jth step of the algorithm. In particular, the
+ensemble Ej consists of:
+      • A word hj of length j in the alphabet {a, c}, is referred to as a history. The
+        rationale behind this notation is that a is an abbreviation of ‘algebraic’ and
+        c ‘cellular’. The words hj are recursively defined by successively adjoining
+        a single letter. Each hj records how the cells Oj ∈ Oj were constructed
+        via repeated application of the polynomial partitioning theorem and, in
+        particular, whether the algebraic or cellular case held in successive stages
+        of the process.
+      • A choice of spatial scale ρj > 1. The ρj will in fact be completely deter-
+        mined by the initial scale r and the history hj . In particular, define an
+        auxiliary exponent δ̃m−1 by
+                          (1 − δ̃m−1 )(1/2 + δm−1 ) = (1/2 + δm ),                         (24)
+         noting that δm−1 /2 6 δ̃m−1 6 2δm−1 . Let σk : [1, ∞) → [0, ∞) be given by
+                            ρ
+                                      if the kth letter of hj is c
+                 σk (ρ) :=    2
+                            ρ1−δ̃m−1 if the kth letter of h is a
+                                                             j
+
+         for each 1 6 k 6 j. With these definitions, take
+                                   ρj := σj ◦ · · · ◦ σ1 (r);
+         this sequence of scales is represented pictorially by the tree in Figure 5.
+            Note that each σk is a decreasing function and therefore
+                                          #a (j)            r
+                         ρj 6 r(1−δ̃m−1 )        and ρj 6 # (j)                   (25)
+                                                          2 c
+         where #a (j) and #c (j) denote the number of occurrences of a and c in the
+         history hj , respectively.
+10They are essentially used to compensate for certain r C̄δm -losses arising from the transverse
+equidistribution lemma.
+22                                    JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+                                                                      r                                                                              ρ0
+                                                 c                                         a
+
+                                r
+                                2                                                                              r 1−δ̃                                ρ1
+                     c                  a                                                             c                       a
+
+               r                                                                        r 1−δ̃                                         2
+               4                                ( 2r )1−δ̃                                 2                                   r (1−δ̃)              ρ2
+          c          a                      c                a                 c                      a                       c         a
+
+                                                                                                                                  2
+     ..                  ..            ..                        ..       r 1−δ̃
+                                                                                     ( r 2 )1−δ̃
+                                                                                                 1−δ̃
+                                                                                                                        r (1−δ̃)                 3
+      .                   .             .                         .          4                                              2         r (1−δ̃)       ρ3
+                                                                          c        a    c   a                           c         a   c      a
+
+                                                                          ..       ..            ..       ..             ..    ..      ..   ..       ..
+                                                                           .        .             .        .              .     .       .    .        .
+
+                   Figure 5. The chain of scales ρj . Here we drop the subscript by
+                   writing δ̃ := δ̃m−1 . The blue path marked by arrows corresponds
+                   to the situation where the word hj of length j begins with the
+                   letters accc . . . for 4 6 j 6 J. In this case the sequence ρj is given
+                   by ρ0 = r, ρ1 = r1−δ̃ , ρ2 = r1−δ̃ /2, ρ3 = r1−δ̃ /4, . . . .
+
+
+Remark 9.2. It is perhaps useful to give some justification for the introduction
+of the auxiliary exponent δ̃m−1 . In the algebraic case one passes from some scale
+                                                     1−δ̃
+ρj to a new scale ρj+1 := ρj m−1 ; this is encoded in the definition of σk (ρ) above.
+In the last step of the current algorithm the analysis passes to a lower dimensional
+variety (or we end up in a trivial small scale case). For this step, one wishes
+to analyse tangency properties of the wave packets at the new scale ρj+1 with
+respect to an (m − 1)-dimensional variety. Looking at the second condition in
+                                                       1/2+δ
+Definition 8.1, this involves analysis at the scale ρj+1 m−1 . The formula (24)
+                              1/2+δ                    1/2+δm
+ensures that ρj+1 m−1 = ρj                                            ; this allows certain tangency properties to be
+inherited at the new scale.
+
+              • A family of subsets Oj of Rn which will be referred to as cells. Each cell
+                Oj ∈ Oj will have diameter at most ρj .
+              • A collection of functions (fOj )Oj ∈Oj . Each fOj is concentrated on wave
+                                             −1/2+δm
+                packets in T[ρj ] which are ρj       -tangent to some translate of Z on (a
+                ball of radius ρj containing) Oj .
+              • A large integer d ∈ N which depends only on the admissible parameters
+                and deg Z.
+   Moreover, the components of the ensemble are defined so as to ensure that, for
+certain coefficients11
+                                     I            II        III
+                                    Cj,δ (d, r), Cj,δ (d), Cj,δ (d, r) .d,δ rδ0 d#c (j)δ                                                             (26)
+
+and Aj := 2−#a (j) A ∈ N, the following properties hold:
+
+
+
+11The quantity d#c (j)δ may be large (and non-admissible). Nevertheless, these d#c (j)δ losses will
+be compensated for by other gains in the argument: see Remark 10.1 below.
+                             FOURIER RESTRICTION IN HIGHER DIMENSIONS                              23
+
+
+      Property I. Most of the mass of kEf kpBLp (Br ) is concentrated over the Oj ∈ Oj :
+                                               k,A
+
+                       p
+                                               X
+                                    I
+                  kEf kBLp (Br ) 6 Cj,δ (d, r)     kEfOj kpBLp (Oj ) + err(j)        (I)j
+                              k,A                                          k,Aj
+                                                       Oj ∈Oj
+
+      where err(j) := jr−N kf kp2 for some fixed N ∈ N is a harmless ‘error’ term.
+
+      Property II. The functions fOj satisfy
+                               X
+                                                II
+                                    kfOj k22 6 Cj,δ (d)d#c (j) kf k22 .                         (II)j
+                                     Oj ∈Oj
+
+      Property III. Furthermore, each individual fOj satisfies
+                                              r − n−m
+                                                     2
+                       kfOj k22 6 Cj,δ
+                                   III
+                                       (d, r)           d−#c (j)(m−1) kf k22                   (III)j
+                                              ρj
+      and
+                                                        r − n−m
+                                                               2
+               max                           III
+                         kfOj k2L2avg (θ) 6 Cj,δ (d, r)              max kf k2L2avg (θ)     (IIIloc )j
+            θ:ρ−1/2 −cap                                ρ j      θ:ρ−1/2 −cap
+
+      for all 1 6 ρ 6 ρj .
+
+                         I          II           III
+          The factors Cj,δ (d, r), Cj,δ (d) and Cj,δ (d, r) play a minor technical role in the
+      analysis but, nevertheless, it is useful to work with explicit formulæ for these coef-
+      ficients. In particular, they are defined by
+                                     I
+                                    Cj,δ (d, r) := d#c (j)δ (log r)2#a (j)(1+δ) ,
+                                       II
+                                      Cj,δ (d) := d#c (j)δ+n#a (j)(1+δ) ,
+                                     III
+                                    Cj,δ (d, r) := d#c (j)δ+#a (j)δ rC̄#a (j)δm ,
+      where C̄ is some suitably chosen large constant.
+      The initial step. The initial ensemble E0 is defined by taking:
+            • h := ∅ to be the empty word;
+            • ρ0 := r;
+            • O0 the collection consisting of a single cell O0 := Nr1/2+δm Z ∩ Br ;
+            • fO0 := f .
+      At this point it is convenient also to fix d ∈ N to be some large integer, to be
+      determined later, which depends only on admissible parameters and deg Z.
+         With these definitions, Property I holds due to the hypothesis on f and the
+      spatial concentration property of the wave packets, whilst Properties II and III
+      both hold vacuously.
+      The recursive step. Assume the ensembles E0 , . . . , Ej have all been constructed
+      for some j ∈ N0 and that they all satisfy the desired properties.
+
+      Stopping conditions. The algorithm has two stopping conditions which are la-
+      belled [tiny] and [tang].
+Stop:[tiny] The algorithm terminates if ρj 6 rδ̃m−1 .
+Stop:[tang] Let Ctang and Calg be fixed admissible constants, chosen large enough to
+               satisfy the forthcoming requirements of the proof, and ρ̃ := ρ1−j
+                                                                                 δ̃m
+                                                                                     . The
+               algorithm terminates if the inequalities
+                      X                              X
+                           kEfOj kpBLp (Oj ) 6 Ctang    kEfS kpBLp   (Bρ̃ [S])
+                                           k,Aj                                   k,Aj /2
+                     Oj ∈Oj                                     S∈S
+24                          JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+          and
+                                       X                                    X
+                                            kfS k22 6 Ctang rnδ̃m                 kfOj k22 ;                        (27)
+                                      S∈S                              Oj ∈Oj
+
+                         max         kfS k2L2avg (θ) 6 Ctang        max          kfOj k2L2avg (θ)
+                          S∈S                                      Oj ∈Oj
+                      θ:ρ−1/2 −cap                              θ:ρ−1/2 −cap
+
+          hold for all 1 6 ρ 6 ρ̃ for some choice of:
+       • S a collection of transverse complete intersections in Rn all of equal dimen-
+         sion m − 1 and degree at most Calg d;
+       • Bρ̃ [S] an assignment of a ρ̃-ball to each S ∈ S;
+       • fS an assignment of a function to each S ∈ S which is concentrated on
+         wave packets ρ̃−1/2+δm−1 -tangent to S on Bρ̃ in the sense of Definition 8.1.
+   The stopping condition [tang] is somewhat involved, but it can be roughly inter-
+preted as forcing the algorithm to terminate if one can pass to a lower dimensional
+situation.
+   If either of the above conditions hold, then the stopping time is defined to be
+J := j. Recalling (25), the stopping condition [tiny] implies that the algorithm
+must terminate after finitely many steps and, moreover,
+                                  −1       −1
+                        #a (J) . δm−1 log(δm−1 )                and #c (J) . log r.                                 (28)
+                                                                  I          II
+These estimates can be combined with the explicit formulæ for Cj,δ  (d, r), Cj,δ (d)
+     III
+and Cj,δ (d, r) to show that the bound (26) always holds, provided δm is chosen to
+                                                                                                            −2
+be sufficiently small relative to δm−1 . Furthermore, by choosing A > 2δ , say, one
+can ensure that the Aj defined above are indeed integers.
+
+Recursive step. Suppose that neither stopping condition [tiny] nor [tang] is
+met. One proceeds to construct the ensemble Ej+1 as follows.
+  Given Oj ∈ Oj , apply the polynomial partitioning theorem, Theorem 6.3, with
+degree d to
+      kEfOj kpBLp                                      = kEfOj kpBLp                     + RapDec(r)kf kp2 ,
+                     k,Aj (Oj ∩Nρ1/2+δm (Z+xOj ))                           k,Aj (Oj )
+                                 j
+
+
+where xOj ∈ Rn is a choice of translate such that fOj is concentrated on wave
+          −1/2+δm
+packets ρj         -tangent to Z+xOj in (a ρj -ball containing) Oj . For each Oj ∈ Oj
+either the cellular or the algebraic case holds, as defined in Theorem 6.3. Let Oj,cell
+denote the subcollection of Oj consisting of all cells for which the cellular case holds
+and Oj,alg := Oj \ Oj,cell . Thus, by (I)j , one may bound kEf kpBLp (Br ) by
+                                                                                               k,A
+                h      X                                         X                                      i
+      I
+     Cj,δ (d, r)                  kEfOj kpBLp       (Oj )
+                                                          +                 kEfOj kpBLp                     + err(j);
+                                             k,Aj                                          k,Aj (Oj )
+                    Oj ∈Oj,cell                               Oj ∈Oj,alg
+
+the analysis splits into two cases depending on which term in this sum dominates.
+
+◮ Cellular-dominant case. Suppose that the inequality
+             X                          X
+                  kEfOj kpBLp (Oj ) 6         kEfOj kpBLp                                                           (29)
+                                             k,Aj                                          k,Aj (Oj )
+                    Oj ∈Oj,alg                                Oj ∈Oj,cell
+
+holds so that
+                                                        X
+            kEf kpBLp                   I
+                                    6 2Cj,δ (d, r)                 kEfOj kpBLp                 + err(j).            (30)
+                        k,A (Br )                                                 k,Aj (Oj )
+                                                     Oj ∈Oj,cell
+                      FOURIER RESTRICTION IN HIGHER DIMENSIONS                                      25
+
+
+Definition of Ej+1 . Define hj+1 by adjoining the letter c to the word hj . Thus, it
+follows from the definitions that
+                 ρj
+          ρj+1 = , #c (j + 1) = #c (j) + 1 and #a (j + 1) = #a (j).            (31)
+                  2
+  The next generation of cells Oj+1 will arise from the cellular decomposition of
+Theorem 6.3. Fix Oj ∈ Oj,cell so that there exists some polynomial P : Rn → R of
+degree O(d) with the following properties:
+  i) #cell(P ) ∼ dm and each O ∈ cell(P ) has diameter at most ρj+1 .
+ ii) One may pass to a refinement of cell(P ) such that if
+                              n                                  o
+                 Oj+1 (Oj ) := O \ Nρ1/2+δm Z(P ) : O ∈ cell(P )                                  (32)
+                                                   j
+
+
+                                                            1/2+δm
+     denotes the corresponding collection of ρj                      -shrunken cells, then
+
+      kEfOj kpBLp              . dm kEfOj kpBLp                      for all Oj+1 ∈ Oj+1 (Oj ).
+                  k,Aj (Oj )                       k,Aj (Oj+1 )
+
+
+Given Oj+1 ∈ Oj+1 (Oj ), define
+                                                       X
+                                   fOj+1 :=                    (fOj )θ,v .
+                                               (θ,v)∈T[ρj ]
+                                              Tθ,v ∩Oj+1 6=∅
+
+It is a simple consequence of the fundamental theorem of algebra (or Bézout’s
+theorem) that any tube Tθ,v for (θ, v) ∈ T[ρj ] can enter at most O(d) cells Oj+1 ∈
+Oj+1 (Oj ) (it is for this reason that one works with the collection of shrunken cells
+as defined in (32)). Consequently, by the basic orthogonality between the wave
+packets,
+                                X
+                                         kfOj+1 k22 . dkfOj k22 .                (33)
+                                Oj+1 ∈Oj+1 (Oj )
+
+By the pigeonhole principle, one may therefore pass to a refinement of Oj+1 (Oj )
+such that
+                kfOj+1 k22 . d−(m−1) kfOj k22               for all Oj+1 ∈ Oj+1 (Oj ).            (34)
+Finally, define
+                                                       [
+                                   Oj+1 :=                  Oj+1 (Oj ).
+                                              Oj ∈Oj,cell
+
+This completes the construction of Ej+1 and it remains to check that the new
+ensemble satisfies the desired properties.12 In view of this, it is useful to note that
+        N
+       Cj,δ (d, r) = d−δ Cj+1,δ
+                          N
+                                (d, r)      for N ∈ {I, II, III} and Aj = Aj+1 ,                  (35)
+                                                               N
+which follows immediately from (31) and the definition of the Cj,δ (d, r) and Aj .
+
+
+12There is a slight technical issue here as the f
+                                                  Oj+1 are required to satisfy the tangency hypothesis
+at scale ρj+1 ; this is not quite directly inherited from the parent fOj functions since they only
+satisfy a tangency hypothesis at scale ρj . Although the scales differ by only a factor of 2, the
+construction is applied repeatedly as part of the recursive process and therefore such factors can
+build up and potentially threaten the argument. One may deal with this problem by performing
+a further decomposition of the cells Oj+1 and functions fOj+1 using Proposition 8.3: the details
+are omitted since the argument is similar (but significantly simpler) to that used to treat the
+algebraic case below. See also Lemma 10.2 of [13].
+26                       JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+Property I. Fixing Oj ∈ Oj,cell , observe that #Oj+1 (Oj ) ∼ dm and
+     kEfOj kpBLp                . dm kEfOj kpBLp                     for all Oj+1 ∈ Oj+1 (Oj )
+                   k,Aj (Oj )                   k,Aj (Oj+1 )
+
+
+by the properties i) and ii) from the polynomial partitioning theorem and the fact
+that Oj+1 (Oj ) is obtained by twice refining a set of cardinality comparable to that
+of cell(P ). Thus,
+                                          X
+               kEfOj kpBLp (Oj ) .                 kEfOj kpBLp (Oj+1 )
+                                k,Aj                                       k,Aj
+                                           Oj+1 ∈Oj+1 (Oj )
+
+and, recalling (30) and (35), one deduces that
+                                          X
+   kEf kpBLp (Br ) 6 Cd−δ Cj+1,δ
+                             I
+                                  (d, r)                       kEfOj kpBLp                 + err(j).
+            k,A                                                           k,Aj+1 (Oj+1 )
+                                               Oj+1 ∈Oj+1
+
+By the definition of fOj+1 and the spatial concentration property of the wave pack-
+ets, it follows that
+           EfOj (x) = EfOj+1 (x) + RapDec(r)kf k2                      for all x ∈ Oj+1 .
+                                                           δ
+This inequality relies on the fact that ρj+1 & r , which is valid since it is assumed
+that the stopping condition [tiny] fails. If r is sufficiently large, then one concludes
+that
+                                        X
+ kEf kpBLp (Br ) 6 Cd−δ Cj+1,δ
+                           I
+                                (d, r)          kEfOj+1 kpBLp       (Oj+1 )
+                                                                            + err(j + 1).
+         k,A                                                             k,Aj+1
+                                           Oj+1 ∈Oj+1
+
+Thus, provided d is chosen large enough so as to ensure that the additional d−δ
+factor absorbs the unwanted constant C, one deduces (I)j+1 . This should be com-
+pared with Solymosi and Tao’s approach to polynomial partitioning [30].
+
+Property II. By the construction,
+                 X                              X                X
+                        kfOj+1 k22 =                                        kfOj+1 k22
+                  Oj+1 ∈Oj+1                 Oj ∈Oj,cell Oj+1 ∈Oj+1 (Oj )
+                                                X
+                                          .d            kfOj k22 ,
+                                               Oj ∈Oj
+
+where the inequality follows from a term-wise application of (33). Thus, (II)j
+and (35) imply that
+                    X
+                           kfOj+1 k22 . d−δ Cj+1,δ
+                                             II
+                                                   (d)d#c (j+1) kf k22
+                     Oj+1 ∈Oj+1
+
+and, provided d is chosen sufficiently large, one deduces (II)j+1 .
+
+Property III. Fix Oj ∈ Oj,cell, Oj+1 ∈ Oj+1 (Oj ) and recall from (34) that
+
+                                   kfOj+1 k22 . d−(m−1) kfOj k22 .                                 (36)
+Thus, (III)j and (35) imply that
+                                           r − n−m
+                                                  2
+            kfOj+1 k22 . d−δ Cj+1,δ
+                              III
+                                    (d, r)           d−(#c (j)+1)(m−1) kf k22.
+                                           ρj
+Since ρj ∼ ρj+1 and #c (j) + 1 = #c (j + 1), provided d is chosen sufficiently large,
+one deduces (III)j+1 .
+   The local inequality (IIIloc )j+1 follows in a similar manner but with one key
+difference: the inequality (36) is no longer available due to the localisation in the
+                       FOURIER RESTRICTION IN HIGHER DIMENSIONS                                                 27
+
+
+L2 -norms. Instead, one uses simple orthogonality between the wave packets to
+prove that
+                  max kfOj+1 k2L2avg (θ) .  max kfOj k2L2avg (θ)
+                    θ:ρ−1/2 −cap                             θ:ρ−1/2 −cap
+for 1 6 ρ 6 ρj+1 6 ρj .
+
+◮ Algebraic-dominant case. Suppose that the hypothesis (29) of the cellular-
+dominant case fails so that
+               X                           X
+                       kEfOj kpBLp (Oj ) <   kEfOj kpBLp (Oj )          (37)
+                                            k,Aj                                     k,Aj
+               Oj ∈Oj,cell                                   Oj ∈Oj,alg
+
+and, consequently,
+                                                        X
+           kEf kpBLp       (Br )
+                                     I
+                                 6 2Cj,δ (d, r)                 kEfOj kpBLp        (Oj )
+                                                                                           + err(j).          (38)
+                     k,A                                                    k,Aj
+                                                   Oj ∈Oj,alg
+
+Each cell in Oj,alg satisfies the condition of the algebraic case of Theorem 6.3; this
+information is used to construct the (j + 1)-generation ensemble.
+
+Definition of Ej+1 . Define hj+1 by adjoining the letter a to the word hj . Thus, it
+follows from the definitions that
+                  1−δ̃m−1
+        ρj+1 = ρj            ,   #c (j + 1) = #c (j)             and #a (j + 1) = #a (j) + 1.
+The next generation of cells is constructed from the varieties which arise from the
+algebraic case in Theorem 6.3. Fix Oj ∈ Oj,alg so that there exists a transverse
+complete intersection Y of dimension m − 1 and deg Y 6 Calg d such that
+                    kEfOj kpBLp                 . kEfOj kpBLp                               .
+                                   k,Aj (Oj )                    k,Aj (Oj ∩Nρ1/2+δm Y)
+                                                                             j
+
+Let B(Oj ) be a cover of Oj ∩ Nρ1/2+δm Y by finitely-overlapping balls of radius ρj+1 .
+                                        j
+For each B ∈ B(Oj ) let TB denote the collection of all (θ, v) ∈ T[ρj ] for which
+Tθ,v ∩ B ∩ Nρ1/2+δm Y 6= ∅. This set is partitioned into subsets TB,tang and TB,trans
+              j
+consisting of wave packets in TB which are tangential and transverse to Y on B,
+respectively, by defining
+                    n                                                  o
+                                          −1/2+δ
+        TB,tang := (θ, v) ∈ TB : Tθ,v is ρj+1 m−1 -tangent to Y on B
+
+and TB,trans := TB \ TB,tang . This setup is slightly inconsistent with the definition
+of tangent from Definition 8.1 (since the wave packets in TB are at the large scale ρj
+rather than ρj+1 ) and therefore some clarification is necessary.
+Definition 9.3. In this context, the tangency condition means that the following
+conditions hold:
+  i) Tθ,v ∩ 2B ⊆ N 1/2+δm−1 Y = N2ρ1/2+δm Y ;
+                       2ρj+1                       j
+                                                                     1/2+δm−1          1/2+δm
+ ii) If x ∈ Tθ,v and y ∈ Y ∩ 2B satisfy |y − x| . ρj+1                             = ρj         , then
+                                                    −1/2+δ
+                                   ∠(G(θ), Ty Y) . ρj+1 m−1 .
+   By the basic concentration property of the wave packets, one may decompose
+the function EfOj on B as
+    EfOj (x) = EfB,trans (x) + EfB,tang (x) + RapDec(r)kf k2                                for all x ∈ B
+where
+                       X                                                             X
+    fB,tang :=                    (fOj )θ,v            and       fB,trans :=                    (fOj )θ,v .
+                  (θ,v)∈TB,tang                                                (θ,v)∈TB,trans
+28                         JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+   The functions fB,tang are in fact concentrated on scale ρj+1 wave packets which
+     −1/2+δ
+are ρj+1 m−1 -tangent to Y in B in precisely the sense of Definition 8.1. This can
+be seen by a direct application of Lemma 7.2. In addition, by the local version of
+the basic orthogonality between wave packets,
+                      max         kfB,tang k2L2avg (θ) .      max         kfOj k2L2avg (θ)
+                   θ:ρ−1/2 −cap                            θ:ρ−1/2 −cap
+
+whenever B ∈ B(Oj ) and 1 6 ρ 6 ρj . Provided that the constant Ctang is suitably
+chosen, these observations imply that the functions fB,tang satisfy the conditions
+stated in (27) from the definition of the stopping condition [tang].
+   By hypothesis, [tang] fails and, consequently, one may deduce that
+        X                             X       X
+              kEfOj kpBLp (Oj ) .                   kEfB,trans kpBLp  (B)
+                                                                          ,   (39)
+                              k,Aj                                                    k,Aj+1
+     Oj ∈Oj,alg                            Oj ∈Oj,alg B∈B(Oj )
+
+where this inequality holds up to the inclusion of a rapidly decaying error term on
+the right-hand side. Indeed, by the triangle inequality for broad norms (Lemma 5.2)
+and since Aj+1 = Aj /2, one may dominate the left-hand side of (39) by
+  X        X h                                                      i
+                  kEfB,tang kpBLp     (B)
+                                          +kEfB,trans kpBLp     (B)
+                                                                     +RapDec(r)kf kp2 .
+                                        k,Aj+1                            k,Aj+1
+Oj ∈Oj,alg B∈B(Oj )
+
+By the preceding observations, the failure of the stopping condition [tang] forces
+       X       X                                  1    X
+                     kEfB,tang kpBLp      (B)
+                                              <             kEfOj kpBLp (Oj )
+                                   k,Aj+1       Ctang                 k,Aj
+      Oj ∈Oj,alg B∈B(Oj )                                            Oj ∈Oj
+
+(since it has been shown that all other conditions for [tang] are met). Recall-
+ing (37), for a suitable choice of constant Ctang , this implies (39).
+    The functions fB,trans and sets B are further decomposed so as to ensure favourable
+tangency properties with respect to translates of the variety Z at the new scale ρj+1 .
+Let ZB := Z + xOj − xB where xB denotes the centre of B ∈ B(Oj ). Propo-
+sition 8.3 implies that for each B ∈ B(Oj ) there exists a finite set of translates
+            1/2+δm
+B ⊆ B(0, ρj        ) such that
+                                   X
+ kEfB,trans kpBLp    (B)
+                         . log2 r      kE f˜B,trans,b kpBLp (B(0,ρj+1 )∩N      (ZB +b))
+                  k,Aj+1                                           k,Aj+1                     1/2+δm
+                                                                                             ρ
+                                        B∈B                                                   j+1
+
+                                                                                                       (40)
+holds up to the inclusion of a rapidly decaying error term, whilst
+                           X
+                               kf˜B,trans,b k22 . kfB,trans k22 .                                      (41)
+                                  b∈B
+
+Here the functions f˜B,trans,b are defined as in Section 7.2. In particular, each
+                                                       −1/2+δ
+f˜B,trans,b is concentrated on wave packets which are ρj+1 m -tangent to ZB + b in
+B(0, ρj+1 ). Finally, define
+                       n                                                 o
+         Oj+1 (Oj ) := B ∩ Nρ1/2+δm (Z + xOj + b) : B ∈ B(Oj ) and b ∈ B
+                                     j+1
+
+
+and for any Oj+1 = B ∩ Nρ1/2+δm (Z + xOj + b) ∈ Oj+1 (Oj ) let fOj+1 satisfy f˜Oj+1 :=
+                              j+1
+
+f˜B,trans,b ; once again, we are using the definition of the map g 7→ g̃ from Section 7.2.
+                                                                                    −1/2+δ
+Thus, each fOj+1 is concentrated on wave packets which are ρj+1 m -tangent to
+Z + xOj+1 in B ∈ B(Oj ), where xOj+1 = xOj + b. The collection of cells Oj+1 is
+then given by
+                                     [
+                          Oj+1 :=         Oj+1 (Oj ).
+                                              Oj ∈Oj,alg
+                          FOURIER RESTRICTION IN HIGHER DIMENSIONS                                     29
+
+
+It remains to verify that the ensemble Ej+1 satisfies the desired properties. In view
+of this, it is useful to note that
+                              I
+                             Cj,δ (d, r) = (log r)−2(1+δ) Cj+1,δ
+                                                           I
+                                                                 (d, r),
+                                 II
+                                Cj,δ (d) = d−n(1+δ) Cj+1,δ
+                                                     II
+                                                           (d),                                      (42)
+                              III
+                             Cj,δ (d, r) = r−C̄δm d−δ Cj+1,δ
+                                                       III
+                                                             (d, r),
+which can be verified directly from the definitions.
+
+Property I. By combining (39) and (40) together with the various definitions one
+obtains
+        X                                 X
+               kEfOj kpBLp (Oj ) . log2 r        kEfOj+1 kpBLp    (Oj+1 )
+                                                                          ,
+                                 k,Aj                                              k,Aj+1
+       Oj ∈Oj,alg                                      Oj+1 ∈Oj+1
+
+where this inequality holds up to the inclusion of a rapidly decaying error term on
+the right-hand side. Recalling (38) and (42), it follows that
+                                I                X
+                          C · Cj+1,δ (d, r)
+ kEf kpBLp      (Br )
+                      6                                    kEfOj+1 kpBLp                   + err(j + 1).
+          k,A                 (log r)2δ                                   k,Aj+1 (Oj+1 )
+                                              Oj+1 ∈Oj+1
+
+Provided r is chosen to be sufficiently large, one may absorb the unwanted con-
+stant C by the additional (log r)−2δ factor and thereby deduce (I)j+1 .
+
+Property II. Fix Oj ∈ Oj,alg and note that
+                     X                     X                      X
+                              kfOj+1 k22 =                             kfB,trans,b k22
+                    Oj+1 ∈Oj+1 (Oj )                   B∈B(Oj ) b∈B
+                                                          X
+                                                   .              kfB,trans k22                      (43)
+                                                       B∈B(Oj )
+
+by the definition of fOj+1 and (41). To estimate the latter sum one exploits the
+transversal property of the wave packets of the fB,trans . The key observation is the
+following algebraic-geometric result of Guth, which appears in Lemma 5.7 of [12]
+and can be roughly thought of as a continuum version of the fundamental theorem
+of algebra (or Bézout’s theorem).
+Lemma 9.4 ([12]). Suppose T is an infinite cylinder in Rn of radius ρ and central
+axis ℓ and Y is a transverse complete intersection. For α > 0 let
+                       Y>α := {y ∈ Y : ∠(Ty Y, ℓ) > α}.
+                                                     
+The set Y>α ∩ T is contained in a union of O (deg Y)n balls of radius ρα−1 .
+   By choosing the implicit constants correctly in Definition 9.3, a wave packet
+(θ, v) ∈ TB belongs to TB,trans if and only if the angle condition ii) fails to be
+satisfied. Indeed, if ii) holds, then since Tθ,v ∩B∩Nρ1/2+δm Y 6= ∅ by the definition of
+                                                                   j
+TB , the containment property i) automatically follows and therefore (θ, v) ∈ TB,tang
+(see, for instance, [13, Proposition
+                          S          9.2] for details of an argument of this type).
+Thus, given any (θ, v) ∈ B∈B(Oj ) TB,trans , it follows from the definitions that
+                                                           −1/2+δm−1
+                                   ∠(G(θ), Ty Y) & ρj+1                                              (44)
+                                                1/2+δm−1
+for some y ∈ Y ∩ 2B with |y − x| . ρj+1                     for some x ∈ Tθ,v . This implies that
+                                    T ∩B∩Y          −1/2+δm−1      6= ∅
+                                                  &ρj+1
+30                   JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+where T is the infinite cylinder that shares the core line of Tθ,v but has radius
+   1/2+δ
+∼ ρj+1 m−1 . Observe that
+                      1/2+δ     −1/2+δ     −1
+                    ρj+1 m−1 ρj+1 m−1           = ρj+1 .
+                    | {z } |        {z    }         |{z}
+                        ∼Radius        ∼Angle                    Radius
+                          of T        from (44)               of B ∈ B(Oj )
+                                    S
+Thus, by Lemma 9.4, any (θ, v) ∈ B∈B(Oj ) TB,trans lies in at most O(dn ) of the
+sets TB,trans and, consequently, by the basic orthogonality between the wave pack-
+ets,
+                            X
+                                  kfB,trans k22 . dn kfOj k22 .
+                           B∈B(Oj )
+
+Combining this inequality with (43) and summing over all Oj ∈ Oj,alg ,
+                        X                      X
+                               kfOj+1 k22 . dn    kfOj k22 .
+                       Oj+1 ∈Oj+1                    Oj ∈Oj
+
+Applying (II)j and (42), one concludes that
+                      X
+                             kfOj+1 k22 . d−nδ Cj+1,δ
+                                                II
+                                                      (d, r)kf k22 .
+                     Oj+1 ∈Oj+1
+
+Thus, provided d is chosen sufficiently large, one deduces (II)j+1 .
+
+Property III. Fix Oj ∈ Oj,alg and Oj+1 ∈ Oj+1 (Oj ) and suppose that f˜Oj+1 =
+f˜B,trans,b . Recall that the function fB,trans is concentrated on scale ρj wave packets
+               −1/2+δm
+which are ρj            -tangent to some translate of Z on some ρj -ball. It therefore
+follows from the transverse equidistribution estimate (22) of Lemma 8.4 with ρ := 1
+that
+                                                   ρ − n−m
+                                                     j    2
+                    kf˜B,trans,b k22 .deg Z rC̄δm            kfB,trans k22 .
+                                                   ρj−1
+On the other hand, by the basic orthogonality between the wave packets,
+                                  kfB,trans k22 . kfOj k22 .
+Applying (III)j and (42), one concludes that
+                                           r − n−m
+                                                  2
+       kfOj+1 k22 .deg Z d−δ Cj+1,δ
+                              III
+                                    (d, r)           d−#c (j+1)(m−1) kf k22 .
+                                           ρj+1
+Thus, provided d is chosen sufficiently large, one deduces (III)j+1 . The local version,
+(IIIloc )j+1 , follows in a similar manner, using the local transverse equidistribution
+estimate (22) for general values of 1 6 ρ 6 ρj+1 .
+
+                            10. Proof of Theorem 2.1
+10.1. The second algorithm. Theorem 2.1 is established by repeated application
+of the algorithm [alg 1] from the previous section. This process forms part of a
+second algorithm which is referred to as [alg 2] and is described presently.
+   Throughout this section, let pℓ denote Lebesgue exponents, to be fixed later,
+defined for k 6 ℓ 6 n and satisfying
+                            pk > pk+1 > . . . > pn =: p > 2.
+The numbers 0 6 αℓ , βℓ 6 1 for k 6 ℓ 6 n are then defined in terms of the pℓ by
+                                                  n−1
+                                                  Y
+       1     1 − αℓ−1   αℓ−1
+          =:          +             and βℓ :=            αi        for k + 1 6 ℓ 6 n − 1
+       pℓ        2      pℓ−1
+                                                   i=ℓ
+                         FOURIER RESTRICTION IN HIGHER DIMENSIONS                                                   31
+
+
+and αn :=: βn := 1. Also fix ε > 0 and define the small parameters δℓ as in the
+previous section so that the inequalities in (23) hold.
+   There are two stages to [alg 2], which can roughly be described as follows:
+      • The recursive stage: Ef is repeatedly decomposed into pieces with
+        favourable tangency properties with respect to varieties of progressively
+        lower dimension.
+      • The final stage: Ef is further decomposed into very small scale pieces.
+To begin, the recursive stage of [alg 2] is described.
+
+Input. Fix R ≫ 1 and let f : B n−1 → C be smooth and bounded and, without loss
+of generality, assume that f satisfies the non-degeneracy hypothesis
+                                   kEf kBLpk,A (BR ) > Chyp Rε kf k2                                              (45)
+where Chyp and A ∈ N are constants which are chosen sufficiently large to satisfy
+the forthcoming requirements of the proof.
+
+Output. The (n + 1 − ℓ)th step of the recursion will produce:
+     • An (n + 1 − ℓ)-tuple of:
+          – scales ~rℓ = (rn , . . . , rℓ ) satisfying R = rn > rn−1 > · · · > rℓ ;
+          – large and (in general) non-admissible parameters D            ~ ℓ = (Dn , . . . , Dℓ );
+                            ~
+          – integers A = (An , . . . , Aℓ ) satisfying A = An > An−1 > · · · > Aℓ .
+       Each of these (n + 1 − ℓ)-tuples is formed by adjoining a component to the
+       corresponding (n − ℓ)-tuple from the previous stage.
+     • A family S~ℓ of (n + 1 − ℓ)-tuples of transverse complete intersections S              ~ℓ =
+       (Sn , . . . , Sℓ ) satisfying dim Si = i and deg Si = O(1) for ℓ 6 i 6 n.
+     • An assignment of a function fS~ℓ and a ball Brℓ [S          ~ℓ ] to each S~ℓ ∈ S~ℓ with
+       the property that fS~ℓ is concentrated on scale rℓ wave packets which are
+        −1/2+δℓ                                ~ℓ ] (here Sℓ is the final component of S       ~ℓ ).
+       rℓ            -tangent to Sℓ in Brℓ [S
+                                                                 ~
+       For notational convenience, the dependence on Sℓ will often be suppressed
+       in the Br [S     ~ℓ ] notation by simply writing Br .
+                     ℓ                                                      ℓ
+
+This data is chosen so that the following properties hold:
+Notation. Throughout this section a large number of harmless RCδ0 factors appear
+in the inequalities, where C is a constant depending on p and n. By choosing δ0
+sufficiently small relative to ε, at the end of the argument one may dominate any
+RCδ0 by Rε , say, which constitutes an acceptable loss in the inequality. Thus, for
+notational convenience, given A, B > 0 let A / B or B ' A denote A . RCδ0 B.
+Property 1. The inequality
+                                                             X                                            βpℓ
+                                         ~ ℓ )kf k1−βℓ
+            kEf kBLpk,A (BR ) / M (~rℓ , D                                 kEfS~ℓ kpBL
+                                                                                     ℓ
+                                                                                       pℓ
+                                                                                                              ℓ
+                                                                                                                  (46)
+                                                  2
+                                                                                            k,Aℓ (Brℓ )
+                                                                      ~ℓ
+                                                                 ~ ℓ ∈S
+                                                                 S
+
+holds for
+                                   n−1
+                                    Y            (n−ℓ)δ  n−1
+                                                           Y      1                    1
+                                                                                                         
+                       ~ ℓ ) :=                                        (βi+1 −βi )         (βi+1 −βℓ )
+              M (~rℓ , D                    Di                   ri2                 Di2                  .
+                                      i=ℓ                 i=ℓ
+Property 2. For ℓ 6 n − 1 the inequality
+                      X                                         X
+                           kfS~ℓ k22 / Dℓ1+δ                               kfS~ℓ+1 k22
+                                 ~ℓ
+                            ~ ℓ ∈S
+                            S                                   ~ℓ+1
+                                                          ~ℓ+1 ∈S
+                                                          S
+
+holds.
+         32                          JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+         Property 3. For ℓ 6 n − 1 the inequalities
+                                                 r        − n−ℓ−1
+                                                    ℓ+1         2
+                          max kfS~ℓ k22 /                             Dℓ−ℓ+δ           max       kfS~ℓ+1 k22
+                          ~ ℓ ∈S
+                          S    ~ℓ                     rℓ                                  ~ℓ+1
+                                                                                    ~ℓ+1 ∈S
+                                                                                    S
+
+
+         and
+                                                       r        − n−ℓ−1
+                                                           ℓ+1        2
+                     max         kfS~ℓ k2L2avg (θ) /                          Dℓδ       max        kfS~ℓ+1 k2L2avg (θ)
+                     ~ ℓ ∈S
+                     S    ~ℓ                                rℓ                             ~ℓ+1
+                                                                                     ~ℓ+1 ∈S
+                                                                                     S
+                  θ:ρ−1/2 −cap                                                      θ:ρ−1/2 −cap
+
+         hold for 1 6 ρ 6 rℓ .
+
+         First step. Vacuously, the function f is concentrated on scale R wave packets
+         which are R−1/2+δn -tangent to the n-dimensional variety Rn on BR . Thus, one
+         may define
+                • rn := R; Dn := 1 and An := A.
+                                                                      ~n = (Sn ) where Sn := Rn .
+                • Sn is the collection consisting of a single 1-tuple S
+                                      ~
+                • fS~n := f and Brn [Sn ] := BR .
+         With these definitions, all the desired properties vacuously hold.
+
+         (n + 2 − ℓ)th step. Let ℓ > 1 and suppose that the recursive algorithm has ran
+         through n + 1 − ℓ steps. Since each function fS~ℓ is concentrated on wave packets
+          −1/2+δ
+               ℓ
+         rℓ      -tangent to Sℓ on Brℓ [Sℓ ], one may apply [alg 1] to bound the k-broad
+         norm kEfS~ℓ kBLpℓ (Br ) . One of two things can happen: either [alg 1] terminates
+                            k,Aℓ      ℓ
+         due to the stopping condition [tiny] or it terminates due to the stopping condition
+         [tang]. The current recursive process terminates if the contributions from terms
+         of the former type dominate:
+
+         Stopping condition. The recursive stage of [alg 2] has a single stopping condi-
+         tion, which is denoted by [tiny-dom].
+Stop:[tiny-dom] Suppose that the inequality
+                      X                            X
+                           kEfS~ℓ kpBL
+                                     ℓ
+                                       pℓ
+                                          (B )
+                                               6 2                                  kEfS~ℓ kpBL
+                                                                                              ℓ
+                                                                                                pℓ
+                                                                                                        (Brℓ )
+                                                                                                                         (47)
+                                                  k,Aℓ      rℓ                                   k,Aℓ
+                                ~ℓ
+                           ~ ℓ ∈S
+                           S                                             ~ℓ,tiny
+                                                                    ~ ℓ ∈S
+                                                                    S
+
+
+                   holds, where the right-hand summation is restricted to those Sℓ ∈ S~ℓ for
+                   which [alg 1] terminates owing to the stopping condition [tiny]. Then
+                   [alg 2] terminates.
+              Assume that the condition [tiny-dom] is not met. Necessarily,
+                         X                            X
+                              kEfS~ℓ kpBL
+                                        ℓ
+                                          pℓ
+                                             (B )
+                                                  6 2     kEfS~ℓ kpBL
+                                                                    ℓ
+                                                                      pℓ
+                                                                         (B )
+                                                                              ,                                          (48)
+                                                 k,Aℓ      rℓ                                    k,Aℓ     rℓ
+                               ~ℓ
+                          ~ ℓ ∈S
+                          S                                             ~ℓ,tang
+                                                                   ~ ℓ ∈S
+                                                                   S
+
+
+         where the right-hand summation is restricted to those Sℓ ∈ S~ℓ for which [alg 1]
+         does not terminate owing to [tiny] and therefore terminates owing to [tang].
+                                ~ℓ ∈ S~ℓ,tang the inequalities
+         Consequently, for each S
+                                                                 X
+                     kEfS~ℓ kpBL
+                               ℓ
+                                 pℓ
+                                                    δ
+                                                 / Dℓ−1                       kEfS~ℓ−1 kpBL
+                                                                                          ℓ
+                                                                                            pℓ                   ,       (49)
+                                    k,A (Brℓ )
+                                       ℓ                                                      k,2Aℓ−1 (Brℓ−1 )
+                                                                       ~ℓ ]
+                                                           Sℓ−1 ∈Sℓ−1 [S
+                           FOURIER RESTRICTION IN HIGHER DIMENSIONS                                                     33
+
+
+and
+                   X
+                                                1+δ
+                                 kfS~ℓ−1 k22 / Dℓ−1 kfS~ℓ k22 ;                                                   (50)
+                         ~ℓ ]
+             Sℓ−1 ∈Sℓ−1 [S
+                                                    r     − n−ℓ
+                                                      ℓ        2        −(ℓ−1)+δ
+                   max           kfS~ℓ−1 k22 /                        Dℓ−1         kfS~ℓ k22 ;                    (51)
+                         ~ℓ ]
+             Sℓ−1 ∈Sℓ−1 [S                          rℓ−1
+                                                    r     − n−ℓ
+                                                      ℓ        2
+           max           kfS~ℓ−1 k2L2avg (θℓ ) /                       δ
+                                                                      Dℓ−1       max        kfS~ℓ k2L2avg (θ)     (52)
+                  ~ℓ ]
+      Sℓ−1 ∈Sℓ−1 [S                                 rℓ−1                     θ:ρ−1/2 −cap
+       θ:ρ−1/2 −cap
+
+hold for 1 6 ρ 6 rℓ−1 for some choice of:
+        • Scale Rδ < rℓ−1 < rℓ , an (in general) non-admissible number Dℓ−1 and
+          some large integer Aℓ−1 satisfying Aℓ−1 ∼ Aℓ ;
+                       ~ℓ−1 ] of (ℓ − 1)-dimensional transverse complete intersections
+        • Family Sℓ−1 [S
+          of degree O(1);
+        • Assignment Brℓ−1 [S                                               ~ℓ ];
+                              ~ℓ−1 ] of an rℓ−1 -ball to every Sℓ−1 ∈ Sℓ−1 [S
+        • Assignment fS~ℓ−1 = (fS~ℓ )Sℓ−1 of a function to every Sℓ−1 ∈ Sℓ−1 [S   ~ℓ ] which
+                                                                               −1/2+δℓ−1
+           is concentrated on wave packets which are rℓ−1                                   -tangent to Sℓ−1 on
+           Brℓ−1 [Sℓ−1 ].
+Each inequality (49), (50), (51) and (52) is obtained by combining the definition of
+the stopping condition [tang] with Properties I, II and both the global and local
+variants of Property III from [alg 1], respectively.13 Indeed, using the notation
+from [alg 1], we take
+                                                   1−δ̃ℓ−1
+                     r := rℓ ,        rℓ−1 := ρJ             ,       and Dℓ−1 := d#c (J) .
+                        δ
+Note that the RO(δ0 ) Dℓ−1    factors arise in the above inequalities owing to (26).
+   The rℓ−1 , Dℓ−1 and Aℓ−1 can depend on the choice of S    ~ℓ , but this dependence can
+be essentially removed by pigeonholing. Indeed, recalling that #c (J) = O(log R),
+one may find a subset of the Sℓ,tang over which the Dℓ−1 all have a common value
+and, moreover, the inequality (47) still holds except that the constant 21 is now
+replaced with, say, Rδ0 . A brief inspection of [alg 1] shows that, once we have
+pigeonholed in the parameter N above, both rℓ−1 and Aℓ−1 immediately inherit
+the desired uniformity.
+   Letting S~ℓ−1 denote the structured set
+                      n                                                     o
+              S~ℓ−1 := (S               ~ℓ ∈ S~ℓ,tang and Sℓ−1 ∈ Sℓ−1 [S
+                          ~ℓ , Sℓ−1 ) : S                               ~ℓ ] ,
+
+where S~ℓ,tang is understood to be the refined collection described in the previous
+paragraph, it remains to verify the desired properties for the newly constructed
+data. Property 2 follows immediately from (50) and Property 3 from (51) and (52),
+so it remains only to verify Property 1.
+   By combining the inequality (46) from the previous stage of the algorithm
+with (48) and (49), one deduces that
+                                                                     X                                          βpℓ
+                      δ
+ kEf kBLpk,A (BR ) / Dℓ−1          ~ ℓ )kf k1−βℓ
+                          M (~rℓ , D                                          kEfS~ℓ−1 kpBL
+                                                                                          ℓ
+                                                                                            pℓ
+                                                                                                                   ℓ
+                                                                                                                        .
+                                            2
+                                                                                             k,2Aℓ−1 (Brℓ−1 )
+                                                                       ~ℓ−1
+                                                                 ~ℓ−1 ∈S
+                                                                 S
+
+
+
+13Here the ‘error terms’ err(j) := jr −N kf kp in Property I of [alg 1] can be ignored owing to
+                                                     2
+the non-degeneracy hypothesis (45).
+34                        JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+Writing
+  X                                                  p1
+                  kEfS~ℓ−1 kpBL
+                              ℓ
+                                pℓ
+                                                           ℓ
+                                                               = kEfS~ℓ−1 kBLpℓ              (Brℓ−1 )                   ,
+                                 k,2Aℓ−1 (Brℓ−1 )                                  k,2Aℓ−1                     ~ℓ−1 )
+                                                                                                        ℓ p ℓ (S
+           ~ℓ−1
+     ~ℓ−1 ∈S
+     S
+
+one may apply the logarithmic convexity inequality from Lemma 5.3 to dominate
+this expression by
+                                             1−αℓ−1                                            αℓ−1
+        kEfS~ℓ−1 kBL2k,A         (Brℓ−1 )                  kEfS~ℓ−1 kBLpℓ−1                                   .
+                                                                           k,Aℓ−1 (Brℓ−1 ) ℓ ℓ−1 (S
+                                                  ~ℓ−1 )                                    p     ~ℓ−1 )
+                           ℓ−1               ℓ 2 (S
+
+By the standard L2 estimate (12) applied to broad norms,
+                                                  X                                                 1/2
+                                             1/2
+          kEfS~ℓ−1 kBL2k,A (Brℓ−1 )       . rℓ−1                                       kfS~ℓ−1 k22
+                                 ℓ−1                  ~ℓ−1 )
+                                                 ℓ 2 (S
+                                                                                ~ℓ−1
+                                                                          ~ℓ−1 ∈S
+                                                                          S
+
+and, by Property 2 for the the families of functions (fS~i )S~i ∈S~i for ℓ − 1 6 i 6 n − 1,
+it follows that
+                                                      n−1
+                                                        Y              1/2
+            kEfS~ℓ−1 kBL2k,A (Brℓ−1 ) 2      / rℓ−1            Di1+δ        kf k2 .
+                                  ℓ−1                ~ℓ−1 )
+                                                  ℓ (S
+                                                                           i=ℓ−1
+
+One may readily verify that
+                                      n−1
+                                       Y          21 (1−αℓ−1 )βℓ
+           δ
+          Dℓ−1            ~ ℓ ) · rℓ−1
+               · M (~rℓ , D                Di1+δ                               ~ ℓ−1 )
+                                                                  6 M (~rℓ−1 , D
+                                             i=ℓ−1
+
+and so combining the above estimates yields
+                                                                                                      βℓ−1
+                                ~ ℓ−1 )kf k1−βℓ−1 kEf ~ k pℓ−1
+ kEf kBLpk,A (BR ) / M (~rℓ−1 , D                                                                                       ,
+                                           2         Sℓ−1 BL                    k,Aℓ−1 (Brℓ−1 )              ~ℓ−1 )
+                                                                                                      ℓpℓ−1 (S
+
+which is Property 1 in this case.
+
+The final stage. If the algorithm has not stopped by the kth step, then it neces-
+sarily terminates at the kth step. Indeed, otherwise (46) would hold for ℓ = k − 1
+and functions fS~k−1 concentrated on wave packets which are tangent to some trans-
+verse complete intersection of dimension k − 1. By the vanishing property of the
+k-broad norms as described in Lemma 8.2, one would then have
+                       kEfS~k−1 kBLpk−1                        = RapDec(R)kfS~k−1 k2
+                                        k,Ak−1 (Brk−1 )
+
+
+and it would easily follow from (46) that kEf kBLpk,A (BR ) = RapDec(R)kf k2 . If R is
+sufficiently large, then this would contradict the non-degeneracy hypothesis (45).
+    Suppose the recursive process terminates at step m, so that m > k. For each
+~
+Sm ∈ S~m,tiny let O[S ~m ] denote the final collection of cells output by [alg 1] (that
+is, the collection denoted by OJ in the notation of Section 9) when applied to
+estimate the broad norm kEfS~m kBLpk,A   m                          ~
+                                             (Brm ) . Each O ∈ O[Sm ] has diameter at
+                                                       m
+most Rδ0 by the definition of the stopping condition [tiny]. By Properties I, II
+and III of [alg 1] one has
+                                            X
+             kEfS~m kpBL
+                       m
+                         pm
+                            (Br )
+                                      δ
+                                  / Dm−1          kEfO kpBL
+                                                          m
+                                                            pm
+                                                               (O)
+                                                                   ,
+                             k,Am        m                                           k,Am−1
+                                                                   ~m ]
+                                                               O∈O[S
+
+for some Am−1 ∼ Am where the functions fO satisfy
+                        X
+                                          1+δ
+                               kfO k22 / Dm−1 kfS~m k22                                                           (53)
+                                       ~m ]
+                                   O∈O[S
+                   FOURIER RESTRICTION IN HIGHER DIMENSIONS                                                        35
+
+
+and
+                                           r          − n−m
+                                                m          2      −(m−1)+δ
+                   max kfO k22 /                                Dm−1              kfS~m k22                      (54)
+                     ~m ]
+                 O∈O[S                         rm−1
+
+for Dm−1 a large non-admissible parameter. In particular, Dm−1 := d#c (J) where J
+is the stopping time for this final application of [alg 1]. Once again, by pigeon-
+holing, one may pass to a subcollection of Sm,tiny and thereby assume that the
+Dm−1 (and also the Am−1 ) all share a common value.
+   If O denotes the union of the O[S                ~m belonging to subcollection of
+                                      ~m ] over all S
+Sm,tiny described above, then
+                                                              X                                      βpm
+                        δ
+   kEf kBLpk,A (BR ) / Dm−1          ~ m )kf k1−βm
+                            M (~rm , D                                  kEfO kpBL
+                                                                                m
+                                                                                  pm
+                                                                                                         m
+                                                                                                          .      (55)
+                                              2                                         k,Am−1
+                                                                                                 (O)
+                                                                 O∈O
+
+This concludes the description of [alg 2].
+
+10.2. Applying [alg 2] to prove k-broad estimates. Having arrived at the
+final decomposition of the broad norm given by (55), the task is now to apply the
+properties guaranteed by the algorithm in order to prove the desired estimates. In
+particular, one wishes to show that the quantity
+                                    X                                           βpm
+                                ~ m)   kEfO kpBL
+                                               m                                    m
+                       M (~rm , D                pm
+                                                                k,Am−1 (O)
+                                          O∈O
+
+featured in (55) can be effectively bounded, provided that the exponents pk , . . . , pn
+are suitably chosen. Since each O ∈ O has diameter at most Rδ0 , trivially one may
+bound
+                               kEfO kBLpk,A
+                                         m                (O) / kfO k2
+                                                    m−1
+
+
+and, thus, it follows that
+      X                                βpm       X                  βpm               2( 1 − p1m )βm
+              kEfO kpBL                                     kfO k22
+                                          m                              m
+                      m
+                        pm
+                                 (O)
+                                               /                              max kfO k2 2                   .
+                        k,Am−1                                                O∈O
+        O∈O                                           O∈O
+
+The definition of the βm ensures that
+                             1     1     1  1
+                                −      βm = −
+                              2 pm         2 pn
+
+whilst (53) and repeated application of Property 2 from [alg 2] imply that
+
+                             X                    n−1
+                                                   Y              
+                                    kfO k22 /                Di1+δ kf k22 .
+                             O∈O                    i=m−1
+
+                                                                 ~ m ), one concludes
+Combining this estimate with (55) and the definition of M (~rm , D
+that
+                        n−1
+                        Y        βi+1 −βi       βi+1
+                                                       −( 12 − p1n )+O(δ)         2
+                                                                                                    1− p2n
+  kEf kBLp.
+         k,A (BR )
+                   /           ri   2
+                                            Di 2                            kf k2pn max kfO k2                   (56)
+                                                                                        O∈O
+                       i=m−1
+
+where rm−1 := 1. The problem is now to bound the maximum appearing on the
+right-hand side of this expression.
+36                     JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+  By (54) and repeated application of Property 3 of [alg 2], it follows that for
+any m 6 ℓ 6 n the inequality
+                                  ℓ−1
+                                  Y      r        − n−i−1
+                                           i+1          2
+                 max kfO k22 /                                   Di−i+δ max kfS~ℓ k22
+                 O∈O
+                                 i=m−1
+                                              ri                              ~ℓ
+                                                                         ~ ℓ ∈S
+                                                                         S
+
+                                          ℓ−1
+                                          Y
+                                 − n−ℓ               −1/2
+                            = rℓ    2
+                                                    ri      Di−i+δ max kfS~ℓ k22            (57)
+                                                                           ~ℓ
+                                                                      ~ ℓ ∈S
+                                                                      S
+                                         i=m−1
+
+holds. This bound will be exploited in different ways.
+
+10.3. Guth’s estimate revisited. As a warm up exercise for the more involved
+computation to follow, here Guth’s k-broad estimate from [12] is recovered using the
+above inequalities. In particular, taking ℓ = n, the inequality (57) simplifies to give:
+
+
+       Key estimate.
+                                              n−1
+                                              Y          −1/2
+                         max kfO k22 /               ri         Di−i+δ kf k22 .
+                         O∈O
+                                          i=m−1
+
+
+Combining this with (56), one concludes that
+                                                   n−1
+                                                   Y              Y +O(δ)
+                       kEf kBLpk,A (BR ) /                riXi Di i         kf k2           (58)
+                                              i=m−1
+
+where
+                 βi+1 − βi   11   1                             βi+1          1   1
+         Xi :=             −     −    ;                  Yi :=         − (i + 1)   −    .
+                     2       2 2 pn                                2             2 pn
+  In order to ensure that there is an acceptable dependence on R in (58), the
+parameters must be chosen so as to ensure that Xi , Yi 6 0 for m 6 i 6 n − 1 and
+Ym−1 6 0.
+Remark 10.1. Ostensibly, the above conditions on the Yi do not take into account
+the additional O(δ)-powers of the Di in (58). By perturbing the exponents which
+result under these conditions and choosing δ sufficiently small depending on the
+choice of perturbation, the O(δ)-powers may nevertheless be safely handled. This
+perturbative argument yields an open range of k-broad estimates, which can be
+trivially extended to a closed range via interpolation through logarithmic convexity
+(the interpolation argument relies on the fact that one is permitted an Rε -loss in
+the constants in the k-broad inequalities).
+     Recalling from the definitions that
+                                   1    1  1   1 −1
+                             βi =      −        −       ,
+                                     2 pn 2 pi
+the condition Xi 6 0 is equivalent to
+                        1      1 −1  1   1 −1
+                            −         −   −       61                                        (59)
+                          2 pi+1        2 pi
+whilst the condition Yi−1 6 0 is equivalent to
+                              1     1 −1
+                                  −         − 2i 6 0.                                       (60)
+                                2 pi
+                           FOURIER RESTRICTION IN HIGHER DIMENSIONS                               37
+
+                  2m
+Choose pm := m−1      so that the exponent satisfies ( 21 − p1m )−1 = 2m and there-
+fore (60) is saturated in the i = m case. The remaining pi are then chosen so as to
+satisfy
+                                 1   1 −1
+                                    −        =m+i
+                                  2 pi
+so that (59) is saturated for every value of i. With this choice, (60) automatically
+holds for all the remaining indices m + 1 6 i 6 n. The worst situation occurs when
+m = k, in which case one deduces that the inequality
+                                       kEf kBLpk,A (BR ) . Rε kf k2                             (61)
+                        4
+holds for all p > 2 + n+k−2 ; this exponent agrees with that featured in [12, Propo-
+sition 8.1] and, indeed, the above argument is simply a reformulation of the proof
+appearing in [12].
+10.4. Improvement using the polynomial Wolff axioms. To prove Theo-
+rem 2.1, the argument of the previous subsection is augmented with the bounds
+coming from the polynomial Wolff axiom theorem. This follows the strategy of [11],
+which established the n = 3 case of the theorem. The goal is to improve the range
+of p at the expense of weakening the L2 -type estimate (61) to an L∞ -type estimate
+                                      kEf kBLpk,A (BR ) . Rε kf k∞ .
+One key observation is that the choice of exponents in the previous subsection does
+not saturate the constraint (60) coming from the Di exponents for m 6 i 6 n − 1.
+This provides some leeway, and the polynomial Wolff axiom theorem allows one to
+trade an acceptable loss in the Di exponents for a gain in the ri exponents, and
+thereby leads to an improvement in the p range.
+   Fix m 6 ℓ 6 n and apply Lemma 8.6 to deduce that
+                                                   − n−ℓ
+                            max kfS~ℓ k22 / rℓ        2
+                                                            max         kfS~ℓ k2L2avg (θℓ ) .   (62)
+                                ~ℓ
+                           ~ ℓ ∈S
+                           S                                    ~ℓ
+                                                           ~ ℓ ∈S
+                                                           S
+                                                           −1/2
+                                                      θℓ :rℓ     −cap
+
+Let ℓ 6 i 6 n − 1 and note that, by Property 3 of [alg 2],
+                                     r − n−i−1
+                                       i+1   2
+      max     kfS~i k2L2avg (θi ) /              Diδ   max      kfS~i+1 k2L2avg (θi+1 ) (63)
+      ~ i ∈S
+      S    ~i                          ri                  ~i+1
+                                                     ~i+1 ∈S
+                                                     S
+       −1/2                                                               −1/2
+  θi :ri      −cap                                                θi+1 :ri+1 −cap
+
+Combining (62) with n − ℓ applications of (63), we obtain
+                         − n−ℓ
+                               Y  ri+1 − n−i−1
+                               n−1
+                                             2
+        max kfS~ℓ k22 / rℓ 2                     Diδ     max       kf k2L2avg (θ)
+        ~    ~
+        Sℓ ∈ Sℓ                     ri               θ:R −1/2 −cap
+                                            i=ℓ
+                                   n−1
+                                    Y               n−1
+                                                      Y        
+                                            −1/2
+                              6            ri               Diδ kf k2∞ .
+                                     i=ℓ              i=ℓ
+Substituting this estimate into (57), one concludes that
+                                     Y −1/2  ℓ−1
+                                    n−1             Y       
+                             − n−ℓ
+              max kfO k22 / rℓ 2         ri  Diδ         Di−i kf k2∞
+                     O∈O
+                                                   i=m                  i=m−1
+for all m 6 ℓ 6 n. Finally, these n − m + 1 different estimates are combined into a
+single inequality by taking a weighted geometric mean, yielding:
+38                     JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+                                                                       Pn
+      Key estimate. Let 0 6 γm , . . . , γn 6 1 satisfy                   j=m γj = 1. Then
+                                   n−1
+                                   Y           1+(n−i)γi            Pi
+                                           −                −i(1−      j=m γj )+O(δ)
+             max kfO k22 /                ri       2
+                                                           Di                          kf k2∞ .
+             O∈O
+                                  i=m−1
+
+
+   Thus, the parameters γj allow a loss in the Di exponents to be traded for a gain
+in the ri exponents.
+   The key estimate may be combined with the inequality (56) from Section 10.2
+to yield the bound
+                                                    n−1
+                                                    Y            Y +O(δ)
+                       kEf k   BLp n
+                                 k,A (BR )
+                                               /           riXi Di i        kf k∞
+                                                   i=m−1
+
+where
+                            βi+1 − βi   1 + (n − i)γi  1    1
+                      Xi :=           −                   −    ;
+                                2             2         2 pn
+                            βi+1                     1    1
+                                              X i
+                      Yi :=      − 1+i 1−         γj        −    .
+                              2               j=m
+                                                          2 pn
+
+As in Section 10.3, one chooses the various exponents so as to ensure Xi , Yi 6 0 for
+all m 6 i 6 n − 1 and Ym−1 6 0. Owing to the extra degrees of freedom offered
+by the γj parameters, in this case one may in fact saturate all the conditions: that
+is, the parameters may be chosen so as to ensure that Xi = Yi = 0. Indeed, the
+condition Xi = 0 is equivalent to
+                   1      1 −1  1       1 −1
+                       −          −     −        = 1 + (n − i)γi                (64)
+                     2 pi+1           2 pi
+whilst the condition Yi−1 = 0 is equivalent to
+                           1          1 −1                 Xi−1
+                                   −         = 2i − 2(i − 1)      γj                              (65)
+                               2       pi                    j=m
+
+                             2m
+Once again, choose pm := m−1    so that (65) holds in the i = m case. The remain-
+ing pi are then defined in terms of the γj by the equation
+                          1          1 −1       Xi−1
+                                  −         =m+i+      (n − j)γj                                  (66)
+                              2       pi          j=m
+
+so that each of the n − m constraints in (64) is met.
+   It remains to solve for the n − m + 1 variables γm , . . . , γn ; note that there are
+n − m + 1 remaining constraints (in particular, there are n − m constraints left
+over from (65) together with the condition that the γj must sum to 1) and so the
+number of equations in our system equals the number of variables. By comparing
+the right-hand sides of (65) and (66), it follows that
+                i−1
+                X
+                      (n − j + 2i − 2)γj = i − m                 for m + 1 6 i 6 n,               (67)
+                j=m
+
+from which we read off that γm = (n + m)−1 . To solve this linear system, let κi
+denote the left-hand side of the equation in the above display and observe that
+     κi+1 − 2κi + κi−1 = (n + i)γi − (n + i − 3)γi−1                       for m + 1 6 i 6 n − 1,
+                    FOURIER RESTRICTION IN HIGHER DIMENSIONS                             39
+
+
+where κm := 0. On the other hand, by considering the right-hand side of (67), it
+is clear that κi+1 − 2κi + κi−1 = 0. Combining these observations gives a recursive
+relation for the γj and from this one deduces that
+                          j−1
+                           Y n+i−2
+                      1                      (n + m − 1)(n + m − 2)
+             γj =                       =
+                    n + m i=m n + i + 1   (n + j)(n + j − 1)(n + j − 2)
+for m + 1 6 j 6 n − 1. The remaining parameter γn is then given by14
+                                               n−1
+                                               X
+                                    γn = 1 −         γj ,
+                                               j=m
+
+so that the γj sum to 1.
+   It remains to check that these parameter values give the correct value of pn ,
+corresponding to the exponent pn (k) stated in Theorem 2.1. It follows from (65)
+that
+         1     1 −1
+                                      n−1
+                                      X      (n + m − 1)(n + m − 2)
+             −        = 2n − 2(n − 1)                                   .   (68)
+           2 pn                       j=m
+                                          (n + j)(n + j − 1)(n + j − 2)
+The expression on the right-hand side can be simplified by first writing the denom-
+inator in each summand as
+              1                 1      1          1      1         1        1 
+                              =              −             −               −
+(n + j)(n + j − 1)(n + j − 2)   2 n+j −2 n+j−1                2 n+j −1 n+j
+and then using the resulting telescoping property of the sum. This yields the
+identity
+                                         1   (n + m − 1)(n + m − 2) 
+    n−1
+    X       (n + m − 1)(n + m − 2)
+                                       =   1−                         .  (69)
+    j=m
+         (n + j)(n + j − 1)(n + j − 2)   2       (2n − 1)2(n − 1)
+
+Plugging this into (68) and performing some simple algebraic manipulations, one
+concludes that
+                                    8(2n − 1)
+                pn = 2 +                                6 pn (k)
+                         n(5n + 2m − 9) + m(m − 3) + 4
+for m > k, which completes the proof.                                                    
+
+                                 11. Final remarks
+Remark 11.1. One direction by which the argument could be improved would be
+to develop a more efficient mechanism for converting k-broad estimates into linear
+estimates than Proposition 2.2. One such mechanism does indeed already exist and
+is described in the work of Bourgain–Guth (see the fourth section of [6] or [22, 38]
+for an alternative presentation of this method). In particular, Bourgain–Guth [6]
+use Kakeya-type estimates to prove a stronger version of Proposition 2.2 in which
+                            4
+the constraint p > 2 + 2n−k     is slightly relaxed. Demeter [9] used this approach
+(combined with recent advances on the Kakeya conjecture [15, 46]) to give the
+previous best range for the restriction problem in R4 (namely, p > 2 + 66642
+                                                                           83303 ). In
+fact, using Theorem 2.1 (and, in particular, the 3-broad estimate in four dimensions
+with p4 (3) = 2 + 79 ) one can slightly improve Demeter’s result to p > 2 + 1407
+                                                                             1759 via
+the same method. For other low dimensions the use of the more efficient Bourgain–
+Guth mechanism is limited due to the lack of understanding of the Kakeya problem
+in this regime. In high dimensions, however, stronger Kakeya maximal and X-ray
+transform estimates are available owing to the sum-difference approach to Kakeya,
+14To ensure this is a valid solution, one must verify that γ > 0 (so that 0 6 γ 6 1 for all
+                                                             n                 j
+m 6 j 6 n). This property follows directly from the identity (69) below.
+40                   JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+which was pioneered by Bourgain [5] and later honed by Katz–Tao [19, 20] and
+Oberlin [27]. Potentially, improvements could be obtained in high dimensional cases
+using the more efficient Bourgain–Guth mechanism and the Kakeya-type estimates
+arising from sum-difference theory; however, since the computation of the various
+exponents is rather involved and any gain is likely to be very small, this has not
+been pursued here.
+Remark 11.2. An alternative approach to improving the range of restriction esti-
+mates would be to attempt to establish a stronger version of Theorem 2.1. This has
+been achieved for n = 3 in the work of Wang [40] who showed that (BLpk ) holds in
+                         3
+the wider range p > 3+ 13  in this case (this in turn implies the best-known result on
+the restriction problem in R3 ; see Figure 1). The proof of Wang’s theorem relies on
+a careful analysis and exploitation of certain underlying geometric features of the
+restriction problem; it would be of interest to extend and incorporate this analysis
+into the study of higher dimensional situations.
+Remark 11.3. It is not difficult to extend the methods of this article to treat the
+class of (compact pieces of) hypersurfaces with strictly positive principal curvatures,
+which includes the unit sphere S n−1 . To do this, one applies a standard argument
+to reduce considerations to hypersurfaces of elliptic-type, as defined in [25, 37] (see
+also [35, 11]). One may then appeal to the more general transverse equidistribution
+results of [13] in place of Lemma 8.4. A more involved version of the Bourgain–
+Guth method for passing from k-broad to linear estimates is also required, but this
+already essentially appears in [6] (see also [13]). For this it is useful to work with
+the class of elliptic-type hypersurfaces (rather than specific examples such as S n−1 ),
+since this class is closed under parabolic rescaling.
+   On the other hand, the method breaks down when one considers general (com-
+pact pieces of) hypersurfaces of non-vanishing Gaussian curvature. For instance, for
+the prototypical example of a graph of a non-degenerate quadratic form, the trans-
+verse equidistribution estimate from Lemma 8.4 fails to hold in mixed signature
+cases (see [13] for further discussion of such phenomena).
+Remark 11.4. Another possible direction in which to strengthen the results would
+be to establish analogous estimates for Bochner–Riesz multipliers. An obvious ap-
+proach to this would be to follow the classical Carleson–Sjölin argument [8] (see
+also [17]) which reduces the problem to establishing certain Lp estimates for oscil-
+latory integrals of the form
+                                     ˆ
+                        T λ f (x) :=   eiλ|x−y| a(x, y)f (y) dy,               (70)
+                                     Rn
+
+where a is some smooth, compactly supported amplitude. Here the key difficulty
+is to obtain a favourable dependence in the inequality on the parameter λ ≫ 1.
+After fixing one of the components of y and scaling, one obtains an operator which
+can be thought of as a perturbed version of Ef . The problem is then to show that
+the arguments used to study Ef are stable under perturbation; see [21, 6, 13] for
+recent examples of this approach, producing the current best-known results for the
+Bochner–Riesz problem.
+   Again it is useful to work with a class of oscillatory integral operators which
+is closed under rescaling, rather than just the specific example arising from the
+Bochner–Riesz problem. Here some care is needed, however: for a natural class
+of variable coefficient operators which extends the family of extension operators
+associated to positively-curved hypersurfaces, the desired Lp estimates are false for
+the range of p featured in this article. Counterexamples of this kind first appeared
+in work of Bourgain [3] and were further studied in [4, 26, 41, 6] (see also [13]). For
+                  FOURIER RESTRICTION IN HIGHER DIMENSIONS                         41
+
+
+instance, Minicozzi and Sogge [26] considered the analogue of (70) defined over a
+compact Riemannian manifold (M, g) given by
+                                ˆ
+                      λ
+                     T f (x) :=    eiλdistg (x,y) a(x, y)f (y) dy,           (71)
+                                  M
+where distg is the Riemannian distance function on M . These operators arise
+naturally in the study of Bochner–Riesz multipliers on compact manifolds, defined
+with respect to the spectral decomposition of the Laplace–Beltrami operator (see,
+for instance, [29, Chapter 5]). In [26] examples of (M, g) were found for which
+the desired Lp estimates for (71) could only hold for a relatively small range of p.
+Sharp inequalities for such examples were later established in the work of Guth,
+Iliopoulou and the first author [13]. The problematic behaviour for certain M can
+be attributed to the fact that analogues of the polynomial Wolff axioms can fail to
+hold for families of geodesic tubes relevant to the study of T λ .
+Remark 11.5. It is well-known that Lp -estimates for the extension operator im-
+ply bounds for the Kakeya maximal function. Let T be a collection of direction-
+separated R-tubes in Rn , with angle at least R−1/2 between each pair of tubes. If
+the estimate
+                             kEf kLp(Rn ) . kf kLp(Rn−1 )                    (72)
+is valid for some p > 2, then
+                      X                          2n
+                                                    X         2/p
+                          1T p/2 n . Rn−1− p              |T |      ;        (73)
+                              L   (R )
+                     T ∈T                           T ∈T
+
+see, for example, [43] for a proof of this fact. New estimates for the Kakeya maximal
+operator with n = 9 are obtained by plugging in our estimates for the extension
+operator. For other values of n the maximal function estimates that arise in this way
+are strictly weaker than those previously obtained by Wolff [42] or Katz–Tao [20].
+   Maximal inequalities such as (73) imply lower bounds on the dimensions of
+Kakeya sets. Recall that a set K ⊂ Rn is Kakeya if it is compact and it con-
+tains a unit line segment in every direction. Let d(n) denote the infimum of the
+Hausdorff dimensions of Kakeya sets in Rn ; explicitly,
+                      d(n) := inf{dim K : K ⊂ Rn Kakeya}.
+The Kakeya conjecture then asserts that d(n) = n. As is well-known, the inequal-
+ity (73) implies that
+                                            2p
+                                  d(n) >        − n.
+                                          p−2
+However, the aforementioned maximal inequality is not strong enough to improve
+over the existing lower bounds of Katz–Tao [20] for the Hausdorff dimension of
+Kakeya sets, obtained via the sum-difference method.
+   In terms of the asymptotic perspective espoused in this article, if (72) holds for
+p = 2 + λn−1 + O(n−2 ), then
+                                        4−λ
+                               d(n) >        n + O(1).
+                                          λ
+Taking λ to be the value given by Theorem 1.1, it follows that
+                             4−λ            √
+                                    = 4 − 2 3 = 0.535...,
+                               λ
+which provides a high dimensional improvement over the classical d(n) > n+2       2
+bound of Wolff [42]. Once again, this does not improve the results of Katz–Tao [20].
+Nevertheless, it seems of interest that one can go beyond the d(n) > n2 + O(1) range
+for the Kakeya problem using a different approach than the sum-difference method,
+and that oscillatory methods are becoming more effective in the Kakeya problem.
+42                      JONATHAN HICKMAN AND KEITH M. ROGERS
+
+
+   We have since obtained further bounds for the Kakeya conjecture by applying
+similar arguments to those of this article directly in that context [16].
+
+
+                                         References
+ [1] J. Bennett, A. Carbery, and T. Tao, On the multilinear restriction and Kakeya conjectures,
+     Acta Math. 196 (2006), no. 2, 261–302.
+ [2] J. Bourgain, Besicovitch type maximal operators and applications to Fourier analysis, Geom.
+     Funct. Anal. 1 (1991), no. 2, 147–187.
+ [3]         , Lp -estimates for oscillatory integrals in several variables, Geom. Funct. Anal. 1
+     (1991), no. 4, 321–374.
+ [4]         , Some new estimates on oscillatory integrals, Essays on Fourier analysis in honor of
+     Elias M. Stein (Princeton, NJ, 1991), Princeton Math. Ser. 42, 83–112.
+ [5]         , On the dimension of Kakeya sets and related maximal inequalities, Geom. Funct.
+     Anal. 9 (1999), no. 2, 256–282.
+ [6] J. Bourgain and L. Guth, Bounds on oscillatory integral operators based on multilinear
+     estimates, Geom. Funct. Anal. 21 (2011), no. 6, 1239–1295.
+ [7] A. Carbery, Restriction implies Bochner-Riesz for paraboloids, Math. Proc. Cambridge Phi-
+     los. Soc. 111 (1992), no. 3, 525–529.
+ [8] L. Carleson and P. Sjölin, Oscillatory integrals and a multiplier problem for the disc, Studia
+     Math. 44 (1972), 287–299.
+ [9] C. Demeter, On the restriction theorem for paraboloid in R4 , Colloq. Math. 156 (2019),
+     301–311.
+[10] C. Fefferman, Inequalities for strongly singular convolution operators, Acta Math. 124 (1970),
+     9–36.
+[11] L. Guth, A restriction estimate using polynomial partitioning, J. Amer. Math. Soc. 29 (2016),
+     no. 2, 371–413.
+[12]         , Restriction estimates using polynomial partitioning II, Acta Math. 221 (2018), 81–
+     142.
+[13] L. Guth, J. Hickman, and M. Iliopoulou, Sharp estimates for oscillatory integral operators
+     via polynomial partitioning, Acta Math., to appear, Preprint: arXiv:1710.10349.
+[14] L. Guth and N.H. Katz, On the Erdős distinct distances problem in the plane, Ann. of Math.
+     (2) 181 (2015), no. 1, 155–190.
+[15] L. Guth and J. Zahl, Polynomial Wolff axioms and Kakeya-type estimates in R4 , Proc.
+     London Math. Soc. 117 (2018), no. 1, 192–220.
+[16] J. Hickman and K.M. Rogers, New Kakeya estimates using the polynomial Wolff axioms,
+     Preprint: arXiv:1901.01802.
+[17] L. Hörmander, Oscillatory integrals and multipliers on F Lp , Ark. Mat. 11 (1973), 1–11.
+[18] N.H. Katz and K.M. Rogers, On the polynomial wolff axioms, Geom. Funct. Anal. 28 (2018),
+     1706–1716.
+[19] N.H. Katz and T. Tao, Bounds on arithmetic projections, and applications to the Kakeya
+     conjecture, Math. Res. Lett. 6 (1999), no. 5-6, 625–630.
+[20]         , New bounds for Kakeya problems, J. Anal. Math. 87 (2002), 231–263, Dedicated to
+     the memory of Thomas H. Wolff.
+[21] S. Lee, Linear and bilinear estimates for oscillatory integral operators related to restriction
+     to hypersurfaces, J. Funct. Anal. 241 (2006), 56–98.
+[22] R. Lucà and K.M. Rogers, Average decay of the Fourier transform of measures with appli-
+     cations, J. Eur. Math. Soc. 21 (2019), 465–506.
+[23] Maplesoft, a division of Waterloo Maple Inc., Maple 17.
+[24] A. Moyua, A. Vargas, and L. Vega, Schrödinger maximal function and restriction properties
+     of the Fourier transform, Internat. Math. Res. Notices (1996), no. 16, 793–815.
+[25]         , Restriction theorems and maximal operators related to oscillatory integrals in R3 ,
+     Duke Math. J. 96 (1999), no. 3, 547–574.
+[26] W.P. Minicozzi II and C.D. Sogge, Negative results for Nikodym maximal functions and
+     related oscillatory integrals in curved space, Math. Res. Lett. 4 (1997), no. 2-3, 221–237.
+[27] R. Oberlin, Two bounds for the X-ray transform, Math. Z. 266 (2010), no. 3, 623–644.
+[28] J. Ramos, A trilinear restriction estimate with sharp dependence on transversality, Amer. J.
+     Math. 140 (2018), no. 6, 1443–1469.
+[29] C.D. Sogge, Fourier integrals in classical analysis, second edition, Cambridge Tracts in Math-
+     ematics 210, Cambridge University Press, Cambridge, 2017.
+[30] J. Solymosi and T. Tao, An incidence theorem in higher dimensions, Disc. Comp. Geom. 48
+     (2012), 255–280.
+                      FOURIER RESTRICTION IN HIGHER DIMENSIONS                                   43
+
+
+[31] E.M. Stein, Some problems in harmonic analysis, Harmonic analysis in Euclidean spaces
+     (Proc. Sympos. Pure Math., Williams Coll., Williamstown, Mass., 1978), Part 1, Proc. Sym-
+     pos. Pure Math., XXXV, Part, Amer. Math. Soc., Providence, R.I., 1979, pp. 3–20.
+[32] A.H. Stone and J.W. Tukey, Generalized “sandwich” theorems, Duke Math. J. 9 (1942),
+     356–359.
+[33] R.S. Strichartz, Restrictions of Fourier transforms to quadratic surfaces and decay of solu-
+     tions of wave equations, Duke Math. J. 44 (1977), no. 3, 705–714.
+[34] T. Tao, The Bochner-Riesz conjecture implies the restriction conjecture, Duke Math. J. 96
+     (1999), no. 2, 363–375.
+[35]         , A sharp bilinear restrictions estimate for paraboloids, Geom. Funct. Anal. 13 (2003),
+     no. 6, 1359–1384.
+[36] T. Tao and A. Vargas, A bilinear approach to cone multipliers. I. Restriction estimates,
+     Geom. Funct. Anal. 10 (2000), no. 1, 185–215.
+[37] T. Tao, A. Vargas, and L. Vega, A bilinear approach to the restriction and Kakeya conjectures,
+     J. Amer. Math. Soc. 11 (1998), no. 4, 967–1000.
+[38] F. Temur, A Fourier restriction estimate for surfaces of positive curvature in R6 , Rev. Mat.
+     Iberoam. 30 (2014), no. 3, 1015–1036.
+[39] P.A. Tomas, A restriction theorem for the Fourier transform, Bull. Amer. Math. Soc. 81
+     (1975), 477–478.
+[40] H. Wang, A restriction estimate in R3 using brooms, Preprint: arXiv:1802.04312.
+[41] L. Wisewell, Kakeya sets of curves, Geom. Funct. Anal. 15 (2005), no. 6, 1319–1362.
+[42] T. Wolff, An improved bound for Kakeya type maximal functions, Rev. Mat. Iberoamericana
+     11 (1995), no. 3, 651–674.
+[43]         , Recent work connected with the Kakeya problem, in Prospects in mathematics
+     (Princeton, NJ, 1996), 129–162, Amer. Math. Soc., Providence, RI.
+[44]         , A sharp bilinear cone restriction estimate, Ann. of Math. (2) 153 (2001), no. 3,
+     661–698.
+[45] R. Wongkew, Volumes of tubular neighbourhoods of real algebraic varieties, Pacific J. Math.
+     159 (1993), no. 1, 177–184.
+[46] J. Zahl, A discretized Severi-type theorem with applications to harmonic analysis, Geom.
+     Funct. Anal. 28 (2018), no. 4, 1131–1181.
+
+  Mathematical Institute, University of St Andrews, North Haugh, St Andrews, Fife,
+KY16 9SS, UK.
+  E-mail address: jeh25@st-andrews.ac.uk
+
+   Instituto de Ciencias Matemáticas CSIC-UAM-UC3M-UCM, Cantoblanco, Madrid,
+28049, Spain.
+   E-mail address: keith.rogers@icmat.es
+

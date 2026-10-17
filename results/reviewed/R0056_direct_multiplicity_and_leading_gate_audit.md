@@ -1,0 +1,7 @@
+# R0056：直接多项式尝试的严格范围
+
+内部两路最终全文独审通过，未经外部同行评审；无新数学ID、新高维界或重大性认证。
+
+notes/30_algebraic_geometry/R0056_euclidean_multiplicity_and_leading_form_barrier.md：real exact中心jets插值给degree上界，optimized complex Cheb/Cauchy把中心零点转成原轴近零，可付方向δd采样。real unitclock最高次项抽取sharp4^d/2；所有full方向/wholeunit axes/roundcaps的单项式近jet测试严格否无条件稳定gate。bush有constant union、不满足smallfootprint/exactkernel，故不反H5或exactkernel专用方法。outer/top两norm和actualdegree上界分别保留。
+
+uniform multiplicity+Taylor/Remez路线停止，不续次数微调。formal research/reviews/R0056_frontier_and_value_review.md, research/reviews/R0056_mechanism_and_scope_review.md；root research/reviews/R0056_root_integration_review.md。下一 notes/00_map/R0056_next_original_H5_conditional_capacity_test.md，Goal active。

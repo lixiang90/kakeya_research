@@ -100,3 +100,6 @@ R0054无新增文献与高级证明输入。当前模型由自含平面weighted 
 
 
 R0055新增6个原PDF版本：KR v2/v3分存（v3为实际当前主版本）、Zahl1908.05314v4、DiPlinio–Parissis1807.08255v2、Hua–Yang2608.18870v4、Germain–Latocca2606.29993v1。44PDF/45sources，原bytes/SHA256/gitblob/页数和实际readscope分别入metadata；高级wholeproof未认证。KR source counting/choice、HY既有parent条件与GL kinetic指数的范围不能被当一般G3/n5增益，详metadata/R0055_source_check.json。
+
+
+R0056新增4份primary原PDF：官方elliptic103页（onlyS2/R3，Th2.2为2D all-s conditional ellipse传播）、Dvir作者April2008版5页、DKSS作者May11,2009版26页、HR1807.10940v3 43页。48PDF/49sources，逐份原bytes/hash/gitblob/readscope在metadata；作者版不称arxiv同bytes，后两篇高级未读部分不认证。官方OAI4/M3本轮fresh树的PDF blob仍同存档。
