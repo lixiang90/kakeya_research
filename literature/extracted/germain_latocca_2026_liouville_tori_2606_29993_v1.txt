@@ -1,0 +1,1458 @@
+                                                  STRICHARTZ ESTIMATES FOR THE LIOUVILLE EQUATION ON
+                                                      EUCLIDEAN TORI AND APPLICATIONS TO KAKEYA
+
+                                                                               PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+                                                   Abstract. We prove Strichartz estimates for the space-time density ρ of solutions to the free
+                                                   Liouville equation on flat tori. In dimension one, we obtain the optimal range of estimates for
+                                                   the density ρ ∈ Lpt,x in terms of f0 ∈ Lav Lbx . In higher dimensions, we prove that such estimates
+                                                   cannot hold and that a weight has to be added: ρ can be bounded in terms of the norm of |v|γ f0 .
+arXiv:2606.29993v1 [math.AP] 29 Jun 2026
+
+
+
+
+                                                   We conjecture a range of optimal estimates, and partially prove them. Finally, these results have
+                                                   natural applications to the X-ray transform and Kakeya problems on Euclidean cylinders.
+
+
+
+
+                                                                                           1. Introduction
+                                           1.1. The Liouville equation on the torus and its asymptotic behavior. This article is
+                                           dedicated to estimates for the free Liouville equation (or kinetic transport equation)
+                                                               ∂t f (t, x, v) + v · ∇x f (t, x, v) = 0,            f (0, x, v) = f0 (x, v) ≥ 0,              (1)
+                                           set on the torus: (x, v) ∈ Td × Rd with
+                                                                                            Td = Rd /(2πZd ).
+                                           The solution is given by the explicit formula
+                                                                                       f (t, x, v) = f0 (x − tv, v),
+                                           with corresponding density                           ˆ
+                                                                                    ρ(t, x) =          f0 (x − tv, v) dv.
+                                                                                                  Rd
+                                             Space-independent solutions f (t, x, v) = g(v) are stationary, and through mixing they are
+                                           expected to play the role of attractors in appropriate topologies. At the level of the density, this
+                                           means that                                     ˆ ˆ
+                                                                                t→∞    1
+                                                                        ρ(t, x) −→                f0 (x, v) dx dv.
+                                                                                     (2π)d Rd Td
+                                             In this paper, we aim at quantifying this phenomenon. Upon subtracting from f0 its space
+                                           average, we consider from now on densities f0 that have zero average in x (and in particular we
+                                           will jettison the non-negativity hypothesis), and we ask the following question.
+                                           Question 1. For which indices p, a, b does there hold
+                                                                                                                     ˆ
+                                                 ∥ρ(t, x)∥Lpt,x (R×Td ) ≲ ∥f0 (x, v)∥Lav (Rd ,Lbx (Td ))      if         f0 (x, v) dx = 0   for all v ∈ Rd   (2)
+
+                                           or more generally for which p, γ, a, b
+                                                                                                                    ˆ
+                                                                           γ
+                                            ∥ρ(t, x)∥Lpt,x (R×Td ) ≲ ∥|v| f0 (x, v)∥Lav (Rd ,Lbx (Td ))      if          f0 (x, v) dx = 0   for all v ∈ Rd ? (3)
+
+                                              Date: June 30, 2026.
+                                              2020 Mathematics Subject Classification. Primary 42B37; Secondary 42B35, 44A12, 81S30.
+                                              Key words and phrases. Liouville equation; kinetic transport equation; velocity averages; Strichartz estimates;
+                                           X-ray transform; flat tori; weighted estimates; Lorentz spaces; Wigner transform; Kakeya maximal function.
+                                                                                                        1
+2                              PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+   Why such a choice of norms? On the left-hand side, this is the simplest choice. On the
+right-hand side, this set of norms is natural since it is invariant by the flow of the Liouville
+equation (in a way which is reminiscent of the dispersive Strichartz estimates, to which we will
+come back). Furthermore, the weight γ > 0 is needed in dimension ≥ 2 to obtain non-trivial
+estimates. Finally, a more general set of invariant norms is ∥|v|γ |Dx |δ · ∥Lav Lbx , but we set δ = 0
+for simplicity.
+
+                                         1
+                                         a
+                                             (∞, 1)
+                                     1
+
+
+
+                                     1
+                                     2                     
+                                                    2(d+1)
+                                                           ,2                 (2, 2)
+                                                       d
+
+
+
+                                                                                   1
+                                                                          1        p
+                              (∞, ∞)                           d
+                                                                          2
+                                                            2(d+1)
+
+
+                                                                                 dp
+         Figure 1. We consider the inequality (5) with γ = ad′ − p1 and b = d+1     , and ask
+         for which values of (a, p) it holds true. The conjectured region is in gray, and the
+         region where we could prove the inequality is dark gray.
+
+
+1.2. Main results. In dimension 1, it is possible to omit the weight γ and obtain the following
+result.
+                                                                                 ´
+Theorem 1.1 (Euclidean tori: dimension d = 1). For all f0 = f0 (x, v) such that T f0 (x, v) dx = 0,
+there holds
+                                                                   p
+                  ∥ρ∥Lpt,x (R×T) ≲ ∥f0 ∥Lav Lbx , a = p′ ,     b≥ ,       p > 2.                (4)
+                                                                   2
+Moreover, these are the only values of (p, a, b) ∈ [1, ∞]3 for which such an estimate holds.
+    In dimension larger or equal to 2, the weight γ is needed, and our result is as follows.
+Theorem 1.2 (Euclidean tori: dimension d ≥ 2). We consider the inequality
+                                                        ˆ
+                                         γ
+                   ∥ρ∥Lp (Rt ×Td ) ≲ ∥|v| f0 ∥Lav Lbx ,   f0 (x, v)dx = 0,                          (5)
+                                                                     Td
+
+where (p, a, b, γ) ∈ [1, ∞]3 × R.
+     (i) Necessary condition: the inequality (5) can only hold if
+                           d   1                                                        dp
+                      γ=    ′
+                              − ,            p ≥ 2,        p′ < a ≤ p,           b≥        .        (6)
+                           a   p                                                       d+1
+    (ii) Sufficient condition including the endpoint in b: the inequality (5) is satisfied if (6) holds
+         and furthermore
+                                                                         
+                                            ′                     dp
+                          2 < p < ∞,       p < a < min 2,                   .
+                                                             dp − (d + 1)
+                           PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                   3
+
+
+  (iii) Sufficient condition excluding the endpoint in b: the inequality (5) is satisfied if (6) holds
+        and
+                                                           dp
+                                    p′ < a < p,      b>        .
+                                                         d+1
+Remark 1.3. Including the endpoint in b in the above estimates is particularly relevant, since this
+corresponds to the scale-invariant case.
+  Both theorems above imply Strichartz estimates for general data: if
+                                                        ˆ
+                 f0 (x, v) = g0 (v) + h0 (x, v), with     h0 (x, v) dx = 0,
+
+then
+                            ∥ρ∥Lpt,x ([0,1]×Td ) ≲ ∥g0 ∥L1v + ∥|v|γ h0 ∥Lav Lbx ,
+provided that p, γ, a, b satisfy the hypotheses of Theorem 1.1 or Theorem 1.2. Notice however
+that the time interval in the above inequality is now finite.
+
+1.3. Applications.
+
+1.3.1. The X-ray transform on the cylinder. The dual of the map f0 (x, v) 7→ ρ(t, x) is the modified
+X-ray transform
+                                             ˆ +∞
+                               [Xf ](x, v) =
+                                e                 f (t, x + tv) dt
+                                                   −∞
+                                                             p
+(it differs from the standard X-ray transform by a factor 1 + |v|2 ).
+   Given a function in (x, v) ∈ Td × Rd , we denote Π0 and Π̸= for the orthogonal projections on
+functions which do not depend on x, and functions with zero mean in x respectively:
+                                            ˆ
+                                         1
+                       [Π0 f ](x, v) =          f (x, v) dx,   Π̸= = Id −Π0 .
+                                       (2π)d Td
+  By duality, the boundedness of
+                          ρΠ̸= |v|−γ : Lav (Rd , Lbx (Td )) −→ Lpt,x (R × Td ),
+which is addressed in Theorems 1.1 and 1.2, is equivalent to that of
+                                   e : Lp′ (R × Td ) −→ Lav ′ (Rd , Lbx′ (Td )).
+                         |v|−γ Π̸= X    t,x
+
+1.3.2. The Kakeya problem on the cylinder. Consider a family of tubes {Tk } of length R and
+cross section of radius δ, and Rδ -separated directions—this might be on Euclidean space Rd+1 or
+on the cylinder R × Td . In the whole space, the parameter R is usually normalized to 1, which is
+always possible by scaling. But the Kakeya problem on the cylinder is only relevant if R → ∞,
+both cases being equivalent for bounded R.
+   The Kakeya maximal operator conjecture on Euclidean space states that, for any ε > 0,
+                                               ( ε d+1
+                                                R
+                         X
+                                                 δ   R p        if p ≤ d+1
+                                                                        d
+                             1Tk             ≲             d+1                                (7)
+                                                R ε d −d+ p            d+1
+                                                   
+                          k       Lp (Rd+1 )     δ   R δ        if p >  d .
+
+We refer to [Cor77] for the classical proof of the case d = 2, and to [Mat15] for a textbook
+presentation.
+   We now turn to the case of the cylinder. For simplicity, we focus on the case of tubes with
+direction (1, v) ∈ Rd+1 with |v| ≲ 1; the general case would only involve an additional weight,
+which is natural since the combinatorial properties of tubes depend critically on the size of v.
+4                                  PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+Theorem 1.4 (Maximal operator Kakeya on the cylinder). On the cylinder R × Td , consider a
+family of tubes {Tk }k∈K with length R, cross section of radius δ, and directions (1, vk ), where the
+{vk } are Rδ -separated and of size ∼ 1. Then for all p > 2 there holds
+
+                                                                               d+1
+                                                                 d+ p1               −d
+                                   X
+                                         1Tk                ≲R           + Rd δ p         .         (8)
+                                   k∈K         Lp (R×Td )
+
+Furthermore, this inequality is optimal: it can be saturated.
+
+   The proof of this theorem will be given in Section 5; it relies on the boundedness of X
+                                                                                         e which
+can be deduced by duality from Theorems 1.1 and 1.2. Without entering into details for now, it
+is interesting to give a geometric interpretation of the two terms on the right-hand side of (8):
+                        d+1
+                              −d
+     • The term Rd δ p     corresponds to the “bush” example, where all tubes intersect at one
+       point; this example is the one which saturates the inequality (7) in the whole space for
+       p ≥ d+1
+           d−1 ;
+                      d+ 1
+     • The term R p can be understood as an average interaction of tubes which fill up the
+       torus—this effect is absent in the case of the whole space.
+
+1.4. Related directions.
+
+1.4.1. Strichartz estimates for the Schrödinger equation. This is where it all started! After
+Strichartz’ original paper [Str77] regarding estimates in the whole space, Bourgain [Bou93]
+initiated the study of estimates on the torus of the type
+
+                                    ∥eit∆ f0 ∥Lpt,x ([0,1]×Td ) ≲ ∥f0 ∥H s (Td ) ,
+
+(where p ∈ [1, ∞], s ≥ 0) which was completed in [BD15]. One can also ask for estimates of the
+type
+                                     ∥eit∆ f0 ∥Lpt,x ([0,1]×Td ) ≲ ∥fb0 ∥Lq (Td )
+
+(where p, q ∈ [1, ∞]) but finding the optimal range of (p, q) is an open problem, equivalent to the
+Fourier restriction problem.
+   The estimates above on eit∆ f0 and (2), (3) have common features: the left-hand side of
+the equation is a space-time Lp norm, while the right-hand side norm is invariant through
+the flow of the linear problem (Liouville of Schrödinger). Furthermore, the Schrödinger and
+Liouville equations on the torus are intimately tied, since they are exchanged by the Wigner
+transform—though it does not seem possible to use this correspondence to derive analytical
+estimates.
+
+1.4.2. Euclidean space. The analog of Question 1 can be asked if the space variable ranges over
+Rd ; this is a classical subject which is the background of the present article. It will be surveyed
+in Section 2, suffice it for now to say that the conjecture
+                                                                                      dp      d+1
+             ∥ρ∥Lpt,x (R×Rd ) ≲ ∥f0 ∥Lav (Rd ,Lbx (Rd ))    if a′ = dp, b =              , p>
+                                                                                     d+1       d
+
+is known if d = 1 or p ≥ d+2
+                          d .
+                             PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                   5
+
+
+1.4.3. General compact manifolds. The Liouville equation can be generalized in a natural way
+to compact (or geometrically bounded) Riemannian manifolds M , by replacing transport along
+straight lines by transport along geodesics. In this context, Salort [Sal07] proved the following
+inequality
+                                                        1
+                                                            +ε
+                ∥f ∥Lqt ([0,1],Lpx (M,Lrv (Tx∗ M ))) ≲ ∥⟨v⟩ q f0 ∥Lax,v (T M )
+                                                                            
+                                      2           1 1         1    1 1 1
+                             if          =d          −    ,     =           +    ,   q > 2 ≥ a.
+                                      q           r p         a    2 r p
+Furthermore, the value of q is optimal, as can be seen from considering stationary solutions of
+the form g(|v|).
+   The strength of this estimate is its universality, but its weakness is that it is limited to a finite
+time interval. As we saw in the case of the torus, global in time estimates require additional
+assumptions and quantify relaxation to the equilibrium through mixing. Proving such estimates
+for general manifolds seems to be very difficult, but it is also very interesting!
+1.4.4. Velocity averaging lemmas. Velocity averaging lemmas play a crucial role in the theory of
+kinetic equations [GLPS88, GSR02, Per02]. They are usually formulated in the inhomogeneous
+case, but as observed in [Per04, Remark 3.2], homogeneous versions follow. The basic instance is
+                                                              ˆ
+              ∥χ(t)ρψ (t, x)∥H 1/2 ≲ ∥f0 ∥L2x,v , ρψ (t, x) =   ψ(v)f0 (x − tv, v) dv,
+                                t,x                                       Rd
+where f0 (x − tv, v) is the solution of the Liouville equation set in the whole space, and χ, ψ ∈ Cc∞ .
+This estimate gives improved regularity for ρψ compared to f0 , which can be converted by Sobolev
+embedding into improved integrability. This is also a feature of our Strichartz estimates, which
+do give improved integrability—but the cutoff functions appearing above make this estimate local
+in time and velocity, which is quite different from what we are aiming at.
+1.4.5. Regularity in v and Landau damping. After decomposing f in Fourier series in x
+                                              X
+                                   f (x, v) =   fk (v)eik·x ,
+                                                      k∈Zd
+it is easily computed that                                  X
+                                      ρ(t, x) = (2π)d/2          fbk (kt)eik·x ,
+                                                             k
+
+where fbk stands for the Fourier transform in v of fk . It is apparent from this formula that
+regularity in v translates into time-decay for ρ. See [Bed22], Section 2 for a nice discussion and
+the connection with recent developments around Landau damping [BMM16, MV11].
+   Though greater regularity in v of the initial data immediately gives better decay in t, our aim
+in the present paper is to obtain decay without assuming any regularity in v!
+1.5. Notations. If f is a function on Rd , we adopt the following normalization for the Fourier
+transform:
+                            ˆ                                     ˆ
+                       1              −ix·ξ                   1
+            f (ξ) =
+            b                   f (x)e      dx,   f (x) =            fb(ξ)eix·ξ dξ.
+                    (2π)d/2 Rd                            (2π)d/2 Rd
+  If A and B are two quantities, we write
+     • A ≲ B if there exists a constant C such that A ≤ CB,
+     • A ∼ B if A ≲ B and B ≲ A,
+     • A ≪ B if A ≤ CB for a sufficiently small (depending on the context) constant C.
+Acknowledgements. P.G. was supported by a startup grant from the Universität Wien.
+6                               PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+                                2. The case of Euclidean space
+  This section focuses on the Strichartz problem for the Liouville equation set in the whole
+Euclidean space. We review the state of the art and give short proofs of the known results, with
+some new ideas.
+2.1. The conjectures and their equivalent formulations. On Rd , the density is given in
+terms of the density through the same formula as on Td , namely
+                                           ˆ
+                                 ρ(t, x) =   f0 (x − tv, v) dv.
+                                                  Rd
+We focus here on the question of boundedness of f0 → ρ from Lav Lbx to Lpt,x . The following
+conjecture appeared in [Chr84], though in the dual form which will be explained below.
+Conjecture A. There holds
+                                  ∥ρ∥Lpt,x (R×Rd ) ≲ ∥f0 ∥Lav (Rd ,Lbx (Rd ))
+if
+                                                  dp            d+1
+                                a′ = dp,      b=      ,    p>         .
+                                                 d+1              d
+     Notice that, as opposed to the case of the torus, a weight in v is not needed.
+The dual problem: The dual of f0 7→ ρ is the modified X-ray transform
+                                          ˆ +∞
+                             e ](x, v) =
+                            [Xf                f (t, x + tv, v) dt,
+                                                   −∞
+
+which maps functions on R × Rd to functions on Rd × Rd .
+The X-ray transform. Given a line ℓ in Rd+1 , we denote dσℓ the associated surface measure and
+define the X-ray transform on functions on Rd+1 through
+                                                ˆ
+                                      [Xf ](ℓ) = f dσℓ .
+                                                   ℓ
+Lines in R d+1 are naturally parameterized by their direction θ ∈ Sd and the intersection y of the
+line with the hyperplane orthogonal to θ, which can be identified with Rd .
+   If (x, v) ∈ Rd × Rd , we denote ℓx,v for the line in Rd+1 through (0, x) with direction (1, v).
+Then                                          p
+                                [Xf ](ℓx,v ) = 1 + v 2 [Xfe ](x, v).
+Observe that X and X  e only differ by a bounded factor if v is bounded.
+   A natural set of mixed norms in the set of lines is Lqθ1 (Sd , Lqy2 (Rd )), and the relevant question
+the boundedness of X from Lr (Rd+1 ) to Lqθ1 (Sd , Lqy2 (Rd )).
+Equivalent formulations of the conjecture. Under the scaling assumption
+                                                               dp
+                                        a′ = dp,         b=       ,
+                                                              d+1
+the following statements are equivalent:
+                           ρ : Lav (Rd , Lbx (Rd )) −→ Lpt,x (Rd+1 )
+                                         ′                 ′        ′
+                           X
+                           e:        Lpt,x (Rd+1 ) −→ Lav (Rd , Lbx (Rd )),
+                                         ′                 ′       ′
+                           X:        Lpt,x (Rd+1 ) −→ Laθ (Sd , Lby (Rd+1 ).
+Indeed, the two first assertions are equivalent by duality. To see that the second implies the third,
+we restrict velocities to |v| ≤ 1 and observe that X and X  e are equivalent, and the mixed norms
+                           PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                7
+
+
+as well. This gives boundedness of X for lines whose directions are restricted to a cap of Sd ,
+and the full boundedness follows by isotropy. Finally, the same argument gives that the third
+                                     e restricted to velocities ≤ 1, which can then be extended
+assertion implies the boundedness of X
+to all velocities by scaling.
+2.2. Known results. The history of Conjecture A is as follows
+      • In case d = 1, the X-ray transform coincides with the Radon transform, and the result is
+        due to Oberlin–Stein [OS82].
+      • The case p ≥ d+2 d was proven by Christ [Chr84] improving on Drury [Dru83] who was
+        missing the endpoint.
+      • The case p = d+2d was rediscovered by Keel–Tao [KT98] who noticed that the result in
+        Castella–Perthame [CP96] could be extended.
+      • Finally, the case p = d+2
+                                d can be viewed as a consequence of the Strichartz estimates for
+        orthonormal families [Sab14].
+   Finally, another line of research [ŁT01, Wol98, Obe10] focuses on the case where x and v are
+bounded. This setting is directly related to the Kakeya problem and it allows to relax some of
+the constraints on a, b and p.
+2.3. Proof of the case d = 1 of Conjecture A. This result is equivalent to the optimal X-ray
+transform estimate in dimension 2, which was originally proved in Oberlin–Stein [OS82]. We
+propose here a different proof, inspired by the treatment of the Fourier restriction problem in
+dimension 2 by Hörmander [Hör73].
+  We consider first the operator
+                                           ¨
+                          T [F ](t, x) =           F (x − tv, x − tw, v, w) dv dw,              (9)
+
+which is linear in F = F (y, z, v, w). On the one hand, we can see that
+                                     ∥T [F ]∥L∞
+                                              t,x
+                                                  ≲ ∥F ∥L1v,w L∞
+                                                               y,z
+                                                                   .
+On the other hand, using that the change of variables (t, x) 7→ (x − tv, x − tw) has Jacobian
+|v − w|, we get the estimate
+                      ˘
+      ∥T [F ]∥L1t,x ≤     |F (x − tv, x − tw, v, w)| dv dw dt dx = ∥F ∥L1v,w (|v−w|−1 dv dw)L1y,z .
+
+We interpolate between these two estimates and obtain
+                    ∥T [F ]∥Lpt,x ≲ ∥F ∥ 1               1
+                                                        −p                 if 1 ≤ p ≤ ∞.       (10)
+                                         Lv,w (|v−w|         dv dw)Lpy,z
+
+More specifically, we use [BL76, Theorem 5.4.1] applied to the measures dvdw and |v − w|−1 dvdw.
+We now write
+                    ¨                                     ¨
+        2
+       ρ (t, x) =      f (x − tv, v)f (x − tw, w) dv dw =   F (x − tv, x − tw, v, w) dv dw
+
+after setting
+                                F (y, z, v, w) = f (y, v)f (z, w).
+By the estimate (10), we can bound for p > 2
+                      ∥ρ∥2Lp = ∥T [F ]∥ p2 ≲ ∥F ∥ 1          −2
+                                                                        p
+                                                                        2
+                           t,x         Lt,x       Lv,w (|v−w| p dv dw)Ly,z
+                                 ¨
+                                            −2
+                               =   |v − w| p ∥f (y, v)∥ p2 ∥f (z, w)∥ p2 dv dw
+                                                                  Ly         Lz
+                                     2
+                              ≲ ∥f ∥ p′    p   ,
+                                     Lv Lx2
+8                               PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+where we have used the Hardy–Littlewood–Sobolev inequality in the last line.
+2.4. The proof of the case p ≥ d+2 d of Conjecture A. By interpolation, it suffices to prove
+            d+2
+the case p = d , which is the inequality
+                                         ∥ρ∥ d+2 ≲ ∥f0 ∥ d+2 .
+                                             Lt,xd                  d+1
+                                                                   Lx,v
+
+We will argue here through dispersive estimates and interpolation, following [CP96, KT98]. The
+optimal result follows from a combination of these two arguments, which we integrate here for
+the sake of the reader. The first step is to obtain dispersive estimates.
+Lemma 2.1 (Dispersive estimates). If p ∈ [1, ∞], then
+                                                     −d(1− p1 )
+                                    ∥ρ(t)∥Lpx ≲ t                      ∥f0 ∥L1x Lpv
+and if 1 ≤ r ≤ p ≤ ∞, then
+                                                                      
+                                                              1
+                                                     −d         − p1
+                                  ∥f (t)∥Lpx Lrv ≲ t          r
+                                                                           ∥f0 ∥Lrx Lpv .           (11)
+Proof. This follows from complex interpolation between the two following observations. First, by
+Fubini’s theorem we have ∥ρ(t, ·)∥L1x ≤ ∥f0 ∥L1x,v . We also have the dispersive estimate
+                      ˆ                             ˆ             
+                                                 −d           x−y
+          |ρ(t, x)| ≤     |f0 (x − tv, v)| dv = t       f0 y,         dy ≤ t−d ∥f0 ∥L1x L∞ .
+                       Rd                            Rd         t                        v
+
+
+For the more general inequality, one can interpolate with the case (r, p) = (p, p), for which the
+inequality holds with constant 1, by conservation of the Lp norms under Liouville’s equation. □
+  From these dispersive estimates, we will derive Strichartz estimates of the type Lax,v → Lqt Lpx Lrv .
+Specializing to the case q = p = d+2                  d+2
+                                  d , r = 1 and a = d+1 gives the desired result.
+
+Theorem 2.2. Let (q, p, r, a) ∈ [1, ∞]4 such that the following conditions hold:
+                                                        
+                2       1 1            1      1 1 1
+                   =d    −      ,          =           +      ,       p ≥ a, and q > a.             (12)
+                 q      r p            a      2 r p
+Then there holds
+                                  ∥f ∥Lqt (R;Lpx Lrv ) ≲ ∥f0 ∥La (R2d ) .                           (13)
+Remark 2.3. The conditions (12) are actually also necessary for (13) to hold, see [KT98]. It is
+proven in [GP07] that there is no such estimate in the case (d, q, p, a) = (1, 2, ∞, 2), but there is
+still an estimate if L∞
+                      x is replaced with BMOx . In the same article it is also shown that in all
+dimensions d ≥ 1 the endpoint fails despite being conjectured in [KT98].
+Proof of Theorem 2.2. Assume first that the theorem has already been proven in the more
+restrictive case q > 2 ≥ a. Now, let (q, p, r, a) be as in the theorem but such that either 2 ≤ a < q
+or a < q ≤ 2. Pick α > 0 such that qα := qα > 2 ≥ ãα = αa and apply the restricted case to the
+function f 1/α solving the Liouville equation, and the exponents (qα , pα , rα , aα ) = (αq, αp, αr, αa).
+One can check that the conditions on these coefficients are met so that we have
+                                        1                                  1
+                                     ∥f α ∥Lqt α Lpxα Lrvα ≲ ∥f0α ∥Lax,v
+                                                                      α ,
+
+
+which is nothing but the desired estimates.
+   We are left with the proof of the theorem in the case q > 2 ≥ a, which will appear as very
+convenient in the following, because of the application of Hardy–Littlewood–Sobolev’s inequality
+and a square trick.
+   Observe that the adjoint S ∗ of the operator ´ S defined for each t ´by S(t)f0 (x, v) = f0 (x − tv, v)
+is given for all ϕ = ϕ(t, x, v) by S ∗ ϕ(x, v) = R ϕ(t, x + tv, v) dt = R S(−t)ϕ(t)(x, v) dt.
+                                         PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                     9
+
+
+  Let’s argue by duality: the boundedness of S : Lax,v → Lqt Lpx Lrv is equivalent to that of its
+                   ′   ′       ′             ′
+adjoint S ∗ : Lqt Lpx Lrv → Lax,v . since a′ ≥ 2, we can write, using a squaring trick:
+                                       ¨
+                          ∗ 2
+                      ∥S ϕ∥La′ =          ϕ(t, x + tv, v)ϕ(s, x + sv, v) ds dt ′
+                                          x,v                                                         a /2
+                                                                                                     Lx,v
+                                                     ¨
+                                                 =         ϕ(t, x, v)ϕ(s, x − (t − s)v, v) ds dt               .
+                                                                                                       a′ /2
+                                                                                                     Lx,v
+
+In the second equality we have used the change of variable (x, v) ← (x − tv, v).
+                                                                 ′
+  An application of Young’s integral inequality (since a2 ≥ 1), followed by Hölder’s inequality
+with a2′ = p1′ + r1′ = r1′ + p1′ yields
+                                        ¨
+                            ∗   2
+                        ∥S ϕ∥La′ ≤        ∥ϕ(t)∥Lp′ Lr′ ∥S(t − s)ϕ(s)∥Lr′ Lp′ ds dt
+                                  x,v            x v                     x v
+                                        ¨
+                                      ≤   ∥ϕ(t)∥Lp′ Lr′ |t − s|−δ ∥ϕ(s)∥Lp′ Lr′ ds dt,
+                                                                     x   v                   x   v
+                                                  
+                 1    1                      1   1
+with δ = d       p′ − r′           =d        r − p       = 2q < 1. In the last inequality we have used the dispersion
+inequality (11) applied to the couple (r′ , p′ ) (instead of (p, r), and note that we have 1 ≤ p′ ≤
+r′ ≤ ∞).
+   The conclusion follows from an application of the Hardy–Littlewood–Sobolev inequality. □
+
+                                         3. The Euclidean torus in dimension 1
+  The aim of this section is to prove Theorem 1.1.
+3.1. Necessary condition. We aim at proving that the inequality
+                                                     ∥ρ(t, x)∥Lpt,x (R×T) ≲ ∥f0 ∥Lav Lbx ,                         (14)
+can only hold for all f0 with zero average if
+                                              p
+                                                     a = p′ ,
+                                                 and p > 2.      b≥
+                                              2
+The scaling argument. We want to apply a classical scaling argument, but we need to be a bit
+careful, since the domain T cannot be scaled. We consider the data in Rd
+                                                          f0 (x, v) = φ(λx)ψ(µv),
+                                   ´
+where φ, ψ ∈ C0∞ and              φ(x) dx = 0. The associated density is
+                                        ˆ
+                               ρ(t, x) = φ(λ(x − tv))ψ(µv) dv = µ−1 R(λµ−1 t, λx),
+
+where                                                            ˆ
+                                                     R(t, x) =       φ(x − tv)ψ(v) dv.
+For a given t it follows that
+                                                                                          (
+                                         t   1           1                                       0<t≪µ
+                 Supp ρ(t, ·) ⊂ B 0, C     +      ⊂ B 0,                                     if
+                                         µ λ             4                                       λ ≫ 1.
+Under this condition, which we assume from now on, we can view f0 (x, v) and ρ(t, x) as functions
+on the torus. Then (14) implies that
+                                       µ−1 R(λµ−1 t, λx) Lp ([0,cµ]×T) ≲ ∥φ(λx)ψ(µv)∥Lav Lbx
+10                                         PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+which can also be written
+                       −1+ p1       − p2                                   1     1
+                   µ            λ          ∥R(t, x)∥Lp ([0,cλ]×T) ≲ λ− b µ− a ∥φ(x)ψ(v)∥Lav Lbx .
+Considering the limits µ → 0, µ → ∞ and λ → ∞ gives the conditions a = p′ and b ≥ p2 .
+A function with a single frequency in x. Choosing
+                                                     f0 (x, v) = φ(v)eix ,
+the density then writes
+                                                                        ix
+                                                         ρ(t, x) = φ(t)e
+                                                                   b       ,
+and the inequality (14) becomes
+                                       b Lpt (R) ≲ ∥φ∥Lav (R) ,
+                                      ∥φ∥
+                                    ′
+which is known to hold only if p = a and p ≥ 2, see for instance [Tao20].
+Why p cannot be 2. There remains to exclude p = 2, in which case the inequality would be
+                                                     ∥ρ∥L2t,x ≲ ∥f0 ∥L2v L1x .
+From Lemma 3.3 this would imply
+                                                          1
+                                                ∥|∂x |− 2 f0 ∥L2x,v ≲ ∥f0 ∥L2v L1x .
+Specializing to the case f0 (x, v) = φ(x)ψ(v), this would mean that
+                                                              1
+                                                   ∥|∂x |− 2 φ∥L2x ≲ ∥φ∥L1x ,                                  (15)
+which is known to fail. Let’s indeed consider φ(x) = χN (x) − 1 = N χ(N x) − 1 with χ ∈ C0∞
+of integral 1. For N sufficiently large, this function is well-defined on T, has zero mean, and
+∥φ∥L1 ≲ C < ∞. Its Fourier coefficients are given by χc   N (k) = χ b Nk , standing for the Fourier
+                                                             1
+                                                                       √
+                             b(0) = 1, we have |χc
+transform over R of χ. Since χ                    N (k)| > 2 if |k| ≤    N and N sufficiently large.
+Thus (15) would imply
+                      X       1     X |φ̂(k)|2            1
+                                 ≲              = ∥|∂x |− 2 φ∥2L2x ≲ ∥φ∥2L1x ≤ C
+                         √ |k|             |k|
+                    1≤|k|≤ N                     |k|≥1
+
+which cannot hold as the left-hand side diverges as N → ∞.
+3.2. The sufficient condition. We aim at proving that the inequality
+                                               ∥ρ(t, x)∥Lpt,x (R×T) ≲ ∥f0 ∥Lav Lbx ,                           (16)
+holds for all f0 with zero average if
+                                                    p
+                                               a = p′ ,       b≥
+                                                        and p > 2.
+                                                    2
+This result will be proved through a series of lemmas below. First, Lemmas 3.1 to 3.3 provide
+estimates in L∞       4        2
+               t,x , Lt,x and Lt,x respectively. Second, these estimates are interpolated in Lemma 3.4
+to obtain all intermediate values of p.
+Lemma 3.1 (L∞ estimate). For any f0 ∈ L1v L∞
+                                           x there holds
+                                                 ∥ρ∥L∞
+                                                     t,x (R×T)
+                                                               ≲ ∥f0 ∥L1v L∞
+                                                                           x
+                                                                             .
+                                                                                           ´
+Proof. This follows immediately from the formula expressing ρ(t, x) =                       R f0 (x + tv, v) dv, the
+triangle inequality and Minkowski’s inequality.                                                                   □
+                              ´
+Lemma 3.2 (L4 estimate). If f0 (x, v) dx = 0 for all v, then
+                                                 ∥ρ∥L4t,x (R×T) ≲ ∥f0 ∥ 43           .
+                                                                           Lv L2x
+                                 PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                                         11
+
+
+Proof. Expanding f0 in Fourier series in x
+                                                                       X
+                                                f0 (x, v) =                    ak (v)eikx ,
+                                                                       k∈Z∗
+
+we have                                        ˆ                                          X
+                               ρ(t, x) =            f0 (x − tv, v) dv =                          abk (kt)eikx .
+                                                R                                         k∈Z∗
+Using this decomposition and Hölder’s inequality gives
+                      X      ˆ
+            4
+        ∥ρ∥L4 =                 k1 (k1 t)ac
+                               ac                   k3 (k3 t)ac
+                                          k2 (k2 t)ac         k4 (k4 t) dt
+              t,x
+                        k1 +k2 =k3 +k4
+                               X
+                    ≤                      k1 (k1 t)∥L4t ∥ac
+                                         ∥ac                               k3 (k3 t)∥L4t ∥ac
+                                                           k2 (k2 t)∥L4t ∥ac               k4 (k4 t)∥L4t
+                        k1 +k2 =k3 +k4
+                               X                                1
+                    =                    |k1 k2 k3 k4 |− 4 ∥ac            k2 (η)∥L4η ∥ac
+                                                             k1 (η)∥L4η ∥ac            k3 (η)∥L4η ∥ac
+                                                                                                    k4 (η)∥L4η .
+                        k1 +k2 =k3 +k4
+                           1
+We now set bk = |k|− 4 ∥abk (η)∥L4η so that the above can be written
+
+                                               ∥ρ∥4L4 = ⟨bk , b−k ∗ bk ∗ bk ⟩,
+                                                         t,x
+
+where ⟨ , ⟩ stands for the ℓ2 inner product. On the one hand, the Hölder–O’Neil inequality,
+recalled in (29), gives
+
+              ∥bk ∥ 43 ,2 ≲ ∥abk (η)∥L4η                       and ∥ρ∥4L4 ≲ ∥bk ∥ 34 ,2 ∥b−k ∗ bk ∗ bk ∥ℓ4,2 .
+                    ℓk                             ℓ2k                          t,x                  ℓk                      k
+
+
+On the other hand, the Young–O’Neil inequality, recalled in (30) and the inclusion relation
+between Lorentz spaces gives
+                            ∥b−k ∗ bk ∗ bk ∥ℓ4,2 ≲ ∥bk ∥ 34 ,2 ∥bk ∗ bk ∥ℓ2,∞ ≲ ∥bk ∥3 4 ,2
+                                                    k                   ℓk                       k            ℓk3
+
+Overall, this gives
+                                                    ∥ρ∥4L4 ≲ ∥abk (η)∥4ℓ2 L4 .
+                                                               t,x                    k    η
+
+Finally, using successively the Hausdorff–Young, Minkowski and Parseval inequalities, we obtain
+that
+                  ∥ρ∥L4t,x ≲ ∥abk ∥ℓ2 L4η ≲ ∥ak (v)∥ 2 34 ≤ ∥ak (v)∥ 34 2 = ∥f0 ∥ 43 .       □
+                                           k                           ℓk Lv                         Lv ℓk          Lv L2x
+                                                                ´
+Lemma 3.3 (L2 estimate). Assume that                                T f0 (x, v) dx = 0 for all v, then
+                                                                                      1
+                                           ∥ρ∥L2t,x (R×T) = ∥|Dx |− 2 f0 ∥L2x,v .
+
+Proof. Writing
+                                                                       X
+                                                f0 (x, v) =                    ak (v)eikx ,
+                                                                       k∈Z∗
+we have                                                               X
+                                                   ρ(t, x) =                 abk (kt)eikx ,
+                                                                     k∈Z∗
+and thus, by Parseval’s and Plancherel’s theorem
+                                  X
+                         ∥ρ∥2L2 =      |k|−1 ∥abk ∥2L2 = ∥|Dx |−1/2 f0 ∥2L2 .                                                    □
+                                     t,x
+                                                k∈Z∗
+12                                       PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+  Theorem 1.1 will be a consequence of the following
+                                             ´          interpolation lemma, and its consequence
+on subspaces. More precisely, if Π : f 7→ f − T f (·, x) dx, then if Π : Bi → Bi for all i ∈ {0, 1}
+then interpolation commutes with this projection [Tri78, Theorem 1.17.1.1]
+                                                  (ΠB0 , ΠB1 )θ,r = Π(B0 , B1 )θ,r .
+Lemma 3.4 (Interpolation). Let T be a linear operator defined from C ∞ (Rv × Tx ) to C ∞ (Rt × Tx )
+be a linear operator with the mapping properties:
+                                                            T : L1v L∞     ∞
+                                                                     x −→ Lt,x ,                                                                (17)
+                                                                    4
+                                                             T : Lv L2x −→ L4t,x ,
+                                                                    3
+                                                                                                                                                (18)
+                                                                        − 12
+                                                           T : L2v Ḣx         −→ L2t,x .                                                       (19)
+                                                                                                 ′   p
+Then for all p ∈ (2, ∞], T is a continuous operator T : Lpv Lx −→ Lpt,x .                            2
+
+
+
+Proof. Let p ∈ (4, ∞) and θ = 1 − p4 ∈ (0, 1), which is such that Lpt,x = [L4t,x , L∞
+                                                                                    t,x ]θ , the complex
+                                               1    1−θ        1
+interpolation space [BL76, Chapter 4]. Define pθ = 4/3 + θ = p′ . From the complex interpolation
+theorem [BL76, Theorem 4.1.2] we obtain
+                                                  4
+                                                                                   p
+                                     T : [Lv3 L2x , L1v L∞        4      ∞
+                                                         x ]θ → [Lt,x , Lt,x ]θ = Lt,x .
+We now make use of [BL76, Theorem 5.1.2], which yields
+                                     4                                                                       p
+                                                                                                         ′
+                                 [Lv3 L2x , L1v L∞       p(θ) 2    ∞         p 2
+                                                 x ]θ = Lv ([Lx , Lx ]θ ) = Lv Lx .
+Similarly, for any p ∈ (2, 4) and θ = 1 − p2 we obtain the continuity:
+                                                      −1       4
+                                 T : [L2v Ḣx 2 , Lv3 L2x ]θ −→ [L2t,x , L4t,x ]θ = Lpt,x .
+Using again the property of interpolation of vector-valued Lq spaces mentioned above and the
+complex interpolation of homogeneous Sobolev spaces there holds
+                                                                                      1
+                                                              −1                          − p2
+                                                           [Ḣx 2 , L2x ]θ = Ḣx2                .
+                                                                                                                 1
+                                                                                                                     − p2       1
+                                                                                                                                    − p2
+The conclusion now follows from the fact that on the torus there holds Ḣx2                                                 = Hx2          , and the
+                                         1
+                          p
+                                         2
+                                           − p2
+                          2
+Sobolev embedding Lx ,→ Hx                        .                                                                                               □
+
+                              4. The Euclidean torus in dimension d ≥ 2
+     Our aim in this section is to prove Theorem 1.2.
+4.1. Necessary conditions. We shall prove here the necessary conditions in Theorem 1.2 for
+the inequality
+                               ∥ρ∥Lpt,x ≲ ∥|v|γ f0 ∥Lav Lbx ,                         (20)
+to hold for all f0 with mean zero in x.
+The conditions γ = d(1 − a1 ) − p1 and p ≤ b d+1
+                                              d . They are obtained through a scaling argument
+as follows. Data of the form
+                                                                    ˆ
+                                                         ∞   d
+                    f0 (x, v) = φ(λx)ψ(µv),      φ, ψ ∈ C0 (R ),       φ=0
+
+give ρ(t, x) = µ−d R(λµ−1 t, λx) for a function R. As long as 0 < t ≪ µ and λ ≫ 1, this can be
+viewed as a function on Td . The inequality becomes
+                        −d+ p1   − d+1                                            d                  d
+                    µ            λ  p       ∥R∥Lp ([0,cλ]×Td ) ≲ λ− b µ−γ− a ∥φ(x)ψ(v)∥Lav Lbx ,
+                                PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                              13
+
+
+which gives γ = d(1 − a1 ) − p1 and p ≤ b d+1
+                                           d after letting µ → ±∞ and λ → +∞.
+
+The condition a ≥ p′ . It is obtained by examining the case of single mode data of the form
+                                          f0 (x, v) = φ1 (v1 )φ2 (v ′ )eix1 ,                                       (21)
+where v1 ∈ R and v ′ ∈ Rd−1 make up v = (v1 , v ′ ). Then (3) becomes
+                                    φ      φ1 ∥Lp ≲ ∥|v|γ φ1 (v1 )φ2 (v ′ )∥Lav .
+                                    c2 (0)∥c                                                                        (22)
+Choosing φ1 (v1 ) = Φ(λv1 ) and φ2 localized near the sphere |v ′ | = 1 such that φ
+                                                                                  b2 (0) ̸= 0, we
+obtain that φ = φ1 φ2 is localized near |v| = 1 as λ → ∞. The inequality becomes
+                                    −1+ p1                                    1
+                                                    b Lp ≲ λ− a ∥Φ∥La ∥φ2 ∥La ,
+                                   λ         c2 (0)∥Φ∥
+                                             φ
+which gives the desired condition as λ → ∞.
+The condition a ̸= p′ . It relies on a refinement of the previous example: we choose now
+                                                     
+                 ∞                       1
+         φ1 ∈ C0 ,         supp φ1 ⊂       ≤ |v1 | ≤ 1 ,    φ2 (v ′ ) = ⟨v ′ ⟩−(d−1) 12≤|v′ |<N .
+                                         2
+Observe first that                                        ˆ
+                                              φ
+                                              c2 (0) =          φ2 ∼ log N.
+
+Second, the condition a = p′ gives γ = d−1
+                                        p and
+
+                  ∥|v|γ φ1 (v1 )φ2 (v ′ )∥Lav ∼ ∥⟨v ′ ⟩γ φ2 (v ′ )∥Lav′ ∼ ∥⟨v ′ ⟩γ−(d−1) 1|v′ |≲N ∥Lav′
+                                                       − d−1                                                1
+                                              ∼ ∥⟨v ′ ⟩   p′        12≤|v′ |≤N ∥Lp′ ∼ (log N ) p′ .
+                                                                                                        1
+Comparing the two above equivalents and (22) gives log N ≲ (log N ) p′ , which excludes p < ∞ as
+N → ∞.
+The condition a ≤ p. Consider a single mode zero-average initial data of the form
+                                               f0 (x, v) = eix1 ψR (v),
+where x = (x1 , x′ ) ∈ T × Td−1 and where ψR is defined for all v = (v1 , v ′ ) ∈ R × Rd−1 by
+                                                              11<v1 <R 1|v′ |<v1
+                                         ψR (v1 , v ′ ) =                 1               .
+                                                                           ′ +(d−1)
+                                                                        v1p
+We begin by computing for t > 0
+                     ˆ                          ˆ R                           ˆ tR
+                                                             − p1′          1            −1
+                         −itv1                        −itv1           ix1 − p
+     ρ(t, x) = e ix1
+                       e       ψR (v)dv = e ix1
+                                                    e       v1 dv1 = e t           e−iτ τ p′ dτ.
+                        Rd                                  1                                                   t
+It follows that                                 ˆ ∞         ˆ tR                              p
+                                                      1                             1
+                                                                              −iτ − p′
+                                   ∥ρ∥pLp ≥                              e        τ      dτ       dt.
+                                        t,x
+                                                  0   t         t
+                          ´b     −1
+The function H(a, b) = a e−iτ τ p′ dτ converges as (a, b) → (0, ∞) to some non-zero complex
+number. Therefore, there exists δ, M and ε such that |H(a, b)| > ε for a < δ and b > M . Then,
+if R > M          M
+       δ and t ∈ [ R , δ], we have |H(t, tR)| > ε and therefore
+                                                ˆ δ
+                                      p       p     dt
+                                   ∥ρ∥Lp ≳ ε           ∼ log R.                           (23)
+                                        t,x      M t
+                                                                    R
+14                               PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+Next, we write
+                                                 ˆ Rˆ
+                                                                                            γa   −a(d−1)− pa′
+                 ∥|v|γ f0 (x, v)∥aLa Lb ≃                                 (v12 + (v ′ )2 ) 2 v1                 dv ′ dv1 .
+                                  v   x
+                                                 1         |v ′ |<v   1
+
+Using that on the support of the integral there holds (v ′ )2 ≤ v12 and γa − a(d − 1) − pa′ = −d we
+infer                                                 ˆ R
+                                                          dv1
+                             ∥|v|γ f0 (x, v)∥aLa Lb ≲         ∼ log R.                          (24)
+                                               v x
+                                                       1  v1
+                                                                  1                     1
+In view of (23) and (24), it must hold (log R) p ≲ (log R) a , which implies a ≤ p.
+   The above is valid for finite p. Assume p = ∞ and consider the same function. The right-hand
+                                   1
+side is still estimated by (log R) a , and for the left-hand side we now have:
+                                                        ˆ R
+                                                            dv1
+                                ∥ρ∥L∞ t,x
+                                          ≥ |ρ(0, 0)| =         = log R.
+                                                         1  v1
+                                                       1
+Therefore we must have log R ≲ (log R) a which forces a ≤ 1 and therefore a = 1.
+The condition p ≥ 2. It is a consequence of p′ ≤ a ≤ p.
+4.2. Sufficient conditions. We shall prove here the sufficient conditions in Theorem 1.2 for the
+inequality
+                                  ∥ρ∥Lpt,x ≲ ∥|v|γ f0 ∥Lav Lbx ,                            (25)
+to hold for all f0 with zero-mean in x. We start with a single mode estimate.
+Lemma 4.1 (Single mode estimate). Let 2 < p < ∞, p′ < a ≤ p, and γ = ad′ − p1 . Let k ∈ Zd \{0},
+                                                               √
+and let f (x, v) = fk (v)eik·x . Then there holds ρ(f )(t, x) = 2πρk (t)eik·x and
+                                                                      − p1
+                                      ∥ρk ∥Lp (Rt ) ≲ |k|                    ∥|v|γ fk ∥Lav (Rd ) .
+                   k
+Proof. Write ek = |k| . We have
+                                                 ˆ                                      √
+                      ρ(f )(t, x) = e     ik·x
+                                                       fk (v)e−itk·v dv =                   2πeik·x gbk (t|k|ek ),
+                                                  Rd
+
+so that ρk (t) = fbk (t|k|ek ). Therefore
+                                                                      − p1
+                                      ∥ρk ∥Lpt (R) ∼ |k|                     ∥fbk (tek )∥Lpt (R) .
+It is therefore enough to prove that for all smooth functions g : Rd → R there holds
+                              g (te)∥Lpt (R) ≲ ∥|v|γ g∥Lav (Rd )
+                             ∥b                                                             if e ∈ Sd−1 .
+By rotation invariance, assume e = (1, 0, . . . , 0). Our task is therefore reduced to proving that for
+any function g : Rd → R there holds
+                                           g (t, 0)∥Lpt (R) ≲ ∥|v|γ g∥Lav (Rd ) .
+                                          ∥b                                                                                 (26)
+By duality, (26) is implied by
+                                      ∥|w|−γ b
+                                             h(w1 )∥La′ (Rd ) ≲ ∥h∥Lp′ (R) .                                                 (27)
+                                                                             w
+
+Assume indeed that (27) holds. Since
+  ˆ                          ˆ ˆ                                    ˆ
+                        1           −itw1                     1
+     gb(t, 0)h(t)dt =      d      e       g(w)h(t) dw dt =      d−1   |w|γ g(w)|w|−γ b
+                                                                                     h(w1 ) dw,
+   R                  (2π) 2 R Rd                          (2π) 2 R
+the inequality (26) now follows from the Hölder inequality, (27) and the dual characterization of
+Lp (R).
+                              PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                                 15
+
+
+  Next, we write
+                                               ˆ                  ˆ
+                                    ′                         ′                              − γa′
+                ∥|w|−γ b
+                       h(w1 )∥aLa′ (Rd ) =            h(w1 )|a
+                                                     |b                   w12 + |w′ |2           2
+                                                                                                      dw′ dw1 ,
+                                                 R                 Rd−1
+                                                                     ′
+where w = (w1 , w′ ), w′ ∈ Rd−1 . Since a > p′ we deduce γa′ = d − ap > d − 1 and therefore for
+w1 ̸= 0 we have                 ˆ
+                                                       − γa′                            ′
+                                        w12 + |w′ |2       2
+                                                                dw′ ∼ |w1 |(d−1)−γa .
+                                  R
+We infer that
+                                       h(w1 )∥La′ (Rd ) ≲ ∥|z|−β b
+                                ∥|w|−γ b                         h(z)∥La′ (R) ,
+                                                           w
+
+where β = a1′ − p1 ∈ (0, 1]. We can use the Hölder–O’Neil inequality (29) to bound
+
+                  h(z)∥La′ (R) = ∥|z|−β b
+           ∥|z|−β b                     h(z)∥La′ ,a′ (R) ≲ ∥|z|−β ∥ 1 ,∞ ∥b
+                                                                          h∥Lp,a′ ≲ ∥b
+                                                                                     h∥Lp,a′ .
+                                                                                Lβ
+Because a′ ≥ p′ it follows that
+                                           h∥Lp,a′ ≲ ∥b
+                                          ∥b          h∥Lp,p′ ≲ ∥h∥Lp′ ,
+where the last inequality stems from an application of the real-interpolation version of the classical
+Hausdorff–Young inequality, see (31).                                                               □
+
+Proposition 4.2. Let p ∈ (2, 2(d+1)
+                                d
+                                                                              dp
+                                    ]. Then for γ = ad′ − p1 , a = 2 and b ≥ d+1 , the estimate (5)
+holds.
+Proof. Write
+                                X                                           √          X
+                f0 (x, v) =               fk (v)eik·x ,         ρ(t, x) =       2π               ρk (t)eik·x ,
+                              k∈Zd \{0}                                              k∈Zd \{0}
+
+with ρk (t) = fbk (tk). By virtue of the Sobolev embedding theorem Ḣ s (Rd ) ,→ Lp (Rd ), we can
+bound for any t ∈ R
+                                                                    1
+                                                                       2
+                                                    X
+                                                         2s        2           d d
+            ∥ρ(t)∥Lpx (Rd ) ≲ ∥ρ(t, ·)∥Ḣ s (Rd ≲    |k| |ρk (t)|      , s= − .
+                                                    d
+                                                                               2 p
+                                                          k∈Z \{0}
+
+  Since p > 2, an application of the Minkowski inequality followed by Lemma 4.1 applied with
+a = 2 and γ = ad′ − p1 yields
+                                     1                            1
+                                       2                              2
+                                                         2
+                                                     2s−                       s− 1
+              X                             X
+                         2s    2
+∥ρ∥Lpt,x ≲           |k| ∥ρk ∥Lp (R)  ≲                   γ   2
+                                                  |k| p ∥|v| fk ∥L2v  = ∥|Dx | p |v|γ f0 ∥L2x,v .
+             k∈Zd \{0}                                 k∈Zd \{0}
+                                               2(d+1)
+Observe that s − p1 = d2 − d+1
+                            p ≤ 0 whenever p ≤    d   , which is our assumption. Therefore, a
+                                                                      dp
+final application of the Sobolev embedding theorem gives for all b ≥ d+1 ,
+                                             ∥ρ∥Lpt,x ≲ ∥|v|γ f0 ∥L2v Lbx .                                           □
+
+Proof of Theorem 1.2 (ii). Assume that (p, a, b) satisfy
+                                                              
+                        ′                               dp                                                     dp
+         2 < p < ∞, p < a ≤ a∗ (p) := min 2,                     ,                           b ≥ b∗ (p) :=        .
+                                                  dp − (d + 1)                                                d+1
+The theorem follows from interpolation between the estimate:
+                                               ∥ρ∥L∞
+                                                   t,x
+                                                       ≲ ∥f0 ∥L1v L∞
+                                                                   x
+                                                                     ,
+16                                       PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+and the estimates from Proposition 4.2:
+                                                  d− 2q                                     2(d + 1)
+                                 ∥ρ∥Lqt,x ≲ ∥|v|          f0 ∥L2 Lb∗ (q) ,       2<q≤                .
+                                                                v   x                          d
+                                                                                                a′    a′
+In order to be precise, set θ = a2′ ∈ (0, 1). Take (p1 , a1 , b1 ) = ( 2p                 1
+                                                                       a′ , 2, b∗ (p1 )), p′1 = 2p′ − 2 + 1. We
+can check indeed that p1 ≤ 2(d+1)
+                               d    . Set (p0 , a0 , b0 ) = (∞, 1, ∞). It follows from Proposition B.1 (i)
+     1
+that:
+                                                   d− p2
+                         h                                          i
+                             L1 (dv; L∞
+                                      x ), L2
+                                                |v|           b (p )
+                                                       1 dv, L ∗ 1      = Laθ (|v|aθ γθ dv; Lbθ ),
+                                                                                θ
+so that the real interpolation theorem implies the bound
+                                                 ∥ρ∥Lpθ ≲ ∥|v|γθ f0 ∥Laθ Lbθ .
+                                                          t,x
+
+It remains to observe that p1θ = 1−θ  θ    1 1      1−θ  θ    1 1      1−θ    θ         1
+                                  ∞ + p1 = p , aθ = a0 + a1 = a , bθ = ∞ + b∗ (p1 ) = b∗ (p) and
+γθ = ad′ − p1 = γ.                                                                                             □
+Proposition 4.3. The estimate (5) holds for (p, a, b) in the following cases:
+    (i) if La is replaced with the Lorentz space La,r , r < a∗ (p);
+                dp
+   (ii) if b > d+1  and p′ < a < p;
+  (iii) if |v| is replaced with |v|γ hε (v), with hε (v) = (|v|−ε 1|v|<1 + |v|ε 1|v|>1 ).
+              γ
+
+
+Proof. In the following write γ(p, a) = ad′ − p1 .
+(i) We only have to consider the case a > a∗ (p). Start with r such that p′ < r ≤ a∗ (p) and write
+                                                ∥ρ∥Lpt,x ≲ ∥|v|γ(p,r) f0 ∥Lrv Lbx
+
+Since γ(p, a) − γ(p, r) = d 1r − a1 = ds for some s > 0, we have | · |−(γ(p,a)−γ(p,r)) ∈ Ls,∞ (Rd ). It
+                                   
+
+remains to apply the Hölder–O’Neil inequality (29) in order to obtain
+                                               ∥ρ∥Lpt,x ≲ ∥|v|γ(p,a) f0 ∥La,r
+                                                                          v Lx
+                                                                              b,
+
+
+which is the targeted estimate.
+(ii) Fix p′ < a < p and b > b∗ (p). Choose p0 < p < p1 sufficiently close to p such that b ≥ b∗ (pi )
+                                         dp
+which is possible because b > b∗ (p) = d+1  is a continuous increasing function of p. Let θ ∈ (0, 1)
+             1   1−θ    θ
+such that p = p0 + p1 . Observe now that it is possible to choose a0 and a1 in order to satisfy
+γ(pi , ai ) = γ. Since the pi can be chosen arbitrarily close to p, it follows that we can ensure
+p′i < ai < pi . Also, observe that we have 1−θ     θ    1
+                                            a0 + a1 = a .
+    The Lorentz substitute estimates from (i) that we use are the following bounds
+                                         La|v|i ,1γ (dv; Lbx ) −→ Lpt,x
+                                                                      i
+                                                                        ,           i ∈ {0, 1},
+so that the real interpolation theorem gives the continuity:
+                                                             
+                         La|v|0 ,1
+                                γ  (dv; Lb
+                                         x ), La1 ,1
+                                               |v|γ  (dv; Lb
+                                                           x )  −→ (Lpt,x
+                                                                        0
+                                                                          , Lpt,x
+                                                                                1
+                                                                                  )θ,a .
+                                                        θ,a
+                             p0     p1          p,a
+It remains to observe that (Lt,x , Lt,x )θ,a = Lt,x ,→ Lpt,x because a ≤ p, and
+                                                           
+                       La|v|0 ,1
+                              γ  (dv; Lb
+                                       x ), La1 ,1
+                                             |v|γ  (dv; Lb
+                                                         x )            = La,a        b      a    aγ    b
+                                                                           |v|γ (dv; Lx ) = L (|v| dv, Lx ),
+                                                                θ,a
+
+which stems from an application of Proposition B.1 (ii).
+     1Strictly speaking we are interpolating the zero-mean in x subspace of these spaces, which follows since the
+projection onto this subspace is continuous in both endpoint norms, see [Tri78, Theorem 1.17.1.1].
+                                     PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                                  17
+
+
+(iii) Assume a > a∗ (p) and take p′ < α < min{a, a∗ (p)}. One can therefore write α1 − a1 = 1s for
+some s > 0 and                                             
+                                                      1   1     d
+                              γ(p, a) − γ(p, α) = d     −     = .
+                                                      α a       s
+                                                                                                                          d
+Write |v|γ(p,α) f = mε (v)|v|γ(p,a) hε (v)f where mε (v) = |v|γ(p,α)−γ(p,a) hε (v)−1 = |v|− s hε (v)−1 . For
+                                         d                                                    d
+|v| ≪ 1 there holds |mε (v)| ≲ |v|− s +ε , and for |v| ≫ 1 there holds |mε (v)| ≲ |v|− s −ε , so that
+mε ∈ Ls (Rd ).
+   It remains to use the strong bound with (p, α) to bound
+        ∥ρ∥Lpt,x ≲ ∥|v|γ(p,α) f ∥Lαv Lbx ≲ ∥mε ∥Lsv ∥|v|γ(p,a) hε (v)f ∥Lav Lbx ≲ ∥|v|γ(p,a) hε (v)f ∥Lav Lbx ,
+where we have used the Hölder inequality.                                                                                     □
+
+                                  5. The Kakeya problem on the cylinder
+  This section is devoted to the proof of Theorem 1.4.
+
+5.1. Proof of the inequality. Write
+                                                                                  
+                             d+1              R
+             Tk = (t, x) ∈ R     : |t − tk | ≤ , distTd (x, xk + (t − tk )vk ) ≤ δ
+                                              2
+                   S
+and T = {Tk }k∈K = j∈Z Tj , for the collection of tubes, where
+                                    Tj = {T = T (tk , xk ) ∈ T : tk ∈ jR + [0, R))}.
+Fix some j ∈ Z and reference the associated tubes with indices k ∈ {1, . . . , Nj }. Note that
+                   R d
+P                   
+  j∈Z Nj = #T ≲ δ      , in view of the separation condition.
+                                        ′
+  Arguing by duality, we choose g ∈ Lp (R × Td ), g ≥ 0 and start writing
+           ˆ                                     Nj ˆ                  Nj ˆ
+                              
+                 Nj
+                 X                              X                      X
+ Zj (g) :=          1Tk (t, x) g(t, x) dx dt =
+                                                      g(t, x) dx dt ≲          Xg(x, vk ) dx,
+             R×Td       k=1                                              k=1    Tk                    k=1      B(xk ,δ)
+
+where we have used the definition of the X-ray transform. The X-ray transform and the operator
+X̃ are comparable because we take |v| ∼ 1. After translating the tubes so that they intersect
+[−R, R] in t, and therefore are all supported in [−2R, 2R] in t. We can replace X(x, vk ) with
+their averages of X(x, v) for v in a small ball:2
+                Nj ˆ
+            d X
+            R
+  Zj (g) ≲                              [Xg](x,
+                                         e      v) dx dv
+            δ       B(xk ,δ)×B(vk , δ )
+                       k=1                       R
+
+                Nj ˆ
+            d X                                            Nj ˆ
+                                                         d X
+            R                                            R
+         =                              [Π0 Xg] dx dv +
+                                            e                                             e dx dv
+                                                                                     [Π̸= Xg]
+            δ       B(xk ,δ)×B(vk , δ )                  δ       B(xk ,δ)×B(vk , δ )
+                       k=1                       R                                        k=1                      R
+
+         =: Ij + IIj .
+It remains to estimate each of the two terms Ij , IIj on the right-hand side.
+   We first notice that
+                         ˆ
+                     1
+   [Π0 Xg](x, v) =
+       e                   g(t, x + tv) dt dx ≲ ∥g∥L1 (Rd+1 )    for all (x, v) ∈ Td × Rd , |v| ∼ 1.
+                   (2π)d
+
+  2This is because ´              g(t, x + tvk ) dx ≲
+                                                        ´                                                  δ
+                                                                        g(t, x + tvk ) dx for v ∈ B vk , c R
+                                                                                                               
+                       B(xi ,δ)                             B(xi ,Cδ)
+18                            PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+Therefore,
+                               d           Nj                     
+                               R             [                     δ
+                      |Ij | ≲      ∥Π0 Xg∥L∞
+                                       e        B(xk , δ) × B vk ,
+                               δ                                   R
+                                                          k=1
+                             d         d
+                             R        d  δ
+                          ≲      Nj δ        ∥Π0 Xg∥
+                                                 e L∞
+                                                     x,v
+                             δ           R
+                                                               1
+                          ≲ Nj δ d ∥g∥L1t,x ≲ Nj δ d R p ∥g∥Lp′ ,
+                                                                         t,x
+
+
+where the last inequality is a consequence of Hölder’s inequality.
+  We turn to the term IIj that involves Π̸= . By Hölder’s inequality in x we have:
+                                    d ˆ
+                                    R     d
+                          |IIj | ≲      δ b SN             ∥Π̸= Xg∥
+                                                                e
+                                                                    Lbx′ dv.
+                                    δ          j        δ
+                                              k=1 B(vk , )           R
+
+Now, summing in j the above, we obtain the bound:
+ˆ                  !                                      d ˆ
+       X                            X          1          R   d
+         1Tk (t, x) g(t, x) dx dt ≲   Nj δ d R p ∥g∥Lp′ +    δb S                 ∥Π̸= Xg∥
+                                                                                       e
+                                                                                           Lbx′ dv.
+ R×Td                                                t,x  δ           B(v k , δ
+                                                                                )
+        k∈K                              j∈Z                      k∈K                     R
+
+
+Remark that
+                                                     d
+                                 [           δ         δ
+                                      B vk ,     ≤ #T      ≲ 1.
+                                             R         R
+                                k∈K
+
+It then follows by Hölder’s inequality in v, and also noting that |v| ∼ 1 in the integration region,
+that:
+       ˆ                     !                                   d
+                X                               d+ p1            R     d
+                   1Tk (t, x) g(t, x) dx dt ≲ R       ∥g∥Lp′ +       δ b ∥Π̸= ⟨v⟩−γ Xg∥
+                                                                                    e
+                                                                                        La′ b′
+                                                          t,x    δ                       v Lx
+         R×Td k∈K
+
+                                                 d+ 1
+                                                             d
+                                                                 
+                                            ≲ R p + Rd δ b −d ∥g∥Lp′ ,
+                                                                                    t,x
+
+
+where the last step stems from an application of the dual estimate of Theorems 1.1 and 1.2.
+                                     dp
+The result follows by choosing b = d+1   , which, for fixed p, is always possible for some a by
+Theorems 1.1 and 1.2, see also Figure 1.
+
+5.2. Optimality of the inequality. Consider first the bush example: a maximal family of tubes
+{Tk }k∈K which are Rδ -separated in direction and intersect at one point. Such a maximal family
+         d                                              d
+has ∼ Rδ elements, and thus k∈K 1Tk has size ∼ Rδ on a ball of radius ∼ δ. Therefore,
+                                P
+
+                                                    d
+                             X                      R    d+1      d+1
+                                                                      −d
+                                   1Tk           ≳      δ p = Rd δ p     .
+                                                    δ
+                             k∈K         Lpt,x
+
+  Furthermore, assuming that all tubes are contained in [−CR, CR] × Td , we consider a maximal
+subfamily of Rδ separated tubes. On the one hand, by maximality,
+
+                                    X                     X
+                                         1Tk          =            |Tk | ∼ Rd+1 .
+                                   k∈K           L1        k
+                                PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                           19
+
+
+On the other hand, by Hölder’s inequality, because such a family is included in [−CR, CR] × Td
+which has measure ∼ R, we have
+                                                                   1− p1
+                                     X                                     X
+                                           1Tk         ≲R                        1Tk          .
+                                     k∈K          L1                         k           Lp
+Combining these two inequalities gives
+                                                                             d+ p1
+                                             X
+                                                    1Tk                 ≳R           .
+                                             k∈K                   Lp
+Note that in contrast, in the Euclidean case such a maximal family can occupy a volume ∼ Rd+1
+compared with R in the torus case.
+
+                                    Appendix A. Lorentz spaces
+   We gather here a few results on Lorentz spaces which are used in the proofs, referring to
+[BL76, Vis20] for complete presentations. We omit the underlying measure space which is
+unimportant; for us, it will be the Euclidean torus.
+   The Lorentz spaces Lp,q , 1 ≤ p, q ≤ ∞, are Banach spaces which can be obtained by interpola-
+tion [BL76, Theorem 5.3.1] between L1 and L∞ :
+                                                       1
+                                Lp,q = (L1 , L∞ )θ,q ,   = 1 − θ.                           (28)
+                                                       p
+The norm on Lp,q is equivalent to the quasi-norm
+             ∥f ∥∗Lp,q = ∥fn (x)∥Lpx (Rd )                 ,                  fn (x) = f (x)12n <f (x)<2n+1 .
+                                                 ℓqn (Z)
+It follows from this expression that
+                       ∥f ∥Lp,p ∼ ∥f ∥Lp ,          ∥f ∥Lp,q1 ≲ ∥f ∥Lp,q2                         if q1 ≥ q2 .
+The Hölder inequality was generalized to the scale of Lorentz spaces by Hunt [Hun66], see also
+[O’N63] and [Gra11, p. 73]. It states that
+
+                                       ∥f g∥Lr,s ≲ ∥f ∥Lp,s1 ∥g∥Lq,s2 ,                                          (29)
+whenever
+             1     1 1          1     1     1
+               = + ,              =      + ,        0 < s1 , s2 ≤ ∞,     0 ≤ p, q, r ≤ ∞.
+             r     p q          s    s1 s2
+   The Young inequalities were generalized by O’ Neil [O’N63], see also [Gra11, p. 73], under the
+form
+                                    ∥f ∗ g∥Lr,s ≲ ∥f ∥Lp,s1 ∥g∥Lq,s2 ,                       (30)
+whenever
+               1     1 1          1     1     1
+            1+ = + ,                 =     + ,          1 < p, q, r ≤ ∞,   0 < s1 , s2 ≤ ∞.
+               r     p q          s     s1 s2
+   Finally, we will also resort to the following sharp version of the Hausdorff–Young inequality
+                                  ∥fb∥ p,p′ ≲ ∥f ∥ p′ ,
+                                       L                    p ∈ [2, ∞).
+                                                               L                             (31)
+Indeed, the Fourier transform F enjoys the following mapping properties
+                                     F : L2 → L2 ,                      F : L1 → L∞ .
+Interpolation via the real method (·, ·)θ,p′ with θ = p2 and for p ∈ (2, ∞) yields the boundedness
+         ′     ′   ′        ′
+of F : Lp = Lp ,p → Lp,p , which is the claimed inequality.
+20                              PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+                               Appendix B. Interpolation facts
+  Let X be a Banach space, and dv the Lebesgue measure on Td , and w : Td → [0, ∞), which is
+positive almost everywhere. We recall that an equivalent norm on La,r (wa dv, X) is given by
+                                                            1
+           ∥f ∥La,r (wa dv,X) = tν ({v : ∥f (v)∥X > t}) a                       ,    dν = w(v)a dv.
+                                                                Lr (R+ , dt
+                                                                          t
+                                                                            )
+
+This norm is in general not equivalent to the norm
+                                    ∥f ∥La,r
+                                         w (dv;X)
+                                                  = ∥wf ∥La,r (dv;X) .
+In the following, we denote by La,r
+                                  w (dv; X) the space obtained by completion under this norm
+and after identifying functions by equality almost everywhere.
+  Observe that when r = a there holds
+                                     La,a          a  a
+                                      w (dv; X) = L (w dv; X).
+
+Let us recall interpolation notations. Let (A0 , A1 ) be a compatible couple of Banach spaces, i.e.,
+two Banach spaces continuously embedded in a common space.
+The real method. For a ∈ A0 + A1 and t > 0, the K-functional is defined by
+                K(t, a; A0 , A1 ) := inf {∥a0 ∥A0 + t∥a1 ∥A1 , a = a0 + a1 ∈ A0 + A1 } ,
+For 0 < θ < 1 and 1 ≤ q ≤ ∞, the real interpolation space (A0 , A1 )θ,q consists of all a ∈ A0 + A1
+such that
+                        ∥a∥(A0 ,A1 )θ,q := t−θ K(t, a; A0 , A1 ) q     dt
+                                                                        L ((0,∞), t )
+is finite, with the usual modification when q = ∞.
+The complex method. Consider the strip S = {z ∈ C : 0 ≤ Re z ≤ 1}. The Calderón space
+F(A0 , A1 ) consists of all functions f : C → A0 + A1 which are analytic on S, continuous on S,
+and such that the following subsets are bounded:
+               {f (z), z ∈ S} ⊂ A0 + A1 ,         {f (j + it) : t ∈ R} ⊂ Aj ,           j ∈ {0, 1}.
+It is endowed with the norm
+                               ∥f ∥F (A0 ,A1 ) := max sup ∥f (j + it)∥Aj .
+                                                 j∈{0,1} t∈R
+
+For 0 < θ < 1, the complex interpolation space [A0 , A1 ]θ consists of all elements a ∈ A0 + A1 for
+which there exists f ∈ F(A0 , A1 ) satisfying f (θ) = a, with norm
+                     ∥a∥[A0 ,A1 ]θ := inf{∥f ∥F (A0 ,A1 ) , f ∈ F(A0 , A1 ), f (θ) = a}.
+
+The interpolation theorems. Consider a linear operator T : A0 +A1 → B0 +B1 , where (A0 , A1 ) and
+(B0 , B1 ) are compatible couples. Assume also that T : Aj → Bj is continuous for all j ∈ {0, 1},
+then it follows [BL76, Theorem 3.1.2, Theorem 4.1.2] that T : (A0 , A1 )θ,r → (B0 , B1 )θ,r is
+continuous for all θ ∈ (0, 1) and r ∈ [1, ∞], and also continuous as a map [A0 , A1 ]θ → [B0 , B1 ]θ .
+  Our goal is to prove the following interpolation facts that are used in this article. These are
+not new results, but they are not easily found in the literature.
+Proposition B.1. The following interpolation embeddings hold:
+   (i) Let a0 , a1 ∈ [1, ∞) such that a0 ̸= a1 , and 1 ≤ b0 , b1 ≤ ∞. Let w0 , w1 : T → [0, ∞) be two
+       measurable functions, taking positive values almost everywhere. Define for θ ∈ (0, 1):
+                                                                                    (1−θ)aθ    θaθ
+                 1    1−θ  θ               1    1−θ  θ                                 a0       a1
+                    =     + ,                 =     + ,                 wθ = w0               w1     .
+                 aθ    a0  a1              bθ    b0  b1
+                                PERIODIC LIOUVILLE STRICHARTZ ESTIMATES                                  21
+
+
+         Then,
+                         [La0 (w0 dv; Lb0 ), La1 (w1 dv; Lb1 )]θ = Laθ (wθ dv; Lbθ ).
+   (ii) Let a0 , a1 ∈ [1, ∞) such that a0 ̸= a1 . Let θ ∈ (0, 1), and 1 ≤ r ≤ ∞. Define aθ such that
+         1     1−θ     θ
+        aθ = a0 + a1 . Let (X, ∥ · ∥X ) be a Banach space. Let w : T → [0, ∞) taking positive
+        values almost everywhere. Then
+                              Law0 ,1 (dv; X), Law1 ,1 (dv; X) θ,r = Lawθ ,r (dv; X).
+                                                              
+
+Proof. (i) Our starting point is the following interpolation result [BL76, Theorem 5.1.2]:
+                           [La0 (dv, A0 ), La1 (dv, A1 )]θ = Laθ (dv, [A0 , A1 ]θ ),
+for Banach spaces A0 and A1 , for which we take Ai = Lbi in our case. Then we conclude as in
+[BL76, Theorem 5.5.3] by observing that the map
+                 S : F (La0 (dv; A0 ), La1 (dv; A1 )) −→ F(La0 (dv; A0 ), La1 (dv; A1 ))
+                          1−z     z
+                           a     a
+defined by Sf (z) = w0 0 w1 1 f (z), where F(X, Y ) denotes the Calderón class defined in the
+complex interpolation method is an isometric isomorphism.
+  (ii) Since the multiplication operator by w induces an isometric isomorphism Lawi ,1 (dv; X) →
+Lai ,1 (dv; X), it follows that
+             K t, f ; Law0 ,1 (dv; X), Law1 ,1 (dv; X) = K t, wf ; La0 ,1 (dv, X), La1 ,1 (dv; X) ,
+                                                                                                
+
+so that our task boils down to showing the interpolation property
+                          La0 ,1 (dv; X), La1 ,1 (dv; X) θ,r = Laθ ,r (dv; X).
+                                                        
+                                                                                                       (32)
+For any function f = f (v, x), write F (v) = ∥f (v)∥X . We claim that there holds:
+                     K(t, f ; La0 ,1 (dv; X), La1 ,1 (dv; X)) = K(t, F ; La0 ,1 , La1 ,1 ),            (33)
+where the spaces La0 ,1 are the Lorentz spaces on Td endowed with the Lebesgue measure. Once
+this claim is proved, then (32) follows from (33) and (La0 ,1 , La1 ,1 )θ,r = La,r , whose proof follows
+from the reiteration theorem and (28).
+   In order to prove (33), start with f = f0 + f1 , and write the associated F as F = G1 + G2 with
+              (v)Fi (v)
+Gi (v) = FF0 (v)+F  1 (v)
+                          where Fi (v) = ∥fi (v)∥X . The triangle inequality implies F (v) ≤ F0 (v) + F1 (v)
+and therefore 0 ≤ Gi (v) ≤ Fi (v). Now, remark that {v : Gi (v) > t} ⊂ {v : Fi (v) > t} so that
+                                  ∥Gi ∥Lai ,1 ≤ ∥Fi ∥Lai ,1 = ∥fi ∥Lai ,1 (dv;X) ,
+which is enough to imply
+                      K(t, F, La0 ,1 , La1 ,1 ) ≤ K(t, f, La0 ,1 (dv; X), La1 ,1 (dv; X)).
+It remains to prove the reverse inequality. To this end, consider a decomposition F = F0 + F1
+and define fi (v) = FFi(v) (v)
+                                f (v) where we recall that F (v) = ∥f (v)∥X . Then f = f0 + f1 and
+∥fi ∥Lai ,1 (dv;X) = ∥Fi ∥Lai ,1 (dv) which is enough to conclude.                               □
+
+                                                 References
+[BD15]  Jean Bourgain and Ciprian Demeter. The proof of the ℓ2 decoupling conjecture. Annals of mathematics,
+        pages 351–389, 2015.
+[Bed22] Jacob Bedrossian. A brief introduction to the mathematics of Landau damping. arXiv preprint
+        arXiv:2211.13707, 2022.
+[BL76]  Jöran Bergh and Jörgen Löfström. Interpolation spaces. An introduction. Grundlehren der Mathematis-
+        chen Wissenschaften, No. 223. Springer-Verlag, Berlin-New York, 1976.
+[BMM16] Jacob Bedrossian, Nader Masmoudi, and Clément Mouhot. Landau damping: paraproducts and Gevrey
+        regularity. Annals of PDE, 2(1):4, 2016.
+22                                PIERRE GERMAIN & MICKAËL LATOCCA
+
+
+[Bou93]  Jean Bourgain. Fourier transform restriction phenomena for certain lattice subsets and applications to
+         nonlinear evolution equations. Geometric and Functional Analysis, 3(2):107–156, 1993.
+[Chr84]  Michael Christ. Estimates for the k-plane transform. Indiana University Mathematics Journal, 33(6):891–
+         910, 1984.
+[Cor77]  Antonio Cordoba. The Kakeya maximal function and the spherical summation multipliers. American
+         Journal of Mathematics, 99(1):1–22, 1977.
+[CP96]   François Castella and Benoît Perthame. Estimations de Strichartz pour les équations de transport
+         cinétique. Comptes Rendus Mathématique, 322:535–540, 1996.
+[Dru83] Stephen W. Drury. Lp estimates for the X-ray transform. Illinois Journal of Mathematics, 27(1):125–129,
+         1983.
+[GLPS88] François Golse, Pierre-Louis Lions, Benoît Perthame, and Rémi Sentis. Regularity of the moments of
+         the solution of a transport equation. Journal of functional analysis, 76(1):110–125, 1988.
+[GP07]   Zihua Guo and Likun Peng. Endpoint Strichartz estimate for the kinetic transport equation in one
+         dimension. Comptes Rendus Mathématique, 345(5):253–256, 2007.
+[Gra11]  Loukas Grafakos. Classical Fourier Analysis (2nd ed.). Graduate Texts in Mathematics. Springer New
+         York, 2011.
+[GSR02] François Golse and Laure Saint-Raymond. Velocity averaging in L1 for the transport equation. Comptes
+         Rendus Mathematique, 334(7):557–562, 2002.
+[Hör73]  Lars Hörmander. Oscillatory integrals and multipliers on F Lp . Arkiv för Matematik, 11(1):1–11, 1973.
+[Hun66] Richard A Hunt. On l(p, q) spaces. L’Enseignement Mathematique, 12:249–274, 1966.
+[KT98]   Marcus Keel and Terence Tao. Endpoint Strichartz estimates. American Journal of Mathematics,
+         120:955–980, 1998.
+[ŁT01]   Izabella Łaba and Terence Tao. An X-ray transform estimate in Rn . Revista matemática iberoamericana,
+         17(2):375–408, 2001.
+[Mat15] Pertti Mattila. Fourier analysis and Hausdorff dimension, volume 150. Cambridge University Press,
+         2015.
+[MV11]   Clément Mouhot and Cédric Villani. On Landau damping. Acta Mathematica, 207:29–201, 2011.
+[Obe10] Richard Oberlin. Two bounds for the X-ray transform. Mathematische Zeitschrift, 266(3), 2010.
+[O’N63] Richard O’Neil. Convolution operators and l(p, q) spaces. Duke Mathematical Journal, 30, 1963.
+[OS82]   Daniel M. Oberlin and Elias M. Stein. Mapping properties of the Radon transform. Indiana University
+         Mathematics Journal, 31(5):641–650, 1982.
+[Per02]  Benoît Perthame. Kinetic formulation of conservation laws, volume 21. Oxford University Press, 2002.
+[Per04]  Benoît Perthame. Mathematical tools for kinetic equations. Bulletin of the American Mathematical
+         Society, 41(2):205–244, 2004.
+[Sab14]  Julien Sabin. The Hartree equation for infinite quantum systems. Journées équations aux dérivées
+         partielles, pages 1–18, 2014.
+[Sal07]  Delphine Salort. Dispersion and Strichartz estimates for the Liouville equation. Journal of Differential
+         Equations, 233(2):543–584, 2007.
+[Str77]  Robert Strichartz. Restrictions of Fourier transforms to quadratic surfaces and decay of solutions of
+         wave equations. Duke Mathematical Journal, 44:705–714, 1977.
+[Tao20]  Terence Tao. 247b, notes 1: Restriction theory. Lecture notes, 2020.
+[Tri78]  Hans Triebel. Interpolation Theory, Function Spaces, Differential Operators. Mathematical Library, Vol
+         18. North-Holland, Amsterdam, 1978.
+[Vis20]  Monica Visan. Math 247a lecture notes: Classical Fourier analysis. Lecture notes, scribed by Daniel
+         Raban, 2020.
+[Wol98] Thomas H. Wolff. A mixed norm estimate for the X-ray transform. Revista Matemática Iberoamericana,
+         14(3):561–600, 1998.
+
+     Fakultät für Mathematik, Oskar-Morgenstern-Platz 1, 1090 Wien, Austria
+     Email address, P. Germain: pierre.germain@univie.ac.at
+
+  Laboratoire de Mathématiques et de Modélisation d’Évry (LaMME), Université d’Évry Paris-
+Saclay, 23 Bd François Mitterrand, 91000 Évry-Courcouronnes, France
+  Email address, M. Latocca: mickael.latocca@univ-evry.fr
+

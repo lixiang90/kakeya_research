@@ -1,0 +1,2068 @@
+                                                        New Kakeya estimates using Gromov’s algebraic lemma
+                                                                                               Joshua Zahl∗
+
+                                                                                            January 13, 2021
+arXiv:1908.05314v4 [math.CA] 12 Jan 2021
+
+
+
+
+                                                                                                 Abstract
+                                                     This paper presents several new results related to the Kakeya problem. First, we establish a
+                                                     geometric inequality which says that collections of direction-separated tubes (thin neighborhoods
+                                                     of line segments that point in diﬀerent directions) cannot cluster inside thin neighborhoods
+                                                     of low degree algebraic varieties. We use this geometric inequality to obtain a new family
+                                                     of multilinear Kakeya estimates for direction-separated tubes. Using the linear / multilinear
+                                                     theory of Bourgain and Guth, these multilinear Kakeya estimates are converted into Kakeya
+                                                     maximal function estimates.√ Speciﬁcally, we obtain a Kakeya maximal function estimate in R
+                                                                                                                                                     n
+
+                                                     at dimension d(n) = (2 − 2)n + c(n) for some c(n) > 0. Our bounds are new in all dimensions
+                                                     except n = 2, 3, 4, and 6.
+
+                                                   Keywords          Besicovitch set, Kakeya problem, real algebraic geometry
+
+
+                                           1        Introduction
+                                           A set T ⊂ Rn is called a λ × δ tube if it is a translated and rotated copy of the set
+                                                                              q
+                                                                      x ∈ Rn : x21 + . . . + x2n−1 < δ, 0 < xn < λ .
+                                                                     
+
+
+                                           Every λ× δ tube has a unique coaxial line, and we say that the angle between two tubes is the angle
+                                           between their coaxial lines. We say a set of λ × δ tubes is direction-separated if the angle between
+                                           each pair of tubes is at least δ. In this paper we will be interested in the Kakeya maximal function
+                                           conjecture, which is a quantitative bound on the overlap between direction-separated tubes.
+
+                                           Conjecture 1.1 (Kakeya maximal function conjecture). Let 1 ≤ d ≤ n and let ε > 0. Then there
+                                           is a constant C(n, d, ε) so that whenever T is a set of direction-separated 1 × δ tubes in Rn , we have
+                                                                           X                            1  n −1+ε  X  d−1
+                                                                                                             d              d
+                                                                                  χT       ≤ C(n, d, ε)                |T |   .                          (1.1)
+                                                                                        d
+                                                                                       d−1
+                                                                                                         δ
+                                                                           T ∈T                                    T ∈T
+
+                                               If Conjecture 1.1 is true for a particular value of d and n, this is called a Kakeya maximal
+                                           function estimate in Rn at dimension d. A Kakeya maximal function estimate in Rn at dimension
+                                           d implies that every Besicovitch set in Rn has Hausdorﬀ dimension at least d. Further background
+                                           on the Kakeya conjecture can be found in the survey articles [18, 25].
+                                               Conjecture 1.1 was solved in dimension 2 by Córdoba [8], and remains open in dimension three
+                                           and higher. In 2005, Bennett, Carbery, and Tao [2] considered the following multilinear variant of
+                                           the Kakeya maximal function conjecture.
+                                               ∗
+                                                   University of British Columbia, Vancouver BC, supported by an NSERC Discovery grant, jzahl@math.ubc.ca.
+
+
+                                                                                                     1
+Theorem 1.2 (Multilinear Kakeya theorem). Let 2 ≤ k ≤ n. Then there is a constant C(n) so
+that whenever T1 , . . . , Tk are sets of 1 × δ tubes in Rn , we have
+
+         X                 X                                       1                         k  X
+                                                                                     1  n −1 Y          1
+                                                                     k                    k                k
+                     ...            χT1 · · · χTk |v1 ∧ . . . ∧ vk |          ≤ C(n)                 |Ti |   ,     (1.2)
+                                                                           k
+                                                                          k−1
+                                                                                      δ
+            T1 ∈T1         Tk ∈Tk                                                             i=1   Ti ∈Ti
+
+where in the above expression vi = v(Ti ) is the direction of the tube Ti .
+
+    Theorem 1.2 was proved up to endpoint by Bennett, Carbery, and Tao in [2] and the endpoint
+estimate was established by Guth in [9]. The version stated here can be found in [7]. Theorem
+1.2 can be combined with an induction-on-scales argument to prove bounds on the Kakeya max-
+imal function. This is discussed further in Lemma 1.4 below. Unfortunately, this strategy is not
+particularly eﬀective—the resulting estimates are worse than those coming from other methods,
+such as Wolﬀ’s hairbrush argument [24]. What’s more, Theorem 1.2 is sharp, so this suggests that
+the strategy of combining induction-on-scales with k-linear Kakeya estimates will not lead to new
+bounds on the Kakeya maximal function.
+    However, the Kakeya maximal function conjecture is a statement about direction-separated
+tubes, while Theorem 1.2 does not impose this restriction. Thus while Theorem 1.2 is sharp,
+stronger estimates are possible if we impose the additional requirement that the tubes are direction-
+separated.
+
+Theorem 1.3 (Direction-separated multilinear Kakeya). Let 2 ≤ k ≤ n and let ε > 0. Then there
+is a constant C(n, ε) so that whenever T is a set of direction-separated 1 × δ tubes in Rn , we have
+               X                                           k
+                                                                 1                 1  n −1+ε  X  n(d−1)
+                                                                  k                      d              (n−1)d
+                            χT1 · · · χTk |v1 ∧ . . . ∧ vk | d            ≤ C(n, ε)                |T |        ,   (1.3)
+                                                                       d
+                                                                      d−1
+                                                                                     δ
+            T1 ,...,Tk ∈T                                                                       T ∈T
+
+where
+                                                                 n2 + k 2 + n − k
+                                                        d=                        .                                (1.4)
+                                                                        2n
+    Note that when k < n, the value of d from (1.4) is larger than k. Theorem 1.3 generalizes
+a previous result of Guth and the author [13], which proved1 Theorem 1.3 in the special case
+d = 3, n = 4. The techniques in [13] naturally extend to the case k = n−1, and they can also be used
+to prove weaker variants of Theorem 1.3 for general n and k (Hickman and Rogers [15] employed
+a similar strategy to prove certain k-broad estimates in Rn ). However, several additional ideas are
+needed when k < n − 1. Chief among these is a new hierarchical “grains” decomposition, which
+is constructed in Section 3, and a new geometric inequality that controls how tubes can interact
+with this grains decomposition; this geometric inequality will be discussed further in Section 1.1.
+We will prove Theorem 1.3 in Section 4.
+    When k = n − 1 then d = n − 1 + 1/n, and Theorem 1.3 is sharp. This can be seen by taking
+T to be a set of δ2−n direction-separated tubes that are contained in a rectangular prism in Rn of
+dimensions δ × 1 × . . . × 1. However, if Conjecture 1.1 is true for a particular value of n and d, with
+2 ≤ d ≤ n, then this immediately implies that a slightly weaker variant of (1.3) is also true for this
+value of n and d, where the exponent n(d − 1)/(n − 1)d is replaced by (d − 1)/d. The next lemma
+partially reverses this implication; it says that under certain restrictions, bounds of the form (1.3)
+imply bounds on the Kakeya maximal function.
+   1
+     The chronology is actually a bit more complicated; [13] proved a result that was conditional on a certain conjecture
+about tubes. The author [27], and independently, Katz and Rogers [17] later provided this conjecture.
+
+
+                                                                      2
+Lemma 1.4 (Multilinear to linear Kakeya). Let 2 ≤ k ≤ n and let d ≤ n − k + 2. Suppose that
+for each ε > 0, there is a constant C(n, ε) so that the inequality
+                  X                                              k
+                                                                      1                 1  n −1+ε  X      d−1
+                                                                       k                      d                 d
+                               χT1 · · · χTk |v1 ∧ . . . ∧ vk |   d            ≤ C(n, ε)                 |T |
+                                                                            d
+                                                                           d−1
+                                                                                          δ
+               T1 ,...,Tk ∈T                                                                         T ∈T
+
+holds for all sets T of direction-separated 1 × δ tubes.
+    Then for each ε > 0, there is a constant C ′ (n, ε) so that the inequality
+                                      X                          1  n −1+ε  X      d−1
+                                                           ′          d                 d
+                                            χT        ≤ C (n, ε)                 |T |                                (1.5)
+                                                   d
+                                                  d−1
+                                                                  δ
+                                     T ∈T                                            T ∈T
+
+holds for all sets T of direction-separated 1 × δ tubes.
+
+   Lemma 1.4 is standard. A variant of the lemma was proved by Bourgain and Guth [5] in the
+context of the restriction problem, and a version similar to the one stated here can be found in [15].
+Combining Theorem 1.3 and Lemma 1.4, we obtain the following bounds on the Kakeya maximal
+function.
+
+Theorem 1.5. For each integer n ≥ 2, a Kakeya maximal function estimate in Rn holds at
+dimension                                     n2 + k 2 + n − k 
+                     d(n) = max min n − k + 2,                   .               (1.6)
+                            2≤k≤n                     2n
+    Note that the minimum in (1.6) occurs when k is the ﬂoor or ceiling of
+                                                                  √
+                                                   √
+                    r
+                         2
+                                 1                            1+ 2
+                      2n + 2n + − n + 1/2 = ( 2 − 1)n +              + O(1/n).
+                                 4                               2
+                           √
+In particular, d(n) ≥ (2 − 2)n. The Kakeya maximal function estimate from Theorem 1.5 is new
+in all dimensions except n = 2, 3, 4, 6. It also implies new bounds on the Hausdorﬀ dimension of
+Kakeya sets in Rn for certain (but not all) values of n. The table below shows the current best
+known bounds for d(n)
+
+                        n         d(n)                                        n    d(n)
+                        2           2            Córdoba [8]                 6       4     Wolﬀ [24]
+                        3       2.5 + ε0         Katz-Zahl [19, 20]           7    4.857    Theorem 1.5
+                        4        3.059           Katz-Zahl [20]               8     5.25    Theorem 1.5
+                                                                              ..      ..        ..
+                        5          3.6           Theorem 1.5                   .       .         .
+
+In high dimensions, the previous best-known bound on the Kakeya maximal function was d(n) =
+(4n + 3)/7, due to Katz and Tao [18]. In certain intermediate dimensions 5 ≤ n ≤ 100 the previous
+best-known bound was due to Hickman and Rogers [15].
+
+Remark 1.6. Recently, the author became aware that Hickman, Rogers, and Zhang have concur-
+rently and independently proved Theorem 1.5. They did this by proving a nearly identical version
+of Theorem 1.9 (stated below), using similar arguments. Instead of proving Theorem 1.3, they
+established what is known as a k-broad estimate. While k-broad estimates are slightly weaker
+than the corresponding k-linear estimates, they are nonetheless suﬃcient to use (a variant of) the
+multilinear to linear Kakeya argument from Lemma 1.4.
+
+
+                                                                       3
+1.1    Tubes inside thickened algebraic varieties
+An important new ingredient used in the proof of Theorem 1.3 is a new geometric inequality
+that bounds the number of direction-separated tubes that can cluster near a nested sequence of
+low-degree varieties. We will discuss this further below.
+   A set S ⊂ Rn is called semi-algebraic if it can be written as a ﬁnite union of sets of the form
+
+                  {x ∈ Rn : P1 (x) > 0, . . . , Pk (x) > 0, Pk+1 (x) = 0, . . . , Pk+ℓ (x) = 0},
+
+where P1 , . . . , Pk+ℓ are polynomials. A union of such sets is called a presentation of S. The com-
+plexity of a presentation is the sum of the degrees of the polynomials involved (with multiplicities).
+The complexity of a semi-algebraic set S is the minimum complexity of its presentations.
+    In [17], Katz and Rogers resolved a conjecture of Guth [11] and Guth-Zahl [13] concerning the
+number of direction-separated tubes that can have large intersection with a semi-algebraic set.
+Theorem 1.7 (Direction-separated tubes obey the polynomial Wolﬀ axioms). Let n and E be
+integers, with n ≥ 2, and let ε > 0. Then there is a constant C(n, E, ε) so that for every semi-
+algebraic set S ⊂ Rn of complexity at most E and for every set T of direction-separated 1 × δ tubes,
+we have
+                       #{T ∈ T : |T ∩ S| ≥ r|T |} ≤ C(n, E, ε)|S|δ1−n−ε r −n .                 (1.7)
+   A particularly interesting example occurs when S is a thin neighborhood of an algebraic variety
+and r is comparable to the diameter of S.
+Corollary 1.8. Let n, d, and E be integers with 1 ≤ d < n, and let ε > 0. Then there is a
+constant C(n, E, ε) > 0 so that for every algebraic variety Z ⊂ Rn of codimension d that is deﬁned
+by polynomials of degree at most E, for every set T of direction-separated 1 × δ tubes, and for every
+x ∈ Rn , we have
+
+                                                                                    δd+1−n−ε
+                    #{T ∈ T : |T ∩ N2δ (Z) ∩ B(x, r)| ≥ r|T |} ≤ C(n, E, ε)                  .                (1.8)
+                                                                                       rd
+    Corollary 1.8 was used by Guth and the author in [13]2 and by Katz and the author in [20]
+to obtain improved bounds on the Kakeya maximal function in R4 . It was used by Hickman and
+Rogers [14, 15] to obtain improved Kakeya bounds for certain dimensions n ≥ 5, and to obtain
+improved restriction estimates in dimension ≥ 13, as well as dimension 4, 5, 7, 9, and 11.
+    We will prove the following generalization of Corollary 1.8.
+
+Theorem 1.9 (Direction-separated tubes and sequences varieties). Let n and E be integers with
+n ≥ 2, and let ε > 0. Then there is a constant C(n, E, ε) > 0 so that the following holds. Let
+Z1 ⊃ · · · ⊃ Zd be a nested sequence of real algebraic varieties, each deﬁned by polynomials of degree
+at most E. Suppose that Zi has codimension at least i. Let 1 ≥ r1 ≥ . . . ≥ rd ≥ δ. Let T be a set
+of direction-separated 1 × δ tubes and let x ∈ Rn . Then
+
+                                                                                             δd+1−n−ε
+           #{T ∈ T : |T ∩ N2δ (Zi ) ∩ B(x, ri )| ≥ ri |T |, i = 1, . . . , d} ≤ C(n, E, ε)                .   (1.9)
+                                                                                              r1 · · · rd
+    We can see that Theorem 1.9 is indeed a generalization of Corollary 1.8 by taking Zi = Z and
+ri = r for each i = 1, . . . , d. Theorem 1.9 will be proved in Section 2 below.
+   2
+    Actually, the paper [13] preceded [17]; it proved a conditional bound that relied on a special case of Corollary
+1.8. This special case was proved by the author in [27], and then shortly afterward the general case was proved by
+Katz and Rogers in [17].
+
+
+                                                         4
+1.2   Notation
+If X ⊂ Rn , we will use |X| to denote the Lebesgue measure of X, and we will use #X to denote
+the cardinality of X. If ρ > 0, we will write Nρ (X) to denote the ρ-neighborhood of X, and Eρ (X)
+to denote the ρ-covering number of X. Finally, we will deﬁne CC(X) to be the set of (Euclidean)
+connected components of X.
+    If T ⊂ Rn is a λ × δ tube, we will deﬁne v(T ) to be the unit vector parallel to the line L
+coaxial with T . Note that both v(T ) and −v(T ) are parallel to L. For concreteness, we will select
+v(T ) = (v1 , . . . , vn ) so that the last non-zero coordinate is positive.
+    We will write A . B or A = O(B) to mean there exists a constant C, depending only on
+the ambient dimension n, so that A ≤ CB. If the constant C is allowed to depend on additional
+parameter, such as ε, then we will write A .ε B. To simplify the statement of results such as
+Theorem 1.3 and Theorem 1.5, we will write A / B to mean that A .ε δ−ε B for each ε > 0.
+
+1.3   Thanks
+The author would like to thank Larry Guth and Nets Katz for many helpful conversations. The
+author would like to thank Jonathan Hickman for comments and corrections to a previous version
+of this manuscript.
+
+
+2     The polynomial Wolff axioms for nested sequences of varieties
+In this section we will prove Theorem 1.9. We will begin by recalling some standard tools from real
+algebraic geometry.
+
+2.1   Tools from real algebraic geometry
+We will begin with some basic deﬁnitions and results from real algebraic geometry. Further details
+can be found in standard references such as [4, Chapter 2] and in [6, Section 3].
+    If S ⊂ Rn is a semi-algebraic set, we deﬁne the dimension of S to be the Krull dimension of the
+ring R[x1 , . . . , xn ]/I(S), where I(S) is the ideal of polynomials that vanish on S. Equivalently, the
+dimension of S is the largest integer d so that there exists a continuous injection φ : (0, 1)d → S.
+In practice, we will be interested in two types of semi-algebraic sets. The ﬁrst are semi-algebraic
+subsets of Rn that have non-empty interior; such sets always have dimension n. The second are
+sets of the form Z ∩ B, where Z ⊂ Rn is an algebraic variety of dimension d < n and B is an
+open (Euclidean) ball; sets of this form always have dimension at most d. The following theorem
+of Wongkew [26] bounds the covering number of the second type of semi-algebraic set.
+
+Theorem 2.1. Let Z ⊂ Rn be a real algebraic variety of dimension d whose deﬁning polynomials
+have degree at most E. Let B ⊂ Rn be a ball of radius r. Then there exists a constant C(n)
+depending only on n so that for all ρ > 0,
+                                                        n
+                                                        X
+                                 |Nρ (Z ∩ B)| ≤ C(n)           E j ρj r n−j .
+                                                       j=n−d
+
+In particular, if 0 < ρ ≤ r then there is a constant C(n, E) so that
+
+                                    |Nρ (Z ∩ B)| ≤ C(n, E)ρn−d r d .                               (2.1)
+
+
+
+                                                   5
+   The following theorem of Milnor and Thom [23] controls the number of (Euclidean) connected
+components of a real algebraic variety. While this theorem has seen numerous reﬁnement and
+improvements, the original version is suﬃcient for our purposes.
+Theorem 2.2. Let Z ⊂ Rn be a real algebraic variety of dimension d whose deﬁning polynomials
+have degree at most E. Then Z has at most E(2E − 1)n−1 connected components.
+    We will also need to control the number of (Euclidean) connected components of a semi-algebraic
+set. The following special case of a result of Basu, Pollack, and Roy [1] is suﬃcient for our needs.
+Theorem 2.3. Let S ⊂ Rn be a semi-algebraic set of complexity E. Then there exists a constant
+C(n, E) depending only on n and E so that S has at most C(n, E) connected components.
+   One of the deepest results about semi-algebraic sets is the Yomdin-Gromov algebraic lemma.
+The version stated here is Theorem 1 from [6].
+Theorem 2.4. Let m, d, r and E be integers. Let S ⊂ [0, 1]m be a compact semi-algebraic set
+of dimension d and complexity at most E. Then there exists an integer N = N (m, E, r) and
+continuous maps φ1 , . . . , φN : [0, 1]d → [0, 1]m so that
+                                                  N
+                                                  [
+                                           S=           φi ([0, 1]d ),
+                                                  i=1
+
+and for each index i we have
+                               kφi kr = max k∂ β φi kL∞ ((0,1)d ) ≤ 1.
+                                           β : |β|≤r
+
+   The ﬁnal result we will need is a lemma that allows us to select one representative from each
+ﬁber of a projection map between semi-algebraic sets. A proof this lemma can be found in [27,
+Lemma 2.6] (cf. [17, Lemma 2.2]).
+Lemma 2.5 (Selecting one point from each ﬁber). Let m, n and E be integers. Then there is a
+constant C(m, n, E) > 0 so that the following holds. Let S ⊂ [0, 1]m be a semi-algebraic set of
+complexity at most E and let f : S → Rn be a function whose graph is semi-algebraic of complexity
+at most E. Then there exists a semi-algebraic set U ⊂ S of complexity at most C(m, n, E) so that
+f (U ) = f (S), and the restriction of f to U is an injection.
+
+2.2   Extending tubes inside semi-algebraic sets
+In this section, we will show that the set of tubes contained inside a semi-algebraic set cannot
+“expand” too much if we extend the tubes. If T is a λ × δ tube and if A ≥ 1, we deﬁne ExtA (T )
+to be the Aλ × δ tube that has the same midpoint and coaxial line as T .
+    Recall that Besicovitch [3] constructed a set K ⊂ [0, 2]2 of measure ≤ c(δ) that contains a 1 × δ
+tube pointing in every δ-separated direction. The function c(δ) → 0 as δ → 0. However, if each
+of these tubes are replaced by Ext3 (T ), then the union of these extended tubes has volume ∼ 1.
+The next lemma says that this type of phenomena is not possible if the set K is semi-algebraic of
+bounded complexity.
+Lemma 2.6 (Extending tubes inside semi-algebraic sets). Let n and E be integers with n ≥ 2, and
+let ε > 0. Then there is a constant C(n, E, ε) > 0 so that the following holds. Let S ⊂ [0, 1]n be a
+semi-algebraic set of complexity at most E. Let 0 < δ ≤ λ ≤ 1 and let 1 ≤ A ≤ λ−1 . Then
+                                 [
+                                       ExtA (T ) ≤ C(n, E, ε)δ−ε An |S|.                       (2.2)
+                            T a λ×δ tube
+                                T ⊂S
+
+
+                                                        6
+    Lemma 2.6 will be proved by combining the Yomdin-Gromov algebraic lemma with the following
+elementary estimate, which says that if a univariate polynomial is small (on average) on an interval,
+then it cannot grow too quickly outside that interval. We will apply this lemma to a polynomial that
+measures the “compression” of tubes inside a semi-algebraic set—if the tubes are very compressed
+inside the set, then they must remain at least somewhat compressed when they are extended beyond
+the set.
+
+Lemma 2.7. Let P (x) be a polynomial of degree ≤ D and let J ⊂ I ⊂ R be closed intervals. Then
+                                                        |I| D
+                                      kP kL∞ (I) ≤ C(D)         kP kL1 (J) .                       (2.3)
+                                                         |J|
+
+Proof. Replacing P (x) by P (x − x0 ) if necessary, we may assume that J is centered at 0. Let
+J ′ ⊂ J be a measurable set with |J ′ | ≥ 12 |J| so that |P (x)| ≤ 2 kP kL1 (J) for all x ∈ J ′ . Cover
+                            1
+J by intervals of length 4(D+1) . Observe that at least 2(D + 1) of these intervals must intersect
+  ′
+J . Numbering these intervals from left to right and selecting one point from each interval with
+odd index, we conclude that there exist points x1 , . . . , xD+1 ∈ J ′ so that |xi − xj | ≥ |J|/(4D + 4)
+whenever i 6= j.
+    By Lagrange interpolation we can write
+                                     D+1                                      D+1
+                                     X                                        Y      x − xk
+                           P (x) =         Pj (x),   where Pj (x) = P (xj )                  .     (2.4)
+                                                                                     xj − xk
+                                     j=1                                      k=1
+                                                                              k6=j
+
+   For each index j, we have
+               D+1
+               Y      x − xk                 4D + 4 D          D                   |x| D 
+     P (xj )                  ≤ 2 kP kL1 (J)              |x| + |J|   .D kP kL1 (J) 1 +            ,
+                      xj − xk                     |J|                                     |J|
+               k=1
+               k6=j
+
+and thus                                                        |x| D 
+                                      |P (x)| .D kP kL1 (J) 1 +           .                        (2.5)
+                                                                  |J|
+Since J is centered at 0 and J ⊂ I, we have that |x| ≤ |I| for all x ∈ I, and (2.3) now follows from
+(2.5).
+
+   We are now ready to prove Lemma 2.6.
+
+Proof of Lemma 2.6. Our proof will use many of the ideas developed by Katz and Rogers in [17],
+and parts of the proof will closely mirror their arguments. We will begin with a few reductions.
+Reduction 1: S has small diameter
+Suppose for the moment that there is a constant C1 (n, E, ε) > 0 so that for all 0 < δ ≤ λ ≤ A−1 ≤ 1,
+all semi-algebraic sets S ⊂ [0, 1/2]n of diameter at most 23 λ and complexity at most E, and all ε > 0,
+                                      [
+                                                 ExtA (T ) ≤ C1 (n, E, ε)δ−ε An |S|.               (2.6)
+                                 T a λ×δ tube
+                                     T ⊂S
+
+With this assumption, let 0 < δ ≤ λ ≤ 1, let ε > 0, and let S ⊂ [0, 1]n be a semi-algebraic set of
+complexity at most E. We will show that there exists a constant C(n, E, ε) so that (2.28) holds.
+
+                                                           7
+   Let B be a set of balls of diameter 23 λ with the property that each point in [0, 1]n is contained
+in On (1) balls from B, and each ball of diameter 43 λ is entirely contained in one of the balls from
+B. Then since each λ × δ tube is contained in a ball of diameter 34 λ, we have
+                                                [
+                    {T a λ × δ tube, T ⊂ S} =      {T a λ × δ tube, T ⊂ S ∩ B}.
+                                               B∈B
+
+Note that S ∩ B is also semi-algebraic, and the complexity of S ∩ B is bounded by a number that
+depends only on n and the complexity of S. Applying (2.6), we have
+                             [                    [       [
+                                    ExtA (T ) =                  ExtA (T )
+                         T a λ×δ tube                   B∈B T a λ×δ tube
+                             T ⊂S                             T ⊂S∩B
+                                                    X                                           (2.7)
+                                               ≤           C1 δ−ε An |S ∩ B|
+                                                    B∈B
+                                               . C1 (n, E, ε)δ−ε An |S|.
+
+Thus if C(n, E, ε) is selected suﬃciently large (depending only on n, ε and C1 (n, E, ε), which in
+turn depends only on n, ε, and E), then (2.28) holds.
+Reduction 2: All tubes point in almost the same direction
+Suppose for the moment that there is a constant C2 (n, E, ε) > 0 so that for all 0 < δ ≤ λ ≤ A−1 ≤ 1,
+all semi-algebraic sets S ⊂ [0, 1]n of diameter at most 32 λ and complexity at most E, and all ε > 0,
+                                  [
+                                          ExtA (T ) ≤ C2 (n, E, ε)δ−ε An |S|.                   (2.8)
+                           T a λ×δ tube
+                                         1
+                           ∠(v(T ),en )≤ 10
+                                T ⊂S
+
+With this assumption, let 0 < δ ≤ λ ≤ 1, let ε > 0, and let S ⊂ [0, 1]n be a semi-algebraic set
+of diameter at most 32 λ and complexity at most E. We will show that there exists a constant
+C1 (n, E, ε) so that (2.6) holds.
+    Let Ω ⊂ S n−1 be a set of On (1) unit vectors so that each unit vector in S n−1 makes an angle
+≤ 1/10 with a vector from Ω. For each v ∈ Ω, let Ov be an orthogonal transformation taking v to
+the n-th basis vector en and let Sv = Ov (S). Then
+                            [                 [            [               
+                                  ExtA (T ) =    Ov−1              ExtA (T ) .
+                     T a λ×δ tube             v∈Ω           T a λ×δ tube
+                         T ⊂S                                              1
+                                                            ∠(v(T ),en )≤ 10
+                                                                T ⊂Sv
+
+Applying (2.8) to each set Sv , we conclude that
+                            [                    X               [
+                                     ExtA (T ) ≤                              ExtA (T )
+                         T a λ×δ tube               v∈Ω    T a λ×δ tube
+                             T ⊂S                                         1
+                                                           ∠(v(T ),en )≤ 10
+                                                               T ⊂Sv
+                                                    X                                           (2.9)
+                                               ≤          C2 (n, E, ε)δ−ε An |Sv |
+                                                    v∈Ω
+                                               . C2 δ−ε An |S|.
+
+Thus if C1 (n, E, ε) is selected suﬃciently large (depending only on n, ε and C2 (n, E, ε), which in
+turn depends only on n, ε, and E), then (2.6) holds.
+
+                                                    8
+The main argument Let 0 < δ ≤ λ ≤ 1, let ε > 0, and let S ⊂ B(0, 43 λ) ⊂ [0, 1]n be a semi-
+algebraic set of complexity at most E. We need to show that there exists a constant C2 (n, E, ε) so
+that (2.8) holds.
+    It will be convenient to replace S with the set
+                                                  [
+                                        S′ =           T.
+                                                       T a λ×δ tube
+                                                                      1
+                                                       ∠(v(T ),en )≤ 10
+                                                            T ⊂S
+
+Note that |S ′ | ≤ |S|, and
+                                    [                                  [
+                                                 ExtA (T ) =                       ExtA (T ).
+                              T a λ×δ tube                      T a λ×δ tube
+                                            1                                  1
+                              ∠(v(T ),en )≤ 10                  ∠(v(T ),en )≤ 10
+                                  T ⊂S ′                             T ⊂S
+
+   Since λ ≥ δ, we have that either S ′ is empty or |S ′ | & λδn−1 ≥ δn . If the former holds then
+Lemma 2.6 is trivially true, so we can assume that
+
+                                                       |S ′ | & δn .                               (2.10)
+
+   Observe that there exists a constant cn > 0 so that whenever T is a λ × δ tube and whenever
+x ∈ T , then |B(x, δ) ∩ T | ≥ cn |B(x, δ)|. Since S ′ is a union of λ × δ tubes, this implies that for all
+x ∈ S ′ , |B(x, δ) ∩ S ′ | ≥ cn |S ′ |, and thus
+
+                                                 Eδ (S ′ ) ≤ c−1
+                                                              n δ
+                                                                  −n ′
+                                                                    |S |.                          (2.11)
+
+In particular, this means that for all ρ ≥ δ, we have
+
+                                      |Nρ (S ′ )| . (ρ/δ)n |S ′ | ≤ (ρ/δ)n |S|,                    (2.12)
+
+where the implicit constant depends only on n. Note that inequality (2.12) might not be true if
+the left hand side was replaced by |Nρ (S)|, which is why the set S ′ was introduced.
+   For each t ∈ R, deﬁne the “vertical” hyperplane
+
+                                     Ht = {(x1 , . . . , xn ) ∈ Rn : xn = t}.
+                                                                                1
+Since S ′ ⊂ B(0, 43 λ), for each λ × δ tube T with T ⊂ S ′ and ∠(v(T ), en ) ≤ 10 , we have that every
+line segment of length λ that is contained in T and parallel to v(T ) intersects H0 and Hλ/8 . Since
+∠(w, en ) ≤ 1/10 (and in particular, w is not perpendicular to en ), these intersection points are
+unique.
+    Deﬁne
+       L = {(a, d) ∈ R2n−2 : there exists a λ × δ tube T ⊂ S ′ with ∠(v(T ), en ) ≤ 1/10,
+                                                                                                   (2.13)
+                                so that v(T ) is parallel to (d, 1), and (a, 0) ∈ H0 ∩ T }.
+
+Since S ′ ⊂ [0, 1]n , we have L ⊂ [0, 1]2n−2 . The key observations are that
+                                 [
+                                       {(a, 0) + s(d, 1) : s ∈ [0, λ/8]} ⊂ S ′ ,                   (2.14)
+                                 (a,d)∈L
+
+
+
+
+                                                            9
+and                      [                               [
+                                      ExtA (T ) ⊂              {(a, 0) + s(d, 1) : s ∈ [0, 2Aλ]}.   (2.15)
+                   T a λ×δ tube                     (a,d)∈L
+                                  1
+                   ∠(v(T ),en )≤ 10
+                        T ⊂S
+
+The containment (2.14) follows from the deﬁnition (2.13) of L. To verify (2.15), let x be a point
+in the left hand side of (2.15). Then there is a λ × δ tube T with T ⊂ S, ∠(v(T ), en ) ≤ 1/10, and
+x ∈ ExtA (T ). Let L = {(a, 0) + s(d, 1) : s ∈ R} be the line that contains x and is parallel to v(T ).
+Since L intersects ExtA (T ) in at least one point (i.e. at the point x), and L is parallel to v(T ), we
+have that L ∩ H0 ⊂ T ∩ H0 , and thus (a, b) ∈ L. This implies that x is in the right hand side of
+(2.15).
+    Deﬁne                            [
+                              S̃ =        {(a, 0) + s(d, 1) : s ∈ [0, 2Aλ]}.
+                                        (a,d)∈L
+
+Then                                  [
+                                                ExtA (T ) ⊂ S̃ ⊂ [−2Aλ, 2Aλ]n .                     (2.16)
+                             T a λ×δ tube
+                                           1
+                             ∠(v(T ),en )≤ 10
+                                  T ⊂S
+
+We will prove that there exists a constant C3 (n, E, ε) so that for each t ∈ [−2Aλ, 2Aλ],
+
+                        |S̃ ∩ Ht | ≤ C3 (n, E, ε)δ−ε λ−1 An−1 |Nδ (S ′ )| + δn ,
+                                                                              
+                                                                                                    (2.17)
+
+where the | · | on the left denotes (n − 1) dimensional Lebesgue measure and the | · | on the right
+denotes n dimensional Lebesgue measure.
+   Assuming that (2.17) is true for the moment, we can integrate in t to conclude that
+                                 Z 2Aλ
+                          |S̃| =       |S̃ ∩ Ht |dt
+                                  −2Aλ
+                                                                                             (2.18)
+                               ≤ (4Aλ)C3 (n, E, ε)δ−ε λ−1 An−1 |Nδ (S ′ )| + δn
+                                                                                
+
+                               . C3 (n, E, ε)δ−ε An |Nδ (S ′ )|,
+
+where on the last line we used (2.10) and the fact that λ−1 An−1 ≥ 1. Combining (2.12), (2.16),
+and (2.18) would establish (2.8). The remainder of the argument will be devoted to proving (2.17).
+    Fix a number t ∈ [−2Aλ, 2Aλ]. We will prove that (2.17) is true for this choice of t. First,
+we can assume that S̃ ∩ Ht has dimension n − 1, since otherwise |S̃ ∩ Ht | = 0 and the result is
+immediate.
+    Consider the map φ : L → S̃ ∩ Ht given by (a, d) 7→ (a, 0) + t(d, 1). Use Lemma 2.5 to select a
+semi-algebraic set L′ ⊂ L of dimension n − 1 and complexity at most C(n, E) so that the restriction
+of φ to L′ is a bijection.
+    Apply Theorem 2.4 with m = d = n − 1 and r = 2(n − 1)2 /ε. There is a number N . 1 and
+maps
+                           (Fi , Gi ) : [0, 1]n−1 → [0, 1]2n−2 , i = 1, . . . , N,
+so that
+                                                  N
+                                                  [
+                                           L′ =         (Fi , Gi )([0, 1]n−1 ).                     (2.19)
+                                                  i=1
+and
+                                       k(Fi , Gi )kr ≤ 1 for each index i.                          (2.20)
+
+                                                            10
+   Since
+                                   S̃ ∩ Ht = {(a, 0) + t(d, 1) : (a, d) ∈ L},
+(2.19) implies that
+                                   N
+                                   [
+                       S̃ ∩ Ht =       {(a, 0) + t(d, 1) : (a, d) ∈ (Fi , Gi )([0, 1]n−1 )}.
+                                   i=1
+
+Thus by pigeonholing there exists an index i0 so that
+
+                       |{(a, 0) + t(d, 1) : (a, d) ∈ (Fi0 , Gi0 )([0, 1]n−1 )}| & |S̃ ∩ Ht |.
+
+    Since [0, 1]n−1 can be covered by . δ−ε balls of radius δε/(n−1) , there exists a point x0 ∈ [0, 1]n−1
+                                              ε
+so that if we deﬁne U = [0, 1]n−1 ∩ B(x0 , δ n−1 ), then
+
+                         |{(a, 0) + t(d, 1) : (a, d) ∈ (Fi0 , Gi0 )(U )}| & δε |S̃ ∩ Ht |.
+
+    Let F (resp. G) be the degree r − 1 polynomial given by the (r − 1)-st order Taylor expansion
+of Fi0 (resp. Gi0 ) around x0 . By (2.20), we have
+
+                  |(F + G)(x) − (Fi0 + Gi0 )(x)| ≤ |x − x0 |r ≤ δ2n−2            for all x ∈ U.          (2.21)
+
+This implies that
+
+                  {(a, 0) + s(d, 1) : (a, d) ∈ (F, G)(U )} ⊂ Nδ (S ′ ) for all s ∈ [0, λ/8].             (2.22)
+
+   We claim that there exists a constant C3 (n) so that
+
+                     |{(a, 0) + t(d, 1) : (a, d) ∈ (F, G)(U )}| & δε |S̃ ∩ Ht | − C3 (n)δn .             (2.23)
+
+To see this, deﬁne
+
+                              J = bdry({(F (x), 0) + t(G(x), 1)) : x ∈ U }),
+                             J ′ = bdry({(Fi0 (x), 0) + t(Gi0 (x), 1)) : x ∈ U }).
+
+Observe that since the maps x 7→ (F (x), 0) + t(G(x), 1)) and x 7→ (Fi0 (x), 0) + t(Gi0 (x), 1)) are
+continuous, they map bdry(U ) to J and J ′ , respectively. By (2.21), we have that J ⊂ Nδ2n−2 (J ′ )
+and J ′ ⊂ Nδ2n−2 (J). For each ρ > 0,
+
+                                             Eρ (bdry(U )) . ρ2−n ,
+
+where the implicit constant depends only on n. By (2.20) we have that (Fi0 , Gi0 ) is 1-Lipschitz,
+and thus Eρ (J ′ ) . ρ2−n for all ρ > 0. This implies that |Nδ2n−2 (J)| . δn . Thus if we select C3 (n)
+suﬃciently large, we have
+
+  |{(a, 0) + t(d, 1) : (a, d) ∈ (F, G)(U )}| ≥ |{(a, 0) + t(d, 1) : (a, d) ∈ (Fi0 , Gi0 )(U )}| − |Nδ2n−2 (J)|
+                                              & δε |S̃ ∩ Ht | − C3 (n)δn ,
+                                                                                                         (2.24)
+
+which gives us (2.23).
+   At this point, (2.23) gives us a lower bound on the size of the slice
+
+                                    {(a, 0) + t(d, 1) : (a, d) ∈ (F, G)(U )},
+
+                                                        11
+and (2.22) gives us an upper bound on the size of each of the slices
+
+                        {(a, 0) + s(d, 1) : (a, d) ∈ (F, G)(U )},           s ∈ [0, λ/8].
+
+Our next task is to compare these lower and upper bounds. To do this we will need to introduce
+the change of variables formula from multivariate calculus. The version stated here is Theorem
+9.9.3 from [22] (see also [21, Theorem 20.15] for a similar formulation).
+Theorem 2.8. Let U ⊂ Rm be an open set, let h : U → Rm be C 1 , and let V = h(U ). For each
+y ∈ V , deﬁne m(y) = {x ∈ U : h(x) = y}; this is deﬁned whenever {x ∈ U : h(x) = y} is ﬁnite.
+   Then m is deﬁned almost everywhere; m is measurable (with respect to m-dimensional Lebesgue
+measure); and                   Z             Z
+                                          m(y)dy =           | det(Dh(x))|dx,
+                                      V                  U
+where both integrals are with respect to m-dimensional Lebesgue measure.
+   Since m(y) ≥ 1 for all y ∈ h(U ) except on a set of measure 0 (for which it is not deﬁned), we
+immediately obtain the following corollary.
+Corollary 2.9. Let U ⊂ Rm be an open set and let h : U → Rm be C 1 . Then
+                                         Z
+                               |h(U )| ≤   | det(Dh(x))|dx.
+                                                     U
+
+   Applying Corollary 2.9 with h(x) = F (x) + tG(x) and U as above, we conclude that
+                                         Z
+                        |(F + tG)(U )| ≤    | det(DF (x) + tDG(x))|dx.                              (2.25)
+                                                 U
+
+    On the other hand, by Theorem 2.2 we have that for each s ∈ R and each y ∈ (F + sG)(U ),
+either the set {x ∈ U : (F + sG)(x) = y} is inﬁnite, or
+
+                      #{x ∈ U : (F + sG)(x) = y} ≤ r(2r − 1)n−1 ≤ (2r)n .
+
+In particular, we have that for each s ∈ R,
+                                                     Z
+                                                −n
+                      |(F + sG)(U )| ≥ (2r)                  | det(DF (x) + sDG(x))|dx.             (2.26)
+                                                         U
+
+   For each x ∈ U , write
+                                  | det(DF (x) + sDG(x))| = |Px (s)|,
+where Px (s) is a polynomial of degree at most n − 1. By Lemma 2.3, we have that
+                                Aλ n−1                                      Z λ/8
+                                                                   −1   n−1
+                  |Px (t)| .                kP kL1 ([0,λ/8]) . λ        A             |Px (s)|ds.   (2.27)
+                                λ/8                                             0
+
+We are now ready to prove (2.17). From (2.23) we have
+
+                                δε |S̃ ∩ Ht | − C3 (n)δn ≤ |(F + tG)(U )|.
+
+
+
+
+                                                         12
+By (2.25) and (2.27), we have
+                                            Z
+                    |(F + tG)(U )| ≤              | det(DF (x) + tDG(x))|dx
+                                            ZU
+                                        =         |Px (t)|dx
+                                              U
+                                          Z         Z λ/8           
+                                              −1 n−1
+                                        .    λ A           |Px (s)|ds dx
+                                              U                    0
+                                                        Z λ/8 Z
+                                        = λ−1 An−1                         |DF (x) + sDG(x)|dsdx.
+                                                          0            U
+
+By (2.26),
+                  Z λ/8 Z                                                        Z λ/8
+                                                                            2n
+                                |DF (x) + sDG(x)|dsdx ≤ r                                |(F + sG)(U )|ds.
+                    0       U                                                     0
+Finally, by (2.22) we have
+                                      Z λ/8
+                                                |(F + sG)(U )|ds ≤ |Nδ (S ′ )|.
+                                        0
+Combining these inequalities we conclude that
+                                δε |S̃ ∩ Ht | − C3 (n)δn . r 2n λ−1 An−1 |Nδ (S ′ )|.
+Since r = 2(n − 1)2 /ε depends only on ε and n, this establishes (2.17) and completes the proof.
+
+   We will ﬁnish this section with a corollary of Lemma 2.6 that allows us to replace the extension
+ExtA (T ) of the tube T with a slightly more useful “fattening” of T . If T is a λ × δ tube and if
+A ≥ 1, we deﬁne FatA (T ) to be the Aλ × Aδ tube that has the same midpoint and coaxial line as
+T.
+Corollary 2.10 (Fattening tubes inside semi-algebraic sets). Let n and E be integers with n ≥ 2,
+and let ε > 0. Then there is a constant C(n, E, ε) > 0 so that the following holds. Let S ⊂ [0, 1]n
+be a semi-algebraic set of complexity at most E. Let 0 < δ ≤ λ ≤ 1 and let 1 ≤ A ≤ λ−1 . Then
+                                 [
+                                         FatA (T ) ≤ C(n, E, ε)δ−ε An |S|.                  (2.28)
+                                 T a λ×δ tube
+                                     T ⊂S
+
+Proof. Deﬁne
+                                                       [
+                                       S′ =                                Ext2A (T ),
+                                                T a λ/2×δ/2 tube
+                                                      T ⊂S
+                                                         [
+                                       S ′′ =                                Ext4 (T ).
+                                                T a Aλ/2×Aδ/2 tube
+                                                       T ⊂S ′
+
+By Lemma 2.6, there is a constant C (depending on n, E and ε) so that
+                                   |S ′′ | ≤ Cδ−ε/2 8n |S ′ | ≤ C 2 δ−ε (8A)n |S|.
+All that remains is to verify that
+                                                  [
+                                                           FatA (T ) ⊂ S ′′ .
+                                            T a λ×δ tube
+                                                T ⊂S
+
+
+                                                              13
+To see this, let T0 ⊂ S be a λ × δ tube. Then
+                                           [
+                                                          Ext2A (T )
+                                       T a λ/2×δ/2 tube
+                                            T ⊂T0
+
+contains a Aλ/2 × Aδ tube with the same coaxial line as T0 . The midpoint of this tube has distance
+≤ Aλ from the midpoint of T0 . Call this tube T1 . Finally,
+                                              [
+                           Fat(T0 ) ⊂                     Ext4 (T ).
+                                          T a Aλ/2×Aδ/2 tube
+                                                T ⊂T1
+
+
+2.3    Tubes inside semi-algebraic sets
+Lemma 2.11. Let n, E, and K be integers with n ≥ 2, and let ε > 0. Then there is a constant
+C(n, E, K, ε) > 0 so that the following holds. Let S1 ⊃ . . . ⊃ Sd be semi-algebraic sets of complexity
+at most E. Let r1 ≥ r2 ≥ . . . ≥ rd > 0 and ρ1 ≥ ρ2 ≥ . . . ≥ ρd > 0. Suppose that for each index i,
+Si has diameter ri and obeys the growth condition
+
+                        |Nρi (Si ) ∩ B(x, r)| ≤ Eρii r n−i   for all balls B(x, r).             (2.29)
+
+Let 0 < δ ≤ ρ1 /r1 , and let L be a set of lines pointing in δ-separated directions with the property
+that for each L ∈ L and each index i,
+
+                        L ∩ Nρi (Si ) contains a line segment of length ri /K.                  (2.30)
+
+Then
+                                                      r1 ε 1−n−ε ρ1 · · · ρd
+                              #L ≤ C(n, E, K, ε)           δ                  .                 (2.31)
+                                                      ρd          r1 · · · rd
+Proof. By translating if necessary, we can assume that 0 ∈ Sd , and thus Si ⊂ B(0, ri ) for each
+index i. Next, observe that Lemma 2.11 is dilation invariant. Thus we may assume that r1 = 1,
+and in particular each set Si is contained in [0, 1]n (even though r1 = 1, in the arguments below
+we will often keep track of terms involving r1 , as we believe this adds clarity to the arguments).
+Finally, we may assume that ri > ρi for each index i; indeed if this inequality fails for some index
+i, then we may simply omit the corresponding requirement (2.30) and re-index the remaining sets
+(note that the growth condition (2.29) remains true after this re-indexing).
+    Deﬁne S̃d = N2ρd (Sd ). For each j = 1, . . . , d − 1, deﬁne
+                                                           [
+                   S̃d−j = N2ρd−j (Sd−j ) ∩                        Fat Krd−j (T ).
+                                                                              rd−j+1
+                                             T a rd−j+1 /K×ρd−j+1 tube
+                                                     T ⊂S̃d−j+1
+
+
+It is easy to verify that S̃d−j is semi-algebraic, and the complexity of S̃d−j depends only on E, n,
+and j.
+    Let L ∈ L. Since (2.30) is true for i = d, we have that L ∩ Nρd contains a line segment of length
+rd /K, and thus there is a rd /K × ρd tube contained in S̃d whose coaxial line is L; this tube must
+be contained in B(0, rd ). We conclude that
+                                                     [
+                            L ∩ B(0, rd−1 ) ⊂                Fat Krd−1 (T ).
+                                                                        rd
+                                               T a rd /K×ρd tube
+                                                      T ⊂S̃d
+
+
+                                                    14
+Since (2.30) is true for i = d − 1, we also have that L ∩ Nρd−1 (Sd−1 ) = L ∩ Nρd−1 (Sd−1 ) ∩ B(0, rd−1 )
+contains a line segment of length rd−1 /K, and thus there is a rd−1 /K × ρd−1 tube contained in
+S̃d−1 whose coaxial line is L; this tube must be contained in B(0, rd−1 ). We conclude that
+                                                     [
+                           L ∩ B(0, rd−2 ) ⊂                     Fat Krd−2 (T ).
+                                                                                     rd−1
+                                            T a rd−1 /K×ρd−1 tube
+                                                   T ⊂S̃d−1
+
+
+An identical argument to the one above shows that L ∩ S̃d−1 contains a line segment of length
+rd−2 /K, and this line segment must be contained in B(0, rd−2 ). Iterating this argument, we con-
+clude that L ∩ S̃1 contains a line segment of length r1 /K, and thus there is a r1 /K × ρ1 tube
+contained in S̃1 whose coaxial line is L. Since δ ≤ ρ1 , there is also a r1 /K × δ tube contained in S̃1
+whose coaxial line is L. The lines in L point in δ-separated directions, so we can apply Theorem
+1.7 to conclude that
+                                 #L ≤ C ′ (n, E, ε)|S̃1 |δ1−n−ε r1−n K n .                       (2.32)
+Our next task is to bound |S̃1 |.
+   We will prove by induction that for each j = 0, 1, . . . , d − 1,
+                                                                               j−1
+                                                   − jε
+                       |S̃d−j | ≤ Cj (n, E, K, ε)ρd d−1 ρd−j  n−d+j
+                                                                               Y
+                                                                                            −1
+                                                         d−j rd−j                    (ρd−i rd−i ).   (2.33)
+                                                                               i=0
+
+When j = 0, (2.33) is the bound
+
+                                     |S̃d | ≤ C0 (n, E, K, ε)ρdd rdn−d ,
+
+which follows from the growth condition (2.29).
+   Suppose now that the result has been proved for some j < d − 1. Let
+                                             [
+                         Wd−(j+1) =                   Fat Krd−(j+1) (T ).
+                                                                               rd−j
+                                        T a rd−j /K×ρd−j tube
+                                               T ⊂S̃d−j
+
+By Corollary 2.10, we have
+
+                                               −   ε     Kr             n
+                                                d−1            d−(j+1)
+                               |Wd−(j+1) | . ρd−j                              |S̃d−j |,
+                                                              rd−j
+                                                ε       r              n                           (2.34)
+                                             − d−1           d−(j+1)
+                                          . ρd−j                             |S̃d−j |,
+                                                             rd−j
+
+where here (and throughout this argument) the implicit constant depends on n, E, K, and ε. Note
+                                                   Kr                                        Kr
+that Wd−(j+1) is a union of tubes of thickness ρd−j rd−(j+1)
+                                                      d−j
+                                                             , and thus if we select r ∼ ρd−j rd−(j+1)
+                                                                                                d−j
+                                                                                                       ,
+then
+
+
+                                    Er (Wd−(j+1) ) . r −n |Wd−(j+1) |
+                                                            −n−     ε                                (2.35)
+                                                       . ρd−j d−1 |S̃d−j |.
+
+
+
+
+                                                       15
+Applying the growth condition (2.29) with this value of r, we conclude that
+
+                 |S̃d−(j+1) | = |N2ρd−(j+1) (Sd−(j+1) ) ∩ Wd−(j+1) |
+                                                d−(j+1)
+                            . Er (Wd−(j+1) ) Eρd−(j+1) r n−d+(j+1)
+                                                                   
+                               −n− ε          
+                                                  d−(j+1)        rd−(j+1) n−d+(j+1)                          (2.36)
+                            . ρd−j d−1 |S̃d−j | ρd−(j+1) ρd−j
+                                                                   rd−j
+                                  ε ρ          d−(j+1)   rd−(j+1) n−d+(j+1)
+                               −
+                                                                 
+                                       d−(j+1)
+                            ≤ ρd d−1                                          |S̃d−j |.
+                                        ρd−j                rd−j
+
+Applying the induction hypothesis, we obtain
+
+                             −   ε    ρ             d−(j+1)  r             n−d+(j+1)
+                                           d−(j+1)                  d−(j+1)
+              |S̃d−(j+1) | . ρd d−1
+                                           ρd−j                     rd−j
+                                                           jε            j−1
+                                                        − d−1
+                                                                                       
+                                                               d−j n−d+j
+                                                                         Y
+                                                                                   −1
+                                      · Cj (n, E, K, ε)ρd     ρd−j rd−j     (ρd−i rd−i )                       (2.37)
+                                                                                     i=0
+                                                                                     (j+1)−1
+                                           − (j+1)ε d−(j+1) n−d+(j+1)                  Y
+                                                                                                      −1
+                         = Cj (n, E, K, ε)ρd d−1 ρd−(j+1) rd−(j+1)                             (ρd−i rd−i ).
+                                                                                       i=0
+
+The induction closes if we select Cj+1 (n, E, K, ε) suﬃciently large depending on Cj (n, E, K, ε), n, K, E
+and ε.
+   To ﬁnish the proof, observe that
+                                                                       d−1
+                                                                       Y
+                             |S̃1 | ≤ Cd−1 (n, E, K, ε)ρ−ε n
+                                                        d r1
+                                                                                    −1
+                                                                             (ρd−i rd−i ).
+                                                                       i=0
+
+The result now follows from (2.32).
+
+   Next we will show how Lemma 2.11 can be used to prove Theorem 1.9.
+
+Proof of Theorem 1.9. Let Z1 ⊃ · · · ⊃ Zd , 1 ≥ r1 ≥ . . . ≥ rd > 0, δ > 0, and x ∈ Rn be as in the
+statement of Theorem 1.9. Let T be a set of direction-separated 1 × δ tubes, each of which satisﬁes
+
+                            |T ∩ N2δ (Zi ) ∩ B(x, ri )| ≥ ri |T |, i = 1, . . . , d.                           (2.38)
+
+    Deﬁne ρ1 = . . . = ρd = δ. Since each variety Zi has codimension at least i, by Theorem 2.1,
+each variety Zi satisﬁes the growth condition (2.29). Let L be the set of lines coaxial with the tubes
+in T. Observe that if T ∈ T is a tube with coaxial line L, then for each index i = 1, . . . , d we have
+
+                       |T ∩ N2δ (Zi ) ∩ B(x, ri )|/|T | ≥ |L ∩ Nδ (Zi ) ∩ B(x, ri )|.
+
+In particular, if T satisﬁes (2.38) then
+
+                              |L ∩ Nδ (Zi ) ∩ B(x, ri )| ≥ ri , i = 1, . . . , d.                              (2.39)
+
+Note that L ∩ Nδ (Zi ) ∩ B(x, ri ) is a one-dimensional semi-algebraic set of complexity O(E), and
+thus if K = K(n, E) is chosen suﬃciently large, then for each index i, L ∩ Nδ (Zi ) ∩ B(x, ri ) contains
+a line segment of length at least ri /K.
+    To ﬁnish the proof, we apply Lemma 2.11 to L with this choice of K.
+
+                                                           16
+Remark 2.12. Lemma 2.11 was stated in greater generality than was needed to prove Theorem 1.9.
+Speciﬁcally, in Theorem 1.9 we have ρ1 = . . . = ρd . Another interesting situation occurs when
+                                                                          1/2
+r1 > r2 > . . . > rd are much larger than 1, and ρi is comparable to ri ; the motivation for this
+setup is as follows. In [10, 11], Guth initiated the program of using polynomial partitioning to study
+the restriction/extension problem. When using polynomial partitioning techniques to analyze the
+behavior of the extension operator, a diﬃcult sub-problem arises when many wave packets are
+concentrated near a low-degree variety (or more generally, wave packets are concentrated near
+“grains,” which are deﬁned in Section 3 below). In [14] , Hickman and Rogers systematically
+studied the behavior of wave packets that concentrate near grains, and by using Theorem 1.7 they
+were able to obtain improved bounds for the restriction problem. Lemma 2.11 was used in [16] to
+obtain further improvements.
+
+
+3    A multilevel grains decomposition
+In this section, we will apply the polynomial partitioning theorem proved by Guth and Katz in [12]
+(and adapted to the present context by Guth in [11]) to collections of 1 × δ tubes in Rn . We will
+establish a sort of dichotomy asserting that either (A): Rn can be partitioned into disjoint pieces,
+and each tube is localized to a small number of these pieces, or (B): the tubes cluster into thin
+neighborhoods of low degree algebraic varieties. This statement will be made precise in Proposition
+3.5 below. The results in this section do not make any assumptions about the directions of the
+tubes. In Section 4, we will apply Proposition 3.5 to sets of tubes pointing in diﬀerent directions.
+Deﬁnition 3.1. Let G be a set of tuples of the form (B, P1 , . . . , Pi ), where B ⊂ Rn is a ball, i ≥ 0,
+and each Pj is a polynomial in Rn . G is called a tree of grains if it satisﬁes the following properties.
+
+    • There is exactly one element Groot ∈ G for which i = 0.
+
+    • If (B, P1 , . . . , Pi ) and (B ′ , P1 , . . . , Pi ) are elements of G, then B ∩ B ′ = ∅.
+
+    • For every (B, P1 , . . . , Pi ) ∈ G, there is a ball B ′ containing B so that (B ′ , P1 , . . . , Pi−1 ) ∈ G.
+
+    • For every (B, P1 , . . . , Pi ) ∈ G, the variety Z(P1 , . . . , Pi ) has codimension at least i.
+
+   If G = (B, P1 , . . . , Pi ) ∈ G, we say that G has level i, or level(G) = i. For each 0 ≤ i′ ≤ i, we
+deﬁne G|i′ to be the (unique) element of G of the form (B ′ , P1 , . . . , Pi′ ) with B ⊂ B ′ . If G, G′ ∈ G
+and G has level i, we write G  G′ if G′ = G|i′ for some 0 ≤ i′ ≤ i. The relation  deﬁnes the
+natural partial order on G that arises from its tree structure. Note that G  Groot for every G ∈ G.
+   We deﬁne the depth of a tree G to be one less than the maximum length of a chain in G. For
+example, if G = {Groot }, then G has depth 0. We deﬁne the complexity of G to be the maximum
+degree of any polynomial appearing in any tuple in G. In practice, our trees will always have ﬁnite
+cardinality, so these quantities will always be ﬁnite.
+Deﬁnition 3.2. Let G be a tree of grains. For each G ∈ G, let X G ⊂ Rn . We say that the set system
+{X G }G∈G is compatible with G if the following holds.
+
+   • For each G = (B, P1 , . . . , Pi ) ∈ G, X G ⊂ B ∩ NCδ Z(P1 , . . . , Pi ) , where C > 0 is a constant
+                                                                              
+
+      (see Remark 3.3 below).
+
+    • If G, G′ ∈ G and G  G′ , then X G ⊂ X G .
+                                                        ′
+
+
+                                                                       ′
+    • If G, G′ ∈ G are not comparable, then then X G ∩ X G = ∅.
+
+
+                                                            17
+Remark 3.3. Deﬁnition 3.2 is (intentionally) slightly ambiguous, since we have not speciﬁed the
+                                            √
+constant C. In this paper we can take C = 3 n.
+    In this section we will be interested in the interactions between collections of tubes and certain
+discretized subsets of Rn that we will call δ-cubes.
+Deﬁnition 3.4. We deﬁne a δ-cube to be a set of the form v + [0, δ]n , where v ∈ (δZ)n . In particular,
+any two distinct δ-cubes have disjoint interiors.
+   The main result of this section is the following multilevel grains decomposition for families of
+1 × δ tubes in Rn .
+
+Proposition 3.5. Let 2 ≤ k ≤ n, let T1 , . . . , Tk be sets of 1 × δ tubes contained in B(0, 1) ⊂ Rn ,
+and let Y be a set of tuples (Q, T1 , . . . , Tk ), where Q is a δ-cube, and Tj ∈ Tj with Tj ∩ Q 6= ∅ for
+each index j. Then for each 0 ≤ m ≤ n and each ε > 0, there exists:
+
+   • A tree G of grains of depth m and complexity E(n, ε).
+
+   • For each index j and each Tj ∈ Tj , a set system {TjG }G∈G that is compatible with G.
+
+   • For each index 0 ≤ i ≤ m and each index 1 ≤ j ≤ k, a length δ ≤ ℓi,j ≤ 1.
+
+   These objects have the following properties.
+
+M1. The tubes have uniform length. For each Tj ∈ Tj and each G ∈ G with level(G) = i, TjG
+    is a (possibly empty) disjoint union of ℓi,j × δ tubes.
+
+M2. The grains are localized. If G = (B, P1 , . . . , Pi ) ∈ G, then B has radius at most 4 max1≤j≤k ℓi,j +
+    δ.
+
+M3. The tubes touch few grains. For each index j and each G ∈ G with level(G) = i, we have
+                                           X
+        M −ε (D11−n · · · Dii−n )(#Tj ) .ε   # CC(TjG ) .ε M ε (D11−n · · · Dii−n )(#Tj ), (3.1)
+                                                Tj ∈Tj
+
+      where                                                   Y
+                                                M = δ−1           (#Tj ),                                   (3.2)
+                                                              j
+
+      and the real numbers D1 , . . . , Dm are deﬁned so that G has Din−i+1 grains that have level i.
+
+M4. Y is evenly distributed over the tree. For each G ∈ G with level(G) = i, we have
+                                                X                                 1
+                   M −ε (D1−n · · · Dii−n−1 )       #{(Q, T1 , . . . , Tk ) ∈ Y } k−1
+                                                Q
+                         X                                                                 1
+                              #{(Q, T1 , . . . , Tk ) ∈ Y : Q ∩ TjG 6= ∅ for each index j} k−1              (3.3)
+                          Q
+                                                              X                                     1
+                              .ε M ε (D1−n · · · Dii−n−1 )            #{(Q, T1 , . . . , Tk ) ∈ Y } k−1 .
+                                                                  Q
+
+
+   We will prove Proposition 3.5 by repeatedly applying a “grains decomposition” type result.
+This result has two main steps, which are described in Lemmas 3.9 and 3.10 below. In Lemma 3.9,
+we will use polynomial partitioning to divide the set of cubes supporting Y into disjoint regions,
+
+                                                         18
+so that every tube interacts with only a small number of these regions. The ideas used in this step
+are not new; they ﬁrst appeared in [11] in the context of the restriction problem, and in [13] in the
+context of Kakeya.
+    In [11], Guth proved a k-broad estimate for the restriction / extension operator. This is a weaker
+variant of a k-linear restriction estimate. In Section 11.1 of [11], Guth discusses a shortcoming of
+his methods that prevents him from proving a k-linear restriction estimate. We encountered a
+similar problem when attempting to prove k-linear Kakeya estimates, and Lemma 3.10 is designed
+to overcome this problem.
+    Before we prove Lemmas 3.9 and 3.10, we will recall some terminology and results from [11].
+If P1 , . . . , Pm are polynomials in Rn , we say that Z(P1 , . . . , Pm ) is a transverse complete intersec-
+tion if the vectors ∇P1 (x), . . . , ∇Pm (x) are linearly independent for every x ∈ Z(P1 , . . . , Pm ). In
+particular, if Z(P1 , . . . , Pm ) is a transverse complete intersection, then Z(P1 , . . . , Pm ) is a smooth
+submanifold of Rn of codimension m.
+    In [13], Guth and Katz used the polynomial ham sandwich theorem to construct polynomials
+that eﬃciently partition sets of points in Rn . In [11], Guth adapted these methods to prove the
+following.
+
+Proposition 3.6. Let P1 , . . . , Pm be polynomials in Rn , and suppose that Z(P1 , . . . , Pm ) is a
+transverse complete intersection.     Let f ∈ L1 (Rn ) be non-negative, and suppose that supp(f ) ⊂
+B(0, 1) ∩ N2δ Z(P1 , . . . , Pm ) . Then for each D ≥ 1, at least one of the following two things must
+happen.
+Cellular case. There exists a polynomial P of degree ≤ D, so that Rn \Z(P ) is a union of . D n−m
+cells O1 , . . . , Ot , so that if we deﬁne Oi′ = Oi \Nδ (Z(P )), then
+                                      Z              Z
+                                                m−n
+                                         f .D          f for each index i,
+                                   Oi′
+
+and
+                                              t Z
+                                                            1
+                                              X                     Z
+                                                         f≥             f.
+                                                     Oi′    2
+                                              i=1
+
+
+Algebraic case. There is a polynomial P of degree at most D so that (P1 , . . . , Pm , P ) is a trans-
+verse complete intersection, and
+                               Z                           Z
+                                                        −1
+                                             f & (log D)     f.
+                                    Nδ (Z(P1 ,...,Pm ,P ))
+
+Corollary 3.7. Let P1 , . . . , Pm be polynomials in Rn , and suppose that Z(P1 , . . . , Pm ) is a trans-      
+verse complete intersection. Let Q be a ﬁnite set of δ-cubes. Suppose that Q ⊂ B(0, 1)∩N2√nδ Z(P1 , . . . , Pm )
+for each Q ∈ Q. Then for each D ≥ 1, at least one of the following two things must happen.
+Cellular case. There exists a polynomial P of degree ≤ D, so that Rn \Z(P ) is a union of . D n−m
+cells O1 , . . . , Ot , so that if we deﬁne
+
+                                   Qi = {Q ∈ Q : Q ⊂ Oi \Nδ (Z(P ))},                                   (3.4)
+
+then
+                                 #Qi . D m−n (#Q)                 for each index i,                     (3.5)
+
+
+
+                                                             19
+and
+                                            t
+                                            X          1
+                                                  #Qi ≥ (#Q).                                  (3.6)
+                                                       2
+                                            i=1
+
+
+Algebraic case. There is a polynomial P of degree ≤ D so that (P1 , . . . , Pm , P ) is a transverse
+complete intersection, and if we deﬁne
+
+                         Q∗ = {Q ∈ Q : Q ⊂ N2√nδ Z(P1 , . . . , Pm , P ) },
+                                                                        
+                                                                                               (3.7)
+
+then
+                                         #Q∗ & (log D)−1 (#Q).                                (3.8)
+                                                               √
+Remark 3.8. Note that since each δ-cube in Rn has diameter S nδ, if a cube Q is not contained in
+any cell Oi′ then it must intersect the δ-neighborhood  of Rn \ Oi , and thus it must be contained
+         √                            n
+                                         S
+in the ( n + 1)δ-neighborhood of R \ Oi . If this happens for at least half the cubes in Q, then
+it is possible to ﬁnd a polynomial P that satisﬁes (3.8).
+Lemma 3.9. Let P1 , . . . , Pm be polynomials in Rn , and suppose that Z = Z(P1 , . . . , Pm ) is a
+transverse complete intersection. Let Q be a ﬁnite set of δ-cubes in Rn that are contained in
+B(0, 1) ∩ N2√nδ (Z). Let ε > 0.
+    Then there is a set A = {(PA , QA )}, so that that sets {QA }A∈A are disjoint subsets of Q, and
+for each (PA , QA ) ∈ A we have,
+ C1. PA is a polynomial of degree at most E(n, ε).
+
+ C2. Z(P1 , . . . , Pm , PA ) is a transverse complete intersection.
+
+ C3. Each δ-cube in QA is contained in N2√nδ (Z(P1 , . . . , Pm , PA )).
+
+ C4.                            (#A)−1−ε (#Q) .ε #QA .ε (#A)−1+ε (#Q).                         (3.9)
+
+    Furthermore, if T is a tube of thickness δ (and any length), then there are disjoint subsets
+{T A }A∈A of T with the following properties
+ T1. T A ⊂ N3√nδ Z(P1 , . . . , Pm , PA ) for each A ∈ A.
+                                         
+
+ T2. If (PA , QA ) ∈ A, Q ∈ QA , and Q ∩ T 6= ∅, then Q ∩ T A 6= ∅.
+
+ T3. Each set T A is either empty or a union of disjoint sub-tubes of T .
+
+ T4. The number of sub-tubes in T A , summed across all A ∈ A, is not too big. Speciﬁcally, we
+     have
+                                      X
+                                            # CC(T A ) .ε (#A)1/(n−m)+ε .                     (3.10)
+                                      A∈A
+
+Proof. This lemma is not new; a variant of this lemma ﬁrst appeared in [11] in the context of the
+restriction problem, and in [13] in the context of Kakeya.
+    Let E = E(ε, n) be a large number to be chosen later. We will repeatedly apply Corollary 3.7
+to construct a tree T as follows. The root of T will be the pair (Rn , Q). The non-leaf vertices of
+T will be pairs (O, QO ), where O is an open subset of Rn and QO ⊂ Q. The leaf vertices of T will
+be pairs (P, QP ), where P is a polynomial in Rn of degree ≤ E, and QP ⊂ Q.
+
+                                                     20
+    If (O, QO ) is a non-leaf vertex, then Q ⊂ O\Nδ (bdry(O)) for each Q ∈ QO . If (O′ , QO′ )
+is the parent of (O, QO ), then O ⊂ O′ and QO ⊂ QO′ . If (P, QP ) is a leaf vertex, then Q ⊂
+N2√nδ (Z(P1 , . . . , Pm , P )) for each Q ∈ QP . If (O, QO ) is the parent of (P, QP ), then QP ⊂ QO .
+    For each non-leaf vertex (O, QO ) of T , exactly one of the following two things must be true.
+Case 1: Algebraic leaf. (O, QO ) has one child, which is a leaf of the form (P, QP ). Furthermore,
+Z(P1 , . . . , Pm , P ) is a transverse complete intersection,
+
+                                        #QP & (log E)−1 (#QO ),                                    (3.11)
+
+and
+                           Q ⊂ N2√nδ Z(P1 , . . . , Pm , P ) for each Q ∈ QP .                     (3.12)
+
+Case 2: Cellular vertex. (O, QO ) has ∼ E n−m children (O1 , QO1 ), . . . , (Ot , QOt ). Furthermore,
+
+                               #QOi . E m−n (#QO ) for each index i,                               (3.13)
+
+and
+                                            t
+                                            X              1
+                                                  (#QOi ) ≥ (#QO ).                                (3.14)
+                                                           2
+                                            i=1
+Finally, the sets O1 , . . . , Ot are disjoint.
+    Observe that the maximum depth        s of T is . logE (#Q), since each set QO at level s contains at
+least one, but at most C(n)E m−n (#Q) cubes. This means that
+                                         X
+                                                (#QP ) & 2− logE (#Q) (#Q),                         (3.15)
+                                  (P,QP )∈T
+
+where the sum is taken over all leafs of the tree. In particular, there is a level s0 so that
+                             X
+                                      (#QP ) & 2− logE (#Q) (log E)−1 (#Q).                        (3.16)
+                               (P,QP )
+                          level(P,QP )=s0
+
+If E is chosen suﬃciently large depending on ε, then
+
+                                  2− logE (#Q) (log E)−1 &ε (#Q)−ε/2 .
+
+Deﬁne A′ to be the set of pairs (P, QP ) that have level s0 . Then (3.16) implies that
+                                     X
+                                         (#QA ) &ε (#Q)1−ε/2 .                                     (3.17)
+                                       A∈A′
+
+   By (3.13), we have
+                                           s0
+                          (#QA ) ≤ C(n)E m−n (#Q)               for each A ∈ A′ .                  (3.18)
+
+Since                                                    s0
+                                        #A ≥ C(n)−1 E n−m ,                                        (3.19)
+
+we have that if E is chosen suﬃciently large depending on ε, then (3.18) and (3.19) imply
+
+                            #QA .ε (#A′ )−1+ε/2 (#Q)          for each A ∈ A′ .                    (3.20)
+
+                                                       21
+By pigeonholing, (3.17) and (3.20) imply that there exists a set A ⊂ A′ with #A &ε (#A′ )1−ε that
+satisﬁes (3.9).
+    It remains to analyze how a tube interacts with the elements of A. Observe that if (O, QO ) is
+a vertex of the tree with children (O1 , QOS  1 ), . . . , (Ot , QOt ), and if T is a tube of thickness δ (and
+any length) contained in O, then the set ti=1 T ∩ (Oi \Nδ (bdry(Oi )) is contained in a union of
+≤ E + 1 sub-tubes of T , each of which is contained in a cell Oi . If T ∩ Q 6= ∅ for some Q ∈ QOi ,
+then at least one of these sub-tubes intersects Q. Thus if T is a tube of thickness δ, then for each
+non-leaf vertex (O, QO ) of T we can associate a set T O ⊂ T , which is a disjoint union of sub-tubes
+of T contained in O.
+    If (P, QP ) is a leaf of T with parent (O, QO ), and if T is a tube of thickness δ (and any
+length) contained in O, then there is a set T P ⊂          T that is a disjoint union of OE (1) sub-tubes
+of T , each contained in N3√nδ Z(P1 , . . . , Pm , P ) . The set T P can be constructed by taking the
+smallest union of sub-tubes of T that contains T ∩ N2√nδ (Z(P1 , . . . , Pm , P )). By Theorem 2.3,
+T ∩ N2√nδ Z(P1 , . . . , Pm , P ) has OE (1) connected components, and thus T P will be a union of
+                                 
+
+OE (1) sub-tubes of T . The set T P has the property                                                 P
+                                                          S thatP if Q ∈ QP and T ∩Q 6= ∅, then T ∩Q 6= ∅.
+    For each level s ≥ 0 of the tree, we have that P T is a disjoint union of disjoint sub-tubes of
+T , and this union contains at most OE (1)(E + 1)s sub-tubes (the union                is taken over all leafs of
+the tree that have level s). In particular, setting s = s0 we see that A∈A T A is a disjoint union of
+                                                                                S
+disjoint sub-tubes of T , and this union contains at most OE (1)(E + 1)s0 sub-tubes. If E is chosen
+                                                                              1
+suﬃciently large (depending on ε), then this quantity is .ε (#A) n−m +ε , which establishes Property
+T4. Finally, if A ∈ A, Q ∈ QA , and T ∩ Q 6= ∅, then T A ∩ A 6= ∅. This establishes Property T2.
+
+Lemma 3.10. Let 2 ≤ k ≤ n and let λ1 , . . . , λk be real numbers between δ and 1. For each
+j = 1, . . . , k, let Tj be a set of λj × δ tubes in Rn . Let P1 , . . . , Pm be polynomials and let B0 ⊂ Rn
+be a ball of radius at most max1≤j≤k λj + δ. Suppose that Z(P1 , . . . , Pm ) is a transverse complete         
+intersection, and that for each index j, each tube Tj ∈ Tj is contained in B0 ∩N3√nδ Z(P1 , . . . , Pm ) .
+Let Y be a set of tuples (Q, T1 , . . . , Tk ), where Q is a δ-cube contained in B0 ∩N2√nδ (Z(P1 , . . . , Pn )),
+and Tj ∈ Tj is a tube intersecting Q.
+    Then for each ε > 0, there exists
+
+   • A set H of triples H = (BH , PH , QH ), where BH ⊂ B0 is a ball, PH is a polynomial of degree
+     at most E(n, ε), and QH is a set of δ-cubes.
+
+   • For each index j and each Tj ∈ Tj , a collection {TjH }H∈H of subsets of Tj .
+
+   • Lengths ℓ1 , . . . , ℓk , each of the form δ2N for some integer N ≥ 0.
+
+    These objects have the following properties.
+
+ G1. For each H = (BH , PH , QH ) ∈ H, we have that Z(P1 , . . . , Pm , PH ) is a transverse complete
+     intersection and Q ⊂ N2√nδ (Z(P1 , . . . , Pm , PH )) for each Q ∈ QH .
+
+ G2. The sets {QH }H∈H are disjoint.
+
+                                              H = (BH , PH , QH ) ∈ H, we have the containment
+ G3. For each index j, each Tj ∈ Tj , and each
+      H            √
+     Tj ⊂ BH ∩ N3 nδ Z(P1 , . . . , Pm , PH ) .
+
+ G4. For each index j, each Tj ∈ Tj , and each H ∈ H, we have that T H is a (possibly empty)
+     disjoint union of sub-tubes of T , each of which has length ℓj . The sets {T H }H∈H are disjoint.
+
+ G5. For each (BH , PH , QH ) ∈ H, BH has radius at most 4 max1≤j≤k ℓj + δ.
+
+                                                       22
+ G6. For each index j and each H ∈ H,
+                                         1                                                                   1
+                         (#Tj )(#H) n−m −1 ≤                  # CC(TjH ) .ε M ε (#Tj )(#H) n−m −1 ,
+                                                       X
+                                                                                                                         (3.21)
+                                                     Tj ∈Tj
+
+      where                                                         Y
+                                                       M = δ−1           (#Tj ).                                         (3.22)
+                                                                    j
+
+ G7. For each H ∈ H we have
+                    X                                1
+        M −ε (#H)−1    #{(Q, T1 , . . . , Tk ) ∈ Y } k−1
+                           Q
+                    X                                                                           1
+                .         #{(Q, T1 , . . . , Tk ) ∈ Y : Q ∈ QH , Q ∩ TjH 6= ∅ for each index j} k−1                      (3.23)
+                    Q
+                                         X                                     1
+                        .ε M ε (#H)−1            #{(Q, T1 , . . . , Tk ) ∈ Y } k−1 .
+                                             Q
+
+
+Proof. After dyadic pigeonholing, we can ﬁnd a set Y ′ ⊂ Y and a set Q of δ-cubes so that #Y ′ &
+(#Y )/ log(#Y ); for each (Q, T1 , . . . , Tk ) ∈ Y ′ we have Q ∈ Q; and
+
+                #{(T1 , . . . , Tk ) : (Q, T1 , . . . , Tk ) ∈ Y ′ } ∼ (#Y ′ )/(#Q)           for each Q ∈ Q.            (3.24)
+
+In particular, we have
+               X                                                         1             1       k−2
+                    #{(T1 , . . . , Tk ) : (Q, T1 , . . . , Tk ) ∈ Y ′ } k−1 ∼ (#Y ′ ) k−1 (#Q) k−1 .
+                 Q∈Q′
+
+   Apply Lemma 3.9 to Q with allowable error ε/C, where C is a large constant to be chosen later.
+Let A = {(PA , QA )} be the output from the lemma. By (3.24) and the lower bound from (3.9), we
+have
+      X                                        [                            1
+           #{(Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩   TjA 6= ∅ for each index j} k−1
+       Q∈Q                                         A∈A
+                                                                                    1                            k−2     (3.25)
+                                                                        &ε (#Y ′ ) k−1 −O(ε/C) (#Q) k−1
+                                                                                                   1               k−2
+                                                                        &ε M −O(ε/C) (#Y ′ ) k−1 (#Q) k−1 .
+
+On the last line we used the fact that #Y ′ ≤ #Y ≤ M . Indeed, this inequality motivates the
+deﬁnition of M .                                                                                1 ε
+    For each index j and each Tj ∈ Tj , we have that A∈A TjA is a disjoint union of .ε (#A) n−m + C
+                                                           S
+sub-tubes of Tj , each of which has length between δ and λj . Thus by dyadic pigeonholing, there
+               (0)
+are numbers ℓj , j = 1, . . . , k, each of the form δ2N for some non-negative integer N , so that
+                X n
+                     # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ Tj is contained in
+                 Q∈Q
+                                                                                                             o 1
+                                                                                        (0)            (0)               (3.26)
+                                                 [                                                                k−1
+                            a sub-tube of              TjA of length between ℓj               and 2ℓj
+                                                 A∈A
+                                                                                1                       k−2
+                                                 &ε (log(1/δ))−k (#Y ′ ) k−1 −O(ε/C) (#Q) k−1 .
+
+                                                               23
+    Recall that the sets {TjA }A∈A are disjoint, and each of these sets is a disjoint union of sub-tubes
+of Tj . For each index j, each Tj ∈ Tj , and each A ∈ A, deﬁne T̃jA to be the union of those sub-tubes
+                                   (0)             (0)
+in TjA that have length between ℓj       and 2ℓj . Thus (3.26) becomes
+
+                 X                                   [            1
+                   # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩
+                                                                    k−1
+                                                         T̃jA 6= ∅
+                 Q∈Q                                          A∈A
+                                                                           1                   k−2
+                                             &ε (log(1/δ))−k (#Y ′ ) k−1 −O(ε/C) (#Q) k−1
+                                                                       1          k−2
+                                             &ε M −O(ε/C) (#Y ′ ) k−1 (#Q) k−1 .
+
+    Recall that for each of the tuples (Q, T1 , . . . , Tk ) in the above sum, there is an element A ∈ A
+so that Q ∈ QA and Q ∩ T̃jA 6= ∅ for each index j. Thus
+
+                   X X                                               1
+                        # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ T̃jA 6= ∅
+                                                                       k−1
+
+
+                   A∈A Q∈QA
+                                                                                 1         k−2
+                                                         &ε M −O(ε/C) (#Y ′ ) k−1 (#Q) k−1 .
+                       (0)
+Deﬁne r (0) = 2 maxj ℓj . Let B be a set of balls of radius 2r (0) in Rn so that the balls are O(1)
+overlapping, and every r (0) × δ tube is contained in at least one of the balls. For each such ball B,
+deﬁne T̃jA,B to be the union of the sub-tubes in T̃jA that are contained in B. Then there is a subset
+B ′ ⊂ B consisting of disjoint balls so that
+                X X X                                                 1
+                       # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ T̃jA,B 6= ∅
+                                                                        k−1
+
+
+                A∈A B∈B′ Q∈QA
+                                                                                       1       k−2
+                                                           &ε M −O(ε/C) (#Y ′ ) k−1 (#Q) k−1 .
+
+For each A ∈ A and each B ∈ B, deﬁne
+
+                                     QA,B = {Q ∈ QA : Q ⊂ B}.
+
+Deﬁne                                     [
+                                 H′ =            {(B, PA , QA,B ) : B ∈ B ′ }.
+                                         A∈A
+
+   If H = (BH , PH , QH ) ∈ H′ and PH = PA for some A ∈ A, then for each index j and each
+Tj ∈ Tj , deﬁne TjH = T̃jA,B ; thus TjH is a disjoint union of sub-tubes of Tj , each of which is
+                                                                                     (0)            (0)
+contained in BH ∩ N3√nδ (Z(P1 , . . . , Pm , P )) and has length between ℓj and 2ℓj .
+   We have
+                 X X                                                    1
+                            # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ TjH 6= ∅
+                                                                          k−1
+
+
+                  H∈H′ Q∈QH                                                                               (3.27)
+                                                                                  1           k−2
+                                                         &ε M −O(ε/C) (#Y ′ )    k−1   (#Q)   k−1   .
+
+Abusing notation slightly, we will re-deﬁne the sets TjH so that each such set is a disjoint union
+                                           (0)
+of sub-tubes of Tj of length precisely ℓj . If we choose these sub-tubes appropriately, then (3.27)
+
+                                                         24
+remains true (though the quasi-inequality is weakened by a constant factor). This step is not crucial
+for our proof; we do it only for notational convenience later on.
+    For each H ∈ H′ , we will be interested in the quantity
+                          X                                              1
+                             # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ TjH 6= ∅
+                                                                           k−1
+                                                                               .
+                         Q∈QH
+
+                                               1
+Note that this number is of the form N k−1 , where N is an integer between 0 and #Y ≤ M . We
+will also be interested in the numbers
+                                        X
+                                              # CC(TjH ),
+                                              Tj ∈Tj
+
+which are non-negative integers bounded by M (this follows from the fact that each connected
+                              (0)
+component of TjH has length ℓj ≥ δ). After dyadic pigeonholing, we can ﬁnd a subset H(0) ⊂ H′
+so that the above quantities are roughly the same for each H ∈ H(0) . Speciﬁcally, the following
+items hold
+             X X                                                    1
+                        # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ TjH 6= ∅
+    •                                                                 k−1
+
+
+           H∈H(0) Q∈QH
+                                                                                        1          (3.28)
+                                     X X  
+                                −1
+                                          # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ TjH 6= ∅
+                                                                                        k−1
+                  & (log M )                                                                .
+                                     H∈H′ Q∈QH
+
+
+   • For each H0 ∈ H(0) ,
+            X                                               1
+               # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ TjH0 6= ∅
+                                                              k−1
+
+
+          Q∈QH0
+                                                                                            1      (3.29)
+                                     X     X  
+                          (0) −1
+                                              # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ TjH 6= ∅
+                                                                                            k−1
+                  ∼ (#H     )                                                                   .
+                                   H∈H(0) Q∈QH
+
+
+   • For each H0 ∈ H(0) and each index j,
+
+                            # CC(TjH0 ) ∼ (#H(0) )−1
+                        X                            X               X
+                                                                              # CC(TjH ).           (3.30)
+                          Tj ∈Tj                              Tj ∈Tj H∈H(0)
+
+
+   At this point we will pause to check whether H(0) and the sets {TjH }H∈H0 satisfy the require-
+ments of Lemma 3.10.
+
+   • Property G1 is certainly true, since for each (BH , PH , QH ) ∈ H(0) , we have that PH = PA
+     for some A ∈ A, and thus (P1 , . . . , Pm , PH ) = (P1 , . . . , Pm , PA ) is a transverse complete
+     intersection by Property C2 from Lemma 3.9.
+
+   • Property G2 follows from the fact that the sets {QA }A∈A from Lemma 3.9 are disjoint, plus
+     the fact that the balls in B ′ are disjoint.
+
+   • Property G3 follows from Property T1 of Lemma 3.9.
+
+   • Property G4 follows from the deﬁnition of TjH .
+
+                                                       25
+   • Property G5 follows from the deﬁnition of B.
+   Our next task is to consider Properties G6 and G7. By the upper bound from (3.9) we have
+that for each H ∈ H(0) ,
+               X                                                       1
+                  # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∈ QH , Q ∩ TjH 6= ∅
+                                                                         k−1
+
+
+              Q∈QH                                                                                          (3.31)
+                                                                          1                   k−2
+                                                     −1+O(ε/C)       ′       −O(ε/C)
+                                            .ε (#A)              (#Y )   k−1           (#Q)   k−1   ,
+
+and thus (3.27) and (3.28) imply that
+
+                                    #H(0) &ε (log M )−1 M −O(ε/C) (#A).                                     (3.32)
+
+While we could combine the terms (log M )−1 and M −O(ε/C) into one, we will keep them distinct
+for now. Combining (3.29), (3.31), and (3.32), we conclude that for each H ∈ H(0) ,
+              X                                              1
+                 # (Q, T1 , . . . , Tk ) ∈ Y ′ : Q ∩ TjH 6= ∅
+                                                               k−1
+
+
+             Q∈QH                                                                                           (3.33)
+                                                                                     1           k−2
+                                           .ε (log M )M O(ε/C) (#H(0) )(#Y ′ )      k−1   (#Q)   k−1    .
+
+The inequalities (3.28), (3.29) and (3.33) imply that H(0) satisﬁes Property G7; indeed, if C is
+chosen suﬃciently large then H(0) satisﬁes (3.23) with M ε/2 and M −ε/2 in place of M ε and M −ε ,
+respectively. This epsilon of slack will be useful for us in the arguments below.
+    By (3.10) and (3.32), we have that for each index j and each Tj ∈ Tj ,
+                          X                                            1
+                                # CC(TjH ) .ε (log M )M O(ε/C) (#A) n−m
+                          H∈H(0)
+                                                                                1
+                                              .ε (log M )M O(ε/C) (#H(0) ) n−m ,
+
+and thus for each index j we have
+                   X X                                                       1
+                              # CC(TjH ) .ε (log M )M O(ε/C) (#Tj )(#H(0) ) n−m .                           (3.34)
+                    Tj ∈Tj H∈H(0)
+
+   Finally, by 3.30, this implies that for each index j and each H ∈ H0 , we have
+                                                                          1
+                           # CC(TjH ) .ε (log M )M O(ε/C) (#Tj )(#H(0) ) n−m −1 .
+                      X
+                                                                                                            (3.35)
+                      Tj ∈Tj
+
+
+Thus the set H(0) and the sets {TjH }H∈H(0) satisfy all of the requirements of Lemma 3.10, except
+(crucially!) the ﬁrst inequality in (3.21) from Property G6. To ﬁx this, we will alternate between
+the following two steps. In the ﬁrst step, we will cut the sub-tubes in TjH into smaller sub-tubes
+so that Property G6 holds. Of course, when we cut the tubes in TjH into smaller sub-tubes, they
+become shorter, and this this might cause Property G5 to fail. In the second step, we will cut the
+grains into smaller balls. This will cause Property G5 to hold, but now Property G6 might fail.
+We will iterate between these two steps multiple times, and eventually both Property G5 and G6
+will hold simultaneously.
+    Suppose that the lower bound from Property G6 fails for at least one index j. Then we perform
+the following step.
+
+                                                    26
+Step 1. For each index j for which the lower bound of (3.21) fails, cut each tube-segment in
+          H
+S
+  H∈H(0) Tj into
+                                                                    1
+                                         −ε        (#Tj )(#H (0) ) n−m
+                                   X∼δ        P       P                H
+                                                T ∈Tj   H∈H(0) # CC(Tj )
+                                                   (1)
+pieces of equal length. For each index j, let ℓj be the new lengths of the segments. If we choose the
+                                                              (1)
+value of X appropriately, then we can suppose that ℓj is of the form δ2N for some non-negative
+integer N .
+    After Step 1 has been performed, Property G6 now holds. Observe that each of Properties
+G1–G7 remain true, with the exception that Property G5 might fail. If Property G5 fails, then we
+form the following step.
+                             (1)
+Step 2. Let r (1) = maxj ℓj . For each (BH , PH , QH ) ∈ H(0) , cover BH by ﬁnitely overlapping
+balls of radius 2r (1) so that each r (1) × δ tube is contained in at least one of these balls. For each
+such ball BH ′ , deﬁne Q ′ to be the set of cubes from Q                       ′                H ′ to be
+                          H                                  H contained in BH , and deﬁne Tj
+the set of sub-tubes of TjH contained in BH    ′ .
+
+     By dyadic pigeonholing, we can select a set H(1) , and for each index j; each Tj ∈ Tj ; and each
+                                                                                                       (1)
+H = (BH , PH , QH ) ∈ H(1) , a set TjH so that TjH is a disjoint union of sub-tubes of Tj of length ℓj
+that are contained in BH . We can make this selection so that (3.28), (3.29), and (3.30) hold with
+H(1) in place of H(0) , except the term (log M )−1 in (3.28) is replaced by (log M )−2 . In particular,
+note that the implicit constant in the O(ε/C) terms in (3.33) and (3.34) remain unchanged.
+     If we repeat the arguments following (3.30), we are now in the situation preceding Step 1. We
+iterate between these two steps until both Property G5 and G6 hold. Each iteration decreases at
+least one of the lengths ℓj by a multiplicative factor of δε . Since Property G5 automatically holds
+if all sub-tubes have length ≤ δ/2, we conclude that we iterate the above procedure at most k/ε + 1
+times.
+     Deﬁne H to be the set obtained by the ﬁnal iteration. Each iteration weakens (3.33) and (3.34)
+by a multiplicative factor of . (log M )−1 , so all together these inequalities are weakened by a
+multiplicative factor of .ε (log M )−(k/ε+1) . Since (log M )−(k/ε+1) .ε M ε/2 , this is an acceptable
+loss. Finally, choose the constant C suﬃciently large so that all terms of the form O(ε/C) are at
+most ε/2.
+
+    We are now ready to prove Proposition 3.5. The result will be proved by repeated application
+of Lemma 3.10.
+
+Proof of Proposition 3.5. We will construct the set G and the sets {T G }G∈G using the following
+iterative procedure. Deﬁne G (0) = {(B(0, 1), P0 )}, where P0 is the zero polynomial. For each index
+j, deﬁne ℓ0,j = 1 and for each Tj ∈ Tj , deﬁne TjG = T . Deﬁne D0 = 1. Deﬁne YG0 = Y .
+    Observe that G (0) is a tree of grains of depth 0 and complexity .ε 1, and for each index j and
+each Tj ∈ Tj , we have that {TjG }G∈G (0) is compatible with G (0) . The set G (0) and the set systems
+{TjG }G∈G (0) satisfy all the properties from Proposition 3.5 that apply to grains in G that have level
+i = 0.
+    In fact, the following slightly stronger variant of 3.1 is true for all grains G ∈ G (0) that have
+level i = 0:
+                                            X
+      M −iε/m (D11−n · · · Dii−n )(#Tj ) .ε    # CC(TjG ) .ε M iε/m (D11−n · · · Dii−n )(#Tj ).  (3.36)
+                                          Tj ∈Tj
+
+
+
+
+                                                         27
+This inequality is slightly silly, since both the terms M −iε/m and (D11−n · · · Dii−n ) are equal to 1.
+However, stating the inequality in this way will be useful for us later on.
+   Similarly, the following variant of (3.3) is true for all grains G ∈ G (0) that have level i = 0:
+                                               X                                   1
+              M −iε/m (D1−n · · · Dii−n−1 )          #{(Q, T1 , . . . , Tk ) ∈ Y } k−1
+                                                Q
+                    X                                                                   1
+                          #{(Q, T1 , . . . , Tk ) ∈ YG : Q ∩ TjG 6= ∅ for each index j} k−1                    (3.37)
+                     Q
+                                                                  X                                    1
+                          .ε M iε/m (D1−n · · · Dii−n−1 )                #{(Q, T1 , . . . , Tk ) ∈ Y } k−1 .
+                                                                   Q
+
+
+Again, this inequality is slightly silly since both the terms M iε/m and (D1−n · · · Dik−n−1 ) are equal
+to 1.
+    Suppose we have constructed a tree of grains G (i) of depth i; numbers {ℓi′ ,j } for 0 ≤ i′ ≤ i and
+1 ≤ j ≤ k; set systems {TjG }G∈G (i) ; and sets {YG }G∈G (i) that satisfy the requirements of Proposition
+3.5, as well as the stronger inequalities (3.36) and (3.37). We will show how to append additional
+leaves to this tree to construct level i + 1.
+    Let G = (B, P1 , . . . , Pi ) ∈ G (i) be a grain that has level i. For each index j, deﬁne
+                                                       [
+                                              TG,j =       CC(T G ).
+                                                        Tj ∈Tj
+
+Thus TG,j is a set of ℓi,j × δ tubes, each of which is contained in the ball B, which has radius at
+most 4 maxj ℓi,j + δ. By (3.36), we have
+
+              M −iε/m (D11−n · · · Di1−i )(#Tj ) .ε #TG,j .ε M iε/m (D11−n · · · Di1−i )(#Tj ).                (3.38)
+
+    Apply Lemma 3.10 to B, P1 , . . . , Pi , TG,1 , . . . , TG,j , and YG , with allowable error ε/C. C is a
+constant that will be chosen below. We obtain a set HG ; lengths ℓG,1 , . . . , ℓG,k ; and for each index
+j and each Tj ∈ TG,j , families of sets {TjH }H∈HG .
+    Observe that #HG is an integer between 0 and M , and each of ℓG,1 , . . . , ℓG,k are numbers of
+the form δ2N , where N is an integer between 0 and log(1/δ). Thus by dyadic pigeonholing, there
+                                                                                    (i)
+is a number L and lengths ℓi+1,1 , ℓi+1,2 , . . . , ℓi+1,k so that if we deﬁne G∗ to be the set of grains
+G ∈ G (i) that have level i and for which L ≤ #HG ≤ 2L and ℓG,j = ℓi+1,j for each index j, then
+                                         (i)
+                                      #G∗ & (log M )−k−1 D1n · · · Din−i+1 .                                   (3.39)
+
+Deﬁne                                          [
+                  G (i+1) = G (i) ∪                            {(BH , P1 , . . . , Pi , PH ) : H ∈ HG }.       (3.40)
+                                                         (i)
+                                      G=(B,P1 ,...,Pi )∈G∗
+
+For each of these newly deﬁned grains G = (BH , P1 , . . . , Pi , PH ), for each index j, and for each
+Tj ∈ Tj , deﬁne                             [
+                                    TjG =              T̃jH ,
+                                                                     ′
+                                                       T̃j ∈CC(TjG )
+
+where G′ = G|i ∈ G (i) . By construction, TjG is a disjoint union of ℓi+1,j × δ tubes, each of which is
+contained in N3√nδ (Z(P1 , . . . , Pi , PH )).
+
+
+                                                           28
+    Deﬁne Di+1 so that
+                                                      n−i
+                                   D1n · · · Din−i+1 Di+1 = #{G ∈ G : level(G) = i + 1}.
+                   n−i                     (i)
+We have D1n · · · Di+1 ∼ L#G∗ , and since
+                                                                                 (i)
+                                  (log M )−k−1 D1n · · · Din−i+1 . #G∗ ≤ D1n · · · Din−i+1 ,
+
+we have
+                                                     (log M )−k−1 L . Di+1
+                                                                       n−i
+                                                                           . L.                                                  (3.41)
+   We can now verify that if the constant C is chosen suﬃciently large, then the tree G (i+1) has
+the following properties.
+    • First, G (i+1) is a tree of grains of depth i + 1 and complexity .ε 1, since for each G =
+      (B, P1 , . . . , Pi+1 ) ∈ G i+1 , we have that Z(P1 , . . . , Pi+1 ) is a transverse complete intersection.
+    • Second, for each index j and each Tj ∈ Tj , the set system {TjG }G∈G (i+1) is compatible with
+      G.
+    • Properties M1 and M2 follow from Properties G4 and G3 from Lemma 3.10, respectively.
+    • Property M3 at level i + 1 follows from the stronger variant (3.36) at level i + 1, which in
+      turn follows from (3.36) at level i, (3.38), (3.41), and Property G6 from Lemma 3.10.
+    • Property M4 at level i + 1 follows from the stronger variant (3.37) at level i + 1, which in
+      turn follows from (3.37) at level i, (3.41), and Property G7 from Lemma 3.10.
+To complete the proof, deﬁne G = G (m) .
+
+
+4    k-linear Kakeya estimates for direction-separated tubes
+In this section we will prove Theorem 1.3. We will actually prove the following slightly more
+technical version.
+Theorem 1.3′ . Let 2 ≤ k ≤ n and let T1 , . . . , Tk be sets of direction-separated 1 × δ tubes in Rn ,
+each of which have cardinality at most N . Then for each ε > 0, there is a constant C(n, ε) so that
+      X                X                                             1                  1  n −1+ε            n(d−1)
+                                χT1 · · · χTk |v1 ∧ . . . ∧ vk |k/d                                      n−1
+                                                                       k                       d
+                 ···                                                            ≤ C(n, ε)             (δ     N ) d(n−1) ,         (4.1)
+                                                                             d
+                                                                            d−1
+                                                                                           δ
+        T1 ∈T1         Tk ∈Tk
+
+where
+                                                              n2 + k 2 + n − k
+                                                         d=                    .                                                  (4.2)
+                                                                     2n
+Proof. Our ﬁrst step will be to discretize the problem. We have
+     Z  X          X                                     k
+                                                             d
+                                                             k(d−1)
+               ···       χT1 · · · χTk |v1 ∧ . . . ∧ vk | d
+        Rd   T1 ∈T1        Tk ∈Tk
+                                                    1
+                       X                X              
+             ≤                  |Q|              θ d−1 # (T1 , . . . , Tk ) ∈ T1 (Q) × · · · × Tk (Q) :                           (4.3)
+                   Q⊂Rn                δ≤θ.1
+                 Q a δ-cube           θ dyadic
+                                                                                                                      d
+                                                                                                                    k(d−1)
+                                                                           θ < |v(T1 ) ∧ . . . ∧ v(Tk )| ≤ 2θ                .
+
+                                                                      29
+By dyadic pigeonholing, there exist numbers δ ≤ θ ≤ 1 and 1 ≤ µ ≤ δ1−n ; a set K ⊂ Rn that is a
+union of δ-cubes; and numbers µ1 , . . . , µk so that
+              # (T1 , . . . , Tk ) ∈ T1 (Q) × · · · × Tk (Q) : θ < |v1 ∧ . . . ∧ vk | ≤ 2θ ∼ µk
+                
+                                                                                                (4.4)
+for every δ-cube Q ⊂ K;
+                                                                                        d
+                                                     RHS (4.3) / θ 1/(d−1) µ d−1 |K|;                                 (4.5)
+and
+                               #Tj (Q) ∼ µj           for every δ-cube Q ⊂ K and every index j.                       (4.6)
+Note that (4.4) and (4.6) imply that
+                                                              µk ≤ µ1 · · · µk .                                      (4.7)
+    Deﬁne
+           
+        Y = (Q, T1 , . . . , Tk ) : Q ⊂ K, θ < |v1 ∧ . . . ∧ vk | ≤ 2θ, Tj ∈ Tj (Q) for each index j .
+By (4.4) we have
+                                        1     k        X           1                                1
+                               |K|θ k−1 µ k−1 ∼              |Q|θ k−1 #{(Q, T1 , . . . , Tk ) ∈ Y } k−1 .             (4.8)
+                                                      Q⊂K
+
+    Apply Proposition 3.5 to T1 , . . . , Tk and Y , with m = n − k and allowable error ε/C; here C
+is a large constant to be chosen later. We obtain a tree G of grains of depth n − k and complexity
+E .ε 1; lengths ℓi,j ; and for each index j and each Tj ∈ Tj , a set system {TjG }G∈G of sub-tubes of
+Tj that is compatible with G.
+    Observe that since the tubes in T are direction separated, we have #T . δ1−n and thus the
+quantity M from (3.2) satisﬁes M . δ−1−k(n−1) . By (4.8) and Property M4 of Proposition 3.5, we
+have that for each G ∈ G that has level n − k,
+        1     k
+|K|θ k−1 µ k−1
+                                            X           1                                                               1
+      .ε δ−O(ε/C) (D1n · · · Dn−k
+                              k+1
+                                  )               |Q|θ k−1 #{(Q, T1 , . . . , Tk ) ∈ Y : TjG ∩ Q 6= ∅ for each index j} k−1
+                                              Q
+                                            Z  X                                                            1
+                                                                   X                                         k−1
+            −O(ε/C)               k+1
+      .δ              (D1n · · · Dn−k )                     ...             χT1 · · · χTk |v1 ∧ . . . ∧ vk |     .
+                                                  T1 ∈T1          Tk ∈Tk
+                                                  T1G 6=∅         TkG 6=∅
+                                                                                                                      (4.9)
+    Our next task is to obtain a lower bound for the numbers D1 , . . . , Dn−k from Property M3 of
+Proposition 3.5. Fix an index 1 ≤ i ≤ n − k and an index j. Recall that for each Tj ∈ Tj , the
+sets {T G : G ∈ G, level(G) = i} are disjoint, and each of these sets is a disjoint union of ℓi,j × δ
+sub-tubes of Tj . Similarly, the sets {T G : G ∈ G, level(G) = i − 1} are disjoint, and each of these
+sets is a disjoint union of ℓi−1,j × δ sub-tubes of Tj . Thus
+                        X      X                          X      X
+                   ℓi,j               # CC(TjG ) ≤ ℓi−1,j               # CC(TjG ).            (4.10)
+                               Tj ∈Tj      G∈G                                     Tj ∈Tj        G∈G
+                                        level(G)=i                                          level(G)=i−1
+
+But by Property M3 of Proposition 3.5 and the deﬁnition of D1 , . . . , Di , we have that
+              X     X                                 X         X
+                          # CC(TjG ) &ε M −O(ε/C) Di                        # CC(TjG ).                              (4.11)
+                      Tj ∈Tj      G∈G                                                 Tj ∈Tj        G∈G
+                               level(G)=i                                                      level(G)=i−1
+
+
+                                                                            30
+Combining (4.10) and (4.11), we conclude that
+
+                                              ℓi−1,j &ε M −O(ε/C) Di ℓi,j .                               (4.12)
+
+    We will make use of (4.12) as follows. Let G = (B, P1 , . . . , Pi ) ∈ G be a grain. Let ji be an
+index so that ℓi,ji is maximal. By Property M2 of Proposition 3.5, we have that B has radius
+≤ 4ℓi,ji + δ. In particular, for each tube Tji ∈ Tji , we have that TjGi is either empty, or is a union
+of at most four disjoint ℓi,ji × δ tubes. If TjGi is non-empty, then for each index 1 ≤ i′ < i we have
+                                                                                                   G| ′
+that each of the ℓi,ji × δ tubes in TjGi is contained in a ℓi′ ,ji × δ sub-tube from Tji i . By (4.12) we
+have
+                                  ℓi′ ,ji &ε M −O(ε/C) Di′ +1 · · · Di ℓi,ji ,
+and thus if we deﬁne Bi′ to be the ball with the same center as B and radius M −O(ε/C) Di′ +1 · · · Di ℓi,ji ,
+then
+
+   |Tji ∩ Bi′ ∩ N3√nδ Z(P1 , . . . , Pi′ ) | & M O(ε/C) Di′ +1 · · · Di ℓi,ji δn−1 for each index 1 ≤ i′ ≤ i.
+                                          
+
+                                                                                                         (4.13)
+    Applying Theorem 1.9 with allowable error ε/C, we obtain
+                                 X
+                                         CC(TjGi ) ≤ 4 #{T ∈ Tji : T G 6= ∅}
+                               Tji ∈Tji
+
+                                                                      δ1+i−n−ε/C
+                                                        . ε Qi                                            (4.14)
+                                                                i′ =1 (ℓi,ji Di · · · Di′ +1 )
+                                                                δ1+i−n−ε/C
+                                                        ∼                               .
+                                                            ℓii,ji D2 D32 · · · Dii−1
+
+Comparing the upper bound (4.14) with the lower bound from Property M3 of Proposition 3.5, we
+see that
+
+                                                                         δ1+i−n−O(ε/C)
+                              D11−n · · · Dii−n (#Tji ) .ε                                     .          (4.15)
+                                                                     ℓii,ji D2 D32 · · · Dii−1
+This inequality should be thought of as a lower bound for the numbers D1 , . . . , Di . Note that for
+each index 1 ≤ j ≤ k, we have
+
+                                              X
+                               |K|µj .                |T ∩ K|
+                                              T ∈Tj
+                                              X         X
+                                          ≤                        |T G ∩ K|                              (4.16)
+                                              T ∈Tj      G∈G
+                                                      level(G)=i
+
+                                          . δ−O(ε/C) (D1 · · · Di )ℓi,j (δn−1 #Tj ),
+
+where for the ﬁnal inequality we used Properties M1 and M3 (the latter summed over all G ∈ G
+with level(G) = i) of Proposition 3.5. We conclude that
+
+                                              δO(ε/C) |K|µj         δO(ε/C) λj
+                                ℓi,j &ε                           =             ,                         (4.17)
+                                           (δn−1 #Tj )D1 · · · Di   D1 · · · Di
+
+
+                                                              31
+where we deﬁne
+                                           λj = |K|µj (δn−1 #Tj )−1 .                                    (4.18)
+In particular, if we deﬁne λ = (λ1 · · · λk )1/k , then since ℓi,ji = maxj ℓi,j , we have
+
+                                                          δO(ε/C) λ
+                                                ℓi,ji ≥               .                                  (4.19)
+                                                          D1 · · · Di
+Combining (4.19) and (4.15), we have
+                       D11−n · · · Dii−n (#Tji ) . λ−i δ1+i−n−O(ε/C) D1i D2i−1 · · · Di1 ,
+or
+                    δ−i+O(ε/C) λi (δn−1 #Tji ) . D1n+i−1 D2n+i−3 D3n+i−5 · · · Din−i+1 .                 (4.20)
+Deﬁne
+                                                W = min (#Tj ).
+                                                        1≤j≤k
+
+Then (4.20) implies
+
+
+                      δ−i+O(ε/C) λi (δn−1 W ) . D1n+i−1 D2n+i−3 D3n+i−5 · · · Din−i+1
+                                                        i
+                                                        Y
+                                                               n+j+1−2m
+                                                                                                         (4.21)
+                                                    =         Dm        .
+                                                        m=1
+
+   We will need to average certain powers of (4.21) as i ranges from 1 to n − k. A computation
+shows that
+              n−k
+              Y Yi                            k(k−1)
+                                          (n−i+1)(n−j)(n−i−1)
+                           n+i+1−2m
+                          Dm                                     = D1n−k D2n−k−1 · · · Dn−k+1
+                                                                                        2
+                                                                                              Dn−k .     (4.22)
+              i=1   m=1
+
+(Recall that k ≥ 2, so the denominator (n − j + 1)(n − j)(n − j − 1) is never 0). Combining (4.21)
+and (4.22), we obtain
+                                          n−k
+                                          Y                                          k(k−1)
+                                                    −i+O(ε/C) i                  (n−i+1)(n−i)(n−i−1)
+                    D1n−k · · · Dn−k ≥          δ               λ (δ   n−1
+                                                                             W)
+                                          i=1                                                            (4.23)
+                                                n2 +k2 −2kn+n−k                    1
+                                                                                     − k(k−1)
+                                     = (λ/δ)            2n           (δn−1 W )     2 2n(n−1)    .
+
+Observe that since 2 ≤ k ≤ n, the term (δn−1 W ) is raised to an exponent 0 ≤ α < 1/2.
+     Next, let G ∈ G be a grain of level n − k. By (4.9) and Theorem 1.2 we have
+                                                     Z  X     X                                  1/(k−1)
+   1/(k−1) k/(k−1)          −O(ε/C)   n        k+1
+ θ        µ        |K| .ε δ         (D1 · · · Dn−k )       ...    χT1 · · · χTk |v1 ∧ . . . ∧ vk |
+                                                                T1 ∈T1        Tk ∈Tk
+                                                                T1G 6=∅       TkG 6=∅
+                                                            k 
+                                           1  n−k +O(ε/C) Y                                    1/(k−1)
+                                                                                             −k
+                                     k+1
+                      .ε (D1n · · · Dn−k                       (δn−1 #Tj )D11−n D22−n · · · Dn−k
+                                                k−1
+                                         )                                                                ,
+                                            δ
+                                                                  j=1
+
+where on the second line we used Property M3 from Proposition 3.5. This implies that
+                                                               k 
+                                                               Y                                    
+                            k+1 −(k−1)                                                          −k
+     θµk |K|k−1 (D1n · · · Dn−k )      .ε δk−n−O(ε/C)             (δn−1 #Tj )D11−n D22−n · · · Dn−k  .   (4.24)
+                                                               j=1
+
+
+                                                          32
+Re-arranging, we obtain
+                                   k
+                                  Y              
+                                                                    k+1 k−1                    −k k
+    k   k−1          k−n−O(ε/C)
+                                       (δn−1 #Tj ) D1n D2n−1 · · · Dn−k     D11−n D22−n · · · Dn−k
+                                                                                                  
+ θµ |K|       .ε δ
+                                  j=1                                                                          (4.25)
+                                                                              −1
+              ≤ δk−n−O(ε/C) (δn−1 W )1/2 (δn−1 N )k−1/2 D1n−k D2n−k−1 · · · Dn−k     .
+
+Inserting (4.23) and recalling that W ≤ N , we conclude
+
+  θµk |K|k−1
+                                                  n2 +k2 −2kn+n−k           1   k(k−1) −1
+                                                                                 −
+    .ε δk−n−O(ε/C) (δn−1 W )1/2 (δn−1 N )k−1/2 (λ/δ)         2n      (δn−1 W ) 2 2n(n−1)                       (4.26)
+               n2 +k2 −2kn+n−k                  n2 +k2 −2kn+n−k                      k(k−1)
+                                                                             k−1/2+ 2n(n−1)
+                               −O(ε/C)
+    .ε δk−n+           2n                  λ−           2n           (δn−1 N )                .
+
+   From (4.7) and (4.18), we have
+                                  k
+                                 Y                  1/k
+                          λ = |K|   µj (δn−1 #Tj )−1      ≥ |K|µ(δn−1 N )−1 ,
+                                       j=1
+
+and thus (4.26) implies
+               2     2        2    2                   2    2                            2        2   k(k−1)
+        θ 2n µn +k +n−k |K|n +k −n−k .ε δ−n +k +n−k−O(ε/C)(δn−1 N )n +k −k+ n−1 .                              (4.27)
+
+Recalling the deﬁnition of d from (4.2), we have
+
+                              1        d                   2n          n2 +k2 +n−k
+                            θ d−1 µ d−1 |K| = θ n2 +k2 −n−k µ n2 +k2 −n−k |K|
+                                                      −n2 +k2 +n−k                        n
+                                                                        −O(ε/C)
+                                                 .ε δ n2 +k2 −n−k        (δn−1 N ) n−1                         (4.28)
+                                                    1  n−d +O(ε/C)            n
+                                                         d−1
+                                                 =                   (δn−1 N ) n−1 .
+                                                     δ
+Combining (4.3), (4.5), and (4.28), and selecting C suﬃciently large, we obtain (4.1).
+
+
+References
+ [1] S. Basu, R. Pollack, and M.-F. Roy. On the number of cells deﬁned by a family of polynomials
+     on a variety. Mathematika, 43:120–126, 1996.
+
+ [2] J. Bennett, A. Carbery, and T. Tao. On the multilinear restriction and Kakeya conjectures.
+     Acta Math., 196:261–302, 2006.
+
+ [3] A. Besicovitch. Sur deux questions d’integrabilite des fonctions. J. Soc. Phys. Math., 2:105–
+     123, 1919.
+
+ [4] J. Bochnak, M. Coste, and M.-F. Roy. Real algebraic geometry. Springer-Verlag, 1998.
+
+ [5] J. Bourgain and L. Guth. Bounds on oscillatory integral operators based on multilinear esti-
+     mates. Geom. Funct. Anal., 21:1239–1295, 2011.
+
+
+                                                                33
+ [6] D. Burguet. A proof of Yomdin-Gromov’s algebraic lemma. Israel J. Math., 168:291–316,
+     2008.
+
+ [7] A. Carbery and S. I. Valdimarsson. The endpoint multilinear Kakeya theorem via the Borsuk-
+     Ulam theorem. J. Funt. Anal., 264:1643–1663, 2012.
+
+ [8] A. Cordoba. The Kakeya maximal function and the spherical summation multipliers. Am. J.
+     Math., 99:1–22, 1977.
+
+ [9] L. Guth. The endpoint case of the Bennett-Carbery-Tao multilinear Kakeya conjecture. Acta
+     Math., 205:263–286, 2010.
+
+[10] L. Guth. A restriction estimate using polynomial partitioning. J. Amer. Math. Soc., 29:371–
+     413, 2016.
+
+[11] L. Guth. Restriction estimates using polynomial partitioning II. Acta Math., 221:81–142, 2018.
+
+[12] L. Guth and N. Katz. On the Erdős distinct distances problem in the plane. Ann. of Math.,
+     181:155–190, 2015.
+
+[13] L. Guth and J. Zahl. Polynomial Wolﬀ axioms and Kakeya-type estimates in R4 . Proc. London
+     Math. Soc., 117:192–220, 2018.
+
+[14] J. Hickman and K. M. Rogers. Improved Fourier restriction estimates in higher dimensions.
+     Camb. J. Math., 7:219–282, 2019.
+
+[15] J. Hickman and K. M. Rogers. New Kakeya estimates using the polynomial Wolﬀ axioms.
+     arXiv e-prints, (arXiv:1901.01802), 2019.
+
+[16] J. Hickman and J. Zahl. A note of Fourier restriction and nested polynomial Wolﬀ axioms.
+     arXiv e-prints, (arXiv:2010.02251), 2020.
+
+[17] N. Katz and K. Rogers. On the polynomial Wolﬀ axioms. Geom. Funct. Anal., 28:1706–1716,
+     2018.
+
+[18] N. Katz and T. Tao. Recent progress on the Kakeya conjecture. Publ. Mat., 46:161–179, 2002.
+
+[19] N. Katz and J. Zahl. An improved bound on the Hausdorﬀ dimension of Besicovitch sets in
+     R3 . J. Amer. Math. Soc., 32:195–259, 2019.
+
+[20] N. Katz and J. Zahl. A Kakeya maximal function estimate in four dimensions using plane-
+     brushes. to appear, Rev. Mat. Iberoam., (also in arXiv:1902.00989), 2019.
+
+[21] K. Kuttler. Modern Analysis. CRC Press, 1998.
+
+[22] K. Kuttler. Real and Abstract Analysis. https://math.byu.edu/ klkuttle/541book.pdf, 2019.
+
+[23] J. Milnor. On the Betti numbers of real varieties. Proc. Amer. Math. Soc., 15:275–280, 1964.
+
+[24] T. Wolﬀ. An improved bound for Kakeya type maximal functions. Rev. Mat. Iberoam., 11:651–
+     674, 1995.
+
+[25] T. Wolﬀ. Recent work connected with the Kakeya problem. In Prospects in mathematics
+     (Princeton, NJ), pages 129–162, 1996.
+
+
+                                                34
+[26] Wongkew. Volumes of tubular neighbourhoods of real algebraic varieties. Paciﬁc J. Math.,
+     159:177–184, 1993.
+
+[27] J. Zahl. A discretized Severi-type theorem with applications to harmonic analysis. Geom.
+     Funct. Anal., 28:1131–1181, 2018.
+
+
+
+
+                                             35
+

@@ -1,5 +1,7 @@
 # R0055唯一任务：一般R5三维代数簇近管的全类门槛
 
+> **R0055当前范围更新：** 全G3仍未证未否；具名sharpPW/Gromov下λ≤δ区已付。regular真实近轴族严格否finite nonshort global投影保原cap门槛，非G3反例。当前transfer迭代停止，不续toy/degree/normal阈值；下一唯一 notes/00_map/R0055_next_full_goal_critical_path_reset.md，以下为R54历史计划。
+
 2026-10-17，R54宏观后制定，候选未证。下一开轮先恢复GOAL/STATE/ROADMAP/registry/最近round与receipt，再读本spec；共同因子模板已停止，不从最后一个局部模型接续。
 
 ## 1. 实际高维缺口和命题G3

@@ -1,0 +1,1760 @@
+                                                                       MAXIMAL DIRECTIONAL OPERATORS
+                                                                         ALONG ALGEBRAIC VARIETIES
+arXiv:1807.08255v2 [math.CA] 17 Aug 2020
+
+
+
+
+                                                                         FRANCESCO DI PLINIO AND IOANNIS PARISSIS
+
+
+                                                   Abstract. We establish the sharp growth order, up to epsilon losses, of the L2 -norm of the
+                                                   maximal directional averaging operator along a ﬁnite subset V of a polynomial variety of arbi-
+                                                   trary dimension m, in terms of cardinality. This is an extension of the works by Córdoba, for
+                                                   one-dimensional manifolds, Katz for the circle in two dimensions, and Demeter for thep2-sphere.
+                                                   For the case of directions on the two-dimensional sphere we improve by a factor of log N on
+                                                   the best known bound, due to Demeter, and we obtain a sharp estimate for our model operator.
+                                                   Our results imply new L2 -estimates for Kakeya type maximal functions with tubes pointing
+                                                   along polynomial directions. Our proof technique is novel and in particular incorporates an
+                                                   iterated scheme of polynomial partitioning on varieties adapted to directional operators, in the
+                                                   vein of Guth, Guth-Katz, and Zahl.
+
+
+
+
+                                                            1. Main results, motivation, background and techniqes
+                                             We are interested in maximal directional averaging operators, deﬁned with respect to a
+                                           given set of directions. Our focus is on the higher dimensional setting where the directions
+                                           are distributed on algebraic varieties in Rn , of any given codimension.
+
+                                           1.1. Main results. More precisely, let n ≥ 2 and deﬁne the directional averages of a smooth
+                                           function f on Rn by
+                                                                              ∫ 1
+                                                                  hf iv (x) ≔ − f (x − tv) dt,     x, v ∈ Rn ,
+                                                                                       −1
+                                           and consider the maximal averaging operator, at unit scale, associated to a set of directions
+                                           V ⊂ Rn
+                                           (1.1)                                   MV f (x) ≔ sup h| f |iv (x).
+                                                                                                 v∈V
+
+                                           It is customary to study the single scale operator (1.1) for sets of directions V which are normal-
+                                           ized to live in a ﬁxed but arbitrary annular region excluding the origin. To state our results,
+                                           we will use the unit annulus
+                                                                                      
+                                                                           An (1) ≔ v ∈ Rn : 1 ≤ |v | < 2 .
+
+                                              2010 Mathematics Subject Classiﬁcation. Primary: 42B25. Secondary: 42B20.
+                                              Key words and phrases. Directional operators, polynomial partitioning, Kakeya problem, diﬀerentiation of
+                                           integrals.
+                                              F. Di Plinio is partially supported by the National Science Foundation under the grants NSF-DMS-1650810,
+                                           DMS-1800628, and DMS-2000510.
+                                              I. Parissis is partially supported by the project PGC2018-094528-B-I00 (AEI/FEDER, UE) with acronym “IHAIP”,
+                                           grant T1247-19 of the Basque Government and IKERBASQUE..
+                                                                                                  1
+2                                     F. DI PLINIO AND I. PARISSIS
+
+The ﬁrst main result of this article is the sharp bound in terms of the cardinality parameter N ,
+up to arbitrarily small losses, for the maximal operator norm
+                             
+                         sup kMV k L2(Rn ) : V ⊂ Zm ∩ An (1), #V ≤ N m
+when Zm ⊆ Rn is a real algebraic variety of a ﬁxed dimension 1 ≤ m ≤ n − 1. We send to
+Section 4 for the precise deﬁnition of a real algebraic variety of dimension m; here, we restrict
+ourselves to mentioning a prototypical example. If D ≥ 1, we say that Zm belongs to the class
+  × (D) if
+                                  
+Zm,n
+                             Zm = x ∈ Rn : P 1 (x) = · · · = Pn−m (x) = 0
+where P 1, . . . , Pn−m are polynomials in n real variables of degree at most D, and the tangent
+space to Zm is m-dimensional at all points x ∈ Zm , in the sense of (2.10) below. For the class
+  ×
+Zm,n (D) we are able to obtain a uniform bound on the operator norm. In particular, polynomial
+graphs over m variables in Rn , of degree at most D,
+                  
+        Zm = (y, h(y)) : y ∈ Rm , h : Rm → Rn−m polynomial of degree at most D,
+                     × (D).
+belong to the class Zm,n
+Theorem A. Let n ≥ 2 and 1 ≤ m ≤ n − 1. Let Zm ⊆ Rn be a real algebraic variety of dimension
+m. Then for all η > 0 there is a constant Θ = Θ(Zm , η) such that
+
+                                                                     m−1
+(1.2)                              sup         kMV k L2(Rn ) ≤ ΘN 2 +η .
+                               V ⊂Zm ∩An (1)
+                                  #V ≤N m
+The constant Θ = Θ(Zm , η) depends on η and on explicit algebraic properties of the variety Zm .
+  Furthermore, if D ≥ 1 and Zm,n× (D) is the class of real algebraic varieties deﬁned above, we
+
+have the uniform bound
+                                                                           m−1
+(1.3)                        sup          sup        kMV k L2(Rn ) ≤ ΘN 2 +η
+                               × (D) V ⊂Z ∩A (1)
+                          Zm ∈Zm,n       m     n
+                                        #V ≤N m
+for all η > 0; the constant Θ = Θ(m, n, D, η) depends only on the dimension parameters m, n, on
+the degree D, and on η > 0.
+   As we will see in the subsequent section, the constant Θ(Zm , η) that appears in the statement
+of Theorem A depends on certain notions of degree and count of the variety Zm . We refer the
+reader to §4 for precise deﬁnitions and further discussion.
+   Let MV ,r be the analogue of MV of (1.1) obtained from the directional averages at scale r > 0.
+Scaling shows that kMV ,r kLp (Rn ) = kMV kLp (Rn ) . When f is the indicator of the unit ball in Rn ,
+there holds
+                                               1        N
+                                MV ,N f (x) &      ,       < |x | < N ,
+                                              |x |      2
+if V ⊂ Sn−1 is a Nc -net with c > 0 suﬃciently small; we then gather that (1.2), (1.3) are sharp up
+to the η-correction for the codimension one case, m = n − 1. For general codimensions we can
+adjust the example above by taking V ⊂ Sm ⊂ Sn−1 and f ≔ f1 ⊗ f2 : Rm+1 × Rn−(m+1) → R
+where f1 is the indicator of the unit ball in Rm+1 and f1 is a smooth bump function in Rn−(m+1)
+which is identically 1 on the unit ball of Rn−(m+1) . This modiﬁcation also proves the sharpness
+                               DIRECTIONAL OPERATORS ON VARIETIES                                 3
+
+of (1.2), (1.3), up to the η-correction for general codimensions. In fact, a logarithmic correction
+is necessary in the case m = 1; see [13, Proposition 1.3].
+   All cases of Theorem A are new, except for the case m = 1, which dates back to the work of
+Córdoba [14] and Barrionuevo [5], and the case of Z = S2 , which is the main result of [19] by
+Demeter. In the latter case, we prove a more precise result improving on the logarithmic cor-
+rection of [19]. To describe this improvement, we introduce the following iterated logarithmic
+function; for integers k, N ≥ 1 we set
+                  log[1] N ≔ log(2 + N ),        log[k] N ≔ log(2 + log[k−1] N ).
+Theorem B. For every k ≥ 1 there exists a constant Θk > 1 such that
+                                                 1p
+                        sup kMV k L2(R3 ) ≤ Θk N 2 log N log[k] N .
+                            V ⊂S2
+                           #V ≤N 2
+
+   As customary, we prove our estimates for a Fourier analogue of MV , namely the maximal
+directional multiplier operator AV deﬁned in (2.2) below, which dominates MV pointwise on
+the cone of positive functions. If f has frequency support in the annulus {ξ ∈ Rn : s < |ξ | <
+2s}, our proof yields the stronger estimate
+                                                      1
+                           sup kAV f k L2(R3 ) .k N 2 log[k] N k f kL2 (R3 )
+                           V ⊂S2
+                          #V ≤N 2
+uniformly over s > 0. Modifying the example discussed after the statement of Theorem A,
+namely testing the operator norm on a suitable frequency cutoﬀ and modulation of the in-
+dicator of the unit ball in R3 , reveals that the N -dependence of the latter estimate is sharp
+modulo the iterated logarithmic correction; see [32] for details.
+   Theorem A yields L2 (Rn )-bounds for the Nikodym maximal function
+                                                                  ∫
+                                                               1
+                               MZm ,δ f (x) =     sup                |f |
+                                              x∈T ∈T (Zm ,δ ) |T | T
+
+where T (Zm , δ ) is the collection of tubes T with length 1 and n − 1-dimensional cross section
+of width 0 < δ ≪ 1, where the long side oriented along some direction v ∈ Zm ∩ An (1).
+Theorem C. Let Zm ⊆ Rn be a real algebraic variety of dimension 1 ≤ m ≤ n − 1. Then for all
+η > 0 there is a constant Θ = Θ(Zm , η) independent of 0 < δ ≪ 1, such that
+                                                           (m−1)
+                                     MZm ,δ L2 (Rn ) ≤ Θδ − 2 −η .
+Proof. Let δ > 0 and V ⊂ Zm be a δ -net with #V . δ −m . A well-known reduction [14, 19]
+yields that
+                               MZm ,δ L2(Rn ) . kMV k L2(Rn )
+so that the claim follows by an application of Theorem A.                                        
+   The exponent in Theorem C is in general optimal up to the arbitrarily small η-loss. Indeed,
+notice that the example provided after the statement of Theorem A with N ∼ 1/δ also applies
+to the bounds of Theorem C above. This is because the Nikodym maximal operator is deﬁned
+with respect to δ -tubes; one then can reduce the supremum in the deﬁnition of the Nikodym
+4                                    F. DI PLINIO AND I. PARISSIS
+
+maximal function to be taken over a subset of δ -tubes pointing along a δ -net on the unit sphere;
+see [19, p. 718] for the details of this argument.
+   This result appears to be new in all cases except for m = n − 1, which is a classical estimate
+of Córdoba [13], and m = 1 [14, Theorem B], also due to Córdoba.
+   The converse direction of the implication leading from Theorem A to Theorem C, namely
+obtaining sharp bounds for the thin averages of (1.1) from sharp bounds for thick averages
+over tubes, as the ones involved in the deﬁnition of the Nikodym maximal operator, is not
+feasible as the averages (1.1) are more singular; see also [19]. An exception to this heuristic is,
+in two dimensions, the case of uniformly distributed directions on the circle S1 . In this setting,
+the diﬀerence between thin and thick averages is a square function which, at least in L2 (R2 ),
+can be easily treated by overlap considerations; see also the discussion below in §1.3.
+
+
+1.2. Motivation. In addition to the intrinsic relevance of Theorems A, B and C to the realm
+of classical diﬀerentiation theory, this paper ﬁnds motivation within a more general program,
+aimed at understanding directional maximal and singular integral operators in higher dimen-
+sions, under no particular structural assumptions. This is in contrast with previous results
+in the literature, for instance [5, 6, 14], which are obtained for sets of directions complying
+with some type of geometric conﬁguration. In the papers cited above, the structure is that
+of uniform distribution of the discrete set on the sphere. On the other hand, in e.g. [37] and
+references therein, the set of directions is allowed to be inﬁnite but is assumed to be lacunary.
+In both cases, these conditions allow for an eﬀective splitting into subsets which are either of
+controlled cardinality, as in the case of uniform distribution, or exhibit self-similar behavior
+as in the case of lacunary directions. Both families of results mentioned above, as well as their
+two-dimensional counterparts as in [1] and [2, 3], show that a very eﬀective way to handle
+directional operators is the divide and conquer technique.
+   For arbitrary sets of directions in higher dimensions this technique presents a new chal-
+lenge: an eﬃcient partitioning of a non-uniformly distributed, not naturally ordered set of
+directions on S2 , for instance, is far from obvious. Inspired by recent developments in har-
+monic analysis, most notably the improvements on the restriction problem by Guth [26, 27],
+our proofs are based on a polynomial partitioning scheme adapted to maximal directional op-
+erators. We establish a novel strategy for handling these operators in a very general setting:
+the directions lie on an algebraic variety of arbitrary codimension in Rn , and essentially no
+other structure is assumed. To exemplify the intrinsic gain that is brought by this perspective,
+we mention Theorem B, which is about directions on the sphere S2 and where no a-priori rel-
+evant algebraic structure is present. The improvement over [19] is obtained by partitioning
+our directions into connected components of the complement of the zero set of a polynomial
+P on the sphere, each containing a roughly constant number of points, and with favorable
+overlap properties —not too many cells intersecting each given hyperplane— and using the
+algebraic structure, see the dimension 1 estimate of Theorem D, to handle the contribution of
+those directions falling on the partitioning zero set.
+   We believe that our methods can be furthered to obtain Lp -estimates for more general sin-
+gular and maximal averages in higher dimensions, when there is no structure in the set of
+directions. The natural point of view within the polynomial method is that of systematically
+attacking the cases of directions lying on algebraic varieties in Rn of arbitrary codimension.
+                              DIRECTIONAL OPERATORS ON VARIETIES                                 5
+
+As an example of relevant open question, it is worth noting that no nontrivial bound is cur-
+rently available for the multi-scale directional maximal operator along directions lying on a
+polynomial subvariety of Sn−1 , without any additional structure.
+
+1.3. Background. The study of directional maximal and singular integrals initially arose as
+a natural companion to questions on Kakeya-type maximal operators, Bochner-Riesz mul-
+tipliers, and the conjectures of Zygmund and Stein for corresponding objects deﬁned along
+2-dimensional vector ﬁelds: we provide a short overview with particular focus on the L2 -
+theory. In [13] Córdoba showed that the maximal average deﬁned with respect to rectangles
+in the plane, of ﬁxed eccentricity δ , is bounded on L2 (R2 ) with an operator norm of the order
+            1
+(log δ −1 ) 2 ; the bound above is best possible as revealed by a counterexample constructed by
+means of the Kakeya set. We note here that, in two dimensions, this operator is essentially
+equivalent to a maximal averaging operator along uniformly δ -spaced directions in S1 , their
+diﬀerence being that of an easy to treat square function; it is also of some importance to high-
+light that this comparison is not as readily available in higher dimensions, nor in the case of
+more general algebraic varieties in place of the sphere. Soon after the result of [13], Ström-
+berg, [41], showed that the L2 (R2 ) → L2,∞ (R2 ) norm of the maximal average with respect to
+rectangles pointing in a uniformly distributed set of N directions in S1 , without any restriction
+                                                1
+on their eccentricity, is of the order (log N ) 2 , and this is best possible. The numerology here
+is δ = N −1 . These results were generalized by Katz in [29, 30], where the author proved the
+same sharp bound for the L2 (R2 ) → L2,∞ (R2 ) bound for the operator norm of the maximal
+average with respect to an arbitrary set of N directions in S1 . We note here that L2 is the
+critical Lp -space for the Kakeya, or Nikodym maximal operators in R2 , while in Rn the critical
+exponent is p = n; see [42].
+    Parallel to the results above was the investigation of the maximal averages in the plane given
+by a set of directions which is inﬁnite, but possesses certain arithmetic-geometric structure.
+Collectively Strömberg, [40], R. Feﬀerman and Córdoba, [12], Nagel, Stein, and Wainger, [35],
+and Sjögren and Sjölin, [39], proved that that such maximal operators are bounded on Lp (R2 )
+whenever the set of directions is a lacunary set of ﬁnite order. The striking result of Bateman,
+[8], characterized lacunary sets of ﬁnite order in the plane as the only sets that give rise to
+bounded directional maximal operators on Lp (R2 ) for some (equivalently any) p ∈ (1, ∞).
+    In the higher (ambient space Rn , n ≥ 2) dimensional setting, the picture is far from com-
+plete. We note that some special cases of higher-dimensional lacunary sets of directions were
+introduced by Nagel, Stein, and Wainger in [35], and by Carbery in [10], where the authors
+showed the boundedness of the corresponding maximal operator. However, it was only re-
+cently that Parcet and Rogers, [37], gave a general deﬁnition of lacunary sets of directions in
+any dimension and proved the boundedness of maximal operators along such directions in
+Lp (Rn ), for all p ∈ (1, ∞) and all n ≥ 2. Recently in [22], the authors of the present paper
+obtained the best possible bound for the Hilbert transform along sets of directions in S2 that
+are lacunary in the sense of [37].
+    For averaging operators with respect to arbitrary sets of directions in dimensions n ≥ 2
+Demeter has studied the case of maximal directional averages along sets V ⊂ S2 and showed
+                              1
+p -bounds of the order N (log N ) for the case that #V = N . This result is improved by a
+L 2                           2                                     2
+
+   log N , modulo iterated logarithmic losses, in Theorem B of the present paper. Also relevant
+6                                    F. DI PLINIO AND I. PARISSIS
+
+for us is the result of Córdoba, [14], for equispaced directions lying on a smooth parametriz-
+able curve in Sn−1 , proving L2 -bounds of the order (log N )2 , for the corresponding multiscale
+maximal operator. This bound was improved by Barrionuevo in [5] to the best possible order
+log N . Finally, Barrionuevo in [6], has proved almost optimal L2 -bounds in arbitrary dimension
+for the case of N uniformly distributed directions in Sn−1 .
+
+1.4. Techniques. The bulk of the paper is devoted to the proofs of Theorems A and B. These
+proofs have a similar coarse structure. A ﬁnite set of directions V lying on an algebraic variety
+Z ⊂ Rn of dimension m (the sphere in Theorem B) is partitioned by the zero set of a polynomial
+P into cells C, each containing at most a ﬁxed portion of the original points, plus points lying
+exactly on (or suﬃciently close to) the zero set of P. These lie on an algebraic variety of
+dimension µ = m − 1 and their contribution is estimated by induction, when µ > 1, or by
+direct methods, when µ = 1; see for example Theorem D.
+   For the cellular part, the estimate is based on the observation that the directions contributing
+at a given frequency point ξ are localized on a fattening of the hyperplane perpendicular
+to ξ . If, at ﬁrst approximation, we ignore the complications brought by the fattening, we
+can estimate how many of the V ∩ C operators overlap at ξ by counting, via Milnor-Thom-
+type theorems, in how many components the variety ξ ⊥ ∩ Z is split by the zero set of P.
+When Z = S2 for instance, ξ ⊥ ∩ Z is a circle, and the number of zeros of P on the circle is
+controlled by the degree of P. In the realistic case, we are dealing with fat hyperplanes and the
+additional term consisting of those cells staying close to a (n − 1)-dimensional hyperplane is
+handled by comparison with directions lying on an algebraic subvariety of the hyperplane: an
+approximate projection of Z . This term is dealt via induction on the ambient space dimension
+n.
+   Polynomial partition on subvarieties of Rn is in general challenging and an optimal proce-
+dure is not yet completely understood, especially in codimension 2 and higher: see the articles
+[7, 24, 34, 44] and references therein for recent developments. Motivated by the study of the
+Fourier restriction operator in higher dimensions, Guth [27] introduced a polynomial parti-
+tioning scheme based on transverse complete intersections (TCI), namely algebraic varieties of
+the classes Zm,n× (D) deﬁned in Section 4, which in eﬀect allows one to partition densities sup-
+
+ported on m-varieties as if they were on Rm , by keeping some uncertainty in the partitioning
+polynomials. Similar procedures have been used in [36]. We adapt the scheme of [27] to our
+context of directional operators, the ﬁnal result in this sense being Proposition 2.10. The ﬁrst
+main additional diﬃculty, compared to [27, 36], is that we are partitioning points and not den-
+sities. We tackle this issue by replacing points from the initial polynomial wall with nearby
+points, sitting on a nicer wall of the TCI-type; this replacement can be made harmless for
+our quantitative estimates. The second is that the approximate projection procedure hinted
+at above does not preserve TCIs. We remedy this by covering an arbitrary algebraic variety
+of dimension m with an arbitrarily small neighborhood of a union of a controlled number of
+TCIs of dimension no more than m; see Proposition 4.5.
+   Interestingly, the recent article by Katz and Rogers [31] solves a conjecture of Guth [27]
+concerning the maximal number of δ -separated δ -tubes contained in the δ -neighborhood of
+an algebraic subvariety of Rn . While their estimate is somewhat dual to that of Theorem C,
+none of the two can be promptly reduced to the other one. However, remarkably, the proof
+techniques of the main result of [31] share some aspects with our arguments of Section 4: in
+                               DIRECTIONAL OPERATORS ON VARIETIES                                7
+
+particular, the authors of [31] appeal to Tarski’s quantiﬁer elimination principle within the
+category of semialgebraic sets, combined with Gromov’s complexity estimate. In contrast,
+inspired by arguments in [34] by Matoušek and Patakova, we construct (approximate) projec-
+tions of algebraic varieties by explicitly computing elimination ideals of the original variety,
+via Gröbner bases and the related quantiﬁer elimination theorem; see [15, 16] and references
+therein. This technique allows us to work within the class of algebraic sets.
+
+1.5. Structure. Section 2 contains some preliminary analytic tools and a version of poly-
+nomial partition on m-dimensional polynomial subvarieties Rn adapted to our problem, and
+involving directional averages; see Proposition 2.10. The proof of Theorem B is given in Sec-
+tion 3. Section 4 contains several deﬁnitions and tools from algebraic geometry. The proof of
+Proposition 2.10, which will ﬁnd use in the proof of Theorem A, can also be found in Section 4.
+Finally, the proof of Theorem A is given in the ﬁnal Section 5.
+
+Acknowledgments. The authors want to express their gratitude to the reviewers for their
+careful reading and suggestions which contributed to improvements in the presentation.
+
+                                        2. Preliminaries
+2.1. Notation and recurring deﬁnitions. By Θα1 ,...,α j we denote a positive constant, pos-
+sibly depending on the parameters α 1 , . . . , α j only, which may diﬀer at each occurrence. We
+also write
+                       A .α1 ,...,α j B ⇐⇒ A ≤ Θα1 ,...,α j B,
+                       A ∼α1 ,...,α j B ⇐⇒ A .α1 ,...,α j B, B .α1 ,...,α j A.
+For a bounded operator T : L2 (Rn ) → L2 (Rn ) we use the shorthand notation kT kL2 (Rn ) ≔ kT :
+L2 (Rn ) → L2 (Rn )k. If v ∈ V ⊂ Rn \ {0} we write v ′ ≔ v/|v | and V ′ ≔ {v ′ : v ∈ V } ⊂ Sn−1 .
+We use the notation
+                                  dist(U , V ) ≔ sup inf |u − v |
+                                                 u∈U v∈V
+for the (asymmetric) distance between U , V     ⊂ Rn . We will be working with (frequency and
+directional) annuli: for R ≥ 1,
+                                     
+                             An (R) ≔ ξ ∈ Rn : R −1 ≤ |ξ | < 2R .
+We deﬁne the frequency bands
+(2.1)           Rξ ,s ≔ {η ∈ An (1) : |ξ · η| < s|η|} ,    ξ ∈ Rn \ {0},   s > 0.
+Let Av,s be the operator deﬁned in (2.2) below and S 1 be a smooth frequency cutoﬀ adapted to
+the annulus An (1). Abusing notation we will write Sb1 for the (smooth) Fourier multiplier of
+the operator S 1 ; we will be using repeatedly that the Fourier support of Av,s ◦ S 1 is contained
+in the (fat) band Rv,s . For R ⊂ Rn , we write
+                                                ∫
+                                       fR (x) ≔   fb(ξ )eix·ξ dξ .
+                                                R
+to indicate the rough frequency restriction to R.
+8                                       F. DI PLINIO AND I. PARISSIS
+
+2.2. Single scale averages. Our tools will be largely Fourier analytic in nature: in fact, we
+will work with maximal operators obtained by replacing the rough averages in (1.1) with the
+smooth directional Fourier multipliers
+                                                     ∫                  
+                                                         fb(ξ )ψ
+                                                                   ξ · v
+(2.2)          AV ,s f ≔ sup |Av,s f |, Av,s f (x) ≔                       eix·ξ dξ
+                         v∈V                          Rn             s
+with x ∈ Rn and s > 0. Throughout, ψ : R → R will be the Fourier transform of an even
+nonnegative Schwartz function Ψ : R → R with the following properties:
+                          suppψ ⊂ [−2−10 , 2−10 ],               Ψ(t) ≥ 1(−1,1) (t).
+This smooth function will remain ﬁxed throughout the paper so we suppress any implicit
+dependence on the choice of ψ . We are chieﬂy interested in the case s = 1, where we suppress
+the subscript and simply write Av , AV in place of Av,1 , AV ,1 . By scaling f , we see that
+(2.3)                 kAV ,s kLp (Rn ) = kAV kLp (Rn )          ∀s > 0,    0 < p ≤ ∞.
+This scaling invariance is destroyed when restricting the operators AV ,s to act on functions
+with frequency support in An (1), and for this reason we work with a more general scale
+parameter below; see for instance Proposition 2.5.
+  With our choice of ψ , we have the following comparison principle; the upper bound is
+immediate by pointwise comparison for f ≥ 0, while the lower bound follows from (2.8)
+below, and scaling.
+Lemma 2.3. Let V ⊂ Rn . Then
+                                     kMV k L2(Rn ) ∼n kAV k L2(Rn ) .
+
+2.4. Decoupling of frequency annuli and localization. Let S 1 be a smooth Littlewood-
+Paley radial cutoﬀ to the annulus An (1). Using the Chang-Wilson-Wolﬀ inequality as in [18,22,
+21, 25], and scaling, we are able to reduce our maximal estimates to functions with frequency
+support in An (1), as recorded in the following proposition.
+Proposition 2.5. Let V ⊂ Rn be a ﬁnite subset. Then
+                                       p
+                       kAV k L2(Rn ) .n log #V sup AV ,s ◦ S 1 L2 (Rn ) .
+                                                         s >0
+
+   The main advantage of the reduction of Proposition 2.5 is that, in addition to being Fourier
+localized, the averages (2.2) also enjoy a localization property with respect to the direction v,
+in the sense of the next lemma. Below we denote by M the usual Hardy-Littlewood maximal
+function in Rn                             ∫
+                                         1
+                       Mf (x) ≔ sup n              | f (x − t)| dt, x ∈ Rn .
+                                   r >0 r   |t |≤r
+
+
+Lemma 2.6. Let s > 0 and 0 < a < 23 . Let U , V ⊂ An (2) have the property that
+                                                 
+(2.4)                               dist U ′, V ′ < as.
+where U ′ ≔ {u/|u| : u ∈ U } and similarly for V . Then
+                                                                        
+                AU ,s ◦ S 1 L2(Rn ) .n max kAV k L2 (Rn ) , kMk L2 (Rn ) h kAV k L2(Rn ) .
+                                 DIRECTIONAL OPERATORS ON VARIETIES                               9
+
+Proof. Below all the implicit constants in the almost inequality sign may depend on n only,
+and may diﬀer at each occurrence. The approximate equality in the conclusion is obvious so
+it suﬃces to show the estimate
+                                                                               
+                       AU ,s ◦ S 1 L2 (Rn ) .n max kAV k L2(Rn ) , kMk L2 (Rn ) .
+Note also the trivial estimate
+(2.5)                            sup AU ,s ◦ S 1 L2 (Rn ) .n kMk L2 (Rn ) .
+                                 s ≥1
+Indeed the operator on the left hand side has symbol
+                                                   
+                                               ξ ·v
+                                   m(ξ ) = ψ          ϕ(|ξ |)
+                                                 s
+where ϕ is smooth and supported on an annulus |ξ | h 1. As |ξ | h 1 ≤ s on suppm we get that
+|∂ξα m(ξ )| . |ξ | −|α | for 0 ≤ |α | ≤ 10n, whence the estimate (2.5).
+   For the rest of the proof we assume that s ≤ 1; it is convenient to work with the scaled
+rough averages and maximal operators
+                                   ∫
+                                                   sdt
+                    hf iv,s (x) ≔       f (x − tv)     ,  MV ,s f (x) ≔ sup h| f |iv,s (x);
+                                                    2                   v∈V
+                            s |t |<1
+
+note the somewhat nonstandard use of space scales 1/s and that the same scaling property
+(2.3) holds for MV in place of AV .
+   As V ⊂ An (2) and V ′ ⊂ Sn−1 , we have the estimates
+(2.6)                      MV ′,σ L2(Rn ) . MV , σ2 L2(Rn ) . AV , σ2 L2(Rn )
+uniformly over σ > 0, where the last inequality is obtained by Lemma 2.3. By virtue of (2.6) it
+suﬃces to prove
+(2.7)                      AU ,s ◦ S 1 f L2 (Rn ) . sup MV ′,σ (S 1 f ) L2 (Rn ) .
+                                                         σ <s
+We write д ≔ S 1 f below for simplicity. Let v(u) ∈ V be chosen such that |v(u)′ − u ′ | < as. We
+                                         Õ
+claim the estimate
+                                                                   
+(2.8)                         |Au,s д| .    2−kn M h|д|iv(u)′,2−k s .
+                                                  k ≥1
+We ﬁrst show how (2.8) implies (2.7):
+                                  Õ                         
+            AU ,s д L2(Rn ) . sup     2−kn M h|д|iv ′,2−k s
+                                Õ
+                                  v ′ ∈V ′ k ≥1                      L2 (Rn )
+
+                            .          2−kn M ◦ MV ′,2−k s д L2(Rn ) . sup MV ′,2−k s д L2(Rn )
+                                k ≥1                                    k ≥1
+
+which is (2.7); note that (2.8) has been used in the ﬁrst inequality.
+   In order to prove (2.8) we may assume, by rotation invariance, that v(u)′ = (1, 0, . . . , 0).
+Then
+                                     1              4                          
+(2.9)                 |u 1 | . 1,       sup |u j | ≤ sup |u ′j | ≤ 4 min s1 , a .
+                                     s 2≤j≤n        s 2≤j≤n
+10                                        F. DI PLINIO AND I. PARISSIS
+
+Let us write
+                                        (Au,s S 1 f )∧ ≕ mu,s fb
+for the multiplier of Au,s S 1 . Now note that under our assumptions on the parameter a there
+exists a dimensional constant c > 1 such that the set Rv,cs contains the support of mu,s . Relying
+on (2.9), for every multiindex α we obtain
+                                                                                  
+                 ∂ξα mu,s (ξ ) = ∂ξα Sb1 (ξ )ψ s −1u · ξ    . s −α1 min 1, s −|α |+α1 h s −α1 .
+since s ≤ 1. This readily implies that Ku,s ≔ m          d u,s satisﬁes the estimate
+                                                               Õn          −10n Õ∞
+                                                                                     2−kne
+                                               s
+              Ku,s (x 1 , . . . , xn ) .                    1+      |x j |       .       1Bk (x),
+                                         (1 + s|x 1 |)10n       j=2              k ≥1
+
+where Bk is the tube centered at the origin and of sidelengths s −1 2k along e 1 and 2k along
+e 2 , . . . , en and e 1Bk = 1Bk /|Bk |. Hence
+                                                        Õ
+                                                        ∞                  Õ
+                                                                           ∞
+                                                                                                     
+               |Au,s д| = |д ∗ Ku,s | ≤ |д| ∗ |Ku,s | .   2−kn |д| ∗ e
+                                                                     1Bk .   2−kn M h|д|iv(u)′,2−k s
+
+                                                                      
+                                                   k ≥1                   k ≥1
+
+where we used the inequality |д| ∗ e
+                                   1Bk . M h|д|iv(u)′,2−k s . We have reached (2.8) and the proof
+is thus complete.                                                                              
+  Lemma 2.6 tells us that it suﬃces to study small scales when f has annular frequency sup-
+port.
+Corollary 2.7. There holds
+                                      sup AAn (2),s ◦ S 1 L2 (Rn ) .n 1.
+                                      s >2−5
+
+Proof. Let s > 2−5 . Let V be a 2−10 -net in Sn−1 . Then U = An (2) and V satisfy the assumption
+(2.4) of Lemma 2.6 with a = 2−4 . Hence
+                                  AAn (2),s ◦ S 1 L2(Rn ) .n kAV k L2(Rn ) .n 1
+as V has cardinality Θn and for every v the averaging operators f 7→ Av f are bounded on
+L2 (Rn ). Note that an alternative proof of the statement of the corollary follows by the kernel
+estimates established in the proof of Lemma 2.6, applied for s & 1.                           
+Corollary 2.8. Let 0 < s < 2−5 , n ≥ 3, and let Z ⊂ An (1) have the property that
+                                               dist(Z , ξ ⊥ ) ≤ as
+for some a ≤ 23 . Denote by Πξ Z the orthogonal projection of Z on ξ ⊥ ≡ Rn−1 . Then
+                              sup AU ,s ◦ S 1 L2(Rn ) .n sup kAV k L2(Rn−1 ) .
+                              U ⊂Z                         V ⊂Π ξ Z
+                             #U ≤N                          #V ≤N
+
+Proof. Let U ⊂ Z have #U ≤ N . The set V ≔ Πξ U is contained in Πξ Z ⊂ Rn−1 and has
+#V ≤ N . Then U and V satisfy the assumption (2.4) of Lemma 2.6. We obtain that
+                             AU ,s ◦ S 1 L2(Rn ) .n kAV k L2(Rn ) .n kAV k L2 (Rn−1 )
+                                 DIRECTIONAL OPERATORS ON VARIETIES                                11
+
+where the ﬁrst inequality is an application of Lemma 2.6, and the second follows from Fubini’s
+theorem applied on the slices Eb ≔ {x ∈ Rn : x · ξ = b}, b ∈ R. The proof is complete.      
+
+2.9. Polynomial partition of directions. We write x = (x 1 , . . . , xn ) ∈ Rn and denote by
+R[x 1 , . . . , xn ] the ring of n-variable polynomials with real coeﬃcients.
+   A transverse complete intersection Z in Rn of dimension m ∈ {1, . . . , n − 1} is the common
+zero set of polynomials P 1, . . . , Pn−m ∈ R[x 1 , . . . , xn ]:
+                 Z = Z(P 1 , . . . , Pn−m ) = {x ∈ Rn : P 1 (x) = . . . = Pn−m (x) = 0},
+with the property that
+(2.10)                              ∇P 1 (x) ∧ · · · ∧ ∇Pn−m (x) , 0
+holds for all x ∈ Z . In particular transverse complete intersections are m-dimensional smooth
+submanifolds of Rn . We will in general use the shorthand notation (TCI) for transverse com-
+plete intersections.
+   The following proposition, which is fundamental for the analysis in the current paper, is a
+form of polynomial partitioning on manifold, inspired by [26, 27] (see [44, Theorem 2.3] for
+a diﬀerent approach) and adapted to the structure of our problem. It partitions a ﬁnite set of
+directions V lying on an m-dimensional TCI into a boundary component V× of points lying
+arbitrarily close to a controlled number of (m − 1)-dimensional TCIs, and a cellular component
+V◦ . The component V◦ is itself partitioned into connected components of the complement
+of zero sets of boundedly many polynomials of controlled degree, each containing at most a
+fraction of the original number of points. The proof of this proposition together with a detailed
+presentation and analysis of relevant tools from algebraic geometry is contained in Section 4.
+Proposition 2.10. Let Z = Z(P 1 , . . . , Pn−m ) ⊂ Rn be a transverse complete intersection of degree
+D. Let V ⊂ Z be a ﬁnite point set with #V ≤ N m . For each integer E with Em−1 ≥ Dn and δ > 0
+we may perform a partition
+                                             V = V◦ ∪ V×
+with the following properties.
+     1. There exist ≤ Θm,n Dn transverse complete intersections
+                                      Wj = Z(P 1 , . . . , Pn−m , Q j )
+         of dimension m − 1 and degree ≤ Θm,n E such that
+                                       sup inf dist(v,Wj ) < δ .
+                                       v∈V× j
+
+                                                                ® of Z with the property that
+     2. There exist ≤ Θm,n Dn Em disjoint connected subsets C ∈ C
+                             Ø                                      m
+                                                                     N
+                       V◦ =     VC ,      VC ≔ V ∩ C,       #VC ≤        ,
+                                                                     E
+                                ®
+                              C∈C
+
+         and such that for almost every ξ ∈ Rn and every a ∈ R, the intersection C ∩ {x ∈ Rn :
+                                                                           ®
+         ξ · x = a} is nontrivial for at most ≤ Θn,m D 2n Em−1 elements of C.
+12                                       F. DI PLINIO AND I. PARISSIS
+
+                 3. Directional averages along arbitrary directions on S2
+   This section is dedicated to the proof of Theorem B. Given a set of directions in S2 we
+will apply polynomial partitioning, in the form of Proposition 2.10, to reduce the problem of
+estimating the corresponding maximal directional average into two parts. The ﬁrst one, corre-
+sponding to the cells of the partition, will be handled inductively. The second term corresponds
+loosely to the zero set of the polynomial partitioning, which in this case is an algebraic variety
+of dimension 1. In particular, the application of Proposition 2.10 of the previous section allows
+us to work with a nice class of algebraic varieties, namely transverse complete intersections.
+
+3.1. Directional averages along one dimensional varieties. In the theorem below we
+work on the particular case of algebraic varieties of dimension one, contained in S2 . We note
+here that for a single smooth parametrizable curve in Sn−1 an argument of Córdoba from [14, p.
+223], or of Christ, Duoandikoetxea, and Rubio de Francia from [11], could be used to yield a
+bound of the form D log N . However these arguments do not seem to directly provide the
+                        1
+degree dependence D 2 in the case of a general one-dimensional algebraic variety which might
+have several connected components. This degree dependence is crucial for our application in
+the case of averages along directions in S2 , forcing us to modify the argument from [14] in or-
+                                   1
+der to get the correct behavior D 2 in terms of the degree, at the price of a slightly worse bound
+in terms of the cardinality of the set of directions. As we will need to apply the result below
+for a relatively high degree D this trade-oﬀ is in our favor. We only insist on this variation for
+the case of algebraic varieties of dimension 1 contained in S2 as for the higher codimensional
+case the result of Córdoba is suﬃcient for our purposes; see Subsection 5.3.
+Theorem D. Let Z ⊂ S2 be a transverse complete intersection of dimension 1, given by a non-
+zero polynomial P with degP = D, namely
+                                 
+                            Z = x ∈ R3 : P(x) = P sph (x) = 0
+
+where P sph (x) ≔ x 12 + x 22 + x 32 − 1 and
+                                       ∇P(x) ∧ x , 0          ∀x ∈ Z .
+Then
+                                                        1          3
+                               sup AV f L2(R3 ) . D 2 (log N ) 2 k f kL2 (R3 ) .
+                                V ⊂Z
+                               #V =N
+
+Furthermore we have the following single-annulus estimate
+                                                              1
+(3.1)                    sup sup AV ,s ◦ S 1 f L2 (R3 ) . D 2 log N kS 1 f kL2(R3 ) .
+                          s >0 V ⊂Z
+                               #V =N
+
+Proof. We ﬁx a transverse complete intersection Z as in the statement of the theorem and
+let V ⊂ Z be a set of directions with #V = N . By an application of the Chang-Wilson-
+Wolﬀ inequality of Proposition 2.5, the proof of the lemma will follow from the single annulus
+estimate (3.1) which we prove in what follows. By Corollary 2.7, it suﬃces to treat the case
+0 < s < 2−5 . The proof is divided in steps.
+                                DIRECTIONAL OPERATORS ON VARIETIES                                   13
+
+Decomposition into good and bad components. The variety Z can be decomposed into connected
+components Z = ∪j Z j . It is important to note here that the number of connected components
+of Z is at most O(D 2 ); see for example [4] and the references therein.
+   Let Ω ⊂ S2 be a 2−10s-net, that is a set of 2−10s-separated vectors ξ ∈ S2 such that the
+                                    
+collection of caps
+                             ωξ ,s = v ∈ S2 : |v − ξ | < s ,   ξ ∈ Ω,
+is a ﬁnitely overlapping cover of S2 . A cluster kξ ⊂ {Z j }j with top ξ ∈ Ω is a subset {Z jk }k ⊆
+{Z j }j with Z jk ⊆ Rξ ,3s . We say that a cluster is bad if its interior contains (in the sense of set
+inclusion) more than D distinct components from {Z j }j . By a greedy selection algorithm we
+can identify a set Ωbad ⊆ Ω and a corresponding set Z bad ⊆ {Z j } of at most O(D) bad clusters.
+Setting Ωgood ≔ Ω \ Ωbad we then know that for every ξ ∈ Ωgood the band Rξ ,3s contains at
+most D connected components from {Z j }j . We deﬁne Vgood and Vbad to be those directions from
+W contained in Z good , and Z bad , respectively. We also write Vξ for those directions contained
+in a cluster kξ for some ξ ∈ Ω.
+
+Estimate for the bad component directions Vbad . We ﬁrst estimate the operator corresponding
+to directions in Vbad on a single frequency annulus. We have
+                                                                            ! 12
+                                                    Õ                2
+(3.2)                   AVbad ,s ◦ S 1 f L2 (R3 ) ≤   AVξ ,s ◦ S 1 f L2(R3 ) .
+                                                 ξ ∈Ωbad
+                                     Ð
+We note that for ξ ∈ Ωbad the set {Z j : Z j ∈ kξ } is contained in a frequency band Rξ ,3s so we
+can approximate the directions in Vξ for ξ ∈ Ωbad by directions lying on ξ ⊥ ∩ S2 ≡ S1 . Note
+that the sets {Vξ }ξ ∈Ωbad are pairwise disjoint, by our greedy selection algorithm, and each has
+cardinality ≤ N . More precisely, we apply Corollary 2.8 with ξ ∈ Ωbad to obtain
+                                                                       
+                        AVξ ,s ◦ S 1 f L2 (R3 ) .      sup kAU kL2 (R2 ) kS 1 f kL2(R3 )
+                                                    U ⊂ξ ⊥ ∩S2
+(3.3)
+                                 p
+                                                      #U ≤N
+
+                              . log N kS 1 f kL2(R3 ) .
+The last inequality follows by an application of the two-dimensional single-scale result of
+Katz [30]. Alternative proofs of this two-dimensional result have since been given in [18, 20].
+Combining (3.2) with (3.3) we gather that
+                                         Õ       12
+                                                                      1p
+            AVbad ,s ◦ S 1 f L2 (R3 ) .     log N kS 1 f kL2(R3 ) . D 2 log N kS 1 f kL2(R3 )
+                                     ξ ∈Ωbad
+
+since #Ωbad ≤ D. This gives the desired estimate for the bad part.
+
+Estimate for Vgood . We now move to the estimation of Vgood which relies on overlap considera-
+tions. Let Z good consist of some connected components {Z j }j∈J and let Vj denote the directions
+of V contained in Z j . We write
+                                      Vj = {v j,1 , . . . , v j,n j }
+where, for ﬁxed j ∈ J , the directions are sorted in consecutive order.
+14                                                F. DI PLINIO AND I. PARISSIS
+
+  In this proof, we need a rough analogue of Av,s . Let I ⊂ R be any interval and for д ∈ L2 (Rn )
+deﬁne                        ∫
+                    Bv,I д(x) ≔             дb(β)1I (β · v)eix·β dβ,                     BV ,I д ≔ sup |Bv,I д|.
+                                       Rn                                                              v∈V
+We also deﬁne Ia,σ ≔ (a − σ , a + σ ). By an averaging argument we have that
+                   kAVgood ,s ◦ S 1 f kL2(Rn ) . kψ kBV sup sup kBVgood, Ia,σ (S 1 f )kL2 (Rn ) .
+                                                                0<σ ≤s |a|<s
+
+Therefore, it suﬃces to estimate the L2 (R3 )-norm of the operator BVgood, Ia,σ ◦ S 1 uniformly over
+0 < σ ≤ s. This can be done as follows. Set
+          L β,a,σ ≔ {v ∈ S2 : |β · v − a| < σ }= {v ∈ S2 : β · v ∈ Iα,σ },                                            β ∈ An (1).
+Then
+                                                               Õ nÕ
+                                                                   j −1                                                          21
+                                                                                                                            2
+               kBVgood, Ia,σ ◦ S 1 kL2 (R3 ) ≤ sup                        1L β,a,σ (v j,ℓ+1 ) − 1L β,a,σ (v j,ℓ )
+                                                  β ∈An (1)    j∈J ℓ=1
+                           Õ                                                      21
+                                                                              2
+            + sup                 1L β,a,σ (v j+1,1 ) − 1L β,a,σ (v j,n j )              + kBVegood,Ia,σ ◦ S 1 kL2(R3 )
+               β ∈An (1)    j∈J
+
+where Vegood ⊂ Vgood satisﬁes #Ṽgood ≤ #Vgood /2.
+   We now estimate the square functions in the ﬁrst two summands. For this ﬁx some β ∈
+An (1) and pick ξ ∈ Ω such that β ′ ∈ ωξ ,s . Here we remember that β ′ = β/|β | and note that ξ
+remains ﬁxed as long as β is ﬁxed. For the square function in the ﬁrst summand note that if
+1L β,a,σ (v j,ℓ+1 ) − 1L β,a,σ (v j,ℓ ) , 0 then the piece of Z j between v j,ℓ and v j,ℓ+1 , which is connected,
+must cross one of the hyperplanes {v : β · v = a ± σ }. Overall the variety Z can cross these
+                                                                                    1
+hyperplanes at most O(D) times so the ﬁrst summand above is O(D 2 ).
+   For the square function in the second summand we note that 1L β,a,σ (v j+1,1 )−1L β,a,σ (v j,n j ) , 0
+implies one of the two following possibilities
+                           either      |β · v j+1,1 − a|<σ and |β · v j,n j − a|≥ σ ,
+                           or     |β · v j+1,1 − a|≥ σ and |β · v j,n j − a|<σ .
+In either one of the cases above there is at least one component Z ∗ ∈ Z good and β ′ ∈ S2 such
+that |β ′ · v − a| ≤ s for some v ∈ Z ∗ , where we crucially use that |a|, σ ≤ s and that β ∈ A(1).
+This implies that Z ∗ ∩ Rξ ,3s ,  using the triangle inequality and the facts that |a| ≤ s and
+β ′ ∈ ωξ ,s . Thus a bound for the second summand can be calculated by counting how many
+of the components Z ∗ ∈ Z good can intersect Rξ ,3s . As the components Z ∗ ∈ Z good , at most D
+of them can be contained in the interior of Rξ ,3s . On the other hand the components Z ∗ that
+satisfy Z ∗ * Rξ ,3s and Z ∗ ∩ Rξ ,3s ,  can be counted by the number of connected components
+of the set {η ∈ S2 : η · ξ = ±3s} \ Z which is O(D). This follows from the fact that the set
+{η ∈ S2 : η · ξ = ±3s} is a smooth algebraic variety of dimension 1 and an application of the
+Milnor-Thom theorem; see for example [4] and the references therein.
+   We have thus proved the estimate
+                                                                   1
+                             BVgood, Ia,σ ◦ S 1           ≤ CD 2 + BVegood, I                   ◦ S1              .
+                                                        3
+                                                   L2 (R )                                a,σ          L2 (R3 )
+                              DIRECTIONAL OPERATORS ON VARIETIES                             15
+
+                                                                          1
+This recursive inequality can be iterated on Vgood yielding the bound D 2 log N for the good
+part so the proof is complete.                                                             
+3.2. Reduction to single annulus and polynomial partition. Theorem B is reduced via
+Proposition 2.5 and Corollary 2.7 to the following single annulus bound. As mentioned after
+the statement of Theorem B in §1, standard counterexamples show that the growth rate in
+(3.4) is sharp up to the iterated logarithmic term.
+Proposition 3.3. Let V ⊂ S2 be a ﬁnite subset with #V = N 2 . Then for all k ≥ 1
+                                                           1
+(3.4)                       sup AV ,s ◦ S 1 L2(R3 ) .k N 2 log[k] (N ).
+                             s >0
+
+  As anticipated, the proof uses polynomial partitioning on S2 . We will prove the proposition
+by showing inductively that
+                                                               2
+                               KN ≔ sup sup AV ,s ◦ S 1 L2(R3 )
+                                        s >0 V ⊂S2
+                                             #V =N 2
+fulﬁlls (3.4). More precisely, for every positive integer E > 1 we will prove the recursive
+                                            h              i
+estimate
+(3.5)                             KN ≤ ΘE (log N )3 + K N
+                                                               E
+
+where the constant Θ > 0 is independent of N and E. We show at the end of the proof how
+(3.5) implies the proposition.
+Proof of (3.5). By Corollary 2.7 it suﬃces to argue for 0 < s < 2−5 . Throughout, Θ > 0 will be
+some absolute constant which may vary from line to line. To prove (3.5) we ﬁx some V ⊂ S2
+with cardinality at most N 2 . Applying the polynomial partition on S2 = Z(P sph ) ⊂ R3 from
+Proposition 2.10, so that D = 2, with the choice δ = 2−10s, we obtain a decomposition
+(3.6)                                        V = V◦ ∪ V×
+with the following properties. First, there exist ≤ Θ transverse complete intersections Wj =
+Z(P sph, Q j ) of dimension 1 and degree ≤ ΘE such that
+(3.7)                               sup inf dist(v,Wj ) < 2−10s.
+                                    v∈V× j
+
+                                                                               ® with the
+Secondly, there exist ≤ ΘE 2 disjoint connected subsets of S2 , denoted by C ∈ C,
+property that
+                           Ø                                     2
+                                                                 N
+(3.8)                 V◦ =    VC ,     VC ≔ V◦ ∩ C,     #VC ≤         ,
+                                                                  E
+                             ®
+                           C∈C
+and such that for almost every ξ ∈ R2 and every a ∈ R, the intersection C ∩ {x ∈ R2 : ξ ·x = a}
+                                   ®
+is nontrivial for ≤ ΘE elements of C.
+Remark 3.4. For those readers who have not looked ahead at the proof of Proposition 2.10,
+we provide an explanation of how the bounded crossing property
+                        
+(3.9)                 # C∈C  ® : C ∩ {x ∈ R2 : ξ · x = a} ,  ≤ ΘE
+16                                        F. DI PLINIO AND I. PARISSIS
+
+is obtained. This explanation is fully rigorous if the points of V initially lie on a coordinate
+neighborhood of S2 (say the 1/10 neighborhood of the north pole), and is made fully rigorous
+in a more general setup in the proof of Proposition 2.10. The cells C ∈ C   ® are the connected
+                   2                                             2
+components of S \ Z , where Z is an algebraic subvariety of S obtained as the zero set Z =
+Z(P, P sph) with P a polynomial of degree ≤ ΘE. The intersection of a generic hyperplane with
+S2 \ Z can have at most ≤ ΘE connected components (as many as the common zeros of P, P sph
+on the hyperplane), and the number of these connected components coincides with the left
+hand side of the last display.
+Controlling V× . In view of (3.7) we may ﬁnd subsets Vj ⊂ Wj with #Vj ≤ N 2 so that for each
+v ∈ V× there exists j and w(v) ∈ Vj with |v −w(v)| < 2−10s. Hence using Lemma 2.6, directions
+from V× can be eﬀectively approximated with directions from Vj ⊂ Wj . More precisely, we
+                                                              !
+have that
+                                           2                             2
+                            AV× ,s ◦ S 1 f L2 (R3 ) ≤ Θ sup AVj L2(R3 ) kS 1 f k 22
+(3.10)                                                      j
+
+                                                   ≤ ΘE(log N )3 kS 1 f k L2 2 (R3 )
+applying Lemma 2.6 for the ﬁrst inequality and Theorem D for each subset Vj of the transverse
+complete intersection Wj to ﬁnish.
+Splitting V◦ into good and bad clusters. First of all, let ξ ∈ Ω be a 2−10s-net on S2 chosen so that
+the bounded crossing property (3.9) holds with a = ±3s, for all ξ ∈ Ω. We deﬁne kξ ⊂ C       ® to be
+a cluster of cells with top ξ ∈ Ω if
+                                          C ⊂ Rξ ,3s            ∀C ∈ kξ .
+                                                                      ® ≤ ΘE 2 , by an iterative
+We say that a cluster kξ is bad if it contains more than E cells. As #C
+selection algorithm, we may construct Ωbad ⊂ Ω with #Ωbad ≤ ΘE such that setting
+                                                   Ø
+                                                ®\
+                                       ® good ≔ C
+                                       C                kξ
+                                                               ξ ∈Ωbad
+there holds
+                                 n                     o
+                                    ® good : C ⊂ Rξ ,3s ≤ E
+                                # C∈C                                        ∀ξ ∈ Ω.
+Accordingly we deﬁne
+                   Ø                                   Ø                                 Ø
+              Vξ ≔   VC ,                V◦,bad ≔               Vξ ,     V◦,good ≔                VC .
+                         C∈kξ                        ξ ∈Ωbad                             ® good
+                                                                                       C∈C
+
+Controlling V◦,bad . Each of the ≤ ΘE bad clusters will be controlled by a lower dimensional
+estimate. By construction, for each v ∈ Vξ we may ﬁnd u(v) ∈ Wξ ≔ S2 ∩ ξ ⊥ with |v −u(v)| ≤
+3s. Deﬁne Uξ = {u(v) : v ∈ Vξ } ⊂ Wξ , and note that #Uξ ≤ N 2 . Using Lemma 2.6 again we get
+                                                         !
+                                 2                                 2
+(3.11)        AV◦,bad ,s ◦ S 1 f L2 (R3 ) ≤ ΘE    sup AUξ L2 (R3 ) kS 1 f k 22 ≤ ΘE(log N )3 kS 1 f k 22
+                                                 ξ ∈Ωbad
+
+where we used the D = 1 case of Theorem D on each Uξ ⊂ Wξ .
+                                       DIRECTIONAL OPERATORS ON VARIETIES                                                         17
+
+                                                                         ® good we deﬁne
+Controlling V◦,good . It is convenient to write F ≔ S 1 f below. For C ∈ C
+                                                 Ø
+(3.12)                                    RC ≔      Rv,s .
+                                                              v∈VC
+
+We rely on the observation below (2.1) to gather that Av,s F = Av,s FR C whenever v ∈ C, where
+we remember that FR denotes the rough frequency restriction of F to some R ⊂ R3 . Then we
+compute the overlap of the bands {R C : C ∈ C   ® good } at a generic β ∈ R3 . By homogeneity it is
+enough to take β ∈ S2 . Choose ξ ∈ Ω with |ξ − β | < 2−10s. Then the overlap of the frequency
+supports R C at β is bounded by
+                   n                          o      n                             o
+(3.13)           # C∈C  ® good : C ∩ R β,s ,  ≤ # C ∈ C    ® good : C ∩ Rξ ,2s ,  .
+
+As by construction of Cgood
+                                            n                      o
+                                                 ®
+                                           # C ∈ Cgood : C ⊂ Rξ ,3s ≤ E
+
+we are left with counting
+                       n                                       o
+                     # C∈C ® good : C ∩ Rξ ,2s , , C 1 Rξ ,3s
+                        n                                       o
+                            ®                    2
+                    ≤ # C ∈ Cgood : C ∩ x ∈ R : ξ · x = ±3s ,  ≤ ΘE
+
+where (3.9) has been taken into account. As each VC contains at most (N /E)2 directions, see
+(3.8), and FR C = S 1 FR C , we note that
+                                                      2                       2
+                                         AVC ,s FR C L2 (R3 ) ≤ K N FR C L2 (R3 ) .
+                                                                     E
+
+Therefore
+                             2             Õ                   2
+                                                                           Õ                             2
+             AV◦,good ,s F          ≤                AVC ,s F L2(R3 ) =                 AVC,s FR C L2(R3 )
+                                  3
+                             L2 (R )
+                                           ® good                           ® good
+                                                                                                                
+                                         C∈C                              C∈C
+                                                 Õ                                             Õ
+(3.14)                                 ≤ KN
+                                                                2
+                                                           FR C L2 (R3 ) ≤ K N        sup                1R C (β) kF kL22 (R3 )
+                                            E                                E
+                                                  ® good                              β ∈S2     ® good
+                                                C∈C                                           C∈C
+
+                                       ≤ ΘEK N kF kL22 (R3 ) .
+                                                 E
+
+Collecting (3.6), (3.8) with estimates (3.10), (3.11) and (3.14) completes the proof of (3.5).                                    
+Proof that (3.5) implies Proposition 3.3. Observe that an application of (3.5) with E ≃ N /(log N )3
+gives the recursive estimate
+                                       KN           K(log N )3
+                                           ≤ Θ+Θ
+                                        N           (log N )3
+for some numerical constant Θ > 0. Iterating we get for any integer k ≥ 1 that
+                                             KN           K(log[k ] N )3
+                                                . Θk + Θk                .
+                                             N            (log[k] N )3
+18                                         F. DI PLINIO AND I. PARISSIS
+
+However for any integer M ≥ 1 we have the trivial estimate KM . M 2 which together with
+the recursive estimate above gives
+                                        KN . Θk N + Θk (log[k] N )3 N
+and completes the proof.                                                                                          
+
+4. Notions from algebraic geometry, projection varieties, and polynomial partition
+   In this section, we turn to setting up the algebraic geometry deﬁnitions and tools needed
+in the proof of Theorem A, beyond the notion of transverse complete intersection already
+introduced in Subsection 2.9. We will also prove the Proposition 2.10, namely the version of
+polynomial partition used throughout the paper. A short summary that can be used in parallel
+with reading the proof of Theorem A is the following:
+  §4.1 deﬁnition and basic notions concerning m-dimensional real algebraic varieties in Rn ;
+  §4.3 approximation of m-dimensional real algebraic varieties with transverse complete in-
+        tersections; approximate projection of a transverse complete intersection on a lower
+        dimensional subspace;
+  §4.7 approximate polynomial partitioning in Rn and proof of Proposition 2.10.
+4.1. Real algebraic varieties and dimension. For us a real algebraic variety in Rn is a set
+                                   Z(I ) ≔ {x ∈ Rn : P(x) = 0          ∀P ∈ I }
+where I ⊂ R[x 1 , . . . , xn ] is an ideal. We possibly write Z(I ) = Z(P 1, . . . , P J ) if {P 1 , . . . , P J } ⊂
+R[x 1 , . . . , xn ] is a basis (ﬁnite generating set) for the ideal I .
+Count and degree. Following the approach of [38, Section 4], we write ct Z(I ) to denote the
+count of Z(I ), that is least cardinality of a basis of the ideal I , and deg Z(I ) to denote the least
+integer D such that there exist polynomials P 1 , . . . , P J with deg P j ≤ D for all j, that generate
+the ideal I .
+Dimension. The dimension dim Z of a real algebraic variety Z = Z(I ) is deﬁned as in [9, Def.
+2.8.11]; see also [43]. Let {P 1 , . . . , P J } ⊂ R[x 1 , . . . , xn ] be a basis for the ideal I . If Z(I ) has
+dimension 1 ≤ m ≤ n, we say that x ∈ Z(I ) is a smooth point if
+                                                  ®
+                                            rank(DP)(x) = n − m,
+where DP® is the Jacobian matrix of the vector valued function P® : Rn → R J , namely the
+J × n matrix whose j-th row is the vector ∇P j = (∂x 1 P j , . . . , ∂xn P j ). We say that Z = Z(I ) is a
+smooth algebraic variety of dimension 1 ≤ m ≤ n if every point x ∈ Z is a smooth point in
+dimension m. The set of smooth points of an m-dimensional algebraic variety in Rn will be
+denoted by Z ◦m . A special important case of smooth m-dimensional algebraic varieties in Rn
+are the transverse complete intersections Z = Z(P 1 , . . . , Pn−m ) deﬁned in §2.9.
+   We conclude our discussion of dimension of algebraic varieties by recalling the following
+standard result; see [38, Theorem 4.8] for a proof.
+Lemma 4.2 (smooth components). Fix positive integers J, D and m ≤ n. There exists a constant
+Θ = Θ J,D,m,n such that the following holds. Let Z = Z(I ) ⊂ Rn be a real algebraic variety with
+                               ct Z = J,         deg Z = D,          dim Z = m.
+                                          DIRECTIONAL OPERATORS ON VARIETIES                                   19
+
+Then Z ′ ≔ Z \ Z ◦m is a real algebraic variety with ctW ≤ Θ, degW ≤ Θ, and dimW < m.
+Classes of algebraic varieties. Finally, it will be convenient to us to introduce pieces of notation
+for the classes of algebraic varieties involved in our theorems, namely:
+      ⋄ Zm,n (D, J ) is the collection of real algebraic varieties Z in Rn with dim Z = m, deg Z ≤
+        D, ct Z ≤ J .
+          × (D) is the collection of transverse complete intersections Z in Rn with dim Z =
+      ⋄ Zm,n
+        m, deg Z ≤ D. This is the collection appearing in the quantitative estimate (1.3) of
+        Theorem A.
+4.3. Approximation by and projection of transverse complete intersections. The ulti-
+mate aim of this subsection is to show that any real algebraic variety of dimension m can be
+approximated in a suitable sense by a controlled number of transverse complete intersections
+of dimension up to m and of controlled degree.
+   We begin with detailing a continuity property of nonsingular zero sets, which are semial-
+gebraic sets; see [9]. It is convenient to introduce some pieces of notation before the state-
+                                                                   
+ment. Given 1 ≤ c ≤ n and polynomials {P j : 1 ≤ j ≤ c} ⊂ R[x 1 , . . . , xn ] we write
+P® = (P 1 , . . . , Pc ) : Rn → Rc . Let τ be an indexing of the nc choices of c × c minors Dτ P®
+of DP® and for each τ we write ∆τ P® ≔ det Dτ P,  ® which is a polynomial of degree at most Dc . In
+the statements below the notion of distance dist(U , V ) is as in §2.1.
+Lemma 4.4. Let P 1, . . . , Pc ∈ R[x 1 , . . . , xn ] and Z = Z(P 1 , . . . , Pc ). For ρ, R > 0, let
+                                     n                                             o
+                             Uρ,R ≔ x ∈ Z : |x | < R, max |∆τ P®| ≥ ρ .
+                                                                       τ
+
+For α® = (α 1 , . . . , αc ) ∈ Rc , β® = (β1 , . . . , βn−1 ) ∈ Rn−1 deﬁne the algebraic varieties
+                       Vα® ≔ Z(P 1 + α 1 , . . . , Pc + αc ),
+                       Wβ® ≔ Z(P 1,β®, P 2, . . . , Pc ),
+                    where P 1,β®(x 1 , . . . , xn ) ≔ P 1 (x 1 + β1xn , . . . , xn−1 + βn−1xn , xn ).
+                                                ® > 0 such that
+Then for all ε > 0 there exists δ = δ (ε, ρ, R, P)
+(4.1)                      |α® | + | β®| < δ =⇒ dist(Uρ,R , Vα® ) + dist(Uρ,R ,Wβ®) < ε.
+In addition, if Z is a transverse complete intersection, so are Vα® and Wβ®.
+Proof. We prove the approximation claim forWβ®, a similar but simpler proof works for Vα® . Pick
+a point x̄ ∈ Uρ,R . By symmetry, suppose that the c × c matrix A ≔ {∂x j Pk (x̄) : 1 ≤ j, k ≤ c}
+is invertible and |det A| ≥ ρ. Let F = F (x, β)       ® : Rn × Rn−1 → Rc be the vector valued function
+with F 1 (x, β®) ≔ R 1,β®(x) and Fk (x) ≔ Pk (x) for 2 ≤ k ≤ c. Then A is a c × c invertible
+minor of DF (x̄, 0). By the implicit function theorem, for 1 ≤ j ≤ c we ﬁnd smooth functions
+                               ® deﬁned for | β®| + sup |x j − x̄ j | suﬃciently small such that
+h j = h j (xc+1 , . . . , xn , β)                      j>c
+
+                  h j (x̄c+1 , . . . , x̄n , ®0Rn−1 ) = x̄ j ,
+                                                                                                       
+                                                                                    ® xc+1 , . . . , xn = 0.
+                                                  ® . . . , hc (xc+1 , . . . , xn , β),
+                  R 1,β® h 1 (xc+1 , . . . , xn , β),
+20                                       F. DI PLINIO AND I. PARISSIS
+
+Then (4.1) follows from the above display and standard estimates on the L∞ -norms of the
+derivatives of h j , obtained from the lower bound on |det A|. The claim that if Z is a transverse
+complete intersection so are Vα® , Wβ®, is actually a byproduct of the application of the implicit
+function theorem above.                                                                         
+   Using Lemma 4.4 in combination with the smooth component Lemma 4.2 we obtain the
+following approximation result by transverse complete intersections.
+Proposition 4.5. Let Z = Z(I ) be an algebraic variety in Rn of dimension 0 ≤ m ≤ n, degree D,
+and {P 1 , . . . , P J } be a generating set for I . Let ε > 0, R ≥ 1. Then there exists a set Z 0 ⊆ Z with
+#Z 0 ≤ Θ, and collections of transverse complete intersections Zµ (Z ) ≔ {Z µ,ϑ : 1 ≤ ϑ ≤ Θ} ⊂
+  × (Θ), such that
+                                                                         !
+Zµ,n
+                                                             Øm Ø Θ
+                                   dist Z ∩ An (R) , Z 0 ∪          Z µ,ϑ < ε.
+                                                          µ=1 ϑ =1
+The constant Θ = Θm,n,J,D depends only on the indicated parameters and can be explicitly com-
+puted.
+Proof. We prove the proposition by induction on the dimension m. If Z has dimension zero,
+then Z ∩ An (R) is a ﬁnite set with #Z ≤ Θ points, whence the claim holds with Z 0 = Z and
+empty collections Zµ . If Z has dimension n, there is nothing to prove.
+   We now deal with the inductive step for which some preliminary notation is needed. Let
+                                                                                                
+1 ≤ m ≤ n − 1, Z and {P 1 , . . . , P J } be as in the statement of the lemma. Let c = n − m and σ
+be a choice of increasing c-tuple of indices {j 1 , . . . , jc } ⊂ {1, . . . , J }; there are cJ choices. Let
+P®σ : Rn → Rc be the vector-valued function with (P®σ )k ≔ P jk and ∆τ P®σ = detDτ P®σ , as in the
+statement of Lemma 4.4. Calling
+                                                                    
+                                      Z ′ ≔ Z ∩ Z {∆τ P®σ : σ , τ } ,
+that is Z ′ is the complement in Z of the set of smooth points Z ◦m , we gather from Lemma 4.2
+that Z ′ ∈ Zµ̄,n (Θ, Θ) for some 0 ≤ µ̄ < m. We now partition
+                                          Z ∩ An (R) = U ∪ W
+where W is the intersection of Z ∩ An (R) with the ε/2 neighborhood of Z ′. By the inductive
+assumption applied to Z ′ ∩ An (R) with ε/2 in place of ε, we may ﬁnd Z 0 with #Z 0 ≤ Θ and
+families Zµ (Z ′) ⊂ Zµ,n (Θ) for 1 ≤ µ ≤ µ̄ each with at most Θ elements so that
+                                                                !
+                                                    Øm Ø Θ
+(4.2)                       dist W ∩ An (R) , Z 0 ∪        Z µ,ϑ < ε.
+                                                          µ=1 ϑ =1
+
+We are left with treating the U -component. Notice that, as we have excised an ε/2-neighborhood
+of Z({∆τ P®σ : σ , τ }), there exists ρ > 0 such that
+                   Ø                    n                                           o
+            U ⊂        U ,σ        σ            ®                        ®
+                                 U ≔ x ∈ Z(Pσ ) : |x | ≤ 2R, max min |∆τ Pσ (x)| ≥ ρ .
+                                                                        τ   x∈U
+                   σ
+
+Now we may apply Lemma 4.4 to P® = P®σ , with U σ in place of Uρ,2R and obtain that
+                             
+              dist Uσ , Vσ,α® < ε,    Vσ,α® ≔ Z(Pσ (1) + α 1 , . . . , Pσ (c) + αc ),
+                                  DIRECTIONAL OPERATORS ON VARIETIES                                      21
+
+provided |α® | < δ (ε, ρ) is suﬃciently small. We also note that a recursive application of [27,
+                                                                                      × (D) for
+Lemma 5.1] tells us that the variety Vσ,α® is a transverse complete intersection in Zm,n
+                 c
+almost all α® ∈ R . Choosing one such α® for each σ , we obtain
+                                                       !
+                                               Ø
+(4.3)                                 dist U ,    Vσ,α® < ε.
+                                                    σ
+Combining (4.2) with (4.3) completes the inductive step.                                                  
+   The next lemma will be used in the course of the proof of Theorem A to control the contribu-
+tion to our maximal averaging operator of (a piece of) a m-dimensional transverse complete
+intersection lying s-close to the n − 1 dimensional hyperplane xn = 0, by a m-dimensional
+algebraic variety lying on the hyperplane xn = 0.
+Lemma 4.6 (approximate projection of a transverse complete intersection). Let
+                                          Z = Z(P 1, . . . , Pn−m )
+be a transverse complete intersection in Rn with deg Z = D. Let
+                                      
+                           U ≔ Z ∩ x ∈ Rn : 1 ≤ |x | < 2, |xn | < s}
+for some 0 < s < 12 . There exists an algebraic variety W with the following properties:
+     (i) W ⊂ en⊥ ≔ {x ∈ Rn : xn = 0};
+    (ii) dimW ≤ m;
+   (iii) ctW + degW ≤ Θn,m,D ;
+   (iv) dist(U ,W ) < 2s.
+Proof. We identify en⊥ with Rn−1 . The proof includes a technical reduction which we ﬁrst in-
+clude in our assumptions, postponing its justiﬁcation until the end of the argument.
+Claim. The ideal I ⊂ R[x 1 , . . . , xn ] generated by P 1 , . . . , Pn−m contains a polynomial f of de-
+gree d where the monomial xnd appears with nonzero coeﬃcient, for some d ≥ 1.
+   We proceed assuming the claim. Deﬁne
+                                  Zb ≔ {z ∈ Cn : P(z) = 0        ∀P ∈ I }.
+Observe that Zb is a complex variety of dimension m which is invariant under complex conju-
+gation and Z = Zb ∩ Rn . Let Π : Cn → Cn−1 indicate the canonical projection erasing the last
+coordinate. By virtue of our claim we may apply [17, Theorem 1.68] (see also [34, Theorem
+3.3]) and obtain that
+                            b ≔ ΠZb = {z ∈ Cn−1 : P(z) = 0
+                            W                                         ∀P ∈ I ′ },
+                                                                                              b is a complex
+where I ′ is the ﬁrst elimination ideal of I , namely I ′ = I ∩R[x 1 , . . . , xn−1 ]. Such a W
+                                                                                     ′
+algebraic variety of dimension m. We may ﬁnd a generating set of for I by arguing as follows.
+According to the results of Dubé [23] and Latyshev [33], we may pick a Gröbner basis for
+I , which we denote {Q j : 1 ≤ j ≤ J }, Q j ∈ R[x 1 , . . . , xn ], whose degree ∆ ≔ max deg Q j ,
+and cardinality J , is bounded by a constant depending only on D, n, m. Using the elimination
+theorem [16, Chap. 2 Theorem 3], a (Gröbner) basis for I ′ is given by those Q j which do not
+depend on the coordinate xn : this completes the claim about the generating set of I ′. For
+22                                     F. DI PLINIO AND I. PARISSIS
+
+deﬁnitions and constructive algorithms leading to Gröbner bases we send to the monographs
+[15, 16] and references therein.
+   At this point we denote W ≔ W    b ∩ Rn−1 and W satisﬁes (i) by construction. It is immediate
+to verify that W contains the projection of Z on the last n − 1 coordinates, whence the claim
+(iv) follows; in fact the stronger dist(U ,W ) < s holds. Furthermore, the fact that W is a real
+algebraic variety of dimension ≤ m, namely claim (ii), follows by a straightforward application
+of [34, Lemma 2.1]. As W = Z(I ′), the upper bound of claim (iii) is a consequence of the above
+construction of a generating set for I ′. This last assertion completes the proof of the lemma
+up to the veriﬁcation of the preliminary claim, which follows next.
+   We make sure that the claim holds by perturbing Z slightly. For δ 1 , . . . , δn−1 ∈ R consider
+the polynomial
+                            f (x) ≔ P 1 (x 1 + δ 1xn , . . . , xn−1 + δn−1xn , xn ).
+As noticed in [34, Lemma 3.4], for all δ > 0 there exist δ 1, . . . , δn−1 with max |δ j | < δ such that
+f satisﬁes the condition required in the claim. We take advantage of Lemma 4.4 and obtain
+that for a suitable choice of δ j
+                                       Z̃ ≔ Z(f , P 2, . . . , Pn−m )
+                                
+is a transverse complete intersection      satisfying the claim and dist(U , Z̃ ) < 2−10s. In particular
+we may ﬁnd a set Ũ ⊂ Z̃ ∩ x ∈ Rn : 1 − 2−8 ≤ |x | < 2 + 2−8 , |xn | < (1 + 2−8 )s} such that
+dist(U , Ũ ) < 2−10s. Applying the above proof to Ũ in place of U with the slightly diﬀerent
+value of s completes the reduction and therefore the proof of the Lemma.                              
+4.7. Approximate polynomial partitioning on Rn and proof of Proposition 2.10. We
+now begin the proof of Proposition 2.10. One of the main tools is the following approximate
+polynomial partitioning theorem on Rn which can be seen as the adaptation to our setting of
+the Guth-Katz polynomial partitioning theorem [28] and of its hypersurface reﬁnement due
+to Zahl [43]. These results are appealed to in the proof.
+Lemma 4.8 (Approximate polynomial partitioning on Rn ). Let V ⊂ Rn be a ﬁnite point set
+with #V ≤ N n and δ > 0. There exists a polynomial Q ∈ R[x 1 , . . . , xn ] of degree ≤ Θn E and
+ε 0 > 0 such that
+      1. Each of the ≤ Θn En connected components of Rn \ Z(Q) contains at most at most (N /E)n
+         points of V .
+      2. If |ε | < ε 0 , then dist(V ∩ Z(Q), Z(Q + ε)) < δ .
+Proof. We use the polynomial partitioning theorem of Guth and Katz, [28, Theorem 4.1], with
+the improvement of Zahl from [44, Corollary 2.3]. The theorem of Guth and Katz yields the
+existence of Q ∈ R[x 1 , . . . , xn ] of degree ≤ Θn E such that each of the Θn En connected compo-
+nents of Rn \ Z(Q) contains at most (N /E)n points. Now the improvement of Zahl implies that
+we can assume that every irreducible component Q̃ of Q satisﬁes dim(Q̃) = n − 1 and ∇Q̃ does
+not vanish identically on Z(Q̃). In particular the latter condition implies that Z(Q) is (n − 1)-
+dimensional and smooth points are dense in Z(Q). Therefore for all v ∈ V ∩ Z(Q) we may
+ﬁnd a smooth point w(v) ∈ Z(Q) with |v − w(v)| < 2−1δ . By Lemma 4.4 and a compactness
+argument there exists ε 0 > 0 such that for all |ε | < ε 0
+                                                                    δ
+                                       sup dist(w(v), Z(Q + ε)) < .
+                                     v∈V ∩Z(Q)                      2
+                                     DIRECTIONAL OPERATORS ON VARIETIES                                         23
+
+The above estimate together with the construction of w(v) prove the second claim.                                
+   The proof proper of Proposition 2.10 is articulated into several steps.
+Step 1 (reduction to coordinate patches). This step is an adaptation of [27, Subsection 5.3] by
+Guth. For an element д of the Grassmanian Λm Rn deﬁne the polynomial
+                                   Pд (x) ≔ ∇P 1 (x) ∧ · · · ∧ ∇Pn−m (x) ∧ д
+                                                                                  1
+which has degree ≤ Θn,m D. It is proved in [27, Lemma 5.6] that one may choose a 100 -net
+G ⊂ Λm Rn so that, for every д ∈ G, we have that
+                                           Wд ≔ Z(P 1 , . . . , Pn−m , Pд )
+is a transverse complete intersection of dimension m − 1 and degree ≤ Θn,m D. Before moving
+further we operate a ﬁrst excision from V , namely we set
+                                                             
+                             VG ≔ v ∈ V : inf dist(v,Wд ) < δ .
+                                                        д∈G
+
+Clearly, if v ∈ V \ VG , then v belongs to a connected component O ∈ O of the set Z \ ∪{Zд :
+д ∈ G}. Notice that there are at most Θn,m Dn elements in O. We thus partition
+                                         Ø
+                               V \ VG =      VO ,   VO ≔ V ∩ O.
+                                                 O∈O
+
+Step 2 (partition of each coordinate patch). Fix one such connected component O ∈ O. Pro-
+ceeding exactly like in [27, Lemma 5.6] we notice that O is the graph of a Lipschitz map
+h : O ′ → Rn−m with Lipschitz constant < 10     1
+                                                   , where O ′ is an open connected subset of Rm . By
+rotational invariance we may identify Rm ≡ span{e 1 , . . . , em } and write
+                          
+                     O ≔ (y1 , . . . , ym , h(y1 , . . . , ym )) : (y1 , . . . , ym ) ∈ O ′ .
+Let Π : Rn → Rm , Π(x 1 , . . . , xn ) ≔ (x 1 , . . . , xm ); polynomials of R[x 1 , . . . , xm ] will be identiﬁed
+with a corresponding polynomial in R[x 1 , . . . , xn ] by precomposing with Π without explicit
+mention.
+   Observe that Π is injective on O and set VO′ ≔ ΠVO ⊂ O ′ ⊂ Rm . We may apply Lemma
+4.8 to the set VO′ , with m in place of n and δ /2 in place of δ , in order to ﬁnd a polynomial
+QO ∈ R[x 1 , . . . , xm ] with the following properties: QO partitions O ′ into ≤ Θm Em cells C′, the
+connected components of O ′ \ Z(QO ), with the property that each C′ contains at most (N /E)m
+points of VO′ ; and VO′ ∩ Z(QO ) is contained in the (δ /2)-neighborhood of Z(QO + ε) in Rm for all
+suﬃciently small ε. By [27, Lemma 5.1] we may choose ε such that the above property holds
+and
+(4.4)                                    WO ≔ Z(P 1, . . . , Pm , QO + ε)
+is a transverse complete intersection. It follows that the ≤ Θm Em cells
+                      C ≔ {(y1 , . . . , ym , h(y1 , . . . , ym )) : (y1 , . . . , ym ) ∈ C′ } ⊂ O,
+                        ® O , are the connected components of
+which we group into C ∈ C
+                                            O \ Z(P 1, . . . , Pn−m , QO )
+24                                      F. DI PLINIO AND I. PARISSIS
+
+and the sets
+(4.5)                                          VC ≔ VO ∩ C
+have at most (N /E)m elements. It remains to take care of those points v ∈ VO such that
+Πv ∈ Z(QO ). We call this set VO,× . By the above, we may pick w ′ = (w 1 , . . . , wm ) ∈ Z(QO + ε)
+such that |Πv − w | < δ /2. Notice that the point w = (w ′, h(w ′)) belongs to WO deﬁned in (4.4)
+and satisﬁes |v − w | ≤ |Πv − w ′ | + |h(Πv) − h(w ′)| < δ using the Lipschitz constant of h. We
+have proved that
+
+                                          sup dist(v,WO ) < δ .
+                                         v∈V×,O
+
+Step 3 (deﬁnition of V× ). By the constructions in Steps 1 and 2, the set
+                                                  Ø
+                                      V× ≔ VG ∪       V×,O
+                                                         O∈O
+satisﬁes the required claim, and the collection of transverse complete intersections Wj of the
+statement is obtained by putting together the ≤ Θm,n transverse complete intersections {Wд :
+д ∈ G} of Step 1 with the ≤ Θm,n Dn transverse complete intersections {WO : O ∈ O}.
+Step 4 (deﬁnition of V◦ and counting of the hyperplane crossings). We deﬁne
+                                        Ø
+                                  C®≔        ®O : O ∈ O .
+                                             C
+By the construction in Step 2, the sets VC deﬁned in (4.5) exhaust V \ V× and satisfy the cardi-
+nality requirement. We are left with counting how many of the intersections {C ∩ {x ∈ Rn :
+                 ® are nontrivial. As we have at most ≤ Θm Dn elements O ∈ O, it suﬃces to
+ξ · x = a} : C ∈ C}
+show that for almost every ξ ∈ Rn , a ∈ R the intersection {C ∩ {x ∈ Rn : ξ ·x = a} is nontrivial
+for at most ≤ Θn,m Dn Em−1 connected components C ∈ C          ® O }.
+   Fixing one such O, we may go back to the coordinate system where O is a graph over the
+ﬁrst m variables. Consider Pξ ,a (x 1 , . . . , xm ) = Πξ · x − a as an element of R[x 1 , . . . , xm ]; we
+prove the claim for all ξ ∈ Rn such that Z ξ ≔ Z(P 1 , . . . , Pn−m , Pξ ,a ) is a transverse complete
+intersection of dimension m − 1, as these ξ are a set whose complement is a null set in Rn .
+   We ﬁrst count how many C ∈ C    ® O satisfy the condition
+                               C ∩ Z(Pξ ,a ) , ,         ∂C ∩ Z(Pξ ,a ) = .
+This number is controlled by the number of connected components of the set Z(Pξ ,a )\Z , which
+is controlled by Θn Dn−1 : to see this apply [38, Theorem 4.11], which is a reformulation of the
+main result by Barone and Basu [4]. Now we count how many C ∈ C           ® O satisfy instead the
+condition
+                             C ∩ Z(Pξ ,a ) , ,     ∂C ∩ Z(Pξ ,a ) , .
+This number is controlled by the number of connected components of the set
+                                      Z(Pξ ,a , P 1, . . . , Pm ) \ Z(QO )
+which is controlled by Θn,m Dn Em−1 : to see this apply again [4] in the form of [38, Theorem
+4.11], with U = Z(Pξ ,a , P 1, . . . , Pm ), which has dimension m − 1, and W = Z(QO ), which has
+                                DIRECTIONAL OPERATORS ON VARIETIES                                    25
+
+degree E. Putting together the two counting arguments above completes the last claim of the
+second point of Proposition 2.10 and therefore the proof of the proposition.
+
+
+                                      5. Proof of Theorem A
+5.1. Main line of proof. Both statements in the theorem will be a consequence of the fol-
+lowing uniform estimate: for all 1 ≤ m < n, D, J ≥ 1, and η > 0, there exists a constant
+Θ = Θm,n,D,J,η such that
+                                                                               2
+(5.1)        Km,n,D,J (N ) ≔ sup       sup            sup          AV ,s ◦ S 1 L2(Rn ) ≤ ΘN m−1+η ,
+                             s >0 Z ∈Zm,n (D, J ) V ⊂Z ∩An ( 3 )
+                                                             2
+                                                    #V ≤N m
+
+where Zm,n (D, J ) is the class of real algebraic varieties introduced in Subsection 4.1. Notice
+the slightly enlarged annulus, which is for technical reasons. This reduction was made us-
+ing Proposition 2.5 to insert the annular cutoﬀ. The proof of (5.1) will be inductive, and the
+constants we will induct on are the following; for R ∈ {1, 2}, N ≥ 1
+                     ×                                                                2
+                    Km,n,D (N , R) ≔ sup        sup           sup        AV ,s ◦ S 1 L2 (Rn ) ,
+                                              × (D) V ⊂Z ∩A (R)
+                                    s >0 Z ∈Zm,n            n
+                                                      #V ≤N m
+                     ×             ×
+                    Km,n,D (N ) ≔ Km,n,D (N , 1).
+                                                                         ×
+The approximation Proposition 4.2 allows us to relate Km,n,D,J (N ) to K µ,n,Θ (N ) for 1 ≤ µ ≤ m
+and some suitable constant Θ = Θm,n,J,D and ultimately induct on the latter quantity only.
+Lemma 5.2. There exists a constant Θ = Θm,n,J,D such that
+                                                                m
+                                                         ×
+                           Km,n,D,J (N ) ≤ Θ log N sup K µ,n,Θ  Nµ .
+                                                          1≤µ≤m
+
+Proof. Throughout the constant Θ = Θm,n,D,J is understood to depend only on the indicated
+parameters and may vary from line to line. For every positive integer M the inequality
+                                       ×               ×
+(5.2)                                 Km,n,D (M, 2) . Km,n,D (M)
+is obvious by rescaling. So it suﬃces to prove that
+                                                                              m
+                                                        ×
+                           Km,n,D,J (N ) ≤ Θ log N sup Km,n,Θ (N µ , 2).
+                                                         1≤µ≤m
+
+ To do so, by virtue of Corollary 2.7, it is enough to estimate operator norms on the left hand
+sides of (5.1) for 0 < s < 2−5 . Fix such an s and Z ∈ Zm,n (D, J ). Notice that by a straightforward
+application of Proposition 4.5, we may ﬁnd that there exist Θ = Θm,n,D,J and a set Z 0 ⊂ Z with
+#Z 0 ≤ Θ and collections of transverse complete intersections Zµ (Z ) ≔ {Z µ,ϑ : 1 ≤ ϑ ≤ Θ} ⊂
+   × (Θ) such that
+Zµ,n
+                                                                 !
+                                                     Øm Ø
+                                                        Θ
+                           dist Z ∩ An (3/2), Z 0 ∪         Z µ,ϑ < 2−10s.
+                                                          µ=1 ϑ =1
+26                                          F. DI PLINIO AND I. PARISSIS
+
+Applying Lemma 2.6 we have
+                                            2
+                  sup          AV ,s ◦ S 1 L2(Rn ) ≤ Θ sup            sup         sup                  kAV k L2 2 (Rn )
+              V ⊂Z ∩An (3/2)                             1≤µ≤m 1≤ϑ ≤Θ V ⊂Z µ,ϑ ∩An (2)
+
+                                                                                                            !
+                 #V ≤N m                                                 #V ≤N m
+                                                                                             m
+                                                                                                        
+                                                                            ×
+                                                  ≤ Θ log N           sup K µ,n,Θ N ,2        µ
+                                                                   1≤µ≤m
+
+where in the last step we applied Proposition 2.5. The claim follows by taking supremum over
+s and Z ∈ Zm,n (D, J ).                                                                   
+     We now show how Lemma 5.2 reduces (5.1) to the following statement; here 1 ≤ m < n.
+The (TCI)(m,n) estimate. For all D ≥ 1 and for all η > 0 there exists a constant ϒm,n,D,η such
+that
+                                        ×
+(TCI)(m,n)                             Km,n,D (N ) ≤ ϒm,n,D,η N m−1+η .
+Proof that the (TCI)(µ,n) estimate for all 1 ≤ µ ≤ m implies (5.1). Fix D, J ≥ 1. Applying Lemma
+5.2, we may ﬁnd a constant Θ = Θm,n,D,J such that
+                                                       !                              !
+                                                  m      ΘN
+                                                                η
+                                                                2
+                                                                                  m
+                                             ×                              ×
+          Km,n,D,J (N ) ≤ Θ log N sup K µ,n,Θ N µ        ≤           sup K µ,n,Θ N µ .
+                                    1≤µ≤m                     η     1≤µ≤m
+                                       η
+Using the estimate (TCI)(m,n) for 2 > 0, we have that
+                                                                             η
+                                       ×
+                                      Km,n,Θ (N ) ≤ ϒm,n,Θ, η N m−1+ 2
+                                                                  2
+
+while using the (TCI)(µ,n) estimate with (m − µ)/m in place of η when µ < m, we have that
+                                       m
+                                 ×
+                               K µ,n,Θ N µ ≤ ϒµ,n,Θ,(m−µ)/m N m−1 .
+Putting together the last three displays completes the proof of the implication.                                          
+  Summarizing, we have reduced Theorem A to proving (TCI)(m,n) for all pairs (m, n) with
+1 ≤ m < n. This will be done by the induction scheme
+                               Û
+                               m
+                  (m − 1, n) ∧ (µ, n − 1) =⇒ (m, n), 1 < m < n − 1,
+                                      µ=1
+
+while using the two base cases (1, n) and (n − 1, n) as seeds of our induction. The main in-
+ductive step is summarized in the following estimate which is a consequence of polynomial
+partitioning.
+The (PART)(m,n) estimate. Let 1 < m < n − 1 and D ≥ 1. For all integers E with Em ≥ Dn ,
+                                       
+there holds
+                                                                           m 
+                   ×                 2n m−1 ×                  ×
+                 Km,n,D (N ) ≤ Θm,n D E Km,n,D NE + (log N )Km−1,n,Θ m,n E
+                                                                            N m−1
+
+                                                                                             
+(PART)(m,n)
+                                                                                          m
+                                                    2             ×
+                                      + E(log N ) sup           K µ,n−1,Θm,n, D
+                                                                                      N   µ        .
+                                                        1≤µ≤m
+                                DIRECTIONAL OPERATORS ON VARIETIES                                 27
+
+  We detail the two base cases in Subsection 5.3 and 5.5 and prove the partitioning estimate
+(PART)(m,n) in the ﬁnal Subsection 5.6. The main line of proof of Theorem A will be complete
+once we establish the implication
+                                             Û
+                                             m
+                (PART)(m,n) ∧ (TCI)(m−1,n) ∧   (TCI)(µ,n−1)   =⇒     (TCI)(m,n)
+                                                 µ=1
+
+for all 1 < m < n − 1.
+
+Proof of the implication. Fix D ≥ 1, η > 0. The goal is to ﬁnd a uniform in N bound for
+                                                     ×
+                                                    Km,n,D (N )
+                                         τ (N ) ≔                  .
+                                                       N m−1+η
+For each E ≥ 1 we may use the induction assumptions (TCI)(m−1,n) , (TCI)(µ,n−1) for 1 ≤ µ ≤ m
+to get the estimates
+                                    m 
+                     ×
+                  Km−1,n,Θ          N m−1
+                            m,n E
+                                           ≤ ϒm−1,n,Θm,n E, 1 ,
+                           N m−1       
+                                                              m
+                                      m
+                     ×
+                  K µ,n−1,Θ         Nµ
+                           m,n, D
+                                          ≤ ϒµ,n−1,Θm,n, D , m−µ , 1 ≤ µ ≤ m − 1,
+                          N m−1                               m
+                     ×
+                  Km,n−1,Θ  m,n, D
+                                   (N )                        η
+                                        ≤ ϒm,n−1,Θ      ,
+                                                          ηN 2.
+                        N m−1                     m,n, D 2
+
+                                                                                      η
+By virtue of these estimates and of the elementary bound log N ≤ η4 N 4 , dividing (PART)(m,n)
+by N m−1+η yields that for all Em > Dn
+                        Θm,n D 2n N 
+               τ (N ) ≤          τ E
+                           Eη       "
+                          Θm,n D 2n
+(5.3)                   +             ϒm−1,n,Θm,n E, 1
+                             η2                     m
+
+                                                                                              #
+                                       + ϒm,n−1,Θm,n, D , η +      sup    ϒµ,n−1,Θm,n, D , m−µ .
+                                                          2                               m
+                                                                1≤µ≤m−1
+
+Now choosing
+                                         l              1
+                                                          m
+                      E = E(m, n, D, η) ≔ (2Θm,n D 2n ) η ,
+                                            "
+                                 2Θm,n D 2n
+                      ϒm,n,D,η ≔              ϒm−1,n,Θm,n E, 1 + ϒm,n−1,Θm,n, D , η
+                                    η2                      m                     2
+
+                                                                                   #
+                                                    +     sup ϒµ,n−1,Θm,n, D , m−µ ,
+                                                                                  m
+                                                         1≤µ≤m−1
+28                                              F. DI PLINIO AND I. PARISSIS
+
+estimate (5.3) becomes
+                                                         
+                                                     1 N      ϒm,n,D,η
+(5.4)                                        τ (N ) − τ     ≤          ,
+                                                     2 E         2
+and induction on N of (5.4) yields the claimed (TCI)(m,n) for this choice of D, η.                              
+
+5.3. The (TCI)(1,n) estimate. To prove the (TCI)(1,n) estimate, we ﬁx a transverse complete
+                                              ×
+intersection Z = Z(P 1, . . . , Pn−1 ) ∈ Z1,n    (D). Note that in particular Z is the union of at most
+  n
+D smooth connected curves Vj = {γ j (t) : t ∈ I j } ⊂ Rn where I j ⊂ R are parameter intervals.
+      Í each ξ ∈ R , a ∈ R the function t 7→ ξ · γ j (t) − a may change sign at most O(D j ) times
+                       n
+Now for
+with j D j ≤ D. The latter property allows us to appeal to an estimate of of Córdoba from
+[14] which can be summarized in the following calculation. If Vj ∩ V = {v j,1 , . . . , v j,n j } where
+for each j the directions are in consecutive order then
+                                                                                                              ! 21
+                                                          Õ
+                                                          D n nÕ
+                                                               j −1
+
+          kAZ ∩V ,s f kL2(Rn ) ≤ kAZ ∩Ṽ ,s f kL2 (Rn ) +           k(Av j, ℓ+1 ,s − Av j, ℓ ,s )f kL22 (Rn )
+                                                                   j=1 ℓ=1
+                                                                        ! 12
+                      Õ
+                      Dn
+                  +          k(Av j+1,1 ,s − Av j,n j ,s )f kL22(Rn )
+                       j=1
+
+where #Ṽ ≤ #V /2. The ﬁrst square function is estimated as in the proof of the good part in
+                                                   1
+Theorem D by a constant multiple of kψ kBV D 2 k f kL2 (Rn ) , using the D j crossing property of
+each Vj ; here we remember that ψ is the smooth function used to deﬁne Av,s . The square
+function of the second summand is estimated just by triangle inequality and is bounded by a
+                        n
+constant multiple of D 2 k f kL2(Rn ) . Thus induction on #V yields the bound kAZ ∩V ,s kL2(Rn ) .n
+  n
+D 2 log(#V ∩ Z ). Note that the argument above is essentially identical to the one used for the
+good part in the proof of Theorem D; here however we can aﬀord implicit losses depending
+on D. The estimate described above is summarized in the following proposition.
+Proposition 5.4. Let V = {γ (t) : t ∈ I } ⊂ Rn be the image of a smooth curve γ with the
+property that for each ξ ∈ Rn , a ∈ R, the function t 7→ ξ · γ (t) − a changes sign at most D times.
+Then
+                                                               n
+                                  sup     kAV k L2(Rn ) ≤ Θn D 2 log N .
+                                     V ⊂V∩An (1)
+                                        #V ≤N
+
+     In consequence of this proposition we have
+
+                                    ×                                          Θn D 2n η
+                                   K1,n,D (N ) ≤ Θn D 2n (log N )2 ≤                  N
+                                                                                η2
+for all η > 0, which complies with the claimed (TCI)(1,n) estimate.
+
+5.5. The (TCI)(n−1,n) estimate. For the codimension 1 case, we ﬁrst observe that whenever
+V ⊂ An (1), denoting V ′ = {v ′ : v ∈ V } ⊂ Sn−1 we have
+                                             kMV kL2(Rn ) ≤ 2kMV ′ kL2(Rn ) .
+                                   DIRECTIONAL OPERATORS ON VARIETIES                                     29
+
+By virtue of the above display and of Lemma 2.3, we obtain that
+                          ×                                                            2
+(5.5)                    Kn−1,n,D (N ) ≤ Θ sup               sup          AV ,s ◦ S 1 L2 (Rn ) .
+                                                 0<s <2−5 V ⊂Sn−1
+                                                         #V ≤N n−1
+
+We know, respectively from [30] and from Theorem B with k = 1 (say), that the supremum
+in the right hand side of (5.5) is bounded by Θ log N ≤ Θη N η when n = 2 and by ΘN log N ≤
+Θ     1+η
+ η ΘN      when n = 3. These observations deal with the cases n = 2, 3 of (TCI)(n−1,n).
+   We now estimate (likely not optimally) that the right hand side of (5.5) is controlled by
+Θn N n−2 (log N )n−2 when n ≥ 4, completing the proof of the (TCI)(n−1,n) estimate in all cases.
+Fix 0 < s < 2−5 and take a 2−10s-net in Ω and for each ξ ∈ Ω we deﬁne the cluster Vξ = V ∩Rξ ,3s .
+We say that a cluster is bad if #Vξ ≥ N n−2 . By a greedy selection algorithm we can identify a
+set Ωbad ⊂ Ω having at most N elements, and disjoint sets Wξ ⊂ Vξ with the property that,
+deﬁning,                     Ø           Ø                           Ø
+                     Vbad ≔        Vξ =       Wξ ,     Vgood ≔ V \        Vξ ,
+                              ξ ∈Ωbad           ξ ∈Ωbad                                    ξ ∈Ωbad
+there holds
+                                         sup #(Vgood ) ∩ Rξ ,s ≤ N n−2 .
+                                         ξ ∈Ω
+An easy overlap estimate on the Fourier support of the multipliers {Av,s : v ∈ Vgood } then
+leads to the bound
+                                                      2
+                                  AVgood ,s ◦ S 1 f              ≤ Θn N n−2 k f k 22 .
+                                                      L2 (Rn )
+For the directions in V \ Vgood we use an n − 2 dimensional estimate for each Wξ , as Wξ is
+3s-close to a set Uξ ⊂ Sn−1 ∩ ξ ⊥ ≡ Sn−2 with #Wξ = #Uξ . Arguing inductively with the help of
+Proposition 2.5, we know
+                                          2                         n−3
+                                  AUξ L2 (Rn−1 ) ≤ Θn (#Uξ ) n−2 (log N )n−2 ,
+one more log factor than the inductive estimate we assumed for AUξ ,s ◦ S 1 . In fact, applying
+Corollary 2.8,
+                               2
+                                             Õ                2
+              AVbad ,s ◦ S 1 f L2 (Rn ) ≤ Θn   AWξ ,s ◦ S 1 f L2(Rn )
+                                                ξ ∈Ωbad
+
+               © Õ                     ª                              © Õ             n−3 ª
+          ≤ Θn ­         AUξ L2(Rn−1 ) ® kS 1 f k 22 ≤ Θn (log N )n−2 ­        (#Uξ ) n−2 ® kS 1 f k 22
+                              2
+
+               «ξ ∈Ωbad                ¬                              «ξ ∈Ωbad            ¬
+                                                                                  !
+                                  Õ n−3
+                                 log N
+          ≤ Θn N n−3 (log N )n−2         2k n−2 #{ξ ∈ Ωbad : #Uξ ∼ 2k N n−2 } kS 1 f k 22
+                                        k=1
+          ≤ Θn (N log N )   n−2
+                                  kS 1 f k 22
+as #{ξ ∈ Ωbad : 2k−1 N n−2 < #Uξ ≤ 2k N n−2 } ≤ 2−k N .
+                                                                                    1          1
+   Note that if we apply the approach above for directions on S2 we get the bound N 2 (log N ) 2
+for the single annulus estimate, which has been proved in [19] with similar ideas. This is
+30                                       F. DI PLINIO AND I. PARISSIS
+                                                                  p
+worse than the bound proved in Proposition 3.3 where the factor of log N is replaced by an
+arbitrary iterated logarithm.
+
+5.6. Proof of the (PART)(m,n) estimate. Let D ≥ 1, Em ≥ Dn and
+                                                                ×
+                                  Z = Z(P 1 , . . . , Pn−m ) ∈ Zm,n (D)
+be a TCI. By Corollary 2.7 it is enough to argue for 0 < s < 2−5 . Fix a subset V ⊂ Z ∩An (1) with
+#V ≤ N m . To estimate the maximal operator AV ,s ◦ S 1 , we will partition V using Proposition
+2.10, choosing δ = 2−10s. We obtain the decomposition
+
+                                                V = V◦ ∪ V×
+with the following properties. To begin with, we may ﬁnd ≤ Θm,n Dn transverse complete
+intersections Wj = Z(P 1, . . . , Pn−m , Q j ) of dimension m − 1 and degree ≤ Θm,n E such that
+(5.6)                                  sup inf dist(v,Wj ) < 2−10s.
+                                       v∈V× j
+
+                                                                                    ® with
+Moreover, there exist ≤ Θm,n Dn Em disjoint connected subsets of Z , denoted by C ∈ C,
+the property that
+                          Ø                                     m
+                                                                N
+(5.7)                V◦ =     VC ,    VC ≔ V◦ ∩ C,      #VC ≤          ,
+                                                                 E
+                              ®
+                            C∈C
+
+and such that for almost every ξ ∈ Rn and every a ∈ R, there holds
+                    
+(5.8)             # C∈C  ® : C ∩ {x ∈ Rn : ξ · x = a} ,  ≤ Θm,n D 2n Em−1 .
+
+Controlling V× . In a similar way to what was done in the proof of Theorem B, we approximate
+directions from V× with directions from the ≤ Θm,n Dn transverse complete intersections Wj
+which are lower-dimensional. To wit, we use (5.6) to ﬁnd subsets Vj ⊂ Wj with #Vj ≤ N m so that
+for each v ∈ V× there exists j and w(v) ∈ Vj with |v − w(v)| < 2−10s. In particular Vj ⊂ An (2).
+Applying the approximation of Lemma 2.6, followed by Proposition 2.5, we deduce that
+                                                           !
+                                  2                            2
+                   AV× ,s ◦ S 1 f 2 ≤ Θm,n Dn sup AVj L2 (Rn ) kS 1 f k 22
+                                                       j
+(5.9)                                            ×                  m
+                                      ≤ Θm,n Dn Km−1,n,Θm,n E
+                                                              (N m−1 , 2) log N kS 1 f k 22
+                                                                    m
+                                                 ×
+                                      ≤ Θm,n Dn Km−1,n,Θm,n E
+                                                              (N m−1 ) log N kS 1 f k 22
+                 ×
+as each Wj ∈ Zm−1,n  (Θm,n E), and using inequality (5.2) in the last step. This completes the
+control of the V× component of V .
+
+Splitting V◦ into good and bad clusters. Using that C  ® is a ﬁnite set, we may choose a 2−10s-net
+        n−1
+Ω on S such that the bounded crossing property (5.8) holds with a = ±3s for all ξ ∈ Ω. For
+ξ ∈ Ω we deﬁne kξ ⊂ C   ® to be a cluster of cells with top ξ ∈ Ω if
+
+                                          C ⊂ Rξ ,3s       ∀C ∈ kξ .
+                                      DIRECTIONAL OPERATORS ON VARIETIES                                       31
+
+                                                                         ® ≤ Θm,n Dn Em , by an
+We say that a cluster kξ is bad if it contains more than Em−1 cells. As #C
+iterative selection algorithm, we may construct Ωbad ⊂ Ω with #Ωbad ≤ Θm,n Dn E such that
+setting
+                                                   Ø
+                                      C         ®\
+                                       ® good ≔ C       kξ ,
+                                                              ξ ∈Ωbad
+
+there holds
+                              n                   o
+                                ®
+                          # C ∈ Cgood : C ⊂ Rξ ,3s ≤ Em−1                      ∀ξ ∈ Ω.
+
+We split accordingly
+                        Ø                              Ø                                  Ø
+                Vξ ≔          VC ,        V◦,bad ≔             Vξ ,         V◦,good ≔              VC .
+                       C∈kξ                          ξ ∈Ωbad                              ® good
+                                                                                        C∈C
+
+
+Controlling V◦,bad . We still aim to control the contribution of the ≤ Θm,n Dn E bad clusters with
+a lower dimensional estimate, replacing the ≤ N m vectors Vξ with a set Uξ consisting of ≤
+N m vectors from the (n − 1)-dimensional hyperplane ξ ⊥. This step is more diﬃcult than the
+analogous one from the proof of Theorem B because we need to make sure that the obtained Uξ
+is contained in an m-dimensional algebraic variety on ξ ⊥ of controlled degree and count. This
+is not in general possible by simply taking projections and using Lemma 2.8 as the projection
+of an algebraic variety is in general a semi-algebraic set [9].
+   We tackle this diﬃculty by applying the approximate projection Lemma 4.6, after a rotation
+taking ξ to en , with choice of U given by U ≔ Z ∩An (1)∩Rξ ,3s Notice that the latter set contains
+Vξ . Then Lemma 4.6 yields the existence of an algebraic variety Wξ ∈ Zm,n−1 (Θm,n,D , Θm,n,D )
+contained in ξ ⊥ such that for every v ∈ Vξ we may ﬁnd u(v) ∈ Wξ with |v − u(v)| ≤ 6s.
+Deﬁne Uξ = {u(v) : v ∈ Vξ } ⊂ Wξ ∩ An−1 (3/2), and observe that #Uξ ≤ N m . Using that there
+are at most Θm,n Dn E bad clusters together with the approximation Lemma 2.6 in the ﬁrst step,
+Fubini’s theorem in the second, Proposition 2.5 in the third, we obtain the chain of inequalities
+                                                               !
+                                  2                                     2
+               AV◦,bad ,s ◦ S 1 f 2 ≤ Θm,n Dn E      sup AUξ L2 (Rn ) kS 1 f k 22
+                                                                               !
+                                                    ξ ∈Ωbad
+
+
+                                      ≤ Θm,n Dn E    sup AUξ kL22(Rn−1 ) kS 1 f k 22
+                                                                                                      !
+                                                    ξ ∈Ωbad
+
+(5.10)
+                                      ≤ Θm,n Dn E log N        sup sup AUξ ,σ ◦ S 1 kL22 (Rn−1 ) kS 1 f k 22
+                                                              ξ ∈Ωbad σ >0
+
+                                      ≤ Θm,n D E log N · Km,n−1,Θm,n, D ,Θm,n, D (N ) kS 1 f k 22
+                                               n
+                                                                                            !
+                                                                                    m
+                                                                   ×
+                                      ≤ Θm,n Dn E(log N )2 sup K µ,n−1,Θ    m,n, D
+                                                                                     N µ kS 1 f k 22 ,
+                                                                 1≤µ≤m
+
+where we used Lemma 5.2 in the very last step. This completes the treatment of V◦,bad .
+32                                         F. DI PLINIO AND I. PARISSIS
+
+ControllingV◦,good . This estimate is not much diﬀerent to the one appearing in the correspond-
+ing proof of Theorem B. We keep when possible the same notations. For C ∈ C         ® good we deﬁne
+R C as in (3.12) and again notice that Av,s f = Av,s fR C whenever v ∈ C. The next step is the esti-
+mation of the overlap of the sets {R C : C ∈ C ® good } at a generic β ∈ Rn . By homogeneity in the
+deﬁnition of Rv,s it is enough to take β ∈ S and approximate by ξ ∈ Ω with |ξ − β | < 2−10s.
+                                              n−1
+
+Then the overlap of the multipliers 1R C at β is bounded by the same right hand side of (3.13).
+The removal of the bad clusters when constructing Cgood ensured the property
+                                   n                        o
+                                        ®
+                                # C ∈ Cgood : C ⊂ Rξ ,3s ≤ Em−1
+so we are left with counting
+                  n                                        o
+                # C∈C  ® good : C ∩ Rξ ,2s , , C 1 Rξ ,3s
+                   n                                        o
+                        ®                    2
+               ≤ # C ∈ Cgood : C ∩ x ∈ R : ξ · x = ±3s ,  ≤ Θm,n D 2n Em−1 ,
+where (5.8) has been taken into account. Therefore arguing exactly like in (3.14) and using
+that VC contains at most (N /E)m directions, see (5.7), we obtain
+                                          2                    ×
+(5.11)                       AV◦,good ,s f 2 ≤ Θn,m D 2n Em−1 Km,n,D (N /E) k f k 22 .
+The sought after (PART)(m,n) estimate for these values of m, n, D, N , E follows by collecting
+(5.9), (5.10) and (5.11).
+
+                                                  References
+ [1] A. Alfonseca, Strong type inequalities and an almost-orthogonality principle for families of maximal operators
+     along directions in R2 , J. London Math. Soc. (2) 67 (2003), no. 1, 208–218. MR1942421 ↑4
+ [2] A. Alfonseca, F. Soria, and A. Vargas, An almost-orthogonality principle in L2 for directional maximal func-
+     tions, Harmonic analysis at Mount Holyoke (South Hadley, MA, 2001), 2003, pp. 1–7. MR1979927 ↑4
+ [3] A. Alfonseca, F. Soria, and A. Vargas, A remark on maximal operators along directions in R2 , Math. Res. Lett.
+     10 (2003), no. 1, 41–49. MR1960122 ↑4
+ [4] S. Barone and S. Basu, Reﬁned bounds on the number of connected components of sign conditions on a variety,
+     Discrete Comput. Geom. 47 (2012), no. 3, 577–597. MR2891249 ↑13, 14, 24
+ [5] J. Barrionuevo, Averages along uniformly distributed directions on a curve, Proc. Amer. Math. Soc. 119 (1993),
+     no. 3, 823–827. MR1172947 ↑3, 4, 6
+ [6] J. Barrionuevo, Estimates for some Kakeya-type maximal operators, Trans. Amer. Math. Soc. 335 (1993), no. 2,
+     667–682. MR1150012 ↑4, 6
+ [7] S. Basu and M. Sombra, Polynomial partitioning on varieties of codimension two and point-hypersurface inci-
+     dences in four dimensions, Discrete Comput. Geom. 55 (2016), no. 1, 158–184. MR3439263 ↑6
+ [8] M. Bateman, Kakeya sets and directional maximal operators in the plane, Duke Math. J. 147 (2009), no. 1,
+     55–77. MR2494456 ↑5
+ [9] J. Bochnak, M. Coste, and M.-F. Roy, Real algebraic geometry, Ergebnisse der Mathematik und ihrer Gren-
+     zgebiete (3) [Results in Mathematics and Related Areas (3)], vol. 36, Springer-Verlag, Berlin, 1998. Translated
+     from the 1987 French original, Revised by the authors. MR1659509 ↑18, 19, 31
+[10] A. Carbery, Diﬀerentiation in lacunary directions and an extension of the Marcinkiewicz multiplier theorem,
+     Ann. Inst. Fourier (Grenoble) 38 (1988), no. 1, 157–168. MR949003 ↑5
+[11] M. Christ, J. Duoandikoetxea, and J. L. Rubio de Francia, Maximal operators related to the Radon transform
+     and the Calderón-Zygmund method of rotations, Duke Math. J. 53 (1986), no. 1, 189–209. MR835805 ↑12
+[12] A. Córdoba and R. Feﬀerman, On diﬀerentiation of integrals, Proc. Nat. Acad. Sci. U.S.A. 74 (1977), no. 6,
+     2211–2213. MR0476977 ↑5
+                                     DIRECTIONAL OPERATORS ON VARIETIES                                             33
+
+[13] A. Córdoba, The Kakeya maximal function and the spherical summation multipliers, Amer. J. Math. 99 (1977),
+     no. 1, 1–22. MR0447949 ↑3, 4, 5
+[14] A. Córdoba, Geometric Fourier analysis, Ann. Inst. Fourier (Grenoble) 32 (1982), no. 3, vii, 215–226. MR688026
+     ↑3, 4, 6, 12, 28
+[15] D. A. Cox, J. Little, and D. O’Shea, Using algebraic geometry, Second edition, Graduate Texts in Mathematics,
+     vol. 185, Springer, New York, 2005. MR2122859 ↑7, 22
+[16] D. A. Cox, J. Little, and D. O’Shea, Ideals, varieties, and algorithms, Fourth edition, Undergraduate Texts in
+     Mathematics, Springer, Cham, 2015. An introduction to computational algebraic geometry and commutative
+     algebra. MR3330490 ↑7, 21, 22
+[17] W. Decker and G. Pﬁster, A ﬁrst course in computational algebraic geometry, African Institute of Mathematics
+     (AIMS) Library Series, Cambridge University Press, Cambridge, 2013. MR3052757 ↑21
+[18] C. Demeter, Singular integrals along N directions in R2 , Proc. Amer. Math. Soc. 138 (2010), no. 12, 4433–4442.
+     MR2680067 ↑8, 13
+[19] C. Demeter, L2 bounds for a Kakeya-type maximal operator in R3 , Bull. Lond. Math. Soc. 44 (2012), no. 4,
+     716–728. MR2967239 ↑3, 4, 29
+[20] F. Di Plinio, S. Guo, C. Thiele, and P. Zorin-Kranich, Square functions for bi-Lipschitz maps and directional
+     operators, J. Funct. Anal. 275 (2018), no. 8, 2015–2058. MR3841536 ↑13
+[21] F. Di Plinio and I. Parissis, A sharp estimate for the Hilbert transform along ﬁnite order lacunary sets of direc-
+     tions, Israel J. Math. 227 (2018), no. 1, 189–214. MR3846321 ↑8
+[22] F. Di Plinio and I. Parissis, On the Maximal Directional Hilbert Transform in Three Dimensions, Int. Math. Res.
+     Not. IMRN 14 (2020), 4324–4356. MR4126303 ↑5, 8
+[23] T. W. Dubé, The structure of polynomial ideals and Gröbner bases, SIAM J. Comput. 19 (1990), no. 4, 750–775.
+     MR1053942 ↑21
+[24] J. Fox, J. Pach, A. Sheﬀer, A. Suk, and J. Zahl, A semi-algebraic version of Zarankiewicz’s problem, J. Eur.
+     Math. Soc. (JEMS) 19 (2017), no. 6, 1785–1810. MR3646875 ↑6
+[25] L. Grafakos, P. Honzík, and A. Seeger, On maximal functions for Mikhlin-Hörmander multipliers, Adv. Math.
+     204 (2006), no. 2, 363–378. MR2249617 ↑8
+[26] L. Guth, A restriction estimate using polynomial partitioning, J. Amer. Math. Soc. 29 (2016), no. 2, 371–413.
+     MR3454378 ↑4, 11
+[27] L. Guth, Restriction estimates using polynomial partitioning II (201603), available at 1603.04250. ↑4, 6, 11, 21,
+     23
+[28] L. Guth and N. H. Katz, On the Erdös distinct distances problem in the plane, Ann. of Math. (2) 181 (2015),
+     no. 1, 155–190. MR3272924 ↑22
+[29] N. H. Katz, Maximal operators over arbitrary sets of directions, Duke Math. J. 97 (1999), no. 1, 67–79.
+     MR1681088 ↑5
+[30] N. H. Katz, Remarks on maximal operators over arbitrary sets of directions, Bull. London Math. Soc. 31 (1999),
+     no. 6, 700–710. MR1711029 ↑5, 13, 29
+[31] N. H. Katz and K. M. Rogers, On the polynomial Wolﬀ axioms, Geom. Funct. Anal. 28 (2018), no. 6, 1706–1716.
+     MR3881832 ↑6, 7
+[32] M. T. Lacey and X. Li, Maximal theorems for the directional Hilbert transform on the plane, Trans. Amer. Math.
+     Soc. 358 (2006), no. 9, 4099–4117. MR2219012 ↑3
+[33] V. N. Latyshev, A combinatorial complexity of Gröbner bases, J. Math. Sci. (New York) 102 (2000), no. 3, 4134–
+     4138. Algebra, 13. MR1797980 ↑21
+[34] J. Matoušek and Z. Patáková, Multilevel polynomial partitions and simpliﬁed range searching, Discrete Com-
+     put. Geom. 54 (2015), no. 1, 22–41. MR3351757 ↑6, 7, 21, 22
+[35] A. Nagel, E. M. Stein, and S. Wainger, Diﬀerentiation in lacunary directions, Proc. Nat. Acad. Sci. U.S.A. 75
+     (1978), no. 3, 1060–1062. MR0466470 ↑5
+[36] Y. Ou and H. Wang, A cone restriction estimate using polynomial partitioning, ArXiv e-prints (April 2017),
+     available at 1704.05485. ↑6
+[37] J. Parcet and K. M. Rogers, Directional maximal operators and lacunarity in higher dimensions, Amer. J. Math.
+     137 (2015), no. 6, 1535–1557. MR3432267 ↑4, 5
+[38] A. Sheﬀer, Polynomial methods and incidence theory, http://faculty.baruch.cuny.edu/ASheﬀer/, 2020. ↑18, 24
+34                                          F. DI PLINIO AND I. PARISSIS
+
+[39] P. Sjögren and P. Sjölin, Littlewood-Paley decompositions and Fourier multipliers with singularities on certain
+     sets, Ann. Inst. Fourier (Grenoble) 31 (1981), no. 1, vii, 157–175. MR613033 ↑5
+[40] J.-O. Strömberg, Weak estimates on maximal functions with rectangles in certain directions, Ark. Mat. 15
+     (1977), no. 2, 229–240. MR0487260 ↑5
+[41] J.-O. Strömberg, Maximal functions associated to rectangles with uniformly distributed directions, Ann. Math.
+     (2) 107 (1978), no. 2, 399–402. MR0481883 ↑5
+[42] T. Tao, The Bochner-Riesz conjecture implies the restriction conjecture, Duke Math. J. 96 (1999), no. 2, 363–375.
+     MR1666558 ↑5
+[43] J. Zahl, An improved bound on the number of point-surface incidences in three dimensions, Contrib. Discrete
+     Math. 8 (2013), no. 1, 100–121. MR3118901 ↑18, 22
+[44] J. Zahl, A Szemerédi-Trotter type theorem in R4 , Discrete Comput. Geom. 54 (2015), no. 3, 513–572.
+     MR3392965 ↑6, 11, 22
+
+     Department of Mathematics, University of Virginia, Box 400137, Charlottesville, VA 22904, USA
+     E-mail address: francesco.diplinio@virginia.edu
+
+  Departamento de Matemáticas, Universidad del País Vasco, Aptdo. 644, 48080 Bilbao, Spain and Iker-
+basqe, Basqe Foundation for Science, Bilbao, Spain
+  E-mail address: ioannis.parissis@ehu.es
+
