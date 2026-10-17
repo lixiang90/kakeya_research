@@ -70,3 +70,6 @@ R0044仍31PDF/34sources，无新PDF/渲染/online版次认证；实际读WZ Def1
 
 
 R0045新增Zorin-Kranich1807.09604v4与Zhang2608.17952v2两PDF/text/meta，库33PDF/36sources。精确scope/hash及读页见metadata/R0045_source_check.json。仅新输入版本/适用性有限online核查，非全前沿或priority认证。ZK1.5用于selectedtuples，whole高级proof具名；新Zhang仅为下一fixed rational mixednorm输入，q趋1及Hausdorff附录完整proof未独审，不把perturbed mixednorm当定理。
+
+
+R0046沿用33PDF/36sources，无新增PDF；Zhang2608.17952v2的§§2–4/旧四环及uniform tensor scope、FD2607.14824v3 Prop5.4 finite-to-compact κ/4量词与本地原finite种子重核，A有限官方HTML对照，非全局版本/前沿/优先权认证。详metadata/R0046_source_check.json。

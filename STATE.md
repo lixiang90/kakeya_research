@@ -1,33 +1,33 @@
 # 当前研究交接
 
-更新2026-10-17，R0045周期macro先行及主稿/两全文独审/root整合结束。Goal active，一般/高维Kakeya与重大中间结果未完成。唯一下一主任务 notes/20_dimension_lifting/R0045_next_rational_mixed_norm_seed_gate.md，R46实际检验finite4Dseed→固定有理算术R5/3，不续四臂rank/ρ/加臂路线。
+更新2026-10-17，R0046主稿/两独立施工/两实际全文review/root整合与提前macro完成。Goal active，高维/一般Kakeya及重大中间结果未完成。唯一下一主任务 notes/50_counterexamples/constructive/R0046_next_cyclic_selector_volume_gate.md，检验真实五维满方向跨坐标cyclic selector的wholeclock邻域体积；不续R5/3指数/权重或旧四臂/PW/多项式参数。
 
 ## 恢复及同步
 
-R45开轮context.py/GOAL/STATE/ROADMAP/registry78全部状态/latest/AGENTS/R44轮次next已读。R44 HEAD=origin=remote 6a67c6ea373d054c358ae741451c75eae802f94b/tree f49c36e665ea7ef5aa72da6c4e9a375ba9185ff9/662files/clean、receipt全项核过。上一turn progress（actualcertificate/CW排重改变下一动作并同步），非无信息重述。R45沿此父精确staged blobs/tree/commit/leasedref forcefalse，最终以tmp/sync/R0045.json为准，pendingfalse/sametrue/cleantrue/allstagedSHA256true才报同步。CLI auth/network不可用，GitHub connector可用；root统一Git，两代理只assignedfiles已停。恢复先context.py及receipt，不重跑旧算例。
+R46开轮context.py→tmp/R0046_context.txt，GOAL/STATE/ROADMAP/registry78全部状态/latestR45/AGENTS/R45round/next/macro已读；working_spec已保存。R45 HEAD=origin=remote a9cc3af8d7d279d31a066e32b60db63f00882955，tree cef98b860515e18e7ea35cc1e249fa91b781c143，679files/clean及receipt全项核。R46沿该父安全blobs/tree/commit/leasedref forcefalse，同步最终以tmp/sync/R0046.json为准：pendingfalse/sametrue/cleantrue/allstagedSHA256true才可报告完成。CLI auth/network不可用，GitHub connector可用；root统一Git，A/B只assignedfiles。恢复先context.py和receipt，不重跑两次已通过的全穷举。
 
-## R45真实结果
+## R46实际结果与停止
 
-root notes/40_multiscale/R0045_actual_four_arm_BL_gate_and_rank_budget.md10节，A R0045_primary_Kakeya_BL_and_source_audit.md11节，B R0045_four_arm_mass_and_transversality_counterattack.md9节；formal source_and_BL_review、mass_and_transversality_review及rootintegration。实际全文审root/A/B/macro8/next5最终范围，外部同行评审false。registry78条，无新数学ID。
+主稿notes/20_dimension_lifting/R0046_exact_rational_candidate_and_finite_seed_boundary.md8节；A R0046_primary_and_geometric_seed_audit.md8节，B R0046_arithmetic_counterattack_and_tensor_scope.md6节；formal source_and_encoding_review、arithmetic_and_tensor_review及rootintegration。macro8节/next5节与代码输出实际全文审查，外部同行评审false。registry78条，无新数学ID/major。
 
-actual graph #E≈Kδ^-(5−κ), #T≈Kδ^-4,I≈Kδ^-5。先heavyT保原D_T≥K^-Cδ^-1，再richbase保d_p≥K^-Cδ^-κ；endpoint仍取原全部marks。角slab/timecap保K原四臂、不同T及r=δ^α分离times，未把angle/time独立化。Π_pi由原B_i=(-Fi,I,−ξi)和真实endpoint定义，sameT使base距planeOδ；固定gridtranslations/邻格可送ZK1.5，不需source filled3plank，原endpoint重复仍计。
+R5/3：任意无挠G、Z⊂G²、最大x纤维M，S=(x+y,−x+y,y,x+3y)，N≤C M^(1/3)(S1S2S3)^(10/21)S4^(5/21)。仍未证也未否。旧Zhang4.2 N^4≤M(S1S2S3)^2S4已覆盖N≤M²；新域至少N>M²。allG有限数据可选ell_T压到整数同时保N/M/四基数；这不保angular/尺度。统一C经tensor强迫sharpC1，严格整数N21>M7(S1S2S3)10S45可否全称，但本轮没找到。必要熵14HXY+7HX≤10(H1+H2+H3)+5H4有联合type/fibre施工，不免费logM→平均entropy。
 
-Zorin-Kranich1807.09604v4 Th1.5 Fremlin各l4≥productl4，故选中Γ_Q上BLreg≤A可得Σ|Γ_Q|^(5/8)≤CA∏N_i^(5/8)，不需Cartesian。Th1.3全mixedtuple版本不能直接套，PDF5推导单行A应倒数，直接用1.5/定义避排字，不反主定理。whole advancedproof具名。
+experiments/arithmetic两脚本/outputs：10个adjugate16点grid各65535子集，总655350带grid标签（可重叠），其中402457在旧域外；Gray精确整数比较全部无反，ordinarymask/bitset算法另全数重算一致。最大域外比率6^21/(24^10·4^5)≈0.337881，N6/M1/S=(3,4,2,4)，不是普遍证明或趋反证据。B整族Z_m={(2k−1,1),(2k,0)}也不反且tensor不反。不要无故重跑/扩大样本代替新论证。
 
-有限bridge：pairFi−Fj可逆时Gi∩Gj方向l_ij=(aij,1)，Di=三列det；allDi非零iff fullBL有限。零Di张成2D时rhs15/8<2，或同线共同kernel；非零时conditional R3LW给Ci=|Di|^-1/2∏|detFi−Fj|^-1/2，四Hölder到5/8。若五矩阵含baseF0 allpairdet≥σ，slab参考角law badDi≤CK max(δ,√τ/σ)^γ；actualξ Oδ使Di扰动δσ^-2，τ≫此给BL≤Cτ^-1/2σ^-3/2。actualjointlaw仅domination K^C，不是免费独立。ranksep只是充分条件，actualrank-good/goodBL原star质量未证；commonkernel代数例不保fullsource/SM，不能冒充反例。
+自然四维线L=(t,F(y)+tF(x))仅在1,−1,0,1/3由四Sj控制，O1 marks给λ≈δ，不满足DIR/FSD λ≥δ^η_src。加厚time需要更多cover/斜率区间，原四基数不支付；rank1 slopes仍合法sparse3cap，只不供normalized full3D方向数，勿把它误当禁止DIR。两维自由slope产品在远离共同焦点时真实marks/cover同时乘网格数，恰抵消。δgrid³ bush、共同λ=2δ^η_src、allmarks原cells≤Cλ4δ^-4，迫有效DIR参数η_src≤ε/3；不提供η正向可用下界，不能先ε≪η再tensor去损失。
 
-同ρ-world BLreg≥c min(R,ρ^-1)^3；局部Rρ/δ需δ≪ρ²才见ρ^-3。有限真实star f(t)=tI,φi=(ci,ci²)可达BL≈ρ^-3，但不保fullpositiveκ source；affine旧分支不重开。parabolic frame detρ7/输出ρ^-2给BL′=ρ3BL，physical Jacobian/厚度同步；local detFi−Fj≤Cρ²迫σδ^a的a≥2µ，不独立宣更小BL。
+据一主轮规则停止本自然finite4D→固定四时算术桥，不声称R5/3 false或所有编码不可能。未有新q/维数界/反例/major；已付4D内部argument/DIR/FSD具名层次与DIM001六维17/4历史条件链保持。
 
-原endpoint字母表N_i≤Kδ^-(5−κ)，perp rawstars≈Kδ^-4(κ+1)，timegapr后每endpointtuple tube纤维≤K r^-4κ。若另有goodraw原质量g/BL≤A，重筛base（非反用concavity）给δ^(5−4κ)≤K^C A g^-13/8 r^(-5κ/2)，即(4−5α/2)κ≤5+a_BL+Oη。理想仅κ≤5/4，固定m相同编码不改幂。没有实际goodmass或新κgain，不把条件3.75说普通高维改进，ordinary4D投影界也不偷套任意jointAD/CW类。
+## 宏观与下一唯一机制
 
-## 停止与下一机制
+research/reviews/R0046_macro.md提前macro：本轮改变下一动作，上一/本turn归类progress。旧CP⇔PM/W/BSG/action/carry/flatflake/poly/PW/四臂固定加臂继续冻结。HRZ多尺度递归保后备，尚未核真实4D terminal/Lp/λ接口，不先假设存在。
 
-research/reviews/R0045_macro.md执行一主轮停止four-arm certificate，不续rank/加臂/ρ阈值循环；旧R44polynomial D/e/ρ及CP⇔PM/W/BSG/commonplane/action/carry/flatflake全部冻结。已付sourceassembly不复活。一般到sticky/其它mixed/Hausdorff/极大函数仍open。
+下一N dyadic, δ1/N, A满D_N^4, B_i=b_i(a_(i+1)), b_i任意bounded，K_N为(t,B+tA), t∈[0,1]全部真实segments。检验uniform log^-A实际C0δ-neighborhood lower，或无穷dyadicN_j统一κ>0实际power upper。此时TC0但S可4logN，不属于R41可分离/小S；删direction破fullproduct、删shading破wholeclock，候选不自动有旧全称CP/PM闭包，先双向排等价。一个singulart、边际乘积或时间采样不证连续volume upper。若只旧entropy/4D的N^-1/单t碰撞一轮停，不续cyclelength/alphabet/S阈值。
 
-新Zhang2608.17952v2仅scope核：Th1.1 q7/4固定R² scalar rational forms，§3所有torsion-free G统一restricted弱型→tensor强型，§4原KT的M^1/4四projection式；Th5.3 compact Hausdorff≥1+(d−1)/q，q趋1仍Conj5.4，Th5.8自然逐管角扰动版失败。不是R5 rank2 KBL上界。R46候选R5/3：任意G、Z⊂G²，S=(x+y,−x+y,y,x+3y)，xfiber≤M，尝试|Z|≤C M^1/3(S1S2S3)^10/21 S4^5/21，C须allG/tensor统一。先必要条件/primary排重，再真实finite4Dangular/clock/shading/prior编码；无合法编码或只q7/4/KT旧界一轮停。不宣该式成立、不用tensor自动改q；finite四维种子λ≥δ^η及constant维数全部保留。
+finite fullgrid可邻格连续填slope，段偏移Oδ，预留固定C0厚度内得到openpatch，再有限旋转fullGδ。若每足够小dyadicδ真有统一power，单调补全后FD2607.14824v3 Prop5.4已给同compactE及κ/4上Minkowski；无穷稀疏δ_j也可取非减step-f供应∀δ输入，输出在r_j=(δ_j/C_d)^4有power，给下Minkowski/Hausdorff≤5−κ/4而非上Minkowski。单个/有限样本不够；无需再猜未知coherence。受限log lower首先仅neighborhood，不升任意集合Hausdorff满维。尚未开展该主任务。
 
-## 文献及目标
+## 文献和总目标
 
-库33PDF/36sources，新增ZK638678bytes SHAe9046375f7019aab9f7b88123d870fbf3d71f9b264b338394d7d67e6a77fd831、新Zhang370982bytes SHA5c5c03a65f53869bce7a3bc30f4bcd71b7ae26a6423112ccc1eb5d6932f819ee，PDF/text/meta均存。ZK v4 2019-09-11；Zhang v2 2026-08-19/PDF首页08-20，不混v1 HTML日期。root实看ZK3–5/新Zhang11–12，读Zhang6–10；A读ZK全文但高级全proof仍具名，新ZhangAppendixA未独证。此次online仅两新primary及有限相关scope，不认证全前沿/优先权，最近全局boundedfrontier仍R42。metadata/R0045_source_check.json为准。
+33PDF/36sources不变，R46无新PDF。Zhang2608.17952v2 §§2–4精确scope/四环重核和A有限官方HTML对照，FDv3 Prop5.4/5.5实际全文重读；无全局版本/前沿/priority认证，上次global boundedfrontierR42。详细metadata/R0046_source_check.json。原OpenAI署名不担保证明，whole高级外部proof仍具名。
 
-R38 RED及DIR/FSD/DIM001条件六维17/4链保留、任意集合scope已修，外部具名层级/priority未认证不是无穷重证借口。R45没有高维解决、反例、新维数界或major；Goal不得自行complete/pause/blocked。
+R38 RED已付完整4D内部argument和finite/Hausdorff桥，不复活assembly gap；DIM001条件六维17/4未认证first/best或无条件新界。一般到sticky、其余mixed、一般Hausdorff/极大函数仍open。没有理由自行complete/pause/blocked Goal。

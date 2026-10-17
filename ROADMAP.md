@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0045周期macro先行；actual raw四臂/不同T/time、Π近交、ZK1.5 selectedtuples及endpoint纤维全付。满秩pair类有限BL iff三pairkernel线独立，五矩阵ranksep+slab角条件桥付σ/τ/原Oδ误差；actual rank-good/goodBL质量未证。单endpoint账本即使理想仅κ≤5/4，固定加臂无用，执行一轮停止而不续rank/ρ阈值。新ZK/Zhang primary入库33PDF/36sources，仅有限新输入核查。下一唯一 notes/20_dimension_lifting/R0045_next_rational_mixed_norm_seed_gate.md，实际四维finite种子→固定有理4projection改进q5/3 test，未宣估计成立。无新ID/高维界/major，Goal active。
+更新2026-10-17，R0046提前macro完成：固定四投影R5/3未证未否，旧q7/4覆盖N≤M²，allG压整数/C1张量/type纤维scope已审；655350 finite样本、其中402457域外，独立全数recount无反例。自然四时编码λ≈δ不达seed，补角产品抵消、bush迫η_src≤ε/3，停止本seed-to-pattern桥而不续q/权重。下一唯一 notes/50_counterexamples/constructive/R0046_next_cyclic_selector_volume_gate.md，真实cyclic全网/wholeclock volume，先核闭包、finite→fullpatch及FD5.4 κ/4桥。无新ID/界/major，Goal active；33PDF/36sources不变。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -88,3 +88,6 @@ R0044 research/reviews/R0044_macro.md；主稿 notes/40_multiscale/R0044_actual_
 
 
 R0045 research/reviews/R0045_macro.md，主稿 notes/40_multiscale/R0045_actual_four_arm_BL_gate_and_rank_budget.md，两实稿与正式reviews见literature/metadata/R0045_source_check.json。原量词/原mass/选中hypergraph/物理nearplane已付，不再以非Cartesian或无filledgrain虚报失败。真正缺actual goodBL质量，且固定m同endpoint字母表κ阈值5/4；此条件算术不是新界。冻结本certificate。新Zhang2608.17952v2是fixed rational mixednorm/统一allG tensor，不是rank2 KBL更强upper，q近1仍猜想且perturbed版失败。下一如只q7/4强型升级/旧KT或无合法angular编码则一轮停。
+
+
+R0046 research/reviews/R0046_macro.md，主稿 notes/20_dimension_lifting/R0046_exact_rational_candidate_and_finite_seed_boundary.md，两施工及正式reviews见literature/metadata/R0046_source_check.json。候选R5/3保持unproved/unrefuted；有限网格无反不升全称。旧q7/4/type/tensor校准非新major。停止自然seed→fixed4-time桥，不反所有编码。下一cyclic B_i=b_i(a_(i+1))在full4grid上允许S≈4logN，确逃R41小S假设；wholeclock真实volume不可用边际乘积或单t碰撞代替。若allscale power真成立，FD5.4已保κ/4，不能再虚报缺coherence；无实际构造/lower则一主轮停。
