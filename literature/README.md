@@ -4,7 +4,7 @@
 
 核心输入 OAI-4D-20260924：本地 `paper.pdf` 原样复制为 `primary/openai_2026_four_dimensional_kakeya.pdf`，175页。官方Git对象SHA-1与本地 `git hash-object` 均为 `45ec20e423db2a9c70fd6303510bac361e6e9e8a`，字节数均为1371486。SHA256为 `30d0c186aa9c697d02ab9bf736968028f1ce8a2f164f1d7291398d530035ccde`。
 
-身份/版本匹配不等于证明正确性核验。175页全文尚未完成独立审查。
+身份/版本匹配不等于证明正确性核验。原Theorem1.1的完整内部argument已由R30–38在明列高级输入下双审；未独证全部外部高级文献或原§11所有推论。
 
 引用论文时使用稳定文献ID，写出定理/引理编号与页码。不同版本不得悄然替换：升级时保存新文件并记录编号变动。下载失败的条目只记元数据，不能标记为本地全文。
 
@@ -46,3 +46,6 @@ R0036无新PDF，仍25PDF/28sources；补入官方07-finite-narrowness.tex与09-
 
 
 R0037新增OSS2309.03068v2（26页411743bytes，SHA25652342022c2d36a84222fedff2d1f94856ab7fd1e1e58973bd03676194037cab7），原PDF/全文/metadata保存，现26PDF/29sources。single-scale smoothedenergy Th1.5及原7.4实际应用核，PDF2图核，wholeadvancedproof具名；不查证期刊状态/不称新高维input。补exact06a-retained-edge.tex与08-critical-rates.tex并核Gitblob/bytes/SHA256；原§7–9全finite branch双全文独审通过FIN001，仍非fullsource/无条件新维数。PDF140/141/148/149图核，s_b=3/2不是text提取32；精确范围metadata/R0037_source_check.json。
+
+
+R0038无新PDF，仍26PDF/29sources。新增exact官方02-framework.tex（65440bytes，Gitblob2cb57ede9ff053e9b3deadab92bfa544c10beb2f，SHA25653e11aade386a455e99202bb8fad6421789ee40644b80c0971c9b4b1daf648cc）。完整2.17、全部内部argument拼接、finite初始化/平均shading/KT及任意集合Hausdorff读出在具名输入下双全文独审通过RED001。实看OAI4 PDF24/25、GWZ2、KT19。原175页包含外部高级proof与§11全部推论的广义全认证不作宣称；G/KT等wholeadvancedproof与2026新颖性仍分列责任，详见metadata/R0038_source_check.json。

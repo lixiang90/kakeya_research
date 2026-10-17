@@ -1,10 +1,10 @@
 # 路线台账
 
-更新2026-10-17，R0037完成原正finiteℓ完整§7–9 FIN001，修后两实际全文独审。原edges/Fourier-flatcoeff/三widefield/horizontal/critical同law三switch/G(u)每denseinput与endpoint真实labels/原质量actualAIM均付。ISO/FIN/UNB三类narrowness在具名inputs下通过，仍余完整2.17/certificate拼接/finite-Hausdorff读出/newGWZ与KT责任。无无条件高维新界/重大性，六维17/4条件不变。下一R38唯一完整归约/拼接读出；常规macroR39，gap/两无信息提前。
+更新2026-10-17，R0038 RED001完成原任意集合2.17、全部Theorem1.1证书/模型/actualguard拼接、SRC有限初始化/平均shading/KT与任意集合Hausdorff读出，修后两实际全文独审通过。ISO/FIN/UNB三类窄度与全部内部归约在具名高级输入下接通；G/KT等wholeadvancedproof及2026前沿新颖性责任分开。DIM条件17/4现覆盖任意Euclidean六维集合，无新无条件界/major。下一唯一R39宏观入口source_assembly/R0038_macro_gate_and_next_target.md，禁止继续旧cubic/crop/ε。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
-| A | 四维输入审计 | SRC-001加DIR-003条件性加权方向质量输入；TCM/ASM/TEX认证原3.1–3.5，CRP认证原4.3及实际归一化/有限初始界（保G）；AIM付原尺度转换；ISO付isotropic、UNB付无界、FIN付正finite窄度，余完整归约/读出/高级责任未全面验证 | bridge完成，保留专用source调用；不补generic completion |
+| A | 四维输入审计 | SRC-001加DIR-003条件性加权方向质量输入；TCM/ASM/TEX认证原3.1–3.5，CRP认证原4.3及实际归一化/有限初始界（保G）；AIM付原尺度转换；ISO付isotropic、UNB付无界、FIN付正finite窄度，余RED001完整内部归约/读出已付，高级wholeproof责任保留 | bridge完成，保留专用source调用；不补generic completion |
 | B | 投影与切片 | LIFT-001/002及FLAG-003排除纯投影加一/免费短轴 | 朴素版本frozen；需真纤维/敏感度输入 |
 | C | 高维方向代数 | ALG-004直纹三次局部模型 | 局部无条件恢复frozen |
 | D | 原始/切线精度 | SCL-001量词差别，原始幂界非统一切线界 | guard-only frozen |
@@ -20,7 +20,7 @@
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28 ACT001共同box、CAR001平均carry门槛，无AFF₃ | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
-| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP/AIM/ISO/UNB/FIN已付列明部分；R37正finite通过，R38唯一完整归约/证书拼接/finite读出，仍不认证无条件新界/重大性 |
+| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP/AIM/ISO/UNB/FIN已付列明部分；R38 RED001付完整归约/拼接/有限读出与任意集合Hausdorff桥；R39先macro，仍不认证无条件新界/重大性 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
@@ -64,3 +64,6 @@ R0036macro依赖cut确认8.2+完整∞分支不依7/9，实际选择并通过UNB
 
 
 R0037 FIN001是来源已有分支重证，不另立新方向：OSS2309.03068v2精确Th1.5输入新存26PDF/29sources，wholeadvancedproof具名。source正finite余责已付，表内更早阶段措辞按历史理解；当前唯一余责/下一spec见finite_narrowness/R0037_remaining_reduction_and_next_target.md，不继续G(u)或7.7改名迭代。
+
+
+R0038当前状态覆盖此前轮次余责：RED001已付完整2.17/所有内部argument拼接/finite-Hausdorff读出；具名外部advancedproof未全独证与2026优先权是不同责任，不再把已付assembly列为gap。source_assembly/INDEX.md与唯一下一R39macro入口详列；旧五维失败/冻结记录保持，不以source核验解冻AFF3、2Dgrowth或genericcompletion。

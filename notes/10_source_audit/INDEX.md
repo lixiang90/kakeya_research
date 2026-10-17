@@ -23,3 +23,6 @@ SRC001/DIR003的proof-level finite readout、FSD001任意ambient种子及DIM001 
 
 
 R37更新：finite_narrowness/INDEX.md定位FIN001原§7–9完整positivefinite分支，两实际全文独审通过；8.2复用UNB、不立新scalar方向。SRC/DIR/FSD/DIM partialgateways增FIN，当前剩余为完整2.17/certificate拼接/finite-Hausdorff读出/newGWZ/KT，以上R36的positivefinite未付描述为历史范围。唯一下一入口finite_narrowness/R0037_remaining_reduction_and_next_target.md，非自动继续小lemma。
+
+
+R38当前入口：source_assembly/INDEX.md。RED001完成原2.17任意集合归约、所有Theorem1.1证书/模型拼接及source finite/Hausdorff读出，两实际全文独审通过；旧“完整归约/读出尚未审”描述按其轮次历史理解。SRC/DIR/FSD/DIM现增RED与明确under-named-inputs assembly=true；广义含所有外部advancedproof的complete_source=false保持。DIM条件scope经直接outermeasure桥扩为任意六维集合；无新颖/重大认证。唯一下一source_assembly/R0038_macro_gate_and_next_target.md，R39先macro。
