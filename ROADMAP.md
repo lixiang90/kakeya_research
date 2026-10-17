@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0066周期full-goal复核与原mixed43 all-ordered residual的两斜率二择/原质量gate已付；named19.2/19.4下无AFF tiny-tau排除，未给完整AFF3/mixed或ordinary新界。下一唯一 notes/00_map/R0066_next_full_native_mixed43_affine_test.md。53PDF/54sources/78IDs，Goal active。
+更新2026-10-18，R0067原W/nativeL共trunk tensor Gram及天然尺度两端normal matching已付同一bounded joint graph，实际AFF测试尚缺第二row/coupled项分辨；未给wholeAFF3/mixed或ordinary新界。下一唯一 notes/00_map/R0067_next_whole_matrix_affine_from_original_joint_data.md。53PDF/54sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -19,7 +19,7 @@
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
 | O | 实际五维mixed(4,2)二次分支 | 条件tau-collapse/r非退化、MIX001全局排除；MIX002付actualparent抵消和local D_s≤K s⁻κ端点，无strictgap | 主命题open；local GWZ extension frozen，重开须新实际source机制，勿parent/clock/threshold改名 |
 | P | 实际五维mixed(3,2) | PCT001/MIX003二次链；R22 SCAL001/AFF001支付实际affine与整time闭包，named高级输入仍列依赖 | 二次proper alternative在这些输入下闭合；NQP001只付点球/部分线接口，非二次二维增益未证，无输入rank改写停止 |
-| Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66原两斜率二择与named低速下无AFF tiny残差门槛，仍无AFF₃ | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
+| Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66 tiny残差门槛、R67 W/nativeL同trunk天然joint图，仍无whole AFF₃ | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
 | R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP/AIM/ISO/UNB/FIN已付列明部分；R38 RED001付完整归约/拼接/有限读出与任意集合Hausdorff桥；R39先macro，仍不认证无条件新界/重大性 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
@@ -142,3 +142,5 @@ R0064：raw nu² bad-det q→删4sqrt(q)的固定image/kernel/常值alternative�
 R0065：fixed rational/Jcoefficient extra input下的三项原g上界，atomicν r-smear/角二次与二元插值/regular复fiber Bézout重数支付；原R16 fine priors和absolute Aplus packing/physicalτ可接。R64双curve模型低维A-output被排，整raw2Fst仍由cr及sqrt(r)零ball反攻。未从source提取有理模型/曲率，不新ID/major；停止degree/阈值，R66先防proper-subclass漂移的周期macro。
 
 R0066：原mixed43 b=c+da的all-ordered E小给f/tildef sqrt epsilon二择；原absolute heavy窗与newallowed R里旧窗cluster比例付global19.2/local19.4，排任意dense整time S的tiny tau。edge-only/sqrt sharp边界已核。无AFF/nonquad额外前提，但named源wholeproof未新独证；未解完整mixed或ordinary，不新ID/major。停止tiny常数，下一回完整AFF3原native L/ell W的joint质量。
+
+R0067：三类原incidence core及tensor Gram保共享trunk，天然τ≈Kρ²时compatible patches/two-end normal matching付同原clock/angle的bounded joint图；粗恢复固定loss已修非不可能。实际AFF应用只分辨h=b−d0a，coupled项及第二row未付；finer误差upper、sub-ρ packet与ell normal跨桶责任明确。无ordinary增益/major/新ID，下一仍完整whole-matrix AFF3。

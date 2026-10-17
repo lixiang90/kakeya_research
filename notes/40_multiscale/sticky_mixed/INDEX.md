@@ -78,3 +78,5 @@ R27 OBS001/002内部独审通过各自范围；不是>2gain/AFF₃或完整五�
 R28 ACT001/CAR001仅有限内部独审结果，没有AFF₃/>2gain/完整factorized反例。无输入局部action迭代已冻；下一唯一main在notes/20_dimension_lifting/finite_seed_transfer/R0028_next_finite_seed_target.md，审真实finite种子桥。
 
 R0066：[R0066_two_slope_residual_and_original_mass_gate.md](R0066_two_slope_residual_and_original_mass_gate.md)：all-ordered residual二斜率sqrt epsilon逆引理、absolute heavy窗、newallowed R中的old-window cluster比例与named19.2/19.4的无AFF tiny tau排除；不是完整AFF3/mixed gain，no新ID/major，停止tiny参数。下一见根STATE及notes/00_map/R0066_next_full_native_mixed43_affine_test.md。
+
+R0067：[R0067_shared_trunk_hybrid_and_affine_attempt.md](R0067_shared_trunk_hybrid_and_affine_attempt.md)：原W/nativeL共同初管、tensor Gram及天然尺度two-end normal matching得同frame joint g；实际AFF测试缺第二row/coupled分辨，非wholeAFF3或ordinary增益。A18/B10及两formal独审，下一见根STATE及notes/00_map/R0067_next_whole_matrix_affine_from_original_joint_data.md。
