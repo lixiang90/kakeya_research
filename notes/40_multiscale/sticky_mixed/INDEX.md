@@ -86,3 +86,5 @@ R0068：[R0068_unprepared_large_residual_gate.md](R0068_unprepared_large_residua
 R0069：[R0069_original_clock_four_output_and_affine_failure.md](R0069_original_clock_four_output_and_affine_failure.md)：原d不聚集/同g双法向双probe四输出、whole matrix数值恢复/真实label cover；严格postfreeze AFF推论失败，非完整source反例或ordinary新界。A13/B12及两formal内部审，下一notes/00_map/R0069_next_unfrozen_native_kernel_test.md保未冻结原核。
 
 R0070：[R0070_raw_zero_ball_source_and_scalar_incidence.md](R0070_raw_zero_ball_source_and_scalar_incidence.md)：global raw零球同fan/19.2/redo q及native实际关联，κ+γ>1完整参数子范围排除；γ≤1−κ与全mixed/ordinary仍open。R69中央全变量output完成被排，非fullsource counter。A10/B8及两formal独审，下一notes/00_map/R0070_next_actual_fine_joint_packet_test.md。
+
+R0071：[R0071_conditional_fine_packet_full_budget_and_stop.md](R0071_conditional_fine_packet_full_budget_and_stop.md)：条件pointκ/末角UNION/tensor/fibre/全frame未得可用joint增益；局部Cantor saturation非fullsource反例。主机制no-information/冻结，A12/B10两formal独审，下一notes/00_map/R0071_next_periodic_full_goal_and_new_mechanism.md，R72先macro再实际数学。

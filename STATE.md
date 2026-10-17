@@ -1,25 +1,27 @@
 # 当前研究交接
 
-更新2026-10-18，R0070，Goal active；ordinary n>=5/general或major未达。下一唯一 notes/00_map/R0070_next_actual_fine_joint_packet_test.md。R70归progress；R69周期宏观后本轮实际数学，R72最迟下次，连续两轮无信息增益提前。
+更新2026-10-18，R0071，Goal active；ordinary n>=5/general或major未达。下一唯一 notes/00_map/R0071_next_periodic_full_goal_and_new_mechanism.md。R71主机制no-information（此前R70progress），冻结direct packet细化；R72必须先周期full-goal宏观再不同实际数学。
 
-## 本轮原source估计和实际用途
+## 1. 本轮实际有限构图与未得用途
 
-notes/40_multiscale/sticky_mixed/R0070_raw_zero_ball_source_and_scalar_incidence.md root14。R68同S upper/R69 d-cap下，raw近零有向pairs的同fan给d-separated双anchors和whole f近常。global坏窗见证并/named19.2原分母/每anchor/newallowed R排，删whole坏窗后重构q/L得νq²{|D|≤ρ^(3+B)}≤Kδ^v。a1=C0(a0+η)，反设K可含v、final图K只原source损失。
+notes/40_multiscale/sticky_mixed/R0071_conditional_fine_packet_full_budget_and_stop.md root14。条件point κ cover/末角UNION、tensor Gram及fine two-end matching完整付费；lower损λ2κ/fibre仅改λκ，完整frame保证λκ(σ/R_B)^α。σ=τ且R_Bρ²时只有λ=τ/ρ²，免费共同R_B=τ也只λκ。此是lower证书不足，非实际density upper/全source不可能。
 
-先删smallD不乘输出cover，再得m_g≤Kδ^v+K(τ/r)^α(r/r0)^γ。r=τ√ρ合法，γ>α时正幂矛盾，排完整输入κ+γ>1子范围。γ≤1−κ主范围仍未付，非wholeAFF/完整mixed或ordinary新界。R69中央模型保全变量s后的actual AD-output completion也被严格排，固定star反攻仍正确，非fullsource counter。
+## 2. 独立sharpness和分辨率
 
-## 未解与长程目标
+Cantor-parabola Φ_z=C_F∪(C_F+(0,x1))在κ+γ<1有point AD/slab/coherence及初arm incidence，middle δ/ρ网保物理δ分离，末角union饱和ρ^κa^-2κ；仅local非fullgrain/TjointAD/CW/wholeclock反例。fine code/coarse support、AQ聚合、nativeδfloor、bundle和新角/time marginal已分核，R70smallD不能免费搬。
 
-普通joint4AD初始化、matrix(3,3)、非二次(3,2)、(4,2)strictgain、γ≤1−κ的mixed43/wholeAFF/contact及general-to-sticky/Hausdorff仍open。每ρ各S，未拼多尺度。当前zero-cap不控制任意offset或方向，角slabγ与Y deficitα的缺口不能靠β/ζ调整消失。没有major/新颖性/新ID或状态改变。
+## 3. 完整目标与真实分类
 
-## 来源与独立审查
+未获可用于wholeAFF/正κ的新jointmass/precision，按spec主机制no-information并停止。Goal turn完成可核审计与冻结决策，非等待/状态复述。普通初始化、matrix/其余mixed、γ≤1−κ完整mixed43/general-to-sticky/Hausdorff仍open，各ρ各S不拼，无新ID/status或ordinary/major。
 
-53PDF/54sources/78IDs不变，无新下载。last actual官方OAI4/M3/elliptic bytes核R69，本轮仅本地WZ scope核。A10/B8及两formal6/rootintegration6实际全文通过，未经外部同行评审；19.2/19.4/19.5/good-q/L等高级wholeproof未新独证。平均shading与逐active tube lower分开，原T/CW不重归一。
+## 4. 来源与独审
 
-## 下一与冻结
+53PDF/54sources/78IDs不变，last actual官方OAI4/M3/elliptic bytes核R69，本轮仅local source范围。A12/B10及两formal6/rootintegration6实际全文通过，未经外部同行评审；高级good-q/19.5等wholeproof未新独证。平均shading与逐active tube lower分别核，原T/CW不归一。
 
-notes/00_map/R0070_next_actual_fine_joint_packet_test.md：原point条件κ方向族→physical细packet→末角coherence的实际joint码及fibre，必须完成共同input/output/precision和原mass用途；R70smallD仅在新reference支配已证时可删。停止zero-ball指数/κ+γ阈值/R69有理模型及旧CP/PM/PW4、独立W/BSG/action/carry/HRZnorm等冻结。若重得R67旧normal误差而无新联合估计即停，R72先full-goal宏观。
+## 5. 下一和冻结
 
-## 同步和恢复
+notes/00_map/R0071_next_periodic_full_goal_and_new_mechanism.md。R72至少比较ordinary前端/直接ordinary/matrix混合三路并核一手新输入，阶段I后先锁唯一不同候选再实际数学，不以宏观报告结案。冻结packet/bundle/角网/阈值微调及旧CP/PM/PW4、W/BSG/action/carry、proper有理光滑、HRZnorm等；重开须真新原mass/jointlaw输入。
 
-父HEAD=origin=remoteba67770a0a491669693f800f7d85a89e54f16b31/treea643d37e37941512038a9df417d28a00d9625521，1039旧tracked clean。最终tmp/sync/R0070.json须pendingfalse/samecommit/clean/fulltree/allstagedSHA256；恢复先python scripts/context.py及固定入口/R70全稿/独审/next/receipt+freshref，不重跑通过计算。Goal active，不自行complete/pause/blocked。
+## 6. 同步与恢复
+
+父HEAD=origin=remote82d088c6c0c05bf294ecd6642b2d78cd052c9535/tree96cd9239669a645ac0a4a8e234acc6b87dee52a2，1051旧tracked clean。最终tmp/sync/R0071.json须pendingfalse/samecommit/clean/fulltree/allstagedSHA256；恢复先python scripts/context.py及固定入口/R71全稿/独审/next/receipt+freshref，不重跑通过计算。Goal active，不自行complete/pause/blocked。
