@@ -103,3 +103,6 @@ R0055新增6个原PDF版本：KR v2/v3分存（v3为实际当前主版本）、Z
 
 
 R0056新增4份primary原PDF：官方elliptic103页（onlyS2/R3，Th2.2为2D all-s conditional ellipse传播）、Dvir作者April2008版5页、DKSS作者May11,2009版26页、HR1807.10940v3 43页。48PDF/49sources，逐份原bytes/hash/gitblob/readscope在metadata；作者版不称arxiv同bytes，后两篇高级未读部分不认证。官方OAI4/M3本轮fresh树的PDF blob仍同存档。
+
+
+R0057无新增PDF，48PDF/49sources。实际重读官方elliptic Def2.1/Th2.2/§2.2/Lemma2.3 PDF9–12，latest application scope单记；只调用其保证指数作带费用组合审计，不称q*最优上界或103页wholeproof已审。R56原bytes/hash保持。

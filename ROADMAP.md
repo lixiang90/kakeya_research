@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0056 full-goal primary/macro后已实际做direct Euclidean multiplicity。exact中心→near轴可付，uniform leading gate严格否；不反H5/exactkernel，不得续m/degree小调。下一唯一 notes/00_map/R0056_next_original_H5_conditional_capacity_test.md，同一原H5只因actual新all-s输入一次检验joint终端增益，不能假conditionalcap或乘marginals。48PDF/49sources/78IDs，Goal active。
+更新2026-10-17，R0057周期macro后实际付全partition/全dominated保留的conditional-capacity envelope下界δκm²及continuous sharpness。scalarK/fullslab uniform组合停；非H5/Th2.2反例，不排joint-support/不同metric机制。下一唯一 notes/00_map/R0057_next_full_goal_joint_geometry_reset.md，须同轮实际数学，不续κ/strip或公设。48PDF/49sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -121,3 +121,6 @@ R0055 notes/40_multiscale/R0055_general_threefold_gate_and_original_mass_obstruc
 
 
 R0056 notes/30_algebraic_geometry/R0056_euclidean_multiplicity_and_leading_form_barrier.md；A13/B10/twoformal/rootintegration/macro详literature/metadata/R0056_source_check.json。sharp4^d/2与全方向wholeunit近jet反攻只否unconditionalgate，未满足smallfootprint/exactkernel，不能冒Kakeya反例。新elliptic原稿onlyR3，Th2.2 all-s条件time/ellipse输入可作一次实际joint机制试验，但交换校准freecap已知，不能作为下轮新成果结束。全部旧冻结保留。
+
+
+R0057 notes/40_multiscale/R0057_charged_joint_capacity_envelope_and_stop.md；A10/B8/twoformal/rootintegration/macro详literature/metadata/R0057_source_check.json。原p0分母、最终p及actual θ≥p、q*下界与保证指数区分、unitclock/fineatomic范围已付。全包络费下界不是actualjointatom lower；连续swap真实densityO1。停止本source scalar-envelope组合，不把已知joint-support余责加公设当新结果。
