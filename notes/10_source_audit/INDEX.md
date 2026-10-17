@@ -26,3 +26,6 @@ R37更新：finite_narrowness/INDEX.md定位FIN001原§7–9完整positivefinite
 
 
 R38当前入口：source_assembly/INDEX.md。RED001完成原2.17任意集合归约、所有Theorem1.1证书/模型拼接及source finite/Hausdorff读出，两实际全文独审通过；旧“完整归约/读出尚未审”描述按其轮次历史理解。SRC/DIR/FSD/DIM现增RED与明确under-named-inputs assembly=true；广义含所有外部advancedproof的complete_source=false保持。DIM条件scope经直接outermeasure桥扩为任意六维集合；无新颖/重大认证。唯一下一source_assembly/R0038_macro_gate_and_next_target.md，R39先macro。
+
+
+R39宏观已停止自动续源审查：具名G/WZ/CV/OSS/KT可在已核statement/application范围引用，wholeproof未全独证不自动构成下一研究任务。RED001内部argument已付，broad历史flags保留核验层次，不再列已付归约为gap。下一转真实五维新codim2input，见notes/40_multiscale/sticky_flakes/INDEX.md；不直接认定source桥成立。

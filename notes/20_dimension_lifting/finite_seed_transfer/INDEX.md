@@ -24,3 +24,6 @@ R0030更新：原Lemma3.3一般固定阶已内部重证TCM001，见notes/10_sour
 
 
 R0038最新：RED001完成完整原argument与finite/shading/KT接口内部双审；FSD的λ²/unsaturated/realangular预算保留。root§20显式outermeasure/finitechoice/KT supportingline桥通过两独审，DIM001条件scope可扩为任意Euclidean六维Kakeya集合，无可测/紧假设。旧R29 compact措辞属当时范围；仍不认证无条件新界/优先权。R39先macro，入口notes/10_source_audit/source_assembly/R0038_macro_gate_and_next_target.md。
+
+
+R0039宏观正面比对KT六维7−2sqrt2、HRZ/Zahl及GLX2025实际范围；未见17/4既有primary statement不足以认证priority。DIM是已有KT递推接已付finite桥的内部核验推论，不称新方法。namedtheorem引用无需无限递归重证全proof；下一不是数值闭包/λ²常数，转newLPSW真实五维source-to-flake接口。

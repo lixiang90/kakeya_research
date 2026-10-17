@@ -1,0 +1,1519 @@
+                                                A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION
+
+
+                                                                RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+
+
+                                                    Abstract. We construct Kakeya sets in arbitrary dimension d ≥ 2, generalizing the clas-
+                                                    sical Perron tree construction beyond dimension 2. The Kakeya sets we construct have δ-
+                                                    neighbourhood of volume at most C| log δ|−(d−1) , which improves on previously known construc-
+                                                    tions, and which is conjecturally optimal. We further derive consequences for the Lp -boundedness
+                                                    of radial Fourier multipliers in terms of Besov spaces with logarithmic smoothness.
+arXiv:2607.14824v3 [math.CA] 17 Sep 2026
+
+
+
+
+                                                                                         1. Introduction
+                                                                    d
+                                              A Kakeya set in R is a subset containing a unit line segment in every direction. Originally
+                                           a topic in recreational mathematics, Kakeya sets have evolved into a subject with profound con-
+                                           nections to core mathematical fields, ranging from harmonic analysis, with Fefferman’s multiplier
+                                           problem for the ball [Fef71], to number theory [Bou06]. Recently the second-name author also
+                                           realised their connection with operator algebras and the structure of the von Neumann algebras of
+                                           high rank lattices [dlS26]. It is at first hand quite surprising that, in dimension at least 2, there
+                                           exist Kakeya sets of Lebesgue measure 0. The classical construction of such Kakeya sets in R2 , due
+                                           to Besicovitch, simplified by Perron and further refined by Schoenberg [Sch88] and Keich [Kei99],
+                                           relies on the use of Perron trees – a family of line segments arranged in a hierarchical, tree-like
+                                           structure. In this paper, we are interested in quantitative aspects of Kakeya sets. The most useful
+                                           way to measure smallness of Kakeya sets E will be described below, but for the moment let us
+                                           decide to capture the smallness of E as the behaviour, as δ goes to 0, of the Lebesgue measure of
+                                           the δ-neighbourhood of E. In this perspective, the Perron tree construction is efficient, yielding
+                                           Kakeya sets not only of Lebesgue measure 0, but also optimal in the sense that the measure of
+                                                                           1
+                                           their δ-neighbourhood is O( | log δ| ) as δ goes to 0, thus being the best possible.
+                                              Extending this approach to higher dimensions has traditionally been limited to taking Cartesian
+                                           products:
+                                           Example 1.1. If E ⊂ R2 is an optimal Kakeya set, then E × [0, 1]d−2 is a Kakeya set in Rd , and
+                                                                                        1
+                                           the measure of its δ-neighbourhood is O( | log δ| ).
+
+                                           Example 1.2. If E ⊂ R2 is an optimal Kakeya set and d is even, then E × · · · × E (d/2 times)
+                                           is a Kakeya set in Rd , and the measure of its δ-neighbourhood is O( | log 1δ|d/2 ).
+
+                                              While this method produces valid Kakeya sets that indeed have measure 0, it fails to exploit
+                                           the full geometric complexity of higher-dimensional spaces.
+                                              The Kakeya conjecture, which predicts that Kakeya sets cannot be too small and must have
+                                           full Hausdorff dimension, remains a tantalizing open problem. Although not formally equivalent,
+                                           in first approximation it predicts that the measure of the δ-neighbourhood of a Kakeya set cannot
+                                           decay as O(δ ϵ ) for some ϵ > 0. While the conjecture has been long resolved in two dimensions by
+                                           Davies and Córdoba [Dav71, Cor77] using different methods, in higher dimensions, the problem
+                                           becomes significantly more challenging. The prevailing belief is that the conjecture is harder to
+                                           prove in higher dimensions, due to the increased combinatorial and geometric complexity. And
+                                           only recently the three dimensional case has been settled in a celebrated breakthrough by Wang
+                                           and Zahl [WZ25].
+                                              Yet, paradoxically, as far as we are aware1, prior to our work, there has not been any explicit
+                                           construction of Kakeya sets in Rd (for d ≥ 3) that demonstrates a quantitative advantage over
+                                           the 2-dimensional case. However, after a first version of this paper was made public on arXiv,
+                                           Sam Craig informed of his work [Cra25], where he constructed non-trivial Kakeya sets in arbitrary
+                                           dimensions.
+
+                                              Date: September 18, 2026.
+                                              The first author has received financial support from Spain’s Ministerio de Ciencia, Innovación y Universidades
+                                           through a FPU Grant FPU24/00173.
+                                              1No mention of known constructions where provided when the second-named authors asked this question on
+                                           Mathoverflow in April 2025 [dlSu].
+                                                                                                   1
+2                    RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+   In this paper, we present a construction of Kakeya sets in arbitrary dimension d > 2, which
+generalizes the Perron tree construction in dimension 2. This construction does not seem to appear
+in the literature, although some forms of it has certainly been known to experts. As pointed out
+to us by Anthony Carbery when we communicated to him a preliminary version of our paper, such
+constructions were at least in the air in the 70’s and 80’s. We believe that, in particular in the
+light of the recent work [dlS26], these constructions deserve to appear explicitly.
+Theorem 1.3. For every d ∈ N, there exists a Kakeya set E ⊂ Rd and a positive real number C
+such that for every δ ∈ (0, 1), the volume of the δ-neighbourhood of E is less than | logCδ|d−1 .
+
+   In the vocabulary of Keich [Kei99], the exact Minkowski dimension of Kakeya sets in dimension
+d is less than δ 7→ δ d | log δ|d−1 .
+   This result aligns with the Kakeya and other related conjectures, most likely being optimal.
+The reverse Littlewood–Paley conjecture considered by Carbery [Car15], for instance, implies that
+any Kakeya set has a δ-neighbourhood volume greater than | logCδ|dd−1 (see subsection 5.3).
+   Theorem 1.3 should be compared to [Cra25, Proposition 3.1]. There, Craig constructs Kakeya
+sets in arbitrary dimension d, satisfying the same conclusion as in Theorem 1.3, but with volume
+                          d−1
+                  | log δ|
+estimates C log| log  δ|        . So our construction improves on the log log factor. More importantly,
+it allows us to infer additional geometric properties for δ-tube configurations, that are essential for
+harmonic analysis applications that we discuss below.
+
+1.1. Application to Fourier analysis. We now state a variant of Theorem 1.3, better suited for
+applications to Fourier analysis. Here a δ-tube R is the image by an isometry of [0, 1]×BRd−1 (0, δ),
+                                           −
+                                           →
+and in that case, for α > 0, we denote by R α the image of [1 + α, 2 + α] × BRd−1 (0, δ), that is, the
+translate of R by 1 + α in the direction of its axis.
+Theorem 1.4. Let d ≥ 2 and α ∈ (0, ∞). There is a constant Cd,α and, for every δ ∈ (0, 1), a
+                                                                →
+                                                                −
+finite family δ-tubes R1 , . . . , RN in Rd whose translates Ri α are pairwise disjoint but
+                                           SN
+                                             i=1 Ri         Cd,α
+                                          PN          ≤             .
+                                            i=1 |Ri |
+                                                        | log δ|d−1
+
+
+
+
+        Figure 1. Illustration of the proof of Theorem 1.4 for d = 3. The first image
+        shows the tubes translated as a block within their respective pyramid during the
+        2-iterations simplex Perron tree construction. The second includes the reflected
+                                                                                   →
+                                                                                   −
+        pyramids across their respective apexes, which by construction contain the Ri α ’s.
+
+   Using the results of the second-named author [dlS26], we obtain the following consequence, which
+was our motivation for this work. The result is stated in terms of Besov spaces with logarithmic
+smoothness (see subsection 6.1 for definitions).
+   It improves on [dlS26], where the result was proved with b = | p1 − 12 |. The result is only relevant
+                   1
+for | p1 − 21 | ≤ 2d , because otherwise it is known that f is Hölder-continuous.
+Corollary 1.5. Let 1 < p < ∞ and m : (0, ∞) → R a bounded measurable function such that T ,
+the Fourier multiplier with symbol m(| · |) is bounded on Lp (Rd ). Then f : t 7→ m(exp t) belongs
+    0,b
+to B∞,∞ (R) for b = (d − 1) p1 − 12 .
+
+   For example, the Fourier multiplier with symbol ξ 7→ | log (1−|ξ|)
+                                                                 2
+                                                                      + −β
+                                                                       | is not bounded on Lp (Rd )
+if β < (d − 1)| p1 − 12 | (see Example 6.1). For d = 2, this has long been known to Carbery. It
+                   A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                               3
+
+
+is natural to ask whether the converse is true. This is a logarithmic form of the Bochner-Riesz
+conjecture.
+   We would like to point out that struggling to improve the exponent of the log in Theorem 1.3
+or Theorem 1.4 can be meaningful. First any (unlikely) improvement on the exponent from (d − 1)
+to c in Theorem 1.4 would improve Corollary 1.5 and would in particular lead to new necessary
+conditions (namely β ≥ c| p1 − 12 |) for the Lp (Rd )-boundedness of the logarithmic Bochner-Riesz
+multipliers. Also, as proved by the second-name author [dlS26], it would also imply that the
+non-commutative Lp space of the von Neumann algebra of SL2d−1 (Z) fails the operator space
+approximation property whenever c| p1 − 12 | > 1. However, this would only be new if c > 2d because
+for 2d| p1 − 12 | > 1 the result has already been proven by other methods by Lafforgue, de Laat and
+the second-named author [LdlS11, dLdlS18].
+
+1.2. Idea of the construction. Both Theorem 1.3 and 1.4 rely on the same construction, which
+is an adaptation of the Perron tree construction (see Theorem 4.2). In dimension 2, the basic
+construction is the following: start with a triangle with a specified vertex v. Cut it into two
+smaller triangles by dividing the edge opposite to the specified vertex, and translate the two
+triangles towards each other parallel to their bases. This basic step is subsequently repeated to
+each pair of neighbouring triangles formed at each iteration (see Figure 2).
+
+
+
+
+                                                                          =
+
+
+
+        Figure 2. Construction of a Perron tree via dividing a triangle into 2n sub-
+        triangles and recombining them with partial overlaps. Cases n = 3 is illustrated.
+        Triangles with the same colour are those to which the basic construction is applied
+        in each step. The branches formed at each iteration are moved as a block along
+        with the triangular cores from which they sprout.
+
+    The basic subdivision happens in the base. And the idea at the heart of the construction is the
+obvious fact that an interval can be divided into two smaller intervals of equal length, and that
+these intervals can be translated towards each other, in such a way that the total length of the
+interval formed by their union decreases.
+    To generalize this process to higher dimension, we start with a d-dimensional pyramid with a
+distinguished vertex v, the apex, and we have to study such partitions of the opposite face, which
+is a (d−1)-dimensional polytope, and how to rigidly move the pieces to form a strictly smaller copy
+of the original polytope. In the paper, we will be able to perform a Perron tree type construction
+starting from a rather general polytope and a partition of it, but for the introduction let us restrict
+ourselves to the case of a simplex.
+    A (d − 1)-simplex Σ is the convex hull of d affinely independent points. Up to affine transfor-
+mations, there is a unique (d − 1)-simplex, but there are many ways of partitioning it into smaller
+simplices: the barycentric subdivision is probably the most common, but another more relevant
+for us is the Coxeter-Freudenthal-Kuhn subdivision. As we will explain in Section 3, if we start
+with a partition (Σi )i∈I of Σ with the property that none of the pieces Σi meets all the faces
+of Σ, it is possible to translate them into a strictly smaller copy of Σ, and we can analyse what
+these translations lead to at the level of the partition of the pyramid T = conv(Σ, v) into smaller
+pyramids Ti = conv(Σi , v). Choosing an identification of each of the pieces of the partition with Σ,
+4                      RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+we can further subdivide them to obtain a second-generation partition, and keep on going. In this
+                                         (n) 
+way, we obtain for every n, a partition Σi i∈I n and an associated partition of T into pyramids
+    (n)          (n)
+Ti = conv(Σi , v). In Section 4 (see Theorem 4.2) we explain how to iterate the shrinking
+process and prove (see Figure 3) that there is a family of vectors (wi )i∈I n such that
+                                         [       (n)                  C
+                                                Ti     + wi       ≲        T .
+                                                                      nd−1
+                                        i∈I n
+
+
+    All this goes in the correct direction, but it not enough to deduce Theorem 1.3 and Theorem 1.4.
+In order to do so, we will need more properties of the partition (Σi )i∈I that we start with. An
+additional sufficient property is that of a fair partition, where all the pieces are congruent (by an
+isometry, or more generally a compact subgroup G of GL(V )) to a scaled down version of the initial
+piece. In dimension 1, a 1-simplex is just an interval, and for every integer q it admits a unique fair
+subdivision into q pieces. In dimension 2, a fair subdivision of the simplex into q 2 pieces exists, but
+it is not unique (see Figure 4). In higher dimension, it is not obvious, but true and classical, that
+fair subdivisions of the simplex exist (for example the Coxeter-Freudenthal-Kuhn subdivision); the
+barycentric subdivision is not fair.
+    If we start with a fair subdivision and iterate it by choosing the identification of each piece of the
+partition with Σ according to the compact group G, there are potentially many choices involved,
+                                                (n) 
+but for every such choice this partitions Σi i∈I n remain fair. So the shapes of the partition do
+not degenerate, in the sense that ratios are conserved. This fairness implies a crucial property for
+                        (n)
+the pyramids conv(Σi , v): they all contain a δ-tube for δ ≥ c|I n |−1/(d−1) , see Lemma 2.4 and
+Figure 5 below. Combined with the Perron tree construction we just described, this will lead to
+Theorem 1.3.
+    If moreover we start with a subdivision that has an additional separation property (see Section 3
+for details), we can show that the tubes contained in the pyramids will have pairwise disjoint
+translates and deduce Theorem 1.4.
+    One may perform a Perron tree construction starting from any fair polytopal partition (as we
+will show), but the reader should have in mind the example of the cube and its natural dyadic
+subdivision, which makes the particularisation of the proofs in our construction cleaner and more
+intuitive. We thank Anthony Carbery who pointed this out to us.
+
+Organization. Section 3, studies the effect of translating the cells of the original polytope to-
+wards a distinguished point. The conclusion of this section is Proposition 3.9, the base step of
+the higher-dimensional Perron tree construction. Section 4 iterates this base step inductively to
+produce the full Perron tree construction, and derives a volume bound by an optimised choice
+of translation parameters at each step. Section 5 applies the construction to prove Theorem 1.4
+using specific families of overlapping δ-tubes, and deduces Theorem 1.3 on the existence of Kakeya
+sets with desirable δ-neighbourhoods. Section 6 records some consequences for harmonic analysis,
+in particular the proof of Corollary 1.5 on Fourier multipliers and Besov spaces with logarithmic
+smoothness. At the end, we provide a link to a Jupyter notebook implementing the construction
+with interactive 3D plots. In the Appendix 7, we provide the details on how our fully general
+construction is applicable to some non-trivial examples.
+
+Acknowledgments. The authors would like to warmly thank Anthony Carbery, Sam Craig,
+Oscar Dominguez, and Mark Lewko for their useful comments. The second author thanks Eduardo
+Tablate and Javier Parcet for their discussions on the “logarithmic Bochner-Riesz conjecture”.
+
+Tool and computational resource disclosure. No AI system was used in the conception,
+proof, or writing of the mathematical content of this paper. Its use was restricted to generating
+code for the figures included herein and for the interactive visualizations in the accompanying
+GitHub repository, with selected portions of our construction provided as input.
+
+
+                                     2. Definitions and notation
+   In the whole paper, d ∈ N≥2 will be used to denote an integer, and we consider the Euclidean
+space Rd . We denote vectors and points in boldface, such as v ∈ Rd . By ei , we denote the
+canonical basis vectors (0, . . . , 1, . . . , 0). We write [k] for the set {1, . . . , k}. For p ∈ Rd and λ ≥ 0,
+Hpλ will denote the homothety of center p and ratio λ; Rp will denote the reflection across the
+point p; int(X) will denote the topological interior of X ⊂ Rd ; X will denote the topological
+                 A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                         5
+
+
+
+
+                 (a) n = 2                                            (b) n = 3
+
+
+
+
+                 (c) n = 4                                            (d) n = 5
+
+        Figure 3. n-th iterated 3D Perron tree construction starting from a simplex,
+        and different values of n.
+
+
+closure of X ⊂ Rd ; |X| will denote the d-dimensional Lebesgue measure of a Lebesgue measurable
+subset X ⊂ Rd . Aff(X) will denote the affine span of X ⊂ Rd :
+                              ( n                                 n
+                                                                           )
+                               X                                  X
+                   Aff(X) =        αi xi | n ∈ N, xi ∈ X, αi ∈ R,   αi = 1 .
+                              i=1                               i=1
+6                    RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+
+
+              Figure 4. Two different fair subdivisions of the 2-simplex with q = 3.
+
+
+
+
+         Figure 5. Particularization of Lemma 2.4 to a fair subdivision of the 2-simplex
+         into 81 sub cells and for a cube with 16 sub cells, both with apexes at distance 3.
+         One is able to contain a δ-tube completely inside of each pyramid. All the tubes’
+         top faces are distance of 1 to the apex and δ ∼ 9−2 and δ ∼ 4−2 , respectively.
+
+
+    The direction of a non-empty subset X ⊂ Rd is:
+                                   −
+                                   →
+                                   X = span{a − b | a, b ∈ X}.
+  The opposite cone of a subset A relative to a point p is the reflection with respect to p of the
+cone spanned by A at p:
+(1)                        Cone− (A, p) = {p − λ(x − p) | x ∈ A, λ ≥ 0}.
+
+2.1. Polytopes and partitions. Consider a real vector space V of dimension d ∈ N, and let
+m ∈ N with m ≤ d.
+Definition 2.1. An m-dimensional polytope, or m-polytope, is the convex hull of a finite set of
+points whose affine span has dimension m.
+   An m-dimensional pyramid, or m-pyramid, is the convex hull of an (m−1)-polytope (the base)
+and an affinely independent point (the apex).
+   An m-dimensional simplex, or m-simplex, is the convex hull of (m + 1) affinely independent
+points. In particular, any m-simplex is an m-polytope and an m-pyramid whose base is a (m − 1)-
+simplex.
+   A polytopal subdivision or subdivision of an m-polytope Σ is a collection (Σi )i∈I of m-
+polytopes ( cells) such that:
+      • The union of the cells in (Σi )i∈I is the polytope Σ.
+      • For any two cells Σ1 , Σ2 , their intersection is either empty or a full face of a certain
+        dimension shared by Σ1 , Σ2 .
+A polytopal partition or partition of an m-polytope Σ substitutes the second condition above
+by:
+      • For any two different cells Σ1 , Σ2 , their intersection has dimension < m.
+In particular, a subdivision of an m-polytope is a partition too.
+                     A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                               7
+
+
+  As we explained in the introductions, there are different ways to break up a polytope into pieces.
+Some, that we call fair, are better than the others.
+Definition 2.2. A fair subdivision (fair partition) of an m-polytope Σ in V is a subdivision
+(partition) (Σi )i∈I such that there is a compact subgroup G ⊂ GL(V ) such that all the pieces Σi
+are G-congruent to 1 1 Σ: i.e. there is vi ∈ V and gi ∈ G such that
+                       |I| m
+
+                                                 1
+(2)                                     Σi =         1   gi (Σ) + vi .
+                                               |I| m
+When this holds we say that the subdivision (partition) is G-fair.
+   Since every compact subgroup of GL(V ) preserves a scalar product, we can put a Euclidean
+structure on V such that the subdivision is O(V )-fair. When V is already equipped with a Euclidean
+structure (for example V = Rd ), we will always assume that the fair subdivision (partition) is
+O(V )-fair.
+   We record here the existence of fair subdivisions of the simplex:
+Theorem 2.3. [Cox34, Fre42] For every integer q, the d-simplex admits a fair subdivision into q d
+pieces.
+We describe and study this subdivision in detail in Section B.
+   We end this section with the following result which allows one to include congruent δ-tubes
+into fair partitions of a given pyramid. We use the above convention that for a the base polytope
+Σ ⊂ Rd , fair decomposition means O(d)-fair.
+                                                                                             
+Lemma 2.4. Let Σ ⊂ Rd be a (d − 1)-polytope and v ∈       / Aff(Σ) such that d v, Aff(Σ) > 2. For
+all α > 0, there exists a C = Cα,Σ,v > 0 such that for all fair partitions (Σi )i∈[N ] of Σ, there exists
+ Ri i∈[N ] δ-tubes with δ = CN −1/(d−1) , such that:
+    
+
+      (1) Ri ⊂ (conv(Σi , v)) ∀ i,
+          →
+          −
+      (2) Ri α ⊂ Cone− (Σi , v) ∀ i.
+Proof. Let us first assume that α ∈ (0, 1], and let E = Aff(Σ).
+    By elementary trigonometry (see Figure 6), for all x ∈ Σ there exists a C1 = C1x > 0 such that
+if x′ is the point on the segment [x, v] at distance α/2 from v, then d(x′ , Rd \ conv BE (x, ϵ), v ) ≥
+C1 ϵ. Moreover, by compactness of Σ, C1 can be taken independent of x.
+    Now let R > 0 such that Σ contains a ball of radius R (in E). Then for all i ∈ [N ], there exists a
+xi ∈ Σ such that Σi contains B(xi , N −1/(d−1) R). By the previous comment, conv(Σi , v) contains
+Ri , the C1 N −1/(d−1) R-tube centered along [xi , v] and at distance α/2 from v.
+                    →
+                    −
+    Then we have Ri α = Rv (Ri ), which is contained in Cone− (Σi , v). This proves the proposition
+for α ∈ (0, 1].
+    Finally, for α > 1, we apply the above argument for α = 1 to obtain Ri ⊂ conv(Σi , v) such
+       →
+       −                                                            −→
+that Ri 1 = Rv (Ri ) ⊂ Cone− (Σi , v). If we translate the δ-tube Ri 1 by the vector (α − 1)u(Ri ),
+          →
+          −                                       →
+                                                  −
+we get Ri α . But note that this translation of Ri 1 must remain contained in Cone− (Σi , v), as we
+wanted.                                                                                               □
+
+
+
+
+                     Figure 6. Illustrating the proof of Lemma 2.4 when d = 2.
+
+   The following lemma is proven in an analogous way to the previous one and will be a crucial
+ingredient in the proof of Theorem 1.3:
+8                     RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+Lemma 2.5. Let Σ be a (d − 1)-polytope and v ∈         / Aff(Σ). There exists a C = CΣ,v > 0 such
+that for every fair partition (Σi )i∈[N ] of Σ, C conv(Σi , v) contains a translate of the 2 · N −1/(d−1) -
+neighbourhood of conv(Σi , v).
+
+                    3. The base case of the Perron tree construction
+   In this whole section, we fix a (d − 1)-dimensional polytope Σ ⊂ Rd , a partition (Σi )i∈I , a point
+o ∈ Aff(Σ) and a point v ∈ Rd \ Aff(Σ). We consider the pyramids with distinguished apex v and
+with bases Σ and Σi :
+                                T = conv(Σ, v),      Ti = conv(Σi , v).
+    We assume moreover that there exists some c ∈ (0, 1) such that:
+
+(3)                                 ∀i ∈ I, ∃ xi ∈ Σ, Σi ⊂ Hxc i (Σ)
+
+We say that the family (Σi , xi )i∈I is affinely separated if for every i ̸= j, there is a non-constant
+affine map φ : Aff(Σ) → R such that φ ≥ 0 on Σi , φ ≤ 0 on Σj , and φ(xi ) ≥ φ(xj ).
+Remark 3.1. If xi ∈ Σi , the family (Σi , xi )i is affinely separated (Hahn-Banach). But this is not
+always the case, as we shall explore in concrete examples.
+Example 3.2. If Σ = [0, 1]d−1 is the cube and (Σi )i∈{0,1}d−1 is its standard fair subdivision
+     Qd−1
+Σi = k=1 [ik /2, (1 + ik )/2], then (3) holds with c = 21 and xi = i. It is also affinely separated, by
+the map φ(y) = yk − 12 if k is such that ik ̸= jk .
+    We will also observe (see the Appendix B) that other partitions have the same properties:
+Example 3.3. If we take the Coxeter-Freudenthal-Kuhn fair subdivision of the (d − 1)-simplex
+Σ = {y ∈ Rd−1 | 0 ≤ y1 ≤ · · · ≤ yd−1 ≤ q} into q d−1 pieces with q ≥ d (see Figure 18), then (3)
+holds with c = q−1
+                q . For a carefully chosen xi , it is also affinely separated (see Proposition B.1).
+
+Example 3.4. If (Σi )i∈I is any fair partition of a polytope with |I| > 1, then there is k ∈ N such
+that the repeated partition (Σi )i∈I k satisfies (3) (see Proposition A.4).
+   The goal of this section is to understand what happens to the bases Σi and the pyramids Ti
+when we translate them towards the distinguished point o.
+   The first lemma studies this move at the level of the bases, and proves that we obtain a scaled
+down version of the original polytope. To make the construction precise, denote ui = o − xi the
+vector pointing from the special point xi associated to Σi (which exists and which we will fix from
+now on together with c) towards o.
+Lemma 3.5. For every t ∈ (−∞, 1 − c] and i ∈ I,
+                                          Σi + tui ⊂ Ho1−t (Σ).
+Proof. By the expression
+                               Hpλ (x) = λ(x − p) + p = λx + (1 − λ)p
+for the homothety Hpλ , the definition ui = o − xi and the assumption (3), we have
+                              Σi + tui ⊂ cΣ + (1 − c)xi + t(o − xi )
+                                                                    
+                                       = to + (1 − t) λΣ + (1 − λ)xi ,
+          c
+for λ = 1−t . By the assumption on t ∈ (−∞, 1 − c], we have that λ ∈ [0, 1]. Moreover, xi belongs
+to Σ, so by the convexity of Σ, λΣ + (1 − λ)xi ⊂ Σ and the lemma is proved.                    □
+
+   The previous lemma motivates the introduction of a scaled down version of T that we call the
+core:
+                                      C(t) = Ho1−t T .
+                                                     
+
+The next lemma can be understood as the answer to the question: What is the minimum height
+at which the pyramids are no longer contained in the core when they are translated according to
+Lemma 3.5?
+Lemma 3.6. We have that for t ∈ [0, 1 − c]:
+                                                           t
+                                  (Ti + tui ) \ C(t) ⊂ Hv1−c (Ti ) + tui .
+                   A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                                      9
+
+
+
+
+                   Figure 7. Lemma 3.5 for a 2-simplex and o its barycenter.
+
+
+
+
+                   Figure 8. Lemma 3.5 for a 3-simplex and o its barycenter.
+
+
+Proof. We have
+                                            [                              t       
+                              Ti + tui =             λv + (1 − λ)(Σi +        ui )
+                                                                          1−λ
+                                           λ∈[0,1]
+
+and
+                     [                                          [                     1−t−λ    
+         C(t) =                λv + (1 − t − λ)Σ + to =                   λv + (1 − λ)Ho 1−λ (Σ) .
+                  λ∈[0,1−t]                                   λ∈[0,1−t]
+                                                                                              t
+                 t             t                                 t                        1− 1−λ
+For 0 ≤ λ ≤ 1 − 1−c , we have 1−λ ≤ 1 − c, so by Lemma 3.5 Σi + 1−λ ui ⊂ Ho                        (Σ), and we
+deduce
+                                                  t
+                              λv + (1 − λ)(Σi +     ui ) ⊂ C(t).
+                                                1−λ
+         t
+For 1 − 1−c ≤ λ ≤ 1,
+                                  t                                  t
+             λv + (1 − λ)(Σi +      ui ) = λv + (1 − λ)Σi + tui ⊂ Hv1−c (Ti ) + tui .
+                                1−λ
+These two inclusions prove the lemma.                                                                       □
+
+
+
+
+        Figure 9. Lemma 3.6 for a 2-simplex and o its basis’ barycenter. The coloured
+        pyramids are the pyramids Ti +tui for increasing values of t, and the yellow section
+        represents the height at which the pyramids are no longer completely contained
+        in the core.
+10                    RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+   The next two lemmas describe the evolution of the opposite cones Cone− (Σi , v) under the same
+translations as the pyramids.
+Lemma 3.7. For every i ∈ I and t ∈ [0, 1 − c],
+               Cone− (Σi , v) + tui ⊂ Cone− (C(t), (1 − t)v + to) = Ho1−t (Cone− (Σ, v))
+Proof. By the definition (1), we have to prove that
+                             (1 + λ)v − λΣi + tui ⊂ Ho1−t (Cone− (Σ, v))
+for every λ ≥ 0. By continuity we can assume λ > 0. In that case, by Lemma 3.5
+                                                      t
+            (1 + λ)v − λΣi + tui = (1 + λ)v − λ(Σi − ui )
+                                                      λ
+                                                 1+ t
+                                                                     λ+t        
+                                 ⊂ (1 + λ)v − λHo λ (Σ) = Ho1−t v −       (Σ − v) .
+                                                                      1−t
+         λ+t                −
+But v − 1−t (Σ − v) ⊂ Cone (Σ, v), so this concludes the proof of the lemma.                         □
+
+
+
+
+          Figure 10. Lemmas 3.7 and 3.8 for a 2-simplex with fair subdivision into 9 cells
+          with o its basis’ barycenter. The upper pyramids are the reflections of the lower
+          ones (the Ti ’s) across their respective apexes. C(t) and its opposite cone are shown
+          as black wire frames.
+
+Lemma 3.8. Assume that the family (Σi , xi )i∈I is affinely separated. For every t ≥ 0 and every
+i ̸= j ∈ I,                                                         
+                      Cone− (Σi , v) + tui ∩ Cone− (Σj , v) + tuj
+has dimension < d.
+Proof. Let φ : Aff(Σ) → R be the non constant affine map separating (Σi , xi ) and (Σj , xj ). Extend
+φ affinely to Aff(Σ, v) by setting φ(v) = 0. Then
+      φ(Cone− (Σi , v) + tui ) = Cone− (φ(Σi ), φ(v)) + t(φ(o) − φ(xi )) = (−∞, t(φ(o) − φ(xi ))],
+and
+                           φ(Cone− (Σj , v) + tuj ) = [t(φ(o) − φ(xj )), ∞),
+so
+                                          
+  Cone− (Σi , v) + tui ∩ Cone− (Σj , v) + tuj ⊂ {z ∈ Aff(Σ, v) = Rd | φ(z) = t(φ(o) − φ(xi ))}.
+Note that the intersection can even be empty if φ(xj ) < φ(xi ), but this case still verifies the
+containment above. The right hand set is a (d − 1)-dimensional affine space, concluding the
+proof.                                                                                         □
+                    A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                                 11
+
+
+   Here is the summary of what we have proved:
+Proposition 3.9. Let Σ ⊂ Rd be a (d − 1)-dimensional polytope with a partition (Σi )i∈I satisfying
+(3).
+   ∀ v ∈ / Aff(Σ), ∀ o ∈ Aff(Σ) and ∀ t ∈ (0, 1 − c], if T = conv(Σ, v), Ti = conv(Σi , v),
+                                                                                −−−−→
+Te = Cone− (Σ, v) and Tei = Cone− (Σi , v), then there exist vectors (wi )i∈I ⊂ Aff(Σ) such that:
+                                        td |T |
+         [           
+     (i)       Ti + wi \ Ho1−t (T ) ≤           .
+                                      (1 − c)d
+           i∈I
+                  
+    (ii) Tei + wi  i∈I
+                      are contained in Ho1−t (Te), and have pairwise disjoint interiors if the family
+         (Σi , xi )i∈I is affinely separated.
+   (iii) The Σi + wi are contained in Ho1−t (Σ) ∀ i.
+Proof. We prove the result with wi = tui .
+  Let us first prove (i). By Lemma 3.6, using that a homothety of factor λ scales the Lebesgue
+measure by λd , we have
+                                                                     td              td |T |
+       [                         X                            X
+            Ti + wi \ Ho1−t (T ) ≤    | Ti + wi \ Ho1−t (T )| ≤
+                                               
+                                                                           |Ti | =           .
+                                                                  (1 − c)d         (1 − c)d
+         i∈I                           i∈I                            i∈I
+
+   The first part of (ii) is an application of Lemma 3.7, and the second part is Lemma 3.8.
+   (iii) is a direct consequence of the fact that, thanks to Lemma 3.5
+                                    Σi + wi = Σi + tui ⊂ Ho1−t (Σ).                                      □
+
+                               4. The Perron tree construction
+4.1. The induction argument. We now explain how to iterate Proposition 3.9. The standing
+assumption in this section is the following: Σ ⊂ Rd is a (d − 1)-polytope with a partition (Σi )i∈I
+satisfying (3), and with the additional property that every piece Σi is the image of Σ by an affine
+map.
+    This additional property holds for example for a fair partition (in which case we will always
+choose the affine map in |I|1−d O(d)), but also for partitions of the simplex into simplices. It allows
+                                                                    (n)
+to define, for every n ≥ 1, the n-step iterated partition (Σi )i∈I n .
+                                                                                                   Qm
+Proposition 4.1. Let v ∈       / Aff(Σ), o ∈ Aff(Σ) and t1 , t2 , . . . , tn ∈ (0, 1−c]. Write Pm = j=1 (1−
+                                                       (n)                                           (n)
+tj ) for m ∈ N, T = conv(Σ, v), Ti = conv(Σi , v), Te = Cone− (Σ, v) and Tei = Cone− (Σi , v).
+                                            −−−−→
+Then there exists vectors (wi )i∈I n ⊂ Aff(Σ) such that:
+            [                                         n  i−1               
+                                               |T | X Y
+      (i)          Ti + wi \ HoPn (T ) ≤             d
+                                                                (1 −   t j )d
+                                                                               tdi .
+                                            (1 −  c)
+             i∈I n                                     i=1  j=1
+                                                Pn e
+     (ii) Ti + wi i∈I n are contained in Ho (T ), and have pairwise disjoint interiors if the family
+            e
+          (Σi , xi )i∈I is affinely separated.
+                   (n)
+    (iii) The Σi + wi are contained in HoPn (Σ) ∀ i.
+Proof. We will proceed by induction in the number of iterations n ∈ N. The base case n = 1 is
+exactly Proposition 3.9. Assume that the statement holds up to (n − 1), and let us prove it for n:
+   Apply the proposition for n = 1, to Σ, v, o and tn to obtain vectors (wi′ n )in ∈I that satisfy, if
+Tin = conv(Σin , v) and Tein = Cone− (Σin , v), the following conclusions:
+           [                                      |T |tdn
+                              
+    (a)            Tin + wi′ n \ Ho1−tn (T ) ≤             ,
+                                                 (1 − c)d
+          in ∈I
+    (b) Tein +wi′ n i ∈I are contained in H1−tn (Te), and have pairwise disjoint interiors if the family
+                      
+                        n
+         (Σi , xi )i∈I is affinely separated.
+    (c) Σin + wi′ n are contained in Ho1−tn (Σ) ∀ in ∈ I.
+                                                     (n) 
+   Let us re-index the n-iterated partition Σi i∈I n as Σiin′ i′ ∈I n−1 ,i ∈I in such a way that for
+                                                                       
+                                                                               n
+
+every fixed in ∈ I, Σiin′ i′ ∈I n−1 is an (n − 1)-iterated partition of Σin . By the induction hypothesis
+                            
+
+we can apply the proposition for (n − 1), to the simplex Σin , with v, o and t1 , ..., tn−1 ∈ (0, 1 − c]
+                                        −−−−−→ −−−−→
+to obtain vectors wii′n i′ ∈I n−1 ⊂ Aff(Σin ) = Aff(Σ) such that:
+                           
+
+             [                                                         n−1
+                                                                  |Tin | X d d
+    (d)               conv(Σiin′ , v) + wii′n \ HoPn−1 (Tin ) ≤              Pk−1 tk ,
+           ′   n−1
+                                                                (1 − c)d
+         i ∈I                                                          k=1
+12                               RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+                                                                    P
+            Cone− (Σiin′ , v) + wii′n i′ ∈I n−1 are contained in Ho n−1 (Tein ), and have pairwise disjoint
+                                     
+      (e)
+          interiors if the family (Σi , xi )i∈I is affinely separated.
+                                                   P
+      (f) The Σiin′ + wii′n are contained in Ho n−1 (Σin ) ∀ i′ ∈ I n−1 .
+     With all the above, define for i = (i′ , in ) ∈ I n = I × I n−1 :
+                                                                        −−−−→
+                                              wi = wii′n + Pn−1 wi′ n ∈ Aff(Σ)                .
+
+Let us check that (wi )i∈I n satisfy the conclusion of the proposition.
+  In order to prove property (i), using the following inclusion, valid for any sets,
+                        [                [               [             
+                            (Ain \ C) ⊂      (Ain \ Bin ) ∪      (Bin \ C) ,
+                                      in                    in                       in
+
+                                          in         ′            Pn−1
+                                                                       (Tin + wi′ n ) and C = HoPn (T ), we obtain
+                 S
+to Ain =             i′ ∈I n−1 (Ti ,in + wi′ + Pn−1 win ), Bin = Ho
+                                  ′
+
+
+     [                                      X [
+          (Ti + wi ) \ HoPn (T ) ≤                     (Ti′ ,in + wii′n + Pn−1 wi′ n ) \ HoPn−1 (Tin + wi′ n )
+      i                                      in   i′
+                                                                                    [
+                                                                                          HoPn−1 (Tin + wi′ n ) \ Ho1−tn (T ) .
+                                                                                                                             
+                                                                               +
+                                                                                    in
+
+                     P                            P
+We have Ho n−1 (Tin + wi′ n ) = Ho n−1 (Tin ) + Pn−1 wi′ n , so by the translation-invariance of the
+Lebesgue measure and (d) the first term is
+                                                                                n−1                          n−1
+          X [                                                    X         |Tin | X d d         |T | X d d
+                          (Ti′ ,in + wii′n ) \ HoPn−1 (Tin ) ≤                   d
+                                                                                   Pk−1 tk =          Pk−1 tk .
+                                                                         (1 − c)             (1 − c)d
+            in       i′                                          in ∈I             k=1                       k=1
+
+                                     P                                   d
+Since the homothety Ho n−1 scales the Lebesgue’s measure by the factor Pn−1 , the second term is
+                                   [
+                               d
+                                       (Tin + wi′ n ) \ Ho(1−tn ) (T ) ,
+                                                                      
+                             Pn−1
+                                                       in
+
+which by (a) is less than Pn−1d
+                                 |T |tdn (1 − c)−d . Altogether this proves (i).
+   In order to prove (ii), if the family (Σi , xi )i∈I is affinely separated, take i ̸= j ∈ I n . If in = jn ,
+then i′ ̸= j ′ and by (e)
+                                                                                
+                                 (n)                                  (n)
+                    int(Cone− (Σi , v)) + wii′n ∩ int(Cone− (Σj , v)) + wjjn′ = ∅,
+
+or equivalently since wi = wii′n + Pn−1 wi′ n and wj = wjjn′ + Pn−1 wi′ n ,
+                                                             
+(4)                              int(Tei ) + wi ∩ int(Tej ) + wj = ∅.
+
+     If in ̸= jn , since by (e) we have that
+                                                                                                 
+           int(Tei ) + wi = int(Cone− (Σiin′ , v)) + wii′n + Pn−1 wi′ n ⊂ int HoPn−1 (Tein + wi′ n ) ,
+
+                            P                        P
+and by (b), the two sets Ho n−1 (Tein + wi′ n ) and Ho n−1 (Tejn + wj′ n ) have disjoint interiors, we deduce
+that (4) holds also in this case.
+   Regardless of the fact that the partition is affinely separated, the previous containment identities
+also imply that for any i ∈ I n :
+
+                               Tei + wi ⊂ HoPn−1 (Tein + wi′ n ) ⊂ HoPn−1 (Ho1−tn (Te)) = HoPn (Te),
+
+where the inclusions are due to (e) and (b) respectively.
+  (iii) is also immediate: by (f), we have
+         (n)
+       Σi + wi = Σiin′ + wii′n + Pn−1 wi′ n ⊂ HoPn−1 (Σin ) + Pn−1 wi′ n = HoPn−1 (Σin + wi′ n ),
+                               
+
+                                              P
+which by (c) is contained in Ho n−1 (Ho1−tn (Σ)) = HoPn (Σ).                                                                      □
+
+  The following set of figures illustrate our Perron tree construction for d = 3, Σ a 2-simplex,
+v = (1, 2, 1), o = (1, 2, 0) and n = 2 :
+                   A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                                     13
+
+
+
+
+        Figure 11. First iteration: The first image shows a fair partition of a 2-simplex
+        into 81 cells, which were obtained by applying a fair decomposition to the original
+        simplex, and then successively to each of the sub cells formed after the first par-
+        tition. Image two shows how we apply the basic construction to each group of 9
+        sub sub cells, taking the parent sub cell as our starting simplex. The third image
+        is a bottom view of the construction, and allows us to better understand how the
+        basic construction has been applied to each group of sub sub cells.
+
+
+
+
+        Figure 12. Second iteration: In the last figure of 11, we see that we are left with
+        9 Perron trees, whose bases are all congruent to a separated scaled-down version
+        of the fair simplicial decomposition of 9 cells. In the first image above, we have
+        translated towards the barycenter of the pyramid’s base these Perron trees as a
+        block, until their bases just touch. In the second image we observe how we carry
+        out again the basic construction, now using the 9 cores of each Perron tree as our
+        starting pyramids (note the change in the colours of the cores in order to identify
+        the translations defined in the basic construction applied to this second step); we
+        remark that all of the pyramids in the same lower-level Perron tree are translated
+        as a block in this iteration. The third image shows the final n = 2 Perron tree
+        resulting from our construction, where the black wire frame is the HoP2 (T ) core in
+        the theorem.
+
+
+4.2. The main construction. With the same notation as in Proposition 4.1, we obtain the bound
+      [                [           
+(5)      (Ti + wi ) ≤     (Ti + wi ) \ HoPn (T ) + |HoPn (T )| ≤
+      i∈I n                i∈I n
+                                         n                                     n                       
+                                  |T | X d d          d                  1     X
+                                                                                                d     d
+                                           P   t  + P   |T | = |T |                (Pi−1 − P i )  + P n .
+                               (1 − c)d i=1 i−1 i     n
+                                                                      (1 − c)d i=1
+
+   We could choose all the ti ’s to be equal, but it is better to choose them increasing. A convenient
+(and optimal, see Remark 4.5) choice is to set, for i ∈ [n],
+                                                         1
+(6)                                       ti =                     .
+                                                 n − i + (1 − c)−1
+First of all note that ti ∈ (0, 1 − c] for all i ∈ [n], so this is indeed a valid choice. Moreover, since
+                                              n − i − 1 + (1 − c)−1     ti
+                                   1 − ti =                         =      ,
+                                                n − i + (1 − c)−1     ti+1
+14                    RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+
+
+          Figure 13. Reflection of the pyramids in the construction for different values
+          of t2 ∈ (0, 1/3], where the respective t2 is that of the figure in 12 immediately
+          right above. Notice how all the opposite cones have disjoint pairwise interiors,
+          and how the two-level iteration gives rise to the self replicating distribution of the
+          reflections. The blue wire frame is the opposite cone of directions HoP2 (Te), so all
+          reflected pyramids are contained within it.
+
+
+the expression for Pm simplifies:
+                                        m                    m
+                                        Y                   Y    tj     t1
+                                 Pm =         (1 − tj ) =           =      .
+                                        j=1
+                                                               t
+                                                            j=1 j+1
+                                                                      tm+1
+
+
+     Plugging the above into (5), we get the volume bound:
+                                                                td1
+                                                                   
+                         [                         1        d              |T |
+                             (Ti + wi ) ≤ |T |          d
+                                                          nt1 + d     ≲d,Σ d−1 ,
+                           n
+                                                (1 − c)        tn+1       n
+                         i∈I
+
+where the dependence of the bound on c ∈ (0, 1) is ultimately governed by the geometry of Σ
+through condition (3).
+   The key properties of the above construction are thus summarized in the next theorem:
+Theorem 4.2 (The d-dimensional Perron tree construction). Let Σ ⊂ Rd and (Σi )i∈I as before.
+                                                        −−−−→
+For every n, there exists a family of vectors wi i∈I n ⊂ Aff(Σ) such that, for every v ∈ Rd \Aff(Σ),
+                          (n)
+the family Ti = conv(Σi , v) forms a partition of the d-pyramid T = conv(Σ, v) satisfying the
+volume bound:
+                                  [                    |T |
+(7)                                   (Ti + wi ) ≲d,Σ d−1 ,
+                                    n
+                                                      n
+                                        i∈I
+
+                                       (n)
+and such that the cones {Cone− (Σi , v) + wi } are pairwise disjoint if the family (Σi , xi )i∈I is
+affinely separated.
+Proof. As we have already justified, the theorem is immediate from Proposition 4.1 for o ∈ Aff(Σ)
+arbitrary and t1 , . . . , tn defined by (6).                                                  □
+
+Definition 4.3. With previous notation, we will refer to the set
+                                        [           
+                                            Ti + wi
+                                                i∈I n
+
+constructed in Theorem 4.2 as the n-iteration Perron tree construction of T = conv(Σ, v) relative
+                                   (n)
+to the n-step iterated partition (Σi )i∈I n .
+
+Remark 4.4. For the particularisation of Σ = Q = [0, 1]d−1 , o = 0 and any v ∈  / Rd−1 × {0}, one
+can check that the cells in the n-iteration dyadic decomposition of Q can be expressed as
+                                                            n
+                                                            X
+                   Qi = xi + 2−n [0, 1]d−1 ,        xi =          β j 2−j ,   β j ∈ {0, 1}d−1 .
+                                                            j=1
+                    A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                                    15
+
+
+From the representation above, it is straightforward to see that the vectors {wi }i∈[2d−1 ]n of the n-th
+iteration Perron tree construction given by
+                                    n                           n
+                               1 X                             X              j −1
+                   wi = −              β j 2−j (n − j + 2) = −     β j 2−j 1 −
+                             n + 1 j=1                         j=1
+                                                                               n+1
+
+correspond to the overall translation applied to each pyramid with base Qi and apex v.
+    Up to a change of variables, these formulas are the same as those provided by Keich in [Kei99],
+thus showcasing that we have been able to generalise his construction for higher dimensions.
+    We see in particular that, if T n,d ⊂ Rd is the n-iteration Perron tree in dimension d associated
+to the dyadic decomposition of the cube with apex v = (0, . . . , 0, 1), and if for h ∈ [0, 1], Thn,d is its
+slice at height h:
+                                   Thn,d = {x ∈ Rd−1 | (x, h) ∈ T n,d },
+then Thn,d = (Thn,2 )d−1 . Keich proved that suph∈[0,1] |Thn,2 | < n1 , so we deduce
+                                      Z 1               Z 1
+                                                                              1
+                           |T n,d | =     |Thn,d | dh =     |Thn,2 |d−1 dh ≤ d−1 .
+                                       0                 0                  n
+This provides an alternative proof of the estimate in Theorem 4.2 in the particular case of the tree
+whose base is the dyadic decomposition of the cube.
+
+Remark 4.5. The O(n1−d ) asymptotic obtained is the best one can do if one employs equation
+(5) to bound the our Perron tree construction volume above. Indeed, by Hölder’s inequality,
+                      n
+                     X                                         n                     d1
+                                                                  X                                  d−1
+                1=           Pi−1 − Pi       + Pn ≤       Pnd +                    d
+                                                                        (Pi−1 − Pi )          (n + 1) d ,
+                       i=1                                        i=1
+
+which implies that the right hand side of equation (5) is at least
+                                                          |T |
+                                                ≳                .
+                                                      (n + 1)d−1
+
+                           5. Applications to Kakeya-type problems
+5.1. Volumes of higher dimensional intersecting tubes. We now prove Theorem 1.4.
+   For every δ ∈ (0, 1), we define the number fdα (δ) as the infimum of the real numbers ε > 0 such
+                                                                 −→
+that there exists a finite family of δ-tubes {Rj } such that the Rj α are pairwise disjoint but
+                                              S
+                                                  Rj
+(8)                                          Pj        ≤ ε.
+                                               j |Rj |
+
+   Keich [Kei99] proves that there is a constant C > 0 such that
+                                           C −1                 C
+                                                 ≤ f21 (δ) ≤         .
+                                         log 2/δ             log 2/δ
+Theorem 1.4 is equivalent to the inequality
+                                                               Cd,α
+(9)                                           fdα (δ) ≤                .
+                                                           | log δ|d−1
+This is where our Perron tree construction becomes useful, and where we need fair partitions.
+
+Proof of Theorem 1.4. As explained before, we have to prove (9).
+   Let Σ be a (d − 1)-polytope Σ ⊂ Rd with a fair partition (Σi )i∈I with |I| > 1 satisfying (3), and
+take v such that d(v, Aff(Σ)) > 2. We also require that the family (Σi , xi )i∈I is affinely separated.
+The proof works for any polytopal partition satisfying these conditions, but for simplicity let us
+write it for the dyadic subdivisions of the unit cube.
+   Given an arbitrary n ∈ N, let (Σi )i∈[2n(d−1) ] be the n-iteration dyadic decomposition and
+(wi )i∈[2n(d−1) ] be the vectors given by Theorem 4.2. By Lemma 2.4 each cube-based pyramid
+                                           →
+                                           −
+Ti contains a δn -tube Ri whose translate Ri α in contained in the interior of Cone− (Σi , v), for
+
+                                 δn = Cα,d [2n(d−1) ]−1/(d−1) = Cα,d 2−n .
+16                      RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+
+
+                    (a) n = 2                                                             (b) n = 3
+
+
+
+
+                    (c) n = 4                                                             (d) n = 5
+
+        Figure 14. n-th iterated Perron tree construction for d = 3, Σ the unit cube,
+        and different values of n.
+
+                                                                  →
+                                                                  −
+Then the δn -tubes Ri +wi have the property that their translates Ri α are pairwise disjoint, because
+they are contained in the interiors of the reflected cones Cone− (Σi , v) + wi , which are pairwise
+disjoint by Theorem 4.2. As a consequence, we have that
+           S                                  S                                    
+               i∈[2d−1 ]n   Ri + w i               i∈[2d−1 ]n   conv(Σi , v) + wi
+                                                                                                    n1−d
+fdα (δn ) ≤ P                              ≤                       ′     −n(d−1)
+                                                                                        ≲α,d                    = n1−d .
+                                                                                               2n(d−1) 2−n(d−1)
+                                                   P
+               i∈[2d−1 ]n |Ri + wi |                   i∈[2d−1 ]n Cd,α 2
+
+    Now, for every δ ∈ (0, Cα,d ], there exists a unique n0 ∈ N such that δn0 +1 ≤ δ < δn0 . Since
+fdα (δ) satisfies the identity:
+                                           ′ d−1
+                                           δ
+                                fdα (δ) ≤          fdα (δ ′ ) 0 < δ ≤ δ′ ,
+                                           δ
+                   A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                            17
+
+
+we then have                                d−1
+                                      δ n0
+                      fdα (δ) ≤             fdα (δn0 ) ≲α,d n1−d
+                                                             0   ≲α,d | log δ|1−d ,
+                                δn0 +1
+where in the last line we have used that | log δ| ≲α,d n0 .                                        □
+
+
+
+
+        Figure 15. Illustration of the proof of Theorem 1.4 for d = 3. The first image
+        shows the tubes translated as a block within their respective pyramid during the
+        2-iterations Perron tree construction of the cube. The second image includes the
+        reflected pyramids across their respective apex, which by construction contain the
+        →
+        −
+        Ri α ’s.
+
+Remark 5.1. The first author’s interest in obtaining bounds for the functions fdα is what motivated
+the search for a generalisation of the 2 dimensional Perron tree construction. Thus, in order to be
+able to insert congruent δ-tubes in each d-dimensional cell of conv(Σ, v), the hypothesis of a fair
+partition of Σ was crucial. For example, it is clear that Lemma 2.4 is false for partitions of Σ in
+which the cells do not have a bounded aspect ratio, i.e. the barycentric subdivision of a simplex.
+5.2. Higher dimensional Kakeya sets.
+Definition 5.2 (Kakeya set). A Kakeya set in E ⊂ Rd is a compact set which contains a unit
+length line segment in every direction of Sd−1 ⊂ Rd . That is, given e ∈ Sd−1 , there exists an
+x ∈ Rd such that
+                                 {x + se | s ∈ [−1/2, 1/2]} ⊂ E.
+Lemma 5.3. For every δ ∈ (0, 1), there exists a Kakeya set Gδ such that |N2δ (Gδ )| ≲d | log δ|1−d ,
+where Nδ (X) denotes the δ-neighbourhood of X ⊂ Rd .
+Proof. Note that it suffices to prove the lemma for a set Gδ containing an open set of directions S
+in Sd−1 (the same for all δ), rather than a Kakeya set. Indeed, there is a finite number of rotated
+copies of Gδ that will contain every direction in Sd−1 , and their union verifies the lemma.
+   It also suffices to prove the lemma with δ ∈ {2−n | n ∈ N}: for a general δ the lemma follows
+from the case of 2−n for n such that 2−n−1 ≤ δ ≤ 2−n .
+   Set Σ = [0, 1]d−1 , seen in Rd−1 × {0} ⊂ Rd and v = (0, 1). Let C be the constant given by
+Lemma 2.5. We will prove the above claim for
+                                           n v−x             o
+                                      S=             |x∈Σ .
+                                             ∥v − x∥
+   We perform the Perron tree construction for n steps, and scale it by C. We obtain a fair
+subdivision Σi i∈[2d−1 ]n of Σ and vectors wi i∈[2d−1 ]n such that
+                                     [                            
+                                            C conv(Σi , v) + Cwi
+                                      i∈[2d−1 ]n
+
+has measure O(n−(d−1) ). But by Lemma 2.5, each of the pyramids C conv(Σi , v) + Cwi contains
+a translate (say by the vector wi′ ) of the 2 · 2−n -neighbourhood of the pyramid conv(Σi , v). So if
+we set
+                                    −n      [
+                               G2 =                  conv(Σi , v) + wi′
+                                                                        
+
+                                              i∈[2d−1 ]n
+18                    RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+               −n
+we see that G2
+                                                                             S
+                    contains a unit segment parallel to v − x for every x ∈ i Σi = Σ, that
+is a unit segment parallel to every element of S. And its 2 · 2−n -neighbourhood has measure
+O(n−(d−1) ) = O((| log 2−n |)−(d−1) ).                                                    □
+Proposition 5.4. Let f : (0, 1) → (0, ∞) non-decreasing and consider the following two state-
+ments:
+  (1)f ∀δ ∈ (0, 1) there exists a Kakeya set Gδ such that |N2δ (Gδ )| ≤ f (δ).
+  (2)f There exists a Kakeya set E such that ∀δ ∈ (0, 1) |Nδ (E)| ≤ f (δ).
+                                                                                                √
+There is a dimension dependent constant Cd ≥ 1 such that (1)f implies (2) e for fe(δ) = Cd f (Cd 4 δ)
+                                                                                     f
+and δ ∈ (0, Cd−4 ).
+   The proof follows the classical patching argument in dimension 2, see [Wol03, Kei99]. We state
+a useful lemma in the proof.
+Lemma 5.5. Assume (1)f . For every unit segment I ⊂ Rd with direction u, for every 0 < δ ≤
+ε ≤ 21 , there is a subset F I,ε,δ of Rd such that:
+     (1) F I,ε,δ contains a unit segment
+                                       √ of direction v ∈ S
+                                                           d−1
+                                                               for all ||v − u|| ≤ ε/2.
+           I,ε,δ
+     (2) F       is contained in the d − 1ε-neighbourhood of I.
+     (3) |N2δ (F I,ε,δ )| ≲d εd−1 f (δ/ε).
+Proof. Without loss of generality, by applying a rigid motion, we can assume that the unit segment
+I is [−e1 /2, e1 /2] and its direction is u = e1 .
+                                          1
+   Let Sε = {v ∈ Sd−1 | ⟨v, e1 ⟩ ≥ √1+ε     2
+                                              }. Observe that, for a unit vector v with decomposition
+               ′       ′
+v = v1 e1 + v and v orthogonal to e1 ,
+(10)                                     v ∈ Sε ⇐⇒ εv1 ≥ ∥v′ ∥.
+We claim that for every 0 < δ < 1, there is a subset H δ of the unit square [−1/2, 1/2]d such that:
+      • for every v ∈ S1/2 , H δ contains a segment parallel to v joining the side {x1 = −1/2} to
+         the side {x1 = 1/2},
+      • |Nδ (H δ )| ≲d f (δ).
+Taking this claim for granted, the lemma will follow by defining F I,ε,δ as the image of H δ/ε by
+the map T : (x1√  , x′ ) 7→ (x1 , 2εx′ ). Then F I,ε,δ is contained in [−1/2, 1/2] × [−ε, ε]d−1 , which is
+contained in the d − 1ε neighbourhood of I. The choice of Sε was dictated by the fact (immediate
+from (10)) that { ∥TT v∥v
+                           | v ∈ S1/2 } is precisely Sε . But a small computation gives that for a unit
+vector, ∥v − e1 ∥ ≤ ε/2 implies v ∈ Sε . So for every such v, F I,ε,δ contains a segment parallel to v
+joining the side {x1 = −1/2} to the side {x1 = 1/2}, so in particular a unit length segment parallel
+to v. Finally, the volume estimate is clear because T has determinant (2ε)d−1 and T contracts the
+distances by at most 2ε:
+                |N2δ (F I,ε,δ )| ≤ |T Nδ/ε (H δ/ε )| = (2ε)d−1 |Nδ/ε (H δ/ε )| ≲d εd−1 f (δ/ε).
+   Let us prove the claim. For every k ∈ Zd , consider the cube Qk = k2 + [−1/2, 1/2]d , with its
+distinguished sides Q±        k       1
+                                                         d−1
+                                                              . We have a covering Rd = k∈Zd Qk , that
+                                                                                       S
+                        k = 2 +{± 2 e1 } ×[−1/2, 1/2]
+is not too redundant in the sense that there is a number Nd such that every point of Rd belongs
+to the 1-neighbourhood of at most Nd different cubes. For example Nd = 7d works.      √ However, the
+covering has enough redundancy so that for every segment J of length c0 = 3 5/4 and parallel
+to a vector in S 12 , there is a cube Qk such that Qk ∩ J joins Q−            +
+                                                                       k to Qk . Indeed, the projection
+                                                  p
+of J on the axis Re1 has length at least c0 / 1 + 1/22 = 32 , so it contains entirely a segment of
+the form k1 /2 + [−1/2,    1/2] for some integer k1 . Let J ′ be the intersection of J with the band
+ k1 /2 + [−1/2, 1/2] × Rd−1 . Since v belongs to S 12 , by (10) the projection of J ′ on {0} × Rd−1
+                      
+
+has length ≤ 1/2, so it is contained in a cube of the form k′ /2 + [−1/2, 1/2]d−1 for some k′ ∈ Zd−1 .
+Equivalently, for k = (k1 , k′ ), J ′ is contained in Qk and joins Q−        +
+                                                                      k to Qk . We can now define
+                                            [                         
+                                   Hδ =          (Qk ∩ c0 Gδ/c0 ) − k/2 .
+                                          k∈Zd
+
+It is clear from the definition that H δ is contained in Q0 = [−1/2, 1/2]d . Since Gδ/c0 is a Kakeya
+set, for every direction v ∈ S 12 , c0 Gδ/c0 contains a vector parallel to v of length c0 , so by the
+preceding discussion H δ contains a vector parallel to v joining Q−        +
+                                                                   0 to Q0 . Finally, for every point
+                                                                ′
+                                 δ
+x in the δ-neighbourhood of H , there is at least one point x in the δ-neighbourhood of c0 Gδ/c0
+such that x − x′ ∈ Zd /2. Moreover the map x 7→ x′ is at-most-Nd -to-one, so we have the bound
+                      |Nδ (H δ )| ≤ Nd |Nδ (c0 Gδ/c0 )| ≤ Nd cd0 f (δ/c0 ) ≤ Nd cd0 f (δ).
+                   A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                             19
+
+
+This proves the claim and the lemma.                                                                □
+                                                                                  n
+Proof of Proposition 5.4. For the proof of the proposition, given δn = 2−2 , we want to define a
+sequence of sets Fn such that:
+    (a) Fn is a Kakeya set for every n ∈ N.
+    (b) Nδn (Fn ) ⊂ Nδn−1 (Fn−1 ) for all n ∈ N.
+                             √
+    (c) |N2δn (Fn )| ≲d f (Cd δn ), for some dimension dependent Cd ≥ 1.
+                                                                                                 −δn
+We proceed inductively. We set F0 = G 2 . If F0 , . . . , Fn−1 are constructed, define εn = δn−1
+                                           1
+                                                                                             √
+                                                                                               d−1
+                                                                                                     ,
+                                                                                 −(d−1)
+and take A a maximal εn /2 separated subset of Sd−1 , so that #|A| ≤ Cd εn       . For each u ∈ A,
+choose a unit segment Iu parallel to u in Fn−1 , which can be done since Fn−1 is a Kakeya set. We
+now define                                    [
+                                        Fn =      F Iu ,εn ,δn
+                                               u∈A
+
+where the F I,ε,δ are as in
+                          √ Lemma 5.5. For this definition to make sense, we need εn ≥ δn , that
+is n ≥ 1 + log2 log2 (1 + d − 1). Otherwise, we just set Fn = Fn−1 . We have to check √ that Fn
+satisfies the three properties we ask for. This is obvious when n < 1 + log2 log2 (1 + d − 1) for
+an appropriate value of Cd , so we focus on the generic case. For any v ∈ Sd−1 , there is u ∈ A
+such that ∥v − u∥ ≤ εn /2, so by (1) in Lemma 5.5 Fn contains a unit segment parallel to v. To
+                                                                                       Iu ,εn ,δn
+                                                           √ ≤ δn from a point y ∈ F
+prove (b), note that every point x ∈ Nδn (Fn ), is at distance                                    for
+some u ∈ A. But by (2) in Lemma 5.5, y belongs to the d − 1εn = δn−1 − δn -neighbourhood of
+Iu , with Iu ⊂ Fn−1 . So x belongs indeed to the δn + (δn−1 − δn ) = δn−1 -neighbourhood of Fn−1 .
+Finally, by the union bound and (3) in Lemma 5.5, we have
+                                                                 √
+                       |N2δn (Fn )| ≲d #|A|εd−1
+                                            n f (δn /εn ) ≲d f (2 d − 1δn−1 ).
+                                                          −(d−1)
+√ required. The last inequality
+as                          √     is because #|A| ≲d εn       , f is non-decreasing and δn /εn =
+  d − 1δn−1 /(1 − δn−1 ) ≤ 2 d − 1δn−1 . Hence, we have obtained the required sequence of sets Fn ,
+and we now consider
+                                             ∞
+                                             \
+                                         E=      Nδn (Fn ).
+                                               n=1
+E is a compact Kakeya set, as it is the limit of a decreasing sequence of Kakeya sets. Furthermore,
+for any δ ∈ (0, 1/2], there exists a unique n ∈ N so that δn+1 < δ ≤ δn . Hence,
+                                                   p             p
+                   |Nδ (E)| ≤ |N2δn (Fn )| ≲d f (Cd δn ) = f (Cd 4 δn+1 ) ≲d fe(δ),
+where in the last inequality we have used the non-decreasing property of f . This proves the
+proposition.                                                                              □
+  With the above, we immediately obtain a proof of Theorem 1.3:
+Proof of Theorem 1.3. By Lemma 5.3, we know that for every δ ∈ (0, 1) there exists a Kakeya set
+Gδ such that |Nδ (Gδ )| ≲d f (δ), with f (δ) = | log δ|1−d
+                                                        √ . Hence by Proposition 5.4, there exists a
+Kakeya set E such that ∀δ ∈ (0, 1) |Nδ (E)| ≲d f (Cd 4 δ) ≲d | log δ|1−d , using the properties of the
+logarithmic function.                                                                               □
+5.3. On the optimality of Theorem 1.3. We now explain why, according to some conjectures
+in the field, Theorem 1.3 should be optimal.
+   Let δ > 0 be a small parameter and let Φ : R → R a smooth function of compact support in
+[−1, 1]. We define the Fourier multiplier S δ on Rd as
+                                                          !
+                                   \ δ
+                                                   |ξ| − 1 ˆ
+                                  (S f )(ξ) = Φ            f (ξ).
+                                                      δ
+
+We decompose the δ-neighbourhood {ξ : ||ξ| − 1| ≤ δ} of Sd−1 into coin-shaped pieces Eα of
+                      1/2
+tangential
+      P dimensions δ      × · · · × δ 1/2 and radial dimension δ, and correspondingly the operator
+  δ
+S = α Sα where Sα is a Fourier multiplier operator with smooth multiplier ϕα supported in
+and adapted to Eα . We shall refer to
+                                                               !1/2
+                                                  X
+                         δ                                   2
+                      ||S f || d−1
+                                 2d
+                                       d
+                                          ≤ Cd        |Sα f |              ,
+                               L    (R )                             2d
+                                                     α             L d−1 (Rd )
+
+where Cd is independent of δ and f , as the reverse Littlewood–Paley conjecture. When d = 2 it
+was proved by Fefferman in [Fef73], but in higher dimensions it remains open.
+20                   RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+  Indeed, Carbery showed [Car15] that the reverse Littlewood-Paley conjecture implies that the
+                                                d−1
+Kakeya maximal operator Kδ has norm O(| log δ| d ) from Ld (Rd ) → Ld (Sd−1 ), where
+                                                      Z
+                                                   1
+                                  Kδ f (u) = sup         |f |,
+                                             T ∥u |T | T
+
+the supremum being over all δ-tubes in the direction u. We warn the reader that       R in [Car15],
+the result is stated in terms of the maximal operator M1/δ f (u) = supT ∥u |T1/δ| T /δ |f | (same
+supremum), but the proof shows it for Kδ rather than M1/δ . The Ld → Ld norms of Kδ and M1/δ
+are related by ∥M1/δ ∥ = δ∥Kδ ∥.
+   If E is a Kakeya set, then its δ-neighbourhood Nδ (E) contains a δ-tube in every direction. This
+                                                                                   d−1         1
+means that if f is the indicator of Nδ (E), then Kδ f = 1, so we get 1 ≤ O(| log δ| d |Nδ (E)| d ), or
+                                    −(d−1)
+equivalently |Nδ (E)| ≥ Cd | log δ|        .
+
+                             6. Application to harmonic analysis
+6.1. Besov spaces with logarithmic smoothness. Let (Wn )n≥0 be a Littlewood-Paley parti-
+tion. This means that there are two functions w0 , w ∈ Cc∞ (R) with 0 not in the support of w with
+the following property: if for n ≥ 0 we set wn (x) = w(2−n |x|), we have
+                                           X
+                                               wn (x) = 1
+                                               n≥0
+
+and Wn is the function in the Schwartz class whose Fourier transform is wn . For p, q ∈ [1, ∞] and
+b, s ∈ R, we then set
+                  s,b
+                      (R) = f ∈ S ′ (R) | n 7→ 2sn (1 + n)b ∥Wn ∗ f ∥Lp (R) ∈ ℓq (N) .
+                           
+                Bp,q
+It is a Banach space for the natural norm, and it is a standard fact that the space does not depend
+on the choice of the Littlewood-Paley partition.
+                                                                t
+Example 6.1. Let β > 0. The function t 7→ | log (1−e2 )+ |−β belongs to B∞,∞
+                                                                         0,b
+                                                                             (R) if and only if
+b ≤ β.
+                             t
+Proof. Let fβ (t) = | log (1−e2 )+ |−β . It is a C ∞ on (−∞, 0), 0 on (0, ∞), and, as t → 0− ,
+                                           1                              β
+(11)                       fβ (t) ∼               and fβ′ (t) ∼ −                  .
+                                      | log |t||β                 |t|| log |t||1+β
+Let φ ∈ Cc∞ (R) equal to 1 on a neighbourhood of 0, and consider gβ = φfβ . Then fβ − gβ =
+(1 − φ)fβ is Lipschitz, so ∥Wn ∗ (fβ − gβ )∥∞ = O(2−n ) as n → ∞. Moreover, it follows by
+integration by part that
+                                              Z ∞
+                                          1
+                              gcβ (ξ) =            gβ′ (−t)e2iπtξ dt.
+                                        2iπξ 0
+                              R ε/|ξ| R ∞
+By decomposing the integral as 0      + ε/|ξ| for ε = (log |ξ|)−1/2 , we see from (11) that
+                                                           1
+                                           β (ξ) ∼
+                                          gc
+                                                     2iπξ(log |ξ|)β
+as |ξ| → ∞. In particular, we have
+                                                             1
+                                    sup         β (ξ) −
+                                               gc                 = o(n−β ).
+                                 ξ∈supp(W
+                                        d n)
+                                                          2iπnβ ξ
+                                                                              1
+But the Fourier transform of χ(−∞,0) coincides on R \ {0} with the function 2iπξ , so, by the
+inequality ∥Wn ∗ F ∥∞ ≤ ∥W
+                         d n ∥1 sup     d |F (ξ)|, this implies that
+                                             b
+                                       ξ∈supp(Wn )
+
+                                 ∥Wn ∗ (gβ − n−β χ(−∞,0) )∥∞ = o(n−β ),
+so
+        ∥Wn ∗ fβ ∥∞ = n−β ∥Wn ∗ χ(−∞,0) ∥∞ + o(n−β ) = n−β ∥W1 ∗ χ(−∞,0) ∥∞ + o(n−β ).
+The last equality is a change of variable. This concludes the proof, because ∥W1 ∗ χ(−∞,0) ∥∞ is a
+nonzero real number, and therefore supn (1+n)b ∥Wn ∗fβ ∥∞ < ∞ if and only if supn (1+n)b−β < ∞,
+that is b ≤ β.                                                                                  □
+                   A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                                21
+
+
+6.2. Quantitative aspects of Kakeya sets and radial Fourier multipliers. Recall the no-
+tation fd (δ) from subsection 5.1. If m : Rd → C is a bounded measurable function, the Fourier
+multiplier with symbol m is the map sending a function f to the function whose Fourier transform
+is mfˆ. When this map extends to a bounded map on Lp (Rd ), we say that it is Lp -bounded.
+In a recent work [dlS26], the first-named author extended Fefferman’s ball multiplier theorem as
+follows:
+Theorem 6.2. [dlS26] Let 1 < p < ∞ and m : (0, ∞) → R a bounded measurable function such
+that T , the Fourier multiplier with symbol m(|·|) is bounded on Lp (Rd ). Then φ : t ∈ R 7→ m(exp t)
+satisfies                                                                       
+                                                                     1   1   1
+                      ∥Wn ∗ φ∥∞ ≤ Cd ∥T ∥Lp →Lp inf           fd (δ) p − 2 + n 2
+                                                    δ∈(0,1)                 2 δ
+for all n ≥ 0.
+  Theorem 1.4 implies the following, which immediately implies Corollary 1.5.
+Lemma 6.3. For every integer d ≥ 2, there is a constant C such that for every p ∈ (1, ∞) and
+every integer n ≥ 0,
+                                  1   1    1              C
+                       inf fd (δ) p − 2 + n 2 ≤                      .
+                     0<δ<1               2 δ                   1   1
+                                                  (1 + n)(d−1) p − 2
+                                                                          1   1
+Proof. Let α = (d − 1) p1 − 12 . Theorem 1.4 asserts that fd (δ) p − 2            ≲d | log δ|−α . For δ =
+                                                 1 1
+min(1/2, 2−n/2 (1 + n)α/2 ), both terms fd (δ)   p−2   and 2n1δ2 are Od ((1 + n)−α ).                  □
+   Adapting the proof of Theorem 6.2 to spherical harmonic analysis and Schur multipliers, the
+second-named author also proved the following. Here is m is a bounded measurable map X × X →
+C, the Schur multiplier with symbol m is the map sending the Hilbert-Schmidt operator on L2 (X)
+with kernel (Ax,y )x,y∈X to the one with kernel (m(x, y)Ax,y )x,y∈X . When this map extends to a
+bounded linear map on Sp (L2 (X)), we say that it is Sp -bounded.
+Theorem 6.4. [dlS26] Let 1 < p < ∞ and m : (−1, 1) → R be a bounded measurable function
+such that S, the Schur multiplier with symbol (x, y) 7→ m(⟨x, y⟩) is bounded on Sp (L2 (Sd )). Then
+φ : t ∈ R 7→ m(cos t) satisfies
+                                                                                     
+                                                             1   1           1
+                 |Wn ∗ φ(θ)| ≤ Cd ∥S∥Sp →Sp inf       fd (δ) p − 2 +                1
+                                            δ∈(0,1)                  |2n δ 2 sin θ| 3
+for all n ≥ 0.
+  With the same proof as in Lemma 6.3, we obtain the concrete bound as a consequence of
+Theorem 1.4
+                                                                                    1   1
+                 |Wn ∗ φ(θ)| ≤ Cd ∥S∥Sp →Sp min(1, (1 + log(2n | sin θ|))−(d−1)| p − 2 | .
+                                                                                0,b
+In particular, if m is supported in [−c, c] for some c < 1, we obtain that φ ∈ B∞,∞ (R) for
+             1   1
+b = (d − 1)| p − 2 |.
+
+                                        7. Interactive plots
+   We have coded some of the constructions described in this paper, for the cases d = 2 and d = 3.
+Once compiled, the simulations allow one to rotate, zoom and toggle sliding bars that control the
+translation parameters. We include in separate files the python code to visualise the Perron tree
+construction associated to the fair subdivision of the 2-simplex and to the 2-dimensional unit cube.
+The reader can find the Jupyter Notebooks by clicking on the following GitHub repository:
+https://github.com/rafaeljfernandezd/A-CONSTRUCTION-OF-KAKEYA-SETS-IN-ARBITRARY
+-DIMENSION0
+
+                           Appendix A. Subdivisions of a polytope
+  We will now prove that we can obtain a Perron tree out of pyramids whose bases are any given
+polytope, as long as we start with a sufficiently fine partition of it.
+Lemma A.1. Let (Σi )i∈I be a partition of a polytope Σ ⊂ Rd . Then (3) holds for some c ∈ (0, 1)
+if and only if for every i, the intersection of the faces of Σ that meet Σi is non-empty.
+   Observe that when Σ is a simplex, the condition in the lemma is equivalent to saying that no
+Σi meets all the co-dimension 1 faces of Σ. Lemma A.1 follows immediately from the following:
+22                    RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+Lemma A.2. Let Σ ⊂ Rd be a polytope, Λ ⊂ Σ be closed and x ∈ Σ. The following are equivalent:
+      • There is c ∈ (0, 1) such that Λ ⊂ Hxc (Σ),
+      • x belongs to all the faces of Σ that meet Λ.
+                     TK
+Proof. Write Σ = k=1 {φk ≤ 0} as a finite intersection of half-spaces, where φk : Rd → R are
+                                         TK
+affine maps. Then we have Hxc (Σ) = k=1 {φk ≤ (1 − c)φk (x)}, so Λ ⊂ Hxc (Σ) is equivalent to
+maxΛ φk ≤ (1 − c)φk (x) for every k. If Λ meets the face {φk = 0}, this inequality holds if and
+only if 0 = φk (x), that is x belongs to it. If Λ does not meet the face {φk = 0}, then maxΛ φk < 0
+because Λ is closed, and this inequality holds for c close enough to 1.                          □
+Remark A.3. From the above, we see that each xi in condition (3) must be chosen in the inter-
+section of all the faces of Σ that meet Σi , and this set must be non-empty. If no face of Σ intersects
+Σi , then xi ∈ Σ can be chosen arbitrarily.
+     As a consequence of the previous lemmas, we deduce the following:
+Proposition A.4. If (Σi )i∈I is a fair partition of a polytope with |I| > 1, then there is k ∈ N
+                                   (k)
+such that the repeated partition (Σi )i∈I k satisfies (3) for some c = cΣ,(Σi )i∈I ∈ (0, 1).
+Proof. Let F be the set of faces of Σ. For any family of faces S ⊂ F that has empty intersection,
+consider the number
+                                    δ(S) = min max{d(x, F )},
+                                              x∈Σ F ∈S
+which is positive because the faces in S have empty intersection. Define
+                                         δ=     min      {δ(S)},
+                                              T S⊂F
+                                               F ∈S F =∅
+
+
+which also positive due to the finitude of the families of faces with empty intersection. Now choose
+k ∈ N sufficiently large so that after carrying out k successive subdivisions of our initial partition,
+                              (k)                   (k)
+we obtain a fair partition (Σi )i∈I k with diam(Σi ) = |I|−k/(d−1) diam(Σ) < δ. For such choice,
+                                              (k)                           (k)          T
+consider S the set of faces of Σ that meet Σi . We have δ(S) ≤ diam(Σi ) < δ, so F ∈S F ̸= ∅.
+                                     (k)
+It follows from Lemma A.1 that (Σi )i∈I k satisfies (3).                                             □
+
+
+
+
+          Figure 16. Fair polytopal subdivision of a trapezium into 9 cells. Each star,
+          corresponding to its same-coloured cell, represents an arbitrary choice of (xi )i∈[9]
+          that is consistent with the rules of Remark A.3. The first picture’s choice makes
+          it impossible for (Σi , xi ) to be affinely separable, whilst the second choice makes
+          it possible since xi ∈ Σi .
+
+
+Remark A.5. Note that we have not proven that any sufficiently fine polytopal partition has a
+family (Σi , xi )i∈I which is affinely separable.
+
+                       Appendix B. A fair subdivision of the d-simplex
+   In this section, we first describe the Coxeter-Freudenthal-Kuhn simplicial decomposition of a
+(d − 1)-simplex, and then we study its geometrical properties. The statement of Theorem 2.3 was
+apparently first proved for powers of 2 by Freudenthal [Fre42], answering a question of Brouwer.
+But, up to affine transformations, Freudenthal’s construction can also be derived from Coxeter’s
+Ãd−1 tessellation [Cox34] (see [BKW21]). There are several expositions of the Coxeter-Freudenthal-
+Kuhn for arbitrary q. We will follow the one in the work of Mirzakhani-Vondrák [MV15] where we
+learnt about it. Other presentations include [EG99], see also [BKW21] for a historical account.
+                     A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                                       23
+
+
+
+
+         Figure 17. Fair simplicial subdivision of a triangle into 9 cells. Each star, corre-
+         sponding to its same-coloured cell, represents an arbitrary choice of (xi )i∈[9] that
+         is consistent with the rules of Remark A.3. The only allowed xi ’s for the red,
+         dark-green and indigo cells are not in Σi . However, this choice still makes (Σi , xi )
+         affinely separable.
+
+B.1. Fair simplicial subdivision of the d-simplex. Let q ≥ 1 and consider the (d − 1)-
+dimensional simplex
+                           Rd,q = {y ∈ Rd−1
+                                        +   | 0 ≤ y1 ≤ y2 ≤ · · · ≤ yd−1 ≤ q}.
+We now describe the subdivision of Rd,q into q d−1 pieces constructed in [MV15]. Such subdivision
+will consist of cells whose vertices are the set
+                           Wd,q = {v ∈ Zd−1
+                                        +   | 0 ≤ v1 ≤ v2 ≤ · · · ≤ vd−1 ≤ q}.
+   A cell of the subdivision of Rd,q is indexed by a vertex w ∈ Wd,q−1 and a permutation π :
+[d − 1] → [d − 1]. The permutation π should be consistent with w in the sense that whenever
+wi = wi+1 , we have π(i) < π(i + 1). For any such pair (w, π), the respective cell is defined as
+     σ(w, π) = {y ∈ Rd−1
+                     +   | 0 ≤ (y − w)π−1 (1) ≤ (y − w)π−1 (2) ≤ · · · ≤ (y − w)π−1 (d−1) ≤ 1}.
+We warn the reader that this formula is correct, but it does not match the one in [MV15] where
+the inverse was missing in π −1 ; with the wrong formula it is not true that σ(w, π) ⊂ Rd,d .
+   Mirzakhani and Vondrák [MV15] prove that the collection
+               
+(12)            σ(w, π) | w ∈ Wd,q−1 , π ∈ Sym(d − 1) which is consistent with w
+is a simplicial subdivision into q d−1 pieces. In fact, it is a Sym(d − 1)-fair subdivision for the
+natural Sym(d − 1) → O(d − 1):
+                                                1
+                                      σ(w, π) = π(Rd,q ) + w.
+                                                q
+B.2. Corners and subdivision properties. Fix q ≥ d. The polytope Σ = Rd,q is a (d − 1)-
+simplex in Rd with extreme points x1 = (q, q, . . . , q), x2 = (0, q, . . . , q), ..., xd−1 = (0, 0, . . . , 0, q),
+xd = (0, 0, . . . , 0). Consider the “corner pieces”
+                                                  q−1
+                                         fk = Hxiq (Σ),
+                                         Σ                       k ∈ [d].
+The next proposition asserts that, for these choices of parameters, the subdivision we just intro-
+duced has all the desired properties to perform our Perron tree construction with it:
+Proposition B.1. Let (Σi )i∈I = (σ(w, π))(w,π) be the Coxeter-Freudenthal-Kuhn fair subdivision
+of Σ = Rd,q into q d−1 pieces with q ≥ d, then (3) holds with c = q−1
+                                                                   q . It is also affinely separated.
+
+Proof. Let us define dummy variables y0 = w0 = 0 and yd = wd = q and the difference functionals
+∆k (y) = yk − yk−1 for k ∈ [d]. With these definitions, it is immediate to check that
+                Σ = {y ∈ Rd−1 | ∆k (y) ≥ 0, k ∈ [d]},             fk = {y ∈ Σ | ∆k (y) ≥ 1}.
+                                                                  Σ
+A cell σ(w, π) is formed by points y = w + z, where zπ−1 (1) ≤ . . . zπ−1 (d−1) ≤ 1. This imposes
+zj ∈ [0, 1] for all j ∈ [d − 1], and fixes the relative ordering of the coordinates:
+                                    zk−1 ≤ zk      ⇐⇒      π(k − 1) < π(k).
+For any y ∈ σ(w, π), we substitute yj = wj + zj :
+                                    ∆k (y) = (wk − wk−1 ) + (zk − zk−1 ).
+24                    RAFAEL J. FERNÁNDEZ-DELGADO AND MIKAEL DE LA SALLE
+
+
+
+
+         Figure 18. Plot of the fair simplicial subdivisions of R3,3 and R4,3 described in
+         this section, together with the wire frames for their respective corner pieces. The
+         labelling of each cell has been made explicit in R3,3 , with τ = (1, 2).
+
+
+Let Dk = wk − wk−1 . Since w is non-decreasing, Dk ≥ 0 is an integer. Because zj ∈ [0, 1], then
+(zk − zk−1 ) ∈ [−1, 1]. We analyse the range of ∆k (y) over the whole cell:
+     (1) If Dk ≥ 2: ∆k (y) ≥ 2 − 1 = 1.
+     (2) If Dk = 0: ∆k (y) ≤ 0 + 1 = 1.
+     (3) If Dk = 1:
+            • If π(k − 1) < π(k), then zk−1 ≤ zk , and thus ∆k (y) ≥ 1 + 0 = 1.
+            • If π(k − 1) > π(k), then zk−1 ≥ zk , and thus ∆k (y) ≤ 1 + 0 = 1
+In every possible configuration, the cell σ(w, π) lies completely on one side of the hyperplane
+∆k = 1, i.e. either ∆k (σ) ≤ 1 or ∆k (σ) ≥ 1. Therefore, no cell straddles the boundary of any
+corner piece.
+   Moreover, there is at least one k such that σ ⊂ Σ   e k . Indeed, otherwise by the preceding if y
+belongs to the interior of σ then ∆k (σ) < 1 for all k ∈ [d], and
+                                                      d
+                                                      X
+                                     q = y d − y0 =         ∆k (y) < d,
+                                                      k=1
+
+a contradiction with the assumption that q ≥ d.
+    Define xσ as xk for the smallest k such that ∆k ≥ 1 on σ. This means that σ is contained in
+e k , so (3) holds with c = q−1 .
+Σ                            q
+    Let us show that partition (σ, xσ )σ is affinely separated. Let σ, σ ′ be two distinct cells, and k, k ′
+the indices such that xσ = xk and xσ′ = xk′ . If k = k ′ any affine map separating σ from σ ′ also
+separates xσ from xσ′ . Otherwise we can assume k < k ′ . Then ∆k ≥ 1 on σ, while ∆k ≤ 1 on σ ′ .
+Moreover, we have ∆k (xk ) = q > 0 = ∆k (xk′ ), so the affine map ∆k − 1 separates (σ, xσ ) from
+(σ ′ , xσ′ ).                                                                                            □
+
+
+
+
+         Figure 19. Plot of the fair simplicial subdivisions of R3,2 and R4,3 described
+         in this section, together with the wire frames for their respective corner pieces
+         for c = q−1q . The highlighted cell is not contained in any corner piece, which
+         illustrates the necessity of the condition q ≥ d for Proposition B.1 to hold true.
+                     A CONSTRUCTION OF KAKEYA SETS IN ARBITRARY DIMENSION                                     25
+
+
+                                                References
+[BKW21] Jean-Daniel Boissonnat, Siargey Kachanovich, and Mathijs Wintraecken. Tracing isomanifolds in Rd in
+          time polynomial in d using Coxeter-Freudenthal-Kruhn triangulations. In 37th International Symposium
+          on Computational Geometry (SoCG 2021), 37th International Symposium on Computational Geometry
+          (SoCG 2021), Buffalo, United States, June 2021.
+[Bou06] Jean Bourgain. Remarks on Montgomery’s conjectures on Dirichlet sums, pages 153–165. Springer Berlin
+          Heidelberg, Berlin, Heidelberg, Oct 4 2006.
+[Car15]   Anthony Carbery. A Remark on reverse Littlewood-Paley, restriction and Kakeya, 2015.
+[Cor77]   Antonio Cordoba. The Kakeya Maximal Function and the Spherical Summation Multipliers. American
+          Journal of Mathematics, 99(1):1–22, Feb 1 1977.
+[Cox34] H. S. M. Coxeter. Discrete groups generated by reflections. Annals of Mathematics, 35(3):588–621, 1934.
+[Cra25]   Sam Craig. Failure of weak-type endpoint restriction estimates for quadratic manifolds. J. Geom. Anal.,
+          35(12):14, 2025. Id/No 382.
+[Dav71] Roy Osborne Davies. Some remarks on the Kakeya problem. Mathematical Proceedings of the Cambridge
+          Philosophical Society, 69(3):417–421, May 1971.
+[dLdlS18] Tim de Laat and Mikael de la Salle. Approximation properties for noncommutative Lp -spaces of high
+          rank lattices and nonembeddability of expanders. J. Reine Angew. Math., 737:49–69, 2018.
+[dlS26]   Mikael de la Salle. Kakeya conjecture and high-rank lattice von Neumann algebras, 2026.
+[dlSu]    Mikael de la Salle (https://mathoverflow.net/users/10265/mikael- de- la- salle). Good besi-
+          covich/kakeya sets in high dimension. MathOverflow. URL: https://mathoverflow.net/q/491104
+          (version: 2025-04-16).
+[EG99]    Herbert Edelsbrunner and Daniel R. Grayson. Edgewise subdivision of a simplex. Proceedings of the
+          Annual Symposium on Computational Geometry, pages 24–30, Jan 1 1999.
+[Fef71]   Charles Fefferman. The multiplier problem for the ball. Ann. of Math. (2), 94:330–336, 1971.
+[Fef73]   Charles Fefferman. A note on spherical summation multipliers. Israel Journal of Mathematics, 15(1):44–
+          52, March 1973.
+[Fre42]   Hans Freudenthal. Simplizialzerlegungen von Beschränkter Flachheit. Annals of Mathematics, 43(3):580–
+          582, 1942.
+[Kei99]   Uri Keich. On Lp bounds for Kakeya maximal functions and the Minkowski dimension in R2 . The Bulletin
+          of the London Mathematical Society, 31(2):213–221, Mar 1999.
+[LdlS11] Vincent Lafforgue and Mikael de la Salle. Noncommutative Lp -spaces without the completely bounded
+          approximation property. Duke Math. J., 160(1):71–116, 2011.
+[MV15] Maryam Mirzakhani and Jan Vondrák. Sperner’s colorings, hypergraph labeling problems and fair divi-
+          sion. ACM Other Conferences, pages 873–886, Philadelphia, PA, USA, Jan 4, 2015. Society for Industrial
+          and Applied Mathematics.
+[Sch88]   Isaac Jacob Schoenberg. On the Besicovitch-Perron Solution of the Kakeya Problem. 1988.
+[Wol03] Thomas Hartwig Wolff. Recent work connected with the Kakeya problem, volume 29. American Mathe-
+          matical Society, United States, 2003.
+[WZ25]    Hong Wang and Joshua Zahl. Volume estimates for unions of convex sets, and the Kakeya set conjecture
+          in three dimensions. Feb 24 2025.
+

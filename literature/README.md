@@ -49,3 +49,6 @@ R0037新增OSS2309.03068v2（26页411743bytes，SHA25652342022c2d36a84222fedff2d
 
 
 R0038无新PDF，仍26PDF/29sources。新增exact官方02-framework.tex（65440bytes，Gitblob2cb57ede9ff053e9b3deadab92bfa544c10beb2f，SHA25653e11aade386a455e99202bb8fad6421789ee40644b80c0971c9b4b1daf648cc）。完整2.17、全部内部argument拼接、finite初始化/平均shading/KT及任意集合Hausdorff读出在具名输入下双全文独审通过RED001。实看OAI4 PDF24/25、GWZ2、KT19。原175页包含外部高级proof与§11全部推论的广义全认证不作宣称；G/KT等wholeadvancedproof与2026新颖性仍分列责任，详见metadata/R0038_source_check.json。
+
+
+R0039宏观新增4篇primary PDF/全文/逐篇metadata：LPSW2610.10603v1(156p)、FernandezDelgado–deLaSalle2607.14824v3(25p)、Pohoata–Zakharov2411.13395v1(10p)、Tao2511.15135v1(实际19p，abs comments18p照录)。现30PDF/33catalog条目。LPSW4/148、FD2、PZ2、Tao2已实看，只核所列statement/scope；未全文独证。LPSW17.3/4为新codim2plank输入，非ordinarylineK；FD只有log体积衰减，PZ disks/Minkowski及Tao privatecommunication不冒六维新界。metadata/R0039_source_check.json保存版本/范围、额外web-primary与priority限制。

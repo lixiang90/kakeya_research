@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0038 RED001完成原任意集合2.17、全部Theorem1.1证书/模型/actualguard拼接、SRC有限初始化/平均shading/KT与任意集合Hausdorff读出，修后两实际全文独审通过。ISO/FIN/UNB三类窄度与全部内部归约在具名高级输入下接通；G/KT等wholeadvancedproof及2026前沿新颖性责任分开。DIM条件17/4现覆盖任意Euclidean六维集合，无新无条件界/major。下一唯一R39宏观入口source_assembly/R0038_macro_gate_and_next_target.md，禁止继续旧cubic/crop/ε。
+更新2026-10-17，R0039定期宏观与双全文scope审查完成。R38全部内部argument under named inputs已付，不自动递归重证外部文献。6D17/4属已有KT递推接finite种子，有限检索不认证priority/major。新LPSW2610.10603v1 codim2planks提供不同输入，但普通tube加轴/dual总量/localCF与volume抵消均有费用；下一唯一R40真实d5,k3ell3完整κ≤ζ候选，先付source-to-flake/slicing全部预算和strictsaving，未证。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -67,3 +67,6 @@ R0037 FIN001是来源已有分支重证，不另立新方向：OSS2309.03068v2�
 
 
 R0038当前状态覆盖此前轮次余责：RED001已付完整2.17/所有内部argument拼接/finite-Hausdorff读出；具名外部advancedproof未全独证与2026优先权是不同责任，不再把已付assembly列为gap。source_assembly/INDEX.md与唯一下一R39macro入口详列；旧五维失败/冻结记录保持，不以source核验解冻AFF3、2Dgrowth或genericcompletion。
+
+
+R0039策略覆盖：旧N5-STICKY-MATRIX-01只因newLPSW几何输入而允许一次有界重开，nextspec notes/40_multiscale/sticky_flakes/R0039_next_actual_five_dimensional_flake_target.md；不新增同义ID、不解冻旧BSG/action/carry/CP⇔PM。localparallelCantor校准不是actualsource反例，也不是新增lemma。若R40未越过现有费用则冻结连接并macro，常规下次macroR42。新4primary入库30PDF/33sources，不认证无条件新维数/major。
