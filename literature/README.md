@@ -67,3 +67,6 @@ R0043仍31PDF/34sources，无新PDF或在线版次认证；versioned WZ2609.2203
 
 
 R0044仍31PDF/34sources，无新PDF/渲染/online版次认证；实际读WZ Def17.2–17.4、§19.1 goodq/coherence、19.2及20.2，沿用R16独立计数与R42/43 PW输入。scope见metadata/R0044_source_check.json，最新onlinefrontier仍R42。下一Kakeya–BL调用前须先核一手精确版本，本轮未调用未经核定理。
+
+
+R0045新增Zorin-Kranich1807.09604v4与Zhang2608.17952v2两PDF/text/meta，库33PDF/36sources。精确scope/hash及读页见metadata/R0045_source_check.json。仅新输入版本/适用性有限online核查，非全前沿或priority认证。ZK1.5用于selectedtuples，whole高级proof具名；新Zhang仅为下一fixed rational mixednorm输入，q趋1及Hausdorff附录完整proof未独审，不把perturbed mixednorm当定理。

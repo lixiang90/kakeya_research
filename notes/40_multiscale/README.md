@@ -17,3 +17,6 @@ notes/40_multiscale/R0043_actual_PW_coarsening_and_extremal_class_closure.md：�
 
 
 R0044当前入口：notes/40_multiscale/R0044_actual_endpoint_palette_and_polynomial_budget.md。actual endpoint/slope标签与原mass全付，affine pieces精确回原CW，localclamp非affine证书也无新κ限制；一主轮停止已执行。下一 notes/40_multiscale/R0044_next_four_arm_transversality_gate.md，先核不同原tube四臂BL的actual提取及overlap，不以generic横截代替。
+
+
+R0045 notes/40_multiscale/R0045_actual_four_arm_BL_gate_and_rank_budget.md：actual原四臂/nearplane/KBL selectedtuple接口和条件finiteBL桥已审；goodBL原质量未付，单endpoint阈值5/4使固定加臂无新出口，执行停止。下一 notes/20_dimension_lifting/R0045_next_rational_mixed_norm_seed_gate.md，不同exact rational arithmetic机制，非rank/ρ微调。

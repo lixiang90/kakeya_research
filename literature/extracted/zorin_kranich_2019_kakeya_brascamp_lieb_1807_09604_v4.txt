@@ -1,0 +1,1167 @@
+                                                           KAKEYA–BRASCAMP–LIEB INEQUALITIES
+
+                                                                                   PAVEL ZORIN-KRANICH
+
+
+                                                    Abstract. We prove a sharp common generalization of endpoint multilinear
+                                                    Kakeya and local discrete Brascamp–Lieb inequalities.
+
+
+
+
+                                                                                     1. Introduction
+                                           1.1. Brascamp–Lieb inequalities. Brascamp–Lieb (BL) inequalities are a family
+arXiv:1807.09604v4 [math.CA] 11 Sep 2019
+
+
+
+
+                                           of Lebesgue space estimates for multilinear forms that generalize Hölder’s inequality,
+                                           Young’s convolutions inequality, and the Loomis–Whitney inequality. Brascamp
+                                           and Lieb proved that these inequalities are extremized by Gaussians [BL76; Lie90],
+                                           while Bennett, Carbery, Christ, and Tao gave a combinatorial characterization of
+                                           the geometric situations in which these inequalities hold [Ben+08; Ben+10]. The
+                                           latter characterization was recently extended to certain regularized Brascamp–Lieb
+                                           inequalities, of a type relevant to Fourier decoupling theory, by Maldague [Mal19].
+                                           Definition 1.1. We say that a function on a Euclidean space is constant at scale
+                                           r if the space can be partitioned in cubes with side length r, on each of which the
+                                           function is constant.
+                                              Let T~ = (T1 , . . . , Tm ) be a tuple of linear subspaces of Rn , and let p~ = (p1 , . . . , pm )
+                                           be a tuple of positive real numbers. For 0 < r < R < ∞ the Brascamp–Lieb constant
+                                           BL(T~ , p~, (r, R)) is the smallest constant A such that the inequality
+                                                                  ˆ         m                          m ˆ
+                                                                           Y
+                                                                                            pj
+                                                                                                      Y             p
+                                           (1.1)                              (fj (x + Tj )) dx ≤ A               fj j
+                                                                  B(0,R) j=1                               j=1    Rn /Tj
+
+                                           holds for every tuple of integrable functions fj on Rn /Tj that are constant at scale r.
+                                              More general truncations and regularity conditions on the functions fj were stud-
+                                           ied in [Ben+08, §8]. It is known from [Ben+08, Lemma 8.14 and Corollary 8.15] that
+                                           the analogue of the inequality (1.1) with Gaussian cutoffs is extremized by Gauss-
+                                           ian inputs. The following result characterizes the growth rate of Brascamp–Lieb
+                                           constants.
+                                           Theorem 1.2 ([Mal19]). For every tuple of linear subspaces T~ and exponents p~
+                                           as in Definition 1.1 there exist constants 0 < c < C < ∞ such that for every
+                                           0 < r < R < ∞ we have
+                                           (1.2)                   cRκ rκ̃ ≤ BL(T~ , p~, (r, R)) ≤ CRκ rκ̃ ,
+                                           where
+                                                                                m
+                                                                                X
+                                           (1.3)       κ := sup dim V −                  pj dim(V /Tj ),
+                                                             V ≤Rn                 j=1
+                                                                     m
+                                                                     X                                           m
+                                                                                                                 X
+                                                                               
+                                           (1.4)       κ̃ := n −           pj nj − κ = inf n codim V −                 pj codim(V /Tj ).
+                                                                                            V ≤R
+                                                                     j=1                                         j=1
+                                           Here nj := n − dim Tj , and the supremum and infimum are taken over all linear
+                                           subspaces of Rn .
+                                              Theorem 1.2 is stated in [Mal19] for r = 1. This case implies the estimate (1.2)
+                                           for general r, since by scaling we have
+                                                                                       Pm
+                                           (1.5)              BL(T~ , p~, (r, R)) = rn− j=1 pj nj BL(T~ , p~, (1, R/r)).
+                                              2010 Mathematics Subject Classification. 26D15 (Primary) 42B99, 52C07 (Secondary).
+                                                                                                   1
+                         KAKEYA–BRASCAMP–LIEB INEQUALITIES                                   2
+
+
+We briefly recall several special cases of Theorem 1.2 known prior to [Mal19].
+
+1.1.1. Discrete BL inequalities. The exponent (1.3) is always ≥ 0, as can be seen by
+inserting V = {0}. The exponent (1.3) vanishes if and only if for every subspace
+V ≤ Rn we have
+                                            m
+                                            X
+(1.6)                           dim V ≤           pj dim(V /Tj ).
+                                            j=1
+
+
+Hence the discrete BL constant BLdis (T~ , p~) := limR→∞ BL(T~ , p~, (1, R)) is finite if and
+only if (1.6) holds. This is the characterization of discrete BL inequalities originally
+proved in [Ben+10, Theorem 2.5].
+
+1.1.2. Local BL inequalities. The exponent (1.4) is always ≤ 0, as can be seen by
+inserting V = Rn . The exponent (1.4) vanishes if and only if for every linear subspace
+V ≤ Rn we have
+                                            m
+                                            X
+(1.7)                         codim V ≥           pj codim(V /Tj ).
+                                            j=1
+
+
+Hence the local BL constant BLloc (T~ , p~) := limr→0 BL(T~ , p~, (r, 1)) is finite if and only
+if (1.7) holds. This is the characterization of local BL inequalities originally proved
+in [Ben+08, Theorem 8.17] and [Ben+10, Theorem 2.2].
+
+1.1.3. Scale-invariant BL inequalities. The scale-invariant BL constant
+
+(1.8)                     BL(T~ , p~) :=     lim        BL(T~ , p~, (r, R))
+                                           r→0,R→∞
+
+is finite if and only if both exponents (1.3) and (1.4) vanish, which happens if and
+only if the conditions (1.6) and (1.7) hold. The latter two conditions imply the
+scaling condition
+                                                m
+                                                X
+(1.9)                                      n=         p j nj .
+                                                j=1
+
+In fact, any two of the conditions (1.6), (1.7), and (1.9) imply the third. The fact
+that these conditions characterize the finiteness of the scale-invariant BL constant
+was proved in [Ben+08, Theorem 1.15].
+
+1.1.4. Loomis–Whitney inequality. One of the earliest and most important (scale-
+invariant) BL inequalities is the Loomis–Whitney inequality [LW49], which relies only
+on the product structure of Rn and not on the geometry of R. In its affine invariant
+form, it states that for m = n, p1 = · · · = pm = 1/(m − 1), and k1 = · · · = km = 1,
+where kj := dim Tj , we have
+                                                m
+                                                ^          −1/(m−1)
+(1.10)                         BL(T~ , p~) =          Tj              .
+                                                j=1
+
+Here we identify each linear subspace Tj ≤ Rn with the associated normalized volume
+form (the arbitrary choice of orientation does not affect the right hand-side of (1.10)).
+It is easy to see that (1.10) continues to hold in the case 2 ≤ m ≤ n, p1 = · · · = pm =
+1/(m − 1), k1 + · · · + km = n; the corresponding multilinear forms are sometimes
+called k-plane transforms. More general Brascamp–Lieb inequalities that rely only
+on product structure were established by Finner [Fin92].
+                         KAKEYA–BRASCAMP–LIEB INEQUALITIES                                            3
+
+
+1.2. Multilinear Kakeya inequalities. Kakeya–Brascamp–Lieb (KBL) inequal-
+ities are generalizations of Brascamp–Lieb inequalities (1.1) in which functions fj ,
+constant in directions of the subspaces Tj , are replaced by sums of functions constant
+in varying directions. The first KBL inequality was the multilinear Kakeya inequal-
+ity proved by Bennett, Carbery, and Tao [BCT06]. Their work was motivated by
+applications to the Fourier restriction problem and generalized the Loomis–Whitney
+inequality (see Section 1.1.4). A simplified proof of a slightly weaker result, which is
+still adequate for all known applications, was given by Guth [Gut15].
+   The multilinear Kakeya inequality of Bennett, Carbery, and Tao plays a central
+role in the proof of the `2 decoupling theorem for the paraboloid by Bourgain and
+Demeter [BD15] (see also [BD17] for a streamlined exposition, in which the multi-
+linear Kakeya inequality is applied directly, without passing through the multilinear
+restriction theorem). More general KBL inequalities were first proved in [Ben+18,
+Theorem 1.2] and applied in the proof of the decoupling theorem for the moment
+curve by Bourgain, Demeter, and Guth [BDG16]. We refer to [GZ18] and references
+therein for the current state of development in this direction.
+   The proofs of the multilinear Kakeya inequality in [BCT06; Gut15] proceed by
+induction on scales and do not yield the optimal endpoint result. The endpoint
+version of the multilinear Kakeya inequality was established by Guth [Gut10] us-
+ing a version of the polynomial method. A more precise result that involves the
+transversality parameters (1.10) was obtained in [BG11, Theorem 6]. Guth’s proof
+was later simplified by Carbery and Valdimarsson [CV13]. Most recently, Ruixiang
+Zhang [Zha18] obtained endpoint KBL inequalities that extend all scale-invariant
+BL inequalities (see Section 1.1.3).
+1.3. Main result. Our main result below tells that local discrete Brascamp–Lieb
+inequalities in Definition 1.1 can be extended to Kakeya–Brascamp–Lieb inequalities
+with a loss in the constant that depends only on the dimension of the integration
+domain and the total power in the inequality.
+Theorem 1.3. Let n ∈ N = {1, 2, . . .}, m ≥ 2, k1 , . . . , km ∈ N, and 0 < p1 , . . . , pm <
+∞ with
+                                        Xm
+(1.11)                          P :=       pj ≥ 1.
+                                           j=1
+
+For each 1 ≤ j ≤ m let Tj be a family of kj -dimensional affine subspaces of Rn . Let
+R > 1 and assume that for some A < ∞ and every tuple T~ = (T1 , . . . , Tm ) with
+Tj ∈ Tj we have
+(1.12)                            BL(T~ , p~, (1, R)) ≤ A.
+Then for any functions fj,Tj constant at scale 1 we have
+          ˆ      Ym  X                    p j            m  X ˆ
+                                                           Y                               p j
+(1.13)                     fj,Tj (x + Tj )      dx ≤ C P A                         fj,Tj          .
+             B(0,R) j=1 T ∈T                                 j=1 Tj ∈Tj   Rn /Tj
+                         j   j
+
+   Here and later C denotes a constant that depends only on the dimension n, but
+may change between uses. We write A . B if A ≤ CB.
+   The restriction P ≥ 1 in Theorem 1.3 is harmless, since BL inequalities are only
+nontrivial in this regime.
+   In the Loomis–Whitney case, Theorem 1.3 reduces to [Gut10, Theorem 1.3]. In
+the scale-invariant case, Theorem 1.3 refines [Zha18, Theorem 1.11], where a linear
+dependence of the estimate (1.13) on the bound in (1.12) was obtained for rational
+exponents pj (this is not explicit in the statement of [Zha18, Theorem 1.11], but
+is clear from the statement of [Zha18, Theorem 8.1] from which it is deduced).
+Theorem 1.3 is potentially useful in Fourier decoupling theory, see the discussion of
+the so-called “ball inflation” in [GZ18].
+   In the Loomis–Whitney case, the uniform bound (1.12) can be obtained using the
+explicit description of the BL constants in (1.10). In the more general situation of
+                              KAKEYA–BRASCAMP–LIEB INEQUALITIES                                                     4
+
+
+Definition 1.1, it is known that, for a fixed tuple of exponents p~, the upper bound
+in (1.2) is locally uniform in T~ . This was proved in [Ben+18, Theorem 2.1] for local
+BL constants and in [Mal19] in the situation of Definition 1.1.
+   That local uniformity was made more precise in [Ben+17], where it is proved that,
+for fixed exponents p~, the scale-invariant BL constant BL(T~ , p~) depends continuously
+on the tuple of subspaces T~ . In [Gar+18] this continuity result was further refined
+at rational points.
+
+1.4. A more precise KBL inequality. Although Theorem 1.3 is adequate for
+applications to decoupling, the uniform bound (1.12) is not a natural hypothesis.
+In the Loomis–Whitney setting more precise results, which remain meaningful in
+absence of such a uniform bound, were proved in [BG11, Theorem 6] and [CV13,
+Theorem 1]. These results were extended to the k-plane transform case in [Zha18,
+Theorem 1.5]. In order to extend these results to general BL data, we will use the
+notion of Fremlin projective tensor product.
+   The Fremlin projective tensor product norm is the largest lattice norm on the
+algebraic tensor product of Banach lattices for which the inequality
+
+                                  kF1 ⊗ · · · ⊗ Fm k ≤ kF1 k · · · kFm k
+
+holds. We will only need a special case of this notion, in which it has a simple explicit
+description.
+
+Definition 1.4. Let X1 , . . . , Xm be measure spaces and 1 < q1 , . . . , qm < ∞ expo-
+nents with
+                                       m
+                                      X   1
+                                            = 1.
+                                         qj
+                                                 j=1
+
+The Fremlin projective tensor product ⊗¯m     qj
+                                         j=1 L (Xj ) is the space of measurable func-
+tions F : X1 × · · · × Xm → R such that the norm
+                                                                                    m
+                                                                                    Y
+(1.14)          kF k⊗¯ m    qj
+                       j=1 L (Xj )
+                                   :=                          inf                          kFj kLqj (Xj )
+                                          Fj ∈Lqj (Xj ) : Fj ≥0, |F |≤F1 ⊗···⊗Fm
+                                                                                    j=1
+
+is finite.
+
+  Subadditivity of the functional (1.14) is a consequence of Hölder’s inequality with
+exponents q1 , . . . , qm , see [Sch84, Theorem 2.2].
+  We denote by Q the grid of dyadic cubes in Rn with side length 1, and for R > 1
+we denote by QR the set of Q ∈ Q at distance at most R from the origin.
+
+Theorem 1.5.  PLet n ∈ N = {1, 2, . . .}, m ≥ 2, k1 , . . . , km ∈ N, and 0 < p1 , . . . , pm <
+∞ with P := m   j=1 pj ≥ 1. For each 1 ≤ j ≤ m let Tj be a family of kj -dimensional
+affine subspaces of Rn , not necessarily distinct. Then for every R > 1 we have
+               X                                                                                    m
+                                                                                                    Y
+(1.15)                kBL(T~ , p~, (1, R))−1/P kP⊗¯ m `P/pj ({T ∈T |T ∩Q6=∅}) ≤ C P                     |Tj |pj .
+                                                       j=1           j    j   j
+              Q∈QR                                                                                  j=1
+
+  Here |Tj | denotes the cardinality of the family Tj , taking into account multiplicity.
+The norm on the left-hand side of (1.15) can be written more explicitly as
+
+         kBL(T~ , p~, (1, R))−1/P kP⊗¯ m `P/pj ({T ∈T |T ∩Q6=∅})
+                                         j=1           j   j   j
+                                                                     m
+                                                                     Y
+               =                         inf                             kFj kP`P/pj ({T ∈T |T ∩Q6=∅})
+                   Fj ≥0 : BL(T~ ,~
+                                  p,(1,R))−1/P ≤F1 (T1 )···Fm (Tm ) j=1                 j       j   j
+
+
+                                                                   m
+                                                                   Y
+               =                       inf                             kFj k`1/pj ({T ∈T |T ∩Q6=∅}) .
+                                                                                    j       j   j
+                   Fj ≥0 : BL(T~ ,~
+                                  p,(1,R))−1 ≤F1 (T1 )···Fm (Tm ) j=1
+                            KAKEYA–BRASCAMP–LIEB INEQUALITIES                                                              5
+
+
+Proof of Theorem 1.3 assuming Theorem 1.5. If (1.12) holds, then by monotonicity
+of the functional (1.14) we have
+
+                    kBL(T~ , p~, (1, R))−1/P kP⊗¯ m `P/pj ({T ∈T |T ∩Q6=∅})
+                                                            j=1            j        j    j
+
+                             ≥ Ak1kP⊗¯ m `P/pj ({T ∈T |T ∩Q6=∅})
+                                       j=1        j  j j
+
+                                    M
+                                    Y
+                             =A           |{Tj ∈ Tj | Tj ∩ Q 6= ∅}|pj .
+                                    j=1
+
+Inserting this inequality in (1.15), we obtain (1.13) for functions fj that are the
+characteristic functions of 1-neighborhoods of Tj in Rn /Tj . Since we allow repetitions
+of Tj ’s, this result immediately extends to functions fj that are constant at scale 1 and
+take only integer values. By homogeneity this extends to functions taking rational
+values, and by the monotone convergence theorem to arbitrary functions constant at
+scale 1.                                                                                 
+
+1.4.1. Loomis–Whitney case. In the case q1 = · · · = qm = m it is easy to see that
+the norm (1.14) is larger than the Lm norm on the product space:
+
+(1.16)                       kF k⊗¯ m    m
+                                    j=1 L (Xj )
+                                                ≥ kF kLm (X1 ×···×Xm ) .
+
+Suppose that 2 ≤ m ≤ n, k1 + · · · + km = n, and p1 = · · · = pm = 1/(m − 1). Then
+by (1.10) we have
+                                                                      m
+                                                                      ^                 −1/(m−1)
+(1.17)              BL(T~ , p~, (1, R)) ≤ BL(T~ , p~) =                        Tj                   .
+                                                                      j=1
+
+From (1.17) and (1.16) it follows that
+
+              kBL(T~ , p~, (1, R))−1/P kP⊗¯ m `P/pj ({T ∈T |T ∩Q6=∅})
+                                                  j=1             j    j   j
+                             m
+                             ^         1/(P (m−1))
+                    ≥k            Tj                  kP⊗¯ m `P/pj ({T ∈T |T ∩Q6=∅})
+                                                            j=1            j    j       j
+                            j=1
+                             m
+                            ^          1/m
+                    ≥k            Tj         kP`m (Qm {Tj ∈Tj |Tj ∩Q6=∅})
+                                                      j=1
+                            j=1
+                                 X                               X              m
+                                                                                 ^               1/(m−1)
+                    =                           ···                                         Tj              .
+                            T1 ∈T1 : T1 ∩Q6=∅         Tm ∈Tm : Tm ∩Q6=∅ j=1
+
+Inserting this estimate in (1.15) and observing that the resulting estimate does not
+depend on R, we recover the following result.
+
+Corollary 1.6 ([Zha18, Theorem 1.5]). In the setting of Theorem 1.5 suppose that
+Pm
+ j=1 kj = n. Then
+
+                                                                  m                                   m
+           X         X                          X                 ^            1/(m−1)                Y
+(1.18)                             ···                                Tj                         ≤C       |Tj |1/(m−1) .
+           Q∈Q T1 ∈T1 :T1 ∩Q6=∅          Tm ∈Tm :Tm ∩Q6=∅ j=1                                         j=1
+
+    Corollary 1.6 in turn recovers the results of [Gut10; CV13]. In Guth’s case [Gut10]
+all affine subspaces are one-dimensional (lines). Carbery and Valdimarsson [CV13]
+state a result for m families of lines with 2 ≤ m ≤ n. In order to recover their result
+in the case m < n, one can replace the m-th family of lines by a family of affine
+subspaces of dimension n − m + 1 as follows. For each line find an orthonormal basis
+e1 , . . . , en of Rn such that e1 points in the direction of that line. Replace the line by
+the collection of affine subspaces containing the line and spanned by e1 and a subset
+of {e2 , . . . , en } of cardinality n − m.
+                         KAKEYA–BRASCAMP–LIEB INEQUALITIES                                              6
+
+
+1.5. KBL inequality for varieties. Following [BG11] and [Zha18], we deduce The-
+orem 1.5 from a corresponding result for algebraic varieties.
+Theorem 1.7. Let H1 , . . . , HmPbe algebraic varieties in Rn with dim Hj = kj and
+0 < p1 , . . . , pm < ∞ with P := m
+                                  j=1 pj ≥ 1. Then for every R > 1 we have
+                                                                                    m
+            X         −−−→                                                          Y
+(1.19)            kBL(Txj Hj , p~, (1, R))−1/P kP m       P/pj             ≤C   P
+                                                                                        (deg Hj )pj ,
+                                                   ¯ j=1 Lx
+                                                   ⊗             (Hj ∩Q)
+                                                            j                       j=1
+           Q∈QR
+where each Hj is equipped with the normalized kj -dimensional surface measure on
+smooth points, and where Tx H denotes the tangent space to H at x.
+  In the scale-invariant case, Theorem 1.7 with rational exponents pj essentially
+reduces to [Zha18, Theorem 8.1], up to the estimate (1.16).
+Proof of Theorem 1.5 assuming Theorem 1.7. By scaling, Theorem 1.7 implies a sim-
+ilar statement with Hj ∩ Q replaced by Hj ∩ 3Q.
+   Translating the Tj ’s in each family Tj slightly, we may assume that none of them
+coincide. Then their union Hj := ∪Tj ∈Tj Tj is a variety of degree . |Tj |, and almost
+all points in each Tj are smooth points of Hj . It remains to observe that, for a k-
+dimensional affine subspace T ⊂ Rn and a unit length dyadic cube Q, non-emptiness
+of the intersection T ∩ Q 6= ∅ implies volk (T ∩ 3Q) & 1.                           
+   The proof of Theorem 1.7 consists of two parts. The first part is Guth’s construc-
+tion of varieties with prescribed bounds on directional surface area in many cubes,
+Theorem 2.1. Its proof, which is presented in Section 2, is not new, but we make
+a few simplifications compared to [CV13]. The second part consists in exploiting
+Theorem 2.1, which we do in Section 3. The outline of this argument is close to
+[Zha18], but using the Fremlin tensor product we avoid a few technical difficulties of
+that article.
+1.6. Notation.
+1.6.1. Exterior algebra. Let V, W be real vector spaces. Recall that Λk V denotes the
+k-th exterior power of V . A bilinear form h·, ·i : V × W → R induces a bilinear form
+Λk V × Λk W → R via
+(1.20)             hv1 ∧ · · · ∧ vk , w1 ∧ · · · ∧ wk i := det(hvi , wj i)ki,j=1 .
+In particular, an inner product on V induces an inner product on Λk V , which in
+turn induces a norm.
+  Throughout this article n will remain fixed. We write Λk := Λk Rn and let
+                     |Λk | := {v1 ∧ · · · ∧ vk | v1 , . . . , vk ∈ Rn }/{±1}
+denote the set of simple k-fold wedge products of vectors in Rn modulo multiplication
+by ±1. We work with |Λk | in place of Λk in order to avoid dependence on choices of
+orientation of various spaces.
+   The wedge product ∧ is well-defined as a map |Λk1 | × |Λk2 | → |Λk1 +k2 |, the Hodge
+star ? is well-defined as a map from |Λk | to |Λn−k |, and the absolute value of the inner
+product (induced by (1.20) from the Euclidean inner product) is well-defined as a
+map from |Λk |×|Λk | to [0, ∞). In particular, also the norm |v| is well-defined on |Λk |.
+More geometrically, |v1 ∧ · · · ∧ vk | is the k-dimensional volume of the parallelepiped
+spanned by v1 , . . . , vk .
+   These operations can be extended to measures as follows. Given measures µ1 , µ2 on
+|Λk1 | and |Λk2 |, we denote by µ1 ∧µ2 the measure on |Λk1 +k2 | that is the pushforward
+of µ1 × µ2 under ∧. Similarly, given a measure µ on |Λ1 |, we denote by µ∧k the
+measure on |Λk | that is the pushforward of the k-fold product µ × · · · × µ under the
+map (v1 , . . . , vk ) 7→ v1 ∧ · · · ∧ vk . Given a measure µ on |Λk |, we denote by ?µ the
+measure on |Λn−k | that is the pushforward of µ under ?. Given measures µ1 , µ2 on
+|Λk |, we denote by hµ1 , µ2 i the measure on [0, ∞) that is the pushforward of µ1 × µ2
+under the map (v1 , v´2 ) 7→ |hv1 , v2 i|. Finally, we denote the first moment of a measure
+µ on |Λk | by |µ| := |v| dµ(v).
+                       KAKEYA–BRASCAMP–LIEB INEQUALITIES                             7
+
+
+   For a k-dimensional affine subspace T ⊂ Rn , abusing the notation, we also denote
+by T the unique element of |Λk | corresponding to the normalized Euclidean volume
+form on T . Since the volume form is unique up to the choice of orientation, T is well
+defined as an element of |Λk |.
+   For a k-dimensional variety H in Rn , we denote by TQ H the push-forward of the
+surface measure on smooth points of H ∩ Q to |Λk | under the map that assigns to a
+point the normalized volume form of its tangent space.
+
+1.6.2. Directional area. For a hypersurface Z ⊂ Rn , let N Z denote the pushforward
+of the normalized surface measure to |Λ1 | under the map that assigns to a smooth
+point x ∈ Z the normalized normal vector Nx Z at that point. In particular, N Z =
+?T Z.
+   Let Zp := {x | p(x) = 0} denote the zero set of a polynomial. For a probability
+measure σ on the space of non-zero polynomials in n variables we denote the average
+normal measure by
+                                    ˆ
+(1.21)                      µσ,Q := N (Zp ∩ Q) dσ(p).
+
+This is a measure on the space |Λ1 |.
+   To a measure µ on |Λ1 | we associate the seminorm
+                                       ˆ
+(1.22)           sµ (v) := |hv, µi| :=    |hv, wi| dµ(w),   v ∈ Rn .
+                                       |Λ1 |
+
+This is well-defined because the absolute value of the inner product is well-defined
+modulo {±1}. In the case µ = N Z the seminorm (1.22) is the directed volume
+[Gut10] or directional area [CV13] of Z in the direction v ∈ Rn . We abbreviate
+
+                                    sσ,Q := sµσ,Q .
+
+We denote the Euclidean unit ball of Rn by B. For seminorm s on Rn we denote the
+associated unit ball by
+
+(1.23)                       Bs := {v ∈ Rn | s(v) ≤ 1}.
+
+Acknowledgment. The extension of Theorem 1.3 beyond the scale-invariant case
+(1.9) is motivated by ongoing joint work with Shaoming Guo and Ruixiang Zhang.
+This work was partially supported by the Hausdorff Center for Mathematics (DFG
+EXC 2047). I thank the anonymous referees for numerous corrections and helpful
+suggestions pertaining to exposition.
+
+
+                     2. Polynomials with high visibility
+   The following result is essentially due to Guth [Gut10]. In this section we present
+a simplified proof, which is due to Carbery and Valdimarsson [CV13].
+
+Theorem 2.1. For every R > 1 there exists a positive integer
+
+(2.1)                                  D.R
+                                                   P
+such that for every function M : QR → [0, ∞) with Q∈QR M (Q) = 1 there exists a
+probability measure σ on the space of non-zero polynomials in n variables of degree
+at most D such that for every Q ∈ QR we have
+
+(2.2)                          Rn M (Q) vol Bsσ,Q . 1
+
+and
+
+(2.3)                               Bsσ,Q ⊂ CB.
+                       KAKEYA–BRASCAMP–LIEB INEQUALITIES                            8
+
+
+2.1. Reduction to a global estimate. Since we are mostly interested in the zero
+sets of polynomials, we will consider normalized polynomials. Fix some norm on the
+space of all polynomials in n variables with real coefficients, and let PD denote the
+set of polynomials of degree at most   D with norm 1. The set PD is homeomorphic
+to the sphere of dimension D+n         ∼ Dn .
+                                 
+                               n   − 1
+   The measure σ in Theorem 2.1 will be a mollification of a point measure. Let
+
+(2.4)                        µp,Q :=                N (Zp0 ∩ Q),
+                                       p0 ∈B(p,)
+
+where  > 0 will be a very small number to be chosen later (depending
+                                                               ffl    on the function
+M in Theorem 2.2), B(p, ) is an -ball on the sphere PD , and denotes the average
+with respect to the surface measure on PD . We will omit the dependence of µp,Q
+on  from the notation. The mollification is necessary in order to ensure continuity
+of the map p 7→ µp,Q , which is needed in the Borsuk–Ulam theorem. Specifically,
+continuity will be used in (2.14).
+   We define the visibility of a seminorm s on Rn by
+(2.5)                   Vis(s) := (vol Ks )−1 ,       Ks := B ∩ Bs .
+Since Ks ⊆ B, we always have Vis(s) & 1. The conventions for both visibility and
+M in [CV13] differ by a power n from those in [Gut10]. We use the conventions in
+[Gut10].
+  The next result is the core of Guth’s argument from [Gut10]. Here and later we
+abbreviate
+                sp,Q := sµp,Q , Kp,Q := Ksp,Q , Visp,Q := Vissp,Q .
+Theorem 2.2 ([Gut10, Lemma 6.6]). There exists a dimensional constant c =
+c(n) > 0 such that for every positive integer D and every function M : Q → [0, ∞)
+with
+                              X           1/n
+(2.6)                                M (Q)      ≤ cD
+                                 Q∈Q
+
+there exist an  > 0 and a polynomial p ∈ PD such that for every Q ∈ Q we have
+(2.7)                              Visp,Q ≥ M (Q).
+Proof of Theorem 2.1 assuming Theorem 2.2. Let
+                                    Y       Yn
+                       p0 (x) :=               (xi − c).
+                                   c∈Z+1/2:|c|≤R+1 i=1
+
+This is a polynomial of degree . R, and we have
+(2.8)                           |hv, N (Zp0 ∩ Q)i| & |v|
+for all Q ∈ QR and all v ∈ Rn .
+   Applying Theorem 2.2 with D being a sufficiently large multiple of R and
+                                   (
+                                    Rn M (Q), Q ∈ QR ,
+                         M̃ (Q) :=
+                                    0          otherwise,
+we obtain some p ∈ PD and  > 0 such that (2.7) holds with M̃ in place of M . Let
+σ be the pushforward of the normalized measure on B(p, ) under multiplication by
+p0 . Since deg p0 . R, the measure σ is supported on a set of polynomials of degree
+. R. Moreover, for every non-zero polynomial p0 we have
+                     N (Zp0 p0 ∩ Q) = N (Zp0 ∩ Q) + N (Zp0 ∩ Q).
+It follows from (2.8) that
+                                   sσ,Q (v) & |v|
+for every Q ∈ QR                 n
+                  and every v ∈ R , and this implies (2.3).
+   Furthermore, for Q ∈ QR with M (Q) 6= 0 we have
+                                 Bsσ,Q ⊆ Bp,Q ∩ CB,
+                          KAKEYA–BRASCAMP–LIEB INEQUALITIES                           9
+
+
+hence by (2.7) we obtain
+              vol(Bsσ,Q ) . vol(C −1 Bp,Q ∩ B) ≤ vol(Kp,Q ) ≤ M̃ (Q)−1 ,
+and this implies (2.2).                                                              
+Remark 2.3. The idea of replacing p by pp0 was introduced just after the formula
+(7.2) of [Gut10]. A literal interpretation of [Gut10] suggests using σ that is the
+normalized measure on B(pp0 , ). In [CV13, §4] it was observed that this would
+require an additional continuity argument, and an alternative approach was given.
+That alternative approach requires an application of Theorem 2.2 with M replaced
+by λM with
+                           λ ∼ max M (Q)−1 & Rn .
+                                 Q∈supp(M )
+Consequently, it produces polynomials of a higher, and in general unbounded, degree.
+The degree does not matter if the scaling condition (1.9) holds, but it seems to become
+important in our more general situation. The more convenient interpretation of the
+replacement p 7→ pp0 above, in which σ is the normalized measure on p0 B(p, ), was
+first made explicit in [Zha18, formula (6.6)], which in our notation corresponds to
+sσ,Q .
+  Since for every polynomial p ∈ PD and every cube Q we have Visp,Q & 1, the
+condition (2.7) has content only for those Q with M (Q) & 1. Hence we may assume
+that M is finitely supported and M (Q) is either 0 or & 1 for every Q.
+2.2. The Borsuk–Ulam theorem and a covering lemma. The existence of a
+polynomial p claimed in Theorem 2.2 can be equivalently stated by saying that the
+sets
+                         S(Q) := {p ∈ PD | Visp,Q ≤ M (Q)}
+do not cover PD , provided that  is sufficiently small. In order to show this, we will
+write these sets as unions of sets to which Lemma 2.5 below applies.
+Theorem 2.4 (Borsuk–Ulam). Let N ≥ J and suppose that F : SN → RJ is a
+continuous function that satisfies F (−x) = −F (x) for all x ∈ SN . Then there exists
+an x ∈ SN such that F (x) = 0.
+  See [Mat03] for a discussion of applications and various equivalent forms of this
+theorem. Some of these equivalent forms (known as Lusternik–Schnirelmann results)
+take the form of covering statements for the sphere. We will use one such statement.
+Lemma 2.5 ([CV13, §5]). Suppose that Ai ⊆ SN for 1 ≤ i ≤ J, and suppose that
+for each i, Ai ∩ (−Ai ) = ∅. If J ≤ N , then the 2J sets Ai and −Ai do not cover SN .
+  Note that no topological hypothesis on the sets Ai is needed.
+Proof. Without loss of generality we may assume that all sets Ai are non-empty.
+Define F : SN → RJ by Fi (x) := d(x, −Ai )−d(x, Ai ) for 1 ≤ i ≤ J and x ∈ SN . Then
+F is continuous and F (−x) = −F (x) for all x, so by Theorem 2.4 there is an x ∈ SN
+with F (x) = F (−x) = 0. We claim that this x does not belong to any Ai or to −Ai .
+Indeed, if x ∈ Ai , then d(x, Ai ) = 0, hence also d(x, −Ai ) = Fi (x) + d(x, Ai ) = 0,
+hence x ∈ −Ai , a contradiction. If x ∈ −Ai , then we obtain a contradiction by the
+same argument with x replaced by −x.                                                 
+2.3. Discretization of the set of norms. In this section we discretize the set of
+all norms on Rn . The argument follows [Gut10, p. 278].
+   Let K denote the set of centrally symmetric convex bodies in Rn with the metric
+                    d(K, L) := log inf{α ≥ 1 | α−1 K ⊆ L ⊆ αK}.
+This metric is GL(n)-invariant. Let E ⊂ K denote the class of centered ellipsoids
+in Rn , that is, images of the unit ball B under invertible linear maps A ∈ GL(n).
+Notice that d(A(B), B) = log max(kAk, kA−1 k) for all A ∈ GL(n). Hence E ∼      =
+GL(n)/O(n) both in the topological group and the metric sense, where d(A, B) =
+                        KAKEYA–BRASCAMP–LIEB INEQUALITIES                             10
+
+
+log max(kA−1 Bk, kB −1 Ak) for A, B ∈ GL(n). It follows that the metric space (E, d)
+is homogeneous and locally compact.
+   By the John ellipsoid theorem [Joh48], the set E is Cn /2-dense in K for Cn =
+(log n)/2.
+   It follows from local compactness that the cardinality of a Cn /2-separated subset
+of the ball B := {A ∈ GL(n) | d(A, Id) ≤ 4Cn } is bounded by some Dn < ∞. By
+homogeneity, the cardinality of a Cn /2-separated subset of every ball of radius 4Cn
+in E is bounded by Dn . Let E0 ⊂ E be a maximal Cn /2-separated subset of ellipsoids
+with diameter at most 1. For each θ = 1, 2, . . . let inductively Eθ be a maximal
+4Cn -separated subset of E0 \ ∪1≤θ0 <θ Eθ0 . Then
+                                [
+(2.9)                      E0 =     Eθ , Θ := {1, . . . , Dn }.
+                                   θ∈Θ
+Indeed, if E ∈ E0 \∪1≤θ0 ≤θ Eθ0 , then Eθ ∩B(E, 4Cn ) 6= ∅, since otherwise we could add
+E to Eθ , contradicting maximality. This can only occur for at most Dn − 1 values of
+θ for each E ∈ E0 . The partition (2.9) has the following properties.
+Lemma 2.6. For every K ∈ K with K ⊂ B, there exists E ∈ E0 such that d(K, E) ≤
+Cn . On the other hand, for every θ ∈ Θ and every K ∈ K, there is at most one E ∈ Eθ
+such that d(K, E) < 2Cn .
+  Finally, given Q ∈ supp M , let
+                      S(Q, θ) := {p ∈ S(Q) | d(Kp,Q , Eθ ) ≤ Cn },
+so that
+                                            [
+(2.10)                             S(Q) =         S(Q, θ).
+                                            θ∈Θ
+
+2.4. Bisecting balls. The following fact is a consequence of the isoperimetric in-
+equality.
+Lemma 2.7 ([CV13, Appendix A]). Let p : Rn → R be a polynomial,
+                      |{x ∈ B | p(x) > 0}|             |{x ∈ B | p(x) < 0}|
+               a :=                        ,    b :=                        .
+                               |B|                              |B|
+Then
+                               1
+              Hn−1 (Zp ∩ B) ≥ (a(n−1)/n + b(n−1)/n − 1)Hn−1 (Sn−1 ).
+                               2
+  An affine invariant formulation of Lemma 2.7 is the following.
+Corollary 2.8 ([CV13, p. 1659]). Let E ⊂ Rn be an ellipsoid with principal axes
+v1 , . . . , vn and p : Rn → R a polynomial that approximately bisects E in the sense
+that
+                  |{x ∈ E | p(x) > 0}| > c|E|, |{x ∈ E | p(x) < 0}| > c|E|
+for some c > 0. Then
+                                Xn
+(2.11)                             |hvj , N (Zp ∩ Q)i| & vol(E).
+                             j=1
+
+  Recall that the left-hand side of (2.11) was defined in (1.22).
+2.5. Translates. For p ∈ S(Q, θ), let E(p, Q, θ) be the unique ellipsoid in Eθ such
+that d(Kp,Q , E(p, Q, θ)) ≤ Cn . Let 0 < η  1 be a parameter depending only on n
+to be chosen later.
+   For each E ∈ E0 and Q ∈ Q, we can fit bcn η −n vol(E)−1 c disjoint translates of ηE
+inside Q (here we use that E has diameter ≤ 1). We make a choice of such disjoint
+translates for every E and denote them by Eα,Q with 1 ≤ α ≤ bcn η −n vol(E)−1 c.
+   A polynomial p 6≡ 0 is said to bisect a set E 0 if |E 0 ∩ {p > 0}| = |E 0 ∩ {p < 0}|.
+Let
+              (
+                {p ∈ S(Q, θ) | p does not bisect E(p, Q, θ)α,Q } if α ≤ cn η −n vol(E)−1 ,
+S(Q, θ, α) :=
+                ∅                                                  otherwise.
+                         KAKEYA–BRASCAMP–LIEB INEQUALITIES                            11
+
+
+Lemma 2.9 ([CV13, §8]). There exist η = η(n) > 0 and  = (n, M ) > 0 such that
+for all Q ∈ Q with M (Q) & 1 and all θ ∈ Θ we have
+                                       [
+                          S(Q, θ) =         S(Q, θ, α).
+                                            α.M (Q)
+
+  Lemma 2.9 states that each p ∈ S(Q, θ) does not bisect some Eα,Q with E =
+E(p, Q, θ). In fact, one can obtain the stronger conclusion that p does not even
+approximately bisect some Eα,Q .
+Proof. Let η = η(n) to be chosen later. Let  = (n, M ) be so small that for all
+Q ∈ supp M and all p, p0 ∈ PD we have
+           dist(p, p0 ) <  =⇒ |({p > 0}∆{p0 > 0}) ∩ Q| ≤ c0 η n M (Q)−1 ,
+where c0 is a small dimensional constant. Such  exists because the function (p, p0 ) 7→
+|({p > 0}∆{p0 > 0}) ∩ Q| is continuous by the dominated convergence theorem, and
+therefore uniformly continuous since PD is compact.
+   Let Q ∈ supp M , p ∈ S(Q, θ), and E := E(p, Q, θ). Suppose for a contradiction
+that p bisects Eα,Q for each α ≤ cn η −n vol(E)−1 . η −n M (Q).
+   Let v1 , . . . , vn ∈ Rn be the principal axes of E (not normalized to unit length),
+so that each Eα,Q has principal axes ηv1 , . . . , ηvn . If p bisects Eα,Q and p0 ∈ PD
+is another polynomial -close to p, then p0 still approximately bisects Eα,Q by the
+choice of . By Corollary 2.8, for each such p0 we have
+                 n
+                 X
+                       | ηvj , N (Zp0 ∩ Eα,Q ) | & vol(Eα,Q ) ∼ η n vol E.
+                 j=1
+
+Averaging in p0 and summing in α, we obtain
+                        n
+                        X
+                              sp,Q (ηvj ) & bcn η −n vol(E)−1 cη n vol E
+                        j=1
+
+with the implicit constant independent of η. Since d(E, Kp,Q ) ≤ Cn , we have
+sp,Q (vj ) ∼ 1, and it follows that η & 1. This leads to a contradiction if η is small
+enough.                                                                             
+
+2.6. Antipodes. Fix Q ∈ supp M , θ ∈ Θ, and α ≥ 1. Since any p ∈ S(Q, θ, α) does
+not bisect E 0 := E(p, Q, θ)α,Q , we have either
+                         vol({p > 0} ∩ E 0 ) > vol({p < 0} ∩ E 0 ),
+in which case we say that p ∈ S(Q, θ, α, +), or
+                         vol({p > 0} ∩ E 0 ) < vol({p < 0} ∩ E 0 ),
+in which case we say that p ∈ S(Q, θ, α, −). In particular
+                        S(Q, θ, α) = S(Q, θ, α, +) ∪ S(Q, θ, α, −)
+and
+(2.12)                         S(Q, θ, α, +) = −S(Q, θ, α, −).
+It remains to show that
+(2.13)                        S(Q, θ, α, +) ∩ S(Q, θ, α, −) = ∅,
+where the closure is taken in the natural topology of PD .
+   To this end, suppose for a contradiction that p lies in the intersection (2.13). Then
+p ∈ S(Q, θ, α, +), and there exists a sequence of pm ∈ S(Q, θ, α, −) that converges
+to p in PD . Since the function (p, v) 7→ sp,Q (v) is jointly continuous from PD × Rn to
+[0, ∞) (thanks to the mollification by  in (2.4) and the uniform bound on |N (Zp0 ∩Q)|
+given by Corollary 3.3), the function p 7→ Kp,Q is continuous from PD to K. It follows
+that
+(2.14)                          E(pm , Q, θ) = E(p, Q, θ) =: E
+                        KAKEYA–BRASCAMP–LIEB INEQUALITIES                                  12
+
+
+for sufficiently large m. Indeed, since p, pm ∈ S(Q, θ), the sets Kpm ,Q and Kp,Q must
+be close to some member of Eθ and thus, for m sufficiently large, they are close to
+the same member of Eθ . This is why we need several collections Eθ .
+   With E given by (2.14), we have
+(2.15)                vol({p > 0} ∩ Eα,Q ) > vol({p < 0} ∩ Eα,Q ),
+and for sufficiently large m we obtain
+(2.16)             vol({pm > 0} ∩ Eα,Q ) < vol({pm < 0} ∩ Eα,Q ).
+By the dominated convergence theorem this leads to a contradiction.
+
+2.7. Conclusion of the proof of Theorem 2.2. We have decomposed
+            [              [     [ [
+(2.17)           S(Q) =                  (S(Q, θ, α, +) ∪ S(Q, θ, α, −)) ,
+           Q∈supp M          Q∈supp M θ∈Θ α.M (Q)
+
+
+                         P θ, α, −) are antipodal by (2.12) and separated by (2.13).
+where S(Q, θ, α, +) and S(Q,
+The union consists of . Q M (Q) terms, so by Lemma 2.5 it does not cover PD
+provided Dn ∼ dim PD & Q M (Q), which is the case by the hypothesis (2.6).
+                          P
+
+
+                             3. Proof of Theorem 1.7
+3.1. Multilinear duality. Let us abbreviate
+                           −−−→
+(3.1)         G(Q) := kBL(Txj Hj , p~, (1, R))−1/P kP m               P/pj             .
+                                                               ¯ j=1 Lx
+                                                               ⊗             (Hj ∩Q)
+                                                                        j
+
+
+The following formulation of (1.19) goes back to [CV13, Proposition 2]. It motivated
+the development of multilinear factorization theory in [CHV18].
+Proposition 3.1. For any 0 < C1 , C2 < ∞, the estimate
+                           X                          m
+                                                      Y
+(3.2)                              G(Q) ≤ C1P C2P           (deg Hj )pj
+                          Q∈QR                        j=1
+
+is equivalent to the following statement:
+   For every function M : QR → [0, ∞) satisfying
+                                    X
+(3.3)                                    M (Q) = 1,
+                                      Q∈QR
+
+there exist functions Sj : QR → [0, ∞) such that
+                                           m
+                                           Y
+                            P −1
+(3.4)          G(Q)M (Q)           ≤ C1P         Sj (Q)pj    for every Q ∈ QR
+                                           j=1
+
+and
+                                   X
+(3.5)                                  Sj (Q) ≤ C2 deg Hj .
+                               Q∈QR
+
+   The advantage of this formulation is that a suitable choice of Sj , see (3.6), allows
+one to separation the rather geometric arguments used to establish (3.4) in Section 3.2
+from the rather algebraic arguments used to establish (3.5) in Section 3.3.
+
+Proof of Proposition 3.1. Suppose that there exist Sj satisfying (3.4) and (3.5); we
+want to show (3.2). For every Q ∈ QR , applying (3.4) with M (Q0 ) = 1Q0 =Q , we see
+that G(Q) is finite.                              P
+  Without loss of generality we may assume G := Q∈QR G(Q) > 0, so that we can
+define M (Q) := 1Q∈QR G(Q)/G. Then, by (3.4), Hölder’s inequality, and (3.5), we
+                           KAKEYA–BRASCAMP–LIEB INEQUALITIES                                             13
+
+
+obtain
+                                           X     P
+                            G = G −(P −1)/P   G(Q)
+                                                   Q∈QR
+                                    X                                    P
+                               =             G(Q)1/P M (Q)(P −1)/P
+                                    Q∈QR
+                                           m
+                                        X Y                         P
+                               ≤ C1P                 Sj (Q)pj /P
+                                         Q∈QR j=1
+                                       m
+                                       Y X                    p j
+                               ≤ C1P                 Sj (Q)
+                                     j=1 Q∈QR
+                                          m
+                                         Y         p
+                               ≤ C1P C2P     deg Hj j .
+                                         j=1
+
+The converse (that (3.2) implies the existence of appropriate Sj ’s) can be established
+with the ansatz Sj (Q) = C2 S(Q) deg Hj and
+                                              G(Q)1/P M (Q)1−1/P
+                          S(Q) := P                  0 1/P M (Q0 )1−1/P
+                                                                        .
+                                           Q0 ∈QR G(Q )
+
+Then (3.5) is clearly satisfied, and (3.4) holds because by Hölder’s inequality and
+(3.2) we have
+          X                         P  X             X          P −1
+                G(Q)1/P M (Q)1−1/P       ≤        G(Q)         M (Q)
+             Q∈QR                                       Q∈QR               Q∈QR
+                                                                Y
+                                                   ≤ C1P C2P         (deg Hj )pj .                       
+                                                                j=1
+
+                                                                   of Theorem 1.7. To
+   We will verify the conditions in Proposition 3.1 in the setting P
+this end let M : QR → [0, ∞) be an arbitrary function with Q∈QR M (Q) = 1.
+Theorem 2.1, applied to this function M , gives a probability measure σ supported
+on polynomials of degree . R and satisfying (2.2) and (2.3).
+   Let µQ := µσ,Q (recall the definition (1.21)) and define
+                                            D           E
+                                                     ∧k
+(3.6)                      Sj (Q) := R−kj TQ Hj , µQ j .
+
+Theorem 1.7 will follow from Proposition 3.1 if we can verify (3.4) and (3.5) with
+the chosen function M , the functions Sj given by (3.6), and the function G defined
+in (3.1). In the remaining part of Section 3 we verify these conditions.
+
+3.2. Intersection multiplicity estimate. In order to verify (3.5) we use Bézout’s
+theorem and the following change of variables.
+                                            . . . , Zm be smooth submanifolds of Rn
+    P 3.2 ([Zha18, Theorem 5.2]). Let Zn1 ,m−1
+Lemma
+with j (n − dim Zj ) = n. Let also U ⊂ (R )         be measurable. Then
+         ˆ                                              m
+                                                        ^
+(3.7)                 1U (x2 − x1 , . . . , xm − x1 )         Nxj Zj d(x1 , . . . , xm ) ≤
+         Z1 ×···×Zm                                     j=1
+                                     ˆ
+                                           |Z1 ∩ (Z2 + v2 ) ∩ · · · ∩ (Zm + vm )| d(v2 , . . . , vm ),
+                                       U
+where |·| on the right-hand side denotes cardinality of the intersection (with multi-
+plicity).
+Corollary 3.3 (cf. [Gut10, Lemma 3.1]). Let p be a non-zero polynomial in n vari-
+ables. Then for every cube Q ⊂ Rn with side length 1 we have
+                                       |N (Zp ∩ Q)| . deg p.
+                         KAKEYA–BRASCAMP–LIEB INEQUALITIES                                                    14
+
+
+Proof of Corollary 3.3 assuming Lemma 3.2. It suffices to show that
+(3.8)                              |hv, N (Zp ∩ Q)i| . deg p
+for every unit vector v ∈ Rn . We apply Lemma 3.2 with m = 2, Z1 = Zp , Z2 being
+the line parallel to v passing through the center of Q, and U being the cube with
+side length 2 centered at 0. Then the left-hand side of (3.8) is dominated by the
+left-hand side of (3.7). On the other hand, the integrand on the right-hand side of
+(3.7) is at most deg p for almost every v2 ∈ Rn . This implies (3.8).            
+Proof of Lemma 3.2. We will identify |∧j Nxj Zj | as the Jacobian of the change of
+coordinates
+   (Rn )m ⊃ Z1 × · · · × Zm → (Rn )m−1 ,                (x1 , . . . , xn ) 7→ (x2 − x1 , . . . , xm − x1 ).
+To this end we note that
+                         m
+                       n ^
+                      ^                          m
+                                                 n X
+                                                 ^
+                    ?      (dxj,l − dx1,l ) = ±1     dxj,l ,
+                         l=1 j=2                                     l=1 j=1
+
+where ? is the Hodge star operator, and where the sign depends on the choice of
+orientation in the definition of ?. Indeed, both sides are simple wedge products, and
+each 1-form on the right-hand side is orthogonal to each 1-form on the left-hand side.
+Also, one can verify that the norms (induced by the Euclidean norm) of the forms on
+both sides are equal to mn/2 . From this follows equality up to the sign, see [BBG13,
+Appendix A] for a formal proof.
+   Denoting by Tj the normalized volume form on the tangent space Txj Zj and by
+πj : (Rn )m → Rn the j-th coordinate projection, the Jacobian can be computed as
+          *m               m
+                         n ^
+                                             +   * m               m
+                                                                 n X
+                                                                           +
+            ^            ^                           ^           ^
+                πj∗ Tj ,     (dxj,l − dx1,l ) = ?       πj∗ Tj ,     dxj,l
+            j=1       l=1 j=2                                        j=1          l=1 j=1
+                                                               *m                       m
+                                                                                      n X
+                                                                                                        +
+                                                                ^                     ^
+                                                          =            πj∗ (?Tj ),              dxj,l
+                                                                 j=1                 l=1 j=1
+                                                               *m               n
+                                                                                            +
+                                                                ^               ^
+                                                          =           (?Tj ),         dxl
+                                                                 j=1            l=1
+                                                               m
+                                                               ^
+                                                          =        (?Tj ) .
+                                                               j=1
+
+Indeed, to see the second identity we notice that
+                                       m
+                                       ^                 m
+                                                         ^
+                                   ?         πj∗ Tj =         πj∗ (?Tj )
+                                       j=1              j=1
+
+holds for arbitrary Tj ∈ Λdim Zj , provided that we use on (Rn )m the product of the
+orientations on Rn .
+   In the third identity we used the identity
+                   *m                  m
+                                     n X
+                                              + *m          n
+                                                                 +
+                      ^              ^             ^        ^
+(3.9)                    πj∗ (T̃j ),     dxj,l =      T̃j ,   dxl ,
+                      j=1              l=1 j=1                    j=1       l=1
+
+which holds for arbitrary T̃j ∈ Λn−dim Zj . Indeed, by multilinearity it suffices to verify
+                                         n−dim Zj
+(3.9) for simple wedge products T̃j = ∧a=1         el(j,a) . In this case the left-hand side
+of (3.9) equals
+                        * m n−dim Zj               n X m
+                                                                 +
+                           ^ ^                     ^
+                                      dxj,l(j,a) ,          dxj,l .
+                            j=1     a=1                       l=1 j=1
+Expanding the sums on the right-hand side, we see that this vanishes unless all
+l(j, a) are distinct, in which case it equals the sign of the permutation (l(j, a)) that
+                                KAKEYA–BRASCAMP–LIEB INEQUALITIES                              15
+
+
+is ordered lexicographically, first by j and then by a. This description also applies
+to the right-hand side of (3.9).                                                   
+Proof of (3.5). By Lemma 3.2 with m = kj + 1, Z1 = Hj , and U = B(0, C), we have
+                 *       kj             +
+             X           ^
+                  TQ Hj , (N (Zl+1 ∩ Q))
+                Q                   l=1
+                            ˆ
+                        ≤       |Hj ∩ (Z2 + v2 ) ∩ · · · ∩ (Zm + vm )| d(v2 , . . . , vm ).
+                            U
+By Bézout’s theorem [Ful98, Example 8.4.6], the cardinality on the right-hand side
+                                            Qkj
+is either infinite or bounded by (deg Hj ) l=1    (deg pl ) if Zl+1 = Zpl for some poly-
+nomials pl . But this cardinality is only infinite for a zero measure set of v2 , . . . , vm .
+Hence
+                     *        kj              +                 kj
+                 X            ^                                 Y
+                       TQ Hj , (N (Zpl ∩ Q)) . (deg Hj ) (deg pl ).
+                    Q                 l=1                                    l=1
+Integrating this estimate over p1 , . . . , pkj with respect to the measure σ in each
+variable and using definitions (3.6) and (1.21), we obtain (3.5).                  
+
+3.3. Wedge estimates. In order to apply (2.2), we need lower bounds on vol Bs in
+terms of related quantities. This is roughly in the spirit of elementary lower bounds
+for the volume of polar bodies. Here and later we will abbreviate Bµ := Bsµ .
+Lemma 3.4 (cf. [Zha18, Theorem 3.1]). Let µ be a measure on |Λ1 | with |µ| < ∞
+and bounded Bµ . Then
+                             1 . |µ∧n | vol Bµ .
+Proof. Let e1 , . . . , en be an orthonormal basis of Rn consisting of vectors pointing in
+the directions of the axes of the John ellipsoid of Bµ . Let l1 ≤ · · · ≤ ln be the lengths
+of these axes. It suffices to show that
+                                      | µ∧n , l1 e1 ∧ · · · ∧ ln en | & 1.
+Using a measurable selection |Λ1 | → Rn , we can identify µ with a measure on Rn .
+Let T : Rn → Rn be the linear map with T ej = lj ej . Then T is self-adjoint and
+                                 ˆ
+     ∧n
+  | µ , l1 e1 ∧ · · · ∧ ln en | = |hv1 ∧ · · · ∧ vn , T e1 ∧ · · · ∧ T en i| dµ(v1 ) · · · dµ(vn )
+                                 ˆ
+                                = |det hvi , T ej iij | dµ(v1 ) · · · dµ(vn )
+                                 ˆ
+                                = |det hT vi , ej iij | dµ(v1 ) · · · dµ(vn )
+                                 ˆ
+                                = |det hvi , ej iij | dµ̃(v1 ) · · · dµ̃(vn ),
+
+where µ̃ is the pushforward of µ under T . Hence it suffices to show that
+                       ˆ
+(3.10)                   |v1 ∧ · · · ∧ vn | dµ̃(v1 ) · · · dµ̃(vn ) & 1.
+
+Note that                       ˆ                       ˆ
+                 sµ̃ (u) =          |hu, vi| dµ̃(v) =       |hu, T vi| dµ(v) = sµ (T u).
+
+It follows that the John ellipsoid of Bµ̃ is the unit ball, hence sµ̃ (u) ∼ kuk. This in
+turn implies that |µ̃| ∼ 1, and that the measure |v| dµ̃(v) cannot concentrate in a
+small angular neighborhood of the hyperplane u⊥ for any u ∈ Rn \{0}. Hence we can
+select n transverse cones in Rn whose projections to |Λ1 | support a fixed proportion
+of |v| dµ̃(v). Restricting each variable on the left-hand side of (3.10) to one of these
+cones we see that (3.10) holds.                                                       
+                         KAKEYA–BRASCAMP–LIEB INEQUALITIES                                             16
+
+
+Lemma 3.5 ([RS58, Theorem 1]). Let K ⊂ Rn be a convex body and T ⊂ Rn a
+k-dimensional affine subspace. Then
+                                                     
+                                                     n
+(3.11)              voln−k (K + T ) volk (K ∩ T ) ≤     voln K,
+                                                     k
+where K + T := {x + T | x ∈ K} ⊂ Rn /T , and the latter space is equipped with the
+Euclidean volume with respect to the quotient metric.
+  For centrally symmetric convex bodies a converse inequality to (3.11) also holds,
+but we will not use this fact.
+Corollary 3.6. Let T ⊂ Rn be a k-dimensional affine subspace and µ a measure on
+|Λ1 |. Then                              D       E
+                     voln−k (Bµ + T ) . | µ∧k , T | voln Bµ .
+Proof. The conclusion only depends on the equivalence class of T modulo translation,
+so we may assume 0 ∈ T . By Lemma 3.5 with K = Bµ , it suffices to show
+                                              D       E
+(3.12)                     1 . volk (Bµ ∩ T )| µ∧k , T |.
+Let µ̃ be the pushforward of µ under the orthogonal projection onto T , which is
+well-defined modulo ±1. Then Bµ ∩ T = Bµ̃ and | µ∧k , T | = |µ̃∧k |. The claim
+(3.12) now follows from Lemma 3.4 with n replaced by k and µ replaced by µ̃. 
+Lemma 3.7 (cf. [Zha18, Corollary 7.6]). Let T1 , . . . , Tm ⊂ Rn be proper affine sub-
+spaces of dimensions k1 , . . . , km . Let µ be a measure on |Λ1 | such that Rc B ⊆ Bµ ⊆
+CB. Then
+                       Pm                                  m D
+                                                           Y            E
+(3.13)       vol(Bµ )1− j=1 pj ≤ C P BL(T~ , p~, (1/R, 1))   | Tj , µ∧kj |pj .
+                                                                    j=1
+
+Proof. By Definition 1.1 and Corollary 3.6, we have
+                      ˆ
+           vol(Bµ ) =     1Bµ dx
+                          Rn
+                         ˆ     m
+                               Y
+                     ≤              (1Bµ +Tj (x + Tj ))pj dx
+                          Rn   j=1
+                                                 m ˆ
+                                                 Y                             p j
+                     . BL(T~ , p~, (1/R, 1))                     1Bµ +Tj
+                                                          n
+                                                j=1 R /Tj
+                                                Ym  D                     E              pj
+                     ≤ BL(T~ , p~, (1/R, 1))          C       Tj , µ∧kj         voln (Bµ ) .           
+                                                j=1
+
+Proof of (3.4). By definition (1.14) of the Fremlin tensor product norm, we obtain
+     m                   m ˆ        D             E
+                                               ∧k       p
+    Y                   Y
+          kj       pj
+        (R Sj (Q)) =               | Txj Hj , µQ j | dxj j             by (3.6)
+    j=1                      j=1    Q∩Hj
+                              m  D             E
+                                            ∧k
+                             Y
+                      =        k| Txj Hj , µQ j |pj /P kP P/pj
+                                                              Lxj    (Q∩Hj )
+                             j=1
+                               m D                E
+                                               ∧k
+                              Y
+                      ≥k           | Txj Hj , µQ j |pj /P kP m       P/pj                 by (1.14).
+                                                              ¯ j=1 Lx
+                                                              ⊗                (Hj ∩Q)
+                              j=1                                      j
+
+
+The measure µQ = µσ,Q satisfies Bµ ⊆ CB by (2.3). On the other hand, since σ is
+supported on a set of polynomials of degree . R, it follows from Corollary 3.3 that
+sσ,Q (v) . R|v|, so that Rc B ⊆ BµQ for some small constant c > 0 depending only on
+n. Therefore, we can continue the above chain of inequalities with
+                            −−−→
+ ≥ C −P vol(BµQ )1−P kBL(Txj Hj , p~, (1/R, 1))−1/P kP¯ m P/p1         by Lemma 3.7
+                                                              ⊗j=1 Lxj         (Hj ∩Q)
+                         n− m
+                           P
+= C −P vol(BµQ )1−P R        j=1 nj pj   G(Q)                                            by (1.5) and (3.1).
+                                          REFERENCES                                             17
+
+
+Using that kj + nj = n, we can rearrange this inequality as
+                             m
+                             Y
+                        CP         Sj (Q)pj ≥ (Rn vol(BµQ ))1−P G(Q).
+                             j=1
+
+By (2.2), we have
+                        Rn vol(BµQ ) = Rn vol(Bsp,Q ) ≤ CM (Q)−1 ,
+assuming that M (Q) > 0. Since P ≥ 1 by the hypothesis (1.11), the last two displays
+imply (3.4).                                                                      
+
+                                         References
+[BBG13]    J. Bennett, N. Bez, and S. Gutiérrez. “Transversal multilinear Radon-like transforms: lo-
+           cal and global estimates”. In: Rev. Mat. Iberoam. 29.3 (2013), pp. 765–788. mr: 3089762
+           (cit. on p. 14).
+[BCT06]    J. Bennett, A. Carbery, and T. Tao. “On the multilinear restriction and Kakeya con-
+           jectures”. In: Acta Math. 196.2 (2006), pp. 261–302. arXiv: math/0509262. mr: 2275834
+           (cit. on p. 3).
+[BD15]     J. Bourgain and C. Demeter. “The proof of the l2 decoupling conjecture”. In: Ann. of
+           Math. (2) 182.1 (2015), pp. 351–389. arXiv: 1403.5335 [math.CA]. mr: 3374964 (cit. on
+           p. 3).
+[BD17]     J. Bourgain and C. Demeter. “A study guide for the l2 decoupling theorem”. In: Chin.
+           Ann. Math. Ser. B 38.1 (2017), pp. 173–200. arXiv: 1604.06032 [math.CA]. mr: 3592159
+           (cit. on p. 3).
+[BDG16]    J. Bourgain, C. Demeter, and L. Guth. “Proof of the main conjecture in Vinogradov’s
+           mean value theorem for degrees higher than three”. In: Ann. of Math. (2) 184.2 (2016),
+           pp. 633–682. arXiv: 1512.01565 [math.NT]. mr: 3548534 (cit. on p. 3).
+[Ben+08]   J. Bennett, A. Carbery, M. Christ, and T. Tao. “The Brascamp-Lieb inequalities: finite-
+           ness, structure and extremals”. In: Geom. Funct. Anal. 17.5 (2008), pp. 1343–1415.
+           arXiv: math/0505065. mr: 2377493 (cit. on pp. 1, 2).
+[Ben+10]   J. Bennett, A. Carbery, M. Christ, and T. Tao. “Finite bounds for Hölder-Brascamp-
+           Lieb multilinear inequalities”. In: Math. Res. Lett. 17.4 (2010), pp. 647–666. arXiv:
+           math/0505691. mr: 2661170 (cit. on pp. 1, 2).
+[Ben+17]   J. Bennett, N. Bez, M. G. Cowling, and T. C. Flock. “Behaviour of the Brascamp-
+           Lieb constant”. In: Bull. Lond. Math. Soc. 49.3 (2017), pp. 512–518. arXiv: 1605.08603
+           [math.CA]. mr: 3723636 (cit. on p. 4).
+[Ben+18]   J. Bennett, N. Bez, T. C. Flock, and S. Lee. “Stability of the Brascamp-Lieb constant
+           and applications”. In: Amer. J. Math. 140.2 (2018), pp. 543–569. arXiv: 1508.07502
+           [math.CA]. mr: 3783217 (cit. on pp. 3, 4).
+[BG11]     J. Bourgain and L. Guth. “Bounds on oscillatory integral operators based on multilin-
+           ear estimates”. In: Geom. Funct. Anal. 21.6 (2011), pp. 1239–1295. arXiv: 1012.3760
+           [math.CA]. mr: 2860188 (cit. on pp. 3, 4, 6).
+[BL76]     H. J. Brascamp and E. H. Lieb. “Best constants in Young’s inequality, its converse,
+           and its generalization to more than three functions”. In: Advances in Math. 20.2 (1976),
+           pp. 151–173. mr: 0412366(54#492) (cit. on p. 1).
+[CHV18]    A. Carbery, T. S. Hänninen, and S. I. Valdimarsson. “Multilinear Duality and Fac-
+           torisation for Brascamp–Lieb-type Inequalities with applications”. Preprint. Sept. 2018.
+           arXiv: 1809.02449 [math.FA] (cit. on p. 12).
+[CV13]     A. Carbery and S. I. Valdimarsson. “The endpoint multilinear Kakeya theorem via
+           the Borsuk-Ulam theorem”. In: J. Funct. Anal. 264.7 (2013), pp. 1643–1663. arXiv:
+           1205.6371 [math.CA]. mr: 3019726 (cit. on pp. 3–12).
+[Fin92]    H. Finner. “A generalization of Hölder’s inequality and some probability inequalities”.
+           In: Ann. Probab. 20.4 (1992), pp. 1893–1901. mr: 1188047 (cit. on p. 2).
+[Ful98]    W. Fulton. Intersection theory. Second. Springer-Verlag, Berlin, 1998, pp. xiv+470. mr:
+           1644323 (cit. on p. 15).
+[Gar+18]   A. Garg, L. Gurvits, R. Oliveira, and A. Wigderson. “Algorithmic and optimization
+           aspects of Brascamp-Lieb inequalities, via operator scaling”. In: Geom. Funct. Anal.
+           28.1 (2018), pp. 100–145. arXiv: 1607.06711 [cs.CC]. mr: 3777414 (cit. on p. 4).
+[Gut10]    L. Guth. “The endpoint case of the Bennett-Carbery-Tao multilinear Kakeya conjec-
+           ture”. In: Acta Math. 205.2 (2010), pp. 263–286. arXiv: 0811 . 2251 [math.CA]. mr:
+           2746348 (cit. on pp. 3, 5, 7–9, 13).
+[Gut15]    L. Guth. “A short proof of the multilinear Kakeya inequality”. In: Math. Proc. Cambridge
+           Philos. Soc. 158.1 (2015), pp. 147–153. arXiv: 1409.4683 [math.AP]. mr: 3300318 (cit.
+           on p. 3).
+                                        REFERENCES                                            18
+
+
+[GZ18]    S. Guo and P. Zorin-Kranich. “Decoupling for moment manifolds associated to Arkhipov–
+          Chubarikov–Karatsuba systems”. Preprint. 2018. arXiv: 1811.02207 [math.NT] (cit. on
+          p. 3).
+[Joh48]   F. John. “Extremum problems with inequalities as subsidiary conditions”. In: Studies
+          and Essays Presented to R. Courant on his 60th Birthday, January 8, 1948. New York:
+          Interscience Publishers, Inc., 1948, pp. 187–204. mr: 0030135 (cit. on p. 10).
+[Lie90]   E. H. Lieb. “Gaussian kernels have only Gaussian maximizers”. In: Invent. Math. 102.1
+          (1990), pp. 179–208. mr: 1069246 (cit. on p. 1).
+[LW49]    L. H. Loomis and H. Whitney. “An inequality related to the isoperimetric inequality”.
+          In: Bull. Amer. Math. Soc 55 (1949), pp. 961–962. mr: 0031538 (cit. on p. 2).
+[Mal19]   D. Maldague. “Weak Hölder-Brascamp-Lieb inequalities”. Preprint. Apr. 2019. arXiv:
+          1904.06450 [math.CA] (cit. on pp. 1, 2, 4).
+[Mat03]   J. Matoušek. Using the Borsuk-Ulam theorem. Universitext. Lectures on topological
+          methods in combinatorics and geometry, Written in cooperation with Anders Björner
+          and Günter M. Ziegler. Berlin: Springer-Verlag, 2003, pp. xii+196. mr: 1988723 (cit. on
+          p. 9).
+[RS58]    C. A. Rogers and G. C. Shephard. “Convex bodies associated with a given convex body”.
+          In: J. London Math. Soc. 33 (1958), pp. 270–281. mr: 0101508 (cit. on p. 16).
+[Sch84]   A. R. Schep. “Factorization of positive multilinear maps”. In: Illinois J. Math. 28.4
+          (1984), pp. 579–591. mr: 761991 (cit. on p. 4).
+[Zha18]   R. Zhang. “The endpoint perturbed Brascamp-Lieb inequalities with examples”. In:
+          Anal. PDE 11.3 (2018), pp. 555–581. arXiv: 1510.09132 [math.CA]. mr: 3738255 (cit.
+          on pp. 3–6, 9, 13, 15, 16).
+
+   University of Bonn, Mathematical Institute, Bonn, Germany
+

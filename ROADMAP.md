@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0044完成actual goodq→heavy→共同endpoint原质量，单Y_z* fine palette；natural/fine affine-offset pieces完整施工但PW逐片界与原CW同幂，κ≤2为原native范围。local-clamp/Bernstein真正nonaffine证书也仅平凡预算，piece重数/clock/degree均付。执行一主轮停止，冻结polynomial-envelope D/e/ρ迭代，不否所有未来非affine方法。下一唯一 notes/40_multiscale/R0044_next_four_arm_transversality_gate.md，四根不同原管在不同原time的grain多线性横截性gate；R45先周期macro/primary精确版本。无新ID/维数界/major，Goal active。
+更新2026-10-17，R0045周期macro先行；actual raw四臂/不同T/time、Π近交、ZK1.5 selectedtuples及endpoint纤维全付。满秩pair类有限BL iff三pairkernel线独立，五矩阵ranksep+slab角条件桥付σ/τ/原Oδ误差；actual rank-good/goodBL质量未证。单endpoint账本即使理想仅κ≤5/4，固定加臂无用，执行一轮停止而不续rank/ρ阈值。新ZK/Zhang primary入库33PDF/36sources，仅有限新输入核查。下一唯一 notes/20_dimension_lifting/R0045_next_rational_mixed_norm_seed_gate.md，实际四维finite种子→固定有理4projection改进q5/3 test，未宣估计成立。无新ID/高维界/major，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -85,3 +85,6 @@ R0043 research/reviews/R0043_macro.md；主稿 notes/40_multiscale/R0043_actual_
 
 
 R0044 research/reviews/R0044_macro.md；主稿 notes/40_multiscale/R0044_actual_endpoint_palette_and_polynomial_budget.md，两实际施工/反攻与formalreviews见literature/metadata/R0044_source_check.json。自然eρ²只κ≤2，fine e需二维normal slope网，wholeclock凸box正好复原CW。真正nonaffine localclamp证书保M≥cpρ但A_tot≤pL，预算ρ^(4−2κ)≤K C0(D+1)^A L4仍平凡。不能以这些upper证明所有策略不可能。冻结本路线；下一不预设四臂横截/独立time/原mass，三臂及同T四time的线性代数障碍先排除。
+
+
+R0045 research/reviews/R0045_macro.md，主稿 notes/40_multiscale/R0045_actual_four_arm_BL_gate_and_rank_budget.md，两实稿与正式reviews见literature/metadata/R0045_source_check.json。原量词/原mass/选中hypergraph/物理nearplane已付，不再以非Cartesian或无filledgrain虚报失败。真正缺actual goodBL质量，且固定m同endpoint字母表κ阈值5/4；此条件算术不是新界。冻结本certificate。新Zhang2608.17952v2是fixed rational mixednorm/统一allG tensor，不是rank2 KBL更强upper，q近1仍猜想且perturbed版失败。下一如只q7/4强型升级/旧KT或无合法angular编码则一轮停。

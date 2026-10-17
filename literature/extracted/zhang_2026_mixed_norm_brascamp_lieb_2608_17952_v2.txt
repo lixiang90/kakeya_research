@@ -1,0 +1,904 @@
+                                                MIXED-NORM BRASCAMP-LIEB INEQUALITIES
+
+                                                                            RUIXIANG ZHANG
+arXiv:2608.17952v2 [math.CA] 19 Aug 2026
+
+
+
+
+                                                  Abstract. Christ [Chr01] looked at a certain boundedness problem
+                                                  for trilinear operators. In this paper we set up a framework of mixed-
+                                                  norm Brascamp-Lieb inequalities and identify a new interesting regime
+                                                  not covered by the study of classical Brascamp-Lieb. Positive results in
+                                                  [Chr01] can be viewed as the first nontrivial progress in this new regime.
+                                                  We will also prove another mixed-norm Brascamp-Lieb inequality, show-
+                                                  casing how one can use a tensor product trick to slightly sharpen Christ’s
+                                                  argument and also obtain the endpoint case. We then discuss the connec-
+                                                  tions between mixed-norm Brascamp-Lieb and the Kakeya Conjectures,
+                                                  as well as unique new difficulties for these mixed-norm Brascamp-Lieb
+                                                  inequalities compared to the classical setting.
+
+
+                                                                                Contents
+                                             1. Introduction                                                                    1
+                                             1.1. Purpose of the paper                                                          1
+                                             1.2. Background of classical Brascamp-Lieb                                         2
+                                             1.3. The mixed-norm case for n = 2                                                 2
+                                             1.4. Our results                                                                   3
+                                             1.5. Outline of the paper                                                          4
+                                             Acknowledgement                                                                    4
+                                             2. Mixed norm Brascamp-Lieb in dimension 2: Benchmarks                             5
+                                             2.1. Necessary conditions                                                          5
+                                             2.2. Endpoint cases and new phenomena for q < 2                                    5
+                                             3. Relationship with discrete restricted weak type estimates                       6
+                                             4. The restricted weak type estimate for (1)                                       9
+                                             5. Connecting mixed-norm Brascamp-Lieb in R2 to Kakeya in Rd                      10
+                                             5.1. Brief introduction to Kakeya                                                 11
+                                             5.2. The connection to (5)                                                        11
+                                             5.3. The absence of perturbed versions of (5)                                     12
+                                             Appendix A. SD(α) implies Hausdorff version of Kakeya                             14
+                                             References                                                                        15
+
+
+
+                                                                           1. Introduction
+                                           1.1. Purpose of the paper. The purpose of this paper is twofold. On the
+                                           concrete side, we will prove the following quadrilinear inequality:
+
+                                             Date: August 20, 2026.
+                                             RZ is supported by NSF CAREER DMS-2143989.
+                                                                                      1
+2                                     RUIXIANG ZHANG
+
+Theorem 1.1.
+(1)
+           2            2         2               1                      2        2         2        1
+∥f1 (x+y) 7 f2 (−x+y) 7 f3 (y) 7 f4 (x+3y) 7 ∥ 74          7   ≲ ∥f1 ∥L7 1 ∥f2 ∥L7 1 ∥f3 ∥L7 1 ∥f4 ∥L7 1
+                                                      Lx Ly3
+
+where f1 , f2 , f3 , f4 : R → R≥0 .
+   To motivate (1), note that related trilinear inequalities (and some aspects
+of the multilinear ones through a different but equivalent formulation) were
+already studied by the work of Christ [Chr01]. Our second purpose is to give
+a slightly different viewpoint and think of Christ’s result and (1) as “mixed-
+norm Brascamp-Lieb inequalities”. We will compare them with classical
+Brascamp-Lieb inequalities, highlighting their key differences, and explain
+some connections between mixed-norm Brascamp-Lieb (in R2 ) and Kakeya
+(in Rd ).
+
+1.2. Background of classical Brascamp-Lieb. we start by explaining
+the classical Brascamp-Lieb inequalities.
+   Suppose m ∈ Z+ and p1 , . . . , pm > 0. Suppose B1 , . . . , Bm are orthogonal
+projections from Rn to subspaces H1 , . . . , Hm . If for arbitrary non-negative
+functions f1 , . . . , fm on H1 , . . . , Hm respectively we always have
+                         Z Y m                   m    Z      !p j
+                                                 Y
+                                            pj
+(2)                              fj (Bj x) ≲              fj      ,
+                        Rn j=1                        j=1      Hj
+
+then we call (2) a Brascamp-Lieb inequality. The survey [Zha22] by the
+author and the references therein record historical influences of Brascamp-
+Lieb inequalities and in particular the impact of this inequality in Fourier
+analysis as a key feature we will return to.
+  There is a simple condition dictating whether (2) can hold:
+Theorem 1.2 (Bennett-Carbery-Christ-Tao [BCCT08a], see also [BCCT08b]).
+Given (B1 , . . . , Bm , p1 , . . . , pm ). (2) holds if and only if we have both the
+scaling condition:
+                                           m
+                                           X
+(3)                                   n=         pj dim Hj
+                                           j=1
+
+and the dimension condition:
+                      Xm
+(4)          dim V ≤      pj dim(Bj V ), ∀ subspace V ⊂ Rn .
+                            j=1
+
+  On the contrary, if we replace the norm on the left hand side of (2) by a
+mixed-norm, in general there is no clean characterization like Theorem 1.2
+on whether such an inequality holds, even in the “simplest case” of dimension
+n = 2. In what follows, we discuss a rich and unique set of phenomena and
+connections for mixed-norm inequalities.
+
+1.3. The mixed-norm case for n = 2. In this paper, we only look at
+the case when dimension n = 2 and all dim Hj = 1. In this setting, the
+underlying mixed-norm question is
+                    MIXED-NORM BRASCAMP-LIEB INEQUALITIES                                  3
+
+Question 1.3. Let m ∈ Z+ . For which p1 , . . . , pm , q, r > 0 and orthogonal
+projections B1 , . . . , Bm from R2 to one-dimensional subspaces H1 , . . . , Hm
+is there a finite constant C such that
+                         m                               m
+                                                                p
+                         Y                               Y
+(5)                   ∥    fj (Bj (x, y))pj ∥Lqx Lry ≤ C   ∥fj ∥Lj1
+                        j=1                               j=1
+
+holds, whenever f1 , . . . , fm ≥ 0?
+
+                                Pm of this problem in Section 2. We can
+   We will discuss basic benchmarks
+easily reduce to the case where j=1 pj = 1 and the correct constraint here
+is 1q + 1r = 1. We can also assume no Hj equals the x-axis.
+   In Section 2, we will see that the case q < 2 is the most interesting and
+cannot be obtained from classical Brascamp-Lieb. In the m = 3 case, (5)
+for q < 2 was systematically investigated by Christ [Chr01] and he obtained
+the following theorem:
+Theorem 1.4 (Follows from Theorem 1 of [Chr01]). Let m = 3 and 1q + 1r =
+1.
+   (a) If H1 , H2 , H3 are disjoint rational subspaces not equal to x-axis, then
+(5) always holds for p1 = p2 = p3 = 31 and some q < 2.1
+   (b) If there are two different rational subspaces and one irrational subspace
+among H1 , H2 , H3 , then (5) cannot hold for p1 = p2 = p3 = 13 and any q < 2.
+   Note that (1) with Lqx Lry -norm on LHS for some q < 2 is an immediate
+consequence of Theorem 1.4 plus interpolation. Indeed, in [Chr01], Theorem
+1.4 (a) was proved for every m ≥ 3.
+   Theorem 1.4 already looks very different from Theorem 1.2, indicating
+unusual aspects of the q < 2 case. All pj are taken to be equal in [Chr01],
+both for the sake of simplicity and because this setup is related to a question
+of Kenig and Stein [KS99] (see also the related [GK01]). Nevertheless, the
+more general case where p1 , p2 , p3 are not necessarily the same were also
+covered in [Chr01], and is actually the way Theorem 1.4 is proved there.
+Remark 1.5. For readers familiar with [Chr01], (5) will appear different
+in normalization of exponents. Indeed, [Chr01] considers inequalities of the
+form
+                   Z Y                           Y
+(6)              ∥      (gj ◦ Bj )(x, y)dy∥Ltx ≲   ∥gj ∥uj .
+                              j                             j
+
+Nevertheless, it can be elementarily seen that (5) and (6) are equivalent,
+in the sense that given an inequality of one form it is equivalent to the
+other inequality for some index and norm choices. The q < 2 case in (5)
+corresponds precisely to the t < 1 case in (6).
+1.4. Our results. Let us summarize what we will prove in this paper. In
+[Chr01], to obtain new cases of (5), one first obtain a restricted weak type
+estimate and then relies on interpolation. A priori, this method only works
+for an open range of (p1 , p2 , p3 ) and does not cover the endpoint of that
+   1A consequence of this for the k-linear case (k > 3) also follows directly, see §7, Remark
+4 in [Chr01].
+4                                   RUIXIANG ZHANG
+
+range. The first thing we do (Theorem 3.3) is to use a tensor product
+trick to prove that if a restricted weak type estimate is obtained in discrete
+analogues of (5) with a uniform implied constant, it can be automatically
+upgraded to an honest mixed-norm estimate. As an application example,
+we prove Theorem 1.1. The corresponding restricted weak type estimate,
+Lemma 4.2, is a generalization of (6) in [KT99]. Note that this kind of
+generalization was already used in [Chr01] to obtain restricted weak type
+estimates. Indeed some Lqx Lry (q < 2) version of Theorem 1.1 is a corollary
+of Theorem 1.4.
+   [Chr01] and the present paper are both related to efforts towards the
+Kakeya Conjectures [Bou99, KT99, KT02b]. Along this line we explain a
+natural connection (Theorem 5.3) between (5) and Kakeya: If one can take
+q arbitrarily close to 1, then the Hausdorff version of Kakeya (in any dimen-
+sion) is true. This part essentially follows the framework of Bourgain [Bou99]
+(see also [KT99, KT02b]) but is only possible because of very recent progress
+on quantitative Szemerédi’s Theorem [GT09, GT17, LSS24a, LSS24b]. The
+literature only seems to have the Minkowski dimension version2, so we work
+out necessary modifications for the Hausdorff version.
+   We will also turn to a technical comparison between (5) and (2). When
+q < 2 there are key differences between natures of the two. As Christ [Chr01]
+pointed out, unlike (2), the extremizers for the q < 2 case of (5) are in general
+not symmetric non-decreasing. We will show another difference based on
+the techniques in [Chr01]: A natural and desirable perturbed version of
+(5) can never hold. Thus, new challenges show up if one wants to apply
+recent developments like [BCT06, Gut10, Gut15, BBFL18] in the mixed-
+norm setting for q < 2.
+
+1.5. Outline of the paper. In Section 2, we formulate the perturbed
+Brascamp-Lieb inequality and present some basic knowledge about them. In
+Section 3, we prove that knowing the restricted weak type estimates in the
+discrete setting automatically implies the endpoint mixed-norm Brascamp-
+Lieb. In Section 4, we prove (1) as an application of the above principle.
+We discuss connections to the Kakeya Conjectures and absence of the per-
+turbed version in Section 5 and leave a technical but standard argument to
+Appendix A.
+
+
+                                Acknowledgement
+   This work is supported by NSF CAREER DMS–2143989 and Sloan Re-
+search Fellowship. The author thanks Ben Green for bringing [Tao] to his
+attention (see Remark 4.3), Larry Guth for making Remark 5.5 and Terence
+Tao for bringing [Chr01] to his attention. He would like to thank Michael
+Christ for reading through the paper and providing detailed feedback. He
+would also like to thank Yifan Jing and Dmitrii Zakharov for helpful com-
+ments.
+
+  2In the final editing stage of this note, I learned from [Tao25] that the same observation
+was made by Thomas Bloom.
+                   MIXED-NORM BRASCAMP-LIEB INEQUALITIES                                5
+
+      2. Mixed norm Brascamp-Lieb in dimension 2: Benchmarks
+   When n = 2 and all dim Hj = 1, from the classical Brascamp-Lieb in-
+equality (2) alone, there are many situations where one can not immediately
+answer Question 1.3.
+   Before further explanation, we make some simple remarks.
+   First, note that for each j, on both sides of (5) we request the powers of
+fj to be the same. This is necessary and can be seen by replacing fj by λfj .
+   Second, the case q = r for (5) is covered by the theory of (2), and the
+interesting new scenario is when q ̸= r.
+   Third, if one Bj is the projection to x-axis, then the study of (5) can
+be fully reduced to the theory without this Bj by Hölder. Hence, we will
+always assume none of Hj is equal to the x-axis.
+
+           Pm conditions. In the classical setting (2), the scaling condi-
+2.1. Necessary
+tion forces j=1 pj = 2. By scaling all the fj ’s together, we see for (5) there
+is again a necessary condition
+                                               m
+                                    1 1 X
+(7)                                  + =  pj .
+                                    q r
+                                               j=1
+
+   Also, by raising (2) to the β-th power (β > 0), we get an equivalent
+inequality with pj , q, r replaced by βpj , βq , βr , respectively. Because of this
+homogeneity, from now on let us always assume
+                                      1 1
+(8)                                    + = 1.
+                                      q r
+without loss of generality.3 Now (7) becomes
+                                      m
+                                      X
+(9)                                         pj = 1.
+                                      j=1
+
+2.2. Endpoint cases and new phenomena for q < 2. Looking at (5), it
+is natural to ask first if it holds at the endpoints (q, r) = (∞, 1) and (1, ∞).
+   At (q, r) = (∞, 1), (5) reads
+                       Z Y  m                      m
+                                                          p
+                                                   Y
+(10)                           fj (x + cj )pj dy ≲   ∥fj ∥Lj1
+                          y j=1                       j=1
+
+for some cj . This follows from Hölder whenever we have (9). By mixed-norm
+Hölder (Theorem 5.1.2 of [BL12]), we have established (5) (given (8) and
+(9)) when q ≥ 2.
+   When q < 2 and r > 2, (5) becomes more interesting. We record an
+immediate observation.
+Lemma 2.1 (A new necessary condition). If (5) holds for some q < 2 and
+r > 2 with (8) and (9), then m > 2.
+    3Our normalization has the advantage that q, r ≥ 1 always hold. As an inevitable cost,
+the readers may find an unharmful inconsistency: With this normalization, (2) takes a
+different but equivalent form.
+6                              RUIXIANG ZHANG
+
+Proof. Obviously m > 1.
+   If m = 2, we need H1 ̸= H2 . We test (5) with each of f1 and f2 be-
+ing a sum of N characteristic functions of disjoint unit intervals. Then
+|f1 (B1 x)|p1 |f2 (B2 x)|p2 becomes the sum of N 2 characteristic functions of
+parallelograms. We can arrange the parallelograms to have disjoint projec-
+tions to x-axis. Then in order for (5) to hold we need
+                               1
+                         (N 2 ) q ≲B1 ,B2 N p1 N p2 = N.
+This is possible only when q ≥ 2.                                              □
+   Hence, if we want (5) for some q < 2, then we must go beyond the
+“bilinear” setting m = 2 and require m to be larger. This is in sharp
+contrast against the non-mixed-norm situation (2). Indeed, when n = 2 and
+all dim Hj = 1, (2) is not truly new for m > 2: It can be deduced from (2)
+for m > 2 and Hölder. In the general n dimensions when all dim Hj = n − 1
+(the Loomis-Whitney setting), there is an analogous feature of (2) that it
+is not needed to go beyond the “multilinear” setting m = n. Indeed, (2) for
+m > n can always be deduced by the m = n case plus Hölder. However,
+in the mixed-norm case, we must go to the case m > n to discover new
+Brascamp-Lieb inequalities (5), even in dimension two!
+   In [Chr01], the case m = 3 and p1 = p2 = p3 = 31 were studied carefully
+and fruitful results such as Theorem 1.4 were obtained. As noted before,
+they already have a very different flavor than that of (2).
+
+    3. Relationship with discrete restricted weak type estimates
+   We change to a slightly broader setting. In this paper, G will always
+denote a discrete abelian group and | · | on G always denotes the counting
+function. We will see that a useful way to prove (5) when the projections
+are rational is by considering its counterpart where R is replaced by G first.
+This perspective has the advantage that as we will prove, it suffices to obtain
+a restricted weak type estimate with a uniform implied constant. These are
+usually easier to obtain.
+   To be precise, we start with (5) with (8), (9). Suppose in addition that
+all Bj are rational in the sense that there are integers (Pj , Qj ) = 1 such that
+                                     1
+(11)                 Bj (x, y) = q          (Pj x + Qj y).
+                                  Pj2 + Q2j
+
+We can then define the corresponding restricted weak type estimate on G2 .
+Definition 3.1. For the setup above, we say the restricted weak type coun-
+terpart of (5) is satisfied for every torsion-free abelian group G if the fol-
+lowing is true:
+   Let S1 , . . . , Sm ⊂ G be finite subsets. If a finite subset Z ⊂ G2 satisfies
+(i) Pj z1 + Qj z2 ∈ Sj , ∀(z1 , z2 ) ∈ Z, ∀1 ≤ j ≤ m and (ii) for every element
+g ∈ G, either there are ∼ M elements of the form (g, ·) in Z, or there are
+none. Then
+                                             m
+                                           q Y
+(12)                           |Z| ≲ M 1− r     |Sj |pj q
+                                          j=1
+                    MIXED-NORM BRASCAMP-LIEB INEQUALITIES                                7
+
+with the implied constant independent of G.
+Lemma 3.2. Suppose that for some choices of m, pj , q, r, every torsion-
+free abelian group G satisfies the restricted weak counterpart of (5) with a
+uniform implied constant and all Bj being rational projections in the form
+(11). Then for every such G and finitely supported functions f1 , . . . , fm :
+G → C we have the following discrete analogue of (5):
+                      m                           m
+                                                1
+                                        pj r rq q        p
+                   X XY                           Y
+(13)             (  (   fj (Pj x + Qj y) ) ) ≤      ∥fj ∥l1j .
+                  x∈G y∈G j=1                                         j=1
+
+Proof. The proof has two steps. First we do aPdyadic Q pigeonholing for each
+fj and the following function (in x): H(x) = y∈G m     j=1 |fj (Pj x + Qj y)|
+                                                                             pj r
+
+and use the restricted type estimate in the assumption to obtain a weaker
+version of (13) with a logarithm factor on the right hand side. Then we use
+a “tensor product” trick that was also used in [KT99] to obtain the honest
+(13).
+   Throughout the proof, every implied constant is allowed to depend on
+constants m, pj , q and r and we will not specify these dependencies.
+   Without loss of generality, we always assume fj ≥P  1 at every point in its
+support. Denote the “size parameter” ∥f ∥total to be m   j=1 ∥fj ∥1 .
+   Since each fj is finitely supported, there are only finitely many x such
+that H(x) ̸= 0. For each dyadic number cj ∈ [1, ∥f ∥total ), let
+                             fj,cj = fj · 1{g∈G:fj (g)∈[cj ,2cj )}
+and let
+                                     Sj,cj = suppfj,cj .
+For c1 , . . . , cm ∈ [1, ∥f ∥total ), denote
+                                         m
+                                        XY
+                    Hc1 ,...,cm (x) =             |fj,cj (Pj x + Qj y)|pj r .
+                                        y∈G j=1
+
+Now for another dyadic parameter b ∈ [1, ∥f ∥r+m
+                                             total ), denote
+
+                   Xc1 ,...,cm ,b = {x ∈ G : b ≤ Hc1 ,...,cm (x) ≤ 2b}.
+Note that as long as Hc1 ,...,cm (x) ̸= 0, x must belong to some Xc1 ,...,cm ,b since
+                                                      m
+                                                                   max{pj r,1}
+                                                      Y
+                      Hc1 ,...,cm (x) ≤ H(x) ≤              ∥fj ∥1               .
+                                                      j=1
+
+Now for c1 , . . . , cm all fixed,
+
+                                                                      q 1
+                   ( x∈G ( y∈G m                               pj r ) r ) q
+                    P       P    Q
+                                   j=1 |fj,cj (Pj x + Qj y)|
+                                                                            q 1
+             ( b x∈Xc ,...,c ,b ( y∈G m         |fj,cj (Pj x + Qj y)|pj r ) r ) q
+              P P                P       Q
+=                                           j=1
+                         1   m
+                                                                                         q 1
+≲ log(∥f ∥total + 1) · maxb ( x∈Xc ,...,c ,b ( y∈G m                              pj r ) r ) q
+                             P                P      Q
+                                           1      m     j=1 |fj,cj (Pj x + Qj y)|
+                                                               1                     1
+≲      (14)                log(∥f ∥total + 1) · maxb b r |Xc1 ,...,cm ,b | q .
+8                                       RUIXIANG ZHANG
+
+  By the definition of Sj,cj and Xc1 ,...,cm ,b , we see for each element x ∈
+Xc1 ,...,cm ,b , there are ∼ Qm b pj r different y such that Pj x + Qj y ∈ Sj,cj , ∀1 ≤
+                              j=1 cj
+j ≤ m. By the restricted weak type counterpart assumption,
+                                               !1− q m
+                                                   r Y
+             b                            b
+         Qm pj r · |Xc1 ,...,cm ,b | ≤ Qm pj r           |Sj,cj |pj q
+               c
+           j=1 j                            c
+                                        j=1 j        j=1
+
+and thus                                                 !− q m
+                                                            r Y
+                                               b
+                  |Xc1 ,...,cm ,b | ≤     Qm       p r
+                                                   j
+                                                                  |Sj,cj |pj q .
+                                            j=1 cj          j=1
+  Plugging this in (14) and note that c1 |S1,c1 | ≲ ∥f1 ∥1 , etc., we obtain
+                                                                   q 1
+                ( x∈G ( y∈G m                               pj r ) r ) q
+                 P      P      Q
+                                 j=1 |fj,cj (Pj x + Qj y)|
+                                                       pj
+                       log(∥f ∥total + 1) · m
+                                            Q
+(15)       ≲                                  j=1 ∥fj ∥l1 .
+
+   Finally we do a sum over c = (c1 , . . . , cm ). For short we write L =
+log(∥f ∥total + 1).
+                                                               q 1
+                    ( x∈G ( y∈G m                       pj r ) r ) q
+                     P     P   Q
+                                 j=1 |fj (Pj x + Qj y)|
+                                                                         q 1
+              ( x∈G (Lm maxc y∈G m                                pj r ) r ) q
+               P             P    Q
+      ≲                              j=1 |fj,cj (Pj x + Qj y)|
+                m P                                                      q 1
+              L r ( x∈G (maxc y∈G m                               pj r ) r ) q
+                             P    Q
+      =                              j=1 |fj,cj (Pj x + Qj y)|
+              m                                                             q 1
+      ≲ L r (Lm maxc x∈G ( y∈G m                                     pj r ) r ) q
+                         P     P    Q
+                                       j=1 |fj,cj (Pj x + Qj y)|
+                                               pj
+                              Lm+1 m
+                                   Q
+(16) ≲                               j=1 ∥fj ∥l1 .
+
+where we used (15) in the last line. For convenience we rewrite (16) as
+                                                                q 1
+                ( x∈G ( y∈G m                            pj r ) r ) q
+                 P      P       Q
+                                   j=1 |fj (Pj x + Qj y)|
+                                                         pj
+                     log(∥f ∥total + 1)m+1 m
+                                             Q
+(17)        ≲                                   j=1 ∥fj ∥l1 .
+
+  To get rid of the logarithm factor in (17), we use a tensor product trick.
+For a natural number N that will be large, we define Fj,N (1 ≤ j ≤ m) on
+the N -fold Cartesian product GN as:
+                  Fj,N (g1 , . . . , gN ) = Fj (g1 )Fj (g2 ) · · · Fj (gN ).
+By chasing definition,
+
+                                                                  q 1
+              ( x∈GN ( y∈GN m                              pj r ) r ) q
+               P      P    Q
+                              j=1 |Fj,N (Pj x + Qj y)|
+                                                          q 1 N
+              P                                                
+               ( x∈G ( y∈G m                       pj r ) r ) q
+                      P   Q
+(18)        =                   |f
+                            j=1 j  (P j x + Q j y)|                   .
+
+   Invoke (17) for Fj,N in place of fj , and note that ∥FN ∥total ≤ ∥f ∥N
+                                                                        total , we
+see
+
+                                                               q 1 N
+              P                                                     
+               ( x∈G ( y∈G m                            pj r ) r ) q
+                       P       Q
+                                 j=1 |fj (Pj x + Q j y)|
+                                                             pj N
+                                              Q                
+(19)        ≲   (N log(∥f ∥total + 1))m+1 ·      m
+                                                 j=1  ∥f  ∥
+                                                         j l1        .
+                   MIXED-NORM BRASCAMP-LIEB INEQUALITIES                             9
+
+  Let N → ∞ (and keep all fj ), we deduce (13).                                     □
+Theorem 3.3. [A transference principle] Suppose that for some choices of
+m, pj , q, r, every torsion-free abelian group G satisfies the restricted weak
+counterpart of (5) with a uniform implied constant and all Bj being rational
+projections in the form (11). Then (5) holds.
+Proof. Take G = Z in (13), and we P see that (5) holds where each of fj , 1 ≤
+j ≤ m takes form of a finite sum k ak 1Ik where Ik are disjoint
+                                                           P      intervals of
+length 1 (when we apply (13), we can plug in functions k 1CIk for large
+C). By rescaling all fj simultaneously, (1) also holds when each fj is a finite
+linear combination of characteristic functions of disjoint intervals of equal
+length. Now (1) follows from approximation and Fatou’s lemma.                □
+
+            4. The restricted weak type estimate for (1)
+   As an example of applying Theorem 3.3, we use it to prove Theorem
+1.1 based on a restricted weak type estimate (Lemma 4.2 below). Lemma
+4.2 already exists in the literature (see Tao’s unpublished note [Tao] and
+Remark 4.3 below), and we include a proof here for self-containment. It is
+obtained in the same way as [Chr01, (3)] was obtained, and is a stronger
+version of the following Proposition 4.1 obtained in Katz-Tao’s work [KT99]
+and their proofs share much in common. One key point of the present paper
+is that we further show that the lemma can be upgraded to its endpoint
+version (Theorem 1.1) by Theorem 3.3.
+   We first recall
+Proposition 4.1 (Katz-Tao, (6) in [KT99]). Let G be an abelian group
+without order 2 elements. For finite S1 , S2 , S3 , S4 ⊂ G and a finite Z ⊂ G2
+with every two elements in S having different first coordinates, we have
+(20)
+                                                                        1     1       1       1
+|{(x, y) ∈ Z : x+y ∈ S1 , −x+y ∈ S2 , y ∈ S3 and x+3y ∈ S4 }| ≤ |S1 | 2 |S2 | 2 |S3 | 2 |S4 | 4 .
+   We remark that the form of Katz-Tao’s theorem is slightly different. But
+their conclusion can be seen equivalent via a linear transform.
+   We show next that Katz-Tao’s proof of Proposition 4.1 leads to a stronger
+restricted weak type mixed-norm estimate. We set up some notations first:
+For (a1 , a2 ) ∈ G2 , define the projection πa1 ,a2 : G2 → G as
+                             πa1 ,a2 (x, y) = a1 x + a2 y.
+Lemma 4.2. Let G be an abelian group without order 2 elements and
+S1 , S2 , S3 , S4 ⊂ G be finite subsets. If a finite subset Z ⊂ G2 satisfies (i)
+π1,1 (z) ∈ S1 , π−1,1 (z) ∈ S2 , π0,1 (z) ∈ S3 and π1,3 (z) ∈ S4 , ∀z ∈ Z and (ii)
+every element in π1,0 (Z) has ≤ m preimages in Z with respect to the map
+π1,0 (Z). Then
+                                    1      1       1      1      1
+(21)                     |Z| ≤ m 4 |S1 | 2 |S2 | 2 |S3 | 2 |S4 | 4 .
+Proof. This proof is not too different from the proof of [Chr01, (3)] and has
+a lot of similarities with The proof of [KT99, (6)]. For many steps, we will
+only sketch those and refer the readers to the counterpart in these papers.
+10                                  RUIXIANG ZHANG
+
+                                      2
+   First, we see there are ≥ |Z|    |S1 | pairs (z1 , z2 ) such that π1,1 (z1 ) = π1,1 (z2 )
+like how (13) is deduced in [KT99] (from their Lemma 2.1). Applying
+Lemma 2.1 in [KT99] again just like the deduction of (18) in [KT99], we see
+                     4
+there are ≥ |S1 |2|Z|
+                   |S2 ||S3 |
+                              tuples (z1 , z2 , z3 , z4 ) such that
+
+π1,1 (z1 ) = π1,1 (z2 ), π1,1 (z3 ) = π1,1 (z4 ), π−1,1 (z1 ) = π−1,1 (z3 ) and π0,1 (z2 ) = π0,1 (z4 ).
+   For each 4−tuple (z1 , z2 , z3 , z4 ) obtained above, we name their coordinates
+as z1 = (x1 , y1 ), etc. Now we claim two things:
+   Claim I: For each such tuple, their π1,0 (z1 ) is uniquely determined by
+π−1,1 (z2 ), π0,1 (z3 ) and π1,3 (z4 ).
+   Indeed, knowing all the latter three, we can deduce
+                2x1 =       (x1 + y1 ) − (−x1 + y1 )
+                    =       (x2 + y2 ) − (−x3 + y3 )
+                    = −(−x2 + y2 ) − 2y3 + (2y2 ) + (x3 + y3 )
+                    = −(−x2 + y2 ) − 2y3 + (2y4 ) + (x4 + y4 )
+(22)                =   −(−x2 + y2 ) − 2y3 + (x4 + 3y4 )
+and divide it by 2 we know x1 = π1,0 (z1 ).
+   Claim II: Knowing π−1,1 (z2 ), π0,1 (z3 ) and π1,3 (z4 ) and z1 will uniquely
+determine such a tuple.
+   Indeed, since we know x1 + y1 = x2 + y2 and also x2 − y2 , we know z2 .
+Since we know x1 − y1 = x3 − y3 and also y3 , we know z3 . Finally, these two
+allow us to know y4 = y2 and x4 + y4 = x3 + y3 and hence z4 .
+   By the two claims, we know the number of all such 4-tuples is ≤ m|S2 ||S3 ||S4 |
+(since knowing π−1,1 (z2 ), π0,1 (z3 ) and π1,3 (z4 ) enables us know π1,0 (z1 ), thus
+limiting the choice of z1 to ≤ m possibilities by assumption). Combining
+this upper bound with the lower bound we got earlier gives the lemma. □
+Remark 4.3. This lemma exists in the literature and follows from the en-
+tropy inequality in [Tao, Proposition 3.5] where an entropy version of sharp-
+ened Proposition 4.1 was obtained. A similar sharpening can be found in (4)
+in [PZ24]. [PZ24] also proves abstractly that a general class of sharpenings
+of entropy inequalities are equivalent to their weaker forms, and comments
+that many known methods that prove weaker forms also automatically prove
+sharpenings.
+   We also comment that the G = Z case in Lemma 4.2 corresponds to an
+interesting discrete inequality.
+Proof of Theorem 1.1. This is a direct combination of Theorem 3.3 and
+Lemma 4.2 which verifies the restricted weak type estimate.         □
+
+
+5. Connecting mixed-norm Brascamp-Lieb in R2 to Kakeya in Rd
+   The inequality (5) has connections to the Kakeya Conjectures. We explain
+this connection and make an interesting remark about a failed attempt to
+apply recent progress on Brascamp-Lieb to (5) in this section. We first
+introduce the Kakeya Conjectures.
+                  MIXED-NORM BRASCAMP-LIEB INEQUALITIES                             11
+
+5.1. Brief introduction to Kakeya. On a high level, the Kakeya Conjec-
+tures assert the tubes in different directions in Rd cannot overlap unexpect-
+edly much. Different forms of those conjectures then have different ways to
+quantify this. We introduce one below.
+Definition 5.1 (Kakeya set). A compact set E ⊂ Rd is called a Kakeya set
+if E contains a unit line segment in every direction.
+Conjecture 5.2 (Kakeya Conjecture, Hausdorff version). Every Kakeya set
+in Rd has Hausdorff dimension d.
+   Kakeya Conjectures remain open in dimensions d ≥ 4. They are dif-
+ficult geometric measure theory problems themselves, but are surprisingly
+important also in modern Fourier analysis. For a good introduction of the
+conjectures and the above connection, see [Tao01]. For some recent progress
+on the Kakeya Conjectures, see e.g. [KZ19, Zah21, HRZ22, Ars24] and the
+notable resolution of Conjecture 5.2 in dimension 3 [WZ26, WZ25a, WZ25b].
+
+5.2. The connection to (5). There is a natural connection between the
+mixed-norm Brascamp-Lieb inequality (5) and the Kakeya Conjectures in
+the q < 2 regime. Before carefully explaining it, let us remark that the
+arithmetic projection technique in [KT99] that we used to prove (1) was
+a further development following Bourgain’s work [Bou99] to use additive
+combinatorics to improve on the high-dimensional Kakeya Conjectures. This
+technique was developed further later in [KT02b]. It is conceivable that more
+results in [KT99, KT02b] can be upgraded to prove new cases of (5), just
+like what we did to prove (1).
+   We do not try to prove more cases of (5) in this paper. We chose to present
+and to prove the current Theorem 1.1 here just because it is technically
+easiest. Instead, we turn to a slightly different perspective: There is an
+abstract connection between (5) for q < 2 and Conjecture 5.2 (in arbitrary
+dimension d). We now state and prove this connection.
+Theorem 5.3. Let q ∈ (1, 2). Suppose there exist {Hj } being rational
+subspaces of R2 (not equal to x-axis) and pj such that (5) holds for this q
+with 1q + 1r = 1, then the Hausdorff dimension of every Kakeya set in every
+Rd is at least d−1
+                 q + 1.
+
+Proof. For an abelian group G without torsion and some α, following [KT02b]
+we say we have the property SD(α) for G if we have the following property:
+   Property. There is a set of rational projections π1 , . . . , πk : G2 → G (by
+this we mean πk (g1 , g2 ) = a1,k g1 + a2,k g2 with a1,k , a2,k ∈ Z and a1,k , a2,k not
+both zero) where a1,k ̸= −a2,k , ∀k such that the following holds: Whenever
+a subset S ⊂ G2 satisfy |πj (S)| ≤ N, ∀j ≤ k, we always have |π(1,−1) (S)| ≲
+N α . Here π(1,−1) (g1 , g2 ) = g1 − g2 .
+   Back to the proof of the theorem, we claim that by assumption, SD(q)
+holds for Z. To see this, suppose some Cj Bj (x1 , x2 ) = cj x1 +dj x2 , Cj , cj , dj ∈
+Z where dj ̸= 0. If a set S ⊂ Z2 suchPthat all |Sj | = |{cj x1 +dj x2 : (x1 , x2 ) ∈
+S}| ≤ N , then by plugging in fj as m∈Sj 1[ m−1 , m+1 ] in (5), we deduce that
+                                                   Cj   Cj
+
+the projection of S to the first variable has size ≲ N q . But this is a linearly
+12                            RUIXIANG ZHANG
+
+transformed version of SD(q) for Z and the claim in the beginning of this
+paragraph is justified.
+   It is standard that a finite set in Rd−1 can be embedded into Z that
+preserves equalities involving a finite set of linear combinations. From this
+we can see that SD(q) for Z implies SD(q) for Rd−1 . This idea is already
+implicitly recorded in the literature, see e.g. Theorem 1.1 (2) in [GR19].
+   It is already known in the literature [Bou99, KT99, KT02b, GR19] that
+SD(q) for Rd−1 implies the Minkowski dimension of every Kakeya set in Rd is
+at least d−1
+           q +1, see also the survey [KT02a]. By recent work in [GT09, GT17]
+and the very recent [LSS24a, LSS24b] in additive combinatorics, it is possible
+to strengthen this argument to obtain the Hausdorff version. We are not
+aware of this written anywhere in the literature, so we sketch its proof in
+Appendix A. See Theorem A.1.                                                □
+  It seems reasonable to the author to make the following conjecture, which,
+by Theorem 5.3, will imply Conjecture 5.2.
+Conjecture 5.4. For arbitrary α > 1, (5) holds for some choices of m, pj , q, r
+and rational projections Bj with (8) satisfied and q < α.
+   As we see in the proof of Theorem 5.3, Conjecture 5.4 will imply SD(q)
+for Z for q arbitrarily close to 1 and thus imply the Kakeya Conjecture 5.2.
+Remark 5.5. In [Kat06], Katz proved that one cannot prove SD(q) for q <
+3
+2 by elementary graph theoretic methods (see [Kat06] for precise definitions).
+This rules out a class of methods to prove (5) for q < 32 , including the Katz-
+Tao method in this paper to prove (1). I am indebted to Larry Guth for
+pointing this out to me.
+   (5) seems less intuitive for “genuinely” irrational projections (i.e. ones
+that cannot be simultaneously well-approximated by rationals in a suitable
+sense). See Section 7, Remark 4 of [Chr01] for a more detailed discussion
+when m ≥ 4 (known to be a requirement to ask an interesting question in
+this direction).
+Question 5.6. Assume (8). Does (5) for q < 2 have implications on Kakeya
+if Bj ’s cannot be simultaneously made rational under affine transformations?
+5.3. The absence of perturbed versions of (5). In this subsection, we
+present another key difference between (2) and (5), regarding their perturbed
+versions.
+    First, recall that the classical Brascamp-Lieb inequality (2) allows small
+perturbations of the projections and we in fact have stability of the constant
+[BBFL18]. Moreover, a stronger kind of stability holds in the classical set-
+ting: If each fj is a sum of characteristic functions of unit intervals, then
+each fj ◦ Bj is a sum of characteristic functions of (infinite) unit cylinders.
+It is known that whenever (2) holds, there is θ > 0 such that (2) still holds
+if the direction of each cylinder is perturbed by an angle < θ. Here the per-
+turbations of directions of individual cylinders do not have to be uniform.
+    The above-mentioned results were typically first proved in a local version.
+There we take the integration over a ball BR of radius R (R → ∞) and
+allow an Rε -loss. After this, the Rε -loss was also removed. See [BCT06,
+                    MIXED-NORM BRASCAMP-LIEB INEQUALITIES                               13
+
+Gut10, CV13, Gut15, Zha17, ZK20] and a more detailed introduction in
+[Zha22]. One important case is the multilinear Kakeya inequality proved in
+[BCT06, Gut10]. This illustrates another connection between the Brascamp-
+Lieb inequality and Kakeya, not to be confused with the connection we have
+covered in the prior subsections.
+   One can wonder if a perturbed version of (5) in the same way is true.
+This would be a much stronger assertion than (5), and would be interesting
+from the multilinear Kakeya perspective. The following question makes this
+precise:
+Question 5.7. Do there exist some choices of m ∈ Z+ , p1 , . . . , pm , q, r > 0,
+θ > 0 and directions v1 , . . . , vj ∈ S 1 satisfying (8) and q < 2 such that
+                        m X Nj                                m
+                                                                 p
+                        Y                                     Y
+(23)                ∥     (    1Tj,n )pj ∥Lqx Lry (BR ) ≲ε Rε   Nj j ?
+                        j=1 n=1                             j=1
+
+   Here each Tj,n    ⊂ R2 is a rectangle of infinite length and width 1 s.t.
+                                                                          its
+direction makes an angle < θ against vj , and BR is any disc of radius R > 1
+in R2 .
+   A positive answer to question 5.7 would provide a unique perspective to
+study (5) and Conjecture 5.4. Unfortunately, it has a negative answer.
+Theorem 5.8. The answer to Question 5.7 is negative.
+Proof. We will construct counterexamples to the question where each family
+of tubes are parallel. The idea is inspired by [Chr01, Section 2].
+    Fix choices m ∈ Z+ , p1 , . . . , pm , q, r > 0, θ > 0 and directions v1 , . . . , vj ∈
+  1
+S satisfying (8) and q < 2. We want to prove it is impossible to have
+                       m X Nj                               m
+                                                               p
+                       Y                                    Y
+                                     pj                   ε
+(24)                 ∥   (    1Tj,n ) ∥Lqx Lry (BR ) ≲ε R     Nj j
+                        j=1 n=1                              j=1
+
+where each Tj,n has the property described in Question 5.7.
+   Because small perturbations are allowed, without loss of generality we
+may assume v1 ̸= v2 and neither v1 nor v2 is parallel to coordinate axes.
+Then by simple linear transformations, without loss of generality we can
+assume v1 is parallel to (1, 1) and v2 is parallel to (1, −1) (see the beginning
+of Section 2 of [Chr01] for details).
+     √ an arbitrary irrational number α ∈ (1, 2) (for example one can take
+   Take
+α = 2 for definiteness). We can find rational numbers r3 , . . . , rm such that
+the directions of (α+r3 , α−r3 ), . . . , (α+rm , α−rm ) are θ-close to v3 , . . . , vm
+respectively. We will see its relevance shortly.
+   Since α is irrational, there is a sequence of coprime pairs (P, Q) ∈ Z2+
+increasing in both coordinates such that
+                                           P   1
+(25)                                  α−     < 2.
+                                           Q  Q
+   Take a pair (P, Q) satisfying (25) with Q > 10. We now construct tubes
+Tj,n to be plugged into the left hand side of (24). We will use a family of
+auxiliary unit balls and first construct them.
+14                                RUIXIANG ZHANG
+
+
+( For 1 ≤ i ≤ P and 1 ≤ k ≤ Q, let the point Xik = (xik , yik ) satisfy
+  xik − yik = iQ,
+                       Let X = {Xik : 1 ≤ i ≤ P, 1 ≤ k ≤ Q} and a set of
+  xik + yik = kP.
+unit balls B = {unit balls around points in X }.
+   By definition, there are P lines in the direction of (1, 1) whose union
+covers the whole X . Choose T1,1 , . . . , T1,P to be the unit tubes with core
+lines being these. Then the union of these tubes covers every ball in B.
+Similarly, we can choose unit tubes T2,1 , . . . , T2,Q in the direction of (1, −1)
+such that the union of these tubes covers every ball in B.
+   For every j ∈ {3, . . . , m}, we now construct tubes Tj,1 , Tj,2 , . . . parallel to
+(α + rj , α − rj ) so that their union covers B. To see how many tubes we
+need to use, we consider the possible values of (α − rj )xik − (α + rj )yik . This
+is equal to
+                   α(xik − yik ) − rj (xik + yik ) = iαQ − krj P.
+                   u
+     Suppose rj = vjj . Because of (25) and 1 < α < 2, we see by the above
+equality that (α − rj )xik − (α + rj )yik must be O(1)-close to some NvjP where
+N ∈ Z and N = O(Qvj ). Hence for each j we need O(Q) tubes in the family
+{Tj,n } in total so that their union covers every ball in B. Note there are
+only finitely many vj and they should all be viewed as constants. We have
+suppressed the dependence of vj in the last assertion.
+   Now we are about to contradict (24). Note P ∼ Q. For the constructed
+                                                    PNj
+Tj,n , there is O(Q) tubes in each family, and each n=1     1Tj,n is ≳ 1 on every
+ball in B. Moreover, the projections of balls in B on the x-axis is a union
+of unit intervals around ( iQ+kP
+                               2   , 0) where i ∈ [1, P ] and j ∈ [1, Q]. Since
+P and Q are coprime, the number of these intervals is ≳ Q2 . Finally, note
+that every ball in B is in a ball of radius R = O(Q2 ). Thus by a similar
+reasoning to the proof of Lemma 2.1, we know the left hand side of (24) is
+      2
+≳ Q q . However, the right hand side is O(Q1+2ε ). This is impossible when
+Q → ∞ since q < 2.                                                             □
+
+   We make a remark to explain some consequences of Theorem 5.8. There
+are three major known ways to affirmatively answer the non-mixed-norm
+counterpart of Question 5.7: the heat flow method in [BCT06], the method of
+auxiliary polynomials [Gut10] and a conceptually simpler multiscale analysis
+[Gut15]. However, Theorem 5.8 implies they all fail if one wants to prove
+(5) by positively answering Question 5.7. This is another manifestation of
+very different behavior of (5) and its non-mixed-norm counterpart (2).
+   It may be of interest to imitate the three approaches above and see what
+prevents one from getting (24). If one tries to imitate the argument in
+[BCT06], it seems the extrapolation has a chance to work, but there seems
+to be an additional term working against the estimate. For the other two
+methods in [Gut10] and [Gut15], the author does not know a good way to
+adapt them.
+
+      Appendix A. SD(α) implies Hausdorff version of Kakeya
+     It remains to prove
+                   MIXED-NORM BRASCAMP-LIEB INEQUALITIES                               15
+
+Theorem A.1. If SD(α) holds for Rd−1 , then the Hausdorff dimension of
+every Kakeya set K ⊂ Rd is at least d−1
+                                     q + 1.
+
+   Theorem A.1 has a standard proof but may be of independent interest.
+We state it and sketch the proof in this appendix. Recall that SD(α) was
+defined in the proof of Theorem 5.3.
+   To prove Theorem A.1, we will follow Bourgain’s proof of Proposition 1.5
+in [Bou99]. We remark that one useful idea in this proof is to concatenate
+a few consecutive dyadic scales.
+Proof sketch of Theorem A.1. The theorem can be proved in the same way
+as Bourgain’s proof of Proposition 1.5 in [Bou99]. We only note the neces-
+sary modifications.
+   We set up exactly as what Bourgain did in his argument. Instead of using
+Heath-Brown and Szemerédi’s result right below (3.22) in [Bou99], we can
+now use the result of [LSS24b] (see also [GT09, GT17, LSS24a] for prior
+results) to conclude that since the density of Q is O((log log M )−C ), much
+                          c
+larger than e−(log log M ) , we can find an N0 -terms arithmetic progression for
+an arbitrary N0 fixed beforehand. Depending on the projections in SD(α)
+we have, we can set N0 large enough so that we can use SD(α) in place of
+Bourgain’s application of his Lemma 2.83 (right below (3.26) in [Bou99]) to
+deduce
+                      Nδ ({aξ − bξ : ξ ∈ Dr }) < cNδ (Eδr )q+
+in place of Bourgain’s (3.30). The conclusion then follows in the same way
+as [Bou99].                                                                   □
+
+                                     References
+[Ars24]   Bodan Arsovski. The p-adic Kakeya conjecture. Journal of the American
+          Mathematical Society, 37(1):69–80, 2024.
+[BBFL18] Jonathan Bennett, Neal Bez, Taryn C Flock, and Sanghyuk Lee. Stability of
+          the Brascamp-Lieb constant and applications. American Journal of Mathe-
+          matics, 140(2):543–569, 2018.
+[BCCT08a] Jonathan Bennett, Anthony Carbery, Michael Christ, and Terence Tao. The
+          Brascamp–Lieb inequalities: finiteness, structure and extremals. Geometric
+          and Functional Analysis, 17(5):1343–1415, 2008.
+[BCCT08b] Jonathan Bennett, Anthony Carbery, Michael Christ, and Terence Tao. Fi-
+          nite bounds for Hölder-Brascamp–Lieb multilinear inequalities. Mathematical
+          Research Letters, 30:10001–100, 2008.
+[BCT06]   Jonathan Bennett, Anthony Carbery, and Terence Tao. On the multilinear
+          restriction and Kakeya conjectures. Acta mathematica, 196(2):261–302, 2006.
+[BL12]    Jöran Bergh and Jörgen Löfström. Interpolation spaces: an introduction, vol-
+          ume 223. Springer Science & Business Media, 2012.
+[Bou99]   Jean Bourgain. On the dimension of Kakeya sets and related maximal in-
+          equalities. Geometric & Functional Analysis GAFA, 9(2):256–282, 1999.
+[Chr01]   Michael Christ. On certain elementary trilinear operators. Mathematical Re-
+          search Letters, 8(1):43–56, 2001.
+[CV13]    Anthony Carbery and Stefán Ingi Valdimarsson. The endpoint multilinear
+          Kakeya theorem via the Borsuk–Ulam theorem. Journal of Functional Anal-
+          ysis, 264(7):1643–1663, 2013.
+[GK01]    Loukas Grafakos and Nigel Kalton. Some remarks on multilinear maps and
+          interpolation. Mathematische Annalen, 319:151–180, 2001.
+[GR19]    Ben Green and Imre Z Ruzsa. On the arithmetic Kakeya conjecture of Katz
+          and Tao. Periodica Mathematica Hungarica, 78:135–151, 2019.
+16                               RUIXIANG ZHANG
+
+[GT09]     Ben Green and Terence Tao. New bounds for Szemerédi’s theorem, II: A new
+           bound for r4 (N ). Analytic number theory, pages 180–204, 2009.
+[GT17]     Ben Green and Terence Tao. New bounds for Szemerédi’s theorem, III: a
+           polylogarithmic bound for r4 (N ). Mathematika, 63(3):944–1040, 2017.
+[Gut10]    Larry Guth. The endpoint case of the Bennett–Carbery–Tao multilinear
+           Kakeya conjecture. Acta Mathematica, 205(2):263–286, 2010.
+[Gut15]    Larry Guth. A short proof of the multilinear Kakeya inequality. In Mathemat-
+           ical Proceedings of the Cambridge Philosophical Society, volume 158, pages
+           147–153. Cambridge University Press, 2015.
+[HRZ22]    Jonathan Hickman, Keith M Rogers, and Ruixiang Zhang. Improved bounds
+           for the Kakeya maximal conjecture in higher dimensions. American Journal
+           of Mathematics, 144(6):1511–1560, 2022.
+[Kat06]    Nets Hawk Katz. Elementary proofs and the sums differences problem. Col-
+           lectanea Mathematica, pages 275–280, 2006.
+[KS99]     Carlos E Kenig and Elias M Stein. Multilinear estimates and fractional inte-
+           gration. Mathematical Research Letters, 6(1):1–15, 1999.
+[KT99]     Nets Hawk Katz and Terence Tao. Bounds on arithmetic projections, and ap-
+           plications to the Kakeya conjecture. Mathematical Research Letters, 6(6):625–
+           630, 1999.
+[KT02a]    Nets Katz and Terence Tao. Recent progress on the Kakeya conjecture. Pub-
+           licacions matemàtiques, pages 161–179, 2002.
+[KT02b]    Nets Hawk Katz and Terence Tao. New bounds for Kakeya problems. Journal
+           d’Analyse Mathématique, 87:231–263, 2002.
+[KZ19]     Nets Katz and Joshua Zahl. An improved bound on the Hausdorff dimension
+           of Besicovitch sets in R3 . Journal of the American Mathematical Society,
+           32(1):195–259, 2019.
+[LSS24a]   James Leng, Ashwin Sah, and Mehtaab Sawhney. Improved bounds for five-
+           term arithmetic progressions. In Mathematical Proceedings of the Cambridge
+           Philosophical Society, volume 177, pages 371–413. Cambridge University
+           Press, 2024.
+[LSS24b]   James Leng, Ashwin Sah, and Mehtaab Sawhney. Improved bounds for Sze-
+           merédi’s theorem. arXiv preprint arXiv:2402.17995, 2024.
+[PZ24]     Cosmin Pohoata and Dmitrii Zakharov. Generalized arithmetic Kakeya. arXiv
+           preprint arXiv:2411.13395, 2024.
+[Tao]      Terence Tao. Entropy sum set estimates. Can be found at ”https: // www.
+           math. ucla. edu/ ~ tao/ whatsnew2005. html ”.
+[Tao01]    Terence Tao. From rotating needles to stability of waves; emerging connec-
+           tions between combinatorics, analysis and PDE. Notices of the AMS, 48(3),
+           2001.
+[Tao25]    Terence Tao. Sum-difference exponents for boundedly many slopes, and ra-
+           tional complexity. arXiv preprint arXiv:2511.15135, 2025.
+[WZ25a]    Hong Wang and Joshua Zahl. The Assouad dimension of Kakeya sets in R3 .
+           Inventiones mathematicae, 241(1):153–206, 2025.
+[WZ25b]    Hong Wang and Joshua Zahl. Volume estimates for unions of convex
+           sets, and the Kakeya set conjecture in three dimensions. arXiv preprint
+           arXiv:2502.17655, 2025.
+[WZ26]     Hong Wang and Joshua Zahl. Sticky Kakeya sets and the sticky Kakeya con-
+           jecture. Journal of the American Mathematical Society, 39(2):515–585, 2026.
+[Zah21]    Joshua Zahl. New Kakeya estimates using Gromov’s algebraic lemma. Ad-
+           vances in Mathematics, 380:107596, 2021.
+[Zha17]    Ruixiang Zhang. The endpoint perturbed Brascamp–Lieb inequalities with
+           examples. Analysis & PDE, 11(3):555–581, 2017.
+[Zha22]    Ruixiang Zhang. The Brascamp-Lieb inequality and its influence on Fourier
+           analysis. The Physics and Mathematics of Elliott Lieb, 2:585–628, 2022.
+[ZK20]     Pavel Zorin-Kranich. Kakeya–Brascamp–Lieb inequalities. Collectanea Math-
+           ematica, 71(3):471–492, 2020.
+               MIXED-NORM BRASCAMP-LIEB INEQUALITIES                17
+
+Ruixiang Zhang. UC Berkeley. Email address: ruixiang@berkeley.edu
+
