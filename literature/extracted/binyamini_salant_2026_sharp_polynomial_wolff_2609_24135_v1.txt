@@ -1,0 +1,471 @@
+                                              ESTABLISHING THE POLYNOMIAL WOLFF AXIOMS FOR
+                                                  δ-SEPARATED δ-TUBES WITH #O-MINIMALITY
+
+
+                                                                        GAL BINYAMINI, YUVAL SALANT
+arXiv:2609.24135v1 [math.CA] 21 Sep 2026
+
+
+
+
+                                                    Abstract. We establish the full version of a conjecture of Guth and Zahl,
+                                                    giving a lower bound for the volume of a semialgebraic set that has a large
+                                                    intersection with a collection of δ-separated δ-tubes. Our proof uses o-minimal
+                                                    methods to simplify the proof of Katz and Rogers, who proved the conjecture
+                                                    up to a small factor. We also establish that the constants depend polynomially
+                                                    on the complexity of the semialgebraic set, and more generally in the #o-
+                                                    minimal setting.
+
+
+
+
+                                                                                1. Introduction
+                                           1.1. Main Results. In [5], Katz and Rogers confirm a near-optimal version of the
+                                           following conjecture made by Guth and Zahl (see [3, Conjecture 1.2]). We say that
+                                           a collection of δ-tubes (δ-neighborhoods of unit segments) in Rn is δ-separated if
+                                           the tubes point in δ-separated directions. That is, the angle between the central
+                                           lines of any two distinct tubes is at least δ. We also say that a semialgebraic set in
+                                           Rn has complexity (at most) E if it can be defined using intersections and unions
+                                           of polynomial inequalities in n variables whose sum of degrees is at most E.
+                                           Conjecture 1.1.1 (δ-Separation Implies the Polynomial Wolff Axioms). Let 1 ≥
+                                           λ ≥ δ > 0, let T be a δ-separated collection of δ-tubes in Rn , and let S ⊆ Rn be a
+                                           semialgebraic set of complexity E. Then
+                                                                                                                        1
+                                                      |S|Rn ≥ # {T ∈ T : |T ∩ S|Rn ≥ λ|T |Rn } · δ n−1 · λn ·                 ,
+                                                                                                                     constn,E
+                                           where |X|Rn is the Lebesgue measure of X, #A is the number of elements in A,
+                                           and constn,E is a non-negative constant that depends only on n, E.
+                                              Katz and Rogers proved this conjecture up to a factor of δ ε (that is, they showed
+                                           that |S|Rn ≥ # {T ∈ T : |T ∩ S|Rn ≥ λ|T |Rn } · δ n−1+ε · λn · const1n,E,ε ). A generalized
+                                           version of this conjecture was then used to establish partial results regarding the
+                                           Kakeya conjecture (see, for example, [4]).
+                                              In this paper, we follow the proof from [5] and a newer version of this proof,
+                                           as found in the proof of [4, Theorem 1.4]. We use the more general language of
+                                           o-minimality and #o-minimality (see §2.2), and by simplifying the arguments we
+                                           prove the full version of the conjecture with a constant of poly1 (E) , where polyn (E)
+                                                                                                              n
+                                           is a polynomial in E when n is fixed; see §1.2.
+
+                                             Date: September 22, 2026.
+                                             Funded by the European Union (ERC, SharpOS, 101087910), and by the ISRAEL SCIENCE
+                                           FOUNDATION (grant No. 2067/23).
+                                                                                          1
+2                           GAL BINYAMINI, YUVAL SALANT
+
+
+Remark 1.1.2. For readers interested primarily in the original conjecture, it is
+safe to restrict attention everywhere in this paper to semialgebraic sets, as these
+indeed constitute an o-minimal and a #o-minimal structure; see [1, Example 1.5.1].
+Briefly, in this case, the format of the set can be taken as the ambient dimension
+and the degree can be taken as the sum of the degrees in a presentation of the
+semialgebraic set using equalities and inequalities.
+    We establish the following theorem:
+Theorem 1 (Main theorem). Let 1 ≥ λ, δ > 0 and let S ∈ Rn be definable in an
+o-minimal structure. Let T be a δ-separated collection of δ-tubes in Rn such that
+                           ∀T ∈ T :     |T ∩ S|Rn ≥ λ|T |Rn .
+Then
+                                    1
+                             |S|Rn ≥   #T · λn · δ n−1 .
+                                  C(S)
+Here, C(S) > 0 is a constant depending on S. If S is definable in a #o-minimal
+structure with format F and degree E, then the constant C(S) can be taken to be
+polyF (E).
+    In [5], Katz and Rogers used the Wongkew Lemma [7, Main Theorem], in the case
+where S is the intersection of a δ-neighborhood of a degree (at most) D algebraic
+variety of dimension k with a ball of constant radius, to find an upper bound of
+|S| ≤ polyn (D) · δ n−k . This allowed them to prove a second conjecture by Guth,
+which asked for an upper bound of constn,D,ε ·δ 1−k−ε for the number of δ-separated
+δ-tubes that can be contained in such a set S. The result in our paper improves
+this bound by eliminating the ε and establishing a constant that is polynomial in
+D when n is fixed. That is, by combining Theorem 1 with the same method as in
+[5], we get the following result:
+Corollary 2. Let 1 ≥ δ > 0 and let S ⊆ Rn be the intersection of the δ-
+neighborhood of an algebraic variety of dimension k and degree at most D with
+a closed ball of constant radius. Let T be a collection of δ-tubes that are contained
+in S and point in δ-separated directions. Then
+                                #T ≤ polyn (D) · δ 1−k .
+1.2. Overview. We briefly address the two key points where our arguments differ
+from [5], allowing us to avoid the additional δ ε term.
+   In the first half of [5], the authors integrate over a semialgebraic set. This is done
+in two steps: first, the Yomdin-Gromov algebraic lemma [5, Lemma 2.3] is used to
+obtain a C r -parametrization. This map is then approximated by a polynomial,
+allowing the authors to use the Bézout theorem to obtain an effective estimate.
+In order for this approximation to be sufficiently accurate, it is necessary to use a
+large r = θ( 1ε ) which translates into a constε δ ε error term. We work instead directly
+with the relevant semialgebraic set, replacing the use of the Bézout theorem by more
+general o-minimal (or #o-minimal) bounds, thus avoiding the approximation step
+altogether.
+   In the second half of [5], there is another step involving a dyadic pigeonhole
+principle which introduces another log δ −1 error term. In the original argument,
+this was absorbed into the δ ε error term, so there was little point in attempting
+to improve this step. However, we show that a more refined geometric approach
+          POLYNOMIAL WOLFF AXIOMS FOR δ-TUBES WITH #O-MINIMALITY                           3
+
+
+can be used to eliminate this additional error term, thus recovering the full original
+conjecture.
+   It turns out that all of the arguments in the paper continue to hold in the more
+general context of o-minimal structures (or, for polynomial bounds on constants,
+#o-minimal structures), so we have chosen to present the results in this generality.
+
+We present the arguments in the #o-minimal case, the o-minimal case being entirely
+analogous.
+1.3. AI Disclosure. ChatGPT was used to preform basic English and typographic
+edits and minor formatting. No substantive mathematical work was preformed with
+the help of AI systems.
+
+                                   2. Preliminaries
+2.1. Asymptotic growth. We use the notation consta1 ,...,ak to denote any quan-
+tity that is bounded from above by a specific function that depends only on a1 , ..., ak
+and polya1 ,...,ak (b1 , ..., bk ) to denote any quantity which, once a1 , ..., ak are fixed,
+becomes bounded from above by a specific polynomial in b1 , ..., bk . All constants
+and polynomials in this text can be made explicit in principle.
+2.2. O-minimality and #o-minimality. We refer the reader to [6] for an intro-
+duction to the theory of o-minimal structures, and to [1] for the theory of #o-minimal
+structures. All of the o-minimal structures considered in this paper are taken over
+the real numbers. We list below the main results needed for our paper, focusing
+on the case of a fixed #o-minimal structure S. We briefly indicate the correspond-
+ing statements in the o-minimal case. By [1, Remark 1.37], we may also assume
+without loss of generality that S has sharp cell decomposition.
+Theorem 2.2.1 (Definable Choice, [1, Proposition 3.1]). Let X ⊆ Ra × Rb be a
+definable set of degree E and format F , and let Π : Ra × Rb → Rb be the projection
+onto the last b coordinates. Then there exists a definable section f : Π(X) → Ra
+of degree polyF (E) and format constF . That is, f satisfies (f (p), p) ∈ X for each
+p ∈ Π(X).
+  In the o-minimal case, the same result holds without the corresponding bounds
+on the format and degree.
+  For the next theorem, we will need the notion of cellular decomposition in #o-
+minimality: see [1, §1.7] for the general definition and key properties.
+Theorem 2.2.2 (C k cell decomposition). Let A be a definable set of degree EA
+and format FA in a #o-minimal structure that has #CD, and let k ∈ N. Then A
+can be partitioned into polyFA ,k (EA ) cells B1 , ..., Bl that are of degree polyFA ,k (EA )
+and format constFA ,k , so that each Bi is a C k -embedding of an open cube (0, 1)di
+via a definable map ψi of degree polyFA ,k (EA ) and format constFA ,k .
+   Let f : A → Rb be a definable function of degree Ef and format Ff . Then
+the cell decomposition of A can be chosen so that the map f ◦ ψi : (0, 1)di → Rb
+is C k for each i. In this case, we will have polyFA ,Ff ,k (EA , Ef ) cells of degree
+polyFA ,Ff ,k (EA , Ef ) and format constFA ,Ff ,k and the C k -embeddings will be of de-
+gree polyFA ,Ff ,k (EA , Ef ) and format constFA ,Ff ,k .
+  In the o-minimal case, the same result holds without the corresponding bounds
+on the format and degree.
+4                          GAL BINYAMINI, YUVAL SALANT
+
+
+Proof. The first statement, without the assumption of C k -regularity, follows from
+[1, Theorem 1.35]. One can then further decompose the cells into C k -smooth cells
+as in [2, §6.2]. For the second statement, it suffices to apply the first statement to
+the graph of f .                                                                    □
+
+Corollary 2.2.3. Any definable set of format F and degree E has at most polyF (E)
+connected components.
+Proof. This follows from Theorem 2.2.2 since each cell is connected.                □
+
+   The verbatim analogue of this statement in the o-minimal setting is that every
+definable set has finitely many connected components. This is true, but in practice
+the following stronger statement provides a more suitable analogue.
+Corollary 2.2.4. Let X ⊆ Ra × Rb be a definable set in an o-minimal structure.
+Then the number of connected components of any fiber
+                             Xλ := {y ∈ Rb : (λ, y) ∈ X}
+is uniformly bounded over all λ ∈ Ra .
+2.3. Notation and definitions. We introduce some notation and definitions that
+we will use throughout. For A a measurable subset of Rk , we use |A|Rk for the
+standard Lebesgue measure of A in Rk . For x ∈ Rk , we use ∥x∥Rk for the Euclidean
+length of x.
+Definition 2.3.1 (λ-segment). Let λ > 0, and let a, d ∈ Rm . We define the
+λ-segment starting at (a, 0) with direction (d, 1) to be the line segment
+                    la,d (λ) := {(a + t · d, t) : t ∈ [0, λ]} ⊆ Rm+1 .
+Notation 2.3.2 (Projection Onto Directions). Let la,d (λ) be a λ-segment, and let
+L be a collection of λ-segments. We define the projections
+                                   Πdir (la,d (λ)) := d
+and
+                             Πdir (L) := {Πdir (l) : l ∈ L}.
+Definition 2.3.3. Given x, y ∈ Rm , we define lx,y := {(x + t · y, t) : t ∈ R} ⊆ Rm+1
+to be the (infinite) line passing through (x, 0) and pointing in the direction (y, 1).
+Definition 2.3.4 (β × δ-tube). Let β > 0, δ > 0 and let a ∈ Rm , d ∈ [0, 1]m . We
+define the β × δ-tube centered at (a, 0) with direction (d, 1) to be
+            Ta,d (β, δ) := {(x, t) ∈ Rm × [0, β] : ∥x − (a + t · d)∥Rm ≤ δ}.
+Definition 2.3.5 (δ-tube). Let δ > 0 and let l ⊆ Rn be a line segment of Eu-
+clidean length 1. We define Tl (δ) ⊆ Rn , the δ-tube centered around l, to be the
+δ-neighborhood of l.
+
+                           3. Auxiliary Propositions
+   We present the two propositions and one corollary used to establish Theorem 1.
+In the following sections, we will prove them and show that Theorem 1 follows from
+them.
+          POLYNOMIAL WOLFF AXIOMS FOR δ-TUBES WITH #O-MINIMALITY                        5
+
+
+Proposition 3.1. Let L be a definable collection of λ-segments. Assume L has
+degree E and format F . Then
+                    [                                     1
+                              la,d (λ)            ≥             λm+1 | Πdir (L)|Rm .
+                                                      polyF (E)
+                 la,d (λ)∈L
+                                         Rm+1
+
+                                                                     Rm to denote
+   For Proposition 3.2 and Corollary 3.3, we will use the notation Bx,r
+                    m
+the closed ball in R centered at x of radius r, and the notation Trt to denote the
+translation operator by t along the (m + 1)-th coordinate. That is,
+                   Trt (x0 , ..., xm , xm+1 ) := (x0 , ..., xm , xm+1 + t).
+Proposition 3.2. Let 1 ≥ λ, δ > 0 and let S ∈ Rm+1 be a definable set of degree E
+and format F . Assume that for some 1 × δ-tube Ta0 ,d0 (1, δ) ⊆ Rm+1 and for some
+t0 ∈ R, we have that |S ∩ Trt0 (Ta0 ,d0 (1, δ)) |Rm+1 ≥ λ|Ta0 ,d0 (1, δ)|Rm+1 . Then, for
+           m
+any d ∈ BdR , δ , S must contain some translation along the (m + 1)-th coordinate of
+           0 2
+
+a ( poly1 (E) λ)-segment pointing in the direction d (the constant being independent
+        F
+of d).
+  Note that this proposition implies the following corollary:
+Corollary 3.3. Let hF,E be half of the poly1 (E) -constant from Proposition 3.2. We
+                                             F
+define for each i ∈ Z:
+                                             \
+                     S i := Tr−i·(hF,E λ) (S) (Rm × [0, hF,E λ])
+
+(so that the translations of S i form a decomposition of S along the (m + 1)-th
+coordinate), and
+                      Li := {la,d (hF,E λ) : la,d (hF,E λ) ⊆ S i }.
+  Then                                   [
+                                               Πdir (Li ) ⊇ BdR , δ .
+                                                                m
+
+                                                                0 2
+                                         i∈Z
+
+                                                                        m
+Proof. By Proposition 3.2, we have, for each α ∈ BdR , δ , that S must contain a
+                                                                        0 2
+translation along the (m + 1)-th coordinate of a (2hF,E λ)-segment pointing in the
+direction α. Thus, α will belong to Πdir (Li ) for some i, and the result follows. □
+
+                              4. Proof of Proposition 3.1
+Proof. We think of Πdir as a definable map from Rm × Rm to Rm . Notice that
+Πdir (L) is of degree polyF (E) and format constF . By Theorem 2.2.1 (definable
+choice), we may choose a section
+                                          f : Πdir (L) → Rm
+such that for every d ∈ Πdir (L) we have lf (d),d ∈ L. Moreover, the degree of f is
+polyF (E) and the format is constF . We define g : [0, λ] × Πdir (L) → Rm by
+                                gt (x) = g(t, x) := f (x) + t · x.
+Note that for each t, the degree of the map gt is at most polyF (E) and the format is
+constF (independently of t). We calculate as at the end of the proof of [5, Theorem
+6                                  GAL BINYAMINI, YUVAL SALANT
+
+
+3.1], using Fubini’s theorem:
+
+                            [                                  [
+                                   la,d (λ)          ≥                  lf (x),x (λ)
+                    la,d (λ)∈L                           x∈Πdir (L)                                   (1)
+                                              Rm+1                                     Rm+1
+                                                         ˆ λ
+                                                     =         |gt (Πdir (L))|Rm dt.
+                                                          0
+
+   We therefore seek, for each t, a lower bound for |gt (Πdir (L))|Rm .
+   By Theorem 2.2.2 (C k cell decomposition), we may split Πdir (L) into polyF (E)
+cells, where f is C 1 on each cell, with each cell (uniformly) having degree polyF (E)
+and format constF . By the pigeonhole principle, one of these cells, C, must have
+measure at least
+                                                     | Πdir (L)|Rm
+                                       |C|Rm ≥                     .                                  (2)
+                                                       polyF (E)
+
+   Let y ∈ gt (Πdir (L)). Consider the fiber gt−1 (y) over y. It is of degree polyF (E)
+and format constF . Thus, by Corollary 2.2.3, it must be a union of at most
+polyF (E) connected components (independently´ of y or t).
+   We wish to relate |gt (C)|Rm to the integral x∈C | det(Dx (gt ))|dx, where Dx is
+the differential at x. Every point x ∈ C where det(Dx (gt )) ̸= 0 must be an isolated
+point in the fiber over gt (x) (and thus such x’s can cover gt (x) at most polyF (E)
+times). Also, the points x ∈ C where det(Dx (gt )) = 0 do not contribute to the
+integral. Thus, we have
+
+                 |gt (Πdir (L))|Rm ≥ |gt (C)|Rm
+                                                ˆ
+                                           1
+                                   ≥               | det(Dx (gt ))|dx,
+                                     polyF (E) x∈C
+
+and by substituting this in (1) and using Fubini’s theorem, we obtain
+
+                                                              ˆ λˆ
+              [                                   1
+                        la,d (λ)          ≥                                   | det(Dx (gt ))|dxdt
+                                              polyF (E)           0     x∈C
+           la,d (λ)∈L                                                                                 (3)
+                                   Rm+1
+                                                              ˆ         ˆ λ
+                                                  1
+                                          =                                   | det(Dx (gt ))|dtdx.
+                                              polyF (E)           x∈C    0
+
+    We calculate:
+
+                    Dx (gt ) = Dx (f (x) + t · x) = Dx (f ) + t · Im×m ,
+
+where I is the identity matrix.
+  So, we see for each x that det(Dx (gt )) is a monic polynomial in t of degree m,
+                                                  λ
+and thus, by excluding neighborhoods of radius 4m   around its zeros, we see that
+                    ˆ λ                                                 m
+                                                                                   λm+1
+                                                              
+                                                λ                  λ
+                            | det(Dx (gt ))|dt ≥ ·                            =          .
+                        0                       2                 4m              constm
+               POLYNOMIAL WOLFF AXIOMS FOR δ-TUBES WITH #O-MINIMALITY                                            7
+
+
+  Combining this with (3) and (2), we obtain
+                                                                            ˆ
+                             [                                 1
+                                     la,d (λ)          ≥             λm+1             1dx
+                                                           polyF (E)          x∈C
+                        la,d (λ)∈L
+                                                Rm+1
+                                                             1
+                                                       =           λm+1 |C|Rm
+                                                         polyF (E)
+                                                             1
+                                                       ≥           λm+1 | Πdir (L)|Rm .
+                                                         polyF (E)
+                                                                                                                 □
+
+                                     5. Proof of Proposition 3.2
+Proof. Let Ld := {lx,d (1) ⊆ Rm+1 : lx,d ∩ Ta0 ,d0 (1, δ) ̸= ∅} be S
+                                                                   a collection of 1-
+segments in the direction d that covers Ta0 ,d0 (1, δ). Notice that lx,d (1)∈Ld lx,d (1)
+is a prism whose base is the convex hull of Ba0 ,δ and Ba0 +(d0 −d),δ . Thus (since
+∥d0 − d∥Rm ≤ 2δ ), the volume of lx,d (1)∈Ld lx,d (1) is at most constm · δ m . Thus,
+                                 S
+
+since
+                         |S ∩ Trt0 (Ta0 ,d0 (1, δ)) |Rm+1 ≥ λ|Ta0 ,d0 (1, δ)|Rm+1
+                                                               1
+                                                          ≥           · λ · δm ,
+                                                            constm
+               S
+and since          lx,d (1)∈Ld Trt0 (lx,d (1)) ⊇ Trt0 (Ta0 ,d0 (1, δ)), we obtain
+
+                    [                                         λ          [
+          S∩                 Trt0 (lx,d (1))           ≥          ·                 Trt0 (lx,d (1))          .
+                                                           constm
+               lx,d (1)∈Ld                                            lx,d (1)∈Ld
+                                                Rm+1                                                  Rm+1
+  By the pigeonhole principle, there is some lx0 ,d (1) ∈ Ld such that
+                                                                             λ
+                               |{t : (x0 + t · d, t0 + t) ∈ S}|R ≥               .
+                                                                          constm
+   Since the set {t : (x0 + t · d, t0 + t) ∈ S} is of degree polyF (E) and format
+constF , by Corollary 2.2.3, it can have at most polyF (E) connected components.
+So, by the pigeonhole principle, it must contain a closed segment of length at least
+    λ
+poly (E) .                                                                        □
+      F
+
+
+                                         6. Proof of Theorem 1
+  We define m := n − 1 (so that Rn = Rm+1 ).
+Claim 6.1. We are allowed to make the assumption (and indeed make it) that T
+actually consists of translations along the (m + 1)-th coordinate of 1 × δ-tubes that
+satisfy
+                             ∀ Trx (T ) ∈ T :
+                                                  |S ∩ Trx (T )|Rm+1 ≥ λ|T |Rm+1
+and
+               ∀ Trx1 (Ta1 ,d1 (1, δ)) ̸= Trx2 (Ta2 ,d2 (1, δ)) ∈ T :
+                                                                            ∥d1 − d2 ∥Rm ≥ 2δ.
+8                            GAL BINYAMINI, YUVAL SALANT
+
+
+Proof. By the pigeonhole principle, we may choose some rotation of Rm+1 and
+                                     1
+some subset of T of size at least const m
+                                          #T such that for each tube Tl in this subset,
+the direction of l (not normalized) may be written as an element of [0, 1]m × {1}.
+For this reason, we are allowed to assume in this proof that for each tube Tl ∈ T,
+the unit line segment l points in a direction that belongs to the set [0, 1]m × {1}.
+We now take some cover of Tl with a constm amount of translations along the
+(m + 1)-th coordinate of 1 × δ-tubes that point in the direction of l. Since the
+sum of the volumes of these shapes is at most constm · |Tl |Rm+1 , we get that one of
+these shapes, denoted by Tl′ , must satisfy that |Tl′ ∩ S|Rm+1 ≥ const  1
+                                                                          m
+                                                                            · λ|Tl′ |Rm+1 .
+This means that by modifying λ, we can also assume in this proof that each tube is
+actually a translation along the (m + 1)-th coordinate of a 1 × δ-tube. Finally, using
+                                                                   1
+a greedy strategy, we choose a subset of T of size at least const    m
+                                                                       #T such that the
+angle between any two tubes in the subset is at least constm · δ, where we choose
+this constant appropriately so that this will imply that ∥d1 − d2 ∥Rm ≥ 2δ (where
+the tubes point in the directions (d1 , 1), (d2 , 1)), and we are done.                 □
+
+    We now proceed to prove the main theorem.
+
+Proof of Theorem 1. We use the definitions of S i , Li , and hF,E from the statement
+of Corollary 3.3.
+   By Corollary 3.3, we have that for each tube Trx (Ta,d (1, δ)) ∈ T:
+                               [
+                                  Πdir (Li ) ⊇ Bd,
+                                                Rm .
+                                                   δ
+                                                               2
+                                     i∈Z
+
+    Since any two distinct tubes in T satisfy ∥d1 − d2 ∥Rm ≥ 2δ, we have
+              X                        [                              1
+                    Πdir (Li ) Rm ≥          Πdir (Li )        ≥          · #T · δ m .
+                                                                   constm
+              i∈Z                      i∈Z                Rm
+
+   Notice that the degree of Li is polyF (E) (uniformly in i) and the format is constF
+(uniformly in i), and that Li is a collection of (hF,E λ)-segments that are contained
+in S i . Applying Proposition 3.1, we obtain
+
+                                           [
+                    |S i |Rm+1 ≥                      la,d (hF,E λ)
+                                   la,d (hF,E λ)∈Li
+                                                                      Rm+1
+                                      1              m+1
+                                ≥           (hF,E λ)     | Πdir (Li )|Rm .
+                                  polyF (E)
+    Combining these two equations, we obtain
+                       X                   1              m+1
+                                                                X
+     |S|Rn = |S|Rm+1 =    |S i |Rm+1 ≥           (hF,E λ)     ·   | Πdir (Li )|Rm
+                                       polyF (E)
+                          i∈Z                                                 i∈Z
+                                                 1
+                                           ≥           · #T · λm+1 · δ m
+                                             polyF (E)
+                                                 1
+                                           =           · #T · λn · δ n−1 .
+                                             polyF (E)
+                                                                                         □
+         POLYNOMIAL WOLFF AXIOMS FOR δ-TUBES WITH #O-MINIMALITY                9
+
+
+                                 References
+[1] G. Binyamini, D. Novikov, and B. Zak. Sharply o-minimal structures and sharp
+    cellular decomposition. arXiv:2209.10972v2, 2026. doi: 10.48550/arXiv.2209.
+    10972.
+[2] Michel Coste. An introduction to o-minimal geometry. HAL, 1999. URL https:
+    //hal.science/hal-05413940. HAL: hal-05413940.
+[3] L. Guth and J. Zahl. Polynomial wolff axioms and kakeya-type estimates in
+    R4 . Proceedings of the London Mathematical Society, 117:192–220, 2018. doi:
+    10.1112/plms.12138.
+[4] J. Hickman, K.M. Rogers, and R. Zhang. Improved bounds for the kakeya
+    maximal conjecture in higher dimensions. American Journal of Mathematics,
+    144(6):1511–1560, 2022. doi: 10.1353/ajm.2022.0037.
+[5] N.H. Katz and K.M. Rogers. On the polynomial wolff axioms. Geometric and
+    Functional Analysis, 28:1706–1716, 2018. doi: 10.1007/s00039-018-0466-7.
+[6] L.P.D. van den Dries. Tame Topology and O-minimal Structures. Cambridge
+    University Press, 1998. doi: 10.1017/CBO9780511525919.
+[7] R.A. Wongkew. Volumes of tubular neighbourhoods of real algebraic varieties.
+    Pacific Journal of Mathematics, 159(1):177–184, 1993. doi: 10.2140/pjm.1993.
+    159.177.
+  Weizmann Institute of Science, Rehovot, Israel
+  Email address: gal.binyamini@weizmann.ac.il
+

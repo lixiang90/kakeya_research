@@ -58,3 +58,6 @@ R0040无新增PDF，仍30PDF/33catalog来源。局部版本化primary细读WZ17/
 
 
 R0041仍30PDF/33sources，无新下载。FD2607.14824v3相关construction PDF6–19及root1–19/Appendixscope细读，实看13/15/17，18/19此前已看复用。仅versioned primary scope，无新online latest认证；Fourier应用未全审。原5.4现成compact桥保power输入，不把原log输出误升power。
+
+
+R0042新增BS2609.24135v1（9页），现31PDF/34来源；原PDF、全文、版本/SHA256保存同stem。root全文读并实看1/2/6/7/8，Theorem1的λ任意正，与旧Conjectureλ≥δ分开；semialgebraic固定ambient poly(E)预算明确，#o-minimal高级依赖仍具名。v1/HTML dateSep21、PDFtitle dateSep22均保真。有限primary前沿/六维对照及精确scope见metadata/R0042_source_check.json，不认证穷尽/优先权或ordinary高维新界。

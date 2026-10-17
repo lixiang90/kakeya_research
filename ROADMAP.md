@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0041真实FD构造一轮测试结束：共同clock、完整Cartesian slopes、coordinate-separable placements在任意r有actual log^-m neighborhood lower；t=.5实际union不小于4^-d。EG有限相关law保S/TC/K0/p，未证一般K小S或非可分离反例。冻结仅公共/各坐标独立参数深度及证书循环。下一R42先按全局frontier/priority与新机制gate选择一个main，不自动续最近entropy公式。
+更新2026-10-17，R0042先执行有界全局primary/priority与机制审视。新增BS2609.24135v1 sharp polynomial-Wolff，root给原权M^n与C'=C r4/(p q4)合法费用，但同公式也由allscale anglelaw得到；PW类可更宽，实际Prop17.2无免费separated祖先。下一唯一notes/40_multiscale/R0042_next_actual_section18_PW_class_gate.md，测试真实§18 coarse/unweighted/recurrence加强类闭包；不把旧anglelaw/低Sr/ε替换改名为新机制。无新ID/重大结果；一般到sticky另付。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -76,3 +76,6 @@ R0040停止决策：research/reviews/R0040_macro.md。主proof notes/40_multisca
 
 
 R0041提前macro research/reviews/R0041_macro.md；主稿 notes/50_counterexamples/constructive/R0041_actual_volume_and_coupling_entropy_boundary.md。原Eq5/Remark4.5最优性仅upper-method，实际product lower另证；canonical5.3可显式plus shift保product，原5.4紧集桥的directionnet/det抵消不送跨层乘法。EG对correlatedA付TC、一般K clockcrop付p，fixedpower必要Sr大，不免费fullHausdorff。unique next notes/00_map/R0041_next_macro_and_nonseparable_route_gate.md；不新增ID或major，不重开旧CP/PM/BSG/action/carry/flatflake阈值。
+
+
+R0042 macro research/reviews/R0042_macro.md，主稿 notes/40_multiscale/R0042_sharp_polynomial_Wolff_original_law_transfer.md；A/B全文与reviews见metadata/R0042_source_check.json。DIM001当前任意集合范围移至前列，R29compact/未assembly仅历史；有限检索未命中17/4非first/best认证。新BS允许任意λ且明确poly(E)费用，fine PW不自动coarse PW；若加入allcoarse作定义须真付原family/递归并给strictsaving，不能偷改原待证命题。31PDF/34sources。
