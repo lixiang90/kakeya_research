@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0042先执行有界全局primary/priority与机制审视。新增BS2609.24135v1 sharp polynomial-Wolff，root给原权M^n与C'=C r4/(p q4)合法费用，但同公式也由allscale anglelaw得到；PW类可更宽，实际Prop17.2无免费separated祖先。下一唯一notes/40_multiscale/R0042_next_actual_section18_PW_class_gate.md，测试真实§18 coarse/unweighted/recurrence加强类闭包；不把旧anglelaw/低Sr/ε替换改名为新机制。无新ID/重大结果；一般到sticky另付。
+更新2026-10-17，R0043付fine-PW到coarse的共同translation核及原mass a，uniformcoarse K²和有界wholeparent合成K⁴费用。actual§18操作/relativeδ/shading预算已审，原其余结构推导具名、旧ΔJ索引问题未假称全修；任意ν或无界localAD免费localization不获认证。真实visited-union complexity没有strictsaving。停止closure常数迭代，下一唯一notes/40_multiscale/R0043_next_actual_polynomial_grain_test.md：实际增长degree curvedgrain测试，先排旧20.2 affine/Taylor和R40flatflake同义，无实际关联/预算即一轮停止。无新ID/major，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -79,3 +79,6 @@ R0041提前macro research/reviews/R0041_macro.md；主稿 notes/50_counterexampl
 
 
 R0042 macro research/reviews/R0042_macro.md，主稿 notes/40_multiscale/R0042_sharp_polynomial_Wolff_original_law_transfer.md；A/B全文与reviews见metadata/R0042_source_check.json。DIM001当前任意集合范围移至前列，R29compact/未assembly仅历史；有限检索未命中17/4非first/best认证。新BS允许任意λ且明确poly(E)费用，fine PW不自动coarse PW；若加入allcoarse作定义须真付原family/递归并给strictsaving，不能偷改原待证命题。31PDF/34sources。
+
+
+R0043 research/reviews/R0043_macro.md；主稿 notes/40_multiscale/R0043_actual_PW_coarsening_and_extremal_class_closure.md，A/B实际审计与formalreviews见literature/metadata/R0043_source_check.json。coarse无费不是NρS不可能性，raw事件先保a^(4/5)再共同translate；source需uniformcounting、有界jointchart或真实总count输入，clock保原ψ和dyadic树。不能用T′大ηell费用调用更小ε1的Step4；原T/Y及代表parent平均接口分别付。下一不是加allcoarse/低complexity/祖先公设，无fullκgain。
