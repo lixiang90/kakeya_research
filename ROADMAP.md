@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0057周期macro后实际付全partition/全dominated保留的conditional-capacity envelope下界δκm²及continuous sharpness。scalarK/fullslab uniform组合停；非H5/Th2.2反例，不排joint-support/不同metric机制。下一唯一 notes/00_map/R0057_next_full_goal_joint_geometry_reset.md，须同轮实际数学，不续κ/strip或公设。48PDF/49sources/78IDs，Goal active。
+更新2026-10-17，R0058先macro再spec§7实际完成commonkernel原secant slab门槛、保g零offset片与真matrix-time-angle二维预处理反攻。完整Mat2/commonkernel/H5仍open；coarse nearline未付R16回传，2Fst不是ellipsecapacity必要。下一唯一 notes/00_map/R0058_next_original_coupling_critical_path_gate.md。48PDF/49sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -124,3 +124,5 @@ R0056 notes/30_algebraic_geometry/R0056_euclidean_multiplicity_and_leading_form_
 
 
 R0057 notes/40_multiscale/R0057_charged_joint_capacity_envelope_and_stop.md；A10/B8/twoformal/rootintegration/macro详literature/metadata/R0057_source_check.json。原p0分母、最终p及actual θ≥p、q*下界与保证指数区分、unitclock/fineatomic范围已付。全包络费下界不是actualjointatom lower；连续swap真实densityO1。停止本source scalar-envelope组合，不把已知joint-support余责加公设当新结果。
+
+R0058：非零offset原Q/D概率≤C√K[(ε/|c|)^(1/6)+√r]；nearzero同原g片保νmass≳σ、edge mass≳σ²，粗尺度尚需付费。uniformLip plateau近parabola、真1AD/SM/coarselineescape及真Cantor角给整D cover指数β<1.225，任何dominatedselection不能小费升级2Fst。反攻未建A/g/Def17全source，不反Kakeya。停止D独立2Fst/rank/plateau参数迭代，原A-D耦合或wholemetric需真新机制；不重开旧Y-only/BSG。

@@ -23,3 +23,5 @@
 可调用的有限图结论另归档为 results/reviewed/MNL-001_linewise_translation_branch.md；不是一般 Kakeya 定理或已确认重大中间结果。实际源接口与该有限命题分开审查，不能把其中的显式质量门槛省掉。
 
 R0019起下一实际mixed42研究单独存notes/40_multiscale/sticky_mixed/INDEX.md；不是本目录Mat2/vector-Phi命题的改名。当前本目录Y-only与W/BSG/common-plane局部机制冻结，主Mat2命题仍open。
+
+R0058新增原common-kernel割线门槛见 R0058_secant_slab_dichotomy_and_dimension_ceiling.md：非零offsetslabupper、nearzero保g片及真factorization下二维预处理反攻；未排完整Mat2/commonkernel。coarse line不免费回R16，原A-D耦合仍待。

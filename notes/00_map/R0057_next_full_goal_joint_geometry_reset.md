@@ -1,3 +1,5 @@
+> R0058执行更新：完整目标重选后已实际做原secant slab/同g提取及factorized二维预处理反攻；未解决完整commonkernel。当前下一以 notes/00_map/R0058_next_original_coupling_critical_path_gate.md 为准，不续本旧选择入口。
+
 # R0058下一唯一：完整高维目标的joint几何关键路径重选并执行
 
 本轮尚未选定R58数学命题；这个入口不把未付joint信息预称新定理。长期目标保持ordinary n≥5/general或经审查重大结果。
