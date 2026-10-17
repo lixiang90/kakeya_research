@@ -1,5 +1,7 @@
 # R0053 唯一后继：真实五维耦合双quadric的近contained单位管
 
+> **R0054当前范围更新：** 本模型已以整单位轴两支分类、原帽/三维normal纤维和平面L2重叠完整证明更强λ²/log界，不用M3，不另立ID。整个common-factor模板停止；不续输出/ambient/rank。当前唯一后继为 notes/40_multiscale/R0054_next_general_threefold_nearcontainment_gate.md，下文仅是R53历史计划。
+
 2026-10-17，Goal active。最终目标仍为n≥5/general完整解决或经一手比对与独审的重大结果；本spec不把narrow模型成功当总目标。R53 exact Q3⇔M3不另开方向，canonical近抛物柱面的空间packet已付，不继续R4参数微调。
 
 ## 1. 固定恢复、闭包与来源责任
