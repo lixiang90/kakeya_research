@@ -74,3 +74,6 @@
 
 
 R0040新增已给完整证明的转移边界见 notes/40_multiscale/sticky_flakes/R0040_fine_flatplank_gate_and_slicing_boundary.md §§10–11：ambient allconvex flatflake cap不送每slice cap；真实曲线的dense marks需满足精确line-table下界。不是实际Kakeya反例。constructive目录下一目标为同一compact all-directions K的fixedpower neighborhood/covers，原FD目前仅log。
+
+
+R0041指纹：coordinate-separable-compression-to-power被实际N_r lower c log^-m排除；exponentially-small-core-is-small-union被t_i=.5的actualvolume≥4^-d排除。upper-certificate-optimum-is-actual-lower是逻辑错误，已分开。一般K commonclock桶不保Cartesian，root以directiondensityp/TC精确修复；高couplingS未排，非Kakeya反例。见notes/50_counterexamples/constructive/R0041_actual_volume_and_coupling_entropy_boundary.md。

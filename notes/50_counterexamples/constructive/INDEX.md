@@ -1,3 +1,6 @@
 # 真实全方向构造
 
 R0040提前macro转入。唯一下一待证目标：[相容幂次构造](R0040_next_coherent_power_construction_target.md)。原FD–deLaSalle2607.14824v3只有log neighborhood upper；原5.4有合格单尺度到compact set的桥，不能把现成桥说成未有。真正新输入须为完整directions/unitsegments下的fixedpower saving。尚无Kakeya反例、新维数界或major认证。
+
+
+R0041主稿 notes/50_counterexamples/constructive/R0041_actual_volume_and_coupling_entropy_boundary.md，两actual审查见metadata/R0041_source_check.json。任意depth的可分离cube placements不能在任意目标r产生fixedpower；finite-law EG保conditionalinterceptentropy/TC/atomcap与方向crop费用，不证明一般K的S小。主power未得；下一 notes/00_map/R0041_next_macro_and_nonseparable_route_gate.md，停止t/coordinate-depth/certificate局部优化。

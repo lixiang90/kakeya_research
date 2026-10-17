@@ -55,3 +55,6 @@ R0039宏观新增4篇primary PDF/全文/逐篇metadata：LPSW2610.10603v1(156p)�
 
 
 R0040无新增PDF，仍30PDF/33catalog来源。局部版本化primary细读WZ17/19/20、LPSW§9与FD5.4 scope；实看WZ65/78、LPSW61/62、FD18/19。Mat entries[-1,1]为原定义而非额外假设。只具名调用19.2，不认证全advancedproof；本轮未重新做online latest-version认证。
+
+
+R0041仍30PDF/33sources，无新下载。FD2607.14824v3相关construction PDF6–19及root1–19/Appendixscope细读，实看13/15/17，18/19此前已看复用。仅versioned primary scope，无新online latest认证；Fourier应用未全审。原5.4现成compact桥保power输入，不把原log输出误升power。

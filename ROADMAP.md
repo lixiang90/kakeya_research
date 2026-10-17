@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0040真实source-to-flake检验及提前macro完成。具名19.2下fine Eδ在固定clock-transverse unit3-long flatplank内密度≤δ^c；完整κ≤ζ未证。不反所有fixed-loss/coarse调用，但直接subpower fine整时段提取冻结。下一唯一R41转FD实际all-directions构造的log→power尝试，先付真实参数及同K covers；原5.4现成compact桥不重复造gap。
+更新2026-10-17，R0041真实FD构造一轮测试结束：共同clock、完整Cartesian slopes、coordinate-separable placements在任意r有actual log^-m neighborhood lower；t=.5实际union不小于4^-d。EG有限相关law保S/TC/K0/p，未证一般K小S或非可分离反例。冻结仅公共/各坐标独立参数深度及证书循环。下一R42先按全局frontier/priority与新机制gate选择一个main，不自动续最近entropy公式。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -73,3 +73,6 @@ R0039策略覆盖：旧N5-STICKY-MATRIX-01只因newLPSW几何输入而允许一�
 
 
 R0040停止决策：research/reviews/R0040_macro.md。主proof notes/40_multiscale/sticky_flakes/R0040_fine_flatplank_gate_and_slicing_boundary.md；实际短轴/原Mat bounded-entry/every-window19.2/整层lower/平均marks已核。slice pencil只反each-slice免费CW，curvature表只在固定幂时间比率迫固定幂N。uη_L≥c的fixedloss仍可能相容，不泛称所有LPSW方案失败。唯一下一 notes/50_counterexamples/constructive/R0040_next_coherent_power_construction_target.md，现未有power构造/反例；不重开旧BSG/action/carry/CP⇔PM，通常下一macro R42，失败提前。
+
+
+R0041提前macro research/reviews/R0041_macro.md；主稿 notes/50_counterexamples/constructive/R0041_actual_volume_and_coupling_entropy_boundary.md。原Eq5/Remark4.5最优性仅upper-method，实际product lower另证；canonical5.3可显式plus shift保product，原5.4紧集桥的directionnet/det抵消不送跨层乘法。EG对correlatedA付TC、一般K clockcrop付p，fixedpower必要Sr大，不免费fullHausdorff。unique next notes/00_map/R0041_next_macro_and_nonseparable_route_gate.md；不新增ID或major，不重开旧CP/PM/BSG/action/carry/flatflake阈值。
