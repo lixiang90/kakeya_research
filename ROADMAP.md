@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0046提前macro完成：固定四投影R5/3未证未否，旧q7/4覆盖N≤M²，allG压整数/C1张量/type纤维scope已审；655350 finite样本、其中402457域外，独立全数recount无反例。自然四时编码λ≈δ不达seed，补角产品抵消、bush迫η_src≤ε/3，停止本seed-to-pattern桥而不续q/权重。下一唯一 notes/50_counterexamples/constructive/R0046_next_cyclic_selector_volume_gate.md，真实cyclic全网/wholeclock volume，先核闭包、finite→fullpatch及FD5.4 κ/4桥。无新ID/界/major，Goal active；33PDF/36sources不变。
+更新2026-10-17，R0047提前macro：原cyclic全网/wholeclock的常表、负反馈单调、affine(≥3/16)子类实际constant lower已审，palette c/L一般仅N^-1；monotone删选可损N^-2。50族连续timecell/trace/Cauchy有理volume lower、N4十族directpairs核过，非time sampling upper。一般CYCL/无穷power未得，执行一轮停止，不续cycle/alphabet/S阈值。下一唯一 notes/40_multiscale/R0047_next_HRZ_finite_seed_interface_gate.md，R48先周期macro/有限前沿再HRZ actualterminal/closure/λfinite H5>4 gate，不先假设4Dterminal/fullLp。33PDF/36sources/78IDs不变，无新界/major，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -91,3 +91,6 @@ R0045 research/reviews/R0045_macro.md，主稿 notes/40_multiscale/R0045_actual_
 
 
 R0046 research/reviews/R0046_macro.md，主稿 notes/20_dimension_lifting/R0046_exact_rational_candidate_and_finite_seed_boundary.md，两施工及正式reviews见literature/metadata/R0046_source_check.json。候选R5/3保持unproved/unrefuted；有限网格无反不升全称。旧q7/4/type/tensor校准非新major。停止自然seed→fixed4-time桥，不反所有编码。下一cyclic B_i=b_i(a_(i+1))在full4grid上允许S≈4logN，确逃R41小S假设；wholeclock真实volume不可用边际乘积或单t碰撞代替。若allscale power真成立，FD5.4已保κ/4，不能再虚报缺coherence；无实际构造/lower则一主轮停。
+
+
+R0047 research/reviews/R0047_macro.md，主稿 notes/50_counterexamples/constructive/R0047_cyclic_actual_volume_and_closed_loop_boundary.md，两施工/正式review和实验见literature/metadata/R0047_source_check.json。已付的是明确真实子类wholeclock lower及有限连续证书，不是generalCYCL/新的高维维数界；单t rank3和raw能量log发散可与wholeclockconstant并存。停止cycle施工，不续trace阈值/monotone/palette参数。下一不同HRZ递归先核原terminal和真实finite强度，不能把dim4当fullmaximal或把所有curved tangent pieces免费straighten。

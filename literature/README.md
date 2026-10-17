@@ -73,3 +73,6 @@ R0045新增Zorin-Kranich1807.09604v4与Zhang2608.17952v2两PDF/text/meta，库33
 
 
 R0046沿用33PDF/36sources，无新增PDF；Zhang2608.17952v2的§§2–4/旧四环及uniform tensor scope、FD2607.14824v3 Prop5.4 finite-to-compact κ/4量词与本地原finite种子重核，A有限官方HTML对照，非全局版本/前沿/优先权认证。详metadata/R0046_source_check.json。
+
+
+R0047无新增PDF，仍33PDF/36sources。A有限比对FD2607.14824v3、Zhang2608.17952v2官方exact页与本地对象；未找到可直接填一般cyclic closed-loop估计的已读primary，但不认证无已有式/novelty。root仅为下一gate定位读HRZ1908.05589v1 PDF1–3/目录，未审actualterminal，不把2019历史指数表当2026前沿。R48须先周期macro/有限primaryfrontier核。详metadata/R0047_source_check.json。
