@@ -71,3 +71,6 @@
 | 指纹 | 已否定的说法 | 严格证据 | 重新开启条件 |
 | --- | --- | --- | --- |
 | nonplanar_increment_plus_multiscale_visible_graph_forces_growth | 原增量只保任意nonplanar law、A保2Fst/allcoarsevisible fibres就自动有fixed>2 gain | R27 OBS002 binaryblockmask：A=A0+A0，真sum/carry，K/graphloss任意小且D0全hyperplane cap fixed1/2；增长指数随base大趋0 | 必须继续使用原D=((t−s)ψ,−∆Mψ)共同ν/M/H作用及真实g提取；数字模型没有该分解，非source/Kakeya反例 |
+
+
+R0040新增已给完整证明的转移边界见 notes/40_multiscale/sticky_flakes/R0040_fine_flatplank_gate_and_slicing_boundary.md §§10–11：ambient allconvex flatflake cap不送每slice cap；真实曲线的dense marks需满足精确line-table下界。不是实际Kakeya反例。constructive目录下一目标为同一compact all-directions K的fixedpower neighborhood/covers，原FD目前仅log。

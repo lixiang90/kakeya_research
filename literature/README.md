@@ -52,3 +52,6 @@ R0038无新PDF，仍26PDF/29sources。新增exact官方02-framework.tex（65440b
 
 
 R0039宏观新增4篇primary PDF/全文/逐篇metadata：LPSW2610.10603v1(156p)、FernandezDelgado–deLaSalle2607.14824v3(25p)、Pohoata–Zakharov2411.13395v1(10p)、Tao2511.15135v1(实际19p，abs comments18p照录)。现30PDF/33catalog条目。LPSW4/148、FD2、PZ2、Tao2已实看，只核所列statement/scope；未全文独证。LPSW17.3/4为新codim2plank输入，非ordinarylineK；FD只有log体积衰减，PZ disks/Minkowski及Tao privatecommunication不冒六维新界。metadata/R0039_source_check.json保存版本/范围、额外web-primary与priority限制。
+
+
+R0040无新增PDF，仍30PDF/33catalog来源。局部版本化primary细读WZ17/19/20、LPSW§9与FD5.4 scope；实看WZ65/78、LPSW61/62、FD18/19。Mat entries[-1,1]为原定义而非额外假设。只具名调用19.2，不认证全advancedproof；本轮未重新做online latest-version认证。
