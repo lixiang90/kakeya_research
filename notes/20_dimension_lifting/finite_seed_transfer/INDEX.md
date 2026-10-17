@@ -7,3 +7,14 @@
 | R0028_next_finite_seed_target.md | 下一唯一main：OAI4是否支付KT§6真实量词；17/4仅六维条件算术，n5递推ceiling4不覆盖其它方法 |
 
 先读根GOAL/STATE/ROADMAP/registry及最近轮次，再写working spec开始新轮。旧朴素projection+kernel加维仍冻结；随机投影/方向thinning/finite shading须另付质量与尺度。
+
+
+R0029进展：以下转移链已内部交叉独审，完整OAI4/SRC001/DIR003及具名KT6.2条件保留；不是无条件新界。
+
+| 文件 | 内容与状态 |
+| --- | --- |
+| R0029_projection_and_prior_audit.md | 无条件Gaussian有限投影/原mark/clock/cover；条件seed与λ² unsaturated预算 |
+| R0029_KT_seed_and_frontier_audit.md | KT真实arbitraryambient/实参/平均shading、独立保质量thinning、6D正面基线 |
+| R0029_conditional_seed_and_six_dimensional_bound.md | 旧finite源责任到任意n≥4种子，再KT得到compact六维17/4条件链；未消除源条件 |
+
+下一R30先macro，再按notes/10_source_audit/R0029_next_matching_certificate_target.md认证原Lemma3.3，不继续投影常数或thinning改名。
