@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0050等价性纠正macro：parameter-linear目标的任意smooth保clock/fullw/Θw0 coherent lift经同P全时变分给真实affine lift，存在性等价；LIFT005原scope限制过强已更正，diag1,2的整个smooth(1,0)类排除。一般s≥rankB且允许方向loss时标准构造达到；非π本体必须affine，不是新高维界/major，不增ID。下一唯一 notes/00_map/R0050_next_global_frontier_and_critical_path_gate.md，R51周期全局前沿与关键路径审视，不续相邻lifting参数。34PDF/37sources/78IDs，Goalactive。
+更新2026-10-17，R0051周期macro完成：DIM001条件KT推论范围保持，无priority/major认证；OAI4官方同blob。新3D任意λ³maximal已入库但不免费升维；Lie body/physical方向与原slice多值ODE阻止新几何的直接套用。Tao/GGSWT已报SDfour≥1.668与R46全称5/3候选冲突，项目strict有理证书尚未复现。下一唯一 notes/60_entropy/R0051_next_exact_arithmetic_countercertificate.md，只核这项source反例、type/M1整数图和统一C，不调q/重跑旧网格。38PDF/40sources/78IDs，Goalactive。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -103,3 +103,6 @@ R0049 research/reviews/R0049_macro.md；root8/A11/B8/twoformal/source信息见li
 
 
 R0050 research/reviews/R0050_macro.md；root8/A10/B6/twoformal及同ID当前结果见literature/metadata/R0050_source_check.json。七处旧scope/开轮陈述加显著更正banner，原历史保留。函数class较大不保证存在性新问题，精确双向变分构造优先于重名；无新高维界/major。下一R51按周期真正比较前沿与完整高维路径，只选一个不等价后继；R49一般E5*及其它冻结缺口不因本分类消失。
+
+
+R0051 research/reviews/R0051_macro.md；root8/A8/B7/twoformal和四份新PDF来源详literature/metadata/R0051_source_check.json。当前一般高维未解，所有旧冻结保scope。下一R52有限有理反例证书有真新一手矛盾输入，非四时正幂命题改名；report和project independently certified分层，未拿到表前不虚报反例已严格复现。下一常规macroR54，关键输入疑点提前。

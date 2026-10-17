@@ -1,39 +1,39 @@
 # 当前研究交接
 
-更新2026-10-17，R0050完整归档与内部两实际全文独审完成，Goal active。一般/高维Kakeya与重大中间结果目标未完成。下一唯一 notes/00_map/R0050_next_global_frontier_and_critical_path_gate.md，R51周期macro先全局前沿/关键路径与价值比较，再选一个真正非等价任务；不续已完成smooth lifting分类。一般E5*/H5未证未否，旧冻结保持。
+更新2026-10-17，R0051周期macro/两实际全文独审/root整合完成，Goal active。一般/高维Kakeya与重大结果目标未完成。下一唯一 notes/60_entropy/R0051_next_exact_arithmetic_countercertificate.md：R52严格复现已报SDfour>5/3的有限有理law→strictgap→type/M1整数图反例，核旧R46候选；不调q/权重、不重跑旧有限网格。当前来源已报矛盾，项目strict证书未复现，不宣独立反例已验证。
 
 ## 恢复和同步
 
-R50已context.py→tmp/R0050_context.txt，固定入口/registry78全部状态/latestR49/AGENTS/R49round/next均读。开轮R49 HEAD=origin=remote59d261395f39a5d4302c9bb243c1829c64034c22/tree2d77f3ead106d144962cceaa75d805c8c6acf6e9/732files/clean及receipt全项核。working_spec先写，开轮存在性判断后来已加更正banner。
+R51已context.py→tmp/R0051_context.txt、GOAL/STATE/ROADMAP/AGENTS/registry78全部状态、DIM001全文条目/R50round/next/receipt实读。开轮HEAD=origin=remote89d22b401812b442dc8f1a08c4632d9d7e169654/treeb4492ed3e3d79b8985d54d02ffad149836189afe/744files/clean与receipt全核，working_spec先写；上一turnprogress。
 
-R50沿R49父精确blobs/tree/commit/leasedref forcefalse；最终以tmp/sync/R0050.json的pendingfalse/sametrue/cleantrue/allstagedSHA256true为准。CLI认证/默认网络不可用，GitHub connector可用。root统一Git；两代理仅assigned稿和review。恢复先context.py/receipt，不重跑R46/R47有限计算。无新实验或PDF，34PDF/37sources/78IDs。
+本轮沿R50父按PROTOCOL精确blob/tree/commit/leasedref forcefalse同步，最终以tmp/sync/R0051.json pendingfalse/sametrue/cleantrue/allstagedSHA256true为准。CLI默认网络/认证不可用，connector可用，root统一Git；A/B只assigned主稿和formal。恢复先context/receipt，不重搭或无故重跑R46/R47计算。38PDF/40sources/78IDs，无新数学ID/维数界/major；常规下一macroR54，关键输入疑点提前。
 
-## R50真实结论：纠正旧范围，而非新方向
+## 本轮三稿与真实宏观结论
 
-root八节 notes/20_dimension_lifting/curved_lifting/R0050_variational_equivalence_and_full_smooth_lift_classification.md；A十节 R0050_nonlinear_lift_source_and_rigidity_audit.md；B六节 R0050_nonlinear_lift_construction_counteraudit.md。两formal geometry_and_source_review / construction_and_rank_review、rootintegration、macro7/next5实际全文审。当前同IDLIFT005页 results/reviewed/LIFT-005_full_smooth_variational_classification.md；未经外部同行评审，无新颖/重大性认证。
+root notes/00_map/R0051_global_critical_path_and_reported_arithmetic_obstruction.md八节；A R0051_primary_frontier_and_bound_value_audit.md八节；B R0051_mechanism_equivalence_and_counterattack.md七节。两formal frontier_and_value_review / mechanism_and_gate_review、rootintegration及macro6/next6均实际全文审。来源主张、内部逐步证明和外部peerreview分开。
 
-对目标w+F(t)y，固定同一P，zP=a(P)+tΘ(P)，T_P(t)=Dzπ_t(zP)。全参数coherence一阶导数精确给T a_w=I、T(a_y+tΘ_y)=F(t)、T(aρ+tΘρ)=0，全部导数是同P常矩阵。a_lin=Da(P)u、Θ_lin=D_(yρ)Θ(P)(u_y,uρ)、π_lin=T_P(t)z形成真正整段t的新affine lift，方向rank/codimension不变，反向affine⊂smooth。因此两class在本parameter-linear目标上的存在性等价；不逼原π affine，不依赖有限timejet/非线性坐标拉直。
+实际ordinary primary基线仍KT六维7−2sqrt2与HRZ/Zahl五维18/5作正面对照；接受已审四维finite具名输入则n5≥4、DIM001任意n6≥17/4。内部assembly/application已付，不重开R29compact历史。17/4为既有KT递推推论，数值差0.078427不认证first/best/major。完整外部高级proof未全部独证不等于新的genericassembly缺口。
 
-R12/R49认为π空间affine是实质存在性限制/一般nonlinear未排，属于过度范围判断。R12三稿、旧结果页、R49next/macro、R50working_spec共七处banner显著更正且留原历史；registry更新既有LIFT005和N5-CURVE-LIFT01，不新ID。禁止再以nonlinear函数class更大作为新数学任务。
+## 新强输入及两几何转移的硬门槛
 
-## rank与校准
+OAI3D maximal官方Sept23原PDF925416bytes/97页/Gitblobfa215607c58ade54fc6d60dec81530b33f15ab0c已保存。rootPDF2–4，A实际PDF2–5/全§10.2/§11，未审97页全proof。Th1.1声明L3→L3 δ^-ε、任意λ³；root/A独核角帽积分+Jensen给原权W/角binα下|E|≥cδε λ³δ²W/α，任意平均λ，不nearfullheavy两λ。此强度真不同，但不免费flattenR5 variety或保shortclock/原角cap；§11只固定3D/合格phase不是任意source slice。
 
-F=tI+t²B时共同常右逆给T=[I,H(t)]，P(t)=t²B+t(I−D)−C=H(t)(R+tL)，逐t rank≤s。(s+1)-minor是区间恒零的多项式，最高次系数为B-minor，故s≥rankB；不用H解析或大t延拓，不用ρfullrank。源标准B=UV、s=rankB、ν=s−rankB²达到允许directionloss的最小codimension。
+JingWu2608.11726v1 compactLie压缩仅body labels。SU2 pure-imaginaryS2里每bodyX选p⊥X，p exp(tX)整greatcircle；gnomonic精确straighten后全在2plane，physical directions不full。不能用小曲率/共同chart/紧性当欧氏构造。GGNSZ2607.27629v1固定analytic/semialgebraic4param喷流无surfacecompression可有>2；原sliceγ=p+tq+f(t)(a-u-tv)全8参，同pointvelocity可变加速度，C²校准full族唯一spray迫f′0，f=tI仍6参二次graph。实际4AD子族合格spray/regularity/原质量/统一gain未付，不因新primary标题解冻R40/AFF3。
 
-codim1/fullΘrank仍完整判别B0或rankB=rankB²1；消u+tv，B非零迫v0/u非零，uB=−qℓ，方向det=−ℓq=u trB。diag1,2故整个smooth(1,0)类不可能，标准(2,0)仍有效。非零nilpotent秩一需方向loss，不可误升fullrank。
+## 新一手矛盾与唯一后继
 
-B真nonlinear例：B0，π=(z1+z3²/(1+t),z2)、a=(w1−ρ²,w2,ρ)、Θ=(y1−ρ²,y2,ρ)，detΘ1。Bdiag1,0，局部k+k²=y1，π=(z1+t z3+z3²,z2)，a同，Θ=(y1−ρ(1+2k),y2,k)，det=(1+2k)k′1。均全参数整时精确、πrank2/Hessian非零；不能声称原π必须affine。
+已存Tao2511.15135v1 PDF3本已报SD({0,1,2,∞};−1)≥1.668>5/3；本轮新GGSWT2511.02864v3第15节/Problem6.30 PDF41亦同报AlphaEvolve。root/A/B实读相关statement，但未拿到可独核rationaltable，不能把小数报告当本项目exact证书。R46root顶部已加source警示、registry最新audit分层改为reported-conflict/pendingcertificate，原655350 uniform网格结果范围仍正确。
 
-## 来源和意义边界
+R46候选(R)⇒SD≤5/3已root/B独证：任意(A,B)有限E按每A−B保一pair，x=B−A,y=A+B，则M1/Ntarget，受控forms恰2B/2A/A+B/2(A+2B)，tensor消统一C、清分母保基数。故接受来源报lower即可排(R)，不能继续当无反证来源的open改善路线。必要熵也给21H(D)≤10[H(A)+H(B)+H(A+B)]+5H(A+2B)。
 
-真source Nadjimzadah2609.06299v1 Def2.1/Prop2.2/2.5/Remark1.5；A实际PDF4–9/全文forwardproof，root/B定义/forwardproof及标准构造与旧三稿。R49最新history仅v1（2026-09-05），本轮不虚报重核版本；2511.10918v2/GAFA00750-4是另一篇Bourgain-condition文。有界primary比较没有新颖/priority证书。
+R52目标找整数支持和正整数权n/Q，strict SD或weighted gap。若D合并权d、controlled权c，则3HD>5HC精确等价∏c^(5c)>Q^(2Q)∏d^(3d)，可整数或可靠log区间核。长度kQ联合type的目标image含全部目标type words（按difference位置分配jointcounts），每目标word保一pair得M1；N=(kQ)!/∏(kn_d)!，projection≤各marginal multinomial K。验N^21>(K0K∞K1)^10K2^5或有效误差保证存在；再整数编码/tensor否任意C。不需枚举天文typewords，但不得省目标surjectivity/最大纤维/统一常数。
 
-Prop2.2只forward，compactbuffer/有限submersion图/方向局部图需付固定费用；不能反向由曲线lift排除解R5。当前是局部lift复杂度和旧scope纠错，不给新的ordinaryKakeya维数，不是重大中间结果。Θ依赖w、selector、换clock、非参数线性目标未排，但不立即选相邻变体。
+优先数据入口google-deepmind/alphaevolve_results/blob/master/mathematical_results.ipynb（GGSWTref1）；题目网页30.html只空模板，未得law，不能重试同handle假成功。只把远程代码作数据审，不未经检查执行。该证书是固定算术候选反例，不是fullangular/densewholeclock欧氏Kakeya反例；不调q/更多slopes或优化第八位小数。若一次拿不到strict表，如实保文献已报/内部未复现，macro另选真实机制。
 
-## 其它基线与停止
+## 文献新bytes及旧冻结
 
-停止全部本parameter-linear保clock/fullw/Θw0 smooth分类，不续Taylor/Hessian/normalform/trace或一般s同一minor。R49 general→sticky初始化仍未证未否：源先sticky/jointAD；已付q/J、localheavy、原代表/CW/density/deficit预算，附加全尺度近最小cover可提ADcore，但未从一般smallunion导出该cover。WZ2025v2(3.5)字面outer常比需费，单调用heavy可修，不认证整Prop3.2或否最终定理。
+本轮四原PDF/txt/meta已入库并firstpage实际view：JingWu369095bytes/14pp/SHA256c062f9c6789a5f1a028171022fb4b9012f9aecd1b36b4f3d6f592a5ee047f477；GGNSZ2045362/90/d7fbf260b6f619629a3e2c920398446ca109fc30b2b2e1c9a3c9574faabbaa05；OAI3D925416/97/49cc52aa3de89f0e91d181b00ee8050fb29635ee0da9f29145d52318e7168204；GGSWT12141713/81/77b43844077c98c26dfc76ad391cadbbd53d48a1d290ddae575ff4d1bcdef9d2。OAI3补既有catalog，其余三new，38PDF/40sources。OAI4当前root1581d4c→preprintsdf0564b2→manuscript807c9766→PDF45ec20e423db2a9c70fd6303510bac361e6e9e8a/1371486同库，详source-check完整链。
 
-R48 HRZambientterminal非免费4Dseed；R47 cyclic一般log下界未证未否、有限连续证书非asymptotic；R46R5/3候选未证未否、finite无反非全称；R42–45PW/poly/fourarm无strictgain；CP⇔PM/W/BSG/action/carry/AFF3/方向palette均原冻结。四维完整内部argument在具名高级输入下已付，不重做genericassembly；DIM001任意集合条件六维17/4不预认证first/best/major。
+R50parameter-linear smooth/affine提升存在性等价/完整rank分类已冻结。R49 E5*/H5仍未证未否：源先sticky/AD，已付q/J/heavy/代表/CW/deficit与附加cover的ADcore，generalcover入口未付。R48HRZ非免费4Dseed，R47generalcyclic未证未否/有限continuous证书非asymptotic；PW/poly/四臂/CP⇔PM/BSG/action/carry/AFF3按原scope冻结。新source报告证书纠错是新输入，不用它清空其余缺口。
 
-R51macro具体spec已写：核ordinaryHausdorff/finite/maximal前沿、比较DIM001价值和至少三实质不同机制、先闭包与双向等价，只选一个含全部量词/反攻/停止条件的后继。不能把宏观审视变成永久整理，下一轮后进入真任务。Goal active，不自行complete/pause/blocked。
+Goal active，不自行complete/pause/blocked。下轮按唯一明确spec进入实质证书任务；长期目标不缩小，未经外部同行评审。

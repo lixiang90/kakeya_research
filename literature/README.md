@@ -85,3 +85,6 @@ R0049新增Fu–Gan2009.09108v2，公开原PDF208052bytes/14页与提取文本�
 
 
 R0050无新PDF，仍34PDF/37sources。实际重读lifting2609.06299v1的定义/forwardproof/标准rank构造和旧三稿，完成LIFT005同P全时变分范围纠正；有界primary术语比对不认证新颖性或全局priority。源最新版本沿R49核查，不虚报本轮重新核版本；详metadata/R0050_source_check.json。
+
+
+R0051新增JingWu2608.11726v1(14页)、GGNSZ2607.27629v1(90页)、官方OAI3D maximal Sept23(97页，同blob已核)、GGSWT2511.02864v3(81页)四PDF及提取文本/字节hash/firstpage视觉核，现38PDF/40sources。仅读所列接口，非全文proof认证；GGSWT报1.668的strict有限有理law尚未项目独核。来源/实际阅读/三种geometry与算术候选责任详metadata/R0051_source_check.json。

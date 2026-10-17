@@ -9,3 +9,6 @@
 R0042有界primary对照仍以KT/HRZ/Zahl/GLX2025 Table1的六维7−2sqrt2≈4.171573为明确正面基线。没有在实际打开的ordinary primary发现明确17/4，不认证first、2026最新最优或major；完整范围见 notes/00_map/R0042_primary_frontier_and_six_dimensional_status.md。此为既有KT递推与已付种子的推论链，不是新的递推或高维几何方法。全部外部高级proof未由本项目从零独证，unconditional/new/major flags保持false；不解决五维或一般满维数。Goal active。
 
 **历史范围**：R29最初只写compact集合，并把原四维内部assembly列为未审责任；R38已在明列输入下支付该内部缺口和任意集合桥。旧“仅compact/不扩任意集合”及旧未审内部assembly仅保留为历史，不作为当前待证任务。R0042本次更正叙述顺序，不新增数学结果ID。
+
+
+R0051周期frontier/value复核见notes/00_map/R0051_primary_frontier_and_bound_value_audit.md及research/reviews/R0051_macro.md。内部application和当前任意集合范围保持；与旧KT基线数值差不认证priority/major。新三维完整maximal的任意λ输入已单独入库，不把它误当DIM既有完整source审查或自动R5增益。
