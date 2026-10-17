@@ -76,3 +76,6 @@ R0046沿用33PDF/36sources，无新增PDF；Zhang2608.17952v2的§§2–4/旧四
 
 
 R0047无新增PDF，仍33PDF/36sources。A有限比对FD2607.14824v3、Zhang2608.17952v2官方exact页与本地对象；未找到可直接填一般cyclic closed-loop估计的已读primary，但不认证无已有式/novelty。root仅为下一gate定位读HRZ1908.05589v1 PDF1–3/目录，未审actualterminal，不把2019历史指数表当2026前沿。R48须先周期macro/有限primaryfrontier核。详metadata/R0047_source_check.json。
+
+
+R0048 boundedprimaryfrontier/version审：OAI当前official tree核paper.pdf同blob45ec20e.../1371486；HRZ2022发表/机构accepted URL及JHU官方43页文本已读，关键§4/§8对应，本地v1PDF34亦实际视觉核。v1历史4D表1.4794与JHU1.4854有别，非wholebytes同。Edinburgh/JHU下载Win10013/HTTP403，无新offlinePDFbytes/hash，仍33PDF/36sources。详metadata/R0048_source_check.json及notes/00_map/R0048_primary_frontier_and_recursive_input_audit.md；有限检索非first/best认证。

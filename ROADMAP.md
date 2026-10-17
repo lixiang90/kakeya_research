@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0047提前macro：原cyclic全网/wholeclock的常表、负反馈单调、affine(≥3/16)子类实际constant lower已审，palette c/L一般仅N^-1；monotone删选可损N^-2。50族连续timecell/trace/Cauchy有理volume lower、N4十族directpairs核过，非time sampling upper。一般CYCL/无穷power未得，执行一轮停止，不续cycle/alphabet/S阈值。下一唯一 notes/40_multiscale/R0047_next_HRZ_finite_seed_interface_gate.md，R48先周期macro/有限前沿再HRZ actualterminal/closure/λfinite H5>4 gate，不先假设4Dterminal/fullLp。33PDF/36sources/78IDs不变，无新界/major，Goal active。
+更新2026-10-17，R0048周期macro/有界primaryfrontier及actualHRZ alg1/2/tiny已审。DIR原weighted弱删选属旧正幂闭包，保访问不保rawbroad；flat-H4短包h=δ/r、α≈r^-4非subpower，ambient tiny δ5m^p可由k2..4局部族达到，非H5反例/全局actualleaf。H5未证未否，停止HRZ finite4D替换，不续k/degree/radii/η。下一唯一 notes/40_multiscale/R0048_next_general_to_sticky_original_input_gate.md：先核真实general→sticky source，再一次保原mass及输出固定deficit的小并集提取测试。33PDF/36sources/78IDs不变，无新界/major，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -94,3 +94,6 @@ R0046 research/reviews/R0046_macro.md，主稿 notes/20_dimension_lifting/R0046_
 
 
 R0047 research/reviews/R0047_macro.md，主稿 notes/50_counterexamples/constructive/R0047_cyclic_actual_volume_and_closed_loop_boundary.md，两施工/正式review和实验见literature/metadata/R0047_source_check.json。已付的是明确真实子类wholeclock lower及有限连续证书，不是generalCYCL/新的高维维数界；单t rank3和raw能量log发散可与wholeclockconstant并存。停止cycle施工，不续trace阈值/monotone/palette参数。下一不同HRZ递归先核原terminal和真实finite强度，不能把dim4当fullmaximal或把所有curved tangent pieces免费straighten。
+
+
+R0048 research/reviews/R0048_macro.md；root/A/B/twoformal及source版本详literature/metadata/R0048_source_check.json。currentOAI同blob已核，HRZ正式JHU关键接口可对照但accepted bytes未下；无wholeversion等同或priority认证。旧R12/R13 narrow瓶颈排重，weakpruning不另立ID。下一general输入jointAD lower仍未付，不能把AD/CW抽取但丢smallunion称成功归约；WZ2025Conj1.2不是已证工具。所有旧冻结保持，下次常规macroR51。
