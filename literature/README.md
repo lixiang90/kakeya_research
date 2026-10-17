@@ -88,3 +88,6 @@ R0050无新PDF，仍34PDF/37sources。实际重读lifting2609.06299v1的定义/f
 
 
 R0051新增JingWu2608.11726v1(14页)、GGNSZ2607.27629v1(90页)、官方OAI3D maximal Sept23(97页，同blob已核)、GGSWT2511.02864v3(81页)四PDF及提取文本/字节hash/firstpage视觉核，现38PDF/40sources。仅读所列接口，非全文proof认证；GGSWT报1.668的strict有限有理law尚未项目独核。来源/实际阅读/三种geometry与算术候选责任详metadata/R0051_source_check.json。
+
+
+R0052保存官方alphaevolve_repository_of_problems的两原始ipynb（5656/27270bytes）、固定tree/blob/SHA256及Apache2许可/署名于source_code，未执行。两本没有原SD1.668可直接复现law；本项目另独立Q12 weighted反例只反R46，不能回填为来源强下界证书。38PDF/40sources保持，详metadata/R0052_source_check.json。

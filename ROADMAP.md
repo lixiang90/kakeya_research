@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0051周期macro完成：DIM001条件KT推论范围保持，无priority/major认证；OAI4官方同blob。新3D任意λ³maximal已入库但不免费升维；Lie body/physical方向与原slice多值ODE阻止新几何的直接套用。Tao/GGSWT已报SDfour≥1.668与R46全称5/3候选冲突，项目strict有理证书尚未复现。下一唯一 notes/60_entropy/R0051_next_exact_arithmetic_countercertificate.md，只核这项source反例、type/M1整数图和统一C，不调q/重跑旧网格。38PDF/40sources/78IDs，Goalactive。
+更新2026-10-17，R0052六点Q12/n240/type/M1/整数编码/tensor完整反例已两独审，R46固定weighted候选关闭，即G=Z也无统一C。SD1.668原表仍未复现，旧有限网格范围保留；不是欧氏反例/新高维界/major。提前macro后唯一 notes/40_multiscale/R0052_next_arbitrary_density_narrow_transfer.md：用新3D full maximal的任意λ³量词核R4 regular quadric里的真实直线narrow模型；先闭包/双向/原角cap，不自动重开全HRZ。38PDF/40sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -106,3 +106,6 @@ R0050 research/reviews/R0050_macro.md；root8/A10/B6/twoformal及同ID当前结�
 
 
 R0051 research/reviews/R0051_macro.md；root8/A8/B7/twoformal和四份新PDF来源详literature/metadata/R0051_source_check.json。当前一般高维未解，所有旧冻结保scope。下一R52有限有理反例证书有真新一手矛盾输入，非四时正幂命题改名；report和project independently certified分层，未拿到表前不虚报反例已严格复现。下一常规macroR54，关键输入疑点提前。
+
+
+R0052 strict weighted证书见 notes/60_entropy/R0052_six_point_exact_refutation_of_R46.md；两独审 research/reviews/R0052_exact_computation_review.md, research/reviews/R0052_type_and_scope_review.md。R46历史未证未否已顶部加当前否定警示，禁止继续q/权重小改。下一模型只有实际非平面几何与原质量计算才算信息增益，不登记重命名闭包。
