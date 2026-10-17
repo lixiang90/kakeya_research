@@ -1,0 +1,787 @@
+                                                 ON KAKEYA MAPS WITH REGULARITY ASSUMPTIONS
+arXiv:2009.09108v2 [math.CA] 17 Jun 2023
+
+
+
+
+                                                                       YUQIU FU AND SHENGWEN GAN
+
+
+
+
+                                                   Abstract. In Rn , we parametrize Kakeya sets using Kakeya maps. A Kakeya
+                                                   map is defined to be a map
+                                                              φ : B n−1 (0, 1) × [0, 1] → Rn ,   (v, t) 7→ (c(v) + tv, t),
+                                                   where c : B n−1 (0, 1) → Rn−1 . The associated Kakeya set is defined to be
+                                                   K := Im(φ).
+                                                       We show that the Kakeya set K has positive measure if either one of the
+                                                   following conditions is true.
+                                                                                                               (n−2)n
+                                                   (1) c is continuous and c|S n−2 ∈ C α (S n−2 ) for some α > (n−1)2 ,
+                                                   (2) c is continuous and c|S n−2 ∈ W 1,p (S n−2 ) for some p > n − 2.
+
+
+                                                                                1. Introduction
+                                              The Kakeya set conjecture says if a set K ⊂ Rn contains a unit line segment in
+                                           each direction (such a set is called a Kakeya set), then K has Hausdorff dimension
+                                           n. The n = 2 case is solved by Davies [1], so we shall restrict ourselves to n ≥ 3.
+                                           Although we cannot solve the full conjecture, we can prove some positive results
+                                           by assuming some regularity on the Kakeya set.
+                                              We start by defining the Kakeya map. Notation-wise all the balls are closed
+                                           balls. For example, by B n−1 (0, 1) we mean the closed unit ball in Rn−1 .
+                                           Definition 1 (Kakeya map). Given a direction map c : B n−1 (0, 1) → Rn−1 , we
+                                           define the associated Kakeya map to be the map
+                                           (1)           φ : B n−1 (0, 1) × [0, 1] → Rn ,         (v, t) 7→ (c(v) + tv, t).
+                                           We define the associated Kakeya set to be K := Im(φ).
+                                           Remark. By construction, for any v ∈ B n−1 (0, 1), K contains a line segment in
+                                           direction (v, 1). Actually, this line segment in direction (v, 1) has one of its endpoint
+                                           at (c(v), 0). This is the reason that we call c the direction map. Sometimes, it is
+                                           good to write φ = φc to highlight the dependence on c, but we just omit the
+                                           subscript and write as φ since c is always priorly fixed and there is no ambiguity.
+                                              Let us talk about the regularity assumptions that we will impose on φ. First
+                                           of all, we assume c is a continuous map. Second, we assume c|S n−2 (which is the
+                                           restriction of c to S n−2 ) lies in some function spaces of high regularity, for example,
+                                           C α (S n−2 ), W 1,p (S n−2 ).
+                                              We state our main results.
+                                           Theorem 1. If c : B n−1 (0, 1) → Rn−1 is continuous and c|S n−2 is α-Hölder con-
+                                           tinuous for some α > (n−2)n
+                                                                (n−1)2 , then Im(φ) has positive Lebesgue measure.
+
+                                             2010 Mathematics Subject Classification. 42B20.
+                                             Key words and phrases. Kakeya set, winding number.
+                                                                                            1
+2                           YUQIU FU AND SHENGWEN GAN
+
+
+Theorem 2. If c : B n−1 (0, 1) → Rn−1 is continuous and c|S n−2 lies in W 1,p (S n−2 )
+for some p > n − 2, then Im(φ) has positive Lebesgue measure.
+Remark. In a previous version of Theorem 2, the regularity assumption was c ∈
+H s (B n−1 (0, 1)) for some s > (n−1)/2. However, the definition of fractional Sobolev
+space on bounded domains as well as on manifolds is quite tricky and is not the
+main purpose of this paper, so we switch to a less tricky space W 1,p (S n−2 ), which
+is defined by pulling back to the Euclidean space. To define W 1,p (S n−2 ), we first
+choose two charts {U1 , U2 } to cover S n−2 . Let ψi : Ui → B n−2 (0, 1) be diffeomor-
+phisms. For f being a function on S n−2 , we define the norm:
+                                           2
+                                           X
+(2)                kf kW 1,p (S n−2 ) :=         kf ◦ ψi−1 kW 1,p (B n−2 (0,1)) .
+                                           i=1
+It is not hard to check by the chain rule that for different choices of the charts, the
+norms defined as above are comparable.
+   The proofs will largely rely on the winding number from topology. In the rest of
+this section, we briefly discuss the winding number and its properties.
+1.1. Winding number. We first set up some notation. Given a continuous func-
+tion
+                                    f : Sn → Sn,
+we use deg f to denote the degree of f. There are many ways to define the degree
+of a function, which all turn out to be equivalent. In [2] Section 2.2, the degree of
+f is defined to be the integer d such that the induced homomorphism
+                                 f∗ : Hn (S n ) → Hn (S n )
+satisfies f∗ (α) = dα (noting that Hn (S n ) ≈ Z).
+   We also note that S n and Rn+1 \ {0} are homotopically equivalent, so Hn (S n ) ≈
+Hn (Rn \ {0}) are isomorphic. Therefore, we can define the degree of
+                                  f : S n → Rn+1 \ {0}
+using homology groups in the same way. In this case, we usually call it the winding
+number of f at 0, denoted by wind(f, 0). We can replace 0 by any other point x
+and define wind(f, x) as well.
+   We remark that we can also define the winding number in the following way.
+Suppose we are given a continuous function
+                                      g : S n−1 → Rn ,
+then for z ∈ Rn \ Im(g) we define
+                                                              g(x) − z
+                        gz : S n−1 → S n−1 ,          z 7→              .
+                                                             |g(x) − z|
+The winding number of g at z can be defined equivalently as
+                                  wind(g, z) := deg gz .
+Morally speaking, wind(g, z) is the number of times that the “hypersurface” g(S n−1 )
+wraps around z.
+   Next, we interpret the winding number of f from an analytic point of view. More
+precisely, we have the following lemma.
+                 ON KAKEYA MAPS WITH REGULARITY ASSUMPTIONS                                        3
+
+
+                                                                       fe∗
+                                      Hn+1 (Bin+1 , Bin+1 \ {xi })             Hn+1 (Rn+1 , Rn+1 \ {0})
+                                ≈
+                                                      ki                                    ≈
+
+                               pi                                        fe∗
+Hn+1 (B n+1 , B n+1 \ {xi })         Hn+1 (B n+1 , B n+1 \ fe−1 (0))           Hn+1 (Rn+1 , Rn+1 \ {0})
+                                 ≈
+                                                      j                                     ≈
+
+                                                                       fe∗
+                                                Hn (S n )                              Hn (S n )
+
+                                         Figure 1.
+
+Lemma 1. Assume f : S n → Rn+1 \ {0} is smooth. Consider another smooth
+function
+                               fe : B n+1 (0, 1) → Rn+1
+satisfying fe|S n = f . Suppose 0 ∈ Rn+1 is a regular value of fe in the sense that
+Dfe(x) is nonsingular for any x ∈ fe−1 (0). Then we have
+                                               X
+(3)                         wind(f, 0) =            sgn(x).
+                                               x∈fe−1 (0)
+
+Here, sgn(x) = 1 if det(Dfe(x)) > 0 and = −1 if det(Dfe(x)) < 0.
+   One noticeable thing according to this lemma is that the right hand side of (3)
+only depends on the value of fe on S n . This lemma is fundamental from the point
+of view of algebraic topology, but we still provide the proof.
+
+Proof. Write fe−1 (0) = {x1 , . . . , xm }. This is a finite set because 0 is a regular value
+of fe. Of course, it could also be an empty set. We can find a small number δ > 0
+so that {B n+1 (xi , δ)}m                             e
+                         i=1 are disjoint and each f |B n+1 (xi ,δ) is a diffeomorphism onto
+some neighborhood of 0. For simplicity, we denote B n+1 (0, 1) by B n+1 and denote
+B n+1 (xi , δ) by Bin+1 .
+   Note that fe induces a commutative diagram as in Figure 1. This is essentially
+the same as the diagram in [2] page 136. We explain what those arrows mean. The
+arrows with ≈ mean that the relative homology groups are isomorphic. ki and pi
+are induced by inclusions. The top two groups are isomorphic to Z, and the top
+homomorphism
+                                                fe∗
+                  Hn (Bin+1 , Bin+1 \ {xi }) −→ Hn (Rn+1 , Rn+1 \ {0})
+becomes the multiplication by an integer called the local degree of fe at xi , written
+deg fe|xi . Since fe|B n+1 is a diffeomorphism, we have deg fe|xi = sgn(xi ). For the
+                      i
+definition of homomorphism j, we first consider the inclusion
+                         (B n+1 , S n ) ֒→ (B n+1 , B n+1 \ fe−1 (0)),
+which induces the homomorphism
+                   Hn+1 (B n+1 , S n ) → Hn+1 (B n+1 , B n+1 \ fe−1 (0)).
+4                           YUQIU FU AND SHENGWEN GAN
+
+
+Since Hn+1 (B n+1 , S n ) ≈ Hn (S n ), we denote the above map by
+                     j : Hn (S n ) → Hn+1 (B n+1 , B n+1 \ fe−1 (0)).
+In the bottom homomorphism
+                                             fe∗
+                                    Hn (S n ) −→ Hn (S n ),
+it is a multiplication by an integer and this integer is exactly deg fe|S n which also
+equals the winding number wind(f, 0) . Similar to [2] Proposition 2.30, we can show
+that
+                                         Xm              Xm
+                                  e
+                 wind(f, 0) = deg f |S =
+                                      n           e
+                                             deg f |x =     sgn(xi ).
+                                                          i
+                                              i=1             i=1
+This finishes the proof.                                                              
+
+   The way we connect the winding number with the Kakeya problem is through
+the following lemmas.
+Lemma 2. Given a continuous map g : B n (0, 1) → Rn , let g|S n−1 be the restriction
+                          / g(S n−1 ), we have wind(g|S n−1 , z) 6= 0 implies z ∈ Im(g).
+of g to S n−1 . For any z ∈
+   Lemma 2 is a direct corollary of Lemma 1. The next lemma is known as the
+isoperimetric inequality.
+Lemma 3. Given a smooth map g : S n−1 → Rn , we have
+                  Z                       ! n−1
+                                              n
+                                                    n
+(4)                                 |wind(g, z)| n−1 dz       . A(g).
+                        Rn \Im(g)
+               R         p
+Here, A(g) = S n−1 | det( Dg ∗ (ω)Dg(ω))|dω is the area of the self-intersecting
+                                                                       p
+“hypersurface” Im(g). Dg ∗ denotes the transpose of Dg. Locally, | det( Dg ∗ (ω)Dg(ω))|dω
+is the volume form on Im(g).
+   Lemma 3 can be found in an equivalent form as equation (2.10) of [4]. We note
+that z 7→ wind(g, z) is constant on each connected component of Rn \ Im(g). So if
+we denote the volumes these components by {Vk }k and the values of wind(g, z) on
+these components by {nk }k , we see that (4) is equivalent to
+                               X         n      n−1
+(5)                           (   |nk | n−1 Vk ) n . A,
+                                    k
+which is equation (2.10) of [4].
+  Now we briefly discuss the main idea of the paper. Given a continuous Kakeya
+map φ : B n−1 (0, 1) × [0, 1] → Rn , we want to show the Kakeya set K = Im(φ) has
+positive Lebesgue measure. It will be helpful to consider two maps:
+      • φt (v) := φ(v, t), the restriction of φ to the t-slice,
+      • γt := φt |S n−2 , the restriction of φt to the boundary sphere.
+   For v0 ∈/ Im(γt ), we denote by windt (v0 ) the winding number of γt at point v0 ,
+that is, the degree of the map
+                                                    γt (v) − v0
+                             S n−2 → S n−2 , v 7→                 .
+                                                   |γt (v) − v0 |
+If we can find some t0 such that windt0 (v0 ) 6= 0 for some v0 ∈/ Im(γt0 ), then by
+                      / Im(γt ) and windt (v) 6= 0 for t close enough to t0 and v
+continuity, we have v ∈
+                ON KAKEYA MAPS WITH REGULARITY ASSUMPTIONS                            5
+
+
+close enough to v0 . Thus by Lemma 2, we know there is an open neighborhood of
+(t0 , v0 ) contained in Im(φ), and hence it has positive Lebesgue measure.
+    From the above discussion we see our main obstacle is the case that |Im(φ)| = 0
+(so windt (v) is defined for almost every v) and the winding number is 0 where it is
+defined. We will show this cannot happen if we assume some regularity property
+on the Kakeya map.
+    Let us first consider an easy case: φ is Lipschitz. By the area formula, we have
+                 Z                            Z
+(6)                        | det(Dφ(x))|dx =         #{x : φ(x) = y}dy.
+               B n−1 ×[0,1]                     Im(φ)
+
+
+Using parameter x = (v, t) and recalling the definition of φ in (1), one can calculate
+that
+                                                           
+                                       Dv c(v) + tIn−1 0
+                    Dv,t φ(v, t) =                            .
+                                              v          1
+
+Therefore, det(Dφ) = det(Dv,t φ(v, t)) is a monic polynomial of degree n − 1 in
+variable t. Therefore, det(Dφ) is nonzero almost everywhere. This implies (6) is
+nonzero, and hence |Im(φ)| > 0. In fact we shall see in Section 4 that using the
+winding numbers we can show |Im(φ)| is bounded from below by some positive
+constant depending only on the Lipschitz constant of φ.
+
+   Let us come back to Theorem 1 and Theorem 2 where the regularity assump-
+tion of the Kakeya map is weaker than Lipschitz. The strategy is still proof by
+contradiction. We assume Im(φ) has zero Lebesgue measure. Then we use smooth
+maps to approximate Hölder continuous or Sobolev-regular Kakeya maps. We will
+eventually derive a contradiction using an isoperimetric inequality and the following
+key estimate:
+                                 Z 1 Z
+(7)                           1.    |        windt (x)dx|dt.
+                                  0   Rn−1
+
+One intuition for this to be true is that the inner integral is a polynomial in t with
+leading term tn−1 . This is very similar to an observation by Katz and Rogers in
+[3]. They showed that if c is a polynomial of degree d, then |Im(φ)| is bounded
+from below by some constant c(n, d) > 0. The key observation
+                                                           R          there is, by the
+area formula (6) and Bezout’s theorem, |Im(φ)| ≥ Cd | det(Dφ)|dvdt, and the
+latter integral is always at least c(n) for some constant c(n) > 0. The difference in
+our approach is that instead
+                         R      of considering the integral of | det(Dφ)| in (t, v), we
+consider the integral of det(Dφt )dv for each fixed t. This is the signed volume on
+the t-slice and can be related to the winding number.
+    This paper is structured as follows. In Section 2 we will prove Theorem 1, and
+in Section 3 we will prove Theorem 2. Section 4 will be a discussion of two other
+problems related to the Kakeya maps with regularity assumptions.
+
+Notation. We use A . B to denote that A ≤ CB for constant C which depends
+only on the dimension n. A ∼ B will mean A . B and B . A. We will use A .q B
+to denote A ≤ Cq B for some constant Cq depending on q (and n). The closed unit
+ball in Rk is denoted by B k (0, 1), and the unit sphere in Rk is denoted by S k−1 .
+6                               YUQIU FU AND SHENGWEN GAN
+
+
+                         2. Hölder continuous Kakeya map
+    Let n ≥ 3. Suppose we have a Kakeya map
+                φ : B n−1 (0, 1) × [0, 1] → Rn ,         (v, t) 7→ (c(v) + tv, t)
+where c : B n−1 (0, 1) → Rn−1 is continuous and C α on S n−2 . We will prove the
+following theorem.
+
+Theorem 3. If α > (n−2)n
+                  (n−1)2 , then Im(φ) has positive Lebesgue measure.
+
+  We start with some definitions. Denote the restriction of c to S n−2 by c. Let cǫ
+be the ǫ-mollification of c. To be precise, let ρ : Rn−1 → R be a radial compactly
+supported smooth bump function in Rn−1 adapted to B n−1 (0, 1), and let
+                                   ρǫ (y) := dǫ ǫ2−n ρ(y/ǫ),
+where the normalization constant dǫ is set to be
+                                 Z
+(8)                   dǫ = ǫn−2 (       ρ((y0 − y)/ǫ)dy)−1
+                                         S n−2
+                n−2
+for any y0 ∈ S          . Note that the right hand side of (8) is independent of y0 ∈ S n−2
+since ρ is a radial function. Also, we have dǫ ∼ 1.
+   We write c in components as c = (c1 , R· · · , cn−1 ). Finally we define cǫ to be
+(c1 ∗ ρǫ , · · · , cn−1 ∗ ρǫ ), where ci ∗ ρǫ (x) := S n−2 ci (y)ρǫ (x − y)dy for x ∈ S n−2 . So
+the convolution ci ∗ ρǫ (x) averages the value of ci over an ǫ-neighborhood of x on
+S n−2 .
+   Define γt to be the map
+                              S n−2 → Rn−1 ,        v 7→ c(v) + tv,
+and γt,ǫ to be the map
+                              S n−2 → Rn−1 ,       v 7→ cǫ (v) + tv.
+Then from the Hölder continuity of c we have |γt (v) − γt,ǫ (v)| .c ǫα , which implies:
+(9)                   windt,ǫ (x) = windt (x)    if dist(x, Imγt ) &c ǫα .
+Here windt (x) = wind(γt , x) is the degree of the map
+                                                          γt (y) − x
+(10)                       S n−2 → S n−2 ,         y→                 ,
+                                                         |γt (y) − x|
+and windt,ǫ (x) = wind(γt,ǫ , x) is the degree of the map
+                                                         γt,ǫ (y) − x
+(11)                       S n−2 → S n−2 ,        y→                   .
+                                                        |γt,ǫ (y) − x|
+   We will need the following identity from differential topology that relates the
+integral of winding numbers with the integral of the determinant of the differential.
+
+Lemma 4. Suppose f : S n−2 → Rn−1 is smooth. Let fe : B n−1 (0, 1) → Rn−1 be a
+smooth map satisfying fe|S n−2 = f . Then, we have
+                 Z                      Z
+                        wind(f, x)dx =            det(Dfe(y))dy.
+                       Rn−1                      B n−1 (0,1)
+                  ON KAKEYA MAPS WITH REGULARITY ASSUMPTIONS                               7
+
+
+Proof. We recall that we say x ∈ Rn−1 is a regular value of f if for any y ∈ f −1 (x)
+we have det(Df (y)) 6= 0. In particular, x is a regular value if f −1 (x) is an empty
+set.
+   By Lemma 1, if x ∈ Rn−1 \ Im(f ) is a regular value of fe, then
+                                           X
+                           wind(f, x) =           sgn(y),
+                                                  y∈fe−1 (x)
+
+
+where sgn(y) equals 1 if det(Dfe(y)) > 0, and −1 if det(Dfe(y)) < 0. We also note
+that by Sard’s theorem almost every x ∈ Rn−1 is a regular value of fe. So,
+                  Z                     Z      X
+                        wind(f, x)dx =                sgn(y)dx
+                      Rn−1                            Rn−1 y∈f −1 (x)
+                                                  Z
+                                             =                      det(Dfe(y))dy.
+                                                      B n−1 (0,1)
+
+(Rigorously speaking, we should write the integration domain as Rn−1 \ Im(f ). But
+since Im(f ) has zero measure, we still write it as Rn−1 without any ambiguity.) 
+
+Remark. From the previous lemma, we see that the value of the integral
+                           Z
+                                   det(Dfe(y))dy
+                                    B n−1 (0,1)
+
+only depends on the value of fe on S n−2 . Therefore, for any smooth function
+f : S n−2 → Rn−1 , it makes sense to define the integral
+                             Z
+                                        det(Df (y))dy.
+                                   B n−1 (0,1)
+
+Proposition 1. Let windǫ,t (x) be defined as in (11). We have
+                             Z 1 Z
+(12)                   1.        |      windt,ǫ (x)dx|dt.
+                                     0     Rn−1
+
+The implicit constant is independent of ǫ.
+Proof. Fix ǫ > 0. By Lemma 4 and the remark above, we have
+Z                     Z                          Z
+                                                          ∗
+      windt,ǫ (x)dx =         det(Dγt,ǫ (v))dv =        γt,ǫ (dx1 ∧ · · · dxn−1 ).
+ Rn−1                      B n−1 (0,1)                                B n−1 (0,1)
+
+      ∗
+Here γt,ǫ (dx1 ∧· · · dxn−1 ) is the pullback of the differential form. Further by Stokes’
+theorem, we have
+      Z                                          Z
+                      ∗                                           ∗
+                                                                                            
+                     γt,ǫ (dx1 ∧ · · · dxn−1 ) =              d γt,ǫ (x1 dx2 ∧ · · · dxn−1 )
+        B  n−1 (0,1)                              B n−1 (0,1)
+                                                 Z
+                                                          ∗
+                                               =        γt,ǫ (x1 dx2 ∧ · · · dxn−1 ).
+                                                      S n−2
+
+   If we write cǫ (v) = (c1,ǫ (v), . . . , cn−1,ǫ (v)), we have
+                     γt,ǫ (v) = (tv1 + c1,ǫ (v), . . . , tvn−1 + cn−1,ǫ (v)).
+8                              YUQIU FU AND SHENGWEN GAN
+
+
+Therefore
+Z                                   Z
+       ∗
+     γt,ǫ (x1 dx2 ∧ · · · dxn−1 ) =       (tv1 + c1,ǫ (v))d(tv2 + c2,ǫ (v)) ∧ · · · ∧ d(tvn−1 + cn−1,ǫ (v))
+    S n−2                                 S n−2
+                                         Z
+                                  = tn−1       v1 dv2 ∧ · · · ∧ dvn−1 + e(t)
+                                                  S n−2
+                                          n−1
+                                  =t            + e(t),
+where e(t) is a polynomial in t with degree at most n−2 and coefficients determined
+by c, ǫ. In summary, we have shown
+                         Z
+                                windt,ǫ (x)dx = tn−1 + e(t).
+                               Rn−1
+     Next we claim that
+                                  Z 1
+(13)                                       tn−1 + e(t) dt & 1.
+                                      0
+If the claim (13) is true, we may then conclude
+                     Z 1                  Z 1 Z
+                1.       tn−1 + e(t) dt =                        windt,ǫ (x)dx dt.
+                      0                               0   Rn−1
+   So it suffices to prove the claim (13). The proof can be found in [3], but we give
+the proof here for the sake of completeness. Since tn−1 + e(t) is a monic polynomial
+of degree n − 1, we write
+                          tn−1 + e(t) = (t − r1 ) · · · (t − rn−1 ),
+where r1 · · · rn−1 are complex numbers. We observe that for t in a subset of [0, 1]
+with measure greater than 1/4, we have the estimate
+                                       1
+                          |t − rj | ≥    & 1, j = 1, · · · n − 1,
+                                      4n
+which means for t in a subset of [0, 1] with measure greater than 1/4 we have
+                       |tn−1 + e(t)| = |t − r1 | · · · |t − rn−1 | & 1.
+Therefore, (13) holds.                                                                     
+Proof of Theorem 3. Let φ be the restriction of φ to S n−2 × [0, 1]. For the sake of
+contradiction we assume that |Imφ| = 0 and windt (x) = 0 where it is defined. Then
+by Proposition 1 and (9) we have
+                      Z 1Z
+(14)                                  |windt,ǫ (x)|dxdt & 1.
+                           0     NCǫα (Imγt )
+
+Here NCǫα (Imγt ) denotes the Cǫα -neighborhood of Imγt . C is a constant depending
+on the Hölder constant of c.
+  Next we show
+(15)               |NCǫα (Imγt )| . ǫ−n+2 (ǫα(n−1) ) = ǫ(n−1)α−n+2 ,
+and
+(16)                                  A(γt,ǫ ) . ǫ(α−1)(n−2) .
+(For the definition of A(γt,ǫ ), see the line next to equation (4).)
+                                                                          n−2
+    Indeed to see (15), we choose a maximal   S ǫ-separated subset S of S     , so |S| ∼
+  2−n
+ǫ     . We claim that the union of balls xi ∈S BC1 ǫα (γt (xi )) covers NCǫα (Imγt ),
+                  ON KAKEYA MAPS WITH REGULARITY ASSUMPTIONS                                                 9
+
+
+when C1 is large enough. In fact for any y ∈ NCǫα (Imγt ), there exists an x ∈ S n−2 ,
+such that |y − γt (x)| . ǫα . Also by the choice of S, there exists an xi ∈ S such that
+|x − xi | ≤ ǫ. So by the Hölder continuity, we have
+                 |y − γt (xi )| ≤ |y − γt (x)| + |γt (x) − γt (xi )| ≤ C1 ǫα ,
+                                        S
+which means y ∈ NC1 ǫα (γt (xi )) ⊂ xi ∈S BC1 ǫα (γt (xi )) if C1 is sufficiently large.
+So (15) follows.
+   To see (16), we only need to show |∇γt,ǫ | . ǫα−1 (here ∇ is the gradient on
+  n−2
+S     ), which will imply
+                      Z                        Z
+           A(γt,ǫ ) .         | det(Dγt,ǫ )| .         |∇γt,ǫ |n−2 . ǫ(α−1)(n−2) .
+                           S n−2             S n−2
+Recall that ρ is the mollifier with ρǫ (y) = dǫ ǫ2−n ρ(y/ǫ) and dǫ ∼ 1, so we have
+                                          Z
+                                                            y−x
+               |∇γt,ǫ (y)| = dǫ |∇          γt,ǫ (x)ǫ2−n ρ(         )dx|
+                                     S n−2                      ǫ
+                              Z
+                                                           y−x
+                           ∼|         γt,ǫ (x)ǫ2−n ∇(ρ(           ))dx|
+                                S n−2                         ǫ
+                              Z
+                                                                       y−x
+                           =|         (γt,ǫ (x) − γt,ǫ (y))ǫ1−n ∇ρ(         )dx|
+                                  n−2                                    ǫ
+                             Z S
+                           .                   |γt,ǫ (x) − γt,ǫ (y)|ǫ1−n dy
+                              N (x)∩S    n−2
+                             Z Cǫ
+                           .                   |x − y|α ǫ1−n dy
+                                   NCǫ (x)∩S n−2
+                                   α−1
+                             .ǫ           .
+So we indeed have (16).
+  Lemma 3 states
+                  Z                                   n−2
+                                                 n−1
+                                   |windt,ǫ (x)| n−2 dx     . A(γt,ǫ )n−1 .
+                           Rn−1
+Combining what we have so far with Hölder’s inequality we obtain
+   Z 1Z
+1.                |windt,ǫ (x)|dxdt
+     0    NCǫα (Im(γt ))
+                                    Z 1Z                                                            !(n−2)/(n−1)
+                      1/(n−1)                                                  (n−1)/(n−2)
+ ≤ |NCǫα (Im(γt ))|                                            |windt,ǫ (x)|                 dxdt
+                                      0       NCǫα (Im(γt ))
+
+ . ǫ((n−1)α−n+2)/(n−1) ǫ(α−1)(n−2)
+         n−2
+ = ǫα− n−1 +(α−1)(n−2) .
+                               n−2
+This is a contradiction if α − n−1 + (α − 1)(n − 2) > 0, that is, α > (n−2)n
+                                                                      (n−1)2 .                              
+
+                            3. Sobolev regular Kakeya map
+   We use the same notation as in Section 2 but instead of assuming c|S n−2 is
+Hölder continuous C α , we assume c is continuous and c|S n−2 lies in the Sobolev
+space W 1,p (S n−2 ) for some p > n − 2. We write p = n − 2 + δ for some small δ > 0.
+   To compare this regularity assumption with that in Theorem 1, by the Sobolev
+embedding, we know that c|S n−2 is δ ′ -Hölder continuous for some δ ′ = O(δ). On
+10                                   YUQIU FU AND SHENGWEN GAN
+
+
+the other hand when δ is small the space W 1,p and C α for α > (n−2)n
+                                                               (n−1)2 are mutually
+non-inclusive.
+   We will prove the following theorem.
+Theorem 4. If c is continuous and c|S n−2 ∈ W 1,n−2+δ (S n−2 ) for some δ > 0 then
+Im(φ) has positive Lebesgue measure.
+Proof. Since c|S n−2 ∈ W 1,n−2+δ (S n−2 ), we also have γt ∈ W 1,n−2+δ (S n−2 ). We
+consider the mollified cǫ as we did in Section 2. Also recall the definitions of
+windt (x) and windt,ǫ (x) in (10) and (11).
+   By Proposition 1, we have
+                           Z 1 Z
+(17)                           |      windt,ǫ (x)dx|dt & 1.
+                                      0        Rn−1
+Suppose for the sake of contradiction that |Im(φ)| = 0 and windt (x) = 0 wherever
+                                                                                   ′
+it is defined. Since by the Sobolev embedding c|S n−2 is in some Hölder space C δ
+for some δ ′ > 0, the same reasoning as in (9) yields
+                                                                                   ′
+(18)                   windt,ǫ (x) = windt (x)            if dist(x, Imγt ) &c ǫδ .
+So if we split
+Z 1 Z                         Z 1 Z                                                  Z 1 Z
+    |      windt,ǫ (x)dx|dt ≤    |                                windt,ǫ (x)dx|dt +    |                         windt,ǫ (x)dx|dt
+ 0      Rn−1                               0      NCǫδ′ (Imγt )                         0   Rn−1 \NCǫδ′ (Imγt )
+
+                                      =: I1 + I2 ,
+then                        Z 1 Z
+                       I2 =    |                                windt,ǫ (x)dx|dt = 0,
+                                 0        Rn−1 \NCǫδ′ (Imγt )
+since we assumed windt (x) = 0 and we have (18).
+   In the rest of the proof we will show that I1 → 0 as ǫ → 0, which contradicts
+(17). We claim that
+                    Z          p                                      
+(19)    A(γt,ǫ ) :=      | det   (Dω (c ∗ ρǫ + tω))∗ (Dω (c ∗ ρǫ + tω)) |dω .c 1.
+                         S n−2
+Here the notation is from Lemma 3. In the integral, we think of c ∗ ρǫ + tω as a
+function S n−2 → Rn−1 .
+   To prove (19), we cover S n−2 by two coordinate charts {U1 , U2 } with coor-
+dinate maps ψi : Ui → B n−2 (0, 1). Note that the function tω is smooth and
+kc ∗ ρǫ kW 1,p (S n−2 ) . kckW 1,p (S n−2 ) . So after change of variables and pulling back
+                                                R              p
+using ψi , the inequality (19) becomes B n−2 (0,1) | det( (Df )∗ (Df ))| .c 1, where
+f is a function on B n−2 (0, 1) satisfying kf kW 1,p (B n−2 (0,1)) . 1 + kckW 1,p (S n−2 ) .
+Expanding the integrand we see that
+ Z        p                    Z                            Z
+                                                         1
+                                                                              n−2
+    | det( (Df )∗ (Df ))| = | det((Df )∗ (Df ))| 2 . |Df |n−2 . kf kW           1,n−2 .c 1.
+
+
+So, we prove the claim (19).
+   Therefore applying the isoperimetic inequality (Lemma 3) gives us
+    Z
+  |            windt,ǫ (x)dx| . |NCǫδ′ (Imγt )|1/(n−1) kwindt,ǫ kL(n−1)/(n−2)
+       NCǫδ′ (Imγt )
+
+                                     . |NCǫδ′ (Imγt )|1/(n−1) A(γt,ǫ ) .c |NCǫδ′ (Imγt )|1/(n−1) .
+                   ON KAKEYA MAPS WITH REGULARITY ASSUMPTIONS                          11
+
+
+In the last inequality, we used (19).
+   Since
+Z 1                              Z 1                   1/(n−1)
+                    1/(n−1)
+    |NCǫδ′ (Imγt )|         dt .      |NCǫδ′ (Imγt )|dt          ≤ |NCǫδ′ (Imφ)|1/(n−1) ,
+ 0                                   0
+we conclude
+                         I1 .c |NCǫδ′ (Imφ)|1/(n−1) → 0
+as ǫ → 0 (because by assumption |Imφ| = 0). Hence we finish the proof of Theorem
+4.                                                                             
+
+               4. Other results related to the Kakeya problem
+   In this section we discuss two Kakeya-type problems which are under different
+settings from the previous sections, and may be of independent interest.
+4.1. Tube-Kakeya set with Lipschitz spacing condition. In the previous sec-
+tions, we studied the Kakeya set which is the union of line segments. In this sub-
+section, we study the tube-version of the Kakeya set which is the union of δ-tubes.
+Definition 2 (Tube-Kakeya set). For 0 < δ < 1, we choose Vδ to be a maximal
+δ-separated subset of B n−1 (0, 1). For a map c : B n−1 (0, 1) → Rn−1 , we consider
+                        δ                   δ
+the set of tubes {Tc(v),v   }v∈Vδ , where Tx,v  is the δ-neighborhood of the segment
+{(x + tv, t) : t ∈ [0, 1]}. We call the union of these tubes
+                                         [
+                                              δ
+                                            Tc(v),v
+                                         v∈Vδ
+
+the tube-Kakeya set.
+     It is conjectured that for any map c we have
+                                     [
+                                         δ
+                                   |    Tc(v),v | &ǫ δ ǫ ,
+                                      v∈Vδ
+
+for ǫ > 0. In this subsection, we will assume some regularity on the map c and
+prove the result. We define the Lipschitz constant of c by
+                                                    |c(v) − c(v ′ )|
+                      kckLip :=         max                          .
+                                 v,v ′ ∈B n−1 (0,1)    |v − v ′ |
+Our result is:
+                    δ
+Proposition 2. If {Tc(v),v }v∈Vδ is a collection of tubes as in Definition 2, then
+                        [                                  2
+                      |       δ
+                             Tc(v),v | & (kckLip + 1)−(n−1) .
+                             v∈Vδ
+
+Proof. Consider the map
+                 φ : B n−1 (0, 1) × [0, 1] → Rn ,     (v, t) 7→ (c(v) + tv, t),
+which is the Kakeya map corresponding to c.                             S
+   Denote the Lipschitz constant L = kckLip. Note that B n−1 (0, 1) ⊂ v∈Vδ B(v, 2δ),
+                             100Lδ                 100Lδ
+and φ(B(v, 2δ) × [0, 1]) ⊂ Tc(v),v  (recall that Tc(v),v is the 100Lδ-neighborhood of
+the segment {(c(v) + tv, t) : t ∈ [0, 1]}). Therefore,
+                                            [
+                                                 100Lδ
+(20)                             Im(φ) ⊂       Tc(v),v .
+                                              v∈Vδ
+12                                  YUQIU FU AND SHENGWEN GAN
+
+
+  Choose a maximal δ-separated subset of B n−1 (0, 100Lδ), denoted by {x1 , · · · , xM }
+with M ∼ Ln−1 . We see for any v ∈ Vδ ,
+                                      [
+                            100Lδ            δ
+                          Tc(v),v ⊂        Tc(v)+x  i ,v
+                                                         .
+                                                    1≤i≤M
+
+Combined with (20), we have
+                                                   [       [
+                                                                   δ
+                                    Im(φ) ⊂                       Tc(v)+x i ,v
+                                                                               .
+                                                  1≤i≤M v∈Vδ
+                          S          δ
+                                                       S      δ
+We also observe that           v∈Vδ Tc(v)+xi ,v =       v∈Vδ Tc(v),v + (xi , 0), which implies
+                                     [                         [
+                                            δ                          δ
+                                |          Tc(v)+x i ,v
+                                                        |=|           Tc(v),v |,
+                                    v∈Vδ                      v∈Vδ
+
+for any xi . As a result, we have
+                                 [                      [
+                                    δ             n−1      δ
+                  |Im(φ)| ≤ M |    Tc(v),v | . kckLip |   Tc(v),v |.
+                                           v∈Vδ                            v∈Vδ
+
+     It remains to find a lower bound of |Im(φ)|. We note the following inequalities
+                        Z 1Z
+                    1.           |windt (x)|dxdt
+                           0        Rn−1
+                         Z 1Z
+                                                        n−1             n−2        1
+                       .(                  |windt (x)| n−2 dxdt) n−1 |Im(φ)| n−1
+                            0       Rn−1
+                         Z 1
+                                           n−1     n−2          1
+                       .(    A(φt |S n−2 ) n−2 dt) n−1 |Im(φ)| n−1
+                            0
+                                                              1
+                       . (kckLip + 1)n−2 |Im(φ)| n−1
+
+Here, the first inequality is by Proposition 1 , the second inequality is Hölder’s
+inequality, the third inequality is by the isoperimetric
+                                               p ∗       inequality (Lemma 3), and the
+                                                                       n−2
+fourth inequality is by A(φt |S ) . k det Dφt Dφt k∞ . kDφt k∞
+                                  n−2                                      . (kckLip +
+  n−2
+1)    .
+   We obtain
+                 [                  −(n−1)                              2
+               |       δ
+                     Tc(v),v | & kckLip    |Im(φ)| & (kckLip + 1)−(n−1) .
+                v∈Vδ
+
+                                                                                                 
+
+   Furthermore we may ask the estimate for the tube-Kakeya set under the α-
+Hölder regularity assumption. Motivated by Theorem 1, we wonder whether the
+following is true.
+
+Question 1. Does there exists α < 1 so that
+                             [
+                                  δ
+(21)                       |    Tc(v),v | &ǫ,kckC α δ ǫ ,
+                                         v∈Vδ
+
+for any ǫ > 0 ?
+                   ON KAKEYA MAPS WITH REGULARITY ASSUMPTIONS                     13
+
+
+4.2. Line-Kakeya set. In this subsection we would like to use a slightly different
+notation for the Kakeya map. The direction set is parametrized by S n−1 , as opposed
+to Definition 1 where the direction set is parametrized by B n−1 (0, 1).
+Definition 3. For any function c : S n−1 → Rn , we let φc be the map
+                    φc : S n−1 × [0, 1] → Rn ,
+                                          (v, t) 7→ c(v) + tv.
+                                                   S
+We call φc a Kakeya map, and call Kc := Im(φc ) = v∈S n−1 c(v) + [0, 1] · v the
+associated Kakeya set.
+   We can also define the line-Kakeya set where line segments are replaced by
+infinite lines                    [
+                         K̃c :=       c(v) + R≥0 · v.
+                                     v∈S n−1
+
+Proposition 3. If c is continuous and Im(c) ⊂ B(0, R), then K̃c ⊃ Rn \B(0, R).
+Proof. We prove it using the degree theory from topology. For any point x ∈        /
+B(0, R), we define a map
+                                   f : S n−1 → S n−1
+                                            x − c(v)
+                                  f (v) =             .
+                                           |x − c(v)|
+We see that f is not surjective (actually Im(f ) is contained in a half sphere), and
+hence f has degree 0, which implies f has a fixed point (see for example Section
+2.2 of [2]). Let v be a fixed point of f. Then
+                                           x − c(v)
+                                     v=
+                                          |x − c(v)|
+or equivalently,
+                             x = c(v) + |c(v) − x| · v ∈ K̃c .
+                                                                                  
+   We could immediately obtain the following result for a segment-Kakeya set pro-
+vided that c has small image.
+Proposition 4. If c is continuous and diam(Im(c)) < 12 . Then Kc has positive
+Lebesgue measure.
+Proof. By the assumption, we have c(S n−1 ) ⊂ B0.9 , a ball of radius 0.9. By Propo-
+sition 3, we have K̃c ⊃ Rn \ B0.9 . Therefore Kc ⊃ B1 \ B0.9 .                    
+   We could also prove a local version of the theorem. To be precise, for each
+subset U of S n−1 and a continuous
+                                S c as above, we define the line-Kakeya set with
+directions in U to be K̃c (U ) = v∈U c(v) + R≥0 · v.
+
+Proposition 5. If Br is a small closed ball of radius r in S n−1 , then K̃c (Br )
+contains an infinite cone with the cone angle & r.
+Proof. Suppose c(Br ) lies in BR (⊂ Rn ), a ball of radius R. We can find another
+continuous map c̃ on the whole sphere S n−1 , such that c̃(S n−1 ) ⊂ BR and c̃|Br =
+c|Br . Without loss of generality, we assume the center of BR (⊂ Rn ) is 0 and the
+center of Br (⊂ S n−1 ) is the north pole (0, · · · , 0, 1) of S n−1 .
+14                            YUQIU FU AND SHENGWEN GAN
+
+
+
+
+                                            r
+
+
+
+
+                                            BR
+
+
+
+                                       Figure 2.
+
+   Consider the cone C = {(x̄, xn ) ∈ Rn : xn − Rr > |x̄|
+                                                      r } which is the shaded region
+in Figure 2. By Proposition 3, C ⊂ K̃c̃ . Also note that for any x ∈ C and y ∈ BR ,
+         x−y
+we have |x−y| ∈ Br ⊂ S n−1 , so actually we have C ⊂ K̃c̃ (Br ) = K̃c (Br ).       
+
+
+Acknowledgements. We would like to thank Larry Guth for suggesting this
+problem and many helpful discussions, and Nets Katz for helpful comments.
+
+                                       References
+[1] R. O. Davies. Some remarks on the Kakeya problem. In Mathematical Proceedings of the
+    Cambridge Philosophical Society, pages 417–421. Cambridge University Press, 1971.
+[2] A. Hatcher. Algebraic Topology. Cambridge University Press, 2002.
+[3] N. H. Katz and K. Rogers. On the polynomial Wolff axioms. Geometric and Functional Anal-
+    ysis, 28(6):1706–1716, 2018.
+[4] R. Osserman. The isoperimetric inequality. Bulletin of the American Mathematical Society,
+    84(6):1182–1238, 1978.
+
+
+     Email address: yuqiufu@mit.edu
+
+     Deparment of Mathematics, MIT, Cambridge, MA 02139
+
+     Email address: shengwen@mit.edu
+
+     Deparment of Mathematics, MIT, Cambridge, MA 02139
+

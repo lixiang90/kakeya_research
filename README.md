@@ -1,8 +1,8 @@
 # 一般维度 Kakeya 研究
 
-目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度的证明、证伪或重大中间结果。已完成四十八轮归档研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
+目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度的证明、证伪或重大中间结果。已完成四十九轮归档研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
 
-R30–38在具名输入下完成四维内部论证及finite/Hausdorff接口审查。R48核对当前一手前沿及HRZ真实递归：原染色弱删选可以调用，但不保整管broad质量；flat短包仍有r^-4方向重数，不能免费替换四维终点。未得到五维严格超过4的新下界，执行停止。文献33篇PDF/36条来源；下一核一般输入到sticky类的原质量和体积deficit归约。未认证重大新成果。
+R30–38在具名输入下完成四维内部论证及finite/Hausdorff接口审查。R49核实一般→sticky来源先假近sticky/AD输入；证明保原质量后clock、重格、代表和体积亏损可共同付小幂，并在额外全尺度joint-cover上界下提取AD core。一般提取仍未证，已停止该入口。文献34篇PDF/37条来源。下一检验旧仿射分类未覆盖的完整非线性coherent lift；未认证高维新界或重大成果。
 
 每次恢复研究，依次读 [GOAL.md](GOAL.md)、[STATE.md](STATE.md)、[ROADMAP.md](ROADMAP.md)、[最近轮次](research/rounds/)；执行 `python scripts/context.py` 可生成精简交接摘要。
 

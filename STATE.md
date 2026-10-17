@@ -1,33 +1,41 @@
 # 当前研究交接
 
-更新2026-10-17，R0048主稿/两施工/两实际全文review/root整合与周期macro完成。Goal active，一般/高维Kakeya及重大中间结果未完成。H5未证未否。下一唯一 notes/40_multiscale/R0048_next_general_to_sticky_original_input_gate.md；R49先核真实general→sticky源，再一次保deficit提取测试。停止HRZ finite4D替换，不续k/degree/radii/η；所有旧cycle/PW/AFF3/CP等冻结保持。
+更新2026-10-17，R0049主稿/两施工/两实际全文review/root整合与提前macro完成。Goal active，一般/高维Kakeya及重大中间结果未完成。一般E5*/H5未证未否。下一唯一 notes/20_dimension_lifting/curved_lifting/R0049_next_nonlinear_coherent_lift_gate.md；R50一般空间非线性smooth(1,0)lift、固定Bdiag1,2、保原t/全开w,y,ρ和满秩Θ。停止general→sticky初始化，不续coarseentropy/parent/η，旧HRZ/cycle/PW/AFF3/CP等冻结保持。
 
-## 恢复和同步
+## 恢复与同步
 
-R48已运行context.py→tmp/R0048_context.txt，GOAL/STATE/ROADMAP/registry78全部状态/latestR47/AGENTS/round/macro/next均读，working_spec及周期macro先于施工。R47 HEAD=origin=remote f8953fc26fea81765a7c78fc12863d2a9a175985，tree17f17888b4029416a5a442bbb4153b673b251949，707files/clean及receipt全项开轮核。上一turn progress；本轮新接口校准明确改变下一动作，非重述旧narrow指数。
+R49 context.py→tmp/R0049_context.txt、固定入口/registry78全部状态/latestR48/AGENTS/R48round/next均读，working_spec先写。开轮R48 HEAD=origin=remote57534354ab83bd9af4f3724f34b9d68add174a6a/treebc93d88555ea0dae29035a62ed6f771f076f95ff/718files/clean及receipt全项核。上一turnprogress，本轮实际预算/特殊类与源量词核查改变next，不是重命名未证命题。
 
-R48沿R47父精确blobs/tree/commit/leasedref forcefalse，最终以tmp/sync/R0048.json的pendingfalse/sametrue/cleantrue/allstagedSHA256true为准。CLI认证/网络不可用，GitHub connector可用；root统一Git，A/B只assigned文件。恢复先context.py和receipt；不无故重跑已过R46四投影/R47五十族有限证书。
+R49沿R48父精确blobs/tree/commit/leasedref forcefalse，最终以tmp/sync/R0049.json的pendingfalse/sametrue/cleantrue/allstagedSHA256true为准。CLI认证/默认网络不可用，GitHub connector可用；root统一Git，A/B只assigned终稿已停。恢复先context.py与receipt，不重跑R46/R47有限计算。
 
-## R48真实数学范围
+## R49主稿与真实来源
 
-root八节 notes/40_multiscale/R0048_actual_HRZ_terminal_and_original_shading_boundary.md；A七节 notes/00_map/R0048_primary_frontier_and_recursive_input_audit.md；B八节 notes/40_multiscale/R0048_HRZ_recursion_and_finite_seed_counteraudit.md。正式primary_and_scope_review、recursion_and_density_review、rootintegration及macro/next均实际全文独审；未经外部同行评审。78IDs，无新ID/major。
+root notes/40_multiscale/R0049_general_input_regularization_and_deficit_ledger.md八节；A notes/00_map/R0049_general_to_sticky_source_implication_audit.md十一节；B notes/40_multiscale/R0049_original_mass_deficit_and_regularization_counteraudit.md八节。formal source_and_scope_review七节、mass_and_scaling_review六节、rootintegration六节、macro8/next5均实际全文审；未经外部同行评审。registry78ID不增。
 
-H5：原R5满4-box δ-separated directionnet、每管δ^-1+η原marks，存在σ>0使∀ε∃η/δ0/c得#E≥cδ^(-4−σ+ε)。本轮没有σ，也没有H5反例。R12/R13已审的broad/narrow21/5/2p−3不算新。真正actualalg1/2的tiny-dom终点在ambientRn，式δ^n m^p加multiscalePW/maxcount；递归m≥k、不保证m4，曲面维4不自动straightlineR4。
+WZ2025Def2.1(b)已假allscale近stickycoarsecover；σ_n/M及extremal小并集属于此类。Prop3.2从(b)给父数量和原质量，再以同σ coarse/fine饱和传递，不是任意κ0普通小union归约。WZ2026Kd/§18同样先joint(d−1)-AD/CW，选择该类极值见证的存在量词不能当给定ordinary族的restriction。没有来源填general smallunion→joint4AD入口，E5*未证也无全假设反例。
 
-原4D DIR对任意原权/marks给highf删选：L≥2Cαδ^-ε时Σ_{f≥L}f≤2δ^-1+ηD W。若ηin<ηD，可保几乎全部原访问且重数小；平均与逐管须另heavy。此与旧uniformDIR正幂闭包同级，不是新方向。极少访问可支配Lp/broad；原满方向bush在远clock有全部marks而wholebroad只原点附近，不能自动把原marks送进HRZ选中leaf。
+## 已付共同parent/window预算
 
-flatH4短piece calibration：δ≪r≪1，三个切向δslopes、一个宽δ/r法向band；m≈δ^-3/r。pieces位N_Cδ(H)，轴线不精确全在H。缩h=δ/r后投影directionbin重数α≈r^-4；union≤Cδr4、totalpiece≈δ，真实费用锐。tiny r=δ^(1−ε°)不subpower。固定A、β足够小、k2..4在原点有rawbroad^p≥cδ5m^p，k5不适用；不是某global算法必输出该leaf，也不是满方向H5反例。删极短原点clock能丢全部rawbroad，故weakpruning不保其质量。
+原m≈δ^-4、I0≥δη m/δ，若合法共同window q/横parent r保IA≥δell I0，aell+η，则每原label最多q/δ+1先迫q≥cδa。r≤q方向band r/q迫r4≥cδa q³，r≥q用q5，所以J=qr4≥cδ5a，hδ/r仍δ的小幂可比。不得只因出现q^-4就称fixedpower障碍；这些式子不构造parent或ADlower。
 
-要重新接HRZ须真付原质量、每parent缩clock/方向bin、ΣWPrP重复、合法R4长直线见证和strictgain；本轮没有，不补作假设。FSD直接只给原基线4。按一主轮规则停止该接口，不续阈值。
+原h外网格不由Jac自动保体积。root/A实际视觉核WZ2025v2PDF13(3.5)字面常数~，clockcomb在合法局部质量阶下有δ^-η膨胀；非OCR，但不否原最终定理。localblockheavy：Ivol≥δu r4、N≤δ^-v h^-4，βδu+v+w，删≤Cδw原质量且outer≤Cβ^-1r^-4E′。一般q≥r用原qh blocks，见证βqhδ4/J=βh5；q<r原cell像最小轴≥h可packing。后续任意细删shading会破heavy，不能宣整P3.2全修；先constµ后heavy须仍用initialµ而非roundedµ。
 
-## 文献与前沿
+先heavy再wholelabel代表，hbin原labels≤Cq^-4，取原访问最多者保cq4 IA，不合并marks。p′≥δa q³≥δ4a，CW≤Cr4/(p′q4)≤δ^-8a，平均duration≥δ4a；image原δ段跨多个hbins不能漏。βδa+w和J界得outputV≤Cδ^(κ0−6a−w)，小ε预算同时保原访问/新CWdensity/固定κout。仍需真的找到保原globalmass的parent，不认证任意affine存在。
 
-33PDF/36sources，本轮无新PDF。currentOpenAI官方root tree1581d4...→preprintsdf0564...→dir807c97...核paper.pdf blob45ec20e423db2a9c70fd6303510bac361e6e9e8a/1371486，与存本一致。HRZ arXiv仍v1；AJM144(6)(2022)1511–1560/DOI10.1353/ajm.2022.0037/机构accepted URL已核。JHU官方43页文本实际读Th1.2/Th4.1/§8，主接口对应但历史4D表1.4794→1.4854，非wholebytes同。CLI Win10013/HTTP403，未保存accepted/JHU新bytes，不伪造hash。root实际视觉读本地v1PDF34；没有声称JHU工具截图pixels已见。
+## 附加类的完整ADcore
 
-boundedprimaryfrontier未见已读声明覆盖H5，非穷尽/first/best证书。MoreiraR4参数3.06737非fullmaximal；GLX2025历史表/HRZ2019表不当2026完整前沿。高级具名HRZ/四维/KT等依赖层次继续保。R38 RED完整内部argument/finite-Hausdorff已付，不复活assembly。DIM001条件任意集合六维17/4仍非无条件新界/priority认证。
+若另有所有尺度joint参数coverN_s≤K s^-4、K≤δ^-η，原directionpacking给每cellupper。bottom-up按当前数删<θ(s/δ)^4节点，θcδε/2，删除labels≤CθKlogδ^-1 δ^-4；原访问比例损≤C logδ^-1 δε/2−2η=o1，已付原density分母。存活节点不会被祖先部分再删，故所有scalelower同时成立；support-centeredball取细cell，非擦边任意非空ball。wholelabels保所有原marks/逐管density，hδ、union不增、CWconstant和κ0原样。该全尺度cover额外假设未由smallunion导出，不新ID/major。
 
-## 下一唯一责任与停止
+## 文献与版本
 
-R49读 nextspec及WZ2025 §1.2/Conj1.2/extremal定义/Prop3.2、WZ2026Def17.1/§18。满δ方向不自动jointAD4：R42digit-permutation已反无条件自动桥，但不满足小并集就不能反本次候选。E5*固定原体积deficitκ0，检验保δ^ε原访问、一个合法commonaffine/clockwindow、h∈[δ^C,δ^c]、uniform原labels的joint4AD/CW/nearfullshading及输出κout≥cκ0。特别Jacobian/uniondeficit不能省；只抽到regular族无用。是待证sourcegate，不是新的正gain名称，H5可能使其假设为空，反向还需完整R5sticky theorem及回传。
+34PDF/37sources，本轮新增Fu–Gan2009.09108v2，208052bytes/14页/SHA25640f8beed35ad73024cb1d1505703c65bae1e5e9cecf3e651543c9d5412b4415f，gitblob67bc2cdc25208c6f2508c5e4504bf6c761ffa81c。root读1–5并视觉核p1，A独立官方1–5；continuous c+boundaryHolder α>15/16(n5)或W1p p>3，完整proof未重证。没有新finite插值足迹回原E机制，macro不选该路线继续R47旧警告。
 
-若来源只从sticky出发或只s>4、固定幂mass丢失吞deficit、不能保原marks，R49一主轮停止并macro，不续AD/parent/η参数。下次常规macroR51，关键失败/连续两轮无信息提前。一般到sticky、其余mixed/generalHausdorff/maximal仍open；长期Goal不得自行complete/pause/blocked。
+WZ2025当前仍v2(2025-10-07)，JAMS39(2026)515–585/DOI10.1090/jams/1067；AMS刊本未成功读，不宣修没修3.5。A仅有界读Nadjimzadah GAFA00750-4/2511.10918v2的general→sticky/curved statements，范围R3，未下载bytes或当R5输入。非本轮globalfrontier（最近R48），无priority证书。RED完整内部链、DIR/FSD和条件任意集合六维17/4依赖层次保持，不复活assembly/不清空具名外部proof。
+
+## 下一机制和来源纠正
+
+重要：真正lifting文献为已存Nadjimzadah **2609.06299v1**，当前official仍v1(2026-09-05)，Def2.1允许一般smooth time-preserving submersion。**2511.10918v2/GAFA00750-4是另一篇Bourgain-condition文章**。root草案混淆已由A原文核纠正，next/macro及两formal审的是更正版本。
+
+R50问π_t:R3→R2 smooth rank2、a(y,w,ρ)、Θ(y,ρ)独立w且D(yρ)Θ rank3，是否对所有open(y,w,ρ,t)保π_t(a+tΘ)=w+(tI+t²diag1,2)y。旧LIFT005只π_t空间affine，不能直接排此严格大类；非线性坐标拉直π会弯原直线，不能偷用。先源Def2.1/Prop2.2和旧三稿，再真构造或整个class no-go。只配有限jets/selector/降rank/换clock/先假affine不回答；一轮无真新机制即停，不续Taylor阈值。直接可能收益只从4D输入到3D曲线，不能反向当R5证明。
+
+macro已停本general→sticky入口，不以coarseentropy改名续轮；所有旧冻结保持。下次常规macroR51，关键失败/连续无信息提前。一般高维/major目标未完成，Goal不得自行complete/pause/blocked。

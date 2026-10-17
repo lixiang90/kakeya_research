@@ -79,3 +79,6 @@ R0047无新增PDF，仍33PDF/36sources。A有限比对FD2607.14824v3、Zhang2608
 
 
 R0048 boundedprimaryfrontier/version审：OAI当前official tree核paper.pdf同blob45ec20e.../1371486；HRZ2022发表/机构accepted URL及JHU官方43页文本已读，关键§4/§8对应，本地v1PDF34亦实际视觉核。v1历史4D表1.4794与JHU1.4854有别，非wholebytes同。Edinburgh/JHU下载Win10013/HTTP403，无新offlinePDFbytes/hash，仍33PDF/36sources。详metadata/R0048_source_check.json及notes/00_map/R0048_primary_frontier_and_recursive_input_audit.md；有限检索非first/best认证。
+
+
+R0049新增Fu–Gan2009.09108v2，公开原PDF208052bytes/14页与提取文本、来源hash齐存，root/A读1–5、root第一页视觉核；boundaryHolder或W1p/continuous假设仅作macro候选，不供roughfinite桥。现34PDF/37sources。WZ2025v2PDF13(3.5)outer责任及localonecall修复、当前v2/AMS未读刊本边界、WZ2026真实AD极值类详metadata/R0049_source_check.json。lifting2609.06299v1与Bourgaincondition2511.10918/GAFA00750-4明确不同，不混版本或证明输入。

@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0048周期macro/有界primaryfrontier及actualHRZ alg1/2/tiny已审。DIR原weighted弱删选属旧正幂闭包，保访问不保rawbroad；flat-H4短包h=δ/r、α≈r^-4非subpower，ambient tiny δ5m^p可由k2..4局部族达到，非H5反例/全局actualleaf。H5未证未否，停止HRZ finite4D替换，不续k/degree/radii/η。下一唯一 notes/40_multiscale/R0048_next_general_to_sticky_original_input_gate.md：先核真实general→sticky source，再一次保原mass及输出固定deficit的小并集提取测试。33PDF/36sources/78IDs不变，无新界/major，Goal active。
+更新2026-10-17，R0049提前macro：真实source先sticky/AD；保原globalmass迫q≥δa/J≥δ5a，blockheavy、代表/CW/密度和deficit共同小损已付；额外allscaleN_s≤δ^-ηs^-4可树提AD4core并保原marks/亏损。一般smallunion不供该cover，E5*未证未否，停止初始化，不续coarseentropy/parent/η。下一唯一 notes/20_dimension_lifting/curved_lifting/R0049_next_nonlinear_coherent_lift_gate.md，真lifting2609.06299v1的空间非线性π class严格超旧LIFT005 affine，直接只是forward曲线机制。34PDF/37sources/78IDs，无新高维界/major，Goalactive。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -97,3 +97,6 @@ R0047 research/reviews/R0047_macro.md，主稿 notes/50_counterexamples/construc
 
 
 R0048 research/reviews/R0048_macro.md；root/A/B/twoformal及source版本详literature/metadata/R0048_source_check.json。currentOAI同blob已核，HRZ正式JHU关键接口可对照但accepted bytes未下；无wholeversion等同或priority认证。旧R12/R13 narrow瓶颈排重，weakpruning不另立ID。下一general输入jointAD lower仍未付，不能把AD/CW抽取但丢smallunion称成功归约；WZ2025Conj1.2不是已证工具。所有旧冻结保持，下次常规macroR51。
+
+
+R0049 research/reviews/R0049_macro.md；root8/A11/B8/twoformal/source信息见literature/metadata/R0049_source_check.json。源(3.5)字面outer常比需付费、onecallheavy可修，不宣整P3.2修复或原定理反例；所有高级具名责任保持。general→sticky缺口不改名coarseentropy续轮。FG边界正则输入已入库但无新finitefootprint机制不选；下一一般nonlinearπ保t/全w,y,ρ/rank，先核真2609Def而非另一GAFA文章，不套旧affine分类。下一常规macroR51，失败提前。
