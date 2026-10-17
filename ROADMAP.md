@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0063共同二维脊三维载体的全密度/一般n求和及KZ named-R4后lightlabel/原N1-A0桥已付；统一倍率lower仍无，停止此参数接口。下一唯一 notes/00_map/R0063_next_full_five_dimensional_source_gate.md，返回完整5D source先去重锁规格再同轮数学。53PDF/53sources/78IDs，Goal active，ordinary高维未解。
+更新2026-10-18，R0064 raw weighted近秩一差分类、原g/metric条件回传及edge-only严格反攻已付；没有actual source小q输入或ordinary gain。下一唯一 notes/00_map/R0064_next_actual_output_coupling_gate.md，先核原A-output/wholeline/xi与冻结等价再锁数学。53PDF/53sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -136,3 +136,5 @@ R0061：allλ→strongL3/2仅闭包，ρ/Kp/parent及flat H3⊂H4饱和冻结直
 R0062：四维weightedbase/commonrandomgrid保原Lebesgueλ5/单log，任意管族逐管nearfull fixedR doubling不需PW/Σ。一般n semi-shadow t^-n+PWmean→same-radius continuation/log^n；U4→farunit/slice/origheavy/outsidepole支付P4逆向，与S4同gain难题。旧projective独立方向冻结；无共同PW4/ordinary新界/major，下一必须真实跨carrier/多尺度新机制。
 
 R0063：fixed n共脊RP^(n−3) overlap、真实r/a切片、平均lambda/Jensen、Q角删选及nearcarrier校准；fixedQ0 wholeaxis+原R4 lightlabel平方收费+honestN1/A0给备用theta10 rho p lambda7 N1³/(A0 C_loc)。原PW只John-box projected CW，cube envelope不授fat fullPW；source(63)/R4全preprocessing仍具名。无uniform rho p lambda³/(C_loc theta) gain，不续p/rho/阈值，下一实际完整d5 source筛冻结/同义，不制造跨kernel定理。
+
+R0064：raw nu² bad-det q→删4sqrt(q)的固定image/kernel/常值alternative，error100R²sqrt(epsilon)/a；原图损8sqrt(q)、metric/SM阈值明确，三原子sqrtq sharp。真1AD/Lip/weightedSM双曲线cross图严格否edge-only升级，任意单plane保g<=C(h+delta²)，无A-output/TxiCW completion。exact分类primary已知，不新ID/major；冻结参数和stationarity，下一原输出耦合不能只筛查结案。
