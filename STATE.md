@@ -1,27 +1,25 @@
 # 当前研究交接
 
-更新2026-10-18，R0065。root14/A10/B9、两formal6/rootintegration6/macro6/next6实际全文审通过。Goal active；ordinary n>=5/general或major未达。下一唯一 notes/00_map/R0065_next_periodic_full_goal_review.md，R66先周期宏观复核，防连续extra-regularity子类代替完整问题，再锁真正未付机制并同轮数学。
+更新2026-10-18，R0066，Goal active；普通n>=5/general或major未达。本轮完成周期全目标macro与完整mixed43原tiny残差门槛；下一唯一 notes/00_map/R0066_next_full_native_mixed43_affine_test.md，直接回既有完整AFF3责任，不续小阈值或额外regularity子类。
 
-## 本轮已证及边界
+## 本轮数学和真实作用
 
-notes/40_multiscale/sticky_matrix/R0065_rational_two_time_curvature_and_output_incidence.md。fixed D/M rational Fi、controlled denominator及Jac numerator coefficient>=r^theta，原time interval cap和angle slab，任意相关bounded g、低维absolute Aplus output给三项原图质量上界K r^(theta gamma/2)+K²r^(theta/(2d))+K³r^(kappa-3theta)，d6D+4。原atomic time jitter、角二次小值集、二元插值、regular complex fibers的经典Bézout重数和change-of-variables全部付；不声whole raw law2Fst。
+notes/40_multiscale/sticky_mixed/R0066_two_slope_residual_and_original_mass_gate.md root9。原f=(a;b)、tildef=(c,d)、b=c+da，全部ordered Ets=bt-bs-ds(at-as)小epsilon，由Ets+Est=Delta d Delta a得f或tildef diam<=C_M sqrt epsilon，epsilon0精确二择、sqrt sharp与有向edge-only反攻均独证。它是有限代数加源工具应用，不认证首创/major。
 
-## 实际source与严格校准
+完整mixed43原S>=delta^alpha#Z、任意原allowed rho上若全部同窗E<=rho^(2+4beta)，绝对heavy窗和原层闭包保mass；tildef局部慢直接named19.4，f全局慢用named19.2。newallowed R上邻rho时不合并旧窗fit，实际支付old heavy窗在R-parent中的cluster比例delta^(alpha+eta+eta_star)。sigma区间/rounding及delta floor全付，CW>=delta^(C(alpha+eta)/gamma)rho^-beta kappa，与原upper冲突，故tau_rho(S)>rho^(3+4beta)。无AFF/nonquad或smooth新增假设，source高级wholeproof未新增独证。
 
-R16 fine原priors直接可接：time floor delta/rho<=rho=r，used H slab floorr，full Y的AD packing给absolute N_rAplus<=K^C r^-2+kappa；输入sigma任意，不需重做coarse-time或新AD lower。normalization F=(rho/tau)(f-fref)，physical模型误差e_phys需<=C tau r/rho。fixed rational approximation与量化N lower仍extra input，不能从完整source推出；原tuple准备沿旧审查层次引用。
+## 尚未支付与反攻范围
 
-R64双branch rational cross J的[t5s]N=2psi1²，故不能补低维A-output且保subpower原图质量。真H-H差law的raw零ball>=cr，commonkernel抛物线raw零ball>=c sqrt(r)，所以必须收费删critical参数；R58 Lip plateau反例因complexity增长未被否定。没有完整Def17反例、一般commonkernel扩张或高维维数增益。
+raw全部pairs前提不能从used g免费取得；两label反攻只否edge-only有限弱化，不是正kappa完整source反例。该必要门槛未给AFF3、中/大tau、完整mixed43或ordinary strict>4。原T及CW/joint4AD不变，whole层witness保留后平均shading重新计；逐管density并不自动保持，不能混用。
 
-## 来源与独审
+## 来源和审查
 
-53PDF/54sources/78IDs。新增Tao2011作者web记录及literature note hash，无新PDF；实际Theorem1/Cor2复零维界，本文证明其regular实fiber应用桥。源高级wholeproof未新增独证。A/B实际互审、两formal及root集成通过，未经外部同行评审。经典工具proper-subclass结论不认证首创/major，不新增数学ID。
+53PDF/54sources/78IDs。A actual官方Git API核OAI4/M3/elliptic PDF/README unchanged；bounded primary搜索仅范围核，不认证frontier/absence。A15/B12、两formal6/rootintegration6、macro6/next6实际全文内部审查通过，未经外部同行评审；named19.2/19.4 wholeproof依既有验证层次。无新PDF/source/数学ID，原78状态不变。
 
 ## 下一与冻结
 
-notes/00_map/R0065_next_periodic_full_goal_review.md。R66先周期macro，对ordinary高维、general-to-sticky、sticky/mixed各真输入和反例边界作账本，主动防只在更易regularity模型进展；未预认证候选。数学前排R18/W、R23cycle、R28box、R45star、R58D、R64raw、stationarity及双向正幂闭包，下一仍须实际数学，不能筛选报告结案。
-
-本轮fixed rational D/M/theta/h/critical阈值和近pencil误差停止。CP/PM、W/Y-only/action/carry、LIFT005smooth、fixedarms、poly degree/palette、scalarK、D/slab/plateau、projective独立gain、HRZ norm/rho、R63同轴参数仍冻结；R60/R62保原范围。普通高维/general、共同PW4、generic commonkernel、mixed及general-to-sticky仍open。
+notes/00_map/R0066_next_full_native_mixed43_affine_test.md。数学前锁完整source共同label/frame，测试native3grain L与ell W的真实joint质量如何支付既有AFF3；禁止只并列两图就假相交有质量，或把旧box再命名。停止本轮sqrt/beta/tau/grid常数；CP/PM/PW4同义、W独立化/BSG/action/carry、stationarity/fixedarms、R58D/R64raw/R65degree、HRZ norm/rho、poly palette、R63同轴及LIFT005smooth等冻结保持。最迟R69周期macro、连续两轮无信息增益提前。ordinary初始化、Mat2/mixed及general-to-sticky仍open。
 
 ## 同步恢复
 
-父HEAD=origin=remote364a374d419bb29c90ec157ebcdfdba644645a20/tree285ec5ff27844a82bee5cc9b93163a7d705fcdf0、977旧tracked clean。最终tmp/sync/R0065.json须pendingfalse/samecommit/clean/fulltree/allstagedSHA256。恢复先python scripts/context.py及固定入口/78状态/R65round/macro/next/receipt+freshref，不重跑通过计算。Goal保持active，不自行complete/pause/blocked。
+父HEAD=origin=remote1d034bb04b7e73b6f268fda3a0bceaaf1176d58b/tree7745303aed973a19f9952ccb9664fbe5363e5a91、991旧tracked clean。最终tmp/sync/R0066.json须pendingfalse/samecommit/clean/fulltree/allstagedSHA256；恢复先python scripts/context.py及固定入口/78状态/R66round/spec/macro/main/A/B/formal/next/receipt+freshref。不重跑通过计算。Goal保持active，不自行complete/pause/blocked。
