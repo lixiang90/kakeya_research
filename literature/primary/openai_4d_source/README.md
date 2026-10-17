@@ -18,3 +18,6 @@ R0036补入两个官方源文件，均通过本地git hash-object与官方Gitblo
 - 09-unbounded-narrowness.tex：54169 bytes，Gitblob b620f35d37507fae84860d27b5c1623cd212f8a5，SHA256 02e6e98f25c5945fa2af0b46b5a123034d5ab357abeba9b4ec0ba3ccddcf397b；[原文件](https://github.com/openai/math/blob/main/preprints/Every-four-dimensional-Kakeya-set-has-full-Hausdorff-dimension-September-24-2026/build/sections/09-unbounded-narrowness.tex)。对应PDF§10；章节文件编号与PDF节号相差1，不能混用。
 
 当前目录仍是部分源码，不是完整可编译项目。原PDF身份复核仍同上述OAI4版本；取回源码不证明其数学正确，完整read/audit范围见metadata/R0036_source_check.json。
+
+
+R0037新增官方06a-retained-edge.tex（PDF§7）：32502bytes，Gitblob ecbd7d817f229f9fe71835cfb6fdf657e3d01980，SHA256 c80fbb364aafc0bdd77e325bf7266c17e3a79032c0e3b7c192fd108502a38c60；08-critical-rates.tex（PDF§9）：67117bytes，Gitblob3bbbb60ca7def17c51642f499c6c808c48708df2，SHA256017961cbcf340a0868e57964184564985825ed56287131cb98eb80586237d624。原路径同上build/sections/，均通过exactbyte核验。07的其余finite分支连同两新文件本轮完成内部双独审，详见metadata/R0037_source_check.json；仍为partial source而非可编译全project，完整2.17/finite读出/高级输入责任不自动清零。

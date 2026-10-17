@@ -1,69 +1,47 @@
 # 当前研究交接
 
-更新2026-10-17（Asia/Shanghai），R0036数学/归档完成，Goal active。最终标准仍为n≥5/一般Euclidean Kakeya完整解决/真实反例，或有一手比对与独审支持的重大中间结果；均未达成。无无条件新高维界；六维17/4仍条件；来源工具/分支重证不作新颖/重大成果。
+更新2026-10-17（Asia/Shanghai），R0037数学/归档完成，Goal active。最终标准仍为n≥5/一般实欧氏Kakeya完整解决、真实反例，或有一手文献比对和独审支持的重大中间结果；均未达成。没有无条件新高维界，六维17/4仍条件。来源工具/分支的内部重证不声明新颖/重大。
 
-## 恢复与同步
+## 恢复、同步与宏观规则
 
-R36开轮核R35 commit8f27de104128c4d2fb9760d15b8b032da8c1b60e、treeb2372071d3c67a629fc8f29b2cdd25549c64d5b4、533文件receipt/HEAD/origin/remote main/clean一致，固定入口与context.py执行。R36收尾沿该父安全同步，最终以tmp/sync/R0036.json为准，必须fullremote tree/逐path-mode-blob、local exactcommit、每blob bytesSHA256、pending=false/same=true/clean=true全核才报告。下一轮先读GOAL/STATE/ROADMAP/registry/R36round/AGENTS，运行python scripts/context.py，核receipt/git，不重跑已过计算/搭库。
+本轮开轮核R36 commit ec847bbff01133d8e7cf97bb0ffc366fcf8f40d3、tree58edfb4cb4a621a3b461ba48e037ff093c5ef34a、550文件receipt/HEAD/origin/remote main/clean一致，context.py与固定入口已读。上一Goalturn分类progress：完整UNB/双审/安全同步，非最终结果。R37沿该父安全同步，最终以tmp/sync/R0037.json为准：fullremote tree/逐path-mode-blob、local exactcommit/逐blob bytesSHA256、pending=false/same=true/clean=true全核后才报告。下一轮先读GOAL/STATE/ROADMAP/registry/latest/AGENTS、运行python scripts/context.py、核receipt/git，勿重复搭库或已过计算。
 
-本轮实质progress为macro依赖cut改变下一行动、完整8.2+∞排除及双全文独审，不是最终/重大成果。每轮唯一main，最多两互补代理，只指定文件/noGit，root统一整合提交同步。原p_A/π/fullν_Q与上一层prior不因删选重设。
+每轮唯一main、最多两互补代理、只改指定文件/noGit、root统一整合提交同步。先写quantifiedspec/restriction-shading closure与等价排重；平均mass/fullassignedprior/逐管duration分别核，不能删选后免费继承conditionalfloor。常规下一macroR39，sourcegap/连续两轮无信息提前；旧冻结无实质newinput不得改名重开。
 
-## R36：UNB001共享scalar mesh与完整∞排除
+## R37：FIN001完整原正有限窄度分支
 
-强制macro research/reviews/R0036_macro.md已执行；A source_strategy与B frontier_and_route独立意见。实读依赖确认8.2+10.1约18页不调用§7/9，故没有自动从§7续页。ISO不能直接给finite4D种子；R29 conditional17/4仍需完整源/读出/KT。直接五维没有本轮newprimary可付AFF₃，旧冻结保持；常规下一macroR39，源gap/两轮无信息提前。
+主稿notes/10_source_audit/finite_narrowness/R0037_positive_finite_narrowness_full_proof.md §§1–23；A retained_edges_projection_and_horizontal、B horizontal_critical_and_bootstrap同目录独立稿。两正式全文reviews research/reviews/R0037_retained_edges_and_projection_review.md、R0037_horizontal_bootstrap_and_quantifiers_review.md均实际读root全部与对方全部后修后通过；rootintegration实读完成，未经外部同行评审。两代理已停止、无Git。
 
-主稿notes/10_source_audit/unbounded_narrowness/R0036_unbounded_narrowness_full_proof.md §§1–17，A scalar_projection_and_nested_normalization、B native_graphs_and_actual_recovery同目录。正式全稿独审research/reviews/R0036_scalar_projection_and_normalization_review.md、R0036_graphs_and_actual_atlas_review.md修后通过，rootintegration完成；未经外部同行评审。
+固定原4.7 version2、0<=d<1、0<k<=1/fixedSη/0<ell<∞，每subsequence每substantial原residual有proper time/strip candidate、固定正有界depth/positivefinitegain、wholeblockfit与q_Qnu_QN^{-dc}/K或q_Qnu_Q/K质量，接AIM原actualguard反critical优化。不是只付7.7或9.1；G(u)不登记新方向，8.2复用UNB。
 
-原8.2完整输入fixedν、arbitrary rawµact≤Kνdt、extra coords、all-depth scalar caps/terminal support，输出disjointwholeassignments/fullunittimequadratic/perlabelca^dβ/K，optionalangularβ~1；只作ISO finite接口不立新方向。完整Prop10.1在原CRP setup反ℓ∞：nestedQ1/Q2→wholecenter-motion原p1-known fulltimeC→C/A相对density抵消→fixedqAνA projectedcaps/support→每residual8.2/greedyconstantcoverage→rawposteriorcomparison/3.4→originalp1-known depthc′actualatlas/timeexponent→0→2.13 terminalcompletion矛盾。不是只证localization小lemma。
+实际支付原edges/commonendpoint scalarclosure、OSS single-scale energy→flatcoeff/collision、7.7 µcov长linecover与µpt点floor分开；8.3 separatecolorreferenceπ/B分母、8.4 same-state coeffmatching/Cartesian后原nonaxis角质量去bilinear；horizontal k=ell wholeboxes、hugeaffine relativeHessian commutator吸收、真deepresidualstates超horizontal误差的联合caps、fullprior wholebox coefficientcounts。critical同law双heatbath三switch不重归一goodkernels、signedJac=2D1D2(τ2−τ1)/regularfiber≤2/原interceptmass；G(u)每denseinput、λ-to-indicator双比较/instantfixedν_H caps、scalar-normal全输入/firstjetbuffers、endpoint保oldlabels拆grid/R_j²新floor；9.6 sharedtimepoly恢复allpairedlines、cap/support分开/three fixeddepths/α-slices/palettefloor/原q_descnu_desc与propertest→AIM。无newparentfloor/无successposterior代prior。
 
-实际责任：markthreshold是整个tag×timebin原µact；commonjitter前冻Σlabel预算，fix同u后恢复原active并重新lightlabel-floor，不能沿用旧逐label lower。d≥0须用p=1cap×terminalsupport，单terminal-width两幂相消不够。pairedsampling异常先删后count，C含normal/截距/velocity三类完整知识；absolute f′(0)可巨大，νA/JA只two-limit subpower。oldQ1whole-domain witness与core norm witness分开；projected timeerror先消g1再逆tinyaxis，固定M不依绝对g1。rawΠ/bA分母、uniformreferenceρ、selectedtests→non-listablefailure、4.12实际table/预guard/lateN0顺序均付。最后newlabel c=(A,b)用fullν_c≠ν_A，terminalequality/earlierupper因子JA/ν_c取消，无需parenttruefloor可恢复truechild。
+审查修root map(Ptilde)→(R,R') minor determinant记号，按顺序+2、估计只用|det|2，A自身review也修后核现稿。7.7 λ=−(E/ξ)λstrip符号明确。text s_b=32s0是3/2分数串行误读，officialTeX/PDF149为3s0/2，两误差saving正确，非source数学gap。独立反攻未找到保全部原factorization的counter，OBS002 generic数字模型不反该源。
 
-官方paper本轮同blob45ec20e…/1371486bytes，README无所查修订声明，仅identity非correctness。25PDF/28sources不变；新增两exactTeX（07 finite/09 unbounded，编号比PDF节号少1）bytes/Gitblob/SHA256全核；前者只认证8.2。PDF120/121/163/166图核，metadata/R0036_source_check.json。Gan2026出版对应2023v2、cylinder2606.29993 p>2不填AFF₃；Tang spherearea*zeta volumeclaim被centerunitsegment球直接反，非Kakeya反例/重大结果。有限primary检索不认证17/4最新最优或优先权。
+新增OSS2309.03068v2 PDF/全文/单篇metadata（26页411743bytes，SHA25652342022c2d36a84222fedff2d1f94856ab7fd1e1e58973bd03676194037cab7）；Th1.5 exactstatement/application核，wholeadvancedproof具名。总26PDF/29sources。新增exact官方06a-retained-edge.tex（32502/ecbd7d…）与08-critical-rates.tex（67117/3bbbb60…），bytes/Gitblob/SHA256核；07余部本轮全审。officialpaper仍45ec20e…/1371486bytes，只核identity。PDF140/141/148/149与OSS2已渲染实看，scope metadata/R0037_source_check.json，无穷尽前沿/优先权认证。
 
-SRC/DIR/FSD/DIM partialgateways增UNB，remaining描述已纠正为positivefinite+完整读出，ISO/UNB已付不再错误列未付。已发表WZ/CV可具名已知theorem，不无限递归全重写；新GWZ2026/OAI其它/KT明确责任保留。fullsource/unconditionalDIM/major仍false。
+SRC/DIR/FSD/DIM partialgateways现TCM/ASM/TEX/CRP/AIM/ISO/UNB/FIN；remaining准确为完整2.17/证书拼接/finite-Hausdorff读出/newGWZ/KT。旧证书原scope flags不追改，另挂laterFIN；fullsource/unconditionalDIM/major仍false。
 
-## 唯一下一入口：R37完整正finite窄度分支
+## 唯一下一入口：R38完整任意集合归约与证书/finite读出拼接
 
-notes/10_source_audit/unbounded_narrowness/R0036_remaining_finite_branch_and_next_target.md。完整原version2 0<ℓ<∞，§7 retained-edge/§8 threewideinterval-horizontal/§9 critical与subcritical endpoint均须付，每substantialresidual propercandidate→AIM actualcontradiction；复用8.2不重证新名字。9.1只是floorLemma，不能只付它或7.1算整branch。重点保原edges/g/clock、rawc与sameprior、wholeassignments、criticalsame-law路径、G(u)每dense input与loss累积/endpoint、originalobservations/actualguards。旧genericincrement数字例不保sourcefactorization，不直接反source。停于完整分支通过双审或合法gap，不靠小量改名续命。通过后仍核2.17/finite-Hausdorff与新GWZ/KT责任，不能直接清fullsource。
+notes/10_source_audit/finite_narrowness/R0037_remaining_reduction_and_next_target.md。需完整原2.17：任意非可测/非紧K的outermeasure有限选择、同scale方向mass与markduration、finitewitness无measurableselection、平滑全slope cap、g(r,u)端点/crop原ν取消、semialgebraicchoice slopevolume/moniccubic时间根/regularmultiplicity、每terminal/合法selection H>=σ/6。再逐项核全部certificates接同models/parameters/actualguards与finite/Hausdorff读出，不能只重算cubic算整个阶段。
 
-## R35：ISO001完整原isotropic引擎
+同步读直接dependency cut：原2.15是companion weightedplank，经namedGWZ set→weightedconvexclustering→linechart，不依companion整个新maximal theorem。新GWZ exactstatement/application及wholeadvancedproof未审责任分别明确；既有WZ/CV/OSS可具名，不无限递归重写全数学文献，但不得宣称项目独证了它们。KT6.2及compact-Hausdorff仍具名，不将source分支审完自动切成无条件新高维界。通过后R39必须macro正面比较2026六维新颖性、真实输入状态、直接五维newinput及继续源认证的价值。
 
-主稿notes/10_source_audit/isotropic/R0035_isotropic_candidate_full_proof.md §§1–18，A scalar_jets_and_qualification、B conservativity_potential_and_degree同目录；两正式全文独审research/reviews/R0035_scalar_and_state_review.md和R0035_geometry_and_prior_review.md，rootintegration同目录。修后实际全稿通过，未经外部同行评审。
+## 已审依赖的准确范围
 
-原4.7 tangent、j1/v1或j2/v2 ℓ0、0<k≤1/d<1/fixedSη，每subsequence每substantialresidual可在further子列得fixedpositive bounded s、a=N^-s/h~a^k、a2=a h^e2，properdegree2 test，mass≥hν_Q(a2/a)^d/K；whole同h-block value/hiddenupper/countlower/curvatureK/a2，gain=e2ks正finite，接AIM。CRP再给原Cor6.9所有固定角参数scalar H=0。不是其它j2窄度/完整2.17或高维解。
+TCM001 R30原3.3一般fixedD/J>D/arbitraryπ/相关events/heatbathbackward，existential小power无explicitmodulus。ASM001 R31原3.1 noheightlowernorm/closure、独立3.2 continuation、完整Cor3.4原π/Fubini/R0统一epsilon，Cor3.4不调用3.2。TEX001 R32原3.5两model oldpL-known/wholeassignment/tempered、2.3/2.4/2.9/2.10/2.12，无newfloor/j3。
 
-实际付4.13 breadth先于稀疏删选；§5 scalar coefficient saturation/fresh tested-event entropy/完整first与higherjets；§6 physical/同ν° coefficient floors/fieldgraph/renewal/fixedε failure后relativeo1qualification/whole-row fits/Cartesian所有顶点；same-P heatbath、未归一goodkernel、signedJac1/regular isolated multiplicity/actualendpoint support；potential/heavy groups最近duration；原R3七方向tensor/real conic与nativedegree2恢复。R绝对derivatives先有界，f误差按S0相对归一，mesh独立S0，外推仅同h-block。
+CRP001 R33原4.3四项/2.7/2.13/2.15–16/4.1–2，保namedGWZ。withinworld密度factor J/ν无ω/Z；terminal equality/earlierupper/relativeprofile无absolute f0界；nested ownwitness、fixedi内N先outeri、finite/infinite优化不假attain。AIM001 R34完整4.11/4.4–9/4.12/2.11，preparedprob乘回p_prep、wholepriorityassignment先derivbadtime、finalselectedtest failure不进posteriorlist、原TV/table，actual(Kpath logN0)^C及预声明2^((Mpath+n)^2)guard，noanalysisK冒actualslack。
 
-独审明确化：一般weighted λ先删低G，付σ^-1和Σpγν°≤1预算，lowercomparison传productprior caps/uppercomparison给dense mass；不能单向倒推。whole-row资格用同line G0=X'−GyV，X'一次/V常值。Cartesian须Kξ≪εT、Khξ≪a1、hξ≪hi同时预声明；strip法向unit、eligible速度给offset≤K。PDF97正确A0^-1u，上标text串行误读已撤销，非source笔误。
+ISO001 R35完整原6.1/Cor6.9：j1/v1或j2/v2 ell0；scalarjet/relativequalification、whole-row G0=X'−GyV、同P signedkernels、最近durationheavygroups、R3tensor/realconic/nativequadratic。一般weightedlabel先lowGtrim、上下双比较，Cartesian三精度/独立S0mesh、只同h-block外推；保WZ2210.09581v2 Def4.2/Th5.2及CV1205.6371v1Th1/新GWZ具名。
 
-具名高级输入：WZ2210.09581v2 Def4.2/Thm5.2 upper-only AD/every restricted triple；CV1205.6371v1 Thm1 weighted doubly-infinite straight tubes/wedge，d=n，n2/3/4；CRP已具名GWZ set→2.15。核确切statement/application但未独证这些高级全proof。新增两PDF后25PDF/28sources，原PDF/全文/版本/bytesSHA256/单篇metadata已入库；WZ17/31、CV2、OAI97图核，scope见metadata/R0035_source_check.json。无新OAI4onlineidentity声明，lastR33同原blob。
+UNB001 R36完整8.2+Prop10.1。scalar rawµact/extra correlatedcoords/noisytags/commonjitter后restore再付label floors、p=1cap证d>=0、crop pC/G取消、wholeunitfits/optionalβ1。∞分支nested Q1/Q2、fullcenter-motion p1知识、absoluteprimedshift抵消、fixedνA/JA只two-limit、oldwhole/core双witness、timeerror先消g1、cap/support分开、rawΠ/badA/ρ、greedyconstantcoverage、newlabelν_c不同ν_A、terminalchild无需parentfloor。ISO/FIN/UNB合计此处三类窄度，不替2.17/全读出。
 
-R35时SRC/DIR/FSD/DIM partialgateways=TCM/ASM/TEX/CRP/AIM/ISO（R36另增UNB），fullsource=false；AIM旧候选全branch存在flag仍false，另挂laterISO，不追改原certificate范围。
+## 条件高维出口与冻结账
 
-## 既有源工具与尚余责任
+R29 FSD/DIM见finite_seed_transfer/R0029_conditional_seed_and_six_dimensional_bound.md：fixedambient Gaussian投R4，s>=3方向抽取保m/[Kδ^(3−s)(1+log)]，commonclock/marks；平均λ先heavy再逐管marks产生λ²，E>=cλ²mK^{-1}δ^{s−4+εD}/(1+log)，K/λ成本3η，先εD后η，无线性modulus。完整OAI4/SRC/DIR及inputs正确才有任意fixedrealn>=4严格次临界K(n,4−ζ)；具名KT6.2 K(n,d)+K(d+1,d')→K(n,(2n+1+d')/4)，n6,d=d'=4−ζ给compact6D17/4条件，仅该递推n5 ceiling4。正面旧6D基线7−2sqrt2，有限检索不认证2026最新最优/priority。
 
-- TCM001：two_color_matching/INDEX.md，原3.3一般fixedD/J>D/arbitraryπ/相关events，heatbath/backward/Jacobian；existential小power，无explicitmodulus。
-- ASM001：scalar_sheet_matching/INDEX.md，原3.1 noheightlower norm/jet/closure，独立3.2 continuation，完整Cor3.4原πFubini且R0统一ε→0；Cor3.4不调用3.2。
-- TEX001：terminal_extension/INDEX.md，原3.5两模型，h−e knownatlas/oldpL列表/wholeassignments/tempered；C独立E/L/complexity，阈值依E/fixede，无newfloor/j3。
-- CRP001：critical_paths/INDEX.md，原4.3四项/2.7/2.13/2.15–16/4.1–2，保namedGWZ。J/ν withinworld；terminal equality/earlierupper/knownpr equality；relativeprofile无f0绝对界；actualnested layers/ownwitness；fixedi内N先于outeri，finite/infinite supinf不假attain。原证书actualtransferflag仍false，另挂AIM。
-- AIM001：actual_improvements/INDEX.md，原4.11完整actualconversion及4.4–9/4.12、实际2.11本轮R34新付。每subsequence每substantialresidual propercandidate假设→fixedscenario originalmass≥ppath/logN0、列表/geometry≤(Kpath logN0)^rS、复杂度PS(Mpath)最终落指数guard2^((Mpath+n)^2)。wholepiececoverage后固定scenario才删derivbad；µprep内T须乘pprep才≤原µ，tinybadgroups/rawπ/aggregatejets/wholeassignments、jointTV/实际有限table全付。finalgeommap含selectedtests failure且failure不入posterior lists；9/10无效a–1/10有效b校准只反错误实现。analyticK非actualslack；原N0系数幂不推SCL uniformtangentheight。
+旧路线冻结不因本源审查解冻：R28 ACT001仅同g/time/angle16边box、CAR001仅rawoverflow平均门槛，非iteratedaction/carryentropy；自然shear quotienttrivial不满足He，H uppercap无免费pointwiseADlower。R27 OBS002数字nongrowth不保真实factorization。R24–26 QSC/SCE/GVT/MIX004/005仍缺AFF3，AFF001只ell2。PCT/MIX003二次链具名输入下、NQP001只points/部分Qline非Sline，2Dgrowth未证。CP⇔PM positivegain同义、Y-only/W独立化/矩阵BSG/commonplane/action、genericcompletion/HORvisiblecost、SCL uniformtangentheight、LIFT005窄类/clock、NAR短plane/两步brush均frozen，无newinput不得局部续调。
 
-以上均是来源已有工具/分支认证。UNB已付8.2/§10；仍余j2正finite branch的§7 retainededges、§8几何projection/horizontal reduction、§9 critical/bootstrap，以及完整2.17/finite-Hausdorff读出、新GWZ/具名KT明确责任。ISO/UNB不能把这些自动清零。
-
-## R29条件高维出口与文献边界
-
-finite_seed_transfer/R0029_conditional_seed_and_six_dimensional_bound.md，FSD/DIM两独审：Gaussian固定ambient投R4，capK(θ/δ)^s,s≥3保≥c m/[Kδ^(3−s)(1+log)]分离方向，commonclock/marks常数保；平均λ先heavy再逐管marks产生λ²预算 E≥cλ²m K^-1 δ^{s−4+εD}/(1+log)。K≤δ^-η/λ≥δ^η成本3η，先εD后η，无线性统一modulus。
-
-完整OAI4/SRC/DIR及inputs正确时给所有fixedrealn≥4严格次临界K(n,4−ζ)，arbitraryfixedambient/unsaturatedcounts。具名KT6.2递推K(n,d)+K(d+1,d')→K(n,(2n+1+d')/4)，取n6,d=d'=4−ζ给compact6D dimH≥17/4条件；仅此递推n5 ceiling4。KT6.6 d−1疑似排印与statementballcapd分开，非全KT认证。
-
-R33一手范围核：官方OAI4 PDF同blob45ec20e…/1371486bytes/SHA25630d0c186…；README/history与formalization.yaml目录无对应新声明只作目录状态，不证明正确。Choudhuri2610.12480v1日期异常原样保留、Moreira2610.06181v1、HYY2608.18693v2均4Dscope，未全proof或高维input认证。正面旧6D基线7−2sqrt2，有限检索不认证17/4最新最优/优先权。R35WZ/CV两新增只为actualsource调用，不作高维前沿穷尽。
-
-## 冻结账与真实高维缺口（不得靠改名重开）
-
-R28 ACT001仅实际g/time/angle16边box mass m16；CAR001 rawoverflow≤CKtKπr^(γ/4)、g成本1/mean，非iteratedactionclosure/carryrepairentropy。自然shear verticalfixed/quotienttrivial不满足He强假设；H只有κcover/Frostmanupper/slab，没免费pointwiseADlower；R18既有sameWframe不算newinput。
-
-R27 OBS001 actualobserved/fibre2Fst+全2plane cap真；OBS002 digitalnongrowth只反genericincrement桥，不保sourceν/M/Hfactorization，不反Kakeya。R24QSC/R25SCE+MIX004/R26GVT+MIX005都仍缺AFF3，完整mixed43无解。AFF001仅ell2，scalarABC lower1+κ≤2不能给AFF3；old2M/δfloor、actual角先验/整time回传/13.5两η不消失。
-
-PCT001常数在(2/γ)^幂内；MIX003二次properalternative仅underlistedinputs；NQP001只有mixed32点/部分Qline，不等Sline，二维growth未证。MIX001全局mixed42条件commonkernel、MIX002localGWZendpoint冻结。Y-only/W独立化、CP⇔PM正gain的全称shading闭包等价重命名、genericcompletion/HORvisiblecost、LIFT005窄类、NAR短平面/两步刷、matrixBSG/自然shear/carrycount局部迭代均frozen。
-
-五维(3,3)/(3,2)/(4,2)/(4,3)其余实际case、mixed43quadratic、general-to-sticky及Hausdorff全链仍开放。任何toy/有限模型反例都未保全部方向和真实source，不得升级Kakeya反例。一般目标、failure记录和macro策略不因source认证而降低。
+五维(3,3)/(3,2)/(4,2)/(4,3)其余实际cases、mixed43quadratic、general-to-sticky与Hausdorff全链仍开放；toy/有限counter不保全部方向不得升级Kakeya反例。最终Goal不因source认证而降低。

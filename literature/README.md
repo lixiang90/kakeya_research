@@ -43,3 +43,6 @@ R0034无新PDF，仍23篇；无新online版本/前沿声明，最后onlinecheck�
 R0035新增Wang–Zahl2210.09581v2（69页）与Carbery–Valdimarsson1205.6371v1（20页），共25PDF/28sources。原PDF/全文/单篇版本、bytesSHA256、statement/read_scope均存档；WZ Def4.2 upper-only AD/Thm5.2 every-restricted-triple及§8重述，CV Thm1 weighted doubly-infinite straight tubes/determinant逐核，相关17/31/2页图核。两个外部高级定理全proof保namedinput，未独证全文。原OAI4 PDF70–108完整isotropic链实读；97页A0^{-1}u上标图核正确，txt串行不可当源笔误。完整scope见metadata/R0035_source_check.json，源全文/无条件高维/新颖性仍未认证。
 
 R0036无新PDF，仍25PDF/28sources；补入官方07-finite-narrowness.tex与09-unbounded-narrowness.tex且Gitblob/bytesSHA256核一致，partial源码状态保持。完整原8.2及§10 ℓ∞排除通过内部双全文独审；120/121/163/166页图核。官方paper同blob/bytes仅证明身份。新增Gan旧v2的2026出版、Germain–Latocca cylinder及Tang volumeclaim仅web-primary筛查，明确未下载PDF/不作advancedinput；具体scope与直接反证见metadata/R0036_source_check.json及B宏观稿。未认证positivefinite分支、全源或17/4优先权。
+
+
+R0037新增OSS2309.03068v2（26页411743bytes，SHA25652342022c2d36a84222fedff2d1f94856ab7fd1e1e58973bd03676194037cab7），原PDF/全文/metadata保存，现26PDF/29sources。single-scale smoothedenergy Th1.5及原7.4实际应用核，PDF2图核，wholeadvancedproof具名；不查证期刊状态/不称新高维input。补exact06a-retained-edge.tex与08-critical-rates.tex并核Gitblob/bytes/SHA256；原§7–9全finite branch双全文独审通过FIN001，仍非fullsource/无条件新维数。PDF140/141/148/149图核，s_b=3/2不是text提取32；精确范围metadata/R0037_source_check.json。

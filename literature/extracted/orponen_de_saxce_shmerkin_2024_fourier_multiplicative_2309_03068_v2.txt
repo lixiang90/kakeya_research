@@ -1,0 +1,1586 @@
+                                                        ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS
+
+                                                                   TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+                                                     A BSTRACT. We prove the following. Let µ1 , . . . , µn be Borel probability measures on r´1, 1s such
+arXiv:2309.03068v2 [math.CA] 27 Feb 2024
+
+
+
+
+                                                     that µj has finite sj -energy for certain indices sj P p0, 1s with s1 ` . . . ` sn ą 1. Then, the mul-
+                                                     tiplicative convolution of the measures µ1 , . . . , µn has power Fourier decay: there exists a constant
+                                                     τ “ τ ps1 , . . . , sn q ą 0 such that
+                                                                                     ˇż                                    ˇ
+                                                                                     ˇ ´2πiξ¨x ¨¨¨x                        ˇ
+                                                                                     ˇ e      1     n dµ px q ¨ ¨ ¨ dµ px qˇ ď |ξ|´τ
+                                                                                     ˇ                  1  1          n  n ˇ
+                                                     for sufficiently large |ξ|. This verifies a suggestion of Bourgain from 2010. We also obtain a quantit-
+                                                     ative Fourier decay exponent under a stronger assumption on the exponents sj .
+
+
+
+
+                                                                                            1. I NTRODUCTION
+                                             In 2010, Bourgain [2, Theorem 6] proved the following remarkable Fourier decay property for
+                                           multiplicative convolutions of Frostman measures on the real line.
+                                           Theorem 1.1 (Fourier decay for multiplicative convolutions). For all s ą 0, there exist ǫ ą 0 and
+                                           n P Z` such that the following holds for every δ ą 0 sufficiently small.
+                                           If µ is a probability measure on r´1, 1s satisfying
+                                                                                 @r P rδ, δ ǫ s,     sup µpBpa, rqq ă rs
+                                                                                                   aPr´1,1s
+
+                                           then for all ξ P R with δ ´1 ď |ξ| ď 2δ ´1 ,
+                                                                             ż
+                                                                               e2πiξx1 ...xn dµpx1 q . . . dµpxn q ď δ ´ǫ .                                     (1.2)
+
+                                              This result found striking applications in the Fourier decay of fractal measures and resulting
+                                           spectral gaps for hyperbolic surfaces [3, 16]. It was recently generalised to higher dimensions by
+                                           Li [9].
+                                              At the end of the introduction of [2], Bourgain proposes to study the optimal relation between
+                                           s and n. Our goal here is to show that, as suggested by Bourgain, Theorem 1.1 holds under the
+                                           condition n ą 1{s, which is optimal up to the endpoint, as we shall see in Example 1.13 below.
+                                              The statement we obtain applies more generally to multiplicative convolutions of different
+                                           measures, and our proof also allows us to replace the Frostman condition by a slightly weaker
+                                           condition. Precisely, for a finite Borel measure µ on R, given s P p0, 1s and δ ą 0, the s-energy of µ
+                                           is defined as                                ¨
+                                                                              Is pµq :“   |x ´ y|´s dµpxq dµpyq,                            (1.3)
+
+
+                                              Date: 28th February 2024.
+                                              2020 Mathematics Subject Classification. 42A38, 28A20 (primary), 11L07 (secondary).
+                                              Key words and phrases. Multiplicative convolutions, Frostman measures, Fourier decay.
+                                              T.O. is supported by the Academy of Finland via the project Approximate incidence geometry, grant no. 355453, and by
+                                           the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme
+                                           (project MUSING, grant agreement no. 101087499).
+                                              P.S. is supported by an NSERC Discovery Grant.
+                                                                                                        1
+2                          TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+or, in terms of the Fourier transform, as
+                                                        ż
+                                                       µpξq|2 |ξ|´s dξ,
+                                          Is pµq “ cs |p                                                   (1.4)
+
+where cs ą 0 is a constant. We refer the reader to [11, Lemma 12.12] for the last equality, and to
+[11, Chapter 8] for the basic properties of the energy of a measure. As in Bourgain’s theorem, we
+shall be mostly interested in the properties of measures up to some fixed small scale δ; for that
+reason, we also define the s-energy of µ at scale δ by
+                                                  Isδ pµq “ Is pµδ q,
+where µδ “ µ ˚ Pδ is the regularisation of µ at scale δ, and tPδ uδPp0,1s an approximate unity of the
+usual form P pxq “ δ ´1 P px{δq, where P P C 8 pRq satisfies 1Bp1{2q ď P . 1Bp1q .
+  The main result of the present article is the following.
+Theorem 1.5 (Fourier decay of multiplicative
+                                        ř         convolutions under optimal energy condition). Let
+n ě 2, and tsj unj“1 Ă p0, 1s such that sj ą 1. Then, there exist δ0 , ǫ, τ P p0, 1s, depending only on
+the parameters above, such that the following holds for δ P p0, δ0 s. Let µ1 , . . . , µn be Borel probability
+measures on r´1, 1s satisfying the energy conditions
+                                         Isδj pµj q ď δ ´ǫ ,    1 ď j ď n.                                 (1.6)
+Then, for all ξ satisfying δ ´1 ď |ξ| ď 2δ ´1 ,
+                               ˇż                                          ˇ
+                               ˇ ´2πiξx ...x                               ˇ
+                               ˇ e       1     n
+                                                 dµ1 px1 q . . . dµn pxn qˇˇ ď |ξ|´τ .                     (1.7)
+                               ˇ
+
+Remark 1.8. It is not difficult to check that the Frostman condition µpBpa, rqq ď rs from Bourgain’s
+Theorem 1.1 is stronger than the assumption on the s-energy at scale δ used above. The reader is
+referred to Lemma 3.8 for a detailed argument.
+Remark 1.9. The values of the parameters δ0 , ǫ andřτ ą 0 stay bounded away from 0 as long as
+the sj stay uniformly bounded away from 0, and j sj ą 1 stays bounded away from 1, and n
+ranges in a bounded subset of N. Unfortunately, we are not able to provide explicit bounds for
+these parameters.
+    The following corollary is immediate:
+                                                                      ř
+Corollary 1.10. Let n ě 2, and tsj unj“1 Ă p0, 1s such that sj ą 1. There exists τ “ τ pn, tsj uq ą 0
+such that the following holds. Let µ1 , . . . , µn be Borel probability measures on R such that Isj pµj q ă `8.
+Then there is C “ Cptµj uq ą 0 such that
+                       ˇż                                           ˇ
+                       ˇ ´2πiξx ...x                                ˇ
+                       ˇ e        1    n
+                                          dµ     px q . . . dµ  px qˇ
+                                                               n n ˇ ď C ¨ |ξ|
+                                                                              ´τ
+                                                                                 , ξ P R.                  (1.11)
+                       ˇ                       1 1
+
+
+   As a further corollary, we obtain the following sum-product statement:
+                                                               řn
+Corollary 1.12. Let A1 , . . . , An Ă R be Borel sets such that j“1 dimH Aj ą 1. Then the additive
+subgroup generated by A1 ¨ ¨ ¨ An is R.
+                                                            řn
+Proof. Let µj be an sj -Frostman measure on Aj , where j“1 sj ą 1. Write µ1 ⊠ ¨ ¨ ¨ ⊠ µn for the
+image of the measure µ1 ˆ¨ ¨ ¨ˆµn under the product map px1 , . . . , xn q ÞÑ x1 . . . xn ; this measure is
+supported on A1 ¨ ¨ ¨ An . Then the Fourier decay condition (1.11) implies that additive convolution
+powers of µ1 ⊠ ¨ ¨ ¨ ⊠ µn become absolutely continuous with respect to the Lebesgue measure on
+R, with arbitrarily smooth densities. In particular, a sumset of the product set A1 ¨ ¨ ¨ An must
+contain a non-empty interval, and hence the additive subgroup generated by A1 ¨ ¨ ¨ An is R. 
+                                                          ř
+   In the example below, we show that the condition
+                                                ř           dimH Aj ą 1 in Corollary 1.12 is optimal
+up to the endpoint; hence so is the condition sj ą 1 in Theorem 1.5.
+                         ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                             3
+
+
+Example 1.13. Given s P p0, 1q and an increasing sequence of integers pnk qkě1 , define a subset Hs
+in R by                                                                    (
+                           Hs “ x P r0, 1s : @k ě 1, distpx, n´s
+                                                               k Zq ď nk
+                                                                        ´1
+                                                                             .
+If pnk qkě1 grows fast enough, then both Hs and the additive subgroup it generates will have
+Hausdorff dimension s. See e.g. [6, Example 4.7].          ř
+     ř 1 assume that the parameters s1 , . . . , sn satisfy si ă 1. Fixing si ą si such that one still
+    Now                                                                      1
+
+has si ă 1, Frostman’s lemma yields probability measures µi supported on Hs1i and satisfying
+µi pBpa, rqq ă rsi for all r ą 0 sufficiently small. However, since the support Ai of µi satisfies
+Ai Ă Hs1i , one has
+                               !                           ´     ř   ¯           )
+                                                               ´ s1
+                  A1 . . . An Ă x P r0, 1s : @k ě 1, dist x, nk i Z ď n ¨ n´1  k   .
+                                                                                            ř
+This shows that the subgroup generated by A1 . . . An has dimension bounded above by s1i ă 1
+and so is not equal to R. So the measure µ1 ⊠ ¨ ¨ ¨ ⊠ µn cannot have polynomial Fourier decay.
+   Allowing more multiplicative convolutions, one can get an improved exponential lower bound
+for the Fourier decay exponent. This is the content of our second main result.
+Theorem 1.14 (Exponential lower bound for Fourier decay exponent). For every σ P p0, 1s, there
+exist ǫ “ ǫpσq ą 0, δ0 “ δ0 pσq ą 0, and an absolute constant C ě 1, such that the following holds for all
+δ P p0, δ0 s. Let n ě Cσ ´1 , and assume µ1 , . . . , µn are probability measures on r1, 2s satisfying
+                                              Iσδ pµi q ď δ ´ǫ .
+Then,        ˇż                                     ˇ
+             ˇ ´2πiξx ...x                          ˇ     ´ expp´Cσ´1 q
+             ˇ e     1     n
+                             dµ  px q . . . dµ  px q
+                                               n n ˇ ď |ξ|
+                                                    ˇ                   ,   δ ´1 ď |ξ| ď 2δ ´1 .
+             ˇ                  1 1
+
+
+   Analogues of Theorem 1.5 and 1.14 in the prime field setting were obtained by Bourgain in [1],
+and our proofs follow a similar general strategy, based on sum-product estimates and flattening
+for additive-multiplicative convolutions of measures, although the details differ significantly. A
+small variant of Example 1.13 above shows that there exist compact sets A and B in R such that
+the additive subgroup xABy generated by the product set AB satisfies dimH xABy ď dimH A `
+dimH B. Conversely, it was shown in [13] as a consequence of the discretised radial projection
+theorem [14] that for Borel sets A, B Ă R, one has
+                     dimH pAB ` AB ´ AB ´ ABq ě mintdimH A ` dimH B, 1u.                           (1.15)
+The main ingredient in the proof of Theorem 1.5 is a discretised version of this inequality; the
+precise statement is given below as Proposition 3.6 and is taken from [13, Proposition 3.7]. It
+can be understood as a precise version of the discretised sum-product theorem, which allows us
+to improve on the strategy used by Bourgain in [2] and obtain Fourier decay of multiplicative
+convolutions under optimal energy conditions. Before turning to the detailed proof, let us give a
+general idea of the argument.
+Notation. We use . to hide absolute multiplicative constants.
+  We fix for the rest of the article a standard, L1 -normalized approximate identity
+                                       tPδ uδą0 “ tδ ´1 P p¨{δquδą0 .
+We take P to be radially decreasing and to satisfy 1r´1{2,1{2s ď P ď 1r´1,1s .
+   Given a measure µ on R, recall that we write µδ for the density of µ at scale δ, or equivalently,
+µδ “ µ ˚ Pδ .
+   Below, we shall use both additive and multiplicative convolution of measures. To avoid any
+confusion, we write µ⊞ν, µ⊟ν and µ⊠ν to denote the image of µˆν under the maps px, yq ÞÑ x`y,
+px, yq ÞÑ x ´ y, and px, yq ÞÑ xy, respectively. Similarly, we denote additive and multiplicative
+k-convolution powers of measures by µ⊞k and µ⊠k , respectively.
+4                        TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+    The push-forward of a Borel measure µ on the real line under a Borel map g : R Ñ R is denoted
+g7 µ, that is,
+                                    ż             ż
+                                      f dpg7 µq “ f ˝ g dµ.
+
+
+Sketch of proof of Theorem 1.5. The n “ 2 case of Theorem 1.5 is classical and already appears
+in Bourgain’s paper [2, Theorem 7]: Let µ and ν be two probability measures on r´1, 1s such
+that kµδ k22 ď δ ´1`s and kνδ k22 ď δ ´1`t (these can be seen as "single-scale" versions of Isδ pµq / 1,
+Itδ pνq / 1). Then the multiplicative convolution µ ⊠ ν satisfies
+                                                  s`t´1
+                                 {
+                                |µ ⊠ νpξq| . δ      2     ,    δ ´1 ď |ξ| ď 2δ ´1 .
+
+For the reader’s convenience we record the detailed argument below, see Section 2.
+   We want to use induction to reduce to this base case. To explain the induction step, we focus
+on the case n “ 3. The main point is to translate equation (1.15) into a flattening statement for
+additive-multiplicative convolutions of measures. For simplicity, assume we knew that if µ and
+ν are probability measures on r´1, 1s, then the measure
+
+                              η :“ pµ ⊠ νq ⊞ pµ ⊠ νq ⊟ pµ ⊠ νq ⊟ pµ ⊠ νq
+
+satisfies, for ǫ ą 0 arbitrarily small,
+
+                                          kηδ k22 ď δ 1´ǫ kµδ k22 kνδ k22 .                       (1.16)
+
+(Note that this is a close analogue of (1.15) for L2 -dimensions of measures at scale δ.) If µ1 , µ2 and
+µ3 satisfy kpµi qδ k22 ď δ ´1`si for some parameters si with s1 ` s2 ` s3 ą 1, we apply the above
+inequality to µ1 and µ2 to obtain
+                                            kηδ k22 ď δ ´1´ǫ`s1 `s2 ,
+where η “ pµ1 ⊠ µ2 q ⊞ pµ1 ⊠ µ2 q ⊟ pµ1 ⊠ µ2 q ⊟ pµ1 ⊠ µ2 q. If ǫ is chosen small enough, we have
+ps1 ` s2 ´ ǫq ` s3 ą 1, and so we may apply the n “ 2 case to the measures η and µ3 to get, for
+δ ´1 ă |ξ| ă 2δ ´1 ,
+                                                              s1 `s2 `s3 ´ǫ´1
+                                      |η{
+                                        ⊠ µ3 pξq| ă δ                 2         .
+To conclude, one observes from the Cauchy-Schwarz inequality that for any two probability
+                                  {
+measures µ and ν, one always has |µ                {
+                                    ⊠ νpξq|2 ď |pµ ⊟ µq ⊠ νpξq|. This elementary observation
+applied twice yields
+
+                       |pµ1 ⊠ µ2 ⊠ µ3 q^ pξq|4 ď |η{
+                                                                                1
+                                                   ⊠ µ3 pξq|4 ă δ 2 ps1 `s2 `s3 ´ǫ´1q
+
+which is the desired Fourier decay, with parameter τ “ 81 ps1 ` s2 ` s3 ´ ǫ ´ 1q.
+   Unfortunately, as shown in Example 1.17 below, the assumptions on the L2 -norms of µ and
+ν are not sufficient to ensure inequality (1.16) in general. One also needs some kind of non-
+concentration condition on µ and ν, and for that purpose we use the notion of energy of the
+measure at scale δ, which gives information on the behaviour of the measure at all scales between
+δ and 1. The precise statement we use for the induction is given as Lemma 3.1 below. It is also
+worth noting that to obtain the correct bound on the energy, we need to use a large number
+k of additive convolutions, whereas k “ 4 was sufficient in the analogous statement (1.15) for
+Hausdorff dimension of sum-product sets. We do not know whether Lemma 3.1 holds for k “ 4,
+or even for k bounded by some absolute constant.
+                         ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                            5
+
+
+Sketch of proof of Theorem 1.14. In the proof of Theorem 1.5, the fact that the number k of ad-
+ditive convolutions used in Lemma 3.1 is not bounded by an absolute constant prevents us from
+getting an explicit lower bound for the decay exponent τ in Theorem 1.5. To overcome this issue
+and derive Theorem 1.14, we use another flattening statement, Lemma 6.1 below. This lemma
+uses only one additive convolution, and this gives better control on the Fourier decay exponent.
+The drawback is that the increase in dimension is not as good as the one given by Lemma 3.1.
+Roughly speaking, the measure η will only satisfy dim η ě dim µ ` dim    C
+                                                                           ν
+                                                                              for some absolute con-
+stant C instead of dim η ě dim µ ` dim ν ´ ǫ. However, this is sufficient to get Fourier decay when
+the convolution product is long enough. (The bound is not as good as the one in Theorem 1.5,
+but comparable within an absolute multiplicative constant.)
+The proof of the flattening statement Lemma 6.1 relies on a new quantitative estimate for pro-
+jections of discretised sets under weak non-concentration assumptions on the set of projections,
+Theorem 5.6, which may have independent interest. Theorem 5.6 is derived from a recent projec-
+tion theorem of Ren and Wang [15], using rescaling arguments.
+
+   We conclude this introduction by an example showing that for n ě 3, the assumption Isδj pµj q ď
+δ ´ǫ in Theorems 1.5 and 1.14 cannot be replaced by the "single-scale" L2 -bound }µδ }22 ď δ sj ´1´ǫ .
+This is mildly surprising, because the situation is opposite in the case n “ 2, as shown by Pro-
+position 2.1 below. We only write down the details of the example in the case n “ 3, but it is
+straightforward to generalise to n ě 3.
+Example 1.17. For every s P p0, 12 q and δ0 ą 0 there exists a scale δ P p0, δ0 s and a Borel probability
+measure µ “ µδ,s on r1, 2s with the following properties:
+     ‚ }µ}22 „ δ s´1 .
+          {
+     ‚ |µ ⊠  µ ⊠ µpδ ´1 q| „ 1.
+The building block for the construction is the following. For r P 2´N , and a suitable absolute
+constant c ą 0, let I “ Ir be a family of r´1 intervals of length cr, centred around the points
+rZ X r0, 1s. Then, if c ą 0 is small enough, we have
+                                         cosp2πx{rq ě 21 ,         @x P YI.
+
+Consequently, if ρ is any probability measure supported on YI, then |p   ρpr´1 q| ě 21 .
+   Fix s P p0, 2 q, δ ą 0, and let ρ be the uniform probability measure on the intervals Iδs . As
+                1
+
+we just discussed, |p ρpδ ´s q| „ 1. Next, let µ “ µδ,s be a rescaled copy of ρ inside the interval
+r1, 1 ` δ s Ă r1, 2s. More precisely, µ “ τ7 λ7 ρ, where τ pxq “ x ` 1 and λpxq “ δ 1´s x. Now
+         1´s
+
+µ is a uniform probability measure on a collection of δ ´s intervals of length δ, and consequently
+}µ}22 „ δ s´1 .
+   We next investigate the Fourier transform of µ ⊠ µ ⊠ µ. Writing µ0 :“ λ7 ρ, we have
+                                     ˚
+                                               ´1
+                  µ⊠{ µ ⊠ µpδ ´1 q “   e´2πiδ px`1qpy`1qpz`1q dµ0 pxq dµ0 pyq dµ0 pzq.
+
+We expand
+         δ ´1 px ` 1qpy ` 1qpz ` 1q “ δ ´1 xyz ` δ ´1 pxy ` xz ` yzq ` δ ´1 px ` y ` zq ` δ ´1 .
+Now the key point: since x, y, z P spt µ0 Ă r0, δ 1´s s, we have
+                       |δ ´1 xyz| ď δ 2´3s      and      |δ ´1 pxy ` xz ` yzq| . δ 1´2s .
+Since s ă 12 , both exponents 2 ´ 3s and 1 ´ 2s are strictly positive and consequently,
+                                ´1                                ´1
+                       e´2πiδ        px`1qpy`1qpz`1q
+                                                       “ e´2πiδ        px`y`z`1q
+                                                                                   ` oδÑ0 p1q.
+6                        TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+    Using this, and also that µ̂0 pξq “ ρppδ 1´s ξq, we find
+                                         ˚
+                                      ´1              ´1
+          µ⊠ { µ ⊠ µpδ ´1 q “ e´2πiδ          e´2πiδ px`y`zq dµ0 pxq dµ0 pyq dµ0 pzq ` oδÑ0 p1q
+                                      ´1
+                                      ρpδ ´s qq3 ` oδÑ0 p1q.
+                            “ e´2πiδ pp
+                  {
+In particular, |µ ⊠ µ ⊠ µpδ ´1 q| „ 1 for δ ą 0 sufficiently small.
+   If we allow µ to be supported on r´1, 1s, as in Theorem 1.5, an even simpler example is avail-
+able, namely µ “ δ ´1`s 1r0,cδ1´s s , where s ă 2{3. Then µ ⊠ µ ⊠ µ is supported on r0, c3 δ 3´3s s Ă
+                            {
+r0, cδs, so it satisfies |µ ⊠ µ ⊠ µpδ ´1 q| & 1 if c ą 0 is chosen small enough.
+
+                                           2. T HE BASE CASE n “ 2
+   In the n “ 2 case, Theorem 1.5 is proved by a direct elementary computation. In fact, to obtain
+the desired Fourier decay, one only needs an assumption on the L2 -norms of the measures at
+scale δ.
+Proposition 2.1 (Base case n “ 2). Let δ P p0, 1s and let µ, ν be Borel probability measures on r´1, 1s
+and s, t P r0, 1s such that
+                             kµδ k22 ď δ ´1`s and kνδ k22 ď δ ´1`t .
+Then, for all ξ with δ ´1 ď |ξ| ď 2δ ´1 ,
+                                   ˇ¨                          ˇ
+                                   ˇ                           ˇ    s`t´1
+                                   ˇ    e ´2πiξ¨xy
+                                                   dµpxq dνpyqˇˇ . δ 2 .
+                                   ˇ
+
+Remark 2.2. If µ and ν are equal to the normalized Lebesgue measure on balls of size δ 1´s and
+δ 1´t , respectively, the assumptions of the proposition are satisfied. In that case, the multiplicative
+convolution µ ⊠ ν is supported on a ball of size δ 1´maxps,tq , so the Fourier decay cannot hold for
+|ξ| ď δ ´1`maxps,tq .
+  The above proposition is an easy consequence of the lemma below, which is essentially [2,
+Theorem 7], except that we keep slightly more careful track of the constants. We include the
+proof for completeness.
+Lemma 2.3. Let δ P p0, 1s, and let µ, ν be Borel probability measures on r´1, 1s with
+                           ż                                   ż
+                    A :“             |µ̂pξq|2 dξ and B :“               |ν̂pξq|2 dξ.
+                              |ξ|ď2δ ´1                             |ξ|ď2δ ´1
+
+Then, for all ξ with 1 ď |ξ| ď δ ´1 ,
+                               ˇ¨                           ˇ
+                               ˇ                            ˇ a
+                               ˇ     e ´2πiξ¨xy
+                                                dµpxq dνpyqˇˇ . AB{|ξ| ` δ.                               (2.4)
+                               ˇ
+
+Proof. Let ϕ P Cc8 pRq be an auxiliary function with the properties 1r´1,1s ď ϕ ď 1r´2,2s (thus
+ϕ ” 1 on spt µ) and ϕp ě 0. Fixing 1 ď |ξ| ď δ ´1 , the left-hand side of (2.4) can be estimated by
+           ˇ¨                        ˇ ˇż                   ˇ ¨
+           ˇ                         ˇ ˇ                    ˇ
+           ˇ   e ´2πiξ¨xy            ˇ   ˇ  x
+                          dµpxq dνpyqˇ “ ˇ ϕµpyξq    dνpyqˇˇ ď     p ´ yξq|µ̂pxq| dx dνpyq
+                                                                  ϕpx
+           ˇ
+                                         ż         ˆż                  ˙
+                                       “ |µ̂pxq|        p ´ yξq dνpyq dx.
+                                                       ϕpx
+
+We split the right-hand side as the sum
+    ż                  ˆż              ˙     ¨
+               |µ̂pxq|    p ´ yξq dνpyq dx `
+                          ϕpx                                             p ´ yξq dx dνpyq “: I1 ` I2 .
+                                                                   |µ̂pxq|ϕpx
+       |x|ď2δ ´1                                       |x|ě2δ ´1
+                         ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                                               7
+
+
+                              p ´ yξq . |x ´ yξ|´2 , |µ̂pxq| ď 1, and νpRq “ 1:
+For the term I2 , we use that ϕpx
+                                      ż                      ż
+                                                    dx                   dx
+                        I2 . max                         2
+                                                           .               2
+                                                                             . δ.
+                              yPr´1,1s |x|ě2δ ´1 |x ´ yξ|      |x|ěδ ´1 |x|
+
+For the term I1 , we first use the Cauchy-Schwarz inequality and the definition of A to deduce
+                                      ˜ż „ż                2 ¸1{2
+                                   ?
+                             I1 ď A          p ´ yξq dνpyq dx
+                                            ϕpx                      .
+
+Finally, for the remaining factor, assume ξ ą 0 without loss of generality, and write ϕpx  p ´ yξq “
+xξ px{ξ ´ yq, where ϕξ “ ξ ´1 ϕp¨{ξq. With this notation, and by Plancherel’s formula,
+ϕ
+              ż „ż                 2      ż                       ż
+                                                           2
+                   p ´ yξq dνpyq dx “ px
+                   ϕpx                        ϕξ ˚ νqpx{ξq dx “ ξ px  ϕξ ˚ νqpzq2 dz
+                                             ż                          ż
+                                         “ ξ ϕξ puq2 |ν̂puq|2 du . ξ ´1       |ν̂puq|2 du.
+                                                                                               spt ϕξ
+
+Finally, recall that spt ϕ Ă r´2, 2s, so spt ϕξ Ă r´2ξ, 2ξs Ă r´2δ
+a
+                                                                                        ´1
+                                                                                             , 2δ ´1 s. This shows that I1 .
+  AB{ξ, and the proof of (2.4) is complete.                                                                                
+Proof of Proposition 2.1. Observe that by Plancherel’s formula
+                              ż
+                          A“           |µ̂pξq|2 dξ ď kµ δ k22 . kµδ k22 ď δ ´1`s
+                                                                  10
+                                |ξ|ď4δ ´1
+
+and similarly                               ż
+                                   B“                       |µ̂pξq|2 dξ . δ ´1`t .
+                                                |ξ|ď4δ ´1
+
+So Lemma 3.1 applied at scale δ{2 implies that for δ ´1 ď |ξ| ď 2δ ´1 ,
+                          ˇ¨                          ˇ
+                          ˇ                           ˇ a
+                          ˇ    e ´2πiξ¨xy
+                                          dµpxq dνpyqˇˇ . AB{|ξ| ` δ
+                          ˇ
+                                                                            s`t´1
+                                                                       .δ     2     .
+                                                                                                                          
+
+          3. D IMENSION AND ENERGY OF ADDITIVE - MULTIPLICATIVE CONVOLUTIONS
+   This section is the central part of the proof of Theorem 1.5. Its goal is to derive Lemma 3.1
+below, whose statement can be qualitatively understood in the following way: If µ and ν are
+two Borel probability measures on R with respective dimensions s and t, then there exists some
+additive convolution of µ ⊠ ν with dimension at least s ` t ´ ǫ, where ǫ ą 0 can be arbitrarily
+small. The precise formulation in terms of the energies of the measures at scale δ will be essential
+in our proof of Fourier decay for multiplicative convolutions.
+Lemma 3.1. For all s, t P p0, 1s with s ` t ď 1, and for all κ ą 0, there exist ǫ “ ǫps, t, κq ą 0,
+δ0 “ δ0 ps, t, κ, ǫq ą 0, and k0 “ k0 ps, t, κq P N such that the following holds for all δ P p0, δ0 s and
+k ě k0 . Let µ, ν be Borel probability measures on r´1, 1s satisfying
+                                   Isδ pµq ď δ ´ǫ           and    Itδ pνq ď δ ´ǫ .                                    (3.2)
+Then, with Π :“ pµ ⊟ µq ⊠ pν ⊟ νq, we have
+                                                  δ
+                                                 Is`t pΠ⊞k q ď δ ´κ .
+Moreover, the value of k0 stays bounded as long as mints, tu ą 0 stays bounded away from zero.
+8                         TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+  The main component of the proof of Lemma 3.1 will be a combinatorial result from [13] (itself
+based on the main resul of [14]), which we will apply in the following form. Let |E|δ denote the
+smallest number of δ-balls required to cover E.
+Lemma 3.3. For all s, t P p0, 1s with s ` t ď 1, and for all κ ą 0, there exist ǫ “ ǫps, t, κq ą 0 and
+δ0 “ δ0 ps, t, κ, ǫq ą 0 such that the following holds for all δ P p0, δ0 s and k ě 2. Let µ, ν be Borel
+probability measures on r´1, 1s satisfying
+                                     Isδ pµq ď δ ´ǫ   and    Itδ pνq ď δ ´ǫ .                              (3.4)
+                                                                          ⊞k           ǫ
+Let Π :“ pµ ⊟ µq ⊠ pν ⊟ νq and assume that E Ă R is a set with Π                pEq ě δ . Then,
+                                                          ´s´t`κ
+                                               |E|δ ě δ            .                                       (3.5)
+   Since this lemma does not explicitly appear in [13], we now briefly explain how to derive it
+from the results of that paper. Recall that a Borel measure µ on R is said to be ps, Cq-Frostman if it
+satisfies
+                              µpBpx, rqq ď Crs for all x P R, r ą 0.
+The precise statement we shall need is [13, Proposition 3.7], see also [13, Remark 3.11], which
+reads as follows.
+Proposition 3.6. Given s, t P p0, 1s and σ P r0, mints ` t, 1uq, there exist ǫ “ ǫps, t, σq ą 0 and
+δ0 “ δ0 ps, t, σ, ǫq ą 0 such that the following holds for all δ P p0, δ0 s.
+Let µ1 , µ2 be ps, δ ´ǫ q-Frostman probability measures, let ν1 , ν2 be pt, δ ´ǫ q-Frostman probability measures,
+all four measures supported on r´1, 1s, and let ρ be an ps`t, δ ´ǫ q-Frostman probability measure supported
+on r´1, 1s2. Then there is a set Bad Ă R4 with
+                                      pµ1 ˆ µ2 ˆ ν1 ˆ ν2 qpBadq ď δ ǫ ,
+such that for every pa1 , a2 , b1 , b2 q P R4 z Bad and every subset G Ă R2 satisfying ρpGq ě δ ǫ , one has
+                              |tpb1 ´ b2 qa ` pa1 ´ a2 qb : pa, bq P Gu|δ ě δ ´σ .                         (3.7)
+   The derivation of Lemma 3.3 from Proposition 3.6 is relatively formal; it mostly uses the
+link between the Frostman condition and the energy at scale δ, and the pigeonhole principle
+to construct large fibres in product sets. Let us first record an elementary statement about the
+energy at scale δ of a Frostman measure. Below, we also use the energy Isδ pµq for a meas-
+ure supported on Rd , with d ě 2. The definition is the same as (1.3) in the one-dimensional
+case, except that |¨| denotes the Euclidean norm on Rd . We also let Isδ pµq “ Is pµ ˚ Pδ q, where
+tPδ uδą0 “ tδ ´d P p¨{δquδą0 is an approximate identity, with P P C 8 pRd q radially decreasing and
+satisfying 1Bp 0,1{2q ď P ď 1Bp0,1q .
+Lemma 3.8 (Frostman condition and s-energy). Fix C ě 1, s P p0, dq, and ǫ P p0, 12 s. Then the
+following holds for all δ ą 0 small enough. Let µ be a probability measure on Bp1q Ă Rd .
+     (1) If µ satisfies µpBpx, rqq ď Crs for all x P Rd and all r P rδ, δ ǫ s, then Isδ pµq ď Cδ ´dǫ .
+     (2) Conversely, if Isδ pµq ď δ ´ǫ , there exists a set A such that µpAq ě 1 ´ plog 1{δqδ ǫ and for every
+         r P rδ, 1s, µ|A pBpx, rqq ď δ ´2ǫ rs .
+Proof. To begin, observe that
+                           ż                      ż
+                             |x ´ y|´s dµδ pyq “ s µδ pBpx, rqqr´s´1 dr.                                   (3.9)
+
+Assume first that µ satisfies the Frostman condition µpBpx, rqq ď Crs for r P rδ, δ ǫ s. It is not
+difficult to check that the measure µδ with density µ ˚ Pδ satisfies
+                                            $
+                                            ’    s´d d
+                                            &Cδ r , 0 ă r ď δ,
+                                                 s
+                              µδ pBpx, rqq . Cr ,         δ ď r ď δǫ,
+                                            ’
+                                            %
+                                              1,          r ě δǫ .
+                              ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                                9
+
+
+By splitting the integral in (3.9) into the three intervals p0, δs, rδ, δ ǫ s, and rδ ǫ , 8q, we find that
+                                      ż
+                                        |x ´ y|´s dµδ pyq .s Cδ ´sǫ .
+
+Since µδ is a probability measure, and s ă d, this implies Isδ pµq ď Cδ ´dǫ for δ ą 0 small enough.
+   For the converse, we observe that (3.9) and a change of variables yield
+                                     ´s dr
+                    ¨                                          ¨
+          δ
+         Is pµq “ s    µδ pBpx, rqqr       dµpxq “ plog 2q ¨ s   µδ pBpx, 2´u qq2su du dµpxq.
+                                         r
+If Isδ pµq ď δ ´ǫ , letting
+                                 Eu “ tx : 2su µδ pBpx, 2´u qq ą δ ´2ǫ u,
+                                    Ť
+one gets µpEu q ď δ ǫ . So, for E “ Eu , where u “ 0, 1, . . . , tlog 1{δu, we find µpEq ď plog 1{δqδ ǫ .
+Thus, letting A “ Rd z E, one indeed has
+                                               µpAq ě 1 ´ plog 1{δqδ ǫ
+and for all x in A, for all r P rδ, 1s, µpBpx, rqq . δ ´2ǫ rs .                                                 
+Proof of Lemma 3.3. First of all, we may assume that k “ 2, since if k ą 2, we may write
+                                  ż
+                       ⊞k
+                     Π pEq “ Π⊞2 pE ´ x3 ´ . . . ´ xk q dΠpx3 q ¨ ¨ ¨ dΠpxk q,
+
+and in particular there exists a vector px3 , . . . , xk q such that Π⊞2 pE ´ x3 ´ . . . ´ xk q ě δ ǫ . After
+this, it suffices to prove (3.5) with E ´ x3 ´ . . . ´ xk in place of E.
+   Second, we may assume that the measures µ, ν satisfy the Frostman conditions
+                               µpBpx, rqq ď δ ´6ǫ rs         and     νpBpx, rqq ď δ ´6ǫ rt
+for δ ď r ď 1 and all x P R. Indeed, since Isδ pµq ď δ ´3ǫ , Lemma 3.8 shows that there exists a
+Borel set A Ă R of measure µpAq ě 1 ´ δ 2ǫ with the property pµ|A qpBpx, rqq ď δ ´6ǫ rs for all x P R
+and all r P rδ, 1s. Similarly, we may find a Borel set B Ă R of measure νpBq ě 1 ´ δ 2ǫ with the
+                                                                        ⊞2
+property pν|B qpBpx, rqq ď δ ´6ǫ rt . Now, we still have Π                   pEq ě 21 δ ǫ , where
+                                         Π :“ pµ|A ⊟ µ|A q ⊠ pν|B ⊟ ν|B q.
+Therefore, we may proceed with the argument, with µ, ν replaced by µ|A , ν|B .
+  Let us rewrite the condition Π⊞2 pEq ě δ ǫ as pµ ˆ νq4 pG8 q ě δ ǫ , where
+             G8 :“ tpa1 , b1 , . . . , a4 , b4 q P R8 : pa1 ´ a2 qpb3 ´ b4 q ` pb1 ´ b2 qpa3 ´ a4 q P Eu.
+In particular, there exists a subset G6 Ă R6 of measure pµ ˆ νq3 pG6 q ě δ 2ǫ such that for every
+pa1 , b1 , a2 , b2 , a3 , b3 q in G6 , one has pµ ˆ νqpG2 q ě δ 2ǫ , where
+                                G2 :“ tpa4 , b4 q P R2 : pa1 , b1 , . . . , a4 , b4 q P G8 u.               (3.10)
+Next, we plan to apply Proposition 3.6. To make this formally correct, let us "freeze" two of the
+variables, say pa3 , b3 q: more precisely, fix pa3 , b3 q in such a way that pµ ˆ νq2 pG4 q ě δ 2ǫ , where
+                          G4 :“ tpa1 , b1 , a2 , b2 q P R4 : pa1 , b1 , a2 , b2 , a3 , b3 q P G6 u.
+If ǫ is chosen small enough in terms of s, t and σ :“ s ` t ´ κ, we may apply Proposition 3.6 with
+µ1 “ µ2 “ µ and ν1 “ ν2 “ ν, and ρ “ µ ˆ ν, using 6ǫ instead of ǫ. Then, one has
+                                     pµ ˆ νq2 pBadq ă δ 6ǫ ď pµ ˆ νq2 pG4 q,
+and (3.7) holds for all pa1 , b1 , a2 , b2 q P R4 z Bad. Consequently, we may find a 4-tuple pa1 , b1 , a2 , b2 q P
+G4 z Bad, and eventually a 6-tuple
+                                              pa1 , b1 , a2 , b2 , a3 , b3 q P G6
+10                          TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+such that whenever G Ă R2 is a Borel set with pµ ˆ νqpGq “ ρpGq ě δ 6ǫ , then
+                     |tpa1 ´ a2 qpb3 ´ b4 q ` pb1 ´ b2 qpa3 ´ a4 q : pa4 , b4 q P Gu|δ
+                     “ |tpa1 ´ a2 qb4 ` pb1 ´ b2 qa4 : pa4 , b4 q P Gu|δ ě δ ´σ “ δ ´s´t`κ .
+In particular, by (3.10), this can be applied to the set G :“ G2 , and the conclusion is that
+                 |tpa1 ´ a2 qpb3 ´ b4 q ` pb1 ´ b2 qpa3 ´ a4 q : pa4 , b4 q P G2 u|δ ě δ ´s´t`κ .                (3.11)
+However, since pa1 , b1 , a2 , b2 , a3 , b3 q P G6 , we have pa1 , b1 , . . . , a4 , b4 q P G8 for all pa4 , b4 q P G2 ,
+and consequently
+                     @pa4 , b4 q P G2 ,      pa1 ´ a2 qpb3 ´ b4 q ` pb1 ´ b2 qpa3 ´ a4 q P E.
+Therefore, (3.11) implies (3.5).                                                                                     
+   We now want to go from the combinatorial conclusion of Lemma 3.3 to the more measure the-
+oretic statement of Lemma 3.1 involving energies at scale δ. For that, our strategy is similar in
+flavour to the one used by Bourgain and Gamburd [4] to derive their flattening lemma, decom-
+posing the measures into dyadic level sets.
+Proof of Lemma 3.1. Let tPr urą0 “ tr´1 P p¨{rqurą0 be a radially decreasing approximate identity
+satisfying 1r´1{2,1{2s ď P ď 1r´1,1s . We claim that
+                                    P px{rq ď P px1 {p4rqq,          |x ´ x1 | ď r.                              (3.12)
+Indeed, if P px{rq ‰ 0, then |x| ď r, hence |x1 | ď 2r, and P px1 {p4rqq “ 1. We further claim:
+                         ˆ       ˙       ż          ˆ 1      ˙
+                           x´y         1              x ´y
+                      P            .              P             dx1 ,     x, y P R.                              (3.13)
+                            4r        5r Bpx,5rq         r
+Indeed, if P ppx ´ yq{4rq ‰ 0, then |x ´ y| ď 4r, so Bpy, r{2q Ă Bpx, 5rq. Now, (3.13) follows by
+noting that P ppx1 ´ yq{rq “ 1 for x1 P Bpy, r{2q.
+  As a final preliminary, we record that if σ is a finite Borel measure on Rd , and 0 ă s ă d, then
+                                          Isr pσq . Isδ pσq,       δ ď r ď 1.                                    (3.14)
+To see this, note, as a first step, that Isr pσq ď Is pσq. This follows from the Fourier-analytic expres-
+sion of the energy 1.4, and noting that }P̂ }8 “ }P }1 “ 1. As a second step, note that Pr . Pr ˚ Pδ
+for δ ď r ď 1, so also σr . σr ˚ Pδ . Consequently, Isr pσq . Isr pσδ q ď Is pσδ q “ Isδ pσq by the first
+step of the proof.
+   We then begin the proof in earnest. We abbreviate Π⊞l     r :“ pΠ q ˚ Pr . The goal will be to show
+                                                                      ⊞l
+
+that if k ě 1 is sufficiently large (depending on s, t, κ), then, for all r P rδ, 1s,
+                                                       k
+                                     Jr pkq :“ kΠ⊞2
+                                                 r  k2 ď δ ´κ{2 rps`t´1q{2 .                                     (3.15)
+This implies in a standard manner (using for example [11, Lemma 12.12], Plancherel and a dyadic
+frequency decomposition) that
+                                                           k
+                                         δ
+                                       Is`t pΠ⊞2 q . δ ´2κ .
+Note that the sequence tJr pkqukPN is decreasing in k, since by Young’s inequality
+                                     k         k               k          k             k
+                Jr pk ` 1q “ kΠ⊞2 ⊞ Π⊞2
+                                     r  k2 ď kΠ⊞2 k1 ¨ kΠ⊞2
+                                                         r  k2 “ kΠ⊞2
+                                                                   r  k2 “ Jr pkq.
+Therefore, in order to prove (3.15), the value of k may depend on r, as long as it is uniformly
+bounded in terms of s, t, κ. Eventually, the maximum of all possible values for k will work for all
+δ ď r ď 1.
+   Let us start by disposing of large r, i.e. r ě δ κ{2 . For that, we have the trivial bound (recalling
+also that we assumed s ` t ď 1)
+                                    Jr pkq ď Jr p0q . r´1 ď δ ´κ{2 rps`t´1q{2 .
+                              ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                                            11
+
+
+   So, it remains to treat the case r P rδ, δ κ{2 s. We now fix such a scale r. By the pigeonhole prin-
+ciple, given a small parameter ǫ P p0, κ4 q to be fixed later (the choice will roughly be determined
+by applying Lemma 3.3 to the parameters s, t, κ), there exists k . 1{ǫ, depending on r, such that
+                                        k`1                                                                k
+                                }Π⊞2
+                                  r           }2 “ Jr pk ` 1q ě rǫ Jr pkq “ rǫ }Π⊞2
+                                                                                 r  }2 .                                 (3.16)
+This index k is fixed for the rest of the argument, so we will not display it in (all) subsequent
+                                     k
+notation. We may assume that }Π⊞2  r   }2 ě 1, otherwise (3.15) is clear.
+  Let Dr be the dyadic intervals of R of length r. For each I P Dr , we set
+                                                                                 k
+                                                         aI :“ sup Π⊞2
+                                                                    r  pxq.
+                                                                       xPI
+
+Next, we define the collections
+                                        #
+                                         tI P Dr : aI ď 1u,          j “ 0,
+                                  Aj :“
+                                         tI P Dr : 2j´1 ă aI ď 2j u, j ě 1.
+We also define the sets Aj :“ YAj ; note that the sets Aj are disjoint for distinct j indices. Since
+                               k
+Π is a probability measure, Π⊞2
+                             r   . 1{r for all k ě 1. Therefore Aj “ H for j ě C logp1{rq, and
+evidently
+                                            C logp1{rq
+                                                ÿ
+                                        k
+                                    Π⊞2
+                                     r    .            2 j ¨ 1 Aj .                            (3.17)
+                                                                        j“0
+Conversely, we claim that
+                                                 C logp1{rq
+                                                     ÿ                                         k
+                                                                   2j ¨ 1Aj . Π⊞2
+                                                                               4r .                                      (3.18)
+                                                         j“1
+
+To see this, fix x P Aj with j ě 1, and let I “ Ipxq P Dr be the dyadic r-interval containing x.
+                                                                            k
+Then aI ě 2j´1 , which means that there exists another point x1 P I with Π⊞2
+                                                                          r   px1 q ě 2j´1 . Then,
+using that |px ´ yq ´ px ´ yq| ď r for all y P R,
+               1
+                      ż ˆ        ˙                       ż ˆ 1   ˙
+                    1      x´y                 (3.12) 1     x ´y
+        ⊞2k                            ⊞2k                              k             k
+      Π4r pxq “         P           dΠ      pyq ě         P        dΠ⊞2 pyq ě 41 Π⊞2r   px1 q,
+                   4r        4r                       4r       r
+                          k
+                   4r pxq & 2 . This proves (3.18).
+and consequently Π⊞2         j
+                                            k
+  Based on (3.18) (and our hypothesis }Π⊞2
+                                         r    }2 ě 1 to treat the case j “ 0) we may deduce, in
+particular, that
+                                                               k
+                                                                        (3.13)             k
+                                2j k1Aj k2 . kΠ⊞2        ⊞2
+                                               4r k2 . kΠr  k2 ,                                      j ě 0.             (3.19)
+(To see the second inequality, we use (3.13) to deduce that µ4r is bounded by the maximal function
+                                                                   k
+of µr for any probability measure µ on R, in particular µ “ Π⊞2 .)
+   Next, using (3.17), we may pigeonhole an index j ě 0 and a set A :“ Aj with the property
+                          k`1                    k                 k                                             k
+                   }Π⊞2
+                     r           }2 ď }Π⊞2
+                                        r  ⊟ Π⊞2
+                                              r  }2 . plog 1{rq ¨ 2j ¨ k1A ⊟ Π⊞2
+                                                                              r  k2 .
+Since further, by Plancherel followed by Cauchy-Schwarz and Plancherel again,
+                                                     k                               1{2            k`1    1{2
+                                 }1A ⊟ Π⊞2
+                                        r  }2 ď }1A ⊟ 1A }2 ¨ }Π⊞2
+                                                                r                                         }2
+we deduce that
+             k   (3.16)          k`1
+      rǫ }Π⊞2
+           r  }2 ď }Π⊞2
+                     r                 }2 . plog 1{rq2 ¨ 22j ¨ k1A ⊟ 1A k2
+                                                                                           (3.19)                    k
+                                         . r´ǫ ¨ 22j ¨ k1A k1 k1A k2 . r´ǫ ¨ 2j ¨ k1A k1 kΠ⊞2
+                                                                                           r  k2 .                       (3.20)
+12                      TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+                                                                                          k
+At this point we note that if j “ 0, then the preceding inequality shows that }Π⊞2   r   }2 . r´2ǫ ,
+which is better than (3.15), since we declared that ǫ ď κ{4. So, we may and will assume that j ě 1
+in the sequel.
+   In (i) below we combine (3.20) and (3.18), whereas in (ii) below we combine (3.20) with 2j }1A }1 .
+   ⊞2k
+}Πr }1 “ 1:
+                              k            k
+     (i) r2ǫ . 2j k1A k1 . Π⊞2
+                            4r pAq ď Π
+                                         ⊞2
+                                            prAs4r q, where rAs4r is the 4r-neighbourhood of A,
+              ⊞2k                        ´1              ´1{2
+    (ii) r }Πr }2 . 2 k1A k2 . k1A k1 k1A k2 = k1A k1 .
+          2ǫ             j
+
+Since A is a union of intervals in Dr , one has k1A k1 „ r|A|r , so item (ii) yields
+                                           k          1
+                                      kΠ⊞2
+                                        r  k2 . r´ 2 ´2ǫ |A|´1{2
+                                                            r    .
+On the other hand, since
+                             (3.14)
+                      Is4r pµq . Isδ pµq ď δ ´ǫ ď r´ǫ{κ       and    It4r pνq . r´ǫ{κ ,
+Lemma 3.3 applied at scale 4r (and recalling (i) above) shows that if ǫ is chosen small enough in
+terms of s, t, κ, then
+                                        |A|r ě r´s´t`κ .
+We thus obtain what we claimed in (3.15):
+                                           k
+                                      }Π⊞2
+                                        r  }2 . δ ´κ{2 rps`t´1q{2 .
+This completes the proof of Lemma 3.1.                                                              
+
+                                      4. T HE INDUCTION STEP
+   The proof of Theorem 1.5 is by induction on n, starting from the n “ 2 case, already studied
+in Section 2. The induction step is based on the flattening results for additive-multiplicative
+convolutions developed in the previous section. It will be essential in the argument to be able to
+switch the order of addition and multiplication. For that we record the following lemma, which
+is a simple application of the Cauchy-Schwarz inequality.
+Lemma 4.1. Given two Borel probability measures µ and ν on R, one has, for all ξ in R,
+                                              `            ˘^
+                                {
+                               |µ ⊠ νpξq|2 ď pµ ⊟ µq ⊠ ν pξq.
+Proof. Writing the Fourier transforms explicitly, and applying the Cauchy-Schwarz (or Jensen’s)
+inequality, one gets
+       ¨                    2  ż ż                 2      ˚
+          e´2πiξxy dµx dνy ď        e´2πiξxy dµx dνy “        e´2πiξpx1 ´x2 qy dµx1 dµx2 dνy.
+
+                                                                                                    
+Proof of Theorem 1.5. For the base case n “ 2, we may apply Proposition 2.1. Indeed, assuming
+Isδi pµi q ď δ ´ǫ for i “ 1, 2, one has
+                              ż                            ż                        (1.4)
+                                                  ´1`si ´ǫ
+                          2
+                   kµi,δ k2 “ |y          2
+                                 µi,δ pξq| dξ . δ                     µi,δ pξq|2 dξ . δ ´1`si ´2ǫ
+                                                             |ξ|1´si |y
+
+so if s1 ` s2 ą 1, taking ǫ small enough to ensure s1 ` s2 ´ 4ǫ ą 1, one finds, for every δ ´1 ď |ξ| ď
+2δ ´1 ,
+                                                           s1 `s2 ´4ǫ´1
+                                      |µ{ 1 ⊠ µ2 pξq| ď δ        2      ,
+which is the desired Fourier decay.
+   Now let n ě 3, and assume that we have already established the case n ´ 1 with the collection
+of parameters Sn´1 :“ ts1 ` s2 , s3 , . . . , sn u, and some constants
+                            ǫn´1 pSn´1 q ą 0    and       δ0 :“ δ0 pSn´1 q ą 0.                   (4.2)
+                           ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                              13
+
+
+By decreasing s1 and s2 if needed, we assume that s1 ` s2 ď 1 in the sequel.
+  Given ξ with δ ´1 ď ξ ď 2δ ´1 , our goal is to bound
+                                        F pξq :“ pµ1 ⊠ . . . ⊠ µn q^ pξq.
+Applying Lemma 4.1 twice, first with µ “ µ1 and ν “ µ2 ⊠ . . . ⊠ µn and then with µ “ µ2 and
+ν “ pµ1 ⊟ µ1 q ⊠ µ3 ⊠ . . . ⊠ µn , yields
+                                     |F pξq|4 ď pΠ ⊠ µ3 ⊠ . . . ⊠ µn q^ pξq,
+where Π “ pµ1 ⊟ µ1 q ⊠ pµ2 ⊟ µ2 q. Using the same lemma again k times (and noting that Π is
+symmetric around the origin), we further get
+                                         k`2               k
+                                 |F pξq|2      ď pΠ⊞2 ⊠ µ3 ⊠ . . . ⊠ µn q^ pξq.
+Lemma 3.1 applied with constants s :“ s1 and t :“ s2 , and κ :“ ǫn´1 :“ ǫn´1 pSn´1 q, shows that
+if ǫ “ ǫps1 , s2 , ǫn´1 q ą 0 is sufficiently small, k “ kps1 , s2 , ǫn´1 q is sufficiently large, and µ1 , µ2
+satisfy Isδj pµj q ď δ ´ǫ for j “ 1, 2, then
+                                                       k
+                                        Isδ1 `s2 pΠ⊞2 q ď δ ´κ “ δ ´ǫn´1 .
+We apply our induction hypothesis to the collection of n ´ 1 probability measures
+                                                                    k
+                                    tµ̄1 , . . . , µ̄n´1 u “ tΠ⊞2 , µ3 , . . . , µn u
+with exponents ts1 ` s2 , s3 , . . . , sn u to get
+                                                       k`2
+                                               |F pξq|2        ď |ξ|´ǫn´1 .
+                                               k
+(To be precise, since the measure Π⊞2 is not supported on r´1, 1s but on r´2k`2 , 2k`2 s, so one
+                                                                  k
+rather needs to consider the rescaled measure µ̄1 “ p2´k´2 q˚ Π⊞2 , which satisfies Isδ1 `s2 pµ̄1 q „k
+             k
+Isδ1 `s2 pΠ⊞2 q but the involved constant depending on k is harmless.) This shows that the Fourier
+decay property holds for n, with constants ǫn :“ mintǫ, ǫn´1 u and τn “ τn´1
+                                                                           2k
+                                                                              . The necessary size
+of k is determined by the application of Lemma 3.1, so it depends only on mints1 , s2 u ą 0. The
+proof of Theorem 1.5 is complete.                                                                    
+
+                               5. A QUANTITATIVE PROJECTION ESTIMATE
+   For the proof of Theorem 1.14, we first need to establish a quantitative combinatorial estimate
+on the size of projections of discretised sets. Recall that for a set X in Rd , we write |X|δ to denote
+the covering number of X at scale δ.
+Definition 5.1. Given s ě 0 and K ě 0, a set X Ă Rd is a pδ, s, Kq-set if it satisfies
+                           @x P Rd , @r P rδ, 1s,         |X X Bpx, rq|δ ď K ¨ rs ¨ |X|δ .               (5.2)
+If the constant K is universal we say that X is a pδ, tq-set.
+   This definition differs from a related notion due to Katz and Tao, which is recalled as Definition
+5.7 below. Note that the above definition closely resembles a Frostman condition.
+   The problem of estimating the dimension of projections of fractal sets has been extensively
+studied since the works of Marstrand [10] and Kaufman [8]. Ren and Wang [15] recently obtained
+the following optimal estimate for projections of discretised subsets of the plane. Given y P R,
+we define the projection πy : R2 Ñ R by the formula
+                                             πy px1 , x2 q “ x1 ´ yx2 .                                  (5.3)
+14                           TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+Theorem 5.4 (Ren-Wang projection theorem [15, Theorem 4.1]). Fix parameters s, t P p0, 1s and
+η ą 0. There exists ǫ “ ǫps, t, ηq ą 0 such that the following holds for all δ ă δ0 ps, t, ηq.
+If X Ă r´1, 1s2 is a pδ, 2s, δ ´ǫ q set and Y Ă r0, 1s a pδ, t, δ ´ǫ q set, then the set
+                                     !                                        t
+                                                                                     )
+                              Yη “ y P Y : |πy pXq|δ ě δ ´ mint2s,s` 2 ,1u`η
+satisfies |Yη |δ ě p1 ´ δ ǫ q|Y |δ .
+Remark 5.5. An estimate similar to (but weaker than) Theorem 5.4 was previously obtained in
+[13]. For the purposes of establishing Theorem 5.6 below, and consequently also Theorem 1.14,
+the bounds from [13] would suffice (only the value of the constant c in Theorem 5.6 would be dif-
+ferent). We also note that the proof of [15, Theorem 4.1] builds upon [13], and in particular on the
+estimate given above as Proposition 3.6, which was already central in the proof of Theorem 1.5.
+   Our goal in this section is to derive from Theorem 5.4 a similar statement, but with weaker
+non-concentration assumptions on the sets X and Y . (To be accurate, we will use the more tech-
+nical "Furstenberg set version" of Theorem 5.4, stated in Theorem 5.14.) The lower bound on the
+projection’s dimension will be of the form s ` ct for some absolute constant c; this is weaker than
+the conclusion of Theorem 5.4, but sufficient to obtain the desired exponential lower bound for
+the Fourier decay exponent of multiplicative convolutions.
+Theorem 5.6. There exists a universal constant c ą 0 such that the following holds. (One may take
+       1
+c “ 24   .) Fix 0 ă t ď s ď 3{4. Let Ai Ă r0, 1s be pδ, s, δ ´ct q-sets with |Ai |δ ď δ ´s . Let Y Ă r0, 1s be a
+        ´ct
+pδ, t, δ q-set. Then there is y P Y such that
+                                           |πy pA1 ˆ A2 q|δ ě δ ´s´ct .
+   The deduction of the above result from Theorem 5.4 goes in two steps. First, we use rescal-
+ing on X and a combinatorial argument to weaken the non-concentration on X; then, we use
+rescaling on Y and pigeonholing to obtain the desired estimate.
+5.1. Rescaling X. In addition to the notion of pδ, s, Kq-set above, we shall also use the following
+variant.
+Definition 5.7. We say that X is a Katz-Tao pδ, s, Kq-set if
+                                                    ´ r ¯s
+                                   |X X Br |δ ď K ¨        , r P rδ, 1s.                          (5.8)
+                                                      δ
+Definition 5.9. If P is a family of dyadic δ-cubes, we say that P is a (Katz-Tao) pδ, s, Kq-set if YP
+is a (Katz-Tao) pδ, s, Kq-set in the sense of Definitions 5.1 and 5.7.
+Remark 5.10. A pδ, s, Kq-set X with |X|δ ď δ ´s is also a Katz-Tao pδ, s, Kq-set, and conversely, a
+Katz-Tao pδ, s, Kq-set with |X|δ ě δ ´s is a pδ, s, Kq-set.
+  For the first step of the proof of Theorem 5.6, we introduce some notation and terminology. Let
+D, m P N. We use D∆ pXq to denote the dyadic ∆-cubes intersecting a set X. A set X Ă r0, 1sd is
+       j“1 -uniform if for all 1 ď j ď m, there exists Rj P N such that
+t2´Dj um
+                                   |X X Q|2´Dj “ Rj ,       Q P D2´Dpj´1q pXq.
+               j“1 -uniform set X
+Given a t2´Dj um                           Ă r0, 1s , and writing δ :“ 2´Dm , we define the branching
+                                                   d
+
+function f : r0, 1s Ñ r0, ds by
+                                                  log|X|δu
+                                               f puq “
+                                                   log 1{δ
+if δ u “ 2´Dj for some j, and interpolating linearly for other values of u. We refer the reader to
+[13, §2.3] for the elementary properties of uniform subsets and branching functions. Note that we
+use here a slightly different normalisation of the branching function than in [13, Definition 2.21].
+Our branching function is d-Lipschitz on r0, 1s.
+                            ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                            15
+
+
+   Below, we shall use several times the following observation, see [17, Lemma 3.6]: Given ǫ ą 0,
+any set X Ă r0, 1sd contains a t2´Dj um    j“1 -uniform subset X Ă X with |X |δ ě δ |X|δ provided
+                                                                  1              1     ǫ
+
+that δ “ 2 ´Dm
+                 , and both D, m P N are sufficiently large in terms of ǫ ą 0. This will allow us to
+assume that sets are t2´Dj um   j“1 -uniform without loss of generality. If the choice of D ě 1 is not
+important, we will abbreviate "t2´Dj um    j“1 -uniform" to simply "uniform".
+   In the rest of this section, we hide small negative powers of δ in the notation /, ', and «. More
+precisely, we write F pδq / Gpδq if for all ǫ ą 0, one has F pδq ď δ ´ǫ Gpδq provided δ is sufficiently
+small in terms of ǫ. We can then recast the above observation as follows: a set X Ă r0, 1sd contains
+a uniform subset X 1 with |X 1 |δ ' δ ǫ |X|δ . (This involves a choice of D depending on ǫ, that is also
+hidden from the notation.)
+   Proposition 5.16 below uses some terminology and previous results from [12, 15, 18], so we
+start by reviewing these. Below, Dδ refers to the dyadic squares p Ă r0, 1s2 of side-length δ P 2´N ,
+and T δ is the family of dyadic δ-tubes, see [12, Definition 2.10]. These are, by definition, sets of
+the form T “ Ypa,bqPp Dpa, bq, where p P Dδ , and D is the usual point-line duality map Dpa, bq :“
+tpx, yq P R2 : y “ ax ` bu. The reader may simply think that dyadic tubes are a convenient choice
+for δ-discretising the family of all δ-tubes in R2 .
+Definition 5.11 (Nice configuration). Fix δ P 2´N , s P r0, 1s, C ą 0, M P N. We say that a pair
+pP, T q Ă Dδ ˆ T δ s a pδ, s, C, M q-nice configuration if for every p P P there exists a pδ, s, Cq-set
+T ppq Ă T with |T ppq| “ M and such that T X p ‰ H for all T P T ppq.
+   It is relevant to find lower bounds for |T |, where pP, T q is a nice configuration, and P satisfies
+a non-concentration condition. This will also be the case in Proposition 5.16. Lemma 5.12 right
+below is a technical tool designed for this task: (5.13) gives a lower bound for |T |, provided that
+one can obtain lower bounds separately for |Tp | for various restricted and rescaled configurations
+of the form pSp pP X pq, Tp q. Here and below, Sp is the rescaling affine map which sends p P D∆
+to r0, 1q2 .
+Lemma 5.12 (Corollary 4.1 in [18]). Fix N ě 2 and a sequence t∆j uN
+                                                                  j“0 Ă 2
+                                                                          ´N
+                                                                             with
+                               0 ă δ “ ∆N ă ∆N ´1 ă . . . ă ∆1 ă ∆0 “ 1.
+                        δ
+Let pP0 , T0 q Ă Dδ ˆ T be a pδ, s, C, M q-nice configuration. Then, there exists a set P Ă P0 such that
+the following properties hold:
+      (i) |D∆j pPq| « |D∆j pP0 q| and |P X p| « |P0 X p|, 1 ď j ď N , p P D∆j pPq.
+     (ii) For every 0 ď j ď N ´ 1 and p P D∆j pPq, there exist numbers
+                                         Cp « C        and Mp ě 1,
+                                       ∆j`1 {∆j
+        and a family of tubes Tp Ă T              , such that
+                     pSp pP X pq, Tp q is a p∆j`1 {∆j , s, Cp , Mp q-nice configuration.
+Furthermore, the families Tp can be chosen so that if pj P D∆j pPq for 0 ď j ď N ´ 1, then
+                                                     ź
+                                                     N ´1
+                                             |T0 |        |Tpj |
+                                                   '             .                                    (5.13)
+                                              M      j“0
+                                                          M pj
+All the constants implicit in the « notation are allowed to depend on N .
+   Here is the main result in [15]:
+Theorem 5.14 (Theorem 4.1 in [15]). For every s P p0, 1s, t P r0, 2s, and ǫ ą 0, there exist η “
+ηpǫ, s, tq ą 0 and δ0 “ δ0 pǫ, s, tq ą 0 such that the following holds for all δ P p0, δ0 s. Let pP, T q be a
+pδ, s, δ ´η , M q-nice configuration, where P Ă Dδ is a non-empty pδ, t, δ ´η q-set. Then,
+                                        |T |
+                                             ě δ ´ mintt,ps`tq{2,1u`ǫ .                               (5.15)
+                                        M
+16                        TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+  The proposition below has a similar flavour, but the hypothesis that P is a pδ, t, δ ´η q-set has
+been replaced by the hypothesis that P is a Katz-Tao pδ, 2s, Kq-set. In particular, note that this
+hypothesis gives no a priori lower bound on the cardinality |P|.
+Proposition 5.16. Fix s P p0, 1q, 0 ă t ă 2 mints, 1 ´ su ď 1 and C, K, M ě 1. Then the following
+holds for all δ P 2´N with 0 ă δ ď δ0 pC, s, tq. Let P Ă Dδ be a Katz-Tao pδ, 2s, Kq-set, and let T Ă T δ
+be a family of tubes such that pP, T q is a pδ, t, C, M q-nice configuration. Then,
+                                     |T |          t          1    t
+                                          ' K ´ 4sp1´sq ¨ |P| 2 ` 4s ,
+                                     M
+where the implicit constant may depend on C.
+Remark 5.17. One should think that the constant K is very large, in fact a function of δ ´1 in our
+application, whereas C ě 1 is just an absolute constant (in fact, in our application it will depend
+on the implicit ǫ).
+Proof of Proposition 5.16. Without loss of generality, P is t2´Di umi“1 -uniform, and δ “ 2
+                                                                                              ´Dm
+                                                                                                  . Let f
+be the branching function of P. Given an interval ra, bs Ă r0, 1s, and s ě 0, we say that pf, a, bq
+is s-superlinear if f puq ´ f paq ě spu ´ aq for all u P ra, bs. Fix ǫ ą 0. Using [19, Lemma 5.21],
+decompose r0, 1s into intervals raj , aj`1 s, 0 ď j ď N ´ 1, such that pf, aj , aj`1 q is sj -superlinear
+with sj increasing, aj`1 ´ aj ě τ pǫq ą 0, and
+                                             ´1
+                                            Nÿ
+                                  f p1q ě         si paj`1 ´ aj q ě f p1q ´ ǫ.                          (5.18)
+                                            j“0
+
+For the sake of clarity, we assume that ǫ “ 0 in this equation; the interested reader can check that
+our argument also yields the limiting case as ǫ Ó 0.
+  Write ∆j :“ δ aj “ 2´Dmaj for j P t0, . . . , N u. Noting that a0 “ 0 and aN “ 1,
+                                    δ “ 2´Dm “ ∆N ă . . . ă ∆0 “ 1.
+We may therefore apply Corollary 5.12 to the pair pP0 , T0 q :“ pP, T q and the scale sequence
+     j“0 . This leads to a refinement P Ă P, and the families
+                                       1
+t∆j uN
+                           Tp Ă T ∆j`1 {∆j ,        p P D∆j pP 1 q, 0 ď j ď N ´ 1.
+According to (5.13),
+                                          ź
+                                          N ´1
+                                   |T |        |Tpj |
+                                        '             ,      pj P D∆j pP 1 q.                           (5.19)
+                                   M      j“0
+                                               M pj
+The plan of the remainder of the proof is to estimate each of the factors |Tpj |{Mpj separately, and
+finally multiply the results to obtain a lower bound for |T |{M .
+     Let a “ mintaj : sj ě tu and b “ mintaj : sj ě 2 ´ tu, assuming that these exist. If sj ă t for all
+j, we simply declare a :“ 1, and if sj ă 2 ´ t for all j, we set b :“ 1. Note that t ď 2 ´ t, so b ě a.
+     Abbreviate δj :“ ∆j`1 {∆j for 0 ď j ď N ´ 1. Recall that aj`1 ´ aj ě τ pǫq, so δj “ δ aj`1 ´aj ď
+δ . The information that pf, aj , aj`1 q is sj -superlinear translates to the property that
+  τ pǫq
+
+                                               Sp pP X pq Ă Dδj
+is a pδj , sj , Cq-set for every p P D∆j pPq, where C ą 0 is a constant that depends only on D in the
+definition of uniformity, which in turn has to be taken large enough in terms of ǫ. See [12, Lemma
+8.3]. Does the same remain true for the refinement P 1 Ă P? Almost: Lemma 5.12(i) guarantees
+that
+                                      |P 1 X p| « |P X p|,         p P D∆j pP 1 q.
+It then easily follows (or see [13, Corollary 2.19]) from the pδj , sj , Cq-set property of Sp pP Xpq that
+Sp pP 1 X pq is a pδj , sj , « 1q-set. But since δj ď δ τ pǫq , logarithmic constants in δ are also logarithmic
+                         ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                           17
+
+
+in δj . In particular, for any given η ą 0, and provided that δ ą 0 is sufficiently small, the sets
+Sp pP 1 X pq are pδj , sj , δj´η q-sets for p P D∆j pP 1 q.
+   We are then in a position to apply Theorem 5.14 to the pδj , sj , Cpj , Mpj q-nice configurations
+pSpj pP 1 Xpj q, Tpj q, where pj P D∆j pP 1 q is arbitrary, and Cpj « C by Lemma 5.12(ii). In particular,
+Cpj ď δj´η for δ ą 0 sufficiently small. Taking the "min" in (5.15) into account, the conclusion of
+Theorem 5.14 is that
+                     |Tpj |       ´s
+                             ' δj j “ δ ´sj paj`1 ´aj q ,                   aj P r0, as,
+                     M pj
+                     |Tpj |       ps `tq{2      sj `t
+                             ' δj j        “ δ ´ 2 paj`1 ´aj q ,            aj P ra, bs,
+                     M pj
+                  |Tpj |
+                         ' δj´1 “ δ ´paj`1 ´aj q ,                               aj P rb, 1s.
+                  M pj
+Plugging this information into the lower bound (5.19), we find
+                                                     f pbq ´ f paq pb ´ aqt
+                      log1{δ p|T |{M q ě f paq `                  `         ` 1 ´ b.
+                                                           2          2
+We get
+                               f pbq ` f paq pb ´ aqt
+             log1{δ p|T |{M q ě             `         `1´b
+                                     2          2                                            (5.20)
+                               f p1q ` f paq p1 ´ aqt              t    f p1q ´ f pbq
+                            “               `         ` p1 ´ bqp1 ´ q ´               .
+                                     2           2                 2          2
+Write K “: δ ´u . The assumption that P is a Katz-Tao pδ, 2s, Kq-set translates to f p1q ´ f paq ď
+2sp1 ´ aq ` u. Since also t ď 2s by assumption, we have
+                                               tpf p1q ´ f paq ´ uq     tf p1q tu
+                    f paq ` p1 ´ aqt ě f paq `                       ě        ´ .                 (5.21)
+                                                         2s               2s     2s
+   We assume that b ă 1. If b “ 1, some of the terms in (5.20) vanish, and a stronger form of
+(5.23) already follows from (5.21). Write σ :“ f p1q´f
+                                                     1´b
+                                                         pbq
+                                                             P r2 ´ t, 2s Ă p2s, 2s. Using the Katz-Tao
+assumption on P again, we have
+                                                                               u
+                    σp1 ´ bq “ f p1q ´ f pbq ď u ` 2sp1 ´ bq ùñ 1 ´ b ď              ,
+                                                                             σ ´ 2s
+and therefore
+                 t    f p1q ´ f pbq   1                           upt ` σ ´ 2q            tu
+     p1 ´ bqp1 ´ q ´                “ p1 ´ bqp2 ´ t ´ σq ě ´                    ě´              , (5.22)
+                 2          2         2                            2pσ ´ 2sq           4p1 ´ sq
+using that σ P r2p1 ´ sq, 2s and the assumption 2s ă 2 ´ t for the last inequality.
+   Combining (5.20), (5.21) and (5.22), we conclude that
+                                                         t f p1q      tu
+                             log1{δ p|T |{M q ě p1 `      q      ´           ,                     (5.23)
+                                                        2s 2       4sp1 ´ sq
+as claimed. (To be more precise, we should add a ´Os,t pǫq in the right-hand side of (5.23), to
+account from the ε in (5.18).)                                                               
+  We will only use the conclusion of Proposition 5.16 via the following corollary concerning
+projections:
+Corollary 5.24. Fix s P p0, 1q, 0 ă t ă 2 mints, 1 ´ su and C, K ě 1. Let X Ă r0, 1s2 be a Katz-Tao
+pδ, 2s, Kq-set, and let Y Ă r1, 2s be a δ-separated pδ, t, Cq-set. Then
+                                                          t       1      t
+                                                                      ` 4s
+                                    |πy pXq|δ ' K ´ 4sp1´sq ¨ |X|δ2          ,
+18                          TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+for at least |Y |{2 values of y P Y .
+
+Proof. Given Proposition 5.16, the proof of Corollary 5.24 is exactly the same as the proof of [13,
+Corollary 6.1] starting from [13, Theorem 5.35]. We only sketch the idea. It is enough to establish
+the existence of one y P Y satisfying the desired conclusion; we can then apply this case to the
+exceptional set of y P Y that fail it. This is because any subset of Y cardinality ě |Y |{2 satisfies
+the same assumptions, up to a change in the constants.
+   Write P :“ Dδ pXq. Then P is a Katz-Tao pδ, 2s, OpKqq-set. For each y P Yδ (a δ-net inside Y ),
+cover πy pPq by a family Ty Ă T δ such that |Ty | . |πy pPq|δ „ |πy pXq|δ , and the slopes of the tubes
+in Ty are roughly parallel to the line πy´1 t0u. Set
+                                                     ď
+                                              T :“     Ty .
+                                                           yPYδ
+
+Then pP, T q is a pδ, t, C, M q-nice configuration with M “ |Yδ |. We may now infer from Proposi-
+tion 5.16 that
+                                       |T |           t          1
+                                                                   ` t
+                                             ' K ´ 4sp1´sq ¨ |X|δ2 4s .
+                                       |Yδ |
+This implies the claim, taking into account that |T | . |Yδ | ¨ maxt|πy pXq|δ : y P Yδ u.            
+
+5.2. Rescaling Y . We now derive Theorem 5.6 from Corollary 5.24 by a rescaling argument on
+the set Y of projection directions.
+
+Proof of Theorem 5.6. By passing to suitable δ-separated subsets, we may assume that A1 , A2 and
+Y are δ-separated. Note that the assumptions imply that A1 and A2 are Katz-Tao pδ, s, δ ´ct q-sets.
+Let I Ă r0, 1s be an interval of minimal length ρ such that
+                                                                  t
+                                                |Y X I|δ ě ρ 2 |Y |δ .
+
+Since Y is a pδ, t, δ ct q-set,
+                                                    1 ě ρ ě δ 2c .                               (5.25)
+Write I “ ry0 , y0 ` ρs and let X be the image of A1 ˆ A2 under the map
+
+                                         uy0 : pa1 , a2 q ÞÑ pa1 ´ y0 a2 , a2 q.
+
+The projections of A1 ˆ A2 with slopes in Y X I are precisely the projections of X with slopes in
+the subset
+                                        Z “ ty ´ y0 : y P Y X Iu Ă r0, ρs.
+In other words
+                                            πy´y0 pXq “ πy pA1 ˆ A2 q,                           (5.26)
+where πy px1 , x2 q “ x1 ´ yx2 (recall (5.3)). Given λ ą 0, define Sλ pxq “ λx. By our choice of ρ, the
+set Z 1 :“ Sρ´1 pZq is a pρ´1 δ, t{2q-set.
+   Decompose X into rectangular blocks
+                                               `                    ˘
+                                    Xj “ X X rjρ, pj ` 1qρq ˆ r0, 1s .
+
+Note that for z P r0, ρs, the sets tπz pXj quj have bounded overlap for any z P Z, and so
+                                                      ÿ
+                   |πy pA1 ˆ A2 q|δ “ |πy´y0 X|δ &      |πy´y0 Xj |δ ,  y P Y X I.               (5.27)
+                                                              j
+                             ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                                   19
+
+
+Let µX be the uniform probability measure on X, and µ “ pπ0 q# µX its projection to the first
+coordinate. For any ball Br Ă r0, 1s of radius r P rδ, 1s,
+                                     1
+                      µpBr q “              |tpa1 , a2 q P X : a1 ´ y0 a2 P Br u|
+                                |A1 ˆ A2 |
+                                    1       ÿ
+                             “                  |ta1 : a1 P pBr ` y0 a2 qu|
+                                |A1 ||A2 | a PA
+                                                     2   2
+
+                                    ď δ ´ct ¨ rs .
+By the dyadic pigeonhole principle, we may choose λ ą 0 and a set H 1 Ă r0, 1s such that µpH 1 q '
+1 and µpIq „ λ for all δ-intervals I intersecting H 1 . Let H be a uniform subset of H 1 with |H 1 |δ '
+|H|δ . Then H is a pδ, s, « δ ´ct q-set with µpHq ' 1.
+    From now on, we consider only the set JH “ tj : π0 pXj q X H ‰ Hu. Note that, since H is a
+pδ, s, / δ ´ct q-set, we have
+                                           |JH | “ |H|ρ ' δ ct ρ´s .                            (5.28)
+Moreover, for all j P JH , writing Ij “ rjρ, pj ` 1qρs,
+                    |Xj |δ
+                           „ µX pXj q “ µpIj q ě µpIj X Hq « λ|Ij X H|δ “ λ|H|δ |H|´1
+                                                                                   ρ .
+                     |X|δ
+Since λ|H|δ „ µpHq ' 1, we find
+                                            |Xj |δ ' |H|´1
+                                                        ρ |X|δ ,       j P JH .                                (5.29)
+By (5.27),
+                     1      ÿ                        1 ÿ               ÿ 1 ÿ
+                                 |πy pA1 ˆ A2 q|δ “         |πz X|δ &             |πz Xj |δ .                  (5.30)
+                  |Y X I| yPY XI                    |Z| zPZ           jPJ
+                                                                          |Z| zPZ
+                                                                                  H
+
+We now seek to find a lower bound for the inner sum. Fix j P JH , and write X 1 :“ Xj . Without
+loss of generality, assume X 1 Ă r0, ρs ˆ r0, 1s.
+   Writing                                        `                 ˘
+                               πz px1 , x2 q “ Sρ ρ´1 x1 ` pρ´1 zqx2 ,
+we see that
+                 πz X 1 “ Sρ πρ´1 z X 2 ,     where X 2 “ Lρ pX 1 q, Lρ : px1 , x2 q ÞÑ pρ´1 x1 , x2 q.
+In particular,
+                               |πz X 1 |δ “ |πρ´1 z X 2 |ρ´1 δ ,      z P Z.
+Consequently, recalling that Z “ Sρ´1 pZq,
+                              1
+
+                              1 ÿ                    1 ÿ
+                                       |πz X 1 |δ “ 1            |πz1 X 2 |ρ´1 δ .                             (5.31)
+                             |Z| zPZ                |Z | z1 PZ 1
+Recall (from below (5.26)) that Z 1 is a pρ´1 δ, t{2q-set. This will enable us to find a good lower
+bound for the right hand side, by applying Corollary 5.24 to X 2 and Z 1 . We start by estimating
+|X 2 |ρ´1 δ . Since X 2 “ Lρ X 1 , we know that |X 2 |ρ´1 δ is the number of pδ ˆ ρ´1 δq-mesh rectangles
+intersecting X 1 . Any such rectangle R satisfies
+                                                 |X 1 X R|δ . δ ´ct ρ´s .
+Indeed, |X 1 X R|δ ď |X X R|δ ď |A2 X Bρ´1 δ |δ and, since A2 is a Katz-Tao pδ, s, δ ´ct q-set, one has
+|A2 X Bρ´1 δ |δ ď δ ´ct ρ´s . We deduce that
+                                                             (5.29)
+                             |X 2 |ρ´1 δ & δ ct ¨ ρs ¨ |X 1 |δ ' δ ct ¨ ρs ¨ |H|´1
+                                                                                ρ ¨ |X|δ .                     (5.32)
+  We claim that in addition X is a Katz-Tao pρ δ, 2s, δ
+                                      2                      ´1
+                                                                  q-set. To see this, fix r P rρ δ, 1s and
+                                                                      ´4cs                                ´1
+
+consider a square Qr “ Ir ˆ Jr of size r in R2 . If px1 , x2 q P X 2 X Q is defined up to an error ρ´1 δ,
+20                       TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+then x2 P A2 X Jr is defined up to ρ´1 δ, and then ρx1 P pA1 ´ y0 x2 q X pρIr q is defined up to δ.
+Therefore,
+
+                             |X 2 X Qr |ρ´1 δ . |A1 X pρIr q|δ ¨ |A2 X Jr |ρ´1 δ
+                                                 ď |A1 X pρIr q|δ ¨ |A2 X Jr |δ .
+
+Since A1 and A2 are Katz-Tao pδ, s, δ ´ct q-sets, the above inequality implies
+
+                                |X 2 X Qr |ρ´1 δ ď δ ´ct ρs rs δ ´s ¨ δ ´ct rs δ ´s
+                                                    ď δ ´2ct ρ´s r2s pρ´1 δq´2s
+                                                             ˆ        ˙2s
+                                                                  r
+                                                    ď δ ´4cs              ,
+                                                               ρ´1 δ
+
+where we used the assumption t ď s and (5.25) for the last inequality.
+   We are ready to apply Corollary 5.24 to X 2 and Z 1 , with parameters ρ´1 δ in place of δ, t{2 in
+place of t, and δ ´4cs in place of K. Recall also that t ď s ď 3{4, so that in particular, t{2 ď s{2 ď s
+and t{2 ď 1{2 ď 2p1 ´ sq. The conclusion is that
+                      1 ÿ                               ct            1
+                                                                        ` t
+                       1
+                                  |πz1 X 2 |ρ´1 δ ' δ 2p1´sq ¨ |X 2 |ρ2´1 8s
+                                                                          δ
+                     |Z | z1 PZ 1
+                                                                  1
+                                                                      ` t
+                                                 ě δ 2ct ¨ |X 2 |ρ2´1 8s
+                                                                      δ
+                                                 (5.32)                                     1       t
+                                                                                  1   t          ` 8s
+                                                  ' δ 2ct ¨ pδ ct ρs |H|´1
+                                                                        ρ q
+                                                                                2 ` 8s ¨ |X| 2
+                                                                                             δ
+                                                    31ct  ` s       ´1
+                                                                       ˘ 12 ` 8st     ´s´  t
+                                                 ' δ 8 ¨ ρ |H|ρ                   ¨δ      4,
+
+
+
+
+using that |X|δ „ |A1 ˆ A2 | ě δ 2ct´2s and t ď s in the last line. This estimate is valid for every
+X 2 :“ Xj2 :“ Lρ pXj q, where j P JH .
+   Recalling (5.30)-(5.31), (5.28) and (5.25), we conclude that
+                         ÿ                       ÿ          ÿ
+                    1
+                 |Y XI|       |πy pA1 ˆ A2 q|δ &      1
+                                                     |Z 1 |   |πz1 Xj2 |ρ´1 δ
+                       yPY XI                             jPJH     z 1 PZ 1
+                                                                   `
+                                                                  31ct        ˘ 12 ` 8st         t
+                                                    ' |H|ρ ¨ δ    ¨ ρs |H|´1
+                                                                   8
+                                                                          ρ              ¨ δ ´s´ 4
+                                                       31     ` ˘1` t      1
+                                                                             ´ t             t
+                                                    ' δ 8 ct ¨ ρs 2 8s |H|ρ2 8s ¨ δ ´s´ 4
+                                                    (5.28)
+                                                        35     ` ˘1` t `   ˘1´ t         t
+                                                     ' δ 8 ct ¨ ρs 2 8s ρ´s 2 8s ¨ δ ´s´ 4
+                                                    (5.25)   40               t
+                                                     ' δ 8 ct ¨ δ ´s´ 4 .
+
+Taking c “ 1{24 we get the desired conclusion.                                                          
+
+
+                    6. A N EXPONENTIAL LOWER BOUND FOR THE EXPONENT
+   With Theorem 5.6 at hand, the proof of Theorem 1.14 follows the same general scheme as
+that of Theorem 1.5. One first proves a flattening statement in the spirit of Lemma 3.1, and then
+applies it iteratively to obtain a measure Πn with Fourier decay.
+   Finally, Lemma 4.1 allows one to compare the Fourier transform of µ1 ⊠ . . . ⊠ µn with that of
+Πn to get the desired inequality.
+                           ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                          21
+
+
+6.1. Flattening lemma. The lemma below is similar to Lemma 3.1, but uses only one additive
+convolution. The bound obtained on the energy of Π should be understood as dimpAB ´ ABq ě
+dim A ` C1 dim B in an energy sense.
+   For the proof, we use an argument originating in the work of Bourgain, Glibichuk and Konyagin [5],
+based on the Balog-Szemerédi-Gowers lemma, see also Li [9] for a setting closer to the one studied
+here.
+Lemma 6.1 (Energy flattening). There exists a universal constant C ą 0 such that for all ǫ ą 0 the
+following holds for all δ ą 0 small enough.
+    Let µ and ν be two probability measures on r1, 2s, and set
+                                             Π “ pµ ⊠ νq ⊟ pµ ⊠ νq.
+Let 0 ă t ď s ď 3{4 and assume Isδ pµq ď δ ´ǫ and Itδ pνq ď δ ´ǫ . Then
+                                                δ
+                                               Is`t{C pΠq ď δ ´Cǫ{t .
+   The key step in the proof of Lemma 6.1 is the following single-scale result.
+Lemma 6.2. Under the assumptions of Lemma 6.1, for all ρ P rδ, δ ǫ{t s one has
+                               kµρ k22 ě ρ´1`s`t{C ùñ kΠρ k22 ď ρτ kµρ k22 ,
+if C is a sufficiently large constant.
+   We postpone the proof of Lemma 6.2 to the next section, and first show how it implies Lemma 6.1.
+Proof of Lemma 6.1, assuming Lemma 6.2. Fix ρ P rδ, δ ǫ{τ s. Combining Lemma 6.2 and the trivial
+bound kΠρ k22 ď kµρ k22 for the case kµρ k22 ď ρ´1`s`τ , we get
+                                         ρ1´s´τ kΠρ k22 ď 1 ` ρ1´s kµρ k22 .
+For ρ P rδ ǫ{τ , 1s, we use the simple bound
+                                              ρ1´s´τ kΠρ k22 ď δ ´ǫ{τ .
+Thus,
+                                         ÿ
+                       δ
+                      Is`τ pΠq .                 ρ1´s´τ kΠρ k22
+                                   δďρ“2´k ď1
+                                                                          ÿ
+                                . plog 1{δqδ ´ǫ{τ ` plog 1{δq `                  ρ1´s kµρ k22
+                                                                    δďρ“2´k ď1
+
+                                . plog 1{δqδ ´ǫ{τ ` Isδ pµq.
+                                                                                                        
+6.2. Proof of Lemma 6.2. We begin with an elementary lemma that relates measures with small
+energy and the non-concentration property for discretised sets.
+Lemma 6.3 (Energy and non-concentrated subsets). Let ν be a probability measure on r0, 1s such that
+Isρ pνq ă ρ´2τ . Any union of ρ-intervals A Ă r0, 1s such that νρ pAq ě ρτ contains a pρ, s, ρ´6τ q-set A1
+such that νpA1 q ě ρ2τ .
+Proof. Indeed, from Lemma 3.8, there exists a set E with measure νpEq ď plog 1{ρqρ2τ such that
+for all x R E, for all r P rρ, 1s,
+                                           νpBpx, rqq ď ρ´4τ rs .
+The set A1 “ AzE satisfies νpA1 q ě ρτ {2. Taking dyadic level sets 2´k , for k “ 0, . . . , log 1{ρ, we
+may further restrict A1 to a subset A1 such that νpA1 q ě ρ2τ and the density of νρ is essentially
+constant on A1 :
+                                   DD ą 0 : @x P A1 , D ď νρ pxq ď 2D.
+22                        TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+Then, for all x in A1 and all r ě ρ,
+                   |A1 X Bpx, rq|ρ   νρ pA1 X Bpx, rqq
+                                   —                   . ρ´2τ νρ pBpx, rqq ď ρ´6τ rs .
+                        |A1 |ρ            νρ pA1 q
+Enlarging the implicit constant, one readily checks that this estimate holds in fact for all x in
+R. (Indeed, if Bpx, rq X A1 “ ∅, there is nothing to prove, and if Bpx, rq, XA1 Q x0 , then write
+Bpx, rq Ă Bpx0 , 2rq.) This shows that A1 is a pρ, s, ρ´6τ q-set.                              
+Proof of Lemma 6.2. Let τ “ t{C, for some large enough universal constant C. Assume
+                                                  kµρ k22 ě ρ´1`s`τ .                                  (6.4)
+We wish to show the flattening estimate
+                                                  kΠρ k22 ď ρτ kµρ k22 .                               (6.5)
+Assume, for the sake of contradiction, that (6.5) fails. We discretise the measure µ at scale ρ
+using dyadic level sets, and then use the quantitative projection estimate obtained in the previous
+section to derive a contradiction.
+
+Step 1: Choosing large level sets for µ
+It is easy to check that there exist sets Ai Ă r1, 2s, i ě 0, which can be expressed as unions of
+ρ-intervals, such that Ai is empty for i & log ρ1 , and
+                                            ÿ
+                                      µρ .     2i 1Ai . µ3ρ ` 1.                             (6.6)
+                                                      iě0
+
+We have                                               ¨
+                    pµρ ⊠ νq ⊟ pµρ ⊠ νq “                     pµρ ⊠ δx q ⊟ pµρ ⊠ δy q dνpxq dνpyq.
+                                                       RˆR
+Therefore, from the left inequality in (6.6),
+                                      ÿ          ¨
+                                             i`j
+              pµρ ⊠ νq ⊟ pµρ ⊠ νq .        2       p1Ai ⊠ δx q ⊟ p1Aj ⊠ δy q dνpxq dνpyq.
+                                              i,jě0
+
+Observe that 1Ai ⊠ δx “ |x|          ´1
+                                          1xAi and 1Aj ⊠ δy “ |y|´1 1yAj . Since spt ν Ă r1, 2s, the factors
+|x|´1 , |y|´1 lie in r 21 , 1s, so
+                                                       ÿ                ¨
+                                                                  i`j
+                      pµρ ⊠ νq ⊟ pµρ ⊠ νq .                   2             1xAi ⊟ 1yAj dνpxq dνpyq.
+                                                      i,jě0
+
+The triangle inequality shows that
+                         ÿ       ¨
+                            2i`j   k1xAi ⊟ 1yAj k2 dνpxq dνpyq & kΠρ k2 .
+                            i,jě0
+                      `        ˘
+There are at most O plog ρ1 q2 / 1 terms in this sum (here and below, we use / to hide logarithmic
+functions of ρ). Hence, there exist i, j ě 0 such that
+                                  ¨
+                              i`j
+                            2       k1xAi ⊟ 1yAj k2 dνpxq dνpyq ' kΠρ k2 .                    (6.7)
+
+From now on we fix such i and j. Note that, by (6.6) and Young’s inequality, for all x, y,
+                              2i`j k1xAi ⊟ 1yAj k2 . kµ3ρ k1 kµ3ρ k2 . kµρ k2 .
+In particular, under our counter-assumption kΠρ k22 ě ρτ kµρ k22 , one finds that (if ρ is small enough)
+there exists x such that the set
+                                                                         (
+                             Y0 “ y : 2i`j k1xAi ⊟ 1yAj k2 ě ρτ kµρ k2                              (6.8)
+                              ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                                                    23
+
+
+satisfies
+                                                                τ                τ
+                                         νpY0 q ' ρ 2 ´ ρτ ě ρ 2 .                                                                (6.9)
+We fix this value of x for the rest of the proof.
+  Observe that, by (6.6),
+                      1 & 2i k1xAi k1 „ 2i |Ai |       and kµρ k2 & 2i k1xAi k2 „ 2i |Ai |1{2 ,                                  (6.10)
+where | ¨ | denotes the Lebesgue measure, and similarly
+                      1 & 2j k1yAj k1 „ 2j |Aj |       and kµρ k2 & 2j k1yAj k2 „ 2j |Aj |1{2 .                                  (6.11)
+Using also the definition of Y0 and Young’s inequality, we find
+                                                                                                      1
+                       ρτ ¨ kµρ k2 ď 2i`j k1xAi ⊟ 1yAj k2 . 2i |Ai | ¨ 2j |Aj | 2 ,                           y P Y0 .
+Using (6.10) and (6.11) above, as well as the symmetry between i and j, we deduce that
+                                                                    1                                          1
+            2i |Ai | & ρτ ,     2j |Aj | & ρτ   and       2i |Ai | 2 & ρτ kµρ k2 ,                    2j |Aj | 2 & ρτ kµρ k2 .   (6.12)
+We record the following useful consequence of the estimates above:
+                                 (6.12)            1
+                                                       (6.10)                              1                       1
+                          }µρ }2 . ρ´τ 2i |Ai | 2 . ρ´τ |Ai |´1 |Ai | 2 “ ρ´τ |Ai |´ 2 ,
+so (also by the symmetry of i and j)
+                                                                                 (6.4)
+                                  maxt|Ai |, |Aj |u . ρ´2τ }µρ }´2
+                                                                2  ď ρ1´s´3τ .                                                   (6.13)
+
+Step 2: Additive-multiplicative Balog-Szemerédi-Gowers
+It follows from the definition (6.8) that for every y P Y0 ,
+                                k1xAi ⊟ 1yAj k22 ě ρ2τ ¨ 2´2i´2j ¨ kµρ k22
+                                                                                 1                        1
+                                                   & ρ2τ ¨ 2´i ¨ |Ai | 2 ¨ 2´j ¨ |Aj | 2 .
+Since 2i |Ai | . 1 by (6.10), and likewise for Aj , this yields
+                                                                                 3                3
+                                      k1xAi ⊟ 1yAj k22 & ρ2τ ¨ |Ai | 2 ¨ |Aj | 2 .                                               (6.14)
+The left-hand side is equal to the additive energy of xAi and yAj so, by the Balog-Szemerédi-
+Gowers lemma (see e.g.[20, Theorem 5.2]), this implies that for every y in Y0 , there exist sets
+Āy Ă xAi and Ā1y Ă Aj such that |Āy |ρ & ρ2τ |Ai |ρ and |Ā1y |ρ & ρ2τ |Aj |ρ and
+                                                                    1            1       (6.13)
+                               |Āy ´ y Ā1y |ρ . ρ´14τ ¨ |Ai |δ2 ¨ |Aj |δ2 . ρ´17τ ´s .                                         (6.15)
+Recall that Ai is a union of ρ-intervals and µρ is constant on Ai , up to a multiplicative factor.
+Using also that
+                                                        (6.6)           (6.12)
+                                       µρ pAi q & 2i |Ai | & ρτ ,
+one has µρ pĀy q & ρ3τ . Since δ ´ǫ ď ρ´τ by assumption, we may use Lemma 6.3 to find a
+pρ, s, ρ´20τ q-set Ay Ă Āy with µρ pAy q & ρ6τ . Similarly, we may find a pρ, s, ρ´20τ q-set A1y Ă Ā1y
+with µρ pA1y q & ρ6τ . One has in particular |Ay |ρ ě ρ´s`20τ and |A1y |ρ ě ρ´s`20τ , so (6.15) yields
+                                                                    1                1
+                               |Ay ´ yA1y |ρ . ρ´40τ ¨ |Ay |ρ2 ¨ |A1y |ρ2 ,                       y P Y0 .
+For subsets A, A Ă R and N ě 1, let us write A «pN q A if
+                  1                                                        1
+
+
+                                          |A ´ A1 |ρ / ρ´N τ |A|1{2 1 1{2
+                                                                ρ |A |ρ .
+
+For instance, the above bound on |Ay ´ yA1y |δ can be rewritten
+                                                   Ay «p40q yA1y .                                                               (6.16)
+24                        TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+Ruzsa’s triangle inequality (see [7, Proposition 3.5] for the discretised version) can be summarised
+as: the relation « is transitive i.e. A « A1 and A1 « A2 implies A1 « A2 . More precisely,
+                         pA «pN q A1 and A1 «pN 1 q A2 q         ùñ      A «pN `N 1 q A2 .                    (6.17)
+Taking ρ-neighborhoods if necessary, we may assume that |Ay |ρ „ ρ                 ´1
+                                                                                        |Ay | and similarly for A1y .
+Write X “ xAi ˆ Aj Ă r0, 1s2 and Xy “ Ay ˆ A1y Ă X. Note that
+                                          |Xy |ρ & ρ20τ |X|ρ ,     y P Y0 .
+Let νş0 :“ νpY0 q´1 ν|Y0 . From Fubini and the Cauchy-Schwarz inequality applied to the function
+u ÞÑ Y 1Xy puq dν0 pyq, we infer that
+              ¨                                    ¨  ż
+                      |Xy X Xz | dν0 pyq dν0 pzq “      1Xy XXz puq du dν0 pyq dν0 pzq
+                 Y ˆY                                    Y ˆY
+                                                        ˆż ż                       ˙2
+                                                    ě            1Xy puq du dν0 pyq & ρ40τ |X|.
+                                                          Y
+The same inequality holds for the ρ-covering numbers. Hence, for some y‹ P Y0 ,
+                               ż
+                                  |Xy X Xy‹ |ρ dν0 pyq & ρ40τ |X|ρ .
+                                      Y
+Since also |Xy X Xy‹ |ρ ď |X|ρ for all y P Y0 , we see that
+                                                 "                      *
+                               40τ                              1 40τ
+                  ν0 pY1 q & ρ     where Y1 “ y : |Xy X Xy‹ |ρ ' ρ |Xρ | .
+                                                                2
+Recalling (6.9), we see that νpY1 q & ρ41τ . By Lemma 6.3 and the assumption that δ ´ǫ ď ρ´τ , there
+exists a non-empty pρ, s, ρ´250τ q-set Y Ă Y1 .
+   Abbreviate Ay‹ “: A‹ and A1y‹ “: A1‹ , thus Xy‹ “ A‹ ˆ A1‹ . Then, for every y P Y ,
+                          |Ay X A‹ |ρ ' ρ40τ |A1 |ρ and |A1y X A1‹ |ρ ' ρ40τ |A2 |ρ .                         (6.18)
+For y P Y , by (6.16),
+                                            Ay «p40q yA1y «p40q Ay
+so Ruzsa’s triangle inequality in the form (6.17) yields
+                                                  Ay «p80q Ay .
+Using (6.18) and the definition of the symbol «, we get Ay X A‹ «p120q Ay , and for the same
+reason Ay X A‹ «p120q A‹ . Hence, for y P Y we have
+                A‹ «p120q Ay X A‹ «p120q Ay «p40q yA1y «p120q ypA1y X A1‹ q «p120q yA1‹ ,
+and therefore
+                                                                               1          1
+                         |πy pA‹ ˆ A1‹ q|ρ “ |A‹ ´ yA1‹ |ρ / ρ´520τ ¨ |A‹ |ρ2 ¨ |A1‹ |ρ2 .                    (6.19)
+From A‹ “ Ay‹ Ă xAi and (6.13),
+                                          |A‹ |ρ . ρ´1 |Ai | . ρ´s´3τ ,
+and similarly |A1‹ |ρ . ρ´s´3τ , so (6.19) implies
+                                          |πy pA‹ ˆ A1‹ q|ρ . ρ´s´523τ .                                      (6.20)
+                                                                          c0
+Let c0 “ 24
+          1
+            be the universal constant given by Theorem 5.6. Choosing τ “ 524 t, we find that Y ,
+A‹ and A‹ are pρ, s, ρ
+         1             ´c0 t
+                             q-sets, so there exists y P Y such that
+                                          |πy pA‹ ˆ A1‹ q|ρ ě ρ´s´c0 t .
+This contradicts (6.20) and therefore (6.5) must hold.                                                            
+                         ON THE FOURIER DECAY OF MULTIPLICATIVE CONVOLUTIONS                             25
+
+
+6.3. Proof of quantitative Fourier decay. The conclusion of the proof of Theorem 1.14 uses the
+flattening lemma, the base case Proposition 2.1, and the elementary Lemma 4.1 to reorganise
+additive and multiplicative convolutions.
+Proof of Theorem 1.14. Recall the hypotheses: µ1 , . . . , µn are probability measures on r1, 2s satisfy-
+ing Iσδ pµi q ď δ ´ǫ for all 1 ď i ď n, where σ ą 0, n ě Cσ ´1 ě 2 and ǫ P p0, ǫpσqs. In fact, it turns
+out that the (absolute) constant C ě 1 can be taken to be C “ 4C0 , where C0 ě 1 is the absolute
+constant provided by Lemma 6.1. With this notation, we will need
+                                                               σ rC0 {σs
+                                           0 ă ǫ ă ǫpσq :“                .                          (6.21)
+                                                              43C rC0 {σs
+Under these hypotheses, we claim that
+                              |pµ1 ⊠ ¨ ¨ ¨ ⊠ µn q^ pξq| ď δ τ ,             |ξ| „ δ ´1 ,
+                 ´1
+where τ ě e´Cσ , and provided that δ ą 0 is sufficiently small.
+  We assume that σ ă 43 , since otherwise the conclusion follows from Proposition 2.1. Write
+                                               ℓ :“ rC0 {σs ď n{2.                                   (6.22)
+Define Π1 “ µ1 , and for 2 ď k ď ℓ,
+                                   Πk “ pΠk´1 ⊠ µk q ⊟ pΠk´1 ⊠ µk q.
+By a single application of Lemma 6.1 to the measures µ1 , µ2 , we find Iσ`σ{C0 pΠ2 q ď δ ´C0 ǫ{σ .
+Next, a second application Lemma 6.1 to the measures Π2 and µ3 shows that
+                                                                              2    2
+                                  I C3σ pΠ3 q . Iσ`2σ{C0 pΠ3 q ď δ ´C0 ǫ{σ ,
+                                       0
+
+provided that δ ą 0 is small enough. Fix η :“ 43   1
+                                                     ă 16 ´ 71 . Continuing in this manner at most ℓ
+times and recalling the choice of ǫ in (6.21), we find
+                                                                   ℓ    ℓ
+                                  I δ2 pΠℓ q ď I δℓσ pΠℓ q ď δ ´C0 ǫ{σ ď δ ´η ,
+                                   3             C0
+
+
+provided again that δ ą 0 is small enough. Using the general inequality }νδ }22 . δ s´1 Isδ pνq for
+0 ă s ă 1, we infer that
+                            I δ2 pΠℓ q ď δ ´η      ùñ      }pΠℓ qδ }22 . δ p2{3´ηq´1 .               (6.23)
+                             3
+
+For reasons to become apparently shortly, we then perform a similar construction for the meas-
+ures tµℓ`1 , . . . , µ2ℓ u Ă tµ1 , . . . , µn u. Let Π11 “ µℓ`1 and for 2 ď k ď ℓ,
+                                 Π1k “ pΠ1k´1 ⊠ µℓ`k q ⊟ pΠ1k´1 ⊠ µℓ`k q.
+By exactly the same reasoning which led to (6.23), we now have
+                                             }pΠ1ℓ qδ }22 . δ p2{3´ηq´1 .
+Proposition 2.1 now implies that for all |ξ| „ δ ´1 ,
+                                                      p4{3´2ηq´1        1
+                                 |Π{
+                                                                                       1
+                                        1
+                                   ℓ ⊠ Πℓ pξq| . δ         2       “ δ 6 ´η ă δ 7 ,
+since η ă 61 ´ 71 . Applying Lemma 4.1 to µ “ Πℓ´1 ⊠ µℓ and ν “ Π1ℓ , we get
+                           |ppΠℓ´1 ⊠ µℓ q ⊠ Π1ℓ q^ pξq|2 ď |Π{
+                                                                                             1
+                                                                  1
+                                                             ℓ ⊠ Πℓ pξq| ď δ 7
+
+and repeating this argument ℓ ´ 1 times,
+                                                                       ℓ´1        1
+                                  |pµ1 ⊠ ¨ ¨ ¨ ⊠ µℓ ⊠ Π1ℓ q^ pξq|2           ď δ7.
+Lemma 4.1 applied again ℓ ´ 1 times for Π1ℓ yields
+                                                                                  ℓ´1            1
+                          |pµ1 ⊠ ¨ ¨ ¨ ⊠ µℓ ⊠ µℓ`1 ⊠ ¨ ¨ ¨ ⊠ µ2ℓ q^ pξq|4                  ď δ7
+26                            TUOMAS ORPONEN, NICOLAS DE SAXCÉ, AND PABLO SHMERKIN
+
+
+and thus                                                                    ´p2ℓ`1q
+                                   |pµ1 ⊠ ¨ ¨ ¨ ⊠ µ2ℓ q^ pξq| ď δ 2    .                              (6.24)
+Writing pµ1 ⊠ ¨ ¨ ¨ ⊠ µn q pξq as an average of pµ1 ⊠ ¨ ¨ ¨ ⊠ µ2ℓ q paξq, for a P sptpµ2ℓ`1 ⊠ ¨ ¨ ¨ ⊠ µn q Ă
+                          ^                                         ^
+
+r1, 8q, the same bound holds for |pµ1 ⊠ ¨ ¨ ¨ ⊠ µn q^ pξq|. Recalling (6.22) and letting τ “ 2´p2ℓ`1q ě
+               ´1
+2´3ℓ ě 2´4C0 σ , we conclude that
+                                    |pµ1 ⊠ . . . ⊠ µn q^ pξq| ď δ τ ,         |ξ| „ δ ´1 .
+                                                                                                                             
+
+                                                       R EFERENCES
+ [1] Jean Bourgain. Multilinear exponential sums in prime fields under optimal entropy condition on the sources. Geom.
+     Funct. Anal., 18(5):1477–1502, 2009. 3
+ [2] Jean Bourgain. The discretized sum-product and projection theorems. J. Anal. Math., 112:193–236, 2010. 1, 3, 4, 6
+ [3] Jean Bourgain and Semyon Dyatlov. Fourier dimension and spectral gaps for hyperbolic surfaces. Geom. Funct. Anal.,
+     27(4):744–771, 2017. 1
+ [4] Jean Bourgain and Alex Gamburd. On the spectral gap for finitely generated subgroups of SU p2q. Inventiones Math-
+     ematicae, 171:83–121, 2008. 10
+ [5] Jean Bourgain, Alexey A. Glibichuk, and Sergei V. Konyagin. Estimates for the number of sums and products and
+     for exponential sums in fields of prime order. J. London Math. Soc. (2), 73(2):380–398, 2006. 21
+ [6] Kenneth Falconer. Fractal geometry. John Wiley & Sons, Ltd., Chichester, third edition, 2014. Mathematical founda-
+     tions and applications. 3
+ [7] Larry Guth, Nets Hawk Katz, and Joshua Zahl. On the discretized sum-product problem. Int. Math. Res. Not. IMRN,
+     (13):9769–9785, 2021. 24
+ [8] Robert Kaufman. On Hausdorff dimension of projections. Mathematika, 15:153–155, 1968. 13
+ [9] Jialun Li. Discretized sum-product and Fourier decay in Rn . J. Anal. Math., 143(2):763–800, 2021. 1, 21
+[10] John M. Marstrand. Some fundamental geometrical properties of plane sets of fractional dimensions. Proc. Lond.
+     Math. Soc. (3), 4:257–302, 1954. 13
+[11] Pertti Mattila. Geometry of sets and measures in Euclidean spaces. Fractals and rectifiability. 1st paperback ed. Cambridge
+     University Press, 1999. 2, 10
+[12] Tuomas Orponen and Pablo Shmerkin. On the Hausdorff dimension of Furstenberg sets and orthogonal projections
+     in the plane. Duke Math. J. (to appear). 15, 16
+[13] Tuomas Orponen and Pablo Shmerkin. Projections, Furstenberg sets, and the ABC sum-product problem. Preprint,
+     arXiv:2301.10199, January 2023. 3, 8, 14, 16, 18
+[14] Tuomas Orponen, Pablo Shmerkin, and Hong Wang. Kaufman and Falconer estimates for radial projections and a
+     continuum version of Beck’s theorem. Geom. Funct. Anal., to appear, 2022. arXiv:2209.00348v1.pdf. 3, 8
+[15] Kevin Ren and Hong Wang. Furstenberg sets estimate in the plane. Preprint, arXiv:2308.08819v2, 2023. 5, 13, 14, 15
+[16] Tuomas Sahlsten and Connor Stevens. Fourier transform and expanding maps on Cantor sets. Amer. J. Math., Accep-
+     ted for publication, 2022. 1
+[17] Pablo Shmerkin. On Furstenberg’s intersection conjecture, self-similar measures, and the Lq norms of convolutions.
+     Ann. of Math. (2), 189(2):319–391, 2019. 15
+[18] Pablo Shmerkin and Hong Wang. Dimensions of Furstenberg sets and an extension of Bourgain’s projection theorem.
+     Anal.PDE, to appear, 2022. arXiv:2211.13363. 15
+[19] Pablo Shmerkin and Hong Wang. On the distance sets spanned by sets of dimension d{2 in Rd . Preprint,
+     arXiv:2112.09044v2, 2022. 16
+[20] Terence Tao. Product set estimates for non-commutative groups. Combinatorica, 28(5):547–594, 2008. 23
+
+     D EPARTMENT OF M ATHEMATICS AND S TATISTICS , U NIVERSITY OF J YVÄSKYLÄ , P.O. B OX 35 (M A D), FI-40014 U NI -
+VERSITY OF J YVÄSKYLÄ , F INLAND
+     Email address: tuomas.t.orponen@jyu.fi
+
+     CNRS, LAGA, U NIVERSITÉ S ORBONNE PARIS N ORD , 99 AVENUE J.-B. C LÉMENT, 93430 V ILLETANEUSE , FRANCE
+     Email address: desaxce@math.univ-paris13.fr
+
+  D EPARTMENT OF M ATHEMATICS , T HE U NIVERSITY OF B RITISH C OLUMBIA , 1984 M ATHEMATICS R OAD , VANCOUVER ,
+BC, C ANADA
+  Email address: pshmerkin@math.ubc.ca
+
