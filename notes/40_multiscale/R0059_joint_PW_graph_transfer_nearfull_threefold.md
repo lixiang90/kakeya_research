@@ -1,3 +1,5 @@
+> R0060范围更新：whole-axis近S时全部λ³/weightsα已由 notes/40_multiscale/R0060_majority_projection_full_density_threefold.md 闭合；本文仅Yi近S的更宽支撑定理仍保持其原nearfull范围，不免费全λ扩张。
+
 # R0059：用原联合PW计数支付一般余维三维颗粒的近满阴影
 
 2026-10-17，root。先宏观及phase-I排重，working_spec §7锁定此任务后施工。下面是具名外部输入下的完整应用证明，未经外部同行评审；不是普通五维Kakeya证明或重大性/新颖性认证。共同核quotient的joint3AD提取没有解决，也不作为本证明假设。

@@ -1,3 +1,5 @@
+> R0060范围更新：本文完整whole-axis G3/allλ³/weightsα现由 notes/40_multiscale/R0060_majority_projection_full_density_threefold.md 在具名OAI3-critical/KR/Paw输入下闭合；旧global angular投影反攻仍正确。
+
 > R0059范围更新：unweighted原δ方向分离的nearfull平均shading区域已由 notes/40_multiscale/R0059_joint_PW_graph_transfer_nearfull_threefold.md 的新jointPW机制闭合（n=5）；本文旧global angular投影反攻仍正确。本文全λ统一λ³及任意权α目标仍未据此解决，不把nearfull替代全密度。
 
 # R0055：一般threefold门槛、全局投影反攻与原质量账本
