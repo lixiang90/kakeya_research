@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-17，R0049提前macro：真实source先sticky/AD；保原globalmass迫q≥δa/J≥δ5a，blockheavy、代表/CW/密度和deficit共同小损已付；额外allscaleN_s≤δ^-ηs^-4可树提AD4core并保原marks/亏损。一般smallunion不供该cover，E5*未证未否，停止初始化，不续coarseentropy/parent/η。下一唯一 notes/20_dimension_lifting/curved_lifting/R0049_next_nonlinear_coherent_lift_gate.md，真lifting2609.06299v1的空间非线性π class严格超旧LIFT005 affine，直接只是forward曲线机制。34PDF/37sources/78IDs，无新高维界/major，Goalactive。
+更新2026-10-17，R0050等价性纠正macro：parameter-linear目标的任意smooth保clock/fullw/Θw0 coherent lift经同P全时变分给真实affine lift，存在性等价；LIFT005原scope限制过强已更正，diag1,2的整个smooth(1,0)类排除。一般s≥rankB且允许方向loss时标准构造达到；非π本体必须affine，不是新高维界/major，不增ID。下一唯一 notes/00_map/R0050_next_global_frontier_and_critical_path_gate.md，R51周期全局前沿与关键路径审视，不续相邻lifting参数。34PDF/37sources/78IDs，Goalactive。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -13,7 +13,7 @@
 | H | 多轴flag | 条件外积工具保留，current signature及投影有严格障碍 | generic自动匹配/投影frozen；先解决前端初始化 |
 | I | 四维加权plank | PLK-001严格否WP4；PLK-002转换无新几何，专用source调用另论 | 一般加维版本frozen |
 | J | j3 horizon与前端completion | HOR-003在实际f≡0/S1及原visible density有界下仍M/6≤H≤M；uniform H≤C(L+κ)在κ0也失败 | 整个visible-cost completion策略frozen；不得接着追加同义统计条件 |
-| K | 曲线到直线的coherent lifting | LIFT-005完整分类任意smooth空间仿射/原clock的codim1：B0或rankB=rankB²=1；diag(1,2)排除 | 本窄类已完成并frozen，不继续clock/normal form细节；一般非线性π未排除 |
+| K | 曲线到直线的coherent lifting | LIFT-005经R50同P全时第一变分覆盖一般smooth保clock的parameter-linear目标；s≥rankB，s1/fullrank iff B0或rankB=rankB²1 | 完整类frozen；R12/R49 affine-only范围已更正，不续Hessian/clock邻近轮 |
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
 | M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
 | N | 真实sticky五维矩阵分支 | MNL001保留；R18原W boundedgraph和1+gamma增量cap、严格否抹g独立化；无完整matrix结论 | open；Y-only与W/BSG/common-plane局部迭代均frozen，须新估计支付提取/原time回传 |
@@ -100,3 +100,6 @@ R0048 research/reviews/R0048_macro.md；root/A/B/twoformal及source版本详lite
 
 
 R0049 research/reviews/R0049_macro.md；root8/A11/B8/twoformal/source信息见literature/metadata/R0049_source_check.json。源(3.5)字面outer常比需付费、onecallheavy可修，不宣整P3.2修复或原定理反例；所有高级具名责任保持。general→sticky缺口不改名coarseentropy续轮。FG边界正则输入已入库但无新finitefootprint机制不选；下一一般nonlinearπ保t/全w,y,ρ/rank，先核真2609Def而非另一GAFA文章，不套旧affine分类。下一常规macroR51，失败提前。
+
+
+R0050 research/reviews/R0050_macro.md；root8/A10/B6/twoformal及同ID当前结果见literature/metadata/R0050_source_check.json。七处旧scope/开轮陈述加显著更正banner，原历史保留。函数class较大不保证存在性新问题，精确双向变分构造优先于重名；无新高维界/major。下一R51按周期真正比较前沿与完整高维路径，只选一个不等价后继；R49一般E5*及其它冻结缺口不因本分类消失。

@@ -1,5 +1,7 @@
 # R0012：非标准空间仿射 lift 的构造攻击与核约束
 
+> **R0050范围更正（2026-10-17）：** 下文保留开轮/历史论述。对目标 `w+F(t)y`，在同一个参数点沿同一条lift直线取第一变分，可构造同codimension和方向rank的真正全时affine lift。因此一般smooth与affine的**存在性等价**，旧文“空间affine为实质限制/一般nonlinear未排除/需逼原π affine”的判断不再成立；原π本身仍可真正非线性。完整更正见 [R50主证明](R0050_variational_equivalence_and_full_smooth_lift_classification.md)，当前登记为 `results/reviewed/LIFT-005_full_smooth_variational_classification.md`。不新增ID或重大性声明，换clock/selector/Θ依赖w等边界保留。
+
 2026-10-17。作者：`lifting_obstructions`。对象：N5-CURVE-LIFT-01，B=diag(1,2)，保留原时钟、空间仿射的 (1,0)-lift。独立核查结论：非标准光滑 T(t) 与非线性参数化不能绕过障碍；下文证明全部指定类均不可能。另核 root 提出的自然 rank-one 补充分类。已由audit_four_dimensional交叉独审通过，见research/reviews/R0012_construction_attack_review.md；不声称新颖性、Kakeya 维数改善或重大中间结果。
 
 ## 1. 一手定义及本轮量词

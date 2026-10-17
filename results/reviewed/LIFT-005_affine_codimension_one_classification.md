@@ -1,5 +1,7 @@
 # LIFT-005：保留原时钟的空间仿射codimension-one提升分类
 
+> **R0050范围更正（2026-10-17）：** 下文保留开轮/历史论述。对目标 `w+F(t)y`，在同一个参数点沿同一条lift直线取第一变分，可构造同codimension和方向rank的真正全时affine lift。因此一般smooth与affine的**存在性等价**，旧文“空间affine为实质限制/一般nonlinear未排除/需逼原π affine”的判断不再成立；原π本身仍可真正非线性。完整更正见 [R50主证明](../../notes/20_dimension_lifting/curved_lifting/R0050_variational_equivalence_and_full_smooth_lift_classification.md)，当前登记为 `results/reviewed/LIFT-005_full_smooth_variational_classification.md`。不新增ID或重大性声明，换clock/selector/Θ依赖w等边界保留。
+
 2026-10-17，R0012。内部独立审查通过；未经外部同行评审，不声称新颖性、重大结果或Kakeya维数改善。
 
 令m=n−1≥2，X_B(w,t;y)=w+(tI_m+t²B)y。允许任意光滑T(t),c(t),a(y,w,ρ),Θ(y,ρ)，ρ为一维，要求

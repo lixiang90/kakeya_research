@@ -82,3 +82,6 @@ R0048 boundedprimaryfrontier/version审：OAI当前official tree核paper.pdf同b
 
 
 R0049新增Fu–Gan2009.09108v2，公开原PDF208052bytes/14页与提取文本、来源hash齐存，root/A读1–5、root第一页视觉核；boundaryHolder或W1p/continuous假设仅作macro候选，不供roughfinite桥。现34PDF/37sources。WZ2025v2PDF13(3.5)outer责任及localonecall修复、当前v2/AMS未读刊本边界、WZ2026真实AD极值类详metadata/R0049_source_check.json。lifting2609.06299v1与Bourgaincondition2511.10918/GAFA00750-4明确不同，不混版本或证明输入。
+
+
+R0050无新PDF，仍34PDF/37sources。实际重读lifting2609.06299v1的定义/forwardproof/标准rank构造和旧三稿，完成LIFT005同P全时变分范围纠正；有界primary术语比对不认证新颖性或全局priority。源最新版本沿R49核查，不虚报本轮重新核版本；详metadata/R0050_source_check.json。

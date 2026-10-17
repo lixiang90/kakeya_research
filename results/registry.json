@@ -1,6 +1,6 @@
 {
   "updated_on": "2026-10-17",
-  "latest_round": "R0049",
+  "latest_round": "R0050",
   "goal_solved": false,
   "major_intermediate_result_claimed": false,
   "items": [
@@ -617,49 +617,61 @@
     },
     {
       "id": "N5-CURVE-LIFT-01",
-      "status": "completed_full_smooth_spatial_affine_classification_target_lift_impossible",
+      "status": "completed_full_smooth_time_preserving_classification_target_lift_impossible",
       "kind": "coherent_curved_to_linear_lifting_for_n3_invertible_quadratic_family",
       "specification": "research/rounds/R0012_working_spec.md",
       "stop_after_main_rounds_without_new_input": 1,
       "depends_on": [
         "Definition 2.1 of Nadjimzadah-curved-lifting-2026v1",
-        "arbitrary smooth spatial-affine time-preserving submersion",
-        "intercept-independent slopes and full ruling-direction rank"
+        "arbitrary smooth time-preserving submersion, full open w and coherent rho domain",
+        "Theta independent of w and full direction rank; exact parameter-linear target"
       ],
-      "target": "For B=diag(1,2), construct or rigorously exclude a (1,0)-lift with pi_t(z)=T(t)z+c(t), rank T=2; arbitrary smooth a and Theta, Theta independent of w and D_(y,rho)Theta rank 3.",
-      "scope_warning": "A negative result is restricted to spatial-affine time-preserving lifts. A positive result would imply a three-dimensional curved consequence conditional on OAI4, not a reverse proof of five-dimensional Kakeya.",
+      "target": "For B=diag(1,2), construct or exclude any smooth time-preserving coherent (1,0)-lift, rank Dz pi=2, rank D_(y,rho)Theta=3; arbitrary smooth a and Theta independent of w.",
+      "scope_warning": "R0050 corrects the old affine-only restriction: exact same-point first variation gives equivalent affine existence. Entire specified smooth class is excluded; no changed-clock/selector or inverse five-dimensional Kakeya conclusion.",
       "kakeya_result": false,
       "major_intermediate_result": false,
       "results": [
         "LIFT-005"
       ],
-      "decision": "research/reviews/R0012_macro.md"
+      "decision": "research/reviews/R0050_macro.md",
+      "scope_correction_specification": "research/rounds/R0050_working_spec.md"
     },
     {
       "id": "LIFT-005",
       "status": "internally_cross_reviewed",
-      "kind": "codimension_one_time_preserving_spatial_affine_quadratic_lift_classification",
-      "file": "results/reviewed/LIFT-005_affine_codimension_one_classification.md",
+      "kind": "full_smooth_time_preserving_parameter_linear_quadratic_lift_classification",
+      "file": "results/reviewed/LIFT-005_full_smooth_variational_classification.md",
       "independent_reviews": [
         "research/reviews/R0012_affine_classification_review.md",
-        "research/reviews/R0012_construction_attack_review.md"
+        "research/reviews/R0012_construction_attack_review.md",
+        "research/reviews/R0050_geometry_and_source_review.md",
+        "research/reviews/R0050_construction_and_rank_review.md"
       ],
-      "root_review": "research/reviews/R0012_root_integration_review.md",
+      "root_review": "research/reviews/R0050_root_integration_review.md",
       "depends_on": [
         "full open intercept parameter w",
         "Theta independent of w",
-        "coherent full ruling domain",
-        "spatial-affine submersion and original time parameter",
-        "elementary constant right-inverse and matrix polynomial identity"
+        "coherent full ruling domain and entire nondegenerate time interval",
+        "smooth time-preserving submersion; no spatial-affine restriction",
+        "exact same-parameter first variation, constant right inverse and matrix polynomial minors"
       ],
       "classification": "Exists iff B=0 or rank B=rank B^2=1, for m=n-1>=2 and one ruling parameter",
       "arbitrary_smooth_parameterizations_covered": true,
       "rank_two_B_codimension_one_lift_refuted": true,
-      "general_nonlinear_submersion_excluded": false,
+      "general_nonlinear_submersion_excluded": true,
       "time_reparameterization_excluded": false,
       "novelty": "not_claimed",
       "kakeya_result": false,
-      "major_intermediate_result": false
+      "major_intermediate_result": false,
+      "historical_affine_result": "results/reviewed/LIFT-005_affine_codimension_one_classification.md",
+      "previous_root_review": "research/reviews/R0012_root_integration_review.md",
+      "general_nonlinear_submersion_excluded_scope": "Codimension-one full-direction lifts are excluded only when B fails the stated classification, in particular rank B>=2 and B=diag(1,2). This is the full-coherence parameter-linear target with original clock; B=0 and nonnilpotent rank-one B admit genuinely nonlinear projections. No exclusion of all curved targets, selectors, or changed clocks.",
+      "smooth_affine_existence_equivalence_reviewed": true,
+      "minimal_codimension_with_direction_loss": "rank B",
+      "scope_corrected_in": "R0050",
+      "new_ID_registered_in_R0050": false,
+      "current_proof": "notes/20_dimension_lifting/curved_lifting/R0050_variational_equivalence_and_full_smooth_lift_classification.md",
+      "external_peer_reviewed": false
     },
     {
       "id": "N5-NARROW-GAIN-01",
@@ -2051,7 +2063,7 @@
       "external_peer_reviewed": false
     }
   ],
-  "next_main_spec": "notes/20_dimension_lifting/curved_lifting/R0049_next_nonlinear_coherent_lift_gate.md",
+  "next_main_spec": "notes/00_map/R0050_next_global_frontier_and_critical_path_gate.md",
   "latest_constructive_route_audit": {
     "round": "R0041",
     "status": "direct_coordinate_separable_parameter_power_route_frozen_actual_neighborhood_lower_paid_general_coupled_case_open",
@@ -2339,6 +2351,55 @@
     "H5_proved": false,
     "H5_refuted": false,
     "new_high_dimensional_dimension_bound": false,
+    "new_mathematical_result_ID_registered": false,
+    "major_intermediate_result": false,
+    "novelty_certified": false,
+    "goal_solved": false,
+    "external_peer_reviewed": false,
+    "R0050_next_gate_scope_correction": "The larger nonlinear function class has equivalent lift existence for w+F(t)y; old affine classification suffices after exact full-time first variation. See latest_smooth_lift_variational_scope_audit."
+  },
+  "latest_smooth_lift_variational_scope_audit": {
+    "round": "R0050",
+    "proof": "notes/20_dimension_lifting/curved_lifting/R0050_variational_equivalence_and_full_smooth_lift_classification.md",
+    "independent_audits": [
+      "notes/20_dimension_lifting/curved_lifting/R0050_nonlinear_lift_source_and_rigidity_audit.md",
+      "notes/20_dimension_lifting/curved_lifting/R0050_nonlinear_lift_construction_counteraudit.md"
+    ],
+    "independent_reviews": [
+      "research/reviews/R0050_geometry_and_source_review.md",
+      "research/reviews/R0050_construction_and_rank_review.md"
+    ],
+    "root_review": "research/reviews/R0050_root_integration_review.md",
+    "macro": "research/reviews/R0050_macro.md",
+    "next_spec": "notes/00_map/R0050_next_global_frontier_and_critical_path_gate.md",
+    "current_result": "results/reviewed/LIFT-005_full_smooth_variational_classification.md",
+    "corrected_historical_files": [
+      "notes/20_dimension_lifting/curved_lifting/R0012_root_affine_classification.md",
+      "notes/20_dimension_lifting/curved_lifting/R0012_affine_lift_obstruction.md",
+      "notes/20_dimension_lifting/curved_lifting/R0012_construction_attack.md",
+      "results/reviewed/LIFT-005_affine_codimension_one_classification.md",
+      "notes/20_dimension_lifting/curved_lifting/R0049_next_nonlinear_coherent_lift_gate.md",
+      "research/reviews/R0049_macro.md",
+      "research/rounds/R0050_working_spec.md"
+    ],
+    "experiment_files": [],
+    "candidate_status": "smooth_lift_existence_equivalent_to_old_affine_class_target_refuted_scope_corrected_and_stopped",
+    "exact_full_time_same_parameter_first_variation_reviewed": true,
+    "actual_affine_variational_lift_constructed_not_finite_time_jets": true,
+    "smooth_and_affine_existence_equivalent_for_parameter_linear_target": true,
+    "original_projection_forced_affine_claim_refuted_by_genuine_nonlinear_examples": true,
+    "general_codimension_rank_B_lower_bound_reviewed": true,
+    "polynomial_minor_coefficient_comparison_not_large_time_limit": true,
+    "standard_rank_factorization_codimension_attainment_with_direction_loss_reviewed": true,
+    "full_smooth_codimension_one_classification_reviewed": true,
+    "fixed_diag_one_two_codimension_one_smooth_lift_refuted": true,
+    "old_R12_and_R49_scope_claims_corrected": true,
+    "no_new_result_ID_for_equivalent_existence_problem": true,
+    "parameter_linear_time_preserving_lift_classification_stopped": true,
+    "next_R51_periodic_macro_required": true,
+    "new_high_dimensional_dimension_bound": false,
+    "general_Kakeya_proved": false,
+    "general_Kakeya_refuted": false,
     "new_mathematical_result_ID_registered": false,
     "major_intermediate_result": false,
     "novelty_certified": false,

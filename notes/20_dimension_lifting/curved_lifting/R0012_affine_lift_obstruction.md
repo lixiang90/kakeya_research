@@ -1,5 +1,7 @@
 # R0012：任意光滑空间仿射、保留原时钟的 codimension-one lift 障碍
 
+> **R0050范围更正（2026-10-17）：** 下文保留开轮/历史论述。对目标 `w+F(t)y`，在同一个参数点沿同一条lift直线取第一变分，可构造同codimension和方向rank的真正全时affine lift。因此一般smooth与affine的**存在性等价**，旧文“空间affine为实质限制/一般nonlinear未排除/需逼原π affine”的判断不再成立；原π本身仍可真正非线性。完整更正见 [R50主证明](R0050_variational_equivalence_and_full_smooth_lift_classification.md)，当前登记为 `results/reviewed/LIFT-005_full_smooth_variational_classification.md`。不新增ID或重大性声明，换clock/selector/Θ依赖w等边界保留。
+
 日期：2026-10-17。任务 N5-CURVE-LIFT-01。作者：audit_four_dimensional。状态：完整自包含必要条件证明，已由lifting_obstructions交叉独审，见research/reviews/R0012_affine_classification_review.md，另有root独立核验。本文解决指定 lifting 类的可行性，不使用任何未证 Kakeya 输入，不声称新维数界、重大结果或文献新颖性。
 
 ## 1. 精确结论与一手定义的范围
