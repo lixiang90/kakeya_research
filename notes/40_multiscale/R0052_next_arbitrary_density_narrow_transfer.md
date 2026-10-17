@@ -1,5 +1,7 @@
 # R0052 唯一后继：新三维任意密度输入的真实四维 quadric 检验
 
+> **R0053当前范围更新：** exact regular quadric Q3已完整转移且与具名3D M3任意小幂等价，不另立新ID，停止该exact模型迭代。同轮真实near-contained抛物柱面已另用空间packet/原cap/Hölder闭合；并非Oδ snap。当前唯一后继为 notes/40_multiscale/R0053_next_actual_five_dimensional_coupled_quadrics.md，下文是R52历史计划。
+
 2026-10-17，Goal active。目标仍是 n≥5/general；本 spec 不把模型成立当作最终完成。R46 加权算术候选已否定，不调 q/权重/更多 slopes。下轮先 context/GOAL/STATE/ROADMAP/registry/最近轮次及回执恢复。
 
 ## 1. 为什么是新机制，先核是否重复
