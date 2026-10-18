@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0097原scalar CSWZ nearfull质量桥及全rough parameter localSegre small-loss输入证书完成限定独审。只排fixedb/ε<b直接调用，不排ε≥b/有效商/全部方法。无ordinary/完整roughbranchsaving/major，保守时钟streak20，实际信息另计；下一notes/00_map/R0097_next_full_route_input_gate.md，78PDF/82sources/78IDs，Goal active。
+更新2026-10-19，R0098全四路重选/新planar measure wholeclock应用完成独审；weakL4/3正确但actual N0已由旧Th1.6 strongL²覆盖，无新ordinary输入，真实overlap/ambient返回未付。80PDF/84sources/78IDs，保守streak21另计实际信息；下一notes/00_map/R0098_next_full_goal_reselection.md优先真实concentration-sequence source门，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -216,3 +216,6 @@ R0096：五time精确kernel→allclock singular pencil→原orth商1Fst；原glo
 
 
 R0097：原θ=(-β,-tβ,t)∈Σ={v=wu}，local切H误差C(r²+δ)，任意非空删选迫Cspread≥c_bδ^-b，仅fixedb且ε<b small-loss输入关闭。原每timeE/Φ→T及robust point质量使finite nearfull强度够κgap，但附加parameter hyp未付。fullmoment globalHcap r^(1/7)/fullspan/fulljet不授local条件；非可逆quotient/relative theorem未解决。不续本b/ε/可逆chart及R96D/ρ参数，四完整路保持open。
+
+
+R0098：DP–P新finite-TV测度入口/真实dilation及wholeclock端点付清；独审mollify/旧Guerra–Raiţă–Schrecker Th1.6给更强N0 strongL²，不冒weak推论为新ordinary输入。bush全P ν0/clockmask BV/斜线conditionaldiv及(103)flatten角collapse scope明付；未取得overlap/ambient返回。BDH固定flags/BL不授HRZ原质量。DPv3addendum所引任意维MS与VanishingMass只abs/history筛，下一审真实concentration序列而不续endpoint/cone参数，四完整路仍open。

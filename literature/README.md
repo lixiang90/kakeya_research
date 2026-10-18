@@ -152,3 +152,6 @@ R0096重读既存GGW2211.09508v2原finite Th2.1/源Def17与R74稳定compression�
 
 
 R0097 actual重读既存CSWZ2610.13682v1 Def1.4–1.5/Th1.2/1.6/1.7及PDF6，freshabs/history仍v1；原scalar nearfull质量转移/localSegre small-loss范围见metadata/R0097_source_check.json。fresh官方ref/tree未变，不是三核心bytes重核；无新PDF，78PDF/82sources/78IDs，非major认证。
+
+
+R0098新增DP–Pigati2601.10647v3和BDH2404.04754v1官方原PDF/提取/metadata，80PDF/84sources/78IDs。实际finite-measure/dilation接口及更强旧N0 L²比较、后续MS/concentration refs只abs/history范围见metadata/R0098_source_check.json；非wholeproof/major认证。

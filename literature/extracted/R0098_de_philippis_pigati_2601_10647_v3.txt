@@ -1,0 +1,1352 @@
+                             MICHAEL–SIMON INEQUALITY
+           FOR ANISOTROPIC ENERGIES CLOSE TO THE AREA
+                  VIA MULTILINEAR KAKEYA-TYPE BOUNDS
+
+
+                          GUIDO DE PHILIPPIS AND ALESSANDRO PIGATI
+
+
+         Abstract. Given an anisotropic integrand F : Grk(Rn) → (0,∞), we can generalize
+         the classical isotropic area by looking at the functionalZ
+
+                                         F(Σk) :=
+                                                     ΣF(TxΣ)dHk.
+         Whileamonotonicityformulaisnotavailableforcriticalpoints[4],when   k = 2andn = 3
+         we show that the Michael–Simon inequality holds if F is close to 1 (inC1), meaning that
+         F is close to the usual area.
+            OurargumentispartlybasedonsomekeyideasofAlmgren, whoprovedthisresultin
+         an unpublished manuscript, but we largely simplify his original proof by showing a new
+         functional inequality for vector fields on the plane, which can be seen as a quantitative
+         version of Alberti’s rank-one theorem, and we also remove a convexity assumption on F.
+            As another byproduct, we also show Michael–Simon for another class of integrands
+         which includes the ℓp norms for p∈ (1,∞). For a general F satisfying the atomic con-
+         dition [8], we also show that the validity of Michael–Simon is equivalent to compactness
+         of rectifiable varifolds.
+
+
+
+                                           1. Introduction
+1.1. Setting and main result. Geometric measure theory and, more broadly, a large
+part of calculus of variations and geometric analysis deal with the classical isotropic area.
+The study of its critical points Σk⊂Rn makes extensive use of the monotonicity formula,
+asserting that for all p∈Rn we have
+                         Hk(Σ∩Br(p))
+                                rk        ≤ Hk(Σ∩Bs(p))sk              for 0<r <s.
+Thisfacthasanumberofusefulconsequences, bestphrasedintermsofvarifolds(see, e.g.,
+[17, Chapters 4 and 8]): among the fundamental ones, existence and upper semicontinuity
+ofthedensityforstationaryvarifolds, uppersemicontinuityoftheirsupportundervarifold
+convergence, compactness of rectifiable and integral varifolds (either stationary or with
+local uniform bounds on the first variation), and existence and conical symmetry of blow-
+ups, the latter following from a more precise version of monotonicity.
+   There is a natural anisotropic generalization of the area functional, given by taking an
+integrand F : Grk(Rn)→ (0,∞) of class C1 and definingZ
+
+                                      F(Σ) :=
+                                                   ΣF(TxΣ)dHk(x)
+for a smoothly embedded Σk ⊂Rn, extending the definition to k-varifolds in the obvious
+way. In the anisotropic setting, it is known [4] that monotonicity fails (in the sense that
+if F satisfies an identity resembling too closely the quantitative version of monotonicity,
+thenF is the isotropic area up to a linear change of coordinates). Thus, many basic tools
+break down at this level of generality.
+   However,aweaker(thougharguablymorerobust)factisbelievedtoholdforappropriate
+classes of integrands F. Specifically, for n≥ 3 and k∈{2,...,n−1}, the Michael–Simon
+
+
+                                                      1
+2                                                           G. DE PHILIPPIS AND A. PIGATI
+
+inequality (first proved in [16] for the isotropic area, as a consequence of monotonicity) is
+conjectured to hold for appropriate F, leading to the following question.
+Question 1.1. For which F does it hold that, given a rectifiable k-varifold V inRn with
+Θk(|V|,x) ≥ θ0 > 0 for |V|-a.e. x, as well as finite total mass and first variation, i.e.,
+|V|(Rn),|δFV|(Rn)<∞, we have
+
+(1)                            |V|(Rn)k−1≤ C(n,k,F)θ0     |δFV|(Rn)k ?
+
+   While the range of applications of this bound would be far more limited compared to a
+monotonicity formula (e.g., it would not give upper density bounds or conicality of blow-
+ups), it would still have a number of key consequences, such as compactness of rectifiable
+and integral varifolds and, when the first variation is in Lp with p > k, a lower density
+bound of the form
+                             |V|(Br(p))≥crk   for p∈ spt(|V|), r < 1
+(see(5)below) and upper semicontinuity of the support along converging sequences of
+varifolds.
+Remark 1.2. It is clear that, by scaling and normalization of density,(1)is equivalent
+to its validity when θ0 = 1 and |V|(Rn) = 1. Moreover, it is equivalent to the functional
+version of Michael–Simon (seeProposition 2.2below): for any           f ∈C1c(Rn) we haveZ
+         hZ                      i(k−1)/k≤ C′(n,k,F)hZ                                            i
+(2)                                                                                                 .
+             Rn|f|k/(k−1)d|V|                      θ1/k0        Rn|df|d|V|+        Rn|f|d|δFV|
+   In codimension one (when k = n−1), conjecturally one sufficient assumption should
+be strict convexity of F, by virtue of the fact that it is equivalent to the atomic condition
+(AC), and in turn to have rectifiability under the assumption Θk(|V|,·)> 0 a.e. [8]. More
+precisely, once we identify Grn−1(Rn) withRPn−1 (i.e., a hyperplane with its unit normal
+±ν) andF : Grn−1(Rn)→ (0,∞) with an even function F :Sn−1→ (0,∞), we extend the
+latter to a 1-homogeneous function F :Rn→ [0,∞), which is then required to be convex,
+and actually strictly convex along lines not passing through 0.
+   One of the main results of the present paper is to answerQuestion 1.1affirmatively
+for surfaces inR3, when F is close enough to the area. This result was first proved in an
+unpublished manuscript of Almgren, from which we borrowed several key ideas, although
+we bypass a number of technical steps from his proof by leveraging some new functional
+inequalities presented below. Interestingly, as opposed to his, our proof does not require
+convexity of F.
+Theorem 1.3. If n = 3, k = 2, and F  is an integrand close enough to the isotropic
+area in the C1 topology (i.e., ∥F|S2 − 1∥C1 is small enough), then the following holds.
+Given a rectifiable 2-varifold V  in R3 with finite total mass and first variation, letting
+θ(x) := Θ2∗(|V|,x), we have the scale-invariant bound
+(3)                         |V|(R3)≤C(F)H2({θ > 0})1/2·|δFV|(R3).
+In particular, if θ≥θ0 |V|-a.e.,(1)holds for a possibly different constant            C(F).
+   Note that the second conclusion follows from the first one, since we can bound the
+measure H2({θ > 0}) = H2({θ ≥ θ0}) from above by θ−10 |V|(R3).  It should be noted
+that the proof is not perturbative: in fact, it proceeds by singling out an explicit set of
+integrands F (open in the C1 topology for F|S2) which happens to contain the isotropic
+area. This result immediately implies the first assumption in the regularity lemma from
+[5, p. 25]. Hence, we can apply Allard’s regularity theorem in the anisotropic setting [5,
+p. 27] and obtain the following, where (unlike in the other statements) strict convexity
+is understood in the quantitative sense, namely as HessF(ν)≥ λI on each plane ν⊥, for
+some constant λ> 0.
+                    MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                                3
+
+Theorem 1.4. If n = 3, k = 2, and F is a strictly convex smooth integrand close enough
+to the isotropic area in the C1 topology, then the following holds for some ε(F,α) > 0.
+Given an integer-rectifiable 2-varifold V  in B2r(x0) ⊂ R3 and x0 ∈ spt(|V|), if for some
+ν0∈S2 we have                     |V|(B2r(x0))             h1    i
+                                           π(2r)2     ∈     2, 32 ,
+as well as
+                                             |δFV|≤ Λ|V|
+for some Λ∈ (0,ε/r), andZ
+
+
+
+                                  B2r(x0)⟨x−x0,ν0⟩2d|V|(x)≤εr4,
+then in the ball Br(x0) the varifold V  agrees with a C1,α graph of multiplicity 1 over the
+plane ν⊥0 , for any given α∈ (0,1) (with a scale-invariant C1,α bound, vanishing as ε→ 0).
+   Moreover, for the same dimensions, using similar ideas (but a simpler tool, namely
+Theorem1.6inplaceofTheorem1.7),wealsoobtainthefollowing. Notethatthetechnical
+condition in its statement holds for any ℓp norm with p∈ (1,∞), namely if
+                                  F(ν) = (|νx|p+|νy|p+|νz|p)1/p.
+Theorem 1.5. Assume that n = 3, k = 2, and F  : R3 → [0,∞) is a strictly convex
+integrand, even in each component.  Moreover, for any coordinate plane P, assume that
+πP(∇F(ν))
+|πP(∇F(ν))| depends only on   πP(ν)|πP(ν)|, for all ν ∈S2\π−1P  (0) (note that πP(∇F(ν))̸= 0 for
+such ν). Then the bound(3)holds true.
+1.2. NewvariantsofmultilinearKakeyaindimensiontwo. Almgren’sargumentis
+quite technical in that it involves studying the lengths of carefully chosen pieces of curves
+(corresponding to vector fields with summable divergence appearing as rows of the first
+variation matrix), consisting of points where a certain projected density is large enough
+andsuchvectorfieldsaretransverseenough. Ourargumentborrowssomeofhiskeyideas,
+suchasDefinition3.8, andbakesthemdirectlyintoanewstandalonefunctionalinequality
+(see(4)), from whichTheorem 1.3follows quite directly.
+   Before stating this key inequality, let us mention that one of the starting points in its
+proof was the following simpler version.
+Theorem 1.6. GivenS,T ∈W1,2(R2,R2), assume thatSx,Ty≥ 0 and det(S,T)≥ 0 a.e.
+Then         Z                                   Z              Z
+                                              4                                .
+                            R2det(S,T)≤ 1           R2|divS|       R2|divT|
+   In fact, this result was already obtained in [13], where other nonlinear constraints are
+studied.  We will present nonetheless a short proof of it because, besides recovering the
+sharp constant, our proof uses (in spirit) Smirnov’s decomposition of normal 1-currents as
+superpositions of curves [18], which may be thought as the intuitive reason why this holds
+(as discussed inSection 3), and the same technique can be used to prove the following
+instrumental bound, where crucially we drop the assumption det(S,T)≥ 0.
+Theorem 1.7. Given two vector fields S,T ∈W1,1(R2,R2), we define
+                           SP := (Sx−|Sy|)+,   SN := (Sx−|Sy|)−,
+                           TP := (Ty−|Tx|)+,   TN := (Ty−|Tx|)−.
+4                                                           G. DE PHILIPPIS AND A. PIGATI
+
+Also, let χ :R2→ [0,1] be a Borel function supported in a bounded set. Then, for some
+universal constant C > 0, we haveZ           hZ                    i1/2hZ                      i1/2
+
+(4)       R2χmin{SP,TP}≤C∥χ∥L2Z                 R2(|S|+|divS|)       Z     R2(|T|+|divT|)
+                                   +C
+                                          R2(|divS|+|divT|)+           R2(SN +TN).
+The same holds if Sx,Sy,Tx,Ty,divS,divT are just real-valued measures on the plane
+with finite total variation.
+   Besides its own interest, this inequality can be viewed as a quantitative version of
+previousexistingresults,suchas[2,Proposition8.6]orAlberti’srank-onetheorem,proved
+initially in [1] and re-obtained with different techniques in [9,15].
+Corollary 1.8. Given u∈ BV(Rn,Rm) and writing (Du)s = A|Du|s (polar decomposi-
+tion of the singular part of Du), we have rk(A) = 1 at|Du|s-a.e. point.
+   We refer toSection 3for the short argument used to deduce this fromTheorem 1.7,
+giving yet another proof of Alberti’s rank-one theorem.
+1.3. General results in arbitrary dimension. Back to the general setting of arbitrary
+k, n, and F, in [8] the    atomic condition (AC) for F was introduced. Namely, F satisfies
+(AC) if any average  Z
+
+
+
+                              Grk(Rn)BF(P)dλ(P),   λ∈P(Grk(Rn))
+has rank ≥ k, with equality if and only if λ = δP0 is a Dirac mass; here BF(P) is the
+matrix naturally associated with P ∈ Grk(Rn) in the computation of the first variation
+(see(7)). It was shown in [8] that (AC) holds true if and only if, for any varifold              V  with
+locally bounded first variation, the condition Θk,∗(|V|,x) > 0 for |V|-a.e. x implies (and
+hence is equivalent to) the rectifiability of V.
+   Thus, it constitutes a very natural assumption that we will make throughout the rest
+of this introduction (specifically, inProposition 1.9andCorollary 1.11). In this paper, we
+will also prove the following general facts.
+Proposition 1.9. Given n≥ 3, k∈{2,...,n−1}, and F : Grk(Rn)→ (0,∞) satisfying
+(AC), the following are equivalent.
+     (i)The Michael–Simon bound(1)holds true for some                C(n,k,F)> 0.
+    (ii)Wehavecompactnessofrectifiablevarifolds: givenasequence(    Vi)i∈N ofrectifiable
+         k-varifolds, inRn or (equivalently) in the torusTn =Rn/Zn, if
+                    Θk(|Vi|,x)≥θ0 > 0 for|Vi|-a.e. x,    sup
+                                                                 i∈N|δFVi|(K)<∞
+         for any compact set K,  and Vi  ⇀ V,  then V  is a rectifiable k-varifold with
+         Θk(|V|,x)≥θ0 > 0 for|V|-a.e. x.
+   (iii)There is no sequence (     Vi)i∈N of rectifiable k-varifolds inTn such that
+                |Vi|(Tn) = 1,    Θk(|Vi|,x)≥i for|Vi|-a.e. x,   |δFVi|(Tn)→ 0
+         and Vi ⇀ Ln⊗ λ as measures on Tn× Grk(Rn), for some probability measure
+         λ∈P(Grk(Rn)).
+   (iv)Thereisnosequence(     Vi)i∈N ofrectifiablek-varifoldsinRn,withspt(|Vi|)⊆ [0,1]n,
+         such that
+             |Vi|(Rn) = 1,    Θk(|Vi|,x)≥i for|Vi|-a.e. x,    sup
+                                                                       i∈N|δFVi|(Rn)<∞
+         and Vi ⇀ (Ln         [0,1]n)⊗λ as measures on Rn×Grk(Rn), for some probability
+         measure λ∈P(Grk(Rn)).
+                    MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                                5
+
+In fact, in (ii), the fact that Θk(|V|,x)≥θ0 > 0 for|V|-a.e. x holds automatically if V  is
+rectifiable.
+   Thisshowsthat,ifcompactnessofrectifiablevarifolds(or,equivalently,Michael–Simon)
+fails, then we can find a counterexample exhibiting a phenomenon called diffuse concen-
+tration: the measures|Vi| are concentrated on Borel sets Ei withHk(Ei) (and thus their
+projection πP(Ei) on any coordinate k-plane hasLk(πP(Ei))→ 0, making (πP)∗|Vi| look
+more and more like a singular measure), but nonetheless their limit |V| is the Lebesgue
+measure (whose projection (πP)∗|V| is Lebesgue).
+   Moreover, by an adaptation of Allard’s strong constancy lemma [5, p. 3] (see also
+[8,9]), we can show the following statement, in which      S(D) denotes the finite-sum set of
+D⊆R, i.e., the set of all possible finite, nonempty sums of elements of D (possibly with
+repetitions).
+Proposition 1.10. Given a sequence of rectifiable k-varifolds, inRn or inTn =Rn/Zn,
+converging to a rectifiable k-varifold V, suppose that for each i∈N we have a set Di ⊆
+(0,∞) with infDi > 0 and a Borel set Ei⊆Rn such that
+                                Θk(|Vi|,x)∈Di for|Vi|-a.e. x̸∈Ei,
+as well as|Vi|(Ei∩K)→ 0 and supi|δFVi|(K)<∞ for any compact set K. Then, up to
+a subsequence, for|V|-a.e. x we have
+                                          Θk(|V|,x) = limi→∞vi
+
+for suitable vi∈S(Di) depending on x.
+   The following is a direct consequence of the previous two facts.
+Corollary 1.11. GivenF satisfying(AC),ifanyoftheequivalentconditionsaboveholds,
+then we also have compactness of integer-rectifiable varifolds: given a sequence (Vi)i∈N of
+rectifiable k-varifolds, inRn or inTn, if
+                  Θk(|Vi|,x)∈N\{0} for|Vi|-a.e. x,    liminfi→∞ |δFVi|(K)<∞
+
+for any compact set K, and Vi ⇀ V, then V  is a rectifiable k-varifold with Θk(|V|,x)∈
+N\{0} for|V|-a.e. x.
+   Let us now state another simple consequence of(1). Recall that, given        p∈ [1,∞] and
+a k-varifold V, we say that its first variation is locally in Lp if V has locally bounded first
+variation and|δFV| =f|V| for some f ∈Lploc(|V|).
+Corollary 1.12. If any of the equivalent conditions ofProposition 1.9holds, then the
+following hold true as well.
+     (i)Given a rectifiable    k-varifold V, assume that Θk(|V|,x) ≥ θ0 for |V|-a.e. x and
+         that δFV  is locally in Lp for some p∈ (k,∞]. Then, for all x∈ spt(|V|), we have
+         Θk∗(|V|,x)≥ c(n,k,F)θ0. More precisely, if |δFV| = f|V| with ∥f∥Lp(B1(x),|V|) ≤
+         Λ, there exists r0(n,k,p,F,Λ)∈ (0,1) such that
+(5)                      |V|(Br(x))≥c(n,k,F)θ0rk   for all r∈ (0,r0).
+    (ii)Moreover,if     Vi ⇀V areasin(i)andlimsupi→∞∥fi∥Lp(K,|Vi|) <∞(where|δFVi| =
+         fi|Vi|) for any compact set K, then
+                                          spt(|Vi|)→ spt(|V|)
+         in the Hausdorff sense.
+6                                                           G. DE PHILIPPIS AND A. PIGATI
+
+Remark 1.13. While we study autonomous integrands F(P), for simplicity and in order
+tohavescale-invariantboundswhenpossible, ingeneralonecanconsidernon-autonomous
+ones, of the form F(x,P). This generalization is necessary in order to look at anisotropic
+integrands on manifolds Mn, where F is defined on the Grassmannian bundle of k-planes
+and thus locally takes this form. Compared to the autonomous case, the general case just
+introduces an error term which is easily handled (letting ˜δFV  denote the right-hand side
+of(6), we have      |˜δFV|≤|δFV|+C|V| locally). Straightforward modifications show that
+all the stated consequences of Michael–Simon still hold true, assuming this bound in a
+local form such as
+              |V|(Rn)k−1≤ C(n,k,F,K)θ0       |δFV|(Rn)k   whenever spt(|V|)⊆K,
+
+where K⊂Rn (or K⊆Mn) is an arbitrary compact set.
+
+                                              Addendum
+   After the first version of the manuscript appeared, the main result was extended to
+arbitrary codimension in [10], using similar techniques,      1 and more strikingly to arbitrary
+dimension and codimension in [11]; the latter work derives the Michael–Simon bound for
+integrands close to the isotropic area from the groundbreaking resolution of the vanishing
+mass conjecture [12].
+
+                                        Acknowledgements
+   As already mentioned, this paper uses many ideas due to Frederick J. Almgren Jr.
+The authors are very grateful to Jean Taylor, who shared with them the unpublished
+manuscript of Almgren. They also wish to thank William Cooperman and Adolfo Arroyo-
+Rabasa for identifying an issue in an earlier draft, which prompted a more general for-
+mulation ofTheorem 1.7.  A.P.’s research is funded by the European Research Council
+(ERC) through StG 101165368 “MAGNETIC”. G.D.P.’s research is funded by the Euro-
+pean Research Council (ERC) through CoG 101169953 “RISE”.2
+
+  2. Preliminaries and proof of Propositions1.9,1.10, andCorollary 1.12
+   Given two integers n≥ 3 and k∈{2,...,n−1}, let Grk(Rn) be the Grassmannian of
+k-planes inRn (without orientation). Recall that it admits a natural structure of compact
+manifold of dimension k(n−k) and can be identified with the set of matrices
+                             {S∈Rn×n : ST =S, S2 =S, trS =k},
+with the smooth structure induced from Rn×n. Given a plane P ∈ Grk(Rn) and a linear
+isomorphism L∈ GL(n), we denote by L[P] = L(P)∈ Grk(Rn) the image of P through
+L.
+   Consider a k-dimensional varifold (or simply k-varifold) V  in an open set U ⊆ Rn,
+namely a nonnegative Radon measure on U×Grk(Rn). Letting π :Rn×Grk(Rn)→Rn
+denote the projection on the first factor, we will often write
+                                               |V| :=π∗V,
+called the weight of V  (a Radon measure on U).  A diffeomorphism φ : U → U induces
+a diffeomorphismbφ of U × Grk(Rn), mapping (x,P) to (φ(x),dφ(x)[P]).  The varifold
+
+   1The same result was also obtained in an unpublished collaboration with B. B´ek´esi and M. Freguglia.
+   2Views and opinions expressed are however those of the authors only and do not necessarily reflect
+those of the European Union or the European Research Council.
+                   MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                                7
+
+pushforward of V  through φ is
+
+     φ∗V :=bφ∗(JφV),   Jφ(x,P) := Hk(dφ(x)[P ∩B1(0)])Hk(P ∩B1(0))      = Hk(dφ(x)[P ∩B1(0)])ωk               ,
+
+where the Jacobian factor Jφ : Rn× Grk(Rn) → (0,∞) is the usual correction factor
+motivated by the area formula.
+   Let F  : Grk(Rn) → (0,∞) be a C1 function, which is often called an anisotropic
+integrand. It induces a functional on k-varifolds in U given byZ
+
+                               F(V) :=
+                                            U×Grk(Rn)F(P)dV(x,P).
+More generally, given B⊆U Borel, we setZ
+
+                              F(V,B) :=
+                                             B×Grk(Rn)F(P)dV(x,P);
+it is clear that for two constants 0<c(n,k,F)≤C(n,k,F) we have
+                                  c|V|(B)≤F(V,B)≤C|V|(B).
+Given a vector field X ∈ C1c(U), the first variation of V  along X (with respect to F) is
+defined as                                      t=0F((φXt )∗V,spt(X)),
+                              ⟨δFV,X⟩ := ddt
+
+where (φXt )t∈R is the flow ofX at timet. It can be shown (see, e.g., [8, Lemma A.2]) that,
+under the above identification, the previous derivative always exists and is given explicitly
+by                                    Z
+
+(6)                     ⟨δFV,X⟩ =
+                                        U×Grk(Rn)⟨BF(S),dX(x)⟩dV(x,S),
+where we use the Hilbert–Schmidt inner product on matrices and BF(S) ∈ Rn×n  is
+uniquely defined by
+(7)             ⟨BF(S),L⟩ :=F(S)⟨S,L⟩+dF(S)[(I−S)LS +SLT(I−S)]
+for all L∈Rn×n (note that (I−S)LS +SLT(I−S)∈TSGrk(Rn)).
+  As in the isotropic case (where F ≡ 1), we will say that V  has locally bounded first
+variation if ⟨δFV,X⟩ can be locally represented by integration of X against a vector-
+valued measure. In this case,|δFV| denotes the associated total variation measure.
+  We will eventually focus on the codimension-one case k = n−1 (in particular, when
+k = 2 and n = 3). In this case, we can identify Grn−1(Rn)∼=RPn−1, i.e., a hyperplane P
+is identified with±ν, the unit vector perpendicular to P. We can then identify F with an
+even function
+                                          F :Sn−1→ (0,∞).
+Taking the 1-homogeneous extension (still denoted by F), namely F(λν) :=λF(ν) for all
+λ ≥ 0, we obtain a function F : Rn → [0,∞).  In this case, the atomic condition (AC)
+mentioned in the introduction is equivalent to require that F  is strictly convex (more
+precisely, along all lines which do not pass through 0), as shown in [8, Theorem 1.3]. Also,
+we have the simpler formula
+(8)                                        BF(ν) =F(ν)I−ν⊗dF(ν),
+where dF(ν) ∈ (Rn)∗ is the differential of the 1-homogeneous extension at ν (note that
+BF(ν) =BF(−ν), as expected).
+  We now turn to the proofs of the general facts stated in the introduction, starting with
+a well-known lemma.
+8                                                           G. DE PHILIPPIS AND A. PIGATI
+
+Lemma 2.1. Given a k-varifold V in an open set U with locally bounded first variation,
+ifBr(p)⊂U and the derivative  ddρ|V|(Bρ(p))|ρ=r exists then V′ :=1Br(p)V  has
+                                                                                   ρ=r.
+                  |δFV′|(Rn)≤|δFV|(Br(p))+C(n,k,F) ddρ|V|(Bρ(p))
+
+Proof. This is easily seen by taking a cut-off functionχ such thatχ = 1 onBr−h(p),χ = 0
+outside Br(p), and|dχ|≤ 2/h (for a given h∈ (0,r)), and noting that the varifold χV has
+            ⟨δF(χV),X⟩ =⟨δFV,χX⟩+O(∥dχ∥C0∥X∥C0)·|V|(Br(p)\Br−h(p))
+for any X ∈C1c(Rn,Rn), so that
+
+           |δF(χV)|(Rn)≤|δFV|(Br(p))+C(n,k,F)|V|(Br(p))−|V|(Br−h(p))h                   ,
+which gives the claim in the limit h→ 0.                                                    □
+Proof ofCorollary 1.12.           Let us prove (i). Letting µ(r) :=|V|(Br(x)), since for a.e. r > 0
+the truncated varifold V′ :=1Br(x)V  has|δFV′|(Rn)≤|δFV|(Br(x))+Cµ′(r), we get
+             µ(r)(k−1)/k≤C|δFV|(Br(x))+Cµ′(r)≤Cxµ(r)α+C(n,k,F)µ′(r)
+for a.e. r ∈ (0,1), where α := 1− 1p and Cx depends on n,k,F and also on (an upper
+bound on)∥f∥Lp(Br(x),|V|), where|δFV| =f|V|. Since x∈ spt(|V|), we have µ(r)> 0 and
+hence
+                                      (µ(r)1/k)′≥ c−C′xµ(r)βk
+fora.e.r∈ (0,1),wherec =C(n,k,F)−1 andβ :=α−(1−1k)> 0. AslongasC′xrβk <c/2,
+we either have µ(r) ≥ rk or  c−C′xµ(ρ)βk      ≥   c2k  for all ρ ∈ (0,r).  In the latter case, we
+obtain µ(r)1/k ≥  cr2k, giving the claim in both cases (for a different c > 0).  The upper
+semicontinuity of the support along converging sequences is a direct consequence.      □
+Proposition 2.2. The Michael–Simon bound(1)is equivalent to its functional version
+(2).
+Proof. To see that(1)implies(2), note that a simple cut-off argument as in the previous
+proof shows that, for a.e. t> 0, V′ :=1{|f|>t}V  has                      Z
+
+             |δFV′|(Rn)≤|δFV|({|f|>t})−Ch′(t),   h(t) :=
+                                                                            {|f|>t}|df|d|V|,
+for a possibly different C. Assuming for simplicity θ0 = 1 and applying(1)to                  V′, we get
+             m(t)(k−1)/k≤C|δFV|({|f|>t})−Ch′(t),   m(t) :=|V|({|f|>t}),
+whichgives(2)thankstothewell-knwonbound(  R∞0  m(t)tp−1dt)1/p≤p−1/pR∞0  m(t)1/pdt
+for any decreasing m(t) and p∈ [1,∞) (we take p :=k/(k−1)).                         □
+   Let us now showProposition 1.10, from whichProposition 1.9will follow quite easily.
+Proof ofProposition 1.10.           Up to a subsequence, we can assume that |δFVi| ⇀ ν for a
+suitableRadonmeasureν. For|V|-a.e.x, therectifiablevarifoldV admitsanapproximate
+tangent plane and there exists C > 0, depending on x, such that3
+                            ν(Br(x))≤C|V|(Br(x))   for all r∈ (0,1).
+
+   3Recall that, for any two Radon measures ν,µ≥ 0, we have
+                                   limsup  ν(Br(x))
+
+                                     r→0   µ(Br(x)) <∞   for µ-a.e. x.
+                    MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                                9
+
+Take any such point x0; up to a translation and a rotation, we can assume that x0 = 0
+and the tangent plane is θ times P = span{e1,...,ek}, for some constant θ > 0.
+   By a straightforward diagonal argument, we can find a sequence of radii ri → 0 such
+that, denoting by Wi the varifolds dilated by a factor r−1i    and  ˜Ei :=r−1i  Ei, we have
+                                      Wi ⇀θP,   |Wi|(˜Ei)→ 0,
+where P  is identified with the corresponding multiplicity one varifold.  To conclude, it
+suffices to show thatθ = limi→∞vi for suitable vi∈S(Di). Clearly, it is enough to check
+that this holds along a subsequence.
+   Note that
+(9)    |δFWi|(B1(0)) =r1−ki   |δFVi|(Bri(0))≤Cr1−ki   |Vi|(Bri(0)) =Cri|Wi|(B1(0))→ 0.
+Moreover, for each i ∈ N we can find ρi ∈ (1/2,3/4) such that   ddρ|Wi|(Bρ(0))|ρ=ρi ≤
+C|Wi|(B1(0))≤C, so that byLemma 2.1the varifold       W′i :=1Bρi(0)Wi has|δFW′i|(Rn)≤
+C.  We can now apply [8, Lemma 3.2] to the sequence (  W′i) (with Fi := F) and deduce
+the strong convergence
+                                        (πP)∗|W′i|→fHk           P,
+for some f ∈L1(P) supported in the unit ball. Moreover, since Wj ⇀θP, we have f =θ
+on P ∩B1/2(0).
+   Now, denoting by TxW′i ∈ Grk(Rn) the (normalized) approximate tangent plane (which
+exists |W′i|-a.e.), let Ji(x)∈ [0,1] denote the Jacobian of the projection πP along TxW′i,
+namely Ji(x) = ω−1k Hk(πP(B1(0)∩TxW′i)).  By the varifold convergence Wi ⇀ θP, we
+have              Z
+
+
+                                      B1(0)|Ji(x)−1|d|W′i|→ 0,
+so that
+                               (πP)∗[Ji|W′i|     (Rn\ ˜Ei)]→fHk           P.
+Since Θk(|W′i|,x)∈Di for|W′i|-a.e. x∈Rn\ ˜Ei, by the area formula we have
+                               (πP)∗[Ji|W′i|      (Rn\ ˜Ei)] =fiHk        P
+for some fi ∈ L1(P) taking values in S(Di) a.e. (as infDi > 0 for all i).  Since fi → θ
+strongly in L1(B1/2(0)), the claim follows.                                                   □
+   Finally, let us turn to the equivalence between Michael–Simon and compactness of
+rectifiable varifolds, namelyProposition 1.9.
+Proof ofProposition 1.9.         Let us first check that (i) implies (ii): let us then assume that
+Vi ⇀V is a sequence as in (ii), with θ0 = 1. Given a pointp∈ spt(|Vi|), if|δFVi|(Br(p))≤
+Λ|Vi|(Br(p)) for all r∈ (0,1/2) then we claim that(1)gives           c(n,k,F,Λ)> 0 such that
+(10)                          |Vi|(Br(p))≥crk   for all r∈ (0,1/2).
+Indeed,  letting µ(r)  := |Vi|(Br(p)),  whenever the classical derivative µ′(r) exists,  by
+Lemma 2.1the varifold      V′i  := 1Br(p)Vi has total first variation bounded by Λµ(r) +
+C(n,k,F)µ′(r).  Now, using(1)for             V′i  (which can be viewed as a varifold in Rn even
+when M =Tn, as B1/2(p)⊂Tn is isometric to B1/2(0)⊂Rn), we deduce that
+                       µ(r)(k−1)/k≤ Λµ(r)+Cµ′(r)   for a.e. r∈ (0,1/2),
+which easily gives(10)(see also the proof ofCorollary 1.12).
+   We now repeat the first part of the proof of [17, Theorem 40.6]. Let     K :=               BR(0) and
+call Si,ℓ⊆K the set of points p∈ spt(|Vi|)∩K such that|δFVi|(Br(p))≤ℓ|Vi|(Br(p)) for
+all 0 < r < 1/2.  Since supi|δFVi|(BR+1) < ∞, using Besicovitch’s covering lemma it is
+immediate to check that|Vi|(K\Si,ℓ)→ 0 as ℓ→∞, uniformly in i.
+10                                                         G. DE PHILIPPIS AND A. PIGATI
+
+   It follows that, letting Sℓ denote the (relatively closed) set of points q in BR(0) such
+that q = limj→∞pij, for some sequence pij ∈ Sij,ℓ (and some subsequence ij → ∞), we
+have
+                                        lim
+                                       ℓ→∞|V|(BR(0)\Sℓ) = 0.
+Indeed, for any compact K′ ⊆ BR(0)\ Sℓ there exists a small ρ > 0 such that Si,ℓ∩
+Bρ(K′) =∅ for i large enough, yielding|V|(K′)≤ liminfi→∞|Vi|(Bρ(K′)\Si,ℓ) and thus
+|V|(BR(0)\Sℓ)≤ liminfi→∞|Vi|(K\Si,ℓ)→ 0 as ℓ→∞.
+   On the other hand, given q ∈ Sℓ,(10)gives       |V|(Br(q)) ≥ c(n,k,F,ℓ)rk for all r ∈
+(0,1/2), and thus
+                                   Θk∗(|V|,q)> 0   for all q∈[Sℓ.
+                                                                     ℓ
+Since the complement ofSℓSℓ is |V|-negligible, by [8, Theorem 1.2] the varifold    V  is
+rectifiable. Moreover, byProposition 1.10it has density       ≥ 1 at|V|-a.e. point, as desired.
+   It is obvious that (ii) implies (iv).  Moreover, we claim that (iv) implies (iii):  if we
+have a bad sequence as in (iii), then by averaging we can find ci1,...,cin∈R/Z such that
+|Vi|(π−1j  (Br(cij))) ≤ 4r for any r small enough (depending on i,j), where πj : Tn → T1
+is the projection to the j-th coordinate. Up to a translation, we can assume that cij = 0.
+Then, lifting Vi to a periodic varifold  ˜Vi in Rn, the truncated varifolds 1(0,1)n˜Vi have
+uniformly bounded first variation (by the same argument ofLemma 2.1) and satisfy all
+the other conclusions of a bad sequence in (iv).
+   Finally, let us see that (iii) implies (i). Assuming by contradiction that(1)fails, we will
+construct a bad sequence as in (iii).  Fix a finite α >  n+1k  ; since(1)is scale-invariant, if
+it fails then there exists a sequence (Vi) of rectifiable k-varifolds with Θk(|Vi|,x)≥ 1 for
+|Vi|-a.e. x and
+                                   |Vi|(Rn) = 1,   |δFVi|(Rn)≤εαi,
+foravanishingsequence0<εi≤ 1/i. DilatingVi byafactorε(n+1)/ki          < 1andmultiplying
+the resulting varifold by ε−1i  , we obtain a new sequence of varifolds Wi satisfying
+         |Wi|(Rn) =εni,   |δFWi|(Rn)≤εβi,    Θk(|Wi|,x)≥ε−1i  ≥i for|Wi|-a.e. x,
+whereβ :=α+(n+1)(k−1)k     −1>n. Finally, assumingwithoutlossofgeneralitythatεi =  1ℓi
+for some integer ℓi > 1, we define
+                                           ˜Zi :=X     (Wi+εic)
+
+                                                  c∈Zn
+where, with a slight abuse of notation, we denote by Vi+a the translation ofVi bya∈Rn.
+It is easy to check that finite partial sums have locally uniformly bounded mass, so that
+the series does indeed define a k-varifold in Rn.  This varifold is Zn-periodic and thus is
+the lift of a varifold Vi onTn, which has
+                     |Zi|(Tn) =ε−ni  |Wi|(Rn),   |δFZi|(Tn)≤ε−ni  |δFWi|(Rn)
+and hence
+                        |Zi|(Tn) = 1,   |δFZi|(Tn)≤εγi,   γ :=β−n> 0,
+as well as Θk(|Zi|,x) ≥ i at |Zi|-a.e. x.   Since in fact Zi is εiZn-periodic, it is clear
+that it converges to a varifold of the form Z = Ln⊗λ, with λ ∈ P(Grk(Rn)), along a
+subsequence.                                                                                    □
+                   MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              11
+
+            3. Nonlinear inequalities for vector fields on the plane
+  The main goal of this section is to prove the following new nonlinear inequality for
+vector fields on the plane, stated again for the reader’s convenience.
+Theorem 3.1. Given two vector fields S,T ∈W1,1(R2,R2), we define
+(11)                       SP := (Sx−|Sy|)+,   SN := (Sx−|Sy|)−,
+                          TP := (Ty−|Tx|)+,   TN := (Ty−|Tx|)−.
+Also, let χ :R2→ [0,1] be a Borel function supported in a bounded set. Then, for some
+universal constant C > 0, we haveZ           hZ                    i1/2hZ                     i1/2
+
+(12)        R2χmin{SP,TP}≤C∥χ∥L2Z               R2(|S|+|divS|)       Z     R2(|T|+|divT|)
+                                    +C
+                                           R2(|divS|+|divT|)+         R2(SN +TN).
+The same holds if Sx,Sy,Tx,Ty,divS,divT are just real-valued measures on the plane
+with finite total variation.
+Remark 3.2. In the general case of measures, quantities such asRR2|S| should be inter-
+pretedas|S|(R2)andSP,SN,TP,TN aredefinedbythesameformulas(11)(equivalently,
+writing S = σ|S| for a unit-valued σ, we have SP = (σx−|σy|)+|S|).  Recall also that
+min{µ,ν} := (µ+ν−|µ−ν|)/2 for two real-valued measures µ,ν (equivalently, writing
+µ =f(|µ|+|ν|) and ν =g(|µ|+|ν|), we have min{µ,ν} = min{f,g}(|µ|+|ν|)).
+  While(12)is not scale-invariant, taking an arbitrary                χ such that χ = 0 L2-a.e. and
+applying the bound to all rescalings of S,T, we immediately obtain the following, which
+can be seen as a special case of [2, Proposition 8.6].
+Corollary 3.3. Under the same assumptions, denoting byS,T the singular parts of the
+measures S,T, we have Z                                Z
+
+
+
+                                 R2min{SP,TP}≤           R2(SN +TN).
+In particular, if SN =TN = 0 then the two measuresSP andTP are mutually singular.
+  Thus, in the last corollary, the assumption that divS and divT are finite measures is
+used only qualitatively. Given u∈BV(R2,R2) and taking
+                           S := (∂yuy,−∂xuy),   T := (−∂yux,∂xux),
+wehavedivS = divT = 0. Takingφr supportedinaballBr(p)andapplyingtheprevious
+bound to φrS,φrT, we obtainZ
+
+
+
+                          R2φrmin{(Ayy−|Ayx|)+,(Axx−|Axy|)+}d|Du|sZ
+                         ≤
+                             R2φr[(Ayy−|Ayx|)−+(Axx−|Axy|)−]d|Du|,
+where A (with rows Ax,Ay) is given by the polar decomposition Du = A|Du| and |Du|s
+denotes the singular part. In particular, if p is an approximate continuity point for A and
+a point of density one for |Du|s (with respect to |Du|), taking r → 0 we see that A(p)
+must be far fromI. Since this must also hold if we compose u with linear transformations,
+this immediately implies the following.
+Corollary 3.4 (Alberti’s rank-one theorem [1,9,15])        . Given u∈ BV(R2,R2) and writ-
+ing (Du)s = A|Du|s, we have rk(A) = 1 at |Du|s-a.e. point.  By a well-known slicing
+argument (see, e.g., [7, Proposition 1.3]), this implies that the same holds for a function
+u∈BV(Rn,Rm) with any m,n≥ 1.
+12                                                         G. DE PHILIPPIS AND A. PIGATI
+
+   BeforeturningtoTheorem3.1, wewillfirstobtainasimplerandperhapsmoreintuitive
+bound, for vector fields obeying a certain nonlinear constraint. Namely, we will derive the
+following sharp estimate, which was also proved in [13, Theorem A] (although with non-
+sharp constant). We will give a full proof of it since our techniques are different and more
+readily adaptable to give alsoTheorem 3.1above.
+Theorem 3.5. GivenS,T ∈W1,2(R2,R2), assume thatSx,Ty≥ 0 and det(S,T)≥ 0 a.e.
+Then         Z                                   Z              Z
+                                               4                                .
+                             R2det(S,T)≤ 1          R2|divS|       R2|divT|
+   The intuition behind this result is that, by Smirnov’s decomposition theorem for 1-
+dimensional currents [18], the current associated to      S is a (weighted) superposition of
+curves γ.  The boundary of each curve contributes 2 to the total mass of the boundary,
+which isRR  R2|divS|, so that (informally) the weighted number of curves building up S is
+1
+2  R2|divS|, and similarly for T.  On the other hand, the condition det(S,T) ≥ 0 forces
+a curve in S and a curve in T to meet at most once, and the integral of det(S,T) counts
+the (weighted) total number of intersections. This is best seen by looking at an example
+where S,T ∈BV(R2,R2) are supported on ε-fattened curves, for ε small, and point along
+the curve; this example also shows that the bound is sharp, with equality achieved quite
+often. With this intuition in mind, this bound can be seen as a functional version of the
+(trivial) planar case of the multilinear Kakeya inequality [6,14], extended to a situation
+where the tubes are not necessarily straight.
+
+
+                                                             T
+                                S
+
+
+
+
+
+
+
+3.1. Proof of the simplerTheorem 3.5.                      Step 1.  In order to proveTheorem 3.5, we
+first notice that we can reduce to the case of smooth, compactly supported vector fields.
+Indeed, we can assume that both S,T are supported in a ball BR(0) and|S|2+|T|2≤ Λ2
+for some R,Λ> 0. Let us fix a nonnegative cut-off functionψ∈C∞c  (R2) such that ψ = 1
+on BR+1(0). Replacing Sx and Ty with Sx +ε|Sy|+εψ and Ty +ε|Tx|+εψ (for ε > 0
+small), respectively, we obtain perturbed vector fields (still denoted by S,T) such that
+                                       Sx≥ε|S|,   Ty≥ε|T|,
+the angle between S and T is≥ε′ > 0 (at points where S,T ̸= 0), and
+                                      Sx,Ty≥ε   on BR+1(0),
+while S,T are smooth on the complement of BR(0).  In particular, we have det(S,T) ≥
+ε′′ > 0 on BR+1(0).  Calling Ax,Ay the two rows of a generic 2×2 matrix A, we select
+λ,µ∈ (0,ε) and ν ∈ (0,ε′′) giving a regular value for the function A7→ (Axx,Ayy,det(A)),
+so that
+                            M :={A : Axx≥λ, Ayy≥µ, det(A)≥ν}
+admits a (1+Cδ)-Lipschitz projection π : Bδ(M)∩B2Λ(0)→M for δ > 0 small; also,
+viewing S,T as rows, we have (S,T)∈M on BR+1(0).
+   Next,wecanapplythestandardSchoen–Uhlenbecktrick: approximatingthepair(S,T)
+by a mollification with variable radius (leaving (S,T) unchanged on the complement of
+                    MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              13
+
+BR+1(0)), by the embedding W1,2 ,→VMO the resulting pair (S′,T′) belongs to the do-
+main of π (on BR+1(0)). We can then take (S′′,T′′) :=π(S′,T′) as a smooth perturbation
+of (S,T) (letting it equal to (S′,T′) outside of BR+1(0)) still satisfying the assumptions:
+since
+               |(S′′,T′′)−(S′,T′)|≤Cδ,   |d(S′′,T′′)|2≤ (1+Cδ)|d(S′,T′)|2,
+the pair (S′′,T′′) converges strongly in W1,2(R2) to (S′,T′), as δ→ 0.
+   Step 2.  Assuming henceforth that S,T ∈ C∞c  (R2,R2), we claim that, up to another
+small perturbation, we can assume S = αZ and T = βW, for smooth, complete vector
+fields Z,W and coefficientsα,β∈C∞c  (R2) such that
+(13)      α≥ 0,   β≥ 0,    divZ = divW = 0,   Zx > 0,   Wy > 0,    det(Z,W)> 0.
+Indeed, given ε > 0 and a nonnegative cut-off function φ ∈ C∞c  (R2) with φ = 1 near
+the supports of S and T, we can let S′ := φ˜S and T′ := φ˜T, with  ˜S := S +ε∂x and˜T :=T+ε∂y. SinceS′,T′ are arbitrarily close to S,T in the smooth topology, it is enough
+
+to prove the inequality for these new vector fields.
+   Also, we can write ˜S = ˜αZ for a vector field Z with divZ = 0 and ˜α a smooth positive
+function. Indeed, the plane is foliated by the integral curves of ˜S starting on the vertical
+axis {0}×R, since  ˜Sx > 0 and, outside of a compact set,  ˜S = ε∂x.  Hence, we can let
+α′ := 1 on the vertical axis {0}×R and solve the equation div(˜α−1˜S) = 0 along all the
+integral curves γ :R→R2, where it becomes the ordinary differential equation
+                                    d
+                                    dt(˜α◦γ)(t) = (˜αdiv ˜S)◦γ(t).
+Now, letting α :=φ˜α and β :=φ˜β, we arrive at S′ =αZ and T′ =βW, as desired. Note
+that(13)also holds. In the sequel, we replace             S and T with the approximations S′ and
+T′.
+   Step 3. It is convenient to further approximate S and T with piecewise divergence-free
+vector fields, as follows.  For τ > 0, let γj : R → R2 be the integral curve of Z with
+γj(0) = (0,jτ), for j ∈Z.  Together with the vertical lines ℓk :={kτ}×R, these curves
+split the plane into a family of (open) regions Pτ := (Rjk)j,k∈Z diffeomorphic to the unit
+square, whereRjk is bounded by γj, γj+1, ℓk, and ℓk+1.
+
+                                              ℓk             ℓk+1
+
+
+
+                         γj+1
+
+
+                                                 Rjk
+
+                         γj
+14                                                         G. DE PHILIPPIS AND A. PIGATI
+
+  For each regionR =Rjk∈Pτ, we denote ∂LR :=                  R∩ℓk and ∂RR :=         R∩ℓk+1 the left
+and right sides of the boundary ofR. We then let
+                                         Sτ :=X       αR1RZ,
+                                                R∈Pτ
+with αR ≥ 0 a constant chosen so that the flow of αRZ|R across ∂LR equals the flow of
+S|R acrossthesamesegment. NotethatSτ belongstoBV(R2,R2)andthatitsdivergence
+is a measure supported on the vertical linesSkℓk, since Z is divergence-free and parallel
+to the curves γj.
+  Step 4. Let us show a simple fact.
+Lemma 3.6. The total variation of divSτ onR2 is bounded byRR2|divS|.
+Proof. Given two adjacent regions R and R′ with ∂RR = ∂LR′, note that αR′ is chosen
+so that          Z                                Z            Z
+
+
+                                 ∂LR′αR′Zx =       ∂LR′Sx =      ∂RRSx.
+Hence,                                 Z             Z                Z
+
+                         (αR′−αR)
+                                        ∂LR′Zx =     Z∂RRSx−αR        Z∂RRZx
+                                                  =
+                                                     Z∂RRSx−αRZ        ∂LRZx
+                                                  =
+                                                      ∂RRSx−       ∂LRSx,
+where we used divZ = 0 in the second equality. Recalling that Zx > 0, we getZZZZ
+
+                   |αR′−αR|
+                                 ∂LR′Zx =        ∂RRSx−       ∂LRSx≤     R|divS|.
+Since the total variation of divSτ is the sum of the quantity in the left-hand side over all
+pairs of regionsR,R′ with ∂RR =∂LR′, the claim follows.                                □
+  By the previous lemma, since Sτ → S pointwise as τ → 0, it is enough to prove
+Theorem 3.5for     Sτ and Tτ, where Tτ is obtained in a similar way (interchanging x and
+y), relative to a partitionQτ of the plane.
+  Step 5. To motivate what follows, we make the following formal observation: since the
+coefficients in the approximation Sτ =PRαR1RZ are nonnegative, Sτ can be viewed as
+a superposition (with nonnegative coefficients) of indicator functions times Z, in such a
+way that the divergence of these terms sums up to divSτ without cancellation.
+  We now proceed to make this rigorous.  Note that αR = 0 for all but finitely many
+regions.  Given µ > 0 different from all the (finitely many) values αR, for each j ∈ Z
+consider a maximal chain of consecutive regions Rjk,...,Rjk′ such that the associated
+constants satisfy αR > µ, and letbR be their union, which coincides with the region
+bounded by γj, γj+1, ℓk, and ℓk′+1 (up to negligible sets).
+  It is easy to check that the sum s(µ) of the total variations|div(1bRZ)|(R2), asbR (and
+j) vary, equals the sum ofR∂LR′Zx for all pairs of adjacent regionsR,R′ such that µ lies
+between αR and αR′ (regardless of the order). Hence,Z ∞       Z
+
+                                                 |αR−αR′|
+                0   s(µ)dµ =   XR,R′:∂RR=∂LR                   ∂LR′Zx =|divSτ|(R2).
+The analogous sums t(ν) coincide for the vector field W, for a given value ν > 0.
+                    MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              15
+
+   Step 6. If we prove thatZ
+
+(14)
+                         bR∩bSdet(Z,W)≤ 14|div(1bRZ)|(R2)|div(1bSZ)|(R2)
+for two chains of regionsbR andbS as above (relative to Z and W, respectively), then
+summing over all chainsbR andbS (for a given choice of µ and ν) we getZ
+                                    X
+                                            1RZ,X        1SW     ≤ 14s(µ)t(ν),
+                            R2det    αR>µ         αS>ν
+andTheorem 3.5follows by integrating in           µ and ν.
+   Step 7.  In order to prove(14), we first find two smooth functions        f,g :R2 →R such
+that
+                                       Z =∇⊥f,   W =∇⊥g,
+where ∇⊥ = (−∂y,∂x).  The function f is just any primitive of the closed form Zydx−
+Zxdy, and similarly for g. Note that the level sets of f and g are precisely the (maximal)
+integral curves of Z and W.
+   The key observation is that, since det(Z,W) > 0, an integral curve of Z meets an
+integral curve of W only once (since det(Z,W) =−df(W), actually f decreases along an
+integral curve of W). Hence, the map (f,g) :R2 →R2 is injective. Since det(Z,W)≥ 0
+is the Jacobian determinant of this map, by the area formula the integral of det(Z,W) is
+bounded by the area of the image:Z
+
+
+                                 bR∩bSdet(Z,W)≤L2((f,g)(bR∩bS)).
+   SincebRisfoliatedbylevelsetsoff startingontheleftside∂LbR =∂LRjk,theoscillation
+of f onbR, namely supbRf−infbRf, is bounded by (and in fact equal to)ZZ
+
+
+
+                              ∂LbR|∂yf| =     ∂LbRZx = 12|div(1bRZ)|(R2),
+where we used the fact thatR∂LbRZx =R∂RbRZx in the last equality. Hence, the image of
+(f,g)|bR∩bS is included in a rectangle of area
+                                 1
+                                 4|div(1bRZ)|(R2)|div(1bSW)|(R2),
+which proves(14)and thusTheorem 3.5.
+3.2. A more general bound. We present here an intermediate version, which will be
+instrumental in obtainingTheorem 3.1. Let us start by introducing some additional ter-
+minology. Given j,k∈Z, we let
+                           Uxj := [j,j +1]×R,   Uyk :=R×[k,k+1],
+called vertical and horizontal stripes, respectively. Assume now that S,T :R2 →R2 are
+smooth vector fields.
+Definition3.7. Wesaythatp∈{j}×Risa good initial condition forS if,fortheintegral
+curve γp of S with γp(0) =p, there exists τp > 0 such that
+                γp(τp)∈{j +1}×R,   γp(t)∈ (j,j +1)×R for all t∈ (0,τp),
+as well as ˙γxp(0), ˙γxp(τp) > 0. We say thatRx⊂Uxj  is a good region for S if there exists a
+segmentI :={j}×[a,b] (with a<b) on the left side, consisting of good initial conditions
+for S, such that
+                                         Rx =[       γp([0,τp]).
+                                                 p∈I
+16                                                         G. DE PHILIPPIS AND A. PIGATI
+
+The same notions for T are defined analogously, interchanging the roles of x,y.
+   Note that, since each γp meets ∂Uxj  transversely, τp depends smoothly on p. In partic-
+ular, a good regionRx is diffeomorphic to a compact rectangle [a,b]×[0,1] and S(q)̸= 0
+for all q∈Rx.
+   Given two good regions Rx,Ry for S,T, respectively, as in the proof ofTheorem 3.5
+we can construct smooth vector fields Z :Rx→R2 and W :Ry→R2, as well as smooth
+functions α :Rx→R and β :Ry→R, such that
+               divZ = 0,    divW = 0,   S =αZ,   T =βW,   α> 0,   β > 0.
+Note that we are no longer assuming that Sx≥ 0 and Ty ≥ 0, nor that det(S,T)≥ 0 on
+Rx∩Ry (although we do have Sx > 0 on the left and right sides ofRx, and similarly for
+W).
+Definition 3.8. We define the cones
+                       Cx :={(x,y) :|y|<x},   Cy :={(x,y) :|x|<y}.
+Also, given p ∈ Rx, consider the (maximal) integral curve γp : I →R2 of S with initial
+condition γp(0) = p and let τp ≥ 0 be the first time such that γxp(τp) = j +1.  We then
+define Gx⊆Rx to be the Borel set of points p such that γp(t)∈p+Cx for all t∈ (0,τp].
+The set Gy ⊆Ry is defined analogously (with T and Cy in place of S and Cx). Finally,
+we let
+                                            G :=Gx∩Gy.
+   The following picture illustrates a typical point p∈Gx.
+
+
+                                                              cone p+Cx
+                          flow line of S
+
+                                           p
+
+
+
+
+
+
+
+
+Remark 3.9. The key property of this set is that, whenever p,q ∈ G, the two points
+cannot belong to the same integral curves for S and T, unless p =q. Indeed, if they were
+distinct points on the same integral curve of S, then either q∈ p+Cx or p∈ q+Cx; in
+both cases, it would follow that |py−qy| < |px−qx|.  The same argument for T would
+give the reverse inequality and thus a contradiction.
+   We will prove that, for modified vector fields Sf and Tf, the inequalityZZZ
+
+(15)
+                       Gdet(Sf,Tf)≤         Rx(Sx+|divS|)        Ry(Ty +|divT|)
+holds. In order to reach this inequality, we need to localize the proof ofTheorem 3.5, as
+follows.
+   Given any p ∈ Rx, we can write p = γ(t) for a unique (piece of) integral curve γ :
+[0,T] → Rx of Z starting on the left side ∂LRx of Rx and ending on the right side
+                   MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              17
+
+(namely, γx(0) =j and γx(T) =j +1). We then let
+(16)                         αf(p) := min
+                                        [0,T](α◦γ)> 0,   Sf :=αfZ.
+Similarly we define βf and Tf onRy.
+  Since αf is constant along integral curves of Z, the (continuous) vector fieldαfZ is still
+divergence-free onRx. As in the previous subsection, we claim thatZ Z
+
+(17)                                                                              ,
+                        Gdet(Sf,Tf)≤          ∂LRxSxdH1  Z∂BRyTydH1
+where the last two integrals are on the left and bottom sides, respectively. Indeed, since
+Sf is divergence-free and Rx is simply connected, we can write Sf =∇⊥φ, and similarly
+Tf =∇⊥ψ, for two C1 functions φ and ψ (onRx andRy, respectively).
+  Since Sxf > 0 on the left side ∂LRx, φ is injective here, and hence each integral curve
+of S (in Rx) is an entire level set of φ; the same holds for T  and ψ.  ByRemark 3.9,
+we can then assert that the map (φ,ψ) is injective on G.  Hence, by the area formula,
+R
+ Gdet(Sf,Tf) =RGdet(αfZ,βfW) is bounded by the area of the image of this map.
+  The oscillation of φ (namely, supRxφ−infRxφ) is bounded by (and actually equal to)ZZZZ
+
+
+
+                       ∂LRx|∂yφ| =      ∂LRxαfZx≤        ∂LRxαZx =       ∂LRxSx,
+whereweusedthefactthatαf ≤α. This,togetherwiththesameboundfortheoscillation
+of ψ, gives our claim(17).
+  Further, since S is tangent to the top and bottom sides ofRx (namely, to the boundary
+∂Rx in the open stripe (j,j +1)×R), we haveZZ                 Z
+
+
+
+                      ({j}×R)∩RxSx =       ({s}×R)∩RxSx−       ([j,s]×R)∩Rxdiv(S)
+for a.e. s∈ [j,j +1]. Averaging over this interval, we obtainZZ
+
+
+
+                                    ∂LRxSx≤       Rx(Sx+|divS|).
+This proves(15).
+3.3. Complementary inequalities. In the same setting as in the previous subsection,
+the vector field Sf =αfZ admits a useful estimate on the complement ∂LRx\Gx, as we
+now show.
+Proposition 3.10. We have the boundZ                    Z
+
+
+                              Rx\Gx(Sxf −|Syf|)+≤        Rx(Sxf −|Syf|)−,
+
+as well as the analogous one for Tf onRy (with x and y interchanged).
+  This fact will be a direct consequence of the next elementary lemma, which is a version
+of the so-called rising sun lemma.
+Lemma 3.11. Given ξ∈W1,1([0,L],R) (continuous), define the Borel set
+                           E :={s∈ [0,L] : ξ(t)>ξ(s) for all t>s}.
+Then we have           Z                               Z
+                                                 ˙ξ+≤         ˙ξ−.
+                                         [0,L]\E         [0,L]
+18                                                         G. DE PHILIPPIS AND A. PIGATI
+
+Proof. Let I := [0,L].  If ξ(L) ≤ ξ(0) thenRI ˙ξ ≤ 0, henceRI ˙ξ+ ≤RI ˙ξ−, and the claim
+follows in this case.
+   Assume now ξ(L) > ξ(0).  The image ξ(E) includes [ξ(0),ξ(L)] since, for any ξ(0) ≤
+λ ≤ ξ(L), we have maxξ−1(λ) ∈ E.  Since E ⊆ {˙ξ ≥ 0} up to negligible sets, the area
+formula gives    Z                   Z                           Z         Z
+                               ˙ξ+ =                                 ˙ξ+−     ˙ξ−.                      □
+                            E          E|˙ξ|≥ξ(L)−ξ(0) =          I         I
+Proof ofProposition 3.10.           As above, we write Sf  = ∇⊥φ.  Given a level set of φ, we
+can parametrize it with an integral curve γ : [0,L] → Rx of Z/|Z|, with γx(0) = j and
+γx(L) =j +1. Note that γ has unit speed and that
+
+                                         ˙γ = (−∂yφ,∂xφ)|dφ|      ◦γ.
+
+We applyLemma 3.11with               ξ(t) :=Rt0(˙γx−|˙γy|).  With E as in the statement of the
+lemma, if s∈E then for all t>s we haveZ t
+
+        0<ξ(t)−ξ(s) =γx(t)−γx(s)−
+                                                   s |˙γy|≤γx(t)−γx(s)−|γy(t)−γy(s)|.
+This means that γ(t)−γ(s)∈Cx, hence γ(s)∈Gxj.
+   Since ˙ξ = −∂yφ−|∂xφ||dφ|     ◦γ, the lemma gives
+                   Z         (−∂yφ−|∂xφ|)+               Z L   (−∂yφ−|∂xφ|)−
+
+                     [0,L]\E         |dφ|        ◦γ≤       0          |dφ|        ◦γ.
+Integrating over all level sets of φ and using the coarea formula, we getZZ
+
+                                 (−∂yφ−|∂xφ|)+≤
+                          Rx\Gxj                           Rx(−∂yφ−|∂xφ|)−.
+Since∇⊥φ =Sf, the claim follows.                                                          □
+   We now turn to estimate
+(18)                                Sd :=S−Sf =αdZ,   αd :=α−αf.
+Recall that 0<αf ≤α, which gives 0≤αd <α.
+   In order to bound Sd, we will use another simple fact which will be invoked several
+times and is thus stated in a generality that covers all the cases in which it will be used.
+Lemma 3.12. The following hold for a Lipschitz curve γ : [0,L] → Uxj  = [j,j +1]×R
+with unit speed:
+     (i)if    γx(0)≥γx(L) thenZ L                      Z L
+
+
+
+                               0  (˙γx−|˙γy|)+dt≤        0  (˙γx−|˙γy|)−dt;
+    (ii)in general, without the previous assumption, we haveZ LZ L
+
+
+
+                             0  (˙γx−|˙γy|)+dt≤ 1+         0  (˙γx−|˙γy|)−dt.
+Analogous statements hold for a stripeUyk, interchanging the roles of x,y.
+Proof. The claim holds trivially in case (i), sinceZ LZ L
+
+
+
+                         0  (˙γx−|˙γy|)dt≤       0   ˙γxdt =γx(L)−γx(0)≤ 0
+                    MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              19
+
+and the left-hand side is the difference of the integrals of positive and negative parts. To
+show (ii), it suffices to note that γx(L)−γx(0)≤ 1.                                        □
+Proposition 3.13. We haveZ                      Z              Z
+
+                                       d|)+≤                        (Sxd −|Syd|)−.
+                         Rx(Sxd −|Sy             Rx|divS|+       Uxj
+Proof. Writing Z  = ∇⊥f, consider a level set γ : [0,L] → Rx of f, parametrized by
+arclength. We haveZ L                           Z  maxαd  Z
+
+
+
+                    0  αd(˙γx−|˙γy|)+dt =         0         {αd>s}(˙γx−|˙γy|)+dtds,
+where we write αd in place of αd◦γ for simplicity. Note that, calling Ns the cardinality
+of {αd = s}, the set {αd > s} has at most Ns connected components, since αd takes all
+values in (0,maxαd).  Hence, applying part (ii) ofLemma 3.12to          γ restricted to each
+connected component, we getZ                              Z
+
+
+
+                       {αd>s}(˙γx−|˙γy|)+dt≤Ns+             {αd>s}(˙γx−|˙γy|)−dt.
+Integrating in s and using the area formula, we deduce thatZ LZ LZ L
+
+
+
+                        0  αd(˙γx−|˙γy|)+≤        0  |˙αd|+    0  αd(˙γx−|˙γy|)−.
+   Since ˙γ =  Z|Z| anddivZ = 0, wehave|˙αd| = |divSd||Z|    = |divS||df|  , whereweomitcomposition
+with γ. To sum up, recalling that ˙γ = (−∂yf,∂xf)|df|     , we get
+        Z L                                  Z L  |divS|         Z L
+
+          0  αd(−∂yf−|∂xf|)+|df|        ◦γ≤   0     |df|  ◦γ +     0  αd(−∂yf−|∂xf|)−|df|        ◦γ.
+The claim follows using the coarea formula for f.                                          □
+Remark 3.14. Note that the notion of good regionRx for S can be relaxed slightly: we
+can rather assume that there exists a smooth unit vector field U on Rx whose integral
+curves foliate Rx and that (pointwise) S is a nonnegative multiple of U.  The previous
+proofs still apply: we can repeat them for S +δU (with δ > 0) and then let δ→ 0.
+3.4. ProofofTheorem3.1.          Byapproximation, itisenoughtoshowtheclaimassuming
+that χ∈ C0c(R2) and (given such χ) that S,T ∈ C∞c  (R2,R2). Indeed, if Sε,Tε ⇀ S,T as
+measures, with|(Sε,Tε)|⇀|(S,T)| and|divSε|,|divTε|⇀|divS|,|divT| tightly, then by
+Reshetnyak’s continuity principle we also haveZZ       Z            Z
+
+
+
+                               R2SNε  →     R2SN,        R2TNε  →     R2TN,
+and similarly      Z                                   Z
+
+
+                                R2min{SPε ,TPε }⇀        R2min{SP,TP}.
+   While reference vector fields Z,W  as above can no longer be constructed on all the
+plane, we first claim that we can reduce ourselves to the following situation, for a suitable
+finite set F ⊂R2:
+     (i) S =ηU and T =ζV, where η,ζ∈C∞c  (R2\F);
+    (ii) U,V :R2\F →S1 are smooth;
+   (iii) U =∂x and V =∂y outside of a large disk;
+   (iv)for each      p∈F, each ofU,V has the following property: either it extends smoothly
+         across p or it has the form±i(z−p)|z−p|  near p, in complex notation.
+20                                                         G. DE PHILIPPIS AND A. PIGATI
+
+ThelastconditionimpliesthatallbutfinitelymanyintegralcurvesofU andV aredefined
+at all times t∈R (and are disjoint from F).
+   Toseethisclaim,letχε :R2→Rbeanonnegativesmoothfunctionsuchthatχε = 0on
+Bε(0) and χε = 1 onR2\B2ε, with|dχε|≤ 2/ε. Letting Sε :=χε(S)S and Tε :=χε(T)T,
+it is immediate to check that Sε,Tε,divSε,divTε converge to S,T,divS,divT in L1(R2),
+as ε→ 0, so that we reduce ourselves to show the bound for Sε,Tε. Taking now ε> 0 to
+be a regular value for both|S| and|T|, we define
+                                            Ωε :={|S|>ε},
+which is a bounded smooth domain, and we make the following simple observation.
+Lemma 3.15. The vector fieldS/|S|, defined on Ωε, can be extended to a smooth vector
+field Uε :R2\Fε→S1 such that we can write Sε =ηεUε, with Fε,ηε,Uε satisfying all the
+requirements in the claim above.
+Proof. Taking Rε > 0 such that           Ωε is included in an open disk BRε(0), we let Ω′ε :=
+Ωε∪(R2\      BRε(0)) and initially define Uε on its closure, by letting Uε := S/|S| on                 Ωε,
+while Uε :=∂x onR2\BRε(0).
+   We can then extend it to a vector field Uε : Ω′′ε → S1 (smooth up to the boundary),
+for a connected Ω′′ε ⊇ Ω′ε (with smooth boundary): for instance, we can find finitely many
+disjoint injective curves γj ⊂ R2\Ω′ε (meeting ∂Ω′ε transversely at the endpoints) such
+that Ω′ε∪Sjγj becomes connected; each γj admits a neighborhood Ωj diffeomorphic to a
+δj-neighborhood ∆j of the unit segment [0,1]×{0}, through a diffeomorphism Ψ which
+maps Ωε∩ Ωj to {(x,y) ∈ ∆j  :  x ̸∈ [0,1]}.  Viewing S1 as unit complex numbers, we
+can write Uε◦Ψ−1 as eiφj on the latter set (as it has two simply connected components),
+extendφj smoothlyonallof∆j,andthendefineUε :=eiφj◦ΨonallofΩj. Itthensuffices
+to replace Ω′ε∪SjΩj with a subset Ω′′ε with smooth boundary including Ω′ε∪Sjγj.
+   Finally, since Ω′′ε is connected, its complement is diffeomorphic to the union of finitely
+many disjoint closed disks. Identifying each of them with the closed unit disk                 D, we can
+extendUε fromtheboundary∂D to              D\{z1,...,z|k|}(forarbitrarilychosendistinctpoints
+z1,...,z|k|∈D), where k∈Z is the degree of Uε on ∂D, in such a way that the extension
+has degree ±1 around zℓ, for each ℓ = 1,...,|k| (namely, 1 if k > 0 and −1 if k < 0); in
+fact, we can choose Uε to have the form±i(z−zℓ)|z−zℓ|  near each zℓ.                            □
+
+   We repeat the same for Tε, obtaining Tε =ζεVε for a suitable Vε :R2\F′ε→S1. In the
+sequel, we let F :=Fε∪F′ε and we simply write S,T,U,V  in place of Sε,Tε,Uε,Vε.
+   Up to a slight rotation in the values of S (and U), we can also assume that (0,±1) are
+regular values for U on the line{j}×R, for each j∈Z. Thus, up to adding finitely many
+points to F, we can assume that U(x,y)̸= (0,±1) whenever x∈Z and (x,y)̸∈ F, and
+similarly that V(x,y)̸= (±1,0) whenever y∈Z and (x,y)̸∈F.
+   Next, let us consider again the vertical and horizontal stripes introduced previously,
+namelyUxj = [j,j+1]×R andUyk =R×[k,k+1]. By construction, up to a negligible set,
+each stripeUxj  is a union of (pieces of) integral curves of U given by one of the following
+four kinds:
+     (i)curves joining the left side to the right side, in this order;
+    (ii)curves joining the right side to the left one, or starting from one side and ending
+         on the same one;
+   (iii)injective curves of infinite length;
+   (iv)loops;
+also, each of these meets ∂Uxj  transversely.
+   The union of curves of type (i) forms an open set, determined by a set of good initial
+conditions {j}×SℓIj,ℓ on the left side, for disjoint open intervals Ij,ℓ. We letRxj,ℓ⊆Uxj
+                   MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              21
+
+be the union of those (pieces of) integral curves with initial condition in {j}×Ij,ℓ, which
+is a good region for S according toDefinition 3.7(seeRemark 3.14).
+  Repeating the same on horizontal stripes, finding regions Ryk,m ⊆ Uyk  where integral
+curves of V  travel from the bottom side to the top one, we can define Gxj,ℓ ⊆ Rxj,ℓ and
+Gyk,m⊆Ryk,m as inDefinition 3.8, relative to these good regions. Thus, by(15)ZZZ we have
+
+                         det(Sf,Tf)≤           (|Sx|+|divS|)            (|Ty|+|divT|).
+               Gxj,ℓ∩Gyk,m                 Rxj,ℓ                   Ryk,m
+Letting Gx :=Sj,ℓGxj,ℓ, Gy :=Sk,mGyk,m, and G :=Gx∩Gy, we deduce that
+                    Z                   Z                    Z
+
+
+                     Gdet(Sf,Tf)≤        R2(|Sx|+|divS|)       R2(|Ty|+|divT|),
+where Sf,Tf are defined piecewise on each good region for S and T, respectively, as in
+(16). Note that       SPf TPf ≤Cdet(Sf,Tf) on G by the elementary bound
+                               (vx−|vy|)(wy−|wx|)≤Cdet(v,w)
+for vectors v∈   Cx and w∈      Cy (note that Sf ∈     Cx on G, except possibly on the negligible
+set Z×R, and similarly Tf ∈           Cy).   In turn, this bound follows from the fact that,
+assuming|v| =|w| = 1, det(v,w) is comparable with min{|v−w|,|v+w|}, while vx−|vy|
+is comparable with dist(v,∂Cx), and similarly wy−|wx| is comparable with dist(w,∂Cy).
+From this remark and Cauchy–Schwarz it follows thatZ
+               q                      hZ                     i1/2hZ                      i1/2.
+                  SPf TPf ≤C∥χ∥L2
+           Gχ                            R2(|Sx|+|divS|)            R2(|Ty|+|divT|)
+  Recalling that Sf,Sd are nonnegative multiples of U, we get SP =SPf +SPd  and SN =
+SNf  +SNd , and hence
+                                                                  q
+              min{SP,TP}≤ min{SPf ,TPf }+SPd +TPd ≤                 SPf TPf  +SPd +TPd .
+Letting
+                                Rx :=[      Rxj,ℓ,   Ry :=[     Ryk,m,
+                                         j,ℓ                k,m
+andR :=Rx∩Ry, we deduce thatZ  Z                        Z                        Z
+
+
+
+       Rχmin{SP,TP}≤           ZGχmin{SPf ,TPf }+Z       R\Gmin{SPf ,TPf }+Z     ZR(SPd +TPd )
+                                    q
+                            ≤          SPf TPf  +
+                                Gχ                 Rx\GxSPf +     Ry\GyTPf  +     R(SPd +TPd ).
+  Also, byProposition 3.10we haveZ               Z
+
+
+
+                                   Rx\GxSPf ≤     Rx[SNf  +|divS|],
+whileProposition 3.13gives      Z              Z
+
+
+
+                                     RxSPd ≤     R2[SNd  +|divS|],
+and similarly for T. Once we sum these bounds, we getZ
+                                          hZ                    i1/2hZ                     i1/2
+
+          Rχmin{SP,TP}≤C∥χ∥L2Z               R2(|S|+|divS|)      Z      R2(|T|+|divT|)
+                                 +C
+                                        R(|divS|+|divT|)+          R(SN +TN).
+22                                                         G. DE PHILIPPIS AND A. PIGATI
+
+Thus, we are left to bound the integralZ             Z               Z
+
+
+
+                           R2\Rmin{SP,TP}≤             R2\RxSP +       R2\RyTP.
+We will just bound the last integral of SP, as the one for TP is analogous.
+   Given j∈Z, δ > 0, and a smooth 0≤χ≤ 1 vanishing precisely on F, we now let
+                                     S :=1Uxj\SℓRxj,ℓ(S +δχ2U).
+It is immediate to check thatS has summable divergence, so that we can identify it with
+a normal 1-current (still denoted byS), withZ
+
+                                         M(∂S) =
+                                                       R2|divS|.
+By [18, Theorem C] and the Fleming–Rishel formula (see, e.g., [18, p. 849]), we can writeZZ
+
+(19)                             S =
+                                         ΣJγσKdλ(σ)+        ΞJγξKdµ(ξ),
+where (γσ)σ∈Σ is a family of (injective) arcs of finite length, while (γξ)ξ∈Ξ is a family of
+integral cycles, i.e., finite or countable unions of loops of finite total length, with respect
+to nonnegative measures λ,µ on Σ,Ξ, respectively, such thatZ
+
+                                 M(∂S;Ω) =
+                                                  ΣM(∂JγσK;Ω)dλ(σ)
+for any open Ω⊆R2. In particular, taking Ω to be the interior of Uxj, we haveZ
+
+                                      λ(˜Σ)≤
+                                                 Ω|div(S +δχ2U)|,
+where ˜Σ⊆ Σ is the subset of indices σ∈ Σ such that one of the endpoints of γσ is in Ω,
+since we have M(∂JγσK;Ω)≥ 1 for each σ ∈ ˜Σ and |divS|≤|div(S +δχ2U)| on this Ω.
+Letting              Z b                                                              Z b
+
+          H(γ) :=
+                      a [(˙γx−|˙γy|)+−(˙γx−|˙γy|)−]dt =γx(b)−γx(a)−                    a |˙γy|dt,
+for each arc γ : [a,b]→R2 (and similarly for a union of loops) we claim that
+                                     H(γσ)≤1˜Σ(σ),   H(γξ)≤ 0
+for any σ∈ Σ and ξ∈ Ξ, which immediately gives the boundZZ
+
+                       (Sx−|Sy|)+≤              [(Sx−|Sy|)−+|div(S +δχ2U)|],
+                    Uxj                      Uxj
+and similarly for T. In turn, this provesTheorem 3.1once we let        δ → 0 and sum over j
+and k.
+   To check the claim, we note that each γ =γσ and γ =γξ is part of a curve of the types
+(ii)–(iv) (for a.e. σ and a.e. ξ), since(19)holds without cancellation and thus ˙           γ(t) must
+be parallel toS(γ(t)) (and thus to U(γ(t)) as δ > 0) for a.e. t.
+   Theclaimfollowsimmediatelyforallξ∈ Ξ, sincepart(i)ofLemma3.12canbeapplied
+to loops.  Moreover, if σ ̸∈ ˜Σ then γσ is a full curve of type (ii)–(iv), but types (iii)–(iv)
+are ruled out since γσ has finite length and is not a loop. Hence, in this case γσ is a full
+curve of type (ii), in which case we can apply again part (i) ofLemma 3.12.
+   Toconclude,foranarcγσ withσ∈ ˜ΣtheclaimH(γσ)≤ 1 =1˜Σ(σ)followsimmediately
+from part (ii) ofLemma 3.12.
+                    MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              23
+
+        4. Proof of Michael–Simon for anisotropies close to the area
+   In this section we deduceTheorem 1.3from the nonlinear inequality stated inThe-
+orem 3.1.  Given a rectifiable 2-varifold     V  with finite total mass and first variation, we
+identify it with a measure on R3×S2.  We can require that such measure is invariant
+under (x,ν)7→ (x,−ν) in order to have a unique identification, although this is not really
+necessary. In the sequel, we let
+                Π :=πx,y◦π :R3×S2→R2,    i.e.,   Π((x,y,z),P) := (x,y).
+   Taking ψ ∈ C1c(R2) (viewed as a function of x,y and identified with a map in C1(R3)
+by (x,y,z)7→ψ(x,y)), we formally haveZ                         Z
+
+(20)                        ⟨δFV,ψ∂x⟩ =
+                                              R2∂xψdAxx+        R2∂yψdAyx,
+where, thanks to(8), the measures       Axx andAyx are given by
+(21)     Axx = Π∗[(F(ν)−νx∂xF(ν))V(·,ν)] = Π∗[(νy∂yF(ν)+νz∂zF(ν))V(·,ν)]
+(we used the fact that F(ν) =dF(ν)[ν] by 1-homogeneity of F) and
+(22)                                Ayx = Π∗[−νx∂yF(ν)V(·,ν)].
+In fact, a straightforward cut-off argument (using the fact that V  has finite mass) shows
+that the right-hand side of(20)is bounded by        |δFV|(R3)∥ψ∥C0, even if we are using a
+vector field which is not compactly supported.
+   Similarly, we have                        Z                 Z
+
+                            ⟨δFV,ψ∂y⟩ =
+                                              R2∂xψdAxy +       R2∂yψdAyy,
+with
+(23)                         Axy = Π∗[−νy∂xF(ν)V(·,ν)],
+                             Ayy = Π∗[(νx∂xF(ν)+νz∂zF(ν))V(·,ν)].
+For the area we have F(ν) =|ν|, so that" (νy)2+(νz)2      −νxνy                        #
+                   Axx  Ayx
+(24)                Axy  Ayy    = Π∗           −νxνy        (νx)2+(νz)2        V(·,ν)
+
+is symmetric and positive semidefinite.   Note carefully that the same matrix A given
+by(21)–(23)is not symmetric for a general                 F, nor it has Axx,Ayy ≥ 0, nor (formally)
+nonnegative determinant in general.
+Remark 4.1. It was observed by Almgren and Conway that, when F is convex, up to a
+linear change of coordinates, one can always assume that
+                    νy∂yF(ν)+νz∂zF(ν)≥ 0,   νx∂xF(ν)+νz∂zF(ν)≥ 0
+(and νx∂xF(ν)+νy∂yF(ν)≥ 0), so that in this case
+                                              Axx,Ayy≥ 0.
+This can be obtained by an argument similar to John’s lemma, finding a parallelepiped
+of smallest volume including the convex set {F ≤ 1} and changing coordinates so that it
+becomes a cube. However, our proof does not require this extra assumption.
+   Up to a permutation of the coordinates, we can assume thatZ
+
+(25)                                                          3|V|(R3).
+                                   R3×S2(νz)2dV(p,ν)≥ 1
+24                                                         G. DE PHILIPPIS AND A. PIGATI
+
+  The vector fields
+                             S :=Axx∂x+Ayx∂y,   T :=Axy∂x+Ayy∂y
+are measures with total mass bounded by C(F)|V|(R3). Since δFV  has finite total varia-
+tion, by(20)the divergence of         S is a measure with
+                                      |divS|(R2)≤|δFV|(R3),
+and the same holds for T.
+  Since the statement ofTheorem 1.3is scale-invariant, up to a dilation we can assume
+thatH2({θ > 0}) =η0, for a fixed small constant η0 > 0 to be chosen later.
+  Before applyingTheorem 3.1, let us first show two elementary inequalities for real
+numbers.
+Lemma 4.2. Given a,b,c∈R, we have
+
+                      min{(b2+c2−ab)+,(a2+c2−ab)+}≥c2− a2+b24
+
+and there exists γ > 4 (independent of a,b,c) such that
+
+                          (b2+c2−ab)−+(a2+c2−ab)−≤ a2+b2γ    .
+
+Proof. We can assume that a2+b2+c2 = 1. The inequality b2+c2−ab≥ c2− a24  gives
+immediately the first claim. Also, it shows that if |c|≥  12 then b2 +c2−ab≥  1−a24   ≥ 0,
+and similarly a2+c2−ab≥ 0, so that the second conclusion is trivial in this case.
+  Assuming |c|≤ 12, from the same inequality we get (b2 +c2−ab)−≤ a24 . Similarly we
+have (a2+c2−ab)−≤ b24, and we deduce that
+
+(26)                      (b2+c2−ab)−+(a2+c2−ab)−≤ a2+b24    .
+We claim that equality can never happen, which implies the second conclusion.  Indeed,
+in order to have equality in(26)we must have (         c2− a24 )− =  a24  (hence, either c = 0 or
+a = 0) and (c2− b24)− =  b24  (hence, either c = 0 or b = 0); thus, we must have c = 0 or
+a = b = 0. Since we are assuming a2 +b2 +c2 = 1 and |c|≤ 12, this forces c = 0, as well
+as equality in b2−ab≥−a24  and a2−ab≥−b24  (unless a or b vanish). Hence, b = a2 and
+a =  b2, or equivalently a = b = 0 (we reach the same conclusion if a = 0 or b = 0). This
+however contradicts the assumption a2+b2+c2 = 1.                                      □
+  Since the assignment (x,y) 7→  (x−|y|)− is subadditive, from the previous lemma
+(applied with a :=νx, b :=νy, and c :=νz) and(24)we deduce that
+                                                                    h(νx)2+(νy)2             i
+           SN +TN = (Axx−|Ayx|)−+(Ayy−|Axy|)−≤ Π∗                           γ         V(·,ν)
+
+when F is the area (i.e., F|S2 = 1), which implies that
+                                            h (νx)2+(νy)2                     i
+                          SN +TN ≤ Π∗                  γ          +ε  V(·,ν)
+
+for an arbitrarily small ε> 0, if F|S2 is close enough to the area in the C1 topology.
+  Also, the previous lemma implies that
+                                          h                                          i
+                   min{SP,TP}≥ Π∗            (νz)2− (νx)2+(νy)24        −ε   V(·,ν)
+for F close to the area.
+                   MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              25
+
+  Finally, we set E :=πx,y({θ > 0}), which is an analytic set; as such, we can find a Borel
+set E′ ⊇ E such that L2(E′\E) = 0.  Observing that S,T are concentrated on E′ and
+applyingTheorem 3.1with                  χ :=1E′, we getZ
+
+                                      (νz)2− (νx)2+(νy)24        −ε   dV(p,ν)
+                        R3×Gr2(R3)Z
+                       ≤
+                           E′min{SP,TP}
+                       ≤CL2(E′)1/2Z
+                            Z            R2(|S|+|T|+|divS|+|divT|)
+                         +
+                              R2(C|divS|+C|divT|+SN +TN)
+                       ≤CL2(E)1/2|V|(R3)+C(L2(E)1/2+1)|δFV|(R3)
+                            Z              (νx)2+(νy)2
+                         +                         γ          +ε  dV(p,ν).
+                              R3×Gr2(R3)
+Recalling that (νx)2 + (νy)2  = 1− (νz)2 and(25), the fact that             γ  > 4 implies that
+(νz)2−(14 + 1γ)(1−(νz)2) is at least  13−(14 + 1γ)23 =: 4c> 0 in average, and hence
+
+                2c|V|(R3)≤CL2(E)1/2|V|(R3)+(CL2(E)1/2+1)|δFV|(R3),
+provided that ε < c.  However, since L2(E) ≤ H2({θ > 0}) = η0, we can now choose η0
+such that C√η0≤ c and deduce that |V|(R3)≤ C|δFV|(R3) (for a possibly different C).
+This completes the proof ofTheorem 1.3.
+
+                                   5. Proof ofTheorem 1.5
+  First of all, note that we have
+(27)                    νx∂xF(ν)≥ 0,   νy∂yF(ν)≥ 0,   νz∂zF(ν)≥ 0,
+sinceF is convex and symmetric with respect to the coordinate planes. Moreover, the last
+assumption on F is easily checked to be equivalent to
+(28)                         (νi˜νj−νj˜νi)(∂iF(ν)∂jF(˜ν)−∂jF(ν)∂iF(˜ν))≥ 0
+for every pair of indices{i,j}⊂{1,2,3}.
+  Given a rectifiable varifold V, since νx∂xF(ν)+νy∂yF(ν)+νz∂zF(ν) =F(ν), up to a
+permutation of the coordinates we can assume thatZ
+
+
+                          R3×S2νz∂zF(ν)dV(p,ν)≥ F(V)3   ≥c|V|(R3).
+  Taking A as in the proof ofTheorem 1.3and letting      Aε := ρε∗A be a regularization
+by mollification, we clearly haveAε∈W1,2(R2). Moreover, we claim that
+                             (Aε)xx≥ 0,    (Aε)yy≥ 0,    det(Aε)≥ 0.
+Indeed, recall that
+                                       A = Π∗[B′F(ν)V(·,ν)],
+where                         νy∂yF(ν)+νz∂zF(ν)         −νx∂yF(ν)
+                 B′F(ν) :=           −νy∂xF(ν)          νx∂xF(ν)+νz∂zF(ν)             ,
+
+which gives immediately Axx,Ayy ≥ 0.  In order to check that det(Aε) ≥ 0 holds at any
+given point (x0,y0), we observe thatZ
+
+                  Aε(x0,y0) =
+                                   R3×S2ρε(x0−x,y0−y)B′F(ν)dV(x,y,z,ν).
+26                                                         G. DE PHILIPPIS AND A. PIGATI
+
+Thus, calling Λ the ν-marginal of ρε(x0−x,y0−y)V(x,y,z,ν) (i.e., its pushforward with
+respect to the projectionR3×S2→S2), we haveZZ
+
+         det(Aε(x0,y0)) =
+                                  (S2)2[(νy∂yF(ν)+νz∂zF(ν))(˜νx∂xF(˜ν)+ ˜νz∂zF(˜ν))
+                               −νx∂yF(ν)˜νy∂xF(˜ν)]dΛ(ν)dΛ(˜ν);
+after symmetrizing the integrand, namely summing the same expression after interchang-
+ing the roles of ν,˜ν (and dividing by 2), using again the fact that νx∂xF(ν)+νy∂yF(ν)+
+νz∂zF(ν) =F(ν) we obtain that it equals
+     1
+     2[F(ν)˜νz∂zF(˜ν)+F(˜ν)νz∂zF(ν)]+ 12[νy∂yF(ν)˜νx∂xF(˜ν)+ ˜νy∂yF(˜ν)νx∂xF(ν)
+        −νx∂yF(ν)˜νy∂xF(˜ν)− ˜νx∂yF(˜ν)νy∂xF(ν)]
+
+      ≥ 12[F(ν)˜νz∂zF(˜ν)+F(˜ν)νz∂zF(ν)]
+      ≥νz∂zF(ν)˜νz∂zF(˜ν),
+thanks to(27)and(28). In particular, by(27)again, we see that det(                       Aε)≥ 0.
+  Theorem 3.5now gives    Z
+
+
+                                      R2det(Aε)≤ |δFV|(R3)24       ,
+since the divergence of each row of Aε is bounded in L1(R2) by |δFV|(R3) (as this holds
+forA). Hence, fixing χ :R2→ [0,1] continuous and applying Cauchy–Schwarz, we getZ
+
+                                         det(Aε)≤∥χ∥L2|δFV|(R3).
+                                 R2χp
+  Next, given any measure M with values in R2×2, writing M = A|M| for some unit-
+valued Borel A :R2→R2×2 we letp
+                                      det(M)+ :=pdet(A)+|M|,
+which is a well-defined nonnegative measure. Since we have the tight convergence|Aε|⇀
+|A|, by Reshetnyak’s continuity principle we also havep
+                                        det(Aε)+ ⇀pdet(A)+
+as measures, since the assignment A 7→pdet(A)+ is continuous and 1-homogeneous on
+R2×2. Hence, we can pass to the limit and deduce thatZ
+
+                                         det(A)+≤∥χ∥L2|δFV|(R3).
+                                R2χdp
+By approximation, this then also holds for any Borel χ :R2 → [0,1].  As in the proof of
+Theorem 1.3, we can let     χ be the indicator function of E := πx,y({θ > 0}).  The same
+computation used above shows thatZ                           Z
+
+                          det(A)+ =pdet(A)+(R3)≥
+               R21Edp                                         R3×S2νz∂zF(ν)dV(p,ν).
+Since the latter is≥c|V|(R3) by assumption, we arrive at
+                              c|V|(R3)≤H2({θ > 0})1/2|δFV|(R3),
+as desired.
+                        MICHAEL–SIMON INEQUALITY FOR ANISOTROPIC ENERGIES                              27
+
+                                                       References
+[1]G. Alberti.     Rank one property for derivatives of functions with bounded variation. Proc. R. Soc. Edinb.
+    Sect. A 123 (1993), no. 2, 239–274.
+[2]G. Alberti, M. Cs¨ornyei, and D. Preiss.     Structure of null sets in the plane and applications. In Proceed-
+    ings of the 4th European Congress of Mathematics (ECM), Stockholm, Sweden, June 27–July 2, 2004.
+    European Mathematical Society, Z¨urich, 2005, 3–22.
+[3]W. K. Allard.     On the first variation of a varifold. Ann. of Math. (2) 95 (1972), 417–491.
+[4]W. K. Allard.     A characterization of the area integrand, in vol. 14 of Symposia Mathematica, Academic
+    Press, 1974, 429–444.
+[5]W. K. Allard.     An integrality theorem and a regularity theorem for surfaces whose first variation with
+    respect to a parametric elliptic integrand is controlled. In Geometric measure theory and the calculus of
+    variations, vol. 44 of Proc. Sympos. Pure Math. American Mathematical Society, 1986, 1–28.
+[6]J. Bennett, A. Carbery, and T. Tao.     On the multilinear restriction and Kakeya conjectures. Acta Math.
+    196 (2006), no. 2, 261–302.
+[7]C. De Lellis.     A note on Alberti’s rank-one theorem. In Transport equations and multi-D hyperbolic
+    conservation laws, vol. 5 of Lecture Notes of the Unione Matematica Italiana. Springer, Berlin, 2008,
+    61–74.
+[8]G. De Philippis, A. De Rosa, and F. Ghiraldin.      Rectifiability of varifolds with locally bounded first
+    variation with respect to anisotropic surface energies. Comm. Pure Appl. Math. 71 (2018), no. 6, 1123–
+    1148.
+[9]G. De Philippis and F. Rindler.     On the structure of A-free measures and applications. Ann. of Math.
+    (2) 184 (2016), no. 3, 1017–1039.
+[10]B. Firester and R. Tsiamis.       The anisotropic Michael–Simon inequality for surfaces in every codimen-
+    sion. arXiv preprint 2608.31168, 2026.
+[11]B. Firester and R. Tsiamis.       The anisotropic Michael–Simon inequality. arXiv preprint 2608.31164,
+    2026.
+[12]L. Gennaioli and F. Rindler.       Concentration phenomena and the vanishing mass conjecture. arXiv
+    preprint 2608.20899, 2026.
+[13]A. Guerra, B. Rait¸˘a, and M. Schrecker.       Compensation phenomena for concentration effects via non-
+    linear elliptic estimates. Ars Inven. Anal. 2024 (2024).
+[14]L. Guth.       A short proof of the multilinear Kakeya inequality. Math. Proc. Cambridge Philos. Soc. 158
+    (2015), no. 1, 147–153.
+[15]A. Massaccesi and D. Vittone.       An elementary proof of the rank-one theorem for BV functions. J. Eur.
+    Math. Soc. (JEMS) 21 (2019), no. 10, 3255–3258.
+[16]J. H. Michael and L. M. Simon.       Sobolev and mean-value inequalities on generalised submanifolds of
+    Rn. Comm. Pure Appl. Math. 26 (1973), 361–379.
+[17]L. Simon.       Lectures on geometric measure theory, vol. 3 of Proceedings of the Centre for Mathematical
+    Analysis. Australian National University, Canberra, 1983.
+[18]S. K. Smirnov.       Decomposition of solenoidal vector charges into elementary solenoids and the structure
+    of normal one-dimensional currents. St. Petersburg. Math. J. 5 (1994), no. 4, 841–867.
+
+   Department of Mathematics, University of Padova, Via Trieste 63, 35121 Padova, Italy.
+   Email address: guido.dephilippis@math.unipd.it
+
+   Department of Decision Sciences, Bocconi University, Via Roentgen 1, 20136 Milano,
+Italy.
+   Email address: alessandro.pigati@unibocconi.it
