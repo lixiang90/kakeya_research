@@ -1,0 +1,5 @@
+# R0095内部审查：实际平面转移及scope
+
+主文notes/40_multiscale/sticky_mixed/R0095_planar_Furstenberg_transfer_and_straightening_boundary.md、两独立实际稿及两formal全文限定通过，见research/reviews/R0095_original_source_and_Furstenberg_transfer_review.md、research/reviews/R0095_CW_straightening_and_scope_review.md和research/reviews/R0095_root_integration_review.md。未经外部同行评审。真实π nice输入/RW饱和、原CW q1/真unitbush sharp、ambient rank判据/actual parallel校准及exact fine defect均按量词内部核验。
+
+不排完整mixed42、不把q1说成所有RW不可用、不将ambient判据升级实际T子族、不否所有曲线/非线性方法。无新数学ID/ordinarygain/major，registry78状态保持，下一notes/00_map/R0095_next_full_goal_reselection.md，Goal active。

@@ -143,3 +143,6 @@ R0093新增Orponen2008.08843v3原40页与Lang作者2023版整流性讲义原35�
 
 
 R0094新增Lutz1511.00442v4原30页、Polson–Zantedeschi2603.25611v1原25页、FHK2105.11414v2原13页、Fraser2505.09464v1原8页；78PDF/82sources/78IDs。实际读域/hash见metadata/R0094_source_check.json；旧谱2边界、算法条件输入/字面proof-step反攻与未认证wholeproof分开，不授新Hausdorffgain。
+
+
+R0095重读既存RW2308.08819v3有限Defs/Th4.1及WZ Def17，fresh版本仍v3，实际π nice转移输出饱和。无新PDF，78PDF/82sources/78IDs；读域与scope见metadata/R0095_source_check.json。

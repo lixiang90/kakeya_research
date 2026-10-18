@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0094 compact原wholeclock单μ谱exactR^-1与真full方向产品dimF2/dimHn、算法源真实输入/字面grid反攻已核，均非新Hausdorffgain或major。streak17，下一notes/00_map/R0094_next_full_goal_reselection.md；78PDF/82sources/78IDs，Goal active。
+更新2026-10-19，R0095 actual mixed42 π平面nice转移已付但RW饱和；原CW q1Fst/真unitbush sharp、ambient直化判据和exact fine缺陷完成限定审查，无新Hausdorffgain/major。streak18，下一notes/00_map/R0095_next_full_goal_reselection.md；78PDF/82sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -207,3 +207,6 @@ R0093：Orponen主Th1.6需稳健PBP而非单固定BP。经典数字乘积给真�
 
 
 R0094：Oberlin/FHK已知谱2由compactselector/原smoothclock/球面band实际证明，真full方向P×cube对任何支持μ以R2投影L2排s>2，却dimHn。普遍Salem入口停止，非Kakeya维数反例。Lutz高维候选index费仍在，PZ完整jointbiLip不授rough输入且literalcompactdyadicgrid步骤有精确identity反攻；不否其结论。停止谱/clock/算法directextension参数续轮，四完整路保持。
+
+
+R0095：真正共同π=(filled x,time)给point2/pencilκ，但单time横排已达RW饱和指数；fixednormal q1Fst已足旧source出口，真unitbush只否q2免费升级。ambient rank2 iff βconstant不扩actualT，β变parallel族仍全直线；exact两端native defect含交叉项。停止direct planar阈值续轮，不反完整mixed42或所有曲线方法，四路仍open。

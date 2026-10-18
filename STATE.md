@@ -1,27 +1,27 @@
 # 当前研究交接
 
-更新2026-10-19，R0094，Goal active。已知compact wholeclock谱2边界实际核完：真实selector+内部smoothφ给单μ exactR^-1；P×cube真全方向、dimHn而dimFexact2，任意μ投影L2反攻。算法Lutz高维候选index费未付，PZ literal dyadic-grid步骤以sqrt2singleton identity精确反攻（不否Prop1结论）。两actual全文有限审查通过，非外peer，无ordinary改善/fullbranchsaving/newID/major。保守streak17，下一唯一 notes/00_map/R0094_next_full_goal_reselection.md，当前无qualified新gain。
+更新2026-10-19，R0095，Goal active。实际mixed42平面Furstenberg接口已付：π=(filled x,time) point2Fst/逐point pencilκ，但RW指数1已被单time横排计数饱和，无新gain。原CW给fixednormal q1Fst且真unit angular bush反q2免费升级；fixednormal原source出口属旧19.4。ambient rank2 iff βconstant、exact native两端defect和β变但actual parallel族仍全直线的scope校准均独审。未经外部同行评审，无ordinary/fullbranchsaving/newID/major。streak18，下一唯一 notes/00_map/R0095_next_full_goal_reselection.md，当前无qualified新gain。
 
-## 1. 原对象的谱measure
+## 1. 真正合法的平面影像
 
-主文notes/40_multiscale/R0094_sharp_Fourier_boundary_and_algorithmic_input_scope.md十节。compact fullunit witness关系闭compact/KRN选择，σ完成/Borelversion及support⊂K付齐；先原clock积分再取anchor相位模，φhat快衰减和球面centralstrip给exactR^-1，n2 poles单列。uniformclock的粗log不冒作endpoint。dimF≥2是经典Oberlin/FHK，非新高维界；任意非BorelK同维hull不付原Fourier支持。
+主文notes/40_multiscale/sticky_mixed/R0095_planar_Furstenberg_transfer_and_straightening_boundary.md十节。原Def17.2–17.4 scalar filled轴与nearfull Z给实际P，ambient packing保2Fst；每point选一个actual preimage的Φκ，fixed倍δ/dyadic碰撞和M一致费用已付。singlepreimage只给nice witness，不保原全部I权或新complete configuration。RW(2,κ)只δ^-1+ε M，fixedtime横排已δ^-1 M，ambient δ^-2容许，无原scalar labelupper返回。
 
-## 2. 真实全方向上限和Hausdorff
+## 2. 原CW与严格反攻范围
 
-compact planar null Kakeya P乘I^(n−2)，每unit θ先在P原段截取平面投影长度≤1，其余坐标放box，实际保physical unit长度。energyproduct给同一集dimHn；任意支持概率若s>2衰减，其R2投影FT∈L2→ac反Pnull，因此dimFexact2。s2正好log临界，非正面积、非严格低维Kakeya反例。全unitclockλ1已反普遍Salem/>2，非仅指定occupation失效。
+fixednormal q=(n·a,n·b)的原r-bin使whole tubes处Cr physical slab，保原N给q1Fst。真same-origin b四维δ-grid、physical单位长L_b、共同interiorclock disks disjoint证明joint4AD/wholeCW/angular sep却qexact1维。union有正5体积且缺fullsourceΦ/双grain，非Kakeya反例。q1已可配heavyclock dualRW走constantβ旧source矛盾，不误说定理必须q2。
 
-## 3. 算法源与闭包
+## 3. 原生轨迹直化与fine误差
 
-Lutz point-to-set对任意E合法，但平面Claim3的候选索引高维可有linear费，不靠恒等式获gain。PZ要求整ψ jointbiLip/injective/computable，rough输入未给；其compact∩dyadic lattice网格可能全空：Z={(sqrt2/2,0,..)},U=I,ψidentity满足条件而G_s空。只否字面proof步骤，未否Prop1结论/未认证其wholeproof。正σ label mass a可保谱界常数C/a；真实正volume tube fatclock marks不赠共同smoothφ，平均/逐管分开，不宣所有阴影无谱measure。uniformbandβ>1由Haar/Tonelli不可能；kplane fullunitball不由localgrain免费来。
+V_t=(n_t,t n_t)在≥3times的rank≤2 iff βconstant，允许全ambientλ共同nonzero scale/共同injective clock仍如此。严格量词不能扩actualT：β=t e1、b0/四维interceptgrid管族joint4AD/CW但全部F_t=a4−t a1线性。exact两端defect含positive θ(1−θ)hΔβ·b_H；βaffine真实unitsegment仍midpoint1/8，不是fineδ。任意boundedLip仅Oρ误差；单窗/逐管mass不免费，未排所有nonlinear或curved方法。
 
-## 4. 四完整路与冻结
+## 4. 完整目标与停止
 
-ordinary原多尺度初始化、directHRZ全parent/terminal/coarse费用、sticky完整κ1/余mixed与ordinary桥、同集full方向严格低维构造均open。本轮停止普遍Salem/band更高指数、算法directextension/desiredjointbiLip，不续P乘积/clock参数。R93数字/PBP、R92singleorbit、R91free rank/normal3/C1及旧CP/PM/PW/cut/cone/跨块、DIM001/R38/R80重排仍冻结；R56conditioning未解冻。四维fullHdim不冒fullFourier。
+ordinary原allscale初始化、HRZ全parent/terminal/coarse/narrow、sticky完整κ1/余mixed和ordinary桥、同集full方向严格低维构造均open。停止direct planar饱和/β/κ/window/CW小改，不以R74正维label或R77 weighted工具改名重开。R94谱/算法、R93数字/PBP、R92singleorbit、R91free rank/normal3/C1和旧CP⇔PM/PW/cut/cone/跨块/DIM重排保持冻结。须真新的原联合约束才锁下一gain。
 
-## 5. 来源和实际审查
+## 5. 来源与实际审查
 
-78PDF/82sources/78IDs。Lutzv4原30p307815bytes、PZv1原25p488743bytes、FHKv2原13p177556bytes、Fraserv1原8p314083bytes；hash/readscope见R0094_source_check.json。rootactual相关物理页和view10/7/4/2，A/Bactual领域逐核，whole高级proof具名不新认证。FHK已有Cor2.4 k1谱2；Fraserintro明确高维可exact2，finitefield主定理不作realtransfer，算法源不授rough高维gain。两gate8/两formal6/root6、两spec5、macro-next-source6已归档，未外部peer/新颖性认证。
+78PDF/82sources/78IDs，无新primary下载或ID状态变化。RW currentv3 Jan19 2025 freshabs/history/HTML，本轮actual有限Defs/Th4.1和PDF9图；其whole28page高级proof未新独证。原WZ Def17及R74/R77应用实际读域见sourcecheck。两独立稿、两formal6/root6、macro-next-source6内部全文限定审查通过，未经外部同行评审，非novelty/major。last actual官方OAI三核心wholebytes仍R75，本轮不冒新ref/byte核。
 
 ## 6. 恢复与精确同步
 
-本轮父HEAD=origin=freshremote5cc2211f75e1a787665a9383f0108553acb15e70/tree3f9ccae6b30099c5f9dcd9de8dac796fa54b23a1，1456旧clean。最终tmp/sync/R0094.json须pendingfalse/samecommit/clean/fulltree/逐stagedSHA256全真。官方freshref/canonicaltree仍1581d4…/450747…，last三核心wholebytesR75。context本轮一次且stdout过长后全ROADMAP/registry逐项另读，不重跑四PDF下载/旧计算。Windows导出shellworkers2，Pythoncodepoints与JS UTF16长度分开并核actualbytes；staged/import可batch cat-file但每blobSHA1/SHA256仍真读。Goal active。
+本轮父HEAD=origin=freshremote48b1a0f92f88a3056d69b98e9a15d251f0fba679/treee20ecc2027367a3f95eb6ae2e5035407faf61f6b，1483旧clean；初次connector transport失败后freshref已恢复。context一次，完整ROADMAP长输出后缺失中段另读，不重跑旧计算/PDF。tmp/sync/R0095.json须pendingfalse/samecommit/clean/fulltree/每stagedSHA256全真才报告同步。batch cat-file仍核每blobSHA1/SHA256；Unicode按codepoints/UTF8 bytes分别付。Goal active。
