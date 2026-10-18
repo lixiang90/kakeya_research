@@ -1,8 +1,8 @@
 # 一般维度 Kakeya 研究
 
-目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度的证明、证伪或重大中间结果。已完成九十轮归档研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
+目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度的证明、证伪或重大中间结果。已完成九十一轮归档研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
 
-R90核验一项新的高维超平面关联输入：原始点上方向可转成所需法向族，但可接的端点已由初等二点计数得到，未增加估计强度；四维返回所需管族质量仍未解决。现66PDF/70sources/78IDs，Goal active。
+R91完成从任意原集合到全单位线段矩阵测度的适用性核查；已有微分约束定理只给奇异部分局部秩限制，尚未带来更高维Kakeya界。具体反攻区分全局方向、局部独立性及阴影边界费用。现69PDF/73sources/78IDs，Goal active。
 
 每次恢复研究，依次读 [GOAL.md](GOAL.md)、[STATE.md](STATE.md)、[ROADMAP.md](ROADMAP.md)、[最近轮次](research/rounds/)；执行 `python scripts/context.py` 可生成精简交接摘要。
 

@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0090原完整κ1 polar补全/L2正常量可付，hyperplane端点二点CS复得，拒锁phaseII新gain。真实H内R4原质量未付，finite/continuum校准两审修复；无ordinary/完整branch-saving/newID/major。streak13，下一notes/00_map/R0090_next_full_goal_reselection.md，66PDF/70sources/78IDs，Goal active。
+更新2026-10-18，R0091任意K同维Gδ/全clock矩阵measure资格已付，finiteDiv结构定理仅singularrank≤4；局部独立/normal3+C1与原质量出口未付，拒phaseII新gain。无ordinary/完整branch-saving/newID/major，streak14，下一notes/00_map/R0091_next_full_goal_reselection.md；69PDF/73sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -195,3 +195,6 @@ R0089：Guth1402.0518v1几何cut避R56 leading conditioning，但标准hyperplan
 
 
 R0090：CsornyeiStull新primary真实接口核。完整sourceκ1 polar原Φ→nearfullnormal及原E4Fst/sameH/sameM付过，但s=t4端点由二点-CS独立复得；H满5/原TH七维预算只均度2，不授R4满三参数族。a(v)=v²子chart校准非fullsource反例，有限axes零测与roundtube正体积已分清。停止此直接polar桥，不续κ/normal/M或richH假设；四完整路保持。
+
+
+R0091：整单位线段全方向概率构造及任意原K同维hull/标准选择合法，Div端点TV≤2；DPR finiteRHS rank仅约束奇异conditional方向。真bush反globalmoment→localrank/physical4Fst，4flat仅反弱PDE5维推断，full方向mask反density→uniformboundary，normal1形式wedge不授normal3。停止这些直接桥，不将C1/BV/独立Alberti做新假设；四完整路保持。

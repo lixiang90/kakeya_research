@@ -1,0 +1,5 @@
+# R0091 内部审查记录：全线段矩阵测度资格及直接出口
+
+root主文10与两actual全文formal在明列输入/具名来源范围有限通过，未经外部同行评审。见notes/40_multiscale/R0091_whole_segment_matrix_measure_and_current_exit.md、research/reviews/R0091_whole_segment_and_singular_rank_review.md、research/reviews/R0091_current_boundary_and_original_scope_review.md。
+
+任意原K同维Gδ归约、标准选择与wholeclock PSD/端点Div有限资格合法；DPR只给singular局部rank≤4。真bush、4flat弱PDE及full方向shading分别反不同免费桥；normal1不授normal3/C1。无新结果ID、ordinary增益、完整branchsaving或重大认证，registry78状态不改，Goal active。下一notes/00_map/R0091_next_full_goal_reselection.md先完整四路重选，streak14。

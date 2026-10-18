@@ -1,0 +1,3489 @@
+[PDF physical page 1]
+MATH 7870: DESCRIPTIVE SET THEORY
+JUSTIN MOORE
+Lecture 1
+Descriptive set theory concerns the study of “regular” or “tame” sub-
+sets of separable complete metric spaces. We will begin by developing
+a better understanding of which topological spaces admit separable,
+complete metrics.
+Deﬁnition 1. A topological space X is Polish if it is separable and
+completely metrizable.
+It is straightforward to characterize when a subspace of a complete
+metric space is complete in the inherited metric.
+Proposition 1. If (X, d) is a metric space and E ⊆ X, then E is
+closed if and only if (E, d) is complete.
+In particular, (0,∞), R\ Q, and Q all fail to be complete when given
+the usual metric on R. The question of when a subspace of a Polish
+space is Polish (as witnessed by a diﬀerent metric) is more subtle. For
+instance any logarithm function is a homeomorphism between (0 ,∞)
+and R. We will see momentarily that R\Q is also Polish while Q is not.
+Speciﬁcally, Alexandroﬀ proved that the Polish subspaces of a Polish
+space are exactly the subsets which are countable intersections of open
+sets.
+The next proposition will be useful in Alexandroﬀ’s characterization
+and is of independent interest.
+Proposition 2. If (Xn| n <∞) is a sequence of Polish spaces, then∏∞
+n=0 Xn is Polish.
+Proof. For each n, let dn be a complete metric on Xn which generates
+its topology. If x, y∈∏∞
+n=0 Xn, deﬁne
+d(x, y) =
+∞∑
+n=0
+2−n−1 min(dn(xn, yn), 1).
+It can be checked that the product topology is the same as the topology
+induced by d. □
+1
+
+[PDF physical page 2]
+2 JUSTIN MOORE
+Next we handle an important special case of the characterization.
+Lemma 1. If X is Polish and U⊆ X is open, then U is Polish.
+Proof. Set E = X\ U and deﬁne
+Γ ={(x, r)∈ X× R| d(x, E)· r = 1}.
+It is readily veriﬁed that Γ is closed and that the projection onto the
+ﬁrst coordinate is a homeomorphism between Γ and U. Since X and R
+are Polish, so isX×R. Hence Γ is closed, it is Polish as well. Since being
+Polish is a topological property, it is perserved by homeomorphisms and
+thus U is Polish. □
+We are now ready to prove the characterization. Recall that a subset
+Y of a topological space is a Gδ-set if it is a countable intersection of
+open sets.
+Theorem 1 (Alexandroﬀ). If X is a Polish space and Y ⊆ X, then
+Y is Polish if and only if it is a Gδ-set.
+Proof. First suppose that Y is a Gδ-set and let Y = ⋃∞
+n=0 Un where
+Un ⊆ X is open. By Lemma 1, each Un is Polish and by Lemma
+1, ∏∞
+n=0 Un is Polish. Let ∆ ⊆ ∏∞
+n=0 X consist of the constant se-
+quences. The projection onto the ﬁrst coordinate deﬁnes a homeomor-
+phism between ∆ and X. Furthermore, this homeomorphim restricts
+to a homeomorphism from ∆∩∏∞
+n=0 Un to Y . Since ∆∩∏∞
+n=0 Un is a
+closed subspace of ∏∞
+n=0 Un it is also Polish. Hence Y is Polish.
+Now suppose that Y⊆ X is Polish when given the subspace topology.
+Let d′ be the complete metric on Y which witnesses this. Deﬁne Un to
+be all open subsets U of X such that:
+• the d-diameter of U is less than 1 /n;
+• U∩ Y is nonempty and has d′-diameter less than 1 /n.
+Set Wn =⋃Un. SinceUn is a cover of Y for each n, Y⊆⋂∞
+n=0 Wn. It
+is therefore suﬃcient to show that ⋂∞
+n=0 Wn⊆ Y . Toward this end, let
+y∈⋂∞
+n=0 Wn. For each n, let Un∈U n be such that y∈ Un. Observe
+that y is in the closure of Y since every element of Wn is of distance at
+most 1/n from Y . For each n, pick yn∈ Y∩⋂
+i≤n Ui. Clearly yn→ y.
+Furthermore, (yn)n is Cauchy since if n∈ N, then{yi| n≤ i}⊆ Un
+which has diameter less than 1 /n. □
+
+[PDF physical page 3]
+MATH 7870: DESCRIPTIVE SET THEORY 3
+Lecture 2
+We begin by recalling the following classical metrization result from
+point-set topology. This theorem gives a very useful criteria for deter-
+mining when a topological space is metrizable.
+Theorem 2. A regular topological space is second countable (i.e. has
+a countable base of open sets) if and only if it is both separable and
+metrizable.
+The focus of this lecture is to prove embedding theorems for Polish
+spaces. The ﬁrst theorem shows that any separable metric space can
+be embedded into a compact metric space. Notice the separability
+assumption is necessary since every compact metric space is separable
+and every subspace of a separable metric space is separable.
+Theorem 3. If X is a separable metric space, then X is embeddable
+into [0, 1]N.
+Proof. Let d be a complete metric on X which generates the topology
+and which is bounded by 1. Let ( zn| n∈ N) enumerate a countable
+dense subset of X and deﬁne a function φ : X→ RN by φ(x)(n) =
+d(x, zn). We must show that φ is one-to-one, continuous, and that φ−1
+is continuous.
+To see that φ is one-to-one, suppose that x̸= y and let n be such
+that d(x, zn) < d(x, y)/2. It follows that d(x, zn) < d(y, zn) and hence
+that φ(x)̸= φ(y).
+That φ is continuous follows from the fact that d is continuous. In
+order to see that φ−1 is continuous, suppose that ( xm)m is a sequence
+such that φ(xm)→ φ(x) for some x∈ X. Let ε > 0 be given and let
+n be such that d(x, zn) < ε/3. Find an m0 such that if m > m 0, then
+|d(xm, zn)− d(x, zn)| < ε/3. If m > m 0, then
+d(xm, x)≤ d(xm, zn) + d(x, zn)
+=|d(xm, xn)− d(x, zn) + d(x, zn)| + d(x, zn)
+≤| d(xm, xn)− d(x, zn)| + 2d(x, zn) < ε.
+Since ε > 0 was arbitrary, xm→ x. □
+Corollary 1. If X is a compact metric space, then X is homeomorphic
+to a closed subspace of [0, 1]N.
+Proof. By the previous theorem, X is homeomorphic to a subspace of
+[0, 1]N. Since X is compact, so is this subspace; since compact subspaces
+are always closed, we are ﬁnished. □
+
+[PDF physical page 4]
+4 JUSTIN MOORE
+If we replace [0 , 1]N by the Polish space RN, then we can obtain an
+analogous embedding theorem for Polish spaces.
+Theorem 4. If X is a Polish space, then X is homeomorphic to a
+closed subspace of RN.
+Proof. By Theorem 3, we may assume that X⊆ [0, 1]N⊆ RN. Since
+X is Polish, it is a Gδ-set inside RN. Let ( En)n be a sequence of closed
+sets such that ⋃∞
+n=0 En = RN\ X. Deﬁne
+Y ={(x, r)∈ RN× RN :∀n(d(x, En)· rn = 1)}.
+Notice that Y⊆ RN× RN≈ RN is closed. It therefore suﬃces to show
+that X≈ Y . Observe that if ( x, r)∈ Y , then x∈ X and if x∈ X,
+then there is a unique r∈ RN such that ( x, r)∈ Y . Since the ﬁrst
+coordinate projection map is both continuous and open, its restriction
+to the closed set Y is a homeomorphism. □
+Next we turn to the spaces 2 N ={0, 1}N and NN, which play a dual
+role in understanding Polish spaces. If S is any set, deﬁne ∆ : SN→
+N∪{∞} by
+∆(x, y) = min({n∈ N| x(n)̸= y(n)}∪{∞} ).
+This gives rise to a metric: d(x, y) = 2−∆(x,y). This function satisﬁes a
+strong form of the triangle inequality:
+d(x, z)≤ max(d(x, y), d(y, z)).
+Moreover d is complete and the induced topology on SN is separable if
+and only if S is countable.
+The following theorems characterize the spaces 2 N and NN in terms
+of their topological properties. Recall that a topological space is 0-
+dimensional if it has a base of sets which are clopen (i.e. both closed
+and open).
+Theorem 5. 2N is homeomorphic to any compact metric space which
+is 0-dimensional and has no isolated points.
+Theorem 6. NN is homeomorphic to any Polish space which is 0-
+dimensional and has no compact neighborhoods.
+The space 2 N is commonly referred to as the Cantor set. It is home-
+omorphic to the standard “middle third” Cantor set contained in the
+unit interval. The space NN is commonly known as Baire space. By
+the above characterization, it is homeomorphic to R\ Q.
+
+[PDF physical page 5]
+MATH 7870: DESCRIPTIVE SET THEORY 5
+Lecture 3
+In the previous lecture we saw that every Polish space embeds as
+a closed subspace of Rω and that every compact metric space embeds
+as a closed subspace of [0 , 1]ω. In this lecture we will show that every
+Polish space is a continuous image ofωω and that every compact metric
+space is a continuous image of 2 ω. Moreover if the space is assumed to
+have no isolated points, then the continuous function can be taken to
+be one-to-one.
+Before going further, it will be useful to pause and deﬁne some ter-
+minology and notation which will be used later. An ordinal is a set α
+which has the following properties:
+• (transitive set) if γ∈ β∈ α, then γ∈ α;
+• (linearly ordered) if β̸= γ are in α, then β∈ γ or γ∈ β.
+It can be readily checked that:
+• the emptyset is an ordinal, which is usually denoted 0 when
+viewed as such;
+• if α is an ordinal, then so is α + 1 := α∪{ α} and if A is a set
+of ordinals, then∪A is an ordinal.
+Furthermore, we have the following key feature of ordinals.
+Theorem 7. If α̸= β are ordinals, then α∈ β or β∈ α. Moreover,
+every nonempty subset of the ordinals has an ∈-least element.
+Thus we regard the class of all ordinals as being well ordered by ∈
+(even though formally the class of all ordinals is a proper class and not
+a set).
+The ﬁnite ordinals naturally correspond to the nonnegative integers:
+n :={0, . . . , n− 1}. The set of ﬁnite ordinals is denoted ω and we
+will generally write ω instead of N from this point forward. Unless
+otherwise stated, counting and indexing will start at 0 and the variables
+i, j, k, l, m, n will range over ω.
+A sequence is a function whose domain is an ordinal. The length of
+a sequence s is deﬁned to be its domain and is denotes lh(s). In this
+course, we will generally only work with sequences of length at most
+ω. If S is a set, we will use S<ω to denote the set of all ﬁnite length
+sequences whose range is contained in S. We will use s⌢t to denote the
+concatenation of s and t (the meaning should be clear enough when s
+is ﬁnite and t has length at most ω and we will not need any further
+generality than this; a general deﬁnition is possible, however). Either
+⟨a0, a1, . . . , an−1⟩ or⟨ai| i < n⟩ will be used to denote the sequence
+whose ith entry is ai. The sequence of length 0 will be denoted ε.
+
+[PDF physical page 6]
+6 JUSTIN MOORE
+We now return to our regular discussion. Recall from last time that
+d(a, b) = 2−∆(a,b) deﬁnes a complete metric on Sω. This is compatible
+with the product topology if S is given the discrete topology. Further-
+more, the open balls in Sω all have the form
+[s] :={a∈ Sω| a↾ lh(s) = s}
+where s∈ S<ω. Notice that these sets are clopen.
+Theorem 8. If X is a 0-dimensional Polish space with no compact
+neighborhoods, then X is homeomorphic to ωω.
+Proof. Let{Wn| n∈ ω} be a base for X consisting of clopen sets and
+ﬁx a compatible complete metric d on X. Recursively construct, for
+each s∈ ω<ω, Us⊆ X such that:
+• Uε = X;
+• for each s,⟨Us⌢⟨n⟩| n∈ ω⟩ is a partition of Us into nonempty
+clopen sets;
+• Us is contained in or disjoint from Wlh(s);
+• the d-diameter of Us is at most 2−lh(s).
+Given Us, construct {Us⌢⟨n⟩| n∈ ω} as follows. By our assumption,
+we know that there is an open cover Us which has no ﬁnite subcover.
+By reﬁning the cover if necessary, we may assume that each of its el-
+ements are basic clopen sets of diameter less than 2 −lh(s)−1, that each
+are contained in Us, and that each are contained in or disjoint from
+Wlh(s)+1. Since clopen sets are closed under ﬁnite boolean combina-
+tions and since there are only countably many basic open sets, we may
+further reﬁne this cover to a partition. Let ⟨Us⌢⟨n⟩| n∈ ω⟩ enumerate
+this partition without repetition.
+Observe that the conditions of the construction imply that each Wn
+is a union of elements of {Us| s∈ ω<ω} and hence {Us| s∈ ω<ω}
+forms a base for the topology on X.
+Claim 1. For each a in ωω,⋂∞
+n=0 Ua↾n is a singleton.
+Proof. Observe that if xm ∈ Ua↾m for each m ∈ ω, then since the
+diameters of the Ua↾n’s tend to 0, the sequence⟨xm| m∈ ω⟩ is Cauchy.
+This implies in particular that the intersection ⋂∞
+n=0 Ua↾n contains at
+most one element. Since d is complete, xm→ x for some x. Since Ua↾n
+is closed for all n, x∈⋂∞
+n=0 Ua↾n. □
+Deﬁne φ(a) to be the unique element of ⋂∞
+n=0 Ua↾n. Since, Uε = X
+and⟨Us⌢⟨n⟩| n∈ ω⟩ is a partition of Us for each s∈ ω<ω, it follows
+that φ is one-to-one and onto. Furthermore, φ−1(Us) = [ s]. Since
+{Us| s∈ ω<ω} and{[s]| s∈ ω<ω} are bases for the topologies of X
+and ωω, respectively, it follows that both φ and φ−1 are continuous. □
+
+[PDF physical page 7]
+MATH 7870: DESCRIPTIVE SET THEORY 7
+A similar proof can be used to show that every Polish space is a
+continuous image of ωω; we will state and prove a stronger result in
+the next lecture. We now turn to the role that 2 ω plays in the class of
+compact metric spaces.
+Theorem 9. If E is a compact metric space, then there is a continuous
+surjection φ : 2 ω→ E. Moreover if E has no isolated points and is
+0-dimensional, then φ can be taken to be a homeomorphism.
+Proof. Let{Wn | n∈ ω} be a basis for the topology of E; if E is
+0-dimensional, then arrange that each Wn is clopen. Recursively con-
+struct, for each ﬁnite binary sequence s, a nonempty open set Us⊆ E
+such that:
+(1) Uε = E, where ε is the null sequence and if E is 0-dimensional
+then each Us is clopen;
+(2) Us⌢⟨0⟩∪ Us⌢⟨1⟩⊆ Us⊆ Us⌢⟨0⟩∪ Us⌢⟨1⟩;
+(3) Us is contained Wn or is or disjoint from Wn where n is the
+length|s| of s;
+(4) if Us is not a singleton, then Us⌢⟨0⟩∩ Us⌢⟨1⟩ =∅.
+Observe that if x̸= y are in E, then there is an n such that x∈ Wn and
+y is not in Wn. In particular, if s has length at least n, then x and y
+are not both in Us. On the other hand, if a∈ 2ω, then{Ua↾n| n∈ ω} is
+a decreasing chain of nonempty compact sets. Consequently ⋂∞
+n=0 Ua↾n
+contains a unique element for each a∈ 2ω. Deﬁne φ : 2 ω → E by
+letting φ(a) be the unique element of ⋂∞
+n=0 Ua↾n. If x∈ E, then one
+can readily recursively construct an a∈ 2ω such that for all n, x∈ Ua↾n.
+In particular, φ is onto.
+We must now show that φ is continuous. Toward this end, let a∈ 2ω
+and V⊆ E be an open set containing x. Let n be such that x∈ Wn⊆
+Wn⊆ V . Since φ(a)∈ Ua↾n, it can not be that Ua↾n is disjoint from Wn.
+It follows from the construction that Ua↾n⊆ Wn. Now if b∈ [a↾ n],
+then
+φ(b)∈ Uy↾n⊆ Wn⊆ V.
+Since a and V were arbitrary, φ is continuous.
+Finally, observe that ifE is 0-dimensional and has no isolated points,
+then Us⌢⟨0⟩ and Us⌢⟨1⟩ are disjoint clopen sets. In particular, φ is one-
+to-one. We are now ﬁnished by recalling that any continuous bijection
+between compact spaces is in fact a homeomorphism. □
+
+[PDF physical page 8]
+8 JUSTIN MOORE
+Lecture 4
+Let X be a ﬁxed Polish space. The Borel subsets of X are the
+members of the minimum collection Borel( X)⊆ P(X) such that:
+• every open subset of X is in Borel( X);
+• if B∈ Borel(X), then so is X\ B;
+• ifB⊆ Borel(X) is countable, then ⋃B is in Borel( X).
+Our ﬁrst goal will be to prove the following theorem.
+Theorem 10. If X is a Polish space and B is a countable family of
+Borel subsets of X, then there is a stronger Polish topology on X with
+the same Borel subsets in which each element of B is clopen.
+This follows from two lemmas which are of interest in their own right.
+Recall that a regular open set is an open set which is the interior of its
+closure. Notice that any separable metric space has a countable base
+consisting of regular open sets.
+Lemma 2. If X is a Polish space and U⊆ X is open, then the stronger
+topology generated by declaring U to be clopen is Polish. Moreover, if
+U is a regular open set and X has no isolated points, then the stronger
+topology has no isolated points as well.
+Proof. Deﬁne Y ⊆ X×{ 0, 1} by Y := U×{ 0}∪ (X\ U)×{ 1}. It is
+readily checked that Y is a Gδ-subset of the Polish space X×{0, 1} and
+hence Polish. Furthermore projection onto the ﬁrst coordinate deﬁnes
+a continuous bijection π from Y to X. Moreover the restrictions of π
+to U×{ 0} and (X\ U)×{ 1} are homeomorphisms onto U and X\ U.
+In particular, π is a homeomorphism to the stronger topology on X
+generated by declaring U to be clopen. Finally, if X has no isolated
+points and U⊆ X is a regular open set, then neither U nor X\ U have
+isolated points. Consequently Y has no isolated points. □
+Lemma 3. If X is a set and ⟨τn| n∈ ω⟩ is an increasing sequence
+of Polish topologies on X, then the topology τ generated by⋃∞
+n=0 τn is
+Polish.
+Proof. By Theorem 2, ∏∞
+n=0(X, τn) is Polish. Moreover, the constant
+sequences form a closed — and hence Polish — subspace of the product
+which is homeomorphic to ( X, τ). □
+In order to prove Theorem 10, consider the collection C of all Borel
+subsets of X which are clopen in some stronger Polish topology which
+generates the same Borel sets. Clearly C is closed under taking com-
+plements. Lemma 2 implies that C contains all open subsets of X and
+Lemma 3 implies that C is closed under taking countable unions. It
+
+[PDF physical page 9]
+MATH 7870: DESCRIPTIVE SET THEORY 9
+follows that C coincides with the class of all Borel subsets of X. This
+establishes Theorem 10 in the special case in which B is a singleton.
+The general case follows by iterating the singleton case and applying
+Lemma 3.
+If X and Y are Polish spaces, a functionf : X→ Y is Borel (or Borel
+measurable) if whenever B⊆ Y is Borel, f−1(B) is Borel. Observe that
+in order to verify that f is Borel measurable, it suﬃces to show that
+f−1(U) is Borel whenever U⊆ Y is open.
+Corollary 2. If X and Y are Polish and f : X→ Y is Borel measur-
+able, then there is a stronger Polish topology on X with the same Borel
+sets such that f is continuous with respect to the stronger topology.
+Proof. Apply Theorem 10 to {f−1(Wn)| n∈ ω} where{Wn| n∈ ω}
+is a base for the topology on Y . □
+Corollary 3. If X is Polish, then there is a stronger 0-dimensional
+Polish topology on X with the same Borel sets. Moreover, if X has no
+isolated points, then the stronger topology also does not have isolated
+points.
+Proof. Let{Wn| n∈ ω} be a base for the topology τ on X consisting
+of regular open sets. By Lemmas 2 and 3, the topology generated by
+τ∪{ X\ Wn| n∈ ω} Polish and 0-dimensional. Moreover, if τ has no
+isolated points, neither does the stronger topology. □
+Theorem 11. If X is Polish, then there is a continuous surjection
+f : ωω → X such that f−1(U) is Borel whenever U ⊆ X is open.
+Moreover, if X has no isolated points, then f can be taken to be one-
+to-one.
+Proof. If X has isolated points, then observe that X× R is Polish, has
+no isolated points, and maps continuously onto X. Thus by replacing
+X by X×R if necessary, we may assume that X has no isolated points.
+We will be ﬁnished once we show that there is a stronger topology on
+X which is homeomorphic to ωω.
+Let τ0 denote the topology on X and let D⊆ X be a countable
+dense set. Observe that if U⊆ X is a regular open set, then D is still
+dense in the topology generated by τ0∪{ X\ U}: this is because any
+open subset of X which intersects X\ U must intersect X\ U. Let
+W be a countable collection of regular open sets which form a base for
+the topology on X such that for each x∈ D, there is a W∈W such
+that x is in the boundary of W . By Lemmas 2 and 3, the topology τ
+generated by τ0∪{ X\ W| W∈W} is Polish, 0-dimensional, and has
+no isolated points. Moreover, by our observation D is still dense in τ.
+
+[PDF physical page 10]
+10 JUSTIN MOORE
+By Theorem 8, it suﬃces to show that τ does not contain any compact
+open sets. In order to see this, suppose that U⊆ τ is clopen in τ and
+let x∈ D∩ U. Pick a W∈W such that x is in the τ0-boundary of W .
+The collection of closed τ0-neighborhoods of x together with U∩ W
+form a family of τ-closed sets with the ﬁnite intersection property but
+having empty intersection. Thus U is not compact. □
+Corollary 4. If X is Polish and B⊆ X is a Borel set, then B is a
+continuous image of ωω.
+Proof. Let τ be the topology on X and let τ′ be a stronger Polish
+topology on X in which B is clopen. By the previous theorem, there
+is a continuous surjection φ : ωω→ (X, τ′). Since φ is still continuous
+with respect to τ, we are done. □
+
+[PDF physical page 11]
+MATH 7870: DESCRIPTIVE SET THEORY 11
+Lecture 5
+We begin by noting a few examples of explicit continuous surjections
+which are sometimes useful. The ﬁrst is given by the traditional binary
+expansion of elements of [0 , 1]: deﬁne f : 2ω→ [0, 1] by
+f(x) =
+∞∑
+n=0
+x(n)2−n−1
+If we equip 2ω with the lexicographic order, then this map a continuous
+order preserving surjection. Furthermore, the preimages of elements of
+[0, 1] contain at most 2 elements and are singletons except for dyadic
+rationals.
+Next recall that the real projective line P 1(R) is the family of all
+lines in R2 which pass through the origin. An element of P 1(R) can be
+identiﬁed with the x-coordinate of its intersection with the line y = 1;
+the horizontal line y = 0 corresponds to the point ∞. We can deﬁne a
+function φ : 2ω→ [0,∞] by the implicit formula:
+φ(⟨1⟩⌢x) = 1 + φ(x) φ(⟨0⟩⌢x) = 1
+1 + 1
+φ(x)
+In fact it can be shown that there is a unique continuous function φ
+which satisﬁes this formula. To see this, observe that if x is constantly
+0, then φ(x) must be 0. If x is a sequence with only ﬁnitely many
+occurrences of 1, then the above deﬁnition is recursive. One can more-
+over verify that the image of the sequences which are eventually 0 is
+exactly the rationals and that φ is order preserving.
+The function φ can be modiﬁed slightly to give a surjection from 2 ω
+to P 1(R) = R∪{∞} :
+Φ(⟨1⟩⌢x) := φ(x) Φ( ⟨0⟩⌢x) :=−φ(˜x)
+where ˜x denotes the bitwise complement of x (i.e. ˜x(n) = 1− x(n) for
+each n∈ ω). This function preserves cyclic order.
+It is possible to give a ﬁner stratiﬁcation of Borel( X) by keeping
+track of how its elements are generated. Speciﬁcally, deﬁne Σ 0
+1(X) to
+be the collection of all open subsets of X. If α > 0 is an ordinal, then
+Π0
+α(X) consists of all complements of sets in Σ 0
+α(X). If α > 1 is an
+ordinal, then Σ 0
+α(X) consists of all sets which can be expressed as a
+countable union of sets in ⋃
+γ<α Π0
+γ. In particular:
+• Π0
+1(X) consists of the closed subsets of X;
+• Σ0
+2(X) consists of the Fσ-subsets of X;
+• Π0
+2(X) consists of the Gδ-subsets of X.
+
+[PDF physical page 12]
+12 JUSTIN MOORE
+Just as every open set is an Fσ-set, it can be show than if α < β , then
+Σ0
+α(X)∪ Π0
+α(X)⊆ Σ0
+β(X)∩ Π0
+β(X)
+It can be easily veriﬁed that if ω1 is the ﬁrst uncountable ordinal, then
+Σ0
+ω1(X) = Borel( X) and thus if α ≥ ω1, then Σ 0
+α(X) = Π 0
+α(X) =
+Σ0
+α(X).
+In the previous lecture, we saw that every Borel set in a Polish
+space is a continuous image of ωω. Continuous images of ωω are of
+considerable interest in their own right and will play an important role
+in the remainder of the course. The next proposition shows that there
+are a number of equivalent formulations of being analytic.
+Proposition 3. If X is a Polish space and A⊆ X, then the following
+are equivalent:
+(1) A is a continuous image of ωω;
+(2) there is a Polish space Y , a Borel set B ⊆ Y , and a Borel
+measurable f : B→ A;
+(3) there is a closed set E⊆ X× ωω such that A ={x∈ X|∃ y∈
+ωω((x, y)∈ E)}.
+Proof. It is trivial that (3) implies (2). To see that (2) implies (1), let
+B⊆ Y and f : B→ A be given. By increasing the topology on Y ,
+we may assume that f : B→ A is continuous. Let g : ωω→ B be a
+continuous surjection and observe that f◦ g : ωω→ A is a continuous
+surjection. In order to see that (1) implies (3), ﬁx a continuous function
+f : ωω→ X whose range is A and deﬁne
+E :={(x, y)∈ X× ωω| f(y) = x}.
+Since f is continuous, E is closed. Clearly the projection of E onto the
+ﬁrst coordinate is A. □
+The next theorem of Souslin is known as the Separation Theorem
+and gives a useful characterization of Borel sets.
+Theorem 12. If X is Polish and A and B are disjoint analytic subsets
+of X, then there is a Borel set C such that A⊆ C and C∩ B =∅. In
+particular, a subset B of X is Borel if and only if both B and X\ B
+are analytic.
+Proof. Fix continuous surjections f : ωω→ A and g : ωω→ B. Given
+s∈ ω<ω, deﬁne
+As :={f(x)| x∈ [s]}Bs :={g(x)| x∈ [s]},
+noting that As =⋃∞
+m=0 As⌢⟨m⟩ and Bs =⋃∞
+n=0 Bs⌢⟨n⟩.
+
+[PDF physical page 13]
+MATH 7870: DESCRIPTIVE SET THEORY 13
+Suppose for contradiction that there is no Borel set C which sepa-
+rates A from B. Construct sequences ⟨mk| k∈ ω⟩ and⟨nk| k∈ ω⟩
+so that if sk :=⟨mi| i < k⟩ and tk :=⟨ni| i < k⟩, then there is no
+Borel set C such that Ask⊆ C and Btk∩ C =∅. Notice that if k = 0,
+then Ask = Aε = A and Btk = Bε = B. Suppose that sk and tk have
+been determined. If for each m, n∈ ω there is a Borel set Cm,n which
+separates Ask ⌢⟨m⟩ from Btk ⌢⟨n⟩, then
+C =
+∞⋃
+m=0
+∞⋂
+n=0
+Cm,n
+separates Ask from Btk. Thus there exist mk and nk such that Ask ⌢⟨mk⟩
+is not separated from Btk ⌢⟨nk⟩ by a Borel set.
+Finally, deﬁne x :=⟨mk | k∈ ω⟩ and y :=⟨nk | k∈ ω⟩. Since
+f(x)∈ A and g(y)∈ B, f(x)̸= g(y) and there are disjoint open sets
+U and V containing f(x) and g(y) respectively. Since f and g are
+continuous, there is a k such that [ sk]⊆ f−1(U) and [ tk]⊆ g−1(V ).
+But now U is a Borel set which separates Ask from Btk, which is a
+contradiction. □
+There are analytic sets which are not Borel. For example,
+{A⊆ Q| A contains an inﬁnite decreasing sequence}
+is the projection of the closed set
+{(A,⟨qk| k∈ ω⟩)∈ P(Q)× Qω|∀ k∈ ω(qk∈ A) and ( qk+1 < q k)}.
+We do not yet have the tools to see that this set is not Borel, however.
+
+[PDF physical page 14]
+14 JUSTIN MOORE
+Lecture 6
+If X is a Polish space, then the collection of analytic subsets of X is
+denoted Σ1
+1(X). A subset of X is co-analytic if it is the complement of
+an analytic set. The collection of co-analytic subsets of X is denoted
+Π1
+1(X).
+In this lecture we will see two proofs that there is an analytic set
+which is not Borel. Each illustrates a technique which is of independent
+interest.
+Theorem 13. If X is a Polish space, then there is an analytic set
+A⊆ X× ωω such that if B⊆ X is analytic, then there is a y∈ ωω
+such that
+B = Ay :={x∈ X| (x, y)∈ A}.
+An analytic set satisfying the conclusion of this theorem is said to
+be a universal analytic set for X.
+Proof. Let{Un| n∈ ω} enumerate a base for X× ωω and deﬁne
+F :={(x, y, z)∈ X× (ωω)2|∀ n((x, z)̸∈ Uy(n))}.
+Observe that if E⊆ X is closed and y∈ ωω is an enumeration of the
+set{n∈ ω| E∩ Un =∅}, then
+E ={(x, z)∈ X× ωω|∃ y((x, y, z)∈ F )}.
+It suﬃces to check that
+A ={(x, y)∈ X× ωω|∃ z((x, y, z)∈ F )}
+satisﬁes the conclusion. To see this, suppose that B⊆ X is analytic
+and let E⊆ X× ωω be such that B ={x∈ X|∃ y((x, z)∈ E)}. Now
+if y∈ ωω is such that
+E ={(x, z)∈ X× ωω|∃ y((x, y, z)∈ F )},
+then we have B ={x∈ X| (x, y)∈ A}. □
+Corollary 5. If A⊆ ωω× ωω is a universal analytic set, then A is not
+Borel.
+Proof. If A were Borel, then
+A∆ :={x∈ ωω| (x, x)∈ A}
+would be Borel as well. In particular ωω\ A∆ would be analytic. Since
+A is universal, there would be an y∈ ωω such that Ay = ωω\ A∆. But
+now y∈ A∆ if and only if ( y, y)∈ A if and only if y∈ ωω\ A∆, which
+is a contradiction. □
+
+[PDF physical page 15]
+MATH 7870: DESCRIPTIVE SET THEORY 15
+Next we will show that
+W :={A∈ P(Q)| A is well ordered}
+is co-analytic but not Borel. This proof centers on the boundedness
+principle. Recall that a binary relation ≺ on a set X is well-founded if
+there does not exist an inﬁnite sequence ⟨xn| n∈ ω⟩ of elements of X
+such that for all n∈ ω, xn+1≺ xn; otherwise we say ≺ is ill-founded.
+Given a well founded relation, we can can recursively deﬁne the rank
+function ρ for (X,≺). This function maps X into the ordinals so that
+ρ(x) is the least strict upper bound for {ρ(y)| y∈ X and y≺ x} (in
+particular, ρ(x) = 0 if there is no y∈ X such that y≺ x). The rank
+of ( X,≺) is the least strict upper bound for {ρ(x)| x∈ X}. It can
+be shown that the rank of a well-founded relation is always an ordinal
+of cardinality at most |X|. In particular, the rank of a well-founded
+relation on a countable set is always less thanω1. In the case of analytic
+relations on Polish spaces, this bounded can be improved.
+Theorem 14. Let≺ be an analytic relation on a Polish space X. If
+(X,≺) is well-founded, then its rank is a countable ordinal.
+Proof. Without loss of generality, we may assume that X = ωω. It
+suﬃces to show that there is a countable set S, a relation ≺∗, and a
+function φ from the ﬁnite ≺-decreasing sequences in X into S such
+that:
+• if (S,≺∗) is ill-founded, then ( X,≺) is ill-founded and
+• if ⃗ xis an initial part of ⃗ y, then φ(⃗ x)≺∗ φ(⃗ y).
+Let E⊆ (ωω)3 be such that x≺ y if and only if there is a z∈ ωω such
+that (x, y, z)∈ E. If x≺ y, deﬁne θ(x, y) to be the lexicographically
+least z such that (x, y, z)∈ E. Deﬁne a relation on deﬁne S to consist
+of all ﬁnite sequences σ =⟨(sσ
+i , tσ
+i , uσ
+i )| i < n σ⟩ such that for all i < n σ,
+[sσ
+i ]× [tσ
+i ]× [uσ
+i ]∩ E̸=∅
+and for i < n σ− 1, tσ
+i+1 = sσ
+i . Deﬁne≺∗ on S by τ≺∗ σ if nσ < n τ and
+for all i < n σ,
+sσ
+i ⊂ sτ
+i tσ
+i ⊂ tτ
+i uσ
+i ⊂ uτ
+i .
+First we will show that if ( S,≺∗) is ill-founded, then ( X,≺) is ill-
+founded. To this end, suppose that⟨σk| k∈ ω⟩ is a sequence in S such
+that σk+1≺∗ σk for all k∈ ω. Deﬁne xi =⋃
+k∈ω sσk
+i and yi =⋃
+k∈ω uσk
+i .
+Observe that (xi+1, xi, yi)∈ E and therefore that xi+1≺ xi.
+It remains to deﬁne a function φ which maps the ﬁnite≺-decreasing
+sequences in X into S so that φ(⃗ x)≺∗ φ(⃗ y) whenever ⃗ xis an initial
+
+[PDF physical page 16]
+16 JUSTIN MOORE
+part of ⃗ y. Given a ﬁnite ≺-decreasing sequence ⃗ x∈ X <ω of length n,
+deﬁne
+φ(⃗ x) =⟨(xi↾ n, xi+1↾ n, θ(xi, xi+1)↾ n)| i < n⟩.
+It is routine to check that φ is as desired. □
+Theorem 15. Suppose thatA⊆ P(Q) is analytic and if A∈A , then
+A is well ordered by the usual order on Q. Then there is a countable
+ordinal α such that if A∈A , then otp(A) < α.
+Proof. Deﬁne≺ on P(Q) by A≺ B if A and B are in A and there
+is an f : A→ B which is an order preserving function and whose
+range is bounded by an element of B. Notice that the collection of
+pairs ( A, B, f) ∈ P(Q)× P(Q)× P(Q2) such that f : A → B
+is order preserving with range bounded by an element of b is Borel.
+Consequently≺⊆A×A is analytic. By the boundedness principle,
+the rank of (A,≺) is a countable ordinal α. This implies that{otp(A)|
+A∈ A}has ordertype α and in particular is countable. Since any
+countable subset of ω1 is bounded, we are done. □
+Corollary 6. The collectionW of subsets of Q which are well ordered
+by the usual order on Q is co-analytic but not Borel.
+Proof. Since every countable linear order embeds into Q, every count-
+able ordinal embeds into Q. Thus ω1 is the least upper bounded for
+the ordertypes of the well ordered subsets of Q. □
+
+[PDF physical page 17]
+MATH 7870: DESCRIPTIVE SET THEORY 17
+Lecture 7
+As you may have noticed, the interesting examples of Polish spaces
+all have the same cardinality of R. We have seen already that every
+separable metric space is embeddable intoRω and hence has cardinality
+at most
+|Rω| =|(2ω)ω| =|2ω×ω| = 2ℵ
+0 .
+We will now see that any Polish space which has cardinality less than
+2ℵ0 must in fact be countable and moreover satisfy strong topological
+constraints.
+A subset of a topological space X is perfect if it is closed, nonempty,
+and has no isolated points. A topological space S is scattered if every
+nonempty subspace of S contains an isolated point. The assertion that
+E is perfect becomes a much stronger assumption if X is assumed to
+be, e.g., Polish.
+Theorem 16. If X is a Polish space and E⊆ X is perfect, then E
+contains a homeomorphic copy of the Cantor set.
+If X is a topological space, then deﬁne the Cantor-Bendixon deriva-
+tive of X to be the set X′ consisting of all nonisolated points of X. If
+α is an ordinal, the deﬁne X(α) recursively by:
+X(α) =
+
+
+
+X if α = 0
+(X(β))′ if α = β + 1⋂
+β<α if α is a positive limit ordinal
+It is readily veriﬁed by induction on α that X(α) is a closed subset of
+X for each α and that if α < β , then X(β)⊆ X(α). In particular, there
+is a least α, called the Cantor-Bendixon rank of X such that X(α) has
+no isolated points (i.e. X(α+1) = X(α)). We say that X is scattered if
+there is an α such that X(α) is empty. Notice that this is the same as
+saying that every subspace of X has an isolated point.
+Proposition 4. Suppose that X is a topological space with a base of
+cardinality θ.
+• Any strictly⊆-decreasing well ordered sequence of closed subsets
+of X has cardinality at most θ (and hence length less than θ+).
+• Any discrete subset of X has cardinality at most θ.
+In particular, the Cantor-Bendixon rank of X is an ordinal α < θ + and
+X\ X(α) has cardinality at most θ.
+In particular, we have the following theorem.
+
+[PDF physical page 18]
+18 JUSTIN MOORE
+Theorem 17. If X is a separable metric space, then there is a perfect
+set P⊆ X such that X\ P is scattered and countable.
+Next we turn to the cardinality of analytic sets in Polish spaces. If X
+is a separable metric space, then an open graph on X is a graph (with
+no loops or multiple edges) on the vertex set X in which the adjacency
+relation is open when viewed as a symmetric subset of X× X. Let
+OCA∗(X) be the assertion that whenever G is an open graph on X,
+then either:
+• there is an H⊆ X which is homeomorphic to the Cantor set
+which is a complete subgraph of G;
+• there is a function χ : X→ ω such that if u, v∈ X are adjacent,
+then χ(u)̸= χ(v).
+If H witnesses the ﬁrst alternative, we say that H is a perfect clique
+of G. If the second alternative holds for X, then we say that G is
+countably chromatic.
+Theorem 18. If A is an analytic set, then OCA∗(X) is true.
+Proof. First observe that if OCA ∗(X) is true and f : X → Y is a
+continuous surjection, then OCA∗(Y ) is true. To see this, suppose that
+G is an open graph on Y and deﬁne ˜G on Y so that u, v∈ X are
+connected by an edge in ˜G if and only if f(u)̸= f(v) are connected
+by an edge in G. Observe that if E⊆ X is such that no two elements
+of E are connected by an edge in ˜G, then no two elements of the
+f-image of E are connected by an edge in G. In particular, if ˜G is
+countably chromatic, so is G. Also, if H⊆ X is a perfect clique, then
+the restriction of f to H is a one-to-one continuous function and hence
+an embedding; the f-image of H is therefore a perfect clique of G.
+It therefore suﬃces to show that OCA∗(ωω) is true. To this end, let
+G be a given open graph on ωω. We will say that a subset E of ωω
+is countably chromatic if the restriction of G to this set is countably
+chromatic. If ωω is countably chromatic, then we are done. Suppose
+not and construct⟨us| s∈ 2<ω⟩ so that:
+(1) us is an initial part of ut if and only if s is an initial part of t;
+(2) [ us] is not countably chromatic for each s∈ 2<ω;
+(3) if s∈ 2<ω and x, y∈ ωω extend us⌢0 and us⌢1 respectively, then
+x and y are adjacent in G.
+Start by setting uε = ε. Given us, let Xs consist of all x∈ [us] such
+that no open neighborhood of x is countably chromatic. Notice that
+Xs is closed and that [us]\Xs is countably chromatic. In particular, Xs
+is not countably chromatic and there are x̸= y∈ Xs such that x and y
+
+[PDF physical page 19]
+MATH 7870: DESCRIPTIVE SET THEORY 19
+are adjacent in G. Since G is open, there are initial parts us⌢0⊂ x and
+us⌢1⊂ y which properly extend us, which do not extend each other,
+and which satisfy that if x′∈ [us⌢0] and y′∈ [us⌢1], then x′ and y′ are
+adjacent. This ﬁnishes the construction.
+Deﬁne φ : 2ω→ ωω by φ(a) =⋃∞
+n=0 ua↾n. It is easy to see that φ is a
+homeomorphism. Furthermore if a < lex b∈ 2ω and s is the maximum
+common initial segment of a and b, then φ(a)∈ us⌢0 and φ(b)∈ us⌢1.
+In particular, φ(a) and φ(b) are adjacent in G. □
+Corollary 7. If A is an analytic set, then either A is countable or else
+A contains a homeomorphic copy of the Cantor set.
+Proof. Let G be the complete graph on A. If G is countably chromatic,
+then A is necessarily countable. If H is a perfect clique of G, then
+H⊆ A and is homeomorphic to the Cantor set. □
+
+[PDF physical page 20]
+20 JUSTIN MOORE
+Lecture 8
+In this lecture we will present some important consequences of the
+separation theorem for analytic sets.
+Theorem 19. If X and Y are Polish spaces and f : X → Y is a
+function, then the following are equivalent:
+(1) f is Borel measurable;
+(2) Γ f :={(x, y)∈ X× Y| f(x) = y} is Borel;
+(3) Γ f is analytic.
+Proof. To see that (1) implies (2), let{yn| n∈ ω} enumerate a count-
+able dense subset of Y and let Um,n denote the 1 /n ball about ym.
+Observe that:
+Γf =
+∞⋂
+n=0
+∞⋃
+m=0
+f−1(Um,n)× Um,n.
+Since f is Borel measurable, f−1(Um,n) is Borel and hence Γf is a Borel,
+being a countable Boolean combination of Borel sets.
+That (2) implies (3) is trivial.
+To see that (3) implies (1), observe that by the separation theorem it
+suﬃces to show that if U⊆ Y is open, then f−1(U) and f−1(Y\ U) =
+X\f−1(U) are analytic. This is a trivial consequence of the observation
+that
+f−1(U) = πX(Γf∩ X× U) f−1(Y\ U) = πX(Γf∩ X× (Y\ U))
+are projections of analytic sets and hence analytic. □
+While continuous images of Borel sets need not be Borel, one-to-one
+continuous images of Borel sets are Borel.
+Theorem 20. If X and Y are Polish and f : X→ Y is a one-to-one
+Borel function, then the f-image of any Borel set is Borel.
+Proof. First recall that, given any Borel subset of X, there is a stronger
+0-dimensional Polish topology on X in which the Borel set is clopen
+and with respect to which the function f is continuous. Since any
+0-dimensional Polish space is homeomorphic to a closed subspace of
+ωω, it suﬃces to show that if E⊆ ωω is closed, then any one-to-one
+continuous image of E is Borel.
+For each t∈ ω<ω, deﬁne At to be the image of E∩[t] under f. Notice
+that, for each t,{At⌢⟨n⟩| n∈ ω} is a pairwise disjoint family of analytic
+sets which partitions At. Using the separation theorem, construct Borel
+sets Bt such that the following are true for each t∈ ω<ω:
+• At⊆ Bt⊆ At;
+
+[PDF physical page 21]
+MATH 7870: DESCRIPTIVE SET THEORY 21
+•{ Bt⌢⟨n⟩| n∈ ω} is a partition of Bt.
+For each n, we have
+f(E) =
+⋃
+t∈ωn
+At⊆
+⋃
+t∈ωn
+Bt.
+It therefore suﬃces to show that
+∞⋂
+n=0
+⋃
+t∈ωn
+Bt⊆ f(E).
+If y∈⋂∞
+n=0
+⋃
+t∈ωn Bt, then for each n let tn be the unique sequence of
+length n such that y∈ Btn. Let yn∈ Atn be such that the distance
+between yn and y is at most 1 /n. Fix xn∈ E with f(xn) = yn, noting
+that xn extends tn. Observe that if m < n , then tm is an initial part
+of tn and thus xn→ x where x∈ ωω is such that x↾ n = tn for each n.
+Since E is closed, x is in E and since f is continuous, f(x) = y. □
+When developing our “change of topology” machinery, we took care
+to ensure that the stronger topologies which we considered generated
+the same Borel sets as the original topology. It turns out that this
+happens automatically as the next corollary shows.
+Corollary 8. If X is a Polish space, then any stronger topology on X
+has the same Borel sets.
+Proof. Let τ be the Polish topology on X and let τ′ be a stronger
+Polish topology on X. The identity function from ( X, τ′) to ( X, τ) is
+continuous and one-to-one. It follows that if U is τ′-open, then U is
+τ-Borel. □
+If X is an uncountable set equipped with a σ-algebra of subsets, then
+we say that X is a standard Borel space if there is a Polish topology on
+X such that the σ-algebra consists of the Borel sets in this topology.
+The terminology is justiﬁed by the following theorem.
+Theorem 21. If X and Y are standard Borel spaces, then there is a
+bijection between X and Y which is Borel measurable with respect to
+the witnessing Polish topologies.
+Proof. It clearly suﬃces to prove this theorem when Y is ωω⊕ ω. The
+theorem now follows from the observation that any Polish topology
+can be strengthened to a Polish topology which is homeomorphic to
+ωω⊕ ω. □
+
+[PDF physical page 22]
+22 JUSTIN MOORE
+Lecture 9
+In this lecture we will ﬁnish our foundational study of analytic sets.
+Recall that if A is an analytic subset of a Polish space X, then by
+strengthening the Polish topology on X if necessary, we may assume
+that A⊆ X⊆ ωω.
+If S is a set, then a tree on S is a set T⊆ S<ω which is closed under
+taking initial segments. Let Trees denote the collection of all trees on
+ω, noting that this is a closed subspace ofP(ω<ω) and hence a compact
+metric space. We will let WF and IF denote the set of all well founded
+and ill founded trees on ω, respectively. If S = A× B is a cartesian
+product, then it is common to regard ﬁnite sequences ⟨(ai, bi)| i < n⟩
+on A× B as the pair of sequences (⟨ai| i < n⟩,⟨bi| i < n⟩).
+There is a natural coresponsence between trees on S and closed sub-
+sets of Sω, where S is given the discrete topology and Sω is given the
+product topology. Speciﬁcally, if T is a tree on S, then
+B(T ) :={x∈ Sω|∀ n∈ ω(x↾ n∈ T )}
+is a closed subset of Sω. If E⊆ Sω, then
+TE ={x↾ n| (x∈ E) and ( n∈ ω)}
+is a tree. Notice that B(T ) is always closed and in fact B(TE) is the
+closure of E. Similarly, TE is always a pruned tree. Here a tree T is
+pruned it does not contain any maximal elements. Every tree T⊆ S<ω
+contains a maximal pruned subtree; this in fact coincides with TB(T ).
+If T⊆ S<ω is a tree, deﬁne T (α) for α and ordinal by recursion. Set
+T (0) = T and if T (β) has been deﬁned for all β < α , deﬁne T (α) to be
+all s∈ T such that for every β < α there is a t∈ T (β) which has s as
+a proper initial part.
+Lemma 4. For each countable ordinal α, the map T ↦→ T (α) deﬁned
+on the trees on ω is a Borel function.
+Proof. The proof is by induction on α. If α = 0, then T↦→ T (0) is just
+the identity function. If α > 0, then
+T (α) =
+⋂
+β<α
+⋃
+t∈ω<ω
+{s∈ T| (s⊂ t) and ( t∈ T (β))}
+which is a Borel set. □
+It is readily checked that each T (α) is a tree and if α < β , then
+T (β)⊆ T (α). In particular, there is an α such that T (α+1) = T (α); set
+T (∞) := T (α) where T (α+1) = T (α). Observe that T (∞) is pruned and is
+the maximum pruned subtree of T .
+
+[PDF physical page 23]
+MATH 7870: DESCRIPTIVE SET THEORY 23
+Lemma 5. If Trees is the Polish space consisting of all trees on ω and
+α is a countable ordinal, then
+WFα :={T∈ Trees| T (α) =∅}
+IFα :={T∈ Trees| T (α+1) = T (α)̸=∅}
+are Borel sets.
+Deﬁne ρ on T\ T (∞) by
+ρ(s) = min{ξ| s̸∈ T (ξ)}.
+Notice that if T is well founded, then T (∞) is empty and ρ is a strictly
+decreasing function from T into the ordinals.
+If T is a tree on ω× S for some S, then deﬁne
+pT :={s∈ ωω|∃ y∀n∈ ω((x↾ n, y↾ n)∈ T )}.
+If x∈ ωω, set T (x) :={t∈ S<ω| (x↾ lh(t), t)∈ T}. Observe that if T
+is a tree on ω× ω, the function x↦→ T (x) is continuous. Also, x∈ pT
+if and only if T (x) is ill founded. It should be clear that if A⊆ ωω,
+then A = pT for some tree T on ω× ω.
+Theorem 22. If A⊆ ωω is analytic, then there are sequences of Borel
+sets⟨Bξ| ξ∈ ω1⟩ and⟨Cξ| ξ∈ ω1⟩ such that
+A =
+⋃
+ξ∈ω1
+Bξ ωω\ A =
+⋃
+ξ∈ω1
+Cξ
+Proof. Let T be a tree on ω× ω such that A = pT . Set
+Bξ :={x∈ ωω| T (x)∈ IFα}
+Cξ :={x∈ ωω| T (x)∈ IFα}.
+By Lemma 5, these sets are Borel. Since WF = ⋃
+ξ∈ω1 WFξ and IF =⋃
+ξ∈ω1 IFξ, we have pT =⋃
+ξ∈ω1 and ωω\ pT =⋃
+ξ∈ω1 Cξ. □
+Corollary 9. If C⊆ ωω is a coanalytic set, then either C contains a
+perfect subset or else |C|≤ℵ 1.
+Remark 1. This is the best result provable in ZFC. In fact if ω1 is not
+an inaccessible cardinal in G¨ odel’s constructible universe, then there is
+an uncountable coanalytic set with no perfect subset.
+Proof. By the previous theorem C =⋃
+ξ∈ω1 Cξ where each Cξ is a Borel
+set. If any Cξ is uncountable, then it must contain a perfect subset.
+Otherwise|C|≤ℵ 1·ℵ 0 =ℵ1. □
+
+[PDF physical page 24]
+24 JUSTIN MOORE
+Lecture 10
+Recall that a subset of a topological space is nowhere dense if its clo-
+sure does not contain a nonempty open set. A set which is a countable
+union of nowhere dense sets is said to be meager. The complement of
+a meager set in a Polish space is said to be comeager. The motivation
+for these deﬁntions is the Baire category theorem.
+Theorem 23. Every Polish space is nonmeager.
+Proof. Let X be Polish and ﬁx a complete metric d which generates
+the topology. Suppose that ⟨En | n ∈ ω⟩ is a sequence of closed
+nowhere dense subsets of X. Construct a sequence of nonempty open
+sets⟨Un| n∈ ω⟩ such that:
+• the d-diameter of Un is at most 1 /n;
+• the closure of Un+1 is contained in Un\ En.
+Notice that if Un has been constructed, then Un is not contained in En
+and thus Un\ En is nonempty. We can then take Un+1 to be a suitably
+small open ball inside Un\ En. The proof is now ﬁnished by observing
+that, since d is complete,
+∞⋂
+n=0
+Un =
+∞⋂
+n=0
+Un+1
+is a singleton{x} such that x is not an element of En for any n. □
+A subset A of a Polish space has the Baire property (or property of
+Baire) if there is an open set U⊆ X such that A△U is meager.
+Theorem 24. If X is a Polish space, then the collection of subsets of
+X with the Baire property forms a σ-algebra which includes the open
+sets. In particular, every Borel set has the Baire property.
+Proof. Clearly every open set has the Baire property. If A⊆ X has
+meager symmetric diﬀerence with an open set U⊆ X, then X\ A has
+meager symmetric diﬀerence with the interior of X\ U:
+(X\ A)△int(X\ U)⊆ A△U∪ (U\ U)
+In particular, the complement of a set with the Baire property also has
+the Baire property. Finally, if ⟨An| n∈ ω⟩ is a sequence of sets with
+the Baire property and Un is open for each n with An△Un meager,
+then
+(
+∞⋃
+n=0
+An)△(
+∞⋃
+n=0
+Un)⊆
+∞⋃
+n=0
+(An△Un).
+In particular, a countable union of sets with the Baire property has the
+Baire property. □
+
+[PDF physical page 25]
+MATH 7870: DESCRIPTIVE SET THEORY 25
+The next theorem of Kuratowski and Ulam characterizes meager sub-
+sets of the product of two Polish spaces. It has a wealth of applications
+in descriptive set theory.
+Theorem 25. Suppose that X and Y are Polish spaces. If E⊆ X× Y
+has the Baire property, then the following are equivalent:
+(1) E is meager in the product topology;
+(2){x∈ X|{ y∈ Y| (x, y)∈ E} is nonmeager} is meager;
+(3){y∈ Y|{ x∈ X| (x, y)∈ E} is nonmeager} is meager.
+Proof. By exchanging the roll of X and Y , it clearly suﬃces to prove
+the equivalence of the ﬁrst two items. Let {Vn| n∈ ω} enumerate a
+basis for Y . Suppose ﬁrst that E⊆ X× Y is closed and deﬁne A to
+be the set of all x such that{y∈ Y | (x, y)∈ E} is somewhere dense
+in Y . For each n, deﬁne
+An :={x∈ X|{ x}× Vn⊆ En}.
+Clearly An is the maximal set such that An× Vn⊆ En. Since E is
+closed, it follows that An is closed as well. Furthermore, A =⋃∞
+n=0 An.
+Also, An has interior in X if and only if An× Vn has interior in X× Y .
+It follows that A is nonmeager if and only if some An has interior if
+and only if E has interior.
+If E⊆ X× Y is meager, then it is contained in ⋃∞
+n=0 En where each
+En is a closed nowhere dense set. For each n,
+An :={x∈ X|{ y∈ Y| (x, y)∈ En} is somewhere dense}
+is nowhere dense. Consequently
+{x∈ X|{ y∈ Y| (x, y)∈
+∞⋃
+n=0
+En} is nonmeager}⊆
+∞⋃
+n=0
+An
+is meager.
+Finally, suppose that E ⊆ X× Y has the Baire property and is
+nonmeager. We must show that
+{x∈ X|{ y∈ Y| (x, y)∈ E} is nonmeager}
+is nonmeager. Let U and V be nonempty open sets such that E∩U×V
+is comeager in U×V . Observe that both U and V are themselves Polish
+and also nonmeager. Thus U× V\ E is meager and
+{x∈ U|{ y∈ V| (x, y)̸∈ E} is nonmeager}
+is meager. Consequently
+{x∈ U|{ y∈ V| (x, y)∈ E} is nonmeager}
+is nonmeager, as desired. □
+
+[PDF physical page 26]
+26 JUSTIN MOORE
+Lecture 11
+The goal of this lecture will be to prove that analytic subsets of
+Polish spaces have the Baire property and that analytic subsets of R
+are Lebesgue measurable. We will actually prove a more general result.
+Let X be a Polish space. A collection I⊆ P(X) is a Borel σ-ideal
+on X if:
+•∅∈ I and X̸∈ I ;
+• I is closed under subsets and countable unions;
+• every element of I is contained in a Borel set in I .
+We can think of I as specifying a notion of being “small” – where
+subsets of X are small precisely when they are in I . If A, B⊆ X are
+Borel, then we will write A⊆I B to mean that A\ B is in I . A set
+A⊆ X is I -measurable if there is a Borel set B⊆ X such that the
+symmetric diﬀerence A△B is in I . It is not diﬃcult to adapt the proof
+from the previous lecture to show that the collection of I -measurable
+sets forms a σ-algebra which contains the Borel sets.
+A prototypical example of a Borel σ-ideal is the collection of meager
+subsets of a Polish space X (denotedM(X) orM if X is clear from
+the context). Another is the collection N of Lebesgue measure zero
+subsets of R (these are sometimes referred to as null sets and denoted
+collectively byN ). More generally, if µ is a countably additive Borel
+measure on a Polish space, then the µ-null setsNν form a Borel σ-ideal.
+Observe thatM-measurability coincides with the Baire Property and
+thatNµ-measurability coincides with µ-measurability.
+A Borel σ-ideal I is said to have the c.c.c. if whenever A is a
+family of Borel sets which are not in I such that the intersection of
+every two distinct elements ofA is in I , thenA is at most countable.
+Notice thatM(X) is always a c.c.c. ideal and that Nµ is a c.c.c. ideal
+provided that µ is a σ-ﬁnite measure.
+Theorem 26. Suppose that X is a Polish space and I is a c.c.c.
+Borel σ-ideal on X. If F is a collection of Borel sets, then there exists
+a Borel sets A such that if B is in F, then A⊆I B and if A′ is any
+other Borel set with this property, then A′⊆I A.
+Proof. It suﬃces to show that there is a countable subset F′⊆F such
+that if A =⋃F′, then B⊆I A. If this is not true, then construct a
+sequence⟨Bξ| ξ∈ ω1⟩ of elements of F such that Bξ̸⊆I
+⋃
+η∈ξ Bη. If
+we set Aξ := Bξ\⋃
+η∈ξ Bη, thenA ={Aξ| ξ∈ ω1} is pairwise disjoint
+and consists of Borel sets not in I , which contradicts our assumption
+that I is c.c.c.. □
+We our now ready to state the main result of this lecture.
+
+[PDF physical page 27]
+MATH 7870: DESCRIPTIVE SET THEORY 27
+Theorem 27. Suppose that X is a Polish space and that I is a c.c.c.
+Borel σ-ideal on X. Every analytic subset of X is I -measurable.
+In fact this theorem will be an immediate consequence of a more
+general closure property which holds of I -measurability. If{As| s∈
+ω<ω} is a family of subsets of a Polish space X, deﬁne
+A(As| s∈ ω<ω) :=
+⋃
+x∈ωω
+∞⋂
+n=0
+Ax↾n.
+This operation is known as Souslin’sA-operation.
+Fact 1. A subset of a Polish space is analytic if and only if it can be
+obtained from a family of closed sets by the A-operation.
+Proof. If A⊆ X is the image of a continuous f : ωω→ X, then observe
+that A =A(f([s])| s∈ ω<ω). To see this, notice that if x∈ ωω, then
+the continuity of f implies that
+∞⋂
+k=0
+f([x↾ k]) ={f(x)}.
+Conversely, if A =A(As| s∈ ω<ω), then A is the projection of the
+closed set
+{(x, y)∈ X× ωω|∀ k∈ ω(x∈ Ay↾k)}
+and hence is analytic. □
+Theorem 28. If X is a Polish space and I is a c.c.c. Borel σ-ideal
+in X, then the A-operation preserves I -measurability.
+Proof. Let A =A(As| s∈ ω<ω) where each As is I -measurable. It
+suﬃces to show that A diﬀers from an I -measurable set by an element
+of I . For each s∈ ω<ω, deﬁne
+As :=
+⋃
+x∈[s]
+∞⋂
+k=0
+Ax↾k,
+observing that As⊆ As.
+Let ˆAs be an I -measurable set such that As⊆ ˆAs⊆ As and such
+that if B is I -measurable and As⊆ B, then ˆAs⊆I B. Deﬁne
+Is =ˆAs△
+∞⋃
+n=0
+ˆAs⌢⟨n⟩.
+
+[PDF physical page 28]
+28 JUSTIN MOORE
+Observe that Is is I -measurable. Furthermore, since both ˆAs and⋃∞
+n=0
+ˆAs⌢⟨n⟩ are⊆I -minimal sets containing As =⋃∞
+n=0 As⌢⟨n⟩, it fol-
+lows that Is is in I for each s∈ ω<ω. Since I is a σ-ideal, I :=⋃
+s∈ω<ω Is is in I as well.
+It suﬃces to show that the symmetric diﬀerence of A = Aε and ˆAε
+is I. Since I and A are disjoint and since both are contained in ˆAε it
+is suﬃcient to show that ˆAε\ I⊆ A. Let x∈ˆAε\ I and construct a
+sequence y =⟨ni| i∈ ω⟩ by recursion so that for all k, x∈ ˆAy↾k. This
+is always possible since for all s∈ ω<ω
+ˆAs\ I =
+∞⋃
+n=0
+ˆAs⌢⟨n⟩\ I.
+We now have that
+y∈
+∞⋂
+k=0
+ˆAy↾k⊆
+⋂
+k=0
+Ay↾k⊆ A.
+This completes the proof. □
+
+[PDF physical page 29]
+MATH 7870: DESCRIPTIVE SET THEORY 29
+Lecture 12
+A construction in harmonic analysis which plays a recurring role in
+descriptive set theory is Haar measure. Recall that a topological group
+is a group G equipped with a topology which makes both the group
+operation and the inversion map g↦→ g−1 continuous. A Polish group
+is a topological group in which the underlying topology is Polish. The
+next remarkable theorem of Haar is very useful in producing examples
+of Borel measures on Polish spaces.
+Theorem 29. If G is a locally compact group, then there is a Borel
+measure µ on G such that:
+• µ(K) <∞ if K⊆ G is compact;
+• µ(U) > 0 if U is a nonempty open set;
+• µ(gB) = µ(B) whenever B⊆ G is measurable.
+Moreover any two measures which satisfy these two conditions are mul-
+tiples of one another.
+The measures which satisfy the conclusion of this theorem are re-
+ferred to as Haar measures on G. If G is compact, then it is conven-
+tional to use the phrase the Haar measure on G to refer to the unique
+Haar measure µ which satisﬁes µ(G) = 1.
+For now we note some important examples. If G is a discrete group,
+then the counting measure is a Haar measure on G. The Haar mea-
+sure λ on ( R, +) which satisﬁes λ([0, 1]) = 1 is Lebesgue measure. If
+⟨Gi| i∈ I⟩ is a sequence of compact groups, then the product group∏
+i∈I Gi is also a compact group; the Haar measure on the product is
+the product of the Haar measures of the Gi’s. In particular, the Haar
+measure on 2 ω is the product measure.
+Before proceeding, we’ll prove the following proposition, which whose
+proof requires techniques which are of independent interest to us. Re-
+call that the map A↦→ χA deﬁnes a homeomorphism between P(ω)
+and 2 ω. Moreover χA△B = χA + χB, where + is coordinatewise addi-
+tion modulo 2. It follows that A↦→ ω\ A = ω△A preserves the Haar
+measure on (P(ω),△).
+Proposition 5. If U is a nonprinciple ultraﬁlter on ω, then U does
+not have the Baire property and U is not Haar measurable.
+Observe that if U is an ultraﬁlter, then A↦→ ω\ A sends U bijec-
+tively to P(ω)\U . Since P(ω) is nonmeager and measure 1, it follows
+that U is nonmeager and has positive measure. Since any nonprinciple
+ultraﬁlter is invariant under ﬁnite modiﬁcations, the proposition will
+follow from the next theorems.
+
+[PDF physical page 30]
+30 JUSTIN MOORE
+Theorem 30. If X⊆ 2ω is a Borel set which is invariant under ﬁnite
+modiﬁcations, then is either meager or comeager.
+Proof. If X is meager, there is nothing to show. Suppose now that
+t∈ 2<ω is such that [t]\ X is meager. If s∈ 2<ω has the same length as
+t, then since X is invariant under ﬁnite modiﬁcationss⌢z↦→ t⌢z deﬁnes
+a homeomorphism between [ s]∩ X and [t]∩ X. In particular, [ s]\ X
+is meager. But now if n = lh(t), we have that 2ω\ X =⋃
+s∈2n[s]\ X is
+meager. □
+Theorem 31. If X⊆ 2ω is a Borel set which is invariant under ﬁnite
+modiﬁcations, then has either measure 0 or 1 with respect to the product
+measure on 2ω.
+Proof. Let X be given. If X has measure 0, there is nothing to show
+so suppose that X has positive measure. It is suﬃcient to show that
+for every ε > 0, the measure of X is at least 1 − ε. Let E⊆ X be a
+compact set of positive measure. Observe that
+µ(E) = lim
+n→∞
+2−n|{t∈ 2n| [t]∩ E̸=∅}|.
+Let n be suﬃciently large such that
+(1− ε)2−n|{t∈ 2m| [t]∩ E̸=∅}|≤ µ(E).
+Since µ(E) =∑
+t∈2n µ(E∩ [t]), it follows that there must be an t∈ 2n
+such that µ(E∩ [t])≥ 2−n(1− ε). Since X is invariant under ﬁnite
+modiﬁcations, it follows that⋃
+s∈2n
+{s⌢x| t⌢x∈ E}⊆ X
+Since µ({s⌢x| t⌢x∈ E}) = µ(E∩ [t])≥ r2−n, we have that µ(X)≥
+r. □
+
+[PDF physical page 31]
+MATH 7870: DESCRIPTIVE SET THEORY 31
+Lecture 13
+We will now present the construction of Haar measure. Let G be a
+locally compact group with identity 1 and ﬁx a compact open neigh-
+borhood E of the identity. If A, B⊆ G are nonempty, deﬁne [A : B] to
+be the minimum number of translates of A needed to cover B (if this
+is not ﬁnite, we just set [ A : B] :=∞). If W is a neighborhood of the
+identity and K⊆ G is compact, deﬁne µW (K) = [ W : K]/[W : E].
+Observe that µW (gK) = µW (K) for all g∈ G and compact K⊆ G.
+Furthermore, if A, B⊆ G are compact, W is open, and for all g∈ G
+either gW∩ A =∅ or gW∩ B =∅, then µW (A∪ B) = µW (A)+ µW (B).
+Now letO be the collection of all open neighborhoods of 1 and W
+be an ultraﬁlter on O such that ifW∈ W , thenW is a neighborhood
+base of 1. If K⊆ G is compact, deﬁne
+µ(K) = lim
+W→W
+µW (K).
+That is, if a∈ [0, 1], then µ(K) < a if and only if {W∈O| µW (K) <
+a}∈ W . If B⊆ G is Borel, deﬁne
+µ(B) = sup{µ(K)| K⊆ B is compact}.
+Observe that this extends the deﬁnition in the compact case.
+Theorem 32. µ is a countably additive left invariant Borel measure
+on G such that µ(E) = 1.
+We also note the following generalization of the 0-1 law for 2 ω.
+Theorem 33. Suppose G is a compact metric group and H≤ G is a
+dense subgroup. If B⊆ G is Borel and HB = B, then either µ(B) = 0
+or µ(B) = 1 and either B is meager or comeager.
+Proof. The details of the proof will be outlined here and left as a set
+of exercises. First one proves that if A, B⊆ G are Borel, then
+µ(A)µ(B) =
+∫
+µ(A∩ gB) dµ(g).
+This is established by showing that, for a ﬁxed B, ν(A) = 1
+µ(B)
+∫
+µ(A∩
+gB) dµ(g) is a left invariant probability measure on G and thus equal
+to Haar measure.
+This identity is then used to prove that if E⊆ G is closed and r > 1,
+then there is a h∈ H and an ε > 0 such that
+µ(E∩ Bε(h)) > rµ(Bε(h)).
+This is then used to show that HE has measure at least r. □
+
+[PDF physical page 32]
+32 JUSTIN MOORE
+Next we will turn to proving some rigidity results for Polish groups.
+We will need the following result, known as Pettis’s Lemma.
+Lemma 6. If G is a topological group and A⊆ G is a nonmeager set
+with the Baire property, then A−1A contains an neighborhood of the
+identity.
+Proof. Let U⊆ G be open such that U△A is meager. Since ( x, y)↦→
+xy−1 is continuous, there is an open set V containing the identity and a
+g∈ G such that gV V−1⊆ U. Observe that if h∈ V , then gV ⊆ U∩Uh.
+Since U△A is meager, U h△Ah is meager. It follows that gV\(A∩ Ah)
+is meager for all h∈ V . Since gV is nonmeager, A∩ Ah̸=∅ for all
+h∈ V . But this implies that if h∈ V , then there are a, b∈ A such
+that a = bh and hence b−1a = h. Thus V⊆ A−1A. □
+Our main interest in the next theorem is when G and H are Polish
+groups.
+Theorem 34. Suppose that G and H are topological groups such that
+G is nonmeager and H is separable. If φ : G→ H is a homomorphism
+which is Baire measurable, then φ is continuous.
+Proof. Since G is a topological group, it suﬃces to show that φ is
+continuous at 1. Let U ⊆ H be an open set containing 1 = φ(1)
+and let V ⊆ H be an open set containing 1 such that V−1V ⊆ U.
+Let D ⊆ H be a countable dense set. Observe that H ⊆ DV : if
+h∈ H then hV−1∩ D contains some h0, in which case h∈ h0V . Since
+G =⋃
+h∈D φ−1(hV ), there is an h∈ D such that φ−1(hV ) is nonmeager.
+By Pettis’s Lemma, there is an open set W⊆ G containing 1 such that
+W⊆ (φ−1(hV ))−1φ−1(hV ) = φ−1(V−1h−1hV ) = φ−1(V−1V )⊆ φ−1(U).
+Since U was arbitrary, φ is continuous at 1 and hence continuous. □
+Corollary 10. If G is a group and τ0 and τ1 are two Polish group
+topologies on G which yield the same Borel sets, then τ0 = τ1.
+Notice that ( R, +) and ( R⊕ R, +) are Polish groups which are iso-
+morphic (in fact they are isomorphic as Q-vector spaces). The theorem
+implies, however, that there is no isomorphism which is Baire measur-
+able.
+
+[PDF physical page 33]
+MATH 7870: DESCRIPTIVE SET THEORY 33
+Lecture 14
+Observe that if A is the set of all a∈ 2ω such that a is not eventually
+0, then every compact subset of A is nowhere dense. In particular, A is
+not an Fσ-set. In fact this is the only obstruction to when an analytic
+set A can be separated from a set B by an Fσ-set.
+Theorem 35. Suppose that X is a Polish space. If A⊆ X is analytic
+and B⊆ X is disjoint from A, then exactly one of the following is true:
+(1) there is an Fσ-set which contains A and is disjoint from B;
+(2) there is a continuous function φ : 2ω→ A∪ B such that φ(a)∈
+A if and only if a is not eventually 0.
+Stated in this generality, this theorem is due to Kechris, Louveau,
+and Woodin. Hurewicz proved the special case in which B = X\ A.
+Notice that in the second alternative, the range of φ is a Cantor set P
+such that P∩ B is a countable dense subset of P .
+We will establish this result ﬁrst when A is a Gδ-set and then use a
+result of Solecki to establish the full strength of the theorem. Solecki’s
+result can be stated as follows.
+Theorem 36. Suppose that A is an analytic set and F is a family
+of closed subsets of A. Either A can be covered by countably many
+elements of F or else there is a Polish space G⊆ A such that G can
+not be covered by countably many elements of F.
+More generally, we say that a separable metric spaceX has the closed
+covering property if wheneverF is a collection of closed subsets of X,
+either X is a countable union of elements ofF or else there is a Polish
+space G⊆ X which can not be covered by countably many elements
+ofF. Solecki’s theorem asserts that analytic sets have closed covering
+property. We will prove Theorem 36 in the next lecture.
+Proof of Theorem 35. Let X be a Polish space and A, B⊆ X be dis-
+joint sets such that A is analytic. Suppose that A can not be separated
+from B by an Fσ-set. LetF consist of those closed subsets of X which
+are disjoint from B. By Solecki’s theorem, there is a Polish G⊆ A such
+that G is not covered by countably many elements of F. By replacing
+G with a subset if necessary, we may assume that if U⊆ X is open and
+U∩ G is nonempty, then U∩ G can not be covered by countably many
+elements ofF. Fix complete metrics d and d′ on X and G respectively
+which generate their topologies.
+Construct a scheme of open sets {Us| s∈ 2<ω} and points{ys| s∈
+2<ω} such that for all s∈ 2<ω:
+
+[PDF physical page 34]
+34 JUSTIN MOORE
+(1) the d-diameter of Us is at most 2 −lh(s) and the d′-diameter of
+Us∩ G is at most 2−m where m is the number of occurrences of
+1 in s;
+(2) ys∈ Us∩ G∩ B and ys⌢0 = ys.
+(3) the closures of Us⌢0 and Us⌢1 are disjoint and contained in Us;
+Start by pickingyε∈ G∩B and letting Uε⊆ X be an open set satisfying
+(1). Given Us and ys satisfying the conditions above, let Us⌢1 be a d-
+ball is diameter at most 2 −lh(s)−1 about ys such that Us⌢1⊆ Us and
+such that Us\ Us⌢1 intersects G. Notice that this is possible since ys is
+a limit point of Us∩ G. Let W⊆ Us\ Us⌢1 be an open set such that
+W∩ G is nonempty and of the d′-diameter at most 2−m−1 where m is
+the number of occurrences of 1 in s. Since W is open and intersects G,
+W∩ G can not be separated from B by an Fσ-set. In particular, there
+is a ys⌢1∈ B which is a limit point of W∩ G. Let Us⌢1 be open such
+that ys⌢1∈ Us⌢1, Us⌢1⊆ W , and such that (1) is satisﬁed. Observe
+that the conditions of the recursion are satisﬁed.
+If a∈ 2ω, then the completeness of the metric d and condition (1)
+imply that
+∞⋂
+n=0
+Ua↾n =
+∞⋂
+n=0
+Ua↾n ={φ(a)}
+for some φ(a)∈ X. Condition (3) implies that φ : 2ω→ X is one-to-
+one. It follows immediately from the method of construction that φ is
+continuous. Moreover, if a is not eventually 0, then the d′ diameter of
+Ua↾n tends to 0 as n tends to∞ and thus φ(a)∈ G. If a is eventually 0,
+then φ(a) = ys for some s, where s is an initial part of a which contains
+all the nonzero entries of a. Thus the range of φ is contained in G∪ B
+and a is eventually 0 if and only if φ(a)∈ B. □
+Corollary 11. Suppose that Z is coanalytic. Exactly one of the fol-
+lowing is true:
+• Z is Polish;
+• Z contains a closed copy of Q.
+Proof. If Z contains a closed copy of Q, then clearly Z is not Polish.
+To see the other direction, let X be a Polish space which contains Z
+as a subspace. If Z is not Polish, then X\ Z is not an Fσ-set. By
+Hurewicz’s theorem, there is a copy of the cantor set P⊆ X such that
+P∩ Z is a countable dense subset of P . Since P∩ Z is a countable
+metric space with no isolated points, it is homeomorphic to Q. Since
+P∩ Z is clearly closed in Z, we’re done. □
+
+[PDF physical page 35]
+MATH 7870: DESCRIPTIVE SET THEORY 35
+Lecture 15
+Theorem 37 (Solecki). Let X be a Polish space. If A⊆ X is an
+analytic set, then A has the closed covering property.
+Proof. Let A⊆ X be a given analytic set and F be a family of closed
+sets such that no countable subset of F covers A. Deﬁne I to be all
+I⊆ X such that I is contained in the union of countably many elements
+ofF.
+First suppose that there is an analytic set B⊆ A which is not in I
+such that every relatively nowhere dense subset of B is inI. Since B is
+Polish and B is analytic it has the Baire Property in B. Consequently
+there is a Polish space G⊆ B such that B\ G is meager in B. Since
+every nowhere dense subset of B is nowhere dense in B, B\ G is inI.
+Since B is not inI, neither is G.
+Now suppose that whenever B⊆ A is analytic and not inI, there is
+a relatively nowhere dense E⊆ B such that E is not inI. If C⊆ A,
+deﬁne
+C′ := C\
+⋃
+{U∈I| U is open}.
+Observe that if C =⋃∞
+n=0 C and U⊆ X is open, then U∩ C is inI if
+and only if U∩ Cn is inI for all n. It follows that C′ =⋃∞
+n=0 C′
+n.
+Fix a compatible complete metric d on X bounded by 1 and let
+f : ωω → X be continuous such that A is the range of f. Deﬁne
+As to be the closure of f([s])′, noting that ⋃∞
+n=0 As⌢⟨n⟩ is dense in As.
+Observe thatA(As| s∈ ω<ω)⊆ A. Recursively construct a function
+ψ : ω<ω→ ω<ω and a scheme of open sets ⟨Us| s∈ ω<ω⟩ such that for
+all s∈ ω<ω:
+(1) the d-diameter of Us is at most 2−lh(s)−max(s);
+(2) if s is a proper initial part of t, then Ut⊆ Us;
+(3) if i̸= j, then Us⌢⟨i⟩∩ Us⌢⟨j⟩ =∅;
+(4) ψ is monotone and length preserving;
+(5) Us∩ Aψ(s)̸=∅;
+(6) Ns := ⋃∞
+n=0 Us⌢⟨n⟩\⋃∞
+n=0 Us⌢⟨n⟩ is not in I but is a subset of
+Us∩ Aψ(a).
+Start by setting ψ(ε) := ε and Uε := X. Suppose now that Us and
+ψ(s) have been deﬁned. By construction Us∩ Aψ(s) ̸= ∅ and thus
+Us∩f([ψ(s)]) is not inI. Since Us∩f([ψ(s)]) is analytic, our assumption
+implies it contains a nowhere dense set which is not in I. Since I
+is a σ-ideal, this nowhere dense set can be taken so that its closure,
+which we will denote Ns, is contained in Us∩ Aψ(s). Pick a discrete
+set Ds ⊆ Us∩ Aψ(s)\ Ns such that Ns is the set of limit points of
+Ds. Choose open sets Us⌢⟨n⟩ which satisfy conditions (1)–(3), which
+
+[PDF physical page 36]
+36 JUSTIN MOORE
+cover Ds, and which satisfy that Us⌢⟨n⟩∩ Ds is a singleton for each
+n. It follows that condition (6) holds. Since ⋃∞
+n=0 Aψ(s)⌢⟨n⟩ is dense in
+Aψ(s), for each n there is a kn such that Aψ(s)⌢⟨kn⟩∩ Us⌢⟨n⟩̸=∅. Deﬁne
+ψ(s⌢⟨n⟩) := ψ(s)⌢⟨kn⟩. This completes the construction.
+We now claim that G :=A(Aψ(s)| s∈ ω<ω) is a Gδ-set which is
+contained in A and which is not in I. First observe that if x∈ ωω,
+then⋂∞
+n=0 Aψ(x↾n) is a singleton and that
+∞⋂
+n=0
+Aψ(x↾n) =
+∞⋂
+n=0
+U x↾n =
+∞⋂
+n=0
+Ux↾n.
+Furthermore,
+⋃
+x∈ωω
+∞⋂
+n=0
+Aψ(x↾n) =
+⋃
+x∈ωω
+∞⋂
+n=0
+Ux↾n =
+∞⋂
+n=0
+⋂
+s∈ωn
+Us
+is a Gδ-set. Now suppose that G is inI. By the Baire category theorem,
+there is an F∈F such that F∩G has interior and hence containsUs∩G
+for some s∈ ω<ω. For such an s, Us⌢⟨n⟩∩ G contains a point xn, for
+each n. By (1), the set of limit points of {xn| n∈ ω} coincides with
+the set of limit points of Ds, which is Ns by construction. But now
+this implies G∩ Us⊆ F contains Ns, which is assumed not to be in I,
+a contradiction. □
+Corollary 12. If X is Polish, A⊆ X is analytic, andF is a collection
+of closed subsets of X, then either A is covered by countably many
+elements of F or else there is a Gδ-set G⊆ A such that F∩ G is
+nowhere dense in G for every F∈F .
+Proof. Let A ⊆ X be given and suppose that A is not covered by
+countably many elements ofF. By Solecki’s theorem, there is a Gδ-set
+G0⊆ A which is not covered by countably many elements ofF. Deﬁne
+G := G0\
+⋃
+{U∈I| U is open}
+whereI is the σ-ideal generated byF. Observe that G is also a Gδ-set,
+G0\ G∈I , and if U⊆ X is open with U∩ G̸=∅, then U∩ G̸∈I . In
+particular, F∩ G is nowhere dense in G for every F∈F . □
+
+[PDF physical page 37]
+MATH 7870: DESCRIPTIVE SET THEORY 37
+Lecture 16
+A tree T on ω is perfect if every t in T has two incompatible exten-
+sions. Equivalently, there is a u in T extending t such that u⌢⟨i⟩ and
+u⌢⟨j⟩ are in T for i̸= j. A tree T on ω is superperfect if it is perfect
+and for every t∈ T
+{i∈ ω| t⌢⟨i⟩∈ T}
+is either inﬁnite or has a single element. A subset S of ωω is a su-
+perperfect set if it is the set of branches through a superperfect tree.
+Observe that superperfect sets are closed and that every compact sub-
+set of a superperfect set is nowhere dense. The following consequence
+of Solecki’s theorem can be regarded as an analog of the perfect set
+property for analytic sets.
+Corollary 13. If A⊆ ωω is an analytic set, then either A is contained
+in a σ-compact set or else A contains a superperfect set.
+Proof. By Solecki’s theorem, it suﬃces to show that every Gδ subset A
+of ωω which is not contained in a σ-compact set contains a superperfect
+subset. Suppose that A is given and assume without loss of generality
+that A is nonempty and if U is open then either U∩ A is empty or else
+not contained in a σ-compact set. Fix open sets Un⊆ ωω such that
+A =⋂∞
+n=0 Un. A t∈ ω<ω is a splitting node for A if
+{i∈ ω| [t⌢⟨i⟩]∩ A̸=∅}
+is inﬁnite. Observe that if [ s]∩ A̸=∅ then there is a t extending s
+such that t is a splitting node of A. Otherwise the set of elements of
+ω<ω which are compatible with s forms a ﬁnitely branching tree whose
+branches would be a compact set containing [s]∩ A. Recursively deﬁne
+a function f : ω<ω→ ω<ω as follows. Let f(ε) be any splitting node t
+of A such that [ t]⊆ U0. If f has been deﬁned for sequences of length
+n and s∈ ωn, deﬁne f(s⌢⟨k⟩) to be a splitting node t such that:
+• t extends f(s)⌢⟨ik⟩ where ik is the kth element of {i ∈ ω |
+[f(s)⌢⟨i⟩]∩ A̸=∅}
+• [t]⊆ Un+1.
+Observe that T ={f(s)↾ k| s∈ ω<ω and k≤ lh(s)} is a superperfect
+tree and that all branches throughT are contained in A =⋂∞
+n=0 Un. □
+Theorem 38 (Mycielski). If X is an uncountable Polish space and
+E⊆ X n\∆ is meager, there is a perfect set P⊆ X such that P n∩ E =
+∅. Here ∆⊆ X n denotes all n-tuples in which not all coordinates are
+distinct.
+
+[PDF physical page 38]
+38 JUSTIN MOORE
+Proof. Let X and E⊆ X n be as in the statement of the theorem and
+ﬁx a compatible complete metric d on X which is bounded by 1. By
+replacing X with a perfect subset if necessary, we may assume that
+X has no isolated points. Fix closed nowhere dense sets Ek ⊆ X n
+such that E⊆⋃∞
+k=0 Ek. Construct a scheme of nonempty open sets
+⟨Us| s∈ 2<ω⟩ such that for each s∈ 2<ω:
+(1) Us⌢⟨0⟩ and Us⌢⟨1⟩ are disjoint and contained in Us;
+(2) the diameter of Us is at most 2−lh(s);
+(3) if ⟨si| i < n⟩ are distinct sequences of length m for some m,
+then∏
+i<n Usi is disjoint from ⋃
+k<m Ek.
+Suppose that we’ve constructed Us for each s∈ 2<ω of length at most
+m. Deﬁne ⟨U p
+s | s∈ 2m+1⟩ for each p≤ n!
+(2m
+n
+)
+as follows. Start by
+ﬁxing, for each s∈ 2m, open sets U 0
+s⌢⟨0⟩ and U 0
+s⌢⟨1⟩ which have disjoint
+closures of diameter less than 2−m−1 which are contained in Us. Given
+⟨U p
+s| s∈ 2m+1⟩, pick U p+1
+s ⊆ U p
+s such that if⟨si| i < n⟩ is the pth n-
+tuple of distinct elements of 2m+1 then∏
+i<n U p+1
+si ∩⋃
+k<m Ek =∅. This
+is possible since⋃
+k<m Ek is nowhere dense in X n. Finally, set Us = U p
+s
+where p = n!
+(2m+1
+n
+)
+. This ﬁnishes the construction of ⟨Us| s∈ 2<ω⟩.
+Set
+P =
+∞⋂
+m=0
+⋃
+s∈2m
+Us =
+∞⋂
+m=0
+⋃
+s∈2m
+Us.
+It is immediate from the requirements of the construction that P is
+homeomorphic to 2 ω and satisﬁes that P n∩ E =∅. □
+Corollary 14. If A⊆ R2 is analytic, then either A can be covered by
+countably many lines or else A contains a perfect set P which intersects
+any line in at most 3 points.
+Proof. Let A be given. By Solecki’s theorem, either A is covered by
+countably many lines or else there is a there is a Gδ-set G⊆ A which
+is not covered by countably many lines. Suppose the latter and, by re-
+placing G by a subset if necessary, assume that no nonempty relatively
+open subset of G can be covered by countably many lines. Deﬁne
+E ={(x, y, z)∈ G3| x, y, z are collinear}
+and observe that E is closed. Furthermore, for each x ̸= y ∈ G,
+{z ∈ G| x, y, z are collinear} is on the line determined by x and y
+and hence is nowhere dense. By the Kuratowski-Ulam theorem, E is
+meager in G3 and by Mycielski’s theorem, there is a perfect set P⊆ G
+such that no three points of P are collinear. □
+
+[PDF physical page 39]
+MATH 7870: DESCRIPTIVE SET THEORY 39
+Lecture 17
+In this section we will consider an important subclass of the Borel
+functions on a Polish space and which includes the continuous func-
+tions.
+Let X and Y be separable metric spaces. A function f : X→ Y
+is said to be Baire class 1 if whenever U⊆ Y is open, f−1(U) is an
+Fσ-set. Notice ifS is a sub-base for the topology on Y , then a function
+is Baire class 1 provided that f−1(U) is Fσ whenever U∈S .
+Since open sets are Fσ, every continuous function is Baire class 1.
+The class is much richer, however. For instance, every monotone in-
+creasing function f from R to R is Baire class 1: the preimage of an
+open interval is a (not necessarily open) interval. Also the function
+δr : R→ R deﬁned by
+δr(t) :=
+{
+1 if t = r
+0 otherwise
+is readily seen to be Baire class 1. On the other hand, the characteristic
+function of Q is not Baire class 1: χ−1
+Q (−∞, 1/2) = R\ Q which is not
+Fσ.
+Our goal will be to prove the following characterization of Baire class
+1 functions.
+Theorem 39 (Baire). Let X be a Polish spaces. The following are
+equivalent for a function f : X→ R:
+(1) f is Baire class 1;
+(2) there is a sequence ⟨fn| n∈ ω⟩ of continuous functions from
+X to R which converges to f pointwise;
+(3) whenever P⊆ X is a Cantor set, f↾ P has a point of continu-
+ity.
+We will ﬁrst need to prove an additional result about separating sets
+by Fσ-sets. We will need the following proposition, which will be left
+as an exercise.
+Proposition 6. Suppose that X is a Polish space and that A0, A1⊆ X
+are two disjoint countable dense subsets of X. There is an embedding
+φ : 2 ω→ X such that for all a∈ 2ω, a is eventually i if and only if
+φ(a)∈ Ai.
+Theorem 40. Suppose that X is a Polish space and A0, A1⊆ X are
+disjoint. Exactly one of the following is true:
+• there is a set C⊆ X which is both Fσ and Gδ such that A0⊆ C
+and C∩ A1 =∅;
+
+[PDF physical page 40]
+40 JUSTIN MOORE
+• there is a Cantor set P⊆ X such that P∩ Ai is dense in P for
+each i∈{ 0, 1}.
+Proof. To see that the two conclusions can not both occur, observe that
+if P⊆ X is a Cantor set and P∩ Ai is dense in P for each i, then any
+closed subset of P which is disjoint from either A0 or A1 is nowhere
+dense. The Baire Category Theorem therefore implies that A0∩ P and
+A1∩ P can not be separated by a set which is both Fσ and Gδ.
+Now we will argue that at least one of the conclusions of the theorem
+must occur. By replacing X by the closure of A0∪ A1, we may assume
+without loss of generality that A0∪ A1 is dense in X. Deﬁne X(α) for
+each ordinal α by recursion as follows:
+• X(0) := X;
+• X(α+1) := X(α)\⋃(Vα,0∪V α,1) whereVα,i consists of all open
+sets V⊆ X such that V∩ Ai∩ X(α) =∅.
+• X(β) :=⋂
+α∈β X(α) if β is a limit ordinal.
+Observe that X(α) is always closed and if α∈ β, then X(β)⊆ X(α). In
+particular, there is a countable γ such that X(γ+1) = X(γ). If X(γ) is
+nonempty, then observe that A∩ X(γ) and B∩ X(γ) are both dense in
+X(γ). In this case, we are done by Proposition 6.
+Otherwise, observe that for each α∈ γ,
+Eα,i := X(α)∩
+⋃
+Vα,i
+is the intersection of an open set and a closed set and hence is Fσ.
+Furthermore, if (α, i)̸= (β, j), then Eα,i∩ Eβ,j =∅ (that E0,0∩ E0,1 =∅
+utilizes that A0∪ A1 is dense in X). Furthermore, Ai⊆⋃
+α∈γ Eα,i and
+X =⋃
+i=0,1
+⋃
+α∈γ Eα,i. In particular C =⋃
+α∈γ Eα,0 is as desired. □
+Theorem 41. Let X be a Polish space and Y be a separable metric
+space. If f : X→ Y is a Baire class 1 function, then the set of points
+of continuity of f are a dense Gδ-set.
+Proof. Let{Wn| n∈ ω} be a base for the topology on Y . Deﬁne
+En := f−1(Wn)\ int(f−1(Wn)).
+Since f−1(Wn) is Fσ, En is a meager Fσ-set. Observe that f is contin-
+uous at x if and only if x is not in En for any n. □
+We ﬁnish the lecture by noting the following deep theorem.
+Theorem 42 (Bourgain-Fremlin-Talagrand). If{fn}∞
+n=0 is a uniformly
+bounded sequence of continuous real valued functions on a Polish space
+X, then exactly one of the following is true:
+
+[PDF physical page 41]
+MATH 7870: DESCRIPTIVE SET THEORY 41
+• the closure of{fn| n∈ ω} in RX is contained in the Baire class
+1 functions;
+• there is an inﬁnite I⊆ ω such that the closure of {fn| n∈ I}
+in RX is homeomorphic to βω, the ˇCech-Stone compactiﬁcation
+of ω.
+Compact topological spaces which are embeddable into BC 1(X)⊆
+RX are known as Rosenthal compacta. This class of compact spaces
+is both rich and amenable to analysis. One one hand, it includes all
+compact metric spaces and is closed under countable products and
+closed subspaces. It also includes nonmetrizable compacta such as the
+space of all monotonic increasing functions from [0 , 1] to [0 , 1]. On
+the other hand, Rosenthal compacta enjoy many properties of metric
+spaces.
+Theorem 43 (Grothendick). If K is a Rosenthal compacta, A⊆ K
+and x∈ A, then there is countable A0⊆ A such that x∈ A0.
+Theorem 44 (Todorcevic). If K is a Rosenthal compactum, then K
+has a dense metrizable subspace.
+
+[PDF physical page 42]
+42 JUSTIN MOORE
+Lecture 18
+Theorem 45 (Baire). If X is a Polish space and f : X → R is a
+function, the following are equivalent:
+(1) f is Baire class 1;
+(2) there is a sequence ⟨fn| n∈ ω⟩ of continuous functions from
+X to R which converges pointwise to f;
+(3) if P⊆ X is a Cantor set, then there is a point of continuity of
+f↾ P ;
+(4) if P ⊆ X is a Cantor set and a < b , then either {x∈ P |
+f(x)≤ a} or{x∈ P| f(x)≥ a} is not dense in P .
+Proof. (1) implies (2): to be added.
+(2) implies (1): Let fn : X → R be continuous for n ∈ ω with
+fn→ f pointwise. It suﬃces to prove that for all a < b , f−1((a, b))
+is Fσ. Observe that f(x)∈ (a, b) if and only if there is a k such that
+f(x)∈ [a + 21−k, b− 21−k] if and only if there is a m such that for all
+n > m , fn(x)∈ [a + 2−k, b− 2−k]. Thus
+f−1((a, b)) =
+⋃
+m,k
+⋂
+n>m
+{x∈ X| fn(x)∈ [a + 2−k, b− 2−k]}
+which is an Fσ-set.
+(1) implies (3): Since f is Baire class 1, so is f↾ P : P→ R. Because
+every Baire class 1 function is continuous on a dense Gδ-set, f↾ P has
+a point of continuity.
+(3) implies (4): this is trivial.
+(4) implies (1): Let a < b and ﬁx n∈ ω. By our assumption and the
+separation theorem for ∆ 0
+2-sets, there is a set En⊆ X which is both
+Fσ and Gδ such that En contains f−1([a + 2−n, b− 2−n]) and is disjoint
+from f−1((−∞, a]∪ [b,∞)). It follows that f−1((a, b)) =⋃∞
+n=0 En □
+We will now turn our attention togaps in the quotient P(ω)/ﬁn and
+in particular gaps in which one or both sides of the gap are analytic.
+Suppose that A, B ⊆ P(ω). We say that A and B are orthogonal
+if a∩ b is ﬁnite whenever a∈ A and b∈ B. A family C ⊆ P(ω)
+separates A from B if for every a∈ A and b∈ B, there is a c∈ C
+such that a⊆∗ c and b∩ c is ﬁnite. Here a⊆∗ c means that there is a
+ﬁnite e⊆ ω such that a⊆ c∪ e. A gap is a pair A, B⊆ P(ω) which
+is orthogonal but not separated by a single set. An orthogonal pair
+A, B⊆ P(ω) is countably separated if there is a countable family of
+sets which separates A from B. Of course all of these deﬁnitions apply
+equally well when ω is replaced by some other countable set.
+
+[PDF physical page 43]
+MATH 7870: DESCRIPTIVE SET THEORY 43
+Example 1. Let A denote all a⊆ ω× ω such that for all i there is at
+most one j such that ( i, j)∈ A (i.e. A is the set of graphs of partial
+functions from ω to ω). Set B to be all b⊆ ω× ω which are contained
+in{i}× ω for some i. Clearly A is orthogonal to B. Moreover A and
+B for a gap. Notice that {{i}× ω| i∈ ω} is a countable family which
+separates B from A.
+Example 2 (Lusin gap). For each r∈ 2ω, deﬁne
+ar :={r↾ n| r(n) = 0} br :={r↾ n| r(n) = 1}.
+Set A :={ar| r∈ 2ω} and B :={br| r∈ 2ω}. Observe that A is
+orthogonal to B. Moreover if r̸= s, then
+(ar∩ bs)∪ (as∩ br)
+is empty if and only r = s and consists of the longest common initial
+segment of r and s otherwise.
+Theorem 46. Suppose that I is an uncountable set and A ={ai| i∈
+I} and B ={bi| i∈ I} are orthogonal families of subsets of ω such
+that
+(ai∩ bj)∪ (aj∩ bi)
+is empty if and only if i = j. Then A and B are not countably separated.
+Proof. Suppose not. By the pigeon hole principle there is a singlec⊆ ω,
+an n∈ ω and α, β⊆ n such that for uncountably many i∈ I:
+(1) ai⊆ c∪ m and bi∩ c⊆ m;
+(2) ai∩ m = α and bi∩ m = β.
+But now if i̸= j are in this uncountable set, (ai∩ bj)∪ (aj∩ bi) can not
+contain an element which is at least m because of (1). On the other
+hand, (ai∩ bj)∪ (aj∩ bi) can not contain an element which is less than
+m because of (2). Thus we have a contradiction and it must have been
+that A and B were not countable separated. □
+
+[PDF physical page 44]
+44 JUSTIN MOORE
+Lecture 19
+In the last lecture, we gave two examples of analytic gaps inP(ω)/ﬁn.
+The goal of this lecture is to present two results of Todorcevic which
+show that these examples play important roles with respect to all other
+analytic gaps. The ﬁrst characterizes when gaps are countably sepa-
+rated. Deﬁne a =∗ b to mean that a△b is ﬁnite and deﬁne a∈∗ A to
+mean that there is an a′∈ A with a =∗ a′.
+Theorem 47 (Todorcevic). Suppose that A, B⊆ [ω]ω are orthogonal.
+Either A is countably separated from B or else there is a continuous
+functions r↦→ ar and r↦→ br from 2ω to [ω]ω such that:
+• for all r∈ 2ω, ar∈∗ A and br∈∗ B;
+• for all r, s∈ 2ω,
+(ar∩ bs)∪ (as∩ br) =∅
+if and only if r = s.
+Proof. Deﬁne X⊆ [ω]ω× [ω]ω to be all pairs ( a, b) such that a∩ b =∅,
+a∈∗ A, and b∈∗ B. Observe that since A and B are analytic, so is X.
+Deﬁne a graph G on X by connecting (a0, b0) and (a1, b1) by an edge if
+(a0∩ b1)∪ (a1∩ b0)̸=∅.
+Notice that G is an open graph. For instance, if n∈ a0∩ b1, then
+whenever (a′
+0, b′
+0), (a′
+1, b′
+1)∈ X with n∈ a′
+0∩ b′
+1, it follows that ( a′
+0, b′
+0)
+and (a′
+1, b′
+1) are connected by an edge.
+Since OCA∗(X) is true, either G is countably chromatic or else G
+contains a clique P which is a cantor set. If G is countably chromatic,
+then X =⋃∞
+n=0 Xn such that [Xn]2∩ G =∅ for all n. Set
+cn :=
+⋃
+{a⊆ ω|∃ b((a, b)∈ Xn)}
+Observe that if ( a, b)∈ Xn, then a⊆ cn and b∩ cn =∅. If a∈ A and
+b∈ B, then ( a, b\ a)∈ X and there is an n such that ( a, b\ a)∈ Xn.
+Since b\ a =∗ b, we have that cn separates a from b.
+If φ : 2 ω → X is a continuous injection whose range is a perfect
+clique, then let φ(r) = (ar, br). It follows immediately that r↦→ ar and
+r↦→ br satisfy the second alternative of the theorem. □
+A collection of sets is hereditary if it is closed under taking subsets.
+If A⊆ [ω]ω, deﬁne A⊥ to be the set of all subsets b of ω which have
+ﬁnite intersection with every element of A. Observe that A⊆ A⊥⊥
+but that even for hereditary A, the containment may be proper For
+instance if A ={a⊆ ω|∑
+n∈a 1/n < ∞}, then A⊥ is just the ﬁnite
+subsets of ω and A⊥⊥ = P(ω).
+
+[PDF physical page 45]
+MATH 7870: DESCRIPTIVE SET THEORY 45
+Returning to the ﬁrst example of an analytic gap from the previous
+lecture, set B0 ={{n}× ω| n∈ ω} and set A0 to be the collection of all
+graphs of functions from ω to ω. Observe that while A0 is countable
+separated from B0, there is no countable subset of B⊥
+0 which sepa-
+rates A0 from B0. Our next theorem will show that this is a general
+phenomenon.
+If C⊆ [ω]ω, a tree T on a countable set I is a C-tree if elements of T
+are one-to-one sequences and whenever t∈ T ,{i∈ I| t⌢⟨i⟩∈ T} is an
+inﬁnite set which is contained in an element of C. If we let I = ω× ω,
+then the collection of all sequences t such that the ith entry has ﬁrst
+coordinate i is a B-tree all of whose branches are in A.
+Proposition 7. If A, B ⊆ P(ω) are orthogonal and there is a B-
+tree all of whose branches have ranges which lie in A, then A is not
+separated from B by a countable subset of B⊥.
+Proof. Let A and B be given and let T be a B-tree all of whose branches
+are in A. Let {an| n∈ ω} be a collection of elements of B⊥. Re-
+cursively construct a sequence ⟨nk | k ∈ ω⟩ such that for each k,
+⟨ni | i < k ⟩ is in T and such that if i < j , then nj ̸∈ ai. Given
+that⟨ni| i < k⟩ has been constructed, let nk be minimal such that
+⟨ni| i < k + 1⟩∈ T and nk̸∈ ai for all i≤ k. This is possible since
+b ={p∈ ω|⟨ ni| i < k⟩⌢⟨p⟩}
+is contained in an element of B and hence has ﬁnite intersection with
+every element of B⊥, including ⋃
+i≤k ai. Since a :={nk| k∈ ω} is in
+A and has ﬁnite intersection with each ak, we are done. □
+Theorem 48 (Todorcevic). Suppose that A, B⊆ P(ω) are orthogonal
+families and that A is analytic and hereditary. Either A is separated
+from B by a countable subset of B⊥ or else there is a B-tree all of
+whose branches are in A.
+Remark 2. Here we are abusing language and identifying elements of
+A with their enumerations.
+
+[PDF physical page 46]
+46 JUSTIN MOORE
+Lecture 20
+Proof of Theorem 48. DeﬁneF ={[x]ω | x∈ B⊥}. Clearly F is a
+family of closed subsets of [ ω]ω and A is separated from B by a count-
+able subset of B⊥ precisely when A can be covered by countably many
+elements of F. Suppose this is not the case. By Solecki’s theorem,
+there is a nonempty Gδ-set G⊆ A such that if U is open and U∩ G
+is nonempty, then U∩ G can not be separated from B by a countable
+subset of B⊥. Fix a ⊆-decreasing sequence⟨Un| n∈ ω⟩ of open sets
+such that G =⋂∞
+n=0 Un.
+Construct a tree T⊆ [ω]<ω by recursion as well as a function t↦→ ˆt
+from T to [ω]<ω so that:
+(1) the emptyset is in T and if t∈ T , then{k∈ ω| t∪{ k}∈ T} is
+an inﬁnite set which is contained in an element of B;
+(2) if s, t∈ T and s is an initial part of t, then ˆs is an initial part
+of ˆt;
+(3) if s∈ T , then [ˆs]⊆ U|s| and [ˆs]∩ G̸=∅.
+Suppose that t∈ T and that ˆt has been deﬁned. We need to determine
+for which k > max(t), t∪{ k} is in T and also to deﬁne ˆt∪{ k} for
+those k with t∪{ k}∈ T . Set Σ to be the set of those u∈ [ω]<ω such
+that ˆt is an initial part of u, [u]⊆ U|t|+1 and [u]∩ G̸=∅. Observe that
+x :=
+⋃
+{u\ ˆt| u∈ Σ}
+can not be in B⊥ since every element of G∩ [ˆt] is contained in ˆt∪ x.
+Thus there is a b∈ B such hat b∩ x is inﬁnite. Put t∪{ k}∈ T if and
+only if k∈ b∩ x. For each k∈ b∩ x, ﬁx a u∈ Σ such that k∈ u and
+set ˆt∪{ k} = u. This completes the construction.
+Clearly T is a B-tree. We need to show that if x∈ [ω]ω and x∩n∈ T
+for all n, then x∈ A. Observe that if m≤ n, then ˆx∩ m is an initial
+part of ˆx∩ n (possibly they are equal). Thus ˆx :=⋃∞
+n=0 ˆx∩ n is in G
+and x⊆ ˆx. Since G⊆ A and A is hereditary, x∈ A. □
+We will now turn to a diﬀerent class of results in descriptive set
+theory: uniformization theorems. Given sets X and Y and a subset
+F ⊆ X× Y , the axiom of choice implies that there is a function f
+such that dom( f) = {x∈ X |∃ y∈ Y
+(
+(x, y)∈ F
+)
+} and such that
+(x, f(x))∈ F whenever x∈ dom(f). Such an f is said to uniformize
+the relation F . Notice that we can think of F as encoding a set valued
+function
+x↦→ F (x) :={y∈ Y| (x, y)∈ F}.
+
+[PDF physical page 47]
+MATH 7870: DESCRIPTIVE SET THEORY 47
+The uniformizing function f is required to be deﬁned on the set of
+x∈ X for which F (x)̸=∅ and must satisfy f(x)∈ F (x).
+In descriptive set theory, one is usual interested the restricted setting
+in which X and Y are Polish spaces and in which F is Borel or perhaps
+analytic but with the additional requirement that f is regular in some
+sense. Na¨ ıvely one would like to show that ifX and Y are Polish and
+F is Borel, then one can ﬁnd a uniformizing function which is Borel.
+This is in general not possible. In fact there are closed relations which
+do not admit Borel uniformizations.
+If we expand the σ-algebra of Borel sets slightly, however, then
+one can prove a uniformization result of this sort. If X is a Pol-
+ish space, then the Souslin measurable subsets of X are the elements
+of the σ-algebra generated by the analytic subsets of X. Notice in
+particular that every Souslin measurable set is Baire measurable and
+µ-measurable for any σ-ﬁnite Borel measure µ on X. A function
+f : X → Y is Souslin measurable if the preimage of every open set
+is Souslin measurable.
+Theorem 49 (Jankov-von Neumann). If X and Y are Polish spaces
+and F⊆ X× Y is analytic, then there is a uniformization of F which
+is Souslin measurable. In particular, the uniformization is both Baire
+measurable and µ-measurable for any σ-ﬁnite Borel measure on X.
+Proof. We will ﬁnish this lecture with a proof that we may assume
+without loss of generality that X = Y = ωω and that F is closed.
+To see that we may assume that X = ωω, ﬁrst observe if we prove
+the result for a stronger Polish topology on X, then this suﬃces: the
+Souslin measurable subsets of X are the same for both topologies. By
+enlarging X if necessary, we may assume that it is uncountable and, by
+increasing its topology if necessary, that it is homeomorphic to ωω⊕ ω.
+If f0 is a Souslin measurable uniformization of the restriction of F to
+the copy of ωω and f1 is any uniformization of the restriction of F to
+the copy of ω, then f0∪ f1 is Souslin measurable and uniformizes F .
+Thus we may assume that X = ωω.
+Next we will see that we may assume without loss of generality that
+Y = ωω and F is closed. Let φ : ωω→ X× Y be such that F is the
+range of φ. Deﬁne
+R ={(x, z)∈ X× ωω| x = πX(φ(z))}
+and observe that R is closed. Furthermore, if g uniformizes R and
+f(x) = πY (g(φ(x))), then f uniformizes F ; if g is Souslin measurable,
+so is f. This ﬁnishes the proof that we may assume X = Y = ωω and
+that F is closed. □
+
+[PDF physical page 48]
+48 JUSTIN MOORE
+Lecture 21
+We will now continue with the proof of the Jankov-von Neumann
+Uniformization Theorem. In the last lecture, we showed that we may
+assume without loss of generality that X = Y = ωω and F is closed.
+Let A := πX(F ) ={x∈ X|∃ y∈ Y
+(
+(x, y)∈ F
+)
+}. Deﬁne f : A→ Y
+by f(x) = y for every n:
+• x is in the projection of F∩ ([x↾ n]× [y↾ n]) and
+• if t∈ ωn is such that t <lex y↾ n, then x is not in the projection
+of F∩ ([x↾ n]× [t]).
+Clearly ( x, f(x))∈ F whenever x∈ A. Furthermore, if u∈ ω<ω has
+length n, then f−1([u]) is the set of all x such that:
+• x is in the projection of F∩ ([x↾ n]× [u]) and
+• if t∈ ωn is such that t <lex u, then x is not in the projection of
+F∩ ([x↾ n]× [t]).
+This is a diﬀerence of an analytic set and a coanalytic set and thus us
+Souslin measurable.
+To see this construction in a diﬀerent way, let T be a tree on ω× ω
+which represents F . The value f(x) is the leftmost path through T (x).
+Under some circumstances, this idea can be modiﬁed to produce a
+Borel function. For this we need the following deﬁnition. Let X and
+Y be Polish spaces and x↦→F x be a function from X to P(P(Y )).
+We say that this mapping is Borel on Borel if whenever W is Polish
+and A⊆ W× X× Y is Borel,{(w, x)∈ W× X| Aw,x∈F x} is Borel.
+Typically our interest will be in Borel on Borel mappings where Fx is
+a σ-ideal on Y .
+Notice that the mapping x↦→{∅} is not Borel on Borel. To see this,
+let E⊆ (ωω)3 be a closed set such that the projection of E onto the
+ﬁrst two coordinates is not Borel. It follows that {(w, x)∈ ωω× ωω|
+Ew,x =∅} is coanalytic but not Borel. Never-the-less, there are many
+natural examples of Borel on Borel families of ideals. For instance if
+x↦→ µx is a Borel map from X into the Borel probability measures
+on Y , then x↦→N (µx) is Borel on Borel where N (µx) is the ideal of
+µx-measure 0 sets. Also, the constant map x↦→M (Y ), whereM(Y )
+is the meager subsets of Y is Borel on Borel.
+The next result allows us to ﬁnd Borel uniformizations in circum-
+stances in which the sections of a set F⊆ X× Y are “large.”
+Theorem 50. Suppose that X and Y are Polish and x↦→ Ix is a
+Borel on Borel assignment of σ-ideals on Y . If F ⊆ X× Y is Borel
+and for every x, either Fx =∅ or else Fx̸∈I x, then F admitts a Borel
+uniformization.
+
+[PDF physical page 49]
+MATH 7870: DESCRIPTIVE SET THEORY 49
+Proof. Fix a closed set E⊆ ωω and a continuous bijection from E to
+F . Deﬁne f⊆ X× Y so that if x∈ X and u∈ ω<ω has length n, then
+{x}× [u]∩ f̸=∅ if and only if:
+• Fx∩ (X× [u]) is not in Ix;
+• if t∈ ωn satisﬁes t <lex u, then Fx∩ (X× [t]) is in Ix.
+Notice that for each x and n, there is atmost one u in ωn such the
+above two clauses are satisﬁed. Moreover, if Fx̸=∅ then Fx is not in
+Ix and is contained in ⋃
+u∈ωn X× [u]. It follows that there is at least
+one such u∈ ωn satisfying the above clauses. Consequently, f is a
+uniformization of F . Furthermore, for a ﬁxed u, the set of x satisfying
+both clauses is Borel since x↦→I x is assumed to be Borel on Borel. It
+follows that f is Borel. □
+Next we turn to a theorem which can be used to ﬁnd uniformizations
+for Borel sets with “small” sections.
+Theorem 51 (Luzin-Novikov). Suppose that X and Y are Polish and
+F⊆ X×Y is a Borel set such that for each x, Fx is (at most) countable.
+Then F can be covered by the graphs of countably many Borel functions
+and admitts a Borel uniformization.
+With some irony, we will derive this “small section” uniformization
+theorem from the “large section” uniformization theorem. To see that
+the latter conclusion follows from the former, suppose that{hn| n∈ ω}
+is a family of Borel functions whose graphs cover F . Set Dn :={x∈
+X| (x, hn(x))∈ F}. Observe that this set is Borel: it is the domain
+of the Borel function hn∩ F . Deﬁne f(x) = hn(x) if n is minimal such
+that x∈ Dn. It follows that f is Borel.
+With the goal now of being to cover F by the graphs of countably
+many Borel functions, we may assume without loss of generality that
+Fx is countably inﬁnite. Now deﬁne Z = Y ω and let P ⊆ X× Z
+consist of all (x, z) such that the range of z is exactly Fx. In particular,
+Px⊆ (Fx)ω. Let Ix be the collection of all subsets A of Z such that
+A∩ (Fx)ω is meager in ( Fx)ω when Fx is given the discrete topology.
+Observe that a Borel uniformization of P gives a cover of F by the
+graphs of countably many Borel functions. Thus, by Theorem 50, our
+task is to prove that x↦→I x is Borel on Borel. This will be taken up
+in the next lecture.
+
+[PDF physical page 50]
+50 JUSTIN MOORE
+Lecture 22
+We return to the task of proving that x↦→M (Px) is Borel on Borel,
+which we have seen is suﬃcient to prove the Luzin-Novikov Uniformiza-
+tion Theorem. Let E⊆ P⊆ X× Y ω consist of those (x, z) such that z
+is one-to-one. Observe that if x∈ X and e∈ Ex, then f↦→ e◦f deﬁnes
+a homeomorphism from ωω to Px. Thus the following are equivalent
+for A⊆ Px:
+• A is meager in Px;
+• there is an e∈ Ex such that{f∈ ωω| e◦ f∈ A} is meager in
+ωω;
+• for all e∈ Ex,{f∈ ωω| e◦ f∈ A} is meager in ωω.
+We will need the following theorem.
+Theorem 52 (Montgomery, Novikov). Suppose that X is a set equipped
+with a σ-algebra A and Y is a Polish space. If A⊆ X× Y is in the
+σ-algebra generated by products of sets in A with Borel sets, then for
+every open U⊆ Y
+{x∈ X| Ax is meager in U}
+is in A.
+Proof. We only sketch the proof. Let B consist of all sets A⊆ X× Y
+for which the conclusion of the theorem is true. One shows that B
+contains all products elements of A with open sets, and is closed under
+taking complements and countable unions. □
+Now let W be Polish and A⊆ W× X× Y ω be Borel. Deﬁne
+B :={(w, x, e, f)∈ W× X× Y ω× ωω| e∈ Ex and (w, x, e◦ f)∈ A}.
+Clearly B is Borel. By Theorem 52,
+C ={(w, x, e)∈ W× X× Y ω| Bw,x,e is meager}
+is Borel. By the above observation, the following are equivalent:
+• Aw,x is meager;
+• there is an e∈ Ex such that Bw,x,e is meager;
+• for all e∈ Ex Bw,x,e is meager.
+Thus
+{(w, x)∈ W× X| Aw,x is meager}
+coincides with both
+{(w, x)∈ W× X|∃ e∈ E
+(
+(e∈ Ex) and ( w, x, e)∈ C)
+)
+}
+which is analytic and
+{(w, x)∈ W× X|∀ e∈ E
+(
+(e∈ Ex) implies ( w, x, e)∈ C)
+)
+}
+
+[PDF physical page 51]
+MATH 7870: DESCRIPTIVE SET THEORY 51
+which is coanalytic. It follows that this set is Borel and hence the
+map x↦→ M(Px) is Borel on Borel. This ﬁnishes the proof of the
+Luzin-Novikov Uniformization Theorem.
+If Γ is a countable group and Γ acts on a Polish space by Borel
+permutations, then
+EΓ
+X :={(x, y)∈ X2|∃ γ∈ Γ(γ· x = y)}
+is a Borel equivalence relation in which each equivalence class is count-
+able. This is called the orbit equivalence relation associated to the
+action. These are often known as countable Borel equivalence relations
+(CBERs), although this is obviously an abuse of the language. In fact
+this observation has a converse, which explains the important role that
+group theory often plays in the study of countable Borel equivalence
+relations.
+Corollary 15 (Feldman-Moore). If E is a countable Borel equivalence
+relation on a Polish space X, then E is the orbit equivalence relation
+of countable group Γ acting on X by Borel permutations. Moreover,
+such a Γ can be found which is generated by elements of order 2.
+Proof. By the Luzin-Novikov Uniformization Theorem, there is a count-
+able collection of Borel functions F such that E =⋃F. Let G be the
+collection of all intersections of the form f0∩ f−1
+1 ∩ U× V such that
+f0, f1∈F and U and V are disjoint basic open sets. Observe that each
+element g ofG is a Borel bijection between two disjoint Borel sets A
+and B. Furthermore,G is countable and ⋃G = E\ ∆. Extend each g
+inG to a Borel involution γ as follows:
+γ(x) :=
+
+
+
+g(x) if x∈ A
+g−1(x) if x∈ B
+x if x̸∈ A∪ B
+Deﬁne Γ to be group generated by all such extensions, observing that
+Γ is as desired. □
+
+[PDF physical page 52]
+52 JUSTIN MOORE
+Lecture 23
+We will now turn our discussion to Borel graphs and their Borel
+chromatic numbers. A Borel graph is exactly what it sounds like: a
+set of vertices X which is a Polish space and a symmetric irreﬂexive
+relation G which is regarded as the adjacency relation coming from the
+edge set. Our main interest will be in the Borel chromatic number of a
+Borel graph. Recall that a set I of vertices is independent if I2∩ G =∅
+— i.e. no two elements of I are connected by an edge. A Borel coloring
+of a Borel graph is a partition of the vertex set into Borel independent
+sets. The Borel chromatic number of the graph is the minimum number
+of pieces needed in a Borel coloring.
+The Borel chromatic number is always at least as large as the con-
+ventional chromatic number, in which the independent sets are not
+required to be Borel. In some cases, however, it may be larger as the
+next examples show.
+First, suppose that α∈ C is such that |α| = 1 and yet there is no
+n∈ Z such that αn = 1. Let T denote the unit modulus complex
+numbers and deﬁne the Borel graph G on T by (x, y)∈ G iﬀ x = αy
+or y = αx. The conventional chromatic number of this graph is 2: if
+X ⊆ T is such that for every y ∈ T there is a unique n∈ Z with
+αny ∈ X, then we deﬁne A to consist of all those y such that this
+unique n is even and set B = T\ A. This is easily seen to deﬁne a
+coloring of the graph.
+There are no Borel 2 colorings of this graph, however. If A, B⊆ T
+is any 2 coloring of G, then αA = B and αB = A. In particular,
+both A and B are invariant under the map x↦→ α2x. Since H :=
+{α2n| n∈ Z} is a countable dense subgroup of T, it follows that if A
+has the Baire property (for instance if it is Borel), it must be either
+meager or comeager. But this contradicts the fact that αA and A are
+a partition of T with x↦→ αx a homeomorphism of T. This shows that
+in fact T has no 2 coloring in which the color sets are Baire measurable.
+Similarly, there is no Haar measurable 2 coloring of this graph.
+There is, however, a Borel three coloring. Let r∈ [0, 1) be such that
+α = exp (() 2πir). For simplicity, suppose that r < 1/2; the other case
+is a routine modiﬁcation. Let n be such that nr < 1 < (n+1) r. Deﬁne
+A :={exp (() 2πis)|∃ k∈ Z(0≤ 2kr≤ s < 2k + 1r≤ nr)}
+B :={exp (() 2πis)|∃ k∈ Z(0≤ (2k + 1)r≤ s < (2k + 2)r≤ nr)}
+C :={exp (() 2πis)|∃ k∈ Z(rn≤ s < 1)}.
+The sets A, B, C are each Fσ and are pairwise disjoint. It is easily
+checked that this deﬁnes a 3 coloring of the graph.
+
+[PDF physical page 53]
+MATH 7870: DESCRIPTIVE SET THEORY 53
+Next we turn to a Borel graph (actually a class of them) which plays
+an important role in characterizing when the Borel chromatic number
+of a graph is countable. Fix a sequence ⟨tn| n∈ ω⟩ of ﬁnite binary
+sequences such that the length of tn is n and for every s∈ 2<ω, there
+is an n such that s is an initial part of tn. Deﬁne G0 to be the set
+{(tn
+⌢⟨i⟩⌢x, tn
+⌢⟨1− i⟩⌢x)| (n∈ ω)∧ (i∈{ 0, 1})∧ (x∈ 2ω)}
+It can be checked that this graph is acyclic and hence has chromatic
+number 2. The next claim, however, implies that its Borel chromatic
+number is uncountable.
+Proposition 8. If E⊆ 2ω is independent and Baire measurable, then
+E is meager.
+Proof. It suﬃces to show that if E has the Baire property and it is
+nonmeager, then E is not independent. Let s ∈ 2<ω be such that
+[s]\ E is meager. Let n be such that tn extends s. It follows that
+[tn⌢⟨0⟩]\ E and [tn⌢⟨1⟩]\ E are both meager. Consequently there is a
+comeager set of x∈ 2ω such that tn⌢⟨0⟩⌢x and tn⌢⟨1⟩⌢x are both in
+E. Thus E fails to be independent. □
+The next result, which characterizes when analytic graphs have count-
+able Borel chromatic number, has a number of applications which we
+will investigate in future lectures. It is often referred to as the G0-
+dichotomy.
+Theorem 53 (Kechris-Solecki-Todorcevic). Suppose that G is an an-
+alytic graph on X. Exactly one of the following holds:
+(1) G has countable Borel chromatic number;
+(2) there is a continuous function φ : 2ω→ X such that if (x, y)∈
+G0, then (φ(x), φ(y))∈ G.
+
+[PDF physical page 54]
+54 JUSTIN MOORE
+Lecture 24
+We will now give a proof of the G0-dichotomy stated at the end of
+the last lecture. The proof is not the original and is essentially due to
+Ben Miller (I am working from lecture notes of Clinton Conley).
+We observed last lecture thatG0 does not admit a countable coloring
+with Baire measurable color sets and, in particular, 2ω can’t be covered
+by countably many analytic G0-independent sets. This is already a
+consequence of the following proposition of independent interest.
+Proposition 9. Every analytic independent set in an analytic graph
+is contained in a Borel independent set.
+Proof. Let G be an analytic graph on a Polish space X. If Y⊆ X, set
+YG :={x∈ X|∃ y∈ Y
+(
+(x, y)∈ G
+)
+}
+Observe that Y is independent if and only if Y∩ YG =∅. Also, if Y is
+analytic, then so is YG.
+Now let A be an analytic independent set. Since AG is disjoint from
+A, the separation theorem implies that there is a Borel set B which
+contains A and is disjoint from AG. Notice that BG is disjoint from A
+and thus, by another application of the separation theorem, there is a
+Borel set C which contains A and is disjoint from BG. It follows that
+B∩ C is a Borel independent set which contains A. □
+Proof of the G0-dichotomy. Let G be an analytic graph on a Polish
+space X and suppose that the Borel chromatic number ofG is uncount-
+able. By increasing the topology on X, we may and will assume that X
+is a closed subspace of ωω. Fix a continuous function γ : ωω→ X× X
+such that G is the range of γ. Let I be the σ-ideal generated by the
+Borel independent sets, noting that every analytic independent set is
+inI by Proposition 9. Observe that by shrinking X if necessary, we
+may assume that if U is open and U∩ X is nonempty, then it is not in
+I.
+For each n∈ ω, let G0,n to be the graph on 2 n deﬁned by
+G0,n :={(tk
+⌢⟨i⟩⌢x, tk
+⌢⟨1−i⟩⌢x)| (k < n )∧(i∈{ 0, 1})∧(x∈ 2n−k−1)}.
+Set G0,<ω :=⋃∞
+n=0 G0,n. If e, f∈ G0,<ω, we say that e is extended by
+f if this is true coordinatewise. If e = (s, t)∈ G0,n, we will let e⌢⟨i⟩
+denote (s⌢⟨i⟩, t⌢⟨i⟩).
+Recursively construct⟨us| s∈ 2<ω⟩ and⟨qe| e∈ G0,<ω⟩ such that:
+(1) if s, t∈ 2<ω and s is an initial part of t, then us is an initial
+part of ut;
+
+[PDF physical page 55]
+MATH 7870: DESCRIPTIVE SET THEORY 55
+(2) if e, f∈ G0,<ω, then e is extended by f if and only if qe is an
+initial part of qf
+(3) if e = ( s, t)∈ G0,n, then the γ-image of [ qe] is contained in
+[us]× [ut].
+(4) for each n∈ ω and each I∈I , there exist ⟨xs| s∈ 2n⟩ and
+⟨ze| e∈ G0,n⟩ such that:
+• for each s∈ 2n, xs∈ [us]\ I;
+• for each e = (s, t)∈ G0,n, γ(ze) = (xs, xt).
+We will say that the pair of sequences ⟨xs| s∈ 2n⟩ and⟨ze| e∈ G0,n⟩
+are a realization of⟨us| s∈ 2n⟩ and⟨qe| e∈ G0,n⟩ which avoids I.
+To see that the construction can be carried out, start by deﬁning
+uε = ε. All of the requirements are vacuously satisﬁed except for (4),
+which is just a restatement of our assumption that X̸∈I .
+Now suppose that we have carried out the construction for all s∈ 2n
+and e∈ G0,n. Observe that sinceI is countably directed, if we partition
+I into countably many pieces, one of them is coﬁnal in (I,⊆). It follows
+that it is suﬃcient to show that for each Borel I∈I , we can construct
+the extensions⟨us| s∈ 2n+1⟩ and⟨qe| e∈ G0,n+1⟩ which satisfy (1)–
+(3) and the instance of (4) for this ﬁxed I: it must be that for coﬁnally
+many I∈I , the same extension works.
+Let I∈I be a Borel set. Deﬁne A to be the set of all xtn where
+⟨xs| s∈ 2n⟩ and⟨ze| e∈ G0,n⟩ are a realization of ⟨us| s∈ 2n⟩
+and⟨qe| e∈ G0,n⟩ avoiding I. Observe that A is analytic and not
+inI. In particular, it is not independent. Let ⟨xs⌢⟨i⟩| s∈ 2n⟩ and
+⟨ze⌢⟨i⟩| e∈ G0,n⟩ for i∈{ 0, 1} be two realizations of⟨us| s∈ 2n⟩ and
+⟨qe| e∈ G0,n⟩ which avoid I. Pick z(tn⌢⟨i⟩,tn⌢⟨1−i⟩)∈ ωω such that
+γ(z(tn⌢⟨i⟩,tn⌢⟨1−i⟩)) = (xtn⌢⟨i⟩, xtn⌢⟨1−i⟩).
+Fix an m such that if xs̸= xt for s, t∈ 2n+1, then xs↾ m̸= xt↾ m;
+set us := xs↾ m for each s∈ 2n+1. By continuity of γ, there is a ¯m
+such that if we set qe = ze↾ ¯m, then (3) is satisﬁed. Observe that we
+have now constructed ⟨us| s∈ 2n+1⟩ and⟨qe| e∈ G0,n+1⟩ such that
+(3)–(3) are satisﬁed. Moreover, ⟨xs| s∈ 2n+1⟩ and⟨ze| e∈ G0,n+1⟩
+are a realization of ⟨us| s∈ 2n+1⟩ and⟨qe| e∈ G0,n+1⟩ which avoids
+I. As noted above, this ensures the construction can be completed.
+Given the construction of ⟨us | s ∈ 2<ω⟩ and⟨qe | e ∈ G0,<ω⟩,
+deﬁne φ(a) = x if for every n, ua↾n is an initial part of x. By (1),
+this deﬁnes a continuous function from 2 ω into X. Now suppose that
+(a, b) ∈ G0. For some n0, a ↾ n0 ̸= b ↾ n0. Observe that for all
+n≥ n0, en := (a↾ n, b↾ n) is in G0,n. By (2), there is a z in ωω such
+that for all n, qen is an initial part of z. It now follows from (3) that
+γ(z) = (φ(a), φ(b)). In particular, ( φ(a), φ(b))∈ G, as desired. □
+
+[PDF physical page 56]
+56 JUSTIN MOORE
+Lecture 25
+If (X, E) and (Y, F ) are two Polish spaces equipped with equivalence
+relations, we say thatE is Borel reducible to F , written E≤B F if there
+is a Borel function φ : X→ Y such that ( x0, x1)∈ E if and only if
+(φ(x0), φ(x1)∈ F ; the map φ is called a reduction. A reduction which
+is an injection is an embedding. This provides a measure of relative
+complexity of a equivalence relations on Polish spaces. Usually one
+considers this ordering in the context of equivalence relations which
+themselves have regularity properties – typically equivalence relations
+of interest are at least analytic and often Borel.
+The simplest Borel equivalence relations are just the equality relation
+∆X on a Polish space X. A Borel equivalence relation is smooth if
+it is reducible to ∆ X for some Polish space X. A more complicated
+equivalence relation is E0⊆ 2ω×2ω, deﬁned by (a, b)∈ E0 iﬀ there is an
+m such that for all n > m , a(n) = b(n). Observe that if h : ω→ ω has
+the property that h−1(n) is inﬁnite for each n, then the map a↦→ a◦ h
+deﬁnes a continuous reduction from ∆ 2ω to E0. The next proposition
+shows that in fact ∆ 2ω <B E0.
+Proposition 10. If φ : 2ω→ X is a Borel map into a Polish space and
+φ(a) = φ(b) whenever (a, b)∈ E0, then there is a comeager set G⊆ 2ω
+such that φ is constant on G. In particular, E0 is not smooth.
+Proof. Observe that if B⊆ X is a Borel set, then φ−1(B) is a Borel set
+which is invariant under ﬁnite modiﬁcations. It follows that φ−1(B)
+is meager or comeager for each Borel B ⊆ X. Deﬁne F to be the
+collection of all Borel subsets B of X such that φ−1(B) is comeager. It
+follows thatF is a countably complete ultraﬁlter on the Borel subsets
+of X. This implies that ⋂F ={x} for some x∈ X. It follows that
+G := φ−1(x) is the desired comeager set. □
+One of the main motivations for studying Borel reducibility is that
+it gives a way of measuring the complexity of classiﬁcation problems
+which arise in mathematics. Often the members of a class of mathe-
+matical structures — e.g. countable groups, separable Banach spaces,
+compact metric spaces, ﬁnitely generated groups — can be naturally
+viewed as points in some ﬁxed Polish space. For instance, since ev-
+ery compact metric space is homeomorphic to a compact subspace of
+[0, 1]ω, the elements of this class could be viewed as points in the Polish
+spaceK([0, 1]ω). The class of all ﬁnitely generated groups can be coded
+as those (G,∗)∈P (ω)×P (ω3) such that ( G,∗) is a ﬁnitely generated
+group. This is a Borel subset of P(ω)×P (ω3) and thus a Polish space
+once the topology is strengthened. Typically one is interested in some
+
+[PDF physical page 57]
+MATH 7870: DESCRIPTIVE SET THEORY 57
+natural equivalence such as isometry, isomorphism, or homeomorphism
+on the members of this class. This corresponds to an equivalence rela-
+tion on the associated Polish space; this equivalence relation is almost
+always analytic and often is Borel. Notice, for instance, that any iso-
+morphism between ﬁnitely generated groups is determined by where
+the isomorphism sends the generators. Thus the isomorphism equiva-
+lence relations on the space of ﬁnitely generated groups is Borel and
+has countable equivalence classes.
+The notion of Borel reducibility allows one to compare these classi-
+ﬁcation problems both to each other and to benchmarks such as ∆ 2ω
+and E0. Notice that this is of course not the only way to measure the
+complexity of a classiﬁcation problem and in some cases its is com-
+pletely ill equipped to reﬂect this complexity. For instance if the class
+if objects under consideration is countably inﬁnite, Borel reducibility
+oﬀers no stratiﬁcation of the complexity. Needless to say, few would ar-
+gue that determining whether two ﬁnite groups are isomorphic is much
+harder than determining whether two natural numbers are equal. In
+cases where one classiﬁcation problem is not Borel reducible to another,
+however, one does obtain a powerful statement about the relative dif-
+ﬁculty of these classiﬁcation problems.
+The next two theorems, which we will derive from theG0-dichotomy,
+explain the special role that ∆ 2ω and E0 play in the context of Borel
+equivalence relations.
+Theorem 54 (Silver). If E is a coanalytic equivalence relation on a
+Polish space X, then either E≤B ∆ω or else ∆2ω≤B E and this is
+witnessed by a continuous embedding.
+Proof. Since the complement of E is an analytic graph on X, it is
+subject to the G0-dichotomy. First observe that any independent set
+for X2\ E is contained in an E-equivalence class. In particular, if
+X2\ E has a countable Borel chromatic number, then E has countably
+many equivalence classes, each of which is Borel. It follows that in
+this case, E ≤ ∆ω. Now suppose that φ : 2 ω → X is such that if
+(a, b)∈ G0, then ( φ(a), φ(b))̸∈ E. Deﬁne F = ( φ× φ)−1(E), noting
+that F is a coanalytic equivalence relation. If a∈ 2ω, then [ a]F =
+{b∈ 2ω | (a, b)∈ F} is a G0-independent set which has the Baire
+property and hence is meager. By the Kuratowski-Ulam theorem, F
+is meager and by Mycielski’s theorem, there is a continuous injection
+ψ : 2ω→ 2ω such that if a̸= b, then (ψ(a), ψ(b))̸∈ F and consequently
+(φ(ψ(a)), φ(ψ(b)))̸∈ E. This φ◦ ψ is a continuous embedding of ∆ 2ω
+into E. □
+
+[PDF physical page 58]
+58 JUSTIN MOORE
+Theorem 55 (Harrington-Kechris-Louveau). If E is a Borel equiv-
+alence relation, then either E ≤B ∆2ω or else there is a continuous
+embedding to E0 into E.
+We will prove only the special case of this theorem, in which E is
+a countable Borel equivalence relation. In this case, the alternative
+E ≤B ∆2ω takes a special form. If E is an equivalence relation a
+(partial) transversal for E is a set which intersects each E-class in (at
+most) one point.
+Proposition 11. If E is a countable Borel equivalence relation on a
+Polish space X, the following are equivalent:
+(1) E is smooth;
+(2) E admits a Borel transversal;
+(3) X can be covered by countably many partial Borel transversals.
+Proof. If E is smooth, let φ : X→ Y be a Borel function such that
+(x0, x1)∈ E if and only if φ(x0) = φ(x1). In particular, f is one-
+to-one and hence has a Borel range. By replacing Y if necessary, we
+may assume that φ is surjective. An application of the Luzin-Novikov
+uniformization theorem to F :={(y, x)∈ Y× X| φ(x) = y} yields
+both that F contains the graph of a Borel function g : Y → X and
+that it can be partitioned into countably many partial Borel functions
+{hn | n∈ ω}. It follows that the range of g is a Borel transversal
+and that the ranges of the hn’s are partial Borel transversals which
+cover X. This establishes that (1) implies both (2) and (3). To see
+that (2) implies (1), observe that if T⊆ X is a Borel transversal, then
+(X× T )∩ E is a Borel function from X to X which deﬁnes a reduction
+of E to ∆X. Similarly if {Tn| n∈ ω} is a cover of X by partial Borel
+transversals, then set hn := ( X× Tn)∩ E and set φ(x) = hn(x) if n
+is minimal such that x∈ dom(hn). This is a Borel function since each
+hn is a Borel function and hence has a Borel domain. It is easily seen
+that φ witnesses E≤B ∆X. □
+We now will now complete the proof of Theorem 55 when E has
+countable classes. Deﬁne G := E\ ∆X and apply the G0-dichotomy to
+G. Observe that the G-independent sets are exactly the transversals of
+E. Thus by Proposition 11 G has countable Borel chromatic number
+precisely when E is smooth. Suppose now that there is a continuous
+φ : 2ω→ X such that if (a, b)∈ G0, then (φ(a), φ(b))∈ E. If we deﬁne
+F := (φ× φ)−1(E), then F is an equivalence relation which contains
+G0 and hence E0. Since each F -equivalence class is Borel and invariant
+under ﬁnite modiﬁcations, each must be meager or comeager. More-
+over, the later is clearly impossible: since each E-class is countable,
+
+[PDF physical page 59]
+MATH 7870: DESCRIPTIVE SET THEORY 59
+each class is Fσ and thus contains a dense open set if it is comeager,
+which contradicts the fact that each E0-class — and hence each F -class
+— is dense. It follows from the Kuratowski-Ulam theorem that F is
+meager.
+Claim 2. If Z⊆ 2ω× 2ω is meager, then there exist ui
+k∈ 2<ω for each
+k∈ ω and i∈{ 0, 1} such that:
+• for all k, u0
+k̸= u1
+k have the same length;
+• if a, b∈ 2ω are not E0-related, then
+(ua0
+0
+⌢ua1
+1
+⌢··· , ub0
+0
+⌢ub1
+1
+⌢··· )
+is not in Z.
+Proof. Let⟨Zk| k∈ ω⟩ be an increasing sequence of nowhere dense
+sets which covers Z. Given ⟨uk| k < n ⟩, pick u0
+n and u1
+n in 2 <ω of
+equal length such that if s0̸= s1 are any binary sequences of length∑
+k<n lh(uk), then
+([s0
+⌢u0
+n]× [s1
+⌢u1
+n])∪ ([s1
+⌢u1
+n]× [s0
+⌢u0
+n])∩ Zn =∅.
+Suppose now that a, b∈ 2ω are not E0-related and let k∈ ω be arbi-
+trary. Fix an n > k such that a(n)̸= b(n) and observe that now
+[ua0
+0
+⌢··· ⌢uan
+n , ub0
+0
+⌢··· ubn
+n ]∩ Zn =∅.
+Since k was arbitrary, (ua0
+0
+⌢ua1
+1
+⌢··· , ub0
+0
+⌢ub1
+1
+⌢··· ) is not in Z. □
+By applying the claim to F , there is a continuous ψ : 2ω→ 2ω which
+witnesses E0≤B F . In particular, φ◦ ψ witnesses that E0≤B E.
+We will now turn to showing that for some continuous θ : 2ω→ 2ω,
+φ◦ψ◦θ is a continuous embedding ofE0 into E. By applying the Luzin-
+Novikov theorem to {(x, a)∈ 2ω× X| φ(ψ(a)) = x} it follows that
+2ω is a union of countably many Borel sets on which φ◦ ψ is injective.
+Thus by the Baire Category Theorem, there is a nonmeager Borel set
+B⊆ 2ω such that φ◦ ψ↾ B is one-to-one and hence and embedding of
+E0↾ B into E. We are now ﬁnished by the following claim.
+Claim 3. If B⊆ 2ω is a nonmeager Borel set, then there exist uk∈ 2<ω
+for each k∈ ω such that if a∈ 2ω, then
+θ(a) := u0
+⌢⟨a0⟩⌢u1
+⌢⟨a1⟩⌢u2
+⌢⟨a2⟩···∈ B.
+In particular, θ is a continuous embedding of E0 into E0↾ B.
+Proof. Start by letting u0 be such that [ u0]\ B is a countable union of
+nowhere dense sets ⟨Zk| k∈ ω⟩. Given ⟨uk| k < n⟩, select un such
+that if s is any binary sequence of length n +∑
+k<n lh(ul), then [s⌢un]
+is disjoint from Zk for all k < n . It follows that the sequence has the
+desired property. □
+
+[PDF physical page 60]
+60 JUSTIN MOORE
+Lecture 26
+We will now turn to a discussion of inﬁnite dimensional Ramsey
+theory. The classical Ramsey theorem can be stated as follows.
+Theorem 56 (Ramsey). If d, m∈ ω and [ω]d =⋃
+i<m Ki, then there
+exists an inﬁnite H⊆ ω and an i < m such that [H]d⊆ Ki.
+It is reasonable to ask to what extent this theorem remains true
+if we allow d = ω: Under what hypotheses is it true that whenever
+[ω]ω =⋃
+i<m Ki, there is an inﬁnite H⊆ ω and an i < m such that
+every inﬁnite subset of H is in Ki?
+Without further assumptions, this strengthening is false. To see
+this, deﬁne σ : [ω]ω→ [ω]ω by σ(A) = A\{ min(A)} and let∼ be the
+minimum equivalence relation such that for all A, A∼ σ(A). Observe
+that the graph G in which A and σ(A) are adjacent is acyclic. Let d
+be the path metric given by this graph. Notice in particular if A∼ B,
+then d(A, B) is even if and only if d(σ(A), B) is odd. Let X ⊆[ω]ω
+meet each∼-class in exactly one element. Deﬁne A∈ K0 if d(A, X)
+is even, where X∈X is the unique element such that A∼ X. Set
+K1 = [ω]ω\ K0. It follows from the above observation that if H⊆ ω is
+inﬁnite, then H is in K0 if and only if σ(H)⊆ H is in K1.
+Int this construction, however, the set X , which is chosen using the
+Axiom of Choice, is at least a priori not regular. We will see that in
+fact such an X can not be Souslin measurable. It will be fruitful at
+this point to pause to introduce a deﬁnition. The Ellentuck topology
+on [ω]ω is generated by the following basic open sets:
+[a, A] :={B∈ [a∪ A]ω| a is an initial part of B}
+where a is a ﬁnite subset of ω and A⊆ ω is inﬁnite. It is readily
+checked that in this topology these sets are both open and closed and
+that they separate points. The Ellentuck topology is stronger than
+the usual metric topology on [ ω]ω, which is generated by [ a, ω] where
+a⊆ ω is ﬁnite. In particular, the sets which are Baire measurable
+in the Ellentuck topology form a σ-algebra which contains the metric
+open sets and which is closed under the A-operation. In particular,
+every Souslin measurable subset of [ ω]ω has the Baire property in the
+Ellentuck topology.
+Theorem 57 (Ellentuck). Suppose that [ω]ω = ⋃
+i<mKi where each
+Ki has the Baire property with respect to the Ellentuck topology. There
+exists an inﬁnite H⊆ [ω]ω such that [H]ω⊆K i for some i < m .
+This theorem was ﬁrst proved when the Ki are Borel by Galvin and
+Prikry and when the Ki are analytic by Silver. Todorcevic showed
+
+[PDF physical page 61]
+MATH 7870: DESCRIPTIVE SET THEORY 61
+that Ellentuck’s proof can be abstracted so as to provide a general
+means of proving inﬁnite dimensional partition theorems starting from
+pigeonhole principles. For instance, the basic pigeonhole principle un-
+derlying Ramsey’s theorem asserts that if an inﬁnite set is partitioned
+into ﬁnitely many pieces, at least one is inﬁnite. Pigeonhole prin-
+ciples such as Hindman’s Theorem, the Hales-Jewett Theorem, and
+Gowers’ FINk-Theorem each give rise to much more powerful inﬁnite
+dimensional Ramsey Theorems. It is these inﬁnite dimensional Ramsey
+theorems which are often most useful in practice.
+I will ﬁnish this lecture by stating a strengthening of the Galvin-
+Prikry Theorem which is based on a result of Milliken. Let T be a tree
+with no maximal elements. A strong subtree of T is a subset S⊆ T
+which is a tree such that for some subset I(S)⊆ ω the following is
+true:
+• if s∈ S and lh(s)̸∈ I, then s has a unique immediate successor
+in S;
+• if s∈ S and lh(s)∈ I, then every immediate successor s in T
+is in S.
+If d≤ ω, deﬁneS d(T ) to be the collection of all strong subtrees of T
+such that I(S) has cardinality d. Observe that for all m,S ω(m<ω) is
+a Gδ-subset of P(m<ω) and hence a Polish space. The next result is
+sometimes referred to as Milliken’s Theorem.
+Theorem 58. IfS ω(m<ω) is partitioned into ﬁnitely many Souslin
+measurable pieces, then there is an T ∈S ω(m<ω) such that S ω(T ) is
+contained in one piece of the partition.
+Notice that the map T↦→ I(T ) is continuous on S ω(m<ω) and that
+colorings which depend only on I(T ) correspond to colorings of [ ω]ω.
+Thus the Galvin-Prikry Theorem for Souslin measurable partitions is
+a special case of Milliken’s Theorem.
+
+[PDF physical page 62]
+62 JUSTIN MOORE
+Lecture 27
+We will prove Ellentuck’s Theorem through a series of lemmas. A
+subsetX of [ ω]ω is completely Ramsey if whenever [ a, A] is a basic
+open set in the Ellentuck topology, there is an inﬁnite B ⊆ A such
+that [ a, B] is either contained in or disjoint from X . We will show
+that every set with the Baire property in the Ellentuck topology is
+completely Ramsey. This is suﬃcient since if [ ω]ω =⋃
+i<mKi and each
+Ki has the Baire property, then there is an inﬁnite A⊆ ω such that
+[∅, A] = [A]ω is either contained in or disjoint from each Ki. Since the
+Ki’s cover [ω]ω, there must be an i < m such that [A]ω⊆K i.
+Lemma 7. Every Ellentuck open set is completely Ramsey.
+Proof. Fix an Ellentuck open set X ⊆[ω]ω. It will be useful to in-
+troduce some terminology. If A∈ [ω]ω and a∈ [ω]<ω, we say that A
+accepts a if [a, A]⊆X . We say that A rejects a if there is no inﬁnite
+subset of A which accepts a; we say that A decides a if A either accepts
+or rejects a. The following are obvious from the deﬁnitions:
+(1) if A accepts (rejects) a, then so does every inﬁnite subset of A;
+(2) there is an inﬁnite B⊆ A such that B decides a;
+(3) if A rejects a and B is a ﬁnite modiﬁcation of A, then B rejects
+a.
+(4) if A rejects a, then{n∈ A| A accepts a∪{ n}} is ﬁnite.
+Item 4) follows from the observation that if
+B :={n∈ A| (max(a) < n)∧ (A accepts a∪{ n})}
+then [a, B] =⋃
+n∈B[a∪{ n}, B].
+Toward showing that X is completely Ramsey, let a∈ [ω]<ω and
+A∈ [ω]ω be given. Without loss of generality, we may assume that
+max(a) < min(A).
+Claim 4. There is an B∈ [A]ω which decides a∪b whenever b∈ [B]<ω.
+Proof. Construct⟨nk | k∈ ω⟩ and⟨Ak | k∈ ω⟩ by recursion. Let
+A0⊆ ω be an inﬁnite set which either accepts or rejects a. Given Ak,
+let nk = min(Ak) and let Ak+1⊆ Ak\{ nk} be such that Ak+1 decides
+a∪ b for each subset b of{ni| i≤ k}. Set B :={nk| k∈ ω}, noting
+that B decides a∪ b whenever b∈ [B]<ω. □
+Claim 5. Either B accepts a or else there is a C∈ [B]ω which rejects
+a∪ b whenever b∈ [B]<ω.
+Proof. Deﬁne⟨nk| k∈ ω⟩ recursively as follows: nk is the least element
+n of B which is greater than ni for i < k and all p such that B accepts
+
+[PDF physical page 63]
+MATH 7870: DESCRIPTIVE SET THEORY 63
+a∪ b∪{ p} for some b⊆{ ni| i < k}. It follows that C :={nk| k∈ ω}
+is as desired. □
+If C accepts a, then [ a, C] ⊆ X by deﬁnition and we are done.
+Suppose now that C rejects a∪ b whenever b∈ [C]<ω. We claim that
+[a, C]∩X =∅. Suppose for contradiction that there is a D∈ [a, C]∩X .
+SinceX is open, there is an initial part d of D such that [ d, D]⊆X .
+Note, however, that a is an initial part of d and that b := d\a is a ﬁnite
+subset of C. Since D is an inﬁnite subset of C which accepts a∪b, C did
+not reject a∪ b, contrary to our assumption. Thus [ a, C]∩X =∅. □
+Observe that Lemma 7 implies that nowhere dense sets are com-
+pletely Ramsey as well.
+We pause to note the following consequence of this lemma.
+Theorem 59 (Galvin, Nash-Williams). IfF⊆ FIN, then there is an
+inﬁnite H⊆ ω such that either [H]<ω∩F =∅ or else every inﬁnite
+subset of H has an initial segment in F.
+Proof. DeﬁneX =⋃
+a∈F[a, ω]. By Lemma 3, there is an H∈ [ω]ω such
+that [∅, H] = [H]ω is either contained in or disjoint fromX . It is easily
+checked that this H satisﬁes the conclusion of the theorem. □
+Since ﬁnite Boolean combinations of completely Ramsey sets are
+completely Ramsey, the following Lemma is suﬃcient in order to com-
+plete the proof of Ellentuck’s Theorem.
+Lemma 8. Every meager set in the Ellentuck topology is nowhere
+dense.
+Proof. LetX be an Ellentuck meager set and let ⟨Xk| k∈ ω⟩ be a
+sequence of nowhere dense sets which covers X . It suﬃces to show
+that if [ a, A] is an Ellentuck open set, there is a B∈ [A]ω such that
+[a, B]∩X =∅. Construct⟨Ak| k∈ ω⟩ such that, setting nk = min(Ak):
+• for all k∈ ω, max(a) < n k < n k+1;
+• if b⊆{ ni| i < k}, then [ a∪ b, Ak]∩X k =∅.
+Set B :={nk| k∈ ω} and suppose that k∈ ω. Observe that
+[a, B]⊆
+⋃
+{[a∪ b, Ak]| b⊆{ ni| i < k}}
+which is disjoint fromXk by construction. Thus [ a, B]∩X =∅. □
+
+[PDF physical page 64]
+64 JUSTIN MOORE
+Lecture 28
+Proposition 12. Suppose that E is a countable Borel equivalence re-
+lation on a Polish space X. If B⊆ X is a Borel set, then so is:
+[B]E :=
+⋃
+{[x]E| x∈ B}.
+Proof. By the Luzin-Novikov theorem E =⋃∞
+n=0 fn where each fn is a
+partial Borel injection from X to X. Since fn(E) is Borel for each n,
+it follows that [ B]E =⋃∞
+n=0 fn(E) is Borel. □
+Suppose that E is a countable Borel equivalence relation on a Polish
+space X. A marker for E is a Borel set A which intersects each E-
+equivalence class. A sequence of markers ⟨Ak| k∈ ω⟩ is vanishing if
+it is decreasing and has empty intersection. Observe that in order for
+a vanishing sequence of markers to exist, each equivalence class of E
+must be inﬁnite. Such an E is said to be aperiodic.
+Lemma 9. Any aperiodic countable Borel equivalence relation admits
+a vanishing sequence of markers.
+Proof. Since this is trivially true if the underlying Polish space is count-
+able and since all uncountable Polish spaces are Borel isomorphic, we
+may assume that E is an equivalence relation on 2ω. For each n, deﬁne
+sn : 2 ω→ 2ω by sn(a)∈ 2n the lexicographically least s such that [ s]
+intersects the equivalence class of a. Each sn is a Borel function and
+therefore the set An consisting of all a∈ 2ω such that a↾ n = sn(a) is
+a Borel set. Clearly each An intersects each equivalence class and also
+An+1⊆ An. Deﬁne T :=⋂∞
+n=0 An and observe that T intersects each
+equivalence class in at most one element. It follows that⟨An\T| n∈ ω⟩
+is a vanishing sequence of markers. □
+Next we note the following characterization of which countable Borel
+equivalence relations are smooth. If X is a Polish space and E is a
+countable Borel equivalence relation on X, then the Borel structure on
+X induces a σ-algebra on X/E: it consists of all {[x]E| x∈ B} such
+that B is Borel.
+Theorem 60. Suppose that E is a countable Borel equivalence relation
+on a Polish space X. The following are equivalent:
+(1) E≤B ∆2ω (i.e. E is smooth);
+(2) there is a Borel transversal for E;
+(3) X is a countable union of partial Borel transversals;
+(4) the quotient X/E is a standard Borel space.
+
+[PDF physical page 65]
+MATH 7870: DESCRIPTIVE SET THEORY 65
+Proof. We have already shown the equivalence of the ﬁrst three items
+in previous lecture notes. Suppose now that φ : X→ 2ω is a Borel
+function such that ( x, y)∈ E if and only if φ(x) = φ(y). If follows
+that if{[x]E| x∈ B} is in the σ-algebra associated to X/E, then B is
+Borel. The map ψ : [x]E↦→ φ(x) induced by φ maps this set to φ(B),
+which is Borel. Thus ψ deﬁnes an isomorphism between X/E and a
+standard Borel space. In the converse direction, the map x↦→ [x]E
+deﬁnes a Borel reduction from E to ∆ X/E. If X/E is standard Borel,
+this witnesses that E is smooth. □
+Theorem 61 (Slaman-Steel, Weiss). Suppose that E is a Borel equiv-
+alence relation. The following are equivalent:
+(1) E is hyperﬁnite;
+(2) E is the orbit equivalence relation of a Borel action of Z.
+Proof. Suppose ﬁrst that E is hyperﬁnite and ﬁx an increasing sequence
+⟨Fn| n∈ ω⟩ of Borel equivalence relations with ﬁnite classes such that⋃∞
+n=0 Fn = E and such that F0 = ∆ X. Fix a Borel linear ordering ≤
+on X and deﬁne a relation≺ on X by x≺ y if x̸= y, (x, y)∈ E and
+min[x]Fn < min[y]Fn
+where n is maximal such that ( x, y)̸∈ Fn. Observe that, by the home-
+work exercises,≺ is a Borel relation and that the restriction to each
+equivalence class is a linear order. Moreover, an easy inductive argu-
+ment shows that each Fn-class is an interval in this order. It follows
+that each E-class is isomorphic to a suborder of Z. For n≤ ω, deﬁne
+Bn to be the set of all x∈ X such that [x]E has cardinality n and has
+a≺-maximum or≺-minimum element.
+Deﬁne a Borel automorphism f : X → X as follows. On X\⋃
+n≤ω Bn, f(x) is the ≺-least element of [ x]E which is greater than
+x. That this is a Borel function follows from the Luzin-Novikov The-
+orem. To see this, let {gk| k∈ ω} be partial Borel functions which
+partition E. For each k,
+Yk :={x∈ X|∀ m
+(
+(gn(x) = gm(x))∨ (gn(x)≺ gm(x))
+)
+}
+is Borel and f↾ Yk = gk↾ Yk.
+If n is ﬁnite, deﬁne f ↾ Bn → Bn by permuting the cyclic order
+which≺ induces on each ﬁnite class: f(x) = y if ( x, y)∈ E and y is
+the≺-successor of x or, if x = max[x]E, then y = min[x]E. As in the
+previous case, this deﬁnes a Borel automorphism.
+Finally, let⟨Tn| n∈ Z⟩ be a partition of Bω into Borel transversals
+for E↾ Bω. Deﬁne f↾ Bω by f(x) = y if (x, y)∈ E and for some k, x∈
+Tk and y∈ Tk+1. This ﬁnishes the proof of the forward implication. □
+
+[PDF physical page 66]
+66 JUSTIN MOORE
+Lecture 29
+Proof of Slaman-Steel, reverse implication. Next suppose that f : X→
+X is a Borel automorphism which generatesE. Since the set of x whose
+equivalence class is ﬁnite forms a Borel set and isE-invariant, it suﬃces
+to prove the theorem when E has only inﬁnite classes. Let⟨Ak| k∈ ω⟩
+be a vanishing sequence of markers and let Y be the set of all y∈ X
+for that for all k
+Zk(x) :={n∈ Z| f n(y)∈ Ak}
+is both coﬁnal and coinitial in Z. By the homework exercises, the
+restriction of E to X\ Y is smooth and therefore hyperﬁnite. Deﬁne
+Fk on Y by (x, y)∈ Fk if either x = y∈ Ak or else there is a (necessarily
+unique) sequence ⟨zi| i≤ m⟩ in Y\ Ak such that{z0, zm} ={x, y}
+and zi+1 = f(zi) for all i < m . Since the sequence connecting x to y is
+unique if it exists, Fk is Borel. By our deﬁnition of Y each Fk-class is
+ﬁnite and clearly Fk⊆ Fk+1 for all k. Since ⟨Ak| k∈ ω⟩ is vanishing,⋃∞
+k=0 Fk = E. □
+Our next goal will be to prove that tail equivalence on ωω is hyper-
+ﬁnite. This will be a consequence of a more general result. A Borel
+equivalence relation E is hypersmooth if it is a countable increasing
+union of smooth equivalence relations. If X is Polish, then eventual
+equality on X ω is a typical example of a hypersmooth equivalence re-
+lation.
+Since every equivalence relation with only ﬁnite equivalence classes
+is smooth, it follows that every hyperﬁnite equivalence relation is hy-
+persmooth. The next theorem clariﬁes the relationship between these
+two notions.
+Theorem 62 (Dougherty-Jackson-Kechris). A Borel equivalence rela-
+tion is hyperﬁnite if and only if it is both hypersmooth and all of its
+equivalence classes are countable.
+Proof. It suﬃces to show that hypersmooth countable Borel equiva-
+lence relations are hyperﬁnite. To this end, let X be a Polish space
+and suppose that⟨φk| k∈ ω⟩ be a sequence of countable-to-one Borel
+functions from X to 2 ω such that φk(x) = φk(y) implies φk+1(x) =
+φk+1(y). Deﬁne E by (x, y)∈ E if and only if there is a k such that
+φk(x) = φk(y); our task is to prove that E is hyperﬁnite.
+Observe that our assumptions on theφk’s imply that φk(x)↦→ φk+1(x)
+is a well deﬁned countable-to-one Borel function. By the Luzin-Novikov
+Theorem, there are Borel functions ik : 2 ω→ ω such that if φk(x)̸=
+φk(x), then either φk+1(x)̸= φk+1(y) or else ik(φk(x))̸= ik(φk(y)). For
+
+[PDF physical page 67]
+MATH 7870: DESCRIPTIVE SET THEORY 67
+each x, set pk(x) := ik(φk(x)) and observe that if x̸= y, then
+⟨pi(x)| i < k⟩̸ =⟨pi(y)| i < k⟩ or φk(x)̸= φk(y)
+Furthermore, if φk(x) = φk(y), then pm(x) = pm(y) for all m≥ k.
+Deﬁne (x, y)∈ Fk if and only if:
+• φk(x) = φk(y) and
+• for all i < k there exists a q such that
+2nq≤ pi(x), pi(y) < 2n(q + 1).
+□
+Theorem 63 (Dougherty-Jackson-Kechris). If X is Polish and f :
+X→ X is a Borel function, then the equivalence relation generated by
+f is hypersmooth. If in addition f is at most countable-to-one, then it
+generates a hyperﬁnite equivalence relation.
+Proof. Without loss of generality, X = 2 ω. For each x∈ X, deﬁne
+sn(x)∈ 2n to be the lexicographically least element s such that
+In(x) :={i∈ ω| f i(x)↾ n = s}
+is inﬁnite. Observe that sn(x) is an initial part of sn+1(x) for all n and
+x. Deﬁne ψ(x) = ⋃
+n sn(x) and set S :={x∈ X | (x, ψ(x))∈ E}.
+Observe that ψ witnesses that E↾ S is smooth and therefore it suﬃces
+to show that E↾ (X\ S) is hypersmooth.
+Notice that if x∈ X\ S, ψ(x)̸∈{ f i(x)| i∈ ω} and thus if in(x) :=
+min In(x), then lim n→∞ in(x) = ∞. Furthermore, if x, y ∈ X and
+f k(x) = f l(y) for some k, l∈ ω, then whenever k≤ in(x) and l≤ in(y),
+in(x)− k = in(y)− l and f in(x)(x) = f in(y)(y). In particular, if x, y∈
+X\ S, then ( x, y)∈ E if and only if for some n, f in(x)(x) = f in(y)(y).
+Deﬁne φn(x) = f in(x)(x), noting that if φn(x) = φn(y), then φn+1(x) =
+φn+1(y). Thus⟨φn| n∈ ω⟩ witnesses that E is hypersmooth. □
+Proofs of hyperﬁnite can be notoriously diﬃcult. An example of this
+is the following deep result of Gao and Jackson.
+Theorem 64 (Gao-Jackson). Any Borel action of an abelian group on
+a Polish space generates a hyperﬁnite orbit equivalence relation.
+The following are notorious open problems.
+Problem 1. If G is a countable amenable group, must every Borel
+action of G generate a hyperﬁnite orbit equivalence relation.
+The answer is known even for the solvable group ⟨a, b| a−1ba = b2⟩.
+Problem 2. Is a countable increasing union of hyperﬁnite equivalence
+relations hyperﬁnite?
+
+[PDF physical page 68]
+68 JUSTIN MOORE
+Lecture 30
+There are few tools which can be used to directly show that a count-
+able Borel equivalence relation is complex. Often one uses techniques
+which employ measure or category in order to prove that complexity
+arises. One example of this was our proof that E0 is not smooth: we
+showed that if f : 2 ω→ X is any Borel function into a Polish space
+which is E0-invariant, then f is constant on both a conull set and a
+comeager set. It turns out that measure is a more powerful tool in
+drawing out the complexity of a countable Borel equivalence relation.
+The next result shows that category is not useful in proving that equiv-
+alence relations are not hyperﬁnite.
+Theorem 65 (Hjorth-Kechris, Sullivan-Weiss-Wright, Woodin). Sup-
+pose that E is a countable Borel equivalence relation on a Polish space
+X. Then there is a comeager set G such that E↾ G is hyperﬁnite.
+Proof. Fix a Borel linear order≤ on X. Applying the Feldman-Moore
+theorem, let{gk| k∈ ω} be Borel involutions which generateE. Deﬁne
+fk(x) := min( x, gk(x)). If s∈ ω<ω deﬁne fs(x) = fs(n−1)(··· fs(0)(x))
+and let Es be the equivalence relation on X deﬁned by ( x, y)∈ Es
+if and only if fs(x) = fx(y). Notice that Es is a Borel equivalence
+relation contained in E whose equivalence classes have cardinality at
+most 2 lh(s). Furthermore, if s is an initial part of t, then Es⊆ Et. If
+a∈ ωω, deﬁne Ea =⋃∞
+n=0 Ea↾n.
+Observe that it is suﬃcient to show that for some a∈ ωω, there is
+a comeager set of x such that [ x]Ea = [ x]E. By the Kuratoski-Ulam
+Theorem, it is suﬃcient to show that for every x ∈ X, the set of
+a∈ A such that [ x]Ea = [x]E is comeager. Furthermore, since each E-
+equivalence class is countable, it is suﬃcient to show that if (x, y)∈ E,
+then the set of a such that ( x, y)∈ Ea is dense and open. Clearly it
+is open since if ( x, y)∈ Ea, then for some n, ( x, y)∈ Ea↾n and thus
+(x, y)∈ Eb for all b∈ [a↾ n]. To see that the set is dense, let s∈ ω<ω
+be arbitrary and ﬁx a k such that gk(fs(x)) = fs(y). It follows that
+fk(fs(x)) = fk(fs(y)) and hence that ( x, y)∈ Es⌢⟨k⟩. □
+A countable Borel equivalence relation E on a Borel measure space
+(X, µ) is µ-hyperﬁnite if E is hyperﬁnite when restructed to a µ-conull
+set. The notion of amenability plays an important role in the study of
+µ-hyperﬁniteness. A countable discrete group G is said to be amenable
+if it supports a ﬁnitely additive, translation invariant probability mea-
+sure. Since the space of ﬁnitely additive probability measures is com-
+pact as a subspace of [0 , 1]P(G), it can be shown that G is amenable if
+for every ε > 0 and every ﬁnite F⊆ G, there is a ﬁnite set A⊆ G such
+
+[PDF physical page 69]
+MATH 7870: DESCRIPTIVE SET THEORY 69
+that
+|A△F A|
+|A| < ε.
+In fact the existence of (ε, F)-Følner sets for each ε and F is equivalent
+to amenability. It should be clear that every ﬁnite group is amenable
+and it is not hard to show that every abelian group is amenable. Fur-
+thermore, it is not diﬃcult to show that the class of amenable groups
+is closed under taking extensions, directed unions, quotients, and sub-
+groups. In particular, every solvable group is amenable.
+Any nonabelian free group, on the other hand, is not amenable. For
+instance for the group freely generated by a and b, there is no ﬁnitely
+additive probability measure which invariantly measures
+A :={w∈ F2| w begins with a}.
+For instance if µ is an invariant ﬁnitely addiitive measure on F2 with
+µ(F2) <∞, then since {bnA| n∈ Z} is a pairwise disjoint family,
+µ(A) = 0. On the other hand, F2\ A∩ a· (F2\ A) =∅, which implies
+µ(F2\ A) = 0 and hence µ(F2) = 0.
+We will eventually prove the following results.
+Theorem 66. Suppose that G is a countable discrete group acting er-
+godically by measure preserving transformations on a Borel probability
+measure space (X, µ). If EG
+X is µ-hyperﬁnite, then G is amenable.
+Theorem 67. Suppose that G is a nondiscrete nonabelian free group
+on two generators. If G acts continuously on a locally ﬁnite measure
+space (X, µ), then the orbit equivalence relation is not µ-hyperﬁnite.
+Problem 3. Suppose that E is a countable Borel equivalence relation
+on a σ-ﬁnite measure space (X, µ). If E is µ-hyperﬁnite, is E hyperﬁ-
+nite?
+Problem 4. Is a countable increasing union of hyperﬁnite equivalence
+relations hyperﬁnite?
+Problem 5. Is the orbit equivalence relation of a Borel action of a
+countable amenable group hyperﬁnite?
+The last two questions are known to have a positive answer if hy-
+perﬁnite is replaced by µ-hyperﬁnite for any Borel probability measure
+µ. Also, a positive answer to the second problem can be used to re-
+duce the last problem to the ﬁnitely generated case. Note, however,
+that there are ﬁnitely generated solvable groups such as the Baumslag-
+Solitar group ⟨a, b| a−1ba = b2⟩ for which the last problem remains
+open.
+
+[PDF physical page 70]
+70 JUSTIN MOORE
+Lecture 31
+The goal of the next two lectures is to prove the following result.
+Theorem 68 (Connes-Feldman-Weiss). The orbit equivalence relation
+of a countable discrete amenable group acting on a Borel probability
+space (X, µ) is µ-hyperﬁnite.
+Note that there is no requirement that the group action interacts
+with the measure µ (in particular, we are not assuming that the action
+preserves measure or even preserves being measure 0). This theorem
+complements the following theorem of Dye and the Slaman-Steel theo-
+rem to show that, up to a null set, any two orbit equivalence relations
+of amenable group actions are isomorphic.
+Theorem 69 (Dye). Suppose that Z acts ergodically on atomless Borel
+probability spaces(X, µ) and (Y, ν). Then there is a measure preserving
+isomorphism between (X, EZ
+X) and (Y, E Z
+Y ).
+The Connes-Feldman-Weiss theorem will be proven in two stages:
+ﬁrst by reducing the general case to the ﬁnitely generated case and
+then proving it in the ﬁnitely generated case. The reduction is an
+immediate consequence of the following theorem.
+Theorem 70 (Dye, Krieger) . Suppose that E is a countable Borel
+equivalence relation on a Polish space X equipped with a Borel proba-
+bility measure µ. If E is a countable increasing union of µ-hyperﬁnite
+equivalence relations, then E is µ-hyperﬁnite.
+We will prove this by establishing the following characterization of
+µ-hyperﬁniteness.
+Proposition 13. Suppose that E is a countable Borel equivalence re-
+lation on a Polish space X equipped with a Borel probability measure
+µ. The following are equivalent:
+(1) E is µ-hyperﬁnite;
+(2) whenever ε > 0 and R⊆ E is a relation such that Rx ={y∈
+X| (x, y)∈ R} is ﬁnite for all x∈ X, then there is a Borel
+subequivalence relation F⊆ E with ﬁnite classes such that
+1− ε≤ µ({x∈ X| Rx⊆ [x]F}).
+Proof of Proposition 13. The forward implication follows from the fol-
+lowing obvious fact.
+Fact 2. If E is an increasing union of a sequence of equivalence rela-
+tions⟨En| n∈ ω⟩ and R⊆ E is a relation such that Rx is ﬁnite for all
+
+[PDF physical page 71]
+MATH 7870: DESCRIPTIVE SET THEORY 71
+x, then for all ε > 0 there is an n such that µ({x∈ X| Rx̸⊆ [x]En}) <
+ε.
+To see the reverse implication, let E =⋃∞
+n=0 fn where each fn is a
+function. Construct an increasing sequence of ﬁnite equivalence rela-
+tions Fn such that for all n, the set Xn of x∈ X such that for some
+i < n , fi(x)̸∈ [x]Fn has measure less than 1 /n. If x, y∈ X\⋂∞
+n=0 Xn,
+then for some i, fi(x) = y. Let n be such that i < n and x, y̸∈ Xn.
+Then y = fi(x)∈ [x]Fn. □
+Proof of Theorem 70. Let E, X and µ be given as in the statement
+of the theorem. First observe that by discarding an E-invariant null
+set if necessary, we may assume that E =⋃∞
+n=0 En where each En is
+hyperﬁnite. Let ε > 0 and R⊆ E be a relation such that for all x, Rx
+is ﬁnite. By Fact 2, there is an n such that
+µ({x∈ X| Rx̸⊆ [x]En}) < ε/2.
+By Proposition 13, there is a Borel equivalence relation F⊆ En with
+ﬁnite classes such that
+µ({x∈ X| Rx∩ En̸⊆ [x]F}) < ε/2.
+It follows that F is as desired. □
+Before proceeding, we need to deﬁne some terminology. Fix for a
+moment a Polish space X and a countable Borel equivalence relation
+E. A partial ﬁnite subequivalence relation or f.s.r. is a Borel set F⊆ E
+which is an equivalence relation on some Y⊆ Y such that each F -class
+is ﬁnite. A subset of X is E-related if it is contained in some E-class.
+If Φ is a Borel family of ﬁnite E-related sets, then a f.s.r. F ⊆ E is
+Φ-maximal if each F -class is in Φ and every element of Φ intersects an
+F -class.
+Proposition 14. Suppose X is Polish and E is a countable Borel
+equivalence relation on X. If Φ is a Borel family of E-related ﬁnite
+subsets of X, then there is a Φ-maximal f.s.r. F⊆ E.
+Proof. Fix a Borel linear ordering ≤ of X and ﬁx a countable basis
+⟨Wk | k ∈ ω⟩ for X. Using the Feldman-Moore theorem, ﬁx Borel
+involutions⟨gk| k∈ ω⟩ which generate E. If a is a ﬁnite subset of X,
+let⟨ai| i < n⟩ be the≤-increasing enumeration of a.
+Claim 6. There is a Borel function c which maps the ﬁnite E-related
+subsets of X into ω such that if a̸= b and c(a) = c(b), then a∩ b =∅.
+Proof. Clearly it suﬃces to deﬁne a function c which has a countable
+range instead. If a is E-related, deﬁne c(a) = (⟨ki| i < n⟩,⟨mi,j| i <
+j < n⟩ where n =|a| and:
+
+[PDF physical page 72]
+72 JUSTIN MOORE
+•⟨ ki | i < n ⟩ is the lexicograpically least sequence such that
+ai∈ Uki and Wki∩ Wkj =∅ if i̸= j < n .
+•⟨ mi,j| i < j < n ⟩ is the lexicographically least sequence such
+that aj = gmi,j(ai) if i < j < n . We will also set mj,i := mi,j if
+j > i .
+Observe that if
+c(a) = c(b) =: (⟨ki| i < n⟩,⟨mi,j| i < j < n⟩)
+and ai = bi′ for some i, i′ < n, then the pairwise disjointness of {Wkj|
+j < n} implies that i = i′. Furthermore, if j̸= i, then
+aj = gmi,j(ai) = gmi,j(bi) = bj
+and hence a = b. □
+Deﬁne Borel sets⟨Xk| k∈ ω⟩ by
+Xk =
+⋃
+{a∈ Φ| c(a) = k and a∩
+⋃
+i<k
+Xi =∅}.
+Let Fk be the Borel equivalence relation on Xk whose equivalence
+classes are the sets a∈ Φ such that c(a) = k. Finally, set F =⋃∞
+k=0 Fk.
+Clearly F⊆ E is an f.s.r. and every F -class is in Φ. Furthermore, each
+F -class is an Fk-class for some k. To see that F is Φ-maximal, suppose
+that a∈ Φ. If c(a) = k, then either a∩ Xi̸=∅ for some i < k or else
+a is an Fk-class. If a∩ Xi̸=∅, then there is a b∈ Φ such that c(b) = i
+and b∩⋃
+j<i Xj =∅. But this means that b is an Fi-class and hence
+an F -class. □
+
+[PDF physical page 73]
+MATH 7870: DESCRIPTIVE SET THEORY 73
+Lecture 32
+A countable Borel equivalence relation E on a Polish space X is said
+to be amenable if there are Borel relations Rn⊆ E with ﬁnite vertical
+sections such that for each ( x, y)∈ E,
+lim
+n→∞
+|(Rn)x△(Rn)y|
+|(Rn)x∪ (Rn)y| = 0.
+Just as in the case of hyperﬁniteness, we say that E is µ-amenable if
+E↾ Z is amenable for some conull Z⊆ X.
+Observe that any hyperﬁnite Borel equivalence relation is amenable:
+if E =⋃∞
+n=0 Fn witnesses that E is hyperﬁnite, then whenever ( x, y)∈
+Fn,
+(Fn)x△(Fn)y = [x]Fn△[y]Fn =∅.
+Also, if G is an countable discrete amenable group acting in a Borel way
+on a Polish space X, then EG
+X is amenable. To see this ﬁx a sequence
+⟨An| n∈ ω⟩ of ﬁnite subsets of G such that if S⊆ G is ﬁnite and
+ε > 0, then there is an n such that|S· An△An| < ε|An|. It follows that
+Fn :={(x, y)∈ E| y∈ An· x} deﬁnes a witness to E being amenable.
+Thus the Connes-Feldman-Weiss theorem can be rephrased as saying
+that the µ-amenable equivalence relations are exactly the µ-hyperﬁnite
+equivalence relations.
+Before we proceed, we need to develop some language and machinery.
+Recall that if µ and ν are Borel probability measures on a Polish space
+X, then ν is absolutely continuous with respect to µ (denoted ν << µ )
+if every µ-null set is ν-null. We will need the following well known
+theorem from measure theory.
+Theorem 71. If ν << µ are Borel probability measures on a Polish
+space X, then there is a Borel function dν
+dµ : X → [0,∞) such that
+ν(A) =
+∫
+A
+dν
+dµ dµ. Moreover dν
+dµ is unique up to ν-a.e. equivalence.
+If E is a countable Borel equivalence relation on X and µ is a Borel
+probability measure on X, then we say µ is E-quasi-invariant if when-
+ever f is a Borel bijection whose graph is contained in E, µ and f∗µ
+are mutually absolutely continuous (here f∗(µ)(A) = µ(f(A))). Given
+such an E, ﬁx a sequence of Borel involutions ⟨gk| k∈ ω⟩ which gen-
+erates E. By modifying the involutions, we may additionally assume
+that gi(x)̸= gj(x) unless i = j or gi(x) = x = gj(x). In the context of
+µ-hyperﬁniteness and µ-amenability, the assumtion that µ is E-quasi
+invariant is a minor one as the next proposition shows.
+
+[PDF physical page 74]
+74 JUSTIN MOORE
+Proposition 15. Suppose that E is a countable Borel equivalence rela-
+tion. If µ is a Borel probability measure, then there is a Borel probability
+measure ν such that µ << ν and ν is E-quasi invariant.
+Proof. Deﬁne ν(A) =∑∞
+n=0 2−n−1µ(gnA). For any n,
+ν(gnA)≥ 2−n−1µ(gngnA) = 2−n−1µ(A).
+□
+Now suppose that µ is E-quasi invariant. Deﬁne D : E→ (0,∞) by
+D(x, y) := dgk∗µ
+dµ
+Thus if f⊆ E is a Borel automorphism, thenµ(f(A)) =
+∫
+A D(x, f(x))dµ.
+Observe that on a conull set, if x, y, z are E-related, then D(x, z) =
+D(x, y)D(y, z).
+A Borel graph G⊆ E is said to be bounded (with respect to D) if
+there exists an n such that for all x, if ( x, y)∈ G, then there is an
+i < n with y = fi(x). Observe that this implies that G has bounded
+degree and that for some 0 < M < ∞ 1/M≤ D(x, y)≤ M whenever
+(x, y)∈ G. The proof from the previous lecture proves the following
+characterization.
+Proposition 16. Suppose that E is a countable Borel equivalence rela-
+tion on a Borel probability space (X, µ) and that µ is E-quasi invariant.
+E is µ-hyperﬁnite provided that whenever G⊆ E is a µ-bounded Borel
+graph and ε > 0, there is a Borel equivalence relation F⊆ E with ﬁnite
+classes such that
+µ({x∈ X| Gx̸⊆ [x]F}) < ε.
+We will also need the following propostions which we state without
+proof.
+Proposition 17. If E is an amenable equivalence relation on a Borel
+probability space(X, µ) and Y⊆ X is a Borel set with positive measure,
+then E↾ Y is µ-amenable.
+Proposition 18. Suppose that (X, µ) is a Borel probability space and
+E is a µ-amenable countable Borel equivalence relation on X. If µ is
+E-quasi invariant and G⊆ E is a bounded Borel graph, then for each
+ε > 0 and a conull set of x∈ X, there exists a ﬁnite A⊆ [x]E such
+that|∂G(A)|x < ε|A|x.
+We are now ready to give a proof of the Connes-Feldman-Weiss theo-
+rem. Fix a bounded Borel graph G⊆ E and let ε > 0 be given. Let M
+
+[PDF physical page 75]
+MATH 7870: DESCRIPTIVE SET THEORY 75
+be suﬃciently large such that for any x,∑
+(x,y)∈G D(x, y)≤ M. Recur-
+sively construct sequences⟨Xn| n∈ ω⟩,⟨Φn| n∈ ω⟩, and⟨Fn| n∈ ω⟩
+such that:
+• Xn = X\⋃
+m<n dom(Fm).
+• Φn is the collection of all ﬁnite E-related A⊆ Xn such that for
+any/all x∈ A
+|∂Gn(A)|x < ε
+M 3|A|x
+where Gn = G↾ Xn.
+• Fn is a Φ n-maximal f.s.r..
+Claim 7. The µ-measure on⋂∞
+n=0 Xn is 0.
+Proof. Set Xω := ⋂∞
+n=0 Xn and Gω = G↾ Xω. If µ(Xω) > 0, then
+E↾ Xω is µ-amenable by Proposition 17. By Proposition 18, there is
+an E-related A⊆ Xω such that
+|∂Gω(A)|x < ε
+M|A|x.
+Since A is ﬁnite and G is bounded, there is an n such that ∂Gω(A) =
+∂Gn(A). But now A witnesses that Fn is not Φ n-maximal, which is a
+contradiction. □
+Deﬁne F =⋃∞
+n=0 Fn. We have that F is a Borel f.s.r. of E and that
+the domain of F is conull. We will need the following computations
+(taken from [Kechris-Miller]), which are left to the reader.
+Claim 8. If B⊆ X is Borel, then µ(⋃
+x∈B{x}∪ Gx)≤ M 3µ(B).
+Claim 9. If T is a Borel transversal for Fn, then for any A⊆ dom(Fn),
+µ(A) =
+∫
+T|[x]Fn∩ A|xdµ(x).
+Putting this all together, set Bn :={x∈ dom(Fn)| Gx̸⊆ [x]Fn} and
+let Tn be a transversal for Fn. Then by Claim 9
+µ(Bn) =
+∫
+Tn
+|[x]Fn∩Bn|xdµ(x)≤ ε
+M 3
+∫
+Tn
+|[x]Fn|xdµ(x) = ε
+M 3 µ(dom(Fn)).
+By Claim 8,
+µ(
+⋃
+x∈Bn
+{x}∪ Gx)≤ M 3µ(Bn)≤ εµ(dom(Fn)).
+Summing over n,
+µ({x∈ X| Gx̸⊆ [x]F})≤
+∞∑
+n=0
+εµ(dom(Fn)) = ε.
+This completes the proof.
+
+[PDF physical page 76]
+76 JUSTIN MOORE
+Lecture 33
+In this lecture we will see an example of a non amenable equivalence
+relation. Recall that if A is a subring of R, then PSL2(A) is the family
+of all homeomorphisms of the real projective line P 1(R) := R∪{∞}
+which have the form
+t↦→ at + b
+ct + d
+where a, b, c, d∈ A and ad− bc = 1. The group PSL 2(Z) has a ﬁnite
+index free group on 2 generators, namely
+⟨t↦→ t + 2, t↦→ t
+1− 2t⟩.
+On the other hand, its action on P 1(R) gives a hyperﬁnite equivalence
+relation. In fact the map φ : 2ω→ P 1(R) deﬁned implicitly by
+φ+(⟨0⟩⌢a) = 1
+1 + 1
+a
+φ+(⟨1⟩⌢a) = 1 + φ+(a)
+φ(⟨0⟩⌢a) =−φ+(˜a) φ(1⌢a) = φ+(a)
+has the property that a is tail equivalent to b if and only if φ(a) and
+φ(b) are in the same PSL 2(Z) orbit.
+Any proper enlargement of the ring A yields diﬀerent behavior, how-
+ever.
+Theorem 72 (Ghys-Carrier). If A is a dense unital subring of R, then
+PSL2(A) contains a dense free group on two generators.
+Theorem 73 (Ghys-Carrier). If Γ is a non-discrete rank 2 free sub-
+group of PSL2(R), then the action of Γ on R is not λ-amenable.
+As a consequence of this result and the result of Connes-Feldman-
+Weiss, we obtain:
+Corollary 16. The group G of C1 piecewise PSL2(Z[1/2]) homeomor-
+phisms of P 1(R) which ﬁx∞ is not amenable.
+Proof of Corollary 16. With some eﬀort, one can the orbit equivalence
+relations of G and of PSL 2(Z[1/2]) are the same when restricted to R.
+By the results of Ghys-Carrier, this orbit equivalence relation is not
+λ-amenable. By Connes-Feldman-Weiss, G can not be amenable. □
+This result is remarkable because the group G in the corollary does
+not, by arguments of Brin-Squier and Monod, contain a nonabelian free
+group. It is also a close relative of Thompson’s group F : if we change
+Z[1/2] to Z in the deﬁnition of G, then by an observation of Thurston,
+we have a copy of F .
+
+[PDF physical page 77]
+MATH 7870: DESCRIPTIVE SET THEORY 77
+We will now turn to proving a generalization of Theorem 73. Before
+we start, we will introduce some terminology. A measured Polish space
+is a Polish space X equipped with a Borel measure µ. A measured
+Polish space is locally ﬁnite if every point has a neighborhood with
+ﬁnite measure.
+We will need a few facts about measured Polish spaces. The proofs
+are left as exercises.
+Fact 3. If B is a measurable set in a measured Polish space, then
+µ(B) = sup{µ(E)| E⊆ B and E is closed}.
+Fact 4. If (X, µ) is a locally ﬁnite measured Polish space and E⊆ X
+is a measurable set of positive measure, then for every ε > 0 there is
+an open U such that (1− ε)µ(U) < µ(E∩ U) <∞.
+If ( X, µ) is a measured Polish space and G is a topological group,
+we say that G acts continuously on ( X, µ) if the action of G on X is
+continuous in the usual sense (i.e. ( g, x)↦→ g· x is continuous) and if
+g↦→ µ(g· E) is continuous for every measurable E.
+We are now ready to state the abstract form of the Ghys-Carrier
+Theorem. Recall that a group G acts freely on a set S if whenever
+g··· s = s, g is the identity.
+Theorem 74. Suppose that G is a non-discrete free group of rank 2
+and that G acts freely and continuously on a locally ﬁnite measured
+Polish space (X, µ). The resulting orbit equivalence relation is not µ-
+amenable.
+We will take up the proof of this result in the next lecture. For now
+we will prove the following proposition which will play an important
+role in the main proof.
+Proposition 19. Suppose that G is a separable metric group acting
+continuously on a locally ﬁnite measured Polish space (X, µ). If E⊆ X
+has positive measure, then there is an open set V ⊆ G containing the
+identity and an ε > 0 such that if g∈ V , then µ(gE∩ E)≥ ε.
+Proof. Let E be given and ﬁx an open U⊆ X such that
+0 < 3
+4 µ(U) < µ(U∩ E) < µ(U) <∞
+and set ε = µ(U)/4. By continuity of the action, for each x∈ U, there
+is a δx > 0 and an open set Wx⊆ U such that if d(g, id) < δ x, then
+gWx⊆ U. Let δ > 0 be such that
+µ({x∈ U| δx≥ δ}) > 3
+4 µ(U).
+
+[PDF physical page 78]
+78 JUSTIN MOORE
+Deﬁne W :=⋃{Wx| δx≥ δ}⊆ U and observe that gW⊆ U whenever
+d(g, id) < δ . Also, since x∈ Wx, it follows that µ(W ) > 3
+4 µ(U) and
+hence that µ(E∩ W ) > 1
+4 µ(U). Fix an open V ⊆ G containing the
+identity such that whenever g∈ V , d(g, id) < δ and µ(g(E∩ W )) >
+1
+2 µ(U).
+It suﬃces to show that if g∈ V , then µ(U∩ gE∩ E)≥ ε. On one
+hand µ(U∩ E) > 3
+4 µ(U) by choice of U. On the other hand, since
+g(U∩ W )⊆ (gE)∩ U, it follows that
+µ(U∩ gE∩ E) = µ((U∩ gE)∩ (U∩ E)) > 1
+4 µ(U) = ε.
+□
+
+[PDF physical page 79]
+MATH 7870: DESCRIPTIVE SET THEORY 79
+Lecture 34
+Before proceeding further, let us see an example of a nondiscrete free
+subgroup of PSL 2(Z[1/2]). Deﬁne
+α =
+(
+1/2 −4
+1/4 0
+)
+β =
+(
+1/2 −1/4
+4 0
+)
+.
+These matrices correspond to the fractional linear transformations t↦→
+2− 16/t and t ↦→ 1/8− 1/(16t). In order to see that ⟨α, β⟩ is a
+nondiscrete group, ﬁrst observe that the eigenvalues of α are λ0 =
+(1+
+√
+15i)/4 and λ1 = (1−
+√
+15i)/4. Both are unit magnitude complex
+numbers which are not roots of 1. Pick γ∈ PSL2(C) such that γαγ−1 is
+diagonal with entries λ0 and λ1. Then ( γαγ−1)n = γαnγ−1 is diagonal
+with entries λn
+0 and λn
+1. Since {γαnγ−1| n∈ ω} accumulates to the
+identity, so does{αn| n∈ ω}. In particular, the group generated by α
+is not discrete.
+It now suﬃces to show that the above matrices generate a free group.
+Deﬁne X to be the set of all rational numbers in P 1(R) = R∪{∞}
+which can be represented by a fraction with an odd denominator and let
+Y denote the remaining rational numbers in P 1(R). By the Ping-Pong
+Lemma, it suﬃces to show that if n̸= 0 is an integer, then αnY ⊆ X
+and βnX⊆ Y . Let X0 consist of those elements of X which can be
+represented by a fraction of the form (4 p + 2)/q where q is odd. Notice
+that α(X0∪ Y )⊆ X0 and that X0 and Y are disjoint. It follows that
+αnY⊆ X whenever n is a nonzero integer. Similarly, βnX⊆ Y .
+We now turn to a proof of the generalized Ghys-Carrier Theorem.
+Theorem 75. Suppose that (X, µ) is a locally ﬁnite measured Pol-
+ish space. If G =⟨a, b⟩ is a free nondiscrete metrizable group which
+is acting freely and continuously on (X, µ), then the orbit equivalence
+relation is not µ-amenable.
+Proof. Suppose for contradiction that EG
+X is µ-amenable. By appealing
+to a reformulation of an equivalence relation being µ-amenable, we can
+ﬁx an assignment x↦→ νx such that:
+• for each x, νx is a ﬁnitely additive probability measure sup-
+ported on the orbit of x;
+• if x and y are in the same orbit, then νx = νy.
+• if A⊆ X×X is µ-measurable, then x↦→ νx(Ax) is µ-measurable.
+For u ∈ {a, b}, deﬁne Γ u to be all those elements of G which are
+representable by a reduced word beginning with u and ending with
+u−1.
+Claim 10. Both Γa and Γb accumulate to the identity.
+
+[PDF physical page 80]
+80 JUSTIN MOORE
+Proof. Observe that if g is a nonidentity element of G, then there is
+a h in{a, ab, ab−1} such that hgh−1 is in Γ a. Thus there is an h∈
+{e, a, ab, ab−1} and a Γ′⊆ G which accumulates to the identity such
+that hΓ′h−1⊆ Γa. Since conjugation is continuous, it follows that Γ a
+also accumulates to the identity. Furthermore, bΓab−1⊆ Γb and thus
+Γb accumulates to the identity as well. □
+Since the action of G on X is free, for each x, y∈ X which lie in
+the same orbit, there is a unique γ =: γ(x, y) in G such that x = γ· y.
+Notice that γ(g· x, y) = g−1γ(x, y). Deﬁne φ : X→ [0, 1] by letting
+φ(x) = νx(Ax) where Ax is the set of those y in the orbit of x such that
+the reduced word representing γ(x, y) begins with a or a−1. Observe
+that for any x in X and g in Γ b, Ax∩ Ag·x =∅. Hence if x is in X
+and φ(x) > 1/2, then φ(g· x) < 1/2 whenever g is in Γ b. Similarly, if
+φ(x) < 1/2 and g is in Γ a, then φ(g· x) > 1/2. Furthermore, for all x
+and g∈ Γa, the sets Ax, Abgb−1·x and Ab2gb−2·x are pairwise disjoint and
+consequently 0≤ φ(x) + φ(bgb−1· x) + φ(b2gb−2· x)≤ 1.
+Claim 11. Y :={x∈ X : φ(x)̸= 1 /2} has positive measure with
+respect to µ.
+Proof. Suppose not. Using our assumption that Γ acts continuously
+on (X, µ), ﬁnd an open neighborhood V of the identity such that if g
+is in V , then Y , bg−1b−1· Y , and b2g−1b−2· Y have total measure less
+than that of X. Now if x is outside these sets and g∈ V∩ Γa, we have
+that φ(x), φ(bgb−1· x), and φ(b2gb−2· x) are each 1 /2, contradicting
+that there sum is at most 1. It must therefore be that Y has positive
+measure. □
+Let Ya ={y∈ Y : φ(y) > 1/2} and Yb ={y∈ Y : φ(y) < 1/2}.
+By Claim 11, Y has positive measure, either Ya or Yb have positive
+measure. If Ya has positive measure, then by Claim 10 Proposition
+19 there is a g in Γ b such that ( g· Ya)∩ Ya has positive measure and
+in particular is nonempty. This contradicts our observation that if
+φ(y) > 1/2 and g is in Γ b, then φ(g· y) < 1/2. Similarly, if Yb has
+positive measure, one obtains a contradiction by ﬁnding a g in Γa such
+that g·Yb intersects Yb. It must be, therefore, that the orbit equivalence
+relation is nonamenable. □
+
+[PDF physical page 81]
+MATH 7870: DESCRIPTIVE SET THEORY 81
+Lecture 35
+We will now turn our attention to Gale-Stewart games and their de-
+terminacy. Fix a set S and a subset Γ of Sω. In what follows, S will
+be given the discrete topology and Sω will be given the product topol-
+ogy. The Gale-Stewart Game associated to Γ is described as follows.
+Players I and II alternately play a sequence of elements ⟨sk| k∈ ω⟩
+of S: Player I starts by playing s0, Player II responds with s1, Player
+I responds with s2, and so on. If the resulting sequence ⟨sk| k∈ ω⟩
+is in Γ, then we declare Player I the winner; otherwise Player II wins.
+At each stage of the game, both players have complete information as
+to what has been played thus far, including the number of plays which
+have already been made. Also, it is important to note that there is no
+notion of a “draw” in which neither player wins or looses. The game
+of chess could be coded as a Gale-Stewart game, provided we declared
+black the winner whenever the game ended in a stalemate. Typically
+the set S is countable, although it is often convenient to work with
+some countable set other than ω. If Γ ⊆ Sω we will say that Γ is a
+game played on S.
+Typically we are interested in restriction on Γ which imply that it is
+determined: i.e. one of the two players has a strategy which allows them
+to always beat the other player, no matter how they play. Formally,
+a strategy σ is a function from S<ω into S. Player I is said to follow
+σ if s2k = σ(⟨si| i < 2k⟩ and similarly Player II is said to follow σ if
+s2k+1 = σ(⟨si| i < 2k + 1⟩). Player I has a winning strategy if there is
+a σ such that in every play in which Player I follows σ, Player I wins
+(similarly one deﬁnes a winning strategy for Player II). We say that Γ
+is determined if one of the two players has a winning strategy.
+Notice that if S ={0, 1} and Γ ⊆ 2ω is such that neither Γ nor
+2ω\ Γ contain a perfect subset, then the game associated to Γ is not
+determined. Such a Γ can readily be constructed using the axiom of
+choice. On the other hand, sets which are simply topologically, tend
+to yield determined games.
+Theorem 76 (Zermelo). If Γ is a closed (or open) game on S, then Γ
+is determined. In particular, the game of chess is determined.
+Proof. Fix Γ. A sequence ⟨si| i < k⟩ is a losing position for Player I
+if there is a strategy σ such that Player II wins every play of the game
+which starts with ⟨si| i < k⟩ in which they follow σ. Observe that if
+⟨si| i < 2k⟩ is not a losing position for Player I, then there is an s2k
+such that⟨si| i < 2k + 1⟩ is not a losing position for Player I. Also,
+if⟨si| i < 2k + 1⟩ is not a losing position for Player I, then for any
+
+[PDF physical page 82]
+82 JUSTIN MOORE
+s2k+1∈ S,⟨si| i < 2k + 2⟩ is not a losing position for Player I. Deﬁne
+σ to be any strategy which plays such a s2k in response to⟨si| i < 2k⟩.
+Now suppose that Player II does not have a winning strategy. We
+claim that σ is a winning strategy for Player I. To see this, ﬁrst observe
+that Player II not having a winning strategy is the same as ε not being
+a losing position for Player I. Thus in any play ⟨sk| k∈ ω⟩. of the
+game in which Player I follows σ, none of the ﬁnite plays of the game
+are losing positions for Player I. If⟨sk| k∈ ω⟩ were not in Γ, then there
+would be an n such that any inﬁnite sequence extending ⟨sk| k < n⟩
+is not in Γ. But then ⟨sk| k < n⟩ is a losing position for Player I,
+contrary to our assumption. □
+In spite of the simplicity of this proof, it serves as the basis for all
+known proofs of determinacy of more complicated games. Typically
+given a payoﬀ set Γ ⊆ ωω, one tries to ﬁnd a set S and a closed Γ∗⊆
+Sω such that winning strategies in Γ ∗ can be translated into winning
+strategies for Γ. We will say that Γ ∗ is equivalent to Γ. Typically,
+however, the set S is much larger than ω, with its size correlated to
+the complexity of Γ.
+Theorem 77 (Martin). If Γ is a Borel game on S, then there is a
+cardinal θ < ℶω1(S) such that Γ is equivalent to a closed game on θ.
+In particular, Borel games are determined.
+In order to prove the determinacy of analytic games — which seem
+just slightly more complicated than Borel games — one must strengthen
+the axioms of ZFC. A cardinal θ is the ω1st Erd˝ os cardinalif it is the
+least cardinal such that whenever f : [θ]<ω→ ω, there is an uncount-
+able H⊆ θ such that f↾ [H]n is constant for each n. This cardinal is
+necessarily inaccessible (in fact necessarily weakly compact) and thus
+(Vθ,∈) is a model of ZFC. In particular, ZFC does not prove the ex-
+istence of the ω1st Erd˝ os cardinal. On the other hand, if I is a set
+equipped with a countably complete nonprinciple ultraﬁlter, then the
+ω1st Erd˝ os cardinal exists and is less than|I|.
+Theorem 78 (Martin). If Γ is analytic game on ω and θ is the ω1st
+Erd˝ os cardinal, thenΓ is equivalent to a closed game played on θ. In
+particular, if the ω1st Erd˝ os cardinal exists, then every analytic game
+is determined.
+Remarkably this result is more or less sharp. A slightly weaker as-
+sertion — that x♯ exists for every x⊆ ω — is suﬃcient to carry out
+Martin’s argument (and similarly is not provable in ZFC) and is in
+fact equivalent to the determinacy of analytic games by a result of
+
+[PDF physical page 83]
+MATH 7870: DESCRIPTIVE SET THEORY 83
+Harrington. With a stronger large cardinal assumption, one can prove
+more. We leave the large cardinal notions undeﬁned but note that
+every Woodin cardinal is a limit of measurable cardinals.
+Theorem 79 (Martin-Steel). If Γ is a Π1
+n+1 game on ω and θ is a
+measurable cardinal which is greater than n Woodin cardinals, then Γ
+is equivalent to a closed game played on θ. In particularly, if there
+are inﬁnitely many Woodin cardinals, then all projective games are
+determined.
+This result is also sharp: if all projective games are determined, then
+for each n, there is an inner model of set theory in which there is a
+measurable cardinal above n Woodin cardinals.

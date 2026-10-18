@@ -131,3 +131,6 @@ R0089新增Guth2014 arXiv1402.0518v1原PDF40页/478336bytes及默认pypdf text�
 
 
 R0090新增Csornyei–Stull2609.38742v1原PDF33页/542683bytes及默认pypdf text，现66PDF/70catalog sources/78IDs。root实际Th/§2.1和完整§4.1 proof、view1/20；B另§3.3/3.4 proof，whole33页高级算法/距离proof未新独证。原κ1 polar输入可付但端点二点CS复得，拒作新gain。详metadata/R0090_source_check.json和notes/R0090_hyperplane_polar_and_primary_scope.md。
+
+
+R0091新增DPR1601.06543v2原18页、AMS1907.07456v3原27页、Moore作者DST讲义83页及默认pypdf页标text，现69PDF/73sources/78IDs。实际读域/原bytes/hash见metadata/R0091_source_check.json；只采用标准具名输入和应用资格核，不认证高级wholeproof或新Kakeya gain。
