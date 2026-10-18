@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0099真实浓集序列wholeclock入口和满秩ac弱极限校准完成内部独审；本PSD有限输出已被更强旧CV det/markedbroad/barrier覆盖，无新ordinary输入。82PDF/86sources/78IDs，streak22另计actual信息；下一notes/00_map/R0099_next_full_goal_reselection.md回完整原质量责任，不续PSD参数。Goal active。
+更新2026-10-19，R0100完整目标重选和新THT共享clock资格/连续正反攻完成内部独审；原signed用途真付而原positive jointmass/三norm/clock/ambient新桥未付，无ordinary增益。83PDF/87sources/78IDs，streak23另计actual信息；下一notes/00_map/R0100_next_full_goal_reselection.md，不续r/partition/mask/frequency参数。Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -222,3 +222,6 @@ R0098：DP–P新finite-TV测度入口/真实dilation及wholeclock端点付清�
 
 
 R0099：GR新序列定理真实范围承认，wholeclock/端点/算子/规范资格付清；fixednull旧DPR闭包、finite原tube旧CV determinant及任意marked自身broad更强覆盖；同ambient positive concavebarrier亦旧覆盖。finitegrid平移fullunit K0给浓集但满秩ac空间弱limit，非strict低维反例。FT一般barrier/Cor3.5 scaling真实核，正Φ/投影carrier及sheet/variation未付。四路macro后停止PSD/moment/operator/厚度续轮，无qualifiednextgain不预授。
+
+
+R0100：OAI4完整§11/HRZ窄proof/WZ20–21与旧DIM/FSD出口实际核，未见遗漏新gain。首次采用官方fixedOct5 THT37p原件，source主claim未全独审；三pair/Jac1/Hdual条件signed用途与smoothcore正Nlog2/signed0严格反攻付过，非fullSN/core0或Kakeya反例。halfclock原逐管/平均1/2破odd配对、原g允许相关但非免费pairfactor、LebesgueL3/原ds/dt/t全费和fixedJ旧Hölder比较保留。直接THT参数续轮停止，四完整路仍open。

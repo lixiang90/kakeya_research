@@ -158,3 +158,6 @@ R0098新增DP–Pigati2601.10647v3和BDH2404.04754v1官方原PDF/提取/metadata
 
 
 R0099新增GR2608.20899v2和Firester–Tsiamis2608.31164v2官方原PDF/提取/metadata，82PDF/86sources/78IDs。实际sequence/wholeclock/一般matrixbarrier入口和更强旧CVdet/markedbroad/barrier比较见metadata/R0099_source_check.json；非高级wholeproof/major认证。
+
+
+R0100新增OpenAI fixedOct5三角Hilbert annularvariation原PDF37p及精确README/提取/metadata，83PDF/87sources/78IDs。主声明仍列未全独证claim；实际signed用途、正质量反攻和原g/clock范数门见metadata/R0100_source_check.json。非wholeproof/major认证。

@@ -1,0 +1,1964 @@
+
+--- PDF PAGE 1 ---
+            Annular variation of the triangular Hilbert transform
+                                     at the symmetric point
+
+                                                   OpenAI
+
+                                              October 5, 2026
+
+
+
+                                                   Abstract
+          Weprovetheannularr-variationestimateforthetriangularHilberttransformfromcomplex
+      L3×L   3toL3/2  foreveryr> 2. Thepartitionsmaydependontheoutputpointandrange
+      overallpositivescales.Theestimateyieldsthetwo-endpointmaximalboundandjointalmost-
+      everywhereandnormprincipalvalues,andresolvesthesymmetricscalartriangularHilbert
+      transformproblem.
+
+Contents
+
+1 Introduction                                                           2
+   1.1  Historyandrelatedwork.. . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . .  3
+   1.2 Thecountestimateandthenewingredients. . . . . . . . . . . . . . . .. . . . . . .  3
+   1.3  Organization. . . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . .  4
+
+2 Truncations,coordinates,andmaximalaverages                       4
+   2.1 Thetriangularcoordinates. . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . ..  5
+   2.2  Maximalaveragesonaline. . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . .  6
+
+3 Dimension-freematrixinequalities                              7
+   3.1 Theenergyanditsquadraticcosts. . . . . . . . . . . . . . . . . .. . . . . . . . . .  7
+   3.2  Changesthataltertherank. . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . 10
+   3.3 Thecyclicproduct. . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . .. 10
+
+4 Gaussianheatdissipation                                      12
+   4.1  Differentiationandtheplaneidentities. . . . . . . . . . . . .. . . . . . . . . . . . . 13
+   4.2  Strictdissipationatcomparablevariances. .. . . . . . . . . . . . . . . . . . . . . . 15
+   4.3  Energyboundsandthesingle-edgecase. . . . . . . . . . . . . . . . . .. . . . . . . 16
+
+5 Repeatedmasksandsmoothannuli                                    17
+   5.1 Thecostoftheswitches. . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . 17
+   5.2  Fromtheenergytothesmoothkernel. . . . . . . . . . . . . . . . . . . . . . . . . . 19
+   5.3 Thehardendpointerrors. . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . 19
+
+6 Auniformfrequency-blockestimate                               20
+
+
+
+
+
+                                                       1
+
+--- PDF PAGE 2 ---
+7 Roughkernelsandtheannularendpointerrors                       26
+   7.1 ApointwiseGaussianestimate. . .. . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+   7.2  Familieswithacontrollednumberofjumps. . . . . . . . . . . . . . . . . . . . . . . 26
+   7.3  Removingthefirstmomentofanoddkernel. . . . . . . . . . . . . . . . . . . . . . . 29
+   7.4  Groupingtheendpointerrors. . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . 29
+
+8 Fromthecountestimatetofullvariation                               31
+
+9 Maximalestimatesandprincipalvalues                              32
+   9.1  Flatandsimplexscalarforms. . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . 34
+
+1 Introduction
+
+ForcomplexfunctionsF,G∈L      3(R2)and0   <ε<R<∞,definetheannulartriangularHilbert
+transformby                                    ∫︂
+                         Bε,R(F,G)(x,y) =                                         t.               (1.1)
+                                                ε<|t|<R  F(x+t,y)G(x,y+t)                       dt
+Thetwoinputsaretranslatedalongdifferentcoordinatedirections.Everyfiniteintegralisabsolutely
+convergentoutsideonecommonnullset;weuseitsusualrepresentativethereandsetallquantities
+tozeroontheexceptionalset.Lemma2.1justifiesthisconventionandcontinuityintheendpoints.
+    Forr>2,itsannularvariationis
+                                                       ⎛                             ⎞1/r
+                                                          J∑︂
+                   Vr(F,G)(x,y) =         sup          ⎝     |Btj−1 ,tj(F,G)(x,y)|  r⎠    .          (1.2)
+                                      J≥1,0<t             0<···<t      Jj=1
+                                            tj∈Q
+
+Thesupremumispointwise: thepartitionmaydependon( x,y),andthereisnorestrictionon
+thenumberofendpointswithinadyadicscaleinterval. Theuseofrationalendpointsmakes
+measurabilityimmediateand,byendpointcontinuity,doesnotchangethesupremum.
+
+Theorem1.1(Fullannularvariation).Foreveryreal       r>2thereisafiniteconstant Crsuchthat
+
+                               ∥Vr(F,G)∥L3/2   (R 2)≤C r∥F∥L3(R 2)∥G∥L3(R 2)
+
+forallcomplexF,G∈L                    3(R 2).
+
+    Takingasingleincrementgivesthemaximalestimatewiththesupremumoverbothhard
+truncationendpoints.InSection9weprovethatthejointprincipalvalue
+
+                                        B(F,G)= lim ε↓0   Bε,R(F,G)
+
+                                                     R↑∞
+
+existsalmosteverywhereandinL3/2 . Infact, thesupremumof|Bε,R(F,G)−B  (F,G)|over
+0<ε<1/m,R>m,tendstozeroinL                   3/2 .
+    PairingthebilinearoutputwithathirdL3inputgivesascalarform.Itssymmetric,orsimplex,
+coordinatesare
+                                       ∫︂∫︂∫︂
+                 Λε,R(G 0,G1,G2) =                                                 a+b+c    .        (1.3)
+                                           ε<|a+b+c|<R     G0(a,b)G     1(b,c)G     2(c,a)    dadbdc
+
+
+                                                      2
+
+--- PDF PAGE 3 ---
+Thethreeequalexponents3formthesymmetricpointofthescalarHölderrelation1       /p0+1/p1+
+1/p2 = 1.Weobtainauniformboundby C∏︁v∥Gv∥3andthejointscalarprincipalvalueforevery
+complexL3triple. Proposition9.4givesthenorm-preservingcoordinatemapsandequalityof
+theoptimalconstantsfortheflatandsimplexscalarformulations.Inparticular,thisprovesthe
+symmetricscalarestimateinThiele’sProblem13in[9,Section9].
+
+1.1  Historyandrelatedwork
+TheflatoperatoroccursinDemeterandThiele’sstudyofbilinearaveragesfortwocommuting
+transformations[3,Section6].Thescalarform(1.3)   isabasicentangledsingularintegral:eachinput
+seesonepairofthethreevariables,andthepairsformacycle.Thisdependencediffersfromthe
+bipartiteconfigurationsinmanymultilinearestimates.Kovač,ThieleandZorin-Kranichestablished
+estimatesforaWalshmodelwithtwogeneralinputsandathirdinputofspecifiedstructure[15,
+Theorem1.7].Theirpaperalsorecordsthecyclictraceformulationandtheequivalenceoftheflat
+andsimplexforms.
+   Quantitativecancellationoverafiniterangeofscaleswasdevelopedinseveralstages.Taoproved
+sublogarithmicboundsforone-dimensionalmultilinearHilberttransforms[21],andZorin-Kranich
+obtainedsublogarithmiccancellationforsimplexHilberttransforms[22].Durcik,Kovač,Škreband
+Thieleprovedsquare-functionandnorm-variationestimatesthatyieldsquare-rootcancellationfor
+thetriangularformoverfinitelymanysmoothscales[7,Corollary5]. Durcik,KovačandThiele
+obtainedpower-typecancellationforhardtruncations[6,Theorem1].Permutingandinterpolating
+their(4   ,4,2)boundsgivesa √︁log(R/ε)   boundatthesymmetrictuple.Theseestimatesretaina
+dependenceonthescalerange.Moreover,norm-variationestimatesforafixedlistofscalesdonot
+placethesupremumoveroutput-dependentpartitionsinsidetheoutputnormasin(1.2).
+   Otherresultsgaincancellationbyaveragingadirectionparameter[8,19]orbyintroducing
+curvature[1,11].Thosemechanismsaredistinctfromtheflatproblemconsideredhere.Thebroader
+roleofvariationinstrengtheningmaximalestimatesandcontrollingconvergenceisillustratedby
+Lépingle’smartingaleinequality[17],thevariationalinequalitiesofJones,SeegerandWright[12],
+andthevariation-normCarlesontheorem[20].Theseresultsprovidecontextratherthananinput
+toourproof.
+   Theenergymethodhereisrelatedtotelescopingargumentsforentangledforms:Kovač’stwisted
+paraproductandBellman-functionframework[14,13],andDurcik’scontinuousGaussiantelescoping
+[4,5].Theobstructionpresentedbyatriangularcycleisdiscussedin[13,Section6.2].Wework
+withthefinitematrixenergy tr(P3/2  )for P≥0,establishamixedtraceinequality,andcompareits
+heatderivativesatneighboringvertices.Allmatrixandheatestimatesrequiredbelowareprovedin
+thispaper.
+
+1.2  Thecountestimateandthenewingredients
+Theproofreducesvariationtoaquantitativeestimateforfinitelymanydisjointannuli. Foran
+integern≥1,define
+                         ⎧⎨                                                                 ⎫⎬
+                            m∑︂
+         Sn(F,G) = sup   ⎩     |Bεj,Rj(F,G)|:         0≤m≤n, 0<ε      j<Rj, εj,Rj∈Q,(εj,Rj)pairwisedisjoint⎭.  (1.4)
+                           j=1
+
+Intervalsmayshareendpoints,andtheemptysumiszero.Asinthevariation,theentirechoiceis
+madeseparatelyateveryoutputpoint.
+
+
+
+                                                   3
+
+--- PDF PAGE 4 ---
+Theorem1.2(Disjoint-annuluscountestimate).Thereisanabsoluteconstant   Csuchthat,for
+everyintegern≥1andeverycomplexF,G∈L                                   3(R 2),
+
+                             ∥Sn(F,G)∥3/2 ≤C√nlog(2+n)∥F∥         3∥G∥3.                   (1.5)
+
+    Theorem1.1followsbyarrangingtheincrementsofeachpartitionindecreasingorderandgroup-
+ingtheirranksdyadically.TheresultingserieshastermsboundedbyC(1+j)2j(1/r−1/2)   ∥F∥3∥G∥3.
+Thesubstanceofthepaperistherefore(1.5).
+    Forsmoothannuli,wewritethekernelasascaleintegralofconvolutionsofthreeone-variable
+Gaussianderivativewindows.Eachconvolutionisanintegraloverwindowcenterswhosesumis
+zero;withthecentersfixed,thethreewindowfactorsdependseparatelyona,b,c.Onafinitegrid
+theresultingsumsarecyclicmatrixtraces:thesampledpairwiseinputssupplythreematrices,and
+thewindowfactorssupplydiagonalinsertions. WelocalizethematriceswithpositiveGaussian
+weights. Ateachvertexweplacethetwoincidentweightedmatricessidebysidetoformarow
+matrixR. Theenergy tr((R∗R)3/2  )hasthesamedegree-threescalingasthetrilinearform. A
+mixedtraceinequalityboundsthelocalizedtracebyquadraticcostsfromtheHessiansofthese
+energies.Withthematricesfixed,heatidentitiescontroltheaccumulatedcostsbyinitialenergies
+afterintegrationovercenters.ThoseintegratedenergiesareboundedbysumsofcubedL    3norms.
+    Therearetwodifferentcostsinpassingfromoneannulustomany.Forsmoothannuli,entriesof
+thematrixformedfromthedualinputswitchonandoffattheirchosenendpoints.Weestimate
+theenergyjumpsentrywise,thenrescalethedualinputtoobtaina√nbound.Forhardannuli,
+estimatingeachendpointerrorseparatelywouldgivealinearloss.Weinsteadgroupendpointsin
+dyadicradiusintervals.Disjointnessgivesuniformsizeandderivativeboundsforeachgroupeven
+whenithasmanyjumps.
+    Themainadditionalanalytictoolisthefrequency-blockestimateofProposition6.1.Ithandles
+modulatedGaussianwindowswithcoefficientsdependingjointlyonscale,frequency,andoutput
+position. Foruniformlyboundedcoefficients,apointwisesquare-integralboundoverscalesand
+frequenciessuffices,uniformlyinthefrequencysize. Toobtainthatuniformity,wenarrowone
+Gaussianvarianceandaverageitscentershifts. Thisexpresseseachoscillatoryinsertionasan
+averageofderivativesofnarrowerGaussians.Auxiliaryheatflowsretainingonlyoneinputedge
+controltheextraderivativeterms.Atwo-dimensionalGaussianestimatethenboundstheenergy
+changesattheendsofthescaleintervalswithoutalossfromthenarrowvariance.Thisestimate
+andtherough-kernelfamilyboundinProposition7.2areformulatedseparatelyfromtheannular
+application.
+
+1.3  Organization
+Section2fixestruncations,coordinates,andlinemaximalestimates. Section3provesthefinite
+matrixinequalities;Section4developstheirGaussianheatflow.Section5provestherepeated-mask
+estimateforsmoothannuli.Sections6and7establishtheuniformfrequency-blockestimateand
+controlthehardendpointerrors.Section8provesTheorems1.2and1.1bylinearization,density,
+andranksummation.Section9derivesthemaximal,principal-value,andscalarconclusions.
+
+2 Truncations,coordinates,andmaximalaverages
+
+Wefirstfixtherepresentativesofallfinitetruncationsandthecoordinateconventionfortheir
+linearizations.Wealsorecordtheone-dimensionalmaximalestimatesthatwillcontrolchangesofthe
+
+
+
+                                                    4
+
+--- PDF PAGE 5 ---
+matrixenergy.ConstantsdenotedbyCmaychangefromlinetoline;theiradditionaldependences
+areindicatedexplicitly.ForanintegrablefunctionfandL>0,set
+                                         DilLf(t)=L  −1f(t/L).
+
+Allinputsandmatricesmaybecomplex.Scalarformsarecomplexmultilinear,sopairingswith
+dualinputsdonotincludeaconjugate.
+
+Lemma2.1(Finitetruncations).For           F,G∈L      3(R2),allfiniteannularintegralsdefiningBε,R(F,G)
+areabsolutelyconvergentoutsideonecommonnullset.Onitscomplementtheydependcontinuously
+on( ε,R)in0 <ε<R<∞.Changingrepresentativeschangesthisfamilyonlyonacommonnull
+set.Moreover,
+                   ⃦⃦⃦⃦⃦∫︂                                ⃦⃦⃦⃦⃦3/2
+                                                       |t|     ≤2log(R/ε)∥F∥          3∥G∥3.          (2.1)
+                     ε<|t|<R |F(x+t,y)G(x,y+t)|                   dt
+
+Proof.Foreachfixedt,Hölder’sinequalityandtranslationinvarianceboundtheL3/2  normof
+theproductby∥F∥3∥G∥3.Minkowski’sintegralinequalitygives(2.1)   .Applythisestimatetothe
+countablymanyannuli1 /m<|t|<m   ,m≥2.Theirunionofexceptionalnullsetsworksforevery
+finiteannulus.Absolutecontinuityoftheintegralgivesendpointcontinuity.Thesameestimate
+appliedtoazeroL3differenceprovestheassertionaboutrepresentatives,firstonthosecountably
+manyannuliandhenceonallfiniteannuli.
+
+    Inparticular,supremaoverrationalendpointpairsagreewithsupremaoverallendpointpairs
+wheneveronlyfinitelymanyendpointsoccurinachoice.Rationalexhaustionmakesthevariation
+andthecountquantitiesintheintroductionmeasurable.
+
+2.1  Thetriangularcoordinates
+Formostoftheprooftheinputsaresmoothandcompactlysupported.Thechangeofvariables
+
+                                 x=−a,   y=−b,   t=a+b+c
+
+hasabsolutedeterminantone.Define
+
+                         G1(b,c)=F(b+c,−b),   G                            2(c,a)=G(−a,c+a).               (2.2)
+
+BothpairmapspreserveL3norms.WithadualinputG0(a,b),theexpressionstobeestimated
+taketheform
+                                   ∫︂∫︂∫︂
+               ΛK(G 0,G1,G2) =           G0(a,b)G     1(b,c)G     2(c,a)K  a,b(a+b+c)dadbdc.      (2.3)
+
+Themapsin(2.2)    areinvertible,soestimatesforarbitrarysmoothcompactlysupportedGvare
+equivalenttothecorrespondingdualestimatesintheoriginalcoordinates.
+    Astepchoiceisachoicefromafinitemenuthatisconstantoneachcellofapartitionof    R2by
+finitelymanyhorizontalandverticallines.Unboundedcellsareallowed.Forannularlinearizations,
+eachmenuitemisalistofatmostndisjointradiusintervals( εj,Rj),togetherwithcoefficients
+|βj|≤1. Atafixedoutputpointtheintervalsaredisjointuptoendpoints. Wefirstproveall
+estimatesforstepchoices.Valuesoncellboundariescanbeassignedanymenuitem;theydonot
+affecttheintegrals.
+
+                                                     5
+
+--- PDF PAGE 6 ---
+   Forsuchchoicesandsmoothcompactlysupportedinputs,finite-meshestimatespassto(2.3)
+byordinaryRiemannsums.Indeed,chooseTsolargethatallcoordinatesintheinputsupports
+liein[−T,T   ],put h =T/N,andsampleatthenodesui =ih. Afteranyauxiliaryfrequency
+integrationoverafixedboundedblock,thefinitelymanykernelsusedbelowarecontinuousintheir
+scalarvariable.Theresultingintegrandson[ −T,T   ]3areboundedandcontinuousofffinitelymany
+coordinateplanes.TheirRiemannsumsconverge,asdothediscreteL3normsums.Nolimitof
+matrixenergiesistaken.
+
+2.2  Maximalaveragesonaline
+ForfunctionsonRandsequencesonZ,respectively,let
+                             1  ∫︂x+r                                    1      ∑︂
+            MRf(x)= sup      2r        dt,   M          Zf(j) =  sup  2r+1            |f(m)|.
+                        r>0      x−r |f(t)|                     r∈Z ≥0        |m−j|≤r
+
+Thediscreteoperatorincludessingletonaverages.Weusetheseoperatorsonindividualcoordinates
+ofafunctionorarrayaswell.
+
+Lemma2.2(Linemaximalestimates).Oneitherspace,thecenteredmaximaloperatorsatisfies
+
+                                                              1
+                  µ{Mf>ρ}≤3ρ∥f∥1, ∥Mf∥pp≤6p2 p−p−1 ∥f∥pp   (1<p<∞).
+
+Letg σ(t) = (2πσ) −1/2  e−t   2/(2σ)   .ThereisanabsoluteconstantCsuchthat
+                   ∑︂hgσ((m−j)h)|f(m)|≤CM                      Zf(j),            σ≥h              2,           (2.4)
+
+                    m   ∫︂
+                           gσ(t)|f(x−t)|dt≤CM                        Rf(x),           σ>0.           (2.5)
+
+Proof.WerecallthecoveringproofoftheHardy–Littlewoodestimates[10].Fromanyfinitefamily
+ofintervals,repeatedlyselectoneoflargestradiusanddiscardthosemeetingit. Theselected
+intervalsaredisjoint,andtheunionofthefamilyliesintheirtriple-radiusenlargements. Each
+enlargementhasatmostthreetimestheoriginalmeasure,alsoforintegerintervals. Applythis
+towitnessingintervalscenteredatafinitesubsetofadiscretelevelset,ortoafinitewitnessing
+coverofacompactsubsetofacontinuouslevelset.Thelatterlevelsetisopenbecausefixed-radius
+averagesarecontinuous.Takingsupremaoverthefiniteorcompactsubsetsprovestheweakbound.
+   Forf∈L  p,splitatheightρ/2.Thelowparthasmaximalfunctionatmost ρ/2,whilethehigh
+partisintegrable.Thus                                 ∫︂
+                                    µ{Mf>ρ}≤6ρ                 dµ.
+                                                        |f|>ρ/2  |f|
+ThedistributionformulaandTonelli’stheoremgivethestrongboundafterintegratingpρp−1    dρ.
+Truncationofthedistributionintegralfirstmakesthisargumentindependentofanyapriorifiniteness
+assertion.
+   For(2.4)   ,puta =√σ/h≥1. Thekernelis( √2πa)−1e−(m−j)                2/(2a      2). Splitthesuminto
+|m−j|≤a   andtheannuli2  l−1 a<|m−j|≤ 2la,l≥1.Thesumof|f|inthecorrespondingball
+isatmost3  ·2laMZf(j).Theresultingseriesisboundedbyaconstanttimes1+    ∑︁                         4  l−1 /2.
+                                                                                            l≥1   2le−
+Thesameshellargumentwithintegralsproves(2.5).
+
+
+
+                                                    6
+
+--- PDF PAGE 7 ---
+3 Dimension-freematrixinequalities
+
+Thefinite-dimensionalpartoftheargumenthastwotasks:toboundacyclicproductbypositive
+quadraticcosts,andtokeepthosecostsundercontrolwhenmatriceschangeorareaveraged.We
+givealltheneededestimateshere,includingthesupportandcomplex-phaseargumentsrequiredfor
+arbitrarycomplexinputmatrices.TheaveraginginequalityinLemma3.4willpermitaGaussian
+windowtobereplacedbyaprobabilityaverageofnarrowerwindowswithoutpayingfortheirrelative
+widths.
+   Allspacesinthissectionarefinite-dimensionalcomplexHilbertspaces. Matrixinequalities
+meaninequalitiesofHermitianquadraticforms.Set
+
+                         Φ(P) =tr(P          3/2  ),      suppP= (kerP)      ⊥(P≥0).
+
+TheapplicationusesthreespacesHv,indexedbyv∈Z/      3Z,andmapsWv :Hv+1→H v.Thetwo
+matricesincidenttovertexvformitsrowstar
+
+                              Rv = [Wv W∗v−1    ] :Hv+1⊕H v−1 −→Hv.                   (3.1)
+
+WeusebothGrammatrices
+                                     Tv =R ∗vRv,   Sv =R vR∗v.                         (3.2)
+Theirnonzeroeigenvaluesagree,includingmultiplicities,soΦ( Tv) = Φ(Sv).Oureventualobjective
+inthissectionistoboundthecyclictraceformedfromtheWvbysecond-derivativecostsofthese
+threeenergies.WefirstdevelopthosecostsforanarbitrarypositivematrixP.
+   Amatrixissupportedon Pifitvanisheson kerP  onbothsides.TheHilbert–Schmidtinner
+productis⟨K,L⟩HS = tr(K∗L).WriteL   A(X) =AXandR   A(X) =XA.ForHermitianmatrices
+K,LsupportedonP,define
+                                  ⟨︂                 1L⟩︂
+                BP(K,L)=     32Re   K,(L√P +R √P)−         HS,   bP(K)=B   P(K,K).        (3.3)
+
+Theinverseistakenonmatricesactingon suppP    ,wheretheoperatorispositivedefinite.IfP = 0,
+itsonlysupporteddirectioniszeroandtheseexpressionsarezero.
+
+3.1  Theenergyanditsquadraticcosts
+Lemma3.1(SupportedHessian).Ontheconeofmatricespositivedefiniteonafixedsupport,Φis
+smoothand
+                        dΦ P(K)=     32tr(√PK),   d     2ΦP(K,L)=B   P(K,L).
+
+Inanorthonormaleigenbasisforthepositiveeigenvaluesp         iofP,
+
+                                                  ∑︂|Kij|2
+                                      bP(K) =     32  √pi+√pj.                          (3.4)
+                                                   i,j
+
+Inparticular,BP isapositivedefinitesymmetricbilinearformontherealspaceofsupported
+Hermitiandirections,and
+                                   |BP(K,L)|≤b P(K)     1/2 bP(L)    1/2 .
+
+
+
+
+
+                                                    7
+
+--- PDF PAGE 8 ---
+Proof.RestricttothesupportandputA =√P. ThederivativeofthesquaringmapatAis
+X↦→AX       +XA;inaneigenbasis,itmultipliesentry( i,j)by√pi+√pj>0.Theinversefunction
+theoremgivesasmoothpositivesquareroot,whosederivativeXKsolves
+                                         AXK +X KA=K.
+MultiplyingbyAandtakingtracesgives tr(PXK) = 12tr(AK).HencedifferentiationofΦ(  P) =
+tr(P√P)yields dΦP(K) =   32tr(AK). DifferentiatingoncemoreprovestheHessianformula.
+Formula(3.4)   followsbydiagonalizingA,andprovestheremainingassertions.Thisisthesquare-
+rootcaseoftheclassicaldivided-differencecalculus[2,Section1].
+
+   BothΦand   Bareinvariantundersimultaneousunitaryconjugationoftheirarguments.Theyare
+alsoinvariantunderextensionofeveryargumentbyzero:theirpositiveeigenvaluesandsupported
+entriesdonotchange.ThesefactswillletuscompareGramsondifferentsubspaces.
+Lemma3.2(Ordercomparison).If           P,Q≥0onthesamespace, a≥1,and P≤aQ  ,thenevery
+HermitianKsupportedonPissupportedonQ,and
+                                        bP(K)≥a   −1/2  bQ(K).                            (3.5)
+
+Proof.Forx∈kerQ    wehave0≤⟨Px,x⟩≤a⟨Qx,x⟩= 0,so   kerQ⊆kerP      . Thisprovesthe
+supportassertion.
+   Werecalltheorderfactsusedintheproof.Inversionreversesorderforpositivedefinitematrices,
+asfollowsbyconjugating0<X≤YbyX          −1/2  ,inverting,andconjugatingback.Also
+                            √         ∫︂∞
+                              X=    1                 1    dt√     0).
+                                    π0 X(X+tI)    −        t       (X≥
+Spectralcalculusreducesthisnorm-convergentformulatothescalarintegral.SinceX(X +tI)−1   =
+I−t    (X +tI)−1 ,inversionordershowsthatsquarerootpreservesorder. Thisistheclassical
+Loewner–Heinzsquare-rootmonotonicity;see,forexample,Kwong[16,Theorem1andSection2].
+ThesupportedHessiancomparisonbelowisderivedfromtheseorderfactshere.
+   Forη>0,
+                         P+ηI≤a(Q+ηI),         √︁P+ηI≤√a√︁Q+ηI.
+IfA≤B   ,thenL   A+R A≤LB +R BonHilbert–Schmidtspace:thedifferencehasquadraticform
+tr(X ∗(B−A)X)+tr(X     ∗X(B−A))≥0.Invertthesepositiveoperatorstoobtain
+                                     bP+ηI  (K)≥a   −1/2  bQ+ηI  (K).
+
+Letη↓0.Inaneigenbasis,everyentryof Kmeetingthekernelofthecorrespondinglimitingmatrix
+iszero.ThusFormula(3.4)givespreciselythesupportedcostsonbothsidesof(3.5).
+
+Lemma3.3(InsertedGrambound).Foralinearmap      R :E→F    andaHermitianmapL:F→F   ,
+thematrixR   ∗LRissupportedonR   ∗R,and
+
+                                   bR∗R(R∗LR)≤   34∥L∥2opΦ(R ∗R).                        (3.6)
+
+Proof.TheinsertionisHermitianandannihilates kerR    = ker(R∗R).If R = 0,thereisnothingto
+prove.Otherwiseletρi> 0bethepositivesingularvaluesof R,andletCbethecompressionofL
+tothecorrespondingleftsingularvectors.Then∥C∥         op≤∥L∥opand
+                                 bR∗R(R∗LR)=      3 ∑︂ρ2iρ2j        2.
+                                                  2 i,j ρi+ρj|Cij|
+
+                                                   8
+
+--- PDF PAGE 9 ---
+Forx,y> 0, x2y2/(x+y)≤(xy)3/2 /2≤(x3 +y3)/4. Everyrowandcolumnof Chassquared
+Euclideannormatmost∥L∥        2op.Therefore
+                        bR∗R(R∗LR)≤   3   ∑︂(ρ3i +ρ3j)|C ij|2≤3        ∑︂ρ3i,
+                                        8 i,j                  4∥L∥2op  i
+
+asrequired.
+
+    WenextshowthataveragingaGramanditsinserteddirectioncanonlydecreasethecorre-
+spondingcost.Nouniformlowerboundonthepositiveeigenvaluesisrequired.
+
+Lemma3.4(Jointconvexityunderprobabilityaverages).Let(Ω        ,ν)beaprobabilityspaceand E
+afixedsubspaceofafinite-dimensionalcomplexHilbertspace.SupposeTω≥0and Kω=K∗ωare
+measurablematrices,suppT      ω=EandK      ωissupportedonT  ωalmosteverywhere,and
+                                 ∫︂(︁∥Tω∥
+                                         op+∥K  ω∥op)︁dν(ω)<∞.
+                                  Ω
+Then  T= ∫︁TωdνhassupportE,        K= ∫︁Kωdνissupportedon         T,and
+                                              ∫︂
+                                    bT(K)≤
+                                               ΩbTω(Kω) dν(ω).                         (3.7)
+Therightsidemaybeinfinite.
+
+Proof.IfE ={0},allmatricesandcostsvanish.OtherwiserestricteverymatrixtoE.Forevery
+nonzerox∈E  ,thepositivequantity⟨Tωx,x⟩haspositiveintegral,so            TispositivedefiniteonE.
+AllaveragesvanishonE ⊥,provingthesupportassertions.
+    PutAω=√TωandA =∫︁Aωdν.TheintegralexistsbythestatedintegrabilityandCauchy–
+Schwarz.Foreveryvectorx,thevector-valuedCauchy–Schwarzinequalitygives
+                                           ∫︂
+                                 ∥Ax∥ 2≤∥Aωx∥2 dν=⟨         Tx,x⟩.
+
+ConsequentlyA     2≤T,andsquare-rootorder,provedinLemma3.2,implies
+                                         √︁∫︂√︁
+                                           T≥        Tωdν.                              (3.8)
+
+ForapositivedefiniteselfadjointoperatorMonarealHilbertspace,completingthesquareproves
+                              ⟨K,M−1K⟩= sup     2⟨K,X⟩−⟨X,MX⟩}.                    (3.9)
+                                             X{
+ApplythisidentityonHermitianmatriceswithrealHilbert–Schmidtinnerproduct.Theoperators
+L√T +R √T preservethatrealspace. By(3.8)   ,foreachHermitianXtheexpressioninsidethe
+supremumfor(    T, K)isatmosttheaverageofthecorrespondingexpressionsfor(  Tω,Kω).Taking
+thesupremumandthenboundingthesupremumofanintegralbytheintegralofthepointwise
+supremagives                                    ∫︂
+                                      bT(K)≤      bTω(Kω) dν.
+
+EveryinverseinthisargumentistakenonmatricesactingonE;uniforminvertibilityoverωwas
+neverassumed.
+
+
+                                                  9
+
+--- PDF PAGE 10 ---
+3.2  Changesthataltertherank
+TheHessianwasdefinedonafixedsupport,butswitchingmatrixentriesonoroffcanchangethat
+support.Thefollowingfirst-derivativeformularemainsvalidacrosssuchchanges.Itisaspecial
+caseofthegradientformulaforunitarilyinvariantmatrixfunctions[18,Theorem3.1].
+Lemma3.5(Rankchangesandentrywisederivatives).Forrectangularcomplexmatrices     R−,R+
+ofthesamesize,setR(z)= (1−z)R      −+zR   +andD=R              +−R −.Then
+                                                ∫︂1          √︂
+                   Φ(R ∗+R+)−Φ(R  ∗−R−) = 3                    R(z)  ∗R(z),D⟩     HS dz.          (3.10)
+                                                 0  Re⟨R(z)
+ForeveryrectangularmatrixRandeveryentry(i,j),
+
+                                 |(R√R∗R) ij|≤∥rowiR∥2∥coljR∥2.                     (3.11)
+
+Proof.Forη>0,Lemma3.1gives
+                   d                                        √︂
+                  dz   tr((R(z)    ∗R(z)+ηI)         3/2  ) = 3Re⟨R(z)R(z)  ∗R(z)+ηI,D⟩   HS.
+
+Spectralcalculusimplies∥√R∗R+ηI−√R∗R∥op≤√η. ThematricesR(z)stayboundedfor
+0≤z≤ 1,sothederivativesconvergeuniformlyas η↓0,andtheendpointenergiesconverge.
+Integratingfirstandpassingtothelimitproves(3.10).
+    For(3.11)    ,Cauchy–Schwarzinthematrixproductboundstheentrybythenormofrowiof
+Rtimesthenormofcolumnjof√R∗R.Thelattercolumnhassquarednorm(   R∗R)jj,alsothe
+squarednormofcolumnjofR.
+
+3.3  Thecyclicproduct
+ReturntothethreemapsWvandtherowstars(3.1)   –(3.2)   . Thereasonforcombiningthetwo
+incidentmatricesisthefollowingestimate:threeinsertedstarcostscontroltheentirecyclicproduct.
+Lemma3.6(Mixedtraceinequality).ForHermitianmaps    Dv :Hv→H v,putD∗= maxv∥Dv∥op.
+Then                                                        2∑︂
+                          |tr(D      0W0D1W1D2W2)|≤5           bTv(R∗vDvRv).               (3.12)
+                                                      3D∗v=0
+TheconstantisindependentofthedimensionsandnoGramisassumedinvertible.
+Proof.Weputthethreecostsinonequadraticform,boundacubictrace,andthenrecoverthe
+complexphaseofthecyclicproduct.
+
+Onequadraticform.OnH=H                          0⊕H   1⊕H   2,define
+                              ⎛0 W  0 W∗⎞
+                              ⎜⎝              2 ⎟⎠,   D= diag(D     0,D1,D2).
+                        M=      W∗0     0 W  1
+                                W2 W∗1     0
+
+BothareHermitianand∥D∥op =D∗.IfPvistheorthogonalprojectionontoHv,putAv =MPvM
+andKv =MPvDM.Afterpermutingblocksandextendingbyzero,thesearerespectivelyTvand
+R∗vDvRv.ThematrixK     visHermitianbecauseP     vcommuteswithD.Moreover,
+
+                          kerA v = ker(P  vM)⊆kerK     v,      0≤A   v≤M    2.
+
+                                                   10
+
+--- PDF PAGE 11 ---
+ThusKvissupportedonAvandonM2.Lemma3.2andtheinequality      ∑︁2v=0b(Xv)≥1                     vXv)
+                                                                                        3b(∑︁
+forapositivequadraticformgive
+
+                     E:= ∑︂bTv(R∗vDvRv)≥∑︂bM2(Kv)≥13bM2(MDM).             (3.13)
+                            v                   v
+
+Acubictraceestimate.Chooseanorthonormaleigenbasisof       M,withrealeigenvaluesmi
+orderedsothatq   i =|m  i|isnonincreasing.Tiesarearbitrary.InthatbasisFormula(3.4)yields
+
+                            E≥1                           q2iq2j    2.                  (3.14)
+                                 2Q,   Q:=   ∑︂i,j:q    i+q  j>0qi+q j|Dij|
+
+Anytermwithonezeroq iiszero;pairswithbothzeroareomitted.Write
+                             2, Ei =q i  ∑︂        2, A= ∑︂
+                 Ai =q   3i|Dii|             q2j|Dij|           Ai, E= ∑︂Ei.
+                                         j>i                  i             i
+
+Hermitiansymmetryandq   j≤q iforj>iimply
+
+                            Q= A                q2iq2j    2≥A
+                                 2 +2 ∑︂i<jqi+q  j>0qi+q j|Dij|2 +E.                  (3.15)
+
+
+Expand
+                              tr((DM)           3) =∑︂mimjmkDijDjkDki
+                                            i,j,k
+andgrouptriplesbythemultiplicityoftheirsmallestindexi. Ifitoccursonce,itsthreecyclic
+positionsgive                            ∑︂
+                                    3mi      mjmkDijDjkDki.
+                                        j,k>i
+Theinnersumisx∗D>ixforx = (mjDji)j>i,whereD>iisthecorrespondingcompressionofD.
+Since∥D>i∥op≤D ∗,thiscontributionhasmodulusatmost3   D∗Ei.Theargumentallowsj =k
+andretainsthesignsofthem  j.
+   Ifthesmallestindexoccurstwice,itscontributionis
+                                              ∑︂          2.
+                                       3m  2iDii  mk|Dik|
+                                              k>i
+ByCauchy–Schwarzand∑︁k|Dik|2 =∥De  i∥2≤D   2∗,
+
+                             ⃓⃓⃓⃓⃓⃓        ⃓⃓⃓⃓⃓⃓≤D ∗⎛         ⎞1/2
+                              ∑︂mk|Dik|2          ⎝∑︂q2k|Dik|2⎠     .
+
+                              k>i                   k>i
+
+Thecontributionisthereforeatmost3   D∗√AiEi,alsowhenqi =0.Finally,ifallthreeindicesequal i,
+themodulusisatmostD∗Ai.Thesecasesexhaustalltriples.SummingandusingCauchy–Schwarz
+gives
+                    |tr((DM)             3)|≤D∗(︁A+3E+3 √(︃)︃AE)︁(︃A)︃
+                                 ≤D ∗5              ≤5D ∗            ≤5D ∗Q.            (3.16)
+                                        2A+   92E            2 +E
+
+                                                11
+
+--- PDF PAGE 12 ---
+Recoveringthecomplexphase.Set     τ= tr(D0W0D1W1D2W2). Since Mhaszerodiagonal
+blocks,everynonzeroclosedthree-stepblockproductvisitsallthreevertices.Thethreestarting
+verticesinoneorientationgiveτ,bycyclicityoftrace;thereverseorientationgives                 τ,becausethe
+DvareHermitian.Consequently
+                                          tr((DM)           3) = 6Reτ.
+Whenτ̸= 0,choose|z|= 1sothatzτ=|τ|andreplaceW                                                              0byzW  0.Thischangesthestarsby
+
+                      R0↦−→R0diag(zIH1,IH2),   R 1↦−→R1diag(IH2,              zIH0),
+
+andleavesR2unchanged.Theserightmultipliersareunitary;eachconjugatestheGramandits
+insertionbythesameunitary. ThusEandD∗areunchanged. Apply(3.14)     and(3.16)     tothe
+modifiedmatrices,withtheirownvalueofQ,toobtain
+
+                                         6|τ|≤5D∗Q≤10D   ∗E.
+
+Thisis(3.12).Thecaseτ=0isimmediate.
+
+    Intheapplicationsadiagonalinsertionmaybecomplex.WriteDv =D(0)v   +iD(1)v  foritsreal
+andimaginarydiagonalparts,andputD∗= maxv∥Dv∥op.Expandinggiveseightproductswith
+Hermitiandiagonals,eachboundedbyLemma3.6.Bothpartshaveoperatornormatmost       D∗,and
+eachoftheirsixcostsoccursfourtimesinthesum.Thus
+                                                    20      2∑︂1∑︂
+                        |tr(D      0W0D1W1D2W2)|≤3D∗               bTv(R∗vD(ϵ)vRv).             (3.17)
+                                                           v=0 ϵ=0
+AlldirectionsappearinginthisboundremainHermitian.
+
+4 Gaussianheatdissipation
+
+WeuseGaussianweightstoturnthematrixcostsoftheprecedingsectionintoderivativesofan
+energy.IntegrationoveraplaneofGaussiancentersthengivestwocomplementaryestimates:strict
+dissipationofthesumofthethreestarenergieswhenthevariancesarecomparable,andsingle-edge
+dissipationforarbitrarypositivevariancerates.Bothestimatesareuniforminthematrixdimension.
+Weretainarbitrarypositiveratesinthedifferentialidentities,sincebothformsofdissipationwill
+beneededbelow.ContinuousGaussiantelescopingforentangledformsalsoappearsinDurcik[4,
+Lemma3andSection3].
+    Fixh> 0,aninteger N≥0,andnodes ui =ih,−N≤i≤N       .Thevertexindexvistakenin
+Z/3Z.ForfinitecomplexedgearraysA      v(i,j),put
+                                          ⎛                      ⎞1/3
+                                               N∑︂
+                                    nv =  ⎝        h2|Av(i,j)|3⎠      .
+                                            i,j=−N
+
+Forcentersp   v∈Randvariancesσ        v>0,define
+                        gσ(t) = (2πσ) −1/2  e−t   2/(2σ)  ,   wv(i) =hg  σv(ui−p v),
+                                                       √︂
+                                   Wv(i,j) =A   v(i,j)   wv(i)w  v+1 (j).                          (4.1)
+
+
+
+                                                    12
+
+--- PDF PAGE 13 ---
+FormthestarsandtheirGramsasin(3.1)   –(3.2)   ,andsetev = Φ(Tv) =Φ(Sv).Todistinguishthe
+twoblocksofthestar,write
+
+                     Cv,v+1   =W v,   Cv,v−1     =W ∗v−1 ,   Rv = [Cv,v+1 Cv,v−1    ].
+
+ThediagonalGaussianscoresandthecorrespondinginsertedGramsare
+
+             Nv = diagiui−p vσv ,   Uv =R ∗vNvRv,   Pv,w =C v,wNwC∗v,w   (w̸=v).
+
+Theirquadraticcostsare
+
+                  Vv =b Tv(Uv),   Yv,w =b Sv(Pv,w),   Zv =B Sv(Pv,v+1,Pv,v−1    ).         (4.2)
+
+AlltheseinsertionsaresupportedontheirrespectiveGrams:aninsertedGramB∗DBannihilates
+kerBonbothsides.
+    Ford∈R,equiptheplaneΠ          d ={p     0+p   1+p   2 =d}withthemeasure
+                            ∫︂            ∫︂
+
+                             ΠdHdπ d =      R2H(p     0,p1,d−p      0−p   1) dp  0 dp  1.                 (4.3)
+Anypairofcenterscanbethefreecoordinates,sincethechangesbetweenthesechartshaveabsolute
+determinantone.Givenpositiveratesα = (α0,α1,α2),weevaluatetheweightsat σi =αisand
+write                         ∫︂
+                  Jv(d,s)=                                   Jv(d,s),      Σ   α=∑︂αi.
+                               Πdev dπd,   J(d,s) =  ∑︂v                           i
+Thearraysremainfixedwheneverascalederivativeistaken.
+
+4.1  Differentiationandtheplaneidentities
+Lemma4.1(Heatidentities).Forfixedfinitearraysandarbitrarypositiverates,theenergies       ev
+aresmoothinthecentersandpositivevariances.Fors>0,
+
+                                   2∂sev =∑︂αi∂2piev−αvVv−∑︂αwYv,w,                 (4.4)
+                                             i                     w̸=v
+                           ∂pv+1∂pv−1 ev =Z v.                                          (4.5)
+
+Theplaneintegralsarefinite,continuouslydifferentiableins,andtwicecontinuouslydifferentiable
+ind,with                                                 ⎛                     ⎞
+                                                    ∫︂
+                     2∂sJv(d,s)= Σ  α∂2dJv(d,s)−         ⎝αvVv +∑︂αwYv,w⎠dπd,
+                                                      Πd           w̸=v                               (4.6)
+                                    ∫︂
+                      ∂2dJv(d,s)=
+                                     ΠdZv dπd.
+Oncompactpositivescaleintervals,theplaneintegralsoftheabsolutevaluesofallderivativesused
+heregrowatmostpolynomiallyin|d|.
+
+Proof.WefirstcheckthatthepossiblekernelsoftheGramscausenodifferentiabilityproblem.Each
+starhastheform
+                                Rv =D   rowR0vDcol,   R0v = [AvA∗v−1   ],
+
+
+
+                                                    13
+
+--- PDF PAGE 14 ---
+wherebothdiagonalmultipliersarepositiveandinvertible. Withthecolumnparametersfixed,
+kerR visfixed,soTvhasfixedsupportastherowparametersvary. Withtherowparameters
+fixed, ranR  v isfixed,soSv hasfixedsupportaseitherorbothcolumnparametersvary. For
+jointsmoothness,factoranonzeroR0vasXY∗withX,Y offullcolumnrank. SetX′=DrowX,
+Y′=DcolY,P′=X′∗X′,andQ′=Y′∗Y′.Theselasttwomatricesarepositivedefiniteandsmooth,
+andthenonzeroeigenvaluesofR vR∗varethoseofQ ′1/2 P′Q′1/2  .Consequently
+
+                                         ev = Φ(Q ′1/2 P′Q′1/2   )
+
+issmooth.Therank-zerocaseisimmediate.
+    ForoneGaussiandensityw=hg   σ(u−p)anditsscoreN= (u−p)/σ,
+                       ∂pw=Nw,   ∂   2pw=(N     2−σ−1  )w,      2∂σw=∂   2pw.
+
+Withthecolumnsfixed,T    vislinearintherowdensity,andhence
+
+                                   ∂pvTv =U v,      2∂σvTv =∂2pvTv.
+
+ThechainruleonitsfixedsupportandLemma3.1give
+
+                                         2∂σvev =∂2pvev−V v.
+
+Foracolumnvertexw̸=v,useSvinstead.Itislinearinthatcolumndensity,hasfixedsupport,
+andsatisfies∂pwSv =Pv,w. Thus2 ∂σwev =∂2pwev−Y v,w. Takingthevariancederivativealong
+σi =αisproves(4.4)   .ThetwosummandsofSv =Cv,v+1C∗v,v+1   +Cv,v−1 C∗v,v−1   dependondifferent
+columndensities.Itsmixedderivativeinthosetwocentersiszero;theHessianterminthechain
+ruleisthereforeexactlyZ      v,proving(4.5).
+    Beforeintegratingtheseidentities,wegivethedominationneededfordifferentiationunderthe
+integral.Lemma3.3yields
+               Vv≤3         2opev,   Yv,w≤3          2opev,      2|Z  v|≤Yv,v+1   +Y v,v−1 .
+                     4∥Nv∥                    4∥Nw∥
+Forthesecondinequality,applytheinsertionboundtoR∗v,paddingNwbyzeroontheothercolumn
+block.ForanyHermitianBontherowspace,
+                                     ⃓⃓tr(√︁TvR∗vBRv)⃓⃓≤∥B∥
+                                                               opev,
+
+becauseRv√TvR∗vispositiveandhastraceev.Thecorrespondingestimateforacolumninsertion
+followsbyusingSv.TheGaussianderivativeformulasandtheHessianchainrulethereforebound
+everyfirstcenterderivative,puresecondcenterderivative,mixedcolumnderivative,andfirstscale
+derivativeusedabovebyapolynomialinthecenterstimese    v,locallyuniformlyins>0.
+   Theenergyitselfsatisfies
+                        (︂      2HS+∥W  v−   2HS)︂3/2 ≤√(︂        3HS+∥W  v−    3HS)︂
+                   ev≤∥Wv∥               1 ∥              2  ∥Wv∥           1 ∥      .          (4.7)
+
+Sincethenodesetisfinite,eachedgenormcubedisboundedbyaGaussianinitstwoendpoint
+centers,locallyuniformlyforpositivevariances.OnΠ   d,with|d|≤D,eachpairofdistinctindices
+i,jsatisfies
+                                   p20+p   21+p   22≤4(p       2i +p   2j)+3D  2.
+Thustheprecedingboundshaveintegrablemajorantsineveryplanechart,locallyuniformlyin
+(d,s).Dominatedconvergencejustifiesalltheassertedderivatives.Toobtainpolynomialgrowthin
+
+                                                   14
+
+--- PDF PAGE 15 ---
+d,usethetwoendpointsofeachboundingGaussianasfreecoordinates;thethirdcenterisdminus
+theirsum.IntegratingapolynomialtimesthatGaussianleavesatmostpolynomialgrowthin|d|.
+Constantsinthesedifferentiabilityargumentsmaydependonthefixedarrays,mesh,rates,and
+compactscaleinterval,butdonotentertheestimatesbelow.
+    Choosingp    iasthedependentcoordinategives,foreachi,
+                                                ∫︂
+                                        ∂2dJv =
+                                                  Πd∂2piev dπd.
+Toobtainthemixedderivative,firstchoosepv+1 dependentanddifferentiateonce.Reparametrize
+theresultingintegralwithp   v−1  dependentanddifferentiateoncemore.Thisgives
+                                     ∫︂                       ∫︂
+                             ∂2dJv =       1 ∂pv+1ev dπd =
+                                      Πd∂pv−                   ΠdZv dπd.
+Integrating(4.4)   provesthefirstidentityin(4.6)   .Thesecomparisonsconcernintegratedderivatives;
+nopointwiseequalityofpureandmixedcenterderivativesisasserted.
+
+4.2  Strictdissipationatcomparablevariances
+TheplaneidentitiescontainmixedtermsZvwhosesignsarenotcontrolled.Weboundthemby
+columncostsandthencomparethosecostswiththerowcostattheneighboringvertex. The
+resultinglossis√2,smallenoughtoleavestrictdissipationforthevarianceratiosweuse.
+Lemma4.2(Planedissipation).Forfixedfinitearraysandarbitrarypositiverates,
+                                 ∫︂∑︂[︂                                   ]︂
+                   2∂sJ(d,s)≤             −αw +√2max{0,Σ      α/2−α  w}Vw dπd.           (4.8)
+                                  Πd  w
+Inparticular,putλ= 11/10.Foreachpermutationof(1,λ,λ),
+                                                    ∫︂∑︂
+                                   −∂sJ(d,s)≥c   ∗          Vw dπd,
+                                                     Πd  w                                         (4.9)
+                                c∗= 1  1−        3√2,   11   √2}>0.
+                                      2min{      5     10−12
+Proof.Wefirstprovetheneighborcomparison
+                                      Yw+1,w      +Y w−1,w ≤√2Vw.                         (4.10)
+WriteA =Ww,B =W∗w−1  ,andN =Nw. Theelementaryinequality∥Az  +Bz′∥2≤2∥Az∥2 +
+2∥Bz ′∥2gives
+                                 Tw≤2Q,   Q= diag(A   ∗A,B∗B).
+ByLemma3.2,       Vw≥2−1/2  bQ([AB]∗N[AB]).Inablock-preservingeigenbasisof Q,theHessian
+costisasumofnonnegativesquaredentries.Discardingtheoff-diagonalblocksgives
+
+                        bQ([AB] ∗N[AB])≥b      A∗A(A∗NA)+b   B∗B(B∗NB).
+NowA∗A≤S   w+1 andB∗B≤S   w−1  ;therespectiveinsertionsarePw+1,w   andPw−1,w   . Asecond
+useofLemma3.2,withcomparisonfactorone,proves(4.10).
+    In(4.6)   ,replace2    ZvbyitsupperboundYv,v+1   +Yv,v−1   andsumoverv.Thetwocolumncosts
+carryingthescoreatvertexwhavecommoncoefficientΣ α/2−αw.Ifthiscoefficientisnegative,
+discardthoseterms;otherwiseapply(4.10)    .Thisproves(4.8)   .Forthespecifiedrates,Σ     α= 16/5,
+andthetwopossiblecoefficientsare−1+(3/5)√2and−11/10+(1/2)√2.Botharenegative,giving
+(4.9).
+
+                                                  15
+
+--- PDF PAGE 16 ---
+4.3  Energyboundsandthesingle-edgecase
+Thedecreasein(4.9)    controlstheaccumulatedcostsbyaninitialenergy. Wenowboundthat
+energyuniformlyoncetheGaussianvariancesarenosmallerthanthemeshscale.
+Lemma4.3(Initialenergy).Foralld∈Randallvariancesσ              v≥h   2,
+                            ∫︂                                       √︂
+                                     3HS dπd≤Mn   3v,   M= 1+          2/π,
+                             Πd∥Wv∥∫︂                                                            (4.11)
+                                        ∑︂
+                                           ev dπd≤2√2M ∑︂n3v.
+                                     Πd  v                    v
+Theseboundsalsoholdwiththeoriginalright-handsidesifanyentriesarereplacedbyentriesof
+smallerabsolutevalue.
+Proof.TheGaussiangridmassobeys
+
+                                     N∑︂
+                                         hgσ(ui−p)≤1+            2h√2πσ.                       (4.12)
+                                   i=−N
+Indeed,forui≥p   +hcomparethesummandwiththeintegralovertheprecedingintervaloflength
+h;forui≤p−h    ,usethesucceedinginterval. Theseintervalsaredisjoint,andtheatmosttwo
+remainingnodescontributeatmost2   hsupg    σ.Forσ≥h      2,therightsideisatmostM.Weighted
+Hölderthereforegives
+                       ⎛                            ⎞3/2
+           ∥Wv∥3HS =   ⎝∑︂|Av(i,j)|2wv(i)w  v+1 (j) ⎠     ≤M ∑︂|Av(i,j)|3wv(i)w  v+1 (j).
+
+                          i,j                                   i,j
+Usepv,pv+1 asfreecoordinatesonΠ  d.Eachdensityintegratestoh,provingthefirstestimatein
+(4.11)    .Eachedgeoccursintwostars,so(4.7)    provesthesecond.Thesameupperboundsdecrease
+whentheentrywiseabsolutevaluesdecrease.
+
+    Forexample,ifh2≤s   0<s1andtheratesareapermutationof(1 ,λ,λ),thesetwolemmas
+imply        ∫︂s1        ∫︂
+                             ∑︂                                         2M  ∑︂
+                                Vv dπd ds≤J(d,s    0)−J(d,s         1)c∗  ≤2√c∗ n3v.          (4.13)
+                     s0   Πd  v                                              v
+Thefirstinequalityretainstheterminalenergy,whichisessentialwhenarraysarechangedatfinitely
+manyscales.
+    Formuchmoreunequalvariancerates,(4.8)   doesnotguaranteethatthesummedstarenergy
+decreases.Asingleedgeneverthelesshasnomixedtermandretainsexactdissipation.Westate
+thatconsequenceseparately.
+Lemma4.4(Single-edgeenergy).Fix        v̸=w,retaintheweightedblockC =Cv,w,anddeletethe
+otherblockofthestaratv.Forarbitrarypositiverates,set
+                eev,w = Φ(CC ∗),   V ev,w =b C∗C(C∗NvC),   Y  ev,w =b CC∗(CNwC∗),∫︂∫︂
+
+             Jev,w(s) =
+                          R2eev,w dp v dp w.
+Theplaneintegralsofe ev,w,V ev,w,andY   ev,wareindependentofd.Moreover,
+                                          ∫︂∫︂
+                           −2∂sJev,w(s) =
+                                             R2(αvVev,w +αwYev,w) dp v dp w.                (4.14)
+
+                                                  16
+
+--- PDF PAGE 17 ---
+IfnedenotesthediscreteL3normofthisedge’sunweightedarray,then,wheneverαvs0,αws0≥h   2
+ands       1>s0,       ∫︂s1    ∫︂∫︂
+                                                                   2Mn          3e.               (4.15)
+                            s0    R2(αvVev,w +αwYev,w) dp v dp w ds≤
+Fortheoriginaltwo-blockstar,Y   v,w≤Y ev,w.
+Proof.Thethreeintegrandsdependonlyonthetwoendpointcenters.Usingtheseasfreecoordinates
+provesindependenceofd.Intheone-edgestartheothercolumninsertioniszero,soZv = 0.After
+permutingcolumnblocks,itsmatricesare
+
+             R= [C0],   T= diag(C    ∗C,0),   U= diag(C  ∗NvC,0),   S=CC   ∗.
+
+TheHessiancostisunchangedbyzeroextension,soitsrowandcolumncostsareexactlyVev,wand
+Yev,w.Equation(4.6)    nowproves(4.14)    .Alsoeev,w≤∥C∥3HS,soLemma4.3gives       Jev,w(s0)≤Mn   3e.
+Integrate(4.14)    anddiscardthenonnegativeterminalenergytoobtain(4.15)    .FinallyCC∗≤S v,
+whileCN    wC∗issupportedonCC ∗.Lemma3.2withfactoronegivesY          v,w≤Y ev,w.
+
+5 Repeatedmasksandsmoothannuli
+
+Thefixed-arraydissipationfromSection4controlssmoothannuliaslongaswealsopayforchanges
+inthedualarray.Wenowallowuptondisjointintervalsateveryoutputpoint.Theusefulfeature
+ofthejumpestimateisitsdependenceonthedualnorm:everymixedjumptermcontainsthat
+normtwice.Arescalingwillthenturnthelinearswitchcountintoasquare-rootloss.
+    Definetheoddwindowsandtheirscaleintegralsby
+                                                         ∫︂R2
+                       ks(t) =  t√sgs(t),   I  ε,R(t) =                        s.              (5.1)
+                                                          ε2  (ks∗ks∗ks)(t)     ds
+Proposition5.1(Smoothannuliwithrepeatedchoices).Let    Gv∈C∞c  (R2)becomplex. At
+eachoutputpair( a,b),makeastepchoiceofatmost n≥1disjointradiusintervals(      εj,Rj)and
+coefficients|β      j|≤1.For
+                                        Ka,b(t) = ∑︂βjIεj,Rj(t)
+                                                    j
+onehas
+                                                              2∏︂
+                                  |ΛK(G 0,G1,G2)|≤C√n           ∥Gv∥3.
+                                                             v=0
+Theconstantisindependentofthesteppartition,themenuofchoices,andallendpoints.
+
+5.1  Thecostoftheswitches
+WorkfirstonthefinitegridofSection4.Makethestatedintervalandcoefficientchoicesseparately
+foreachpair(i,j)andput
+                                  As0(i,j) =A       0(i,j) ∑︂βℓ1{ε2ℓ<s<R2ℓ}.                      (5.2)
+                                                       ℓ
+Thesumrunsthroughthelistchosenatthisparticularindexpair.KeepA1,A2fixed.Choosea
+compactpositivescaleinterval[ s−,s+]containingallswitchscalesinitsinterior,andtakeh2≤s −.
+Bydisjointness,
+
+                 |As0(i,j)|≤|A0(i,j)|,     ∑︂|Aτ+0  (i,j)−A   τ−0  (i,j)|≤2n|A       0(i,j)|.         (5.3)
+                                              τ
+
+                                                   17
+
+--- PDF PAGE 18 ---
+Thesumisoverthedistinctswitchscales,andone-sidedvaluesareused.Bothinequalitiesholdfor
+complexcoefficients,includingsimultaneousopeningsandclosings.
+Lemma5.2(Repeated-maskdissipation).Usethemaskedarraysaboveandvariances         σv =αvs,
+whereαisanypermutationof(1 ,11/10,11/10).With  nvdenotingthenormsoftheoriginalarrays,
+                      ∫︂s+ ∫︂∑︂                    (︄∑︂
+                                   Vvdπ0ds≤C             n3v +n (︁n30+n   20(n 1+n   2))︁)︄.            (5.4)
+                       s−   Π0  v                     v
+Proof.Betweenswitchscalesthearraysarefixed,so(4.9)   applies.Itremainstoboundtheenergy
+jumps. Ataswitchτ,freezetheweightsandsetδA(i,j) =Aτ+0  (i,j)−A τ−0  (i,j). Interpolateall
+changedentrieslinearly.Theirmodulistayboundedby|A 0|byconvexity.Forfixedcentersand
+(i,j)let
+
+                X2 =∑︂|A 0(i,m)|2w1(m),         Y        2 =∑︂|A 0(m,j)|2w0(m),
+                        m                                              m
+                H2 =∑︂|A 2(m,i)|2w2(m),         Q       2 =∑︂|A 1(j,m)|2w2(m).
+                        m                                              m
+Thesequantitiesusetheoriginalarrays,andsquarerootsarenonnegative. InR0 = [W0W∗2],
+thechangingentryhasrownormatmost√︁w0(i)  (X +H),columnnormatmost √︁w1(j)Y  ,and
+derivativemodulus√︁w0(i)w     1(j)|δA  (i,j)|.TheadjointentryinR1 = [W1W∗0]insteadhasrowand
+columnbounds√︁w1(j)  (Y +Q)and √︁w0(i)X  . ThestarR2isunchanged. Lemma3.5therefore
+gives
+                    |∆e     0|+|∆e          1|≤C∑︂w0(i)w     1(j)|δA(i,j)|(2XY+HY+QX).          (5.5)
+                                         i,j
+    Themeasureh−2w0(i)w1(j)dπ0isaprobabilitymeasure. Underit,p0,p1areindependent
+normalswithmeansui,ujandvariancesσ0,σ1,whilep2 =−p   0−p   1.AddingGaussianvariances
+gives
+
+                                  Ew   0(m) =hg         2σ0(um−u i),
+                                  Ew   1(m) =hg         2σ1(um−u j),
+                                  Ew   2(m) =hg    σ0+σ1+σ2(um+u i+u j).
+ExtendallarraysbyzerotoZ2.Lemma2.2bounds             EX   2,EY     2,EH    2,EQ    2byconstantmultiplesof,
+respectively,
+           X2∗(i,j) =M      Z(|A   0(i,·)|2)(j),          Y        2∗(i,j) =M      Z(|A   0(·,j)|2)(i),
+           H2∗(i,j) =M      Z(|A   2(·,i)|2)(−i−j),      Q                2∗(i,j) =M      Z(|A   1(j,·)|2)(−i−j).
+Allthesemajorantsareindependentoftheswitchscale. Cauchy–Schwarzundertheprobability
+measurecontrolsthethreeproductsin(5.5)   .Theirsquare-rootmajorantshaveL3(Z2,h2)normsat
+mostCn0,Cn0,Cn2,Cn1.ThisfollowsfromtheL3/2  linemaximalinequality,appliedonslices;the
+changesj↦→−i−jori↦→−i−jarebijectionsontherelevantslices.
+    Integrate(5.5),sumthejumpsusing(5.3),andapplyHölderonthegrid.Theresultis
+                               ∑︂⃓⃓⃓⃓⃓∆∑︂         ⃓⃓⃓⃓⃓≤Cn (︁n30+n   20(n 1+n   2))︁.
+                                          Jv(0,τ)
+                                τ      v
+Finallyintegrate(4.9)    betweenconsecutiveswitches.Theresultingsumisboundedbytheinitial
+energyplusthesumofabsolutejumps,afterdiscardingthenonnegativeterminalenergy.Lemma4.3
+boundstheinitialenergybyC ∑︁vn3v.Thisproves(5.4).
+
+                                                      18
+
+--- PDF PAGE 19 ---
+5.2  Fromtheenergytothesmoothkernel
+ProofofProposition5.1.         Putλ= 11/10andusebasevariances  λsatallvertices.InLemma3.6,
+insertthediagonalmatrixwithentriesks(ui−p v)/gλs(ui−p v)atvertex v. ItisHermitianand
+uniformlybounded:thepolynomialfactorinksisabsorbedbytheextraGaussiandecayrelativeto
+gλs.
+   Forthecostatvertexv,narrowjustitsrowvariancetos.WriteTbv forthebaseGramandTnv
+forthenarrowed-rowGram.Directlyfromthedensities,
+
+                               (R bv)∗DvRbv =√sUnv,   Tnv≤√λTbv.
+
+Invertiblerowscalingpreservesthesupport.Lemma3.2thereforeboundsthebasecostby       CsV nv.
+ThenarrowedvariancesareoneofthepermutationsallowedinLemma5.2.
+   IntegratethemixedtraceinequalityoverbasecentersinΠ    0andoverswithmeasured     s/s.
+Itsrightsideisboundedby(5.4)   . Ontheleft,thedensityateachvertexisnowhks(ui−p v).
+Integrationoverthecenterplaneconvolvesthethreewindows,giving
+
+                     h3∑︂A0(i,j)A     1(j,l)A    2(l,i)   ∑︂   βIε,R(ui+u j +u l).
+                       i,j,l                       chosen at(i,j)
+
+Allsignedintegralshereareabsolutelyconvergentforfixedarraysonthecompactpositivescale
+interval.
+   Iftheoriginalnormsarenonzero,applythisboundtoarraysnormalizedtohavenormsn−1/2  ,1,1.
+Itsrightsideisboundedbyanabsoluteconstant,sincen(n−3/2     +2n−1  )isbounded.Rescalinggives
+C√n∏︁vnv.Thezero-normcaseisimmediate.TheRiemannpassagedescribedinSection2now
+provestheproposition.Thefinitelymanyendpointsarefixedbeforethemeshtendstozero,soits
+scalerestrictioncausesnoloss.
+
+5.3  Thehardendpointerrors
+ThesmoothannulidifferfromthehardHilbertannulibyadifferenceoftwolocalizedoddkernels.
+Werecordtheexactidentitybecausethenexttwosectionsmustestimatetheirsum,ratherthan
+payaconstantseparatelyforeachoftheupto2nendpoints.
+   Put
+                                             ∫︂v
+     ψ=k      1∗k  1∗k  1 =−g  ′′′3,   P(v) = 2        0),   c                       0 =P(∞)= 2g    ′′3(0)̸= 0.
+                                               0ψ(z)dz  (v≥
+ThefunctionPhasasmoothevenextensionandvanishestosecondorderatzero.Forρ>0define
+
+                                     Eρ(t) = P(|t|/ρ)−c                   01{|t|>ρ}
+                                                        t      ,                         (5.6)
+withthecontinuousvaluezeroatt =0.Gaussianscalingandthesubstitution z =|t|/√sin(5.1)
+yield,awayfromendpointvalues,
+                   Iε,R(t) = P(|t|/ε)−P(|t|/R)
+                                        t               =c0t 1{ε<|t|<R}        +E ε(t)−E   R(t).           (5.7)
+Herek1 =−g ′1,soconvolutiongivesψ=−g ′′′3;integratingthisderivativegivesthestatedvalueof
+c0. EachEρisanodddilateofakernelwithGaussiandecayandtwojumps. Thenextsection
+provesafrequency-blockestimatethatcanaccommodatemanysuchjumpswithoutalinearlossin
+theirnumber.
+
+                                                   19
+
+--- PDF PAGE 20 ---
+6 Auniformfrequency-blockestimate
+
+Theroughkernelsarisingfromhardtruncationwillbedecomposedintofrequencyblocks. The
+estimateinthissectionpermitstheircoefficientstodependontheoutputpointandonfrequency.
+Itsdecisivehypothesisisapointwisesquare-sumboundoverscalesandfrequencies;nosumof
+frequencysupremaisrequired.
+    Fixq> 0,let D≥1,andletΞ   Dbeameasurablesubsetof[−2D,2D],equippedwiththe
+measuredγ(ξ)= dξ/D.Thusγ(Ξ               D)≤4.Define
+
+                                     1    d(︁gq(z)e  iξz)︁,   Hξ=ℓξ∗ℓξ∗ℓξ.                (6.1)
+                           ℓξ(z) =D  −dz
+
+Theparametersq,Daresuppressedinthisnotation.Constantsbelowmaydependonq,butnoton
+D.
+Proposition6.1(Frequency-blockestimate).Let      I⊂Z  befiniteandnonempty,andsetLk = 2k.
+LetA0,A1,A2befinitearraysonthelatticeui =ih,withthenormsnvdefinedintheheat-flow
+preliminaries.Supposethatmeasurablecoefficientsµ      ij,k : ΞD→Csatisfy
+                                                   ∫︂
+                          |µij,k(ξ)|≤C 1,   ∑︂
+                                               k∈IΞD|µij,k(ξ)|2 dγ(ξ)≤C              21                 (6.2)
+foreveryoutputindexpair(i,j),withthefirstinequalityholdingalmosteverywhere.If
+
+                                           h2≤qmink∈IL2k16D    2  ,                              (6.3)
+
+then⃓⃓⃓⃓⃓⃓h3∫︂                                                                ⃓⃓⃓⃓⃓⃓≤C(q,C        1)
+          ∑︂∑︂                                                                               2∏︂
+                 A0(i,j)µij,k(ξ)A     1(j,l)A    2(l,i)Dil LkHξ(ui+u j +u l) dγ(ξ)              nv.(6.4)
+      ΞD k∈Ii,j,l                                                                           v=0
+
+    TherearetworeasonsforrefiningoneGaussianvarianceintheproof.First,awindowoscillating
+atfrequencyDbecomesanaverageofscoreinsertionsatvariancecomparabletoD−2s.Second,the
+boundaryenergyproducedbychangingtheoutputarraycanstillbeestimateduniformlyatthis
+smallvariance.Moreprecisely,therefinedrowscoreswillbecontrolledbytheheatidentitythrough
+single-edgeenergiesandthechangesofstarenergyatslabboundaries.Suchachangecontainsthe
+squareofthechangingedgenormtimesthenormoftheunchangededge. Weisolateauniform
+estimateforthatmixedtermbeforebeginningthemainproof.
+Lemma6.2(Auniformmixedboundaryestimate).Fixdistinctvertices         v,w∈{0,1},sothat
+{v,w}={0,1}. Lettheedgejoiningv,whavearrayB,indexedintheoriginalendpointorder
+(0,1), andlettheedgejoining  v,2havearray E, indexedintheorder(  v,2). Usevariances
+(σv,σw,σ2)=(θs,s,s),where0 <θ≤1/16and  h2≤θs.Writed  νs(d)=g(1−θ)s       (d) dd.Thereisa
+nonnegativearrayH E(i,j),independentofs,θ,suchthat
+                  ∫︂∫︂
+                                2HS∥Cv,2∥HS dπd dνs(d)≤C   ∑︂h2|B(i,j)|  2HE(i,j),          (6.5)
+                   R  Πd∥Cv,w∥                                 i,j
+                  ⎛                 ⎞1/3      ⎛                  ⎞1/3
+                  ⎝∑︂h2HE(i,j)   3⎠      ≤C   ⎝∑︂h2|E(m,l)| 3⎠        .                       (6.6)
+                     i,j                        m,l
+Here(i,j)arealwaysintheoriginalorderoftheendpointsofedge0;    iv,iwdenotethesametwo
+indicesintheorder(v,w).TheinputarraysB,EareextendedbyzerotoZ                           2.
+
+                                                   20
+
+--- PDF PAGE 21 ---
+Proof.ExpandthesquareofthefirstHilbert–Schmidtnorm.Foreachpair(i,j),themeasure
+                                      h−2wv(iv)ww(iw) dπd dνs(d)
+
+isaprobabilitymeasure. Indeed,withpv,pwasthefreecoordinatesonΠ  d,itmakespv,pw,d
+independentnormalvariableswithrespectivemeansuiv,uiw,0andvariances θs,s,(1−θ)s.The
+remainingcenterisp   2 =d−p    v−p w.
+   Underthisprobabilitymeasure,theexpectationofh−2wv(m)w2(l)isabivariateGaussian
+density,evaluatedat(u  m,ul).Itsmeanis(u  iv,−u  iv−u iw),anditscovariancematrixis
+                                               (︄2θ−θ     )︄
+                                              s  −θ3        .
+
+
+CallthiscovariancematrixΣ.TheboundsΣ      ≤4sdiag (θ,1)and    detΣ =θ(6−θ)s2show,directly
+fromtheGaussiandensityformula,that
+
+                      E[w v(m)w       2(l)]≤Ch         2gC′θs(um−u iv)gC′s(ul+u iv +u iw),             (6.7)
+
+whereCisabsoluteandonemaytakeC    ′= 4.
+   LetM(1)Z andM(2)Z bethediscretelinemaximaloperatorsinthetwocoordinates.ByLemma2.2,
+wecantake
+                             HE(i,j)   2 =C (︁M(1)Z M(2)Z|E|2)︁(iv,−i  v−i w).                   (6.8)
+Infact,(6.7)   andh2≤θsshowthatE∥C  v,2∥2HS≤HE(i,j)2.Cauchy–Schwarzunderthisprobability
+measurenowproves(6.5)   .Themap(  i,j)↦→(iv,−i  v−i w)isabijectionof  Z2.Theℓ3/2  boundsfor
+thetwolinemaximaloperators,appliedto|E|2,prove(6.6).
+
+ProofofProposition6.1.         Wemaydiscardacommonnullsetoffrequenciessothatallpointwise
+boundsin(6.2)hold.Set
+
+                      Bξ0,k (i,j) =A       0(i,j)µij,k(ξ),   a  k =qL   2k,   θ=      116D    2.             (6.9)
+
+Foreachξ,useBξ0,k ontheopenslab2  ak<s<3ak,andusethezeroarrayonedge0outsidethese
+slabs. Theslabsarepairwisedisjointbecauseak+1  = 4ak. TheothertwoarraysremainA1,A2
+throughout.Allscaleintegralsbelowareover
+
+                                      [s−,s+] =[mink∈Iak,4maxk∈Iak].
+
+Themeshhypothesisgivesh   2≤θsonthisentireinterval.
+   Wefirstturntheoscillatorywindowsintorefinedrowscores.Wethenboundtheintegratedrow
+scoresbytelescopingthestarenergies,usingLemma6.2ateveryslabboundary.
+
+Refiningarowvariance.Fixaslab,put    L=Lk,a=ak,andω=ξ/L.Thewindowateach
+vertexis                                                    d  (︁ga(u)e  iωu)︁.                   (6.10)
+                               fξ,k(u) :=Dil Lℓξ(u) =  LD  du
+
+Initiallygiveallthreeverticesthevariances.Thediagonalinsertionwithentriesfξ,k(ui−p v)/gs(ui−
+pv)hasoperatornormatmost C(q),uniformlyon2  a<s< 3a. Indeed,|Lω/D|≤2,andthe
+remainingfactorisboundedusingGaussiandecayinga/gs. Splitthisdiagonalintoitsrealand
+
+
+                                                    21
+
+--- PDF PAGE 22 ---
+imaginarypartsbeforeapplyingLemma3.6. TheresultingeighttermsinvolveonlyHermitian
+insertionsofuniformlyboundednorm.
+    ConsiderthecostbelongingtotherowstarRv. Replaceitsrowvariancesbyb′=θs,leave
+bothcolumnvariancesequaltos,andshifttherowcenterfrompvtopv +d.Denotetherefined
+GramandscoreinsertionbyT dv andU   dv.AdditionofGaussianvariancesgives
+                                   ∫︂
+                             Tv =
+                                     RTdv dνs(d),       dν  s(d) =g   s−b ′(d) dd.                (6.11)
+AlltheseGramshaveacommonsupport: changingastrictlypositiverowdensityamountsto
+invertiblerowscalingandleavesthekerneloftherowmatrixunchanged.
+    TorepresenttheinsertedGraminthesameway,putω′=aω/(a−b ′).Sinceb′<a/2,completing
+thesquaregivestheexactidentity
+                                        (︄ω2ab′)︄∫︂
+                       ga(u)e  iωu= exp   2(a−b  ′)
+                                                        Rgb′(u−d)e     iω′dga−b ′(d) dd.           (6.12)
+
+TheexponentialprefactorisatmostC(q),becauseω                   2b′≤C(q).Also
+
+                                ga−b ′(d)≤Cg    s−b ′(d),     LD≤C(q)  √θs.
+
+Differentiate(6.12)    inu.ThederivativeofthefirstGaussiansuppliesthenegativerefinedrowscore
+−(u−d    )/b′.Consequently,foreithertherealortheimaginarydiagonalinsertion,itsinsertedGram
+Kvhastheform
+                             ∫︂
+                      Kv =
+                              Rα(d)U    dv dνs(d),   α(d) = Rec(d) orImc(d),
+wherethescalarcoefficientisexplicitly
+                                                (︄ω2ab′)︄
+                               c(d) =− LD exp     2(a−b  ′)   eiω′dga−b ′(d)gs−b ′(d) .
+
+
+Theprecedingboundsgive|α(d)|≤C(q)√θs. Theaveragedmatricesareintegrable,sincethe
+finite-arrayGaussianweightsdominatethepolynomialscorefactors.By(6.11)    ,Lemma3.4,and
+thequadratichomogeneityofb Tinitssecondargument,
+                                            ∫︂
+                       bTv(Kv)≤C(q)θs
+                                             RVv(p 0,...,pv +d,...,p2;s) dνs(d).            (6.13)
+Thecostontherightusesvariances
+
+                                     σv =θs,   σw =s (w̸=v).                       (6.14)
+
+Thusthefactorθintherefinedscoreisgainedatexactlythescaleneededtoaccommodatethe
+oscillation.
+
+Integratedrefinedscores.Fix     vanduse(6.14)    fortherestofthispartoftheproof.Allstars,
+energies,andcostsrefertotheslab-dependentedge0justdefined.Dependenceon    ξissuppressed
+untilfrequencyintegrationisneeded.Foracenter-dependentcostQ,write
+                           ∫︂∫︂                                       ∫︂
+                   ˜︁Q(s) =
+                            R   ΠdQ(p,s) dπ  d dνs(d),     ˜︁Jv(s) =    RJv(d,s) dν s(d).
+
+                                                     22
+
+--- PDF PAGE 23 ---
+Oneachopenintervalwherethearraysarefixed,theheatidentities(4.6)give
+
+                                     2∂s˜︁Jv = 3˜︁Zv−θ˜︁Vv−∑︂˜︁Yv,w.                       (6.15)
+                                                            w̸=v
+
+Herethecoefficient3hasausefulinterpretation.Theoriginalplanesecondderivativehascoefficient
+2+θ.Differentiatingνs,applyingitsheatequation,andintegratingtwicebypartsadds1  −θ.The
+secondheatidentityidentifiestheaveragedplanesecondderivativewith˜︁Zv.
+    Forfixedarraysonacompactpositivescaleinterval,Lemma4.1boundstheplaneintegralsof
+theenergies,costs,andrelevantabsolutederivativesbypolynomialsin|d|.Thedensityνsandits
+derivativeshaveGaussiandecay.Theseboundsjustifydifferentiationundertheintegralandthe
+twointegrationsbypartsind,andgivetherequiredone-sidedlimitsatslabboundaries. Their
+constantsmaydependonthemeshandθ;theyjustifytheidentitiesanddonotentertheestimates.
+    ThemetricCauchy–Schwarzinequalitygives2Z v≤∑︁w̸=v  Yv,w.Hence
+                                      θ˜︁Vv≤−2∂s˜︁Jv + 1   ∑︂˜︁Yv,w.                        (6.16)
+                                                         2 w̸=v
+
+Thecolumncostsinthisinequalitycanbepaidforbyindividualedges.Indeed,Sv≥C v,wC∗v,w,so
+theordercomparisonofLemma3.2yields
+
+                                Yv,w≤b Cv,wC∗v,w(Cv,wNwC∗v,w) =:Y  ev,w.                    (6.17)
+
+Theinsertedmatrixissupportedonthesingle-edgeGram,sothiscomparisonalsoappliesifthe
+largerstarGramhasalargersupport.Definetheintegratedsingle-edgeenergy
+                                            ∫︂∫︂
+                                 Jev,w(s) =
+                                               R2Φ(C  v,wC∗v,w) dp v dp w.
+TheintegralofYev,woverΠ disindependentofd,becauseonlythetwoendpointcentersoccur.With
+justthisedgepresent,theheatidentitiesgive
+                                                 ∫︂∫︂
+                                −2∂sJev,w(s)≥
+                                                   R2Yev,w(p,s) dp  v dp w.                    (6.18)
+Thecoefficientofthiscolumncostis1;theremainingrowcostisnonnegative.Thustheestimateis
+independentofthesmallvarianceratioθ.
+    Iftheedgeisunchangedthroughout[       s−,s+],integrationof (6.18)     andLemma4.4boundits
+totalcostbyC(n31+n32).Ifitisedge0,applythesameargumentseparatelyonitsslabs.Theresult
+isboundedby                                    ∑︂
+                                         C∑︂h2|Bξ0,k (i,j)|3.
+                                           k∈Ii,j
+Afterintegrationinξ,thisisatmostC(C                    1)n 30,since
+             ∑︂∫︂                                         ∫︂
+
+                  ΞD|Bξ0,k (i,j)|3 dγ≤C        1|A 0(i,j)|3∑︂ΞD|µij,k(ξ)|2 dγ≤C        31|A 0(i,j)|3.    (6.19)
+              k                                        k
+Wehavethereforecontrolledallcolumntermsin(6.16)    .Theremainingissueistheboundaryenergy
+ofthestars.
+
+
+
+
+                                                    23
+
+--- PDF PAGE 24 ---
+Summingtheslabboundaries.Beforethefirstslab,edge0iszero.ByLemma4.3,                 ˜︁Jv(s−)≤
+C(n31+n32).Thestaratvertex2hasnojumps.For     v∈{0,1},letwbetheothervertexofedge0.
+Ateitherboundaryofaslab,writeCsw =Cv,wfortheslab-sideweightedblockandCfix =Cv,2 for
+theunchangedweightedblock.Theabsolutechangeinthepointwisestarenergyisatmost
+
+                                            3HS+∥C     sw∥2HS∥C  fix∥)︁.                      (6.20)
+                                   C(︁∥C  sw∥                     HS
+
+Toverifythisbound,integratethederivativeofΦ( CfixC∗fix+tCswC∗sw)for0  <t≤1.Itssupportis
+fixedthere,andthederivativeis
+                               3    (C fixC∗                         )︁
+                               2tr(︁       fix+tC   swC∗sw)1/2 CswC∗sw
+                                     ≤3(︁∥C  fix∥              )︁∥C  sw∥2HS.
+                                       2        HS+∥C     sw∥HS
+
+Continuitygivestheendpointatt = 0.Removingtheedgehasthesameabsolutechangeasadding
+it.
+   Theintegratedcubictermin(6.20)     isboundedbythecubeofthenormofBξ0,k,byLemma4.3.
+Summingbothboundariesofeveryslabandusing(6.19)    givesC(C1)n30afterfrequencyintegration.
+   Forthemixedterm,letA(v,2) bethefixedunweightedarrayontheedgejoiningv,2,indexedin
+thatorder.ApplyLemma6.2withthisarrayanddenoteitsmajorantby    Hv.Itisindependentof
+k,ξ,s,anditscubenormisatmostC(n1+n2).Bothboundariestogetherconsequentlycontribute
+atmostaconstanttimes
+                             ∑︂                           ∫︂
+                                 h2|A 0(i,j)|2Hv(i,j) ∑︂
+                              i,j                      k   ΞD|µij,k(ξ)|2 dγ
+                                             ≤C(C        1)n 20(n 1+n   2),
+
+by(6.2)    andHölder’sinequality. Thisisthepointatwhichaveragingcoefficientsquaresover
+frequencyisessential.Takingaseparatesupremuminfrequencyforeachscalewouldnotgivethis
+bound.
+   Integrate(6.16)    ontheintervalsbetweenconsecutiveboundariesandtelescope.Thefinalenergy
+isnonnegativeandmaybediscarded.Theinitialenergyandtheabsolutejumpsjustestimated,
+togetherwiththesingle-edgecosts,give
+                               ∫︂∫︂s+                                2∑︂
+                                                                       n3j.                   (6.21)
+                                ΞD  s−θ˜︁Vv(s) dsdγ(ξ)≤C(C                            1)j=0
+
+Hereweabsorbedn20(n1+n2)byYoung’sinequality.Valuesatthefinitelymanyboundariesare
+immaterial.Allintegrandsaremeasurableinξ:thearraysaremeasurable,andthefinite-matrix
+energiesandsupportedquadraticformsareBorelfunctionsoftheirentries.Thelattercanalsobe
+obtainedaslimitsofpositive-definiteregularizations.Thuseverynonnegativefrequencyintegration
+aboveisjustifiedbyTonelli’sTheorem,withoutanyregularityassumptiononthecoefficientfunctions
+beyondmeasurability.
+
+Recoveringthefrequency-blockform.Returntotheequal-variancestarsandapplyLemma3.6
+totherealandimaginarypartsofthethreewindowinsertions. Integratetheboundoverbase
+centersonΠ     0.Shiftingtherowcenterin(6.13)    mapsthisplanetoΠ  d;usingthetwocolumncenters
+asfreecoordinatesshowsthatitsJacobianis1. Theintegratedcostatvertex  visthereforeat
+
+
+                                                   24
+
+--- PDF PAGE 25 ---
+mostC(q)θs˜︁Vv(s).Integrateovereveryslabwithd   s/s,andthenoverΞ Dwithd  γ.Thesumofthe
+resultingboundsiscontrolledby(6.21).
+    Ontheotherside,multiplyingthethreeweightedwindowsinthetraceandintegratingthe
+centersgivesexactly
+
+                         h3∑︂Bξ0,k (i,j)A     1(j,l)A    2(l,i)Dil LkHξ(ui+u j +u l).
+                            i,j,l
+ThisistheconvolutionidentityonΠ     0:thethreeargumentsofthewindowssumtoui +uj +ul.
+Theexpressionisindependentofswithinitsslab,whoselogarithmiclengthis∫︁3a k
+                                                                                      2a k  ds/s=log(3/2).
+AllsignedcenterintegrationsareabsolutelyconvergentbyGaussiandecay.Wehaveproved(6.4)
+withitsrightsidereplacedbyC(q,C       1)∑︁vn3v.
+    Finally,ifallnvarenonzero,applythisestimatetoAv/nv.Thecoefficientsandmeshhypothesis
+areunchanged,andtrilinearitygivestheproductboundclaimedintheProposition.Ifanynormis
+zero,theformiszero.
+
+Corollary6.3(Continuousfrequency-blockestimate).Let         q,D,ΞD,I beasinProposition6.1.
+Supposethatµa,b,k(ξ)isconstantin( a,b)oneverycellofonefiniterectangularpartition,independent
+ofξandcommontoallk.Supposeitsvaluesonthesecellsareboundedmeasurablefunctionsofξ,
+andthat                                             ∫︂
+                          |µa,b,k(ξ)|≤C 1,   ∑︂
+                                                  k   ΞD|µa,b,k(ξ)|2 dγ(ξ)≤C              21.              (6.22)
+Define                                   ∫︂∑︂
+                              Ka,b(t) =          µa,b,k(ξ)Dil LkHξ(t) dγ(ξ).                 (6.23)
+                                          ΞD k∈I
+
+Then,forcomplexG     v∈L   3(R 2),
+
+                                                                 2∏︂
+                                 |ΛK(G 0,G1,G2)|≤C(q,C  1)          ∥Gv∥3.                    (6.24)
+                                                                v=0
+Proof.FirsttakesmoothcompactlysupportedGv.Withinanyfixedstepchoice,thekernelin(6.23)
+iscontinuousint:thefrequencyblockisbounded,thecoefficientsareboundedandmeasurable,and
+theGaussianformulassupplyacommonmajorantfordominatedconvergence.Afterperforming
+thefrequencyintegration,thetrilinearintegralisthereforethelimitofitslatticeRiemannsums.
+Thefinitelymanyrectangularstepboundarieshavemeasurezero.Themeshcondition(6.3)   holds
+forallsufficientlyfinelattices,andthediscretenormsconvergeto∥Gv∥3.Proposition6.1proves
+(6.24)fortheseinputs.
+    TopasstogeneralL3inputs,notethatforthefixedfiniteblockandscalesetthereisanintegrable
+majorantk∗(t)with|Ka,b(t)|≤k∗(t),uniformlyin( a,b).Onemaytakeaconstanttimesthefinite
+sumofthedilatesofsup ξ∈Ξ    D|Hξ|,whichhasGaussiandecay.Foreveryintegrablenonnegativek,
+                ∫︂∫︂∫︂                                                           ∏︂
+                      |G 0(a,b)G     1(b,c)G     2(c,a)|k(a+b+c) dadbdc≤∥k∥                               1∥Gv∥3.
+                                                                                  v
+Indeed,sett =a+b+c,applyHölder’sinequalityin(a,b)forfixed t,andusethedeterminant-one
+changesofvariablesfortheothertwoedgefunctions. Thusthedefiningintegralisabsolutely
+convergentandcontinuousinthethreeL3inputs.Smoothapproximationcompletestheproof.The
+finalconstantcomesfromthePropositionandremainsindependentofD,thenumberofscales,and
+theparticularstepchoices.
+
+                                                     25
+
+--- PDF PAGE 26 ---
+7 Roughkernelsandtheannularendpointerrors
+
+Thecomparison(5.7)    leavesoneerrorkernelateachannularendpoint.Estimatingthesekernels
+separatelywouldcostthenumberofendpoints.Weinsteadcollectendpointsatcomparablescales.
+DisjointnessoftheannuligivesaGaussianboundforeachresultingkernel,independentofthe
+numberofitsdiscontinuities.Thefrequencyestimatefromtheprecedingsectionthencontrolsthe
+groupswithfewdiscontinuities;theremaininggroupsarefewenoughtoestimatepointwise.
+
+7.1  ApointwiseGaussianestimate
+Foralocallyintegrablefunctionon R2,letMxandMydenotethecenteredHardy–Littlewood
+maximaloperatorsinthefirstandsecondcoordinates.ForF,G∈L          3(R 2),put
+                      MF,G(x,y)= (︁Mx(|F|5/2  )(x,y) )︁2/5 (︁My(|G|5/2  )(x,y) )︁2/5 .             (7.1)
+
+Theone-dimensionalmaximalinequalityonL    6/5 ,followedbyHölder’sinequalityonR 2,gives
+
+                                       ∥MF,G∥3/2 ≤C∥F∥     3∥G∥3.                          (7.2)
+
+Lemma7.1(Gaussianenvelope).Supposethat    c> 0andthatameasurablekernel f satisfies
+|f(z)|≤e −cz    2w(z),wherew≥0and∥w∥                          5≤δ.Then,foreveryL>0,
+                      ∫︂
+                                      Dil          Lf(t)|dt≤C       cδMF,G(x,y)             (7.3)
+                       R|F(x+t,y)G(x,y+t)||
+
+ateverypointwheretherightsideisfinite.Inparticular,abound|f (z)|≤Ae−cz    2gives(7.3)   with
+CcδreplacedbyC  cA.
+
+Proof.Aftersettingt=Lz,applyHölder’sinequalitywithexponents5/2,5/2,5to
+
+                      |F(x+Lz,y)|e    −cz    2/2, |G(x,y+Lz)|e      −cz    2/2,   w(z).
+Thefirstresultingintegralis∫︁|F (x+Lz,y)|5/2 e−5cz      2/4  dz.SplittingRinto|z|≤1and2    j<|z|≤
+2j+1 boundsitbyCcMx(|F|5/2  )(x,y),uniformlyin L.Thesecondintegralhasthecorresponding
+boundwithGandMy. Thisprovesthefirstassertion. Forthelastassertion,retainhalfthe
+Gaussiandecayinw,whoseL                   5normisthenatmostC    cA.
+
+    Wewillusethisestimateinsidethetriangularform. RecallthatG1(b,c) =F(b+c,−b     )and
+G2(c,a) =G(−a,c   +a),andthatthesechangesofcoordinatespreservethe L3norms. With
+t =a+b+c,theabsolutevalueofthec-integralisboundedbyCcδMF,G(−a,−b        ).Consequently,
+integratingagainst|G 0(a,b)|costsatmostCcδ∏︁2v=0∥Gv∥3.Thekernel,itsdilation,anditsenvelope
+maydependon(a,b):thesameassertionholdswhenevertheboundforδisuniform.
+
+7.2  Familieswithacontrollednumberofjumps
+Thenextpropositionturnsthefrequencyestimateintoanestimateforpiecewisesmoothkernels.
+Thepointwiseboundonthenumberofjumpsatonescaleandtheboundontheirtotalnumber
+playdifferentroles:theywillgive,respectively,theuniformboundandthesquare-sumboundfor
+thefrequencycoefficients.
+
+
+
+
+                                                    26
+
+--- PDF PAGE 27 ---
+Proposition7.2(Roughkernelfamilies).Fix        A≥1and c>0.Let n≥1,andletI⊂Z  befinite.
+Fork∈I,letKa,b,k:R→C    andma,b,k∈{0,1,2,...}befinite-valuedstepchoicesin( a,b),with
+Ka,b,k =0whenever ma,b,k =0.When ma,b,k≥1,supposethat Ka,b,kisC1outsideasetofatmost
+Ama,b,kpointsandthat,outsidethatset,
+
+                                   |Ka,b,k(z)|+|K   ′a,b,k(z)|≤Ae−cz    2.                       (7.4)
+
+Assumealsothat
+             ∫︂
+                                                             ma,b,k≤An, m a,b,k≤A√n.    (7.5)
+               RzℓKa,b,k(z) dz= 0   (ℓ= 0,1,2),          ∑︂k∈I
+
+For
+                                      Ka,b(t) = ∑︂Dil2kKa,b,k(t),
+                                                 k∈I
+andsmoothcompactlysupportedG  0,G1,G2,onehas
+
+                                                                      2∏︂
+                           |ΛK(G 0,G1,G2)|≤CA,c√nlog(2+n)                ∥Gv∥3.                (7.6)
+                                                                     v=0
+Proof.WefirstobtainFourierestimatesforasinglekernelK =Ka,b,k;writem =ma,b,k. All
+constantsbelowdependonlyonA,c.Thereisnothingtoproveform =0,sosupposethat m≥1.
+
+AGaussian-weightedprimitive.Weseekarepresentation K =(g3qf)′′′forasuitablefixed
+q:theFouriermodesoffthenproduceexactlythedifferentiatedGaussianwindowscontrolledby
+Corollary6.3.Define                            ∫︂z
+                                    U(z) =      12  (z−u)          2K(u) du.
+                                                −∞
+Thethreemomentconditionsimply,forj= 0,1,2,
+                                                    ∫︂∞
+                              U(j)  (z) =−      1(2−j)!
+                                                     z   (z−u)          2−j K(u) du.
+Usethedefiningintegralwhenz≤0andthistailintegralwhen z≥0. Gaussiantailestimates
+give|U (j)  (z)|≤Ce−c   1z2forj = 0,1,2,with c1>0fixed.Moreover, U′′′=Kasaweakderivative.
+Chooseq>0sufficientlylarge,dependingonlyonA,c,andput
+
+                                              f(z)=   U(z)g3q (z) .
+
+Thequotientandproductrules,withaslightreductionintheGaussianexponent,give
+
+                                    |f (j)  (z)|≤Ce−c   2z2   (0≤j≤3).                       (7.7)
+
+Hereandbelowderivativesoforderthreeareweakderivatives,ortheiralmost-everywhererepresen-
+tatives.Thefunctionsf,f′,f′′arecontinuous.Betweentheexceptionalpoints,thesamecalculation
+usingK′boundstheclassicalderivativeoff′′′byCe−c   2z2.ItsjumpsareboundedbyC,andthere
+areatmostAmofthem.Thus,for0≤j≤3,
+
+                                   ∥f  (j)∥∞≤C,      Var(f           (j)  )≤Cm.                     (7.8)
+
+Thesameboundsholdwithzerorightsideswhenm= 0.
+
+                                                    27
+
+--- PDF PAGE 28 ---
+Fourierbounds.Usethenormalization     ˆ︁f(ξ)= (2π)   −1 ∫︁f(z)e  −iξz dz.Let
+
+                 Ξ1 ={ξ:|ξ|<2},      Ξ          D ={ξ:D≤|ξ|<2D}(D= 2,4,8,...).
+
+Weclaimthat                                           ∫︂
+                          sup               D,                               D.               (7.9)
+                         ξ∈Ξ    D|D 3ˆ︁f(ξ)|≤Cm        ΞD|D 3ˆ︁f(ξ)|2 dξ≤Cm
+ForD≥2,thedistributionalderivativeof f′′′isafinitemeasureoftotalvariationatmostCm.
+TakingitsFouriertransformgives|ξ|4|ˆ︁f(ξ)|≤Cm,provingthefirstbound.Forthesecond,the
+translationinequalityforfunctionsofboundedvariationgives
+
+                                     ∥f′′′(·+D −1  )−f ′′′∥1≤Cm
+                                                                 D.
+Indeed,integratetheabsolutederivativemeasureovereachtraversedintervalandapplyFubini’s
+theorem.Bytheuniformsupremumboundin(7.8)   ,thesquaredL2normofthisdifferenceisalso
+atmostCm/D. Plancherel’sidentityandˆ︂f′′′(ξ) = (iξ)3ˆ︁f(ξ)nowyieldthesecondbound,since
+|eiξ/D−1|≥2sin(1/2)onΞ       D.WhenD= 1,bothassertionsfollowfrom(7.7)andm≥1.
+
+Afinitefrequencycutoff.Choose     χ∈C ∞c  (R)supportedon[ −2,2]andequaltooneon[ −1,1],
+andset
+                    P∗= (2+n)      8,   ˆ︂f∗(ξ) = ˆ︁f(ξ)χ(ξ/P  ∗),   K∗= (g 3qf∗)′′′.
+Weshowthatthisreplacementhasasummablepointwiseerror.LetηbetheSchwartzconvolution
+kernelofthemultiplierχ,normalizedsothat∫︁η= 1,andlet ηP∗(z) =P∗η(P∗z).For0 ≤j≤3,
+f(j)∗=f    (j)∗ηP∗.Thetranslationinequalitygives
+                                                      ∫︂
+                          ∥f  (j)−f    (j)∗∥1≤Var(f          (j)  )|u||ηP∗(u)|du≤  CmP∗.
+
+Theirsupremumnormsareuniformlybounded,by(7.8)    andtheL1normofη. Interpolation
+thereforegives
+                                     ∥f  (j)−f    (j)∗∥5≤C(m/P  ∗)1/5 .
+Sinceeveryderivativeofg3q isboundedbyaconstanttimesaslightlywiderGaussian,theproduct
+ruleshowsthat
+                       |K(z)−K    ∗(z)|≤e−c   3z2w(z), ∥w∥         5≤C(m/P  ∗)1/5 ,             (7.10)
+foranonnegativew.Thiscalculationalsoholdsforweakderivatives,sonoadditionaltermsoccur
+atthejumpsofK.
+   ApplythisconstructionseparatelytoeveryKa,b,k. By(7.5)   ,(ma,b,k/P∗)1/5 ≤C/n  whenever
+ma,b,k̸=0,andateach( a,b)thereareatmost Ansuchindices.Lemma7.1boundsthesumofall
+replacementerrorspointwisebyCM F,G(−a,−b        )afterintegrationin c.TheircontributiontoΛ Kis
+consequentlyatmostC   ∏︁v∥Gv∥3.
+
+Applyingthefrequencyestimate.Itremainstoestimatethekernels       K∗.ForeachdyadicD
+usethekernelsfromCorollary6.3,namely
+
+                                      1    d(︁gq(z)e  iξz)︁,   Hξ=ℓξ∗ℓξ∗ℓξ.
+                           ℓξ(z) =D  −dz
+
+
+
+                                                    28
+
+--- PDF PAGE 29 ---
+Gaussianconvolutionandmodulationgive
+
+                                       (g 3q (z)e  iξz)′′′=D   3Hξ(z).
+
+FortheblockΞ D,thecontributiontoK a,b,k,∗istherefore
+                      ∫︂
+
+                       ΞDca,b,k(ξ)H  ξ(z) dξ,   c a,b,k(ξ) =D       3ˆ︁fa,b,k(ξ)χ(ξ/P ∗).
+Setµ a,b,k(ξ) =Dc   a,b,k(ξ)/ √n.Thetwoestimatesin(7.9)giveprecisely
+                                                  ∫︂                           ma,b,k
+              |µa,b,k(ξ)|≤Cma,b,k√n ≤C,    ∑︂                      D≤C ∑︂n ≤C.
+                                                k   ΞD|µa,b,k(ξ)|2 dξ       k
+
+Alltransformationswereappliedseparatelytofinitelymanykernelvalues.Thecoefficientsµa,b,k
+thereforeremainstepchoicesonacommonfiniterectangularrefinementoftheoriginalpartitions.
+Theblockkernelis√n∫︁ΞDµa,b,k(ξ)Hξdξ/D.ThusCorollary6.3,withmeasured             ξ/D,boundsthis
+blockbyC√n∏︁v∥Gv∥3.OnlyO(log(2+n))blocksmeetthesupportofthecutoff.Summingtheir
+boundsandaddingthereplacementerrorproves(7.6).
+
+7.3  Removingthefirstmomentofanoddkernel
+Theendpointkernelsareoddbutneednothavevanishingfirstmoment.Ashortdilationidentity
+reducesthemtotheprecedingproposition.
+Corollary7.3(Oddkernelfamilies).Proposition7.2remainsvalidifthethreemomentconditions
+in(7.5)arereplacedbytheassumptionthateveryK          a,b,kisoddalmosteverywhere.
+Proof.Chooseareal,smooth,compactlysupportedoddfunctionφwith       ∫︁zφ(z) dz= 1.Put
+                                                ∫︂
+                                       ua,b,k =    zKa,b,k(z) dz.
+
+Thesecoefficientsareuniformlyboundedandvanishwhenma,b,k =0.Thekernels Ka,b,k−u a,b,kφ
+satisfyallthreemomentconditionsandtheotherhypothesesofProposition7.2,withenlargedfixed
+constantsandunchangedcounts.Itremainstoboundthesubtractedterms.
+   DefineΨ=    φ−2−1  Dil2φ.Oddnessgivesitszerothandsecondmoments,anditsfirstmoment
+is1−2  −1·2 = 0.ForeveryintegerJ≥1,
+
+                                        J−1∑︂
+                             Dil2kφ=        2−j   Dil2k+j    Ψ+2−J   Dil2k+J φ.
+                                        j=0
+Foreachfixedj,applyProposition7.2totheshiftedscales       k +jwithkernelsua,b,kΨandthe
+sameshiftedcountsma,b,k.Theconstantsareindependentofj,andtheoutercoefficients2−j  are
+summable.TheremaindercontributesatmostC2−J n∏︁v∥Gv∥3byLemma7.1,sincethereareat
+mostAnnonzerocountsatanyoutputpoint.LettingJ→∞provestheclaim.
+
+7.4  Groupingtheendpointerrors
+Wenowverifythattheerrorsin(5.7)havethestructurejustproved.Recall
+                        )−c                   01{|           ∫︂v
+              Eρ(t) = P(|t|/ρ          t|>ρ}
+                                  t      ,   P(v) = 2          0ψ(u) du,   ψ=−g     ′′′3.
+
+Wetakethecontinuousextensionatt= 0;valuesatthejumppointsdonotaffectanyintegral.
+
+                                                   29
+
+--- PDF PAGE 30 ---
+Proposition7.4(Endpointerrors).Ateach(        a,b),chooseatmost npairwisedisjointopenradius
+intervals(     εj,Rj)with0   <εj<Rj<∞,andcomplexcoefficientsβjwith|βj|≤1.Supposethat
+thesechoicesformafinite-valuedstepfunctionof(a,b).Thenthekernel
+
+                                   Ea,b(t) = ∑︂βj(︁Eεj(t)−E   Rj(t) )︁
+                                              j
+
+satisfies
+                                                                   2∏︂
+                            |ΛE(G 0,G1,G2)|≤C√nlog(2+n)               ∥Gv∥3                  (7.11)
+                                                                  v=0
+forsmoothcompactlysupportedinputs.
+
+Proof.Placeeachendpointρintheuniquehalf-opendyadicinterval[ Lk,2Lk),where Lk = 2k.
+Letma,b,kcounttheseendpoints,withmultiplicity,andcollecttheircontributionsinto DilLkKa,b,k.
+ThusK a,b,kisalinearcombinationof
+
+                            eα(z) = P(|z|/α)−c                    01{|z|>α}
+                                               z      ,      1≤α<2,                 (7.12)
+withcoefficientβjatalowerendpointand−βjatitsupperendpoint. Everykernelisodd,its
+possiblejumppointsarethe±α,and
+                                            ∑︂
+                                                ma,b,k≤2n.                             (7.13)
+                                             k
+   Theimportantassertionistheuniformbound
+
+                                   |Ka,b,k(z)|+|K   ′a,b,k(z)|≤Ce−cz    2                       (7.14)
+
+awayfromatmost2   ma,b,kpoints,withconstantsindependentofma,b,k.Fix(  a,b)and k.Pairthe
+twoendpointsofeveryannuluswhoseendpointsbothliein[ Lk,2Lk).Afterscaling,itscontribution
+isβj(eαj−e γj)with1≤α     j<γj<2.Theintervals(α    j,γj)aredisjoint,so
+                                           ∑︂(γj−αj)≤1.                             (7.15)
+
+                                            j
+Thereareatmosttwounpairedendpointcontributions.Theirintervalsmustsatisfy,respectively,
+
+                        εj<Lk≤R j<2L  k,   or L  k≤εj<2L  k≤R j.
+
+Disjointnessallowsatmostoneintervalofeachtype.Anintervalwithεj<LkandRj≥2Lkhas
+noendpointinthisgroup.Figure1illustratesthedecomposition.
+   For|z|≤3,firstconsiderthesmoothterm sα(z)=P(|z|/α )/zin(7.12)    .ThefunctionPhasa
+smoothevenextensionandvanishesquadraticallyatzero.Hencesαextendssmoothlyacrossz = 0,
+and                                    (︁|∂αsα(z)|
+                                  sup         +|∂   z∂αsα(z)|)︁<∞.
+                                 |z|≤3
+                                 1≤α≤2
+Thefundamentaltheoremofcalculusinα,followedby(7.15)    ,boundsthesumofthepairedsmooth
+termsandtheirz-derivativesindependentlyoftheirnumber. Forthehardterms,thepaired
+differenceis                               (︁                    )︁.
+                                      −c0z  1{|z|>α   j}−1 {|z|>γ  j}
+
+                                                   30
+
+--- PDF PAGE 31 ---
+               Figure1:Endpointgroupinginsideonedyadicinterval.Intervalswithbothendpointsinthegroup
+               contributedifferences;theirtotallengthisatmostLk.Onlyintervalsreachingaboundaryofthe
+               dyadicintervalcanleaveunpairedendpoints.Thepictureisschematic.
+
+
+               Awayfromendpoints,atmostonesuchdifferenceisnonzeroatanyfixed|z|,becausetheintervals
+               (αj,γj)aredisjoint. Onitssupport|z|≥1,soitssizeanditsclassicalderivativeareuniformly
+               bounded.Theatmosttwounpairedtermshavethesameboundsonthiscompactrange.
+                   For|z|>3,allindicatorsin(7.12)equalone,and
+
+                                                    P(|z|/α)−c                    0 =−2g  ′′3(|z|/α).
+
+               Consequentlyeα,∂zeα,∂αeα,and∂z∂αeαareboundedbyCe−cz    2,uniformlyfor1 ≤α≤ 2.The
+               paired-lengthestimateandthetwounpairedcontributionsprovethesameboundfortheirsum.
+               Combiningthecompactandtailestimatesproves(7.14).
+                   Wefinishbyseparatingthegroupsaccordingtotheircounts. Ateachoutputpoint,(7.13)
+               impliesthatthereareatmost2  √nindiceswithma,b,k>√n.TheuniformGaussianbound(7.14)
+               andLemma7.1boundallthesegroupstogether,afterintegrationin       c,byC√nM F,G(−a,−b        ).
+               TheirtrilinearcontributionisatmostC  √n∏︁v∥Gv∥3.
+                   Setthekernelsandcountsofthosegroupstozero. Theremainingfamilysatisfies(7.4)   ,has
+               oddkernels,andhascountssatisfying∑︁kma,b,k≤2nandma,b,k≤√n.Corollary7.3appliesand
+               proves(7.11)    .Everygroupinganddeletionismadeattheoutputpoint,sotheproofimposesno
+               commonchoiceofendpointsordyadicgroupsatdifferentoutputpoints.
+
+               8 Fromthecountestimatetofullvariation
+
+               Wenowassemblethesmoothestimateandtheendpointestimate,removetherestrictionsonchoices
+               andinputs,andsumthecountboundstoobtainthefullvariation. Noselectionofacommon
+               partitionfordifferentoutputpointsismadeinthisargument.
+
+               ProofofTheorem1.2.      FirstletF,G∈C ∞c  (R2),usethepairmaps (2.2)   ,andtakeG0∈C∞c  (R2).
+               Forstepchoicesofdisjointannuliandcoefficients,theidentity(5.7)    writesthehardlinearization,
+               multipliedbyc0̸=0,asitssmoothlinearizationminusitsendpointerrors.Propositions5.1and7.4
+               thereforegive
+                  ⃓⃓⃓⃓⃓⃓∫︂∫︂∫︂                                                    ⃓⃓⃓⃓⃓⃓≤C√
+                        G0(a,b)G     1(b,c)G     2(c,a) ∑︂βj1{εj<|a+b+c|<R                j}nlog(2+n)  ∏︂∥Gv∥
+                                                          a+b+c                 dadbdc                          3.(8.1)
+                                                   j                                                    v
+
+               Theintervallistandcoefficientsinthesummayvarywith(a,b).
+                   Fixafinitemenuofsuchchoices.Itsmeasurablechoicesetscanbeapproximatedinmeasure
+               onacompactsetbyfiniteunionsofrectangles.Toseethis,approximateeachofthefinitelymany
+               setsusingLebesgueregularityandthenrefineallrectangleboundariestoonecoordinatepartition.
+               Resolveoverlapsbyafixedorderingofthemenu;thetotalmismeasuredsetremainsboundedbythe
+
+
+oneunpaired       pairedendpoints          oneunpaired             31
+
+
+    Lk                                          2Lk      ρ
+
+--- PDF PAGE 32 ---
+sumoftheapproximationerrors.Assignanymenuitemontheremainingcells.Forthefixedmenu,
+theannuliareuniformlyboundedawayfromzero,andtheintegralsagainstthesmoothinputs
+areboundedonthecompactsupportneededforG0. Consequentlythecorrespondinglinearized
+integralsconverge.Thus(8.1)holdsforarbitrarymeasurablechoicesfromafixedfinitemenu.
+   Nowfixafinitecollectionoflistsofdisjointrationalannuli,eachoflengthatmostn. The
+maximumoftheirsumsofabsoluteincrementsismeasurable.Chooseamaximizinglistmeasurably
+byresolvingtiesinafixedorder.Foreachofitsincrementschooseacoefficientfrom{1,−1,i,−i}
+whoseproductwiththatincrementhasrealpartatleasthalfitsmodulus.Thesechoicesareagain
+measurableandrangeoverafinitemenu. Testing(8.1)    againstnonnegativesmoothcompactly
+supportedG0shows,byL3duality,thatthisfinitemaximumhasL3/2  normatmostC√nlog  (2+
+n)∥F∥3∥G∥3.Thereflection(      x,y)= (−a,−b        )preservesthatnorm.Exhaustingthecountablefamily
+ofallrationallistsandapplyingmonotoneconvergenceprovesthecountboundforsmoothinputs.
+   ForgeneralcomplexF,G∈L      3,choosesmoothcompactlysupportedapproximantsFm,Gm.
+Foreveryfixedannulus,bilinearityand(2.1)    giveconvergenceofBε,R(Fm,Gm)in L3/2 . Fora
+fixedfinitecollectionoflists,thedifferenceofthetwofinitemaximaisboundedbyafinitesum
+ofsuchtruncationdifferences. ItthereforeconvergesinL3/2 . Passtheestimatetothelimitfor
+thisfinitemaximum,thenexhausttherationallistsoncemore.Lemma2.1suppliesthecommon
+representativesrequiredinthedefinitionofS n.
+
+ProofofTheorem1.1.      Foranyfiniterationalpartition,arrangetheabsoluteannularincrements
+innonincreasingorder,denotingthembyd1≥d   2≥···≥0. Whenevertheindex2     jexists,the
+correspondinglargestincrementsareapermissiblelistinS   2j,so
+
+                                          d2j≤2 −jS2j(F,G).
+
+Thegroupofindices2     j≤l<   2j+1 hasatmost2    jmembers.Boundingthefullℓrnormbythesum
+ofthegroupnormsyields,uniformlyinthechosenpartition,
+
+                        Vr(F,G)≤∑︂2j/r−j S2j(F,G) almosteverywhere.               (8.2)
+                                     j≥0
+
+Theorem1.2andMinkowski’sinequalitynowimply
+                          ∥Vr(F,G)∥3/2 ≤C∥F∥     3∥G∥3  ∑︂(1+j)2  j(1/r−1/2)    .
+
+                                                        j≥0
+
+Theseriesconvergesforeveryr>2.Inparticular,neitheraboundonthenumberofincrements
+norarestrictiontodyadicendpointssurvivesintheconclusion.
+
+9 Maximalestimatesandprincipalvalues
+
+Thecountingestimatealreadycontainsthemaximalestimate,bytakingasingleannulus. We
+firstrecorditscontinuitywithrespecttotheinputs,thenusethatcontinuitytotransferjoint
+principal-valueconvergencefromsmoothfunctionstoallcomplexL3inputs. Throughoutthis
+section,writep= 3/2.
+
+Corollary9.1(Thehardmaximaloperator).ForcomplexF,G∈L                                          3(R 2),define
+
+                             B∗(F,G)(x,y) =     sup
+                                               0<ε<R<∞|Bε,R(F,G)(x,y)|
+
+
+                                                   32
+
+--- PDF PAGE 33 ---
+onthecommonfull-measuresetofLemma2.1,andsetittozeroelsewhere. Thisfunctionis
+measurable,andthereisanabsoluteconstantC      Msuchthat
+
+                                       ∥B∗(F,G)∥p≤C M∥F∥3∥G∥3.                         (9.1)
+
+Thesupremumincludesbothfinitehardtruncationendpoints.Moreover,B∗isacontinuousmap
+fromL3(R2)×L   3(R2)to Lp(R2)andistheuniquecontinuousextensionofitsvaluesoncompactly
+supportedsmoothpairs.
+
+Proof.EndpointcontinuityinLemma2.1identifiesthesupremumwithitsrestrictiontorational
+endpointpairs.ConsequentlyitismeasurableandequalsS1(F,G).Theorem1.2gives           (9.1)   ,with
+itsabsolutefactorlog3absorbedintoC       M.
+    Fortwopairsofinputs,bilinearityofeachfinitetruncationgives,almosteverywhere,
+
+                          |B∗(F,G)−B   ∗(f,g)|≤B∗(F−f,G)+B    ∗(f,G−g).              (9.2)
+
+TakingLpnormsandusing(9.1)   provescontinuity.Densityofcompactlysupportedsmoothfunctions
+givestheasserteduniqueness.
+
+Corollary9.2(Jointbilinearprincipalvalues).ForeverycomplexF,G∈L                                        3(R 2),thejointlimit
+
+                                         B(F,G)= lim ε↓0  Bε,R(F,G)
+                                                     R↑∞
+
+existsalmosteverywhereandinL p(R 2),and
+
+                                       ∥B(F,G)∥  p≤C M∥F∥3∥G∥3.
+
+Moreprecisely,theentiretailconvergesinthemaximalsense
+                                 ⃦⃦⃦⃦⃦⃦⃦                             ⃦⃦⃦⃦⃦⃦⃦
+
+                                    sup    |Bε,R(F,G)−B(F,G)|           −→0.                    (9.3)
+                                  0<ε<1/n
+                                    R>n                               p
+
+TheoperatorBistheuniqueboundedcomplexbilinearextensionoftheprincipal-valueoperatoron
+compactlysupportedsmoothinputs.
+
+Proof.Forcompactlysupportedsmoothf,gandfixed(   x,y),put h(t)=f(x+t,y)g(x,y+t).Then
+                                                      ∫︂R  h(t)−h(−t)
+                                  Bε,R(f,g)(x,y) =                t          dt.
+                                                        ε
+ThenumeratorisO(t)atzeroandvanishesforlarget,sothejointlimitexistsateverypoint.
+    ForgeneralF,G,definethetailoscillation
+
+                            Ωn(F,G) =     sup        |Bε,R(F,G)−B    ε′,R′(F,G)|.
+                                          0<ε,ε′<1/n
+                                           R,R′>n
+
+Thesefunctionsaremeasurablebyendpointcontinuity,decreasewithn,andsatisfy0   ≤Ωn(F,G)≤
+2B∗(F,G). Choosecompactlysupportedsmooth fm→F   andgm→G  inL3. Takeacommon
+
+
+
+                                                      33
+
+--- PDF PAGE 34 ---
+full-measuresetforthepairs(   F,G),( fm,gm),( F−f  m,G),and(   fm,G−g   m),forall m.Onthis
+set,bilinearitygives
+
+                   Ωn(F,G)≤Ω    n(fm,gm)+2B∗(F−f   m,G)+2B ∗(fm,G−g   m).
+
+ThesmoothjointconvergenceimpliesΩ      n(fm,gm)→0pointwise.Thus,writingΩ    ∞=limnΩn(F,G),
+weobtain                                (︁∥F−f   m∥
+                         ∥Ω∞∥p≤2C  M                3∥G∥3+∥f  m∥3∥G−g    m∥3)︁.
+Lettingm→∞showsthatΩ  ∞= 0almosteverywhere. ThisisthejointCauchycriterionfor
+thetwoendpoints,andhencedefinesB(F,G)almosteverywhere.Taking,forexample,thecofinal
+sequence(     ε,R)= (1/(2n),2n)showsthatthelimitismeasurable;itsmagnitudeisatmost B∗(F,G).
+Defineittobezeroontheremainingnullset.
+    Letting(ε   ′,R′)tendjointlyto(0,∞)inthedefinitionofΩ         ngives
+
+                                sup   |Bε,R(F,G)−B(F,G)|≤Ω       n(F,G).
+                              0<ε<1/n
+                                R>n
+Thesupremumismeasurable,againbyendpointcontinuity.Dominatedconvergenceappliesbecause
+Ωn(F,G)≤2B∗(F,G)∈L p,proving(9.3)   andthereforejointnormconvergence.Thenormbound
+followsfrom|B (F,G)|≤B∗(F,G). Passingtothe Lplimitinthebilinearidentitiesforfinite
+truncationsprovescomplexbilinearity.Theboundanddensitythenproveuniqueness.
+
+9.1  Flatandsimplexscalarforms
+ForcomplexF                0,F1,F2∈L   3(R 2),let
+                                   ∫︂∫︂∫︂
+               Lε,R(F 0,F1,F2) =                                                         t.
+                                       ε<|t|<R  F0(x,y)F     1(x+t,y)F            2(x,y+t) dxdy               dt
+Noinputisconjugatedinthisscalarform.
+Corollary9.3(Flatscalarprincipalvalues).Foreverycomplex       L3triple,eachfiniteflattruncation
+isabsolutelyintegrable,and
+
+                                                                   2∏︂
+                                 sup                                  ∥Fv∥3.
+                              0<ε<R<∞|Lε,R(F 0,F1,F2)|≤CM         v=0
+
+Itsjointscalarprincipalvalueexistsandequals∫︁R2F0B(F1,F2).Thislimitingformistheunique
+boundedcomplextrilinearextensionofitscompactlysupportedsmoothdefinition.
+Proof.Hölder’sinequalityin(x,y)boundstheintegraloftheabsolutevalueby2   log(R/ε)∏︁v∥Fv∥3.
+Fubini’sTheoremthereforeidentifiesthefiniteformwith∫︁F0Bε,R(F1,F2).Corollary9.1givesits
+uniformbound,andpairingthejointLplimitinCorollary9.2with        F0givesthescalarprincipal
+value.Thelimitingformisboundedandcomplextrilinear;densityprovesuniqueness.
+
+    Insimplexcoordinatesthecorrespondingscalarformis
+                                     ∫︂∫︂∫︂
+                Λε,R(G 0,G1,G2) =                                               a+b+c    .
+                                         ε<|a+b+c|<R     G0(a,b)G     1(b,c)G     2(c,a)    dadbdc
+Theequivalenceoftheflatandsimplexformulations,includingtheiroptimalconstants,isdescribed
+in[15,AppendixB.1].Werecordthenorm-preservingmapstotrackbothhardendpointsandtheir
+jointlimit.
+
+                                                    34
+
+--- PDF PAGE 35 ---
+Proposition9.4(Scalarequivalence).Foreverycomplex       G0,G1,G2∈L   3(R2),eachfinitesimplex
+truncationisabsolutelyintegrable,and
+
+                                                                      2∏︂
+                                 sup     Λε,R(G 0,G1,G2)|≤CM             ∥Gv∥3.
+                              0<ε<R<∞|                               v=0
+
+Itsjointscalarprincipalvalueexistsandistheuniqueboundedcomplextrilinearextensionofits
+compactlysupportedsmoothdefinition.Theoptimalconstantsintheuniformfiniteflatandsimplex
+scalarestimatesareequal.
+
+Proof.Usethedeterminant-onechangeofvariables
+
+           x=−a,   y=−b,   t=a+b+c,   a=−x, b=−y, c=t+x+y.
+
+Forflatinputsset
+                                         G0(u,v) =F       0(−u,−v),
+                                         G1(u,v) =F       1(u+v,−u),
+                                         G2(u,v) =F       2(−v,u+v).
+Eachpairmaphasdeterminantone.Theinverseformulasare
+
+                                         F0(r,s) =G       0(−r,−s),
+                                         F1(r,s) =G       1(−s,r+s),
+                                         F2(r,s) =G       2(r+s,−r).
+
+ThesemapspreserveL3norms,compactsmoothness,andtheSchwartzclass.Directsubstitution
+identifiesboththeintegrandsandthefinitetruncationregions.Absoluteintegrability,theuniform
+bound,andjointscalarconvergencethereforefollowfromCorollary9.3.Theinversemapsrealize
+everysimplextriple,sotheoptimalconstantsareequal.Densityprovesuniquenessofthebounded
+trilinearextension.
+
+    Forcompleteness,letCSdenotethiscommonoptimalscalarconstant.Itisalsotheoptimal
+constantfortheuniformfamilyofindividualbilinearbounds
+
+                                      ∥Bε,R(F,G)∥p≤C S∥F∥3∥G∥3.
+
+Indeed,Hölder’sinequalitygivesonedirection.Fortheother,ifU∈L  pisnonzero,then
+
+                                              H=    U    |U|1/2 ,
+                                                    |U|∥U∥1/2p
+
+definedtobezerowhereU =0,satisfies∥H∥3 =1and ∫︁HU =∥U∥p.Applythisdualityformulato
+eachfinitebilineartruncation.Inparticular,theoptimalpointwisemaximalconstantisatleastCS;
+equalityofthescalarconstantsdoesnotassertequalitywiththemaximalorvariationconstants.
+
+References
+
+ [1]MichaelChrist,PolonaDurcik,andJorisRoos.Trilinearsmoothinginequalitiesandavariant
+     ofthetriangularHilberttransform.AdvancesinMathematics,390:107863,2021.
+
+
+                                                      35
+
+--- PDF PAGE 36 ---
+ [2]Yu.L.Daletskii.IntegrationanddifferentiationoffunctionsofHermitianoperatorsdepending
+     onaparameter.UspekhiMatematicheskikhNauk,12(1(73)):182–186,1957.InRussian.
+
+ [3]CiprianDemeterandChristophThiele.Onthetwo-dimensionalbilinearHilberttransform.
+    AmericanJournalofMathematics,132(1):201–256,2010.
+
+ [4]PolonaDurcik. AnL4estimateforasingularentangledquadrilinearform.Mathematical
+    ResearchLetters,22(5):1317–1332,2015.
+
+ [5]PolonaDurcik.Lpestimatesforasingularentangledquadrilinearform.Transactionsofthe
+    AmericanMathematicalSociety,369(10):6935–6951,2017.
+
+ [6]PolonaDurcik,VjekoslavKovač,andChristophThiele.Power-typecancellationforthesimplex
+     Hilberttransform.Journald’AnalyseMathématique,139:67–82,2019.
+
+ [7]PolonaDurcik,VjekoslavKovač,KristinaAnaŠkreb,andChristophThiele.Norm-variation
+     ofergodicaverageswithrespecttotwocommutingtransformations.ErgodicTheoryand
+    DynamicalSystems,39(3):658–688,2019.
+
+ [8]PolonaDurcikandJorisRoos. AveragesofsimplexHilberttransforms.Proceedingsofthe
+    AmericanMathematicalSociety,149(2):633–647,2021.
+
+ [9]LoukasGrafakos,DiogoOliveiraeSilva,MalabikaPramanik,AndreasSeeger,andBetsy
+     Stovall.Someproblemsinharmonicanalysis.arXiv:1701.06637,2017.Section9,contributed
+     byChristophThiele,Problem13.
+
+[10]G.H.HardyandJ.E.Littlewood.Amaximaltheoremwithfunction-theoreticapplications.
+    ActaMathematica,54:81–116,1930.
+
+[11]MartinHsuandFredYu-HsiangLin.Smoothinginequalitiesforcorner-typebilinearaverages:
+     geometriccharacterizationandapplications.arXiv:2410.15791v2,2026.RevisedJuly18,2026.
+
+[12]RogerL.Jones,AndreasSeeger,andJamesWright.Strongvariationalandjumpinequalities
+     inharmonicanalysis.TransactionsoftheAmericanMathematicalSociety,360(12):6711–6742,
+     2008.
+
+[13]VjekoslavKovač.Bellmanfunctiontechniqueformultilinearestimatesandanapplicationto
+     generalizedparaproducts.IndianaUniversityMathematicsJournal,60(3):813–846,2011.
+
+[14]VjekoslavKovač.Boundednessofthetwistedparaproduct.RevistaMatemáticaIberoamericana,
+     28(4):1143–1164,2012.
+
+[15]VjekoslavKovač, ChristophThiele, andPavelZorin-Kranich. DyadictriangularHilbert
+     transformoftwogeneralfunctionsandonenottoogeneralfunction.ForumofMathematics,
+    Sigma,3:e25,2015.
+
+[16]ManKamKwong.InequalitiesforthepowersofnonnegativeHermitianoperators.Proceedings
+    oftheAmericanMathematicalSociety,51(2):401–406,1975.
+
+[17]DominiqueLépingle.Lavariationd’ordrepdessemi-martingales.ZeitschriftfürWahrschein-
+    lichkeitstheorieundVerwandteGebiete,36(4):295–316,1976.
+
+[18]AdrianS.Lewis.Theconvexanalysisofunitarilyinvariantmatrixfunctions.JournalofConvex
+    Analysis,2(1–2):173–183,1995.
+
+                                                    36
+
+--- PDF PAGE 37 ---
+[19]FredYu-HsiangLinandLenkaSlavíková. RoughaveragesoftriangularHilberttransforms.
+     arXiv:2607.20206,2026.July22,2026.
+
+[20]RichardOberlin,AndreasSeeger,TerenceTao,ChristophThiele,andJamesWright.Avariation
+     normCarlesontheorem.JournaloftheEuropeanMathematicalSociety,14(2):421–464,2012.
+
+[21]TerenceTao. CancellationforthemultilinearHilberttransform.CollectaneaMathematica,
+     67(2):191–206,2016.
+
+[22]PavelZorin-Kranich.CancellationforthesimplexHilberttransform.MathematicalResearch
+     Letters,24(2):581–592,2017.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    37
