@@ -1,0 +1,5 @@
+# 紧致不交直线族
+
+R0081：[R0081_baire_reduction_to_compact_disjoint_families.md](R0081_baire_reduction_to_compact_disjoint_families.md)，A12/B12、两formal及root整合限定内部通过。具名KM典型最小维输入下，独立补原Keleti2026报告的Baire归约核心；未排fullcompact族/未得新维数界，无新ID/major，未经外部同行评审。
+
+下一唯一notes/00_map/R0081_next_fullcompact_multifiber_gate.md，仅fullcompact多fiber障碍phaseI，禁止免费continuous/unique selector。Goal active。

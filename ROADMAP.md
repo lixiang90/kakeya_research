@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0080 normalized KT retained核心root12/A12/B12及两formal实际审查通过，完整预处理仍具名；crossblock/DIM重排拒。无新branchsaving/ordinary/major，主gain streak3完整四路macro。下一唯一notes/00_map/R0080_next_one_fullrank_native_gate.md。56PDF/59sources/78IDs，lastactual三核心bytes仍R75，Goal active。
+更新2026-10-18，R0081新primary的不交直线归约Baire核心root12/A12/B12及两formal实际限定通过，KMwholeproof仍具名。onefull/KT旧闭包拒。无新界/branchsaving/major，主gainstreak4终macro完整四路重比。下一唯一notes/00_map/R0081_next_fullcompact_multifiber_gate.md。57PDF/60sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -170,3 +170,5 @@ R0078：原带权anchor真正保边，metric三路径/两次Ruzsa/3Z−3Z付共�
 R0079：严格联合有限反攻保同一nativeX/原g/wholeclock/Tlaw/cone/localNF，无growth；缺fullTAD4/CW/filledX/Φξ，不反完整source。主gain streak2完整四路reset，下一notes/00_map/R0079_next_full_source_cross_block_gate.md。
 
 R0080：normalized KT pivot/retained核心实际双独审，d-cap/真实badmass/原Ω′及保留指标双向恢复已付；critical预处理具名，DIM原17/4条件不改，无新界/ID/major。终streak3四路macro，下一notes/00_map/R0080_next_one_fullrank_native_gate.md。
+
+R0081：已有Keleti讲义归约的fixedB密度/self-dependence/同一residual/可数全族核心实际双独审；未排fullcompact族/未给n−1界。下一notes/00_map/R0081_next_fullcompact_multifiber_gate.md只fullcompact多fiber门，不能免费unique/continuousselector；旧onefull与KT affine等价停止。

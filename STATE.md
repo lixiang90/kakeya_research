@@ -1,27 +1,27 @@
 # 当前研究交接
 
-更新2026-10-18，R0080，Goal active。normalized KT retained-core实际双独审通过；无新branchsaving，主gain保守streak3，终macro完整四路重比。下一唯一notes/00_map/R0080_next_one_fullrank_native_gate.md。完整ordinary高维/general与major未达。
+更新2026-10-18，R0081，Goal active。原报告的紧致不交直线族归约核心实际双独审通过；无新维数界/branchsaving/major，保守主gainstreak4，终macro完整四路重比。下一唯一notes/00_map/R0081_next_fullcompact_multifiber_gate.md。
 
-## 1. 实际已审核心证书
+## 1. 本轮实际已付核心
 
-notes/20_dimension_lifting/finite_seed_transfer/R0080_retained_pivot_core_certificate.md root12/A12/B12及两formal6/rootintegration6实际全文限定通过。原近满幂shading→goodtriples/Ω→Córdoba f单值Ω′；正确T2端点lift、d-cap、实际unsaturated seed逐z截断保NΩ′/H^C；retained指标与双向细格恢复给L²lower，与upper给4d≥2n+1+d′−o1。
+notes/20_dimension_lifting/disjoint_lines/R0081_baire_reduction_to_compact_disjoint_families.md，root12/A12/B12及两formal6/rootintegration6实际全文限定通过。具名KM最小维/typicality输入下，s<n−1残余低维全线族→可数compact全方向族、全体distinctlines不交；这是原Keleti2026讲义已有归约核心复证，不是新结果ID。
 
-## 2. 必须保的几何和量词
+## 2. 必须保的数学接口
 
-高ambient skewaxes先各平移Oδ到原x；goodpairs预先保端点/分母分离，不在retained后另删。原fine witness版本与A canonical粗格版本各自合法不混energy。H=N^o1、每个H幂/色/box/scale显式付；先outputε再seedη再N门槛，逐z仅总mass保半不授逐pivot旧pairs。
+Kspace compactcode方向RP满投影；canonical q去重复line，S(K)closed/σcompact。fixedcompactB投影emptyinterior→open dense须保两侧Hausdorff与closedcap全方向；小position盒逐选真低维fullD族避前wholeunions、小piece直径消self-dependence，再所有j/R同一residual。σcompact仅residual，严格s<n−1，不授unique/continuousselector。
 
-## 3. 依赖边界与目标
+## 3. 旧链与完整目标
 
-critical raisingd/heavyball regularization/bilinear及一般factorization仍具名，非wholeKT6.2全独证。DIM001现有任意ambient/realn/unsaturated/任意集合桥已R29/R38付，不重报历史gap；既有六维17/4条件未删，无newID/major/priority。R75κ>1/R77双near-rank1/R78保留；R79joint反攻非fullsource，完整κ1/ordinary/general仍open。
+onefull旧NI/clockcap、一角KT和commonkernel及singular label固定幂未新付，拒phaseII；KT affine envelope旧统一seed闭包不施工。R80normalized KT、R75/R77/R78 proper分支及DIM001条件17/4保原范围；完整κ1/ordinary/general/major未达。未排fullcompact族，不能声n−1下界。
 
-## 4. 独审与literature
+## 4. 来源和独审边界
 
-两formal和root整合真实全文限定通过，未经外部同行评审；高级wholeproof具名。56PDF/59sources/78IDs无新增。root读KT§6并view PDF22–23；其他primary实际读域及有限17/4检索非novelty证。R80fresh官方mainref/canonicaltree同R75；last actual三核心PDF/README/localwholebytes仍R75，不以身份认证数学。
+57PDF/60sources/78IDs。新Keleti讲义539376bytes/SHA256 e658703ecd61b0d005477ea1ed89800dd072226a88b83c1fcca84a10e4e24212，实际全文提取读21页/root view15–18；closed构造只R3/类似odd高维。KMwholeproof仍具名，内部独审未经外部同行评审。fresh官方mainref/canonicaltree同R75，lastactual三核心PDF/README/localwholebytes仍R75。
 
-## 5. 宏观、冻结与下一唯一
+## 5. 终macro及下一唯一
 
-notes/00_map/R0080_next_one_fullrank_native_gate.md。crossblock sharedA0候选未付真实B_u联合原mass，DIM重排也拒；终macro在no-branchsaving streak3重比四完整路径。下一只onefull/smalldet source phaseI，近zero若原sourcecap已付不重报，R72/R79旧机制即停。不续KT输入审查代新主数学，所有BSG/r/pole/更多anchors/单块增长冻结保持。
+notes/00_map/R0081_next_fullcompact_multifiber_gate.md。保守无newdim/branchsaving streak4与实际核验信息分开；终macro完整重比ordinary初始化/directHRZ/matrix其他rankκ/真compact构造。下一只fullcompact多fiber障碍phaseI，不假unique/continuousselector或球面端点像整球，初等endpoint重写不作主数学；失败立即再macro，旧BSG/r/pole/更多anchors冻结不变。
 
-## 6. 同步和恢复
+## 6. 同步与恢复
 
-父HEAD=origin=remote be669371166ebb269c10314da00e3ddd1232247d/treebb1b59ad732801b829e607ba84b4ac8b3c304bd9，1190旧tracked clean；最终tmp/sync/R0080.json应pendingfalse/samecommit/clean/fulltree/逐stagedblobSHA256。恢复context存tmp后实际读全本轮数学/两formal/macro/next和receipt/freshref，不重跑已过计算，Goal active。
+父HEAD=origin=remote69b80a4290baa4e1a02bc061235bd88e926e7fe1/treea30bf567a14054775587001b470b5ca5f483c2d7，1206旧trackedclean。最终tmp/sync/R0081.json须pendingfalse/samecommit/clean/fulltree/逐stagedblobSHA256；恢复context一次存tmp并实际读本轮证明/两formal/macro/next及回执freshref，不重跑已过计算。Goal active。

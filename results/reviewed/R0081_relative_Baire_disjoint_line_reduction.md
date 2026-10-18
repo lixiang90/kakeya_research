@@ -1,0 +1,7 @@
+# R0081内部已审：已有不交直线归约的Baire核心
+
+notes/20_dimension_lifting/disjoint_lines/R0081_baire_reduction_to_compact_disjoint_families.md、A12/B12、research/reviews/R0081_baire_avoidance_and_mass_review.md、research/reviews/R0081_compact_family_and_quantifier_review.md、research/reviews/R0081_root_integration_review.md实际全文逐步限定通过，未经外部同行评审。
+
+具名KM最小维/typicality输入下s<n−1，fixedB密度/fullD双向近似、canonical farbad闭性、小piece逐避wholeunions消self-dependence、同一residual及可数全族递归均付。原Keleti讲义已有报告的核心复证，无新ID/界/major。
+
+KMwholeproof具名，未排compact族/未得n−1或满维，保守main-gainstreak4，下一notes/00_map/R0081_next_fullcompact_multifiber_gate.md仅phaseI。Goal active。
