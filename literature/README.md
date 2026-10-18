@@ -108,3 +108,5 @@ R0056新增4份primary原PDF：官方elliptic103页（onlyS2/R3，Th2.2为2D all
 R0057无新增PDF，48PDF/49sources。实际重读官方elliptic Def2.1/Th2.2/§2.2/Lemma2.3 PDF9–12，latest application scope单记；只调用其保证指数作带费用组合审计，不称q*最优上界或103页wholeproof已审。R56原bytes/hash保持。
 
 R0081新增第57篇PDF/第60个source：Keleti（joint Gáspár/Máthé）2026-04-20 BME不交直线讲义，21物理页，SHA256 e658703ecd61b0d005477ea1ed89800dd072226a88b83c1fcca84a10e4e24212；root/A/B全文提取读、root view15–18。KM最小维输入具名下的报告归约核心已内部双审复证，非新界/ID/major。读域与未采用网页筛查见literature/notes/R0081_disjoint_lines_primary_scope.md；lastactual三核心bytes R75，freshref/tree同一性不认证数学。
+
+R0082新增2PDF，59PDF/62sources：Harrison2203.16412v1实际33页、MurphyPakianathan1303.0895v1实际15页（abstract14，重编译字节范围明确），指定HTML/视觉读域和校验元数据均存；仅经典fibration/continuous配置对照，非wholeproof独证或新界。见literature/notes/R0082_line_fibration_and_regularization_source_scope.md。

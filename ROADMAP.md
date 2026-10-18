@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0081新primary的不交直线归约Baire核心root12/A12/B12及两formal实际限定通过，KMwholeproof仍具名。onefull/KT旧闭包拒。无新界/branchsaving/major，主gainstreak4终macro完整四路重比。下一唯一notes/00_map/R0081_next_fullcompact_multifiber_gate.md。57PDF/60sources/78IDs，Goal active。
+更新2026-10-18，R0082真实open4Dangular整线族的正measure Holder正则化反攻root/A/B12和两formal实际通过；endpoint/selector门停止。非fullRP/低维/Kakeya反例，无新界/branchsaving/major，主gainstreak5完整终macro。下一唯一notes/00_map/R0082_next_primary_line_union_input_gate.md，尚无合格新主命题。59PDF/62sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@
 | K | 曲线到直线的coherent lifting | LIFT-005经R50同P全时第一变分覆盖一般smooth保clock的parameter-linear目标；s≥rankB，s1/fullrank iff B0或rankB=rankB²1 | 完整类frozen；R12/R49 affine-only范围已更正，不续Hessian/clock邻近轮 |
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
 | M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
-| N | 真实sticky五维矩阵分支 | R75/R77/R78已付保留；R79严格joint有限反攻；R80跨块共同域未付并停止 | 完整κ1/ordinary/major仍未解；streak3完整reset，下一只onefull/smalldet phaseI，旧cap/等价即停 |
+| N | 真实sticky五维矩阵分支 | R75/R77/R78已付保留；R79联合反攻/R80跨块原mass未付；R81onefull旧闭包停止 | 完整κ1/ordinary/major仍未解，无新输入不续rank/anchors/holonomy |
 | O | 实际五维mixed(4,2) | R74以原AD0标签付完整bounded κ1 source-to-CW；两质量提取/全pencil压缩/fine误差/原N分母均付，标准QE及经典compression范围明确 | 其余κ仍open，无ordinary/major/newID；旧local GWZ与当前AD0端点阈值优化冻结，须不同原联合输入 |
 | P | 实际五维mixed(3,2) | 旧proper工具保留；R73原raw/global/local分母和sameT fineδ用途完成，在具名19.2/19.4及完整source下排κ+γ>1（含κ1每fixedγ），无额外AFF/NQ | 既有工具应用，非新ID/major/ordinary增益；κ+γ≤1和完整branch仍open，停止zero球阈值续轮 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66 tiny lower、R67天然joint图、R68无AFF/NQ的large upper；R69双法向四输出数值恢复、冻结后AFF推论严格失败，R70 raw零球及κ+γ>1子范围排除，γ≤1−κ contact/wholeAFF₃仍未付；R71 direct fine packet全账无可用gain、已冻结 | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
@@ -172,3 +172,5 @@ R0079：严格联合有限反攻保同一nativeX/原g/wholeclock/Tlaw/cone/local
 R0080：normalized KT pivot/retained核心实际双独审，d-cap/真实badmass/原Ω′及保留指标双向恢复已付；critical预处理具名，DIM原17/4条件不改，无新界/ID/major。终streak3四路macro，下一notes/00_map/R0080_next_one_fullrank_native_gate.md。
 
 R0081：已有Keleti讲义归约的fixedB密度/self-dependence/同一residual/可数全族核心实际双独审；未排fullcompact族/未给n−1界。下一notes/00_map/R0081_next_fullcompact_multifiber_gate.md只fullcompact多fiber门，不能免费unique/continuousselector；旧onefull与KT affine等价停止。
+
+R0082：endpoint/minimal-residual/selector门拒，另以实际全clockR5 skew族+同h正measure振荡/canonicalFubini否local开角度幂正则化；非fullRP/低维/Kakeyacounter。下一notes/00_map/R0082_next_primary_line_union_input_gate.md仅一轮真正不同primary直线族维数输入门，不制造欲证公设或续h模板。
