@@ -122,3 +122,6 @@ R0086新增Du2610.05404v1原PDF5页、403571bytes，现63PDF/67catalog sources/7
 
 
 R0087无新增PDF/source，63PDF/67catalog sources/78IDs。实际重读Wongkew Main Theorem与HRZ Prop4.2/§8指定范围，fullG4仍未证未否；exact只是旧FSD应用。官方root ref/tree新核不变，三核心整字节last R75。详metadata/R0087_source_check.json、notes/R0087_full_G4_and_downstream_source_scope.md。
+
+
+R0088新增Wang2411.02961v8原PDF29页/495117bytes及text，现64PDF/68catalog sources/78IDs。实际Th1.5/Prop1.7/§2.1转移输入核，root PDF1–5text/view2–3；不冒29页高级wholeproof独证。v1=2024-11-05，currentv8=2026-09-30。原R5真实marks/短轴/范数预算与两具体接口反攻经内部独审，无ordinary gain。详metadata/R0088_source_check.json和notes/R0088_cone_and_full_goal_source_scope.md。

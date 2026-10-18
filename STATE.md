@@ -1,27 +1,27 @@
 # 当前研究交接
 
-更新2026-10-18，R0087，Goal active。全 near-contained G4 未证、未否；原因子/marks/尺度等价归约、exact 旧输入闭包与两项具体桥反例已实际全文内部独审。没有普通维数增益、全方向低维反例或重大结果。主维数/完整 branch-saving streak10。下一唯一 notes/00_map/R0087_next_full_goal_reselection.md，当前无 qualified 新 gain 命题。
+更新2026-10-18，R0088，Goal active。新cone输入的实际原marks转移、共同null-map与free-r-fiber接口反攻经两份全文内部独审；无普通新界/完整branch saving/真full方向反例/major。主保守streak11。下一唯一 notes/00_map/R0088_next_full_goal_reselection.md，当前无qualified新gain。
 
-## 1. 本轮实际范围
+## 1. 当前实际证书
 
-root8：notes/40_multiscale/R0087_full_G4_factor_scope_and_projection_boundary.md。有限 factor-distance clock 分段，删 round 端帽，选真实 marks 与共同 r 层，空间 bounded overlap，单位化 h=δ/r、新帽 α_h≤Cαr^-4、真实 Lebesgue r^5 返回与近 full η 阈值全部记账。条件于旧 G3，fullG4 与实不可约 real-dim4 子类正幂等价，不以不可约换名开方向或登记新 ID。
+root10位于notes/20_dimension_lifting/R0088_cone_packet_original_mass_transfer_and_stop.md。给原R5 δ方向分离管、任意真measurable marks，按label提升，保端帽和clock；radial τ∈[δ,1]给short轴r=δ²/τ，frequencyvol δ⁴τ。具名cone Prop1.7/Khintchine/六维δ¹²/Hölder返回 |E|≳λ^A δ^(β+ζ)(Nδ⁴τ)^B，A=p/(p−2)、B=p(1−2/q)/(p−2)≥0、β=10−4/(p−2)。
 
-## 2. exact 与两个失败接口
+## 2. 两处费用与强度
 
-exact axes 的方向落实际 leading-zero：Wongkew local entropy 给全帽/全尺度 3KT，再用旧 FSD001，非仅总 N。smooth 实不可约 x5²−δ^A x1 无奇点却无统一绝对梯度 floor；strict convex x5−δ^A|x′|² 无 exact line，合法水平原方向亦远离其 leading-zero。后例实际 union≈δ，符合 G4 lower，不是反 G4。不能否定全部低 degree 近似或分解方法。
+平均density直接用原总I，无需heavy；若另调用逐管，须付N′≥cλN。共同C1/all-point-open-direction null map的rank≤1只否common immersion，不排有限选线或label map。label提升union只知Z⊂E×boundedinterval；严格δ分离residue-clock annulus例使|Z|/(r|E|)≈ρ^-4，故统一r纤维免费失败。不是Kakeya反例。
 
-## 3. 本次投影门的停止
+## 3. 停止的具体门
 
-same-π majority graph 可覆盖 singular/δ 系数，保 whole-tube/marks、正常纤维及固定格式 semialgebraic whole-containment 查询，仍未付 projected 全局 δ 方向帽。CW4/fullPW4 不可免费替 DIR4。真实投影轴已集中3fold时可 McShane+旧G3，但未抽出全类足够原质量。停止 generic graph/CW4 接法及 irreducible/κ/λ/D/quadric 小改。
+固定bump light-shell驻相独证必要p≥5/2，故显示scalar公式在饱和N下β≥2、τ1最强；目标五维strict>4需β<1。当前直接null-map或独立label-lift＋单次scalar norm/Hölder接法停止，不续τ/q/k/p/共纤维公设。不据此否全部cone/bilinear/multiscale方法，也不把来源应用登记新ID。
 
-## 4. 全目标及前轮冻结
+## 4. 完整四路与既有冻结
 
-ordinary smallfootprint+joint 初始化、directHRZ 真实 parent/terminal/local 倍率、sticky 完整未闭 κ 与 ordinary 桥、同一 full 方向低维集合仍 open。R38 assembly/R80 core 已付，不伪列 gap；R85 regularleading⇔DIR、R86 Du clock/rotation/product/ambient 门及旧 CP/PM/PW4 等冻结。HRZ 现有 n5 k≥3 窄转阈值 p≥4/3，不授 terminal 替换后的普通增益，不是所有方法不可能。
+ordinary同时保原方向/smallfootprint/jointAD，directHRZ真实parent/terminal/local倍率，sticky完整未闭κ与ordinary桥，同一full方向低维构造保持open。DIM00117/4在具名层级已完成，不重做R38/R80/KT包络或无限外部proof审计；fullG4仍未证未否，不续不可约/regular/D/κ/λ，R86 Du和旧CP/PM/PW/BSG等冻结。
 
-## 5. 来源、独审与诚实计时
+## 5. 文献、审查与计时
 
-63PDF/67sources/78IDs，无新增 PDF/source/实验或 ID/status 变化。实际两 formal 与 root 全文整合，非外部同行评审。root 重读 Wongkew Main Theorem、HRZ Prop4.2 全证明及 §8 指定范围；其他高级输入仍具名。fresh 官方 ref/tree 不变，last 三核心 wholebytes R75。归约/桥反例的信息不清保守 no-newordinary/fullbranch-saving streak10。
+64PDF/68sources/78IDs，新增Wang2411.02961v8原PDF29p/495117bytes/SHA2f65aa8601906de65ff80f03dc80891628309957ea4241f32cadd71b685d339d，blob b3d5ccb90189f6e5fbbe94b58ef3166f96c533ec。v1为2024-11-05、v8为2026-09-30；root实际接口text/render/view2–3，不冒whole29页高级proof独证。两formal实际全文通过，非外部同行评审。fresh官方root ref/tree不变，last三核心整字节R75。实际source费用信息不清保守streak11。
 
 ## 6. 恢复与同步
 
-父 HEAD=origin=freshremote 04ce9c9c356c5d7b8e3b8ded5d2f91d70ea763fd，tree a1c0269c148902a07d5d2cff7cf999c0fb5482c3，1317 旧 clean。最终 tmp/sync/R0087.json 须 pendingfalse/samecommit/clean/fulltree/逐 staged SHA256 全部通过。恢复 context 一次、固定入口/root8/A8/B10/两 formal/macro/next/receipt freshref；不重跑旧通过计算。Goal active，不降完成标准或标 blocked。
+父HEAD=origin=freshremote bca7dc9a8c486892b70d6a64aec250940a5d372d/tree60cc79f2ccaa1c4d30435deaa288114b6198d21e，1331旧clean。最终tmp/sync/R0088.json须pendingfalse/samecommit/clean/fulltree/逐stagedSHA256全部真。恢复context一次、固定入口/全路线/root10/A10/B10/两formal/macro/next/receipt freshref；不重跑旧通过计算，不降低Goal或标blocked。

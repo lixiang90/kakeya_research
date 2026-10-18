@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0087 fullG4 全类尝试未证未否；实际原 factor/marks/r尺度/角帽等价归约、exact 旧FSD闭包与两 specific 桥反例经独审。无新ID/普通界/major。主gainstreak10，下一 notes/00_map/R0087_next_full_goal_reselection.md 当前无 qualified 新gain；63PDF/67sources/78IDs，Goal active。
+更新2026-10-18，R0088新cone源实际原管转移及两接口反攻两独审；频率/短轴/N/原marks/δ¹²全付，scalar预算不给ordinary>4。不排一切cone方法，无新ID/major。主streak11，下一notes/00_map/R0088_next_full_goal_reselection.md当前无qualified新gain；64PDF/68sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -186,3 +186,6 @@ R0086：Du旧源R81已全文读，本轮原PDF归档与逐式独审不冒新发�
 
 
 R0087：多因子归约须真实时段/marks、r^-4帽及r^5体积，已付；实不可约near-axis仍open，不换名续门。exact旧FSD应用不新登记，两个gradient/Fano接口反例不反G4。sameπ图形保fiber/wholecontainment却不保global方向帽，停止本次generic CW4接法，四主路保持。
+
+
+R0088：Wang2411.02961v8 cone extension实际试验，原N与平均I/端帽保留、radialτ和shortδ²/τ、source范数和δ¹²返回付齐。共同null-map rank≤1与真实dirsep residue-clock否free r纤维；显示scalar公式β≥2不够五维β<1。停止这两具体接法，不调τ/q/k/p或宣所有cone无用，四完整路径保持。
