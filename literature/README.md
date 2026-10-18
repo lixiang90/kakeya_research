@@ -134,3 +134,6 @@ R0090新增Csornyei–Stull2609.38742v1原PDF33页/542683bytes及默认pypdf tex
 
 
 R0091新增DPR1601.06543v2原18页、AMS1907.07456v3原27页、Moore作者DST讲义83页及默认pypdf页标text，现69PDF/73sources/78IDs。实际读域/原bytes/hash见metadata/R0091_source_check.json；只采用标准具名输入和应用资格核，不认证高级wholeproof或新Kakeya gain。
+
+
+R0092新增EOT0903.1879v2原25页、Dhar2110.14889v3原26页、2209.11443v1原29页与默认pypdf页标text，现72PDF/76sources/78IDs。原PDF/hash/readscope见metadata/R0092_source_check.json；只采用具名EOT及有限环前提对照，原平均/Hausdorff转移已付但五维25/9弱于经典，不作新界。

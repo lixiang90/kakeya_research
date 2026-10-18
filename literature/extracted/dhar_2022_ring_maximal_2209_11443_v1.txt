@@ -1,0 +1,2108 @@
+[PDF physical page 1]
+arXiv:2209.11443v1  [math.CO]  23 Sep 2022
+Maximal and ( m, ǫ )-Kakeya bounds over Z/N Z for general N
+Manik Dhar ∗
+Abstract
+We derive Maximal Kakeya estimates for functions over Z/N Z proving the Maximal Kakeya
+conjecture for Z/N Z for general N as stated by Hickman and Wright [ HW18]. The proof
+involves using polynomial method and linear algebra techniques from [ Dha21, Ars21a, DD21]
+and generalizing a probabilistic method argument from [ DD22]. As another application we give
+lower bounds for the size of ( m,ǫ )-Kakeya sets over Z/N Z. Using these ideas we also give a
+new, simpler, and direct proof for Maximal Kakeya bounds over ﬁnit e ﬁelds (which were ﬁrst
+proven in [ EOT10]) with almost sharp constants.
+1 Introduction
+Throughout this paper [ r] ={1,...,r }.
+We ﬁrst begin with describing a special case of our results fo r sets as opposed to functions in
+general. Given a set S⊆ (Z/N Z)n we can determine the largest size of intersection a line in a
+given direction can have with S. We want to lower bound the size of S by using this data for every
+direction. We ﬁrst deﬁne the set of possible directions a lin e can take in ( Z/N Z)n.
+Deﬁnition 1.1 (Projective space P(Z/N Z)n− 1). ForN =pk1
+1 ...p kr
+r where p1,...,p r are distinct
+primes. The Projective space P(Z/N Z)n− 1 consists of vectors u∈ (Z/N Z)n upto unit ((Z/N Z)× )
+multiples of each other such that u (modpki
+i ) has at least one unit co-ordinate for every i∈ [r].
+For each direction in P(Z/N Z)n− 1 we pick a representative in ( Z/N Z)n. This allows us to treat
+P(Z/N Z)n− 1 as a subset of ( Z/N Z)n. We note then a line L in direction u∈ P(Z/N Z)n− 1 is going
+to be a set of the form {a +tu|t∈ Z/N Z} for some a∈ Z/N Z. We can now state our set size lower
+bound.
+Theorem 1.2 (Set size lower bounds from maximal intersection sizes over Z/N Z). Say we are
+given S⊆ (Z/N Z)n whereN =pk1
+1 ...p kr
+r . We then have the following lower bound,
+|S|≥ CN,n E
+u∈ P(Z/N Z)n− 1
+[
+sup
+a∈ (Z/N Z)n
+|{a +tu|t∈ Z/N Z}∩ S|n
+]
+=CN,n|P(Z/N Z)n− 1|− 1 ∑
+u∈ P(Z/N Z)n− 1
+sup
+a∈ (Z/N Z)n
+|{a +tu|t∈ Z/N Z}∩ S|n,
+where
+CN,n =
+
+
+r− 1∏
+j=1
+1
+kj log(pj) + 1
+r∏
+i=1
+1
+2(ki +⌈logpi(n)⌉)
+
+
+n
+.
+∗Department of Computer Science, Princeton University. Ema il: manikd@princeton.edu.
+1
+
+[PDF physical page 2]
+Note, sup a∈ (Z/N Z)n|{a +tu|t∈ Z/N Z}∩ S| is the maximal intersection a line in direction u
+can have with S. The above bound gives us new bounds for the Kakeya problem ov er Z/N Z and
+generalizes them. To see that let us ﬁrst deﬁne Kakeya sets.
+Deﬁnition 1.3 ((m,ǫ )-Kakeya sets) . Let N,n ∈ N. A subset S⊆ (Z/N Z)n is said to be (m,ǫ )-
+Kakeya when for at least an ǫ fraction of directions u∈ P(Z/N Z)n− 1 there exists a line Lu =
+{a +tu|t∈ Z/N Z} in direction u such that |Lu∩ S|≥ m.
+We note ( N, 1)-Kakeya sets are often just referred to as Kakeya sets. The following is an
+immediate corollary of Theorem
+1.2.
+Corollary 1.4 ((m,ǫ )-Kakeya bounds over Z/N Z for general N ). Say we are given an (m,ǫ )-
+Kakeya set S⊆ (Z/N Z)n where N = pk1
+1 ...p kr
+r and p1 > ... > p r. We then have the following
+lower bound.
+|S|≥ CN,nǫmn,
+where
+CN,n =
+
+
+r− 1∏
+j=1
+1
+kj log(pj) + 1
+r∏
+i=1
+1
+2(ki +⌈logpi(n)⌉)
+
+
+n
+.
+To our knowledge, Corollary
+1.4 is the ﬁrst ( m,ǫ )-Kakeya set bounds over Z/N Z for general N
+(even the case of N square-free was not known). Earlier, only bounds for ( N, 1)-Kakeya sets were
+known for composite N which were not prime powers.
+Wolﬀ in [ Wol99] ﬁrst asked the question of lower bounding the sizes of Kakey a sets over ﬁnite
+ﬁelds whose resolution might help in proving the Euclidean K akeya conjecture. Wolﬀ’s conjecture
+was proven by Dvir in [ Dvi09] by proving a lower bound of qn/n ! for Kakeya sets in Fn
+q . Using the
+method of multiplicities and its extensions [
+SS08, DKSS13, BC21] the constant was improved from
+n!− 1 to 2 − n+1 which is known to be tight.
+Ellenberg, Oberlin and Tao in [ EOT10] proposed studying the size of Kakeya sets over the rings
+Z/p kZ and Fq[x]/⟨xk⟩. They were motivated by the fact that these rings have “scale s” and hence are
+closer to the Euclidean version of the problem. Hickman and W right posed the Kakeya set problem
+for Z/N Z with arbitrary N and considered connections between the problem and the Kake ya
+conjecture over the p-adics in [ HW18]. Indeed, proving strong enough lower bounds for the sizes
+of Kakeya sets over the rings Z/p kZ and Fq[x]/⟨xk⟩ will resolve the Minkowski dimension Kakeya
+set conjecture for the p-adic integers and and the power series ring Fq[[x]] respectively [ EOT10,
+DH13, HW18]. The Kakeya problem over these rings is interesting as simi larly to the Euclidean
+case one can construct Kakeya sets of Haar measure 0 for the p-adic integers and the power series
+ring Fq[[x]]. The constructions and generalizations to other setting s can be found in [ DH13, Fra16,
+Car18, HW18, Dha21].
+Forn = 2 and N =pk, Dummit and Hablicsek in [ DH13] proved that the sizes of Kakeya sets
+are lower bounded by p2k/ 2k. The author and Dvir [ DD21] gave almost tight Kakeya set lower
+bounds for Z/N Z with square-free N . Arsovski in [ Ars21b] gave the ﬁrst ( m,ǫ )-Kakeya set lower
+bounds for Z/p kZ resolving the p-adic Kakeya conjecture. A quantitatively stronger bound f or
+(m,ǫ )-Kakeya sets over Z/p kZ were proven in [ Dha21] (by extending the proof in [ Ars21a] which is
+an earlier version of [ Ars21b] with a diﬀerent proof for only ( pk, 1)-Kakeya sets) and shown to be
+almost sharp for ( pk, 1)-Kakeya sets. [ Dha21] also proved Kakeya set lower bounds over Z/N Z for
+2
+
+[PDF physical page 3]
+generalN . [ Sal22] extended the techniques in [ Ars21b] giving (m,ǫ )-Kakeya bounds over Fq[x]/⟨xk⟩
+and resolving the Kakeya set conjecture over Fq[[x]].
+The general case of our results are Maximal Kakeya bounds ove r Z/N Z for generalN which gives
+norm lower bounds for functions f : (Z/N Z)n→ Z≥ 0 using the data of the largest ‘intersection’ a
+line in a direction can have with f . The size of ‘intersections’ of a line L andf is ∑
+x∈ Lf (x). This
+information about ‘intersections’ is encapsulated using t he following deﬁnition.
+Deﬁnition 1.5 (Maximal function) . Given f : ( Z/N Z)n→ Z≥ 0 we deﬁne the maximal function
+f ∗ : P(Z/N Z)n− 1→ Z≥ 0 as follows,
+f ∗(u) = sup
+a∈ (Z/N Z)n
+
+ ∑
+t∈ Z/N Z
+f (a +tu)
+
+ .
+The most general result we prove will lower bound the norm of f by the norm of f ∗. Before
+describing the statement in its full generality we ﬁrst stat e it for N =pk.
+Theorem 1.6 (Maximal Kakeya bounds over Z/p kZ). Letn> 0 be an integer, p prime and k∈ N.
+For any function f : (Z/p kZ)n→ N we have the following bound,
+∑
+x∈ (Z/p kZ)n
+|f (x)|n≥ Cpk,n E
+u∈ P(Z/p kZ)n− 1
+[|f ∗(u)|n] = Cpk,n
+|P(Z/p kZ)n− 1|
+
+ ∑
+u∈ P(Z/p kZ)n− 1
+|f ∗(u)|n
+
+ ,
+where
+Cpk,n = 1
+(2(⌈logp(maxuf ∗(u)) + logp(n)⌉))n.
+When p>n we can improve Cpk,n to,
+Cpk,n = (⌈logp(max
+u
+f ∗(u))⌉ + 1)− n(1 +n/p )− n.
+We note log p(maxuf ∗(u)) is bounded above by k + logp(∥f∥ℓ∞ ) which means that as long as
+the terms are not too big we can take the above inequality as a c omparison between the ℓn norms
+of f and f ∗.
+Bounds of these types were ﬁrst proven for ﬁnite ﬁelds in [ EOT10]. Our results will prove these
+bounds over Z/N Z for general N .
+To state the general case of composite N we ﬁrst need some simple facts which follow from the
+Chinese remainder theorem.
+F act 1.7 (Geometry of Z/p kN0Z). Let p,N 0,n,k ∈ N,R = Z/p kN0Z,R 0 = Z/N 0Z with p prime
+and co-prime to N0. Using the Chinese remainder theorem we know that any co-ordi nate in Rn
+can be uniquely represented by a tuple in (Z/p kZ)n× Rn
+0 . Also any direction in the projective space
+PRn− 1 can again be uniquely represented by a tuple in P(Z/p kZ)n− 1× PRn− 1
+0 . Finally, any line
+L with direction b = (bp,b 0)∈ P(Z/p kZ)n− 1× PRn− 1
+0 in Rn is equivalent to the product of a line
+Lp⊂ (Z/p kZ)n in direction bp and a line L0⊂ Rn
+0 in direction b0.
+We will need to deﬁne a new quantity on which our bounds will de pend.
+3
+
+[PDF physical page 4]
+Deﬁnition 1.8 (p-Maximal weight). Forp and N coprime and f : (Z/p kN Z)n→ N we deﬁne the
+p-maximal weight mweight(f,p ) as follows:
+LetL(u) ={au +tu|t∈ Z/p kN Z} be a line such that ∑
+x∈ L(u)f (x) = f ∗(u). Using Fact 1.7 we
+note that the line L(u) can be written as a product of lines Lp(u)⊆ (Z/p kZ)n andL1(u)⊆ (Z/N Z)n.
+We deﬁne,
+mweight(f,p ) = sup
+u∈ P(Z/p kN Z)n− 1,z ∈ L1(u)
+∑
+x∈ Lp(u)
+f ((x,z )).
+Note, mweight(f,p ) for f : (Z/p kZ)n→ N is simply max uf ∗(u).
+We can ﬁnally state our main theorem.
+Theorem 1.9 (Maximal Kakeya bounds over Z/N Z for general N ). Letn >0 be an integer and
+N = pk1
+1 ...p kr
+r with pi primes and ki ∈ N. For any function f : ( Z/N Z)n → N we have the
+following bound,
+∑
+x∈ (Z/N Z)n
+|f (x)|n≥ CN,n E
+u∈ P(Z/N Z)n− 1
+[|f ∗(u)|n] = CN,n
+|P(Z/N Z)n− 1|
+
+ ∑
+u∈ P(Z/N Z)n− 1
+|f ∗(u)|n
+
+ ,
+where
+CN,n =
+( 1
+2(log(mweight(f,p 1)) + 1)⌈logp1(mweight(f,p 1)) + logp1(n)⌉
+) n
+·
+(
+1
+2(kr +⌈logpr (n)⌉)
+r− 1∏
+i=2
+1
+2(ki log(pi) + 1)(ki +⌈logpi(n)⌉)
+) n
+.
+Similarly to the comment after Theorem 1.6 we note that log( mweight(f,p 1)) is bounded above
+by k1 log(p1) + log(∥f∥ℓ∞ ). As before as long as the terms are not too big we can take the a bove
+inequality as a comparison between the ℓn norms of f and f ∗.
+The overall argument will be via induction. The base case of T heorem 1.9 is Theorem 1.6 (in
+fact the constants are slightly better for the r = 1 case). We also note if we apply Theorem 1.9 for
+f equaling the indicator function 1S : ( Z/N Z)n→ Z≥ 0 of a set S we will get Theorem 1.2 (it is
+easy to see that mweight(1S,p 1)≤ p1). Recall, 1S(x) = 1 if x∈ S and 0 otherwise.
+The main ideas in the proof involve using and extending the pr obabilistic and the polynomial
+method tools from the papers [ DD21, Ars21a, Dha21, DD22]. In particular, generalizing the new
+probabilistic method arguments from [ DD22] is what allows us to overcome barriers to deal with
+the case of composite N with multiple prime factors. As mentioned earlier, even ( m,ǫ )-Kakeya
+bounds were not known for non prime power N (even if N was square-free). Indeed, already known
+techniques (in particular, combining the arguments from [ Ars21b] and [EOT10]) would have suﬃced
+to prove maximal bounds for the case of prime powers.
+In addition, we also show that a simple application of the arg uments in [ DD22] leads to a direct
+and simpler proof for Maximal Kakeya bounds over ﬁnite ﬁelds with almost sharp constants.
+Theorem 1.10 (Maximal Kakeya bounds over ﬁnite ﬁelds) . Let n >0 be an integer, q a prime
+power. For any function f : Fn
+q→ C we have the following bound,
+∑
+x∈ Fn
+q
+|f (x)|n≥ 1
+2n E
+u∈ PFn− 1
+q
+[|f ∗(u)|n] = 1
+2n|PFn− 1
+q |− 1
+
+ ∑
+u∈ PFn− 1
+q
+|f ∗(u)|n
+
+ .
+4
+
+[PDF physical page 5]
+The ﬁrst bounds of this type were proven in [ EOT10] where it was also proven for the more
+general case of varities by reducing to the case of the case of Fn
+q . Our arguments can be combined
+with theirs to improve the constants but we only focus on the c ase of Fn
+q as that is where our new
+argument is being used.
+The sharpness of the above theorem is evident if we take the in dicator function of Kakeya sets
+which then gives us the lower bounds from [
+DKSS13] which are tight up to a factor of 2. ∗ Finally,
+we note that Theorem 1.9 can be used to resolve the following statement of the Kakeya m aximal
+conjecture in [ HW18].
+Conjecture 1.11 (Kakeya Maximal conjecture over Z/N Z). For all ǫ > 0 and n ∈ N there
+exists a constant Cn,ǫ such that the following holds: For a choice of a line L(u) for each direction
+u∈ P(Z/N Z)n− 1 we have,
+
+
+
+
+
+
+∑
+u∈ P(Z/N Z)n− 1
+1L(u)
+
+
+
+
+
+
+ℓn/ (n− 1)
+≤ Cn,ǫN ǫ
+
+ ∑
+u∈ P(Z/N Z)n− 1
+|L(u)|
+
+
+(n− 1)/n
+.
+The above inequality simply follows from taking the dual of T heorem
+1.9. This will be shown
+in Section 6.
+1.1 Acknowledgements
+The author would like to thank Zeev Dvir and Suryateja Gavva f or helpful comments and discussion.
+Research supported by NSF grant DMS-1953807.
+1.2 Paper Organization:
+In Section
+2 we state preliminaries from [ DKSS13, DD21, DD22] which we will need. In Section 3
+we prove Theorem 1.10 with our new techniques. In Section 4 we prove Theorem 1.6 which is the
+base case of our induction argument. In Section 5 we ﬁnally prove Theorem 1.9. In Section 6 we
+prove Conjecture 6.
+2 Preliminaries
+2.1 Multiplicities and Hasse derivative
+We ﬁrst review the deﬁnitions of multiplicities and Hasse de rivatives that will be needed in the
+proof (see [
+DKSS13] for a more detailed discussion). We will allow the deﬁnitio ns to be over an
+arbitrary ﬁeld F since we will need to apply them both for F = Fq (for Theorem 1.10) and also for
+F = C (for Theorem 1.9 and Theorem 1.6).
+Deﬁnition 2.1 (Hasse Derivatives). Let F be a ﬁeld. Given a polynomial Q∈ F[x1,...,x n] and
+an i∈ Zn
+≥ 0 the ith Hasse derivative of Q is the polynomial Q(i) in the expansion
+Q(x +z) =
+∑
+j∈ Zn
+≥ 0
+Q(j)(x)zj
+∗Indeed our arguments can be combined with the arguments of [ BC21] to get rid of this 2 but we do not do that
+to simplify the proof.
+5
+
+[PDF physical page 6]
+wherex = (x1,...,x n), z = (z1,...,z n) and zj = ∏n
+k=1zjk
+k .
+Hasse derivatives satisfy the following useful property (s ee [
+DKSS13] for a proof). We will only
+need this property to show that, if Q(i+j) vanishes at a point then so does ( Q(i))(j).
+Lemma 2.2. Given a polynomial Q∈ F[x1,...,x n] and i, j∈ Zn
+≥ 0, we have
+(Q(i))(j) =Q(i+j)
+n∏
+k=1
+( ik +jk
+ik
+)
+We make precise what it means for a polynomial to vanish on a po inta∈ Fn with multiplicity.
+First we recall for a point j in the non-negative lattice Zn
+≥ 0, its weight is deﬁned as wt( j) = ∑n
+i=1ji.
+Deﬁnition 2.3 (Multiplicity). For a polynomial Q∈ F[x1,...,x n] and a point a∈ Fn we say Q
+vanishes on a with multiplicitym∈ Z≥ 0, if m is the largest integer such that all Hasse derivatives
+of Q of weight strictly less than m vanish on a. We use mult(Q,a ) to refer to the multiplicity of Q
+at a.
+Note that the number of Hasse derivatives over F[x1,...,x n] with weight strictly less than m is( n+m− 1
+n
+)
+. Hence, requiring that a polynomial vanishes to order m at a single point a enforces the
+same number of homogeneous linear equations on the coeﬃcien ts of the polynomial. We will use
+the following simple property concerning multiplicities o f composition of polynomials (see [
+DKSS13]
+for a proof).
+Lemma 2.4. Given a polynomial Q∈ F[x1,...,x n] and a tuple G = (g1,...,g n) of polynomials in
+F[y1,...,y m], and a∈ Fm we have,
+mult(Q◦G,a )≥ mult(Q,G (a)).
+Finally, we need a lemma which given a ǫ fraction of directions B⊆ PFn− 1
+q we can ﬁnd a large
+set of monomials of a ﬁxed degree (not depending on ǫ) such that any linear combination of these
+monomials doesn’t vanish on the entirety of B with high multiplicity.
+Lemma 2.5. Let r∈ N and B⊆ PFn− 1
+q with|S|≥ ǫ|PFn− 1
+q |,ǫ ∈ [0, 1] then for any d < rqthere
+exists a set PB(d,r ),|PB(d,r )| = ǫ
+( d+n
+n
+)
+of monomials of degree exactly d such that no non-zero
+linear combination of monomials in PB(d,r ) vanishes with multiplicity at least r over all points in
+B.
+This is analogous to Corollary 6.12 in [
+DD22]. The proof is nearly identical and uses a prob-
+abilistic method argument with the Schwartz-Zippel lemma [ Sch79, Zip79]. For completeness, we
+give a proof in the appendix.
+2.2 Rank of matrices with polynomial entries
+We will be needing a number of preliminaries from [
+Dha21] which we state without proof.
+Deﬁnition 2.6 (Rank of matrices with entries in F[z]/⟨f (z)⟩). Given a ﬁeld F and a matrix M
+with entries in F[z]/⟨f (z)⟩ where f (z) is a non-constant polynomial in F[z], we deﬁne the F-rank
+of M denoted rankFM as the maximum number of F-linearly independent columns of M .
+6
+
+[PDF physical page 7]
+Given a matrix A with entries in F[z]/⟨f (z)⟩ we want to construct a new matrix with entries
+only in F such that their F-ranks are the same. First we state a simple fact about F[z]/⟨f (z)⟩.
+F act 2.7 (Unique representation of elements in F[z]/⟨f (z)⟩). Let F be a ﬁeld and f (z) a non-
+constant polynomial in F[z] of degree d >0. Every element in F[z]/⟨f (z)⟩ is uniquely represented
+by a polynomial in F[z] with degree strictly less than d and conversely every degree strictly less
+than d polynomial in F[z] is a unique element in F[z]/⟨f (z)⟩. When we refer to an element h(z)∈
+F[z]/⟨f (z)⟩ we also let it refer to the unique degree strictly less than d polynomial it equals.
+Deﬁnition 2.8 (Coeﬃcient matrix of A). Let F be a ﬁeld and f (z) a non-constant polynomial
+in F[z] of degree d > 0. Given any matrix A of size n1× n2 with entries in F[z]/⟨f (z)⟩ we can
+construct the coeﬃcient matrix of A denoted by Coeﬀ(A) with entries in F which will be of size
+dn1× n2 whose rows are labelled by elements in {0,...,d − 1}× [n1] such that its (i,j )’th row is
+formed by the coeﬃcients of zi of the polynomial entries of the j’th row of A.
+The key property about the coeﬃcient matrix immediately fol lows from its deﬁnition.
+F act 2.9. Let F be a ﬁeld and f (z) a non-constant polynomial in F[z] of degree d > 0. Given
+any matrix A with entries in F[z]/⟨f (z)⟩ and its coeﬃcient matrix Coeﬀ(A) it is the case that an
+F-linear combination of a subset of columns of A is 0 if and only if the corresponding F-linear
+combination of the same subset of columns of Coeﬀ(A) is also 0.
+In particular, the F-rank of A equals the F-rank of Coeﬀ(A).
+We now need some simple properties related to the crank of ten sor products. To that end we
+ﬁrst deﬁne the tensor/Kronecker product of matrices.
+Deﬁnition 2.10 (Kronecker Product of two matrices) . Given a commutative ring R and two
+matricesMA andMB of sizes n1× m1 andn2× m2 corresponding toR-linear maps A :Rn1→ Rm1
+and B : Rn2→ Rm2 respectively, we deﬁne the Kronecker product MA⊗ MB as a matrix of size
+n1n2× m1m2 with its rows indexed by elements in [n1]× [n2] and its columns indexed by elements
+in [m1]× [m2] such that
+MA⊗ MB((r1,r 2), (c1,c 2)) = MA(r1,c 1)MB(r2,c 2),
+where r1∈ [n1],r 2∈ [n2],c 1∈ [m1] and c2∈ [m2]. MA⊗ MB corresponds to the matrix of the
+R-linear map A⊗ B :Rn1⊗ Rn2∼
+=Rn1n2→ Rm1⊗ Rm2∼
+=Rm1m2.
+We will need the following simple property of Kronecker prod ucts which follows from the cor-
+responding property of the tensor product of linear maps.
+F act 2.11 (Multiplication of Kronecker products) . Given matrices A1,A 2,B 1 and B2 of sizes
+a1× n1, a2× n2, n1× b1 and n2× b2 we have the following identity,
+(A1⊗ A2)·(B1⊗ B2) = (A1·B1)⊗ (A2·B2).
+We also need a simple fact about tensor product of a set of line arly independent rows with
+arbitrary vectors.
+F act 2.12 (Linear independence of Kronecker products) . Letk,n,m ∈ N. Given linearly indepen-
+dent vectors r1,r 2,...,r k∈ Fn then the set of vectors ri⊗ Fm,i = [k] are mutually disjoint from
+each other outside of 0. In particular, the union of a set of linearly independent vec tors from each
+of ri⊗ Fm,i = [k] gives us a linearly independent set of vectors.
+7
+
+[PDF physical page 8]
+2.3 Polynomial Method on the complex torus
+This section also includes preliminaries from [
+Dha21] but written for a slightly more general set
+of parameters. In most cases the proofs are near identical as in Section 3 of [ Dha21]. Where the
+proofs are more complicated we give proofs in the appendix fo r completeness.
+We ﬁrst deﬁne the rings that we will work over.
+Deﬁnition 2.13 (Rings T ℓ and T k
+ℓ ). † We let
+T ℓ = Fp[z]/⟨(z− 1)ℓ⟩
+and
+T k
+ℓ = Z(ζpk)[z]/⟨(z− 1)ℓ⟩
+whereζpk is a primitive complex pk’th root of unity.
+In [ Dha21]ℓ is a power of p but that is not necessary for the proofs to work. To prove maxi mal
+Kakeya bounds we need this extra control over the parameters .
+We suppress p in the notation as it will be ﬁxed to a single value throughout our proofs. We
+also let ζ =ζpk throughout this section for ease of notation.
+Note that Z(ζ) is the ring Z[ζ]/⟨φ pk (ζ)⟩ where,
+φ pk (x) = xpk
+− 1
+xpk− 1
+− 1 =
+p− 1∑
+i=0
+xipk− 1
+, (1)
+is the pk Cyclotomic polynomial. We will also work with the ﬁeld Q(ζ) = Q[ζ]/⟨φ pk (ζ)⟩.
+We need a simple lemma connecting Z(ζ) to Fp.
+Lemma 2.14 (Quotient map ψ pk from Z(ζ) to Fp). The ﬁeld Fp is isomorphic to Z(ζ)/⟨p,ζ − 1⟩.
+In particular, the map ψ pk from Z(ζ) to Fp which maps Z to Fp via the mod p map and ζ to 1 is a
+ring homomorphism.
+We note ψ pk can be extended to the rings Z(ζ)[z]/⟨h(z)⟩ for any h(x)∈ Z(ζ)[x] by mapping z
+to z. In particular, we also have the following.
+Corollary 2.15 (Extendingψ pk ). Leth(x)∈ Z(ζ)[x]. ψ pk is a ring homomorphism from Z(ζ)[z]/⟨h(z)⟩
+to Z(ζ)[z]/⟨h(z),p,ζ − 1⟩ = Fp[z]/⟨ψ pk (h(z))⟩.
+T k
+ℓ/⟨p,ζ − 1⟩ being isomorphic to T ℓ is a special case of the corollary.
+We also need the following lemma proving rank relations unde r the quotient map ψ pk .
+Lemma 2.16. LetA be a matrix with entries in T k
+ℓ then we have the following bound,
+rankQ(ζ)A≥ rankFpψ pk (A),
+whereψ pk (A) is the matrix with entries in T ℓ obtained by applying ψ pk to each entry of A.
+We now deﬁne the Vandermonde matrices with entries in Fp[z] which was deﬁned by Arsovski
+in [ Ars21a] and whose Fp-rank will help us lower bound the size of Kakeya Sets.
+†In [ Dha21] T ℓ is deﬁned as Fp[z]/⟨zpℓ
+− 1⟩. We will need this more general deﬁnition in this paper.
+8
+
+[PDF physical page 9]
+Deﬁnition 2.17 (The matrix Mm,n ). The matrix Mm,n is a matrix over Fp[z] with its rows and
+columns indexed by points in {0,...,m − 1}n. The (u,v )∈{ 0,...,m − 1}n×{ 0,...,m − 1}n entry
+is
+Mm,n (u,v ) = z⟨u,v ⟩.
+For a matrix M with entries in F[z] we let M (mod G(z)) is the matrix with same entries but
+over the ring F[z]/⟨G(z)⟩. We let M ℓ
+m,n be the matrix Mm,n (mod (z− 1)ℓ). We will need the
+following bound on the Fp-rank of these matrices.
+Lemma 2.18 (Rank of M ℓ
+m,n ). Letm≥ ℓ then the Fp-rank of M ℓ
+m,n is at least
+rankFpM ℓ
+m,n ≥
+⌈( ℓ⌈logp(ℓ)⌉− 1 +n
+n
+)⌉
+.
+For a given set of elements V ⊆{ 0,...,m − 1}n let Mm,n (V ) refer to the sub-matrix obtained
+by restricting to rows of Mm,n corresponding to elements in V (similarly for M ℓ
+m,n ). In particular,
+for any given u∈{ 0,...,m − 1}n we let Mℓ,n (u) refer to the u’th row of the matrix.
+We ﬁrst want to show the Fp-rank of M ℓ
+m,n can be explained by the rows indexed by elements
+u∈{ 0,...,m − 1}n such that at least one coordinate is non-zero modulo p. To that end we let
+Vm,p represent the set of elements in {0,...,m − 1}n such that at least one co-ordinate is non-zero
+modulo p.
+Lemma 2.19. The row-space of Coeﬀ(M ℓ
+m,n ) equals the row-space of the sub-matrix Coeﬀ(M ℓ
+m,n (Vm,p )).
+Proof. Consider the matrix Coeﬀ(M ℓ
+m,n ). For any u∈{ 0,...,m − 1}n, the u’th row in M ℓ
+m,n will
+correspond to a pℓ block of rows Bu in Coeﬀ(M ℓ
+m,n ). Say u doesn’t have a non-zero coordinate
+modulo p. We can ﬁnd an element u′∈ Vm,p such that for some i, piu′ = u. We claim that the
+block Bu can be generated by the block Bu′ via a linear map. This follows because given the
+coeﬃcient vector of a polynomial Q(z) in T ℓ the coeﬃcient vector of the polynomial Q(zp)∈ T ℓ
+can be obtained via a Fp-linear map.
+We need to consider row vectors which encode the evaluation o f monomials and their derivatives
+over points on a line in direction u∈ (Z/p kZ)n.
+Deﬁnition 2.20 (The evaluation vector U (α)
+d (y)). Let F be a ﬁeld, n,d ∈ Z and α∈ Zn
+≥ 0. For
+any given point y∈ Fn we deﬁne U (α)
+d (y) to be a row vector of size dn whose columns are indexed
+by monomials Q = xj1
+1 xj2
+2 ...x jn
+n ∈ F[x1,...,x n] for jk∈{ 0,...,d − 1},k ∈ [n] such that its Q’th
+column is Q(α)(y).
+Let L⊆ (Z/p kZ)n be a line in direction u∈ P(Z/p kZ)n− 1. A special case of the next lemma
+proves that for any polynomial f ∈ Z[x1,...,x n] we can evaluate f (zu) ∈
+T pk = Fp[z]/⟨(z−
+1)pk
+⟩,z u = (zu1,...,z un ) from the evaluation of f on the points f (ζx),x ∈ L. Let π : L→ Z≥ 0
+be a function on the line such that ∑
+x∈ Lπ (x)≥ ℓ. The next lemma states that we can decode
+f (zu′
+)∈ T ℓ = Fp[z]/⟨(z− 1)ℓ⟩ from the evaluations of weight at most π (ζx) Hasse derivatives of f
+at ζx,x ∈ L for any u′ in Zn such that u′ (mod pk) = u.
+The lemma below can be thought of as analogous to how over ﬁnit e ﬁelds the evaluation of a
+polynomial and its Hasse derivatives with high enough weigh t along a line in direction u can be
+used to decode the evaluation of that polynomial at the point at inﬁnity along u [DKSS13].
+9
+
+[PDF physical page 10]
+Lemma 2.21 (Decoding from evaluations on rich lines) . LetL ={a +λu|λ∈ Z/p kZ}⊂ (Z/p kZ)n
+with a∈ (Z/p kZ)n,u ∈ P(Z/p kZ)n− 1, u′∈ Zn be such that u′ (mod pk) = u and π :L→ Z≥ 0 be a
+function which satisﬁes ∑
+x∈ Lπ (x)≥ ℓ.
+Then, there exists elements cλ, α ∈ Q(ζ)[z] (depending on π,L and u′) for λ ∈ Z/p kZ and
+α∈ Zn
+≥ 0 with wt (α)<π (a +λu) such that the following holds for all polynomials f∈ Z[x1,...,x n],
+ψ pk
+
+
+pk− 1∑
+λ =0
+∑
+wt(α)<π (a+λu )
+cλ, αf (α)(ζa+λu )
+
+ =f (zu′
+)∈
+T ℓ.
+For the application of ψ pk in the statement of the lemma to make sense we must have its inp ut
+be an element in T k
+ℓ . In other words, we need the input of ψ pk to be a polynomial in z with
+coeﬃcients in Z(ζ). This is indeed the case. This lemma is basically Lemma 3.11 from [Dha21] and
+the proof is near identical. For completeness we give the pro of in the appendix.
+We will need this Lemma in the form of the following Corollary .
+Corollary 2.22 (Decoding M ℓ
+m,n from U (α)
+m ). Let L ={a +λu|λ ∈ Z/p kZ}⊂ (Z/p kZ)n with
+a∈ (Z/p kZ)n,u ∈ P(Z/p kZ)n− 1, u′∈ Zn be such that u′ (mod pk) = u and π : L→ Z≥ 0 be
+a function which satisﬁes ∑
+x∈ Lπ (x) ≥ ℓ then there exists a Q(ζ)[z]-linear combination (with
+coeﬃcients depending on π,L and u′) of the vectors U (α)
+m (ζx) for x∈ L and α of weight strictly
+less than π (x) which under the map ψ pk gives us the vector M ℓ
+m,n (u′).
+This also implies that there exists for each i = 0,...,ℓ − 1 many Q(ζ)-linear combinations of
+U (α)
+m (ζx) forx∈ L and α<π (x) such that under the map ψ pk we get the ith row of Coeﬀ(M ℓ
+m,n (u′)).
+To prove maximal bounds we will need to treat M ℓ
+m,n over T ℓ as a sub-matrix of M ℓ+1
+m,n over
+T ℓ+1 in some sense. We make this precise now.
+Lemma 2.23. The row-space over Fp of Coeﬀ(Mℓ,n ) is a sub-space of the row-space over Fp of
+Coeﬀ(Mℓ+1,n ).
+Proof. This follows from the fact the coeﬃcients of Q modulo (z− 1)ℓ can be computed as a linear
+combination of the coeﬃcients of Q modulo (z− 1)ℓ+1. This is because ( z− 1)ℓ is a factor of
+(z− 1)ℓ+1.
+The previous lemma easily implies the next corollary using s imple linear algebra and Lem-
+mas 2.18 and 2.19.
+Corollary 2.24. We have a set A =A1∪ ... ∪ Aℓ of linearly independent row vectors in the row
+space of Coeﬀ(M ℓ
+m,n ) such that
+1.
+|A|=
+⌈( ℓ⌈logp(ℓ)⌉− 1 +n
+n
+)⌉
+,
+2. elements in Ai are a subset of the rows of Coeﬀ(M i
+m,n (Vm,p )) and do note belong in the row
+space of Coeﬀ(M i− 1
+m,n ),
+10
+
+[PDF physical page 11]
+3. and
+|Ai|=
+⌈( i⌈logp(i)⌉− 1 +n
+n
+)⌉
+−
+⌈( (i− 1)⌈logp(i)⌉− 1 +n
+n
+)⌉
+for i∈ [ℓ].
+In the above corollary, for the purposes of our arguments, Ai in some sense encapsulates the
+linearly independent evaluations of degree i monomials when we embed Z/p kZ over the complex
+torus and use the ψ pk operation. This kind of decomposition is important for us to get Maximal
+Kakeya bounds.
+3 Warm Up: Maximal Kakeya bounds over ﬁnite ﬁelds
+In this section we prove Theorem
+1.10. We restate it here.
+Theorem 1.10 (Maximal Kakeya bounds over ﬁnite ﬁelds) . Let n >0 be an integer, q a prime
+power. For any function f : Fn
+q→ C we have the following bound,
+∑
+x∈ Fn
+q
+|f (x)|n≥ 1
+(2− 1/q )n|PFn− 1
+q |− 1
+
+ ∑
+u∈ PFn− 1
+q
+|f ∗(u)|n
+
+ .
+By a limiting and scaling argument we note that it suﬃces to pr ove the statement above only
+for natural number valued functions.
+We ﬁrst give a brief sketch for a weaker bound for the setting w heref is the indicator function
+of a set to give intuition. The proof will be a direction gener alization of the proof of the Kakeya
+set problem via the polynomial method. First let us describe the proof in [
+Dvi09] for the Kakeya
+set problem. That paper corresponds to the setting where the functionf : Fn
+q→ N is the indicator
+function of a set S⊆ Fn
+q such that f ∗ is always q. That is S contains a line in every direction.
+Dvir’s proof works by assuming the set has size smaller than
+( q− 1+n
+n
+)
+≥ qn/n ! which is the
+number of degree at most q− 1 monomials in n variables. This means we can ﬁnd a non-zero
+linear combination of these monomials to construct a polyno mial Q of degree at most q− 1 which
+vanishes on the entirety of S. As S contains a line in each direction Q can be restricted on these
+lines and will vanish on q points while having degree at most q− 1. By elementary algebra we can
+observe that the highest degree part of Q vanishes on every direction. This leads to a contradiction
+as a homogenous polynomial of degree at most q− 1 can not vanish over every direction by the
+Schwartz-Zipple lemma [
+Sch79, Zip79].
+We modify this proof using Lemma 2.5 to ﬁnd a more suitable polynomial. We now start out
+with an arbitrary set S and let f be its indicator function. Clearly, f ∗≤ q. Let
+B≥ k ={u∈ PFn− 1
+q |f ∗(u)≥ k},
+in other words it is the set of directions for which there exis ts a line in that direction with intersection
+at least k with S. We also let ǫ≥ k =|B≥ k|/|PFn− 1
+q |.
+We will prove that,
+|S|≥
+q− 1∑
+k=0
+ǫ≥ k+1
+( k +n− 1
+n− 1
+)
+. (2)
+11
+
+[PDF physical page 12]
+Rearranging the RHS will show that the above inequality give s us the desired bounds but with
+worse constants. For each 0 ≤ k≤ q− 1 we can ﬁnd a set of monomials P (k) of degree k such that
+any of their linear combinations do not vanish over B≥ k+1.
+If we say ( 2) does not hold then we can ﬁnd a non-zero polynomial Q formed by taking a
+linear combination of monomials from ⋃q− 1
+k=0P (k) which vanishes on S. Say Q is of degree d. Then
+consider the set of directions B≥ d+1. For each direction in B≥ d+1 there exists a line in that direction
+such that Q vanishes on d + 1 of its points. As Q is of degree d again by elementary algebra we can
+say that the degree d part of Q then must vanish on the direction vector. But the degree d part of
+Q is a linear combination of monomials from P (d) and hence can’t vanish on the entirety of B≥ d+1
+leading to a contradiction.
+The general statement is proven by letting derivatives also vanish and a more careful analysis
+to get better constants.
+Proof. Let f : Fn
+q → N and we deﬁne B≥ k ={u||f ∗(u)|≥ k,u ∈ PFn− 1
+q } and Bk ={u||f ∗(u)| =
+k,u ∈ PFn− 1
+q }. In other words, B≥ k is the set of directions where the maximal function is at leas t
+k (similarly for Bk). We also let w = max uf ∗(u). For m∈ N and 0≤ k≤ w, let
+ǫ≥ k =|B≥ k|/|PFn− 1
+q |,
+ǫk =|Bk|/|PFn− 1
+q |
+rk =
+⌈mk + 1
+2q− 1 − 1
+⌉
+,
+and
+dk =rkq− 1.
+By deﬁnition, ǫ≥ k =
+w∑
+i=k
+ǫk. We also note that if m≥ 2q then 0 = r0 < r1 < r2 < ... < r w. The
+same also holds for − 1 = d0 <d 1 <...<d w.
+We will prove the following inequality for all m≥ 2q,
+w∑
+i=1
+ǫ≥ i
+di∑
+j=di− 1+1
+( j +n− 1
+n− 1
+)
+≤
+∑
+x∈ Fn
+q
+( mf (x) +n− 1
+n
+)
+. (3)
+We claim (
+3) proves the Theorem. Let us prove that ﬁrst. The LHS of ( 3) can be re-arranged to
+give,
+w∑
+i=1
+ǫ≥ i
+di∑
+j=di− 1+1
+( j +n− 1
+n− 1
+)
+=
+w∑
+i=1
+w∑
+k=i
+di∑
+j=di− 1+1
+ǫk
+( j +n− 1
+n− 1
+)
+=
+w∑
+k=1
+dk∑
+i=0
+ǫk
+( i +n− 1
+n− 1
+)
+=
+w∑
+k=1
+ǫk
+( dk +n
+n
+)
+. (4)
+We note as we let m grow to∞ we have,
+lim
+m→∞
+1
+mn
+( dk +n
+n
+)
+= qnkn
+(2q− 1)n
+1
+n!,
+12
+
+[PDF physical page 13]
+and
+lim
+m→∞
+1
+mn
+( mf (x)− 1 +n
+n
+)
+=f (x)n 1
+n!.
+These two limits with ( 3) and ( 4) imply,
+w∑
+k=0
+ǫkqnkn 1
+(2q− 1)n≤
+∑
+x∈ Fn
+q
+f (x)n.
+As qn/ (2q− 1)n = 1/ (2− 1/q )n and ǫk =|Bk|/|PFn− 1
+q | where Bk is precisely the set of directions
+for which f ∗ is k we are done.
+We now just have to prove (
+3) holds. For j∈ [di− 1 + 1,d i], using Lemma 2.5 we pick a set of
+monomials P (j) of degree j of size ǫ≥ i
+( j+n− 1
+n− 1
+)
+such that any non-zero linear combination of those
+don’t vanish on the entirety of B≥ i with multiplicity at least ri.
+Say ( 3) doesn’t hold, then we can ﬁnd a non-zero polynomial Q formed by taking a non-zero
+linear combination of monomials in
+dw⋃
+j=0
+P (j) such that Q vanishes on x∈ Fn
+q with multiplicity at
+leastmf (x). This is because vanishing with multiplicity at least mf (x) gives us
+( mf (x)+n− 1
+n
+)
+many
+linear constraints and we have
+w∑
+j=0
+|P (j)| many coeﬃcients.
+w∑
+j=0
+|P (j)| equals the LHS of (
+3).
+SayQ is of degree d withdi− 1 <d ≤ di for some i≤ w. Let QH be the highest degree part of Q.
+In other words, QH is the degree d part of Q. By construction QH is a non-zero linear combination
+of monomials in P (d).
+Claim 3.1. For all u∈ B≥ i,
+mult(QH,u )≥ ri.
+Proof. Let j∈ Zn
+≥ 0 with wt( j)<r i. Q(j) is a degree d− wt(j) polynomial. If we consider a u∈ B≥ i
+then there exists a line Lu ={a +tu|t∈ Fq} such that ∑
+x∈ Lu
+f (x)≥ i. Q(j) will vanish on each point
+x with multiplicity at least mf (x)− wt(j). By Lemma
+2.4 we see that Q(j)(a +tu) vanishes with
+multiplicity at least mf (a +tu)− wt(j) for t∈ Fq. As Q(j)(a +tu) is a degree at most d− wt(j)
+polynomial we see that if Q(j)(a +tu) is non-zero then,
+d− wt(j)≥
+∑
+t∈ Fq
+(f (a +tu)− wt(j))≥ mi− wt(j)q.
+As d≤ di =qri− 1 and wt( j)<r i we have,
+qri− 1 + (q− 1)ri >mi.
+This means ⌈mk + 1
+2q− 1 − 1
+⌉
+=ri > (mi + 1)/ (2q− 1),
+leading to a contradiction. This implies that Q(j)(a +tu) is identically 0. We note the coeﬃcient of
+td− wt(j) inQ(j)(a +tu) is exactly (QH )(j)(u). As this argument holds for all j∈ Zn
+≥ 0 with wt(j)<r i
+we have that QH vanishes on u with multiplicity ri.
+13
+
+[PDF physical page 14]
+The previous claim leads to a contradiction as by constructi on QH is a non-zero linear com-
+bination of monomials in P (d) which by Lemma 2.5 cannot vanish on the entirety of B≥ i with
+multiplicity at least ri.
+4 Base case: Maximal Kakeya bounds over Z/p kZ
+The proof here involves replicating the arguments in the pro of of Theorem 1.10 while applying
+polynomial method arguments over the complex torus.
+Theorem
+1.6 (Maximal Kakeya bounds over Z/p kZ). Letn> 0 be an integer, p prime and k∈ N.
+For any function f : (Z/p kZ)n→ N we have the following bound,
+∑
+x∈ (Z/p kZ)n
+|f (x)|n≥ Cpk,n
+|P(Z/p kZ)n− 1|
+
+ ∑
+u∈ P(Z/p kZ)n− 1
+|f ∗(u)|n
+
+ ,
+where
+Cpk,n = 1
+(2(⌈logp(maxuf ∗(u)) + logp(n)⌉))n.
+When p>n we can improve Cpk,n to,
+Cpk,n = (⌈logp(max
+u
+f ∗(u))⌉ + 1)− n(1 +n/p )− n.
+Proof. Let f : ( Z/p kZ)n→ N and we deﬁne B≥ v ={u||f ∗(u)|≥ v,u ∈ P(Z/p kZ)n− 1} and Bv =
+{u||f ∗(u)|=v,u ∈ P(Z/p kZ)n− 1}. In other words, B≥ v is the set of directions where the maximal
+function is at least v (similarly for Bv). We also let w = max uf ∗(u). For m∈ N and 0≤ v≤ w,
+let
+ǫ≥ v =|B≥ v|/|P(Z/p kZ)n− 1|,
+ǫv =|Bv|/|P(Z/p kZ)n− 1|
+rv =mv.
+By deﬁnition, ǫ≥ v =
+w∑
+i=v
+ǫv.
+We prove the following for all m∈ N.
+w∑
+i=1
+ǫ≥ i
+ri∑
+j=ri− 1+1
+(⌈( j⌈logp(j)⌉− 1 +n
+n
+)⌉
+−
+⌈( (j− 1)⌈logp(j− 1)⌉− 1 +n
+n
+)⌉)
+≤
+∑
+x∈ (Z/p kZ)n
+( mf (x) +n− 1
+n
+)
+. (5)
+14
+
+[PDF physical page 15]
+We claim ( 5) proves the Theorem. Let us prove that ﬁrst. The LHS of ( 5) can be re-arranged to
+give,
+w∑
+i=1
+ǫ≥ i
+ri∑
+j=ri− 1+1
+(⌈( j⌈logp(j)⌉− 1 +n
+n
+)⌉
+−
+⌈( (j− 1)⌈logp(j− 1)⌉− 1 +n
+n
+)⌉)
+=
+w∑
+i=1
+w∑
+v=i
+ri∑
+j=ri− 1+1
+ǫv
+(⌈( j⌈logp(j)⌉− 1 +n
+n
+)⌉
+−
+⌈( (j− 1)⌈logp(j− 1)⌉− 1 +n
+n
+)⌉)
+=
+w∑
+v=1
+rv∑
+i=0
+ǫv
+(⌈( j⌈logp(j)⌉− 1 +n
+n
+)⌉
+−
+⌈( (j− 1)⌈logp(j− 1)⌉− 1 +n
+n
+)⌉)
+=
+w∑
+v=1
+ǫv
+⌈( rv⌈logp(rv)⌉− 1 +n
+n
+)⌉
+. (6)
+If we set m =n then using ( 5) and ( 6) we have,
+1
+n!
+w∑
+v=1
+ǫv
+vn
+⌈logp(v) + logp(n)⌉n≤ n− n
+w∑
+v=1
+ǫv
+⌈( rv⌈logp(rv)⌉− 1 +n
+n
+)⌉
+≤
+∑
+x∈ (Z/p kZ)n
+1
+n!
+n− 1∏
+i=0
+(f (x) +i/n )n.
+As (f (x) +i/n )≤ 2f (x) for integer f (x) > 0 and i < nwe are done. If we set m = p a similar
+calculation and using the fact that ( f (x) + i/n )≤ f (x)(1 + (n− 1)/p ) for integer f (x) > 0 and
+i<n we will be done.
+Now it remains to prove ( 5) for all m∈ N.
+Fix some m∈ N. Consider a random matrix G uniformly chosen from GLn(Z/p kZ) and let G·f
+be the function which maps x tof (G− 1x). For a general set S if we let G·S be the set{G·x|x∈ S}
+then the following identities are immediate,
+G·B≥ v ={u|(G·f )∗(u)|=|f ∗(G− 1u)|≥ v,u ∈ P(Z/p kZ)n− 1}
+and
+G·Bv ={u||(G·f )∗(u)|=v,u ∈ P(Z/p kZ)n− 1}.
+Consider the matrix U composed of the row vectors U α
+mw(ζx) for x∈ (Z/p kZ)n and wt( α) <
+m(G·f )(x). This has rank at most,
+∑
+x∈ (Z/p kZ)n
+( mf (x) +n− 1
+n
+)
+. (7)
+Recall, Vmw,p is the set of vectors in {0,...,mw − 1}n such that it at least has one non-zero
+coordinate modulo p.
+Consider the function m(G·f ). For any v = 1,...,w by construction we have that for every
+u∈ G·B≥ v there exists a line Lu such that (G·f )(x)≥ v. Now, Corollary 2.22 implies that for
+anyu∈ G·B≥ v, u′∈ Vmw,p,u ′ (mod pk) = u, j =rv− 1 + 1,...,r v and i = 0,...,j − 1 there exists
+a Q(ζ)-linear combination of U α
+mw(ζx) where x∈ Lu and wt( α)≤ m(G·f )(x)− 1 such that under
+ψ pk we get the ith row of Coeﬀ(M j
+mw,n (u′)).
+This means that there exists a matrix with Q(ζ)-entries such that multiplying this matrix to
+U from the left and applying ψ pk gives us a matrix M whose rows are composed of the rows in
+15
+
+[PDF physical page 16]
+Coeﬀ(M j
+mw,n (u′)) for v = 1,...,w , u∈ G·B≥ v, u′∈ Vmw,p,u ′ (mod pk) = u, j =rv− 1 + 1,...,r v
+and i = 0,...,j − 1. By Lemma 2.16 we have that ( 7) is lower bounded by the rank of M . As G
+is chosen randomly we will show the expected value of the rank of M is at least
+w∑
+i=1
+ǫ≥ i
+ri∑
+j=ri− 1+1
+(⌈( j⌈logp(j)⌉− 1 +n
+n
+)⌉
+−
+⌈( (j− 1)⌈logp(j− 1)⌉− 1 +n
+n
+)⌉)
+. (8)
+This will complete the proof.
+By Corollary 2.24 we have sets A1,...,A rw of linearly independent row vectors in the row space
+of Coeﬀ(M mw
+mw,n ) such that elements in Ai are a subset of the rows in Coeﬀ(M i
+mw,n (Vmw,p )) and do
+not belong in the row space of Coeﬀ(M i− 1
+mw,n (Vmw,p )). We also have that,
+|Ai|=
+⌈( i⌈logp(i)⌉− 1 +n
+n
+)⌉
+−
+⌈( (i− 1)⌈logp(i)⌉− 1 +n
+n
+)⌉
+for i∈ [rw].
+Claim 4.1. Forj =ri− 1 + 1,...,r i any given row in Aj will appear in M with probability at least
+ǫ≥ i
+Proof. Let j be some number from ri− 1 + 1,...,r i. We note that any given row y in Aj will be
+from some Coeﬀ(M j− 1
+mw,n (u′)) where u′∈ Vmw,p . Now, if G·B≥ i contains u′ (mod pk) then y will
+appear in the matrix M . As GLn(Z/p kZ) acts transitively on P(Z/p kZ)n− 1 this will happen with
+probability at least ǫ≥ i.
+Using the linearity of expectation, the above claim immedia tely implies that the expected rank
+of M is at least ( 8).
+5 Induction Step: Maximal Kakeya bounds over Z/N Z
+We ﬁrst give an outline of the proof in a special case with wors e constants to highlight the over-
+all strategy. The goal is to extend the proof from [ DD21] using the probabilistic method and
+Corollary 2.24 to prove Theorem 1.9.
+LetN =pk0qk1,N 0 =pk0,N 1 =qk1 wherep andq are distinct primes. Given a set S⊆ (Z/N Z)n
+let f : (Z/N Z)n→ Z≥ 0 be its indicator function. Let Lu be the line in direction u∈ P(Z/N Z)n− 1
+such thatf ∗(u) = ∑
+x∈ L(u)f (u) =|S∩L(u)|. In other words, L(u) is the line which has the maximal
+intersection with S in direction u. Lu can decomposed as a product of lines L0(u0,u 1)⊆ (Z/N 0Z)n
+and L1(u0,u 1)⊆ (Z/N 1Z)n in directions u0∈ P(Z/N 0Z)n− 1 and u1∈ P(Z/N 1Z)n− 1 respectively.
+Note, that L0(u0,u 1) and L0(u0,u 1) can and do depend on u = (u0,u 1) and not just on u0 or u1
+respectively.
+Let ζ be a primitive N0’th root of unity in C and 1y be the indicator vector of a point y∈
+(Z/N 1Z)n. We then examine the span of vectors
+U 0
+N0(ζx)⊗ 1y
+for x∈ L0(u),y ∈ L1(u),u ∈ P(Z/N Z)n− 1 and 0 = (0,..., 0)∈ Zn
+≥ 0. By counting the number of
+vectors we see the dimension of the space spanned by these vec tors is at most |S|.
+16
+
+[PDF physical page 17]
+For (u0,u 1)∈ P(Z/N 0Z)n− 1× P(Z/N 1Z)n− 1, we deﬁne the function gL(u0,u 1) :L1(u0,u 1)→ Z≥ 0
+as
+gL(u0,u 1)(y) =
+∑
+x∈ L0(u0,u 1)
+f (x,y ) =|S∩ L0(u0,u 1)×{ y}|.
+We note that gL(u0,u 1)≤ N0. In other words, gL(u0,u 1) is slicing the line L(u0,u 1) along the Z/N 0Z
+part (that is along u0) and measuring its intersection with S. For each L(u) we let B≥ i(L(u)) =
+{y|gL(u)(y)≥ i,y ∈ L1(u)} and b≥ i(L(u)) =|B≥ i(L(u))|.
+GivenL(u0,u 1) and y∈ L1(u0,u 1), we can use Corollary 2.22 to linearly generate the vector
+M
+gL(u0,u 1)(y)
+N0,n (u0)⊗ 1y
+from the vectors U 0
+m(ζx)⊗ 1y for x∈ L0(u0,u 1) after applying ψ pk0 . Now by Lemma 2.16 and
+Fact 2.9 the dimension of the space spanned by the rows in Coeﬀ(M
+gL(u0,u 1)(y)
+N0,n (u0))⊗ 1y for (u0,u 1)∈
+P(Z/N 0Z)n− 1× P(Z/N 1Z)n− 1, y∈ L1(u0,u 1) is at most |S|. Let us call this set of rows M .
+Corollary 2.24 will give us a number of linearly independent vectors A1,...,A N0 such that
+Ai ⊆ Coeﬀ(M i
+N0,n ),i ∈ [N0] and the row-spaces of Ai form disjoint subspaces. Now, the goal
+is to use Fact 2.12 by taking each element z in the set Ai and collect y∈ (Z/N 1Z)n such that
+Coeﬀ(M
+gL(u0,u 1)(y)
+N0,n (u0)) contains z. This will give us a set of linearly independent elements fro mM
+and their number will lower bound |S|. Note if we know for which i∈ [N0] and u0∈ P(Z/N 0Z)n− 1
+a given z is in Coeﬀ i
+N0,n (u0)) then we just need to ﬁgure out for what y there exists a u1 ∈
+P(Z/N 1Z)n− 1 such that gL(u0,u 1)(y) = i.
+With the above in mind, let S(u0,i ) for u0∈ PN n− 1
+0 and i∈ [N0] be the set
+S(u0,i ) =
+⋃
+u1∈ P(Z/N 1Z)n− 1
+B≥ i(L(u0,u 1)).
+Using Theorem 1.6 (in general here we use the induction hypothesis) we have,
+rankFp0{1y|y∈ S(u0,i )} =|S(u0,i )|≥
+∑
+u1∈ P(Z/N 1Z)n− 1
+CN1,nb≥ i(L(u0,u 1))n
+|P(Z/N 1Z)n− 1| ,
+where CN1,n = 2 − 1(⌈k1 + logq(n)⌉)− n. Now we see Fact 2.12 and Corollary 2.24 implies that,
+∑
+u0∈ P(Z/N 0Z)n− 1
+∑
+j∈ [N0]
+|S(u0,j )||Coeﬀ(M j
+N0,n (u0))∩ Aj|≤| S|.
+Ideally, the above would be enough to complete the proof but i t is not easy to directly argue the
+above is large. What we do is apply random rotations on the Z/N 0Z component of our function
+which will lead to a random permutation of the rows M
+gL(u0,u 1)(y)
+N0,n (u0) along the u0 co-ordinate.
+We then take expectation of the above along with a very simple partition argument to get the
+desired bounds. For the general case and better constants we use multiplicities as in the proof of
+Theorem 1.6.
+Theorem 1.9 (Maximal Kakeya bounds over Z/N Z). Letn> 0 be an integer and N =pk1
+1 ...p kr
+r
+with pi primes and ki∈ N. For any function f : (Z/N Z)n→ N we have the following bound,
+∑
+x∈ (Z/N Z)n
+|f (x)|n≥ CN,n
+|P(Z/N Z)n− 1|
+
+ ∑
+u∈ P(Z/N Z)n− 1
+|f ∗(u)|n
+
+ ,
+17
+
+[PDF physical page 18]
+where
+CN,n =
+( 1
+2(log(mweight(f,p 1)) + 1)⌈logp1(mweight(f,p 1)) + logp1(n)⌉
+) n
+·
+(
+1
+2(kr +⌈logpr (n)⌉)
+r− 1∏
+i=2
+1
+2(ki log(pi) + 1)(ki +⌈logpi(n)⌉)
+) n
+.
+Proof. The r = 1 case is Theorem
+1.6. Let the theorem be true for some r. We will now prove
+it for N = pk0
+0 pk1
+1 ...p kr
+r = pk0
+0 N1. Let f : ( Z/N Z)n→ N and w = mweight(f,p 0). We will use
+Fact 1.7 to decompose objects into a Z/p k0
+0 Z component and Z/N 1Z component.
+Let L(u) be the line in direction u∈ P(Z/N Z)n− 1 such that ∑
+x∈ L(u)f (x) = f ∗(u). L(u) =
+L(u0,u 1) can be decomposed into a tensor product of lines L0(u) in direction u0∈ P(Z/p k0
+0 )n− 1 and
+L1(u) in direction u1∈ P(Z/N 1Z)n− 1. For each L(u) we deﬁne the function gL(u) : L1(u)→ Z≥ 0
+as follows
+gL(u)(y) =
+∑
+x∈ L0(u)
+f (x,y ).
+By deﬁnition of mweight we have gL(u)≤ w. For each L(u) we let B≥ i(L(u)) ={y|gL(u)(y)≥ i,y ∈
+L1(u)} andb≥ i(L(u)) =|B≥ i(L(u))|. B≥ i(L(u)) is the set of points y onL1(u) which have a weight
+greater than i on the Z/N 0Z lineL0(u)×{ y}. We similarly deﬁne B=i(L(u)) ={y|gL(u)(y) = i,y ∈
+L1(u)} and b=i(L(u)) =|B=i(L(u))|.
+Letζ be apk0
+0 ’th root of unity. Consider a random matrix G uniformly chosen from GLn(Z/p k0
+0 Z).
+Consider the function fG(x,y ) = f (G− 1·x,y ) where x∈ (Z/p k0
+0 Z)n andy∈ (Z/N 1Z)n. For any set
+S we also deﬁne G·S ={G·x|x∈ S} where G acts on just the Z/p k0
+0 Z part of x if x∈ (Z/N Z)n
+and is the usual action if x∈ (Z/p k0
+0 Z)n. We now consider the matrix UG composed of the row
+vectors
+U α
+mw(ζG·x)⊗ 1y
+for all x∈ (Z/p k0
+0 Z)n and y∈ (Z/N 1Z)n and α∈ Zn
+≥ 0 with wt( α)<mf G(x,y ). The rank of UG is
+bounded above by ∑
+x∈ (Z/N Z)n
+( mf (x) +n− 1
+n
+)
+. (9)
+Recall, Vmw,p 0 is the set of vectors in {0,...,mw − 1}n such that it at least has one non-zero
+coordinate modulo p0.
+Consider the function mfG. We see that by construction the line
+G·L(u0,u 1) = (G·L0(u0,u 1),L 1(u0,u 1))
+will be a line in direction ( G·u0,u 1) such ∑
+x∈ G·L(u0,u 1)fG(x) = f ∗(u0,u 1) = f ∗
+G(G·u0,u 1).
+Now, Corollary
+2.22 implies that for a y∈ L1(u0,u 1) and u′
+0∈ Vmw,p 0,u ′
+0(mod pk0
+0 ) = G·u0,j =
+1,...,mg L(u0,u 1)(y),i = 0,...,j − 1 we have a Q(ζ)-linear combination of U α
+mw(ζx) where x∈ G·
+L0(u0,u 1) and wt( α)≤ mfG(x,y )− 1 such that under ψ pk0
+0
+we get the ith row of Coeﬀ(M j
+mw,n (u′
+0)).
+This means that there exists a matrix with Q(ζ)-entries such that multiplying this matrix to
+U from the left and applying ψ pk0
+0
+gives us a matrix MG whose rows are composed of the rows in
+18
+
+[PDF physical page 19]
+Coeﬀ(M j
+mw,n (u′
+0))⊗ 1y for (u0,u 1)∈ P(Z/N Z)n− 1, y∈ L1(u0,u 1) and u′
+0∈ Vmw,p 0,u ′
+0(mod pk0
+0 ) =
+G·u0, and j = 1,...,mg L(u0,u 1)(y).
+By construction and Lemma
+2.16, the Fp0-rank of MG lower bounds the rank of UG and hence
+lower bounds ( 9). In general, it suﬃces to lower bound the expected rank of MG over a random
+choice of G∈ GLn(Z/p k0
+0 Z). We do that in the next claim.
+Claim 5.1.
+∑
+u∈ P(Z/N Z)n− 1,i ∈ [w]
+CN1,nb≥ i(L(u))n
+|P(Z/N Z)n− 1| ·
+(⌈ ( mi
+⌈logp0 (mi)⌉ +n
+n
+) ⌉
+−
+⌈( m(i− 1)
+⌈logp0 (m(i− 1))⌉ +n
+n
+) ⌉)
+is a lower bound for EG∈ GLn(Z/p k0
+0 Z)[rankFp0MG] where
+CN1,n =
+
+
+r− 1∏
+j=2
+1
+kj log(pj) + 1
+r∏
+i=2
+1
+(2(ki +⌈logpi(n)⌉))
+
+
+n
+.
+Proof. Let S(u0,i ) for u0∈ P(Z/p k0
+0 Z)n− 1 and i∈ [w] be the set
+S(u0,i ) =
+⋃
+u1∈ P(Z/N 1Z)n− 1
+B≥ i(L(u0,u 1)).
+Using the induction hypothesis (in particular we use Theore m
+1.2 for r prime factors) we have,
+rankFp0{1y|y∈ S(u0,i )} =|S(u0,i )|≥
+∑
+u1∈ P(Z/N 1Z)n− 1
+CN1,nb≥ i(L(u0,u 1))n
+|P(Z/N 1Z)n− 1| . (10)
+Recall for a ﬁxed G∈ GLn(Z/p k0
+0 Z), MG’s rows are the rows in Coeﬀ(M j
+mw,n (u′
+0))⊗ 1y for
+(u0,u 1)∈ P(Z/N Z)n− 1 ,y∈ L1(u0,u 1) andu′
+0∈ Vmw,p 0,u ′
+0(mod pk0
+0 ) = G·u0, andj∈ [mgL(u0,u 1)(y)].
+We can easily re-write this condition to note that MG’s rows are the rows in Coeﬀ(M j
+mw,n (u′
+0))⊗
+1y for u0∈ P(Z/p k0
+0 Z)n− 1, u′
+0∈ Vmw,p 0,u ′
+0(mod pk0
+0 ) = G·u0, and y∈ S(u0,⌈j/m ⌉) for j∈ [mw].
+By Corollary
+2.24 we have a set A =A1∪ ... ∪ Amw of linearly independent row vectors in the
+row space of Coeﬀ(M mw
+mw,n ) such that Ai are a subset of rows in Coeﬀ(M i
+mw,n (Vm,p 0)) and do not
+belong in the row space of Coeﬀ(M i− 1
+mw,n ) for i∈ [mw]. We also have
+|Ai|=
+⌈( i⌈logp0(i)⌉− 1 +n
+n
+)⌉
+−
+⌈( (i− 1)⌈logp0(i− 1)⌉− 1 +n
+n
+)⌉
+for i∈ [mw].
+For a u0∈ P(Z/p k0
+0 Z)n− 1, let V ′(u0) be the set of u′
+0∈ Vmw,p 0 such that u′
+0(mod pk0
+0 ) = u0.
+Now Fact
+2.12 implies that,
+∑
+u0∈ P(Z/p k0
+0 Z)n− 1
+∑
+j∈ [mw]
+|S(u0,⌈j/m ⌉)|
+
+ ∑
+u′
+0∈ V ′(G·u0)
+|Coeﬀ(M j
+mw,n (u′
+0)∩ Aj|
+
+ ≤ rankFp0MG.
+19
+
+[PDF physical page 20]
+By ( 10), to prove the claim it now suﬃces to show that
+EG∈ GLn(Z/p k0
+0 Z)
+
+ ∑
+u′
+0∈ V ′(G·u0)
+|Coeﬀ(M j
+mw,n (u′
+0)∩ Aj|
+
+≥ |Aj|
+|P(Z/p k0
+0 Z)n− 1|
+.
+A given row vector inAj corresponds to a row vector inM j
+mw,n (V ′(u′)) for someu′∈ P(Z/p k0
+0 Z)n− 1.
+This means that Aj appears in Coeﬀ(M j
+mw,n (u′
+0)) for some u′
+0∈ V ′(G·u0) if and only if G·u0 =u′.
+As the action of GLn(Z/p k0
+0 Z) is transitive on P(Z/p k0
+0 Z)n− 1 we see that the probability of this
+happening is|P(Z/p k0
+0 Z)n− 1|− 1. Linearity of expectation then completes the proof.
+We will also need another simple claim.
+Claim 5.2. For all u,
+∑
+i∈ [w]
+b≥ i(L(u))n(in− (i− 1)n)≥
+( |f ∗(u)|
+log(w) + 1
+) n
+.
+Proof. By deﬁnition we have
+b≥ 1(L(u))≥ b≥ 2(L(u))≥ ... ≥ b≥ w(L(u)). (11)
+We will show that there exists some j∈ [w] such that b≥ j(L(u))≥ f ∗(u)/ (j(log(w) + 1)). Then
+using ( 11) we will be done.
+Say for all j∈ [w] we have b≥ j(L(u))<f ∗(u)/ (j(log(w) + 1)). By the choice of L(u) we have
+∑
+i∈ [w]
+b=i(L(u))i =
+∑
+i∈ [w]
+b≥ i(L(u)) = f ∗(u).
+But the above leads to a contradiction if we sum b≥ i(L(u))<f ∗(u)/ (i(log(w) + 1)) for i∈ [w].
+We can re-arrange the summation in the lower bound of Claim 5.1 to get,
+∑
+u∈ P(Z/N Z)n− 1,i ∈ [w]
+CN1,nb≥ i(L(u))n
+|P(Z/N Z)n− 1| ·
+(⌈ ( mi
+⌈logp0 (mi)⌉ +n
+n
+) ⌉
+−
+⌈( m(i− 1)
+⌈logp0 (m(i− 1))⌉ +n
+n
+) ⌉)
+≥
+∑
+u∈ P(Z/N Z)n− 1,i ∈ [w]
+CN1,n
+|P(Z/N Z)n− 1|·
+⌈( mi
+⌈logp0 (mi)⌉ +n
+n
+) ⌉
+(b≥ i(L(u))n− b≥ i+1(L(u))n)≥
+∑
+u∈ P(Z/N Z)n− 1,i ∈ [w]
+CN1,n
+|P(Z/N Z)n− 1|· (mi)n
+⌈logp0(w) + logp0(m)⌉n (b≥ i(L(u))n− b≥ i+1(L(u))n)≥
+∑
+u∈ P(Z/N Z)n− 1,i ∈ [w]
+CN1,n
+|P(Z/N Z)n− 1|· b≥ i(L(u))n
+⌈logp0(w) + logp0(m)⌉n ((mi)n− (m(i− 1))n).
+Settingm =n in the above inequality combined with Claim 5.1 and the fact that EG∈ GLn(Z/p k0
+0 Z)[rankFp0MG]
+lower bounds ( 9) gives us
+1
+n!
+∑
+u∈ P(Z/N Z)n− 1,i ∈ [w]
+CN1,n
+|P(Z/N Z)n− 1|·b≥ i(L(u))(in− (i− 1)n)
+⌈logp0(w) + logp0(n)⌉n ≤
+∑
+x∈ (Z/N Z)n
+1
+n!
+n− 1∏
+i=0
+(f (x) +i/n ).
+Using the fact that f (x) +i/n ≤ 2f (x) for f (x)≥ 1 and Claim 5.2 we are done.
+20
+
+[PDF physical page 21]
+6 Proof of Conjecture 1.11
+Conjecture 1.11 (Kakeya Maximal conjecture over Z/N Z). For all ǫ > 0 and n ∈ N there
+exists a constant Cn,ǫ such that the following holds: For a choice of a line L(u) for each direction
+u∈ P(Z/N Z)n− 1 we have,
+
+
+
+
+
+
+∑
+u∈ P(Z/N Z)n− 1
+1L(u)
+
+
+
+
+
+
+ℓn/ (n− 1)
+≤ Cn,ǫN ǫ
+
+ ∑
+u∈ P(Z/N Z)n− 1
+|L(u)|
+
+
+(n− 1)/n
+.
+We note 2 N n− 1≥
+( ∑
+u∈ P(Z/N Z)n− 1|L(u)|
+) (n− 1)/n
+≥ N n− 1 so it suﬃces to replace the right
+hand side by N n− 1.
+We will also need the following known number theoretic estim ate which follows from Theorem
+315 in [
+HW75].
+F act 6.1. For a natural number N with prime factorization pk1
+1 ...p kr
+r we have,
+r∏
+i=1
+ki log(pi) = N o(1),
+whereo(1) tends to 0 as N→∞ .
+Proof of Conjecture 1.11. Throughout this proof we treat n as ﬁxed. In particular we hide any
+functions only depending on n in the O and Ω notation.
+Let N =pk1
+1 ...p kr
+r for primes k1 >...>k r.
+Let h(x) = ∑
+u∈ P(Z/N Z)n− 1 1L(u)(x) and g(x) = h(x)1/ (n− 1). We note ∥g∥∞ ≤ 2N .
+We immediately have the following identity,
+
+
+
+
+
+
+∑
+u∈ P(Z/N Z)n− 1
+1L(u)
+
+
+
+
+
+
+ℓn/ (n− 1)
+=∥h∥ℓn/ (n− 1) =⟨g,h⟩
+∥g∥ℓn
+. (12)
+Let f (x) = ⌈g(x)⌉. We note g(x) ≤ f (x)≤ 2g(x) and ∥f∥∞ ≤ 2∥g∥∞ ≤ 4N . This also
+means that mweight(f,p 1)≤ 4Np k
+1. By the deﬁnition of the maximal function we note f ∗(u)≥∑
+x∈ L(u)f (x). We let f ′(u) = ∑
+x∈ L(u)f (x) and g′(u) = ∑
+x∈ L(u)g(u) for u∈ P(Z/N Z)n− 1.
+Now, using f ∗≥ f ′ and Theorem
+1.9 we have,
+∥f∥ℓn≥| P(Z/N Z)n− 1|− 1/n C 1/n∥f ∗∥ℓn≥| P(Z/N Z)n− 1|− 1/n C 1/n∥f ′∥ℓn (13)
+where
+C 1/n = Ω
+(
+1
+logp1(Np k
+1n) + 1
+r∏
+i=2
+1
+(ki log(pi) + 1)(2(ki +⌈logpi(n)⌉))
+)
+≥ Ω(N − o(1)) (14)
+21
+
+[PDF physical page 22]
+using Fact 6.1 (o(1) is a function which goes to 0 as N→∞ and n is ﬁxed). Putting ( 12), ( 13),
+and ( 14) together with the fact that g(x)≤ f (x)≤ 2g(x) we get,
+
+
+
+
+
+
+∑
+u∈ P(Z/N Z)n− 1
+1L(u)
+
+
+
+
+
+
+ℓn/ (n− 1)
+≤ 2⟨h,f ⟩
+∥f∥ℓn
+≤ 2C − 1/n|P(Z/N Z)n− 1|1/n ⟨h,f ⟩
+∥f ′∥ℓn
+≤ O(N o(1))|P(Z/N Z)n− 1|1/n ⟨h,f ⟩
+∥f ′∥ℓn
+=O(N o(1))|P(Z/N Z)n− 1|1/n
+∑
+x∈ (Z/N Z)n
+∑
+u∈ P(Z/N Z)n− 1
+1L(u)(x)f (x)
+∥f ′∥ℓn
+=O(N o(1))|P(Z/N Z)n− 1|1/n
+∑
+u∈ P(Z/N Z)n− 1
+∑
+x∈ L(u)
+f (x)
+∥f ′∥ℓn
+=O(N o(1))|P(Z/N Z)n− 1|1/n
+∑
+u∈ P(Z/N Z)n− 1
+f ′(u)
+∥f ′∥ℓn
+.
+Finally, applying H¨ older’s inequality gives us,
+
+
+
+
+
+
+∑
+u∈ P(Z/N Z)n− 1
+1L(u)
+
+
+
+
+
+
+ℓn/ (n− 1)
+≤ O(N o(1))|P(Z/N Z)n− 1|1/n∥1∥ℓn/ (n− 1)(P(Z/N Z)n− 1)
+≤ O(N o(1))|P(Z/N Z)n− 1|≤ O(N n− 1+o(1)).
+As N grows this completes the proof.
+References
+[Ars21a] Bodan Arsovski. The p-adic Kakeya conjecture. arX iv preprint 2108.03750v1, 08-08-
+2021.
+[Ars21b] Bodan Arsovski. The p-adic Kakeya conjecture. arX iv preprint 2108.03750v3, 11-01-
+2021.
+[BC21] Boris Bukh and Ting-Wei Chao. Sharp density bounds on the ﬁnite ﬁeld Kakeya. arXiv
+preprint 2108.00074, 2021.
+[Car18] Xavier Caruso. Almost all non-archimedean Kakeya s ets have measure zero. Conﬂuentes
+Mathematici, 10(1):3–40, 2018.
+[DD21] Manik Dhar and Zeev Dvir. Proof of the Kakeya set conje cture over rings of integers
+modulo square-free N. Combinatorial Theory, to appear, 2021.
+[DD22] Manik Dhar and Zeev Dvir. Linear hashing with ℓ∞ guarantees and two-sided kakeya
+bounds, 2022.
+[DH13] Evan P. Dummit and M´ arton Hablicsek. Kakeya sets ove r non-archimedean local rings.
+Mathematika, 59(2):257–266, 2013.
+22
+
+[PDF physical page 23]
+[Dha21] Manik Dhar. The kakeya set conjecture for Z/ NZ for general N. arXiv preprint
+2110.14889, 2021.
+[DKSS13] Zeev Dvir, Swastik Kopparty, Shubhangi Saraf, and Madhu Sudan. Extensions to the
+method of multiplicities, with applications to Kakeya sets and mergers. SIAM Journal
+on Computing , 42(6):2305–2328, 2013.
+[Dvi09] Zeev Dvir. On the size of Kakeya sets in ﬁnite ﬁelds. Journal of the American Mathe-
+matical Society, 22(4):1093–1097, 2009.
+[EOT10] Jordan S Ellenberg, Richard Oberlin, and Terence Ta o. The Kakeya set and maximal
+conjectures for algebraic varieties over ﬁnite ﬁelds. Mathematika, 56(1):1–25, 2010.
+[Fra16] Robert Fraser. Kakeya-type sets in local ﬁelds with ﬁnite residue ﬁeld. Mathematika,
+62(2):614–629, Jan 2016.
+[HW75] G.H. Hardy and E.M. Wright. An Introduction to the Theory of Numbers . 4th edition,
+1975.
+[HW18] Jonathan Hickman and James Wright. The Fourier restr iction and Kakeya problems
+over rings of integers modulo N. Discrete Analysis, (11), 2018.
+[Luc78] Edouard Lucas. Th´ eorie des fonctions num´ eriques simplement p´ eriodiques. American
+Journal of Mathematics , 1(4):289–321, 1878.
+[Sal22] Alejo Salvatore. The kakeya conjecture on local ﬁel ds of positive characteristic. arXiv
+preprint arXiv:2202.11344, 2022.
+[Sch79] Jacob T Schwartz. Probabilistic algorithms for ver iﬁcation of polynomial identities.
+In International Symposium on Symbolic and Algebraic Manipula tion, pages 200–215.
+Springer, 1979.
+[SS08] Shubhangi Saraf and Madhu Sudan. An improved lower bo und on the size of Kakeya
+sets over ﬁnite ﬁelds. Anal. PDE , 1(3):375–379, 2008.
+[Wol99] Thomas Wolﬀ. Recent work connected with the Kakeya pr oblem. Prospects in mathe-
+matics (Princeton,NJ, 1996) , pages 29–162, 1999.
+[Zip79] Richard Zippel. Probabilistic algorithms for spar se polynomials. In Edward W. Ng,
+editor, Symbolic and Algebraic Computation , pages 216–226, Berlin, Heidelberg, 1979.
+Springer Berlin Heidelberg.
+A Proof of Lemma 2.5
+The proof here only involves a minor adaptation of the ideas i n [ DD22].
+First, we state the multiplicity version of the Schwartz-Zippel bound [ Sch79, Zip79] (see [DKSS13]
+for a proof). We denote by F[x1,..,x n]≤ d the space of polynomials of total degree at most d with
+coeﬃcients in F.
+23
+
+[PDF physical page 24]
+Lemma A.1 (Schwartz-Zippel with multiplicities). Let F be a ﬁeld, d∈ Z≥ 0 and letf∈ F[x1,..,x n]≤ d
+be a non-zero polynomial. Then, for any ﬁnite subset U⊆ F ,
+∑
+a∈ U n
+mult(f,a )≤ d|U|n− 1.
+A.1 The EV AL matrix, its submatrices and their ranks
+Our main object of interest is the matrix encoding the evalua tion of a subset of monomials (with
+their derivatives) on a subset of points.
+Deﬁnition A.2 (EVALm(S,W ) matrix) . Let F be a ﬁeld, and let n,m ∈ N. Given a set S⊂ Fn
+and a set of monomials W⊂ F[x1,...,x n], we let EVALm(S,W ) denote an|S|
+( m− 1+n
+n
+)
+×|W|matrix
+whose columns are indexed by W and rows are indexed by tuples (x, j)∈ S× Zn
+≥ 0 s.t. wt (j) < m.
+The ((x, j),f )th entry of this matrix is,
+f (j)(x).
+In other words, the (x, j)th row of the matrix consists of the evaluation of the j’th Hasse derivative
+of all f∈ W atx. Equivalently, the f ’th column of the matrix consists of the evaluations of weigh t
+strictly less than m Hasse derivatives of f at all points in S.
+LetWd,n denote the set of monomials in n-variablesx1,...,x n of degree at exactly d. Our ﬁrst
+lemma shows that the Fq-rank of EVALm(PFn− 1
+q ,W d,n ) is maximal whenever d is not too large.
+This is essentially the Schwartz-Zippel lemma since it mean s that a polynomial of bounded degree
+could be recovered from its evaluations (up to high enough or der) on a product set and evaluations
+of homogenous polynomials over PFn− 1
+q gives us evaluations over the entirety of Fn
+q .
+Lemma A.3 (Rank of EVALm(PFn− 1
+q ,W d,n )). Letm∈ N then for all d<mq we have,
+rankFq EVALm(PFn− 1
+q ,W d,n ) =|Wd,n|=
+( d +n− 1
+n− 1
+)
+.
+Proof. Let vm be the column of EVALm(PFn− 1
+q ,W d,n ) corresponding to the monomial m∈ Wd,n .
+The linear combination α mvm is precisely the evaluation of Hasse derivative of weight st rictly less
+thanm of the homogenous polynomial α mm over PFn− 1
+q . If such a linear combination is zero then
+we get a homogenous linear polynomial of degree d<mq which vanishes on the entirety of PFn− 1
+q
+with multiplicity at least m. As the polynomial is homogenous the same holds over the enti rety of
+Fn
+q . This immediately contradicts Lemma
+A.1.
+Our ﬁnal lemma, which is the heart of this section, shows that if we have a set S of aδ fraction of
+points from PFn− 1
+q then rankFq EVALm(S,W d,n ) is at least a δ fraction of rank Fq EVALm(PFn− 1
+q ,W d,n )
+Lemma A.4 (Rank of EVALm(S,W d,n )). Letm∈ N and S⊆ PFn− 1
+q with|S|≥ δ|PFn− 1
+q |,δ ∈ [0, 1]
+then for all d<mq we have,
+rankFq EVALm(S,W d,n )≥ δ·|Wd,n|=δ
+( d +n
+n− 1
+)
+.
+We note that Lemma 2.5 is a simple corollary of the above.
+24
+
+[PDF physical page 25]
+Proof. ConsiderS⊆ PFn− 1
+q such that|S|=δ|PFn− 1
+q |. For any M∈ GLn(Fq) let M·S ={M·y|y∈
+S}.
+Claim A.5.
+rankFq EVALm(S,W d,n ) = rankFq EVALm(M·S,W d,n ).
+Proof. We will prove this statement by constructing an isomorphism between the column-space
+of the two matrices. An element in the column space of EVALm(S,W d,n ) is the evaluation of the
+weight strictly less than m Hasse derivatives on S of a degree d homogenous polynomial f (x)∈
+Fq[x1,...,x n]. We map such a vector to the evaluation of the weight strictl y less than m Hasse
+derivatives on M·S of the polynomial f (M − 1x) which will also be homogenous of degree d. The
+choice of f in the beginning can be ambiguous but if there are two polynom ials f (x) and g(x)
+having the same evaluation of weight strictly less than m Hasse derivatives over S thenf (x)− g(x)
+vanishes on S with multiplicity at least m. By Lemma 2.2,f (M − 1x)− g(M − 1x) vanishes on M·S
+with multiplicity m which implies f (M − 1x) and g(M − 1x) evaluate to the same weight strictly less
+than m Hasse derivatives over M·S. The inverse map can be similarly constructed.
+The above claim shows it suﬃces to show the rank bound for any M·S where M∈ GLn(Fq).
+We do this by a probabilistic method argument.
+The previous Lemma implies that EVALm(PFn− 1
+q ,W d,n ) has Fq-rank|Wd,n|. As this is a matrix
+with Fq entries this means that there exists a|Wd,n|=
+( d+n− 1
+n− 1
+)
+subset of rowsR of EVALm(PFn− 1
+q ,W d,n )
+which are linearly independent.
+These rows are indexed by tuples
+(x, i)∈ PFn− 1
+q × Zn
+≥ 0
+with wt(i)<m . The (x, i)th row is the evaluation of the ith Hasse Derivative at x of the monomials
+in Wd,n .
+We pick an M∈ GLn(Fq) uniformly at random. We now calculate the expected fractio n of the
+rows from R which appear in EVALm(M·S,W d,n ).
+A row in R indexed by (x, i)∈ PFn− 1
+q × Zn
+≥ 0 will appear in EVALm(M·S,W d,n ) if and only if
+x∈ M·S. As the action of GL n(Fq) on PFn− 1
+q is transitive we see that this happens with probability
+at least δ. This means the expected fraction of rows in R appearing in EVALm(M·S,W d,n ) is at
+least δ. This ensures that there is some matrix M such that EVALm(M·S,W d,n ) and hence
+EVALm(M·S,W d,n ) has Fq-rank at least δ|Wd,n|.
+B Proof of Lemma 2.18
+As we need a small modiﬁcation, we reproduce the analysis of [ Dha21, Ars21a] here. We ﬁrst show
+Mℓ, 1 has an explicit decomposition as a product of lower and upper triangular matrices.
+Lemma B.1 (Lemma 5 in [ Ars21a]). Let Vm for m∈ N be an m× m matrix whose row and
+columns are labelled by elements in {0,...,m − 1} such that its i,j th entry is zij∈ Z[z].
+In this setting, there exists a lower triangular matrix Lm over Z[z] with ones on the diagonal such
+that its inverse is also lower triangular with entries in Z[z] with ones on the diagonal, and an upper
+triangular matrix Dm over Z[z] whose rows and columns are indexed by points in {0,...,m − 1}
+such that the jth diagonal entry for j∈{ 0,...,m − 1} equals
+25
+
+[PDF physical page 26]
+Dm(j,j ) =
+j− 1∏
+i=0
+(zj− zi)
+such that Vm =LmDm.
+This statement is precisely Lemma 5 in [ Ars21a]. It is easy to prove by doing elementary row
+operations on the Vandermonde matrix Vm.
+We will also need Lucas’s theorem from [ Luc78].
+Theorem B.2 (Lucas’s Theorem [ Luc78]). Letp be a prime and Given two natural numbers a and
+b with expansion akpk +... +a1p +a0 and bkpk +... +b0 in base p we have,
+( a
+b
+)
+(mod p) =
+k∏
+i=0
+( ai
+bi
+)
+(mod p).
+A particular consequence is that
+( a
+b
+)
+is non-zero if and only if every digit in base- p of b is at most
+as large as every digit in base- p of a.
+Lemma 2.18. m≥ ℓ then the Fp-rank of M ℓ
+ℓ,n is at least
+rankFpMℓ,n≥
+⌈( ℓ⌈logp(ℓ)⌉− 1 +n
+n
+)⌉
+.
+Proof. Using the previous lemma we note that Vm =LmDm. Under the ring map f from Z[z] to
+Z[z]/⟨(z− 1)ℓ⟩, Vm = LmDm becomes M ℓ
+m, 1 = LmDm where Lm and Dm are the matrices f (Lℓ)
+and f (Dℓ) respectively.
+We next notice that M ℓ
+m,n is Mℓ, 1 tensored with itself n times which we denote as M ℓ
+m,n =
+(M ℓ
+m, 1)⊗ n. Using M ℓ
+m, 1 = LmDm and Fact 2.11 we have M ℓ
+m,n = (M ℓ
+m, 1)⊗ n = L
+⊗ n
+m D
+⊗ n
+m . As Lm
+was invertible with its inverse also having entries in Z[z] we see that Lm is also invertible and(
+L
+⊗ n
+m
+) − 1
+M ℓ
+m,n =D
+⊗ n
+m . By standard properties of the tensor product have that,
+rankFpM ℓ
+m,n ≥ rankFpD
+⊗ n
+m .
+As Dm is upper triangular so will D
+⊗ n
+m be. Therefore, to lower bound the rank of D
+⊗ n
+m we can
+lower bound the number of non-zero diagonal elements.
+The diagonal elements in D
+⊗ n
+m correspond to the product of diagonal elements chosen from n
+copies of Dm. Recall, the rows and columns of Dm are labelled by j∈{ 0,...,m − 1} with
+Dm(j,j ) =
+j− 1∏
+i=0
+(zj− zi)
+Setting z− 1 = w we note that Fp[z]/⟨(z− 1)ℓ⟩ is isomorphic to Fp[w]/⟨wℓ⟩. Dm(j,j ) can now be
+written as
+Dm(j,j ) = (1 + w)j(j− 1)/ 2
+j∏
+i=1
+((1 +w)i− 1)
+26
+
+[PDF physical page 27]
+Using Lucas’s Theorem (Theorem B.2) we see that the largest power of t which divides (1 +w)l− 1
+is the same as the largest power of p which divides l. For any j≤ ℓ− 1 , therefore the largest power
+of w which divides Dm(j,j ) is at most
+⌊logp(j)⌋∑
+t=0
+(⌊ j
+pt
+⌋
+−
+⌊ j
+pt+1
+⌋)
+pt =j +
+⌊logp(j)⌋∑
+t=1
+⌊j
+pt
+⌋
+pt− 1(p− 1)
+≤ j(1 +⌊logp(j)⌋(1− 1/p ))
+≤ j(⌊logp(ℓ− 1)⌋ + 1−⌊ logp(ℓ− 1)⌋/p ). (15)
+Consider the set of tuples ( j1,...,j n)∈ N such that j1 +... +jn≤⌈ ℓ/ (⌊logp(ℓ− 1)⌋ + 1)⌉. Using
+(15) we see that the diagonal entry in D
+⊗ n
+m corresponding to the tuple will be divisible by at most
+w⌈ℓ/ (⌊logp(ℓ− 1)⌋+1)⌉(⌊logp(ℓ− 1)⌋+1−⌊ logp(ℓ− 1)⌋/p ). It is easy to check that the exponent is at most ℓ− 1
+which will guarantee that the ( j1,...,j n)’th diagonal entry of D
+⊗ n
+m is non-zero.
+We note as ⌊logp(ℓ− 1)⌋ + 1 = ⌈logp(ℓ)⌉ we get at least ⌈
+( ℓ/ ⌈logp(ℓ)⌉− 1+n
+n
+)
+⌉ non-zero diagonal
+entries proving the desired rank bound.
+C Proof of Lemma 2.21
+We need two simple facts for the proof.
+F act C.1(Hasse Derivatives of composition of two functions) . Let F be a ﬁeld, n∈ N. Given a tuple
+of polynomials C(y) = (C1(y),C 2(y),...,C n(y))∈ (F[y])n, w∈ N and γ∈ F there exists a set of
+coeﬃcientsbw, α∈ F (which depend on C andγ) where α∈ Zn
+≥ 0 such that for any f∈ F[x1,...,x n]
+we have,
+h(w)(γ) =
+∑
+wt(α)≤ w
+bw, αf (α)(C1(γ),...,C n(γ)),
+whereh(y) = f (C1(y),...,C n(y)).
+This fact follows easily from the deﬁnition of the Hasse deri vative. A proof can also be found in
+Proposition 6 of [
+DKSS13]. We also need another fact about the isomorphism between po lynomials
+and the evaluations of their derivatives at a suﬃciently lar ge set of points.
+F act C.2 (Computing polynomial coeﬃcients from polynomial evaluat ions). Let F be a ﬁeld and
+n∈ N. Given distinct ai∈ F and βi∈ Z≥ 0,i = 1,...,n , let h(y) = ∏n
+i=1(y− ai)β i∈ F[y]. We have
+an isomorphism between
+F[z]
+⟨h(z)⟩←→ F
+n∑
+i=1
+β i
+,
+which maps every polynomial f∈ F[z]/⟨h(z)⟩ to the evaluations (f (ji)(ai))i,j i wherei∈{ 1,...,n }
+and ji∈{ 0,...,β i− 1}.
+This is a simple generalization of the fact that for a univari ate polynomial having its ﬁrst β
+Hasse derivatives at a be 0 is equivalent to it being divisible by ( z− a)β . It can be proven in several
+ways, one way of proving it would be using the previous statem ent with the Chinese remainder
+theorem for the ring F[y]. To prove Lemma 2.21 we will need the following corollary of the fact
+above.
+27
+
+[PDF physical page 28]
+Corollary C.3 (Computing a polynomial from its evaluations) . Let F be a ﬁeld and n∈ N. Given
+distinct ai∈ F and βi ∈ Z≥ 0, let h(y) = ∏n
+i=1(y− ai)β i ∈ F[y]. Then there exists coeﬃcients
+ti,j ∈ F[z] (depending on h) for i∈{ 1,...,n },j ∈{ 0,...,β i− 1} such that for any f (y)∈ F[y] we
+have,
+n∑
+i=1
+β i− 1∑
+j=0
+ti,jf (j)(ai) = f (z)∈ F[z]/⟨h(z)⟩.
+Proof. Fact
+C.2 implies that there exists a F-linear map which can compute the coeﬃcients of
+1,z,z 2,...,z
+∑n
+i=1 β i− 1 of f (z)∈ F[z]/⟨h(z)⟩ from the evaluations f (ji)(ai) for i∈{ 1,...,n } and
+ji∈ {0,...,β i− 1}. Multiplying these coeﬃcients with 1,...,z
+∑n
+i=1 β i− 1 computesf (z) in F[z]/⟨h(z)⟩.
+We are now ready to prove Lemma 2.21.
+Proof of Lemma 2.21. As the statement we are trying to prove is linear over Z we see that it
+suﬃces to prove the lemma in the case of when f equals a monomial. Given v ∈ Zn
+≥ 0 we let
+Qv(x) = Qv(x1,...,x n) = xv1
+1 ...x vn
+n be a monomial in F[x1,...,x n] where F is an arbitrary ﬁeld
+(we will be working with F = Q(ζ) and F = Fp). Let C(y) = yu′
+= (yu′
+1,y u′
+2,...,y u′
+n)∈ (F[y])n
+whereu′ = (u′
+1,...,u ′
+n)∈ Zn,u = (u1,...,u n)∈ P(Z/p kZ)n− 1 andu′ (mod pk) = u. For this proof
+we use the elements in {0,...,p k− 1} to represent the set Z/p kZ.
+We ﬁrst prove the following claim.
+Claim C.4. Let w∈ N,λ ∈ Z/p kZ. There exists coeﬃcients b′
+w, α(λ)∈ Q(ζ) (depending on w,λ
+and C) for α∈ Zn
+≥ 0 with wt (α)≤ w such that for all monomials Qv(x)∈ Z[x1,...,x n],v ∈ Zn
+≥ 0
+we have, ∑
+wt(α)≤ w
+b′
+w, α(λ)Q(α)
+v (ζa+λu ) = ζ⟨a,v ⟩(Qv◦C)(w)(ζλ ).
+Proof. For every λ∈ Z/p kZ and w∈ N, using Fact
+C.1 we can ﬁnd coeﬃcients bw, α(λ)∈ Q(ζ)
+such that,
+(G◦C)(w)(ζλ ) =
+∑
+wt(α)≤ w
+bw, α(λ)G(α)(C(ζλ )) =
+∑
+wt(α)≤ w
+bw, α(λ)G(α)(ζλu ′
+), (16)
+for every polynomial G∈ Q(ζ)[x1,...,x n] where (G◦C)(y) = f (yu′
+)∈ Q(ζ)[y]. As u′ (mod pk) = u
+and ζ is a primitive pk’th root of unity in C we note that
+ζa+λu =ζa+λu ′
+.
+We now make the simple observation that for any α∈ Zn
+≥ 0 and v∈ Zn
+≥ 0 we have
+Q(α)
+v (x) =
+n∏
+i=1
+( vi
+α i
+)
+xvi− α i
+i ,
+which implies
+Q(α)
+v (ζa+λu ) = ζ⟨a,v ⟩ζ−⟨ α,a ⟩Q(α)
+v (ζλu ) = ζ⟨a,v ⟩ζ−⟨ α,a ⟩Q(α)
+v (ζλu ′
+).
+28
+
+[PDF physical page 29]
+The above equation combined with ( 16) for G =Qv implies,
+ζ⟨a,v ⟩(Qv◦C)(w)(ζλ ) =
+∑
+wt(α)≤ w
+ζ⟨α,a ⟩bw, α(λ)Q(α)
+v (ζa+λu ),
+for all w∈ N and v∈ Zn
+≥ 0. Setting b′
+w, α(λ) = ζ⟨α,a ⟩bw, α(λ) we are done .
+Without loss of generality let us assume ∑
+x∈ Lπ (x) = ℓ (if it is greater we can reduce each of
+theπ (x) until we reach equality - this would just mean that our compu tation was done by ignoring
+some higher order derivatives at some of the points).
+Let h(y)∈ Z(ζ)[y]⊆ Q(ζ)[y] be the polynomial,
+h(y) =
+∏
+λ ∈ Z/p kZ
+(y− ζλ )π (a+λu ).
+Using Corollary C.3 there is a Q(ζ)[z]-linear combination of the evaluations ( Qv◦C)(w)(ζλ ) for
+λ∈ Z/p kZ and w<π (a +λu) which can compute the element
+(Qv◦C)(z) = z⟨v,u ′⟩∈ Q(ζ)[z]/⟨h(z)⟩.
+This statement along with Claim C.4 leads to the following: there exists elements cλ, α∈ Q(ζ)[z]
+(depending on π,L and u′) for λ∈ Z/p kZ and α∈ Zn
+≥ 0 with wt( α) < π(a +λu) such that the
+following holds for all monomials mv∈ Z[x1,...,x n],v ∈ Z≥ 0 we have,
+pk− 1∑
+λ =0
+∑
+wt(α)<π (a+λu )
+cλ, αQ(α)
+v (ζa+λu ) = ζ⟨a,v ⟩(mv◦C)(z) = ζ⟨a,v ⟩z⟨v,u ′⟩∈ Q(ζ)/⟨h(z)⟩.
+We claim that these are coeﬃcients we wanted to construct in t he statement of this lemma.
+All we need to show now is that ψ pk is a ring homomorphism from the ring Z(ζ)/⟨h(z)⟩ to the
+ring
+T ℓ = Fp(ζ)/⟨(z− 1)ℓ⟩ and maps ζ⟨a,v ⟩z⟨v,u ′⟩ to z⟨v,u ′⟩. This follows from Corollary 2.15 and
+noting
+ψ pk (h(z)) = (z− 1)
+∑
+λ ∈ Zpk
+π (a+λu )
+= (z− 1)ℓ∈ Fp[z].
+29

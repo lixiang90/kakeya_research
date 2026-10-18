@@ -1,0 +1,1444 @@
+[PDF physical page 1]
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp.
+www.advancesincombinatorics.com
+The Kakeya Set conjecture over Z/NZ for
+general N
+Manik Dhar
+Received 18 January 2022; Revised 4 June 2023; Published 26 January 2024
+Abstract: We prove the Kakeya set conjecture forZ/NZ for general N as stated by Hickman
+and Wright [15]. This entails extending and combining the techniques of Arsovski [1] for
+N = pk and the author and Dvir [6] for the case of square-free N. We also prove stronger
+lower bounds for the size of (m, ε)-Kakeya sets over Z/pkZ by extending the techniques of
+[1] using multiplicities as was done in [17, 10]. In addition, we show our bounds are almost
+sharp by providing a new construction for Kakeya sets over Z/pkZ and Z/NZ.
+Key words and phrases: Kakeya conjecture, polynomial method
+1 Introduction
+We are interested in proving lower bounds for the sizes of sets in (Z/NZ)n which have large intersections
+with lines in many directions. We first define the set of possible directions a line can take in(Z/NZ)n.
+Definition 1.1 (Projective space P(Z/NZ)n−1). Let N = pk1
+1 . . .pkr
+r where p1, . . . ,pr are distinct primes.
+The Projective space P(Z/NZ)n−1 consists of vectors u ∈ (Z/NZ)n up to unit multiples of each other
+such that u (mod pki
+i ) has at least one unit co-ordinate for every i = 1, . . . ,r.
+For each direction in P(Z/NZ)n−1 we pick a representative in (Z/NZ)n. This allows us to treat
+P(Z/NZ)n−1 as a subset of (Z/NZ)n.
+Definition 1.2 (m-rich lines). Let N,n ∈ N. For a subset S ⊆ (Z/NZ)n, we say a line L ⊆ (Z/NZ)n is
+m-rich with respect to S if |S ∩ L| ≥ m.
+We now define sets that have large intersections with lines in many directions.
+© 2024 Manik Dhar
+c b Licensed under a Creative Commons Attribution License (CC-BY) DOI: 10.19086/aic.2024.2
+arXiv:2110.14889v3  [math.CO]  10 Jan 2024
+
+[PDF physical page 2]
+MANIK DHAR
+Definition 1.3 ((m, ε)-Kakeya Sets). Let n,N ∈ N. A set S ⊆ (Z/NZ)n is said to be (m, ε)-Kakeya if for
+at least an ε fraction of directions u ∈ P(Z/NZ)n−1 there exists a line Lu = {a + λu|λ ∈ Z/NZ} in the
+direction u which is m-rich with respect to S.
+An (N,1)-Kakeya set in (Z/NZ)n is simply called a Kakeya set. In other words, a Kakeya set is a set
+that contains a line in every direction.
+In this paper, we resolve the following conjecture of Hickman and Wright [15].
+Conjecture 1.4 (Kakeya set conjecture over Z/NZ). For all ε > 0 and n ∈ N, there exists a constant
+Cn,ε such that any Kakeya set S ⊂ (Z/NZ)n satisfies
+|S| ≥ Cn,εNn−ε .
+Wolff in [18] first posed Conjecture 1.4 with Z/NZ replaced by a finite field as a possible problem
+whose resolution might help in proving the Euclidean Kakeya conjecture. Wolff’s conjecture was proven
+by Dvir in [9] with Cn = 1/n! (Over finite fields of size N the ε dependence in Conjecture 1.4 is not
+needed. For composite N it is known that the ε dependence is essential [15, 6].) Using the method of
+multiplicities and its extensions [17, 10, 3] the constant was improved to Cn = 2−n+1, which is known to
+be tight.
+Ellenberg, Oberlin, and Tao in [11] proposed studying the size of Kakeya sets over the rings Z/pkZ
+and Fq[x]/⟨xk⟩. They were motivated by the fact that these rings have ‘scales’ and hence are closer
+to the Euclidean version of the problem. Hickman and Wright posed Conjecture 1.4 for Z/NZ with
+arbitrary N and considered connections between the problem and the Kakeya conjecture over the p-adics
+in [15]. Indeed, resolving Conjecture 1.4 for the rings Z/pkZ and Fq[x]/⟨xk⟩ resolves the Minkowski
+dimension Kakeya set conjecture for the p-adic integers and the power series ring Fq[[x]] respectively [11,
+8, 15]. The Kakeya problem over these rings is interesting as, similarly to the Euclidean case, one can
+construct Kakeya sets of Haar measure 0 for the p-adic integers and the power series ring Fq[[x]]. These
+constructions and generalizations to other settings can be found in [8, 12, 4, 15].
+For n = 2 and N = pk, Conjecture 1.4 was resolved by Dummit and Hablicsek in [8] by proving that
+sizes of Kakeya sets are lower bounded by p2k/2k. The author and Dvir [ 6] resolved Conjecture 1.4
+for the case of N square-free by proving the following bound, which implies Conjecture 1.4 using
+Observation 1.10 at the end of this section.
+Theorem 1.5 (Kakeya set bounds for square-free N [6, Theorem 1.3]). Let N ∈ N where N = p1 . . .pr
+for distinct primes p1, . . . ,pr. Any Kakeya set S in (Z/NZ)n for n ∈ N satisfies,
+|S| ≥ 2−rnNn.
+In [6] a reduction was also proven which lower bounds the size of Kakeya sets in (Z/pkZ)n by
+the Fp-rank of the point-hyperplane incidence matrix of (Z/pkZ)n. Building on the ideas behind this
+reduction, Arsovski proved Conjecture 1.4 for N = pk for general n.
+Theorem 1.6 (Kakeya Set bounds over Z/pkZ,[1, Theorem 2]). For p prime and k,n ∈ N, every Kakeya
+set S in (Z/pkZ)n satisfies,
+|S| ≥ (kn)−npkn.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 2
+
+[PDF physical page 3]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+As mentioned before this also resolves the Minkowski dimension Kakeya Set conjecture over the
+p-adics. In [ 2] (which is the arxiv version 2 of the paper [ 1]) a different approach inspired by the
+polynomial method proofs in [9, 17, 10] is used to give the following bound for (m, ε)-Kakeya sets.
+Theorem 1.7 ((m, ε)-Kakeya Set bounds over Z/pkZ,[2, Theorem 3]). For p prime and k,n ∈ N, every
+(m, ε)-Kakeya set S in (Z/pkZ)n satisfies,
+|S| ≥ (Ckn2p)−nεnmn,
+where C > 1 is some universal constant.
+As can be seen from the bounds in the Theorems 1.6 and 1.7, the analysis in [2] is looser than the
+analysis in [1] for the case of (pk,1)-Kakeya sets and leads to worse bounds in that setting.
+In [1, 2] tools from p-adic analysis are used to develop the techniques which prove Theorems 1.6
+and 1.7. Both the proofs can be thought of as trying to develop a polynomial method on roots of unity
+in C. Our first result extends the ideas in [ 1] using multiplicities as in [ 17, 10] to bound the size of
+(m, ε)-Kakeya sets over Z/pkZ with improved constants. Another advantage of our proof is that it is
+more elementary and does not require tools from p-adic analysis.
+Theorem 1.8 (Stronger (m, ε)-Kakeya Set bounds over Z/pkZ*). Let k,n, p ∈ N with p prime. Any
+(m, ε)-Kakeya set S ⊆ (Z/pkZ)n satisfies the following bound,
+|S| ≥ ε ·
+
+mn
+(2(k + ⌈logp(n)⌉))n
+!
+.
+When p > n, we also get the following stronger bound for (m, ε)-Kakeya set S in (Z/pkZ)n,
+|S| ≥ ε ·
+ mn
+(k + 1)n
+
+(1 + n/p)−n.
+We note that for fields of prime size, the bound above recovers the result of [10] as p tends to infinity.
+This gives us a new proof for the result with new techniques.
+Combining techniques developed for Z/pkZ with techniques from [6], we prove the following lower
+bound for sizes of Kakeya sets in Z/NZ for general N.
+Theorem 1.9 (Kakeya set bounds for Z/NZ). Let n ∈ N and R = Z/NZ where N = pk1
+1 . . .pkr
+r with
+distinct primes p1, . . . ,pr and k1, . . . ,kr ∈ N. Any Kakeya set S in Rn satisfies,
+|S| ≥
+
+r
+∏
+i=1
+(2(ki + ⌈logpi(n)⌉))−n
+!
+· Nn.
+When p1, . . . ,pr ≥ n, we also get the following stronger lower bound for the size of a Kakeya set S in
+(Z/NZ)n,N = pk1
+1 . . .pkr
+r ,
+|S| ≥ Nn
+r
+∏
+i=1
+(ki + 1)−n(1 + n/pi)−n.
+*We also note that the techniques presented here can also be used to prove norm bounds for functions f : (Z/NZ)n → C
+which have rich lines in many directions as was done for N prime (and in general for finite fields) in Theorem 19 of [7]. A line L
+is m-rich with respect to f in this setting if ∑x∈L | f (x)| ≥ m.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 3
+
+[PDF physical page 4]
+MANIK DHAR
+The bound above recovers Theorem 1.5 as the size of the divisors pi grows towards infinity.
+Note, the techniques here do not naively prove (m, ε)-Kakeya bounds over Z/NZ for general N as
+the techniques in [6] also do not seem to extend to this setting (even for square-free N). In a follow-up
+paper [5] we solve this problem by using probabilistic arguments on top of the techniques in this paper
+and also give Maximal Kakeya bounds over Z/NZ for general N.
+Observation 1.10. The number of prime divisors of N satisfies r = O(logN/loglog N). The ex-
+pression ∏r
+i=1 ki is upper bounded by the number of divisors τ(N) of N which satisfies log(τ(N)) =
+O(logN/loglog N). The proof for the bound on r can be found in [13] and the bound for τ(n) is Theorem
+317 in [14]. We now see that the expression in Theorem 1.9 is lower bounded byCnNn−O(n/loglog N) and
+so it indeed proves Conjecture 1.4 for all N.
+Note, we could also get Kakeya Set bounds for Z/NZ for general N by combining the techniques
+from [1] and [ 6]. This would also resolve Conjecture 1.4 by proving a Kakeya set lower bound of
+CnNn−O(nlog(n)/loglog N) with a worse dependence on the dimension n.
+We also construct Kakeya sets over Z/pkZ showing that the bound in Theorem 1.8 is close to being
+sharp.
+Theorem 1.11 (Small Kakeya sets overZ/pkZ). Let s,n ∈ N, p ≥ 3 be a prime andk = (ps+1 −1)/(p−1).
+There exists a Kakeya set S in (Z/pkZ)n such that,
+|S| ≤ pkn
+kn−1 (1 − 1/p)−n.
+The construction here uses ideas from the earlier constructions in [ 15, 12, 4] but is quantitatively
+stronger.
+Using the Chinese remainder theorem we also get a construction for N with multiple prime factors
+showing that the bounds in Theorem 1.9 are also close to being sharp.
+Corollary 1.12 (Small Kakeya sets over Z/NZ). Let n,s1, . . . ,sr ∈ N, p1, . . . ,pr ≥ 3 be primes, ki =
+(psi+1
+i − 1)/(pi − 1),i = 1, . . . ,r and N = pk1
+1 . . .pkr
+r . There exists a Kakeya set S in (Z/NZ)n such that,
+|S| ≤ Nn
+kn−1
+1 . . .kn−1r
+r
+∏
+i=1
+(1 − 1/pi)−n
+Proof. Using the Chinese Remainder Theorem (see Lemma 5.1) we see that the product of Kakeya sets
+over Z/pki
+i Z for i = 1, . . . ,r will be a Kakeya set over Z/NZ. We are then done using Theorem 1.11.
+1.1 Proof Overview
+We first start with a brief overview of the approach introduced in [6]. Given a Kakeya set S in (Z/NZ)n,
+we construct a matrix KS whose columns are indexed by points in (Z/NZ)n and its rows are indexed by a
+direction in P(Z/NZ)n−1 where the dth row would be supported on the line in direction d contained in
+S. This ensures that the non-zero columns of KS correspond to points in S, which implies that the rank
+of KS then lower bounds the size of S. The goal is to construct a suitable KS and find a matrix E such
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 4
+
+[PDF physical page 5]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+that KSE is a matrix independent of S whose rank can be analyzed easily. For prime N = p, E can be
+a matrix whose columns contain the evaluation of a monomial on Fn
+p. In this case KS ends up being a
+‘decoder’ matrix where each row outputs the evaluation of a monomial on a direction given its evaluations
+on a line in that direction. This turns out to be a reformulation of Dvir’s polynomial method proof [9].
+When N = pq (or in general is square-free) as Z/NZ ∼= Fp × Fq we define E as a tensor of matrices one
+acting on the Fp part and the other on the Fq part. This allows for an inductive argument to give Kakeya
+set lower bounds for square-free N. To get quantitatively stronger bounds we can use the evaluations of
+(Hasse) derivatives and multiplicities as was done in [17, 10].
+In [1] for prime power N points in Fn
+p are embedded in Cn
+p (the p-adic complex numbers which is
+isomorphic to C as a field) using pkth roots of unity. The proof then implements the strategy of [6] using
+matrices with polynomial entries. U is a matrix whose columns are the evaluations of monomials over the
+embedding of (Z/pkZ)n in the torus. Let L be a line in direction d. The key statement is that some linear
+combination (with polynomial coefficients) of the rows inU corresponding to points in L can generate the
+dth row of a ‘Vandermonde’ matrixM after applying a mod p operation (using the p-adic structure). The
+rank of M can be easily lower bounded. The linear combination being taken here corresponds to a row of
+KS for a Kakeya set S ⊆ (Z/pkZ)n containing L in direction d. The key statement can be reformulated as
+saying that
+KSU mod p = M (1.1)
+The argument can be completed by saying that the non-zero columns of S correspond to points in S,
+alternatively we note that we only use rows in E which correspond to points in S. This shows the rank
+of M over Fp lower bounds the size of S. The argument in [ 1] is only for (pk,1)-Kakeya sets. This is
+because, apriori it is not clear how to define a suitableKS (equivalently how to decode from lines with
+only some points contained in S). The revised version of the paper [2] has a very different approach to
+give (m, ε)-Kakeya bounds for the prime power case (the bounds there are quantitatively weaker than the
+ones here).
+We now discuss how we improve the prime power bound quantitatively. Using simple linear algebraic
+arguments and the Chinese remainder theorem for a suitable polynomial ring we show that givenm points
+on a line L in direction d we can decode the dth row of M up to degree m (see Corollary 3.16). We use
+multiplicities and (Hasse) derivatives to get stronger quantitative bounds (which Theorem 1.11 shows are
+almost sharp). We also develop these ideas without using the theory of p-adic numbers. We make this
+precise in Section 3.
+To get bounds for general N we follow an inductive style argument as was done in [ 6] with some
+small technical improvements to get better constants.
+1.2 Organization of the paper
+In Section 2 we state definitions and results we need from [6]. In Section 3 we state and extend results
+from [1]. In Section 4 we prove Theorem 1.8. In Section 5 we prove Theorem 1.9. Finally, in section 6
+we prove Theorem 1.11.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 5
+
+[PDF physical page 6]
+MANIK DHAR
+1.3 Acknowledgements
+The author would like to thank Zeev Dvir for helpful comments and discussion. The author would also
+like to thank the reviewers for their helpful suggestions. This work was done while the author was
+supported by the NSF grant DMS-1953807.
+2 Rank and crank of matrices with polynomial entries
+Definition 2.1 (Rank of matrices with entries in F[z]/⟨ f (z)⟩). Given a field F and a matrix M with
+entries in F[z]/⟨ f (z)⟩ where f (z) is a non-constant polynomial in F[z], we define the F-rank of M denoted
+rankFM as the maximum number of F-linearly independent columns of M.
+In our proof, it will also be convenient to work with the following extension of rank for sets of
+matrices.
+Definition 2.2 (crank of a set of matrices). Let F be a field and f (z) a non-constant polynomial in F[z].
+Given a finite set T = {A1, . . . ,An} of matrices over the ring F[z]/⟨ f (z)⟩ having the same number of
+columns we let crankF(T ) be the F-rank of the matrix obtained by concatenating all the elements Ai in T
+along their columns.†
+We will use a simple lemma which follows from the definition of crank.
+Lemma 2.3 (crank bound for multiplying matrices). Let F be a field and f (z) a non-constant polynomial
+in F[z]. Given matrices A1, . . . ,An of size a × b and matrices H1, . . . ,Hn of size c × a with entries in
+F[x]/⟨ f (z)⟩ we have
+crankF{Ai}n
+i=1 ≥ crankF{Hi · Ai}n
+i=1.
+Proof. A dependence on the columns of the matrix obtained by concatenating Ais will be represented by
+a non-zero vector w ∈ Fb such that Aiw = 0 for all i = 1, . . . ,n. This would imply (Hi · Ai)w = 0 for all i
+as well, completing the proof.
+Given a matrix A with entries in F[z]/⟨ f (z)⟩ we want to construct a new matrix with entries only in F
+such that their F-ranks are the same. First, we state a simple fact about F[z]/⟨ f (z)⟩.
+Lemma 2.4 (Unique representation of elements in F[z]/⟨ f (z)⟩). Let F be a field and f (z) a non-constant
+polynomial in F[z] of degree d > 0. Every element in F[z]/⟨ f (z)⟩ is uniquely represented by a polynomial
+in F[z] with degree strictly less than d and conversely every degree strictly less than d polynomial in F[z]
+is a unique element in F[z]/⟨ f (z)⟩. When we refer to an element h(z) ∈ F[z]/⟨ f (z)⟩ we also let it refer to
+the unique degree strictly less than d polynomial it equals.
+Definition 2.5 (Coefficient matrix of A). Let F be a field and f (z) a non-constant polynomial in F[z]
+of degree d > 0. Given any matrix A of size n1 × n2 with entries in F[z]/⟨ f (z)⟩ we can construct the
+†In [6] crank was defined using the rows of the matrices. The two definitions are equivalent when the entries of the matrices
+are from the field F following from simple linear algebra. In our setting, the column and row definitions are not necessarily
+identical and the column version is better for our purposes.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 6
+
+[PDF physical page 7]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+coefficient matrix of A denoted by Coeff(A) with entries in F which will be of size dn1 × n2 whose rows
+are labeled by elements in {0, . . . ,d − 1} ×[n1] such that its (i, j)’th row is formed by the coefficients of
+zi of the polynomial entries of the j’th row of A.
+The key property of the coefficient matrix immediately follows from its definition.
+Lemma 2.6. Let F be a field and f (z) a non-constant polynomial in F[z] of degree d > 0. Given any
+matrix A with entries in F[z]/⟨ f (z)⟩ and its coefficient matrix Coeff(A) it is the case that an F-linear
+combination of a subset of columns of A is 0 if and only if the corresponding F-linear combination of the
+same subset of columns of Coeff(A) is also 0.
+In particular, the F-rank of A equals the F-rank of Coeff(A).
+We now need some simple properties related to the crank of tensor products. To that end, we first
+define the tensor/Kronecker product of matrices. Let [r] = {1, . . . ,r}.
+Definition 2.7 (Kronecker Product of two matrices). Given a commutative ring R and two matrices MA
+and MB of sizes n1 × m1 and n2 × m2 corresponding to R-linear maps A : Rn1 → Rm1 and B : Rn2 → Rm2
+respectively, we define the Kronecker product MA ⊗ MB as a matrix of size n1n2 × m1m2 with its rows
+indexed by elements in [n1] × [n2] and its columns indexed by elements in [m1] × [m2] such that
+MA ⊗ MB((r1,r2), (c1,c2)) = MA(r1,c1)MB(r2,c2),
+where r1 ∈ [n1],r2 ∈ [n2],c1 ∈ [m1] and c2 ∈ [m2]. MA ⊗ MB corresponds to the matrix of the R-linear
+map A ⊗ B : Rn1 ⊗ Rn2 ∼= Rn1n2 → Rm1 ⊗ Rm2 ∼= Rm1m2.
+We will need the following simple property of Kronecker products which follows from the corre-
+sponding property of the tensor product of linear maps.
+Lemma 2.8 (Multiplication of Kronecker products). Given matrices A1,A2,B1 and B2 of sizes a1 × n1,
+a2 × n2, n1 × b1 and n2 × b2 we have the following identity,
+(A1 ⊗ A2) · (B1 ⊗ B2) = (A1 · B1) ⊗ (A2 · B2).
+We want to prove a crank bound for a family of matrices with a tensor product structure. This
+statement is an analog of Lemma 4.8 in [6] for our setting. Indeed we will prove it using Lemma 4.8 in
+[6] which we now state.
+Lemma 2.9 (Lemma 4.8 in [6]). Given matrices A1, . . . ,An of size a1 × a2 over a field F such that
+crank{Ai}n
+i=1 ≥ r1
+and matrices Bi, j over the field F for i ∈ [n] and j ∈ [m] of size b1 × b2 such that
+crank{Bi, j}m
+j=1 ≥ r2
+for all i ∈ [n] we have,
+crank{Ai ⊗ Bi, j|i ∈ [n], j ∈ [m]} ≥ r1r2.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 7
+
+[PDF physical page 8]
+MANIK DHAR
+The above lemma follows easily from simple properties of the tensor product and a proof can be
+found in [6]. We now prove a generalization for our setting.
+Lemma 2.10 (crank bound for tensor products). Let F be a field and f (z) ∈ F[z] a non-constant polyno-
+mial. Given matrices A1, . . . ,An of size a1 × a2 over the ring F[z]/⟨ f (z)⟩ such that
+crankF{Ai}n
+i=1 ≥ r1
+and matrices Bi, j over the field F for i ∈ [n] and j ∈ [m] of size b1 × b2 such that
+crankF{Bi, j}m
+j=1 ≥ r2
+for all i ∈ [n] we have,
+crankF{Ai ⊗ Bi, j|i ∈ [n], j ∈ [m]} ≥ r1r2.
+Note the asymmetry between the matrices Ai having entries in F[z]/⟨ f (z)⟩ and the matrices Bi, j only
+having entries in F. This is important for the proof to work.
+Proof. Consider the coefficient matrices Coeff(Ai). Using Lemma 2.6 it follows that
+crankF{Ai}n
+i=1 = crankF{Coeff(Ai)}n
+i=1. (2.1)
+As Bi, j only has entries in F it is easy to see that Coeff(Ai) ⊗ Bi, j = Coeff(Ai ⊗ Bi, j) (Note this would
+not be true if Bi, j had entries in the ring F[z]/⟨ f (z)⟩). Using Lemma 2.6 now gives us,
+crankF{Ai ⊗ Bi, j|i ∈ [n], j ∈ [m]} = crankF{Coeff(Ai) ⊗ Bi, j|i ∈ [n], j ∈ [m]}. (2.2)
+We apply Lemma 2.9 on the family Coeff(Ai) ⊗ Bi, j,i ∈ [n], j ∈ [m] and use equations (2.1) and (2.2)
+to complete the proof.
+3 Polynomial Method on the complex torus
+As mentioned in the introduction, the techniques presented here are an extension of the techniques used
+in [1] and are developed without invoking the tools and the language of p-adic analysis.
+We embed (Z/pkZ)n in the complex torus. As mentioned in the proof overview (Section 1.1) we will
+be working with matrices with polynomial entries. We first define the rings where the entries come from.
+Definition 3.1 (Rings T ℓ and T k
+ℓ ). Let
+T ℓ = Fp[z]/⟨zpℓ
+− 1⟩
+and
+T k
+ℓ = Z(ζpk )[z]/⟨zpℓ
+− 1⟩
+where ζpk is a primitive complex pk’th root of unity.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 8
+
+[PDF physical page 9]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+As stated in the proof overview (Section 1.1) the goal is decode the dth row of a ‘Vandermonde’
+matrix starting from the evaluations of monomials on a line L in direction d. We set ℓ according to the
+number of points in L and to what order derivatives we are working with and it controls the size of our
+‘Vandermonde’ matrix as well. If we were not using any multiplicities/derivatives thenℓ could be set to
+logp(m) to lower bound the size of (m, ε)-Kakeya sets with weaker constants.
+We suppress p in the notation as it will be fixed to a single value throughout our proofs. We also let
+ζ = ζpk throughout this section for ease of notation.
+Note that Z(ζ ) is the ring Z[x]/⟨φpk (x)⟩ where,
+φpk (x) = xpk
+− 1
+xpk−1
+− 1 =
+p−1
+∑
+i=0
+xipk−1
+, (3.1)
+is the pk Cyclotomic polynomial. We will also work with the field Q(ζ ) = Q[x]/⟨φpk (x)⟩.
+We need a simple lemma connecting Z(ζ ) to Fp.
+Lemma 3.2 (Quotient map ψpk from Z(ζ ) to Fp). The field Fp is isomorphic to Z(ζ )/⟨p, ζ − 1⟩. In
+particular, the map ψpk from Z(ζ ) to Fp which maps Z to Fp via the mod p map and ζ to 1 is a ring
+homomorphism.
+Proof. ζ is a root of the Cyclotomic polynomial φpk defined in (3.1). As mentioned earlier, this allows us
+to write Z(ζ ) as Z[ζ ]/⟨φpk (ζ )⟩. Notice that using (3.1) we have φpk (1) (mod p) = 0 which implies that
+φpk (ζ ) is divisible by ζ − 1 over Fp.
+If we quotient the ring Z(ζ ) by ⟨p, ζ − 1⟩ we get
+Z[ζ ]
+⟨ζ − 1, p, φpk (ζ )⟩ = Fp[ζ ]
+⟨ζ − 1, φpk (ζ )⟩ = Fp[ζ ]
+⟨ζ − 1⟩ = Fp.
+Therefore, the map ψpk is the map which quotients the ring Z(ζ ) by the ideal ⟨p, ζ − 1⟩.
+We note ψpk can be extended to the rings Z(ζ )[z]/⟨h(z)⟩ for any h(x) ∈ Z(ζ )[x] by mapping z to z.
+The proof above immediately generalizes to the following corollary.
+Corollary 3.3 (Extending ψpk). Let h(x) ∈ Z(ζ )[x]. ψpk is a ring homomorphism from Z(ζ )[z]/⟨h(z)⟩ to
+Z(ζ )[z]/⟨h(z), p, ζ − 1⟩ = Fp[z]/⟨ψpk (h(z))⟩.
+T k
+ℓ /⟨p, ζ − 1⟩ being isomorphic to T ℓ is a special case of the corollary. The ψpk will correspond to
+the mod p operation from the overview.
+The operation ψpk corresponds to the mod p operation in (1.1) in the proof overview (Section 1.1).
+We now prove that the rank of a matrix can only decrease under the quotient map ψpk.
+Lemma 3.4. If A is a matrix with entries in T k
+ℓ , then we have the following bound,
+rankQ(ζ )A ≥ rankFpψpk (A),
+where ψpk (A) is the matrix with entries in T ℓ obtained by applying ψpk to each entry of A.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 9
+
+[PDF physical page 10]
+MANIK DHAR
+In [1] the above lemma is implicit in the proof of Proposition 4, Arsovski’s proof uses tools from
+p-adic analysis. We provide an alternate proof without using those techniques.
+Proof of Lemma 3.4. Let A be a matrix with entries in T k
+ℓ = Z(ζ )[z]/⟨zpℓ
+− 1⟩. T k
+ℓ is a sub-ring of the
+ring Q(ζ )[z]/⟨zpℓ
+− 1⟩. As Q(ζ ) is a field we can define Coeff(A) with entries in Q(ζ ).
+This also means ψpk can be applied on Coeff(A). On the other hand ψpk can be directly applied on
+A as it has entries in T k
+ℓ and ψpk (A) will have entries in T ℓ = Fp[z]/⟨zℓ − 1⟩. This means we can define
+Coeff(ψpk (A)) with entries in Fp. Notice that ψpk (Coeff(A)) = Coeff(ψpk (A)).
+Let rankQ(ζ )A = r. By Lemma 2.6 and simple properties of the determinant, we have that every
+r +1 ×r +1 sub-matrix M of Coeff(A) has 0 determinant. As ψpk is a ring homomorphism it immediately
+follows that the corresponding r + 1 × r + 1 sub-matrix ψpk (M) in ψpk (Coeff(A)) = Coeff(ψpk (A)) will
+have 0 determinant too.
+This implies that Coeff(ψpk (A)) has rank at most r. The statement now follows from applying
+Lemma 2.6 on ψpk (A).
+We now define the ‘Vandermonde’ matrix (corresponding toM in Section 1.1) with entries in T ℓ
+which was defined by Arsovski in [1] and whose Fp-rank will help us lower bound the size of Kakeya
+Sets.
+Definition 3.5 (The matrix Mpℓ,n). The matrix Mpℓ,n is a matrix overT ℓ with its rows and columns indexed
+by points in (Z/pℓZ)n. The (u,v) ∈ (Z/pℓZ)n × (Z/pℓZ)n entry is
+Mpℓ,n(u,v) = z⟨u,v⟩.
+Lemma 3.6 (Rank of Mpℓ,n). The Fp-rank of Mpℓ,n is at least
+rankFpMpℓ,n ≥
+⌈pℓℓ−1⌉ + n
+n
+
+.
+A lower bound of pℓn(ℓn)−n is proven within Lemma 5 and Theorem 2 in [1]. The same argument
+can also give the bound above with a slightly more careful analysis. For completeness, we give a proof in
+Appendix A. For convenience, we now prove that removing the rows in Mpℓ,n corresponding to elements
+u ∈ (Z/pℓZ)n \ P(Z/pℓZ)n−1 does not change the Fp-rank of the matrix.
+For a given set of elements V ⊆ (Z/pℓZ)n let Mpℓ,n(V ) refer to the sub-matrix obtained by restricting
+to rows of Mpℓ,n corresponding to elements in V . In particular, for any given u ∈ Rn we let Mpk,n(u) refer
+to the u’th row of the matrix.
+Lemma 3.7.
+rankFpMpℓ,n(P(Z/pℓZ)n−1) = rankFpMpℓ,n.
+Proof. Consider the matrix Coeff(Mpℓ,n). For any u ∈ (Z/pℓZ)n, the u’th row inMpℓ,n will correspond
+to a pℓ block of rows Bu in Coeff(Mpℓ,n). Say u doesn’t have a unit coordinate. We can find an element
+u′ ∈ P(Z/pℓZ)n−1 such that for some i, piu′ = u. We claim that the block Bu can be generated by the
+block Bu′ via a linear map. This follows because given the coefficient vector of a polynomial f (z) in T ℓ
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 10
+
+[PDF physical page 11]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+the coefficient vector of the polynomial f (zp) ∈ T ℓ can be obtained via a Fp-linear map. This shows that
+the span of the rows of Coeff(Mpℓ,n) is identical to the span of the rows in Coeff(Mpℓ,n(V ) where V is the
+set of vectors in (Z/pkZ)n with at least one unit co-ordinate.
+Now for any element u ∈ V we can find an element u′ ∈ P(Z/pℓZ)n−1 such that there exists a
+λ ∈ (Z/pkZ)× for which u = λu′. We now note that the block Bu can be generated by the block Bu′
+via a linear map as the coefficient vector of a polynomial f (zλ ) ∈ T ℓ can be linearly computed from
+f (z) ∈ T ℓ. This shows that the span of the rows of Coeff(Mpℓ,n(V )) is identical to the span of the rows in
+Coeff(Mpℓ,n(P(Z/pkZ)n−1) completing the proof using Lemma 2.6.
+In [1] a row vector which encodes the evaluation of monomials over points in a line in direction
+u ∈ P(Z/pkZ)n−1 is used to decode the u’th row ofMpk,n. We extend this method by using row vectors
+which encode the evaluations of Hasse derivative of a monomial over a given point. We first define Hasse
+derivative.
+Definition 3.8 (Hasse Derivatives). Given a polynomial f ∈ F[x1, . . . ,xn] for any field F and an ααα ∈ Zn
+≥0
+the ααα’thHasse derivativeof f is the polynomial f (ααα) in the expansion f (x +z) = ∑βββ ∈Zn
+≥0
+f (βββ )(x)zβββ where
+x = (x1, ...,xn), z = (z1, ...,zn) and zβββ = ∏n
+k=1 zβk
+k .
+Definition 3.9 (The evaluation vector U (ααα)
+d (y)). Let F be a field, n,d ∈ Z and ααα ∈ Zn
+≥0. For any given
+point y ∈ Fn we define U (ααα)
+d (y) to be a row vector of size dn whose columns are indexed by monomials
+m = x j1
+1 x j2
+2 . . .x jn
+n ∈ F[x1, . . . ,xn] for j k ∈ {0, . . . ,d − 1},k ∈ [n] such that its m’th column is m(ααα)(y).
+We suppress n in the notation as there will be no ambiguity over it in this paper. We define the weight
+of ααα ∈ Zn
+≥0 as wt(ααα) = ∑n
+k=1 αk. The following simple fact about uni-variate polynomials illustrates one
+use of Hasse derivatives and how they correspond to our intuition with regular derivatives in fields of
+characteristic 0.
+Lemma 3.10. Let F be a field, y ∈ F and w ∈ N. For any uni-variate polynomial f ∈ F[x] all its Hasse
+derivatives at the point y of weight strictly less than w are 0 if and only if f ∈ ⟨(x −y)w⟩ or in other words
+f is divisible by (x − y)w.
+Let L ⊆ (Z/pkZ)n be a line in direction u ∈ P(Z/pkZ)n−1. A special case of the next lemma proves
+that, for any polynomial f ∈ Z[x1, . . . ,xn], we can evaluate f (zu) ∈ T k = Fp[z]/⟨zpk
+−1⟩,zu = (zu1, . . . ,zun)
+from the evaluation of f on the points f (ζ x),x ∈ L. This is implicit in the proof of Proposition 4 in
+[1]. We generalize this statement. Let π : L → Z≥0 be a function on the line such that ∑x∈L π(x) ≥ pℓ.
+We prove that we can decode f (zu′
+) ∈ T ℓ = Fp[z]/⟨zpℓ
+− 1⟩ from the evaluations of weight at most π(x)
+Hasse derivatives of f at ζ x,x ∈ L for any u′ in (Z/pℓZ)n such that u′ (mod pk) = u.
+The lemma below can be thought of as analogous to how over finite fields the evaluation of a
+polynomial and its Hasse derivatives with high enough weight along a line in direction u can be used to
+decode the evaluation of that polynomial at the point at infinity along u [10].
+Lemma 3.11 (Decoding from evaluations on rich lines) . Let L = {a + λu|λ ∈ Z/pkZ} ⊂ (Z/pkZ)n
+with a ∈ (Z/pkZ)n,u ∈ P(Z/pkZ)n−1, u′ ∈ (Z/pℓZ)n be such that u′ (mod pk) = u and π : L → Z≥0 be
+a function which satisfies ∑x∈L π(x) ≥ pℓ.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 11
+
+[PDF physical page 12]
+MANIK DHAR
+Then, there exist elements cλ ,ααα ∈ Q(ζ )[z] (depending on π,L and u′) for λ ∈ Z/pkZ and ααα ∈ Zn
+≥0
+with wt(ααα) < π(a + λu) such that the following holds for all polynomials f ∈ Z[x1, . . . ,xn],
+ψpk
+ pk−1
+∑
+λ =0
+∑
+wt(ααα)<π(a+λu)
+cλ ,ααα f (ααα)(ζ a+λu)
+!
+= f (zu′
+) ∈ T ℓ.
+For the application of ψpk in the statement of the lemma to make sense we must have its input be an
+element in T k
+ℓ . In other words, we need the input of ψpk to be a polynomial in z with coefficients in Z(ζ ).
+This is indeed the case and will be part of the proof of the lemma. We need two simple facts for the proof.
+Lemma 3.12 (Hasse Derivatives of composition of two functions) . Let F be a field, n ∈ N. Given a
+tuple of polynomials C(y) = (C1(y),C2(y), . . . ,Cn(y)) ∈ (F[y])n, w ∈ N and γ ∈ F there exists a set of
+coefficients bw,ααα ∈ F (which depend on C and γ) where ααα ∈ Zn
+≥0 such that for any f ∈ F[x1, . . . ,xn] we
+have,
+h(w)(γ) = ∑
+wt(ααα)≤w
+bw,ααα f (ααα)(C1(γ), . . . ,Cn(γ)),
+where h(y) = f (C1(y), . . . ,Cn(y)).
+This fact follows easily from the definition of the Hasse derivative. A proof can also be found in
+Proposition 6 of [10].‡ We also need another fact about the isomorphism between polynomials and the
+evaluations of their derivatives at a sufficiently large set of points.
+Lemma 3.13 (Computing polynomial coefficients from polynomial evaluations). Let F be a field and
+n ∈ N. Given distinct ai ∈ F and mi ∈ Z≥0, let h(y) = ∏n
+i=1(y − ai)mi ∈ F[y]. We have an isomorphism
+between
+F[z]
+⟨h(z)⟩ ← →F
+n
+∑
+i=1
+mi
+,
+which maps every polynomial f ∈ F[z]/⟨h(z)⟩ to the evaluations ( f ( ji)(ai))i, ji where i ∈ {1, . . . ,n} and
+ji ∈ {0, . . . ,mi − 1}.
+This is a simple generalization of Lemma 3.10. It can be proven in several ways, for example it can
+be proven using Lemma 3.10 and the Chinese remainder theorem for the ring F[y]. To prove Lemma 3.11
+we will need the following corollary of the fact above.
+Corollary 3.14 (Computing a polynomial from its evaluations). Let F be a field and n ∈ N. Given distinct
+ai ∈ F and mi ∈ Z≥0, let h(y) = ∏n
+i=1(y −ai)mi ∈ F[y]. Then there exists coefficientsti, j ∈ F[z] (depending
+on h) for i ∈ {1, . . . ,n}, j ∈ {0, . . . ,mi − 1} such that for any f (y) ∈ F[y] we have,
+n
+∑
+i=1
+mi−1
+∑
+j=0
+ti, j f ( j)(ai) = f (z) (mod h(z)) ∈ F[z]/⟨h(z)⟩.
+‡The idea is that Ci(γ + z) can be expanded in terms of its Hasse derivatives. We use that in f (C1(γ + z), . . . ,Cn(γ + z)) and
+expand it again using the Hasse derivative expansion of f at (C1(γ), . . . ,Cn(γ)). The coefficient of zw is the Hasse derivative
+h(w)(γ) and it will only get contributions from f (ααα) with wt(ααα) ≤ w.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 12
+
+[PDF physical page 13]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+Proof. Lemma 3.13 implies that there exists a F-linear map which can compute the coefficients of
+1,z,z2, . . . ,z∑n
+i=1 mi−1 of f (z) ∈ F[z]/⟨h(z)⟩ from the evaluations f ( ji)(ai) for i ∈ {1, . . . ,n} and ji ∈ { 0, . . . ,mi −
+1}. Multiplying these coefficients with 1, . . . ,z∑n
+i=1 mi−1 computes f (z) in F[z]/⟨h(z)⟩.
+We are now ready to prove Lemma 3.11.
+Proof of Lemma 3.11. As the statement we are trying to prove is linear over Z we see that it suffices to
+prove the lemma in the case of whenf equals a monomial. Given v ∈ Zn
+≥0 we let mv(x) = mv(x1, . . . ,xn) =
+xv1
+1 . . .xvn
+n be a monomial in F[x1, . . . ,xn] where F is an arbitrary field (we will be working with F = Q(ζ )
+and F = Fp). Let C(y) = yu′
+= (yu′
+1,yu′
+2, . . . ,yu′
+n) ∈ (F[y])n where u′ = (u′
+1, . . . ,u′
+n) ∈ (Z/pℓZ)n,u =
+(u1, . . . ,un) ∈ P(Z/pkZ)n−1 and u′ (mod pk) = u. For this proof we use the elements in {0, . . . ,pℓ − 1}
+to represent the set Z/pℓZ (similarly for (Z/pkZ)n).
+We first prove the following claim.
+Claim 3.15. Let w ∈ N, λ ∈ Z/pkZ. There exists coefficients b′
+w,ααα (λ ) ∈ Q(ζ ) (depending on w, λ and C)
+for ααα ∈ Zn
+≥0 with wt(ααα) ≤ w such that for all monomials mv(x) ∈ Z[x1, . . . ,xn],v ∈ Zn
+≥0 we have,
+∑
+wt(ααα)≤w
+b′
+w,ααα (λ )m(ααα)
+v (ζ a+λu) = ζ ⟨a,v⟩(mv ◦C)(w)(ζ λ ).
+Proof. For every λ ∈ Z/pkZ and w ∈ N, using Lemma 3.12 we can find coefficients bw,ααα (λ ) ∈ Q(ζ )
+such that,
+( f ◦C)(w)(ζ λ ) = ∑
+wt(ααα)≤w
+bw,ααα (λ ) f (ααα)(C(ζ λ )) = ∑
+wt(ααα)≤w
+bw,ααα (λ ) f (ααα)(ζ λu′
+), (3.2)
+for every polynomial f ∈ Q(ζ )[x1, . . . ,xn] where ( f ◦C)(y) = f (yu′
+) ∈ Q(ζ )[y]. As u′ (mod pk) = u and
+ζ is a primitive pk’th root of unity inC we note that
+ζ a+λu = ζ a+λu′
+.
+We now make the simple observation that for anyααα ∈ Zn
+≥0 and v ∈ Zn
+≥0 we have
+m(ααα)
+v (x) =
+n
+∏
+i=1
+vi
+αi
+
+xvi−αi
+i ,
+which implies
+m(ααα)
+v (ζ a+λu) = ζ ⟨a,v⟩ζ −⟨ααα,a⟩m(ααα)
+v (ζ λu) = ζ ⟨a,v⟩ζ −⟨ααα,a⟩m(ααα)
+v (ζ λu′
+).
+The above equation combined with (3.2) for f = mv implies,
+ζ ⟨a,v⟩(mv ◦C)(w)(ζ λ ) = ∑
+wt(ααα)≤w
+ζ ⟨ααα,a⟩bw,ααα (λ )m(ααα)
+v (ζ a+λu),
+for all w ∈ N and v ∈ Zn
+≥0. Setting b′
+w,ααα (λ ) = ζ ⟨ααα,a⟩bw,ααα (λ ) we are done .
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 13
+
+[PDF physical page 14]
+MANIK DHAR
+Without loss of generality let us assume ∑x∈L π(x) = pℓ (if it is greater we can reduce each of the
+π(x) until we reach equality - this would just mean that our computation was done by ignoring some
+higher order derivatives at some of the points).
+Let h(y) ∈ Z(ζ )[y] ⊆ Q(ζ )[y] be the polynomial,
+h(y) = ∏
+λ ∈Z/pkZ
+(y − ζ λ )π(a+λu).
+Using Corollary 3.14 there is a Q(ζ )[z]-linear combination of the evaluations (mv ◦C)(w)(ζ λ ) for
+λ ∈ Z/pkZ and w < π(a + λu) which can compute the element
+(mv ◦C)(z) = z⟨v,u′⟩ ∈ Q(ζ )[z]/⟨h(z)⟩.
+This statement along with Claim 3.15 leads to the following: there exist elements cλ ,ααα ∈ Q(ζ )[z]
+(depending on π,L and u′) for λ ∈ Z/pkZ and ααα ∈ Zn
+≥0 with wt(ααα) < π(a + λu) such that the following
+holds for all monomials mv ∈ Z[x1, . . . ,xn],v ∈ Z≥0 we have,
+pk−1
+∑
+λ =0
+∑
+wt(ααα)<π(a+λu)
+cλ ,αααm(ααα)
+v (ζ a+λu) = ζ ⟨a,v⟩(mv ◦C)(z) = ζ ⟨a,v⟩z⟨v,u′⟩ ∈ Q(ζ )/⟨h(z)⟩.
+We claim that these are coefficients we wanted to construct in the statement of this lemma.
+All we need to show now is that ψpk is a ring homomorphism from the ring Z(ζ )/⟨h(z)⟩ to the ring
+T ℓ = Fp(ζ )/⟨zℓ − 1⟩ and maps ζ ⟨a,v⟩z⟨v,u′⟩ to z⟨v,u′⟩. This follows from Corollary 3.3 and noting
+ψpk (h(z)) = (z − 1)
+∑
+λ ∈Z/pk Z
+π(a+λu)
+= (z − 1)pℓ
+= zpℓ
+− 1 ∈ Fp[z].
+We will use the lemma above in the form of the following corollary.
+Corollary 3.16 (Decoding Mpℓ,n from U (ααα)
+pℓ ). Let L = {a + λu|λ ∈ Z/pkZ} ⊂ (Z/pkZ)n with a ∈
+(Z/pkZ)n,u ∈ P(Z/pkZ)n−1, u′ ∈ (Z/pℓZ)n be such that u′ (mod pk) = u and π : L → Z≥0 be a function
+which satisfies ∑x∈L π(x) ≥ pℓ then there exists aQ(ζ )[z]-linear combination (with coefficients depending
+on π,L and u′) of the vectors U (ααα)
+pℓ (ζ x) for x ∈ L and ααα of weight strictly less than π(x) which under the
+map ψpk gives us the vector Mpℓ,n(u′).
+Proof. Lemma 3.11 gives us the required linear combination.
+The coefficients defined by the above corollary correspond to the rows of the matrixKS in the proof
+overview (Section 1.1).
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 14
+
+[PDF physical page 15]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+4 Kakeya Set bounds over Z/pkZ
+We first prove two helper lemmas. We recall that GLn(Z/pkZ) is the set of linear isomorphisms over
+(Z/pkZ)n. They are represented by matrices whose determinants are units in Z/pkZ.
+The first lemma implies that given a large subset D ⊆ P(Z/pkZ)n−1 there exists a W in GLn(Z/pkZ)
+such that Mpℓ,n(W · D) has high rank where
+W · D = {W · u|u ∈ D}
+that is the set of directions obtained by rotating the elements in D by W. In general, we also prove that
+there exists a W such that Mpℓ,n(D′
+W ) has high rank where
+D′
+W = {u ∈ (Z/pℓZ)n|u (mod pk) ∈ W · D}
+that is the set of directions in (Z/pℓZ)n which under the mod pk map give an element in W · D. We prove
+the statement using a random rotation argument.
+Lemma 4.1. Let k,n ∈ N, ε ≥ 0 and p be a prime. Given a set D ⊆ P(Z/pkZ)n−1 containing at least an
+ε fraction of elements in P(Z/pkZ)n−1 then there exists a matrix W ∈ GLn(Z/pkZ) such that,
+rankFpMpℓ,n(D′
+W ) ≥ ε ·
+pℓℓ−1 + n
+n
+
+.
+Proof. From Lemma 3.7 we know that the Fp rank of Mpℓ,n((PZ/pℓZ)n−1) is at least
+pℓl−1+n
+n
+
+. This
+means there exists a set of rows V of size at least
+pℓl−1+n
+n
+
+in Coeff(Mpℓ,n((PZ/pℓZ)n−1)) which are
+Fp-linearly independent.
+We pickW ∈ GLn(Z/pkZ) uniformly at random and as in the statement of the lemma consider the
+set D′
+W = {u ∈ (Z/pℓZ)n|u (mod pk) ∈ W · D}. The key claim about D′
+W is the following.
+Claim 4.2. Any given row v ∈ V will appear in Coeff(Mpℓ,n(D′
+W )) with probability at least ε.
+Proof. As GLn(Z/pkZ) acts transitively on the set P(Z/pkZ)n−1 and |D| ≥ ε|P(Z/pkZ)n−1| we see that
+D′
+W will contain a particular u ∈ P(Z/pℓZ)n−1 with probability at least ε. The row v ∈ V will be within
+Coeff(Mpℓ,n(u)) for some u ∈ P(Z/pℓZ)n−1. This means that v ∈ V will appear in Coeff(Mpℓ,n(D′
+W ))
+with probability at least ε.
+Now by linearity of expectation we see that the expected number of rowsV appearing in Coeff(Mpℓ,n(D′
+W ))
+is at least ε|V |. This means there exists a choice of W such that an ε fraction of elements in V do appear
+in Coeff(Mpℓ,n(D′
+W )). As all these rows are linearly independent then by Lemma 2.6 we see that the
+Fp-rank of Mpℓ,n(D′
+W ) must be at least ε|V | ≥ ε
+pℓl−1+n
+n
+
+.
+The second lemma lower bounds the size of (m, ε)-Kakeya sets by the rank of a sub-matrix of Mpℓ,n
+with rows corresponding to directions with rich lines.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 15
+
+[PDF physical page 16]
+MANIK DHAR
+Lemma 4.3. Let k,n ∈ N and p be a prime. Let S ⊆ (Z/pkZ)n be a (m, ε)-Kakeya set and D ⊆
+P(Z/pkZ)n−1, |D| ≥ ε|P(Z/pkZ)n−1| such that for every u ∈ D we have a m-rich line Lu with respect to
+S in direction u. Then we have the following bound,
+|S|
+⌈pℓm−1⌉ + n − 1
+n
+
+≥ rankFpMpℓ,n(D′),
+for all ℓ ≥ logp(m) where D′ = D′
+I = {u ∈ (Z/pℓZ)n|u (mod pk) ∈ D}.
+Proof. We set
+b = ⌈pℓm−1⌉.
+Consider the family of row vectors, U (ααα)
+pℓ (ζ x) where x ∈ S and wt(ααα) < b. For a u ∈ D, let Lu be a m-rich
+line with respect to S in direction u. Let ULu,pℓ be the matrix constructed by concatenating the row vectors
+U (ααα)
+pℓ (ζ x) where x ∈ Lu and wt(ααα) < b. By construction as the rows in {ULd ,pℓ}u∈D correspond to tuples
+x ∈ S and ααα ∈ Zn
+≥0,wt(ααα) < b we have the following bound,
+|S|
+b + n − 1
+n
+
+≥ crankQ(ζ ){ULu,pℓ}u∈D. (4.1)
+Let πu : Lu → Z≥0 be a weight function which gives weight b to points in S ∩ Lu and 0 elsewhere.
+Using Corollary 3.16 for the line Lu and function πu, for all u′ ∈ (Z/pℓZ)n such that u′ (mod pk) = u, we
+can now construct row vectors Cu′ such that ψpk (Cu′ULu,pℓ) = Mpℓ,n(u′). For convenience, for every u ∈
+P(Z/pkZ)n−1 we define Cu and Mu as the matrices whose row vectors are Cu′ and Mpℓ,n(u′) respectively
+for all u′ ∈ (Z/pℓZ)n such that u′ (mod pk) = u. We note, ψpk (CuULu,pℓ) = Mpℓ,n(u).
+We use Lemma 2.3 on {ULu,pℓ}u∈D being multiplied by Cu,u ∈ D and applying Lemma 3.4 next to
+get,
+crankQ(ζ ){ULu,pℓ}u∈D ≥ crankQ(ζ ){CuULu,pℓ}u∈D
+≥ crankFp{Mpℓ,n(u)}u∈D = rankFpMpℓ,n(D′),
+where we recall D′ = D′
+I = {u ∈ (Z/pℓZ)n|u (mod pk) ∈ D}. Using the above inequality with (4.1) we
+have,
+|S|
+b + n − 1
+n
+
+= |S|
+⌈pℓm−1⌉ + n − 1
+n
+
+≥ rankFpMpℓ,n(D′).
+We are now ready to prove Theorem 1.8.
+Theorem 1.8. Let k,n, p ∈ N with p prime. Any (m, ε)-Kakeya set S ⊆ (Z/pkZ)n satisfies the following
+bound,
+|S| ≥ ε ·
+
+mn
+(2(k + ⌈logp(n)⌉))n
+!
+.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 16
+
+[PDF physical page 17]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+When p > n, we also get the following stronger bound for (m, ε)-Kakeya set S in (Z/pkZ)n,
+|S| ≥ ε ·
+ mn
+(k + 1)n
+
+(1 + n/p)−n.
+Proof. Set ℓ = k + ⌈logp(n)⌉. Let D be the set of directions in P(Z/pkZ)n−1 which have m-rich lines. We
+know D contains at least anε fraction of directions. By Lemma 4.1 there exists a matrixW ∈ GLn(Z/pkZ)
+such that,
+rankFpMpℓ,n(D′
+W ) ≥ ε ·
+pℓℓ−1 + n
+n
+
+,
+where D′
+W = {u ∈ (Z/pℓZ)n|u (mod pk) ∈ W · D}.
+We now noteW · S is also an (m, ε)-Kakeya set with W · D as the set of directions with m-rich lines.
+We now apply Lemma 4.3 with the inequality above to get,
+|S|
+pℓm−1 + n
+n
+
+≥ |S|
+⌈pℓm−1⌉ + n − 1
+n
+
+≥ rankFpMpℓ,n(D′
+W ) ≥ ε ·
+pℓℓ−1 + n
+n
+
+.
+For convenience we set a = ⌈logp(n)⌉ which implies pa ≥ n ≥ pa−1. The above inequality implies,
+|S| ≥ ε ·
+n
+∏
+i=1
+pk pa(k + a)−1 + i
+pk pam−1 + i
+≥ ε ·
+n
+∏
+i=1
+m(k + a)−1 + imp −k p−a
+1 + imp −k p−a
+≥ ε · mn
+(k + a)n
+n
+∏
+i=1
+
+1 + ip −a−1 .
+For i ≤ n we have (1 + ip −a)−1 ≤ 2 which completes the proof. Note, the second half of the theorem
+follows from observing that for p > n we have (1 + ip −a)−1 ≤ 1 + n/p and a = ⌈logp(n)⌉ = 1.
+5 Kakeya Set bounds over Z/NZ for general N
+We need some simple facts about Z/pkNZ for p prime and p and N co-prime which follow from the
+Chinese remainder Theorem.
+Lemma 5.1 (Geometry of Z/pkNZ). Let p,N,n,k ∈ N,R = Z/pkNZ,R1 = Z/NZ,R0 = Z/pkZ with
+p prime and co-prime to N. Using the Chinese remainder theorem we know that Rn is isomorphic to
+Rn
+0 ×Rn
+1 and PRn−1 is isomorphic to PRn−1
+0 × PRn−1
+1 . Finally, any line L = {a + λu|λ ∈ R} with direction
+u = (u0,u1) ∈ Rn
+0 × Rn
+1 in Rn is equivalent to the product of a line L0 ⊂ Rn
+0 in direction u0 and a line
+L1 ⊂ Rn
+1 in direction u1.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 17
+
+[PDF physical page 18]
+MANIK DHAR
+We briefly discuss the proof strategy first. We use ideas from [ 6] to prove Theorem 1.9. We
+give the idea for N = pk1qk2 where p and q are distinct primes. Let S be Kakeya set which contains
+lines Lu in the direction u ∈ P(Z/NZ)n−1. Using Lemma 5.1 we know that the line Lu, u = (up,uq) ∈
+P(Z/pk1Z)n−1 × P(Z/qk2Z)n−1 can be decomposed as a product of lines Lp(up,uq) over Z/pk1Z and
+Lq(up,uq) over Z/qk2Z with directions up ∈ P(Z/pk1Z)n−1 and uq ∈ P(Z/qk2Z)n−1 respectively. Note
+that Lp(up,uq) and Lq(up,uq) depend on u = (up,uq), and not just on up or uq respectively.
+Let ζ be a primitive pk1’th root of unity inC and 1y be the indicator vector of the point y ∈ (Z/qk2Z)n.
+We then examine the span of vectors
+Upk1 (ζ x) ⊗ 1y = U ((0,...,0))
+pk1 (x) ⊗ 1y
+for x ∈ Lp(up,uq),y ∈ Lq(up,uq), (up,uq) ∈ P(Z/pk1Z)n−1 × P(Z/qk2Z)n−1. As there is one vector for
+each point in S, the dimension of the space spanned by these vectors is at most |S|. We then use the
+decoding procedure for Upk1 from Corollary 3.16 to linearly generate vectors
+Mpk1 ,n(up) ⊗ 1y
+for y ∈ Lq(up,uq), (up,uq) ∈ P(Z/pk1Z)n−1 × P(Z/qk2Z)n−1 from the vectors Upk1 (ζ x) ⊗ 1y for x ∈
+Lp(up,uq),y ∈ Lq(up,uq). This means the dimension of the span ofMpk1 ,n(up)⊗y for y ∈ Lq(up,uq), (up,uq) ∈
+P(Z/pk1Z)n−1 × P(Z/qk2Z)n−1 lower bounds the size of S. Note that Mpk1 ,n(up) only depends on up and
+not on uq.
+We pick the largest subset of rowsV in Coeff(Mpk1 ,n(P(Z/pk1Z)n−1) which are linearly independent.
+By Lemma 3.6, V has large size. Any vector v ∈ V will correspond to a row in Coeff(Mpk1 ,n(up)) for
+some up ∈ P(Z/pkZ)n−1. For that up, the span of 1y for y ∈ Lq(up,uq) as uq varies in P(Z/qk2Z)n−1 will
+have dimension exactly equal to the size of the set
+Sv =
+[
+uq∈P(Z/qk2 Z)n−1
+Lq(up,uq)
+which is a Kakeya set in (Z/qk2Z)n and has large size by Theorem 1.8. Simple properties of the tensor
+product (Lemma 2.10) now imply that v ⊗ 1y for v ∈ V and y ∈ Sv are linearly independent which gives
+us a rank bound and hence a lower bound on the size of S
+Using U (ααα)
+pℓ for ααα ∈ Zn
+≥0,wt(ααα) < pℓ−k as in the proof of Theorem 1.8 gives us better constants. The
+proof for an arbitrary number of distinct prime factors applies the above argument inductively.
+Theorem 1.9. Let n ∈ N and R = Z/NZ where N = pk1
+1 . . .pkr
+r with distinct primes p1, . . . ,pr and
+k1, . . . ,kr ∈ N. Any Kakeya set S in Rn satisfies,
+|S| ≥ Nn
+r
+∏
+i=1
+(2(ki + ⌈logpi(n)⌉))−n.
+When p1, . . . ,pr ≥ n, we also get the following stronger lower bound for the size of a Kakeya set S in
+(Z/NZ)n,N = pk1
+1 . . .pkr
+r ,
+|S| ≥ Nn
+r
+∏
+i=1
+(ki + 1)−n(1 + n/pi)−n.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 18
+
+[PDF physical page 19]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+Proof. Our proof will apply induction on r. The case of r = 1 is Theorem 1.8. Let the theorem be known
+for r distinct prime factors. Let N = pk0
+0 pk1
+1 . . .pkr
+r with N1 = pk1
+1 . . .pkr
+r . Let R = Z/NZ, R0 = Z/pk0
+0 Z
+and R1 = Z/N1Z.
+Consider S a Kakeya set in Rn and a set of lines indexed by directions u ∈ PRn−1 such that L(u) =
+{a(u) +λu|λ ∈ R} ⊂ Rn is a line in the direction u and is contained in S. By Lemma 5.1 we know u can
+be written as a tuple (u0,u1) ∈ PRn
+0 × PRn
+1 and L(u) is a product of a line L0(u0,u1) ⊂ Rn
+0 in direction
+u0 and line L1(u0,u1) ⊂ Rn
+1 in direction u1. We note L1(u0,u1) can actually depend on u0 (similarly for
+L0(u0,u1) and u1). This will not be the case only when S itself is a product of sets from Rn
+0 and Rn
+1.
+Let
+ℓ = k0 + ⌈logp0(n)⌉ and b = p⌈logp0 (n)⌉. (5.1)
+Let ζ0 be a complex primitive pk0
+0 ’th root of unity. We defineUL0(u0,u1) as the matrix constructed by
+concatenating the row vectors U (ααα)
+pℓ
+0
+(ζ x
+0 ) where x ∈ L0(u0,u1) and wt(ααα) < b.
+Let Yu0,u1 be a matrix whose columns are labeled by points in Rn
+1 and rows labeled by points in
+L1(u0,u1) such that its y’th row is1y where 1y is the indicator vector of y ∈ Rn
+1. We will work with the
+family of matrices UL0(u0,u1) ⊗Yu0,u1 for (u0,u1) ∈ PRn−1
+0 × PRn−1
+1 .
+The following claim connects this family to the size of S.
+Claim 5.2.
+crankQ(ζ0){UL0(u0,u1) ⊗Yu0,u1}u0∈PRn−1
+0 ,u1∈PRn−1
+1
+≤ |S|
+b + n − 1
+n
+
+.
+Proof. As we are working with matrices whose entries are in a field, row and column ranks of matrices
+are identical. The rows of UL0(u0,u1) ⊗Yu0,u1 are the vectors U (ααα)
+pℓ
+0
+(ζ x
+0 ) ⊗ 1y for x ∈ L0(u0,u1), wt(ααα) < b
+and y ∈ L1(u0,u1). Hence there are at most |S|
+b+n−1
+n
+
+distinct rows in the set of UL0(u0,u1) ⊗Yu0,u1 for
+u0 ∈ PRn−1
+0 ,u1 ∈ PRn−1
+1 .
+We now use Lemmas 2.3 and 3.4 and Corollary 3.16 to prove the following claim. For convenience
+we let R0(ℓ) = Z/pℓ
+0Z and let
+J = {(u′,u0) ∈ PR0(ℓ)n−1 × PRn−1
+0 |u′ (mod pk0
+0 ) = u0}.
+Claim 5.3.
+crankFp0
+{Mpℓ
+0,n(u′) ⊗Yu0,u1}(u′,u0,u1)∈J×PRn−1
+1
+≤ crankQ(ζ0){UL0(u0,u1) ⊗Yu0,u1}u0∈PRn−1
+0 ,u1∈PRn−1
+1
+.
+Proof. Let πu0,u1 : L0(u0,u1) → Z≥0 for u0 ∈ PRn−1
+0 ,u1 ∈ PRn−1
+1 be a family of functions which takes
+the constant value b everywhere. Using Corollary 3.16 for the line L0(u0,u1) and function πu0,u1, for any
+u′ ∈ PR0(ℓ)n−1 such that (u′,u0) ∈ J we can construct row vectors Cu′ such that
+ψpk0
+0
+(Cu′ · UL0(u0,u1)) = Mpℓ
+0,n(u′).
+Now, Lemma 2.8 implies,
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 19
+
+[PDF physical page 20]
+MANIK DHAR
+ψpk0
+0
+((Cu′ ⊗ IL1(u0,u1)) · (UL0(u0,u1) ⊗Yu0,u1)) = ψpk0
+0
+(Cu′ · UL0(u0,u1)) ⊗Yu0,u1
+= Mpℓ
+0,n(u′) ⊗Yu0,u1, (5.2)
+where IL1(u0,u1) is the identity matrix of size |L1(u0,u1)| = N1.
+Applying Lemma 2.3 implies that
+crankQ(ζ0){UL0(u0,u1) ⊗Yu0,u1}(u0,u1)∈PRn−1
+0 ×PRn−1
+1
+is larger than
+crankQ(ζ0){(Cu′ ⊗ IL1(u0,u1)) · (UL0(u0,u1) ⊗Yu0,u1)}(u′,u0,u1)∈J×PRn−1
+1
+.
+Applying Lemma 3.4 using (5.2) implies that
+crankQ(ζ0){(Cu′ · UL0(u0,u1)) ⊗Yu0,u1}(u′,u0,u1)∈J×PRn−1
+1
+is greater than
+crankFp0
+{Mpℓ
+0,n(u′) ⊗Yu0,u1}(u′,u0,u1)∈J×PRn−1
+1
+.
+Combining these two inequalities using Lemma 2.8 completes the proof.
+We want to apply Lemma 2.10 on crankFp0
+{Mpℓ
+0,n(u′) ⊗Yu0,u1}(u′,u0,u1)∈J×PRn−1
+1
+. To that end, we need
+the following two claims.
+Claim 5.4. For a given u0 ∈ PRn−1
+0 ,
+crankFp0
+{Yu0,u1}u1∈PRn−1
+1
+≥ Nn
+1
+r
+∏
+i=1
+(2(ki + ⌈logpi(n)⌉))−n.
+Proof. As we are working with a matrix with entries in Fp0 the row space and column space of the matrix
+formed by concatenating {Yu0,u1}u1∈PRn−1
+1
+along the columns will be equal. The row space of Yu0,u1 is the
+space spanned by 1y for y ∈ L1(u0,u1). If we consider all the rows from matrices in the set {Yu0,u1}d1∈Rn
+1
+we will obtain vectors 1y for all y ∈S
+d1∈PRn−1
+1
+L1(u0,u1). This means crankFp0
+{Yu0,u1}u1∈PRn−1
+1
+is exactly
+equal to the size of S
+u1∈PRn−1
+1
+L1(u0,u1) but that is a Kakeya set in (Z/N1Z)n. Finally, applying the
+induction hypothesis we are done.
+Claim 5.5.
+crankFp0
+{Mpℓ
+0,n(u′)}u′∈PR0(ℓ)n−1 ≥
+pℓ
+0ℓ−1 + n
+n
+
+.
+Proof. This follows from Lemmas 3.6 and 3.7.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 20
+
+[PDF physical page 21]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+Now applying Lemma 2.10 and the above two claims we see that
+crankFp0
+{Mpℓ
+0,n(u′) ⊗Yu0,u1}(u′,u0,u1)∈J ≥
+
+Nn
+1
+r
+∏
+i=1
+(2(ki + ⌈logpi(n)⌉))−n
+!pℓ
+0ℓ−1 + n
+n
+
+.
+Applying the above equation and Claims 5.2 and 5.3 we obtain the following bound on |S|.
+|S|
+b + n − 1
+n
+
+≥
+
+Nn
+1
+r
+∏
+i=1
+(2(ki + ⌈logpi(n)⌉))−n
+!pℓ
+0ℓ−1 + n
+n
+
+.
+Recall, ℓ = k0 + ⌈logp0(n)⌉ and b = p
+⌈logp0 (n)⌉
+0 ≥ n. Substituting these in the inequality above we get.
+
+Nn
+1
+r
+∏
+i=1
+(2(ki + ⌈logpi(n)⌉))−n
+!−1
+|S| ≥
+n
+∏
+i=1
+pk0
+0 p
+⌈logp0 (n)⌉
+0 (k0 + ⌈logp0(n)⌉)−1 + i
+p
+⌈logp0 (n)⌉
+0 + i
+≥
+n
+∏
+i=1
+pk0
+0 (k0 + ⌈logp0(n)⌉)−1 + ip
+−⌈logp0 (n)⌉
+0
+1 + ip
+−⌈logp0 (n)⌉
+0
+≥ pk0n
+0
+(k0 + ⌈logp0(n)⌉)n
+n
+∏
+i=1
+
+1 + ip
+−⌈logp0 (n)⌉
+0
+−1
+.
+For i ≤ n we have
+
+1 + ip
+−⌈logp0 (n)⌉
+0
+−1
+≤ 2. This observation with the inequality above completes the
+proof.
+Note for p0 > n we have
+
+1 + ip
+−⌈logp0 (n)⌉
+0
+−1
+≤ 1 + n/p0 and ⌈logp0(n)⌉ = 1. This with the
+inequality above and suitably modifying the induction hypothesis will give us the second half of this
+theorem.
+6 Constructing small Kakeya sets
+Theorem 1.11. Let s,n ∈ N, p be a prime and k = (ps+1 − 1)/(p − 1). There exists a Kakeya set S in
+(Z/pkZ)n such that,
+|S| ≤
+n
+∑
+i=1
+pki
+ki−1(1 − p−1)i−1 ≤ pkn
+kn−1(1 − p−1)n .
+Proof. The construction will be inductive. For n = 1 it S is the whole set. For a general n we first
+construct a set which has lines with directions u = {1,u2, . . . ,un} ∈ P(Z/pkZ)n−1. We will need the
+following claim.
+Claim 6.1. There exists a function g : Z/pkZ → Z/pkZ such that for any fixed t ∈ Z/pkZ the function
+x → tx − g(x),x ∈ Z/pkZ has an image of size at most pk/(k(1 − p−1)).
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 21
+
+[PDF physical page 22]
+MANIK DHAR
+Proof. We write an element u ∈ Z/pkZ in its p-ary expansion a0 + a1p + . . .ak−1pk−1 where ai ∈
+{0, . . . ,p − 1}. g will be of the form,
+g(a0 + a1p + . . .ak−1pk−1) =
+k−1
+∑
+j=0
+a jc j p j,
+where ci ∈ {0, . . . ,ps −1}. We write the numberci in its p-ary form ci(0)+ ci(1)p+. . .ci(s−1)ps−1,ci( j) ∈
+{0, . . . ,p − 1} and represent ci with the tuple (ci(0), . . . ,ci(s − 1)).
+We will set c0,c1, . . . ,cpk−1 iteratively. c0 = ps − 1 = ( p − 1, . . . ,p − 1). Once we have set ci, if
+ci(s − 1) > 0 we set ci+1 = (ci(0), . . . ,ci(s − 1) − 1). If ci(s − 1) = 0 and ci ̸= 0 then let α be the largest
+index such that ci(α) = 0 and ci(α − 1) ̸= 0. We then set ci+1 = . . .= ci+s−α = ci and ci+s+1−α =
+(ci(0), . . . ,ci(α − 1) − 1, p − 1, . . . ,p − 1). If ci = 0 then all the later c j, j > i are also set to 0. We note in
+this sequence of cis each number in {1, . . . ,ps − 1} only appears at most as many times as the number of
+trailing zeros plus 1 in its p-ary expansion. This means the number of zero equals,
+k −
+s−1
+∑
+i=0
+(i + 1)ps−i−1(p − 1) = ps+1 − 1
+p − 1 −
+s−1
+∑
+i=0
+(i + 1)ps−i−1(p − 1) = s + 1.
+The following property of ci quickly follows by the construction.
+Statement 6.2. Given a fixed t′ ∈ {0, . . . ,ps − 1}, let β be the smallest index such that cβ = t′. This
+construction guarantees that cβ +i −t′ = 0(mod ps−i) for i = {0, . . . ,s − 1}.
+For any fixed t consider tu − g(u) −tv + g(v) where u = a0 + a1p + . . .ak−1pk−1 and v = b0 + b1p +
+. . .bk−1pk−1,
+tu − g(u) −tv + g(v) =
+k−1
+∑
+j=0
+(t − c j)(a j − b j)p j. (6.1)
+Let t′ = t(mod ps) and β be the smallest index such that cβ = t′. If ui = vi for i < β then using Statement
+6.2 on (6.1) we have,
+(tu − g(u) −tv + g(v))(mod ps+β ) = 0.
+This means after fixing the first β coordinates of u, tu − g(u) can take at most pk−s−β values. This means
+the function tu − g(u) can take at most pk−s ≤ pk/(k(1 − p−1)) many values.
+The set
+Sn = {(t,tu2 − g(u2), . . . ,tun − g(un))|t,u2, . . . ,un ∈ Z/pkZ}
+contains a line in every direction {1,u2, . . . ,un} ∈ P(Z/pkZ)n−1. By the claim above, for a fixed t the
+function u → tu − g(u) will have an image of size at most pk/(k(1 − p−1)). This ensures Sn is of size
+at most pkn/(kn(1 − p−1)n). To add points with lines in other directions (0,u2, . . . ,un) ∈ P(Z/pkZ)n−1
+we simply need to add a Kakeya set in (Z/pkZ)n−1 which we can do using the induction hypothesis,
+completing the construction.
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 22
+
+[PDF physical page 23]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+Comment 6.3. Let q be a prime power, s,n ∈ N and k = qs − 1/(q − 1). The construction above can be
+adapted to find Kakeya sets in (Fq[x]/⟨xk⟩)n of size,
+n
+∑
+i=1
+qki
+ki−1(1 − q−1)i−1 ≤ qkn
+kn−1(1 − q−1)n .
+A Proof of Lemma 3.6
+We slightly sharpen the analysis of [ 1] here. We first show Mpk,1 has an explicit decomposition as a
+product of lower and upper triangular matrices.
+Lemma A.1 (Lemma 5 in [1]). Let Vm for m ∈ N be an m ×m matrix whose row and columns are labelled
+by elements in {0, . . . ,m − 1} such that its i, jth entry is zi j ∈ Z[z].
+In this setting, there exists a lower triangular matrix Lm over Z[z] with ones on the diagonal such that
+its inverse is also lower triangular with entries in Z[z] with ones on the diagonal, and an upper triangular
+matrix Dm over Z[z] whose rows and columns are indexed by points in {0, . . . ,m − 1} such that the jth
+diagonal entry for j ∈ {0, . . . ,m − 1} equals
+Dm( j, j) =
+j−1
+∏
+i=0
+(z j − zi)
+such that Vm = LmDm.
+This statement is precisely Lemma 5 in [1]. We will also need Lucas’s theorem from [16].
+Theorem A.2 (Lucas’s Theorem [16]). Let p be a prime and Given two natural numbers a and b with
+expansions ak pk + . . .+ a1p + a0 and bk pk + . . .+ b0 in base p we have,
+a
+b
+
+(mod p) =
+k
+∏
+i=0
+ai
+bi
+
+(mod p).
+A particular consequence is that
+a
+b
+
+mod p is non-zero if and only if every digit in base- p of b is at
+most as large as every digit in base-p of a.
+Lemma 3.6. The Fp-rank of Mpℓ,n is at least
+rankFpMpℓ,n ≥
+⌈pℓℓ−1⌉ + n
+n
+
+.
+Proof. Using the previous lemma we note that Vpℓ = LpℓDpℓ. Under the ring map f from Z[z] to
+Z[z]/⟨zpℓ
+− 1⟩, Vpℓ = LpℓDpℓ becomes Mpℓ,1 = LpℓDpℓ where Lpℓ and Dpℓ are the matrices f (Lpℓ) and
+f (Dpℓ) respectively.
+We next notice that Mpℓ,n is Mpℓ,1 tensored with itself n times which we denote as Mpℓ,n = M⊗n
+pℓ,1.
+Using Mpℓ,1 = LpℓDpℓ and Fact 2.8 we have Mpℓ,n = M⊗n
+pℓ,1 = L⊗n
+pℓ D⊗n
+pℓ . As Lpℓ was invertible with its
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 23
+
+[PDF physical page 24]
+MANIK DHAR
+inverse also having entries in Z[z] we see that Lpℓ is also invertible and
+
+L⊗n
+pℓ
+−1
+Mpℓ,n = D⊗n
+pℓ . Using
+Lemma 2.3 we have that,
+rankFpMpℓ,n ≥ rankFpD⊗n
+pℓ .
+As Dpℓ is upper triangular so will D⊗n
+pℓ be. Therefore, to lower bound the rank of D⊗n
+pℓ we can lower bound
+the number of non-zero diagonal elements.
+The diagonal elements in D⊗n
+pℓ correspond to the product of diagonal elements chosen from n copies
+of Dpℓ. Recall, the rows and columns of Dpℓ are labelled by j ∈ {0, . . . ,pℓ − 1} with
+Dm( j, j) =
+j−1
+∏
+i=0
+(z j − zi)
+Setting z −1 = w we note that Fp[z]/⟨zpℓ
+−1⟩ is isomorphic to Fp[w]/⟨wpℓ
+⟩. Dpℓ( j, j) can now be written
+as
+Dm( j, j) = (1 + w) j( j−1)/2
+j
+∏
+i=1
+((1 + w)i − 1)
+Using Lucas’s Theorem (Theorem A.2) we see that the largest power oft which divides (1 + w)l − 1 is
+the same as the largest power of p which divides l. For any j ≤ pℓ − 1 , therefore the largest power of w
+which divides Dpℓ( j, j) is at most
+⌊logp( j)⌋
+∑
+t=0
+ j
+pt
+
+−
+ j
+pt+1
+
+pt = j +
+⌊logp( j)⌋
+∑
+t=1
+ j
+pt
+
+pt−1(p − 1)
+≤ j(1 + ⌊logp( j)⌋(1 − 1/p))
+≤ j(ℓ − (ℓ − 1)/p). (A.1)
+Consider the set of tuples ( j1, . . . ,jn) ∈ N such that j1 + . . .+ jn ≤ ⌈pℓ/ℓ⌉. Using (A.1) we see that the
+diagonal entry in D⊗n
+pℓ corresponding to the tuple will be divisible by at most w⌈pℓ/ℓ⌉(ℓ−(ℓ−1)/p). It is easy
+to check that ⌈pℓ/ℓ⌉(ℓ − (ℓ − 1)/p) ≤ pℓ − 1 which will guarantee that the ( j1, . . . ,jn)’th diagonal entry
+of D⊗n
+pℓ is non-zero.
+This gives us at least
+⌈pℓℓ−1⌉+n
+n
+
+non-zero diagonal entries proving the desired rank bound.
+References
+[1] Bodan Arsovski, The p-adic Kakeya conjecture, arXiv preprint 2108.03750v1, 08-08-2021. 1, 2, 3,
+4, 5, 8, 10, 11, 23
+[2] , The p-adic Kakeya conjecture, Journal of the American Mathematical Society, 37 (2023),
+69-80. 3, 5
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 24
+
+[PDF physical page 25]
+THE KAKEYA SET CONJECTURE OVER Z/NZ FOR GENERAL N
+[3] Boris Bukh and Ting-Wei Chao, Sharp density bounds on the finite field Kakeya, Discrete Analysis
+2021, no. 26. 2
+[4] Xavier Caruso, Almost all non-archimedean Kakeya sets have measure zero, Confluentes Mathe-
+matici 10 (2018), no. 1, 3–40 (en). 2, 4
+[5] Manik Dhar, Maximal Kakeya and (m, ε)-Kakeya bounds over Z/NZ for general N , preprint
+arXiv:2209.11443 (2022). 4
+[6] Manik Dhar and Zeev Dvir, Proof of the Kakeya set conjecture over rings of integers modulo
+square-free N, Combinatorial Theory 1 (2021). 1, 2, 3, 4, 5, 6, 7, 8, 18
+[7] Manik Dhar, Zeev Dvir, and Ben Lund, Simple proofs for furstenberg sets over finite fields, Discrete
+Analysis (2021), no. 22 (en). 3
+[8] Evan P. Dummit and Márton Hablicsek,Kakeya sets over non-archimedean local rings, Mathematika
+59 (2013), no. 2, 257–266. 2
+[9] Zeev Dvir, On the size of Kakeya sets in finite fields, Journal of the American Mathematical Society
+22 (2009), no. 4, 1093–1097. 2, 3, 5
+[10] Zeev Dvir, Swastik Kopparty, Shubhangi Saraf, and Madhu Sudan, Extensions to the method of
+multiplicities, with applications to Kakeya sets and mergers, SIAM Journal on Computing 42 (2013),
+no. 6, 2305–2328. 1, 2, 3, 5, 11, 12
+[11] Jordan S Ellenberg, Richard Oberlin, and Terence Tao, The Kakeya set and maximal conjectures for
+algebraic varieties over finite fields, Mathematika 56 (2010), no. 1, 1–25. 2
+[12] Robert Fraser, Kakeya-type sets in local fields with finite residue field, Mathematika 62 (2016), no. 2,
+614–629. 2, 4
+[13] G. H. Hardy and S. Ramanujan, The normal number of prime factors of a number n, Quart. J. 48
+(1917), 76–92 (English). 4
+[14] G.H. Hardy and E.M. Wright, An introduction to the theory of numbers, 4th ed., 1975. 4
+[15] Jonathan Hickman and James Wright, The Fourier restriction and Kakeya problems over rings of
+integers modulo N, Discrete Analysis (2018), no. 11. 1, 2, 4
+[16] Edouard Lucas, Théorie des fonctions numériques simplement périodiques, American Journal of
+Mathematics 1 (1878), no. 4, 289–321. 23
+[17] Shubhangi Saraf and Madhu Sudan, An improved lower bound on the size of Kakeya sets over finite
+fields, Anal. PDE 1 (2008), no. 3, 375–379. 1, 2, 3, 5
+[18] Thomas Wolff, Recent work connected with the Kakeya problem, Prospects in mathematics (Prince-
+ton,NJ, 1996) (1999), 29–162. 2
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 25
+
+[PDF physical page 26]
+MANIK DHAR
+AUTHOR
+Manik Dhar
+Massachusetts Institute of Technology
+Cambridge, MA, USA
+dmanik
+ mit
+ edu
+https://dharmanik.github.io
+ADVANCES IN COMBINATORICS , 2024:2, 26 pp. 26
