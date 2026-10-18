@@ -155,3 +155,6 @@ R0097 actual重读既存CSWZ2610.13682v1 Def1.4–1.5/Th1.2/1.6/1.7及PDF6，fre
 
 
 R0098新增DP–Pigati2601.10647v3和BDH2404.04754v1官方原PDF/提取/metadata，80PDF/84sources/78IDs。实际finite-measure/dilation接口及更强旧N0 L²比较、后续MS/concentration refs只abs/history范围见metadata/R0098_source_check.json；非wholeproof/major认证。
+
+
+R0099新增GR2608.20899v2和Firester–Tsiamis2608.31164v2官方原PDF/提取/metadata，82PDF/86sources/78IDs。实际sequence/wholeclock/一般matrixbarrier入口和更强旧CVdet/markedbroad/barrier比较见metadata/R0099_source_check.json；非高级wholeproof/major认证。

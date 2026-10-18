@@ -1,0 +1,5 @@
+# R0099内部已审：浓集整线段应用与旧det强度门
+
+主文notes/40_multiscale/R0099_concentration_wholeclock_and_known_determinant_gate.md12节、A12/B12及两formal6全文限定通过，见research/reviews/R0099_primary_operator_and_diffuse_limit_review.md、research/reviews/R0099_determinant_shading_and_MS_review.md与research/reviews/R0099_root_integration_review.md。未经外部同行评审。
+
+GR真实序列输入/PSD后果与fullangular wholeclock满秩ac弱极限校准已付；fixednull旧DPR闭包和finite原tube更强旧CV determinant/marked自身broad/同ambient positivebarrier覆盖，非新主增益。FT一般barrier及Cor3.5缩放承认，原jointmass/ambient返回仍缺。82PDF/86sources/78旧ID状态保持，无newID/major/novelty或Goal完成。下一notes/00_map/R0099_next_full_goal_reselection.md，Goal active。
