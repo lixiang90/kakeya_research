@@ -1,27 +1,27 @@
 # 当前研究交接
 
-更新2026-10-19，R0095，Goal active。实际mixed42平面Furstenberg接口已付：π=(filled x,time) point2Fst/逐point pencilκ，但RW指数1已被单time横排计数饱和，无新gain。原CW给fixednormal q1Fst且真unit angular bush反q2免费升级；fixednormal原source出口属旧19.4。ambient rank2 iff βconstant、exact native两端defect和β变但actual parallel族仍全直线的scope校准均独审。未经外部同行评审，无ordinary/fullbranchsaving/newID/major。streak18，下一唯一 notes/00_map/R0095_next_full_goal_reselection.md，当前无qualified新gain。
+更新2026-10-19，R0096，Goal active。原CW五观测orthogonal商≥1Fst、两套原grain的coarse native标签upper已付；以九allowed尺度空谱带/近kernel QE compression/coarse原clock/literal fixedmoment finiteGGW，统一排完整mixed42中degree≤D、monomial coeff≤B的全局native βδ子类，允许δ依赖及任意小singular values。两独立全文审通过，未经外部同行评审。未提取rough β的统一representation，无ordinary/完整rough分支saving/newID/major。保守ordinary/fullbranch时钟streak19另计，actual新输入/统一子类是数学progress。下一唯一 notes/00_map/R0096_next_full_rough_source_gate.md。
 
-## 1. 真正合法的平面影像
+## 1. 原CW观测商
 
-主文notes/40_multiscale/sticky_mixed/R0095_planar_Furstenberg_transfer_and_straightening_boundary.md十节。原Def17.2–17.4 scalar filled轴与nearfull Z给实际P，ambient packing保2Fst；每point选一个actual preimage的Φκ，fixed倍δ/dyadic碰撞和M一致费用已付。singlepreimage只给nice witness，不保原全部I权或新complete configuration。RW(2,κ)只δ^-1+ε M，fixedtime横排已δ^-1 M，ambient δ^-2容许，无原scalar labelupper返回。
+主文notes/40_multiscale/sticky_mixed/R0096_uniform_polynomial_native_exclusion.md十二节。J≥5异time的精确kernel让physical pencil全部4minors degree4五零点→allclock rank≤3；经典Schur压缩回原orthogonal补参数cover/whole凸box给原P_S law≤CK r^(4−r0)≤CKr，无timegap/Sconditioning费用。不是给任意单time投影1Fst，也不是同label管子族抽取。
 
-## 2. 原CW与严格反攻范围
+## 2. 实际coarse closure
 
-fixednormal q=(n·a,n·b)的原r-bin使whole tubes处Cr physical slab，保原N给q1Fst。真same-origin b四维δ-grid、physical单位长L_b、共同interiorclock disks disjoint证明joint4AD/wholeCW/angular sep却qexact1维。union有正5体积且缺fullsourceΦ/双grain，非Kakeya反例。q1已可配heavyclock dualRW走constantβ旧source矛盾，不误说定理必须q2。
+原Def17.2 globalY_union AD3−κ与f窗Oρ使空间E_J cover≤K^Cρ^-4+κ；同一E_J的native filled三轴每label≥K^-1ρ^-3格，polynomial β uniformLip使commonwindow normal误差O_DBρ，分离label格不重→nativeunion≤K^Cρ^-1+κ。并未假Def17.4自带nativecoarseAD或删后ADlower；原wholeT/N/CW、平均到逐heavy visits分别付。
 
-## 3. 原生轨迹直化与fine误差
+## 3. 统一bounded polynomial证明
 
-V_t=(n_t,t n_t)在≥3times的rank≤2 iff βconstant，允许全ambientλ共同nonzero scale/共同injective clock仍如此。严格量词不能扩actualT：β=t e1、b0/四维interceptgrid管族joint4AD/CW但全部F_t=a4−t a1线性。exact两端defect含positive θ(1−θ)hΔβ·b_H；βaffine真实unitsegment仍midpoint1/8，不是fineδ。任意boundedLip仅Oρ误差；单窗/逐管mass不免费，未排所有nonlinear或curved方法。
+固定D/B，Cδ:R8→R^(D+2) norm有界、rank≤8。九个固定target a_j就近allowedρ，disjoint singular bands必空一个；strong smin≥ρ^ε*、weak≤ρ^M。弱核allclock4minor coefficients小，R74 compact Grassmann/QE幂稳定给泄漏ρ^(Mc*)；补格×wholebox仅一幂h，强系数law≥ρ尺度≤K^Cρ^-ε* r。ρsmear后cα≤K^Cρ^-ε*，每heavyT coarsevisits≥K^-Cρ^-1、原目标coarsecover已付。固定fullmoment Th2.1 α1−κ/4、η≪a_min epsilon_th给严格κ gap。cutoff不依Cδ最小非零sv，不用δdependent曲线uniform常数。
 
-## 4. 完整目标与停止
+## 4. 反攻和完整责任
 
-ordinary原allscale初始化、HRZ全parent/terminal/coarse/narrow、sticky完整κ1/余mixed和ordinary桥、同集full方向严格低维构造均open。停止direct planar饱和/β/κ/window/CW小改，不以R74正维label或R77 weighted工具改名重开。R94谱/算法、R93数字/PBP、R92singleorbit、R91free rank/normal3/C1和旧CP⇔PM/PW/cut/cone/跨块/DIM重排保持冻结。须真新的原联合约束才锁下一gain。
+β_i=t^i+disjoint smoothbumps可globalspan8/β1单调而8jet处处零；ε-small fullmoment的弱line-measure只反无条件uniformcurve定理，未有原CW，不反本轮law或source子类。原βdyadicLip仍不授统一D/B、全clock fine近似或保原质量提取；D增长/分段拟合不涵。ordinary初始化、HRZ全费用、sticky完整κ1/余mixed/ordinary桥及真同集full方向严格低维四路仍open。停止本D/κ/ρ/谱gap微调，全部旧冻结保持，不认证major/novelty。
 
-## 5. 来源与实际审查
+## 5. 来源和actual独审
 
-78PDF/82sources/78IDs，无新primary下载或ID状态变化。RW currentv3 Jan19 2025 freshabs/history/HTML，本轮actual有限Defs/Th4.1和PDF9图；其whole28page高级proof未新独证。原WZ Def17及R74/R77应用实际读域见sourcecheck。两独立稿、两formal6/root6、macro-next-source6内部全文限定审查通过，未经外部同行评审，非novelty/major。last actual官方OAI三核心wholebytes仍R75，本轮不冒新ref/byte核。
+78PDF/82sources/78IDs，无新下载/ID状态变化。GGW currentv2 Jan21 2024 freshabs/history，root actual §§1–2/finite Th2.1并view原PDF3；全高级decoupling/realQE仍具名。R19较窄单残差、R74经典compression与R14双块scope分开。root12/A16/B10、三spec5、两formal6/root6、macro-next-source6 actual全文限定审查通过，非外peer。last actual官方OAI三核心wholebytes仍R75，本轮未fresh官方identity。
 
-## 6. 恢复与精确同步
+## 6. 恢复与同步
 
-本轮父HEAD=origin=freshremote48b1a0f92f88a3056d69b98e9a15d251f0fba679/treee20ecc2027367a3f95eb6ae2e5035407faf61f6b，1483旧clean；初次connector transport失败后freshref已恢复。context一次，完整ROADMAP长输出后缺失中段另读，不重跑旧计算/PDF。tmp/sync/R0095.json须pendingfalse/samecommit/clean/fulltree/每stagedSHA256全真才报告同步。batch cat-file仍核每blobSHA1/SHA256；Unicode按codepoints/UTF8 bytes分别付。Goal active。
+本轮父HEAD=origin=freshremote a21a39f7145def8fee412a5549894a855aa30a05/treead161a46f5fd12963c32fc9fb1a3f4f562628145，1497旧clean。context一次；全ROADMAP长输出缺失中段另读完，不重跑旧计算/PDF。最终tmp/sync/R0096.json须pendingfalse/samecommit/clean/fulltree/逐stagedSHA256全真。batch cat-file仍读每blobSHA1/SHA256；exports codepoints/UTF8 bytes和remote changedblobSHA各核。Goal active。

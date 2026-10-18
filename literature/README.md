@@ -146,3 +146,6 @@ R0094新增Lutz1511.00442v4原30页、Polson–Zantedeschi2603.25611v1原25页�
 
 
 R0095重读既存RW2308.08819v3有限Defs/Th4.1及WZ Def17，fresh版本仍v3，实际π nice转移输出饱和。无新PDF，78PDF/82sources/78IDs；读域与scope见metadata/R0095_source_check.json。
+
+
+R0096重读既存GGW2211.09508v2原finite Th2.1/源Def17与R74稳定compression，freshv2 Jan21 2024未变。原coarse closure和fixed fullmoment应用见metadata/R0096_source_check.json；无新PDF，78PDF/82sources/78IDs，非major/novelty认证。

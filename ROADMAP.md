@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0095 actual mixed42 π平面nice转移已付但RW饱和；原CW q1Fst/真unitbush sharp、ambient直化判据和exact fine缺陷完成限定审查，无新Hausdorffgain/major。streak18，下一notes/00_map/R0095_next_full_goal_reselection.md；78PDF/82sources/78IDs，Goal active。
+更新2026-10-19，R0096原CW观测商/coarse native闭包与uniform boundedD/B polynomial native子类排除完成限定独审；允许δdependent病态系数，无rough提取/ordinary界/major。保守时钟streak19，实际数学progress另计；下一notes/00_map/R0096_next_full_rough_source_gate.md；78PDF/82sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -210,3 +210,6 @@ R0094：Oberlin/FHK已知谱2由compactselector/原smoothclock/球面band实际�
 
 
 R0095：真正共同π=(filled x,time)给point2/pencilκ，但单time横排已达RW饱和指数；fixednormal q1Fst已足旧source出口，真unitbush只否q2免费升级。ambient rank2 iff βconstant不扩actualT，β变parallel族仍全直线；exact两端native defect含交叉项。停止direct planar阈值续轮，不反完整mixed42或所有曲线方法，四路仍open。
+
+
+R0096：五time精确kernel→allclock singular pencil→原orth商1Fst；原globalcoarseY与nativefilled三轴付nativeunionupper。九allowed空谱带/近compression原wholeCW只付一幂、ρclock/fullsupport/fixedmomentGGW统一排全局boundedD/B βδ子类，无sminlower假设。rough representation/完整mixed42仍未付；停止D/κ/ρ微调，非major/ordinary增益，四路保持。

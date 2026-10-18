@@ -1,0 +1,5 @@
+# R0096内部已审：统一多项式native原source应用
+
+主文notes/40_multiscale/sticky_mixed/R0096_uniform_polynomial_native_exclusion.md12节、A16/B10和两formal全文限定通过，见research/reviews/R0096_original_coarse_labels_and_GGW_review.md、research/reviews/R0096_spectral_gap_compression_and_scope_review.md及research/reviews/R0096_root_integration_review.md。未经外部同行评审。
+
+在具名GGW finite moment与real-QE幂稳定输入下，原CW商/实际coarse标签/九allowed谱gap和whole-CW近compression排全部明列固定D/B的δdependent native多项式子类，不要求非零smin统一。一般rough β representation未提取，完整mixed42与ordinary仍open，无新数学ID/major/novelty认证。registry78状态保持，下一notes/00_map/R0096_next_full_rough_source_gate.md，Goal active。

@@ -95,3 +95,6 @@ R0074：[R0074_AD0_native_labels_to_CW_exclusion.md](R0074_AD0_native_labels_to_
 
 
 R0095：[R0095_planar_Furstenberg_transfer_and_straightening_boundary.md](R0095_planar_Furstenberg_transfer_and_straightening_boundary.md)：实际π nice输入已付但指数饱和；q1原CW、unitbush sharp、ambient rank/实际family scope与fine defect两独审，无ordinary/fullbranchgain/newID/major。下一notes/00_map/R0095_next_full_goal_reselection.md。
+
+
+R0096：[R0096_uniform_polynomial_native_exclusion.md](R0096_uniform_polynomial_native_exclusion.md)：原CW观测商、实际coarse标签闭包与九尺度谱gap/近compression/finiteGGW统一排boundedD/B δdependent native多项式子类；rough提取未付，无ordinary/newID/major。三spec、A16/B10/两formal独审，下一notes/00_map/R0096_next_full_rough_source_gate.md。
