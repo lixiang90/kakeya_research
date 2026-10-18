@@ -35,3 +35,5 @@ R0076：[双端native乘积全clock细尺度归约](R0076_two_end_native_product
 R0077：[双近秩一原质量用途](R0077_double_rank_one_native_projection_application.md)，root14/A12/B12及两formal已审：完整source的uniform NI→两角mass cap→finite weighted RW/all-large细subset→exactg R/w双fibre，真正fixed-power限定branch upper；非fullκ1/ordinary/major/newID，主机制noinfo0。下一notes/00_map/R0077_next_native_fullrank_source_gain_gate.md；Goal active。
 
 R0078：[原共同作用集及fractional稳定结构](R0078_native_common_action_and_fractional_stabilizer_application.md)，root14/A12/B12与两formal已审。weighted anchor保h→metric三路径→manyu/fullmixedsum→共同X，原Tu-law/allscale→He真实稳定cone；非given-X，但无fullrank saving/完整κ1/ordinary/major/newID，主机制noinfo1。下一notes/00_map/R0078_next_joint_native_action_and_fractional_cone_gate.md，Goal active。
+
+R0079：[严格联合native有限反模型](R0079_joint_native_unipotent_countermodel.md)，root12/A12/B12及两formal已审。同一X/nativeAD1KT/g/wholeclock/Tlaw/cone/localNF仍可无增长；非fullsource反例，无branchsaving/major/newID，streak2完整四路macro reset，下一notes/00_map/R0079_next_full_source_cross_block_gate.md，Goal active。
