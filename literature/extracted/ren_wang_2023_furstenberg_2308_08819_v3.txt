@@ -1,0 +1,1486 @@
+                                                             FURSTENBERG SETS ESTIMATE IN THE PLANE
+
+                                                                                 KEVIN REN AND HONG WANG
+arXiv:2308.08819v3 [math.CA] 19 Jan 2025
+
+
+
+
+                                                   Abstract. We fully resolve the Furstenberg set conjecture in R2 , that a (s, t)-Furstenberg set
+                                                   has Hausdorff dimension ≥ min(s + t, 3s+t
+                                                                                          2
+                                                                                             , s + 1). As a result, we obtain an analogue of Elekes’
+                                                   bound for the discretized sum-product problem and resolve an orthogonal projection question of
+                                                   Oberlin.
+
+                                                                                        1. Introduction
+                                               For s ∈ (0, 1] and t ∈ (0, 2], a (s, t)-Furstenberg set is a set E ⊂ R2 with the following property:
+                                           there exists a family L of lines with dimH L ≥ t such that dimH (E ∩ ℓ) ≥ s for all ℓ ∈ L. The
+                                           Hausdorff dimension dimH L is defined as the Hausdorff dimension of L in the space A(2, 1) of all
+                                           affine lines in R2 (see [26, Section 3.16]). The Furstenberg set question asks: what is the minimum
+                                           possible dimension of dimH (E)?
+                                               Motivated by his work on ×2, ×3-invariant sets [15], Furstenberg considered a set E with the
+                                           following property: there exists a family of lines L, one in every direction, such that dimH (E ∩ℓ) ≥ s
+                                           for all ℓ ∈ L. He conjectured (in unpublished work, but recalled by Wolff in [43, Remark 1.5])
+                                           that such a set E (which is a special (s, 1)-Furstenberg set) has Hausdorff dimension ≥ 3s+1         2 .
+                                           Furstenberg’s conjecture was later generalized to (s, t)-Furstenberg sets: any (s, t)-Furstenberg set
+                                           E ⊂ R2 has Hausdorff dimension
+                                                                                                      3s + t
+                                           (1)                                 dimH E ≥ min{s + t,           , s + 1}.
+                                                                                                         2
+                                           As observed by Wolff [43], the conjectured bound 3s+t     2    is optimal for the continuum version of a
+                                           sharp example for Szemerédi-Trotter theorem [40]. The bound s + t for 0 ≤ t ≤ s ≤ 1 was proved
+                                           by Lutz-Stull [23] and Héra-Shmerkin-Yavicoli [19], and the bound s + 1 for s + t ≥ 2 was proved
+                                           recently by Fu and the first author [14]. Wolff [43] gave a sharp construction for 3s+t   2  in the case
+                                           t = 1 based on a grid example (which easily generalizes to other values of t), the sharp construction
+                                           for s + t can be taken as the product of a t-dim Cantor set and an s-dim Cantor set, and Fu and
+                                           the first author [14] gave a sharp construction for s + 1 (the product of an interval and a s-dim
+                                           Cantor set).
+                                               The main case s < t < 2 − s remains open. Elementary bounds due to Wolff [43] in the case
+                                           t = 1, Molter-Rela [28], Héra [18], and Lutz-Stull [23] give
+                                                                             dimH E ≥ max(t/2 + s, s + min(s, t)).
+                                           Meanwhile, an ε-improvement dimH (E) ≥ 2s+ ε(s, t) was proven in the special case (s, t) = (1/2, 1)
+                                           by Katz-Tao [21] and Bourgain [1], then for general (s, 2s) by Héra-Shmerkin-Yavicoli [19]. Explicit
+                                           improvement for (s, 2s)-Furstenberg sets was obtained by Benedetto-Zahl [7].
+                                              A breakthrough by Orponen-Shmerkin [30] proves an ε-improvement over 2s for general (s, t)
+                                           with s < t (see Section 1.3 for how this result leads to recent progress on several problems). Later,
+                                           work of Shmerkin and the second author [38] provides an ε-improvement over the bound s + 2t using
+                                                                                                  1
+2                                   KEVIN REN AND HONG WANG
+
+
+ideas in [30]. Very recently, Orponen and Shmerkin [31] made another breakthrough and proved
+dimH E ≥ max(t/2 + s, s + min(s, t)) + C(t, s) for some good explicit constant C(t, s) depending
+only on s and t which is not far from the conjecture. In this paper, we prove the Furstenberg
+conjecture on the Hausdorff dimension of (s, t)-Furstenberg sets.
+Theorem 1.1. Fix s ∈ (0, 1] and t ∈ (0, 2]. Any (s, t)-Furstenberg set F ⊂ R2 has Hausdorff
+dimension
+                                                3s + t
+                            dimH F ≥ min{s + t,        , s + 1}.
+                                                   2
+   The (s, t)-Furstenberg problem is known to be connected to the discretized sum-product problem
+and projection problem, as shown in Section 1.1, Section 1.2, and [31, Section 6].
+   Recently, Wang and Wu [42] proved a “two-ends” generalization of our Theorem 1.1 and used it
+with Bourgain-Demeter decoupling theory to make progress on Stein’s Fourier restriction conjecture.
+Their proof uses Theorem 1.1 as a black box and combines it with multi-scale analysis and induction
+on scales; we refer the reader to that paper and [6] for more details.
+
+1.1. Exceptional set estimate for orthogonal projections. Let K ⊂ R2 be an arbitrary Borel
+set and 0 ≤ u ≤ min{dimH K, 1}. The exceptional set problem of orthogonal projections asks for
+the optimal upper bound on
+                                 dimH {θ ∈ S 1 : dimH πθ (K) < u}.
+In 1968, Kaufman [22] proved that
+                               dimH {θ ∈ S 1 : dimH πθ (K) < u} ≤ u,
+sharpening a result of Marstrand [24]. In 2000, Peres-Schlag [33] showed that when dimH K > 1,
+one can improve the estimate to
+                   dimH {θ ∈ S 1 : dimH πθ (K) < u} ≤ max{u + 1 − dimH K, 0}.
+Kaufman’s bound is sharp when u = dimH K and the Peres-Schlag bound is sharp when u = 1.
+In fact, the case u = 1 was obtained previously by Falconer [11]. For general cases, Oberlin [29]
+conjectured that the right-hand side should be max{2u − dimH K, 0}.
+   Further improvements on the exceptional set estimate originate from Bourgain’s projection the-
+orem [2], which says
+(2)                       dimH {θ ∈ S 1 : dimH πθ (K) ≤ dimH K/2} = 0.
+   Bourgain’s projection theorem concerns the deep nature of real numbers and has been used in
+Bourgain-Furman-Lindenstrauss-Mozes [3] on random walk on torus and in Katz-Zahl [20] on the
+Hausdorff dimension of Kakeya sets in R3 . Recent improvements [30, 31] on the exceptional set
+estimate are associated to the improvements on the Furstenberg sets problem.
+   As a corollary of Theorem 1.1 (in fact, its discretized version Theorem 4.1), we prove Oberlin’s
+conjecture [29, (1.8)] on the exceptional sets of the orthogonal projections, whose AD-regular version
+was established in [31, Theorem 1.13]. This deduction is analogous to the procedure used to establish
+[31, Theorem 1.13] (see [31, Section 6.1]), so we omit the details.
+Theorem 1.2. Let K ⊂ R2 be an arbitrary Borel set. Then for all 0 ≤ u ≤ min{dimH (K), 1}, we
+have
+                 dimH {θ ∈ S 1 : dimH πθ (K) < u} ≤ max{2u − dimH K, 0}.
+                             FURSTENBERG SETS ESTIMATE IN THE PLANE                                        3
+
+
+1.2. Discretized sum-product. Let F be a field and A, B ⊂ F, the sum set A + B is defined as
+                                     A + B := {a + b : a ∈ A, b ∈ B}
+and the product set is defined as
+                                     A · B := {a · b : a ∈ A, b ∈ B}.
+The sum-product problem asks whether the size of A + A or A · A can be substantially larger
+than the size of A. When A is a finite set, we measure the size of A by its cardinality and it was
+conjectured by Erdös and Szemerédi that when F = R, for any ǫ > 0, there exists Cǫ > 0 such that
+                                   max{|A + A|, |A · A|} ≥ Cǫ |A|2−ǫ .
+See [39, 27, 34, 35, 36, 37] for some recent results on the Erdös-Szemerédi sum-product conjecture.
+   When F = R, a “fractal” analogue of the discrete sum-product problem concerns the (δ, s, C)-sets,
+which are discretizations of sets of Hausdorff dimension ≥ s in R. For a bounded set A ⊂ Rd , let
+|A|δ denote the dyadic δ-covering number of A. This concept will be precisely defined in Definition
+2.2, but for now one can regard |A|δ as being the same (up to a constant factor) as the least number
+of δ-balls needed to cover A.
+Definition 1.3 ((δ, s, C)-set). For δ ∈ 2−N , s ∈ [0, d] and C > 0, a non-empty bounded set A ⊂ Rd
+is called a (δ, s, C)-set if
+                             |A ∩ B(x, r)|δ ≤ Crs |A|δ ,        ∀x ∈ Rd , r ∈ [δ, 1].
+    If A is a (δ, s, C)-set, then |A|δ ≥ C −1 δ −s and if A′ ⊂ A satisfies |A′ |δ ≥ C ′−1 |A|δ , then A′ is a
+(δ, s, CC ′ )-set.
+    Definition 1.3 is to be contrasted with the notion of a (δ, s, C)-Katz-Tao set, which imposes the
+bound                                               r s
+                               |A ∩ B(x, r)|δ ≤ C         , ∀x ∈ Rd , r ∈ [δ, 1].
+                                                     δ
+Definition 1.4 (AD-regular set). A (δ, s, C)-set A is called Alfors-David regular at scale δ if C > 0
+is a constant independent of δ and
+                      C −1 rs |A|δ ≤ |A ∩ B(x, r)|δ ≤ Crs |A|δ ,        ∀x ∈ A, r ∈ [δ, 1].
+                                                           −ǫ
+We say that A is (s, ǫ)-almost AD-regular if C = δ              . Note that in the above condition, we have
+x ∈ A, not x ∈ Rd !
+    Katz and Tao [21] made the following discretized ring conjecture and showed that it is equivalent
+to an ǫ-improvement of the (1/2, 1)-Furstenberg set problem and Falconer distance set problem for
+sets of Hausdorff dimension 1 on the plane. When ε > 0 is sufficiently small, if A ⊂ [1, 2] is a
+(δ, s, δ −ε )-set with s = 1/2, then
+                                  max{|A + A|δ , |A · A|δ } ≥ Cs,ε δ −s−ε .
+This conjecture was proved in 2003 by Bourgain [1]. (In related work, Edgar and Miller [9] proved
+the qualitative statement that there do not exist s-dimensional Borel subrings of R for any s ∈
+(0, 1)). Later Bourgain generalized the conjecture to the aforementioned projection estimate (2).
+More recently, Guth-Katz-Zahl [16] used an elementary method inspired by Gaarev’s approach to
+the sum-product problem in finite fields to prove a quantitative result, replacing ǫ by an explicit
+constant depending on s.
+   As a corollary of Theorem 1.2, we prove a new estimate for the discretized sum-product problem,
+which complements the analogous results of Elekes [10] for R and Mohammadi-Stevens [27] for finite
+4                                   KEVIN REN AND HONG WANG
+
+
+fields Fp . This deduction is analogous to the procedure used to establish [31, Theorem 1.26] (see
+[31, Section 5.2]), so we omit the details.
+
+Theorem 1.5. Given s ∈ (0, 23 ) and η > 0, there is ε = ε(s, η) > 0 such that the following holds
+for small enough δ > 0. Let A ⊂ [1, 2] be a (δ, s, δ −ε )-set. Then
+
+                               max{|A + A|δ , |A · A|δ } ≥ δ −(5/4)s+η .
+
+   Theorem 1.5 improves the very recent result of Máthé-O’Regan [25, Theorem B] and Orponen-
+Shmerkin [31, Theorem 1.26] where 5/4 was replaced by 7/6 and extends [31, Theorem 1.26] for
+almost AD-regular sets to general (δ, s, C)-sets.
+                                                                              s+1
+Remark 1.6. If s ≥ 32 , then [14, Corollary 1.7] gives the lower bound δ − 2 +η . This bound is
+sharp, see [25, Remark 1.13].
+
+   While the sum-product theorem can be viewed as a special case of the Furstenberg sets problem,
+the asymmetric sum product, i.e. A + B · C for different sets A, B, C ⊂ [0, 1], plays an important
+role in Orponen and Shmerkin’s recent work [31] on the Furstenberg set conjecture.
+
+1.3. Roadmap. Our proof builds on previous works on projection problems and incidences for
+tubes. We illustrate the relation between different results below.
+        Bourgain’s discretized sum-product theorem [1]/Bourgain’s projection theorem [2]
+        =⇒ ǫ-improvement of Furstenberg sets estimate [30]
+        =⇒ Sharp radial projection theorem in the plane [32]
+        =⇒ ABC-sum product theorem [31], [8]
+        =⇒ Sharp exceptional sets estimate for almost AD-regular sets [31]
+        =⇒ Sharp Furstenberg sets estimate for almost AD-regular sets [31]
+        + Sharp Furstenberg sets estimate for well-spaced sets [17]
+        =⇒ Sharp Furstenberg sets estimate.
+   In [31], the Furstenberg conjecture is solved for almost AD-regular sets. On the other hand, in
+[17], the Furstenberg conjecture is solved for well-spaced sets (see also [13] for a related result).
+In this paper, we will generalize the main result in [17] and solve the Furstenberg conjecture for a
+class of semi-well spaced sets. Then we combine this result with the almost AD-regular result in
+an induction-on-scales scheme due to [30] to finish the proof of Furstenberg sets conjecture.
+   It is interesting to note that the proof of Furstenberg sets conjecture for almost AD-regular
+sets completely relies on tools from geometric measure theory and additive combinatorics, while
+our result for semi-well spaced sets completely relies on Fourier analysis, specifically the high-low
+method pioneered by Vinh [41] and Guth, Solomon, and the second author [17].
+
+1.4. Structure of the paper. In Section 2, we introduce preliminaries and notations about dyadic
+tubes, dimensions of sets, and the high-low method. In Section 3, we state and prove some pigeon-
+holing and multiscale lemmas that will be crucial later in the proof. In Section 4, we re-prove the
+special case s + t = 2 of the Furstenberg set problem, as well as introduce the key Lemma 4.8 that
+will allow us to solve the Furstenberg set problem for a class of semi-well spaced sets. In Section
+5, we prove Lemma 4.8 using a high-low method. Finally, in Section 6, we prove a decomposition
+lemma for Lipschitz functions that reduces the full Furstenberg set conjecture to the AD-regular
+and semi-well spaced cases.
+                            FURSTENBERG SETS ESTIMATE IN THE PLANE                                   5
+
+
+1.5. Acknowledgments. The first author is supported by an NSF GRFP fellowship. The second
+author is supported by NSF CAREER DMS-2238818 and NSF DMS-2055544. We would like to
+thank Larry Guth, Pablo Shmerkin, and Tuomas Orponen for helpful discussions and for careful
+reading of an earlier draft. Finally, the first author would like to thank Yuqiu Fu for introducing
+him to the Furstenberg set problem.
+
+                                          2. preliminaries
+   In this section, we recall some definitions and lemmas from [31] and the high-low method.
+   The letter C will usually denote a constant, while the letter K will usually denote a parameter
+depending on δ (e.g. K = Cδ −ε ).
+   We say A . B if A ≤ CB for some constant C, and define A & B, A ∼ B similarly. We write
+A .n B to emphasize the implicit constant may depend on n.
+   For a finite set A, |A| denotes cardinality of A. For a measurable and infinite set A (usually a
+ball or a rectangle), |A| denotes the Lebesgue measure of A.
+   For any compact set A ∈ Rd and r > 0, let A(r) := {x ∈ R2 : d(x, A) ≤ r} denote the
+r-neighborhood of A.
+Definition 2.1 (Dyadic cubes). If n ∈ Z and δ = 2−n , denote by Dδ (Rd ) := {[aδ, (a + 1)δ) ×
+[bδ, (b + 1)δ) : a, b ∈ Z} the family of dyadic cubes in Rd of side-length δ. If P ⊂ Rd , denote
+                                Dδ (P) := {Q ∈ Dδ (Rd ) : Q ∩ P =
+                                                                6 ∅}.
+We abbreviate Dδ := Dδ ([0, 1)d ) for n ≥ 0. If δ < ∆ ∈ 2−N and p ∈ Dδ , let p∆ denote the dyadic
+cube p ∈ D∆ containing p.
+Definition 2.2. For a bounded set P ⊂ Rd and δ = 2−n , n ≥ 0, define the dyadic δ-covering
+number
+                                     |P |δ := |Dδ (P )|.
+   As remarked before, |P |δ is comparable (up to a universal constant factor) to the least number
+of δ-balls needed to cover P . (This latter definition is the more common definition of covering
+number.) If P ⊂ Dδ is a set of dyadic cubes, we say that P is a (δ, s, C)-set if the union of δ-cubes
+in P is a (δ, s, C)-set in the sense of Definition 1.3 and we use |P| to denote the number of dyadic
+cubes in P and |P|∆ := |D∆ (P )| (hence |P|δ = |P|).
+Definition 2.3 (Dyadic δ-tubes). Let δ ∈ 2−N . A dyadic δ-tube is a set of the form T = ∪x∈p D(x),
+where p ∈ Dδ ([−1, 1] × R), and D is the point-line duality map
+                              D(a, b) := {(x, y) ∈ R2 : y = ax + b} ⊂ R2
+sending the point (a, b) ∈ R2 to a corresponding line in R2 . Abusing the notation, we abbreviate
+D(p) := ∪x∈p D(x). The collection of all dyadic δ-tubes is denoted
+                                 T δ := {D(p) : p ∈ Dδ ([−1, 1] × R)}.
+A finite collection of dyadic δ-tubes {D(p)}p∈P is called a (δ, s, C)-set if P is a (δ, s, C)-set.
+  If δ < ∆ ∈ 2−N and T ∈ T δ , let T ∆ denote the dyadic tube T ∈ T ∆ containing T .
+  For a set of dyadic δ-tubes T and δ < ∆ ∈ 2−N , define the dyadic ∆-covering number |T |∆ :=
+|D∆ (T )| where D∆ (T ) := {T ∈ T ∆ : ∃T ∈ T , T = T ∆ }. When δ = ∆, sometimes we omit the
+subscript δ from |T |δ .
+6                                           KEVIN REN AND HONG WANG
+
+
+Definition 2.4 (Slope set). The slope of a line ℓ = D(a, b) is defined to be the number a ∈ R, write
+dir(ℓ) := a.
+   If T = D(p) is a dyadic δ-tube, we define the slope dir(T ) = ∪x∈p dir(D(x)). Thus dir T is an
+interval of length ∼ δ. If T is a collection of dyadic δ-tubes, we write dir(T ) := {dir(T ) : T ∈ T }.
+If T (p) is a collection of dyadic δ-tubes through a fixed point p, we identify T (p) with dir(T (p)).
+    If 0 < δ < ∆ ≤ 1, T ⊂ T δ and T ∈ T ∆ , write T ∩ T := {T ∈ T : T ⊂ T}.
+2.1. Thickening and high-low method.
+Definition 2.5 (Incidences). Let δ ≤ ∆ ∈ 2−N . For a set of distinct weighted dyadic δ-cubes P
+with weight function w : P → R≥0 and a set of (not necessarily distinct) dyadic ∆-tubes T , define
+the incidence count                          X     X
+                               Iw (P, T ) :=              w(p).
+                                                         p∈P T ∈T ,p∆ ⊂6T
+
+For each dyadic ∆-tube, 6T := T (6∆) , the 6∆-neighborhood of T . We usually assume w ≡ 1 or w
+is explicitly defined beforehand, in which case we drop it from the notation.
+  The following proposition is a slightly weaker version of [4, Proposition 5.2.1]. We include a
+proof inspired by [5] here for completeness.
+Proposition 2.6. Fix δ ∈ 2−N , let P be a set of distinct weighted dyadic δ-cubes contained in [0, 1)2
+with weight function w : P → R≥0 and T be a set of distinct dyadic δ-tubes. If δ −ε/100 ≤ S ≤ δ −1 ,
+then                                                                  1/2
+                                                        X
+                            Iw (P, T ) .ε Sδ −1 |T |         w(p)2          + S −1+ε Iw (P, T Sδ ),
+                                                        p∈P
+          Sδ           Sδ
+where T        := {T        : T ∈ T } is counted with multiplicity.
+Proof. For each T ∈ T , let φT be the affine transformation that maps T to [−1/2, 1/2]2. Let ψ
+be a smooth bump function = 1 on [−3, 3]2 and supported on [−4, 4]2 . Define fT = ψ ◦ φT , then
+fT = 1 on 6T is supported on 8T . Then
+                                                          Z
+                                                       −2
+                                        Iw (P, T ) . δ      f g.
+                          R
+We are going to analyze f g using Fourier transform.
+          b
+   Since |ψ(x)|        1
+                .N (1+|x| 2 )N for any N > 0, the Fourier transform of fT is essentially supported on
+
+
+                 T ∗ := {ξ : |ξ · (x − cT )| .ε S ε/2 ,       ∀x ∈ T } where cT is the center of T,
+in the sense that |fbT (ξ)| ≤ S ≤δ   ε−2     1/ε
+                                                / T ∗ . Let ψB be a smooth bump function = 1 on
+                                      for any ξ ∈
+            −1+ε/2 −1
+B = B(0, S         δ ) and supported on 2B. Define the low frequency part of fT as
+                                                    fTl = (fbT ψB )∨
+                                                                                                        −1
+and the high frequency part as fTh = fT − fTl . Then |fTl | ≤ S −1+ε on NSδ T and |fTl (x)| .ε δ ε
+                                                                      −1             P
+          / NSδ (T ). In other words, |fTl (x)| .ε S −1+ε χNSδ T + δ ε . Define f l = T ∈T fTl and
+for any x ∈
+      P
+f h = T ∈T fTh and split the integral as
+                                   Z          Z          Z
+(3)                                               h
+                                      f g ≤ | f g| + | f l g|.
+                                   FURSTENBERG SETS ESTIMATE IN THE PLANE                                                  7
+
+                                          R        R
+   If the low frequency part dominates: f g . | f l g|, then by Lemma 2.8,
+                                    Z            Z
+(4)                Iw (P, T ) . δ −2 f g . δ −2 | f l g| .ε S −1+ε Iw (P, T Sδ ) + δ 10 .
+
+The last term δ 10 is because the total number of distinct δ-cubes and distinct δ-tubes is . δ −2 ,
+                  −1
+multiplying by δ ε gives . δ 10 .
+   It remains to consider when the high frequency part dominates:
+                            Z        Z         Z            Z
+(5)                                      h          h 2 1/2
+                              f g . | f g| ≤ ( |f | ) ( |g|2 )1/2 .
+
+Since T ∗ only depends on the direction of T , independent of its center cT , we can organize T = ⊔θ Tθ
+where the disjoint union is over δ-separated directions θ and Tθ consists of tubes in T parallel to θ
+                                          P                  P
+up to an error of size ≤ δ. Write fθh = T ∈Tθ fTh and f h = θ fθh . Then fc    h
+                                                                              θ is essentially supported
+     ∗                           c                                       ∗
+on T \ B. Through each ξ ∈ B , at most S many θ such that ξ ∈ T for T ∈ Tθ . Then
+                               Z            Z            Z X
+                                   |f h |2 = |fch |2 . S      |fch 2
+                                                                 θ|
+                                                                          θ
+                                                      XZ
+                                                .S           |fθ |2
+                                                       θ
+                                                      XZ X
+                                                .S                     |fT |2 . Sδ|T |.
+                                                       θ     T ∈Tθ
+
+Plugging in (5), we get
+                               Z                                 X                                X
+                          −2
+                                                                                                                1/2
+(6)      Iw (P, T ) . δ            f g . δ −2 (Sδ|T |)1/2 (δ 2         w(p)2 )1/2 . Sδ −1 |T |          w(p)2          .
+                                                                 p∈P                              p∈P
+
+The conclusion follows from combining (3), (4) and (6).
+                                                                                                                           
+                                                                   −1
+                                                                              P           2 1/2
+Remark 2.7. We often refers to the first term (Sδ |T | p∈P w(p) )             as high-frequency term
+                        −1+ε         Sδ
+and the second term S        Iw (P, T ) as low-frequency term because they correspond to high-low
+frequences of f . Even T Sδ may not be a distinct set of dyadic Sδ-tubes, but Iw (P, T Sδ ) was defined
+in Definition 2.5.
+Lemma 2.8. For each dyadic δ-tube T and 30δ < ∆ ∈ 2−N ,
+                                             (6T )(∆) ∩ [−1, 2)2 ⊂ 6(T ∆ ).
+Recall (6T )(∆) means the ∆-neighborhood of 6T , i.e. the ∆-neigborhood of 6δ-neighborhood of T ,
+and T ∆ is the dyadic ∆-tube containing T .
+Proof. Let T = D(p) where p = [a, a + δ) × [b, b + δ) is a δ-cube and let ℓa,b be the line y = ax + b.
+   Let (x, y) ∈ (6T )(∆) ∩ [−1, 2)2 ; then d((x, y), ℓa,b ) ≤ ∆ + 10δ. Since a ∈ (−1, 1) and ∆ > 30δ,
+this means |y − (ax + b)| ≤ 2∆.
+   Let p∆ = [a′ , a′ + ∆) × [b′ , b′ + ∆), where |a′ − a| ≤ ∆ and |b′ − b| ≤ ∆ (this encodes the fact
+p ∈ p∆ ). Then since x ∈ [−1, 2),
+                      |y − (a′ x + b′ )| ≤ |y − (ax + b)| + 2|a − a′ | + |b − b′ | ≤ 5∆.
+Since T ∆ = D(p∆ ), we get (x, y) ∈ 6(T ∆ ), as desired.                                                                   
+8                                       KEVIN REN AND HONG WANG
+
+
+                                             3. Pigeonholing
+    In this section, we pigeonhole a good configuration to have good properties.
+
+Definition 3.1. Fix δ ∈ 2−N , s ∈ [0, 1], C > 0, M ∈ N. We say that a pair (P, T ) ⊂ Dδ × T δ
+is a δ-configuration if every p ∈ P is associated with a subset T (p) ⊂ T such that T ∩ p 6= ∅ for
+all T ∈ T (p) (note that T (p) does not need to be all tubes in T passing through p). We say that
+(P, T ) is a (δ, s, C, M )-nice configuration if for every p ∈ P there exists a (δ, s, C)-set T (p) ⊂ T
+with |T (p)| ∼ M and such that T ∩ p 6= ∅ for all T ∈ T (p).
+
+    It follows from the definition of (δ, s, C)-set that M & C −1 δ −s .
+
+Definition 3.2. Let P ⊂ Dδ . We say that P ′ is a refinement of P if P ′ ⊂ P and |P ′ |δ ≈δ |P|δ .
+                                                                                               ′
+Let ∆ ∈ (δ, 1), we say that P ′ is a refinement of P at resolution ∆ if there is a refinement P∆ of
+D∆ (P) and
+                                                [
+                                          P′ =     (P ∩ p).
+                                                      ′
+                                                   p∈P∆
+
+Note that P ′ does not necessarily satisfy |P ′ |δ 'δ |P|δ unless we also have that P is uniform at
+scale ∆. We can likewise define a refinement of a set of dyadic δ-tubes T at resolution ∆.
+
+   Here, the notation 'δ means &N log(1/δ)CN for some number N independent of δ, and likewise
+for /δ , ≈δ .
+
+Definition 3.3. Let (P0 , T0 ) be a (δ, s, C0 , M0 )-nice configuration. We say that a δ-configuration
+(P, T ) is a refinement
+                 P       of (P0 , T0 ) if P ⊂ P0 , |P|δ ≈δ |P0 |δ , and for any p ∈ P, there is T (p) ⊂
+T0 (p) ∩ T with p∈P |T (p)|δ 'δ |P0 |δ · M0 . We say that a refinement (P, T ) of (P0 , T0 ) is a nice
+configuration refinement if in addition for each p ∈ P, |T (p)| 'δ |T0 (p)|.
+    Let ∆ ∈ (δ, 1), we say that (P, T ) is a refinement of (P0 , T0 ) at resolution ∆ if P is a refinement
+of P0 at resolution ∆ and for each p ∈ P, T ∈ D∆ (T (p)), T ∩ T (p) = T ∩ T0 (p).
+
+    Here T might be much smaller than T0 .
+
+Remark 3.4. For any (δ, s, C0 , M0 )-nice configuration (P0 , T0 ) and any refinement (P, T ) of
+(P0 , T0 ), there is a refinement (P ′ , T ′ ) of (P, T ) that is a nice configuration refinement of (P0 , T0 ).
+
+Definition 3.5. Let N ≥ 1, and let
+
+                                 δ = ∆N < ∆N −1 < · · · < ∆1 < ∆0 = 1
+
+be a sequence of dyadic scales. We say that a set P ⊂ [0, 1]2 is {∆j }N    j=1 -uniform if there is a sequence
+{Nj }Nj=1 with N j ∈ 2 N
+                         and |P ∩ Q| ∆ j ∈ [N j /2, N j ) for all j ∈ {1, . . . , N } and all Q ∈ D∆j−1 (P).
+
+    Recall Lemma 2.15 from [31].
+
+Lemma 3.6. Let P ⊂ [0, 1)d , N, T ∈ N and δ = 2−N T . Let also ∆j := 2−jT for 0 ≤ j ≤ N . Then,
+there is a {∆j }N                 ′
+                j=1 -uniform set P ⊂ P such that
+
+                                            |P ′ |δ ≥ (2T )−N |P|δ .
+
+In particular, if ǫ > 0 and T −1 log(2T ) ≤ ǫ, then |P ′ |δ ≥ δ ǫ |P|δ .
+                               FURSTENBERG SETS ESTIMATE IN THE PLANE                                           9
+
+
+                              4. Main Theorem on Furstenberg sets
+    In this section, we will state our main theorem on Furstenberg sets and prove the special case
+P is a (δ, 2 − s, C)-set, see Proposition 4.4. Then, we will prove a key special case (the semi
+well-spaced case) where D∆ (P) looks like a (∆, 2 − s, C)-set at a high scale ∆ and P looks like a
+(δ, s, C)-Katz-Tao set at low scales between δ and ∆, see Proposition 4.6. Finally, we will combine
+the semi-well-spaced case (Proposition 4.6) and almost AD-regular case (the recent breakthrough
+of [31]) using a carefully designed scale decomposition (Lemma 6.6) and a now-standard induction
+on scales argument due to [30] to finish off the proof of Theorem 4.1.
+    In order to prove the Furstenberg set conjecture, it suffices to prove the following discretized
+version (see [30, Section 3.1] or [19, Lemma 3.3]).
+Theorem 4.1. For every ε > 0, there exists η = η(ε, s, t) > 0 such that the following holds for any
+δ < δ0 (s, t, ǫ). Let (P, T ) be a (δ, s, δ −η , M )-nice configuration with s ∈ (0, 1], P is a (δ, t, δ −η )-set,
+t ∈ (0, 2]. Then
+                                                             s+t
+                                          |T |δ &ε δ − min{t, 2 ,1}+ε M.
+  Theorem 4.1 will be proved using induction on scales. To do so, we need the following definition
+and pigeonholing lemma (Proposition 4.3) that will be used in the proof of Proposition 4.4 and the
+proof of Proposition 4.6.
+Definition 4.2. Fix δ ≤ ∆ ∈ 2−N , s ∈ [0, 1], Cδ > 0, Mδ ∈ N. We say that a ∆-configuration
+(Q, T∆ ) covers a (δ, s, Cδ , Mδ )-nice configuration (P, T ) if
+                               X X             X
+(7)                                                  |Tp ∩ T|δ 'δ |P|δ · Mδ .
+                                p∈Q p∈p∩P T∈T∆ (p)
+
+Proposition 4.3. Fix δ ∈ 2−N , s ∈ (0, 1], C > 0, M ∈ N and let ∆ ∈ (δ, 1). Let (P, T ) be a
+(δ, s, C, M )-nice configuration, then there exists a refinement (P1 , T1 ) of (P, T ) such that P1 is a
+{1, ∆, δ}-uniform set and
+     (1) (P1∆ , T1∆ ), P1∆ := D∆ (P1 ) and for any p ∈ P1∆ , T1 (p)∆ := D∆ ( ∪ T1 (p)), is a (∆, s, C∆ , M∆ )-
+                                                                                 p∈P1 ∩p
+          nice configuration with C∆ /δ C and M∆ ∈ N.
+      (2) any refinement (Q, T∆ ) of (P1∆ , T1∆ ) covers (P, T ).
+   The proof of Proposition 4.3 is a slight modification of [30, Proposition 4.1], which we include
+for completeness.
+Proof. By Lemma 3.6, for every p ∈ P, there exists a {1, ∆, δ}-uniform subset T1 (p) ⊂ T (p) with
+                                                                                         M
+|T1 (p)| ≈δ M . Let m(p) = |T1 (p)|∆ . Then for each T ∩ T1 (p) 6= ∅, |T ∩ T1 (p)|δ ≈δ m(p) . By
+pigeonholing and Lemma 3.6 again, we can find a dyadic number m and a {1, ∆, δ}-uniform subset
+P1 ⊂ P, |P1 |δ 'δ |P|δ and for every p ∈ P1 , m ∼ m(p).
+   For each p ∈ D∆ (P1 ), there exists a dyadic number X(p) and a subset T1 (p) ⊂ T ∆ satisfying
+for each T ∈ T1 (p),
+                              |{p ∈ P1 ∩ p : T ∈ D∆ (T1 (p))}| ∼ X(p)
+and
+(8)                                   X(p) · |T1 (p)|∆ ≈∆ |P1 ∩ p|δ · m
+  By pigeonholing, there exists a common dyadic number X and a refinement of P1 P1 at resolution
+∆, which we still denote P1 , such that for each p ∈ D∆ (P1 ), X(p) = X. We claim that for each
+10                                    KEVIN REN AND HONG WANG
+
+
+p ∈ D∆ (P1 ), T1 (p) is (∆, s, C∆ )-set for C∆ ≈δ C and
+                                                       |P1 ∩ p|δ · m
+(9)                               |T1 (p)|∆ ≈δ M∆ :=
+                                                            X
+(since P1 is {1, ∆, δ}-uniform, it does not matter which p ∈ D∆ (P1 ) we take in the definition
+of M∆ ). To see this, for any ρ ∈ (∆, 1), and any Tρ ∈ T ρ , double count the number of pairs
+(p, T ) ∈ (P1 ∩ p) × T such that T ∈ T1 (p) ∩ Tρ , we have
+                                           |P1 ∩ p|δ · |T1 (p) ∩ Tρ |δ · m
+                       |T1 (p) ∩ Tρ |∆ ≈δ
+                                                       M ·X
+                                              s |P1 ∩ p|δ · m
+                                        /δ Cρ                  ≈δ Cρs · |T1 (p)|∆ .
+                                                     X
+The first line implies the second line because T1 (p) ⊂ T (p) and T (p) is a (δ, s, C)-set.
+  For any p ∈ P1 , replace T1 (p) by {T ∈ T1 (p) : T ∆ ∈ T1 (p∆ )} (this is a refinement at resolution
+∆). Then
+                          X                 X        X         X
+                              |T1 (p)|δ =                            |T1 (p) ∩ T|δ
+                         p∈P1              p∈D∆ (P1 ) p∈P1 ∩p T∈T1 (p)
+                                              X           X       X
+                                       =                                 |T1 (p) ∩ T|δ
+                                           p∈D∆ (P1 ) T∈T1 (p) p∈P1 ∩p
+                                               X                       M
+                                       'δ                |T1 (p)|∆ ·     X
+                                                                       m
+                                            p∈D∆ (P1 )
+
+                                       'δ M · |P1 |δ 'δ M · |P|δ .
+                                  P
+The third inequality is because p∈P1 ∩p |T1 (p) ∩ T|δ ∼ X · M   m and the fourth inequality is due to
+(9) and uniformity of P1 .
+   By definition of T1 (p), we have D∆ (∪p∈P1 ∩p T1 (p)) = T1 (p) for any p ∈ P1∆ := D∆ (P1 ), and so
+(1) holds. To verify (2), for any refinement (Q∆ , T∆ ) of (P1∆ , T1∆ ),
+              X X            X                      X      X         X
+                                   |T (p) ∩ T|δ 'δ                       |T1 (p) ∩ T|δ
+             p∈Q∆ p∈P∩p T∈T∆ (p)                       p∈Q∆ p∈P1 ∩p T∈T∆ (p)
+                                                       X        X          X
+                                                  =                                |T1 (p) ∩ T|δ
+                                                      p∈Q∆ T∈T∆ (p) p∈P1 ∩p
+                                                         X                 M
+                                                  'δ         |T∆ (p)|∆ ·     X
+                                                                           m
+                                                       p∈Q
+                                                           X                      M
+                                                  'δ                |T1 (p)|∆ ·     X 'δ M · |P|δ .
+                                                                                  m
+                                                       p∈D∆ (P1 )
+
+In the second to last inequality, we used the assumption that (Q∆ , T∆ ) is a refinement of (P1∆ , T1∆ ).
+                                                                                                      
+4.1. The case s+t ≥ 2. Then the conclusion of Theorem 4.1 becomes |T |δ &ε δ −1+ε M . By double
+counting the number of “restricted incidences” |{(p, T ) ∈ P × T : T ∈ T (p)}|, we can equivalently
+say the average tube in T belongs to T (p) for . δ 1−ε |P|δ many δ-cubes p ∈ P. For our purposes,
+we need the following stronger statement: every tube in T contains . δ 1−ε |P|δ many δ-cubes in
+P. Furthermore, we need this estimate to be true at all scales w ∈ (δ, 1), in the quantitative form
+                              FURSTENBERG SETS ESTIMATE IN THE PLANE                                       11
+
+
+presented below. These strong properties may not be true of the original configuration (P, T ), but
+will be true after passing to a refinement.
+Proposition 4.4. Fix ∆ < ∆0 , n ∈ N, and let δ = ∆n . (Here ∆0 ∈ (0, 1) is an absolute constant.)
+Let (P0 , T0 ) be a (δ, s, C0 , M0 )-nice configuration with P a (δ, t, C0 )-set, s + t ≥ 2. Then there exists
+a refinement (P, T ) of (P0 , T0 ) such that for any 1 ≤ k ≤ n and any T ∈ T , w = ∆k , ε ∈ (0, 1/n],
+(10)                           |6(T w ) ∩ Dw (P)| /δ,ε C02 ∆−1 · |P|w · w1−ε .
+Here |6(T w ) ∩ Dw (P)| means the number of p ∈ Dw (P) contained in 6(T w ), the 6w-neighborhood
+of T w . The notation /δ,ε means ≤ Cε | log δ|C , where the implicit constants C and Cε may depend
+on ∆0 and n but is independent of ∆, C0 , or M0 , in addition, Cε depends on ε.
+Remark 4.5. This proposition will be used in proving Proposition 4.6 with the parameter n = ε−1 .
+Thus, ∆−1 should be viewed as a small power of δ −1 .
+Proof. We induct on n. Base case n = 1 is the trivial fact |T ∩ D∆ (P)| ≤ ∆−1 (which is why we
+have a ∆−1 term on the RHS of (10)).
+   For the inductive step, assume true for n − 1, and we will now consider n. We first refine P0
+to be uniform at scales {∆i }ni=0 (and call the refinement P0 ). Next, we apply Proposition 4.3
+with ∆n−1 in the place of ∆ to obtain a refinement (P1 , T1 ) of (P0 , T0 ) and the corresponding
+                                                  n−1   n−1
+(∆n−1 , s, C∆n−1 , M∆n−1 )-nice configuration (P1∆ , T1∆ ). By the induction hypothesis, we can
+                                            n−1    n−1
+find a refinement (Q∆n−1 , T∆n−1 ) of (P1∆ , T1∆ ) such that for any 1 ≤ k ≤ n − 1 and any
+                    k
+T ∈ T∆n−1 , w = ∆ ,
+(11)                     |6(Tw ) ∩ Dw (Q∆n−1 )| /δ,ε C02 ∆−1 · |Q∆n−1 |w · w1−ε .
+            S                                                                       n−1
+   Let P2 := p∈Q n−1 (P1 ∩ p) and for each p ∈ P2 , let T2 (p) := {T ∈ T1 (p) : T ∆     ∈ T∆n−1 }.
+                  ∆
+Then by conclusion (2) of Proposition 4.3,
+                                    X
+(12)                                    |T2 (p)|δ 'δ |P1 |δ · M0
+                                        p∈P2
+
+   Roughly speaking, (12) tells us that the configuration (P2 , T2 ) “preserves many of the restricted
+incidences” of (P1 , T1 ), where the set of restricted incidences is {(p, T ) ∈ P1 × T1 : T ∈ T1 (p)}. By
+pigeonholing, there exists r such that defining T = {T ∈ T2 : |6T ∩ P2 | ∼ r} and for each p ∈ P2 ,
+T (p) := T2 (p) ∩ T ,
+                                       X
+                                            |T (p)|δ 'δ |P1 |δ · M0 .
+                                        p∈P2
+
+   After this procedure, we have two useful properties for each T ∈ T :
+       • |6T ∩ P2 | ∼ r where r ∈ [1, δ −1 ];
+            n−1                                                                      n−1
+       • T∆     ∈ T∆n−1 (because T ∈ T2 (p) for some p ∈ P2 ), so (11) applies to T ∆ .
+  Now, we check (10). Fix T ∈ T and w = ∆k , 1 ≤ k ≤ n. If 1 ≤ k ≤ n − 1, then (11) applied to
+   n−1
+T∆     gives
+             |6(T w ) ∩ Dw (P2 )| /δ,ε C02 ∆−1 · |Q∆n−1 |w · w1−ε /∆ C02 ∆−1 · |P2 |w · w1−ε .
+   Now, we check (10) for k = n. For this, it suffices to obtain an upper bound on r. To estimate
+r, we use the high-low method (Proposition 2.6) to study the number of (unrestricted) incidences
+12                                         KEVIN REN AND HONG WANG
+
+
+between T and P2 defined in Definition 2.5 with w(p) = 1. Let S = ∆−1 = δ −1/n in Proposition
+2.6; then
+                                                                                                    n−1
+(13)                   I(P2 , T ) .ε ∆−1/2 |P2 |1/2 (|T |δ δ −1 )1/2 + ∆1−ε I(P2 , T ∆                    ).
+If the first term on the right-hand side dominates, then the facts I(P2 , T ) '∆ max(|P2 |δ M0 , r|T |δ )
+imply that
+                  (|P2 |δ M )1/2 (r|T |δ )1/2 /∆ I(P2 , T ) .ε ∆−1/2 |P2 |1/2 (|T |δ δ −1 )1/2 .
+Since |P2 |δ 'δ |P0 |δ ≥ C0−1 δ −t , M0 ≥ C0−1 δ −s , and s + t ≥ 2, this implies that
+                                     r ≤ ∆−1 δ −1 M0−1 ≤ C02 ∆−1 · |P|δ · δ.
+     If the second term on the RHS of (13) dominates, let p ∈ D∆n−1 (P2 ), then
+                                                           n−1             n−1
+          r · |T |δ .ε ∆1−ε |{(p, T ) ∈ P2 × T : p∆              ⊂ 6(T ∆         )}|
+                        1−ε                                                  ∆n−1
+                  .ε ∆        |{(p, T ) ∈ D∆n−1 (P2 ) × T : p ⊂ 6(T                    )}| ·       sup         |P2 ∩ p|δ
+                                                                                               p∈D∆n−1 (P2 )
+
+                                                                                         |P2 |δ
+                  /δ,ε ∆1−ε |T |δ · C02 · |P2 |∆n−1 · ∆−1 · ∆(n−1)(1−ε) ·
+                                                                                       |P2 |∆n−1
+                  /δ,ε |P2 |δ · |T |δ · ∆−1 · C02 δ 1−ε .
+                                                                                                           n−1
+The third step follows from the inductive hypothesis (11) applied to T = T ∆ ∈ D∆n−1 (T2 ) ⊂
+T∆n−1 (p) with k = n − 1 (using D∆n−1 (P2 ) = Q∆n−1 ), and uniformity of P2 at scale ∆n−1 .
+Therefore,
+                                   r /δ,ε C02 ∆−1 |P2 |δ · δ 1−ε .
+This holds in either case with P = P2 and thus we have completed the proof of the inductive step.
+                                                                                               
+
+4.2. When P is (2 − s)-dimensional at high scales and s-dimensional at low scales.
+                                                                                                    2
+Proposition 4.6. Let δ, ∆ ∈ 2−N , δ ≤ ∆, ε > 0, and (P, T ) be a (δ, s, δ −ε , M )-nice configuration
+with s ∈ (0, 1]. Suppose that P ⊂ Dδ satisfies the spacing conditions
+                                                       2
+(14)                          |P ∩ B(x, ρ)|δ ≤ δ −ε · ρ2−s · |P|δ ,                ∆ < ρ < 1,
+                                                            2
+(15)                            |P ∩ B(x, ρ)|δ ≤ δ −ε · (ρ/δ)s ,                 δ < ρ < ∆.
+                                                 1/2
+Then |T |δ &ε δ 35ε · min(M |P|δ , M 3/2 |P|δ , δ −1 M ).
+   For future reference, we repackage it into a special case of Theorem 4.1. The corollary follows
+from Proposition 4.6 because we can just take ∆ = (|P|δ δ s )−1/(2s−2) ∈ [δ, 1].
+                                                       2
+                                                  ε
+Corollary 4.7. For every ε > 0 and η = 1225          , the following holds for any 0 < δ < δ0 (s, t, ǫ). Let
+(P, T ) be a (δ, s, δ −η , M )-nice configuration with s ∈ (0, 1], and |P| ∼ δ −t , t ∈ [s, 2 − s]. Suppose P
+satisfies the stronger spacing condition
+                |P ∩ Q|δ . δ −η · max(ρ2−s |P|δ , (ρ/δ)s ) for any Q ∈ Dρ (P), δ ≤ ρ ≤ 1.
+Then
+                                                                 s+t
+                                                |T |δ &ε δ − 2 +ε M.
+                              FURSTENBERG SETS ESTIMATE IN THE PLANE                                       13
+
+
+   The key lemma to prove Proposition 4.6 is the following generalization of [17, Theorem 1.1]. For
+technical reasons, we find it convenient to work with multi-sets of dyadic δ-cubes (with possible
+repetitions).
+   For any dyadic δ-tube T and b ∈ N, let Nw,b (T ) be the number of Q ∈ Dw (P) (counted with
+multiplicity) such that |4T ∩ Q ∩ P| ≥ b.
+                        ∆
+Lemma 4.8. Let δ < 32      ∈ 2−N , ε ∈ N1 , and let P be a multi-set of dyadic δ-cubes such that for all
+          −1
+1 ≤ k ≤ ε , each Q ∈ D∆kε (P) contains about the same number of cubes in P (with multiplicity),
+and for any Q1 6= Q2 ∈ D∆ (P), dist(Q1 , Q2 ) ≥ ∆. For a ≥ 2 and ab > δ 1−2ε |P|, let Ta,b be a set
+of distinct dyadic δ-tubes satisfying
+    (1) |6T w ∩ Dw (P)| ≤ ∆−ε · w|Dw (P)| for all w ∈ {∆ε , ∆2ε , · · · , ∆},
+    (2) N∆,b (T ) ≥ a.
+Then
+                                                         |P|2 −5ε
+(16)                                        |Ta,b | .ε          δ .
+                                                         a3 b 2
+Remark 4.9. If we superimpose k copies of P and increase b by a factor of k, then Lemma 4.8
+does not change.
+   We give some clarifying examples of this lemma.
+Remark 4.10. Lemma 4.8 holds equally well for general δ-balls in place of dyadic δ-cubes. To
+compare Lemma 4.8 with the well-spaced case proved in [13, Theorem 3] (the dual of [17, Theorem
+1.1]), if P is a set of well-spaced δ-balls, i.e. D∆ (P) is the set of all ∆-separated dyadic ∆-squares in
+[0, 1]2 and each Q ∈ D∆ (P) contains exactly 1 δ-ball in P, then the set of r-rich tubes is contained
+in Tr,1 . Furthermore, for any ε > 0, the condition Nw (T ) ≤ C∆−ε · w|Dw (P)| is true: the LHS is
+                                                               2
+≤ w−1 while |Dw (P)| = w−2 . Hence, we get |Tr | . |P|       r3 δ
+                                                                  −Cε
+                                                                      , which agrees with [13, Theorem 3]
+(the dual of [17, Theorem 1.1]) in the case X = W . (Curiously, Lemma 4.8 doesn’t seem to imply
+all of [13, Theorem 3].)
+   Before proving Lemma 4.8, we see how it implies Proposition 4.6. A key ingredient is the following
+lemma, which uses the spacing condition (15) for P.
+Lemma 4.11. Fix δ < ∆ ∈ 2−N . Let P be a set of distinct dyadic δ-cubes in [0, ∆]2 such that
+|P ∩ B(x, w)| ≤ K · ( wδ )s for all δ ≤ w ≤ ∆ and w-balls B(x, w). For each p ∈ P, let T (p) be
+a (δ, s, K)-set of dyadic tubes such that |T (p)| ∼ M . Let T = ∪T (p). Then there exists a subset
+P ′ ⊂ P with |P ′ | ≥ 21 |P| and for each p ∈ P, a subset T ′ (p) ⊂ T (p) with |T ′ (p)| ≥ 21 |T (p)| such
+that for each T ∈ T ′ , we have |{p ∈ P ′ : T ∈ T ′ (p)}| ≤ C1 K 2 | log δ|, for some universal constant
+C1 > 0.
+   Lemma 4.11 also reproves the t ≤ s case of Furstenberg sets conjecture, i.e. the work of [23] and
+[18].
+
+Proof. Let Tbad ⊂ T be the set of tubes with |{p ∈ P : T ∈ T (p)}| ≥ C1 K 2 | log δ|. By Markov’s
+inequality, we get |Tbad | . C1 KM|P   |
+                                  2 | log δ| . This is the only property of Tbad that will be used in the
+
+proof.
+   Suppose the lemma were false; then there exists a subset |P ′ | ≥ 21 |P| and a subset T ′ (p) ⊂
+T (p) ∩ Tbad for each p ∈ P ′ with |T ′ (p)| ≥ 12 |T (p)|. Note that T ′ (p) is still a (δ, s, 2K)-set. We now
+14                                        KEVIN REN AND HONG WANG
+
+
+find a lower bound for T ′ = ∪p∈P T ′ (p) via an elementary energy argument. Let J be the number
+of triples (p1 , p2 , T ) ∈ (P ′ )2 × T ′ such that T ∈ T ′ (p1 ) ∩ T ′ (p2 ). Then
+                      X X
+             J.                     (KM (δ/w)s ) · K · (w/δ)s + |P|M ≤ M (K 2 | log δ| + 1)|P|.
+                  p∈P ′ w dyadic,
+                        δ<w<∆
+
+Here, there are ≤ K · (w/δ)s many δ-cubes q ∈ P ′ at distance ∼ w from p, and there are .
+KM (δ/w)s many δ-tubes in T (p) ∩ T (q) with d(p, q) ∼ w.
+  Thus, by Cauchy-Schwarz,
+                                (M |P|)2
+                                          . M K 2 | log δ| · |P|,
+                                   |T ′ |
+so |T ′ | & (K 2 | log δ|)−1 M |P|. Since T ′ ⊂ Tbad , this contradicts our upper bound |Tbad | . C1 KM|P   |
+                                                                                                       2 | log δ|
+
+if C1 is chosen sufficiently large.                                                                            
+
+Proof of Proposition 4.6 given Lemma 4.8. Pick δ0 = δ0 (ε), to be chosen sufficiently small later.
+First, if δ > δ0 , then the trivial bound |T |δ ≥ M would suffice when the implicit constant in 'ε is
+sufficiently large depending on δ0 (ε). Hence, assume δ < δ0 .
+   First, if δ 8ε < ∆, then P is a (δ, s, δ −17ε ) Katz-Tao set, since for ρ < ∆ we have (15), and for
+ρ ≥ ∆, we have
+                               ρ 2                                   s               ρ s
+                                                            −2    −ε2   ∆
+            |P ∩ B(x, ρ)| .          sup |P ∩ B(x, ∆)| . ∆ · δ               ≤ δ −17ε ·        .
+                                ∆     x                                 δ                 δ
+Hence, by Lemma 4.11, there exists a subset P ′ ⊂ P with |P ′ | ≥ 12 |P| and for each p ∈ P a subset
+T ′ (p) ⊂ T (p) with |T ′ (p)| ≥ 12 |T (p)| ∼ M such that for each T ∈ T ′ ,
+                                    |{p ∈ P ′ : T ∈ T ′ (p)}| ≤ C1 δ −34ε | log δ|.
+Therefore,
+         |T | · sup |{p ∈ P ′ : T ∈ T ′ (p)}| ≥ |P ′ | sup |T ′ (p)| & |P|M =⇒ |T | &ε |P|M δ 35ε .
+              T ∈T ′                                    p∈P ′
+
+Thus, assume δ 8ε > ∆. In particular, ∆ < δ08ε .
+                  ∆
+   Next, if δ > 100 , then P is a (δ, 2 − s, δ −ε )-set for analogous reasons, and we may conclude
+          −1+4ε
+|T | &ε δ       M by Proposition 4.4 (see also [31, Theorem 5.28] and [14, Theorem 5.2]). Thus,
+             ∆
+assume δ < 100  .
+   The main idea is to apply Lemma 4.8 to the configuration (P, T ) to get a strong incidence bound.
+The impatient reader can skip to the end of the proof for the calculation.
+   But to satisfy the conditions of Lemma 4.8, we need to suitably refine (P, T ). First, apply
+                                                                              −1
+Lemma 3.6 to P such that the resulting set, still denote as P is {∆j }εj=1 -uniform where ∆j = ∆εj .
+Then apply Proposition 4.3 to (P, T ) with parameter ∆ to obtain a refinement (P1 , T1 ) and the
+                                                                                    2
+corresponding (∆, s, C∆ , M∆ )-nice configuration (P1∆ , T1∆ ) with C∆ ≈∆ δ −ε . By Proposition 4.4
+                             2
+with n = 4/ε, and C0 := δ −ε < ∆−ε/8 , there exists a refinement (Q∆ , T∆ ) of (P1∆ , T1∆ ) such that
+     w                    −3ε/4
+|6(T ) ∩ Dw (P1 )| /∆,ε ∆       · w|Dw (P1 )| for all w ∈ {1, ∆ε , · · · , ∆} and T ∈ T∆ . Now, we define
+P2 = ∪p∈Q∆ (P1 ∩ p) and for each p ∈ P2 , let T2 (p) = {T ∈ T1 (p) : T ∆ ∈ T∆ (p)} and we get from
+(2) of Proposition 4.3 that
+                                       X
+                                            |T2 (p)| ≈δ |P|δ · M.
+                                             p∈P2
+                             FURSTENBERG SETS ESTIMATE IN THE PLANE                                        15
+
+
+   By pigeonholing, we can find a refinement (P3 , T3 ) of (P2 , T2 ) that is a configuration refinement
+of (P, T ) and satisfies D∆ (T3 (p)) ⊂ T∆ (p∆ ) for all p ∈ P3 .
+   By Lemma 4.11 on each Q ∈ D∆ (P3 ) (and assuming ε is small enough), we can find a refinement
+(P4 , T4 ) of (P3 , T3 ) such that for each T ∈ T4 and each Q ∈ D∆ (P4 ),
+
+(17)                               |{p ∈ Q ∩ P4 : T ∈ T4 (p)}| . δ −ε
+                            x,y
+By intersecting P4 with D∆      ([0, 1]2 ) := {[(2k1 + x)∆, (2k1 + x + 1)∆] × [(2k2 + y)∆, (2k2 + y +
+                          1 −1
+1)∆] : k1 , k2 ∈ N ∩ [0, 2 ∆ ]} for suitable x, y ∈ {0, 1}, we can also ensure that any ∆-cubes
+Q1 6= Q2 ∈ D∆ (P4 ), dist(Q1 , Q2 ) ≥ ∆ (while preserving the cardinality of P4 up to a factor of 4).
+                                                         −1
+By refining P4 further, we may assume P4 is {∆j }εj=1 -uniform, and (17) will still hold. For each
+T ∈ T4 , there exists a dyadic number a(T ) ∈ [1, δ −1 ] such that
+
+(18)                      |{Q ∈ D∆ (P4 ) : ∃p ∈ Q ∩ P4 , T ∈ T4 (p)}| ∼ a(T ).
+
+By pigeonholing, there exists a dyadic number b(T ) ∈ [1, δ −1 ] such that there are a′ (T ) ≈δ a(T )
+many Q ∈ D∆ (P4 ) with
+                                         |4T ∩ P4 ∩ Q| ∼ b(T ).
+By pigeonholing again, there exists a pair of dyadic numbers (a, b) such that
+
+                                  T4′ := {T ∈ T4 : a(T ) ∼ a, b(T ) ∼ b}
+
+preserves the number of incidences
+
+(19)                          |{(p, T ) ∈ P4 × T4′ : T ∈ T4 (p)}| 'δ |P|δ M.
+
+   By (18) and (17), we get
+
+(20)                              a /δ |{p ∈ P4 : T ∈ T4 (p)}| . δ −ε a.
+
+    Now we verify the assumptions of Lemma 4.8. We have |6(T w ) ∩ Dw (P4 )| ≤ ∆−ε · w1−ε |Dw (P4 )|
+since |Dw (P4 )| ' |Dw (P)| (by uniformity of P) and the implicit log factor is dominated by ∆−ε/2 if
+δ0 (ε) is chosen sufficiently small (recall ∆ < δ08ε ). Now, the conditions of Lemma 4.8 are satisfied,
+with P4 in the place of P and inf T ∈T4′ a′ (T ) ≈δ a in the place of a.
+    By Lemma 4.8, either a . δ 1−2ε |P|δ or
+
+                                                   |P|2         |P|2
+                                     |T4′ | . δ −5ε 3 δ2 . δ −5ε 3δ .
+                                                   a b           a
+On the other hand, by (19) and (20),
+                                                           |P|δ M
+(21)                                       |T4′ | 'δ δ ε          .
+                                                             a
+Thus in the first case a . δ 1−2ε |P|δ , we get |T4 | ≥ |T4′ | 'δ M δ −1+3ε . In the second case, we get
+                                                      |P|δ −6ε
+                                             a2 / δ       δ
+                                                       M
+                                                                1/2
+and by plugging this result into (21), we get |T4 | 'δ |P|δ M 3/2 · δ 3ε .                                 
+16                                        KEVIN REN AND HONG WANG
+
+
+                                           5. Proof of Lemma 4.8
+   We restate Lemma 4.8, which may have independent interest. Recall if P is a multi-set of dyadic
+δ–cubes and Q ⊂ R2 is a set, then |P ∩ Q| means the number of δ–cubes in P contained in Q
+counted with repetition. For any δ-tube T and b ∈ N, let Nw,b (T ) be the number of Q ∈ Dw (P)
+such that |4T ∩ Q ∩ P| ≥ b.
+                           ∆
+Lemma 5.1. Let δ < 32         ∈ 2−N , ε ∈ N1 , and let P be a set of dyadic δ-cubes (with possible
+repetitions) such that for all 1 ≤ k ≤ ε−1 , each Q ∈ D∆kε (P) contains about the same number of
+cubes in P, and for any Q1 6= Q2 ∈ D∆ (P), dist(Q1 , Q2 ) ≥ ∆. For a ≥ 2 and ab > δ 1−2ε |P|, let
+Ta,b be a set of distinct dyadic δ-tubes T satisfying
+    (1) |6(T ρ ) ∩ Dρ (P)| ≤ ∆−ε · ρ|Dρ (P)| for all ρ ∈ {∆ε , ∆2ε , · · · , ∆},
+    (2) N∆,b (T ) ≥ a.
+Then
+                                                     |P|2
+(22)                                      |Ta,b | .ε 3 2 δ −5ε .
+                                                     a b
+   The proof of Lemma 5.1 uses the same high-low method as in [17], but crucially we streamline
+the induction on scales mechanism. First, we begin with a weaker version of Lemma 5.1, which
+is true under a weaker hypothesis (that P is a (∆, 1, K)-set). It will be useful when a is small.
+In Lemma 5.2, slightly abusing notation, let N∆,b (T ) be the number of Q ∈ D∆ (P) such that
+|6T ∩ Q ∩ P| ≥ b.
+                        ∆
+Lemma 5.2. Let δ < 32      ∈ 2−N . Suppose P ⊂ [0, 1]2 is a (∆, 1, K)-set of not necessarily distinct
+dyadic δ-cubes: i.e. for all ∆ ≤ r ≤ 1, we have |P ∩ Q| ≤ Kr|P| for Q ∈ Dr (P). Suppose for any
+Q1 6= Q2 ∈ D∆ (P), dist(Q1 , Q2 ) ≥ ∆. Then
+                                   X                               |P|2
+                                           N∆,b (T )2 . K| log ∆| · 2 .
+                                 δ
+                                                                    b
+                                 T ∈T :N∆,b (T )≥2
+
+              δ
+If Ta,b ⊂ T       is a set of essentially distinct dyadic δ-tubes with N∆,b (T ) ≥ a and a ≥ 2, then
+                                                                     |P|2
+                                            |Ta,b | . K| log ∆| ·         .
+                                                                    (ab)2
+Proof. This is a standard L2 -energy argument (similar to Lemma 4.11). Consider J, the number of
+triples (p1 , p2 , T ) ∈ P 2 × T δ such that p1 , p2 belong to different ∆-cubes of D∆ (P) and p1 , p2 ⊂ 6T .
+We have
+                                           1           X
+                                       J ≥ b2                   |N∆,b (T )|2
+                                           2         δ
+                                                T ∈T :N∆,b (T )≥2
+
+because each T with N∆,b (T ) = a ≥ 2 contributes ≥ ab · (a − 1)b ≥ 12 a2 b2 many triples to J. On
+the other hand, since any Q1 6= Q2 ∈ D∆ (P) satisfies dist(Q1 , Q2 ) ≥ ∆, we automatically have the
+distance d(p1 , p2 ) ∈ [∆, 1], so
+                                X   X                  1
+                         J.                K|P| · ρ · = K log ∆−1 · |P|2 .
+                                                       ρ
+                                 p1 ∈P ρ∈[∆,1] dyadic
+
+Here, there are Kρ|P| many δ-cubes p2 ∈ P at distance ∼ ρ from p1 , and there are ∼ 1ρ many
+distinct δ-tubes T ∈ T δ such that p1 , p2 ⊂ 6T when dist(p1 , p2 ) ∼ ρ.                 
+                             FURSTENBERG SETS ESTIMATE IN THE PLANE                                       17
+
+
+Proof of Lemma 5.1.
+Step 1. A weak estimate. Before anything else, let us check that P satisfies the conditions of
+Lemma 5.2. For any T ∈ Ta,b and ρ = ∆kε , 1 ≤ k ≤ ε−1 , we have 1 ≤ Nρ,b (T ) ≤ ∆−ε · ρ|Dρ (P)|.
+Thus |Dρ (P)| ≥ ∆ε · ρ−1 . Since each Q ∈ D∆kε (P) contains about the same number of balls in P,
+we obtain
+                                             |P|
+                                 |P ∩ Q| ∼          ≤ ∆−ε · ρ|P|.
+                                           |Dρ (P)|
+  The same holds for general dyadic ∆ ≤ r ≤ 1 at the cost of a ∆−ε factor (round r up to the
+nearest ∆kε ). Thus, the assumptions of Lemma 5.2 are satisfied with K = ∆−2ε , so
+                                                               |P|2
+(23)                                      |Ta,b | .ε ∆−3ε ·         .
+                                                              (ab)2
+This bound is too weak in general, but it does allow us to dispose of a special edge case. Pick
+∆0 = ∆0 (ε) > 0 a small constant (to be chosen later). If ∆ > ∆0 , then a ≤ ∆−1 ≤ ∆−1  0 to ensure
+                                                    −1
+Ta,b 6= ∅. Thus, (23) will suffice (upon absorbing ∆0 into the implicit constant in .ε ).
+Step 2. Base cases. For a fixed ∆ < ∆0 , we induct on δ = ∆2−n . There are two base cases.
+   The first base case is δ > ∆1+ε , and we will prove |Ta,b | = 0 using the δ −2ε factor in ab > δ 1−2ε |P|.
+Indeed, if T ∈ Ta,b , then |P ∩ Q| ≥ b for some Q ∈ D∆ (P), so by uniformity of P at scale ∆, we
+get |P| & b|D∆ (P)|. Also, by item (2),
+
+                             N∆,b (T ) ≥ a > δ 1−2ε b−1 |P| & δ 1−2ε |D∆ (P)|.
+On the other hand, by item (1),
+
+                            N∆,b (T ) ≤ |6(T ∆ ) ∩ D∆ (P)| ≤ ∆−ε · ∆|D∆ (P)|
+
+because N∆,b (T ) is bounded by the number of Q ∈ D∆ (P) contained in 6(T ∆). When ∆ < ∆0 (ε) is
+                         2
+small enough, ∆1−ε−2ε < δ 1−2ε because δ > ∆1+ε . This yields a contradiction as ∆1−ε |D∆ (P)| ≥
+N∆,b (T ) & δ 1−2ε |D∆ (P)|. Thus, |Ta,b | = 0, which completes the first base case.
+  The second base case is when a is small: if a ≤ 2∆−2ε , then (23) will give us the desired bound.
+Step 3. Inductive step and choosing an intermediate scale From now on, we can assume
+δ < ∆1+ε and a > 2∆−2ε . For the inductive step, assume true for δ > ∆2−n+1 , and consider
+δ = ∆2−n . We shall assume Ta,b 6= ∅, as otherwise the lemma is obviously true.
+   We will first choose an intermediate scale w for later use in Step 4. Let k be the largest integer
+1 ≤ k ≤ ε−1 such that
+(24)                                      a > 2∆−ε · w|Dw (P)|
+for w = ∆kε . Such k must exist because when k = 1, this corresponds to our assumption a > 2∆−2ε .
+Thus k ≥ 1. We also have k < ε−1 , since otherwise a > 2∆1−ε |D∆ (P)|, contradicting item (1).
+   This choice of scale w = ∆kǫ may seem opaque but is crucial for the remainder of the proof. We
+obtain two useful conclusions from a ≤ 2∆−ε · ρ|Dρ (P)| for any ρ = ∆mε , m > k:
+  (C1) a < 2∆−ε · (w∆ε )|Dw∆ε (P)| . ∆−2ε · w|Dw (P)|, since each Q ∈ Dw (P) contains . ∆−2ε
+       many elements of Dw∆ε (P). This combines with the lower bound (24) yields
+
+(25)                           2∆−ε · w|Dw (P)| < a < ∆−2ε · w|Dw (P)|.
+18                                          KEVIN REN AND HONG WANG
+
+
+     (C2) For any Q ∈ Dw (P), we have that P Q = φQ (P ∩ Q) is a ( ∆         −ε
+                                                                     w , 1, ∆ )-set, where φQ is the
+                                                2
+          affine transform that maps Q to [0, 1) . This is because for ρ = ∆mε , m > k, we have
+          w|Dw (P)| ≤ 2∆a−ε ≤ ρ|Dρ (P)|. Thus, for any Q̃ ∈ Dρ (P) and Q ∈ Dw (P),
+                                              |P|        |P|    ρ           ρ
+                              |Q̃ ∩ P| ∼             ≤         · ∼ |Q ∩ P| · .
+                                            |Dρ (P)|   |Dw (P)| w           w
+           By rounding r up to the nearest ∆mε , we have established that for all Q̃ ∈ Dr (P), ∆ ≤ r ≤
+           w, that |Q̃ ∩ P| ≤ ∆−ε |Q ∩ P| · wρ .
+In the remainder of the proof, we only use properties (C1) and (C2) of the scale w = ∆kǫ .
+Step 4. Incidences between tubelets and tubes using high-low method (Proposi-
+tion 2.6).          Recall the intermediate scale w chosen in Step 3. For each Q ∈ Dw (P), let
+UQ ⊂ {T ∩Q : T ∈ Ta,b } be a maximal essentially distinct set of δ ×w-tubelets: for any u1 , u2 ∈ UQ ,
+|u1 ∩u2 | ≤ 14 |u1 |. Let U = ∪Q∈Dw (P) UQ . For u ∈ U, define N∆,b (u) to be the number of Q ∈ D∆ (P)
+such that |6u ∩ Q ∩ P| ≥ b (here 6u means the 4δ-neighborhood of u) and m(u) be the number of
+δ-tubes in T ∈ Ta,b such that |T ∩ u| > |u|/4. We shall assign u the weight N∆,b (u), and consider
+weighted incidences. With this convention, we have
+                                X                                                X
+      a|Ta,b | ≤ I(U, Ta,b ) :=     N∆,b (u) · |{T ∈ Ta,b : |u ∩ T | > |u|/4}| =   N∆,b (u) · m(u)
+                                   u∈U                                                           u∈U
+
+and by (24) and Item (1),
+                      a                                              X
+                        |Ta,b | ≥ sup |6(T w ) ∩ Dw (P)| · |Ta,b | ≥   m(u),
+                      2          T ∈Ta,b
+                                                                                     u∈U
+
+so at least half of the incidences between tubes and tubelets involves tubelets with N∆,b (u) ≥ 2.
+We follow the calculation in [4, Theorem 5.1.2]. Replace U by the tubelets u ∈ U with N∆,b (u) ≥ 2.
+   Let T be an essentially distinct cover of [0, 1]2 by 6δ
+                                                         w -tubes, such that each δ-tube lies in at least
+1 and at most O(1) many members of T . For each T ∈ T , let UT denote the set of tubelets u ∈ U
+such that u ⊂ T and the coreline of u is parallel to the coreline of T up to an error of size 6δ/w.
+In particular, the tubelets u ∈ UT are parallel up to an error of size 12δ/w and essentially distinct,
+which means they are ≤ 48-overlapping (at most 48 tubelets in UT intersect at a common point1).
+After rescaling T to [0, 1]2 , the tubelets in UT become w-cubes and the δ-tubes in TT := Ta,b ∩ T
+become w-tubes.
+   We may decompose our weighted incidence count (with weight N∆,b (u) on each u) as follows:
+                                                    X
+                                      I(U, Ta,b ) ≤      I(UT , TT ).
+                                                               T∈T
+
+By Proposition 2.6 with S = ∆−ε/100 ∈ (w−ε/100 , w−1 ), we obtain
+                                 X
+        a|Ta,b | . I(U, Ta,b ) =   I(UT , TT )
+                                         T∈T
+                                                                            !1/2
+                                     X                    X                                  X
+                            −1 1/2                  1/2                 2
+                    . (Sw      )            |TT |                N∆,b (u)          +S −1+ε             I(UT , TTSδ ),
+                                     T∈T                 u∈UT                               T∈T
+                                     |                    {z                   }             |           {z        }
+                                                          (A)                                           (B)
+
+     1because if 5 tubes are parallel up to δ and intersect a common point, then two are not essentially distinct
+                                            w
+                             FURSTENBERG SETS ESTIMATE IN THE PLANE                                     19
+
+
+where TTSδ = {T Sδ : T ∈ TT } is counted with multiplicity (see Proposition 2.6 and the explicit
+formula of I(UT , TTSδ ) below).
+Step 5. High-frequency case.
+  Using Cauchy-Schwarz and the fact that N∆,b (u) ≥ 2 for any u ∈ U, the high-frequency term
+(A) is bounded by
+                                                                   1/2
+                                    1/2
+                            X             X        X               
+                   (A) ≤       |TT |                  N∆,b (u)2 
+                                                                    
+                                 T∈T                   T∈T    u∈UT
+                                                               N∆,b (u)≥2
+                                                                             1/2
+                                              X           X                   
+                            ≤ |Ta,b |1/2 
+                                                                    N∆,b (u)2 
+                                                                                    .
+                                             Q∈Dw (P)    u∈UQ
+                                                        N∆,b (u)≥2
+
+By Conclusion (C2) and Lemma 5.2 applied to P Q for each Q ∈ Dw (Q) and |P ∩ Q| ∼ |Dw|P|
+                                                                                      (P )| , we
+have
+                                                                  2 !1/2
+                                   1/2             −2ε      |P|
+                     (A) . |Ta,b |     |Dw (P)| · ∆                        .
+                                                         b|Dw (P)|
+   If the high-frequency term dominates, i.e. a|Ta,b | .ε (Sw−1 )1/2 (A), we get by S = ∆−ε/100 and
+(25)
+                                                                 2
+                                       w−1                 |P|             |P|2
+                     |Ta,b | . ∆−2ε S · 2 2 |Dw (P)| ·               . ∆−5ε 3 2 .
+                                       a b               |Dw (P)|          a b
+
+Step 6. Low-frequency case.
+  Now suppose the low-frequency term dominates, i.e.
+                                                X
+                              a|Ta,b | . S −1+ε    I(UT , TTSδ ).
+                                                        T∈T
+
+Unwinding the definition of I(UT , TTSδ ),
+                                      X
+                             (B) =         I(UT , TTSδ )
+                                        T∈T
+                                        X X                 X
+                                    ≤                                   N∆,b (u)
+                                        T∈T u∈UT T ∈TT :u⊂6(T Sδ )
+                                        X X                X
+                                    ≤                                  N∆,b (u).
+                                        T∈T T ∈TT u∈UT ∩6(T Sδ )
+                                   P                                 P                      P
+   For any T ∈ TT , let f (T ) := u∈UT ∩6(T Sδ ) N∆,b (u); then T∈T I(UT , TTSδ ) = T ∈Ta,b f (T ).
+                                ′′
+Hence, there exists a subset Ta,b                 ′′
+                                   ⊂ Ta,b with |Ta,b | ≥ 12 |Ta,b | such that for each T ∈ Ta,b
+                                                                                             ′′
+                                                                                                , we have a
+lower bound for sum of weights,
+                                            X
+                                f (T ) =               N∆,b (u) & S 1−ε a.
+                                          u∈UT ∩6(T Sδ )
+20                                           KEVIN REN AND HONG WANG
+
+
+  Now, for Q ∈ D∆ (P), we let gT (Q) be the number of u ∈ UT ∩ 6(T Sδ ) such that |6u ∩ Q ∩ P| ≥ b.
+Recall from Step 4 that the tubelets u ∈ UT are ≤ 48-overlapping. We also have the simple
+geometric observation 6T Sδ ⊂ 3T 2Sδ . So we have
+                                                                      gT (Q)b
+(26)                                    |4(T 2Sδ ) ∩ Q ∩ P 2Sδ | ≥            ,
+                                                                         48
+where P 2Sδ is counted with multiplicity. By double counting and applying the definition of N∆,b (u)
+from Step 4, we have
+                                    X
+                                           gT (Q) = f (T ) & S 1−ε a.
+                                        Q∈D∆ (P)
+
+We also have gT (Q) . S since at most that many tubelets in UT can intersect 6(T Sδ ) ∩ Q, which is
+roughly a 6Sδ × ∆ rectangle. Indeed, from Step 4, all tubelets u ∈ UT are parallel to the coreline
+of T up to an error of 6δ/w. Since w ≥ ∆, at most S tubelets in UT can intersect 6(T Sδ ) ∩ Q.
+   Hence, by pigeonholing, we can find a dyadic kT ∈ [1, S] and a set QT ⊂ D∆ (P) with |QT | &
+             1−ε
+(log S)−1 · S kT a such that gT (Q) ∼ kT for all Q ∈ QT . By another pigeonholing, we can further
+                                            ′       ′′           ′
+choose a dyadic number k and a subset Ta,b    ⊂ Ta,b     with |Ta,b                  ′′
+                                                                    | & (log S)−1 |Ta,b | such that kT = 64k
+                            ′                                             2Sδ           ′
+is the same for all T ∈ Ta,b . Finally, we consider the set T̃ := {T          : T ∈ Ta,b } (where we delete
+                                                       ′
+all duplicate elements); it has cardinality & S −2 |Ta,b  | because at most . S −2 many dyadic δ-tubes
+T share a common dyadic ancestor T 2Sδ .
+   We aim to apply the inductive hypothesis to T̃ . We first check that Item 1 is satisfied for T̃ .
+                     ′
+Indeed, pick T ∈ Ta,b  ; then
+
+       |6((T 2Sδ )ρ ) ∩ Dρ (P)| = |6(T ρ ) ∩ Dρ (P)| ≤ ∆−ε · ρ|Dρ (P)| for all ρ ∈ {∆ε , ∆2ε , · · · , ∆}
+Here, we have (T 2Sδ )ρ = T ρ since ρ ≥ ∆ ≥ 2Sδ, using the fact that δ ≤ ∆1+ε and S = ∆−ε/100 .
+                                                                               1−ε
+Furthermore, for every T 2Sδ ∈ T̃ , by (26), we have N∆,kb (T 2Sδ ) ≥ a′ := kS log Sa . Here in our
+notation, P̃ := {p2Sδ : p ∈ P} is a set of dyadic 2Sδ-cubes (with multiplicity, so |P| = |P̃|) and
+N∆,kb (T 2Sδ ) means the number of Q ∈ D∆ (P̃) = D∆ (P) such that |4(T 2Sδ ) ∩ Q ∩ P 2Sδ | ≥ kb. Let
+b′ := kb. Since k . S, we get b′ . Sb. Recall a ≥ 2∆−2ε , we have a′ & S −ε (log S)−1 a ≥ 2. Also
+a′ b′ & S 1−ε (log S)−1 ab > max{(Sδ)1−2ε |P|, 2}, we can apply the inductive hypothesis to T̃ and P̃
+to get
+                                                |P|2                                   2 ′
+                                                                              4 −2ε |P| b −5ε     −ε |P|
+                                                                                                          2
+|Ta,b | . S 2 log S · |T̃ | .ε S 2 log S ·                 (Sδ)−5ε
+                                                                   . ε (log S) S           δ  ≤ S   ·        δ −5ε .
+                                             (a′ )3 (b′ )2                          Sa3 b3            a3 b 2
+                   2
+The S −ε = ∆−ε /100 cleans up the losses from .ε if ∆ < ∆0 (ε). This closes the inductive step and
+finishes the proof of Lemma 4.8.
+                                                                                                 
+
+        6. General case using Orponen-Shmerkin’s regular Furstenberg result
+  In the previous sections, we dealt with the Furstenberg set problem for a semi-well spaced set
+P. Now we turn to the other extreme, when P is almost AD-regular. This case has been solved by
+Orponen-Shmerkin [31, Theorem 5.7], and we present a slight refinement.
+Theorem 6.1. For any ε > 0, s ∈ (0, 1], t ∈ [s, 2 − s], there exists η(ε, s) > 0 and δ0 = δ(ε, s, t) > 0
+such that for any δ ∈ (0, δ0 ) and any (δ, s, δ −η , M )-nice configuration (P, T ) with P (t, η)-almost
+                              FURSTENBERG SETS ESTIMATE IN THE PLANE                                       21
+
+
+AD regular as in Definition 1.4, then
+                                              |T |δ      s+t
+                                                    & δ − 2 +ε .
+                                               M
+Remark 6.2. There are two differences between our proposition and [31, Theorem 5.7]. First, our
+definition of almost AD-regular set is slightly different from the (δ, s, C)-regular set in [31, Definition
+4.2]. Second, our η is only required to depend on ε, s, while the η in [31, Theorem 5.7] may depend
+on ε, s, t.
+Proof. We resolve the differences mentioned in the remark. First, we show that if P is (t, η)-almost
+AD-regular set, then it is also a (δ, t, δ −3η )-regular set in the sense of [31, Definition 4.2]. Indeed, the
+upper bound in Definition 1.4 shows that P is a (δ, t, 4δ −η )-set. (More precisely, if P ∩ B(x, r) 6= ∅
+for some x ∈ R2 , then let y ∈ P ∩ B(x, r); then P ∩ B(x, r) ⊂ P ∩ B(y, 2r).) Furthermore, for any
+dyadic δ ≤ r ≤ R ≤ 1 and p ∈ DR (P), we have
+                                                     X
+              4δ −η · Rt · |P|δ ≥ |P ∩ p|δ =                  |Q ∩ P|δ & |P ∩ p|r · δ η rt |P|δ .
+                                                Q∈Dr (P∩p)
+
+The last inequality uses the lower bound in Definition 1.4 and the fact that for any Q ∈ Dr (P ∩ p)
+                                        √                                                t
+and x ∈ p ∩ Q, we have Q ⊂ B(x, 2r). Hence, we get |P ∩ p|r . δ −2η · Rr , and the implicit
+constant can be absorbed into δ −η if δ > 0 is sufficiently small.
+    The next difference is that the η in [31, Theorem 5.7] depends a priori on ε, s, t. To prevent
+confusion later, we let η̃(ε, s, t) denote this parameter, and reserve η(ε, s) for the desired parameter
+which is independent of t.
+    To remove the dependence on t, we use a compactness argument. For fixed s, the set S =
+[s, 2 − s] ⊂ R is compact (note that the end points t = s and t = 2 − s are almost AD-regular
+cases of Lemma 4.11 and Proposition 4.4). Now let ηt = 12 min{η̃(ε/2, s, t), ε} > 0 and define
+Bt := B(t, ηt ) for t ∈ S. Then S = ∪t∈S Bt , so S admits a finite subcover ∪t∈S ′ Bt where S ′ ⊂ S
+is finite. Now define η = η(ε, s) := mint∈S ′ ηt . We claim that this choice of η works for any t ∈ S.
+Indeed, given t ∈ S, let t′ ∈ S ′ such that |t − t′ | ≤ ηt′ . Then since η + |t − t′ | ≤ 2ηt′ ≤ η̃(ε/2, s, t),
+                                                                  ′
+we see that a (δ, t, δ −η )-set P is also a (δ, t′ , δ −η̃(ε/2,s,t ) )-set. Hence, by [31, Theorem 5.7] and
+                                                   s+t′             s+t
+t′ ≥ t − ηt′ ≥ t − ε/2, we know that |TM|δ & δ − 2 +ε/2 ≥ δ − 2 +ε .                                       
+
+   Thus, we know that Theorem 4.1 is true when the set P is either semi-well spaced or AD-regular.
+To prove Theorem 4.1 for general sets P, we show that the set of scales (δ, 1) can be partitioned into
+two sets A, B such that P looks AD-regular on scales in A and looks semi-well spaced on scales in
+B. To formalize this intuition, we first define the branching function of a set P, c.f. [31, Definition
+2.22].
+Definition 6.3 (Branching function). Let T ∈ N, and let P ⊂ [0, 1)d be a {∆j }nj=1 -uniform set,
+with ∆j := 2−jT , and with associated sequence {Nj }nj=1 ⊂ {1, . . . , 2dT }n . We define the branching
+function f : [0, n] → [0, dn] by setting f (0) = 0, and
+                                                      j
+                                     log |P|2−jT   1 X
+                          f (j) :=               =       log Ni ,    i ∈ {1, . . . n}.
+                                          T        T i=1
+
+   We now try to convert the notions of (δ, s, C)-set, AD-regular set, and semi-well spaced set into
+the language of branching functions. Let sf (a, b) = f (b)−f
+                                                         b−a
+                                                             (a)
+                                                                 denote the slope of a line segment
+22                                        KEVIN REN AND HONG WANG
+
+
+between (a, b) and (f (a), f (b)). We say that a function f : [0, n] → R is (σ, ε)-superlinear on
+[a, b] ⊂ [0, n], or that (f, a, b) is (σ, ε)-superlinear, if
+                              f (x) ≥ f (a) + σ(x − a) − ε(b − a),          x ∈ [a, b].
+If σ = sf (a, b), then we just say that (f, a, b) is ε-superlinear. Since f (a) + sf (a, b)(x − a) =
+f (b) − sf (a, b)(b − x), another criterion for (f, a, b) being ε-superlinear is
+                           f (x) ≥ f (b) − sf (a, b)(b − x) − ε(b − a),        x ∈ [a, b].
+We will use both criteria in later proofs. Finally, (f, a, b) is ε-linear if
+                           |f (x) − f (a) − sf (a, b)(x − a)| ≤ ε(b − a),       x ∈ [a, b].
+                     −ε
+   If P is a (δ, s, δ     )-set that is {∆j }nj=1 -uniform, then one can show that the branching function
+of f is (s, ε)-superlinear. Likewise, if P is (s, ε)-almost AD-regular, then f is ε-linear. The reader
+is encouraged to ponder what happens if P is semi-well spaced in the sense of Proposition 4.6 (the
+answer is revealed in (27) with u = 2 − s and Remark 6.5).
+   The following proposition is a “merging” of [31, Lemma 2.6 and 2.7] and may be of independent
+interest. Roughly, it allows us to partition the set of scales [δ, 1] into a bounded number of intervals,
+where in each interval the set of scales look either almost AD-regular or semi-well spaced.
+Proposition 6.4. Fix 0 < s < t < u and m > 0. For every 0 < ε < min(u − s, 12 ), there is
+τ = τ (ε, s, u, t) > 0 such that the following holds: for every piecewise affine 2-Lipschitz function
+f : [0, m] → R such that
+                      f (x) ≥ tx − ε2 m for all x ∈ [0, m],       and f (m) ≤ (t + ε2 )m,
+there exists a family of non-overlapping intervals {[cj , dj ]}nj=1 contained in [0, m] such that:
+    (1) For each j, at least one of the following alternatives holds:
+         (a) (f, cj , dj ) is ε-linear with sf (cj , dj ) ∈ [s, u];
+         (b) (f, cj , dj ) is ε-superlinear with sf (cj , dj ) ∈ [s, u] and
+(27)                  f (x) ≥ min{f (cj ) + u(x − cj ), f (dj ) − s(dj − x)} − ε(dj − cj ).
+     (2) dj − cj ≥ τ m for all j;
+     (3) |[0, m] \ ∪j [cj , dj ]| .s,t,u εm.
+Remark 6.5. Let f be the branching function of a {∆j }nj=1 -uniform set P with ∆j := 2−jT . Write
+∆ = ∆1 , then δ = ∆n . Let [cj , dj ] be an interval satisfying condition (1)(a) in Proposition 6.4. Let
+p ∈ D∆cj (P) and Pj = φp (P ∩ p) (recall φp is the affine transform that maps p to [0, 1)2 ), which
+encodes the geometry of P between scales ∆n and ∆cj . Then for x ∈ (cj , dj ), write sf (x, dj ) = tj ,
+so Pj is a (∆dj −cj , tj , C)-AD regular set with C ≈ ∆−ε(dj −cj ) up to a constant power of ∆. Since
+we only care about Pj upto resolution ∆dj −cj , we can also identify D∆dj −cj Pj with Pj .
+   If [cj , dj ] satisfies condition (1)(b), then let p ∈ D∆cj (P) and Pj = φp (P ∩ p) as before. Pick
+˜
+∆ = ∆c−cj where c satisfies f (cj ) + u(c − cj ) = f (dj ) − s(dj − c). Then for x ∈ (c, dj ), we have
+f (x) ≥ f (dj ) − s(dj − x) − ε(dj − cj ), which means that Pj is a (∆dj −cj , s, C)-Katz-Tao set “from
+scales ∆dj −cj to ∆”   ˜ with C ≈ ∆−ε(dj −cj ) up to a constant power of ∆. Likewsie, for x ∈ (cj , c),
+we have f (x) ≥ f (cj ) + u(x − cj ) − ε(dj − cj ), which means that Pj is a (∆,˜ u, C)-set. Thus, Pj is
+semi well-spaced in the sense of Proposition 4.6. See Lemma 6.6 for more precise statements.
+Proof. By [31, Lemma 2.7] for ε2 and using t < u, there is a family of intervals {[cj , dj ]}nj=1 , where
+dj−1 ≤ cj , contained in [0, m] such that:
+                                 FURSTENBERG SETS ESTIMATE IN THE PLANE                                               23
+
+
+    (1) For each j, at least one of the following alternatives holds:
+          (i) (f, cj , dj ) is ε2 -linear with sf (cj , dj ) ∈ [0, u];
+         (ii) (f, cj , dj ) is ε2 -superlinear with sf (cj , dj ) = u.
+    (2) dj − cj ≥ τ m for all j;
+    (3) |[0, m] \ ∪j [cj , dj ]| .t,u ε2 m.
+This is close to our desired output, except the first alternative allows sf (cj , dj ) ∈ [0, u] instead
+of [s, u]. To remedy this, we follow the algorithm in [30, Lemma 8.5]. Initially set k = n; the
+value of k represents that we still need to process intervals [cj , dj ] with j ≤ k. For purposes that
+will be apparent later, we shall weaken the condition on the last unprocessed interval [ck , dk ]: for
+(f, cn , dn ), we weaken (i) to (i’) (f, ck , dk ) is ε-linear with sf (ck , dk ) ∈ [0, u]. Clearly (i) implies (i’)
+(as long as ε < 1).
+   If [ck , dk ] satisfies (ii) or tk ≥ s in (i’), then [ck , dk ] is an interval of type (b) or type (a)
+respectively, as in (1) of the statement of Proposition 6.4, and so we shall mark [ck , dk ] as “processed”
+                                                                                                 εm
+and set k to k − 1. So, assume [ck , dk ] is of type (i’) and satisfies tk < s. If dk ≤ t−s         , then remove
+all intervals [ci , di ] with i < k and we are done. Otherwise, we observe that
+                                                       f (dk )   tdk − εm
+                                       sf (0, dk ) =           ≥          > s.
+                                                         dk          dk
+Since sf (ck , dk ) < s and f is piecewise affine, we can find a largest c′ ∈ (0, ck ) such that sf (c′ , dk ) =
+s.
+    Now we check that (f, c′ , dk ) is ε-superlinear. If x ∈ (c′ , ck ), then by maximality of c′ , we have
+sf (x, dk ) < s = sf (c′ , dk ). Since sf (c′ , dk ) is a convex combination of sf (c′ , x) and sf (x, dk ), we get
+sf (c′ , x) ≥ s, so f (x) ≥ f (c′ ) + s(x − c′ ). If x ∈ (ck , dk ), then we have, using tk := sf (ck , dk ) < s
+and f being ε-linear on [ck , dk ],
+                                    f (x) ≥ f (dk ) − tk (dk − x) − ε(dk − ck )
+(28)                                      ≥ f (dk ) − s(dk − x) − ε(dk − c′ )
+Hence, since sf (c′ , dk ) = s, we get that (f, c′ , dk ) is ε-superlinear.
+   Observe that [c′ , dk ] is a type (b) interval (degenerate case) and can serve as part of a type (b)
+interval.
+   We consider several cases:
+       • If c′ ∈ / ∪j [cj , dj ], then repeat the procedure with k equal to the largest index with dk < c′
+               ′
+         (if c < c1 or no such k exists, we stop).
+       • If c′ ∈ [cℓ , dℓ ] and (c′ − cℓ ) ≤ 2ε(dℓ − cℓ ), we discard the piece [cℓ , c′ ]. Repeat the procedure,
+         setting k := ℓ − 1.
+       • If c′ ∈ [cℓ , dℓ ], (c′ − cℓ ) ≥ 2ε(dℓ − cℓ ), and [cℓ , dℓ ] is type (i), then we replace the interval
+         [cℓ , dℓ ] by [cℓ , c′ ] (which satisfies (i’) as we show next) and repeat the procedure, setting
+         k := ℓ. Indeed, (f, cℓ , c′ ) is ε-linear since (f, cℓ , dℓ ) is ε2 -linear and (c′ − cℓ ) ≥ 2ε(dℓ − cℓ ).
+         To see this, write tℓ = sf (cℓ , dℓ ), then |f (c′ ) − f (cℓ ) − tℓ (c′ − cℓ )| ≤ ε2 (dℓ − cℓ ) ≤ 2ε (c′ − cℓ ),
+         so for any x ∈ [cℓ , c′ ], |sf (cℓ , c′ ) − tℓ | ≤ ε/2 and
+                                                               ε           ε
+                   |f (x) − f (cℓ ) − sf (cℓ , c′ )(x − cℓ )| ≤ (x − cℓ ) + (c′ − cℓ ) ≤ ε(c′ − cℓ ).
+                                                               2           2
+         Hence, (i’) is satisfied in the procedure.
+       • If c′ ∈ [cℓ , dℓ ], (c′ − cℓ ) ≥ 2ε(dℓ − cℓ ), and [cℓ , dℓ ] is type (ii), then we merge [c′ , dk ] and
+         [cℓ , dℓ ] to form an interval [cℓ , dk ] of type (b). To see this, first check (27). For x ∈ [c′ , dk ],
+24                                        KEVIN REN AND HONG WANG
+
+
+         by our earlier calculation (28) and cℓ ≤ c′ ,
+(29)                               f (x) ≥ f (dk ) − s(dk − x) − ε(dk − cℓ ),
+         and for x ∈ [cℓ , dℓ ], by the fact that (f, cℓ , dℓ ) is ε2 -superlinear with sf (cℓ , dℓ ) = u and
+         dk ≥ dl ,
+(30)                               f (x) ≥ f (cℓ ) + u(x − cℓ ) − ε2 (dℓ − cℓ )
+(31)                                     ≥ f (cℓ ) + u(x − cℓ ) − ε2 (dk − cℓ ).
+         Now, we check that sf (cℓ , dk ) ∈ [s, u]. First, sf (cℓ , dk ) is a convex combination of sf (cℓ , dℓ )
+         and sf (dℓ , dk ). Since sf (cℓ , dℓ ) = u and sf (dℓ , dk ) ≤ s by maximality of c′ and dℓ < ck , we
+         have sf (cℓ , dk ) ≤ u.
+             Likewise, sf (cℓ , dk ) is also a convex combination of sf (cℓ , c′ ) and sf (c′ , dk ). Since c′ −cℓ ≥
+         2ε(dℓ − cℓ ), (30) implies that
+                                                                      ε
+                                     f (c′ ) ≥ f (cℓ ) + u(c′ − cℓ ) − (c′ − cℓ ),
+                                                                      2
+         which means that sf (cℓ , c′ ) ≥ u − ε/2 ≥ s. Combined with sf (c′ , dk ) = s, we get that
+         sf (cℓ , dk ) ≥ s. Hence, sf (cℓ , dk ) ∈ [s, u].
+             Finally, since sf (cℓ , dk ) ∈ [s, u], equations (29) and (31) together tell us that (f, cℓ , dk )
+         is ε-superlinear. Indeed, it suffices to check for x ∈ [c′ , dk ],
+                        f (x) ≥ f (dk ) − s(dk − x) − ε(dk − cℓ )
+                              ≥ f (cℓ ) + sf (cℓ , dk )(dk − cℓ ) − s(dk − x) − ε(dk − cℓ )
+                              ≥ sf (cℓ , dk )(x − cℓ ) − ε(dk − cℓ ).
+            This shows the interval [cℓ , dk ] satisfies (1)(b), and then we can repeat the procedure
+         with k := ℓ − 1.
+            The procedure must terminate in ≤ τ −1 many steps and all resulting intervals satisfy
+         one of the alternatives in (1). All of the resulting intervals have length ≥ 2ετ m, since they
+         contain a least a proportion 2ε of some [cj , dj ]. Finally, the sum of their lengths is at least
+         (1−Os,t,u (ε))m since a proportion of at least (1−2ε) of each interval [cj , dj ] with cj ≥s,t εm
+         is preserved. This gives the claim, with ετ in place of τ .
+                                                                                                         
+   As promised by Remark 6.5, here is a more precise version of what Proposition 6.4 says about
+the set P at different scales.
+Lemma 6.6. Suppose n is a sufficiently large integer and ∆ ∈ 2−N is sufficiently small. Let
+P ⊂ [0, 1)d is a {∆j }nj=1 -uniform set with branching function f and ∆j = ∆j , and we apply
+Proposition 6.4 with u = 2 − s, m = n. Fix [cj , dj ] ⊂ [0, m], p ∈ D∆cj (P), Pj := φp (P ∩ p).
+       • If [cj , dj ] is a type (a) interval in Proposition 6.4 (1), then Pj is a (∆dj −cj , tj , ∆−(dj −cj )ε−3 )-
+         AD regular set.
+       • If [cj , dj ] is a type (b) interval in Proposition 6.4 (1), then |Pj | = ∆−(dj −cj )tj and |Pj ∩Q| .
+         ∆−(dj −cj )ε−3 · max(r2−s |Pj |, (r/∆dj −cj )s ) for any r ∈ [∆dj −cj , 1] and Q ∈ Dr (Pj ).
+Proof. For any 0 ≤ k ≤ dj − cj and Q ∈ D∆k (Pj ), we get that
+                                                                 |P|∆dj
+(32)                |Pj ∩ Q|∆dj −cj = |P ∩ φ−1
+                                            p (Q)|∆dj =                   = ∆f (cj +k)−f (dj ) .
+                                                                |P|∆cj +k
+                              FURSTENBERG SETS ESTIMATE IN THE PLANE                                                     25
+
+
+In particular, when k = 0, we get |Pj |∆dj −cj = ∆f (cj )−f (dj ) . Plugging back into (32) gives
+(33)                |Pj ∩ Q|∆dj −cj = ∆f (cj +k)−f (dj ) = |Pj |∆dj −cj · ∆f (cj +k)−f (cj ) .
+   We start by analyzing condition (1)(a), which says that letting tj = sf (cj , dj ),
+(34)                   |f (x) − f (cj ) − tj (x − cj )| ≤ ε(dj − cj ),              ∀x ∈ [cj , dj ].
+                             dj −cj          −(dj −cj )ε−3
+We check that Pj is a (∆              , tj , ∆               )-AD regular set. Fix r ∈ (∆dj −cj , 1) and y ∈ Pj ;
+we wish to show
+           ∆ε(dj −cj ) rtj |Pj |∆dj −cj ≤ ∆−3 |Pj ∩ B(y, r)|∆dj −cj ≤ |Pj |∆dj −cj rtj ∆−(dj −cj )ε−3
+   For the upper bound, note that (33) and (34) give us |Pj ∩Q|∆dj −cj ≤ |Pj |∆dj −cj ·∆ktj ·∆−(dj −cj )ε
+for all Q ∈ D∆k ([0, 1]2 ) (indeed, if Q ∈/ D∆k (Pj ), then the LHS is zero). Since any ball of radius
+r ∈ (∆dj −cj , 1) can be covered by O(∆2 ) many squares in D∆k ([0, 1]2 ), where k ∈ [0, dj − cj ] is
+the largest integer with r < ∆k (so ∆k < r∆−1 ), we get |Pj ∩ B(y, r)| . |Pj |∆−ktj ∆−(dj −cj )ε ≤
+|Pj |rtj ∆−(dj −cj )ε−3 when ∆ is sufficiently small to absorb the implicit constant in ..
+   The lower bound is similar: choose k to be the smallest integer with r > 2∆k (so 2∆k−1 > r).
+Then by applying (33) to Q = D∆k (y) and (34), we verify the desired condition
+   ∆ε(dj −cj )+3 rtj |Pj |∆dj −cj ≤ ∆ε(dj −cj ) ∆ktj |Pj |∆dj −cj ≤ |Pj ∩ Q|∆dj −cj ≤ |Pj ∩ B(y, r)|∆dj −cj .
+This completes the analysis of condition (1)(a).
+  In a similar fashion, the condition in (1)(b) becomes f (dj ) − f (cj ) = tj (dj − cj ) and
+        f (x) ≥ min(f (cj ) + (2 − s)(x − cj ), f (dj ) − s(dj − x)) − ε(dj − cj ),                    x ∈ [cj , dj ].
+                                                                          f (cj )−f (dj )      −(dj −cj )tj
+As before, from (32) with k = 0, we have |Pj |∆dj −cj = ∆                    =∆         . Finally, for a
+             dj −cj
+given r ∈ [∆        , 1], use (32), (33), and pick the largest k ∈ [0, dj − cj ] with r < ∆k to obtain
+             −(dj −cj )ε−3
+|Pj ∩ Q| ≤ ∆                · max(r2−s |Pj |, (r/∆dj −cj )s ) for any Q ∈ Dr (Pj ).
+                                                                                                      
+
+   We finally complete the proof of the Furstenberg set conjecture for general sets.
+   Recall Orponen-Shmerkin multi-scale incidence decomposition [31, Corollary 5.37].
+Proposition 6.7. Fix N ≥ 2 and a sequence {∆j }nj=0 ⊂ 2−N with
+                              0 < δ = ∆N < ∆N −1 < · · · < ∆1 < ∆0 = 1.
+Let (P0 , T0 ) ⊂ Dδ × T δ be a (δ, s, C, M )-nice configuration. Then there exists a set P ⊂ P0 such
+that:
+    (1) |D∆j (P)| ≈δ |D∆j (P0 )| and |P ∩ p| ≈δ |P0 ∩ p|, 1 ≤ j ≤ N , p ∈ D∆j (P).
+    (2) For every 0 ≤ j ≤ N −1 and p ∈ D∆j , there exist numbers Cp ≈δ C and Mp ≥ 1, and a fam-
+         ily of tubes Tp ⊂ T ∆j+1 /∆j with the property that (φp (P ∩ p), Tp ) is a (∆j+1 /∆j , s, Cp , Mp )-
+         nice configuration.
+   Furthermore, the families Tp can be chosen such that if pj ∈ D∆j (P) for 0 ≤ j ≤ N − 1, then
+                                                          N
+                                                          Y −1
+                                                 |T0 |         |Tpj |
+                                                       'δ             .
+                                                  M       j=0
+                                                               Mpj
+
+Here, 'δ means &N log(1/δ)C , and likewise for /δ , ≈δ .
+26                                        KEVIN REN AND HONG WANG
+
+
+Proof of Theorem 4.1. If t ≤ s or t ≥ 2 − s then we are done by [30, Corollary 2.14] or Proposition
+4.6 with ∆ = δ (see also [31, Corollary 5.28]), respectively. Hence, assume t ∈ (s, 2 − s).
+    We will eventually choose the following parameters: η0 (ε, s), τ (s, t, η0 ), η(η0 , τ ), T (η).
+                                                                             ε2
+    For a fixed choice of ε, s, let η0 (ε, s) > 0 be the minimum of ε, 1225       (in Corollary 4.7) and the
+η(ε, s) in Proposition 6.1.
+    Let η be a small constant to be chosen and T = T (η) such that 2 log     T
+                                                                                T
+                                                                                   ≤ η 2 . By [12, Proposition
+A.1], we can first refine P to have cardinality . δ −t . Refine (P, T ) such that P is {2−jT }m           j=1 -
+uniform for 2−mT = δ with associated sequence {Nj }m          j=1 . Let f be the corresponding branching
+function. Since P is a (δ, t, δ −η )-set, we have f (x) ≥ tx − ηm for all x ∈ [0, m]. Thus, if we later
+choose η < η02 , then we may apply Proposition 6.4 to the branching function f .
+    Let {[cj , dj ]}nj=1 be the intervals from Proposition 6.4 applied with parameters s, t, u := 2−s, ε :=
+η0 to be specified later, corresponding to a sequence 0 < δ = ∆n < ∆n−1 < · · · < ∆1 < ∆0 = 1
+(i.e. ∆k is of the form 2−cj T or 2−dj T ). We can partition {0, 1, · · · , n − 1} = S ∪ B, “structured”
+S (when ∆k can be written as 2−cj T for some cj ) and “bad” B scales such that:
+           ∆j                                Q
+     (1) ∆j+1    ≥ δ −τ for all j ∈ S, and j∈B (∆j /∆j+1 ) ≤ δ −Os,t (η0 ) ;
+     (2) Using Lemma 6.6, we see that for each j ∈ S and p ∈ D∆j (P), we can find tj ∈ [s, 2 − s]
+         such that the set Pj := φp (P ∩ p) is either
+           (i) a (∆j+1 /∆j , tj , 2−3T (∆j /∆j+1 )η0 )-AD regular set;
+          (ii) satisfies |Pj |∆j+1 /∆j = δ −tj and |Pj ∩Q| ≤ 2−3T (∆j /∆j+1 )η0 ·max{ρ2−s |Pj |, (∆j+1ρ/∆j ))s }
+                for any ρ ∈ (∆j+1 /∆j , 1) and Q ∈ Dρ (Pj ).
+         Q                               Q
+     (3) j∈S (∆j /∆j+1 )tj ≥ |P| · j∈B (∆j+1 /∆j )2 ≥ δ −t+η · δ Os,t (η0 ) = δ −t+Os,t (η0 ) .
+                                  ∆
+Apply Proposition 6.7 and ∆j+1 j
+                                  ≥ δ −τ to get a family of tubes Tp ⊂ T ∆j+1 /∆j with the prop-
+erty that (D∆j+1 (φp (P ∩ p)), Tp ) is a (∆j+1 /∆j , s, Cj , Mp )-nice configuration for some Cj /δ
+             −1
+(∆j+1 /∆j )−τ η and
+                                                           N
+                                                           Y −1
+                                                  |T0 |         |Tpj |
+                                                        'δ             .
+                                                   M       j=0
+                                                                M pj
+
+For j ∈ S, we get by either applying Proposition 6.1 for case (2)(i) or Corollary 4.7 for case (2)(ii),
+                               |Tp |                        s+tj
+that if η < τ η0 (ε, s), then Mpj ≥ (∆j /∆j+1 )              2 −ε    . Thus, since η0 ≤ ε, we have using items (1)
+                                  j
+and (3),
+
+                            Y                s+tj
+                                                2 −ε          Y  ∆j  2 −ε Y  ∆j  2
+                                                                       s            tj
+
+                   |T0 |               ∆j
+                         'δ                                 ≥              ·
+                    M                 ∆j+1                       ∆j+1          ∆j+1
+                            j∈S                                j∈S                j∈S
+                             (−1+Os,t (η0 ))( 2s −ε)        − 2t +Os,t (η0 )
+                        ≥δ                             ·δ
+                             − s+t
+                                2 +Os,t (ε)
+                        ≥δ                    ,
+
+which proves Theorem 4.1 with Os,t (ε) in place of ε.                                                           
+
+Remark 6.8. After proving Theorem 4.1, a similar compactness argument as in the proof of
+Theorem 6.1 shows we can remove the dependence of η on t. Indeed, we may in fact assume
+t ∈ [s + ε/100, 2 − s − ε/100] because we can use [30, Corollary 2.14] or [31, Corollary 5.28] for
+         ε                  ε
+t ≤ s + 100 or t ≥ 2 − s − 100 , respectively.
+                                 FURSTENBERG SETS ESTIMATE IN THE PLANE                                               27
+
+
+                                                    References
+ [1] Jean Bourgain. On the Erdös-Volkmann and Katz-Tao ring conjectures. Geometric & Functional Analysis
+     GAFA, 13:334–365, 2003.
+ [2] Jean Bourgain. The discretized sum-product and projection theorems. Journal d’Analyse Mathématique,
+     112(1):193–236, 2010.
+ [3] Jean Bourgain, Alex Furman, Elon Lindenstrauss, and Shahar Mozes. Stationary measures and equidistribution
+     for orbits of nonabelian semigroups on the torus. Journal of the American Mathematical Society, 24(1):231–280,
+     2011.
+ [4] Peter J Bradshaw. Additive Structure in Convex Sets and Related Topics. PhD thesis, University of Bristol,
+     2022.
+ [5] Alex Cohen, Cosmin Pohoata, and Dmitrii Zakharov. A new upper bound for the Heilbronn triangle problem.
+     arXiv preprint arXiv:2305.18253, 2023.
+ [6] Ciprian Demeter and Hong Wang. Szemerédi-trotter bounds for tubes and applications. arXiv preprint
+     arXiv:2406.06884, 2024.
+ [7] Daniel Di Benedetto and Joshua Zahl. New estimates on the size of (α, 2α)-Furstenberg sets. arXiv preprint
+     arXiv:2112.08249, 2021.
+ [8] Sean Eberhard and Peter Varjú. Work in progress, 2023+.
+ [9] G Edgar and Chris Miller. Borel subrings of the reals. Proceedings of the American Mathematical Society,
+     131(4):1121–1129, 2003.
+[10] György Elekes. On the number of sums and products. Acta Arithmetica, 81(4):365–367, 1997.
+[11] Kenneth J Falconer. Hausdorff dimension and the exceptional set of projections. Mathematika, 29(1):109–115,
+     1982.
+[12] Katrin Fässler and Tuomas Orponen. On restricted families of projections in R3 . Proceedings of the London
+     Mathematical Society, 109(2):353–381, 2014.
+[13] Yuqiu Fu, Shengwen Gan, and Kevin Ren. An incidence estimate and a Furstenberg type estimate for tubes in
+     R2 . Journal of Fourier Analysis and Applications, 28(4):59, 2022.
+[14] Yuqiu Fu and Kevin Ren. Incidence estimates for α-dimensional tubes and β-dimensional balls in R2 . Journal
+     of Fractal Geometry, 11, 2024.
+[15] Harry Furstenberg. Intersections of Cantor sets and transversality of semigroups. Problems in analysis (Sympos.
+     Salomon Bochner, Princeton Univ., Princeton, NJ, 1969), pages 41–59, 1970.
+[16] Larry Guth, Nets Hawk Katz, and Joshua Zahl. On the discretized sum-product problem. International Math-
+     ematics Research Notices, 2021(13):9769–9785, 2021.
+[17] Larry Guth, Noam Solomon, and Hong Wang. Incidence estimates for well spaced tubes. Geometric and Func-
+     tional Analysis, 29(6):1844–1863, 2019.
+[18] Kornélia Héra. Hausdorff dimension of Furstenberg-type ests associated to families of affine subspaces. In Annales
+     Academiae Scientiarum Fennicae. Mathematica, volume 44, 2019.
+[19] Kornélia Héra, Pablo Shmerkin, and Alexia Yavicoli. An improved bound for the dimension of (α, 2α)-
+     Furstenberg sets. Revista matemática iberoamericana, 38(1):295–322, 2021.
+[20] Nets Katz and Joshua Zahl. An improved bound on the Hausdorff dimension of Besicovitch sets in R3 . Journal
+     of the American Mathematical Society, 32(1):195–259, 2019.
+[21] Nets Hawk Katz and Terence Tao. Some connections between Falconer’s distance set conjecture and sets of
+     Furstenburg type. The New York Journal of Mathematics [electronic only], 7:149–187, 2001.
+[22] Robert Kaufman. On Hausdorff dimension of projections. Mathematika, 15(2):153–155, 1968.
+[23] Neil Lutz and Donald M Stull. Bounding the dimension of points on a line. Information and Computation,
+     275:104601, 2020.
+[24] John M Marstrand. Some fundamental geometrical properties of plane sets of fractional dimensions. Proceedings
+     of the London Mathematical Society, 3(1):257–302, 1954.
+[25] András Máthé and William Lewis O’Regan. Discretised sum-product theorems by Shannon-type inequalities.
+     arXiv preprint arXiv:2306.02943, 2023.
+[26] Pertti Mattila. Geometry of sets and measures in Euclidean spaces: fractals and rectifiability. Number 44.
+     Cambridge university press, 1999.
+[27] Ali Mohammadi and Sophie Stevens. Attaining the exponent 5/4 for the sum-product problem in finite fields.
+     International Mathematics Research Notices, 2023(4):3516–3532, 2023.
+[28] Ursula Molter and Ezequiel Rela. Furstenberg sets for a fractal set of directions. Proceedings of the American
+     Mathematical Society, 140(8):2753–2765, 2012.
+28                                       KEVIN REN AND HONG WANG
+
+
+[29] Daniel M Oberlin. Restricted Radon transforms and projections of planar sets. Canadian Mathematical Bulletin,
+     55(4):815–820, 2012.
+[30] Tuomas Orponen and Pablo Shmerkin. On the Hausdorff dimension of Furstenberg sets and orthogonal projec-
+     tions in the plane. arXiv preprint arXiv:2106.03338, 2021.
+[31] Tuomas Orponen and Pablo Shmerkin. Projections, Furstenberg sets, and the abc sum-product problem, 2023.
+[32] Tuomas Orponen, Pablo Shmerkin, and Hong Wang. Kaufman and Falconer estimates for radial projections
+     and a continuum version of Beck’s theorem. Geometric and Functional Analysis, 34(1):164–201, 2024.
+[33] Yuval Peres and Wilhelm Schlag. Smoothness of projections, Bernoulli convolutions, and the dimension of
+     exceptions. 2000.
+[34] Oliver Roche-Newton. A better than 3/2 exponent for iterated sums and products over R. arXiv preprint
+     arXiv:2304.00853, 2023.
+[35] Oliver Roche-Newton, Misha Rudnev, and Ilya D Shkredov. New sum-product type estimates over finite fields.
+     Advances in Mathematics, 293:589–605, 2016.
+[36] Misha Rudnev, George Shakan, and Ilya Shkredov. Stronger sum-product inequalities for small sets. Proceedings
+     of the American Mathematical Society, 148(4):1467–1479, 2020.
+[37] Misha Rudnev and Sophie Stevens. An update on the sum-product problem. In Mathematical Proceedings of
+     the Cambridge Philosophical Society, volume 173, pages 411–430. Cambridge University Press, 2022.
+[38] Pablo Shmerkin and Hong Wang. Dimensions of Furstenberg sets and an extension of Bourgain’s projection
+     theorem. arXiv preprint arXiv:2211.13363, 2022.
+[39] József Solymosi. Bounding multiplicative energy by the sumset. Advances in mathematics, 222(2):402–408, 2009.
+[40] Endre Szemerédi and William T. Trotter. Extremal problems in discrete geometry. Combinatorica, 3:381–392,
+     1983.
+[41] Le Anh Vinh. The Szemerédi–Trotter type theorem and the sum-product estimate in finite fields. European
+     Journal of Combinatorics, 32(8):1177–1181, 2011.
+[42] Hong Wang and Shukun Wu. Restriction estimates using decoupling theorems and two-ends furstenberg inequal-
+     ities. arXiv preprint arXiv:2411.08871, 2024.
+[43] Thomas Wolff. Recent work connected with the Kakeya problem. Prospects in mathematics (Princeton, NJ,
+     1996), 2(129-162):4, 1999.
+
+     Department of Mathematics, Princeton University
+     Email address: kevinren@princeton.edu
+
+     Courant institute of mathematical sciences, New York University
+     Email address: hw3639@nyu.edu
+

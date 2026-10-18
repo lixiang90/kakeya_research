@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0076付实际κ1 det-large分支的native乘积全clock fineδ模型及直接Schubert/自动rank接口反攻；无κ1gain/ordinary/major/newID。两formal独审，主增益机制noinfo1；下一唯一notes/00_map/R0076_next_original_rank_one_triple_geometry_gate.md。54PDF/56sources/78IDs，last actual官方三核心核R75，Goal active。
+更新2026-10-18，R0077付完整bounded matrix33 κ1实际g中双near-rank1第三时分支fixed-power质量上界：uniform NI原两角cap→finite weighted RW robust→exactg R/w双fibre。两formal独审，主机制noinfo0；非完整κ1/ordinary/major/newID。下一唯一notes/00_map/R0077_next_native_fullrank_source_gain_gate.md。56PDF/58sources/78IDs，last actual官方三核心核R75，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@
 | K | 曲线到直线的coherent lifting | LIFT-005经R50同P全时第一变分覆盖一般smooth保clock的parameter-linear目标；s≥rankB，s1/fullrank iff B0或rankB=rankB²1 | 完整类frozen；R12/R49 affine-only范围已更正，不续Hessian/clock邻近轮 |
 | L | 真实五维管的三平面窄几何 | NAR001排除沿rich轴近常plane；NAR002固定包/两步刷仍δ¹，主NG开放 | 直接捷径frozen；averaged几何待真mass输入，勿把局部反例当NG反例 |
 | M | 共享时间双块受限投影 | CPJ001/002保留；uniform CP⇔存在正gain PM，未获得新mass估计 | CP/PM open但局部迭代frozen，不以inverse/entropy/threshold改名重开 |
-| N | 真实sticky五维矩阵分支 | R75完整boundedκ>1排除保留；R76实际κ1 det-large同管分支→nativeproduct全clock fine模型/δ²原质量，Schubert及rank弱接口反攻已审 | κ1/generalκ/ordinary仍open；不续code桶/自由BSG/action/basicness/更多fixedtime，下一原双秩一third-time结构须付真实角law用途 |
+| N | 真实sticky五维矩阵分支 | R75完整boundedκ>1排除、R76实际κ1 det-large同管fine native全clock保留；R77在列明具名输入下排双near-rank1第三时实际g质量（fixed power） | 至少一侧满秩余分支及完整κ1/generalκ/ordinary仍open；另一det小含rank0。冻结code桶/自由BSG/action/basicness/更多fixedtime，下一原满秩余分支须付不同joint source增长 |
 | O | 实际五维mixed(4,2) | R74以原AD0标签付完整bounded κ1 source-to-CW；两质量提取/全pencil压缩/fine误差/原N分母均付，标准QE及经典compression范围明确 | 其余κ仍open，无ordinary/major/newID；旧local GWZ与当前AD0端点阈值优化冻结，须不同原联合输入 |
 | P | 实际五维mixed(3,2) | 旧proper工具保留；R73原raw/global/local分母和sameT fineδ用途完成，在具名19.2/19.4及完整source下排κ+γ>1（含κ1每fixedγ），无额外AFF/NQ | 既有工具应用，非新ID/major/ordinary增益；κ+γ≤1和完整branch仍open，停止zero球阈值续轮 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66 tiny lower、R67天然joint图、R68无AFF/NQ的large upper；R69双法向四输出数值恢复、冻结后AFF推论严格失败，R70 raw零球及κ+γ>1子范围排除，γ≤1−κ contact/wholeAFF₃仍未付；R71 direct fine packet全账无可用gain、已冻结 | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
@@ -162,3 +162,5 @@ R0074：bounded完整mixed42κ1排除、固定d k=d−1κ1限定源读出。原l
 R0075：完整bounded matrix33κ>1原source应用通过；global同管clique返回rawclock、增长系数SM与nearimage旧接口、粗kernel weighted-CW/Wolff维3出口均付。不是allκ/κ1或ordinary新界，bounded规范到extremal提取仍条件；不新立ID/major。R75官方三核心fresh identity unchanged，actual commit/tree分开，54PDF/56sources。下一临界原联合几何门槛，不续采样/阈值。
 
 R0076：真实sameT code块的8维joint residual fineδ分桶保全原第三clock，给native product实际g与自然restricted能量；单块δ²全T质量明确。直接CSWZ受结构Schubert奇异阻挡，互补rank1全U弱模型非fullsource反例。无κ1gain/major/newID，主机制noinfo1，下一notes/00_map/R0076_next_original_rank_one_triple_geometry_gate.md。
+
+R0077：uniform-μ NI原mass cap、谱P两角law、finite RW4.1 weighted/all-large-subset robust与exactg R/w重fibre实际链已两独审；排一个双near-rank1分支，非fullκ1/ordinary/major。主机制noinfo0，新增2PDF后56PDF/58sources/78IDs，下一notes/00_map/R0077_next_native_fullrank_source_gain_gate.md。

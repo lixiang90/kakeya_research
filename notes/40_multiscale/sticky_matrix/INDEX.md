@@ -31,3 +31,5 @@ R0072：[R0072_kernel_velocity_two_time_budget_and_stop.md](R0072_kernel_velocit
 R0075：[原同管完整clock与两种源用途](R0075_global_same_tube_rank_and_kernel_CW_application.md)，A12/B10及两formal通过：explicit bounded完整matrix33 κ≥1+ζ排除，κ1不涵。Fine δ^(2κ−2)→真实rawclock，近image全real扩展/旧linewise，粗kernel原权CW/经典Wolff维3；无商ADlower/方向分离。全Kd5(1)只条件归一化桥，无ordinary/major/newID。下一notes/00_map/R0075_next_critical_native_joint_geometry_gate.md；停止本族阈值，Goal active。
 
 R0076：[双端native乘积全clock细尺度归约](R0076_two_end_native_product_full_clock_reduction.md)，A12/B10及两formal已审；实际κ1 det-large分支、δ²原全T质量、8维residual细分和全原u/g均付。CSWZ固定Schubert与自动rank弱接口失败，无κ1gain/major/newID，主机制noinfo1。下一notes/00_map/R0076_next_original_rank_one_triple_geometry_gate.md；Goal active。
+
+R0077：[双近秩一原质量用途](R0077_double_rank_one_native_projection_application.md)，root14/A12/B12及两formal已审：完整source的uniform NI→两角mass cap→finite weighted RW/all-large细subset→exactg R/w双fibre，真正fixed-power限定branch upper；非fullκ1/ordinary/major/newID，主机制noinfo0。下一notes/00_map/R0077_next_native_fullrank_source_gain_gate.md；Goal active。
