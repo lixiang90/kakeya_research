@@ -1,0 +1,1682 @@
+[PDF physical page 1]
+Notes on Rectifiability
+Urs Lang
+2007
+Version of December 15, 2023
+Abstract
+These are the notes to a first part of a lecture course on Geometric Measure
+Theory I have taught at ETH Zurich a number of times in the past twenty
+years, lastly in the Fall Semester 2023.
+Contents
+1 Embeddings of metric spaces 2
+2 Compactness theorems for metric spaces 3
+3 Lipschitz maps 5
+4 Differentiability of Lipschitz maps 9
+5 Extension of smooth functions 13
+6 Metric differentiability 14
+7 Hausdorff measures 18
+8 Area formula 20
+9 Coarea formula 23
+10 Rectifiable sets 28
+References 34
+1
+
+[PDF physical page 2]
+1 Embeddings of metric spaces
+We start with some basic and well-known isometric embedding theorems for metric
+spaces.
+For a non-empty set 𝑆, 𝑙∞(𝑆) = (𝑙∞(𝑆), ∥ · ∥∞) denotes the Banach space of all
+functions 𝑢 : 𝑆 → R with ∥𝑢∥∞ := sup𝑠∈𝑆 |𝑢(𝑠)| < ∞. Similarly, 𝑙∞ := 𝑙∞(N) =
+{( 𝑢𝑘)𝑘 ∈N : ∥ (𝑢𝑘) ∥∞ := sup𝑘 ∈N |𝑢𝑘 | < ∞}.
+Proposition 1.1 (Kuratowski, Fr´echet) (1) Every metric space 𝑋 admits an iso-
+metric embedding into 𝑙∞(𝑋).
+(2) Every separable metric space admits an isometric embedding into 𝑙∞.
+Proof: For (1), fix a basepoint 𝑧 ∈ 𝑋 and define 𝑓 : 𝑋 → 𝑙∞(𝑋),
+𝑥 ↦→ 𝑢 𝑥, 𝑢 𝑥 (𝑦) = 𝑑 (𝑥, 𝑦) − 𝑑 (𝑦, 𝑧).
+Note that ∥𝑢 𝑥 ∥∞ = sup𝑦 |𝑢 𝑥 (𝑦)| ≤ 𝑑 (𝑥, 𝑧). Moreover,
+∥𝑢 𝑥 − 𝑢 𝑥′ ∥∞ = sup𝑦 |𝑑 (𝑥, 𝑦) − 𝑑 (𝑥′, 𝑦)| ≤ 𝑑 (𝑥, 𝑥 ′),
+and equality occurs for 𝑦 = 𝑥′.
+To prove (2), choose a basepoint𝑧 ∈ 𝑋 and a countable dense set 𝑆 = {𝑦𝑘 : 𝑘 ∈
+N} in 𝑋. Define 𝑓 : 𝑋 → 𝑙∞,
+𝑥 ↦→ ( 𝑑 (𝑥, 𝑦 𝑘) − 𝑑 (𝑦𝑘, 𝑧)) 𝑘 ∈N.
+By (1), 𝑓 |𝑆 : 𝑆 → 𝑙∞ = 𝑙∞(𝑆) is an isometric embedding. Since 𝑆 is dense and 𝑓
+is continuous, 𝑓 is an isometric embedding. □
+Note that if 𝑋 is bounded, there is no need for the term −𝑑 (𝑦, 𝑧) or −𝑑 (𝑦𝑘, 𝑧),
+respectively, in the definition of 𝑓 . In this case, the embedding is canonical. For
+further reading on results of this type and detailed references we refer to [Hei2003].
+Recall that a metric space 𝑋 is said to be precompact or totally bounded if for
+every 𝜖 > 0, 𝑋 can be covered by a finite number of closed balls of radius 𝜖. We
+call a set 𝑌 ⊂ 𝑋 𝜖 -separated if 𝑑 (𝑦, 𝑦′) ≥ 𝜖 whenever 𝑦, 𝑦′ ∈ 𝑌, 𝑦 ≠ 𝑦′. Note that
+𝑋 is precompact if and only if for every 𝜖 > 0, all 𝜖-separated subsets of 𝑋 are
+finite. A metric space is compact if and only if it is precompact and complete.
+Definition 1.2 (uniformly precompact family) A family (𝑋𝛼) 𝛼∈ 𝐴 of metric
+spaces is called uniformly precompact if for all 𝜖 > 0 there exists a number
+𝑛 = 𝑛(𝜖) ∈ N such that each 𝑋𝛼 can be covered by 𝑛 closed balls of radius 𝜖. The
+family (𝑋𝛼) 𝛼∈ 𝐴 is uniformly bounded if sup𝛼∈ 𝐴 diam(𝑋𝛼) < ∞.
+2
+
+[PDF physical page 3]
+Theorem 1.3 (Gromov embedding) Suppose that (𝑋𝛼) 𝛼∈ 𝐴 is a uniformly pre-
+compact and uniformly bounded family of metric spaces. Then there is a compact
+metric space 𝑍 such that each 𝑋𝛼 admits an isometric embedding into 𝑍.
+We follow essentially the original proof from [Gro1981].
+Proof: For 𝑖 ∈ N, let 𝜖𝑖 := 2−𝑖 and pick 𝑛𝑖 ∈ N such that each 𝑋𝛼 can be covered
+by 𝑛𝑖 closed balls of radius 𝜖𝑖. Choose a partition of N into sets 𝑁𝑖, 𝑖 ∈ N,
+with cardinality # 𝑁𝑖 = 𝑛1𝑛2 . . . 𝑛𝑖, and define a map 𝜋 : N \ 𝑁1 → N such that
+𝜋−1(𝑁𝑖) = 𝑁𝑖+1 and #(𝜋−1{𝑘 }) = 𝑛𝑖+1 for all 𝑖 ∈ N and 𝑘 ∈ 𝑁𝑖. Now we construct
+in each 𝑋𝛼 a sequence (𝑥 𝛼
+𝑘 )𝑘 ∈N according to the following inductive scheme. For
+𝑖 = 1, the points 𝑥 𝛼
+𝑘 with 𝑘 ∈ 𝑁𝑖 = 𝑁1 are chosen such that the 𝑛1 balls 𝐵(𝑥 𝛼
+𝑘 , 𝜖1)
+cover 𝑋𝛼. For 𝑖 ≥ 1, if the 𝑛1 . . . 𝑛𝑖 centers 𝑥 𝛼
+𝑘 with 𝑘 ∈ 𝑁𝑖 are selected, the
+𝑛1 . . . 𝑛𝑖𝑛𝑖+1 points 𝑥 𝛼
+𝑙 with 𝑙 ∈ 𝑁𝑖+1 are chosen such that for each 𝑘 ∈ 𝑁𝑖, the ball
+𝐵(𝑥 𝛼
+𝑘 , 𝜖𝑖) is covered by the 𝑛𝑖+1 balls
+𝐵(𝑥 𝛼
+𝑙 , 𝜖𝑖+1) ⊂ 𝐵(𝑥 𝛼
+𝑘 , 2𝜖𝑖)
+with 𝑙 ∈ 𝜋−1{𝑘 }. In this way we obtain for every 𝛼 ∈ 𝐴 a dense sequence (𝑥 𝛼
+𝑘 )𝑘 ∈N
+in 𝑋𝛼 which gives rise to an isometric embedding 𝑓𝛼 : 𝑋𝛼 → 𝑙∞, mapping 𝑥 to
+(𝑑 (𝑥, 𝑥 𝛼
+𝑘 )) 𝑘 ∈N. Whenever 𝑖 ∈ N, 𝑘 ∈ 𝑁𝑖, and 𝑙 ∈ 𝜋−1{𝑘 }, then
+|𝑑 (𝑥, 𝑥 𝛼
+𝑘 ) − 𝑑 (𝑥, 𝑥 𝛼
+𝑙 )| ≤ 𝑑 (𝑥 𝛼
+𝑘 , 𝑥 𝛼
+𝑙 ) ≤ 2𝜖𝑖.
+Hence, each 𝑓𝛼 (𝑋𝛼) lies in the set 𝑍 of all sequences (𝑢𝑘)𝑘 ∈N with 0 ≤ 𝑢𝑘 ≤
+sup𝛼 diam(𝑋𝛼) for all 𝑘 ∈ N and
+|𝑢𝑘 − 𝑢𝑙 | ≤ 2𝜖𝑖
+whenever 𝑖 ∈ N, 𝑘 ∈ 𝑁𝑖, and 𝑙 ∈ 𝜋−1{𝑘 }. Since the sequence (𝜖𝑖)𝑖 ∈N is summable,
+it follows that 𝑍 is a compact subset of 𝑙∞. □
+2 Compactness theorems for metric spaces
+For subsets 𝐴, 𝐵 of a metric space 𝑋 we denote by
+𝑁 𝛿 ( 𝐴) = {𝑥 ∈ 𝑋 : 𝑑 (𝑥, 𝐴 ) ≤ 𝛿}
+the closed 𝛿-neighborhood of 𝐴 and by
+𝑑H( 𝐴, 𝐵) = inf{𝛿 ≥ 0 : 𝐴 ⊂ 𝑁 𝛿 (𝐵), 𝐵 ⊂ 𝑁 𝛿 ( 𝐴)}
+the Hausdorff distance of 𝐴 and 𝐵; 𝑑H defines a metric on the set C of non-empty,
+closed and bounded subsets of 𝑋.
+3
+
+[PDF physical page 4]
+Theorem 2.1 (Blaschke) Suppose that 𝑋 = (𝑋, 𝑑 ) is a metric space and C is the
+set of non-empty, closed and bounded subsets of 𝑋, endowed with the Hausdorff
+metric 𝑑H.
+(1) If 𝑋 is complete, then C is complete.
+(2) If 𝑋 is compact, then C is compact.
+This was first proved by Blaschke [Bla1916] for compact convex bodies in R3
+to settle the existence question in the isoperimetric problem.
+Proof: We start with (1). Let (𝐶𝑖)𝑖 ∈N be a Cauchy sequence in C. Then the set
+𝐶 := Ñ∞
+𝑖=1
+Ð
+𝑗 ≥𝑖𝐶 𝑗
+is closed and bounded. We show that
+lim
+𝑖→∞
+𝑑H(𝐶𝑖, 𝐶) = 0.
+Let 𝜖 > 0. Choose 𝑖0 such that 𝑑H(𝐶𝑖, 𝐶𝑗) < 𝜖 /2 whenever 𝑖, 𝑗 ≥ 𝑖0. Suppose
+𝑥 ∈ 𝐶. Since 𝐶 ⊂ Ð
+𝑗 ≥𝑖0 𝐶 𝑗, there exists an index 𝑗 ≥ 𝑖0 with 𝑑 (𝑥, 𝐶 𝑗) < 𝜖 /2.
+Hence 𝑑 (𝑥, 𝐶𝑖) ≤ 𝑑 (𝑥, 𝐶 𝑗) + 𝑑H(𝐶𝑖, 𝐶𝑗) < 𝜖 for all 𝑖 ≥ 𝑖0. This shows that
+𝐶 ⊂ 𝑁 𝜖 (𝐶𝑖) for 𝑖 ≥ 𝑖0.
+Now suppose 𝑥 ∈ 𝐶𝑖 for some 𝑖 ≥ 𝑖0. Pick a sequence 𝑖 = 𝑖1 < 𝑖 2 < . . . such
+that 𝑑H(𝐶𝑚, 𝐶𝑛) < 𝜖 /2𝑘 whenever 𝑚, 𝑛 ≥ 𝑖𝑘, 𝑘 ∈ N. Then choose a sequence
+(𝑥𝑘)𝑘 ∈N such that 𝑥1 = 𝑥, 𝑥𝑘 ∈ 𝐶𝑖𝑘 and 𝑑 (𝑥𝑘, 𝑥𝑘+1) < 𝜖 /2𝑘. As 𝑋 is complete, the
+Cauchy sequence (𝑥𝑘) converges to some point 𝑦. We have
+𝑑 (𝑥, 𝑦) = lim
+𝑘→∞
+𝑑 (𝑥, 𝑥 𝑘) ≤
+∞∑︁
+𝑘=1
+𝑑 (𝑥𝑘, 𝑥𝑘+1) < 𝜖,
+and 𝑦 belongs to the closure of 𝐶𝑖𝑘 ∪ 𝐶𝑖𝑘+1 ∪ . . . for all 𝑘. Thus 𝑦 ∈ 𝐶 and
+𝑑 (𝑥, 𝐶) < 𝜖 . This shows that 𝐶𝑖 ⊂ 𝑁 𝜖 (𝐶) whenever 𝑖 ≥ 𝑖0.
+For the proof of (2), we know that C is complete since 𝑋 is, so it suffices to
+show that C is precompact. Let 𝜖 > 0. Since 𝑋 is precompact, there exists a finite
+set 𝑍 ⊂ 𝑋 with 𝑁 𝜖 (𝑍) = 𝑋. We show that every 𝐶 ∈ C is at Hausdorff distance
+at most 𝜖 of some subset of 𝑍, namely 𝑍𝐶 := 𝑍 ∩ 𝑁 𝜖 (𝐶). For every 𝑥 ∈ 𝐶 there
+exists a point 𝑧 ∈ 𝑍 with 𝑑 (𝑥, 𝑧) ≤ 𝜖, so 𝑧 ∈ 𝑍𝐶. This shows that 𝐶 ⊂ 𝑁 𝜖 (𝑍𝐶).
+Since also 𝑍𝐶 ⊂ 𝑁 𝜖 (𝐶), we have 𝑑H(𝐶, 𝑍 𝐶) ≤ 𝜖. As there are only finitely many
+distinct subsets of 𝑍, we conclude that C is precompact. □
+Definition 2.2 (Gromov–Hausdorff distance) The Gromov–Hausdorff distance
+of two metric spaces 𝑋, 𝑌 is the infimum of all 𝑟 > 0 for which there exist a
+metric space (𝑍, 𝑑 𝑍 ) and subspaces 𝑋 ′ ⊂ 𝑍 and 𝑌 ′ ⊂ 𝑍 isometric to 𝑋 and 𝑌,
+respectively, such that 𝑑 𝑍
+H (𝑋 ′, 𝑌′) < 𝑟 .
+4
+
+[PDF physical page 5]
+Compare [Gro1981], [Gro1999]. Alternatively, call a metric ¯𝑑 on the disjoint
+union 𝑋 ⊔ 𝑌 admissible for the given metrics 𝑑 = 𝑑 𝑋 and 𝑑 = 𝑑𝑌 on 𝑋 and 𝑌 if
+¯𝑑|𝑋×𝑋 = 𝑑 𝑋 and ¯𝑑|𝑌 ×𝑌 = 𝑑𝑌 ; then
+𝑑GH(𝑋, 𝑌 ) = inf ¯𝑑H(𝑋, 𝑌 )
+where the infimum is taken over all admissible metrics ¯𝑑 on 𝑋 ⊔ 𝑌.
+For instance, suppose that diam(𝑋), diam(𝑌 ) ≤ 𝐷 < ∞. Setting ¯𝑑 (𝑥, 𝑦) = 𝐷/2
+for 𝑥 ∈ 𝑋 and 𝑦 ∈ 𝑌 we obtain an admissible metric on 𝑋 ⊔ 𝑌, in particular
+𝑑GH(𝑋, 𝑌 ) ≤ 𝐷/2.
+Proposition 2.3 (1) 𝑑GH satisfies the triangle inequality, i.e. 𝑑GH(𝑋, 𝑍 ) ≤
+𝑑GH(𝑋, 𝑌 ) + 𝑑GH(𝑌 , 𝑍) for all metric spaces 𝑋, 𝑌 , 𝑍.
+(2) 𝑑GH defines a metric on the set of isometry classes of compact metric spaces.
+See [BurBI2001, Proposition 7.3.16, Theorem 7.3.30]. Assertion (2) is no
+longer true if ’compact’ is replaced with ’complete and bounded’.
+Theorem 2.4 (Gromov compactness criterion) Suppose that (𝑋𝑖)𝑖 ∈N is a uni-
+formly precompact and uniformly bounded sequence of metric spaces. Then there
+exist a subsequence(𝑋𝑖 𝑗 ) 𝑗 ∈N and a compact metric space𝑍 such that(𝑋𝑖 𝑗 ) Gromov–
+Hausdorff converges to 𝑍, i.e. lim 𝑗→∞ 𝑑GH(𝑋𝑖 𝑗 , 𝑍 ) = 0.
+This was proved in [Gro1981].
+Proof: Combine Theorems 1.3 (Gromov embedding) and 2.1(2) (Blaschke). □
+3 Lipschitz maps
+Let 𝑋, 𝑌 be metric spaces, and let 𝜆 ∈ [ 0, ∞). A map 𝑓 : 𝑋 → 𝑌 is 𝜆-Lipschitz if
+𝑑 ( 𝑓 (𝑥), 𝑓 (𝑥′)) ≤ 𝜆 𝑑 (𝑥, 𝑥 ′)
+for all 𝑥, 𝑥 ′ ∈ 𝑋, and 𝑓 is Lipschitz if
+Lip( 𝑓 ) := inf{𝜆 ∈ [ 0, ∞) : 𝑓 is 𝜆-Lipschitz} < ∞
+(where inf ∅:= ∞). We say that 𝑓 : 𝑋 → 𝑌 is bi-Lipschitz if 𝑓 is 𝜆-bi-Lipschitz for
+some 𝜆 ∈ [ 1, ∞), that is,
+𝜆−1𝑑 (𝑥, 𝑥 ′) ≤ 𝑑 ( 𝑓 (𝑥), 𝑓 (𝑥′)) ≤ 𝜆 𝑑 (𝑥, 𝑥 ′)
+for all 𝑥, 𝑥 ′ ∈ 𝑋.
+The following basic extension result for Lipschitz maps holds, see [McS1934]
+and the footnote in [Whit1934].
+5
+
+[PDF physical page 6]
+Proposition 3.1 (McShane, Whitney) Suppose that 𝑋 is a metric space, and
+𝐴 ⊂ 𝑋.
+(1) Let 𝑛 ∈ N. Every 𝜆-Lipschitz map 𝑓 : 𝐴 → R𝑛 admits a √𝑛𝜆-Lipschitz
+extension ¯𝑓 : 𝑋 → R𝑛.
+(2) Let 𝑆 be any non-empty set. Every 𝜆-Lipschitz map 𝑓 : 𝐴 → 𝑙∞(𝑆) possesses
+a 𝜆-Lipschitz extension ¯𝑓 : 𝑋 → 𝑙∞(𝑆).
+Proof: To prove (1), consider first the case 𝑛 = 1. Put
+¯𝑓 (𝑥) := inf{ 𝑓 (𝑎) + 𝜆 𝑑 (𝑎, 𝑥) : 𝑎 ∈ 𝐴}
+for all 𝑥 ∈ 𝑋. Note that for 𝑏 ∈ 𝐴, since 𝑓 is 𝜆-Lipschitz,
+¯𝑓 (𝑥) ≥ inf{ 𝑓 (𝑏) − 𝜆 𝑑 (𝑎, 𝑏) + 𝜆 𝑑 (𝑎, 𝑥) : 𝑎 ∈ 𝐴} ≥ 𝑓 (𝑏) − 𝜆 𝑑 (𝑏, 𝑥),
+in particular ¯𝑓 (𝑥) > −∞ and ¯𝑓 (𝑏) ≥ 𝑓 (𝑏). As ¯𝑓 (𝑏) ≤ 𝑓 (𝑏) by definition,
+¯𝑓 : 𝑋 → R is an extension of 𝑓 . For 𝑥, 𝑥 ′ ∈ 𝑋,
+¯𝑓 (𝑥) ≤ inf{ 𝑓 (𝑎) + 𝜆 𝑑 (𝑎, 𝑥′) + 𝜆 𝑑 (𝑥, 𝑥 ′) : 𝑎 ∈ 𝐴} = ¯𝑓 (𝑥′) + 𝜆 𝑑 (𝑥, 𝑥 ′),
+so ¯𝑓 is 𝜆-Lipschitz. In the case that 𝑛 ≥ 2, note that each component of 𝑓 =
+( 𝑓1, . . . , 𝑓 𝑛) is 𝜆-Lipschitz and hence admits a 𝜆-Lipschitz extension ¯𝑓𝑖 : 𝑋 → R.
+The function ¯𝑓 = ( ¯𝑓1, . . . , ¯𝑓𝑛) with these components is then √𝑛𝜆-Lipschitz.
+The proof of (2) is similar. Given 𝑓 = ( 𝑓𝑠)𝑠∈𝑆, each component 𝑓𝑠 has a
+𝜆-Lipschitz extension ¯𝑓𝑠 : 𝑋 → R, and then ¯𝑓 = ( ¯𝑓𝑠)𝑠∈𝑆 is 𝜆-Lipschitz as well. □
+In (1), the factor √𝑛 cannot be replaced with a constant < 𝑛 1/4, com-
+pare [JohLS1986] and [Lan1999]. In particular, Lipschitz maps into a Hilbert
+space 𝑌 cannot be extended in general. However, if 𝑋 is itself a Hilbert space, one
+has again an optimal result:
+Theorem 3.2 (Kirszbraun, Valentine) If 𝑋, 𝑌 are Hilbert spaces, 𝐴 ⊂ 𝑋, and
+𝑓 : 𝐴 → 𝑌 is 𝜆-Lipschitz, then 𝑓 has a 𝜆-Lipschitz extension ¯𝑓 : 𝑋 → 𝑌.
+See [Kirs1934], [Val1945], or [Fed1969, Theorem 2.10.43]. The following
+argument is essentially due to Mickle (1949). A generalization to metric spaces
+with curvature bounds was given in [LanS1997].
+Proof (sketch): It suffices to prove the result for 𝜆 = 1.
+Step I. First one shows that if 𝐴 ⊂ 𝑋 is finite and 𝑥 ∈ 𝑋 \ 𝐴, and 𝑓 : 𝐴 → 𝑌 is
+1-Lipschitz, then there is a 1-Lipschitz extension 𝑓𝑥 : 𝐴 ∪ {𝑥} → 𝑌 of 𝑓 .
+Suppose that 𝐴 = {𝑥1, . . . , 𝑥𝑛}, and put 𝑟𝑖 := ∥𝑥𝑖 − 𝑥∥ and 𝑦𝑖 := 𝑓 (𝑥𝑖). The
+goal is to show that Ñ𝑛
+𝑖=1 𝐵(𝑦𝑖, 𝑟𝑖) ≠ ∅. Clearly 𝐶𝑡 := Ñ𝑛
+𝑖=1 𝐵(𝑦𝑖, 𝑡𝑟𝑖) ≠ ∅for 𝑡 > 0
+sufficiently large. Put 𝑠 := inf{𝑡 > 0 : 𝐶𝑡 ≠ ∅}. Use the strict convexity of balls in
+6
+
+[PDF physical page 7]
+𝑌 and completeness to prove that diam(𝐶𝑡 ) → 0 as 𝑡 → 𝑠+ and that 𝐶𝑠 consists of
+a single point, 𝐶𝑠 = {𝑦}. It then remains to show that 𝑠 ≤ 1.
+Put 𝑢𝑖 := 𝑥𝑖 − 𝑥 and 𝑣 𝑖 := 𝑦𝑖 − 𝑦, and note that ∥𝑢𝑖 ∥ = 𝑟𝑖 and ∥𝑣 𝑖 ∥ ≤ 𝑠𝑟𝑖.
+Let 𝐼 := {𝑖 : ∥𝑣 𝑖 ∥ = 𝑠𝑟𝑖 }. It follows from the choice of 𝑠 that 𝑦 is in the convex
+hull of {𝑦𝑖 : 𝑖 ∈ 𝐼}, so 0 can be written as a convex combination Í
+𝑖 ∈ 𝐼 𝜆𝑖𝑣 𝑖. Since
+∥𝑣 𝑖 − 𝑣 𝑗 ∥2 = ∥𝑦𝑖 − 𝑦 𝑗 ∥2 ≤ ∥ 𝑥𝑖 − 𝑥 𝑗 ∥2 = ∥𝑢𝑖 − 𝑢 𝑗 ∥2, we have
+𝑠2𝑟2
+𝑖 − 2⟨𝑣 𝑖, 𝑣 𝑗⟩ + 𝑠2𝑟2
+𝑗 ≤ 𝑟2
+𝑖 − 2⟨𝑢𝑖, 𝑢 𝑗⟩ + 𝑟2
+𝑗
+for all 𝑖, 𝑗 ∈ 𝐼. Now multiply this inequality by 𝜆𝑖𝜆 𝑗 and sum over 𝑖, 𝑗 ∈ 𝐼. SinceÍ
+𝑖, 𝑗 𝜆𝑖𝜆 𝑗 ⟨𝑣 𝑖, 𝑣 𝑗⟩ =
+Í
+𝑖 𝜆𝑖𝑣 𝑖
+2 = 0 and Í
+𝑖, 𝑗 𝜆𝑖𝜆 𝑗 ⟨𝑢𝑖, 𝑢 𝑗⟩ =
+Í
+𝑖𝜆𝑖𝑢𝑖
+2 ≥ 0, this
+gives
+𝑠2
+∑︁
+𝑖, 𝑗 ∈ 𝐼
+𝜆𝑖𝜆 𝑗 (𝑟2
+𝑖 + 𝑟2
+𝑗 ) ≤
+∑︁
+𝑖, 𝑗 ∈ 𝐼
+𝜆𝑖𝜆 𝑗 (𝑟2
+𝑖 + 𝑟2
+𝑗 ),
+showing that 𝑠 ≤ 1.
+Step II. If B is a family of closed balls in 𝑌 such that every finite subfamily
+has non-empty intersection, then also Ñ B ≠ ∅. From this (well-known) property
+of Hilbert spaces and the result of Step I one concludes that if 𝐴 ⊂ 𝑋 is arbitrary
+and 𝑥 ∈ 𝑋 \ 𝐴, then every 1-Lipschitz map 𝑓 : 𝐴 → 𝑌 has a 1-Lipschitz extension
+𝑓𝑥 : 𝐴 ∪ {𝑥} → 𝑌.
+Step III. The theorem now follows from the result of Step II by a standard
+application of Zorn’s Lemma. □
+The next result characterizes the extendability of partially defined Lipschitz
+maps from R𝑚 into a complete metric space 𝑌; it is useful in connection with the
+definition of rectifiable sets (Definition 10.1). We call a metric space 𝑌 Lipschitz
+𝑚-connected if there is a constant 𝑐 ≥ 1 such that for 𝑘 ∈ { 0, . . . , 𝑚}, every 𝜆-
+Lipschitz map 𝑓 : 𝑆𝑘 → 𝑌 admits a 𝑐𝜆-Lipschitz extension ¯𝑓 : 𝐵𝑘+1 → 𝑌; here 𝑆𝑘
+and 𝐵𝑘+1 denote the unit sphere and closed ball inR𝑘+1, endowed with the induced
+metric. Every Banach space is Lipschitz 𝑚-connected for all 𝑚 ≥ 0. The sphere
+𝑆𝑛 is Lipschitz (𝑛 − 1)-connected.
+Theorem 3.3 (Lipschitz maps on R𝑚) Let 𝑌 be a complete metric space, and let
+𝑚 ∈ N. Then the following statements are equivalent:
+(1) 𝑌 is Lipschitz (𝑚 − 1)-connected.
+(2) There is a constant 𝑐 such that every 𝜆-Lipschitz map 𝑓 : 𝐴 → 𝑌, 𝐴 ⊂ R𝑚,
+has a 𝑐𝜆-Lipschitz extension ¯𝑓 : R𝑚 → 𝑌.
+The idea of the proof goes back to Whitney [Whit1934]. Compare [Alm1962,
+Theorem (1.2)] and [JohLS1986].
+Proof: It is clear that (2) implies (1). Now suppose that (1) holds, and let𝑓 : 𝐴 → 𝑌
+be a 𝜆-Lipschitz map, 𝐴 ⊂ R𝑚. As 𝑌 is complete, 𝑓 extends canonically to the
+7
+
+[PDF physical page 8]
+closure of 𝐴, with the same Lipschitz constant. Hence, assume 𝐴 to be closed. A
+dyadic cube in R𝑚 is a set of the form𝑥 + [0, 2𝑘] 𝑚 for some 𝑘 ∈ Z and 𝑥 ∈ ( 2𝑘Z)𝑚.
+Denote by C the family of all dyadic cubes 𝐶 ⊂ R𝑚 \ 𝐴 that are maximal (with
+respect to inclusion) subject to the condition
+diam(𝐶) ≤ 2 𝑑 ( 𝐴, 𝐶).
+The cubes in C have pairwise disjoint interiors and cover R𝑚 \ 𝐴. Moreover, they
+satisfy
+𝑑 ( 𝐴, 𝐶) < 2 diam(𝐶),
+for if 𝐶′ is the next bigger dyadic cube containing𝐶, then 2 𝑑 ( 𝐴, 𝐶′) < diam(𝐶′) =
+2 diam(𝐶) and 𝑑 ( 𝐴, 𝐶) ≤ 𝑑 ( 𝐴, 𝐶′) + diam(𝐶).
+Let Σ𝑘 ⊂ R𝑚 denote the 𝑘-skeleton of this cubical decomposition. Choose
+𝜋 : 𝐴 ∪ Σ0 → 𝐴 such that 𝑑 (𝑥, 𝜋 (𝑥)) = 𝑑 (𝑥, 𝐴 ) for all 𝑥 ∈ 𝐴 ∪ Σ0. If 𝑥 ∈ Σ0 and
+𝑎 ∈ 𝐴, then
+𝑑 (𝜋(𝑥), 𝜋(𝑎)) = 𝑑 (𝜋(𝑥), 𝑎) ≤ 𝑑 (𝑥, 𝜋 (𝑥)) + 𝑑 (𝑥, 𝑎) ≤ 2 𝑑 (𝑥, 𝑎).
+If 𝑥, 𝑥 ′ ∈ Σ0 are distinct, and 𝐶𝑥 ∈ C is a smallest cube containing 𝑥, then
+𝑑 (𝜋(𝑥), 𝑥) ≤ 𝑑 ( 𝐴, 𝐶𝑥) + diam(𝐶𝑥) ≤ 3 diam(𝐶𝑥) ≤ 3√𝑚 𝑑 (𝑥, 𝑥 ′),
+and likewise 𝑑 (𝜋(𝑥′), 𝑥′) ≤ 3√𝑚 𝑑 (𝑥, 𝑥 ′); thus
+𝑑 (𝜋(𝑥), 𝜋(𝑥′)) ≤ 𝑑 (𝜋(𝑥), 𝑥) + 𝑑 (𝑥, 𝑥 ′) + 𝑑 (𝑥′, 𝜋(𝑥′)) ≤ 𝑐0 𝑑 (𝑥, 𝑥 ′)
+for 𝑐0 := 6√𝑚 + 1. This shows that 𝜋 is 𝑐0-Lipschitz.
+Extend 𝑓 to a 𝑐0𝜆-Lipschitz map 𝑓0 : 𝐴 ∪ Σ0 → 𝑌 by putting 𝑓0 := 𝑓 ◦ 𝜋.
+Since 𝑌 is Lipschitz 0-connected, 𝑓0 can be extended to a map 𝑓1 : 𝐴 ∪ Σ1 → 𝑌
+whose restriction to any edge of a cube in C is 𝑐1𝜆-Lipschitz for some constant
+𝑐1. It then follows easily that the restriction of 𝑓1 to the (relative) boundary of
+any 2-dimensional face of a cube in C is 2 𝑐1𝜆-Lipschitz. Since 𝑌 is Lipschitz
+1-connected, 𝑓1 admits an extension 𝑓2 : 𝐴 ∪ Σ2 → 𝑌 whose restriction to any
+2-face of a cube in C is 𝑐2𝜆-Lipschitz for some constant 𝑐2. It follows that the
+restriction of 𝑓2 to the boundary of any 3-face of a cube inC is 2𝑐2𝜆-Lipschitz. By
+successively constructing extensions to 𝐴 ∪ Σ3, . . . , 𝐴 ∪ Σ𝑚 = R𝑚, using that 𝑌 is
+Lipschitz (𝑚 − 1)-connected, one arrives at an extension ¯𝑓 := 𝑓𝑚 : R𝑚 → 𝑌 of 𝑓0
+whose restriction to any cube 𝐶 ∈ C is 𝑐𝑚𝜆-Lipschitz for some constant 𝑐𝑚 ≥ 1.
+Since 𝑓0 is continuous, and ¯𝑓 | 𝐴 = 𝑓 is 𝜆-Lipschitz, it follows easily that ¯𝑓 is in fact
+𝑐𝑚𝜆-Lipschitz on R𝑚. □
+A metric space 𝑌 is an absolute ( 𝐶-)Lipschitz retract if for any isometric
+embedding 𝑖 : 𝑌 → 𝑍 into another metric space𝑍 there is a (𝐶-)Lipschitz retraction
+of 𝑍 onto 𝑖(𝑌 ).
+8
+
+[PDF physical page 9]
+Proposition 3.4 For a metric space 𝑌, the following are equivalent:
+(1) For every metric space 𝑋 and every Lipschitz map 𝑓 : 𝐴 → 𝑌, 𝐴 ⊂ 𝑌, there is
+a Lipschitz extension ¯𝑓 : 𝑋 → 𝑌.
+(2) There exists a constant 𝐶 ≥ 1 such that for every metric space 𝑋 and every
+Lipschitz map 𝑓 : 𝐴 → 𝑌, 𝐴 ⊂ 𝑌, there is a Lipschitz extension ¯𝑓 : 𝑋 → 𝑌
+with Lip( ¯𝑓 ) ≤ 𝐶 Lip( 𝑓 ).
+(3) 𝑌 is an absolute Lipschitz retract.
+(4) 𝑌 is an absolute 𝐶-Lipschitz retract for some 𝐶 ≥ 1.
+Proof: To be completed. □
+Proposition 3.5 Let 𝑋 be a metric space. Every uniformly continuous and bounded
+function 𝑓 : 𝑋 → R is a uniform limit of a sequence of Lipschitz functions.
+This is taken from [Hei2001, Theorem 6.8].
+Proof: Let 𝜔(𝛿) := sup{| 𝑓 (𝑥) − 𝑓 (𝑦)| : 𝑑 (𝑥, 𝑦) ≤ 𝛿}, 𝛿 ≥ 0, be the modulus of
+continuity of 𝑓 . For 𝑘 ∈ N, define 𝑓𝑘 : 𝑋 → R by
+𝑓𝑘 (𝑥) := inf{ 𝑓 (𝑦) + 𝑘 𝑑 (𝑥, 𝑦) : 𝑦 ∈ 𝑋 }.
+Then 𝑓 (𝑥) ≥ 𝑓𝑘 (𝑥) ≥ inf 𝑓 > −∞, and 𝑓𝑘 is 𝑘-Lipschitz (compare the proof of
+Proposition 3.1). If 𝑑 (𝑥, 𝑦) > 𝛿 𝑘 := 2 sup | 𝑓 |/𝑘, then
+𝑓 (𝑦) + 𝑘 𝑑 (𝑥, 𝑦) > 𝑓 (𝑦) + 2 sup | 𝑓 | ≥ 𝑓 (𝑥) ≥ 𝑓𝑘 (𝑥),
+so in the definition of 𝑓𝑘 (𝑥) it suffices to take the infimum over the closed ball
+𝐵(𝑥, 𝛿 𝑘). In particular 𝑓𝑘 (𝑥) ≥ inf{ 𝑓 (𝑦) : 𝑦 ∈ 𝐵(𝑥, 𝛿 𝑘)} and hence
+0 ≤ 𝑓 (𝑥) − 𝑓𝑘 (𝑥) ≤ sup{ 𝑓 (𝑥) − 𝑓 (𝑦) : 𝑦 ∈ 𝐵(𝑥, 𝛿 𝑘)} ≤ 𝜔(𝛿𝑘)
+for all 𝑥 ∈ 𝑋. We conclude that 𝑓𝑘 → 𝑓 (𝑘 → ∞) uniformly on 𝑋. □
+4 Differentiability of Lipschitz maps
+Recall the following definitions.
+Definition 4.1 (Gˆateaux and Fr´echet differential) Suppose that 𝑋, 𝑌 are Banach
+spaces, 𝑓 maps an open set 𝑈 ⊂ 𝑋 into 𝑌, and 𝑥 ∈ 𝑈.
+(1) The map 𝑓 is Gˆateaux differentiable at 𝑥 if the directional derivative
+𝐷 𝑣 𝑓 (𝑥) = lim
+𝑡→0
+𝑓 (𝑥 + 𝑡𝑣 ) − 𝑓 (𝑥)
+𝑡
+exists for every 𝑣 ∈ 𝑋 and if there is a continuous linear map 𝐿 : 𝑋 → 𝑌 such
+that
+𝐿(𝑣) = 𝐷 𝑣 𝑓 (𝑥)
+for all 𝑣 ∈ 𝑋. Then 𝐿 is the Gˆateaux differential of 𝑓 at 𝑥.
+9
+
+[PDF physical page 10]
+(2) The map 𝑓 is (Fr´echet) differentiable at 𝑥 if there is a continuous linear map
+𝐿 : 𝑋 → 𝑌 such that
+lim
+𝑣 →0
+𝑓 (𝑥 + 𝑣) − 𝑓 (𝑥) − 𝐿(𝑣)
+∥𝑣 ∥ = 0.
+Then 𝐿 =: 𝑑𝑓 𝑥 is the (Fr´echet) differential of 𝑓 at 𝑥.
+The map 𝑓 is Fr´echet differentiable at𝑥 if and only if 𝑓 is Gˆateaux differentiable
+at 𝑥 and the limit 𝐿 (𝑢) = 𝐷𝑢 𝑓 (𝑥) exists uniformly for 𝑢 in the unit sphere of 𝑋,
+i.e., for all 𝜖 > 0 there is a 𝛿 > 0 such that
+∥ 𝑓 (𝑥 + 𝑡𝑢) − 𝑓 (𝑥) − 𝑡 𝐿(𝑢) ∥ ≤ 𝜖 |𝑡|
+whenever |𝑡| ≤ 𝛿 and 𝑢 ∈ 𝑆(0, 1) ⊂ 𝑋.
+Lemma 4.2 (differentiable Lipschitz maps) Suppose that 𝑌 is a Banach space,
+𝑓 : R𝑚 → 𝑌 is Lipschitz, 𝑥 ∈ R𝑚, 𝐷 is a dense subset of 𝑆𝑚−1, 𝐷𝑢 𝑓 (𝑥) exists for
+every 𝑢 ∈ 𝐷, 𝐿 : R𝑚 → 𝑌 is linear, and 𝐿 (𝑢) = 𝐷𝑢 𝑓 (𝑥) for all 𝑢 ∈ 𝐷. Then 𝑓 is
+Fr´echet differentiable at 𝑥 with differential 𝑑𝑓 𝑥 = 𝐿.
+In particular, if aLipschitz map 𝑓 : R𝑚 → 𝑌 is Gˆateaux differentiable at𝑥, then
+𝑓 is Fr´echet differentiable at 𝑥.
+Proof: Let 𝜖 > 0. Choose a finite set 𝐷′ ⊂ 𝐷 such that for every𝑢 ∈ 𝑆𝑚−1 there is
+a 𝑢′ ∈ 𝐷′ with ∥𝑢 − 𝑢′ ∥ ≤ 𝜖. Then there is a 𝛿 > 0 such that
+∥ 𝑓 (𝑥 + 𝑡𝑢 ′) − 𝑓 (𝑥) − 𝑡 𝐿(𝑢′) ∥ ≤ 𝜖 |𝑡|
+whenever |𝑡| ≤ 𝛿 and 𝑢′ ∈ 𝐷′. Given 𝑢 ∈ 𝑆𝑚−1, pick 𝑢′ ∈ 𝐷′ with ∥𝑢 − 𝑢′ ∥ ≤ 𝜖;
+then
+∥ 𝑓 (𝑥 + 𝑡𝑢) − 𝑓 (𝑥) − 𝑡 𝐿(𝑢) ∥
+≤ 𝜖 |𝑡| + ∥ 𝑓 (𝑥 + 𝑡𝑢) − 𝑓 (𝑥 + 𝑡𝑢 ′) ∥ + |𝑡|∥ 𝐿(𝑢 − 𝑢′) ∥
+≤ ( 1 + Lip( 𝑓 ) + ∥ 𝐿∥) 𝜖 |𝑡|
+for |𝑡| ≤ 𝛿. By the remark preceding the lemma, this gives the result. □
+Theorem 4.3 (Rademacher) Every Lipschitz map 𝑓 : R𝑚 → R𝑛 is differentiable
+at L𝑚-almost all points in R𝑚.
+This was originally proved in [Rad1919].
+Proof: It suffices to prove the theorem for 𝑛 = 1; in the general case, 𝑓 =
+( 𝑓1, . . . , 𝑓 𝑛) is differentiable at 𝑥 if and only if each 𝑓𝑖 is differentiable at 𝑥.
+In the case 𝑚 = 1 the function 𝑓 : R → R is absolutely continuous and hence
+L1-almost everywhere differentiable.
+10
+
+[PDF physical page 11]
+Now let 𝑚 ≥ 2. Fix 𝑢 ∈ 𝑆𝑚−1 for the moment, and let 𝐵𝑢 denote the Borel set
+of all 𝑥 ∈ R𝑚 where 𝐷𝑢 𝑓 (𝑥) exists. Let 𝐻𝑢 be the linear hyperplane orthogonal to
+𝑢. For 𝑥0 ∈ 𝐻𝑢, the function 𝑡 ↦→ 𝑓 (𝑥0 + 𝑡𝑢) is L1-almost everywhere differentiable
+by the result for 𝑚 = 1, hence
+L1(( 𝑥0 + R𝑢) \ 𝐵𝑢) = 0.
+The characteristic function of R𝑚 \ 𝐵𝑢 is L𝑚-measurable, and an application of
+Fubini’s Theorem shows thatL𝑚(R𝑚 \ 𝐵𝑢) = 0.
+Now choose a dense countable subset 𝐷 of 𝑆𝑚−1 containing the canonical
+basis vectors 𝑒1, . . . , 𝑒𝑚, and put 𝐵 := Ñ
+𝑢∈𝐷 𝐵𝑢. Then L𝑚(R𝑚 \ 𝐵) = 0, and
+for every 𝑥 ∈ 𝐵, 𝐷𝑢 𝑓 (𝑥) exists for all 𝑢 ∈ 𝐷; in particular, the formal gradient
+∇ 𝑓 (𝑥) := (𝐷𝑒1 𝑓 (𝑥), . . . , 𝐷𝑒𝑚 𝑓 (𝑥)) exists. It now suffices to show that for L𝑚-
+almost all 𝑥 ∈ 𝐵, the usual relation
+𝐷𝑢 𝑓 (𝑥) = ⟨∇ 𝑓 (𝑥), 𝑢⟩
+holds for all 𝑢 ∈ 𝐷. Since the right side is linear in 𝑢, the theorem then follows
+from Lemma 4.2.
+Let 𝜙 ∈ 𝐶∞
+𝑐 (R𝑚). By Lebesgue’s bounded convergence theorem,
+lim
+𝑡→0
+∫ 𝑓 (𝑥 + 𝑡𝑢) − 𝑓 (𝑥)
+𝑡 𝜙(𝑥) 𝑑𝑥 =
+∫
+𝐷𝑢 𝑓 (𝑥)𝜙(𝑥) 𝑑𝑥,
+lim
+𝑡→0
+∫
+𝑓 (𝑥) 𝜙(𝑥 − 𝑡𝑢) − 𝜙(𝑥)
+𝑡 𝑑𝑥 = −
+∫
+𝑓 (𝑥)𝐷𝑢𝜙(𝑥) 𝑑𝑥.
+Substituting 𝑥 − 𝑡𝑢 for 𝑥 in the term 𝑓 (𝑥 + 𝑡𝑢)𝜙(𝑥) we see that the two left sides
+coincide. Hence,
+∫
+𝐷𝑢 𝑓 (𝑥)𝜙(𝑥) 𝑑𝑥 = −
+∫
+𝑓 (𝑥)𝐷𝑢𝜙(𝑥) 𝑑𝑥.
+This holds in particular for 𝑒1, . . . , 𝑒𝑚, and by taking linear combinations of these
+identities we get
+∫
+⟨∇ 𝑓 (𝑥), 𝑢⟩𝜙(𝑥) 𝑑𝑥 = −
+∫
+𝑓 (𝑥)⟨∇ 𝜙(𝑥), 𝑢⟩ 𝑑𝑥.
+Now the right sides of the last two identities coincide. As𝜙 ∈ 𝐶∞
+𝑐 (R𝑚) is arbitrary,
+it follows that 𝐷𝑢 𝑓 (𝑥) = ⟨∇ 𝑓 (𝑥), 𝑢⟩ for L𝑚-almost every 𝑥 ∈ 𝐵, as desired. □
+Theorem 4.4 (Stepanov) Every map 𝑓 : R𝑚 → R𝑛 is differentiable atL𝑚-almost
+all points in the set
+𝐿( 𝑓 ) :=
+
+𝑥 : lim sup𝑦→𝑥 ∥ 𝑓 (𝑦) − 𝑓 (𝑥) ∥/∥𝑦 − 𝑥∥ < ∞
+
+.
+This generalization of Rademacher’s Theorem was proved in [Step1923]. The
+following elegant argument is due to Mal´ y [Mal1999].
+11
+
+[PDF physical page 12]
+Proof: It suffices to consider the case 𝑛 = 1. Let (𝑈𝑘)𝑘 ∈N be the family of all open
+balls in R𝑚 with center inQ𝑚 and positive rational radius such that𝑓 |𝑈𝑘 is bounded.
+This family covers 𝐿( 𝑓 ). Let 𝑎𝑘 : 𝑈𝑘 → R be the supremum of all 𝑘-Lipschitz
+functions ≤ 𝑓 |𝑈𝑘, and let 𝑏𝑘 : 𝑈𝑖 → R be the infimum of all 𝑘-Lipschitz functions
+≥ 𝑓 |𝑈𝑘. Note that 𝑎𝑘, 𝑏𝑘 are 𝑘-Lipschitz and 𝑎𝑘 ≤ 𝑓 |𝑈𝑘 ≤ 𝑏𝑘. Let
+𝐵𝑘 := {𝑥 ∈ 𝑈𝑘 : both 𝑎𝑘 and 𝑏𝑘 are differentiable at 𝑥}.
+By Rademacher’s Theorem,𝑍 := Ð∞
+𝑖=1 𝑈𝑘 \ 𝐵𝑘 has measure zero. Let 𝑥 ∈ 𝐿( 𝑓 ) \𝑍.
+We show that there exists an index 𝑘 such that 𝑥 ∈ 𝐵𝑘 and 𝑎𝑘 (𝑥) = 𝑏𝑘 (𝑥);
+then 𝑓 is differentiable at 𝑥. Since 𝑥 ∈ 𝐿 ( 𝑓 ), there is a radius 𝑟 > 0 such that
+∥ 𝑓 (𝑦) − 𝑓 (𝑥) ∥ ≤ 𝜆∥𝑦 − 𝑥∥ for all 𝑦 ∈ 𝐵(𝑥, 𝑟) and for some 𝜆 ≥ 0 independent of
+𝑦. Choose 𝑘 such that 𝑘 ≥ 𝜆 and 𝑥 ∈ 𝑈𝑘 ⊂ 𝐵(𝑥, 𝑟). Since 𝑥 ∉ 𝑍, 𝑥 ∈ 𝐵𝑘. By the
+definition of 𝑎𝑘 and 𝑏𝑘, because 𝑘 ≥ 𝜆,
+𝑓 (𝑥) − 𝑘 ∥𝑦 − 𝑥∥ ≤ 𝑎𝑘 (𝑦) ≤ 𝑓 (𝑦) ≤ 𝑏𝑘 (𝑦) ≤ 𝑓 (𝑥) + 𝑘 ∥𝑦 − 𝑥∥
+for all 𝑦 ∈ 𝑈𝑘. For 𝑦 = 𝑥 this gives 𝑎𝑘 (𝑥) = 𝑏𝑘 (𝑥), as desired. □
+The following simple example shows that Theorem 4.3 is not valid in general
+for Banach space valued maps (cf. [Fed1969, 2.9.23]).
+Example 4.5 Consider the map 𝑓 : [0, 1] → 𝐿1( [0, 1]) that sends 𝑠 to the charac-
+teristic function 𝜒[0,𝑠 ] of [0, 𝑠]. For 0 ≤ 𝑠 ≤ 𝑠 + ℎ ≤ 1 we have
+∥ 𝑓 (𝑠 + ℎ) − 𝑓 (𝑠) ∥1 =
+∫ 1
+0
+| 𝜒[0,𝑠+ℎ] − 𝜒[0,𝑠 ] | 𝑑L1 =
+∫ 1
+0
+𝜒(𝑠,𝑠 +ℎ] 𝑑L1 = ℎ,
+so 𝑓 is an isometric embedding, in particular 𝑓 is 1-Lipschitz. However, the
+difference quotients 1
+ℎ ( 𝑓 (𝑠 + ℎ) − 𝑓 (𝑠)) = 1
+ℎ 𝜒(𝑠,𝑠 +ℎ] have integral 1, and they form
+no Cauchy family for ℎ → 0. Hence, 𝑓 is nowhere differentiable.
+For a Banach space 𝑌, the property that every absolutely continuous function
+𝑓 : [0, 1] → 𝑌 is differentiable almost everywhere holds if and only if 𝑌 has
+the so-called Radon–Nikodym property (RNP), and then also every Lipschitz map
+𝑓 : R𝑚 → 𝑌 is (Fr ´echet) differentiable almost everywhere. The definition of
+the RNP postulates the existence of a Radon–Nikodym derivative in 𝐿1(𝜇, 𝑌) (a
+Bochner integrable function) for every 𝑌-valued measure 𝜈 : M → 𝑌 whose norm
+is absolutely continuous with respect to a probability measure space (𝑋, M, 𝜇). A
+geometric characterization is as follows: 𝑌 has the RNP if and only if every closed
+convex set𝐶 in the unit ball has slices of arbitrarily small diameter. Here, aslice is
+a set of the form 𝑆(𝐶, 𝜆, 𝛼) := {𝑦 ∈ 𝐶 : 𝜆(𝑦) ≥ sup𝑥 ∈𝐶 𝜆(𝑥) − 𝛼} for 𝜆 ∈ 𝑌 ∗ and
+𝛼 > 0. Every separable dual space and every reflexive Banach space has the RNP.
+For a detailed discussion, see [BenL2000].
+12
+
+[PDF physical page 13]
+5 Extension of smooth functions
+We state Whitney’s extension theorem for 𝐶1 functions and some applications,
+compare [Whit1934], [Fed1969, Sect. 3.1], and [Sim2014, Ch. 2].
+Theorem 5.1 (Whitney) Suppose 𝑓 : 𝐴 → R is a function on a closed set𝐴 ⊂ R𝑚,
+𝑔 : 𝐴 → R𝑚 is continuous, and for every compact set𝐾 ⊂ 𝐴 and every 𝜖 > 0 there
+is a 𝛿 > 0 such that
+| 𝑓 (𝑦) − 𝑓 (𝑥) − ⟨ 𝑔 (𝑥), 𝑦 − 𝑥⟩| ≤ 𝜖 ∥𝑦 − 𝑥∥
+whenever 𝑥, 𝑦 ∈ 𝐾 and ∥𝑦 − 𝑥∥ ≤ 𝛿. Then there exists a 𝐶1 function ¯𝑓 : R𝑚 → R
+with ¯𝑓 | 𝐴 = 𝑓 and ∇ ¯𝑓 | 𝐴 = 𝑔.
+It follows from the assumptions that𝑓 is locally Lipschitz, hence continuous: if
+𝑥, 𝑦 ∈ 𝐾 and ∥𝑦 − 𝑥∥ ≤ 𝛿, then | 𝑓 (𝑦) − 𝑓 (𝑥)| ≤ ( 𝜖 + sup𝑥 ∈𝐾 ∥𝑔 (𝑥) ∥) ∥ 𝑦 − 𝑥∥. Note
+also that if ˜𝑓 : R𝑚 → R is 𝐶1, then 𝑓 := ˜𝑓 | 𝐴 and 𝑔 := ∇ ˜𝑓 | 𝐴 satisfy the assumptions
+of the theorem. The proof of Theorem 5.1 uses a decomposition of R𝑚 \ 𝐴 as for
+Theorem 3.3 and a 𝐶1 partition of unity.
+A first application is the following strong approximation result.
+Theorem 5.2 (𝐶1 approximation of Lipschitz functions) If 𝑓 : R𝑚 → R is Lip-
+schitz and 𝜖 > 0, then there is a 𝐶1 function ¯𝑓 : R𝑚 → R such that
+L𝑚({𝑥 ∈ R𝑚 : 𝑓 (𝑥) ≠ ¯𝑓 (𝑥)}) < 𝜖 .
+Proof: Let 𝜖 > 0. By Rademacher’s Theorem, there is a Borel set 𝐵 ⊂ R𝑚
+with L𝑚(R𝑚 \ 𝐵) < 𝜖 /2 such that 𝑓 is differentiable at every point in 𝐵, and
+𝑔 := ∇ 𝑓 : 𝐵 → R𝑚 is a measurable function. For 𝑥 ∈ 𝐵 and 𝑘 ∈ N, let
+𝑟𝑘 (𝑥) := sup
+ | 𝑓 (𝑦) − 𝑓 (𝑥) − ⟨ 𝑔 (𝑥), 𝑦 − 𝑥⟩|
+∥𝑦 − 𝑥∥ : 𝑦 ∈ 𝐵, 0 < ∥𝑦 − 𝑥∥ ≤ 1
+𝑘
+
+;
+then 𝑟𝑘 → 0 pointwise on 𝐵 as 𝑘 → ∞ . Applying both Lusin’s Theorem and
+Egorov’s Theorem, we find a closed set 𝐶 ⊂ 𝐵 with L𝑚(𝐵 \ 𝐶) < 𝜖 /2 such that
+𝑔 |𝐶 is continuous and 𝑟𝑘 → 0 uniformly on compact subsets of 𝐶. Now extend
+𝑓 |𝐶 to R𝑚 by means of Theorem 5.1. □
+For an another application of Theorem 5.1, recall that by Sard’s Theorem, the set
+of critical values of a𝐶 𝑘 function 𝑓 : R𝑚 → R𝑛 with 0 ≤ 𝑚−𝑛 < 𝑘 has L𝑛-measure
+zero. In the case that 𝑚 = 2 and 𝑛 = 1, the assumption that 𝑓 be twice continuously
+differentiable seems too strong but is necessary. Indeed, using the 𝐶1 extension
+result, Whitney constructed an example of a 𝐶1 function 𝑓 : R2 → R and an
+injective non-rectifiable curve𝛾 : [0, 1] → R2 with ∇ 𝑓 (𝛾(𝑡)) = 0 for all 𝑡 ∈ [ 0, 1],
+such that 𝑓 ◦ 𝛾 : [0, 1] → [ 0, 1] is monotonic and surjective (see [Whit1935]).
+Thus, in this example, there is whole interval of critical values.
+13
+
+[PDF physical page 14]
+6 Metric differentiability
+Let 𝑌 = (𝑌 , 𝑑) be a metric space. Suppose 𝐼 ⊂ R is an interval (i.e. a connected
+set) and 𝛾 : 𝐼 → 𝑌 is a curve (i.e. a continuous map). Thelength of 𝛾 is the possibly
+infinite number
+𝐿(𝛾) := sup
+𝑁∑︁
+𝑖=1
+𝑑 (𝛾(𝑡𝑖−1), 𝛾(𝑡𝑖)),
+where the supremum is taken over all finite sequences𝑡0 ≤ 𝑡1 ≤ · · · ≤𝑡 𝑁 in 𝐼. The
+curve 𝛾 is called rectifiable if 𝐿 (𝛾) < ∞.
+Theorem 6.1 (metric derivative) Suppose that 𝑎 < 𝑏 , 𝑌 is a metric space, and
+𝛾 : [𝑎, 𝑏] → 𝑌 is Lipschitz. Then the limit
+| ¤𝛾|( 𝑡) := lim
+ℎ→0
+𝑑 (𝛾(𝑡 + ℎ), 𝛾(𝑡))
+|ℎ|
+exists for L1-almost every 𝑡 ∈ [ 𝑎, 𝑏], and
+𝐿 (𝛾) =
+∫ 𝑏
+𝑎
+| ¤𝛾|( 𝑡) 𝑑𝑡.
+The proof below follows [AmbT2004, Theorem 4.1.1] (see also [Kir1994,
+Proposition 1] and [BurBI2001, Theorem 2.7.6]).
+Proof: Choose a dense sequence (𝑦𝑘)𝑘 ∈N in 𝛾( [𝑎, 𝑏]) and define
+𝜌𝑘 : [𝑎, 𝑏] → R, 𝜌 𝑘 (𝑡) = 𝑑 (𝛾(𝑡), 𝑦 𝑘).
+By the triangle inequality,|𝜌𝑘 (𝑡 + ℎ) − 𝜌𝑘 (𝑡)| ≤ 𝑑 (𝛾(𝑡 + ℎ), 𝛾(𝑡)) whenever 𝑡, 𝑡 + ℎ ∈
+[𝑎, 𝑏], in particular Lip (𝜌𝑘) ≤ Lip(𝛾). Hence, for almost every 𝑡 ∈ [ 𝑎, 𝑏], the
+derivative ¤𝜌𝑘 (𝑡) exists for all 𝑘, and
+𝑀 (𝑡) := sup
+𝑘
+| ¤𝜌𝑘 (𝑡)| ≤ lim inf
+ℎ→0
+𝑑 (𝛾(𝑡 + ℎ), 𝛾(𝑡))
+|ℎ| .
+On the other hand, if (𝑦𝑘𝑛)𝑛∈N is a subsequence tending to 𝛾(𝑡), then
+𝑑 (𝛾(𝑡 + ℎ), 𝛾(𝑡)) = lim
+𝑛→∞
+|𝜌𝑘𝑛 (𝑡 + ℎ) − 𝜌𝑘𝑛 (𝑡)| ≤ sgn(ℎ)
+∫ 𝑡+ℎ
+𝑡
+𝑀 (𝑠) 𝑑𝑠
+and so
+lim sup
+ℎ→0
+𝑑 (𝛾(𝑡 + ℎ), 𝛾(𝑡))
+|ℎ| ≤ lim sup
+ℎ→0
+1
+ℎ
+∫ 𝑡+ℎ
+𝑡
+𝑀 (𝑠) 𝑑𝑠.
+It follows that for every Lebesgue point 𝑡 of the measurable function 𝑠 ↦→ 𝑀 (𝑠),
+the limit | ¤𝛾|( 𝑡) exists and equals 𝑀 (𝑡). This proves the first part of the theorem.
+14
+
+[PDF physical page 15]
+The above argument also shows that
+𝑑 (𝛾(𝑡 + ℎ), 𝛾(𝑡)) ≤
+∫ 𝑡+ℎ
+𝑡
+| ¤𝛾|( 𝑠) 𝑑𝑠
+whenever 𝑎 ≤ 𝑡 < 𝑡 + ℎ ≤ 𝑏, which implies that 𝐿 (𝛾) ≤
+∫ 𝑏
+𝑎 | ¤𝛾|( 𝑡) 𝑑𝑡. For the
+reverse inequality, fix𝜖 > 0, and choose 𝑁 ≥ 2 such that ℎ := (𝑏 − 𝑎)/𝑁 ≤ 𝜖. Put
+𝑡𝑖 := 𝑎 + 𝑖ℎ, for 𝑖 = 0, 1, . . . , 𝑁. Then
+1
+ℎ
+∫ 𝑏−ℎ
+𝑎
+𝑑 (𝛾(𝑡), 𝛾(𝑡 + ℎ)) 𝑑𝑡 = 1
+ℎ
+∫ ℎ
+0
+𝑁 −1∑︁
+𝑖=1
+𝑑 (𝛾(𝑠 + 𝑡𝑖−1), 𝛾(𝑠 + 𝑡𝑖)) 𝑑𝑠
+≤ 1
+ℎ
+∫ ℎ
+0
+𝐿(𝛾) 𝑑𝑠 = 𝐿(𝛾).
+Using Fatou’s lemma, we conclude that
+∫ 𝑏− 𝜖
+𝑎
+| ¤𝛾|( 𝑡) 𝑑𝑡 =
+∫ 𝑏− 𝜖
+𝑎
+lim
+𝑁 →∞
+𝑑 (𝛾(𝑡 + ℎ), 𝛾(𝑡))
+ℎ 𝑑𝑡
+≤ lim inf
+𝑁 →∞
+1
+ℎ
+∫ 𝑏− 𝜖
+𝑎
+𝑑 (𝛾(𝑡 + ℎ), 𝛾(𝑡)) 𝑑𝑡 ≤ 𝐿(𝛾).
+Letting 𝜖 → 0, we obtain
+∫ 𝑏
+𝑎 | ¤𝛾|( 𝑡) 𝑑𝑡 ≤ 𝐿(𝛾). □
+We now consider functions 𝑓 : R𝑚 → 𝑌 = (𝑌 , 𝑑) for 𝑚 ≥ 1. To motivate
+the following definition, we first remark that if 𝑌 is a Banach space and 𝑓 is
+differentiable at 𝑥, then it is also true that
+lim
+∥ 𝑣 ∥+∥ 𝑤 ∥→0
+𝑓 (𝑥 + 𝑣) − 𝑓 (𝑥 + 𝑤) − 𝑑𝑓 𝑥 (𝑣 − 𝑤)
+∥𝑣 ∥ + ∥ 𝑤 ∥ = 0.
+Indeed, given 𝜖 > 0, there is a 𝛿 > 0 such that ∥ 𝑓 (𝑥 + 𝑣) − 𝑓 (𝑥) − 𝑑𝑓 𝑥 (𝑣) ∥ ≤ 𝜖 ∥𝑣 ∥
+whenever ∥𝑣 ∥ ≤ 𝛿. Hence, if also ∥𝑤 ∥ ≤ 𝛿, then
+∥ 𝑓 (𝑥 + 𝑣) − 𝑓 (𝑥 + 𝑤) − 𝑑𝑓 𝑥 (𝑣 − 𝑤) ∥
+=
+ 𝑓 (𝑥 + 𝑣) − 𝑓 (𝑥) − 𝑑𝑓 𝑥 (𝑣) −  𝑓 (𝑥 + 𝑤) − 𝑓 (𝑥) − 𝑑𝑓 𝑥 (𝑤)
+≤ 𝜖 (∥ 𝑣 ∥ + ∥ 𝑤 ∥)
+by the triangle inequality.
+Definition 6.2 (metric differentiability) Suppose 𝑌 is a metric space, 𝑈 ⊂ R𝑚 is
+an open set, and 𝑥 ∈ 𝑈. A map 𝑓 : 𝑈 → 𝑌 is metrically differentiable at 𝑥 if there
+exists a seminorm 𝜎 on R𝑚 such that
+lim
+∥ 𝑣 ∥+∥ 𝑤 ∥→0
+𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑥 + 𝑤)) − 𝜎(𝑣 − 𝑤)
+∥𝑣 ∥ + ∥ 𝑤 ∥ = 0.
+Then we call 𝜎 the metric differential of 𝑓 at 𝑥 and denote it by md 𝑓𝑥.
+15
+
+[PDF physical page 16]
+It is clear that for every𝑥 there is at most one such seminorm. In particular, if𝑌 is
+a Banach space and𝑓 is differentiable at𝑥, then it follows from the preceding remark
+that 𝑓 is metrically differentiable at 𝑥 with metric differential md 𝑓𝑥 = ∥𝑑𝑓 𝑥 (·) ∥.
+Theorem 6.3 (metric differentiability of Lipschitz maps) Suppose that 𝑌 is a
+metric space, 𝑈 ⊂ R𝑚 is an open set, and 𝑓 : 𝑈 → 𝑌 is a Lipschitz map. Then 𝑓 is
+metrically differentiable at L𝑚-almost all points in 𝑈.
+See [Kir1994] and [KorS1993]. For the proof we use the following proposition
+(compare [Wen2008]).
+Proposition 6.4 Let 𝑓 : 𝑈 → 𝑌 be given as in Theorem 6.3, and let 𝐵 be the set of
+all 𝑥 ∈ 𝑈 with the property that the limit
+𝜎𝑥 (𝑣) := lim
+𝑡→0
+𝑑 ( 𝑓 (𝑥 + 𝑡𝑣 ), 𝑓 (𝑥))
+|𝑡|
+exists for all 𝑣 ∈ R𝑚. The following holds.
+(1) L𝑚(𝑈 \ 𝐵) = 0, and every 𝑥 ∈ 𝐵, the function 𝜎𝑥 : R𝑚 → R satisfies
+Lip(𝜎𝑥) ≤ Lip( 𝑓 ) and 𝜎𝑥 (𝑠𝑣 ) = |𝑠| 𝜎𝑥 (𝑣) for all 𝑣 ∈ R𝑚 and 𝑠 ∈ R.
+(2) There exist compact sets 𝐾1, 𝐾2, . . . ⊂ 𝐵 with L𝑚(𝐵 \ Ð∞
+𝑗=1 𝐾 𝑗) = 0 and the
+following property: for every 𝑗 and every 𝜖 > 0 there is a 𝛿 > 0 such that
+|𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑥 + 𝑤)) − 𝜎𝑥 (𝑣 − 𝑤)| ≤ 𝜖 ∥𝑣 − 𝑤 ∥
+whenever 𝑣, 𝑤 ∈ R𝑚, ∥𝑣 ∥, ∥𝑤 ∥ ≤ 𝛿, and 𝑥, 𝑥 + 𝑤 ∈ 𝐾 𝑗.
+Proof: To prove (1), we choose a countable dense set 𝐷 ⊂ 𝑆𝑚−1. For 𝑥 ∈ 𝑈,
+𝑡 ∈ R \ {0}, and 𝑣 ∈ R𝑚, put
+𝑞 𝑥,𝑡 (𝑣) := 𝑑 ( 𝑓 (𝑥 + 𝑡𝑣 ), 𝑓 (𝑥))
+|𝑡| .
+Using Theorem 6.1, we conclude similarly as in the first part of the proof of
+Theorem 4.3 (Rademacher) that the set 𝐵 of all 𝑥 ∈ 𝑈 with the property that the
+limit 𝜎𝑥 (𝑢) = lim𝑡→0 𝑞 𝑥,𝑡 (𝑢) exists for all𝑢 ∈ 𝐷 is a Borel set withL𝑚(𝑈 \ 𝐵) = 0.
+Let 𝑥 ∈ 𝐵. For fixed 𝑡, the function 𝑞 𝑥,𝑡 : R𝑚 → R is 𝜆-Lipschitz, 𝜆 := Lip( 𝑓 ). It
+follows that 𝜎𝑥 : 𝐷 → R is 𝜆-Lipschitz, and since 𝐷 is dense, 𝜎𝑥 extends uniquely
+to a 𝜆-Lipschitz function on 𝑆𝑚−1, which is then the uniform limit of 𝑞 𝑥,𝑡 |𝑆𝑚−1 for
+𝑡 → 0 (compare Lemma 4.2). The existence of the metric derivative 𝜎𝑥 (𝑢) also
+implies the existence of 𝜎𝑥 (𝑟𝑢 ) for all 𝑟 ∈ R, and it holds that 𝜎𝑥 (𝑠𝑣 ) = |𝑠| 𝜎𝑥 (𝑣)
+for all 𝑣 ∈ R𝑚 and 𝑠 ∈ R. Moreover, 𝜎𝑥 : R𝑚 → R is 𝜆-Lipschitz.
+For (2), consider the map 𝜎 : 𝐵 → 𝐶 (𝑆𝑚−1), 𝑥 ↦→ 𝜎𝑥 |𝑆𝑚−1, where 𝐶 (𝑆𝑚−1)
+denotes the space of continuous real-valued functions on 𝑆𝑚−1, endowed with the
+supremum norm ∥ · ∥ ∞. This space is separable, and 𝜎 is measurable. By Lusin’s
+16
+
+[PDF physical page 17]
+Theorem there exist closed sets 𝐶1, 𝐶2, . . . ⊂ 𝐵 such that L𝑚(𝐵 \ Ð∞
+𝑘=1 𝐶𝑘) = 0
+and 𝜎|𝐶𝑘 is continuous for each 𝑘. For 𝑦 ∈ 𝐵 and 𝑖 ∈ N, let
+𝑟𝑖 (𝑦) := sup
+0<𝑡 ≤1/𝑖
+sup
+∥𝑢∥=1
+𝑞 𝑦,𝑡 (𝑢) − 𝜎𝑦 (𝑢)
+ .
+From the proof of (1) we know that 𝑟𝑖 (𝑦) → 0 (𝑖 → ∞) for every 𝑦 ∈ 𝐵. Using
+Egorov’s Theorem we find compact sets𝐾1, 𝐾2, . . . ⊂ 𝐵 with L𝑚(𝐵 \Ð∞
+𝑗=1 𝐾 𝑗) = 0
+such that each 𝐾 𝑗 is contained in some 𝐶𝑘 (hence 𝜎|𝐾 𝑗 is uniformly continuous)
+and 𝑟𝑖 → 0 (𝑖 → ∞) uniformly on each 𝐾 𝑗. Now let 𝑗 ∈ N and 𝜖 > 0. Then there
+is an 𝑖 such that
+sup
+∥𝑢∥=1
+|𝜎𝑥 (𝑢) − 𝜎𝑦 (𝑢)| = ∥𝜎𝑥 − 𝜎𝑦 ∥∞ ≤ 𝜖
+2 , 𝑟 𝑖 (𝑦) ≤ 𝜖
+2
+whenever 𝑥, 𝑦 ∈ 𝐾 𝑗 and ∥𝑥 − 𝑦∥ ≤ 𝛿 := 1/(2𝑖). Given 𝑥 ∈ 𝐾 𝑗 and 𝑣, 𝑤 ∈ R𝑚 with
+∥𝑣 ∥, ∥𝑤 ∥ ≤ 𝛿, 𝑣 ≠ 𝑤, and 𝑦 := 𝑥 + 𝑤 ∈ 𝐾 𝑗, put 𝑡 := ∥𝑣 − 𝑤 ∥ and 𝑢 := (1/𝑡) (𝑣 − 𝑤).
+Then it follows that 0 < 𝑡 ≤ ∥ 𝑣 ∥ + ∥ 𝑤 ∥ ≤ 2𝛿 = 1/𝑖 and
+𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑦)) − 𝜎𝑥 (𝑣 − 𝑤)
+
+≤
+𝑑 ( 𝑓 (𝑦 + 𝑣 − 𝑤), 𝑓 (𝑦)) − 𝜎𝑦 (𝑣 − 𝑤)
+ +
+𝜎𝑥 (𝑣 − 𝑤) − 𝜎𝑦 (𝑣 − 𝑤)
+
+= 𝑡
+𝑞 𝑦,𝑡 (𝑢) − 𝜎𝑦 (𝑢)
+ + 𝑡|𝜎𝑥 (𝑢) − 𝜎𝑦 (𝑢)|
+≤ 𝜖𝑡.
+As 𝑦 = 𝑥 + 𝑤 and 𝑡 = ∥𝑣 − 𝑤 ∥, this completes the proof. □
+Proof of Theorem 6.3: Let compact sets 𝐾1, 𝐾2, . . . ⊂ 𝑈 be given as in Proposi-
+tion 6.4. Suppose 𝑥 ∈ 𝐾 𝑗 is a point with Lebesgue density 1, i.e.,
+Θ𝑚(𝐾 𝑗, 𝑥) := lim
+𝑟→0+
+L𝑚(𝐾 𝑗 ∩ 𝐵(𝑥, 𝑟))
+L𝑚(𝐵(𝑥, 𝑟)) = 1.
+Let 𝜖 > 0, and let 𝛿 = 𝛿( 𝑗, 𝜖 ) > 0 be given as in Proposition 6.4. By adjusting
+𝛿 if necessary, we arrange that for every 𝑤 ∈ R𝑚 with ∥𝑤 ∥ ≤ 𝛿 there exists a
+𝑤 ′ = 𝑤 ′ (𝑤) such that 𝑥 + 𝑤 ′ ∈ 𝐾 𝑗, ∥𝑤 ′ ∥ ≤ ∥ 𝑤 ∥ and ∥𝑤 − 𝑤 ′ ∥ ≤ 𝜖 ∥𝑤 ∥. Suppose
+now that 𝑣, 𝑤 ∈ R𝑛, ∥𝑣 ∥, ∥𝑤 ∥ ≤ 𝛿, and 𝑤 ′ = 𝑤 ′ (𝑤). Using Proposition 6.4 we
+conclude that
+𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑥 + 𝑤)) − 𝜎𝑥 (𝑣 − 𝑤)
+
+≤
+𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑥 + 𝑤 ′)) − 𝜎𝑥 (𝑣 − 𝑤 ′)
+
++ 𝑑 ( 𝑓 (𝑥 + 𝑤), 𝑓 (𝑥 + 𝑤 ′)) +
+𝜎𝑥 (𝑣 − 𝑤) − 𝜎𝑥 (𝑣 − 𝑤 ′)
+
+≤ 𝜖 ∥𝑣 − 𝑤 ′ ∥ + 2 Lip( 𝑓 ) ∥𝑤 − 𝑤 ′ ∥
+≤ 𝜖 (∥ 𝑣 ∥ + ∥ 𝑤 ∥) + 2𝜖 Lip( 𝑓 ) ∥𝑤 ∥
+≤ 𝜖 (1 + 2 Lip( 𝑓 )) (∥𝑣 ∥ + ∥ 𝑤 ∥) .
+17
+
+[PDF physical page 18]
+Since almost every point in 𝑈 is a density point of some 𝐾 𝑗, this shows that
+lim
+∥ 𝑣 ∥+∥ 𝑤 ∥→0
+𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑥 + 𝑤)) − 𝜎𝑥 (𝑣 − 𝑤)
+∥𝑣 ∥ + ∥ 𝑤 ∥ = 0
+for almost every 𝑥 ∈ 𝑈.
+It remains to prove that 𝜎𝑥 satisfies the triangle inequality. For 𝑣, 𝑤 ∈ R𝑚,
+𝜎𝑥 (𝑣 + 𝑤) = lim
+𝑡→0+
+𝑑 ( 𝑓 (𝑥 + 𝑡𝑣 ), 𝑓 (𝑥 − 𝑡𝑤 ))
+𝑡
+≤ lim
+𝑡→0+
+𝑑 ( 𝑓 (𝑥 + 𝑡𝑣 ), 𝑓 (𝑥))
+𝑡 + lim
+𝑡→0+
+𝑑 ( 𝑓 (𝑥 − 𝑡𝑤 ), 𝑓 (𝑥))
+𝑡
+= 𝜎𝑥 (𝑣) + 𝜎𝑥 (−𝑤).
+Since 𝜎𝑥 (−𝑤) = 𝜎𝑥 (𝑤), the proof is complete. □
+7 Hausdorff measures
+For every real number 𝑠 ≥ 0, we put
+𝛼𝑠 := 𝜋𝑠/2
+Γ( 𝑠
+2 + 1) ,
+where Γ : (0, ∞) → R is the usual gamma function, Γ(𝑠) =
+∫ ∞
+0 𝑥𝑠−1𝑒− 𝑥 𝑑𝑥. Note
+that Γ(1) = 1, Γ(𝑠 + 1) = 𝑠 Γ(𝑠) for 𝑠 > 0, and Γ(1/2) = √𝜋. For 𝑚 ∈ N, 𝛼𝑚
+equals the Lebesgue measure of the unit ball in R𝑚,
+𝛼𝑚 = L𝑚(𝐵(0, 1)) =
+ 
+
+2𝑚𝜋 (𝑚−1)/2( 𝑚−1
+2 )!
+𝑚! if 𝑚 is odd,
+𝜋𝑚/2
+( 𝑚
+2 )! if 𝑚 is even.
+We recall the definition of the Hausdorff measures.
+Definition 7.1 Let 𝑋 be a metric space. For 𝑠 ≥ 0, 0 < 𝛿 ≤ ∞, and 𝐴 ⊂ 𝑋, define
+H 𝑠
+𝛿 ( 𝐴) := inf
+∞∑︁
+𝑖=1
+𝛼𝑠
+ 1
+2 diam(𝐶𝑖) 𝑠,
+where the infimum is taken over all coverings (𝐶𝑖)𝑖 ∈N of 𝐴 with diam(𝐶𝑖) ≤ 𝛿 for
+all 𝑖. (Here the conventions diam(∅)𝑠 = 0, 00 = 1 are used.) Then
+H 𝑠 ( 𝐴) := lim
+𝛿→0+
+H 𝑠
+𝛿 ( 𝐴) = sup
+𝛿>0
+H 𝑠
+𝛿 ( 𝐴)
+is the 𝑠-dimensional Hausdorff measure of the set 𝐴.
+18
+
+[PDF physical page 19]
+For every 𝑠, H 𝑠 is a Borel regular metric outer measure on 𝑋. As we will show
+below, with the chosen normalization, H 𝑚 = L𝑚 on R𝑚. Whenever 𝐴 ⊂ 𝑋 and
+𝑓 : 𝐴 → 𝑌 is a Lipschitz map into another metric space 𝑌, then
+H 𝑠 ( 𝑓 ( 𝐴)) ≤ Lip( 𝑓 )𝑠 H 𝑚( 𝐴).
+Suppose 𝑋 is a metric space, 𝐴 ⊂ 𝑋, and 𝑥 ∈ 𝑋. Then the 𝑠-dimensional upper
+density and lower density of 𝐴 at 𝑥 are defined by
+Θ∗𝑠 ( 𝐴, 𝑥) = lim sup
+𝑟→0+
+H 𝑠 ( 𝐴 ∩ 𝐵(𝑥, 𝑟))
+𝛼𝑠𝑟 𝑠 ,
+Θ𝑠
+∗ ( 𝐴, 𝑥) = lim inf
+𝑟→0+
+H 𝑠 ( 𝐴 ∩ 𝐵(𝑥, 𝑟))
+𝛼𝑠𝑟 𝑠 ,
+respectively. If the two coincide, then the common value Θ𝑠 ( 𝐴, 𝑥) is the 𝑠-
+dimensional density of 𝐴 at 𝑥.
+Theorem 7.2 (densities) Let 𝐴 be a subset of 𝑋 with H 𝑠 ( 𝐴) < ∞.
+(1) For H 𝑠-almost every 𝑥 ∈ 𝐴, 2−𝑠 ≤ Θ∗𝑚( 𝐴, 𝑥) ≤ 1.
+(2) If 𝐴 is H 𝑠-measurable, then Θ𝑠 ( 𝐴, 𝑥) = 0 for H 𝑠-almost every 𝑥 ∈ 𝑋 \ 𝐴.
+(3) If both 𝐴 and 𝐵 ⊂ 𝐴 are H 𝑠-measurable, then Θ∗𝑠 ( 𝐴, 𝑥) = Θ ∗𝑠 (𝐵, 𝑥) and
+Θ𝑠
+∗ ( 𝐴, 𝑥) = Θ 𝑠
+∗ (𝐵, 𝑥) for H 𝑠-almost every 𝑥 ∈ 𝐵.
+Proof: For the proof of (1) and (2) we refer to [Sim2014, Ch. 1, Theorem 3.6 and
+Theorem 3.26] (see also [Mat1995, Theorem 6.2 and Corollary 6.3]).
+(3) follows from (2): 𝐶 := 𝐴 \ 𝐵 is H 𝑠-measurable with H 𝑠 (𝐶) < ∞, so
+Θ𝑠 (𝐶, 𝑥) = 0 for H 𝑠-almost every 𝑥 ∈ 𝐵 ⊂ 𝑋 \ 𝐶, and hence Θ∗𝑠 ( 𝐴, 𝑥) =
+Θ∗𝑠 (𝐵, 𝑥) + Θ𝑠 (𝐶, 𝑥) = Θ ∗𝑠 (𝐵, 𝑥) and Θ𝑠
+∗ ( 𝐴, 𝑥) = Θ 𝑠
+∗ (𝐵, 𝑥) + Θ𝑠 (𝐶, 𝑥) = Θ 𝑠
+∗ (𝐵, 𝑥).
+□
+Theorem 7.3 (isodiametric inequality) Let 𝜌 be a norm on R𝑚 with unit ball
+𝐵𝜌. For a non-empty set 𝐶 ⊂ R𝑚, let conv(𝐶) denote the convex hull of 𝐶 and
+diam𝜌 (𝐶) the diameter of 𝐶 with respect to 𝜌. Then
+L𝑚(conv(𝐶)) ≤ L 𝑚(𝐵𝜌)  1
+2 diam𝜌 (𝐶) 𝑚.
+In particular, for the standard Euclidean norm on R𝑚, L𝑚(conv(𝐶)) ≤
+𝛼𝑚
+ 1
+2 diam(𝐶) 𝑚.
+Proof: It suffices to prove the inequality for a compact convex body𝐶. The idea is
+to show that there exists a centrally symmetric convex body𝐶∗ such that L𝑚(𝐶) ≤
+L𝑚(𝐶∗) and diam 𝜌 (𝐶∗) ≤ diam𝜌 (𝐶). Then 𝐶∗ ⊂ 𝐵𝜌
+0, 1
+2 diam𝜌 (𝐶∗), hence
+L𝑚(𝐶∗) ≤ L 𝑚(𝐵𝜌)  1
+2 diam𝜌 (𝐶∗) 𝑚, and the desired inequality for 𝐶 follows. As
+19
+
+[PDF physical page 20]
+for 𝐶∗, one can put 𝐶′ := −𝐶 and 𝐶∗ := 1
+2 (𝐶 + 𝐶′). Then, by (a special case of)
+the Brunn-Minkowski inequality,
+L𝑚(𝐶∗)1/𝑚 ≥ L 𝑚 1
+2𝐶1/𝑚 + L 𝑚 1
+2𝐶′1/𝑚 = L𝑚(𝐶)1/𝑚.
+Furthermore, for every pair of points 𝑥∗ = 1
+2 (𝑥 + 𝑥′) and 𝑦∗ = 1
+2 (𝑦 + 𝑦′) in 𝐶∗, with
+𝑥, 𝑦 ∈ 𝐶 and 𝑥′, 𝑦′ ∈ 𝐶′,
+𝜌(𝑥∗ − 𝑦∗) = 1
+2 𝜌(𝑥 − 𝑦 + 𝑥′ − 𝑦′) ≤ 1
+2
+𝜌(𝑥 − 𝑦) + 𝜌(𝑥′ − 𝑦′),
+thus diam𝜌 (𝐶∗) ≤ diam𝜌 (𝐶). See [BurZ1988, Theorem 11.2.1]. □
+Theorem 7.4 Let 𝜌 be a norm on R𝑚, and let H 𝑚
+𝜌 denote the Hausdorff measure
+with respect to the corresponding metric. Then H 𝑚
+𝜌 (𝐵𝜌) = 𝛼𝑚. In particular, with
+respect to the standard Euclidean norm, H 𝑚 = L𝑚.
+Compare [Kir1994, Lemma 6].
+Proof: The inequality H 𝑚
+𝜌 (𝐵𝜌) ≤ 𝛼𝑚 follows from the fact that the quotient
+H 𝑚
+𝜌 (𝐵𝜌 (𝑥, 𝑟))/𝑟 𝑚 is constant for all 𝑥 ∈ R𝑚 and 𝑟 > 0 and, hence, is less than or
+equal to 𝛼𝑚 since Θ∗𝑚(R𝑚
+𝜌 , 𝑥) ≤ 1 by Theorem 7.2. The reverse inequality is a
+consequence Theorem 7.3, which implies that for every covering (𝐶𝑖)𝑖 ∈N of 𝐵𝜌,
+∑︁
+𝑖
+ 1
+2 diam𝜌 (𝐶𝑖) 𝑚 ≥
+∑︁
+𝑖
+L𝑚(𝐶𝑖)
+L𝑚(𝐵𝜌) ≥ 1,
+thus H 𝑚
+𝜌 (𝐵𝜌) ≥ 𝛼𝑚. □
+8 Area formula
+The next goal is to prove Theorem 8.3 below. We start with a technical lemma,
+compare [Kir1994, Lemma 4].
+Lemma 8.1 (Borel partition) Suppose that 𝑌 is a metric space, 𝑓 : R𝑚 → 𝑌 is
+Lipschitz, and 𝐵 is the Borel set of all 𝑥 where 𝑓 is metrically differentiable and
+md 𝑓𝑥 is a norm. Let 𝜆 > 1. Then there exist a Borel partition (𝐵𝑖)𝑖 ∈N of 𝐵 and a
+sequence of norms 𝜌𝑖 on R𝑚 such that
+𝜆−1𝜌𝑖 (𝑥 − 𝑥′) ≤ 𝑑 ( 𝑓 (𝑥), 𝑓 (𝑥′)) ≤ 𝜆 𝜌𝑖 (𝑥 − 𝑥′),
+𝜆−1𝜌𝑖 (𝑣) ≤ md 𝑓𝑥 (𝑣) ≤ 𝜆 𝜌𝑖 (𝑣)
+for all 𝑥, 𝑥 ′ ∈ 𝐵𝑖 and 𝑣 ∈ R𝑚.
+20
+
+[PDF physical page 21]
+In the ‘classical’ case, when𝑌 = R𝑛 and 𝐵 is the Borel set of all 𝑥 where 𝑓 is
+differentiable and 𝑑𝑓 𝑥 has rank 𝑚, all norms 𝜌𝑖 may be chosen to be Euclidean, that
+is, induced by an inner product, compare [Fed1969, Lemma 3.2.2] and [EvaG1992,
+p. 94].
+Proof: Choose a sequence of norms 𝜌𝑖 on R𝑚 such that for every norm 𝜌 on R𝑚
+and for every 𝑐 > 1 there is an 𝑖 ∈ N such that
+𝑐−1𝜌𝑖 (𝑣) ≤ 𝜌(𝑣) ≤ 𝑐 𝜌𝑖 (𝑣)
+for all 𝑣 ∈ R𝑚. Given 𝜆 > 1, pick 𝛿 > 0 such that𝜆−1 + 𝛿 < 1 < 𝜆 − 𝛿. For 𝑖, 𝑘 ∈ N,
+denote by 𝐵𝑖,𝑘 the Borel set of all 𝑥 ∈ 𝐵 such that
+(i) (𝜆−1 + 𝛿) 𝜌𝑖 (𝑣) ≤ md 𝑓𝑥 (𝑣) ≤ ( 𝜆 − 𝛿) 𝜌𝑖 (𝑣) for 𝑣 ∈ R𝑚,
+(ii) |𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑥)) − md 𝑓𝑥 (𝑣)| ≤ 𝛿 𝜌𝑖 (𝑣) for ∥𝑣 ∥ ≤ 1/𝑘.
+The sets 𝐵𝑖,𝑘 cover 𝐵: given 𝑥 ∈ 𝐵, choose 𝑖 ∈ N such that (i) holds, let 𝑐𝑖 > 0
+be such that ∥𝑣 ∥ ≤ 𝑐𝑖 𝜌𝑖 (𝑣) for all 𝑣 ∈ R𝑚, and pick 𝑘 ∈ N such that (ii) holds
+with (𝛿/𝑐𝑖) ∥𝑣 ∥ in place of 𝛿 𝜌𝑖 (𝑣); then 𝑥 ∈ 𝐵𝑖,𝑘 . Now if 𝐶 ⊂ 𝐵𝑖,𝑘 is a set with
+diam 𝐶 ≤ 1/𝑘, then
+𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑥)) ≤ md 𝑓𝑥 (𝑣) + 𝛿 𝜌𝑖 (𝑣) ≤ 𝜆 𝜌𝑖 (𝑣),
+𝑑 ( 𝑓 (𝑥 + 𝑣), 𝑓 (𝑥)) ≥ md 𝑓𝑥 (𝑣) − 𝛿 𝜌𝑖 (𝑣) ≥ 𝜆−1𝜌𝑖 (𝑣)
+whenever 𝑥, 𝑥 + 𝑣 ∈ 𝐶. By subdividing and relabeling the sets 𝐵𝑖,𝑘 appropriately
+we obtain the result. □
+Definition 8.2 (jacobian) (1) Suppose that 𝑋, 𝑌 are normed spaces, dim𝑋 = 𝑚 ∈
+N, and 𝐿 : 𝑋 → 𝑌 is linear. The jacobian J(𝐿) ∈ [ 0, ∞) of 𝐿 is the (unique)
+number satisfying
+H 𝑚(𝐿( 𝐴)) = J(𝐿) H 𝑚( 𝐴)
+for all 𝐴 ⊂ 𝑋.
+(2) If 𝜎 is a seminorm on R𝑚, we define the jacobian J(𝜎) of 𝜎 as the number
+satisfying
+H 𝑚
+𝜎 ( 𝐴) = J(𝜎) L 𝑚( 𝐴)
+for all 𝐴 ⊂ R𝑚 in case 𝜎 is a norm and J(𝜎) = 0 otherwise.
+We remark that if 𝐴 ⊂ R𝑚 is L𝑚-measurable, and 𝑓 : 𝐴 → 𝑌 is a Lipschitz
+map into a metric space 𝑌, then 𝑓 ( 𝐴) is H 𝑚-measurable. This is because 𝐴 can
+be written as the union of countably many compact sets and a set of measure zero,
+thus the same is true for 𝑓 ( 𝐴).
+Theorem 8.3 (area formula) Suppose that 𝑌 is a metric space and 𝑓 : R𝑚 → 𝑌
+is Lipschitz.
+21
+
+[PDF physical page 22]
+(1) If 𝐴 ⊂ R𝑚 is L𝑚-measurable, then
+∫
+𝐴
+J(md 𝑓𝑥) 𝑑𝑥 =
+∫
+𝑌
+#( 𝑓 −1{𝑦} ∩ 𝐴) 𝑑H 𝑚(𝑦).
+(2) If 𝑔 is a real-valued L𝑚-integrable function on R𝑚, then
+∫
+R𝑚
+𝑔 (𝑥) J(md 𝑓𝑥) 𝑑𝑥 =
+∫
+𝑌
+∑︁
+𝑥 ∈ 𝑓 −1 { 𝑦 }
+𝑔 (𝑥) 𝑑H 𝑚(𝑦).
+See [Kir1994]. Note that # = H 0. In the case 𝑌 = R𝑛 we obtain the classical
+area formula as J(md 𝑓𝑥) coincides with J(𝑑𝑓 𝑥) for L𝑚-almost every 𝑥 ∈ R𝑚.
+Compare [Fed1969, Theorem 3.2.3], [EvaG1992, Sect. 3.3]. That formula says,
+in particular, that the differential geometric volume of an injective 𝐶1 immersion
+𝑓 : 𝑈 → R𝑛, 𝑈 an open subset of R𝑚, equals H 𝑚( 𝑓 (𝑈)).
+Proof: For (1), we may partition 𝐴 into countably many measurable sets and prove
+the respective formula for each of these sets separately. In particular, we lose no
+generality in assuming L𝑚( 𝐴) < ∞. Let 𝐴0 denote the set of all 𝑥 ∈ 𝐴 where 𝑓 is
+not metrically differentiable. Then
+H 𝑚( 𝑓 ( 𝐴0)) ≤ Lip( 𝑓 )𝑚L𝑚( 𝐴0) = 0
+by Theorem 6.3, thus 𝐴0 does not contribute to either side of the claimed identity.
+Now we split 𝐴 \ 𝐴0 into the two sets 𝐴′, 𝐴′′, where 𝐴′ consists of all 𝑥 for which
+md 𝑓𝑥 is a norm, that is, J(md 𝑓𝑥) > 0.
+First we consider 𝐴′. Let 𝜆 > 1. Using Lemma 8.1 we find a measurable
+partition ( 𝐴𝑖)𝑖 ∈N of 𝐴′ and norms 𝜌𝑖 on R𝑚 such that 𝑓 | 𝐴𝑖 is injective,
+𝜆−𝑚 H 𝑚
+𝜌𝑖 ( 𝐴𝑖) ≤ H 𝑚( 𝑓 ( 𝐴𝑖)) ≤ 𝜆𝑚 H 𝑚
+𝜌𝑖 ( 𝐴𝑖),
+and 𝜆−1𝜌𝑖 ≤ md 𝑓𝑥 ≤ 𝜆 𝜌𝑖 for all 𝑥 ∈ 𝐴𝑖. This last assertion yields
+𝜆−𝑚 J(𝜌𝑖) ≤ J(md 𝑓𝑥) ≤ 𝜆𝑚 J(𝜌𝑖)
+for all 𝑥 ∈ 𝐴𝑖. Since J(𝜌𝑖) L 𝑚( 𝐴𝑖) = H 𝑚
+𝜌𝑖 ( 𝐴𝑖), it follows that
+𝜆−𝑚 H 𝑚
+𝜌𝑖 ( 𝐴𝑖) ≤
+∫
+𝐴𝑖
+J(md 𝑓𝑥) 𝑑𝑥 ≤ 𝜆𝑚 H 𝑚
+𝜌𝑖 ( 𝐴𝑖)
+and
+𝜆−2𝑚 H 𝑚( 𝑓 ( 𝐴𝑖)) ≤
+∫
+𝐴𝑖
+J(md 𝑓𝑥) 𝑑𝑥 ≤ 𝜆2𝑚 H 𝑚( 𝑓 ( 𝐴𝑖)) .
+Since 𝑓 | 𝐴𝑖 is injective and 𝑓 ( 𝐴𝑖) is H 𝑚-measurable, H 𝑚( 𝑓 ( 𝐴𝑖)) can be written
+as
+∫
+𝑌 #( 𝑓 −1{𝑦} ∩ 𝐴𝑖) 𝑑H 𝑚(𝑦). Then, summing over 𝑖, we get that
+𝜆−2𝑚
+∫
+𝑌
+# 𝑓 −1{𝑦} ∩ 𝐴′ 𝑑H 𝑚(𝑦) ≤
+∫
+𝐴′
+J(md 𝑓𝑥) 𝑑𝑥
+≤ 𝜆2𝑚
+∫
+𝑌
+# 𝑓 −1{𝑦} ∩ 𝐴′ 𝑑H 𝑚(𝑦).
+22
+
+[PDF physical page 23]
+As 𝜆 > 1 was arbitrary, this shows that (1) holds for 𝐴′.
+Now we turn to the set 𝐴′′ of all 𝑥 ∈ 𝐴 where J(md 𝑓𝑥) = 0. We prove that
+H 𝑚( 𝑓 ( 𝐴′′)) = 0; thus either side of the claimed identity is zero for 𝐴′′. Let
+𝜖 ∈ ( 0, 1), and define
+ℎ : R𝑚 → 𝑌 × R𝑚, ℎ (𝑥) = ( 𝑓 (𝑥), 𝜖𝑥 ).
+Equip 𝑌 × R𝑚 with the 𝑙1 product metric
+𝑑1(( 𝑦, 𝑧), (𝑦′, 𝑧′)) = 𝑑 (𝑦, 𝑦′) + ∥ 𝑧 − 𝑧′ ∥.
+Clearly, ℎ is metrically differentiable at 𝑥 whenever 𝑓 is, and
+md ℎ𝑥 (𝑣) = md 𝑓𝑥 (𝑣) + 𝜖 ∥𝑣 ∥
+for all 𝑣 ∈ R𝑚. In particular, md ℎ𝑥 is a norm on R𝑚 for every 𝑥 ∈ 𝐴′′. Fix 𝑥 ∈ 𝐴′′
+for the moment, and put𝜌 := md ℎ𝑥. Consider the norm ball 𝐵𝜌 := 𝐵𝜌 (0, 1) ⊂ R𝑚.
+Since md 𝑓𝑥 is not a norm, there is a 𝑣 0 ∈ R𝑚 with 𝜌(𝑣 0) = 1 and md 𝑓𝑥 (𝑣 0) = 0,
+thus ∥𝑣 0∥ = 1/𝜖. Moreover, if 𝜌(𝑣) = 1, then
+1 = md 𝑓𝑥 (𝑣) + 𝜖 ∥𝑣 ∥ ≤ ( Lip( 𝑓 ) + 1) ∥𝑣 ∥,
+thus ∥𝑣 ∥ ≥ 𝑟 := 1/(Lip( 𝑓 ) + 1). Hence, 𝐵𝜌 contains the convex hull of{𝑣 0, −𝑣 0} ∪
+𝐵(0, 𝑟), where ∥𝑣 0∥ = 1/𝜖. It follows that L𝑚(𝐵𝜌) ≥ 𝑐𝑚𝑟 𝑚−1/𝜖 for some constant
+𝑐𝑚 depending only on 𝑚, hence
+J(md ℎ𝑥) = J(𝜌) =
+H 𝑚
+𝜌 (𝐵𝜌)
+L𝑚(𝐵𝜌) ≤ 𝜖 𝛼 𝑚
+𝑐𝑚𝑟 𝑚−1
+(recall Theorem 7.4). Applying the above result for ( 𝑓 , 𝐴′) to (ℎ, 𝐴 ′′), we get that
+H 𝑚(ℎ( 𝐴′′)) =
+∫
+𝐴′′
+J(md ℎ𝑥) 𝑑𝑥 ≤ 𝜖 𝛼 𝑚
+𝑐𝑚𝑟 𝑚−1 L𝑚( 𝐴′′).
+Since the canonical projection 𝑌 × R𝑚 → 𝑌 is 1-Lipschitz and maps ℎ( 𝐴′′) to
+𝑓 ( 𝐴′′), we have H 𝑚( 𝑓 ( 𝐴′′)) ≤ H 𝑚(ℎ( 𝐴′′)), and letting 𝜖 tend to 0 we conclude
+that H 𝑚( 𝑓 ( 𝐴′′)) = 0. This completes the proof of (1).
+Finally, (2) follows from (1), by approximating𝑔 by simple functions. □
+9 Coarea formula
+For the proof of the coarea formula, Theorem 9.4, we need the following general
+coarea inequality, which is also of independent interest.
+Theorem 9.1 (coarea inequality) Suppose that 𝑋, 𝑌 are metric spaces, 𝑓 : 𝑋 → 𝑌
+is a Lipschitz map, 𝐴 ⊂ 𝑋, and 𝑚, 𝑘 ≥ 0 are real numbers. Then
+∫ ∗
+𝑌
+H 𝑘 ( 𝑓 −1{𝑦} ∩ 𝐴) 𝑑H 𝑚(𝑦) ≤ 𝛼𝑚𝛼𝑘
+𝛼𝑚+𝑘
+Lip( 𝑓 )𝑚 H 𝑚+𝑘 ( 𝐴).
+23
+
+[PDF physical page 24]
+Here
+∫ ∗
+denotes the upper integral; in general, the integrand𝑦 ↦→ H 𝑘 ( 𝑓 −1{𝑦}∩
+𝐴) is not H 𝑚-measurable. However, if 𝑋 is proper (that is, closed bounded
+subsets of 𝑋 are compact) and 𝐴 is H 𝑚+𝑘-measurable with H 𝑚+𝑘 ( 𝐴) < ∞, then
+𝑓 −1{𝑦} ∩ 𝐴 is H 𝑘-measurable for H 𝑚-almost every 𝑦 and 𝑦 ↦→ H 𝑘 ( 𝑓 −1{𝑦} ∩ 𝐴)
+is H 𝑚-measurable, compare [Fed1969, 2.10.26]. Theorem 9.1 is stated with some
+additional assumptions in [Fed1969, Theorem 2.10.25]. As remarked in [Dav1970,
+p. 236], these are superfluous. See also [Rei2009] and [EsmH2021].
+We prove Theorem 9.1 in the case that 𝑌 is an 𝑚-dimensional normed space
+(R𝑚, 𝜌), so we will write H 𝑚
+𝜌 for the Hausdorff measure on 𝑌.
+Proof: Assume that H 𝑚+𝑘 ( 𝐴) < ∞. Let 𝑖 ∈ N and 𝛿 ∈ ( 0, 1/𝑖]. Choose a
+countable 𝛿-bounded covering C of 𝐴 such that
+∑︁
+𝐶 ∈ C
+𝛼𝑘+𝑚
+ 1
+2 diam(𝐶) 𝑚+𝑘 ≤ H 𝑚+𝑘
+𝛿 ( 𝐴) + 𝛿.
+For 𝐶 ∈ C , let 𝐷𝐶 denote the ( H 𝑚
+𝜌 -measurable) closure of 𝑓 (𝐶), and define
+𝑔𝐶 : 𝑌 → R as 𝛼𝑘
+ 1
+2 diam(𝐶) 𝑘 times the characteristic function of 𝐷𝐶. For every
+𝑦 ∈ 𝑌, the sets 𝐶 ∈ C with 𝑦 ∈ 𝐷𝐶 cover 𝑓 −1{𝑦} ∩ 𝐴, thus
+H 𝑘
+1/𝑖
+ 𝑓 −1{𝑦} ∩ 𝐴 ≤
+∑︁
+𝐶 ∈ C
+𝑔𝐶 (𝑦).
+It follows that
+∫ ∗
+𝑌
+H 𝑘
+1/𝑖
+ 𝑓 −1{𝑦} ∩ 𝐴 𝑑H 𝑚
+𝜌 (𝑦) ≤
+∫
+𝑌
+∑︁
+𝐶 ∈ C
+𝑔𝐶 (𝑦) 𝑑H 𝑚
+𝜌 (𝑦)
+=
+∑︁
+𝐶 ∈ C
+∫
+𝑌
+𝑔𝐶 (𝑦) 𝑑H 𝑚
+𝜌 (𝑦)
+=
+∑︁
+𝐶 ∈ C
+𝛼𝑘
+ 1
+2 diam(𝐶) 𝑘 H 𝑚
+𝜌 (𝐷𝐶).
+By Theorems 7.3 and 7.4, and since 𝑓 is Lipschitz,
+H 𝑚
+𝜌 (𝐷𝐶) ≤ 𝛼𝑚
+ 1
+2 diam(𝐷𝐶) 𝑚
+≤ 𝛼𝑚 Lip( 𝑓 )𝑚  1
+2 diam(𝐶) 𝑚.
+We conclude that
+∫ ∗
+𝑌
+H 𝑘
+1/𝑖
+ 𝑓 −1{𝑦} ∩ 𝐴 𝑑H 𝑚
+𝜌 (𝑦) ≤ 𝛼𝑚𝛼𝑘
+𝛼𝑚+𝑘
+Lip( 𝑓 )𝑚 H 𝑚+𝑘
+𝛿 ( 𝐴) + 𝛿.
+Now we let first 𝛿 → 0, then 𝑖 → ∞. □
+Lemma 9.2 (factorization) Suppose that 𝑓 : R𝑛 → R𝑚 is a Lipschitz map, where
+𝑛 ≥ 𝑚, and 𝐴 ⊂ R𝑛 is an L𝑛-measurable set such that 𝑑𝑓 𝑥 exists and has rank 𝑚
+24
+
+[PDF physical page 25]
+for all 𝑥 ∈ 𝐴. Let 𝜆 > 1. Then there exist countable families ofL𝑛-measurable sets
+𝐴𝑖 ⊂ 𝐴, Lipschitz maps ℎ𝑖 : R𝑛 → R𝑛, and linear maps 𝐿𝑖 : R𝑛 → R𝑚 such that
+L𝑛 ( 𝐴 \ Ð
+𝑖 𝐴𝑖) = 0, ℎ𝑖 | 𝐴𝑖 is 𝜆-bi-Lipschitz,
+𝑓 = 𝐿𝑖 ◦ ℎ𝑖,
+and for all 𝑥 ∈ 𝐴𝑖, 𝑑 (ℎ𝑖)𝑥 exists and is 𝜆-bi-Lipschitz.
+Proof: It is easy to see that for every 𝑥 ∈ R𝑛 where 𝑑𝑓 𝑥 exists and has rank 𝑚 there
+is a coordinate projection 𝑝 : R𝑛 → R𝑛−𝑚 such that 𝑑𝑢 𝑥 has rank 𝑛, where
+𝑢 : R𝑛 → R𝑚 × R𝑛−𝑚, 𝑢 (𝑥) = ( 𝑓 (𝑥), 𝑝 (𝑥)) .
+According to the possible choices of 𝑝 we obtain a covering of 𝐴 by finitely many
+measurable subsets. For the proof of the lemma it suffices to consider a single such
+subset which, for simplicity, we denote again by𝐴. Thus, we assume that there is a
+fixed projection 𝑝 as above such that 𝑑𝑢 𝑥 has rank 𝑛 for every 𝑥 ∈ 𝐴. By applying
+Lemma 8.1 to 𝑢, we find a measurable partition (𝐵𝑖)𝑖 ∈N of 𝐴 such that each 𝑢| 𝐵𝑖 is
+bi-Lipschitz. For every 𝑖, choose a Lipschitz extension
+𝑣 𝑖 : R𝑚 × R𝑛−𝑚 → R𝑛
+of (𝑢| 𝐵𝑖 ) −1, thus 𝑣 𝑖 (𝑢(𝑥)) = 𝑥 for all 𝑥 ∈ 𝐵𝑖. There is a measurable set 𝐶𝑖 ⊂ 𝑢(𝐵𝑖)
+with L𝑛 (𝑢(𝐵𝑖) \ 𝐶𝑖) = 0 such that 𝑣 𝑖 is differentiable at every point 𝑢(𝑥) ∈ 𝐶𝑖,
+and 𝑑 (𝑣 𝑖)𝑢( 𝑥 ) ◦ 𝑑𝑢 𝑥 = idR𝑛. Let 𝜆 > 1. Applying Lemma 8.1 to 𝑣 𝑖, we find a
+measurable partition (𝐶𝑖,𝑘 )𝑘 ∈N of 𝐶𝑖 and a sequence of Euclidean norms 𝜌𝑖,𝑘 on
+R𝑚 × R𝑛−𝑚 such that
+𝜆−1𝜌𝑖,𝑘 (( 𝑦, 𝑧) − ( 𝑦′, 𝑧′)) ≤ ∥ 𝑣 𝑖 (𝑦, 𝑧) − 𝑣 𝑖 (𝑦′, 𝑧′) ∥ ≤ 𝜆 𝜌𝑖,𝑘 (( 𝑦, 𝑧) − ( 𝑦′, 𝑧′))
+and 𝜆−1𝜌𝑖,𝑘 (·) ≤ ∥ 𝑑 (𝑣 𝑖) ( 𝑦,𝑧 ) (·) ∥ ≤ 𝜆 𝜌𝑖,𝑘 (·) for all (𝑦, 𝑧), (𝑦′, 𝑧′) ∈ 𝐶𝑖,𝑘 . Now
+choose linear isometries 𝑇𝑖,𝑘 : (R𝑚 × R𝑛−𝑚, 𝜌𝑖,𝑘 ) → R𝑛 and put
+ℎ𝑖,𝑘 := 𝑇𝑖,𝑘 ◦ 𝑢 : R𝑛 → R𝑛.
+For all 𝑥, 𝑥 ′ ∈ 𝑣 𝑖 (𝐶𝑖,𝑘 ), we have ∥ℎ𝑖,𝑘 (𝑥) − ℎ𝑖,𝑘 (𝑥′) ∥ = 𝜌𝑖,𝑘 (𝑢(𝑥) − 𝑢(𝑥′)) and
+∥𝑑 (ℎ𝑖,𝑘 )𝑥 (·) ∥ = 𝜌𝑖,𝑘 (𝑑𝑢 𝑥 (·)). It follows that both the restriction of ℎ𝑖,𝑘 to 𝑣 𝑖 (𝐶𝑖,𝑘 )
+and 𝑑 (ℎ𝑖,𝑘 )𝑥 are 𝜆-bi-Lipschitz. Finally, define 𝑞 : R𝑚 × R𝑛−𝑚 → R𝑚 by 𝑞(𝑦, 𝑧) =
+𝑦 and put
+𝐿𝑖,𝑘 := 𝑞 ◦ 𝑇 −1
+𝑖,𝑘 : R𝑛 → R𝑛.
+Then 𝐿𝑖,𝑘 ◦ ℎ𝑖,𝑘 = 𝑞 ◦ 𝑢 = 𝑓 . □
+Definition 9.3 (coarea factor) Suppose that 𝑋, 𝑌 are normed spaces, dim𝑋 = 𝑛 ≥
+dim 𝑌 = 𝑚, and 𝐿 : 𝑋 → 𝑌 is linear. The 𝑚-dimensional coarea factor C𝑚(𝐿) is
+the number satisfying
+C𝑚(𝐿)H 𝑛 ( 𝐴) =
+∫
+𝑌
+H 𝑛−𝑚(𝐿 −1{𝑦} ∩ 𝐴) 𝑑H 𝑚(𝑦)
+for all H 𝑛-measurable sets 𝐴 ⊂ 𝑋 with H 𝑛 ( 𝐴) < ∞.
+25
+
+[PDF physical page 26]
+Compare [AmbK2000a, Sect. 9]. Note that the right side is invariant under
+translations of 𝐴 and, by Theorem 9.1 (coarea inequality), less than or equal to
+(𝛼𝑚𝛼𝑛−𝑚/𝛼𝑛) Lip(𝐿)𝑚 H 𝑛 ( 𝐴). Therefore C𝑚(𝐿) is a well-defined finite number.
+Clearly C𝑚(𝐿) = J(𝐿) if 𝑛 = 𝑚. Note that C𝑚(𝐿) = 0 if 𝐿 has rank < 𝑚 ,
+since H 𝑚(𝐿 (𝑋)) = 0. Now suppose 𝐿 has rank 𝑚. Choosing an 𝑚-dimensional
+linear subspace 𝑉 ⊂ 𝑋 complementary to the kernel ker (𝐿) and a set 𝐴 of the
+form 𝐴 = 𝐵 + 𝐶 for 𝐵 ⊂ ker(𝐿) and 𝐶 ⊂ 𝑉, we infer that C𝑚(𝐿) H 𝑛 ( 𝐴) =
+H 𝑛−𝑚(𝐵) H 𝑚(𝐿( 𝐴)). Since 𝐿( 𝐴) = 𝐿(𝐶) and H 𝑚(𝐿(𝐶)) = J(𝐿|𝑉 ) H 𝑚(𝐶),
+this yields the identity
+C𝑚(𝐿) H 𝑛 ( 𝐴) = J(𝐿|𝑉 ) H 𝑛−𝑚(𝐵) H 𝑚(𝐶).
+When 𝑋 is a Euclidean space, it follows that
+C𝑚(𝐿) = J𝐿|𝑊
+ ≥ J(𝐿|𝑉 ),
+where 𝑊 denotes the orthogonal complement of ker (𝐿) and 𝐿 is still assumed to
+have rank 𝑚.
+Finally, we remark that if 𝐻 is a linear automorphism of the Euclidean space
+𝑋, and if 𝐻 is 𝜆-bi-Lipschitz, then
+𝜆−𝑚 C𝑚(𝐿) ≤ C𝑚(𝐿 ◦ 𝐻) ≤ 𝜆𝑚 C𝑚(𝐿).
+This holds trivially if the rank of 𝐿 is < 𝑚 . If the rank is 𝑚, put 𝑉 := 𝐻 −1(𝑊) for
+𝑊 as above. Then
+C𝑚(𝐿 ◦ 𝐻) ≥ J(𝐿 ◦ 𝐻|𝑉 ) = J(𝐻|𝑉 ) J𝐿|𝑊
+ ≥ 𝜆−𝑚 C𝑚(𝐿),
+which proves the first inequality. To verify the second, apply the first with 𝐿 ◦ 𝐻
+and 𝐻 −1 in place of 𝐿 and 𝐻, respectively.
+Theorem 9.4 (coarea formula) Suppose that 𝑓 : R𝑛 → R𝑚 is a Lipschitz map,
+where 𝑛 ≥ 𝑚 ≥ 1.
+(1) If 𝐴 ⊂ R𝑛 is L𝑛-measurable, then
+∫
+𝐴
+C𝑚(𝑑𝑓 𝑥) 𝑑𝑥 =
+∫
+R𝑚
+H 𝑛−𝑚( 𝑓 −1{𝑦} ∩ 𝐴) 𝑑𝑦.
+(2) If 𝑔 is a real-valued L𝑛-integrable function on R𝑛, then
+∫
+R𝑛
+𝑔 (𝑥) C𝑚(𝑑𝑓 𝑥) 𝑑𝑥 =
+∫
+R𝑚
+∫
+𝑓 −1 { 𝑦 }
+𝑔 (𝑥) 𝑑H 𝑛−𝑚(𝑥) 𝑑𝑦.
+Proof: To prove (1), we may partition 𝐴 into countably many measurable sets and
+prove the respective formula for each of these sets separately. In particular, we lose
+no generality in assuming L𝑛 ( 𝐴) < ∞. Let 𝐴0 denote the set of all 𝑥 ∈ 𝐴 where
+26
+
+[PDF physical page 27]
+𝑓 is not differentiable. It follows from Theorem 9.1 that 𝐴0, as well as any other
+set of L𝑛 measure zero, does not contribute to either side of the claimed identity.
+Now we split 𝐴 \ 𝐴0 into the two sets 𝐴′, 𝐴′′, where 𝐴′ consists of all 𝑥 where
+C𝑚(𝑑𝑓 𝑥) > 0, i.e. 𝑑𝑓 𝑥 has rank 𝑚.
+First we consider𝐴′. Let 𝜆 > 1. Using Lemma 9.2 we choose countable families
+of pairwise disjoint measurable sets 𝐴𝑖 ⊂ 𝐴′, Lipschitz maps ℎ𝑖 : R𝑛 → R𝑛, and
+linear maps 𝐿𝑖 : R𝑛 → R𝑚 such that L𝑛 ( 𝐴′ \ Ð
+𝑖 𝐴𝑖) = 0, ℎ𝑖 | 𝐴𝑖 is 𝜆-bi-Lipschitz,
+𝑓 = 𝐿𝑖 ◦ ℎ𝑖, and 𝑑 (ℎ𝑖)𝑥 exists and is 𝜆-bi-Lipschitz for all 𝑥 ∈ 𝐴𝑖. By the definition
+of the coarea factor,
+C𝑚(𝐿𝑖) L 𝑛 (ℎ𝑖 ( 𝐴𝑖)) =
+∫
+R𝑚
+H 𝑛−𝑚(𝐿 −1
+𝑖 {𝑦} ∩ ℎ𝑖 ( 𝐴𝑖)) 𝑑𝑦.
+Since ℎ𝑖 | 𝐴𝑖 is 𝜆-bi-Lipschitz and maps 𝑓 −1{𝑦} ∩𝐴𝑖 onto 𝐿 −1
+𝑖 {𝑦} ∩ℎ𝑖 ( 𝐴𝑖), it follows
+that
+𝜆− (2𝑛−𝑚) C𝑚(𝐿𝑖) L 𝑛 ( 𝐴𝑖) ≤
+∫
+R𝑚
+H 𝑛−𝑚( 𝑓 −1{𝑦} ∩ 𝐴𝑖) 𝑑𝑦
+≤ 𝜆2𝑛−𝑚 C𝑚(𝐿𝑖) L 𝑛 ( 𝐴𝑖).
+For all 𝑥 ∈ 𝐴𝑖, 𝑑𝑓 𝑥 = 𝐿𝑖 ◦ 𝑑 (ℎ𝑖)𝑥, and 𝑑 (ℎ𝑖)𝑥 is 𝜆-bi-Lipschitz, hence
+𝜆−𝑚 C𝑚(𝑑𝑓 𝑥) ≤ C𝑚(𝐿𝑖) ≤ 𝜆𝑚 C𝑚(𝑑𝑓 𝑥).
+We conclude that
+𝜆−2𝑛
+∫
+𝐴𝑖
+C𝑚(𝑑𝑓 𝑥) 𝑑𝑥 ≤
+∫
+R𝑚
+H 𝑛−𝑚( 𝑓 −1{𝑦} ∩ 𝐴𝑖) 𝑑𝑦
+≤ 𝜆2𝑛
+∫
+𝐴𝑖
+C𝑚(𝑑𝑓 𝑥) 𝑑𝑥.
+Summing over 𝑖 and then letting 𝜆 tend to 1 we infer that (1) holds for Ð
+𝑖 𝐴𝑖 and
+hence for 𝐴′.
+Now we turn to the set 𝐴′′ of all 𝑥 ∈ 𝐴 where C𝑚(𝑑𝑓 𝑥) = 0. We must show
+that
+∫
+R𝑚 H 𝑛−𝑚( 𝑓 −1{𝑦} ∩ 𝐴′′) 𝑑𝑦 = 0. Let 𝜖 > 0, and define
+ℎ : R𝑛 × R𝑚 → R𝑚, ℎ (𝑥, 𝑧) = 𝑓 (𝑥) + 𝜖 𝑧,
+𝑝 : R𝑛 × R𝑚 → R𝑚, 𝑝 (𝑥, 𝑧) = 𝑧.
+Suppose that (𝑥, 𝑧) ∈ 𝐴′′ × R𝑚. Then
+𝑑ℎ ( 𝑥,𝑧 ) (𝑣, 𝑤 ) = 𝑑𝑓 𝑥 (𝑣) + 𝜖 𝑤
+for all (𝑣, 𝑤 ) ∈ R𝑛 ×R𝑚. In particular, 𝑑ℎ ( 𝑥,𝑧 ) has rank 𝑚, and 𝑍 := ker(𝑑ℎ ( 𝑥,𝑧 ) ) is
+𝑛-dimensional. Since 𝑍 ∩ (R𝑛 × {0}) = ker(𝑑𝑓 𝑥) × {0} has dimension ≥ 𝑛− (𝑚 −1),
+27
+
+[PDF physical page 28]
+𝑉 := 𝑝(𝑍) is a proper subspace of R𝑚, and so its orthogonal complement 𝑉 ⊥ in
+R𝑚 is non-trivial. Since {0} × 𝑉 ⊥ ⊂ 𝑊 := 𝑍 ⊥, it follows that
+C𝑚(𝑑ℎ ( 𝑥,𝑧 ) ) = J𝑑ℎ ( 𝑥,𝑧 ) |𝑊
+ ≤ 𝜖 (Lip( 𝑓 ) + 𝜖)𝑚−1.
+Let 𝐶 := [0, 1] 𝑚 ⊂ R𝑚. Using Fubini’s Theorem and Theorem 9.1 (coarea
+inequality) with 𝑘 = 𝑛 − 𝑚, we obtain
+∫
+R𝑚
+H 𝑛−𝑚( 𝑓 −1{𝑦} ∩ 𝐴′′) 𝑑𝑦
+=
+∫
+𝐶
+∫
+R𝑚
+H 𝑛−𝑚( 𝑓 −1{𝑦 − 𝜖 𝑧} ∩ 𝐴′′) 𝑑𝑦 𝑑𝑧
+=
+∫
+R𝑚
+∫
+𝐶
+H 𝑛−𝑚({𝑥 ∈ 𝐴′′ : ℎ(𝑥, 𝑧) = 𝑦}) 𝑑𝑧 𝑑𝑦
+=
+∫
+R𝑚
+∫
+R𝑚
+H 𝑛−𝑚( 𝑝−1{𝑧} ∩ ℎ−1{𝑦} ∩ ( 𝐴′′ × 𝐶)) 𝑑𝑧 𝑑𝑦
+≤ 𝛼𝑚𝛼𝑛−𝑚
+𝛼𝑛
+∫
+R𝑚
+H 𝑛 (ℎ−1{𝑦} ∩ ( 𝐴′′ × 𝐶)) 𝑑𝑦.
+Applying the above result for ( 𝑓 , 𝐴′) to (ℎ, 𝐴 ′′ × 𝐶), we get
+∫
+R𝑚
+H 𝑛 (ℎ−1{𝑦} ∩ ( 𝐴′′ × 𝐶)) 𝑑𝑦 =
+∫
+𝐴′′ ×𝐶
+C𝑚(𝑑ℎ ( 𝑥,𝑧 ) ) 𝑑 (𝑥, 𝑧)
+≤ 𝜖 (Lip( 𝑓 ) + 𝜖)𝑚−1L𝑛 ( 𝐴′′).
+Letting 𝜖 tend to 0 we conclude that
+∫
+R𝑚 H 𝑛−𝑚( 𝑓 −1{𝑦} ∩ 𝐴′′) 𝑑𝑦 = 0. This
+completes the proof of (1).
+Finally, (2) follows from (1) by approximation. □
+10 Rectifiable sets
+The following notion is fundamental in geometric measure theory.
+Definition 10.1 (countably rectifiable set) Let 𝑌 be a metric space. A set 𝐸 ⊂ 𝑌
+is called countably H 𝑚-rectifiable if there is a countable family of Lipschitz maps
+𝑓𝑖 : 𝐴𝑖 → 𝑌, where 𝐴𝑖 ⊂ R𝑚 is L𝑚-measurable, such that
+H 𝑚𝐸 \ Ð
+𝑖 𝑓𝑖 ( 𝐴𝑖) = 0.
+It is often possible to take without loss of generality 𝐴𝑖 = R𝑚, e.g. if 𝑌 is a
+Banach space (recall Theorem 3.3).
+Lemma 10.2 (bi-Lipschitz parametrization) Suppose that 𝑌 is a metric space
+and 𝐸 ⊂ 𝑌 is an H 𝑚-measurable and countably H 𝑚-rectifiable set. Then there
+28
+
+[PDF physical page 29]
+exists a countable family of bi-Lipschitz maps 𝑓𝑘 : 𝐶𝑘 → 𝑓𝑘 (𝐶𝑘) ⊂ 𝐸, with 𝐶𝑘 ⊂
+R𝑚 compact, such that the 𝑓𝑘 (𝐶𝑘) are pairwise disjoint and
+H 𝑚𝐸 \ Ð
+𝑘 𝑓𝑘 (𝐶𝑘) = 0.
+Compare [Fed1969, Lemma 3.2.18] and [AmbK2000b, Lemma 4.1]. When
+𝑌 = R𝑛 it is possible to choose all 𝑓𝑘 to be 𝜆-bi-Lipschitz, for any given 𝜆 > 1.
+Proof: Consider first a single Lipschitz map 𝑓 : 𝐴 → 𝑌 for some L𝑚-measurable
+set 𝐴 ⊂ R𝑚. We assume that 𝑓 extends to a Lipschitz map ¯𝑓 defined on all of
+R𝑚; if such an extension does not exist, we may first replace 𝑓 with 𝜄 ◦ 𝑓 for some
+isometric embedding 𝜄: 𝑌 → 𝑙∞(𝑌 ). Applying Lemma 8.1 (Borel partition) to the
+set of all 𝑥 ∈ 𝐴 where md ¯𝑓𝑥 exists and is a norm, we find a sequence of measurable
+sets 𝐷 𝑗 ⊂ 𝐴 such that 𝑓 |𝐷 𝑗 is bi-Lipschitz and, by Theorem 8.3 (area formula),
+H 𝑚( 𝑓 ( 𝐴) \ Ð
+𝑗 𝑓 (𝐷 𝑗)) = 0.
+Suppose now that H 𝑚(𝐸 \Ð
+𝑖 𝑓𝑖 ( 𝐴𝑖)) = 0 for some sequence of Lipschitz maps
+𝑓𝑖 : 𝐴𝑖 → 𝑌, where 𝐴𝑖 ⊂ R𝑚 is L𝑚-measurable with L𝑚( 𝐴𝑖) < ∞. Applying the
+above argument to each𝑓𝑖, we get (after relabeling) a sequence of bi-Lipschitz maps
+𝑔 𝑗 : 𝐷 𝑗 → 𝑔 𝑗 (𝐷 𝑗) ⊂ 𝑌 such that 𝐷 𝑗 ⊂ R𝑚 is L𝑚-measurable with finite measure
+and H 𝑚(𝐸 \ Ð
+𝑗 𝑔 𝑗 (𝐷 𝑗)) = 0. Note that 𝐸 𝑗 := 𝐸 ∩ 𝑔 𝑗 (𝐷 𝑗) is H 𝑚-measurable and
+H 𝑚(𝐸 𝑗) < ∞. Then there exists a sequence of pairwise disjoint 𝐹𝜎 sets
+𝐹1 ⊂ 𝐸1, 𝐹 2 ⊂ 𝐸2 \ 𝐸1, 𝐹 3 ⊂ 𝐸3 \ ( 𝐸1 ∪ 𝐸2), . . .
+such thatH 𝑚(𝐸 \Ð
+𝑗 𝐹𝑗) = 0. Exhausting each of theL𝑚-measurable sets 𝑔 −1
+𝑗 (𝐹𝑗),
+up to an L𝑚-nullset, by a countable collection of pairwise disjoint compact sets,
+we obtain the result. □
+Proposition 10.3 (rectifiable level sets) Suppose that 𝑋 is a metric space, 𝑛 ≥
+𝑚 ≥ 1, 𝐸 ⊂ 𝑋 is H 𝑛-measurable and countably H 𝑛-rectifiable, and 𝑓 : 𝐸 → R𝑚
+is Lipschitz. Then for L𝑚-almost every 𝑦 ∈ R𝑚, 𝑓 −1{𝑦} is H 𝑛−𝑚-measurable and
+countably H 𝑛−𝑚-rectifiable.
+Proof: Consider first the case 𝐸 = 𝑋 = R𝑛. Let 𝐵 denote the set of all 𝑥 ∈ R𝑛
+where 𝑑𝑓 𝑥 exists and has rank 𝑚. Choose a Borel partition (𝐵𝑖)𝑖 ∈N of 𝐵 and
+coordinate projections 𝑝𝑖 : R𝑛 → R𝑛−𝑚 such that each 𝑢𝑖 | 𝐵𝑖 is bi-Lipschitz, where
+𝑢𝑖 = ( 𝑓 , 𝑝𝑖); compare the first part of the proof of Lemma 9.2. For all 𝑦 ∈ R𝑚,
+𝑓 −1{𝑦} ∩ 𝐵𝑖 = (𝑢𝑖 | 𝐵𝑖 ) −1(({ 𝑦} × R𝑛−𝑚) ∩ 𝑢𝑖 (𝐵𝑖)) .
+For L𝑚-almost every 𝑦 ∈ R𝑚, we have in addition that H 𝑛−𝑚( 𝑓 −1{𝑦} \ 𝐵) = 0
+since, by Theorem 9.4 (coarea formula),
+∫
+R𝑚
+H 𝑛−𝑚( 𝑓 −1{𝑦} \ 𝐵) 𝑑𝑦 =
+∫
+R𝑛\𝐵
+C𝑚(𝑑𝑓 𝑥) 𝑑𝑥 = 0.
+29
+
+[PDF physical page 30]
+As (𝑢𝑖 | 𝐵𝑖 ) −1 is Lipschitz, this shows that 𝑓 −1{𝑦} is countably H 𝑛−𝑚-rectifiable for
+L𝑚-almost every 𝑦 ∈ R𝑚.
+Now consider the general case, and let 𝐸 ⊂ 𝑋 and 𝑓 : 𝐸 → R𝑚 be given.
+By Lemma 10.2 there exists a sequence of Lipschitz maps ℎ𝑖 : 𝐶𝑖 → 𝐸, where
+𝐶𝑖 ⊂ R𝑛 is compact, such that H 𝑛 (𝐸 \ 𝐷) = 0 for 𝐷 := Ð∞
+𝑖=1 ℎ𝑖 (𝐶𝑖). For each 𝑖,
+put 𝑓𝑖 := 𝑓 ◦ ℎ𝑖 : 𝐶𝑖 → R𝑚 and choose a Lipschitz extension ¯𝑓𝑖 : R𝑛 → R𝑚. For
+L𝑚-almost every 𝑦 ∈ R𝑚, the set ¯𝑓 −1
+𝑖 {𝑦} is countably H 𝑛−𝑚-rectifiable by the first
+part of the proof, and so is
+ℎ𝑖 ( ¯𝑓 −1
+𝑖 {𝑦} ∩ 𝐶𝑖) = ℎ𝑖 ( 𝑓 −1
+𝑖 {𝑦} ∩ 𝐶𝑖) = 𝑓 −1{𝑦} ∩ ℎ𝑖 (𝐶𝑖),
+thus 𝑓 −1{𝑦} ∩ 𝐷 is a 𝜎-compact countably H 𝑛−𝑚-rectifiable subset of 𝑓 −1{𝑦}.
+Moreover, H 𝑛−𝑚( 𝑓 −1{𝑦} \ 𝐷) = 0 for L𝑚-almost every 𝑦 ∈ R𝑚, because
+∫ ∗
+R𝑚
+H 𝑛−𝑚( 𝑓 −1{𝑦} \ 𝐷) 𝑑𝑦 ≤ 𝛼𝑚𝛼𝑛−𝑚
+𝛼𝑛
+Lip( 𝑓 )𝑚 H 𝑛 (𝐸 \ 𝐷) = 0
+by Theorem 9.1 (coarea inequality). This gives the result. □
+Proposition 10.4 (countably rectifiable sets in R𝑛) A set 𝐸 ⊂ R𝑛 is countably
+H 𝑚-rectifiable if and only if there exists a sequence of𝑚-dimensional 𝐶1 subman-
+ifolds 𝑀𝑘 of R𝑛 such that
+H 𝑚𝐸 \ Ð
+𝑘 𝑀𝑘
+ = 0.
+See [Fed1969, Theorem 3.2.29], [Sim2014, Ch. 3].
+Proof: Suppose that H 𝑚(𝐸 \ Ð
+𝑖 𝑓𝑖 (R𝑚)) = 0 for a sequence of Lipschitz maps
+𝑓𝑖 : R𝑚 → R𝑛. By Theorem 5.2, we can assume without loss of generality that the
+𝑓𝑖 are 𝐶1. Let 𝑈𝑖 ⊂ R𝑚 be the set of all 𝑥 ∈ R𝑚 where 𝑑𝑓 𝑥 has rank 𝑚. By the
+area formula, H 𝑚( 𝑓𝑖 (R𝑚 \ 𝑈𝑖)) = 0. Hence, H 𝑚(𝐸 \ Ð
+𝑖 𝑓𝑖 (𝑈𝑖)) = 0. Finally, it
+follows from the inverse function theorem that each 𝑓𝑖 (𝑈𝑖) is a countable union of
+𝐶1 submanifolds.
+The other implication is clear. □
+We now turn to linear approximation properties of countably H 𝑚-rectifiable
+subsets of R𝑛. There are different definitions of approximate tangent spaces for
+such sets in the literature, compare [Fed1969, 3.2.16] and [Mat1995, Ch. 15]. Here
+we adopt the approach from [Sim2014, Ch. 3].
+For 𝑥 ∈ R𝑛 and 𝜆 > 0, define 𝜂𝑥,𝜆 : R𝑛 → R𝑛, 𝜂𝑥,𝜆 (𝑦) = (𝑦 − 𝑥)/𝜆. Note that
+𝜂𝑥,𝜆 maps 𝐵(𝑥, 𝜆𝑟) onto 𝐵(0, 𝑟).
+Definition 10.5 (approximate tangent space) Suppose that 𝐸 ⊂ R𝑛 is an H 𝑚-
+measurable set with H 𝑚(𝐸) < ∞. Let 𝑥 ∈ R𝑛. An 𝑚-dimensional linear subspace
+𝐿 ⊂ R𝑛 is called the (H 𝑚-)approximate tangent space of 𝐸 at 𝑥 if
+lim
+𝜆→0+
+∫
+𝜂𝑥,𝜆 (𝐸 )
+𝜙 𝑑H 𝑚 =
+∫
+𝐿
+𝜙 𝑑H 𝑚
+30
+
+[PDF physical page 31]
+for all 𝜙 ∈ 𝐶𝑐 (R𝑛). Then we write 𝐿 =: Tan𝑚(𝐸, 𝑥 ).
+Clearly Tan𝑚(𝐸, 𝑥 ) is uniquely determined if it exists. For an 𝑚-dimensional
+𝐶1 submanifold 𝑀 ⊂ R𝑛, Tan𝑚(𝑀, 𝑥 ) agrees with the usual tangent space𝑇𝑥 𝑀 for
+every 𝑥 ∈ 𝑀.
+Theorem 10.6 (existence of approximate tangent spaces) Suppose that 𝐸 ⊂ R𝑛
+is an H 𝑚-measurable and countably H 𝑚-rectifiable set with H 𝑚(𝐸) < ∞. Then
+for H 𝑚-almost every 𝑥 ∈ 𝐸, Tan𝑚(𝐸, 𝑥 ) exists and Θ𝑚(𝐸, 𝑥 ) = 1.
+Proof: Choose a sequence of 𝑚-dimensional 𝐶1 submanifolds 𝑀𝑘 of R𝑛 such that
+H 𝑚(𝐸 \ Ð
+𝑘 𝑀𝑘) = 0, compare Proposition 10.4. The sets 𝐸𝑘 := 𝐸 ∩ 𝑀𝑘 are
+H 𝑚-measurable with H 𝑚(𝐸𝑘) < ∞, so it follows from the second statement in
+Theorem 7.2 that for H 𝑚-almost every 𝑥 ∈ 𝐸𝑘,
+Θ𝑚(𝐸, 𝑥 ) = Θ 𝑚(𝑀𝑘, 𝑥) − Θ𝑚(𝑀𝑘 \ 𝐸𝑘, 𝑥) + Θ𝑚(𝐸 \ 𝐸𝑘, 𝑥) = 1 − 0 + 0.
+Similarly, if 𝜙 ∈ 𝐶𝑐 (R𝑛) with spt(𝜙) ⊂ 𝐵(0, 𝑟), then
+∫
+𝜂𝑥,𝜆 (𝐸 )
+𝜙 𝑑H 𝑚 =
+∫
+𝜂𝑥,𝜆 ( 𝑀𝑘 )
+𝜙 𝑑H 𝑚 −
+∫
+𝜂𝑥,𝜆 ( 𝑀𝑘\𝐸𝑘 )
+𝜙 𝑑H 𝑚 +
+∫
+𝜂𝑥,𝜆 (𝐸\𝐸𝑘 )
+𝜙 𝑑H 𝑚
+for all 𝜆 > 0, and for H 𝑚-almost every 𝑥 ∈ 𝐸𝑘, the last two integrals tend to 0 as
+𝜆 → 0. For example,
+
+∫
+𝜂𝑥,𝜆 (𝐸\𝐸𝑘 )
+𝜙 𝑑H 𝑚
+ ≤ sup |𝜙| · H 𝑚(𝜂𝑥,𝜆 (𝐸 \ 𝐸𝑘) ∩ 𝐵(0, 𝑟))
+= sup |𝜙| · H 𝑚(( 𝐸 \ 𝐸𝑘) ∩ 𝐵(𝑥, 𝜆𝑟))
+𝜆𝑚 ,
+which tends to sup |𝜙| 𝑟 𝑚 Θ𝑚(𝐸 \ 𝐸𝑘, 𝑥) = 0. It now follows that
+lim
+𝜆→0+
+∫
+𝜂𝑥,𝜆 (𝐸 )
+𝜙 𝑑H 𝑚 = lim
+𝜆→0+
+∫
+𝜂𝑥,𝜆 ( 𝑀𝑘 )
+𝜙 𝑑H 𝑚 =
+∫
+𝑇𝑥 𝑀𝑘
+𝜙 𝑑H 𝑚
+and thus Tan𝑚(𝐸, 𝑥 ) = 𝑇𝑥 𝑀𝑘 for H 𝑚-almost every 𝑥 ∈ 𝐸𝑘. □
+The following two converses to Theorem 10.6 hold. For the first part, see
+again [Mat1995, Ch. 15] and [Sim2014, Ch. 3]. The second statement is a deep
+result of Preiss [Pre1987]; see [Mat1995, Ch. 17] and [DeL2008] for some accounts.
+Theorem 10.7 (rectifiability criteria) Let 𝐸 ⊂ R𝑛 be an H 𝑚-measurable set with
+H 𝑚(𝐸) < ∞.
+(1) If Tan𝑚(𝐸, 𝑥 ) exists for H 𝑚-almost every 𝑥 ∈ 𝐸, then 𝐸 is countably H 𝑚-
+rectifiable.
+31
+
+[PDF physical page 32]
+(2) If the density Θ𝑚(𝐸, 𝑥 ) exists for H 𝑚-almost every 𝑥 ∈ 𝐸, then 𝐸 is countably
+H 𝑚-rectifiable.
+Finally, we state the Besicovitch–Federer projection theorem which played a
+central role in the development of the theory of rectifiable currents. This deep
+result was proved in [Bes1939] for 𝑚 = 1 and 𝑛 = 2 and in [Fed1947] for general
+dimensions. See [Fed1969, Theorem 3.3.13], [Mat1995, Theorem 18.1].
+A subset 𝐹 of a metric space 𝑌 is purely H 𝑚-unrectifiable if H 𝑚(𝐹 ∩ 𝐸) = 0
+for every countably H 𝑚-rectifiable set 𝐸 ⊂ 𝑌. Every set 𝐴 ⊂ 𝑌 with H 𝑚( 𝐴) < ∞
+can be written as the disjoint union of a countablyH 𝑚-rectifiable set 𝐸 and a purely
+H 𝑚-unrectifiable set 𝐹 (compare [Mat1995, Theorem 15.6]).
+Theorem 10.8 (Besicovitch, Federer) Let 𝐹 ⊂ R𝑛 be a purely H 𝑚-unrectifiable
+set with H 𝑚(𝐹) < ∞. Then H 𝑚(𝜋𝐿 (𝐹)) = 0 for 𝛾𝑛,𝑚-almost every 𝐿 ∈ 𝐺 (𝑛, 𝑚) ,
+where 𝛾𝑛,𝑚 denotes the Haar measure on 𝐺 (𝑛, 𝑚) (see below), and 𝜋𝐿 : R𝑛 → 𝐿
+is orthogonal projection.
+Recall that on every locally compact, Hausdorff topological group 𝐺, there
+exists a left-invariant Radon measure 𝜇 . 0 that is uniquely determined up to a
+positive factor. As for the canonical measure 𝛾𝑛,𝑚 on the Grassmannian manifold
+𝐺 (𝑛, 𝑚) of 𝑚-dimensional linear subspaces of R𝑛, one can take the normalized
+Haar measure 𝜇 on the compact group 𝐺 = 𝑆𝑂 (𝑛) and define 𝛾𝑛,𝑚 as the push-
+forward 𝛼#𝜇 under the map𝛼 : 𝑆𝑂 (𝑛) → 𝐺 (𝑛, 𝑚), 𝑔 ↦→ 𝑔𝐿 0, for any fixed subspace
+𝐿0 ∈ 𝐺 (𝑛, 𝑚). Thus, for every Borel set 𝐵 ⊂ 𝐺 (𝑛, 𝑚),
+𝛾𝑛,𝑚 (𝐵) := 𝜇{𝑔 ∈ 𝑆𝑂 (𝑛) : 𝑔𝐿 0 ∈ 𝐵}.
+For illustration, we describe a simple example of compact purely H 1-unrectifiable
+subset of R2 with positive finite H 1-measure.
+Example 10.9 (Cantor dust) Start with the unit square [0, 1]2 in R2, subdivide it
+into 16 closed squares of equal size, and let 𝐶1 denote the union of the first and
+third square in the top row and the second and fourth square in the bottom row.
+Subdivide each of these four squares using the same pattern, and let 𝐶2 denote the
+corresponding union of the sixteen little squares. Continuing this process, one gets
+a decreasing sequence of compact sets 𝐶𝑘 consisting of 4 𝑘 squares of edge length
+4−𝑘. By construction, the set 𝐶 := Ñ∞
+𝑘=1 𝐶𝑘 has the property that 𝜋(𝐶) = [0, 1] for
+the projection 𝜋 : (𝑥, 𝑦) ↦→ 𝑥, hence H 1(𝐶) ≥ 1, and clearly H 1(𝐶) < ∞. One
+can check that 𝐶 has no approximate tangents, so it follows from Theorem 10.6
+that 𝐶 is purely H 1-unrectifiable. According to Theorem 10.8, H 1(𝜋𝐿 (𝐶)) = 0 for
+𝛾2,1-almost every line 𝐿 ∈ 𝐺 (2, 1).
+Using Theorem 10.8 and Example 10.9, one can give a simple construction of a
+Besicovitch set, that is, a set 𝐵 ⊂ R2 of L2-measure zero containing a line in every
+direction (compare [Mat1995, Thm. 18.1]).
+32
+
+[PDF physical page 33]
+Example 10.10 (Besicovitch set) The idea is to use the set 𝐶 from Example 10.9
+as a parameter space for a family of lines. Define 𝑓 : 𝐶 × R → R2 by 𝑓 (𝑎, 𝑏, 𝑥 ) :=
+(𝑥, 𝑎𝑥 + 𝑏), and put 𝐵 := 𝑓 (𝐶 × R). Note that 𝐵 is 𝜎-compact. For every 𝑎 ∈ [ 0, 1]
+there exists a point (𝑎, 𝑏) ∈ 𝐶, so 𝐵 contains the graph of the function 𝑥 ↦→ 𝑎𝑥 + 𝑏.
+Thus there are lines of every slope 𝑎 ∈ [ 0, 1] in 𝐵, and by taking the union of four
+suitably rotated copies of 𝐵 one gets a Borel set containing a line in every direction.
+It remains to show that L2(𝐵) = 0. For 𝑡 ∈ R, consider the set
+𝐵 ∩ ({ 𝑡} × R) = {( 𝑡, 𝑎𝑡 + 𝑏) : (𝑎, 𝑏) ∈ 𝐶} = {𝑡} × 𝜌𝑡 (𝐶),
+where 𝜌𝑡 (𝑥, 𝑦) = 𝑡𝑥 + 𝑦. Write 𝑡 = cot(𝜙) for 𝜙 ∈ ( 0, 𝜋), and let 𝜋 𝜙 : R2 → 𝐿 𝜙
+denote the orthogonal projection to 𝐿 𝜙 = R(cos(𝜙), sin(𝜙)). Then 𝜋 𝜙 (𝑥, 𝑦) =
+𝑟 (cos(𝜙), sin(𝜙)) for
+𝑟 = cos(𝜙)𝑥 + sin(𝜙)𝑦 = 𝜌𝑡 (𝑥, 𝑦) sin(𝜙).
+It follows thatL1(𝜌𝑡 (𝐶)) = 0 for almost every𝑡 ∈ R if and only ifH 1(𝜋 𝜙 (𝐶)) = 0
+for almost every 𝜙 ∈ ( 0, 𝜋), which holds by Theorem 10.8. Hence, by Fubini’s
+Theorem, L2(𝐵) = 0.
+33
+
+[PDF physical page 34]
+References
+[Alm1962] F. J. Almgren, Jr., The homotopy groups of the integral cycle groups,
+Topology 1 (1962), 257–299.
+[AmbK2000a] L. Ambrosio, B. Kirchheim, Rectifiable sets in metric and Banach spaces,
+Math. Ann. 318 (2000), 527–555.
+[AmbK2000b] L. Ambrosio, B. Kirchheim, Currents in metric spaces, Acta Math. 185
+(2000), 1–80.
+[AmbT2004] L. Ambrosio, P. Tilli, Topics on analysis in metric spaces, Oxford Lecture
+Series in Math. and its Appl. 25, Oxford Univ. Press 2004.
+[BenL2000] Y. Benyamini, J. Lindenstrauss, Geometric Nonlinear Functional Analy-
+sis, Volume 1, Amer. Math. Soc. Colloquium Publ., Vol. 48, Amer Math.
+Soc. 2000.
+[Bes1939] A. S. Besicovitch, On the fundamental geometric properties of linearly
+measurable plane sets of points III, Math. Ann. 116 (1939), 349–357.
+[Bla1916] W. Blaschke, Kreis und Kugel, Veit 1916, de Gruyter 1956.
+[BurBI2001] D. Burago, Y. Burago, S. Ivanov, A Course in Metric Geometry, Graduate
+Studies in Math., Vol. 33, Amer. Math. Soc. 2001.
+[BurZ1988] Y. D. Burago, V. A. Zalgaller, Geometric Inequalities, Springer 1988.
+[Dav1970] O. Davies, Increasing sequences of sets and Hausdorff measure, Proc.
+London Math. Soc. 20 (1970), 222–236.
+[DeL2008] C. De Lellis, Rectifiable Sets, Densities and Tangent Measures, Zurich
+Lect. Adv. Math., European Math. Soc. 2008.
+[EsmH2021] B. Esmayli, P. Hajlasz, The coarea inequality. Ann. Fenn. Math. 46 (2021),
+no. 2, 965–991.
+[EvaG1992] L. C. Evans, R. E. Gariepy, Measure Theory and Fine Properties of
+Functions, Boca Raton, CRC Press 1992.
+[Fed1947] H. Federer, The (𝜙, 𝑘 ) rectifiable subsets of 𝑛 space, Trans. Amer. Math.
+Soc. 62 (1947), 114–192.
+[Fed1969] H. Federer, Geometric Measure Theory, Springer 1969, 1996.
+[Gro1981] M. Gromov, Groups of polynomial growth and expanding maps, Publ.
+Math. IHES 53 (1981), 53–73.
+[Gro1999] M. Gromov, with Appendices by M. Katz, P. Pansu, and S. Semmes,
+Metric Structures for Riemannian and Non-Riemannian Spaces, Birk-
+h¨auser 1999.
+[Hei2001] J. Heinonen, Lectures on Analysis on Metric Spaces, Springer 2001.
+[Hei2003] J. Heinonen, Geometric embeddings of metric spaces, Rep. Univ.
+Jyv¨askyl¨a Dept. Math. Stat., no. 90, 2003.
+[JohLS1986] W. B. Johnson, J. Lindenstrauss, G. Schechtman, Extensions of Lipschitz
+maps into Banach spaces, Israel J. Math. 54 (1986), 129–138.
+[Kir1994] B. Kirchheim, Rectifiable metric spaces: local structure and regularity of
+the Hausdorff measure, Proc. Amer. Math. Soc. 121 (1994), 113–123.
+[Kirs1934] M. D. Kirszbraun, ¨Uber die zusammenziehende und Lipschitzsche Trans-
+formationen, Fundamenta Math. 22 (1934), 77–108.
+[KorS1993] N. J. Korevaar, R. M. Schoen, Sobolev spaces and harmonic maps for
+metric space targets, Comm. Anal. Geom. 1 (1993), 561–659.
+[LanS1997] U. Lang, V. Schroeder, Kirszbraun’s theorem and metric spaces of
+34
+
+[PDF physical page 35]
+bounded curvature, Geom. Funct. Anal. 7 (1997), 535–560.
+[Lan1999] U. Lang, Extendability of large-scale Lipschitz maps, Trans. Amer. Math.
+Soc. 351 (1999), 3975–3988.
+[Mal1999] J. Maly, A simple proof of the Stepanov theorem on differentiability
+almost everywhere, Exposition. Math. 17 (1999), 59–61.
+[Mat1995] P. Mattila, Geometry of Sets and Measures in Euclidean Spaces, Frac-
+tals and Rectifiability, Cambridge Studies in Advanced Math., Vol. 44,
+Cambridge U. Press 1995.
+[McS1934] E. J. McShane, Extension of range of functions, Bull. Amer. Math. Soc.
+40 (1934), 837–842.
+[Rad1919] H. Rademacher, ¨Uber partielle und totale Differenzierbarkeit I, Math.
+Ann. 79 (1919), 340–359.
+[Rei2009] L. P. Reichel, The Coarea Formula for Metric Space Valued Maps, Diss.
+ETH No. 18540, 2009.
+[Pre1987] D. Preiss, Geometry of measures in 𝑅𝑛: distribution, rectifiability, and
+densities, Ann. of Math. 125 (1987), 537–643.
+[Sim2014] L. Simon, Introduction to Geometric Measure Theory, Tsinghua Lecture
+Notes 2014.
+[Ste1970] E. M. Stein, Singular Integrals and Differentiability Properties of Func-
+tions, Princeton Univ. Press, New Jersey 1970.
+[Step1923] W. Stepanoff, ¨Uber totale Differenzierbarkeit, Math. Ann. 90 (1923),
+318–320.
+[Val1945] F. A. Valentine, A Lipschitz condition preserving extension for a vector
+function, Amer. J. Math. 67 (1945), 83–93.
+[Wen2008] S. Wenger, Characterizations of metric trees and Gromov hyperbolic met-
+ric spaces, Math. Res. Lett. 15 (2008), 1017–1026.
+[Whit1934] H. Whitney, Analytic extensions of differentiable functions defined in
+closed sets, Trans. Amer. Math. Soc. 36 (1934), 63–89.
+[Whit1935] H. Whitney, A function not constant on a connected set of critical points,
+Duke Math. J. 1 (1935), 514–517.
+Urs Lang
+lang@math.ethz.ch
+Department of Mathematics
+ETH Zurich
+8092 Zurich
+Switzerland
+35

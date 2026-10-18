@@ -1,0 +1,2491 @@
+[PDF physical page 1]
+arXiv:2008.08843v3  [math.CA]  21 Jun 2021
+PLENTY OF BIG PROJECTIONS IMPLY
+BIG PIECES OF LIPSCHITZ GRAPHS
+TUOMAS ORPONEN
+ABSTRACT . I prove that closed n-regular sets E Ă Rd with plenty of big projections have
+big pieces of Lipschitz graphs. In particular, these sets ar e uniformly n-rectiﬁable. This
+answers a question of David and Semmes from 1993.
+CONTENTS
+1. Introduction 1
+1.1. Connection to uniform rectiﬁability 3
+1.2. Previous and related work 4
+1.3. An open problem 5
+1.4. Notation 5
+1.5. Acknowledgements 5
+2. Preliminaries on the Grassmannian 5
+3. Dyadic reformulations 6
+3.1. Dyadic cubes 6
+3.2. Dyadic reformulations of PBP and WGL 7
+4. Construction of heavy trees 9
+5. A criterion for positive width 11
+6. From big β numbers to heavy cones 19
+7. Heavy trees have positive width 22
+7.1. Part I: Finding heavy cones 23
+7.2. Part II: Besicovitch-Federer argument 26
+7.3. Part III: Conclusion 31
+Appendix A. A variant of the Lebesgue differentiation theor em 32
+References 39
+1. I NTRODUCTION
+I start by introducing the key concepts of the paper. A Radon measure µ on Rd is called
+s-regular, s ě 0, if there exists a constant C0 ě 1 such that
+C ´ 1
+0 rs ď µ pBpx, r qq ď C0rs, x P spt µ, 0 ă r ă diampspt µ q.
+Date: June 22, 2021.
+2010 Mathematics Subject Classiﬁcation. 28A75 (Primary), 28A78 (Secondary).
+Key words and phrases. Projections, Big Pieces of Lipschitz graphs, Quantitative rectiﬁability .
+T.O. is supported by the Academy of Finland via the project Quantitative rectiﬁability in Euclidean and
+non-Euclidean spaces, grant Nos. 309365, 314172, and via the project Incidences on Fractals, grant No. 321896.
+1
+
+[PDF physical page 2]
+2 TUOMAS ORPONEN
+A set E Ă Rd is called s-regular if E is closed, and the restriction of s-dimensional Haus-
+dorff measure Hs on E is an s-regular Radon measure. An n-regular set E Ă Rd has
+big pieces of Lipschitz graphs (BPLG) if the following holds for some constants θ, L ą 0:
+for every x P E and 0 ă r ă diampEq, there exists an n-dimensional L-Lipschitz graph
+Γ Ă Rd, which may depend on x and r, such that
+HnpBpx, r q X E X Γq ě θrn. (1.1)
+By an n-dimensional L-Lipschitz graph, I mean a set of the form Γ “ t v ` f pvq : v P V u,
+where V Ă Rd is an n-dimensional subspace, and f : V Ñ V K is L-Lipschitz. Sometimes
+it is convenient to call Γ “ t v ` f pvq : v P V u an L-Lipschitz graph over V . The BPLG
+property is stronger than uniform n-rectiﬁability, see Section 1.1 for more discussion.
+Let Gpd, n q be the Grassmannian of all n-dimensional subspaces of Rd, equipped with
+a natural metric which is invariant under the action of the or thogonal group Opdq. See
+Section 2 for details. For V P Gpd, n q, let πV be the orthogonal projection to V . It is
+straightforward to check, see [ 22, Proposition 1.4], that if E Ă Rd is an n-regular set with
+BPLG, then E has many projections of positive Hn measure: more accurately , ifΓ in (1.1)
+is an L-Lipschitz graph over V0 P Gpd, n q, then there is a constant δ ą 0, depending only
+on d, L, θ , such that
+HnpπV pBpx, r q X Eqq ě HnpπV pBpx, r q X E X Γqq ě δrn, V P BGpd,n qpV0, δ q.
+David and Semmes asked in their 1993 paper [13] whether a converse holds: are sets with
+BPLG precisely the ones with plenty of big projections? The p roblem is also mentioned
+in the monograph [ 12, p. 29] and, less precisely , in the 1994 ICM lecture of Semmes [31].
+Deﬁnition 1.2 (BP and PBP) . An n-regular set E Ă Rd has big projections (BP) if there
+exists a constant δ ą 0 such that the following holds. For every x P E and 0 ă r ă
+diampEq, there exists at least one plane V “ Vx,r P Gpd, n q such that
+HnpπV pBpx, r q X Eqq ě δrn. (1.3)
+The set E has plenty of big projections (PBP) if (1.3) holds for all V P BpVx,r , δ q.
+In [13, Deﬁnition 1.12], the PBP condition was called big projections in plenty of directions.
+As noted above Deﬁnition 1.2, sets with BPLG have PBP . Conversely , one of the main
+results in [13] states that even the weaker "single big projection" condit ion BP is sufﬁcient
+to imply BPLG if it is paired with the following a priori geometric hypothesis:
+Deﬁnition 1.4 (WGL). An n-regular set E Ă Rd satisﬁes the weak geometric lemma (WGL)
+if for all ǫ ą 0 there exists a constant Cpǫq ą 0 such that the following (Carleson packing
+condition) holds:
+ż R
+0
+Hnptx P E X Bpx0, R q : β pBpx, r qq ě ǫuq dr
+r ď CpǫqR, x 0 P E, 0 ă R ă diampEq.
+In the deﬁnition above, the quantity β pBpx, r qq could mean a number of different
+things without changing the class of n-regular sets satisfying Deﬁnition 1.4. In the cur-
+rent paper, the most convenient choice is
+β pBpx, r qq :“ β1pBpx, r qq :“ inf
+V PApd,n q
+1
+rn
+ż
+Bpx,r q
+distpy, V q
+r dµ pyq
+
+[PDF physical page 3]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 3
+with µ :“ Hn|E, and where Apd, n q is the "afﬁne Grassmannian" of all n-dimensional
+planes in Rd. The β -number above is an "L1-variant" of the original "L8-based β -number"
+introduced by Jones [ 20], namely
+β8pBpx, r qq :“ inf
+V PApd,n q
+sup
+yPEXBpx,r q
+distpy, V q
+r .
+If E Ă Rd is n-regular, then the following relation holds between the two β -numbers:
+β8pBpx, r qq ≲ β pBpx, 2rqq1{pn` 1q, x P E, 0 ă r ă diampEq.
+For a proof, see [ 11, p. 28]. This inequality shows that the WGL, a condition conc erning
+all ǫ ą 0 simultaneously , holds for the numbers β pBpx, r qq if and only if it holds for the
+numbers β8pBpx, r qq.
+After these preliminaries, the result of David and Semmes [ 13, Theorem 1.14] can be
+stated as follows:
+Theorem 1.5 (David-Semmes). An n-regular set E Ă Rd has BPLG if and only if E has BP
+and satisﬁes the WGL.
+The four corners Cantor set has BP (ﬁnd a direction where the pr ojections of the four
+boxes tile an interval) but fails to have BPLG, being purely 1-unrectiﬁable. This means
+that the WGL hypothesis cannot be omitted from the previous s tatement. However, the
+four corners Cantor set fails to have PBP , by the Besicovitchprojection theorem [
+5], which
+states that almost every projection of a purely 1-rectiﬁable set of σ -ﬁnite length has mea-
+sure zero. The main result of this paper shows that PBP alone i mplies BPLG:
+Theorem 1.6. Let E Ă Rd be an n-regular set with PBP. Then E has BPLG.
+To prove Theorem 1.6, all one needs to show is that
+PBP ù ñ WGL.
+The rest then follows from the work of David and Semmes, Theor em 1.5.
+1.1. Connection to uniform rectiﬁability. The BPLG property is a close relative of uni-
+form n-rectiﬁability, introduced by David and Semmes [ 11] in the early 90s. An n-regular
+set E Ă Rd is uniformly n-rectiﬁable, n-UR in brief, if ( 1.1) holds for some n-dimensional
+L-Lipschitz images Γ “ f pBp0, r qq, with Bp0, r q Ă Rn, instead of n-dimensional L-Lipschitz
+graphs. As shown by David and Semmes in [ 11, 12], the n-UR property has many equiv-
+alent, often surprising characterisations: for example, s ingular integrals with odd n-
+dimensional kernels are L2-bounded on an n-regular set E Ă Rd if and only if E is n-UR.
+Since its conception, the study of uniform (and, more genera lly , quantitative) rectiﬁabil-
+ity has become an increasingly popular topic, for a good reas on: techniques in the area
+have proven fruitful in solving long-standing problems on h armonic measure and ellip-
+tic PDEs [ 2, 3, 18, 29], theoretical computer science [ 26], and metric embedding theory
+[27]. This list of references is hopelessly incomplete!
+Since n-dimensional Lipschitz graphs can be written as n-dimensional Lipschitz im-
+ages, n-regular sets with BPLG are n-UR. In particular, Theorem 1.6 implies that n-
+regular sets with PBP are n-UR. The converse is false: Hrycak (unpublished) observed
+in the 90s that a simple iterative construction can be used to produce 1-regular compact
+sets Kǫ Ă R2, ǫ ą 0, with the properties
+
+[PDF physical page 4]
+4 TUOMAS ORPONEN
+(a) H1pKǫq “ 1 and H1pπLpKǫqq ă ǫ for all L P Gp2, 1q,
+(b) Kǫ is 1-UR with constants independent of ǫ ą 0.
+This means that UR sets do not necessarily have PBP , or at leas t bounds for n-UR con-
+stants do not imply bounds for PBP constants. The details of H rycak’s construction are
+contained in the appendix of Azzam’s paper [ 1], but they can also be outlined in a few
+words: pick n :“ tǫ´ 1u. Sub-divide I0 :“ r 0, 1s ˆ t 0u Ă R2 into n segments I1, . . . , I n of
+equal length, and rotate them individually counter-clockw ise by 2π {n. Then, sub-divide
+each Ij into n segments of equal length, and rotate by 2π {n again. Repeat this procedure
+n times to obtain a compact set Kn “ Kǫ consisting of nn segments of length n´ n. It is
+not hard to check that (a) and (b) hold for Kǫ. In particular, to check (b), one can easily
+cover Kǫ by a single 1-regular continuum Γ Ă Bp0, 2q of length H1pΓq ď 10.
+1.2. Previous and related work. It follows from the Besicovitch-Federer projection the-
+orem [ 5, 17] that an n-regular set with PBP is n-rectiﬁable. The challenge in proving
+Theorem 1.6 is to upgrade this "qualitative" property to BPLG. For gener al compact sets
+in R2 of ﬁnite 1-dimensional measure, a quantitative version of the Besicovitch projection
+theorem is due to Tao [ 34]. It appears, however, that Theorem 1.6 does not follow from
+his work, not even in R2. Another, more recent, result for general n-regular sets is due
+to Martikainen and myself [ 22]: the main result of [ 22] shows that BPLG is equivalent
+to a property (superﬁcially) stronger than PBP . This propert y roughly states that the πV -
+projections of the measure Hn|E lie in L2pV q on average over V P BGpd,n qpV0, δ q. One of
+the main propositions from [ 22] also plays a part in the present paper, see Proposition
+6.4. Interestingly , while the main result of the current paper is formally stronger than the
+result in [22], the new proof does not supersede the previous one: in [ 22], the L2-type as-
+sumption in a ﬁxed ball was used to produce a big piece of a Lipsc hitz graph in the very
+same ball. Here, on the contrary , PBP needs to be employed in m any balls, potentially
+much smaller than the "ﬁxed ball" one is interested in. Whethe r this is necessary or not
+is posed as Question 1 below.
+Besides Tao’s paper mentioned above, there is plenty of rece nt activity around the
+problem of quantifying Besicovitch’s projection theorem, that is, showing that "quantita-
+tively unrectiﬁable sets" have quantiﬁably small projections. As far as I know, Tao’s paper
+is the only one dealing with general sets, while other author s, including Bateman, Bond,
+Łaba, Nazarov , Peres, Solomyak, and V olberg have concentra ted on self-similar sets of
+various generality [ 4, 6, 7, 8, 21, 28, 30]. In these works, strong upper (and some surpris-
+ing lower) bounds are obtained for the Favard length of the kth iterate of self-similar sets.
+In the most recent development [ 10], Cladek, Davey , and Taylor considered the Favard
+curve length of the four corners Cantor set.
+Quantifying the Besicovitch projection theorem is related to an old problem of Vi-
+tushkin. The remaining open question is to determine whethe r arbitrary compact sets
+E Ă R2 of positive Favard length have positive analytic capacity. It seems unlikely that
+the method of the present paper would have any bearing on Vitu shkin’s problem, but
+the questions are not entirely unrelated either: I refer to t he excellent introduction in the
+paper [9] of Chang and Tolsa for more details.
+Finally , Theorem 1.6 can be simply viewed as a characterisation of the BPLG prop-
+erty , of which there are not many available – in contrast to uniform rectiﬁability , which is
+charaterised by seven conditions in [ 11] alone! I already mentioned that BPLG is equiva-
+lent to BP+WGL by [ 13], and that with Martikainen [ 22], we characterised BPLG via the
+
+[PDF physical page 5]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 5
+L2-norms of the projections πV 7Hn|E. Another, very recent, characterisation of BPLG, in
+terms of conical energies, is due to D ˛ abrowski [14].
+1.3. An open problem. An answer to the question below does not seem to follow from
+the method of this paper.
+Question 1. For all δ ą 0 and C0 ě 1, do there exist L ě 1 and θ ą 0 such that the following
+holds? Whenever E Ă Rd is an n-regular set with regularity constant at most C0, and
+HnpπV pBp0, 1q X Eqq ě δ, V P BGpd,n qpV0, δ q, (1.7)
+then there exists an n-dimensional L-Lipschitz graph Γ Ă Rd such that HnpE X Γq ě θ.
+In addition to the "single scale" assumption (
+1.7), the proof of Theorem 1.6 requires
+information about balls much smaller than Bp0, 1q to produce the Lipschitz graph Γ.
+1.4. Notation. An open ball in Rd with centre x P Rd and radius r ą 0 will be denoted
+Bpx, r q. When x “ 0, I sometimes abbreviate Bpx, r q “ : Bprq. The notations radpBq and
+diampBq mean the radius and diameter of a ball B Ă Rd, respectively , andλB :“ Bpx, λr q
+for B “ Bpx, r q and λ ą 0.
+For A, B ą 0, the notation A ≲p1,...,p k B means that there exists a constant C ě 1,
+depending only on the parameters p1, . . . , p k, such that A ď CB . V ery often, one of
+these parameters is either the ambient dimension " d", or then the PBP or n-regularity
+constant " δ" or " C0" of a ﬁxed n-regular set E Ă Rd having PBP , that is, satisfying the
+hypotheses of Theorem 1.6. In these cases, the dependence is typically omitted from th e
+notation: in other words, A ≲d,δ,C 0 B is abbreviated to A ≲ B. The two-sided inequality
+A ≲p B ≲p A is abbreviated to A „ p B, and A ≳p B means the same as B ≲p A.
+1.5. Acknowledgements. I would like to thank Michele Villa for useful conversations,
+and Alan Chang for pointing out a mistake in the proof of Lemma 5.17 in an earlier ver-
+sion of the paper. I’m also grateful to Damian D ˛ abrowski for reading the paper carefully
+and giving many useful comments. Finally , I am grateful to th e anonymous reviewers
+for their careful reading, and for spotting a large number of small inaccuracies.
+2. P RELIMINARIES ON THE GRASSMANNIAN
+Before getting started, we gather here a few facts of the Gras smannian Gpd, n q of n-
+dimensional subspaces of Rd. Here 0 ď n ď d, and the extreme cases are Gpd, 0q “ t 0u
+and Gpd, d q “ t Rdu. We equip Gpd, n q with the metric
+dpV1, V 2q :“ } πV1 ´ πV2}, V 1, V 2 P Gpd, n q,
+where }¨} refers to operator norm. That " d" means two different things here is regrettable,
+but the correct interpretation should always be clear from c ontext, and the metric "d" will
+only be used very occasionally . The metric space pGpd, n q, d q is compact, and open balls
+in Gpd, n q will be denoted BGpd,n qpV, r q. An equivalent metric on Gpd, n q is given by
+¯dpV1, V 2q :“ maxtdistpv1, V 2q : v1 P V1 and |v1| “ 1u.
+For a proof, see [ 25, Lemma 4.1]. With the equivalence of d and ¯d in hand, we easily infer
+the following auxiliary result:
+Lemma 2.1. Let 0 ă n ă d, and let W1, W 2 P Gpd, n ` 1q, and let V1 P Gpd, n q with V1 Ă W1.
+Then, there exists V2 P Gpd, n q such that V2 Ă W2 and dpV1, V 2q ≲ dpW1, W 2q.
+
+[PDF physical page 6]
+6 TUOMAS ORPONEN
+Proof. By the equivalence of d and ¯d, we have r :“ ¯dpW1, W 2q ≲ dpW1, W 2q. We may as-
+sume that r is small, depending on the ambient dimension, otherwise any n-dimensional
+subspace V2 Ă W2 satisﬁes dpV1, V 2q ď diam Gpd, n q ≲ r. Now, let te1, . . . , e nu be an or-
+thonormal basis for V1, and for all ej P V1 Ă W1, pick some ¯ej P W2 with |ej ´ ¯ej| ď r.
+If r ą 0 is small enough, the vectors ¯e1, . . . , ¯en are linearly independent, hence span an
+n-dimensional subspace V2 Ă W2. Since |ej ´ ¯ej| ď r for all 1 ď j ď n, an arbitrary unit
+vector v1 “ ř βjej P V1 lies at distance ≲ r from v2 :“ ř βj ¯ej P V2, and consequently
+dpV1, V 2q „ ¯dpV1, V 2q “ maxtdistpv1, V 2q : v1 P V1 and |v1| “ 1u ≲ r.
+This completes the proof. □
+We will often use the standard "Haar" probability measure γd,n on Gpd, n q. Namely , let
+θd be the Haar measure on the orthogonal group Opdq, and deﬁne
+γd,n pVq :“ θdptg P Opdq : gV0 P Vuq, V Ă Gpd, n q,
+where V0 P Gpd, n q is any ﬁxed subspace. The measure γd,n is the unique Opdq-invariant
+Radon probability measure on Gpd, n q, see [ 23, §3.9]. At a fairly late stage of the proof of
+Theorem 1.6, we will need the following "Fubini" theorem for the measure Gpd, n q:
+Lemma 2.2. Let 0 ă n ă d. For W P Gpd, n ` 1q, let GpW, n q :“ t V P Gpd, n q : V Ă
+W u. Then GpW, n q can be identiﬁed with Gpn ` 1, n q, and we equip GpW, n q with the Haar
+measure γW,n ` 1,n :“ γn` 1,n , constructed as above. Then, the following holds for all Borel sets
+B Ă Gpd, n q:
+γd,n pBq “
+ż
+Gpd,n ` 1q
+γW,n ` 1,n pBq dγd,n ` 1pW q. (2.3)
+Proof. This is the same argument as in [ 23, Lemma 3.13]: one simply checks that both
+sides of (2.3) deﬁne Opdq-invariant probability measures on γd,n , and then appeals to the
+uniqueness of such measures. □
+We record one ﬁnal auxiliary result:
+Lemma 2.4. For all 0 ă n ă d, δ ą 0, there exists an "angle" α “ α pd, δ q ą 0 such that the
+following holds. If z P Rd, and V P Gpd, n q satisfy |πV pzq| ď α |z|, then there exists a plane
+V 1 P Gpd, n q with dpV, V 1q ă δ such that πV 1pzq “ 0.
+Proof. The proof of [ 22, Lemma A.1] begins by establishing exactly this claim, alth ough
+the statement of [ 22, Lemma A.1] does not mention it explicitly . □
+3. D YADIC REFORMULATIONS
+3.1. Dyadic cubes. It is known (see for example [ 13, §2]) that an n-regular set E Ă Rd
+supports a system D of "dyadic cubes", that is, a collection of subset of E with the fol-
+lowing properties. First, D can be written as a disjoint union
+D “
+ď
+jPZ
+Dj,
+where the elements Q P Dj are referred to as cubes of side-length 2´ j. For j P Z ﬁxed,
+the sets of Dj are disjoint and cover E. For Q P Dj, one writes ℓpQq :“ 2´ j. The side-
+length ℓpQq is related to the geometry of Q P Dj in the following way: there are constants
+
+[PDF physical page 7]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 7
+0 ă c ă C ă 8 , and points cQ P Q Ă E (known as the "centres" of Q P D) with the
+properties
+BpcQ, cℓ pQqq X E Ă Q Ă BpcQ, Cℓ pQqq.
+In particular, it follows from the n-regularity of E that µ pQq „ ℓpQqn for all Q P D. The
+balls BpcQ, Cℓ pQqq containing Q are so useful that they will have an abbreviation:
+BQ :“ BpcQ, Cℓ pQqq.
+If we choose the constant C ě 1 is large enough, as we do, the balls BQ have the property
+Q Ă Q1 ù ñ BQ Ă BQ1.
+The "dyadic" structure of the cubes in D is encapsulated by the following properties:
+‚ For all Q, Q 1 P D, either Q Ă Q1, or Q1 Ă Q, or Q X Q1 “ H .
+‚ Every Q P Dj has as parent ˆQ P Dj´ 1 with Q Ă ˆQ.
+If Q P Dj, the cubes in Dj` 1 whose parent is Q are known as the children of Q, denoted
+chpQq. The ancestry of Q consists of all the cubes in D containing Q.
+A small technicality arises if diampEq ă 8 : then the collections Dj are declared empty
+for all j ă j0, and Dj0 contains a unique element, known as the top cube of D. All of the
+statements above hold in this scenario, except that the top c ube has no parents.
+3.2. Dyadic reformulations of PBP and WGL. Let us next reformulate some of the con-
+ditions familiar from the introduction in terms of a ﬁxed dyad ic system D on E.
+Deﬁnition 3.1 (PBP). An n-regular set E Ă Rd has PBP if there exists δ ą 0 such that the
+following holds. For all Q P D, there exists a ball SQ Ă Gpd, n q of radius radpSQq ě δ
+such that
+HnpπV pE X BQqq ě δµpQq, V P SQ.
+It is easy to see that the dyadic PBP is equivalent to the conti nuous PBP: in particular,
+the dyadic PBP follows by applying the continuous PBP to the b all BQ “ BpcQ, Cℓ pQqq
+centred at cQ P E. Only the dyadic PBP will be used below.
+Deﬁnition 3.2 (WGL). An n-regular set E Ă Rd satisﬁes the WGL if for all ǫ ą 0, there
+exists a constant Cpǫq ą 0 such that the following holds:
+ÿ
+QPDpQ0q
+β pQqě ǫ
+µ pQq ď Cpǫqµ pQ0q, Q 0 P D.
+Here µ :“ Hn|E, β pQq :“ β pBQq, and DpQ0q :“ t Q P D : Q Ă Q0u.
+It is well-known, but takes a little more work to show, that th e dyadic WGL is equiva-
+lent to the continuous WGL; this fact is stated without proof in numerous references, for
+example [13, (2.17)]. I also leave the checking to the reader.
+One often wishes to decompose D, or subsets thereof, into trees:
+Deﬁnition 3.3 (Trees). Let E Ă Rd be an n-regular set with associated dyadic system D.
+A collection T Ă D is called a tree if the following conditions are met:
+‚ T has a top cube QpT q P T with the property that Q Ă QpT q for all Q P T .
+‚ T is consistent: if Q1, Q 3 P T , Q2 P D, and Q1 Ă Q2 Ă Q3, then Q2 P T .
+‚ If Q P T , then either chpQq Ă T or chpQq X T “ H .
+
+[PDF physical page 8]
+8 TUOMAS ORPONEN
+The ﬁnal axiom allows to deﬁne the leaves of T consistently: these are the cubes Q P T
+such that chpQq X T “ H . The leaves of T are denoted LeavespT q. The collection
+LeavespT q always consists of disjoint cubes, and it may happen that LeavespT q “ H .
+Some trees will be used to prove the following reformulation of the WGL:
+Lemma 3.4. Let E Ă Rd be an n-regular set supporting a collection D of dyadic cubes. Let
+µ :“ Hn|E. Assume that for all ǫ ą 0, there exists N “ N pǫq P N such that the following holds:
+µ ptx P Q : cardtQ1 P D : x P Q1 Ă Q and β pQ1q ě ǫu ě N uq ď 1
+2 µ pQq, Q P D. (3.5)
+Then E satisﬁes the WGL.
+Remark 3.6. Chebyshev’s inequality applied to the set tx P Q : ř
+Q1Ă Q,β pQ1qě ǫ 1Q1pxq ě N u
+shows that the WGL implies ( 3.5). Therefore ( 3.5) is equivalent to the WGL.
+Proof of Lemma 3.4. Fix Q0 P D and ǫ ą 0. We will show that
+ÿ
+QĂ Q0
+β pQqě ǫ
+µ pQq ď 2N µpQ0q. (3.7)
+Abbreviate D :“ t Q P D : Q Ă Q0u, and decompose D into trees by the following simple
+stopping rule. The ﬁrst tree T0 has top QpT0q “ Q0, and its leaves are the maximal cubes
+Q P D (if any should exist) such that
+cardtQ1 P D : Q Ă Q1 Ă Q0 and β pQ1q ě ǫu “ N.
+Here N “ N pǫq ě 1, as in ( 3.5). All the children of previous generation leaves are de-
+clared to be new top cubes, under which new trees are construc ted by the same stopping
+condition. Let T0, T1, . . . be the trees obtained by this process, with top cubes Q0, Q 1, . . .
+Note that D “ Ť
+jě 0 Tj, and
+cardtQ P Tj : x P Q and β pQq ě ǫu ď N, x P Qj.
+Further, (3.5) implies that
+µ pYLeavespTjqq ď 1
+2 µ pQjq, j ě 0.
+On the other hand, the sets Ej :“ Qj z Y LeavespTjq are disjoint. Now, we may estimate
+as follows:
+ÿ
+QĂ Q0
+β pQqě ǫ
+µ pQq “
+8ÿ
+j“ 0
+ż
+Qj
+ÿ
+QPTj
+β pQqě ǫ
+1Qpxq dx ď N
+8ÿ
+j“ 0
+µ pQjq ď 2N
+8ÿ
+j“ 0
+µ pEjq ď 2N µpQ0q.
+This completes the proof of ( 3.7). □
+By Theorem 1.5, the PBP condition together with the WGL implies BPLG, and th e con-
+dition in Lemma 3.4 is a reformulation of the WGL. Therefore, our main result, Th eorem
+1.6, will be a consequence of the next proposition:
+Proposition 3.8. Assume that E Ă Rd is an n-regular set with PBP. Then, for every ǫ ą 0,
+there exists N ě 1, depending on d, ǫ, and the n-regularity and PBP constants of E, such that
+the following holds. The sets
+EQ :“ EQpN, ǫ q :“
+␣
+x P Q : cardtQ1 P D : x P Q1 Ă Q and β pQ1q ě ǫu ě N
+(
+satisfy µ pEQq ď 1
+2 µ pQq for all Q P D.
+
+[PDF physical page 9]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 9
+Proving this proposition will occupy the rest of the paper.
+4. C ONSTRUCTION OF HEAVY TREES
+The proof of Proposition 3.8 proceeds by counter assumption: there exists a cube Q0 P
+D, a small number ǫ ą 0, and a large number N ě 1 of the form N “ KM , where also
+K, M ě 1 are large numbers, with the property
+µ pEQ0q ě 1
+2 µ pQ0q. (4.1)
+This will lead to a contradiction if both K and M are large enough, depending on d, ǫ,
+and the n-regularity and PBP constants of E. Precisely , M ě 1 gets chosen ﬁrst within
+the proof of Proposition 4.2. The parameter K ě 1 is chosen second, and depends also
+on M . For the details, see the proof of Proposition 3.8, which can be found around ( 4.3).
+From now on, we will restrict attention to sub-cubes of Q0, and we abbreviate D :“
+DpQ0q. We begin by using ( 4.1), and the deﬁnition of EQ0, to construct a number of heavy
+trees T0, T1, . . . Ă D with the following properties:
+(T1) µ pEQ0 X QpTjqq ě 1
+4 µ pQpTjqq for all j ě 0.
+(T2) EQ0 X QpTjq Ă Y LeavespTjq for all j ě 0.
+(T3) For every j ě 0 and Q P LeavespTjq it holds
+cardtQ1 P Tj : Q Ă Q1 Ă QpTjq and β pQ1q ě ǫu “ M.
+(T4) The top cubes satisfy ř
+j µ pQpTjqq ě K
+4 µ pQ0q.
+Before constructing the trees with properties (T1)-(T4), let us use them, combined with
+some auxiliary results, to complete the proof of Propositio n 3.8. The ﬁrst ingredient is
+the following proposition:
+Proposition 4.2. If the parameter M ě 1 is large enough, depending only on d, ǫ, and the n-
+regularity and PBP constants of E, then widthpTjq ě τ µpQpTjqq, where τ ą 0 depends only on
+d, and the n-regularity and PBP constants of E.
+Here widthpTjq “ ř
+QPTj widthpQqµ pQq is a quantity to be properly introduced in Sec-
+tion
+5. For now, we only need to know that the coefﬁcients widthpQq satisfy a Carleson
+packing condition, depending only on the n-regularity constant of E:
+widthpDq :“
+ÿ
+QĂ Q0
+widthpQqµ pQq ≲ µ pQ0q.
+We may then prove Proposition 3.8:
+Proof of Proposition 3.8. Let N “ KM , where M ě 1 is chosen so large that the hypothesis
+of Proposition 4.2 is met: every heavy tree Tj satisﬁes widthpTjq ě τ µpQpTjqq. According
+to (T4) in the construction of the heavy trees, this implies
+widthpDq ě
+ÿ
+jě 0
+widthpTjq ě τ
+ÿ
+jě 0
+µ pQpTjqq ě τ K
+4 µ pQ0q. (4.3)
+Now, the lower bound in (4.3) violates the Carleson packing condition for widthpDq if the
+constant K ě 1 is chosen large enough, depending on the admissible paramet ers. The
+proof of Proposition 3.8 is complete. □
+
+[PDF physical page 10]
+10 TUOMAS ORPONEN
+The rest of this section is spent constructing the heavy tree s. We ﬁrst construct a some-
+what larger collection, and then prune it. In fact, the const ruction of the larger collection
+is already familiar from the proof of Lemma 3.4, with notational changes: the ﬁrst tree T0
+has top QpT0q “ Q0, and its leaves consist of the maximal cubes Q P D with the property
+that
+cardtQ1 P D : Q Ă Q1 Ă QpT0q and β pQ1q ě ǫu “ M. (4.4)
+The tree T0 itself consists of the cubes in D which are not strict sub-cubes of some Q P
+LeavespT0q. It is easy to check that T0 is a tree.
+Assume then that some trees T0, . . . , Tk have already been constructed. Let 0 ď j ď k
+be an index such that for some Q P LeavespTjq, at least one cube Qk` 1 P chpQq has
+not yet been assigned to any tree. The cube Qk` 1 then becomes the top cube of a new
+tree Tk` 1, thus Qk` 1 “ QpTk` 1q. The tree Tk` 1 is constructed with the same stopping
+condition (4.4), just replacing QpT0q by Qk` 1 “ QpTk` 1q.
+Note that if LeavespTjq “ H for some j P N, then no further trees will be constructed
+with top cubes contained in QpTjq. As a corollary of the stopping condition, we record
+the uniform upper bound
+cardtQ P Tj : x P Q and β pQq ě ǫu ď M, x P QpTjq, j ě 0. (4.5)
+We next prune the collection of trees. Let T opbe the collection of all the top cubes QpTjq
+constructed above, and let T opK Ă T opbe the maximal cubes with the property
+cardtQ1 P T op: Q Ă Q1 Ă Q0u “ K.
+We discard all the trees whose tops are strictly contained in one of the cubes in T opK ,
+and we re-index the remaining trees as T0, T1, T2, . . . Thus, the remaining trees are the
+ones whose top cube contains some element of T opK . We record that
+cardtj ě 0 : x P QpTjqu ď K, x P Q0. (4.6)
+We write T :“ Y Tj for brevity . We claim that
+cardtQ P T : x P Q and β pQq ě ǫu “ N, x P EQ0. (4.7)
+Indeed, ﬁx x P EQ0, and recall that
+cardtQ P D : x P Q and β pQq ě ǫu ě N (4.8)
+by deﬁnition. We ﬁrst claim that x is contained in ě K ` 1 cubes in T op. If x was
+contained in ď K cubes in T op, then x would be contained in ď K ´ 1 distinct leaves,
+and the stopping condition ( 4.4) would imply that
+cardtQ P D : x P Q and β pQq ě ǫu ă p K ´ 1qM ` M “ N, (4.9)
+contradicting x P EQ0. Therefore, x is indeed contained in K ` 1 cubes in T op. Let the
+largest such top cubes be Q0 Ą Q1 Ą . . . Ą QK´ 1 Ą QK, so QK´ 1 P T opK . Now, it
+sufﬁces to note that whenever x P Qj, 1 ď j ď K, then x is contained in some element of
+LeavespTj´ 1q, which implies by the stopping condition that
+cardtQ P Tj´ 1 : x P Q and β pQq ě ǫu “ M. (4.10)
+Since Tj´ 1 Ă T for 1 ď j ď K, the claim ( 4.7) follows by summing up ( 4.10) over
+1 ď j ď K and recalling that KM “ N .
+We next verify that EQ0 X QpTjq Ă Y LeavespTjq for all j ě 0, as claimed in property
+(T2). Indeed, if x P EQ0 X QpTjq for some j ě 0, then ( 4.8) holds, and QpTjq is contained
+
+[PDF physical page 11]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 11
+in ď K elements of T op. This means that if x P QpTjq z Y LeavespTjq, then x is contained
+in ď K ´ 1 distinct leaves, and hence satisﬁes ( 4.9). But this would imply x R EQ0. Hence
+x P LeavespTjq, as claimed.
+The properties ( T2)-(T3) on the list of requirements have now been veriﬁed (indeed
+(T3) holds by the virtue of the stopping condition). For ( T1) and (T4), some further prun-
+ing will be needed. First, from ( 4.7), (4.5), and the assumption µ pEQ0q ě 1
+2 µ pQ0q, we infer
+that
+N µpQ0q
+2
+(4.7)
+ď
+ż
+EQ0
+ÿ
+QPT
+β pQqě ǫ
+1Qpxq dx
+“
+8ÿ
+j“ 0
+ż
+EQ0 XQpTjq
+ÿ
+QPTj
+β pQqě ǫ
+1Qpxq dx
+(4.5)
+ď M
+8ÿ
+j“ 0
+µ pEQ0 X QpTjqq.
+Recalling that N “ KM , this yields
+8ÿ
+j“ 0
+µ pEQ0 X QpTjqq ě Kµ pQ0q
+2 .
+Now, we discard all light trees with the property µ pEQ0 X QpTjqq ă 1
+4 µ pQpTjqq. Then, by
+the uniform upper bound ( 4.6), we have
+ÿ
+j:Tj is light
+µ pEQ0 X QpTjqq ď 1
+4
+8ÿ
+j“ 0
+µ pQpTjqq ď Kµ pQ0q
+4 .
+Hence, the heavy trees with
+µ pEQ0 X QpTjqq ě µ pQpTjqq
+4
+satisfy
+ÿ
+j:Tjis heavy
+µ pQpTjqq ě Kµ pQ0q
+4 .
+By deﬁnition of the heavy trees, the requirements ( T1) and ( T4) on our list are satisﬁed
+(and ( T2)-(T3) were not violated by the ﬁnal pruning, since they are stateme nts about
+individual trees). After another re-indexing, this comple tes the construction of the heavy
+trees T0, T1, . . .
+We have now proven Proposition 3.8 modulo Proposition 4.2, which concerns an indi-
+vidual heavy tree Tj. Proving Proposition 4.2 will occupy the rest of the paper.
+5. A CRITERION FOR POSITIVE WIDTH
+Let E Ă Rd be a closed n-regular set, write µ :“ Hn|E, and let D be a system of dyadic
+cubes on E. I next discuss the notion of width, which appeared in the sta tement of
+Proposition 4.2. Width was ﬁrst introduced in [ 16] in the context of Heisenberg groups,
+
+[PDF physical page 12]
+12 TUOMAS ORPONEN
+and [16, §8] contains the relevant deﬁnitions adapted to Rn, but only in the case n “ d´ 1.
+I start here with the higher co-dimensional generalisation .
+Deﬁnition 5.1 (Measure on the afﬁne Grassmannian) . Fix 0 ă m ă d, and let A :“
+Apd, m q be the collection of all afﬁne planes of dimension m. Deﬁne a measure λ :“ λ d,m
+on A via the relationż
+A
+f pV q dλpV q :“
+ż
+Gpd,d ´ mq
+ż
+V
+f pπ ´ 1
+V twuq dHd´ mpwq dγd,d ´ mpV q, f P CcpAq.
+The deﬁnition above is standard, see [23, §3.16]. We are interested in the case m “ d´ n,
+since we plan to slice sets by the ﬁbres of projections to plane s in Gpd, n q.
+Deﬁnition 5.2 (Width). For Q P D and a plane W P Apd, d ´ nq, we deﬁne
+widthQpE, W q :“ diampBQ X E X W q,
+where we recall that BQ “ BpcQ, Cℓ pQqq is a ball centred at some point cQ P Q Ă E
+containing Q. Then, we also deﬁne
+widthpQq :“ 1
+µ pQq
+ż
+Apd,d ´ nq
+widthQpE, W q
+ℓpQq dλ d,d ´ npW q
+“ 1
+µ pQq
+ż
+Gpd,n q
+ż
+V
+widthQpE, π ´ 1
+V twuq
+ℓpQq dHnpwq dγd,n pV q. (5.3)
+Finally , ifF Ă D is an arbitrary collection of dyadic cubes, we set
+widthpFq :“
+ÿ
+QPF
+widthpQqµ pQq. (5.4)
+The µ pQq-normalisation in (5.3) is the right one, because for V P Gpd, n q ﬁxed, it is only
+possible that widthQpE, π ´ 1
+V twuq ‰ 0 if w P πV pBQq Ă V , and HnpπV pBQqq „ µ pQq. As
+shown in [ 16, Theorem 8.8], width satisﬁes a Carleson packing condition. However, the
+proof in [16] was restricted to the case d “ n ´ 1, and a little graph-theoretic construction
+is needed in the higher co-dimensional situation. Details f ollow.
+Proposition 5.5. There exists a constant C ě 1, depending only on the 1-regularity constant of
+E, such that
+widthpDpQ0qq ď Cµ pQ0q, Q 0 P D, (5.6)
+where DpQ0q :“ t Q P D : Q Ă Q0u.
+Proof. Fix Q0 P D. By deﬁnitions,
+widthpDpQ0qq “
+ż
+Gpd,n q
+ż
+V
+ÿ
+QPDpQ0q
+diampBQ X E X π ´ 1
+V twuq
+ℓpQq dHnpwq dγd,n pV q. (5.7)
+The main tool in the proof is Eilenberg’s inequality
+ż
+V
+cardpA X π ´ 1
+V twuq dHnpwq ≲n HnpAq, V P Gpd, n q, (5.8)
+where A Ă Rd is Borel, see [ 23, Theorem 7.7]. In particular, we infer from ( 5.8) that
+qV,w :“ cardpBQ0 X E X π ´ 1
+V twuq ă 8
+
+[PDF physical page 13]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 13
+for all V P Gpd, n q and for Hn a.e. w P V . We continue our estimate of ( 5.7) for a ﬁxed
+plane V P Gpd, n q, and for any w P V such that q :“ qV,w ă 8 . If q P t0, 1u, then
+diampBQ X E X π ´ 1
+V twuq ď diampBQ0 X E X π ´ 1
+V twuq “ 0, Q P DpQ0q,
+so these pairs pV, w q contribute nothing to the integral in ( 5.7). So, assume that q ě 2, and
+enumerate the points in BQ0 X E X π ´ 1
+V twu as
+BQ0 X E X π ´ 1
+V twu “ t x1, . . . , x qu.
+We will next need to construct a "spanning graph" whose vertices are the points x1, . . . , x q,
+and whose edges " E" are a (relatively small) subset of the „ q2 segments connecting the
+vertices. More precisely , we need the following properties from E:
+(E1) card E ≲d q.
+(E2) For every 1 ď i ă j ď q, there is a connected union of edges in E which connects
+xi to xj inside ¯Bpxi, 2|xi ´ xj|q.
+Property (E2) sounds like quasiconvexity , but is weaker: there are no res trictions on the
+length of the connecting E-path, as long as it is contained in Bpxi, 2|xi ´ xj|q. Let us
+then ﬁnd the edges with the properties ( E1)-(E2). Let ξ1, . . . , ξ p Ă Sd´ 1 be a maximal
+1
+4 -separated set on Sd´ 1, with p „ d 1, and let
+Cj :“ t re : e P Bpξj, 1
+2 q X Sd´ 1 and r ą 0u, 1 ď j ď p,
+be a directed open cone around the half-line trξj : r ą 0u. By the net property of
+ξ1, . . . , ξ p,
+Rd z t0u Ă
+pď
+j“ 1
+Cj. (5.9)
+We claim that the following holds: if y P x ` Cj, then
+¯Bpx, |x ´ y|q X px ` Cjq Ă Bpy, |x ´ y|q. (5.10)
+First, use translations and dilations to reduce to the case x “ 0 and |x ´ y| “ 1:
+y P Cj X Sd´ 1 ù ñ ¯Bp1q X Cj Ă Bpy, 1q.
+To check this case, one ﬁrst veriﬁes by explicit computation th at if y P Sd´ 1, then the set
+Cy :“ t re : e P Bpy, 1q X Sd´ 1 and 0 ă r ď 1u is contained in Bpy, 1q. Consequently ,
+y P Cj X Sd´ 1 Ă Bpξj, 1
+2 q ù ñ Bpξj, 1
+2 q Ă Bpy, 1q ù ñ ¯Bp1q X Cj Ă Cy Ă Bpy, 1q.
+We are then prepared to deﬁne the edge set E. Fix one of the points xi, 1 ď i ď q. For
+every of 1 ď j ď p, draw an edge (that is, a segment) between xi and one of the points
+closest to xi in the ﬁnite set
+tx1, . . . , x qu X pxi ` Cjq Ă t x1, . . . , x qu z txiu,
+if the intersection on the left hand side is non-empty; this i s the case for at least one
+j P t 1, . . . , p u by (5.9). Thus, for every xi, one draws „ d 1 edges. Let E be the collection
+of all edges so obtained. Then card E „ d q, so requirement ( E1) is met.
+To prove ( E2), ﬁx s0 :“ xi and t :“ xj with 1 ď i ă j ď q. The plan is to ﬁnd,
+recursively , a collection of segments Ij :“ r sj´ 1, s js P E, 1 ď j ď k, whose union is
+connected, contains ts0, t u (indeed sk “ t) and is contained in
+¯Bpt, |s0 ´ t|q Ă ¯Bps, 2|s0 ´ t|q.
+
+[PDF physical page 14]
+14 TUOMAS ORPONEN
+By ( 5.9), there is a half-cone Cj1 with t P s0 ` Cj1. Let I1 “ r s0, s 1s P E be the edge
+connecting s0 to one of the nearest points s1 P t x1, . . . , x qu X ps0 ` Cj1q. Evidently |s0 ´
+s1| ď | s0 ´ t|, since t P tx1, . . . , x qu X ps0 ` Cj1q itself is one of the candidates among which
+s1 is chosen. Hence, applying ( 5.10) with x “ s0 and y “ t, we ﬁnd that
+s1 P ¯Bps0, |s0 ´ t|q X ps0 ` Cj1q Ă Bpt, |s0 ´ t|q. (5.11)
+In particular,
+|s1 ´ t| ă | s0 ´ t|. (5.12)
+Also, we see from ( 5.11) that BI1 “ t s0, s 1u Ă ¯Bpt, |s0 ´ t|q, and hence I1 Ă ¯Bpt, |s0 ´ t|q
+by convexity . We then replace " s0" by " s1" and repeat the procedure above: by ( 5.9),
+there is a half-cone Cj2 with the property t P s1 ` Cj2 (unless s1 “ t and we are done
+already), and we let I2 “ r s1, s 2s P E be the edge connecting s1 to the nearest point
+s2 P tx1, . . . , x qu X ps1 ` Cj2q. Then |s1 ´ s2| ď | s1 ´ t| (otherwise we chose t over s2), so
+s2 P ¯Bps1, |s1 ´ t|q X ps1 ` Cj2q
+(5.10)
+Ă Bpt, |s1 ´ t|q
+(5.12)
+Ă ¯Bpt, |s0 ´ t|q.
+From the inclusions above, we infer that I2 Ă ¯Bpt, |s0 ´ t|q, and also
+|s2 ´ t| ă | s1 ´ t|
+(5.12)
+ă | s ´ t|.
+We proceed inductively , ﬁnding further segments rsi, s i` 1s P E, which are contained in
+¯Bpt, |s0 ´ t|q, and with the property that |sj` 1 ´ t| ă | sj ´ t| ă . . . ă | s0 ´ t|. Since the
+points sj are drawn from the ﬁnite set tx1, . . . , x qu, these strict inequalities eventually
+force sk “ t for some k ě 1, and at that point the proof of property ( E2) is complete.
+Let us then use the edges E constructed above to estimate the integrand in (5.7). I claim
+that
+ÿ
+QPDpQ0q
+diampBQ X E X π ´ 1
+V twuq
+ℓpQq ≲
+ÿ
+IPE
+ÿ
+QPDpQ0q
+IĂ 4BQ
+|I|
+ℓpQq . (5.13)
+To see this, ﬁx Q P DpQ0q, and let xi, x j P BQ X E X π ´ 1
+V twu Ă t x1, . . . , x qu be points such
+that
+|xi ´ xj| “ diampBQ X E X π ´ 1
+V twuq.
+According to property ( E2) of the edge family E, there exists a connected union of seg-
+ments in E which is contained in
+Bpxi, 2|xi ´ xj|q Ă 4BQ
+and which contains txi, x ju. Since the union is connected, the total length of the segmen ts
+involved exceeds |xi ´ xj|:
+diampBQ X E X π ´ 1
+V twuq “ | xi ´ xj| ď
+ÿ
+IPE
+IĂ 4BQ
+|I|.
+Swapping the order of summation proves ( 5.13). To complete the proof of the proposi-
+tion, ﬁx I P E, and consider the inner sum in ( 5.13). Note that the inclusion I Ă 4BQ is
+
+[PDF physical page 15]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 15
+only possible if ℓpQq ≳ |I|. On the other hand, for a ﬁxed side-length 2´ j ≳ |I|, there are
+≲ 1 cubes Q P DpQ0q with ℓpQq “ 2´ j and I Ă 4BQ. Putting these observations together,
+ÿ
+QPDpQ0q
+IĂ 4BQ
+|I|
+ℓpQq ≲ 1.
+From this, (5.13), and the cardinality estimate card E ≲d q from (E1) it follows that
+ÿ
+QPDpQ0q
+diampBQ X E X π ´ 1
+V twuq
+ℓpQq ≲ card E ≲d q “ cardpBQ0 X E X π ´ 1
+V twuq.
+Plugging this estimate into ( 5.7) and using Eilenberg’s inequality ( 5.8), one ﬁnds that
+widthpDpQ0qq ≲d
+ż
+Gpd,n q
+ż
+V
+cardpBQ0 X E X π ´ 1
+V twuq dHnpwq dγd,n pV q ≲ µ pQ0q.
+This completes the proof of the proposition. □
+Recall that our objective, in Proposition 4.2, is to prove that each heavy tree Tj satisﬁes
+widthpTjq ≳ µ pQpTjqq if the parameter M ě 1 was chosen large enough. To accomplish
+this, we start by recording a technical criterion which guar antees that a general tree T Ă
+D satisﬁes widthpT q ≳ µ pQpT qq. Afterwards, the criterion will need to be veriﬁed for
+heavy trees.
+Proposition 5.14. For every c, δ ą 0 and C0 ě 1 there exists N ě 1 such that the following
+holds. Assume that the n-regularity constant of E is at most C0. Let T Ă D be a tree with top
+cube Q0 :“ QpT q. Assume that there is a subset G Ă LeavespT q with the following properties.
+‚ All the cubes in G have PBP with common plane V0 P Gpd, n q and constant δ:
+HnpπV pE X BQqq ě δµpQq, Q P G, V P BpV0, δ q. (5.15)
+‚ Write fV :“ ř
+QPG 1π V pBQq for V P BpV0, δ q. Assume that there is a subset SG Ă
+BpV0, δ q such that the "high multiplicity" sets HV :“ t x P V : MfV pxq ě N u satisfyż
+HV
+fV pxq dx ě cN ´ 1µ pQ0q, V P SG. (5.16)
+Here MfV is the (centred) Hardy-Littlewood maximal function of fV . Then
+widthpT q ≳ cδN ´ 1µ pQ0q ¨ γd,n pSGq,
+where the implicit constant only depends on " d" and the n-regularity constant of E.
+The proof of Proposition
+5.14 would be fairly simple if all the leaves in G had approx-
+imately the same generation in D. In our application, this cannot be assumed, unfortu-
+nately , and we will need another auxiliary result to deal wit h the issue:
+Lemma 5.17. Fix M, d, γ ě 1 and c ą 0. Then, the following holds if A “ Ad ě 1 is large
+enough, depending only on d (as in "Rd"), and
+N ą Apγ ` 1q2
+M γ ` 2{c (5.18)
+Let B be a collection of balls contained in Bp0, 1q Ă Rd, and associate to every B P B a weight
+wB ě 0. Set
+f “
+ÿ
+BPB
+wB1B,
+
+[PDF physical page 16]
+16 TUOMAS ORPONEN
+and write HN :“ t Mf ě N u, where Mf is the Hardy-Littlewood maximal function of f .
+Assume that ż
+HN
+f pxq dx ě cN ´ γ ,
+Then, there exists a collection Rheavy of disjoint cubes such that the "sub-functions"
+fR :“
+ÿ
+BPB
+BĂ R
+wB1B, R P Rheavy,
+satisfy the following properties:
+ÿ
+RPRheavy
+}fR}1 ě c2´ 2pγ ` 1qN ´ γ and }fR}1 ą M |R|, R P Rheavy.
+The lemma is easy in the case where the balls in B have common radius, say r. Then
+one can take Rheavy to be a suitable collection of disjoint cubes of side-length „ r. In the
+application to Proposition 5.14, this case corresponds to the situation where ℓpQq „ ℓpQ1q
+for all Q, Q 1 P G. In the general case, the elementary but lengthy proof of Lem ma 5.17 is
+contained in Appendix A.
+We then prove Proposition 5.14, taking Lemma 5.17 for granted:
+Proof of Proposition 5.14. The plan is to show that
+ÿ
+QPT
+ż
+V
+widthQpE, π ´ 1
+V twuq
+ℓpQq dHnpwq ≳ cδN ´ 1µ pQ0q, V P SG. (5.19)
+The proposition then follows by recalling the deﬁnitions of widthpQq and widthpT q from
+(5.3)-(5.4) and integrating ( 5.19) over V P SG.
+To prove (5.19), we assume, to avoid a rescaling argument, that ℓpQ0q “ 1. Then, we
+begin by re-interpreting ( 5.16) in such a way that we may apply Lemma 5.17. Namely ,
+we identify V P SG with Rn, and consider the collection of balls
+B :“ t πV pBQq : Q P Gu.
+More precisely , let B be an index set for the balls πV pBQq such that if some ball B “
+πV pBQq arises from multiple distinct cubes Q P G, then B has equally many indices in B.
+Note that the balls in B are all contained in
+B0 :“ πV pBQ0q,
+since BQ Ă BQ1 whenever Q, Q 1 P D and Q Ă Q1. We then deﬁne f :“ ř
+BPB 1B and
+HN :“ t x P V : Mf pxq ě N u. It follows from ( 5.16), and the assumption ℓpQ0q “ 1, that
+ż
+HN
+f pwq dw ≳ cN ´ 1.
+In other words, the hypotheses of Lemma 5.17 are met with γ “ 1. We ﬁx M :“ Cδ´ 1,
+where C ě 1 is a large constant to be speciﬁed soon, depending only on the n-regularity
+constant of E. We then assume that N ą AM 3{c, in accordance with ( 5.18). Lemma 5.17
+now provides us with a collection R “ Rheavy of disjoint cubes in Rn – V such that
+ÿ
+RPR
+}fR}1 ≳ cN ´ 1 and }fR}1 ě M |R| for R P R. (5.20)
+
+[PDF physical page 17]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 17
+In this proof we abbreviate | ¨ | :“ Hn|V . We recall that
+fR “
+ÿ
+BPB
+BĂ R
+wB1B “
+ÿ
+QPG
+BQĂ T pRq
+1π V pBQq,
+where T pRq :“ π ´ 1
+V pRq. Therefore, the conditions in ( 5.20) are equivalent to
+ÿ
+RPR
+ÿ
+QPG
+BQĂ T pRq
+µ pQq ≳ cN ´ 1 and
+ÿ
+QPG
+BQĂ T pRq
+µ pQq ≳ M |R|, R P R, (5.21)
+where the implicit constants depend on the n-regularity constant of µ . We now make a
+slight reﬁnement to the set G: for R P R ﬁxed, we apply the 5r-covering theorem to the
+balls t2BQ : Q P G and BQ Ă T pRqu. As a result, we obtain a sub-collection GR Ă G with
+the properties
+2BQ X 2BQ1 “ H , Q, Q 1 P GR, Q ‰ Q1, (5.22)
+and ď
+QPG
+BQĂ T pRq
+Q Ă
+ď
+QPGR
+10BQ.
+In particular, by (5.21),
+ÿ
+RPR
+ÿ
+QPGR
+µ pQq ≳
+ÿ
+RPR
+ÿ
+QPG
+BQĂ T pRq
+µ pQq ≳ cN ´ 1 (5.23)
+and ÿ
+QPGR
+µ pQq „
+ÿ
+QPGR
+µ p10BQq ≳ M |R| (5.24)
+by (5.21). We also write BR :“ t πV pBQq : Q P GRu, R P R, so BR Ă B is a collection of
+balls contained in R satisfying
+ÿ
+BPBR
+|B| ≳ M |R|, R P R. (5.25)
+Just like B, the set BR should also, to be precise, be deﬁned as a set of indices, accou nting
+for the possibility that B “ πV pBQq arises from multiple cubes Q P GR. Next, recall a key
+assumption of the proposition, namely that all the cubes in G have PBP with common
+ball BpV0, δ q Ă Gpd, n q. In particular, for our ﬁxed plane V P SG Ă BpV0, δ q, we have
+HnpπV pBQ X Eqq ě δµpQq, Q P G. (5.26)
+Since the balls BQ, Q P G, are all contained in B0 :“ BQ0, the ball associated with the top
+cube of the tree, the conclusion of (5.26) persists if we replace BQ X E by BQ X E X B0. For
+B “ πV pBQq with Q P G, write EB :“ πV pBQ XE XB0q, so (5.26) implies that |EB| ≳ δ|B|.
+Then, for R P R ﬁxed, we infer from ( 5.25) that
+ż
+R
+ÿ
+BPBR
+1EB pwq dw “
+ÿ
+BPBR
+|EB| ≳ δ
+ÿ
+BPBR
+|B| ≳ δM|R| “ C|R|.
+
+[PDF physical page 18]
+18 TUOMAS ORPONEN
+We now choose the constant C ě 1 so large that
+ż
+R
+ÿ
+BPBR
+1EB pwq dw ě 2|R|. (5.27)
+Then, if we consider the "set of multiplicity ď 1",
+LR :“
+#
+w P R :
+ÿ
+BPBR
+1EB pwq ď 1
++
+Ă R,
+we may infer from ( 5.27) that
+ż
+LR
+ÿ
+BPBR
+1EB pwq dw ď | R| ď 1
+2
+ż
+R
+ÿ
+BPBR
+1EB pwq dw.
+Consequently , ifPR :“ R z LR is the "positive multiplicity set", we have
+ż
+PR
+ÿ
+BPBR
+1EB pwq dw ě 1
+2
+ż
+R
+ÿ
+BPBR
+1EB pwq dw ≳ δ
+ÿ
+QPGR
+µ pQq. (5.28)
+Fix w P PR Ă R, and write
+m :“ mw :“
+ÿ
+BPBR
+1EB pwq ě 2.
+(If the sum happens to equal 8, pick m ě 2 arbitrary; eventually one will have to let
+m Ñ 8 in this case). Unraveling the deﬁnitions, the pd ´ nq-plane W :“ Ww :“ π ´ 1
+V twu
+contains m points of E X B0 inside m distinct balls BQ, with Q P GR. Let P Ă E X W be
+the set of these m points, and deﬁne the following set E of edges connecting (some) pairs
+of points in P : for every point p P P , pick exactly one of the points q P P z tpu at minimal
+distance from p, and add the edge pp, q q to E. Note that card E “ m, since E contains
+precisely one edge of the form pp, q q for every p P P . We have now used the assumption
+m ě 2: otherwise we could not have drawn any edges in the preceding manner! Note
+that the edges in the graph pP, Eq are directed: pp, q q P E does not imply pq, p q P E.
+Now that the edge set E has been constructed, deﬁne the following relation between
+edges I P E and the cubes Q P T : write I ă Q if I Ă BQ, and |I| ě ρℓpQq. Slightly
+abusing notation, here I also refers to the segment rp, q s, for an edge pp, q q P E. The
+choice of the constant ρ ą 0 will become apparent soon, and it will only depend on the
+n-regularity constant of E. We now claim that
+ÿ
+IPE
+ÿ
+QPT
+Iă Q
+|I|
+ℓpQq ≳ card E “ m. (5.29)
+We already know that card E “ m, so it remains to prove the ﬁrst inequality . Fix I “
+pp, q q P E, with p, q P P . Then, by the deﬁnition of P , the points p and q are contained
+in two balls Bp :“ BQp and Bq :“ BQq , respectively , with Qp, Q q P GR and Qp ‰ Qq. In
+particular, we recall from (5.22) that 2Bp X 2Bq “ H . Hence p R 2Bq, and |I| ≳ ℓpQqq. On
+the other hand, p, q P B0, so |I| ≲ ℓpQ0q. Let Q1 Ą Qq be the smallest cube in the ancestry
+of Qq such that p, q P BQ1. Then Qq ⊊ Q1 Ă Q0, hence Q1 P T , and
+ℓpQ1q ≲ |I|. (5.30)
+
+[PDF physical page 19]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 19
+Since p, q P BQ1, by convexity also I Ă BQ1. If the constant " ρ" in the deﬁnition of " ă "
+was chosen appropriately , we infer from I Ă BQ1 and (5.30) that I ă Q1. This proves the
+lower bound in ( 5.29).
+Next, we claim that
+widthQpE, π ´ 1
+V twuq “ diampE X BQ X W q ≳d
+ÿ
+IPE
+Iă Q
+|I|, Q P T . (5.31)
+Indeed, ﬁx Q P T and assume that there is at least one edge I P E such that I ă Q.
+Then I Ă BQ X W , and both endpoints of I lie in E, so diampE X BQ X W q ě | I|. Thus,
+(5.31) boils down to showing that cardtI P E : I ă Qu ≲d 1. Let PQ :“ t p P P : pp, q q P
+E and pp, q q ă Q for some q P P z tpuu. Then
+cardtI P E : I ă Qu ď card PQ,
+since E contains precisely one edge of the form pp, q q for all p P P , i.e. the map I “
+pp, q q ÞÑ p is injective tI P E : I ă Qu Ñ PQ. So, it remains to argue that card PQ ≲d 1.
+Otherwise, if card PQ "d 1, there exist two distinct points p1, p 2 P PQ with |p1 ´ p2| ă
+ρℓpQq. However, if q P P is such that I :“ p p1, q q ă Q, then |I| ě ρℓpQq, and since
+pp1, q q P E, the point q must be one of the nearest neighbours of p in P z tpu. This is not
+true, however, since |p1 ´ p2| ă | p1 ´ q|. We have proven ( 5.31).
+A combination of ( 5.29) and ( 5.31) leads to
+ÿ
+QPT
+widthQpE, π ´ 1
+V twuq
+ℓpQq ě
+ÿ
+IPE
+ÿ
+QPT
+Iă Q
+|I|
+ℓpQq ≳ m “ mw, w P PR. (5.32)
+Here PR is the subset of R introduced above (5.28). Integrating over w P R next gives
+ż
+R
+ÿ
+QPT
+widthQpE, π ´ 1
+V twuq
+ℓpQq dw
+(5.32)
+≳
+ż
+PR
+mw dw :“
+ż
+PR
+ÿ
+BPBR
+1EB pwq dw
+(5.28)
+≳ δ
+ÿ
+QPGR
+µ pQq.
+Finally , summing the result over the (disjoint) cubesR P R, and using (5.23), we ﬁnd that
+ÿ
+QPT
+ż
+V
+widthQpE, π ´ 1
+V twuq
+ℓpQq dHnpwq ≳ cδN ´ 1.
+This completes the proof of ( 5.19), and the proof of the proposition. □
+6. F ROM BIG β NUMBERS TO HEAVY CONES
+Proposition 5.14 contains criteria for showing that widthpT q ≳ µ pQpTjqq. To prove
+Proposition 4.2, these criteria need to be veriﬁed for the heavy trees Tj. The selling points
+(T1)-(T4) of a heavy tree Tj were that all of its leaves are contained in M cubes in Tj
+with non-negligible β -number (see ( T3)), and the total µ measure of the leaves is at least
+1
+4 µ pQpTjqq (see (T1)-(T2)). We will use this information to show that if a reasonably w ide
+cone is centred at a typical point x contained in one of the leaves of Tj, then the cone
+intersects many other leaves at many different (dyadic) dis tances from x.
+We ﬁrst need to set up our notation for cones:
+
+[PDF physical page 20]
+20 TUOMAS ORPONEN
+Deﬁnition 6.1 (Cones). Let V0 P Gpd, n q, α ą 0, and x P Rd. We write
+Xpx, V, α q “ t y P Rd : |πV px ´ yq| ď α |x ´ y|u.
+For 0 ă r ă R ă 8 , we also deﬁne the truncated cones
+Xpx, V, α, r, R q :“ Xpx, V, α q X ¯Bpx, R q z Bpx, r q.
+Note the non-standard notation: Xpx, V, α q is a cone with axis V K P Gpd, d ´ nq! The
+next proposition extracts "conical" information from many big β -numbers:
+Proposition 6.2. Let α, d, ǫ, θ ą 0 and C0, H ě 1. Then, there exists M ě 1, depending only
+on the previous parameters, such that the following holds. Le t E0 Ă Rd be a n-regular set with
+regularity constant at most C0, and let E Ă E0 X Bp0, 1q be a subset of measure HnpEq ě θ ą 0
+with the following property: for every x P E, there exist M distinct dyadic scales 0 ă r ă 1 such
+that
+β pBpx, r qq :“ βE0pBpx, r qq :“ inf
+V PApd,n q
+1
+rn
+ż
+Bpx,r qXE0
+distpx, V q
+r dHnpxq ě ǫ.
+Then, there exists a subset G Ă E of measure H1pGq ě θ{2 such that for all x P G,
+cardtj ě 0 : Xpx, V, α, 2´ j´ 1, 2´ jq X E ‰ Hu ě H for all V P Gpd, n q. (6.3)
+The key point of Proposition 6.2 is that information about the β -numbers relative to
+the "ambient" set E0 is sufﬁcient to imply something useful about cones intersect ing the
+subset E. The proof is heavily based on [ 22, Proposition 1.12], which we quote here:
+Proposition 6.4. Let α, d, θ ą 0 and C0, H ě 1. Then, there exist constants τ ą 0 and L ě 1,
+depending only on the previous parameters, such that the foll owing holds. Let E0 Ă Rd be an
+n-regular set with regularity constant at most C0, and let B Ă E0 X Bp0, 1q be a subset with
+HnpBq ě θ satisfying the following: there exists V P Gpd, n q such that for every x P B,
+cardtj ě 0 : Xpx, V, α, 2´ j´ 1, 2´ j q X B ‰ Hu ď H.
+Then, there exists a subset B1 Ă B with HnpB1q ě τ which is contained on an L-Lipschitz graph
+over V . In fact, one can take L „ 2H {α .
+We may then prove Proposition 6.2.
+Proof of Proposition 6.2. It sufﬁces to show that the subset B Ă E such that ( 6.3) fails has
+measure HnpBq ă θ{2 if M ě 1 was chosen large enough. Assume to the contrary that
+HnpBq ě θ{2. By deﬁnition, for every x P B, there exists an plane Vx P Gpd, n q such that
+cardtj ě 0 : Xpx, V x, α, 2´ j´ 1, 2´ jq X E ‰ Hu ă H. (6.5)
+We observe that the dependence of Vx on x P B can be removed, at the cost of making B
+and α slightly smaller. Indeed, choose an α
+2 -net V1, . . . , V k Ă Gpd, n q with k „ α,d,n 1, and
+note that for every x P B, there exists 1 ď j ď k such that
+cardti ě 0 : Xpx, V j , α
+2 , 2´ i´ 1, 2´ iq X E ‰ Hu ă H.
+By the pigeonhole principle, there is a subset B1 Ă B of measure HnpB1q ≳α,d,n HnpBq ě
+θ{2 such that the choice of V :“ Vj is common for x P B1. It follows that ( 6.5) holds for
+this V , for all x P B1, with α
+2 in place of α . We replace B by B1 without altering notation,
+that is, we assume that ( 6.5) holds for all x P B, and for some ﬁxed V P Gpd, n q.
+
+[PDF physical page 21]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 21
+Now Proposition 6.4 can be applied to the set B, and the plane V . The conclusion is
+that there is a further subset B1 Ă B of measure
+HnpB1q „ α,d,C 0,θ,H 1 (6.6)
+which is contained in Γ X Bp0, 1q, where Γ Ă Rd is an L-Lipschitz graph over V for some
+L „ 2H {α „ α,H 1. We will derive a contradiction, using that B1 Ă E and, consequently ,
+βE0pBpx, r qq ě ǫ (6.7)
+for all x P B1, and for M distinct dyadic scales 0 ă r ă 1 (which may depend on x P B1).
+For technical convenience, we prefer to work with a lattice D of dyadic cubes on E0. As
+usual, we deﬁne
+βE0pQq :“ βE0pBQq, Q P D.
+Then, reducing " M " by a constant factor if necessary , it follows from ( 6.7) that every
+x P B1 is contained in ě M distinct cubes Q P D of side-length 0 ă ℓpQq ď 1 satisfying
+βE0pQq ě ǫ. Moreover, since B1 Ă E Ă E0 X Bp0, 1q, we may assume that BQ Ă Bp0, C q
+for all the cubes Q P D, for some C „ C0 1.
+The main tool is that since Γ is an n-dimensional L-Lipschitz graph in Rd, it satisﬁes the
+WGL with constants depending only on L and d. This follows from a more quantitative
+result – a strong geometric lemma for Lipschitz graphs – of Dorronsoro [ 15, Theorem 2] (or
+see [11, Lemma 10.11]). As a corollary of the WGL, the subset Γbad of points x P ΓXBp0, 1q
+for which
+βΓ, 8pBpx, r qq ě cǫ (6.8)
+for ě M {2 distinct dyadic scales 0 ă r ă 1 has measure HnpΓbadq ! 1, and in partic-
+ular HnpΓbadq ď HnpB1q{2, assuming that M ě 1 is large enough, depending only on
+L, c, C 0, d, H, ǫ , and θ. In ( 6.8), c ą 0 is a constant so small that
+BQ Ă Bpx, c ´ 1ℓpQq{100q for all x P Q. (6.9)
+In particular, c only depends on the n-regularity constant of E. Further, in ( 6.8), the
+quantity βΓ, 8pBpx, r qq is the L8-type β -number
+βΓ, 8pBpx, r qq “ inf
+V PApd,n q
+sup
+yPΓXBpx,r q
+distpy, V q
+r .
+As pointed out after Deﬁnition 1.4, the WGL holds for the L8-type β -numbers if and only
+if it does for the L1-type β -numbers βΓpBpx, r qq (Dorronsoro’s strong geometric lemma
+holds for the latter, hence implies the WGL for the former).
+We then focus attention on B2 :“ B1 z Γbad Ă Γ X Bp0, 1q, which still satisﬁes
+HnpB2q ě 1
+2 HnpB1q „ α,d,C 0,θ,H 1, (6.10)
+recalling (6.6). Comparing ( 6.7) and (6.8), we ﬁnd that every point x P B2 has the follow-
+ing property: there exist M {2 cubes Q P D such that x P Q,
+βE0pQq ě ǫ and βΓ, 8pBpx, c ´ 1ℓpQq{100qq ă cǫ. (6.11)
+Consider now a cube Q P D containing at least one point x P B2 such that (6.11) holds.
+In particular, recalling the choice of c ą 0 from (6.9), the intersection
+Γ X BQ Ă Γ X Bpx, c ´ 1ℓpQq{100q
+
+[PDF physical page 22]
+22 TUOMAS ORPONEN
+is contained in a slab T Ă Rd (a neighbourhood of an n-plane) of width ď cc´ 1ǫℓpQq{100 “
+ǫℓpQq{100. Since βE0pQq ě ǫ, however, we have
+Hnpty P E0 X BQ : y R 2T uq ≳ ǫHnpQq.
+In other words, for every Q P D containing some x P B2 such that ( 6.11) holds, there
+exists a subset EQ Ă E0 X BQ Ă Bp0, C q
+‚ of measure HnpEQq ≳ ǫHnpQq which is contained
+‚ in the „ ℓpQq-neighbourhood of Γ, yet
+‚ outside the „ ǫℓpQq-neighbourhood of Γ.
+The collection of such cubes in D will be denoted G. As observed above ( 6.11), we have
+ÿ
+QPG
+1Qpxq ě M {2, x P B2. (6.12)
+On the other hand, the sets EQ have bounded overlap in the sense
+ÿ
+QPG
+1EQpyq ≲ǫ 1, y P Rd, (6.13)
+since y P Rd can only lie in the sets EQ associated to cubes Q P D with ℓpQq „ ǫ distpy, Γq.
+Combining (6.12)-(6.13), we ﬁnd that
+1 ≳ HnpE0 X Bp0, C qq ě Hn
+˜ ď
+QPG
+EQ
+¸
+≳ǫ
+ÿ
+QPG
+HnpEQq „ ǫ
+ÿ
+QPG
+HnpQq
+ě
+ż
+B2
+ÿ
+QPG
+1Qpxq dHnpxq ≳ M HnpB2q.
+We have shown that HnpB2q ≲ǫ M ´ 1. This inequality contradicts ( 6.10) if M ě 1 is large
+enough, depending on α, d, ǫ, C 0, θ , and H. The proof of Proposition 6.2 is complete. □
+7. H EAVY TREES HAVE POSITIVE WIDTH
+We are equipped to prove Proposition 4.2. Fix a heavy tree T :“ Tj, and recall from
+the heavy tree property ( T3) that if Q P LeavespT q, then
+cardtQ1 P T : Q Ă Q1 Ă QpT q and β pQ1q ě ǫu “ M,
+Moreover, by (T1)-(T2), the total measure of LeavespT q is
+µ pYLeavespT qq ě 1
+4 µ pQpT qq. (7.1)
+Based on this information, we seek to verify the hypotheses o f Proposition 5.14, which
+will eventually guarantee that widthpT q ≳ 1 and ﬁnish the proof of Proposition 4.2. We
+split the argument into three parts.
+
+[PDF physical page 23]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 23
+7.1. Part I: Finding heavy cones. Abbreviate Q0 :“ QpT q and L :“ LeavespT q. To avoid
+a rescaling argument later on, we assume with no loss of gener ality that
+µ pQ0q „ ℓpQ0q “ 1.
+For every Q P L, the PBP condition implies the existence of a plane VQ P Gpd, n q such
+that
+HnpπV pBQ X Eqq ě δµpQq, V P BpVQ, δ q. (7.2)
+We would prefer that all the planes VQ are the same, and this can be arranged with little
+cost. Namely , pick a δ
+2 -net tV1, . . . , V mu Ă Gpd, n q with m „ δ,d,n 1, and note that for all
+Q P L, there is some Vj such that Sj :“ BpVj, δ
+2 q Ă BpVQ, δ q “ : SQ. Therefore, by the
+pigeonhole principle, there is a ﬁxed index 1 ď j ď m with the property
+ÿ
+QPL
+SjĂ SQ
+µ pQq ě 1
+m
+ÿ
+QPL
+µ pQq
+(7.1)
+„ δ,d,n 1.
+Let LG be the good leaves satisfying Sj Ă SQ for this j, and write S :“ Sj and V0 :“ Vj.
+We have just argued that µ pYLGq „ δ,d,n 1, and (7.2) holds for all Q P LG, for all
+V P S “ BGpd,n qpV0, δ
+2 q.
+From this point on, I cease recording the dependence of the " ≲" notation on the n-
+regularity and PBP constants C0 and δ.
+For technical purposes, let us prune the set of good leaves a l ittle further. Namely ,
+apply the 5r-covering theorem to the balls 10BQ, Q P LG. As a result, we obtain a sub-
+collection of the good leaves, still denoted LG, with the separation property
+10BQ X 10BQ1 “ H , Q, Q 1 P LG, Q ‰ Q1, (7.3)
+and such that the lower bound µ pYLGq „ 1 remains valid.
+Next we arrive at some geometric arguments. We may and will as sume, with no loss
+of generality , and without further mention, that the radius of the ball S “ BGpd,n qpV0, δ
+2 q
+is "small enough", in a manner depending only on d.
+For every Q P LG, pick an n-dimensional disc DQ Ă BQ which is parallel to the plane
+V0 and which satisﬁes
+HnpDQq „ µ pQq and HnpDQ X Eq “ 0.
+Such discs are pairwise disjoint by the separation property (7.3). We will also use fre-
+quently that the restrictions πV |DQ : DQ Ñ V are bilipschitz for all Q P LG and V P
+S “ BGpd,n qpV0, δ
+2 q if δ ą 0 is small enough, as we assume. Therefore, the projections
+πV pDQq Ă V are n-regular ellipsoids which contain, and are contained in, n-dimensional
+balls of radius „ radpDQq.
+We then consider the slightly augmented set E` , where we have added the discs cor-
+responding to all good leaves:
+E` :“ E Y
+ď
+QPLG
+DQ “ : E Y ED.
+The point behind the set ED can already be explained. Compare the two statements
+(a) The Hardy-Littlewood maximal function of πV 7pHn|Eq is large at x P V P S,
+(b) The Hardy-Littlewood maximal function of πV 7pHn|ED q is large at x P V P S.
+
+[PDF physical page 24]
+24 TUOMAS ORPONEN
+Statement (b) contains much more information! Statement (a ) could e.g. be true because
+a single cube Q P LG satisﬁes πV pQq “ t xu. But since πV |DQ is bilipschitz for all Q P
+LG and V P S, statement (b) forces π ´ 1
+V txu to intersect many distinct balls BQ Ą DQ.
+Recalling Proposition 5.14, this is helpful for ﬁnding a lower bound for widthpT q.
+Let us verify that E` is n-regular, with n-regularity constant ≲ 1. We leave checking
+the lower bound to the reader. To check the upper bound, ﬁx x P E` and a radius r ą 0.
+Since E itself is n-regular, it sufﬁces to show that
+ÿ
+QPLG
+HnpDQ X Bpx, r qq ≲ rn. (7.4)
+Write
+Lď
+G :“ t Q P LG : DQ X Bpx, r q ‰ H and radpDQq ď ru
+and
+Lą
+G :“ t Q P LG : DQ X Bpx, r q ‰ H and radpDQq ą ru.
+For every Q P Lď
+G we have Q Ă Bpx, C 1rq for some constant C 1 „ 1, so
+ÿ
+QPLď
+G
+HnpDQ X Bpx, r qq ≲
+ÿ
+QPL
+QĂ Bpx,C 1,r q
+µ pQq ď µ pBpx, C 1rqq ≲ rn.
+Here we used that the leaves L consist of disjoint cubes. To ﬁnish the proof of (
+7.4), we
+claim that card Lą
+G ď 1. Assume to the contrary that DQ, D Q1 P Lą
+G with Q ‰ Q1. Then
+certainly 2BQ X Bpx, r q ‰ H ‰ 2BQ1 X Bpx, r q, and both BQ, B Q1 have diameters ě r.
+This forces 10BQ X 10BQ1 ‰ H , violating the separation condition (
+7.3). This completes
+the proof of ( 7.4).
+Let µ ` :“ Hn|EYED “ µ ` ř
+QPLG Hn|DQ, and deﬁne the associated β -numbers
+β` pBpx, r qq :“ inf
+V PApd,n q
+1
+rn
+ż
+Bpx,r q
+distpy, V q
+r dµ ` pyq, x P E` , r ą 0.
+We next claim that for every x P ED there exist ≳ M distinct dyadic radii 0 ă r ≲ 1 such
+that β` pBpx, r qq ≳ ǫ. This follows easily by recalling that if x P DQ with Q P LQ Ă L,
+then
+cardtQ1 P T : Q Ă Q1 Ă Q0 and β pQ1q ě ǫu “ M
+by the deﬁnition of good leaves, but let us be careful: let x P DQ, and let Q1 P T be one
+of the ancestors of Q with
+inf
+V PApd,n q
+1
+radpBQ1qn
+ż
+BQ1
+distpy, V q
+radpBQ1q dµ pyq “ β pQ1q ě ǫ.
+Since x P DQ Ă BQ Ă BQ1, we have BQ1 Ă Bpx, r q for some (dyadic) r „ radpBQ1q ≲ 1.
+Then, if V P Apd, n q is arbitrary , we simply have
+1
+rn
+ż
+Bpx,r q
+distpy, V q
+r dµ ` pyq ě 1
+rn
+ż
+Bpx,r q
+distpy, V q
+r dµ pyq ≳ ǫ,
+which proves that β` pBpx, r qq ≳ ǫ. A ﬁxed radius " r" can only be associated to ≲ 1 cubes
+Q1 in the ancestry of Q, so ≳ M of them arise in the manner above. The claim follows.
+We note that
+µ ` pEDq ≳ µ pYLGq „ 1. (7.5)
+
+[PDF physical page 25]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 25
+We aim to apply Proposition 6.2 to the set ED, but we will perform a ﬁnal pruning before
+doing so. Let c ą 0 be a small constant to be determined soon, and let LG, light Ă LG
+consist of the good leaves with the following property: ther e exists a point xQ P DQ and
+a radius 0 ă rQ ď 1 such that
+µ ` pED X BpxQ, r Qqq ď crn
+Q. (7.6)
+Evidently DQ Ă BpxQ, r Q{5q if c ą 0 is small enough, since if DQ Ć BpxQ, r Q{5q, then
+µ ` pED X Bpx, r Qqq ě µ ` pDQ X Bpx, r Q{5qq „ rn
+Q.
+We also observe that since xQ P DQ Ă BQ Ă BQ0, and rQ ď 1 “ ℓpQ0q, we have
+BpxQ, r Qq Ă 2BQ0 for all Q P LG, light. Now, use the 5r covering theorem to ﬁnd a subset
+L1 Ă LG, light such that the associated balls BpxQ, r Q{5q are disjoint, and
+ď
+QPLG,light
+DQ Ă
+ď
+QPLG,light
+BpxQ, 1
+5 rQq Ă
+ď
+QPL1
+BpxQ, r Qq.
+It follows from ( 7.6), and the n-regularity of µ ` , that
+µ `
+´ ď
+QPLG,light
+DQ
+¯
+ď c
+ÿ
+QPL1
+rn
+Q ≲ c
+ÿ
+QPL1
+µ ` pBpxQ, rQ
+5 qq ď cµ ` p2BQ0q ≲ c.
+Comparing this upper bound with ( 7.5), we ﬁnd that if c ą 0 was chosen small enough,
+depending only on the PBP and n-regularity constants of E, then
+ÿ
+QPLG,heavy
+µ ` pDQq ≳ 1,
+where LG, heavy “ LG z LG, light. Let ED, dense be the union of the discs DQ with Q P
+LG, heavy. We summarise the properties of ED, dense Ă ED Ă E` :
+(1) µ ` pED, denseq „ 1,
+(2) If x P ED, dense, there are ≳ M dyadic scales 0 ă r ≲ 1 such that β` pBpx, r qq ≳ ǫ,
+(3) If x P ED, dense, then µ ` pED X Bpx, r qq ≳ r for all 0 ă r ď 1.
+We then apply Proposition 6.2 to the set ED, dense with a "multiplicity" parameter H ě 1 to
+be chosen later. As usual, the choice of the parameter H will eventually only depend on
+the n-regularity and PBP constants of E. The parameters α and θ in the statement of the
+proposition are set to be such that α „ d,δ 1 (speciﬁcs to follow later), and θ „ 1 is so small
+that HnpED, denseq ě θ, which is possible by (1) above. As a good ﬁrst approximation
+of how to choose α , recall from Lemma 2.4 that if x P Rd and |πV0pxq| ď α |x|, where
+α “ α pd, δ q ą 0 is small enough, then there exists a plane V P BGpd,n qpV0, δ
+2 q “ S such
+that πV pxq “ 0. In symbols, the previous statement is equivalent to
+Xp0, V 0, α q Ă
+ď
+V PS
+V K “ : CpSq. (7.7)
+In fact, in the case n “ d ´ 1, this would be a suitable deﬁnition for α , and the reader
+may think that α is at least so small that ( 7.7) holds. In the case n ă d ´ 1, additional
+technicalities force us to pick α slightly smaller.
+Proposition 6.2 then states that if M ě 1 is chosen large enough, in a manner depend-
+ing only on α, H, d, δ, ǫ, θ , and the n-regularity constant of E, the following holds: there
+exists a subset G Ă ED, dense of measure
+1 ≳ HnpGq ≳ θ „ 1 (7.8)
+
+[PDF physical page 26]
+26 TUOMAS ORPONEN
+with the property
+cardtj ě 0 : Xpx, V 0, α
+2 , 2´ j´ 1, 2´ j q X ED, dense ‰ Hu ě H, x P G. (7.9)
+(The upper bound in ( 7.8) follows from G Ă ED and diampEDq ≲ ℓpQ0q “ 1). We next
+upgrade (7.9) to a measure estimate, using the deﬁnition of ED, dense. Namely , recall from
+(3) above that if y P ED, dense, then µ ` pED X Bpy, r qq ≳ rn for all 0 ă r ď 1. By deﬁnitions
+and a few applications of the triangle inequality ,
+y P Xpx, V 0, α
+2 , 2´ j´ 1, 2´ jq ù ñ Bpy, α 2´ j´ 10q Ă Xpx, V 0, α, 2´ j´ 2, 2´ j` 1q,
+and hence
+HnpED X Xpx, V 0, α, 2´ j´ 2, 2´ j` 1qq ≳ µ ` pED X Bpy, α 2´ j´ 10qq ≳ 2´ jn (7.10)
+for all those scales 2´ j such that Xpx, V 0, α
+2 , 2´ j´ 1, 2´ j q contains some y P ED, dense. (Here
+we used that α „ d,δ 1.) For x P G, the number of such scales " 2´ j" is no smaller than
+H, by (7.9), for every such " 2´ j", it follows from ( 7.10) that at least one of the three scales
+2´ i P t2´ j´ 1, 2´ j, 2´ j` 1u satisﬁes HnpED X Xpx, V 0, α, 2´ i´ 1, 2´ iqq ě c2´ in. Here c „ 1 is
+a constant which records for the implicit constants in ( 7.10). Therefore, replacing " H" by
+"H{3" without altering notation, we have just proven the followi ng:
+cardtj ě 0 : HnpED X Xpx, V 0, α, 2´ j´ 1, 2´ j qq ě c2´ jnu ě H, x P G. (7.11)
+7.2. Part II: Besicovitch-Federer argument. By following the classical argument of Besi-
+covitch and Federer, we aim to use ( 7.11) to show that the projections of ED to planes
+close to V0 have plenty of of overlap. This part of the argument will be qu ite familiar to
+readers acquainted with the proof of the Besicovitch-Feder er projection theorem.
+For V P S “ BGpd,n qpV0, δ
+2 q, write
+fV :“
+ÿ
+QPLG
+1π V pBQq,
+interpreted as a function on Rn, and let MfV stand for the centred Hardy-Littlewood
+maximal function of fV . We will prove the following claim:
+Claim 7.12. For every x P G, there exists a subset Sx Ă S of measure γd,n pSxq ≳ 1{
+?
+H with
+the following property:
+MfV pπV pxqq ≳
+?
+H, V P Sx. (7.13)
+As usual, the implicit constants here are allowed to depend o n d, and the n-regularity
+and PBP constants of E. During the proof of the claim, we use the abbreviation
+Ej,x :“ ED X Xpx, V 0, α, 2´ j´ 1, 2´ jq, j ě 0. (7.14)
+By ( 7.11), there exist H distinct indices j ě 0 such that HnpEj,x q ě c2´ jn. The proof of
+the claim splits into two cases: either there is at least one o f these indices " j" such that
+Ej,x meets only a few planes π ´ 1
+V tπV pxqu, V P S, or then Ej,x meets fairly many of the
+planes π ´ 1
+V tπV pxqu, V P S, for every one of the H indices "j".
+Case 1. Fix x P G, assume with no loss of generality that x “ 0. This has the notational
+beneﬁt that π ´ 1
+V tπV pxqu “ V K for V P Gpd, n q. Assume that there exists at least one index
+j ě 0 such that HnpEj,x q ě c2´ jn, and
+γd,n ptV P S : V K X Ej, 0 ‰ Huq ď 1?
+H
+. (7.15)
+
+[PDF physical page 27]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 27
+Fix such an index j ě 0, and abbreviate Ej, 0 :“ E0. Then ( 7.15) will imply that most
+of the (non-negligible) Hn mass of E0 Ă Xp0, V 0, α q is contained in narrow slabs around
+pd ´ nq-planes with "high density". As in the classical proof of the Besicovitch-Federer
+projection theorem, the case n ă d ´ 1 requires integralgeometric considerations, whose
+necessity will only become clear at the very end of Case 1. Fortunately , they also make
+technical sense in the case n “ d ´ 1 (they just become trivial), so the case n “ d ´ 1 does
+not require separate treatment. As in Section 2, we deﬁne
+GpW, n q :“ t V P Gpd, n q : V Ă W u – Gpn ` 1, n q, W P Gpd, n ` 1q,
+and we write γW,n ` 1,n for the Opdq-invariant probability measure on GpW, n q. The metric
+on GpW, n q is inherited from Gpd, n q. Recall the Fubini formula established in Lemma 2.2:
+γd,n pBq “
+ż
+Gpd,n ` 1q
+γW,n ` 1,n pBq dγd,n ` 1pW q (7.16)
+for B Ă Gpd, n q Borel. We will need to ﬁnd a Borel set W Ă Gpd, n ` 1q, in fact a ball,
+which may depend on j and x, with the following properties:
+(W1) γd,n ` 1pWq „ d,δ 1,
+(W2) For every W P W, the set S X GpW, n q contains a ball SW “ BGpW,n qpVW , δ
+4 q,
+(W3) There exists a subset EW, 0 Ă E0 of measure HnpEW, 0q ě c2´ jn with the property
+EW, 0 Ă
+ď
+V PSW
+V K, W P W.
+The "c" appearing in property (W3) may be a constant multiple (depending on δ, d ) of the
+constant in HnpE0q ě c2´ jn. Finding W with the properties (W1)-(W3) is easy if n “ d´ 1,
+so let us discuss this case ﬁrst to get some intuition. Simply t ake W :“ Gpd, d q “ t Rdu.
+Note that in this case GpW, n q ” Gpd, n q. Evidently ( W1)-(W2) are satisﬁed, even with
+SW :“ S. Also, ( W3) is satisﬁed with EW, 0 :“ E0 by ( 7.7), which implies that E0 Ă
+Xp0, V 0, α q Ă Ť
+V PS V K.
+We then treat the general case. In the process, we also ﬁnally ﬁx the angular parameter
+α „ d,δ 1. Recall that E0 Ă Xp0, V 0, α, 2´ j´ 1, 2´ jq, that is, |πV0pzq| ď α |z| and |z| „ 2´ j for
+all z P E0. Start by choosing a point z0 P E0 such that
+HnpE0 X Bpz0, ρ 2´ jqq ≳δ,d 2´ jn, (7.17)
+where 0 ă ρ ď mint 1
+10 , α, δ u is a parameter to be chosen momentarily (we will have
+ρ „ δ,d 1). We then deﬁne
+EW, 0 :“ E0 X Bpz0, ρ 2´ jq,
+so at least the measure estimate in ( W3) is satisﬁed by ( 7.17). Write W0 :“ spanpV0, z 0q P
+Gpd, n ` 1q (evidently z0 R V0 since |πV0pz0q| ă | z0|), and set W :“ BpW0, ρ q. Then
+γd,n ` 1pWq „ d,δ 1, so property ( W1) is satisﬁed.
+We next verify ( W2). Let W P W, that is, dpW, W 0q ď ρ. Then, since V0 Ă W0, Lemma
+2.1 implies that there exists a plane VW P GpW, n q with dpVW , V 0q ≲ ρ. In particular,
+VW P BGpd,n qpV0, δ
+4 q if ρ is chosen small enough, and consequently
+SW :“ BGpW,n qpVW , δ
+4 q Ă S.
+This completes the proof of ( W2).
+
+[PDF physical page 28]
+28 TUOMAS ORPONEN
+To prove (W3), we need to check that if W P W and z P EW, 0, then there exists a plane
+V P SW with πV pzq “ 0. This will be accomplished by an application of Lemma 2.4
+inside W – Rn` 1. First, since z P EW, 0 Ă E0, VW Ă W , and dpVW , V 0q ≲ ρ ď α , we have
+|πVW pπW pzqq| “ | πVW pzq| ď dpVW , V 0q ¨ | z| ` | πV0pzq| ≲ α |z|. (7.18)
+Second,
+|πW pzq| ě | πW0pz0q| ´ dpW, W 0q ¨ | z0| ´ | z ´ z0| ≳ |z|, (7.19)
+using that z0 P W0, and z P Bpz0, ρ 2´ jq Ă Bpz0, |z0|{2q, and dpW, W 0q ď ρ. Combining
+(7.18)-(7.19), and setting zW :“ πW pzq P W , we ﬁnd that
+|πVW pzW q| ≲ α |zW |. (7.20)
+Finally , the estimate (7.20) allows us to apply Lemma 2.4 to the point zW P W in the space
+GpW, n q – Gpn ` 1, n q. The conclusion is that if α is small enough, depending only on
+δ, n , then there exists a plane V P BGpW,n qpVW , δ
+4 q “ SW such that πV pzW q “ 0. But now
+V Ă W , and πW pz ´ zW q “ 0, so also πV pzq “ πV pzW q ` πV pz ´ zW q “ 0. This is what
+we claimed, so the proof of ( W3) is complete.
+After the preparations ( W1)-(W3), we can get to the business of verifying Claim 7.12
+in Case 1. Recall from the main assumption ( 7.15) that γd,n ptV P S : V K X E0 ‰ Huq ď
+1{
+?
+H. Combined with the Fubini formula ( 7.16), this implies that the set of planes W P
+Gpd, n ` 1q such that
+γW,n ` 1,n ptV P SW : V K X E0 ‰ Huq ě C?
+H
+(7.21)
+has γd,n ` 1-measure at most C ´ 1, for C ě 1. Choose C „ δ 1 here so large that the planes
+W P Gpd, n ` 1q in question have total measure ď 1
+2 γd,n ` 1pWq. After discarding these
+"bad" planes from W, we may assume that the opposite of ( 7.21) holds for all W P W:
+γW,n ` 1,n ptV P SW : V K X E0 ‰ Huq ď C?
+H . (7.22)
+Fix W P W, so ( 7.22) holds, and abbreviate γW,n ` 1,n “ : γn` 1,n . Then, let S be a system of
+dyadic cubes on the ( n-regular) ball SW Ă GpW, n q, with top cube SW . Then, cover the
+set
+¯SW :“ t V P SW : V K X E0 ‰ Hu
+by a disjoint collection Q Ă S of these cubes such that
+ÿ
+QPQ
+γn` 1,n pQq ď 2C?
+H
+.
+For Q P Q, write CpQq :“ Yt V K : V P Qu, generalising the notation CpSq introduced in
+(7.7). Since ¯SW is covered by the cubes Q P Q, the set EW, 0 Ă E0 X Ť
+V PSW V K is covered
+by the cones CpQq, Q P Q. Now, let Qlight be the cubes Q P Q satisfying
+HnpCpQq X EW, 0q ď c
+4C
+?
+H ¨ 2´ jn ¨ γn` 1,n pQq. (7.23)
+Then, ÿ
+QPQlight
+HnpCpQq X EW, 0q ď c
+4C
+?
+H ¨ 2´ jn ÿ
+QPQ
+γn` 1,n pQq ď c
+2 ¨ 2´ jn.
+Recalling from (W3) that HnpEW, 0q ě c2´ jn, and that EW, 0 is covered by the union of the
+cones CpQq, Q P Q, we infer that there is a subset ¯EW, 0 Ă EW of measure Hnp ¯EW, 0q ě
+
+[PDF physical page 29]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 29
+c
+2 ¨ 2´ jn which is covered by the union of the cones CpQq, Q P Q z Qlight. Every cube
+Q P Q z Qlight satisﬁes the inequality reverse to ( 7.23), and is consequently contained in
+some maximal cube in S with this property . LetQheavy be the collection of such maximal
+(hence disjoint) cubes. Then, since Q Ă Q1 implies CpQq Ă CpQ1q, we see that ¯EW, 0 is also
+covered by the union of the cones CpQq, Q P Qheavy, and consequently
+ÿ
+QPQheavy
+HnpCpQq X ¯EW, 0q ě c
+2 ¨ 2´ jn. (7.24)
+We moreover claim that the union of the heavy cubes, denoted HW , satisﬁes
+γn` 1,n pHW q “
+ÿ
+QPQheavy
+γn` 1,n pQq ≳ 1?
+H
+. (7.25)
+Indeed, if SW P Qheavy, there is nothing to prove, since γn,n ` 1pSW q „ δ,d 1. If, on the other
+hand, SW R Qheavy, then the parent ˆQ of every cube Q P Qheavy satisﬁes ( 7.23), by the
+maximality of Q. Of course ( 7.24) remains valid if we replace " Q" by " ˆQ". Putting these
+pieces together, we ﬁnd that
+ÿ
+QPQheavy
+γn` 1,n pQq ≳
+ÿ
+QPQheavy
+γn` 1,n p ˆQq
+ě C ¨ 2jn` 2
+c
+?
+H
+ÿ
+QPQheavy
+HnpCp ˆQq X ¯EW, 0q
+(7.24)
+ě 1?
+H
+.
+This completes the proof of ( 7.25).
+We are now ready to prove Claim 7.12 in Case 1 , that is, deﬁne the set Sx “ S0 Ă S
+such that ( 7.13) holds for all V P S0. Deﬁne
+S0 :“
+ď
+W PW
+HW Ă
+ď
+W PW
+SW Ă S. (7.26)
+Then, by the Fubini formula ( 7.16), and the uniform lower bound ( 7.25), we have
+γd,n pS0q ě
+ż
+W
+γW,n ` 1,n pHW q dγd,n ` 1pW q
+(7.25)
+≳ γd,n ` 1pWq?
+H
+pW 1q
+„ δ,d
+1?
+H
+,
+as required by Claim 7.12. It remains to establish the lower bound ( 7.13), namely that if
+V P S0p“ Sxq, then MfV pπV pxqq “ MfV p0q ≳
+?
+H. Fix V P S0, let ﬁrst W P W be such
+that V P HW , and then let Q P QW, heavy “ Qheavy be the unique cube with V P Q (we
+do not claim, however, that the choice of W would be unique). By deﬁnitions, especially
+recalling that EW, 0 Ă E0 Ă ED X ¯Bp2´ jq zBp2´ j´ 1q, we have
+HnpCpQ, 2´ j´ 1, 2´ jq X EDq ě HnpCpQq X EW, 0q ě c
+4C
+?
+H ¨ 2´ jn ¨ γn` 1,n pQq, (7.27)
+where of course CpQ, r, R q :“ CpQq X ¯BpRq z Bprq, and we recall that CpQq “ t V K : V P
+Qu. Note that CpQ, 2´ j´ 1, 2´ jq Ă T “ TV , where T Ă Rd is a slab of the form
+T :“ π ´ 1
+V rBp0, C 2´ j ℓpQqqs
+of width „ d 2´ jℓpQq around the plane V K P Gpd, d ´ nq. Indeed, if x P CpQ, 2´ j´ 1, 2´ jq,
+then πV 1pxq “ 0 for some V 1 P Q. Then dpV, V 1q ≲d ℓpQq, and |πV pxq| ď dpV, V 1q ¨ | x| ≲
+2´ jℓpQq, which means that x P T if the constant C ě 1 is chosen appropriately .
+
+[PDF physical page 30]
+30 TUOMAS ORPONEN
+Write BV :“ Bp0, C 2´ jℓpQqq Ă V . With this notation, recalling that DQ Ă BQ, and
+using that the projections πV |DQ : DQ Ñ V are bilipschitz for Q P LG and V P S0 Ă S,
+we infer that
+MfV p0q ě 1
+radpBV qn
+ż
+BV
+ÿ
+QPLG
+1π V pDQqpyq dy
+“ 1
+radpBV qn
+ÿ
+QPLG
+HnpBV X πV pDQqq
+„ 1
+radpBV qn
+ÿ
+QPLG
+HnpT X DQq
+ě HnpT X EDq
+radpBV qn
+(7.27)
+ě pc{4q
+?
+H ¨ 2´ jn ¨ γn` 1,n pQq
+radpBV qn „
+?
+H.
+In ﬁnal estimate, we used that γn` 1,n pQq „ ℓpQqn. This is the whole point of the inte-
+gralgeometric argument: without splitting Gpd, n q into a "product" of Gpd, n ` 1q and
+GpW, n q, we could have, more easily , reached the penultimate estima te with " γd,n pQq" in
+place of "γn` 1,n pQq". But γd,n pQq „ ℓpQqnpd´ nq ! ℓpQqn if n ă d ´ 1, and the ﬁnal estimate
+would have failed. We have now proved Claim 7.12 in Case 1.
+Case 2. Again, ﬁx x P G, assume with no loss of generality that x “ 0, and let j1, . . . , j H ě
+0 be distinct scale indices such that HnpEji, 0q ě c2´ jin for all 1 ď i ď H, recall the
+notation from (7.14). This time, we assume that
+γd,n p ¯S0,i q ě 1?
+H
+, 1 ď i ď H, (7.28)
+where ¯S0,i :“ t V P S : V K X Eji, 0 ‰ Hu . It follows from ( 7.28) that
+ż
+S
+Hÿ
+i“ 1
+1 ¯S0,ipV q γd,n pV q ě
+?
+H. (7.29)
+Let
+Sx :“ S0 :“
+#
+V P S :
+Hÿ
+i“ 1
+1 ¯S0,ipV q ě
+?
+H
++
+,
+Then, it follows by splitting the integration in ( 7.29) to S z S0 and S0, that
+?
+H ď
+?
+H ¨ γd,n pS z S0q ` H ¨ γd,n pS0q.
+Recalling that γd,n pSq ď 1
+2 (that is, S “ BGpd,n qpV0, δ
+2 q is a fairly small ball), we ﬁnd that
+γd,n pS0q ≳ 1{
+?
+H, as required by Claim 7.12. It remains to check that MfV pπV pxqq “
+MfV p0q ≳
+?
+H whenever V P S0.
+Fixing V P S0, it follows by deﬁnition that there are ě
+?
+H indices i P t1, . . . , H u with
+the property that V P ¯S0,i , which meant by deﬁnition that
+V K X ED Ą V K X Eji, 0 ‰ H .
+For each of these indices i, the plane V K intersects at least one of the discs DQ with
+Q P LG, whose union is ED. Moreover, since the sets Ej, 0 Ă ¯Bp2´ j q z ¯Bp2´ j´ 1q are
+
+[PDF physical page 31]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 31
+disjoint for distinct indices j ě 0, we conclude that V K meets ě
+?
+H distinct discs DQ.
+Consequently , recalling also thatDQ Ă BQ for all Q P LG,
+fV p0q “
+ÿ
+QPLG
+1π V pBQqp0q ě cardtQ P LG : V K X DQ ‰ Hu ě
+?
+H.
+A similar lower bound for MfV follows easily from the special structure of fV : whenever
+V P S0 Ă S and fV p0q ě
+?
+H, we may pick the h :“
+?
+H largest balls B1, . . . , B h of the
+form πV pBQq Ă V , Q P LG, which contain 0. Writing r :“ mintradpBkq : 1 ď k ď hu,
+MfV p0q ě 1
+rn
+ż
+BV prq
+fV pyq dHnpyq ě 1
+rn
+hÿ
+k“ 1
+HnpBV prq X Bkq ≳
+?
+H,
+as claimed. This completes the proof of ( 7.13), and Claim 7.12, in Case 2.
+7.3. Part III: Conclusion. We then proceed with the proof of Proposition 4.2. Recall from
+(7.8) that HnpGq „ 1. In Claim 7.12, we showed that to every x P G we may associate a
+set of planes Sx Ă S of measure γd,n pSxq ≳ 1{
+?
+H such that MfV pπV pxqq ≳
+?
+H holds
+for all V P Sx. Writing GV :“ t x P G : V P Sxu for V P S, it follows that
+ż
+S
+HnpGV q dγd,n pV q “
+ż
+G
+γd,n pSxq dHnpxq ≳ 1?
+H
+.
+Recalling from (7.8) that HnpGV q ď HnpGq ≲ 1 for all V P S, we infer that the subset
+SG :“ t V P S : HnpGV q ≳ 1{
+?
+Hu
+has measure γd,n pSGq ≳ 1{
+?
+H. The plan is now to verify that the hypotheses of Propo-
+sition 5.14 are valid for the subset SG Ă S, and with parameter N „
+?
+H (this " N " has
+nothing to do with N “ KM ). Consider V P SG. By deﬁnition, HnpGV q ≳ 1{
+?
+H, and
+MfV pπV pxqq ≳
+?
+H “ : H 1, x P GV . (7.30)
+Write HV :“ πV pGV q. Then, ( 7.30) is equivalent to
+HV Ă t MfV ≳ H 1u. (7.31)
+Moreover, recalling that GV Ă G Ă ED is covered by the discs DQ, Q P LG, and using
+the inequality (based on DQ Ă BQ and the bilipschitz property of πV |DQ : DQ Ñ V )
+HnpGV X DQq „ HnpπV pGV X DQqq ď HnpπV pGV q X πV pBQqq, Q P LG, V P S,
+we ﬁnd that ż
+tMfV ≳H 1u
+fV ptq dHnptq ě
+ż
+HV
+fV ptq dHnptq
+“
+ÿ
+QPLG
+HnpπV pGV q X πV pBQqq
+≳
+ÿ
+QPLG
+HnpGV X DQq “ HnpGV q
+≳ 1{
+?
+H “ 1{H 1, V P SG. (7.32)
+Now, (7.32) says that the hypothesis ( 5.16) of Proposition 5.14 is satisﬁed for the set of
+leaves G :“ LG, the set of planes SG Ă S, and with the constant " H 1" in place of " N ".
+
+[PDF physical page 32]
+32 TUOMAS ORPONEN
+Moreover, by their deﬁnition below ( 7.2), all the cubes Q P LG satisfy the PBP condition
+with common plane V0:
+HnpπV pE X BQqq ě δµpQq, Q P LQ, V P S “ BGpd,n qpV0, δ
+2 q.
+Consequently , Proposition 5.14 states that if the parameter H 1 is chosen large enough,
+depending only on C0 and δ, then
+widthpT q ≳ cδpH 1q´ 1 ¨ γd,n pSGq „ 1{H. (7.33)
+As explained above ( 7.8), choosing H 1 “
+?
+H this big means forces us to choose the
+parameter M ě 1 large enough in a manner depending on
+α „ d,δ 1, C 0, H „ C0,δ 1, d, δ, ǫ, θ „ C0,d,δ 1.
+So, in fact M „ C0d,δ,ǫ 1, as claimed in Proposition 4.2. Since the lower bound for widthpT q
+in (7.33) only depends on the n-regularity and PBP constant of E, the proof of Proposition
+4.2 is complete.
+Since Proposition 3.8 follows from Proposition 4.2, and the construction of heavy trees
+in Section 4, we have now proved Proposition 3.8. As we recorded in Lemma 3.4, this
+implies that n-regular sets E Ă Rd having PBP satisfy the WGL, and then the BPLG
+property follows from Theorem 1.5. This completes the proof of Theorem 1.6.
+APPENDIX A. A VARIANT OF THE LEBESGUE DIFFERENTIATION THEOREM
+Here we prove Lemma 5.17, which we restate below for the reader’s convenience:
+Lemma A.1. Fix M, d, γ ě 1 and c ą 0. Then, the following holds if A “ Ad ě 1 is large
+enough, depending only on d (as in "Rd"), and
+N ą Apγ ` 1q2
+M γ ` 2{c (A.2)
+Let B be a collection of balls contained in r0, 1qd Ă Rd, and associate to every B P B a weight
+wB ě 0. Set
+f “
+ÿ
+BPB
+wB1B,
+and write HN :“ t Mf ě N u, where Mf is the Hardy-Littlewood maximal function of f .
+Assume that ż
+HN
+f pxq dx ě cN ´ γ , (A.3)
+Then, there exists a collection Rheavy of disjoint cubes such that the "sub-functions"
+fR :“
+ÿ
+BPB
+BĂ R
+wB1B, R P Rheavy,
+satisfy the following properties:
+ÿ
+RPRheavy
+}fR}1 ě c2´ 2pγ ` 1qN ´ γ and }fR}1 ą M |R|, R P Rheavy. (A.4)
+Remark A.5. Comparing with ( A.3), the ﬁrst property in ( A.4) states a non-negligible
+fraction of the L1-mass of f is preserved in the functions fR, R P Rheavy. In conjunction
+with ( A.2), the second property in ( A.4) states that the functions fR can be arranged to
+have arbitrarily high L1-density in R, at the cost of choosing the parameter N large.
+
+[PDF physical page 33]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 33
+Remark A.6. While proving Lemma A.1, we will apply the well-known inequalities
+ż
+tMf ą Cλ u
+|f pxq| dx ≲ λ ¨ |t Mf ą λu| ≲
+ż
+tf ą λ {2u
+|f pxq| dx, (A.7)
+valid for f P L1pRdq, every λ ą 0, and a certain constant C “ Cd ě 1. The ﬁrst inequality
+in ( A.7) is stated in [ 32, (6)], but we provide the short details. Let C “ Cd ě 1 be a
+constant to be speciﬁed in a moment. Write Ωh :“ t Mf ą hu for h ą 0. For every
+x P ΩCλ , choose a radius rx ą 0 such that, denoting Bx :“ Bpx, r xq, we have
+Cλ ď 1
+|Bx|
+ż
+Bx
+|f pxq| dx ď 2Cλ. (A.8)
+This is possible, since f P L1pRdq. For example, one can take rx ą 0 to be the supremum
+of the (non-empty and bounded set of) radii such that the left hand inequality in ( A.8)
+holds. The radii " rx" are uniformly bounded, again by f P L1pRdq. We then apply the 5r-
+covering lemma to the balls 1
+5 Bx to obtain a countable sub-sequence tBiuiPN Ă t BxuxPΩCλ
+with the properties that (i) the balls 1
+5 Bi are disjoint, and (ii) the balls Bi cover Ť t 1
+5 Bx :
+x P ΩCλ u Ą ΩCλ . We observe that if C “ Cd ě 1 is large enough, it follows from ( A.8)
+that 1
+5 Bi Ă Ωλ for all i P N. Consequently ,
+|Ωλ |
+(i)
+ě
+ÿ
+iPN
+| 1
+5 Bi| „
+ÿ
+iPN
+|Bi|
+(A.8)
+ě 1
+2Cλ
+ÿ
+iPN
+ż
+Bi
+|f pxq| dx
+(ii)
+ě 1
+2Cλ
+ż
+ΩCλ
+|f pxq| dx,
+as desired. For the second inequality in ( A.7), see [ 33, (5), p. 7].
+Proof of Lemma A.1. We begin with an initial reduction. If f R L1pr0, 1qdq, there is nothing
+to prove: then Rheavy :“ tr 0, 1qdu satisﬁes the conclusions ( A.4). So, assume that f P
+L1pr0, 1qdq, and hence f P L1pRdq, since spt f Ă r 0, 1qd. Let C “ Cd ě 1 be the constant
+from (A.7). Choosing N {p2Cq ă λ ă N {C, and combining the inequalities ( A.7) with the
+main assumption ( A.3), we ﬁnd that
+ż
+tf ě N {p2Cqu
+f pxq dx ≳
+ż
+HN
+f pxq dx ě cN ´ γ .
+With this in mind, we replace N by N {p2Cq, and we re-deﬁne HN to be the set HN :“ t x :
+f pxq ě N u. As we just argued, the hypothesis ( A.3) remains valid with the new notation,
+possibly with slightly worse constants.
+Fix N ě 1 and abbreviate
+θ :“ cN ´ γ ą 0.
+It would be helpful if the elements in B were dyadic cubes instead of arbitrary balls, so
+we ﬁrst perform some trickery to reduce (essentially) to this situation. There exist d ` 1
+dyadic systems D1, D2, . . . , Dd` 1 with the following property: every cube Q Ă r 0, 1qd,
+and consequently every ball B Ă r 0, 1qd, is contained in a dyadic cube R P D1 Y. . . YDd` 1
+with |R| ď Cd|Q| (resp. |R| ď Cd|B|). The constant " d` 1" is not crucial – any dimensional
+constant would do. The fact that d ` 1 systems in Rd sufﬁce was shown by Mei [ 24], but
+such "adjacent" dyadic systems can even be produced in metri c spaces, see [ 19].
+In particular, for every B P B, we may assign an index i “ iB P t1, . . . , d ` 1u, possibly
+in a non-unique way , such that B Ă Q1 for some Q1 P Di with |Q1| ď Cd|B|. We let Bi be
+
+[PDF physical page 34]
+34 TUOMAS ORPONEN
+the set of balls in B with ﬁxed index i P t1, . . . , d ` 1u, and we write
+fi :“
+ÿ
+BPBi
+wB1B, i P t1, . . . , d ` 1u.
+We claim that there existsi P t1, . . . , d ` 1u such that if H i
+N {pd` 1q :“ t x : fipxq ě N {pd` 1qu,
+then ż
+H i
+N{pd` 1q
+fipxq dx ě θ
+pd ` 1q2 . (A.9)
+Indeed, one notes that if x P HN is ﬁxed, then f1pxq ` . . . ` fd` 1pxq “ f pxq ě N , and
+hence there exists i “ ix P t 1, . . . , d ` 1u such that fipxq ě f pxq{pd ` 1q ě N {pd ` 1q. In
+particular x P H i
+N {pd` 1q. Then 1H i
+N{pd` 1q
+pxqfipxq ě f pxq{pd ` 1q for this particular i, and
+d` 1ÿ
+i“ 1
+ż
+H i
+N pxq
+fipxq dx ě
+ż
+HN
+d` 1ÿ
+i“ 1
+1H i
+N{pd` 1q
+pxqfipxq dx ě 1
+d ` 1
+ż
+HN
+f pxq dx ě θ
+d ` 1 .
+This implies ( A.9). We now ﬁx i P t 1, . . . , d ` 1u satisfying ( A.9). Then fi satisﬁes the
+hypothesis ( A.3) with the slightly worse constants " θ{pd ` 1q2" and " N {pd ` 1q". Also,
+it evidently sufﬁces to prove the claimed lower bounds in ( A.4) for " fi" and its "sub-
+functions"
+f i
+R :“
+ÿ
+BPBi
+BĂ R
+wB1B ď fR
+in place of f and the "sub-functions" fR. Let us summarise the ﬁndings: by passing
+from B to Bi and from f to fi if necessary , we may assume that every ball in the original
+collection "B" is contained in an element "R" of some dyadic system "D" with |R| ď Cd|B|.
+We make this a priori assumption in the sequel.
+For every dyadic cube R P D, we deﬁne the weight
+wR :“
+ÿ
+BPB
+B„ R
+wB.
+Here the relation B „ R means that B Ă R, and |R| ď Cd|B|. By the previous arrange-
+ments, for every B P B there exist „ d 1 dyadic cubes R P D such that B „ R. It is worth
+pointing out that
+f pxq “
+ÿ
+BPB
+wB1Bpxq ď
+ÿ
+RPD
+wR1Rpxq, x P r0, 1qd,
+because if x P B P B, then B „ R for some R P D. It follows that x P R, and wB is one of
+the terms in the sum deﬁning wR.
+We now begin the proof in earnest. If }f }1 ą M there is nothing to prove: then we
+simply declare Rheavy :“ tr 0, 1qdu, and (A.4) is satisﬁed. So, we may assume that
+}f }1 ď M. (A.10)
+We will next perform k P N successive stopping time constructions, for some 1 ď k ď
+γ ` 1, which will generate a families R1, R2, . . . , Rk Ă D of disjoint dyadic cubes. The
+cubes in Rk` 1 will be contained in the union of the cubes in Rk. A subset of one of these
+families will turn out to be the family " Rheavy" whose existence is claimed.
+
+[PDF physical page 35]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 35
+Let R1 Ă D be the maximal (hence disjoint) dyadic cubes with the proper ty
+ÿ
+R1PD
+R1Ą R
+wR11R1pxq ě N1 :“ tN {2u, x P R. (A.11)
+Note that the deﬁnition is well posed, since the sum on the left hand side of ( A.11) is
+constant on R. We ﬁrst record the easy observation
+HN Ă
+ď
+RPR1
+R. (A.12)
+Indeed, if x P HN , then ÿ
+BPB
+wB1Bpxq “ f pxq ě N.
+It then follows from the deﬁnition of the coefﬁcients wR (and the fact that every B P B
+is contained in some R P D) that there exist dyadic cubes R P D containing x such that
+(A.11) holds, and in particular x P R for some R P R1.
+Next, we calculate that
+ÿ
+RPR1
+|R| ď
+ÿ
+RPR1
+1
+N1
+ż
+R
+ÿ
+R1PD
+R1Ą R
+wR11R1pxq dx
+ď 1
+N1
+ÿ
+R1PD
+wR1
+ÿ
+RPR1
+RĂ R1
+|R| ď 1
+N1
+ÿ
+R1PD
+wR1|R1|, (A.13)
+since the cubes in R1 are disjoint. Moreover, by ( A.10),
+ÿ
+R1PD
+wR1|R1| ≲d
+ÿ
+R1PD
+ÿ
+BPB
+B„ R1
+wB|B| “
+ÿ
+BPB
+wB|B| cardtR1 : B „ R1u ≲d }f }1 ď M,
+so ÿ
+RPR1
+|R| ď AM
+N1
+(A.14)
+for some constant A “ Ad ě 1. The precise relation between this " A" and the dimensional
+constant appearing in the main assumption ( A.2) is that, in the end, we will need N ą
+p2Aqγ ` 13pγ ` 1q2
+M γ ` 2{c. Next, we claim that if x P R P R1, then
+ÿ
+BPB
+BĆ R
+wB1Bpxq ď
+ÿ
+R1PD
+R1⊋R
+wR11R1pxq ă N1 ď N {2. (A.15)
+The second inequality follows directly from the deﬁnition of the maximal cubes R P R1.
+Regarding the ﬁrst inequality , note that if B P B is a ball satisfying x P B X R and B Ć R,
+then B Ă R1 for some strict ancestor R1 P D of R. Then the coefﬁcient wB appears in the
+sum deﬁning wR1 for this ancestor R1 ⊋ R. As a corollary of ( A.15), and recalling that
+f pxq ě N for all x P HN , we record that
+fRpxq :“
+ÿ
+BPB
+BĂ R
+wB1Bpxq “ f pxq ´
+ÿ
+BPB
+BĆ R
+wB1Bpxq ě 1
+2 f pxq, x P R X HN , R P R1. (A.16)
+
+[PDF physical page 36]
+36 TUOMAS ORPONEN
+The proof now splits into two cases: in the ﬁrst one, we are actu ally done, and in the
+second one, a new stopping family R2 will be generated. The case distinction is based
+on examining the following "heavy" cubes in R1:
+R1, heavy :“ t R P R1 : }fR}1 ą M |R|u .
+Case 1. Assume ﬁrst that
+ÿ
+RPR1,heavy
+ż
+RXHN
+f pxq dx ě θ
+2 . (A.17)
+Then ÿ
+RPR1,heavy
+}fR}1
+(A.16)
+ě 1
+2
+ÿ
+RPR1,heavy
+ż
+RXHN
+f pxq dx ě θ
+4 .
+In this case, we set Rheavy :“ R1, heavy, and the proof terminates, because (A.4) is satisﬁed.
+Case 2. Assume next that ( A.17) fails, and recall from ( A.12) that HN is contained in the
+union of the cubes in R1. Therefore,
+ÿ
+RPR1,light
+ż
+RXHN
+f pxq dx ě
+ż
+HN
+f pxq dx ´ θ
+2 ě θ
+2 , (A.18)
+where R1, light “ R1 z R1, heavy.
+We now proceed to deﬁne the next generation stopping cubes R2. Fix R0 P R1, light,
+and consider the maximal dyadic sub-cubes R Ă R0 with the property
+ÿ
+RĂ R1Ă R0
+wR11R1pxq ě N2 :“ tN {4u, x P R, (A.19)
+Again, the left hand side of ( A.19) is constant on R, so the stopping condition is well-
+posed. The cubes so obtained are denoted R2pR0q, and we set
+R2 :“
+ď
+R0PR1,light
+R2pR0q. (A.20)
+We claim that the (fairly large) part of HN covered by cubes in R1, light is remains covered
+by the cubes in R2. Indeed, ﬁx x P R0 X HN , where R0 P R1, light Ă R1. Then
+ÿ
+R1PD
+R1⊋R0
+wR1 1R1pxq ă N1 ď N {2
+by deﬁnitions of R1 and N1, so
+ÿ
+R1PD
+R1Ă R0
+wR11R1pxq ě N {2,
+and hence x is contained in some (maximal) dyadic cube R Ă R0 satisfying (A.19).
+Arguing as in ( A.15), we infer the following: if x P R P R2, then
+ÿ
+BPB
+BĆ R
+wB1Bpxq ď
+ÿ
+R1PD
+R1⊋R
+wR11R1pxq ă N1 ` N2 ď 3N
+4 . (A.21)
+Indeed, the ﬁrst inequality follows exactly as in ( A.15). To see the second inequality , split
+the cubes R1 ⊋ R into the ranges R ⊊ R1 Ă R0 and R0 ⊊ R Ă r 0, 1qd, where R0 P R1.
+
+[PDF physical page 37]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 37
+Then, use the deﬁnitions of the stopping cubes R1 and R2. As a corollary of ( A.21), we
+infer an analogue of ( A.16) for R P R2:
+fRpxq “
+ÿ
+BPB
+BĂ R
+wB1Bpxq “ f pxq ´
+ÿ
+BPB
+BĆ R
+wB1Bpxq ě 1
+4 f pxq, x P R X HN , R P R2. (A.22)
+We next estimate the total volume of the cubes in R2. Fix R0 P R1, light, and ﬁrst estimate
+ÿ
+RPR2
+RĂ R0
+|R| ď
+ÿ
+RPR2
+RĂ R0
+1
+N2
+ż
+R
+ÿ
+RĂ R1Ă R0
+wR1 1R1pxq dx ď 1
+N2
+ÿ
+R1PD
+R1Ă R0
+wR1|R1|.
+Of course, this computation was just a repetition of ( A.13). Also the next estimate can be
+carried out in the same way as the estimate just below ( A.13):
+ÿ
+R1PD
+R1Ă R0
+wR1|R1| ď A}fR0}1 ď AM |R0|, R 0 P R1, light.
+Combining the previous two displays, the stopping cubes in R2pR0q have total volume
+ď AM |R0|{N2 for every R0 P R1, light. Therefore,
+ÿ
+RPR2
+|R| “
+ÿ
+R0PR1,light
+ÿ
+RPR2pR0q
+|R| ď AM
+N2
+ÿ
+J0PJ1,light
+|R0| ď A2M 2
+N1N2
+, (A.23)
+recalling (A.14). Since N " maxtA, M u, this means that the total volume of the stopping
+cubes tends to zero rapidly as their generation increases.
+We are now prepared to make another case distinction, this ti me based on the heavy
+sub-cubes in R2:
+R2, heavy :“ t R P R2 : }fR}1 ą M |R|u .
+Case 2.1. Assume ﬁrst that
+ÿ
+RPR2,heavy
+ż
+RXHN
+f pxq dx ě θ
+4 . (A.24)
+Then,
+ÿ
+RPR2,heavy
+}fR}1
+(A.22)
+ě 1
+4
+ÿ
+RPR2,heavy
+ż
+RXHN
+f pxq dx ě θ
+16. (A.25)
+In this case, we declare Rheavy :“ R2, heavy, and we see that ( A.4) is satisﬁed.
+Case 2.2. Assume then that ( A.24) fails. Since the part of HN contained in the R1, light-
+cubes is also contained in the R2-cubes (as established right below ( A.20)), we deduce
+from (A.18) that
+ÿ
+RPR2,light
+ż
+RXHN
+f pxq dx ě
+ÿ
+RPR1,light
+ż
+RXHN
+f pxq dx ´ θ
+4 ě θ
+4 .
+Here of course R2, light :“ R2 z R2, heavy. So, we ﬁnd ourselves in a situation analogous to
+(A.18), except that the integral of f 1HN over the light cubes has decreased by half.
+Repeating the construction above, we proceed to deﬁne – inductively – new collections
+of stopping cubes. The stopping cubes Rk are contained in the the union of the stopping
+
+[PDF physical page 38]
+38 TUOMAS ORPONEN
+cubes Rk´ 1, light, and they are deﬁned as the maximal sub-cubes " R" of R0 P Rk´ 1, light
+satisfying
+ÿ
+RĂ R1Ă R0
+wR11R1pxq ě Nk :“ tN {2ku, x P R.
+Repeating the argument under (A.20), this deﬁnition ensures that the part of HN covered
+by the cubes in Rk´ 1, light remains covered by the union of the cubes in Rk. Moreover,
+induction shows that
+ÿ
+RPRk´ 1,light
+ż
+RXHN
+f pxq dx ě 2´ k` 1θ, k ě 1. (A.26)
+The general analogue of the inequality ( A.22) is
+fRpxq ě 2´ kf pxq, x P R X HN , R P Rk, (A.27)
+and the total volume of the cubes in Rk satisﬁes
+ÿ
+RPRk
+|R| ď AkM k
+N1 ¨ ¨ ¨ Nk
+, (A.28)
+in analogy with ( A.23). Once the cubes in Rk have been constructed, we split into two
+cases, depending on whether
+ÿ
+RPRk,heavy
+ż
+RXHN
+f pxq dx ě 2´ kθ or
+ÿ
+RPRk,light
+ż
+RXHN
+f pxq dx ě 2´ kθ. (A.29)
+One of these cases must occur because of ( A.26), and the covering property stated above
+(A.26). In the ﬁrst case, ( A.27) shows that
+ÿ
+RPRk,heavy
+}fR}1 ě 2´ k ÿ
+RPRk,heavy
+ż
+RXHN
+f pxq dx ě 2´ 2kθ,
+and the proof of ( A.4) concludes if k ď γ ` 1. So, the only remaining task is to show that
+the ﬁrst case must occur for some k ď γ ` 1. Indeed, if the second case of ( A.29) occurs
+for any k ě 1, we have
+c2´ kN ´ γ “ 2´ kθ ď
+ÿ
+RPRk,light
+}fR}1 ď M
+ÿ
+RPRk
+|R|
+(A.28)
+ď AkM k` 1
+N1 ¨ ¨ ¨ Nk
+.
+Recalling that Nk “ tN {2ku ě N {3k, hence N1 ¨ ¨ ¨ Nk ě N k3´ k2
+, this yields
+N k´ γ ď 3k2
+p2AqkM k` 1
+c .
+Assuming that N ą 3pγ ` 1q2
+p2Aqγ ` 1M γ ` 2{c (in agreement with ( A.2)), the inequality
+above cannot hold for k “ γ ` 1. Thus, the "heavy" case of ( A.29) occurs latest at step
+k “ γ ` 1. The proof of the lemma is complete. □
+
+[PDF physical page 39]
+PLENTY OF BIG PROJECTIONS IMPLY BPLG 39
+REFERENCES
+[1] Jonas Azzam. Semi-uniform domains and the A8 property for harmonic measure. Int. Math. Res. Notices
+(to appear), page arXiv:1711.03088, Nov 2017.
+[2] Jonas Azzam, Steve Hofmann, José María Martell, Svitlan a Mayboroda, Mihalis Mourgoglou, Xavier
+Tolsa, and Alexander V olberg. Rectiﬁability of harmonic me asure. Geom. Funct. Anal. , 26(3):703–728,
+2016.
+[3] Jonas Azzam, Mihalis Mourgoglou, and Xavier Tolsa. Mutu al absolute continuity of interior and exte-
+rior harmonic measure implies rectiﬁability . Comm. Pure Appl. Math. , 70(11):2121–2163, 2017.
+[4] Michael Bateman and Alexander V olberg. An estimate from below for the Buffon needle probability of
+the four-corner Cantor set. Math. Res. Lett. , 17(5):959–967, 2010.
+[5] Abram S. Besicovitch. On the fundamental geometrical pr operties of linearly measurable plane sets of
+points (III). Math. Ann., 116(1):349–357, 1939.
+[6] Matthew Bond, Izabella Łaba, and Alexander V olberg. Buf fon’s needle estimates for rational product
+Cantor sets. Amer. J. Math., 136(2):357–391, 2014.
+[7] Matthew Bond and Alexander V olberg. Buffon needle lands in ǫ-neighborhood of a 1-dimensional Sier-
+pinski gasket with probability at most | log ǫ|´ c. C. R. Math. Acad. Sci. Paris , 348(11-12):653–656, 2010.
+[8] Matthew Bond and Alexander V olberg. Buffon’s needle lan ding near Besicovitch irregular self-similar
+sets. Indiana Univ. Math. J., 61(6):2085–2109, 2012.
+[9] Alan Chang and Xavier Tolsa. Analytic capacity and proje ctions. J. Eur. Math. Soc. (JEMS) , 22(12):4121–
+4159, 2020.
+[10] Laura Cladek, Blair Davey, and Krystal Taylor. Upper an d lower bounds on the rate of decay of the
+Favard curve length for the four-corner Cantor set. arXiv e-prints, page arXiv:2003.03620, March 2020.
+[11] Guy David and Stephen Semmes. Singular integrals and re ctiﬁable sets in Rn: Au-delà des graphes
+lipschitziens. Astérisque, (193):152, 1991.
+[12] Guy David and Stephen Semmes. Analysis of and on uniformly rectiﬁable sets , volume 38 of Mathematical
+Surveys and Monographs. American Mathematical Society , Providence, RI, 1993.
+[13] Guy David and Stephen Semmes. Quantitative rectiﬁabil ity and Lipschitz mappings. T rans. Amer. Math.
+Soc., 337(2):855–889, 1993.
+[14] Damian D ˛ abrowski. Cones, rectiﬁability , and singula r integral operators. arXiv e-prints , page
+arXiv:2006.14432, June 2020.
+[15] José R. Dorronsoro. A characterization of potential sp aces. Proc. Amer. Math. Soc., 95(1):21–31, 1985.
+[16] Katrin Fässler, Tuomas Orponen, and Séverine Rigot. Se mmes surfaces and intrinsic Lipschitz graphs
+in the Heisenberg group. T rans. Amer. Math. Soc., 373(8):5957–5996, 2020.
+[17] Herbert Federer. The pϕ, k q rectiﬁable subsets of n-space. T rans. Amer. Math. Soc., 62:114–192, 1947.
+[18] John Garnett, Mihalis Mourgoglou, and Xavier Tolsa. Un iform rectiﬁability from Carleson measure
+estimates and ε-approximability of bounded harmonic functions. Duke Math. J., 167(8):1473–1524, 2018.
+[19] Tuomas Hytönen and Anna Kairema. Systems of dyadic cube s in a doubling metric space. Colloq. Math.,
+126(1):1–33, 2012.
+[20] Peter W. Jones. Rectiﬁable sets and the traveling sales man problem. Invent. Math., 102(1):1–15, 1990.
+[21] Izabella Łaba. Recent progress on Favard length estima tes for planar Cantor sets. In Operator-related
+function theory and time-frequency analysis, volume 9 of Abel Symp., pages 117–145. Springer, Cham, 2015.
+[22] Henri Martikainen and Tuomas Orponen. Characterising the big pieces of Lipschitz graphs property
+using projections. J. Eur. Math. Soc. (JEMS) , 20(5):1055–1073, 2018.
+[23] Pertti Mattila. Geometry of sets and measures in Euclidean spaces. Fractals and rectiﬁability. 1st paperback ed.
+Cambridge: Cambridge University Press, 1st paperback ed. e dition, 1999.
+[24] Tao Mei. BMO is the intersection of two translates of dya dic BMO. C. R. Math. Acad. Sci. Paris ,
+336(12):1003–1006, 2003.
+[25] Ian D. Morris. A rapidly-converging lower bound for the joint spectral radius via multiplicative ergodic
+theory .Adv. Math., 225(6):3425–3445, 2010.
+[26] Assaf Naor and Robert Young. V ertical perimeter versus horizontal perimeter. Ann. of Math. (2) ,
+188(1):171–279, 2018.
+[27] Assaf Naor and Robert Young. Foliated corona decomposi tions. arXiv e-prints, page arXiv:2004.12522,
+April 2020.
+
+[PDF physical page 40]
+40 TUOMAS ORPONEN
+[28] F. Nazarov , Y . Peres, and A. V olberg. The power law for the Buffon needle probability of the four-corner
+Cantor set. Algebra i Analiz , 22(1):82–97, 2010.
+[29] Fedor Nazarov , Xavier Tolsa, and Alexander V olberg. On the uniform rectiﬁability of AD-regular mea-
+sures with bounded Riesz transform operator: the case of cod imension 1. Acta Math. , 213(2):237–321,
+2014.
+[30] Yuval Peres and Boris Solomyak. How likely is Buffon’s n eedle to fall near a planar Cantor set? Paciﬁc
+J. Math., 204(2):473–496, 2002.
+[31] Stephen W. Semmes. Finding structure in sets with littl e smoothness. In Proceedings of the International
+Congress of Mathematicians, Vol. 1, 2 (Zürich, 1994) , pages 875–885. Birkhäuser, Basel, 1995.
+[32] Elias M. Stein. Note on the class L log L. Studia Math., 32:305–310, 1969.
+[33] Elias M. Stein. Singular integrals and differentiability properties of functions. Princeton Mathematical Series,
+No. 30. Princeton University Press, Princeton, N.J., 1970.
+[34] Terence Tao. A quantitative version of the Besicovitch projection theorem via multiscale analysis. Proc.
+Lond. Math. Soc. (3) , 98(3):559–584, 2009.
+UNIVERSITY OF JYVÄSKYLÄ , D EPARTMENT OF MATHEMATICS AND STATISTICS
+Email address: tuomas.t.orponen@jyu.fi

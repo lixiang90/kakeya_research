@@ -137,3 +137,6 @@ R0091新增DPR1601.06543v2原18页、AMS1907.07456v3原27页、Moore作者DST讲
 
 
 R0092新增EOT0903.1879v2原25页、Dhar2110.14889v3原26页、2209.11443v1原29页与默认pypdf页标text，现72PDF/76sources/78IDs。原PDF/hash/readscope见metadata/R0092_source_check.json；只采用具名EOT及有限环前提对照，原平均/Hausdorff转移已付但五维25/9弱于经典，不作新界。
+
+
+R0093新增Orponen2008.08843v3原40页与Lang作者2023版整流性讲义原35页，现74PDF/78sources/78IDs。原字节/hash/readscope见metadata/R0093_source_check.json。PBP量词与经典Cantor-Besicovitch模板先比对，非新论文/新结果认证；高级wholeproof具名。
