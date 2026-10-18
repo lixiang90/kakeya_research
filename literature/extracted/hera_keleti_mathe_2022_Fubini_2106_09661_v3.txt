@@ -1,0 +1,1672 @@
+===== PDF PAGE 1 =====
+arXiv:2106.09661v3  [math.MG]  15 Sep 2022
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION
+K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+Abstract. It is well known that a classical Fubini theorem for Hausdorﬀ
+dimension cannot hold; that is, the dimension of the interse ctions of a ﬁxed
+set with a parallel family of planes do not determine the dime nsion of the
+set. Here we prove that a Fubini theorem for Hausdorﬀ dimensi on does hold
+modulo sets that are small on all Lipschitz graphs.
+W e say that G ⊂ Rk × Rn is Γ k-null if for every Lipschitz function f :
+Rk → Rn the set {t ∈ Rk : ( t, f(t)) ∈ G} has measure zero. W e show that
+for every Borel set E ⊂ Rk × Rn with dim (proj Rk E) = k there is a Γ k-null
+subset G ⊂ E such that
+dim (E \ G) = k + ess- sup(dim Et)
+where ess- sup(dim Et) is the essential supremum of the Hausdorﬀ dimension
+of the vertical sections {Et}t∈Rk of E. In addition, we show that, provided
+that E is not Γ k-null, there is a Γ k-null subset G ⊂ E such that for F = E \ G,
+the Fubini-property holds, that is, dim ( F ) = k + ess- sup(dim Ft).
+W e also obtain more general results by replacing Rk by an Ahlfors–David
+regular set. Applications of our results include Fubini-ty pe results for unions of
+aﬃne subspaces, connection to the Kakeya conjecture and pro jection theorems.
+Contents
+1. Introduction 1
+2. Preliminaries and statements of our main results 2
+2.1. Notation and basic deﬁnitions 2
+2.2. The Fubini-type setting 3
+2.3. Our main theorems 5
+3. Applications to unions of aﬃne subspaces and projection theore ms 6
+3.1. Results for unions of aﬃne subspaces 6
+3.2. Projection theorems as corollaries 9
+4. Fubini property and counterexamples 10
+5. Proofs of the main results 13
+6. The proof of Lemma 5.4 16
+7. The proof of Lemma 5.5 18
+Acknowledgment 23
+Appendix A. The ZFC proof of Lemma 6.1 23
+References 25
+1. Introduction
+In this paper we prove Fubini-type results for Hausdorﬀ dimension. It is well
+known, see e. g. [7], that for Hausdorﬀ dimension, the classical Fub ini theorem does
+This research was supported by the Hungarian National Resea rch, Development and Innovation
+Oﬃce – NKFIH, 124749. The second author is grateful to the Alf r´ ed R´ enyi Institute, where he
+was a visiting researcher during a part of this project. He wa s also partially supported by the
+Hungarian National Research, Development and Innovation O ﬃce – NKFIH, 129335.
+1
+===== PDF PAGE 2 =====
+2 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+not hold. More precisely, it is not true in general that if all the vertic al sections
+of a plane set are β -dimensional then the set is ( β + 1)-dimensional: its Hausdorﬀ
+dimension can be strictly greater than β + 1. On the other hand, it is also known
+that this phenomenon cannot appear in many directions simultaneou sly. In fact, the
+(naive) Fubini theorem for Hausdorﬀ dimension does hold in almost ev ery direction
+(see Proposition 2.6).
+In this paper we are interested in Fubini type results that hold in eve ry (ﬁxed)
+direction — this is also the setting that has relevance to projection t heorems. We
+prove that every set can be written as a union of a set for which the (naive) Fu-
+bini theorem actually holds and a set that is small on Lipschitz curves that are
+transversal to that ﬁxed direction.
+We use the notion of Γ-null sets, sets intersecting each Lipschitz g raph in zero
+measure. We prove that if the plane set B is Borel such that its projection onto the
+horizontal axis has Hausdorﬀ dimension 1, then there exists a Γ-nu ll setG ⊂ B such
+that the Hausdorﬀ dimension of B \G equals 1 plus the essential supremum of the
+Hausdorﬀ dimension of the vertical sections of B. As a corollary (Corollary 4.1), we
+also show that, provided that B is not Γ-null, there is a Γ-null subset G ⊂ B such
+that for F =B \G, the Fubini-property holds, that is, the Hausdorﬀ dimension of
+F equals 1 plus the essential supremum of the Hausdorﬀ dimension of t he vertical
+sections of F . More generally, we prove results for sets B ⊂ Rk × Rn for which
+the projection of B to Rk is contained in an Ahlfors–David α -regular set T , where
+α is the Hausdorﬀ dimension of the projection of B to Rk. (Here α -regularity of
+T means that the Hα-measure of the intersection of T with balls centered at the
+points of T of radius r is approximately rα for all r > 0.) It turns out that the
+Ahlfors–David regularity condition is crucial.
+We also study the special case when the Borel set B ⊂ Rm is the union of lines
+that are not orthogonal to the ﬁrst axis. We formulate the conje cture (Conjec-
+ture 3.11) that for these sets the Fubini property holds: the Hau sdorﬀ dimension
+ofB equals 1 plus the essential supremum of the Hausdorﬀ dimension of t he inter-
+sections of B with the hyperplanes perpendicular to the ﬁrst axis. Among others
+we prove that this conjecture, if true, would imply a weak form of th e Kakeya con-
+jecture, and we also prove that our conjecture holds when the Ha usdorﬀ dimenion
+of B is less than 2. In fact, we study not only unions of lines but also unions of
+k-dimensional aﬃne subspaces in Rm for any 1 ≤ k < m. Using standard duality
+arguments, our Fubini type results can be translated to project ion theorems: for
+a natural restricted family of projections we give estimates for th e dimension of
+almost every projection of a ﬁxed set (Corollaries 3.15 and 3.16).
+The paper is organized as follows: In Section 2 we give the main set-up of our
+problem and present some classical theorems as well as some obser vations and we
+state our main Fubini type results Theorems 2.12 and 2.14 for Hausd orﬀ dimension.
+In the next two sections we show how these results can be applied: in Section 3 to
+unions of aﬃne subspaces and to get projection theorems and in Se ction 4 to prove
+the above mentioned Corollary 4.1 about the Fubini property of a lar ge subset. In
+Section 4 we also show counterexamples for possible stronger stat ements. In Section
+5 we prove our main results, Theorems 2.12 and 2.14, subject to two lemmas,
+Lemma 5.4 and Lemma 5.5. The proof of Lemma 5.4 is contained in Section 6 and
+the Appendix. Lemma 5.5 is proved in Section 7.
+2. Preliminaries and statements of our main results
+2.1. Notation and basic deﬁnitions. The open ball of center x and radius r
+will be denoted by B(x,r ) or Bρ(x,r ) if we want to indicate the metric ρ. The
+closed ball of center x and radius r will be denoted by B(x,r ). For a set U ⊂ Rn,
+===== PDF PAGE 3 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 3
+Uδ = ∪ x∈ UB(x,δ ) denotes the open δ-neighborhood of U , and diam ( U ) denotes
+the diameter of U .
+Lets ≥ 0,δ ∈ (0, ∞ ] and A ⊂ Rn. By the s-dimensional Hausdorﬀ δ-premeasure
+of A we mean
+Hs
+δ(A) = inf
+{ ∞∑
+i=1
+(diam (Ui))s :A ⊂
+∞⋃
+i=1
+Ui, diam (Ui) ≤ δ (i = 1, 2,... )
+}
+.
+The s-dimensional Hausdorﬀ measure of A is deﬁned as Hs(A) = lim δ→ 0 Hs
+δ(A).
+The Hausdorﬀ dimension of A is deﬁned as
+dimA = sup{s : Hs(A)> 0}.
+For the well known properties of Hausdorﬀ measures and dimension , see e.g. [7].
+For a ﬁnite set A, let |A| denote its cardinality.
+We will use the notation a ≲αb ifa ≤ Cb whereC is a constant depending on α .
+If it is clear from the context what C should depend on, we may write only a ≲b.
+For any integers 1 ≤ k < m, let G(m,k ) / A(m,k ) denote the space of all
+k-dimensional linear / aﬃne subspaces of Rm, respectively.
+We will denote the orthogonal projection from Rm onto a subspace V ∈ G(m,k )
+by proj V . We will write Rk for the subspace Rk × { 0} in Rm, and write proj Rk for
+the orthogonal projection onto it.
+2.2. The F ubini-type setting. In this section we deﬁne the set-up for the Fubini-
+type problem for Hausdorﬀ dimension and present some classical th eorems as well
+as some easily derivable observations.
+Fix two integers n,k ≥ 1, let B ⊂ Rk × Rn, and for any t ∈ Rk let
+Bt = {x ∈ Rn : (t,x ) ∈ B},
+the “vertical” section of B corresponding to t. The following theorem, which says
+that if a set B has many large sections then B is large, is well known (see e.g. [7]).
+Theorem 2.1. For any B ⊂ Rk × Rn, 0 ≤ α ≤ k and 0 ≤ β ≤ n, if there exists
+A ⊂ Rk with dimA ≥ α such that for all t ∈ A, dimBt ≥ β , then dimB ≥ α +β .
+On the contrary, even if all the sections of B are small, that does not imply that
+B is small. For example, it can happen that all sections of B are singletons, and
+the dimension of B is equal to the dimension of the ambient space. This is the
+context of the next theorem (see e.g. [28] and [13]).
+Theorem 2.2. There exists a continuous function f : [0, 1] → [0, 1]n whose graph
+B = {(t,f (t)) : t ∈ [0, 1]} has Hausdorﬀ dimension n + 1.
+In this paper we will prove a Fubini-type result of the following nature : if all
+the sections of B have small Hausdorﬀ dimension, then we can remove a small set
+G ⊂ B (the speciﬁc notion of smallness we use will be deﬁned later) such tha t the
+remaining set, B \G has small Hausdorﬀ dimension.
+Deﬁnition 2.3. For any non-empty B ⊂ Rk × Rn, let A = proj RkB ⊂ Rk and
+α = dimA. If Hα(A)> 0, we deﬁne
+essα- sup(dimBt) = sup{q ≥ 0 : Hα({t ∈ Rk : dimBt>q })> 0}
+= inf{q ≥ 0 : Hα({t ∈ Rk : dimBt >q }) = 0 },(1)
+where sup ∅ is taken to be zero.
+If Hα(A) = 0, we let
+(2) ess α- sup(dimBt) = lim
+ε→ 0+
+essα-ε- sup(dimBt).
+===== PDF PAGE 4 =====
+4 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+Remark 2.4. Note that Theorem 2.1 implies that if B is as in Deﬁnition 2.3, then
+dimB ≥ α + essα- sup(dimBt).
+Intuitively, we can say that “B behaves nicely along Rk”, if the reverse inequality
+holds as well. For this we introduce the following deﬁnition.
+Deﬁnition 2.5 (Fubini property) . We say that a nonempty set B ⊂ Rk × Rn
+has the Fubini property, if dim B = α +β , where α = dim proj RkB, and β =
+essα- sup(dimBt).
+We can naturally extend Deﬁnitions 2.3 and 2.5 for any ﬁxed k-dimensional
+subspace V ∈ G(k +n,k ) in place of Rk. Let W = V ⊥ , ∅ ̸ = B ⊂ Rk+n, and
+α = dim proj V B. If Hα(projV B)> 0, we deﬁne
+essα- sup(dimBV,t) = sup{q ≥ 0 : Hα({t ∈ V : dim (B ∩ (W +t))>q })> 0}
+= inf{q ≥ 0 : Hα({t ∈ V : dim (B ∩ (W +t))>q }) = 0 }.(3)
+Similarly as in (2), if Hα(projV B) = 0, we deﬁne
+(4) ess α- sup(dimBV,t) = lim inf
+ε→ 0
+essα-ε- sup(dimBV,t).
+Finally, we say that B has the Fubini propery along V if
+(5) dim B =α + essα- sup(dimBV,t).
+Now we prove that any Borel set “behaves nicely” along almost ever y subpace,
+using an easy application of the projection theorem and the insters ection theorem
+of Marstrand and Mattila.
+Proposition 2.6. Any nonempty Borel set B ⊂ Rk+n has the Fubini property
+along almost every k-dimensional subspace; that is, (5) holds for γk+n,k-almost
+every V ∈ G(k +n,k ), where α = dim proj V B and γk+n,k denotes the natural
+measure on the Grassmannian.
+Proof. Let dimB =β .
+Assume ﬁrst that β ≤ k. Then by the projection theorem of Marstrand and
+Mattila, we obtain that for γk+n,k-almost all V ∈ G(k +n,k ), dim proj V B = β .
+Clearly, we have ess α- sup(dimBV,t) = 0, otherwise by Remark 2.4 we would get
+dimB >β. Thus dim B =β + 0, which is precisely (5) in this case.
+Assume now that β > k. Let ε > 0 such that β − ε > k. By the projection
+theorem of Marstrand and Mattila, we obtain that for γk+n,k-almost all V ∈ G(k +
+n,k ), Hk(projV B)> 0. Moreover, we have Hβ− ε(B)> 0, thus by the intersection
+theorem of Marstrand and Mattila (see e.g. [24, Theorem 10.10]), we have for
+γk+n,k-almost all V ∈ G(k +n,k ) that
+Hk({t ∈ V : dim (B ∩ (W +t)) ≥ β − ε − k})> 0,
+where W = V ⊥ . This implies by the deﬁnition in (3) that ess k - sup(dimBV,t) ≥
+β − ε − k for each ε >0, thus ess k - sup(dimBV,t) ≥ β − k. Combining the above
+two facts, we obtain that for γk+n,k-almost all V ∈ G(k +n,k ),
+dimB =β =k + (β − k) ≤ k + essk - sup(dimBV,t).
+In fact, by Theorem 2.1, this is an equality, and (5) follows.
+□
+Our aim in this paper is to prove a Fubini-type theorem, which holds alon g any
+ﬁxed subspace V . For simplicity, we only state our results in the context where
+V = Rk × { 0}.
+===== PDF PAGE 5 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 5
+2.3. Our main theorems. We start by deﬁning the notion of Γ-nullness, a notion
+which has crucial role in our results.
+Deﬁnition 2.7 (Γα-null sets). Let 0 <α ≤ k. We say that G ⊂ Rk × Rn is Γ α-null
+if for every Lipschitz map f : Rk → Rn,
+(6) Hα({t ∈ Rk : (t,f (t)) ∈ G}) = 0.
+Remark 2.8. For each α , the Γ α-null sets form a σ -ideal. In particular, if Gi is
+Γα-null (i = 1, 2,... ), then G = ∪ ∞
+i=1Gi is also Γ α-null. Moreover, if α 1 <α andG
+is Γ α1 -null, then G is Γ α-null as well.
+Remark 2.9. Note that a similar but diﬀerent notion of Γ-nullness appears in
+the works of Alberti, Cs¨ ornyei, Maleva, Preiss, Tiˇ ser, Zaj ´ ıˇ cek, and others related
+to the generalization of Rademacher’s theorem and diﬀerentiability o f Lipschitz
+maps, see e.g. [36], [5], [1], [35], [23]. In our paper, it is important that we have a
+ﬁxed direction (“vertical”) and we consider Lipschitz curves that a re transversal to
+that direction, in particular, we consider all Lipschitz graphs (using the standard
+coordinate system). In the above mentioned works, on the other hand, there is
+usually no constraint on the directions of the curves, and often on ly a subfamily Γ
+of Lipschitz curves is used.
+In our results, the notion of Ahlfors–David regular sets (see e. g. [24, p. 92]) will
+also be very important.
+Deﬁnition 2.10 (Ahlfors–David regular sets) . For any 0 <α ≤ k, we say that the
+Borel set T ⊂ Rk is Ahlfors–David α -regular, if there exist c,c ′> 0 such that
+(7) c ·rα ≤ H α(T ∩ B(t,r )) ≤ c′ ·rα
+for all t ∈ T and 0 <r ≤ 1.
+Remark 2.11. Clearly, if T ⊂ Rk is Ahlfors–David α -regular, then Hα(T ) > 0,
+and Hα|T is σ -ﬁnite.
+Our main result is the following.
+Theorem 2.12. Let 0<α ≤ k and let T ⊂ Rk be an Ahlfors–David α -regular set.
+LetB ⊂ T × Rn be Borel such that dim proj RkB =α . Then there exists a Γα-null
+Borel set G ⊂ B such that
+dim (B \G) = α + essα- sup(dimBt).
+(Recall Deﬁnition 2.3 for the notation essα- sup(dimBt).)
+Takingα =k and T = Rk, Theorem 2.12 implies the following.
+Corollary 2.13. Let B ⊂ Rk × Rn be Borel such that dim (projRkB) = k. Then
+there exists a Borel set G ⊂ B such that the following hold:
+• G is Γ-null, that is, for any f : Rk → Rn Lipschitz map, Lk(t ∈ Rk :
+(t,f (t)) ∈ G) = 0 .
+• dim (B \G) = k + ess- sup(dimBt), where
+ess- sup(dimBt) = sup {q ≥ 0 : Lk({t ∈ Rk : dimBt>q })> 0}.
+In order to prove Theorem 2.12 we will use Theorem 2.1 and the followin g.
+Theorem 2.14. Let 0<α ≤ k and let T ⊂ Rk be an Ahlfors–David α -regular set.
+Let B ⊂ T × Rn be a Borel set and assume that 0< β ≤ n is a real number such
+that dimBt ≤ β for all t ∈ T . Then there exists a Γα-null Borel set G ⊂ B such
+that dim (B \G) ≤ α +β .
+===== PDF PAGE 6 =====
+6 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+In Section 5 we prove Theorem 2.14 subject to two lemmas and we sho w how
+the combination of Theorem 2.1 and Theorem 2.14 implies Theorem 2.12.
+In Section 4 we show that the Ahlfors–David regularity assumption c annot be
+dropped in Theorems 2.12 and 2.14.
+3. Applications to unions of affine subspaces and projection
+theorems
+3.1. Results for unions of aﬃne subspaces. In this section we present Fubini-
+type results for the Hausdorﬀ dimension of unions of aﬃne subspac es as applications
+of Theorem 2.12. First we introduce some notations.
+Let 2 ≤ m, 1 ≤ k <m be integers. Recall that A(m,k ) denotes the space of all
+k-dimensional aﬃne subspaces of Rm.
+Deﬁnition 3.1. Let V ∈ A(m,m − k). We say that P ∈ A(m,k ) is non-vertical
+with respect to V if the orthogonal projection of P to V ⊥ is equal to V ⊥ .
+In the case V = {0} × Rm− k we say simply that P ∈ A(m,k ) is non-vertical.
+The following is an immediate corollary of Theorem 2.12.
+Corollary 3.2. Fix a non-empty collection E ⊂ A(m,k ) of non-vertical aﬃne
+subspaces such that B = ⋃
+P ∈ EP ⊂ Rm is Borel, and let β = ess k - sup(dimBt).
+Then for each P ∈ E, there exists P ′ ⊂ P with Hk(P \P ′) = 0 such that for
+B′ = ⋃
+P ∈ EP ′ ⊂ B, we have dimB′ =β +k.
+Proof. We apply Corollary 2.13 for k andn =m − k,B = ⋃
+P ∈ EP ⊂ Rm. Clearly,
+projRkB = Rk. We obtain a Γ-null set G ⊂ B such that dim ( B \G) = k +β .
+Since G is Γ-null, we have Hk(G ∩ P ) = 0 for each P ∈ E, thus taking P ′ =P \G
+completes the proof. □
+For simplicity, we introduce the following notation.
+Deﬁnition 3.3. ForE ⊂ A(m,k ) let
+r(E) = inf {dimB′ − k : B′ ⊂ Rm such that Hk(B′ ∩ P )> 0 for each P ∈ E}.
+(8)
+We prove the following Fubini-type result about the Hausdorﬀ dimens ion of
+unions of aﬃne subspaces, which is a consequence of Theorem 2.14.
+Corollary 3.4. Fix a non-empty collection E ⊂ A(m,k ) of non-vertical aﬃne
+subspaces such that B = ⋃
+P ∈ EP ⊂ Rm is Borel. Then for Lk-almost all t ∈ Rk,
+dimBt ≥ r(E), where r(E) is from (8).
+Proof. Fix E with the above properties and let r = r(E). Assume on contrary
+that Lk(t ∈ Rk : dim Bt < r) > 0. Then there exists ε > 0 such that Lk(t ∈
+Rk : dim Bt < r− ε) > 0. Note that these sets are measurable: they are in the
+σ -algebra generated by analytic sets (see [6] or [27, Remark 6.2.]). T herefore we
+can choose a compact set A′ ⊂ { t ∈ Rk : dim Bt < r − ε} with Lk(A′) > 0.
+Let B′ = B ∩ (A′ × Rm− k). Clearly, Hk(B′ ∩ P ) > 0 for each P ∈ E, and B′
+is Borel. We apply Theorem 2.14 for B′ and obtain a Γ k-null set G′ ⊂ B′ such
+that dim (B′ \G′) ≤ k +r − ε. Then Hk(G′ ∩ P ) = 0 for each P ∈ E, thus
+Hk((B′ \G′) ∩ P )> 0 for each P ∈ E. By the deﬁnition of r =r(E) (see (8)), this
+implies that
+k +r ≤ dim (B′ \G′) ≤ k +r − ε,
+which is a contradiction and we are done. □
+===== PDF PAGE 7 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 7
+Now we list some results aiming to ﬁnd lower bounds for r(E) (see (8)) for
+E ⊂ A(m,k ). As these results will involve the Hausdorﬀ dimension of the collectio n
+E, we should deﬁne a metric on A(m,k ).
+ForPi =Vi +ai ∈ A(m,k ), where Vi ∈ G(m,k ) and ai ∈ V ⊥
+i , i = 1, 2, we put
+δ(P1,P 2) = ∥ projV1 − projV2 ∥ + |a1 − a2|
+where ∥ · ∥denotes the standard operator norm. Then δ is a metric on A(m,k ), see
+[24, p. 53].
+Deﬁnition 3.5. Letρ be a metric on A(m,k ). We say that ρ is a natural metric if
+ρ andδ are Lipschitz equivalent, that is, if there exist positive constants K1 andK2
+such that, for every P1,P 2 ∈ A(m,k ), K1 ·δ(P1,P 2) ≤ ρ(P1,P 2) ≤ K2 ·δ(P1,P 2).
+The following theorem was proved by Falconer and Mattila in [9] for k =m − 1,
+and by the authors in [15] for arbitrary 0 <k ≤ m − 1.
+Theorem 3.6 (Falconer–Mattila, H´ era–Keleti–M´ ath´ e). Let 1 ≤ k<m be integers,
+ﬁx a natural metric on A(m,k ), and let E ⊂ A(m,k ) be nonempty. If B ⊂ Rm
+satisﬁes Hk(B ∩ P )> 0 for each P ∈ E, then
+dimB ≥ k + min{dimE, 1}.
+Moreover, if dimE ∈ [0, 1] and B ⊂ ⋃
+P ∈ EP with Hk(B ∩ P ) > 0 for each
+P ∈ E, then
+dimB =k + dimE.
+This means that if E ⊂ A(m,k ) with dim E ≤ 1, then r(E) = dim E (see (8)).
+Remark 3.7. Note that the inequality dim ( ∪ P ∈ EP ) ≤ k + dimE holds for every
+collection E (see e.g. [15]). However, equality can fail when dim E >1.
+In [14], the ﬁrst author gave another estimate for the dimension of sets of the
+above type.
+Theorem 3.8 (H´ era). Let 1 ≤ k <m be integers, ﬁx a natural metric on A(m,k ),
+and let E ⊂ A(m,k ) be nonempty. If B ⊂ Rm such that Hk(B ∩ P )> 0 for each
+P ∈ E, then
+dimB ≥ k + dimE
+k + 1 .
+In other words, for any E ⊂ A(m,k ) we have r(E) ≥ dim E
+k+1 (see (8)).
+Remark 3.9. It is not hard to check (see [14]) that there are sets E ⊂ A(m,k )
+such that r(E) = dim E
+k+1 .
+Now we prove that unions B = ∪ P ∈ EP of small enough dimension have the
+Fubini property.
+Corollary 3.10. Fix a non-empty collection E ⊂ A(m,k ) of non-vertical aﬃne
+subspaces such that dimE ≤ 1, and B = ⋃
+P ∈ EP ⊂ Rm is Borel. Then B has the
+Fubini property; that is, dimB =β +k, where β = ess k - sup(dimBt).
+In particular, if B is a Borel union of non-vertical k-dimensional aﬃne subspaces
+with dimB <k + 1, then it has the Fubini property.
+Proof. Since dim E ≤ 1, we have r(E) = dim E by Theorem 3.6. Applying Corol-
+lary 3.4, we obtain that for Lk-almost all t ∈ Rk, dim Bt ≥ dimE. In particular,
+β = ess k - sup(dimBt) ≥ dimE. Combining this with Remark 2.4 and Theorem
+3.6, we get β +k ≤ dimB = dimE +k ≤ β +k, so B has the Fubini-property.
+Note that dim B < k+ 1 implies dim E < 1 by Theorem 3.6, thus the above
+argument can be applied. □
+===== PDF PAGE 8 =====
+8 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+We also formulate the conjecture that for arbitrary Borel unions ofk-dimensional
+aﬃne subspaces Fubini property holds:
+Conjecture 3.11. Fix a non-empty collection E ⊂ A(m,k ) of non-vertical aﬃne
+subspaces such that B = ⋃
+P ∈ EP ⊂ Rm is Borel. Then
+(9) dim B =β +k, whereβ = ess k - sup(dimBt).
+Recall that a subset of Rm is called a Besicovitch set if it contains a unit line
+segment in every direction, and that the Kakeya conjecture states that such a set
+must have Hausdorﬀ / upper Minkowski dimension m. The following theorem
+connects Conjecture 3.11 to the Kakeya conjecture.
+Theorem 3.12. (i) For any m ≥ 2, if Conjecture 3.11 holds for that m andk = 1,
+then every Besicovitch set in Rm has Hausdorﬀ dimension at least m − 1.
+(ii) If Conjecture 3.11 holds for k = 1 for every m ≥ 2 then any Besicovith set in
+Rm has upper Minkowski dimension m, so Kakeya conjecture holds for Minkowski
+dimension.
+Proof. A well-known argument (see e.g. [20]) gives that if for every m ≥ 2 every
+Besicovitch set in Rm has Hausdorﬀ dimension at least m− 1 then every Besicovitch
+set in Rm has upper Minkowski dimension m. Therefore it is enough to prove (i).
+Suppose now that there exists a Besicovitch set in Rm of Hausdorﬀ dimension
+d<m − 1.
+We will rely on a recent result of the second and third authors [21] th at states
+that if there is a Besicovitch set of dimension d, then there is a closed set A ⊂ Rm
+of Hausdorﬀ dimension d such that A contains a line in every direction. Crucially,
+in this proof, this allows us to replace line segments by full lines. The ad ditional
+property that A is now a closed set helps us evade complicated measurability ar-
+guments.
+A vague sketch for the rest of the proof is the following. With the he lp of
+Theorem 2.2 we choose a very special set D of directions (of dimension m − 1).
+We pass to a subset A′ of A corresponding to lines going in this set of directions.
+We extend these lines in the projective space (by adding their direct ion to the
+hyperplane at inﬁnity) to obtain A′ ∪ D. We apply a projective transformation Φ
+that maps the hyperplane at inﬁnity to a particular standard hyper plane of Rm.
+The projective image Φ( A′ ∪ D) is a union of lines, it still has dimension m − 1;
+however, every plane in a suitable family of parallel planes will intersec t Φ(D) in at
+most one point only, making Φ( D) essentially “invisible”. As Φ( A′) has dimension
+at most d<m − 1, this will contradict Conjecture 3.11 for Φ( A′ ∪ D).
+For the precise proof, let H1 denote the hyperplane {0} × Rm− 1, and let w =
+(1, 0,..., 0) ∈ Rm. For any p ∈ H1 andv ∈ Sm− 1, let ℓ(p,v ) denote the line though
+p in the direction of v. Using a projective map that takes the hyperplane at inﬁnity
+to H1, a well known argument (see e.g. [20]) gives that there is A′ ⊂ Rm with
+dimA′ = d such that for each p ∈ H1, there exists a line ℓ(p,v ) through p such
+that v ̸⊥ w and ℓ(p,v ) \ {p} ⊂ A′. Let F = A′ ∪ H1, it is easy to see that since
+A is closed, F is closed. Let f : [0, 1] → Rm− 2 be a continuous function such that
+dimgraph(f ) = m − 1 (see Theorem 2.2), and let
+(10) C = {(0,t,f (t)) : t ∈ [0, 1]} ⊂ H1.
+Clearly,C is compact, and dim C =m − 1.
+We will use the following lemma.
+Lemma 3.13. Let F ⊂ Rm closed, C ⊂ F compact, u,w ∈ Sm− 1, and δ > 0.
+Then
+K =
+⋃
+{ℓ(p,v ) : p ∈ C, v ∈ Sm− 1, ℓ(p,v ) ⊂ F, |⟨v,u ⟩| ≥ δ, |⟨v,w ⟩| ≥ δ}
+===== PDF PAGE 9 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 9
+is closed.
+Proof. Let an ∈ K, an → a. Then there exists a line ℓ(pn,v n) ⊂ F such that
+an ∈ ℓ(pn,v n), pn ∈ C,v n ∈ Sm− 1, |⟨vn,u ⟩| ≥ δ, |⟨vn,w ⟩| ≥ δ. Since C and
+Sm− 1 are compact, we can assume that there is p ∈ C, v ∈ Sm− 1 such that
+pn → p,v n → v. Then a ∈ ℓ(p,v ), |⟨v,u ⟩| ≥ δ, |⟨v,w ⟩| ≥ δ, and since F is closed,
+ℓ(p,v ) ⊂ F , so a ∈ K. □
+LetH2 denote the (m − 2)-plane {(0, 0)} × Rm− 2. Pick u1,u 2 ∈ Sm− 1 such that
+u1 and u2 are orthogonal to H2, and u1, u2, and w are pairwise non-parallel. For
+i = 1, 2 and k ∈ N, let
+Bi,k =
+⋃
+{ℓ(p,v ) : p ∈ C, v ∈ Sm− 1, ℓ(p,v ) ⊂ F, |⟨v,u i⟩| ≥ 1/k, |⟨v,w ⟩| ≥ 1/k },
+where F = A′ ∪ H1, w = (1, 0,..., 0), and C is constructed in (10). By Lemma
+3.13, Bi,k is closed for each i and k. One easily checks that by construction, for
+eachp ∈ C, there is a line ℓ(p,v ) through p such that ℓ(p,v ) ⊂ F , |⟨v,w ⟩|> 0, and
+|⟨v,u i⟩|> 0 for i = 1 or i = 2, thus C ⊂ ⋃
+i=1,2
+⋃
+k∈ NBi,k. Since dim C = m − 1,
+there are i and k such that dim Bi,k ≥ m − 1 − ε, for an arbitrary ε > 0. Fix
+such an i and k and let B = Bi,k, B′ = B \H1. Since B′ ⊂ A′, dim B′ ≤ d. Let
+u = ui, let U denote the line generated by ui and let V = U ⊥ . By construction,
+projUℓ(p,v ) = U for any line ℓ(p,v ) in the deﬁnition of B. Moreover, V ̸=H1 is a
+hyperplane containing H2, thus C ∩ (V +t ·u) is at most one point for each t ∈ R.
+This, combined with B \B′ ⊂ C gives that
+(11) dim ( B ∩ (V +t ·u)) = dim (B′ ∩ (V +t ·u)) for each t ∈ R.
+By the deﬁnition in (3), (11) implies that ess 1- sup(dimBU,t) = ess 1- sup(dimB′
+U,t).
+Call this value β . Then, using Conjecture 3.11 for B and Remark 2.4 for B′ we
+have
+m − 1 − ε ≤ dimB =β + 1 ≤ dimB′ ≤ d,
+which, since ε> 0 was arbitrary, completes the proof. □
+Remark 3.14. As one can see in the above proof, it is in fact enough to assume
+in the statement of Theorem 3.12 that Conjecture 3.11 holds for clo sed unions B
+of non-vertical k-dimensional aﬃne subspaces.
+3.2. Projection theorems as corollaries. Fix two integers n,k ≥ 1, and ﬁx
+t = (t1,...,t k) ∈ Rk. For any x ∈ R(k+1)n, we use the notation x = (x0,x 1,...,x k),
+where xi ∈ Rn for i = 0,...,k . Let
+(12) πt : R(k+1)n → Rn, (x0,x 1,...,x k) ↦→ x0 +t1 ·x1 + · · ·+tk ·xk.
+The projections {πt}t∈ Rk were ﬁrst investigated by Oberlin, see [32]. His results
+imply the following theorem, see also [26].
+Theorem (Oberlin). LetX ⊂ R(k+1)n be non-empty Borel.
+• If dimX ≤ (k + 1)n − k, then for Lk-almost all t ∈ Rk, dimπt(X) ≥
+dimX − k(n − 1).
+• If dimX >(k + 1)n − k, then for Lk-almost all t ∈ Rk, Ln(πt(X))> 0.
+Here we prove two results of similar nature. With the help of Corollary 3.4, we
+can translate Theorem 3.8 and Theorem 3.6 to the language of proje ction theorems.
+Corollary 3.15. LetX ⊂ R(k+1)n be non-empty Borel with dimX ≤ 1. Then for
+Lk-almost all t ∈ Rk,
+dimπt(X) = dimX.
+===== PDF PAGE 10 =====
+10 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+Corollary 3.16. Let X ⊂ R(k+1)n be non-empty Borel. Then for Lk-almost all
+t ∈ Rk,
+dimπt(X) ≥ dimX
+k + 1 .
+Note that these two corollaries could have been proved by repeatin g/modifying
+the original proofs of Theorems 3.8 and 3.6. The power of our metho d here is that
+these corollaries can be obtained directly from the end results, as a “black box”,
+without the need to revisit the original proofs.
+The proof of Corollary 3.15 and 3.16. It is enough to prove the corollaries for com-
+pact sets X, since every Borel set X contains a compact set with dimension arbi-
+trarily close to the dimension of X.
+From now on we assume that X is compact.
+We use the standard duality connection between sections of unions of aﬃne sub-
+spaces and projections of the “code set” associated to collection s of aﬃne subspaces.
+Forx = (x0,x 1,...,x k) ∈ X ⊂ R(k+1)n, let
+Px = {(t,π t(x)) : t ∈ Rk}.
+Then Px is a non-vertical k-dimensional aﬃne subspace in Rk+n for each x ∈ X.
+Let
+E = {Px :x ∈ X} ⊂ A(k +n,k ), and B = ∪ P ∈ EP ⊂ Rk+n.
+We claim that dim X = dimE. Indeed, the Euclidean metric on X deﬁnes a metric
+on E. Since X is bounded, this metric is Lipschitz equivalent to the restriction of
+a natural metric of A(k +n,k ) to E. So dim X = dimE follows.
+The set B is a continuous image of X × Rk. This product set is a union of
+countably many compact sets, so B is a union of countably many compact sets,
+hence B is Borel. (A more careful argument shows that B is closed.)
+By construction, we have
+(13) Bt =πt(X) for every t ∈ Rk.
+If s = dimX = dimE ≤ 1 then the combination of Theorem 3.6 and Corollary
+3.4 implies that for Lk-almost all t ∈ Rk, dim Bt ≥ s. Then by (13) we obtain
+that for Lk-almost all t ∈ Rk, dim πt(X) = dim X, which completes the proof of
+Corollary 3.15.
+To ﬁnish the proof of Corollary 3.16, we use the combination of Theor em 3.8
+and Corollary 3.4. We obtain that for Lk-almost all t ∈ Rk, dim Bt ≥ s
+k+1 , where
+s = dimX = dimE. By (13) this implies that for Lk-almost allt ∈ Rk, dimπt(X) ≥
+dim X
+k+1 , which completes the proof of Corollary 3.16.
+□
+Remark 3.17. Corollary 3.16 is obviously sharp for the endpoint dim X = (k+1)n,
+taking X = R(k+1)n or in fact any other set with this dimension.
+Remark 3.18. There is a rich literature of results concerning certain restricted
+families of projections, see e.g. [17], [11], [34], [33]. We remark that our ﬁrst projec-
+tion theorem, Corollary 3.15, can also be proved using a classical pot ential-theoretic
+method, similarly as in [10, Proposition 1.2.].
+4. Fubini property and counterexamples
+Recall that we say that B ⊂ Rk × Rn has the Fubini property if dim B =α +β ,
+where α = dim proj RkB, and β = ess α- sup(dimBt). In this section ﬁrst we show
+that any non-Γ α-null Borel set has a large subset for which the Fubini property
+holds. More precisely we prove the following corollary of Theorem 2.12 .
+===== PDF PAGE 11 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 11
+Corollary 4.1. Let 0 < α ≤ k, and let B ⊂ Rk × Rn non-empty Borel set such
+that projRkB ⊂ T , where T ⊂ Rk is an Ahlfors–David α -regular set. Then there
+exists a Borel set G ⊂ B such that G is Γα-null, and B′ = B \G has the Fubini
+property.
+Moreover, if B is not Γα-null, then dim proj B′ = α , thus in fact, dimB′ =
+α +β ′, where β ′ = ess α- sup(dimB′
+t).
+Proof. IfB is Γα-null, then Corollary 4.1 clearly holds: we can simply take B′ = {b}
+to be any singleton contained in B.
+Assume now that B is not Γ α-null, thus Hα(projRkB) > 0. Put B0 = B, and
+β0 = ess α- sup(dimBt). We complete the proof using transﬁnite induction. The
+idea is the following. We apply Theorem 2.12 for B and obtain a Γ α-null Borel
+set G0 ⊂ B such that dim (B \G0) = α +β0. Put B1 = B \G0. Clearly, B1 is
+Borel and B1 ⊂ B ⊂ T × Rn. Since B is not Γ α-null, we have that B1 is not Γ α-
+null, and clearly, this implies that Hα(projRkB1)> 0, thus dim proj RkB1 =α . If
+dimB = dimB1, then B has the Fubini property, we are done. If dim B1 < dimB,
+we apply Theorem 2.12 for B1. We continue this process for n = 0, 1,... , and put
+Bω0 = ⋂∞
+n=0Bn. If Bω0 has the Fubini property, then we will be done (see the
+details below in general), otherwise, we apply Theorem 2.12 for Bω0 and continue
+the process.
+WheneverBλ is an already deﬁned Borel non-Γ α-null set for an ordinal number λ,
+letβλ = ess α- sup(dim (Bλ)t). Let γ be a successor ordinal, say γ =λ +1. Applying
+Theorem 2.12 for Bλ we obtain a Γ α-null Borel set Gλ such that dim (Bλ \Gλ) =
+α +βλ. Then we let Bγ = Bλ \Gλ. Since Bλ is not Γ α-null, we have that Bγ
+is not Γ α-null, and thus Hα(projRkBγ) > 0. If γ is a countable limit ordinal,
+let Bγ = ⋂
+λ<γBλ. Then Bγ = B \ (⋃
+λ<γGλ). Since γ is a countable ordinal,
+and B is not Γ α-null, we have by Remark 2.8 that Bγ is not Γ α-null, and thus
+Hα(projRkBγ)> 0. It is also clear that for any γ, the construction yields a Borel
+set Bγ with Bγ ⊂ B ⊂ T × Rn, so Theorem 2.12 is applicable for Bγ.
+We claim that there exists γ < ω1 such that dim Bγ+1 = dim Bγ, where ω 1
+denotes the smallest uncountable ordinal. Assume on contrary tha t dim Bγ+1 <
+dimBγ for all γ <ω 1. Since Bλ ⊂ Bγ wheneverγ ≤ λ, this implies that dim Bλ ≤
+dimBγ+1 < dimBγ for any γ < λ, thus dim Bλ : ω 1 → R+ is strictly decreasing,
+which is impossible.
+Letγ be a countable ordinal such that dim Bγ+1 = dimBγ. Then by deﬁnition,
+since γ + 1 is a successor ordinal, we have dim Bγ+1 =α +βγ and then dim Bγ =
+α +βγ, thusBγ has the Fubini property. Moreover, it is easy to check that Bγ =B \
+(⋃
+λ<γGλ), and by Remark 2.8, ⋃
+λ<γGλ is Γα-null, which completes the proof. □
+Note that the second part of Corollary 4.1 allows β ′ < β and does not claim
+the uniqueness of β ′. The next proposition shows that we cannot guarantee the
+existence of a subset with the Fubini property such that β ′ = β , and also that in
+the second part of Corollary 4.1 the assumption that B is not Γ α-null cannot be
+dropped.
+Proposition 4.2. (i) There exists a compact set C ⊂ R × R2 with projRC = [0, 1]
+such that for every subset C′ ⊂ C with the Fubini property, dim proj RC′ = 0.
+(ii) There exists a non- Γ1-null compact set B ⊂ R× R3 withα = dim (proj RB) =
+1 and β = ess 1- sup(dimBt) = 1 , such that for any subset B′ ⊂ B possess-
+ing the Fubini property, α ′ = 0 or β ′ = 0 , where α ′ = dim (proj RB′) and β ′ =
+essα’- sup(dimB′
+t).
+Proof. Let g : [0 , 1] → R2 be a Brownian motion. By Kaufman’s dimension
+doubling theorem (see e. g. [30]), almost surely, for any set X ⊂ [0, 1], we have
+dimg(X) = 2dimX. Fix g : [0, 1] → R2 with this property.
+===== PDF PAGE 12 =====
+12 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+ThenC = graphg satisﬁes all requirements of (i) since for any nonempty C′ ⊂ C,
+lettingα ′ = proj RC′, we have β ′ = ess α’- sup(dimC′
+t) = 0 and dim C′ ≥ 2α ′, which
+is strictly greater than α ′ +β ′ if α ′> 0.
+To prove (ii) let B = (C × [0, 1]) ∪ ([0, 1] × { (0, 0, 0)}). Then clearly B ⊂ R × R3
+is a compact set with α = dim (proj RB) = 1 and β = ess 1- sup(dimBt) = 1 and it
+is non-Γ 1-null since it contains the line segment [0 , 1] × { (0, 0, 0)}.
+Let ∅ ̸ = B′ ⊂ B, α ′ = dim (proj RB′) and β ′ = ess α’- sup(dimB′
+t). Using the
+dimension doubling property of g and Theorem 2.1 we obtain that if β ′> 0 then
+dimB′ ≥ 2α ′ +β ′, which is strictly greater than α ′ +β ′ if α ′> 0. □
+Remark 4.3. The reason that we have included [0 , 1] × { (0, 0, 0)} in the set B is
+that C × [0, 1] alone would be Γ 1-null: this can be seen either by using the second
+claim of Corollary 4.1 or more directly, using the results of [2].
+Now we show that the Ahlfors–David regularity condition in Theorems 2.12 and
+2.14 and in Corollary 4.1 cannot be dropped: for example, the relaxed condition
+that 0 < Hα(projRkB)< ∞ is not enough.
+Proposition 4.4. For any 0<α< 1, there exists a compact set B ⊂ R2 with the
+following properties:
+• B =A1 × A2 with 0< Hα(Ai)< ∞ (i = 1, 2),
+• for any G ⊂ B Borel Γα-null set we have dim (B \G) = α + 1.
+Clearly, for the above B, the conclusions of Theorems 2.12 and 2.14 and Corol-
+lary 4.1 do not hold.
+Proof. The following construction can be found in [12, Section 2.10.29].
+For any 0 <α< 1, there exist compact sets A1,A 2 ⊂ R with 0 < Hα(Ai)< ∞
+(i = 1, 2) such that for B =A1 × A2 the following is satisﬁed:
+For any γ <α + 1 and ε> 0 there exists δ >0 (depending on α , ε and γ) such
+that for any S ⊂ R2 with diamS ≤ δ, we have
+(14) ( Hα × H α)(B ∩ S) ≤ C ·ε ·(diamS)γ,
+where C is a constant depending only on α .
+We will check that (14) implies that for every B′ ⊂ B with ( Hα × H α)(B′)> 0,
+we have dim B′ =α + 1.
+First note that the upper bound α + 1 follows from the fact that B′ ⊂ A1 × A2 ⊂
+A1 × R, and A1 × R has Hausdorﬀ dimension α + 1.
+Fixγ <α + 1,ε> 0, and consider a covering B′ ⊂ ⋃Si with diamSi ≤ δ, where
+δ is as above. Then by (14), we have that
+∑
+(diamSi)γ ≥
+∑ 1
+C ·ε(Hα × H α)(B ∩ Si) ≥
+∑ 1
+C ·ε(Hα × H α)(B′ ∩ Si),
+and since B′ ⊂ ⋃Si and Hα × H α is an outer measure, we have that
+∑
+(diamSi)γ ≥ 1
+C ·ε(Hα × H α)(B′).
+Taking inﬁmum over the coverings it follows that
+Hγ(B′) ≥ 1
+C ·ε(Hα × H α)(B′).
+Therefore dimB′ ≥ γ for every γ <α + 1, hence dim B′ =α + 1.
+To conclude the proof of Proposition 4.4, we show that if G is a Borel Γ α-null
+set and B′ =B \G, then ( Hα × H α)(B′)> 0, and this is enough.
+Let G be a Borel Γ α-null set. Then we have Hα({t ∈ A1 : (t,x ) ∈ G}) = 0 for
+each x ∈ A2, considering constant (Lipschitz) functions in (6). This immediately
+implies that for each x ∈ A2, Hα({t ∈ A1 : (t,x ) ∈ B′}) = Hα(A1) which is positive
+===== PDF PAGE 13 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 13
+and ﬁnite. Using Fubini’s theorem (see e.g. [12, Theorem 2.6.2]) for the Borel set
+B′ we obtain that
+(Hα × H α)(B′) =
+∫
+A2
+Hα({t ∈ A1 : (t,x ) ∈ B′})dHα(x)> 0,
+which completes the proof. □
+5. Proofs of the main results
+In this section we prove Theorems 2.14 and 2.12 subject to two lemma s, Lemma
+5.4 and Lemma 5.5, which will be proved in Section 6 and Section 7, respe ctively.
+While Lemma 5.4 is merely a (highly non-trivial) technical lemma aimed to en sure
+measurability of sets in our proofs, the majority of the proof of Th eorem 2.14 can
+be found in the proof of Lemma 5.5.
+We start with two observations.
+Lemma 5.1. In Theorem 2.14, we can assume without loss of generality tha t
+(i) B is not Γα-null, and thus Hα(projRkB)> 0,
+(ii) β <n.
+Proof. Clearly, Theorem 2.14 trivially holds if B is Γ α-null, we can take G =B.
+Ifβ =n in Theorem 2.14, then the statement follows trivially: Since B ⊂ T × Rn,
+we have that dim B ≤ α +n, and we can take G = ∅.
+□
+Lemma 5.2. Let B ⊂ T × Rn such that dimBt ≤ β for all t ∈ T , and assume
+that B is of the form B = ∪ ∞
+i=1Bi. If Theorem 2.14 holds for each Bi, i = 1, 2,...
+(with T and β ﬁxed as above), then it also holds for B.
+Proof. Since dimBt ≤ β for each t ∈ T , we have that dim (Bi)t ≤ β for each t ∈ T ,
+for each i. By Theorem 2.14 applied for each Bi, there exist Borel Γ α-null sets
+Gi ⊂ Bi such that dim (Bi \Gi) ≤ α +β . By Remark 2.8, G = ⋃∞
+i=1Gi is Borel
+Γα-null, and
+dim (B \G) = sup
+i
+dim (Bi \G) ≤ sup
+i
+dim (Bi \Gi) ≤ α +β,
+which completes the proof. □
+Now we introduce more simplifying assumptions in Theorem 2.14.
+Lemma 5.3. We can assume without loss of generality that
+(i) projRnB ⊂ [0, 1]n,
+(ii) Hα(T ) ≤ 1.
+Proof.
+(i) This is trivial using Lemma 5.2, and that Hausdorﬀ dimension is prese rved
+under homotheties.
+(ii) It follows from Lemma 5.2 and Remark 2.11 that we can assume that Hα(T )<
+∞ . Then we can replace B with a homothetic copy B′ and T with a homo-
+thetic copy T ′ such that for A′ = proj RkB′, A′ ⊂ T ′ and Hα(T ′) ≤ 1.
+□
+Fix a Borel set B ⊂ T × [0, 1]n, where T ⊂ Rk is an Ahlfors–David α -regular
+Borel set such that Hα(T ) ≤ 1. Let β ∈ (0,n ) such that
+(15) dim Bt<β for all t ∈ A,
+where A = proj RkB ⊂ Rk. Clearly, we have A ⊂ T . By Remark 2.8 and (ii) of
+Lemma 5.1, it is enough to show that there exists a Borel set G ⊂ B such that G
+is Γ α-null, and dim (B \G) ≤ α +β .
+===== PDF PAGE 14 =====
+14 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+We use the following properties of T ⊂ Rk.
+(16) Hα(A) ≤ H α(T ) ≤ 1,
+and there exists c> 0 such that for all t ∈ T , 0 <r ≤ 1,
+(17) c ·rα ≤ H α(T ∩ B(t,r )).
+For our convenience, we introduce a new measure in place of Hausdo rﬀ measure
+using translated copies of open dyadic cubes.
+Let
+(18) U = {(u1,...,u n) ∈ Rn,u i ∈ { 0, 1/ 2} (i = 1,...,n )}.
+Foru ∈ U , and l ≥ 1, let
+(19) ˜Du,l =
+
+
+
+n∏
+j=1
+(mj
+2l , mj + 1
+2l
+)
+: (m1,...,m n) ∈ u + Zn
+
+
+ ,
+(20) Dl =
+⋃
+u∈ U
+˜Du,l =
+
+
+
+n∏
+j=1
+(mj
+2l , mj + 1
+2l
+)
+: (m1,...,m n) ∈ U + Zn
+
+
+ ,
+the family of open cubes which are translates of 2 − l-dyadic cubes by u ·2− l for
+some u ∈ U , and
+(21) D =
+∞⋃
+l=1
+Dl.
+For a set X ⊂ Rn, s ≥ 0 and δ >0, let
+˜N s
+δ (X) = inf
+{ ∞∑
+i=1
+(diam (Di))s :X ⊂
+∞⋃
+i=1
+Di, D i ∈ D, diam (Di) ≤ δ
+}
+and N s(X) = lim δ→ 0 ˜N s
+δ (X).
+It is not hard to check that there exists a constant b(n,s ) ̸= 0 depending only
+on n and s such that for every X ⊂ Rn, Hs(X) ≤ N s(X) ≤ b(n,s )Hs(X).
+We will use the following notation. For
+D =
+(m1
+2l , m1 + 1
+2l
+)
+×
+(m2
+2l , m2 + 1
+2l
+)
+× · · · ×
+(mn
+2l , mn + 1
+2l
+)
+∈ D,
+let
+(22) sD = 2 − l and xD =
+(m1
+2l , m2
+2l ,..., mn
+2l
+)
+denote the side length and the lower left corner of D.
+We will restrict ourselves to small enough cubes. For any ε >0, let l0 = l0(ε)
+be the smallest integer such that
+(23)
+∞∑
+l=l0
+2− lε ≤ c ·ε2,
+where c is from (17). Let
+(24) ˜D = ˜Dε = {D ∈ D :sD ≤ 2− l0}.
+We would like to ﬁnd covers for the sections of B consisting of cubes from ˜D.
+By (15) we have that for every t ∈ A and every ε> 0 there exists a countable cover
+Bt ⊂
+⋃
+i∈ It
+Dt
+i such that Dt
+i ∈ ˜D and
+∑
+i∈ It
+(
+diam (Dt
+i)
+)β
+≤ ε.
+===== PDF PAGE 15 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 15
+We need more: we need to ﬁnd a cover with the above properties suc h that t ↦→
+{Dt
+i}i∈ It is a ( Hα-)measurable map on A. This will be the content of Lemma 5.4
+below. First we need to introduce some deﬁnitions. Let
+(25) H = P( ˜D), the space of all subsets of ˜D,
+equipped with the natural topology deﬁned via considering H as {0, 1} ˜D and taking
+the product topology. Clearly, H is compact.
+Forh ∈ H, let
+(26) U(h) =
+⋃
+D∈ h
+D,
+and
+(27) S(h) =
+∑
+D∈ h
+diam (D)β.
+Note that in the above deﬁnition, the integer l0, and thus the space H depends
+on ε.
+The proof of the following lemma was communicated to us by Zolt´ an Vidny´ anszky.
+The proof will be postponed to Section 6 and the Appendix.
+Lemma 5.4. For any ε> 0, there exists a Borel set F ⊂ A with Hα(F ) = Hα(A)
+and a Borel measurable function φ :F → H such that for each t ∈ F ,Bt ⊂ U (φ(t)),
+and S(φ(t)) ≤ ε.
+Fix ε > 0, and ﬁx F as well as a Borel measurable φ : F → H obtained in
+Lemma 5.4 for ε. Since Hα(A \F ) = 0 and since B and F are Borel sets, we have
+thatB \(F × Rn) is Borel Γ α-null, so our Γ α-null set G (to be constructed below)
+can include B \(F × Rn). Thus we can assume without loss of generality that φ is
+deﬁned on A.
+Fix ρ ≥ 1 (we will take ρ ≈ log(1/ε )), and introduce the following notation:
+(28) Gρ = {f :T → Rn :f is ρ-Lipschitz}.
+The proof of Theorem 2.14 is based on the following lemma.
+Lemma 5.5. There exists a Borel set ˜B ⊂ B ( ˜B = ˜Bε,ρ) with the following
+properties:
+(1) for all γ ∈ [ε, 1), Hα+β+γ
+∞ ( ˜B) ≲n,k,α,β ρα+β+γ ·ε,
+(2) for all f ∈ G ρ, Hα({t ∈ Rk : (t,f (t)) ∈ B \ ˜B}) ≲n,k ε.
+We postpone the proof of Lemma 5.5 to Section 7.
+Now we show how Lemma 5.5 implies Theorem 2.14.
+Proof of Theorem 2.14. Form = 1, 2,... let ˜Bm = ˜B2− m,m constructed in Lemma
+5.5. Then ˜Bm has the following properties:
+(29) for all γ ∈ [2− m, 1), Hα+β+γ
+∞ ( ˜Bm) ≲n,k,α,β mα+β+γ ·2− m,
+(30) for all f ∈ G m, Hα({t ∈ Rk : (t,f (t)) ∈ B \ ˜Bm}) ≲n,k 2− m.
+Let
+B′ = lim sup ˜Bm =
+∞⋂
+l=1
+∞⋃
+m=l
+˜Bm, and G =B \B′.
+Then clearly,G is Borel. We claim that G is Γ α-null (see the deﬁnition in (6)), and
+dim (B \G) ≤ α +β .
+First we show that dim B′ = dim (B \G) ≤ α +β .
+===== PDF PAGE 16 =====
+16 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+Let 0 <γ ≤ 1 be arbitrary. Let l1 be the ﬁrst integer such that 2 − l1 ≤ γ. Then
+we have by (29) that
+(31)
+Hα+β+γ
+∞ (B′) ≤ H α+β+γ
+∞ (
+∞⋂
+l=l1
+∞⋃
+m=l
+˜Bm) ≤
+∞∑
+m=l
+Hα+β+γ
+∞ ( ˜Bm) ≲
+∞∑
+m=l
+mα+β+γ ·2− m
+for each l ≥ l1. Since ∑mα+β+γ2− m is convergent, the right hand side tends to
+zero as l → ∞ , so we obtain that Hα+β+γ
+∞ (B′) = 0 for each 0 < γ ≤ 1. Clearly,
+this implies that dim B′ ≤ α +β , which completes the proof of our ﬁrst claim.
+Now we prove that for every Lipschitz function f : T → Rn, Hα({t ∈ Rk :
+(t,f (t)) ∈ G} = 0.
+Let f be κ-Lipschitz for some κ. We need to prove that
+(32) Hα({t ∈ Rk : (t,f (t)) ∈
+∞⋃
+l=1
+∞⋂
+m=l
+(B \ ˜Bm)}) = 0.
+Clearly, it is enough to prove that for each l = 1, 2,...,
+(33) Hα({t ∈ Rk : (t,f (t)) ∈
+∞⋂
+m=l
+(B \ ˜Bm)}) = 0.
+Let l2 be the ﬁrst integer such that κ ≤ l2. By (30), we have that Hα({t ∈ Rk :
+(t,f (t)) ∈ B \ ˜Bm}) ≲ 2− m for all m ≥ l2. Taking m → ∞ we obtain (33), which
+completes the proof. □
+Now we combine Theorem 2.1 with Theorem 2.14 to prove Theorem 2.12.
+Proof of Theorem 2.12. LetB ⊂ Rk × Rn be a Borel set such that dim proj RkB =
+α > 0 and proj RkB ⊂ T , where T ⊂ Rk is an Ahlfors–David α -regular set. Let
+A = proj RkB, and let γ = ess α- sup(dimBt). By Remark 2.4, dim B ≥ α +γ.
+Using Howroyd’s theorem (see [16]), we can choose a Borel subset
+(34) B1 ⊂ B with dimB1 =α +γ.
+If Hα(A) = 0, then B is Γ α-null, therefore B \B1 is Γ α-null as well. Choosing
+G =B \B1, the statement concludes.
+Now we assume that Hα(A) > 0. Let ε >0. By Deﬁnition 2.3, Hα({t ∈ A :
+dimBt>γ +ε}) = 0. We let
+A′ =A′
+ε = {t ∈ A : dimBt ≤ γ +ε}.
+We have Hα(A\A′) = 0. Moreover, A′ is Hα-measurable, since it is in the σ -algebra
+generated by analytic sets (see [6] or [27, Remark 6.2.]). This, comb ined with the
+fact that T is a Borel set with σ -ﬁnite Hα-measure and A′ ⊂ T , easily implies that
+we can ﬁnd a Borel set A′′⊂ A′ with Hα(A′ \A′′) = 0. Then Hα(A \A′′) = 0, and
+G′
+ε =B \(A′′× Rn) is a Borel Γ α-null set.
+On the other hand, A′′ was constructed so that we can apply Theorem 2.14 for
+B′′= (A′′× Rn) ∩ B and β =γ +ε. We conclude that there exists G′′
+ε ⊂ B′′ such
+thatG′′
+ε is Γα-null, and dim (B′′\G′′
+ε ) ≤ α +γ +ε. Let G1 = ⋃
+ε∈ Q+G′′
+ε ∪G′
+ε. Clearly,
+dim (B \G1) ≤ α +γ and by Remark 2.8, G1 is Γ α-null. Finally, let G =G1 \B1,
+whereB1 is from (34). Then G ⊂ B is a Borel Γ α-null set, and dim (B \G) = α +γ,
+which is precisely the conclusion of Theorem 2.12. □
+6. The proof of Lemma 5.4
+The following more general statement will be shown. Part of its proo f involves
+powerful techniques from set theory, these will be postponed to the Appendix. In
+case B is compact, the proof becomes much easier, see Remark 6.3 below.
+===== PDF PAGE 17 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 17
+Lemma 6.1 (Z. Vidny´ anszky). LetT ⊂ Rk Borel with 0< Hα(T )< ∞ , let ε> 0,
+let B ⊂ T × Rn Borel, and denote A = proj RkB ⊂ T . Suppose that for all t ∈ A,
+Hβ(Bt) = 0 . Then there exists a Borel set F ⊂ A with Hα(F ) = Hα(A) and a
+Borel measurable function φ :F → H such that for each t ∈ F , Bt ⊂ U (φ(t)), and
+S(φ(t)) ≤ ε (see (26) and (27)).
+First we show that the statement of Lemma 6.1 is consistent with the standard
+ZFC axioms of set theory (so it cannot be disproved in ZFC). This will b e done
+by showing that (35) below implies Lemma 6.1, and using the fact that ( 35) is
+consistent with ZFC, see [3, Corollary 9.3.2].
+(35)
+If F ⊂ [0, 1] is the projection of a co-analytic set then F is Lebesgue measurable.
+Proposition 6.2. Lemma 6.1 follows from (35). Consequently, Lemma 6.1 is
+consistent with ZFC.
+Unfortunately, (35) cannot be proved in ZFC alone, see [19, p. 307 ]. Neverthe-
+less, using the Shoenﬁeld absoluteness theorem ([18, Theorem 25.2 0]) and Propo-
+sition 6.2 we are also able to prove Lemma 6.1 in ZFC. Since this requires v ery
+involved techniques from set theory and logic, the proof will be post poned to the
+Appendix.
+Proof. Assume that (35) holds. Using the isomorphism theorem for measur es (see
+e.g. [19, Theorem 17.41.]) and the simple fact that if a set is a projectio n of
+a co-analytic set then any Borel isomorphic image of it is also a projec tion of a
+co-analytic set, (35) implies the following.
+For any T ⊂ Rk Borel with 0 < Hα(T )< ∞ ,(36)
+if F ⊂ T is the projection of a co-analytic set then F is Hα-measurable.
+Let
+C = {(t,h ) ∈ T × H : Bt ⊂ U (h), S(h) ≤ ε}.
+Since Hβ(Bt) = 0 for t ∈ A andBt = ∅ fort ∈ T \A, we have that proj TC =T . Our
+goal is to ﬁnd an Hα-measurable uniformization of C, that is, an Hα-measurable
+function ψ : T → H such that graph( ψ ) ⊂ C: if ψ is such a function, then by
+deﬁnition for each t ∈ T we have Bt ⊂ U (ψ (t)), and S(ψ (t)) ≤ ε.
+We claim that C is a co-analytic set. Let
+L = {((t,y ),h ) ∈ B × H :y /∈ U (h)} and S = {h ∈ H : S(h) ≤ ε}.
+Then, by deﬁnition,
+C =
+(
+(T × H) \projT × HL
+)
+∩ (T × S).
+It is easy to check using that the cubes of the union U(h) are open that ( B × H) \L
+is open in B × H. Since B is Borel, this implies that proj T × HL is analytic. It is
+also easy to check that S is closed, so T × S is Borel, hence the above formula gives
+that C is indeed co-analytic.
+By the Novikov-Kondo uniformization theorem (see [19, Theorem 36 .14]),C has
+a co-analytic uniformization, that is, there exists ψ :T → H such that graph(ψ ) ⊂
+C, and graph( ψ ) is co-analytic. We need that ψ is Hα-measurable. Since for any
+open U ⊂ H, ψ − 1(U ) = proj T ((T × U ) ∩ graph(ψ )), and ( T × U ) ∩ graph(ψ ) is
+co-analytic, ψ − 1(U ) is Hα-measurable by (36).
+Recall that A = proj RkB ⊂ T . Since B is Borel, A is analytic, and since analytic
+sets are measurable, we have that ψ ↾A is Hα-measurable. Using Lusin’s theorem
+(see e.g. [12, Corollary 2.3.6]), the fact that Hα(A) < ∞ , and the regularity of
+the Hα-measure, we get that there exists F ⊂ A Borel with Hα(F ) = Hα(A) and
+===== PDF PAGE 18 =====
+18 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+a Borel-measurable function φ : F → H such that φ(t) = ψ (t) for every t ∈ F ,
+concluding the proof of Proposition 6.2.
+□
+Remark 6.3. IfB is compact, then the proof of Lemma 5.4 is much simpler. Note
+that each covering of a section of B by open (dyadic) cubes has a subcover with
+ﬁnitely many cubes, so we can restrict our attention to h ∈ H with |h|< ∞ . Let
+C′ = {(t,h ) ∈ A × H :Bt ⊂ U (h), S(h) ≤ ε, |h|< ∞} .
+Let
+L = {((t,y ),h ) ∈ B × H :y /∈ U (h)} and S = {h ∈ H : S(h) ≤ ε}
+as above. It is easy to check using that B is compact that L is compact. Also, S is
+closed, so A × S is Borel. Let G = {h ∈ H : |h|< ∞} . Clearly, G is countable, so
+A × G is Borel. By deﬁnition,
+C′ =
+(
+(A × H) \projT × HL
+)
+∩ (A × S) ∩ (A × G).(37)
+Clearly,C′ is Borel, moreover, for all t ∈ A, the t-section {h ∈ H : (t,h ) ∈ C′} is
+nonempty and countable. We can apply the Lusin-Novikov uniformiza tion theorem
+(see [19, Theorem 18.10]), which implies that there is a Borel measura ble function
+φ :A → H such that graphφ ⊂ C′. This means that there exists a Borel measurable
+functionφ :A → H such that for each t ∈ A,Bt ⊂ U (φ(t)), and S(φ(t)) ≤ ε, which
+completes the proof of Lemma 5.4 in case B is compact.
+Remark 6.4. For an interesting related result, see [8], where the authors also u se
+descriptive set theory to derive Fubini-type results (of a diﬀerent perspective) for
+general measures.
+7. The proof of Lemma 5.5
+We introduce some more notation.
+Fort ∈ A, let φ(t) = ht ∈ H. By Lemma 5.4, we have that for all t ∈ A,
+(38) Bt ⊂
+⋃
+D∈ ht
+D,
+∑
+D∈ ht
+diam (D)β ≤ ε,
+and φ :t ↦→ ht is Borel measurable.
+Fix t ∈ A. For D ∈ ht, let
+(39) QD = {t} × D and Qt = {QD :D ∈ ht},
+which is a countable collection of (relative) open n-dimensional cubes in Rk+n.
+ForQ = {t} × D ∈ Q t, let sQ =sD and xQ =xD (recall (22)). For t ∈ A ⊂ Rk
+and Q ∈ Q t, let
+(40) CQ =
+B(t,s Q) × (xQ + 3ρ ·sQ ·[− 1, 1]n) ⊂ Rk+n,
+which is a closed cylinder in Rk+n containingQ in its interior.
+Let
+Rt = {CQ :Q ∈ Q t} and R = {CQ :Q ∈ Q t,t ∈ A}.
+Then by deﬁnition, it is easy to check that
+(41) B ⊂
+⋃
+C∈R
+int(C).
+Intuitively, our aim is to choose a suitable subset ˜B of B, for which
+∑
+C∈R ,C∩ ˜B̸=∅
+diam (C)α+β
+===== PDF PAGE 19 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 19
+is well-comparable with ∫
+t∈ A
+∑
+Q∈Q t
+diam (Q)β dHα(t).
+Deﬁnition 7.1 below will lead to the deﬁnition of such a subset ˜B.
+ForC =CQ ∈ R , let rC =sQ ∈ R,xC =xQ ∈ Rn, and yC =t ∈ A.
+Deﬁnition 7.1. We say that C ∈ R is good, if
+(42) rα+β+ε
+C ≤
+∫
+A∩ B(yC,rC )
+∑
+Q∈Q t,Q⊂ C,
+sQβ dHα(t).
+Remark 7.2. It is easy to check that Lemma 5.4 implies that the function t ↦→∑
+Q∈Q t,Q⊂ C,sQβ is Hα-measurable, and bounded by ε for all t ∈ A, thus Hα-
+integrable on A.
+Let
+(43) C = {C ∈ R :C is good},
+and
+(44) ˜B =B ∩
+⋃
+C∈C
+intC.
+We claim that the statements in Lemma 5.5 are true for ˜B deﬁned above. Clearly,
+˜B is Borel.
+First we show that
+∀ γ ∈ [ε, 1), Hα+β+γ
+∞ ( ˜B) ≲n,k,α,β ρα+β+γ ·ε.
+Fix γ ∈ [ε, 1).
+It is easy to see that each C ∈ C is a closed ball of radius rC in the metric
+space ( Rk+n,d ), where d = max {dk, 1/ (3ρ) ·mn}, where dk denotes the Euclidean
+metric on Rk, and mn denotes the maximum metric on Rn. We can apply the “5 r”-
+covering theorem (see e.g. [24, Theorem 2.1]) for the collection C of balls to obtain
+the following: There exists C′ ⊂ C such that C′ is a disjoint family ( C ∩ C′ = ∅ for
+all C ̸=C′ ∈ C ′), and such that
+˜B ⊂
+⋃
+C∈C ′
+5C,
+where 5C denotes the ball which is centered at the same center as C, and has radius
+5-times the radius of C.
+Then by the deﬁnition of Hα (using now the standard Euclidean metric on Rk+n),
+it is easy to see by γ ≤ 1 that
+(45) Hα+β+γ
+∞ ( ˜B) ≲n,k,α,β
+∑
+C∈C ′
+(5ρ ·rC )α+β+γ ≲ρα+β+γ ·
+∑
+C∈C ′
+rα+β+ε
+C ·rγ− ε
+C .
+Since each C ∈ C ′ is good, by deﬁnition we have that
+∑
+C∈C ′
+rα+β+ε
+C ≤
+∑
+C∈C ′
+∫
+A∩ B(yC ,rC )
+∑
+Q∈Q t,Q⊂ C,
+sQβ dHα(t).
+By the trivial containment A ∩ B(yC,r C ) ⊂ A, using that C′ is a disjoint family,
+and (16) we obtain that this is at most
+∑
+C∈C ′
+∫
+A
+∑
+Q∈Q t,Q⊂ C,
+sQ
+β dHα(t) ≤
+∫
+A
+∑
+Q∈Q t
+sQ
+β dHα(t) ≤
+∫
+A
+εdHα(t) ≤ ε.
+===== PDF PAGE 20 =====
+20 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+Since γ ≥ ε and rC ≤ 1, we have rγ− ε
+C ≤ 1 for each C. Continuing the estimate in
+(45), we obtain that
+Hα+β+γ
+∞ ( ˜B) ≲n,k,α,β ρα+β+γε,
+which proves our ﬁrst claim in Lemma 5.5.
+Now we prove that for all f ∈ G ρ, Hα({t ∈ Rk : (t,f (t)) ∈ B \ ˜B}) ≲n,k ε, where
+Gρ is deﬁned in (28).
+Recall the deﬁnition of Qt from (39), U from (18), and l0 from (23). For t ∈ A,
+u ∈ U , and l ≥ l0, let
+(46)
+Qt
+u,l = {Q ∈ Q t :sQ = 2 − l, xQ =
+(m1
+2l , m2
+2l ,..., mn
+2l
+)
+with (m1,...,m n) ∈ u+Zn}.
+Note that by deﬁnition, for each t ∈ A,
+{t} × Bt ⊂
+⋃
+u∈ U
+⋃
+l≥ l0
+⋃
+Q∈Q t
+u,l
+Q.
+Remark 7.3. We can assume without loss of generality, that for each t ∈ A and
+u ∈ U , if Q1 ∈ Q t
+u,l1 and Q2 ∈ Q t
+u,l2 such that l1 ̸=l2, then Q1 ∩ Q2 = ∅.
+Fix f ∈ G ρ. Since for each ﬁxed u ∈ U and l ≥ l0, Qt
+u,l is a disjoint collection
+for any t ∈ A, there exists at most one Q ∈ Q t
+u,l such that (t,f (t)) ∈ Q.
+Foru ∈ U and l ≥ l0, let
+(47) Au,l = {t ∈ A : (t,f (t)) ∈
+⋃
+Q∈Q t
+u,l
+Q},
+and for any t ∈ Au,l,
+(48) let Qt denote the unique cube in Qt
+u,l such that (t,f (t)) ∈ Qt.
+For anyt ∈ Au,l writeCt for the cylinder generated from Qt as in (40). That is,
+(49) Ct =
+B(t, 2− l) × (xQt + 3ρ ·2− l ·[− 1, 1]n) ⊂ Rk+n.
+We will need the following easy geometrical lemma.
+Lemma 7.4. For any u ∈ U and l ≥ l0, if y ∈ Au,l and t ∈
+B(y, 2− l) ∩ Au,l, then
+Qt ⊂ Cy.
+Proof. Let Qt = {t} × Dt, and let v ∈ Dt be arbitrary. Then by deﬁnition,
+(50) |vj − f (t)j|< 2− l
+for each coordinate j = 1,...,n .
+Moreover, by the deﬁnition of Gρ (see (28)), and by t ∈ B(y, 2− l),
+(51) |f (t)j − f (y)j| ≤ |f (t) − f (y)| ≤ ρ|t − y| ≤ ρ ·2− l
+for each j = 1,...,n .
+Let Qy = {y} × Dy, and Dy =zy + 2− l ·(0, 1)n. Then we have
+(52) |zy,j − f (y)j|< 2− l
+for each j = 1,...,n .
+Combining (50), (51), and (52), and using ρ ≥ 1 we obtain that
+|vj − zy,j |< 2− l +ρ ·2− l + 2− l ≤ 3 ·ρ ·2− l
+for each j = 1,...,n .
+Then v is contained in the cube zy + 3ρ2− l[− 1, 1]n. This immediately implies
+by the deﬁnition of Cy (see (49)) that ( t,v ) is contained in Cy, so Qt ⊂ Cy, which
+completes the proof of Lemma 7.4.
+□
+===== PDF PAGE 21 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 21
+By Remark 7.3, for any u ∈ U ,
+(53) Au,l1 ∩ Au,l2 = ∅ for all l1 ̸=l2.
+For each u ∈ U , let
+Ru =
+⋃
+l≥ l0
+Au,l ⊂ A.
+Remark 7.5. It is easy to check using Lemma 5.4 that Au,l is Hα-measurable for
+all l ≥ l0.
+Let au,l = Hα(Au,l) for l ≥ l0. By (53), Remark 7.5, and (ii) of Lemma 5.3, we
+have that
+(54)
+∞∑
+l=l0
+au,l = Hα(Ru) ≤ H α(A) ≤ 1
+for each u ∈ U .
+Fix u ∈ U , and for simplicity, let Al = Au,l,a l = au,l for l ≥ l0. Recall the
+properties of T from (16) and (17).
+We deﬁne
+(55) A′
+l = {y ∈ Al : Hα(Al ∩
+B(y, 2− l))
+Hα(T ∩ B(y, 2− l)) ≤ ε ·al},
+the subset of Al consisting of points which are centers of such closed balls of radius
+2− l in which the density of Al is at most ε ·al.
+Lemma 7.6. We have Hα(A′
+l) ≲k ε ·al for each l ≥ l0.
+Proof. We apply Besicovitch’s covering theorem (see e.g. [24, Theorem 2.7]) f or
+the collection Bl of closed balls of radius 2 − l centered at the points of A′
+l. We
+obtain that there exists a constant c(k) depending only on k and collections of balls
+B1,...,B c(k) ⊂ B l such that
+A′
+l ⊂
+c(k)⋃
+i=1
+⋃
+B∈ Bi
+B,
+and Bi is a disjoint collection for each i, that is,
+B ∩ B′ = ∅ for all B,B ∈ Bi,B ̸=B′.
+Then we have by (55) that
+Hα(A′
+l) ≤
+c(k)∑
+i=1
+Hα(
+⋃
+B∈ Bi
+(B ∩ Al)) ≤
+c(k)∑
+i=1
+ε ·al ·
+∑
+B∈ Bi
+Hα(B ∩ T ).
+Using that each Bi is a disjoint collection, T is Borel, and (16), we obtain that
+Hα(A′
+l) ≤
+c(k)∑
+i=1
+ε ·al · Hα(
+⋃
+B∈ Bi
+(B ∩ T )) ≤ c(k) ·ε ·al · Hα(T ) ≲k ε ·al
+and the proof of Lemma 7.6 concludes. □
+Let
+(56) A′′
+l =Al \A′
+l = {y ∈ Al : Hα(Al ∩
+B(y, 2− l))
+Hα(T ∩ B(y, 2− l)) >ε ·al},
+(57) J = {l ≥ l0 :al ≥ 2− lε
+c ·ε }, and J ′ = {l ≥ l0 :al< 2− lε
+c ·ε },
+where c is from (17).
+We prove the following lemma.
+===== PDF PAGE 22 =====
+22 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+Lemma 7.7. If l ∈ J and y ∈ A′′
+l , then Cy ∈ C , where Cy is from (49), and C is
+deﬁned in (43).
+Proof. By Lemma 7.4, we have that
+∫
+B(y,2− l)∩ A
+∑
+Q∈Q t,Q⊂ Cy,
+sQβ dHα(t) ≥
+∫
+B(y,2− l)∩ Al
+∑
+Q∈Q t,Q⊂ Cy,
+sQβ dHα(t) ≥
+≥
+∫
+B(y,2− l)∩ Al
+sQt
+β dHα(t) =
+= Hα(B(y, 2− l) ∩ Al) ·2− lβ.(58)
+Using y ∈ A′′
+l , (17), and l ∈ J , we have that
+Hα(
+B(y, 2− l) ∩ Al)>ε ·al · Hα(B(y, 2− l) ∩ T ) ≥ ε ·al ·c ·2− lα ≥
+≥ ε · 2− lε
+c ·ε ·c ·2− lα = 2 − l(ε+α),(59)
+where c is from (17). Combining (58) and (59) we obtain that
+∫
+B(y,2− l)∩ A
+∑
+Q∈Q t,Q⊂ Cy,
+sQ
+β dHα(t) ≥ 2− l(ε+α+β).
+Comparing with the deﬁnition in (42), we conclude that Cy is good, which completes
+the proof of Lemma 7.7. □
+Now we continue with the proof of Lemma 5.5.
+Let S = {t ∈ Rk : (t,f (t)) ∈ B \ ˜B}, where ˜B = B ∩
+(⋃
+C∈C intC
+)
+deﬁned in
+(44). We need to show that Hα(S) ≲n,k ε.
+Clearly,
+(60) S ⊂
+⋃
+u∈ U
+⋃
+l≥ l0
+Au,l =
+⋃
+u∈ U
+( ⋃
+l∈J
+Au,l ∪
+⋃
+l∈J ′
+Au,l
+)
+.
+In fact, by the deﬁnition of ˜B and Lemma 7.7, we have that
+S ⊂
+⋃
+u∈ U
+( ⋃
+l∈J
+A′
+u,l ∪
+⋃
+l∈J ′
+Au,l
+)
+,
+thus
+(61) Hα(S) ≤
+∑
+u∈ U
+(∑
+l∈J
+Hα(A′
+u,l) +
+∑
+l∈J ′
+Hα(Au,l)
+)
+.
+For any ﬁxed u, recall the deﬁnition of J ′ from (57) (which depends on u since
+al =au,l). We conclude from (57) and (23) that
+(62)
+∑
+l∈J ′
+Hα(Au,l) =
+∑
+l∈J ′
+au,l ≤
+∞∑
+l=l0
+2− lε
+c ·ε ≤ ε.
+By Lemma 7.6 and (54), we have
+(63)
+∑
+l∈J
+Hα(A′
+u,l) ≲k
+∑
+l∈J
+ε ·au,l ≤ ε.
+Combining (61), (62) and (63), we obtain that
+Hα(S) ≲k |U | ·ε = 2 n ·ε ≲n,k ε,
+which ﬁnishes the proof of Lemma 5.5.
+===== PDF PAGE 23 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 23
+Acknowledgment
+The authors are grateful to Rich´ ard Balka for the helpful conve rsation related
+to Brownian motion in Proposition 4.2. We are also grateful to M´ arto n Elekes,
+Lajos Soukup, and Zolt´ an Vidny´ anszky for providing insight into the set theoretical
+aspects of Lemma 5.4. We are especially grateful to Zolt´ an Vidny´ anszky for writing
+the proof in the Appendix. The authors also thank the anonymous r eferee for the
+careful reading and helpful comments.
+Appendix A. The ZFC proof of Lemma 6.1
+We show that the statement of Lemma 6.1 holds in ZFC. For the conve nience of
+the reader, let us recall it:
+∀ T ⊂ Rk Borel, ∀ ǫ> 0, ∀ B ⊂ T × Rn Borel,(64)
+(0 = Hα(T ) or Hα(T ) = ∞ or ∃ t ∈ projRk (B) such that Hβ(Bt)> 0),
+or ( ∃ F ⊂ A Borel and ∃ φ :F → H Borel measurable such that
+(Hα(F ) = Hα(A) and ∀t ∈ F,B t ⊂ U (φ(t)) and S(φ(t))) ≤ ǫ)).
+We check that the above statement is equivalent to the following, wh ich will be
+more convenient for us to use:
+∀ T ⊂ Rk Borel, ∀ ǫ> 0, ∀ B ⊂ T × Rn Borel,(65)
+0 = Hα(T ) or Hα(T ) = ∞ or ∃ t such that Hβ(Bt)> 0
+or ∃ F ⊂ T Borel and ∃ φ : Rk → H Borel measurable such that
+Hα(T \F ) = 0 and ∀t ∈ F,B t ⊂ U (φ(t)) and S(φ(t) ≤ ǫ.
+To see that (64) implies (65): let F ⊂ A with Hα(F ) = Hα(A) as in (64). Using
+that Hα(T )< ∞ , choosing U ⊂ T \A Borel with Hα(U ) = Hα(T \A) and setting
+˜F = F ∪ U , we have that ˜F ⊂ T Borel with Hα(T \ ˜F ) = 0. Moreover, we can
+extend the function φ arbitrarily to the whole space to get (65). For the converse,
+letF ⊂ T with Hα(T \F ) = 0 as in (65). Using that Hα(T )< ∞ , choosing U ⊂ A
+Borel with Hα(A \U ) = 0 and taking ˜F =F ∩ U , we have that ˜F ⊂ A Borel with
+Hα( ˜F ) = Hα(A). Restricting φ to this set yields (64).
+Now we introduce the concept of formulas, and will show that (65) is equivalent
+to a so called Π 1
+3 formula. Let X be the set of recursively presented Polish spaces
+with a ﬁxed presentation, which in particular includes a ﬁxed enumera tion of basic
+open sets of the space. This X naturally includes all the spaces N, 2N, Rk, and ﬁnite
+products and spaces of compact subsets (equipped with the Haus dorﬀ topology) of
+all of those (see, [31, 3.B]).
+A formula is called Σ 1
+n if it has the form
+∃x1 ∈ X1∀x2 ∈ X2...
+ 
+n-many
+ψ (x1,...,x n),
+whereXi ∈ X are uncountable spaces, and ψ uses only quantiﬁers over N, recursive
+functions between powers of N, and the enumeration of the basic open sets of
+spaces of X , together with the ǫ-relation and the usual logical operations. The Π 1
+n
+formulas are deﬁned by formulas similar to the ones above, but star ting with a
+universal quantiﬁer instead of the existential quantiﬁer. In part icular, Π 1
+3 formulas
+are of the form:
+∀x1 ∈ X1∃x2 ∈ X2∀x3 ∈ X3 ψ (x1,x 2,x 3).
+It is easy to see that using multiple quantiﬁers of the same sort cons ecutively, or
+adding quantiﬁcations over N do not change the above classes. Note also that this
+notion coincides with the usual deﬁnition of 2nd order formulas over the structure
+===== PDF PAGE 24 =====
+24 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+(N, +, ·). We will say that a set A ⊂ X for some X ∈ X is Σ 1
+n (resp Π 1
+n), if its
+deﬁnable by such a formula. Using this notation, analytic sets are Σ 1
+1, co-analytic
+sets are Π 1
+1, and projections of co-analytic sets are Σ 1
+2.
+Lemma A.1. Let ϕ be a Π1
+3 formula such that ϕ follows from the Lebesgue mea-
+surability of Σ1
+2 subsets of [0, 1]. Then ϕ follows from ZFC.
+Proof. By Shoenﬁeld’s Absoluteness Theorem ([18, Theorem 25.20]), Π 1
+3 formulas
+are downward absolute. Consequently, if such a formula holds in a fo rcing extension
+of a model of every large enough fragment of ZFC, then it must hold in the original
+model as well.
+It is well known (see e.g. [3, Corollary 9.3.2]) that add( N ) > ℵ 1 (which means
+that the union of ℵ 1 sets of Lebesgue measure zero must have Lebesgue measure
+zero) implies that every Σ1
+2 subset of R is Lebesgue measurable.
+It is also a folklore statement of set theory (and can be deduced fo r example from
+[3, Model 7.6.1] and [22, Theorem 6.17]) that every model of some larg e enough
+fragment of ZFC admits a forcing extension where add( N ) > ℵ 1. Hence ϕ must
+hold in each model of a large enough fragment of ZFC. So it follows fro m ZFC by
+the compactness theorem. □
+In order to establish (65) in ZFC, we will show the following.
+Lemma A.2. (65) is equivalent to a Π1
+3 formula.
+Then, recalling that by Proposition 6.2, (65) holds if all Σ 1
+2 subsets of [0, 1] are
+Lebesgue measurable, combining this with Lemma A.1 and A.2 yields (65) in ZFC
+and the proof of Lemma 6.1 concludes.
+Proof. To prove Lemma A.2, we will use the concepts of Borel codes. Let us collect
+their basic properties (see [31, 3.H]). For any X ∈ X there exist sets BCX ⊂ 2N,
+AX, CX ⊂ 2N × X satisfying the following:
+• AX is Σ 1
+1, BCX and CX are Π 1
+1,
+• for each Borel set B ⊂ X there exists a c ∈ BCX with B = AX
+c = CX
+c ,
+• for every c ∈ BCX we have AX
+c = CX
+c , and AX
+c is Borel, since it is both
+analytic and co-analytic.
+Let us use the notation BCk, Ak, Ck instead of BCRk
+, ARk
+, CRk
+, respectively.
+We will need an encoding of the Borel functions as well, denote by TBFX,Y the
+set of codes c ∈ BCX× Y such that AX× Y
+c is the graph of a total Borel function
+from X to Y .
+Lemma A.3. For any X,Y ∈ X the set TBFX,Y is Π1
+1.
+Unfortunately, we were not able to locate a reference for this fac t, so, for the
+sake of completeness we prove it here.
+Proof. Now,c ∈ TBFX,Y iﬀ
+∀x ∀z,z ′ (
+((x,z ) ∈ AX× Y
+c and (x,z ′) ∈ AX× Y
+c ) = ⇒ z =z′)
+,
+and
+∀x ∃z ((x,z ) ∈ CX× Y
+c ).
+The former condition is clearly Π 1
+1, while using the eﬀective uniformization criterion
+[31, 4D.3] the latter can be rewritten as
+∀x ∃z ∈ ∆1
+1(x,c ) ((x,z ) ∈ CX× Y
+c ).
+This also deﬁnes a Π 1
+1 set by Kleene’s theorem [31, 4D.4] (for the deﬁnition of the
+class ∆ 1
+1 see [31, 3.E]). □
+===== PDF PAGE 25 =====
+A FUBINI-TYPE THEOREM FOR HAUSDORFF DIMENSION 25
+Now consider the formula ϕ ′:
+∀t,b ∈ 2N ∀ǫ> 0
+(
+t ̸∈ BCk or b ̸∈ BCk+n or Ak+n
+b ̸⊂ Ck
+t × Rn or
+Hα(Ak
+t ) = 0 or Hα(Ak
+t ) = ∞ or ∃x ∈ Rk Hβ((Ak+n
+b )x)> 0 or
+∃f,φ ∈ 2N (
+f ∈ BCk and φ ∈ TBFRk,2N
+and Hα(Ak
+t \Ck
+f ) = 0 and
+∀x ∈ Rk,y ∈ Rn,z ∈ 2N (x ̸∈ Ak
+f or y ̸∈ (Ak+n
+b )x or (x,z ) ̸∈ ARk× 2N
+φ or
+y ∈ U (z) and S(z) ≤ ǫ)
+))
+,
+where we identify H with 2 N in the natural way.
+It should be clear from the properties of Borel codes that ϕ ′ is equivalent to (65).
+Lemma A.4. The formula ϕ ′ is equivalent to a Π1
+3 formula.
+Proof. The conjunction of the following observations yields that ϕ ′ has the desired
+complexity.
+(1) t ̸∈ BCk and b ̸∈ BCk+n are Σ 1
+1.
+(2) Ak+n
+b ̸⊂ Ck
+t × Rn is equivalent to ∃x (x ∈ Ak+n
+b ∧ x ̸∈ Ck
+t × Rn), hence it
+is also Σ 1
+1.
+(3) Hα(Ak
+t ) = 0 is equivalent to ∀n ∃z ∀y
+(y ̸∈ Ak
+t or y ∈ U (z)) and
+∑
+D∈ z
+diamα(D)< 1
+n,
+by the deﬁnition of Hα. This is a Σ 1
+2 formula.
+(4) Hα(Ak
+t ) = ∞ is equivalent to ∀n ∃K compact ∀y ((y ̸∈ K or y ∈ Ck
+t ) and
+Hα(K) > n), by the regularity of Hα on analytic sets and by Ak
+t = Ck
+t .
+Since the collection of compacts with Hausdorﬀ measure >n is a Π 1
+1 (and
+also Σ 1
+1) set, this is a Σ 1
+2 formula.
+(5) Hβ((Ck+n
+b )x)> 0 is equivalent to a Σ 1
+2 formula, similarly to 4.
+(6) f ∈ BCk and φ ∈ TBFRk,2N
+are Π 1
+1 by Lemma A.3.
+(7) Hα(Ak
+t \Ck
+f ) = 0 is equivalent to a Σ 1
+2 formula, as in 3.
+(8) x ̸∈ Ak
+f,y ̸∈ (Ak+n
+b )x, (x,z ) ̸∈ ARk× 2N
+φ ,y ∈ U (z), S(z) ≤ ǫ are Π 1
+1.
+□
+□
+References
+[1] G. Alberti, M. Cs¨ ornyei, and D. Preiss, Diﬀerentiabili ty of Lipschitz functions, structure of
+null sets, and other problems. In Proceedings of the International Congress of Mathemati-
+cians. Volume III , 1379–1394. Hindustan Book Agency, New Delhi, 2010.
+[2] O. Angel, R. Balka, A. M´ ath´ e, Y. Peres, Restrictions of H¨ older continuous functions,Trans.
+Amer. Math. Soc. 370 (2018), 4223-4247.
+[3] T. Bartoszy´ nski, H. Judah, Set Theory: On the Structure of the Real Line , A K Peters,
+W ellesley, Massachusetts, 1995.
+[4] X. Caicedo, C. Montenegro, Models, Algebras, and Proofs; Selected papers of the X Latin
+American Symposium on Mathematical Logic held in Bogot´ a , Marcel Dekker, Inc. 1999.
+[5] M. Cs¨ ornyei, D. Preiss, and J. Tiˇ ser, Lipschitz functi ons with unexpectedly large sets of
+nondiﬀerentiability points, Abstr. Appl. Anal. 4 (2005), 361-373.
+[6] C. Dellacherie, Ensembles Analytiques, Capacit´ es, Mesures de Hausdorﬀ , Lecture Notes in
+Mathematics 295, Springer-Verlag, 1972.
+[7] K. Falconer, The Geometry of Fractal Sets , Cambridge University Press, 1985.
+[8] K. Falconer, R. D. Mauldin, Fubini-type theorems for gen eral measure constructions, Math-
+ematika 47 (1-2) (2000), 251-265.
+[9] K. Falconer, P. Mattila, Strong Marstrand theorems and d imensions of sets formed by subsets
+of hyperplanes, J. Fractal Geom. 3 (2016), 319-329.
+===== PDF PAGE 26 =====
+26 K. H ´ERA, T. KELETI, AND A. M ´ATH´E
+[10] K. F¨ assler, T. Orponen, Constancy results for special families of projections, Math. Proc.
+Camb. Philos. Soc. 154 (3) (2013), 549-568.
+[11] K. F¨ assler and T. Orponen, On restricted families of pr ojections in R3, Proc. London Math.
+Soc. (3) 109 (2014), 353-381.
+[12] H. Federer, Geometric Measure Theory, Springer, New Yo rk, 1969.
+[13] J. M. Fraser, J. T. Hyde, The Hausdorﬀ dimension of graph s of prevalent continuous functions,
+Real Analysis Exchange 37, (2011/2012), 333-352.
+[14] K. H´ era, Hausdorﬀ dimension of Furstenberg-type sets associated to families of aﬃne sub-
+spaces, Ann. Acad. Sci. Fenn. Math. , 44 (2019), 903-923.
+[15] K. H´ era, T. Keleti, A. M´ ath´ e, Hausdorﬀ dimension of u nions of aﬃne subspaces and of
+Furstenberg-type sets, J. Fractal Geom. 6 (2019), 263-284.
+[16] J. D. Howroyd, On dimension and on the existence of sets o f ﬁnite positive Hausdorﬀ measure,
+Proc. London Math. Soc. (3) 70 (1995), 581-604.
+[17] E. J¨ arvenp¨ a¨ a, M. J¨ arvenp¨ a¨ a and T. Keleti, Hausdorﬀ dimension and non-degenerate families
+of projections, J Geom Anal 24 (2014), 2020-2034.
+[18] T. Jech, Set theory, Springer Monographs in Mathematics, Springer-Verlag, Be rlin, 2003. The
+third millennium edition, revised and expanded.
+[19] A. S. Kechris, Classical Descriptive Set Theory , Graduate Texts in Mathematics 156,
+Springer-Verlag, 1994.
+[20] T. Keleti, Are lines much bigger than line segments?, Proc. Amer. Math. Soc. 144 (2016),
+1535–1541.
+[21] T. Keleti, A. M´ ath´ e, Equivalences between diﬀerent f orms of the Kakeya conjecture and
+duality of Hausdorﬀ and packing dimensions for additive com plements, arXiv:2203.15731.
+[22] K. Kunen, Set theory. An introduction to Independence Proof , North-Holland, Amsterdam,
+1992.
+[23] O. Maleva and D. Preiss, Cone unrectiﬁable sets and non- diﬀerentiability of Lipschitz func-
+tions, Israel J. Math. 232 (2019), 75-108.
+[24] P. Mattila, Geometry of sets and measures in Euclidean spaces , Cambridge University Press,
+1995.
+[25] P. Mattila, Fourier Analysis and Hausdorﬀ Dimension , Cambridge University Press, 2015.
+[26] P. Mattila, Hausdorﬀ dimension, projections, interse ctions, and Besicovitch sets, New Trends
+in Applied Harmonic Analysis 2 (2019), 129-157.
+[27] P. Mattila, R. D. Mauldin, Measure and dimension functi ons: measurability and densities,
+Math. Proc. Camb. Philos. Soc. 121 (1) (1997), 81-100.
+[28] R. D. Mauldin, S. C. Williams, On the Hausdorﬀ dimension of some graphs, Trans. Amer.
+Math. Soc. 298 (1986), 793-803.
+[29] A. W. Miller, Descriptive Set Theory and Forcing: How to prove theorems ab out Borel sets
+the hard way , Springer-Verlag, 1995.
+[30] P. M¨ orters,Y. Peres, Brownian Motion , Cambridge University Press, 2010.
+[31] Y. N. Moschovakis. Descriptive set theory , volume 155 of Mathematical Surveys and Mono-
+graphs, American Mathematical Society, Providence, RI, second ed ition, 2009.
+[32] D. M. Oberlin, Exceptional sets of projections, unions of k-planes, and associated transforms,
+Israel J. Math. 202 (2014), 331–342.
+[33] D. M. Oberlin and R. Oberlin, Application of a Fourier re striction theorem to certain families
+of projections in R3, J Geom Anal 25 (2015), 1476-1491.
+[34] T. Orponen, Hausdorﬀ dimension estimates for some rest ricted families of projections in R3,
+Adv. Math. 275 (2015), 147-183.
+[35] D. Preiss, Gateaux diﬀerentiability of cone-monotone and pointwise Lipschitz functions, Israel
+J. Math. , 203 (1) (2014), 501-534.
+[36] D. Preiss and L. Zaj ´ ıˇ cek, Directional derivatives of Lipschitz functions, Israel J. Math. 125
+(2001), 1-27.
+Alfr´ed R ´enyi Institute of Mathematics, Re ´altanoda utca 13-15, H-1053 Budapest,
+Hungary
+Email address : herakornelia@gmail.com
+Institute of Mathematics, E ¨otv¨os Lor ´and University, P ´azm´any P ´eter s ´et´any 1/c,
+H-1117 Budapest, Hungary
+Email address : tamas.keleti@gmail.com
+Mathematics Institute, University of W arwick, Coventry, CV4 7AL, UK
+Email address : a.mathe@warwick.ac.uk

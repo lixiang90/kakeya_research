@@ -1,27 +1,27 @@
 # 当前研究交接
 
-更新2026-10-18，R0082，Goal active。真实开角度整线族的positive-measure Holder正则化反攻已双独审；无新界/branchsaving/major，保守主gainstreak5终macro完整重比。下一唯一notes/00_map/R0082_next_primary_line_union_input_gate.md，目前无已合格主命题。
+更新2026-10-18，R0083，Goal active。直接lineunion一轮primary输入门已实际双独审：来源合法但无新gain，拒phaseII；保守无newdim/branchsaving streak6，完整macro后仍无合格主命题。下一唯一notes/00_map/R0083_next_full_goal_reselection.md诚实重新选题，不继续本familyabstract。
 
-## 1. 本轮实际已付
+## 1. 本轮真实已付
 
-notes/20_dimension_lifting/disjoint_lines/R0082_open_angular_chart_no_holder_regularization.md，root12/A12/B12及两formal6/rootintegration6实际全文通过。固定h=Σ2^-k² sin(2π2^k³x)在任何正measure子集无任意正Holder；R5三角双J块全空间不交整线分解，compactB真4D角chart/canonical恢复/角Jac/Fubini返回每positiveangularmass反攻。
+notes/00_map/R0083_direct_line_union_input_gate.md root9/A8/B8及两formal6/rootintegration6实际全文核。compactfibres真Borel angularlift只5Fstupper；Zahl原n6s5→4、s>25/4才超17/4、s7才到5；大s有限球upper无matchingN不升界，Hdim5/Pdim10分开。
 
-## 2. 必须保的量词与scope
+## 2. HKM输出边界
 
-同一h覆盖∀measurable正F/alpha/L，density窗内实际high/low点、低频/尾全付；全realclock同height先u后w。canonical c=a_sp−a5v，不是任意anchor假粗糙；alpha>1先降1，相关E用Fubini非product。global非compact/漏horizontal，compactB非全RP且union有openR5，不能反低维/fullC/Kakeya。
+Γ1-null给每原line a.e.Lebclock和平均零损，不授wholeline/segment/compact，dyadic finiteclock可全删；closure可升Hausdorffdim。Conj3.11仍一般Fubini猜想，3.12仅条件n−1/全m才fullupperMinkowski。≤1低参不保原正角度mass；3.16只s/2，当前7/2。高级§5–7未新独证。
 
-## 3. 已停止的端点门和旧冻结
+## 3. 完整目标与冻结
 
-phaseI A8/B7真实互审：endpoint闭像不授sphere/degree，minimal residual不授fullselector；proper tautologicalbundle障碍与提取连续selector是同target。RP1/Cantorheight/countable校准均partial，不反fullC。此门与h频率/blocks模板停止，不续minor；R80KT/R75R77R78 proper和DIM001条件17/4保持，κ1/ordinary/general未达。
+ordinary初始化仍需同时保方向/小footprint与AD/CW；directHRZparent/terminal/local倍率保留；R73–78 proper及DIM001条件17/4保留，完整matrixκ1/其余κ/mixed/extremal桥未付。R81未排fullC；R82localcounter非fullRP且unionopen，非Kakeya。旧CP/PM/PW4/BSG/anchors/poles/endpoint/h/skew冻结。C10仅计数不送共享carrier，不锁新gain。
 
-## 4. 来源与独审边界
+## 4. 来源与审查
 
-59PDF/62sources/78IDs。新Harrison2203.16412v1 33p/1761175bytes/blob73e552a087e1a670ef34bb66240360f9f8f6c523；Murphy1303.0895v1实际15p/221414bytes/blob9ea3b29b9d5647a12beb85898e6f0243bc9cec0f（abstract14，2018重编译不冒2013bytes）。root指定HTML读域+view18–20/6–7，wholeproof未新独证。fresh官方ref/tree同R75，lastactual三corePDF/README/localwholebytes仍R75，未经外部同行评审。
+61PDF/64sources/78IDs。Zahl2208.02913v1 8p/147536bytes/blob807e744af6609ed6b2f379b9c85f295ba7ae2fed；HKM2106.09661v3 26p/404219bytes/bloba7ec96d0fd2372ff1573979e5a7ba87c5b1a11eb。rootactualZahl全8p/HKM§2+完整§3，view6–7/6–10；来源wholeproof未新独证。fresh官方ref/tree同R75，lastactual三核心wholebytesR75；内部通过非外部同行。
 
-## 5. 终macro与下一唯一
+## 5. 后继诚实状态
 
-notes/00_map/R0082_next_primary_line_union_input_gate.md。实际counter信息与保守无newdim/branchsaving streak5分开；终macro完整四路径比较，A/B均无合格后继，不制造desired theorem。只一轮有界核direct line-family dimension/restrictedprojection primary实际原量词，真新匹配输入才phaseII，否则立即再macro，不无限abstract检索；所有旧冻结保持。
+notes/00_map/R0083_next_full_goal_reselection.md。本轮新source与精确scope是证据进展，保守gainstreak6不清零。root/A/B无合格next主命题，不制造desiredjointmass/Fubini/entropy放大公设；先完整四路径选不同actual机制才补锁量词、反攻、stop。不得重复本两primaryabstract，或用初等toy降低最终普通n≥5/general/反例/major目标。
 
-## 6. 同步与恢复
+## 6. 同步和恢复
 
-父HEAD=origin=remote e2e60c623c87e1b32341d608335b84908f00c3d6/treef27b1bc558edcf2bb462e44d8239f787aca0d8b9，1226旧trackedclean。最终tmp/sync/R0082.json须pendingfalse/samecommit/clean/fulltree/逐stagedblobSHA256。恢复context一次存tmp并实读本轮证明/两formal/macro/next及receiptfreshref，不重跑已过计算。Goal active。
+父HEAD=origin=remote 4fddc11ea715016f2cf5384e3c905e5a25f28b2e/tree90a9a9a1c5ef6f8f9ab84c30f7de7e95965391ee，1248旧trackedclean。最终tmp/sync/R0083.json须pendingfalse/samecommit/clean/fulltree/逐stagedblobSHA256。context一次存tmp并读本轮实际proof/两formal/macro/next与receiptfreshref，不重跑旧通过计算。Goal active，研究困难不置blocked。

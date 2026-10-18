@@ -1,0 +1,750 @@
+===== PDF PAGE 1 =====
+arXiv:2208.02913v1  [math.CA]  4 Aug 2022
+Unions of lines in Rn
+Joshua Zahl ∗
+August 8, 2022
+Abstract
+We prove a conjecture of D. Oberlin on the dimension of unions of lines in Rn. If d ≥ 1 is an
+integer, 0 ≤ β ≤ 1, and L is a set of lines in Rn with Hausdorﬀ dimension at least 2( d − 1) + β ,
+then the union of the lines in L has Hausdorﬀ dimension at least d + β . Our proof combines
+a reﬁned version of the multilinear Kakeya theorem by Carbery and V aldimarsson with the
+multilinear → linear argument of Bourgain and Guth.
+1 Introduction
+This paper concerns the following conjecture of D. Oberlin. In what follows, dim will always refer
+to Hausdorﬀ dimension.
+Conjecture 1.1. Let 1 ≤ d ≤ n be integers and let β ∈ [0, 1]. Let L be a set of lines in Rn, with
+dim L ≥ 2(d − 1) + β . Then
+dim
+⋃
+ℓ∈ L
+ℓ ≥ d + β. (1.1)
+The bound (1.1) is best-possible, since L could be the set of lines contained in a β -dimensional
+union of (parallel) d-dimensional aﬃne subspaces of Rn. In [9], R. Oberlin proved the ﬁnite ﬁeld
+analogue of Conjecture 1.1, and this is also the ﬁrst place wh ere the conjecture appeared in print. In
+[7], H´ era, Keleti, and M´ ath´ e considered a variant of Conjecture 1.1 where d = 0 and L is replaced
+by a set of k-dimensional aﬃne subspaces of Rn. Finally in [6], H´ era posed a generalization of
+Conjecture 1.1, where lines are replaced by k-dimensional aﬃne subspaces of Rn.
+When d = 1, Conjecture 1.1 was proved by H´ era, Keleti, and M´ ath´ e [7] and when d = n − 1,
+Conjecture 1.1 was proved by D. Oberlin [8]. In this paper, we will prove Conjecture 1.1 for
+the remaining values of d. As is typical for such problems, the conjecture will follow from the
+corresponding maximal function estimate, which we will sta te below. In what follows, Ln is the
+set of lines in Rn, with the following metric: if ℓ, ℓ ′ ∈ L n, then d(ℓ, ℓ ′) = |x − x′|+ |u ∧ u′|. Here u
+(resp u′) is a unit vector parallel to ℓ; x (resp. x′) is the unique point on ℓ with x ⊥ u; and |u ∧ u|
+is the (unsigned) area of the parallelogram spanned by u and u′. A δ-tube is the δ-neighborhood
+of a unit line segment in Rn, and if T is a δ-tube, then ℓ(T ) is the line coaxial with T . Finally, if
+p ∈ [1, ∞ ], then p′ denotes the conjugate Lebesgue exponent.
+Theorem 1.2. Let n ≥ 2 and ε > 0. Then there exists C = C(n, ε ) so that the following holds.
+Let 1 ≤ d < n be an integer, and let 0 ≤ β ≤ 1. Let T be a set of δ-tubes in B(0, 1) ⊂ Rn. Suppose
+that for all balls B ⊂ L n of radius r, we have
+#{T ∈ T : ℓ(T ) ⊂ B} ≤ (r/δ )2(d− 1)+β . (1.2)
+∗University of British Columbia, Vancouver BC, supported by an NSERC Discovery grant, jzahl@math.ubc.ca.
+1
+===== PDF PAGE 2 =====
+Then 
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+≤ Cδ
+1− d
+p′ − ε( ∑
+T ∈ T
+|T |
+) 1/p
+, p ′ = d + β. (1.3)
+We prove Theorem 1.2 by combining the multilinear Kakeya the orem [1, 5] with the multilinear
+to linear arguments developed by Bourgain and Guth in [2]; th is is done in Section 2. A secondary
+goal of this paper is provide a short and self-contained intr oduction to this type of argument. We
+prove Conjecture 1.1 by ﬁrst using a result from [7] to reduce to the case where L is analytic and
+hence supports a Frostman measure, and then using a standard discretization argument; this is
+done in Section 3.
+1.1 Thanks
+The author would like to thank Korn´ elia H´ era for comments on an earlier version of this manuscript.
+2 The Bourgain-Guth multilinear → linear argument
+In [2], Bourgain and Guth combined the multilinear restrict ion theorem of Bennett, Carbery, and
+Tao [1] (see also [5]) with induction on scales to prove new Fo urier restriction estimates. In this
+section, we revisit those arguments and obtain variants tha t are adapted to the proof of Theorem
+1.2.
+In the arguments that follow, we adopt the notation A ≲ B to mean that there is a constant
+C (which may depend on the ambient dimension n, and possibly also the Lebesgue exponent p, if
+this is relevant) so that A ≤ CB .
+We will use the following version of the multilinear Kakeya t heorem, which is Theorem 1 from
+[3]. In what follows, |u1∧ . . . ∧ uk|is the unsigned volume of the parallelepiped spanned by u1, . . . , u k.
+Theorem 2.1. Let 2 ≤ k ≤ n and let T1, . . . , Tk be sets of δ-tubes in Rn. Then
+
+
+
+( ∑
+T1∈ T1
+. . .
+∑
+Tk∈ Tk
+χ T1 · · ·χ Tk |u1 ∧ . . . ∧ uk|
+) 1
+k
+
+
+ k
+k− 1
+≲
+( 1
+δ
+) n
+k − 1 k∏
+i=1
+( ∑
+Ti∈ Ti
+|Ti|
+) 1
+k
+, (2.1)
+where in the above expression, ui is the direction of the tube Ti.
+When proving Theorem 1.2, Theorem 2.1 is helpful in the speci al case where, for a typical
+point x where
+( ∑χ T
+) p is large, most ( d + 1)-tuples of tubes T1, . . . , T d+1 that contain x satisfy
+|u1 ∧ . . . ∧ ud+1| ∼ 1. Indeed, it is straightforward to verify that our desired b ound (1.3) follows
+from Theorem 2.1 in this case. The Bourgain-Guth multilinea r → linear argument establishes a
+dichotomy between this situation and an opposite extreme, w here most of the tubes containing a
+typical point x are contained in the thin neighborhood of a d-dimensional aﬃne subspace.
+The lemmas below will help make this dichotomy precise. In wh at follows, if H is a k-dimensional
+vector subspace of Rn and u ∈ Rn is a unit vector, we write |H ∧ u| to mean |u1 ∧ . . . ∧ uk ∧ u|,
+where u1, . . . , u k are orthonormal vectors that span H; the value of |H ∧ u| is independent of the
+choice of u1, . . . , u k. In particular, |H ∧ u|= 0 if u ∈ H, and |H ∧ u|= 1 if u ⊥ H.
+Lemma 2.2. Let U ⊂ Sn− 1 be a multiset of unit vectors, let 1 ≤ k ≤ n, and let 0 ≤ ρ ≤ 1. Then
+at least one of the following must hold.
+A. #
+{
+(u1, . . . , u k) ∈ U k : |u1 ∧ . . . ∧ uk| ≥ ρk− 1}
+≥ 1
+2 (#U )k.
+2
+===== PDF PAGE 3 =====
+B. There is a (k − 1)-dimensional vector subspace H ⊂ Rn so that
+#{u ∈ U : |H ∧ u| ≤ ρ} ≥ 2− 2k(#U ).
+In particular, we always have
+(#U ) ≲ ρ
+1− k
+k
+( ∑
+u1∈ U
+. . .
+∑
+uk∈ U
+|u1 ∧ . . . ∧ uk|
+) 1/k
++ sup
+H∈ Gr(k− 1, Rn)
+#{u ∈ U : |H ∧ u| ≤ ρ}. (2.2)
+Proof. When k = 1 there is nothing to prove, so we can assume k ≥ 2. Suppose Option A does not
+hold. Let N = #U and let 2 ≤ j ≤ k be the smallest index so that
+#
+{
+(u1, . . . , u j) ∈ U j : |u1 ∧ . . . ∧ uj|< ρ j− 1}
+≥ 22j− 2k− 1N j. (2.3)
+(Such an index must exist, since the failure of Option A impli es that (2.3) holds for j = k). For
+notational simplicity, we will suppose that j > 2 (the same argument works when j = 2, though
+some care must be taken with indices). There are at least 2 2j− 2k− 2N j− 1 tuples ( u1, . . . , u j− 1) for
+which
+#
+{
+u ∈ U : |u1 ∧ . . . ∧ uj− 1 ∧ u|< ρ j− 1}
+≥ 22j− 2k− 2N. (2.4)
+But by the minimality of j, at most 2 2j− 2k− 3N j− 1 of these tuples satisfy |u1 ∧ . . . ∧ uj− 1|< ρ j− 2.
+We conclude that there exists a tuple ( u1, . . . u j− 1) that satisﬁes (2.4), with |u1 ∧ . . . ∧ uj− 1| ≥ ρj− 2.
+Let W = span{u1, . . . , u j− 1}. Then |W ∧ u| ≤ ρ for each u in the set (2.4), i.e.
+#{u ∈ U : |W ∧ u| ≤ ρ} ≥ 22j− 2k− 2N ≥ 2− 2kN.
+The result now follows by selecting a ( k − 1)-dimensional vector subspace H containing W .
+Corollary 2.3. Let U ⊂ Sn− 1 be a multiset of unit vectors, let 2 ≤ k ≤ n, and let 0 < ρ ≤ 1. Let
+{τ} be a covering of Sn− 1 by spherical caps of diameter ρ, and suppose each u ∈ Sn− 1 is contained
+in at most 10n caps. Let 1 ≤ p < ∞ . Then
+(#U )p ≲ ρ
+(1− k)p
+k
+( ∑
+u1∈ U
+. . .
+∑
+uk∈ U
+|u1 ∧ . . . ∧ uk|
+) p/k
++ ρ(2− k)(p− 1) ∑
+τ
+(
+#(U ∩ τ)
+) p. (2.5)
+Proof. Apply Lemma 2.2. The ﬁrst term in (2.2) corresponds to the ﬁrs t term in (2.5). For the
+second term, note that if H is a ( k − 1)-dimensional subspace of Rn, then ≲ ρ2− k of the caps from
+{τ} intersect the set {u ∈ Sn− 1 : |H ∧ u| ≤ ρ} (it is not important whether the supremum in (2.2)
+is realized). Next we use H¨ older’s inequality, and ﬁnally w e add the remaining caps to the RHS of
+(2.5).
+We record the following consequence of Corollary 2.3.
+Lemma 2.4. Let 0 < δ ≤ ρ ≤ 1, let 2 ≤ k ≤ n, and let 1 ≤ p < ∞ . Let {τ} be a covering of
+Sn− 1 by spherical caps of diameter ρ that is at most 10n-overlapping. Let T be a set of δ-tubes in
+B(0, 1) ⊂ Rn. Then
+
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+≲ ρ
+1− k
+k
+
+
+
+( ∑
+T1,...,T k∈ T
+χ T1 · · ·χ Tk |u1 ∧ . . . ∧ uk|
+) 1
+k
+
+
+
+p
++ ρ
+2− k
+p′
+( ∑
+τ
+
+
+
+∑
+T ∈ T
+dir(T )∈ τ
+χ T
+
+
+
+p
+p
+) 1
+p
+. (2.6)
+Proof. For each x ∈ Rn, we apply Corollary 2.3 to the multiset of unit vectors {dir(T ) : x ∈ T } and
+integrate.
+3
+===== PDF PAGE 4 =====
+Observe that if δ < ρ/ 2, then the ﬁnal term in (2.6) can be further decomposed. For e ach cap
+τ with center u ∈ Sn− 1, we can cover B(0, 1) ⊂ Rn by boundedly overlapping ρ-tubes that point
+in direction u. If T ∈ T and dir( T ) ∈ τ, then T will be contained in at least 1, and at most ≲ 1
+tubes Tρ of this type. Let Tρ denote the set of all such tubes, for all caps τ. Then each T ∈ T is
+contained in at least 1, and at most ≲ 1 tubes from Tρ. Thus we have
+∑
+τ
+
+
+
+∑
+T ∈ T
+dir(T )∈ τ
+χ T
+
+
+
+p
+p
+≲
+∑
+Tρ∈ Tρ
+
+
+
+∑
+T ∈ T
+T ⊂ Tρ
+χ T
+
+
+
+p
+p
+, 1 ≤ p < ∞ . (2.7)
+The advantage is that each term on the RHS of (2.7) has been loc alized to a ρ-tube.
+We will use Theorem 2.1 to control the ﬁrst term on the RHS of (2 .6). We record the following
+computation.
+Lemma 2.5. Let 1 ≤ d < n be integers, let β ∈ [0, 1], and let T be a set of δ-tubes in B(0, 1) ⊂ Rn,
+with #T ≤ δ2(1− d)− β . Then
+
+
+
+( ∑
+T1,...,T d+1∈ T
+χ T1 · · ·χ Td+1|u1 ∧ . . . ∧ ud+1|
+) 1
+d+1
+
+
+
+p
+≲ δ
+1− d
+p′
+( ∑
+T ∈ T
+|T |
+) 1/p
+, p ′ = d + β. (2.8)
+Proof. Note that p − d+1
+d ≥ 0, with equality if β = 1. We have
+∫ ( ∑
+T1,...,T d+1∈ T
+χ T1 · · ·χ Td+1|u1 ∧ . . . ∧ ud+1|
+) p
+d+1
+≤ (#T)p− d+1
+d
+∫ ( ∑
+T1,...,T d+1∈ T
+χ T1 · · ·χ Td+1|u1 ∧ . . . ∧ ud+1|
+) 1
+d
+≲
+(
+δ1− n ∑
+T ∈ T
+|T |
+) p− d+1
+d
+[
+δ
+d+1− n
+d
+( ∑
+T ∈ T
+|T |
+) d+1
+d
+]
+= δ1+(1− n)(p− 1)
+( ∑
+T ∈ T
+|T |
+) p− 1( ∑
+T ∈ T
+|T |
+)
+≤ δ1+(1− n)(p− 1)
+(
+δn− 1δ2(1− d)− β
+) p− 1( ∑
+T ∈ T
+|T |
+)
+= δ
+p(1− d)
+p′
+( ∑
+T ∈ T
+|T |
+)
+.
+(2.9)
+For the ﬁrst inequality, we used the observation that the int egrand is bounded by (# T)d+1. The
+second inequality used Theorem 2.1. The next equality re-gr oups terms. The ﬁfth line used the
+hypothesis on the cardinality of T, while the ﬁnal line simpliﬁes the expression.
+Combining (2.7) and Lemma 2.5, we obtain the following; reca ll that Tρ is a maximal collection
+of boundedly overlapping ρ-tubes.
+Corollary 2.6. Let 1 ≤ d < n be integers and let β ∈ [0, 1]. Let 0 < δ ≤ ρ/ 2 ≤ 1, and let T be a
+set of δ-tubes in B(0, 1) ⊂ Rn, with #T ≤ δ2(1− d)− β . Then
+
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+≲ ρ
+− d
+d+1 δ
+1− d
+p′
+( ∑
+T ∈ T
+|T |
+) 1/p
++ ρ
+1− d
+p′
+( ∑
+Tρ∈ Tρ
+
+
+
+∑
+T ∈ T
+T ⊂ Tρ
+χ T
+
+
+
+p
+p
+) 1/p
+, p ′ = d + β. (2.10)
+4
+===== PDF PAGE 5 =====
+Using Inequality 2.10, we can prove Theorem 1.2 using induct ion on scales.
+Proof of Theorem 1.2. In the arguments that follow, we will choose the (small, posi tive) quantities
+ρ and δ0, and then the (large) quantity C, in that order; C is the quantity appearing in (1.3).
+We will prove the theorem by induction on δ. By choosing C appropriately, we can suppose
+that (1.3) holds whenever δ ≥ δ0. Suppose now that δ ∈ (0, δ 0), and suppose furthermore that for
+all ˜δ ∈ (δ, 1], we have that (1.3) has been established for all collectio ns ˜T of ˜δ-tubes in B(0, 1) ⊂ Rn
+that satisfy the analogue of (1.2) with ˜δ in place of δ. Let T be a set of δ-tubes in B(0, 1) that
+satisfy (1.2). Our goal is to establish (1.3) for this collec tion of tubes.
+By Corollary 2.6, we have
+
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+p
+≲ ρ
+− dp
+d+1 δ
+(1− d)p
+p′
+( ∑
+T ∈ T
+|T |
+)
++ ρ
+(1− d)p
+p′
+∑
+Tρ∈ Tρ
+
+
+
+∑
+T ∈ T
+T ⊂ Tρ
+χ T
+
+
+
+p
+p
+. (2.11)
+If C = C(n, ε ) is chosen suﬃciently large depending on ρ (which in turn, will ultimately only
+depend on n and ε) and the implicit constant in (2.11), then (2.11) may be re-w ritten as
+
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+p
+− 1
+2 C pδ
+(1− d)p
+p′
+( ∑
+T ∈ T
+|T |
+)
+≲ ρ
+(1− d)p
+p′
+∑
+Tρ∈ Tρ
+
+
+
+∑
+T ∈ T
+T ⊂ Tρ
+χ T
+
+
+
+p
+p
+. (2.12)
+We must now bound the RHS of (2.12). Let Tρ ∈ Tρ. Let A be the aﬃne map that sends the
+coaxial line of Tρ to the e1-axis, and dilates Tρ by a factor of 1 /ρ in each of the directions e2, . . . , e n.
+We can verify that the image of each of the tubes {T ∈ T : T ⊂ Tρ} under this transformation is
+comparable to a δ/ρ -tube contained in B(0, 1), and that this set of δ/ρ -tubes satisﬁes the analogue
+of (1.2) with δ/ρ in place of δ (the inequality (1.2) might be weakened by a constant factor , but
+this is harmless and can be remedied, for example, by partiti oning the set of δ/ρ -tubes into ∼ 1
+families, applying the arguments below to each family in tur n, and using the triangle inequality).
+Since δ/ρ > δ , we can apply the induction hypothesis to conclude that (aft er undoing the
+re-scaling) 
+
+
+∑
+T ∈ T
+T ⊂ Tρ
+χ T
+
+
+
+p
+p
+≲ C p(δ/ρ )
+(1− d)p
+p′ − εp( ∑
+T ∈ T
+T ⊂ Tρ
+|T |
+)
+.
+Thus
+ρ
+(1− d)p
+p′
+∑
+Tρ∈ Tρ
+
+
+
+∑
+T ∈ T
+T ⊂ Tρ
+χ T
+
+
+
+p
+p
+≲ C pρ
+(1− d)p
+p′ (δ/ρ )
+(1− d)p
+p′ − εp ∑
+Tρ∈ Tρ
+( ∑
+T ∈ T
+T ⊂ Tρ
+|T |
+)
+≲ C pρεpδ
+(1− d)p
+p′ − εp ∑
+T ∈ T
+|T |.
+(2.13)
+Selecting ρ suﬃciently small compared to ε, p , and the implicit constants in (2.12) and (2.13) (recall
+that these constants depend only on n and p; crucially, they do not depend on ρ or C), we obtain
+(1.3), which closes the induction and completes the proof.
+3 Proof of Conjecture 1.1
+We are now ready to prove Conjecture 1.1. First, we will reduc e the situation where L is analytic,
+and in particular supports a Frostman measure of the appropr iate dimension. A reduction of this
+type ﬁrst appeared in [7]; we brieﬂy summarize those argumen ts here.
+5
+===== PDF PAGE 6 =====
+For convenience, we will suppose that β > 0 (so in particular d < n ). This is harmless, since if
+β = 0 then we can replace d by d − 1 and β by 1. Next, note that it suﬃces to establish a variant
+of (1.1), where the RHS has been replaced by d + β − ε for arbitrary ε > 0.
+Fix such an ε. Let X = ⋃
+ℓ∈ L ℓ, and let X1 ⊃ X be a Gδ set with dim X1 = dim X; the
+construction of such a set is explained, for example, in [4]. Since ℓ ⊂ X1 for each ℓ ∈ L, if we select
+R suﬃciently large then the set L1 = {ℓ ∈ L : |ℓ∩ X1 ∩ B(0, R )|> 1} satisﬁes dim L1 ≥ dim L − ε/ 2.
+Abusing notation, we will replace the set X1 and the lines in L1 and L with their images under
+the re-scaling x ↦→ x/R . We still have dim L1 ≥ 2(d − 1) + β − ε/ 2, but now
+L1 = {ℓ ∈ L : |ℓ ∩ B(0, 1)|> R − 1}. (3.1)
+The set X2 = X1 ∩ B(0, 1) is Gδ and bounded, and ℓ∩ X2 contains an interval of length ≥ 1/R for
+each ℓ ∈ L1.
+Next, we recall the following special case of Lemma 3.1 from [ 7]. In the statement below, A(n, 1)
+is the set of lines in Rn and if Z ⊂ ℓ, then H1
+∞ (Z) = inf ∑|J|, where the inﬁmum is taken over
+all coverings of Z by countable collections of open intervals {J}. Note that the analyticity of a
+set M ⊂ A(1, n ) depends on the metric (or more generally, the topology), an d the authors in [7]
+discuss their choice of metric in Remark 2.2. The metric on Ln ⊂ A(n, 1) described in Section 1 is
+compatible with that from [7].
+Lemma 3.1. Let Y ⊂ Rn be Gδ and bounded, and let c > 0. Then the set of lines
+{
+ℓ ∈ A(n, 1) : H1
+∞ (ℓ ∩ Y ) > c
+}
+is analytic.
+Let L2 = {ℓ ∈ A(n, 1) : H1
+∞ (ℓ ∩ X2) ≥ 1/R }. Then L2 is analytic, and L2 ⊃ L1 (indeed,
+H1
+∞ (ℓ ∩ X2) ≥ 1/R for each ℓ ∈ L1, since ℓ ∩ X2 contains an interval of length ≥ 1/R ), so
+dim L2 ≥ 2(d − 1) + β − ε/ 2. At this point, we have replaced our original set X = ⋃
+ℓ∈ L ℓ by a new
+set X2 whose Hausdorﬀ dimension is no larger than that of X, and we have replaced the original set
+of lines L by a set L2 that is analytic (in the metric space Ln), with dim L2 ≥ 2(d − 1) +β − ε/ 2. In
+particular, L2 supports a Frostman probability measure P that satisﬁes the following ball condition:
+There is a constant C0 so that for all r > 0,
+P(B) ≤ C0r2(d− 1)+β − ε for all balls B ⊂ L n of radius r. (3.2)
+To prove Conjecture 1.1, it suﬃces to establish the estimate
+dim X2 ≥ d + β − C1ε, (3.3)
+for some constant C1 = C1(n) > 0; we will prove (3.3) with C1 = 7n.
+Armed with Theorem 1.2, the proof of (3.3) is a straightforwa rd discretization argument. Let
+k0 be a large integer that will be chosen below. Cover X2 by a union ⋃∞
+k=k0
+⋃
+B∈B k B, where Bk is
+a collection of balls of radius 2 − k, and ∑
+k 2− k(dim X2+ε)#Bk < ∞ .
+For each line ℓ ∈ L2, there is an index k = k(ℓ) ≥ k0 so that
+⏐
+⏐
+⏐ℓ ∩
+⋃
+B∈B k
+B
+⏐
+⏐
+⏐ ≥ 1
+100Rk2 ,
+where R is the constant from (3.1). For each index k, deﬁne L(k) = {ℓ ∈ L2 : k(ℓ) = k}. Then∑
+k≥ k0 P(L(k)) ≥ 1, so there is an index k1 ≥ k0 with P(L(k1)) ≥ 1
+100k2
+1
+. Deﬁne L3 = L(k1), deﬁne
+δ = 2 − k1, and deﬁne Eδ = ⋃
+B∈B k1
+B.
+6
+===== PDF PAGE 7 =====
+In what follows, we will write A ⪅ B to mean A ≲ |log δ|C B, where C is an absolute constant
+(in practice we can take C ≤ 10). In particular, we have P(L3) ⪆ 1, and |ℓ ∩ Eδ| ⪆ 1 for each
+ℓ ∈ L3.
+By dyadic pigeonholing, we can select a 2 δ-separated set Lδ
+3 ⊂ L3 and a number A ≥ C − 1
+0 δε so
+that ( A− 1δ2(1− d)− β )(#Lδ
+3) ⪆ 1, and for each ℓ ∈ Lδ
+3 we have
+A− 1δ2(d− 1)+β ≤ P(B(ℓ, δ )) < 2A− 1δ2(d− 1)+β . (3.4)
+Comparing (3.2) and (3.4), we see that if B ⊂ L n is a ball of radius r ≥ δ, then
+#(Lδ
+3 ∩ B) ≤ C0δ− εA(r/δ )2(d− 1)+β . (3.5)
+Let Lδ
+4 ⊂ Lδ
+3 be obtained by randomly and independently selecting each ℓ ∈ Lδ
+3 with probability
+C − 1
+0 δ2εA− 1. We claim that if δ > 0 is suﬃciently small (depending on ε), then there exists such a
+random selection Lδ
+4 with
+#Lδ
+4 ≥ 1
+2 C − 1
+0 δ2εA− 1#Lδ
+3 ≥ δ2(1− d)− β +4ε, (3.6)
+which satisﬁes the ball condition
+#(Lδ
+4 ∩ B) ≤ (r/δ )2(d− 1)+β for all balls B ⊂ L n. (3.7)
+This is a standard random sampling argument. The key insight is that it suﬃces to establish (3.7)
+(with ( r/δ )2(d− 1)+β strengthened to 1
+2 (r/δ )2(d− 1)+β ) for a boundedly-overlapping family of balls of
+radius r, for each dyadic δ ≤ r ≤ 1. There are only about δ− n such balls, and the probability
+that (3.7) fails for any particular ball is exponentially sm all in δ. The existence of an appropriate
+random sample then follows from the union bound. See e.g. [10 , Section 2] for details.
+Finally, for each ℓ ∈ Lδ
+4, let ˜ℓ ⊂ ℓ be a unit line segment in B(0, 1) with |˜ℓ ∩ Eδ| ⪆ 1, and let
+T (ℓ) be the δ-neighborhood of ˜ℓ. Let T = {T (ℓ) : ℓ ∈ Lδ
+4}. Then T is a collection of δ-tubes in
+B(0, 1) that satisﬁes (1.2), and |T ∩ Eδ| ⪆ |T | for each T ∈ T. By (3.6) and H¨ older’s inequality,
+have that for p ∈ (1, ∞ ),
+δn− 1δ2(1− d)− β +4ε ≲
+∑
+T ∈ T
+|T |⪅
+∑
+T ∈ T
+|T ∩ Eδ| ≤ |Eδ|1/p ′
+
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+≲ δ(n− dim X2− ε)/p ′
+
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+,
+i.e. 
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+⪆ δ5εδn− 2d+1− β δ− (n− dim X2)/p ′
+. (3.8)
+On the other hand, by Theorem 1.2, if p = d+β
+d+β − 1 then
+
+
+
+∑
+T ∈ T
+χ T
+
+
+
+p
+≤ Cδ
+1− d
+p′ + n+1− 2d− β
+p − ε. (3.9)
+Comparing (3.8) and (3.9) and simplifying, we conclude that δ
+dim X2− d− β
+p′ ⪅ δ− 6ε. Thus if k0 is
+selected suﬃciently large (which forces δ to be suﬃciently small), we conclude that dim X2 ≥
+d + β − 7(d + 1)ε, which is (3.3).
+7
+===== PDF PAGE 8 =====
+References
+[1] Jonathan Bennett, Anthony Carbery, and Terence Tao. On t he multilinear restriction and
+Kakeya conjectures. Acta Math. , 196:261–302, 2006.
+[2] Jean Bourgain and Larry Guth. Bounds on oscillatory inte gral operators based on multilinear
+estimates. Geom. Funct. Anal. , 21:1239–1295, 2011.
+[3] Anthony Carbery and Stef´ an Ingi Valdimarsson. The endp oint multilinear Kakeya theorem
+via the Borsuk-Ulam theorem. J. Funct. Anal. , 264:1643–1663, 2012.
+[4] D.H. Fremlin. Measure Theory: Topological Measure Spaces (Vol. 4) . Torres Fremlin, 2003.
+[5] Larry Guth. The endpoint case of the Bennett-Carbery-Ta o multilinear Kakeya conjecture.
+Acta Math. , 205:263–286, 2010.
+[6] K. H´ era. Hausdorﬀ dimension of Furstenberg-type sets a ssociated to families of aﬃne sub-
+spaces. Ann. Acad. Sci. Fenn. , 44:903–923, 2019.
+[7] K. H´ era, T. Keleti, and A. M´ ath´ e. Hausdorﬀ dimension of unions of aﬃne subspaces and of
+Furstenberg-type sets. J. Fractal Geom. , 6:263–284, 2019.
+[8] D. Oberlin. Exceptional sets of projections, unions of k-planes, and associated transforms.
+Israel J. Math. , 202:331–342, 2014.
+[9] R. Oberlin. Unions of lines in F n. Mathematika, 62:738–752, 2016.
+[10] M. Pramanik, T. Yang, and J. Zahl. A Furstenberg-type pr oblem for circles, and a Kaufman-
+type restricted projection theorem in R3. arXiv:2207.02259, 2022.
+8
