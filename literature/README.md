@@ -116,3 +116,6 @@ R0083新增Zahl2208.02913v1（8页）/HKM2106.09661v3（26页），61PDF/64sourc
 R0084新增HongWang ICM2026 DOI10.1137/25M1806156官方survey web记录（原PDF端点403，截图cache miss，未存PDF），61PDF/65sources；实际GWZ通用factoring与完整§5读取范围见literature/notes/R0084_convex_factoring_sources.md。不授新ordinarybound。
 
 R0085将旧Fraser–Yang2505.05709v2原21页PDF归档（1417336bytes，实际关键页read/view范围见literature/notes/R0085_source_and_transfer_scope.md），62PDF/66sources。所需小packing输入未由ordinary支付，不因新下载就声新数学输入或major。
+
+
+R0086新增Du2610.05404v1原PDF5页、403571bytes，现63PDF/67catalog sources/78IDs；root全文text及view2-3，R81曾完整HTMLread，本轮不冒新版本。源显式upper与actual方向/lift资格经独审，matching Hausdorfflower高级projection仍named。原PDF正文DateOct6与arxivv1 Oct4分开记，详metadata/R0086_source_check.json及notes/R0086_compression_and_lifting_source_scope.md。

@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0085真实regular-leading转移certificate root10/A8/B8/两formal实际通过；θ²真实Leb桥与原方向/端帽/平均λ均付。flat反向表明与DIR4旧源正幂等价，不新gain phaseII，fullG4 singular/退化仍未付。主gainstreak8，下一notes/00_map/R0085_next_full_goal_reselection.md尚无qualified新题；62PDF/66sources/78IDs，Goal active。
+更新2026-10-18，R0086实际Du原clock/fullw/ν0全部finite-s资格否定及(3,1)真实lift/positive5volume校准两独审；沿用R50方法无新ID/普通界/反例/major。主gainstreak9，下一notes/00_map/R0086_next_full_goal_reselection.md当前无qualified新gain；63PDF/67sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -180,3 +180,6 @@ R0083：Borel角度lift只5Fstupper，Zahl5→4/大s无matchingN、HKMΓ-null逐
 R0084：真实assigned partition的fullcontainment与原I预算付过；GWZ5.9/Rem5.2 parent-density另需Rn−1，n5投影cap/shape/scale与DIR未匹配。A帽公式显式保N/N′。R43同核旧闭包不重名，变量核未付未反；本门停止无新ID。
 
 R0085：KT/M3饱和入口与FY同一小packing均无新ordinary输入；samecoordinate leadinggradient的真实物理转移已证但正幂⇔DIR。Nδ^-3 parabolic校准非新counter；停止regular/D/κ迭代，完整macro后仍无qualified新gain，不降低Goal。
+
+
+R0086：Du旧源R81已全文读，本轮原PDF归档与逐式独审不冒新发现。原t/fullw的allfinite-s无零损失lift已付，具体有损lift存在而R5投影正体积；标签方向proper不分类偶然线段。停止本源clock/rotation/ambient模板，四路全目标仍open。

@@ -1,0 +1,347 @@
+[PDF physical page 1]
+A FRACTION DIMENSIONAL KAKEYA COMPRESSION
+JIAHAN DU
+Abstract.Recently, it was shown in [1] that under a very general condition, a generic family
+of curved Kakeya sets inR3 not trivially contained in a hypersurface has Hausdorff dimension
+strictly greater than 2. In this paper we leverage large language models to give an explicit
+construction of a family of curves failing the worst compression phenomenon in [1], but whose
+union has Hausdorff dimension and upper box dimension5/2. The example shows that there are
+Kakeya compression phenomena besides the trivial example of concentrating near a hypersurface.
+This answers a question raised in section 1.9 of [1]. The models used are Chatgpt 5.6 Sol and
+Chatgpt 6 Astra.
+1.Introduction
+Letϕ(x, t;y)be real analytic near the origin, where
+x, y∈R 2, t∈R, z= (x, t)∈R 3.
+Define
+G(z;y) =∂ y1 ∇zϕ(z;y)×∂ y2 ∇zϕ(z;y).
+Assume Hörmander’s conditions hold throughout the neighbourhood:
+(H1)det
+
+∂xi ∂yj ϕ(x, t;y)
+2
+i,j=1 ̸= 0,
+and
+(H2)det
+
+G(z;y)·∂ yi ∂yj ∇zϕ(z;y)
+2
+i,j=1 ̸= 0.
+Define the associated curve map locally by
+∇yϕ
+
+X(v, t;y), t;y
+
+=v,Φ(v, t;y) =
+
+X(v, t;y), t
+
+, v∈R 2.
+Assume this family has the normal form:
+Φ(w, t;ξ) = (X(w, t;ξ), t),
+X(w, t;ξ) =w−t
+
+ξ+R(w, ξ)
+
++t 2S(w, t, ξ),
+whereR, Sare analytic functions and
+|R(w, ξ)| ≤C|w||ξ|,|S(w, t, ξ)| ≤C|ξ|.
+Fix sufficiently smallε >0, and set
+B={a∈R 2 :|a|< ε}, I= [−ε, ε].
+Givenw 0, η, ζ∈B, withη̸=ζ, letDcomprise the pairs(s, t)∈I 2,s̸=t, for which
+(
+X(w, s;ξ) =X(w 0, s;η),
+X(w, t;ξ) =X(w 0, t;ζ)
+Date: October 6, 2026.
+1
+arXiv:2610.05404v1  [math.CA]  4 Oct 2026
+
+[PDF physical page 2]
+A FRACTION DIMENSIONAL KAKEYA COMPRESSION 2
+has a unique solution(w, ξ)∈B×B. Write this solution as(w(s, t), ξ(s, t)).
+We start with following definition taken from [1].
+Definition 1.1(Worst Kakeya Compression, Definition 1.23, [1]).The phaseϕsatisfies worst
+compression ifw 0, η, ζcan be chosen such that:
+(1) The union [
+(s,t)∈D
+
+X(w(s, t), u;ξ(s, t)), u
+
+:u∈I
+
+forms a two-dimensional surface inR3.
+(2) At some(s 0, t0)∈D, the solution parameters are smooth in a neighborhood and
+det[∂sξ(s0, t0)∂ tξ(s0, t0)]̸= 0.
+If we have worst Kakeya compression, then the curved Kakeya set is contained in a hypersurface,
+and has Hausdorff dimension 2. In this paper, we shall give an explicit construction that demon-
+strates the existence of fraction dimensional Kakeya compression, Theorem 2.2.
+Acknowledgment.I thank Arian Nadjimzadah for informing me of concurrent independent
+work of Shaoming Guo and Mingfeng Chen, who have obtained a related, and possibly more general,
+construction, also with the assistance of AI.
+2.A F amily of Cur ves
+Writeω= (ω 1, ω2)for position parameters andξ= (p, q)for direction parameters. Consider the
+map
+(1)Φ(ω, t;p, q) =
+
+ω1 −tp−t 2
+
+q+ p2
+2
+
+−t 3p, ω2 −tq−t 2p, t
+
+.
+A direct computation shows thatΦis associated with the following phase functionϕ,
+ϕ(x1, x2, t;p, q) =x 1p+x 2q+ t
+2(p2 +q 2) +t 2
+
+pq+ p3
+6
+
++ t3
+2 p2.
+Another direct computation shows thatϕsatisfies the Hörmander condition1.
+Lemma 2.1.There does not exist a nonempty open setU⊂R 2 and aC 2 mapW:U→R 2 such
+that the map
+(2)Ω : (p, q, t)7− →(W 1(p, q)−tp−t 2(q+p 2/2)−t 3p, W2(p, q)−tq−t 2p, t)
+has image contained in a two dimensional surface for alltin a nonempty open interval. Further-
+more, this implies thatϕfails the worst Kakeya compression definition.
+Proof.We assume otherwise. Surface containment forces
+det(DW−H p(t)) = 0, H p(t) =
+t+pt 2 +t 3 t2
+t2 t
+
+.
+Indeed, ifdet(DW−H p(t))̸= 0for somet, thenDΩwould have rank 3 at that t, and its image
+would contain a nonempty open set by the inverse function theorem.
+1Our choice of the phase functionϕis motivated by equation 1.77 of [1].
+
+[PDF physical page 3]
+A FRACTION DIMENSIONAL KAKEYA COMPRESSION 3
+Write
+DW=
+
+A B
+C D
+
+.
+Expandingdet(DW−H p(t)) = 0as a polynomial oftgives
+AD−BC−(A+D)t+ (1 +B+C−pD)t 2 + (p−D)t 3 = 0.
+Therefore
+A=−p, D=p, B+C=p 2 −1, BC=−p 2.
+It follows that
+DW=
+−p−1
+p2 p
+
+orDW=
+−p p 2
+−1p
+
+.
+In either case, we have∂p∂qW2 =∂ pD= 1,∂ q∂pW2 =∂ qC= 0, contradicting equality of mixed
+partials. This proves that suchUandWdo not exist, which implies thatϕfails the worst Kakeya
+compression condition.□
+Givenn∈Z +,ϵ >0, we denote byB n
+ϵ the open ball inRn centered at the origin of radiusϵ.
+Theorem 2.2.The family of curves in equation 1 satisfies Hörmander’s condition and fails the
+worst compression condition. Takeε= 1/100to be a small but absolute constant. There exists a
+compact parameter setE⊂R 4 and a compact curved Kakeya setK⊂R3
+(1) For every(p, q)∈ B2ε, there existsω∈B 2
+2ε such that(ω, p, q)∈E;
+(2)dim P E= 2;
+(3)Kis the union ofΦ(ω, t;p, q)for every(ω, p, q)∈Eand every|t| ≤ε;
+(4)dim H K= dimBK= 5/2.
+To prove Theorem 2.2, we first construct a compact setQ⊂R3, based on the Heisenberg square
+construction in [2]. For every pair of sequencese= (ej)j≥1, f= (f j)j≥1 consisting of0and1only,
+put
+(3)x=
+X
+j≥1
+2−jej, y=
+X
+j≥1
+2−jfj, z=
+X
+i<j
+2−i−jeifj,
+and letQbe the set of all such triples.Qis closed and bounded hence compact. Moreover
+(4) proj x,yQ= [0,1] 2,0≤z≤
+X
+i<j
+2−i−j = 1
+3 .
+Since projx,y(Q) = [0,1] 2, we havedimH Q≥2. Givenn∈Z +, we fix
+e1, . . . , en, f 1, . . . , fn,
+and let the remaining digits vary. Writingr= 2−n and
+x0 =
+X
+j≤n
+2−jej, y 0 =
+X
+j≤n
+2−jfj, z 0 =
+X
+i<j≤n
+2−i−jeifj,
+the resulting piece ofQis exactly
+(5)
+
+x0 +rx ′, y 0 +ry ′, z 0 +rx 0y′ +r 2z′
+: (x′, y′, z′)∈Q
+
+.
+From here we can deduce that each such piece ofQhas diameterO(r). Since there areO(r −2)
+number of such pieces, we see thatdimBQ≤2. This implies
+dimH Q= dim P Q= dimBQ= 2.
+
+[PDF physical page 4]
+A FRACTION DIMENSIONAL KAKEYA COMPRESSION 4
+Recallε= 1/100, we takes= 4ε. Define the rescaled version ofQby:
+(6)Q s =
+
+(p, a, b) =
+
+s(x− 1
+2), s(y− 1
+2), s2(z− 1
+2 y)
+
+: (x, y, z)∈Q
+
+.
+Then projp,aQs = [−s/2, s/2]2, and|b| ≤s 2/2if(p, a, b)∈Q s. Define
+E=
+
+−a, b, p, a− p2
+2
+
+: (p, a, b)∈Q s
+
+.
+Clearly
+dimH E= dim P E= dimBE= 2.
+This is (2) of Theorem 2.2. (1) of Theorem 2.2 follows from a direct computation and the fact that
+projp,aQs = [−s/2, s/2]2. DefineKto be the union of curve segments for|t| ≤ε.
+3.dim H K= 5/2
+For a point
+−a, b, p, a− p2
+2
+
+inE, the first two coordinates of the curves in equation 1 simplify to
+Φ1 =−(1 +t 2)(a+tp),Φ 2 =b−t(a−p 2/2)−t 2p.
+Define the following diffeomorphism onR3,
+Ψ(x1, x2, t) =
+
+− x1
+1 +t 2 , x2 − tx1
+1 +t 2 , t
+
+sends the curvet7→(Φ 1,Φ 2, t)to the following straight line
+lp,a,b(t) =
+
+a+tp, b+ t
+2 p2, t
+
+.
+Therefore, we only need to show that if
+K ′ ={l p,a,b(t)|(p, a, b)∈Q s,|t| ≤ε},
+then dimBK ′ ≤5/2. To see why, for a point(x, y, z)belonging to a piece such as equation 5, we
+have
+|x−x 0|+|y−y 0|+|z−z 0|≲r(7)
+|z−z 0 −x 0(y−y 0)|≲r 2.(8)
+RecallQ s is obtained fromQunder an affine map, let(p 0, a0, b0)and(p, a, b)be the images of
+(x0, y0, z0)and(x, y, z)respectively. LetR=s2 −n, then a direct computation shows that
+|p−p 0|+|a−a 0|+|b−b 0|≲R(9)
+|b−b 0 −p 0(a−a 0)|≲R 2.(10)
+Also notice that there are4n =s 2R−2 such pieces. Define
+U= (a+tp)−(a 0 +tp 0), V= (b+tp 2/2)−(b 0 +tp 2
+0/2).
+Another direct computation shows that
+|U|≲R,|V−p 0U|=
+
+
+
+
+(b−b 0 −p 0(a−a 0)) + t
+2(p−p 0)2
+
+
+
+
+ ≲R 2.
+
+[PDF physical page 5]
+A FRACTION DIMENSIONAL KAKEYA COMPRESSION 5
+Consequently, the linelp,a,b is covered in a rectangular box of dimensionsO(1)×O(R)×O(R 2).
+Since there ares 2R−2 ≲R −2 such pieces as equation 5, we see that the union of all segmentsK′
+is covered inR −2 number of rectangular boxes of dimensionO(1)×O(R)×O(R 2). Each box of
+dimensionO(1)×O(R)×O(R 2)is covered byO(R−3)number of balls of diameterR2. ThereforeK ′
+is covered byO(R−5)number of balls of radiusR2. This allows us to conclude thatdimBK ′ ≤5/2.
+The matching Hausdorff dimension lower bound forKcomes from results in [3]. Denote the unit
+ball inR n byB n.
+Definition 3.1(Definition 2.1, [3]).LetX(p, t) :B 3 ×B 1 →R 2 be a smooth map which we call
+the defining function. The pointp∈B 3 determines the following curve segment
+(11)l p(t) = (X(p, t), t)
+andt∈B 1. WriteC(X)for the 3-parameter family of these curves.
+Definition 3.2(Definition 2.2, [3]).Writep= (p, ⃗ a)∈R×R 2, where⃗ a= (a, b), and define the
+curvesω p,t(p′) = (∂tX)(p ′, ⃗ ap,t(p′), t), where⃗ ap,t solves
+(12)X(p ′, ⃗ ap,t(p′), t) =X(p, t).
+Definition 3.3(Condition 2, [3]).Givenc >0, the mapXisc-coney if for each point(p, t)we
+have
+(13)
+
+
+
+
+
+det
+
+d
+dp′ ωp,t(p′)
+
+
+
+
+
+p′=p
+, d2
+d(p′)2 ωp,t(p′)
+
+
+
+
+
+p′=p
+!
+
+
+
+
+ ≥c.
+Corollary 3.4(Corollary 2.10, [3]).LetF t :R 3 →R 2 be a family of maps, and defineX(p, t) =
+Ft(p). LetAbe a Borel subset ofR3 withdim H A= 2. IfXsatisfies the "basic conditions" defined
+in[3, Condition 4]and isc-coney for some positive constantc >0, thendim H Ft(A)≥1.5for a.e.
+t∈[0,1].
+Define
+Ft(p, a, b) =
+
+a+tp, b+ t
+2 p2
+
+.
+Sincedim H Qs = 2, and a direct calculation shows thatωp,t(p′) = (p′, p′2
+2 ). Therefore Corollary
+3.4 applies, and we can conclude that
+dimH Ft(Qs)≥ 3
+2 for almost everyt∈[0, ε].
+Since above holds for almost everyt, we see thatdimH K ′ ≥ 3
+2 + 1. This concludes the lower
+bound proof and the proof of Theorem 2.2.
+References
+[1] S. Guo, L. Guth, A. Nadjimzadah, M. Shen, and R. Zhang, “Curved kakeya problems and the projective geometry
+of paths.” arXiv preprint, 2026. arXiv:2607.27629 [math.CA].
+[2] Z. M. Balogh and J. T. Tyson, “Hausdorff dimensions of self-similar and self-affine fractals in the Heisenberg
+group,”Proceedings of the London Mathematical Society, vol. 91, no. 1, pp. 153–183, 2005.
+[3] A. Nadjimzadah, “New curved kakeya estimates.” arXiv preprint, 2026. arXiv:2503.15760 [math.CA].
+University of California, Los Angeles
+Email address:jiahandu@math.ucla.edu
