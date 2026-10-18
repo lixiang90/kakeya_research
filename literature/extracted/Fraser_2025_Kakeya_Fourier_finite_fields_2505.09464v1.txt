@@ -1,0 +1,485 @@
+[PDF physical page 1]
+arXiv:2505.09464v1  [math.CO]  14 May 2025
+Fourier analytic properties of Kakeya sets in finite fields
+Jonathan M. Fraser
+University of St Andrews, Scotland
+email: jmf32@st-andrews.ac.uk
+Abstract. We prove that a Kakeya set in a vector space over a finite field of size q
+always supports a probability measure whose Fourier transform is bounded by q−1 for
+all non-zero frequencies. We show that this bound is sharp in all dimensions at least
+2. In particular, this provides a new and self-contained proof that a Kakeya set in
+dimension 2 has size at least q2/2 (which is asymptotically sharp). We also establish
+analogous results for sets containing k-planes in a given set of orientations.
+Mathematics Subject Classification 2020 . primary: 52C35, 43A25; secondary:
+11B30, 52C17.
+Key words and phrases : Kakeya set, ( d, k)-set, Finite field, Fourier transform, Salem set.
+Contents
+1. Introduction 1
+1.1. Kakeya sets in finite fields 1
+1.2. Notation 2
+1.3. Fourier analysis in finite fields 2
+2. Main results 4
+3. Proofs 6
+3.1. Proof of Theorem 2.1 6
+3.2. Proof of Proposition 2.3 7
+References 7
+1. Introduction
+1.1. Kakeya sets in finite fields. A Kakeya set in Rd is a set which contains a unit line
+segment in every possible direction. The Kakeya conjecture is that such sets must have
+Hausdorff dimension d. This is despite the fact that they can have zero d-dimensional
+Lebesgue measure for d ⩾ 2; a result of Besicovitch [Be28]. Davies solved the planar
+(d = 2) case [Da71] and the d = 3 case was recently resolved in a breakthrough paper of
+Wang and Zahl [WZ25+]. The problem is open for d ⩾ 4.
+Oberlin proved that Kakeya sets in R2 have Fourier dimension 2, that is, Kakeya sets
+in R2 are Salem sets [Ob06]. Oberlin’s result implies (and is rather stronger than) Davies’
+result that such Kakeya sets have Hausdorff dimension 2. We generalised Oberlin’s ar-
+gument in [FHK22] to prove that the Fourier dimension of a Kakeya set in Rd is at least
+The author was financially supported by a Leverhulme Trust Research Project Grant (RPG-2023-281),
+an EPSRC Standard Grant (EP/Y029550/1), and an EPSRC Open Fellowship (EP/Z533440/1).
+
+[PDF physical page 2]
+Page 2 J. M. Fraser
+2 and in [Fr24+] we proved that there exist Kakeya sets in Rd with Fourier dimension
+precisely 2 for all d ⩾ 3. In particular, the fact that Kakeya sets in the plane are Salem
+does not generalise to higher dimensions.
+Wolff proposed the following finite field analogue of the Kakeya problem [Wo99]. Let
+Fq be the finite field of q elements where q is a power of a prime, and let Fd
+q be the d-
+dimensional vector space over Fq, where d ⩾ 2 is an integer. In this setting a set K ⊆ Fd
+q
+is called a Kakeya set if it contains a line in every direction, that is, for all x ∈ Fd
+q, there
+exists y ∈ Fd
+q such that
+{y + a x : a ∈ Fq} ⊆ K.
+The finite fields Kakeya conjecture is that Kakeya sets K ⊆ Fd
+q, must have cardinality at
+least a constant multiple of qd. This conjecture was sensationally solved by Dvir [Dv09]
+in full generality, with the case d = 2 having been settled by Wolff [Wo99].
+To the best of our knowledge the finite field analogue of Oberlin’s result is unknown.
+We prove it here and in the process give a new proof of the asymptotically sharp lower
+bound for the size of a Kakeya set in F2
+q.
+Theorem A. If K ⊆ F2
+q is a Kakeya set, then it is a Salem set of size at least q2/2.
+This result is a special case of our main results which are discussed in Section 2; see
+Theorem 2.4 and Corollary 2.5. Also, see Section 1.3 for the definition of a Salem set in
+the finite fields setting.
+A natural generalisation of a Kakeya set is a ( d, k)-set, which is a set in d-dimensional
+space which contains a k-plane in every orientation. There has been a lot of work on
+these sets in the Euclidean setting, but we only discuss the finite fields setting here, see
+[EOT10, KLSS11]. We consider a slight generalisation of ( d, k)-sets where we only require
+a given subset of possible orientations. Write G(d, k) for the set of all k-dimensional
+subspaces of Fd
+q and let Γ ⊆ G(d, k). We say K ⊆ Fd
+q is a (d, k, Γ)-set if for all V ∈ Γ, there
+exists u ∈ Fd
+q such that u + V ⊆ K. In particular, K is a ( d, 1, G(d, 1))-set if and only if
+it is a Kakeya set. We first obtain Fourier analytic estimates for ( d, k, Γ)-sets in Theorem
+2.1 before specialising to ( d, k)-sets in Corollary 2.2 and then Kakeya sets in Proposition
+2.3, Theorem 2.4, and Corollary 2.5.
+1.2. Notation. Throughout the paper we write A ≲ B to mean there is a constant c
+independent of q for which A ⩽ cB. Similarly we write A ≳ B to mean B ≲ A and A ≈ B
+if A ≲ B and A ≳ B. One should always think of q as being very large compared to any
+implicit constants. We also write |E| to denote the cardinality of a set E and A ∼ B to
+mean that A/B → 1 as q → ∞.
+1.3. Fourier analysis in finite fields. The Fourier transform of a function f : Fd
+q → C
+is the function bf : Fd
+q → C defined by
+bf(ξ) :=
+X
+x∈Fdq
+χ(−ξ · x)f(x),
+where χ : Fq → S1 ⊆ C is a non-trivial additive character, which we fix from now on. The
+specific choice of χ does not play an important role in what follows. Above, ξ · x denotes
+the standard dot product on Fd
+q, which takes values in Fq.
+
+[PDF physical page 3]
+Page 3 J. M. Fraser
+Plancherel’s formula gives a useful L2 identity connecting a function and its Fourier
+transform. It states that, for all f : Fd
+q → C,
+(1.1)
+X
+ξ∈Fdq
+|bf(ξ)|2 = qdX
+x∈Fdq
+|f(x)|2.
+A probability measure µ on Fd
+q is simply a non-negative real-valued function that sums to
+1. Let E ⊆ Fd
+q be the support of a probability measure µ, that is, E = {x ∈ Fd
+q : µ(x) > 0}.
+Then, for all frequencies ξ ∈ Fd
+q,
+|bµ(ξ)| ⩽ |bµ(0)| = 1
+and, by Plancherel’s formula (1.1),
+(1.2)
+X
+ξ∈Fdq
+|bµ(ξ)|2 = qdX
+x∈Fdq
+|µ(x)|2 ⩾ qdX
+x∈E
+|E|−2 = qd|E|−1
+where we used here the simple fact that the L2 norm of a finitely supported probability
+distribution is minimised by the uniform distribution. Indeed, if a probability measure on
+a finite set E is not uniform, then there must exist weights a, b > 0 with a < |E|−1 < b.
+But then the L2 norm can be reduced by replacing a and b with |E|−1 and a + b − |E|−1
+since
+a2 + b2 > |E|−2 + (a + b − |E|−1)2 ⇔ (|E|−1 − a)(|E|−1 − b) < 0
+and finitely many iterations of this procedure yields the uniform distribution as the unique
+minimiser. We also have the simple estimate
+(1.3)
+X
+ξ∈Fdq
+|bµ(ξ)|2 ⩽ 1 + (qd − 1) sup
+ξ∈Fdq \{0}
+|bµ(ξ)|2.
+It follows from (1.2) and (1.3) that
+(1.4) sup
+ξ∈Fdq \{0}
+|bµ(ξ)| ⩾
+s
+qd|E|−1 − 1
+qd − 1 .
+In particular, if |E| ⩽ cqd for some c ∈ (0, 1) (that is, if |Fd
+q \ E| ≳ qd), then
+(1.5) sup
+ξ∈Fdq \{0}
+|bµ(ξ)| ⩾
+√
+1 − c |E|−1/2 ≈ |E|−1/2.
+This allows us to get cardinality estimates for a set via the Fourier transform of measures
+it supports. Indeed, if there exists a probability measure supported on a set E such that
+sup
+ξ∈Fdq \{0}
+|bµ(ξ)| ⩽ Cq −β/2
+for some C ⩾ 0 and β ∈ (0, d], then (1.4) gives
+(1.6) |E| ⩾ qd
+C2q−β(qd − 1) + 1 ≳ qβ
+Further, if β > d then one may conclude |E| ∼ qd and if β > 2d then E = Fd
+q for large
+enough q.
+Given the above observations, we say E ⊆ Fd
+q is Salem if there exists a probability
+measure µ with support contained in E such that
+sup
+ξ∈Fdq \{0}
+|bµ(ξ)| ≲ |E|−1/2.
+
+[PDF physical page 4]
+Page 4 J. M. Fraser
+We note that this is not the same as the definition of a Salem set in Fd
+q introduced by
+Iosevich–Rudnev [IR07]. In [IR07] the measure µ was required to be the ‘surface measure’,
+or uniform distribution, on E. We suggest that the definition of Salem in [IR07] should
+be thought of as strongly Salem or perhaps uniformly Salem. In particular, in Euclidean
+space one is free to demonstrate that a given set is Salem by choosing an arbitrary Borel
+measure supported on the set and therefore our definition above is a more appropriate
+analogue of the definition in Euclidean space, see [Ma15]. That said, certain uniformity
+properties are forced upon a measure µ witnessing that a set E (with |E| ⩽ cqd for some
+c ∈ (0, 1)) is Salem. In particular, E must be supported on a subset of E with cardinality
+≈ |E| and, by virtue of (1.2), we must have
+X
+x∈Fdq
+|µ(x)|2 ≈
+X
+x∈E
+|E|−2 = |E|−1
+and so perhaps the definitions are not as different as they first appear (although they are
+clearly not equivalent).
+2. Main results
+Our first result proves that ( d, k, Γ)-sets always support a probability measure with
+polynomial Fourier decay, provided |Γ| ≳ qk(d−k−1)+ε for some ε > 0. It is useful to keep
+in mind that
+qk(d−k) ⩽ |G(d, k)| ⩽ qk(d−k)(1 + o(1))
+and
+|G(d − 1, k)|
+|G(d, k)| ⩽ q−k.
+Both of these facts can be derived easily by considering Gaussian binomial coefficients; we
+omit the details.
+Theorem 2.1. Let d > k ⩾ 1 be integers and Γ ⊆ G(d, k). Suppose K ⊆ Fd
+q is such that
+for all V ∈ Γ, there exists u ∈ Fd
+q such that u + V ⊆ K. Then there exists a probability
+measure µ on K satisfying
+|bµ(ξ)| ⩽ |Γ|−1|G(d − 1, k)| ⩽ q−k |G(d, k)|
+|Γ|
+for all non-zero ξ ∈ Fd
+q. In particular, |K| ≳ min{qd, |Γ|2q−2k(d−k−1)} and more precise
+estimates are available from (1.6) if required.
+We delay the proof of Theorem 2.1 until Section 3.1. Theorem 2.1 has no content when
+|Γ| ≲ qk(d−k−1) but this is for good reason. In particular, V0 ∈ G(d, d−1) is a (d, k, Γ0)-set
+where Γ 0 = {V ∈ G(d, k) : V ⊆ V0}. Then |Γ| ≈ qk(d−k−1) but V0 cannot support a
+probability measure with non-trivial bounds for the Fourier transform at ξ ∈ V ⊥
+0 .
+Setting Γ = G(d, k) we get the following corollary concerning traditional ( d, k)-sets.
+Corollary 2.2. Let d > k ⩾ 1 be integers and K ⊆ Fd
+q be a (d, k)-set. Then there exists a
+probability measure µ on K satisfying
+|bµ(ξ)| ⩽ q−k
+for all non-zero ξ ∈ Fd
+q. In particular, |K| ≳ min{qd, q2k} and if k = d/2, then |K| ≈ qd,
+and if k > d/ 2, then |K| ∼ qd.
+
+[PDF physical page 5]
+Page 5 J. M. Fraser
+The conclusion that ( d, k)-sets asymptotically take up the whole space when k > d/ 2 is
+a finite field analogue of a result of Falconer in the Euclidean setting [Fa80], which states
+that ( d, k)-sets in Rd must have positive Lebesgue measure when k > d/ 2. In the finite
+fields setting, the cardinality estimate in Corollary 2.2 is known, and in fact much stronger
+estimates are available. Therefore, the main novelty of Corollary 2.2 is in the Fourier
+analytic information, but we do offer a new proof of the optimal asymptotic cardinality
+estimate in the case k > d/ 2. In fact, for all k ⩾ 2, it is known that ( d, k)-sets in Fd
+q have
+cardinality ∼ qd, see [EOT10, KLSS11].
+We now focus on the case k = 1, that is, the setting of Kakeya sets. We first prove that
+the estimates above are sharp in all ambient dimensions d ⩾ 2.
+Proposition 2.3. For all d ⩾ 2, κ ∈ (0, 1), and sufficiently large q, there exists a Kakeya
+set K ⊆ Fd
+q such that for all probability measures µ on K
+|bµ(ξ)| ⩾ κ q−1.
+We delay the proof of Proposition 2.3 until Section 3.2. Combining Theorem 2.1 and
+Proposition 2.3, we get the following theorem, which we see as our main result. In partic-
+ular, in the case d = 2 this gives a finite fields analogue of Oberlin’s result that Kakeya
+sets in the Euclidean plane are Salem [Ob06], a strengthening of Dvir’s result [Dv09], and
+a new self-contained proof that Kakeya sets in F2
+q must have cardinality ≈ q2. In higher
+dimensions, we do not obtain a proof of the finite fields Kakeya conjecture, and Proposition
+2.3 shows that it cannot be proved this way for d > 2.
+Theorem 2.4. Let d ⩾ 2 and K ⊆ Fd
+q be a Kakeya set. Then there exists a probability
+measure µ on K satisfying
+|bµ(ξ)| ⩽ q−1
+for all non-zero ξ ∈ Fd
+q. In particular, |K| ≳ q2. Moreover, for all d ⩾ 2, κ ∈ (0, 1), and
+sufficiently large q, there exists a Kakeya set K′ ⊆ Fd
+q such that for all probability measures
+µ on K′
+|bµ(ξ)| ⩾ κ q−1
+and so the Fourier analytic bound above is sharp for all d ⩾ 2.
+The special case d = 2 is worth further scrutiny since there we get the right cardinality
+estimate. In fact, we obtain a new proof of the sharp density result for Kakeya sets in
+dimension 2. This follows from the Fourier bound in Theorem 2.4 and the more precise
+cardinality estimate (1.6).
+Corollary 2.5. If K ⊆ F2
+q is a Kakeya set, then
+|K| ⩾ q2
+2 − q−2 ⩾ q2/2.
+Corollary 2.5 improves on the estimate |K| ⩾ q2/4 originally proved by Wolff [Wo99]
+and also again as the d = 2 case of the estimate |K| ⩾ 2−dqd for Kakeya sets in Fd
+q
+from [DKSS13]. It also improves upon (but is asymptotically equivalent to) the bound
+|K| ⩾ q(q − 1)/2 obtained by Dvir [Dv09]. The state-of-the-art was recently improved to
+(2.1) |K| ⩾ qd
+(2 − q−1)d−1 ⩾ 21−dqd
+for Kakeya sets in Fd
+q in [BC21] and this result served to establish the sharp density result
+for Kakeya sets in dimensions d ⩾ 3 for the first time; the d = 2 case having been settled
+
+[PDF physical page 6]
+Page 6 J. M. Fraser
+by Dvir. The fact that density 21−d cannot be beaten was proved by Dvir who constructed
+a Kakeya set K ⊆ Fd
+q with |K| ⩽ 21−dqd + O(qd−1), see [SS08]. In particular, Corollary
+2.5 provides a novel proof of the asymptotically sharp (density) result for Kakeya sets in
+F2
+q, although the bound we get is slightly weaker than (although asymptotically equivalent
+to) (2.1).
+3. Proofs
+3.1. Proof of Theorem 2.1. Let K ⊆ Fd
+q be a (d, k, Γ)-set. For each V ∈ Γ, fix a minimal
+basis {vV
+1 , . . . , vV
+k } ⊆ V . Also, write
+V ⊥ = {u ∈ Fd
+q : u · v = 0 for all v ∈ V }.
+By definition, for some {uV : V ∈ Γ} ⊆ Fd
+q the set
+K′ =
+[
+V ∈Γ
+[
+a1,...,ak∈Fq
+(
+uV +
+kX
+i=1
+aivV
+i
+)
+is contained in K. Define ϕ : Fd
+q → Z by
+ϕ(z) =
+
+(
+V ∈ Γ : z ∈ uV +
+kX
+i=1
+aivV
+i
+) ,
+that is, ϕ(z) is the number of incidences between the affine k-planes defining K′ and the
+point z. Clearly ϕ(z) = 0 if and only if z /∈ K′ and therefore setting
+µ(z) = ϕ(z)P
+u∈K′ ϕ(u)
+defines a probability measure µ on K (with support equal to K′ ⊆ K). Moreover,
+(3.1)
+X
+u∈K′
+ϕ(u) = |Γ| qk.
+Writing 1 for the indicator function on Fq, note that
+(3.2) b1(u) =
+
+0 u ̸= 0
+q u = 0.
+Also, note that for all non-zero ξ ∈ Fd
+q,
+(3.3) |{V ∈ Γ : ξ ∈ V ⊥}| ⩽ |{V ∈ G(d, k) : ξ ∈ V ⊥}| = |G(d − 1, k)|.
+Then
+|bµ(ξ)| = q−k|Γ|−1
+
+X
+z∈Fdq
+χ(−ξ · z)ϕ(z)
+
+(by (3.1))
+= q−k|Γ|−1
+
+X
+V ∈Γ
+X
+a1,...,ak∈Fq
+χ(−ξ · uV )χ
+
+−ξ ·
+ kX
+i=1
+aivV
+i
+!!
+(by definition of ϕ)
+⩽ q−k|Γ|−1X
+V ∈Γ
+
+X
+a1,...,ak∈Fq
+χ
+
+−
+kX
+i=1
+ξ · (aivV
+i )
+!
+
+[PDF physical page 7]
+Page 7 J. M. Fraser
+⩽ q−k|Γ|−1X
+V ∈Γ
+X
+a1,...,ak∈Fq
+kY
+i=1
+χ
+
+−ai(ξ · vV
+i )
+
+= q−k|Γ|−1X
+V ∈Γ
+kY
+i=1
+|b1(ξ · vV
+i )|
+= q−k|Γ|−1 · |{V ∈ Γ : ξ ∈ V ⊥}| · qk (by (3.2))
+⩽ |Γ|−1|G(d − 1, k)| (by (3.3))
+as required. Finally, it follows that |K| ⩾ |K′| ≳ min{qd, |Γ|2q−2k(d−k−1)} by applying
+(1.6).
+3.2. Proof of Proposition 2.3. Let c ∈ (1/2, 1) and let K0 ⊆ F2
+q be a Kakeya set with
+|K0| ⩽ cq2 for large enough q. Such Kakeya sets exist by [SS08]; recall also Corollary 2.5
+and [BC21]. Then K = K0 ⊕ Fd−2
+q is a Kakeya set in Fd
+q ≡ F2
+q ⊕ Fd−2
+q . Let µ be an arbitrary
+probability measure on K and let ν be the projection of µ into F2
+q defined by
+ν(x) =
+X
+y∈Fd−2
+q
+µ(x, y).
+Then ν is a probability measure supported on K0. Let ξ = ( ξ1, 0) where ξ1 ∈ F2
+q and
+0 ∈ Fd−2
+q . Then
+bµ(ξ) =
+X
+(x,y)∈F2q⊕Fd−2
+q ≡Fdq
+χ(−ξ1 · x)µ(x, y) =
+X
+x∈F2q
+χ(−ξ1 · x)ν(x) =bν(ξ1).
+Since |K0| ⩽ cq2 it follows from (1.5) that
+sup
+ξ1∈F2q\{0}
+|bν(ξ1)| ⩾
+√
+1 − c |K0|−1/2 ⩾
+r
+1 − c
+c q−1
+and therefore
+sup
+ξ∈Fdq \{0}
+|bµ(ξ)| ⩾
+r
+1 − c
+c q−1
+and the result follows since the constant can be made arbitrarily close to 1 by letting
+c ↘ 1/2.
+References
+[Be28] A. Besicovitch. On Kakeya’s problem and a similar one, Math. Z. , 27, (1928),
+312–320.
+[BC21] B. Bukh & T.-W. Chao. Sharp density bounds on the finite field Kakeya problem,
+Discrete Anal., 26, (2021), 9 pp.
+[Da71] R. Davies. Some remarks on the Kakeya problem, Math. Proc. Camb. Philos. Soc.,
+69, (1971), 417–421.
+[Dv09] Z. Dvir. On the size of Kakeya sets in finite fields. J. Amer. Math. Soc, 22, (2009),
+1093–1097.
+[DKSS13] Z. Dvir, S. Kopparty, S. Saraf & M. Sudan. Extensions to the method of multi-
+plicities, with applications to Kakeya sets and mergers. SIAM J. Comput. , 42, (2013),
+2305–2328.
+
+[PDF physical page 8]
+Page 8 J. M. Fraser
+[EOT10] J. S Ellenberg, R. Oberlin & T. Tao. The Kakeya set and maximal conjectures
+for algebraic varieties over finite fields, Mathematika, 56, (2010), 1–25.
+[Fa80] K. J. Falconer. Continuity properties of k-plane integrals and Besicovitch sets,
+Math. Proc. Cambridge Philos. Soc. , 87, (1980), 221–226.
+[Fr24+] J. M. Fraser. Fourier decay of product measures, preprint, available at:
+arXiv:2405.05878.
+[FHK22] J. M. Fraser, T. Harris & N. Kroon. On the Fourier dimension of ( d, k)-sets and
+Kakeya sets with restricted directions, Math. Z., 301, (2022), 2497–2508.
+[IR07] A. Iosevich & M. Rudnev. Erd˝ os distance problem in vector spaces over finite fields,
+Trans. Amer. Math. Soc., 359, (2007), 6127–6142.
+[KLSS11] S. Kopparty, V. F. Lev, S. Saraf & M. Sudan. Kakeya-type sets in finite vector
+spaces, J. Alg. Comb , 34, (2011), 337–355.
+[LN97] R. Lidl & H. Niederreiter. Finite fields. Second edition. Encyclopedia of Mathe-
+matics and its Applications, 20, Cambridge University Press, (1997).
+[Ma15] P. Mattila. Fourier Analysis and Hausdorff Dimension , Cambridge University
+Press, (2015).
+[Ob06] D. Oberlin. Restricted radon transforms and unions of hyperplanes, Revista Mat.
+Ibero., 22, (2006).
+[SS08] S. Saraf & M. Sudan. An improved lower bound on the size of Kakeya sets over
+finite fields, Anal. PDE, 1, (2008), 375–379.
+[WZ25+] H. Wang & J. Zahl. Volume estimates for unions of convex sets, and the Kakeya
+set conjecture in three dimensions, preprint, available at: arXiv:2502.17655.
+[Wo99] T. Wolff. Recent work connected with the Kakeya problem. Prospects in mathe-
+matics (Princeton, NJ, 1996) , 129–162, Amer. Math. Soc., Providence, RI, 1999.

@@ -140,3 +140,6 @@ R0092新增EOT0903.1879v2原25页、Dhar2110.14889v3原26页、2209.11443v1原29
 
 
 R0093新增Orponen2008.08843v3原40页与Lang作者2023版整流性讲义原35页，现74PDF/78sources/78IDs。原字节/hash/readscope见metadata/R0093_source_check.json。PBP量词与经典Cantor-Besicovitch模板先比对，非新论文/新结果认证；高级wholeproof具名。
+
+
+R0094新增Lutz1511.00442v4原30页、Polson–Zantedeschi2603.25611v1原25页、FHK2105.11414v2原13页、Fraser2505.09464v1原8页；78PDF/82sources/78IDs。实际读域/hash见metadata/R0094_source_check.json；旧谱2边界、算法条件输入/字面proof-step反攻与未认证wholeproof分开，不授新Hausdorffgain。

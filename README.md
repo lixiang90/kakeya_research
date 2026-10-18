@@ -1,8 +1,8 @@
 # 一般维度 Kakeya 研究
 
-目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度的证明、证伪或重大中间结果。已完成九十三轮归档研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
+目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度的证明、证伪或重大中间结果。已完成九十四轮归档研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
 
-R93核清经典Cantor参数在真实单位线段、联合正则和凸集包含计数下仍不能免费获得稳健投影。该构造零体积但Hausdorff满五维，不是挂谷维数反例；当前无新维数增益或重大结果。现74PDF/78sources/78IDs，Goal active。
+R94核清紧致Kakeya集的已知傅里叶维数2边界，并给出真实全方向、Hausdorff满维而傅里叶维数恰2的产品例；普遍Salem路线不能直接解高维问题。算法文献的原假设和一处字面网格证明步骤亦已审查。当前无新维数增益或重大结果。现78PDF/82sources/78IDs，Goal active。
 
 每次恢复研究，依次读 [GOAL.md](GOAL.md)、[STATE.md](STATE.md)、[ROADMAP.md](ROADMAP.md)、[最近轮次](research/rounds/)；执行 `python scripts/context.py` 可生成精简交接摘要。
 

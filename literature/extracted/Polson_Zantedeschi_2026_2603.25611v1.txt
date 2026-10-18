@@ -1,0 +1,880 @@
+[PDF physical page 1]
+Kakeya Conjecture and Conditional Kolmogorov
+Complexity
+Nicholas G. Polson ∗ Daniel Zantedeschi †
+Working paper, March 2026. Comments welcome.
+Abstract
+This paper develops an information-theoretic framework for algorithmic complexity
+under regular identifiable fibering. The central question is: when a decoder is given
+information about the fiber label in a fibered geometric set, how much can the residual
+description length be reduced, and when does this reduction fail to bring dimension
+below the ambient rate? We formulate a directional compression principle, proposing
+that sets admitting regular, identifiable fiber decompositions should remain informa-
+tionally incompressible at ambient dimension, unless the fiber structure is degenerate
+or adaptively chosen. The principle is phrased in the language of algorithmic dimension
+and the point-to-set principle of Lutz and Lutz, which translates pointwise Kolmogorov
+complexity into Hausdorff dimension. We prove an exact analytical result: under effec-
+tively bi-Lipschitz and identifiable fibering, the complexity of a point splits additively as
+the sum of fiber-label complexity and along-fiber residual complexity, up to logarithmic
+overhead, via the chain rule for Kolmogorov complexity. The Kakeya conjecture (assert-
+ing that sets containing a unit segment in every direction have Hausdorff dimensionn)
+motivates the framework. The conjecture was recently resolved inR 3 by Wang and
+Zahl [18]; it remains open in dimensionn≥4, precisely because adaptive fiber selection
+undermines the naive conditional split in the general case. We isolate this adaptive-
+fibering obstruction as the key difficulty and propose a formal research program con-
+necting geometric measure theory, algorithmic complexity, and information-theoretic
+compression.
+Keywords:Algorithmic dimension, conditional complexity, fiber decomposition, geometric
+side information, Kakeya conjecture, Kolmogorov complexity, point-to-set principle, source
+coding.
+∗Booth School of Business, University of Chicago. E-mail:ngp@chicagobooth.edu.
+†Muma College of Business, University of South Florida. E-mail:danielz@usf.edu.
+1
+arXiv:2603.25611v1  [cs.IT]  26 Mar 2026
+
+[PDF physical page 2]
+1 Introduction
+Information theory has long studied how side information at the decoder reduces encoding
+rate. In the classical Slepian–Wolf and Wyner–Ziv frameworks, a compressor exploits cor-
+relation between a source and the decoder’s side information to reduce transmission rate.
+This paper develops a geometric variant: suppose a point belongs to a structured geometric
+object organized by fibers (line segments, curves, or submanifolds) indexed by some label.
+If the decoder is given side information about the fiber label, how much can the residual
+description length be reduced?
+More formally, considerx∈R n decomposed asx=ψ(z, u), wherezis a fiber label and
+uis a coordinate along the fiber. The encoder transmits a finite-precision description of
+x; the decoder holds side information aboutz. The residual complexity is the Kolmogorov
+complexity ofugivenz. The compression principle asks: under what conditions does the
+total complexity split additively, and when does this additive split force the point to remain
+incompressible at the ambient informational dimension?
+1.1 Kakeya as the Canonical Configuration
+The Kakeya conjecture provides the archetypal instance. A Kakeya setE⊆R n contains a
+unit line segment in every direction onS n−1. The conjecture asserts dim H(E) =n, despite
+the possibility of measure-zero constructions. The difficulty is fundamental: a combinatorial
+richness condition (a segment in every direction) must force a metrical conclusion (full
+Hausdorff dimension).
+The algorithmic viewpoint makes the connection transparent. For a pointx=a(e) +te
+in a Kakeya set, the chain rule decomposes description length at precisionrinto three
+components:
+K(e↾r)≈(n−1)rdirections fillS n−1,
+K(t↾r|e↾r)≈ralong-segment position, not determined bye,
+K(a(e)↾r|e↾r) =O(logr) base point, under regularity.
+Combining:K(x↾r)≈(n−1)r+r=nr, so dim(x) =n, and the point-to-set principle [1]
+then yields dim H(E) =n.
+The key subtlety is the regularity of the base point mape7→a(e). When the map is
+Lipschitz (thesticky Kakeyacondition of Lutz and Stull [2]:|a(e)−a(e ′)|≲|e−e ′|), the third
+term satisfiesK(a(e)↾r|e↾r) =O(logr) and the argument holds. In the non-sticky case,
+K(a(e)↾r|e↾r) can be as large asO(r): the base point is then informationally independent
+of the direction, providing an adversarial oracle with an extra dimension to exploit. From the
+2
+
+[PDF physical page 3]
+present perspective, this identifies a central information-theoretic obstruction in dimensions
+n≥4 (see Remark 2).
+1.2 Algorithmic Dimension as the Unifying Language
+The precise language is provided by algorithmic dimension, defined as the limiting ratio of
+Kolmogorov complexity to precision. The point-to-set principle of Lutz and Lutz bridges
+pointwise algorithmic dimension to global Hausdorff dimension: for analytic sets, the Haus-
+dorff dimension equals the minimax value of oracle-relativized pointwise dimension. This
+framework encodes the side-information question: an oracle represents a decoder with access
+to geometric side information, and proving full dimension requires showing that no oracle
+can simultaneously compress all points of the set below the ambient rate. At the pointwise
+level, the ambient-dimension heuristic is an incompressibility claim, closely aligned with
+Martin-L¨ of-style algorithmic typicality under admissible side information.
+1.3 Kolmogorov Complexity and Conditional Complexity
+The central quantity throughout the paper isKolmogorov complexity. For a binary stringx,
+the Kolmogorov complexityK(x) is the length of the shortest program on a fixed universal
+prefix-free Turing machine that outputsx. Intuitively,K(x) is the minimum number of bits
+needed to describex.
+Theconditional Kolmogorov complexityK(x|y) is the length of the shortest program
+that outputsxwhen givenyas an auxiliary input. It measures how much information about
+xremains onceyis known, the algorithmic analogue of conditional entropyH(X|Y). The
+chain rulestates
+K(x, y) =K(y) +K(x|y) +O(logK(x, y)),
+mirroring the Shannon identityH(X, Y) =H(Y) +H(X|Y).
+In this paper,xis a point inR n described at finite precisionr,zis a fiber label, and
+K(x↾r|z↾r) measures the residual description length once the fiber label is known. The
+compression problem is to understand when and by how much this conditional complexity
+is reduced relative toK(x↾r).
+1.4 The Adaptive-Fibering Obstruction
+The compression principle presupposes a well-defined fiber assignment: each point has a
+unique label and along-fiber coordinate. In irregular Kakeya sets, however, a single point
+may lie on multiple line segments, so the decomposition is not unique. An adversarial oracle
+can exploit this multiplicity, selecting the fiber label achieving maximum compression. This
+3
+
+[PDF physical page 4]
+adaptive-fibering phenomenon identifies a central obstruction from the present information-
+theoretic perspective.
+1.5 Contributions and Organization
+The contributions are threefold. First, we formulate a conditional-compression principle
+for fibered geometric objects in information-theoretic language. Second, we prove an exact
+analytical result: under effectively bi-Lipschitz and identifiable fibering, the chain rule yields
+KA(x↾r) =K A(z↾r) +K A,z(u↾r) +O(logr), with two corollaries connecting pointwise
+dimension to Hausdorff dimension. Third, we identify the adaptive-fibering obstruction
+as the fundamental difficulty and propose a formal research program at the interface of
+geometric measure theory, algorithmic complexity, and source coding.
+Beyond the Kakeya conjecture itself, this framework addresses a recurring practical
+question in geometry-aware coding systems. Point-cloud compression uses directional priors;
+video coding exploits motion vectors; neural compression of high-dimensional data and
+retrieval-augmented generation rely on latent fiber labels. In all these settings the decoder
+holds partial geometric side information, and the key question is: how much does that label
+reduce residual description length? When labels arise from a rich but non-unique fibering,
+the naive Shannon or chain-rule bound overstates compression gains precisely because of
+the adaptive-fibering obstruction identified here. The Kakeya problem is therefore not
+merely a case study but the canonical stress test for this class of questions. The minimax
+formulationK r(E) and the Blackwell preorder on side-information schemes (Section 6)
+provide a language for principled rate allocation whenever fiber labels are ambiguous or
+degraded.
+The paper is organized as follows. Section 2 develops the abstract framework. Section 3
+presents the central proposition, proof, and corollaries. Section 4 applies the framework
+to Kakeya sets. Section 5 discusses the adaptive-fibering obstruction. Section 6 bridges
+the framework to source coding, metric entropy, and Blackwell comparisons. Section 7
+illustrates practical implications via worked examples. Section 8 outlines a research program
+of open problems. Section 9 positions the work relative to existing literature. Section 10
+concludes. Appendices provide notation, a technical sidebar, and finite-precision schematics.
+4
+
+[PDF physical page 5]
+2 Problem Setup: Compression with Geometric Side Infor-
+mation
+2.1 Abstract Fibered Sets
+LetX⊆R n be compact and (Z, d Z) a metric space for fiber labels. Afiberingis a family
+{Fz}z∈Z of nonempty compact subsets ofXsuch thatX= S
+z∈Z Fz. A pointx∈Xis
+decomposed asx=ψ(z, u), wherez∈Zis the fiber label anduis a coordinate onF z.
+We assume each fiber carries a metric structure so that the along-fiber coordinate can be
+described at finite precision.
+2.2 Finite-Precision Descriptions and Conditional Complexity
+Fix precisionr >0. We describe each quantity to within 2 −r in the Euclidean metric. Write
+z↾rfor a finite-precision encoding ofzat resolutionr, and similarly forx↾randu↾r.
+Theconditional complexityofxgiven the fiber labelzat precisionris
+K(x↾r|z↾r)≈K(u↾r|z↾r),
+reflecting that once the fiber is identified, the remaining information is the along-fiber
+coordinate. Heuristically, one expects a decomposition of the form
+K(x↾r)≈K(z↾r) +K(u↾r|z↾r) +K(a(z)↾r|z↾r) +O(logr),
+whereK(a(z)↾r|z↾r) is the overhead from specifying the fiber’s location. The exact
+conditions under which this decomposition holds as an equality up toO(logr) are the
+subject of Proposition 1.
+2.3 Identifiability and Ambiguity Gain
+A fibering isidentifiableatxif{z:x∈F z}is a singleton; it isidentifiableonXif
+identifiable at every point.
+Theambiguity gainatxis
+Γr(x) :=K(x↾r)−inf
+z:x∈F z
+K(x↾r|z↾r),
+measuring the advantage an adaptive compressor gains by pointwise fiber selection. In iden-
+tifiable fiberings with stable parametrization, Γ r(x) is sublinear inr. In irregular regimes,
+Γr(x) can be linear inr, indicating substantial adaptive compression.
+5
+
+[PDF physical page 6]
+3 Exact Results in Regular Fibering Regimes
+3.1 The Central Proposition
+Proposition 1(Effective additive decomposition).LetZ⊆R n−1 andU⊆Rbe compact
+sets, encoded at precisionrby standard prefix-free binary descriptions of dyadic approxima-
+tions. LetX⊆R n be compact, and letψ:Z×U→Xbe given byψ(z, u) =a(z) +u·ϕ(z),
+where:
+(i)Effectively bi-Lipschitz:there exist computable constantsL 1, L2 >0, each specifiable
+inO(logr)bits at precisionr, with
+L1∥(z1, u1)−(z 2, u2)∥ ≤ ∥ψ(z 1, u1)−ψ(z 2, u2)∥ ≤L 2∥(z1, u1)−(z 2, u2)∥
+for all(z 1, u1),(z 2, u2)∈Z×U;
+(ii)Identifiable:ψis injective onZ×U, so eachx∈Xhas a unique preimage(z(x), u(x));
+and
+(iii)Computable with effective modulus:ψis a computable function, meaning there is
+a Turing machine that on input(z↾r, u↾r, r)outputsψ(z, u)↾rin finitely many
+steps. Equivalently, the mapsa:Z→R n andϕ:Z→S n−1 are computable with a
+computable modulus of uniform continuity at each precisionr.
+Then for every oracleA⊆Nand everyx=ψ(z, u)∈X,
+KA(x↾r) =K A(z↾r) +K A,z(u↾r) +O(logr),
+whereK A denotes prefix-free Kolmogorov complexity relative to oracleA,K A,z denotes
+complexity with oracleAaugmented by the stringz↾r, and theO(logr)constant depends
+onL 1, L2 but not onx.
+Proof.Encoding model.Throughout,z↾rdenotes ther-bit dyadic approximation to
+z(the nearest point of (2 −rZ)n−1), and similarly foru↾r∈2 −rZandx↾r∈(2 −rZ)n.
+Kolmogorov complexity is prefix-free and defined relative to a fixed universal oracle machine
+U.
+Upper bound.Letp z be an optimalA-program forz↾r(so|p z|=K A(z↾r)) andp u
+an optimal (A, z↾r)-program foru↾r(so|p u|=K A,z(u↾r)). Define programP +:
+(a) Decode the self-delimiting pair⟨p z, pu⟩. The prefix-length encoding of|p z|uses 2⌈log 2(|pz|+
+1)⌉ ≤O(logr) bits, since|p z| ≤(n−1)r+O(1).
+(b) Runp z with oracleAto recoverz↾r; runp u with oracle (A, z↾r) to recoveru↾r.
+6
+
+[PDF physical page 7]
+(c) Evaluateψ(z↾r, u↾r). By the Lipschitz upper bound,∥ψ(z↾r, u↾r)−x∥ ≤L 2
+√n·2 −r,
+so rounding to precisionr+c +, wherec + =⌈log 2(L2
+√n)⌉=O(1), yields a string
+within 2−r ofx. Output this string asx↾r.
+The total program length is|p z|+|p u|+O(logr), giving
+KA(x↾r)≤K A(z↾r) +K A,z(u↾r) +O(logr).(1)
+Lower bound.We construct an explicit inversion procedureP − that computes (z↾
+r, u↾r) fromx↾rwithO(logr) description overhead.
+Setc − =⌈log 2(4L2
+√n/L1)⌉+ 1 (a fixed integer,O(1), determined byL 1, L2). RunP −
+at grid resolutions=r+c −:
+(a) Encode the parameterras an auxiliary input toP − at cost⌈log 2 r⌉=O(logr) bits.
+The constantsL 1, L2, c− are hardcoded inP −.
+(b) Enumerate the finite dyadic gridG s =
+
+Z∩2 −sZn−1
+×
+
+U∩2 −sZ
+
+in lexicographic
+order. Compactness ofZ×Ubounds|G s| ≤C 0 ·2 ns for a computable constantC 0.
+(c) For each (z ′′, u′′)∈ G s, computeψ(z ′′, u′′) and test whether∥ψ(z ′′, u′′)−x↾r∥ ≤2·2 −r.
+Halt at the first match and output (z ′′ ↾r, u′′ ↾r).
+Correctness.Let (z †, u†)∈ G s be the nearest grid point to (z, u). Then∥(z †, u†)−
+(z, u)∥ ≤ √n·2 −s, so by the Lipschitz upper bound and the triangle inequality,
+∥ψ(z †, u†)−x↾r∥ ≤L 2
+√n·2 −s + 2−r ≤
+
+L2
+√n·2 −c− + 1
+
+·2 −r ≤2·2 −r,
+where the last step usesc − ≥log 2(L2
+√n), so the search halts. For any matching point
+(z′′, u′′), the bi-Lipschitz lower bound gives
+∥(z′′, u′′)−(z, u)∥ ≤ ∥ψ(z ′′, u′′)−x↾r∥+∥x↾r−x∥
+L1
+≤ 3·2 −r
+L1
+.(2)
+Exact recovery.The bound (2) controls how far the grid match (z ′′, u′′) can be from
+the true (z, u), but the ratio 3/L 1 may exceed 1, so (z ′′ ↾r, u ′′ ↾r) need not equal (z↾
+r, u↾r) in general. We handle this as follows. Using floor truncation,w↾r:=⌊w i ·2 r⌋ ·
+2−r componentwise, the valuez↾rlies in theℓ ∞-ball of radius⌈3/L 1⌉ ·2 −r centered at
+z′′ ↾r. The number ofr-scale dyadic cells within this ball is at most (2⌈3/L 1⌉+ 1) n, a
+constantMdepending only onL 1 andn. The programP − therefore outputs (z ′′ ↾r, u′′ ↾r)
+together with a⌈log 2 M⌉-bitauxiliary pointerappended as hardwired advice, not derived
+from the first match itself. The pointer indexesz↾rwithin the list of at mostMcandidate
+cells; a companion subroutine checks each candidate against the originalx↾rviaψ(using
+hypothesis (iii)) and identifies the unique match. From this, (z↾r, u↾r) is recovered exactly.
+The pointer length isO(1) (depending only onL 1, n, both hardcoded), so it is absorbed
+7
+
+[PDF physical page 8]
+into theO(logr) budget.
+Overhead accounting.P − is a fixed program withL 1, L2, c−, Mhardcoded, and the only
+runtime input isr(at costO(logr) bits), so the inversion contributes
+KA(z↾r, u↾r)≤K A(x↾r) +O(logr).(3)
+By the chain rule for prefix-free complexity (withK A(z↾r)≤(n−1)r+O(1)),
+KA(z↾r) +K A,z(u↾r)≤K A(z↾r, u↾r) +O
+
+logK A(z↾r)
+
+≤K A(x↾r) +O(logr).(4)
+Combining (1) and (4) yieldsK A(x↾r) =K A(z↾r) +K A,z(u↾r) +O(logr), where the
+constant depends onL 1, L2, nbut not onxorr.
+3.2 Corollary: Additivity of Algorithmic Dimension
+Corollary 1.Under the hypotheses of Proposition 1, for any oracleAandx=ψ(z, u)∈X,
+dimA(x) = lim inf
+r→∞
+KA(z↾r) +K A,z(u↾r)
+r .
+(The proposition gives a pointwiseO(logr)comparison; existence of the limit is not asserted.
+If bothlim r→∞ KA(z↾r)/randlim r→∞ KA,z(u↾r)/rexist individually, the liminf is a limit
+and equalsd Z +d F .) In particular, ifzhas algorithmic dimensiond Z relative toAandu
+has dimensiond F relative toAandz, thendim A(x) =d Z +d F .
+Remark1 (Incompressibility and Martin-L¨ of randomness).The condition dim(x) =nis a
+liminfstatement: lim inf r→∞ K(x↾r)/r=n. This is distinct from—and weaker than—the
+conditionK(x↾r)≥nr−O(1) forallr, which is the Levin–Schnorr characterization of
+Martin-L¨ of randomness. Martin-L¨ of random points have full ambient algorithmic dimension
+(dim(x) =n), but the converse need not hold: a point with dim(x) =nneed not be Martin-
+L¨ of random.
+In our regular-fibering regime, Proposition 1 gives a lower boundK A(x↾r)≥(n−
+1)r+r−O(logr) =nr−O(logr) for suitable oracleA, which is theo(r)-error version
+consistent with the Martin-L¨ of benchmark. From this perspective, the chain-rule argument
+is an argument that points in a regular-fibered Kakeya set arealgorithmically typicalat
+the ambient rate: directional richness prevents the set from resembling a lower-dimensional
+subspace. The oracle in the point-to-set principle plays the role of an adversary attempting
+to makexappear compressible; the regular-fibering case shows this adversary fails. Whether
+the stronger Levin–Schnorr bound holds (i.e., whetherK(x↾r)≥nr−O(1) along a dense
+subsequence) is a separate question not addressed here.
+8
+
+[PDF physical page 9]
+3.3 Corollary: Application to Kakeya Sets
+Corollary 2(Kakeya regular-fibering case).LetE⊆R n be a Kakeya set with a regular
+identifiable fiberingψ:S n−1 ×[0,1]→Egiven byψ(e, t) =a(e) +te, where the full map
+(e, t)7→a(e) +tesatisfies the three hypotheses of Proposition 1 (effectively bi-Lipschitz,
+identifiable, and computable with effective modulus). Then for any oracleAand anyx∈E
+such thatehas dimensionn−1relative toAandthas dimension1relative toAande,
+dimA(x) =n.
+This aligns the regular-fibering regime with the point-to-set mechanism underlying full-
+dimensional lower bounds.
+4 Kakeya as the Canonical Direction-Rich Example
+4.1 Definition and History
+Definition 1.AKakeya setinR n is a compact setE⊆R n containing a unit line segment
+in every direction: for eache∈S n−1, there existsa(e)∈R n such that{a(e) +te:t∈
+[0,1]} ⊆E.
+Definition 2(Kakeya conjecture).Every Kakeya setE⊆R n satisfies dimH(E) =n.
+Besicovitch’s 1928 construction [16] yields Kakeya sets of Lebesgue measure zero in
+Rn for alln≥2, a remarkable geometric achievement showing that direction-rich sets
+need not be metrically thick. Beyond this construction, Besicovitch developed the the-
+ory of linearly measurable sets and projection results that directly anticipate Marstrand’s
+projection theorem—a foundational result in geometric measure theory establishing that
+the projections of sets of Hausdorff dimensions >1 onto almost every line have positive
+length. Yet the Kakeya conjecture asserts such sets cannot bedimensionallysmall. The
+conjecture is established in the plane (n= 2) by Davies (1971). Forn≥3 it has long
+resisted resolution, with lower bounds of dim H(E)≥(2n+ 2)/3 +ε n due to Wolff, Katz–
+Tao, and Hickman–Rogers–Zhang [17]. Dvir (2008) resolved the finite-field analogue via
+the polynomial method. Bourgain and Demeter’s decoupling theorem [15] provided a key
+harmonic-analytic tool exploited in subsequent dimension bounds.
+Remark2 (Resolution inR 3).Wang and Zahl [18] proved the Kakeya conjecture inR 3; a
+streamlined account appears in [19]. The information-theoretic obstruction perspective de-
+veloped here remains central forn≥4: in higher dimensions the adaptive-fibering obstruc-
+tion is unresolved, and the compression-theoretic diagnosis (no oracle can simultaneously
+9
+
+[PDF physical page 10]
+reduce complexity below the ambient rate for all points) provides a language for what any
+future proof must rule out.
+4.2 Geometric Representation and Informational Decomposition
+Forx=a(e) +tein a Kakeya set, the three geometric components contribute:
+1. Directione∈S n−1:K(e↾r)≈(n−1)rbits.
+2. Along-segment coordinatet∈[0,1]:K(t↾r|e↾r)≈rbits.
+3. Basepointa(e):K(a(e)↾r|e↾r) =O(logr) in the Lipschitz-regular case, orO(r)
+when irregular.
+Under regularity conditions, the total complexity becomes
+K(x↾r)≈(n−1)r+r+O(logr) =nr+O(logr),
+suggesting that points in a Kakeya set retain full ambient complexity.
+4.3 Application of the Central Proposition
+The Kakeya fiberingψ(e, t) =a(e)+tefits Proposition 1 whenever thefullparametrization
+(e, t)7→a(e) +tesatisfies all three hypotheses: (i) effectively bi-Lipschitz onS n−1 ×[0,1]
+jointly in (e, t), (ii) injective (identifiable), and (iii) computable with effective modulus.
+Regularity ofe7→a(e) alone is not sufficient; the needed condition is on the joint map
+ψ, and in particular the Lipschitz bound must hold globally across both the direction and
+the fiber coordinate. Under these conditions, Corollary 2 yields dim A(x) =nfor every
+oracleA. The passage to Hausdorff dimension then uses the point-to-set principle: for
+every oracleAthere exists a pointx∈E(specifically one whose directioneand along-
+fiber coordinatetare algorithmically random relative toA) achieving dim A(x) =n, so
+dimH(E) = minA supx∈E dimA(x) =n.
+Key observation.In Kakeya sets with irregular basepoint map or non-unique fiber
+assignment, these conditions fail. An adversarial oracle can exploit fiber-choice freedom
+to reduce effective description length below the ambient rate. This is the gap the Kakeya
+conjecture highlights.
+10
+
+[PDF physical page 11]
+a(e)
+x=a(e) +te
+t
+e
+K(e↾r)≈(n−1)r
+K(t↾r|e↾r)≈r
+K(a(e)↾r|e↾r) =O(logr)
+(regular regime)
+Figure 1: Decomposition of a point on a directional fiber. Directionecontributes (n−1)r
+bits, the along-fiber coordinate contributesrbits, and the basepoint overhead is logarithmic
+in the regular regime. Total complexity matches the ambient dimension.
+5 The Obstruction: Ambiguous Fibering and Decoder Ad-
+vantage
+5.1 Non-Uniqueness of Decompositions
+In an irregular Kakeya set, a point may lie on multiple segments. Ifx=a(e 1) +t 1e1 =
+a(e2) +t2e2 for distincte 1, e2, the complexity split is non-unique. The decomposition viae 1
+yields budgetK(e 1 ↾r) +K(t 1 ↾r|e 1 ↾r), the decomposition viae 2 yieldsK(e 2 ↾r) +K(t 2 ↾
+r|e 2 ↾r); these can differ substantially.
+A compressor minimizing description length will choose the smallest total. In the point-
+to-set framework, the oracle encodes the entire fiber structure and adaptively selects the
+best decomposition for each point at each scale. The compression principle requires thatno
+such adaptive choice reduces complexity below the ambient rate. Verifying this uniformly
+is the central difficulty.
+5.2 Adaptive Side Information and Oracle Advantage
+The point-to-set principle frames dimension as a game: an adversarial oracle chooses side
+information to minimize complexity. In a fibered geometry, the oracle’s most powerful
+strategy is to select, for eachxand precisionr, the fiber labelemaximizing compression
+gain. Specifically, the oracle can encode:
+1. the entire fiber structure (basepoints, directions, segment endpoints);
+2. an adaptive selection functionϕ r(x) returning the direction minimizingK A(x↾r|
+ϕr(x)↾r) at each scale; and
+3. full information about fiber-assignment uniqueness at each point.
+This adaptive freedom is the core obstruction. In the regular-fibering regime of Proposi-
+tion 1, the fiber assignment is essentially unique and the oracle’s advantage is neutralized.
+In the general case, proving the Kakeya conjecture would require showing that directional
+richness imposes a complexity lower bound no adaptive scheme can circumvent.
+11
+
+[PDF physical page 12]
+Example1 (Planar crossing: explicit Γ r calculation).Consider the simplest case inR 2: two
+line segments crossing at a single point. Lete 1 = (1,0) (horizontal) with fiberF e1 ={(t, c) :
+t∈[0,1]}at heightc, ande 2 = (0,1) (vertical) with fiberF e2 ={(c ′, s) :s∈[0,1]}at
+abscissac ′. Their intersection isx ∗ = (c′, c).
+For anyx= (x 1, x2) withK(x↾r)≈2r(both coordinates algorithmically independent
+and random at precisionr):
+•Horizontal fiber:labelz 1 =x 2, residualu 1 =x 1;K(x↾r|z 1 ↾r)≈K(x 1 ↾r|x 2 ↾r)≈
+r.
+•Vertical fiber:labelz 2 =x 1, residualu 2 =x 2;K(x↾r|z 2 ↾r)≈r.
+The adaptive oracle selects the more compressive label:
+Γr(x) =K(x↾r)−min
+
+K(x↾r|z 1 ↾r), K(x↾r|z 2 ↾r)
+
+≈2r−r=r.
+This linear gain Γ r(x) =r+O(logr) is sharp but not pathological: the chain rule forces
+K(x↾r|z↾r)≥K(x↾r)−K(z↾r)−O(logr)≈rfor any direction labelzwithK(z↾r)≤r,
+so no oracle can drive the residual belowr−O(logr) for a single algorithmically random
+point.
+The obstruction in the full Kakeya setting is thereforeglobal and oracle-uniform: the
+challenge (Problem 3 in Section 8) is to show that a single oracleAcannot simultaneously
+reduceK A(x↾r|z A(x)↾r) belowr−Ω(r) forallx∈Eat once, not merely for one isolated
+intersection.
+5.3 Disintegration of Complexity and the Borel–Kolmogorov Phenomenon
+The core structure of Proposition 1 is analgorithmic disintegration: the total description
+ofxsplits into the description of its fiber labelz=π(x) plus the residual description of
+xgiven the label. Algorithmically, this is the chain rule. The continuous analogue is the
+formula for algorithmic dimension under a projectionπ:
+dim(x) = dim(π(x)) + dim(x|π(x)),(5)
+where dim(x|π(x)) denotes the dimension ofxrelative to the oracleπ(x). Equation (5)
+mirrors the classical chain rule for Kolmogorov complexityK(x, y) =K(y) +K(x|y) +
+O(logK(x, y)) and the disintegration theorem in measure theory, which expresses a joint
+measure as a base measure on labels integrated against conditional measures on fibers. The
+algorithmic and measure-theoretic statements are not formally equivalent but share the
+same logical structure: a complex object is analyzed by first specifying a coarse label and
+then describing the residual.
+12
+
+[PDF physical page 13]
+The non-uniqueness of this decomposition has a sharp parallel in classical probabil-
+ity. TheBorel–Kolmogorov paradoxdemonstrates that conditioning on a measure-zero
+event can yield different conditional distributions depending on the sigma-algebra used to
+define the limiting procedure. The conditional distribution of a point on a great circle,
+for example, depends on whether one takes the limit through latitude strips, longitude
+strips, or some other family of sets. There is no canonical answer without specifying the
+disintegration.
+The algorithmic setting makes this identification precise.An adaptive fibering is a choice
+of sigma-algebra, which is a choice of oracle.More concretely: different projection maps
+π(i.e., different fiber-label functionsx7→z(x)) yield different disintegrations of dim(x)
+via equation (5), and none is canonical without additional regularity. The oracle in the
+point-to-set principle encodes exactly this choice. When one asks “what isK A(x↾r)?”, the
+oracleAimplicitly selects the conditioning structure: which fiber family, which basepoint
+map, which disintegration.
+The sticky Kakeya condition—|a(e)−a(e′)|≲|e−e ′|—eliminates the Borel–Kolmogorov
+freedom by making the fibering essentially unique. Under stickiness, all reasonable disinte-
+grations agree to withinO(logr), and the algorithmic chain rule is stable. This is precisely
+why the sticky case is tractable: stickiness converts a non-canonical conditioning problem
+into a canonical one.
+The full Kakeya conjecture is, in these terms, the statement that no choice of sigma-
+algebra—no choice of oracle—can reduce total description length below the ambient rate.
+Unlike the sticky case, the irregular case requires auniform bound across all possible fiberings
+and all possible oracles simultaneously. This uniformity requirement is why the conjecture
+resists the techniques that resolve the sticky case. A proof is likely to require new tools at the
+intersection of algorithmic information theory, harmonic analysis, and geometric measure
+theory—connecting oracle-relativized covering arguments with the decoupling inequalities
+(cf. [15]) that have driven recent harmonic-analytic progress.
+6 Information-Theoretic Interfaces
+6.1 Source Coding with Side Information
+The compression principle translates naturally into source coding. In Slepian–Wolf and
+Wyner–Ziv frameworks [7, 8], a sourceXis encoded at rateR=H(X|Z) when side
+informationZis available at the decoder. Cover [11] observed that side information is
+essentially Bayesian conditioning: providingZreduces entropy fromH(X) toH(X|Z).
+The present setting is the geometric and algorithmic analogue: the fiber labelzis the
+conditioning variable, andK(x↾r|z↾r) plays the role ofH(X|Z) for individual
+13
+
+[PDF physical page 14]
+Regular fibering
+x e(x)
+unique fiber label
+stable conditioning
+Adaptive fibering
+x
+e1
+e2
+e3
+oracle picks
+best split
+multiple fiber labels
+adaptive side information
+Figure 2: Regular vs. adaptive fibering. Left: each point lies on a unique fiber, yielding a
+stable conditional-complexity decomposition. Right: a point lies at the intersection of mul-
+tiple fibers; an oracle selects the most compressive representation pointwise. This adaptive
+freedom is the central obstruction.
+descriptions. The compression principle proposes that this conditional rate cannot drop
+below the intrinsic fiber dimension when the fiber structure is regular. This connection is
+further explored in the authors’ related work [12, 13].
+The parallel is instructive but not exact: source coding concerns i.i.d. sequences and
+Shannon entropy, while the present setting involves individual strings and Kolmogorov
+complexity.
+6.2 Metric Entropy and Covering Complexity
+A second interface connects to metric entropy in the sense of Kolmogorov–Tikhomirov. The
+ε-entropyH ε(E) measures the logarithm of the minimum number ofε-balls needed to cover
+E. For sets of Hausdorff dimensiond, one expectsH ε(E)≍dlog(1/ε).
+The compression principle is interpretable as a statement about conditional covering
+complexity. With fiber-label side information, the covering problem reduces to covering a
+single fiberF e, with residual entropyH ε(Fe)≍d F log(1/ε). The total covering complexity
+is approximately
+Hε(E)≈H ε(Z) + sup
+z∈Z
+Hε(Fz),
+which with (n−1)-dimensional directions and one-dimensional fibers yieldsH ε(E)≍
+nlog(1/ε), consistent with dim H(E) =n.
+6.3 Blackwell Comparisons, Garbling, and Stitched Fiberings
+A third perspective places admissible side-information schemes in a partial order analogous
+to the Blackwell ordering of statistical experiments [10]. Say thatZ 1 ismore informative
+14
+
+[PDF physical page 15]
+thanZ 2 for residual compression ofxif
+K(x↾r|Z 1 ↾r)≤K(x↾r|Z 2 ↾r) +o(r)
+uniformly overx∈Eand all oraclesA. This preorder captures which side-information
+schemes yield asymptotically smaller residual descriptions, and connects the present frame-
+work to classical comparison-of-experiments theory. We use “preorder” informally here; a
+rigorous definition would fix an admissible class of coding models and make the uniformity
+conditions explicit.
+Garbling.AgarblingofZis a computable mapG: Σ ∗ →Σ ∗ applied to the label stream:
+the decoder receivesG(Z↾r) in place ofZ↾r. Computable maps cannot increase the infor-
+mation content of their input, a fact that translates directly into a complexity inequality.
+Remark3 (Garbling weakly increases residual complexity).LetZbe a regular identifiable
+fiber-label scheme andGa computable garbling. In the regime of Proposition 1,
+KA(x↾r|G(Z)↾r)≥K A(x↾r|Z↾r)−O(logr),
+uniformly overx∈Eand all oraclesA. That is, garbling weakly increases residual complex-
+ity up to logarithmic terms, a data-processing inequality forK. Consequently,Zdominates
+G(Z) in the informativeness preorder wheneverGis notO(logr)-close to the identity on
+the relevant label strings.
+Stitched fiberings.Global fiber-label schemes are often assembled from local charts. A
+stitched fiberingconsists of a collection{ψ α}of local regular fiberings on overlapping open
+sets{U α}coveringE, with computable transition functions on overlapsU α ∩U β. Within
+each chart, Proposition 1 applies and the complexity split is clean. On overlaps, however,
+a pointx∈U α ∩U β may receive fiber labelsz α andz β that are not canonically identified,
+generating the ambiguity gain Γ r(x) =K(x↾r)−inf z∈Z(x) K(x↾r|z↾r)≥0. When
+the transition functions require more thanO(logr) bits to specify, the stitched scheme
+fails to dominate any single-chart scheme, and Blackwell comparisons between overlapping
+charts becomeincomparablerather than ordered. This incomparability is a signature of
+the adaptive-fibering obstruction: no canonical global labeling exists, and the compression
+gains predicted by the single-chart analysis cannot be realized uniformly.
+15
+
+[PDF physical page 16]
+Geometry
+Fibered setE
+family{F z}
+Encoder
+Pointx∈E
+precisionr
+Decoder
+/ Oracle
+Side infoz↾r
+adaptive fibering
+Outcome
+Residual
+complexity
+dimA(x)
+?
+≥n
+admissible fibers encoded description
+conditional
+compression
+point-to-set
+dimH(E) =n?
+Figure 3: Minimax framework for geometric compression. Geometry determines admissible
+fiber decompositions; an encoder selects a point at finite precision; an oracle-like decoder
+chooses favorable side information; the point-to-set principle converts surviving pointwise
+complexity into a Hausdorff dimension lower bound.
+6.4 Robust Conditional Compression and Minimax Formulation
+The compression question is fundamentally adversarial. Define therobust conditional com-
+plexity
+Kr(E) := min
+fiberingsF
+sup
+x∈E
+K(x↾r|z F(x)↾r).
+A complete definition requires fixing an admissible class of fiberings, for example computable
+regular fiberings or stitched computable atlases; the minimax value depends on this choice.
+The compression principle proposesK r(E)≥d F ·r−o(r) when the fiber family is sufficiently
+rich. This minimax formulation unifies different perspectives: the oracle-based argument
+lower-boundsK r(E) via the point-to-set principle, the source-coding argument interprets
+it as worst-case conditional rate, and the metric-entropy argument relates it to conditional
+covering numbers.
+7 Practical Implications
+Structured side information is ubiquitous in compression, signal processing, and machine
+learning: encoders exploit geometric embeddings, manifold coordinates, or learned latent
+factors, identifying a fiber structure and encoding a point by label plus residual. If the fiber
+family is genuinely rich and fibers retain independent variability, side information about
+the fiber label cannot reduce residual description length below the intrinsic fiber dimension.
+The distinction between genuine conditional-rate reduction and ambiguity-enabled artifacts
+16
+
+[PDF physical page 17]
+mirrors the distinction between regular and adaptive fibering.
+Garbled or coarsened fiber labels (arising, for example, from quantized latent codes,
+noisy cluster assignments, or lossy index compression) act as computable degradations of
+the true side-information scheme. By the data-processing inequality forK(Remark 3),
+such garbling can only increase residual complexity, never reduce it: a compressed or noisy
+side-information signal provides weakly less benefit than the original. Similarly, latent
+representations assembled by stitching local charts (as in atlas-based or mixture-of-experts
+generative models) may exhibit ambiguity at chart seams. The stitching obstruction of
+Section 6 predicts that overlap-induced multiplicity (and any transition functions requiring
+super-logarithmic specification) degrades the effective side information and forfeits the full
+compression gains available from a single globally identifiable fibering.
+Rate allocation in geometry-aware communication systems must answer: how many
+bits go to fiber index, how many to along-fiber coordinate, and when is side information
+genuinely useful? The framework, and in particular the Blackwell preorder of Section 6,
+provides a language for these questions.
+Example2 (Blockchain finality as structured side information).A transaction or local ledger
+statexin a distributed blockchain system is interpreted relative to structured contextual
+labels—chain identity, block depth, checkpoint status, or finality epoch, which serve as side
+informationz. In a stable finalized regime, these labels function like an identifiable fiber
+map: once the relevant chain history is fixed, the residual uncertainty about the event’s
+status is sharply reduced, andK(x↾r|z↾r)≪K(x↾r).
+Under forks, reorganization risk, or delayed finality, however, the same transaction may
+remain compatible with several admissible histories, so the labelzis no longer globally
+unique. The admissible label setZ(x) expands to cover competing chain branches, and any
+labeling scheme built by stitching locally coherent node views creates seam ambiguity at
+the overlap. A depth-only label is a garbling of richer finality information: by Remark 3,
+it can only increase residual complexity. In a forked regime the competing histories are
+Blackwell-incomparable (Section 6): no single label dominates the others in the informa-
+tiveness preorder, and apparent compression gains may reflect the choice of history label
+rather than genuine reduction in uncertainty.
+In the paper’s notation, the ledger event plays the role ofx, the history or finality
+label plays the role ofz, and fork ambiguity enlargesZ(x) from a singleton to a multi-
+element admissible set. The example illustrates a general lesson: side information reduces
+residual description length only when the underlying representation is stable and globally
+identifiable: the paper’s distinction between regular and adaptive fibering applies whenever
+context labels may fail to be globally unique.
+Example3 (Retrieval context as structured side information).In retrieval-augmented sys-
+17
+
+[PDF physical page 18]
+tems, an outputx(a generated answer, decision, or ranked result) is interpreted relative to
+auxiliary context such as retrieved passages, memory entries, or prompt scaffolds. These
+objects act as structured side informationz. A richer retrieval context is naturally more
+informative than a coarsened summary or truncated prompt, suggesting a Blackwell-style
+comparison among context-label schemes (Section 6); summaries or keyword extracts may
+be viewed as garblings of fuller contextual evidence.
+The complication is that practical systems assemble context from multiple partially
+overlapping sources (retrieved passages, local memories, system prompts, intermediate sum-
+maries) that must be stitched into a single conditioning structure. When those pieces do not
+define a unique global contextual representation, the same outputxmay remain compatible
+with several admissible context labels, enlargingZ(x). In such a regime, apparent reduc-
+tions in residual description length reflect adaptive context selection rather than genuine
+informational resolution. In the notation of the present paper, the output plays the role of
+x, the retrieved context plays the role ofz, and the admissible context family corresponds
+toZ(x).
+More generally, the value of contextual side information depends not only on how much
+content it carries but on whether the conditioning structure it defines is globally identifiable:
+the paper’s distinction between regular and adaptive fibering applies naturally to any system
+whose outputs depend on dynamically assembled context.
+8 A Formal Research Program
+We formulate six problems constituting a research program for the compression-theoretic
+study of directional geometries.
+Problem 1(Geometric conditional rate function). Define a rigorous geometric conditional
+rate function for fibered subsets ofR n, interpolating between pointwise algorithmic com-
+plexity and global metric entropy.
+Problem 2(Stability of the conditional split). Identify sufficient conditions on{F z}and
+ψunder whichK(x↾r) =K(z↾r) +K(u↾r|z↾r) +o(r) holds uniformly overx∈Eand
+all oraclesA.
+Problem 3(Oracle-uniform lower bounds). For a fibered setE, show that for every oracle
+A,
+sup
+x∈E
+dimA(x)≥d Z +d F ,
+without regularity assumptions on the fiber assignment. This is the core technical challenge
+underlying the full compression principle. Existing techniques (effective Hausdorff measure,
+energy methods, Frostman-type arguments) succeed when the fibering is identifiable because
+18
+
+[PDF physical page 19]
+identifiability lets one separate the fiber-label bits from the along-fiber bits via the chain
+rule uniformly. Without identifiability the chain rule decouples only pointwise, and no
+current method forces the oracle to “pay twice” for the fiber-label overhead across all points
+simultaneously. A promising approach is to track theeffectiveHausdorff content of the fiber-
+label family as a function of precision, translating covering-number lower bounds directly
+into oracle-relativized complexity bounds.
+Problem 4(Algorithmic dimension and metric entropy). Establish quantitative relation-
+ships between pointwise algorithmic dimension and global metric entropy for geometrically
+structured families.
+Problem 5(Minimax side-information game). Formalize the minimax game between en-
+coder selectingx∈Eand decoder selecting a fiber assignment. Characterize the game
+value for natural classes of fibered sets.
+Problem 6(Instantiation in specific geometries). Investigate whether specific geometric
+constructions instantiate the compression principle, including Kakeya configurations with
+controlled basepoint maps and extractor-type constructions in additive combinatorics.
+9 Positioning Relative to Existing Literature
+This paper sits at the intersection of three intellectual traditions.
+Kakeya theory and geometric measure theory.The Kakeya conjecture has been studied
+via harmonic analysis, combinatorial geometry, and additive combinatorics. Major contri-
+butions include dimension bounds of Wolff, Katz–Tao, and Hickman–Rogers–Zhang [17],
+and decoupling inequalities of Bourgain–Demeter [15]. Dvir’s finite-field resolution via the
+polynomial method is striking. Wang and Zahl [18] recently proved the conjecture inR 3,
+with a streamlined account in [19]. The present paper does not contribute new geometric
+bounds; it proposes an information-theoretic framework for the dimensional question in
+arbitrary dimension, where the conjecture remains open.
+Leonid Levin and the complexity-measure connection.The bridge between algorithmic
+randomness and complexity was substantially developed by Leonid Levin, a student of Kol-
+mogorov at Moscow State University and later at Boston University. Levin’s work on uni-
+versal search, resource-bounded complexity, and the connections between randomness tests
+and incompressibility helped establish the modern framework in which measure-theoretic
+and algorithmic notions of “typicality” coincide. Lutz’s constructive Hausdorff dimension
+and the point-to-set principle are direct descendants of this program: they translate the
+local complexity rate of a single point into global dimensional information about the set
+containing it.
+19
+
+[PDF physical page 20]
+Algorithmic dimension and the point-to-set principle.The framework of algorithmic
+dimension (Lutz, Mayordomo, and collaborators) and the point-to-set principle (J. Lutz,
+N. Lutz) provide our mathematical language. Geometric applications by Lutz and Stull
+demonstrate the power of this approach. What is classical is the framework; what is pro-
+posed is the isolation of adaptive-fibering as a general structural phenomenon.
+Information theory: entropy, coding, and extraction.Connections to source coding
+(Slepian–Wolf, Wyner–Ziv), metric entropy (Kolmogorov–Tikhomirov), and extractors are
+suggested but not formalized. Formalizing these connections is part of the research program.
+More broadly, the paper touches two distinct traditions beyond the geometric core:
+algorithmic randomness, where Martin-L¨ of typicality supplies a natural incompressibility
+benchmark, and the foundations of conditioning, where the Borel–Kolmogorov phenomenon
+serves as an interpretive reminder that lower-dimensional conditional structure depends on
+the chosen mode of disintegration.
+In summary, this is a brief analytical and conceptual paper. It takes an existing math-
+ematical framework, applies it to a classical geometric problem, and develops a general
+compression principle with interfaces to information theory.
+10 Conclusion
+The central idea is straightforward: geometric objects supporting a rich family of direc-
+tional fibers should be informationally incompressible. The Kakeya conjecture is the most
+prominent instance.
+We have formulated this as a conditional-compression principle in the language of algo-
+rithmic dimension. The decompositionK(x↾r)≈K(e↾r) +K(t↾r|e↾r) captures that
+total point complexity is approximately the sum of directional and along-fiber complexities.
+Under regularity conditions (Lipschitz basepoint maps, identifiable parametrizations), the
+decomposition is stable and clarifies the mechanism of known lower-bound arguments.
+The real difficulty is the adaptive-fibering obstruction: when the fiber assignment is
+irregular, a point admits multiple decompositions, and an adversarial decoder exploits am-
+biguity to reduce description length. We identify this as the information-theoretic core of
+the Kakeya problem.
+The contribution is a compression principle and research program, not a resolution of
+the Kakeya conjecture. We outline concrete problems at the interface of geometric measure
+theory, algorithmic information theory, and source coding. Viewed this way, the challenge
+is not merely to bound geometric dimension, but to understand which forms of structured
+side information truly reduce description length, and which do not.
+20
+
+[PDF physical page 21]
+A Notation and Terminology
+Table 1: Principal Notation
+Symbol Meaning
+Rn Euclideann-space
+Sn−1 Unit sphere inR n
+e∈S n−1 Direction (fiber label, Kakeya set-
+ting)
+a(e) Basepoint of segment in directione
+t∈[0,1] Along-fiber coordinate
+x=a(e) +tePoint on segment in directione
+z∈ZFiber label, abstract setting
+uAlong-fiber coordinate, abstract
+Fz Fiber indexed byz
+K(σ) Prefix-free Kolmogorov complexity
+K A(σ) Complexity relative to oracleA
+x↾rPrecision-rapproximation ofx
+dim(x) Algorithmic dimension:
+lim infr→∞ K(x↾r)/r
+dimA(x) Oracle-relativized algorithmic di-
+mension
+dimH(E) Hausdorff dimension ofE
+Hε(E) Kolmogorov–Tikhomirovε-entropy
+Kr(E) Robust conditional complexity at
+precisionr
+Γr(x) Ambiguity gain:K(x↾r)−inf z K(x↾
+r|z↾r)
+B Technical Sidebar: Heuristic Complexity Decomposition
+We present a heuristic calculation illustrating the expected complexity decomposition under
+favorable conditions. This is motivational, not a theorem.
+Setup.LetE⊆R n be a Kakeya set with basepoint mapa:S n−1 →R n. Fixx=a(e) +te
+at precisionr.
+Chain rule.By the chain rule for Kolmogorov complexity,
+K(x↾r) =K(e↾r) +K(a(e)↾r|e↾r) +K(t↾r|e↾r, a(e)↾r) +O(logr).
+Directional contribution.The directioneonS n−1 satisfiesK A(e↾r)≥(n−1)r−o(r)
+for algorithmically randome.
+21
+
+[PDF physical page 22]
+Basepoint overhead.Ifa(·) is Lipschitz with constantL, thenK(a(e)↾r|e↾r) =
+O(logr). Without Lipschitz regularity, this term can beO(r), the source of the adaptive-
+fibering difficulty.
+Along-fiber contribution.Fortalgorithmically random in [0,1] relative to (e, A):K A,e(t↾
+r)≥r−o(r).
+Heuristic conclusion.Under the Lipschitz assumption,
+KA(x↾r)≥(n−1)r+r−o(r) =nr−o(r),
+yielding dim A(x)≥n. The gap to a full theorem lies in controlling basepoint overhead
+uniformly without Lipschitz regularity.
+C Illustrative Finite-Precision Schematic
+To visualize the distinction between regular and adaptive fibering, we compare schematic
+code-length functions.
+Define toy code lengths for a point inR n at precisionr:
+Lreg(r) =nr+clog(1 +r),(6)
+Ladapt(r) =nr−γ(r),(7)
+wherec >0 captures basepoint overhead andγ(r)≥0 represents ambiguity-enabled com-
+pression gain. In the regular regime, code length tracksnrup to logarithmic correction.
+Under adaptive side information,γ(r) may reduce code length.
+The directional compression principle proposes that for geometries with genuine di-
+rectional richness and identifiable fiber structure, the adaptive gain satisfiesγ(r) =o(r).
+The full Kakeya conjecture is that this holds even without identifiability, explaining why it
+remains open.
+22
+
+[PDF physical page 23]
+5 10 15 20 25 30 35 40 45 500
+50
+100
+150
+Precisionr
+Schematic code length
+Ambient benchmarknr
+Regular:nr+clog(1+r)
+Adaptive (mild):nr− √r
+Adaptive (substantial):nr−0.2r
+Figure 4: Schematic code length under regular and adaptive fiberings (n= 3). In the
+regular regime, code length tracksnrup to logarithmic overhead. Under adaptive side in-
+formation, ambiguity-enabled compression gains reduce description length. The directional
+compression principle proposes that for direction-rich geometries with identifiable structure,
+gains must be sublinear.
+23
+
+[PDF physical page 24]
+References
+[1] J. H. Lutz and N. Lutz, “Algorithmic information, plane Kakeya sets, and conditional
+dimension,”ACM Trans. Comput. Theory, vol. 10, no. 2, pp. 7:1–7:22, 2018.
+[2] J. H. Lutz and D. M. Stull, “Bounding the dimension of points on a line,”Inform.
+Comput., vol. 275, p. 104601, 2020.
+[3] R. O. Davies, “Some remarks on the Kakeya problem,”Proc. Cambridge Philos. Soc.,
+vol. 69, pp. 417–421, 1971.
+[4] Z. Dvir, “On the size of Kakeya sets in finite fields,”J. Amer. Math. Soc., vol. 22,
+no. 4, pp. 1093–1097, 2009.
+[5] T. Wolff, “An improved bound for Kakeya type maximal functions,”Rev. Mat.
+Iberoam., vol. 11, no. 3, pp. 651–674, 1995.
+[6] N. H. Katz and T. Tao, “New bounds for Kakeya problems,”J. Anal. Math., vol. 87,
+pp. 231–263, 2002.
+[7] D. Slepian and J. K. Wolf, “Noiseless coding of correlated information sources,”IEEE
+Trans. Inf. Theory, vol. 19, no. 4, pp. 471–480, Jul. 1973.
+[8] A. D. Wyner and J. Ziv, “The rate-distortion function for source coding with side
+information at the decoder,”IEEE Trans. Inf. Theory, vol. 22, no. 1, pp. 1–10, Jan.
+1976.
+[9] J. H. Lutz, “The dimensions of individual strings and sequences,”Inform. Comput.,
+vol. 187, no. 1, pp. 49–79, 2003.
+[10] D. Blackwell, “Equivalent comparisons of experiments,”Ann. Math. Stat., vol. 24,
+no. 2, pp. 265–272, 1953.
+[11] T. M. Cover and J. A. Thomas,Elements of Information Theory, 2nd ed. Hoboken,
+NJ, USA: Wiley, 2006.
+[12] N. G. Polson and D. Zantedeschi, “De Finetti + Sanov = Bayes,” arXiv:2509.13283,
+Sep. 2025.
+[13] N. G. Polson and D. Zantedeschi, “Bayesian prediction under moment conditioning,”
+arXiv:2510.20742, Oct. 2025.
+[14] A. N. Kolmogorov and V. M. Tikhomirov, “ε-entropy andε-capacity of sets in function
+spaces,”Amer. Math. Soc. Transl., vol. 17, pp. 277–364, 1961.
+24
+
+[PDF physical page 25]
+[15] J. Bourgain and C. Demeter, “The proof of theℓ 2 decoupling conjecture,”Ann. of
+Math., vol. 182, no. 1, pp. 351–389, 2015.
+[16] A. S. Besicovitch, “On Kakeya’s problem and a similar one,”Math. Z., vol. 27, no. 1,
+pp. 312–320, 1928.
+[17] J. Hickman, K. M. Rogers, and R. Zhang, “Improved bounds for the Kakeya maximal
+conjecture in higher dimensions,”Amer. J. Math., vol. 144, no. 6, pp. 1511–1560, 2022.
+[18] H. Wang and J. Zahl, “Volume estimates for unions of convex sets, and the Kakeya set
+conjecture in three dimensions,” arXiv:2502.17655, Feb. 2025.
+[19] L. Guth, “Outline of the Wang–Zahl proof of the Kakeya conjecture inR 3,”
+arXiv:2508.05475, Aug. 2025.
+25

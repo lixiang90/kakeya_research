@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0093经典数字参数在真实unitclock/joint4AD/localBP/whole-tubeCW下pure4，免费PBP桥失败；并集零Leb但dimH5、条件rectifiable出口已付，非新界或重大结果。streak16，下一notes/00_map/R0093_next_full_goal_reselection.md；74PDF/78sources/78IDs，Goal active。
+更新2026-10-19，R0094 compact原wholeclock单μ谱exactR^-1与真full方向产品dimF2/dimHn、算法源真实输入/字面grid反攻已核，均非新Hausdorffgain或major。streak17，下一notes/00_map/R0094_next_full_goal_reselection.md；78PDF/82sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -204,3 +204,6 @@ R0092：共同格finitefield转移实际保原平均Lebesgue质量，EOT函数�
 
 
 R0093：Orponen主Th1.6需稳健PBP而非单固定BP。经典数字乘积给真实unitclock、fullangular、joint4AD/localBP/whole-tubeCW却pure4；BF零体积与energy/slicing满Hausdorff5分开。条件rectifiable参数正体积出口的actualQ/Jacobian已付，未从完整source取得前提。停止此BP→PBP免费桥的邻域/数字/密度续改，四完整路保持。
+
+
+R0094：Oberlin/FHK已知谱2由compactselector/原smoothclock/球面band实际证明，真full方向P×cube对任何支持μ以R2投影L2排s>2，却dimHn。普遍Salem入口停止，非Kakeya维数反例。Lutz高维候选index费仍在，PZ完整jointbiLip不授rough输入且literalcompactdyadicgrid步骤有精确identity反攻；不否其结论。停止谱/clock/算法directextension参数续轮，四完整路保持。

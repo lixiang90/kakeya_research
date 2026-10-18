@@ -1,0 +1,1549 @@
+[PDF physical page 1]
+arXiv:1511.00442v4  [cs.CC]  1 Dec 2016
+Algorithmic information, plane Kakeya sets, and
+conditional dimension
+Jack H. Lutz ∗
+Department of Computer Science, Iowa State University
+Ames, IA 50011, USA
+lutz@cs.iastate.edu
+Neil Lutz †
+Department of Computer Science, Rutgers University
+Piscataway, NJ 08854, USA
+njlutz@rutgers.edu
+December 2, 2016
+Abstract
+We formulate the conditional Kolmogorov complexity of x given y at
+precision r, where x and y are points in Euclidean spaces and r is a natural
+number. We demonstrate the utility of this notion in two ways .
+1. We prove a point-to-set principle that enables one to use the (rel-
+ativized, constructive) dimension of a single point in a set E in a
+Euclidean space to establish a lower bound on the (classical ) Haus-
+dorﬀ dimension of E. We then use this principle, together with
+conditional Kolmogorov complexity in Euclidean spaces, to give a
+new proof of the known, two-dimensional case of the Kakeya co njec-
+ture. This theorem of geometric measure theory, proved by Da vies
+in 1971, says that every plane set containing a unit line segm ent in
+every direction has Hausdorﬀ dimension 2.
+2. We use conditional Kolmogorov complexity in Euclidean sp aces to
+develop the lower and upper conditional dimensions dim(x|y) and
+Dim(x|y) of x given y, where x and y are points in Euclidean spaces.
+Intuitively these are the lower and upper asymptotic algori thmic
+information densities of x conditioned on the information in y. We
+prove that these conditional dimensions are robust and that they
+have the correct information-theoretic relationships wit h the well-
+studied dimensions dim( x) and Dim( x) and the mutual dimensions
+mdim(x : y) and Mdim( x : y).
+∗Research supported in part by National Science Foundation G rants 1247051 and 1545028.
+†This work was conducted at DIMACS and at Hebrew University. I t was partially enabled
+through support from the National Science Foundation under grants CCF-1445755 and CCF-
+1101690.
+
+[PDF physical page 2]
+1 Introduction
+This paper concerns the ﬁne-scale geometry of algorithmic informa tion in Eu-
+clidean spaces. It shows how new ideas in algorithmic information theo ry can
+shed new light on old problems in geometric measure theory. This intro duction
+explains these new ideas, a general principle for applying these ideas to classical
+problems, and an example of such an application. It also describes a n ewer
+concept in algorithmic information theory that arises naturally from this work.
+Roughly ﬁfteen years after the mid-twentieth century developme nt of the
+Shannon information theory of probability spaces [29], Kolmogorov recognized
+that Turing’s mathematical theory of computation could be used to reﬁne the
+Shannon theory to enable the amount of information in individual dat a ob-
+jects to be quantiﬁed [17]. The resulting theory of Kolmogorov complexity, or
+algorithmic information theory , is now a large enterprise with many applica-
+tions in computer science, mathematics, and other sciences [20]. K olmogorov
+proved the ﬁrst version of the fundamental relationship between the Shannon
+and algorithmic theories of information in [17], and this relationship was made
+exquisitely precise by Levin’s coding theorem [18, 19]. (Solomonoﬀ and Chaitin
+independently developed Kolmogorov complexity at around the same time as
+Kolmogorov with somewhat diﬀerent motivations [30, 6, 7].)
+At the turn of the present century, the ﬁrst author recognized that Haus-
+dorﬀ’s 1919 theory of fractal dimension [16] is an older theory of inf ormation
+that can also be reﬁned using Turing’s mathematical theory of comp utation,
+thereby enabling the density of information in individual inﬁnite data objects,
+such as inﬁnite binary sequences or points in Euclidean spaces, to be quanti-
+ﬁed [21, 22]. The resulting theory of eﬀective fractal dimensions is now an active
+enterprise with a growing array of applications [11]. The paper [22] pr oved a
+relationship between eﬀective fractal dimensions and Kolmogorov c omplexity
+that is as precise as — and uses — Levin’s coding theorem.
+Most of the work on eﬀective fractal dimensions to date has conce rned the
+(constructive) dimension dim(x) and the dual strong (constructive) dimension
+Dim(x) [1] of an inﬁnite data object x, which for purposes of the present paper
+is a point in a Euclidean space Rn for some positive integer n.1 The inequalities
+0 ≤ dim(x) ≤ Dim(x) ≤ n
+hold generally, with, for example, Dim( x) = 0 for points x that are computable
+and dim( x) = n for points that are algorithmically random in the sense of
+Martin-L¨ of [Mart66].
+How can the dimensions of individual points—dimensions that are deﬁn ed
+using the theory of computing—have any bearing on classical proble ms of geo-
+metric measure theory? The problems that we have in mind here are p roblems
+1These constructive dimensions are Σ 0
+1 eﬀectivizations of Hausdorﬀ and packing dimen-
+sions [13]. Other eﬀectivizations, e.g., computable dimen sions, polynomial time dimensions,
+and ﬁnite-state dimensions, have been investigated, but on ly the constructive dimensions are
+discussed here.
+1
+
+[PDF physical page 3]
+in which one seeks to establish lower bounds on the classical Hausdor ﬀ dimen-
+sions dim H (E) (or other fractal dimensions) of sets E in Euclidean spaces. Such
+problems involve global properties of sets and make no mention of alg orithms.
+The key to bridging this gap is relativization. Speciﬁcally, we prove her e a
+point-to-set principle saying that, in order to prove a lower bound dim H (E) ≥ α ,
+it suﬃces to show that, for every A ⊆ N and every ε > 0, there is a point x ∈ E
+such that dim A(x) ≥ α − ε, where dim A(x) is the dimension of x relative to the
+oracle A. We also prove the analogous point-to-set principle for the classica l
+packing dimension dim P (E) and the relativized strong dimension Dim A(x).
+We illustrate the power of the point-to-set principle by using it to give a
+new proof of a known theorem in geometric measure theory. A Kake ya set in a
+Euclidean space Rn is a set K ⊆ Rn that contains a unit line segment in every
+direction. Besicovitch [2, 3] proved that Kakeya sets can have Leb esgue measure
+0 and asked whether Kakeya sets in the Euclidean plane can have dime nsion less
+than 2 [9]. The famous Kakeya conjecture asserts a negative answ er to this and
+to the analogous question in higher dimensions, i.e., states that ever y Kakeya
+set in a Euclidean space Rn has Hausdorﬀ dimension n.2 This conjecture holds
+trivially for n = 1 and was proven by Davies [9] for n = 2. A version of the
+conjecture in ﬁnite ﬁelds has been proven by Dvir [12]. For Euclidean spaces
+of dimension n ≥ 3, it is an important open problem with deep connections to
+other problems in analysis [35, 32].
+In this paper we use our point-to-set principle to give a new proof of Davies’s
+theorem. This proof does not resemble the classical proof, which is not diﬃcult
+but relies on Marstrand’s projection theorem [26] and point-line dua lity. Instead
+of analyzing the set K globally, our proof focuses on the information content
+of a single, judiciously chosen point in K. Given a Kakeya set K ⊆ R2 and an
+oracle A ⊆ N, we ﬁrst choose a particular line segment L ⊆ K and a particular
+point ( x, mx + b) ∈ L, where y = mx + b is the equation of the line containing
+L.3 We then show that dim A(x, mx + b) ≥ 2. By our point-to-set principle this
+implies that dim H (K) ≥ 2.
+Our proof that dim A(x, mx + b) ≥ 2 requires us to formulate a concept of
+conditional Kolmogorov complexity in Euclidean spaces. Speciﬁcally, f or points
+x ∈ Rm and y ∈ Rn and natural numbers r, we develop the conditional Kol-
+mogorov complexity Kr(x|y) of x given y at precision r. This is a “conditional
+version” of the Kolmogorov complexity Kr(x) of x at precision r that has been
+used in several recent papers (e.g., [24, 4, 15]).
+In addition to enabling our new proof of Davies’s theorem, conditiona l Kol-
+mogorov complexity in Euclidean spaces enables us to ﬁll a gap in eﬀect ive
+dimension theory. The fundamental quantities in Shannon informat ion theory
+are the entropy (information content) H(X) of a probability space X, the con-
+2Statements of the Kakeya conjecture vary in the literature. For example, the set is
+sometimes required to be compact or Borel, and the dimension used may be Minkowski instead
+of Hausdorﬀ. Since the Hausdorﬀ dimension of a set is never gr eater than its Minkowski
+dimension, our formulation is at least as strong as those var iations.
+3One might na ¨ ıvely expect that for independently random m and x, the point ( x, mx + b)
+must be random. In fact, in every direction there is a line tha t contains no random point [23].
+2
+
+[PDF physical page 4]
+ditional entropy H(X|Y ) of a probability space X given a probability space Y ,
+and the mutual information (shared information) I(X; Y ) between two proba-
+bility spaces X and Y [8]. The analogous quantities in Kolmogorov complexity
+theory are the Kolmogorov complexity K(u) of a ﬁnite data object u, the con-
+ditional Kolmogorov complexity K(u|v) of a ﬁnite data object u given a ﬁnite
+data object v, and the algorithmic mutual information I(u : v) between two
+ﬁnite data objects u and v [20]. The above-described dimensions dim( x) and
+Dim(x) of a point x in Euclidean space (or an inﬁnite sequence x over a ﬁnite
+alphabet) are analogous by limit theorems [27, 1] to K(u) and hence to H(X).
+Case and the ﬁrst author have recently developed and investigate d the mutual
+dimension mdim(x : y) and the dual strong mutual dimension Mdim(x : y),
+which are densities of the algorithmic information shared by points x and y
+in Euclidean spaces [4] or sequences x and y over a ﬁnite alphabet [5]. These
+mutual dimensions are analogous to I(u : v) and I(X; Y ).
+What is conspicuously missing from the above account is a notion of co ndi-
+tional dimension. In this paper we remedy this by using conditional Ko lmogorov
+complexity in Euclidean space to develop the conditional dimension dim(x|y)
+of x given y and its dual, the conditional strong dimension Dim(x|y) of x given
+y, where x and y are points in Euclidean spaces. We prove that these condi-
+tional dimensions are well behaved and that they have the correct information
+theoretic relationships with the previously deﬁned dimensions and mu tual di-
+mensions. The original plan of our proof of Davies’s theorem used co nditional
+dimensions, and we developed their basic theory to that end. Our ﬁn al proof of
+Davies’s theorem does not use them, but conditional dimensions (like the con-
+ditional entropy and conditional Kolmogorov complexity that motiva te them)
+are very likely to be useful in future investigations.
+The rest of this paper is organized as follows. Section 2 brieﬂy review s
+the dimensions of points in Euclidean spaces. Section 3 presents the point-to-
+set principles that enable us to use dimensions of individual points to p rove
+lower bounds on classical fractal dimensions. Section 4 develops co nditional
+Kolmogorov complexity in Euclidean spaces. Section 5 uses the prece ding two
+sections to give our new proof of Davies’s theorem. Section 6 uses S ection 4 to
+develop conditional dimensions in Euclidean spaces. Most proofs are deferred
+to the optional technical appendix.
+2 Dimensions of Points in Euclidean Spaces
+This section reviews the constructive notions of dimension and mutu al dimen-
+sion in Euclidean spaces. The presentation here is in terms of Kolmogo rov
+complexity. Brieﬂy, the conditional Kolmogorov complexity K(w|v) of a string
+w ∈ { 0, 1}∗ given a string v ∈ { 0, 1}∗ is the minimum length |π |of a binary string
+π for which U (π, v ) = w, where U is a ﬁxed universal self-delimiting Turing ma-
+chine. The Kolmogorov complexity of w is K(w|λ), where λ is the empty string.
+We write U (π ) for U (π, λ ). When U (π ) = w, the string π is called a program for
+w. The quantity K(w) is also called the algorithmic information content of w.
+3
+
+[PDF physical page 5]
+Routine coding extends this deﬁnition from {0, 1}∗ to other discrete domains, so
+that the Kolmogorov complexities of natural numbers, rational nu mbers, tuples
+of these, etc., are well deﬁned up to additive constants. Detailed d iscussions
+of self-delimiting Turing machines and Kolmogorov complexity appear in the
+books [20, 28, 11] and many papers.
+The deﬁnition of K(q) for rational points q in Euclidean space is lifted in
+two steps to deﬁne the dimensions of arbitrary points in Euclidean sp ace. First,
+for x ∈ Rn and r ∈ N, the Kolmogorov complexity of x at precision r is
+Kr(x) = min {K(q) : q ∈ Qn ∩ B2− r (x)} , (2.1)
+where B2− r (x) is the open ball with radius 2 − r and center x. Second, for x ∈ Rn,
+the dimension and strong dimension of x are
+dim(x) = lim inf
+r→∞
+Kr(x)
+r and Dim( x) = lim sup
+r→∞
+Kr(x)
+r , (2.2)
+respectively.4
+Intuitively, dim(x) and Dim( x) are the lower and upper asymptotic densi-
+ties of the algorithmic information in x. These quantities were ﬁrst deﬁned in
+Cantor spaces using betting strategies called gales and shown to be construc-
+tive versions of classical Hausdorﬀ and packing dimension, respect ively [22, 1].
+These deﬁnitions were explicitly extended to Euclidean spaces in [24], w here
+the identities (2.2) were proven as a theorem . Here it is convenient to use these
+identities as deﬁnitions. For x ∈ Rn, it is easy to see that
+0 ≤ dim(x) ≤ Dim(x) ≤ n ,
+and it is known that, for any two reals 0 ≤ α ≤ β ≤ n, there exist uncountably
+many points x ∈ Rn satisfying dim(x) = α and Dim(x) = β [1]. Applications of
+these dimensions in Euclidean spaces appear in [24, 14, 25, 10, 15].
+3 From Points to Sets
+The central message of this paper is a useful point-to-set principle by which the
+existence of a single high-dimensional point in a set E ⊆ Rn implies that the
+set E has high dimension.
+To formulate this principle we use relativization. All the algorithmic info r-
+mation concepts in Sections 2 and 6 above can be relativized to an arb itrary
+oracle A ⊆ N by giving the Turing machine in their deﬁnitions oracle access
+to A. Relativized Kolmogorov complexity K A
+r (x) and relativized dimensions
+4W e note that Kr(x) = K(x ↾ r) +o(r), where x ↾ r is the binary expansion of x, truncated
+r bits to the right of the binary point. However, it has been kno wn since Turing’s famous
+correction [33] that binary notation is not a suitable repre sentation for the arguments and
+values of computable functions on the reals. (See also [34]. ) Hence, in order to make our
+deﬁnitions useful for further work in computable analysis, we formulate complexities and
+dimensions in terms of rational approximations, both here a nd later.
+4
+
+[PDF physical page 6]
+dimA(x) and Dim A(x) are thus well deﬁned. Moreover, the results of Section 2
+hold relative to any oracle A.
+We ﬁrst establish the point-to-set principle for Hausdorﬀ dimension . Let
+E ⊆ Rn. For δ > 0, deﬁne Uδ(E) to be the collection of all countable covers of E
+by sets of positive diameter at most δ. That is, for every cover {Ui}i∈ N ∈ U δ(E),
+we have E ⊆ ⋃
+i∈ N Ui and |Ui| ∈ (0, δ ] for all i ∈ N, where for X ∈ Rn,
+|X|= sup p,q∈ X |p − q|. For s ≥ 0, deﬁne
+H s
+δ (E) = inf
+{ ∑
+i∈ N
+|Ui|s : {Ui}i∈ N ∈ U δ(E)
+}
+.
+Then the s-dimensional Hausdorﬀ outer measure of E is
+H s(E) = lim
+δ→ 0+
+H s
+δ (E) ,
+and the Hausdorﬀ dimension of E is
+dimH (E) = inf {s > 0 : H s(E) = 0 } .
+More details may be found in standard texts, e.g., [31, 13].
+Theorem 1. (Point-to-set principle for Hausdorﬀ dimension) For every set
+E ⊆ Rn,
+dimH (E) = min
+A⊆ N
+sup
+x∈ E
+dimA(x) .
+Three things should be noted about this principle. First, while the left -hand
+side is the classical Hausdorﬀ dimension, which is a global property of E that
+does not involve the theory of computing, the right-hand side is a po intwise
+property of the set that makes essential use of relativized algorit hmic informa-
+tion theory. Second, as the proof shows, the right-hand side is a m inimum, not
+merely an inﬁmum. Third, and most crucially, this principle implies that, in
+order to prove a lower bound dim H (E) ≥ α , it suﬃces to show that, for every
+A ⊆ N and every ε > 0, there is a point x ∈ E such that dim A(x) ≥ α − ε.5
+For the (≥ ) direction of this principle, we construct the minimizing oracle A.
+The oracle encodes, for a carefully chosen sequence of increasing ly reﬁned covers
+for E, the approximate locations and diameters of all cover elements. Us ing
+this oracle, a point x ∈ Rn can be approximated by specifying an appropriately
+small cover element that it belongs to, which requires an amount of in formation
+that depends on the number of similarly-sized cover elements. We us e the
+deﬁnition of Hausdorﬀ dimension to bound that number. The ( ≤ ) direction
+can be shown using results from [24], but in the interest of self-cont ainment we
+prove it directly.
+Proof of Theorem 1. Let E ⊆ Rn, and let d = dim H (E). For every s > d we
+have H s(E) = 0, so there is a sequence {{U t,s
+i }i∈ N}t∈ N of countable covers of
+5The ε here is useful in general but is not needed in some cases, incl uding our proof of
+Theorem 5 below.
+5
+
+[PDF physical page 7]
+E such that
+⏐
+⏐U t,s
+i
+⏐
+⏐ ≤ 2− t for every i, t ∈ N, and for every suﬃciently large t we
+have ∑
+i∈ N
+⏐
+⏐U t,s
+i
+⏐
+⏐s
+< 1 . (3.1)
+Let D = N3 × (Q ∩ (d, ∞ )). Our oracle A encodes functions fA : D → Qn
+and gA : D → Q such that for every ( i, t, r, s ) ∈ D, we have
+fA(i, t, r, s ) ∈ B2− r− 1 (u)
+for some u ∈ U t,s
+i and
+⏐
+⏐
+⏐gA(i, t, r, s ) −
+⏐
+⏐U t,s
+i
+⏐
+⏐
+⏐
+⏐
+⏐ < 2− r− 4 . (3.2)
+We will show, for every x ∈ E and rational s > d , that dim A(x) ≤ s.
+Fix x ∈ E and s ∈ Q ∩ (d, ∞ ). If for any i0, t 0 ∈ N we have x ∈ U t0,s
+i0
+and
+⏐
+⏐U t0,s
+i0
+⏐
+⏐ = 0, then U t0,s
+i0 = {x}, so fA(i0, t 0, r, s ) ∈ B2− r (x) for every r ∈ N.
+In this case, let M be a preﬁx Turing machine with oracle access to A such
+that, whenever U (ι) = i ∈ N, U (τ) = t ∈ N, U (ρ) = r ∈ N, and U (σ ) = q ∈
+Q ∩ (d, ∞ ),
+M (ιτ ρσ) = fA(i, t, r, q ) .
+Now for any r ∈ N, let ι, τ, ρ, and σ be witnesses to K(i0), K(t0), K(r), and
+K(s), respectively. Since i0, t0, and s are all constant in r and |ρ| = o(r), we
+have |ιτ ρσ|= o(r). Thus K A
+r (x) = o(r), and dim A(x) = 0. Hence assume that
+every cover element containing x has positive diameter.
+Fix suﬃciently large t, and let U t,s
+ix be some cover element containing x.
+Let M ′ be a self-delimiting Turing machine with oracle access to A such that
+whenever U (κ) = k ∈ N, U (τ) = ℓ ∈ N, U (ρ) = r ∈ N, and U (σ ) = q ∈
+Q ∩ (d, ∞ ),
+M ′(κτ ρσ) = fA(p, ℓ, r, q ) ,
+where p is the kth index i such that gA(i, t, r, q ) ≥ 2− r− 3.
+Now ﬁx r ≥ t − 1 such that
+⏐
+⏐U t,s
+ix
+⏐
+⏐ ∈
+[
+2− r− 2, 2− r− 1)
+.
+Notice that gA(ix, t, r, s ) ≥ 2− r− 3. Hence there is some k such that, letting κ,
+τ, ρ, and σ be witnesses to K(k), K(t), K(r), and K(s), respectively,
+M ′(κτ ρσ) ∈ B2− r− 1 (u) ,
+for some u ∈ U t,s
+ix . Because
+⏐
+⏐U t,s
+ix
+⏐
+⏐ < 2− r− 1 and x ∈ U t,s
+ix , we have
+M ′(κτ ρσ) ∈ B2− r (x) .
+Thus
+K A
+r (x) ≤ K(k) + K(t) + K(s) + K(r) + c ,
+6
+
+[PDF physical page 8]
+where c is a machine constant for M ′. Since s is constant in r and t < r ,
+Observation A.2 tells us that this expression is K(k) + o(r) ≤ log(k) + o(r).
+By (3.1), there are fewer than 2 (r+4)s indices i ∈ N such that
+⏐
+⏐U t,s
+i
+⏐
+⏐ ≥ 2− r− 4 ,
+hence by (3.2) there are fewer than 2 (r+4)s indices i ∈ N such that gA(i, t, r, s ) ≥
+2− r− 3, so log( k) < (r + 4)s. Therefore K A
+r (x) ≤ rs + o(r).
+There are inﬁnitely many such r, which can be seen by replacing t above
+with r + 2. We have shown
+dimA(x) = lim inf
+r→∞
+K A
+r (x)
+r ≤ s ,
+for every rational s > d , hence dim A(x) ≤ d. It follows that
+min
+A⊆ N
+sup
+x∈ E
+dimA(x) ≤ d .
+For the other direction, assume for contradiction that there is so me oracle
+A and d′ < d such that
+sup
+x∈ E
+dimA(x) = d′.
+Then for every x ∈ E, dim A(x) ≤ d′. Let s ∈ (d′, d ). For every r ∈ N, deﬁne
+the sets
+Br =
+{
+B2− r (q) : q ∈ Q and K A(q) ≤ rs
+}
+and
+Wr =
+∞⋃
+k=r
+Bk .
+There are at most 2 ks+1 balls in each Bk, so for every r ∈ N and s′ ∈ (s, d ),
+∑
+W ∈W r
+|W |s′
+=
+∞∑
+k=r
+∑
+W ∈B k
+|W |s′
+≤
+∞∑
+k=r
+2ks+1(21− k)s′
+= 2 1+s′
+·
+∞∑
+k=r
+2(s− s′)k ,
+which approaches 0 as r → ∞ . As every Wr is a cover for E, we have H s′
+(E) =
+0, so dim H (E) ≤ s′ < d, a contradiction.
+The packing dimension dimP (E) of a set E ⊆ Rn, deﬁned in the ap-
+pendix and standard texts, e.g., [13], is a dual of Hausdorﬀ dimension satisfying
+dimP (E) ≥ dimH (E), with equality for very “regular” sets E. We also have the
+following.
+7
+
+[PDF physical page 9]
+Theorem 2. (Point-to-set principle for packing dimension) For every set E ⊆
+Rn,
+dimP (E) = min
+A⊆ N
+sup
+x∈ E
+DimA(x) .
+4 Conditional Kolmogorov Complexity in Eu-
+clidean Spaces
+We now develop the conditional Kolmogorov complexity in Euclidean spa ces.
+For x ∈ Rm, q ∈ Qn, and r ∈ N, the conditional Kolmogorov complexity of
+x at precision r given q is
+ˆKr(x|q) = min {K(p|q) : p ∈ Qm ∩ B2− r (x)} . (4.1)
+For x ∈ Rm, y ∈ Rn, and r, s ∈ N, the conditional Kolmogorov complexity of x
+at precision r given y at precision s is
+Kr,s(x|y) = max
+{ ˆKr(x|q) : q ∈ Qn ∩ B2− s (y)
+}
+. (4.2)
+Intuitively, the maximizing argument q is the point near y that is least helpful
+in the task of approximating x. Note that Kr,s(x|y) is ﬁnite, because ˆKr(x|q) ≤
+Kr(x) + O(1). For x ∈ Rm, y ∈ Rn, and r ∈ N, the conditional Kolmogorov
+complexity of x given y at precision r is
+Kr(x|y) = Kr,r(x|y) . (4.3)
+Theorem 3. (Chain rule for Kr) For all x ∈ Rm and y ∈ Rn,
+Kr(x, y ) = Kr(x|y) + Kr(y) + o(r) .
+We also consider the Kolmogorov complexity of x ∈ Rm at precision r relative
+to y ∈ Rn. Let K y
+r (x) denote K Ay
+r (x), where Ay ⊆ N encodes the binary
+expansions of y’s coordinates. The following lemma reﬂects the intuition that
+oracle access to y is at least as useful as any bounded-precision estimate for y.
+Lemma 4. For each m, n ∈ N there is a constant c ∈ N such that, for all
+x ∈ Rm, y ∈ Rn, and r, s ∈ N,
+K y
+r (x) ≤ Kr,s(x|y) + K(s) + c .
+In particular, K y
+r (x) ≤ Kr(x|y) + K(r) + c.
+5 Kakeya Sets in the Plane
+This section uses the results of the preceding two sections to give a new proof
+of the following classical theorem. Recall that a Kakeya set in Rn is a set
+containing a unit line segment in every direction.
+8
+
+[PDF physical page 10]
+Theorem 5. (Davies [9]) Every Kakeya set in R2 has Hausdorﬀ dimension 2.
+Our new proof of Theorem 5 uses a relativized version of the following lemma.
+Lemma 6. Let m ∈ [0, 1] and b ∈ R. Then for almost every x ∈ [0, 1],
+lim inf
+r→∞
+Kr(m, b, x ) − Kr(b|m)
+r ≤ dim(x, mx + b) . (5.1)
+Proof. We build a program that takes as input a precision level r, an approxima-
+tion p of x, an approximation q of mx + b, a program π that will approximate b
+given an approximation for m, and a natural number h. In parallel, the program
+considers each multiple of 2 − r in [0,1] as a possible approximate value u for the
+slope m, and it checks whether each such u is consistent with the program’s
+inputs. If u is close to m, then π (u) will be close to b, so up + π (u) will be close
+to mx + b. Any u that satisﬁes this condition is considered a “candidate” for
+approximating m.
+Some of these candidates may be “false positives,” in that there can be values
+of u that are far from m but for which up + π (u) is still close to mx + b. Thus
+the program is also given an input h so that it can choose the correct candidate;
+it selects the hth candidate that arises in its execution. We will show that this
+h is often not large enough to signiﬁcantly aﬀect the total input lengt h.
+Formally, let M be a Turing machine that runs the following algorithm on
+input ρπση whenever U (ρ) = r ∈ N, U (η) = h ∈ N, and U (σ ) = ( p, q ) ∈ Q2:
+candidate := 0
+for i = 0, 1, . . . , 2r, in parallel:
+ui := 2 − ri
+vi := U (π, u i)
+do atomically:
+if vi ∈ R and |uip+vi− q|< 22− r, then candidate := candidate+1
+if candidate = h, then return ( ui, v i, p ) and halt
+Fix m ∈ [0, 1] and b ∈ R. For each r ∈ N, let mr = 2 − r⌊m ·2r⌋, and ﬁx πr
+testifying to the value of ˆKr(b|mr) and σr testifying to the value of Kr(x, mx +b).
+Proofs of the following four claims appear in the appendix. Intuitively ,
+Claim 1 says that no point in B2− r (m) gives much less information about b
+than mr does. Claim 2 states that there is always some value of h that causes
+this machine to return the desired output. Claim 3 says that for almo st every x,
+this value does not grow too quickly with r, and Claim 4 says that (5.1) holds
+for every such x.
+Claim 1. For every r ∈ N, Kr(b|m) = ˆKr(b|mr) + o(r).
+Claim 2. For each x ∈ [0, 1] and r ∈ N, there exists an h ∈ N such that
+M (ρπ rσrη) ∈ B21− r (m, b, x ) ,
+where U (ρ) = r and U (η) = h.
+9
+
+[PDF physical page 11]
+For every x ∈ [0, 1] and r ∈ N, deﬁne h(x, r ) to be the minimal h satisfying
+the conditions of Claim 2.
+Claim 3. For almost every x ∈ [0, 1], log( h(x, r )) = o(r).
+Claim 4. For every x ∈ [0, 1], if log( h(x, r )) = o(r), then
+lim inf
+r→∞
+Kr(m, b, x ) − Kr(b|m)
+r ≤ dim(x, mx + b) .
+The lemma follows immediately from Claims 3 and 4.
+Proof of Theorem 5. Let K be a Kakeya set in R2. By Theorem 1, there exists
+an oracle A such that dim H (K) = sup p∈ K dimA(p).
+Let m ∈ [0, 1] such that dim A(m) = 1; such an m exists by Theorem 4.5
+of [22]. K contains a unit line segment L of slope m. Let ( x0, y 0) be the left
+endpoint of such a segment. Let q ∈ Q ∩ [x0, x 0 + 1/ 8], and let L′ be the unit
+segment of slope m whose left endpoint is ( x0 − q, y 0). Let b = y1 + qm, the
+y-intercept of L′.
+By a relativized version of Lemma 6, there is some x ∈ [0, 1/ 2] such that
+dimA,m,b(x) = 1 and
+lim inf
+r→∞
+K A
+r (m, b, x ) − K A
+r (b|m)
+r ≤ dimA(x, mx + b) .
+(This holds because almost every x ∈ [0, 1/ 2] is algorithmically random relative
+to (A, m, b ) and hence satisﬁes dim A,m,b(x) = 1.) Fix such an x, and notice that
+(x, mx + b) ∈ L′. Now applying a relativized version of Theorem 3,
+dimA(x, mx + b) ≥ lim inf
+r→∞
+K A
+r (m, b, x ) − K A
+r (b|m)
+r
+= lim inf
+r→∞
+K A
+r (m, b, x ) − K A
+r (b, m ) + K A
+r (m)
+r
+= lim inf
+r→∞
+K A
+r (x|b, m ) + K A
+r (m)
+r
+≥ lim inf
+r→∞
+K A
+r (x|b, m )
+r + lim inf
+r→∞
+K A
+r (m)
+r .
+By Lemma 4, K A
+r (x|b, m ) ≥ K A,b,m
+r (x) + o(r), so we have
+dimA(x, mx + b) ≥ lim inf
+r→∞
+K A,b,m
+r (x)
+r + lim inf
+r→∞
+K A
+r (m)
+r
+= dim A,b,m(x) + dimA(m) ,
+which is 2 by our choices of m and x.
+By Observation A.4,
+dimA(x, mx + b) = dim A(x + q, mx + b) .
+Hence, there exists a point ( x+q, mx +b) ∈ K such that dim A(x+q, mx +b) ≥ 2.
+By Theorem 1, the point-to-set principle for Hausdorﬀ dimension, t his completes
+the proof.
+10
+
+[PDF physical page 12]
+It is natural to ask what prevents us from extending this proof to higher-
+dimensional Euclidean spaces. The point of failure in a direct extensio n would
+be Claim 3 in the proof of Lemma 6. Speaking informally, the problem is th at
+the total number of candidates may grow as 2 (n− 1)r, meaning that log( h(x, r ))
+could be Ω(( n − 2)r) for every x.
+6 Conditional Dimensions in Euclidean Spaces
+The results of Section 4, which were used in the proof of Theorem 5, also enable
+us to give robust formulations of conditional dimensions.
+For x ∈ Rm and y ∈ Rn, the lower and upper conditional dimensions of x
+given y are
+dim(x|y) = lim inf
+r→∞
+Kr(x|y)
+r and Dim( x|y) = lim sup
+r→∞
+Kr(x|y)
+r , (6.1)
+respectively.
+The use of the same precision bound r for both x and y in (4.3) makes the
+deﬁnitions (6.1) appear arbitrary and “brittle.” The following theore m shows
+that this is not the case.
+Theorem 7. Let s : N → N. If |s(r) − r| = o(r), then, for all x ∈ Rm and
+y ∈ Rn,
+dim(x|y) = lim inf
+r→∞
+Kr,s(r)(x|y)
+r ,
+and
+Dim(x|y) = lim sup
+r→∞
+Kr,s(r)(x|y)
+r .
+The rest of this section is devoted to showing that our conditional d imen-
+sions have the correct information theoretic relationships with the previously
+developed dimensions and mutual dimensions.
+Mutual dimensions were developed very recently, and Kolmogorov c omplex-
+ity was the starting point. The mutual (algorithmic) information between two
+strings u, v ∈ { 0, 1}∗ is
+I(u : v) = K(v) − K(v|u) .
+Again, routine coding extends K(u|v) and I(u : v) to other discrete domains.
+Discussions of K(u|v), I(u : v), and the correspondence of K(u), K(u|v), and
+I(u : v) with Shannon entropy, Shannon conditional entropy, and Shann on
+mutual information appear in [20].
+In parallel with (2.1) and (2.2), Case and J. H. Lutz [4] lifted the deﬁn ition of
+I(p : q) for rational points p and q in Euclidean spaces in two steps to deﬁne the
+mutual dimensions between two arbitrary points in (possibly distinct ) Euclidean
+spaces. First, for x ∈ Rm, y ∈ Rn, and r ∈ N, the mutual information between
+x and y at precision r is
+Ir(x : y) = min {I(p : q) : p ∈ B2− r (x) ∩ Qm and q ∈ B2− r (y) ∩ Qn} , (6.2)
+11
+
+[PDF physical page 13]
+where B2− r (x) and B2− r (y) are the open balls of radius 2 − r about x and y in
+their respective Euclidean spaces. Second, for x ∈ Rm and y ∈ Rn, the lower
+and upper mutual dimensions between x and y are
+mdim(x : y) = lim inf
+r→∞
+Ir(x : y)
+r and Mdim( x : y) = lim sup
+r→∞
+Ir(x : y)
+r , (6.3)
+respectively. Useful properties of these mutual dimensions, esp ecially including
+data processing inequalities, appear in [4].
+Lemma 8. For all x ∈ Rm and y ∈ Rn,
+Ir(x : y) = Kr(x) − Kr(x|y) + o(r) .
+The following bounds on mutual dimension follow from Lemma 8.
+Theorem 9. For all x ∈ Rm and y ∈ Rn, the following hold.
+1. mdim(x : y) ≥ dim(x) − Dim(x|y).
+2. Mdim(x : y) ≤ Dim(x) − dim(x|y).
+Our ﬁnal theorem is easily derived from Theorem 3.
+Theorem 10. (Chain rule for dimension) For all x ∈ Rm and y ∈ Rn,
+dim(x) + dim(y|x) ≤ dim(x, y )
+≤ dim(x) + Dim(y|x)
+≤ Dim(x, y )
+≤ Dim(x) + Dim(y|x) .
+7 Conclusion
+This paper shows a new way in which theoretical computer science ca n be used
+to answer questions that may appear unrelated to computation. W e are hopeful
+that our new proof of Davies’s theorem will open the way for using co nstructive
+fractal dimensions to make new progress in geometric measure the ory, and that
+conditional dimensions will be a useful component of the information theoretic
+apparatus for studying dimension.
+Acknowledgments
+We thank Eric Allender for useful corrections and three anonymou s reviewers
+of an earlier version of this work for helpful input regarding presen tation.
+12
+
+[PDF physical page 14]
+References
+[1] Krishna B. Athreya, John M. Hitchcock, Jack H. Lutz, and Elvira Mayor-
+domo. Eﬀective strong dimension in algorithmic information and compu -
+tational complexity. SIAM J. Comput. , 37(3):671–705, 2007.
+[2] A. S. Besicovitch. Sur deux questions d’int´ egrabilit´ e des fonctions. Journal
+de la Soci´ et´ e de physique et de mathematique de l’Universi te de Perm ,
+2:105–123, 1919.
+[3] A. S. Besicovitch. On Kakeya’s problem and a similar one. Mathematische
+Zeitschrift, 27:312–320, 1928.
+[4] Adam Case and Jack H. Lutz. Mutual dimension. ACM Transactions on
+Computation Theory, 7(3):12, 2015.
+[5] Adam Case and Jack H. Lutz. Mutual dimension and random seque nces.
+In Giuseppe F. Italiano, Giovanni Pighizzini, and Donald Sannella, edito rs,
+Mathematical Foundations of Computer Science 2015 - 40th In ternational
+Symposium, MFCS 2015, Milan, Italy, August 24-28, 2015, Pro ceedings,
+Part II , volume 9235 of Lecture Notes in Computer Science , pages 199–
+210. Springer, 2015.
+[6] Gregory J. Chaitin. On the length of programs for computing ﬁnit e binary
+sequences. J. ACM , 13(4):547–569, 1966.
+[7] Gregory J. Chaitin. On the length of programs for computing ﬁnit e binary
+sequences: statistical considerations. J. ACM , 16(1):145–159, 1969.
+[8] Thomas R. Cover and Joy A. Thomas. Elements of Information Theory .
+Wiley, second edition, 2006.
+[9] Roy O. Davies. Some remarks on the Kakeya problem. Proc. Cambridge
+Phil. Soc. , 69:417–421, 1971.
+[10] Randall Dougherty, Jack H. Lutz, R. Daniel Mauldin, and Jason Teutsch.
+Translating the Cantor set by a random real. Transactions of the American
+Mathematical Society, 366:3027–3041, 2014.
+[11] Rod Downey and Denis Hirschfeldt. Algorithmic Randomness and Com-
+plexity. Springer-Verlag, 2010.
+[12] Zeev Dvir. On the size of Kakeya sets in ﬁnite ﬁelds. J. Amer. Math. Soc. ,
+22:1093–1097, 2009.
+[13] Kenneth Falconer. Fractal Geometry: Mathematical Foundations and Ap-
+plications. Wiley, third edition, 2014.
+[14] Xiaoyang Gu, Jack H. Lutz, and Elvira Mayordomo. Points on com putable
+curves. In FOCS, pages 469–474. IEEE Computer Society, 2006.
+13
+
+[PDF physical page 15]
+[15] Xiaoyang Gu, Jack H. Lutz, Elvira Mayordomo, and Philippe Moser . Di-
+mension spectra of random subfractals of self-similar fractals. Ann. Pure
+Appl. Logic, 165(11):1707–1726, 2014.
+[16] Felix Hausdorﬀ. Dimension und ¨ ausseres Mass. Mathematische Annalen ,
+79:157–179, 1919.
+[17] Andrei N. Kolmogorov. Three approaches to the quantitative deﬁnition of
+information. Problems of Information Transmission , 1(1):1–7, 1965.
+[18] Leonid A. Levin. On the notion of a random sequence. Soviet Math Dokl. ,
+14(5):1413–1416, 1973.
+[19] Leonid A. Levin. Laws of information conservation (nongrowth ) and as-
+pects of the foundation of probability theory. Problemy Peredachi Infor-
+matsii, 10(3):30–35, 1974.
+[20] Ming Li and Paul M.B. Vit´ anyi.An Introduction to Kolmogorov Complexity
+and Its Applications . Springer, third edition, 2008.
+[21] Jack H. Lutz. Dimension in complexity classes. SIAM J. Comput. ,
+32(5):1236–1259, 2003.
+[22] Jack H. Lutz. The dimensions of individual strings and sequence s. Inf.
+Comput., 187(1):49–79, 2003.
+[23] Jack H. Lutz and Neil Lutz. Lines missing every random point. Com-
+putability, 4(2):85–102, 2015.
+[24] Jack H. Lutz and Elvira Mayordomo. Dimensions of points in self-s imilar
+fractals. SIAM J. Comput. , 38(3):1080–1112, 2008.
+[25] Jack H. Lutz and Klaus Weihrauch. Connectivity properties of d imension
+level sets. Mathematical Logic Quarterly , 54:483–491, 2008.
+[26] John M. Marstrand. Some fundamental geometrical propert ies of plane sets
+of fractional dimensions. Proceedings of the London Mathematical Society ,
+4(3):257–302, 1954.
+[27] Elvira Mayordomo. A Kolmogorov complexity characterization of construc-
+tive Hausdorﬀ dimension. Inf. Process. Lett. , 84(1):1–3, 2002.
+[28] Andre Nies. Computability and Randomness . Oxford University Press, Inc.,
+New York, NY, USA, 2009.
+[29] Claude E. Shannon. A mathematical theory of communication. Bell System
+Technical Journal, 27(3–4):379–423, 623–656, 1948.
+[30] Ray J. Solomonoﬀ. A formal theory of inductive inference. Information
+and Control , 7(1-2):1–22, 224–254, 1964.
+14
+
+[PDF physical page 16]
+[31] Elias M. Stein and Rami Shakarchi. Real Analysis: Measure Theory, In-
+tegration, and Hilbert Spaces . Princeton Lectures in Analysis. Princeton
+University Press, 2005.
+[32] Terence Tao. From rotating needles to stability of waves: emer ging con-
+nections between combinatorics, analysis, and PDE. Notices Amer. Math.
+Soc, 48:294–303, 2000.
+[33] Alan M. Turing. On computable numbers, with an application to the
+Entscheidungsproblem. A correction. Proceedings of the London Mathe-
+matical Society, 43(2):544–546, 1937.
+[34] Klaus Weihrauch. Computable Analysis: An Introduction . Springer, 2000.
+[35] T. Wolﬀ. Recent work connected with the Kakeya problem. Prospects in
+Mathematics, pages 129–162, 1999.
+15
+
+[PDF physical page 17]
+A Appendix
+A.1 Packing dimension
+Let E ⊆ Rn. For δ > 0, deﬁne Vδ(E) to be the collection of all countable
+packings of E by disjoint open balls of diameter at most δ. That is, for every
+packing {Vi}i∈ N ∈ V δ(E) and every i ∈ N, we have Vi = Bεi (xi) ⊆ E for some
+xi ∈ E and εi ∈ [0, δ/ 2].
+For s ≥ 0, deﬁne
+P s
+δ (E) = sup
+{ ∑
+i∈ N
+|Vi|s : {Vi}i∈ N ∈ V δ(E)
+}
+,
+and let
+P s
+0 (E) = lim
+δ→ 0+
+P s
+δ (E) .
+Then the s-dimensional packing measure of E is
+P s(E) = inf
+{ ∑
+i∈ N
+P s
+0 (Ei) : E ⊆
+⋃
+i∈ N
+Ei
+}
+,
+and the packing dimension of E is
+dimP (E) = inf {s : P s(E) = 0 } .
+Theorem 2. (Point-to-set principle for packing dimension) For every set E ⊆
+Rn,
+dimP (E) = min
+A⊆ N
+sup
+x∈ E
+DimA(x) .
+Proof. Let E ⊆ Rn, and let d = dim P (E). For every s > d we have P s(E) = 0,
+so there is a cover
+{
+Es
+j
+}
+j∈ N for E such that
+∑
+j∈ N
+lim
+δ→ 0+
+P s
+δ (Es
+j ) < 1 . (A.1)
+For every r, j ∈ N, let {
+V r,s,j
+i
+}
+i∈ N ∈ V 2− r− 2 (Es
+j )
+be a maximal packing of Es
+j by open balls of radius exactly 2 − r− 2 (and higher-
+indexed balls of radius 0).
+Let D = N3 × (Q ∩ (d, ∞ )). Our oracle A encodes a function fA : D → Qn
+such that for every ( i, j, r, s ) ∈ D we have
+fA(i, j, r, s ) ∈ V r,s,j
+i .
+We will show, for every x ∈ E and rational s > d , that Dim A(x) ≤ s.
+A1
+
+[PDF physical page 18]
+Let M be a self-delimiting Turing machine with oracle access to A such
+that, whenever U (ι) = i ∈ N, U (κ) = j ∈ N, U (ρ) = r ∈ N, and U (σ ) = q ∈
+Q ∩ (d, ∞ ),
+M (ικρσ) = fA(i, j, r, s ) .
+Fix x ∈ E and s ∈ Q ∩ (0, ∞ ), and let k ∈ N be such that x ∈ Es
+k. Notice
+that by our choice of packing, for every r ∈ N there must be some ir ∈ N such
+that
+V r,s,k
+ir ⊆ B2− r (x) .
+Thus, for every r ∈ N, letting ι, κ, ρ, σ testify to K(ir), K(k), K(r), and K(s),
+respectively,
+M (ικρσ) = fA(ir, k, r, s )
+∈ V r,s,k
+ir
+⊆ B2− r (x) ,
+hence K A
+r (x) ≤ K(ir) + K(k) + K(r) + K(s) + c, where c is a machine constant
+for M . Because k and s are constant in r, K(r) = o(r), and K(ir) ≤ log ir+o(r),
+we have
+K A
+r (x) ≤ log ir + o(r) .
+By (A.1), lim δ→ 0+ P s
+δ (Es
+k) < 1, so there is some R ∈ N such that, for every
+r > R , P s
+2− r (Es
+k) < 1. Then for every r > R ,
+∑
+i∈ N
+⏐
+⏐V r,s,k
+i
+⏐
+⏐s
+< 1 ,
+hence there are fewer than 2 (r+2)s balls of radius 2 − r− 2 in the packing, and
+log ir < (r + 2)s. We conclude that K A
+r (x) ≤ rs + o(r) for every r > R , so
+dimA(x) = lim sup
+r→∞
+K A
+r (x)
+r ≤ s .
+Since this holds for every rational s > d , we have shown Dim A(x) ≤ d and thus
+min
+A⊆ N
+sup
+x∈ E
+DimA(x) ≤ d .
+For the other direction, assume for contradiction that there is so me oracle
+A and d′ < d such that
+sup
+x∈ E
+DimA(x) = d′ .
+Then for every x ∈ E, Dim A(x) ≤ d′. Let s ∈ (d′, d ). For every k ∈ N, deﬁne
+the set
+Ck =
+⋃ {
+B2− k (q) : q ∈ Q and K A(q) ≤ ks
+}
+,
+and for every i ∈ N, deﬁne
+Ei =
+∞⋂
+k=i
+Ck .
+A2
+
+[PDF physical page 19]
+For r ≥ i, consider any packing in V2− r (Ei). Let Bε(x) be an element of
+the packing, and let k = ⌈− log ε⌉. Then k ≥ r + 1 > i , so Bε(x) ⊆ Ei ⊆ Ck.
+In particular x ∈ Ck, meaning that there is some q ∈ Q such that K A(q) ≤ ks
+and x ∈ B2− k (q). As 2 − k ≤ ε, we also have q ∈ Bε(x). Thus, every packing
+element of radius at least 2 − k contains a (distinct) member of the set {q ∈ Q :
+K A(q) ≤ ks}. It follows that for every k ≥ r + 1, the packing includes at most
+2ks+1 elements with diameters in the range [2 1− k, 22− k).
+Now let s′ ∈ (s, d ). For every i ∈ N and r ≥ i, we have
+P s′
+2− r (Ei) = sup
+{ ∑
+j∈ N
+|Vj|s′
+: {Vj}j∈ N ∈ V 2− r (Ei)
+}
+≤
+∞∑
+k=r+1
+2ks+1(22− k)s′
+= 2 1+2s′
+·
+∞∑
+k=r+1
+2(s− s′)k .
+This approaches 0 as r → ∞ , so P s′
+0 (Ei) = 0. Observe now that
+E ⊆
+⋃
+i∈ N
+Ei .
+Thus,
+P s′
+(E) ≤
+∑
+i∈ N
+P s′
+0 (Ei) = 0 ,
+meaning that dim P (E) ≤ s′ < d , a contradiction. We conclude that for every
+oracle A,
+sup
+x∈ E
+DimA(x) ≥ d .
+A.2 Chain rule for Kr
+Theorem 3. For all x ∈ Rm, y ∈ Rn, and r ∈ N,
+Kr(x, y ) = Kr(x|y) + Kr(y) + o(r) .
+Proof. Theorem 4.10 of [4] tells us that
+Ir(x : y) = Kr(x) + Kr(y) − Kr(x, y ) + o(r) .
+Combining this with Lemma 8, we have
+Kr(x) + Kr(y) − Kr(x, y ) + o(r) = Kr(x) − Kr(x|y) + o(r) .
+The theorem follows immediately.
+A3
+
+[PDF physical page 20]
+A.3 Proof of Lemma 4
+Lemma 4. For each m, n ∈ N there is a constant c ∈ N such that, for all
+x ∈ Rm, y ∈ Rn, and r, s ∈ N,
+K y
+r (x) ≤ Kr,s(x|y) + K(s) + c .
+In particular, K y
+r (x) ≤ Kr(x|y) + K(r) + c.
+Proof. Let m, n ∈ N, and let U be the optimal Turing machine ﬁxed for the
+deﬁnition of conditional Kolmogorov complexity. Let M be an oracle Truing
+machine that, on input π ∈ { 0, 1}∗ with oracle g : N → Qn, does the following.
+If π is of the form π = π1π2, where U (π1, λ ) = t ∈ N, then M simulates
+U (π2, g (t)). Let c be an optimality constant for the oracle Turing machine M .
+To see that c aﬃrms the lemma, let x ∈ Rm, y ∈ Rn, and r, s ∈ N. Let
+q = y ↾ (s + log √
+n), the truncation of the binary expansions of each of y’s
+coordinates to s + log √ n bits to the right of the binary point. Let πs ∈ { 0, 1}∗
+testify to the value of K(s), and let πx testify to the value of ˆKr(x|q). Then
+q ∈ Qn ∩ B2− s(y)
+and
+M y(πsπx) = U (πx, q ) ∈ Qm ∩ B2− r (x) ,
+so
+K y
+r (x) ≤ K y
+M,r(x) + c
+≤ | πsπx|+ c
+= ˆKr(x|q) + K(s) + c
+≤ Kr,s(x|y) + K(s) + c .
+A.4 Claims in proof of Lemma 6
+Claim 1. For every r ∈ N, ˆKr(b|m) = Kr(b|mr) +o(r), where mr = 2 − r⌊m ·2r⌋.
+Proof. Kr(b|m) ≥ ˆKr(b|mr) by deﬁnition, since mr ∈ B2− r (m).
+Let ˆb ∈ B2− r (b) be such that K(ˆb|mr) = ˆKr(b|mr). Then
+|(ˆb, m r) − (b, m )| ≤
+√
+2 ·2− r < 21− r ,
+so
+K(ˆb, m r) ≥ Kr− 1(b, m ) = Kr(b, m ) + o(r) ,
+by Corollary 3.9 of [4].
+Let µ testify to the value of Kr(m), and let ˆm = U (µ ). Then |ˆm − m|< 2− r,
+so |ˆm − mr|< 21− r. Thus once ˆm and r have been speciﬁed, there are at most
+four possible values for mr. Therefore there is a self-delimiting Turing machine
+A4
+
+[PDF physical page 21]
+that takes as input µ , an encoding of r of length o(r), and O(1) additional bits
+and outputs mr. We conclude that K(mr) ≤ Kr(m) + o(r). Therefore we have
+ˆKr(b|mr) = K(ˆb|mr)
+= K(ˆb, m r) − K(mr) + o(r)
+≥ Kr(b, m ) + o(r) − (Kr(m) + o(r)) + o(r)
+= Kr(b|m) + o(r) ,
+by Theorem 3.
+Claim 2. For each x ∈ [0, 1] and r ∈ N, there exists an h ∈ N such that M
+halts on input ( ρπ rσrη) with M (ρπ rσrη) ∈ B21− r (m, b, x ), where U (ρ) = r and
+U (η) = h.
+Proof. Fix x ∈ [0, 1] and r ∈ N. It is clear that for some j ∈ { 0, 1, . . . , 2r},
+|uj − m| < 2− r. By the deﬁnition of Kr(b|m), uj ∈ Q ∩ B2− r (m) implies that
+U (πr, u j) halts and outputs vj ∈ Q ∩ B2− r (b). U (σr) ∈ B2− r (x, mx + b) by the
+deﬁnition of σr, so |p − x|< 2− r. It follows that
+|(uj, v j, p ) − (m, x, b )|<
+√
+3(2− r)2 < 21− r .
+It remains to show that |uip + vj − q|< 22− r. To do so, we repeatedly apply
+the triangle inequality and use the fact that x, m ∈ [0, 1]:
+|uip + vj − q| ≤ |uip + vj − (mx + b)|+ |mx + b − q|
+< |ujp − mx + vj − b|+ 2− r
+≤ | ujp − mx|+ |vj − b|+ 2− r
+< |ujp − ujx|+ |ujx − mx|+ 21− r
+≤ | p − x|+ |uj − m|+ 21− r
+< 22− r .
+Claim 3. For almost every x ∈ [0, 1], log( h(x, r )) = o(r).
+Proof. By the countable additivity of Lebesgue measure, it suﬃces to show for
+every k ∈ N that the set
+Dk = {x ∈ [0, 1] : ∃ inﬁnitely many r ∈ N such that log( h(x, r )) > r/k }
+has Lebesgue measure 0. For each r ∈ N, let Dk,r = {x : h(x, r ) > 2r/k}. We
+now estimate λ(Dk,r), the Lebesgue measure of Dk,r.
+For ﬁxed x and r, the algorithm run by the Turing machine M entails
+h(x, r ) ≤
+⏐
+⏐{
+i : |uip + vi − q|< 22− r}⏐
+⏐ .
+A5
+
+[PDF physical page 22]
+For ﬁxed i,
+|uip + vi − q|> |uix − uip|+ |uip + vi − q| − 2− r
+≥ | uix + vi − q| − 2− r
+> |uix + vi − q|+ |q − (mx + b)| − 21− r
+≥ | uix + vi − (mx + b)| − 21− r .
+That is,
+{
+i : |uip + vi − q|< 22− r}
+⊆
+{
+i : |uix + vi − (mx + b)| − 21− r < 22− r}
+,
+so
+h(x, r ) ≤
+⏐
+⏐{
+i : |uix + vi − (mx + b)|< 23− r}⏐
+⏐ .
+For ﬁxed r and i = 0, 1, . . . , 2r, deﬁne
+Cr
+i = {x ∈ [0, 1] : |uix + vi − (mx + b)|< 23− r} ,
+For each i, if m = ui, then Cr
+i is either [0 , 1] or empty; otherwise, Cr
+i is an
+interval of length
+λ(Cr
+i ) ≤ min
+{ 23− r
+|ui − m|, 1
+}
+.
+Notice that for each k = 0 , . . . , 2r, there are at most 2 values of i for which
+2− rk ≤ | ui − m|< 2− r(k + 1), so we have
+∫ 1
+0
+h(x, r )dx ≤
+2r
+∑
+i=0
+λ(Cr
+i )
+≤ 2 +
+2r
+∑
+k=1
+2 23− r
+2− rk
+= 2 + 2 4
+2r
+∑
+k=1
+1
+k
+< r26 .
+Thus, as h(x, r ) > 2r/k for all x ∈ Dk,r,
+λ(Dk,r) < r26
+2r/k = r26− r/k .
+This implies that
+∞∑
+r=1
+λ(Dk,r) < ∞ ,
+so the Borel-Cantelli Lemma tells us that λ(Dk) = 0.
+A6
+
+[PDF physical page 23]
+Claim 4. For every x ∈ [0, 1], if log( h(x, r )) = o(r), then
+lim inf
+r→∞
+Kr(m, b, x ) − Kr(b|m)
+r ≤ dim(x, mx + b) .
+Proof. For ﬁxed r, Claim 2 gives
+Kr− 1(m, b, x ) ≤ K(ui, v i, p ) ≤ KM (ui, v i, p ) + cM ,
+where cM is an optimality constant for M . Let ρ and η testify to the values
+of K(r) and K(h(x, r )), respectively. Then KM (ui, v i, p ) ≤ | ρπ rσrη|. By our
+choices of ρ, π r, σ r, and η,
+|ρπ rσrη|= K(r) + ˆKr(b|mr) + Kr(x, mx + b) + K(h(x, r ))
+= K(r) + Kr(b|m) + Kr(x, mx + b) + K(h(x, r )) + o(r) ,
+by Claim 1. By Corollary 3.9 of [4],
+lim inf
+r→∞
+Kr(m, b, x ) − Kr(b|m)
+r
+= lim inf
+r→∞
+Kr− 1(m, b, x ) − Kr(b|m) + o(r)
+r
+≤ lim inf
+r→∞
+K(r) + Kr(x, mx + b) + K(h(x, r )) + o(r)
+r
+≤ lim inf
+r→∞
+Kr(x, mx + b)
+r + lim sup
+r→∞
+K(r) + K(h(x, r )) + o(r)
+r
+= dim(x, mx + b) + lim sup
+r→∞
+K(h(x, r ))
+r .
+Applying Observation A.2, for some constant c,
+lim sup
+r→∞
+K(h(x, r ))
+r ≤ lim sup
+r→∞
+log(1 + h(x, r )) + 2 log log(2 + h(x, r )) + c
+r
+= lim sup
+r→∞
+log(h(x, r )) + 2 log log(h(x, r ))
+r .
+If log( h(x, r )) = o(r), then this is
+lim sup
+r→∞
+o(r) + 2 log(o(r))
+r = 0 .
+A.5 Observations about Kolomogorov Complexity in
+Euclidean Space
+Observation A.1. For every open ball B ⊆ Rm of radius 2− r,
+B ∩ 2− (r+⌊ 1
+2 log m⌋+1)Zm ̸= ∅ .
+A7
+
+[PDF physical page 24]
+For a ∈ Zm, let |a| denote the distance from the origin to a.
+Observation A.2. There is a constant c0 ∈ N such that, for all j ∈ N,
+K(j) ≤ log(1 + j) + 2 log log(2 + j) + c0 .
+Observation A.3. There is a constant c ∈ N such that, for all a ∈ Zm,
+K(a) ≤ m log(1 + |a|) + ε(|a|) ,
+where ε(t) = c + 2 log log(2 + t).
+Observation A.2 holds by a routine technique [20]. The proof of Obser vation
+A.3 is also routine:
+Proof. Fix a computable, nonrepeating enumeration a0, a 1, a 2, . . . of Zm in which
+tuples aj appear in nondecreasing order of |aj|. Let M be a Turing ma-
+chine such that, for all π ∈ { 0, 1}∗, if U (π ) ∈ N, then M (π ) = aU(π). Let
+c = c0 + cM + m + ⌈2 log m⌉ + 2, where c0 is as in Observation A.2 and cM is
+an optimality constant for M .
+To see that c aﬃrms Observation A.3, let a ∈ Zm. Let j ∈ N be the
+index for which aj = a, and let π ∈ { 0, 1}∗ testify to the value of K(j). Then
+M (π ) = aU(π) = aj = a, so
+K(a) ≤ KM (a) + cM ≤ | π |+ cM = K(j) + cM .
+It follows by Observation A.2 that
+K(a) ≤ log(1 + j) + 2 log log(2 + j) + c + cM . (A.2)
+We thus estimate j.
+Let B be the closed ball of radius |a| centered at the origin in Zm, and let
+Q be the solid, axis-parallel m-cube circumscribed about B. Let B′ = B ∩ ZM
+and Q′ = Q ∩ Zm. Then
+j ≤ | B′| − 1 ≤ | Q′| − 1 ≤ (2|a|+ 1)m − 1 ,
+so (A.2) tells us that
+K(a) ≤ m log(2|a|+ 1) + 2 log log(1 + (2|a|+ 1)m) + c + cM
+≤ m log(2|a|+ 2) + 2 log(m log(2|a|+ 4)) + c + cM .
+Since
+m log(2|a|+ 2) = m + m log(1 + |a|)
+and
+log(m log(2|a|+ 4)) = log m + log(1 + log(2 + |a|))
+≤ log m + 1 + log log(2 + |a|) ,
+it follows that K(a) ≤ m log(1 + |a|) + ε(|a|).
+A8
+
+[PDF physical page 25]
+Observation A.4. For every r, n ∈ N, x ∈ Rn, and q ∈ Qn,
+Kr(x + q) = Kr(x) + O(1) .
+Proof. Let M be a self-delimiting Turing machine such that M (πκ ) = U (π ) +
+U (κ) whenever U (π ), U (κ) ∈ Qn. If π is a witness to Kr(x) and κ is a witness
+to q, then M (πκ ) = p + q for some p ∈ B2− r (x), so M (πκ ) ∈ B2− r (x + q). Thus
+Kr(x + q) ≤ Kr(x) + K(q) + c ,
+where c is a machine constant for M . Since K(q) is constant in r, we have
+Kr(x + q) ≤ Kr(x) + O(1). Applying the same argument with − q replacing q
+completes the proof.
+A.6 Linear Sensitivity of ˆKr(x|q) to r
+Lemma A.5. There is a constant c1 ∈ N such that, for all x ∈ Rm, q ∈ Qn,
+and r, ∆r ∈ N,
+ˆKr(x|q) ≤ ˆKr+∆r(x|q) ≤ ˆKr(x|q) + m∆r + ε1(r, ∆r) ,
+where ε1(r, ∆r) = 2 log(1 + ∆ r) + K(r, ∆r) + c1.
+Proof. Let M be a Turing machine such that, for all π1, π 2, π 3 ∈ { 0, 1}∗ and
+q ∈ Qn, if U (π1, q ) = p ∈ Qm, U (π2) = ( r, ∆r) ∈ N2, and U (π3) = a ∈ Zm,
+then M (π1π2π3, q ) = p + 2 − r∗
+a, where r∗ = r + ∆ r +
+⌊ 1
+2 log m
+⌋
++ 1. Let
+c1 = c + cM + 3m + m
+⌊ 1
+2 log m
+⌋
++
+⌈
+2 log(3 +
+⌊ 1
+2 log m
+⌋
+)
+⌉
+, where c is the constant
+from Observation A.3 and cM is an optimality constant for M .
+To see that c1 aﬃrms the lemma, let x, q, r, and ∆ r be as given. The ﬁrst
+inequality holds trivially. To see that the second inequality holds, let π1, π 2 ∈
+{0, 1}∗ testify to the values of ˆKr(x|q) and K(r, ∆r), respectively. Let B =
+B2− r (x), B′ = B2− (r+∆r) (x) and p = U (π1, q ), noting that p ∈ Qm∩ B. Applying
+Observation A.1 to the ball B′ − p tells us that
+(B′ − p) ∩ 2− r∗
+Zm ̸= ∅ ,
+i.e., that
+B′ ∩ (p + 2− r∗
+Zm) ̸= ∅ .
+So ﬁx a point p′ ∈ B′ ∩ (p + 2− r∗
+Zm), say, p′ = p + 2− r∗
+a, where a ∈ Zm, and
+let π3 ∈ { 0, 1}∗ testify to the value of K(a). Then
+M (π1π2π3, q ) = p′ ∈ Q ∩ B′,
+so
+ˆKr+∆r(x|q) ≤ K(p′|q)
+≤ ˆKM (p′|q) + cM
+≤ | π1π2π3|+ cM .
+A9
+
+[PDF physical page 26]
+By our choice of π1, π2, and π3, this implies that
+ˆKr+∆r(x|q) ≤ ˆKr(x|q) + K(r, ∆r) + K(a) + cM . (A.3)
+We thus estimate K(a).
+Since
+|a|= 2 r∗
+|p′ − p|
+≤ 2r∗
+(|p′ − x|+ |p − x|)
+< 2r∗ (
+2− (r+∆r) + 2− r
+)
+= 2 1+⌊ 1
+2 log m⌋ (
+1 + 2∆r)
+,
+Observation A.3 tells us that
+K(a) ≤ m log
+(
+1 + 2⌊ 1
+2 log m⌋ (
+1 + 2∆r) )
++ ε(|a|)
+≤ m log
+(
+2∆r+3+⌊ 1
+2 log m⌋)
++ ε(|a|) ,
+i.e., that
+K(a) ≤ m∆r + 3m + m
+⌊ 1
+2 log m
+⌋
++ ε(|a|) , (A.4)
+where
+ε(|a|) ≤ c + 2 log log
+(
+2 + 21+⌊ 1
+2 log m⌋ (
+1 + 2∆r) )
+≤ c + 2 log log
+(
+2∆r+3+⌊1
+2 log m⌋)
+= c + 2 log
+(
+∆r +
+⌊ 1
+2 log m
+⌋
++ 3
+)
+≤ c + 2 log
+(
+(1 + ∆r)
+(
+3 +
+⌊ 1
+2 log m
+⌋))
+= c + 2 log(1 + ∆r) + 2 log
+(
+3 +
+⌊ 1
+2 log m
+⌋)
+.
+It follows by (A.3) and (A.4) that
+ˆKr+∆r(x|q) ≤ ˆKr(x|q) + m∆r + ε1(r, ∆r) .
+A.7 Linear Sensitivity of Kr,s(x|y) to s
+Lemma A.6. There is a constant c2 ∈ N such that, for all x ∈ Rm, y ∈ Rn,
+and r, s, ∆s ∈ N,
+Kr,s(x|y) ≥ Kr,s+∆s(x|y) ≥ Kr,s(x|y) − n∆s − ε2(s, ∆s) ,
+where ε2(s, ∆s) = 2 log(1 + ∆ s) + K(s, ∆s) + c2.
+A10
+
+[PDF physical page 27]
+Proof. Let M be a Turing machine such that, for all π1, π 2, π 3 ∈ { 0, 1}∗ and
+q ∈ Qn, if U (π1) = ( s, ∆s) ∈ N2 and U (π2) = a ∈ Zm, then M (π1π2π3, q ) =
+U (π3, q + 2 − s∗
+a), where s∗ = s + ∆s +
+⌈ 1
+2 log n
+⌉
+. Let c2 = c + cM + 3 n +
+n
+⌊ 1
+2 log n
+⌋
++ 2
+⌈
+2 log(3 +
+⌊ 1
+2 log n
+⌋
+)
+⌉
+, where c is the constant from Observation
+A.3 and cM is an optimality constant for M .
+To see that c2 aﬃrms the lemma, let x, y, r, s, and ∆ s be as given The
+ﬁrst inequality holds trivially. To see that the second inequality holds, let B =
+B2− s(y), B′ = B2− (s+∆s)(y), and q ∈ Qn ∩ B. It suﬃces to prove that
+ˆKr(x|q) ≤ Kr,s+∆s(x|y) + n∆s + ε2(s, ∆s) . (A.5)
+Let π1 ∈ { 0, 1}∗ testify to the value of K(s, ∆s). Applying Observation A.1
+to the ball B′ − q tells us that
+(B′ − q) ∩ 2− s∗
+Zn ̸= ∅ ,
+i.e., that
+B′ ∩ (q + 2− s∗
+Zn) ̸= ∅ .
+So ﬁx a point q′ ∈ B′ ∩ (q + 2− s∗
+Zn), say, q′ = q + 2− s∗
+a, where a ∈ Zn. Note
+that
+ˆKr(x|q′) ≤ Kr,s+∆s(x|y). (A.6)
+Let π2, π 3 ∈ { 0, 1}∗ testify to the values of K(a) and ˆKr(x|q′), respectively,
+noting that U (π3, q ′) = p for some p ∈ Qm ∩ B2− r (x). Then
+M (π1π2π3, q ) = U (π3, q ′) = p ∈ Qm ∩ B2− r (x) ,
+so
+ˆKr(x|q) ≤ K(p|q)
+≤ KM (p|q) + cM
+≤ | π1π2π3|+ cM .
+By our choice of π1, π2, and π3, and by (A.6), this implies that
+ˆKr(x|q) ≤ Kr,s+∆s(x|y) + K(a) + K(s, ∆s) + cM . (A.7)
+We thus estimate K(a).
+Since
+|a|= 2 s∗
+|q′ − q|
+≤ 2s∗
+(|q′ − y|+ |q − y|)
+< 2s∗
+(s− (s+∆s) + 2− s)
+= 2 1+⌊ 1
+2 log n⌋(1 + 2∆s) ,
+A11
+
+[PDF physical page 28]
+Observation A.3 tells us that
+K(a) ≤ n log(1 + 21+⌊ 1
+2 log n⌋(1 + 2∆s)) + ε(|a|)
+≤ n log(2∆s+3+⌊ 1
+2 log n⌋) + ε(|a|) ,
+i.e., that
+K(a) ≤ n∆s + 3n + n
+⌊ 1
+2 log n
+⌋
++ ε(|a|), (A.8)
+where
+ε(|a|) ≤ c + 2 log log(2 + 21+⌊ 1
+2 log n⌋(1 + 2∆s))
+≤ c + 2 log log(2∆s+3+⌊ 1
+2 log n⌋)
+= c + 2 log(∆s + 3 +
+⌊ 1
+2 log n
+⌋
+)
+≤ c + 2 log
+(
+(1 + ∆s)(3 +
+⌊ 1
+2 log n
+⌋
+)
+)
+= c + 2 log(1 + ∆s) + 2 log(3 +
+⌊ 1
+2 log n
+⌋
+) .
+It follows by (A.7) and (A.8) that (A.5) holds.
+A.8 Proof of Theorem 7
+Theorem 7. Let s : N → N. If |s(r) − r| = o(r), then, for all x ∈ Rm and
+y ∈ Rn,
+dim(x|y) = lim inf
+r→∞
+Kr,s(r)(x|y)
+r ,
+and
+Dim(x|y) = lim sup
+r→∞
+Kr,s(r)(x|y)
+r .
+Proof. Assume the hypothesis. Deﬁne s− , s + : N → N by
+s− (r) = min {r, s (r)}, s +(r) = max {r, s (r)} .
+Lemma A.6 tells us that, for all x ∈ Rm and y ∈ Rn,
+Kr,s− (r)(x|y) ≥ Kr,r(x|y)
+≥ Kr,s+(r)(x|y)
+≥ Kr,s− (r)(x|y) − O(s+(r) − s− (r)) − o(r)
+= Kr,s− (r)(x|y) − O(|s(r) − r|) − o(r)
+= Kr,s− (r)(x|y) − o(r) .
+Since
+Kr,s− (r)(x|y) ≥ Kr,s(r)(x|y) ≥ Kr,s+(r)(x|y) ,
+it follows that ⏐
+⏐Kr,s(r)(x|y) − Kr,r(x|y)
+⏐
+⏐ = o(r) .
+The theorem follows immediately.
+A12
+
+[PDF physical page 29]
+A.9 Proof of Lemma 8
+Lemma 8. For all x ∈ Rm, y ∈ Rn, and r ∈ N,
+Ir(x : y) = Kr(x) − Kr(x|y) + o(r) .
+Proof. Let Bx = B2− r (x) ∩ Qm and By = B2− r (y) ∩ Qn. Let p0 and q0 be
+K-minimizers for Bx and By, respectively, such that
+Ir(x : y) = I(p0 : q0) + o(r) . (A.9)
+These exist by Theorem 4.6 of [4]. Then
+Kr(x) − Kr(x|y) = min
+p∈ Bx
+K(p) − max
+q∈ By
+min
+p∈ Bx
+K(p|q)
+≥ min
+p∈ Bx
+K(p) − min
+p∈ Bx
+max
+q∈ By
+K(p|q)
+= min
+p∈ Bx
+K(p) − min
+p∈ Bx
+K(p|q0) + o(r) ,
+by Lemma 4.2 and Observation 3.7 of [4].
+= K(p0) − min
+p∈ Bx
+K(p|q0) + o(r)
+≥ K(p0) − K(p0|q0) + o(r)
+= I(p0 : q0) + o(r)
+= Ir(x : y) + o(r) .
+For the other direction, let p1 ∈ Bx be such that
+K(p1|q0) = min
+p∈ Bx
+K(p|q0) .
+By Lemma 4.5 of [4],
+I(p0 : q0) ≥ K(p1) − K(p1|p0, K (p0)) − K(p1|q0, K (q0)) + o(r)
+≥ K(p1) − K(p1|p0, K (p0)) − K(p1|q0) + o(r) . (A.10)
+Now
+K(p0) + K(p1|p0, K (p0)) + o(r) = K(p0, p 1)
+= K(p1) + K(p0|p1, K (p1)) + o(r)
+≤ K(p1) + K(p0|p1) + o(r)
+= K(p1) + o(r) ,
+by Corollary 4.4 of [4]. So
+K(p1) − K(p1|p0, K (p0)) ≥ K(po) + o(r) ,
+A13
+
+[PDF physical page 30]
+thus by (A.10),
+I(p0 : q0) ≥ K(p0) − K(p1|q0) + o(r)
+= K(p0) − min
+p∈ Bx
+K(p|q0) + o(r)
+= Kr(x) − min
+p∈ Bx
+K(p|q0) + o(r)
+≥ Kr(x) − max
+q∈ By
+min
+p∈ Bx
+K(p|q) + o(r)
+= Kr(x) − Kr(x|y) + o(r) .
+Then by (A.9), Ir(x : y) ≥ Kr(x) − Kr(x|y) + o(r), so equality holds.
+A14
