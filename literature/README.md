@@ -128,3 +128,6 @@ R0088新增Wang2411.02961v8原PDF29页/495117bytes及text，现64PDF/68catalog s
 
 
 R0089新增Guth2014 arXiv1402.0518v1原PDF40页/478336bytes及默认pypdf text，现65PDF/69catalog sources/78IDs。实际完整§1全n cut与§2.2三维降次数证明，root view8/13；whole40页高级graininess未本轮新独证。原marked-grid/direct-area应用及specific gap/II反攻经内部全文独审，完整H5门未证未否。详metadata/R0089_source_check.json和notes/R0089_geometric_cut_degree_and_source_scope.md。
+
+
+R0090新增Csornyei–Stull2609.38742v1原PDF33页/542683bytes及默认pypdf text，现66PDF/70catalog sources/78IDs。root实际Th/§2.1和完整§4.1 proof、view1/20；B另§3.3/3.4 proof，whole33页高级算法/距离proof未新独证。原κ1 polar输入可付但端点二点CS复得，拒作新gain。详metadata/R0090_source_check.json和notes/R0090_hyperplane_polar_and_primary_scope.md。

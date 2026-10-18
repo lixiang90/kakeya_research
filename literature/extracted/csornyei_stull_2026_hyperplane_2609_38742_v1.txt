@@ -1,0 +1,1789 @@
+[PDF physical page 1]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN
+HIGHER DIMENSIONS
+MARIANNA CSÖRNYEI AND D. M. STULL
+Abstract.We generalize Ren and Wang’s incidence bound between
+points and lines inR2 [34] to higher dimensions. We show how to use
+this incidence bound to improve the best known bound for Falconer’s
+distance set problem inR3 and inR 4. We show that ifd= 3ord= 4,
+andE⊂R d is a Borel set of dimensiondimH(E)> d/2, then
+sup
+x∈E
+dimH(∆x(E))≥2/3,
+where∆ x(E)is the pinned distance set ofEwith respect tox.
+We also show how the incidence bound can be used to generalize the
+planar Furstenberg set bound, to sets inRd that contain at-dimensional
+set of hyperplanes, each of which contains ans-dimensional set of points,
+for anyd≥2,s∈(d−2, d−1]andt∈(0, d].
+1.Introduction
+In this paper, we prove lower bounds on the discretized incidences between
+hyperplanes and points inRd. For any dyadic scaleδ >0, aδ-hyperplane
+is the dual set of the points covered by a dyadic cube. We are interested in
+the following problem. LetPbe a finite set ofδ-cubes inRd, and letHbe a
+finite set ofδ-hyperplanes. Suppose that, for each cubeQinP, the number
+ofH∈ Hwhich intersectQis at leastM. How large mustHbe?
+To be nontrivial, we need additional assumptions about how ‘separated’
+theδ-hyperplanes are. We will use a Frostman-type non-concentration con-
+dition to prove our main theorem. This non-concentration condition is the
+natural analog of the non-concentration condition used by Ren and Wang
+[34] in their solution of the Furstenberg problem in the plane. We defer the
+precise definitions to Section 2.1.
+Theorem 1.1.Letd≥2. For everyε >0,s∈(d−2, d−1]andt∈(0, d],
+there existsη >0such that for every small enoughδ >0and everyM∈N,
+the following holds. LetP ⊆ D δ([0,1] d)be a(δ, t, δ −η)-set and suppose that,
+for eachQ∈ P, there is a(δ, s, δ −η)-set ofδ-hyperplanesH(Q)such that
+each hyperplane inH(Q)intersectsQand|H(Q)| ∼M. Then forH:=S
+Q∈P H(Q), we have
+(1)|H|≳ ε δ−min{t, s+t−(d−2)
+2 ,1}+εM.
+Theorem 1.1 generalizes Ren and Wang’s recent breakthrough on the
+Furstenberg set problem in the plane [34].
+1
+arXiv:2609.38742v1  [math.CA]  30 Sep 2026
+
+[PDF physical page 2]
+2 MARIANNA CSÖRNYEI AND D. M. STULL
+Theproofof Theorem1.1 usesa discretized analogof theinduction scheme
+developed in [6] for estimating dimensions of exceptional sets of projections.
+However, the discretization of this induction requires new ideas, and, in
+particular, makes use of algorithmic methods. Briefly, the main idea of the
+induction is to use Ren and Wang’s incidence estimate for tubes as a base
+case. We then use discretized analogs of Marstrand’s projection theorem and
+Mattila’s slicing theorem to reduce higher dimensional incidence estimates
+to lower dimensional incidence estimates.
+In Section 3 we prove our discretized analogs of Marstrand’s projection
+theorem and Mattila’s slicing theorem. We believe that these discrete results
+are interesting by themselves, and may be of future use.
+In Section 4 we use our discretized slicing and projection theorems to
+inductively prove Theorem 1.1, and we show how it can be applied to higher
+dimensional Furstenberg sets.
+An(s, t)-hyperplane Furstenberg set inR d is a setFwith the following
+property. There is a setH ⊆ A(d, d−1)of affine hyperplanes inR d with
+dimH(H)≥tsuch thatdim H(F∩H)≥sfor everyH∈ H.
+In a recent breakthrough, Ren and Wang [34], building on [32], gave sharp
+bounds for(s, t)-Furstenberg sets inR 2, proving the following theorem.
+Theorem 1.2.Lets∈(0,1],t∈(0,2]. IfF⊆R 2 is an(s, t)-Furstenberg
+set, then
+dimH(F)≥min{s+t, 3s+t
+2 , s+ 1}.
+Furstenberg sets are less understood in higher dimensions, although there
+has been exciting progress [2, 3, 8, 12, 18, 19, 30, 33]. In Section 4, we
+generalize Ren and Wang’s result to hyperplanes inRd:
+Theorem1.3.Lets∈(d−2, d−1]andt∈(0, d]. IfFis an(s, t)-hyperplane
+Furstenberg set inRd, then
+dimH(F)≥min{s+t, 3s+t−(d−2)
+2 , s+ 1}.
+In Sections 5 and 6 we apply our incidence bound to Falconer’s (pinned)
+distance problem inR3 andR 4. IfE⊆R d andx∈R d, the pinned distance
+set ofEwith respect toxis
+∆x(E) :={|x−y| |y∈E}.
+The Falconer pinned distance conjecture is a generalization of the important
+Falconer distance set conjecture [11]. It states that, for any BorelE⊆Rd, if
+dimH(E)> d/2, then∆ x(E)has positive Lebesgue measure for somex∈E.
+This remains an important open problem, for everyd≥2. There has been
+substantial progress on this problem [5, 10, 9, 14, 15, 16, 17, 22].
+In this paper, we study the dimensional version of Falconer’s conjecture.
+Given any Borel setE⊆R d withdim H(E)> d/2, our aim is to find a lower
+
+[PDF physical page 3]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 3
+bound on the quantity
+(2)sup
+x∈E
+dimH(∆x(E)).
+For sets of equal Hausdorff and packing dimension, Shmerkin and Wang,
+generalizing the planar results in [31, 35, 36], proved in [37] that this quantity
+is maximal in every dimension, i.e.,
+sup
+x∈E
+dimH(∆x(E)) = 1,
+for everyd≥2and for everyE⊂R d withdim H(E) = dim P (E)> d/2.
+However, for general sets this is still an open problem. InR2, the current
+best known bound is3/4, due to Stull [39]. In higher dimensions, the best
+preciously known bound was recently established by Du, Ou, Ren and Zhang
+[10]. They proved the following theorem.
+Theorem 1.4.Letd≥2,0< α≤d−1, andE⊆R d be compact. If
+dimH(E) =α, then
+sup
+x∈E
+dimH(∆x(E))≥min{α 2d+ 1
+d+ 1 −(d−1),1}.
+In particular, ifα=d/2,
+sup
+x∈E
+dimH(∆x(E))≥ d+ 2
+2(d+ 1) .
+Inparticular, thepreviousbestboundfor(2), forE⊆R 3 withdim H(E)>
+3/2was5/8. The best known bound for (2), forE⊆R 4 withdim H(E)>2
+was3/5.
+In this paper, we use our hyperplane incidence bound, combined with
+algorithmic techniques and Ren’s radial projection theorem [33] to improve
+the best known bounds ford= 3,4. We prove that:
+Theorem 1.5.LetE⊆R d be a Borel set such thatdimH(E)> d/2, where
+d= 3ord= 4. Then
+(3)sup
+x∈E
+dimH(∆x(E))≥2/3.
+Our application of the hyperplane incidence bound to the Furstenberg
+set problem is straightforward. However, the application of the incidence
+bound to the distance set problem is much more involved. In addition to the
+incidence bound, a key ingredient of our distance set result is a partitioning
+argument, similar to that of used by the second author in [39]. Later a
+similar decomposition was also used, in a crucial way, in the solution of the
+Kakeya problem inR3 by Wang and Zahl [40].
+In Section 5 we describe our decomposition result. We decompose the
+Kolmogorov complexity functionK n(x)(as a function ofn) into intervals
+which obey Frostman or Katz-Tao type non-concentration conditions. The
+main tool we use in finding our decomposition is Jones’ traveling salesman
+
+[PDF physical page 4]
+4 MARIANNA CSÖRNYEI AND D. M. STULL
+theorem in [20]. In our proof of the distance set estimate in Section 6 we
+choose our partition in such a way that each interval corresponds to a term
+in the minimum of (1).
+Finally, we remark that the reason we limit ourselves to dimensions 3 and
+4 is due to (1), where we needd/2≥d−2, which is only true whend≤4.
+However, our proof also gives some bound in higher dimensions, so long as
+we assume that the setEhas sufficiently high dimension.
+2.Preliminaries
+2.1.Discretized incidences.We will writeA≲Bto denoteA≤cB, for
+some absolute constantc. We will use the subscript notationA≲ n Bto
+denoteA≤C nB, whereC n is a constant depending onn. In a similar way,
+we will use≳and≳ n. We writeA∼BifA≲BandB≲A, and similarly
+for∼ n.
+Letδbe a dyadic scale, i.e.,δ= 2 −n for somen∈N. For any setA⊂R d,
+we denote byD δ(A)the set of half-open, half-closed dyadic cubes of side
+lengthδthat intersectA. We will also use the notationD δ :=D δ(Rd).
+We call a set of hyperplanes aδ-hyperplane if it is the dual set of the
+points covered by a cubeQ∈ D δ. We denote the set ofδ-hyperplanes by
+Hδ. We say that aδ-cubeQintersects aδ-hyperplaneH, ifHcontains a
+hyperplane that meetsQ, and we denote this byH∩Q̸=∅. In the special
+case whend= 2, we callδ-hyperplanesδ-tubes.
+In [34] Ren and Wang proved sharp bounds on the incidences between
+δ-tubes andδ-cubes inR 2, leading to a resolution of the Furstenberg set
+problem in the plane. They introduced the following definition, and proved
+Theorem 2.2 below (see Theorem 4.1 in [34]).
+Lets∈[0, d]andc >0. A non-empty bounded setA⊆R d is called a
+(δ, s, c)-set if it satisfies the following Frostman-type condition. For every
+integer0≤m≤nand eachQ∈ D 2−m,D δ(A∩Q)contains at most ac2 −sm
+portion of all the cubes inDδ(A).
+Remark 2.1.There is an alternative definition of(δ, s, c)-sets in the lit-
+erature. For example, in Ren and Wang’s solution to the Furstenberg set
+problem [34],Ais called a(δ, s, c)-set if for every ballBof radiusr∈[δ,1],
+Dδ(A∩B)contains at most acr s portion of all the cubes inDδ(A). It is
+immediate that the two definitions are equivalent in the sense that, ifAis a
+(δ, s, c)-set under one definition, then it is a(δ, s, c′)-set in the other, where
+c′ andcagree up to a multiplicative absolute constant that depends only on
+the ambient dimensiond.
+WhenP ⊆ D δ, we say thatPis a(δ, s, c)-set if the set of points inR d
+covered by the cubes inPis a(δ, s, c)-set. A setHofδ-hyperplanes inR d
+is called a(δ, s, c)-set if its dual is a(δ, s, c)-set.
+
+[PDF physical page 5]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 5
+We will use the following theorem due to Ren and Wang [34] which gives
+sharp bounds on the incidences between tubes and cubes in the plane. This
+will be used as our base case in the proof of Theorem 1.1.
+Theorem 2.2.For everyε >0,s∈(0,1], andt∈(0,2], there existsη >0
+such that for every small enoughδ >0and for everyM∈Nthe following
+holds.
+Suppose thatP ⊆ D δ([0,1] 2)is a(δ, t, δ −η)-set, and suppose that for each
+Q∈ Pthere is a(δ, s, δ −η)-set of tubesT(Q)such that each tube inT(Q)
+intersectsQ, and|T(Q)| ∼M. Then forT:= S
+Q∈P T(Q)we have
+(4)|T |≳ ε δ−min{t, s+t
+2 ,1}+εM.
+2.2.Basicalgorithmicmethods.Ourproofwillusethealgorithmicmeth-
+ods which have recently been applied to geometric measure theory [1, 4, 26,
+25, 23, 24]. In particular, we rely on the techniques introduced by the au-
+thors in [7]. We refer the reader to Section 2.2. of [7] for a summary of the
+fundamental definitions, notations and results central to this research area.
+In this section, we present only the specific techniques and prior results nec-
+essary for our arguments that were not already introduced in Section 2.2 of
+[7].
+Letx∈[0,1] d. It will be important for us to understand the behavior of
+the complexity functionKn(x)as a function ofn. Note that this function is
+monotone andd-Lipschitz, up to a logarithmic error. It is an easy exercise
+that this implies that we can approximate any complexity function by a
+monotone,(d+ 1)-Lipschitz, piecewise linear functionf: [0,∞)→[0,∞)
+such that
+(5)|f(n)−K n(x)|≲logn,
+for everyn∈N.
+In the proof of our distance set theorem, we will discuss the complexity
+of unit vectors inRd. We will use the standard fact that, for every dyadic
+scaleδ, we can coverSd−1 byδ-caps with bounded overlap, which we denote
+Dδ(S d−1). For every scale, we can fix a representative elementefor every
+δ-cap. Moreover, each representativeeis computable. Therefore, ifeis any
+representative vector at scale2−m, then, for everyn≥m,K n,m(e|e)≈0.
+Additionally, ife ′ is any direction, andmis any precision, givene ′ with
+precisionm, we can computably assign toe′ a representativeewhich agrees
+withe ′ up to precisionm.
+Recall that thesymmetry of information, proved in [27], says that
+KA
+n,m(x, y)≈K A
+n,m(x|y) +K A
+m(y)
+for every oracleA,x∈R d1, y∈R d2 and precisionsn, m∈N. We will use
+several simple consequences of the symmetry of information throughout the
+paper. The first is that a pointxdoesn’t give any information about a point
+
+[PDF physical page 6]
+6 MARIANNA CSÖRNYEI AND D. M. STULL
+yif and only ifydoesn’t give information aboutx. In particular, we have the
+following. LetAbe an oracle,x, y∈R d,ε >0. ThenK A
+m,n(y|x)≥K A
+m(y)−
+εniffK A
+n,m(x|y)⪆K A
+n (x)−εn. Additionally,K A
+k,n(y|x)⪆K A
+k (y)−εn
+for everyk≤m.
+We will also routinely use the fact that, if a setSis enumerable then
+all elements ofShave complexity, up to logarithmic error, at mostlog|S|.
+By an enumerable set, we mean that there is an algorithm that can list the
+elements of this set. This algorithm does not need to stop after finitely many
+steps and know that it already finished writingS. Moreover,≳2−m|S|many
+elements ofShave complexity greater thanlog|S| −mfor everym. A very
+useful consequence of this fact is the following. Letxbe a point of high
+complexity, and supposexis contained in an enumerable set. Then, ifxhas
+a computable property, then many other points of that set must also have
+that property.
+2.3.Algorithmicincidenceresults.Inthissection, wepresentsometools
+thatweredevelopedin[7,13,27]. Westateandproveversionsoftheseresults
+needed in this paper.
+We will need the following proposition that relates the complexity of a
+point with(δ, s, c)-sets. Its proof is largely identical to the proof of Proposi-
+tion 3.4 in [7], we include it for completeness.
+Proposition 2.3.LetAbe an oracle,0< t≤dand0< η≤1. Then for
+every sufficiently largen, depending ontandη, the following holds.
+Letx∈R d, and suppose that
+KA
+m(x)≥tm−ηn
+for every0≤m≤n.
+IfP ⊆ D 2−n(Rd)is enumerable givenw, relative toA, andPcontains
+the2 −n-cube containingx, then it has a(2 −n, t, c)subsetP ′ such thatc=
+2O(ηn)+|w| and
+|P ′| ≥2 KA
+n (x)−O(η−1 logn)−|w| .
+In particular, if|w|=O(logn), then|P ′| ≥2 KA
+n (x)−O(η−1 logn) andc=
+2O(ηn).
+Proof.We defineP ′ to be the set of those cubesQinPfor which
+KA(Q)≤K A
+n (x),andK A
+n,m(Q|Q)≤K A
+n,m(x|x)
+for everym≤nwhich is an integer multiple of⌊ηn⌋.
+Note thatP ′ is enumerable givenw, given the numbersK A
+n,m(x|x)for
+each integer multiplemand givenK A
+n (x). Moreover,Q(x)∈ P ′, whereQ(x)
+is the2 −n-dyadic cube containingx. Therefore,
+KA
+n (x)⪅log|P ′|+ logK A
+n (x) +
+X
+m
+logK A
+n,m(x|x) +|w|
+≤log|P ′|+O(η −1 logn) +|w|.
+
+[PDF physical page 7]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 7
+Hence,
+|P ′| ≥2 KA
+n (x)−O(η−1 logn)−|w|
+as required. Moreover, since there are at most2KA
+n (x)+O(logn) many cubesQ
+such thatK A(Q)≤K A
+n (x), we see that
+|P ′| ≤2 KA
+n (x)+O(logn) .
+Letm≤nbe an integer multiple of⌊ηn⌋. Now letQ∈ D 2−m. By our
+definition ofP ′, ifQ′ ∈ P ′ is a subcube ofQ, thenKA
+n,m(Q′ |Q) =K A
+n,m(Q′ |
+Q′)≤K A
+n,m(x|x). For any fixedQ∈ D 2−m, the number of subcubes
+Q′ ∈ D 2−n(Q)such thatK A
+n,m(Q′ |Q)⪅K A
+n,m(x|x)is≲2 KA
+n,m(x|x)+O(logn).
+Therefore, using symmetry of information, the number of subcubes is at
+most
+2KA
+n,m(x|x)+O(logn) ≤2 KA
+n (x)−KA
+m(x)+O(logn) ≤ |P ′|2−tm+ηn+O(η −1 logn)+|w| .
+Since this holds for everymwhich is an integer multiple of⌊ηn⌋, and since
+betweenmandm+⌊ηn⌋the number of cubes can be multiplied by at most a
+factor2 O(ηn), the statement indeed follows withc= 2O(ηn)+O(η −1 logn)+|w| =
+2O(ηn)+|w|.□
+The following technical proposition allows us to find ‘random’ points of
+(δ, s, c)-sets with nice properties in terms of the algorithmic methods.
+Proposition 2.4.Letδ= 2 −n be a dyadic scale,c >0,s >0. Suppose that
+P ⊆ D δ([0,1] d)is a(δ, s, c)-set. LetAbe any oracle such thatc, sandP
+are computable. Then for every oracleBthere is a subsetP′ ⊆ Psuch that
+|P ′|≳|P|and for everyQ∈ P ′ the following hold.
+(i)K A
+n (Q)≈log|P|.
+(ii)K A
+m(Q)⪆sm−O(logc)for allm≤n.
+(iii)K A,B
+m (Q)≈K A
+m(Q)for allm≤n.
+Proof.There are at most2 log|P|−logn many dyadic cubes of complexity less
+thanlog|P| −logn, that is, the size of the set of those cubesQfor which
+KA
+n (Q)<log|P| −lognis at most|P|/n. And sincePis computable,
+relative toA, thereforeK A
+n (Q)⪅log|P|for everyQ∈ P. So (i) holds for
+everyQ∈ Poutside of a set of size at most|P|/n.
+For everym≤n, let
+Nm ={Q∈ D 2−m |K A
+m(Q)< sm−logc−2 logm−3}.
+ThenthecardinalityofN m isatmost2 sm−logc−2 logm−3 . SincePisa(δ, s, c)-
+set, the set
+{Q∈ P |K A
+m(Q)< sm−logc−2 logm−3}
+has cardinality at most
+|Nm|c2 −sm|P| ≤ |P|/(8m 2).
+
+[PDF physical page 8]
+8 MARIANNA CSÖRNYEI AND D. M. STULL
+Summing overm, we conclude that (ii) holds for at least3|P|/4many cubes
+inP.
+To prove the final conclusion, letBbe any oracle. It was shown in [38],
+Lemma 12, that there are at most|P|/4many cubesQ∈ Pfor which there
+is anm≤nwithK A,B
+m (Q)< K A
+m(Q)−2 logm−2.□
+The following projection lemma was essentially proved by Fiedler and Jing
+(Theorem 24 of [13]), and will be used in proving the discretized slicing and
+projection results in Section 3. We denote the set of unit vectors inRd by
+S d−1. For anyV∈G(d, k), we denote the orthogonal projection ofR d onto
+Vbyπ V. When projecting onto one-dimensional lines, we also denote the
+orthogonal projection map bype, whereeis the direction of the line.
+Lemma2.5.Lets >0,ε >0such thats, ε∈Q. Then, for every sufficiently
+largenthe following holds. IfAis an oracle,x∈R d ande∈ S d−1 satisfy
+(i)K A
+m(e)⪆(d−1)m−εn, for allm≤n,
+(ii)K A,e
+m (x)⪆K A
+m(x)−εn, for allm≤n,
+(iii)K A
+m(x)⪆sm−εn, for allm≤n,
+then, for everym≤n,
+KA,e
+m (πe⊥ x)⪆min{sm,(d−1)m} −O(εn).
+Moreover, ifs >1, then, for everym≤n,
+KA,e
+n,n,m(x|p ex, x)⪅K A
+n (x)−n−(s−1)m+O(εn).
+For completeness, we will give a proof of Lemma 2.5, which largely follows
+Lemma 4.2 of [28] and Theorem 24 of [13]. We will need the following auxil-
+iary lemma, which shows that we can use an oracle to lower the complexity
+of points at specified precisions using only the information already present
+in the point, i.e., without affecting the complexity of other objects.
+Lemma 2.6([28], Lemma 3.4).LetAbe an oracle,x∈R d,η >0,η∈Q,
+andn∈N. Suppose thatηn≤K A
+n (x). Then there is an oracleD=D(n, η)
+with the following properties.
+(i)For everym≤n,
+KA,D
+m (x) = min{ηn, K A
+m(x)}+O(logn).
+(ii)For everyd ′, m∈Nandy∈R d′
+,
+KA,D
+m,n (y|x) =K A
+m,n(y|x) +O(logn),
+and
+KA,x,D
+m (y) =K A,x
+m (y) +O(logn).
+(iii)If an oracleBsatisfiesK A,B
+n (x)≥K A
+n (x)−O(logn), then
+KA,B,D
+n (x)≥K A,D
+n (x)−O(logn).
+(iv)For everym∈N,u∈R d, w∈R d′
+KA
+n,m(u|w)≤K A,D
+n,m (u|w) +K A
+n (x)−ηn+O(logn).
+
+[PDF physical page 9]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 9
+With this technical lemma, we are able to prove Lemma 2.5.
+Proof of Lemma 2.5.We first prove the moreover claim. Assume that (i),
+(ii) and (iii) are satisfied, ands >1. Letη∈Qsuch that
+ηn=n+ (s−1)m−6εn.
+LetDbe the oracle given by Lemma 2.6. Note thatηn≤K A
+n (x)(forn
+sufficiently large), since, by assumption (iii),KA
+n (x)⪆sn−εn, and since
+s >1, thereforeηn≤sn−6εn.
+Also note that, by (ii),KA
+n,m(x|e)⪆K A
+n (x)−εn, and using the symmetry
+of information and (i) this implies that
+(6)K A
+r,n(e|x)⪆K A
+r (e)−εn⪆(d−1)r−2εn,
+for everyr≤n.
+LetQ m be the dyadic cube of side length2 −m containingx. We now
+show thatxis essentially the unique point inQ m whose projection onto
+eisp ex. More precisely, we will show that ify∈Q m,p ey=p ex, and
+|x−y|>2 −n+3εn, thenK A,D
+n (y)> K A,D
+n (x).
+Suppose thatK A,D
+n (y)≤K A,D
+n (x). It is not difficult to verify that, given
+xandywith precisionn, we can compute the direction betweenxandywith
+an error at most2−(n−t), i.e. with precisionn−t, wheret=−⌊log|x−y|⌋
+(note that, by our assumption,n−t≥0.)
+Since this direction belongs toe⊥, and the space of all hyperplanes that
+contain a given direction is ad−2-dimensional space, therefore, to finde
+with precisionn−t, it is sufficient to add(d−2)(n−t)extra information.
+In the language of Kolmogorov complexity, this shows that
+(7)K A,D
+n−t,n(e|x)⪅K A,D
+n (y|x) + (d−2)(n−t).
+We note thatK A,D
+t (x|y)≈K A,D
+t (y|x)≈0, since, at scale2 −t,xandy
+are contained in2−t-dyadic cubes which are close together. Using this fact,
+and the symmetry of information, we conclude that
+KA,D
+n−t,n(e|x)⪅K A,D
+n,t (y|x) + (d−2)(n−t)
+≈K A,D
+n (y)−K A,D
+t (x) + (d−2)(n−t),
+where
+KA,D
+n (y)≤K A,D
+n (x)≤ηn=n+ (s−1)m−6εn.
+Applying Lemma 2.6(ii) and (6), we see that
+KA,D
+n−t,n(e|x)⪆K A
+n−t,n(e|x)⪆(d−1)(n−t)−2εn.
+Putting together these inequalities we get
+KA,D
+t (x)≤n+ (s−1)m−6εn+ (d−2)(n−t)−(d−1)(n−t) + 2εn+O(logn)
+= (s−1)m+t−4εn+O(logn).
+
+[PDF physical page 10]
+10 MARIANNA CSÖRNYEI AND D. M. STULL
+Recall thatxandybelong to the same dyadic cube of size2−m, therefore
+t≥m−c, for some absolute constantc. Also recall that by Lemma 2.6(i),
+KA,D
+t (x) = min{ηn, K A
+t (x)}+O(logn).
+If the minimum isKA
+t (x), then we have an immediate contradiction, since
+KA
+t (x)⪆st−εnby condition (iii), and therefore we would have
+st−εn≤(s−1)m+t−4εn+O(logn)
+contradictingt≥m−c(for every large enoughn).
+IfK A,D
+t (x) =ηn+O(logn), then from our upper estimate ofK A,D
+t (x)
+above we gett≥n−2εn−O(logn). Thereforeyis within2 −n+2εn+O(logn)
+ofx, contradicting our initial assumption that|x−y| ≥2 −n+3εn.
+Using the fact thatxwith precisionnis, essentially, uniquely described
+byQ∈ D 2−m, its projection toe, and byK A,D
+n (x)(more precisely, by
+our argument above, there are at most2O(nε) many otherywith the same
+properties), a standard enumeration argument (see, e.g., Lemma 3.1 of [28])
+shows that we can findxwith precisionnwith at most an additionalO(εn)
+information. That is,
+(8)K A,D,e
+n,n,m(x|p ex, x)⪅O(εn).
+The conclusion follows by Lemma 2.6(iv), since
+KA,e
+n,n,m(x|p ex, x)⪅K A,D,e
+n,n,m(x|p ex, x) +K A
+n (x)−ηn
+⪅K A
+n (x)−n−(s−1)m+O(εn),
+as required.
+We now turn to the first claim of Lemma 2.5. The proof is largely identical
+to the argument above. Letm≤n. We note that we may assume that
+sm≥O(εn), otherwise the conclusion is trivially satisfied. Letη∈Qsuch
+that
+ηm= min{sm,(d−1)m} −6εn >0.
+LetDbe the oracle given by Lemma 2.6 with, importantly,nreplaced by
+min the assumptions of the lemma (andmreplaced by a smaller integer in
+its conclusions). Note that we can indeed apply Lemma 2.6, since by (iii) of
+Lemma 2.5,
+KA
+m(x)≥sm−εn−O(logn)≥ηm.
+We again note that, by (i), (ii) and the symmetry of information (by the
+same argument as we obtained (6) before), we have
+(9)K A
+r,m(e|x)⪆(d−1)r−2εn,
+for allr≤m≤n. Our goal is to show thatxis essentially the unique low
+complexity point, at precisionm, whose projection ontoe ⊥ isπ e⊥ x. Let
+y∈R d such thatπ e⊥ y=π e⊥ xandK A,D
+m (y)≤K A,D
+m (x). As before, since
+
+[PDF physical page 11]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 11
+givenxandywith precisionm, we can compute the direction betweenxand
+ywith an error a2−(m−t) (provided thatt:=⌊−log|x−y|⌋ ≤m), therefore
+(10)K A,D
+m−t,m(e|x)⪅K A,D
+m (y|x).
+Via the symmetry of information, and using the fact thatKt(x|y)≈K t(y|
+x)≈0, we conclude that
+KA,D
+m−t,m(e|x)⪅K A,D
+m,t (y|x)≈K A,D
+m (y)−K A,D
+t (x)⪅ηm−K A,D
+t (x).
+By (9), Lemma 2.6(ii), and rearranging the above inequality, we see that
+KA,D
+t (x)⪅ηm−K A,D
+m−t,m(e|x)⪅ηm−K A
+m−t,m(e|x)
+≤ηm−(d−1)(m−t) + 2εn.
+By Lemma 2.6(i),
+KA,D
+t (x) = min{ηm, K A
+t (x)}+O(logm).
+If the minimum isKA
+t (x), then
+(11)st−εn≤ηm−(d−1)(m−t) + 2εn+O(logm),
+or, equivalently,
+(12)(d−1−η)m≤(d−1−s)t+ 3εn+O(logm).
+Ifs≤d−1, i.e.ηm=sm−6εn, then this implies that
+(13)(d−1−s)m+ 3εn≤(d−1−s)t+ 2εn+O(logm),
+a contradiction. Ifs > d−1, i.e.ηm= (d−1)m−6εn, then we would have
+(14)3εn≤(d−1−s)t+ 2εn+O(logm)≤2εn+O(logm),
+again a contradiction.
+IfK A,D
+t (x) =ηm+O(logm),then we see that
+(15)ηm≤ηm−(d−1)(m−t) + 2εn+O(logm),
+and sinced−1≥1, this implies thatt≥m−O(εn). Thereforeyis within
+2−m+O(εn) ofx. Again, a simple enumeration argument shows that this
+implies that
+(16)K A,D,e
+m (x|π e⊥ x)⪅O(εn).
+The conclusion follows by symmetry of information, Lemma 2.6(iv), (16),
+and Lemma 2.5(ii) as
+KA,e
+m (πe⊥ x)≈K A,e
+m (x)−K A,e
+m (x|π e⊥ x)
+⪆K A,e
+m (x)−K A,D,e
+m (x|π e⊥ x)−K A
+m(x) +ηm
+≥K A,e
+m (x)−O(εn)−K A
+m(x) +ηm
+⪆−O(εn) +ηm,
+as required.□
+
+[PDF physical page 12]
+12 MARIANNA CSÖRNYEI AND D. M. STULL
+We end this section with a slight generalization of Lemma 2.5. Its proof
+is nearly identical to that of Lemma 2.5.
+Lemma 2.7.Lets >0,Abe an oracle,x∈R d ande∈ S d−1 satisfying
+(i)dim A,x
+H (e)> sand
+(ii)dim A
+H(x)> s.
+Then, for allε >0and all sufficiently largen,
+KA
+n (x|π e⊥ x, e)⪅K A
+n (x)−sn+εn.
+Proof.Letη∈Qsuch that
+ηn=sn−3εn.
+LetDbe the oracle given by Lemma 2.6.
+As in the proof of Lemma 2.5, we aim to show thatxis essentially the
+unique point in the ball of radius1aroundxwhose projection ontoe ⊥ is
+πe⊥x.
+Suppose thatK A,D
+n (y)≤K A,D
+n (x)and thatπ e⊥ xandπ e⊥yagree at
+precisionn. We again use the simple fact that, givenxandywith precision
+n, we can compute the direction betweenxandywith an error at most
+2−(n−t), wheret=−⌊log|x−y|⌋. Note that this direction, up to precision
+n−t, ise.
+In the language of Kolmogorov complexity, this shows that
+(17)K A,D
+n−t,n(e|x)⪅K A,D
+n (y|x).
+As before,K A,D
+t (x|y)≈K A,D
+t (y|x)≈0. Using this fact, and the
+symmetry of information, we conclude that
+KA,D
+n−t,n(e|x)⪅K A,D
+n,t (y|x)≈K A,D
+n (y)−K A,D
+t (x),
+where
+KA,D
+n (y)≤K A,D
+n (x)≈ηn=sn−3εn.
+Applying assumption (i) and Lemma 2.6(ii), we see that
+KA,D
+n−t,n(e|x)⪆K A
+n−t,n(e|x)⪆s(n−t)−εn.
+Putting together these inequalities we get
+KA,D
+t (x)≤ηn−s(n−t) +εn+O(logn).
+≤st−2εn+O(logn).
+Recall that by Lemma 2.6(i),
+KA,D
+t (x) = min{ηn, K A
+t (x)}+O(logn).
+If the minimum isK A
+t (x), then we have an immediate contradiction by
+condition (ii).
+IfK A,D
+t (x) =ηn, then from our upper bound ofK A,D
+t (x)above, we see
+that
+s(n−t)≤εn+O(logn)
+
+[PDF physical page 13]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 13
+Thereforeyis within2 −n+(ε/s)n+O(logn) ofx.
+We again use the standard enumeration argument to conclude that we can
+findxwith precisionnwith at most an additionalO(εn)information. That
+is,
+(18)K A,D
+n (x|π e⊥x, e)⪅O(εn).
+The conclusion follows by Lemma 2.6(iv), since
+KA
+n (x|π e⊥x, e)⪅K A,D
+n (x|π e⊥x, e) +K A
+n (x)−ηn
+⪅K A
+n (x)−sn+O(εn),
+as required.□
+2.4.Deducing the distance set result.In this section, we show that,
+in order to prove Theorem 1.5, it suffices to prove its algorithmic analogue
+Theorem 2.8 below. This is a standard reduction, e.g. we used a very
+similar argument in [7]. For the sake of completeness, in this section we
+briefly present the variant that we use here.
+Theorem 2.8.Letd= 3,4,Abe an oracle,x, y∈R d ande= y−x
+|x−y|.
+Suppose that
+(i)dim A
+H(x),dim A
+H(y),dim A,x
+H (e)> d/2;
+(ii)K A,x
+n (y)⪆K A
+n (y)for everyn∈N.
+Then,
+(19)dim A,x
+H (|x−y|)≥ 2
+3 .
+To prove the existence of such points, we will use Ren’s radial projection
+result [33] combined with standard algorithmic tools. Recall that the Riesz
+s-energy of a finite, compactly supported Borel measureµonRd is
+Es(µ) =
+ZZ dµ(x)dµ(y)
+|x−y| s .
+Proposition 2.9(Proposition 9.1 in [33]).Let1≤k≤d−1be an integer,
+and fixs∈(k−1, k]andη >0. Letµ, νbe Borel probability measures on
+Rd such thatE s(µ),E s(ν)<∞andµandνhave∼1separated supports.
+Suppose thatµ(H) =ν(H) = 0for everyk-planeH. Then, forµ-almost
+everyx, and for all Borel setsYof positiveνmeasure,
+dimH(πxY)≥s−η,
+whereπ x(y) = y−x
+|y−x| is the radial projection map.
+As we have already discussed it in Section 2.2 in [7], ifY⊆R d is com-
+putably compact relative toAandx∈R d, then
+(20)dim H(πxY) = sup
+y∈Y
+dimA,x
+H (πxy).
+
+[PDF physical page 14]
+14 MARIANNA CSÖRNYEI AND D. M. STULL
+We also discussed in Section 2.2 of [7], that, ifµis a probability measure
+whose support is contained in a compact setX⊂Rd, thenXhas a Hausdorff
+oracleArelative to whichµis computable and such that, for every oracle
+B,
+(21)K A,B
+n (x)⪆K A
+n (x)
+forµ-almost everyx∈X. In the following corollary, we chooseAsuch that
+this holds forXwithµ, and it also holds forYwithν.
+Corollary 2.10.LetX, Y⊆R d be compact sets and letµ, νbe Borel prob-
+ability measures whose support is contained inXandY, respectively such
+thatE s(µ),E s(ν)<∞for somes > d/2andµandνhave∼1separated
+supports. Suppose thatµ(H) =ν(H) = 0for every affine hyperplaneH.
+Then, there existx, y∈R d satisfying assumptions (i) and (ii) of Theorem
+2.8.
+Proof.Letx∈Xbe a point such thatdim A
+H(x)> d/2and such that
+dimH(πxY ′)> d/2for everyY ′ of positiveνmeasure. Note that, by Propo-
+sition 2.9, such a point exists.
+LetY ′ be the set ofy∈Ysuch that (ii) holds. By (21),Y ′ has full
+ν-measure. Hence there must be a pointy∈Y ′ such that
+dimA,x
+H (πxy) = dimA,x
+H (e)> d/2,
+and the proof is complete.□
+We are now able to prove our main theorem on pinned distance sets inR3
+andR 4.
+Proof of Theorem 1.5.We proceed by induction ond, up tod= 4. When
+d= 2, the conclusion is well-known (see, e.g., [21]).
+Fortheinductivestep, supposethatd >2. SinceEisBorelanddim H(E)>
+d/2, there is as > d/2, compact subsetsX, Y⊆Eand Borel probability
+measuresµandνsuch thatE s(µ),E s(ν)<∞andµandνhave separated
+supports.
+If eitherµ(H)orν(H)is non-zero for some hyperplaneH, then by our
+inductive hypothesis, the proof is finished. We can therefore assume that
+µ(H) =ν(H) = 0for every hyperplaneH, and so we can apply Corollary
+2.10. Hence, there are pointsx∈Xandy∈Ysatisfying (i) and (ii). Apply-
+ing Theorem 2.8, we see thatdimA,x
+H (|x−y|)≥2/3. SinceYis computably
+compact relative toA, andy7→ |x−y|is computable relative tox,(A, x)is
+a Hausdorff oracle for∆xY, and the conclusion follows.□
+3.Discretized slicings and projections
+In this section we prove a few facts about discretized slicings and projec-
+tions.
+Letδ= 2 −n be a dyadic scale. For any hyperplaneHwe denote its normal
+vector byH ⊥.
+
+[PDF physical page 15]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 15
+IfHis aδ-hyperplane, the normal vectors of the hyperplanes belonging to
+Hagree up to an error at most≲δ. We denote byH⊥ the normal vector of
+H, which represents a direction defined up to an error at most≲δ. For any
+linear subspaceV, we writeH ⊥ ⊂VifH ⊥ agrees with a direction inVup
+to an error at most≲δ. More generally, for anotherδ-hyperplaneH ′, the
+notationH ⊥ ⊂H ′ indicates thatH ′ contains both the origin and a direction
+agreeing withH ⊥, both up to an error at most≲δ.
+LetHbe an arbitrary set ofδ-hyperplanes inR d. LetAbe an oracle
+relative to whichHis computable. We fix anε >0, and a directione∈ Sd−1.
+LetH ′ denote the set of thoseδ-hyperplanesH∈ Hfor whichH ⊥ ⊂e ⊥.
+Then eitherH ′ is empty, or we can find anH∈ H′ withK A,e
+n (H)⪆log|H ′|.
+Trivially, we also haveKA
+n (H)⪅log|H|. Using symmetry of information,
+we get
+log|H ′|⪅K A,e
+n (H)⪅K A
+n (H|e)≈K A
+n (H, e)−K A
+n (e)
+≈K A
+n (H) +K A
+n (e|H)−K A
+n (e)⪅log|H|+K A
+n (e|H)−K A
+n (e).
+SinceHgives a direction,H ⊥, ine ⊥ with precisionn, we can finde⊥ (and
+hence alsoe) with precisionnby giving at most(d−2)nextra information.
+This shows thatKA
+n (e|H)⪅(d−2)n. Also, for most directionsewe have
+KA
+n (e)≥(d−1)n−εn, hence
+|H′| ≤ |H|2 −n+εn+O(logn) =δ 1−O(ε)|H|.
+The set of those directionsefor which this fails is covered by2(d−1)n−εn =
+δ−(d−1)+ε manyδ-cubes. Therefore we proved the following lemma.
+Lemma 3.1.Letd≥2,δ= 2 −n be a dyadic scale, and letε >0. LetHbe
+a set ofδ-hyperplanes inR d, and letAbe an oracle relative to whichHis
+computable. Lete∈ S d−1 with
+KA
+n (e)≥(d−1)n−εn.
+Then
+H′ :={H∈ H |H ⊥ ⊂e ⊥}
+satisfies
+|H′|≲δ 1−O(ε)|H|.
+We now turn to a discrete analog of Mattila’s slicing theorem.
+Theorem 3.2(Mattila [29]).Letd−k < s≤d, and letA⊆R d be an
+Hs-measurable set with0<H s(A)<∞. Then, for almost allV∈G(d, k),
+Hd−k({u∈V ⊥ |dim H(A∩(V+u)) =s+k−d})>0.
+In the special case whenk=d−1, this shows that for everys >1, for
+almost every directione∈S d−1, ans-set inR d intersects positively many
+shifts of the hyperplanee⊥ in a set of dimensions−1.
+Our proof of a discretized analog of this result uses algorithmic methods,
+in particular, the results we presented in Section 2.
+
+[PDF physical page 16]
+16 MARIANNA CSÖRNYEI AND D. M. STULL
+Theorem 3.3.Letd≥2,1< s≤d, andε, η∈(0, s−1). For all sufficiently
+small dyadic scalesδ, the following holds. LetPbe a(δ, s, δ−η)-set ofδ-cubes
+in[0,1] d. LetAbe an oracle relative to whichP,δ= 2 −n,s,εandηare
+computable. Then, for everye∈ S d−1, with
+KA
+n (e)≥(d−1)n−2εn,
+there are≳δ −1+O(ε+η) many dyadicδ-intervalsIinRfor which
+P1 :={Q∈ P |Q∩p −1
+e I̸=∅}
+contains a(δ, s−1, δ −O(ε+η))-subsetP 2 with|P 2|≳δ 1+o(1)|P|.
+Proof.Lete∈S d−1 such that
+KA
+n (e)≥(d−1)n−2εn.
+Note that this implies that, for everym≤n,
+KA
+m(e)≥(d−1)m−2εn−O(logn).
+LetQ∈ Psuch thatK A
+n (Q)≈log|P|,K A
+m(Q)≥sm−ηnfor everym≤n
+and such thatKA,e
+m (Q)≈K A
+m(Q)for everym≤n. By Proposition 2.4, such
+aQexists. LetIbe a dyadicδ-interval meetingp eQ.
+Using the fact thatIcan be encoded into a finite string, and therefore
+putting it into an oracle is the same as using conditional complexities, and
+using symmetry of information, we can see that for everym≤n,
+KA,e,I
+m (Q)≈K A,e
+m,n(Q|I)≈K A,e
+n (Q|I)−K A,e
+n,n,m(Q|I, Q).
+ForK A,e
+n (Q|I)we use the trivial estimate
+KA,e
+n (Q|I)≈K A,e
+n (Q)−K A,e
+n (I)⪆K A,e
+n (Q)−n.
+Note that this immediately implies that
+(22)K A,e
+n (Q|I)⪆log|P| −n.
+For estimatingK A,e
+n,n,m(Q|I, Q), note that by our assumptions oneand
+Q, we can apply Lemma 2.5. Applying the second part of the lemma we
+obtain
+KA,e
+n,n,m(Q|I, Q)⪅K A
+n (Q)−n−(s−1)m+O((ε+η)n).
+Therefore
+KA,e,I
+m (Q)⪆K A,e
+n (Q)−n−(K A
+n (Q)−n−(s−1)m+O((ε+η)n))
+= (s−1)m−O((ε+η)n).
+Note that
+P1 ={R∈ P |R∩p −1
+e I̸=∅}
+is enumerable givenA,eandI, and moreover,P 1 containsQ.
+
+[PDF physical page 17]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 17
+Therefore, by Proposition 2.3, the setP1 contains a(δ, s−1, δ −O(ε+η))-
+subsetP 2 with
+|P2| ≥2 KA,e,I
+n (Q)−O((ε+η)−1 logn) .
+Using (22), this shows|P2| ≥δ 1+o(1)|P|.
+What remains to show is that the same estimates hold not only with our
+I, but also for many other dyadic intervals inR.
+GivenAande, the set of all dyadic intervalsIfor which there is a setP2
+that satisfies the requirements of our theorem, is enumerable. Therefore the
+number of dyadic intervals for which there is such aP2 is≳2 KA,e(I).
+From the second statement in Lemma 2.5, withm= 0, we get
+KA,e
+n (Q|I)⪅K A,e
+n (Q)−n+O((ε+η)n).
+Since giveneandQwe also knowI, therefore in this formula we have
+KA,e
+n (Q)≈K A,e
+n (Q, I), and then by the symmetry of information we get
+KA,e
+n (I)⪆n−O((η+ε)n).
+Therefore indeed there are≳2 n−O((η+ε)n) =δ −1+O(η+ε) many dyadic inter-
+valsIfor which the statement of our theorem holds.
+□
+Our next lemma is a discretized analog of Marstrand’s projection theorem.
+Theorem 3.4.Lett >0, ε, η >0. For all sufficiently small dyadic scales
+δ, the following holds. LetPbe a(δ, t, δ −η)-set ofδ-cubes in[0,1] d. LetA
+be an oracle relative to whichP,δ= 2 −n,t,εandηare computable. Then,
+for everye∈ S d−1, with
+KA
+n (e)≥(d−1)n−εn,
+the set
+P1 :=D δ(
+[
+Q∈P
+πe⊥Q)
+contains a(δ, t ′, δ−O(ε+η))-subsetP 2 inR d−1 witht ′ = min{t, d−1}. More-
+over,
+|P2|≳δ −t′+O(ε+η)
+Proof.As before, we encodeP,δ= 2 −n,t,εandηinto an oracleA, and
+first chooseesuch thatK A
+n (e)≥(d−1)n−εn, and then chooseQ∈ Psuch
+thatK A
+n (Q)≈log|P|,K A
+m(Q)⪆tm−ηnfor everym≤nand such that
+KA,e
+m (Q)≈K A
+m(Q)for everym≤n. From the first part of Lemma 2.5, we
+get
+KA,e
+m (πe⊥Q)⪆min{tm,(d−1)m} −O((ε+η)n),
+and the conclusion follows from Proposition 2.3.□
+
+[PDF physical page 18]
+18 MARIANNA CSÖRNYEI AND D. M. STULL
+4.Incidence bounds for hyperplanes and hyperplane
+Furstenberg sets
+In this section, we prove Theorem 1.1, our main result on hyperplane
+incidence bounds. In Section 4.2, we will reformulate this bound in the
+language of complexities. This will allow us to prove our two applications of
+Theorem 1.1, to hyperplane Furstenberg sets and to pinned distance sets.
+4.1.Discretized version.We will prove Theorem 1.1 by induction on the
+dimension of the spaceRd, with Theorem 2.2 as a base case. Our inductive
+step will rely on Lemma 4.1 below. In order to simplify the statement of our
+lemma, we introduce the following definition.
+We say that a pair(P,H)⊂ Dδ([0,1] d)× Hδ is a(δ, s, δ−η, M)-nice config-
+uration, if for eachQ∈Pthere are∼Mmanyδ-hyperplanes inHthrough
+Q, with the property that the set of directions of theseδ-hyperplanes is a
+(δ, s, δ−η)-set. (More precisely, for eachH⊥ we fix aδ-cube that meetsH⊥,
+and we require that through eachQ∈ Pthere areMdifferentδ-hyperplanes
+inHsuch that theδ-cubes of the normal vectors of theseδ-hyperplanes are
+distinct and their union is a(δ, s, δ−η)-set ofδ-cubes.)
+We often find it useful to identify the set of directions inRd, i.e. the sphere
+Sd−1, byR d−1, via radial projections. This can be done, say, by fixing an
+affine hyperplaneHat distance 1 from the origin, and then identifying each
+direction by the point at which the line through the origin of this direction
+hits the planeH. We will refer to this mapping as the ’radial projection
+ontoH’.
+A technical issue that we need to be careful about is that not every line
+meetsH(those whose direction is parallel toHdon’t), and moreover, al-
+though this mapping from the sphere toHis locally bi-Lipschitz, and there-
+fore it preserves many nice properties, unfortunately it gets distorted as the
+directions of the lines are getting close to being parallel toH. Therefore, it is
+nottrue that the radial image of a(δ, s, δ−η)-set of directions is a(δ, s, δ−η)-
+set onH.
+However, by throwing away a constant portion of our(δ, s, δ−η)-set of
+directions, we can find a planeHsuch that each remaining direction has at
+least a constant angle with this planeHand therefore our mapping will be
+bi-Lipschitz with an absolute constant. Noting also that a constant portion
+of a(δ, s, δ −η)-set is a(δ, s, cδ −η)-set, this argument shows that for each
+(δ, s, δ−η)-set of directions there is a planeHsuch that the radial projection
+onto this planeHcontains a(δ, s, cδ−η)-set of comparable size. Moreover, we
+can find not only oneHwith this property but this will be true for a constant
+portion of all affine hyperplanesH(among those whose distance from the
+origin is 1). Every constant in this observation is an absolute constant that
+depends only on the dimensiond.
+We will make use of this observation in the proof of the following lemma.
+
+[PDF physical page 19]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 19
+Lemma 4.1.For everys∈(1, d−1],t∈(0, d], andη >0there is aδ 0 such
+that the following holds for everyδ < δ 0. If(P,H)is a(δ, s, δ −η, M)-nice
+configuration andPis a(δ, t, δ −η)-set, then there is a set ofδ-cubesP ′ in
+[0,1] d−1 and a set ofδ-hyperplanesH ′ inR d−1 such that
+(i)(P ′,H ′)is a(δ, s−1, δ −O(η), δ1+O(η)M)-nice configuration;
+(ii)P ′ is a(δ, t ′, δ−O(η))-set witht ′ = min{t, d−1}and|P ′|≳δ −t′+O(η);
+and
+(iii)|H ′|≲δ 1−O(η)|H|.
+Proof.We will show that there is a directione∈S d−1, such that with a
+(carefully chosen) subset
+P ′ ⊂ {π e⊥Q|Q∈ P}
+and with
+H′ :={H∩e ⊥ |H∈ H, H ⊥ ∈e ⊥}
+the lemma holds (identifyinge⊥ withR d−1).
+Property (iii): By Lemma 3.1, (iii) holds with moste∈Sd−1. Our aim
+is to findeandP ′ such that also (i) and (ii) hold.
+Property (i): We encodeP,H,δ= 2 −n,s,t, andηinto an oracle
+A. In addition, we encode, for everyQ∈ P, a witnessing family ofδ-
+hyperplanesH(Q)⊂ Hthrough the cubeQgiven by our nice definition. We
+fix a cubeQ∈ Psuch thatK A
+n (Q)≈log|P|, and for allm≤nwe have
+KA
+m(Q)⪆tm−ηn. By Proposition 2.4 such aQexists.
+By our discussion at the beginning of this section, we know that there is
+an affine hyperplaneH 0 in distance 1 from the origin such that the radial
+projection ontoH 0 of the set of normal vectors of theδ-hyperplanes inH(Q)
+contains a(δ, s, cδ −η)-set of∼Mmanyδ-cubes inH 0. Applying our slicing
+result, Theorem 3.3 to this set ofδ-cubes inH 0, we can see that most 1-
+codimensional affine subspaces inH0 (that is, for moste∈S d−1, the affine
+hyperplaneH 0 ∩e ⊥) contains a(δ, s−1, δ −O(η)-subset of≳δ 1+O(η)Mmany
+δ-cubes. In particular, for most directionse∈S d−1, the set
+{H∈H(Q)|H ⊥ ⊂e ⊥}
+contains a(δ, s−1, δ −O(η))-subset of≳δ 1+O(η)Mmanyδ-hyperplanes. This
+immediately implies that we have a(δ, s−1, δ−O(η))-subset of≳δ 1+O(η)M
+manyδ-hyperplanes inH ′ throughπ e⊥Q.
+In order to satisfy (i), we need this to hold not only forπe⊥Qwith our
+fixed cubeQbut for every cube inP ′. Therefore, letP 1 denote the set of
+all cubesR∈Pfor which
+{H∈H(R)|H ⊥ ⊂e ⊥}
+contains a(δ, s−1, δ −O(η)-subset of≳δ 1+O(η)Mmanyδ-hyperplanes. We
+will chooseP ′ ⊂π e⊥P1, and therefore (i) will hold. What remains is to check
+that there is anefor whichπ e⊥P1 contains a setP′ for which (ii) holds.
+
+[PDF physical page 20]
+20 MARIANNA CSÖRNYEI AND D. M. STULL
+Property (ii): We have already seen that, for moste, we have (iii) and
+Q∈ P 1. We fix anesuch that indeed (iii) holds,Q∈ P 1, and moreover, we
+chooseesuch that
+(23)K A
+n (e|Q)≥(d−1)n−O(ηn).
+We may chooseeso that it is computable given its firstnbits. Note that,
+since conditioning onQcan only decrease the complexity ofe, (23) immedi-
+ately implies thatKA
+n (e)≥(d−1)n−O(ηn). By symmetry of information,
+for anym≤n,
+KA
+n (e)≈K A
+m(e) +K A
+n,m(e|e)
+⪅K A
+m(e) + (d−1)(n−m),
+and soK A
+m(e)⪆(d−1)m−O(ηn). In addition, (23) shows thatQgives
+little information aboute. So, by symmetry of information,egives little
+information aboutQ, in particular,
+(24)K A
+n (Q|e)≥K A
+n (Q)−O(ηn).
+Thus, we can see that (i)-(iii) of Lemma 2.5 hold withs=t,ε=O(η)and
+x=Q. From Lemma 2.5 we get
+(25)K A,e
+m (πe⊥Q)⪆min{t, d−1}m−O(ηn)
+for everym≤n. And sinceπ e⊥Qis inπ e⊥P1 andπ e⊥P1 is enumerable, by
+(25) and Proposition 2.3 it has a(δ, t′, δ−O(η))-subsetP ′ with
+(26)|P ′| ≥2 KA,e
+n (πe⊥ (Q))−O(η−1 logn) ≳δ −t′+O(η).
+□
+We are now able to prove our main theorem.
+Proof of Theorem 1.1.As we already mentioned it in the introduction, the
+planar case is a famous result of Ren and Wang. By induction, we now
+assume that it is true inRd−1, and we check that it holds inRd.
+Let(P,H)bea(δ, s, δ −η, M)-niceconfigurationinR d andPbea(δ, t, δ −η)-
+set. Assume thatδis small enough so that we can apply Lemma 4.1 to
+(P,H). Then the lemma gives us(P ′,H ′)inR d−1. We also assume thatη
+andδare small enough so that we can apply Theorem 1.1 to(P′,H ′), more
+precisely, we assume that we can apply Theorem 1.1 inRd−1 withε/2,s−1,
+t′,cηandδ(wherecis the constant in theO(η)terms in the statement
+of Lemma 4.1). For simplicity, we also assume thatη < ε/2. Then, since
+|H|≳δ −1+cη|H′|and|H ′|≳δ −min{t ′, s−1+t′−((d−1)−2)
+2 ,1}+ε/2δM, therefore
+|H|≳δ −min{t ′, s+t′−(d−2)
+2 ,1}+εM.
+Ift ′ =t, then the conclusion follows immediately. And witht′ =d−1we
+get
+min{t′, s+t ′ −(d−2)
+2 ,1}= 1 = min{t, s+t−(d−2)
+2 ,1}
+
+[PDF physical page 21]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 21
+and the conclusion again follows immediately.□
+4.2.Algorithmic incidences.In this section, we use Theorem 1.1 to es-
+tablish bounds in the language of Kolmogorov complexity.
+The statement and the proof of our Theorem 4.2 below is very similar to
+Theorem 3.5 of [7], where we used the planar version of Theorem 1.1.
+Theorem 4.2.For everys, t, ε >0, withd−2< s≤d−1,0< t≤dthere
+is anη >0andn 0 ∈Nsuch that the following holds for alln≥n 0 and every
+oracleA. For everyy∈[0,1] d and affine hyperplaneHinR d containingy,
+if
+(i)K A
+k (y)> tk−ηnfor allk≤n, and
+(ii)K A
+k,n(H|y)> sk−ηnfor allk≤n
+then
+KA
+n (H)⪆K A
+n (H|y) +αn−εn
+withα:= min{t, s+t−(d−2)
+2 ,1}.
+Proof.Letηbe the parameter given by Theorem 1.1, and we choosen0 large
+enough so that2−n0 < δ. LetQ n denote the dyadic cube containingywith
+side-length2 −n. Define
+H={H ′ ∈ H 2−n
+|K A(H ′)⪅K A
+n (H)},
+and for every dyadic cubeQ, denote
+nQ = #{H ′ ∈ H |H ′ ∩Q̸=∅}.
+SinceHis enumerable givenK A
+n (H), and the2−n-hyperplane containingH
+is inH, we have
+(27)|H|= 2 KA
+n (H)+O(logn) .
+We note that
+(28)K A
+n (H|y)⪅logn Qn +O(logn).
+Define the set
+P1 ={Q∈ D 2−n[0,1] d |K A(Q)⪅K A
+n (y), nQ ≥2 KA
+n (H|y)−O(logn) }.
+ThenQ n ∈ P 1, andP 1 is enumerable, givenn,K A
+n (H),K A
+n (y)andK A
+n (H|
+y).
+We fix a rationalη 0 which will be specified later. Define the setPto
+be the set of thoseQ∈ P 1 that satisfy the following. There is a dyadic
+(2−n, s,2 O(η0n))-setH(Q)⊆ Hwith
+|H(Q)| ≥2 KA
+n (H|y)−O(η −1
+0 logn)
+such thatH∩Q̸=∅for allH∈H(Q). The constants in theO(·)terms will
+come from Proposition 2.3.
+The setH(Q(y)) ={H ′ ∈ H |H ′∩Q(y)̸=∅}is enumerable givenK A
+n (H),
+and contains the2 −n-hyperplane containingH. Therefore, by the dual of
+
+[PDF physical page 22]
+22 MARIANNA CSÖRNYEI AND D. M. STULL
+Proposition 2.3, applied toH(Q(y)), we see thatH(Q(y))contains a subset
+H ′ which is a dyadic(2−n, s,2 O(η0n))-set and such that
+|H ′| ≥2 KA
+n (H|y)−O(η −1
+0 logn) .
+Therefore we see thatQ(y)∈ P. Furthermore,Pis computably enumer-
+able, givens,η 0,K A
+n (y),K A
+n (H)andK A
+n (H|y). SinceK(η 0, s) =O(1),
+and the other inputs have lengthO(logn), by applying Proposition 2.3 to
+P, we obtain a setP′ ⊆ Psuch that|P ′| ≥2 KA
+n (y)−O(η −1
+0 logn) andP ′ is a
+dyadic(2 −n, t,2 O(η0n))-set.
+We now chooseη0 small enough so that we may apply Theorem 1.1 toP′
+with parameterss,tandεandη:= (logC ′)/n∼O(η 0). Applying Theorem
+1.1 yields
+|H|≳ ε 2min{t, s+t−(d−2)
+2 ,1}n−εn2KA
+n (H|y)−O(η −1 logn) .
+In particular, by (27), we see that
+KA
+n (H)⪆K A
+n (H|y) + min{t, s+t−(d−2)
+2 ,1}n
+−εn−O(η −1 logn),
+and the conclusion follows.□
+By rescaling, we immediately have the following corollary.
+Corollary 4.3.For everys, t, ε >0, withd−2< s≤d−1,0< t≤d
+there is anη >0andn 0 ∈Nsuch that the following holds for alln, m
+withn−m≥n 0 and for every oracleA. For everyy∈[0,1] d and affine
+hyperplaneHinR d containingy, if
+(i)K A
+k,m(y|y)> t(k−m)−η(n−m)for allm≤k≤n, and
+(ii)K A
+k,n(H|y)> sk−η(n−m)for allk≤n−m
+then
+KA
+n,m(H|y)⪆K A
+n−m,n(H|y) +α(n−m)−ε(n−m)
+withα:= min{t, s+t−(d−2)
+2 ,1}.
+We will need the following simple corollary of this theorem, which will be
+easier to apply in our application to the distance set problem.
+Corollary 4.4.For everys, t, ε >0, withd−2< s≤d−1,0< t≤d
+there is anη >0andn 0 ∈Nsuch that the following holds for alln, mwith
+n−m≥n 0 and for every oracleA. For everyy∈R d ande∈ S d−1, if
+(i)K A
+k,m(y|y)> t(k−m)−η(n−m)for allm≤k≤n,
+(ii)K A
+k,n(e|y)> sk−η(n−m)for allk≤n−m, and
+(iii)K A
+n,n,n−m(e|y, e)≈0,
+then
+KA
+n,n,n,m(y|p ey, e, y)⪅K A
+n,m(y|y)−α(n−m) +ε(n−m),
+
+[PDF physical page 23]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 23
+whereα= min{t, s+t−(d−2)
+2 ,1}.
+Proof.LetHbe the affine hyperplane containingywhose normal vector
+ise. Since knowingeandp eyis the same as knowingH, our aim is to
+estimateK n,n,m(y|H, y). It also follows from the same observation that
+KA
+k,n(e|y)≈K A
+k,n(H|y)for everyk≤n.
+By the symmetry of information, Corollary 4.3, our observation, symme-
+try of information, again symmetry of information, and (iii), we have the
+following inequalities:
+KA
+n,m(H|y) +K A
+n,n,m(y|H, y)≈K A
+n,n,m(y, H|y).
+KA
+n,m(H|y)⪆K A
+n−m,n(H|y) +α(n−m)−ε(n−m)
+KA
+n−m,n(H|y)≈K A
+n−m,n(e|y)
+KA
+n,n,m(y, H|y)≈K n,m(y|y) +K A
+n (H|y)
+KA
+n (H|y)≈K A
+n,n−m,n(H, e|y)≈K A
+n−m,n(e|y) +K A
+n,n,n−m(H|y, e)
+KA
+n,n,n−m(H|y, e)≈0.
+Putting all these together we get the statement of the corollary.□
+4.3.Hyperplane Furstenberg sets.We are now able to prove our main
+theorem on hyperplane Furstenberg sets.
+Proof of Theorem 1.3.LetAbe a Hausdorff oracle forFand forH. Let
+ε >0. It suffices to show that
+(29)dim A
+H(x)≥min{s+t, 3s+t−(d−2)
+2 , s+ 1} −ε,
+for somex∈F.
+LetH∈ Hbe a hyperplane such thatdim A
+H(H)> t−ε/2. Letx∈F∩H
+suchthatdim A,H
+H (x)> s−ε/2. Fixrationalt ′ > t−εsuchthatdim A
+H(H)> t ′
+and rationals ′ > s−εsuch thatdim A,H
+H (x)> s ′. Letn∈Nbe sufficiently
+large andη >0be sufficiently small.
+We now consider the dual ofxandH, letH x be the dual hyperplane of
+xandy H be the dual point ofH. Sincenis taken to be sufficiently large,
+we see that
+(1)K A
+a (yH)> t ′a−ηnfor alla≤n, and
+(2)K A
+b,n(Hx |y H)> s ′b−ηnfor allb≤n.
+We may therefore apply Theorem 4.2 (choosingm= 0), which yields
+(30)K A
+n (Hx)⪆K A
+n (Hx |y H) +αn−εn/2,
+whereα= min{t ′, s′+t′−(d−2)
+2 ,1}.
+
+[PDF physical page 24]
+24 MARIANNA CSÖRNYEI AND D. M. STULL
+Hence, we see that
+KA
+n (x)≈K A
+n (Hx)
+⪆s ′n−ηn+αn−εn/2
+= min{s′ +t ′, 3s′ +t ′ −(d−2)
+2 , s′ + 1}n−ηn−εn/2.
+Therefore
+dimA
+H(x)≥min{s ′ +t ′, 3s′ +t ′ −(d−2)
+2 , s′ + 1} −η−ε/2
+and the conclusion follows.□
+5.Partitioning Lipschitz Functions
+In this section, we will introduce a method of partitioning a piecewise
+linear Lipschitz functionf: [0, n]→Rwhich will be used in the proof of
+Theorem 1.5.
+The ultimate goal of this section is to partition the complexity function
+Kn(x)of a pointx∈R d (as a function ofn) into intervals of precisions where
+we have some control over how the complexity ofxis changing. Of course,
+the complexity ofxis only defined on the natural numbers (precisions), but
+we can interpolate to make it piecewise linear. We will interpolate between
+precisions which are sufficiently far apart to make the function also Lipschitz.
+For more details on the construction of our function from the complexity,
+see the next section.
+Definition 5.1.Letf:R→Rbe a continuous function. We say thatf, on
+an interval[a, b], is
+•Frostman, if it attains its minimum on[a, b]ata;
+•Katz-Tao, if it attains its minimum on[a, b]atb.
+Since the functionfis typically fixed, we commonly refer to intervals them-
+selves as Frostman or Katz-Tao.
+First we recall the following well-known fact about Lipschitz functions. It
+is (a special case of) Jones’s traveling salesman theorem [20]. Iff: [0,1]→R
+is a Lipschitz function with Lipschitz constant at mostL, whereL≥1, then
+X
+I
+|β(I)| 2|I|≲L 2,
+where the summation is taken for all dyadic subintervals of[0,1]. The so-
+called ’Jonesβ-number’ of an intervalIis defined as
+β(I) := 1
+|I| min
+A
+max
+t∈I
+|f(t)−A(t)|,
+where the minimum is taken for all affine functionsA.
+An immediate corollary of this is that for everyε, β >0andL >1there
+is aδ >0, such that for every Lipschitz functionf: [0,1]→Rwith Lipschitz
+constant at mostL, there are dyadic subintervalsIj such that|S
+j Ij| ≥1−ε,
+
+[PDF physical page 25]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 25
+and|I j| ≥δandβ(I j)≤βfor everyj. In particular, the following corollary
+holds.
+Corollary 5.2.For everyε, β >0andL≥1there is ac∈N, such that
+for every Lipschitz function defined on an intervalIwith Lipschitz constant
+at mostL, there are at mostcnon-overlapping subintervals inIwhoseβ-
+number is at mostβand whose total length is at least(1−ε)|I|.
+We will say that an intervalI= [a, b]has the ’doubling’ property, if
+b≤2a, and it has the ’non-doubling’ property ifb≥2a(it can have both).
+Our main result in this section is the following lemma.
+Lemma 5.3.For everyε, η >0andL≥1there is ac >0such that the
+following holds. Letf: [a, b]→Rbe a piecewise linear Lipschitz function
+with Lipschitz constant at mostL, where1≤a≤b, and suppose thatfis
+Katz-Tao on[a, b]. Then we can find at mostc(1 + log(b/a))many non-
+overlapping doubling subintervals in[a, b]with the following properties. The
+total length of these intervals is at least(1−ε)(b−a), and they can be
+divided into three sets of intervals, which we denote byG,RandB, with the
+following properties.
+(i)The intervals inGare Frostman and Katz-Tao.
+(ii)The intervals inRare Frostman and they are not Katz-Tao.
+(iii)The total length of the intervals inGis at least the total length of
+the intervals inR.
+(iv)The intervals inBare Katz-Tao and theirβ-number is at mostη.
+Proof.First, using a greedy algorithm that always chooses the longest avail-
+able interval, we choose a maximal set of non-overlapping doubling subin-
+tervals in[a, b]with the property thatfis both Frostman and Katz-Tao on
+each of these subintervals. We call these intervalsgoodsubintervals. To-
+gether with the remaining gaps, they form a partition of[a, b]. Within this
+partition, when we have a sequence of consecutive good subintervals, we call
+it agood block. We have partitioned[a, b]into good blocks and the gaps
+between the good blocks.
+Now consider a gap[c, d]. Since the function is piecewise linear, and it
+doesn’t contain any good subinterval, therefore it cannot have a piece on
+which it is increasing followed by a piece on which it is decreasing. In other
+words, denoting byethe point at which it attains its minimum, it has to be
+strictly decreasing on[c, e]and strictly increasing on[e, d]. We divide[c, d]
+into two subintervals at the pointe(ifeis one of the endpoints, then we
+don’t divide it). We now have a partition of[a, b]into decreasing intervals,
+increasing intervals, and good blocks.
+Importantly, every increasing interval in this partition is followed by a
+good block (note that here we use that the last interval in the partition
+cannot be increasing since the function was Katz-Tao on the interval[a, b]).
+We call a maximal set of consecutive intervals in this partition that are
+increasing, good block, increasing, good block, ..., increasing (it needs both
+
+[PDF physical page 26]
+26 MARIANNA CSÖRNYEI AND D. M. STULL
+to start and to end with increasing) anincreasing block. The function may
+not be increasing on an increasing block, but it will be important for us that
+there is a small neighborhood of its right endpoint on which it is increasing.
+Also note that, by our construction, every increasing block is followed by a
+good block, and this good block is followed by a decreasing interval. (Again,
+this good block must be followed by something, otherwise[a, b]wouldn’t have
+been Katz-Tao, and it cannot be followed by an increasing interval.) Since,
+outsidethisgoodblock, atitsleftandrightendpoint, therearesomeintervals
+on which the function is increasing and decreasing, respectively, therefore we
+can cover our good block by a slightly longer interval which has the Frostman
+and the Katz-Tao property. Since our good intervals were maximal, therefore
+this slightly larger covering cannot be doubling. Therefore our good block
+has the non-doubling property.
+Now consider our partitioning of[a, b]into increasing blocks, and non-
+doubling good blocks (the good blocks immediately following the increasing
+blocks), and the remaining gaps, which we will call ’decreasing blocks’. Since
+every increasing block is followed by a non-doubling good block, and we can
+have≤1 + log(b/a)many non-overlapping non-doubling intervals, therefore
+this is a partition of[a, b]intoO(1 + log(b/a))many blocks.
+Next, by subdividing each increasing interval (if necessary), and then join-
+ing consecutive intervals (if necessary), we repartition each increasing block
+into doubling intervals. We can ensure that the total number of these dou-
+bling intervals is≲1 + log(b/a). Note that each resulting interval is Frost-
+man. These intervals will be (some of) our intervalsIin the statement of
+the lemma. Depending on whether an interval is also Katz-Tao, we assign
+it either to the setGor toR. Similarly, by joining consecutive intervals if
+necessary, we repartition each non-doubling good block, into a total number
+of≲1 + log(b/a)many doubling subintervals that are both Frostman and
+Katz-Tao, and we assign these intervals toG.
+Now consider a decreasing block. We first decompose the block into dou-
+bling intervals in the natural way. By applying Corollary 5.2 withβ:=εηto
+each interval, we can choosecnon-overlapping subintervalsIwhose union
+covers at least a(1−ε)portion of the block, and theβ-number of each of
+these intervals is at mostεη.
+Recall that our decreasing block had been before subdivided into decreas-
+ing and good intervals. Fully covering some of these good intervals by an
+intervalIis fine, but we don’t want ourIto contain only part of a good
+interval. So letI ′ ⊂Idenote the largest subinterval ofIwhose endpoints
+are not inside the interiors of the good intervals. We examine two cases. If
+|I ′|< ε|I|, then we throw away the intervalI. And if|I ′| ≥ε|I|, then we
+keepI ′ (and discard the rest of the intervalI). Note thatI ′ is Katz-Tao,
+andβ(I ′)≤β(I)/ε≤β/ε=η. We assign theseI ′ to our setB, and, in
+addition, we assign toGeach good interval whose interior contained some
+endpoints of some of our intervalsI. This ensures that we threw away at
+most anεportion of our block.
+
+[PDF physical page 27]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 27
+It only remains to check (iii). This follows from the fact that each interval
+inRis contained in an increasing block, and each increasing block is followed
+by a non-doubling good block whose intervals are inG. And from the non-
+doubling property it follows that the length of the increasing block is at most
+the length of this non-doubling good block.□
+We now rewrite our lemma into a form that will be convenient to apply
+to our complexity functionsKn(x).
+Definition 5.4.We say that a functionfon an intervalI= [a, b]is
+•σ-Frostmanorσ-Katz-Tao, iff(t)−σtis Frostman or Katz-Tao,
+respectively;
+•(σ, η)-linear, if|f(t)−f(a)−σ(t−a)| ≤η(b−a).
+The following proposition is an immediate corollary of Lemma 5.3.
+Proposition 5.5.For everyε, η >0andL≥1there is ann 0 such that the
+following holds for everyn≥n 0. Letf: [0, n]→Rbe a monotone increasing
+piecewise linear Lipschitz function with Lipschitz constant at mostL, and
+suppose thatfisσ-Katz-Tao on[0, n]. Then we can find≲lognmany non-
+overlapping doubling subintervals in[0, n]such that each of them has length
+≥Cη −1 logn, the total length of these intervals is at least(1−O(ε))n, and
+they can be divided into three sets of intervals, which we denote byG,Rand
+B, with the following properties.
+(i)The intervals inGareσ-Frostman andσ-Katz-Tao.
+(ii)The intervals inRareσ-Frostman and they are notσ-Katz-Tao.
+(iii)The total length of the intervals inGis at least the total length of
+the intervals inR, up to aO(εn)error. That is,
+length(G)≥length(R)−O(εn).
+(iv)Each interval inBis(σ ′, η)-linear with some0≤σ ′ ≤σand also
+σ-Katz-Tao.
+Proof.We choosenlarge enough so then the total length of at mostc(1 +
+logn)many intervals of length≤Cη −1 lognis at mostO(εn). Then all
+assertions are satisfied.□
+Remark5.6.Totakeawaysomeofthemystery(or, tomakethissoundeven
+more mysterious), we note that the ’doubling property’ of our intervals will
+be needed because of the curvature of the circle. This will become apparent
+in the geometric argument in the proof of Proposition 6.2.
+We now introduce the complexity analogs of non-concentration conditions
+defined above.
+Definition 5.7.Letσ, η >0. For any integersm≤n, and any pointx, we
+say that[m, n]is
+•(σ, η)-FrostmanifK A
+k (x)−K A
+m(x)⪆σ(k−m)−η(n−m)for every
+k∈[m, n];
+
+[PDF physical page 28]
+28 MARIANNA CSÖRNYEI AND D. M. STULL
+•(σ, η)-Katz-TaoifK A
+n (x)−K A
+k (x)⪅σ(n−k) +η(n−m)for every
+k∈[m, n];
+Remark 5.8.One of the important facts we will use is that in Proposition
+5.5, the selected intervals have length at leastCη −1 logn. Therefore, if
+we approximate a complexity function by a piecewise linear functionfas
+described in Section 2.2, iffisσ-Frostman (respectively,σ-Katz-Tao) on
+[a, b], then the complexity function is(σ, η)-Frostman (respectively,(σ, η)-
+Katz-Tao) on[a, b].
+Remark 5.9.We also note the trivial fact that in our piecewise linear
+approximation, without loss of generality we can assume thatfis not only
+Lipschitz with Lipschitz constant at mostd+ 1, but also
+(31)(f(b)−f(a))/(b−a)≤d+c(η)
+for everya, bwithb−a≳Cη −1 logn, wherec(η)is a constant depending
+onηand it is small ifηis small.
+6.Algorithmic dimension of distances
+The goal of this section is to prove Theorem 2.8. Throughout this section,
+we fix anx,y, ande= y−x
+|x−y| for which the following assumptions hold:
+(i)dim A
+H(x),dim A
+H(y),dim A,x
+H (e)> d
+2 anddim A
+H(x),dim A
+H(y),dim A,x
+H (e)>
+s0 > d−2
+(ii)K A,x
+n (y)⪆K A
+n (y)for everyn∈N.
+Without loss of generality we also assume that|x−y| ∼1.
+Our first lemma shows that we necessarily have a strong lower bound on
+the complexity ofegiveny.
+Lemma 6.1.There is ans > d/2such that for allnand allm≤n,
+(32)K A
+m,n(e|y)⪆sm.
+Proof.Letnbe sufficiently large, andm≤n. Using symmetry of informa-
+tion, and assumption (ii), and the obvious factπe⊥x=π e⊥y, we have
+KA
+m(x)≈K A
+m,n(x|y)⪅K A
+m,n(e|y) +K A
+m,m,n(x|e, y)
+⪅K A
+m,n(e|y) +K A
+m(x|π e⊥x, e).
+By Lemma 2.7 and assumption (i), there is ans′ > d/2such that
+(33)K A
+m(x|π e⊥x, e)⪅K A
+m(x)−s ′m+O(εm).
+Combining this with the previous inequality proves the lemma.□
+Proposition 6.2.For everyσ∈[0, d]andε >0there is anη >0such that
+the following holds for every doubling interval[m, n]withn−m≥Cη −1 logn.
+If[m, n]is(σ, η)-Frostman, then
+KA,x
+n,n,m(y| |x−y|, y)⪅K A
+n,m(y|y)−α(n−m) +ε(n−m),
+whereα= min{σ,
+d
+2 +σ−(d−2)
+2 ,1}.
+
+[PDF physical page 29]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 29
+Proof.The proof of this proposition relies on the following elementary obser-
+vation. If the angle betweeny∈R d ande∈S d−1 isθ, thenp ey=|y|cosθ.
+In this formula, if we knowθwith precisionm, andθ≲2 −(n−m), then we
+knowcosθwith precisionn. If, in addition,|y| ∼1and we knowywith
+precisionn, then we knowp eywith precisionn.
+We apply this observation withyreplaced byx−yandereplaced by
+the2 −(n−m)-dyadic representative (defined in Section 2.2) of the direction
+betweenxandy. If we knowx, and we knowywith precisionm, then we
+know the direction betweenxandywith precisionm. Sincem≥n−m,
+therefore we knowe′. If, in addition, we know|x−y|with precisionn, then
+we knowp e′(x−y)with precisionnand hence we knowp e′ywith precision
+n.
+Since if we knowe ′ with precisionn−mthen we knowe ′ with every
+precision, therefore this shows that
+KA,x
+n,n,m(y| |x−y|, y)⪅K A
+n,n,n,m(y|p e′y, e′, y),
+and it also shows that (iii) of Corollary 4.4 holds withereplaced bye′.
+Also, assumption (i) of Corollary 4.4 holds withtreplaced byσ, and (ii)
+holds withsgiven by Lemma 6.1. The proof is finished by applying Corollary
+4.4.□
+Corollary 6.3.Letm≤nsuch thatn≤2mandn−m≥Cη −1 logn. If
+[m, n]is(σ, η)-Frostman withσ≥d/2, then
+(34)K A,x
+n,m(|x−y| | |x−y|)⪆n−m−ε(n−m).
+If[m, n]is(σ, η)-Frostman and(σ, η)-Katz-Tao withσ < d/2, then
+(35)K A,x
+n,m(|x−y| | |x−y|)⪆K A
+n,m(y|y)/2−ε(n−m).
+Proof.We first note that, sincexdoesn’t give any information abouty, we
+have
+KA,x
+n,m(y|y)≈K A,x
+n (y)−K A,x
+m (y)≈K A
+n (y)−K A
+m(y)≈K A
+n,m(y|y).
+In both cases, by Proposition 6.2, and the symmetry of information,
+KA
+n,m(y|y)−α(n−m) +ε(n−m)⪆K A,x
+n,n,m(y| |x−y|, y)
+≈K A,x
+n,m(y|y)−K A,x
+n,m(|x−y| |y)
+⪆K A,x
+n,m(y|y)−K A,x
+n,m(|x−y| | |x−y|)
+≈K A
+n,m(y|y)−K A,x
+n,m(|x−y| | |x−y|).
+If[m, n]is(σ, η)-Frostman withσ≥d/2, the above inequality holds with
+α= 1, proving (34). Similarly, if[m, n]is(σ, η)-Frostman and(σ, η)-Katz-
+Tao withσ < d/2, then the above inequality holds with
+α= min{σ, d/2 +σ−(d−2)
+2 ,1}.
+In particular, sinced= 3,4, we conclude that (35) holds.
+
+[PDF physical page 30]
+30 MARIANNA CSÖRNYEI AND D. M. STULL
+□
+Remark 6.4.Corollary 6.3 can be generalized to hold for arbitraryd, with
+a nearly identical proof. We won’t use this generalization in the paper, but
+it may be of independent interest.
+Corollary 6.5.Letm≤nsuch thatn≤2mandn−m≥Cη −1 logn. If
+[m, n]is(σ, η)-Frostman withσ≥d/2, then
+KA,x
+n,m(|x−y| | |x−y|)⪆n−m−ε(n−m).
+If[m, n]is(σ, η)-Frostman and(σ, η)-Katz-Tao withσ < d/2, then
+KA,x
+n,m(|x−y| | |x−y|)⪆min{σ, s+σ−(d−2)
+2 ,1}(n−m)−ε(n−m)
+We now turn to the proof of Theorem 2.8. The plan is as follows. We will
+use the partition of Section 5 to partition the complexity functionKA(y)
+into intervals, and apply Corollary 6.3 to each interval. We then use the
+symmetry of information to sum the contribution of each part.
+We now fix an oracleA,x, y∈R d ande= y−x
+|x−y| which satisfy
+(C1)dim A
+H(x),dim A
+H(y),dim A,x
+H (e)> d
+2;
+(C2)K A,x
+n (y)⪆K A
+n (y)for everyn∈N.
+We fixn∈N. LetDbe the oracle of Lemma 2.6 withxreplaced byy, the
+ηof the lemma replaced withd/2. By Lemma 2.6(i),KA,D
+n (y)≈dn/2and
+KA,D
+m (y) = min{dn/2, K A
+m(y)}+O(logn),
+for everym≤n. Letf: [0, n]→R + be a monotone,(d+ 1)-Lipschitz,
+piecewise linear function approximating the complexity ofyas described in
+Section 2.2. We choosefsuch thatf(0) = 0,f(n) =dn/2,f(t)≥dt/2for
+all0≤t≤n, and f(m)−K A,D
+m (y)
+ ≤Clogn
+for allm≤n. We note thatfisd/2-Katz-Tao.
+We now prove Theorem 2.8 using the selection of intervals given by Propo-
+sition 5.5.
+Proof of Theorem 2.8.Letε >0. Letnbe sufficiently large. LetG∪R∪B
+be the sets of intervals given by Proposition 5.5. By changingηby a mul-
+tiplicative constant (if necessary), without loss of generality we can assume
+that the endpoints of these intervals are integers. This gives us a partition
+Pof[0, n]into intervals with integer endpoints. SinceG∪R∪Bhas≲logn
+many intervals, andPhas at most twice more, therefore by applying the
+symmetry of information≲lognmany times, we see that
+(36)K A,D,x
+n (|x−y|)≥
+X
+[a,b]∈P
+KA,D,x
+b,a (|x−y| | |x−y|)−O(log 2 n).
+We choosenlarge enough so thatlog 2 n≤εn.
+
+[PDF physical page 31]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 31
+By Corollary 6.3, which is also true for oracle(A, D), if[a, b]∈G∪R,
+then
+KA,D,x
+b,a (|x−y| | |x−y|)⪆b−a−ε(b−a),
+and if[a, b]∈B, then
+KA,D,x
+b,a (|x−y| | |x−y|)⪆K A,D
+b,a (y|y)/2−ε(b−a).
+For the intervals[a, b]̸∈G∪R∪Bwe use the facts that their total length
+isO(εn), and there are≲lognmany of them. Therefore, summing for all
+intervals inP, we can see from (36) that
+KA,D,x
+n (|x−y|)≥ |R|+|G|+
+X
+[a,b]∈B
+KA,D
+b,a (y|y)/2−O(εn)(37)
+≥ |R|+|G|+
+X
+[a,b]∈B
+(f(b)−f(a))/2−O(εn),(38)
+where|R|and|G|denotes the total length of the intervals inRandG,
+respectively. We will now use the trivial identity
+dn/2 =f(n)−f(0) =
+X
+[a,b]∈P
+(f(b)−f(a)).
+In this sum, if[a, b]∈Gthen it isd/2-Frostman andd/2-Katz Tao, therefore
+f(b)−f(a) =d(b−a)/2. If[a, b]∈Rthen we use Remark 5.9, and summing
+for those intervals which are not inG∪R∪Bwe get at most aO(εn)since
+fis Lipschitz. This shows that
+dn/2≤d|G|/2 +d|R|+
+X
+[a,b]∈B
+(f(b)−f(a)) +O(εn),
+and, recalling also|G| ≥ |R|from Proposition 5.5, now (37) gives
+KA,D,x
+n (|x−y|)≥ |R|+|G|+dn/4−d|G|/4−d|R|/2−O(εn)
+=dn/4 + (1−d/2)|R|+ (1−d/4)|G| −O(εn)
+≥dn/4−(3d/4−2)|R| −O(εn).
+If|R| ≤n/3−O(εn), then this shows thatK A,D,x
+n (|x−y|)⪆2n/3−O(εn),
+and if|R| ≥n/3−O(εn), then the same inequality follows from (38).
+SinceK A,x
+n (|x−y|)⪆K A,D,x
+n (|x−y|)≥2n/3−O(εn), the conclusion
+follows.□
+References
+[1] Iqra Altaf, Ryan Bushling, and Bobby Wilson. Distance Sets Bounds for Polyhedral
+Norms via Effective Dimension.Real Analysis Exchange, 50(1):1 – 13, 2025.doi:
+10.14321/realanalexch.1683878523.
+[2] Paige Bright and Manik Dhar. Spread Furstenberg sets. URL:https://arxiv.org/
+abs/2412.18193,arXiv:2412.18193.
+[3] Paige Bright, Alexander Ortiz, and Dmitrii Zakharov. A continuum beck-type theo-
+rem for hyperplanes.arXiv:2510.10907.
+
+[PDF physical page 32]
+32 MARIANNA CSÖRNYEI AND D. M. STULL
+[4] Ryan EG Bushling and Jacob B Fiedler. Bounds on the dimension of lineal extensions.
+Journal of Fractal Geometry, 12(1):105–133, 2025.
+[5] Peter Cholak, Marianna Csörnyei, Neil Lutz, Patrick Lutz, Elvira Mayordomo, and
+D.M.Stull.Algorithmicinformationboundsfordistancesandorthogonalprojections.
+arXiv:2509.05211.
+[6] Peter Cholak, Marianna Csörnyei, Neil Lutz, Patrick Lutz, Elvira Mayordomo, and
+D. M. Stull. Bounding the dimension of exceptional sets for orthogonal projections.
+arXiv:2411.04959.
+[7] Marianna Csörnyei and D. M. Stull. Improved bounds for radial projections in the
+plane.arXiv:2508.18228.
+[8] Orponen Dąbrowski, Damian, Tuomas, and Michele Villa. Integrability of orthogonal
+projections, and applications to Furstenberg sets.Adv. Math., 407:Paper No. 108567,
+34, 2022.doi:10.1016/j.aim.2022.108567.
+[9] Xiumin Du, Larry Guth, Yumeng Ou, Hong Wang, Bobby Wilson, and Ruixiang
+Zhang. Weighted restriction estimates and application to Falconer distance set prob-
+lem.American Journal of Mathematics, 143(1):175–211, 2021.doi:10.1353/ajm.
+2021.0005.
+[10] Xiumin Du, Yumeng Ou, Kevin Ren, and Ruixiang Zhang. New improvement to
+Falconer distance set problem in higher dimensions.arXiv:2309.04103.
+[11] Kenneth J Falconer. On the Hausdorff dimensions of distance sets.Mathematika,
+32(2):206–212, 1985.
+[12] Jacob B. Fiedler. On the packing dimension of unions and extensions ofk-planes.
+URL:https://arxiv.org/abs/2508.18257,arXiv:2508.18257.
+[13] Jacob B Fiedler and Zhifan Jing. Projections of sets with optimal oracles ontok-
+planes, 2026.arXiv:2604.06119.
+[14] Jacob B. Fiedler and D. M. Stull. Dimension of pinned distance sets for semi-regular
+sets.arXiv:2309.11701.
+[15] Jacob B. Fiedler and D. M. Stull. Pinned distances of planar sets with low dimension.
+Transactions of the American Mathematical Society, page to appear.
+[16] Larry Guth, Alex Iosevich, Yumeng Ou, and Hong Wang. On Falconer’s distance
+set problem in the plane.Inventiones mathematicae, 219(3):779–830, 03 2020.doi:
+10.1007/s00222-019-00917-x.
+[17] Terence LJ Harris. Low-dimensional pinned distance sets via spherical averages.The
+Journal of Geometric Analysis, 31(11):11410–11416, 2021.
+[18] Kornélia Héra. Hausdorff dimension of furstenberg-type sets associated to families of
+affine subspaces.Annales Fennici Mathematici, 44(2):903–923, 2019.
+[19] Kornélia Héra, Tamás Keleti, and András Máthé. Hausdorff dimension of unions of
+affine subspaces and of furstenberg-type sets.Journal of Fractal Geometry, 6(3):263–
+284, 2019.
+[20] PeterWJones.Rectifiablesetsandthetravelingsalesmanproblem.Inventiones math-
+ematicae, 102(1):1–15, 1990.
+[21] Tamás Keleti and Pablo Shmerkin. New bounds on the dimensions of planar dis-
+tance sets.Geometric and Functional Analysis, 29(6):1886–1948, 2019.doi:10.1007/
+s00039-019-00500-9.
+[22] Bochen Liu. Hausdorff dimension of pinned distance sets and the L2-method.Pro-
+ceedings of the American Mathematical Society, 148(1):333–341, 2020.
+[23] Jack H. Lutz and Neil Lutz. Algorithmic information, plane Kakeya sets, and
+conditional dimension.ACM Trans. Comput. Theory, 10(2):Art. 7, 22, May 2018.
+doi:10.1145/3201783.
+[24] Jack H. Lutz, Neil Lutz, and Elvira Mayordomo. Extending the reach of the point-to-
+set principle.Information and Computation, 294:105078, 2023.doi:10.1016/j.ic.
+2023.105078.
+
+[PDF physical page 33]
+HYPERPLANE INCIDENCES AND DISTANCE SETS IN HIGHER DIMENSIONS 33
+[25] Jack H. Lutz, Renrui Qi, and Liang Yu. The point-to-set principle and the dimensions
+of Hamel bases.Computability, 13(2):105–112, 2024.doi:10.3233/COM-210383.
+[26] Neil Lutz. Fractal intersections and products via algorithmic dimension.ACM Trans-
+actions on Computation Theory, 13(3):1–15, August 2021.doi:10.1145/3460948.
+[27] Neil Lutz and D. M. Stull. Bounding the dimension of points on a line.Information
+and Computation, 275:104601, 2020.
+[28] Neil Lutz and Donald M Stull. Projection theorems using effective dimension.Infor-
+mation and Computation, 297:105137, 2024.
+[29] Pertti Mattila. Hausdorff dimension, orthogonal projections and intersections with
+planes.Ann. Acad. Sci. Fenn. Ser. AI Math, 1(2):227–244, 1975.
+[30] Daniel M Oberlin. Unions of hyperplanes, unions of spheres, and some related esti-
+mates.Illinois Journal of Mathematics, 51(4):1265–1274, 2007.
+[31] Tuomas Orponen. On the distance sets of Ahlfors-David regular sets.Adv. Math.,
+307:1029–1045, 2017.doi:10.1016/j.aim.2016.11.035.
+[32] Tuomas Orponen and Pablo Shmerkin. On the Hausdorff dimension of Fursten-
+berg sets and orthogonal projections in the plane.Duke Mathematical Journal,
+172(18):3559–3632, 2023.doi:10.1215/00127094-2022-0103.
+[33] Kevin Ren. Discretized radial projection inR.arXiv:2309.04097.
+[34] Kevin Ren and Hong Wang. Furstenberg sets estimate in the plane. URL:https://
+arxiv.org/abs/2308.08819,arXiv:2308.08819,doi:10.48550/ARXIV.2308.08819.
+[35] Pablo Shmerkin. On distance sets, box-counting and Ahlfors regular sets.Discrete
+Analysis, pages Paper No. 9, 22, 2017.doi:10.19086/da.1643.
+[36] Pablo Shmerkin. On the Hausdorff dimension of pinned distance sets.Israel Journal
+of Mathematics, 230(2):949–972, 2019.doi:10.1007/s11856-019-1847-9.
+[37] Pablo Shmerkin and Hong Wang. On the distance sets spanned by sets of di-
+mension d/2 in.Geometric and Functional Analysis, 35(1):283–358, 2025.doi:
+10.1007/s00039-024-00696-5.
+[38] D. M. Stull. Optimal oracles for point-to-set principles.Journal of Mathematical
+Logic, page to appear.
+[39] D. M. Stull. Pinned distance sets using effective dimension.Israel Journal of Mathe-
+matics, page to appear.
+[40] Hong Wang and Joshua Zahl. Volume estimates for unions of convex sets, and the
+kakeya set conjecture in three dimensions.arXiv:2502.17655.
+Department of Mathematics, University of Chicago, Chicago, IL 60637
+Email address:csornyei@math.uchicago.edu
+Department of Mathematics, University of Chicago, Chicago, IL 60637
+Email address:dmstull@uchicago.edu

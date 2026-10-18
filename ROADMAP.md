@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0089真实原marks共享格、全n几何cut及directed-area局部planiness经两独审；低degree/coarse全门未证未否，两具体桥有实体反攻。无ordinary新界/完整branch saving/newID/major。主streak12，下一notes/00_map/R0089_next_full_goal_reselection.md当前无qualified新gain；65PDF/69sources/78IDs，Goal active。
+更新2026-10-18，R0090原完整κ1 polar补全/L2正常量可付，hyperplane端点二点CS复得，拒锁phaseII新gain。真实H内R4原质量未付，finite/continuum校准两审修复；无ordinary/完整branch-saving/newID/major。streak13，下一notes/00_map/R0090_next_full_goal_reselection.md，66PDF/70sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -192,3 +192,6 @@ R0088：Wang2411.02961v8 cone extension实际试验，原N与平均I/端帽保�
 
 
 R0089：Guth1402.0518v1几何cut避R56 leading conditioning，但标准hyperplaniness无coarse normal一致性；R5两跳预算D³≳K/Mvis²不当universal lower，有限独立seed图阈值证书不否原H5。强cut长badgap及真实splitquadric II反攻限具体桥。完整低degree/coarse门未证未否，停止此直接桥，不续参数/更多hop/quadric-spread公设。
+
+
+R0090：CsornyeiStull新primary真实接口核。完整sourceκ1 polar原Φ→nearfullnormal及原E4Fst/sameH/sameM付过，但s=t4端点由二点-CS独立复得；H满5/原TH七维预算只均度2，不授R4满三参数族。a(v)=v²子chart校准非fullsource反例，有限axes零测与roundtube正体积已分清。停止此直接polar桥，不续κ/normal/M或richH假设；四完整路保持。
