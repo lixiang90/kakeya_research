@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0083 directlineunion primary原量词门root9/A8/B8和两formal实际通过。Zahl/HKM可用但无超旧4D/KT新输入，拒phaseII，主gainstreak6完整四路macro；当前无合格新主命题，下一notes/00_map/R0083_next_full_goal_reselection.md。61PDF/64sources/78IDs，Goal active。
+更新2026-10-18，R0084真实convex factoring closure与parent-shading原输入门root9/A8/B8/两formal实际核。拒phaseII，无newdim/branchsaving streak7，完整macro后当前无合格新主命题。下一notes/00_map/R0084_next_full_goal_reselection.md；61PDF/65sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -176,3 +176,5 @@ R0081：已有Keleti讲义归约的fixedB密度/self-dependence/同一residual/�
 R0082：endpoint/minimal-residual/selector门拒，另以实际全clockR5 skew族+同h正measure振荡/canonicalFubini否local开角度幂正则化；非fullRP/低维/Kakeyacounter。下一notes/00_map/R0082_next_primary_line_union_input_gate.md仅一轮真正不同primary直线族维数输入门，不制造欲证公设或续h模板。
 
 R0083：Borel角度lift只5Fstupper，Zahl5→4/大s无matchingN、HKMΓ-null逐lineclock不保wholefamily/一般Fubini仍猜想均双独审。directlineunion门停止，不续两primaryabstract；C10无共享carrier输入不锁gain，当前无合格next，见notes/00_map/R0083_next_full_goal_reselection.md。
+
+R0084：真实assigned partition的fullcontainment与原I预算付过；GWZ5.9/Rem5.2 parent-density另需Rn−1，n5投影cap/shape/scale与DIR未匹配。A帽公式显式保N/N′。R43同核旧闭包不重名，变量核未付未反；本门停止无新ID。

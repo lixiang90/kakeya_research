@@ -1,0 +1,5 @@
+# R0084内部已审：真实凸分解输入门
+
+notes/40_multiscale/R0084_actual_convex_factoring_input_gate.md，A8/B8、research/reviews/R0084_factoring_counts_and_four_dimensional_input_review.md、research/reviews/R0084_shading_restriction_and_projection_review.md及research/reviews/R0084_root_integration_review.md实际全文限定通过；未经外部同行评审。
+
+只付原质量和完整包含计数closure，经典source应用；GWZ parent-shading的Rn−1输入在R5尚不匹配现有4D调用。拒phaseII，无新ID/ordinarybound/major。next notes/00_map/R0084_next_full_goal_reselection.md 当前无合格主命题，Goal active。

@@ -112,3 +112,5 @@ R0081新增第57篇PDF/第60个source：Keleti（joint Gáspár/Máthé）2026-0
 R0082新增2PDF，59PDF/62sources：Harrison2203.16412v1实际33页、MurphyPakianathan1303.0895v1实际15页（abstract14，重编译字节范围明确），指定HTML/视觉读域和校验元数据均存；仅经典fibration/continuous配置对照，非wholeproof独证或新界。见literature/notes/R0082_line_fibration_and_regularization_source_scope.md。
 
 R0083新增Zahl2208.02913v1（8页）/HKM2106.09661v3（26页），61PDF/64sources；原PDF/text/字节及实际readscope见literature/notes/R0083_direct_line_union_sources.md。合法应用但无新gain，高级wholeproof未新独证。
+
+R0084新增HongWang ICM2026 DOI10.1137/25M1806156官方survey web记录（原PDF端点403，截图cache miss，未存PDF），61PDF/65sources；实际GWZ通用factoring与完整§5读取范围见literature/notes/R0084_convex_factoring_sources.md。不授新ordinarybound。
