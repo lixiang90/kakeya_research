@@ -27,3 +27,5 @@ R0038最新：RED001完成完整原argument与finite/shading/KT接口内部双�
 
 
 R0039宏观正面比对KT六维7−2sqrt2、HRZ/Zahl及GLX2025实际范围；未见17/4既有primary statement不足以认证priority。DIM是已有KT递推接已付finite桥的内部核验推论，不称新方法。namedtheorem引用无需无限递归重证全proof；下一不是数值闭包/λ²常数，转newLPSW真实五维source-to-flake接口。
+
+R0080：[保留遮蔽pivot核心](R0080_retained_pivot_core_certificate.md) root12/A12/B12和两formal实际全文限定通过；正确d-cap/y2 lift/retained records与same Ω′的二阶矩付清。只normalized core，非wholeKT全预处理独证，不重报DIM17/4或新ID/major。下一notes/00_map/R0080_next_one_fullrank_native_gate.md，Goal active。

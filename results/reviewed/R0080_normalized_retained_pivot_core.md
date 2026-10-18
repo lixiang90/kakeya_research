@@ -1,0 +1,7 @@
+# R0080内部已审：normalized retained pivot core
+
+notes/20_dimension_lifting/finite_seed_transfer/R0080_retained_pivot_core_certificate.md、A12/B12及research/reviews/R0080_density_and_scope_review.md、research/reviews/R0080_geometry_and_retained_mass_review.md、research/reviews/R0080_root_integration_review.md实际全文逐步审查限定通过，未经外部同行评审。
+
+完整付原goodtriples/pivot/f Córdoba、正确y2 lift/d-cap、真实unsaturated坏mass截断和same Ω′总mass、retained indicator双向细格恢复、两侧L²及4d指数。原已发表KT核心的本地依赖核验，不是新定理ID。
+
+critical raisingd/regularization/bilinear/general factorization仍具名，非wholeKT6.2全独证。DIM001条件17/4不改，无新界/branchsaving/major/priority。主gain保守streak3完整macro；下一notes/00_map/R0080_next_one_fullrank_native_gate.md只phaseI单端满秩门。Goal active。
