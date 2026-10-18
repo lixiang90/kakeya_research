@@ -27,3 +27,5 @@ R0019起下一实际mixed42研究单独存notes/40_multiscale/sticky_mixed/INDEX
 R0058新增原common-kernel割线门槛见 R0058_secant_slab_dichotomy_and_dimension_ceiling.md：非零offsetslabupper、nearzero保g片及真factorization下二维预处理反攻；未排完整Mat2/commonkernel。coarse line不免费回R16，原A-D耦合仍待。
 
 R0072：[R0072_kernel_velocity_two_time_budget_and_stop.md](R0072_kernel_velocity_two_time_budget_and_stop.md)，actual commonkernel同管双时响应/core与γ>1/2子范围；未得ξbasicness/商lower，严格localmask非fullsourcecounter，按spec主机制noinfo/冻结。下一notes/00_map/R0072_next_full_goal_reset_after_two_stops.md，Goal active。
+
+R0075：[原同管完整clock与两种源用途](R0075_global_same_tube_rank_and_kernel_CW_application.md)，A12/B10及两formal通过：explicit bounded完整matrix33 κ≥1+ζ排除，κ1不涵。Fine δ^(2κ−2)→真实rawclock，近image全real扩展/旧linewise，粗kernel原权CW/经典Wolff维3；无商ADlower/方向分离。全Kd5(1)只条件归一化桥，无ordinary/major/newID。下一notes/00_map/R0075_next_critical_native_joint_geometry_gate.md；停止本族阈值，Goal active。
