@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0096原CW观测商/coarse native闭包与uniform boundedD/B polynomial native子类排除完成限定独审；允许δdependent病态系数，无rough提取/ordinary界/major。保守时钟streak19，实际数学progress另计；下一notes/00_map/R0096_next_full_rough_source_gate.md；78PDF/82sources/78IDs，Goal active。
+更新2026-10-19，R0097原scalar CSWZ nearfull质量桥及全rough parameter localSegre small-loss输入证书完成限定独审。只排fixedb/ε<b直接调用，不排ε≥b/有效商/全部方法。无ordinary/完整roughbranchsaving/major，保守时钟streak20，实际信息另计；下一notes/00_map/R0097_next_full_route_input_gate.md，78PDF/82sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -213,3 +213,6 @@ R0095：真正共同π=(filled x,time)给point2/pencilκ，但单time横排已�
 
 
 R0096：五time精确kernel→allclock singular pencil→原orth商1Fst；原globalcoarseY与nativefilled三轴付nativeunionupper。九allowed空谱带/近compression原wholeCW只付一幂、ρclock/fullsupport/fixedmomentGGW统一排全局boundedD/B βδ子类，无sminlower假设。rough representation/完整mixed42仍未付；停止D/κ/ρ微调，非major/ordinary增益，四路保持。
+
+
+R0097：原θ=(-β,-tβ,t)∈Σ={v=wu}，local切H误差C(r²+δ)，任意非空删选迫Cspread≥c_bδ^-b，仅fixedb且ε<b small-loss输入关闭。原每timeE/Φ→T及robust point质量使finite nearfull强度够κgap，但附加parameter hyp未付。fullmoment globalHcap r^(1/7)/fullspan/fulljet不授local条件；非可逆quotient/relative theorem未解决。不续本b/ε/可逆chart及R96D/ρ参数，四完整路保持open。

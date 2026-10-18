@@ -1,0 +1,5 @@
+# R0097内部已审：原scalar局部Segre适用门
+
+主文notes/40_multiscale/sticky_mixed/R0097_scalar_Segre_local_spreadout_gate.md12节、A10/B8和两formal全文限定通过，见research/reviews/R0097_original_mass_and_local_Segre_review.md、research/reviews/R0097_global_cap_and_scope_review.md及research/reviews/R0097_root_integration_review.md。未经外部同行评审。
+
+实际原E/Φ到每time visitedT及pointcell质量可接finite nearfull；全部rough原θ在Σ上，真实δcells任意非空删选在多数dyadic尺度singular，迫Cspread≥c_bδ^-b。仅排fixedb、ε<b的直接small-loss参数输入，不排ε≥b/noninvertible quotient/全部方法，不反完整source或投影结论。global moment cap/fulljet与local条件严格分离。标准几何不作新ID/major/novelty认证，78旧ID状态保持，完整Goal active。

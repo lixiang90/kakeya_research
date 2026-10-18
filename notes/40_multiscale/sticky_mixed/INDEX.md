@@ -98,3 +98,6 @@ R0095：[R0095_planar_Furstenberg_transfer_and_straightening_boundary.md](R0095_
 
 
 R0096：[R0096_uniform_polynomial_native_exclusion.md](R0096_uniform_polynomial_native_exclusion.md)：原CW观测商、实际coarse标签闭包与九尺度谱gap/近compression/finiteGGW统一排boundedD/B δdependent native多项式子类；rough提取未付，无ordinary/newID/major。三spec、A16/B10/两formal独审，下一notes/00_map/R0096_next_full_rough_source_gate.md。
+
+
+R0097：[R0097_scalar_Segre_local_spreadout_gate.md](R0097_scalar_Segre_local_spreadout_gate.md)：原scalar CSWZ nearfull质量桥与全roughΣ局部二次平坦证书；任意非空删选迫Cspread≥c_bδ^-b，仅fixedb/ε<b直接small-loss输入关闭。A10/B8、两formal，下一notes/00_map/R0097_next_full_route_input_gate.md，无ordinary/newID/major。

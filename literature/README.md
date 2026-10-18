@@ -149,3 +149,6 @@ R0095重读既存RW2308.08819v3有限Defs/Th4.1及WZ Def17，fresh版本仍v3，
 
 
 R0096重读既存GGW2211.09508v2原finite Th2.1/源Def17与R74稳定compression，freshv2 Jan21 2024未变。原coarse closure和fixed fullmoment应用见metadata/R0096_source_check.json；无新PDF，78PDF/82sources/78IDs，非major/novelty认证。
+
+
+R0097 actual重读既存CSWZ2610.13682v1 Def1.4–1.5/Th1.2/1.6/1.7及PDF6，freshabs/history仍v1；原scalar nearfull质量转移/localSegre small-loss范围见metadata/R0097_source_check.json。fresh官方ref/tree未变，不是三核心bytes重核；无新PDF，78PDF/82sources/78IDs，非major认证。
