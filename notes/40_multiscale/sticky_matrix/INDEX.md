@@ -33,3 +33,5 @@ R0075：[原同管完整clock与两种源用途](R0075_global_same_tube_rank_and
 R0076：[双端native乘积全clock细尺度归约](R0076_two_end_native_product_full_clock_reduction.md)，A12/B10及两formal已审；实际κ1 det-large分支、δ²原全T质量、8维residual细分和全原u/g均付。CSWZ固定Schubert与自动rank弱接口失败，无κ1gain/major/newID，主机制noinfo1。下一notes/00_map/R0076_next_original_rank_one_triple_geometry_gate.md；Goal active。
 
 R0077：[双近秩一原质量用途](R0077_double_rank_one_native_projection_application.md)，root14/A12/B12及两formal已审：完整source的uniform NI→两角mass cap→finite weighted RW/all-large细subset→exactg R/w双fibre，真正fixed-power限定branch upper；非fullκ1/ordinary/major/newID，主机制noinfo0。下一notes/00_map/R0077_next_native_fullrank_source_gain_gate.md；Goal active。
+
+R0078：[原共同作用集及fractional稳定结构](R0078_native_common_action_and_fractional_stabilizer_application.md)，root14/A12/B12与两formal已审。weighted anchor保h→metric三路径→manyu/fullmixedsum→共同X，原Tu-law/allscale→He真实稳定cone；非given-X，但无fullrank saving/完整κ1/ordinary/major/newID，主机制noinfo1。下一notes/00_map/R0078_next_joint_native_action_and_fractional_cone_gate.md，Goal active。
