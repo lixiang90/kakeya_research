@@ -1,0 +1,2444 @@
+[PDF physical page 1]
+
+arXiv:2505.05709v2  [math.CA]  25 Jun 2025
+Hausdorff dimension of restricted Kakeya sets
+Jonathan M. Fraser1 and Lijian Yang2
+1,2 School of Mathematics and Statistics, University of St Andrews, Scotland
+emails: 1jmf32@st-andrews.ac.uk and 2ly51@st-andrews.ac.uk
+Abstract. A Kakeya set in Rn is a compact set that contains a unit line segment Ie in each
+direction e ∈ Sn−1. The Kakeya conjecture states that any Kakeya set in Rn has Hausdorff
+dimension n. We consider a restricted case where the midpoint of each line segment Ie must
+belong to a fixed set A with packing dimension at most s ∈ [0, n]. In this case, we first
+show that the Hausdorff dimension of the Kakeya set is at least n − s. Furthermore, using
+Bourgain’s bush argument, we improve the lower bound to max {n − s, n − gn(s)}, where
+gn(s) is defined inductively. For example, when n = 4, we prove that the Hausdorff dimension
+is at least max{ 19
+5 − 3
+5 s, 4−s}. We also establish Kakeya maximal function analogues of these results.
+Mathematics Subject Classification 2020 : 28A80, 28A78.
+Key words and phrases : Kakeya conjecture, Kakeya set, Kakeya maximal function, box dimension,
+packing dimension, Hausdorff dimension.
+Contents
+1. Introduction 1
+2. Main Results 4
+2.1. Key definitions and main theorems 4
+2.2. A-Restricted Kakeya sets in R3 and R4 6
+2.3. Higher Dimensions 7
+2.4. Further Remarks 8
+3. Remaining Proofs 10
+3.1. Proof of Lemma 2.3 10
+3.2. Proof of Theorem 2.4 12
+3.3. Proof of Theorem 2.6 13
+Acknowledgements 21
+References 21
+1. Introduction
+A Kakeya set (or Besicovitch set ) is a compact subset of Rn (n ⩾ 2) that contains a unit line
+segment in every direction. The formal definition is as follows:
+Definition 1.1. A compact set K ⊆ Rn is said to be a Kakeya set if, for all e ∈ Sn−1, there exists
+a point ae ∈ Rn such that
+Ie(ae) := {ae + t · e : −1/2 ⩽ t ⩽ 1/2} ⊆ K.
+Here, Ie(ae) denotes the unit line segment in the direction e with midpoint ae.
+
+[PDF physical page 2]
+
+Page 2 J. M. Fraser and L. Yang
+In the early 20th century, Besicovitch showed the existence of a Kakeya set in Rn with zero
+Lebesgue measure. Following this, researchers began studying finer properties of Kakeya sets, such
+as their Hausdorff and box-counting dimensions. For convenience, we provide the definitions of
+these dimensions below.
+Definition 1.2. Let E be a bounded subset of Rn.
+(a) The Hausdorff dimension of E is defined as
+dimHE = inf
+(
+α : ∀ε > 0, ∃{Ei}∞
+i=1 such that E ⊆
+∞[
+i=1
+Ei and
+∞X
+i=1
+diam(Ei)α < ε
+)
+.
+(b) For any δ > 0, let Nδ(E) denote the smallest number of sets with diameter at most δ needed
+to cover E. The lower box-counting dimension of E is defined as
+dimBE = lim inf
+δ→0
+log Nδ(E)
+− log δ .
+Similarly, the upper box-counting dimension of E is defined as
+dimBE = lim sup
+δ→0
+log Nδ(E)
+− log δ .
+(c) Based on the box-counting dimension, the packing dimension of E is defined as
+dimPE = inf
+(
+sup
+i
+dimBEi : E ⊆
+∞[
+i=1
+Ei
+)
+.
+It is straightforward to verify the following relationships between these dimensions. For more
+details, see [F14] and [M15]:
+0 ⩽ dimHE ⩽ dimPE ⩽ dimBE,
+0 ⩽ dimHE ⩽ dimBE ⩽ dimBE.
+The Kakeya conjecture asserts that (despite the existence of Kakeya sets of zero Lebesgue measure)
+Kakeya sets must be large in terms of dimension.
+Conjecture 1.3 (Kakeya conjecture). For any Kakeya set K in Rn, its Hausdorff dimension
+satisfies
+dimHK = n.
+Davies solved the planar case in 1971 [D71]. In 1991, Bourgain [B91] used the “bush argument”
+to show that a Kakeya set in R3 has Hausdorff dimension at least 7
+3. He also extended his results to
+higher dimensions via induction. Later, Wolff [W95] improved Bourgain’s result in 1995, establish-
+ing a lower bound of n+2
+2 for the Hausdorff dimension in the general Rn case, using a method some
+refer to as the “hairbrush argument”. In particular, the “hairbrush argument” demonstrated that
+the Hausdorff dimension of Kakeya sets in R3 is at least 5
+2. In 2002, Katz and Tao [KT02] further
+improved Wolff’s bound to (2 −
+√
+2)(n − 4) + 3 for n ⩾ 5. Recently, Wang and Zahl [WZ25+]
+resolved the conjecture in R3; a major breakthrough in the field. The problem, however, remains
+open in Rn for n ⩾ 4.
+One may think of a Kakeya set in the following way. Given any direction e ∈ Sn−1, there exists a
+translate ae ∈ Rn such that the unit line segment {t · e : −1/2 ⩽ t ⩽ 1/2} is translated into the set
+by ae (that is, for each direction, one is free to choose the midpoint of the line associated with that
+direction). One of the difficulties in proving the Kakeya conjecture is that one has no control over
+the choice of midpoints. In this paper we impose some control on the choice of midpoints (thus
+making the problem easier) by insisting they all belong to a given set A. We ask: what conditions
+on A are needed to obtain better dimension bounds than the current state-of-the-art? Intuitively,
+
+[PDF physical page 3]
+
+Page 3 J. M. Fraser and L. Yang
+the smaller A is, the more heavily the Kakeya set is restricted and we quantify the size of A via
+dimension. One might expect a lower bound for the Hausdorff dimension which tends to n as the
+packing dimension of A tends to zero and we do indeed achieve this. In fact this can be done quite
+easily and we first present two simple direct arguments, the second of which was provided by Tam´ as
+Keleti. The main aim of the paper is to beat these initial estimates, and we are able to do this via
+a modification of Bourgain’s bush argument.
+Proposition A. Let K be a Kakeya set in Rn and let A be the collection of all the midpoints of
+the unit line segments contained in K. Then
+(1) If dimBA ⩽ s, then dimBK ⩾ n − s.
+(2) If dimPA ⩽ s, then dimHK ⩾ n − s.
+Proof. (1) Fix ε > 0 and let δ ∈ (0, 1). Since dimBA ⩽ s, Nδ(A) ⩽ c1δ−(s+ε) for some constant
+c1 > 0 independent of δ. Let Sδ be a 100 δ-separated subset of Sn−1 of size at least c2δ1−n
+for another constant c2 > 0 independent of δ. For each e ∈ Sδ, there is a unit line segment
+Ie(ae) in K with midpoint ae ∈ A. By the pigeonhole principle, there exists a ball B of
+diameter δ that contains at least c2δ1−n
+Nδ(A) ⩾ c2
+c1
+δ1−n+s+ε points in {ae : e ∈ Sδ}. Therefore,
+using the separation of directions in Sδ, the union of all the unit line segments whose
+midpoints are contained in the ball B needs at least c2
+2c1
+δ1−n+s+ε
+δ = c2
+2c1
+δ−n+s+ε many sets
+of diameter δ to cover it. The claimed lower bound follows upon letting ε → 0.
+(2) The set K − A contains a solid ball of radius 1 /2. Moreover, K − A is a Lipschitz image
+(an orthogonal projection) of the Cartesian product K × A. Therefore,
+n = dimH(K − A) ⩽ dimH(K × A) ⩽ dimHK + dimPA,
+where the last inequality is a general result about products, which can be found in [F14,
+M95]. The claimed lower bound follows by rearranging.
+□
+Our main dimension result can be found in Corollary 2.13; see also Corollary 2.5, Corollary 2.7,
+Corollary 2.11, and Corollary 2.12. A special case of this considers the midpoints of the unit line
+segments and provides an estimate for the Hausdorff dimension of a restricted Kakeya set, which
+beats the lower bound n − dimP A from Proposition A. The same result holds for any arbitrary
+points in each unit line segment. Importantly it also beats the state-of-the-art bound for the general
+Kakeya conjecture in dimension at least 4 and the bound n −dimP A simultaneously for some range
+of dim P A. However, regrettably we do not know how to beat the bound n − dimP A for dim P A
+close to zero. Explicit examples when n = 4 and n = 10 can be found in Figure 1 and Figure 2.
+To study the Hausdorff dimension of a Kakeya set, one often considers a maximal function
+and estimates its norm. We also provide appropriate maximal function versions of our dimension
+results; see Theorem 2.4 and Theorem 2.6. Our dimension results are obtained as applications of
+these maximal function estimates. Here we briefly recall the classical setting.
+Definition 1.4. Given any f ∈ L1
+loc(Rn), the Kakeya maximal function of f is a function (f)∗
+δ :
+Sn−1 → R defined by
+(f)∗
+δ(e) = sup
+a∈Rn
+1
+|T δe (a)|
+Z
+T δe (a)
+|f(x)| dx,
+where the δ-tube T δ
+e (ae) is the δ-neighbourhood of the unit line segment Ie(ae).
+When the two vectors e1, e2 satisfy |e1 − e2| > δ, we say e1 and e2 are δ-separated, and the tubes
+T δ
+e1(a1), T δ
+e2(a2) are called δ-separated tubes.
+The following conjecture, known as the Kakeya maximal function conjecture, implies the Kakeya
+conjecture.
+
+[PDF physical page 4]
+
+Page 4 J. M. Fraser and L. Yang
+Conjecture 1.5 (Kakeya maximal function conjecture). For all ε > 0, there exists a constant Cn,ε
+only depending on n and ε such that for all f ∈ L1
+loc(Rn) and 0 < δ < 1,
+∥(f)∗
+δ∥Ln(Sn−1) ⩽ Cn,εδ−ε ∥f ∥Ln(Rn) .
+One can see the proof of Conjecture 1.5 implying Conjecture 1.3 in [W03, Proposition 10.2]. The
+planar case of Conjecture 1.5 was proved by C´ ordoba [C77], but it remains open in Rn, n ⩾ 3.
+The main theorem of this paper, Theorem 2.6, demonstrates the connection between estimates
+for the Kakeya maximal function in Rn−1 and our restricted Kakeya maximal function in Rn; see
+Definition 2.2 for the precise definition. Given the breakthrough on the Kakeya conjecture in R3
+by Hong and Zahl [WZ25+], we focus more on the case of R4, rather than R3, when we consider
+examples in Section 2.2. For general n ⩾ 5, we apply the results of Hickman, Rogers, and Zhang
+[HRZ22] on the Kakeya maximal conjecture to obtain lower bounds for the Hausdorff dimension of
+restricted Kakeya set in Corollary 2.11.
+2. Main Results
+2.1. Key definitions and main theorems. In this paper, we use | · | to denote general volume
+measure and we often use a subscript to indicate the dimension if this is not clear from context.
+More precisely, | · | n will represent the Lebesgue measure in Rn, | · | n−1 will represent the surface
+measure on the sphere Sn−1 and | · | 1 also means the length in Rn. We use the notation A ≲ B
+to indicate that A ⩽ CnB, where the constant Cn depends only on the ambient spatial dimension
+n. We write A ≈ B if there exist two positive constants cn and Cn depending on n such that
+cnA ⩽ B ⩽ CnA. Similarly, we write A ≲ε B to mean that A ⩽ Cn,εB, where the constant Cn,ε
+depends on both n and a parameter ε. For any Lebesgue measurable subset E ⊆ Rn, χE denotes
+the characteristic function of E.
+We first define a special type of Kakeya set where the midpoints of each line segment are restricted
+to a given set A. These sets are our main object of study.
+Definition 2.1. Given a bounded set A ⊆ Rn, we say a compact set KA is an A-restricted Kakeya
+set if, for all e ∈ Sn−1, there exists a point ae ∈ A such that the unit line segment Ie(ae), in the
+direction e with midpoint ae, is contained in KA.
+We also consider the analogous A-restricted Kakeya maximal functions. Using the “bush argu-
+ment” given by Bourgain [B91], we prove a weak-type inequality related to these maximal functions.
+Definition 2.2. Given any A ⊆ Rn and f ∈ L1
+loc(Rn), the A-restricted Kakeya maximal function
+of f is a function Kδ,A(f) : Sn−1 → R defined by
+Kδ,A(f)(e) = sup
+a∈A
+1
+|T δe (a)|
+Z
+T δe (a)
+|f(x)| dx.
+We define this A-restricted Kakeya maximal function because the restricted weak-type ( p, q)
+estimates for it will yield a lower bound on the Hausdorff dimension of KA. The following lemma,
+analogous to [W03, Proposition 10.2], establishes the connection between the Kakeya maximal
+function and the Hausdorff dimension of KA, and one can check the proof in Section 3.1.
+Lemma 2.3. Suppose that for some 1 ⩽ p ⩽ q < ∞ and β > 0,
+∥Kδ,A(χE)∥Lq,∞(Sn−1) ≲ε δ−β−ε ∥χE∥Lp(Rn) ,(2.1)
+for all measurable sets E ⊆ Rn, 0 < δ < 1 and ε > 0. Then the Hausdorff dimension of every
+A-restricted Kakeya set is at least n − βp.
+We now state our first main theorem. It establishes a weak type estimate for the A-restricted
+Kakeya maximal function. The proof is presented in Section 3.2.
+
+[PDF physical page 5]
+
+Page 5 J. M. Fraser and L. Yang
+Theorem 2.4. For A ⊆ Rn with dimBA ⩽ s,
+∥Kδ,A(χE)∥Ln,∞(Sn−1) ≲ε δ− s
+n −ε ∥χE∥Ln(Rn)(2.2)
+holds for all Lebesgue measurable sets E ⊆ Rn and all positive δ.
+As an immediate corollary of the previous theorem, we obtain an alternative proof of the simple
+estimate from Proposition A (2). Even though this is stated in terms of the box dimension of A, it
+is straightforward to upgrade this to packing dimension; see Corollary 2.12.
+Corollary 2.5. Let A ⊆ Rn with dimBA ⩽ s and KA be an A-restricted Kakeya set. Then
+dimHKA ⩾ n − s.
+Proof. The result follows by Lemma 2.3 taking p = q = n and β = s
+n and using the estimate from
+Theorem 2.4. □
+Our next result is proved by an application of Bourgain’s bush argument [B91]. Given an
+estimate for the Kakeya maximal function in dimension n − 1, we derive an estimate for the A-
+restricted Kakeya maximal function in Rn. Note that the assumption (2.3) is necessary in the
+proof of Lemma 3.5; see the proof of [B91, Lemma 1.52] for further details. This is where we need
+information about the Kakeya maximal function in dimension n − 1. Essentially it comes from
+slicing Rn by hyperplanes and using unrestricted estimates on the hyperplanes.
+Theorem 2.6. Suppose for some hn−1 > 0 and pn−1 > 1,
+(2.3) ∥(f)∗
+δ∥Lpn−1 (Sn−2) ≲ε Cδ −hn−1−ε ∥f ∥Lpn−1 (Rn−1)
+holds for all f ∈ L1
+loc(Rn−1) and all ε > 0. Then for A ⊆ Rn with dimBA ⩽ s and all ε > 0,
+(2.4) ∥Kδ,A(χE)∥Lp,∞(Sn−1) ≲ε δ−β−ε ∥χE∥Lp(Rn) ,
+where
+(2.5) p = pn−1 + n(pn−1 − 1) + 1
+pn−1
+, β = hn−1pn−1 + spn−1 − s
+pn−1 + n(pn−1 − 1) + 1.
+Theorem 2.6 is proved in Section 3.3. By Lemma 2.3 and Theorem 2.6, we obtain the following
+corollary concerning the Hausdorff dimension of KA.
+Corollary 2.7. Suppose (2.3) holds in Rn−1 for some hn−1 > 0 and pn−1 > 1. Let
+gn(s) = hn−1pn−1 + spn−1 − s
+pn−1
+.
+If A ⊆ Rn with dimBA ⩽ s and KA is an A-restricted Kakeya set in Rn, then
+dimHKA ⩾ n − gn(s).
+In the above results we used upper box dimension to quantify the size ofA. However, in Corollary
+2.12, we extend our results by showing that the conclusions of Corollary 2.5, Corollary 2.7, and
+(the later) Corollary 2.11 remain valid when considering the packing dimension of A instead of the
+upper box dimension. We also prove that it is not necessary to restrict the midpoints of the line
+segments. Instead, Corollary 2.13 allows A to consist of an arbitrary point from each line segment,
+thus giving the approach more flexibility.
+
+[PDF physical page 6]
+
+Page 6 J. M. Fraser and L. Yang
+2.2. A-Restricted Kakeya sets in R3 and R4. If we rewrite (2.3) in Rn as
+(2.6) ∥(f)∗
+δ∥Lq0 (Sn−1) ≲ε δ− n
+p0
++1−ε ∥f ∥Lp0 (Rn)
+for some p0 ⩾ 1 and q0 ⩾ p0, then we can interpolate with the trivial estimate
+∥(f)∗
+δ∥L∞(Sn−1) ≲ δ−(n−1) ∥f ∥L1(Rn)
+to obtain
+(2.7) ∥(f)∗
+δ∥Lq(Sn−1) ≲ε δ− n
+p +1−ε ∥f ∥Lp(Rn)
+for all 1 ⩽ p ⩽ p0 and
+q = q0
+1 − 1
+p0
+1 − 1
+p
+⩾ q0 ⩾ p0 ⩾ p.
+If Conjecture 1.5 holds in Rn, then (2.6) holds for p0 = q0 = n.
+First, let us consider the case n = 3. Conjecture 1.5 is known to be true in R2. Thus, (2.7) holds
+when n = 2, i.e.,
+∥(f)∗
+δ∥Lq(S1) ≲ δ− 2
+p +1−ε ∥f ∥Lp(R2)
+for all 1 ⩽ p ⩽ 2. Using this result in R2, Corollary 2.7 gives the following lower bound for the
+Hausdorff dimension of KA in the case n = 3:
+dimHKA ⩾ max
+1⩽p⩽2
+
+3 − 2 − s
+p − (s − 1)
+
+.
+In particular, taking p = 2 yields
+dimHKA ⩾ 3 − s
+2 .
+Of course this result is obsolete, given that Wang and Zahl [WZ25+] proved that dim HK = 3 for
+all Kakeya sets.
+Next, we consider the case n = 4, where the Kakeya conjecture is still open. We first apply
+Wolff’s result [W95] in R3, which gives the estimate:
+∥(f)∗
+δ∥Lq(S2) ≲ δ− 3
+p +1−ε ∥f ∥Lp(R3)
+for all 1 ⩽ p ⩽ 5
+2. Therefore, by applying Corollaries 2.5 and 2.7, we obtain the following lower
+bound for the Hausdorff dimension of A-restricted Kakeya sets in R4:
+dimHKA ⩾ max
+1⩽p⩽ 5
+2
+
+4 − 3 − s
+p − (s − 1), 4 − s
+
+=
+
+
+
+4 − s, 0 ⩽ s < 1
+2
+19
+5 − 3
+5 s, 1
+2 ⩽ s < 3
+2, 3 ⩽ s ⩽ 4.
+The relation between the lower bound of dim HKA and s is illustrated in Figure 1. Note that every
+Kakeya set in R4 must have Hausdorff dimension at least 3.059, as shown by Katz and Zahl [KZ21],
+and this is the current state-of-the-art. In particular, 3 .059 < 7/2, and so both Corollaries 2.5 and
+2.7 are needed to obtain the best possible information; see Figure 1.
+
+[PDF physical page 7]
+
+Page 7 J. M. Fraser and L. Yang
+Figure 1. Lower bound for dimHKA in R4 under the assumption that dimBA ⩽ s.
+The blue bound comes from Corollary 2.5 and the black bound comes from Corollary
+2.7. The best lower bound is the maximum of these two and is shown as a solid line.
+2.3. Higher Dimensions. According to [M15, Proposition 22.6], we have the following discrete
+version of (2.3).
+Proposition 2.8. Let 1 < p n−1 < ∞, p′
+n−1 = pn−1
+pn−1−1, hn−1 > 0 and 0 < δ < 1. Then
+∥(f)∗
+δ∥Lpn−1 (Sn−2) ≲ε δ−hn−1−ε ∥f ∥Lpn−1 (Rn−1)
+for all f ∈ L1
+loc(Rn−1), ε > 0, if and only if
+(2.8)
+
+
+
+
+mX
+k=1
+χTk
+
+
+
+
+Lp′
+n−1 (Rn−1)
+≲ε δ−hn−1−ε
+ mX
+k=1
+|Tk|n−1
+! 1
+p′
+n−1
+for all δ-separated δ-tubes T1, . . . , Tm and for all ε > 0.
+Next, we apply the result about Kakeya maximal function in Rn−1 from Hickman, Rogers and
+Zhang [HRZ22].
+Theorem 2.9 ([HRZ22]). Let
+(2.9) w(n − 1) = 1 + min
+2⩽t⩽n−1
+t∈N
+max
+ 2(n − 1)
+(n − 2)(n − 1) + (t − 1)t , 1
+n − t
+
+.
+Then for all ε > 0 and 0 < δ < 1,
+
+
+
+
+mX
+k=1
+χTk
+
+
+
+
+Lp(Rn−1)
+≲ε δ−(n−2− n−1
+p )−ε
+ mX
+k=1
+|Tk|n−1
+! 1
+p
+
+[PDF physical page 8]
+
+Page 8 J. M. Fraser and L. Yang
+when p ⩾ w(n − 1).
+Let w(n − 1)′ be the dual index of w(n − 1) satisfying 1
+w(n−1) + 1
+w(n−1)′ = 1. Therefore, (2.8) is
+true with
+hn−1 = n − 2 − n − 1
+p′
+n−1
+whenever p′
+n−1 ⩾ w(n − 1), where p′
+n−1 is the dual index of pn−1. Note that p′
+n−1 ⩾ w(n − 1)
+is equivalent to pn−1 ⩽ w(n − 1)′. By Proposition 2.8, we obtain the result for Kakeya maximal
+function in Rn−1.
+Theorem 2.10. Let hn−1 = (n − 2 − n−1
+p′
+n−1
+). Then
+∥(f)∗
+δ∥Lpn−1 (Sn−2) ≲ε Cδ −hn−1−ε ∥f ∥Lpn−1 (Rn−1)
+holds for all pn−1 ⩽ w(n − 1)′.
+Using this and Corollary 2.7, together with Corollary 2.5, we have the explicit lower bound of
+dimHKA in Rn.
+Corollary 2.11. Let A ⊆ Rn with dimBA ⩽ s and KA be an A-restricted Kakeya set in Rn. Then
+dimHKA ⩾ max
+1⩽p⩽w(n−1)′
+
+n − n − 1 − s
+p − (s − 1), n − s
+
+=
+
+
+
+n − s, 0 ⩽ s < n − 1 − w(n − 1)′
+n − n−1−s
+w(n−1)′ − (s − 1), n − 1 − w(n − 1)′ ⩽ s < n − 1
+2, n − 1 ⩽ s ⩽ n,
+where w(n − 1)′ is the dual index of w(n − 1) in (2.9).
+For example when n = 10, from [HRZ22, Figure 1], w(9)′ = 6. Now our lower bound for dimHKA
+in R10 is
+dimHKA ⩾
+
+
+
+10 − s, 0 ⩽ s < 3
+19
+2 − 5
+6 s, 3 ⩽ s < 9
+2, 9 ⩽ s ⩽ 10,
+see Figure 2. In general, the Hausdorff dimension of a Kakeya set inR10 is at least 15−6
+√
+2 ≈ 6.515,
+as given by Katz and Tao [KT02]. This is again relevant because it means both of our lower bounds
+are needed; see Figure 2.
+2.4. Further Remarks. First, we can relax the upper box-counting dimension assumption on A
+in Corollary 2.5, Corollary 2.7 and Corollary 2.11 to the packing dimension of A. For convenience,
+we refer to the lower bound for dim HKA in these three corollaries by a single function f(n, s) for
+n ⩾ 3. It is easy to see that in each case the function f(n, s) is continuous with respect to s when
+n is fixed.
+Corollary 2.12. Suppose A ⊆ Rn. The same results for dimHKA in Corollary 2.5, Corollary 2.7
+and Corollary 2.11 hold if we replace dimBA ⩽ s by dimPA ⩽ s.
+Proof. Let KA be an A-restricted Kakeya set. Since dim PA ⩽ s, for any ε > 0, there exists a
+covering {Ai}∞
+i=1 of A such that for each i,
+dimBAi ⩽ s + ε.
+Fix an arbitrary Ai, and let Ei ⊆ Sn−1 be the set of directions for which the corresponding line
+segments have midpoints in Ai:
+Ei = {e : Ie(ae) ⊆ KA and ae ∈ Ai}.
+
+[PDF physical page 9]
+
+Page 9 J. M. Fraser and L. Yang
+Figure 2. Lower bound for dimHKA in R10 under the assumption that dimBA ⩽ s.
+The blue bound comes from Corollary 2.5 and the black bound comes from Corollary
+2.7. The best lower bound is the maximum of these two and is shown as a solid line.
+Since ∞[
+i=1
+Ei = Sn−1,
+there exists some Ek such that
+|Ek|n−1 > 0.
+By Lebesgue’s density theorem on Sn−1, there exist finitely many elements r1, . . . , rN in the or-
+thogonal group of Sn−1 such that
+
+[PDF physical page 10]
+
+
+
+[PDF physical page 11]
+
+
+
+[PDF physical page 12]
+
+
+
+[PDF physical page 13]
+
+
+
+[PDF physical page 14]
+
+N[
+i=1
+ri(Ek)
+
+[PDF physical page 15]
+
+
+
+[PDF physical page 16]
+
+
+
+[PDF physical page 17]
+
+
+
+[PDF physical page 18]
+
+
+
+[PDF physical page 19]
+
+n−1
+> 1
+2 .
+In fact, there exists a point x0 ∈ Ek, such that for sufficiently small radius δ, the open ball B(x0, δ)
+satisfies
+|B(x0, δ) ∩ Ek|n−1
+|B(x0, δ)|n−1
+> 99
+100 .
+For some large N ≲ δ1−n, we then choose r1, . . . , rN ∈ O(n) such that
+
+ri(B(x0, δ)) ∩ Sn−1	N
+i=1
+are disjoint. Consequently, we obtain the estimate
+
+[PDF physical page 20]
+
+
+
+[PDF physical page 21]
+
+
+
+[PDF physical page 22]
+
+
+
+[PDF physical page 23]
+
+
+
+[PDF physical page 24]
+
+N[
+i=1
+ri(Ek)
+
+[PDF physical page 25]
+
+
+
+[PDF physical page 26]
+
+
+
+[PDF physical page 27]
+
+
+
+[PDF physical page 28]
+
+
+
+[PDF physical page 29]
+
+n−1
+⩾
+
+[PDF physical page 30]
+
+
+
+[PDF physical page 31]
+
+
+
+[PDF physical page 32]
+
+
+
+[PDF physical page 33]
+
+
+
+[PDF physical page 34]
+
+N[
+i=1
+ri(B(x0, δ) ∩ Ek)
+
+[PDF physical page 35]
+
+
+
+[PDF physical page 36]
+
+
+
+[PDF physical page 37]
+
+
+
+[PDF physical page 38]
+
+
+
+[PDF physical page 39]
+
+n−1
+=
+NX
+i=1
+|ri(B(x0, δ) ∩ Ek)|n−1
+
+[PDF physical page 40]
+
+Page 10 J. M. Fraser and L. Yang
+> 99
+100 N
+
+[PDF physical page 41]
+
+
+
+[PDF physical page 42]
+
+B(x0, δ) ∩ Sn−1
+
+[PDF physical page 43]
+
+
+
+[PDF physical page 44]
+
+n−1
+> 1
+2
+provided N is large enough so that N
+
+[PDF physical page 45]
+
+
+
+[PDF physical page 46]
+
+B(x0, δ) ∩ Sn−1
+
+[PDF physical page 47]
+
+
+
+[PDF physical page 48]
+
+n−1 > 2
+3. Let Kk
+A be the subset of KA
+consisting of line segments with directions in Ek. Let E0 =SN
+i=1 ri(Ek), A0 =SN
+i=1 rn(Ak) and
+K0 = SN
+i=1 rn(Kk
+A). One can see the collection of midpoints in K0 is A0 and the collection of
+directions in K0 is E0 with |E0|n−1 > 1
+2. Then
+dimBA0 = dimBAk ⩽ s + ε.
+By Corollary 2.5, Corollary 2.7 or Corollary 2.11, we obtain dim HK0 ⩾ f(n, s + ε). Since K0 is a
+union of finitely many copies of Kk
+A, it follows that
+dimHKA ⩾ dimHKk
+A = dimHK0 ⩾ f(n, s + ε).
+Letting ε → 0 completes the proof. □
+The next corollary shows that it is unnecessary to restrict the midpoints to A. In fact, we can
+take one point from each unit line segment at any position, and we will still obtain the same lower
+bound for the Hausdorff dimension.
+Corollary 2.13. Suppose K is a Kakeya set in Rn, and let P ⊆ K be a set such that for each
+Ie(ae) ⊆ K, the intersection P ∩ Ie(ae) is nonempty. If dimPP ⩽ s, then dimHK ⩾ f(n, s), where
+the function f(n, s) refers to the lower bound in Corollary 2.5, Corollary 2.7 or Corollary 2.11.
+Proof sketch. First observe that all of our arguments go through if we replace midpoint with
+endpoint, consider line segments of length 1/2 instead of length 1, and replace all directions with
+a set of directions of positive measure. Indeed, we only chose to consider the midpoints for some
+aesthetic reasons. Second, for each unit line segment Ie(ae) in the Kakeya set K, let xe ∈ P ∩Ie(ae).
+There exists a sub-segment I ′
+e(ae) of length 1
+2 within Ie(ae), with one of its endpoints at xe. Defining
+K′ as the union of all such 1
+2-length segments, we have K′ ⊆ K, and P becomes the collection of
+endpoints of each segment in K′. The desired conclusion follows since dim HK ⩾ dimHK′.
+Alternatively, we could introduce a new A-restricted Kakeya maximal function defined as
+K∗
+δ,P(f)(e) = sup
+− 1
+2 ⩽t⩽ 1
+2
+ae∈P +t·e
+1
+|T δe (ae)|
+Z
+T δe (a)
+|f(x)| dx.
+This operator allows the tubes to shift along the directione based on the set P . It is straightforward
+to verify that all relevant lemmas and theorems still hold for this new maximal function. □
+Finally, the next corollary gives a new sufficient condition for the Kakeya conjecture to hold.
+Corollary 2.14. For any Kakeya set K ⊆ Rn, for all ε > 0, if there exists a subset P of K
+with dimPP < ε such that for each Ie(ae) ⊆ K, the intersection P ∩ Ie(ae) is nonempty, then
+dimHK = n.
+Proof. This follows directly from Corollary 2.5 and Corollary 2.13. □
+3. Remaining Proofs
+3.1. Proof of Lemma 2.3. The inequality (2.1) is equivalent to
+
+[PDF physical page 49]
+
+
+
+[PDF physical page 50]
+
+e ∈ Sn−1 : Kδ,A(χE)(e) > λ
+
+[PDF physical page 51]
+
+
+
+[PDF physical page 52]
+
+n−1 ≲ε
+
+λ−1δ−β−ε|E|1/p
+n
+q
+,(3.1)
+
+[PDF physical page 53]
+
+Page 11 J. M. Fraser and L. Yang
+for all measurable sets E ⊆ Rn, 0 < λ < 1, ε > 0 and 0 < δ < 1. Suppose KA is an A-restricted
+Kakeya set . Let {Bj}∞
+j=1 be a covering of KA, where Bj = B(xj, rj) is an open ball. We can assume
+that rj ⩽ 1
+100 for all j ∈ N. Define Jk =
+
+j : 1
+2k ⩽ rj < 2
+2k
+
+. For every e ∈ Sn−1, KA contains a unit
+line segment Ie(ae) parallel to e with ae ∈ A. Let Sk =
+
+e ∈ Sn−1 : |Ie(ae) ∩ ∪j∈Jk Bj|1 ⩾ 1
+100k2
+
+.
+Then we can see ∪∞
+k=1Sk = Sn−1. In fact, if there exists an e′ ∈ Sn−1, but e′ /∈ Sk for all k, then
+|Ie′(ae′) ∩ ∪j∈Jk Bj|1 < 1
+100k2
+for all k. Since {Bj}∞
+j=1 is also a covering of Ie′(ae′),
+X
+k
+|Ie′(ae′) ∩ ∪j∈Jk Bj|1 ⩾ |Ie′(ae′) ∩ ∪∞
+j=1Bj|1 = 1.
+However, also
+X
+k
+|Ie′(ae′) ∩ ∪j∈Jk Bj|1 <
+X
+k
+1
+100k2 < 1,
+which gives a contradiction. Therefore, ∪∞
+k=1Sk = Sn−1
+Let Fk = ∪j∈Jk10Bj, where 10Bj denotes an open ball centred at the same point as Bj but with
+a radius enlarged by a factor of 10. Define the function f as the characteristic function of Fk, i.e.,
+f = χFk.
+For e ∈ Sk = {e ∈ Sn−1 : |Ie(ae) ∩ ∪j∈Jk Bj|1 ⩾ 1
+100k2 }, the intersection Fk ∩ T 2−k
+e (ae) occupies a
+larger portion of T 2−k
+e (ae) than Ie(ae) intersecting ∪j∈Jk Bj within the line segment Ie(ae), which
+implies
+
+[PDF physical page 54]
+
+
+
+[PDF physical page 55]
+
+
+
+[PDF physical page 56]
+
+T 2−k
+e (ae) ∩ Fk
+
+[PDF physical page 57]
+
+
+
+[PDF physical page 58]
+
+
+
+[PDF physical page 59]
+
+n
+|T 2−k
+e (ae)|n
+≳ |Ie(ae) ∩ ∪j∈Jk Bj|1 ≳ 1
+k2 .
+Hence, when e ∈ Sk,
+K2−k,A(f)(e) ⩾
+
+[PDF physical page 60]
+
+
+
+[PDF physical page 61]
+
+
+
+[PDF physical page 62]
+
+T 2−k
+e (ae) ∩ Fk
+
+[PDF physical page 63]
+
+
+
+[PDF physical page 64]
+
+
+
+[PDF physical page 65]
+
+n
+|T 2−k
+e (ae)|n
+≳ 1
+k2 .
+From (3.1),
+
+[PDF physical page 66]
+
+
+
+[PDF physical page 67]
+
+
+
+[PDF physical page 68]
+
+
+
+[PDF physical page 69]
+
+e ∈ Sn−1 : K2−k,A(f)(e) ≳ 1
+k2
+
+[PDF physical page 70]
+
+
+
+[PDF physical page 71]
+
+
+
+[PDF physical page 72]
+
+
+
+[PDF physical page 73]
+
+n−1
+≲ε
+
+k22k(β+ε)|Fk|1/p
+n
+q
+.
+Thus,
+|Sk|n−1 ≲ε k2q2kq(β+ε)(#Jk)
+q
+p 2−kn q
+p .
+When k is sufficiently large, k2q ⩽ 2kε, so
+|Sk|n−1 ≲ε 2−k(n q
+p −βq−(q+1)ε)(#Jk)
+q
+p .
+Therefore,
+#Jk2−k(n−βp− p(q+1)
+q ε) ≳ε |Sk|
+p
+q
+n−1.
+Together with the definition of Jk,
+X
+j
+r
+n−βp− p(q+1)
+q ε
+j ≳
+X
+k
+(#Jk)2−k(n−βp− p(q+1)
+q ε) ≳ε
+X
+k
+|Sk|
+p
+q
+n−1 ≳
+X
+k
+|Sk|n−1 ≳ 1.
+By the definition of Hausdorff dimension, this gives the desired lower bound.
+
+[PDF physical page 74]
+
+Page 12 J. M. Fraser and L. Yang
+3.2. Proof of Theorem 2.4. Before presenting the proof, we recall some simple yet useful geo-
+metric observations regarding δ-tubes, as outlined in the proof of [W03, Proposition 11.8].
+Proposition 3.1. For all e1, e2 ∈ Sn−1 and all a1, a2 ∈ Rn, the following estimates hold for the
+diameter and measure of the intersection of two δ-tubes:
+diam
+
+T δ
+e1(a1) ∩ T δ
+e2(a2)
+
+≲ δ
+θ(e1, e2) + δ < δ
+θ(e1, e2) ,
+
+[PDF physical page 75]
+
+
+
+[PDF physical page 76]
+
+
+
+[PDF physical page 77]
+
+T δ
+e1(a1) ∩ T δ
+e2(a2)
+
+[PDF physical page 78]
+
+
+
+[PDF physical page 79]
+
+
+
+[PDF physical page 80]
+
+n
+≲ δn
+θ(e1, e2) + δ < δn
+θ(e1, e2) ,
+where θ(e1, e2) is the acute angle between e1 and e2.
+In order to prove (2.2), for any measurable set E ⊆ Rn, let
+Eλ =
+
+e ∈ Sn−1 : Kδ,A(χE)(e) > λ
+
+.
+Then it suffices to show
+(3.2) λ |Eλ|
+1
+n
+n−1 ≲ε δ− s
+n −ε |E|n
+for all 0 < δ < 1, 0 < λ < 1 and ε > 0. Choosing a maximal δ-separated subset {e1, . . . , eN } ⊆ Eλ,
+it is easy to see
+(3.3) N ≳ |Eλ|n−1
+δn−1 .
+For each ej, there exists a midpoint ai ∈ A such that for the tube Tj = T δ
+ej(aj),
+(3.4) |E ∩ Tj| > λ|Tj| ≈ λδn−1.
+By the assumption dimBA ⩽ s, for any ε > 0, there exists a covering of A by Nδ open balls {Bi}Nδ
+i=1,
+where Bi = B(yi, 1
+3 δ) and Nδ ≲ δ−(s+ε). The constant 1
+3 was chosen so that for any z ∈ B(yi, 1
+3 δ),
+B(yi, 1
+3 δ) ⊆ T δ
+e (z).
+By the pigeonhole principle, there exists a ball Bi0 = B(yi0, 1
+3 δ) such that at least N
+Nδ
+midpoints
+aj are contained in Bi0, and the point yi0 is contained in at least N
+Nδ
+tubes. Assume the tubes are
+labelled such that y = yi0 belongs to the first Mδ tubes, i.e., y ∈ Tj for j = 1, . . . , Mδ, where Mδ is
+the greatest integer less than N
+Nδ
+, see Figure 3.
+By geometric considerations, there exists a constant c depending only on n such that
+
+[PDF physical page 81]
+
+
+
+[PDF physical page 82]
+
+
+
+[PDF physical page 83]
+
+B(y, cλ) ∩ T δ
+e (a)
+
+[PDF physical page 84]
+
+
+
+[PDF physical page 85]
+
+
+
+[PDF physical page 86]
+
+⩽ λ
+2 |T δ
+e (a)|
+for any e ∈ Sn−1 and a ∈ Rn. From (3.4) for j = 1, . . . , Mδ,
+|E ∩ Tj\B(y, cλ)| ⩾ λ
+2 |Tj| ≈ λδn−1.
+By Proposition 3.1, there exists another constant b ⩾ c such that for all e, e′ ∈ Sn−1 and a, a′ ∈ Rn,
+(3.5) diam( T δ
+e (a) ∩ T δ
+e′(a′)) ⩽ bδ
+|e − e′| .
+Let {e′
+1, . . . e′
+m′} be a maximal bδ
+cλ-separated subset of {e1, . . . eMδ }. Since bδ
+cλ > δ , the balls
+B(e′
+k, 2bδ
+cλ ), k = 1, . . . , m′, cover the disjoint balls B(ej, δ
+3) for j = 1, . . . , Mδ. Thus,
+N
+Nδ
+δn−1 ≈
+
+[PDF physical page 87]
+
+
+
+[PDF physical page 88]
+
+
+
+[PDF physical page 89]
+
+
+
+[PDF physical page 90]
+
+
+
+[PDF physical page 91]
+
+
+
+[PDF physical page 92]
+
+Mδ[
+j=1
+B(ej, δ
+3)
+
+[PDF physical page 93]
+
+
+
+[PDF physical page 94]
+
+
+
+[PDF physical page 95]
+
+
+
+[PDF physical page 96]
+
+
+
+[PDF physical page 97]
+
+
+
+[PDF physical page 98]
+
+n−1
+⩽
+
+[PDF physical page 99]
+
+
+
+[PDF physical page 100]
+
+
+
+[PDF physical page 101]
+
+
+
+[PDF physical page 102]
+
+
+
+[PDF physical page 103]
+
+m′
+[
+k=1
+B(e′
+k, 2bδ
+cλ )
+
+[PDF physical page 104]
+
+
+
+[PDF physical page 105]
+
+
+
+[PDF physical page 106]
+
+
+
+[PDF physical page 107]
+
+
+
+[PDF physical page 108]
+
+n−1
+≲ m′( δ
+λ)n−1,
+
+[PDF physical page 109]
+
+Page 13 J. M. Fraser and L. Yang
+Figure 3. Mδ tubes whose centres are in the ball B(yi0, 1
+3 δ).
+which implies
+m′ ≳ λn−1 N
+Nδ
+.
+It follows from (3.5) that the sets {E ∩ T ′
+k\B(y, cλ)}m′
+k=1 are disjoint because
+diam(T ′
+k ∩ T ′
+s) ⩽ bδ
+|e′
+k − e′s| ⩽ bδ
+bδ/(cλ) = cλ
+for any k ̸= s in 1, . . . , m′. Therefore,
+|E|n ≳ λδn−1m′ ≳ λδn−1λn−1 N
+Nδ
+≳ N λnδn+s+ε−1.
+Together with (3.3), we obtain (3.2).
+3.3. Proof of Theorem 2.6. By checking a simple example for f in (2.3), we obtain a simple
+relationship between pn−1 and hn−1.
+Proposition 3.2. Suppose for some hn−1 > 0 and pn−1 > 1,
+∥(f)∗
+δ∥Lpn−1 (Sn−2) ≲ε δ−hn−1−ε ∥f ∥Lpn−1 (Rn−1)
+holds for all f ∈ L1
+loc(Rn−1) and 0 < δ < 1 and some ε > 0. Then
+(3.6) n − 1 ⩽ (1 + hn−1)pn−1 + εpn−1.
+Proof. Let f = χB(0,δ). We first know that
+∥f ∥Lpn−1 (Rn−1) = (δn−1)1/pn−1.
+Since for all e ∈ Sn−2, the δ-tube T δ
+e (0) contains the ball B(0, δ), the Kakeya maximal function
+satisfies
+(f)∗
+δ(e) ≈ δn−1
+δn−2 = δ.
+
+[PDF physical page 110]
+
+Page 14 J. M. Fraser and L. Yang
+Then pn−1 and hn−1 satisfy
+δ ≲ε δ
+−hn−1−ε+ n−1
+pn−1
+for all 0 < δ < 1 and ε > 0. Therefore, the exponents satisfy
+1 ⩾ −hn−1 − ε + n − 1
+pn−1
+,
+which, upon rearranging, gives (3.6). □
+Note that we can rewrite the conclusion of Theorem 2.6 as
+(3.7) λ
+
+[PDF physical page 111]
+
+
+
+[PDF physical page 112]
+
+e ∈ Sn−1 : Kδ,A(χE)(e) > λ
+
+[PDF physical page 113]
+
+
+
+[PDF physical page 114]
+
+1
+p
+n−1 ≲ε δ−β−ε |E|
+1
+p
+n
+for all measurable sets E ⊆ Rn, 0 < δ < 1, 0 < λ < 1, ε > 0 and all A ⊆ Rn with dimBA ⩽ s. We
+split the proof into two cases. Let
+Eλ =
+
+e ∈ Sn−1 : Kδ,A(χE)(e) > λ
+
+.
+We assume that Eλ is nonempty.
+Case 1: when λ ⩽ δ. For any ξ ∈ Eλ, there exists a δ-tube T δ
+ξ (aξ) with aξ ∈ A such that
+
+[PDF physical page 115]
+
+
+
+[PDF physical page 116]
+
+
+
+[PDF physical page 117]
+
+E ∩ T δ
+ξ (aξ)
+
+[PDF physical page 118]
+
+
+
+[PDF physical page 119]
+
+
+
+[PDF physical page 120]
+
+n
+≳ λδn−1.
+Therefore,
+|E|n ⩾
+
+[PDF physical page 121]
+
+
+
+[PDF physical page 122]
+
+
+
+[PDF physical page 123]
+
+E ∩ T δ
+ξ (aξ)
+
+[PDF physical page 124]
+
+
+
+[PDF physical page 125]
+
+
+
+[PDF physical page 126]
+
+n
+≳ λδn−1.
+Comparing with (3.7), it suffices to show
+λp−1δβp+εp−(n−1) |Eλ|n−1 ≲ε 1.
+Since the set Eλ ⊆ Sn−1 has finite measure and λ ⩽ δ, it suffices to show
+(3.8) δp−1+βp+εp−(n−1) ≲ε 1.
+Recalling
+p = pn−1 + n(pn−1 − 1) + 1
+pn−1
+, β = hn−1pn−1 + spn−1 − s
+pn−1 + n(pn−1 − 1) + 1
+and substituting p and β into (3.8), we finally need to prove the following inequality for the exponent
+in (3.8):
+(1 + hn−1)pn−1 − (n − 1) + spn−1 − s
+pn−1
++ εp ⩾ 0.
+By relation (3.6), this inequality holds.
+Case 2: when λ > δ . We first define the notion of a bush.
+Definition 3.1. Suppose T is a finite collection of δ-tubes {T1, . . . , TN }. If there exists a point x
+contained in every tube Ti ∈ T for i = 1, . . . , N, we call the union
+B =
+N[
+i=1
+Ti
+a bush.
+For example, Figure 3 illustrates a bush consisting of Mδ tubes, where the point yi0 is contained
+in each tube.
+Let E = E0 be a measurable subset of Rn, and define
+D0 = {e ∈ Sn−1 : Kδ,A(χE)(e) > λ}.
+
+[PDF physical page 127]
+
+Page 15 J. M. Fraser and L. Yang
+We can assume D0 and E0 are both non-empty, and the measure of D0 is
+|D0|n−1 =: ε0.
+Let E0 be a 10δ
+λ -separated subset of D0 with cardinality
+#E0 ≳ ε0
+ λ
+δ
+n−1
+.
+For each ξ ∈ E 0, there exists a point aξ ∈ A such that we can find a tube T δ
+ξ (aξ) satisfying
+(3.9)
+
+[PDF physical page 128]
+
+
+
+[PDF physical page 129]
+
+
+
+[PDF physical page 130]
+
+E ∩ T δ
+ξ (aξ)
+
+[PDF physical page 131]
+
+
+
+[PDF physical page 132]
+
+
+
+[PDF physical page 133]
+
+≳ λδn−1.
+By the assumption dimBA ⩽ s, we know that for the sameε > 0 in (3.7), there exists an Nδ ≲ δ−s−ε
+such that A can be covered using at most Nδ balls of radius δ. Since there are at least ε0
+ λ
+δ
+n−1
+tubes whose centres are in A, the pigeonhole principle implies that at least one of these δ-balls
+must contain at least
+ε0
+ λ
+δ
+n−1
+δ−s−ε = ε0λn−1δs+ε−(n−1)
+tube centres.
+Thus, we can choose the directions of these tubes to form a set F0 ⊆ Sn−1 with
+(3.10) # F0 ≳ ε0λn−1δs+ε−(n−1),
+and construct a bush B0 using these directions:
+B0 =
+[
+ξ∈F0
+T δ
+ξ (aξ).
+By the construction of the bush B0, there exists a point x0 contained in each tube of B0.
+Using the assumption λ > δ , for any tube T δ
+ξ (aξ) containing x0, we have
+
+[PDF physical page 134]
+
+
+
+[PDF physical page 135]
+
+
+
+[PDF physical page 136]
+
+
+
+[PDF physical page 137]
+
+T δ
+ξ (aξ) ∩ B(x0, λ
+3 )
+
+[PDF physical page 138]
+
+
+
+[PDF physical page 139]
+
+
+
+[PDF physical page 140]
+
+
+
+[PDF physical page 141]
+
+n
+≲ 2λ
+3 δn−1.
+Using this and (3.9),
+(3.11)
+
+[PDF physical page 142]
+
+
+
+[PDF physical page 143]
+
+
+
+[PDF physical page 144]
+
+
+
+[PDF physical page 145]
+
+E ∩
+
+T δ
+ξ (aξ) \ B(x0, λ
+3 )
+
+[PDF physical page 146]
+
+
+
+[PDF physical page 147]
+
+
+
+[PDF physical page 148]
+
+
+
+[PDF physical page 149]
+
+n
+≳ λ
+3 δn−1.
+According to Proposition 2.1, for any two distinct elements ξ1, ξ2 ∈ F 0, we have the following
+estimate for the diameter of the intersection of the tubes:
+diam
+
+T δ
+ξ1(aξ1) ∩ T δ
+ξ2(aξ2)
+
+≲ δ
+θ(ξ1, ξ2) < δ
+10δ/λ = λ
+10 .
+Since x0 is contained in both T δ
+ξ1(aξ1) and T δ
+ξ2(aξ2), it follows that
+T δ
+ξ1(aξ1) ∩ T δ
+ξ2(aξ2) ⊆ B(x0, λ
+3 ).
+This shows that the sets
+E ∩
+
+T δ
+ξ (aξ) \ B(x0, λ
+3 )
+
+ξ∈F0
+are disjoint. Summing (3.11) over all ξ ∈ F 0, we obtain
+|E ∩ B0|n ⩾
+
+[PDF physical page 150]
+
+
+
+[PDF physical page 151]
+
+
+
+[PDF physical page 152]
+
+
+
+[PDF physical page 153]
+
+E ∩ (B0 \ B(x0, λ
+3 ))
+
+[PDF physical page 154]
+
+
+
+[PDF physical page 155]
+
+
+
+[PDF physical page 156]
+
+
+
+[PDF physical page 157]
+
+n
+=
+X
+ξ∈F0
+
+[PDF physical page 158]
+
+
+
+[PDF physical page 159]
+
+
+
+[PDF physical page 160]
+
+
+
+[PDF physical page 161]
+
+E ∩ (T δ
+ξ (aξ) \ B(x0, λ
+3 ))
+
+[PDF physical page 162]
+
+
+
+[PDF physical page 163]
+
+
+
+[PDF physical page 164]
+
+
+
+[PDF physical page 165]
+
+n
+
+[PDF physical page 166]
+
+Page 16 J. M. Fraser and L. Yang
+≳ #F0 · λ
+3 δn−1
+≳ λ
+3 |B0|n.
+We can express the above estimate as
+(3.12) 1
+λ |E ∩ B0|n ≳ |B0|n.
+The construction begins with a subset E = E0 ⊆ Rn, from which we obtain a bush B0. The next
+step is to apply the same construction to the remaining set E1 = E \ B0, provided that the level set
+D1 =
+
+e ∈ Sn−1 : Kδ,A(χE1)(e) > λ
+2
+
+satisfies |D1|n−1 ⩾ 1
+4 ε0.
+Similarly, we choose a 10δ
+λ -separated subset E1 of D1. Since |D1|n−1 ⩾ 1
+4 ε0, we can again select
+at least ε0( λ
+δ )n−1 tubes with directions in E1 and centres in A.
+By the pigeonhole principle and the assumption dimBA ⩽ s, we observe that at least
+ε0λn−1δs+ε−(n−1) of these tubes have centres within the same δ-ball. We then collect the directions
+of these tubes into the set F1, forming a new bush B1 that satisfies
+(3.13) 1
+λ |E1 ∩ B1|n ≳ |B1|n.
+We continue this process by defining
+(3.14) Di =
+
+e ∈ Sn−1 : Kδ,A(χEi)(e) > λ
+2
+
+,
+and constructing bushes Bi iteratively, until the level set at the next step,Dm, satisfies the stopping
+condition
+(3.15) |Dm|n−1 < 1
+4 ε0.
+The construction at each step and the stopping condition are illustrated in Figure 4.
+E = E0 E1 = E0\B0 Em−1 = Em−2\Bm−2 Em = Em−1\Bm−1
+D = D0 D1 Dm−1 |Dm|n−1 < 1
+4 ε0, stop.
+B0 B1 Bm−1
+. . .
+Figure 4. Construction of the bushes Bi.
+The next step is to show that this construction must terminate after a finite number of steps.
+Proposition 3.3. The construction process terminates before step m, where
+(3.16) m ⩽ 1
+ε0
+|E|n δ−s−ελ−n.
+
+[PDF physical page 167]
+
+Page 17 J. M. Fraser and L. Yang
+Proof. By construction, each set is defined recursively as Ei+1 = Ei \ Bi, and the sets {Ei ∩ Bi}m−1
+i=0
+are disjoint. From the same reasoning as in (3.12) or (3.13), we obtain
+(3.17) |E|n
+λ ⩾
+m−1X
+i=0
+|Ei ∩ Bi|n
+λ ≳
+m−1X
+i=0
+|Bi|n .
+Each bush Bi consists of # Fi many δ-tubes, whose directions are 10δ
+λ -separated. From basic
+geometric considerations and (3.10), we estimate
+|Bi|n ≈ #Fiδn−1 ≳ ε0λn−1δs+ε.
+Substituting this into (3.17), we obtain
+(3.18) |E|n
+λ ≳
+m−1X
+i=0
+|Bi|n ≳ mε0λn−1δs+ε.
+Rearranging gives the desired bound (3.16). □
+The final step of the above construction yields
+Em = E ∩
+ m−1[
+i=0
+Bi
+!c
+,
+where |Dm|n−1 < 1
+4 ε0. Define
+E = E \ Em = E ∩
+ m−1[
+i=0
+Bi
+!
+,
+and let
+(3.19) D = {e ∈ Sn−1 : Kδ,A(χE)(e) > λ
+2 }.
+We will show that
+D0 ⊆ Dm ∪ D.
+Indeed, for any e ∈ D0, there exists a δ-tube T δ
+e (ae) centred at some ae ∈ A such that
+1
+|T δe (ae)|n
+
+[PDF physical page 168]
+
+
+
+[PDF physical page 169]
+
+
+
+[PDF physical page 170]
+
+E ∩ T δ
+e (ae)
+
+[PDF physical page 171]
+
+
+
+[PDF physical page 172]
+
+
+
+[PDF physical page 173]
+
+n
+> λ.
+Since Em and E form a partition of E, we obtain
+1
+|T δe (ae)|n
+
+[PDF physical page 174]
+
+
+
+[PDF physical page 175]
+
+
+
+[PDF physical page 176]
+
+Em ∩ T δ
+e (ae)
+
+[PDF physical page 177]
+
+
+
+[PDF physical page 178]
+
+
+
+[PDF physical page 179]
+
+n
++ 1
+|T δe (ae)|n
+
+[PDF physical page 180]
+
+
+
+[PDF physical page 181]
+
+
+
+[PDF physical page 182]
+
+E ∩ T δ
+e (ae)
+
+[PDF physical page 183]
+
+
+
+[PDF physical page 184]
+
+
+
+[PDF physical page 185]
+
+n
+> λ.
+Thus, at least one of the terms on the left-hand side must be greater than λ
+2 , implying e ∈ Dm ∪ D
+from the definition (3.14) and (3.19). Since
+|Dm|n−1 +
+
+[PDF physical page 186]
+
+
+
+[PDF physical page 187]
+
+D
+
+[PDF physical page 188]
+
+
+
+[PDF physical page 189]
+
+n−1 ⩾ |D0|n−1 = ε0
+and the stopping condition ensures
+|Dm|n−1 < 1
+4 ε0,
+it follows that
+(3.20)
+
+[PDF physical page 190]
+
+
+
+[PDF physical page 191]
+
+D
+
+[PDF physical page 192]
+
+
+
+[PDF physical page 193]
+
+n−1 ⩾ 1
+4 ε0.
+
+[PDF physical page 194]
+
+Page 18 J. M. Fraser and L. Yang
+For any ξ ∈ D, there exists a δ-tube T δ
+ξ (aξ) centred at aξ ∈ A such that
+1
+
+[PDF physical page 195]
+
+
+
+[PDF physical page 196]
+
+
+
+[PDF physical page 197]
+
+T δ
+ξ (aξ)
+
+[PDF physical page 198]
+
+
+
+[PDF physical page 199]
+
+
+
+[PDF physical page 200]
+
+n
+
+[PDF physical page 201]
+
+
+
+[PDF physical page 202]
+
+
+
+[PDF physical page 203]
+
+
+
+[PDF physical page 204]
+
+
+
+[PDF physical page 205]
+
+m−1[
+i=0
+(E ∩ Bi) ∩ T δ
+ξ (aξ)
+
+[PDF physical page 206]
+
+
+
+[PDF physical page 207]
+
+
+
+[PDF physical page 208]
+
+
+
+[PDF physical page 209]
+
+
+
+[PDF physical page 210]
+
+n
+> λ
+2 .
+This implies
+Pm−1
+i=0
+
+[PDF physical page 211]
+
+
+
+[PDF physical page 212]
+
+
+
+[PDF physical page 213]
+
+Bi ∩ T δ
+ξ (aξ)
+
+[PDF physical page 214]
+
+
+
+[PDF physical page 215]
+
+
+
+[PDF physical page 216]
+
+n
+
+[PDF physical page 217]
+
+
+
+[PDF physical page 218]
+
+
+
+[PDF physical page 219]
+
+T δ
+ξ (aξ)
+
+[PDF physical page 220]
+
+
+
+[PDF physical page 221]
+
+
+
+[PDF physical page 222]
+
+n
+⩾
+Pm−1
+i=0
+
+[PDF physical page 223]
+
+
+
+[PDF physical page 224]
+
+
+
+[PDF physical page 225]
+
+(E ∩ Bi) ∩ T δ
+ξ (aξ)
+
+[PDF physical page 226]
+
+
+
+[PDF physical page 227]
+
+
+
+[PDF physical page 228]
+
+n
+
+[PDF physical page 229]
+
+
+
+[PDF physical page 230]
+
+
+
+[PDF physical page 231]
+
+T δ
+ξ (aξ)
+
+[PDF physical page 232]
+
+
+
+[PDF physical page 233]
+
+
+
+[PDF physical page 234]
+
+n
+⩾
+
+[PDF physical page 235]
+
+
+
+[PDF physical page 236]
+
+
+
+[PDF physical page 237]
+
+Sm−1
+i=0 (E ∩ Bi) ∩ T δ
+ξ (aξ)
+
+[PDF physical page 238]
+
+
+
+[PDF physical page 239]
+
+
+
+[PDF physical page 240]
+
+n
+
+[PDF physical page 241]
+
+
+
+[PDF physical page 242]
+
+
+
+[PDF physical page 243]
+
+T δ
+ξ (aξ)
+
+[PDF physical page 244]
+
+
+
+[PDF physical page 245]
+
+
+
+[PDF physical page 246]
+
+n
+> λ
+2
+(3.21)
+The final part of the proof introduces the maximal function associated with neighbourhoods of
+parallelograms.
+Definition 3.4. For any e ∈ Sn−1 and any two distinct points x1, x2 ∈ Rn, let Pe(x1, x2) be a paral-
+lelogram formed by two parallel edges Ie(x1) and Ie(x2). Let Te(x1, x2) denote the δ-neighbourhood
+of Pe(x1, x2). We define the maximal function over all such neighbourhoods of parallelograms as
+Mδ(f)(e) = sup
+x1,x2
+1
+|Te(x1, x2)|n
+Z
+Te(x1,x2)
+f(x) dx.
+We now state a lemma from [B91]. In fact, only the case n = 3 is explicit in [B91, Lemma 1.52]
+but the extension to Rn is implicit (and used) in [B91, Page 158, (2.8)].
+Lemma 3.5. Suppose that for all ε > 0,
+∥(f)∗
+δ∥Lpn−1 (Sn−2) ≲ε δ−hn−1−ε ∥f ∥Lpn−1 (Rn−1)
+holds for some hn−1 > 0 and pn−1 ⩾ 1. Then for all ε > 0, the maximal function over δ-
+neighbourhoods of parallelograms in Rn satisfies
+(3.22) ∥Mδ(f)∥Lpn−1 (Sn−1) ≲ε r
+− 1
+pn−1 δ−hn−1−ε∥f ∥Lpn−1 (Rn)
+for all function f ∈ L1
+loc(Rn) supported in B(0, 2r) \ B(0, r).
+For each i = 0, . . . , m− 1, let xi be the centre of the bush Bi. From geometric considerations
+(see Figure 5), if we move the blue tube from T δ
+ξ (aξ) to the red tube T δ
+ξ (a0) following the arrows,
+the proportion of the intersection between the moving tube and the bush Bi remains comparable
+to the proportion of the intersection Bi ∩ Tξ(xi, aξ) within Tξ(xi, aξ). Therefore, we obtain
+(3.23) 1
+
+[PDF physical page 247]
+
+
+
+[PDF physical page 248]
+
+
+
+[PDF physical page 249]
+
+T δ
+ξ (aξ)
+
+[PDF physical page 250]
+
+
+
+[PDF physical page 251]
+
+
+
+[PDF physical page 252]
+
+n
+
+[PDF physical page 253]
+
+
+
+[PDF physical page 254]
+
+
+
+[PDF physical page 255]
+
+Bi ∩ T δ
+ξ (aξ)
+
+[PDF physical page 256]
+
+
+
+[PDF physical page 257]
+
+
+
+[PDF physical page 258]
+
+n
+≲ 1
+|Tξ(xi, aξ)|n
+|Bi ∩ Tξ(xi, aξ)|n
+for any aξ ∈ Rn.
+
+[PDF physical page 259]
+
+Page 19 J. M. Fraser and L. Yang
+Figure 5. Geometric Observation for (3.23). a0 is the midpoint of xi and aξ.
+Using (3.21), we estimate
+(3.24)
+λ ≲
+m−1X
+i=0
+1
+
+[PDF physical page 260]
+
+
+
+[PDF physical page 261]
+
+
+
+[PDF physical page 262]
+
+T δ
+ξ (aξ)
+
+[PDF physical page 263]
+
+
+
+[PDF physical page 264]
+
+
+
+[PDF physical page 265]
+
+n
+
+[PDF physical page 266]
+
+
+
+[PDF physical page 267]
+
+
+
+[PDF physical page 268]
+
+Bi ∩ T δ
+ξ (aξ)
+
+[PDF physical page 269]
+
+
+
+[PDF physical page 270]
+
+
+
+[PDF physical page 271]
+
+n
+≲
+m−1X
+i=0
+1
+|Tξ(xi, aξ)|n
+|Bi ∩ Tξ(xi, aξ)|n
+⩽
+m−1X
+i=0
+Mδ(χBi)(ξ)
+≲
+m−1X
+i=0
+log 1
+δX
+k=0
+Mδ(χBk
+i
+)(ξ),
+where Bk
+i = (Bi − xi) ∩ (B(0, 2k+1δ) \ B(0, 2kδ)). Taking the exponent pn−1 on both sides of (3.24)
+and applying Jensen’s inequality, we obtain
+(3.25) λpn−1 ≲
+
+
+m−1X
+i=0
+log 1
+δX
+k=0
+Mδ(χBk
+i
+)(ξ)
+
+
+pn−1
+⩽
+
+m log 1
+δ
+pn−1−1 m−1X
+i=0
+log 1
+δX
+k=0
+
+Mδ(χBk
+i
+)(ξ)
+pn−1
+.
+
+[PDF physical page 272]
+
+Page 20 J. M. Fraser and L. Yang
+Integrating (3.25) over D, and by (3.20), it follows that
+(3.26)
+ε0λpn−1 ≲
+
+m log 1
+δ
+pn−1−1 m−1X
+i=0
+log 1
+δX
+k=0
+Z
+D
+
+Mδ(χBk
+i
+)(ξ)
+pn−1
+dξ
+=
+
+m log 1
+δ
+pn−1−1 m−1X
+i=0
+log 1
+δX
+k=0
+∥Mδ(χBk
+i
+)∥pn−1
+Lpn−1 (Sn−1).
+By Lemma 3.5,
+ε0λpn−1 ≲ε
+
+m log 1
+δ
+pn−1−1 m−1X
+i=0
+log 1
+δX
+k=0
+(2kδ)−1δ−pn−1hn−1−ε
+
+[PDF physical page 273]
+
+
+
+[PDF physical page 274]
+
+
+
+[PDF physical page 275]
+
+Bk
+i
+
+[PDF physical page 276]
+
+
+
+[PDF physical page 277]
+
+
+
+[PDF physical page 278]
+
+n
+.
+The geometric observation, see Figure 6, demonstrates that
+(3.27)
+
+[PDF physical page 279]
+
+
+
+[PDF physical page 280]
+
+
+
+[PDF physical page 281]
+
+Bk
+i
+
+[PDF physical page 282]
+
+
+
+[PDF physical page 283]
+
+
+
+[PDF physical page 284]
+
+n
+≲ 2kδ |Bi|n .
+From the graph, we can see that the brown tube intersects the blue annulus, and the portion of
+the brown tube inside the annulus has a length of 2 kδ. Additionally, multiple tubes overlap within
+the annulus, contributing to the estimate in equation (3.27).
+Figure 6. Geometric Observation for (3.27).
+Substituting the stop condition in Proposition 3.3 for m and the first part of (3.18) forPm−1
+i=0 |Bi|n,
+ε0λpn−1 ≲ε
+
+m log 1
+δ
+pn−1−1 log 1
+δX
+k=0
+(2kδ)−1δ−pn−1hn−1−ε2kδ
+m−1X
+i=0
+|Bi|n
+⩽ mpn−1−1
+
+log 1
+δ
+pn−1
+δ−pn−1hn−1−ε |E|n
+λ
+≲ε
+ 1
+ε0
+|E|n δ−s−ελ−n
+pn−1−1
+δ−pn−1hn−1−2ε |E|n
+λ .
+
+[PDF physical page 285]
+
+Page 21 J. M. Fraser and L. Yang
+Then it follows that
+λε
+pn−1
+pn−1+n(pn−1−1)+1
+0 ≲ε δ
+−
+pn−1hn−1+(s+ε)(pn−1−1)+2ε
+pn−1+n(pn−1−1)+1 |E|
+pn−1
+pn−1+n(pn−1−1)+1
+n ,
+which is the desired (3.7), albeit with a different ε.
+Acknowledgements
+We thank Tam´ as Keleti for telling us the proof of Proposition A (2) .
+References
+[B91] J. Bourgain. Besicovitch type maximal operators and applications to Fourier analysis, Geom.
+Func. Anal., 1, (1991), 147–187.
+[C77] A. C´ ordoba. The Kakeya maximal function and the spherical summation multipliers,Amer.
+J. Math., 9, (2023), 1–22.
+[D71] R. Davies. Some remarks on the Kakeya problem, Math. Proc. Cambridge Philos. Soc. , 69,
+(1971), 417–421.
+[F14] K. J. Falconer. Fractal Geometry: Mathematical Foundations and Applications , John Wiley
+& Sons, Hoboken, NJ, 3rd. ed., (2014).
+[HRZ22] J. Hickman, K. Rogers and R. Zhang. Improved bounds for the Kakeya maximal conjecture
+in higher dimensions, Amer. J. Math , 144, (2022), 1511–1560.
+[KLT00] N. Katz, L.  Laba and T. Tao. An improved bound on the Minkowski dimension of Besi-
+covitch sets in R3, Ann. Math., 152, (2000), 383–446.
+[KT02] N. Katz and T. Tao. New bounds for Kakeya problems, J. Anal. Math, 87, (2002), 231–263.
+[KZ19] N. Katz and J. Zahl. An improved bound on the Hausdorff dimension of Besicovitch sets
+in R3, J. Amer. Math. Soc. , 32, (2019), 195–259.
+[KZ21] N. Katz and J. Zahl. A Kakeya maximal function estimate in four dimensions using plane-
+brushes, Rev. Mat. Iberoam., 37, (2021), 317–359.
+[M12] P. Mattila. Topics in geometric Fourier analysis , lecture notes (2012). Avail-
+able at: https://wiki.helsinki.fi/xwiki/bin/view/mathstatKurssit/Kevt%202012/Topics%20in%
+20geometric%20Fourier%20analysis%2C%20spring%202012/.
+[M15] P. Mattila. Fourier analysis and Hausdorff dimension, Vol. 150. Cambridge University Press,
+(2015).
+[M95] P. Mattila. Geometry of Sets and Measures in Euclidean Spaces: Fractals and Rectifiability ,
+Vol. 44. Cambridge University Press, (1995).
+[WZ25+] H. Wang and J. Zahl. Volume estimates for unions of convex sets, and the Kakeya set
+conjecture in three dimensions, preprint, available at: arXiv:2502.17655.
+[W95] T. Wolff. An improved bound for Kakeya type maximal functions, Rev. Mat. Iberoam., 11,
+(1995), 651–674.
+[W03] T. Wolff. Lectures on Harmonic Analysis , American Mathematical Soc., (2003).

@@ -1,27 +1,27 @@
 # 当前研究交接
 
-更新2026-10-18，R0084，Goal active。真实convex factoring Phase I内部双独审通过原closure与停止判定，拒phaseII；no-newdim/branchsaving streak7，终macro后当前无合格next主命题。下一唯一notes/00_map/R0084_next_full_goal_reselection.md。
+更新2026-10-18，R0085，Goal active。真实regular-leading transfer root10/A8/B8及两formal6已实际全文审，正幂⇔旧DIR4，不是新gain phaseII；主维数/branchsaving streak8。终macro后当前无合格下一gain主命题，下一唯一notes/00_map/R0085_next_full_goal_reselection.md。
 
 ## 1. 本轮已付
 
-notes/40_multiscale/R0084_actual_convex_factoring_input_gate.md root9/A8/B8/两formal6/rootintegration6实际全文。assigned partition非geometryO1；convexsection付boundedparents及Mv；父normalized/absolute和affinechild包含PW继承，K_N/N/N′显式。平均先逐管densitylayer保原I/polylog/E′⊂E。
+notes/40_multiscale/R0085_regular_leading_hypersurface_transfer_certificate.md：samecoordinate最高系数/Euler非短/近根帽、scalar sublevel与实体端帽、真实fiber、sharedgridθ²和weighted原α账本。逐管λ^(2D+1)，平均多λ一次，nearfull阈值量词明确；未用occupiedcells代理体积。
 
-## 2. 真正未付
+## 2. 不把子类当全G4
 
-GWZ5.9/Rem5.2的Rn−1 parent-shading输入没有由OAI4/DIR自动提供。n5 projected帽多重数/anisotropic shape/relative scale仍缺，A角公式N/N′已修。R43commonkernel已付旧闭包，variablekernel未付未反；不续PW4/desiredparentdensity换名。
+flatP=x5反推DIR；regularleading只是已知源几何transfer。parabolic饱和Nδ^-3、原cap/slice/unionδ校准只否免费κ，旧模板非newcounter。全G4singular或δdegenerateleading未付，不续D/κ/regular模型。
 
-## 3. 完整目标冻结
+## 3. 其它路线状态
 
-ordinary方向/小footprint与AD-CW、directHRZparent/terminal/local倍率、完整matrixκ1/其余κ/mixed/extremal桥、真full方向低维counter仍未合拢。DIM001条件17/4和proper结论保留；R81不排C/R82localunionopen非counter；旧CP/PM/PW4/endpoint/h/skew等冻结。
+DIM001/R38任意集合assembly和R80core已付，不再伪列内部gap；M3全λ不自动改变KT饱和d′。FY同A/P smallpacking未由ordinary给，坐标格hitting仅s≤n−1/下界2。ordinary smallfootprint+AD/CW、directHRZparent/terminal/local倍率、matrix全κ/mixed/extremal、真full方向counter未合拢；旧CP/PM/PW4/endpoint/h等冻结。
 
-## 4. 来源审查边界
+## 4. 来源和独审
 
-61PDF/65sources/78IDs。ICM官方HTML/webparsed16p只有来源记录，两PDF端点403、截图cache miss，未存PDF/visual。rootGWZ完整§4/§5，OAI4intro，advancedwholeproof非新独证；freshofficialmainref/tree同R75，last三核心wholebytesR75。两formal实际读通过，非外部同行。
+62PDF/66sources/78IDs。新增归档FY2505.05709v2 21p/1417336bytes/SHA20720eb042a6f83723a19082f392c07b9bd21b31d6ca52f61326f5ae5fee83f1，blob9708b6fa1314dfb3650738ff0907eb99e6da531c；rootPDF4/5/8/10/text和view4/10，wholeproof未新独证。两formal实际全文内部通过，非外部peer；freshofficialref/tree同R75，last三核心wholebytesR75。
 
-## 5. 后继诚实状态
+## 5. 诚实后继
 
-notes/00_map/R0084_next_full_goal_reselection.md；当前三者无合格gain主命题。下一先完整四路径选不同actual机制/新输入，再锁量词原mass反攻与stop。sourceclosure信息进展不清streak7，不制造desiredPW4或局部toy降最终Goal。
+notes/00_map/R0085_next_full_goal_reselection.md。当前root/A/B无qualified新gain命题；下一完整四路径找不同actual input，若选G4须真付singular/退化原mass与尺度，不能附成功公设。证据progress不清主gainstreak8，不以proper/初等闭包降低Goal。
 
 ## 6. 同步恢复
 
-父HEAD=origin=freshremote b0f4f5a43de63f2dd7d582edd17b2d41bbbf7d20/tree d86b083cb33eac37c5b6d5b7d2fceb4965f06628，1268旧clean。最终tmp/sync/R0084.json须pendingfalse/samecommit/clean/fulltree/allstagedSHA256。恢复context一次存tmp，读actualproof/formals/macro/next及receiptfreshref，不重跑通过计算；困难不置blocked。
+父HEAD=origin=freshremote 8bc707e1f797cc8ebbc2f2c09477a0f636b8b33e/tree b1f05d24eeb389d2ed1d1ecfdddb7fb566902376，1283旧clean。最终tmp/sync/R0085.json须pendingfalse/samecommit/clean/fulltree/逐stagedSHA256。恢复context一次存tmp、读actualproof/formals/macro/next/receiptfreshref，不重跑通过计算；Goal仍active。

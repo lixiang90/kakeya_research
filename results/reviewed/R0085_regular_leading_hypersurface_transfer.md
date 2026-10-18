@@ -1,0 +1,5 @@
+# R0085内部已审：regular-leading真实几何转移
+
+notes/40_multiscale/R0085_regular_leading_hypersurface_transfer_certificate.md，research/reviews/R0085_directional_and_algebraic_transfer_review.md、research/reviews/R0085_original_shading_and_Lebesgue_mass_review.md及research/reviews/R0085_root_integration_review.md实际全文限定通过；未经外部同行评审。
+
+依具名DIR4：真实近轴、leadingκ、原角帽与逐管nearfullλ给δ^(4+σ)λ^(2D+1)W/α，平均多λ一次。flat反向证明正幂旧输入等价，不是新ID/方向/ordinarybound/major。完整G4singular/退化未付；下一notes/00_map/R0085_next_full_goal_reselection.md无合格新gain主命题，Goal active。

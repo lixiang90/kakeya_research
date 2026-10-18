@@ -114,3 +114,5 @@ R0082新增2PDF，59PDF/62sources：Harrison2203.16412v1实际33页、MurphyPaki
 R0083新增Zahl2208.02913v1（8页）/HKM2106.09661v3（26页），61PDF/64sources；原PDF/text/字节及实际readscope见literature/notes/R0083_direct_line_union_sources.md。合法应用但无新gain，高级wholeproof未新独证。
 
 R0084新增HongWang ICM2026 DOI10.1137/25M1806156官方survey web记录（原PDF端点403，截图cache miss，未存PDF），61PDF/65sources；实际GWZ通用factoring与完整§5读取范围见literature/notes/R0084_convex_factoring_sources.md。不授新ordinarybound。
+
+R0085将旧Fraser–Yang2505.05709v2原21页PDF归档（1417336bytes，实际关键页read/view范围见literature/notes/R0085_source_and_transfer_scope.md），62PDF/66sources。所需小packing输入未由ordinary支付，不因新下载就声新数学输入或major。
