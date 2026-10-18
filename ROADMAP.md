@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-18，R0086实际Du原clock/fullw/ν0全部finite-s资格否定及(3,1)真实lift/positive5volume校准两独审；沿用R50方法无新ID/普通界/反例/major。主gainstreak9，下一notes/00_map/R0086_next_full_goal_reselection.md当前无qualified新gain；63PDF/67sources/78IDs，Goal active。
+更新2026-10-18，R0087 fullG4 全类尝试未证未否；实际原 factor/marks/r尺度/角帽等价归约、exact 旧FSD闭包与两 specific 桥反例经独审。无新ID/普通界/major。主gainstreak10，下一 notes/00_map/R0087_next_full_goal_reselection.md 当前无 qualified 新gain；63PDF/67sources/78IDs，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -183,3 +183,6 @@ R0085：KT/M3饱和入口与FY同一小packing均无新ordinary输入；samecoor
 
 
 R0086：Du旧源R81已全文读，本轮原PDF归档与逐式独审不冒新发现。原t/fullw的allfinite-s无零损失lift已付，具体有损lift存在而R5投影正体积；标签方向proper不分类偶然线段。停止本源clock/rotation/ambient模板，四路全目标仍open。
+
+
+R0087：多因子归约须真实时段/marks、r^-4帽及r^5体积，已付；实不可约near-axis仍open，不换名续门。exact旧FSD应用不新登记，两个gradient/Fano接口反例不反G4。sameπ图形保fiber/wholecontainment却不保global方向帽，停止本次generic CW4接法，四主路保持。

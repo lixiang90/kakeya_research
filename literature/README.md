@@ -119,3 +119,6 @@ R0085将旧Fraser–Yang2505.05709v2原21页PDF归档（1417336bytes，实际关
 
 
 R0086新增Du2610.05404v1原PDF5页、403571bytes，现63PDF/67catalog sources/78IDs；root全文text及view2-3，R81曾完整HTMLread，本轮不冒新版本。源显式upper与actual方向/lift资格经独审，matching Hausdorfflower高级projection仍named。原PDF正文DateOct6与arxivv1 Oct4分开记，详metadata/R0086_source_check.json及notes/R0086_compression_and_lifting_source_scope.md。
+
+
+R0087无新增PDF/source，63PDF/67catalog sources/78IDs。实际重读Wongkew Main Theorem与HRZ Prop4.2/§8指定范围，fullG4仍未证未否；exact只是旧FSD应用。官方root ref/tree新核不变，三核心整字节last R75。详metadata/R0087_source_check.json、notes/R0087_full_G4_and_downstream_source_scope.md。
