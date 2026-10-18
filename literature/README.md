@@ -125,3 +125,6 @@ R0087无新增PDF/source，63PDF/67catalog sources/78IDs。实际重读Wongkew M
 
 
 R0088新增Wang2411.02961v8原PDF29页/495117bytes及text，现64PDF/68catalog sources/78IDs。实际Th1.5/Prop1.7/§2.1转移输入核，root PDF1–5text/view2–3；不冒29页高级wholeproof独证。v1=2024-11-05，currentv8=2026-09-30。原R5真实marks/短轴/范数预算与两具体接口反攻经内部独审，无ordinary gain。详metadata/R0088_source_check.json和notes/R0088_cone_and_full_goal_source_scope.md。
+
+
+R0089新增Guth2014 arXiv1402.0518v1原PDF40页/478336bytes及默认pypdf text，现65PDF/69catalog sources/78IDs。实际完整§1全n cut与§2.2三维降次数证明，root view8/13；whole40页高级graininess未本轮新独证。原marked-grid/direct-area应用及specific gap/II反攻经内部全文独审，完整H5门未证未否。详metadata/R0089_source_check.json和notes/R0089_geometric_cut_degree_and_source_scope.md。

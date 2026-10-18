@@ -1,0 +1,2091 @@
+[PDF physical page 1]
+
+arXiv:1402.0518v1  [math.CA]  3 Feb 2014
+DEGREE REDUCTION AND GRAININESS FOR KAKEY A-TYPE SETS IN R3
+LARRY GUTH
+Abstract. Let T be a set of cylindrical tubes in R3 of length N and radius 1. If the union of the
+tubes has volume N 3−σ, and each point in the union lies in tubes pointing in three qu antitatively
+diﬀerent directions, and if a technical assumption holds, t hen at scale N σ, the tubes are clustered
+into rectangular slabs of dimension 1 ×N σ ×N σ. This estimate generalizes the graininess estimate
+in [KLT]. The proof is based on modeling the union of tubes wit h a high-degree polynomial.
+In [D], Dvir proved the ﬁnite ﬁeld Kakeya conjecture using the polyno mial method. It is an
+interesting open problem how much this approach can tell us about t he Kakeya problem in Rn.
+The paper [GK] uses the polynomial method to prove results about t he combinatorics of ﬁnite sets
+of lines in R3. The Kakeya problem involves thin tubes instead of lines, and it seems to be quite
+diﬃcult to adapt the polynomial method from lines to tubes. In this pa per, we adapt some of the
+ideas from [GK] to prove results about tubes in R3. Our results describe some structural features
+of a (hypothetical) Kakeya set.
+The paper [GK] proves that a set of lines with too many high-multiplicity intersections must
+cluster into planes. Here is a precise statement (this is Theorem 1.2 in [GK].)
+Theorem 0.1. There exists a constant c >0 so that the following holds. Suppose that L is a set
+of N 2 lines in R3. Suppose that X is a set of points in R3, and each line of L contains at least N
+points of X. If |X|<cN 3, then there is a plane that contains at least N + 1 lines of L.
+In this paper, we will prove a theorem about tubes in the spirit of The orem 0.1. However, our
+theorem about tubes is weaker in an important sense. We will prove t hat a set of tubes with
+too many high-multiplicity intersections must cluster into planes when restricted to balls of an
+appropriate radius.
+Here is a rough statement of our main theorem. Suppose that T is a set of cylinders in R3 with
+lengthN and radius 1. Suppose that the union of the cylinders in T has volumeN 3− σ , and suppose
+that most points in the union are contained in three tubes of T pointing in quantitatively diﬀerent
+directions. Then in a typical ball of radius N σ , the union of the tubes resembles a collection of
+rectangular slabs of dimensions 1 × N σ × N σ .
+This type of estimate is called a graininess estimate. The ﬁrst grainine ss estimate was proven
+by Katz, Laba, and Tao in [KLT]. We will recall some of their work in the next subsection.
+Our proof is based on ﬁnding a polynomial surface of controlled degr ee that models the union
+of the tubes of T. We will ﬁnd such a polynomial surface with degree ≲ N 1− σ , and this degree
+estimate is optimal.
+0.1. Planiness and graininess. The paper [KLT] proves that, for small ǫ, a Kakeya set of
+Minkowski dimension (5 / 2) + ǫ in R3 must have three remarkable structural properties: sticki-
+ness, planiness, and graininess. Combining these properties with nu mber theoretic arguments from
+[B], [KLT] derives a contradiction for suﬃciently small ǫ. In this way, they prove that a Kakeya set
+1
+
+[PDF physical page 2]
+
+2 LARRY GUTH
+in R3 must have upper Minkowski dimension at least (5 / 2) +ǫ for a small positive ǫ. For context,
+we recall the rough statements of their results on planiness and gr aininess.
+Suppose that T is a set of cylindrical tubes in R3 of length N and radius 1. The direction of a
+tube T is the unit vector parallel to the central line of T . We write v(T ) for the direction of T . We
+say that T is a Kakeya set of tubes if it obeys the following hypotheses.
+• There are N 2 tubes in T.
+• For any two diﬀerent tubes Ti,T j ∈ T, the angle between v(Ti) and v(Tj) is ≳ 1/N .
+[KLT] studies a Kakeya set of tubes where the volume of the union of the tubes is ≲ N (5/ 2)+ǫ
+for a small ǫ> 0. Their results also require assumptions at other scales: they also assume a volume
+bound on the union of the concentric tubes of radius N 1/ 2. Since our paper doesn’t involve any
+multi-scale considerations, we omit the details. Under these assump tions, the authors prove that
+the set of tubes must be plany and grainy.
+Planiness roughly means that all the tubes of T that intersect a typical unit cube Q lie close to
+a plane. For each unit cube Q that intersects the union of the tubes, they can assign a plane π (Q),
+and for almost all Q, for almost all the tubes T ∈ T that intersect Q, the angle between v(T ) and
+π (Q) is at most (roughly) N − 1/ 2.
+Graininess roughly means that the restriction of T to a typical ball of radius N 1/ 2 consists of
+parallel rectangular slabs of dimension 1 × N 1/ 2 × N 1/ 2. Within this typical ball, the planes π (Q)
+are all parallel to these slabs, and so they all agree up to an angle ∼ N − 1/ 2.
+In particular, if Q,Q ′ lie in the same tube T ∈ T, and the distance from Q to Q′ is less than
+N 1/ 2, then the angle between π (Q) and π (Q′) is (almost always) ≲ N − 1/ 2. This estimate about
+howπ (Q) rotates as we slide Q along a tube T is the estimate that we will generalize. This bound
+is only part of the graininess estimate in [KLT]. It forces the tubes in a typical ball of radius N 1/ 2
+to organize into (disjoint) 1 × N 1/ 2 × N 1/ 2 slabs, but it doesn’t force the slabs to be parallel.
+One limitation of the proof in [KLT] is that it only works for Kakeya sets of dimension close to
+5/ 2. The dependence on ǫ goes as follows (see Proposition 8.1 in [KLT]) : If the dimension of the
+Kakeya set is (5 / 2) +ǫ, then the angle in the planiness estimate is bounded by N − 1/ 2N C√ ǫ for a
+(fairly large) constant C. When C√ ǫ >1/ 2, then the planiness estimate becomes vacuous. The
+story for graininess is similar.
+The planiness estimate was proven in a diﬀerent way in [BCT]. The multiline ar Kakeya inequality
+in that paper is a very useful generalization of planiness. For examp le, it shows that for any σ >0,
+for a Kakeya set of tubes in R3 with volume N 3− σ , most tubes through a typical unit cube Q lie
+within an angle N − σ of a plane π (Q). The multilinear Kakeya inequality was reproven (and slightly
+strengthened) in [G], using the polynomial method.
+In this paper we give a diﬀerent approach to graininess using the poly nomial method. In some
+ways, our graininess result is more general than the one in [KLT], bu t it is also weaker in some
+other ways. We state our main theorem precisely in the next subsec tion.
+0.2. Statement of results. We will work with sets of tubes obeying the following hypotheses:
+Hypotheses 0.2. LetE >1. Suppose that T is a set of tubes in R3 with radius 1 and length EN ,
+contained in a ball of radius EN . Suppose that X is a set of N 3− σ disjoint unit cubes in this ball.
+Suppose that X and T obey the following conditions:
+(1) Each tube T ∈ T intersects between N and EN cubes of X.
+(2) Each cube of X intersects between ρ and Eρ tubes of T, for some ρ ≥ 3.
+(3) Each point of R3 lies in ≤ Eρ tubes of T.
+
+[PDF physical page 3]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 3
+(4) (At least three directions of tubes at each point) For each cu beQ ∈ X, and for any two unit
+vectors v1,v 2 ∈ R3, at least a fraction E− 1 of the tubes of T that intersect Q have angle
+≥ E− 1 with both v1 and v2.
+Our results will be interesting when E is much smaller than N : the reader may take E = 100 as
+a good special case.
+Hypothesis (1) says that X covers a signiﬁcant fraction of each tube T ∈ T. Hypotheses (2)
+and (3) say that the density of tubes is uniform over the set X, and also that X is the region of
+highest density. These are technical hypotheses, and it may be po ssible to weaken or remove them.
+Hypothesis (4) says that the tubes through a given Q ∈ X point in at least three diﬀerent directions
+in a quantitative sense. This is a crucial hypothesis as we will see below .
+Let’s compare these hypotheses to the hypotheses for a Kakeya set. In Hypotheses 0.2, we don’t
+need to assume that the number of tubes is N 2, and we don’t need to assume that the tubes point
+in diﬀerent directions. We assume instead some uniformity, and we as sume that the tubes through
+a given cube point in at least three directions. A Kakeya set does not necessarily obey Hypotheses
+0.2, but I hope that these additional hypotheses are fairly minor. O n the other hand, there are sets
+of tubes that are not Kakeya sets but which obey Hypotheses 0.2. We will give a simple example
+later in the introduction.
+Under these hypotheses, we will prove planiness and graininess est imates in the spirit of [KLT].
+Planiness says that for a typical cube Q ∈ X, most of the tubes of T through Q lie near to a plane
+π (Q). We will prove the following planiness estimate using the polynomial me thod:
+Proposition 0.3. Assume Hypotheses 0.2. Let ǫ >0. For each cube Q ∈ X, we can choose a
+plane π (Q) through Q, so that for a fraction (1 − ǫ) of cubes Q ∈ X, for a fraction (1 − ǫ) of the
+tubesT ∈ T that meet Q, Angle(v(T ),π (Q)) ≤ Poly(E,ǫ − 1)N − σ .
+This Proposition could also be proven using the multilinear Kakeya estim ates in [BCT] (or [G]),
+but we will give a slightly diﬀerent proof below.
+Our main result controls how the plane π (Q) rotates as we vary Q within a segment of a tube
+T .
+Theorem 0.4. Assume Hypotheses 0.2. Let ǫ> 0. Also assume that N σ is larger than some large
+polynomial in E,ǫ − 1. Then there is a large constant K = Poly(E,ǫ − 1) so that the following holds.
+For a fraction (1 − ǫ) of intersecting pairs (Q,T ) ∈ X × T, for a fraction (1 − ǫ) of the cubes Q′ of
+X which intersect T with Dist(Q,Q ′) ≤ K − 1N σ ,
+Angle(π (Q),π (Q′)) ≤ KN − σ.
+This control of π (Q) forces tubes to cluster into slabs of dimensions 1 × N σ × N σ . Consider a
+typical T ∈ T and a segment Seg ⊂ T of length ∼ N σ containing ∼ N σ cubes of X. Let Q be
+one of these cubes, and consider a slab Slab with dimensions 1 × N σ × N σ , parallel to π (Q), and
+containing Seg . Almost all tubes of T through Q must lie in this slab for length ∼ N σ . Theorem
+0.4 says that π (Q′) is N − σ -close to π (Q) for the other Q′ in Seg . Therefore, almost all the tubes
+of T that pass through Seg lie in Slab for a length ∼ N σ . Moreover, if T1 is another (typical) tube
+that passes through Seg , and Seg 1 is the intersection of T1 with our slab, then Theorem 0.4 says
+that π (Q1) is N − σ close to π (Q) for almost all Q1 ∈ Seg 1, and so almost all the tubes through
+Seg 1 also lie in Slab for a length ∼ N σ . This slab is sometimes called a grain for the set of tubes
+T.
+
+[PDF physical page 4]
+
+4 LARRY GUTH
+Let us compare Theorem 0.4 with the graininess estimate in [KLT]. In so me ways, Theorem
+0.4 is more general. It applies to sets of tubes with total volume N 3− σ for any σ >0. It involves
+hypotheses only at one scale instead of hypotheses at several sc ales. It also applies to some sets
+of tubes that don’t point in diﬀerent directions. On the other hand, it does have some technical
+assumptions about the uniformity of the density of tubes, which ar e not needed in [KLT]. Moreover,
+the graininess estimate of [KLT] proves something stronger. It pr oves that in a typical ball of radius
+∼ N 1/ 2, the Kakeya set resembles a set of parallel slabs of dimension 1 × N 1/ 2 × N 1/ 2. We can’t
+prove that nearby slabs are parallel, because we are only able to con trol how π (Q) varies as we
+moveQ along a tube of T.
+0.3. Degree reduction. The proof of Theorem 0.4 uses the polynomial method. We ﬁnd a poly-
+nomial P of controlled degree whose zero set Z(P ) is a good model for the set of cubes X, and
+then we use Z(P ) to study the tubes and cubes. Here is a precise statement about the existence of
+a polynomial of controlled degree that models X.
+Theorem 0.5. Assume Hypotheses 0.2. Let ǫ > 0. Then there is a non-zero polynomial P of
+degree ≤ Poly(E,ǫ − 1)N 1− σ , so that for (1 − ǫ)|X| cubesQ ∈ X, the area of Z(P ) ∩ Q is at least 1.
+This degree estimate is sharp up to a constant factor. The Crofto n formula says that the area of
+Z(P ) in a ball of radius R is ≲ (DegP )R2. Therefore, if X is any set of N 3− σ disjoint unit cubes
+in a ball of radius ∼ N , and if Z(P ) has area at least 1 in most cubes of X, then Deg P ≳N 1− σ .
+Theorem 0.5 says that Kakeya-type sets can be modelled by a polyno mial of the lowest plausible
+degree. In other words, they have a lot of algebraic structure. W e try to exploit this algebraic
+structure to control the geometry of the tubes. We are able to g et a lot of information about the
+geometry at scales ≲N σ , proving Theorem 0.4.
+0.4. Simple examples. Let’s consider a couple examples to illustrate our results. First supp ose
+that X is a set of unit cubes tiling a rectangular slab of dimensions N 1− σ × 2N × 2N . There are
+many tubes that intersect at least N cubes of X. It’s not hard to choose a family T of such tubes
+so that each cube of X lies in N 2− σ tubes of T with directions separated by angle ≳ 1/N . This X
+and T obeys Hypotheses 0.2. For each cube Q ∈ X, the directions of the tubes of T through Q lie
+within an angle N − σ of the x2x3-plane. This shows that the estimate in Proposition 0.3 cannot be
+improved.
+In this example, the plane π (Q) can be chosen to be the x2x3-plane for all Q ∈ X. Nevertheless,
+the size of the ‘grains’ in this example is only 1 × N σ × N σ . If we take a segment Seg ⊂ T ∈ T
+of length N σ , and if we take the 1 × N σ × N σ slab through Seg parallel to the x2x3-plane, then if
+any other tube T ′ ∈ T intersectsSeg , then a segment of T ′ of length ∼ N σ lies in our slab. In this
+sense, we have grains of size 1 × N σ × N σ , and the grains cannot be made any larger.
+In this example, the zero set Z(P ) could be a union of N 1− σ planes parallel to the x2x3-plane,
+with x1 coordinate equal to 1 , 2,...,N 1− σ . We could also take a union of ∼ N 1− σ planes that are
+not quite parallel to each other. In any case, a typical tube of T hugs one plane for a length ∼ N σ ,
+then shifts to another plane and hugs it and so on. In our proof of T heorem 0.4, we will see that
+something like this picture occurs in general. A typical tube of T hugs a nearly ﬂat piece of Z(P )
+for a length of ∼ N σ , then shifts to another nearly ﬂat piece of Z(P ) and hugs it for a length ∼ N σ ,
+and so on. These nearly ﬂat pieces of Z(P ) with diameter ∼ N σ are the grains.
+We consider another situation to show that we really need the tubes of T through a given Q ∈ X
+to point in three diﬀerent directions. Consider the regulus deﬁned b y the equation x3 = x1x2/N ,
+and then consider a neighborhood of this regulus given by |x3 − x1x2/N | ≤ N 1− σ , |x1|, |x2| ≤ N .
+
+[PDF physical page 5]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 5
+Then we can let X be the lattice unit cubes that intersect this neighborhood. There a re many
+tubes that intersect ≳N cubes of X. Take any line in the regulus, thicken it to a tube, and then
+translate the tube vertically by a distance ≤ N 1− σ . We can choose T so that X and T obey all of
+Hypotheses 0.2, except that the tubes through a given cube Q ∈ X point in only two directions
+and not three directions. In this case, X and T have grains only at scale N 1/ 2. If σ > 1/ 2, then
+the size of the grains is signiﬁcantly smaller than N σ .
+In this second example, the degree reduction argument still applies . The full degree reduction
+theorem, Theorem 2.2, is more general than Theorem 0.5, and it app lies to this example. In this
+case, the surface Z(P ) could be N 1− σ parallel reguli. But in this case, since there are only two
+tubes of T through a typical cube X, we are not able to get the same estimates for the curvature
+of Z(P ).
+0.5. Main ideas of the proof. The proofs of our theorems are based on the arguments in [GK],
+but adapted to study tubes instead of lines. We recall the outline of the proof of Theorem 0.1 from
+[GK], and we explain the main issues in adapting the proof to tubes.
+To prove Theorem 0.1, we consider a set L of N 2 lines in R3, and a set X with far fewer than
+N 3 points, where each line of L contains N points of X. We have to prove that many lines of L
+cluster in a plane.
+The ﬁrst step of the proof of Theorem 0.1 is a degree reduction arg ument. We study the
+polynomials that vanish on the lines L. For any set of N 2 lines in R3, there is a polynomial of
+degree ∼ N that vanishes on the lines. But if X is much smaller than N 3, then we can ﬁnd a
+polynomial of much smaller degree.
+The degree reduction involves two observations. First, by a dimens ion counting argument, we
+can ﬁnd a polynomial that vanishes at any S points of R3 with degree ≲ S1/ 3. Once we have a
+polynomial that vanishes at some points, we can sometimes force it t o vanish at other points by
+using the following simple vanishing lemma:
+V anishing Lemma. If a polynomial P vanishes at > DegP points on a line l, then it vanishes
+on the entire line.
+In particular, we let P be a polynomial that vanishes on X with degree ≲ |X|1/ 3, much smaller
+than N . Since each line of L contains N > DegP points of X, we see that P vanishes on all the
+lines of L. We call this a contagious vanishing argument: the vanishing of P spreads from the points
+of X to the lines of L. In the paper below, we will use a more complicated contagious vanish ing
+argument from [GK] that gives a stronger estimate on the degree.
+Let’s pause and discuss what happens when we replace lines by tubes and points by unit cubes.
+We are immediately faced by a question: what does it mean for a polyno mial to ‘vanish at a cube’.
+If a polynomial is not identically zero, then it cannot vanish at every p oint of a cube. The paper
+[G] suggested an approach to this issue. We look for a polynomial tha t roughly bisects the cube, in
+the sense that P >0 on roughly half the cube, and P <0 on roughly half the cube. If P bisects a
+unit cube, then the area of Z(P ) in the cube is ≳ 1. The generalized ham sandwich theorem [ST]
+says that for any S cubes in R3, there is a polynomial that bisects all S cubes with degree ≲S1/ 3.
+When we try to adapt the degree reduction argument to tubes, we need to generalize the vanishing
+lemma above to the context of cubes and tubes. We may start with t he following question: if a
+polynomial P bisects > DegP cubes along a tube, does it follow that P (roughly) bisects all the
+cubes along the tube? The answer is no. This is a main source of diﬃcult ies in generalizing the
+arguments of [D] from lines to tubes. For instance, consider the de gree 10 plane curvey = 10 − 100x10.
+For |x|< 109, this curve is very close to the x-axis, and it roughly bisects many unit squares along
+thex-axis. But around |x|= 10 10, the curve swerves sharply away from the x-axis, and it does not
+
+[PDF physical page 6]
+
+6 LARRY GUTH
+bisect any square of the x-axis farther out than this. So the simplest generalization of the va nishing
+lemma to tubes fails. But we will prove that a weaker statement still h olds.
+To get a feel for this weaker statement, we ﬁrst consider a simpler question in a similar spirit.
+Let δ > 0 be a small number, and suppose that a polynomial P obeys |P (xj )|< δ at > DegP
+pointsxj along a line l. Does it follow that |P (x)|<δ along the entire line l? Again, the answer is
+easily seen to be no. However, on the line l, the polynomial P can take the value δ at most Deg P
+times, and it can take the value −δ at most Deg P times. Therefore, if |P (xj )|< δat 100 DegP
+points of a line l, then |P (x)|<δ on most of the line segments between these points.
+The vanishing lemma for tubes is in this spirit. Roughly speaking, we will p rove that if P
+approximately bisects far more than Deg P unit cubes along a tube, then P approximately bisects
+the unit cubes in most of the ‘tube segments’ between these cubes . Lemma 1.6 gives the precise
+statement. This vanishing lemma for tubes is much weaker than the o ne for lines, but it is still
+strong enough to carry out the degree reduction argument, pro ving Theorem 0.5.
+We now return to our outline of the proof of Theorem 0.1. We have fo und a polynomial P that
+vanishes on the lines of L with good control of the degree. Next we study its zero set: Z(P ). An
+average point of X lies in many lines of L. For the purposes of this discussion, we assume that each
+point of X lies in at least three lines of L. Next we note that each point of X must be a special
+point of the surface Z(P ). If the lines of L through x ∈ X are not coplanar, then x must be a
+singular point of Z(P ). If the lines of L throughx are coplanar, and if x is a regular point of Z(P ),
+thenx must be a ﬂat point of Z(P ) - a point where the second fundamental form of Z(P ) vanishes.
+First we discuss singular points. Singular points are contagious. If a line l ⊂ Z(P ) contains
+more than Deg P singular points, then every point of l is singular. Moreover, Z(P ) can contain at
+most ∼ (DegP )2 singular lines, and (Deg P )2 is far less than N 2. Therefore, most of the lines of L
+contain< DegP singular points. Since Deg P is far less than N , most lines of L contain nearly N
+ﬂat points.
+This part of the argument generalizes to tubes using the methods o f [G]. It is closely related
+to planiness. For most cubes Q in X, Proposition 0.3 says that most of the tubes of T passing
+through Q lie within a small angle of a certain plane π (Q). This says that for most cubes Q, the
+tubes through Q are morally coplanar. Here is an outline of the proof of Proposition 4.2 . Fix a
+tube T ∈ T. We know that X contains ≳N unit cubes that intersect T , and in each of these cubes
+Z(P ) has area ≳ 1. Therefore, the area of Z(P ) ∩ T is ≳ N . But Deg P ≲ N 1− σ , and so almost
+any line parallel to the center line of T intersects Z(P ) at most Deg P ≲ N 1− σ times. The only
+way that this can happen is for v(T ) to be nearly tangent to Z(P ) at most points of Z(P ) ∩ T .
+Now consider a typical cube Q, which lies in several tubes. Let T1 and T2 be cubes through Q in
+quantitatively diﬀerent directions. Typically, at most points of Z(P ) ∩ Q, TZ (P ) makes a small
+angle with both v(T1) and v(T2). There is a unique plane containing v(T1) and v(T2), and TZ (P )
+is close to this plane at most points in Q. This plane is π (Q). Most other tubes through Q are
+nearly tangent to TZ (P ), and so they must be nearly tangent to π (Q).
+We again return to the proof of Theorem 0.1. We have shown that mo st lines of L contain close
+toN ﬂat points of Z(P ). We will use these ﬂat points to force the lines of L to cluster into planes.
+The following approach is based on [EKS]. At a ﬂat point x ∈ X, all the lines of L through x lie
+in a plane π (x) which must be the tangent plane of Z(P ) at x. Now [GK] proves that ﬂatness is
+also contagious: if Z(P ) is ﬂat at > 3 DegP points of a line l, then Z(P ) is ﬂat at every point of
+l. So it follows that Z(P ) is ﬂat along most lines of L. Fix a line l ⊂ Z(P ) where Z(P ) is ﬂat. By
+elementary diﬀerential geometry, it follows that the tangent plane ofZ(P ) is constant along l. But
+
+[PDF physical page 7]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 7
+then π (x) is the same for all x ∈ l. Call this plane π (l). Now we see that all the other lines that
+intersectl (at ﬂat points) must lie in the plane π (l), and this causes clustering in planes.
+The hardest part of this paper is to generalize this argument about ﬂat points from lines to
+tubes. Recall that if x lies in three coplanar lines of L, and if Z(P ) is non-singular at x, then x is a
+ﬂat point of Z(P ). Does this basic result have an analogue for tubes? Suppose we co nsider a cube
+Q ∈ X lying in three tubes of T,T1,T 2,T 3, which are all nearly coplanar. We can also assume that
+the angles between the three tubes are ≳ 1. Recall that Z(P ) roughly bisects all the cubes of X,
+including many cubes in each of the tubes. Does it follow that the curv ature of Z(P ) is nearly zero
+in Q? Perhaps surprisingly, the answer is morally yes. We will prove that f or most cubes Q ∈ X,
+for most points x ∈ Z(P ) ∩ Q, the second fundamental form of Z(P ) at x has size ≲ N − 2σ . We
+will also prove that this curvature bound is contagious, and that th e second fundamental form is
+≲ N − 2σ at many points on the tube segments between the cubes. This boun d on the curvature
+controls how the tangent plane changes as we move along Z(P ), and so it bounds how the plane
+π (Q) rotates as Q moves along a tube T . In particular, if we consider two cubes Q,Q ′ along a
+tube T with Dist(Q,Q ′) ≲ N σ , then the angle between π (Q),π (Q′) is typically ≲ N − σ , proving
+Theorem 0.4.
+Let us sketch the proof of this curvature estimate. Suppose for a moment that Z(P ) was just a
+graph of a degree 2 polynomial. In other words, let’s suppose that Z(P ) is deﬁned by the equation
+x3 =A(x1,x 2) where A is a homogeneous degree 2 polynomial, and that Q is centered at the origin
+and π (Q) is the plane x3 = 0. The second fundamental form of Z(P ) at the origin is exactly A.
+Suppose also that Z(P ) bisects cubes intersecting the three tubes Ti out to a radius R. Since the
+tubes Ti make an angle ≲ N − σ with π (Q), we see that A(x1,x 2) ≤ RN − σ for points ( x1,x 2) at
+radius R in the three tubes in three diﬀerent directions. This implies that the c oeﬃcents of A
+are bounded by N − σR− 1. How accurate is this model? After all, P is a high degree polynomial
+which makes Z(P ) a complicated surface. The main work in the proof is to show that fo r a typical
+Q,T 1,T 2,T 3, the second fundamental form of Z(P ) is morally constant on the three tubes out to
+a radius R ∼ N σ . In other words, for typical Q,T 1,T 2,T 3, the simple model above is an accurate
+model of Z(P ) on T1 ∪ T2 ∪ T3 restricted to a ball of radius ∼ N σ . This estimate depends on
+the degree bound Deg P ≲ N 1− σ . Its proof requires a mix of algebraic geometry and diﬀerential
+geometry.
+0.6. Organization of the paper. In Section 1, we prove a version of the vanishing lemma for
+tubes. In Section 2, we use this vanishing lemma to prove a degree re duction theorem for tubes.
+This theorem implies Theorem 0.5, and it’s a little stronger. In Section 3 , we review the Crofton
+formula - a result of integral geometry that gives bounds on the vo lumes of algebraic varieties. We
+will use the Crofton formula repeatedly to control the geometry o f Z(P ). In Section 4, we use
+the degree reduction theorem to prove our planiness and grainines s estimates, Proposition 0.3 and
+Theorem 0.4.
+1. Parameter counting and the vanishing lemma for tubes
+Suppose that l is a line in Rn, and that P is a polynomial of degree ≤ D that vanishes at >D
+points of l. Then P must vanish on all of l. This basic result is sometimes called a vanishing lemma,
+and it plays a crucial role in polynomial method arguments about the in tersection patterns of lines.
+We want to formulate some analogue of this vanishing lemma when the lin e l is replaced by a
+cylindrical tube T . In this section we set up an analogy, and then state and prove a ve rsion of
+
+[PDF physical page 8]
+
+8 LARRY GUTH
+the vanishing lemma for tubes. This version is a lot weaker than for line s, but it still has some
+applications.
+Let T ⊂ Rn be a cylindrical tube of radius 1 and arbitrary length. We think of T as analogous
+to a line l. Let Q denote a unit cube that intersects T . We think of Q as analogous to a point on l.
+What does it mean for P to “vanish” on Q? We build up to our deﬁnition in a few steps. One
+possible deﬁnition was suggested in [G]. Consider the sets {x ∈ Q|P (x)> 0} and {x ∈ Q|P (x)< 0}.
+We say that P bisects Q if
+Vol{x ∈ Q|P (x)> 0} = Vol{x ∈ Q|P (x)< 0} = 1/ 2.
+We could also relax this deﬁnition and say that P “vanishes” on Q if each of these sets has volume
+at least 1/ 3. The parameter 1/3 is somewhat arbitrary, and we could adjust it .
+We will need a deﬁnition that is a little stronger. The stronger deﬁnitio n is somewhat analogous
+to saying that P vanishes to high order at a point.
+Deﬁnition 1.1. LetQ be a unit cube in Rn. We say that a polynomial P cuts Q at scale r if, for
+each ball B of radius ρ in the range r ≤ ρ ≤ 1 and with center at distance ≤ 1/r fromQ, we have
+( 1
+2 − r) VolB ≤ Vol{x ∈ B|P (x)> 0} ≤ ( 1
+2 +r) VolB.
+The deﬁnition has a little to digest. One main point is that as r gets smaller, the deﬁnition gets
+stronger. In a sense, there are really three parameters here: t he radii of the balls, the distance to
+Q, and the error-tolerance in the near-bisection inequality. But it’s e asier to just keep track of one
+parameterr, and we don’t lose anything in the arguments in the paper below. As a r ough analogy,
+P cuts Q at scale r is like saying P vanishes at a point q to order r− n. This stronger condition is
+more contagious than the simpler condition we started with above.
+In the polynomial method, it is important to be able to ﬁnd polynomials t hat vanish at given
+points. For ordinary vanishing, the most fundamental result of th is type is the following parameter-
+counting lemma. Let Poly D(Rn) denote the vector space of polynomials on Rn of degree ≤ D.
+Lemma 1.2. (Parameter counting) Let q1,...,q S be a set of points in Rn, and suppose that S <
+Dim PolyD(Rn). Then there is a non-zero polynomial of degree ≤ D that vanishes at all the points
+qi.
+Proof. Consider the linear map E : Poly D(Rn) → RS deﬁned by E(P ) = ( P (q1),...,P (qS)). By
+hypothesis, the dimension of the domain is larger than the dimension o f the range, so the linear
+mapE has a non-trivial kernel. A non-zero element of this kernel is a non- zero polynomial of degree
+≤ D that vanishes at all the points qi. □
+We remark that the dimension of Poly D(Rn) is
+( D+n
+n
+)
+≥ Dn/n ! ≥ Dn/n n. Therefore, for any
+set of S points in Rn, we can ﬁnd a non-zero polynomial vanishing on these points with deg ree
+≤ n|S|1/n .
+This lemma has a good analogue for our cutting deﬁnition.
+Lemma 1.3. (Parameter counting for cubes) There is a small constant c and a large power a
+depending only on the dimension n so that the following holds. Let r ∈ (0, 1/ 2) be a real number.
+LetQ1,...Q S be a set of unit cubes in Rn, and suppose that S <cra Dim PolyD(Rn). Then there is
+a non-zero polynomial of degree ≤ D that cuts each cube Qi at scale r.
+This lemma follows from the polynomial ham sandwich theorem.
+
+[PDF physical page 9]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 9
+Theorem 1.4. (Polynomial ham sandwich theorem, Stone and Tukey, [ST], see also [G]) Suppose
+that U1,...,U S are ﬁnite volume open sets in Rn and that S < Dim PolyD(Rn). Then there is a
+non-zero polynomial of degree ≤ D that bisects each Ui.
+Now we can give the proof of Lemma 1.3.
+Proof. Consider a lattice of cubes of side length (10 n)− 2nr2. Notice that the diameter of such a cube
+is ≤ (10n)− nr2. Let {Ui} be the set of cubes in the lattice which intersect the (10 /r )-neighborhood
+of the union of the cubes Qi. The number of such Ui is ≤ C(n)r− a(n)S, where S is the number of
+cubes Qi. By hypothesis, C(n)r− a(n)S <Dim PolyD(Rn), so we can choose a polynomial of degree
+≤ D that bisects each cube Ui.
+Now we consider a ball B with radius in the range ( r, 1) and center within distance 1 /r of one
+of the cubes Qi. We can write B as a union of some of the small cubes Ui plus a small leftover
+piece. The leftover piece is contained in the (10 n)− nr2 neighborhood of the boundary of B. Now
+an elementary computation shows that the volume of the leftover p iece is ≤ (1/ 10)r VolB. The
+polynomial P exactly bisects each small cube Ui, and so it obeys the desired inequality for B. □
+Corollary 1.5. For each n, there are constants Cn,a n so that the following holds. Let Q1,...,Q S
+be unit cubes in Rn, and let r ∈ (0, 1/ 2) be given. Then there is a polynomial P that cuts each cube
+Qi at scale r with DegP ≤ Cnr− anS1/n .
+Proof. By Lemma 1.3, we can ﬁnd a polynomial P of degree ≤ D cutting all the cubes at scale r
+as long as
+S <cnran Dim PolyD(Rn).
+Now Dim PolyD(Rn) =
+( D+n
+n
+)
+≥ Dn/n !, so it suﬃces to check
+S <cn(n!)− 1ranDn.
+We can ﬁnd an integer D obeying this inequality with D ≤ Cnr− anS1/n . □
+Now we turn to the analogue of the vanishing lemma. Suppose that T is a tube of radius 1 and
+that {Qi} are some unit cubes that intersect T . Also suppose that the distance between any two
+Qi is ≥ 2n. Because of the separation, the cubes Qi have a deﬁnite order along T . They divide
+T into segments between the Qi. We can make this precise in the following way. After rotation
+and translation, we can arrange that T is described in coordinates x1,...,x n by the inequalities∑n− 1
+j=1 x2
+j ≤ 1 and xn ∈ [hs,h f ]. We let h1,...,h S be the xn coordinates of the centers of the cubes
+Qi, and we renumber the Qi so that h1 < h2 < ... < hS. Since the distances between the cubes
+are ≥ 2n and they all intersect T , it’s straightforward to check that the gaps hi − hi− 1 are all ≥ 1.
+Now we divide T into tube segments Ti deﬁned by ∑n− 1
+j=1 x2
+j ≤ 1 and xn ∈ [hi,h i+1].
+Our vanishing lemma roughly says that if P is a polynomial of degree ≤ D, and if P cuts far
+more than D unit cubes Qi that intersect T , then P cuts the unit cubes touching most of the tube
+segments between them.
+Lemma 1.6. (Vanishing lemma for tubes) For each dimension n, there is a small r(n) > 0 and
+a large constant C(n) so that the following holds. Suppose that P is a non-zero polynomial in
+PolyD(Rn). Suppose that Q1,...,Q S are unit cubes that intersect T with pairwise distance ≥ 2n,
+and suppose that P cuts each Qi at scale r ≤ r(n). Let Ti be the tube segments of T deﬁned above.
+There are ≤ C(n)r− 4nD bad tube segments, and the rest of the Ti are good tube segments. If Q is
+a unit cube that intersects a good tube segment, then P cuts Q at scale 2r.
+
+[PDF physical page 10]
+
+10 LARRY GUTH
+The key diﬀerence between the vanishing lemma for tubes and for line s is that in the case of lines
+there were no bad segments. If P vanishes at >D points xi along a line l, then it must vanish on
+the whole line, including points far away from the xi. Our lemma for tubes does not say anything
+about what happens along the tube far beyond all the cubes Qi. It only describes what happens
+between the cubes and there can be ∼ D bad tube segments where we are unable to say anything.
+On the other hand, if P cuts many times D evenly spaced cubes Qi alongT , then P must cut most
+of the cubes between them.
+Proof. As above, we choose coordinates so that T is deﬁned by ∑n− 1
+j=1 x2
+j ≤ 1. We let π denote the
+projection onto the ﬁrst ( n − 1) coordinates: π (x1,...,x n) = (x1,...,x n− 1). For any y ∈ Rn− 1, we
+call the line π − 1(y) a vertical line. If a vertical line is not contained in Z(P ), then it intersects
+Z(P ) in ≤ D points. Also, the set of y so that π − 1(y) ⊂ Z(P ) has measure zero. So for almost
+every y, π − 1(y) intersects Z(P ) in ≤ D of the tube segments Ti. Also, πT i ⊂ πT which is a unit
+ball. Therefore, we get the following estimate:
+∑
+i
+Voln− 1π (Z(P ) ∩ Ti) ≤ C(n)D.
+We need a small variation of this inequality involving the R-neighborhood of Ti, written NRTi.
+TheNRTi are not disjoint. However, the consecutive heights diﬀer by at leas t 1: hi − hi− 1 ≥ 1. So
+any point lies in ≤ 2R + 1 of the sets NRTi. Also πN RTi ⊂ πN RT , which is a ball of radius R + 1.
+Therefore, we get the following estimate:
+∑
+i
+Voln− 1π (Z(P ) ∩ NRTi) ≤ C(n)D(R + 1)n. (1)
+From now on, we take R = n + (1/r ), so that all the balls and cubes in our story lie in the
+R-neighborhood of T .
+We call Ti good if Vol n− 1π (Z(P ) ∩ NRTi) ≤ (100n)− nr2n. Otherwise, we call Ti bad. We see
+from equation (1) that the number of bad Ti is ≤ C(n)r− 4nD as desired.
+Now let Q be a unit cube that intersects a good segment Ti. We have to prove that P cuts Q
+at scale 2r. Let B be a ball with radius in the range [2 r, 1], and with center a distance ≤ (1/ 2)r− 1
+from Q. We have to prove that P nearly bisects B.
+The tube segment Ti runs in the range xn ∈ [hi,h i+1], where hi is the xn-coordinate of Qi. We
+consider a translate of B in the xn direction. We let B′ be the translation with center at height hi.
+If r(n) is suﬃciently small, then the ball B′ lies in the r− 1 neighborhood of Qi. Therefore, P
+nearly bisects B′:
+|Vol{x ∈ B′|P (x)> 0} − (1/ 2) VolB′| ≤ r VolB′. (2)
+The main idea is that P cutsB andB′ in a similar way, because Vol n− 1π (Z(P ) ∩ NRTi) is very
+small. Note that B and B′ are both in NRTi.
+We call a line l vertical if it is parallel to the xn axis. We say a vertical line is empty if
+l ∩ Z(P ) ∩ NRTi is empty. If l is an empty line, then the sign of P does not change on l ∩ NRTi.
+Also, if l is any vertical line, then the length of l ∩ B is the same as the length of l ∩ B′. We let E
+be the union of all the empty lines. By the above discussion, we see th e following:
+Vol{x ∈ B ∩ E|P (x)> 0} = Vol{x ∈ B′ ∩ E|P (x)> 0}.
+
+[PDF physical page 11]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 11
+On the other hand, B∩Ec andB′∩Ec are extremely small. Since the radius of B is ≤ 1, Voln(B∩
+Ec) ≤ 2 Voln− 1π (Ec ∩ B) ≤ 2 Voln− 1π (Z(P ) ∩ NRTi) ≤ 2(100n)− nr2n. In particular, Vol nEc ∩
+B ≤ (1/ 100)r VolB. By the same argument, Vol nEc ∩ B′ ≤ (1/ 100)r VolB = (1/ 100)r VolB′.
+Therefore,
+|Vol{x ∈ B|P (x)> 0} − Vol{x ∈ B′|P (x)> 0}| ≤ (2/ 100)r VolB. (3)
+Combining inequalities (2) and (3), we see
+|Vol{x ∈ B|P (x)> 0} − (1/ 2) VolB| ≤ (1. 02)r VolB.
+This proves the desired near-bisection inequality for the ball B. □
+2. Degree reduction for tubes
+In this section, we use parameter counting and the vanishing lemma t o prove a version of degree
+reduction for tubes. To orient ourselves, we ﬁrst present a para llel version of degree reduction for
+lines, and recall the proof.
+2.1. Degree reduction for lines. The following Proposition is a degree reduction result for lines
+in R3. The statement and the proof are models for the result we will prov e for tubes. The proof
+here works over any ﬁeld, so we present it in that generality.
+Proposition 2.1. Let F be a ﬁeld. Let ǫ> 0 and E >0 be any numbers. Suppose that L is a set
+of lines in F3 and X is a set of points in F3 obeying the following conditions.
+(1) Each line l ∈ L contains between N and EN points of X, for some number N .
+(2) Each point of X lies in between ρ and Eρ lines of L, for some ρ ≥ 2.
+Then there is a non-zero polynomial P of degree ≤ Poly(E,ǫ − 1)|X|N − 2 that vanishes on ≥
+(1 − ǫ)|X| points of X.
+By the parameter counting lemma, Lemma 1.2, there is a non-zero po lynomial vanishing on
+X with degree ≤ C|X|1/ 3. If |X| is much less than N 3, then |X|N − 2 < |X|1/ 3, and we get a
+signiﬁcantly lower degree. Therefore, we call this type of estimate a degree reduction result.
+The estimate is particularly sharp over ﬁnite ﬁelds. Suppose that F = Fq is the ﬁnite ﬁeld with q
+elements, and suppose that N =q. The Proposition tells us that there is a polynomial P vanishing
+on most of X with Deg P ≲ |X|q− 2. On the other hand, the Schwarz-Zippel lemma says that a
+polynomial P vanishes on at most (Deg P )q2 points. Therefore, Deg P ≳ |X|q− 2, and so the degree
+estimate is sharp up to a constant factor.
+Proof. Here is an outline of the proof. Later when we do degree reduction f or tubes, we will follow
+the same outline.
+Step 1. We pick a random subset of lines L1 ⊂ L. We pick a bunch of points on each line l ∈ L1.
+Then we use parameter counting to ﬁnd a polynomial P of controlled degree that vanishes at all
+the points.
+Step 2. By the vanishing lemma, P vanishes on each line of L1.
+Step 3. Since there are many intersections, we will prove that each line of L usually has many
+intersection points with lines of L1. We know that P vanishes at each of these intersection points.
+Step 4. By the vanishing lemma, P vanishes on most lines of L. Therefore, it vanishes at most
+points of X.
+
+[PDF physical page 12]
+
+12 LARRY GUTH
+Now we begin the details. We let D denote the degree bound for P . We take D = K|X|N − 2,
+where K =C(Eǫ− 1)A for some large constants C,A .
+(We want DegP ≤ D to be an integer, so we need to check that this D ≥ 1. It suﬃces to check
+that |X| ≥ N 2/ 2. Let l be a line of L. We know l contains ≥ N points of X. Each of these points
+lies in another line of L, so we know that L contains at least N lines besides l: let’s call them l1,l 2,...
+Nowl1 contains ≥ N − 1 points of X not inl. And more generally, li contains at least N − i points of
+X not in l,l 1,...,l i− 1. So the total number of points of X is at least N + (N − 1) +... + 1 ≥ (1/ 2)N 2.
+)
+Step 1. We randomly pick a set L1 ⊂ L by including each line with probability (1 / 100)D2|L|− 1.
+With high probability, the number of lines in L is ≤ (1/ 10)D2.
+We pick 2D points on each line of L1. The total number of points picked is ≤ (1/ 5)D3. By the
+parameter counting lemma, Lemma 1.2, there is a non-zero polynomia lP which vanishes on these
+points and has Deg P ≤ D.
+Step 2. On each line of L1, the polynomial P vanishes at 2D> DegP points. By the vanishing
+lemma, P vanishes on each line of L1.
+Step 3. Next we want to prove that with high probability, P vanishes at many points on most
+lines of L. Let l′ be a ﬁxed line of L. We ﬁrst estimate the expected number of points of l′ that lie
+in a line of L1.
+The lines of L1 contain ∼ ND 2 points of X. The probability that a point x ∈ X lies in a
+line of L1 is constant on X up to a factor Poly( E). So the probability that x lies in a line of
+L1 is ≥ Poly(E)− 1ND 2|X|− 1. The line l′ contains ≥ N points of X. Therefore, the expected
+number of points of l′ in the lines of L1 is ≥ Poly(E)− 1N 2D2|X|− 1 = Poly(E)− 1KD . By choosing
+the exponent A large enough in the deﬁnition of K, we can arrange that this expected number is
+> 20D.
+Now we would like to prove that with high probability, the line l contains>D intersection points
+with lines of L1. Let x1,x 2,...,x N be points of X ∩ l′. Let I(xi) denote the event that xi lies in
+a line of L1 other than l′. This deﬁnition is good because the events I(xi) are independent. As
+we saw in the last paragraph, each event I(xi) occurs with probability ≥ Poly(E)− 1ND 2|X|− 1. If
+we choose A large enough, the expected number of I(xi) that occur is > 20D. In fact we can do
+a little better and say that the expected number of I(xi) that occur is > 20Dǫ− 10E10. Since the
+I(xi) are independent, we have that > 2D of the events I(xi) occur with high probability. So with
+probability (1 − ǫ8E− 8), the line l′ contains> 2D intersection points with lines of L1.
+Now we can choose a particular P so that at least (1 − ǫ8E− 8)|L| lines of L contain at least 2 D
+points where P vanishes.
+Step 4. By the vanishing lemma, P vanishes on at least (1 − ǫ8E− 8)|L| lines of L. Since each
+point of X lies in approximately the same number of lines, it follows that P vanishes on (1 − ǫ)|X|
+points of X. □
+2.2. Degree reduction for tubes. We now formulate a similar degree reduction result for tubes.
+Instead of P vanishing at a point, we discuss P cutting a cube at a small scale r. Also, using tubes,
+we need to pay attention to angles of intersection, and we add an ex tra transversality assumption.
+Theorem 2.2. Letǫ> 0 and let E >1. Suppose that T is a set of tubes in R3 with radius 1 and
+arbitrary length. Suppose that X is a set of disjoint unit cubes in R3. Suppose that X and T obey
+the following conditions:
+(1) Each tube T ∈ T intersects between N and EN cubes of X, for some number N .
+(2) Each cube of X intersects between ρ and Eρ tubes of T, for some ρ ≥ 2.
+
+[PDF physical page 13]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 13
+(3) (transversality) For each cube Q ∈ X, and for each unit vector v ∈ R3, a fraction E− 1 of
+the tubes of T that intersect Q have angle ≥ E− 1 with the vector v.
+Then there is a non-zero polynomial P of degree ≤ Poly(E,ǫ − 1)|X|N − 2 that cuts ≥ (1 − ǫ)|X|
+cubes of |X| at scale ǫ.
+The degree estimate in this theorem is sharp up to a constant facto r when X is contained in a
+ball of radius ∼ N . If X is contained in a ball of radius ∼ N and P cuts most unit cubes of X,
+then the area of Z(P ) ∩ B(N ) is ≳ |X|. On the other hand, the Crofton formula implies that for
+any polynomial P , the area of Z(P ) ∩ B(N ) is ≲ (DegP )N 2. (We will review the Crofton formula
+in Section 3.) Comparing these inequalities, we see Deg P ≲ |X|N − 2. This situation is analogous
+to the ﬁnite ﬁeld situation we discussed after the degree reduction proposition for lines.
+Proof. We begin by making an outline of the proof, parallel to the case of lines .
+Step 1. We pick a random subset of tubes T1 ⊂ T. We pick a bunch of cubes on each tube
+T ∈ T1. Then we use parameter counting to ﬁnd a polynomial P of controlled degree that cuts all
+of the cubes.
+Step 2. We apply the vanishing lemma for tubes to each tube T ∈ T1. By Step 1, we know that
+P cuts many cubes on T . These cubes divide T into a sequence of tube segments, and the vanishing
+lemma says that P cuts the cubes in most of these segments. We call the segments wh ere P cuts
+good segments.
+Step 3. Let T ′ be a typical tube of T. By assumption T ′ has many intersections with other tubes
+of T, and so T ′ usually has many intersections with tubes of T1. Being a little more careful, we will
+show that T ′ usually intersects many tubes of T1 in good segments. If T ′ intersects a tube of T1 in
+a good segment, then we call the cube where they intersect a good cube. By Step 2, we know that
+P cuts every good cube.
+Step 4. By the vanishing lemma, P cuts the cubes of T′ in most of the segments between the
+good cubes from Step 3. We next have to check that these good cu bes are usually evenly distributed
+along T′. Then it follows that P cuts most of the cubes in T′. Since this holds for most tubes T′,
+P cuts most cubes of X.
+As before, we deﬁne D = K|X|N − 2, where K = C(Eǫ− 1)A for large constants C,A . By the
+same argument as above, we can check that |X| ≥ Poly(E)− 1N 2, and so D ≥ 1.
+We write K + for a small positive power of K, and K − for a small negative power of K. These
+powers can change from line to line. By choosing A large, any K + is always at least ( Eǫ− 1)10.
+On the other hand the power K + is always ≤ K 1/ 100, so that an expression like K − (1/ 2)+ is much
+smaller than 1.
+Step 1. Now we choose a random subset of tubes T1 ⊂ T and some cubes on each tube. When we
+worked with lines, we chose 2 D points on each line, which is enough to apply the vanishing lemma
+for lines. But the vanishing lemma for tubes works better if we have f ar more than D cubes in a
+tube. So we choose ≫ D cubes on each tube, and we have to choose fewer tubes. Playing ar ound
+with the parameters it turns out to work if we take around K 1/ 2D cubes on each tube, and around
+K − 1/ 2D2 tubes. All we really need about K 1/ 2 is that K ≫ K 1/ 2 ≫ 1.
+Let T1 ⊂ T be a random subset of tubes, where each tube is selected with prob abilityK − 1/ 2D2|T|− 1.
+With high probability, the size of T1 is ≲K − (1/ 2)+D2.
+For each tube T ∈ T1, we choose K 1/ 2D cubes of X which intersect T . We choose them evenly
+spaced among the cubes of X that meet T .
+
+[PDF physical page 14]
+
+14 LARRY GUTH
+Since we choose K 1/ 2D cubes in each tube of T1, the total number of chosen cubes is ≤ K +D3
+with high probability. By the parameter counting lemma for cutting cu bes, Corollary 1.5, we can
+ﬁnd a non-zero P with DegP ≤ K +D which cuts every chosen cube at scale K − .
+Step 2. Next we apply the vanishing lemma for tubes, Lemma 1.6, to ea ch tube T ∈ T1. Fix a
+tube T ∈ T1, and let Q1,Q 2,...,Q K 1/ 2D be the chosen cubes that intersect T . We label them in
+order. Let Ti,i +1 be the segment of T from Qi to Qi+1, as deﬁned before the statement of Lemma
+1.6. Note that there are K 1/ 2D of these tube segments, and each of them intersects ∼ NK − 1/ 2D− 1
+cubes of X. Lemma 1.6 says that there are at most K +D bad tube segments Ti,i +1, and that for
+any unit cube Q intersecting any good tube segment, P cuts Q at scale K − .
+Step 3. Let Q be a ﬁxed cube of X, and let I(Q) be the event that Q intersects a tube of T1. We
+claim that the probability of I(Q) is ≥ K (1/ 2)−DN − 1. Each tube belongs to T1 with probability
+K − 1/ 2D2|T|− 1. There are ≥ ρ tubes of T that intersect Q, and so the probability of I(Q) is at least
+ρK − 1/ 2D2|T|− 1. We can simplify this expression using a double counting argument. We count the
+incidences between tubes of T and cubes of X in two diﬀerent ways. Up to powers of E, the number
+of incidences is ρ|X|and it is also N |T|. Therefore, ρ ≥ K −N |T||X|− 1. Plugging this in above, we
+see that the probability of I(Q) is at least K − (1/ 2)−ND 2|X|− 1. Plugging in D = K|X|N − 2, the
+probability of I(Q) is at least K (1/ 2)−DN − 1. This proves the claim.
+Now let T ′ be an arbitrary tube of T. Let Q1,...,Q N be cubes of X that intersect T ′. (These
+are diﬀerent from the tubes in Step 2.) The expected number of cub es Qj so that I(Qj) holds is
+≥ K (1/ 2)−D. However, the events I(Qj) are not independent. The problem is that a tube T ∈ T
+with a small angle to T ′ may intersect many cubes Qj, and if this tube T is chosen for T1, it will
+cause I(Qj) to happen for many j.
+We can ﬁx this independence problem by tweaking the deﬁnition, and c onsidering only transverse
+intersections. Among the cubes of X that intersect T ′, choose E− 1N evenly spaced cubes Q′
+j.
+Between Q′
+j and Q′
+j+1 there are E cubes of X that intersect T ′, and so the distance from Q′
+j to
+Q′
+j+1 is at least E. We let Itr(Q′
+j) be the event that a cube of T1 intersects Q′
+j and the angle
+between that tube and T ′ is at least E− 1. If the angle between T and T ′ is at least E− 1, then T
+can intersect at most one of the cubes Q′
+j. Therefore, the events Itr(Q′
+j) are independent.
+The transversality hypothesis in the statement of the Theorem sa ys that for each cube Q′
+j ∈ X,
+among the tubes of T that intersect Q′
+j, at least a fraction E− 1 of them are E− 1-transverse to T ′.
+So by the same analysis as above, the probability of Itr(Q′
+j) is still ≥ K (1/ 2)−DN − 1. The number of
+cubes Q′
+j is E−N . Therefore, the expected number of Q′
+j for which Itr(Q′
+j) occurs is ≥ K (1/ 2)−D.
+Moreover, since the events Itr(Q′
+j) are independent, we can say that with probability (1 − K − ),
+there are ≥ K (1/ 2)−D cubes Q′
+j where Itr(Q′
+j) holds.
+Suppose that Itr(Q′
+j) occurs. It would be nice if we could conclude that P cutsQ′
+j at scale K − .
+However we don’t know this. Since Itr(Q′
+j) occurs, we know that Q′
+j intersects a tube T ∈ T1, but
+Q′
+j may intersect a bad tube segment of T . We would like to prove that this is rare. I don’t know
+how to prove this for a single T ′, so we now have to average over all T ′ ∈ T.
+Let’s make a little more notation. For each tube T ′ ∈ T, let Xspaced(T ′) ⊂ X be a set of E− 1N
+evenly spaced cubes among the cubes of X that intersect T ′. The event Itr(Q′
+j) really depends on
+T ′, and we make this explicit by calling it Itr(T ′,Q ′
+j). Let us formally state what we proved so far
+in our new notation.
+Lemma 2.3. For each T ′ ∈ T, with probability (1 − K − ), there are ≥ K (1/ 2)−D cubes Q′
+j in
+Xspaced(T ′) so that Itr(T ′,Q ′
+j) holds.
+
+[PDF physical page 15]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 15
+If Q′
+j ∈ Xspaced(T ′), we let Ibad(T ′,Q ′
+j) be the event that Q′
+j lies in a bad segment of a tube
+T ∈ T1 and the angle between T andT ′ is ≥ E− 1. We will prove the following bound showing that
+Ibad is rare.
+Lemma 2.4. With probability (1 − K − ),
+AvgT ′∈ T
+⏐
+⏐{Q′
+j ∈ Xspaced(T ′) so that Ibad(T ′,Q ′
+j)}
+⏐
+⏐ ≤ K +D.
+Proof. Each tube T ∈ T1 intersects ≤ K +N cubes of X. The tube T is divided into K 1/ 2D
+segments, each containing the same number of cubes, and there a re only K +D bad segments.
+Therefore, the number of cubes of T in bad segments is ≤ K − (1/ 2)+N . With probablity (1 − K − ),
+there are at most K − (1/ 2)+D2 tubes in T1, and so the total number of cubes in the bad segments of
+all these tubes is ≤ K − 1+D2N . Each of these cubes lies in at most K +ρ ≤ K +|T|N |X|− 1 tubes of T.
+Therefore, the total number of bad events Ibad(T ′,Q ′
+j) is at most K − 1+D2N 2|X|− 1|T|=K +D|T|.
+Averaging over T ′ ∈ T, we get the inequality above. □
+We note that if Itr(T ′,Q ′
+j) holds but Ibad(T ′,Q ′
+j) does not hold, then Q must intersect a tube
+T ∈ T1 in a good tube segment, and so P cutsQ′
+j at scale K − . Comparing Lemma 2.3 and Lemma
+2.4, we see that with probability (1 − K − ), for at least (1 − K − )|T| tubes T ′ ∈ T, P cuts at least
+K (1/ 2)−D cubes Q′
+j ∈ Xspace(T ′) at scale K − .
+In Step 4, we will apply the vanishing lemma for tubes to T ′. For a typical T ′, we see that P
+cuts at least K (1/ 2)−D cubes along T ′. The vanishing lemma implies that P also cuts the cubes in
+most of the segments between these cubes. But to get a good est imate, we will need to know that
+these K (1/ 2)−D cubes are fairly evenly distributed along T ′.
+Let us make this precise. Consider a tube T ′. As Q′
+j varies in Xspaced(T ′), the events Itr(T ′,Q ′
+j)
+are independent. Therefore the cubes Q′
+j whereItr(T ′,Q ′
+j) holds are usually distributed very evenly.
+More precisely, with probability (1 −K − ), anyD tube segments between the cubes Q′
+j ∈ Xspaced(T ′)
+where Itr(T ′,Q ′
+j) holds will intersect ≤ K − (1/ 2)+N cubes of X.
+This holds for the following reason. Let the cubes Q′
+j ∈ Xspaced(T ′) where Itr(T ′,Q ′
+j) holds
+be called transverse intersection cubes. We want to understand t he tube segments between the
+transverse intersection cubes. We deﬁne the ‘length’ of a tube se gment to be the number of cubes
+of X that it intersects. Deﬁne
+λ :=K − (1/ 2)+D− 1N.
+λ is the typical length of a tube segment. Now let β >1 be a parameter, and consider a sequence
+of βλ consecutive cubes in Xspaced(T ′). We consider the probability that these cubes lie in a
+single tube segment - this is the same as the probability that none of t he cubes in the sequence is a
+transverse intersection cube. Since Itr(T ′,Q ′
+j) holds with probability at least K (1/ 2)−DN − 1 =λ − 1,
+the probability that our sequence lies in a single tube segment is ≤ e− β . Next, divide the cubes
+of Xspaced(T ′) into disjoint sequences of βλ consecutive cubes. There are ≤ K +Nβ − 1λ − 1 of these
+sequences. Any tube segment of length ≥ 2Eβλ must contain one of these sequences. Therefore,
+the expected number of such tube segments is bounded as follows:
+E [The number of tube segments of length ≥ 2Eβλ ] ≤ e− βK +Nβ − 1λ − 1.
+This is the key formula in the proof. In particular, it follows that with p robability (1 − K − ),
+
+[PDF physical page 16]
+
+16 LARRY GUTH
+[The total length of all tube segments of length ≥ 2E(logK)λ] ≤ K − 1K +N.
+On the other hand, any D tube segments with length ≤ 2E(logK)λ have total length ≤ DK +λ ≤
+K − (1/ 2)+N . Therefore, with probability (1 − K − ), the total length of any D tube segments is
+≤ K − (1/ 2)+N .
+Here is a ﬁnal lemma summarizing how T ′ interacts with the tubes of T1.
+Lemma 2.5. With probability (1 − K − ), there are (1 − K − )|T| tubes T ′ ∈ T where the following
+holds:
+(1) There are at least K (1/ 2)−D cubesQ′
+j ∈ Xspaced(T ′) whereItr(T ′,Q ′
+j) holds.
+(2) Any D tube segments of T ′ between the cubes where Itr(T ′,Q ′
+j) holds will intersect ≤
+K − (1/ 2)+N cubes of X.
+(3) There are at most K +D cubesQ′
+j ∈ Xspaced(T ′) whereIbad(T ′,Q ′
+j) holds.
+Step 4. Let T ′ be a tube obeying (1) - (3) from Lemma 2.5. If Itr(T ′,Q ′
+j) holds and Ibad(T ′,Q ′
+j)
+does not hold, then we know that P cutsQ′
+j at scale K − . Call such cubes good cubes. Applying the
+vanishing lemma for tubes, Lemma 1.6, we see that P cuts at scale K − on every cube intersecting
+T ′ except for K +D bad tube segments between the good cubes Q′
+j. By (3) above, these bad tube
+segments can be covered by ≤ K +D tube segments between the cubes Q′
+j where Itr(T ′,Q ′
+j) holds.
+By (2), these K +D tube segments intersect at most K − (1/ 2)+N cubes of X. Therefore, P cuts a
+fraction (1 − K − (1/ 2)+) of all the cubes of X that intersect T ′. This analysis holds for (1 − K − )|T|
+tubes T ′ ∈ T.
+Finally, since each cube of X intersects essentially the same number of tubes of T, we see that
+P cuts (1 − K − )|X| cubes of X at scale K − . □
+3. Background in integral geometry
+The Crofton formula plays an important role in studying the geometr y of algebraic varieties. It
+connects the k-dimensional volume of a surface Σ k ⊂ Rn with the number of intersection points
+between Σ and various ( n − k)-planes in Rn. Let AG(n − k,n ) denote the aﬃne Grassmannian of
+all aﬃne (n − k)-planes in Rn. The group of rigid motions of Rn acts transitively on AG(n − k,n ).
+Up to scaling, there is a unique invariant measure µ onAG(n − k,n ). See [S] for more details. Let
+|π ∩ Σ| denote the cardinality of π ∩ Σ.
+Theorem 3.1. (Cf. [S]) For any k,n , there is a constant C(k,n ) so that for any k-dimensional
+submanifold Σk ⊂ Rn,
+Vol k(Σ) = C(k,n )
+∫
+AG(n− k,n )
+|π ∩ Σ|dµ (π ).
+The idea of the proof of the Theorem is as follows. Deﬁne Crk(Σ) to be the right hand side
+of the equation. By choosing C(k,n ), we can arrange that the equation holds for the unit k-cube
+[0, 1]k ×{ 0}n− k ⊂ Rn. Now Vol k(Σ) and Crk(Σ) are both invariant with respect to rigid motions, so
+the equality holds for any unit k-cube in Rn. Both Vol k andCrk are linear with respect to disjoint
+unions, so the equation holds for any ﬁnite union of unit k-cubes. A unit cube can be cut into
+N k cubes of side length 1 /N for any integer N . By symmetry, each of these cubes has Crk equal
+to N − k. Therefore, the result holds for any k-cube of side-length 1 /N . Assembling such cubes, it
+holds for any k-cube of rational side-length. Also, Vol k(Σ) and Crk(Σ) are both monotonic, in the
+
+[PDF physical page 17]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 17
+sense that if Σ ⊂ Σ′, then Crk(Σ) ≤ Crk(Σ′). Therefore, the equation holds for any kcube. Since
+Volk and Crk are linear with respect to disjoint unions, the equation holds for any ﬁnite union of
+k-cubes. This is already pretty good evidence for the theorem.
+For a smooth surface Σ, one can proceed roughly as follows. One de compose an arbitrary
+smooth surface Σ into small pieces that are almost k-cubes. Such a small piece might be given by
+the graph of a function h : [0,δ ]k → Rn− k with |∇h|<ǫ . In this situation, it suﬃces to prove that
+|Crk(graphh) − δk|≲ǫδk. We will give an analogous argument in the proof of Lemma 3.3 below.
+The Crofton formula leads to estimates on the volumes of algebraic v arieties.
+Theorem 3.2. Suppose that Z is a degree D algebraic variety of dimension k in Rn. Let Q be an
+n-dimensional cube of side length S. Then
+Volk(Z ∩ Q) ≲k,n DS k.
+Here is a sketch of the proof. We decompose Z asZsmooth ∪Zsing. We ﬁrst bound the volume of
+Zsmooth. Below, we will show that the k-volume ofZsing is zero. For µ -almost every (n− k)-planeπ ,
+π intersectsZsmooth transversally. (This can be proven using Sard’s theorem.) Since Z has degree
+D, if π intersects Z transversally, |Z ∩ π | ≤ D. Let Q be a cube of side length S. We compare
+Z ∩ Q with the k-skeleton of Q (the union of the k-faces of Q), denoted SkkQ. We notice that if
+any (n − k)-plane π intersectsQ, then it must intersect one of the k-faces of Q. Therefore, we get
+the following inequality: Crk(Z ∩ Q) ≤ DCr k(SkkQ). By Crofton’s formula, Crk is equal to the
+k-volume, and we see Vol k(Z ∩ Q) ≤ D Volk(SkkQ) ≲k,n DS k.
+On the other hand a ( k − 1)-dimensional algebraic variety such as Zsing must havek-dimensional
+volume zero. Its smooth part is a ( k − 1)-dimensional manifold, which has k-volume zero, and
+its singular part is a ( k − 2)-dimensional algebraic variety, and we can proceed inductively. T his
+ﬁnishes the sketch of the proof of Theorem 3.2.
+In Section 4, we will use Theorem 3.2 repeatedly in the proof of the gr aininess theorem. We will
+also need another integral geometry estimate in a similar spirit, which we describe and prove here.
+This estimate concerns the intersection of a surface and a random plane.
+Lemma 3.3. Let R ≥ 1. Let TR ⊂ R3 be the cylinder x2
+1 +x2
+2 < R2. Let π (a,b ) be the plane
+deﬁned by x1 +ax2 = b. Let a be chosen uniformly at random in (− 1/ 10, 1/ 10). Let b be chosen
+uniformly at random in (− 2R, 2R).
+Suppose that Σ is a 2-dimensional submanifold contained in TR, and f is a non-negative smooth
+function on Σ. Then, up to a factor C(R), the following quantities agree:
+∫
+Σ
+fdarea ∼ Avga,b
+∫
+Σ∩ π (a,b )
+fdlength.
+In particular, if we take f = 1, then we see that Area(Σ) ∼ Avga,b Length(Σ ∩ π (a,b )).
+Proof. Let’s deﬁneCr(Σ,f ) := Avg (a,b )
+∫
+π (a,b )∩ ǫ Σfdlength . We are trying to prove that Cr(Σ,f ) ∼∫
+Σf .
+A key special case is when Σ = Qr is a square of side length r, and f is equal to 1. In this case,∫
+Σf =r2. Now we evaluate Cr(Σ,f ) in this special case. First we ﬁx a, and suppose that the angle
+between the plane π (a,b ) and the square Qr isθ(a). Now the measure of the set of b ∈ (− 2R, 2R) so
+thatπ (a,b ) meets Qr is ∼ r sinθ(a) ∼ rθ(a). If π (a,b ) does meet Qr, the length of the intersection
+is always ≲r and usually ∼ r. Therefore,
+
+[PDF physical page 18]
+
+18 LARRY GUTH
+Avgb
+∫
+Σ∩ π (a,b )
+fdlength ∼ Rθ(a)r2
+.
+Therefore, Cr(Σ,f ) ∼ R r2 Avgaθ(a). But Avg a∈ (− 1/ 10, 1/ 10)θ(a) is ∼ 1. This proves the result
+when Σ is a square and f is 1.
+Both
+∫
+Σf andCr(Σ,f ) are linear in f and additive with respect to disjoint unions, so the result
+holds when Σ is any union of ﬂat squares and f is constant on each square.
+Morally, this shows that the lemma should be true. We now include a fair ly detailed proof
+explaining what to do when f is non-constant and what to do when Σ is curved.
+Next consider an arbitrary continuous f on a square. We can write f1 ≤ f ≤ f2 where f1
+and f2 are sums of characteristic functions of squares with
+∫
+Σf1 ∼
+∫
+Σf2. Then we see that∫
+Σf1 ∼ Cr(Σ,f 1) ≤ Cr(Σ,f ) ≤ Cr(Σ,f 2) ∼
+∫
+Σf2, and so
+∫
+Σf ∼ Cr(Σ,f ).
+We now see that ∫
+Σf ∼ Cr(Σ,f ) when f is any union of squares and f is continuous.
+Next we will prove the theorem for a compact smooth surface Σ and a smooth function f
+supported on the interior of Σ. Here we start to deal with the curv ature of Σ. The trickiest part to
+control is where π (a,b ) is nearly tangent to Σ. To set aside this more delicate situation, we m ake
+the following deﬁnitions.
+We deﬁne π (a,b ) ∩ ǫ Σ ⊂ π (a,b ) ∩ Σ as the set of points x ∈ π (a,b ) ∩ Σ where π (a,b ) and TxΣ
+make an angle >ǫ . Then we deﬁne
+Crǫ(Σ,f ) = Avg (a,b )
+∫
+π (a,b )∩ ǫ Σ
+fdlength.
+For all ǫ < (1/ 1000), the same argument as above shows that
+∫
+Σf ∼ Crǫ(Σ,f ) when Σ is a
+union of squares and f is continuous.
+We will show that Crǫ(Σ,f ) ∼
+∫
+Σf for each suﬃciently small ǫ. For almost every ( a,b ), π (a,b )
+intersects Σ transversally, and so Cr0(Σ,f ) = lim ǫ→ 0Crǫ(Σ,f ). So it suﬃces to show Crǫ(Σ,f ) ∼∫
+Σf for all suﬃciently small ǫ.
+Letψ j be a partition of unity on Σ, where each ψ j is supported in a ball of radius <δ/ 5, where
+δ is a small number depending on ǫ that we will choose below. The support of ψ j is contained in
+a graph over a square, say h : Qδ → R, where Qδ is a square of side-length δ that intersects Σ
+tangentially. Since Σ is compact, the second fundamental form of Σ is uniformly bounded. We
+write X ≲ 1 if X is bounded by a constant independent of ǫ,δ . The second fundamental form is
+≲ 1, and so |∇h|≲δ and |h|≲δ2. Also, we can assume that |∇f |≲ 1. We let fj =ψ jf , and we
+can assume that |∇fj|≲δ− 1.
+Deﬁne a function ¯fj :Qδ → R≥ 0 so that ¯fj(x) = fj(h(x)) for all x ∈ Qδ. Because ∇ h is small,∫
+Qδ
+¯fj ∼
+∫
+Σfj. We already know that
+∫
+Qδ
+¯fj ∼ Cr(Qδ, ¯fj) ∼ Crǫ(Qδ, ¯fj) for all ǫ< 1/ 1000.
+Next we will prove that if δ is much smaller than ǫ, then Crǫ(Qδ, ¯fj) approximately agrees with
+Crǫ(Σ,f j). More precisely, if δ is much smaller than ǫ, then we will prove:
+Cr2ǫ(Σ,f j) ≲Crǫ(Qδ, ¯fj) +δ2. 01. (1)
+Cr2ǫ(Qδ, ¯fj) ≲Crǫ(Σ,f j) +δ2. 01. (2)
+We already know that Crǫ(Qδ, ¯fj) ∼
+∫
+Qδ
+¯fj ∼
+∫
+Σfj. Plugging this into (1) and (2) and summing
+over the partition of unity, we see that for all ǫ <(1/ 2000), Crǫ(Σ,f ) ≲
+∫
+Σf +δ. 01 and
+∫
+Σf ≲
+Crǫ(Σ,f ) +δ. 01. Taking δ → 0, we get Crǫ(Σ,f ) ∼
+∫
+Σf .
+
+[PDF physical page 19]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 19
+Now we prove inequality (1). The proof of (2) is similar. Let Σ j ⊂ Σ be the support of ψ j.
+The probability that a plane π (a,b ) intersects either Qδ or Σ j is ≲δ. It now suﬃces to prove the
+following estimate for each π (a,b ):
+∫
+π (a,b )∩ 2ǫ Σj
+fjdlength ≲
+∫
+π (a,b )∩ ǫ Qδ
+¯fj +δ1. 01. (1′)
+If the left-hand side is zero, we are done, so we can suppose that π (a,b ) intersects Σ j some point
+at angle > 2ǫ. Since |∇h|<δ is much smaller than ǫ, π (a,b ) also intersects Qδ at angle >ǫ . The
+intersectionπ (a,b ) ∩Qδ is a line segment lδ, and π (a,b ) ∩ Σj is contained in the graph of a function
+g :lδ → R2. By the geometry of the situation, we have |∇g|≲ǫ− 1δ and |g|≲ǫ− 1δ2.
+Because of our bound on |∇g|,
+∫
+π (a,b )∩ Σj
+fjdlength ≲
+∫
+lδ
+fj(g(x))dx. At each point x ∈ lδ ⊂ Qδ,
+we have |fj(g(x)) − ¯fj(x)| = |fj(g(x)) − fj(h(x))| ≲ δ− 1|g(x) − h(x)| ≲ ǫ− 1δ. Putting it together
+we get
+∫
+π (a,b )∩ Σj
+fjdlength ≲
+∫
+lδ
+¯fj +ǫ− 1δ2.
+Finally, we chooseδ <ǫ2, so the last term is ≲δ1. 5, and this proves (1 ′) and hence (1). The proof
+of (2) is similar. This establishes our result when Σ is a compact smooth surface with boundary
+and f is a smooth function supported on the interior of Σ.
+The rest of the proof is a routine approximation argument. Let Σ be a possible non-compact
+surface and f a smooth function on Σ. Let φ j be a sequence of smooth compactly supported cutoﬀ
+functions on Σ, with 0 ≤ φ j ≤ 1, with φ j (x) increasing in j, and φ j → 1 pointwise. By the case
+we proved,
+∫
+Σφ jf ∼ Cr(Σ,φ jf ) for each j (with a uniform constant in the ∼ ). By the monotone
+convergence theorem
+∫
+Σφ jf →
+∫
+Σf , and Cr(Σ,φ jf ) → Cr(Σ,f ).
+□
+4. Planiness and graininess estimates
+In this section, we use degree reduction as a tool to prove our plan iness estimate Proposition 0.3,
+and our graininess estimate Theorem 0.4. Let us recall these result s. They hold for sets of tubes
+and cubes obeying certain hypotheses.
+Hypotheses 4.1. LetE >1. Suppose that T is a set of tubes in R3 with radius 1 and length EN ,
+contained in a ball of radius EN . Suppose that X is a set of N 3− σ disjoint unit cubes in this ball.
+Suppose that X and T obey the following conditions:
+(1) Each tube T ∈ T intersects between N and EN cubes of X.
+(2) Each cube of X intersects between ρ and Eρ tubes of T, for some ρ ≥ 3.
+(3) Each point of R3 lies in ≤ Eρ tubes of T.
+(4) (At least three directions of tubes at each point) For each cu beQ ∈ X, and for any two unit
+vectors v1,v 2 ∈ R3, at least a fraction E− 1 of the tubes of T that intersect Q have angle
+≥ E− 1 with both v1 and v2.
+Our planiness estimate is the following:
+Proposition 4.2. Assume Hypotheses 4.1. Let ǫ >0. For each cube Q ∈ X, we can choose a
+plane π (Q) through Q, so that for a fraction (1 − ǫ) of cubes Q ∈ X, for a fraction (1 − ǫ) of the
+tubesT ∈ T that meet X, Angle(v(T ),π (Q)) ≤ Poly(E,ǫ − 1)N − σ .
+
+[PDF physical page 20]
+
+20 LARRY GUTH
+Our graininess estimate controls how the plane π (Q′) rotates as we vary Q′ within a segment of
+a tube T .
+Theorem 4.3. Assume Hypotheses 4.1. Let ǫ> 0. Also assume that N σ is larger than some large
+polynomial in E,ǫ − 1. Then there is a large constant K = Poly(E,ǫ − 1) so that the following holds.
+For a fraction (1 − ǫ) of intersecting pairs (Q,T ) ∈ X × T, for a fraction (1 − ǫ) of the cubes Q′ of
+X which intersect T with Dist(Q,Q ′) ≤ K − 1N σ ,
+Angle(π (Q),π (Q′)) ≤ KN − σ.
+Both the results are proven by modelling X by a polynomial surface of controlled degree Z(P )
+using the degree reduction result Theorem 2.2.
+We let K =C(Eǫ− 1)A for some large numbers C,A that we can choose as needed. We let K +
+denote a small positive power of K that can change from line to line, and we let K − denote a small
+negative power of K that can change from line to line. In every occurence, K + ≥ (Eǫ− 1)10, and
+similarly K − ≤ (Eǫ− 1)− 10. On the other hand, in each occurence, K + ≤ K 1/ 100, so that K (1/ 4)−
+is always bigger than 1.
+By Theorem 2.2, we can ﬁnd a polynomial P of degree ≤ K +N 1− σ that cuts (1 − K − )|X|cubes
+ofX at scale K − . Using this degree bound, we will study the geometry of Z(P ) and use it to prove
+our results about the geometric structure of X and T.
+The proof of Proposition 4.2 is based on studying the tangent planes of Z(P ). It will turn out
+that π (Q) is well approximated by the tangent plane TxZ(P ) for most x ∈ Z(P ) ∩ Q.
+The proof of Theorem 4.3 is based on controlling the curvature of Z(P ). Essentially we will show
+that the curvature has size ≤ K +N − 2σ at many points.
+In order to carry out this plan, we will have to prove a sequence of e stimates on the geometry of
+Z(P ). It slightly simpliﬁes matters to know that Z(P ) is smooth and irreducible. We can assume
+this without loss of generality for the following reason. Using Theore m 2.2, we saw that there is
+a polynomial P0 of degree ≤ K +N 1− σ that cuts (1 − K − ) of the cubes of X at scale K − . If a
+polynomial P lies in a tiny neighborhood of P0, then P cuts all the same cubes at a slightly larger
+scale. This happens because we can arrange that the set of points x ∈ BK +N where the sign of P
+diﬀers from the sign of P0 has volume less than K − 10 by taking the neighborhood small enough.
+Therefore, we can choose a generic polynomial P in some tiny ball in the space of polynomials. In
+this way we can arrange that ∇ P is non-vanishing on Z(P ) and so Z(P ) is a smooth surface. By
+the same genericity argument, we can assume that P is irreducible.
+We let Z denote Z(P ) ∩ B(K +N ), the part of Z(P ) in the ball containing X.
+Here is an outline of this section. In Section 4.1, we study the geomet ry of Z(P ) in a typical
+cube Q ∈ X. We prove that Z(P ) ∩ Q resembles a union of nearly-parallel planes. The plane π (Q)
+is an approximation of the tangent plane of these planes. In this sec tion, we prove Proposition 4.2.
+In Section 4.2, we study the geometry of Z(P ) on a typical segment Seg of a tube T ∈ T of length
+∼ N σ . In particular, we start to focus on the second fundamental for m of Z(P ), and we prove that
+the second fundamental form is morally constant away from a small set of bad curves in Z(P ). In
+Section 4.3, we consider the intersection of Z(P ) ∩ Seg with a random plane – the resulting slice
+Γ avoids the bad curves, and so the second fundamental form of Z(P ) is morally constant along
+such a slice. In Section 4.4, we begin to prove curvature estimates. A unit vector v ∈ TxZ is called
+straight if the second fundamental form of Z vanishes in the direction v. If the direction of the
+tube T is far from straight at some points of the slice Γ, then we get good cu rvature estimates for
+Z on the set Γ. In Section 4.5, we prove that for most Q ∈ X, at most points of Z(P ) ∩ Q, the
+
+[PDF physical page 21]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 21
+second fundamental form is bounded by roughly N − 2σ . The key observation here is that each point
+x ∈ Z(P ) lies in three diﬀerent tubes of T in quantitatively diﬀerent directions. At most two of
+these directions can be straight and at least one must be far from s traight. Using the tube in the
+far from straight direction, and applying the bounds from Section 4 .4, we get a curvature estimate
+at almost all x ∈ Z(P ) ∩Q. In Section 4.6, we use this curvature bound to control how the ta ngent
+plane π (Q) rotates as Q slides along a segment of T , and we prove Theorem 4.3.
+4.1. Reasonable cubes. We say that a condition on a cube Q is a reasonable cube condition if it
+holds for (1 − K − )|X| cubes Q ∈ X. When we deﬁned P above (using Theorem 2.2), we saw that
+P cuts Q at scale K − for (1 − K − )|X| cubes Q ∈ X. Thus we get:
+Reasonable Cube Condition 1. The polynomial P cuts Q at scale K − .
+The next condition involves the normal vector. Let N := ∇ P/ |∇P | be the unit normal vector
+toZ(P ). The vector N is deﬁned everywhere on Z(P ), because ∇ P is non-vanishing on Z(P ). For
+a tube T ∈ T, let v(T ) be a unit vector parallel to the axis of T . The vector v(T ) is well-deﬁned
+up to sign, and we make an arbitrary choice for each tube T .
+Lemma 4.4. If TR is any cylinder of radius R and inﬁnite length, then the following estimate
+holds.
+∫
+x∈ Z(P )∩ TR
+|v(TR) ·N (x)|dx ≤ πR 2 DegP.
+This estimate is Lemma 2.1 in [G]. The idea is that the integral on the left hand-side is the area
+(counted with multiplicity) of the projection of Z ∩ TR onto a cross-section of TR. This projection
+covers almost every point of the cross-section at most Deg P times, because a line intersects Z(P )
+at most Deg P times unless the line lies in Z(P ). Also the cross-section is a disk of radius R. So
+the area of the projection counted with multiplicity is at most πR 2 DegP .
+We will sometimes want to discuss fatter versions of tubes T ∈ T or cubes Q ∈ X. For a tube
+T ∈ T, we let T + be the concentric cylinder of radius 100 instead of radius 1. For a cu be Q ∈ X,
+we let Q+ be the concentric cube of side length 1000 instead of side length 1.
+Reasonable Cube Condition 2.
+AvgT ∈ T,T meets Q+
+( ∫
+Z∩ Q+
+|v(T ) ·N (x)|
+)
+≤ K +N − σ.
+Proof. Fix any cylinder T ∈ T. We apply Lemma 4.4 to the concentric cylinder around T with
+radius 200. Any cube Q so that Q+ meets T lies in this larger cylinder. Also, the cubes of X are
+disjoint, and so each point lies in O(1) of the cubes Q+. So we get the following estimate.
+∑
+Q∈ X,Q + meets T
+∫
+x∈ Z∩ Q+
+|v(T ) ·N (x)|dx ≤ K +N 1− σ.
+By hypothesis, there are ≥ N cubes Q ∈ X that meet T . Therefore, for each T , we get
+AvgQ∈ X,Q + meets T
+∫
+x∈ Z∩ Q+
+|v(T ) ·N (x)|dx ≤ K +N − σ.
+Since this holds for every T ∈ T, it also holds when we average over T ∈ T. We get
+
+[PDF physical page 22]
+
+22 LARRY GUTH
+AvgT ∈ T(AvgQ∈ X,Q + meets T
+∫
+x∈ Z∩ Q+
+|v(T ) ·N (x)|dx) ≤ K +N − σ.
+Since each tube has essentially the same number of cubes, and each cube lies in essentially the
+same number of tubes, changing the order of the two averages ca n only increase the right-hand side
+by a factor K +. Therefore, for (1 − K − )|X| cubes Q ∈ X, we have
+AvgT ∈ T,T meets Q+
+∫
+x∈ Z∩ Q+
+|v(T ) ·N (x)|dx ≤ K +N − σ.
+□
+Next we prove that the normal vector is nearly constant (in an ave rage sense) on Z ∩ Q.
+Reasonable Cube Condition 3. There is a plane TQZ so that
+∫
+Z∩ Q+ Angle(TxZ,T QZ) ≤
+K +N − σ and Avgx∈ Z∩ Q+ Angle(TxZ,T QZ) ≤ K +N − σ.
+Proof. By the transversality hypothesis, we can choose tubes T1, T2 in T which meet Q so that
+the angle between v(T1) and v(T2) is ≥ E− 1 and so that for both tubes Ti,
+∫
+Z∩ Q+ |v(Ti) ·N (x)| ≤
+K +N − σ. If TQZ is the plane spanned by v(T1) and v(T2), then we get
+∫
+Z∩ Q+ Angle(TxZ,T QZ) ≤
+K +N − σ . On the other hand, by Reasonable Cube Condition 1, P cuts Q at a small scale, and so
+AreaZ ∩ Q ≥ 1, so we can bound the average by the integral. □
+For each reasonable cube Q, we pick a plane TQZ obeying the condition of the lemma. The plane
+TQZ is well-deﬁned up to a rotation by angle ≤ K +N − σ - within this small range of possibilities
+we make an arbitrary choice.
+Reasonable Cube Condition 4. AvgT ∈ T,T meets Q+ Angle(v(T ),T QZ) ≤ K +N − σ.
+Proof. For any x ∈ Z ∩ Q+, Angle(v(T ),T QZ) ≤ Angle(v(T ),T xZ) + Angle(TxZ,T QZ). We want
+to study the average size of Angle( v(T ),T QZ) over all T ∈ T that meet Q+. Reasonable Cube
+Condition 2 says that the average size of the ﬁrst angle is ≤ K +N − σ . Reasonable Cube Condition
+3 says that the average size of the second angle is ≤ K +N − σ . Combining the bounds, we get:
+AvgT ∈ T,T meets Q+ Angle(v(T ),T QZ) ≤ K +N − σ.
+□
+This result immediately implies our planiness estimate, Proposition 4.2: w e take π (Q) to be
+TQZ.
+Since Z cuts any reasonable cube Q, we know that Area( Z ∩ Q) ≥ 1 for any reasonable cube.
+We can also show that, for a reasonable cube, the area is not larger .
+Reasonable Cube Condition 5. Area(Z ∩ Q+) ≤ K +
+Proof. By the Crofton formula (see Theorem 3.2), the area of Z in our ball of radius ≤ K +N is at
+most K +N (DegP )2 ≤ K +N 3− σ . The number of cubes Q ∈ X is N 3− σ . The cubes Q are disjoint,
+and the cubes Q+ overlap with bounded multiplicity. Therefore, there are at most K − |X|cubes Q
+so that Area(Z ∩ Q+) ≥ K +. □
+
+[PDF physical page 23]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 23
+Next we study more closely the geometry of Z ∩ Q. For a reasonable cube Q, we will prove that
+Z ∩ Q consists of a union of nearly ﬂat disks with small holes cut out of them and with a surface
+of small area glued in. As far as I know, this piece of small area may inc lude thin tubes connecting
+one of the disks to another as well as stalagmites and stalagtites st icking up and down from the
+disks, and it may have non-trivial topology. Let us formulate this re sult precisely.
+The geometry of Z is nicest in a cylinder around Q described as follows. We choose (orthogonal)
+coordinates (x1,x 2,x 3) so that the origin is the center of Q and TQZ is the ( x1,x 2)-plane. Then
+we let Cyl H(Q) be cylinder deﬁned by equations x2
+1 +x2
+2 < 100, and |x3|<H . We focus on H in
+the range [10, 20], so that we always have Q ⊂ Cyl H (Q) ⊂ Q+. Now for most H ∈ [10, 20], we will
+prove that Z ∩ Cyl H(Q) has the following structure.
+Reasonable Cube Condition 6. Letλ =K − 10. For most H ∈ [10, 20], the following holds.
+(1) There exist functions fj :B2(10) → (−H,H ) with Lipschitz constant ≤ 10λ.
+(2) There is a ﬁnite set of disjoint “bad” balls Bi ⊂ B2(10) with the sum of the radii at most
+K +λ − 2N − σ . We deﬁne Y :=B2(10) \(∪ i ¯Bi).
+(3) The graph of each function fj :Y → (−H,H ) lies in Z ∩ Q+.
+(4) The graphs are close together in the sense that for each y ∈ B2(10) and each h ∈ [− 10, 10],
+there exists a j so that |fj(y) − h| ≤ K − . (Therefore, the number of graphs fj is ≥ K +.)
+(5) The graphs are also disjoint and maintain their order in the f ollowing sense: at each y ∈ Y ,
+f1(y)<f 2(y)<... , and at each y ∈ B2(10), f1(y) ≤ f2(y) ≤ ... .
+(6) The part of Z ∩ Cyl H (Q) outside of the graphs of fj :Y → R has area ≤ K +λ − 1N − σ .
+Remark: This result actually holds for a range of λ, but taking λ = K − 10 is a good choice for
+our applications below.
+We deﬁne ZQ,nice ⊂ Z ∩ Cyl H (Q) ⊂ Z ∩ Q+ to be the union of the graphs of fj over Y . For
+x ∈ ZQ,nice , we have Angle( TxZ,T QZ) ≤ 10λ ≤ K − 10+.
+Proof. In the proof of Reasonable Cube Condition 6, it helps to better unde rstand how the plane
+TxZ varies for x ∈ Q+. Let w be a unit vector in R3. Consider the set Tan (w) := {x ∈ Z|∇P (x) ·
+w = 0}. This is the set of points x ∈ Z where w ∈ TxZ.
+Lemma 4.5. For each w ∈ S2, the set Tan (w) ⊂ Z is a curve of length ≤ K +N 3− 2σ .
+Proof. Tan (w) lies in the variety deﬁned by the two equations: P (x) = 0 and w · ∇P (x) = 0.
+Since P is irreducible, either this variety is all of Z(P ) or else it is an algebraic curve of degree
+≤ (DegP )2. If this variety is all of Z(P ), then Z(P ) is a cylinder. This doesn’t occur for generic
+P , so we can ignore it.
+By the Crofton formula, an algebraic curve of degree D in B3(K +N ) has length ≤ K +ND . In
+our case, the length is ≤ K +N (DegP )2 ≤ K +N 3− 2σ . □
+Let Wλ denote a λ-net of points in S2, with |W | ∼ λ − 2. We let Tan (Wλ ) := ∪ w∈ WλTan (w).
+The total length of Tan (Wλ ) is ≤ λ − 2K +N 3− 2σ . Since there are N 3− σ cubes Q ∈ X, a reasonable
+Q obeys the following estimate:
+Reasonable Cube Condition 7. The length of Q+ ∩ Tan (Wλ ) is ≤ λ − 2K +N − σ .
+This condition says that Tan (Wλ ∩Q) is almost empty. To get a perspective, let’s consider what
+would happen if it were empty. If Q+ ∩ Tan (Wλ ) were empty, then TxZ would be nearly constant
+on each component of Z ∩ Q+. If Q+ ∩ Tan (Wλ ) were empty, then the normal vector N (x) would
+never be perpendicular to any w ∈ Wλ . The unit vectors normal to a ﬁxed w ∈ Wλ form a great
+
+[PDF physical page 24]
+
+24 LARRY GUTH
+circle w⊥ on S2. We let W ⊥
+λ := ∪ w∈ Wλw⊥ . The complement S2 \W ⊥
+λ is a union of open cells
+of diameter < 2λ. Therefore, if Q ∩ Tan (Wλ ) were empty, then on each connected component of
+Z ∩ Q, the normal vector N (x) could vary by at most 2 λ.
+I believe that Tan (w) ∩ Q is small but may be non-empty for all cubes Q ∈ X. Tan (w) is an
+algebraic curve of degree ≤ (DegP )2 ≤ K +N 2− 2σ . Such a curve may have as many as N 4− 4σ
+connected components, and so a reasonable cube Q may contain ∼ N 1− 3σ connected components
+of Tan (w). If σ < 1/ 3, especially if σ is close to zero, I suspect that Tan (w) ∩ Q may contain a
+large number of very short curves.
+Let N (Q) be the unit vector normal to TQZ. Let G0 = G0 ⊂ S2 be a small neighborhood of
+N (Q), whose boundary lies in W ⊥
+λ . We can arrange that G0 contains the (1 / 10)λ neighborhood
+of N (Q), and is contained in the 5 λ-neighborhood of N (Q), and that ∂G 0 ⊂ W ⊥
+λ . (If N (Q) is not
+too close to W ⊥
+λ , then G0 is a single component of S2 \W ⊥
+λ . But if N (Q) is within (1 / 10)λ of
+W ⊥
+λ , then G0 must contain two or more components.) We let G := {x ∈ Z ∩ Q+|N (x) ∈ G0}. The
+letter G stands for ‘good’ - these are the points of Z ∩ Q+ with good tangent planes. We deﬁne
+B := (Z ∩ Q+) \G.
+Lemma 4.6. Length(∂G ∩ Q+) ≤ K +λ − 2N − σ .
+Proof. We have ∂G ⊂ Tan (Wλ ). □
+Lemma 4.7. AreaB ≤ K +λ − 1N − σ.
+Proof. Forx ∈ B, Angle(TxZ,T QZ) ≥ (1/ 10)λ. But by Reasonable Cube Condition 3, we have∫
+Z∩ Q+ Angle(TxZ,T QZ) ≤ K +N − σ . □
+At this point, we exploit the geometry of Cyl H (Q). The boundary of Cyl H (Q) consists of a
+top and bottom (deﬁned by x3 = ±H) and the side (deﬁned by x2
+1 +x2
+2 = 100). By choosing H
+generically, we can arrange that the intersection of Z with the top and bottom are small.
+AvgH∈ [10, 20] Length(Z ∩ top and bottom of Cyl H (Q)) ≤
+∫
+Z∩ Q+
+|Angle(TxZ,T QZ)| ≤ K +N − σ.
+Therefore, for all H ∈ [10, 20] except for a subset of length K − , the following Lemma holds.
+Lemma 4.8. Length(Z ∩ top and bottom of Cyl H (Q)) ≤ K +N − σ .
+From now on, we restrict to H ∈ [10, 20] where Lemma 4.8 holds.
+We deﬁne the bad curves to be ∂G ∩ Cyl H (Q) together with the intersection of G with the top
+and bottom of Cyl H (Q). By Lemma 4.6 and Lemma 4.8 their total length is ≤ K +λ − 2N − σ . We
+let π : Cyl H (Q) → B2(10) be the projection ( x1,x 2,x 3) → (x1,x 2). The projection of the bad
+curves still has total length ≤ K +λ − 2N − σ .
+Lemma 4.9. The projection of the bad curves can be covered by ﬁnitely man y disjoint balls Bi with
+the sum of the radii at most K +λ − 2N − σ .
+Proof. The bad curves are a union of ﬁnitely many connected components γi. The projection of γi
+is contained in a ball of radius ri ≤ Length(γi). So we can cover all the projections by balls with
+the sum of the radii bounded by the total length of the bad curves , which is at most K +λ − 2N − σ .
+These balls may not be disjoint. But if two balls of radii r1 andr2 intersect, they may be covered
+by one ball of radius r1 +r2. So in our list of balls, we can replace two intersecting balls with one
+larger ball maintaining our bound on the sum of the radii. Doing this rep eatedly, we arrive at a
+collection of disjoint balls where the sum of the radii obeys the desire d bound. □
+
+[PDF physical page 25]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 25
+Let Y be B2(10) \(∪ i ¯Bi). Since the balls Bi are disjoint, Y is connected. Here we removed the
+closed balls ¯Bi so that Y is an open set.
+We let π :Cyl H (Q) → B2(10) be the projection to the ( x1,x 2) coordinates. We let G′ := {x ∈
+G ∩ Cyl H (Q)|π (x) ⊂ Y }. Note that G′ is an open subset of G, so it is also a manifold. We now
+prove that π :G′ → Y is a covering map. The map π :G′ → Y is a local diﬀeomorphism because
+the tangent plane of x ∈ G is close to the ( x1,x 2)-plane. It just remains to check that the map
+π : G′ → Y is a proper map. In other words, we have to check that if K ⊂ Y is compact, then
+π − 1(K) ⊂ G′ is also compact. The map π extends to the closure ¯G′, and π − 1(K) is automatically
+a compact subset of ¯G′, and the issue is to check whether π − 1(K) contains any boundary points
+of ¯G′. To check this, we have to prove that π maps the boundary of G′ to the complement of
+Y . The boundary of G′ has several types of curves: curves in ∂G ∩ Cyl H(Q) are mapped to ∪Bi;
+curves in G intersected with the top and bottom of Cyl H(Q) are mapped to ∪ iBi; and curves in G
+intersected with the sides of Cyl H (Q) are mapped to ∂B 2(10). Therefore, π :G′ → Y is a proper
+map, and so it is a covering map.
+Now we study the map π :G′ → Y using the structure of covering maps. Since Y is connected,
+the number of points in each preimage π − 1(y) is constant. Let the cardinality of the ﬁbers be κ.
+If we take a based loop in Y , we can look at the holonomy of the covering over the based loop.
+The holonomy is a permutation of the points in the ﬁber over the base point of the loop. But the
+vertical order of the points is preserved by the holonomy, and the refore the holonomy is the identity.
+Therefore,G′ is the union of the graphs of κ functionsfj :Y → (−H,H ). We can label the graphs
+so that at each point y ∈ Y ,f1(y)<f 2(y)<...
+We remark that we have not yet checked that κ> 0. This is a somewhat tricky point. We will
+prove below that κ>K +.
+Because the tangent plane of each point x ∈ G has angle ≤ 5λ with the ( x1,x 2)-plane, each
+function fj obeys |∇fj| ≤ 5λ.
+Lemma 4.10. If p,p ′ are two points in Y , then |fj(p) − fj(p′)| ≤ 10λ|p − p′|, where |p − p′| is the
+Euclidean distance between p,p ′ in B2(10).
+Proof. Consider the segment γ fromp top′ inB2(10). This segment intersects the balls Bi in some
+disjoint smaller segments γ ∩ Bi. Replacing each segment γ ∩ Bi with a piece of the arc of the
+boundary of Bi, we get a curve ˜γ in ¯Y of length at most ( π/ 2)|p − p′|. Perturbing the curve a bit,
+we get a curve from p to p′ inY of length ≤ 2|p − p′|. Now we integrate ∇ fj along this curve, and
+conclude |fj(p) − fj(p′)| ≤ 2|p − p′| ·5λ. □
+Now it follows that fj extends to a Lipschitz function from B2(10) to ( − 30, 30) with the Lipschitz
+constant 10λ. The extension procedure is to deﬁne, for any p ∈ B2(10)
+fj(p) := max
+y∈ Y
+fj(y) − 10λ|y − p|.
+If p ∈ Y , then the maximum on the right-hand side is achieved by y = p, and so the new
+deﬁnition agrees with the original deﬁnition of fj on Y . It’s standard to check that fj still obeys
+|fj(p) − fj(p′)| ≤ 10λ|p − p′| for all p,p ′ ∈ B2(10). Also, since the fj obey f1 < f2 < ... on Y , it
+follows that f1 ≤ f2 ≤ ... on B2(10).
+Next, we prove that the complement Z ∩ Cyl H(Q) \G′ has small area. The complement Z ∩
+Cyl H (Q) \G′ lies in the union of B and the set B′ := {x ∈ G ∩Cyl H (Q)|π (x) ∈ ∪ i ¯Bi}. We already
+know that Area(B) ≤ K +λ − 1N − σ . We will prove an area estimate for this latter set B′.
+Lemma 4.11. For a reasonable cube Q, AreaB′ ≤ K +λ − 4N − 2σ .
+
+[PDF physical page 26]
+
+26 LARRY GUTH
+Proof. First we will estimate the length of ∂B ′. If x ∈ ∂B ′, then either x ∈ ∂G or π (x) ∈ ∂B i for
+some bad ball Bi or x lies in the top or bottom of the cylinder Cyl H (Q). We deal with the parts
+separately.
+By Lemma 4.6, the length of ∂G ∩ Cyl H(Q) is bounded by K +λ − 2N − σ .
+By Lemma 4.8, Length( Z ∩ top and bottom of Cyl H (Q)) ≤ K +N − σ .
+The boundary points with π (x) ∈ ∂B i lie in the graphs of the functions fj. The number of layers
+κ is controlled by the area of Z ∩ Cyl H(Q) which is ≤ K +. The total length of the boundaries of
+theBi is controlled by the sum of the radii which is ≤ K +(λ)− 2N − σ . So the length of this part of
+boundary of B′ is also bounded by K +λ − 2N − σ .
+In total, Length ∂B ′ ≤ K +λ − 2N − σ .
+Since B′ ⊂ G, the tangent plane at each point of B′ is almost tangent to the ( x1,x 2)-plane. We
+can now choose an orientation on (each component of) B′ so that Area B′ ≤ 2
+∫
+B′dx1 ∧ dx2. We
+now evaluate this integral using Stokes theorem. Let the boundar y of B′ be the union of connected
+curves∂B ′
+a. We have
+AreaB′ ≤ 2
+∑
+a
+∫
+∂B ′a
+x1dx2.
+We choose ca to be the ( x1)-coordinate of a point in ∂B ′
+a. Therefore, |x1 − ca| ≤ Length∂B ′
+a for
+all x ∈ ∂B ′
+a. Since the integral over a closed curve of cdx2 vanishes, we can rewrite the boundary
+integral as
+∑
+a
+∫
+∂B ′a
+(x1 − ca)dx2 ≤
+∑
+a
+(Length∂B ′
+a)2 ≤ (Length∂B ′)2 ≤ K +λ − 4N − 2σ.
+□
+Since N σ is much larger than λ − 1 =K 10, we have Area B′ ≤ K +λ − 4N − 2σ ≤ K +λ − 1N − σ .
+Therefore, we get
+Lemma 4.12. AreaCyl H (Q) ∩ (Z \G′) ≤ K +λ − 1N − σ.
+We are now ready to prove that κ >0 so that the set of functions fj we have been studying is
+not empty.
+Lemma 4.13. We have κ> 0. Moreover, at each point y ∈ B2(1), for each h ∈ [−H,H ], there is
+some j so that |fj(y) − h| ≤ K − .
+Proof. First we prove that κ ≥ 1. If κ = 0, then G′ would be empty. By Lemma 4.12, we would
+have AreaCyl H (Q) ∩ Z ≤ K +λ − 1N − σ . But P cuts Q at scale K − , and so Area Z ∩ Q ≥ 1. This
+contradiction shows that κ ≥ 1.
+We can apply the same argument to any ball of radius ≥ K − in Cyl H (Q). Since P cuts Q at
+scale K − , the intersection of Z with any such ball has area ≥ K − . By Lemma 4.12, the area of
+Cyl H (Q) ∩ (Z \G′) is much smaller than K − . Therefore, G′ enters every ball of radius K − in
+Cyl H (Q).
+So for anyy ∈ B2(10), and any heighth ∈ (−H,H ), there exists a point y′ ∈ Y with |y−y′| ≤ K −
+and a j so that |fj(y′) − h| ≤ K − . Since fj is 10λ Lipschitz, we see that |fj(y) − h| ≤ K − as
+well. □
+This ﬁnishes the proof of Reasonable Cube Condition 6. □
+We say that Q ∈ X is a reasonable cube if it obeys Reasonable Cube Conditions 1 - 6.
+
+[PDF physical page 27]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 27
+4.2. The curvature of Z on reasonable tube segments. In this subsection, we consider the
+geometry of Z in reasonable tube segments of tubes T ∈ T of length K − 1N σ . For reasonable
+segments, we will eventually prove that TQZ varies slowly along the segment. Along the way, we
+will estimate the behavior of the normal vector and the curvature .
+Given an intersecting pair Q ∈ X and T ∈ T, we deﬁne the tube segment Seg (Q,T ) as the
+segment of T + centered at Q of length K − 1N σ . (Recall that T + is the concentric cylinder around
+T with radius 100 instead of radius 1.)
+We say that a condition onSeg (Q,T ) is reasonable if it holds for a fraction (1 −K − ) of intersecting
+pairs (Q,T ). Up to a factor of E, we know that any two cubes lie in the same number of tubes, and
+any two tubes contain the same number of cubes. Therefore, a co ndition on Seg (Q,T ) is reasonable
+if either of the following holds:
+• For (1 − K − )|T|tubes T ∈ T, for a fraction (1 − K − ) of the cubes Q ∈ X that intersect T ,
+the condition on Seg (Q,T ) holds.
+• For (1 − K − )|X| cubes Q ∈ X, for a fraction (1 − K − ) of the tubes T ∈ T that intersect
+Q, the condition on Seg (Q,T ) holds.
+Reasonable T ube Segment Condition 1. Angle(v(T ),T QZ) ≤ K +N − σ .
+Proof. For (1 − K − )|X| cubes Q ∈ X, Reasonable Cube Condition 4 tells us that
+AvgT meets Q Angle(v(T ),T QZ) ≤ K +N − σ.
+So for a fraction (1 − K − ) of all T that intersect Q, we have the desired estimate. □
+To prove that some estimates hold on almost all intersecting pairs, ( Q,T ), we will have to do
+some averaging. In our hypotheses, we assumed some uniformity c onditions on X and T, and these
+make the averages easier to understand. In particular, the unifo rmity implies the following simple
+lemmas.
+Lemma 4.14. The following estimate holds at each point x:
+µ (x) := Avg Q∈ X,T ∈ T,Q meets Tχ Seg(Q,T )(x) ≤ K − 1+N − 3+2σ.
+Proof. The number of intersecting pairs is at least |X|ρ ≥ N 3− σρ. Fix a point x. The number
+of segments Seg (Q,T ) containing the point x is bounded as follows. The number of tubes T +
+containingx is at most K +ρ. For each T containingx, the number of Q that lie within K − 1N σ of
+x and intersect T is ≤ 10K − 1N σ . Therefore, for each x, the number of segments Seg (Q,T ) that
+containx is ≤ K − 1+N σρ.
+The density µ (x) is bounded by the quotient ( K − 1+N σρ)/ (N 3− σρ) = K − 1+N − 3+2σ . □
+As a simple consequence, we can control the area of Z ∩ Seg (Q,T ) for a reasonable segment.
+Reasonable T ube Segment Condition 2. AreaZ ∩ Seg (Q,T ) ≤ K − 1+N σ .
+Proof. AvgQ meets T Area(Seg (Q,T ) ∩ Z) =
+∫
+Zµ.
+By the last lemma, we have
+∫
+Zµ ≤ (AreaZ)K − 1+N − (3− 2σ ) ≤ K +N 3− σK − 1+N − (3− 2σ ) =
+K − 1+N σ .
+□
+Next we study how closely Z is tangent to v(T ) along a reasonable segment Seg (Q,T ).
+Reasonable T ube Segment Condition 3.
+∫
+Seg(Q,T )∩ Z |v(T ) ·N | ≤ K − 1+.
+
+[PDF physical page 28]
+
+28 LARRY GUTH
+Proof. For a tube T ∈ T, Lemma 4.4 says that
+∫
+Z∩ T +
+|v(T ) ·N | ≤ C DegP ≲K +N 1− σ.
+We consider the ≥ N segments Seg (Q,T ) where Q intersects T . No point lies in more than
+K − 1+N σ of these segments. Therefore, for every T ∈ T,
+AvgQ meets T
+∫
+Z∩ Seg(Q,T )
+|v(T ) ·N | ≤ K − 1+N σ − 1
+∫
+Z∩ T
+|v(T ) ·N | ≤ K − 1+.
+So for a fraction (1 − K − ) of the cubes Q ∈ X that meet T , the desired estimate holds. □
+Next we show that a reasonable tube segment contains many reaso nable cubes.
+Reasonable T ube Segment Condition 4. Seg (Q,T ) contains ≥ K − 1−N σ reasonable cubes Q′
+on each side of Q.
+Proof. FixT ∈ T. Orient the tube T so that one direction is ‘left’ and the other direction is ‘right’.
+LetL(Q) be the portion of Seg (Q,T ) to the left of Q, and let R(Q) be the portion of Seg (Q,T ) to
+the right of Q.
+Consider the set Xbad,lef t (T ) consisting of reasonable cubes Q in X so that Q intersects T and
+L(Q) contains ≤ K − 1− cN σ reasonable cubes Q′ for a constant c > 0 that we’ll choose below.
+Consider the segments L(Q) with Q ∈ Xbad,lef t . By a Vitali-covering type argument, we can ﬁnd a
+disjoint subset of these segments whose union contains at least a t hird as many reasonable cubes Q′
+as the union of all these segments. The segments have length K − 1N σ , and they all lie in a ball of
+radiusK +N , so the number of segments is at most K 1+N 1− σ . Each of these bad segments contains
+≤ K − 1− cN σ reasonable cubes Q. Therefore, the total number of Q′ lying in any bad segment L(Q)
+is ≤ K − c+N . In particular, the number of Q ∈ Xbad,lef t (T ) ≤ K − c+N .
+Similarly, consider the setXbad,right (T ) consisting of reasonable cubes Q ∈ X so thatQ intersects
+T and R(Q) contains ≤ K − 1− cN σ reasonable cubes Q′. By the same argument, |Xbad,right (T )| ≤
+K − c+N .
+We letXbad(T ) be the union of Xbad,lef t (T ) and Xbad,right (T ). For each T , |Xbad(T )| ≤ K − c+N .
+Now we choose c so that for each T ∈ T, |Xbad(T )| ≤ K −N .
+For (1 − K − )|T|tubes T ∈ T, a fraction (1 − K − ) of the cubes Q that meet T are reasonable. At
+mostK − of these cubes are in Xbad, and the remaining cubes satisify this Tube Segment Condition.
+□
+We will pay particular attention to the two ends of the segment. For each segment Seg (Q,T ),
+we choose two reasonable cubes Q1,Q 2 near opposite ends of the segment. By Reasonable Tube
+Segment Condition 4, we know that Seg (Q,T ) contains ≥ K − 1−N σ reasonable cubes on each side
+of Q, and so Dist( Qi,Q ) ≥ K − 1−N σ . Now by Reasonable Cube Condition 2, we know that for
+each reasonable cube Q′, Avg T ′ intersects ( Q′)+
+∫
+(Q′)+∩ Z |v(T ′) ·N | ≤ K +N − σ . Now for a fraction
+(1 − K − ) of pairs ( Q,T ), we can choose reasonable Q1,Q 2 to get the following estimate.
+Reasonable T ube Segment Condition 5. In each reasonable tube segment Seg (Q,T ), there
+are reasonable cubes Q1,Q 2 on either side of Q, with Dist(Qi,Q ) ≥ K − 1−N σ , obeying the integral
+estimate
+∫
+Q+
+i ∩ Z |v(T ) ·N | ≤ K +N − σ .
+Our main goal in this Subsection is to study the geometry and regular ity of Z ∩Seg (Q,T ). First
+we study how the tangent plane of Z varies, and then we study how the second fundamental form of
+
+[PDF physical page 29]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 29
+Z varies. We are trying to prove that on each connected component of Z ∩ Seg (Q,T ), the tangent
+plane and the second fundamental form of Z are mostly close to constant.
+We begin with the tangent plane. Let w be a unit vector in R3. Recall the set Tan (w) := {x ∈
+Z|∇P (x) ·w = 0 }. This is the set of points x ∈ Z where w ∈ TxZ. Lemma 4.5 says that for each
+w ∈ S2, the set Tan (w) ⊂ Z is a curve of length ≤ K +N 3− 2σ .
+We letW denote aK − 1/ 4-net of points inS2, with |W | ∼ K 1/ 2. We let Tan (W ) := ∪ w∈ WTan (w).
+The total length of Tan (W ) is still ≤ K (1/ 2)+N 3− 2σ . Next we consider the length of the intersection
+of this set with an average tube segment Seg (Q,T ).
+We prove a general lemma about the average length of the intersec tion of a tube segment and a
+curve of length L.
+Lemma 4.15. Letγ ⊂ R3 be a curve of length L =N 3− 2σL′. Then
+AvgQ∈ X,T ∈ T,Q meets T LengthSeg (Q,T ) ∩ γ ≤ K − 1+L′.
+Proof. The left-hand side is
+∫
+γµ . By Lemma 4.14, this is ≤ Length(γ)K − 1+N − 3+2σ =K − 1+L′. □
+Combining this lemma with our estimate that the length of Tan (W ) is ≤ K (1/ 2)+N 3− 2σ , we get:
+Reasonable T ube Segment Condition 6. The length of Seg (Q,T ) ∩ Tan (W ) ≤ K − (1/ 2)+.
+This length is much smaller than 1. For comparison, Z ∩ Q has area ≥ 1 for each reasonable
+cube Q. It’s a white lie to imagine that Seg (Q,T ) ∩ Tan (W ) is empty. This stronger assumption
+would constrain how the tangent plane varies along a connected com ponent of Z ∩ Seg (Q,T ). It
+would imply that the normal vector N (x) is never perpendicular to any w ∈ W . The set of points
+perpendicular to a ﬁxed w is a great circle, and the union over all w ∈ W cuts the sphere S2
+into cells of diameter ≤ K − (1/ 4)+. Therefore, if Seg (Q,T ) ∩ Tan (W ) were empty, then on each
+connected component of Z ∩ Seg (Q,T ), the tangent plane TxZ could vary by an angle at most
+K − (1/ 4)+.
+Our next estimates have to do with the second fundamental form o fZ. Recall that for a smooth
+surface Z ⊂ R3 with unit normal vector N , if v,w ∈ TxZ, then the second fundamental form
+A(v,w ) is deﬁned as
+A(v,w ) := ∇ vN (x) ·w.
+In our case, we can take N = |∇P |− 1∇ P . If we want to highlight the point x ∈ Z, we refer to the
+second fundamental form at x as Ax. The second fundamental form encodes ∇ N , which tells us
+howN (x) changes as x moves along Z.
+We will study several features of the second fundamental form: the Gauss curvature, the di-
+rections where the second fundamental form vanishes, the norm of the second fundamental form,
+etc.
+The determinant of Ax is the Gauss curvature of Z. In other words, if v1,v 2 is an orthonormal
+basis of TxZ, then the Gauss curvature is the determinant of the matrix Ax(vi,v j), i,j = 1, 2. A
+point is called Gauss ﬂat if its Gauss curvature is zero. We let GFl ⊂ Z be the set of Gauss ﬂat
+points.
+Lemma 4.16. For a generic P , the set of Gauss ﬂat points of Z is contained in a curve of length
+≤ K +N 3− 2σ .
+
+[PDF physical page 30]
+
+30 LARRY GUTH
+Proof. We have to check that the set of Gauss ﬂat points is described by so me polynomials vanishing.
+We notice that ∇ P × ei, i = 1, 2, 3 spans TZ at each point of Z.
+Next, we notice that for v,w ∈ TxZ, ∇ v(∇ P ) ·w = ∇ v(|∇P |N ) ·w. Because w ·N = 0, this is
+|∇P |∇ vN ·w = |∇P |A(v,w ). We record this as an equation:
+∇ v(∇ P ) ·w = |∇P |A(v,w ). (1)
+The Gauss curvature vanishes if and only if every 2 × 2 minor determinant of the matrix A(∇ P ×
+ei, ∇ P × ej) vanishes, if and only if every 2 × 2 minor determinant of the following matrix vanishes:
+(∇ ∇ P × ei ∇ P ) ·(∇ P × ej).
+These minor determinants are a ﬁnite list of polynomials of degree ≤ 6 DegP .
+SinceP is generic, it is not Gaussian ﬂat everywhere, and so the Gaussian ﬂa t points are contained
+in an algebraic curve of degree ≤ 10(DegP )2 ≤ K +N 2− 2σ . Therefore the length of the Gaussian
+ﬂat points is bounded by K +N 3− 2σ as desired. □
+Combining this length bound with Lemma 4.15, we get:
+Reasonable T ube Segment Condition 7. The length of Gfl ∩ Seg (Q,T ) is ≤ K − 1+.
+SinceK − 1+ is very small, this almost shows that the sign of the Gauss curvature is constant on
+connected components of Z ∩ Seg (Q,T ).
+A unit vectorv ∈ TxZ is called straight if Ax(v,v ) = 0. The straight directions play an important
+role in the incidence geometry of lines and also in our story. If x has positive Gauss curvature,
+there are no straight directions. If x has negative Gauss curvature, there are exactly two straight
+directions. If x has zero Gauss curvature, there can be either one straight direc tion or else all
+directions may be straight if Ax = 0. We next want to control how the straight directions spin
+around as we vary x.
+For a unit vector w, let Str(w) be the set of x ∈ Z so that there is a straight unit vector v ∈ TxZ
+with v ·w = 0.
+Lemma 4.17. For generic w, Str(w) is contained in a curve of length ≤ K +N 3− 2σ .
+Proof. Suppose x ∈ Str(w). We know there is a straight unit vector v ∈ TxZ with v ·w = 0. Since
+v ∈ TxZ, v · ∇P (x) = 0. Therefore, v is proportional to ∇ P × w. Hence a point x ∈ Z lies in
+Str(w) if and only if A(∇ P × w, ∇ P × w) = 0. Using equation (1) above, this is equivalent to
+(∇ ∇ P × w∇ P ) ·(∇ P × w) = 0.
+This is a polynomial of degree ≤ 3 DegP ≲K +N 1− σ .
+For genericw, not every point lies in Str(w). This follows because Z(P ) is not a plane, and so we
+can ﬁnd a point x with only ﬁnitely many straight directions, and a generic w is not perpendicular
+to any of them. Therefore, Str(w) is an algebraic curve of degree ≤ K +N 2− 2σ and length ≤
+K +N 3− 2σ . □
+Recall that W is a K − 1/ 4-net of points in S2 consisting of K 1/ 2 points. We can choose W
+generically so that the last lemma applies for each w ∈ W . We let Str(W ) := ∪ w∈ WStr(w). The
+length of Str(W ) is still ≤ K (1/ 2)+N 3− 2σ .
+Reasonable T ube Segment Condition 8. The length of Seg (Q,T ) ∩ Str(W ) ≤ K − (1/ 2)+.
+
+[PDF physical page 31]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 31
+As a white lie, suppose that Seg (Q,T ) ∩ Str(W ) and Seg (Q,T ) ∩ GFl were both empty. If
+Seg (Q,T ) ∩ GFl is empty, then the sign of the Gauss curvature is constant on each component of
+Z ∩ Seg (Q,T ). Consider a component of Z ∩ Seg (Q,T ) where the Gauss curvature is negative. At
+each point there are two straight directions. None of the straight directions is ever perpendicular
+to a point w ∈ W , and so the straight directions can only move by ≤ K − 1/ 4.
+If the Gauss curvature of Ax is positive, then there are no straight directions. In this case, it’s
+helpful to consider the eigenvectors of Ax. For a non-zero vector w, let Eig (w) be the set of x ∈ Z
+so that there is a unit vector v ∈ TxZ, with v an eigenvector of Ax and v ·w = 0.
+Lemma 4.18. For a generic w ∈ S2, Eig (w) has length ≤ K +N 3− 2σ .
+Proof. We begin with an algebraic description of when a non-zero vector is an eigenvector for Ax.
+Lemma 4.19. A non-zero vector v ∈ TxZ is an eigenvector for Ax if and only if
+(∇ v∇ P ) ·(∇ P × v) = 0.
+Proof. Recall that Ax is symmetric: Ax(v,w ) = Ax(w,v ). Therefore, a non-zero vector v ∈ TxZ is
+an eigenvector of Ax if and only if Ax(v,u ) = 0 for all u ∈ TxZ with u ·v = 0. The possible u are
+all multiples of ∇ P × v. Therefore, v is an eigenvector if and only if Ax(v, ∇ P × v) = 0. Recalling
+equation (1) above, this is equivalent to ( ∇ v∇ P ) ·(∇ P × v) = 0. □
+A point x ∈ Z lies in Eig (w) if and only if ∇ P × w is an eigenvector of Ax if and only if
+(∇ ∇ P × w∇ P ) ·(∇ P × (∇ P × w)) = 0.
+This is a polynomial of degree ≤ 4 DegP ≤ K +N 1− σ . So Eig (w) lies in an algebraic curve of
+degree ≤ K +N 2− 2σ and has length ≤ K +N 3− 2σ . □
+Recall that W is a K − 1/ 4-net of points in S2 consisting of K 1/ 2 points. We can choose W
+generically so that the last lemma applies for each w ∈ W . We let Eig (W ) := ∪ w∈ WEig (w). The
+length of Eig (W ) is still ≤ K (1/ 2)+N 3− 2σ .
+Reasonable T ube Segment Condition 9. The length of Seg (Q,T ) ∩ Eig (W ) ≤ K − (1/ 2)+.
+Finally, we prove similar results for the norm of the second fundamen tal form. Recall that the
+norm of the second fundamental form A is deﬁned as follows. Let v1,v 2 be an orthonormal basis
+of TxZ. Then
+|Ax|2 :=
+2∑
+i,j =1
+|Ax(vi,v j)|2.
+Lemma 4.20. |Ax|2 = ∑3
+i,j =1 |Ax(N × ei,N × ej)|2.
+Proof. We begin by recalling some basic facts about the norm of a bilinear form . If B is a symmetric
+bilinear form on a ﬁnite-dimensional vector space V with a Euclidean norm, then we deﬁne |B|2 :=∑
+i,j |B(vi,v j)|2, where vi is an orthonormal basis of V . It’s a standard fact that this sum is
+independent of the choice of orthonormal basis. To see this, supp ose that J : V → V is an
+orthogonal transformation. The matrix B(Jv i,Jv j) is given by conjugating the matrix B(vi,v j) by
+an orthogonal transformation, and this preserves the sum of th e squares of the entries.
+Now deﬁne a symmetric bilinear form B on R3 by
+
+[PDF physical page 32]
+
+32 LARRY GUTH
+B(v,w ) := Ax(N × v,N × w).
+On the one hand, |B|2 = ∑3
+i,j =1 |B(ei,e j)|2 = ∑3
+i,j =1 |Ax(N × ei,N × ej)|2.
+On the other hand, we claim that |B|2 = |Ax|2. To see this, choose an orthonormal basis v1,v 2,v 3
+for R3 where v3 =N , and v1,v 2 ∈ TxZ. In this case, N × v3 vanishes, so B(vi,v j) = 0 if i or j is
+3. Hence
+|B|2 =
+2∑
+i,j =1
+|B(vi,v j)|2 =
+2∑
+i,j =1
+|Ax(N × vi,N × vj )|2.
+But N × v1,N × v2 are an orthonormal basis of TxZ, so this last expression is |Ax|2.
+□
+Lemma 4.21. For any generic number H >0, the set A(H) := {x ∈ Z such that |Ax|=H} lies
+in an algebraic curve of degree ≤ 6(DegP )2 ≤ K +N 2− 2σ , and so it has length ≤ K +N 3− 2σ .
+Proof. We expand |Ax|2 in terms of P and its derivatives. For v,w ∈ TxZ,
+A(v,w ) = ∇ vN ·w = ∇ v(|∇P |− 1∇ P ) ·w.
+Since w ∈ TxZ, ∇ P ·w = 0, so
+A(v,w ) = |∇P |− 1∇ v∇ P ·w.
+Also, ∇ N × ei = ∇ |∇ P |− 1∇ P × ei = |∇P |− 1∇ ∇ P × ei .
+We plug these formulas into Lemma 4.20:
+|Ax|2 =
+3∑
+i,j =1
+|Ax(N × ei,N × ej)|2 =
+3∑
+i,j =1
+|∇P |− 6 [(∇ ∇ P × ei ∇ P ) ·(∇ P × ej)]2.
+So |Ax|2 =H 2 if and only if
+H 2(∇ P · ∇P )3 −
+3∑
+i,j =1
+[(∇ ∇ P × ei ∇ P ) ·(∇ P × ej)]2 = 0.
+This equation is a polynomial equation of degree ≤ 6 DegP . For generic H this polynomial does
+not have P as a factor, so the set {x ∈ Z(P ) such that |Ax| =H} is an algebraic curve of degree
+≤ 6(DegP )2. □
+We let H > 0 be a number that we will choose later. We can add the following reaso nable
+segment condition:
+Reasonable T ube Segment Condition 10. The length of Seg (Q,T ) ∩ A(H) is ≤ K − 1+.
+We will choose a particular H below, with H ∼ K 1+N − 2σ . We will only need one H, but if we
+wanted to, we could choose K 1/ 2 diﬀerent values Hj and a reasonable condition would be that the
+length of Seg (Q,T ) ∩ A(Hj) is ≤ K − (1/ 2)+ for each of the values.
+Suppose for a moment that Seg (Q,T ) intersected with GFl,Str (W ),Eig (W ),Tan (W ), and
+A(H) (or A(Hj)) were all empty. Then on each component of Seg (Q,T ), the second fundamental
+form of Z would be highly constrained. A technical issue is that these sets are not empty. They are
+just small. We get around this issue in the next subsection by interse ctingSeg (Q,T ) with a plane.
+
+[PDF physical page 33]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 33
+We say that Seg (Q,T ) is a reasonable tube segment if it obeys Reasonable Tube Segment C on-
+ditions 1 - 10.
+4.3. Slices of reasonable tube segments. Fix a reasonable tube segment Seg (Q,T ). We will
+intersect the tube segment Seg (Q,T ) with a plane π parallel tov(T ). The intersection Seg (Q,T )∩π
+is a rectangle, and the intersection Z ∩Seg (Q,T ) ∩π is a curve Γ in this rectangle. This intersection
+reduces the dimension of our situation by one, making the geometry simpler. Moreover, for a
+reasonable choice of π , Γ will have no intersection with Tan (W ),GFl ,Str(W ),Eig (W ), or A(H).
+After restricting to Γ, all the white lies above are true.
+We choose coordinates so that T is given by the equation x2
+1 +x2
+2 ≤ 1. By Reasonable Tube
+Condition 4, we know that Angle( TQZ,v (T )) ≤ K +N − σ . We choose the coordinates so that the
+(x1,x 3) plane is K +N − σ close to TQZ.
+We letπ (a,b ) be the plane x1 +ax2 =b. We choose a uniformly at random in ( − 1/ 10, 1/ 10) and
+we choose b uniformly at random in ( − 400, 400). Because of the way we set up the coordinates,
+Angle(π (a,b ),T QZ) ≥ 1/ 10 for all ( a,b ). We state this as a lemma.
+Lemma 4.22. Angle(π (a,b ),T QZ) ≥ 1/ 10.
+We let Γ(a,b ) = π (a,b ) ∩ Seg (Q,T ) ∩ Z. We say that a condition on Γ( a,b ) is reasonable if it
+holds with probability ≥ (1 − K − ).
+For almost every (a,b ), π (a,b ) ∩ Z(P ) is an algebraic curve.
+Ifγ ⊂ Seg (Q,T ) is a curve of length L, then the average over (a,b ) of the cardinality of π (a,b )∩γ
+is ≲ L. Therefore, with probability 1 − K − , the intersections π (a,b ) ∩ Tan (W ),π (a,b ) ∩ GFl ,
+π (a,b ) ∩ Eig (W ),π (a,b ) ∩ Str(W ), and π (a,b ) ∩ A(H) are all empty.
+Reasonable Slice Condition 1. Γ(a,b ) does not intersect Tan (W ), GFl , Str(W ), Eig (W ), or
+A(H).
+This condition has nice implications. For a reasonable slice, as x varies along a connected
+component of Γ, TxZ is constant up to angle ≤ K − (1/ 4)+, and the sign of the Gauss curvature of Z
+is constant. If the Gauss curvature is negative, there are two st raight directions at each point, and
+they vary continuously. Since Γ( a,b ) ∩ Str(W ) is empty, the straight directions of Ax are constant
+up to angle K − (1/ 4)+ along each connected component. If the Gauss curvature is posit ive, there
+are no straight directions. There are always at least two eigenvect or directions. If Ax is a multiple
+of the identity, then every direction is an eigenvector direction. Su ch points lie in Eig (w) for every
+w, and so there are no such points on Γ. So at each point x ∈ Γ with positive Gauss curvature,
+there are two distinct eigenvectors of Ax. On each connected component of Γ, these eigenvector
+directions change by an angle ≤ K − (1/ 4)+.
+In the last subsection, we proved an integral estimate for |N ·v(T )| overZ ∩ Seg (Q,T ). Using
+Lemma 3.3, any integral estimate over Z ∩ Seg (Q,T ) gives us a similar estimate over Γ( a,b ) for
+reasonable slices. In particular, we get the following.
+Reasonable Slice Condition 2.
+∫
+Γ |N ·v(T )| ≤ K − 1+.
+Proof. By Reasonable Tube Segment Condition 3,
+∫
+Z∩ Seg(Q,T ) |N ·v(T )| ≤ K − 1+. We apply Lemma
+3.3 to compute
+Avga,b
+∫
+Γ(a,b )
+|N ·v(T )| ∼
+∫
+Z∩ Seg(Q,T )
+|N ·v(T )| ≤ K − 1+.
+So with probability (1 − K − ), we have the desired estimate.
+
+[PDF physical page 34]
+
+34 LARRY GUTH
+□
+Now we consider the geometry of the curve Γ ⊂ π (a,b ). We let NΓ be the unit normal vector
+to Γ inside π (a,b ). We deﬁne the second fundamental form AΓ. (If v,w ∈ TxΓ, then AΓ(v,w ) =
+∇ vNΓ ·w.) We continue to write N for the normal vector to Z and A for the second fundamental
+form of Z. We would like to use our information about N andA to study NΓ andAΓ. We begin by
+proving a standard diﬀerential geometry lemma about how N , NΓ, A, AΓ are related. Fix a point
+x ∈ Γ(a,b ) ∈ Z.
+Lemma 4.23. Suppose that x ∈ Γ(a,b ) and that Angle(π (a,b ),T xZ) = α (x) > 0. Let φ be the
+orthogonal projection from R3 to π (a,b ).
+(1) NΓ(x) = (sin α )− 1φ(N (x)).
+(2) If v ∈ π (a,b ), v ·NΓ(x) = (sin α )− 1v ·N (x).
+(3) If v,w ∈ TxΓ ⊂ TxZ, AΓ,x (v,w ) = (sin α )− 1Ax(v,w ).
+Proof. We know that N (x) is perpendicular to any v ∈ TxΓ ⊂ TxZ. On the other hand, N (x) −
+φ(N (x)) is perpendicular to π (a,b ), and hence to any v ∈ TxΓ ⊂ π (a,b ). Therefore, φ(N (x))
+is perpendicular to TxΓ. The vectors N (x) and φ(N (x)) both point in the direction where P is
+increasing. Therefore, NΓ =φ(N (x))/ |φ(N (x))|. By trigonometry, |φ(N (x))|= sinα .
+Suppose v ∈ π (a,b ). Plugging in (1), v ·NΓ(x) = (sin α )− 1v ·φ(N (x)). The diﬀerence N (x) −
+φ(N (x)) is perpendicular to π (a,b ), so v ·φ(N (x)) = v ·N (x). This gives (2).
+Suppose v,w ∈ TxΓ.
+AΓ(v,w ) = ∇ vNΓ ·w = ∇ v((sinα )− 1φ(N )) ·w =
+= (sinα )− 1∇ vφ(N ) ·w + ∇ v((sinα )− 1)φ(N ) ·w.
+Nowφ(N ) is normal to TxΓ, so φ(N ) ·w = 0 and the second term vanishes. For the ﬁrst term,
+we note that φ and w don’t depend on x, and so ∇ v(φ(N )) ·w = ∇ v(φ(N ) ·w). Now note that
+φ(N (y)) − N (y) is perpendicular to w ∈ π (a,b ) for every y ∈ Γ, and so ∇ v(φ(N ) ·w) = ∇ v(N ·w) =
+(∇ vN ) ·w =A(v,w ). So the ﬁrst term simpliﬁes to (sin α )− 1Ax(v,w ). □
+This lemma shows that NΓ and AΓ are well behaved at x as long as Angle( π (a,b ),T xZ) is not
+too small. We next note that this angle is always fairly large for x ∈ ZQ,nice .
+Lemma 4.24. If Q is a reasonable cube and x ∈ ZQ,nice , then Angle(π (a,b ),T xZ) ≥ 1/ 12.
+Proof. By Lemma 4.22, Angle( π (a,b ),T QZ) ≥ 1/ 10. On the other hand, by Reasonable Cube
+Condition 6, Angle(TxZ,T QZ) ≤ K − 10+. □
+Using this bound, we can now start to control the geometry of a re asonable slice Γ(a,b ) through
+a point x ∈ ZQ,nice .
+Lemma 4.25. Suppose that Seg (Q,T ) is a reasonable tube segment and Γ is a reasonable slice of
+Z ∩ Seg (Q,T ), and that there is a point x ∈ Γ ∩ ZQ,nice . Let Γ1 ⊂ Γ be the component of of Γ
+containingx. Then Γ1 obeys the following estimates:
+(1) Angle(π (a,b ),T x′Z) ≥ (1/ 20) for all x′ ∈ Γ1.
+(2) Γ 1 runs the whole length of Seg (Q,T ) .
+(3)
+∫
+Γ1
+|NΓ ·v(T )|dx ≤ K − 1+.
+
+[PDF physical page 35]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 35
+Proof. By Lemma 4.24, we know that Angle( π (a,b ),T xZ) ≥ 1/ 12.
+We know that Γ ∩Tan (W ) is empty. Therefore, for all x′ ∈ Γ1, the tangent plane Tx′Z is within
+an angle K − (1/ 4)+ of TxZ. Therefore, Angle( π (a,b ),T x′Z) ≥ (1/ 20) for all x′ in Γ 1.
+Now that we have transversality, we can bound
+∫
+Γ1
+|NΓ ·v(T )| ≤ K +
+∫
+Γ
+|N ·v(T )| ≤ K − 1+.
+Because of this integral estimate, the total variation of Γ 1 perpendicular to v(T ) is ≤ K − 1+.
+Since the point x lies in ZQ,nice , which is well within the boundary of Seg (Q,T ), the curve Γ 1 must
+run the whole length of Seg (Q,T ).
+□
+We let Q1,Q 2 be the two reasonable cubes at opposite ends of Seg +(Q,T ) described in Reason-
+able Tube Segment Condition 5.
+Reasonable Slice Condition 3.∫
+Γ(a,b )∩ (Qi)+
+|N ·v(T )| ≤ K +N − σ.
+Proof. By Reasonable Tube Segment Condition 5, we have
+∫
+Z∩ Q+
+i
+|N ·v(T )| ≤ K +N − σ . Then we
+average using Lemma 3.3. We note that Z ∩ Seg (Q,T ) ∩ π (a,b ) = Γ(a,b ), and we get
+Avg(a,b )
+∫
+Γ(a,b )∩ Q+
+i
+|N ·v(T )| ∼
+∫
+Seg(Q,T )∩ Z
+|N ·v(T )| ≤ K +N − σ.
+So with probability (1 − K − ) in (a,b ), the desired estimate holds. □
+IfSeg (Q,T ) is a reasonable tube segment, then we say that a slice Γ( a,b ) is a reasonable slice if
+it obeys Reasonable Slice Conditions 1 - 3.
+4.4. Curvature estimates in non-straight directions. For a given point x ∈ Z, a unit vector
+v ∈ TxZ is called straight if Ax(v,v ) = 0. If x is not a ﬂat point, then it has at most four straight
+unit vectors. (The unit vectors come in pairs ±v, and there are at most two such pairs.) We will be
+interested in how far v(T ) is from being straight, at points x ∈ Z. Roughly speaking, if a direction
+v is “far from straight”, then |Ax(v,v )| ∼ |Ax|.
+Forx ∈ Z,v ∈ TxZ, |v|= 1, deﬁne
+S1(x,v ) := min
+w∈ TxZ, |w|=1,w straight
+|v − w|.
+This measures the angle from v to a straight direction. If Ax has negative Gauss curvature,
+then we will prove below that when S1(x,v ) ∼ 1, then |Ax(v,v )| ∼ |Ax|. If Ax has positive Gauss
+curvature, then there are no straight directions, but there cou ld still be a direction v where |Ax(v,v )|
+is much smaller than |Ax|. In the positive Gauss curvature case, we measure the angle from v to
+an eigenvector. Recall that Ax is called umbilic if it has two equal eigenvalues - in other words,
+if Ax(v,v ) = λv ·v for some real number λ. If Ax is not umbilic, then it has two exactly two
+eigenvectors.
+S2(x,v ) := min
+w∈ TxZ, |w|=1,w an eigenvector of Ax
+|v − w|.
+Finally, for x ∈ Z, v ∈ TxZ, |v|= 1, deﬁne S(x,v ) as follows:
+
+[PDF physical page 36]
+
+36 LARRY GUTH
+• If the Gauss curvature of Z at x is negative, then S(x,v ) = S1(x,v ).
+• If the Gauss curvature of Z at x is non-negative and Ax is not umbilic, then S(x,v ) =
+S2(x,v ).
+• If Ax is umbilic, then S(x,v ) = 1 for all v.
+The point of this deﬁnition is that when S(x,v ) is not close to 0, |Ax(v,v )| is comparable to
+|Ax|. Informally, controlling Ax in a non-straight direction controls Ax in all directions. We now
+state this precisely.
+Lemma 4.26. For any x ∈ Z and any unit vector v ∈ TxZ,
+|Ax| ≤ 100S(x,v )− 2|Ax(v,v )|.
+Proof. We give slightly diﬀerent proofs in the case of negative and non-nega tive Gauss curvature.
+In the case of negative Gauss curvature, we can write the second fundamental form as a product
+of two linear functions: Ax(v,v ) = L1(v)L2(v), where L1,L 2 are linear maps from TxZ to R. We let
+|Li|denote the maximum of |Li(v)|over all vectors v ∈ TxZ with |v| ≤ 1. For each i, we have |Li| ≤
+2S(x,v )− 1|Li(v)|. Therefore, |Ax| ≤ 5|L1||L2| ≤ 20S(x,v )− 2|L1(v)||L2(v)|= 20S(x,v )− 2|Ax(v,v )|.
+Suppose thatZ has non-negative Gauss curvature at x and thatAx is not umbilic. Then there are
+unit eigenvectors v1,v 2 for Ax. We have Ax(vi,v i) = λ i, and Ax(vi,v j) = 0 for i ̸=j. Because the
+Gauss curvature is non-negative, the two λ i have the same sign (or else one of them vanishes). The
+vectorv can be written as v =av1+bv2, where |a|, |b| ≥ (1/ 5)S(x,v ). Now |Ax(v,v )|= |a2λ 1+b2λ 2|.
+Because the eigenvalues have the same sign, this is ≥ min(a2,b 2) max(λ 1,λ 2) ≥ (1/ 100)S(x,v )2|Ax|.
+Finally, ifAx is umbilic, then Ax(v,v ) = λv ·v, and |Ax|=
+√
+2λ, so we have |Ax| ≤ 100|Ax(v,v )|
+for every unit vector v.
+□
+Recall that we deﬁned A(H) to be the set of points x ∈ Z(P ) where |Ax|=H. We proved that
+for a reasonable slice, Γ ∩ A(H) is empty for a particular value H that we would choose later. In
+the proof of the next lemma, we will choose this H < K1+N − 2σ , and we will prove that along
+reasonable slices “in non-straight directions”, the second fundam ental form is bounded by H.
+Lemma 4.27. Suppose that Seg (Q,T ) is a reasonable tube segment and Γ is a reasonable slice of
+Z ∩ Seg (Q,T ), and that there is a point x ∈ Γ ∩ ZQ,nice whereS(x,v (T )) ≥ K − . Let Γ1 ⊂ Γ be the
+component of of Γ containingx. Then at every point x′ ∈ Γ1, we have
+|Ax′|<H ≤ K 1+N − 2σ.
+Proof. By Lemma 4.25, we know that Γ 1 runs the whole length of Seg (Q,T ), and so Length(Γ 1) ≥
+K − 1N σ . Lemma 4.25 also tells us that
+Angle(π (a,b ),T x′Z) ≥ (1/ 20) for all x′ ∈ Γ1.
+Also, by Reasonable Slice Condition 2, we know that
+∫
+Γ1
+|N ·v(T )| ≤ K − 1+.
+Because of this integral estimate, we can ﬁnd x′ ∈ Γ1 where |N (x′)·v(T )| ≤ K +N − σ . We know that
+Γ1 is disjoint from Tan (W ) and so the normal vector N (x′) varies by at most K − (1/ 4)+ along Γ 1.
+Therefore, Angle(Tx′Γ1,v (T )) ≤ K − (1/ 4)+ for all x′ ∈ Γ1. Let v1(x) be the unit tangent vector in
+
+[PDF physical page 37]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 37
+TxΓ1 that is roughly parallel to v(T ). (There are two unit tangent vectors at each point, one roughly
+parallel to v(T ) and one roughly parallel to −v(T ).) We know that |v1(x) − v(T )| ≤ K − (1/ 4)+.
+Our next goal is to prove that S(x′,v 1(x′)) ≥ K − for all x′ ∈ Γ1. We know that Γ 1 does
+not intersect GFl , so the Gauss curvature of Z on Γ 1 is either everywhere positive or everywhere
+negative.
+In the negative case, there are two straight directions at each po int of Γ 1, and they vary contin-
+uously. We know S(x,v (T )) ≥ K − , and so v(T ) is a distance ≥ K − from any straight direction of
+Ax. Since Γ ∩ Str(W ) is empty, the straight directions along Γ 1 only vary by ≤ K − (1/ 4)+, and so
+v(T ) is a distance ≥ K − from any straight of direction of Ax′. Since |v1(x′) − v(T )| ≤ K − (1/ 4)+,
+we conclude that S(x′,v 1(x′)) ≥ K − for every x′ ∈ Γ1.
+In the positive case, we consider the eigenvectors instead of the s traight directions. An umbilic
+point lies in Eig (w) for every unit vector w. Since Γ ∩ Eig (W ) is empty, Ax′ has two distinct
+eigenvectors at each point x′ ∈ Γ1. These two eigenvectors vary continuously along x′. We know
+S(x,v (T )) ≥ K − , and so v(T ) is a distance ≥ K − from any any eigenvector of Ax. Since Γ ∩Eig (W )
+is empty, the eigenvectors only vary by an angle ≤ K − (1/ 4)+, and so v(T ) is a distance ≥ K − from
+any eigenvector of Ax′. Since |v1(x′) − v(T )| ≤ K − (1/ 4)+, we conclude that S(x′,v 1(x′)) ≥ K − for
+everyx′ ∈ Γ1.
+Lemma 4.26 now gives us the following estimate for every x′ ∈ Γ1,
+|AZ,x ′| ≤ K +|AZ,x ′(v1,v 1)|.
+Also, since v1(x′) is never straight, we see that the sign of AZ,x ′(v1,v 1) is constant along Γ 1.
+By Lemma 4.23, the sign of AΓ,x ′(v1,v 1) is also constant along Γ 1. Combining Lemma 4.23 with
+the estimate Angle(π (a,b ),T x′Z) ≥ (1/ 20) above, we see |AZ,x ′(v1,v 1)|≲ |AΓ,x ′(v1,v 1)|.
+For points x1,x 2 ∈ Γ1, deﬁne Γ 1(x1,x 2) ⊂ Γ1 as the segment of Γ 1 with endpoints x1,x 2. For
+anyx1,x 2, we now have the following integral estimate:
+∫
+Γ1(x1,x 2)
+|AZ,x ′| ≤ K +
+∫
+Γ1(x1,x 2)
+|AZ,x ′(v1,v 1)| ≤ K +
+⏐
+⏐
+⏐
+⏐
+⏐
+∫
+Γ1(x1,x 2)
+AΓ,x ′(v1,v 1)
+⏐
+⏐
+⏐
+⏐
+⏐.
+This last integral
+∫
+Γ1
+AΓ,x (v1,v 1) measures the (angular) change in the unit normal vector NΓ
+from one end of Γ 1 to the other. In particular,
+⏐
+⏐
+⏐
+∫
+Γ1(x1,x 2)AΓ,x ′(v1,v 1)
+⏐
+⏐
+⏐ ≤ (π/ 2) |NΓ(x1) − NΓ(x2)|.
+Putting it all together, we now have:
+∫
+Γ1(x1,x 2)
+|AZ,x ′| ≤ K +|NΓ(x1) − NΓ(x2)|. (∗)
+Now we choose x1,x 2 judiciously. We let Q1,Q 2 be the two reasonable cubes at opposite ends
+of Seg (Q,T ) described in Reasonable Tube Segment Condition 5 and Reasonable S lice Condition
+3. The Reasonable Slice Condition 3 says that
+∫
+Γ(a,b )∩ Q+
+i
+|v(T ) ·N | ≤ K +N − σ . Since Γ 1 runs the
+whole length of Seg (Q,T ), we see that Γ 1 ∩ Q+
+i has length ≥ 1 for each i. Now, on Γ 1, we know
+that Angle(Tx′Z,π (a,b )) ≥ 1/ 20, and so |v(T ) ·NΓ|≲ |v(T ) ·N |. Therefore, we get
+∫
+Γ1∩ Q+
+i
+|v(T ) ·NΓ| ≤ K +N − σ.
+Now we can choose xi ∈ Γ1 ∩ Q+
+i where |v(T ) ·NΓ(xi)| ≤ K +N − σ . This implies that |NΓ(x1) −
+NΓ(x2)| ≤ K +N − σ . (Each vector NΓ(xi) is almost normal to v(T ) and lies in π (a,b ). These
+
+[PDF physical page 38]
+
+38 LARRY GUTH
+normal vectors cannot point in nearly opposite directions because the change in N (xi) along Γ 1
+is ≤ K − (1/ 4)+, and so the change in NΓ is ≤ K +K − (1/ 4)+.) Plugging in this estimate to the
+right-hand side in inequality ( ∗) we see:
+∫
+Γ1(x1,x 2)
+|AZ,x | ≤ K +|NΓ(x1) − NΓ(x2)| ≤ K +N − σ.
+Reasonable Tube Segment Condition 5 says that the distance from Qi to Q is ≥ K − 1−N σ . So
+we see that Length(Γ 1(x1,x 2) ≥ K − 1−N σ . Therefore, we can ﬁnd a point x′ ∈ Γ1(x1,x 2) where
+|Ax′| ≤ K 1+N − 2σ .
+At this point, we choose the number H in Reasonable Tube Segment Condition 10. We choose
+H so that
+|Ax′|<H <K 1+N − 2σ.
+By Reasonable Slice Condition 1, Γ 1 ∩ A(H) is empty. We conclude that |A|<H <K 1+N − 2σ
+everywhere on Γ 1. This proves the lemma.
+□
+4.5. Pointwise curvature bounds. The tools from the last section allow us to prove strong
+bounds on the curvature of Z. We will prove that at many places, the second fundamental form o f
+Z is bounded by K 1+N − 2σ . If this were true at every point, then it would instantly imply that if
+x,x ′ are endpoints of a curve in Z of length ≤ N σ , then Angle( TxZ,T x′Z) ≤ K +N − σ . Although
+the curvature bound does not hold at every point, we will prove tha t it holds in lots of places and
+this is suﬃcient to control the twisting of the tangent plane along mo st tube segments.
+We call Q ∈ X a very reasonable cube if Q is a reasonable cube and if a fraction (1 − K − )
+of the segments Seg (Q,T ) are reasonable. The number of very reasonable cubes of X is still
+≥ (1 − K − )|X|.
+Proposition 4.28. If Q is very reasonable,
+Area{x ∈ ZQ,nice such that |Ax|>H } ≤ K − AreaZQ,nice.
+Recall that H ∼ K 1+N − 2σ was deﬁned in the proof of Lemma 4.27.
+Proof. Let Q be a very reasonable cube. By the fourth item in Hypotheses 4.1, we can choose
+three tubes T1,T 2,T 3 meeting Q with pairwise angles ≥ K − and so that all segments Seg (Q,T i)
+are reasonable. At each point x ∈ ZQ,nice , max 3
+i=1S(x,v (Ti)) ≥ K − . (If Z has negative Gauss
+curvature at x, then S(x,v ) measures the distance from v to the straight directions of Ax. Up to
+sign, there are only two straight directions. Therefore, one of th e three tubes must be at an angle
+≥ K − from straight. The case of non-negative Gauss curvature is similar with the eigenvectors
+instead of the straight directions.)
+Let H <K 1+N − 2σ be the number chosen in the proof of Lemma 4.27.
+Badi := {x ∈ ZQ,nice |S(x,v (Ti))>K − and |Ax|>H }.
+It now suﬃces to prove that Area Badi ≤ K − AreaZQ,nice for each i. We ﬁx i for the rest of the
+proof. We consider slices of Seg (Q,T i).
+Lemma 4.27 says that if Γ(a,b ) is a reasonable slice of Z ∩Seg (Q,T i), andx ∈ ZQ,nice ∩ Γ(a,b ) and
+S(x,v (Ti)) ≥ K − then |Ax|<H . Therefore, for a reasonable Γ( a,b ), Γ(a,b ) ∩Badi is empty. Since
+a slice Γ(a,b ) is reasonable with probability (1 − K − ), we get the following probability estimate:
+
+[PDF physical page 39]
+
+DEGREE REDUCTION AND GRAININESS FOR KAKEYA-TYPE SETS IN R3 39
+Proba,b [π (a,b ) ∩ Badi is non-empty] ≤ K −.
+We would like to use this probability estimate to bound the area of Badi. To do this, we have to
+exploit the geometry of ZQ,nice described by nicely parametrized disks with small holes. We state
+the result we need as a lemma.
+Lemma 4.29. Suppose that X is an open subset of ZQ,nice , then
+AreaX ≤ C Proba,b [π (a,b ) ∩ X is non-empty ] AreaZQ,nice.
+Proof. Recall that ZQ,nice is contained in the union of the graphs of some functions fj :B2(10) → R
+obeyingLip(fj) ≤ K − 10+. Let Xj be the part of X in the graph of fj. Recall that the whole graph
+of fj has area ∼ 1, and that almost all of the graph of fj lies in ZQ,nice . So it suﬃces to prove:
+AreaXj ≤ C Proba,b [π (a,b ) ∩ Xj is non-empty].
+Using Lemma 3.3 from integral geometry, we get
+AreaXj ≤ C Avg(a,b ) Length(Xj ∩ π (a,b )).
+By Lemma 4.24, we know that Angle( π (a,b ),T xZ) ≥ 1/ 12 for all x ∈ Graph(fj). This implies
+that π (a,b ) ∩ Graph(fj ) is a single curve of length ≤ C. Returning to the last inequality, we can
+now continue:
+AreaXj ≤ C Avg(a,b ) Length(Xj ∩ π (a,b )) ≤ C Prob(a,b )[π (a,b ) ∩ Xj is non-empty].
+□
+We ﬁnish with a pedantic point. The sets Badi are not necessarily open because the function
+S(x,v ) is not continuous in x. But S(x,v ) is continuous in x on the complement of the set of
+Gauss ﬂat points and the set of totally umbilic points. So Badi is contained in an open set and an
+algebraic curve. The area of the open set is bounded by Lemma 4.29. This ﬁnishes the proof of
+Proposition 4.28. □
+4.6. The end of the proof. Finally, we can bound the curvature and the change of the tangent
+plane along a reasonable slice and prove Theorem 4.3.
+Proposition 4.30. If Q is very reasonable, and Seg (Q,T ) is reasonable, and Q′ is a reasonable
+cube in Seg (Q,T ), then Angle(TQZ,T Q′Z) ≤ K +N − σ .
+Proof. Consider the set X ⊂ ZQ,nice of points x where
+• |Ax|<H .
+• Angle(TxZ,T QZ)<K +N − σ .
+Recall that H ∼ K 1+N − 2σ was deﬁned in the proof of Lemma 4.27, and it appears in the
+statement of Proposition 4.28. By the curvature bounds in Propos ition 4.28, and by the bounds on
+the tangent plane in Reasonable Cube Condition 3, the area of ZQ,nice \X is ≤ K − AreaZQ,nice .
+(The set of x ∈ Σ where |Ax|=H is an algebraic curve with area zero.)
+Now we consider a random ( a,b ) and look at the slice Γ( a,b ). We claim that with probability
+c> 0, a random slice Γ( a,b ) contains a point x ∈ X. By Lemma 4.29, we have
+AreaX ≤ C Proba,b [π (a,b ) ∩ X is non-empty ] Area ZQ,nice.
+
+[PDF physical page 40]
+
+40 LARRY GUTH
+But AreaX ≥ (1 − K − ) AreaZQ,nice . Therefore, Prob a,b [π (a,b ) ∩ X is non-empty ] ≥ c> 0.
+We are going to prove that with positive probability, this slice has furt her good properties.
+With probability (1 − K − ), Γ(a,b ) is reasonable. Let Γ 1 be the component of Γ containing x.
+Sincex ∈ ZQ,nice , Lemma 4.25 guarantees that Γ 1 runs the whole length of Seg (Q,T ). Since Γ(a,b )
+is reasonable, Γ 1 ∩ A(H) is empty. Since |Ax|< H it follows that |A|< H≤ K 1+N − 2σ at every
+point of Γ 1. So for every x′ ∈ Γ1,
+Angle(Tx′Z,T xZ) ≤
+∫
+Γ1
+|A| ≤ K 1+N − 2σ Length(Γ1) ≤ K +N − σ.
+By hypothesis,Q′ is a reasonable cube in Seg (Q,T ). Since Γ 1 runs the whole length of Seg (Q,T ),
+we know that Γ 1 ∩ (Q′)+ has length ≥ 1.
+Since Q′ is reasonable, Reasonable Cube Condition 3 says that ∫
+Z∩ (Q′)+ Angle(Tx′Z,T Q′Z) ≤
+K +N − σ . Now by integral geomety (Lemma 3.3), we have Avg (a,b )
+∫
+Γ(a,b )∩ (Q′)+ Angle(Tx′Z,T Q′Z) ≤
+K +N − σ . In particular, with probability (1 − K − ), we have
+∫
+Γ1∩ (Q′)+
+Angle(Tx′Z,T Q′Z) ≤ K +N − σ.
+In particular, we can choose x′ ∈ Γ1 ∩ (Q′)+ where Angle(Tx′Z,T Q′Z) ≤ K +N − σ .
+Finally we have
+Angle(TQ′Z,T QZ) ≤ Angle(TQ′Z,T x′Z) + Angle(Tx′Z,T xZ) + Angle(TxZ,T QZ).
+With positive probability (in the random choice of (a,b )), each of these three angles is bounded by
+K +N − σ . But Angle(TQ′Z,T QZ) does not depend on ( a,b ), so it must be bounded by K +N − σ . □
+This ﬁnishes the proof of Theorem 4.3.
+References
+[B] J. Bourgain, On the dimension of Kakeya sets and related m aximal inequalities. Geom. Funct. Anal. 9 (1999),
+no. 2, 256-282.
+[BCT] J. Bennett, A. Carbery, and T. Tao, On the multilinear r estriction and Kakeya conjectures. Acta Math. 196
+(2006), no. 2, 261-302.
+[D] Z. Dvir, On the size of Kakeya sets in ﬁnite ﬁelds. J. Amer. Math. Soc. 22 (2009), no. 4, 1093-1097.
+[EKS] G. Elekes, H. Kaplan, and M. Sharir, On lines, joints, a nd incidences in three dimensions. J. Combin. Theory
+Ser. A 118 (2011), no. 3, 962977.
+[G] L. Guth, The endpoint case of the Bennett-Carbery-Tao mu ltilinear Kakeya conjecture. Acta Math. 205 (2010),
+no. 2, 263-286.
+[GK] L. Guth, and N. Katz, Algebraic methods in discrete anal ogs of the Kakeya problem. Adv. Math. 225 (2010),
+no. 5, 2828-2839.
+[KLT] N. Katz, I. Laba, and T. Tao, An improved bound on the Min kowski dimension of Besicovitch sets in R3.
+Ann. of Math. (2) 152 (2000), no. 2, 383-446.
+[S] L. Santal´ o, Integral geometry and geometric probabili ty. Second edition. With a foreword by Mark Kac. Cam-
+bridge Mathematical Library. Cambridge University Press, Cambridge, 2004
+[ST] A. Stone, and J. Tukey, Generalized ”sandwich” theorem s. Duke Math. J. 9, (1942). 356-359.
