@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0105原I coarse planar lines/rank0保量/weighted点mark与严格derived方向反攻已限定独审。sameπW finite line准入已完成，未付positive direction pencil/原global耦合，不解fullκ1/ordinary/major，88PDF/92sources/78IDs，legacy28另计actual信息。下一notes/00_map/R0105_next_full_goal_reselection.md，Goal active。
+更新2026-10-19，R0106 fullsource moving-row cap仍open；锁定two-anchor反攻因nativeparabola YtubeKT fatal停止。指定model bulk原I诊断不救hyp，无qualified源gain、actualnoinfo1/legacy29、88PDF/92sources/78IDs。下一notes/00_map/R0106_next_full_goal_reselection.md，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -240,3 +240,6 @@ R0104：wholecode选T保ST，pointdegree p一次/time p取消，Φslab迫Gnear�
 
 
 R0105：fullsource far-time plane-ball cap→逐簇rank0原I保量→sameπW h≈ρ1−χ真实weighted lines；scalar marks含s1^-γ，访问pointlaw含µj^-1，h层按实际访问。sphere/nativeG同时保derived time/point/slab cap仍全同direction/offset，缺NF/Γ/filledX/wholeT-CW，不是fullsource counter。OS/RW nice gate未过；停止finite line参数续轮，须完整重选或真原global耦合。无newID/major/ordinary。
+
+
+R0106：ξ2=x2同T全time兼容，窄x2 strip/common-v/projectionlower预算未付，不能直接调19.4。two-anchor smooth sphere/parabola direction/CW/端点pencil可核，但nativeY tangent tubeKT严格失败，nearfull子网亦不修；按working停止不降hyp。model-specific Bézout/coarea原N/m bulk容量δ正幂，不反任意source/不记成功prefix。无newID/major/ordinary，actualnoinfo1。

@@ -1,0 +1,5 @@
+# R0106失败记录：未满足锁定的native Y tubeKT
+
+主记录notes/40_multiscale/sticky_matrix/R0106_moving_row_gate_and_two_anchor_failure_diagnosis.md十节；拒选独审research/reviews/R0106_locked_hypotheses_and_rejection_review.md及research/reviews/R0106_same_tube_budget_and_scope_review.md，root整合research/reviews/R0106_root_integration_review.md。这些通过仅指拒选判断与明确辅助计算，不指构造达到working或新的源定理，未经外部同行评审。
+
+parabola nativeY在δ×√δ tangent tube有δ^-1/2点，超过原smallη的tubeKT upper；nearfull子网也不能修。停止two-anchor反攻，不删hyp/免费换dust追认Jac。完整source moving-row cap仍open，指定smooth model bulk原I上界不反任意source。无newID/ordinary/major，下一notes/00_map/R0106_next_full_goal_reselection.md，Goal active。

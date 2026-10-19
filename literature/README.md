@@ -176,3 +176,6 @@ R0104新增Héra1809.04666v4(20p)与Orponen–Shmerkin2603.19171v1(22p)固定原
 
 
 R0105无新PDF，复用WZ/R77/R22、He1710及RW/OS实际nice配置门。原weighted coarse line桥与sphere/nativeG derived反攻的责任见metadata/R0105_source_check.json和notes/R0105_planar_nice_gate_and_weighted_source_scope.md；88PDF/92sources/78IDs保持，未认证源wholeproof/ordinary/major。
+
+
+R0106无新PDF，实际核WZ Def17.3 physicalPDF65文本及原图；parabola AD/slab不满足allscale tubeKT是本轮锁定构造的fatal，不是源定理反例。88PDF/92sources/78IDs保持，见metadata/R0106_source_check.json；无qualified源gain/major。
