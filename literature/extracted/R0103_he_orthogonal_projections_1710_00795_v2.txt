@@ -1,0 +1,2210 @@
+arXiv:1710.00795v2  [math.CA]  9 May 2018
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS
+WEIKUN HE
+Abstract. W e generalize Bourgain’s discretized projection theorem t o higher
+rank situations. Like Bourgain’s theorem, our result yield s an estimate for the
+Hausdorﬀ dimension of the exceptional sets in projection th eorems formulated
+in terms of Hausdorﬀ dimensions. This estimate complements earlier results
+of Mattila and Falconer.
+1. Introduction
+Fractal properties of orthogonal projections of subsets th e Euclidean space have
+been intensively studied in fractal geometry (See the surve y [7] for history and re-
+cent development). One of the fundamental problems asks for lower bounds on the
+size of the projections of a given set to diﬀerent directions . Since, in general, we do
+not expect the projection to be large in every direction, we a sk more precisely to
+bound from above the size of the set of exceptional direction s where an exceptional
+direction means a subspace onto which the projection is smal l. In this problem,
+the notion of size varies according to the context. For examp le, in a fractal geo-
+metric context, it is often the Lebesgue measure or the Hausd orﬀ dimension. In a
+discretized setting, we measure the size of a set by its cover ing number by δ-balls
+where δ > 0 is the observing scale. In this setting, Bourgain establish ed a dis-
+cretized projection theorem [2, Theorem 5] concerning rank one projections. The
+primary goal of the present paper is to generalize Bourgain’ s result to higher rank
+projections.
+1.1. Statement of the main result. Let 0 < m < nbe positive integers. Let
+δ >0. We endow Rn with its usual Euclidean structure. For x ∈ Rn, B(x,δ ) stands
+for the closed ball of radius δ and center x. Let A be a bounded subset of Rn. We
+write Nδ(A) for the minimal number of balls of radius δ that is needed in order to
+coverA. This number represents the size of A at scale δ.
+We denote by Gr(Rn,m ) the Grassmannian of m-dimensional subspaces in Rn.
+ForV ∈ Gr(Rn,m ), πV : Rn → V stands for the orthogonal projection to V . If
+W ∈ Gr(Rn,n − m), we deﬁne
+d∡ (V,W ) = |det(v1,...,v m,w 1,...,w n− m)|,
+where (v1,...,v m) is an orthonormal basis of V and (w1,...,w n− m) an orthonormal
+basis of W and the determinant is with respect to any orthonormal basis of Rn.
+For example d∡ (V,W ) = 0 if and only if V andW have nontrivial intersection. For
+ρ ≥ 0, we denote by V∡ (W,ρ ) the set of all V ∈ Gr(Rn,m ) such that d∡ (V,W ) ≤ ρ.
+Recall that V∡ (W, 0) is a submanifold of codimension 1 in Gr(Rn,m ) and belongs
+to the class of algebraic subvarieties known as Schubert cyc les (see for example [10,
+Chapter 1, §5]).
+Our main result is the following.
+Theorem 1. Let m < nbe positive integers. Given 0 < α < nand κ > 0, there
+exists ǫ >0 such that the following holds for suﬃciently small δ >0. Let A be a
+Date: May 10, 2018.
+1
+
+2 WEIKUN HE
+subset of Rn contained in the unit ball B(0, 1). Let µ be a probability measure on
+Gr(Rn,m ). Assume that
+(1) Nδ(A) ≥ δ− α +ǫ;
+(2) ∀ρ ≥ δ, ∀x ∈ Rn, Nδ(A ∩ B(x,ρ )) ≤ δ− ǫρκ Nδ(A);
+(3) ∀ρ ≥ δ, ∀W ∈ Gr(Rn,n − m), µ (V∡ (W,ρ )) ≤ δ− ǫρκ.
+Then there is a set D ⊂ Gr(Rn,m ) such that µ (D) ≥ 1 − δǫ and
+Nδ(πV (A′)) ≥ δ− m
+n α − ǫ
+whenever V ∈ D and A′ ⊂ A is a subset such that Nδ(A′) ≥ δǫNδ(A).
+The m = 1 case is due to Bourgain [2]. For m ≥ 2, our result is new. Hypoth-
+esis (2) is a Frostmann type non-concentration condition on A. Without it we can
+have example likeA = B(0,δ 1− α
+n ), a ball of radius δ1− α
+n , whose size is Nδ(A) ≈ δ− α
+but whose projection to any V ∈ Gr(Rn,m ) is of size
+Nδ(πV (A)) ≈ δ− m
+n α.
+Hypothesis (3) is a non-concentration condition on the dist ribution of the subspace
+V . The set V∡ (W,ρ ) can be thought of as a ρ-neighborhood of the Schubert cycle
+V∡ (W, 0). For example if m = 1,V lives in the projective space and (3) is asking µ
+to be not concentrated around any projective subspace. Note that the factor δ− ǫ
+in both (2) and (3) means the non-concentration property nee ds to be satisﬁed up
+to scale δǫ. So the parameter κ is about how good the assumptions are and ǫ is
+about how much the assumptions can be relaxed and how good the conclusion is.
+1.2. F ractal geometric consequences. Just like Bourgain’s discretized projec-
+tion theorem can be used to derive a projection theorem in ter ms of Hausdorﬀ
+dimension [2, Theorem 4], Theorem 1 has the following conseq uence.
+Theorem 2. Letm<n be positive integers. Given 0<α<n and κ> 0, there is
+ǫ >0 such that the following is true. Let A ⊂ Rn is an analytic set of dimension
+dimH(A) = α . Then the set of exceptional directions
+{
+V ∈ Gr(Rn,m ) |dimH(πV (A)) ≤ m
+nα +ǫ
+}
+does not support any nonzero measure µ on Gr(Rn,m ) with the following non-
+concentration property,
+∀ρ> 0, ∀W ∈ Gr(Rn,n − m), µ (V∡ (W,ρ )) ≤ ρκ.
+Endow the Grassmanian Gr(Rn,m ) with a rotation invariant Riemannian metric
+so that we can talk about Hausdorﬀ dimension of subsets of Gr(Rn,m ). Theorem 2
+applied to a Frostman measure supported on the set of excepti onal directions, we
+get
+Corollary 3. Let m < nbe positive integers. Given 0 < α < nand κ >0, there
+is ǫ> 0 such that the following holds. Let A ⊂ Rn be an analytic set of dimension
+dimH(A) = α . Then
+dimH
+{
+V ∈ Gr(Rn,m ) |dimH(πV (A)) ≤ m
+nα +ǫ
+}
+≤ m(n − m) − 1 +κ.
+Note that m(n − m) is the dimension of Gr(Rn,m ). As κ → 0, we get
+(4) dimH
+{
+V ∈ Gr(Rn,m ) |dimH(πV (A)) ≤ m
+n dimH(A)
+}
+≤ m(n − m) − 1.
+This may be compared to estimates already known.
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 3
+Theorem 4 (Mattila [17], Falconer [8], see also [19, §5.3]) . Let A ⊂ Rn be an
+analytic set of Hausdorﬀ dimension dimH(A) = α . For any 0<s ≤ min{α,m },
+dimH{V ∈ Gr(Rn,m ) |dimH(πV (A))<s } ≤ m(n − m) − (max{α,m } − s);
+Compared to Theorem 4, the estimate (4) provides new informa tion in the fol-
+lowing two situations:
+(i) (Projection to lines) m = 1 and dimH(A) ∈ ]0, 1 + 1
+n− 1 [,
+(ii) (Projection to hyperplanes) m =n − 1 and dimH(A) ∈ ]n − 1 − 1
+n− 1,n [.
+For example, for n = 2 and m = 1, the case treated by Bourgain [2],
+dimH
+{
+θ ∈ Gr(R2, 1) |dimH(πθ (A)) ≤ 1
+2 dimH(A)
+}
+= 0,
+for all analytic sets A such that 0< dimH(A)< 2. This estimate is also obtained
+by Oberlin [20] using diﬀerent methods. Bourgain’s approac h has the advantage of
+giving an estimate with the ǫ and κ terms, or in other words that for any c> 0,
+lim
+ǫ→ 0
+sup
+A
+dimH
+{
+θ ∈ Gr(R2, 1) |dimH(πθ (A)) ≤ 1
+2 dimH(A) +ǫ
+}
+= 0,
+whereA ranges over all analytic sets with Hausdorﬀ dimension betwe enc and 2 − c.
+Note also that Corollary 3 can be reformulated in a similar wa y.
+Theorem 2 can be combined with Remez-type inequalities to st udy restricted
+family of projections. Instead of looking at projections to all subspaces, we re-
+strict our attention to a family of subspaces. The non-conce ntration property in
+Theorem 2 translates to a transversality condition on the fa mily. In the following
+corollary, we assume the family to be analytic and not contai ned in any proper
+Schubert cycle.
+Corollary 5. Letm<n be positive integers. Given 0<α<n and κ> 0, there is
+ǫ> 0 such that the following holds. Let p ≥ 1 be an integer and Ω ⊂ Rp a connected
+open subset. Let V : Ω → Gr(Rn,m ) be a real analytic map. Let A ⊂ Rn be an
+analytic set of dimension dimH(A) = α . If for any W ∈ Gr(Rn,n − m), there exists
+t ∈ Ω such that V (t) ⊕ W = Rn, then for any relatively compact subset Ω′ in Ω,
+there exists a constant d =d(V, Ω′)> 0 such that
+(5) dimH
+{
+t ∈ Ω′ |dimH(πV (t)(A)) ≤ m
+nα +ǫ
+}
+≤ p − 1 +dκ.
+If moreover V is polynomial then d is independent of Ω′ and proportional to the
+degree.
+The study of restricted family of projections started long a go and saw signiﬁcant
+progress recently. We refer the reader to, for example, [23, 13, 12, 9, 21, 6, 14, 22].
+The recent interest is focused on whether for almost all para meterst, the dimension
+of the projection dimH(πV (t)(A)) is at least the minimum between dimH(A), the
+original dimension, and m, the dimension of the subspaces to which we project (see
+for example [9, Conjecture 1.6]). Corollary 5 deals with a di ﬀerent but parallel
+question. Here we compare dimH(πV (t)(A)) to m
+n dimH(A) + ǫ. Understandably,
+the exceptional set is much smaller.
+1.3. Ergodic motivation. In [3], Bourgain, Furman, Lindenstrauss and Mozes
+used Bourgain’s discretized projection theorem together w ith harmonic analysis to
+show equidistributions of linear random walks on the torus. Our primary motiva-
+tion behind Theorem 1 resides also in this ergodic problem. I n Bourgain-Furman-
+Lindenstrauss-Mozes theorem, there is technical assumpti on which is the proxi-
+mality. While a subgroup Γ ⊂ SLd(Z) acts on the torus, its transpose tΓ acts on
+Fourier coeﬃcients. Bourgain’s discretized projection th eorem is used to study large
+Fourier coeﬃcients under this action. By the theory of rando m matrix products,
+
+4 WEIKUN HE
+if Γ is proximal, then large random products in Γ behave like rank one projections
+composed with rotations, if viewed at an appropriate scale. When Γ is not proxi-
+mal, they behave like rank p projections composed with rotations, where p ≥ 2 is
+the proximality dimension of the random walk. Thus, we hope T heorem 1 will be
+useful for understanding the non-proximal situation.
+1.4. Strategy of the proof. Now we describe an outline of the proof of Theorem 1.
+Fix integers 0 < m < nand a real number 0 < α < n. For ǫ >0 and bounded
+subset A ⊂ Rn we deﬁne the set of exceptional directions to be
+(6) E(A,ǫ ) = {V ∈ Gr(Rn,m ) | ∃A′ ⊂ A, Nδ(A′) ≥ δǫNδ(A)
+and Nδ(πV (A′))<δ − m
+n α − ǫ}.
+When there is no ambiguity, we omit the variable ǫ and write simply E(A). Our
+task is to bound µ (E(A)) given the distribution µ of the subspaces. In order to
+prove Theorem 1 which says µ (E(A)) ≤ δǫ under the assumptions of the theorem,
+we prove instead that µ (E(A′)) ≤ δǫ for some subset A′ of A.
+Theorem 6. Let m < nbe positive integers. Given 0 < α < nand κ > 0, there
+exists ǫ >0 such that the following holds for suﬃciently small δ >0. Let A be a
+subset of Rn contained in the unit ball B(0, 1). Let µ be a probability measure on
+Gr(Rn,m ). Assume (1), (2) and (3), then there exists A′ ⊂ A such that
+µ (E(A′)) ≤ δǫ.
+This statement is seemingly weaker, but there is actually a r ather formal ar-
+gument which allows to deduce Theorem 1 from Theorem 6. We wil l show this
+implication in Proposition 25.
+The proof of Theorem 6 starts with the special case where n = 2m.
+Proposition 7. Theorem 6 is true if n = 2m.
+As in the m = 1 case in [2], this special case is proved using a sum-product t heo-
+rem. For m> 1, we need the higher dimensional sum-product estimate estab lished
+in [11] which we recall here. Below and throughout this paper , for subsets X,Y of
+a linear space, we denote by X +Y their sumset :
+X +Y = {x +y |x ∈ X, y ∈ Y }.
+Theorem 8 ([11, Theorem 3]) . Let m be a positive integer. Given κ > 0 and
+σ<m , there is ǫ> 0 such that the following holds for δ >0 suﬃciently small. Let
+A be a subset of the space of linear endomorphisms End(Rm) and X a subset of
+Rm, assume that
+(i) A ⊂ B(0,δ − ǫ),
+(ii) ∀ρ ≥ δ, Nρ (A) ≥ δǫρ− κ ,
+(iii) for any nonzero proper linear subspace W ⊂ Rn, there is a ∈ A and w ∈
+W ∩ B(0, 1) such that d(aw,W ) ≥ δǫ.
+(iv) X ⊂ B(0,δ − ǫ),
+(v) ∀ρ ≥ δ, Nρ (X) ≥ δǫρ− κ ,
+(vi) Nδ(X) ≤ δ− σ − ǫ.
+Then, Nδ(X +X) + maxa∈A Nδ(X +aX) ≥ δ− ǫNδ(X).
+The proof of Proposition 7 follows closely that in [2]. The ma in idea is to
+use additive combinatorial tools such as the Balog-Szemeré di-Gowers theorem to
+reduce to the situation where A is a cartesian product X × X withX ⊂ Rm. Then
+projections of X × X to subspaces of dimension m correspond exactly to the sum-
+product operations X +aX, a ∈ End(Rm), in Theorem 8. Finally, Theorem 8
+shows that the projection gained a factor δ− ǫ in size compared to X which has half
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 5
+the dimension of A. A technical point appearing in this proof is that the set X,
+which is roughly a projection of A, has to satisfy the non-concentration property
+require by Theorem 8. This is addressed in Lemma 27.
+Once we have Proposition 7 we would like to reduce other cases to it. First,
+using a simple induction, we show that Theorem 6 holds if m divides n.
+Proposition 9. Let q ≥ 3 be an integer. If Theorem 6 is true for n′ = (q − 1)m
+and m then it is also true for n =qm and m.
+The proof of Proposition 9 goes roughly as follows. If Theore m 6 fails for n =qm
+and m with the set A. Then for a lot of V ∈ Gr(Rn,m ), the projection πV (A) is
+small : Nδ(πV (A)) ≤ δ− m
+n α − ǫ. This implies that the δ-neighborhood of a ﬁber of
+πV has a large intersection with A. This means that there is a n′-dimensional slice
+(of thickness δ) of A which has a covering number ≥ δ− n′
+n α +ǫ. Now we can apply
+Theorem 6 with n′ and m to this slice. The main technical issue appearing here
+is to ensure that the slice has the correct non-concentratio n property and this is
+addressed in Lemma 28.
+If m does not divide n and m< n
+2 , write n =qm +r with 0<r <m . We can
+reduce the (n,m )-case to the (n,qm )-case.
+Proposition 10. Let 0<m<n be such that qm<n where q ≥ 1. If Theorem 6
+is true for n and m′ =qm then it is also true for n and m.
+The idea is the following. Let V1,...,V q be random m-planes distributed inde-
+pendently according to µ . Thanks to the non-concentration property of µ , the sum
+V = V1 + · · ·+Vq is a direct sum in well-spaced position with large probablit y.
+Thus the size of the projection πV (A) is comparable to the product of the sizes of
+πVi (A), i ∈ { 1,...,q }. Applying Theorem 6 with n and m′ = qm to A and the
+distribution of V , we conclude that with large probability, πV (A) has size larger
+than δ− qm
+n α − qǫ and hence for some i, πVi (A) has size larger than δ− m
+n α − ǫ.
+If m does not divide n and m> n
+2 , write n =q(n − m) +r with 0<r ≤ n − m
+and we reduce to the (n,r )-case.
+Proposition 11. Let 0<m <n be such that n =q(n − m) +r where q ≥ 1 and
+0 < r≤ n − m. If Theorem 6 is true for n and m′ = r then it is also true for n
+and m.
+This last reduction is the trickiest one. We are in a dual situ ation to the previous
+one. Again let V1,...,V q be random m-planes distributed independently according
+toµ . This time we consider the intersection instead of the sum of these subspaces.
+With large probability, the intersection V = V1 ∩ · · · ∩Vq has dimension r. Thus,
+we can apply Theorem 6 with n and m′ = r to πV (A). Then the main task is to
+relate the size of πV (A) to those of πVi (A). We would like to say that πV (A) being
+large implies one of the πVi (A) must be large as well. However, this is not true in
+general. It becomes true only if we know that no ﬁber of πV has large intersection
+with A (larger than δ− n− r
+n α − ǫ). This relation is proved in Proposition 34 using a
+reﬁnement (Lemma 37) of a combinatorial projection theorem due to Bollobás and
+Thomason [1]. It remains to treat the case where there is a ﬁbe r of πV having large
+intersection with A or, in other words, the case where A has a (n − r)-dimensional
+slice with covering number ≥ δ− n− r
+n α − ǫ. The idea is to apply a projection theorem
+to this slice. Since it has a very large size, we achieve this e ven without a non-
+concentration property (Proposition 29).
+Now let us see how to prove Theorem 6 by putting these proposit ions together.
+Proof of Theorem 6. Propositions 7 and 9 imply the theorem for all pairs (n,m )
+such that m dividesn. Consider the following order on pairs of positive integers of
+
+6 WEIKUN HE
+the form (n,m ), 0 < m < n. We say (n,m ) ≺ (n′,m ′) if (n, min(m,n − m),m ) is
+smaller than (n′, min(m′,n ′ − m′),m ′) for the lexicographical order.
+If the theorem were false then let (n,m ) be a ≺ -minimal pair for which the
+theorem fails. We know that m does not divide n. If m< n
+2 then write n =qm +r
+with 0 < r < m. We have (n,qm ) ≺ (n,m ). Hence Proposition 10 contradicts
+the minimality of (n,m ). Otherwise m > n
+2 , then write n = q(n − m) + r with
+0 < r≤ n − m. We have (n,r ) ≺ (n,m ) and then Proposition 11 contradicts the
+minimality of (n,m ). □
+Acknowledgements. This work is part of my PhD thesis conducted under the
+supervision of Emmanuel Breuillard and Péter Varjú. I am gre atly indebted to my
+advisors for their help. I am also grateful to Nicolas de Saxc é for stimulating con-
+versations and to Julien Barral, Yichao Huang and Elon Linde nstrauss for helpful
+comments.
+2. Preliminaries
+In this section we introduce notation that will be used throu ghout the paper,
+then provide some elementary estimates about the Grassmann ian and ﬁnally recall
+some tools from additive combinatorics.
+2.1. Notation and basic deﬁnitions. Throughout this paper, m and n will be
+positive integers that denote dimensions. For any ﬁnite set A, we denote by |A| its
+cardinality. We endow Rn with its usual Euclidean structure. We denote by O(n)
+the orthogonal group on Rn, by λ the Lebesgue measure on Rn and by Gr(Rn,m )
+the Grassmannian ofm-dimensional subspaces of Rn. For a linear subspace V ⊂ Rn,
+denote by πV the orthogonal projection onto V . Recall that there is a unique
+Euclidean structure on each of the exterior powers ⋀m Rn for which the standard
+basis is a orthonormal basis.
+Letδ >0 be a real number that we will refer to as the scale. For a point x ∈ Rn,
+we write B(x,δ ) or x(δ) to denote the closed ball of radius δ centered at x. Let A
+be a bounded subset of Rn. We denote by A(δ) the closed δ-neighborhood of A.
+When we observe a set A at scale δ, there are several quantities describing the
+size of A. They diﬀer one from another at most by a constant factor depe nding
+only on n. The ﬁrst one is the external covering number by δ-balls (also known
+as the metric entropy), denoted by Nδ(A). It is deﬁned as the minimal number of
+points x1,...,x N such that the balls x(δ)
+1 ,...,x (δ)
+N cover A. Let ˜A be a maximal
+2δ-separated subset of A. Its cardinality also reﬂects the size of A at scale δ. We
+can also consider the Lebesgue measure λ(A(δ)) of the δ-neighborhood of A. Here
+is a relation between these quantities.
+Lemma 12. Let δ >0 and let A be a bounded subset of Rn. Let ˜A be a maximal
+2δ-separated subset of A. Then
+(7) N2δ(A) ≤ | ˜A| ≤ N δ(A) ≤ N 1(B(0, 2)) N2δ(A),
+and
+|˜A| ≤ λ(A(δ))
+λ(B(0,δ )) ≤ 2nNδ(A).
+As a consequence, Nδ(A(δ)) ≪ n Nδ(A).
+It is sometimes useful to change scale. Clearly, Nδ(A) is nonincreasing in δ.
+Conversely, for all δ′ ≥ δ, we have
+(8) Nδ(A) ≪ n
+( δ′
+δ
+) n
+Nδ′(A).
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 7
+If f : Rm → Rn is a linear map with ∥f ∥ ≤ K where K ≥ 1, or more generally
+if f :A → Rn is K-Lipschitz, we have
+(9) Nδ(fA ) ≪ nK nNδ(A).
+When we want intersect two discretized sets A,B ⊂ Rn, we shall take the δ-
+neighborhood of at least one of the sets before intersecting . Note that Nδ(A(δ) ∩
+B(δ)) can be large while at the same time A ∩ B is empty. The same goes with
+A(2δ) ∩ B(2δ) and A(δ) ∩ B(δ). However, we have
+(10) Nδ(A(2δ) ∩ B) ≪ n Nδ(A(δ) ∩ B(δ)) ≪ n Nδ(A ∩ B(2δ)).
+2.2. Distance on the Grassmannian. For linear subspacesV,W of Rn, we deﬁne
+d∡ (V,W ) = ∥v1 ∧ · · · ∧vr ∧ w1 ∧ · · · ∧ws∥
+where (v1,...,v r) is an orthonormal basis of V and (w1,...,w s) an orthonormal
+basis of W . It is a distance when restricted to the projective space Gr(Rn, 1) but
+only in this case. For example, d∡ (V,W ) = 0 if and only if V andW have nontrivial
+intersection and d∡ (V,W ) = 1 if and only if they are orthogonal to each other. For
+other cases, d∡ (V,W ) falls between 0 and 1.
+Ifv1,...,v r are vectors and w =w1 ∧ · · · ∧ws the wedge product of an orthonor-
+mal basis of W , then
+(11) ∥v1 ∧ · · · ∧vr ∧ w∥ = ∥πW ⊥ (v1) ∧ · · · ∧πW ⊥ (vr)∥.
+In particular, if (v1,...,v r) is an orthonormal basis of V , then
+(12) d∡ (V,W ) = ∥πW ⊥ (v1) ∧ · · · ∧πW ⊥ (vr)∥.
+Iff : V → W is a linear map between euclidean spaces of same dimension, t hen
+the determinant of its matrix expressed in orthonormal base s up to a sign does not
+depend on the choice of the bases. Moreover, we have
+|det(f )|= ∥f (v1) ∧ · · · ∧f (vr)∥
+where (v1,...,v r) is an orthonormal basis of V . Together with (12) this gives yet
+another deﬁnition of d∡ (V,W ) if dim(V ) + dim(W ) = n,
+(13) d∡ (V,W ) = |det(πW ⊥ |V )|,
+where πW ⊥ |V : V → W ⊥ denotes the restriction of πW ⊥ to V .
+The natural action of the orthogonal group O(n) on the Grassmannian preserves
+d∡ , i.e.
+∀g ∈ O(n), d∡ (gV,gW ) = d ∡ (V,W ).
+Consequently if dimV + dimW =n then
+(14) d∡ (V ⊥,W ⊥ ) = d ∡ (V,W ),
+because in this case we can always send V toW ⊥ (henceW toV ⊥ ) by an element
+of O(n).
+Moreover, when we have several subspaces, V1,V 2,...,V q of Rn, we deﬁne
+d∡ (V1,...,V q) = ∥v1 ∧ · · · ∧vq∥
+where for each i = 1,...,q , vi is the wedge product of the elements of an orthonor-
+mal basis of Vi. For example, if x1,...,x n ∈ Rn are unit vectors, then
+d∡ (Rx1,..., Rxn) = |det(x1,...x n)|.
+Obviously, d∡ (V1,...,V q) is symmetric in the variables V1,...,V q. Below are
+some other elementary properties of d∡ .
+
+8 WEIKUN HE
+Lemma 13. If U,V,W are linear subspaces of Rn, then
+(15) d∡ (U,V,W ) = d ∡ (U +V,W ) d∡ (U,V ).
+Consequently, if V1,...,V q are also linear subspaces, then
+(16) d∡ (V1,...,V q) = d ∡ (V2,V 1) d∡ (V3,V 1 +V2) · · ·d∡ (Vq,V 1 + · · ·+Vq− 1);
+(17)
+d∡ (V1 + · · ·+Vq,W ) ≥ d∡ (V1,W ) d∡ (V2,V 1 +W ) · · ·d∡ (Vq,V 1 + · · ·+Vq− 1 +W ).
+Proof. If the sum U +V is not a direct sum, then d∡ (U,V,W ) = 0 and d∡ (U,V ) =
+0. Otherwise, let u and v be wedge products of orthonormal bases of U and V
+respectively. Then u ∧ v/ ∥u ∧ v∥ is the wedge product of an orthonormal basis of
+U +V . Then (15) follows immediately from the deﬁnition.
+The estimates (16) can be obtained by a simple induction. The inequality
+(17) follows from (16) since, by (16), the right hand side of ( 17) is equal to
+d∡ (V1,...,V q,W ) which, by (16) again, is equal to d∡ (V1,...,V q) d∡ (V1 + · · ·+
+Vq,W ). □
+Lemma 14. Letq ≥ 2. Let V1,...,V q be linear subspaces of Rn. If z ∈ V1 +· · ·+Vq
+then
+(18) ∥z∥ d∡ (V1,...,V q) ≤ ∥ πV1 (z)∥ + ∥πV2(z)∥ + · · ·+ ∥πVq (z)∥
+Proof. We will proceed by induction. Let q = 2 . Obviously, there is nothing to
+prove if V1 +V2 is not a direct sum. Moreover, without loss of generality, we can
+assume that Rn = V1 +V2. Hence also Rn = V ⊥
+1 +V ⊥
+2 . Write z = z1 +z2 with
+z1 ∈ V ⊥
+1 and z2 ∈ V ⊥
+2 . Then by (12),
+∥πV1(z)∥ = ∥πV1 (z2)∥ = ∥z2∥ d∡ (V ⊥
+1 , Rz2) ≥ ∥ z2∥ d∡ (V ⊥
+1 ,V ⊥
+2 ) = ∥z2∥ d∡ (V1,V 2).
+Similarly, ∥πV2 (z)∥ ≥ ∥ z1∥ d∡ (V1,V 2). We get the lemma for q = 2 using the
+triangular inequality.
+Now, suppose the lemma is true for some q ≥ 2. Let us show the lemma for
+q + 1. Let V ′
+q =Vq +Vq+1 and z′ =πV ′q (z). The induction hypothesis applied to z
+and (V1,...,V q− 1,V ′
+q ) gives
+∥z∥ d∡ (V1,...,V q− 1,V q +Vq+1) ≤ ∥ πV1 (z)∥ + · · ·+ ∥πVq− 1 (z)∥ + ∥z′∥.
+The q = 2 case applied to z′ and (Vq,V q+1) gives
+∥z′∥ d∡ (Vq,V q+1) ≤ ∥ πVq (z′)∥ + ∥πVq+1 (z′)∥ = ∥πVq (z)∥ + ∥πVq+1 (z)∥.
+Recall that d∡ (V1,...,V q+1) = d ∡ (V1,...,V q− 1,V q +Vq+1) d∡ (Vq,V q+1). We ob-
+tain the desired estimate by multiplying the ﬁrst inequalit y by d∡ (Vq,V q+1) and
+combining it with the second. □
+Lemma 15. If Rn is a direct sum of V1,...,V q then for any bounded subset A ⊂ Rn,
+(19) Nδ(A) ≪ n d∡ (V1,...,V q)− n
+q∏
+i=1
+Nδ(πVi (A)).
+Proof. Suppose for each i ∈ { 1,...,q }, πVi (A) is covered by the balls x(δ)
+i , xi ∈
+Xi ⊂ Vi. For each (xi)i ∈ X1 × · · · ×Xq, there is a unique x ∈ Rn such that
+∀i, π Vi (x) = xi. By Lemma 14, we have
+π − 1
+V1 (x(δ)
+1 ) ∩ · · · ∩π − 1
+Vq (x(δ)
+q ) ⊂ x(δ′),
+where δ′ = d ∡ (V1,...,V q)− 1qδ. So A is covered by the balls centered at such x.
+Hence Nδ′(A) ≤ |X1| · · · |Xq|. We then conclude by using the scale change estimate
+(8). □
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 9
+Lemma 16. LetV,W,U be linear subspaces of Rn, with U ⊂ W . We have
+(20) d∡ (V,U +W ⊥ ) = d ∡ (V,W ⊥ ) d∡ (πW (V ),U ).
+Proof. Both sides of (20) vanish if the dimension of V ′ = πW (V ) is smaller than
+that of V . So we can assume that dimV ′ = dim V = r. Let (v1,...,v r) be an
+orthonormal basis of V . Then (πW (v1),...,π W (vr)) is a basis of V ′. Moreover,
+by (11), we have
+∥πW (v1) ∧ · · · ∧πW (vr)∥ = d ∡ (V,W ⊥ )
+and
+∥πW (v1) ∧ · · · ∧πW (vr) ∧ u∥ = d∡ (V,U,W ⊥ ),
+where u is the wedge product an orthonormal basis of U . The desired equality (20)
+follows from the fact
+d∡ (V ′,U ) = ∥πW (v1) ∧ · · · ∧πW (vr) ∧ u∥
+∥πW (v1) ∧ · · · ∧πW (vr)∥
+and Lemma 13 applied to V,U,W ⊥ :
+d∡ (V,U,W ⊥ ) = d ∡ (U,W ⊥ ) d∡ (V,U +W ⊥ ) = d ∡ (V,U +W ⊥ ). □
+Lemma 17. Let V,W be linear subspaces of Rn. If V ′ = πW (V ), then for all
+x ∈ W ,
+(21) d∡ (V,W ⊥ )∥πV ′(x)∥ ≤ ∥ πV (x)∥ ≤ ∥ πV ′(x)∥.
+Proof. Since V ′ =πW (V ), we have V ′⊥ ∩ W ⊂ V ⊥ . Hence we can write x =y +z
+with y = πV ′(x) ∈ V ′ and z ∈ V ′⊥ ∩ W ⊂ V ⊥ . Then πV (x) = πV (y). This gives
+the second inequality in (21).
+It is clear that V andV ′ have diﬀerent dimensions if and only if V andW ⊥ have
+nontrivial intersection, which is equivalent to d∡ (V,W ⊥ ) = 0 . In this case, the ﬁrst
+inequality in the lemma holds.
+Thus we can assume dimV = dimV ′. By (12), ∥πV (y)∥ = d ∡ (Ry,V ⊥ )∥y∥. We
+know that
+d∡ (Ry,V ⊥ ) ≥ d∡ (V ′,V ⊥ ) = d ∡ (V,V ′⊥ )
+by the fact that Ry ⊂ V ′ and (14). Observe that V ′⊥ =V ′⊥ ∩ W +W ⊥ . Also,
+d∡ (V,V ′⊥ ∩ W +W ⊥ ) = d ∡ (V,W ⊥ ) d∡ (V ′,V ′⊥ ∩ W ) = d ∡ (V,W ⊥ ),
+by Lemma 16 applied to V,W andU =V ′⊥ ∩W . Hence ∥πV (y)∥ ≥ d∡ (V,W ⊥ )∥y∥,
+which proves the ﬁrst inequality in (21). □
+Lemma 18. Let V,W be linear subspaces of Rn such that d∡ (V,W ⊥ )> 0. Write
+V ′ =πW (V ). For any bounded subset A ⊂ W ,
+(22) Nδ(πV ′(A)) ≪ n d∡ (V,W ⊥ )− nNδ(πV (A)).
+In particular, if moreover dimV = dimW , then for any bounded subset A ⊂ W ,
+(23) Nδ(A) ≪ n d∡ (V,W ⊥ )− nNδ(πV (A)).
+Proof. Since d∡ (V,W ⊥ )> 0,πV restricted to W is surjective. Hence we can cover
+πV (A) by the balls πV (b)(δ), b ∈ ˜A for some ˜A ⊂ W with |˜A|= Nδ(πV (A)). Then
+πV ′(A) is covered by the balls πV ′(b)(δ′),b ∈ ˜A with δ′ = d ∡ (V,W ⊥ )− 1δ. Indeed,
+∀a ∈ A, there is b ∈ ˜A such that ∥πV (a− b)∥ ≤ δ. Hence, by (21), ∥πV ′(a− b)∥ ≤ δ′.
+Thus Nδ′(πV ′(A)) ≤ N δ(πV (A)), which yields (22) using (8). □
+
+10 WEIKUN HE
+2.3. Intersections. Here we collect two useful lemmata about intersections and
+unions of intersections.
+The ﬁrst one is about intersections of large subsets. Let A be a Borel set in Rn.
+Let Θ be an index set equipped with a probability measure µ and for each θ ∈ Θ,
+we have a Borel subset Aθ of A. We need appropriate measurability, namely, the
+map (x,θ ) ↦→ 1Aθ (x) is required to be measurable.
+Lemma 19. In the situation described above, if there is K ≥ 1 such that ∀θ ∈ Θ,
+λ(Aθ ) ≥ λ(A)/K , then for any positive integer q >0,
+µ ⊗ q(
+{
+(θ1,...,θ q) |λ(Aθ1 ∩ · · · ∩Aθq ) ≥ λ(A)
+2K q
+}
+) ≥ 1
+2K q.
+Proof. By Fubini’s theorem and then Jensen’s inequality,
+∫
+λ(Aθ1 ∩ · · · ∩Aθq ) dµ ⊗ q(θ1,...,θ q)
+=
+∫
+A
+∫
+1Aθ 1 (x) · · ·1Aθ q (x) dµ ⊗ q(θ1,...,θ q) dλ(x)
+=λ(A)
+∫
+A
+( ∫
+1Aθ (x) dµ (θ)
+) q dλ(x)
+λ(A)
+≥λ(A)
+( ∫
+A
+∫
+1Aθ (x) dµ (θ) dλ(x)
+λ(A)
+) q
+=λ(A)
+( ∫ λ(Aθ )
+λ(A) dµ (θ)
+) q
+≥ λ(A)
+K q .
+The lemma follows. □
+The next lemma is about small probability events happening s imultaneously. Let
+(E,µ ) be a probability space. Suppose we have a collection of subse ts (Ei)i∈{ 1,...,N }
+of E. We will think Ei as events with small probability and we want to estimate
+the probability such that a lot of them happen together. Here "a lot" is relatively
+to weights we give to the events. Let (ai)i∈{ 1,...,N } be non-negative real numbers
+such that ∑N
+i=1ai = 1 . For I ⊂ { 1,...,N }, write aI = ∑
+i∈ Iai. The following
+lemma is an easy consequence of Markov’s inequality.
+Lemma 20. With the notation above, we have, for any a> 0,
+µ
+( ⋃
+I|aI ≥ a
+( ⋂
+i∈ I
+Ei
+))
+≤ a− 1 max
+i∈{ 1,...,N }
+µ (Ei).
+Proof. Consider the Bernoulli random variables Xi = 1Ei for i = 1,...,N so that
+µ (Ei) = E
+[
+Xi
+]
+and
+µ
+( ⋃
+I|aI ≥ a
+⋂
+i∈ I
+Ei
+)
+= P
+[ N∑
+i=1
+aiXi ≥ a
+]
+.
+Then it follows from Markov’s inequality that
+P
+[ N∑
+i=1
+aiXi ≥ a
+]
+≤ a− 1E
+[ N∑
+i=1
+aiXi
+]
+≤ a− 1 max
+i∈{ 1,...,N }
+E
+[
+Xi
+]
+.
+This ﬁnishes the proof. □
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 11
+2.4. Additive combinatorial tools. LetA,B,C be bounded subsets of Rn. We
+look at them at scale δ >0. We will use several well-known results from additive
+combinatorics in our metric entropic setting. We shall use s ome usual notation
+from additive combinatorics :
+A +B = {a +b |a ∈ A, b ∈ B},
+A − B = {a − b |a ∈ A, b ∈ B},
+and for integer k ≥ 1, kA denotes the k-fold sumset A + · · ·+A.
+Lemma 21 (Ruzsa triangular inequality) . We have
+Nδ(B)Nδ (A − C) ≪ n Nδ(A − B)Nδ(B − C).
+Lemma 22 (Plünnecke-Ruzsa inequality). For all K ≥ 1, if Nδ(A+B) ≤ KNδ(B)
+then for all natural number k and l,
+Nδ(kA − lA) ≪ n K k+lNδ(B).
+Both lemmata above can be obtained by approximating Rn by the lattice δ. Zd
+and then using its discrete counterpart (see for example [25 ]) as a black box. More
+precisely for a subset A ⊂ Rn, we deﬁne
+˜A =
+{
+a ∈ δ ·Zn |A ∩ a(nδ) ̸= ∅
+}
+.
+ThenA ⊂ ˜A(nδ) and ˜A ⊂ A(nδ). These inclusions behave nicely under addition and
+subtraction.
+Before stating the Balog-Szemerédi-Gowers theorem in the d iscretized setting let
+us recall some basic facts about energy in the discrete setti ng. Let ϕ : X → Y be a
+map between discrete sets and A a ﬁnite subset of X, deﬁne the ϕ -energy of A to
+be
+ω (ϕ,A ) =
+∑
+y∈ Y
+|A ∩ ϕ − 1(y)|2.
+In other words, it is the square of the l2-norm of the push-forward of the counting
+measure on A under ϕ or the number of collisions of the map ϕ |A :
+ω (ϕ,A ) = ∥ϕ ∗ 1A∥2
+2 = # {(a1,a 2) ∈ A × A : ϕ (a1) = ϕ (a2)}.
+For example, the usual additive energy between two subsets A andB in an abelian
+group G is ω (+,A × B) where + :G × G → G denotes the group law of G.
+When nothing is known about ϕ , ω (ϕ,A ) can be as small as |A| (when ϕ is
+injective) and as large as |A|2 (when ϕ is constant on A). If the image of A by ϕ
+is small then the energy is large by the Cauchy-Schwarz inequ ality :
+(24) ω (ϕ,A ) ≥ |A|2
+|ϕ (A)|.
+The converse is not true. Nevertheless, we have a partial con verse.
+Lemma 23. Suppose there are K,M > 0 such that ω (ϕ,A ) ≥ M
+K |A| and for all
+y ∈ Y , |A ∩ ϕ − 1(y)| ≤ M . Then there exists A′ ⊂ A such that |A′| ≥ 1
+2K |A| and
+|ϕ (A′)| ≤ 2K
+M |A|.
+Proof. The idea is to trim oﬀ small ﬁbers. We consider
+Y ′ =
+{
+y ∈ Y | |A ∩ ϕ − 1(y)| ≥ M
+2K
+}
+and let A′ =ϕ − 1(Y ′). By the deﬁnition Y ′, we have
+|A| ≥
+∑
+y∈ Y ′
+|A ∩ ϕ − 1(y)| ≥ M
+2K |Y ′|.
+
+12 WEIKUN HE
+Hence |ϕ (A′)| ≤ 2K
+M |A|.
+From the deﬁnition of the energy,
+ω (ϕ,A ) ≤ M
+2K
+∑
+y /∈ Y
+|A ∩ ϕ − 1(y)|+M
+∑
+y∈ Y ′
+|A ∩ ϕ − 1(y)|
+≤ M
+2K |A|+M |A′|.
+It follows that |A′| ≥ 1
+2K |A|. □
+What the Balog-Szemerédi-Gowers theorem roughly says is th at if ϕ is a group
+law (or has some injectivity property similar to a group law) and A is a Cartesian
+product then the conclusion of A′ in the conclusion of the lemma can be chosen to
+be a Cartesian product.
+For discretized sets we have an analogous notion of energy. L etϕ : X → Y be a
+map between metric spaces and A a bounded subset of X. We deﬁne the ϕ -energy
+of A at scale δ as
+ω δ(ϕ,A ) = Nδ
+(
+{(a,a ′) ∈ A × A |d(ϕ (a),ϕ (a′)) ≤ δ}
+)
+.
+Here we adhere to the convention that the distance on any Cart esian product X × Y
+of metric spaces is such that
+d
+(
+(x,y ), (x′,y ′)
+) 2
+=d(x,x ′)2 +d(y,y ′)2,
+for all pairs (x,y ), (x′,y ′) ∈ X × Y .
+The analogue of inequality (24) is true. Namely, if A is a bounded subset of Rn
+and ϕ is deﬁned on Rn then
+(25) ω δ(ϕ,A ) ≫ n
+Nδ(A)2
+Nδ(ϕ (A)).
+We also remark that if ψ : A → Rn is K-Lipschitz with K ≥ 1 and ϕ : Rn → Y
+is an another map, then it follows from (9) that
+(26) ω δ(ϕ,ψA ) ≪ nK 2nω δ(ϕ ◦ψ,A ).
+We will need the following additive version of the Balog-Sze merédi-Gowers the-
+orem which gives a nice criterion for the additive energy bet ween two sets to be
+large. See for example [24, Theorem 6.10] where it is proved i n a much broader
+context.
+Theorem 24 (Balog-Szemerédi-Gowers theorem). LetK ≥ 1 be a parameter. Let
+A and B be bounded subsets of Rn. If
+ω δ(+,A × B) ≥ 1
+K Nδ(A)
+3
+2 Nδ(B)
+3
+2,
+then there exists A′ ⊂ A and B′ ⊂ B such that
+Nδ(A′) ≫ nK − O(1)Nδ(A), Nδ(B′) ≫ nK − O(1)Nδ(B)
+and
+Nδ(A′ +B′) ≪ nK O(1)Nδ(A)
+1
+2 Nδ(B)
+1
+2.
+3. Technical lemmata
+In this section, we show the deduction of Theorem 1 from Theor em 6 and collect
+several other lemmata which are needed in the next section. S ince they are mostly
+about technical details, it is advisable to skip their proof s for a ﬁrst reading. In
+this section, implied constants in Landau notations O(f ) and Vinogradov notations
+f ≪ g may depend on the dimension n and the parameter κ. Every statement is
+true only for δ >0 suﬃciently small and by suﬃciently small we mean smaller tha t
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 13
+a constant depending on all other parameters (e.g. n,m,α ,κ andǫ) but not on A
+nor on µ . Typically, if C =O(1) then C ≤ δ− ǫ.
+3.1. Proof of Theorem 1 admitting Theorem 6. We deduce Theorem 1 from
+Theorem 6.
+Proposition 25. Assume that 0 < m < n, 0 < α < n, κ > 0 and ǫ > 0 are
+parameters that make Theorem 6 true. Let A be a subset of Rn contained in the
+unit ball. Let µ be a probability measure on Gr(Rn,m ). Assume that µ satisﬁes (3)
+and A satisﬁes
+Nδ(A) ≥ δ− α + ǫ
+2 ;
+∀ρ ≥ δ, ∀x ∈ Rn, Nδ(A ∩ B(x,ρ )) ≤ δ− ǫ
+2ρκ Nδ(A).
+Then
+(27) µ
+(
+E(A, ǫ
+3 )
+)
+≤ δ
+ǫ
+2.
+The idea is the following. A ﬁrst application of Theorem 6 giv es a subset A′ ⊂ A
+with µ (E(A′,ǫ )) ≤ δǫ. Either A′ is large enough in which case we are done or we
+can cut A′ out of A and apply Theorem 6 again. This will give us another subset
+A′. Then we iterate until the union of these A′s is large enough.
+Proof. Let N ≥ 0 be an integer. Suppose we have already constructed A1,...,A N
+such that A(δ)
+i are pairwise disjoint and µ (E(Ai,ǫ )) ≤ δǫ for every i = 1,...,N .
+Either we have
+(28) Nδ
+(
+A \
+N⋃
+i=1
+A(2δ)
+i
+)
+≤ δ
+ǫ
+2 Nδ(A),
+in which case we stop, or the set A \⋃N
+i=1A(2δ)
+i satisﬁes both (1) and (2). In the
+latter case Theorem 6 gives us AN +1 ⊂ A \⋃N
+i=1A(2δ)
+i with µ (E(AN +1,ǫ )) ≤ δǫ.
+By construction, A(δ)
+N +1 is disjoint with any of A(δ)
+i , i = 1,...,N .
+When this procedure ends write A0 = ⋃N
+i=1Ai. Then (28) says Nδ(A \A(2δ)
+0 ) ≤
+δ
+ǫ
+2 Nδ(A). Moreover, by the disjointness of A(δ)
+1 ,...,A (δ)
+N , we have
+Nδ(A0) =
+N∑
+i=1
+Nδ(Ai).
+Set ai = Nδ (Ai)
+Nδ (A0) . We claim that
+E(A, ǫ
+3 ) ⊂
+⋃
+I
+⋂
+i∈ I
+E(Ai,ǫ ),
+where the index set I runs over subsets of {1,...,N } with ∑
+i∈ Iai ≥ δ
+ǫ
+2 . The
+desired upper bound (27) then follows immediately from Lemm a 20.
+We now proceed to show the claim. Let V ∈ E (A, ǫ
+3 ). By deﬁnition, there exists
+A′ ⊂ A with Nδ(A′) ≥ δ
+ǫ
+3 Nδ(A) and Nδ(πV (A′)) ≤ δ− m
+n α − ǫ
+3 . Consider the index
+set I deﬁned as
+I = {i ∈ { 1,...,N } | Nδ(A′(2δ) ∩ Ai) ≥ δǫNδ(Ai)}.
+
+14 WEIKUN HE
+We have, by Lemma 12 and (10),
+Nδ(A′) − N δ(A \A(2δ)
+0 ) ≤
+n∑
+i=1
+Nδ(A′ ∩ A(2δ)
+i )
+≪
+∑
+i∈ I
+Nδ(Ai) +
+∑
+i /∈ I
+Nδ(A′(2δ) ∩ Ai)
+≪
+∑
+i∈ I
+aiNδ(A) +δǫNδ(A)
+Hence ∑
+i∈ Iai ≥ δ
+ǫ
+2 . On the other hand, for all i ∈ I, since
+Nδ(πV (A′(2δ) ∩ Ai)) ≤ N δ(πV (A′)(2δ)) ≪ N δ(πV (A′)),
+we have
+Nδ(πV (A′(2δ) ∩ Ai)) ≤ δ− m
+n α − ǫ.
+Hence V ∈ E (Ai,ǫ ) for all i ∈ I. This ﬁnishes the proof of the claim. □
+3.2. Action of linear transformations. Clearly, all the assumptions and the
+conclusion of Theorem 6 are invariant under the action of the orthogonal group
+O(n). The next proposition states that the action of a δ− ǫ-bi-Lipschitz linear
+transformation only aﬀects them by a factor of δO(ǫ). Here, while f ∈ GL(Rn)
+acts on Rn in the usual way, it acts on the Grassmannian by multiplicati on by
+f ⊥ := (f − 1)∗ or equivalently,f ⊥V = (fV ⊥ )⊥ for all V ∈ Gr(Rn,m ).
+Lemma 26. Let 0 < m < nbe dimensions. Let ǫ > 0. Let f ∈ GL(Rn) with
+∥f ∥ + ∥f − 1∥ ≤ δ− ǫ. Let A be a bounded subset of Rn and µ a probability measure
+on Gr(Rn,m ).
+(i) For each of the conditions (1)–(3) of Theorem 1, if it holds for A and µ
+with the parameters α , κ and ǫ then it also holds for the image set fA and
+the image measure f ⊥
+∗ µ with the parameters α , κ and O(ǫ) in the place of
+ǫ.
+(ii) For all V ∈ Gr(Rn,m ), Nδ(πf ⊥ V (fA )) ≤ δ− O(ǫ)Nδ(πV (A)).
+(iii) We have µ (E(A,ǫ )) ≤ (f ⊥
+∗ µ )
+(
+E(fA,O (ǫ))
+)
+. In particular, if the conclusion
+of Theorem 6 holds for fA andf ⊥
+∗ µ with some ǫ′> 0 in the place of ǫ then
+it holds for A and µ with ǫ = ǫ′
+O(1) .
+(iv) For all V ∈ Gr(Rn,m ) and all x ∈ f ⊥V ,
+Nδ
+(
+fA ∩ π − 1
+f ⊥ V (x(δ))
+)
+≤ δ− O(ǫ) max
+y∈ V
+Nδ
+(
+A ∩ π − 1
+V (y(δ))
+)
+.
+Proof. The statement about the conditions (1) and (2) follows immed iately from
+the inequality (9). As for the condition (3), it suﬃces to pro ve that for all W ∈
+Gr(Rn,n − m) and all ρ ≥ δ,
+(29) f ⊥
+∗ µ
+(
+V∡ (f ⊥W,ρ )
+)
+≤ µ
+(
+V∡ (W,δ − O(ǫ)ρ)
+)
+.
+From the Cartan decomposition of f , we see easily that ∀r = 1,...,n , ∥⋀rf ⊥ ∥ +
+∥(⋀rf ⊥ )− 1∥ ≤ δ− O(ǫ). For V ∈ Gr(Rn,m ), let v be the wedge product of an
+orthonormal basis of V and w that of W . We have
+d∡ (f ⊥V,f ⊥W ) = ∥(⋀nf ⊥ )(v ∧ w)∥
+∥(⋀mf ⊥ )v∥ ∥(⋀n− mf ⊥ )w∥
+≥ ∥(⋀nf ⊥ )− 1∥− 1∥v ∧ w∥
+∥⋀mf ⊥ ∥ ∥⋀n− mf ⊥ ∥
+≥ δO(ǫ) d∡ (V,W ).
+Hence f ⊥V ∈ V ∡ (f ⊥W,ρ ) implies V ∈ V ∡ (W,δ − O(ǫ)ρ), which establishes (29).
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 15
+For the second statement, observe that there is a ﬁnite set ˜A of cardinality
+|˜A|= Nδ(πV (A)) such that
+A ⊂ ˜A +V ⊥ + B(0,δ ).
+Applying f and then πf ⊥ V on both sides, we obtain
+πf ⊥ V (fA ) ⊂ πf ⊥ V (f ˜A) + B(0,δ 1− ǫ).
+This proves that Nδ1− ǫ (πf ⊥ V (fA )) ≤ N δ(πV (A)). We conclude by the scale change
+estimate (8).
+For the next statement, it suﬃces to prove that f ⊥V ∈ E (fA,O (ǫ)) when-
+ever V ∈ E (A,ǫ ). Indeed, let V ∈ E (A,ǫ ). Then there exists A′ ⊂ A such
+that Nδ(A′) ≥ δǫNδ(A) and Nδ(πV (A′)) < δ− m
+n α − ǫ. On the one hand, by (9),
+we have Nδ(fA ′) ≥ δO(ǫ)Nδ(fA ). On the other hand, from (ii) it follows that
+Nδ(πf ⊥ V (fA ′)) ≤ δ− m
+n α − O(ǫ). Hence f ⊥V ∈ E (fA,O (ǫ)).
+For the last statement, it suﬃces to prove that for any x ∈ f ⊥V , there exists
+y ∈ V such that
+(30) fA ∩ π − 1
+f ⊥ V (x(δ)) ⊂ f
+(
+A ∩ π − 1
+V (y(δ1− ǫ ))
+)
+.
+Indeed, if a ∈ A satisﬁes πf ⊥ V (f (a)) ∈ x(δ), then
+f (a) ∈ x +fV ⊥ + B(0,δ ).
+Applying f − 1 and then πV on both sides, we obtain
+πV (a) ∈ πV (f − 1(x)) + B(0,δ 1− ǫ).
+This proves (30) with y =πV (f − 1(x)). □
+3.3. Non-concentration property for projections. Let A a subset of Rn as
+in Theorem 6. We want to understand whether a projection of A still satisﬁes
+some similar regularity property as A does. More precisely we want to ﬁnd V ∈
+Gr(Rn,m ) and a large subset A′ of A such that
+∀ρ ≥ δ, ∀x ∈ V, Nδ(πV (A′) ∩ x(ρ)) ≤ ρκ 1δ− m
+n α − ǫ′
+,
+for some κ 1> 0 proportional to κ and some ǫ′> 0 proportional to ǫ.
+In the special case where m dividesn, we have the following result. We will only
+need this non-concentration result in this special case, al though it might be true in
+a more general context.
+Lemma 27. Let n = qm with q ≥ 2. For any parameters 0 < α < n, κ >0 and
+ǫ > 0, the following is true for δ > 0 suﬃciently small. If A is a subset of Rn
+contained in the unit ball and µ is a probability measure on Gr(Rn,m ) satisfying
+the assumptions (1)–(3) for the parameters α , κ and ǫ, then
+µ (E(A) \ Ereg(A)) ≤ δ2ǫ,
+where Ereg(A) denotes the set of all V ∈ E (A) such that ∃A′ ⊂ A with Nδ(A′) ≥
+δ2ǫNδ(A) and Nδ(πV (A′)) ≤ δ− m
+n α − ǫ and
+(31) ∀ρ ≥ δ, ∀x ∈ V, Nδ(πV (A′) ∩ x(ρ)) ≤ ρ
+κ
+2q2δ− m
+n α − 10ǫ.
+The idea of the proof is the following. When V ∈ E (A), there is a large subset
+A′ with small projection to V . We then remove small ﬁbers of the projection
+πV :A′ → V to get A′′. Any large subset in of πV (A′′) will have large preimage by
+πV . Thus if V /∈ E reg(A) then there will be a cylinder with axis V ⊥ and radius ρ
+in which A is very dense. If there are a lot of such V we can then intersect these
+cylinders to get a ball of radius ρ
+1
+q which will contradict the non-concentration
+property (2) of A.
+
+16 WEIKUN HE
+Proof. For conciseness, write κ 1 = κ
+2q2 . We claim that if V ∈ E (A) \ Ereg(A) then
+there exists x ∈ V and ρ ≥ δ such that
+(32) Nδ
+(
+A ∩ π − 1
+V (x(ρ))
+)
+≥ ρκ 1δ− 6ǫNδ(A).
+Indeed, let V ∈ E (A) \ Ereg(A). Then from the deﬁnition (6) there exists A′ ⊂ A
+with Nδ(A′) ≥ δǫNδ(A) and Nδ(πV (A′)) ≤ δ− α
+q − ǫ. Now we remove small ﬁbers of
+the map πV restricted to A′. Consider the set
+B =
+{
+y ∈ V | Nδ
+(
+A′ ∩ π − 1
+V (y(δ))
+)
+≥ δ
+α
+q +3ǫNδ(A)
+}
+and A′′=A′ ∩ π − 1
+V (B(δ)). We have, for all y ∈ V ,
+Nδ
+(
+(A′ \A′′) ∩ π − 1
+V (y(δ))
+)
+≤ δ
+α
+q +3ǫNδ(A).
+for otherwise y would belong to B and the intersection (A′ \A′′) ∩ π − 1
+V (y(δ)) would
+be empty. Consequently,
+Nδ(A′ \A′′) ≤ N δ(πV (A′)) max
+y∈ V
+Nδ
+(
+(A′ \A′′) ∩ π − 1
+V (y(δ))
+)
+≤ δ2ǫNδ(A).
+It follows that Nδ(A′′) ≥ δ2ǫNδ(A). But V /∈ E reg(A), the non-concentration prop-
+erty (31) fails for πV (A′′) : there exists x ∈ V and ρ ≥ δ such that
+(33) Nδ
+(
+πV (A′′) ∩ x(ρ))
+≥ ρκ 1δ− α
+q − 10ǫ.
+Let ˜B be a maximal 6δ-separated subset of πV (A′′) ∩ x(ρ). From (7) and (33), we
+have |˜B| ≫ ρκ 1δ− α
+q − 10ǫ. Moreover for all y ∈ ˜B, by the deﬁnition of A′′, y ∈ B(δ),
+hence Nδ
+(
+A′ ∩ π − 1
+V (y(2δ))
+)
+≥ δ
+α
+q +3ǫNδ(A). Since ˜B is 6δ-separated, all the balls
+y(2δ) with center y ∈ ˜B are 2δ-away from each other. Consequently,
+Nδ
+(
+A′ ∩ π − 1
+V (x(ρ+2δ))
+)
+≥
+∑
+y∈ ˜B
+Nδ
+(
+A′ ∩ π − 1
+V (y(2δ))
+)
+≥ | ˜B|δ
+α
+q +3ǫNδ(A) ≥ (ρ + 2δ)κ 1δ− 6ǫNδ(A).
+This ﬁnishes the proof of the claim.
+To obtain a contradiction, suppose that µ (E(A) \ Ereg(A)) ≥ δ2ǫ. Note that
+the radius ρ in the claim depends on V . Nevertheless, from (32) we know that it
+ranges from δ to δ
+6ǫ
+κ 1 . For the argument below, we want (32) to hold for a lot of
+V ∈ E (A) \ Ereg(A) with some radius ρ ≥ δ independent of V . Indeed, by a simple
+pigeonhole argument 1, we can ﬁnd a subset D ⊂ E (A) \ Ereg(A) and a radius ρ ≥ δ
+such that µ (D) ≥ δ3ǫ and for all V ∈ D , there exists x ∈ V such that
+Nδ(A ∩ π − 1
+V (x(ρ))) ≥ ρ2κ 1δ− 5ǫNδ(A)
+and hence, by Lemma 12,
+λ(A(δ) ∩ π − 1
+V (x(ρ))) ≥ ρ2κ 1δ− 4ǫλ(A(δ)).
+Let V1,...,V q be random elements of Gr(Rn,m ) independently distributed ac-
+cording to µ . On the one hand, from Lemma 19 applied to the restriction of µ to
+D, it follows that with probability at least 1
+2 (ρ2κ 1δ− 4ǫ)qµ (D)q ≥ 1
+2ρ2qκ 1δ− qǫ, there
+exists x1 ∈ V1,...,x q ∈ Vq such that
+(34) λ
+(
+A(δ) ∩ π − 1
+V1 (x(ρ)
+1 ) ∩ · · · ∩π − 1
+Vq (x(ρ)
+q )
+)
+≥ 1
+2ρ2qκ 1δ− 4qǫλ(A(δ)).
+On the other hand, from (16) and (3), it follows that with prob ability at least
+1 − (q − 1)δ− ǫρ
+κ
+q , we have
+(35) d∡ (V1,...,V q) ≥ ρ
+q− 1
+q .
+1Arrange diﬀerent ρ into intervals of the form [δ2− k
+, δ 2− k− 1
+], where 0 ≤ k ≪ − log(ǫ).
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 17
+Now with our choice of κ 1, we have 1 − (q − 1)δ− ǫρ
+κ
+q + 1
+2ρ2qκ 1δ− qǫ > 1. This
+means that for some (V1,...,V q), both (34) and (35) hold. By Lemma 14, there
+exists x ∈ Rn such that
+π − 1
+V1 (x(ρ)
+1 ) ∩ · · · ∩π − 1
+Vq (x(ρ)
+q ) ⊂ x(ρ ′)
+with ρ′ =qρ d∡ (V1,...,V q)− 1 ≤ qρ
+1
+q . Then the non-concentration property (2) of
+A implies that
+λ
+(
+A(δ) ∩ x(ρ ′))
+≪ δ− ǫρ
+κ
+qλ(A(δ)).
+Combining this with (34) yields
+ρ2qκ 1δ− 4qǫ ≪ δ− ǫρ
+κ
+q,
+which is impossible with our choice of κ 1. □
+3.4. Non-concentration property for slices. We shall also consider slices of A,
+i.e. intersection of A with a δ-neighborhood of a aﬃne subspace. When n = qm,
+we have similar non-concentration results for (n − m)-dimensional slices of A.
+Lemma 28. Letn =qm with q ≥ 2 a positive integer. Let 0<α<n , κ> 0 and
+ǫ >0 be parameters. If the statement in Theorem 6 fails for the set A, then there
+is a (n − m)-dimensional aﬃne subspace y +W and a subset B ⊂ A(δ) ∩ (y +W )
+such that
+Nδ(B) ≥ δ− β +O(ǫ) and
+(36) ∀ρ ≥ δ, ∀x ∈ W Nδ(B ∩ x(ρ)) ≤ ρ
+κ
+2q2δ− β − O(ǫ),
+whereβ = q− 1
+q α .
+Here is an outline of the proof. The negation of Theorem 6 to A implies that
+there is a large subset Aq ⊂ A occupying a large portion of the Cartesian product∏q
+j=1πVj (Aq) of its projections to q subspaces in nearly orthogonal position. Then,
+because of Lemma 27, the ﬁrst factor πV1 (Aq) can be chosen to have the non-
+concentration property. This in turn will imply the non-con centration property of
+the projection of Aq to V1 + · · ·+Vq− 1. Then it would suﬃce to ﬁnd a slice whose
+projection to V1 + · · ·+Vq− 1 is nearly as large as that of Aq, which can be easily
+done given the negation of Theorem 6.
+Proof. Suppose the statement in Theorem 6 fails for the set A ⊂ Rn. This means
+µ (E(A′)) > δǫ for any subset A′ ⊂ A. In particular, Ereg(A) is non-empty by
+Lemma 27. Let V1 ∈ E reg(A). There exists A1 ⊂ A with Nδ(A1) ≥ δ− α +3ǫ and
+(37) ∀ρ ≥ δ, ∀x ∈ V1, Nδ(πV1 (A1) ∩ x(ρ)) ≤ ρ
+κ
+2q2δ− 1
+q α − 10ǫ.
+Let ǫ1 = 3ǫ
+κ . We construct by a simple induction a sequence of subspaces
+V2,...,V q and a nested sequence of subsets A1 ⊃ · · · ⊃ Aq satisfying for any
+j = 2,...,q ,
+d∡ (Vj,V 1 + · · ·+Vj− 1) ≥ δǫ1,(38)
+Nδ(Aj ) ≥ δǫNδ(Aj− 1),
+Nδ(πVj (Aj)) ≤ δ− 1
+q α − ǫ.(39)
+This is possible since at each step, we have by (3),
+µ
+(
+E(Aj− 1) \ V∡ (V1 + · · ·+Vj− 1,δ ǫ1)
+)
+≥ δǫ − δ2ǫ> 0.
+From the fact that
+Nδ(Aq) ≤ N δ(πVq (Aq)) max
+y∈ Vq
+Nδ(Aq ∩ π − 1
+Vq (y(δ))),
+
+18 WEIKUN HE
+we get some y⋆ ∈ Vq such that
+(40) Nδ(Aq ∩ π − 1
+Vq (y(δ)
+⋆ )) ≥ δ− q− 1
+q α +O(ǫ).
+After a translation, we can suppose y⋆ = 0 . We write V = V1 + · · ·+Vq− 1 and
+W =V ⊥
+q and set B0 =Aq ∩ W (δ) and B =πW (B0). We have Nδ(B) ≥ δ− β +O(ǫ)
+from (40) and the fact that B0 ⊂ B(δ).
+It remains to show the non-concentration property (36) for B. Let ρ ≥ δ and
+x ∈ W . From (38), d∡ (V,W ⊥ ) = d ∡ (V,V q) ≥ δO(ǫ). Hence, by (23) in Lemma 18,
+Nδ(B ∩ x(ρ)) ≤ δ− O(ǫ)Nδ(πV (B) ∩ x(ρ)
+0 )
+where x0 =πV (x). Moreover B ⊂ A(δ)
+q , hence, by (10),
+Nδ(πV (B) ∩ x(ρ)
+0 ) ≤ δ− ǫNδ(πV (Aq) ∩ x(2ρ)
+0 ).
+Then Lemma 15 applied to the set πV (Aq) ∩x(2ρ)
+0 inV = ⨁q− 1
+j=1Vj together with
+(38) yield
+Nδ(πV (Aq) ∩ x(2ρ)
+0 ) ≤ δ− O(ǫ)Nδ(πV1 (Aq) ∩ x(2ρ)
+1 )
+q− 1∏
+j=2
+Nδ(πVj (Aq))
+where x1 = πV1 (x0). The required non-concentration property (36) then follow s
+from (37) and (39). □
+3.5. Without the non-concentration property. As illustrated by the example
+in the introduction, the non-concentration condition (2) o n A is crucial to have a
+gainǫ> 0 in the conclusion. Without this condition, we can still expe ct Nδ(πV (A))
+to be close to Nδ(A)
+m
+n for generic V ∈ Gr(Rn,m ). This is the subject of the next
+proposition.
+Proposition 29. Given 0 < m ≤ n, 0 < α < nand κ > 0, there exists C > 1
+such that for all 0 < ǫ <κ
+C , the following is true for all δ >0 suﬃciently small.
+Let A ⊂ Rn be a subset contained in the unit ball and µ a probability measure on
+Gr(Rn,m ). Assume that
+(41) Nδ(A) ≥ δ− α − Cǫ.
+Further assume the non-concentration property (3) for µ if m<n . Then
+µ (E(A)) ≤ δǫ.
+When m divides n, this follows almost immediately from Lemma 15. Then the
+task is to reduce to this special case. Since it shares the sam e set of ideas as the
+proof of Theorem 6, the proof below will only be outlined and m ore details can be
+found in the next section.
+Proof. For 0 < m≤ n, denote by P(n,m ) the statement we want to show. Note
+that for all n ≥ 1, P(n,n ) is trivially true. We will proceed by an induction similar
+to that in the proof of Theorem 6. It suﬃces to show the followi ng two types of
+inductive steps. Let 0<m ≤ n and q,r> 0 be integers.
+(i) If mq ≤ n, then P(n,qm ) implies P(n,m ).
+(ii) If n = q(n − m) + r with 0 < r ≤ n − m, then P(n,r ) and P(n − r,m )
+imply P(n,m ).
+Using the same argument in Proposition 25, we see that in orde r to show P(n,m ),
+it suﬃces to show µ (E(A′)) ≤ δǫ for some subset A′ ⊂ A. In other words, if the
+conclusion of P(n,m ) fails for the set A then for any subset A′ ⊂ A,µ (E(A′)) ≥ δǫ.
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 19
+Proof of (i) . Let V1,...,V q be random elements of Gr(Rn,m ) independently
+distributed according to µ . Write V =V1 + · · ·+Vq. When qm < n, we know by
+Lemma 33 that
+P
+[
+dim(V ) = qm
+]
+≥ 1 − (q − 1)δκ − ǫ,
+and the distribution of V conditional to the event dim(V ) = qm has the corre-
+sponding non-concentration property. By P(n,qm ), we know that for any C′> 0,
+if the constant C in (41) is large enough (depending on C′) then the probability
+that there exists A′ ⊂ A satisfying
+Nδ(A′) ≥ δC ′ǫNδ(A) and Nδ(πV (A′)) ≤ δ− qm
+n α − C ′ǫ
+is at most δC ′ǫ + (q − 1)δκ − ǫ.
+Suppose that P(n,m ) fails for A. Then by a simple induction we show that with
+probability at least δO(ǫ), we have
+d∡ (V1,...,V q) ≥ δO(ǫ)
+and there exists Aq ⊂ A such that Nδ(Aq) ≥ δO(ǫ)Nδ(A) and
+∀j = 1,...,q, Nδ(πVj (Aq)) ≤ δ− m
+n α − ǫ
+and hence, by (19) applied to πV (A) in V = ⨁q
+j=1Vj,
+Nδ(πV (A)) ≤ δ− qm
+n α − O(ǫ).
+We obtain a contradiction if C′ were chosen to be larger than any of the implicit
+constants in the Landau notations appearing above.
+Proof of (ii), Case 1 . Assume ﬁrstly that A contains large slice of dimension
+n − r. More precisely, assume that there exists W ∈ Gr(Rn,n − r) andx ∈ Rn such
+that
+Nδ
+(
+A ∩ (x +W (δ))
+)
+≥ δ− n− r
+n α − C ′ǫ
+whereC′ is the constant given by P(n− r,m ) applied to 0<m ≤ n− r, n− r
+n α andκ.
+Without loss of generality, we can assume that x = 0 and that B =πW (A ∩ W (δ))
+is contained in A. Lemma 31 tells us that we can apply P(n − r,m ) to B ⊂ W
+with the image measure of µ byπW . Then we can conclude using Lemma 32.
+Proof of (ii), Case 2 . Otherwise A does not contain any large slice of dimension
+n − r :
+(42) ∀x ∈ Rn, ∀W ∈ Gr(Rn,n − r), Nδ
+(
+A ∩ (x +W (δ))
+)
+≤ δ− n− r
+n α − O(ǫ).
+Let V1,...,V q be random elements of Gr(Rn,m ) independently distributed ac-
+cording to µ . Write V = V1 ∩ · · · ∩Vq. By (14) and Lemma 33 applied to
+V ⊥
+1 + · · ·+V ⊥
+q =V ⊥ ,
+P
+[
+dim(V ) = r
+]
+≥ 1 − (q − 1)δκ − ǫ
+and that the distribution of V conditional to the event dim(V ) = r has a non-
+concentration property. By P(n,r ), we know that for any C′> 0, if the constant
+C in (41) is large enough (depending on C′) then the probability that there exists
+A′ ⊂ A satisfying
+Nδ(A′) ≥ δC ′ǫNδ(A) and Nδ(πV (A′)) ≤ δ− r
+n α − C ′ǫ
+is at most δC ′ǫ + (q − 1)δκ − ǫ.
+Suppose that P(n,m ) fails for A. Again by an induction we show that with
+probability at least δO(ǫ), we have
+d∡ (V ⊥
+1 ,...,V ⊥
+q ) ≥ δO(ǫ)
+and there exists Aq ⊂ A such that Nδ(Aq) ≥ δO(ǫ)Nδ(A) and
+∀j = 1,...,q, Nδ(πVj (Aq)) ≤ δ− m
+n α − ǫ
+
+20 WEIKUN HE
+Together with (42), this implies by Proposition 34 that ther e exists A′ ⊂ Aq such
+that
+Nδ(A′) ≥ δO(ǫ)Nδ(A) and Nδ(πV (A′)) ≤ δ− r
+n α − O(ǫ).
+Again we obtain a contradiction if C′ is large compared to any of the implied
+constants in the previous Landau notations. □
+4. Proof of the main result
+In this section, we prove Theorem 6 and thus Theorem 1. This is done by
+proving ﬁrst the base case where n = 2m (Propsoition 7) and then the induction
+steps (Propositions 9-11). Note that on account of Proposit ion 25, for a given pair
+(n,m ), if Theorem 6 is true for these dimensions then so is Theorem 1 . Therefore,
+when we use Theorem 6 as induction hypothesis, the conclusio n is µ (E(A)) ≤ δǫ
+while when we prove by contradiction by saying that A is a counterexample for
+Theorem 6, we are assuming µ (E(A′))>δ ǫ for all subsets A′ of A.
+Like in the previous section, all implied constants in Landa u and Vinogradov
+notations in this section may depend on n and κ. Again, every statement in this
+section is true only for δ >0 smaller than a constant depending on n,m,α ,κ and
+ǫ.
+4.1. Half dimensional projections. For the special case n = 2 m, we follow
+mainly the proof in [2] (which deals with the case m = 1 ) while using a technique
+in the proof of Proposition 2 in Bourgain-Glibichuk [4]. The main idea, as explained
+in the introduction, is to reduce to the case where A is a Cartesian product X⋆ × X⋆
+with the help of Balog-Szemerédi-Gowers theorem and then ap ply a sum-product
+estimate.
+Proof of Proposition 7. Suppose Theorem 6 fails for the subset A ⊂ Rn and the
+probability measure µ on Gr(Rn,m ) with n = 2m. We will get a contradiction
+whenǫ is small enough. By Lemma 27, there is a subspace V1 and a subset A1 ⊂ A
+with the following properties:
+Nδ(A1) ≥ δ− α +3ǫ, Nδ(πV1 (A1)) ≤ δ− α
+2 − ǫ and
+(43) ∀ρ ≥ δ, ∀x ∈ V1, Nδ(πV1 (A1) ∩ x(ρ)) ≤ ρ
+κ
+8δ− α
+2 − O(ǫ).
+Letǫ1 = 3ǫ
+κ . Then µ
+(
+E(A1)\V∡ (V1,δ ǫ1)
+)
+≥ δǫ − δ2ǫ> 0 by the non-concentration
+property (3) of µ . Let V2 ∈ E (A1) \ V∡ (V1,δ ǫ1) with A2 such that
+(44) Nδ(A2) ≥ δ− α +4ǫ and Nδ(πVj (A2)) ≤ δ− α
+2 − ǫ, j = 1, 2.
+Observe that since d∡ (V1,V 2) ≥ δO(ǫ) there exists a δ− O(ǫ)-bi-Lipschitz map f ∈
+GL(Rn) satifying (recalling the notation introduced in Subsectio n 3.2) f ⊥V1 =V1
+and f ⊥V2 = V ⊥
+1 . Applying Lemma 26 to f , we see that we can assume without
+loss of generality that V2 =V ⊥
+1 .
+PutX =πV1 (A2) andY =πV2 (A2). We have, Nδ(A2) ≪ N δ(X)Nδ(Y ) and this
+together with the inequalities (44) implies
+Nδ(X), Nδ(Y ) ≥ δ− α
+2 +O(ǫ).
+Write D = E(A2)\(V∡ (V1,δ ǫ1)∪V ∡ (V2,δ ǫ1)). We have, by (3), µ (D) ≥ δǫ− 2δ2ǫ ≥
+δ2ǫ. Let V ∈ D . By (13) and (14), we have
+|det(πV |V1 )|= d ∡ (V1,V ⊥ ) = d ∡ (V2,V ) ≥ δO(ǫ).
+The same is true for πV |V2 . Then it follows easily from the Cartan decomposition
+that
+(45) ∥π − 1
+V |V1
+∥ ≤ δ− O(ǫ) and ∥π − 1
+V |V2
+∥ ≤ δ− O(ǫ).
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 21
+Since V ∈ E (A2), there is a subset AV ⊂ A2 such that Nδ(AV ) ≥ δ− α +O(ǫ) and
+Nδ(πV (AV )) ≤ δ− α
+2 − ǫ. It follows from (25) that
+ω δ(πV,X +Y ) ≥ ω δ(πV,A V ) ≥ δ− 3α
+2 +O(ǫ).
+By (45), the map Rn =V1 ⊕ V2 → V × V deﬁned byv1 +v2 ↦→ (πV (v1),π V (v2)) is
+δ− O(ǫ)-bi-Lipschitz. Hence, by (26), we can bound from below the ad ditive energy
+betweenπVX and πVY ,
+ω δ(+,π VX × πVY ) ≥ δ− 3α
+2 +O(ǫ) ≥ δO(ǫ)Nδ(πVX)
+3
+2 Nδ(πVY )
+3
+2.
+That is why we can apply the Balog-Szemerédi-Gowers theorem (Theorem 24)
+to get subsets XV ⊂ X and YV ⊂ Y such that
+(46) Nδ(XV ), Nδ(YV ) ≥ δ− α
+2 +O(ǫ)
+and
+(47) Nδ(πVXV +πVYV ) ≤ δ− α
+2 − O(ǫ).
+Applyingπ − 1
+V |V1
+to the set in the last inequality and using (9), we obtain
+(48) Nδ(XV +ϕ VYV ) ≤ δ− α
+2 − O(ǫ),
+where ϕ V : V2 → V1 is ϕ V = π − 1
+V |V1
+◦πV |V2 . Note that from (45), ϕ V is δ− O(ǫ)-bi-
+Lipschitz.
+Let us apply Lemma 19 to the collection of subsets X (δ)
+V × Y (δ)
+V ⊂ X (δ) × Y (δ)
+with the restriction of µ to D. We obtain V⋆ ∈ D , X⋆ :=XV⋆ and Y⋆ :=YV⋆ such
+that
+λ(X (δ)
+⋆ ∩ X (δ)
+V )λ(Y (δ)
+⋆ ∩ Y (δ)
+V ) ≥ δn− α +O(ǫ)
+wheneverV ∈ D ′, where D′ is a subset of D with
+(49) µ (D′) ≥ δO(ǫ)µ (D) ≥ δO(ǫ).
+By Ruzsa’s triangular inequality (Lemma 21), (48) implies, for all V ∈ D ′
+Nδ(XV − X (δ)
+⋆ ∩ X (δ)
+V ) ≪ N δ(XV − XV ) ≤ δ− α
+2 − O(ǫ).
+For the same reason Nδ(X⋆ − X (δ)
+⋆ ∩X (δ)
+V ) ≤ δ− α
+2 − O(ǫ). Then by Ruzsa’s triangular
+inequality again, we have
+(50) Nδ(X⋆ − XV ) ≤ δ− α
+2 − O(ǫ).
+Similarly, Nδ(Y⋆ − YV ) ≤ δ− α
+2 − O(ǫ), which implies with (9),
+(51) Nδ(ϕ VY⋆ − ϕ VYV ) ≤ δ− α
+2 − O(ǫ).
+Moreover, (48) speciﬁed to V =V∗ with (9) applied to ϕ Vϕ − 1
+⋆ gives
+(52) Nδ(ϕ Vϕ − 1
+⋆ X⋆ +ϕ VY⋆ ) ≤ δ− α
+2 − O(ǫ),
+where ϕ ⋆ :=ϕ V⋆ .
+Now successive use of Ruzsa’s triangular inequality (recal ling (50), (48), (51)
+and (52)) yields that for all V ∈ D ′,
+(53) Nδ(X⋆ − ϕ Vϕ − 1
+⋆ X⋆ ) ≤ δ− α
+2 − O(ǫ).
+Moreover, by the Plünnecke-Ruzsa inequality (Lemma 22),
+(54) Nδ(X⋆ +X⋆ ) ≤ δ− α
+2 − O(ǫ).
+Consider the set of endomorphisms A = {−ϕ Vϕ − 1
+⋆ ∈ End(V1) |V ∈ D ′}. We
+claim that the assumptions of Theorem 8 are satisﬁed for A and X⋆ with σ = α
+2 ,
+and κ replaced by κ
+8 and ǫ replaced by O(ǫ) . Therefore, when ǫ is small enough,
+(53) and (54) contradict Theorem 8.
+
+22 WEIKUN HE
+Our claim about the assumptions (i), (iv) and (vi) are clear f rom what precedes.
+The assumption (v) follows from (43) and (46) because for any ρ ≥ δ,
+Nδ(X⋆ ) ≤ N ρ (X⋆ ) max
+x∈ V1
+Nδ(X⋆ ∩ x(ρ)).
+In the case of m = 1 , the assumption (iii) is trivially true and the assumption
+(ii) follows immediately from (3) the fact that d∡ is a distance on Gr(R2, 1) and the
+fact that the map Gr(R2, 1) \ V∡ (V2,δ ǫ1) → R,V ↦→ ϕ Vϕ − 1
+⋆ is δ− O(ǫ)-bi-Lipschitz.
+Finally, to prove (ii) and (iii) in the case where m ≥ 2 we use Lemma 30 below.
+For anyf ∈ End(V1), pick an arbitrary nonzero vector v1 ∈ V1 and apply Lemma 30
+to v2 = ϕ − 1
+⋆ (v1) and W = Rf (v1). This gives the existence of a subspace W ′ ∈
+Gr(Rn,m ) such that d∡ (V,W ′) ≤ δ− O(ǫ)d(ϕ Vϕ − 1
+⋆ ,f ). Hence by (3), for any ρ ≥ δ,
+µ
+(
+{V ∈ D ′ | −ϕ Vϕ − 1
+⋆ ∈ B(f,ρ )}
+)
+≤ δ− O(ǫ)ρκ.
+Observe that
+µ (D′) ≤ N ρ (A) max
+f ∈ End(V1)
+µ
+(
+{V ∈ D ′ | −ϕ Vϕ − 1
+⋆ ∈ B(f,ρ )}
+)
+.
+Together with (49), this gives the assumption (ii), namely,
+Nρ (A) ≥ δO(ǫ)ρ− κ.
+Moreover, for any nonzero proper linear subspace W ∈ V1, take w ∈ W some
+vector with ∥w∥ = 1 and consider
+ρ0 = sup
+V ∈D ′
+d(−ϕ Vϕ − 1
+⋆ (w),W ).
+By Lemma 30 applied to v2 = ϕ − 1
+⋆ (w) which has norm ≤ δ− O(ǫ), we have D′ ⊂
+V∡ (W ′,δ − O(ǫ)ρ0) for some W ′ ∈ Gr(Rn,m ). In view of (49) and (3), we have
+δO(ǫ) ≤ δ− O(ǫ)ρκ
+0 . Hence ρ0 ≥ δO(ǫ), which establishes (iii). □
+Lemma 30. We use the notations in the proof above. For any nonzero vecto r
+v2 ∈ V2 and any proper linear subspace W ⊂ V1, there is W ′ ∈ Gr(Rn,m ) such that
+for all V ∈ Gr(Rn,m ),
+(55) d∡ (V,W ′) ≤ ∥ v2∥− 1d(ϕ V (v2),W ).
+Proof. Without loss of generality, we can assume that dim(W ) = m − 1. For any
+V ∈ Gr(Rn,m ), any v2 ∈ V2 and any w ∈ W , by (12), we have
+d∡ (V ⊥, R(v2 − w)) = ∥πV (v2 − w)∥
+∥v2 − w∥ .
+Note that ∥v2 − w∥ ≥ ∥ v2∥ since v2 ⊥ w and ∥πV (v2 − w)∥ ≤ ∥ ϕ V (v2) − w∥ since
+πV (ϕ V (v2) − w) = πV (v2 − w). Hence
+d∡ (V ⊥, R(v2 − w)) ≤ ∥ϕ V (v2) − w∥
+∥v2∥ .
+As w can be any vector in W , we obtain
+d∡ (V ⊥, Rv2 +W ) ≤ ∥ v2∥− 1d(ϕ V (v2),W ).
+We conclude by setting W ′ = (Rv2 +W )⊥ ∈ Gr(Rn,m ) and using (14). □
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 23
+4.2. Projection of a slice. If the set A contains a relatively large slice of di-
+mension 0 < n′ < n (a subset B = A(δ) ∩ (y + W ) with dim(W ) = n′ and
+Nδ(B) ≍ δ− n′
+n α ) and if it has a correct non-concentration property then we c an
+apply the induction hypothesis to B − y inside W . Instead of projecting to V
+distributed according to µ , we project to V ′ = πW (V ). The ﬁrst lemma below
+shows that V ′ is not concentrated and the next one shows the relationship b etween
+V ′ being in E(B) ∩ Gr(W,m ) and V being in E(B). Using this idea we prove
+Proposition 9.
+Lemma 31. Let 0 < m < n′ < n be integers and κ,ǫ > 0 be parameters. Let
+W ∈ Gr(Rn,n ′) and V be a random element of Gr(Rn,m ) having the following
+non-concentration property,
+(56) ∀ρ ≥ δ, ∀U ∈ Gr(Rn,n − m), P
+[
+d∡ (V,U ) ≤ ρ
+]
+≤ δ− ǫρκ.
+SetV ′ =πW (V ). Then with probability at least 1− δκ − ǫ, dim(V ′) = m. Conditional
+to this event the distribution of V ′ is a probability measure ν on Gr(W,m ). It
+satisﬁes
+∀ρ ≥ δ, ∀U ∈ Gr(W,n ′ − m), ν (V∡ (U,ρ )) ≤ δ− 2ǫρκ.
+Proof. We know that dim(V ′) = m if and only if d∡ (V,W ⊥ ) > 0. The ﬁrst part
+follows immediately from (56) speciﬁed to ρ =δ.
+Let us show the non-concentration property for ν. Let U be a (n′ − m)-dimen-
+sional subspace of W . By Lemma 16, we have d∡ (V,U +W ⊥ ) ≤ d∡ (V ′,U ). Hence
+for all ρ ≥ δ, by (56)
+P
+[
+d∡ (V ′,U ) ≤ ρ
+]
+≤ P
+[
+d∡ (V,U +W ⊥ ) ≤ ρ
+]
+≤ δ− ǫρκ
+and hence ν(V∡ (U,ρ )) ≤ δ− ǫ ρ κ
+1− δκ − ǫ ≤ δ− 2ǫρκ . □
+Lemma 32. Let 0 < m ≤ n′ < n be integers. Let 0 < α < n and ǫ > 0 be
+parameters. Let B ⊂ W be a bounded subset in a n′-dimensional linear subspace
+W ⊂ Rn. Then
+πW
+(
+E(B,ǫ ) \ V∡ (W ⊥,δ ǫ)
+)
+⊂ E (B,O (ǫ)) ∩ Gr(W,m ).
+Proof. Let V ∈ E (B,ǫ ) \ V∡ (W ⊥,δ ǫ). Then there exists B′ ⊂ B such that
+Nδ(B′) ≥ δǫNδ(B) and Nδ(πV (B′)) ≤ δ− m
+n α − ǫ.
+Denote by V ′ the projection πW (V ). It follows from Lemma 18 that
+Nδ(πV ′(B′)) ≤ d∡ (V,W ⊥ )− O(1)Nδ(πV (B′)) ≤ δ− m
+n α − O(ǫ).
+That is why V ′ ∈ E (B,O (ǫ)) ∩ Gr(W,m ). □
+Proof of Proposition 9. Let n = qm and suppose that Theorem 6 holds for n′ =
+(q − 1)m and m. Let A and µ be as in Theorem 6 but for which the conclusion
+fails. By Lemma 28, there is an n′-dimensional aﬃne subspace y +W and a subset
+B ⊂ A(δ) ∩ (y +W ) such that
+Nδ(B) ≥ δ− β +O(ǫ) and
+∀ρ ≥ δ, ∀x ∈ W, Nδ(B ∩ x(ρ)) ≤ ρ
+κ
+2q2δ− β − O(ǫ)
+where β = q− 1
+q α . Without loss of generality, we can assume y = 0 and B ⊂ A.
+Let V be a random element of Gr(Rn,m ) distributed according to µ . Deﬁne
+ν be as in Lemma 31. By the lemma, we can apply the induction hypo thesis
+(Theorem 6 combined with Proposition 25) to B ⊂ W with the probability measure
+ν on Gr(W,m ). We obtain a constant ǫ′> 0 depending only on n′,β and κ such
+that when ǫ ≤ ǫ′,
+ν
+(
+E(B,ǫ ′) ∩ Gr(W,m )
+)
+≤ δǫ′
+.
+
+24 WEIKUN HE
+Setǫ1 = 3ǫ
+κ . By Lemma 32, we have
+µ
+(
+E(B,ǫ 1) \ V∡ (W ⊥,δ ǫ1)
+)
+≤ ν
+(
+E(B,O (ǫ)) ∩ Gr(W,m )
+)
+.
+When ǫ ≤ ǫ′
+O(1) , the last two inequalities together with (3) yield
+µ (E(B,ǫ )) ≤ µ
+(
+E(B,ǫ 1) \ V∡ (W ⊥,δ ǫ1 )
+)
++µ (V∡ (W ⊥,δ ǫ1)) ≤ δǫ′
++δ2ǫ ≤ δǫ,
+which ﬁnishes the proof of Proposition 9. □
+4.3. Projection to a sum of subspaces. In the situation where m < n
+2 , we
+consider the sum V =V1 + · · ·+Vq whereq is a positive integer such that qm<n
+and V1,...,V q are m-dimensional subspaces. Using the inequality (19), the siz e of
+the projection to V can be bounded in terms of the sizes of the projections to each
+Vj. In the next lemma, we prove that if Vj are independently randomly distributed
+according to a measure with an appropriate non-concentrati on property then the
+distribution of their sum V has a non-concentration property as well. This allows
+us to apply the induction hypothesis with the dimensions n and m′ = qm. This
+idea leads to the proof of Proposition 10.
+Lemma 33. Let n,m,q,r be positive integers such that qm +r = n. Let 0 <
+ǫ< 1
+2κ be parameters. Let V1,...V q be independent random elements of Gr(Rn,m )
+satisfying ∀j = 1,...,q ,
+∀ρ ≥ δ, ∀W ∈ Gr(Rn,n − m) P
+[
+d∡ (Vj,W ) ≤ ρ
+]
+≤ δ− ǫρκ.
+Then with probability at least 1 − (q − 1)δκ − ǫ, we have
+(57) dim(V1 + · · ·+Vq) = qm.
+Then the probability measure µ ′ on Gr(Rn,qm ) deﬁned as the distribution of V1 +
+· · ·+Vq conditional to the event (57) satisﬁes the non-concentration property
+∀ρ ≥ δ, ∀W ∈ Gr(Rn,r ), µ ′(V∡ (W,ρ )) ≤ δ− O(ǫ)ρ
+κ
+q.
+Proof. Let V1,...,V q be as in the statement. By their independence, for every
+j = 2,...,q ,
+P
+[
+d∡ (Vj,V 1 + · · ·+Vj− 1) ≤ δ
+]
+≤ δκ − ǫ.
+Hence, on account of (16), with probability at least 1 − (q − 1)δκ − ǫ, we have
+d∡ (V1,...,V q) ≥ δ(q− 1) > 0
+and hence V1 + · · ·+Vq is a direct sum.
+Letρ ≥ δ and W ∈ Gr(Rn,r ). By (17), we know that if
+d∡ (V1 + · · ·+Vq,W ) ≤ ρ
+then for some j = 1,...,q ,
+d∡ (Vj,V 1 + · · ·+Vj− 1 +W ) ≤ ρ
+1
+q,
+which happens with probability at most δ− ǫρ
+κ
+q . Therefore,
+P
+[
+d∡ (V1 + · · ·+Vq,W ) ≤ ρ
+]
+≤ qδ− ǫρ
+κ
+q.
+Hence
+µ ′(V∡ (W,ρ )) ≤ qδ− ǫρ
+κ
+q
+1 − (q − 1)δκ − ǫ ≤ δ− O(ǫ)ρ
+κ
+q. □
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 25
+Proof of Proposition 10. Let n,m,q,r be positive integers such that qm +r = n.
+Suppose Theorem 6 is true for the dimensions n and m′ = qm but it fails for the
+dimensions n and m with parameters 0 < α < n, κ > 0 and ǫ >0. Let A and µ
+be a counterexample, i.e. A and µ satisfy (1)–(3) but µ (E(A′))>δ ǫ for all subsets
+A′ ⊂ A. We will get a contradiction when ǫ is smaller than a constant depending
+only on n, α and κ.
+Let V1,...V q be random elements of Gr(Rn,m ) independently distributed ac-
+cording to µ . Write V = V1 + · · ·+Vq and let µ ′ be the distribution of V con-
+tional to the event dim(V ) = qm as in Lemma 33. It is a probability measure
+on Gr(Rn,qm ) satisfying a non-concentration property, according to Lem ma 33.
+Thus, we can apply the induction hypothesis (Theorem 6 combi ned with Proposi-
+tion 25) with dimensions n andm′ =qm to the set A and the measure µ ′. It gives
+ǫ′ =ǫ′(n,α,κ )> 0 such that for all ǫ ≤ ǫ′, the probability that there exists A′ ⊂ A
+satisfying Nδ(A′) ≥ δǫ′
+Nδ(A) and
+Nδ(πV (A′)) ≤ δ− qm
+n α − ǫ′
+is at most δǫ′
++ (q − 1)δκ − ǫ.
+The rest of the proof consist of proving a lower bound for the s ame probability.
+First, V1 ∈ E (A) with probability at least δǫ. When this happens, there is A1 ⊂ A
+with Nδ(A1) ≥ δǫNδ(A) and Nδ(πV1 (A1)) ≤ δ− m
+n α − ǫ. Write ǫ1 = 3ǫ
+κ . Then
+conditional to any choice of V1, we have V2 ∈ E (A1) \ V∡ (V1,δ ǫ1 ) with probability
+at least δ2ǫ. When this happens, there is A2 ⊂ A1 with Nδ(A2) ≥ δǫNδ(A1)
+and Nδ(πV2 (A2)) ≤ δ− m
+n α − ǫ. Then conditional to any choice of V1 and V2, the
+probability that V3 ∈ E (A2) \ V∡ (V1 +V2,δ ǫ1) is at least δ2ǫ. We continue this
+construction until we get Aq.
+To summarize, we have with probability at least δ(2q− 1)ǫ,
+d∡ (V1,...,V q) ≥ δO(ǫ)
+and there exists a subset Aq ⊂ A satisfying Nδ(Aq) ≥ δqǫNδ(A) and for every
+j = 1,...,q ,
+Nδ(πVj (Aq)) ≤ δ− m
+n α − ǫ
+and hence, by Lemma 15 applied to πV (A) inV = ⊕ q
+j=1Vj,
+Nδ(πV (Aq)) ≤ δ− qm
+n α − O(ǫ).
+This leads to a contradiction when ǫ ≤ ǫ′
+O(1) . □
+4.4. Projection to intersection of subspaces I: a discrete model . When the
+projections of a set A to subspacesV1,...,V q are all small, we would like to say that
+its projection to the intersection V =V1 ∩ · · · ∩Vq is small as well. This is not true.
+A typical example is A = (Re1 ⊕ Re2) ∪ Re3 where (e1,e 2,e 3) is the standard basis
+in R3. While its projections to Re1 ⊕ Re3 and to Re2 ⊕ Re3 are both small (have
+dimension 1 in a 2-dimensional space), its projection to Re3 is full dimensional. In
+this example, A contains a large slice orthogonal to V . This happens to be the
+major obstruction.
+Proposition 34. Letn,m,q,r be positive integers such that n =q(n − m) +r. For
+any 0 < α < nand ǫ >0, the following is true for suﬃciently small δ >0. Let
+A ⊂ Rn and V1,...,V q ∈ Gr(Rn,m ). Write V =V1 ∩ · · · ∩Vq. Assume that
+(i) d∡ (V ⊥
+1 ,...,V ⊥
+q ) ≥ δǫ;
+(ii) δ− α +ǫ ≤ N δ(A) ≤ δ− α − ǫ;
+(iii) For every j = 1,...,q , Nδ(πVj (A)) ≤ δ− m
+n α − ǫ;
+(iv) For all y ∈ V , Nδ
+(
+A ∩ π − 1
+V (y(δ))
+)
+≤ δ− n− r
+n α − ǫ.
+
+26 WEIKUN HE
+Then there exists A′ ⊂ A such that Nδ(A′) ≥ δO(ǫ)Nδ(A) and
+Nδ(πV (A′)) ≤ δ− r
+n α − O(ǫ).
+This proposition is deduced from the following discrete ana logue. Let n,m,q,r
+be as in Proposition 34. For I ⊂ { 1,...,n }, we write ̟ I : Zn → ZI to denote the
+discrete projection (zi)i∈{ 1,...,n } ↦→ (zi)i∈ I . Consider I0 = {n − r + 1,...,n } and
+for j = 1,...,q
+Ij = {1,...,n } \ {(j − 1)(n − m) + 1,...,j (n − m)}.
+Proposition 35. We use the notations above. For any parameter K ≥ 1 and any
+ﬁnite subset Z ⊂ Zn. One of the following statements is true.
+(i) There exists j ∈ { 1,...,q } such that |̟ Ij (Z)| ≥ K|Z|
+m
+n .
+(ii) There exists y ∈ ZI0 such that |Z ∩ ̟ − 1
+I0 (y)| ≥ K|Z|
+n− r
+n .
+(iii) There exists Z ′ ⊂ Z such that |Z ′| ≥ 1
+2K q+1 |Z| and |̟ I0 (Z ′)| ≤ 2K q|Z|
+r
+n .
+One of the ingredients is a discrete projection inequality d ue to Bollobás and
+Thomason [1] known as the uniform cover theorem. Let P({1,...,n }) denote the
+set of subsets of {1,...,n }. Recall that a multiset of subsets of {1,...,n } is a
+collection of elements of P({1,...,n }) which can have repeats. Giving such a
+multiset is equivalent to giving a map from P({1,...,n }) to N. Following Bollobás-
+Thomason, we say a multiset C is k-uniform cover of {1,...,n } if each element
+i ∈ { 1,...,n } belongs to exactly k members of C. For exemple, with Ij deﬁned
+above, (I1 \I0,...,I q \I0) is a (q − 1)-uniform cover of {1,...,n } \I0.
+Theorem 36 (Uniform Cover theorem, Bollobás-Thomason [1]) . LetZ be a ﬁnite
+subset of Zn. Let C be an k-uniform cover of {1,...,n }. Then we have
+|Z|k ≤
+∏
+I∈C
+|̟ I (Z)|.
+This is a generalisation of an isoperimetric inequality due to Loomis and Whit-
+ney [16]. For example, if we consider projections onto all ca nonical m-dimensional
+subspaces. There is always one which has at least the expecte d size: there exists
+I ⊂ { 1,...,n } such that |I| = m and |̟ I(Z)| ≥ |Z|m/n . Although the Loomis-
+Whitney inequality is already suﬃcient for the proof of Prop osition 35, we will work
+at a slightly greater generality (the lemma below), since it requires no extra eﬀort.
+Lemma 37. LetI0 ⊂ { 1,...,n }. Let Z be a ﬁnite subset of Zn and C a k-uniform
+cover of {1,...,n } \I0 with q elements. Then
+|Z|2q− k ≤ ω (̟ I0,Z )q− k ∏
+I∈C
+|̟ I0∪ I (Z)|.
+This lemma is a reﬁnement of the uniform cover theorem. Indee d, for I0 = ∅,
+we have ω (̟ I0,Z ) = |Z|2 and we recover the uniform cover theorem.
+Proof. For all I ∈ C , we have
+|̟ I0∪ I(Z)|=
+∑
+y∈ ̟ I0 (Z)
+|̟ I (Z ∩ ̟ − 1
+I0 (y))|.
+Hence, by Hölder’s inequality,
+∑
+y∈ ̟ I0 (Z)
+∏
+I∈C
+|̟ I (Z ∩ ̟ − 1
+I0 (y))|
+1
+q ≤
+∏
+I∈C
+( ∑
+y
+|̟ I (Z ∩ ̟ − 1
+I0 (y))|
+) 1
+q =
+∏
+I∈C
+|̟ I0∪ I (Z)|
+1
+q.
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 27
+For eachy ∈ ̟ I0(Z), we apply the uniform cover theorem (Theorem 36) to the set
+Z ∩ ̟ − 1
+I0 (y) seen as a ﬁnite subset of Z{ 1,...,n }\ I0 ,
+|Z ∩ ̟ − 1
+I0 (y)|
+k
+q ≤
+∏
+I∈C
+|̟ I (Z ∩ ̟ − 1
+I0 (y))|
+1
+q.
+From the two inequalities above, we get
+∥̟ I0 ∗ 1Z∥k
+k
+q
+≤
+∏
+I∈C
+|̟ I0∪ I (Z)|.
+Finally, Hölder’s inequality implies
+|Z|= ∥̟ I0 ∗ 1Z∥1 ≤ ∥ ̟ I0 ∗ 1Z∥
+k
+2q− k
+k
+q
+∥̟ I0 ∗ 1Z ∥
+2q− 2k
+2q− k
+2 .
+We ﬁnish the proof by putting the last two inequalities toget her and recalling that
+ω (̟ I0,Z ) = ∥̟ I0 ∗ 1Z ∥2
+2. □
+Proof of Proposition 35. We use the notations introduced before Proposition 35.
+Applying Lemma 37 to the (q− 1)-uniform cover (I1 \I0,...,I q \I0) of {1,...,n }\I0,
+we get
+|Z|q+1 ≤ ω (̟ I0,Z )
+q∏
+j=1
+|̟ Ij (Z)|.
+If the ﬁrst statement of Proposition 35 does not hold, we woul d have
+ω (̟ I0,Z ) ≥ 1
+K q |Z|1+ n− r
+n .
+If the second statement fails as well, we can apply Lemma 23 wi th M =K|Z|
+n− r
+n
+and K ′ =K q+1. The third statement follows immediately. □
+Proof of Proposition 34. Let (e1,...,e n) denote the standard basis of Rn. First
+consider the special case where V ⊥
+j is exactly Span(e(j− 1)(n− m)+1,...,e j(n− m)) for
+eachj = 1,...,q . Then we conclude easily from Proposition 35 by setting K =δ− 2ǫ
+and
+Z = {x ∈ Zn |A ∩ δ ·(x + [0, 1]n) ̸= ∅}.
+For the general case we consider a map f ∈ GL(Rn) which sends isometrically
+V to Span(en− r+1,...,e n) and V ⊥
+j to Span(e(j− 1)(n− m)+1,...,e j(n− m)) for each
+j = 1,...,q . It is easy to see that ∥f − 1∥ ≤ n and
+|det(f − 1)|= d ∡ (V ⊥
+1 ,...,V ⊥
+q ,V ) = d ∡ (V ⊥
+1 ,...,V ⊥
+q ).
+Therefore f is δ− O(ǫ)-bi-Lipschitz.
+The conclusion for A follows from the special case applied to fA . Indeed,
+by the inequality (9) and Lemma 26, the hypotheses are satisﬁ ed for fA and
+f ⊥V1,...,f ⊥Vq with ǫ replaced by O(ǫ). Moreover, the conclusion for fA and
+f ⊥V =f ⊥V1 ∩· · ·∩f ⊥Vq implies that for A andV , again by (9) and Lemma 26. □
+4.5. Projection to intersection of subspaces II: concluding pro of. Once we
+have Proposition 34, to prove Proposition 11, we can use Prop osition 29 and ideas
+in Subsection 4.2 to rule out the case where A has a very large slice and then apply
+the arguments in Subsection 4.3 to the dual.
+Proof of Proposition 11. Letn,m,q,r be as in Proposition 11. Assume that Theo-
+rem 6 is true for the dimensions n and m′ =r and assume that A and µ are coun-
+terexample to Theorem 6 for the dimensions n and m with parameters 0<α<n ,
+κ> 0 and ǫ> 0. We begin by making two remarks. Firstly, we can assume that
+(58) Nδ(A) ≤ δ− α − O(ǫ),
+
+28 WEIKUN HE
+for otherwise, we could conclude directly by using Proposit ion 29.
+Secondly, we can also assume that A does not contain very large slice of codi-
+mension r. More precisely, we can assume that
+(59) ∀W ∈ Gr(Rn,n − r), ∀x ∈ Rn, Nδ
+(
+A ∩ (x +W (δ))
+)
+≤ δ− n− r
+n α − O(ǫ).
+Indeed, if (59) fails, then put B =πW
+(
+A ∩ (x +W (δ))
+)
+and we can apply Proposi-
+tion 29 to B ⊂ W to obtain that E(B) ∩ Gr(W,m ) does not support any measure
+with the corresponding non-concentration property in Gr(W,m ). We can conclude
+as in Subsection 4.2 by using Lemma 31 and Lemma 32.
+From now on assume (58) and (59). Let V1,...,V q be random elements of
+Gr(Rn,m ) independently distributed according to µ . On account of (14), the
+non-concentration property (3) implies similar property f or the distribution of V ⊥
+1 ,
+namely,
+∀ρ ≥ δ, ∀W ∈ Gr(Rn,m ), P
+[
+d∡ (V ⊥
+1 ,W ) ≤ ρ
+]
+≤ δ− ǫρκ.
+From Lemma 33 applied to V ⊥
+1 ,...,V ⊥
+q , we know that with probability at least
+1 − (q − 1)δκ − ǫ, the intersection V =V1 ∩ · · · ∩Vq has dimension r. Let µ ′ be the
+distribution of V conditional to this event. Then by Lemma 33 and (14), µ ′ has
+the following non-concentration property
+∀ρ ≥ δ, ∀W ∈ Gr(Rn,n − r), P
+[
+d∡ (V,W ) ≤ ρ
+]
+≤ δ− O(ǫ)ρ
+κ
+q.
+That is why we can apply the induction hypothesis (Theorem 6 c ombined with
+Proposition 25) to the set A and the measure µ ′ with n and m′ = r. We obtain
+ǫ′ =ǫ′(n,α,κ )> 0 such that for all ǫ ≤ ǫ′, the probability that there exists A′ ⊂ A
+satisfying
+Nδ(A′) ≥ δǫ′
+Nδ(A) and Nδ(πV (A′)) ≤ δ− r
+n α − ǫ′
+is at most δǫ′
++ (q − 1)δκ − ǫ.
+Now we are going to prove a lower bound for this propability, w hich will lead to a
+contradiction. As the conclusion of Theorem 6 fails for A, we haveµ (E(A′)) ≥ δǫ for
+all subsets A′ ⊂ A. Using a similar construction as in the proof of Proposition 10,
+we prove that with probability at least δO(ǫ), we have
+d∡ (V ⊥
+1 ,...,V ⊥
+q ) ≥ δO(ǫ)
+and there exists Aq ⊂ A satisfying Nδ(Aq) ≥ δO(ǫ)Nδ(A) and for all j = 1,...,q ,
+πVj (Aq) ≤ δ− m
+n α − ǫ.
+Therefore, all the hypotheses of Proposition 34 are satisﬁe d for the set Aq with
+O(ǫ) in the place of ǫ. In particular, the assumption (ii) is guaranteed by (1) and
+(58) and the assumption (iv) is guaranteed by (59). Hence the re exists a subset
+A′ ⊂ Aq such that
+Nδ(A′) ≥ δO(ǫ)Nδ(A) and Nδ(πV (A′)) ≤ δ− r
+n α − O(ǫ).
+This leads to a contradiction when ǫ ≤ ǫ′
+O(1) . □
+5. Projection of fractal sets
+In this section we derive Theorem 2 from Theorem 1 then Coroll ary 3 and Corol-
+lary 5 from Theorem 2.
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 29
+5.1. Proof of Theorem 2. To deduce Theorem 2 from Theorem 1 we need to
+know how to discretize a fractal set. The idea is the same as in the proof of [2,
+Theorem 4]. We include a detailed proof here for the sake of co mpleteness. But
+before that, let us recall Frostman’s lemma.
+Theorem 38 (Frostman’s lemma (see [18, Theorem 8.8])) . LetA be a Borel set of
+Rn. If dimH(A) > α then there exists a ﬁnite nonzero compactly supported Borel
+measureν with Supp(ν) ⊂ A such that
+∀ρ> 0, ∀x ∈ Rn, ν (B(x,ρ )) ≤ ρα.
+Proof of Theorem 2. Let 0< m < n, 0 < α < n, κ >0 be parameters. Let ǫ >0
+be 1
+4 times the constant given by Theorem 1 applied to these parame ters. Let A
+and µ be a counterexample for Theorem 2 with these parameters. Wit hout loss of
+generality we can assume A ⊂ B(0, 1).
+After normalizing µ , we can suppose that it is a probability measure such that
+∀ρ> 0, ∀W ∈ Gr(Rn,n − m), µ (V∡ (W,ρ )) ≪ µ ρκ.
+Thus, the non-concentration condition (3) of Theorem 1 is sa tisﬁed for suﬃciently
+small δ.
+By Frostman’s lemma, there is a nonzero Radon measure ν compactly supported
+on A such that
+(60) ∀ρ> 0, ∀x ∈ Rn, ν (B(x,ρ )) ≤ ρα − ǫ.
+For any V ∈ Supp(µ ) we have dimH(πV (A)) < η where η = m
+nα + 2ǫ. By the
+deﬁnition of Hausdorﬀ dimension, for any k0 ≥ 1, there is a cover
+πV (A) ⊂
+⋃
+k≥ k0
+BV,k
+of πV (A) such that each BV,k is a union of at most 2kη balls of radius 2− k in V .
+SetAV,k =π − 1
+V (BV,k ) for V ∈ Supp(µ ) and k ≥ k0. Since the sets AV,k ,k ≥ k0,
+coverA, we have ∑
+k≥ k0
+ν(AV,k ) ≫ ν 1.
+Integrating with respect to dµ (V ) and using Fubini’s theorem, we obtain
+∑
+k≥ k0
+∫
+ν(AV,k ) dµ (V ) ≫ ν 1.
+This in turn implies that there exists k ≥ k0 such that µ (E) ≫ ν k− 2, where
+E = {V ∈ Gr(Rn,m ) |ν(AV,k ) ≫ ν k− 2}.
+Now ﬁx this k and set δ = 2 − k so that Nδ(πV (AV,k )) ≤ δ− η . Note that as we can
+choose k0 arbitrarily large, we can make δ arbitrarily small.
+Here we cannot apply Theorem 1 directly to the set A because it might not be
+regular enough. The idea is to partition A into regular parts. Let Q denotes the
+set of dyadic cubes in Rn of side length δ:
+Q =
+{
+x + [0,δ [n |x ∈ δ ·Zn}
+.
+Put L =
+⌈ n
+ǫ
+⌉
++ 1. For l = 0,...,L , let Al be the union of all cubes Q ∈ Q such
+that
+δ(l+1)ǫν(A)<ν (Q) ≤ δlǫν(A).
+It is easy to see that Al are disjoint and ∑L
+l=0ν(Al) ≥ (1 − δǫ)ν(A). Moreover
+for any l = 0,...,L and any A′ ⊂ Al which is also a union of cubes in Q, we have
+δ(l+1)ǫNδ(A′)ν(A) ≪ nν(A′) ≪ nδlǫNδ(A′)ν(A)
+
+30 WEIKUN HE
+Hence, if ν(Al)> 0, then for such A′,
+(61) δǫν(A′)
+ν(Al) ≪ n
+Nδ(A′)
+Nδ(Al) ≪ nδ− ǫν(A′)
+ν(Al)
+Consider L = {0 ≤ l ≤ L |ν(Al) ≥ δǫ}, the set of levels with suﬃcient mass. For
+anyl ∈ L , by (60),
+Nδ(Al) ≫ δ− α +ǫν(Al) ≥ δ− α +2ǫ
+and from (61) and (60), for any ρ ≥ δ and any x ∈ Rn,
+Nδ(Al ∩ B(x,ρ ))
+Nδ(Al) ≪ nδ− ǫν(B(x,ρ +nδ))
+ν(Al) ≪ nδ− 3ǫρα.
+In other words, the assumptions of Theorem 1 are satisﬁed for Al.
+Now for l ∈ L and V ∈ E , let AV,k,l be the union of Q ∈ Q such that Q ⊂ Al
+and Q ∩ AV,k ̸= ∅. From the deﬁnition of L and E, we know that for any V ∈ E
+∑
+l∈L
+ν(AV,k,l ) ≥ ν(AV,k ) − (L + 1)δǫ ≫ ν k− 2.
+Hence there exists l ∈ L such that ν (AV,k,l )
+ν (Al) ≫ ν k− 2. Therefore by setting
+El =
+{
+V ∈ Gr(Rn,m ) |ν(AV,k,l )
+ν(Al) ≫ ν k− 2
+}
+,
+we have E = ∪ l∈L El.
+From the lower boundµ (E) ≫ ν k− 2, we ﬁnd a certain l ∈ L such thatµ (El) ≫ ν,L
+k− 2. This contradicts Theorem 1 applied to the set Al and the measure µ . Indeed,
+recalling the notation (6), Theorem 1 says µ (E(Al, 4ǫ)) ≤ δ4ǫ. But we have El ⊂
+E(Al, 4ǫ). Because for all V ∈ E l, we have Nδ(AV,k,l ) ≥ δ2ǫNδ(Al) by (61) and also
+Nδ(πV (AV,k,l )) ≪ N δ(πV (AV,k )) ≤ δ− η. □
+5.2. Hausdorﬀ dimension of exceptional set. In this subsection we deduce
+Corollary 3 from Theorem 2. First recall the Łojasiewicz ine quality which we will
+need.
+Theorem 39 (Łojasiewicz inequality [15, Théorème 2, page 62]) . Let (M,d ) be a
+real analytic manifold endowed with a Riemannian distance d and let f : M → R be
+a real analytic map. If K is a compact subset of M , then there is C >0 depending
+on K and f such that for all x ∈ K,
+|f (x)| ≥ 1
+C min(1,d (x,Z ))C
+whereZ = {x ∈ M |f (x) = 0 }.
+Proof of Corollary 3. Recall that we work with a Riemannian metric on the Grass-
+mannian Gr(Rn,m ) which is invariant under the action of the group O(n). Observe
+that the exceptional set of directions
+{V ∈ Gr(Rn,m ) |dimH(πV (A)) ≤ m
+nα +ǫ}
+is measurable for the Borel σ -algebra on Gr(Rn,m ). Suppose that the Hausdorﬀ
+dimension of the exceptional set is larger than m(n − m) − 1 + κ for some κ.
+Frostman’s lemma is valid for general compact metric spaces (see [18, Theorem
+8.17])2. Thus there exists a nonzero Radon measure µ supported on this exceptional
+set such that for all ρ> 0 and all V ∈ Gr(Rn,m ), µ (B(V,ρ )) ≤ ρm(n− m)− 1+κ . We
+2For our situation, we can simply use a local chart and Frostma n’s lemma in Rn since a local
+chart of a Riemannian manifold is necessarily bi-Lipschitz to its image (endowed with the induced
+Euclidean distance).
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 31
+are going to prove that µ satisﬁes the non-concentration property forbidden by
+Theorem 2.
+We ﬁx W ∈ Gr(Rn,m ) and apply the Łojasiewicz inequality to the real analytic
+function d∡ ( ·,W )2 : Gr( Rn,m ) → R. We conclude that there is a constant C >0
+such that for any 0 < ρ≤ 1, V∡ (W,ρ ) is contained in the ρ′-neighborhood of the
+Schubert cycle V∡ (W, 0) with ρ′ = (Cρ)
+1
+C . By the O(n)-invariance, the constant C
+is in fact uniform for all W ∈ Gr(Rn,n − m). Since the Schubert cycle V∡ (W, 0)
+is a smooth submanifold, we have Nρ ′(V∡ (W, 0)(ρ ′)) ≪ n ρ′− m(n− m)+1. Here again,
+the estimate is uniform in W thanks to the O(n)-invariance. Therefore,
+µ (V∡ (W,ρ )) ≤ N ρ ′(V∡ (W, 0)(ρ ′)) sup
+V ∈ Gr(Rn,m )
+µ (B(V,ρ ′)) ≪ nρ
+κ
+C.
+This contradicts Theorem 2 if ǫ is suﬃciently small and ﬁnishes the proof of Corol-
+lary 3. □
+5.3. Restricted family of projections. Finally, we deduce Corollary 5 from The-
+orem 2. We will use the following Remez-type inequality due t o A. Brudnyi [5].
+Theorem 40 (Brudnyi [5, Theorem 1.2, case (b)]) . Let Ω1 ⊂ Rq and Ω2 ⊂ Rp be
+connected open sets in Euclidean spaces. Let f : Ω 1 × Ω2 → R be a real analytic
+map, considered as a family of real analytic functions on Ω2 depending analytically
+on a parameter varying in Ω1. Let K1 ⊂ Ω1 and K2 ⊂ Ω2 be compact subsets. For
+x ∈ Ω1, write
+M (x) = max
+y∈ K2
+|f (x,y )|.
+There exists d ≥ 1 and C >0 such that for any 0<ρ< 1,
+(62) max
+x∈ K1
+Nρ ({y ∈ K2 | |f (x,y )|<M (x)ρd}) ≤ Cρ 1− p.
+The constant d in (62) depends not only on f but also on K1 andK2. It can be
+estimated if more is known about the function f . For example, if for any x ∈ Ω1,
+f (x, · ) : Ω2 → R is polynomial of degree less than k ∈ N, then d can be taken to
+be k. We refer the reader to the introduction in [5] for more detai ls.
+The function M is lower semicontinuous. Hence by compactness M has a min-
+imum on K1. As a consequence, if we assume that for any x ∈ K1, we have
+M (x) > 0, i.e. f (x, · ) is not identically zero, then the conclusion (62) can be
+reformulated as (the constant C becomes larger in this formulation)
+max
+x∈ K1
+Nρ ({y ∈ K2 | |f (x,y )| ≤ ρd}) ≤ Cρ 1− p.
+Moreover, by covering with charts, it is easy to see that the s ame holds if Ω1 and
+Ω2 are connected real analytic manifolds.
+Proof of Corollary 5. Let ǫ > 0 as be given by Theorem 2. Consider the real
+analytic map f : Gr(n,n − m) × Ω → R deﬁned by
+∀(W,t ) ∈ Gr(n,n − m) × Ω, f (W,t ) = d ∡ (V (t),W )2.
+By the transversality assumption, for any W , the partial function f (W, · ) is not
+identically zero. Hence by Brudnyi’s theorem, there exists d and C >0 such that
+for all 0<ρ< 1,
+(63) max
+W ∈ Gr(n,n − m)
+Nρ ({t ∈ Ω′ | |f (W,t )| ≤ ρd}) ≤ Cρ 1− p.
+Now assume for a contradiction that the set of exceptional pa rameters has Hausdorﬀ
+dimension larger than p− 1+dκ. Then by Frostman’s lemma, there exists a nonzero
+Borel measure µ supported on this exceptional set satisfying
+sup
+t∈ Rp
+µ (B(t,ρ )) ≤ ρp− 1+dκ.
+
+32 WEIKUN HE
+Then by (63), for any W ∈ Gr(Rn,n − m),
+µ ({t ∈ Ω′ |d∡ (V (t),W ) ≤ ρd}) ≤ ρp− 1+dκCρ 1− p ≤ Cρ dκ
+In other words the image measure 1
+CV∗µ has the non-concentration property for-
+bidden by Theorem 2. This concludes the proof of (5).
+The moreover part follows from the fact we know the exact valu e of d in Theo-
+rem 40 when the map f is polynomial. □
+References
+[1] B. Bollobás and A. Thomason. Projections of bodies and he reditary properties of hypergraphs.
+Bull. London Math. Soc. , 27(5):417–424, 1995.
+[2] J. Bourgain. The discretized sum-product and projectio n theorems. J. Anal. Math. , 112:193–
+236, 2010.
+[3] J. Bourgain, A. Furman, E. Lindenstrauss, and S. Mozes. S tationary measures and equidistri-
+bution for orbits of nonabelian semigroups on the torus. J. Amer. Math. Soc. , 24(1):231–280,
+2011.
+[4] J. Bourgain and A. Glibichuk. Exponential sum estimates over a subgroup in an arbitrary
+ﬁnite ﬁeld. J. Anal. Math. , 115:51–70, 2011.
+[5] A. Brudnyi. On covering numbers of sublevel sets of analy tic functions. J. Approx. Theory ,
+162(1):72–93, 2010.
+[6] C. Chen. Restricted families of projections and random s ubspaces. ArXiv e-prints 1706.03456,
+June 2017.
+[7] K. Falconer, J. Fraser, and X. Jin. Sixty years of fractal projections. In Fractal geometry and
+stochastics V. Selected papers of the 5th conference, Tabar z, Germany, March 24–29, 2014 ,
+pages 3–25. Cham: Springer, 2015.
+[8] K. J. Falconer. Hausdorﬀ dimension and the exceptional s et of projections. Mathematika,
+29(1):109–115, 1982.
+[9] K. Fässler and T. Orponen. On restricted families of proj ections in R3. Proc. Lond. Math.
+Soc. (3) , 109(2):353–381, 2014.
+[10] P. Griﬃths and J. Harris. Principles of algebraic geometry . Wiley Classics Library. John
+Wiley & Sons, Inc., New York, 1994. Reprint of the 1978 origin al.
+[11] W. He. Discretized sum-product estimates in matrix alg ebras. ArXiv e-prints 1611.09639 ,
+Nov. 2016. To appear in Journal d’analyse mathématique .
+[12] E. Järvenpää, M. Järvenpää, and T. Keleti. Hausdorﬀ dim ension and non-degenerate families
+of projections. J. Geom. Anal. , 24(4):2020–2034, 2014.
+[13] E. Järvenpää, M. Järvenpää, F. Ledrappier, and M. Leika s. One-dimensional families of
+projections. Nonlinearity, 21(3):453–463, 2008.
+[14] A. Käenmäki, T. Orponen, and L. Venieri. A Marstrand-ty pe restricted projection theorem
+in R3. ArXiv e-prints 1708.04859 , Aug. 2017.
+[15] S. Łojasiewicz. Ensembles semi-analytiques, 2006. No tes from a course given in Orsay, avail-
+able at https://perso.univ-rennes1.fr/michel.coste/Lojasiewicz.pdf.
+[16] L. H. Loomis and H. Whitney. An inequality related to the isoperimetric inequality. Bull.
+Amer. Math. Soc , 55:961–962, 1949.
+[17] P. Mattila. Hausdorﬀ dimension, orthogonal projectio ns and intersections with planes. Ann.
+Acad. Sci. Fenn. Ser. A I Math. , 1(2):227–244, 1975.
+[18] P. Mattila. Geometry of sets and measures in Euclidean spaces , volume 44 of Cambridge
+Studies in Advanced Mathematics . Cambridge University Press, Cambridge, 1995. Fractals
+and rectiﬁability.
+[19] P. Mattila. Fourier analysis and Hausdorﬀ dimension. Cambridge: Cambridge University
+Press, 2015.
+[20] D. M. Oberlin. Restricted Radon transforms and project ions of planar sets. Canad. Math.
+Bull., 55(4):815–820, 2012.
+[21] T. Orponen. Hausdorﬀ dimension estimates for restrict ed families of projections in R3. Adv.
+Math., 275:147–183, 2015.
+[22] T. Orponen and L. Venieri. Improved bounds for restrict ed families of projections to planes
+in R3. ArXiv e-prints 1711.08934 , Nov. 2017.
+[23] Y. Peres and W. Schlag. Smoothness of projections, Bern oulli convolutions, and the dimension
+of exceptions. Duke Math. J. , 102(2):193–251, 2000.
+[24] T. Tao. Product set estimates for non-commutative grou ps. Combinatorica, 28(5):547–594,
+2008.
+
+ORTHOGONAL PROJECTIONS OF DISCRETIZED SETS 33
+[25] T. Tao and V. H. Vu. Additive combinatorics, volume 105 of Cambridge Studies in Advanced
+Mathematics. Cambridge University Press, Cambridge, 2010.
+Laboratoire de Mathématiques d’Orsay, Univ. Paris-Sud, Un iversité Paris-Saclay,
+91405 Orsay, France.
+Einstein Institute of Mathematics, The Hebrew University o f Jerusalem, Jerusalem
+91904, Israel.
+E-mail address : weikun.he@mail.huji.ac.il

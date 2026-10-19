@@ -167,3 +167,6 @@ R0101新增FPS1502.01730v3（27p）与Rubin2407.15518v2（32p）原PDF/全文/�
 
 
 R0102无新PDF，85PDF/89sources/78IDs。复用CSWZ2610.13682v1实际robust受限投影，原全局多code/point-rich输入与条件SPRD排除见metadata/R0102_source_check.json；非全κ1/ordinary/major或45页wholeproof认证。
+
+
+R0103新增He1710.00795v2《Orthogonal projections of discretized sets》官方33页原稿，当前86PDF/90sources/78IDs。Th1的原I权反用和尺度mass/非零native多项式用途见metadata/R0103_source_check.json；不是旧He1611和积、不是完整source cap/ordinary/major或wholeproof重证。
