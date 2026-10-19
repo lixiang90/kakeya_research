@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0108无qualified新working；终ξ旧输入的degree→同fibre碰撞桥严格拒选，非fullsourcecounter。DIM通常named推论任意集合17/4已完成，无另数学hyp；核验/priority/major分开。actualnoinfo3/legacy31，88PDF/92sources/78IDs。下一notes/00_map/R0108_next_finite_DIM_outcome_audit.md，Goal active。
+更新2026-10-19，R0109第3出口数学与重大性审定通过：任意六维Hausdorff≥17/4，通常具名输入、两formal及root接受，非first/best/外peer。最终以R109真实同步回执和Goal工具确认，当前快照未预complete；一般满维仍open。88PDF/92sources/78IDs。后续只存可选问题，不自动新Goal。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -20,7 +20,7 @@
 | O | 实际五维mixed(4,2) | R74以原AD0标签付完整bounded κ1 source-to-CW；两质量提取/全pencil压缩/fine误差/原N分母均付，标准QE及经典compression范围明确 | 其余κ仍open，无ordinary/major/newID；旧local GWZ与当前AD0端点阈值优化冻结，须不同原联合输入 |
 | P | 实际五维mixed(3,2) | 旧proper工具保留；R73原raw/global/local分母和sameT fineδ用途完成，在具名19.2/19.4及完整source下排κ+γ>1（含κ1每fixedγ），无额外AFF/NQ | 既有工具应用，非新ID/major/ordinary增益；κ+γ≤1和完整branch仍open，停止zero球阈值续轮 |
 | Q | 实际五维mixed(4,3) | 条件proper链及OBS001/002；R28共同box；R66 tiny lower、R67天然joint图、R68无AFF/NQ的large upper；R69双法向四输出数值恢复、冻结后AFF推论严格失败，R70 raw零球及κ+γ>1子范围排除，γ≤1−κ contact/wholeAFF₃仍未付；R71 direct fine packet全账无可用gain、已冻结 | 无输入action/BSG/carry计数迭代冻结；须真闭包/修正熵或不同source机制，完整case仍open |
-| R | 定量种子与高维递推 | R29 FSD001付原finite到arbitraryambient/实n/unsaturated；DIM001付条件六维17/4 | 源全文/引用与KT仍具名条件；TCM/ASM/TEX/CRP/AIM/ISO/UNB/FIN已付列明部分；R38 RED001付完整归约/拼接/有限读出与任意集合Hausdorff桥；R39先macro，仍不认证无条件新界/重大性 |
+| R | 定量种子与高维递推 | R29/R38完整finite与任意集合桥；R109接受DIM001任意六维Hausdorff≥17/4，通常具名输入 | 两formal与root认可Goal第3出口重大结果；相对明确基线改善，不认证first/best/外peer，未解一般满维；最终交付由回执及工具确认 |
 | E | 真Kakeya反例 | 当前所有toy均不保完整方向和实际来源 | queued，禁止升级子引理反例 |
 
 DIR003仍条件于完整四维proof，旧completion/LIFT005细节冻结。R0015已执行停止：CP/PM因全称shading删选闭包正gain等价，不是两个主机制，不能继续改名。返回Wang–Zakharov真实多尺度配置中的五维2×2矩阵非线性分支；He等和积工具的作用/稳定子条件必须从原路径推，不能先假设irreducible。此候选只解决sticky一个关键分支，不覆盖其他mixed cases和一般Kakeya。完整目标见notes/40_multiscale/sticky_matrix/R0015_next_matrix_target.md。
@@ -249,3 +249,6 @@ R0107：全部x2 strips一次终端容量、全图energy控任意clock-dependent
 
 
 R0108：terminal ξ原(148)/旧W已用，全terminalδ^-5不授同初fibre非对角lower，n4图严格否仅degree桥；c守恒已有且H切层收费。OS I/hash精确screen无新工具，FO真CW参数2Fst匹配但finite marks/第五维未付。DIM通常named定理下效力正面澄清，历史status不改，不以泛wholeproof/未peer制造assemblygap。下一一次有限成果审定，非自动major/noinfo3/legacy31。
+
+
+R0109：已有DIM001的有限成果审定通过，未新增proof/ID。成果报告及两正式六节/root/逐要求audit独立保存；原冻结路线不因成果接受自动重开。最终同步后可按第3出口结束原Goal，可选未来notes/00_map/R0109_result_scope_and_optional_future_research.md。

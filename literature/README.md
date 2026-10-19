@@ -185,3 +185,6 @@ R0107无新PDF；fresh GLX/HRZ官方history与明确六维基线复核无差异�
 
 
 R0108无新PDF：OS I/hash current原声明仅screened，链接与拒选存notes/R0108_primary_screening_and_DIM_validity_scope.md；FO库存真horizontal/CW参数匹配范围保留。DIM已完成named推论与核验/priority/major分开，不再制造泛assembly缺口。88PDF/92sources/78IDs保持，见metadata/R0108_source_check.json。
+
+
+R0109：88PDF/92sources保持，无新增原件。六维普通Hausdorff primary基线及官方4D已报告后果的有界比对，见notes/R0109_six_dimensional_primary_and_identity_audit.md与source_check；OAI4完整PDF/双README fresh exactbyte身份单独存metadata/R0109_official_OAI4_identity_check.json，不冒三core全部重核或数学正确性认证。DIM001重大成果审定通过两formal/root，不声first/best/外peer。

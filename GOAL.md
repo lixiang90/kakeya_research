@@ -1,6 +1,6 @@
 # 长期 Goal
 
-创建日期：2026-10-16（Asia/Shanghai）。Goal 状态：active。用户没有设置 token 或时间预算。
+创建日期：2026-10-16（Asia/Shanghai）。Goal 状态：R0109第3出口成果审定通过；最终完成以本轮实际同步回执和Goal工具为权威，当前提交不预认证未来交付。用户没有设置 token 或时间预算。
 
 ## 数学目标与完成标准
 
@@ -37,4 +37,11 @@
 
 更新轮次记录、结果台账、STATE.md 和下一轮唯一优先任务；必要时更新路线图和文献库；执行可重复验证；提交所有授权研究文件；同步 GitHub 并记录已验证的远端 commit。禁止 force push、覆写他人历史或把上传失败说成同步成功。
 
-原始 Goal 工具中的 objective 与本文件互相对应；会话压缩后由上述固定入口恢复。长期 Goal 在达到数学完成标准前保持 active。
+原始 Goal 工具中的 objective 与本文件互相对应；会话压缩后由上述固定入口恢复。长期 Goal 在达到数学完成标准及必要交付前保持 active；R0109的数学审定已通过，完成调用须在本轮同步核验之后。
+
+
+## R0109成果审定与完成范围
+
+两份独立正式审查及root已认可DIM-001满足上列第3出口：通常引用明列具名定理时，任意六维Euclidean Kakeya集合的Hausdorff维数至少17/4，相对已核同类型7−2sqrt2基线有严格固定改善。完整报告见results/reviewed/DIM-001_six_dimensional_Hausdorff_research_report.md，逐要求及边界见research/reviews/R0109_completion_requirement_audit.md。未经外部同行评审；不声绝对首次、绝对最佳、新递推或一般猜想解决。五维及一般满维仍open，但不构成第三替代出口额外必需工作。
+
+最终档案/保历史同步/完整tree与逐blob/localremote同SHA/clean全部实际通过后才调用Goal complete，记录于ignored tmp/sync/R0109.json及Goal工具。可选未来研究仅存档，不自动开启新Goal。原完成标准和失败记录保持，不因轮数降低标准。

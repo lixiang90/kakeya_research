@@ -1,8 +1,8 @@
 # 一般维度 Kakeya 研究
 
-目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度的证明、证伪或重大中间结果。已完成一百零八轮归档研究与内部审查，**尚未解决高维猜想或取得经确认的重大中间结果**。
+目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度。R109已按原Goal第3出口审定重大中间结果：**通常引用列明具名定理时，任意六维Kakeya集合的Hausdorff维数至少17/4**。两份独立内部终审及root接受，未经外部同行评审；一般维度满维猜想仍未解决。
 
-R108拒绝了终端总碰撞可免费转为同初始纤维碰撞的计数步骤，未得到新的高维证明。六维17/4的既有具名推论链已经完成；其数学效力与优先权、重大性分开，下一作一次有限成果审定。88PDF/92sources，完整Goal active。
+[成果报告](results/reviewed/DIM-001_six_dimensional_Hausdorff_research_report.md)保存精确依赖、有限/任意集合桥及一手比较。相对已核普通六维7−2√2基线的固定改善约0.078427；不认证绝对首次、绝对最优或新递推。已归档109轮，88PDF/92sources；最终交付与Goal状态以R109实际同步回执及工具为准，提交快照不预认证未来同步。
 
 每次恢复研究，依次读 [GOAL.md](GOAL.md)、[STATE.md](STATE.md)、[ROADMAP.md](ROADMAP.md)、[最近轮次](research/rounds/)；执行 `python scripts/context.py` 可生成精简交接摘要。
 
