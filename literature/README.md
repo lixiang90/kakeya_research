@@ -161,3 +161,6 @@ R0099新增GR2608.20899v2和Firester–Tsiamis2608.31164v2官方原PDF/提取/me
 
 
 R0100新增OpenAI fixedOct5三角Hilbert annularvariation原PDF37p及精确README/提取/metadata，83PDF/87sources/78IDs。主声明仍列未全独证claim；实际signed用途、正质量反攻和原g/clock范数门见metadata/R0100_source_check.json。非wholeproof/major认证。
+
+
+R0101新增FPS1502.01730v3（27p）与Rubin2407.15518v2（32p）原PDF/全文/逐篇metadata，85PDF/89sources/78IDs。具名接口的weighted几何box用途和原witness固定幂质量门见metadata/R0101_source_check.json；高级wholeproof未全独证，非newKakeya/major认证。

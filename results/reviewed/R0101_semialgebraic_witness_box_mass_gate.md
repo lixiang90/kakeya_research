@@ -1,0 +1,5 @@
+# R0101内部已审：几何box保量用途与原见证费用
+
+主文notes/40_multiscale/R0101_semialgebraic_witness_boxes_and_original_mass.md12节、A10/B10及两formal6全文限定通过，见research/reviews/R0101_semialgebraic_primary_and_weighted_mass_review.md、research/reviews/R0101_native_witness_box_mass_and_closure_review.md和research/reviews/R0101_root_integration_review.md。未经外部同行评审。
+
+具名Rubin product-volume regularity给任意原mask保量几何完整box；真实R76见证编码固定格式而θw≈θδ。原每管farclock半保、AD1/tubeKT、系数identity及Σw h≤1给单box原质量固定幂小，subpower数目不足；不否可变w输出关系或全部半代数方法。两篇高级wholeproof未全独证，无newID/ordinary/major/novelty；85PDF/89sources/78旧ID保持。下一notes/00_map/R0101_next_full_goal_reselection.md，Goal active。

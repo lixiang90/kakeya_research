@@ -1,0 +1,1711 @@
+=== PDF PAGE 1 ===
+   An Eﬃcient Regularity Lemma for Semi-Algebraic Hypergraphs
+
+                                                      Natan Rubin∗
+
+                                                    August 15, 2024
+
+
+
+
+                                                         Abstract
+           Thevastmajorityofhypergraphsthatariseindiscreteandcomputationalgeometry,describe
+       semi-algebraic relations between elementary geometric objects. We use the polynomial method
+       of Guth and Katz to establish stronger and more eﬃcient regularity and density theorems for
+       suchk-uniform hypergraphsH = (P,E ), whereP  is a ﬁnite point set in Rd, and the edge set
+       E is determined by a semi-algebraic relation of bounded description complexity.
+           In particular, for any 0<ǫ ≤  1 we show that one can construct inO(nlog1/ǫ ) time, an
+       equitablepartitionP =U1⊎...   ⊎UK intoK =O(1/ǫ  d+1+δ)subsets, forany0<δ, sothatallbut
+       ǫ-fraction of thek-tuplesUi1,...,U       ik are homogeneous: we have that eitherUi1 ×...    ×Uik ⊆E
+       or (Ui1 ×...    ×Uik) ∩E = ∅.  If the points ofP  can be perturbed in a general position, the
+       bound improves toO(1/ǫ  d+1), and the partition is attained via a single partitioning polynomial
+       (albeit, at expense of a possible increase in the worst-case running time).
+           The best previously known such partition, due to Fox, Pach and Suk requires Ω(nk−1/ǫ  c)
+       time and yieldsK = 1/ǫ  c parts (for 0<ǫ ≤  1/  4), wherec is an enormous constant which is
+       not stated explicitly and depends not only on the dimensiond but also on the semi-algebraic
+       description complexity of the hypergraph.
+           In contrast to the previous such regularity lemmas which were established by Fox, Gromov,
+       Laﬀorgue, Naor, and Pach and, subsequently, Fox, Pach and Suk, our partition ofP  does not
+       depend on the edge setE, provided its semi-algebraic description complexity does not exceed a
+       certain constant.
+           As a by-product, we show that in anyk-partitek-uniform hypergraph (P1 ⊎...    ⊎Pk,E )
+       of bounded semi-algebraic description complexity in Rd and with |E| ≥ǫ∏k(∑k)              i=1|Pi|edges, one
+       can ﬁnd, in expected timeO            i=1(|Pi|+1/ǫ )log(1/ǫ )      , subsetsQi ⊆Pi of cardinality |Qi| ≥
+       |Pi|/ǫ  d+1+δ, so thatQ1 ×...    ×Qk ⊆E.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ∗Email: rubinnat.ac@gmail.com.  Ben Gurion University of the Negev, Beer-Sheba, Israel.  Supported by grant
+2891/21 from Israel Science Foundation.
+
+                                                              1
+
+=== PDF PAGE 2 ===
+1    Introduction
+
+1.1    Semi-algebraic hypergraphs
+We say that a setX ⊆  Rd is semi-algebraic if it is the locus of all the points in Rd that satisfy
+a particular Boolean combination of a ﬁnite number of polynomial equalities and inequalities in
+thed coordinatesx1,...,x       d  of Rd  [12].   The majority of problems in computational geometry
+happen to involve families of “simply shaped” semi-algebraic sets in Rd (e.g., lines, hyperplanes,
+axis-parallel boxes, or discs).  Hence, the basic relations between such semi-algebraic objects are
+typically captured by hypergraphs of bounded semi-algebraic description complexity.
+    We say that a Boolean functionψ  : Rd× k → { 0, 1} is ak-wise semi-algebraic relation in Rd
+if it can be described by a ﬁnite combination (f1,...,f       s,φ ), wheref1,...,f       s ∈  R[x1,...,x       d] are
+d-variate polynomials, andφ  is a Boolean function in {0, 1}s  → { 0, 1}, so thatψ(y1,...,y       k) =
+φ(f1(y1,...,y       k) ≤  0;...    ;fs(y1,...,y       k) ≤  0) holds for all the orderedk-tuples (y1,...,y       k) of points
+yi ∈  Rd.1  In what follows, we refer to (f1,...,f       s,φ ) as a semi-algebraic description ofψ  (which
+need not be unique).
+    We say that such a relationψ has description complexity at most (∆,s ) if it admits a description
+using at mosts polynomialsfi ∈ R[x1,...,x       d] of maximum degree at most ∆. We then use Ψd,k,∆,s
+to denote the family of all suchk-wise semi-algebraic relationsψ : Rd× k → { 0, 1} whose respective
+description complexities are bounded by (∆,s ).
+    LetP1,...,P       k  be pairwise disjoint ﬁnite subsets of Rd.   We say that ak-partite,k-uniform
+hypergraph (P1,...,P       k,E ) has semi-algebraic description complexity at most (∆,s ) in Rd if its
+edge setE is determined, as a subset ofP1 ×...    ×Pk, by ak-wise relationψ  ∈ Ψd,k,∆,s; namely,
+ak-tuple (p1,...,p       k) ∈P1 ×...    ×Pk belongs toE if and only ifψ(p1,...,p       k) = 1. The deﬁnition
+naturally extends to more general classes of hypergraphs, which are induced by symmetric relations
+ψ ∈ Ψd,k,∆,s.
+    The systematic study of semi-algebraic graphs in Euclidean spaces was initiated by Alon, Pach,
+Pinchasi, Radoici´c, and Sharir [4], who established that any graphG = (P,E ) of bounded sem-
+algebraic description complexity in Rd has the so called strong Erd˝os-Hajnal property: eitherG or
+its complement      G must contain a copy ofKt,t, for somet = Θ(n).  As a result,G must contain,
+as an induced subgraph, either a clique or an independent set of sizenc, wherec is a constant the
+depends on the dimensiond and the semi-algebraic description complexity ofG.
+    The related Zarankiewicz problem concerns the maximum number of edges in aKt,t-free bi-
+partite graph (wheret is typically a ﬁxed constant).  If the graphG = (P1,P 2,E ) in question is
+semi-algebraic ofboundeddescriptioncomplexity inRd, thenastudybyFox, Pach, Sheﬀer, Sukand(           )
+                                                                               d
+Zahl [23] yields a generally sharp bound |E|=O                  (|P1|·|P2|)   d+1+δ +|P1|+|P2|        , wheret aﬀects
+the implicit constant of proportionality.  This bound was subsequently generalized toKt,t...,t-free
+k-partite andk-uniform hypergraphs [19].  Even better upper estimates are known for particular
+classes of semi-algebraic and other geometrically-deﬁned graphs [10, 15, 26, 33, 34]; also see [49]
+for related results that are known for so called algebraic hypergraphs over ﬁnite ﬁelds.
+
+1.2    Regularity and density theorems for semi-algebraic hypergraphs
+A partition of a ﬁnite set is called equitable if the cardinalities of any two parts diﬀer by at most one.
+According to Szemer´edi’s regularity lemma [45], which underlies modern extremal combinatorics,
+for everyǫ>0 there exists a ﬁnite numberK =K(ǫ) such that every graph admits an equitable
+vertex partition into at mostK parts with the following property: all but at most anǫ-fraction of
+
+   1In the sequel, suchk-tuples (y1,...,y        k) are routinely interpreted as elements of the (dk)-dimensional space Rd× k.
+
+
+                                                            1
+
+=== PDF PAGE 3 ===
+the pairs of parts determine “almost-random” bipartite sub-graphs. The original proof yieldsK(ǫ)
+that is an exponential tower of 2-s of heightǫ− O(1), which was demonstrated by Gowers [28] to be
+necessary for certain graphs.  More recently, Szemer´edi’s lemma has been extended tok-uniform
+hypergraphs by Gowers [27, 29] and Nagle et al. [39]; as a rule, the partition size climbs up in the
+Ackermann hierarchy ask increases.  Unfortunately, such bounds have detrimental impact on the
+eﬃciency of the property testing algorithms, and other applications of the regularity lemma.
+    Specializing to the hypergraphsH = (P,E ) of bounded semi-algebraic description complexity
+in Rd, a far stronger regularity statement was obtained in 2010 by Fox, Gromov, Laﬀorgue, Naor
+and Pach [22].  To this end, we say that ak-tuple of pairwise disjoint subsetsQ1,...,Q       k ⊆P  is
+homogeneous inH if we have that eitherQ1 ×...    ×Qk ⊆E or (Q1 ×...    ×Qk)∩E = ∅.
+
+Theorem  1.1  (Fox,  Gromov,  Laﬀorgue,  Naor,  and Pach [22]).  For any 0<ε ≤   1,  and any
+hypergraphH  = (P,E ) that admits a semi-algebraic description of bounded complexity (∆,s ) in
+Rd, there is a subdivisionP  =U1 ⊎...    ⊎UK  intoK  =K(d,k,  ∆,s,ǫ ) parts with the following
+property:  all by anǫ-fraction of the sequences (Ui1,...,U       ik), each comprised ofk distinct subsets
+Uij, are homogeneous with respect toH.
+
+    At the heart of the original proof of Theorem 1.1 by Fox et al.  lies a “density theorem” of
+independent interest. To this end, we say that ak-uniform,k-partite hypergraph (P1,...,P       k,E ) is
+ǫ-dense if we have that |E| ≥ǫ|P1|·...    ·|Pk|.
+
+Theorem 1.2 ([22]). For any ﬁxed integersd ≥  0,k ≥  0, ∆ ≥  0, ands> 0, there is a constant
+c =c(d,k,  ∆,s ) with the following property:  For any 0<ǫ ≤  1, and anyk-uniform,k-partitite
+andǫ-dense hypergraphH = (P1,...,P       k,E ), that admits a semi-algebraic description of bounded
+complexity (∆,s ) in Rd, there exist subsetsQ1 ⊆P1,...,Q       k ⊆Pk which meet the following criteria
+
+   1. We have that |Qi|= Ω(ǫc|Pi|) for all 1 ≤i ≤k, where the implicit constant of proportionality
+       depends onk,d, ∆, ands.
+
+   2.Q1 ×...    ×Qk ⊆E.
+
+    The subsequent polynomial regularity lemma of Fox, Pach and Suk [24] improves the maximum(
+number of parts in Theorem 1.1 toO)−  1 to establish a stronger bound for Theorem 1.2, with exponentc = (∆+d1/ǫ  c′). To this end, they use Chazelle’s Cutting Lemma [16]).
+in dimension (∆+dd                                                                                                 d
+Though the exponentc′ =c′(k,d,  ∆,s ) is nowhere speciﬁed, it is clearly enormous and depends
+the description complexity ofH; furthermore, the overall construction runs in time that is at least
+proportional to |P|k− 1/ǫ  c′.
+    Provingsharpasymptotic estimates forTheorems 1.1and1.2 would beinstrumentalfor tackling
+a plethora of fundamental problems in computational and combinatorial geometry, including the
+k-set problem [41], Ramsey and coloring numbers of semi-algebraic graphs and hypergraph [17, 25],
+higher dimensional variants of Erd˝os Happy Ending Problem [40], and eﬃcient testing of hereditary
+properties in geometrically deﬁned hypergraphs [24].
+    For example,  in SODA 2024 the author [41] obtained a sharper variant of Theorem 1.2 in
+which the cardinality of each subsetQi ⊆Pi is roughly2ǫd|Pi|.  He then used the new bound to
+dramatically improve the lower bound for the point selection problem [3] together with the related
+upper bound for halving hyperplanes in dimensiond ≥  5 [8].
+
+   2As a matter of fact, the author’s density theorem yields a slightly more favourable “aggregate” estimate |Q1| ·
+              (                       )
+...    ·|Qk|= Ωǫ(k− 1)d+1|V1|·...    ·|Vk|.
+
+
+                                                           2
+
+=== PDF PAGE 4 ===
+    It is natural to ask if there also exists a more eﬃcient variant of Theorem 1.1, withO((1/ǫ )cd)
+parts, wherecd isa(hopefullysmall)constantthatdepends only on the dimensiond? Unfortunately,
+plugging author’s density theorem into the overall analysis of Fox et al.   [24] does not yield a
+comparably eﬃcient polynomial regularity lemma. Furthermore, the implied algorithm for ﬁnding
+the subsetsQi ⊆Pi, so thatQ1 ×...    ×Qk ⊆E, still runs in timenk− 1/ǫ  O(1).
+
+1.3    Main results
+Eﬃcient  regularity  for  semi-algebraic  hypergraphs.   In this paper we establish the ﬁrst
+explicit polynomial bound for Theorem 1.1. To this end, we use the polynomial partition of Guth
+and Katz [31] to construct a partition withK =O(1/ǫ  d+1+δ)parts, for anyδ>0.3 Unlike all the
+previous semi-algebraic regularity lemmas of Fox et al [22, 24], our regular partition of the setP is
+oblivious to the edge setE as long as the latter is determined by ak-wise relationψ ∈ Ψd,k,∆,s.
+    For the sake of brevity, an ordered sequence(P1,...,P       k) ofk pairwisedisjoint subsetsPi ⊆  Rd is
+called ak-family in Rd. Letψ : Rd× k → { 0, 1} be ak-wise relation over Rd. Ak-family (U1,...,U       k)
+isψ-homogeneous ifthevalueψ (p1,...,p       k)isinvariantinthechoiceofverticesp1 ∈U1,...,p       k ∈Uk.
+    For anyk-wise relationψ  : Rd× k → { 0, 1},ǫ> 0, and any ﬁnite point setP  ⊂  Rd, we say
+that an equitable partitionP =U1 ⊎...    ⊎UK is (ǫ,ψ )-regular if all butǫ-fraction of thek-families
+(Ui1,...,U       ik) areψ-homogeneous.
+    For any class Ψ ⊆   Rd× k  → { 0, 1} ofk-wise relations over Rd,ǫ> 0,  and any ﬁnite point
+setP  ⊂  Rd, we say that an equitable partitionP  =U1 ⊎...    ⊎UK  ofP  is (ǫ, Ψ)-regular if it is
+(ǫ,ψ )-regular for anyk-wise relationψ ∈ Ψ.
+    Themain result of this paper is the existence of a small-size and easily constructible (ǫ, Ψd,k,∆,s)-
+regular partition for any point setP in Rd.4
+
+Theorem 1.3.  For any ﬁxed integersd> 0,k> 1, ∆ ≥  0,s ≥  1, and anyδ> 0, there is a
+constantc =c(d,k,  ∆,s,δ  )> 0 with the following property.
+    Letǫ> 0,  andP  ⊂   Rd  ann-point set.   Then there exists an (ǫ, Ψd,k,∆,s)-regular partition
+P =U1 ⊎U2 ⊎...    ⊎UK whose cardinality satisﬁesK ≤c/ǫ  d+1+δ.
+
+    A major obstacle to routine use of the partition theorem of Guth and Katz (see Theorem 2.2 in
+Section 2.3) is that toomany points ofP may fall in thezerosetZ(f)of thepartitioning polynomial
+and, thereby, remained un-assigned to any cell of Rd\Z(f). A veritable way to reduce the number
+of such points is to apply a random and independentϑ-perturbation to each pointp ∈P, with
+ϑ> 0, so that each coordinatexi(p) is independently “shifted” by a random valuehi(p) ∈ [−ϑ,ϑ ].
+As a result, the proof of Theorem 1.3 can be dramatically simpliﬁed, and its bound marginally
+improved, over a broad sub-class of “generic” hypergraphs whose vertices can be perturbed in a
+general position [20].
+    To this end, we say that ak-wise relationψ  : Rd× k → { 0, 1} is sharp over a point setP  if for
+any sequence (p1,...,p       k) ofk distinct verticespi ∈P, the value ofψ(p1,...,p       k) remains invariant
+under anyϑ-perturbation ofP, for any suﬃciently smallϑ> 0.
+
+Theorem  1.4.  For any ﬁxed integersd> 0,k> 1,  ∆ ≥   0,s  ≥   1,  there is a constantc =
+c(d,k,  ∆,s )> 0 with the following property.
+
+   3As a rule, bounds of this form involve implicit multiplicative factors that may be exponential in 1/δ  .
+
+   4Notice that if the equitable partitionP  =U1 ⊎...    ⊎UK  is (ǫ, Ψd,k,∆,s)-regular then, regardless of the implicit
+ordering of the vertices ofP, it is (ǫ·k!)-regular with respect to anyk-uniform hypergraph (P,E ) whose semi-algebraic
+description complexity is bounded by (∆,s ).
+
+
+
+                                                            3
+
+=== PDF PAGE 5 ===
+    Letǫ>0, andP ⊂  Rd be a ﬁnite point set. ThenP admits a partitionP =U1 ⊎U2 ⊎...    ⊎UK
+of cardinalityK ≤c/ǫ  d+1 that is (ǫ,ψ )-regular for anyk-wise relationψ  ∈  Ψd,k,∆,s that is sharp
+overP.
+Algorithmic  aspects.   In contrast to the previous proof of the polynomial regularity lemma,
+due to Fox,  Pach and Suk [24], our analysis yields a near-linear time algorithm for computing
+(ǫ, Ψd,k,∆,s)-regular partitions.
+Theorem  1.5.  The (ǫ, Ψd,k,∆,s)-regular partition of Theorem 1.3 can be constructed in time in
+expected timeO(nlog(1/ǫ )).  Furthermore, the partition algorithms yields a data structure that,
+given a query relationψ  ∈  Ψd,k,∆,s, returns in additionalO(1/ǫ  (d+1)k− 1+δ)time, a collection of
+k-families (Ui1,...,U       ik) which encompasses at most anǫ-fraction of all thek-families, including
+all suchk-families that are notψ-homogeneous.5
+    It is an outstanding algorithmic problem to quickly decide whether ak-family (U1,...,U       k) isψ-
+homogeneous with respect to a given relationψ ∈ Ψd,k,∆,s.6 Theorem 1.5 gets around this obstacle
+but returning a small-size and more robustly deﬁned superset, which includes allψ-homogeneous
+k-families.
+    Our machinery yields the following constructive variant of Theorem 1.2.
+Theorem 1.6. The following statement holds for any ﬁxed integersd> 0,k> 1, ∆ ≥  0,s ≥  1,
+and any ﬁxedδ>0.
+    LetP1,...,P       k ben-point sets in Rd, andψ  be ak-wise relation in Ψd,k,∆,s which is satisﬁed
+for at leastǫ|P1| ·...    · |Pk|among thek-tuples (p1,...,p       k) ∈P1 ×...    ×Pk.  Then one can ﬁnd(∑k)
+in expected timeO            i=1(|Pi|+1/ǫ )log(1/ǫ )       , subsetsQi ⊆Pi of cardinality Ω(ǫd+1+δ|Pi|), for
+1 ≤i ≤k, so thatψ(p1,...,p       k) = 1 holds for all (p1,...,p       k) ∈Q1 ×...    ×Qk.
+
+1.4    Proof overview and further implications
+Almost  (ǫ, Ψ)-regularity.   To  establish  Theorems 1.3  and  1.4,  we  ﬁrst obtain  a preliminary
+partitionP =U1 ⊎···⊎UK, which satisﬁes a slightly weaker form of regularity.
+Deﬁnition.  Let 0<ǫ≤  1,ψ  : Rd× k → { 0, 1} be ak-wise relation, andP be a set ofn points in
+Rd. We say that a partitionP =U1⊎U2⊎...   ⊎UK ofP is almost (ǫ,ψ )-regular if |Ui| ≤ǫ|P|holds
+for all 1 ≤i ≤K and, in addition, we have that
+                                          ∑|Ui1|·...    ·|Uik| ≤ǫ·k!(n)
+                                                                             k  ,                                                      (1)
+
+where the sum is taken over all thek-families (Ui1,...,U       ik) that are notψ-homogeneous.
+    Let Ψ be a family ofk-wise relations over Rd, andǫ>0, and letP be ann-point set in Rd. We
+say that a partitionP =U1 ⊎...    ⊎UK of is almost (ǫ, Ψ)-regular if it is almost (ǫ,ψ )-regular for
+anyk-wise relationψ ∈ Ψ.
+    As was implicitly observed by Fox, Pach and Suk [24, Section 4], every almost (ǫ,ψ )-regular
+partition can be converted, in additionalO(n) time, into an (O(ǫ),ψ )-regular one; the full details
+of this reduction are spelled out in Section 2.1 (Lemma 2.1).  Thus, Theorems 1.3 and 1.4 will be
+follow as immediate corollaries of the following statements.
+
+   5Everyk-family (Ui1,...,U        ik) in the output is represented by the respective sequence (i1,...,i        k).
+   6The particular 3-partite 1-dimensional instance, whereψ(x1,x 2,x 3) = 1 if and only ifx3 =x1 +x2, has become
+notorious as the 3SUM problem [18].  It is not known whether the task can be performed in timeO((|U1|+ |U2|+
+|U3|)2− γ), for anyγ> 0.
+
+                                                             4
+
+=== PDF PAGE 6 ===
+Theorem 1.7.  For any ﬁxed integersd> 0,k> 1, ∆ ≥  0,s ≥  1, and anyδ> 0, there is a
+constantc =c(d,k,  ∆,s,δ  ) ≥  1 with the following property.
+    Letǫ> 0,  andP  ⊆   Rd  a ﬁnite point set so that |P| ≥  1/ǫ .   Then there exists an almost
+(ǫ, Ψd,k,∆,s)-regular partitionP =U1 ⊎U2 ⊎...    ⊎UK of cardinalityK ≤c/ǫ  d+δ.
+
+Theorem  1.8.  For any ﬁxed integersd> 0,k> 1,  ∆ ≥   0,  ands  ≥   1,  there is a constant
+c =c(d,k,  ∆,s )> 1 with the following property.
+    Letǫ> 0, andP  ⊆   Rd  a ﬁnite point set.   Then one can obtain a subsetU0  of cardinality
+|U0| ≤c/ǫ  d, and a partitionP \U0 =U1 ⊎U2 ⊎...    ⊎UK  of cardinalityK ≤ c/ǫ  d that is (ǫ,ψ )-
+regular with respect to all the sharpk-wise relationsψ ∈ Ψd,k,∆,s overP.
+
+    Accordingly, Theorem 1.5 will follow from the following constructive variant of Theorem 1.7.
+
+Theorem 1.9. The partitionP =P1⊎P2⊎...   ⊎PK of Theorem 1.7 can be constructed in expected
+timeO(nlog(1/ǫ )).  Furthermore, the construction algorithm yields a data structure that, given a
+relationψ  ∈  Ψd,k,∆,s, returns in additionalO(1/ǫ  dk− 1+δ)time a collection G ofk-families which
+satisﬁes                                            ∑                            (n)
+                                                    |Ui1|·...    ·|Uik| ≤ǫ·k!      k   ,                                              (2)
+                                     (Ui1,...,Uik)∈G
+and includes all suchk-families that are notψ-homogeneous.7
+
+Constructing an almost-regular partition.  Let us now spell out the key ideas the underly
+the proofs of Theorems 1.3 and 1.4.  The previous (almost-)regular subdivisions of semi-algebraic
+hypergraphs [22, 24] began with a constant-size partition and proceeded through a sequence of
+reﬁnement steps. In each round, some “ψ-irregular”k-tuple of sets (U1,...,U       k) was split so as to
+further reduce the “error term” on the left hand side of (2).  To this end, a variant of Theorem
+1.2 was invoked for ak-partite sub-hypergraph (U1,...,U       k,E ′) of either (P,E ) or its complement
+(P, E), depending on the ratio  |(U1× ...× Uk)∩E|
+                                           |U1|·...·|Uk|   .
+    Incontrast, ourpartition isconstructed apriori forthegroundpoint setP, andis oblivious to the
+edge setE, provided that the latter is determined by ak-wise semi-algebraic relationψ ∈ Ψd,k,∆,s.
+ThemoreelementarypartitionofTheorem1.4isbasedonther-partitioningpolynomialofGuthand
+Katz [31] – ad-variate polynomialg of degreeO(r1/d)whose zero setZ(g) = {x ∈ Rd |g(x) = 0}
+subdivides Rd intoO(r) connected cellsω  ⊂  Rd \Z(g), each cutting out a subsetPω  =P ∩ω
+of cardinality |Pω| ≤ |P|/r  .  As a rule, any such partition leaves out some “leftover” subsetU0 of
+points that fall in the zero surfaceZ(g), and cannot be assigned to any of the ordinary subsetsPω.
+To guarantee that the number of such points does not exceedO(r), a generic perturbation must be
+applied to the ground setP.
+    Passing to Rd× k – the ambient space of the Cartesian productPk – yields a (dk)-variate polyno-
+mial ˜g : Rd× k →   R, of degreeO(kr1/d) =O(r1/d), with the following property: every connected cell
+˜ω of Rd× k\Z(˜g) is a Cartesian productω1×...   ×ωk of somek cellsωi ⊂  Rd\Z(g), and corresponds
+to somek-family (U1,...,U       k) of subsetsUi =Uωi.8 If this family is notψ-homogeneous for a given
+k-relationψ  ∈  Ψd,k,∆,s, then the respective cellω  in Rd× k \Z(˜g) must cross the boundary of the
+regionXψ = {(x1,...,x       k) ∈  Rd× k |ψ(x1,...,x       k) = 1}.  Using standard tools from real algebraic
+
+   7Everyk-family (Ui1,...,U        ik) in the output is represented by the respective sequence (i1,...,i        k).
+   8This  “lifting”  argument in  Rdk  is  admittedly  inspired  by a  recent proof  by Bukh  and  Vasileuski  [14]  of  an
+improved estimate for the so called Same Type Lemma [7], which is brieﬂy discussed in Section 6.  However, their
+ad-hoc analysis is restricted to one particular (d + 1)-wise semi-algebraic relation, which describes orientations of
+(d+1)-point sequences, and does not directly apply to more general semi-algebraic hypergraphs.
+
+                                                             5
+
+=== PDF PAGE 7 ===
+geometry [9, 11, 12] which we lay out in Section 2 (most notably, the Barone-Basu bound [9]), one
+can show that the number of the latter cells ˜ω  ⊂  Rd× k \Z(˜g) is onlyO(r(kd− 1)/d)=O(rk− 1/d).
+Thus, choosingr =cǫd, with a suitable constantc> 0, guarantees that all but anǫ-fraction of the
+Θ(rk)= Θ(1/ǫ  dk)k-families (U1,...,U       k) areψ-homogeneous.
+    Unfortunately, the above partition argument does not directly apply in the more general set-
+ting of Theorem 1.7 if many of the points ofP  lie in the zero surfaceZ(g) of ther-partitioning
+polynomial, and cannot be easily perturbed into a generic position without disrupting the rela-
+tionsψ(p1,...,p       k).  Furthermore, the construction ofg may takeO(nr+r3)time [2], so using
+r = Θ(1/ǫ  d) may lead to a vastly super-linear algorithm for small parametersǫ>0.
+    To  bypass  these  obstacles,  we  devise  a  sequence  of  progressively  reﬁned  partitions  Π0  :=
+{P},...,      ΠI. Every new partition Πi is obtained from its predecessor Πi− 1 by replacing each mem-
+ber setU ∈ Πi− 1, whose cardinality exceeds a certain constant thresholdn0, with itst-reﬁnement
+Λt(U) - a certain subdivision ofU into subsetsU′, each of roughly |U|/t   points.9 Each reﬁnement
+Λt(U) is attained by the means of a reﬁnement tree Tt(U) which loosely resembles the “constant
+fan-out” tree structure of Agarwal, Matouˇsek and Sharir for semi-algebraic range searching [2]. To
+this end, we chooset to be a suﬃciently large constant, and each tree is constructed only to a
+depth ofO(logt).  Using amortized analysis, which also takes into consideration the subsets that
+lie in lower-dimensional surfaces, we show that the “irregularity term” on the left hand side of
+(2) decreases by a factor of roughlyt1/d with almost every new partition Πi, and eventually drops
+belowǫ.
+    The rest of this paper is organized as follows.  In Section 2 we formally establish Lemma 2.1
+which oﬀers a straightforward way to convert almost (ǫ,ψ )-regular partitions to (O(ǫ),ψ )-regular
+ones.  In addition, we review the essential real-algebraic machinery which underlies the proofs of
+both Theorems 1.7 and 1.8.  In Section 3 we use the polynomial method of Guth and Katz [31]
+to obtain the “generic” regularity results – Theorems 1.4 and 1.8.   The more intricate proof of
+Theorems 1.3 and 1.7 is postponed to Section 4. The algorithmic aspects of our (ǫ, Ψd,k,∆,s)-regular
+partition are addressed in Section 5, where we establish Theorems 1.9, 1.5 and 1.6.  In Section
+6, we brieﬂy discuss discuss the connection between Theorem 1.7 and the so called Same Type
+Lemma of B´ar´any and Valtr [7], and use our machinery to obtain an interesting “semi-algebraic”
+generalization of the latter.10
+
+2    Preliminaries
+
+2.1    A reduction to almost-regularity
+Lemma 2.1. Letǫ>0,P ⊂  Rd be ann-point set,ψ  : Rd× k → { 0, 1} be ak-wise relation in Rd,
+andP =U′1⊎...   ⊎U′K′ be an almost (ǫ/ 10,ψ )-regular partition ofP. Then one can obtain, inO(n)
+time, an (ǫ,ψ )-regular partitionP =U1 ⊎...    ⊎UK of cardinalityK =O(K′/ǫ ).
+    Moreover,  the new partition does not depend on the relationψ.   Furthermore,  all but anǫ-
+fraction of itsk-families (Ui1,...,U       ik) are not onlyψ-homogeneous but also each of their partsUij
+is contained in a single setU′il.
+
+   9More precisely, for the sake of our amortized analysis every pointp is assigned a weightµ(p) =µi(p) between 1
+andt− d, so that the aggregate weight of each setU′ ∈ Λt(U) satisﬁesµi(U′) ≤µi− 1(U)/t  .
+  10After an earlier version of this article had been made public, Tidor and Yu [46] reported a slightly improved
+variant of Theorem 1.7, which yields an (ǫ, Ψd,k,∆,s)-regular partition of cardinalityO(1/ǫ  d). Similar to our proofs of
+Theorems 1.8 and 1.7, they too combine a “lifting” argument in Rdk with the Barone-Basu bound [9]. However, their
+partition is not accompanied by a near-linear construction algorithm. A brief comparison between the two techniques
+is too included in Section 6.
+
+
+                                                             6
+
+=== PDF PAGE 8 ===
+Proof.  If |P| ≤ 10K′/ǫ   then the partitionP =U1 ⊎...    ⊎UK is comprised of |P|singleton sets, so
+that anyk-family isψ-homogeneous. Assume, then, that |P|> 10K′/ǫ , and letm = ⌊ǫ|P|/ (10K′)⌋.
+Then each partUi is ﬁrst subdivided into ⌊|Ui|/m  ⌋ red subsets of sizem each, plus at most one
+“leftover” part of size smaller thanm.  The “leftover” parts are then merged and reassigned into
+blue subsets of size betweenm andm+1.  Altogether, this yields a partition ofP  into a total of
+K =O(|V|/m  ) =O(K/ǫ ) partsU1,...,U       K whose cardinalities vary betweenm andm+1.
+    To see the (ǫ,ψ )-regularity of the resulting partitionP =U1⊎...    ⊎UK, it suﬃces to show that(n)
+                                           ∑|Ui1|·...    ·|Uik| ≤ǫ·k!
+                                                                               k   ,                                                      (3)
+
+where the sum is again taken over all thek-families that are notψ-homogeneous. To this end, we
+say that ak-tuple (p1,...,p       k) ∈Pk of distinct vertices is regular if it comes from aψ-homogeneous
+k-family (Ui1,...,U       ik); otherwise, such ak-tuple is called special. Thus, the left hand side of (3) is
+bounded by the number of the specialk-tuples (p1,...,p       k), each of them falling into (at least) one
+of the following categories:
+  (i)  at least one of their verticespi belongs to a blue partUji,
+ (ii)  some pairpj,p l of their vertices come from the same partU′ij =U′il of the initial partition, or
+
+ (iii)  the “ambient” partsU′i1,...,U        ′ik  of the verticesp1,...,p       k comprise ak-family (U′1,...,U        ′k)
+       that is notψ-homogeneous.
+Since the blue parts encompass a total of at mostK′·m =ǫ·n/ 10 vertices ofP, there exist at)k!
+mostǫ(nk    10 specialk-tuples of the ﬁrst type. Furthermore, since every partU′i ecompasses at most)k!
+ǫ|P|/ 10 vertices, there exist at mostǫ(nk           10 specialk-tuples of type (ii). Lastly, the number of the)k!
+specialk-tuples of type (iii) is at mostǫ(nk            10 by the lemma hypothesis.
+
+2.2    Semi-algebraic sets
+
+Deﬁnition. Letd andk be positive integers.
+   1.  A reald-variate polynomialf : Rd →   R, in real variablesx1,...,x       d, is a function of the form
+                                       f(x1,...,x       d) =     ∑    ai1,...,idxi1 ·...    ·xid,
+                                                           i1,...,id∈N
+       with real coeﬃcientsai1,...,id. In the sequel, we use R[x1,...,x       d] denote the space of all such{∑d         }
+       real polynomials. The degree off ∈ R[x1,...,x       d] isdeg(f) = max                      j=1ij |ai1,...,id ̸= 0   .
+
+   2.  Asemi-algebraic description (f1,...,f       s;Φ)withinRd iscomprisedofaﬁnitesequencef1,...,f       s ∈
+       R[x1,...,x       d] of real polynomials, and a Boolean formula Φ ins variables (wheres is also the
+       number of the real polynomials in the sequence).  The complexity of this description is the
+       pair (∆,s ), where ∆ = max{deg(fi) |1 ≤i ≤s}.
+   3.  A subsetA ⊆  Rd has semi-algebraic description (f1,...,f       s;Φ) if we have thatA = {x ∈ Rd |
+       Φ(f1(x) ≤  0,...,f       s(x) ≤  0)}.  Thus, ak-partitek-uniform hypergraph (V1,...,V       k,E ) in Rd
+       admits the semi-algebraic description (f1,...,f       s;Φ) if and only if the setE is cut out (as a
+       subset ofV1 ×...    ×Vk) by the setY  ⊆  Rd× k that meets the description (f1,...,f       s;Φ).
+    We say that a semi-algebraic setX is crossed by another setY  if we have thatX ∩Y  ̸= ∅ yet
+X ̸⊆Y.
+
+                                                              7
+
+=== PDF PAGE 9 ===
+2.3    Polynomial partitions
+Deﬁnition. Letf ∈ R[x1,...,x       d] be a polynomial. We refer to the hypersurface
+
+                                          Z(f) := {x ∈ Rd |f(x) = 0}
+
+as the zero set off. The connected components of Rd \Z(f) are called cells.
+    More generally, a ﬁnite collection {f1,...,f       s} ∈  R[x1,...,x       d] ofd-variate polynomials yields
+a family of hypersurfaces F  =  {Z(f1),...,Z     (fs)}.   The arrangement  A(F) of F  [12, 48] is a
+decomposition of Rd into faces, that is, maximal connected setsτ with the property that sign(fi(x))
+is invariant over allx ∈τ, for all 1 ≤i ≤s. The properties of A(F) overly resemble and generalize
+thoseofahyperplanearrangement. Inparticular, thecellsofA(F)arethecontiguousd-dimensional
+components of Rd\(⋃si=1Z(fi)) which, in fact, are exactly the cells of Rd\Z (f1 ·f2 ·...    ·fs); each
+of them admits a semi-algebraic description whose complexity is bounded in the terms ofs and
+D = max{deg(fi) |1 ≤i ≤s}, as described in Theorem 2.7 below.
+    LetP  be a ﬁnite point set, andr> 0 an integer.   We say thatf  ∈  R[x1,...,x       d] is anr-
+partitioning polynomial forP if any cell of Rd \Z(f) encompasses at mostn/r   points ofP.
+
+Theorem 2.2 (ThePolynomialPartition Theorem[31]). LetP be a ﬁnite point set in Rd, and 1 ≤r
+an integer.  Then there is anr-partitioning polynomialg ∈  R[x1,...,x       d] withdeg(g) =O(r1/d).
+Furthermore, the zero setZ(g) subdivides Rd \Z(g) into at mostcdr connected regions, wherecd
+is a constant that depends on the dimensiond.  Furthermore, such a polynomial can be computed
+in expected timeO(nr +r3) [2].
+
+    The second part of Theorem 2.2 is established using a variant of the Milnor-Thom Theorem,
+due to Warren [47].  The broad usefulness ofr-partitioning polynomials for geometric divide-and-
+conquer stems from the following general property established by Barone and Basu [9].
+
+Theorem 2.3. Let V be al-dimensional algebraic variety in Rd that is deﬁned by a ﬁnite set of
+polynomials G ⊂  R[x1,...,x       d], each of degree at most ∆, and let F  be a set ofs polynomials of
+degree at mostD ≥  ∆.  Then there existO(∆d− l(sD)l)faces of all dimensions in A(F ∪G) that
+are contained in V; the implicit constant of proportionality may depend ond.
+
+    Applying Theorem 2.3 to singleton collections F = {f} and G = {g}, withf,g  ∈ R[x1,...,x       d],
+and noticing that each cell ofZ({f}) that crossesZ({g}) corresponds to a face of A({f,g }) that
+is contained inZ(g), yields the following property.
+
+Corollary 2.4 (See Lemma 4.3 in [2]). Letf,g  ∈ R[x1,...,x       d] so thatdeg(f) =D anddeg(g) =
+∆ ≤D. ThenZ(g) crossesO(∆Dd− 1) open cells ofZ(f).
+
+    Hence, iff is the partition polynomial of degreeD =O(r1/d)in Theorem 2.2, then any hyper-
+surface whose degree ∆ that is much smaller than the decomposition parameterr, meets roughly
+O(r(1/d)(d− 1))=O(r1− 1/d)open cells of Rd \Z(f).
+Controlling the zero-set. To this end, for anyd ≥  1 andD ≥  0, say that an orderedt-tuple of
+points (p1,...,p       t) ∈ Rd× t isD-exceptional if its elements lie in the zero setZ(f) of some polynomial
+f ∈ R[x1,...,x       d] of degreeD.
+Lemma 2.5 ([38]). Letd ≥  1 andD ≥  0 be integers, andt := (D+d).  Then there is a non-zero
+                                                                                  d
+polynomialξd,D : Rd× t with coeﬃcients in the variableszij, for 1 ≤i ≤d and 1 ≤j ≤t, whose
+zero setZ(ξd,D) ⊂  Rd× t contains all theD-exceptionalt-tuples (p1,...,p       t), withpi ∈ Rd.
+
+
+                                                           8
+
+=== PDF PAGE 10 ===
+Corollary  2.6.  For  any  dimensiond>  0  there  is  a  constantc0  with  the  following  property.
+Letη>  0  andP  be  anϑ-perturbed  point  set,  where  an  independentϑ-perturbation  is  applied
+independently to each point ofP. Then the zero setZ(f) of anr-partitioning polynomialf that is
+constructed for the perturbed setP, contains at mostc0r of the perturbed points ofP.
+
+Proof.  Since the measure of the surfaceZ(ξd,D) ⊆  Rd× t in Lemma 2.5 is 0 (see, e.g., Lemma 2.9)of the perturbed points ofP lie in the
+in the sequel), it follows that, with probability 1, no (D+dd
+same hypersurface ofZ(f) of degreeD =O(r1/d), whereD denotes the degree of ther-partitioning
+polynomial.
+
+Computing an arrangement of  surfaces.  The following general result [12, Theorem 16.11]
+(also see [2, Theorem 4.1] and [6, Proposition 2.3]) implies that each cell in the partition Rd\Z(f)
+of Theorem 2.2 is semi-algebraic.
+
+Theorem 2.7 ([12]). Let F = {f1,...,f       s} be a set ofs polynomials in R[x1,...,x       d] of degree at
+mostD each.  Then the arrangement of their zero sets hassdDO(d) faces, and can be computed
+in timeT  =sd+1DO(d4).  Each face is assigned a semi-algebraic description whose complexity is()
+bounded by      DO(d3),T     .  Moreover, the algorithm computes a reference point in each face along
+with the adjacency information of the cells, indicating which cells are contained in the boundary of
+each cell.
+
+2.4    Singly exponential quantiﬁer elimination
+The proof of Theorem 1.3 will use the following general property, known as singly exponential
+quantiﬁer elimination [11, Theorem 2.27] (also see [6, Proposition 2.6]).
+
+Theorem 2.8. Lets> 1,a andb be non-negative integers, andG1,...,G       s ∈ R[x1,...,x       a,y 1,...,y       b]
+bes real polynomials in the variablesxi andyj, for 1 ≤ i ≤ a and 1 ≤ j ≤ b, each of degree at
+mostD. Let Υ be a boolean function ins variables, andθ = (θ1,...,θ       s) ∈ {− 1, 0, 1}s a sign vector.
+Consider the formula
+
+                    Φ(y) = (∃x ∈ Ra)Υ(sign(G1(x,y )) =θ1,...,      sign(Gs(x,y )) =θs)
+
+in the variabley ∈ Rb. Then there exists an quantiﬁer-free formula Φ′(y) that is equivalent to Φ(y),
+of the form                                                                        
+                                            I⋁  Ji⋀   Li,j⋁
+                                 Φ′(y) =                 sign(G′i,j,l(y))=θi,j,l,
+                                           i=1 j=1    l=1
+
+whereGi,j,l ∈ R[y1,...,y       b] is a polynomial of degreedeg(Gi,j,l) =DO(a),θi,j,l ∈ {− 1, 0, 1}, and we
+have thatI ≤s(a+1)(b+1)DO(ab),Ji ≤sa+1DO(a), andLi,j ≤DO(a), for all 1 ≤i ≤I, 1 ≤j ≤Ji,
+and 1 ≤l ≤Li,j.
+    Moreover, there is an algorithm for computing Φ(y) in times(a+1)(b+1)DO(ab).
+
+Remark. Any condition of the form sign(Gi,j,k(y)) =θi,j,l is equivalent to a Boolean combination
+of the conditions (Gi,j,k(y) ≤  0) and (−Gi,j,k(y) ≤  0).  Hence, the set {y ∈  Rd |Φ′(y)} that is
+deﬁned by the quantiﬁer free formula Φ′(y) in Theorem 2.8, admits a semi-algebraic description
+whose complexity is bounded by (DO(a),s (a+1)(b+1)+a+1DO(ab)).
+
+
+
+
+                                                           9
+
+=== PDF PAGE 11 ===
+2.5    Decomposing a hypersurface into monotone patches
+Deﬁnition.  Letf  ∈  R[x1,...,x       d].  We say that that a direction⃗θ ∈  Sd− 1 is good forf  if any
+⃗θ-oriented line in Rd intersects the zero setZ(f) at ﬁnitely many points.
+
+Lemma 2.9. [[42], pp. 304–305 and pp. 314–315] Letf ∈ R[x1,...,x       d]. Then a uniformly chosen
+direction⃗θ ∈ Sd− 1 is good forf with probability 1.
+
+    The following two properties were established by Agarwal, Matouˇsek and Sharir [2, Theorems
+6.2 and 6.3].
+Lemma 2.10. Letf ∈  R[x1,...,x       d] be ad-variate polynomial of degreeD, and suppose with no
+loss of generality that the direction of thexd-axis is good forf.  ThenZ(f) can be decomposed,
+inDO(d4) time, intoDO(d)xd-monotone semi-algebraic patches, each of description complexity at(
+most    DO(d3),D O(d4)).
+
+3    Proof of Theorems 1.4 and 1.8
+
+Proof of Theorem 1.8. Let us ﬁx the quantititesd> 0,k> 1, ∆ ≥  0,s ≥  1, and then-point set
+P. Since the semi-algebraic relationsψ ∈ Ψd,k,∆,s can determine only ﬁnitely many distinct subsets
+
+                                Pψ = {(p1,...,p       k) ∈P× k |ψ(p1,...,p       k) = 1},
+
+whereP× k denotes the collection of all thek-sequences (p1,...,p       k) of distinct elementspi ∈P,
+choosing a suﬃciently smallϑ =ϑ(P)> 0 guarantees that no such subset Pψ, that is determined
+by a sharpk-wise relationψ ∈ Ψd,k,∆,s overP, is “altered” by anϑ-perturbation ofP.
+    Fixr = ⌈˜c/ǫ  d⌉, where ˜c = ˜c(d,k,  ∆,s )> 1 is a suﬃciently large constant to be ﬁne-tuned in the
+sequel.  Applying Theorem 2.2 to theϑ-perturbed setP  yields anr-partitioning polynomialg ∈
+R[x1,...,x       d]. Recall that the complement Rd\Z(g) is comprised ofK ≤cdr pairwise-disjoint cells
+ω1,...,ω        K, so that each cellωi cuts out a subsetUi =P ∩ωi of size at most |P|/r   ≤ǫdn/  ˜cd ≤ǫ|V|.
+Furthermore, Corollary 2.6 implies that the points ofP ∩Z(g) comprise the “zero-part”U0 whose
+cardinalityn0 satisﬁesn0 ≤c0r ≤  2c0˜c/ǫ  d, wherec0 denotes a suitable constant that depends only
+on the dimensiond.  It can be assumed, with no loss of generality, thatn ≥  4c0˜c/ǫ  d ≥  2n0, or
+else our almost-regular partition is comprised of a single setU0 =P (to which end we will choose
+c ≥  4c0˜c).
+    Fix  ak-wise  relationψ   ∈  Ψd,k,∆,s  whose  semi-algebraic  description  (f1,...,f       s, Φ)  satisﬁes
+deg(fi)  ≤   ∆ for all 1  ≤ i  ≤ s.   It suﬃces to show that,  given a suitably large choice of the
+constant ˜c> 0, we have that
+                                       ∑|Ui1|·...    ·|Uik| ≤ǫk!(n−n0)
+                                                                           k                                          (4)
+
+where the sum on the left hand side is taken over all thek-families (Ui1,...,U       ik), with distinct
+indices 1 ≤ij ≤K, that are notψ-homogeneous.
+    To this end, we “lift”g so as to subdivide the space Rd× k of thek-tuples (ˆx1,...,      ˆxk) of point
+ˆxi ∈  Rd.  For each 1 ≤i ≤k we deﬁne the polynomial ˜gi ∈  R[x1,i,...,x       d,i] by applyingg to the
+coordinates of thei-th point ˆxi; that is ˜gi :=g(x1,i,...,x       d,i). Then the product
+
+                                                k∏        k∏
+                                         ˜g :=     ˜gi =     g(x1,i,...,x       d,i),
+                                               i=1       i=1
+
+                                                           10
+
+=== PDF PAGE 12 ===
+isapolynomial inthedk coordinates ofRd× k, whosedegreesatisﬁesdeg(˜g) =O(kr1/d)=O(r1/d).
+    Let (Ui1,...,U       ik) be ak-family that is notψ-homogeneous, and that does not includeU0. Fix
+a pair ofk-tuples ˆp = (p1,...,p       k) ∈Ui1 ×...    ×Uik and ˆq = (q1,...,q       k) ∈Ui1 ×...    ×Uik, with
+ψ(p1,...,p       k) ̸=ψ(q1,...,q       k).  Sinceωi1,...,ω        ik are path connected cells in Rd \Z(g), so is their
+Cartesian product
+                                              ˜ωi1,...,ik =ωi1 ×...    ×ωik,
+whichis easily seen toconstituteasingleopencell inRd× k\Z (˜g). Hence, ˆpand ˆq mustbeconnected
+by a pathξ : [0, 1] →   ˜ωi1,...,ik ⊆  Rd× k, which does not leave ˜ωi1,...,ik. Sinceψ(ˆp) ̸=ψ(ˆq), there must
+be an index 1 ≤h ≤s so that sign(fh(p1,...,p       k)) ̸= sign(fh(q1,...,q       k)). Hence, there must exist
+ak-tuple (u1,...,u       k) ∈ Im(ξ) that belongs to ˜ωi1,...,ik ∩Z(fh).
+    To  recap,  every  “ψ-irregular”k-family  (Ui1,...,U       ik) gives  rise to  a  distinct cellωi1,...,ik  ⊆
+Rd× k\Z(˜g), which crosses at least one of the surfacesZ(fh). However, in view of Corollary 2.4, the((
+                                                    dk− 1
+number of the latter cells is onlyO            s∆r    d   ) =O      rk− 1/d), so that the left hand side of (4) is
+onlyO(rk− 1/d ·(n/r  )k)=O(nk/r  1/d). Hence, a suﬃciently large choice of ˜c = ˜c(d,k,  ∆,s ) andc =
+c(d,k,  ∆,s ) ≥  4˜cc0 guarantees that, with |P| ≥ 2n0 = 2|U0|, the partition ofP \U0 =U1⊎...   ⊎UK
+is indeed almost (ǫ,ψ )-regular, and that its cardinality is at mostc/ǫ  d. ✷
+Remark. A brief examination of the proof of Theorem 1.8 implies that the implied dependence on
+the constant parameters ∆ ands, within the bound on the partition size, is of the orderO((s∆)d),
+with additional hidden constants that depend only ond andk.
+Proof of Theorem 1.4. TodeduceTheorem1.4fromthestatement ofTheorem1.8,wedistinguish
+between two cases. Ifn = |P|=O(1/ǫ  d+1)then our regular partition ofP is comprised of singleton
+sets {p}, forp ∈P.  Otherwise, if |P| ≥c/ (100ǫ)d+1 say, the preliminary almost-regular partition
+is accomplished by applying Theorem 1.8 toP with a slightly smaller parameterǫ/ 100, and noting
+that the setU0 too has cardinality at mostǫ|P|/ 10 (so that its contribution to the left hand side)/ 10). ✷
+of (2), for anyψ ∈ Ψd,k,∆,s, does not exceedk!·ǫ(nk
+
+4    Proof of Theorems 1.3 and 1.7
+
+If |P|  ≤  1/ǫ ,  then  the regular  partition  is again  comprised  ofn singletons  {p},  withp  ∈ P.
+Otherwise, the statement of Theorem 1.3 will follow by applying the reﬁnement of Lemma 2.1 to
+an almost (ǫ/ 10, Ψd,k,∆,s)-regular partitionP =U1⊎...    ⊎UK, which can be obtained via Theorem
+1.7. Hence, it suﬃces to establish the latter theorem.
+    To this end, let us ﬁxδ′ :=δ/ (100dk) and an additional constantη =δ′/ (100dk).   For the
+sake of brevity,  we adopt the notationx ≪    ηy  wheneverx =O(yη/(10dk))holds for positive
+integersx,y .11  To facilitate our construction and its subsequent analysis, we also ﬁx a suitably
+large constantt =t(d,k,  ∆,s,η  ).
+    Recall that for the sake of almost (ǫ,ψ )-regularity, it is necessary that the cardinality of each
+partU ∈  Π(P,ǫ) does not exceedǫ|P|, which is possible only for the point setsP  of cardinality
+at least 1/ǫ .   As a matter of fact, theO(1/ǫ  d+δ)-size partition Π(P,ǫ) in the sequel will apply
+to all ﬁnite setsP,  while still yielding the inequality (2) for allψ  ∈  Ψd,k,∆,s,  and the bound
+|U| ≤ max{1,ǫ d+δ′|P|}on the respective cardinalities of all member setsU ∈ Π(P,ǫ).
+The intermediate partitions Πi.  To obtain an almost (ǫ, Ψd,k,∆,s)-regular partition Π(P,ǫ) =(
+Πd,k,∆,s,δ(P,ǫ) ofP, we construct a sequence ofI + 1 ≤  logt                   1/ǫ  d+δ′)+i0 progressively reﬁned
+                                                      (  10dk
+  11Ifx,y  ∈ (0, 1), this notation means thatx =O      y  η   ).
+
+
+                                                            11
+
+=== PDF PAGE 13 ===
+partitions Π0 = {P},...,      ΠI = Π(P,ǫ), wherei0>d is a suitable constant to be determined in the
+sequel.
+The intrinsic dimensionl(U).   For each 0 ≤ i ≤ I, every member setU  of thei-th partition
+Πi = Πi(P) is assigned intrinsic dimensionl(U) ∈ {0,...,d     }.  It will maintained thatl(U) = 0
+holds if and only if |U|= 1, and otherwise the cardinality |U|is bounded from below by a certain
+constantn0 =n0(d,k,  ∆,s,δ  ) that will be determined in the sequel.
+    Every elementp ∈U  is assigned weightµ(p) =µi(p) :=tl(U)− d, which is bound to decline
+wheneverp is “passed on” to a subsetW ∈  Πi+1 of smaller intrinsic dimensionl(W)<l(U).  In
+addition, we will useµ(U) =µi(U) to denote the aggregate weight ∑p∈Uµi(p) of a subsetU ∈ Πi.
+The setS(U), and the projectionπS : Rd →   Rl.  In addition tol(U), every setU  ∈  Πi will be
+assigned
+
+   1.  an auxiliary semi-algebraic setS =S(U), whose description complexity is bounded by some
+      constants (∆l,s l) that depend ond,k,l,s,     ∆ andδ, and
+
+   2.  an aﬃne projection functionπ =πS : Rd →   Rl which is injective overS(U).
+
+    Speciﬁcally, ifl(U) = 0 thenU  =S(U) is a singleton {p}, whose semi-algebraic description
+complexity is clearly bounded by the pair (1,d ) (asU is an intersection ofd hyperplanes in Rd),
+and the projectionπS trivially sendsp to 0 ∈ R0.
+    It can be assumed, with no loss of generality, that the cardinality ofP is larger thann0 or, else,
+our almost (ǫ, Ψd,k,∆,s)-partition is comprised of at mostn0 =O(1) singletons.  The construction
+begins with Π0  = {P},l(P) =d andS(P) = Rd.   Every subsequent partition Πi+1 is derived
+by replacing every elementU  ∈  Πi  with its so calledt-reﬁnement Λt(U) – a subdivision ofU
+intoO(t1+η/(10k)) pairwise disjoint subsetsW  ∈  Λt(U) whose intrinsic dimensions assume values
+l(W) ∈ {l,l  −  1, 0}, and their aggregate weights satisfyµi+1(W) ≤µi(U)/t  .  Ifl(U)> 0, we have
+thatS(W) ⊆S(U) for all subsetsW ∈ Λt(U) of positive intrinsic dimensionl(W)> 0, and equality
+S(U) =S(W) arises if and only ifl(U) =l(W).
+    In what follows, we use Fik = Fik(P) to denote the collection of all thek-families (U1,...,U       k)
+within Πi.  Given ak-wise relationψ  ∈ Ψd,k,∆,s, the “ψ-irregularity” of thei-th partition Πi ofP
+will be measured using the following amortized function
+
+                                      ρ(Πi,ψ ) := ∑µ (U1)·...    ·µ (Uk),
+
+where the sum is taken over all thek-families (U1,...,U       k) ∈ F ik that are notψ-homogeneous; in
+what follows, we denote the latter collection by Gik = Gik(P,ψ ).
+
+4.1    The t-reﬁnement Λt(U)
+At the center of our almost (ǫ, Ψd,k,∆,s)-regular partition lies the notion of thet-reﬁnement Λt(U)
+of a point setU  ⊂   Rd.   It will be assumed in the sequel that the setU  is “equipped” with a
+pre-assigned semi-algebraic setS =S(U) ⊇U, whose description complexity is bounded by a pair
+of constants (∆l,s l), and with a projection functionπ =πS : Rd →   Rl that is injective overS.12
+    IfU has intrinsic dimensionl(U) = 0, then we have that |U|= {p} for somep ∈P. Hence, we
+set Λt(U) consists of the singletonU, which is assigned the same intrinsic dimension 0, same set
+
+  12Besides these quantitiesl(U),S =S(U), ∆l,s l andπS, thet-reﬁnement Λt(U) is self-contained in the sense that
+it does not depend on the supersetP, or its partition Πi that includesU.
+
+
+                                                          12
+
+=== PDF PAGE 14 ===
+S(U) :=U, and same projection functionπS mapping Rd to 0 ∈ R0. Hence, it can be assumed in
+what follows thatl(U)> 0 and, therefore, |U|>n0.
+    The reﬁnement Λt(U) will be constructed through repeated application of the polynomialr-
+partition of Theorem 2.2 in Rl. As it will become clear in thesequel, it is instrumental to select such
+apartition parameterr =rl that dependson theintrinsicdimensionl =l(U), and sharplyincreases
+every time we proceed to reﬁne subsetsW  ∈  Λt(U) with lower intrinsic dimensionl(W)<l(U).
+To this end, we will use a sequence ofd auxiliary constantsr1,...,r       d, which depend only ond,k,
+∆,s andη, and satisfy13
+
+                  max({cl |1 ≤l ≤d}∪{∆,s,k,d   }) ≪    ηrd ≪    ηrd− 1 ≪    η...    ≪    ηr1,
+
+wherecl denotes theconstant of proportionality inthepolynomial partition of Theorem2.2 adapted
+to Rl.  In addition, we setn0 :=r1.  Our induction in the intrinsic dimensionsl(U) of the setsU
+will also involve a ﬁctitious parameterrd+1 = 0.
+Thet-reﬁnement tree Tt(U).  The deﬁnition of Λt(U) involves an auxiliary tree-like structure
+Tt = Tt(U). Every nodeα in Tt(U) is assigned a canonical subsetWα ⊆U, which is set toU for the
+root nodeα =α0. The rest of the construction of Tt(U) proceeds fromα0 in top-down fashion, and
+bottoms out at certain terminal nodes whose canonical subsetsWα yield thet-reﬁnement Λt(U) of
+U.
+    The reﬁnement tree Tt(U) is overly inspired by the “bounded fan-out” hierarchical decomposi-
+tion of Agarwal, Matouˇsek and Sharir [2, Section 5], with the following key diﬀerences: (a) the con-
+struction of Tt(U) is carried out only to themaximum levelhl := logrlt,14 (b) thelower-dimensional
+subsetsW ⊂U that fall in the zero-sets of therl-partitioning polynomials, are immediately passed
+on to Λt(U).
+    To further split the canonical subsetWα, that is assigned to an inner (i.e., non-terminal) node
+α, we apply the polynomial partition of Theorem 2.2 to thel-dimensional projectionW∗α =π(Wα),
+which yields anl-variaterl-partitioning polynomialgα ∈  R[y1,...,y       l] of maximum degreeDl =()
+O   r1/ll . (Herey1,...,y       l are thel coordinates of Rl ⊇π(S).) Notice that the zero setZα :=Z(gα)
+ofgα subdivides the points ofW∗α \Zα into at mostclrl subsets, each of cardinality is at most
+|Wα|/r  l.  (With a nominal abuse of notation, we will also usegα andZα to denote, respectively,
+the pull-back polynomialgα ◦π in R[x1,...,x       d], and its zero set within Rd.)
+    Every terminal nodeα falls into the following (non-exclusive) categories:
+  (i)  the level ofα in Tt ishl,
+
+ (ii)  we have that |Wα| ≤n0, or
+ (iii)  thel-dimensional projectionW∗α =π(Wα) lies in the zero setZα′ =Z(gα′) of the parent node
+       α′ofα.
+
+    To construct the subtree rooted at an inner nodeα,  we distinguish between two classes of
+points:  (a) the points ofWα \Zα, whose projections lie inr′≤clrl connected regions (i.e., cells)
+C1,...,C       r′ ⊂  Rl \Zα, and (b) the points ofWα ∩Zα.  If the interior of a regionCj  ⊂  Rl \Zα
+contains at least one projected point ofW∗α, thenα is “attached” a child nodeαj whose canonical
+subsetWαj :=Wα ∩π− 1(Cj) satisﬁes |Wαj| ≤ |Wα|/r  l.
+
+  13Most of our asymptotic bounds will be expressed in the terms of the parametert, which will be chosen to be
+much larger than the constantsr1,...,r        d.  Thus, bounds of the formO(ta) will to used to suppressrl-factors for
+1 ≤l ≤d.
+  14For the sake of brevity, we routinely use logab to denote the quantity ⌈logab⌉.
+
+
+                                                           13
+
+=== PDF PAGE 15 ===
+    Note that ifl(U) = 1, then therl-partitioning polynomials correspond to subdivisions of R1
+into at mostc1r1 continuous intervalsλ  with |W∗α ∩λ| ≤ |W∗α|/r  l, and it can be assumed that
+Zα ∩Wα = ∅.
+    The “leftover” points ofWα∩Zα are dispatched by 1. ﬁrst applying Lemma 2.9 to obtain a so
+called good directionθα ∈ Sl− 1 with respect to the (l− 1)-dimensional hypersurfaceZα within Rl, so
+that |Zα∩ℓ|< ∞   would hold for anyθα-parallel lineℓ, and then 2. invoking Lemma 2.10 to further
+subdivideZα intoz =rO(1)l  θα-monotone semi-algebraic patchesZ1,...,Z       z, whose semi-algebraic(˜∆l, ˜sl)
+description complexities are bounded by                    , with  ˜∆l =rO(l2)l        and ˜sl =rO(l3)l      .  As a result,
+every point ofWα∩Zα belongs to exactly one of the semi-algebraic subsetsSj :=S(U)∩π− 1(Zj).
+Any such semi-algebraic setSj ⊆  Rd, that encompasses at least one point ofWα, gives rise to a
+childα′j ofα withWα′j :=Wα ∩Sj.
+    It is immediate to check that every point ofU  ends up in the canonical subsetW  =Wα of
+exactly one terminal nodeα. In what follows, we distinguish between two classes of such canonical
+subsetsWα.
+Ordinary sets. If the canonical setW =Wα of a terminal nodeα  satisﬁes |W|>n0, and it lies
+outside the zero setZα′ of its parent nodeα′, thenWα becomes an ordinary set of Λt(U), and is
+assigned the same intrinsic dimensionl> 0, the same setS(W) :=S(U), and the same projection
+functionπS : Rd →   Rl.
+    Since such a terminal nodeα  must lie at levelh = logrlt, tracing the descending sequence
+α0,...,α        h− 1 of itsh ancestor nodes yields |W| ≤ |U|/r  hl  = |U|/t  , so thatµ(W) ≤µ(U)/t  .
+    In addition to the setS(W) =S(U), every ordinary setW  =Wα in Λt(U) will be assigned(⋂h− 1)
+a ﬁner semi-algebraic setA(W) :=S(W) ∩π− 1S                   j=0Cj    , whereCj denotes the unique cell in
+Rl \Zαj that containsW∗ for 0 ≤j ≤h−  1.
+    Ifl(U) = 0, thenU is also an ordinary set of Λt(U) = {U}, and we setA(U) =U = {p} for
+somep ∈P.
+Special sets. If the setW =Wα is not ordinary, it becomes a special set of Λt(U), whose intrinsic
+dimension is strictly smaller thanl. As a result, the updated weight of each pointp ∈W is at most
+µ(p) ≤t(l− 1)− d =µ(p)/t  , which again yieldsµ(W) ≤µ(U)/t  .
+    Speciﬁcally, if its cardinality |Wα|is at mostn0, thenWα “contributes” to Λt(U) |Wα|singleton
+subsets {p} of intrinsic dimensionl({p}) = 0, one for each pointp ∈Wα.
+    Otherwise, if |Wα|>n0, thenWα is contained in the zero setZα′ =Z(gα′) of its parent nodeα′.
+Hence, its intrinsic dimension is reduced tol− 1, andS(Wα) is set toSj :=S(U)∩π− 1(Zj), where
+Zj denotes the uniqueθα′-monotone semi-algebraic patch ofZα′ that containsW∗α.  Accordingly,
+the new projection mappingπSj  is given by the “πθα′-pull-back”πθα′ ◦π  ofπ, which is clearly
+injective overSj.
+
+Lemma 4.1.  LetU  be a set of positive intrinsic dimensionl =l(U)> 0, and suppose that the
+description complexity ofS(U) is at most (∆l,s l).  Then thet-reﬁnement Λt(U) ofU  consists of
+O(t1+η/(10k))setsW which satisfyµ(W) ≤µ(U)/t  . Furthermore, the following holds for each part
+W ∈ Λt(U).
+
+   1. IfW  is an ordinary set, then we have thatl(W) =l(U) andS(W) =S(U) (so that the
+      description complexity ofS(W) is too bounded by (∆l,s l)), while the description complexity
+      of the subsetA(W) ⊆S(W) is bounded by (max{∆l,r cl},s l +rcl logt).
+
+   2. IfW is a special set, then we have thatl(W) =l− 1, and the description complexity ofS(W)
+      is bounded by (∆l +rcl,s l +rcl).
+
+                                                         14
+
+=== PDF PAGE 16 ===
+    Herec> 0 is a constant that depends only on the dimensiond.
+Proof.  The bound onµ(W), forW ∈  Λt(U), is an immediate corollary of our deﬁnition of Λt(U)
+via the terminal nodes of Tt(U).  To bound the cardinality of Λt(U), it is enough to observe that:
+(i) every nodeα in the reﬁnement tree Tt(U) has onlyrO(1)l       children, (ii) at mostcl ·rl ≤r1+η/10l
+of these children ofν are non-terminal, and (iii) the depth of Tt(U) is limited byhl = logrlt.
+    Now letW  ∈  Λt(U) be a part withl(W)> 0.  IfW  is ordinary, then we clearly have that
+S(W) =S(U). Furthermore, the bound on the complexity ofA(W) stems from the fact that it is
+an intersection ofS(W) with logrlt “prismatic” cellsπ− 1()         S  (Aj), whose description complexities can
+be bounded by       rO(d3)l  ,r O(d4)l via Theorem 2.7.
+
+4.2    The analysis
+Recall  that  every new partition  Πi  is obtained  by applying thet-reﬁnement Λt(U) to  all  sets
+U ∈ Πi− 1. Let us ﬁrst summarize the most immediate properties of our partitions Πi, which follow
+as a direct corollary of Lemma 4.1.
+Lemma 4.2. The following statement holds with any suﬃciently large choice oft.
+    LetP be a ﬁnite point set in Rd andi ≥  0. Then thei-th partition Πi = Πi(P) is comprised of
+O(ti(1+η/(5k)))parts which satisfyµ(U) ≤n/t  i.
+    Moreover, letU ∈  Πi be a subset of intrinsic dimensionl =l(U)> 0, andW  ∈  Λt(U) be a
+“descendant” set of intrinsic dimensionl(W)> 0 in Πi+1.   Then the description complexity of
+S(W) is bounded by the pair (∆l,s l) with max{∆l,s l} ≤rcl+1.  Furthermore, ifW  is an ordinary
+part of Λt(U), then it is assigned an additional semi-algebraic setA(W) ⊆S(W) whose description
+complexity is bounded by the pair (∆′l,s ′l), with ∆′l ≤rcl  ands′l ≤rcl logt.
+    Herec is a constant that depends only on the dimensiond.
+    In view of our choiceI = logt1/ǫ  d+δ′ +i0, it follows that the cardinality of the last partitition((
+Π(P,ǫ) = ΠI  satisﬁes ⏐⏐ΠI⏐⏐ =O           (1/ǫ )d+δ′+η)   =O      1/ǫ  d+2δ′).  Hence, the rest of this section is
+dedicated to the analysis of the “irregularity” valuesρ(Πi,ψ ) of the partitions Πi with respect tok-
+wiserelationsψ ∈ Ψd,k,∆,s. AccordingtoLemma4.1, anyparticulark-family U = (U1,...,U       k) ∈ F ik
+can give rise toO(tk(1+η/(10k)))k-families W ∈ F i+1k    , so thatWj ⊆Uj would hold for all 1 ≤j ≤k.
+Lemma 4.3 below implies that only few among suchk-families can be “ψ-irregular”, for any given
+k-wise relationψ ∈ Ψd,k,∆,s.
+
+Deﬁnition. Let U = (U1,...,U       k) be ank-family in Rd. We say that ak-family W = (W1,...,W       k)
+derives from U if each of its member setsWj, for 1 ≤j ≤k, satisﬁesWj ⊆Uj, and has the same
+intrinsic dimensionl(Wj) =l(Uj).
+Lemma 4.3 (“The key lemma”).  For any choice ofd ≥  1,k ≥  0, ∆ ≥  0,s ≥  1,c ≥  1, and
+η> 0, one can ﬁx the constantsrl in Section 4.1 so that the following property would hold for all
+them-wise relationsψ ∈ Ψd,m,∆,s, with 0 ≤m ≤k:
+    Let U  = (U1,...,U       m) be anm-family of sets in Rd, where each set has positive intrinsic di-
+mensionlj =l(Uj), and is assigned a subsetSj =S(Uj) whose description complexity is at most
+(rclj+1,r clj+1), and a projection functionπj =πSj : Rd →   Rlj that is injective overSj. Then all but
+O(tm− 1/d+η/5)amongm-families W = (W1,...,W       m), that derive from U, areψ-homogeneous.15
+
+  15Note that if thek-family U ∈ F ik isψ-homogeneous, then so is anyk-family W = (W1,...,W        k) that “descends”
+from U in the subsequent families Fi′k , fori′>i. Hence, it can be assumed with no loss of generality that the family
+U in the statement of Lemma 4.3 is notψ-homogeneous.
+
+                                                           15
+
+=== PDF PAGE 17 ===
+    We postpone the somewhat technical proof of Lemma 4.3 to Section 4.3, and proceed with the
+“ψ-irregularity” analysis of the partitions Πi(P).
+
+Corollary 4.4. Letd> 0,k  ≥  1,∆ ≥  0 ands ≥  0 be integers, andc be the constant in Lemma
+4.2. With the constantsrl selected according to Lemma 4.3, we have that
+                                                   (ρ(Πi,ψ )                          )
+                                ρ(Πi+1,ψ )=O             1           t(i+1)(1− η/5)− 1
+                                                       td− η/5   +    nk
+
+for all setsP  in Rd, all relationsψ ∈ Ψd,k,∆,s, and alli ≥  0.
+
+Proof.  Fix a relationψ ∈ Ψd,k,∆,s, and note that every “ψ-irregular”k-family W = (W1,...,W       k) ∈
+Gi+1k   (P,ψ ) falls into one of the following categories:
+
+   1.  It derives from such ak-family U ∈ G ik(P,ψ ).
+
+   2.  It “descends” from somek-family U = (U1,...,U       k) ∈ G ik(P,ψ ), so thatWj ∈  Λt(Uj) holds
+       for all 1 ≤j ≤k. However, W includes a setWj ∈ Λt(U) so thatl(Wj)<l(Uj).
+
+   3.  Some pair of its setsWj′,W j′′, with 1 ≤j′<j′′≤k, belong to the reﬁnement Λt(Uj) of the
+       same setU ∈ Πi.
+
+Case  1.   Note,  ﬁrst, that the contribution of thek-families W  of type 1 toρ(Πi,ψ ) does not
+exceedO(t− 1/d+η/5 ·ρ(Πi,ψ )). Indeed, according to Lemma 4.3, onlyO(tk− 1/d+η/5) “ψ-irregular”
+k-families W = (W1,...,W       k) ∈ G i+1k   (P,ψ ) can derive from any particular family U = (U1,...,U       k)
+in Gik(P,ψ ) (whose contribution toρ(Πi,ψ ) was ∏kj=1µ(Uj)).  Using thatµ(Wj) ≤µ(Uj)/t   holds
+for all 1 ≤ j  ≤ k, it follows that the overall contribution of suchk-families W  to the quantity
+ρ(Πi+1,ψ ) does not exceed
+                                                                                       
+                                    d+η/5     k∏                               k∏
+                          O  tk−  1tk       ·   µi(Uj)  =O      t−  1d+η/5     µi(Uj),
+                                             j=1                              j=1
+                            (ρ(Πi,ψ ))
+for a total weight ofO        t1/d− η/5   .
+
+Case 2. To bound the contribution of the “ψ-irregular”k-families of type 2, let Λ′t(U) denote the
+collection of all the special subsets in Λt(U), for anyU ∈  Πi.  (Recall that these are the subsets
+W  ∈  Λt(U) withl(W)<l(U).)  Since (i) every subsetW  ∈  Λt(Uj) satisﬁesµi+1(W) ≤ µi(W)
+and, moreover,  (ii) every special subsetW  ∈  Λ′t(Ub) satisﬁesµi+1(W)  ≤ µi(W)/t  ,  the overall
+“contribution” of suchk-families W ∈ F i+1k     that descend from a givenk-family U = (U1,...,U       k) ∈
+Fik, does not exceed
+
+                                                                                                  ∏k
+ k∑                                                         k∑ µi(Uj)
+          ∑     µi+1(W)           ∏      µi(Uj′)  ≤                      ∏      µi(Uj′)  =k·         j=1µi(Uj)
+j=1    W∈Λ′t(Uj)                 j′∈[k]\{j}                j=1     t      j′∈[k]\{j}                           t    .
+
+Repeating this argument for all non-homogeneousk-families U ∈ G ik shows that the overall “con-
+tribution” of the families W ∈ F i+1k     of type 2 to the quantityρ(Πi+1,ψ ) is onlyO(ρ(Πi,ψ )/t  ).
+
+
+                                                           16
+
+=== PDF PAGE 18 ===
+Case 3. As can be easily deduced via Lemmas 4.1 and 4.2, the number of thek-families of type 3
+isO(|Πi+1|k− 1 ·t1+η/(10k))=O(t(i+1)(k− 1)(1+η/(5k))+1+η/(10k)), so their contribution toρ(Πi+1,ψ )
+is only             (                                                         (
+                 O   (n/t  i+1)k ·t(i+1)(k− 1)(1+η/(5k))+1+η/(10k))=O           nk/t  (i+1)(1− η/5)− 1).
+
+                                                   (
+Wrap-up.  Recall that we haveI = logt                1/ǫ  d+δ′)+i0, with some small integer constanti0> 0,
+and useinduction to show that, given suitably large choice oft =t(d,k,  ∆,s,δ  ) andc, the inequality
+
+                                             ρ(Πi,ψ ) ≤nkt2−  (i− 1)(1− δ′)d  .                                                           (5)
+
+must hold for all 0 ≤ i ≤ I, and allk-wise relationsψ  ∈  Ψd,k,∆,s.  Choosing a suﬃciently large
+constanti0> 0 will then guarantee that the last partition is almost (ǫ,ψ )-regular, for anyψ  ∈
+Ψd,k,∆,s.
+    Since the statement of the induction is trivial fori = 0 (as Π0 = {P}), let us ﬁx 1 ≤i ≤ I,
+and suppose that (5) holds for all the previous partitions Πi′, withi′<i, and allk-wise relations
+ψ  ∈  Ψd,k,∆,s.  To establish the same claim for Πi, and a particular relationψ  ∈  Ψd,k,∆,s, we use
+Corollary 4.4 to derive
+
+                                 ρ(Πi,ψ )≤c′1 ·ρ(Πi− 1,ψ )1                ti(1− η/5)− 1,
+                                                       td− η/5     +c′2 ·  nk
+where the constantsc′1 andc′2 do not depend ont ori0.  Plugging the induction assumption into
+the ﬁrst term yields
+
+                        ρ(Πi,ψ )≤c′1 ·nd ·t−  1d+η/5 ·t2−  (i− 2)(1− δ′)d        +c′2 ·  nkti(1− η/5)− 1.
+
+    Recall that we haveη =δ′/ (100dk).   Hence, choosing suitably large constantt, which may
+depend onc′1,c ′2,i0 andδ′, guarantees that the right hand side does not exceednk ·t2−  (i− 1)(1− δ′)d
+for all 0 ≤i ≤I.
+    Finally, ﬁxing a suitable integeri0>d (and recalling thatδ′=δ/ (100dk)) yields
+                                                                               (n)
+                                     ρ(ΠI,ψ ) ≤nk ·t2−  (I− 1)(1− δ′)d        ≤ǫk!k ,
+
+
+and that |U| ≤ max{n/t  I− d, 1} ≤ǫnholds for each setU ∈ ΠI. Combined with the previous bound(
+O   1/ǫ  d+2δ′)=O(1/ǫ  d+δ)onthecardinality ofΠI(P) = Π(P,ǫ), andtheboundmax{n/ǫ  d+δ′, 1} ≤
+ǫn on the cardinalities of its member setsU (both of them using Lemma 4.2), this completes the
+proof of Theorem 1.4. ✷
+
+4.3    Proof of Lemma 4.3
+For the sake of thet-reﬁnement of Section 4.1, let us ﬁx the integersr1,...,r       d ≥  0 that satisfy
+max{∆,s } ≪    ηrd ≪    ηrd− 1 ≪    η...    ≪    ηr1, whose selection will be explained in the sequel, the
+parametert ≫    ηr1, and thek-family U = (U1,...,U       k) in Rd.
+    Let W = (W1,...,W       m) beak-family that derives from U. Recall that every setWj has intrinsic
+dimensionlj =l(Uj) =l(Wj), belongs to thet-reﬁnement Λt(Uj), and is equipped with a semi-
+algebraic setsS(Wj) andA(Wj) ⊆S(Wj).  Iflj =l(Wj) = 0, then we have that |Wj|= |Uj|= 1
+
+                                                            17
+
+=== PDF PAGE 19 ===
+and, accordingly, deﬁneS(Wj) =A(Wj) :=Wj, so that the description complexity of bothWj and
+A(Wj) is trivially bounded by (∆0,s 0) = (1,d ).  Otherwise, Lemma 4.1 yields that the respective
+description complexities ofS(Wj) andA(Wj) are bounded by the pairs (∆lj,s lj) and (∆′lj,s ′lj)
+which satisfy max{∆lj,s lj} ≤rclj+1, ∆′lj ≤rclj ands′lj ≤rclj logt. Herec denotes a suitable constant
+that depends only on the dimensiond.16
+    We say that such anm-family W isψ-separated if the value ofψ(a1,...,a       m) is invariant in the
+choice of (a1,...,a       m) ∈A(W1)×...    ×A(Wm); otherwise, we say that W isψ-crossed.17  Note that
+anyψ-separatedm-family W that descends from U  is, in particular,ψ-homogeneous.  Hence, it
+suﬃces to show that, with a suitable choice of the constantsrj =rj(d,k,  ∆,s,η,c   ) for 1 ≤j ≤d,
+onlyO(tm− 1/d+mη/(10k))ψ-crossedm-families W can derive from U.
+    The proof uses “downward” induction the numberℓ(U) which is deﬁned as the smallest among
+the intrinsic dimensionslb =l(Ub) of the member setsUb ∈ U .  For the sake of our induction, we
+also allow “0-families” U = (·) withℓ(U) :=d+1 andrd+1 = 0. Notice that ifℓ(U) =l, then the
+t-reﬁnements Λt(Ub), for 1 ≤b ≤k, do not depend on the choice of the constantsrj, for 1 ≤j<l.
+    This induction proceeds throughd + 1 steps 0 ≤ j  ≤ d.   At thej-th step, we assume that
+the constantsrd+1  = 0 andrd  ≪    η...     ≪    ηrd− j+1 at the previous steps 0,...,j      −  1, have be
+pre-selected so as to ensure that the induction statement holds for all thek-families U that satisfy
+d −j + 1 ≤ ℓ(U) ≤ d + 1, and proceed to establish the claim for thek-families U  that satisfy
+ℓ(U) =d−j. Note that the assumption is trivial (and superﬂuous) in the 0-th step, where all the
+setsUb ∈ U  must have the same intrinsic dimensionlb =d.
+    For the sake of brevity, let us denotel :=d −j.   To proceed, let us ﬁx thek-family U  =
+(U1,...,U       k) withℓ(U) =l and assume, with no loss of generality, that the ﬁrstq setsU1,...,U       q,
+for some 1 ≤q =q(U) ≤m, have intrinsic dimensionsl(U1) =l(U2) =...    =l(Uq) =l, whereas the
+lastk −q setsUb satisfyl(Ub) ≥l+1.
+    Tofacilitatethesubsequentanalysis, foranyq-family(W1,...,W       q)thatderivesfrom(U1,...,U       q),
+we ﬁx a “representative”q-tuple (w1,...,w       q) ∈W1 ×...    ×Wq.   Then anyψ-crossedm-family
+W = (W1,...,W       m) must fall into exactly one of the following two cases:
+
+  (a)  There exist (m −q)-tuples (a1,...,a       m− q) ∈A(Wq+1) ×...    ×A(Wm) and (a′1,...,a       ′,− q) ∈
+       A(Wq+1)×...    ×A(Wm) so thatψ(w1,...,w       q,a 1,...,a       m− q) ̸=ψ(w1,...,w       q,a ′1,...,a       ′m− q).
+
+ (b) All the (k −q)-tuples (a1,...,a       m− q) inA(Wq+1) ×...    ×A(Wm) attain the same value, say
+       ψ(w1,...,w       q,a 1,...,a       m− q) = 1.
+
+    Note that the ﬁrst scenario cannot occur forq =m, whereas the second one can arise only
+for positive valuesℓ(U) =l.  In the sequel, we establish a separate bound on the number of the
+ψ-crossedm-families W that fall into each category.
+Case  (a).   To bound the number of theψ-crossedm-families W  of the ﬁrst kind, let us ﬁx a
+q-family W′ = (W1,...,W       q), that derives from U′ = (U1,...,U       q), and establish an upper bound
+on the maximum number of such (m −q)-families W′′= (Wq+1,...,W       m) that derive from U′′=
+(Uq+1,...,U       m) and “complement” W′ to aψ-crossedk-family W = W′∗W′′= (W1,...,W       m) of
+type (a).
+The relationψ′′. Notice that the prior choice of the representatives (w1,...,w       q) ∈W1 ×...    ×Wq
+determines a (m −q)-wise relationψ′′∈  Ψd,m− q,∆,s with description (g′′1,...,g       ′′s,φ ), where each
+
+  16To simplify the exposition, we identify this constant with the constantc in the lemma hypothesis.
+  17The latter case occurs if and only ifA  :=A(W1) ×...    ×A(Wk) is crossed  by the semi-algebraic  setY  :=
+{(y1,...,y        k) ∈ Rd× k |ψ(y1,...,y        k) = 1}, in the sense that each of the regionsY  and Rd \ Y  contains a point ofA.
+
+
+                                                            18
+
+=== PDF PAGE 20 ===
+functiong′′i  is obtained by “ﬁxing” the ﬁrstq arguments ingi tow1,...,w       q. Thecrucial observation
+is that every (k −q)-family W′′in question must beψ′′-crossed.   Therefore, and since we have
+ℓ(U′′) ≥l+1, applying the induction assumption to the (m−q)-family U′′yields an upper bound
+O(tm− q− 1/d+(m− q)η/(10k))on the number of suchψ′′-crossed (m−q)-families W′′that derive from
+U′′.
+    Repeating the above argument for all 1 ≤ q ≤ m, and all theO(tq+qη/(10k)) possible choices
+of theq-family U′ = (U1,...,U       q), yields the asserted boundO(tm− 1/d+mη/(10k))on the overall
+number of theψ-crossedm-families W = (W1,...,W       m) of type (a) that derive from U.
+Case  (b).   Let us now ﬁx an (m −q)-family W′′=  (Wq+1,...,W       m) that derives from U′′=
+(Uq+1,...,U       m), and argue that, with a suitable choice ofrl, which satisﬁesrl+1 ≪    ηrl, it can be
+“completed” in onlyO(tq− 1/l+qη/(10k))ways, to aψ-crossedm-family W ∈ (W1,...,W       m) of type
+(b).
+The relationψ′.   To this end, letψ′ : Rd× q  → { 0, 1} denote theq-wise relation which satisﬁes
+ψ′(y1,...,y       q) = 1 if and only ifψ(y1,...,y       q,a 1,...,a       m− q) = 1 holds for all the (m −q)-tuples
+(a1,...,a       m− q) ∈A(Wq+1)×...    ×A(Wm).
+    Similar to case (a), anyψ-crossedk-family W = (W1,...,W       m) under consideration corresponds
+to aψ′-crossedq-family W′ = (W1,...,W       q).  Indeed, since W falls into case (b), we clearly have
+thatψ′(w1,...,w       q) = 1 (wherew1,...,w       q denote the pre-selected representatives in, respectively,
+W1,...,W       q). However, since W isψ-crossed,ψ′(y1,...,y       q) = 1 cannot simultaneously hold for all
+theq-tuples (y1,...,y       q) ∈A(W1)×...    ×A(Wq).
+    Also note that the relationψ′ belongs to the class Ψd,q,∆′,s′,  where ∆′ =  (rl+1 + ∆)κ  and
+s′= (rl+1 +s)κlogκt, andκ =κ(d,k ) is a ﬁxed-degree polynomial ind andk (i.e., the degree of
+κ(d,k ) does not depend ond). To see this, let us observe that the set18
+                                        {                                                   }
+                               Yψ′ :=     (y1,...,y       q) ∈ Rd× q |ψ′(y1,...,y       q) = 1 ,
+
+is the complement of
+{                                                                                                                            }
+  (y1,...,y       q) ∈ Rd× q | ∃(a1,...,a       m− q) ∈A(Uq+1)×...    ×A(Um) :ψ(y1,...,y       q,a 1,...,a       m− q) = 0
+
+which, in turn, is a projection of the following set within Rd× m
+
+                                                            ˜Yψ′ :=
+{                                                                                                                                          }
+ (y1,...,y       q,a 1,...,a       m− q) ∈ Rd× k |(a1,...,a       m− q) ∈A(Uq+1)×...    ×A(Um),ψ (y1,...,y       q,a 1,...,a       m− q) = 0  .
+
+In view of the bound (rcl+1,r cl+1logt) on the description complexity of the setsA(Uq+1),...,A     (Um),
+whose respective intrinsic dimensionsl(Ab) are all strictly larger thanl, the description complexity
+of ˜Yψ′ in Rd× k is bounded by (∆+mrcl+1,s  +mrcl+1logt). The asserted bound on the description
+complexity ofYψ′ (which is also the description complexity of the relationψ′) now follows via
+Theorem 2.8.
+
+The setY ∗ψ′ ⊆  Rl× q.  For the sake of brevity, letS1,...,S       q respectively denote the semi-algebraic
+setsS(U1),...,S     (Uq), andπb denote the projection functionπSb : Rd →   Rl that is associated with
+each setSb. In what follows, we useA∗(Wb) to denote the projectionπb(A(Wb)) for all 1 ≤b ≤q.
+
+  18It is instructive to note that, ifq =m (which is always the case forl =d) thenYψ′ = {(y1,...,y        m) ∈  Rd× m |
+ψ(y1,...,y        m) = 1}.
+
+
+                                                              19
+
+=== PDF PAGE 21 ===
+    Consider the projection functionπ∗ : Rd× q →   Rl× q that sends everyq-tuple (y1,...,y       q) ∈ Rd× q
+to the point (π1(y1),...,π       q(yq)), and denote
+
+                                     Y ∗ψ′ :=π∗(Yψ′ ∩ (S1 ×...    ×Sq)) ⊆  Rl× q.
+
+Using that the description complexity of each setSb  =S(Wb) is bounded by the pair (∆l,s l)
+that satisﬁes max{∆l,s l} ≤ rcl+1, another application of Theorem 2.8 yields that the description
+complexity ofY ∗ψ′ is bounded by the pair (∆∗,s ∗), with ∆∗  = (rl+1 + ∆)κ∗  ands∗  = (rl+1 +
+s)κ∗ logκ∗t, and whereκ∗ =κ∗(d,m ) is yet another constant that is polynomial inm andd.
+    The following property stems from the fact that each projectionπb : Rd →   Rl is injective over
+the setSb ⊇A(Wb), for 1 ≤b ≤q.
+
+Proposition 4.5.  Aq-family (W1,...,W       q), that derives from (U1,...,U       q), isψ′-crossed if and
+only if the setA∗ :=A∗(W1)×...    ×A∗(Wq) is crossed byY ∗ψ′, in the sense thatA∗ ∩X∗ψ′ ̸= ∅ and
+A∗ ̸⊂Y ∗ψ′.
+
+    To proceed, let us consider theq auxiliary trees Tt(U1),...,      Tt(Uq) that have been used to obtain
+the respectivet-reﬁnements Λt(U1),...,      Λt(Uq) ofU1,...,U       q.19  We say that a non-root nodeα in
+Tt(Ub) is ordinary if its canonical subsetWα contains at least one ordinary setW ∈  Λt(U); note
+thatWα lies in a unique cellC =Cα of the partition Rl \Z(gα′), which has been constructed for
+the parent nodeα′ofα in Tt(Ub).
+    For any integerb, that satisﬁes 1 ≤b ≤q, andany level 1 ≤h ≤hl = logrlt, let ususeNh(Ub) to
+denote the subset of all the ordinaryh-level nodes in Tt(Ub). In what follows, we consider the family
+Mh(U1,...,U       q) := Nh(U1)×...    ×N h(Uq), which is comprised of all theq-sequences (α1,...,α        q)
+of ordinaryh-level nodes which are respectively chosen in the trees Tt(U1),...,      Tt(Uq).  For each
+(α1,...,α        q) ∈ Mh(U1,...,U       q), we useCα1,...,αq to denote the cartesian productCα1 ×...    ×Cαq ⊆
+Rl× q of the respective cellsCαb ⊂  Rl.
+    Using (f∗1,...,f        ∗s∗, Φ∗) to denote the semi-algebraic description ofY ∗ψ′, withdeg(f∗e) ≤  ∆∗ for
+all 1 ≤e ≤s∗, we obtain the following property.
+
+Proposition 4.6. Let W′ = (W1,...,W       q) be aψ′-crossed family that derives from (U1,...,U       q).
+Then there exist a polynomialf∗e, with 1 ≤e ≤s∗, and a uniqueq-sequence (α1(h),...,α        q(h)) ∈
+Mh(U1,...,U       q) at every level 0 ≤h ≤hl, so that the following properties hold for all 1 ≤h ≤hl:
+
+   1. We have thatW1 ⊆Wα1(h),...,W       q ⊆Wαq(h).
+
+   2. The setCα1(h),...,αq(h) is crossed byZ(f∗e).
+
+Proof.  Since every setWb is assigned to a unique terminal node in the respective tree Tt(Ub), which
+can be reached via a unique path, at every level 0 ≤h ≤hl there is a uniqueh-levelq-sequence
+(α1(h),...,α        q(h)) ∈ Mh(U1,...,U       q) that meets the ﬁrst condition.  Suppose for a contradiction
+thatforeverypolynomialf∗e thereisalevel 1 ≤h =h(e) ≤hl withthepropertythatCα1(h),...,αq(h)∩
+Z(f∗e) = ∅. However, asA∗(W1)×...   ×A∗(Wq) ⊆Cα1(h),...,αq(h) holds for all 1 ≤h ≤hl,20 it follows
+that the sign of every polynomialf∗e, for 1 ≤e ≤s∗, is invariant overA∗(W1)×...   ×A∗(Wq). Thus,
+contrary to Proposition 4.6, and the choice of (W1,...,W       q) as aψ′-crossedq-family, we have that
+eitherY ∗ψ′ ⊇A∗(W1)×...    ×A∗(Wq) orY ∗ψ′∩ (A∗(W1)×...    ×A∗(Wq)) = ∅.
+
+
+  19Recall that case (b) does not arise ifℓ(U) =ℓ(W) = 0, so each setWb indeed belongs to thet-reﬁnement Λt(Ub).
+  20This is because, according to the deﬁnition of the setsA(Wb) in Section 4.1, each of them must be contained in
+the “prism” ofπ− 1b   (Cαb(h)) over the cellCαb(h) ⊂  Rl \ Zαb(h− 1).
+
+
+                                                             20
+
+=== PDF PAGE 22 ===
+    For any level 1 ≤ h ≤ hl, and any 1 ≤ e ≤ s∗, let Mh(U1,...,U       q;f∗e) denote the subset of
+all suchq-sequences (α1(h),...,α        q(h)) ∈ Mh(U1,...,U       q) that are reached from the root sequence
+(α1(0),...,α        q(0)) via a path ofh′-levelq-sequences (α1(h′),...,α        q(h′)), for 1 ≤h′≤h, that all sat-
+isfyZ(f∗e)∩Cα1(h′),...,αq(h′) ̸= ∅. In addition, we denote M0(U1,...,U       q;f∗e) := {(α1(0),...,α        q(0))}
+for all 1 ≤e ≤s∗. (As before,αb(0) denotes the root node of Tt(Ub).)
+    In view  of Proposition  4.6,  everyψ′-crossed  family  W′ =  (W1,...,W       q),  that  derives from
+(U1,...,U       q), corresponds to a uniquehl-levelq-sequence of terminal nodes
+
+                                     (α1,...,α        q) ∈    ⋃   Mhl(U1,...,U       q;f∗e),
+                                                         1≤ e≤ s∗
+so thatWαb =Wb holds for all 1 ≤b ≤q. Thus, our task comes down to bounding the respective
+cardinalities of all the sets Mh(U1,...,U       q;f∗e), with 1 ≤h ≤hl and 0 ≤e ≤s∗.
+
+Proposition 4.7. With a suitable choice of the constantrl ≫    ηrl+1 in Section 4.1, the following
+statement holds at any given level 0 ≤h ≤hl −  1, and for any 1 ≤e ≤s∗:                                (                  )
+    Anyq-sequence (α1,...,α        q) ∈  Mh(U1,...,U       q;f∗e) gives rise to onlyO                    rq− 1/l+η/(20k)l    “fe-
+crossed” child sequences (β1,...,β       q) ∈ Mh+1(U1,...,U       q;f∗e) in the following levelh+1.
+
+Proof.  Let us ﬁx the sequence (α1,...,α        q) ∈ Mh(U1,...,U       q;f∗e), and consider therl-partitioning
+polynomialsgα1,...,g       αq ∈ R[y1,...,y       l] that are used to subdivide the respective canonical subsets
+Wα1 ⊆U1,...,W       αq ⊆Uq.  We identify the coordinates of Rl× q with {ya,b |1 ≤a ≤l, 1 ≤b ≤q},
+and consider the polynomial
+                                                             q∏
+                                            ˜gα1,...,αq :=      gαb(y1,b,...,y       l,b)
+                                                            b=1
+over Rl× q.                                (       )
+    Note thatdeg(˜gα1,...,αq) =O            qr1/ll  ,21 and that every Cartesian productC1×...    ×Cq of some
+q cellsC1  ⊆  Rl \Z(gα1),...,C       q  ⊆  Rl \Z(gαq) yields a connected cell  ˜C  ⊂  Rl× q \Z(˜gα1,...,αq).
+Invoking Theorem 2.3 for Rl× q \Z(˜gα1,...,αq) and the hypersurfaceZ(f∗e), in dimensionql, yields()
+an upper boundO            ∆∗rq− 1/ll    on the number of such cells  ˜C ⊂  Rl× q \Z(˜gα1,...,αq) that are crossed
+byZ(f∗e).  Since every subsidiary sequence (β1,...,β       q) ∈ Mh+1(U1,...,U       q;f∗e) corresponds to a
+cell  ˜C =Cβ1,...,βq in Rl× q \Z(˜gα1,...,αq) that is crossed byZ(f∗e), this also bounds the number of
+such sequences (β1,...,β       q) that descend from (α1,...,α        q) in Mh+1(U1,...,U       q;f∗e).  Choosing a
+suitably large constantrl ≫    η ∆∗ = (∆+rl+1)κ∗  then guarantees that ∆∗ ≤rη/(20k)l         .
+
+    It follows that the cardinality of every set Mh(U1,...,U       q;f∗e), for 1 ≤ e ≤ s∗ and 1 ≤ h ≤
+hl, is at mostrh(q− 1/l+η/(20k))l                        .   Sincehl  = logrlt, the number of theψ′-crossed families W′ =
+(W1,...,W       q), that derive from U′= (U1,...,U       q), does not exceed
+                                ⏐⏐⏐⏐⏐s∗⋃                        ⏐⏐⏐⏐⏐ =O(
+                                     Mhl(U1,...,U       q;f∗e)            s∗tq− 1/l+η/(20k))=
+                                 e=1
+                               (                                          )        (
+                         =O      tq− 1/l+η/(20k)(rl+1 +s)κ∗ logκ∗t           =O      tq− 1/l+η/(10k)).
+
+                                                                                                     (     )
+  21Recall that each polynomialgαb has been constructed in Rl, and satisﬁesdeg(gαb) =O                 r1/l , where the constant
+                                                                                                        l
+of proportionality does not depend onrl ort
+
+
+                                                                21
+
+=== PDF PAGE 23 ===
+In particular, this bounds the number of suchq-families W′ that descend from U′ and are not
+ψ′-homogeneous. Repeating this argument for all theO(tm− q+(m− q)η/(10k))possible (m−q)-tuples
+W′′= (Wq+1,...,W       m), which determine theq-wise relationψ′(and all choices of 1 ≤q =q(U) ≤
+m), yields an upper boundO(tm− 1/l+mη/(10k))=O(tm− 1/d+mη/(10k))on the number of theψ-
+crossedm-families  W  =  (W1,...,W       m)  of type (b) that  derive from U  =  (U1,...,U       m).   This
+completes the proof of Lemma 4.3. ✷
+
+5    Algorithmic aspects
+
+5.1    Proof of Theorems 1.5 and 1.9
+In view of the reduction in Lemma 2.1, it is suﬃcient to establish Theorem 1.9, which then yields
+Theorem 1.5 as a direct corollary.
+The construction time. The construction of the almost (ǫ, Ψd,k,∆,s)-regular partition Π(P,ǫ) in
+Section 4 is executed inI  =O(log1/ǫ ) stages Π0 = {P},...,      ΠI  = Π(P,ǫ), where thei + 1-th
+partition Πi+1 is derived from its predecessor Πi, by replacing every setU  ∈  Πi of cardinality
+|U| ≥n0 with itst-reﬁnement Λt(U).  (Recall that |U| ≥n0 holds only ifU has positive intrinsic
+dimensionl(U), and otherwise we have that |U|= 1.)  Hence, it suﬃces to show that each such
+t-reﬁnement Λt(P) can be constructed inO(|U|) time.
+    To establish the last statement, recall that Λt(U) is obtained by anl-dimensional variant Tt(U)
+of the “bounded fan-out” tree structure of Agarwal, Matouˇsek and Sharir [2, Section 5], which
+we construct only to a certain levelhl = logrlt; herel denotes the implicit dimensionl(U) ofU
+within Πi.   The branching factor of Tt(U) is bounded by the maximum numberclrl  of cells in
+thel-dimensional polynomialrl-partition of Theorem 2.2. (HerrO(1)l      “lower-dimensional” terminal
+children that can arise to an inner node of Tt(U)).  For an inner nodeα, the subdivision ofZα =
+Z(gα) intoθα-monotone patches is computed using the algorithm of Lemma 2.10, in timeO(1),
+wheretheconstantofproportionalitydependsontheimplicitdimensionl, andthedegreedeg(gα) =()
+O   r1/ll  ofgα.  To this end, the setsS =S(U) need not be explicitly maintained – it is enough
+to keep the respective projection functionsπS : Rd →   Rl. Since botht andrl are constants which
+depend only ond,k,  ∆,s  andδ>0, the entire reﬁnement Λt(U) is obtained inO(|U|) time.
+
+Finding the “ψ-irregular”k-families. As was mentioned in the Introduction, merely deciding
+whether a particulark-family U = (U1,...,U       k) isψ-homogeneous, is a computationally challenging
+task whose complexity depends on the respective cardinalities of the setsUj [18, 21]. Fortunately,
+most applications of semi-algebraic regularity lemmas do not require an explicit subdivision of the
+k-families U  = (Ui1,...,U       ik) into theψ-homogeneous families, and those that are not.  Instead,
+given ak-wise relationψ ∈ Ψd,k,∆,s, it is suﬃcient to obtain a certain superset  ˜G = ˜Gψ ofk-families
+(Ui1,...,U       ik) that satisﬁes
+                                         ∑                                  (n)
+                                                   |Ui1|·...    ·|Uik| ≤ǫk!   k
+                                    (Ui1,...,Uik)∈ ˜G
+
+and includes all suchk-families that are notψ-homogeneous.  The construction of  ˜Gψ will overly
+“mimick” the (ǫ,ψ )-regularity analysis in Section 4.2 and, especially, the proof of Lemma 4.3, in
+which the setsU ∈ Πi are eﬀectively replaced by potentially larger “proxy” supersetsA(U) of small
+
+
+
+
+                                                          22
+
+=== PDF PAGE 24 ===
+semi-algebraic description complexity.22  Informally, the argument in Sections 4.2 and 4.3 makes no
+distinction between theψ-homogeneousk-families U = (U1,...,U       k) ∈ F ki  and theψ-separated ones
+(i.e., suchk-families U = (U1,...,U       k) whose more “rounded” counterparts (A(U1),...,A     (Uk)) are
+ψ-homogeneous).
+    As a preparation,  for each  partU  ∈  Πi  of intrinsic dimensionl  we use the auxiliary tree
+structures Tt(U),  the projection  functionsπS  :  Rd  →    Rl,  and therl-partitioning  polynomials
+gα ∈ R[x1,...,x       l] to precompute the semi-algebraic descriptions of the setsS(U) andA(W) which
+have been assigned in Section 4.1 to all the ordinary setsW ∈ Λt(U). Sincet andrl are constants
+that depend ond,k,  ∆,s  andδ, this can be achieved in additional constant time for eachU ∈ Πi,
+using the algorithm of Theorem 2.7.
+    For0 ≤i ≤I, thequeryalgorithmmaintainsacertainsuperset ˜Gik ofk-familiesU = (U1,...,U       k)
+in Fik, which includes all suchk-families that are notψ-homogeneous. To this end, recall that any
+“ψ-irregular”k-family W  = (W1,...,W       k) in Gik  that derives from somek-family U  ∈   ˜Gik, is in
+particularψ-crossed, in the sense that the relationψ  is not ﬁxed overA(W1) ×...A   (Wk).  (Here
+A(W1),...,A     (Wk) are the low-complexity semi-algebraic sets that have been deﬁned in Section
+4.1 via the respective reﬁnement trees Tt(U1),...,      Tt(Uk) of the “parent” setsU1,...,U       k.)  Every
+subsequent collection  ˜Gi+1k     will now encompass all suchψ-crossedk-families W  = (W1,...,W       k)
+that derive from somek-family U ∈  ˜Gik, along with two special categories ofk-families that have
+been described in the proof of Corollary 4.4.
+    To extend the inductive argument that culminates the proof of Theorem 1.7, to the potentially
+larger collections  ˜Gik, for 0 ≤i ≤I, it will be enough to maintain that the “ψ-irregularity” value in
+stepi
+
+                                       ρi :=         ∑         µ(Ui1)·...    ·µ(Uik),
+                                              (Ui1,...,Uik)∈ ˜Gik
+still satisﬁes the inequality
+                                                (    1     )            (
+                                    ρi+1 ≤O         1         ·ρi +O      nk ·t− i+ηi).                                             (6)
+                                                   td− η/5
+    For the sake of our amortized analysis, every setU  of intrinsic dimensionl =l(U) will be
+assigned cost 1/t  d− l. Accordingly, the cost of ak-family (U1,...,U       k) will be given by ∏ki=1        1td− l(Ui).
+With nominal abuse of notation, we will use |˜Gik|to denote the overall cost of the all thek-families
+in  ˜Gik.
+    Given the collection  ˜Gik, its successor  ˜Gi+1k     will be determined incrementally, by including the
+proper counterparts of the three classes of thek-families W = (W1,...,W       k) that arise in the proof
+of Corollary 4.4.
+
+   1.  Ak-family W = (W1,...,W       k) in Fi+1k     of the ﬁrst type if it descends from such ak-family U =
+       (U1,...,U       k) in  ˜Gik, and isψ-crossed. Notice that the proof of Lemma 4.3 yields an algorithm
+       for ﬁnding, in constant time, a collection ofO(tk− 1/d+η/5)k-families23 W = (W1,...,W       k)
+       that derive from U  and areψ-crossed.   (In particular, these include all suchk-families W
+       that derive from U  and are notψ-homogeneous.)  Indeed, one can test whether ak-family
+       (W1,...,W       k), that derives from U, isψ-crossed by testing the emptiness of the semi-algebraic
+       set
+
+  22Recall that the setA(U) is deﬁned for a setU ∈ Πi only ifU has the same intrinsic dimension as its parent set
+in Πi− 1.
+  23Here the constant of proportionality does not depend ont.
+
+
+                                                              23
+
+=== PDF PAGE 25 ===
+                  {                                                    ⏐⏐⏐⏐⏐ψ (a1,...,a       k) ̸=ψ (a′1,...,a       ′k
+                    (a1,...,a       k,a ′1,...,a       ′k) ∈  ˜A(W)×   ˜A(W)                                 )}  ,
+
+
+       with ˜A(W) :=A(W1)×...   ×A(Wk). SinceeachsetA(Wj)hasconstantdescriptioncomplexity,
+       which only depends ond,k,  ∆,s  andδ, this can be done inO(1) time using the algorithm of
+       Theorem 2.7.
+       Repeating this for eachk-family U  in  ˜Gik, and eachk-family W  that derives from U, one
+       can compute all the |˜Gik|·O(tk− 1/d+η/5)ψ-crossedk-families of the ﬁrst type in overall time(⏐⏐⏐˜Gik⏐⏐⏐)
+       O           (where the time bound omits constant factors that involvet).
+
+   2.  Wesay thatak-family W = (W1,...,W       k) ∈ F i+1k    isoftype2ifit descendsfromacounterpart
+       U = (U1,...,U       k) in Fik, so thatWj ⊆Uj for all 1 ≤j ≤k, yet at least one of the setsWj
+       satisﬁesl(Wj)<l(Uj).
+       Since cardinality of thet-reﬁnement Λt(U) of each setU ∈ Πi isO(t1+η/(10k))=O(1), all the()
+       k-families of type 2 can be computed from ˜Gik inO⏐⏐⏐.            |˜Gik| time. Furthermore, their amortized
+       cost is easily checked to beO(tk− 1+η/10)⏐⏐⏐˜Gik
+
+   3.  Lastly, a family W  is of type 3 if some pair of its setsWj,W j′, forj ̸=j′, belong to the
+       t-reﬁnement Λt(U) of the same setU ∈ Πi. Since the overall cardinality of thei-th partition
+       Πi isO(ti(1+η/(10k))), the total cost of such families isO(t1+i(k− 1)(1+η/(10k))), and they can
+       be constructed in similar time using Πi.
+
+    It, therefore, follows that the total amortized time that is spent to compute every subsequent
+collection Gi+1k     from its predecessor  ˜Gik  isctk− 1/d+η/5 · |Gik|+O(t1+i(k− 1)(1+η/(10k))), which also
+yields the bound
+                             ⏐⏐⏐˜Gi+1⏐⏐⏐ ≤ctk− 1/d+η/5 ·|˜Gik|+O    (
+                                k                                     t1+i(k− 1)(1+η/(10k))),
+
+on the cardinality of Gi+1k     and guarantees that (6) indeed holds for all 1 ≤ i ≤ I −  1.  Since we
+have thatI = log(1/ǫ  d+2δ′)+i0, a simple recursive analysis, similar to the one that culminates the
+proof of Theorem 1.9, implies that theI-th collection GIk can be computed, using the intermediate
+partitions Πik and the auxiliaryt-reﬁnement trees Λt(U), in overall timeO((1/ǫ )dk− 1+δ). ✷
+
+5.2    Proof of Theorem 1.6
+The proof of Theorems 1.7 and 1.9 instantly yields the followingk-partite formulation.
+Theorem 5.1. The following statement holds for all 0<δ ≤  1.                                                   (∑k                      )
+    LetP1,...,P       k be point sets in Rd and 0<ǫ≤  1. Then one can construct in overallO                         j=1|Pj|log(1/ǫ )
+time, partitions Π1,...,      Πk of, respectively,P1,...,P       k, intoO(1/ǫ  d+δ) subsetsU ∈ Πj whose car-
+dinalities satisfy |U| ≤ max{1,ǫ d|Pj|}, and so that the inequality
+                                       ∑         |U1|·...    ·|Uk| ≤ǫ|P1|×...    ×|Pk|                                        (7)
+
+
+                                 (U1,...,Uk)∈ ˜Gψ
+holds for allψ  ∈  Ψd,k,∆,s.  Here  ˜Gψ denotes a certain collection ofk-families (U1,...,U       k) ∈ Π1 ×
+...    ×  Πk, including all suchk-families that are notψ-homogeneous.
+
+                                                             24
+
+=== PDF PAGE 26 ===
+    Furthermore, the construction yields a data structures that, given a relationψ ∈ Ψd,k,∆,s, returns
+such a collection  ˜Gψ in additional timeO(1/ǫ  dk− 1+δ).
+
+Proof sketch.  We construct the partition Πj = Π(Pj,ǫ ′) of Section 4 for each setPj, with a slightly
+smaller parameterǫ′= Θ(ǫ). Thatis, each partition Πj isattained throughasequenceΠj0,...,      ΠIj =
+Πj  ofI  = logt1/ǫ  d+δ′ +i0  progressively reﬁned subdivisions which have been described in the
+beginning of Section 4. To this end, we set Π0j = {Pj} for |P0j |>n0, and otherwise Π0j consists of
+at mostn0 singletons. (In the latter case, we have Π0j =...    = ΠIj = {{p} |p ∈Pj}.)
+    Given  a  relationψ   ∈   Ψd,k,∆,s,  we  construct  the  family  ˜Gψ  by  slightly  modifying  the  “ψ-
+irregularity” analysis of Section 5.1.   To this end, we adopt a suitably adjusted families Fik  =
+Πi1 ×...    ×  Πik and  ˜Gik; the latter family includes all the “ψ-irregular” families (U1,...,U       k) ∈  ˜Gik.
+More precisely, wehave that G0k = F0k, and every subsequentcollection ˜Gi+1k    consists of thefollowing
+two categories ofk-families within F0k:
+
+   1.  Theψ-crossed families W = (W1,...,W       k) that derive from thek-families U = (U1,...,U       k) ∈
+       ˜Gik, so thatW1 ⊆U1,...,W       k ⊆Uk.
+
+   2.  Such families W = (W1,...,W       k) that “descend” from somek-family U ∈  ˜Gik, so thatl(Wj)<
+       l(Uj) holds for some 1 ≤j ≤k.
+
+    The proof of Theorem 1.9 implies that in each step the quantity
+
+                                           ρi =        ∑         |U1|·...    ·|Uk|
+                                                  (U1,...,Uk)∈ ˜Gik
+
+decreases with each iteration by a factor of Ω(t1/d− η/5), as long as the collection  ˜Gik is not empty.
+(Notice that the analysis is made simpler by the fact that no “colorful”k-family W in  ˜Gi+1k     falls
+into the third category:  nok-family W ∈  ˜Gik includes two sets that result from thet-reﬁnement
+Λt(U) of the same setU in Πij, for 1 ≤j ≤k.)  Hence, a suitable choice ofi0 guarantees that the
+last valueρI falls belowǫ|P1|×...    ×|Pk|.
+
+    Let us now invoke Theorem 5.1 withǫ/ 3 instead ofǫ, and without explicitly computing the
+collection ˜Gψ. Notice that the remainingk-families U = (U1,...,U       k) ∈ Π1×...   × Πk\˜Gψ encompass
+a total of at least (2ǫ/ 3)|P1|·...    ·|Pk|k-tuples (p1,...,p       k) ∈P1 ×...    ×Pk. Our task comes down
+to ﬁnding such ak-family U = (U1,...,U       k) ∈ Π1 ×...    ×  Πk \˜Gψ that meets the following criteria
+(with a suitable constantc> 0):
+
+   1.  all (p1,...,p       k) ∈U1 ×...    ×Uk satisfyψ(p1,...,p       k) = 1,
+
+   2.  we have that |Uj| ≥cǫd+1+δ|Pj|for all 1 ≤j ≤k.
+
+    In what follows, we refer to suchk-families U as good.
+    With a suﬃciently small choice ofc> 0, thek-families U  that violate the second condition,
+“account” for at mostǫ|P1| ·...    · |Pk|/ 3 among thek-tuples inP1 ×...    ×Pk.  Hence, there must
+remain at least (ǫ/ 3)|P1|×...    ×|Pk|k-tuples (p1,...,p       k) ∈P1×...    ×Pk that come from the good
+k-families U ∈ Π1 ×...    ×  Πk \˜Gψ.
+    To ﬁnd at least one goodk-family U = (U1,...,U       k), we proceed through a series of random
+trials.   In each round, we select a random sequence (p1,...,p       k) ofk distinct pointspj  ∈P.  If
+ψ(p1,...,p       k) = 1, we use the auxiliary structures in the proof of Theorem 1.9 to determine the
+
+                                                             25
+
+=== PDF PAGE 27 ===
+k-family U ∈ Π1 ×...    ×  Πk that contains (p1,...,p       k), by “tracing” each pointpj in the respective
+partitions Πij, for 0 ≤ j ≤ I, and testing if U  is good.  (If |Pj|=O(1/ǫ ), then the partition Πj
+consists of singletons, and we randomly and uniformly select one of them.)
+    Note thek-family U = (U1,...,U       k) is belongs to  ˜Gψ if and only if it can be reached through
+a sequence of “colourful”k-families Wi = (Wi1,...,W        ik) ∈   ˜Gik, so thatUj  ⊆ Wij  would hold for
+all 1 ≤j ≤k and all 0 ≤i ≤I.  Here  ˜Gik denotes the sub-collection of Fik = Πi1 ×...    ×  Πik that
+was used in the proof of Theorem 5.1.  Hence, using the auxiliary semi-algebraic setsA(Wj) as
+described in Section 5.1, one can determine whether the sampled family U = (U1,...,U       k) belongs
+to Π1 ×...    ×  Πk \˜Gψ in additional timeO(I) =O(log(1/ǫ )).
+    Since thealgorithm is poised to succeed in expectedO(1/ǫ ) roundsuponﬁndinga goodk-family(∑k)
+U, it can can be implemented in expectedO                    j=1(|Pj|+1/ǫ )log(1/ǫ )         time. ✷
+
+6    Discussion
+
+A semi-algebraic  same-type lemma.  One of the more studied semi-algebraic relationsψ  is
+determined by the orientationχ(x1,...,x       d+1) of a (d+1)-point sequence in Rd.  Here we use the
+orientation functionχ : Rd× (d+1) → { +, −, 0}, which is given by
+                                                             1          1       ···       1  
+                                                         x1(1) x2(1)   ···xd+1(1)
+                         χ(x1,...,x       d+1) = signdet    x1(2) x2(2)   ···xd+1(2)             ,
+                                                               ...           ...         ...           ...
+                                                            x1(d) x2(d)   ···xd+1(d)
+
+to deﬁne the (d+1)-wise relationψ  : Rd× (d+1) → { 0, 1} over Rd that assumes value 1 if and only
+ifχ(x1,...,x       d) = +.
+    In 1998 B´ar´any and Valtr [7] established the following Ramsey-type statement with respect to
+order types, which underlies recent progress on the Erd˝os Happly End problem in the plane [44]
+and in 3-space [40].
+
+Theorem 6.1 (Same Type Lemma [7]). For any positive integersd andl, there iscd(l)> 0 with
+the following property: For any ﬁnite point setsP1,...,P       l ⊂  Rd, whose union is in general position,
+there exist pairwise disjoint subsetsU1 ⊆ P1,...,U       l ⊆ Pl, each of cardinality |Ui| ≥cd(l)|Pi|, so
+that for any (d + 1)-size sub-family (Uj1,...,U       jd+1) the valueχ(p1,...,p       d+1) is invariant in the
+choice of the representativespi ∈Uji.
+
+    In other words, Theorem 6.1 yields subsetsUi ⊂Pi that encompass at least a ﬁxed fraction of
+the points ofPi, for 1 ≤i ≤l, and furthermore, the order-types of thek-sequences (p1,...,p       l) ∈
+U1 ×...    ×Ul is invariant in the choice of the representativespi ∈Ui.  (That is, the convex hulls
+conv(Ui), for 1 ≤i ≤l, are in “general position” – nod+1 can be crossed by a single hyperplane.)
+    Arecent studybyBukhandVasileuski [14] combinedthepolynomial partition ofGuthandKatz(
+[31] with the “lifting” argument in Rdk to re-establish Theorem 6.1 withcd(l) = Θd                          1/l  d2), and
+the same asymptotic bound inl was independently established by Rubin [41] in a more restricted
+settingP1 =P2 =...    =Pl, by the means of Matouˇsek’s simplicial partitions [37].  Though the
+somewhat ad-hoc analysis of Bukh and Vasileuski does not immediately extend to arbitrary semi-
+algebraic relations, it largely underlies the proofs of the “limited” almost-regularity statement of
+Theorem 1.8, and the somewhat more intricate proof of Lemma 4.3.
+
+
+                                                            26
+
+=== PDF PAGE 28 ===
+    An almost immediate consequence of (thek-partite analogues of) Theorems 1.7 and 1.8 is the
+following semi-algebraic generalization of the last lower bound oncd(l).
+
+Theorem 6.2 (Semi-Algebraic Same Type Lemma). For any positive integersd,k, ∆,s, and any
+δ>0, there is a constantc =c(d,k,  ∆,s,δ  ) with the following property:
+    For anyl ≥k setsP1,...,P       l in Rd, and any semi-algebraic relationψ ∈ Ψd,k,∆,s one can choose
+l subsetsU1 ⊂P1,...,U       l ⊂Pl whose respective cardinalities satisfy |Ui| ≥cn/l  (k− 1)d+δ, and so that
+all thek-families (Ui1,...,U       ik) areψ-homogeneous, where 1 ≤ij ≤l.
+    If the relationψ  is sharp over ⋃li=1Pi, then the bound improves to |Ui| ≥cn/l  (k− 1)d.
+Proof.  Let us ﬁxǫ=c′/l  k− 1, with a suitably small constantc that will be determined in the sequel.(
+Similar to Section 5.2, we construct a separate partition Πi of cardinalityri = Θ                             1/ǫ  d+δ′)  for
+each setPi, withδ′ =δ/ (10k), so that each partU ∈  Πi encompasses at most max{ǫd+δ′|Pi|, 1}
+elements ofPi. The argument in Section 5.2 implies the following statement which is parallel to [41,
+Theorem5.2] and[14, Lemma9]: forany1 ≤i1<i2<...<i    k ≤l, thepartitionsΠi1,...,      Πik yield
+O(ǫ|Πi1|·...    ·|Πik|)k-families U = (Ui1,...,U       ik) ∈ Πi1 ×...    ×  Πik that are notψ-homogeneous.
+    We now repeat the argument of [14, Section 3] in the new setting.   To this end, let Π′i  :=
+{U  ∈  Πi | |U| ≥ |Pi|/ (4ri)}, and notice that |⋃Π′i| ≥ 3|Pi|/ 4 holds for all 1 ≤ i ≤ l.  Consider
+thek-uniform hypergraph (V ′,E ′) overV ′:= ⨄li=1Π′i whose edge set describes all theψ-irregular
+k-families U = (Ui1,...,U       ik) ∈  Π′i1 ×...    ×  Π′ik, fori1<i2<...<i    k, and refer to a random and
+uniform choice (U1,...,U       l) ∈ Π′1 ×...    ×  Π′l.
+    For any ﬁxed choice of indices 1 ≤ i1<i2<...<i    k ≤ l, letYi1,...,ik denote the event that
+the edge (Ui1,...,U       ik) belongs toE′. Notice thatYi1,...,ik clearly has probabilityO(ǫ) =O(c′/l  k− 1)
+(where the implicit constant of proportionality does not depend onc′), and depends on at most)=O(lk− 1) other eventsYi′1,...,i′k of this kind.  Hence, choosing a suitably smallc′> 0, and
+k( lk− 1
+invoking Lov´asz Local Lemma (see, e.g., in [5, Corollary 5.1.2]) yields with positive probability that
+none of the eventsYi1,...,ik occurs.  Furthermore, since each subsetUi ⊆Pi is chosen from Π′i, its
+cardinality satisﬁes |Ui| ≥ |Pi|/ (4ri) = Ω(ǫd+δ|Pi|)= Ω(1/l  d(k− 1)+δ|Pj|).
+    The second statement, in which the relationψ  is sharp over ⋃li=1Pi, is established in a similar
+manner, by applying theO(1/ǫ  d)-size almost-regular partition in Section 3 to each setPi. To this
+end, we again useǫ=c′/l  k− 1 with a suﬃciently small constantc′> 0, and distinguish between two
+possible scenarios for each setPi. If |Pi| ≥c′′/ǫ  d, for a suitably large constantc′′> 0, then we can
+omit from consideration a small subset of at most |Pi|/ 10 points that are left “unclassiﬁed” by the
+partitioning polynomialgi ofPi (along with at most |Pi|/ 4 points that belong to “small” sets of
+Πi \Π′i). Otherwise, the respective partition Πi is comprised ofO(1/ǫ  d) singletons.
+    It, therefore, suﬃces to check that the probability of each eventYi1,i2,...,ik remainsO(ǫ). Indeed,
+let us ﬁx 1 ≤i1<...<i    k ≤l, and suppose that exactlyk′≤k among the respective setsPij have
+cardinality |Pij|<c′′/ǫ  d.  Assume with no loss of generality, that their labels arei1,...,i       k′.  By
+ﬁxing somek′singletonsUi1 = {p1},...,U       ik′ = {pk′} within the respective partitions Πi1,...,      Πik′,
+and each time referring to the restricted, (k −k′)-wise relationψ(p1,...,p       k′,x 1,...,x       k− k′) in the
+variablesx1,...,x       k− k′ ∈ Rd, we readily conclude that all butO(ǫ|Πik′+1|×...   ×|Πik|) of the(k−k′)-
+families (Uik′+1,...,U       ik) ∈ Πik′+1×...   × Πik areψ′-homogeneous. (To adapt the analysis in Section
+3 to the presentk′-partite setting, we consider the partition of Rd(k− k′) that is induced by the
+product ∏kj=ik′+1 ˜gij, where ˜gi denotes the polynomialgi(x1,i,...,x       d,i).)  Repeating this argument
+for all the possible choices ofUi1,...,U       ik′ again implies that only anO(ǫ) fraction of thek-families
+(Ui1,...,U       ik) ∈ Π′i1 ×...    Π′ik are notψ-homogeneous.
+
+Recent progress.  After an earlier version of this article had been made public, the bound in
+
+                                                             27
+
+=== PDF PAGE 29 ===
+Theorem 1.7 was slightly improved by Tidor and Yu, who reported a almost regular partitions of
+cardinalityC/ǫ  d, with a more explicit constant of proportionalityC =Od,k((s∆)d). Specializing to
+sharp relationsψ, this overly matches the bound in Theorem 1.8. In addition, they also presented
+a matching lower bound construction on the cardinality of almost-regular partitions.
+    Similar to the our analysis in Sections 2 and 4, Tidor and Yu combine the “lifting” argument
+in Rdk with the Barone-Basu bound [9] (Theorem 2.3).  However, in contrast to our partition in
+Section 4, which is obtained through a hierarchy of constant-size partitions Rd\Z(g) (each induced
+by the zero set of a ﬁxed-degreer-partitioning polynomialg given in Theorem 2.2), the partition
+of Tidor and Yu builds on a rather more intricate algebraic machinery of “multi-level partitions”,
+and is not accompanied by a near-linear construction algorithm.  Unfortunately, the shear cost of
+manipulating polynomials of super-constant degrees (let alone traversing an arrangement of their
+zero sets) seems to pose a veritable challenge to eﬃcient implementation of either the partition of
+Tidor and Yu, or even the simpler partition in Theorem 1.8: as was previously mentioned, the best
+known algorithm for constructing anr-partitioning polynomial runs in expected timeO(rn+r3)
+[2].
+
+References
+
+[1]  P. K. Agarwal and J.Matouˇsek, On range searching with semialgebraic sets, Discrete Comput.
+  Geom. 11 (1994), 393–418.
+
+[2]  P. K. Agarwal, J. Matouˇsek, and M. Sharir, On range searching with semialgebraic sets II,
+  SIAM J. Comput. 42 (2013), 2039–2062.
+
+[3]  N. Alon, I. B´ar´any, Z. F¨uredi and D. J. Kleitman, Point selections and weakǫ-nets for convex
+  hulls, Comb. Prob. Comput. 1 (1992), 189–200.
+
+[4]  N. Alon, J. Pach, R. Pinchasi, R. Radoiˇci´c, and M. Sharir, Crossing patterns of semi-algebraic
+  sets, J. Combin. Theory Ser. A 111 (2005), 310–326.
+
+[5]  N. Alon, and J. H. Spencer, The probabilistic method, 4th ed. Wiley Series in Discrete Mathe-
+  matics and Optimization. John Wiley & Sons, Inc., Hoboken, NJ, 2016.
+
+[6]  B. Aronov, E. Ezra, and J. Zahl, Constructive polynomial partitioning for algebraic curves in
+  R3 with Applications, SIAM J. Comput. 49(6) (2020), 1109–1127.
+
+[7]  I. B´ar´any and P. Valtr, A positive fraction Erd˝os - Szekeres Theorem, Discrete Comput. Geom.
+  19 (1998), 335–342.
+
+[8]  I. B´ar´any, Z. F¨uredi and L. Lov´asz, On the number of halving planes, Combinatorica 10 (2)
+  (1990), 175 – 183.
+
+[9]  S. Barone and S. Basu, Reﬁned bounds on the number of connected components of sign condi-
+  tions on a variety, Discrete Comput. Geom. 47 (2012), 577–597.
+
+[10]  A. Basit, A. Chernikov, S. Starchenko, T. Tao, and C.-M. Tran, Zarankiewicz’s problem for
+  semilinear hypergraphs, For. Math., Sigma 9 (e59), 2021.
+
+[11]  S. Basu, Algorithms in real algebraic geometry: A survey, in Real Algebraic Geometry, vol. 51
+  of Panor. Synthe´ses, Soc. Math. France, Paris, 2017, 107–153.
+
+
+
+                                                          28
+
+=== PDF PAGE 30 ===
+[12]  S. Basu, R. Pollack, and M.F. Roy, Algorithms in Real Algebraic Geometry (2nd ed.), Springer-
+  Verlag, Berlin, 2006.
+
+[13]  E.BorosandZ.F¨uredi, Thenumberoftrianglescoveringthecenterofann-set, Geom. Dedicata
+  17(1) (1984), 69–77.
+
+[14]  B. Bukh and A. Vasileuski, New bounds for the same-type lemma, Electronic J. Comb. 31 (2)
+  (2024).
+
+[15]  T. M. Chan and S. Har-Peled, On the number of incidences when avoiding an induced biclique
+  in geometric settings, Proc. 34th ACM-SIAM Symp. Discrete Algs. (SODA), pp 1398–1413, 2023
+
+[16]  B. Chazelle, Cutting hyperplane arrangements, Discrete Comput. Geom. 6 (1991), 385–406.
+
+[17]  D. Conlon, J. Fox, J. Pach, B. Sudakov, and A. Suk, Ramsey-type results for semi-algebraic
+  relations, Trans. Amer. Math. Soc. 366 (2014), 5043–5065.
+
+[18]  E. D. Demaine, J. S. B. Mitchell, and J. O’Rourke, Problem 11:  3SUM Hard Problems, The
+  Open Problems Project,https://topp.openproblem.net/p11.
+
+[19]  T. T. Do, Zarankiewicz’s problem for semi-algebraic hypergraphs, J. Comb. Theory, Ser. A,
+  158 (2018), pp. 621–642.
+
+[20]  H. Edelsbrunner, E. M¨ucke, Simulation of simplicity:  a technique to cope with degenerate
+  cases in geometric algorithms, ACM Trans. Graph. 9 (1) (1990), 66–104.
+
+[21]  J. Erickson and R. Seidel, Better lower bounds on detecting aﬃne and spherical degeneracies,
+  Discrete Comput. Geom. 13 (1995), 41–57.
+
+[22]  J. Fox,  M. Gromov,  V. Laﬀorgue,  A. Naor,  and J. Pach,  Overlap properties of geometric
+  expanders,  Journal  f¨ur  die reine und angewandte  Mathematik  (Crelle’s Journal) 671 (2012),
+  49-83.
+
+[23]  J. Fox, J. Pach, A. Sheﬀer, A. Suk, and J. Zahl, A semi-algebraic version of Zarankiewicz’s
+  problem, J. Europ. Math. Soc. 19 (2017), 1785–1810.
+
+[24]  J. Fox, J. Pach, and A. Suk, A polynomial regularity lemma for semialgebraic hypergraphs and
+  Its applications in geometry and property testing, SIAM J. Comput. 45(6) (2016), 2199–2223.
+
+[25]  J. Fox, J. Pach, A. Suk, The Schur-Erd˝os problem for semi-algebraic colorings, Israel J. Math.
+  239 (2020), 39–57.
+
+[26]  N. Frankl and A. Kupavskii, On the Erd˝os-Purdy problem and the Zarankiewitz problem for
+  semialgebraic graphs,https://arxiv.org/abs/2112.10245.
+
+[27]  W. T. Gowers,  Hypergraph regularity and the multidimensional Szemer´edi theorem,  Ann.
+  Math. 166 (2007), 897–946.
+
+[28]  W. T. Gowers, Lower bounds of tower type for Szemer´edi’s uniformity lemma, Geom. Funct.
+  Anal. 7 (1997), 322–337.
+
+[29]  W. T. Gowers, Quasirandomness, counting and regularity for 3-uniform hypergraphs, Combin.
+  Probab. Comput. 15 (2006), 143–184.
+
+
+                                                         29
+
+=== PDF PAGE 31 ===
+[30]  M. Gromov, Singularities, expanders and topology of maps. Part 2:  From combinatorics to
+  topology via algebraic isoperimetry, Geom. Funct. Anal. 20 (2) (2010), 416–526.
+
+[31]  L. Guth and N. H. Katz, On the Erd˝os distinct distance problem in the plane, Annals Math.
+  181 (2015), 155–190. Also in arXiv:1011.4105.
+
+[32]  D. Halperin and M. Sharir, Arrangements, Chapter 27 in Handbook of Discrete and Compu-
+  tational Geometry, J.E. Goodman, J. O’Rourke, and C. D. T´oth (ed.), 3rd edition, CRC Press,
+  Boca Raton, FL, 2017.
+
+[33]  O.  Janzer  and  C.  Pohoata,  On  the  Zarankiewicz  problem  for  graphs  with  bounded  VC-
+  dimension, Combinatorica, 2024,https://doi.org/10.1007/s00493-024-00095-2.
+  Discrete Comput. Geom. 54 (2015), 610–636.
+
+[34]  C. Keller and S. Smorodinsky, Zarankiewicz’s problem viaε-t-nets, in Proc. 40th Int. Symp.
+  Comput. Geom., 2024, to appear.https://arxiv.org/pdf/2311.13662.pdf.
+[35]  J. Matouˇsek, Lectures on Discrete Geometry, Springer-Verlag, New York, 2002.
+
+[36]  J. Matouˇsek, Using the Borsuk-Ulam theorem, Lectures on Topological Methods in Combina-
+  torics and Geometry, Universitext, Springer-Verlag, Heidelberg, 2003, second corrected printing
+  2008.
+
+[37]  J. Matouˇsek, Eﬃcient partition trees, Discrete Comput. Geom. 8 (3) (1992), 315–334.
+
+[38]  H. Kaplan,  J. Matouˇsek,  and M. Sharir,  Simple Proofs of Classical Theorems in Discrete
+  Geometry via the Guth-Katz Polynomial Partitioning Technique, Discrete Comput. Geom. 48
+  (2012), 499–517.
+
+[39]  B. Nagle, V. R¨odl and M. Schacht, The counting lemma for regular k-uniform hypergraphs,
+  Random Struct. Algs. 28 (2006), 113–179.
+
+[40]  C.      Pohoata      and      D.      Zakharov,       Convex      polytopes      from      fewer      points,
+  https://arxiv.org/abs/2208.04878.
+
+[41]  N. Rubin, Improved bounds for point Selections and halving hyperplanes in higher dimen-
+  sions,  in  Proc.  of  the  2024  Annu.  ACM-SIAM  Symp.  Disc.  Algs.  (SODA),  pp.  4464–4501.
+  https://arxiv.org/abs/2403.00412, 2024.
+
+[42]  J. T. Schwartz and M. Sharir,  On the Piano Mover’s problem:  II General techniques for
+  computing topological properties of real algebraic manifolds, Adv. Appl. Math. 4 (1983), 298–
+  351.
+
+[43]  A. H. Stone and J. W. Tukey, Generalized sandwich theorems, Duke Math. J. 9 (1942), 356–
+  359.
+[44]  A. Suk, On the Erdos-Szekeres convex polygon problem, J. Amer. Math. Soc. 30 (2017), 1047–
+  1053.
+
+[45]  E. Szemer´edi, Regular partitions of graphs, Probl´emes combinatoires et th´eorie des graphes
+  (Colloq. Internat. CNRS, Univ. Orsay), 260, CNRS, Paris, 1978, pp. 399–401.
+
+[46]  J. Tidor, and H.-H. H. Yu, Multilevel polynomial partitioning and semialgebraic hypergraphs:
+  regularity, Tur´an, and Zarankiewicz results,https://arxiv.org/abs/2407.20221.
+
+                                                          30
+
+=== PDF PAGE 32 ===
+[47]  H. E. Warren, Lower bound for approximation by nonlinear manifolds, Trans. Amer. Math.
+  Soc. 133 (1968), 167–178.
+
+[48]  M.SharirandP.K.Agarwal, Davenport-Schinzel Sequences and Their Geometric Applications,
+  Cambridge University Press, New York, 1995.
+
+[49]  B. Sudakov and I. Tomon, Ramsey properties of algebraic graphs and hypergraphs, Forum
+  Math., Sigma 10, e 95 (2022).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        31

@@ -1,0 +1,1360 @@
+=== PDF PAGE 1 ===
+A polynomial regularity lemma for semi-algebraic hypergraphs and
+                 its applications in geometry and property testing∗
+
+                            Jacob Fox †            J´anos Pach‡            Andrew Suk§
+
+                                                   October 17, 2016
+
+
+
+
+                                                         Abstract
+           In this paper, we prove several extremal results for geometrically deﬁned hypergraphs.  In
+       particular, we establish an improved lower bound, single exponentially decreasing in k, on the
+       best constant δ > 0 such that the vertex classes P1,...,P       k of every k-partite k-uniform semi-
+       algebraic hypergraph H = (P1 ∪ ...    ∪ Pk,E ) with |E| ≥ εΠkj=1|Pi|have, for 1 ≤  i ≤  k, δ|Pi|-
+       element subsets P′i ⊆  Pi satisfying P′1 × ...    × P′k ⊆  E. The best previously known lower bound
+       on δ due to Bukh and Hubard decreased triple exponentially fast in k. We give three geometric
+       applications of our results.  In particular, we establish the following strengthening of the so-
+       called same-type lemma of B´ar´any and Valtr: Any disjoint ﬁnite sets P1,...,P       k ⊂  Rd (k > d)
+       have, for 1 ≤  i ≤  k, subsets P′i  of size at least 2− O(d3klogk)|Pi|with the property that every
+       k-tuple formed by taking one point from each P′i has the same order type.
+           We also improve a result of Fox, Gromov, Laﬀorgue, Naor, and Pach, who established a
+       regularity lemma for semi-algebraic k-uniform hypergraphs of bounded complexity,  showing
+       that for each ε  > 0 the vertex set can be equitably partitioned into a bounded number of
+       parts (in terms of ε and the complexity) so that all but an ε-fraction of the k-tuples of parts
+       are homogeneous.  Here, we prove that the number of parts can be taken to be polynomial in
+       1/ε . Our improved regularity lemma can be applied to geometric problems and to the following
+       general question on property testing: is it possible to decide, with query complexity polynomial
+       in the reciprocal of the approximation parameter, whether a hypergraph has a given hereditary
+       property?   We give an aﬃrmative answer for testing typical hereditary properties for semi-
+       algebraic hypergraphs of bounded complexity.
+
+1    Introduction
+
+It is known in Ramsey theory that in any bipartite graph G = (U ∪ V,E ) with |U|= |V|= n,
+there are two large subsets U′⊂  U, V ′⊂  V  with |U′|, |V ′| ≥ Ω(logn) such that either every vertex
+in U′ is connected to every vertex in V ′, or no vertex in U′ is connected to any vertex in V ′.  In
+other words, we have either U′×  V ′⊂  E or U′×  V ′∩ E = ∅.  However, much stronger theorems
+are known for geometrically deﬁned bipartite graphs. For instance, it was shown in [42] that if G is
+
+   ∗A preliminary version of this paper appeared in SODA 2015 [22].
+
+   †Stanford University, Stanford, CA. Supported by a Packard Fellowship, by NSF CAREER award DMS 1352121,
+and by an Alfred P. Sloan Fellowship. Email:jacobfox@stanford.edu.
+   ‡EPFL, Lausanne and Courant Institute, New York, NY. Supported by a Hungarian Science Foundation NKFI
+grant, by Swiss National Science Foundation Grants 200021-165977 and 200020-162884.  Email:pach@cims.nyu.edu.
+   §University of Illinois at Chicago, Chicago, IL. Supported by NSF grant DMS-1500153. Email:suk@uic.edu.
+
+
+                                                               1
+
+=== PDF PAGE 2 ===
+an intersection graph of two n-element sets of segments, U and V, in the plane, then one can ﬁnd
+subsets U′ ⊂  U and V ′ ⊂  V  with the above properties such that |U′|, |V ′| ≥ Ω(n).  Moreover, in
+this latter example, it is also true that for a ﬁxed ε > 0 if |E(G)| ≥ εn2, then we can ﬁnd U′⊂  U
+and V ′⊂  V  with |U′|= |V ′|= Ω(n), such that U′× V ′⊂  E (here the hidden constant depends on
+ε).
+    The above results have been generalized to hypergraphs. A k-uniform hypergraph H = (P,E )
+consists of a vertex set P and an edge set (or hyperedge set) E, which is a collection of k-element
+subsets of P.  A hypergraph is k-partite if it is k-uniform and its vertex set P  is partitioned into
+k parts, P = P1 ∪ ...    ∪ Pk, such that every edge has precisely one vertex in each part.  It follows
+from a classical theorem of Erd˝os [19], which was one of the starting points in extremal hypergraph
+theory, that if |P1|= ...    = |Pk|and |E| ≥ εΠki=1|Pi|for some ε > 0, then one can ﬁnd subsets
+P′i ⊂  Pi such that                                      ( log|Pi|     )1/  (k− 1)
+
+                                              |P′i|= Ω      log(1/ε )             ,
+
+and P′1 ×···×P′k ⊂  E. In other words, H contains a large complete k-partite subhypergraph.
+    Just like for bipartite graphs, larger complete k-partite subhypergraphs can be found in geo-
+metrically deﬁned hypergraphs. In particular, this is the case for hypergraphs that admit a simple
+algebraic description. To make this statement precise, we need some terminology.
+Semi-algebraic setting.  A k-partite hypergraph H = (P1 ∪ ...    ∪ Pk,E ) is called semi-algebraic
+in Rd, if its vertices are points in Rd, and there are polynomials f1,...,f       t ∈  R[x1,...,x       kd] and a
+Boolean function Φ such that for every (p1,...,p       k) ∈ P1 ×···×Pk, we have
+
+                (p1,...,p       k) ∈ E      ⇔        Φ(f1(p1,...,p       k) ≥  0;...    ;ft(p1,...,p       k) ≥  0) = 1.
+
+At the evaluation of fj(p1,...,p       k), we substitute the variables x1,...,x       k with the coordinates of
+p1, the variables xk+1,...,x       2k with the coordinates of p2, etc.
+    We say that H has complexity (t,D ) if each polynomial fj with 1 ≤  j ≤  t has the property that
+for any ﬁxed k −  1 points q1,...,q       k− 1 ∈ Rd, the d-variate polynomials
+
+                                         hj, 1(x1)   =   fj(x1,q 1,...,q       k− 1),
+                                         hj, 2(x2)   =   fj(q1, x2,q 2,...,q       k− 1),
+                                                      ...
+
+                                        hj,k (xk)   =   fj(q1,...,q       k− 1, xk)
+are of degree at most D (in notation, deg(hj,i ) ≤  D for 1 ≤  j ≤  t and 1 ≤  i ≤  k).  It follows that
+deg(fj) ≤  kD for every j.
+    If our k-uniform hypergraph H  =  (P,E ) is a priori not k-partite,  we will assume that its
+relation E is symmetric.  More precisely, for any ﬁxed enumeration p1,p 2,...      of the elements of
+P ⊂  Rd, we say that H is semi-algebraic with complexity (t,D ) if for every 1 ≤  i1 < ···< ik ≤  n,
+(pi1,...,p       ik) ∈ E iﬀ for all permutation π,
+
+                        Φ(f1(pπ(i1),...,p       π(ik)) ≥  0,...,f       t(pπ(i1),...,p       π(ik)) ≥  0) = 1,
+where Φ is a Boolean function and f1,...,f       t are polynomials satisfying the same properties as
+above.
+
+
+
+                                                               2
+
+=== PDF PAGE 3 ===
+Density theorem for semi-algebraic hypergraphs.  Fox et al. [21] showed that there exists
+a constant c = c(k,d,t,D   )  > 0 with the following property.   Let (P1 ∪ ...    ∪ Pk,E ) be any k-
+partite semi-algebraic hypergraph in Rd with complexity (t,D ), and suppose that |E| ≥ εΠki=1|Pi|.
+Then one can ﬁnd subsets P′i  ⊂  Pi, 1 ≤  i ≤  k, with |P′i| ≥ εc|Pi|, which induce a complete k-
+partite subhypergraph, that is, P′1 ×  ...    ×  P′k ⊂  E.  The original proof gives a poor upper bound
+on c(k,d,t,D   ), which is of tower-type in k.  Combining a result of Bukh and Hubard [11] with
+a variational argument of Koml´os [34], see also Section 9.4 in [37], the dependence on k can be
+improved to double exponential.  Our following result, which will be proved in Section 2, removes
+the dependency on k in the exponent of ε.
+Theorem 1.1. For any positive integers d,t,D  , there exists a constant C = C(d,t,D  ) > 0 with
+the following property.  Let ε > 0 and let H = (P1 ∪ ...    ∪ Pk,E ) be any k-partite semi-algebraic
+hypergraph in Rd with complexity (t,D ) and |E| ≥ εΠki=1|Pi|. Then one can choose subsets P′i ⊂  Pi,
+1 ≤  i ≤  k, such that
+
+
+
+                                                               d  )
+                                                  |P′i| ≥ ε(d+DCk   |Pi|,
+and P′1 × ...    ×  P′k ⊆  E. Moreover, we can take C = 220mlog(m+1)tm/k , where m = (d+D)−  1.
+                                                                                                          d
+    The main novelty in the proof of Theorem 1.1 is that we completely avoid using the arguments
+of Koml´os [34], which were used in [3] and [21], in his proof of a variant of Szemer´edi’s regularity
+lemma. Instead, we combine an inductive argument on k with an old result on cell decomposition
+in order to remove the dependency on k in the exponent of ε.
+    For the applications given in Section 3, the dependence on the dimension d becomes crucial.
+This is typically the case for relations that have complexity (t, 1) (i.e., when D = 1). Substituting
+D = 1 in Theorem 1.1, we obtain the following.
+Corollary 1.2. Let ε > 0 and let H = (P1 ∪ ...    ∪ Pk,E ) be a k-partite semi-algebraic hypergraph
+in Rd with complexity (t, 1) and |E| ≥ εΠki=1|Pi|. Then one can choose subsets P′i ⊂  Pi, 1 ≤  i ≤  k,
+such that
+
+                                             |P′i| ≥          εd+1220kdlog(d+1)td|Pi|,
+
+and P′1 ×···×P′k ⊆  E.
+    In the other direction, Karasev, Kynˇcl, Pat´ak, Pat´akov´a, and Tancer [33] constructed a (d+1)-
+partite (d+1)-uniform semi-algebraic hypergraph H = (P1 ∪···∪Pd+1,E ) in Rd with complexity
+(d+1, 1) and |E| ≥ εΠd+1i=1|Pi|, where ε= 2− cd for a ﬁxed constant c > 0, and H has the following
+property.   For any subsets P′1  ⊂  P1,...,P        ′d+1  ⊂  Pd+1 such that P′1 ×  ...    ×  P′d+1 ⊆  E, we have
+|P′i|< 2− c′dlogd|Pi|, with a suitable constant c′> 0.  Note that in this case, Corollary 1.2 implies
+the existence of such subsets P′1,...,P        ′d+1 with |P′i| ≥ 2− c′′d2logd|Pi|for some c′′> 0, so there is
+still a gap between the lower and upper bounds.
+Polynomial  regularity  lemma  for  semi-algebraic  hypergraphs.    Szemer´edi’s  regularity
+lemma is one of the most powerful tools in modern combinatorics.   In its simplest version [46]
+it gives a rough structural characterization of all graphs. A partition is called equitable if any two
+parts diﬀer in size by at most one. According to the lemma, for every ε >0 there is K = K(ε) such
+that every graph has an equitable vertex partition into at most K parts such that all but at most
+
+                                                            3
+
+=== PDF PAGE 4 ===
+an ε fraction of the pairs of parts behave “regularly”.1  The dependence of K on 1/ε   is notoriously
+bad.  It follows from the proof that K(ε) may be taken to be of an exponential tower of 2-s of
+height ε− O(1). Gowers [28] used a probabilistic construction to show that such an enormous bound
+is indeed necessary. Consult [16], [38], [23] for other proofs that improve on various aspects of the
+result.  Szemer´edi’s regularity lemma was extended to k-uniform hypergraphs by Gowers [27, 29]
+and by Nagle et al.  [39].  The bounds on the number of parts go up in the Ackermann hierarchy,
+as k increases.   This is quite unfortunate, because in property testing and in other algorithmic
+applications of the regularity lemma this parameter has a negative impact on the eﬃciency.
+    Alon et al. [3] (for k  = 2) and Fox et al. [21] (for k  > 2) established an “almost perfect”
+regularity lemma for k-uniform semi-algebraic hypergraphs H = (P,E ).  According to this, P has
+an equitable partition such that all but at most an ε-fraction of the k-tuples of parts (Pi1,...,P       ik)
+behave not only regularly,  but homogeneously  in the sense that either Pi1 ×  ...    ×  Pik  ⊆   E  or
+Pi1 ×  ...    ×  Pik ∩ E = ∅.  The proof is essentially qualitative:  it gives a very poor estimate for the
+number of parts in such a partition.
+    In Section 4, we deduce a much better quantitative form of this result, showing that the number
+of parts can be taken to be polynomial in 1/ε .
+Theorem  1.3.  For any positive integers k,d,t,D     there exists a constant c  = c(k,d,t,D   )  > 0
+with the following property.  Let 0 < ε < 1/ 2 and let H = (P,E ) be a k-uniform semi-algebraic
+hypergraph in Rd with complexity (t,D ). Then P has an equitable partition P = P1∪···∪PK into
+K ≤  (1/ε )c parts such that all but an ε-fraction of the k-tuples of parts are homogeneous.
+
+    The aim of this paper is to prove Theorems 1.1 and 1.3, and to apply them to extremal and
+algorithmic questions in combinatorial geometry. In the following two subsections, we outline these
+applications. See [18], for other favorable Ramsey-type properties of semi-algebraic sets.
+Geometric applications. In Section 3, we prove three geometric applications of Corollary 1.2.
+1.   Same-type  lemma.   Let P  =  (p1,...,p       n) be an n-element point sequence in Rd  in general
+position, i.e., assume that no d+1 points lie in a common hyperplane.  For i1 < i2 < ···< id+1,
+the orientation of the (d+1)-tuple (pi1,p i2,...,p       id+1) ⊂  P is deﬁned as the sign of the determinant
+of the unique linear mapping M  that sends the d vectors pi2 −  pi1,p i3 −  pi1,...,p       id+1 −  pi1, to
+the standard basis e1,e 2,...,e       d. Denoting the coordinates of pi by xi, 1,...,x       i,d , the orientation of
+(pi1,p i2,...,p       id+1) is                                                        
+                                                          1        1     ···     1
+                                                    x1, 1   x2, 1   ··· xd+1, 1      ,
+                                     χ = sgndet           ...         ...        ...          ...
+
+                                                        x1,d    x2,d    ··· xd+1,d
+where sgn(r) denotes the sign of r in R.  The order-type  of P  = (p1,p 2,...,p       n) is the mapping)→ { +1, − 1} (positive orientation, negative orientation), assigning each (d + 1)-tuple of
+χ : (Pd+1
+P its orientation.  Therefore, two n-element point sequences P and Q have the same order-type if
+they are “combinatorially equivalent.” See [37] and [25] for more background on order-types.
+    Let (P1,...,P       k) be a k-tuple of ﬁnite sets in Rd.   A transversal  of (P1,...,P       k) is a k-tuple
+(p1,...,p       k) such that pi  ∈  Pi for all i.   We say that (P1,...,P       k) has same-type transversals  if
+
+   1For a pair (Pi,P j) of vertex subsets, e(Pi,P j) denotes the number of edges in the graph running between Pi and
+Pj.  The density d(Pi,P j) is deﬁned as   e(Pi,Pj)|Pi||Pj|.  The pair (Pi,P j) is called ε-regular if for all P′i ⊂ Pi and P′j ⊂ Pj
+with |P′i| ≥ ε|Pi| and |P′j| ≥ ε|Pj|, we have |d(P′i,P  ′j)−d(Pi,P j)| ≤ ε.
+
+                                                               4
+
+=== PDF PAGE 5 ===
+all of its transversals have the same order-type.  B´ar´any and Valtr [9] showed that for d,k >  1,
+there exists a c = c(d,k ) such that the following holds.  Let P1,...,P       k be ﬁnite sets in Rd such
+that P1 ∪··· ∪Pk is in general position.  Then there are subsets P′1 ⊂  P1,...,P        ′k ⊂  Pk such that
+the k-tuple (P′1,...,P        ′k) has same-type transversals and |P′i| ≥ c(d,k )|Pi|.  Their proof shows that
+c(d,k ) = 2− kO(d). We make the following improvement.
+
+Theorem 1.4. For k > d, let P1,...,P       k be ﬁnite sets in Rd such that P1 ∪··· ∪Pk is in general
+position.   Then there are subsets P′1  ⊂   P1,...,P        ′k  ⊂   Pk  such that  the k-tuple (P′1,...,P        ′k) has
+same-type transversals and
+
+                                                 |P′i| ≥ 2− O(d3klogk)|Pi|,
+for all i.
+
+2.  Homogeneous selections from hyperplanes.  B´ar´any and Pach [8] proved that for every integer
+d ≥  2, thereisaconstantc = c(d) > 0withthefollowingproperty. GivenﬁnitefamiliesL1,...,L       d+1
+of hyperplanes in Rd  in general position,2  there are subfamilies L′i  ⊂   Li  with |L′i|  ≥  c(d)|Li|,
+1 ≤  i ≤  d + 1, and a point q ∈  Rd such that for every (h1,...,h       d+1) ∈  L′1 × ··· ×L′d+1, point q
+lies in the unique bounded simplex ∆(h1,...,h       d+1) enclosed by ⋃d+1i=1 hi. The proof gives that one
+can take c(d) = 2− (d+1)2d, because they showed that c(d) = c(d,d  +2) will meet the requirements,
+where c(d,k ) denotes the constant deﬁned above for same-type transversals.  Thus, Theorem 1.4
+immediately implies the following improvement.
+
+Theorem 1.5. Given ﬁnite families L1,...,L       d+1 of hyperplanes in Rd in general position, there
+are subfamilies L′i ⊂  Li, 1 ≤  i ≤  d+1, with
+
+                                               |L′i| ≥ 2− O(d4log(d+1))|Li|,
+and a point q ∈ Rd such that for every (h1,...,h       d+1) ∈ L′1×···×L′d+1, q lies in the unique bounded
+simplex ∆(h1,...,h       d+1) enclosed by ⋃d+1i=1 hi.
+
+3.  Tverberg-type result for simplices.  In 1998, Pach [40] showed that for all natural numbers d,
+there exists c′= c′(d) with the following property. Let P1,P 2,...,P       d+1 ⊂  Rd be disjoint n-element
+point sets with P1 ∪ ··· ∪Pd+1 in general position.   Then there is a point q  ∈  Rd and subsets
+P′1 ⊂  P1,...,P        ′d+1 ⊂  Pd+1, with |P′i| ≥ c′(d)|Pi|, such that all closed simplices with one vertex from
+each P′i contains q. The proof shows that c′(d) = 2− 22O(d). Recently, Karasev et al. [33] improved
+this to c′(d) > 2− 2d2+O(d). Here we make the following improvement.
+
+Theorem 1.6. Let P1,P 2,...,P       d+1 ⊂  Rd be disjoint n-element point sets with P1 ∪···∪Pd+1 in
+general position. Then there is a point q ∈ Rd and subsets P′1 ⊂  P1,...,P        ′d+1 ⊂  Pd+1, with
+
+                                               |P′i| ≥ 2− O(d2log(d+1))|Pi|,
+such that all closed simplices with one vertex from each P′i contains q.
+
+   2No element of ⋃d+1
+                       i=1 Li passes through the origin, any d elements have precisely one point in common, and no
+d+1 of them have a nonempty intersection.
+
+
+
+                                                               5
+
+=== PDF PAGE 6 ===
+Algorithmic applications:  Property testing.  The goal of property testing is to quickly dis-
+tinguish between objects that satisfy a certain property and objects that are far from satisfying
+that property. This is an active area of computer science which was initiated by Rubinfeld and Su-
+dan [45]. Subsequently, Goldreich, Goldwasser, and Ron [24] started the investigation of property
+testers for combinatorial objects.
+    Graph property testing, in particular, has attracted a great deal of attention.  A property P is
+a family of graphs closed under isomorphism. A graph G with n vertices is ǫ-far from satisfying P
+if one must change the adjacency relation of at least an ǫ fraction of all pairs of vertices in order
+to turn G into a graph satisfying P.
+    Let F be a family of graphs.  An ǫ-tester for P with respect to F is a randomized algorithm,
+which, given n and the ability to check whether there is an edge between a given pair of vertices,
+distinguishes with probability at least 2/ 3 between the cases G satisﬁes P  and G is ǫ-far from
+satisfying P, for every G ∈ F .  Such an ǫ-tester is one-sided if, whenever G ∈ F  satisﬁes P, the
+ǫ-tester outputs this with probability 1.  A property P is strongly testable with respect to F if for
+every ﬁxed ǫ >0, there exists a one-sided ǫ-tester for P with respect to F, whose query complexity
+is bounded only by a function of ǫ, which is independent of the size of the input graph. The vertex
+query complexity of an algorithm is the number of vertices that are randomly sampled.
+    Property P is easily testable with respect to F if it is strongly testable with a one-sided ǫ-tester
+whosequerycomplexity is polynomial in ǫ− 1, andotherwise P is hard with respect to F. In classical
+complexity theory, an algorithm whose running time is polynomial in the input size is considered
+fast, and otherwise slow. This provides a nice analogue of polynomial-time algorithms for property
+testing. The above deﬁnitions extend to k-uniform hypergraphs, with pairs replaced by k-tuples.
+    A very general result of Alon and Shapira [6] in graph property testing states that every hered-
+itary family P of graphs is strongly testable.  Unfortunately, the bounds on the query complexity
+that this proof gives are quite enormous.  They are based on the strong regularity lemma, which
+gives wowzer-type bounds.3  Even the recently improved bound of Conlon and Fox [16, 17] gives
+only a tower-type bound.4  The result of Alon and Shapira was extended to hypergraphs by R¨odl
+and Schacht [44];  see also the work of Austin and Tao [7].   These give even worse bounds, of
+Ackermann-type bounds. It is known that many properties are not easily testable (see [1, 2, 4]).
+    InSection 5, wegive anapplication of thepolynomial semi-algebraic regularity lemma, Theorem
+1.3, to show how to easily test “typical” hereditary properties with respect to semi-algebraic graphs
+and hypergraphs of constant complexity. The exact statement shows that the query complexity is
+for every property, polynomial in a natural function of that property, which one typically expects to
+bepolynomial. Thisprovides another exampleshowingthat semi-algebraic graphsandhypergraphs
+aremorenicely behavedthangeneral ones. Usingtheaboveterminology, aspecialcaseofourresults
+is the following.
+
+Corollary 1.7.  Let H  be a k-uniform hypergraph.  Then H-freeness is easily testable within the
+family of semi-algebraic hypergraphs of bounded complexity.
+
+    For background and precise results, see Section 5.
+
+   3Deﬁne the tower function T(1) = 2 and T(i+1) = 2T(i). Then the wowzer function is deﬁned as W(1) = 2 and
+W(i+1) = T(W(i)).
+   4In addition to the dependence on the approximation parameter ǫ, there is also a dependence on the property
+being tested that can make it arbitrarily hard to test [6].  However, such properties appear to be pathological and
+the standard properties that are studied should have only a weak dependence on the property being tested.
+
+
+
+                                                            6
+
+=== PDF PAGE 7 ===
+Organization.   The rest of this paper is organized as follows.   In the next section,  we prove
+Theorem 1.1, giving a quantitative density theorem for k-uniform hypergraphs.  In Section 3, we
+prove several geometric applications of this result. InSection 4, we prove thequantitative regularity
+lemma for semi-algebraic hypergraphs.   In Section 5, we establish three results about property
+testing within semi-algebraic hypergraphs showing that it can be eﬃciently tested whether a semi-
+algebraic hypergraph of bounded complexity has a given hereditary property.
+    We systemically omit ﬂoor and ceiling signs whenever they are not crucial for the sake of clarity
+of presentation.  We also do not make any serious attempt to optimize absolute constants in our
+statements and proofs.
+
+2    Proof of Theorem 1.1
+
+A set A ⊂  Rd is semi-algebraic if there are polynomials f1,f 2,...,f       t ∈ R[x1,...,x       d] and a Boolean
+function Φ such that
+                                    {                                                    }
+                              A =     x ∈ Rd : Φ(f1(x) ≥  0,...,f       t(x) ≥  0) = 1     .
+
+We say that a semi-algebraic set in d-space has description complexity at most κ if the number of
+inequalities is at most κ, and each polynomial fi has degree at most κ.
+    Let us ﬁrst sketch the proof of Theorem 1.1.  Let H = (P1 ∪ ··· ∪Pk,E ) be a k-partite semi-
+algebraic hypergraph in Rd with complexity (t,D ), such that |E| ≥ ε∏ki=1|Pi|.  We can assume
+that D  =  1,  otherwise the proof can be completed  by a simple argument using the Veronese
+map (described below).  Set Q = P2 × ··· ×Pk, and consider the bipartite semi-algebraic graph
+G = (P1 ∪ Q,E ).  Then the neighborhood of each vertex q ∈  Q corresponds to a semi-algebraic
+set q∗ ⊂  Rd with bounded complexity, such that pq ∈  E if and only if p ∈  q∗.  We apply the well
+known cutting lemma (Lemma 2.2 below) with parameter r = r(t,ε), to decompose Rd into at most
+O(rd) relatively open simplices such that each simplex is crossed by at most |Q|/r   semi-algebraic
+sets q∗.  A counting argument shows that one can ﬁnd a cell ∆ in our decomposition such that
+for P′1  = ∆ ∩ P, we have |P′1| ≥ δ|P|where δ = δ(d,k,t,ε   ) > 0.  Moreover, there are at least
+γ|Q|semi-algebraic sets q∗ that contain ∆, where γ = γ(d,k,t,ε   ) > 0.  Let E′ ⊂  P2 × ··· ×Pk
+be the set of (k −  1)-tuples that correspond to the semi-algebraic sets q∗ ⊃  ∆.  By showing that
+the (k− 1)-partite semi-algebraic hypergraph H′= (P2,...,P       k,E ′) has bounded complexity, where
+|E′| ≥ γ∏ki=2|Pi|, we can apply induction to H′to ﬁnd the remaining subsets P′2,...,P        ′k. We now
+ﬂesh out the details of the proof.
+    Let H = (P,E ) be a semi-algebraic k-uniform hypergraph in d-space with complexity (t,D ),
+where P = {p1,...,p       n}. Then there exists a semi-algebraic set
+                    {                                                                                       }
+            E∗ =      (x1,...,      xk) ∈ Rdk : Φ(f1(x1,...,      xk) ≥  0,...,f       t(x1,...,      xk) ≥  0) = 1
+
+such that
+
+                             (pi1,...,p       ik) ∈ E∗ ⊂  Rdk     ⇔       (pi1,...,p       ik) ∈ E.
+Fix k− 1 points q1,...,q       k− 1 ∈ Rd and consider the d-variate polynomial hi(x) = fi(q1,...,q       k− 1, x),
+1 ≤  i ≤  t.  We use a simple but powerful trick known as Veronese mapping (linearization), that)−  1, we deﬁne φ  : Rd →   Rm to be the
+transforms hi(x) into a linear equation.  For m = (d+Dd
+(Veronese) map given by
+
+
+                                                            7
+
+=== PDF PAGE 8 ===
+                               φ(x1,...,x       d) = (xα11  ···xαdd  )1≤ α1+···+αd≤ D ∈ Rm.
+Then φ maps each surface hi(x) = 0 in Rd to a hyperplane h∗i in Rm. Note that φ is injective. For
+example, the d-variate polynomial hi(x1,...,x       d) = c0 +∑iaixα11  ···xαdd   would correspond to the
+                                                m∑
+linear equation h∗i(y1,...,y       m) = c0 +
+                                               i=1aiyi. Given a point set P = {p1,...,p       n} ⊂  Rd, we write
+                                         φ(P) = {φ(p1),...,φ     (pn)} ⊂  Rm.
+Clearly we have the following.
+
+Observation 2.1. For p ∈ Rd, we have hi(p) = h∗i(φ(p)) and hence
+
+                                            sgn(hi(p)) = sgn(h∗i(φ(p))).
+
+    For k ≤  d, a k-simplex in Rd is the convex hull of an aﬃnely independent (k+1)-element point
+set. We use the word simplex when no assumption is made about its dimension. Given a relatively
+open simplex ∆ ⊂  Rm, we say that a hyperplane h∗ ⊂  Rm crosses ∆ if it intersects ∆ but does not
+contain it. Let us recall an old lemma due to Chazelle (see also [15, 13]).
+
+Lemma  2.2  ([12]).  For m ≥   1, let L be a set of n hyperplanes in Rm  and let B  ⊂   Rm  be a
+bounded axis-parallel box.   Then for any integer r, 1 < r ≤  n, there is a subdivision of B into
+at most 210mlog(m+1)rm relatively open simplices ∆i, such that each ∆i is crossed by at most n/r
+hyperplanes of L. Moreover, there is a deterministic algorithm for computing such a subdivision in
+O(rm− 1n) time.
+
+    Themaintool usedintheproofof Theorem1.1is thefollowing resulton bipartitesemi-algebraic
+graphs (k = 2) with point sets in diﬀerent dimensions. A very similar result was obtained by Alon
+et al. (see Section 6 in [3]). Let G = (P,Q,E  ) be a bipartite semi-algebraic graph, where P ⊂  Rd1,
+Q ⊂  Rd2, and E ⊂  P ×  Q has complexity (t,D ). Hence, there are polynomials f1,f 2,...,f       t and a
+Boolean formula Φ such that the semi-algebraic set
+
+                   E∗ = {(x1, x2) ∈ Rd1+d2 : Φ(f1(x1, x2) ≥  0,...,f       t(x1, x2) ≥  0) = 1},
+satisﬁes
+
+                                    (p,q ) ∈ E      ⇔        (p,q ) ∈ E∗ ⊂  Rd1+d2.
+For any point p ∈  P, the Veronese map φ maps the surface fi(p, x) = 0 in Rd2 to a hyperplane
+f∗i (p, y) = 0 in Rm, for 1 ≤  i ≤  t.
+
+Lemma 2.3. Let G = (P,Q,E  ) be as above with |E| ≥ ε|P||Q|.  Then there are subsets P′ ⊂  P
+and Q′⊂  Q such that
+
+                                |P′| ≥ ε8|P|    and     |Q′| ≥          εm+1tm214mlog(m+1)|Q|,
+where m = (d2+D)−  1, and P′×  Q′ ⊂  E.  Moreover, there is a relatively open simplex ∆ ⊂  Rm
+                  d2
+such that φ(Q′) = φ(Q)∩ ∆, and for all p ∈ P′ and 1 ≤  i ≤  t, the hyperplane f∗i (p, y) = 0 in Rm
+does not cross ∆.
+
+
+                                                             8
+
+=== PDF PAGE 9 ===
+Proof.  Let S be the set of (at most) t|P|surfaces in Rd2 deﬁned by fi(p, x) = 0, for 1 ≤  i ≤  t and)−  1 and let φ : Rd2 →   Rm denote the Veronese map described
+for each p ∈  P.  Set m = (d2+Dd2
+above.  Then each surface fi(p, x) = 0 in Rd2 will correspond to a hyperplane f∗i (p, y) = 0 in Rm.
+Then let L be the set of t|P|hyperplanes in Rm that corresponds to the surfaces in S.  We set
+B ⊂  Rm to be a suﬃciently large (bounded) axis-parallel box whose interior contains φ(Q).
+    Let r > 1 be an integer that will be determined later.  By Lemma 2.2, there is a subdivision
+of B into at most 210mlog(m+1)rm relatively open simplices ∆i, such that each ∆i is crossed by at
+most t|P|/r   hyperplanes from L. We deﬁne Qi ⊂  Q such that φ(Qi) = φ(Q)∩ ∆i. If
+
+                                           |Qi|<                ε2·210mlog(m+1)rm|Q|,
+
+then we discard all edges in E that are incident to vertices in Qi. By Lemma 2.2, we have removed
+at most
+
+                             210mlog(m+1)rm               ε2·210mlog(m+1)rm|P||Q|= ε2|P||Q|
+
+edges.  Let E1 be the set of remaining edges.  Hence, |E1| ≥ ε|P||Q| − (ε/ 2)|P||Q|= (ε/ 2)|P||Q|.
+For p ∈  P, if all t hyperplanes f∗1(p, y) = 0,...,f        ∗t (p, y) = 0 in Rm do not cross ∆i, then by
+Observation 2.1, the sign pattern of fj(p,q ) does not change over all q ∈ Qi.  Hence, in this case,
+we have either p×  Qi ⊂  E1 or p× Qi ⊂            E1.
+    We deﬁne Pi ⊂  P to be the set of points in P such that p ∈ Pi if and only if p is adjacent to all
+points in Qi (with respect to E1) and all t hyperplanes fj(p, x) = 0, 1 ≤  j ≤  t, in Rm do not cross
+the simplex ∆i.  For each ﬁxed i, by Lemma 2.2, we know that at most t|P|/r   points in P  gives
+rise to a hyperplane that crosses ∆i.
+    Hence there exists a Pj such that |Pj| ≥ (ε/ 8)|P|, since otherwise
+                                           (ε               )          (ε        )
+                              |E1| ≤ ∑       8|P|+ t|P|r       |Qi|=     8 + tr    |P||Q|.
+                                        i
+For r = 8t/ε , this implies |E1|< (ε/ 4)|P||Q|, which is a contradiction. Therefore, we have subsets
+Pj  ⊂  P  and Qj  ⊂  Q such that |Pj| ≥ (ε/ 8)|P|and Pj ×  Qj  ⊂  E1.  By construction of E1, for
+r = 8t/ε , we have
+
+            |Qj| ≥                ε2·210mlog(m+1)rm|Q|=               εm+12·tm210mlog(m+1)23m|Q| ≥          εm+1tm214mlog(m+1)|Q|.
+
+Moreover, we obtain a simplex ∆j ⊂  Rm such that φ(Qj) = φ(Q)∩ ∆j.
+
+
+    We are now ready to prove Theorem 1.1.
+Proof of Theorem 1.1.  Let H = (P,E ) be a k-partite semi-algebraic hypergraph in d-space with)− 1, we will
+complexity (t,D ), such that P = P1 ∪···∪Pk and |E| ≥ ε|P1|···|Pk|. For m = (d+Dd
+show that there are subsets P′1 ⊂  P1,P  ′2 ⊂  P2,...,P        ′k ⊂  Pk, such that for 1 ≤  i ≤  k,
+
+                                 |P′i| ≥                          εm+18k(m+1)tm(2m+3)km214mlog(m+1)|Pi|,
+
+and P′1 ×···×P′k ⊂  E. This would suﬃce to prove the statement. We proceed by induction on k.
+The base case k = 2 follows from Lemma 2.3. Now assume that the statement holds for k′< k.
+
+                                                            9
+
+=== PDF PAGE 10 ===
+    Since E is semi-algebraic with complexity (t,D ), there are polynomials f1,...,f       t and a Boolean
+formula Φ such that the semi-algebraic set
+
+              E∗ = {(x1,...,      xk) ∈ Rdk : Φ(f1(x1,...,      xk) ≥  0,...,f       t(x1,...,      xk) ≥  0) = 1},
+has the property that
+
+                                 (p1,...,p       k) ∈ E      ⇔        (p1,...,p       k) ∈ E∗ ⊂  Rdk.
+    Set Q = P1 ×···×Pk− 1, and with slight abuse of notation, let G = (Q,P k,E ) be the bipartite
+semi-algebraic graph with relation E.  Just as above, we let φ  : Rd →   Rm denote the Veronese
+map.  Then for (p1,...,p       k− 1) ∈  Q, each surface fi(p1,...,p       k− 1, x) = 0 in Rd will correspond to a
+hyperplane f∗i (p1,...,p       k− 1, y) = 0 in Rm, 1 ≤  i ≤  t. By Lemma 2.3, there are subsets Q′⊂  Q and
+P′k ⊂  Pk such that
+
+                                  |Q′| ≥ ε8|Q|    and     |P′k| ≥          εm+1tm214mlog(m+1)|Pk|,
+
+and Q′× P′k ⊂  E. Moreover there is a relatively open simplex ∆ ⊂  Rm such that φ(P′k) = ∆∩φ(Pk),
+and for any (k −  1)-tuple (p1,...,p       k− 1) ∈ Q′, all t hyperplanes f∗i (p1,...,p       k− 1, y) = 0, 1 ≤  i ≤  t,
+do not cross ∆. Let p∗1,...,p       ∗ℓ ∈ Rm be the vertices of ∆, where ℓ≤  m+1.
+    We deﬁne H1 = (P \Pk,E 1) to be the (k −  1)-partite semi-algebraic hypergraph in d-space on
+the point set P1 ∪···∪Pk− 1 with relation E1 ⊂  P1 ×···×Pk− 1, where (p1,...,p       k− 1) ∈ E1 if and
+only if (p1,...,p       k− 1,q ) ∈  E for all q ∈  P′k, and all t hyperplanes f∗i (p1,...,p       k− 1, y) = 0 in Rm,
+1 ≤  i ≤  t, do not cross ∆.
+    Next we need to check that the complexity of E1 is not too high. In order to do this, we deﬁne
+relations E2,E 3 ⊂  P1 ×···×Pk− 1 as follows. Fix a point q ∈ P′k, and let
+
+                        E2 = {(p1,...,p       k− 1) ∈ P1 ×···×Pk− 1 : (p1,...,p       k− 1,q ) ∈ E}.
+Since the relation E has complexity (t,D ), the relation E2 is semi-algebraic with complexity (t,D ).
+    We deﬁne the relation E3  ⊂  P1 × ··· ×Pk− 1, where (p1,...,p       k− 1) ∈  E3 if and only if all t
+hyperplanes f∗i (p1,...,p       k− 1, y) = 0, 1 ≤  i ≤  t, do not cross ∆ in Rm.  Notice that a hyperplane
+does not cross ∆ in Rm if and only if the vertices p∗1,...,p       ∗ℓ of ∆ all lie in a closed half-space deﬁned
+by the hyperplane (recall that ∆ is relatively open).  Therefore, for each vertex p∗j of the simplex
+∆, we deﬁne t polynomials, each in dk −  d variables.
+
+                                       gi,j (x1,...,      xk− 1) = f∗i (x1,...,      xk− 1,p ∗j).
+    Then there is a Boolean formula Φ3  such that the semi-algebraic set E∗3  ⊂   Rd(k− 1), where
+(x1,...,      xk− 1) ∈ E∗3 if and only if
+                           ( g1, 1(x1,...,      xk− 1) ≥  0,    − g1, 1(x1,...,      xk− 1) ≥  0,...   )
+                       Φ3     gt,ℓ(x1,...,      xk− 1) ≥  0,     − gt,ℓ(x1,...,      xk− 1) ≥  0          = 1,
+
+has the property that (p1,...,p       k− 1) ∈ E3 if and only if (p1,...,p       k− 1) ∈ E∗3 ⊂  Rd(k− 1), and E3 has
+complexity (2tℓ,D).  Notice that if (p1,...,p       k− 1) ∈ E3, then by Observation 2.1, the sign pattern
+of fi(p1,...,p       k− 1,q ) does not change over all q ∈  P′k since φ(P′k) ⊂  ∆.  Therefore, if we also have
+(p1,...,p       k− 1) ∈ E2, this implies (p1,...,p       k− 1) ∈ E1. That is,
+
+
+                                                                  10
+
+=== PDF PAGE 11 ===
+                  (p1,...,p       k− 1) ∈ E1      ⇔        (p1,...,p       k− 1) ∈ E∗1 = E∗2 ∩ E∗3 ⊂  Rd(k− 1),
+and E1 has complexity (t + 2tℓ,D).   Since ℓ ≤   m + 1, E1  has complexity (t(2m + 3),D ).   By
+construction of Q′, we have
+
+                                             |E1| ≥ |Q′| ≥ ε8|P1|···|Pk− 1|.
+
+By applying the induction hypothesis on the (k −  1)-partite semi-algebraic hypergraph H1 = (P \
+Pk,E 1), we obtain subsets P′i ⊂  Pi, 1 ≤  i ≤  k −  1, such that
+
+
+                      |P′i|   ≥                                        (ε/ 8)m+18(k− 1)(m+1)(t(2m+3))m(m+2)(k− 1)m214mlog(m+1)|Pi|
+
+
+                             ≥                              εm+18k(m+1)tm(2m+3)km214mlog(m+1)|Pi|,
+
+and P′1×···×P′k− 1 ⊂  E1. By deﬁnition of E1 and by construction of P′k, we have P′1×···×P′k ⊂  E,
+and this completes the proof.                                                                                                                     □
+    Next, we will show that the P′i-s obtained in Theorem 1.1 can be captured by a semi-algebraic
+set with boundeddescription complexity. While thefollowing variant of Theorem 1.1 gives a weaker
+lower bound for |P′i|, it does however produce a semi-algebraic set ∆i such that P′i = Pi ∩ ∆i, for
+i = 1, 2,...,k     .
+Theorem 2.4. For k,d,t,D,ε >     0, there exists a constant δ = δ(k,d,t,D,ε    ) > 0 with the following
+property. Let H = (P1∪···∪Pk,E ) be any k-partite semi-algebraic hypergraph in Rd with complexity
+(t,D ) and |E| ≥ εΠki=1|Pi|. Then one can choose subsets P′i ⊂  Pi, 1 ≤  i ≤  k, such that
+
+                                                        |P′i| ≥ δ|Pi|,
+and P′1× ...    × P′k ⊆  E. Moreover, there are semi-algebraic sets ∆1,...,      ∆k such that P′i = Pi∩ ∆i,
+and each ∆i has complexity at most κ = κ(k,d,t,D,ε    ).
+Proof.  Let δ = δ(k,d,t,D,ε    ) (κ  = κ(k,d,t,D,ε    )) be suﬃciently small (large) and chosen later.
+Each simplex ∆∗ ⊂  Rm in the proof above, corresponds to a semi-algebraic set ∆ ⊂  Rd. Therefore,
+the proof above shows that after applying a (k− 2)-fold application of Lemma 2.3, we obtain semi-
+algebraic sets ∆1,...,      ∆k− 2 ⊂  Rd, and a bipartite semi-algebraic graph G = (Pk− 1,P k,E ′), such
+that for P′i = Pi ∩ ∆i, 1 ≤  i ≤  k −  2, we have (p1,...,p       k) ∈  E(H) for every p1 ∈  P′1,...,p       k− 2 ∈
+P′k− 2,  and (pk− 1,p k) ∈  E′(G).   Moreover, we have |P′i| ≥  δ|Pi|, each semi-algebraic set ∆i has
+complexity at most κ  =  κ(k,d,t,D,ε    ),  the complexity of the edge relation  E′ is (c,c ),  where
+c = c(ε,k,d,t,D    ), and |E′| ≥ γ|Pk− 1||Pk|where γ = γ(ε,k,d,t,D    ).  We obtain P′k− 1, P′k, ∆k− 1,
+and ∆k by applying Lemma 2.5 below to the bipartite graph G = (Pk− 1,P k,E ′), the statement
+follows and this completes the proof of Theorem 2.4.
+Lemma  2.5.  For c,d,γ  >    0,  there is a δ = δ(c,d,γ  )  and a κ  =  κ(c,d,γ  )  with the following
+property.  Let G = (P,Q,E  ) be any bipartite semi-algebraic graph in Rd with complexity at most
+(c,c ) and |E| ≥ γ|P||Q|.  Then one can choose subsets P′⊂  P  and Q′⊂  Q such that |P′| ≥ δ|P|,
+|Q′| ≥ δ|Q|, and P′×  Q′ ⊂  E.  Moreover, there are semi-algebraic sets ∆1, ∆2 ⊂  Rd such that
+P′= ∆1 ∩ P and Q′= ∆2 ∩ Q, and each ∆i has complexity at most κ.
+
+                                                              11
+
+=== PDF PAGE 12 ===
+Proof.  Without loss of generality,  we can assume c  >  4.   Since E  is a semi-algebraic  relation
+with complexity (c,c ), there are c polynomials f1,...,f       c and a Boolean formula Φ such that the
+semi-algebraic set
+
+                     E∗ = {(x1, x2);∈ R2d : Φ(f1(x1, x2) ≥  0,...,f       c(x1, x2) ≥  0) = 1}
+satisﬁes
+
+                                      (p,q ) ∈ E      ⇔        (p,q ) ∈ E∗ ⊂  R2d.
+    Let Σ1 betheset of at most c|P|surfaces in Rd deﬁnedbyfi(p, x) = 0, for 1 ≤  i ≤  c andfor each
+p ∈ P. Likewise, let Σ2 betheset of at most c|Q|surfaces inRd deﬁnedby fi(x,q ) = 0, for1 ≤  i ≤  c
+and for each (q ∈  Q).  Then, for m = m(c), let φ : Rd →   Rm denote the Veronese map such that
+the surfaces fi(p, x) = 0, fi(x,q ) = 0 in Rd correspond to hyperplanes f∗i (p, y) = 0,f  ∗i (y,q ) = 0 in
+Rm, for 1 ≤  i ≤  c. Let Σ∗1, Σ∗2 be the images of Σ1, Σ2 via φ respectively.
+    Let B ⊂  Rd beasuﬃcientlylarge boundedaxis-parallel boxthatcontains P∪Q. Sinceasimplex
+in the image φ(B) ⊂  Rm corresponds to a semi-algebraic set in B via φ, we can apply Lemma 2.2
+with parameter r = c2/γ   to Σ∗1, and obtain a subdivision of the box B into s ≤  c1(c2/γ  )m semi-
+algebraic sets ∆1,...,      ∆s, such that each ∆i is crossed by at most γ|P|/c   hypersurfaces from Σ1.
+Moreover, each ∆i has complexity at most c2 = c2(c,d ). Likewise, given Σ∗2, we apply Lemma 2.2
+with parameter r = c2/γ   to obtain another subdivision of B into s ≤  c1(c2/γ  )m semi-algebraic sets
+∆′1,...,      ∆′s, such that each ∆′i is crossed by at most γ|Q|/c   hypersurfaces from Σ2, and each ∆′i
+has complexity at most c2.
+    Let Uℓ = Q ∩ ∆ℓ for each ℓ ≤  s.  We now partition ∆ℓ as follows.  For j ∈ {1,...,s     }, deﬁne
+∆ℓ,j  ⊂  ∆ℓ by
+
+                             ∆ℓ,j  = {y ∈ ∆ℓ : fi(x,y ) = 0 crosses ∆′j for some i}.
+Observation 2.6. For any j and ℓ, the semi-algebraic set ∆ℓ,j  has complexity at most c3 = c3(c,d ).
+
+Proof.  Set σ(y) = {x ∈ Rd : fi(x,y ) = 0 for some i, 1 ≤  i ≤  c}, which is a semi-algebraic set with
+complexity at most c4 = c4(c,d ). Then
+                                  {                                                           }
+                         ∆ℓ,j  =     y ∈ ∆ℓ :  ∃x1 ∈ Rd s.t. x1 ∈ σ(y)∩ ∆′j,   and∃x2 ∈ Rd s.t. x2 ∈ ∆′j \σ(y)..
+
+    We can apply quantiﬁer elimination (see Theorem 2.74 in [10]) to make ∆ℓ,j  quantiﬁer-free,
+with description complexity at most c3 = c3(c,d ).
+
+
+    Set Fℓ  = {∆ℓ,j  : 1 ≤  j ≤  s}.   We partition the points in ∆ℓ into equivalence classes,  where
+two points u,v   ∈  ∆ℓ are equivalent if and only if u belongs to the same members of Fℓ as v
+does. Since Fℓ gives rise to at most c3|Fℓ|polynomials of degree at most c3, by the Milnor-Thom
+theorem (see [37] Chapter 6), the number of distinct sign patterns of these c3|Fℓ|polynomials is
+at most (50c3(c3|Fℓ|))d.  Hence, there is a constant c5 = c5(c,d ) such that ∆ℓ (and therefore Uℓ) is
+partitioned into at most c5sd equivalence classes, each class being a semi-algebraic set of complexity
+at most κ = κ(c,d,γ  ).  After repeating this procedure to each ∆ℓ and Uℓ, we obtain a partition
+of our point set Q = Q1 ∪··· ∪QK with K = K(c,d,γ  ).  Moreover, we obtain semi-algebraic sets˜∆1,...,      ˜∆K such that Qi = ˜∆i ∩ Q, and each  ˜∆i has complexity at most κ. We repeat this entire
+
+
+
+                                                            12
+
+=== PDF PAGE 13 ===
+procedure on P and obtain a partition P = P1∪···∪PK and semi-algebraic sets ˜∆′1,...,      ˜∆′K such
+that Pi = ˜∆′i ∩ P, each  ˜∆′i having complexity at most κ.
+    We say that a pair of parts (Pi,Q j) is bad, if |Pi| ≤ γ|P|/ (8K), or |Qj| ≤ γ|Q|/ (8K), or if
+(Pi,Q j) is not homogeneous.   By deleting all edges between bad pairs (Pi,Q j) such that either
+|Pi| ≤ γ|P|/ (8K) or |Qj| ≤ γ|Q|/ (8K), we have deleted at most γ|P||Q|/ 4 edges. Hence, there are
+at least 3γ|P||Q|/ 4 edges remaining in G.
+    Let us now examine the bad pairs (Pi,Q j) that are not homogeneous.  Consider the part Qj.
+Then there is a semi-algebraic set ∆ℓ obtained from the earlier application of Lemma 2.2 such that
+Uℓ = Q∩ ∆ℓ and Qj ⊂  Uℓ ⊂  ∆ℓ. Now consider all parts Pi such that Pi contains a vertex p that is
+not complete or empty to Qj. Then, by construction of our partition P = P1∪···∪PK, each point
+p ∈ Pi gives rise to a surface σ ∈ Σ1 that crosses ∆ℓ. By our earlier application of Lemma 2.2, the
+total number of such points in P is at most γ|P|/c . Therefore, by deleting all edges between such
+bad pairs, we have deleted at most
+                                    ∑    |Pi||Qj|= |Qj|∑        |Pi| ≤ γ|Qj||P|/c
+
+                                      i                      i
+edges, where the sum is over all i such that Pi contains a vertex p that is not complete or empty
+to Qj. Summing over all j, we have deleted at most
+                                              ∑|Pi||Qj| ≤ γ|P||Q|/c
+
+                                               i,j
+edges, where the sum is taken over all pairs i,j  such that Pi contains a vertex that is not complete
+or empty to Qj. A symmetric argument shows that by deleting all edges between parts Pi and Qj
+such that Qj  contains a vertex q that is not complete or empty to Pi, we have deleted at most
+γ|P||Q|/c   edges.
+    Therefore, we have deleted in total at most 2γ|P||Q|/c   + γ|P||Q|/ 4 < γ|P||Q|edges in our
+original bipartite graph G, which implies that there are still edges remaining. Hence, for suﬃciently
+small δ = δ(c,d,γ  ) (namely δ = γ/  (8K)), therearepartsP′⊂  P andQ′⊂  Qsuchthat P′× Q′⊂  E,
+and |P′| ≥ δ|P|, |Q′| ≥ δ|Q|. Moreover, for suﬃciently large κ = κ(c,d,γ  ), there are semi-algebraic
+sets  ˜∆i,  ˜∆′j ⊂  Rd, each having complexity at most κ, such that P′= P ∩  ˜∆i and Q′= Q∩  ˜∆j. By
+renaming these semi-algebraic sets ∆1 and ∆2, this completes the proof of Lemma 2.5.
+
+    Bysettingε= 1/ 2inTheorem2.4, weobtainthefollowingRamsey-typeresultonsemi-algebraic
+hypergraphs.
+Lemma  2.7.  Let H  = (P,E ) be a k-partite  semi-algebraic hypergraph  in d-space,  where P  =
+P1 ∪···∪Pk, E ⊂  P1 ×···×Pk, and E has complexity (t,D ). Then there exist a δ = δ(k,d,t,D   )
+and subsets P′1 ⊂  P1,...,P        ′k ⊂  Pk such that for 1 ≤  i ≤  k,
+
+                                                     |P′i| ≥ δ|Pi|,
+and  (P′1,...,P        ′k)  is  homogeneous  (i.e.,  either  complete  or  empty).    Moreover,  there  are  semi-
+algebraic sets ∆1,...,      ∆k ⊂  Rd such that ∆i has complexity κ, where κ = κ(k,d,t,D   ) and P′i  =
+Pi ∩ ∆i for all i.
+We note that a similar result was obtained by Fox et al. (Theorem 8.1 in [21]) and Bukh-Hubard
+(Theorem18in[11]). TheproofsinbothpapersshowthatonecanﬁndP′1,...,P        ′k and∆1,...,      ∆k− 1
+
+
+                                                           13
+
+=== PDF PAGE 14 ===
+with the properties described in Lemma 2.7. However, their arguments do not show that one can
+also ﬁnd the last semi-algebraic set ∆k.  This additional property in Lemma 2.7 will be crucial in
+the proof of Theorem 1.3.
+    In the proof of Theorem 2.4, Lemma 2.2 is applied k− 2 times, each time to a family of at most
+tnk− 1 hyperplanes with parameter at most r = r(k,d,t,D,ε    ), to obtain subsets P′1,...,P        ′k− 2, semi-
+algebraic sets ∆1,...,      ∆k− 2 ⊂  Rd, and the bipartite graph G = (Pk− 1,P k,E ′). Since k,d,t,D,ε     are
+ﬁxed constants, this can be done in O(nk) time by Lemma 2.2 and the proof of Lemma 2.3. Then
+the proof of Lemma 2.5 shows that we can ﬁnd remaining subsets P′k− 1, P′k, and semi-algebraic sets
+∆k− 1, ∆k, in O(n2) time. Hence, we have the following algorithmic result.
+Theorem 2.8. Given ﬁxed constants k,d,t,D >    0, there is a κ = κ(k,d,t,D   ) and a δ = δ(k,d,t,D   )
+such that the following holds. Let H = (P1∪ ...   ∪ Pk,E ) be any k-partite semi-algebraic hypergraph
+in Rd with complexity (t,D ) such that |Pi|= n for all i.  Then there is a deterministic algorithm
+that ﬁnds semi-algebraic sets ∆1,...,      ∆k, each ∆i having complexity at most κ, such that for P′i =
+Pi ∩ ∆i, we have |P′i| ≥ δn and (P′1,...,P        ′k) is homogeneous.  Moreover, this algorithm runs in
+O(nk) time.
+
+3    Applications of Corollary 1.2
+
+In this section, we apply Corollary 1.2 to establish better bounds for the same-type lemma (Theo-
+rem 1.4) and the Tverberg-type result for simplices (Theorem 1.6).
+
+
+3.1    Same-type lemma
+Proof of Theorem 1.4.  Let P1,...,P       k be ﬁnite point sets in Rd such that P = P1 ∪··· ∪Pk is in
+general position.  By a result of Goodman and Pollack (see [26] and [25]), the number of diﬀerent
+order-types of k-element point sets in d dimensions is at most kO(d2k). By the pigeonhole principle,
+there is an order-type π such that at least
+
+                                                   k− O(d2k)|P1|···|Pk|
+k-tuples (p1,...,p       k) ∈  (P1,...,P       k) have order-type π.  We deﬁne the relation E ⊂  P1 ×··· ×Pk,
+where (p1,...,p       k) ∈ E if and only if (p1,...,p       k) has order-type π. Next we need to check that the
+complexity of E is not too high.
+    We can check to see if (p1,...,p       k) has order-type π by simply checking the orientation of every
+(d+1)-tuple of (p1,...,p       k). More speciﬁcally, for xi = (xi, 1,...,x       i,d ), we deﬁne the (d2+d)-variate
+polynomial
+                                                               1        1     ···     1     
+                                                          x1, 1   x2, 1   ··· xd+1, 1      .
+                              f(x1,...,      xd+1) = det        ...         ...        ...          ...
+
+                                                              x1,d    x2,d    ··· xd+1,d
+Then there exists a Boolean formula Φ, such that the semi-algebraic set
+
+                E∗ = {(x1,...,      xk) ∈ Rdk : Φ({f(xi1,...,      xid+1) ≥  0}1≤ i1<···<id+1≤ k) = 1},
+
+
+
+                                                              14
+
+=== PDF PAGE 15 ===
+which is deﬁned by the (k              )polynomials f(xi1,...,      xid+1), 1 ≤  i1  < ···< id+1  ≤   k, has the
+                                   d+1
+property that
+
+                                     (p1,...,p       k) ∈ E      ⇔        (p1,...,p       k) ∈ E∗.
+                                         ((k     ), 1)
+Hence, the complexity of E is                d+1       .  Therefore, we can apply Corollary 1.2 to the k-partite)to obtain subsets P′1 ⊂
+semi-algebraic hypergraph H = (P,E ) with ε = k− O(d2k) and t = (kd+1
+P1,...,P        ′k ⊂  Pk such that (P′1,...,P        ′k) has same-type transversals (each transversal has order-type
+π), and
+
+                                                  |P′i| ≥ 2− O(d3klogk)|Pi|,
+for 1 ≤  i ≤  k.                                                                                                                                                 □
+
+3.2    A Tverberg-type result
+The proof of Theorem 1.6 requires the following result of Karasev [32] (see also Theorem 4 in [33]).
+Lemma 3.1 ([32]). Let P1,...,P       d+1 ⊂  Rd be disjoint n-element point sets with P1 ∪···∪Pd+1 in
+general position. Then there is a point q ∈ Rd which is contained in the interior of at least
+                                                              1
+                                                         (d+1)!nd+1
+rainbow simplices, where a rainbow simplex is a simplex generated by selecting one point from each
+Pi.
+
+Proof of Theorem 1.6. We may assume n = 2Ω(d2logd) as otherwise we can take pi ∈ Pi, P′i = {pi},
+and q to be any point in the simplex with vertices p1,...,p       d+1.
+    Let P1,...,P       d+1 be disjoint n-element point sets with P1 ∪···∪Pd+1 in general position. If a
+simplex has one vertex in each Pi, then we call it rainbow. Hence the number of rainbow simplices
+is N = nd+1.
+    By Lemma 3.1, there is a point q contained in the interior of at least
+                                                              1
+                                                         (d+1)!nd+1
+rainbow simplices.
+    We deﬁne H = (P,E ) to be the (d+1)-partite semi-algebraic hypergraph, where P = P1∪···∪
+Pd+1, E ⊂  P1 ×···×Pd+1, where (p1,...,p       d+1) ∈ E if and only if q ∈ conv(p1 ∪···∪pd+1). Next
+we need to check that the complexity of E is not too high.
+    To see if q ∈ conv(p1∪···∪pd+1), we just need to check that the points q and pj lie on the same
+side of the hyperplane spanned by the d-tuple (p1,...,p       j− 1,p j+1,...,p       d+1), for each 1 ≤  j ≤  d+1.
+More speciﬁcally, for xi = (xi, 1,...,x       i,d ), we deﬁne the (d2 +d)-variate polynomial
+                                                                 1        1     ···     1      
+                                                            x1, 1   x2, 1   ··· xd+1, 1       .
+                               f(x1,...,      xd+1) = det         ...         ...        ...          ...
+
+                                                                x1,d    x2,d    ··· xd+1,d
+
+
+                                                                15
+
+=== PDF PAGE 16 ===
+Then there exists a Boolean formula Φ such that the semi-algebraic set
+
+       {                                      ({  f(x1,...,      xj− 1, xj+1,...,      xd+1,q ) ≥  0, }            )      }
+E∗ =      (x1,...,      xd+1) ∈ Rd(d+1) : Φ         f(x1,...,      xj− 1, xj+1,...,      xd+1, xj) ≥  0               = 1    ,
+                                                                                                         1≤ j≤ d+1
+satisﬁes
+
+                                  (p1,..,p      d+1) ∈ E      ⇔        (p1,...,p       d+1) ∈ E∗.
+Hence E has complexity (2(d+1), 1), and
+
+                                             |E| ≥       1(d+1)!|P1|···|Pd+1|.
+
+Thus, we can apply Corollary 1.2 to H = (P,E ) with ε = 1/ (d + 1)! and t = 2(d +1), to obtain
+subsets P′1 ⊂  P1,...,P        ′d+1 ⊂  Pd+1 such that
+
+                                               |P′i| ≥ 2− O(d2log(d+1))|Pi|,
+and all closed simplices with one vertex from each P′i contains q.                                                       □
+
+4    Regularity lemma for semi-algebraic hypergraphs
+
+In this section, we prove Theorem 1.3. We ﬁrst prove the following variant of Theorem 1.3.
+Theorem 4.1.  For any ε > 0, the vertex set of any semi-algebraic k-uniform hypergraph H  =
+(P,E ) in d-space with complexity (t,D ), can be partitioned into K ≤  (1/ε )c parts P = P1∪···∪PK,
+where c = c(k,d,t,D   ) is a constant, such that
+                                                 ∑ |Pj1|···|Pjk|
+                                                            |P|k         ≤  ε.
+Here the sum is taken over all k-tuples (j1,...,j       k) such that (Pj1,...,P       jk) is not homogeneous.
+
+Proof.  Let ε > 0 and H = (P,E ) be an n-vertex k-uniform semi-algebraic hypergraph with com-
+plexity (t,D ) in d-space.  Recall that E is a symmetric relation.  For every integer r ≥  0, we will
+recursively deﬁneapartition Pr on Pk = P×···×P into at most 2kr parts of theform X1×···×Xk,
+such that at most (1−  δk)r|P|k k-tuples (p1,...,p       k) lie in a part X1 ×···×Xk with the property
+that (X1,...,X       k) is not homogeneous. Note that δ is deﬁned in Lemma 2.7. Also, for each r ≥  0,
+we will inductively deﬁne a collection Fr of semi-algebraic sets, each set with complexity at most
+κ  = κ(k,d,t,D   ), such that |Fr| ≤ ∑rj=02kj, and for each part X1 × ··· ×Xk in Pr, there are
+subcollections S1,...,      Sk ⊂ F r such that
+                                                                   
+                                                 Xi =       ⋂   ∆  ∩ P.
+                                                           ∆∈S i
+Here κ = κ(k,d,t,D   ) is the same constant as in Lemma 2.7. Given such a partition Pr, a k-tuple
+(p1,...,p       k) ∈ P ×···×P is called bad if (p1,...,p       k) lies in a part X1 ×···×Xk in Pr, for which
+(X1,...,X       k) is not homogeneous.
+
+                                                              16
+
+=== PDF PAGE 17 ===
+    We start with P0 = {P ×··· ×P} and F0 = {Rd}, which satisﬁes the base case r = 0.  After
+obtaining Pi and Fi, we deﬁne Pi+1 and Fi+1 as follows.   Let X1 × ··· ×Xk  be a part in the
+partition Pi. Then if (X1,...,X       k) is homogeneous, we put X1×···×Xk in Pi+1. If (X1,...,X       k) is
+not homogeneous, then notice that (X1,...,X       k) gives rise to |X1|···|Xk|bad k-tuples (p1,...,p       k).
+Hence, we apply Lemma 2.7 on (X1,...,X       k) to obtain subsets X′1 ⊂  X1,...,X′k ⊂  Xk and semi-
+algebraic sets ∆1,....,       ∆k with the properties described above.  Then we partition X1 × ··· ×Xk
+into 2k parts Z1 × ··· ×Zk where Zi ∈ {X′i,X i \X′i} for 1 ≤  i ≤  k, and put these parts into
+Pi+1.  The collection Fi+1 will consist of all semi-algebraic sets from Fi, plus all semi-algebraic
+sets ∆1,...,      ∆k, Rd \∆1,...,      Rd \∆k that were obtained after applying Lemma 2.7 to each part
+X1 ×···×Xk in Pr for which (X1,...,X       k) is not homogeneous.
+    By the induction hypothesis, the number of bad k-tuples (p1,...,p       k) in Pi+1 is at most
+
+                                     (1−  δk)(1−  δk)i|P|k = (1−  δk)i+1|P|k.
+Thenumber of parts in Pi+1 is at most 2k·2ki = 2k(i+1), and |Fi+1| ≤ |Fi|+2k|Pi| ≤ |Fi|+2k(i+1) ≤
+∑i+1
+   j=02kj. By the induction hypothesis, for any part X1×···×Xk in Pi+1 such that X1×···×Xk
+was also in Pi, there are subcollections S1,...,      Sk ⊂ F i such that
+                                                                  
+                                                Xi =       ⋂   ∆  ∩ P,
+                                                          ∆∈S i
+for 1 ≤  i ≤  k.  If X1 ×··· ×Xk is not in Pi, then there must be a part Y1 ×··· ×Yk in Pi, such
+that X1 × ··· ×Xk is one of the 2k parts obtained from applying Lemma 2.7 to Y1 × ··· ×Yk.
+Hence, Xi ⊂  Yi for 1 ≤  i ≤  k.  Let ∆1,...,      ∆k be the semi-algebraic sets obtained when applying
+Lemma 2.7 to Y1 ×··· ×Yk.  By the induction hypothesis, we know that there are subcollections
+S1,...,      Sk ⊂ F i such that
+                                                                 
+                                                 Yi =     ⋂    ∆  ∩ P,
+                                                          ∆∈S i
+for 1 ≤  i ≤  k. Hence, there are subcollections S′i ⊂ S i ∪{∆i, Rd \∆i} such that
+                                                                  
+                                                Xi =       ⋂   ∆  ∩ P,
+
+                                                          ∆∈S ′i
+for 1 ≤  i ≤  k. We have therefore obtained our desired partition Pi+1 on P ×···×P, and collection
+Fi+1 of semi-algebraic sets.
+    At step r =       logεlog(1− δk), there are at most ε|P|k bad k-tuples (p1,...,p       k) in partition Pr.  The
+number of parts of Pr is at most (1/ε )c1  and |Fr| ≤ (1/ε )c2, where c1 = c1(k,d,t,D   ) and c2 =
+c2(k,d,t,D   ) (recall that δ = δ(k,d,t,D   )).
+    Finally, we partition the vertex set P into K parts, P1,P 2,...,P       K, such that two vertices are in
+the same part if and only if every member of Fr contains both or neither of them. Since Fr consists
+of at most (1/ε )c2  semi-algebraic sets, and each set has complexity at most c = c(k,d,t,D   ), we
+have K ≤  (1/ε )c3 where c3 = c3(k,d,t,D   ) (see Theorem 6.2.1 in [37]).  Now we just need to show
+that
+
+
+
+                                                            17
+
+=== PDF PAGE 18 ===
+                                               ∑|Pj1|···|Pjk|< ε|P|k,
+
+where the sum is taken over all k-tuples (j1,...,j       k), 1 ≤  j1 < ···< jk ≤  K, such that (Pj1,...,P       jk)
+is not homogeneous.   It suﬃces to show that for a k-tuple (j1,...,j       k),  if (Pj1,...,P       jk) is not
+homogeneous, then all k-tuples (p1,...,p       k) ∈ Pj1 ×···×Pjk are bad in the partition Pr.
+    For the sake of contradiction, suppose that (Pj1,...,P       jk) is not homogeneous, and that the
+k-tuple (p1,...,p       k) ∈ Pj1×···×Pjk is not bad. Then there is a part X1×···×Xk in the partition
+Pr such that pi ∈  Xi for all i, and (X1,...,X       k) is homogeneous.  Hence, there are subcollections
+S1,...,      Sk ⊂ F r such that
+                                                                   
+                                                 Xi =       ⋂   ∆  ∩ P,
+                                                           ∆∈S i
+for 1 ≤  i ≤  k. However, by construction of Pj1,...,P       jk, this implies that Pji ⊂  Xi for all i, and we
+have a contradiction. Therefore, we have obtained our desired partition P1,P 2,...,P       K.
+
+    Although Theorem 4.1 does not necessarily give an equitable partition of P, Theorem 1.3 now
+quickly follows.
+Proof  of Theorem  1.3.   Apply Theorem 4.1 with approximation parameter  ε/ 2.   So there is a
+partition  Q  :  P  =  Q1 ∪ ··· ∪QK′ into K′ ≤   (2/ε )c  parts,  where c  =  c(k,d,t,D   ),  such that
+∑|Qi1||Qi2|···|Qik| ≤ (ε/ 2)|P|k, where the sum is taken over all k-tuples (i1,...,i       k) such that
+
+(Qi1,...,Q       ik) is not homogeneous.
+    Let K = 4kε− 1K′. Partition each part Qi into parts of size |P|/K   and possibly one additional
+part of size less than |P|/K  . Collect these additional parts and divide them into parts of size |P|/K
+to obtain an equitable partition P : P = P1 ∪···∪PK into K parts. The number of vertices of P
+which are in parts Pi that are not contained in a part of Q is at most K′|P|/K  . Hence, the fraction
+of k-tuples Pi1 ×···×Pik with not all Pi1,...,P       ik subsets of parts of Q is at most kK′/K   = ε/ 4.
+As ε/ 2 + ε/ 4 < ε, we obtain that less than an ε-fraction of the k-tuples of parts of P  are not
+homogeneous, which completes the proof.                                                                                               □
+    The proof of Theorem 4.1 shows that we can obtain such a partition of P in O(ε− cnk− 1) time,
+where c = c(k,d,t,D   ).   Indeed, we apply Theorem 2.8 ε− c times to obtain the family of semi-
+algebraic sets Fr, where |Fr|= O(ε− c).  This can be done in O(ε− cnk− 1) time.  We then partition
+our point set P by checking which sets of Fr the points of P lie in.  This can be done in O(ε− cn)
+time.  Finally, the argument above shows that we can reﬁne our partition to obtain an equitable
+partition of P satisfying the properties of Theorem 1.3. This reﬁnement can be done in O(n) time.
+This gives us the following algorithmic result.
+Corollary 4.2. For ﬁxed constants k,d,t,D >    0, let 0 < ε < 1/ 2 and H = (P,E ) be a k-uniform
+semi-algebraic hypergraph in Rd with complexity (t,D ).  Then there is a deterministic algorithm
+that ﬁnds a partition of P  satisfying the properties in Theorem 1.3 that runs in O(ε− cnk− 1) time,
+where c = (k,d,t,D   ).
+    Let us remark that for ﬁxed ε >0 and for k = 2, the algorithm above runs in O(n) time which
+is best possible.  Moreover, this is much faster than the best known deterministic algorithm for
+Szemer´edi’s regularity lemma for graphs, which runs in O(n2) time and cannot be improved [35].
+
+
+
+                                                             18
+
+=== PDF PAGE 19 ===
+    By copying the proof of Theorem 1.3 almost verbatim, using the same-type lemma of B´ar´any
+and Valtr in [9] instead of Lemma 2.7, we have the following.
+Theorem 4.3.  For any integers d,k  ≥  1, there is a C = C(d,k ) such that the following holds.
+For each 0 < ε < 1/ 2 and for any ﬁnite point set P  in Rd, there is an equitable partition P  =)k-tuple of parts (Pi1,...,P       ik)
+P1∪ P2∪···∪PK, with K at most ε− C, such that all but at most ε(Kk
+have same-type transversals.
+
+5    Property testing in semi-algebraic hypergraphs
+
+In this section, we apply the polynomial semi-algebraic regularity lemma, Theorem 1.3, to quickly
+distinguish between semi-algebraic objects that satisfy a property from objects that are far from
+satisfyingit. Intheﬁrstsubsection,werestrictourselvestotestingmonotonehypergraphproperties.
+We thendiscussandprovearesult abouteasily testinghereditary propertiesofgraphs. We conclude
+with a result on easily testing hypergraph hereditary properties.  All semi-algebraic hypergraphs
+we consider in this section are assumed to be k-uniform and equipped with a symmetric relation
+E.
+
+5.1    Testing monotone properties
+Let P be a monotone property of hypergraphs, and H be the family of minimal forbidden hyper-
+graphs for P.  That is, H ∈ H  if H ̸∈ P, but every proper subhypergraph of H is in P.  We say
+that a hypergraph H has a homomorphism to another hypergraph R, and write H →   R, if there is
+a mapping f : V(H) →   V(R) such that the image of every edge of H is an edge of R.
+    We let Hr  denote the family of hypergraphs R on at most r  vertices  for which there is a
+hypergraph H ∈ H  with H →   R. Deﬁne
+
+                                      Ψ1(H,r ) = maxR∈H r     minH∈H,H →  R|V(H)|.
+
+    The following result implies that we can easily test every monotone property P whose corre-
+sponding function Ψ1(H,r ) grows at most polynomially in r. A simple example in which Ψ1(H,r )
+is constant is the case that the property P is H-freeness for a ﬁxed hypergraph H, i.e., P is the
+family of k-uniform hypergraphs which do not contain H as a subhypergraph.
+Theorem  5.1.  Let P  be a monotone property of hypergraphs,  and H be the family of minimal
+forbidden hypergraphs for P.  Within the family A of semi-algebraic hypergraphs in d-space with
+description complexity (t,D ), the property P can be ǫ-tested with vertex query complexity at most
+8(rΨ1(H,r ))2,  where  r  =  (1/ǫ )c  with  c  =  c(k,d,t,D   )  is  the  number  of  parts  in  the  algebraic
+regularity lemma for hypergraphs as in Theorem 1.3.
+
+Proof.  Let s = Ψ1(H,r ) and v = 8(rs)2.   Consider the tester which samples v vertices from a
+hypergraph A ∈ A. It accepts if the induced subhypergraph on these v vertices has property P and
+rejects otherwise. It suﬃces to show that if A ∈ A is ǫ-far from satisfying P, then with probability
+at least 2/ 3, the tester will reject.
+    Consider an equitable partition Q : V(A) = V1 ∪ ...    ∪ Vr′ of the vertex set of A guaranteed by
+Theorem 1.3 such that all but at most an ǫ-fraction of the k-tuples of parts are homogeneous. Let
+r′= |Q|be the number of parts of the partition, so r′≤  r. Delete all edges of A whose vertices go
+between parts which are not complete.  By the almost homogeneous property of the partition, at
+
+                                                          19
+
+=== PDF PAGE 20 ===
+most an ǫ-fraction of the edges are deleted. Let A′denote the resulting subhypergraph of A. As P
+is monotone, if A ∈ P, then A′∈ P. Let R be the hypergraph on [r′], which has one vertex for each
+part in Q, and a k-tuple (i1,...,i       k) of (not necessarily distinct) vertices of R forms an edge if and
+only if the corresponding k-tuple Vi1,...,V       ik of parts are complete in A′(and hence in A as well).
+If R ̸∈ Hr, then every hypergraph which has a homomorphism to R is in P and hence A′ ∈ P.
+However, at most an ǫ-fraction of the k-tuples are deleted from A to obtain A′, and so A is not
+ǫ-far from satisfying P, contradicting the assumption.  Hence, R ∈ Hr.  Since R ∈ Hr, there is a
+hypergraph H ∈ H on at most s = Ψ1(H,r ) vertices with H →   R. Consider such a homomorphism
+f : V(H) →   V(R), and let ai = |f− 1(i)|.  If the sampled v vertices contain at least ai vertices in
+Vi for each i, then H is a subgraph of the sampled vertices and hence the sampled vertices do not
+have property P.
+    So we need to estimate the probability of the event that the sampled v vertices contain ai
+vertices in Vi for each i.  For a particular i, the probability that the sampled v vertices contain
+fewer than a = ai vertices in Vi is 0 if a = 0 and is otherwise less then
+                                                    )
+                                (1−  1/r  ′)v− a(va    < e− v/  (2r′)va < 1/ (4s),
+
+where we used the union bound and that apart from a of the v vertices being allowed to be in
+Vi, the other v −  a coordinates are not allowed to be in Vi, which has order   1r′|V(A)|.  In the last
+inequality we use that a ≤  s.  Taking the union bound and summing over all i, the probability
+that the sampled set of v vertices does not contain ai vertices in Vi for at least one i is at most
+s×  1/ (4s) = 1/ 4. This completes the proof.
+
+5.2    Testing hereditary properties of graphs
+We next state and prove a result which shows that typical hereditary properties of graphs are easily
+testable within semi-algebraic graphs. We say that for a graph H and a graph R on [r′] with loops,
+there is an induced homomorphism from H to R, and we write H →  ind R, if there is a mapping
+f : V(H) →   V(R) which maps edges of H to edges of R, and every nonadjacent pair of distinct
+vertices of H gets mapped to a nonadjacent pair in R. We write H ̸→  ind R if H →  ind R does not
+hold.
+    Let P = P1 ∪ ...    ∪ Pr′ be a vertex partition of a semi-algebraic graph G. A key observation is
+that if we round G by the partition of P and the graph R with loops to obtain a graph G′on the
+same vertex set as G by adding edges to make Pi,P j complete if (i,j ) is an edge of R, and deleting
+edges to make Pi,P j empty if (i,j ) is not an edge of R and we have that H ̸→  ind R, then G′does
+not contain H as an induced subgraph.
+    Let P  be a hereditary graph property, and H be the family of minimal (induced) forbidden
+graphs for P.  That is, each H ∈ H  satisﬁes H ̸∈ P, but every proper induced subgraph H′ of H
+satisﬁes H′∈ P. For a nonnegative integer r, let Hr be the family of graphs R on at most r vertices
+for which there is at least one H ∈ H  such that H →  ind R. As long as Hr is nonempty, deﬁne
+
+                                     Ψ2(H,r ) = max
+                                                    R∈H r       minH∈H:H→   indR|V(H)|.
+If Hr is empty, then we deﬁne Ψ2(H,r ) = 1.  Note that Ψ2(H,r ) is a monotonically increasing
+function of r.
+    We now state our main result for testing hereditary graph properties within semi-algebraic
+graphs. It implies that, if Ψ2(H,r ) is at most polynomial in r, then P can be easily tested within
+
+                                                           20
+
+=== PDF PAGE 21 ===
+the family of semi-algebraic graphs of constant description complexity, i.e., there is an ǫ-tester with
+vertex query complexity ǫ− O(1). A simple example for which Ψ2(H,r ) is constant is the case that
+the property P is the family of graphs which do not contain an induced subgraph isomorphic to
+H, for some ﬁxed graph H.
+Theorem 5.2. Let P be a hereditary property of graphs, and H be the family of minimal forbidden
+graphs for P. Within the family A of semi-algebraic graphs in d-space with description complexity
+(t,D ), property P  can be ǫ-tested with vertex query complexity at most (rΨ2(H,r ))C, where r =
+(1/ǫ )C with C = C(d,t,D  ).
+    We show how this theorem can be established using the following “strong regularity lemma”
+for semi-algebraic graphs.
+Theorem  5.3.  For any 0 < α,ǫ <   1/ 2, any semi-algebraic graph H  = (P,E ) in d-space with
+complexity (t,D ) has an equitable vertex partition P  = P1 ∪ ··· ∪Pr′ with r′ ≤  r = (1/ǫ )c′ with
+c′ = c′(d,t,D  ) such that all but an ǫ-fraction of the pairs Pi,P j  are homogeneous.  Furthermore,
+there are subsets Qi ⊂  Pi such that each pair Qi,Q j with i ̸= j is complete or empty, and each Qi
+has density at most α  or at least 1−  α. Moreover, |Qi| ≥ δ|P|with δ = (αǫ)c with c = c(d,t,D  ).
+    We next prove Theorem 5.2 assuming Theorem 5.3. The rest of the subsection is then devoted
+to proving Theorem 5.3.
+Proof of Theorem 5.2. Let s = Ψ2(H,r ) and v = (rs)C for an appropriate constant C = C(d,t,D  ).
+Consider the tester which samples v vertices from a graph A = (P,E ) ∈ A. It accepts if the induced
+subgraph on these v vertices has property P and rejects otherwise. It suﬃces to show that if A ∈ A
+is ǫ-far from satisfying P, then with probability at least 2/ 3, the tester will reject.
+    Consider an equitable partition P = P1 ∪ ...    ∪ Pr′ with r′≤  r = (1/ǫ )c′ of the vertex set of A
+guaranteed by Theorem 5.3 with the property that all but at most an ǫ-fraction of the pairs of parts
+are homogeneous, and, with α = 1/ (4s2), there are subsets Qi ⊂  Pi such that each pair Qi,Q j with
+i ̸= j is complete or empty, each Qi has density at most α or at least 1−  α, and |Qi| ≥ δ|P|with
+δ = (αǫ)c, where c = c(d,t,D  ). Let R be the graph on [r′] with loops where (i,j ) is an edge of R if
+and only if Qi,Q j is complete to each other if i ̸= j, and (i,i ) is an edge if the density in Qi is at
+least 1−  α. Round A by the partition of P and the graph R to obtain another graph A′. That is,
+A′has the same vertex set as A, and we delete the edges between Pi and Pj if (i,j ) is not an edge
+of R and add all possible edges between Pi and Pj if (i,j ) is an edge of R. The resulting graph A′
+is homogeneous between every pair of parts and at most an ǫ-fraction of the pairs of vertices were
+added or deleted as edges from A to obtain A′.  This is because only an ǫ-fraction of the pairs of
+parts of the partition of P are not homogeneous, and only edges between pairs of nonhomogeneous
+pairs are added or deleted.
+    If R ̸∈ Hr, then every graph which has an induced homomorphism to R is in P  and hence
+A′ ∈ P.  However, at most an ǫ-fraction of the pairs were added or deleted from A to obtain A′,
+and so A is not ǫ-far from satisfying P, contradicting the assumption.  Hence, R ∈ Hr, and there
+is a graph H ∈ H  on at most s = Ψ2(H,r ) vertices with H →  ind R.  Consider such an induced
+homomorphism f : V(H) →   V(R), and let ai = |f− 1(i)|.  If among the sampled v vertices there
+are at least ai vertices from Qi for each i, and these ai vertices form a clique if (i,i ) is a loop in R
+and otherwise they form an independent set, then H is an induced subgraph of the sampled set of
+vertices and hence the subgraph induced by the sampled set does not have property P.
+    We ﬁrst estimate the probability of the event that the sampled set of v vertices contains ai
+vertices in Qi for each i.   For a particular i, the probability that the sampled set of v vertices
+
+
+                                                           21
+
+=== PDF PAGE 22 ===
+contains fewer than a = ai vertices in Qi is 0 if a = 0 and is otherwise less then
+                                                 (v)
+                                    (1−  δ)v− a    a   < e− δv/ 2va < 1/ (8s),
+
+where we used that a < s and v can be chosen so that v > 10(s/δ )2. Taking the union bound and
+summing over all i, the probability that the sampled v vertices do not contain ai vertices in Qi for
+some i is at most s×  1/ (8s) = 1/ 8.
+    We now condition on the event that we have at least ai vertices chosen from Qi for each i. The
+probability that these ai vertices do not form a clique if (i,i ) is a loop and an independent set if)α.  Summing over all i, the probability that, for every i, the ai
+(i,i ) is not a loop is at most (ai2
+vertices in Qi form a clique if (i,i ) is a loop and an independent set if (i,i ) is not a loop, is at least
+                                                 (ai)              (s)
+                                        1−  ∑       2   α ≥  1−      2  α ≥  7/ 8.
+                                              i
+Hence, with probability at least 3/ 4, the induced subgraph on the sampled set of v vertices has the
+desired properties, which completes the proof.                                                                                       □
+    Our goal for the rest of the subsection is to prove Theorem 5.3. We ﬁrst prove a Ramsey-type
+lemma which states that semi-algebraic graphs contain large balanced complete or empty h-partite
+subgraphs.
+Lemma 5.4. For every d,t,   and D, there is a constant c = c(d,t,D  ) satisfying the following con-
+dition. For any positive integer h, any semi-algebraic graph G = (P,E ) in d-space with complexity
+(t,D ) has vertex subsets A1,...,A       h with |A1|= ···= |Ah| ≥ h− c|P|such that every pair Ai,A j
+with i ̸= j is complete or none of them are.
+
+Proof.  For h = 1, the result is trivial by taking A1  = P.   Thus, we may assume h ≥  2.   It is
+shown in [3] that there is a constant C = C(d,t,D  ) such that every induced subgraph of G on hC
+vertices contains a clique or an independent set of order h.  Applying Theorem 1.3 with ǫ=     12hC,
+we obtain an equitable partition with ǫ− O(1) parts such that all but at most a     12hC-fraction of the
+pairs of parts are homogeneous.  Applying Tur´an’s theorem to the auxiliary graph with a vertex
+for each part and an edge between each homogeneous pair, we obtain hC parts that are pairwise
+homogeneous.  Picking one vertex from each of these parts, we obtain an induced subgraph of G
+on hC vertices, and by the discussion above, there is an induced subgraph with h vertices which is
+complete or empty. The parts these vertices come from (after possibly deleting a vertex from some
+parts to guarantee that they have the same size) have the desired properties.
+
+    We  next  prove  Theorem  5.3,  a  strengthening  of  our  quantitative  semi-algebraic  regularity
+lemma, via three applications of Theorem 1.3.
+Proof of Theorem 5.3.  We will apply Theorem 1.3 three times.  We ﬁrst apply Theorem 1.3 to
+obtain a partition P = P1∪···∪PK with K = ǫ− O(1) with the implied constant depending on d,t,
+and D, such that all but an ǫ-fraction of the pairs Pi,P j are homogeneous. We apply Theorem 1.3
+again (or rather its proof) to get a reﬁnement with approximation parameter ǫ′= 1/K   4, so that
+all but an ǫ′-fraction of the pairs of parts are homogeneous.  Thus, with a positive probability, a
+random choice of parts W1,...,W       K of this reﬁnement with Wi ⊂  Pi has the property that Wi,W j
+is homogeneous for all i ̸= j.   Indeed, at most a fraction K2ǫ′ = 1/K   2  of the pairs Wi  ⊂   Pi,
+Wj  ⊂   Pj  are not homogeneous, and so, by linearity of expectation, this probability is at least
+
+                                                            22
+
+=== PDF PAGE 23 ===
+1−  (K)1
+      2  K2 > 1/ 2 > 0.  From Lemma 5.4, applied to the subgraph induced by Wi for each i with
+h = 2/α  , we obtain subsets Qi ⊂  Wi such that
+                                    (α  )O(1)|Wi| ≥     (α  )O(1)(K− 4)O(1)|Pi| ≥ δ|P|,
+                           |Qi| ≥     2                   2
+
+with δ = (αǫ)c for an appropriate choice of c = c(d,t,D  ), each Qi is a complete or empty balanced
+h-partite graph, so that the density in Qi is at most α or at least 1− α. This completes the proof. □
+
+5.3    Testing hereditary properties of hypergraphs
+We next state and prove the hereditary property testing result for semi-algebraic hypergraphs.
+    Let R be a k-uniform hypergraph with vertex set [r′], and B be a blow-up of R with vertex sets
+V1,...,V       r′. That is, B is a k-uniform hypergraph on V1∪ ...   ∪ Vr′, where(v1,...,v       k) ∈ (Vi1,...,V       ik)
+isanedgeifandonlyif(i1,...,i       k)formanedgeofR. AnextensionofB (withrespecttoV1,...,V       r′)
+is any hypergraph on V1∪ ...    ∪ Vr′ which agrees with B on the k-tuples with vertices in distinct Vi.
+    For a hypergraph H, we say that R is extendable H-free if each blow-up of R has an extension
+which contains no induced copy of H. For a family H of hypergraphs, we say that R is extendable
+H-free if each blow-up of R has an extension which contains no induced H ∈ H.
+    For a hypergraph property P, we say that R strongly has property P if every blow-up of R has
+an extension which has property P.  Otherwise, there are a smallest s = s(P,R ) and vertex sets
+V1,...,V       r′ with r′≤  r and s(P,R ) = |V1|+···+|Vr′|such that no extension of the blow-up B of
+R with vertex sets V1,...,V       r′ has property P.
+    Deﬁne Ψ3(P,r ) to be the maximum of s(P,R ) over all R with at most r vertices which do not
+strongly have property P.
+    Ournexttheoremisabouthereditarypropertytestingforsemi-algebraichypergraphs. Itimplies
+that, if Ψ3(H,r ) is at most polynomial in r, then P can be easily tested within the semi-algebraic
+hypergraphs of constant description complexity, i.e., there is an ǫ-tester with vertex query com-
+plexity ǫ− O(1). A simple example in which Ψ3(H,r ) is constant is the case that the property P is
+the family of hypergraphs which are induced H-free for some ﬁxed hypergraph H.
+Theorem 5.5. Let P be a hereditary property of hypergraphs. Within the family A of semi-algebraic
+k-uniform hypergraphs in d-space with description complexity (t,D ), the property P can be ǫ-tested
+with vertex query complexity at most rCΨ3(H,r )C, where r = (1/ǫ )C with C = C(d,t,D  ).
+    We will need the following polynomial strong regularity lemma for semi-algebraic hypergraphs.
+Lemma 5.6.  For any 0 < ǫ < 1/ 2, any semi-algebraic k-uniform hypergraph H = (P,E ) in d-
+space with complexity (t,D ) has an equitable vertex partition P = P1∪···∪Pr′ such that all but an
+ǫ-fraction of the k-tuples of distinct parts are homogeneous. Furthermore, there are subsets Qi ⊂  Pi
+for each i such that every k-tuple of distinct parts is homogeneous and |Qi| ≥ δ|P|with δ = ǫc,
+where c = c(k,d,t,D   ).
+
+Proof.  The proof follows  the  graph case,  as in  Theorem 5.3,  and  involves  two  applications  of
+Theorem 1.3.  First, we apply Theorem 1.3 to obtain a partition P  = P1 ∪ ··· ∪PK  with K =
+ǫ− O(1), where the implied constant depends on k,d,t,D,      such that all but an ǫ-fraction of the
+k-tuples of parts are homogeneous.  We apply Theorem 1.3 (or rather its proof) again to get a
+reﬁnement with approximation parameter ǫ′= 1/K   2k, so that all but an ǫ′-fraction of the k-tuples
+of parts are homogeneous.  Thus, with positive probability, a random choice of parts Q1,...,Q       K
+
+
+                                                           23
+
+=== PDF PAGE 24 ===
+of this reﬁnement with Qi ⊂  Pi has the property that each k-tuple Qi1,...,Q       ik of distinct parts is
+homogeneous. This completes the proof.
+
+Proof  of  Theorem  5.5.    Let  s  =  Ψ3(P,r )  and  v  =  (rs)C  for  an  appropriate  constant  C  =
+C(k,d,t,D   ).   Consider the tester which samples v  vertices from a graph A = (P,E )  ∈ A.   It
+accepts if the induced subgraph on these v vertices has property P and rejects otherwise. It suﬃces
+to show that if A ∈ A  is ǫ-far from satisfying P, then with probability at least 2/ 3, the tester will
+reject.
+    Consider an equitable partition P = P1∪ ...    ∪ Pr′ of the vertex set of A guaranteed by Lemma
+5.6 so that all but at most an ǫ-fraction of the pairs of parts are homogeneous, and subsets Qi ⊂  Pi
+such that every k-tuple of distinct Qi is homogeneous, and |Qi| ≥ δ|P|for each i with δ = ǫc, where
+c = c(k,d,t,D   ). Let R be the k-uniform hypergraph on [r′], where a k-tuple (i1,...,i       k) of distinct
+vertices forms an edge if and only if Qi1,...,Q       ik is complete.  If R strongly has property P, then
+A is ǫ-close to a hypergraph which has property P, and hence the algorithm accepts in this case.
+Thus, we may assume that R does not strongly have property P so that there are sets V1,...,V       r′
+with |V1|+ ···+ |Vr′|= s(P,R ) ≤  Ψ3(P,r ) = s such that every extension of the blow-up of R
+with parts V1,...,V       r′ does not have property P.  Thus, if among the v sampled vertices, we get
+for every i at least |Vi|vertices in Qi, then the subgraph induced by the sampled vertices does not
+have property P and the algorithm rejects.  Therefore, it suﬃces to show that with probability at
+least 2/ 3, we get at least |Vi|vertices in each Qi. However, this is the computation we already did
+in the proof of Theorem 5.2. It is suﬃcient, for example, to assume that v > 10(s/δ )2, and we can
+take v to satisfy this condition.                                                                                                                 □
+Acknowledgments. We would like to thank the anonymous referees of the conference version [22]
+for their helpfulcomments, includingan improvement of theexponent in the boundin Theorem 1.6.
+
+References
+
+ [1]  N.Alon, Testing subgraphs in large graphs, RandomStructuresAlgorithms, 21(2002), pp.359–
+     370.
+
+ [2]  N. Alon and J. Fox, Easily testable graph properties, Combin. Probab. Comput., 24 (2015),
+     pp. 646–657.
+
+ [3]  N. Alon, J. Pach, R. Pinchasi, R. Radoiˇci´c, and M. Sharir, Crossing patterns of semi-algebraic
+     sets, J. Combin. Theory Ser. A, 111 (2005), pp. 310–326.
+
+ [4]  N. Alon and A. Shapira,  A  characterization  of  easily  testable  induced  subgraphs,  Combin.
+     Probab. Comput., 15 (2006), pp. 791–805.
+
+ [5]  N. Alon and A. Shapira, Every monotone graph property is testable, SIAM J. Comput., 38
+     (2008), pp. 505–522.
+
+ [6]  N. Alon and A. Shapira, A characterization  of the (natural) graph properties testable with
+     one-sided error, SIAM J. Comput., 37 (2008), pp. 1703–1727.
+
+ [7]  T. Austin and T. Tao,  Testability and repair  of hereditary  hypergraph  properties,  Random
+     Structures Algorithms, 36 (2010), pp. 373–463.
+
+
+                                                            24
+
+=== PDF PAGE 25 ===
+ [8]  I. B´ar´any and J. Pach, Homogeneous selections from hyperplanes, J. Combinat. Theory Ser.
+     B, 104 (2014), pp. 81–87.
+
+ [9]  I. B´ar´any and P. Valtr, A positive fraction Erd˝os-Szekeres theorem, Discrete Comput. Geom.,
+     19 (1998), pp. 335–342.
+
+[10]  S. Basu, R. Pollack, and M. F. Roy, Algorithms in Real Algebraic Geometry, 2nd Edition,
+     Algorithms and Computation in Mathematics 10, Springer-Verlag, Berlin, 2006.
+
+[11]  B. Bukh and A. Hubard,  Space  crossing  numbers,  Combin. Probab. Comput.,  21 (2012),
+     pp. 358–373.
+
+[12]  B. Chazelle, Cutting hyperplanes for divide-and-conquer, Discrete Comput. Geom., 9 (1993),
+     pp. 145–158.
+
+[13]  B. Chazelle, H. Edelsbrunner, L. Guibas, and M. Sharir, A singly exponential stratiﬁcation
+     scheme for real semi-algebraic varieties and its applications, Theor. Comput. Sci., 84 (1991),
+     pp. 77–105.
+
+[14]  B. Chazelle andJ.Friedman, A deterministic view of random sampling and its use in geometry,
+     Combinatorica, 10 (1990), pp. 229–249.
+
+[15]  K. Clarkson, A randomized algorithm for closest-point queries, SIAM J. Comput., 17 (1988),
+     pp. 830–847.
+
+[16]  D. Conlon and J. Fox, Bounds for graph regularity and removal lemmas, Geom. Funct. Anal.,
+     22 (2012), pp. 1191–1256.
+
+[17]  D. Conlon and J. Fox, Graph removal lemmas, Surveys in Combinatorics 2013, 1–49, London
+     Math. Soc. Lecutre Note Ser., 409, Cambridge Univ. Press, Cambridge, 2013.
+
+[18]  D. Conlon, J. Fox, J. Pach, B. Sudakov, and A. Suk, Ramsey-type results for semi-algebraic
+     relations, Trans. Amer. Math. Soc., 366 (2014), pp. 5043–5065.
+
+[19]  P. Erd˝os, On extremal problems of graphs and generalized graphs, Israel J. Math., 2 (1965),
+     pp. 183–190.
+
+[20]  P. Erd˝os and G. Szekeres, A combinatorial problem in geometry, Compos. Math., 2 (1935),
+     pp. 463–470.
+
+[21]  J. Fox,  M. Gromov,  V. Laﬀorgue,  A. Naor,  and J. Pach,  Overlap  properties  of geometric
+     expanders, J. Reine Angew. Math. (Crelle’s Journal), 671 (2012), pp. 49–83.
+
+[22]  J. Fox, J. Pach, and A. Suk, Density and regularity theorems for semi-algebraic hypergraphs,
+     Proceedings of the Twenty-Sixth Annual ACM-SIAMSymposium on Discrete Algorithms, 1517-
+     1530, SIAM, San Diego, California, 2015.
+
+[23]  J.Fox andL. M. Lov´asz, A tight lower bound for Szemer´edi’s regularity lemma, Combinatorica,
+     to appear.
+
+[24]  O. Goldreich, S. Goldwasser, and D. Ron, Property testing and its applications to learning and
+     approximation, J. ACM, 45 (1998), pp. 653–750.
+
+                                                          25
+
+=== PDF PAGE 26 ===
+[25]  J. E. Goodman and R. Pollack, Allowable sequences and order-types in discrete and computa-
+     tional geometry, In J. Pach editor, New Trends in Discrete and Computational Geometry, 10
+     (1993), Springer, Berlin etc., pp. 103–134.
+[26]  J. E. Goodman and R. Pollack, The complexity of point conﬁgurations, Discrete Appl. Math.,
+     31 (1991), pp. 167–180.
+
+[27]  W. T. Gowers, Hypergraph regularity and the multidimensional Szemer´edi theorem, Ann. of
+     Math., 166 (2007), pp. 897–946.
+
+[28]  W. T. Gowers, Lower bounds of tower type for Szemer´edi’s uniformity lemma, Geom. Funct.
+     Anal., 7 (1997), pp. 322–337.
+[29]  W. T. Gowers, Quasirandomness, counting and regularity for 3-uniform hypergraphs, Combin.
+     Probab. Comput., 15 (2006), pp. 143–184.
+
+[30]  A. Hubard, L. Montejano,  E. Mora, and A. Suk, Order types of convex bodies,  Order, 28
+     (2011), pp. 121–130.
+
+[31]  G. Kalai, Intersection patterns of convex sets, Israel J. Math., 48 (1984), pp. 161–174.
+
+[32]  R.Karasev, A simpler proof of the Boros-F¨uredi-B´ar´any-Pach-Gromov theorem, Discrete Com-
+     put. Geom., 47 (2012), pp. 492–495.
+
+[33]  R. Karasev, J. Kynˇcl, P. Pat´ak, Z. Pat´akov´a, M. Tancer, Bounds for Pach’s selection theorem
+     and for the minimum solid angle in a simplex, Discrete Comput. Geom., 54 (2015), pp. 610–
+     636.
+
+[34]  J. Koml´os and M. Simonovits,  Szemer´edi’s regularity  lemma and  its applications  in graph
+     theory. In D. Miklos et al. editors, Combinatorica, Paul Erd˝os Is Eighty, 2 (1996), pp. 295–
+     352.
+
+[35]  Y. Kohayakawa,  V. R¨odl,  L. Thoma,  An optimal  algorithm  for  checking regularity,  SIAM
+     J. Comput., 32 (2003), pp. 1210–1235.
+
+[36]  T. K˝ov´ari, V. T. S´os, and P. Tur´an, On a problem of K. Zarankiewicz, Colloquium Math., 3
+     (1954), pp. 50–57.
+[37]  J. Matouˇsek, Lectures on Discrete Geometry, Springer-Verlag New York, Inc., 2002.
+
+[38]  G. Moshkovitz and A. Shapira, A short proof of Gowers’ lower bound for the regularity lemma,
+     Combinatorica, to appear.
+[39]  B. Nagle, V. R¨odl and M. Schacht, The counting lemma for regular k-uniform hypergraphs,
+     Random Structures Algorithms, 28 (2006), pp. 113–179.
+
+[40]  J. Pach, A Tverberg-type result on rainbow simplices, Computational Geometry, 10 (1998),
+     pp. 71–76.
+
+[41]  J. Pach and P. Agarwal, Combinatorial Geometry, New York, Wiley, 1995.
+
+[42]  J. Pach and J. Solymosi, Crossing patterns of segments, J. Combin. Theory Ser. A 96 (2001),
+     316–325.
+
+                                                          26
+
+=== PDF PAGE 27 ===
+[43]  V. R¨odl and M. Schacht, Property testing in hypergraphs and the removal lemma, Proceedings
+     of the 39th Annual ACM Symposium on Theory of Computing (STOC 2007), ACM, New
+     York, 2007, pp. 488–495.
+
+[44]  V. R¨odl and M. Schacht, Generalizations of the removal lemma, Combinatorica, 29 (2009),
+     pp. 467–501.
+
+[45]  R. Rubinfeld and M. Sudan, Robust characterization of polynomials with applications to pro-
+     gram testing, SIAM J. on Computing, 25 (1996), pp. 252–271.
+
+[46]  E. Szemer´edi, Regular partitions of graphs, Probl`emes combinatoires et th´eorie des graphes
+     (Colloq. Internat. CNRS, Univ. Orsay), 260, CNRS, Paris, 1978, pp. 399–401.
+
+[47]  H.Tverberg, A generalization of Radon’s theorem, J.Lond.Math.Soc., 41(1966), pp.123–128.
+
+[48]  R. T. ˇZivaljevi´c and S. T. Vre´cica, The colored Tverberg’s problem and complexes of injective
+     functions, J. Combin. Theory Ser. A, 61 (1992), pp. 309–318.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                         27

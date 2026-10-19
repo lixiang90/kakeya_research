@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0100完整目标重选和新THT共享clock资格/连续正反攻完成内部独审；原signed用途真付而原positive jointmass/三norm/clock/ambient新桥未付，无ordinary增益。83PDF/87sources/78IDs，streak23另计actual信息；下一notes/00_map/R0100_next_full_goal_reselection.md，不续r/partition/mask/frequency参数。Goal active。
+更新2026-10-19，R0101半代数weighted几何box应用和原witness完整box的固定幂质量障碍完成限定独审；不否可变w输出关系。85PDF/89sources/78IDs，无ordinary/完整branchsaving、streak24另计actual信息。下一notes/00_map/R0101_next_full_goal_reselection.md，停止witnessbox参数续轮，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -225,3 +225,6 @@ R0099：GR新序列定理真实范围承认，wholeclock/端点/算子/规范资
 
 
 R0100：OAI4完整§11/HRZ窄proof/WZ20–21与旧DIM/FSD出口实际核，未见遗漏新gain。首次采用官方fixedOct5 THT37p原件，source主claim未全独审；三pair/Jac1/Hdual条件signed用途与smoothcore正Nlog2/signed0严格反攻付过，非fullSN/core0或Kakeya反例。halfclock原逐管/平均1/2破odd配对、原g允许相关但非免费pairfactor、LebesgueL3/原ds/dt/t全费和fixedJ旧Hölder比较保留。直接THT参数续轮停止，四完整路仍open。
+
+
+R0101：新FPS/Rubin current原件，fixed-format R的任意h经product-volume regularity保量用途真付。native见证d13/degree2格式合法，但θw≈θδ；farclock逐管半保、矩阵系数identity、AD1/tubeKT条带及Σw h≤1给单box原mass固定幂上界，subpower数目不能cover固定比例。第三prior费用与mass不同证；genericmask仅否selected补全，不是fullsource反例。R45已可selected KBL，不以Cartesian改名新gain；冻直接witnessbox，不否可变w输出或全部半代数方法。
