@@ -182,3 +182,6 @@ R0106无新PDF，实际核WZ Def17.3 physicalPDF65文本及原图；parabola AD/
 
 
 R0107无新PDF；fresh GLX/HRZ官方history与明确六维基线复核无差异。全strip标准energy及明列额外横向law的原source条件应用与高级文献定理分开，见metadata/R0107_source_check.json。88PDF/92sources/78IDs保持，无ordinary或major声明。
+
+
+R0108无新PDF：OS I/hash current原声明仅screened，链接与拒选存notes/R0108_primary_screening_and_DIM_validity_scope.md；FO库存真horizontal/CW参数匹配范围保留。DIM已完成named推论与核验/priority/major分开，不再制造泛assembly缺口。88PDF/92sources/78IDs保持，见metadata/R0108_source_check.json。

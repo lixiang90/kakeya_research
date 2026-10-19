@@ -6,9 +6,11 @@
 
 对任意0<ζ<1，FSD001给K(6,4−ζ)、K(5−ζ,4−ζ)。KT6.2取n=6、d=d'=4−ζ，得K(6,17/4−ζ/4)。逐ζ取极限并调用已审任意集合桥，**在上述输入下，每个Euclidean六维Kakeya集合均有dim_H≥17/4=4.25**，无需可测、紧或可测方向选线。0<ζ<1保证第二seed的s=4−ζ≥3。
 
-R0042有界primary对照仍以KT/HRZ/Zahl/GLX2025 Table1的六维7−2sqrt2≈4.171573为明确正面基线。没有在实际打开的ordinary primary发现明确17/4，不认证first、2026最新最优或major；完整范围见 notes/00_map/R0042_primary_frontier_and_six_dimensional_status.md。此为既有KT递推与已付种子的推论链，不是新的递推或高维几何方法。全部外部高级proof未由本项目从零独证，unconditional/new/major flags保持false；不解决五维或一般满维数。Goal active。
+R0042有界primary对照仍以KT/HRZ/Zahl/GLX2025 Table1的六维7−2sqrt2≈4.171573为明确正面基线。没有在实际打开的ordinary primary发现明确17/4，不认证first、2026最新最优或major；完整范围见 notes/00_map/R0042_primary_frontier_and_six_dimensional_status.md。此为既有KT递推与已付种子的推论链，不是新的递推或高维几何方法。全部外部高级proof未由本项目从零独证属于核验层级，不能单凭这一点推断上述通常具名定理推论还缺数学假设。历史unconditional/new/major布尔量保持保守编码，不代替这里的当前数学状态；不解决五维或一般满维数。Goal active。
 
 **历史范围**：R29最初只写compact集合，并把原四维内部assembly列为未审责任；R38已在明列输入下支付该内部缺口和任意集合桥。旧“仅compact/不扩任意集合”及旧未审内部assembly仅保留为历史，不作为当前待证任务。R0042本次更正叙述顺序，不新增数学结果ID。
 
 
 R0051周期frontier/value复核见notes/00_map/R0051_primary_frontier_and_bound_value_audit.md及research/reviews/R0051_macro.md。内部application和当前任意集合范围保持；与旧KT基线数值差不认证priority/major。新三维完整maximal的任意λ输入已单独入库，不把它误当DIM既有完整source审查或自动R5增益。
+
+**R0108当前效力澄清**：通常接受本页明列具名定理时，任意集合六维17/4是已经完成的数学推论；未识别另一项未支付的statement/application假设。原四维内部argument、有限桥及任意集合返回均已付，不能再以泛wholeproof=false、未外peer或未穷尽priority制造assembly任务。本轮fresh primary比较仍只支持高于所核7−2sqrt2基线，不认证首次/最新最优/重大；推论效力、项目核验层级和Goal成果审定各自独立。详见notes/00_map/R0108_complete_goal_reselection_and_unpaid_joint_mass.md第8节及两独立审查。此更正不新增定理或变更历史ID/status。
