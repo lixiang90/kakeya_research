@@ -179,3 +179,6 @@ R0105无新PDF，复用WZ/R77/R22、He1710及RW/OS实际nice配置门。原weigh
 
 
 R0106无新PDF，实际核WZ Def17.3 physicalPDF65文本及原图；parabola AD/slab不满足allscale tubeKT是本轮锁定构造的fatal，不是源定理反例。88PDF/92sources/78IDs保持，见metadata/R0106_source_check.json；无qualified源gain/major。
+
+
+R0107无新PDF；fresh GLX/HRZ官方history与明确六维基线复核无差异。全strip标准energy及明列额外横向law的原source条件应用与高级文献定理分开，见metadata/R0107_source_check.json。88PDF/92sources/78IDs保持，无ordinary或major声明。

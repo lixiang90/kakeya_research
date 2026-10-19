@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0106 fullsource moving-row cap仍open；锁定two-anchor反攻因nativeparabola YtubeKT fatal停止。指定model bulk原I诊断不救hyp，无qualified源gain、actualnoinfo1/legacy29、88PDF/92sources/78IDs。下一notes/00_map/R0106_next_full_goal_reselection.md，Goal active。
+更新2026-10-19，R0107全strip有限energy与exact code/row+横向clocklaw条件原pair分支已限定独审；一般横向law和row归约未付，无无附加source gain。actualnoinfo2/legacy30，88PDF/92sources/78IDs。下一notes/00_map/R0107_next_complete_goal_reset.md，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -243,3 +243,6 @@ R0105：fullsource far-time plane-ball cap→逐簇rank0原I保量→sameπW h�
 
 
 R0106：ξ2=x2同T全time兼容，窄x2 strip/common-v/projectionlower预算未付，不能直接调19.4。two-anchor smooth sphere/parabola direction/CW/端点pencil可核，但nativeY tangent tubeKT严格失败，nearfull子网亦不修；按working停止不降hyp。model-specific Bézout/coarea原N/m bulk容量δ正幂，不反任意source/不记成功prefix。无newID/major/ordinary，actualnoinfo1。
+
+
+R0107：全部x2 strips一次终端容量、全图energy控任意clock-dependent子集，原J upper=D√(AK)B^C H^-2+τ/2。used witness degree/allowed空间pieces/同timewindow选shell使条件原pair同分母可比；额外k1原clocklaw(8)未由wholeF NF导出，f1恒定/f2rough及general row残余保留。有限条件信息不计无附加source gain，actualnoinfo2/legacy30，已宏观；无newID/ordinary/major。
