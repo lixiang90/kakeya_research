@@ -1,0 +1,5 @@
+# R0102内部已审：原全局码的条件投影出口
+
+主文notes/40_multiscale/sticky_matrix/R0102_global_codes_and_rich_fibre_restricted_projections.md12节、A10/B10与两formal6全文限定通过，见research/reviews/R0102_primary_projection_and_global_code_review.md、research/reviews/R0102_original_mass_rich_fibres_and_closure_review.md、research/reviews/R0102_root_integration_review.md，未经外部同行评审。
+
+原多code保δ^o全T及全ST，真实point-rich parallelfibres给同P2Fst的大Pu一维投影像；具名CSWZ robust定理使rich Θ不能含合格small-loss-SPRD子族。未从完整source证明SPRD，未解完整κ1/ordinary/ambient返回；无newID/major/novelty。85PDF/89sources/78IDs，下一notes/00_map/R0102_next_full_goal_reselection.md，Goal active。

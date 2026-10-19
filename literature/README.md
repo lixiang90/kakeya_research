@@ -164,3 +164,6 @@ R0100新增OpenAI fixedOct5三角Hilbert annularvariation原PDF37p及精确READM
 
 
 R0101新增FPS1502.01730v3（27p）与Rubin2407.15518v2（32p）原PDF/全文/逐篇metadata，85PDF/89sources/78IDs。具名接口的weighted几何box用途和原witness固定幂质量门见metadata/R0101_source_check.json；高级wholeproof未全独证，非newKakeya/major认证。
+
+
+R0102无新PDF，85PDF/89sources/78IDs。复用CSWZ2610.13682v1实际robust受限投影，原全局多code/point-rich输入与条件SPRD排除见metadata/R0102_source_check.json；非全κ1/ordinary/major或45页wholeproof认证。

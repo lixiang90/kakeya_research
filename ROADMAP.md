@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0101半代数weighted几何box应用和原witness完整box的固定幂质量障碍完成限定独审；不否可变w输出关系。85PDF/89sources/78IDs，无ordinary/完整branchsaving、streak24另计actual信息。下一notes/00_map/R0101_next_full_goal_reselection.md，停止witnessbox参数续轮，Goal active。
+更新2026-10-19，R0102原全局多码P2Fst/真实point-rich受限投影和条件CSWZ SPREAD分支已限定独审；不授实际spreadout/完整κ1。85PDF/89sources/78IDs，无ordinary/完整branchsaving，streak25另计actual信息。下一notes/00_map/R0102_next_full_goal_reselection.md，不续r/σ/ε参数，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -228,3 +228,6 @@ R0100：OAI4完整§11/HRZ窄proof/WZ20–21与旧DIM/FSD出口实际核，未�
 
 
 R0101：新FPS/Rubin current原件，fixed-format R的任意h经product-volume regularity保量用途真付。native见证d13/degree2格式合法，但θw≈θδ；farclock逐管半保、矩阵系数identity、AD1/tubeKT条带及Σw h≤1给单box原mass固定幂上界，subpower数目不能cover固定比例。第三prior费用与mass不同证；genericmask仅否selected补全，不是fullsource反例。R45已可selected KBL，不以Cartesian改名新gain；冻直接witnessbox，不否可变w输出或全部半代数方法。
+
+
+R0102：选单block前多code保δ^o原T+全ST，firstU packing/point角upper与code权层得同一个P2Fst。第三point-pencil Γp+Gφ及far rank2使actualrichfibres→各richu大Pu一维projection；CSWZ Th1.7 all-large-subsets排richΘ含small-lossSPRD子族。所有richcell各有bad代表，不需参数例外time回传；实际SPRD/完整nonspread仍未付。新G_R4不同旧K_R6，开chart仅coeff资格；DIM已付推论与核验/priority分开，不重立ID/major。
