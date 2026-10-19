@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0104原global code all-affine2plane cap/全部2projection weakβ-Fst已限定独审，真用Φslab与保ST/richtime p取消及任意plane D+原NF。不解Schubert/fullκ1/ordinary，88PDF/92sources/78IDs，legacy27另计actual信息，下一notes/00_map/R0104_next_full_goal_reselection.md，Goal active。
+更新2026-10-19，R0105原I coarse planar lines/rank0保量/weighted点mark与严格derived方向反攻已限定独审。sameπW finite line准入已完成，未付positive direction pencil/原global耦合，不解fullκ1/ordinary/major，88PDF/92sources/78IDs，legacy28另计actual信息。下一notes/00_map/R0105_next_full_goal_reselection.md，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -237,3 +237,6 @@ R0103：不同He1710全局robust half-plus给每残余原I权cap失败；≤3δ^
 
 
 R0104：wholecode选T保ST，pointdegree p一次/time p取消，Φslab迫Gnear同2plane；arbitraryB1/B2 D恢复wholeF，nontriv logL/loga付pole/newallowed/Taylor密窗NF。fine单调得allaffine2plane cap与每2projection weakβ-upper；非uniform/2Fst，R103 Schubert-line方向/误差/原I仍未付。新Héra/OS primary准确拒门，不newID/major/ordinary。
+
+
+R0105：fullsource far-time plane-ball cap→逐簇rank0原I保量→sameπW h≈ρ1−χ真实weighted lines；scalar marks含s1^-γ，访问pointlaw含µj^-1，h层按实际访问。sphere/nativeG同时保derived time/point/slab cap仍全同direction/offset，缺NF/Γ/filledX/wholeT-CW，不是fullsource counter。OS/RW nice gate未过；停止finite line参数续轮，须完整重选或真原global耦合。无newID/major/ordinary。

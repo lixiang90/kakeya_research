@@ -173,3 +173,6 @@ R0103新增He1710.00795v2《Orthogonal projections of discretized sets》官方3
 
 
 R0104新增Héra1809.04666v4(20p)与Orponen–Shmerkin2603.19171v1(22p)固定原稿；现88PDF/92sources/78IDs。真实一般/planar Furstenberg门槛及原slab+wholemarks/NF的code非平坦用途见metadata/R0104_source_check.json；非源wholeproof/ordinary/major认证。
+
+
+R0105无新PDF，复用WZ/R77/R22、He1710及RW/OS实际nice配置门。原weighted coarse line桥与sphere/nativeG derived反攻的责任见metadata/R0105_source_check.json和notes/R0105_planar_nice_gate_and_weighted_source_scope.md；88PDF/92sources/78IDs保持，未认证源wholeproof/ordinary/major。
