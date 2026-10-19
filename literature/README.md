@@ -170,3 +170,6 @@ R0102无新PDF，85PDF/89sources/78IDs。复用CSWZ2610.13682v1实际robust受�
 
 
 R0103新增He1710.00795v2《Orthogonal projections of discretized sets》官方33页原稿，当前86PDF/90sources/78IDs。Th1的原I权反用和尺度mass/非零native多项式用途见metadata/R0103_source_check.json；不是旧He1611和积、不是完整source cap/ordinary/major或wholeproof重证。
+
+
+R0104新增Héra1809.04666v4(20p)与Orponen–Shmerkin2603.19171v1(22p)固定原稿；现88PDF/92sources/78IDs。真实一般/planar Furstenberg门槛及原slab+wholemarks/NF的code非平坦用途见metadata/R0104_source_check.json；非源wholeproof/ordinary/major认证。

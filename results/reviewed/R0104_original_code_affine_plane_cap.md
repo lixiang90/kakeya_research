@@ -1,0 +1,5 @@
+# R0104内部已审：原code的affine2plane质量上界
+
+主文notes/40_multiscale/sticky_matrix/R0104_original_code_affine_plane_nonconcentration.md10节、A10/B10及两formal6实际全文限定通过，见research/reviews/R0104_source_nonfit_and_affine_plane_cap_review.md、research/reviews/R0104_original_marks_and_uniform_projection_review.md、research/reviews/R0104_root_integration_review.md。未经外部同行评审。
+
+完整matrix33 κ1既定det-large分支中，全局code对每affine2plane Λ、δ≤a≤1有mass≤L^M a^β，所有2projection推前概率weakβ-Fst。保ST/pointslab/p一次与time取消、arbitraryplane D和wholeS/NF费用均实际支付。未排一般Schubert簇或fullκ1/ordinary，非uniform投影/ADlower，无newID/major。下一notes/00_map/R0104_next_full_goal_reselection.md，Goal active。

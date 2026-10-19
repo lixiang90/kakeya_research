@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0103具名He全局projection反用：原rich I加权cap异常/逐簇尺度mass/非零native degree4 sublevel及union逐管marks已限定独审。不是原cap已证或完整branchsaving。86PDF/90sources/78IDs，legacy26另计actual信息，下一notes/00_map/R0103_next_full_goal_reselection.md，Goal active。
+更新2026-10-19，R0104原global code all-affine2plane cap/全部2projection weakβ-Fst已限定独审，真用Φslab与保ST/richtime p取消及任意plane D+原NF。不解Schubert/fullκ1/ordinary，88PDF/92sources/78IDs，legacy27另计actual信息，下一notes/00_map/R0104_next_full_goal_reselection.md，Goal active。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -234,3 +234,6 @@ R0102：选单block前多code保δ^o原T+全ST，firstU packing/point角upper与
 
 
 R0103：不同He1710全局robust half-plus给每残余原I权cap失败；≤3δ^-q不交clock簇保half richI且各带δ^-eρ^q lower。formal中点/S/六Plücker付σ4 coefflower，Q sublevel和归一mass一起保；q<1/4/degree6校准拒平凡profile。union平均重取逐管marks，单簇sourceη/allowed与e(q)budget仍未付，非fullrough/ordinary/newID/major。
+
+
+R0104：wholecode选T保ST，pointdegree p一次/time p取消，Φslab迫Gnear同2plane；arbitraryB1/B2 D恢复wholeF，nontriv logL/loga付pole/newallowed/Taylor密窗NF。fine单调得allaffine2plane cap与每2projection weakβ-upper；非uniform/2Fst，R103 Schubert-line方向/误差/原I仍未付。新Héra/OS primary准确拒门，不newID/major/ordinary。

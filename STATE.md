@@ -1,27 +1,27 @@
 # 当前研究交接
 
-更新2026-10-19，R0103，Goal active。He1710.00795v2全局Schubert cap下的robust half-plus首次用于R102原global P/actualrich P_u；任意原I权残余支持全坏，迫cap异常。有限剥取在L^-C原N m上保half richI，每簇带ρ—mass lower及非真空native degree4 sublevel。两限定全文独审通过，未经外部同行评审。无newID/major/fullbranchsaving，legacy streak26与actual信息分开；下一唯一 notes/00_map/R0103_next_full_goal_reselection.md。
+更新2026-10-19，R0104，Goal active。完整原pointΦ slab与逐管保全ST给全局code的all-affine2plane cap p≤L^M a^β，β=d0γ/2；所有orthogonal二维投影有真实weakβ-Fst概率upper。两限定全文独审通过，未经外部同行评审。未解R103 Schubert余簇/完整κ1/ordinary/major，无newID，legacy streak27与actual信息分开；下一唯一 notes/00_map/R0104_next_full_goal_reselection.md。
 
 ## 1. 恢复和完整目标
 
-context一次、GOAL/STATE/ROADMAP两段/registry78、R102 round/next/root12/spec及最终receipt实际恢复。四完整路线重选；DIM已付推论与源核验/priority分开，不重复assembly。R103先reselection5、primary实际资格和双代理反攻，再working5/root10/A10/B10及两formal6/root6/macro-next-source-round6。Goal仍以n≥5/general真解决或major为准。
+context一次存tmp/R0104_context.txt，实际GOAL/STATE/ROADMAP两段/registry78、R103 round/next/root10及两formal/receipt恢复。先reselection5、原几何资格后working5；root10/A10/B10及两formal6/root6/macro-next-source-round6完成。四完整路线重选，DIM已付推论与核验/priority分开，不重开assembly。
 
-## 2. 已付原global code输入
+## 2. 原p一次与时间取消
 
-R102选择单block之前保δ^o原T/全ST，多code law2Fst与同权uniform P已付。actual point-rich parallel fibres给每rich u一个大P_u及一维像，far逐管后pointheavy只平均保，I_U≥L^-C原N m。不要重跑旧计算或重新欲证这些已付输入。He全Grassmann原权可直接用chart前U，不丢重复normal。
+选nearplane codecells的全部原H管，保各T全部旧S_T，far逐管半保。原总E上重heavy给D≥pL^-Cδ^-1；每time≤Np，使rich S比例K^-C且p取消。原Φslab上界给||ΠVperp Gu||≤L^{C/γ}a p^-1γ，精确p一次；point角删选不授ADlower。wholeS重源是原完整层/全T，不是H_p，ηsrcOη。
 
-## 3. 本轮新实际用途
+## 3. 任意plane与全尺度cap
 
-给任意fixed q∈(0,1/4)，He ε之后取e≤min(ε,q/4,.01)，原loss≪e。所有actual W_u=G_u⊥均有自身坏P_u，任意剩余I_u概率不可能全局cap≤δ^-eρ^q。每剥簇ρ∈[δ,δ^(e/q))，原richI绝对比例>(1/2)δ^-eρ^q；≤3δ^-q簇保half。只报少簇cover可能平凡，逐簇massscale必须保留。
+正交B=(B1;B2)，D(u)=(s−u)B1−(t−u)B2，DX=αβA+O(E)迫D逆有界，无需两个blocks/M/I−M可逆。F近Fs+(s−u)B1D^-1A，occupied窗polefree/C²付L。粗a≥δd0反设p>L^M aγ/2迫logL/log1a小，newallowed w≈a1/B/Taylor密窗反R77统一allreal NF。fine仅单调β=d0γ/2，不向细floor外推NF。
 
-## 4. Native代数、反攻和闭包
+## 4. 已付投影与真实剩余
 
-P_B=det(GᵀB)对应normal的product-sine，formal中点/S变换/六Plücker得coef≥cσ4，不需原中点或F延拓。Q归一、a=Cσ^-4ρ时mass≥δ^-e/2 a^q且a≤δ^(e/2q)，sublevel值不免费当metric距离。q>1/2可Lip二阶平凡；degree6非退化plane-law q<1/6 uniformcap校准否自动profile。rough三角弱模型可Schubert恒零但不保完整source。union可重heavy得many原T逐管many marks，单簇仅平均，重源η/allowed及e(q)预算未付。
+每个2投影球的preimage是affine2plane邻域，故weakβ概率upper真付，不是从P2Fst免费投影；未给uniform distinct output/2Fst/ADlower。R103近Schubert fibres→sameπW的真实line marks/rank0或1/厚度/方向law/原I与权层仍未付。hyperplane仅row/phase line-complex不等physicalplank，Schubertdet不送flatP，完整branch仍open。
 
-## 5. 文献和审查
+## 5. 文献与独审
 
-86PDF/90sources/78IDs，新He固定v2 33p：503290B、SHA256 24d15522046cadd7ca4b3e862039b00e86ec89e4631dd6c36fc97edff34b5e26。root原PDF2图及1–2/4文本，A/B各读所列primary段；HTML重编日期非版本。两formal对root10/A10/B10/spec实际全文限定通过，非高级33p wholeproof或外peer/novelty认证。旧R78单块cone及CP/PM等冻结保持。
+88PDF/92sources/78IDs。新Héra1809.04666v4 20p/1348615B与OS2603.19171v1 22p/448684B固定原件、提取、hash和scope存metadata；root实际Héra2–3/OS1–4文本及各PDF2原图，A实际statement/定义。两个新primary只准确筛门，不是主cap新增高级工具。root实际全文两formal6，p一次/取消、arbitraryV、NF预算/fine及投影scope均通过，非源wholeproof/外peer/novelty认证。
 
-## 6. 同步和后继
+## 6. 同步与后继
 
-父HEAD=origin=freshremote dbdc4b3c204c66a3b3eb8d4fade8a7b27f79a012/tree34fbf37e982b5d793e14cb3677ad8f8b441c326f，1621旧clean。最终tmp/sync/R0103.json须pendingfalse/samecommit/fulltree/逐SHA256全真。下一先完整目标重选；若沿cluster，须用原point-Φ/filled-X/wholeT-CW付真新质量，不加有理F/共同kernel公设，不续q/e/ρ。当前无预授qualified gain，Goal active。
+父HEAD=origin=freshremote f2121257aed327f8ede5da5cb383475164ed028a/tree2322f6af008a533366efe9422b13aa04845abc04，1638旧clean。tmp/sync/R0104.json最终须pendingfalse/samecommit/fulltree/逐SHA256全真。下一先完整目标重选；如沿新投影，只一次真实sameπW finite line准入，不预授方向Fst/删rank0保质量，不续β/M/a。Goal active。
