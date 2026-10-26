@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-19，R0109第3出口数学与重大性审定通过：任意六维Hausdorff≥17/4，通常具名输入、两formal及root接受，非first/best/外peer。最终以R109真实同步回执和Goal工具确认，当前快照未预complete；一般满维仍open。88PDF/92sources/78IDs。后续只存可选问题，不自动新Goal。
+更新2026-10-26，R0110仅完成DIM001双语LaTeX论文整理：中文/English独立项目、具名输入/完整接口证明及参考文献。两版内置编译success，40组展示公式与引用对照一致，无新ID或数学Goal；R109第3出口已complete。文献比较仍截至2026-10-19，未经外部同行评审，一般满维仍open。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -252,3 +252,6 @@ R0108：terminal ξ原(148)/旧W已用，全terminalδ^-5不授同初fibre非对
 
 
 R0109：已有DIM001的有限成果审定通过，未新增proof/ID。成果报告及两正式六节/root/逐要求audit独立保存；原冻结路线不因成果接受自动重开。最终同步后可按第3出口结束原Goal，可选未来notes/00_map/R0109_result_scope_and_optional_future_research.md。
+
+
+R0110：用户授权双语论文整理。见papers/manuscripts.json、papers/README.md及research/rounds/R0110_bilingual_latex_editorial.md。修正论文种子zeta定义域为0<zeta<1，不变既有DIM001主结论；其余实际proof及失败历史不改。

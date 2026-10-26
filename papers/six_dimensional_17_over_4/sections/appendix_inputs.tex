@@ -1,0 +1,91 @@
+\section{四维有限接口的来源与可追溯证明}\label{app:inputs}
+
+\subsection{最初的有限尺度读出}
+四维方向质量输入的上游是如下证明层级的有限读出，档案称 SRC-001：
+固定有界四维图像坐标片，对每个 $\sigma>0$，存在 $\eta_{\rm src}>0$ 及 $\delta_0>0$，
+使方向 $\delta$-分离、线数至少 $\delta^{-3+\eta_{\rm src}}$、
+逐线标记数至少 $\delta^{-1+\eta_{\rm src}}$ 的有限族满足
+\begin{equation}\label{eq:source-finite}
+ \card{E}>\delta^{-4+\sigma}
+\end{equation}
+（固定常数可以在严格指数余量中吸收）。
+这项陈述使用\cite{OAI4}的有限初始化和后续全部模型排除，
+不是由 Hausdorff 维数结论作抽象紧性推论。
+完整拼接与有限读出记录在\cite{ArchiveSource}，本文不在此重印四维证明。
+
+归档核验的责任包括：对截距和斜率独立作尺度 $\delta$ 的平滑；
+由方向分离与线数取得亚幂三维斜率密度上界；
+把真实标记区间转成选取时长；控制有限配置复杂度；
+在保持未归一化原质量的前提下取得正终端尺度；
+最后调用原证明的零窄度、正有限窄度与无穷窄度全部分支。
+只核对其中的初始归约不足以认证\eqref{eq:source-finite}。
+
+\subsection{从稠密读出到稀疏与权重形式}
+为说明输入\ref{input:D4}并非额外假定方向数饱和，回顾\cite{ArchiveDIR}的有限化约。
+先考虑 $m$ 个 $\delta$-分离斜率，其 $\delta$ 邻域在三维斜率空间中的体积为
+$\asymp m\delta^3$。
+在固定有界范围内作 $L\le C\delta^{-3}/m$ 个平移，
+用独立随机平移的期望覆盖量，可选得使这些邻域的并集具有固定正体积的一组平移。
+具体地，对固定目标斜率盒中的每点，一次平移命中的概率至少为 $c m\delta^3$，
+故取上述数量的平移后，该盒的期望覆盖体积有固定正下界。
+于是平移后的带标签斜率中可抽出 $\asymp\delta^{-3}$ 个固定尺度分离方向。
+
+每次斜率平移 $v\mapsto v+a$ 对应时空剪切
+\[
+ (t,y)\mapsto(t,y+ta).
+\]
+剪切保留每条复制线自己的时间标记，单个复制的访问格子数至多为 $C\card E$，
+全部复制并集至多为 $CL\card E$。
+适当重分一个固定倍网格后，取原门槛小于 $\eta_{\rm src}$ 的严格小部分，
+即可对放大族使用\eqref{eq:source-finite}，得到
+\begin{equation}\label{eq:sparse-source}
+ \card E\ge c m\delta^{-1+\sigma}.
+\end{equation}
+所有剪切范围与坐标界固定，未增加小幂几何费用。
+
+对于一般带权族，把斜率格子作固定有限着色，使同色不同格子中的任意代表在固定尺度分离。
+每个非空格子任选一个原标签，保留它自己的标记；代表的访问并集包含于原并集。
+由\eqref{eq:sparse-source}，非空格子总数至多为
+$C\delta^{1-\sigma}\card E$。
+另一方面，每个格子的总权至多 $\alpha$，每条线标记数至多 $C\delta^{-1}$，故
+\[
+ \sum_i\omega_i\card{J_i}
+ \le C\delta^{-1}\alpha\cdot
+       (\text{非空斜率格子数})
+ \le C\alpha\delta^{-\sigma}\card E.
+\]
+取 $\sigma<\varepsilon_D$，适当缩小输入门槛并吸收固定常数，即得\eqref{eq:D4}。
+这个化约不按权重大小分层，因此不引入依赖最小权重或权重跨度的费用。
+
+\subsection{源证明使用的具名高级输入}
+四维内部证明的归档拼接\cite{ArchiveSource}以以下精确版本为高级输入：
+\begin{enumerate}
+ \item Guth--Wang--Zahl\cite[Theorem 1.1]{GWZ}：三维互异管的凸聚类集合估计，
+  使用其原平均着色密度与聚类假设；并非无条件把它替换为极大函数定理。
+ \item Wang--Zahl\cite[Definition 4.2, Theorem 5.2]{WZ}的受限平面点积输入。
+ \item Carbery--Valdimarsson\cite[Theorem 1]{CV}的端点多线性 Kakeya 输入。
+ \item Orponen--de Saxc\'e--Shmerkin\cite[Theorem 1.5]{OSS}的单尺度乘法卷积 Fourier 衰减输入。
+\end{enumerate}
+此外使用固定迭代次数的组合估计、固定格式实代数与半代数分解、面积公式及标准测度工具。
+这些外部高级定理的完整证明未在本文从零重证，作者报告的形式化也未在本项目本地重新运行。
+四维输入、上述高级结果与后续 Katz--Tao 递推的责任按这一顺序区分，避免依赖循环。
+
+\subsection{固定版本的研究档案}
+可追溯基础为研究仓库2026年10月19日的提交
+\texttt{774c3614ec3e810c127c875a9f5abb60748be848}。
+下表是文中引用的证明与接口定位；档案 ID 只用于定位，不代替数学陈述。
+
+\begin{longtable}{@{}p{0.16\textwidth}p{0.76\textwidth}@{}}
+ \toprule
+ 档案 & 内容与定位 \\
+ \midrule
+ \endhead
+ RED-001 & R0038完整源归约、有限初始化及内部证明拼接；第20节为任意集合的外测度读出。\\
+ DIR-003 & R0009稀疏方向剪切放大及权重格子化约。\\
+ FSD-001 & R0029有限高斯投影、原标记与共同时间、任意固定环境和非饱和预算。\\
+ DIM-001 & R0109六维成果报告；完整输入、参数链与同类型一手比较。\\
+ 独立审查 & R0029投影与递推接口、R0038源拼接和任意集合、R0080 retained核心及R0109成果范围的项目内部交叉审查。\\
+ \bottomrule
+\end{longtable}
+本文展开的是投影、有限预算和外测度读出；四维源估计及递推仍按明列输入引用。
+因此它是依赖透明的论文整理稿，不以省略源证明的篇幅暗示已在本文完全重证所有引用结果。

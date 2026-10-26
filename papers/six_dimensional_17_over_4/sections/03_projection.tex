@@ -1,0 +1,108 @@
+\section{有限随机投影与原着色保留}\label{sec:projection}
+
+\begin{lemma}[方向碰撞与非短投影]\label{lem:projection}
+固定 $M\ge4$、$s\ge3$ 和常数 $a>0$。
+若 $m$ 个 $\delta$-分离原方向满足\eqref{eq:angular-cap}，则存在
+$P:\R^M\to\R^4$，$\norm P\le C_M$，和一个原标签子族 $\T_*$，使
+\begin{align}
+ |Pv_T|&\ge c_M &&(T\in\T_*),\label{eq:nonshort}\\
+ \ang(Pv_T,Pv_{T'})&>a\delta &&(T\ne T'\in\T_*),\label{eq:projected-separated}\\
+ \card{\T_*}&\ge
+ \frac{c_{M,s,a}m}{A\delta^{3-s}\Ldelta}.\label{eq:projection-count}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+令 $P$ 的矩阵元为独立标准实高斯变量。
+取足够大的 $B_M$，使 $\Pr\{\norm P>B_M\}<1/32$。
+对固定单位 $u$，$Pu$ 为标准四维高斯向量；故可取足够小的 $c_M>0$，
+使 $\Pr\{|Pu|<c_M\}<1/128$。
+
+若 $u,v$ 的射影角为 $\theta$，改变 $v$ 的符号后可写
+\[
+ Pv=(\cos\theta)Pu+(\sin\theta)H,
+\]
+其中 $H$ 是独立于 $Pu$ 的标准四维高斯向量。
+条件于 $Pu$，$H$ 在 $(Pu)^\perp$ 上的投影是标准三维高斯。
+在 $\norm P\le B_M$ 的事件上，投影方向角不超过 $a\delta$ 蕴含
+\[
+ \big|\operatorname{proj}_{(Pu)^\perp}H\big|
+ \le \frac{C_{M,a}\delta}{\sin\theta}.
+\]
+三维高斯小球上界因而给出
+\begin{equation}\label{eq:collision-probability}
+ \Pr\{\norm P\le B_M,\ \ang(Pu,Pv)\le a\delta\}
+ \le C_{M,a}\min\{1,(\delta/\theta)^3\}.
+\end{equation}
+这里没有把范数约束当作独立事件；$Pu=0$ 的事件概率为零。
+
+对每个原方向作角环分解 $\theta\asymp2^j\delta$。
+由\eqref{eq:angular-cap}，对应的期望碰撞次数至多
+\begin{equation}\label{eq:collision-degree}
+ C_{M,s,a}A\sum_{0\le j\le C+\log_2(1/\delta)}2^{j(s-3)}
+ \le Q:=C_{M,s,a}A\delta^{3-s}\Ldelta.
+\end{equation}
+射影角大于一个固定常数的部分，用方向空间的固定有限覆盖及
+$m\le C_MA\delta^{-s}$ 同样控制。
+当 $s=3$ 时确有对数费用；当 $s>3$ 时保留该稍弱的统一表达已足够。
+
+短方向个数的期望小于 $m/128$；在范数有界事件上计数的碰撞图边数期望至多 $CmQ$。
+分别使用 Markov 不等式并合并失败概率，可以同时选择一个 $P$，
+使其范数有界、非短方向不少于 $3m/4$，且这些方向的碰撞图边数不超过 $CmQ$。
+图中顶点为原标签，投影角不超过 $a\delta$ 时连边。
+利用独立集下界
+\[
+ \alpha(G)\ge\frac{|V(G)|^2}{|V(G)|+2|E(G)|}
+\]
+得到\eqref{eq:projection-count}，并同时满足\eqref{eq:nonshort}与\eqref{eq:projected-separated}。
+\end{proof}
+
+\begin{remark}
+引理没有假定投影后的方向分布自动继承某个 Frostman 上界。
+碰撞删选之后，$\R^4$ 中的方向分离才通过三维射影角空间的体积打包给出所有尺度的角上界。
+引理也不提供任何沿投影核的额外维数。
+\end{remark}
+
+\begin{lemma}[平均密度、共同坐标片与访问并集]\label{lem:marks}
+设原方向 $\delta$-分离且满足\eqref{eq:angular-cap}，并满足
+\eqref{eq:single-line-upper}及\eqref{eq:mean-density}。
+可以先选择至少 $c_{M,R}\lambda m$ 条原线，再使用引理\ref{lem:projection}，
+获得一个四维共同有界图像坐标片中的子族 $\T'$，在网格 $\rho\asymp\delta$ 上满足
+\begin{align}
+ m':=\card{\T'}&\ge
+ \frac{c_{M,R,s}\lambda m}{A\delta^{3-s}\Ldelta},\label{eq:heavy-output-count}\\
+ \card{J'_T}&\ge c_{M,R}\lambda\delta^{-1}
+       &&(T\in\T'),\label{eq:individual-output-marks}\\
+ \card{E'}&\le C_{M,R,s}\card{E}.\label{eq:output-union}
+\end{align}
+所有输出标记来自各自原标签；延长支撑直线不增加着色。
+\end{lemma}
+
+\begin{proof}
+先删除 $\card{Y(T)}<(\lambda/2)\delta^{-1}$ 的轻线。
+它们的总质量至多为 $\lambda m\delta^{-1}/2\le S/2$。
+结合\eqref{eq:single-line-upper}，留下的重线个数至少为 $c_{M,R}\lambda m$；
+每条留下的线都有至少 $(\lambda/2)\delta^{-1}$ 个自己的原标记。
+方向上界\eqref{eq:angular-cap}对子族仍成立，无需重新归一化。
+对重线族应用引理\ref{lem:projection}。
+
+把每个原着色格子移到其原线的最近参数点，并在原线参数上作固定重数删选。
+由于 $|Pv_T|\ge c_M$，每条投影线都有一个坐标的方向分量绝对值不小于固定正数。
+按最大分量和符号划分成有限个坐标片，再选其中线数最多的一个。
+在此片中以该坐标为共同时间，其他坐标的斜率和截距都有固定界。
+原参数间隔为 $\delta$ 的标记，在每个长度 $\rho=C\delta$ 的新时间格内只合并固定个，
+故每条仍保留\eqref{eq:individual-output-marks}的标记数。
+
+所有标记位于一个固定有界区域。将新时间轴分成固定有限个单位窗，
+让每条线选择自身标记最多的窗，再按窗对线数作鸽巢选择。
+逐线标记数与线数各只损失固定比例。平移该共同窗到 $[0,1]$，
+必要时延长支撑直线，但只保留窗内已有标记。
+这一操作也适用于着色集中在线段端点附近的情形。
+预先把引理中的 $a$ 取为足够大的固定数，可使最终斜率在 $\rho$ 尺度分离。
+
+最后，范数有界的 $P$ 将每个原 $\delta$ 格子映入直径 $O_M(\delta)$ 的集合，
+后者可由固定多个四维 $\rho$ 格子覆盖。
+最近线点移动、坐标片转换和时间格重分只增加固定倍的格子。
+因而得到\eqref{eq:output-union}，同时得到\eqref{eq:heavy-output-count}。
+没有把不同原线的标记拼接到一条新线上。
+\end{proof}

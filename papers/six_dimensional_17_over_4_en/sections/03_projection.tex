@@ -1,0 +1,114 @@
+\section{Finite random projection and retention of the original shadings}\label{sec:projection}
+
+\begin{lemma}[Directional collisions and nonshort projections]\label{lem:projection}
+Fix $M\ge4$, $s\ge3$, and a constant $a>0$.
+If $m$ original $\delta$-separated directions satisfy\eqref{eq:angular-cap}, then there exist
+$P:\R^M\to\R^4$ with $\norm P\le C_M$ and a subfamily $\T_*$ of the original labels such that
+\begin{align}
+ |Pv_T|&\ge c_M &&(T\in\T_*),\label{eq:nonshort}\\
+ \ang(Pv_T,Pv_{T'})&>a\delta &&(T\ne T'\in\T_*),\label{eq:projected-separated}\\
+ \card{\T_*}&\ge
+ \frac{c_{M,s,a}m}{A\delta^{3-s}\Ldelta}.\label{eq:projection-count}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Let the entries of $P$ be independent standard real Gaussian variables.
+Choose $B_M$ sufficiently large that $\Pr\{\norm P>B_M\}<1/32$.
+For a fixed unit vector $u$, $Pu$ is a standard four-dimensional Gaussian vector.
+We can therefore choose $c_M>0$ sufficiently small that $\Pr\{|Pu|<c_M\}<1/128$.
+
+If $u,v$ have projective angle $\theta$, then, after changing the sign of $v$ if necessary, we can write
+\[
+ Pv=(\cos\theta)Pu+(\sin\theta)H,
+\]
+where $H$ is a standard four-dimensional Gaussian vector independent of $Pu$.
+Conditionally on $Pu$, the projection of $H$ onto $(Pu)^\perp$ is a standard three-dimensional Gaussian.
+On the event $\norm P\le B_M$, a projected directional angle at most $a\delta$ implies
+\[
+ \big|\operatorname{proj}_{(Pu)^\perp}H\big|
+ \le \frac{C_{M,a}\delta}{\sin\theta}.
+\]
+The three-dimensional Gaussian small-ball bound consequently gives
+\begin{equation}\label{eq:collision-probability}
+ \Pr\{\norm P\le B_M,\ \ang(Pu,Pv)\le a\delta\}
+ \le C_{M,a}\min\{1,(\delta/\theta)^3\}.
+\end{equation}
+The norm constraint has not been treated as an independent event; the event $Pu=0$ has probability zero.
+
+For each original direction, decompose into angular annuli $\theta\asymp2^j\delta$.
+By\eqref{eq:angular-cap}, the expected number of collisions is at most
+\begin{equation}\label{eq:collision-degree}
+ C_{M,s,a}A\sum_{0\le j\le C+\log_2(1/\delta)}2^{j(s-3)}
+ \le Q:=C_{M,s,a}A\delta^{3-s}\Ldelta.
+\end{equation}
+The contribution of projective angles larger than a fixed constant is controlled in the same way,
+using a fixed finite cover of the direction space and $m\le C_MA\delta^{-s}$.
+The logarithmic loss is present when $s=3$; for $s>3$ the slightly weaker uniform expression above suffices.
+
+The expected number of short directions is less than $m/128$.
+The expected number of collision-graph edges counted on the bounded-norm event is at most $CmQ$.
+Applying Markov's inequality to these counts and combining the failure probabilities,
+we can choose a single $P$ with bounded norm, at least $3m/4$ nonshort directions,
+and at most $CmQ$ collision-graph edges among these directions.
+The graph vertices are original labels, with an edge whenever the projected angle is at most $a\delta$.
+The independent-set bound
+\[
+ \alpha(G)\ge\frac{|V(G)|^2}{|V(G)|+2|E(G)|}
+\]
+yields\eqref{eq:projection-count}, together with\eqref{eq:nonshort} and\eqref{eq:projected-separated}.
+\end{proof}
+
+\begin{remark}
+The lemma does not assume that the projected directional distribution automatically inherits a Frostman upper bound.
+Only after selecting an independent set in the collision graph do the separated directions in $\R^4$
+have angular upper bounds at all scales, by volume packing in three-dimensional projective direction space.
+The lemma also supplies no additional dimension along the projection kernel.
+\end{remark}
+
+\begin{lemma}[Average density, a common chart, and the visited union]\label{lem:marks}
+Suppose that the original directions are $\delta$-separated and satisfy\eqref{eq:angular-cap},
+and that\eqref{eq:single-line-upper} and\eqref{eq:mean-density} hold.
+One can first select at least $c_{M,R}\lambda m$ original lines and then apply Lemma~\ref{lem:projection}
+to obtain a subfamily $\T'$ in a common bounded four-dimensional graph chart.
+On a grid of size $\rho\asymp\delta$, it satisfies
+\begin{align}
+ m':=\card{\T'}&\ge
+ \frac{c_{M,R,s}\lambda m}{A\delta^{3-s}\Ldelta},\label{eq:heavy-output-count}\\
+ \card{J'_T}&\ge c_{M,R}\lambda\delta^{-1}
+       &&(T\in\T'),\label{eq:individual-output-marks}\\
+ \card{E'}&\le C_{M,R,s}\card{E}.\label{eq:output-union}
+\end{align}
+Every output mark comes from its own original label; extending supporting lines adds no shading.
+\end{lemma}
+
+\begin{proof}
+First remove the light lines with $\card{Y(T)}<(\lambda/2)\delta^{-1}$.
+Their total mass is at most $\lambda m\delta^{-1}/2\le S/2$.
+Together with\eqref{eq:single-line-upper}, this shows that at least $c_{M,R}\lambda m$ heavy lines remain.
+Each retained line has at least $(\lambda/2)\delta^{-1}$ of its own original marks.
+The directional upper bound\eqref{eq:angular-cap} persists on subfamilies without renormalization.
+Apply Lemma~\ref{lem:projection} to the heavy family.
+
+Move each original shaded cell to the nearest parameter point on its original line,
+and remove a fixed multiplicity in the original line parameter.
+Since $|Pv_T|\ge c_M$, every projected line has a directional coordinate whose absolute value is bounded below by a fixed positive constant.
+Partition into finitely many charts according to a largest component and its sign, and choose a chart containing the most lines.
+Use that coordinate as the common time variable. The other slopes and intercepts then have fixed bounds.
+Only a fixed number of originally $\delta$-separated parameter marks can fall in a new time cell of length $\rho=C\delta$.
+Thus each line retains the number of marks in\eqref{eq:individual-output-marks}.
+
+All marks lie in a fixed bounded region. Divide the new time axis into finitely many unit windows,
+let each line choose the window containing the most of its own marks,
+and then pigeonhole the lines by window.
+The number of marks per line and the number of lines each lose only a fixed proportion.
+Translate the common window to $[0,1]$ and extend supporting lines if necessary, retaining only the existing marks within the window.
+This also handles shadings concentrated near segment endpoints.
+Choosing $a$ in the projection lemma to be a sufficiently large fixed constant ensures that the final slopes are separated at scale $\rho$.
+
+Finally, the bounded-norm map $P$ sends each original $\delta$-cell into a set of diameter $O_M(\delta)$,
+which is covered by a fixed number of four-dimensional $\rho$-cells.
+Moving to nearest line points, changing charts, and regrouping the time grid increase the cell count only by fixed factors.
+This gives\eqref{eq:output-union} and\eqref{eq:heavy-output-count}.
+Marks from different original lines have not been spliced together on a new line.
+\end{proof}

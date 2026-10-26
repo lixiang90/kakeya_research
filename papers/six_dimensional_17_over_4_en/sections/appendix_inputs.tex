@@ -1,0 +1,97 @@
+\section{The source and traceable proof of the four-dimensional finite interface}\label{app:inputs}
+
+\subsection{The initial finite-scale consequence}
+The four-dimensional directional-mass input starts from the following proof-level finite statement, archived as SRC-001.
+Fix a bounded four-dimensional graph chart. For every $\sigma>0$, there exist $\eta_{\rm src}>0$ and $\delta_0>0$
+such that a finite family with $\delta$-separated directions, at least $\delta^{-3+\eta_{\rm src}}$ lines,
+and at least $\delta^{-1+\eta_{\rm src}}$ marks on each line satisfies
+\begin{equation}\label{eq:source-finite}
+ \card{E}>\delta^{-4+\sigma}
+\end{equation}
+(fixed constants may be absorbed by strict exponent margins).
+This statement uses the finite initialization of\cite{OAI4} and all subsequent model-exclusion cases;
+it is not an abstract compactness consequence of the Hausdorff dimension conclusion.
+The complete assembly and finite conclusion are recorded in\cite{ArchiveSource}.
+We do not reproduce the four-dimensional proof here.
+
+The archived verification includes independent smoothing of intercepts and slopes at scale $\delta$;
+a subpower upper bound for the three-dimensional slope density from directional separation and the number of lines;
+conversion of the actual mark intervals to selected durations; control of finite configuration complexity;
+attainment of a positive terminal scale while retaining the original unnormalized mass;
+and finally all zero, positive finite, and infinite narrowness cases of the original proof.
+Checking only the initial reduction would not certify\eqref{eq:source-finite}.
+
+\subsection{From a dense statement to sparse and weighted forms}
+To explain why Input~\ref{input:D4} does not additionally assume a saturated directional count,
+we recall the finite reduction in\cite{ArchiveDIR}.
+First consider $m$ $\delta$-separated slopes. Their $\delta$-neighbourhood has volume $\asymp m\delta^3$
+in three-dimensional slope space.
+Using $L\le C\delta^{-3}/m$ translations in a fixed bounded range,
+the expected covered volume for independent random translations gives a choice whose union has fixed positive volume.
+More explicitly, each point in a fixed target slope box is covered by one translation with probability at least $c m\delta^3$.
+With the stated number of translations, the expected covered volume in that box has a fixed positive lower bound.
+Thus the translated labelled slopes contain $\asymp\delta^{-3}$ directions separated at a fixed multiple of scale $\delta$.
+
+Each slope translation $v\mapsto v+a$ corresponds to the space-time shear
+\[
+ (t,y)\mapsto(t,y+ta).
+\]
+The shear retains each copied line's own time marks.
+Each copy visits at most $C\card E$ cells, and the union of all copies visits at most $CL\card E$ cells.
+After regrouping a grid of a fixed comparable size and taking the original threshold to be a sufficiently small fixed fraction of $\eta_{\rm src}$,
+we can apply\eqref{eq:source-finite} to the amplified family and obtain
+\begin{equation}\label{eq:sparse-source}
+ \card E\ge c m\delta^{-1+\sigma}.
+\end{equation}
+All shear ranges and coordinate bounds are fixed; no small-power geometric loss is introduced.
+
+For a general weighted family, colour the slope cells with a fixed finite number of colours so that
+any representatives from distinct cells of one colour are separated at a fixed multiple of scale $\delta$.
+Choose an original label in each nonempty cell and retain its own marks; the representatives' visited union lies within the original union.
+By\eqref{eq:sparse-source}, the total number of nonempty cells is at most $C\delta^{1-\sigma}\card E$.
+On the other hand, every cell has total weight at most $\alpha$, and each line has at most $C\delta^{-1}$ marks. Hence
+\[
+ \sum_i\omega_i\card{J_i}
+ \le C\delta^{-1}\alpha\cdot
+       (\text{number of nonempty slope cells})
+ \le C\alpha\delta^{-\sigma}\card E.
+\]
+Taking $\sigma<\varepsilon_D$, decreasing the input threshold appropriately, and absorbing fixed constants gives\eqref{eq:D4}.
+The reduction does not stratify by weight size, so it incurs no loss depending on the smallest weight or the range of weights.
+
+\subsection{Named advanced inputs used in the source proof}
+The archived assembly of the four-dimensional internal proof\cite{ArchiveSource} uses the following precise versions as advanced inputs:
+\begin{enumerate}
+ \item Guth--Wang--Zahl\cite[Theorem 1.1]{GWZ}: the convex-clustering set estimate for distinct tubes in three dimensions,
+  with its original average shading density and clustering hypotheses; it is not unconditionally replaced by a maximal-function theorem.
+ \item The restricted planar dot-product input of Wang--Zahl\cite[Definition 4.2, Theorem 5.2]{WZ}.
+ \item The endpoint multilinear Kakeya input of Carbery--Valdimarsson\cite[Theorem 1]{CV}.
+ \item The single-scale Fourier-decay input for multiplicative convolutions of Orponen--de Saxc\'e--Shmerkin\cite[Theorem 1.5]{OSS}.
+\end{enumerate}
+The proof also uses combinatorial estimates with a fixed number of iterations, real-algebraic and semialgebraic decompositions of fixed format,
+the area formula, and standard measure-theoretic tools.
+The complete proofs of these advanced external theorems are not reproved from scratch here,
+and the formalization reported by the authors has not been rerun locally in this project.
+The four-dimensional input, these advanced results, and the subsequent Katz--Tao recurrence are kept distinct in this order to avoid circular dependencies.
+
+\subsection{The fixed-version research archive}
+The traceable basis is the research-repository commit of October 19, 2026:
+\texttt{774c3614ec3e810c127c875a9f5abb60748be848}.
+The table locates the proofs and interfaces cited in this paper.
+Archive identifiers locate documents; they do not replace mathematical statements.
+
+\begin{longtable}{@{}p{0.16\textwidth}p{0.76\textwidth}@{}}
+ \toprule
+ Archive & Content and location \\
+ \midrule
+ \endhead
+ RED-001 & R0038: complete source reduction, finite initialization, and assembly of the internal proof; Section 20 gives the outer-measure conclusion for arbitrary sets.\\
+ DIR-003 & R0009: sparse-direction shear amplification and weighted slope-cell reduction.\\
+ FSD-001 & R0029: finite Gaussian projection, original marks and common time, arbitrary fixed ambient spaces, and the unsaturated estimate.\\
+ DIM-001 & R0109: six-dimensional outcome report, including the complete inputs, parameter chain, and primary-source comparison of the same type.\\
+ Independent review & Internal project cross-reviews of the R0029 projection and recurrence interfaces, R0038 source assembly and arbitrary-set argument, R0080 retained core, and R0109 outcome scope.\\
+ \bottomrule
+\end{longtable}
+This paper details the projection, finite estimate, and outer-measure argument;
+the four-dimensional source estimate and the recurrence remain explicitly cited inputs.
+It is therefore an exposition with transparent dependencies, and the omission of the source proof does not imply that every cited result has been completely reproved here.

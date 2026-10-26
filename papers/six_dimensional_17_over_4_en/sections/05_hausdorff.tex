@@ -1,0 +1,89 @@
+\section{The Hausdorff conclusion for arbitrary sets}\label{sec:hausdorff}
+
+\begin{lemma}[From a finite estimate to arbitrary sets]\label{lem:hausdorff}
+Suppose that the finite estimate $\Kest(q,d)$ holds for an integer $q\ge2$ under the arbitrarily small power conventions above.
+If $K\subset\R^q$ contains a unit line segment in every direction, then $\HH K\ge d$.
+Neither $K$ nor a direction-to-line selection map is required to be measurable.
+\end{lemma}
+
+\begin{proof}
+Suppose, to the contrary, that $\HH K<t<d$ for some $t$.
+First choose an open chart of near-vertical directions parameterized by slopes $v\in\R^{q-1}$.
+Every candidate unit segment has a time-coordinate projection of fixed positive length,
+and hence contains a time interval with rational endpoints. Its intercept lies in some integer-bounded box.
+There are only countably many combinations of these time intervals and intercept boxes,
+and their sets of admissible slopes cover the entire direction chart.
+By countable subadditivity of Lebesgue outer measure, one combination has an admissible slope set $S_0$
+of positive finite outer measure $a>0$.
+Apply a fixed affine normalization so that the common time interval is $[0,1]$
+and all relevant trajectories lie in a fixed bounded region.
+At this point no witness line has been selected for every slope.
+
+Since $\HH K<t$, cover $K$ by balls $B_i$ with radii satisfying
+\begin{equation}\label{eq:hausdorff-cover}
+ \sum_i r_i^t\le1,\qquad\sup_i r_i\longrightarrow0.
+\end{equation}
+The same type of cover may be taken for the fixed normalized region; the fixed affine transformation changes only constants.
+Let $U_k$ be the union of the balls with $2^{-k-1}<r_i\le2^{-k}$.
+There are at most $C2^{kt}$ such balls.
+
+Choose $c_0>0$ so that $\sum_{k\ge1}c_0k^{-2}<1$.
+Every successful witness segment $\ell([0,1])\subset K$ satisfies
+\[
+ \sum_k\big|\{u\in[0,1]:\ell(u)\in U_k\}\big|\ge1.
+\]
+Thus, for some $k$, its time length in $U_k$ is at least $c_0k^{-2}$.
+Let $S_k$ be the set of slopes admitting such a bounded witness line.
+The set $S_k$ need not be measurable; nevertheless, $S_0\subset\bigcup_kS_k$.
+Countable subadditivity of outer measure again shows that, for one common $k$,
+\begin{equation}\label{eq:outer-direction}
+ |S_k|^*\ge c_1 a k^{-2},
+\end{equation}
+where $c_1>0$ is a fixed constant.
+Thus the same scale has both an outer directional-mass lower bound and a time-length lower bound on each witness line.
+
+Set $\delta=2^{-k}$, and take a maximal finite $C\delta$-separated set of slopes in the bounded set $S_k$.
+Its $C\delta$-balls cover $S_k$, so\eqref{eq:outer-direction} gives
+\begin{equation}\label{eq:finite-witness-count}
+ m\ge c a k^{-2}\delta^{-(q-1)}.
+\end{equation}
+A fixed choice of $C$ ensures that the actual unit directions are also separated at scale $\delta$.
+Only now choose, for each of these finitely many slopes, a successful witness line.
+Packing gives the directional upper bound at every scale:
+\[
+ \card{\{T:\ang(v_T,u)\le\theta\}}
+ \le C_q(\theta/\delta)^{q-1}.
+\]
+Each line has at least $c\delta^{-1}k^{-2}$ nonempty time cells in $U_k$.
+Choose an actual point of the line in each such cell and move it to the nearest grid-cell centre.
+Each original covering ball, whose radius is at most $\delta$, contributes only a fixed number of visited cells. Consequently,
+\begin{equation}\label{eq:cover-upper}
+ \card{E_k}\le C\delta^{-t}.
+\end{equation}
+The nearest cell centre is within distance $C\delta$ of the original line,
+as allowed by the discrete supporting-line convention.
+If the convention uses unit arclength segments, split a graph segment of fixed length into finitely many unit-scale windows
+and retain the richest window on each line. This loses only a fixed proportion and adds no marks.
+
+By\eqref{eq:finite-witness-count} and the marks on each line,
+directional saturation and shading saturation lose only polylogarithmic factors.
+First fix $0<\varepsilon<d-t$, then choose the input tolerance for the finite estimate, and finally take $k$ sufficiently large.
+All factors $k^{-2}$ and all fixed constants fall within the arbitrarily small power thresholds, so the finite lower bound gives
+\begin{equation}\label{eq:cover-lower}
+ \card{E_k}\ge c\delta^{-d+\varepsilon}.
+\end{equation}
+As the largest covering radius tends to zero, the selected $k$ must tend to infinity.
+Equations~\eqref{eq:cover-upper} and~\eqref{eq:cover-lower} then contradict each other.
+Throughout the argument, ordinary time length is measured only on preimages of open unions of balls along individual lines.
+We never integrate over the possibly nonmeasurable set $K$ or use a measurable direction-to-line selection.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For every $0<\zeta<1$, Proposition~\ref{prop:six} and Lemma~\ref{lem:hausdorff} give
+\[
+ \HH K\ge\frac{17}{4}-\frac\zeta4.
+\]
+This holds for every such fixed $\zeta$. Letting $\zeta\downarrow0$ proves\eqref{eq:main}.
+We first establish the finite estimate and the Hausdorff conclusion for each fixed parameter and only then take the parameter limit;
+a covering-number lower bound at one fixed scale has not been identified directly with a Hausdorff dimension bound.
+\end{proof}

@@ -1,0 +1,102 @@
+\section{非饱和有限估计与六维递推}\label{sec:seeds}
+
+\begin{proposition}[保留原条数的有限估计]\label{prop:finite}
+采用输入\ref{input:D4}。固定 $M\ge4$、$R$、实数 $s\ge3$ 及 $\varepsilon_D>0$。
+存在 $\eta_0>0$ 和尺度阈值，使当方向分离的 $m$ 条原线满足
+\eqref{eq:angular-cap}、\eqref{eq:mean-density}及 $\lambda\ge\delta^{\eta_0}$ 时，
+\begin{equation}\label{eq:finite-sharp-budget}
+ \card{E}\ge
+ c_{M,R,s,\varepsilon_D}
+ \frac{\lambda^2m}{A\Ldelta}\,
+ \delta^{s-4+\varepsilon_D}.
+\end{equation}
+不要求 $m$ 达到方向饱和数。
+\end{proposition}
+
+\begin{proof}
+由引理\ref{lem:marks}取得四维子族。
+其输出斜率分离，故每个斜率格子内的单位权总和至多为固定常数。
+先由输入\ref{input:D4}的输出损失取得 $\eta_D$，再取
+$\eta_0<\eta_D/2$，最后令 $\delta$ 足够小。
+相当网格 $\rho\asymp\delta$ 上，每条输出线的标记数满足四维输入的门槛，
+其中所有固定常数都由上述严格余量吸收。
+输入\eqref{eq:D4}因而给出
+\[
+ \card{E}\ge c\card{E'}
+ \ge c\delta^{\varepsilon_D}\sum_{T\in\T'}\card{J'_T}
+ \ge c\delta^{\varepsilon_D}m'\lambda\delta^{-1}.
+\]
+代入\eqref{eq:heavy-output-count}即得\eqref{eq:finite-sharp-budget}。
+两个 $\lambda$ 分别来自重线条数与每条输出线的原标记数，不能省去其中之一。
+\end{proof}
+
+\begin{corollary}[显式小损失形式]\label{cor:uniform}
+固定整数 $M\ge4$、空间界 $R$ 及实数 $s\ge3$。对每个 $\varepsilon>0$，
+存在 $\eta>0$、$C$ 与 $\delta_0>0$，使
+\begin{equation}\label{eq:tolerance-assumptions}
+ A\le\delta^{-\eta},\qquad \lambda\ge\delta^\eta
+\end{equation}
+蕴含
+\begin{equation}\label{eq:unsaturated-finite}
+ \card{E}\ge C^{-1}m\delta^{s-4+\varepsilon}.
+\end{equation}
+这些常数与 $m$ 无关。
+\end{corollary}
+
+\begin{proof}
+先取 $\varepsilon_D<\varepsilon/4$，再取
+$0<\eta<\min\{\eta_D/2,\varepsilon/16\}$，必要时进一步缩小。
+式\eqref{eq:finite-sharp-budget}中 $\lambda^2/A\ge\delta^{3\eta}$。
+最后取 $\delta$ 足够小，以剩余的正指数余量吸收 $\Ldelta$、固定网格及常数，得到结论。
+这给出的是 $\forall\varepsilon\,\exists\eta$，没有得到额外的线性模量。
+\end{proof}
+
+\begin{corollary}[任意固定实方向参数的种子]\label{cor:seed}
+在相同具名输入下，对每个固定实数 $n\ge4$ 与 $0<\zeta<1$，
+在任意固定环境空间中成立 $\Kest(n,4-\zeta)$。
+\end{corollary}
+
+\begin{proof}
+取 $s=n-1\ge3$。
+给定目标损失 $\tau>0$，先在推论\ref{cor:uniform}中选择充分小的输出损失，
+再取输入容差 $\eta$，使它同时小于 $\tau$ 的一个固定小部分。
+若还有饱和条数下界 $m\ge\delta^{-s+\eta}$，则
+\[
+ \card{E}\ge c\delta^{-4+\varepsilon+\eta}
+            \ge c\delta^{-4+\tau}.
+\]
+这是一项显式的统一有限充分估计。
+在 Katz--Tao 的任意小幂约定中，先固定 $\zeta$，
+把上述输出损失选为 $\zeta$ 的严格小部分，再使底层所有输入费用低于对应门槛，
+即得到所需的严格次临界 $\Kest(n,4-\zeta)$。
+在中间族未饱和时，\eqref{eq:unsaturated-finite}仍给出
+\[
+ \card{E}\ge c\,mN^{4-(n-1)-\varepsilon},
+\]
+保留了\eqref{eq:KT-unsaturated}所需的原条数因子。
+环境维数始终固定；若该环境中不存在满足饱和条数的方向族，相应陈述自然为空真。
+\end{proof}
+
+\begin{proposition}[真实的六维参数代入]\label{prop:six}
+对每个 $0<\zeta<1$，成立
+\begin{equation}\label{eq:six-finite}
+ \Kest\!\left(6,\frac{17}{4}-\frac{\zeta}{4}\right).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+推论\ref{cor:seed}分别给出
+\[
+ \Kest(6,4-\zeta),\qquad \Kest(5-\zeta,4-\zeta).
+\]
+第二个实方向参数至少为 $4$，其角度指数为 $4-\zeta\ge3$，
+因此确实处于同一有限投影估计的适用范围。
+在输入\ref{input:KT}中取 $n=6$、$d=d'=4-\zeta$，便得
+\[
+ \frac{2n+1+d'}4=\frac{13+4-\zeta}{4}
+                  =\frac{17}{4}-\frac\zeta4.
+\]
+两次种子调用和递推均在固定参数下进行；先固定最终输出损失，
+再选有限次调用的输入容差，最后取尺度足够小。
+这里既未调用未证的临界统一模量，也未假设方向维数可免费单调传递。
+\end{proof}

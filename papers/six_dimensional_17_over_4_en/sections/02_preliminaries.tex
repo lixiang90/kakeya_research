@@ -1,0 +1,105 @@
+\section{Finite-scale conventions and cited inputs}\label{sec:preliminaries}
+
+\subsection{Directions, line families, and shadings}
+Every ambient dimension $M$ is a fixed integer. Implicit constants may depend on $M$ and on a fixed spatial bound $R$,
+but $M$ must not vary with the discretization scale.
+Let $0<\delta<1/2$, and write
+\[
+  \Ldelta=1+\log(1/\delta).
+\]
+For unoriented unit directions $u,v$, use the projective angle
+$\ang(u,v)=\arccos|\langle u,v\rangle|\in[0,\pi/2]$.
+A set of directions is $\delta$-separated if every two distinct directions have projective angle at least $\delta$.
+
+Let $\T$ be a finite labelled family of unit-scale line segments in a fixed ball $B(0,R)\subset\R^M$,
+or of their neighbourhoods of width a fixed multiple of $\delta$.
+A shading $Y$ assigns to each original line $T$ a collection of $\delta$-cells intersecting it or lying within distance $O(\delta)$ of it.
+Write
+\[
+ m=\card{\T},\qquad E=\bigcup_{T\in\T}Y(T),\qquad
+ S=\sum_{T\in\T}\card{Y(T)}.
+\]
+Here $\card{E}$ denotes the number of cells, not their Lebesgue volume.
+Each original line has a fixed upper bound on its length, so
+\begin{equation}\label{eq:single-line-upper}
+  \card{Y(T)}\le C_{M,R}\delta^{-1}.
+\end{equation}
+Moving each cell to the nearest parameter point on its original line and removing multiplicities in parameter intervals of length $\delta$
+loses only a fixed factor. We may therefore count separated marks on the original lines instead.
+Throughout, cells and marks are interchanged only up to this fixed factor, without changing the small-power exponents.
+
+For a real number $s\ge3$ and $A\ge1$, the required directional hypothesis is
+\begin{equation}\label{eq:angular-cap}
+ \card{\{T\in\T:\ang(v_T,u)\le\theta\}}
+ \le A\left(\frac\theta\delta\right)^s,
+ \qquad \delta\le\theta\le1,
+\end{equation}
+for every direction centre $u$.
+This is only an upper bound; no pointwise Ahlfors--David lower bound, convex Wolff condition, or sticky hypothesis is imposed.
+An average shading density $\lambda$ means
+\begin{equation}\label{eq:mean-density}
+ S\ge\lambda m\delta^{-1},\qquad 0<\lambda\le1.
+\end{equation}
+An average lower bound cannot directly replace a lower bound for each line.
+
+\subsection{The four-dimensional finite directional-mass input}
+
+\begin{inputthm}[Four-dimensional finite directional-mass estimate, archive DIR-003]\label{input:D4}
+Fix a bounded four-dimensional graph chart. For every $\varepsilon_D>0$, there exist
+$\eta_D>0$, $\delta_D>0$, and $C_D$ such that the following holds whenever $0<\delta<\delta_D$.
+Let
+\[
+ \ell_i(t)=(t,b_i+t v_i),\qquad 0\le t\le1,\qquad
+ |b_i|+|v_i|\le R_D,
+\]
+be a finite labelled line family, and let $J_i$ be its respective marks on the $\delta$ time grid, with
+$\card{J_i}\ge\delta^{-1+\eta_D}$.
+Given arbitrary positive weights $\omega_i$, suppose that every half-open slope cell $Q$ of side length $\delta$
+satisfies $\sum_{v_i\in Q}\omega_i\le\alpha$.
+Then the union $E_D$ of the cells visited by all the marks satisfies
+\begin{equation}\label{eq:D4}
+ \sum_i\omega_i\card{J_i}
+ \le C_D\alpha\delta^{-\varepsilon_D}\card{E_D}.
+\end{equation}
+Repeated labels and arbitrary ranges of positive weights are allowed; the constants do not depend on the smallest weight or the number of labels.
+Fixed-factor enlargements of the grid and visited cells are allowed, with corresponding changes in the constants.
+\end{inputthm}
+
+This input follows from a finite-scale consequence of the four-dimensional proof and a directional amplification;
+see\cite{ArchiveSource,ArchiveDIR}.
+It is not deduced directly from the set-dimension statement of\cite[Theorem 1.1]{OAI4} alone.
+We use\eqref{eq:D4} with unit weights and separated output directions.
+In particular, the input retains the order $\forall\varepsilon_D\,\exists\eta_D$;
+no linear lower bound for $\eta_D$ in terms of $\varepsilon_D$ is assumed.
+
+\subsection{Katz--Tao notation for estimates}
+
+Set $N=\delta^{-1}$. We use the discrete-line, shading, and small-power-loss conventions of\cite[Definitions 5.1, 5.2, 6.1]{KT}.
+For real $n,d>0$, $\Kest(n,d)$ means that, in every fixed ambient space $\R^M$,
+a saturated $(n-1)$-collection of lines with saturated shading visits at least $N^{d-o(1)}$ cells.
+The directional family satisfies the angular upper bound $N^{o(1)}(N\theta)^{n-1}$
+for all centres and all $N^{-1}\le\theta\le1$, and has size $N^{n-1+o(1)}$.
+Saturation of the shading means that its total mass is $N^{1-o(1)}\card{\T}$; saturation on each line is not assumed in advance.
+The parameter $n$ is not the ambient dimension $M$ and need not be an integer.
+
+Here $o(1)$ denotes only the arbitrarily small power losses allowed in the cited paper.
+In an application, one first fixes the target output loss, then chooses a sufficiently small input tolerance, and finally takes $N$ sufficiently large.
+Section~\ref{sec:seeds} gives an explicit $\forall\varepsilon\,\exists\eta$ sufficient form for this use.
+We invoke only the strictly subcritical $\Kest(n,4-\zeta)$, without asserting a uniform linear modulus relating the critical input and output losses.
+
+\begin{inputthm}[Katz--Tao recurrence, Theorem 6.2 of\cite{KT}]\label{input:KT}
+Let $0<d<n$. If $\Kest(n,d)$ and $\Kest(d+1,d')$ hold, then
+\begin{equation}\label{eq:KT}
+  \Kest\!\left(n,\frac{2n+1+d'}4\right)
+\end{equation}
+holds. The input allows real parameters and every fixed ambient space.
+\end{inputthm}
+
+The second application in this recurrence may take place in $\R^{M+1}$ and requires the unsaturated version in equation (40) of the cited paper:
+\begin{equation}\label{eq:KT-unsaturated}
+  \card{E}\ge
+  \frac{\card{\T}}{N^{n-1}}N^{d-o(1)}.
+\end{equation}
+Thus a saturated conclusion in just one fixed ambient space is insufficient.
+Below we retain the original number-of-lines factor directly, establishing this interface;
+the full proof of the recurrence remains a cited input from\cite{KT}.

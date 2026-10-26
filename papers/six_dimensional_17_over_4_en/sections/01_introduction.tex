@@ -1,0 +1,59 @@
+\section{Introduction and main result}
+\label{sec:introduction}
+
+A Kakeya set in real Euclidean space is a set containing a unit line segment in every unoriented direction.
+The Kakeya conjecture predicts that every such set in $\R^n$ has Hausdorff dimension $n$.
+Throughout this paper we consider ordinary straight-line Kakeya sets in real Euclidean space.
+We distinguish this problem from its finite-field analogue, Minkowski dimension bounds,
+restricted-direction results, and results for classes of sets satisfying additional structural assumptions.
+
+The four-dimensional manuscript\cite{OAI4} claims that every four-dimensional Kakeya set has full Hausdorff dimension.
+For a transfer to higher dimensions, this set-dimension statement alone is insufficient:
+the recurrence requires a quantitative input applicable to arbitrary finite line families and their original shadings
+in every fixed ambient dimension, with constants allowed to depend on that dimension.
+We use a finite-scale consequence of that proof, together with its sparse-direction amplification,
+stated explicitly as Input~\ref{input:D4}.
+Its proof dependencies and archival references are described in Appendix~\ref{app:inputs}.
+The existing finite proof and outcome report are recorded in\cite{ArchiveFSD,ArchiveDIM}, respectively.
+
+\begin{theorem}[Six-dimensional lower bound]\label{thm:main}
+Assume the four-dimensional finite input~\ref{input:D4} and the Katz--Tao recurrence theorem~\ref{input:KT}.
+If an arbitrary set $K\subset\R^6$ contains a unit line segment in every Euclidean direction, then
+\begin{equation}\label{eq:main}
+  \HH K\ge\frac{17}{4}=4.25.
+\end{equation}
+The set $K$ need not be measurable, compact, or bounded, and no measurable direction-to-line selection is required.
+\end{theorem}
+
+The proof has three steps. First, random linear projection sends a finite line family in any fixed $\R^M$ to $\R^4$.
+Projected directions may collide, and projected segments may become short; both losses must be accounted for before invoking the four-dimensional input.
+Second, an unsaturated estimate retaining the arbitrary original number of lines yields the strictly subcritical seed
+$\Kest(n,4-\zeta)$ for every fixed real parameter $n\ge4$.
+For $0<\zeta<1$, the Katz--Tao theorem gives
+\begin{equation}\label{eq:roadmap-recurrence}
+  \Kest(6,4-\zeta),\quad\Kest(5-\zeta,4-\zeta)
+  \quad\Longrightarrow\quad
+  \Kest\!\left(6,\frac{17}{4}-\frac{\zeta}{4}\right).
+\end{equation}
+Third, covers at a common scale and outer measure on the direction space yield a Hausdorff dimension bound for arbitrary sets; we then let $\zeta\downarrow0$.
+
+The classical six-dimensional bound of Katz--Tao\cite{KT} is $7-2\sqrt2$.
+The corresponding Euclidean comparisons of Hickman--Rogers--Zhang\cite[Figure 5]{HRZ}
+and Gao--Liu--Xi\cite[Table 1]{GLX} also explicitly list this value.
+The difference is
+\begin{equation}\label{eq:comparison}
+ \frac{17}{4}-(7-2\sqrt2)
+   =2\sqrt2-\frac{11}{4}
+   \approx0.078427125>0.
+\end{equation}
+This comparison concerns only the explicitly checked ordinary six-dimensional Hausdorff baseline;
+it is not a certification of optimality across the entire current literature.
+The contribution presented here is a higher-dimensional consequence of the four-dimensional finite input
+and an exposition of the finite interfaces needed for this consequence. The recurrence itself is due to Katz--Tao.
+
+\paragraph{Organization.}
+Section~\ref{sec:preliminaries} fixes the discrete conventions and states the two named inputs.
+Section~\ref{sec:projection} proves the finite random projection estimate while retaining the original shadings.
+Section~\ref{sec:seeds} gives the unsaturated estimate and the actual parameters used in the recurrence.
+Section~\ref{sec:hausdorff} establishes the Hausdorff conclusion for arbitrary sets and completes the proof of Theorem~\ref{thm:main}.
+Section~\ref{sec:scope} explains the scope; the appendix records the source of the four-dimensional input and its sparse reduction.

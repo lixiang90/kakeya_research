@@ -1,0 +1,77 @@
+% !TeX program = xelatex
+% Source versions and the comparison cutoff are stated in the manuscript.
+\documentclass[UTF8,fontset=fandol,a4paper,11pt]{ctexart}
+\usepackage[margin=27mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,array,longtable}
+\usepackage{xcolor,xurl}
+\definecolor{linkblue}{RGB}{25,64,117}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,
+  bookmarksnumbered=true,pdftitle={A 17/4 Hausdorff bound for six-dimensional Kakeya sets},
+  pdfsubject={A derivation from a quantitative four-dimensional input}]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 六维 Kakeya 集合的 $17/4$ 下界}
+\fancyhead[R]{\small 研究论文整理稿}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{inputthm}[theorem]{引用输入}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注}
+\renewcommand{\proofname}{证明}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathcal T}
+\newcommand{\Kest}{\mathsf K}
+\newcommand{\HH}{\operatorname{dim}_{\mathrm H}}
+\newcommand{\ang}{\operatorname{ang}}
+\newcommand{\card}[1]{\#\!\left(#1\right)}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\Ldelta}{L_\delta}
+\DeclareMathOperator{\mass}{mass}
+\title{由四维有限尺度估计导出的\texorpdfstring{\\}{ }六维 Kakeya 集合的 $17/4$ 下界}
+\author{}
+\date{2026年10月26日}
+\begin{document}
+\maketitle
+\begin{abstract}
+以一项明确的四维有限方向质量估计为输入，结合 Katz--Tao 的维数递推，
+本文整理得到：任意包含每个方向上一条单位线段的集合 $K\subset\R^6$ 满足
+$\HH K\ge17/4$。这里不要求 $K$ 可测、紧或有界，也不要求可测选线。
+关键有限步骤是把任意固定环境空间中的角度分布族投影到 $\R^4$，
+用高斯小球估计和碰撞图独立集同时保留方向分离、非短投影及每条原线的着色点。
+若原平均着色密度为 $\lambda$、方向角度上界常数为 $A$、角度指数为 $s\ge3$，
+所得估计保留 $\lambda^2\card{\T}/A$ 和端点对数损失，因而适用于递推所需的非饱和中间族。
+随后以外测度和同尺度有限见证将离散估计转回任意集合的 Hausdorff 维数。
+本文将四维证明的有限尺度接口与 Katz--Tao 定理作为具名输入，不从四维集合满维数声明直接推导极大函数估计。
+相对所核文献中的六维基线 $7-2\sqrt2$，$17/4$ 的指数差约为 $0.078427$。
+\end{abstract}
+\noindent\textbf{关键词：}Kakeya 集合；Hausdorff 维数；随机投影；有限尺度估计；Katz--Tao 递推。
+
+\medskip
+\noindent\textbf{稿件性质与依赖。}
+这是既有研究档案 DIM-001 的论文形式整理稿，经过项目内部交叉审查，未经外部同行评审。
+四维有限输入的来源、其使用的高级定理及归档证明见附录\ref{app:inputs}。
+本文不宣称独立重证整篇四维原稿或 Katz--Tao 递推，不主张绝对首次或最新最优，
+也不解决一般维度的满维数猜想。文献比较的核验截止日为2026年10月19日；整理日期不代表完成了新一轮前沿检索。
+
+\input{sections/01_introduction}
+\input{sections/02_preliminaries}
+\input{sections/03_projection}
+\input{sections/04_finite_seeds}
+\input{sections/05_hausdorff}
+\input{sections/06_scope}
+\appendix
+\input{sections/appendix_inputs}
+\input{references}
+\end{document}

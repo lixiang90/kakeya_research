@@ -1,0 +1,107 @@
+\section{The unsaturated finite estimate and the six-dimensional recurrence}\label{sec:seeds}
+
+\begin{proposition}[A finite estimate retaining the original number of lines]\label{prop:finite}
+Assume Input~\ref{input:D4}. Fix $M\ge4$, $R$, a real $s\ge3$, and $\varepsilon_D>0$.
+There exist $\eta_0>0$ and a scale threshold such that, whenever $m$ original lines with separated directions satisfy
+\eqref{eq:angular-cap},\eqref{eq:mean-density}, and $\lambda\ge\delta^{\eta_0}$, one has
+\begin{equation}\label{eq:finite-sharp-budget}
+ \card{E}\ge
+ c_{M,R,s,\varepsilon_D}
+ \frac{\lambda^2m}{A\Ldelta}\,
+ \delta^{s-4+\varepsilon_D}.
+\end{equation}
+The number $m$ need not saturate the directional count.
+\end{proposition}
+
+\begin{proof}
+Obtain a four-dimensional subfamily from Lemma~\ref{lem:marks}.
+Its output slopes are separated, so the total unit weight in each slope cell is bounded by a fixed constant.
+First choose $\eta_D$ from the output loss in Input~\ref{input:D4}, then choose
+$\eta_0<\eta_D/2$, and finally take $\delta$ sufficiently small.
+On the comparable grid $\rho\asymp\delta$, the marks on each output line meet the threshold of the four-dimensional input;
+all fixed constants are absorbed by this strict margin.
+Input~\eqref{eq:D4} therefore yields
+\[
+ \card{E}\ge c\card{E'}
+ \ge c\delta^{\varepsilon_D}\sum_{T\in\T'}\card{J'_T}
+ \ge c\delta^{\varepsilon_D}m'\lambda\delta^{-1}.
+\]
+Substituting\eqref{eq:heavy-output-count} gives\eqref{eq:finite-sharp-budget}.
+The two factors of $\lambda$ come respectively from the number of heavy lines and the original marks on each output line;
+neither factor can be omitted.
+\end{proof}
+
+\begin{corollary}[An explicit small-loss form]\label{cor:uniform}
+Fix an integer $M\ge4$, a spatial bound $R$, and a real $s\ge3$. For every $\varepsilon>0$,
+there exist $\eta>0$, $C$, and $\delta_0>0$ such that
+\begin{equation}\label{eq:tolerance-assumptions}
+ A\le\delta^{-\eta},\qquad \lambda\ge\delta^\eta
+\end{equation}
+implies
+\begin{equation}\label{eq:unsaturated-finite}
+ \card{E}\ge C^{-1}m\delta^{s-4+\varepsilon}.
+\end{equation}
+These constants are independent of $m$.
+\end{corollary}
+
+\begin{proof}
+First take $\varepsilon_D<\varepsilon/4$, then choose
+$0<\eta<\min\{\eta_D/2,\varepsilon/16\}$, decreasing it further if necessary.
+In\eqref{eq:finite-sharp-budget}, $\lambda^2/A\ge\delta^{3\eta}$.
+Finally, take $\delta$ sufficiently small and use the remaining positive exponent margin to absorb $\Ldelta$, the fixed grids, and the constants.
+This gives $\forall\varepsilon\,\exists\eta$, without an additional linear modulus.
+\end{proof}
+
+\begin{corollary}[Seeds for every fixed real directional parameter]\label{cor:seed}
+Under the same named inputs, for every fixed real $n\ge4$ and every $0<\zeta<1$,
+$\Kest(n,4-\zeta)$ holds in every fixed ambient space.
+\end{corollary}
+
+\begin{proof}
+Take $s=n-1\ge3$.
+Given a target loss $\tau>0$, first choose a sufficiently small output loss in Corollary~\ref{cor:uniform},
+then choose the input tolerance $\eta$ to be smaller than a sufficiently small fixed fraction of $\tau$ as well.
+If the saturated count lower bound $m\ge\delta^{-s+\eta}$ also holds, then
+\[
+ \card{E}\ge c\delta^{-4+\varepsilon+\eta}
+            \ge c\delta^{-4+\tau}.
+\]
+This is an explicit uniform finite sufficient estimate.
+Under the arbitrarily small power conventions of Katz--Tao, first fix $\zeta$,
+choose the output loss above to be strictly smaller than $\zeta$ by a fixed factor,
+and then place all underlying input losses below the corresponding threshold.
+This gives the required strictly subcritical $\Kest(n,4-\zeta)$.
+When an intermediate family is unsaturated,\eqref{eq:unsaturated-finite} still gives
+\[
+ \card{E}\ge c\,mN^{4-(n-1)-\varepsilon},
+\]
+retaining the original number-of-lines factor required by\eqref{eq:KT-unsaturated}.
+The ambient dimension remains fixed throughout. If an ambient space has no direction family of the saturated size,
+the corresponding statement is vacuous.
+\end{proof}
+
+\begin{proposition}[The actual six-dimensional parameter substitution]\label{prop:six}
+For every $0<\zeta<1$,
+\begin{equation}\label{eq:six-finite}
+ \Kest\!\left(6,\frac{17}{4}-\frac{\zeta}{4}\right)
+\end{equation}
+holds.
+\end{proposition}
+
+\begin{proof}
+Corollary~\ref{cor:seed} gives
+\[
+ \Kest(6,4-\zeta),\qquad \Kest(5-\zeta,4-\zeta).
+\]
+The second real directional parameter is at least $4$, and its angular exponent is $4-\zeta\ge3$,
+so it is indeed within the range of the same finite projection estimate.
+Taking $n=6$ and $d=d'=4-\zeta$ in Input~\ref{input:KT} yields
+\[
+ \frac{2n+1+d'}4=\frac{13+4-\zeta}{4}
+                  =\frac{17}{4}-\frac\zeta4.
+\]
+Both seed applications and the recurrence use fixed parameters:
+first fix the final output loss, then choose the input tolerances for the finitely many applications,
+and finally take the scale sufficiently small.
+We invoke neither an unproved critical uniform modulus nor a free monotonicity principle in directional dimension.
+\end{proof}

@@ -1,0 +1,100 @@
+\section{有限尺度约定与引用输入}\label{sec:preliminaries}
+
+\subsection{方向、线族与着色}
+所有环境维数 $M$ 都是固定整数，隐含常数可以依赖 $M$ 及固定空间界 $R$，
+但不得令 $M$ 随离散尺度变化。令 $0<\delta<1/2$，并记
+\[
+  \Ldelta=1+\log(1/\delta).
+\]
+无向单位方向 $u,v$ 的距离取射影角
+$\ang(u,v)=\arccos|\langle u,v\rangle|\in[0,\pi/2]$。
+方向 $\delta$-分离，是指任意两个不同方向的射影角至少为 $\delta$。
+
+设 $\T$ 是位于固定球 $B(0,R)\subset\R^M$ 中的单位尺度线段或其固定倍 $\delta$ 邻域组成的有限带标签族。
+一个着色 $Y$ 为每条原线 $T$ 指定一组与它相交或相距 $O(\delta)$ 的 $\delta$ 格子。
+记
+\[
+ m=\card{\T},\qquad E=\bigcup_{T\in\T}Y(T),\qquad
+ S=\sum_{T\in\T}\card{Y(T)}.
+\]
+这里 $\card{E}$ 表示格子个数，不表示 Lebesgue 体积。
+每条原线的长度有固定上界，故
+\begin{equation}\label{eq:single-line-upper}
+  \card{Y(T)}\le C_{M,R}\delta^{-1}.
+\end{equation}
+将每个格子移到原线上的最近参数，再按长度 $\delta$ 的参数区间删去重数，
+只损失固定因子；因此也可等价地用原线上的分离标记点计数。
+全文只在这一固定常数意义下切换格子与标记，不改变小幂指数。
+
+对实数 $s\ge3$ 和 $A\ge1$，所需的方向假设为
+\begin{equation}\label{eq:angular-cap}
+ \card{\{T\in\T:\ang(v_T,u)\le\theta\}}
+ \le A\left(\frac\theta\delta\right)^s,
+ \qquad \delta\le\theta\le1,
+\end{equation}
+对所有方向中心 $u$ 成立。
+此处只有上界，没有逐点 Ahlfors--David 下界、凸 Wolff 条件或 sticky 假设。
+平均着色密度 $\lambda$ 的含义是
+\begin{equation}\label{eq:mean-density}
+ S\ge\lambda m\delta^{-1},\qquad 0<\lambda\le1.
+\end{equation}
+平均下界不能直接替代每条线的下界。
+
+\subsection{四维有限方向质量输入}
+
+\begin{inputthm}[四维有限方向质量估计，档案 DIR-003]\label{input:D4}
+固定一个有界四维图像坐标片。对每个 $\varepsilon_D>0$，存在
+$\eta_D>0$、$\delta_D>0$ 和 $C_D$，使下述陈述对 $0<\delta<\delta_D$ 成立。
+设
+\[
+ \ell_i(t)=(t,b_i+t v_i),\qquad 0\le t\le1,\qquad
+ |b_i|+|v_i|\le R_D,
+\]
+为有限带标签直线族，$J_i$ 是各自的 $\delta$ 时间网格标记，且
+$\card{J_i}\ge\delta^{-1+\eta_D}$。
+给定任意正权 $\omega_i$，若每个半开边长 $\delta$ 的斜率格子 $Q$ 都满足
+$\sum_{v_i\in Q}\omega_i\le\alpha$，则全部标记访问的格子并集 $E_D$ 满足
+\begin{equation}\label{eq:D4}
+ \sum_i\omega_i\card{J_i}
+ \le C_D\alpha\delta^{-\varepsilon_D}\card{E_D}.
+\end{equation}
+允许重复标签和任意正权重跨度；常数不依赖最小权重或标签数。
+允许网格及访问格子的固定倍扩大，常数相应改变。
+\end{inputthm}
+
+该输入是四维证明的有限尺度读出及方向放大的结果，参见\cite{ArchiveSource,ArchiveDIR}，
+不是仅由\cite[Theorem 1.1]{OAI4}的集合维数句子直接推出。
+本文在其单位权重、输出方向分离的情形使用\eqref{eq:D4}。
+特别地，输入保留 $\forall\varepsilon_D\,\exists\eta_D$ 的次序，
+不假定 $\eta_D$ 对 $\varepsilon_D$ 有线性下界。
+
+\subsection{Katz--Tao 的估计记号}
+
+令 $N=\delta^{-1}$。沿用\cite[Definitions 5.1, 5.2, 6.1]{KT}的离散线、着色及小幂损失约定。
+对于实 $n,d>0$，$\Kest(n,d)$ 表示：在任意固定环境 $\R^M$ 中，
+饱和的 $(n-1)$ 方向族与饱和着色给出至少 $N^{d-o(1)}$ 个访问格子。
+这里方向族满足所有中心、所有 $N^{-1}\le\theta\le1$ 的角度上界
+$N^{o(1)}(N\theta)^{n-1}$，族大小为 $N^{n-1+o(1)}$；
+着色饱和指总质量为 $N^{1-o(1)}\card{\T}$，不预设逐线饱和。
+参数 $n$ 不是环境维数 $M$，也不要求为整数。
+
+上述 $o(1)$ 只表示原文容许的任意小幂费用。
+实际应用时先固定目标输出损失，再选择足小的输入容差，最后取 $N$ 足够大。
+第\ref{sec:seeds}节将给出这一用途所需的显式 $\forall\varepsilon\,\exists\eta$ 充分形式，
+并只调用严格次临界 $\Kest(n,4-\zeta)$，不声称临界输入输出损失有统一线性模量。
+
+\begin{inputthm}[Katz--Tao 递推，\cite{KT}定理6.2]\label{input:KT}
+设 $0<d<n$。若 $\Kest(n,d)$ 与 $\Kest(d+1,d')$ 成立，则
+\begin{equation}\label{eq:KT}
+  \Kest\!\left(n,\frac{2n+1+d'}4\right)
+\end{equation}
+成立。输入允许实参数和任意固定环境空间。
+\end{inputthm}
+
+该递推的第二处使用可能发生在 $\R^{M+1}$ 中，且需要原文式(40)的非饱和版本
+\begin{equation}\label{eq:KT-unsaturated}
+  \card{E}\ge
+  \frac{\card{\T}}{N^{n-1}}N^{d-o(1)}.
+\end{equation}
+因此只证明一个固定环境中的饱和结论是不够的。
+下文直接保留原条数因子，支付这一接口；递推的完整证明仍引用\cite{KT}。

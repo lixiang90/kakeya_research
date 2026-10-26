@@ -1,0 +1,86 @@
+\section{任意集合的 Hausdorff 读出}\label{sec:hausdorff}
+
+\begin{lemma}[有限估计到任意集合]\label{lem:hausdorff}
+设整数 $q\ge2$ 的有限估计 $\Kest(q,d)$ 在前述任意小幂约定下成立。
+若 $K\subset\R^q$ 在每个方向上含一条单位线段，则 $\HH K\ge d$。
+该陈述不要求 $K$ 或方向选线映射可测。
+\end{lemma}
+
+\begin{proof}
+反设存在 $t$ 使 $\HH K<t<d$。
+先取一个近竖直的开方向片，以斜率 $v\in\R^{q-1}$ 参数化。
+每条候选单位线段在时间坐标上有固定正长度的投影，故包含某个有理端点时间区间；
+其截距也属于某个整数有界盒。
+这些时间区间和截距盒的组合只有可数个，
+而其可用斜率集合覆盖整个方向片。
+由 Lebesgue 外测度的可数次可加性，某一个组合的可用斜率集合 $S_0$
+有正有限外测度 $a>0$。
+作一次固定仿射归一化，使共同时间区间为 $[0,1]$，所有相关轨迹位于固定有界区域。
+此时尚未对全部斜率选择见证线。
+
+由 $\HH K<t$，可用球 $B_i$ 覆盖 $K$，使半径满足
+\begin{equation}\label{eq:hausdorff-cover}
+ \sum_i r_i^t\le1,\qquad\sup_i r_i\longrightarrow0.
+\end{equation}
+对归一化后的固定区域作同样的覆盖即可，固定仿射变换只改变常数。
+令 $U_k$ 是所有满足 $2^{-k-1}<r_i\le2^{-k}$ 的球的并集。
+它含有至多 $C2^{kt}$ 个球。
+
+取 $c_0>0$ 使 $\sum_{k\ge1}c_0k^{-2}<1$。
+任一成功见证线段 $\ell([0,1])\subset K$ 都有
+\[
+ \sum_k\big|\{u\in[0,1]:\ell(u)\in U_k\}\big|\ge1,
+\]
+故对某个 $k$，它在 $U_k$ 中的时间长度至少为 $c_0k^{-2}$。
+定义 $S_k$ 为存在这样一条有界见证线的斜率集合。
+不要求 $S_k$ 可测；仍有 $S_0\subset\bigcup_kS_k$。
+再次利用外测度次可加性，存在同一个 $k$ 使
+\begin{equation}\label{eq:outer-direction}
+ |S_k|^*\ge c_1 a k^{-2}.
+\end{equation}
+其中 $c_1>0$ 是固定常数。
+于是同一尺度同时具有外方向质量下界和逐见证线的时间长度下界。
+
+令 $\delta=2^{-k}$，在有界 $S_k$ 中取一个极大的 $C\delta$-分离有限斜率集。
+它的 $C\delta$ 球覆盖 $S_k$，由\eqref{eq:outer-direction}得
+\begin{equation}\label{eq:finite-witness-count}
+ m\ge c a k^{-2}\delta^{-(q-1)}.
+\end{equation}
+固定的 $C$ 可保证实际单位方向也在 $\delta$ 尺度分离。
+现在仅对这有限个斜率逐个选择一条成功见证线。
+方向的所有尺度上界由打包得到
+\[
+ \card{\{T:\ang(v_T,u)\le\theta\}}
+ \le C_q(\theta/\delta)^{q-1}.
+\]
+每条线在 $U_k$ 中有至少 $c\delta^{-1}k^{-2}$ 个非空时间格，
+每格取一个真实线点，再移到最近格子中心。
+每个原半径至多 $\delta$ 的覆盖球只贡献固定多个访问格子，因而
+\begin{equation}\label{eq:cover-upper}
+ \card{E_k}\le C\delta^{-t}.
+\end{equation}
+最近格子中心到原线的距离至多为 $C\delta$，符合离散支撑线约定。
+若采用单位弧长线段约定，可再将固定长度图像线段分为固定多个单位尺度窗口，
+逐线保留最富的窗口；只损固定比例，不增加任何标记。
+
+由\eqref{eq:finite-witness-count}与逐线标记数，方向饱和及着色饱和只损失多对数。
+先固定 $0<\varepsilon<d-t$，再选有限估计对应的输入容差，最后令 $k$ 足够大。
+所有 $k^{-2}$ 和固定常数都在任意小幂门槛内，因此有限下界给出
+\begin{equation}\label{eq:cover-lower}
+ \card{E_k}\ge c\delta^{-d+\varepsilon}.
+\end{equation}
+当最大覆盖半径趋于零时，选出的 $k$ 也必须趋于无穷；
+式\eqref{eq:cover-upper}与\eqref{eq:cover-lower}遂矛盾。
+全过程只在开放球并集的直线原像上计算普通时间长度，未对不可测集合 $K$ 积分，
+也未使用可测方向选线。
+\end{proof}
+
+\begin{proof}[定理\ref{thm:main}的证明]
+对每个 $0<\zeta<1$，命题\ref{prop:six}和引理\ref{lem:hausdorff}给出
+\[
+ \HH K\ge\frac{17}{4}-\frac\zeta4.
+\]
+该结论对所有这样的固定 $\zeta$ 成立，令 $\zeta\downarrow0$ 即得\eqref{eq:main}。
+这里先完成每个固定参数的有限估计及 Hausdorff 返回，再取参数极限，
+没有把一个固定尺度的覆盖数下界直接当作 Hausdorff 维数下界。
+\end{proof}

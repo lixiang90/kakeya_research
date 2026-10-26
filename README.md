@@ -39,3 +39,8 @@ python experiments/algebra/tensor_kernel_probe.py
 ```
 
 GitHub: https://github.com/lixiang90/kakeya_research 。每轮结束必须提交并验证远端；同步未验证时如实保留待同步状态。
+
+
+## 论文源码（2026-10-26）
+
+[中文版](papers/six_dimensional_17_over_4/main.tex) · [English version](papers/six_dimensional_17_over_4_en/main.tex) · [双语完整源码包](papers/six_dimensional_17_over_4_bilingual_sources.zip)。两版均由内置LaTeX编译器核验成功；保留完整项目目录。编译说明与范围见[papers/README.md](papers/README.md)，源文件哈希见[papers/manuscripts.json](papers/manuscripts.json)。此为既有DIM-001的编辑整理，无新数学Goal、作者署名或对外投稿。
