@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-26，R0116：提前四出口宏观完成；uniform全affine tuple codec固定误差门两独审通过，仅此范围，非actual sparse transfer反例。新Li/Spread-out I/Dahia及talk/ICM一手准入没有给ordinary或完整source新gain。98PDF/103sources/78旧IDs，主gain连续6旧31保持；停止codec/精度参数续轮。下一入口R0116_next_original_input_gate.md，下次宏观不晚R119。
+更新2026-10-27，R0117：经典AP-free clock在真实全方向单位圆管及原pieces上全dyadic反攻经独审；small-footprint条件APβ(η)⇒finite排除β(η/2)，反向真空，非免费新正机制。marked bush E≈λ，不造开放β/小η反例；完整source canonical Φ/X/Y lower重组未付，AD/CW/uppers保留。99PDF/104sources/78旧IDs，无主gain连续7、旧31保持。AP入口停止，提前R118宏观；next见R0117_next_macro_original_joint_input.md。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -271,3 +271,6 @@ R0115：原T不动、原clock富1/4区间保全部层，macro-separated clock添
 
 
 R0116：codec主稿actual_direction_construction_gate.md两独审，finite tuples给odd scalar≥1/3、p2 midclock≥(1/2−ζ)/4，noncoordinatewise H经3e给归一误差下界；exact p2 parity与Monna满clock校准均真。sup不反稀疏/average，未造原Euclidean gain。4新PDF含1页摘要、另ICM web-only403记录；Li exact-vs-δ能量反攻、SpreadI真实θ=−uI固定model hyperplane/II依赖及Dahia fixed-density边界已核，不换名开正方向。Goal active，codec常数等冻结；四出口宏观已做，后继先实际原输入准入。
+
+
+R0117：真实单位圆管clock AP输入资格完成，主稿actual_tube_AP_input_gate.md经未参与者全文独审；全dyadic/floor、Cδ加piece误差、精确端帽/原N/I、逐管/平均及原pieces/null点均核。任意marks phase删选每管保cδ^s、union不增；固定β/格式/type的条件AP已承担∃η finite排除责任，未证明任一真。经典sphere方法不新，99PDF/104sources/78项。source原T/labels上半段可保，canonical lower重组未付，不据此重开generic regularization。无新维数/major，Goal active；提前R118宏观，不续AP/phase/格式优化。

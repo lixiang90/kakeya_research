@@ -1,0 +1,172 @@
+                                                  A NOTE ON ELKIN’S IMPROVEMENT OF BEHREND’S
+                                                                 CONSTRUCTION
+
+                                                                         BEN GREEN AND JULIA WOLF
+
+                                                 Abstract. We provide a short proof of a recent result of Elkin in which large subsets
+                                                 of {1, . . . , N } free of 3-term progressions are constructed.
+arXiv:0810.0732v1 [math.CO] 5 Oct 2008
+
+
+
+
+                                                                                To Mel Nathanson
+
+                                                                                1. Introduction
+
+                                            Write r3 (N) for the cardinality of the largest subset of {1, . . . , N} not containing
+                                         three distinct elements in arithmetic progression. A famous construction of Behrend [1]
+                                         shows, when analysed carefully, that
+                                                                                          1                N
+                                                                        r3 (N) ≫          1/4
+                                                                                                    ·    √ √       .
+                                                                                    log  2      N       2 2 log2 N
+
+                                         In a recent preprint [2] Elkin was able to improve this 62-year old bound to
+                                                                                                           N
+                                                                         r3 (N) ≫ log1/4 N ·             √ √       .
+                                                                                                        2 2 log2 N
+                                                                                        2
+                                         Our aim in this note is to provide a short proof of Elkin’s result. It should be noted
+                                         that the only advantage of our approach is brevity: it is based on ideas morally close
+                                         to those of Elkin, and moreover his argument is more constructive than ours.
+                                            Throughout the paper 0 < c < 1 < C denote absolute constants which may vary
+                                         from line to line. We write Td = Rd /Zd for the d-dimensional torus.
+
+                                                                                  2. The proof
+
+                                            Let d be an integer to be determined later, and let δ ∈ (0, 1/10) be a small parameter
+                                                                √                        √
+                                         (we will have d ∼ C log N and δ ∼ exp (−C log N )). Given θ, α ∈ Td , write Ψθ,α :
+                                         {1, . . . , N} → Td for the map n 7→ θn + α(mod 1).
+
+                                         Lemma 2.1. Suppose that n is an integer. Then Ψθ,α (n) is uniformly distributed on
+                                         Td as θ, α vary uniformly and independently over Td . Moreover, if n and n′ are distinct
+                                         positive integers, then the pair (Ψθ,α(n), Ψθ,α (n′ )) is uniformly distributed on Td × Td as
+                                         θ, α vary uniformly and independently over Td .
+                                         The first author holds a Leverhulme Prize and is grateful to the Leverhulme Trust for their support.
+                                         This paper was written while the authors were attending the special semester in ergodic theory and
+                                         additive combinatorics at MSRI.
+                                                                                                1
+2                              BEN GREEN AND JULIA WOLF
+
+Proof. Only the second statement requires an argument to be given. Perhaps the easiest
+proof is via Fourier analysis, noting that
+                           Z
+                                              ′    ′
+                               e2πi(k·(θn+α)+k ·(θn +α)) dθ dα = 0
+
+unless k + k ′ = kn + k ′ n′ = 0. Provided that k and k ′ are not both zero, this cannot
+                                                                              ′ ′
+happen for distinct positive integers n, n′ . Since the exponentials e2πi(kx+k x ) are dense
+in L2 (Td × Td ), the result follows.
+                                                                      √
+   Let us identify Td with [0, 1)d in the obvious way. For each r 6 12 d, write S(r) for
+the region
+                           {x ∈ [0, 1/2]d : r − δ 6 kxk2 6 r}.
+
+Lemma 2.2. There is some choice of r for which vol(S(r)) > cδ2−d .
+
+Proof. First note that if (x1 , . . . , xd ) is chosen at random from [0, 1/2]d then, with
+                                             p
+probability at least c, we have |kxk2 − d/12| 6 C. This is a consequence of standard
+tail estimates for sums of independent identically distributed random variables, of which
+kxk22 = di=1 x2i is an example. The statement of the lemma then immediately follows
+         P
+
+from the pigeonhole principle.
+
+   Write S := S(r) for the choice of r whose existence is guaranteed by the preceding
+lemma; thus vol(S) > cδ2−d . Write S̃ for the same set S but considered now as a subset
+of [0, 1/2]d ⊆ Rd . Since there is no “wraparound”, the 3-term progressions in S and S̃
+coincide and henceforth we abuse notation, regarding S as a subset of Rd and dropping
+the tildes. (To use the additive combinatorics jargon, S and S̃ are Freiman isomorphic.)
+Suppose that (x, y) is a pair for which x − y, x and x + y lie in S. By the parallelogram
+law
+                           2kxk22 + 2kyk22 = kx + yk22 + kx − yk22
+and straightforward algebra we have
+                                  p               √
+                           kyk2 6 r 2 − (r − δ)2 6 2δr.
+
+It follows from the formula for the volume of a sphere in Rd that the volume of the set
+                                                                            √
+B ⊆ Td × Td in which each such pair (x, y) must lie is at most vol(S)C d (δ/ d)d/2 .
+   The next lemma is an easy observation based on Lemma 2.1.
+
+Lemma 2.3. Suppose that N is even. Define Aθ,α := {n ∈ [N] : Ψθ,α (n) ∈ S}. Then
+
+                                  Eθ,α |Aθ,α | = N vol(S)
+
+whilst the expected number of nontrivial 3-term arithmetic progressions in Aθ,α is
+                                           1
+                            Eθ,α T (Aθ,α) = N(N − 5) vol(B).
+                                           4
+           A NOTE ON ELKIN’S IMPROVEMENT OF BEHREND’S CONSTRUCTION                       3
+
+Proof. The first statement is an immediate consequence of the first part of Lemma 2.1.
+Now each nontrivial 3-term progression is of the form (n − d, n, n + d) with d 6= 0.
+Since N is even there are N(N − 5)/4 choices for n and d, and each of the consequent
+progressions lies inside Aθ,α with probability vol(B) by the second part of Lemma 2.1.
+
+  To finish the argument, we just have to choose parameters so that
+                              1         1
+                                vol(S) > (N − 5) vol(B).                             (2.1)
+                              3         4
+Then we shall have
+                               2                     1
+                          E      |Aθ,α | − T (Aθ,α ) > N vol(S).
+                               3                       3
+In particular there is a specific choice of A := Aθ,α for which both T (A) 6 2|A|/3 and
+|A| > 21 N vol(S). Deleting up to two thirds of the elements of A, we are left with a set
+of size at least 16 N vol(S) that is free of 3-term arithmetic progressions.
+                                           √
+   To do this it suffices to have C d (δ/ d)d/2 6 c/N, which can certainly be achieved
+                    √
+by taking δ := c dN −2/d . For this choice of parameters we have, by the earlier lower
+bound on vol(S), that
+                                    1                √
+                             |A| > N vol(S) > c d2−d N 1−2/d .
+                                    6
+                   p
+Choosing d := ⌈ 2 log2 N ⌉ we recover Elkin’s bound.
+
+
+
+                              3. A question of Graham
+
+   The authors did not set out to try and find a simpler proof of Elkin’s result. Rather,
+our concern was with a question of Ron Graham (personal communication to the first-
+named author, see also [3, 4]). Defining W (2; 3, k) to be the smallest N such that
+any red-blue colouring of [N] contains either a 3-term red progression or a k-term
+blue progression, Graham asked whether W (2; 3; k) < k A for some absolute constant
+A or, even more ambitiously, whether W (2; 3, k) 6 Ck 2 . Our initial feeling was that
+the answer was surely no, and that a counterexample might be found by modifying the
+Behrend example in such a way that its complement does not contain long progressions.
+Reinterpreting the Behrend construction in the way that we have done here, it seems
+reasonably clear that it is not possible to provide a negative answer to Graham’s question
+in this way.
+
+
+
+                                4. acknowledgement
+
+  The authors are grateful to Tom Sanders for helpful conversations.
+4                                    BEN GREEN AND JULIA WOLF
+
+                                              References
+    [1] F. Behrend. On sets of integers which contain no three terms in arithmetic progression, Proc. Nat.
+        Acad. Sci., 32:331–332, 1946
+    [2] M. Elkin, An improved construction of progression-free sets, available at
+        http://arxiv.org/abs/0801.4310
+    [3] R. Graham, On the growth of a van der Waerden-like function, Integers, 6:#A29, 2006
+    [4] B. Landman, A. Robertson and C. Culver, Some new exact van der Waerden numbers, Integers,
+        5(2):#A10, 2005
+
+  Centre for Mathematical Sciences, Wilberforce Road, Cambridge CB3 0WA, Eng-
+land
+  E-mail address: b.j.green@dpmms.cam.ac.uk
+
+  Mathematical Sciences Research Institute, 17 Gauss Way, Berkeley, CA 94720,
+U.S.A.
+  E-mail address: julia.wolf@cantab.net
+

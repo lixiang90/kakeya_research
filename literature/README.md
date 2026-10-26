@@ -198,3 +198,6 @@ R0115无新PDF，仍94PDF/98sources。重读WZ Def3/17/19，usual(19)规范、�
 
 
 R0116新增4PDF：Li2607.29042v1(40p)、Orponen–Shmerkin Spread-out I2610.13677v1(47p)、Dahia2610.18859v1(5p)、Kulkarni2025讲座摘要(1p)，共98PDF/103sources。原件/text/metadata/bytesSHA256已存，root视觉读关键页；另Wang ICM官方web可读但PDF CLI403，仅存scope/失败记录，不算本地PDF。精确熵/通维spreadout/randomAP均未付ordinary新初始化；codec有限误差门非新维数界，scope见metadata/R0116_source_check.json。
+
+
+R0117新增Green–Wolf0810.0732v1(4p)经典论文原件/text/metadata，root视觉读物理1/3页，99PDF/104sources。用于核AP-free方法的经典性质，不调用优化界或声新构造/新Kakeya gain；全部新应用在主稿自证。原WZ Defs的arbitrary shading/canonical visits及AD lower范围另核，无fresh wholeproof/前沿认证。scope见metadata/R0117_source_check.json。
