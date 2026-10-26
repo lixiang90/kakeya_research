@@ -188,3 +188,5 @@ R0108无新PDF：OS I/hash current原声明仅screened，链接与拒选存notes
 
 
 R0109：88PDF/92sources保持，无新增原件。六维普通Hausdorff primary基线及官方4D已报告后果的有界比对，见notes/R0109_six_dimensional_primary_and_identity_audit.md与source_check；OAI4完整PDF/双README fresh exactbyte身份单独存metadata/R0109_official_OAI4_identity_check.json，不冒三core全部重核或数学正确性认证。DIM001重大成果审定通过两formal/root，不声first/best/外peer。
+
+R0111（2026-10-26）新Goal重启：无新PDF或catalog条目，仍88PDF/92sources。fresh官方单源ref/目录blob及本地SHA一致；GLX/HRZ/KT当前声明和12条有界查询的实际scope见notes/R0111_frontier_update.md与metadata/R0111_source_check.json。未取得新普通高维输入，不认证first/best或重审全部高级proof。

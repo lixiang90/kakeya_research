@@ -1,10 +1,12 @@
 # 一般维度 Kakeya 研究
 
+2026-10-26：用户授权在六维17/4之后继续研究，[新Goal](GOAL.md)已启动（active）。[R0111](research/rounds/R0111.md)完成宏观重选和旧路线排重，尚无新维数改善；不能用旧17/4再次完成新Goal。[下一输入资格门](notes/00_map/R0111_next_new_input_gate.md)与[独立审查整合](research/reviews/R0111_macro_and_root_integration.md)保存当前边界。
+
 目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度。R109已按原Goal第3出口审定重大中间结果：**通常引用列明具名定理时，任意六维Kakeya集合的Hausdorff维数至少17/4**。两份独立内部终审及root接受，未经外部同行评审；一般维度满维猜想仍未解决。
 
 [成果报告](results/reviewed/DIM-001_six_dimensional_Hausdorff_research_report.md)保存精确依赖、有限/任意集合桥及一手比较。相对已核普通六维7−2√2基线的固定改善约0.078427；不认证绝对首次、绝对最优或新递推。已归档109轮，88PDF/92sources；最终交付与Goal状态以R109实际同步回执及工具为准，提交快照不预认证未来同步。
 
-每次恢复研究，依次读 [GOAL.md](GOAL.md)、[STATE.md](STATE.md)、[ROADMAP.md](ROADMAP.md)、[最近轮次](research/rounds/)；执行 `python scripts/context.py` 可生成精简交接摘要。
+每次恢复研究，依次读 [GOAL.md](GOAL.md)、[STATE.md](STATE.md)、[ROADMAP.md](ROADMAP.md)、[最近轮次](research/rounds/)；执行 `python scripts/context.py` 可生成精简交接摘要（识别编辑轮）；`--full`读取完整历史。摘要只作导航，研究前还须读当前spec与原proof。
 
 ## 目录
 
@@ -43,4 +45,4 @@ GitHub: https://github.com/lixiang90/kakeya_research 。每轮结束必须提交
 
 ## 论文源码（2026-10-26）
 
-[中文版](papers/six_dimensional_17_over_4/main.tex) · [English version](papers/six_dimensional_17_over_4_en/main.tex) · [双语完整源码包](papers/six_dimensional_17_over_4_bilingual_sources.zip)。两版均由内置LaTeX编译器核验成功；保留完整项目目录。编译说明与范围见[papers/README.md](papers/README.md)，源文件哈希见[papers/manuscripts.json](papers/manuscripts.json)。此为既有DIM-001的编辑整理，无新数学Goal、作者署名或对外投稿。
+[中文版](papers/six_dimensional_17_over_4/main.tex) · [English version](papers/six_dimensional_17_over_4_en/main.tex) · [双语完整源码包](papers/six_dimensional_17_over_4_bilingual_sources.zip)。两版均由内置LaTeX编译器核验成功；保留完整项目目录。编译说明与范围见[papers/README.md](papers/README.md)，源文件哈希见[papers/manuscripts.json](papers/manuscripts.json)。此为既有DIM-001的编辑整理，R110当时无新数学Goal、作者署名或对外投稿；R111依用户新请求另开研究Goal。

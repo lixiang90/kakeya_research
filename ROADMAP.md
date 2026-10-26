@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-26，R0110仅完成DIM001双语LaTeX论文整理：中文/English独立项目、具名输入/完整接口证明及参考文献。两版内置编译success，40组展示公式与引用对照一致，无新ID或数学Goal；R109第3出口已complete。文献比较仍截至2026-10-19，未经外部同行评审，一般满维仍open。
+更新2026-10-26，R0111：用户明确授权在既有六维17/4之后新建并运行一般维度Goal（active）。首轮先宏观与一手前沿/旧闭包核查，未取得新数学输入，不新增ID。旧R109完成与R110双语论文保持；新Goal须超出DIM001。唯一后继资格门notes/00_map/R0111_next_new_input_gate.md；完整整合research/reviews/R0111_macro_and_root_integration.md。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -255,3 +255,5 @@ R0109：已有DIM001的有限成果审定通过，未新增proof/ID。成果报�
 
 
 R0110：用户授权双语论文整理。见papers/manuscripts.json、papers/README.md及research/rounds/R0110_bilingual_latex_editorial.md。修正论文种子zeta定义域为0<zeta<1，不变既有DIM001主结论；其余实际proof及失败历史不改。
+
+R0111：新Goal重启，三独立资格稿与root确认全real seed/KT闭包属R81/R85旧指纹；六维17/4封顶与五维启动障碍只作旧机制审计，不算新成果。fresh一手12queries无可采用新primary；官方单源blob未变，88PDF/92sources/78IDs保持。新Goal数学gain停滞1，历史31保留；下一无gain即宏观，通常不晚于R114。当前no qualified new working，禁止数表/6.7重复/泛assembly改名；原ordinary/fullrough/反例三责任仍open。恢复工具默认精简且识别R110，--full保历史。
