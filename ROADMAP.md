@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-26，R0115：完整usual source的time-gap单层数字graft经两独审；强∀grain scalar cap按∃η量词已承担κ1 source排除，未证明任一。fixedγ<=γdust同参，更高γ需降级后调用；非普通Goal等价、非无条件source/Kakeya反例。phase改写与原bulk计数不新。无ordinary/source gain/major；94PDF/98sources/78IDs。提前R116宏观，不续weighted/phase改名；next见notes/00_map/R0115_next_macro_without_local_cap_renaming.md。
+更新2026-10-26，R0116：提前四出口宏观完成；uniform全affine tuple codec固定误差门两独审通过，仅此范围，非actual sparse transfer反例。新Li/Spread-out I/Dahia及talk/ICM一手准入没有给ordinary或完整source新gain。98PDF/103sources/78旧IDs，主gain连续6旧31保持；停止codec/精度参数续轮。下一入口R0116_next_original_input_gate.md，下次宏观不晚R119。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -268,3 +268,6 @@ R0114：root主proof notes/40_multiscale/R0114_whole_cell_discrepancy_and_origin
 
 
 R0115：原T不动、原clock富1/4区间保全部层，macro-separated clock添真实数字dust；η整数子格避免错格、严格ξ Oρ及全部coarse Y/Φ lower逐项付。主稿R0115_fixed_row_full_source_countergate.md两独审，γ降级范围及任意dyadicδ明确。strong∀grain cap与κ1 complete-source排除按存在小η同强，均未获证；不是加权goodgrain反例或ordinary新界。另phase双向/原I floor、容量及p² pairs仅排重。无新ID/major，主gain连续5旧31；提前R116四出口宏观，全部旧冻结不解。
+
+
+R0116：codec主稿actual_direction_construction_gate.md两独审，finite tuples给odd scalar≥1/3、p2 midclock≥(1/2−ζ)/4，noncoordinatewise H经3e给归一误差下界；exact p2 parity与Monna满clock校准均真。sup不反稀疏/average，未造原Euclidean gain。4新PDF含1页摘要、另ICM web-only403记录；Li exact-vs-δ能量反攻、SpreadI真实θ=−uI固定model hyperplane/II依赖及Dahia fixed-density边界已核，不换名开正方向。Goal active，codec常数等冻结；四出口宏观已做，后继先实际原输入准入。

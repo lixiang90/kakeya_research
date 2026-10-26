@@ -1,0 +1,2408 @@
+                                                           THE ENTROPIC SUM-PRODUCT PHENOMENON
+
+                                                                                           RUPERT LI
+
+
+                                                Abstract. Let X, X ′ be independent and identically distributed discrete real-valued random vari-
+                                                ables of finite Shannon entropy, and write H(X) for the Shannon entropy of X. We prove that
+                                                                                                      8
+                                                                       max H(X + X ′ ), H(XX ′ ) ≥ H(X) − O(log H(X)).
+                                                                            
+                                                                                                      7
+                                                This is the entropic analog of the celebrated sum-product phenomenon, and answers a question
+                                                of Goh, which simply asked for a coefficient strictly larger than 1. An example by the author,
+                                                Gavalakis, and Kontoyiannis showed the coefficient cannot exceed 43 . Previous work by Gavalakis,
+                                                Goh, and Kontoyiannis was able to prove a result of a weaker form, which could not translate
+arXiv:2607.29042v1 [cs.IT] 31 Jul 2026
+
+
+
+
+                                                to a coefficient strictly larger than 1 because of examples where the min-entropy is significantly
+                                                smaller than the Shannon entropy. By splitting the distribution of X into uniform pieces, which
+                                                costs O(log H(X)) entropy, we obviate this issue, establishing a coefficient of 109
+                                                                                                                                    . We augment
+                                                this to 87 by adapting the work of Solymosi, which established the combinatorial sum-product
+                                                phenomenon with coefficient 34 by bounding the multiplicative energy, to the entropy setting, again
+                                                via a uniformization technique.
+
+
+
+
+                                                                                      1. Introduction
+                                            Let A ⊂ R be a finite set of real numbers. The sum-product phenomenon of Erdős and Szemerédi
+                                         [8] asserts that A cannot be simultaneously close to an arithmetic progression and to a geometric
+                                         progression, and so cannot have both its sumset A + A = {a1 + a2 : a1 , a2 ∈ A} and its product
+                                         set A · A = {a1 a2 : a1 , a2 ∈ A} of size close to |A|. Formally, in 1983 they proved there exists some
+                                         constant ε > 0 such that
+                                                                           max {|A + A| , |A · A|} ≥ |A|1+ε−o(1) ,
+                                         where o(1) denotes a term that goes to 0 as |A| → ∞. The original result did not provide an
+                                         explicit value for ε and only holds for subsets of the integers, i.e., A ⊂ Z, and there has been much
+                                         subsequent work on proving this result for larger and larger ε. Two milestone results in this field
+                                         were the work of Elekes [7] in 1997, who proved the result for ε = 41 using the Szemerédi–Trotter
+                                         incidence theorem [26, 27], and the work of Solymosi [25] in 2009 who proved the result for ε = 31 ,
+                                         by specifically proving the following theorem.
+                                         Theorem 1.1 ([25, Theorem 2.1]). Let A ⊂ R be a finite set of positive reals. Then
+                                                                                                         |A|4
+                                                                                |A · A| |A + A|2 ≥               .
+                                                                                                      4⌈log |A|⌉
+                                                                                                                                         1
+                                            In 2015, Konyagin and Shkredov [17] slightly improved upon Solymosi’s ε = 13 to ε = 13 + 20598   ,
+                                                                              1   2
+                                         and the current published record is 3 + 1167 by Rudnev and Stevens [22], with subsequent preprints
+                                                                                                        2
+                                         by Bloom [1] and then Cushman [4] improving this to ε = 13 + 951                 10
+                                                                                                           and ε = 13 + 4407 , respectively.
+                                            The trivial upper bound on ε is 1, and Erdős and Szemerédi [8] in fact conjectured that the
+                                         result is true for ε = 1, i.e., that
+                                                                            max {|A + A| , |A · A|} ≥ |A|2−o(1) .
+                                         A recent breakthrough by Bloom, Sawin, Schildkraut, and Zhelezov [2] showed this sum-product
+                                         conjecture is false over R; the conjecture is still open for A ⊂ Z.
+                                                                                                1
+2                                             RUPERT LI
+
+   Throughout, log denotes the base-2 logarithm, and all entropies are in bits. The natural loga-
+rithm will be denoted ln. For a discrete random variable X taking values in a set A, Shannon’s
+Asymptotic Equipartition Property (AEP) lets us heuristically interpret the entropy H(X) as the
+log-cardinality of the “essential support” of X, the probabilistic analog of log |A|. Based on this
+heuristic correspondence, Ruzsa [24] in 2009 and Tao [28] in 2010 began exploring this connection
+between combinatorics and information theory in the context of sumset inequalities. Interestingly,
+they found that if one took a sumset inequality, such as the classical Ruzsa triangle inequality [23]
+                                                 |A − B| |B − C|
+                                     |A − C| ≤                   ,
+                                                       |B|
+and replaced discrete subsets with independent discrete random variables and log-cardinalities
+with entropies, miraculously one would often obtain a legitimate new entropy inequality, such as
+the entropic Ruzsa triangle inequality [24]
+(1.1)                       H(X − Z) ≤ H(X − Y ) + H(Y − Z) − H(Y )
+for independent X, Y , and Z. This correspondence is rich and nontrivial, often with neither the
+combinatorial nor entropy version of these bounds implying each other. We refer interested readers
+to [19] and references therein for a modern overview of this correspondence, including the differential
+entropy setting for continuous random variables.
+   Recently, we have also seen the field of combinatorics use entropy inequalities and results as
+the primary tool in the argument, so this dialogue has been fruitful in both directions. Likely
+the most prominent example of entropy tools being used for sumset results is the recent work of
+Gowers, Green, Manners, and Tao [11, 12], which proves a conjecture of Marton, widely known
+in the literature as the polynomial Freiman–Ruzsa conjecture, first in characteristic 2 and then for
+arbitrary additive groups with bounded torsion.
+   Bringing the sum-product phenomenon into this cardinality-entropy correspondence, Goh [10]
+asked whether an entropic sum-product phenomenon exists.
+Conjecture 1.2 ([10, Conjecture 18]). There is a δ > 0 such that, for every discrete real-valued
+random variable X with independent copy X ′ and finite entropy H(X) < ∞,
+                     max H(X + X ′ ), H(XX ′ ) ≥ (1 + δ − o(1)) H(X),
+                          
+
+where o(1) denotes a term that goes to 0 as H(X) → ∞.
+    Note that if X is uniform on a finite set A, one has
+            H(X) = log |A| ,   H(X + X ′ ) ≤ log |A + A| ,   and H(XX ′ ) ≤ log |A · A| ,
+so an entropic sum-product phenomenon would imply its combinatorial counterpart at ε = δ, and
+so in this case the two statements are logically comparable, with the entropic statement being the
+stronger one.
+   The author, Gavalakis, and Kontoyiannis [19, Example 3] showed that if such a δ exists, it
+must be at most 31 , by considering the example where X = 0 with probability 13 and        otherwise
+                                                                                         1
+is uniformly distributed in {1, 2, . . . , n}. Thus, the
+                                                      1 optimal  (maximal) δ lies in 0, 3 , while the
+                                                           10
+                                                                 
+optimal ε from the combinatorial setting lies in 3 + 4407 , 1 , and the two are thus provably not
+equal.
+   The first quantitative results towards Conjecture 1.2 are due to Gavalakis, Goh, and Kontoyiannis
+[9], though the conjecture remained open, i.e., they could not establish any δ > 0. Here the min-
+entropy is denoted H∞ (X) = − log maxx P(X = x). The first result is for random variables over
+an arbitrary field F .
+                             THE ENTROPIC SUM-PRODUCT PHENOMENON                                        3
+
+Theorem 1.3 ([9, Theorem 1.3]). There exist absolute constants K1 and K2 such that the following
+holds. Let X be a finitely supported random variable taking values in a field F , and let X ′ be an
+independent copy of X. If F has characteristic p > 0, assume further that H∞ (X) ≤ 32 log p − K1 .
+Then
+                                                     4H(X) + 3H∞ (X)
+                    max H(X + X ′ ), H(XX ′ ) ≥
+                         
+                                                                         − K2 .
+                                                              6
+   The second result specializes to real-valued random variables, with a slightly larger “δ” value of
+1
+5 instead of 16 .
+Theorem 1.4 ([9, Theorem 1.4]). There exists an absolute constant K3 such that the following
+holds. If X is a finitely supported real-valued random variable with P(X = 0) = 0, and X ′ is an
+independent copy of X, then
+                                                4H(X) + 2H∞ (X)
+               max H(X + X ′ ), H(XX ′ ) ≥
+                    
+                                                                  − K3 log H∞ (X).
+                                                       5
+   Both bounds involve the min-entropy. Since H∞ (X) may be O(1) while H(X) is arbitrarily large
+(a single atom of constant mass suffices, so the δ ≤ 31 example possesses this property), neither
+implies Conjecture 1.2.
+   Our main theorem answers Conjecture 1.2 affirmatively with the explicit constant δ = 17 .
+Theorem 1.5 (Entropic sum-product phenomenon). Let X, X ′ be independent and identically dis-
+tributed, discrete, real-valued random variables with finite entropy H(X) < ∞. There are absolute
+constants c1 , c2 and H0 such that, if H(X) ≥ H0 , then
+                                               8                            1
+                max H(X + X ′ ), H(XX ′ ) ≥ H(X) − c1 log H(X) − c2 − log CR ,
+                    
+(1.2)
+                                               7                            2
+where CR ≥ 1 is the absolute constant of the point-plane incidence bound in Definition 2.4. In
+particular,
+                                                                     
+                                      ′         ′            1
+(1.3)                   max H(X + X ), H(XX ) ≥ 1 + − o(1) H(X).
+                                                              7
+   As noted in Remark 7.7, some of our arguments continue to hold for discrete random variables
+over an arbitrary field of characteristic 0, and in particular for such fields, (1.3) holds with δ = 19
+instead of δ = 71 . In Remark 7.7 we also discuss what must be changed to address fields of positive
+characteristic, and we believe that our framework should allow for some result of the form (1.3) to
+hold for such fields (likely requiring p being sufficiently large), perhaps with a worse δ < 91 .
+   Theorem 1.5 is proved in two stages. The body of the paper treats finitely supported X, the
+theorem being restated and proved in that case as Theorem 7.3, where one may take H0 = 5,
+c1 = 18 and c2 = 63; the general discrete case immediately follows from it by the simple truncation
+argument of Lemma 7.5, and holds with H0 = 6, c1 = 18 and c2 = 65, restated as Corollary 7.6.
+   The main technical steps are the following two results, which we call linear entropic Elekes–Ruzsa
+theorems as explained below, and which we believe will be of independent interest. Write X        e for a
+discrete real-valued random variable with P(X = 0) = 0; we call such a law zero-free.
+                                                e
+
+Theorem 1.6 (Small-doubling linear entropic Elekes–Ruzsa). Let X      e be zero-free with entropy
+  e ∈ [5, ∞), let X
+H(X)                ′
+                  e be an independent copy of X,e and define
+                              H(Xe +X e ′)              H(X  eXe ′)
+                          u
+                          e=               − 1,    e =
+                                                   m                .
+                                 H(X)
+                                    e                     H(X)e
+Then
+                                                                 18 log x + 68
+                                  u − ϑ(H(X)),
+                         e ≥ 2 − 6e
+                         m                e             ϑ(x) =                 .
+                                                                       x
+4                                             RUPERT LI
+
+Theorem 1.7 (Large-doubling linear entropic Elekes–Ruzsa). With the same assumptions and
+notation as Theorem 1.6,
+                                                        3
+                      5 3                                 log(1 + x) + KR + 5
+                   e ≥
+                   m    − u  e − ϑ(H(X)),
+                                      e         ϑ(x) = 4                      ,
+                      4 4                                          x
+where KR ≥ 2 is an absolute constant defined in Definition 2.4.
+   We refer to the former result as small-doubling and the latter as large-doubling because the
+former yields a better bound for u   e ≤ 71 while the latter yields a better bound for ue ≥ 71 . Note
+that as H(X) e → ∞, either of these two results already proves that max {e         e ≥ 78 − o(1), i.e.,
+                                                                            u + 1, m}
+already proves the entropic sum-product phenomenon for δ = 17 as in Theorem 1.5, for zero-free
+laws. Unfortunately, as discussed in Section 7, reincorporating the possibility of an atom at zero
+has a significant detrimental effect on δ, and it is in fact the combination of these two results that
+miraculously yields δ = 71 for general laws, i.e., Theorem 1.5; for example, only using Theorem 1.7
+will yield δ = 19 after reincorporating zeros (see Remark 7.4).
+   For finitely supported X, e Theorem 1.6 is restated and proved as Corollary 4.14, where ϑ(x) =
+18 log x+57
+      x     for x ≥ 4, and then by the truncation argument of Lemma 7.5 extended to the general
+case. Similarly, the finite support version of Theorem 1.7 is proved as Proposition 6.7, and then
+extended to the general case by Lemma 7.5.
+   The name refers to the following theorem of Elekes and Ruzsa [6], the combinatorial statement
+of the same shape: “few sums force many products.”
+Theorem 1.8 ([6]; see also [7]). There is an absolute constant c > 0 such that, for every finite
+A ⊂ R with |A + A| ≤ K |A|,
+                                                      c |A|2
+                                        |A · A| ≥               .
+                                                    K 4 log |A|
+Remark 1.9. Theorem 1.6 is the entropic analog, but crucially linear in the relative additive doubling
+e. The existing literature from additive combinatorics, i.e., Freiman-type inverse sumset theory
+u
+which studies the structure of A given |A + A| ≤ K |A|, considers K as a constant, which translates
+to an additive constant in the entropic setting, rather than a multiplicative constant, which we need
+to prove δ > 0. The quantitative dependence on K makes these results unsuitable for our setting.
+An entropic result of this few-sums-many-products form was previously proven in [9, Theorem 1.6],
+but it is of this Freiman-type additive constant form, assuming H(X + X ′ ) ≤ H(X) + C and that
+H(X) is sufficiently large, depending on C.
+   Much of our analysis was inspired by Solymosi’s result, Theorem 1.1, establishing the combina-
+torial result for ε = 13 . We were not able to prove the entropic analog of Theorem 1.1, which would
+immediately imply Conjecture 1.2 for δ = 13 , and would be tight by [19, Example 3] showing δ ≤ 13 .
+We conjecture that this entropic analog is true, and thus that the optimal δ is 13 .
+Conjecture 1.10. Let X, X ′ be independent and identically distributed, discrete, real-valued ran-
+dom variables with finite entropy H(X) < ∞. Then
+(1.4)                       2H(X + X ′ ) + H(XX ′ ) ≥ (4 − o(1))H(X),
+where o(1) denotes a term that goes to 0 as H(X) → ∞.
+   Remark 8.1 reduces Conjecture 1.10 to the case of X being zero-free. Section 8 further discusses
+this conjecture and records two further problems that would each improve δ for the entropic sum-
+product phenomenon.
+                            THE ENTROPIC SUM-PRODUCT PHENOMENON                                      5
+
+1.1. Proof summary and section overview. Gavalakis, Goh, and Kontoyiannis [9] apply a
+uniformization lemma of Vadhan [29] to split their distribution into a mixture of uniform distribu-
+tions, the granularity of which is limited by the min-entropy. Then they use a point-plane incidence
+bound of Rudnev [21] to prove lower bounds on H(A(B +C)), where A, B, and C are these uniform
+distributions. Combined with upper bounds by Máthé and O’Regan [20] on H(X(Y + Z)) in terms
+of the sum and product entropies, they are able to establish their sum-product results.
+   By first applying a dyadic decomposition to our random variable, which partitions its support
+into rough level sets of the probability mass function, and then applying the uniformization lemma,
+we avoid this limitation of the min-entropy, at a cost of O(log H(X)), which is negligible for the
+purposes of the sum-product phenomenon. This causes our analogous A, B, and C to potentially
+have very different sizes, something the original lower bound on H(A(B + C)) is unable to handle,
+so we must generalize their arguments. The previously stated upper bounds are actually incorrect,
+though the main results of Gavalakis, Goh, and Kontoyiannis [9] are salvageable (see Remark 6.3),
+so we also have to establish new, corrected upper bounds. This adaptation by itself is able to prove
+the case δ = 91 via establishing Theorem 1.7.
+   In the hopes of improving this all the way to the tight δ = 13 , which was proven in the combinato-
+rial setting by Solymosi [25], we studied their combinatorial argument bounding the multiplicative
+energy by sumset cardinalities. While we were unsuccessful in fully transferring the argument to
+the entropic setting, this did enable us to prove Theorem 1.6, our small-doubling linear entropic
+Elekes–Ruzsa theorem. This protects against the weakness of Theorem 1.7 at small doublings,
+improving δ to 71 .
+   The dyadic uniformization technique is used in both parts of the argument, i.e., both small-
+doubling and large-doubling, and to do so we need the finite support assumption. Fixing this costs
+essentially nothing at the level of our main theorems, as truncating our random variables to some
+large but finite support has negligible impact on their entropies, and we handle this at the end of
+our paper.
+   Section 2 introduces basic entropy properties and notation, states the point-plane incidence
+bound, and establishes our combined uniformization technique. Section 3 establishes the entropic
+analog of Solymosi’s [25] bound in the clean case of near-uniform distributions, which Section 4
+uses to obtain the small-doubling linear entropic Elekes–Ruzsa theorem by tracking all of the (pairs
+of) pieces from the uniformization technique. Section 5 proves the lower bounds on H(A(B + C))
+via the incidence argument, while Section 6 proves the upper bounds and combines the two to yield
+our large-doubling linear entropic Elekes–Ruzsa theorem. Section 7 combines these two results,
+reintroduces the atom at zero, and removes the finite support hypothesis to prove Theorem 1.5.
+Section 8 discusses Conjecture 1.10 and poses some avenues for further research towards improving
+δ = 71 .
+
+
+                                         2. Preliminaries
+2.1. Entropy. We refer readers to [3] for an overview of entropy and information theory, but
+provide a brief self-contained introduction here. Throughout the paper, all random variables are
+discrete. For a discrete X with mass function p we write
+                 X                                                               X
+     H(X) = −        p(x) log p(x),   H∞ (X) = − log max p(x),    H2 (X) = − log     p(x)2 ,
+                                                         x
+                 x                                                                      x
+
+where H2 (X) = − log P(X = X ′ ) for X ′ an independent copy of X. It is straightforward to see and
+well-known that
+                                    H∞ (X) ≤ H2 (X) ≤ H(X),
+6                                                 RUPERT LI
+
+with equality throughout when X is uniform on a finite set. We write
+                                  h(θ) = −θ log θ − (1 − θ) log(1 − θ)
+for the binary entropy function, with 0 log 0 := 0, so 0 ≤ h ≤ 1 for θ ∈ [0, 1]. For finite nonempty
+S, let US denote the uniform random variable on S, and for P(E) > 0 we write H(X | E) for
+the entropy of X under P(· | E). For jointly distributed discrete random variables X and Y , the
+conditional entropy H(X|Y ) is given by
+                                          X
+                              H(X|Y ) =        P(Y = y)H(X|Y = y).
+                                              y
+
+  Henceforth let X be real-valued, X ′ be an independent copy, and for brevity of notation let
+H = H(X). When P(X = 0) < 1 we write X   e for the zero-free random variable whose law is that of
+X conditioned on {X ̸= 0}. Similarly denote H
+                                            e = H(X).e The four ratios that organize the whole
+argument are
+            H(X + X ′ )                 H(XX ′ )                e +X
+                                                              H(X   e ′)                H(X
+                                                                                          eXe ′)
+       u=               − 1,       m=            ,       e=
+                                                         u               − 1,     e =
+                                                                                  m              ,
+               H                          H                      He                       H
+                                                                                          e
+where X ′ is an independent copy of X, and X e ′ is an independent copy of X,
+                                                                           e and these ratios are
+defined whenever the entropy in the denominator is positive. For a finite subset P of an abelian
+group we write
+                                 g(P ) = 2 log |P | − log |P + P |
+for its doubling defect, which in some sense quantifies the number of additive collisions in P , i.e., is
+large when |P + P | is small.
+   We collect the following standard entropy facts.
+Lemma 2.1 (Elementary entropy facts). Let W, T, R, S be discrete random variables with finite
+entropies.
+    (E1) (Conditioning reduces entropy.)
+                                                     X
+                            H(W ) ≥ H(W | T ) =          P(T = t)H(W | T = t),
+                                                     t
+
+         so the mutual information
+                                  I(W ; T ) := H(W ) − H(W | T ) ≥ 0.
+    (E2) (Chain rule.)
+                                     H(W, T ) = H(T ) + H(W | T ).
+         In particular, if T = f (W ) for some function f then
+                                                         X
+                  H(W ) = H(T ) + H(W | T ) = H(T ) +        P(T = t)H(W | T = t).
+                                                              t
+
+    (E3) (Data processing and subadditivity.)
+                                        I(f (R); g(S)) ≤ I(R; S)
+         for all functions f, g; consequently H(f (W )) ≤ H(W ) and
+                         H(W, T ) = H(W ) + H(T ) − I(W ; T ) ≤ H(W ) + H(T ).
+    (E4) (Support bound.) H(W ) ≤ log |supp W |, and H(W ) ≥ H2 (W ) ≥ H∞ (W ).
+                             THE ENTROPIC SUM-PRODUCT PHENOMENON                                       7
+
+  (E5) (Monotonicity under independent sums.) If W, T are independent and take values in an
+       abelian group, then
+                              H(W + T ) ≥ max{H(W ), H(T )};
+        and if W, W ′ are i.i.d., then
+                                    H(W W ′ ) ≥ P(W ′ ̸= 0) H(W ).
+ (E5′ ) H(X + X ′ ) ≤ H(X, X ′ ) = 2H, so that u ∈ [0, 1] whenever H > 0; likewise u       e ∈ [0, 1]
+        whenever H > 0.
+                   e
+  (E6) (Gibbs’ inequality.) Let ν be a sub-probability measure on the range of W (that is, a measure
+        with total measure at most 1) with ν(w) > 0 for all w ∈ supp W . Then
+                                              
+                                           1          X
+                        H(W ) ≤ E log            =−      P(W = w) log ν(w).
+                                         ν(W )         w
+
+  (E7) (Maximum entropy of the geometric law.) If W takes values in Z≥0 and E[W ] = µ < ∞
+       then
+                 H(W ) ≤ f (µ) := (1 + µ) log(1 + µ) − µ log µ ≤ log(1 + µ) + log e,
+        and f is nondecreasing on [0, ∞).
+Proof. (E1)–(E6) are standard, except for possibly the second part of (E5); see [3]. For the second
+part of (E5),
+                                          X
+             H(W W ′ ) ≥ H(W W ′ |W ′ ) =   P(W ′ = w′ )H(w′ W ) = P(W ′ ̸= 0)H(W ).
+                                            w′
+                   µ
+For (E7), let θ = 1+µ ∈ [0, 1) and let ν be the geometric law ν(n) = (1 − θ)θn on Z≥0 , whose mean
+    1
+is 1−θ − 1 = µ. It is positive everywhere on Z≥0 , so (E6) applies and gives
+                                                             1+µ
+H(W ) ≤ − log(1 − θ) − E[W ] log θ = log(1 + µ) + µ log          = (1 + µ) log(1 + µ) − µ log µ = f (µ).
+                                                              µ
+Moreover                                                    
+                                      1                      1
+                            µ log 1 +     = µ log e · ln 1 +     ≤ log e
+                                      µ                      µ
+by ln(1 + x) ≤ x, so
+                                         f (µ) ≤ log(1 + µ) + log e;
+and                                                             
+                                          ′                1+µ
+                                         f (µ) = log                 > 0,
+                                                            µ
+so f is increasing.                                                                                   ■
+  Recall the entropic Ruzsa triangle inequality, (1.1), which implies
+(2.1)                       H(X  e ′ ) ≤ 2H(X
+                              e −X             e ′) − H
+                                            e +X                u)H.
+                                                      e = (1 + 2e e
+
+  Lastly, the following result, referred to as functional submodularity, is classical.
+Lemma 2.2 (Functional submodularity; see, e.g., [28]). Let R, S, W, T be jointly distributed discrete
+random variables with finite entropies, and suppose that W = f (R) = g(S) almost surely and
+T = φ(R, S) almost surely, for some functions f, g, φ. Then
+                                   H(W ) + H(T ) ≤ H(R) + H(S).
+8                                               RUPERT LI
+
+2.2. Rudnev’s incidence bound. The proofs for the combinatorial sum-product phenomenon
+often rely on incidence bounds, so it comes as no surprise that we find them helpful for the entropic
+analog. For an arbitrary field F , let P be a set of points and let Q be a set of planes in F 3 ; we
+write
+                                I(P, Q) = #{(x, ℓ) ∈ P × Q : x ∈ ℓ}
+for the number of incidences. The following result, originally due to Kollár [16], is the prime-
+field analog of Rudnev’s [21] point-plane incidence bound; the version quoted here is a slight
+strengthening by de Zeeuw [5], to which we refer for a quick proof. This is the same result used
+by Gavalakis, Goh, and Kontoyiannis [9, Lemma 3.1], which is how we became aware of the result.
+For the classical Euclidean antecedents see [26, 27]; for the current state of the art, and the natural
+place to look for an explicit constant, see [22]. Here, the notation X ≪ Y means there exists some
+absolute constant C > 0 such that X ≤ CY .
+Theorem 2.3 ([5, Theorem 4.1]). Let F be a field of characteristic p, let P be a set of points in
+F 3 and let Q be a set of planes in F 3 . Suppose that
+     (i) |P | ≤ |Q|;
+    (ii) either p = 0, or |P | ≪ p2 ; and
+   (iii) no line of F 3 contains k points of P and is contained in ℓ planes of Q.
+Then
+(2.2)                           I(P, Q) ≪ |P |1/2 |Q| + ℓ |P | + k |Q| .
+   This formulation, where hypothesis (iii) is only violated by a line simultaneously meeting P
+many times and contained in many planes of Q (the latter condition not being present in Rudnev’s
+original result), will be useful for us in Section 5.
+Definition 2.4. We let CR ≥ 1 denote the absolute constant implied by the symbol ≪ in (2.2);
+that is, under the hypotheses of Theorem 2.3,
+                                                                    
+                            I(P, Q) ≤ CR |P |1/2 |Q| + ℓ |P | + k |Q| .
+Throughout this paper F = R, so that hypothesis (ii) of Theorem 2.3 is vacuous. We set
+                                          KR = 2 + log CR .
+  No explicit admissible value of CR appears in the literature, so KR is the only unpinned absolute
+constant in this paper.
+2.3. A uniformization lemma. The following result shows that a law with min-entropy at least
+m is an exact convex combination of uniform laws on sets of size 2m . This was also used by
+Gavalakis, Goh, and Kontoyiannis [9, Lemma 3.4], which is how we became aware of this result.
+Lemma 2.5 ([29, Lemma 6.10]). Let W be a random variable with finite support A and H∞ (W ) ≥
+m, where M = 2mPis a positive integer, though m need not be. Then there exist s ∈ N, reals
+p1 , . . . , ps ≥ 0 with si=1 pi = 1, and sets A1 , . . . , As ⊆ A with |Ai | = M for every i, such that
+                                        s
+                                        X
+                          P(W = a) =          pi P(UAi = a)    for all a ∈ A.
+                                        i=1
+   The following lemma, while elementary albeit somewhat nonstandard, is crucial in enabling us
+to use Shannon entropy in place of min-entropy in the work of Gavalakis, Goh, and Kontoyiannis
+[9]. It cuts an arbitrary finitely supported random variable X into flat, i.e., roughly uniform, pieces
+via dyadic intervals at a total cost of O(log H(X)) bits. It bears similarity to (prefix-free) source
+coding (see [3] for an overview), e.g., J is roughly analogous to the optimal code length. The idea
+behind this lemma is certainly not new, and we do not claim originality of it; see, e.g., [18].
+                             THE ENTROPIC SUM-PRODUCT PHENOMENON                                   9
+
+Lemma 2.6. Let X be finitely supported with mass function p and entropy H(X) > 0. For j ≥ 0
+define
+                                   Aj = {x : 2−j−1 < p(x) ≤ 2−j },
+let J be the random index such that X ∈ AJ , and let Xj = Law(X | J = j) with mass function pj ,
+for every j with P(J = j) > 0. Then:
+    (a) the sets Aj partition supp X and |Aj | < 2j+1 ; moreover, for every j with P(J = j) > 0 one
+        has max pj < 2 min pj on Aj , hence
+            1                2
+                 ≤ pj (x) ≤       for all x ∈ Aj ,  and      H∞ (X | J = j) > log |Aj | − 1;
+         2 |Aj |            |Aj |
+   (b) E[J] ≤ H(X) and H(J) ≤ log(1 + H(X)) + log e;
+   (c)                              X
+                     H(X) − H(J) ≤     P(J = j) log |Aj | ≤ H(X) + 1;
+                                            j
+            ̸ D ⊆ Aj then the conditional mass function pD := pj /pj (D) on D satisfies
+   (d) if ∅ =
+                                     max pD < 2 min pD ≤ 2/|D| ;
+   (e) (sign refinement) assume in addition that P(X = 0) = 0, and refine each Aj according to
+       the sign of its elements, so that
+                                   A(j,σ) := {x ∈ Aj : sgn(x) = σ}
+       for σ ∈ {+, −}. Write {Ai }i∈I , I ⊆ Z≥0 × {+, −}, for the resulting partition into sign-pure
+       sets, and let I be the index with X ∈ AI , with Xi = Law(X | I = i). Then (a), (c) and (d)
+       hold verbatim for {Ai }i∈I in place of {Aj }j≥0 , and
+                                  H(I) ≤ log(1 + H(X)) + log e + 1.
+Proof. (a) Clearly the Aj partition supp X, and as p(x) > 2−j−1 for any x ∈ Aj , we immediately
+haveP|Aj | < 2j+1 . Fix j with P(J = j) > 0. The definition of Aj ensures max pj < 2 min pj on Aj .
+As x∈Aj pj (x) = 1 gives min pj ≤ |A1j | ≤ max pj , we have
+                                            2                            1             1
+            pj (x) ≤ max pj < 2 min pj ≤         ,   pj (x) ≥ min pj >     max pj ≥         .
+                                           |Aj |                         2          2 |Aj |
+The first chain gives
+                                                              2
+                    H∞ (X | J = j) = − log max pj > − log          = log |Aj | − 1.
+                                                             |Aj |
+  (b) Pointwise,                                 
+                                               1
+                                J(x) = log          ≤ − log p(x),
+                                             p(x)
+so E[J] ≤ H(X); as J takes values in Z≥0 , (E7) from Lemma 2.1 gives
+                        H(J) ≤ f (E[J]) ≤ f (H(X)) ≤ log(1 + H(X)) + log e.
+  (c) As J is a function of X, by the chain rule and the support bound,
+                                                             X
+               H(X) = H(X, J) = H(J) + H(X|J) ≤ H(J) +           P(J = j) log |Aj | ;
+                                                                   j
+
+for the upper bound, |Aj | < 2j+1 gives
+                            X
+                                 P(J = j) log |Aj | ≤ E[J] + 1 ≤ H(X) + 1
+                             j
+10                                                  RUPERT LI
+
+by (b).
+  (d) This follows from the same argument as in (a).
+  (e) The proofs of (a) and (d) apply verbatim. For (c), the proof of the lower bound applies
+verbatim, and for the upper bound, as log |Ai | ≤ j(i) + 1 where j(i) is the dyadic index such that
+Ai ⊆ Aj(i) , analogous to before we have
+                 X                           X
+                    P(I = i) log |Ai | ≤ 1 +   P(I = i)j(i) = E[J] + 1 ≤ H(X) + 1.
+                    i                           i
+As I is a function of (J, sgn(X)), by (b) we have
+                        H(I) ≤ H(J) + H(sgn(X)) ≤ log(1 + H(X)) + log e + 1.                       ■
+     We concatenate Lemma 2.6 and Lemma 2.5 into the following result.
+Lemma 2.7. Let X be finitely supported with H = H(X) > 0. Then we can augment our probability
+space to include a random variable L taking values ℓ in a finite set, together with sets Gℓ ⊆ supp X
+and integers nℓ ≥ 0, such that:
+   (1) |Gℓ |= 2nℓ ;
+   (2) X|L = ℓ ∼ Unif(Gℓ );
+   (3) H(X|L) = E[nL ] ≥ H − ∆(H), where ∆(H) = log(1 + H) + log e + 2.
+  When we say we can augment our probability space, we simply mean that L is not necessarily
+X-measurable; X still retains its original distribution.
+Proof. Let Aj , J, wj = P(J = j), aj = log |Aj | be the unrefined dyadic layer data of Lemma 2.6
+for X, and let                          (
+                                         ⌊aj ⌋ − 1, |Aj | ≥ 2,
+                                  nj =
+                                         0,           |Aj | = 1.
+Then nj ∈ Z≥0 and 2nj is a positive integer with 2nj ≤ |Aj |. For |Aj | ≥ 2, Lemma 2.6(a) gives
+                                H∞ (X | J = j) > aj − 1 ≥ ⌊aj ⌋ − 1 = nj ;
+for |Aj | = 1, we have H∞ (X | J = j) = 0 = nj . So Lemma 2.5, applied to Law(X | J = j), which is
+supported in Aj , with parameter nj , yields weights pj,i ≥ 0 summing to 1 and sets Gj,i ⊆ Aj with
+|Gj,i |= 2nj whose pj,i -weighted mixture of uniforms on Gj,i is Law(X | J = j). Let L = (J, I) take
+value (j, i) accordingly, where one can consider selecting J = j with probability wj , then selecting
+I = i conditioned on J = j with probability pj,i , and then sampling X uniformly from Gj,i . Then
+the notation nL from the lemma statement corresponds to nJ , and (1) and (2) are immediate.
+   For (3), note that nj > aj − 2 in both cases. Hence, by (b) and (c) from Lemma 2.6,
+              X
+     E[nL ] =     wj nj > E[aJ ] − 2 ≥ H − H(J) − 2 ≥ H − log(1 + H) − log e − 2 = H − ∆(H). ■
+                j
+
+                              3. An asymmetric Solymosi inequality
+     For finite sets A, B ⊂ R \ {0} we define their multiplicative cross-energy
+(3.1)                   E× (A, B) = #{(a, b, a′ , b′ ) ∈ A × B × A × B : ab = a′ b′ }.
+This section records Solymosi’s [25] sector-decomposition bound
+                             E× (A, B) ≪ log min {|A| , |B|} |A + A| |B + B|
+with explicit constants and assuming A, rather than both A and B, is constrained to be of a single
+sign, i.e., sign-pure.
+                                 THE ENTROPIC SUM-PRODUCT PHENOMENON                                 11
+
+   This energy bound is essentially known, and we claim no novelty for it. It appears, without ef-
+fective constants, as [17, Theorem 6], which holds without any sign constraints on A. We reproduce
+a proof, following Solymosi [25], to provide explicit constants.
+Theorem 3.1 (see [17, Theorem 6]). Let A ⊂ R>0 and B ⊂ R \ {0} be finite and nonempty, and
+let
+                           L× (A, B) = ⌊log min {|A| , |B|}⌋ + 1.
+Then
+(3.2)                                E× (A, B) ≤ 8L× (A, B) |A + A| |B + B| .
+Consequently, since all relevant cardinalities are unchanged when A is replaced by −A, the bound
+(3.2) holds whenever A is finite, nonempty and sign-pure and B is finite, nonempty and zero-free.
+Proof. We follow Solymosi [25], tracking the constants. For s ̸= 0, let
+                             ns = A ∩ s−1 B = # {(a, b) ∈ A × B : b = sa}
+be the number of points of the grid A × B on the ray {y = sx, x > 0}. Since 0 ∈    / B and every
+element of A is strictly positive, each (a, b) ∈ A ×PB lies on exactly one such ray, that of slope
+s = ab ̸= 0, where s may be negative. Consequently s ns = |A| |B| and
+                                                              b′
+                                                                
+                    X
+                        2              ′ ′            2   b
+                       ns = # (a, b, a , b ) ∈ (A × B) :    = ′ = E× (A, B).
+                     s
+                                                          a   a
+Let N0 = min {|A| , |B|}, so that ns ≤ N0 for every s and L× (A, B) = ⌊log N0 ⌋ + 1. Define the
+dyadic classes
+                      Aj = {s : 2j ≤ ns < 2j+1 },    j = 0, 1, . . . , ⌊log N0 ⌋,
+which partition the s with ns ≥ 1, so as there are L× (A, B) possible values for j, there exists j
+with
+                                      X         E× (A, B)
+                                          n2s ≥           .
+                                                L× (A, B)
+                                                 s∈Aj
+Fix such a j, enumerate Aj = {s1 < s2 < · · · < sk }, and set
+                            Πℓ = (A × B) ∩ {(x, y) : y = sℓ x},              1 ≤ ℓ ≤ k,
+so that 2j ≤ |Πℓ | = nsℓ < 2j+1 for every ℓ. Then
+                                          X
+                   E× (A, B) ≤ L× (A, B)      n2s < L× (A, B) k 22j+2 = 4L× k 22j ,
+                                                   s∈Aj
+
+so it suffices to prove
+(3.3)                                         k 22j ≤ 2 |A + A| |B + B| .
+   For each 1 ≤ ℓ ≤ k − 1, note that the addition map Πℓ × Πℓ+1 → R2 given by (p, q) 7→ p + q is
+injective as sℓ < sℓ+1 . Therefore
+(3.4)                                      |Πℓ + Πℓ+1 | = |Πℓ | |Πℓ+1 | ≥ 22j .
+Similarly, as A ⊂ R>0 , the slopes of the points in Πℓ + Πℓ+1 are all in (sℓ , sℓ+1 ), so the Πℓ + Πℓ+1
+for 1 ≤ ℓ ≤ k − 1 are pairwise disjoint. Finally, Πℓ + Πℓ+1 ⊆ (A + A) × (B + B), so disjointness
+and (3.4) give
+                                     k−1
+                                     X                      k−1
+                                                            [
+                            2j
+                 (k − 1)2        ≤         |Πℓ + Πℓ+1 | =         Πℓ + Πℓ+1 ≤ |A + A| |B + B| .
+                                     ℓ=1                    ℓ=1
+12                                                       RUPERT LI
+
+If k ≥ 2 then k ≤ 2(k − 1) and (3.3) follows. If k = 1 then 2j ≤ |Π1 | = ns1 ≤ N0 , so
+                           k22j = 22j ≤ |Π1 |2 ≤ N02 ≤ |A| |B| ≤ |A + A| |B + B|
+and (3.3) holds again.                                                                                  ■
+   We now convert Theorem 3.1 into a lower bound on the entropy of a product, in terms of the
+doubling defects g(Pr ) = 2 log |Pr | − log |Pr + Pr | of the pieces Pr of the sign-refined dyadic layers
+of Lemma 2.6. We state the following result in slightly larger generality.
+Proposition 3.2. Let X    e be zero-free and finitely supported, and let {Pr }r be any partition of
+supp Xe into sign-pure parts whose conditional mass functions satisfy
+                           2
+(3.5)           pPr (x) ≤           for all x ∈ Pr ,     where pPr = Law(X  e |X e ∈ Pr ).
+                          |Pr |
+Then, with g(P ) = 2 log |P | − log |P + P | and X e ′ an independent copy of X,e
+                                                                                        !!
+                          X                                X
+(3.6)     H(X eX e ′) ≥ 2   P(X e ∈ Pr ) g(Pr ) − log 8          e ∈ Pr ) log |Pr | + 1
+                                                               P(X                         − 4.
+                            r                                         r
+
+Proof. Let R, R′ be the part labels of X,
+                                        e X  e ′ , e.g., X
+                                                         e ∈ PR . Write Vr = Law(X   e | R = r), with mass
+                                           ′
+function pPr supported on Pr , and let Vt be an independent copy of Vt . Then
+                    H(X eXe ′ ) ≥ H(X
+                                    eX e ′ | R, R′ )
+                                  X
+                                =   P(R = r)P(R′ = t)H(X        eXe ′ | R = r, R′ = t)
+                                       r,t
+                                      X
+                                  =          P(R = r)P(R′ = t)H(Vr Vt′ )
+                                       r,t
+                                      X
+(3.7)                             ≥          P(R = r)P(R′ = t)H2 (Vr Vt′ ).
+                                       r,t
+
+To bound H2 (Vr Vt′ ), fix r, t and let
+                           n× (z) = #{(x, y) ∈ Pr × Pt : xy = z}                   for z ∈ R.
+By (3.5) on both factors,
+                                                 X                                 4
+                       P(Vr Vt′ = z) =                      pPr (x)pPt (y) ≤               n× (z),
+                                                                               |Pr | |Pt |
+                                             (x,y)∈Pr ×Pt
+                                                 xy=z
+                                    2 = E (P , P ) by (3.1),
+                       P
+and therefore, since     z n× (z)        × r    t
+                                X                                 16
+                                      P(Vr Vt′ = z)2 ≤                      E× (Pr , Pt ),
+                                 z                           (|Pr | |Pt |)2
+that is,
+                         H2 (Vr Vt′ ) = − log P(Vr Vt′ = Vr′ Vt )
+                                                                           !
+                                                    X
+                                      = − log             P(Vr Vt′ = z)2
+                                                     z
+(3.8)                                 ≥ 2 log |Pr | + 2 log |Pt | − log E× (Pr , Pt ) − 4.
+     By hypothesis, the parts are sign-pure and so 0 ∈
+                                                     / Pt . Then Theorem 3.1 yields
+                   log E× (Pr , Pt ) ≤ log (8L× (Pr , Pt )) + log |Pr + Pr | + log |Pt + Pt | ,
+                                  THE ENTROPIC SUM-PRODUCT PHENOMENON                                           13
+
+where
+                                      L× (Pr , Pt ) = ⌊log min {|Pr | , |Pt |}⌋ + 1.
+Substituting this into (3.8) and recalling the definition of g,
+                             H2 (Vr Vt′ ) ≥ g(Pr ) + g(Pt ) − log (8L× (Pr , Pt )) − 4.
+Returning to (3.7), this implies
+                  X                   X                   X
+H(XeXe ′ ) ≥ −4 +    P(R = r)g(Pr ) +   P(R′ = t)g(Pt ) −   P(R = r)P(R′ = t) log(8L× (Pr , Pt ))
+                    r                            t                              r,t
+                    X                            X
+(3.9)    = −4 + 2           P(R = r)g(Pr ) −                   P(R = r)P(R′ = t) log(8L× (Pr , Pt )).
+                        r                            r,t
+
+To bound the double sum,
+                                                                                  1
+                L× (Pr , Pt ) ≤ 1 + min {log |Pr | , log |Pt |} ≤ 1 +               (log |Pr | + log |Pt |) ,
+                                                                                  2
+so that by Jensen’s inequality,
+                  X
+                      P(R = r)P(R′ = t) log (8L× (Pr , Pt ))
+                    r,t
+                                                                           !
+                                  X                      1 ′     1
+                    ≤ log      P(R = r)P(R = t) 8 1 + log |Pr | + log |Pt |
+                           r,t
+                                                         2       2
+                                                        !!
+                                  X
+                    = log 8 1 +      P(R = r) log |Pr |    .
+                                           r
+
+Substituting this into (3.9) yields (3.6).                                                                      ■
+  The same argument bounds the entropy of a quotient, which will also be needed in Section 4.
+Proposition 3.3. Under the same assumptions and notation as Proposition 3.2,
+                                                                               !!
+                    X                              X
+               ′
+              e)≥2         e ∈ Pr ) g(Pr ) − log 8      e ∈ Pr ) log |Pr | + 1
+        H(X/
+           e X          P(X                          P(X                          − 4.
+                              r                                             r
+
+                                       e ′ ̸= 0. Fix parts Pr , Pt and, for z ̸= 0, similar to before let
+Proof. The quotient is well-defined as X
+                                      n(z) = #{(x, y) ∈ Pr × Pt : x/y = z}.
+Then the proof proceeds identically with n(z) in place of n× (z), where in particular
+                                                x′
+                                                  
+ X
+                      ′ ′                  x
+        2                               2
+    n(z) = # (x, y, x , y ) ∈ (Pr × Pt ) :   = ′ = #{(x, y, x′ , y ′ ) : xy ′ = x′ y} = E× (Pr , Pt ).
+ z
+                                           y    y
+                                                                                                     ■
+
+                4. Small-doubling linear entropic Elekes–Ruzsa theorem
+   In this section we prove the finite-support special case of Theorem 1.6 in Corollary 4.14, which
+we extend to the general case in Section 7. Given Proposition 3.2, which lower bounds the product
+entropy in terms of the doublings of the sign-refined dyadic layers of Lemma 2.6, our remaining
+task is to bound these doublings via the entropic doubling of the overall random variable. The
+main technical lemma is Lemma 4.8, a doubling estimate for an arbitrary subset of a dyadic layer.
+14                                                      RUPERT LI
+
+                         e will denote a zero-free finitely supported real-valued random variable
+Throughout this section, X
+with H      e ≥ 2, and X
+     e = H(X)             e ′ denotes an independent copy; recall
+                                         e +X
+                                       H(X   e ′)                            H(X
+                                                                               eXe ′)
+                                 u
+                                 e=               − 1 ∈ [0, 1],        e =
+                                                                       m              .
+                                          He                                   H
+                                                                               e
+We fix the sign-refined dyadic layers of Lemma 2.6(e): a partition {Ai }i∈I of supp X
+                                                                                    e into sign-pure
+sets, indexed by a finite set I, with I the (X-measurable)
+                                             e             random variable determined by X   e ∈ AI ,
+and for brevity let
+      wi = P(I = i),          ai = log |Ai | ,               e | I = i) with probability mass function pi .
+                                                    Vi = Law(X
+Layers of zero weight are discarded from I, so wi > 0 for all i ∈ I. Only four consequences of
+Lemma 2.6 are used below: the two-sided flatness
+                                1                2
+(4.1)                                ≤ pi (x) ≤       for all x ∈ Ai ,
+                             2 |Ai |            |Ai |
+of part (a); the inherited flatness
+                                                                        2
+                                                 max pD < 2 min pD ≤
+                                                                       |D|
+for the conditional probability mass function of any nonempty D ⊆ Ai , from part (d); the label-
+entropy bound
+(4.2)                                       H(I) ≤ log(1 + H)
+                                                           e + log e + 1
+
+of part (e); and the two-sided estimate
+                                                                             X
+(4.3)                           e − log e − 1 ≤ H
+                    e − log(1 + H)
+                    H                           e − H(I) ≤ a :=                     wi a i ≤ H
+                                                                                             e +1
+                                                                              i∈I
+
+of part (c). Note that (4.1) gives H∞ (Vi ) ≥ ai − 1.
+
+4.1. Bounding excess entropy. In this subsection, as the layers of the dyadic decomposition are
+flat, the entropy of a sum of two of them will be measured against the reference max {ai , aj }, a
+heuristic proxy for its entropy, and the total excess over this reference, summed across all pairs of
+dyadic layers, will be bounded by u eH.
+                                     e
+
+Definition 4.1. For an ordered pair (i, j) ∈ I × I, with Vj′ an independent copy of Vj , let
+
+                                        e±             ′
+                                         ij = H(Vi ± Vj ) − max {ai , aj } + 1,
+
+by which we mean
+          e+             ′
+           ij = H(Vi + Vj ) − max {ai , aj } + 1          and       e−             ′
+                                                                     ij = H(Vi − Vj ) − max {ai , aj } + 1,
+
+with all statements involving e±                                  ±
+                               ij holding for both cases. The eij are nonnegative by (E5) of
+Lemma 2.1 along with H(Vi ) ≥ H∞ (Vi ) ≥ ai − 1 and likewise for j:
+     e±
+      ij ≥ max {H(Vi ), H(Vj )} − max {ai , aj } + 1 ≥ max {H∞ (Vi ), H∞ (Vj )} − max {ai , aj } + 1 ≥ 0.
+
+Lemma 4.2. Let β ≥ 1. Then
+                X                                                          
+                                   −
+(4.4)              wi wj β(e+
+                            ij + e ij ) + |ai − aj |   ≤ β   3e
+                                                              uHe + 2H(I) + 2   .
+                        i,j
+                                           THE ENTROPIC SUM-PRODUCT PHENOMENON                      15
+
+
+Proof. Let I and I ′ be the layer labels of X
+                                            e and X  e ′ ; they are independent with the same law, and
+                          ′
+conditionally on {I = i, I = j} the pair (X,e X  ′
+                                               e ) is distributed as (Vi , V ′ ). Hence,
+                                                                             j
+                                                               X
+                      H(X e ±X e ′ ) ≥ H(X
+                                         e ±X e ′ | I, I ′ ) =    wi wj H(Vi ± Vj′ ).
+                                                                             i,j
+Since
+                                                               1            1
+                                               max {ai , aj } = (ai + aj ) + |ai − aj | ,
+                                                               2            2
+averaging gives
+                                      X                                 1X
+                                           wi wj max {ai , aj } = a +      wi wj |ai − aj | ,
+                                                                        2
+                            i,j                                            i,j
+                          ±
+so, by the definition of eij and then (4.3),
+        X                    1X
+              wi wj e ±
+                      ij +      wi wj |ai − aj | ≤ H(X  e ′ ) − a + 1 ≤ H(X
+                                                     e ±X                    e ′) − H
+                                                                          e ±X      e + H(I) + 1.
+                             2
+        i,j                    i,j
+
+Now H(X  e +Xe ′ ) = (1 + u
+                          e)H
+                            e by definition, while H(X      e −Xe ′ ) ≤ 2H(X
+                                                                           e +Xe ′) − H         u)H
+                                                                                      e = (1 + 2e e by
+(2.1). Adding the two instances of the last display, one for each sign,
+                         X       h                         i
+                                           −
+                            wi wj e +
+                                    ij + e ij + |ai − aj |   ≤ 3e
+                                                                uHe + 2H(I) + 2.
+                                     i,j
+
+Since β ≥ 1 and |ai − aj | ≥ 0, the left-hand side of (4.4) is at most β times the left-hand side of
+the last display.                                                                                 ■
+  For each i ∈ I, picking j ∈ I to minimize the summand immediately implies the following, which
+will be useful for our main technical lemma, Lemma 4.8.
+Corollary 4.3. Let β ≥ 1. There is a map j(·) : I → I with
+               X h                                         i                       
+                                     −
+(4.5)              wi β(e+i,j(i) + e i,j(i) ) + ai − aj(i)   ≤ β   3e
+                                                                    uHe + 2H(I) + 2   .
+                        i∈I
+
+  For the rest of Section 4 we fix the partner map j(·) of Corollary 4.3.
+Definition 4.4. Given a layer i with partner j = j(i), write
+                    r+ (s) = P Vi + Vj′ = s ,     r− (t) = P Vi − Vj′ = t ;
+                                                                        
+
+both depend on the pair (i, j), which is suppressed from the notation for simplicity. Thus r+ is a
+probability measure on Ai + Aj and r− is a probability measure on Ai − Aj , with full support on
+those sets.
+  For x ∈ Ai , recalling pj denotes the probability mass function of X|I e = j, define
+                                 X                    1
+                        d± (x) =      pj (z) log            − max {ai , aj } + 1.
+                                                 r± (x ± z)
+                                                 z∈Aj
+
+Equivalently, for Z ∼ Vj ,
+                                                            
+                                                       1
+(4.6)                                  E log                   = max {ai , aj } − 1 + d± (x).
+                                                  r± (x ± Z)
+In essence, as opposed to e±                                           ′
+                           ij measuring the excess entropy of Vi ± Vj , the function d± (x) for
+x ∈ Ai = supp Vi measures the contribution to the excess entropy from the case Vi = x.
+  The following result provides pointwise control on d± , and its point (b) makes rigorous the
+previous observation.
+16                                                    RUPERT LI
+
+Lemma 4.5. Let i ∈ I and j = j(i). Then:
+     (a) r± ≤ 21−max{ai ,aj } everywhere; consequently d± (x) ≥ 0 pointwise for every x ∈ Ai ;
+     (b) E[d± (Vi )] = e±
+                        i,j(i) ;
+     (c) 0 ≤ d± (x) ≤ 3 + min {ai , aj } for every x ∈ Ai .
+Proof. (a) By (4.1), for any s ∈ Ai + Aj ,
+                                     X                               2
+                            r+ (s) =    pi (x)pj (s − x) ≤ max pi ≤
+                                      x
+                                                                    |Ai |
+
+and similarly r+ (s) ≤ |A2j | , so
+                                                   2
+                                     r+ ≤                       = 21−max{ai ,aj } ;
+                                            max {|Ai | , |Aj |}
+an essentially identical computation gives the same bound for r− . Hence
+                                          1
+                                     log    ≥ max {ai , aj } − 1
+                                         r±
+pointwise, from which we find d± ≥ 0 pointwise.
+  (b) We directly compute
+                               
+     X                   1         X                         1       X              1
+ E      pj (z) log             =     pi (x)pj (z) log            =   r+ (s) log        = H(Vi + Vj′ ),
+                    r+ (Vi + z)    x,z
+                                                        r+ (x + z)   s
+                                                                                  r+ (s)
+     z∈Aj
+so
+                                                  ′                          +
+                           E[d+ (Vi )] = H(Vi + Vj ) − max {ai , aj } + 1 = ei,j(i) ;
+the proof for d− is the same.
+  (c) The lower bound is (a). For the upper bound, the lower half of (4.1) gives
+                                                                          1
+                                      r+ (x + z) ≥ pi (x)pj (z) ≥
+                                                                     4 |Ai | |Aj |
+for x ∈ Ai , z ∈ Aj , so log(1/r+ (x + z)) ≤ 2 + ai + aj and
+                       d+ (x) ≤ 2 + ai + aj − max {ai , aj } + 1 = 3 + min {ai , aj } .
+The proof for d− is the same.                                                                          ■
+4.2. Level sets, and localized doubling. This subsection proves the main technical lemma,
+Lemma 4.8, which bounds the doubling of an arbitrary subset of a layer Ai in terms of the maximum
+values of d± on this subset. As the previous subsection bounds the expected value of d± across
+Ai via e±ij , whose expected value across i ∈ I is bounded by the overall entropic doubling u   e by
+Corollary 4.3, one can imagine further partitioning Ai into β-adic intervals for some β > 1 based on
+the values of d± , bounding the doubling terms for each interval via Lemma 4.8, and recombining,
+where the contributions of the more dangerous terms, i.e., with high d± values, are controlled by
+a tail bound on the probability of such an event occurring. This is essentially what we do, where
+this β is the same β as we added without explanation to Lemma 4.2, we control the loss across the
+β-adic intervals in Lemma 4.7, and then recombine in Proposition 4.10.
+Definition 4.6. Fix β > 1, a layer i and its partner j = j(i). The level-set partition Di of Ai is
+the partition in which each part consists of the x ∈ Ai that share the same value of the ordered
+pair                                                                    
+                          ⌈logβ max {d+ (x), 1}⌉, ⌈logβ max {d− (x), 1}⌉ .
+                             THE ENTROPIC SUM-PRODUCT PHENOMENON                                       17
+
+Lemma 4.7. Fix β > 1 and a layer i, with partner j = j(i). Then Di is a partition of Ai into at
+                       2
+most 2 + logβ (3 + ai ) nonempty parts, and
+                                  X
+                                        pi (D) sup d± (x) ≤ 1 + βe±
+                                                                  i,j(i) .
+                                 D∈Di          x∈D
+
+                                        P
+Proof. Clearly Di partitions Ai , so D∈Di pi (D) = 1. By Lemma 4.5(c) the quantity max {d± (x), 1}
+lies in [1, 3 + min {ai , aj }], so each coordinate of the map takes at most
+
+                           1 + ⌈logβ (3 + min {ai , aj })⌉ ≤ 2 + logβ (3 + ai )
+
+values; squaring bounds the number of nonempty parts.
+  Fix a part D ∈ Di and let a be the common value of ⌈logβ max {d+ , 1}⌉ on it, so
+
+                                             sup d+ (x) ≤ β a .
+                                             x∈D
+
+For a lower bound, notice that β a ≤ 1 + βd+ (x) pointwise on D, where the 1 term ensures the case
+a = 0 holds, and otherwise for a ≥ 1 we have d+ (x) > β a−1 , which implies the bound. Averaging
+over the parts,
+                        X                        X X
+                            pi (D) sup d+ (x) ≤          pi (x) (1 + βd+ (x))
+                        D∈Di         x∈D             D∈Di x∈D
+                                                   = 1 + β E[d+ (Vi )]
+                                                   = 1 + βe+
+                                                           i,j(i)
+
+by Lemma 4.5(b). The proof is identical for d− .                                                       ■
+
+   As promised, we now bound log |D + D| for an arbitrary nonempty D ⊆ Ai , in terms of the flat
+reference level of the layer and the suprema over D of d± .
+
+                                                             ̸ D ⊆ Ai . Then
+Lemma 4.8. Let i ∈ I, let j = j(i) be its partner, and let ∅ =
+
+(4.7)                 log |D + D| ≤ ai + |ai − aj | − 1 + sup d+ (x) + sup d− (y).
+                                                             x∈D             y∈D
+
+Proof. Let S ∼ Unif(D + D) and for each s ∈ D + D fix one representation s = xs + ys with
+xs , ys ∈ D. Let Z ∼ Vj be independent of S, and set U = xS + Z and V = yS − Z. Given S, and
+thus the fixed pair (xS , yS ), the map Z 7→ (U, V ) is bijective, so
+
+                                  H (U, V | S) = H (Z | S) = H(Z)
+
+by independence of Z and S. Since U + V = S, note that S is a function of (U, V ), so
+
+(4.8)                  H(U, V ) = H(S) + H (U, V | S) = log |D + D| + H(Z).
+
+We note that this first step of the proof, i.e., the definitions of U and V , is inspired by the standard
+proof of the Ruzsa triangle inequality [23].
+   The variable U takes values in D + Aj ⊆ Ai + Aj , on which r+ , which recall is the probability
+mass function of Vi + Vj′ , is a strictly positive probability measure; its restriction to the range of U
+is therefore a sub-probability measure, strictly positive on supp U , so Gibbs’ inequality ((E6) from
+18                                                   RUPERT LI
+
+Lemma 2.1) and (4.6) imply
+                                                         
+                                                    1
+                                   H(U ) ≤ E log
+                                                 r+ (U )
+                                                                 
+                                                            1
+                                         = E E log
+                                           S Z      r+ (xS + Z)
+                                         = E [max {ai , aj } − 1 + d+ (xS )]
+                                             S
+                                          ≤ max {ai , aj } − 1 + sup d+ (x).
+                                                                     x∈D
+
+Identically, V takes values in D − Aj ⊆ Ai − Aj , on which r− is a strictly positive probability
+measure, so
+                              H(V ) ≤ max {ai , aj } − 1 + sup d− (y).
+                                                                     y∈D
+     Thus, by (4.8),
+     log |D + D| + H(Z) = H(U, V ) ≤ H(U ) + H(V ) ≤ 2 max {ai , aj } − 2 + sup d+ (x) + sup d− (y).
+                                                                                     x∈D          y∈D
+
+Recall by (4.1) we have H(Z) ≥ H∞ (Vj ) ≥ aj − 1. Therefore
+                       log |D + D| ≤ 2 max {ai , aj } − aj − 1 + sup d+ (x) + sup d− (y).
+                                                                     x∈D           y∈D
+
+Observing that
+                                 2 max {ai , aj } − aj − 1 = ai + |ai − aj | − 1
+completes the proof.                                                                                       ■
+     We now translate this to a lower bound on the doubling defect g(D).
+                                   ̸ D ⊆ Ai . Then, with g(P ) = 2 log |P | − log |P + P |,
+Corollary 4.9. Let i ∈ I and let ∅ =
+                                                                                       1
+                   g(D) ≥ ai − ai − aj(i) − sup d+ (x) − sup d− (y) − 2 log                − 1.
+                                                 x∈D             y∈D                pi (D)
+Proof. By (4.1), pi (D) ≤ 2 |D| /|Ai |, so 2 log |D| ≥ 2ai + 2 log pi (D) − 2.                             ■
+     We now recombine across the level-set partition to return to the entire dyadic layer Ai .
+Proposition 4.10. Let β > 1 and let Di be the level-set partition of the layer Ai . Then
+      X                                          
+                                           −
+          pi (D) g(D) ≥ ai − β e+
+                                                                                            
+                                i,j(i) + e i,j(i)   − ai − aj(i) − 4 log 2 + log β (3 + ai )  − 3.
+          D∈Di
+
+Proof. Apply Corollary 4.9 to each part D ∈ Di and average against pi (D):
+                                                               
+ X                                    X                                 X                            1
+      pi (D) g(D) ≥ ai − ai − aj(i) −    pi (D) sup d+ + sup d− − 2        pi (D) log                    − 1.
+                                                           D           D                          pi (D)
+D∈Di                                       D∈Di                                     D∈Di
+                                                                              
+                                                                       −
+By Lemma 4.7 the first of the two sums is at most 2+β e+     i,j(i) + ei,j(i) , while by (E4) of Lemma 2.1
+the second sum is bounded by
+                    X                   1                                           
+                          pi (D) log        ≤ log |Di | ≤ 2 log 2 + logβ (3 + ai ) ,
+                                     pi (D)
+                         D∈Di
+
+with the second inequality following from Lemma 4.7.                                                       ■
+                               THE ENTROPIC SUM-PRODUCT PHENOMENON                                        19
+
+                                                                               −
+Remark 4.11. By Proposition 4.10 the whole cost of the layer i is β(e+
+                                                                     i,j(i) + ei,j(i) ) plus terms of
+O(log log) type in entropy. Corollary 4.3 turns e+ + e−     into 3e  e where from the proof of
+                                                                   uH,
+                                                                i,j(i)       i,j(i)
+Lemma 4.2, controlling the sum and difference entropies contribute 1 and 2, respectively, to this
+coefficient of 3. Proposition 3.2 then doubles it, yielding a coefficient of 6 decomposed as
+                                   2 ×(
+                              C = |{z}                   1
+                                                        |{z}       +         2
+                                                                            |{z}           ) = 6.
+                                    Solymosi          sum budget       difference budget
+
+This will impact the coefficient of 6 in Theorem 1.6, and thus the value δ = 71 ; see Proposition 7.2.
+4.3. Assembling together. We now assemble our previous work to prove the following technical
+version of the linear entropic Elekes–Ruzsa theorem (still for finite support).
+Theorem 4.12. Let X                                              e = H(X)
+                      e be zero-free and finitely supported with H     e > 0, and let β > 1.
+                            e and m
+Then, using the notation of u      e from Theorem 1.6,
+                                                    Err(β, H)
+                                                           e
+(4.9)                              me ≥ 2 − 6β ue−            ,
+                                                       He
+where
+                                                              
+(4.10)                     e = (4β + 2) log(1 + H)
+                    Err(β, H)                     e + log e + 1 + 4β
+                                                                    
+                                                     e + log 8(H
+                               + 8 log 2 + logβ (4 + H)          e + 2) + 10.
+
+Proof. Use the sign-refined layers {Ai }i∈I of the standing setup, the partner map j(·) of Corol-
+lary 4.3 for this β, and for each layer the level-set partition Di of Definition 4.6 for this β.
+                             S
+   The resulting collection i∈I Di of nonempty parts partitions supp X:    e each part lies in a single
+layer Ai , hence is sign-pure, and its conditional probability mass function obeys pD ≤ 2/|D| by
+Lemma 2.6. Thus Proposition 3.2 applies, with the weight wi pi (D) attached to D ∈ Di , and with
+                           X      X                    X
+                              wi      pi (D) log |D| ≤     wi a i = a ≤ H
+                                                                        e +1
+                             i∈I    D∈Di                           i∈I
+                                   P
+by (4.3), since |D| ≤ |Ai | and          D∈Di pi (D) = 1. It yields
+                                         X           X                               
+(4.11)                    eX
+                        H(X e ′) ≥ 2            wi                              e + 2) − 4.
+                                                            pi (D) g(D) − log 8(H
+                                          i∈I        D∈Di
+
+By Proposition 4.10, the inner double sum obeys
+X     X                      X h                                                                         i
+                                                   −
+                                 wi β e +
+                                                                                                     
+   wi     pi (D) g(D) ≥ a −             i,j(i) + e i,j(i)   + ai − aj(i) + 4 log 2 + log β (3 + ai )   + 3
+i∈I      D∈Di                      i∈I
+
+        e − H(I) by (4.3). Here Corollary 4.3 bounds the first two terms of the bracket:
+and a ≥ H
+              X h                                        i                      
+                                     −
+                  wi β e +i,j(i) + e i,j(i)   + ai − aj(i)   ≤ β    u
+                                                                   3eHe + 2H(I) + 2 .
+                  i∈I
+                            
+As a 7→ log 2 + logβ (3 + a) is increasing and concave on [0, ∞), by Jensen’s inequality and recall-
+ing a ≤ He + 1,
+                                                                             
+                     X                              
+                         wi 4 log 2 + logβ (3 + ai ) ≤ 4 log 2 + logβ (4 + H)
+                                                                           e .
+                         i
+Substituting into (4.11),
+                        h                                                         i
+H(X
+  eXe ′ ) ≥ 2H
+             e − 6βe
+                   uHe − (4β + 2)H(I) + 4β + 8 log 2 + logβ (4 + H)        e + 2) + 10 .
+                                                                 e + log 8(H
+20                                             RUPERT LI
+
+                                                                               e gives the
+Since 4β + 2 > 0, the bound (4.2) on H(I) may now be inserted, and dividing by H
+result.                                                                                 ■
+                                                                      eX
+Remark 4.13. The intercept 2 in (4.9) is optimal: by subadditivity, H(X e ′ ) ≤ H(X,
+                                                                                  e Xe ′ ) = 2H,
+                                                                                              e
+                                                             e → 0 and H
+   e ≤ 2 always, and Theorem 4.12 is asymptotically exact as u
+so m                                                                    e → ∞.
+
+  We now optimize β at β = 1 + 1/H,   e which balances the inflation 6β of the coefficient against
+the term 8 log(2 + logβ (4 + H)),
+                             e                                          e H.
+                                  and yields a total error of order log H/ e
+
+Corollary 4.14. Let X                                           e ≥ 4, and take β = 1 + 1/H
+                     e be zero-free and finitely supported with H                         e in
+Theorem 4.12. Then, using the notation of ue and me from Theorem 1.6,
+                                              
+                                             6              e + 51
+                                                     18 log H
+(4.12)                      me ≥2− 6+            e−
+                                                 u                 .
+                                            He             He
+                       u) = 2 − 6e
+Consequently, with F2 (e         u and
+                                           (
+                                            18 log η+57
+                                                  η       if η ≥ 4,
+(4.13)                            ϑ(η) =
+                                            ϑ(4) = 93 4   if 0 < η < 4,
+one has
+(4.14)                                             u) − ϑ(H)
+                                           e ≥ F2 (e
+                                           m              e
+
+for every zero-free finitely supported X      e > 0. ϑ : (0, ∞) → (0, ∞) is a nonincreasing
+                                       e with H
+function.
+                                                                  e ≤ 1 by (E5′ ) of Lemma 2.1,
+                 e ≥ 4 and t = 1/η ∈ (0, 1 ], so β = 1 + t. Since u
+Proof. Write η = H                       4
+                                    6βe
+                                      u = 6e     u ≤ 6e
+                                           u + 6te    u + 6/η,
+so (4.9) implies (4.14) with ϑ replaced by (6 + Err(1 + t, η)) /η. Thus, (4.12) and the case η ≥ 4 of
+(4.14) follow from
+(4.15)                              Err(1 + t, η) ≤ 18 log η + 51,
+which we now confirm. Note the case 0 < η < 4 of (4.14) is trivial, since ϑ(η) = 93   4 > 2 ≥ F2 (eu)
+          e ≥ 0 while m
+for every u            e ≥ 0.
+   As log(1 + t) ≥ t for 0 ≤ t ≤ 1, recalling log denotes the base-2 logarithm, log β ≥ t = 1/η so
+(4.16)                               logβ (4 + η) ≤ η log(4 + η).
+As η ≥ 4 and thus 1 + η ≤ 45 η,
+                                                             5
+(4.17)                               log(1 + η) ≤ log η + log .
+                                                             4
+Since β = 1 + 1/η ≤ 54 ,
+                                                                 
+                                                             5
+     (4β + 2) (log(1 + η) + log e + 1) + 4β ≤ 7 log η + log    e + 1 + 5 ≈ 7 log η + 24.3525.
+                                                             4
+By (4.16) and 4 + η ≤ 2η, we have logβ (4 + η) ≤ η(1 + log η). Since η(1 + log η) ≥ 12, we absorb
+the additive constant of 2 via
+                                                    7
+                                 2 + logβ (4 + η) ≤ η (1 + log η),
+                                                    6
+so
+                               7
+  8 log 2 + logβ (4 + η) ≤ 8 log + 8 log η + 8 log(1 + log η) ≈ 8 log η + 8 log(1 + log η) + 1.7792.
+                                6
+                              THE ENTROPIC SUM-PRODUCT PHENOMENON                                     21
+
+The function ϕ(L) = 8 log(1 + L) − 2L has ϕ′ (L) = 8 log e/(1 + L) − 2, so on [2, ∞) it is maximized
+at 1 + L = 4 log e ≈ 5.77078, where ϕ ≤ 8 log(4 log e) − 2(4 log e − 1) ≈ 10.6886 < 10.69; hence
+8 log(1 + L) ≤ 2L + 10.69 and
+                                                  
+                            8 log 2 + logβ (4 + η) ≤ 10 log η + 12.47.
+Lastly, as η + 2 ≤ 23 η,
+                                                              3
+                           log (8(η + 2)) ≤ log η + 3 + log     ≈ log η + 3.5850.
+                                                              2
+Combining these bounds yields
+                       Err(1 + t, η) ≤ 18 log η + (24.3525 + 12.47 + 3.5850 + 10)
+                                     < 18 log η + 51,
+which is (4.15).
+  Lastly, on [4, ∞),
+                             d 18 log η + 57   18 log e − (18 log η + 57)
+                                             =                            < 0,
+                            dη       η                     η2
+so ϑ is nonincreasing.                                                                                ■
+Remark 4.15. Theorem 4.12 and Corollary 4.14 hold verbatim with H(X eXe ′ ) replaced by H(X/
+                                                                                          e Xe ′ ),
+hence with m                      ′
+            e replaced by H(X/X )/H: the product enters the proof only through the application
+                              e e   e
+of Proposition 3.2 in (4.11), and Proposition 3.3 supplies the same inequality for the quotient
+with the same constants; every other step bounds log |D + D| and is unchanged. This may be of
+independent interest.
+                                      e < 4 is trivial, but we extend ϑ as such for convenience
+   The extension of Corollary 4.14 to H
+later in Proposition 7.2.
+
+                                5. The incidence-side lower bound
+   Theorem 1.3 was unable to avoid the obstacle of examples where H∞ (X) = O(1) but H(X) is
+arbitrarily large. In short, this section uses the dyadic decomposition of Lemma 2.6 so that each
+piece Vi of the partition is flat, so that H∞ (Vi ) ≈ H(Vi ). This causes a number of complications
+compared to the proof of Theorem 1.3, by Gavalakis, Goh, and Kontoyiannis [9] (one may note
+that simply replacing H∞ (X) with H(X) in Theorem 1.3 would have proven Conjecture 1.2 with
+δ = 16 , yet our result only establishes δ = 71 ) and so, similar to Section 4, great care must be taken
+to control the resulting errors caused by this decomposition process. In both Sections 5 and 6,
+we observed some minor errors in the arguments of Gavalakis, Goh, and Kontoyiannis [9], though
+we believe their conclusions remain intact; we remark upon these when our arguments reach the
+analogous points, and in an abundance of caution our proofs are provided completely, i.e., do not
+rely on any of their results.
+   Section 5.1 proves a lower bound
+                                                     1
+                           H(UG1 (UG2 + UG3 )) ≥ log (|G1 | |G2 | |G3 |) − KR
+                                                     2
+for arbitrary subsets G1 , G2 , G3 ⊂ R, with some additional conditions, but in particular with no
+relation imposed on the three sizes |G1 | , |G2 | , |G3 |. The balanced case |G1 | = |G2 | = |G3 | was
+previously established by Gavalakis, Goh, and Kontoyiannis [9, Lemma 3.2], but this generalized
+version, whose proof is slightly more involved, is needed for Section 5.2. Section 5.2 extends
+this lower bound to general random variables via the dyadic decomposition of Lemma 2.6 (exact
+uniformity will be obtained by applying the uniformization lemma, Lemma 2.5, on the dyadic
+22                                                  RUPERT LI
+
+layers), and because the dyadic layers can have very different sizes, we thus need the lower bound
+in the general, unbalanced case.
+
+5.1. The product-sum lower bound.
+
+Theorem 5.1. Let G1 ⊂ R \ {0} and G2 , G3 ⊂ R be nonempty finite sets, and let UG1 , UG2 , UG3
+be independent uniform random variables on G1 , G2 , G3 . We assume
+(5.1)                                         P (UG2 + UG3 = 0) < 1,
+or equivalently exclude the degenerate case that G2 = {b} and G3 = {−b} for some b ∈ R. Then,
+with KR = 2 + log CR as in Definition 2.4,
+                                                       1
+                             H (UG1 (UG2 + UG3 )) ≥      log (|G1 | |G2 | |G3 |) − KR .
+                                                       2
+     Throughout this subsection we assume the setting of Theorem 5.1, and define
+        N = |G1 | |G2 | |G3 | ,   S = UG2 + UG3 ,          W = UG1 S,         and         θ = P(S = 0) < 1.
+Also let
+                                   n0 = #{(b, c) ∈ G2 × G3 : b + c = 0},
+so that θ = |G2n||G
+                 0
+                    3|
+                       . The proof splits into casework on |G1 | > |G2 | |G3 | versus |G1 | ≤ |G2 | |G3 |, the
+former being resolved via an elementary argument and the latter relying on Rudnev’s incidence
+bound, Theorem 2.3.
+   We first record some basic observations about θ.
+
+Lemma 5.2. With the notation above,
+     (P1) θ ≤ 1/max {|G2 | , |G3 |};
+     (P2) θ ≤ 12 ;
+     (P3) If θ > 0 then |G2 | |G3 | ≤ θ−2 .
+
+Proof. (P1) For each b ∈ G2 there is at most one c ∈ G3 with b + c = 0, so n0 ≤ |G2 | and
+symmetrically n0 ≤ |G3 |, thus
+                                       min {|G2 | , |G3 |}          1
+                                  θ≤                       =                     .
+                                          |G2 | |G3 |        max {|G2 | , |G3 |}
+
+  (P2) If max {|G2 | , |G3 |} ≥ 2 then (P1) gives θ ≤ 21 ; otherwise |G2 | = |G3 | = 1 and so θ < 1
+implies b + c ̸= 0, so θ = 0.
+  (P3) By (P1),
+                                    |G2 | |G3 | ≤ max {|G2 | , |G3 |}2 ≤ θ−2 .                                ■
+
+5.1.1. The case |G1 | > |G2 | |G3 |. We first record a simple bound on H(W ).
+
+Lemma 5.3. For any nonempty finite G1 ⊆ R \ {0} and G2 , G3 ⊆ R,
+                      H(W ) = h(θ) + (1 − θ)H(W | W ̸= 0) ≥ h(θ) + (1 − θ) log |G1 | .
+
+Proof. Let E = 1{S=0} , where note E = 1{W =0} as 0 ̸∈ G1 . Thus
+
+                 H(W ) = H(W, E) = H(E) + H(W | E) = h(θ) + (1 − θ)H(W | E = 0),
+                              THE ENTROPIC SUM-PRODUCT PHENOMENON                                       23
+
+and so it remains to show H(W | E = 0) ≥ log |G1 |, which follows from
+                         H(W | E = 0) ≥ H(W | S, E = 0)
+                                        X
+                                      =   P(S = s | E = 0) H(W | S = s)
+                                             s̸=0
+                                             X
+                                         =          P(S = s | E = 0) H(sUG1 )
+                                             s̸=0
+                                             X
+                                         =          P(S = s | E = 0) log |G1 |
+                                             s̸=0
+                                         = log |G1 | ,
+as UG1 and S are independent.                                                                           ■
+  We now complete the proof of Theorem 5.1 in the case |G1 | > |G2 | |G3 |. Recall from Definition 2.4
+that KR = 2 + log CR ≥ 2.
+Lemma 5.4. Define
+                      κ1 = − min [θ log θ − (1 − θ) log(1 − θ)] = 0.2117313 . . . ,
+                             0<θ≤1/2
+
+with minimizer θ⋆ = 0.1613782 . . . the root of θ(1 − θ) = e−2 in (0, 12 ). If |G1 | > |G2 | |G3 | and
+θ ≤ 21 , then
+                                                       1
+                           h(θ) + (1 − θ) log |G1 | ≥ log N − κ1 .
+                                                       2
+Proof. As 21 − θ ≥ 0 from Lemma 5.2 and |G1 | > |G2 | |G3 | ≥ 1,
+                                                            
+                                    1                  1                  1
+          h(θ) + (1 − θ) log |G1 | − log N = h(θ) +      − θ log |G1 | − log (|G2 | |G3 |)
+                                    2                  2                  2
+                                           ≥ h(θ) − θ log (|G2 | |G3 |) .
+If θ = 0 this is 0 and we are done. If θ > 0, Lemma 5.2 gives log(|G2 | |G3 |) ≤ −2 log θ, so
+                                   1
+          h(θ) + (1 − θ) log |G1 | −  log N ≥ h(θ) + 2θ log θ = θ log θ − (1 − θ) log(1 − θ).
+                                   2
+Minimizing this expression, which we denote f (θ), over θ ∈ 0, 12 , we compute
+                                                                   
+                                                                       
+       ′                                     ′′               1      1                        1
+      f (θ) = log (θ(1 − θ)) + 2 log e,     f (θ) = (log e)     −          > 0 for 0 < θ < ,
+                                                              θ 1−θ                           2
+so f is strictly convex on (0, 12 ), with f ′ (0+ ) = −∞ and f ′ ( 12 ) > 0. Hence f has a unique interior
+minimum, at θ⋆ .                                                                                        ■
+
+5.1.2. The case |G1 | ≤ |G2 | |G3 |. Without loss of generality, we may assume |G2 | ≤ |G3 |. Following
+the proof of [9, Lemma 3.2], which in turn extracts the argument from [15, Theorem 2.1], define
+        P = (a, b′ , ac) : (a, b′ , c) ∈ G1 × G2 × G3 ⊆ R3 ,
+              
+
+        Q = ρa′ ,b,c′ := {(x, y, z) ∈ R3 : bx − a′ y + z = a′ c′ } : (a′ , b, c′ ) ∈ G1 × G2 × G3 .
+              
+
+Recall the notation
+                                 I(P, Q) = #{(x, ρ) ∈ P × Q : x ∈ ρ}
+from Theorem 2.3. We first verify the number of collisions a(b + c) = a′ (b′ + c′ ) equals I(P, Q).
+24                                                   RUPERT LI
+
+Lemma 5.5. The map ϕ : (a, b′ , c) 7→ (a, b′ , ac) is bijective as a map G1 × G2 × G3 → P , and
+ψ : (a′ , b, c′ ) 7→ ρa′ ,b,c′ is a well-defined injection of G1 × G2 × G3 into the set of planes of R3 .
+Consequently |P | = |Q| = N . Moreover, letting
+                    Col = # (a, b, c, a′ , b′ , c′ ) ∈ G21 × G22 × G23 : a(b + c) = a′ (b′ + c′ ) ,
+                                
+
+we have Col = I(P, Q).
+Proof. Bijectivity of ϕ is clear as a ̸= 0. ρa′ ,b,c′ is a plane, i.e., has nonzero normal vector (b, −a′ , 1),
+and injectivity of ψ follows, after recalling a′ ̸= 0.1
+  The point ϕ(a, b′ , c) = (a, b′ , ac) lies on the plane ψ(a′ , b, c′ ) if and only if
+                          b · a − a′ · b′ + ac = a′ c′    ⇐⇒      a(b + c) = a′ (b′ + c′ ).
+The map (a, b, c, a′ , b′ , c′ ) 7→ (ϕ(a, b′ , c), ψ(a′ , b, c′ )) is a bijection from G21 × G22 × G23 onto P × Q,
+and so the previous equivalence implies Col = I(P, Q).                                                          ■
+   We verify the hypotheses of Theorem 2.3 with k = max {|G1 | , |G2 |}+1 and ℓ = 1; note hypotheses
+(i) and (ii) hold, the latter trivially so.
+Lemma 5.6. Any line L′ ⊂ R2 satisfies
+                                      L′ ∩ (G1 × G2 ) ≤ max {|G1 | , |G2 |} .
+Thus, if a line L ⊆ R3 is contained in some plane of Q, then
+                                        |L ∩ P | ≤ max {|G1 | , |G2 |} < k.
+Proof. If L′ is vertical it meets G1 × G2 in at most |G2 | points; otherwise distinct points of L′ ∩
+(G1 × G2 ) have distinct x-coordinates in G1 , and so there are at most |G1 | of them.
+   The plane ρa′ ,b,c′ has normal vector n = (b, −a′ , 1). If L ⊆ ρa′ ,b,c′ has direction vector d then
+d · n = 0; a vertical d = (0, 0, λ) with λ ̸= 0 would give d · n = λ ̸= 0, contradiction. Hence L is
+non-vertical and projects injectively onto a line L′ of the plane z = 0. Under the same projection,
+P projects into G1 × G2 , so
+                            |L ∩ P | ≤ L′ ∩ (G1 × G2 ) ≤ max {|G1 | , |G2 |} < k.                                   ■
+     Applying Theorem 2.3 then completes the proof of Theorem 5.1, as follows.
+Lemma 5.7. If |G1 | ≤ |G2 | |G3 | and |G2 | ≤ |G3 |, then max {|G1 | , |G2 |} ≤ N 1/2 , and consequently
+                                                 Col ≤ 4CR N 3/2 .
+Thus,
+                                                         1
+                                             H(W ) ≥       log N − KR .
+                                                         2
+Proof. If max {|G1 | , |G2 |} = |G1 |, then
+                              max {|G1 | , |G2 |}2 = |G1 |2 ≤ |G1 | |G2 | |G3 | = N ,
+and otherwise
+                         max {|G1 | , |G2 |}2 = |G2 |2 ≤ |G2 | |G3 | ≤ N .
+By Lemmas 5.5 and 5.6, Theorem 2.3 applies with |P |= |Q|= N , ℓ = 1 and
+                                    k = max {|G1 | , |G2 |} + 1 ≤ N 1/2 + 1,
+   1[9, Lemma 3.2] does not assume 0 ∈/ G1 , and thus their subsequent identification Col = I(P, Q) is erroneous; their
+conclusion nevertheless survives in the equal-size case they consider, as the tuples with a = 0 or a′ = 0 contribute
+O(|A|4 ) to Col and they eventually bound I(P, Q) = O(|A|9/2 ), which can absorb the O(|A|4 ) error.
+                                 THE ENTROPIC SUM-PRODUCT PHENOMENON                                              25
+
+and gives
+                                                                  
+    Col = I(P, Q) ≤ CR N 1/2 · N + 1 · N + N 1/2 + 1 N = CR 2N 3/2 + 2N ≤ 4CR N 3/2 .
+
+Let W ′ = UG′ 1 (UG′ 2 + UG′ 3 ) be an independent copy of W defined via independent copies of
+UG1 , UG2 , UG3 . Then
+                                 X                           Col
+                                    P(W = w)2 = P(W = W ′ ) = 2 ,
+                                  w
+                                                             N
+and so
+                                                                         1
+                          H(W ) ≥ H2 (W ) = 2 log N − log Col ≥            log N − KR .                           ■
+                                                                         2
+  Having completed both cases |G1 | > |G2 | |G3 | and |G1 | ≤ |G2 | |G3 |, this completes the proof of
+Theorem 5.1.
+Remark 5.8. The separate argument for the case |G1 | > |G2 | |G3 | is necessary: as a simple example,
+the incidence argument alone cannot see the degeneracy from (5.1). For G2 = {b} and G3 = {−b}
+one has N = |G1 | while every one of the |G1 |2 tuples is a collision, so Col = N 2 , contradicting
+Lemma 5.7 as |G1 | = N → ∞. However, this unbalanced case where |G1 | is large is precisely what
+the first case covers.
+Remark 5.9. The following family of examples shows Theorem 5.1 is sharp, up to the constant KR
+being removed. Let G1 ⊆ R \ {0} be finite and symmetric, let G2 = {b1 , b2 }, and let G3 = −G2 .
+Writing d = b1 −b2 ̸= 0, the variable S = UG2 +UG3 is 0 with probability 21 and ±d with probability
+1
+4 each; conditionally on S ̸= 0, W = UG1 S is uniform on dG1 as G1 is symmetric. So
+                          
+                           1      1             1            1                1
+             H(W ) = h         + log |G1 | = 1 + log |G1 | = log (4 |G1 |) = log N .
+                           2      2             2            2                2
+This limits the ability of this portion of the argument to improve upon δ, as discussed further in
+Section 8.
+5.2. Conditioning to uniform. In this subsection, we apply the bound from Section 5.1 to
+arbitrary laws via our uniformization lemma, Lemma 2.7. The gain of Lemma 2.7 over a direct
+application of Lemma 2.5 to X, as done by Gavalakis, Goh, and Kontoyiannis [9], is that the loss is
+∆(H) = O(log H) rather than H − H∞ (X), which can be as large as H − O(1). This is what allows
+this section’s statements to involve Shannon entropy alone and not min-entropy. The following is
+the upgraded analog of [9, Lemma 3.5].
+Theorem 5.10. Let X, Y, Z be independent finitely supported real-valued random variables with
+positive entropy and P(X = 0) = 0, and let πY Z = P(Y + Z = 0). Then
+                1
+H (X(Y + Z)) ≥    [(1 − πY Z ) (H(X) − ∆(H(X))) + H(Y ) − ∆(H(Y )) + H(Z) − ∆(H(Z))]−KR ,
+                2
+where ∆(η) = log(1 + η) + log e + 2.
+Proof. Apply Lemma 2.7 separately to X, to Y and to Z, obtaining pairs (X, L), (Y, L′ ), (Z, L′′ )
+with data (Gℓ , nℓ ), (G′ℓ′ , n′ℓ′ ), (G′′ℓ′′ , n′′ℓ′′ ). Realize the three couplings on a single product probability
+space, so that the three labeled pairs are mutually independent. Then, conditionally on (L, L′ , L′′ ) =
+(ℓ, ℓ′ , ℓ′′ ), the triple (X, Y, Z) consists of three independent uniform variables on Gℓ , G′ℓ′ , G′′ℓ′′ .
+   As before, let W = X(Y + Z). Then
+                                                                     h                       i
+(5.2)                      H(W ) ≥ H(W | L, L′ , L′′ ) = E H UGL (UG′ ′ + UG′′ ′′ ) .
+                                                                                  L       L
+26                                                 RUPERT LI
+
+We need to exclude the degenerate case before we can apply Theorem 5.1. Let
+                             E := {∃ b ∈ R : G′L′ = {b} and G′′L′′ = {−b}},
+an event that is (L′ , L′′ )-measurable and independent of L. So E ⊆ {Y + Z = 0} and thus
+P(E) ≤ πY Z . On E both G′L′ and G′′L′′ are singletons, so n′L′ = n′′L′′ = 0 on E.
+  On E c , the triple (GL , G′L′ , G′′L′′ ) satisfies the hypotheses of Theorem 5.1, where
+                                  log |GL ||G′L′ ||G′′L′′ | = nL + n′L′ + n′′L′′ .
+                                                           
+
+Hence,
+                                                 1
+                                                       nL + n′L′ + n′′L′′ − KR
+                                                                         
+                         H UGL (UG′ ′ + UG′′ ′′ ) ≥
+                                     L      L       2
+on E c . As the left-hand side is nonnegative almost surely, including on E, (5.2) gives
+                             h                          i
+                 H(W ) ≥ E 1E c H UGL (UG′ ′ + UG′′ ′′ )
+                                               L        L
+
+                            1                           ′
+                                                                          ′′
+                                                                                          c
+                         ≥     E 1{E c } nL + E 1{E c } nL′ + E 1{E c } nL′′ − KR P(E ).
+                            2
+By independence of E from L,
+                                                               c
+                                          E[1{E c } nL ] = P(E ) E[nL ],
+and as n′L′ = n′′L′′ = 0 on E, we have E[1{E c } n′L′ ] = E[n′L′ ] and likewise for n′′ . Thus, by Lemma 2.7,
+              1
+                  P(E c ) E[nL ] + E[n′L′ ] + E[n′′L′′ ] − KR
+                                                        
+     H(W ) ≥
+              2
+              1
+          ≥ [(1 − πY Z ) (H(X) − ∆(H(X))) + H(Y ) − ∆(H(Y )) + H(Z) − ∆(H(Z))] − KR ;
+              2
+note that P(E c ) E[nL ] ≥ (1 − πY Z )(H(X) − ∆(H(X))) is valid even in the case H(X) < ∆(H(X)),
+as then the left-hand side is nonnegative while the right-hand side is nonpositive.           ■
+Corollary 5.11. Let X, e ′ , Ye , Ze be i.i.d. finitely supported real-valued zero-free random variables
+                     e X
+with H
+     e = H(X)
+            e > 0, and let π  e = P(X  e +X   e ′ = 0). Then
+
+                        e ≥ 3H        e − 1π     e − 3 log 1 + He − KR − 3 (log e + 2).
+                                                               
+             H X(e Ye + Z)                    eH
+                                    2       2        2                       2
+
+                     6. Large-doubling entropic Elekes–Ruzsa theorem
+   As done by Gavalakis, Goh, and Kontoyiannis [9], we now establish an upper bound on the
+quantity H(X(         e from Corollary 5.11, in terms of sum and product entropies, to combine
+              e Ye + Z))
+with our lower bound from Section 5 to get a result of sum-product phenomenon type, specifically
+the finite support version of our large-doubling linear entropic Elekes–Ruzsa theorem, Theorem 1.7.
+As noted by Gavalakis, Goh, and Kontoyiannis [9], a result of this form appeared in the original
+preprint version of a paper by Máthé and O’Regan [20]. However, the proof of the result, by
+functional submodularity, was incorrect; the result was removed in the published version of that
+paper. Thus, Gavalakis, Goh, and Kontoyiannis [9, Lemma 3.6] then provided a proof of this result
+for completeness; however, their proof is also incorrect, for essentially the same reason as before.
+The issue in the proof of Máthé and O’Regan [20] is that when X ̸= 0, one can determine (X, Y, Z)
+from (X, Y + Z, XY, Y Z), but this is not true for X = 0; Gavalakis, Goh, and Kontoyiannis [9]
+correct this issue by conditioning on X ̸= 0, but then forget to remove this conditioning at the
+end. As discussed in Remark 6.3, the originally stated bound is simply false. We prove a corrected
+upper bound in Proposition 6.1, and then in Remark 6.3 also discuss why using this bound salvages
+the main results of Gavalakis, Goh, and Kontoyiannis [9, Theorems 1.3, 1.4, and 1.6]. Note that,
+                            THE ENTROPIC SUM-PRODUCT PHENOMENON                                    27
+
+with a coincidence in numbering, [9, Theorems 1.3 and 1.4] appear in this paper as Theorems 1.3
+and 1.4, respectively. As in Section 5, for the sake of rigor our proofs are provided completely.
+   The analog of this upper bound for continuous real-valued random variables, using differential
+entropy, was proven by the author, Gavalakis, and Kontoyiannis [19, Proposition 7.1]; as functional
+submodularity does not hold for differential entropy, its proof is different and immune to this issue
+(the variables are also continuous, so there are no atoms at 0). However, the correct expression in
+this continuous case depends on E[log |X|], and so heavily depends on the behavior of X near 0.
+6.1. The product-sum upper bound.
+Proposition 6.1. Let X, Y, Z be jointly distributed discrete random variables taking values in a
+field, with H(X, Y, Z) < ∞. Then
+(6.1)
+H (X(Y + Z)) ≤ H(XY, XZ) + H(X, Y + Z) − H(X, Y, Z) + P(X = 0) H (Y, Z | Y + Z, X = 0) .
+Moreover, the slackness in (6.1) equals exactly
+                                        I(R; S) − H(W ) ≥ 0,
+where
+                R = (XY, XZ),        S = (X, Y + Z),        and     W = X(Y + Z).
+Proof. Let T = (X, Y, Z). Both R, S are functions of T , so
+(6.2)          H(R) + H(S) = H(R, S) + I(R; S) = H(T ) − H(T | R, S) + I(R; S).
+Next W = f (R) with f (r1 , r2 ) = r1 + r2 and W = g(S) with g(s1 , s2 ) = s1 s2 , so by the data
+processing property of mutual information, i.e., (E3) of Lemma 2.1, applied twice,
+(6.3)                      I(R; S) ≥ I(f (R); g(S)) = I(W ; W ) = H(W ).
+Finally we compute H(T | R, S) exactly. The event {X = 0} is S-measurable. On {X ̸= 0},
+the pair (R, S) determines T , so there is no conditional entropy in T , while on {X = 0} one has
+R = (0, 0) and S = (0, Y + Z), so conditioning on (R, S) is conditioning on Y + Z, while X = 0 is
+determined. Therefore
+        H(T | R, S) = P(X = 0) H (T | R, S, X = 0) = P(X = 0) H (Y, Z | Y + Z, X = 0) .
+Substituting this and (6.3) into (6.2) gives (6.1), with slackness exactly I(R; S) − H(W ) ≥ 0.    ■
+Corollary 6.2. Let X, Y, Z be i.i.d. finitely supported random variables with values in a field, let
+H = H(X), p0 = P(X = 0), and let X ′ be an independent copy of X. Then
+           H (X(Y + Z)) ≤ 2H(XX ′ ) + H(X + X ′ ) − 2H + p0 2H − H(X + X ′ )
+                                                                                    
+(6.4)
+                          = 2H(XX ′ ) − (1 − p0 ) 2H − H(X + X ′ ) .
+                                                                     
+
+In particular, for a zero-free law X,
+                                    e with i.i.d. copies Ye , Z,
+                                                              e Xe ′ and entropy He = H(X),
+                                                                                        e
+                                        
+(6.5)                     H X(        e ≤ 2H(X
+                               e Ye + Z)            e ′ ) + H(X
+                                                   eX           e +X  e ′ ) − 2H.
+                                                                               e
+
+Remark 6.3 (Erratum). The statement corrected by Proposition 6.1 entered the literature as [9,
+Lemma 3.6], which asserts, for arbitrary field-valued X, Y, Z and then in the i.i.d. case,
+(6.6)            H (X(Y + Z)) ≤ H(XY, XZ) + H(X, Y + Z) − H(X, Y, Z) + 1,
+(6.7)            H (X(Y + Z)) ≤ 2H(XY ) + H(X + Y ) − 2H(X) + 1.
+Both are false without a correction term: (6.6) can fail by an unbounded margin for every P(X =
+0) > 0, and (6.7) is false whenever P(X = 0) > 12 ; see Examples 6.4 and 6.5. The difficulty lies in
+moving from the last display in the proof of [9, Lemma 3.6] to (6.6), where they stop conditioning
+28                                          RUPERT LI
+
+on the indicator 1{X=0} . Proposition 6.1 repairs the argument by retaining P(X = 0)H(Y, Z |
+Y + Z, X = 0) exactly; when p0 = 0 it is strictly stronger than (6.6)–(6.7), the additive +1 being
+unnecessary.
+   At the level of their main theorems, their Theorems 1.3 and 1.6 survive exactly as stated.
+Theorem 1.3 combines their Lemma 3.5 with (6.7); with (6.4) in its place the same argument yields
+                                                1
+                max H(X + X ′ ), H(XX ′ ) ≥ (4H + 3H∞ (X) − 4p0 H) − O(1),
+                     
+(6.8)
+                                                6
+                                      2
+where H = H(X), and (i) if H∞ (X) ≤ 3 H their conclusion is trivial, since
+                              1
+                                (4H + 3H∞ (X)) ≤ H ≤ H(X + X ′ ),
+                              6
+while (ii) if H∞ (X) > 23 H then p0 ≤ pmax = maxx P(X = x) < 2−2H/3 , so
+                                                      3
+                                p0 H ≤ H2−2H/3 ≤           < 0.797
+                                                   2e ln 2
+can be absorbed by the O(1). Theorem 1.6 uses Theorem 1.3 only through its statement, so is also
+unaffected. Theorem 1.4 is proved instead from [9, Lemmas 4.2 and 4.3], and the latter has the
+same un-conditioning mistake with exceptional event E c = {X + Y = 0 or Z + W = 0}, whose
+probability is not killed by the assumption P(X = 0) = 0. The analog of Proposition 6.1 for it
+would carry the correction term P(E c )H(X, Y, Z, W | X + Y, Z + W, E c ), and then for the i.i.d.
+case, which is what they need for Theorem 1.4, we can split into the cases of E c where X + Y = 0
+or Z + W = 0, and in each case the analog of the p0 H term from (6.8) is
+                                P(X + Y = 0)H ≤ pmax H = O(1)
+for H∞ (X) > 21 H(X) by an identical argument, the only regime in which Theorem 1.4 has content.
+Here, we use the fact that
+                              X                               X
+             P(X + Y = 0) =      P(X = x)P(Y = −x) ≤ pmax         P(X = x) = pmax .
+                               x                                x
+
+Example 6.4 (A counterexample to (6.6)). Let p0 ∈ (0, 1), let X take the values 0 and 1 with
+probabilities p0 and 1 − p0 , respectively, and let Y, Z be independent of X and of each other and
+uniform on {1, 2, . . . , n}. Then
+ H (X(Y + Z)) − [H(XY, XZ) + H(X, Y + Z) − H(X, Y, Z) + 1] = p0 (2 log n − H(Y + Z)) − 1,
+which tends to +∞ as n → ∞.
+Proof. Write q = 1 − p0 . Since Y + Z ≥ 2 > 0, the indicator 1{X=1} = X is a function of X(Y + Z),
+so
+                 H(X(Y + Z)) = H(X) + H(X(Y + Z)|X) = h(p0 ) + qH(Y + Z).
+Similarly, X is a function of (XY, XZ), so
+                    H(XY, XZ) = H(X) + H(XY, XZ|X) = h(p0 ) + 2q log n.
+By independence,
+          H(X, Y + Z) = h(p0 ) + H(Y + Z)        and      H(X, Y, Z) = h(p0 ) + 2 log n.
+Hence,
+ H (X(Y + Z)) − [H(XY, XZ) + H(X, Y + Z) − H(X, Y, Z) + 1] = p0 (2 log n − H(Y + Z)) − 1,
+as desired. Since H(Y + Z) ≤ log(2n − 1) = log n + O(1), the right-hand side is p0 log n + O(1) →
+∞.                                                                                              ■
+                             THE ENTROPIC SUM-PRODUCT PHENOMENON                                        29
+
+   The i.i.d. form (6.7) is more robust, the family above using variables that are not identically
+distributed, but it too fails for every p0 > 12 .
+
+Example 6.5 (A counterexample to (6.7)). Let n be a positive integer, set N = 2n2 and A =
+{N + 1, N + 2, . . . , N + n}. Let p0 ∈ (0, 1), with X equal to 0 with probability p0 and otherwise
+uniform on A, and let Y, Z, X ′ be independent copies of X. Then
+(6.9) H (X(Y + Z)) − 2H(XX ′ ) + H(X + X ′ ) − 2H(X) + 1 = (1 − p0 )2 (2p0 − 1) log n + O(1),
+                                                              
+
+which tends to +∞ as n → ∞ for any p0 > 12 .
+Proof. The calculations here are routine but tedious, so we will be more brief than usual. Note
+that N was chosen sufficiently large so that for i, j, i′ , j ′ ∈ {1, 2, . . . , n},
+            (N + i)(N + j) = (N + i′ )(N + j ′ ) ⇐⇒ (i, j) = (i′ , j ′ ) or (i, j) = (j ′ , i′ ) :
+this is because 1 ≤ ij ≤ n2 < N , so the values of ij and i + j can be read off from the value of
+(N + i)(N + j) = N 2 + N (i + j) + ij, which determines i and j up to ordering. Then conditional
+on {X ̸= 0, X ′ ̸= 0}, the product XX ′ has the same distribution, up to a bijective relabeling, as an
+unordered pair from {1, 2, . . . , n}2 , so it is straightforward to calculate
+                   H(XX ′ ) ≥ H(XX ′ |X > 0, X ′ > 0) = 2(1 − p0 )2 log n + O(1),
+and similarly
+H(XX ′ ) ≤ H(XX ′ , 1{X>0,X ′ >0} ) = H(XX ′ |1{X>0,X ′ >0} )+H(1{X>0,X ′ >0} ) = 2(1−p)2 log n+O(1).
+   A similar argument, conditioning on the O(1) bits of information of whether X or X ′ are 0,
+yields
+     H(X + X ′ ) = p20 · 0 + 2p0 (1 − p0 ) log n + (1 − p0 )2 log n + O(1) = (1 − p20 ) log n + O(1);
+this uses the computation that H(X + X ′ | X > 0, X ′ > 0), which is a triangular distribution on
+2n − 1 values, has entropy log n + O(1), which can be verified as
+         log n = H(X | X > 0) ≤ H(X + X ′ | X > 0, X ′ > 0) ≤ log(2n − 1) ≤ log n + 1,
+by independence of X and X ′ , so the first inequality follows by conditioning on X ′ .
+  We have P(X(Y + Z) ̸= 0) = (1 − p0 )(1 − p20 ). Conditional on {X(Y + Z) ̸= 0}, similar to our
+computation of H(XX ′ ), note that for X = N + i, Y = N + j, and Z = N + k, we have
+                            X(Y + Z) = 2N 2 + N (2i + j + k) + i(j + k),
+with 2 ≤ i(j + k) ≤ 2n2 ≤ N , so X(Y + Z) determines 2i + j + k and i(j + k), which up to ordering
+determines the pair (i, j + k) (in some cases j + k > n, in which case the ordering is determined
+as i ≤ n), so similar to the H(XX ′ ) argument, this ordering impacts the entropy by at most a bit,
+and so
+      H(X(Y + Z) | X(Y + Z) ̸= 0) = H(i, j + k | X(Y + Z) ̸= 0) + O(1) = 2 log n + O(1),
+where the last equality follows as i and j + k are conditionally independent, with j + k essentially
+being a triangular distribution so a similar argument as for H(X + X ′ ) yields it has entropy
+log n + O(1). Thus,
+                           H(X(Y + Z)) = 2(1 − p0 )(1 − p20 ) log n + O(1).
+  Lastly, H(X) = (1 − p0 ) log n + O(1), so combining our computations yields (6.9).                    ■
+30                                               RUPERT LI
+
+6.2. Assembling together. In this subsection we prove Proposition 6.7, the finite support version
+of Theorem 1.7.
+   Recall the notation
+             p0 = P(X = 0),       pmax = max P(X = x),           and      π = P(X + X ′ = 0).
+                                             x
+
+Also recall from Remark 6.3 that π ≤ pmax . We first record the following lemma, which we will
+need for Proposition 6.7. It is a slight improvement on [9, Proposition 5.1], which carries the
+additive loss 23 in place of h(pmax ) ≤ 1, and has a simpler, self-contained proof, where the proof of
+[9, Proposition 5.1] also needs a computation from [13].
+Lemma 6.6. Let X take values in an abelian group with H(X) < ∞ and let X ′ be an independent
+copy of X. Then
+(6.10)         pmax H(X) ≤ H(X + X ′ ) − H(X) + h(pmax ) ≤ H(X + X ′ ) − H(X) + 1.
+Proof. The second inequality is trivial as h(·) ≤ 1. Let a satisfy pmax = P(X = a). Then
+        H(X + X ′ ) ≥ H X + X ′ | 1{X ′ =a} = pmax H(X + a) + (1 − pmax ) H(X + X ∗ ),
+                                             
+
+where X ∗ ∼ Law(X ′ | X ′ ̸= a) is independent of X. As H(X + a) = H(X),
+                               H(X + X ∗ ) ≥ H(X + X ∗ | X) = H(X ∗ ),
+and
+          H(X) = H(X, 1{X=a} ) = h(pmax ) + H(X|1{X=a} ) = h(pmax ) + (1 − pmax )H(X ∗ ),
+we have
+            H(X + X ′ ) ≥ pmax H(X) + (1 − pmax )H(X ∗ ) ≥ pmax H(X) + H(X) − h(pmax ),
+which rearranges to the result.                                                                     ■
+  Finally, we combine Corollary 5.11 and Corollary 6.2, to prove the main result of this section.
+Recall from Theorem 5.10 the per-variable uniformization loss, which we denote by
+                                      ∆(η) = log(1 + η) + log e + 2
+and write
+                                               3
+(6.11)                                 E1 (η) = ∆(η) + KR
+                                               2
+for the error term of Corollary 5.11, whose conclusion then reads
+
+                                 H(X(     e ≥ 3H
+                                   e Ye + Z))   e − 1π e − E1 (H).
+                                                      eH       e
+                                              2     2
+
+Proposition 6.7. Let X                                            e = H(X)
+                       e be zero-free and finitely supported with H     e > 0. Then, using the
+            e and m
+notation of u     e from Theorem 1.6,
+                                                                      5 3
+(6.12)                         e ≥ F1 (e
+                               m       u) − ϑ(H),
+                                              e                u) =
+                                                           F1 (e       − ue,
+                                                                      4 4
+where
+                              E1 (η) + 12   3
+                                              log(1 + η) + 12 KR + 43 (log e + 2) + 14
+(6.13)              ϑ(η) =                = 4                                          .
+                                  2η                           η
+ϑ : (0, ∞) → (0, ∞) is a nonincreasing function.
+                                THE ENTROPIC SUM-PRODUCT PHENOMENON                                  31
+
+Proof. By Corollary 5.11 and the zero-free upper bound (6.5) of Corollary 6.2,
+               3e 1 e                                
+                 H− π            e ≤ H X(
+                        eH − E1 (H)                 e ≤ 2m
+                                            e Ye + Z)       eHe + (1 + u e − 2H.
+                                                                       e)H     e
+               2      2
+Rearranging,
+                                                    
+                                         5        1
+(6.14)                        2meH ≥
+                                  e        −ue− π   e H e − E1 (H).
+                                                                e
+                                         2        2
+Define
+                         π
+                         e = P(X  e ′ = 0)
+                               e +X               and                  e = x),
+                                                         pemax = max P(X
+                                                                   x
+      e ′ is an independent copy of X.
+where X                             e                                  e ≤ pemax . Then Lemma 6.6
+                                               From Remark 6.3 we have π
+gives
+                                         e ≤ pemax ≤ u
+                                         π           e + 1/H;
+                                                           e
+hence (6.14) becomes
+                                                   
+                                     e ≥       5 3            e − 1,
+                                   eH
+                                  2m            − ue He − E1 (H)
+                                               2 2                2
+which dividing by 2H e gives the result. ϑ is clearly positive, and it is straightforward to check that
+it is nonincreasing.                                                                                 ■
+
+                                   7. Proof of the main theorem
+   We now have two lower bounds, Corollary 4.14 and Proposition 6.7, for the relative product
+entropy m                                      e and both valid with no hypothesis beyond being
+          e of a zero-free law, both linear in u
+zero-free and finitely supported. We denote these linear bounds via the lines
+                     5 3
+                  u) =
+              F1 (e     − ue (Proposition 6.7),         u) = 2 − 6e
+                                                    F2 (e         u (Corollary 4.14).
+                     4 4
+We first reincorporate atoms at zero, proving the finite support version of Theorem 1.5 as The-
+orem 7.3, and then provide a truncation argument in Lemma 7.5 that extends this result to the
+general case; we also extend Corollary 4.14 and Proposition 6.7 to yield Theorems 1.6 and 1.7,
+respectively.
+   Recall our notation from Section 2: H = H(X) with zero-free law Xe ∼ Law(X|X ̸= 0) of entropy
+H = H(X). And the four expressions
+ e       e
+
+             H(X + X ′ )                H(XX ′ )               e +X
+                                                             H(X   e ′)                H(X
+                                                                                         eXe ′)
+        u=               − 1,      m=            ,      e=
+                                                        u               − 1,     e =
+                                                                                 m              ,
+                H                         H                     He                       H
+                                                                                         e
+
+where X ′ is an independent copy of X and X   e ′ is an independent copy of X.
+                                                                            e Let p0 = P(X = 0).
+                                   e and p0 .
+We first lower bound u in terms of u
+Lemma 7.1. Let X be a discrete, finitely supported, real-valued random variable with 0 ≤ p0 < 1,
+and let X ′ be an independent copy. Suppose H = H(X) > 1. Then
+                                                               2
+                                                       u−
+                                     u ≥ p0 + (1 − p0 )e          .
+                                                             H −1
+Proof. We have
+(7.1)             H = H(X, 1{X=0} ) = h(p0 ) + H(X | 1{X=0} ) = h(p0 ) + (1 − p0 )H.
+                                                                                  e
+32                                                   RUPERT LI
+
+Similarly,
+(7.2)                       H(XX ′ ) = H(XX ′ , 1{XX ′ =0} )
+                                          = h((1 − p0 )2 ) + H(XX ′ | 1{XX ′ =0} )
+                                          = h((1 − p0 )2 ) + (1 − p0 )2 H(X
+                                                                          eXe ′)
+
+                                          = h((1 − p0 )2 ) + (1 − p0 )2 m
+                                                                        e H.
+                                                                          e
+
+We bound
+                          H(X + X ′ ) ≥ H(X + X ′ | 1{X=0} , 1{X ′ =0} )
+                                                          e + (1 − p0 )2 H(X
+                                           = 2p0 (1 − p0 )H                   e ′)
+                                                                           e +X
+                                                      e [2p0 + (1 − p0 )(1 + u
+                                           = (1 − p0 )H                      e)]
+                                                      e [1 + p0 + (1 − p0 )e
+                                           = (1 − p0 )H                    u]
+                                           = (H − h(p0 )) [1 + p0 + (1 − p0 )e
+                                                                             u] ,
+where the last equality uses (7.1). This rearranges to
+                                                                             
+                                          (1 + u)H                   h(p0 )
+                                       u≤
+                     1 + p0 + (1 − p0 )e             = (1 + u) 1 +              ,
+                                          H − h(p0 )               H − h(p0 )
+or
+                                               (1 + u)h(p0 )        2
+                                         u≤u+
+                           p0 + (1 − p0 )e                   ≤u+         ,
+                                                 H − h(p0 )       H −1
+which rearranges to the result, recalling u ≤ 1 from (E5’) of Lemma 2.1.                                   ■
+   In the hope that future work can provide better linear entropic Elekes–Ruzsa bounds, we state
+in larger generality how such zero-free bounds translate to values of δ for the entropic sum-product
+phenomenon.
+Proposition 7.2. Let F : [0, 1) → R, let ϑ: (0, ∞) → [0, ∞) be nonincreasing with ϑ(η) → 0 as
+η → ∞, and suppose that every zero-free finitely supported real-valued X      e > 0 satisfies
+                                                                       e with H
+
+(7.3)                                                   u) − ϑ(H).
+                                                 e ≥ F (e
+                                                 m             e
+
+Let
+                                                               u)
+                                                            F (e
+                                                 Φ = inf          ,
+                                                        u<1 1 − u
+                                                      0≤e       e
+                                            i
+assume Φ > 1, and let δ ∈                Φ−1
+                                      0, Φ+1   . Then for all i.i.d. finitely supported real-valued X, X ′ of
+entropy
+                                                            2
+(7.4)                                             H >1+        ,
+                                                           1−δ
+one has
+                                                                                          
+                             ′              ′                        2Φ               2
+(7.5)        max H(X + X ), H(XX ) ≥ (1 + δ)H −                           + ϑ(H − 1) +         H.
+                                                                     H −1              H
+In particular, if in addition F ≤ 2 and ϑ(η) = a logηη+b for all η ≥ H − 1, with constants a, b ≥ 0,
+then
+                                                             2ΦH
+                max H(X + X ′ ), H(XX ′ ) ≥ (1 + δ)H −
+                     
+(7.6)                                                              − a log H − b − 2.
+                                                            H −1
+                                THE ENTROPIC SUM-PRODUCT PHENOMENON                           33
+
+Proof. If u ≥ δ then H(X + X ′ ) = (1 + u)H ≥ (1 + δ)H and we are done. So assume u < δ and
+          2
+set α = H−1  , so that the hypothesis (7.4) says exactly α < 1 − δ, so
+                                             u + α < δ + α < 1.
+Since H > 1 we have p0 < 1, so Lemma 7.1 applies: for brevity, let q = 1 − p0 , so that
+                                                  u ≤ u + α < 1.
+                                            p0 + qe
+              e < 1, so F (e
+In particular u            u) is defined. This rearranges to
+                                                       1−u−α
+(7.7)                                   q = 1 − p0 ≥         > 0.
+                                                        1−u
+                                                          e
+By (7.1),
+
+(7.8)                                  e = H − h(p0 ) ≥ H − 1 > 0,
+                                       H
+                                              q
+so by (7.2),
+(7.9)                        H(XX ′ ) ≥ q 2 m
+                                            eHe = q m(H
+                                                    e                 e − 2,
+                                                        − h(p0 )) ≥ q mH
+          e ≤ 2 as H(X
+recalling m             e ′ ) ≤ H(X,
+                       eX          e Xe ′ ) = 2H.
+                                                e These two inequalities, along with ϑ being
+nonincreasing, yield
+                         2      
+                                             e − 2 ≥ qF (e
+                                                                          2
+                     e−
+                m ≥ qm              u) − ϑ(H)
+                             ≥ q F (e                    u) − ϑ(H − 1) − .
+                         H                        H                        H
+Thus, by (7.7)
+                                            1−u−α
+(7.10)                               u) ≥
+                                 qF (e               u) ≥ Φ(1 − u − α).
+                                                  F (e
+                                             1−u
+                                               e
+Therefore, using u < δ and rearranging the assumption δ ≤ Φ−1
+                                                           Φ+1 to yield Φ(1 − δ) ≥ 1 + δ,
+(7.11)
+                              2                               2            2Φ               2
+m ≥ Φ(1 − u − α) − ϑ(H − 1) −    ≥ Φ(1 − δ) − Φα − ϑ(H − 1) −   ≥ 1+δ −         − ϑ(H − 1) − .
+                              H                               H           H −1              H
+Multiplying by H gives (7.5).
+   Now assume F ≤ 2 and ϑ(η) = N η(η) for η ≥ H − 1, where N (η) = a log η + b with a, b ≥ 0. By
+(7.9),
+                                                 
+       H(XX ′ ) ≥ q m(H
+                    e                    u) − ϑ(H)
+                        − h(p0 )) ≥ q F (e      e (H − h(p0 )) ≥ qHF (e u) − 2 − q 2 N (H),
+                                                                                        e
+
+                                                                             e and F ≤ 2. We
+                           e = H − h(p0 ) from (7.8) when multiplying with ϑ(H),
+where the last step used q H
+claim that
+(7.12)                                       q 2 N (H)
+                                                    e ≤ N (H).
+       e ≤ H/q by (7.8), so
+Indeed H
+                                           e ≤ q 2 N (H) + aq 2 log(1/q),
+                                    q 2 N (H)
+and with v = q 2 and ln(1/v) ≤ 1−v
+                                v ,
+
+                            1  a     1  a log e
+                 aq 2 log     = v log ≤         (1 − v) ≤ a(1 − q 2 ) ≤ (1 − q 2 )N (H),
+                            q  2     v     2
+34                                              RUPERT LI
+
+because a ≤ a log H ≤ N (H), the first inequality holding since H > 1 + 2/(1 − δ) ≥ 3 forces
+log H > 1. Adding the two estimates gives (7.12). Consequently, by (7.10) and the same bounding
+from (7.11),
+                 N (H) + 2                      N (H) + 2              2Φ       a log H + b + 2
+              u) −
+      m ≥ qF (e             ≥ Φ(1 − u − α) −               ≥1+δ−             −                  ,
+                     H                              H                 H −1             H
+and multiplying by H gives (7.6), recalling in the case u ≥ δ the inequality trivially holds.          ■
+     Thus equipped, we prove the finite support version of our main theorem, Theorem 1.5.
+Theorem 7.3. There are absolute constants c1 , c2 , H0 such that for all i.i.d. finitely supported
+real-valued X, X ′ with H = H(X) ≥ H0 ,
+                                                 8                   1
+                   max H(X + X ′ ), H(XX ′ ) ≥ H − c1 log H − c2 − log CR .
+                        
+(7.13)
+                                                 7                   2
+One may take
+                            c1 = 18,    c2 = 63,    and     H0 = 5.
+Proof. For an affine function A − C u      e ∈ [0, 1) we have
+                                    e, for u
+                                       d A − Cu e      A−C
+                                                   =           ,
+                                      deu 1−u  e           e)2
+                                                      (1 − u
+so A−C u
+      u is strictly increasing if A > C and strictly decreasing if A < C. Thus, for our functions
+    1−e
+       e
+
+                                       5 3
+                                u) =
+                            F1 (e       − ue,       and            u) = 2 − 6e
+                                                               F2 (e         u,
+                                       4 4
+           1 (e
+we have F1−e  u)                               u)
+                                           F2 (e
+              u is strictly increasing and 1−e                                                       u) =
+                                               u is strictly decreasing, and they intersect when F1 (e
+                 1
+F2 (e     e = 7 . Thus, letting F = max {F1 , F2 }, where F ≤ 2, we have
+    u) at u
+                                                   u)
+                                                F (e        F (1/7)  4
+                                   Φ = inf              =           = ,
+                                          u<1 1 − u
+                                        0≤e       e         1 − 1/7  3
+and so Φ−1      1
+         Φ+1 = 7 .
+   Recall the error functions associated to F1 and F2 from Proposition 6.7 and Corollary 4.14,
+respectively, are
+                                                                   (
+           3              1       3               1                  18 log η+57
+             log(1 + η) +   K R +   (log e + 2) +                                 if η ≥ 4,
+  ϑ1 (η) = 4              2       4               4
+                                                    and   ϑ2 (η) =         η
+                                                                               93
+                              η                                     ϑ2 (4) = 4 if 0 < η < 4,
+respectively. Define
+                                                                        (
+                                                                            N (η)
+                                     1                                       η      if η ≥ 4,
+              N (η) = 18 log η + 57 + log CR            and    ϑ(η) =       N (4)
+                                     2                                       4      if 0 < η < 4.
+Then ϑ ≥ max {ϑ1 , ϑ2 } on [4, ∞), and is nonnegative, tends to 0, and is nonincreasing. It thus
+satisfies the conditions of Proposition 7.2, except for potentially (7.3) for He < 4, but in this case
+the condition is trivial as me ≥ 0 ≥ F (e        e because F ≤ 2 and ϑ(H)
+                                         u) − ϑ(H)                         e ≥ 93 .
+                                                                                 4
+   As Φ−1
+       Φ+1  =  1
+               7 , Proposition 7.2 holds with δ = 1
+                                                  7 . The threshold (7.4) reads H  > 10
+                                                                                     3 and is implied
+                                                                      18 log η+57+ 1 log C
+                                                                           R
+by H ≥ H0 = 5. Since H ≥ 5 gives H − 1 ≥ 4, we have ϑ(η) =          η
+                                                                      2
+                                                                              for all η ≥ H − 1,
+so (7.6) gives
+                                         8      2ΦH                      1
+              max H(X + X ′ ), H(XX ′ ) ≥ H −
+                 
+                                                       − 18 log H − 59 − log CR .
+                                         7      H −1                     2
+For H ≥ 5 we have H/(H − 1) ≤ 54 , so 2ΦH/(H − 1) ≤ 83 · 54 = 10
+                                                              3 ≤ 4, which yields (7.13).     ■
+                            THE ENTROPIC SUM-PRODUCT PHENOMENON                                     35
+
+Remark 7.4. Note that with just F1 , one would have Φ = F1 (0) = 45 and thus δ = Φ−1         1
+                                                                                     Φ+1 = 9 .
+                               1
+However, as F2 (e          e > 3 , with just F2 one would have Φ = −∞, and would not be able to
+                u) < 0 for u
+prove any entropic sum-product phenomenon allowing for atoms at 0.
+7.1. Removing the finite-support hypothesis. The finite support hypothesis may be discarded
+at the outermost level, without revisiting the proofs, via the following simple bound on the entropies
+of the variable, its i.i.d. sum, and its i.i.d. product upon truncating a random variable to a finite
+support.
+Lemma 7.5. Let X be a discrete real-valued random variable with mass function p and entropy
+H = H(X) < ∞, and let θ ∈ 0, 21 . Then there is a finite F ⊆ supp X with
+                                                      X                 1
+                              / F ) ≤ θ,
+                          P(X ∈               TF :=         p(x) log        ≤ θ,
+                                                                       p(x)
+                                                      x∈F
+                                                       /
+
+and for every such F the finitely supported variable XF = Law(X | X ∈ F ), with independent copy
+XF′ , satisfies
+                                H
+     (i) H − 3θ ≤ H(XF ) ≤           ;
+                              1−θ
+                          H(X + X ′ )                       H(XX ′ )
+    (ii) H(XF + XF′ ) ≤             2
+                                         and H(XF XF′ ) ≤             .
+                           (1 − θ)                           (1 − θ)2
+                  P                    P
+Proof. The series x p(x) = 1 and x p(x) log(1/p(x)) = H both converge, so along any exhaustion
+of supp X by finite sets their tails tend to 0; fix F with both at most θ, and put PF = P(X ∈ F ) ≥
+1 − θ > 0. The mass function of XF being p/PF on F , we have
+                                 X                                     H − TF
+                H(XF ) = PF−1          p(x) (log(1/p(x)) + log PF ) =         + log PF .
+                                                                         PF
+                               x∈F
+
+Thus
+                                                  H     H
+                                       H(XF ) ≤      ≤     ,
+                                                  PF   1−θ
+and
+                    H(XF ) ≥ H − TF + log PF ≥ H − θ + log(1 − θ) ≥ H − 3θ,
+using the inequality log(1 − θ) ≥ −2θ for θ ∈ 0, 21 .
+                                                     
+   Lastly, we bound
+H(X + X ′ ) ≥ H X + X ′ | 1{X∈F } , 1{X ′ ∈F } ≥ PF2 H X + X ′ | X ∈ F, X ′ ∈ F = PF2 H(XF + XF′ ),
+                                                                              
+
+and then recall PF ≥ 1 − θ. The bound for the product is identical.                                 ■
+
+  Theorem 1.5 with its explicit constants follows from the following corollary.
+Corollary 7.6. Let X, X ′ be i.i.d. discrete real-valued random variables with 6 ≤ H = H(X) < ∞.
+Then
+                                                    8                     1
+                max H(X + X ′ ), H(XX ′ ) ≥ H − 18 log H − 65 − log CR .
+                    
+(7.14)
+                                                    7                     2
+Proof. Apply Lemma 7.5 with θ = H −2 ≤ 36
+                                       1
+                                          ≤ 12 . By (i),
+                                                                1
+                                H(XF ) ≥ H − 3H −2 ≥ 6 −           > 5,
+                                                                12
+36                                           RUPERT LI
+
+so XF being finitely supported, Theorem 7.3 and then (i) gives
+                                       8                                  1
+    max H(XF + XF′ ), H(XF XF′ ) ≥ H(XF ) − 18 log H(XF ) − 63 − log CR
+        
+                                       7                                  2
+                                       8     24                                    1
+                                     ≥ H − θ − 18 log H + 18 log(1 − θ) − 63 − log CR
+                                       7      7                                    2
+                                       8                       2     1
+                                     ≥ H − 18 log H − 64 −        − log CR ,
+                                       7                       21 2
+where we again use log(1 − θ) ≥ −2θ for θ ∈ 0, 12 . By (ii), where for brevity let
+                                                 
+
+                             B = max H(XF + XF′ ), H(XF XF′ ) ,
+                                      
+
+we have
+                                                        4θH        4        24
+ max H(X + X ′ ), H(XX ′ ) ≥ (1 − θ)2 B ≥ B − 2θB ≥ B −
+      
+                                                            =B−          ≥B− ,
+                                                        1−θ     H(1 − θ)    35
+                                             2H
+where we use the trivial bound B ≤ 2H(XF ) ≤ 1−θ . Combining this with our lower bound on B
+completes the proof.                                                                      ■
+  The same truncation removes the finite support condition from Corollary 4.14, proving Theo-
+rem 1.6.
+Proof of Theorem 1.6. We apply Lemma 7.5 to X       e with θ = H e −2 ≤ 1 . For brevity, we define
+                                                                          25
+He F = H(X             eF , m
+          eF ) and let u    e F be the two corresponding quantities formed from the zero-free finitely
+supported XeF . Then by Lemma 7.5,
+                                              H
+                                              eF                  26 e −2
+                            me ≥ (1 − θ)2 meF     ≥ κm     eF − H
+                                                      eF ≥ m              ,
+                                              He                   5
+where we use the fact that m  e F ≤ 2 and let
+                                        
+                                      3θ              3θ       13 e −2         104
+                 κ = (1 − θ)2 1 −          ≥ 1 − 2θ −    ≥1− H          ≥1−        .
+                                      He              He        5             1000
+(4.14) then yields
+                                                 uF − ϑ(H
+                                      e F ≥ 2 − 6e
+                                      m                 e F ),
+
+where ϑ(η) = 18 logηη+57 for η ≥ 4 (in other words, we use the ϑ defined in Corollary 4.14, rather
+than that defined in Theorem 1.6). We bound
+                                    H(X eF + Xe′ )          e)H
+                                                       (1 + u  e    1+u
+                                               F
+                                                   ≤             ≤
+                                                                        e
+                           1+ueF =                                        ,
+                                          HF
+                                          e                  2
+                                                     (1 − θ) HFe      κ
+so, using ue ≤ 1,
+                                       1−κ           156 e −2           e −2 .
+                        6euF ≤ 6e
+                                u + 12       ≤ 6e
+                                                u+       H ≤ 6e  u + 35H
+                                         κ           5κ
+And as ϑ is nonincreasing,
+
+       e F ) ≤ ϑ(He − 3θ) ≤ ϑ(H)    H
+                                    e
+                                              e + 3ϑ(H) ≤ ϑ(H)
+                                                         e
+                                                                 e + 3ϑ(5) ≤ ϑ(H)e + 61 H e −2 .
+    ϑ(H                       e          = ϑ(H)                       122 e 2
+                                 H − 3θ               3
+                                                    H −3                               5
+                                                                       25 H
+                                  e                 e
+Combining these bounds yields
+                                 
+                     26        61   e −2 ≥ 2 − 6e           e −1 ≥ 2 − 6e
+                                                                                  e + 57 + 11
+                                                                           18 log H
+         u − ϑ(H)
+e ≥ 2 − 6e
+m              e −      + 35 +      H           u − ϑ(H)
+                                                      e − 11H           u−                    ,
+                      5        5                                                    H
+                                                                                    e
+which completes the proof.                                                                  ■
+                             THE ENTROPIC SUM-PRODUCT PHENOMENON                                        37
+
+  The same truncation extends Proposition 6.7 as well, yielding Theorem 1.7.
+
+Proof of Theorem 1.7. We apply Lemma 7.5 to X    e with θ = H e −2 ≤ 1 . Then, using the same
+                                                                     25
+estimates as in the proof of Theorem 1.6, by Proposition 6.7,
+                                    26 e −2 5 3            e F ) − 26 H
+                                                                      e −2 ,
+                            eF −
+                         e ≥m
+                         m            H ≥ − u       eF − ϑ(H
+                                    5         4 4                   5
+where ϑ is defined as in Proposition 6.7, not Theorem 1.7. Analogous to before, we bound
+                               3     3   3 13 e −2 3   22 e −2
+                                 eF ≤ u
+                                 u     e+ ·   H ≤ u  e+ H      ,
+                               4     4   2 5κ      4   5
+and                                                                    
+                                   e + 3ϑ(5) ≤ ϑ(H)
+                         e F ) ≤ ϑ(H)
+                       ϑ(H                       e +            3
+                                                                  +
+                                                                    7
+                                                                      KR He −2 .
+                                       122 e 2                  5 100
+                                       25 H
+Thus,
+                                                    
+                      5 3                 51    7       e −2
+               e ≥
+               m       − u      e −
+                          e − ϑ(H)           +     KR H
+                      4 4                 5    100
+                                3         e + 1 + 7 KR +           3               1   51
+                                                                                           
+                   5 3            log(1 + H)                       4 (log e + 2) + 4 + 25
+                  ≥ − ue− 4                      2    500
+                   4 4                                      H
+                                                            e
+                             3
+                      5 3              e + KR + 5
+                               log(1 + H)
+                  ≥    − ue− 4                    .                                                     ■
+                      4 4              He
+Remark 7.7. The ground field, in our case R, matters twice. Section 5 needs characteristic 0, so
+that hypothesis (ii) of Theorem 2.3 is vacuous; over Fp one would have to carry |G1 | |G2 | |G3 | ≪ p2
+through the dyadic uniformized layering. More seriously, Sections 3 and 4 use the order structure
+of R essentially, through the ordering of the slopes and the strict convex combination in the proof of
+Theorem 3.1, so the Solymosi half, i.e., the F2 argument, has no clear analog outside of R. However,
+as discussed in Remark 7.4, without the Solymosi half we can still achieve δ = 91 , and so this result
+holds for arbitrary fields of characteristic 0.
+
+                                          8. Open problems
+   The main conjecture we have is Conjecture 1.10, which as discussed would imply Conjecture 1.2
+for δ = 13 , and this would be tight by the example of the author, Gavalakis, and Kontoyiannis [19,
+Example 3] showing δ ≤ 13 ; the example is naturally also asymptotically tight for Conjecture 1.10.
+Recall their example has X = 0 with probability 31 and otherwise is uniformly distributed in
+{1, 2, . . . , n}.
+   We can generalize their example to arbitrary p = P(X = 0), though for simplicity will shift the
+arithmetic progression from {1, 2, . . . , n} to {N + 1, . . . , N + n} for N = 2n2 to better separate the
+products. While p = 13 is optimal for Conjecture 1.2 in that p ̸= 13 will provide an upper bound on
+δ larger than 31 , we note that any p ∈ [0, 1) yields a tight example for Conjecture 1.10, as follows.
+Note this construction is Example 6.5, and so we have already computed the entropies to be
+H(X) = (1−p) log n+O(1),        H(X +X ′ ) = (1−p2 ) log n+O(1),       H(XX ′ ) = 2(1−p)2 log n+O(1).
+Then
+                        2H(X + X ′ ) + H(XX ′ ) ∼ (4 − 4p) log n ∼ 4H(X).
+  More generally, if we have any zero-free law X e and define X by adding an atom at 0 with
+                     e ∼ X | X ̸= 0 and P(X = 0) = p, then by our computations in Lemma 7.1,
+probability p, i.e., X
+38                                            RUPERT LI
+
+where our lower bound on H(X + X ′ ) is tight up to an additive constant of 2, as we conditioned
+on two indicator variables, we have H = (1 − p)H
+                                               e + O(1),
+
+H(X + X ′ ) = 2p(1 − p)H
+                       e + (1 − p)2 H(X  e ′ ) + O(1),
+                                      e +X                 and H(XX ′ ) = (1 − p)2 H(X
+                                                                                     eXe ′ ) + O(1).
+Thus, if we define
+                                  e = 2H(X
+                                  Λ         e ′ ) + H(X
+                                         e +X         eXe ′ ) − 4H,
+                                                                 e
+we analogously have
+                Λ = 2H(X + X ′ ) + H(XX ′ ) − 4H
+                     = 2(1 − p)2 H(X  e ′ ) + (1 − p)2 H(X
+                                   e +X                  eXe ′ ) − 4(1 − p)2 H
+                                                                             e + O(1)
+
+                     = (1 − p)2 Λ
+                                e + O(1).
+In other words, adding an atom at 0 essentially contracts the difference between the two sides of
+Conjecture 1.10 towards 0, and so in some sense this conjecture is “zero-invariant.”
+Remark 8.1. Concretely, this shows that the general case of Conjecture 1.10 follows from the zero-
+                                          e −O(1) for all zero-free laws X
+                                    e ≥ −εH
+free case. If for all ε > 0 we knew Λ                                                   e = H(X),
+                                                                         e with entropy H      e
+which is equivalent to Conjecture 1.10 for zero-free laws via diagonalization, then for any X with
+P(X = 0) = p and X     e ∼ X | X ̸= 0,
+                    e − O(1) ≥ −ε(1 − p)2 H
+       Λ = (1 − p)2 Λ                     e − O(1) = −ε(1 − p)H − O(1) ≥ −εH − O(1),
+which by diagonalization implies Conjecture 1.10 for all discrete random variables X, not necessarily
+zero-free.
+   One avenue for further research would be to improve the coefficient 6 of Theorem 1.6, or prove
+                                                                                e, though a nonlinear
+that it is tight. We also note that the improved function need not be linear in u
+shape may be unnatural to prove. Proposition 7.2 already establishes how such an improvement
+would translate to an improvement on δ. Recall the decomposition of the coefficient 6 = 2 × (1 + 2)
+from Remark 4.11. Within this proof structure, where of course it is possible a different approach
+will yield a better coefficient, we believe the outer factor of 2 from the Solymosi argument in
+Section 3 is structural, i.e., cannot be improved. The inner term of 2 comes from the application
+of the entropic Ruzsa triangle inequality, (2.1), i.e.,
+                            H(X − X ′ ) − H(X) ≤ 2(H(X + X ′ ) − H(X)).
+While the constant 2 in the combinatorial analog,
+                                                 |A + A| 2
+                                                       
+                                   |A − A|
+                                            ≤              ,
+                                      |A|          |A|
+is known to be tight by [14], it is not known whether this constant is tight in the entropic case. An
+improvement here would immediately improve the coefficient of 6 and thus improve δ beyond 17 ,
+not to mention the improvement being of immense independent interest.
+   Recall the varentropy of a discrete random variable X with probability mass function p is
+Var(− log p(X)), where the entropy is simply E[− log p(X)]. A second avenue for further research
+would be to control the varentropy of sums, to essentially allow for a second moment method to
+improve our control in Section 4, e.g., replacing our need for a β-adic decomposition in Lemma 4.7.
+
+                                         Acknowledgments
+  Rupert Li was partially supported by a Hertz Fellowship and a PD Soros Fellowship. Claude was
+used as an auxiliary tool while preparing this manuscript. All statements, arguments, and proofs
+were verified and either written or revised by the author, who takes full responsibility.
+                                 THE ENTROPIC SUM-PRODUCT PHENOMENON                                                39
+
+                                                   References
+ [1] T. F. Bloom, Control and its applications in additive combinatorics, arXiv:2501.09470 [math.NT] (2025).
+ [2] T. F. Bloom, W. Sawin, C. Schildkraut, and D. Zhelezov, The sum-product conjecture is false for real numbers,
+     arXiv:2605.28781 [math.NT] (2026).
+ [3] T. M. Cover and J. A. Thomas, Elements of information theory, second ed., Wiley-Interscience [John Wiley &
+     Sons], Hoboken, NJ, 2006. MR2239987
+ [4] A. Cushman, A note on the sum-product problem and the convex sumset problem, arXiv:2512.13849 [math.CO]
+     (2025).
+ [5] F. de Zeeuw, A short proof of Rudnev’s point-plane incidence bound, arXiv:1612.02719 [math.CO] (2016).
+ [6] G. Elekes and I. Z. Ruzsa, Few sums, many products, Studia Sci. Math. Hungar. 40 (2003), no. 3, 301–308.
+     MR2036961 doi:10.1556/SScMath.40.2003.3.4
+ [7] G. Elekes, On the number of sums and products, Acta Arith. 81 (1997), no. 4, 365–367. MR1472816
+     doi:10.4064/aa-81-4-365-367
+ [8] P. Erdős and E. Szemerédi, On sums and products of integers, Studies in pure mathematics, Birkhäuser, Basel,
+     1983, pp. 213–218. MR820223
+ [9] L. Gavalakis, M. K. Goh, and I. Kontoyiannis, Entropy lower bounds and sum-product phenomena,
+     arXiv:2604.20233v2 [math.CO] (2026).
+[10] M. K. Goh, On an entropic analogue of additive energy, Essent. Number Theory 5 (2026), no. 2, 243–269.
+     MR5076551 doi:10.2140/ent.2026.5.243
+[11] W. T. Gowers, B. Green, F. Manners, and T. Tao, On a conjecture of Marton, Ann. of Math. (2) 201 (2025),
+     no. 2, 515–549. MR4880432 doi:10.4007/annals.2025.201.2.5
+[12] W. T. Gowers, B. J. Green, F. Manners, and T. Tao, Marton’s conjecture in abelian groups with bounded torsion,
+     Ann. Fac. Sci. Toulouse Math. (6) 35 (2026), no. 1, 1–33. MR5020798 doi:10.5802/afst.1839
+[13] B. Green, F. Manners, and T. Tao, Sumsets and entropy revisited, Random Structures Algorithms 66 (2025),
+     no. 1, Paper No. e21252, 33. MR4827400 doi:10.1002/rsa.21252
+[14] F. c. Hennecart, G. Robert, and A. Yudin, On the number of sums and differences, no. 258, 1999, Structure
+     theory of set addition, pp. xiii, 173–178. MR1701195
+[15] D. Koh, M. Mirzaei, T. Pham, and C.-Y. Shen, Exponential sum estimates over prime fields, Int. J. Number
+     Theory 16 (2020), no. 2, 291–308. MR4077423 doi:10.1142/S1793042120500153
+[16] J. Kollár, Szemerédi-Trotter-type theorems in dimension 3, Adv. Math. 271 (2015), 30–61. MR3291856
+     doi:10.1016/j.aim.2014.11.014
+[17] S. V. Konyagin and I. D. Shkredov, On sum sets of sets having small product set, Proc. Steklov Inst. Math.
+     290 (2015), no. 1, 288–299, Published in Russian in Tr. Mat. Inst. Steklova 290 (2015), 304–316. MR3488800
+     doi:10.1134/S0081543815060255
+[18] C. T. Li, Discrete layered entropy, conditional compression and a tighter strong functional representation lemma,
+     2025 IEEE International Symposium on Information Theory (ISIT), IEEE, 2025, pp. 1–6.
+[19] R. Li, L. Gavalakis, and I. Kontoyiannis, Entropic additive energy and entropy inequalities for sums and products,
+     IEEE Trans. Inform. Theory 72 (2026), no. 3, 1553–1568. MR5034278 doi:10.1109/tit.2026.3653549
+[20] A. Máthé and W. O’Regan, Discretised sum-product theorems by Shannon-type inequalities, J. Lond. Math. Soc.
+     (2) 112 (2025), no. 6, Paper No. e70389, 16. MR5003361 doi:10.1112/jlms.70389
+[21] M. Rudnev, On the number of incidences between points and planes in three dimensions, Combinatorica 38
+     (2018), no. 1, 219–254. MR3776354 doi:10.1007/s00493-016-3329-6
+[22] M. Rudnev and S. Stevens, An update on the sum-product problem, Math. Proc. Cambridge Philos. Soc. 173
+     (2022), no. 2, 411–430. MR4469270 doi:10.1017/S0305004121000633
+[23] I. Z. Ruzsa, On the cardinality of A + A and A − A, Combinatorics (Proc. Fifth Hungarian Colloq., Keszthely,
+     1976), Vol. II, Colloq. Math. Soc. János Bolyai, vol. 18, North-Holland, Amsterdam-New York, 1978, pp. 933–
+     938. MR519317
+[24] I. Z. Ruzsa, Sumsets and entropy, Random Structures Algorithms 34 (2009), no. 1, 1–10. MR2478535
+     doi:10.1002/rsa.20248
+[25] J. Solymosi, Bounding multiplicative energy by the sumset, Adv. Math. 222 (2009), no. 2, 402–408. MR2538014
+     doi:10.1016/j.aim.2009.04.006
+[26] L. A. Székely, Crossing numbers and hard Erdős problems in discrete geometry, Combin. Probab. Comput. 6
+     (1997), no. 3, 353–358. MR1464571 doi:10.1017/S0963548397002976
+[27] E. Szemerédi and W. T. Trotter, Jr., Extremal problems in discrete geometry, Combinatorica 3 (1983), no. 3-4,
+     381–392. MR729791 doi:10.1007/BF02579194
+[28] T. Tao, Sumset and inverse sumset theory for Shannon entropy, Combin. Probab. Comput. 19 (2010), no. 4,
+     603–639. MR2647496 doi:10.1017/S0963548309990642
+40                                               RUPERT LI
+
+[29] S. P. Vadhan, Pseudorandomness, Found. Trends Theor. Comput. Sci. 7 (2011), no. 1-3, front matter, 1–336.
+     MR3019182 doi:10.1561/0400000010
+
+     Department of Mathematics, Stanford University, Stanford, CA 94305, USA
+     Email address: rupertli@stanford.edu
+

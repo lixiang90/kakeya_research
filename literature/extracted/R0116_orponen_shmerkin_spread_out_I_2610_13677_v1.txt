@@ -1,0 +1,2589 @@
+                                                   SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE
+
+
+                                                                       TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+                                               Abstract. We introduce spread-out measures, a notion of local non-concentration near pencils for
+                                               measures on Grassmannians. We establish an optimal δ-discretized dual Furstenberg estimate for
+arXiv:2610.13677v1 [math.CA] 9 Oct 2026
+
+
+
+
+                                               “sticky spread-out” shadings. A simple-to-state corollary is the following. Assume that ν is an
+                                               Ahlfors s-regular measure on G(2, 1) with s > 0. Let E ⊂ R2 be a Borel set with equal Hausdorff
+                                               and packing dimension. Then,
+                                                                    dimH ΠV (E) = min{dimH E, 1}       for ν-a.e. V ∈ G(2, 1).
+                                               The general δ-discretized estimate for “sticky spread out” configurations here is the starting point
+                                               for a more general theorem in the companion paper of Cohen, Shmerkin, Wang and Zakharov, where
+                                               the “stickiness” hypothesis is removed. For instance, the assumption of equal Hausdorff and packing
+                                               dimension in the result stated above will be dispensed with in the companion paper.
+
+
+
+
+                                                                                          Contents
+                                          1. Introduction                                                                                              2
+                                          1.1. Restricted projections                                                                                  2
+                                          1.2. Optimal Furstenberg estimates                                                                           3
+                                          1.3. Discretized formulations                                                                                4
+                                          1.4. Applications                                                                                            6
+                                          1.5. Proof strategy and wider connections                                                                    6
+                                          1.6. Notation                                                                                                7
+                                          1.7. AI declaration                                                                                          7
+                                          1.8. Acknowledgments                                                                                         8
+                                          2. Spread-out measures and their basic properties                                                            8
+                                          2.1. Big cells in the Grassmannian                                                                           8
+                                          2.2. Spread-out sets and measures                                                                            9
+                                          2.3. From local to global and global to local non-concentration                                             11
+                                          2.4. Stability of Spread-Out Measures                                                                       12
+                                          3. ABC sum-product for spread-out projections                                                               14
+                                          3.1. Main result                                                                                            14
+                                          3.2. Spread-out sets are L2 -flattening                                                                     14
+                                          3.3. Preliminaries on additive energy                                                                       16
+                                          3.4. A Kaufman-type projection lemma                                                                        17
+                                          3.5. Proof of Proposition 3.1                                                                               19
+                                          4. Spread-out projections of sticky sets                                                                    21
+                                          4.1. Main result and initial setup                                                                          21
+                                          4.2. Proof of Proposition 4.8                                                                               23
+                                          5. Multiscale and sticky Furstenberg estimates                                                              30
+                                          5.1. Plane and spread-out configurations                                                                    30
+                                          5.2. Multiscale Furstenberg estimate                                                                        30
+                                                                                                1
+2                               TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+    5.3. Almost covering                                                                                  31
+    5.4. Zoomed-in configurations                                                                         32
+    5.5. Proof of Proposition 5.1                                                                         33
+    5.6. Iteration over several scales                                                                    36
+    5.7. Sticky spread-out Furstenberg sets                                                               37
+    6. Examples and applications                                                                          40
+    6.1. Uniformly perfect measures on R are spread-out                                                   40
+    6.2. Applications to discretized sum-product estimates                                                43
+    6.3. Triple sums for subsets of the parabola                                                          44
+    References                                                                                            45
+
+
+
+
+                                            1. Introduction
+
+   This paper and its companion [6] concern optimal Furstenberg estimates and restricted projection
+theorems for spread-out families of planes. Roughly speaking, a family of planes is spread-out if it is
+locally unconcentrated near pencils at most points and scales. The general estimates in [6] are the
+main motivation for this work. Here we introduce spread-outness and prove the sticky δ-discretized
+Furstenberg estimate, Theorem 1.9, in which the point set is roughly Ahlfors regular (or sticky). The
+terminology was introduced in the sticky Kakeya problem [48], where stickiness roughly corresponds
+to tubes in nearby directions “sticking together”. Cohen, the second author, Wang and Zakharov
+[6] use this estimate to treat general Frostman and Katz–Tao configurations – or, in short, remove
+the ”stickiness” hypothesis. The two papers form a single project, presented separately for clarity of
+exposition and to distinguish the authorship of the sticky estimate from that of the passage to general
+configurations.
+   Before stating the δ-discretized result, we record some of its easier-to-state corollaries and appli-
+cations. We state the corollaries only in the planar case, although their natural higher-dimensional
+counterparts would also follow from Theorem 1.9. The main reason for stating only the planar cases
+here is to avoid duplicate work: the higher-dimensional results in full generality will anyway be stated
+and proven in [6]. The δ-discretized result in Theorem 1.9 will be stated in all dimensions, since it is
+required as a black box in [6].
+
+1.1. Restricted projections. For V ∈ G(d, k), let ΠV : Rd → V denote the orthogonal projection
+onto V . The Marstrand-Mattila projection theorem [29, 31] is a cornerstone of geometric measure
+theory. It states that if E ⊂ Rd is a Borel set then, denoting Lebesgue measure on the Grassmannian
+G(d, k) of k-planes in Rd by γd,k , one has
+(1.1)                 dimH ΠV (E) = min{dimH E, k}         for γd,k -a.e. V ∈ G(d, k).
+Here dimH is Hausdorff dimension. Projection theory seeks to understand the behavior of dimH ΠV (E)
+for ν-typical V , when ν is a highly singular measure on G(d, k), perhaps under additional assumptions
+on E. See [47] for a recent survey on the topic, including its connection with the Kakeya problem.
+   A natural question is for which measures ν, in place of γd,k , the Marstrand-Mattila estimate (1.1)
+continues to hold. This question has been extensively studied in the case of length measure on smooth
+curves in G(d, k); see, for example, [16, 24, 39, 19] for G(3, 1), [16, 17] for G(3, 2), and [18, 14, 47] for
+higher-dimensional Grassmannians and further references. By now, the picture in this case is fairly
+complete in dimension and co-dimension 1 (k = 1 or d − 1), but much less is known for 1 < k < d − 1.
+                         SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                  3
+
+
+All the proofs in this line of work rely on the smoothness of the curve, and it is not clear how to
+extend them to more general measures. In a different direction, Chen [5] proved a restricted projection
+theorem for a class of random measures on G(3, 1); the argument does not extend to G(2, 1).
+    In particular, up to now there were no genuine restricted Marstrand-type results for measures on
+G(2, 1). The following Theorem 1.1 is a consequence of our main result. We write dimP for packing
+dimension. Recall that a locally finite Borel measure µ on a metric space X is called uniformly perfect
+if diam(spt µ) > 0, and there exist β ∈ [0, 1) and D > 1 such that
+                                     µ(B(x, r)) ≤ β · µ(B(x, Dr))
+for all closed balls B(x, r) ⊂ X such that spt µ ̸⊂ B(x, Dr). In particular, it is easy to see that
+every non-trivial Ahlfors s-regular measure with s > 0 is uniformly perfect. (A measure µ on a
+metric space X is Ahlfors s-regular if there is C ≥ 1 such that C −1 rs ≤ µ(B(x, r)) ≤ Crs for all
+x ∈ spt µ, r ∈ (0, diam(spt µ)].)
+Theorem 1.1. Let ν be a uniformly perfect measure on G(2, 1). For any Borel set E ⊂ R2 with
+dimH (E) = dimP (E),
+                      dimH ΠV (E) = min{dimH E, 1}         for ν-a.e. V ∈ G(2, 1).
+Remark 1.2. The assumption of equal Hausdorff and packing dimension is not necessary, and it
+will be removed in the companion paper [6], where more general higher-dimensional results will be
+presented.
+   As shown by Kaufman and Mattila [26], there are singular measures ν on G(2, 1), of dimension
+arbitrarily close to 1, for which the Marstrand-Mattila estimate fails for some compact set E. Both
+the set E and the measure ν in these examples are rather special. In particular, ν is supported on
+a“well-spaced” set, that is, a set Θ such that for many pairs of scales 0 < δ ≪ r, Θ ∩ Br is contained
+in a δ-ball for all r-balls Br . Uniform perfectness rules out this type of behavior.
+   As is usually the case, these results are derived from more general discretized statements, which
+are far more useful in applications. The discretized sticky Furstenberg estimate is Theorem 1.9; its
+projection counterpart is Theorem 4.1.
+
+1.2. Optimal Furstenberg estimates. Projection theorems are heuristically (and, at the dis-
+cretized level, formally) special cases of Furstenberg-type estimates. In the classical Furstenberg
+problem, one is given a set E ⊂ R2 and a family of lines L, and one assumes dimH (E ∩ ℓ) ≥ s for all
+ℓ ∈ L. The goal is to estimate dimH E in terms of s and dimH L. This problem was solved in [40]:
+with dimH L = t, one has                                             
+                                                         3s + t
+                                 dimH (E) ≥ min s + t,          ,s + 1 ,
+                                                           2
+and this is sharp. In particular, the 3s+t
+                                        2  term is witnessed by a lattice construction, see [49, p. 10] or
+[10, Section A.1]. It is a natural problem to ask whether, under some additional conditions on E ∩ ℓ,
+this term can be removed. (One might in principle also ask if the term s + 1 can be removed, but
+this question seems less interesting: the example witnessing the s + 1 term is E = C × [0, 1], where
+C ⊂ [0, 1] is an arbitrary s-dimensional set.)
+   After point-line duality, the planar Furstenberg theorem can be equivalently stated in the following
+form: given a set E ⊂ R2 with dimH (E) = t and, for each x ∈ E, a family of lines Lx through x of
+dimension ≥ s, we have
+                                            !                          
+                                     [                     3s + t
+                              dimH       Lx ≥ min s + t,          ,s + 1 .
+                                                              2
+                                    x∈E
+4                               TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+The set on the left is a subset of the affine Grassmannian A(2, 1) of lines in R2 . Very recently, Csörnyei
+and Stull [7, Theorem 1.1] partially generalized the planar discretized incidence estimate to higher
+dimensions, replacing bundles of lines by bundles of hyperplanes under Frostman non-concentration
+assumptions, with exponent greater than d − 2 for the local families of hyperplanes.
+    It is this dual form that we consider in this paper, and extend to higher dimensions: we replace
+bundles of lines by bundles of k-planes in Rd . The following is the “Furstenberg version” of Theorem
+1.1. In the statement, a locally finite Borel measure ν on a metric space (now G(2, 1)) is s-Frostman
+if there exists a constant C ≥ 1 such that ν(B(x, r)) ≤ Crs for all r > 0.
+
+Theorem 1.3. Let t ∈ [0, 2], and s > 0. Let E ⊂ R2 be a Borel set with dimH (E) = dimP (E) = t. For
+each x ∈ E, let νx be a uniformly perfect s-Frostman measure on G(2, 1), and define Θx := spt(νx ).
+Then,                                                  !
+                                   [
+                           dimH       {x + ℓ : ℓ ∈ Θx } ≥ min{t, 1} + s.
+                                     x∈E
+
+Remark 1.4. Morally, the projection cases discussed earlier correspond to the special case of Theorem
+1.3 where the family of subspaces Θx is independent of x. To make the moral precise, one needs to
+consider δ-discretized statements. Theorem 4.6 of [6] allows us to remove the assumption dimH (E) =
+dimP (E) in this theorem.
+
+   Theorems 1.1 and 1.3 follow from a δ-discretized version, Theorem 1.9, by standard discretization
+and covering arguments similar to [38, Proposition 6.4]. We omit the details here rather completely,
+but include some of them in [6], where more general versions are established. The only point we
+mention here is that the uniform perfectness of νx assumed in Theorem 1.3 implies that νx is a
+“spread-out measure” (Definition 2.3) thanks to Proposition 6.2. After the spread-outness of the
+measures νx has been established, one may build a ”spread-out configuration” (Definition 1.6) inside
+S
+  x∈E {x + ℓ : ℓ ∈ Θx }, and S
+                             then apply Theorem 1.9 (following the argument in [38, Proposition 6.4])
+to bound the dimension of x∈E {x + ℓ : ℓ ∈ Θx } from below.
+
+1.3. Discretized formulations. We now introduce the discretized sticky Furstenberg estimate. For
+this, we need to introduce a number of definitions.
+    A dyadic scale is an element of 2−N0 . For r ∈ 2−N0 and m ∈ N, let
+                                  Dr (Rm ) := {r(j + [0, 1)m ) : j ∈ Zm }.
+For E ⊂ Rm , let Dr (E) be the cubes in Dr (Rm ) that meet E, write |E|r := |Dr (E)|, and denote the
+lower-left endpoint of Q ∈ Dr (Rm ) by z(Q). For a point x ∈ Rm , Dr (x) denotes the unique cube in
+Dr (Rm ) containing x. For a family J of dyadic cubes, write
+(1.2)                                      zJ := {z(Q) : Q ∈ J }.
+
+   We use the standard notion of Frostman sets. For δ ∈ 2−N , t ≥ 0, and C ≥ 1, a nonempty bounded
+set P ⊂ Rd is (δ, t, C)-Frostman if
+                        |P ∩ Q|δ ≤ Crt |P |δ ,     Q ∈ Dr (Rd ),    r ∈ 2−N ∩ [δ, 1].
+
+    Identify Rd = Rk × Rd−k . For θ ∈ Gd,k := Rk×(d−k) , let
+                                 Vθ := Graph(θ∗ ) = {(x, θ∗ x) : x ∈ Rk }.
+Here θ∗ denotes the transpose of θ. The map θ 7→ Vθ identifies Gd,k with a Zariski-dense open subset
+of G(d, k) (this is the higher dimensional analog of the parametrization of lines by (a, b) ↔ y = ax+b).
+                          SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                    5
+
+
+We similarly identify the corresponding big cell Ad,k in the affine Grassmannian with Rk×(d−k) ×Rd−k
+via
+                               (θ, b) 7−→ Vθ,b := {(x, θ∗ x + b) : x ∈ Rk },
+and use the dyadic covering numbers above in these coordinates.
+
+Definition 1.5 (Plane configurations). Let M ∈ N. A (δ, M )-plane configuration is a pair (P, Θ),
+where P ⊂ δZd ∩ [0, 1]d is nonempty and, for each p ∈ P ,
+                          Θ(p) ⊂ Dδ ([−1, 1]k×(d−k) ),       M ≤ |Θ(p)| < 2M.
+We call Θ(p) the shading of p and omit M when it is not relevant. We silently identified Θ(p) (a
+family of dyadic cubes) with its union, so that θ ∈ Θ(p) means θ is an element of some cube in Θ(p).
+   The Furstenberg set associated to (P, Θ) is defined using the lower-left corners zΘ(p) familiar from
+(1.2):
+                           F(P, Θ) := {Vθ + p : p ∈ P, θ ∈ zΘ(p)} ⊂ Ad,k .
+Allowing all θ ∈ Θ(p) instead changes its δ-covering number by at most a factor depending on d, k.
+
+  The model hyperplanes in Gd,k are
+          H[x,y,u] := {θ ∈ Gd,k : x · θ · y = u},     x ∈ Rk \ {0},    y ∈ Rd−k \ {0},     u ∈ R.
+Each model hyperplane is the intersection with Gd,k of a Schubert divisor in G(d, k), and every
+affine tangent hyperplane to a Schubert divisor at a smooth point is a model hyperplane in big cell
+coordinates. See §2.1.
+
+Definition 1.6 (Singular scales and spread-out families). Fix β ∈ (0, 1] and C > 0, and let J ⊂
+Dδ (Gd,k ) be a nonempty finite family. All balls and distances in Gd,k are Euclidean. For J ′ ⊂ J
+and θ ∈ J ′ , a scale r ∈ 2−N ∩ [δ, 1] is β-singular for (J ′ , θ) if there exists a H ∈ Hd,k such that
+                              J ′ ∩ B(θ, r) ⊂ {ω ∈ Gd,k : dist(ω, H) < βr}.
+
+  The family J is (δ, β, C)d,k -spread-out if
+                                             |J ′ | ≤ C2−βs |J |
+whenever J ′ ⊂ J , s ∈ N0 , and every θ ∈ J ′ has at least s scales that are β-singular for (J ′ , θ). A
+                                            S
+
+plane configuration (P, Θ) is (δ, β, C, M )-spread-out if Θ(p) is (δ, β, C)d,k -spread-out for every p ∈ P
+and |Θ(p)| ∈ [M, 2M ] for all p ∈ P .
+
+  See Section 2 for further background on model hyperplanes, their connection with Schubert cycles,
+and spread-out sets and measures, and Section 6 for examples of spread-out families.
+  For δ > 0, α ≥ 0, and C > 0, a finite nonzero Borel measure µ on Rd is (δ, α, C)d -Frostman if
+                                 µ(B(x, r)) ≤ Crα        (x ∈ Rd , r ≥ δ).
+We call µ (α, C)d -Frostman if this holds for every r > 0. These bounds use the mass of µ without
+normalizing it; the subscript d is omitted when clear from context.
+
+Definition 1.7. We say that a non-trivial finite measure µ on Rd is (δ, α, C)d -regular if it is (δ, α, C)d -
+Frostman and
+                     | spt µ ∩ B(x, R)|r ≤ C(R/r)α       (x ∈ Rd , δ ≤ r ≤ R).
+A non-empty bounded set P ⊂ Rd is (δ, α, C)d -regular if the uniform probability measure mP (δ) on
+P (δ) := zDδ (P ) is (δ, α, C)d -regular. The subscript d is omitted when clear from context.
+6                                TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Remark 1.8. In [37, Definition 6.1], regularity consists of a Frostman condition and a global covering
+bound at scale δ 1/2 only. In Definition 1.7, we require the covering bound for all δ ≤ r ≤ R.
+
+    We can now state the main δ-discretized result of the paper.
+Theorem 1.9. Fix dimensions 1 ≤ k < d and parameters s ∈ (0, 1] and t ∈ (0, d].
+    For any η > 0 there is ε′ = ε′ (s, t, η) > 0 such that the following holds for every dyadic δ ≪s,t,η 1.
+                             ′                                                                    ′
+  Let (P, Θ) be a (δ, s, δ −ε , M )d,k -spread-out configuration where P ⊂ [−1, 1]d is (δ, t, δ −ε )d -regular.
+Then the associated Furstenberg set F = F(P, Θ) satisfies
+(1.3)                                    |F|δ ≥ δ η−min{t,d−k} · M.
+
+  In the (θ, b)-coordinates on Ad,k , it is immaterial whether we measure the size of F using the
+metric on A(d, k) or the Euclidean metric on R(k+1)(d−k) .
+  In [6, Theorem 1.6], the regularity assumption on P will be replaced by the weaker Frostman or
+Katz–Tao conditions.
+
+1.4. Applications. Theorems 1.1, 1.3 and 1.9 have applications to additive-combinatorial problems
+for Ahlfors regular sets. It follows from Theorem 1.9 and a standard argument of Elekes [15] that
+if A ⊂ [1, 2] is Ahlfors s-regular for some s ∈ (0, 1/2] (that is, A equals the support of an Ahlfors
+s-regular measure), then, for every η > 0 and all sufficiently small δ,
+                                         |A + A|δ |A · A|δ ≥ δ η |A|3δ .
+                                                   3/2
+In particular, max{|A + A|δ , |A · A|δ } ≥ δ η |A|δ . See §6.2 for the proof and further discussion.
+   We also show in §6.3 that if A ⊂ {(x, x2 ) : x ∈ [−1, 1]} is Ahlfors s-regular for some s ∈ (0, 1/2],
+then
+                                  dimH (A + A + A) = 3 dimH (A).
+This is conjectured to hold for arbitrary Borel subsets of the parabola, and this is the first non-trivial
+class of sets for which it has been verified. The companion paper [6] establishes broader sum-product
+statements, as well as applications to surfaces in the Grassmannian, pinned distances and self-affine
+sets.
+
+1.5. Proof strategy and wider connections. The proof of Theorem 1.9 has several points in
+common with previous work by the authors on Furstenberg sets [37, 38].
+      (i) We first establish the sticky projection estimate, Theorem 4.1, and then use an argument of
+          Hong Wang which first appeared in [38] to deduce the Furstenberg estimate by multiscale
+          analysis and pigeonholing.
+     (ii) The projection estimate is proved by contradiction. Assuming that the estimate fails by
+          a definite amount, we show that, after rescaling, an extremal configuration has a product
+          structure inside typical slabs.
+    (iii) This product structure contradicts an asymmetric sum-product estimate, Proposition 3.1. Its
+          proof uses Balog–Szemerédi–Gowers, Plünnecke–Ruzsa, and an inverse theorem of the second
+          author [43, 44].
+   Although not used in a direct way, we were also inspired over the years by Hochman’s work on
+self-similar sets and measures based on additive combinatorics [22, 23]. At a heuristic level, we see the
+results of this work as an extension of Hochman’s ideas to a setting in which the dynamical structure
+of self-similar or self-affine measures is replaced by the geometric structure of sticky and spread-out
+sets. An important conceptual analogy is that both in Hochman’s work and in the present paper,
+                         SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                  7
+
+
+an inverse theorem for convolutions is used to obtain a small improvement in the dimension of the
+object under study, which is then amplified by a multiscale analysis. The mechanisms by which this
+is achieved are completely different.
+   The use of spread-out sets, introduced in this paper, accounts for several differences from these
+earlier arguments. The main properties of spread out objects are:
+   (a) Invariance under scaling and refinement (which are immediate from the definitions).
+   (b) Invariance under projections; see Lemma 2.6.
+   (c) Invariance under localization to small cubes; see Lemma 2.8.
+   (d) An L2 -flattening property; see Theorem 3.2.
+See §2 for a detailed discussion of spread-outness and its properties, and §6.1 for a proof that uniformly
+perfect measures on R (or G(2, 1)) are spread-out.
+
+1.6. Notation. We introduce some notation that will be used throughout the paper.
+  Given a finite set P , we write mP for the uniform probability measure on P .
+   We write |P | for the cardinality of a finite set P . We use the cube and covering notation of
+Section 1.3, extending the same definitions to arbitrary δ > 0. For E ⊂ Rd , its δ-discretization is
+E (δ) := zDδ (E) ⊂ δZd , so |E|δ = |E (δ) |. Up to a factor depending only on the ambient dimension,
+|E|δ is the minimal number of δ-balls needed to cover E.
+   Likewise, the δ-discretization of a finite Borel measure µ on Rd is defined by µ(δ) ({z(Q)}) = µ(Q)
+for Q ∈ Dδ (Rd ).
+   The open r-neighborhood of a set E ⊂ Rd is denoted by E(r). We write B(0, r) for the ball of
+radius r centered at the origin. For λ > 0, λQ and λB denote the concentric dilations of a cube Q
+and a ball B by the factor λ.
+   If (X, F, µ) is a measure space, and f : X → Y is a map, we write f µ for the push-forward measure
+(f µ)(B) := µ(f −1 (B)) on Y .
+   We write A ⪅δ B to mean A ≤ B(log(1/δ))C , where the implicit exponent C is independent of δ,
+but may depend on the other ambient parameters, which will be specified as needed. We define ⪆δ
+similarly.
+  By A ≫par 1 we mean that A is sufficiently large, depending on the parameters par. We define
+A ≪par 1 similarly.
+    We will often work with dyadic scales. Occasionally, we will assume a scale δ to be dyadic even
+if it technically does not need to be; this means that δ is replaced by the closest dyadic scale. This
+will sometimes cause a constant factor loss, but this is harmless in all cases where we use this slight
+abuse of notation.
+   We will work with dimensions 1 ≤ k ≤ d. These will be fixed in each section, and we take them to
+be constants; in particular, all implicit constants are allowed to depend on d, k.
+  Logarithms are always base 2 unless otherwise specified.
+
+1.7. AI declaration. All the main ideas of the paper were conceived by the authors without AI
+involvement. For clarity, these ideas include the notion of spread-out measures, and the strategy to
+prove the main result, Theorem 1.9. At the writing stage, P.S. used several LLMs to draft proofs of
+technical results in some parts of the paper, and to search for errors and potential simplifications in
+the arguments. The authors carefully checked all AI-generated text and revised it substantially to
+ensure correctness and clarity. Any remaining issues are the sole responsibility of the authors.
+8                                TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+1.8. Acknowledgments. Part of this project was carried out during a visit of PS to the University
+of Jyväskylä in 2025, supported by a JYU Visiting Fellowship. PS acknowledges support from a
+Simons Fellowship and an NSERC Discovery Grant. TO is supported by the European Research
+Council (ERC) under the European Union’s Horizon Europe research and innovation programme
+(grant agreement No 101087499). This material is partially based upon work supported by the Swedish
+Research Council under grant no. 2021-06594 while the authors were in residence at Institut Mittag-
+Leffler in Djursholm, Sweden, during the semester Interactions between fractal geometry, harmonic
+analysis, and dynamics in 2026.
+
+                      2. Spread-out measures and their basic properties
+
+2.1. Big cells in the Grassmannian. For 0 ≤ k ≤ d, let G(d, k) and A(d, k) denote the Grass-
+mannian of k-dimensional linear subspaces of Rd and the affine Grassmannian of k-dimensional affine
+subspaces of Rd , respectively.
+  The matrix space Gd,k = Rk×(d−k) can be identified with a Zariski-dense and open subset of
+G(d, k) via the embedding
+(2.1)                          θ → Vθ := Graph(θ∗ ) = {(x, θ∗ x) : x ∈ Rk },
+where θ∗ is the transpose of θ. Note that Vθ⊥ equals ker(πθ ), where πθ : Rk × Rd−k → Rk is the map
+πθ (x, y) = x + θ · y. We think of Gd,k as a “big cell” in the Grassmannian.
+   For the remainder of this section, assume that 1 ≤ k < d.
+                                                           
+   Let Xk,d−k = (Rk \ {0}) × (Rd−k \ {0}) × R / ∼, where ∼ is the equivalence relation given by
+(x, y, t) ∼ (x′ , y ′ , t′ ) if there exist λ, µ ∈ R \ {0} such that x′ = λx, y ′ = µy, and t′ = λµt. We write
+[x, y, t] for the equivalence class of (x, y, t). Given [x, y, t] ∈ Xk,d−k , let
+                                                      
+                                           H[x,y,t] := θ ∈ Gd,k : x · θ · y = t .
+This is well-defined on equivalence classes. We denote the family of all such hyperplanes by Hd,k :=
+{H[x,y,t] : [x, y, t] ∈ Xk,d−k }.
+  Note that if we identify Gd,k with Rk(d−k) , then Hd,k ⊂ A(k(d − k), k(d − k) − 1) consists of affine
+hyperplanes in Rk(d−k) . On the other hand, as a subset of G(d, k), the set H[x,y,t] corresponds to the
+Schubert divisor
+(2.2)                              {θ ∈ Gd,k : dim(Vθ ∩ W[x,y,t] ) ≥ 1},
+where
+                      W[x,y,t] := (sx, v) ∈ Rk × Rd−k : y · v = ts ∈ G(d, d − k).
+                                 
+
+At every smooth point of a Schubert divisor, its affine tangent hyperplane in big-cell coordinates is in
+Hd,k . The model hyperplanes are affine local models for the Schubert divisors appearing in the global
+non-concentration hypothesis of He’s projection theorem [21].
+  The set Gd,k has two natural metrics: the one induced from the natural metric on G(d, k) invariant
+under the action of the orthogonal group, and the one induced from the Euclidean metric on Rk×(d−k) .
+The two metrics induce the same topology and are bi-Lipschitz equivalent on compact subsets of Gd,k .
+Unless otherwise specified, we will always use the Euclidean metric on Gd,k .
+   These considerations extend to the affine Grassmannian A(d, k) as well. The big cell Ad,k of A(d, k)
+is the set of affine k-planes Vθ,b := {(x, θ∗ x + b) : x ∈ Rk }, with θ ∈ Gd,k and b ∈ Rd−k . The big
+cell is once again Zariski-dense and open. We identify Ad,k ∼    = R(d−k)(k+1) by identifying the plane
+Vθ,b with the pair (θ, b) ∈ R k(d−k)+(d−k)
+                                           . We will use a dyadic system {Dδ (Ad,k ) : δ ∈ 2−Z } on Ad,k
+                          SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                    9
+
+
+which is the standard dyadic system on R(d−k)(k+1) under the identification above. The metrics on
+Ad,k inherited from A(d, k) and R(k+1)(d−k) are bi-Lipschitz equivalent on compact subsets of Ad,k .
+   For θ ∈ Gd,k and (x, y) ∈ Rk × Rd−k , write ρθ (x, y) := y − θ∗ x = π−θ∗ (y, x). The affine coordinates
+satisfy
+(2.3)                                  Vθ + (x, y) ←→ (θ, ρθ (x, y)).
+On fixed bounded sets, this coordinate map is Lipschitz, so changing point and direction representa-
+tives by O(r) changes the affine coordinates by O(r). Since the dyadic system on Ad,k is the product
+system, for r > 0, any finite Θ ⊂ rZk×(d−k) , and sets Pθ ⊂ Rd ,
+                                  [                                X
+(2.4)                                 {Vθ + p : p ∈ Pθ }       =         |ρθ (Pθ )|r .
+                                 θ∈Θ                       r       θ∈Θ
+
+   Both G(d, k) and bounded subsets of A(d, k) can be covered by finitely many compact subsets of
+big cells (or more properly by finitely many translates of a compact subset of the big cell by elements
+of the orthogonal group). This allows us to reduce many questions about G(d, k) and A(d, k) to
+questions about Gd,k , which is a vector space and hence more convenient to work with. In particular,
+as mentioned, Hd,k is a subset of the affine hyperplanes on Gd,k , which facilitates the definition and
+use of the notion of spread-outness introduced in the next subsection.
+
+2.2. Spread-out sets and measures. We will consider subsets of Gd,k which, at almost all points
+and almost all scales, are not too concentrated near planes H ∈ Hd,k . Related local non-concentration
+conditions have appeared in Diophantine approximation, notably the absolute decay condition of
+Kleinbock, Lindenstrauss and Weiss [28, §2]. Here we test only H ∈ Hd,k and control the mass of
+subsets according to their number of singular scales.
+Definition 2.1 (β-singular scale). Let β ∈ (0, 1], let r ∈ (0, 1], let Θ ⊂ Gd,k , and let θ ∈ Θ. We say
+that r is a β-singular scale for (Θ, θ) if there exists H ∈ Hd,k such that Θ ∩ B(θ, r) ⊂ H(βr). We
+think of this as saying that Θ ∩ B(θ, r) has generalized diameter at most βr in the directions of the
+hyperplanes H ∈ Hd,k .
+  For Θ ⊂ Rk(d−k) and δ, ∆ ∈ 2−N with δ ≤ ∆, we denote
+            sd,k (θ | Θ, β, δ → ∆) = {r ∈ 2−N ∩ [δ, ∆] : r is a β-singular scale for (Θ, θ)} .
+We abbreviate sd,k (θ | Θ, β, δ) := sd,k (θ | Θ, β, δ → 1) and, when δ is clear, sd,k (θ | Θ, β) := sd,k (θ |
+Θ, β, δ). We also omit the subscripts d, k when they are clear from context.
+                                                                                            S
+   If J ⊂ Dρ (Gd,k ) is a family of dyadic cubes for some dyadic scale ρ, and θ ∈ J , we write
+sd,k (θ | J , β, δ → ∆) := sd,k (θ | ∪J , β, δ → ∆). If J ∈ J is itself a cube, we write
+                           sd,k (J | J , β, δ → ∆) := inf sd,k (θ | J , β, δ → ∆).
+                                                      θ∈J
+
+Thus, when no confusion is likely, we silently identify a family of dyadic cubes with its union in
+singular-scale counts.
+Definition 2.2 ((δ, β, C)k -spread-out measure). Let δ ∈ 2−N and C > 0, β ∈ (0, 1]. A finite nonzero
+Borel measure ν on Rk , k ≥ 1, is called (δ, β, C)k -spread-out if the following holds. For a Borel set
+E ⊂ Rk , a point x ∈ E, and dyadic scales δ ≤ ∆ ≤ 1, write
+   sk (x | E, β, δ → ∆) := {r ∈ 2−N ∩ [δ, ∆] : ∃H ∈ A(k, k − 1) such that E ∩ B(x, r) ⊂ H(βr)} .
+Let s ∈ N0 , and let Θ ⊂ spt ν be a Borel set such that
+                                  sk (x | Θ, β, δ → 1) ≥ s for all x ∈ Θ.
+10                               TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Then,
+                                             ν(Θ) ≤ C · 2−βs .
+We say that a nonempty bounded set P ⊂ Rk is (δ, β, C)k -spread-out if Dδ (P ) satisfies Definition 1.6,
+with all affine hyperplanes in Rk in place of the model hyperplanes.
+
+     Next, we extend this definition to measures on Gd,k .
+
+Definition 2.3 ((δ, β, C)d,k -spread-out measure). Let δ ∈ 2−N , C > 0, and β ∈ (0, 1]. A finite
+nonzero Borel measure µ on Gd,k is called (δ, β, C)d,k -spread-out if the following holds. Let s ∈ N0 ,
+and let Θ ⊂ spt µ be a Borel set such that
+                                  sd,k (θ | Θ, β, δ → 1) ≥ s for all θ ∈ Θ.
+Then,
+                                             µ(Θ) ≤ C · 2−βs .
+We say that a nonempty bounded set Θ ⊂ Gd,k is (δ, β, C)d,k -spread-out if Dδ (Θ) is (δ, β, C)d,k -
+spread-out in the sense of Definition 1.6.
+     We omit the subscripts d, k when they are clear from context.
+
+  Recall that spread-out families of dyadic cubes were defined in Definition 1.6. In the singular-scale
+notation, its hypothesis is sd,k (J | J ′ , β, δ → 1) ≥ s for every J ∈ J ′ .
+  In Section 6.1, we prove that uniformly perfect measures on G2,1 ∼        = R are spread-out. Self-similar
+measures on Gd,k not supported on hyperplanes are spread-out by [6, Corollary 4.4].
+
+Remark 2.4. Under the natural identification Gk+1,k = Rk×1 ∼      = Rk , the notions of (δ, β, C)k -spread-
+out and (δ, β, C)k+1,k -spread-out coincide. Indeed, for (d, k) = (k + 1, k) the parameter y in Xk,1 is
+a nonzero scalar, so the model hyperplanes are given by H[x,y,t] = {a ∈ Rk : ay · x = t} = {a ∈ Rk :
+a · (yx) = t}, which are precisely the affine hyperplanes in Rk .
+
+Remark 2.5. Note that if µ is (δ, β, C)d,k -spread-out, then it is also (∆, β ′ , C ′ )d,k -spread-out for all
+∆ ∈ 2−N ∩ [δ, 1], all 0 < β ′ ≤ β and all C ′ ≥ C. We will often use this without explicit mention.
+
+   The next lemma captures a key property of the spread-out property: it is preserved under pro-
+jections. In fact, it is this crucial property that motivates the definition of (δ, β, C)d,k -spread-out
+measures in the first place.
+
+Lemma 2.6. Let µ be a (δ, β, C)d,k -spread-out measure on Gd,k . For b ∈ Rd−k with |b| = 1, define
+Lb (θ) := θ · b, and let νb := Lb µ. Then νb is (δ, β, C)k -spread-out.
+
+Proof. Let Θ ⊂ spt νb be a Borel set such that sk (x | Θ, β, δ → 1) ≥ s for all x ∈ Θ. We need
+to show that νb (Θ) ≤ C2−βs . Write F := L−1    b (Θ) ∩ spt µ. Then νb (Θ) = µ(F ) by definition of
+push-forward measure. We claim that sd,k (θ | F, β, δ → 1) ≥ s for all θ ∈ F . To see this, fix θ ∈ F ,
+let x := Lb (θ) ∈ Θ, and let r ∈ 2−N ∩ [δ, 1] be a scale which is β-singular for (Θ, x) in the sense of
+Definition 2.2. Thus there exists an affine hyperplane H ∈ A(k, k − 1) such that
+                                           Θ ∩ B(x, r) ⊂ H(βr).
+Now Lb is 1-Lipschitz, so
+                                 Lb (F ∩ B(θ, r)) ⊂ Θ ∩ B(x, r) ⊂ H(βr).
+                    k
+Write H = {z ∈ R : z · e = t} with |e| = 1. Then
+                           L−1
+                            b (H) = {ω ∈ R
+                                           k×(d−k)
+                                                   : (ω · b) · e = t} = H[e,b,t] ,
+                         SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                   11
+
+
+which is an element of Hd,k . If ω ∈ F ∩ B(θ, r), then Lb (ω) ∈ H(βr), so |(ω · b) · e − t| < βr. Since
+the point ω − ((ω · b) · e − t) e ⊗ b lies in L−1
+                                               b (H), we get
+
+                             dist(ω, L−1
+                                      b (H)) ≤ |(ω · b) · e − t| ∥e ⊗ b∥ < βr.
+
+Thus ω ∈ L−1
+               
+          b (H) (βr), and hence
+
+                                      F ∩ B(θ, r) ⊂ L−1
+                                                          
+                                                     b (H) (βr).
+
+This proves the claim.
+    Since µ is (δ, β, C)d,k -spread-out, it follows that µ(F ) ≤ C2−βs . Recalling that µ(F ) = νb (Θ), this
+is the desired conclusion.                                                                                □
+
+2.3. From local to global and global to local non-concentration. Spread-outness is a notion of
+local non-concentration near model hyperplanes. The next lemma shows that this local information
+implies a global Frostman type bound for neighborhoods of H ∈ Hd,k .
+
+Lemma 2.7. Let δ ∈ 2−N , let β ∈ (0, 1], and let µ be a finite nonzero Borel measure on Gd,k which
+is (δ, β, C)d,k -spread-out. Then for every [x, y, t] ∈ Xk,d−k and every dyadic scale r ∈ 2−N ∩ [δ, 1],
+
+                                         µ H[x,y,t] (r) ≲β C · rβ .
+                                                       
+
+
+Proof. Fix [x, y, t] ∈ Xk,d−k and r ∈ 2−N ∩ [δ, 1], and write Θ := spt µ ∩ H[x,y,t] (r). The spread-out
+condition with s = 0 gives µ(Gd,k ) ≤ C. If r > β, then µ(Θ) ≤ µ(Gd,k ) ≤ β −β rβ C, so the claim is
+immediate. Thus we may assume that r ≤ β.
+  Let θ ∈ Θ, and let ρ ∈ 2−N ∩ [r/β, 1]. Then
+
+                                 Θ ∩ B(θ, ρ) ⊂ H[x,y,t] (r) ⊂ H[x,y,t] (βρ),
+
+so ρ is a β-singular scale for (Θ, θ). Applying the (δ, β, C)d,k -spread-out property of µ, we obtain
+
+                                   µ(Θ) ≲β C2−β⌊− log(r/β)⌋ ≲β Crβ .
+
+                                                                                                          □
+
+  Next, we show that if a measure µ is spread-out at scale δ, then for all intermediate scales ∆ one
+can find a ∆-cube such that the renormalized restriction of µ to the cube is spread-out at scale δ/∆.
+
+Lemma 2.8. Let µ be a (δ, β, C)d,k -spread-out probability measure on Gd,k , and let ∆ ∈ 2−N ∩ [δ, 1].
+                                            S                                                 µ|Q
+There is a family Q ⊂ D∆ (Gd,k ) with µ( Q) ≥ 1/2 and µ(Q) > 0 for Q ∈ Q such that SQ µ(Q)          is
+          ′                                             ′
+(δ/∆, β, C )d,k -spread-out for every Q ∈ Q, where C ≲d,k C(1 + log(∆/δ)) and SQ is the homothety
+mapping Q onto [0, 1]k×(d−k) .
+                                                                                           P
+   If Θ ⊂ Gd,k is a bounded (δ, β, C)d,k -spread-out set, there is a family Q ⊂ D∆ (Θ) with Q∈Q |Θ ∩
+Q|δ ≥ |Θ|δ /2 such that SQ (Θ ∩ Q) is (δ/∆, β, C ′ )d,k -spread-out for every Q ∈ Q.
+
+                                                                     µ|
+Proof. Suppose that the cubes Q with µ(Q) > 0 for which SQ µ(Q)  Q
+                                                                    is not (δ/∆, β, C ′ )d,k -spread-out
+have total µ-mass greater than 1/2. For each such Q, pull a counterexample back under SQ to obtain
+a Borel set EQ ⊂ Q ∩ spt µ and an integer sQ ∈ [1, log(∆/δ) + 1] such that
+                           sd,k (x | EQ , β, δ → ∆) ≥ sQ ,                x ∈ EQ ,
+(2.5)                                                   ′ −βsQ
+                                            µ(EQ ) > C 2         µ(Q).
+12                              TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Pigeonholing the values of sQ with weights µ(Q), followed by the choice of one class from a bounded
+coloring of the ∆-cubes, yields an integer s ≥ 1 and a family Q ⊂ D∆ (Gd,k ) such that
+                                              X
+(2.6)                 sQ = s (Q ∈ Q),              µ(Q) ≳d,k (1 + log(∆/δ))−1 ,
+                                                Q∈Q
+                                                        S
+and distinct cubes in Q are 2∆-separated. Set E :=          Q∈Q EQ . By the 2∆-separation, (2.5) yields
+
+                                  sd,k (x | E, β, δ → 1) ≥ s,      x ∈ E.
+The spread-outness of µ and (2.6) now imply
+                                 X                     X                        C ′ 2−βs
+               C2−βs ≥ µ(E) =        µ(EQ ) > C ′ 2−βs   µ(Q) ≳d,k                        .
+                                                                             1 + log(∆/δ)
+                                   Q∈Q                      Q∈Q
+            ′
+Choosing C ≲d,k C(1 + log(∆/δ)) appropriately yields a contradiction. For the set conclusion, use
+subfamilies of Dδ (Θ ∩ Q) in place of EQ and normalized cube counts in place of µ. The map SQ sends
+these δ-cubes to dyadic (δ/∆)-cubes, so the argument applies without further changes.            □
+
+2.4. Stability of Spread-Out Measures. We conclude this section with several technical lemmas
+of the type “spread-out measures are stable under elementary operations”.
+
+Lemma 2.9 (Subset stability). If µ is (δ, β, C)d,k -spread-out and A ⊂ Gd,k is a Borel set with
+µ(A) > 0, then µ|A is (δ, β, C)d,k -spread-out. Consequently, the normalized restriction µ(A)−1 µ|A is
+(δ, β, C/µ(A))d,k -spread-out.
+   If Θ is a bounded (δ, β, C)d,k -spread-out set and ∅ ̸= Θ′ ⊂ Θ, then Θ′ is (δ, β, C|Θ|δ /|Θ′ |δ )d,k -
+spread-out. The same holds for subfamilies of dyadic δ-cubes, with cardinalities in place of covering
+numbers.
+
+Proof. This follows directly from the definitions.                                                        □
+
+Lemma 2.10 (Discretization stability). Let δ ∈ 2−N .
+    (i) If µ is (δ, β, C)d,k -spread-out, then µ(δ) is (δ, β/4, C ′ )d,k -spread-out with C ′ ≲d,k,β C.
+   (ii) If Θ ⊂ Gd,k is a bounded δ-separated (δ, β, C)d,k -spread-out set, then mΘ is (δ, β/4, C ′ )d,k -
+        spread-out with C ′ ≲d,k,β C. Conversely, if Θ ⊂ δZk(d−k) is finite and nonempty and mΘ is
+        (δ, β, C)d,k -spread-out, then Θ is (δ, β, C)d,k -spread-out.
+                                            n l       √ mo
+Proof. Let n := k(d − k) and K := max 1, log 4 β n .
+  We first record the common geometric input. Let E ⊂ Rn , and let F ⊂ Dδ (E). Assume that
+                                                                                    S
+
+                                 sd,k (η | E, β/4, δ → 1) ≥ s,      η ∈ E.
+Then every x ∈ F satisfies
+(2.7)                                 sd,k (x | F, β, δ → 1) ≥ s − K.
+Indeed, fix x ∈ F , and choose ηx ∈ E ∩ Dδ (x). Let r ∈ 2−N ∩ [δ, 1] be a (β/4)-singular scale for (E, ηx )
+           √
+with r ≥ 4 nδβ −1 . Then there exists [u, v, t] ∈ Xk,d−k such that
+                                    E ∩ B(ηx , r) ⊂ H[u,v,t] ((β/4)r).
+We claim that r/2 is a β-singular scale for (F, x). Indeed, let y ∈ F ∩ B(x, r/2), and choose ηy ∈
+E ∩ Dδ (y). We have
+                                                                   √
+                    |ηy − ηx | ≤ |ηy − y| + |y − x| + |x − ηx | ≤ 2 nδ + r/2 ≤ r.
+                          SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                             13
+
+                                                                     √
+Hence ηy ∈ E ∩ B(ηx , r), so ηy ∈ H[u,v,t] ((β/4)r). Since |ηy − y| ≤ nδ ≤ (β/4)r, it follows that
+                                                                     
+                               y ∈ H[u,v,t] (β/2)r = H[u,v,t] β(r/2) .
+Therefore
+                                                                 
+                                  F ∩ B(x, r/2) ⊂ H[u,v,t] β(r/2) ,
+which proves the claim.
+    The only (β/4)-singular scales for (E, ηx ) which may fail to produce dyadic β-singular scales in
+                                    √
+[δ, 1] for (F, x) are those below (4 n/β)δ, and there are at most K such scales. This proves the lower
+bound (2.7).
+                               (δ)
+           S let E ⊂ spt µ  be a Borel set such that sd,k (η | E, β/4, δ → 1) ≥ s for all η ∈ E.
+  To prove (i),
+                               n                             (δ)
+Write F :=      η∈E (η + [0, δ) ) ∩ spt µ. By construction, µ    (E) = µ(F ). Now (2.7) shows that
+every x ∈ F satisfies sd,k (x | F, β, δ → 1) ≥ s − K. Set C ′ := C max{2βK , 2(β/4)K } ≲d,k β −1 C.
+Applying the spread-out estimate at level s − K when s > K, and at level 0 otherwise, we get
+                                    µ(δ) (E) = µ(F ) ≤ C ′ 2−(β/4)s .
+This proves (i).
+   To prove (ii), let E ⊂ Θ satisfy sd,k (η | E, β/4, δ → 1) ≥ s for all η ∈ E. Apply (2.7) with
+     S
+F = Dδ (E). Since δ-separation bounds the number of points of Θ in each δ-cube by On (1), the
+spread-outness of Θ implies
+                               |E|    |E|δ
+                    mΘ (E) =       ≲n      ≤ C2−β max{s−K,0} ≲d,k,β C2−(β/4)s .
+                               |Θ|    |Θ|δ
+For the converse, let J ′ ⊂ Dδ (Θ) have at least s β-singular scales at every point of its union. The
+same is true of Θ ∩ J ′ . Since every occupied cube contains exactly one point of Θ, the bound
+                     S
+
+mΘ (Θ ∩ J ) ≤ C2−βs yields the assertion.
+        S ′
+                                                                                                   □
+
+   We use the following comparison for weighted finite sets and cube families. If w > 0 on a nonempty
+finite family J , and its values differ by a factor of at most K, then
+                                             P
+                                  |J ′ |        Q∈J ′ w(Q)
+(2.8)                                    ≤KP               ,    J′ ⊂ J.
+                                   |J |         Q∈J w(Q)
+
+Lemma 2.11 (Uniform discretization). Let n := k(d − k), R ≥ 1, β ∈ (0, 1], C ≥ 1, and δ ∈ 2−N
+with δ ≪R 1. Let µ be a probability measure on [−R, R]n , and let E be a Borel set with µ(E) > 0. If
+µ is (δ, β, C)d,k -spread-out, then there is a nonempty family J ⊂ Dδ (E) such that
+                                                                                      S
+     (i) the quantities µ(E ∩ Q), Q ∈ J , differ by a factor of at most 2, and µ(E ∩ J ) ⪆δ µ(E);
+    (ii) J is (δ, β, C ′ )d,k -spread-out with C ′ ⪅δ C/µ(E), and the uniform measure on zJ := {z(Q) :
+         Q ∈ J } is (δ, β/4, C ′′ )d,k -spread-out with C ′′ ⪅δ C/µ(E).
+If, in addition, s > 0, CF ≥ 1, and µ(B(x, r)) ≤ CF rs for x ∈ Rn and δ ≤ r ≤ 1, then
+                                        |J | ⪆δ µ(E)CF−1 δ −s .
+
+Proof. Discard the cubes Q ∈ Dδ (E) with µ(E ∩ Q) < δ n+1 µ(E). Since µ is supported on [−R, R]n ,
+the discarded mass is OR (δ)µ(E). The remaining nonzero masses lie between δ n+1 µ(E) and µ(E), so
+dyadic pigeonholing yields a family J satisfying (i).
+   Let J ′ ⊂ J , and assume that every Q ∈ J ′ has at least s β-singular scales relative to J ′ . Every
+                                                                                           S
+             S ′                                                        S ′
+point of E ∩ J then has at least s β-singular scales relative to E ∩ J . Hence
+                                             [ 
+                                      µ E ∩ J ′ ≤ C2−βs .
+14                                TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Apply (2.8) with w(Q) = µ(E ∩ Q) and K = 2. By (i),
+                              |J ′ |   2µ(E ∩ J ′ )
+                                             S
+                                                        C −βs
+                                     ≤       S      ⪅δ      2 .
+                               |J |     µ(E ∩ J )      µ(E)
+This proves the first assertion in (ii), and the assertion concerning mzJ follows from Lemma 2.10(ii).
+Finally, the Frostman hypothesis implies µ(E ∩ Q) ≲d,k,s CF δ s for Q ∈ J . Combining this with (i)
+proves the cardinality bound.                                                                       □
+
+Lemma 2.12 (Similarity stability). For λ > 0 and a ∈ Gd,k , let Tλ,a (θ) := λ−1 (θ − a). If µ is a
+(δ, β, C)d,k -spread-out measure, then the following hold.
+      (i) If λ ∈ 2−N ∩ [δ, 1], then Tλ,a µ is (δ/λ, β, C)d,k -spread-out.
+     (ii) If λ ∈ [δ, δ −1 ], then Tλ,a µ is (δ, β/2, C ′ )d,k -spread-out with C ′ ≲β C max{λ, λ−1 }β .
+                                     −1
+Proof. The first claim follows from Tλ,a (H[x,y,t] ) = H[x,y,λt+(ay)·x] and tracking the definitions.
+   For (ii), let E ⊂ spt(Tλ,a µ) have at least s (β/2)-singular scales at each point. Pulling back
+the witnessing hyperplanes and rounding the rescaled radii dyadically shows that every point of
+  −1
+Tλ,a (E) ∩ spt µ has at least max{s − | log λ| − 2, 0} β-singular scales. Hence
+
+                    (Tλ,a µ)(E) ≤ C2−β max{s−| log λ|−2,0} ≲β C max{λ, λ−1 }β 2−(β/2)s .
+This proves the second conclusion.                                                                        □
+
+                         3. ABC sum-product for spread-out projections
+
+3.1. Main result. Recall that Frostman sets were defined in §1.3. Up to a constant depending only
+on d, the dyadic-cube condition there is equivalent to |A ∩ B(x, r)|δ ≤ Crα |A|δ for all x ∈ Rd and
+r ≥ δ.
+     The main result of this section is the following asymmetric (“ABC”) sum-product estimate.
+
+Proposition 3.1. Let α ∈ [0, k), β ∈ (0, d − k], and γ ∈ (0, 1]. Then there exists χ > 0, depending
+only on α, β, γ, such that the following holds for every δ ∈ 2−N with δ ≪α,β,γ 1. Let A ⊂ δZk ∩[−1, 1]k ,
+B ⊂ δZd−k ∩[−1, 1]d−k , and Θ ⊂ δZk×(d−k) ∩[−1, 1]k×(d−k) be sets satisfying the following properties:
+     (A) |A| ≤ δ −α ,
+     (B) B is (δ, β, δ −χ )-Frostman,
+     (C) Θ is (δ, γ, δ −χ )-spread-out.
+Then there exists θ ∈ Θ such that
+(3.1)          |{a + θ · b : (a, b) ∈ G}|δ ≥ δ −χ |A|,      for all G ⊂ A × B, |G| ≥ δ χ |A||B|.
+Moreover, the constant χ > 0 stays bounded away from zero as long as (α, β, γ) ranges in a compact
+subset of [0, k) × (0, d − k] × (0, 1].
+
+3.2. Spread-out sets are L2 -flattening. A key step in the proof of Proposition 3.1 is to show
+that spread-out sets are L2 -flattening, in the sense of Theorem 3.2 below. This strategy is similar to
+that used in [37], but with some key differences; in particular, the results of [37] relied on Bourgain’s
+discretized projection theorem [3], while here we rely on an inverse theorem of the second author [44],
+recalled below.
+  We first introduce some notation. For finite sets A, B ⊂ Rd , we denote by E(A, B) the additive
+energy
+                    E(A, B) := |{(a1 , a2 , b1 , b2 ) ∈ A2 × B 2 : a1 + b1 = a2 + b2 }|.
+                         SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                 15
+
+
+For approximate coincidences, we use the following indexed energy. For a finite set A ⊂ Rk and a
+finite indexed family x = (xi )i∈I ⊂ Rk , write
+               Eδ (A; x) := {(a1 , a2 , i1 , i2 ) ∈ A2 × I 2 : a1 + xi1 ∈ a2 + xi2 + B(0, δ)} .
+This is a hybrid rather than a fully discretized energy: we still count quadruples of points and indices
+and merely allow a δ-fudge term in the equality. For a finite set Θ ⊂ Gd,k and b ∈ Rd−k , we abbreviate
+Eδ (A; Θ, b) := Eδ (A; (θ · b)θ∈Θ ).
+  The goal of this subsection is to prove that spread-out sets are L2 -flattening, in the following sense:
+Theorem 3.2. Let 1 ≤ k < d, let α ∈ [0, k) and s ∈ (0, 1]. Then there exists ε > 0 such that for
+every δ ∈ 2−N with δ ≪α,s 1 the following holds. If
+                   A ⊂ δZk ∩ [−1, 1]k ,       Θ ⊂ δZk×(d−k) ∩ [−1, 1]k×(d−k) ⊂ Gd,k ,
+where A and Θ are nonempty, |A| ≤ δ −α , and Θ is (δ, s, δ −ε )d,k -spread-out, then
+(3.2)           ∥mA ∗ (Lb mΘ )(δ) ∥L2 ≤ δ ε ∥mA ∥L2        for all b ∈ [−2, 2]d−k , |b| ≥ δ ε .
+Consequently, for every fixed C ≥ 1,
+(3.3)              ECδ (A; Θ, b) ≲C,k δ 2ε |A||Θ|2      for all b ∈ [−2, 2]d−k , |b| ≥ δ ε .
+Moreover, ε stays bounded away from zero when (α, s) ranges in a compact subset of [0, k) × (0, 1].
+
+  The proof is based on an “inverse theorem” of the second author [44, Theorem 1.2]; we restate the
+part of an immediate corollary that we need.
+  We recall the notion of a uniform set and its branching numbers.
+Definition 3.3 (Uniform sets and branching numbers). Let ∆ ∈ 2−N and m ∈ N, and let P ⊂ [0, 1)d .
+We say that P is (∆, m)-uniform with branching numbers (Nj )m−1
+                                                             j=0 if every cube Q ∈ D∆j (P ) contains
+exactly Nj cubes from D∆j+1 (P ), for each 0 ≤ j ≤ m − 1.
+
+  The L2 -norm of a finitely supported measure ν is defined by ∥ν∥2L2 := z∈spt(ν) ν(z)2 .
+                                                                         P
+
+Theorem 3.4 (L2 inverse theorem). Fix a dimension d ≥ 1. For each ζ ∈ (0, 1] and T0 ∈ N, there
+exist T ≥ T0 , ε = ε(ζ, T0 ) > 0, and m0 = m0 (ζ, T0 ) ∈ N such that the following holds for m ≥ m0 .
+  Let ∆ := 2−T and δ := ∆m , and let µ, ν be measures on δZd ∩ [ 31 , 23 ]d with µ(Rd ) = 1 = ν(Rd ), and
+                                          ∥µ ∗ ν∥L2 ≥ δ ε ∥µ∥L2 .
+Then there exist nonempty sets A ⊂ spt µ, B ⊂ spt ν and vectors xA , xB ∈ δZd such that A′ :=
+A + xA ⊂ [0, 1)d is (∆, m)-uniform with branching numbers (NjA )m−1             ′                 d
+                                                                        j=0 , B := B + xB ⊂ [0, 1) , and
+ν(B) ≥ δ ζ . Moreover, if x ∈ B ′ , 0 ≤ j ≤ m − 1, and I ∈ D∆j is the cube containing x, then x ∈ 12 I.
+For each j ∈ {0, . . . , m − 1}, at least one of the following alternatives holds:
+  (S1) NjA ≥ ∆−(1−ζ)d .
+  (S2) For each cube I ∈ D∆j there exists HI ∈ A(d, d − 1) such that B ′ ∩ I ⊂ D∆j+1 (HI ).
+                                                                              S
+
+  We are then equipped to prove Theorem 3.2.
+
+Proof of Theorem 3.2. Let σ := s/32. Choose 0 < ζ ≪α,k,s 1 so that
+                          α       α
+(3.4)                           ≤ +ζ        and    σ(1 − α/k − ζ)/4 ≥ ζ.
+                       k(1 − ζ)   k
+Next, choose T0 ≫α,k,s,ζ 1 so that
+                       √ −T /2
+(3.5)                    k 2 0 < σ,            T0 ≥ 12,       4(d − k)2−T0 < 100
+                                                                              1
+                                                                                 .
+16                                TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Let T ≥ T0 and εinv > 0 be given by Theorem 3.4 in dimension k, and write ∆ := 2−T . Take
+0 < ε ≪εinv ,ζ 1. From (3.4), we deduce that
+
+(3.6)                         σ(1 − α/k − ζ)/3 − 2ε > σ(1 − α/k − ζ)/4 ≥ ζ.
+
+     Fix b ∈ [−2, 2]d−k with |b| ≥ δ ε , and write νΘ,b := (Lb mΘ )(δ) . We first prove (3.2).
+   In short, the idea of the proof is as follows: if (3.2) fails, then we can apply Theorem 3.4 to the
+measures mA and νΘ,b . The upper bound |A| ≤ δ −α is easily seen to imply that alternative (S2) in
+Theorem 3.4 holds for a positive proportion of the scales, and this will contradict the spread-outness
+of Lb mΘ , which in turn follows from the spread-outness of Θ via Lemmas 2.10 and 2.6.
+   By Lemma 2.10(ii), mΘ is (δ, s/4, Od,k,s (δ −ε ))d,k -spread-out. Lemmas 2.6 and 2.12(ii) applied to
+Lb/|b| mΘ and dilation by |b| show that Lb mΘ is (δ, s/8, Od,k,s (δ −2ε ))k -spread-out. Lemma 2.10(i)
+therefore implies that νΘ,b is (δ, σ, Od,k,s (δ −2ε ))k -spread-out.
+   Assume that (3.2) fails. After a change of coordinates, perturbing the scale, and some calculations,
+we may apply Theorem 3.4. We get sets A0 ⊂ A and Y ⊂ spt νΘ,b and vectors kA , kY ∈ δZk such
+     e := A0 + kA is (∆, m)-uniform, Y ′ := Y + kY ⊂ [0, 1)k satisfies the centrality conclusion of that
+that A
+theorem, and
+
+(3.7)                                            νΘ,b (Y ) ≥ δ ζ .
+       e ≤ |A| ≤ δ −α = ∆−αm , (S1) can hold at no more than αm/[k(1 − ζ)] ≤ (α/k + ζ)m indices.
+Since |A|
+Thus (S2) holds at least (1 − α/k − ζ)m times.
+  Fix such an index j and y ∈ Y , write y ′ := y + kY , and take r ∈ 2−N ∩ [2−T /2 ∆j , ∆j /4]. If I ∈ D∆j
+contains y ′ , then Theorem 3.4 yields y ′ ∈ 12 I, so B(y ′ , r) ⊂ I. Moreover, (S2) and (3.5) imply
+                                                              √
+                           Y ′ ∩ B(y ′ , r) ⊂ Y ′ ∩ I ⊂ HI ( k∆j+1 ) ⊂ HI (σr).
+
+Hence r is σ-singular for (Y, y). The intervals [2−T /2 ∆j , ∆j /4] corresponding to distinct indices j are
+disjoint, and each contains ≥ T /3 dyadic scales. The spread-outness of νΘ,b now yields
+
+                    νΘ,b (Y ) ≲d,k,s,T δ −2ε 2−σ(T /3)(1−α/k−ζ)m = δ σ(1−α/k−ζ)/3−2ε < δ ζ ,
+
+for δ ≪d,k,s,T,ε,ζ 1, by (3.6). This contradicts (3.7), proving (3.2).
+   Returning to the original measures and scale, let xθ ∈ δZk be the lower-left endpoint of the dyadic
+δ-cube containing θ · b. If a tuple is counted by ECδ (A; Θ, b), then
+                                                                        √ 
+                           (a1 + xθ1 ) − (a2 + xθ2 ) ∈ δZk ∩ B 0, (C + 2 k)δ .
+                                √
+For each r ∈ δZk ∩ B(0, (C + 2 k)δ), Cauchy–Schwarz bounds the number of tuples with (a1 + xθ1 ) −
+(a2 + xθ2 ) = r by |A|2 |Θ|2 ∥mA ∗ νΘ,b ∥2L2 . Summing over the OC,k (1) possible values of r, we get
+
+                           ECδ (A; Θ, b) ≲C,k |A|2 |Θ|2 ∥mA ∗ νΘ,b ∥2L2 ≤ δ 2ε |A||Θ|2 .
+
+This proves (3.3).
+    The parameters ζ, T0 , T, and ε can be chosen uniformly when (α, s) ranges in a compact subset of
+[0, k) × (0, 1]. This completes the proof of the theorem.                                          □
+
+3.3. Preliminaries on additive energy. We proceed toward the proof of Proposition 3.1. We need
+the asymmetric Balog-Szemerédi-Gowers theorem, see the book of Tao and Vu, [46, Theorem 2.35].
+We state the result in the following slightly weaker form (following [43, Theorem 3.2]):
+                           SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                             17
+
+
+Theorem 3.5 (Asymmetric Balog-Szemerédi-Gowers theorem). Given η > 0, there exists ζ > 0 such
+that the following holds for δ ∈ 2−N with δ ≪η 1. Let A, B ⊂ (δ · Zk ) ∩ [0, 1]k , and assume that
+E(A, B) ≥ δ ζ |A||B|2 .
+   Then, there exist subsets A′ ⊂ A and B ′ ⊂ B with the properties
+                                |A′ ||B ′ | ≥ δ η |A||B|     and    |A′ + B ′ |δ ≤ δ −η |A|.
+
+   By applying Theorem 3.5 twice, we get simultaneous control on |A′ ± B ′ |.
+
+Corollary 3.6. Given η > 0, there exists ζ = ζ(η) > 0 such that the following holds for δ ∈ 2−N with
+δ ≪η 1. Let A, B ⊂ (δ · Zk ) ∩ [0, 1]k , and assume that E(A, B) ≥ δ ζ |A||B|2 .
+   Then there are A′ ⊂ A and B ′ ⊂ B such that
+                                 |A′ ||B ′ | ≥ δ η |A||B|,         |A′ ± B ′ |δ ≤ δ −η |A|.
+
+Proof. Let ξ(t) > 0 be an exponent supplied by Theorem 3.5 with parameter t, set
+                                   η1 := min{η/3, ξ(η/2)/3},                ζ := ξ(η1 ),
+and apply Theorem 3.5 to A, B with parameter η1 . This gives A1 ⊂ A and B1 ⊂ B such that
+                                |A1 ||B1 | ≥ δ η1 |A||B|,          |A1 + B1 |δ ≤ δ −η1 |A|.
+Cauchy–Schwarz and the bound |A1 | ≥ δ η1 |A| yield
+                                                               |A1 |2 |B1 |2
+                         E(A1 , −B1 ) = E(A1 , B1 ) ≳k                       ≥ δ 2η1 |A1 ||B1 |2 .
+                                                               |A1 + B1 |δ
+Since 2η1 < ξ(η/2), the implicit constant is absorbed when δ ≪k,η 1. Apply Theorem 3.5 to A1 , −B1
+with parameter η/2. We obtain A′ ⊂ A1 and B ′ ⊂ B1 satisfying the claim.                         □
+
+   We also need the following version of the Plünnecke-Ruzsa inequality:
+
+Lemma 3.7 (Plünnecke-Ruzsa inequality). Let δ ∈ 2−N , let A, B1 , B2 ⊂ Rk be sets, and assume that
+|A + Bi |δ ≤ Ki |A|δ for i ∈ {1, 2}, for some constants Ki ≥ 1. Then there exists a subset A′ ⊂ A with
+|A′ |δ ≥ 21 |A|δ such that
+                                       |A′ + B1 + B2 |δ ≲ K1 K2 |A|δ .
+
+   This form of the inequality is due to Ruzsa [42]. To be accurate, these statements are not formulated
+in terms of δ-covering numbers, but one may consult [20, Corollary 3.4] to see how to handle the simple
+reduction.
+
+3.4. A Kaufman-type projection lemma. We will require a quantitative estimate for projections
+of Frostman sets under spread-out measures, inspired by Kaufman’s projection theorem [27].
+   For a finite set B ⊂ Rd−k , θ ∈ Gd,k , δ ∈ 2−N , and b ∈ B, write
+                                                  ′           ′
+                                        [b]B
+                                           θ := {b ∈ B : θ · b ∈ Dδ (θ · b)}.
+
+Lemma 3.8. Let C, D ≥ 1, 0 < β < γ ≤ 1, ρ ∈ (0, 1], and δ ∈ 2−N . Let B ⊂ δZd−k ∩ [−1, 1]d−k be
+(δ, β, C)-Frostman with |B| ≤ δ −β , and let µ be a (δ, γ, D)d,k -spread-out probability measure. Then
+there exists Θ′ ⊂ Gd,k with µ(Θ′ ) ≥ 1 − ρ such that
+                                         ′ −1
+                       {b ∈ B : |[b]B
+                                    θ |>C ρ   CDL} ≤ L−1 |B|,                      θ ∈ Θ′ , L ≥ 1,
+where C ′ = C ′ (d, k, β, γ).
+18                                   TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Proof. Lemma 2.7, followed by an annular decomposition and the Frostman bound for B, gives
+                  Z                                  log(1/δ)
+                       1 X B                           X
+                          2
+                            |[b]θ | dµ(θ) ≲ β,γ Dδ γ
+                                                              2jγ C2−jβ + |B|−1 ≲β,γ CDδ β .
+                      |B|                              j=0
+                            b∈B
+
+Since |B| ≤ δ −β , Markov’s inequality provides a set Θ′ of µ-measure at least 1 − ρ such that
+                                X
+                                              ′ −1
+                                    |[b]B
+                                        θ |≤C ρ    CD|B|,      θ ∈ Θ′ .
+                                       b∈B
+
+The conclusion follows from Markov’s inequality on B.                                                   □
+
+     We use the following standard decomposition lemma.
+
+Lemma 3.9. Let n ≥ 1, δ ∈ 2−N , β > 0, and C, K ≥ 1. If B ⊂ Rn is a bounded (δ, β, C)-Frostman
+set, then there exist sets B1 , . . . , BM ⊂ B such that the families Dδ (Bj ) are disjoint, and:
+       (i) Each Bj is (δ, β, 2n CK)-Frostman.
+      (ii) |Bj |δ ≤ δ −β for all j ∈ {1, . . . , M }.
+     (iii) B \ (B1 ∪ . . . ∪ BM ) δ ≤ K −1 |B|δ .
+In particular M ≲n CK|B|δ δ β .
+
+Proof. Suppose first that |B|δ ≤ Kδ −β . Partition Dδ (B) into families Pj of cardinality between
+(2K)−1 |B|δ and δ −β , discarding fewer than (2K)−1 |B|δ cubes, and set Bj := B ∩ Pj . Then (ii)–
+                                                                                 S
+
+(iii) hold, while
+                            |Bj ∩ I|δ ≤ Crβ |B|δ ≤ 2CKrβ |Bj |δ ,                I ∈ Dr , r ≥ δ.
+Thus (i) holds, and M ≤ 2K ≲n CK|B|δ δ β .
+   Assume now that |B|δ > Kδ −β . We first claim (cf. [37, Lemma 2.7]) that every (δ, β, C ′ )-Frostman
+set A with C ′ ≥ 1 and |A|δ > δ −β contains a subset A′ = A ∩ P, where P ⊂ Dδ , such that
+                                                              S
+
+                                                2−n δ −β ≤ |A′ |δ ≤ δ −β
+
+and A′ is (δ, β, 2n C ′ )-Frostman. To prove the claim, set N := ⌊δ −β ⌋ and assign each dyadic cube
+J meeting A, with δ ≤ ℓ(J) ≤ 1, either the floor or the ceiling of N |A ∩ J|δ /|A|δ . First choose the
+unit-cube weights to sum to N , and then proceed down the dyadic tree, choosing the child weights
+to sum to the assigned parent weight. At scale δ, the assigned integers are 0 or 1, since N/|A|δ < 1.
+Let P consist of the cubes assigned 1, and set A′ := A ∩ P. Additivity yields
+                                                          S
+
+                                              |A′ |δ = N ∈ [ 21 δ −β , δ −β ],
+
+and, for every dyadic J with δ ≤ ℓ(J) ≤ 1,
+                                               
+                                     N |A ∩ J|δ
+                       |A′ ∩ J|δ ≤                ≤ ⌈C ′ ℓ(J)β N ⌉ ≤ 2C ′ ℓ(J)β N.
+                                        |A|δ
+Since n ≥ 1, this proves the claim.
+   Starting with R0 = B, apply this extraction to Rj while |Rj |δ > K −1 |B|δ . At every such step, Rj
+is (δ, β, CK)-Frostman because it is a subset of B. The extracted sets have disjoint dyadic δ-cubes,
+the terminal remainder satisfies (iii), and each extracted set satisfies (i)–(ii). Their lower cardinality
+bound also yields M ≤ 2n |B|δ δ β , completing the proof.                                               □
+                           SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                  19
+
+
+3.5. Proof of Proposition 3.1.
+
+Proof. If A = ∅, the conclusion is immediate. Let τ := min{β, γ/8}. Let ε = ε(α, γ) > 0 be given by
+Theorem 3.2, decreased so that ε ≤ 1/2. For t > 0, let ζ(t) > 0 be such that Corollary 3.6 holds with
+exponent t. More precisely, we will apply it for sets in some fixed bounded domain that may differ
+from the unit cube; this is achieved by an appropriate change of coordinates. Choose η > 0 so that
+100η/τ < ε, and then set
+                                  χ := min{ε/10, η/100, ζ(η/2)/40}.
+The following diagram summarizes the parameter dependencies:
+
+                              (α, γ)            ε
+
+                              (β, γ)            τ           η        ζ(η/2)         χ
+
+
+
+  Suppose that (3.1) fails for every θ ∈ Θ. Choose Gθ ⊂ A × B such that
+                       |Gθ | ≥ δ χ |A||B|,          |{a + θ · b : (a, b) ∈ Gθ }|δ < δ −χ |A|.
+Since τ ≤ β, the set B is (δ, τ, δ −χ )-Frostman. If |B| > δ −τ , apply Lemma 3.9 with exponent τ and
+K = δ −2χ . Its pieces satisfy
+                               |Bj | ≤ δ −τ ,        Bj is (δ, τ, δ −4χ )-Frostman,
+since δ ≪τ,χ 1. The discarded set has cardinality at most δ 2χ |B|. For each θ, the remaining part of
+Gθ has cardinality at least 21 δ χ |A||B|. Hence
+                               X
+                                     |Bj |1{|Gθ ∩(A×Bj )|≥δ2χ |A||Bj |} ≥ 14 δ χ |B|.
+                                 j
+
+Averaging this inequality over θ, we obtain an index j and a set Θ′ ⊂ Θ such that
+                      |Θ′ | ≥ δ 2χ |Θ|,         |Gθ ∩ (A × Bj )| ≥ δ 2χ |A||Bj |,       θ ∈ Θ′ .
+Replace B, Θ, Gθ by Bj , Θ′ , Gθ ∩ (A × Bj ), respectively. Lemma 2.9 shows that the new Θ is
+(δ, γ, δ −4χ )d,k -spread-out. If |B| ≤ δ −τ , no replacement is needed. Thus in both cases we may
+assume that
+            |B| ≤ δ −τ ,     B is (δ, τ, δ −4χ )-Frostman,           Θ is (δ, γ, δ −4χ )d,k -spread-out,
+while, for every θ ∈ Θ,
+                       |Gθ | ≥ δ 2χ |A||B|,         |{a + θ · b : (a, b) ∈ Gθ }|δ < δ −χ |A|.
+
+   Lemma 2.10(ii) shows that mΘ is (δ, γ/4, Od,k,γ (δ −4χ ))d,k -spread-out. Apply Lemma 3.8 to mΘ
+with exponents τ, γ/4 and
+                       C = δ −4χ ,         D ≲d,k,γ δ −4χ ,        ρ = δχ ,      L = δ −3χ .
+After restricting Θ to a subset of relative cardinality at least 1 − δ χ , Lemma 2.9 allows us to assume
+that Θ is (δ, γ, δ −5χ )d,k -spread-out and
+                                                 −13χ
+                              {b ∈ B : |[b]B
+                                           θ |>δ      } ≤ δ 3χ |B|,            θ ∈ Θ.
+Replace Gθ by its intersection with
+                                                                 −13χ
+                                          A × {b ∈ B : |[b]B
+                                                           θ |≤δ      }.
+For δ ≪χ 1, this intersection has cardinality at least δ 3χ |A||B|.
+20                                      TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+     Write Xθ := (θ · B)(δ) , and let G
+                                      e θ ⊂ A × Xθ be the image of Gθ under
+                                                                    
+                                          (a, b) 7→ a, z(Dδ (θ · b)) .
+Then
+                                         e θ | ≥ δ 17χ |A||Xθ |,
+                                        |G                              |Xθ | ≥ δ 14χ |B|.
+                                    √
+Since |θ · b − z(Dδ (θ · b))| ≤         kδ, the restricted sumset satisfies
+                                                              e θ }| ≲k δ −χ |A|.
+                                           |{a + x : (a, x) ∈ G
+                                              e θ ⊂ A × Xθ yields (see [38, Remark 3.17])
+Cauchy–Schwarz applied to the sums indexed by G
+                                                          e θ |2
+                                                         |G
+                               E(A, Xθ ) ≥                                   ≳d,k δ 35χ |A||Xθ |2 .
+                                                                   e θ }|
+                                                |{a + x : (a, x) ∈ G
+Since 35χ < ζ(η/2), Corollary 3.6 gives Aθ ⊂ A and Zθ ⊂ Xθ such that
+                                |Aθ ||Zθ | ≥ δ η/2 |A||Xθ |,          |Aθ ± Zθ |δ ≤ δ −η/2 |A|.
+For each z ∈ Zθ , choose bz ∈ B such that θ · bz ∈ z + [0, δ)k , and denote {bz : z ∈ Zθ } by Bθ . For
+δ ≪η,χ 1,
+                        |Aθ ||Bθ | ≥ δ η/2 |A||Xθ | ≥ δ η/2+14χ |A||B| ≥ δ 5η |A||B|.
+By the definition of Bθ ,
+(3.8)                                     |Aθ ± θ · Bθ |δ ≤ δ −η |A|,           θ ∈ Θ.
+
+     Set Fθ := Aθ × Bθ . By Cauchy–Schwarz, the set
+                                  Γ := {(θ1 , θ2 ) ∈ Θ2 : |Fθ1 ∩ Fθ2 | ≥ 21 δ 10η |A||B|}
+satisfies, for δ ≪η 1,
+                           |Γ| ≥ δ 11η |Θ|2 ,        |Fθ1 ∩ Fθ2 | ≥ δ 11η |A||B|,      (θ1 , θ2 ) ∈ Γ.
+
+  For (θ1 , θ2 ) ∈ Γ, apply Lemma 3.7 and Cauchy–Schwarz to Aθ1 ∩ Aθ2 and Bθ1 ∩ Bθ2 , using (3.8).
+We obtain
+                       E√kδ A; ((θ1 − θ2 ) · b)b∈B ≥ δ 49η |A||B|2 ,
+                                                  
+                                                                     (θ1 , θ2 ) ∈ Γ.
+The definition of indexed energy yields the identity
+           X                             X
+                                              E√kδ A; ((θ1 − θ2 ) · b)b∈B ≥ δ 60η |A||B|2 |Θ|2 .
+                                                                         
+(3.9)            E√kδ (A; Θ, b1 − b2 ) =
+           b1 ,b2 ∈B                              θ1 ,θ2 ∈Θ
+
+For fixed b1 , b2 , the indexed energy in this sum is Ok (|A||Θ|2 ). Since B is (δ, τ, δ −4χ )-Frostman,
+                             {(b1 , b2 ) ∈ B 2 : |b1 − b2 | < δ (65η+4χ)/τ } ≲d,k,τ δ 65η |B|2 .
+Their contribution to the left-hand side of (3.9) is negligible. Hence there are b1 , b2 ∈ B such that
+                       |b1 − b2 | ≥ δ (65η+4χ)/τ ≥ δ ε ,           E√kδ (A; Θ, b1 − b2 ) ≥ δ 61η |A||Θ|2 .
+On the other hand, it follows from 5χ ≤ ε and (3.3) that
+                                           E√kδ (A; Θ, b1 − b2 ) ≲k δ 2ε |A||Θ|2 .
+This is impossible for δ ≪k,η,ε 1, since 61η < 2ε.
+   If (α, β, γ) ranges in a compact subset of the parameter domain, then τ stays bounded away from
+zero and ε can be chosen uniformly by Theorem 3.2. The parameters η and χ can therefore also be
+chosen uniformly.                                                                                □
+                          SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                   21
+
+
+                            4. Spread-out projections of sticky sets
+
+4.1. Main result and initial setup.
+
+4.1.1. Main result. Recall the Frostman and regularity conditions from Definition 1.7 and the para-
+graph preceding it.
+  In this section, we identify
+                                       Rd = Rk × Rd−k = V ⊕ W.
+For θ ∈ Gd,k , we let
+                            πθ : V ⊕ W → V ∼
+                                           = Rk ,          πθ (x, y) = x + θ · y.
+Thus,
+                                     ker πθ = {(−θ · w, w) : w ∈ W },
+and so the fibers of πθ are affine (d − k)-planes parallel to ker πθ . This provides the identification,
+discussed in the introduction, between Gd,k and a Zariski-open and dense subset of the Grassmannian
+of k-planes in Rd .
+Theorem 4.1. Let 1 ≤ k < d, let s ∈ (0, 1], t ∈ (0, d], and u ∈ [0, min{t, k}). Then there exists
+ε = ε(k, d, s, t, u) > 0 such that the following holds for every δ ∈ 2−N with δ ≪k,d,s,t,u 1.
+    Let P ⊂ [−1, 1]d be (δ, t, δ −ε )d -regular, and let Θ ⊂ [−1, 1]k×(d−k) ⊂ Gd,k be a δ-separated
+(δ, s, δ −ε )d,k -spread-out set. Then there exists Θ′ ⊂ Θ with |Θ′ |δ ≥ (1 − δ ε )|Θ|δ such that for all
+θ ∈ Θ′ ,
+                              |πθ (P ′ )|δ ≥ δ −u for all P ′ ⊂ P, |P ′ |δ ≥ δ ε |P |δ .
+
+4.1.2. High multiplicity sets. We begin by defining the notion of “multiplicity”. This terminology is
+taken from [34]; here we extend it to higher dimensions. We denote
+                [x]θ = πθ−1 {πθ (x)} = x + {(−θ · w, w) : w ∈ W }     for x ∈ Rd , θ ∈ Gd,k .
+Definition 4.2. Let P ⊂ Rd , let r ∈ 2−Z and R ∈ 2−Z ∪ {∞} satisfy r ≤ R, and let x ∈ P . For
+θ ∈ Gd,k , we define the following multiplicity number :
+                               mP,θ (x | [r, R]) := B(x, R) ∩ P (r) ∩ [x]θ r .
+Thus, mP,θ (x | [r, R]) is the smallest number of dyadic r-cubes needed to cover B(x, R) ∩ P (r) ∩ [x]θ .
+Definition 4.3 (High multiplicity sets). Let r ∈ 2−Z and R ∈ 2−Z ∪ {∞} satisfy r ≤ R, let M > 0,
+and let θ ∈ Gd,k . For P ⊂ Rd , we define the high multiplicity set
+                           Hθ (P, M, [r, R]) = {x ∈ P : mP,θ (x | [r, R]) ≥ M }.
+
+  We now reformulate Theorem 4.1 in the language of high-multiplicity sets:
+Proposition 4.4. Let t ∈ (0, d], s ∈ (0, 1]. For every σ > max{t − k, 0} there exists ε > 0 such that
+the following holds for every δ ∈ 2−N with δ ≪s,t,σ 1. Let µ be a (δ, t, δ −ε )d -regular measure, and
+let ν be a finitely supported (δ, s, δ −ε )d,k -spread-out probability measure on [−1, 1]k×(d−k) . Then there
+exists Θ′ ⊂ spt ν with ν(Θ′ ) ≥ 1 − δ ε such that
+                           µ B(0, 1) ∩ Hθ (spt µ, δ −σ , [δ, 1]) ≤ δ ε ,    θ ∈ Θ′ .
+                                                                
+(4.1)
+Remark 4.5. Proposition 4.4 is formally equivalent to a version asserting that (4.1) holds for a single
+θ ∈ spt ν. Indeed, suppose this version holds with exponent ε, and consider the full conclusion with
+exponent ε/2. If it fails, the set B of directions for which the left-hand side of (4.1) exceeds δ ε/2 has
+ν(B) > δ ε/2 . By Lemma 2.9, ν|B /ν(B) is (δ, s, δ −ε )d,k -spread-out. The single direction claim applied
+to this measure contradicts the definition of B.
+22                               TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Remark 4.6. Proposition 4.4 is analogous to [38, Theorem 4.7], and the proof follows the same
+general strategy: here we reduce Proposition 4.4 to Proposition 3.1, whereas [38, Theorem 4.7] was
+reduced to another ABC sum-product theorem, namely [38, Theorem 1.7]. The spread-out property of
+the direction measure ν simplifies one step: the branching-scale analysis needed in [38, Theorem 4.7]
+is unnecessary here, because spread-outness is strongly scale invariant. On the other hand, we work
+with projections between arbitrary dimensions rather than from R2 to R, which requires a number of
+technical adaptations. We have tried to keep the paper self-contained, but we still refer to [38] when
+the proofs differ only notationally.
+
+4.1.3. Proof of Theorem 4.1. We conclude this section by proving Theorem 4.1, assuming Proposition
+4.4.
+                                                                     √
+Proof of Theorem 4.1 assuming Proposition 4.4. Dilating Rd by 1/(4 d), we may assume that P ⊂
+B(0, 1/3). There is no loss of generality in assuming that P has at most 1 point in each δ-cube.
+   By the argument in Remark 4.5, it suffices to find a single point θ ∈ Θ such that the conclusion of
+the theorem holds.
+   Fix u ∈ [0, min{t, k}), and set σ = [max{t − k, 0} + (t − u)]/2. By Lemma 2.10(ii), we may
+apply Proposition 4.4 to mP and mΘ at scale 2δ, with s/4, 2ε in place of s, ε. For ε ≪d,k,s,t,u 1 and
+δ ≪d,k,s,t,u,ε 1, its hypotheses hold, so there is θ ∈ Θ such that
+
+                                    mP Hθ (P, δ −σ , [2δ, 1]) ≤ (2δ)2ε .
+                                                             
+(4.2)
+
+Let P ′ ⊂ P be a subset with |P ′ | ≥ δ ε |P |. Since (2δ)2ε ≤ 12 δ ε for δ ≪ε 1, (4.2) yields a further subset
+P ′′ ⊂ P ′ with |P ′′ | ≥ 12 δ ε |P | ≳ δ 2ε−t such that Hθ (P, δ −σ , [2δ, 1]) ∩ P ′′ = ∅. This means that, for
+every p ∈ P ′′ , we have
+                                            |P (2δ) ∩ [p]θ |2δ < δ −σ ,
+where we omitted B(p, 1) since P ⊂ B(0, 1/3) and hence P (2δ) ⊂ B(p, 1) for all p ∈ P when δ ≪d 1.
+Hence,
+                                 P (δ) ∩ [p]θ (δ) δ ≲ δ −σ        for all p ∈ P ′′ .
+This implies that
+                                   |πθ (P ′′ )|δ ≳ δ σ |P ′′ | ≳ δ σ+2ε−t ≥ δ −u ,
+where the last inequality holds if ε ≪s,t,u 1. Since P ′′ ⊂ P ′ , the proof is complete.                      □
+
+4.1.4. An inductive scheme to prove Proposition 4.4. We use the following notation to organize the
+iteration in σ.
+
+Terminology 4.7 (Projection(s, t; σ)). We write Projection(s, t; σ) for the assertion of Proposition
+4.4 with parameters s, t, σ.
+
+     The proof of Proposition 4.4 will be based on iterating the following key proposition:
+
+Proposition 4.8. Let t ∈ (0, d), s ∈ (0, 1], and max{t − k, 0} < σ ≤ d − k. Then there exists ζ =
+ζ(s, t, σ) > 0, which stays bounded away from 0 as long as σ stays bounded away from max{t − k, 0},
+such that Projection(s, t; σ) =⇒ Projection(s, t; σ − ζ). If σ = d − k, then Projection(s, t; d − k − ζ)
+holds.
+
+     We then complete the proof of Proposition 4.4 assuming Proposition 4.8.
+                           SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                        23
+
+
+Proof of Proposition 4.4 assuming Proposition 4.8. Fix t ∈ (0, d] and s ∈ (0, 1]. Proposition 4.4 is
+trivial for t = d, since for every σ > d − k = max{t − k, 0}, the high-multiplicity sets in question are
+empty for 0 < δ ≪σ 1. So, we may assume that t ∈ (0, d).
+   Let Σ(s, t) ≥ max{t − k, 0} be the infimum over σ > max{t − k, 0} for which Projection(s, t; σ)
+                        ′
+holds. Since Hθ (P, δ −σ , [δ, 1]) ⊂ Hθ (P, δ −σ , [δ, 1]) for σ ′ ≥ σ, this set of parameters is upward closed,
+and the geometric bound mP,θ (x | [δ, 1]) ≲d δ −(d−k) gives Σ(s, t) ≤ d − k.
+   Suppose that Σ(s, t) > max{t − k, 0}. If Σ(s, t) = d − k, the endpoint assertion of Proposition
+4.8 yields Projection(s, t; d − k − ζ) for some ζ > 0, a contradiction. If Σ(s, t) < d − k, choose
+σ ∈ (Σ(s, t), d − k) with 0 < σ − Σ(s, t) ≪s,t 1. Then Projection(s, t; σ) holds, while the uniform lower
+bound for ζ(s, t, σ) near Σ(s, t) ensures that σ − ζ(s, t, σ) < Σ(s, t). Proposition 4.8 again contradicts
+the definition of Σ(s, t).                                                                              □
+
+4.2. Proof of Proposition 4.8.
+
+4.2.1. Small slices imply sparse slices. We use the following local variant of the high multiplicity sets.
+Fix Cloc ≥ 4d−k so that every affine (d − k)-plane intersected with a ball of radius R meets fewer than
+Cloc (R/r)d−k dyadic r-cubes for 0 < r ≤ R.
+
+Definition 4.9 (Local high multiplicity sets). Let δ ∈ (0, 21 ], ρ ∈ (0, 1], σ ∈ (0, d − k], and θ ∈ Gd,k .
+For P ⊂ Rd , define
+                                             [
+                      Hθ,loc (P, σ, δ, ρ) :=       Hθ (P, Cloc (R/r)σ , [r, R]),
+                                                 δ≤r≤R≤8
+
+where the union is over dyadic r, R ∈ [δ, 8] satisfying r/R ≤ ρ.
+
+   The following is a higher dimensional, measure version of [38, Theorem 4.21].
+
+Lemma 4.10. There is a constant Cslice ≥ 12 with the following property.
+  Suppose Projection(s, t; σ) holds with constants ∆proj , εproj > 0. Let 0 < η ≤ 1, 0 < a ≤
+ηεproj /Cslice , and b > 0 satisfy 2b + 6a < ηεproj .
+    If δ ∈ 2−N satisfies δ ≪s,t,σ,∆proj ,εproj ,η,a,b 1, µ is (δ, t, δ −b )d -regular, and ν is a finitely supported
+(δ, s, δ −b )d,k -spread-out probability measure on [−1, 1]k×(d−k) , then there is G ⊂ spt ν with ν(G) ≥
+1 − δ a such that
+                              µ B(0, 1) ∩ Hθ,loc (spt µ, σ, δ, δ η ) ≤ δ a ,
+                                                                    
+                                                                                    θ ∈ G.
+
+   We indicate the modifications required to adapt the proof of [38, Theorem 4.21]. Replace lines and
+tubes by affine (d − k)-planes and k-codimensional slabs, and replace each cardinality pigeonhole in
+the plane set by a ν-mass pigeonhole. After restricting to the bad directions and fixing the dyadic
+radii in Definition 4.9, the normalized plane measure has spread-out constant at most δ −(b+6a) . For
+the ball B = B(z, R) selected in that proof, the measure
+
+                                     (4R)−t x 7→ (x − z)/(4R) µ
+                                                              
+
+is (δ/(4R), t, δ −b )d -regular. At the projection scale ∆ = r/(4R) ∈ [δ/32, δ η /4], it is therefore
+(∆, t, ∆−b/η )d -regular, while the normalized plane measure is (∆, s, ∆−(b+6a)/η )d,k -spread-out. The
+inequality b + 6a < ηεproj yields both hypotheses in Projection(s, t; σ). If ∆ < δ, lowering the base
+scale adds at most five singular scales. Finally, Cloc ≥ 4d−k ≥ 4σ absorbs the geometric covering
+constant. The remainder of the proof of [38, Theorem 4.21] is unchanged.
+24                                  TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+4.2.2. Fixing parameters. Fix (s, t, σ) as in Proposition 4.8; in particular, t ∈ (0, d), s ∈ (0, 1], and
+max{t − k, 0} < σ ≤ d − k. Set
+
+                                       σ0 = 12 (max{t − k, 0} + min{σ, t}),
+                                        α = t − σ0 .
+
+Then α ∈ [0, k) and σ ∈ (0, d − k]. Apply Proposition 3.1 with parameters α, σ, s/8, and let χ =
+χ(α, σ, s/8) > 0 and ∆ABC > 0 be the constants provided by Proposition 3.1.
+  As long as σ stays bounded away from max{t − k, 0}, the triple (t − σ0 , σ, s/8) ranges in a compact
+subset of the domain of Proposition 3.1. Its uniformity assertion therefore shows that χ stays bounded
+away from zero.
+             1
+   Set ζ := 100 min{σ − σ0 , χ}. This stays bounded away from 0 as long as σ stays bounded away
+from max{t − k, 0}. Moreover,
+
+(4.3)                                   4ζ ≤ σ − σ0         and     25ζ ≤ χ.
+
+If σ < d − k, assume that Projection(s, t; σ) holds with constants ∆proj , εproj > 0. If σ = d − k, set
+∆proj = εproj = 1. In either case, suppose that Projection(s, t; σ − ζ) fails. Choose ε ∈ (0, 12 ] so that
+                                           (                       )
+                                               ε2proj     ζ    ζ2
+(4.4)                              ε ≤ min         2   ,    ,        .
+                                             100Cslice   100 16d2
+             √
+Then (d − k) ε ≤ ζ/4, and
+
+(4.5)                                             24ε + 5ζ ≤ χ/10.
+
+The failure of Projection(s, t; σ − ζ) gives some δ ∈ 2−N with δ ≪d,k,s,t,σ,∆ABC ,∆proj ,εproj ,Cslice ,ε,ζ 1,
+a (δ, t, δ −ε )d -regular measure µ with support P , and a finitely supported (δ, s, δ −ε )d,k -spread-out
+probability measure on [−1, 1]k×(d−k) for which the set of directions violating the conclusion has
+measure greater than δ ε . Restrict and normalize this measure to that set, call the resulting measure
+ν, and set Θ := spt ν. By Lemma 2.9, ν is (δ, s, δ −2ε )d,k -spread-out and
+
+                             µ B(0, 1) ∩ Hθ (P, δ −σ+ζ , [δ, 1]) ≥ δ ε ,
+                                                                
+(4.6)                                                                    θ ∈ Θ.
+
+Thus the parameters are fixed in the order
+
+              (d, k, Cslice ),   (s, t, σ),   (σ0 , α),   (χ, ∆ABC ),   ζ,   (εproj , ∆proj ),   ε,   δ.
+                                                                                                 √
+4.2.3. The sets Pθ . If σ = d − k, the choice of Cloc implies that Hθ,loc (P, σ, δ, δ ε ) is empty, so set
+                                                      √
+G := Θ. If σ < d − k, apply Lemma 4.10 with η = ε, a = 5ε, and b = 2ε; its hypotheses follow from
+(4.4). In either case, there is G ⊂ Θ with ν(G) ≥ 1 − δ 5ε and
+                                                         √ 
+(4.7)                      µ B(0, 1) ∩ Hθ,loc (P, σ, δ, δ ε ) ≤ δ 5ε , θ ∈ G.
+
+Replace ν by ν|G /ν(G) and Θ by its support. Lemma 2.9 shows that ν is (δ, s, δ −3ε )-spread-out. For
+θ ∈ Θ, define
+                                                                                        √
+                          Pθ := B(0, 1) ∩ Hθ (P, δ −σ+ζ , [δ, 1]) \ Hθ,loc (P, σ, δ, δ ε ).
+For δ ≪ε 1, equations (4.6) and (4.7) imply µ(Pθ ) ≥ 12 δ ε for θ ∈ Θ.
+                    √                       √
+4.2.4. Fixing a good δ-cube I0 . Set ∆ := δ and apply Lemma 2.8 to ν with β = s. We obtain
+                                                     ν|
+I0 ∈ D∆ (Θ) such that, for δ ≪s,ε 1, the measure SI0 ν(II00) is (∆, s/2, δ −4ε )d,k -spread-out.
+                           SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                25
+
+
+4.2.5. Projecting the sets Pθ . The inclusion Pθ ⊂ Hθ (P, δ −σ+ζ , [δ, 1]) yields an upper bound on the
+δ-covering number of πθ (Pθ ).
+                                                   √      √
+Lemma 4.11. Let θ ∈ Θ, let ρ ∈ [δ 1− ε , 12 δ ε ], and let T = πθ−1 {x} + B(0, ρ) for some x ∈ Rk .
+Then,
+                                                            t−σ
+(4.8)                         |πθ (Pθ ∩ T)|δ ≲ δ −ε−ζ · ρδ       .
+
+Moreover, |πθ (Pθ )|δ ≲ δ −ε−ζ · δ σ−t .
+
+Proof. Choose a maximal (2d2 δ)-separated subset of πθ (Pθ ∩ T), and choose a point of Pθ ∩ T above
+each element. By the definition of Pθ , each corresponding fiber meets B(0, 2) ∩ P (δ) ∩ T in at least
+δ −σ+ζ dyadic δ-cubes. The separation ensures that these cube families are disjoint, so
+
+(4.9)                          |πθ (Pθ ∩ T)|δ δ −σ+ζ ≲ |B(0, 2) ∩ P (δ) ∩ T|δ .
+
+This inequality also holds with T = Rd .
+                                              √
+   To prove (4.8), assume that ρ ≤ δ ε is√dyadic. If Pθ ∩ T = ∅, there is nothing to prove. Otherwise,
+                        / Hθ,loc (P, σ, δ, δ ε ), the scales [8ρ, 8] yield
+fix p ∈ Pθ ∩ T. Since p ∈
+
+                                       |B(p, 8) ∩ P (8ρ) ∩ [p]θ |8ρ < Cloc ρ−σ .
+
+Orthogonal projection onto [p]θ moves every point of B(0, 2) ∩ P (δ) ∩ T by at most 2ρ into this set.
+Thus B(0, 2) ∩ P (δ) ∩ T is covered by Od (ρ−σ ) balls of radius Od (ρ). Regularity and (4.9) yield
+
+                                       |πθ (Pθ ∩ T)|δ δ −σ+ζ ≲ δ −ε ρ−σ (ρ/δ)t ,
+
+which proves (4.8). Taking T = Rd in (4.9) and using |B(0, 2) ∩ P (δ)|δ ≲ δ −ε−t proves the global
+bound.                                                                                          □
+
+4.2.6. Finding a good projection πθ0 . Since µ(B(0, 1)) ≤ δ −ε and µ(Pθ ) ≥ 21 δ ε , Cauchy–Schwarz gives
+                              Z Z
+                                      µ(Pθ ∩ Pθ′ ) dν(θ) dν(θ′ ) ≥ δ 4ε ν(I0 )2
+                                  I0     I0
+
+for δ ≪ε 1. Hence there are θ0 ∈ Θ ∩ I0 and E ⊂ Θ ∩ I0 such that ν(E) ≥ δ 6ε ν(I0 ) and
+
+(4.10)                                        µ(Pθ0 ∩ Pθ ) ≥ δ 5ε ,   θ ∈ E.
+
+Replace ν by ν|E /ν(E) and Θ by its support. Since ν(E) ≥ δ 6ε ν(I0 ), Lemma 2.9 shows that the
+pushforward of ν under SI0 is (∆, s/2, δ −10ε )d,k -spread-out.
+   Let T (x, y) := (x + θ0 · y, y). The identity πθ−θ0 (T (x, y)) = πθ (x, y) shows that T preserves the
+fibers after replacing θ by θ − θ0 . Since |θ0 | = Od (1), we have that T µ is (δ, t, δ −2ε )d -regular for
+δ ≪d,k,ε 1. Push P and µ forward by T , push ν forward under θ 7→ θ − θ0 , and define the transformed
+family by Pθ−θ0 := T (Pθ ). We keep the notation ν, Θ, P, µ, and Pθ . Thus θ0 = 0, the pushforward
+of ν under θ 7→ ∆−1 θ is (∆, s/2, δ −10ε )d,k -spread-out, and (4.10) holds for every θ ∈ Θ. We write
+P0 := Pθ0 and π := π0 . This change of coordinates introduces Od (1) constants in several estimates
+below, which can be absorbed into powers of δ.
+   Recall that [x]θ := πθ−1 {πθ (x)} and Rd = V ⊕ W , where dim V = k and dim W = d − k. Thus,
+[x]0 = x + W . Moreover, ∥θ∥ ≲d,k ∆ for θ ∈ Θ, so [x]θ forms an angle O(∆) with W .
+26                               TUOMAS ORPONEN AND PABLO SHMERKIN
+
+                      √
+4.2.7. Finding a good δ-slab T0 . We define a ρ-slab to be a set of the form Tθ,x (ρ) = πθ−1 {x} +
+B(0, ρ), where x ∈ Rk and θ ∈ Gd,k . Given a slab T = Tθ,x (ρ), we define CT = Tθ,x (Cρ).
+   Fix a dimensional constant Cd ≫d 1 such that Pθ ⊂ B(0, Cd ) for every θ ∈ Θ. Let B∆ be the cover
+of B(0, Cd )∩P by balls of radius ∆ whose centers form a maximal ∆-separated subset of B(0, Cd )∩P .
+Then B∆ has bounded overlap, and regularity gives |B∆ | ≲ δ −2ε ∆−t = ∆−t−4ε .
+     We note that
+                                                                                     (4.10)
+                    Z   X                                   Z
+(4.11)                         µ(P0 ∩ Pθ ∩ B) dν(θ) ≥            µ(P0 ∩ Pθ ) dν(θ) ≥ δ 5ε .
+                     Θ B∈B                                   Θ
+                           ∆
+
+     heavy
+Let B∆     consist of the balls B ∈ B∆ such that
+                                  Z
+                                     µ(P0 ∩ Pθ ∩ B) dν(θ) > ∆t+20ε .
+                                       Θ
+
+The contribution of the remaining balls to the left-hand side of (4.11) is at most |B∆ |∆t+20ε ≲ ∆16ε .
+Hence,
+                              Z    X
+(4.12)                                    µ(P0 ∩ Pθ ∩ B) dν(θ) ≥ δ 6ε .
+                                   Θ      heavy
+                                       B∈B∆
+
+         heavy
+For B ∈ B∆     , the higher-dimensional form of [38, Lemma 4.55], which follows with the same proof,
+yields
+                                                       σ
+                                                       δ
+                               |π(B ∩ P0 )|δ ≳ δ 2ε−t      µ(B ∩ P0 ).
+                                                       ∆
+                   heavy
+The definition of B∆     implies µ(B ∩ P0 ) > ∆t+20ε ; hence, for δ ≪d,k,t,σ,ε 1,
+                                                                           heavy
+(4.13)                          |π(B ∩ P0 )|δ ≥ ∆σ−t+25ε ,            B ∈ B∆     .
+                                                                                            heavy
+Let Q∆ ⊂ D∆ (Rk ) be the collection of dyadic ∆-cubes Q such that Q∩π(B) ̸= ∅ for some B ∈ B∆     ,
+                   −1
+and define TQ := π {center(Q)} + B(0, Cd ∆). Since π(B) has diameter O(∆) for every ball B of
+radius ∆, every heavy ball meets at least one slab TQ with Q ∈ Q∆ , and at most O(1) such slabs.
+We write T∆ := {TQ : Q ∈ Q∆ }. We claim that
+
+(4.14)                                            |T∆ | ≤ ∆σ−t−3ζ .
+                                                        heavy
+Indeed, for each Q ∈ Q∆ , choose one heavy ball BQ ∈ B∆       with Q ∩ π(BQ ) ̸= ∅. Taking Cd ≫d 1,
+the set π(BQ ∩ P0 ) is contained in Cd Q, so by (4.13),
+
+                               |π(P0 ) ∩ Cd Q|δ ≥ |π(BQ ∩ P0 )|δ ≥ ∆σ−t+25ε .
+
+Since the enlarged cubes Cd Q, Q ∈ Q∆ , have bounded overlap, it follows that
+
+                                           |π(P0 )|δ ≳ |T∆ |∆σ−t+25ε .
+
+On the other hand, Lemma 4.11, with 2ε in place of ε, gives |π(P0 )|δ ≲ ∆2σ−2t−4ε−2ζ . Combining
+the last two estimates yields |T∆ | ≲ ∆σ−t−29ε−2ζ , which implies (4.14) by (4.4).
+                                                 heavy
+   Next, for every T ∈ T∆ , write B(T) := {B ∈ B∆      : B ∩ T ̸= ∅}. Since the union of the slabs in
+T∆ covers all the heavy balls,
+                            X Z      X                           (4.12)
+(4.15)                                     µ(P0 ∩ Pθ ∩ B) dν(θ) ≥ δ 6ε .
+                             T∈T∆      Θ B∈B(T)
+                           SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                 27
+
+
+
+                                                                                  π (P0 )
+
+                                                                        T4
+
+
+
+                                                                         T3
+
+
+
+                                                                             T2
+
+
+                                                   1                         T1
+
+                                ∆
+
+
+                                           W
+
+         Figure 1. The ∆-slabs and their heavy ∆-balls. Each heavy ball has a large δ-scale
+         projection by (4.13); comparison with the upper bound for |π(P0 )|δ yields (4.14).
+
+
+By (4.14), (4.15), and 12ε ≤ ζ, there exists T0 ∈ T∆ such that
+                            Z     X
+(4.16)                                  µ(P0 ∩ Pθ ∩ B) dν(θ) ≥ ∆t−σ+4ζ .
+                                Θ B∈B(T )
+                                           0
+
+
+For θ ∈ Θ and Cd ≫d,k 1, the set Pθ ∩ 2T0 is contained in Tθ,x (Cd ∆) for a suitable x ∈ Rk , since
+Pθ ⊂ B(0, Cd ) and ∥θ∥ ≲d,k ∆. We deduce from Lemma 4.11 that
+
+(4.17)                    |πθ (Pθ ∩ 2T0 )|δ ≲ ∆σ−t−4ε−2ζ ≤ ∆σ−t−4ζ ,                   θ ∈ Θ.
+
+Lemma 4.12. We have
+                                                              σ                               √
+                                                           R
+                 |{B ∈ B(T0 ) : B ∩ B(x, R) ̸= ∅}| ≲                ,        x ∈ Rd , R ∈ [δ − ε ∆, 1].
+                                                           ∆
+In particular, |B(T0 )| ≲ ∆−σ .
+
+   The lemma follows from the counting argument in [38, Lemma 4.75], with ∆-balls in a slab replacing
+disks in a tube; the argument is the same.
+  By Lemma 4.12 and the bound µ(B) ≲ ∆t−4ε for B ∈ B(T0 ),
+                         X
+                              µ(B ∩ P0 ∩ Pθ ) ≲ ∆t−σ−4ε ,                          θ ∈ Θ.
+                              B∈B(T0 )
+
+Let Θ ⊂ Θ consist of the parameters for which the sum on the left is at least ∆t−σ+5ζ . Comparing
+this pointwise bound with (4.16) gives
+
+(4.18)                                           ν(Θ) ≥ ∆5ζ .
+
+By definition,
+                                X
+(4.19)                                   µ(B ∩ P0 ∩ Pθ ) ≥ ∆t−σ+5ζ ,               θ ∈ Θ.
+                              B∈B(T0 )
+28                               TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+4.2.8. The sets A and Aθ . Let A be the set of lower-left endpoints of the cubes in Dδ (π(P0 ∩ 2T0 )),
+and write Ix for the cube with lower-left endpoint x ∈ A. Then
+                                                         (4.17)
+(4.20)                             |A| = |π(P0 ∩ 2T0 )|δ ≤ ∆σ−t−4ζ .
+For θ ∈ Θ, define
+              Aθ := x ∈ A : |{B ∈ B(T0 ) : π −1 (Ix ) ∩ B ∩ P0 ∩ Pθ ̸= ∅}| ≥ ∆−σ+10ζ .
+                   
+(4.21)
+Lemma 4.13. For θ ∈ Θ,
+(4.22)                                        |Aθ | ≥ ∆σ−t+6ζ .
+
+Proof of Lemma 4.13. [38, Lemma 4.82] extends in a straightforward way to higher dimensions, with
+affine (d − k)-planes in place of lines. This gives
+                     µ π −1 (Ix ) ∩ B ∩ P0 ≲ ∆−σ δ t−2ε ,
+                                          
+(4.23)                                                    x ∈ A, B ∈ B(T0 ).
+If x ∈ A \ Aθ , then fewer than ∆−σ+10ζ balls contribute to the double sum over A \ Aθ and B(T0 ).
+Hence, by (4.23), (4.20), and δ = ∆2 ,
+                  X      X
+                              µ π −1 (Ix ) ∩ B ∩ P0 ∩ Pθ ≲ |A|∆−2σ+10ζ δ t−2ε
+                                                        
+
+              x∈A\Aθ B∈B(T0 )
+
+                                                            ≲ ∆t−σ+6ζ−4ε = o ∆t−σ+5ζ .
+                                                                                    
+
+Since the cubes Ix , x ∈ A, cover π(P0 ∩ 2T0 ), (4.19) gives
+                          X X
+                                      µ π −1 (Ix ) ∩ B ∩ P0 ∩ Pθ ≥ ∆t−σ+5ζ .
+                                                                
+
+                           x∈A B∈B(T0 )
+
+For δ ≪d,k,t,σ,ε,ζ 1, the part with x ∈ Aθ is therefore at least 12 ∆t−σ+5ζ . On the other hand, (4.23)
+and Lemma 4.12 yield
+                        X X
+                                    µ π −1 (Ix ) ∩ B ∩ P0 ∩ Pθ ≲ |Aθ |∆−2σ δ t−2ε .
+                                                              
+
+                      x∈Aθ B∈B(T0 )
+
+Comparing the two bounds and using 4ε ≤ ζ proves (4.22).                                             □
+
+4.2.9. The set Y . For B ∈ B(T0 ), let y(B) be the lower-left endpoint of the dyadic ∆-cube containing
+the W -coordinate of the center of B, and set
+                           Y := {y(B) : B ∈ B(T0 )} ⊂ ∆Zd−k ∩ [−2, 2]d−k .
+The centers lie in one O(∆)-slab parallel to W , so the bounded overlap of B∆ implies that B 7→ y(B)
+has fibers of cardinality O(1). By (4.19), the Frostman bound µ(B) ≤ ∆t−4ε , and Lemma 4.12,
+(4.24)                     |Y | ∼ |B(T0 )|,     |Y | ≳ ∆−σ+6ζ ,       |Y | ≲ ∆−σ .
+                       √
+For y ∈ W and r ∈ [δ − ε ∆, 1], Lemma 4.12 and (4.24) yield
+                                  |Y ∩ B(y, r)| ≲ (r/∆)σ ≲ ∆−7ζ rσ |Y |.
+                           √
+For y ∈ W and r ∈ [∆, δ − ε ∆], we deduce from the lattice bound and (4.4) that
+                                                            √
+                    |Y ∩ B(y, r)| ≲ (r/∆)d−k ≤ δ −(d−k) ε ≤ ∆−ζ ≲ ∆−7ζ rσ |Y |.
+Thus, Y is (∆, σ, ∆−7ζ )d−k -Frostman.
+  For Cd ≫ 1, the set A is contained in δZk ∩ (xA + [−Cd ∆, Cd ∆]k ) for some xA ∈ δZk . Since
+Aθ ⊂ A, Equations (4.20), (4.22), and (4.24) yield, for δ ≪t,σ,ε,ζ 1,
+(4.25)                         ∆σ−t+6ζ ≤ |A| ≤ ∆σ−t−4ζ ,          |Y | ≤ ∆−σ−ζ .
+                            SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                                29
+
+
+4.2.10. Finding a contradiction to Proposition 3.1. For θ ∈ Θ and x ∈ Aθ , set
+                        Yx,θ := {y(B) : B ∈ B(T0 ), π −1 (Ix ) ∩ B ∩ P0 ∩ Pθ ̸= ∅},
+and let Gθ := {(x, y) : x ∈ Aθ , y ∈ Yx,θ }. The bounded cardinality of the fibers of B 7→ y(B) and
+(4.21) imply that |Yx,θ | ≳ ∆−σ+10ζ . Consequently,
+                                                         (4.25)
+(4.26)                           |Gθ | ≳ ∆−t+16ζ          ≳ ∆21ζ |A||Y |,                    θ ∈ Θ.
+
+  If (x, y) ∈ Gθ , then there are B ∈ B(T0 ) with y = y(B) and (x′ , y ′ ) ∈ π −1 (Ix ) ∩ B ∩ P0 ∩ Pθ .
+Hence |x − x′ | ≲ δ and |y − y ′ | ≲ ∆. Since ∥θ∥ ≲d,k ∆ for θ ∈ Θ, |πθ (x, y) − πθ (x′ , y ′ )| ≲ δ + ∆2 ≲ δ.
+Therefore,
+                                                        (4.17)                 (4.25)
+(4.27)           |πθ (Gθ )|δ ≲ |πθ (Pθ ∩ 2T0 )|δ ≤ ∆σ−t−4ζ                       ≤ ∆−10ζ |A|,             θ ∈ Θ.
+
+   Let D(x, y) := (∆−1 (x − xA ), y) and A′ := ∆−1 (A − xA ). Then
+                  A′ × Y = D(A × Y ) ⊂ (∆Zk ∩ [−Cd , Cd ]k ) × (∆Zd−k ∩ [−2, 2]d−k ),
+and |A′ | = |A| ≤ ∆σ0 −t = ∆−α by (4.25) and (4.3). Since 7ζ ≤ χ, the (∆, σ, ∆−7ζ )d−k -Frostman
+bound shows that Y is (∆, σ, ∆−χ )-Frostman.
+
+                                                                    V -coordinate rescaled
+                                                                           by ∆−1
+
+                                                                                        D(Gθ ) ⊂ A′ × Y
+                                                                    B6
+                                                          B5
+                                                 B4
+                                       B3                                        V
+                                B2                                         ∆
+                       B1                                   ∅                                              A′
+                                 ∅
+                                             1
+                                                                                                 Y
+                            W
+
+
+         Figure 2. The incidences inside T0 become a large graph D(Gθ ) ⊂ A′ × Y after
+         rescaling the V -coordinate. Its cardinality is bounded from below in (4.26), while
+         (4.27) bounds its projection.
+
+   Let λ be the pushforward of ν|Θ /ν(Θ) under θ 7→ ∆−1 θ. By (4.18) and Lemma 2.9, λ is
+(∆, s/2, δ −10ε ∆−5ζ )d,k -spread-out. Apply Lemma 2.11 with E = spt λ, and let Θ     e be the set of
+lower-left endpoints of the resulting family. Then it follows from (4.5) that, for δ ≪χ,ε,ζ 1, the set Θ
+                                                                                                       e
+                                       −χ
+and the measure mΘ    e are (∆, s/8, ∆    )d,k -spread-out.
+   For each ϑ ∈ Θ,e choose θϑ ∈ Θ such that ∆−1 θϑ belongs to the half-open ∆-cube with lower-left
+endpoint ϑ, and set G′ϑ := D(Gθϑ ). Since 25ζ ≤ χ, (4.26) yields, for δ ≪d,k,χ,ζ 1,
+(4.28)                          |G′ϑ | ≳ ∆21ζ |A′ ||Y | ≥ ∆25ζ |A′ ||Y | ≥ ∆χ |A′ ||Y |.
+The identity π∆−1 θ (D(Gθ )) = ∆−1 (πθ (Gθ ) − xA ) and the bound ∥ϑ − ∆−1 θϑ ∥ ≲ ∆ imply, since
+Y ⊂ [−2, 2]d−k , that
+                                                                  (4.27)
+(4.29)                      |πϑ (G′ϑ )|∆ ≲ |πθϑ (Gθϑ )|δ ≲ ∆−10ζ |A′ | < ∆−χ |A′ |.
+
+   Fix q ∈ N such that 2−q max{Cd , 2} ≤ 1, and set
+         b := 2−q ∆,
+         ∆                  b := 2−q A′ ,
+                            A                         Yb := 2−q Y,             b ϑ := {(2−q x, 2−q y) : (x, y) ∈ G′ϑ }.
+                                                                               G
+30                             TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Then
+           b k ∩ [−1, 1]k ,
+       b ⊂ ∆Z
+       A                              b d−k ∩ [−1, 1]d−k ,
+                                 Yb ⊂ ∆Z                             b k×(d−k) ∩ [−1, 1]k×(d−k) ,
+                                                                 e ⊂ ∆Z
+                                                                 Θ
+     b = |A′ | ≤ ∆−α ≤ ∆
+and |A|                  b −α . Passing from (∆, Y ) to (∆,
+                                                         b Yb ), and lowering the base scale of m e
+                                                                                                 Θ
+from ∆ to ∆, change the Frostman and spread-out constants only by factors depending on q. We
+          b
+have
+            Y is (∆, σ, ∆−7ζ )-Frostman,     mΘe is (∆, s/8, ∆
+                                                               −24ε−5ζ
+                                                                       )d,k -spread-out.
+Since 7ζ < χ and 24ε + 5ζ ≤ χ/10, for δ ≪d,k,s,χ,ε,ζ 1 the set Yb is (∆,      b −χ )-Frostman and, by
+                                                                         b σ, ∆
+Lemma 2.10(ii), Θ
+                e is (∆,     b −χ )d,k -spread-out. Finally, from (4.28) and (4.29), we deduce that
+                      b s/8, ∆
+
+                      |G      b χ |A||
+                       bϑ | ≥ ∆    b Yb |,        b ϑ )| b = |πϑ (G′ϑ )|∆ < ∆
+                                             |πϑ (G                         b −χ |A|.
+                                                                                  b
+                                                        ∆
+
+For δ ≪q,∆ABC 1, we have ∆   b ≤ ∆ABC , so Proposition 3.1 applied to A,       e contradicts the two
+                                                                        b Yb , Θ
+                     b ϑ . This completes the proof of Proposition 4.8.
+displayed bounds for G
+
+                      5. Multiscale and sticky Furstenberg estimates
+
+5.1. Plane and spread-out configurations. A key tool in [38] was the multiscale incidence esti-
+mate [37, Proposition 5.2]. Our goal is to derive an analogous estimate for spread-out configurations.
+We start by defining the relevant notation.
+  For the rest of this section, we fix the dimensions 1 ≤ k < d, and use the notation A ⪅δ B to mean
+A ≤ B(log(1/δ))C , where the implicit exponent C may depend on the parameters in Theorem 1.9,
+namely d, k, s, t, η. We define ⪆δ and ≈δ similarly.
+   It will sometimes be convenient to identify dyadic cubes with their lower-left endpoints, using
+the notation z(Q) from Section 1.3. Given a point x ∈ δZD and a dyadic scale ∆ ≥ δ, we write
+x(∆) := z(D∆ (x)). We will also silently identify a family of dyadic cubes with its union whenever
+there is no risk of confusion.
+   Recall the plane configurations (P, Θ) and their Furstenberg sets F(P, Θ) from Definition 1.5. We
+emphasize that this definition does not require that zΘ(p) = {θ ∈ Gd,k : Vθ + p ∈ F}. That is, we
+allow for “stray” affine planes that pass through p but belong to F by virtue of having the form Vθ + q
+for some θ ∈ zΘ(q), with q ̸= p.
+   We will be mostly interested in spread-out configurations, as defined in Definition 1.6. Spread-out
+configurations are similar to nice configurations introduced in [37, Definition 5.1], and employed in
+the statement of the Furstenberg set theorem in [38, Theorem 5.2]. The difference is that we have
+replaced Frostman sets in S 1 by spread-out sets in Gd,k .
+
+5.2. Multiscale Furstenberg estimate. We can now state the main result of this section, which
+is a multiscale estimate for spread-out configurations. It is the analog of [37, Proposition 5.2] in the
+setting of spread-out configurations, and the proof follows a similar outline. Because our current
+setting differs from that of [37] in some important ways, we give a full proof of Proposition 5.1 below,
+even if it involves some arguments that are very similar to those in [37, Proposition 5.2].
+
+Proposition 5.1. Let C > 0, β ∈ (0, 1], δ, ∆ ∈ 2−N , and ∆ ∈ 2−N0 with δ ≤ ∆ ≤ ∆. Let (P0 , Θ0 ) be
+a (δ, β, C, M0 )-spread-out configuration. Then the following hold:
+     (i) There are M ∈ N, a set P ⊂ P0 , and families Θ(p) ⊂ Θ0 (p), p ∈ P , such that (P, Θ) is
+         a (δ, β, C1 , M )-spread-out configuration, where C1 ≈δ C and M ≈δ M0 . Moreover, |P |∆ ≈δ
+         |P0 |∆ and |P ∩ Q| ≈δ |P0 ∩ Q| for each Q ∈ D∆ (P ).
+                           SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                               31
+
+
+   (ii) There exist M∆ ∈ N, a set P∆ ⊂ ∆Zd ∩ [0, 1]d , and families Θ∆ (q) ⊂ D∆ ([−1, 1]k×(d−k) ),
+        q ∈ P∆ , such that (P∆ , Θ∆ ) is a (∆, β, C ′ , M∆ )-spread-out configuration, with C ′ ≈δ C.
+        Moreover,
+       (Ca) P∆ = {z(Q) : Q ∈ D∆ (P )},
+                                               S
+       (Cb) For each q = z(Q) ∈ P∆ , we have p∈P ∩Q Θ(p) ⊂ Θ∆ (q).
+        Further, there is L∆ ∈ N such that, for each q ∈ P∆ and each I ∈ D∆ (Θ∆ (q)), we have
+                                       |{J ∈ Θ∆ (q) : J ⊂ I}| = L∆ .
+   (iii) For each Q ∈ D∆ (P ), there exist MQ ∈ N, a set P Q ⊂ (δ/∆)Zd ∩ [0, 1]d , and families
+          ΘQ (p) ⊂ Dδ/∆ ([−1, 1]k×(d−k) ), p ∈ P Q , such that (P Q , ΘQ ) is a (δ/∆, β, CQ , MQ )-spread-
+          out configuration, with CQ ≈δ C. Moreover,
+        (Za) P Q = SQ (P ∩ Q),
+                                                                            
+        (Zb) For each p = SQ (p0 ) ∈ P Q , we have ΘQ (p) ⊂ Dδ/∆ Θ(p0 ) .
+         (Zc) There is mQ ∈ N such that, for p = SQ (p0 ) ∈ P Q and J ∈ ΘQ (p),
+                     mQ ≤ |{I ∈ Θ(p0 ) : I ⊂ J}| < 4mQ ,        mQ MQ ≈δ |Θ(p0 )|.
+   (iv) Let F0 , F∆ , F ⊂ Ad,k ∼
+                       Q
+                                =R     (d−k)(k+1)
+                                               denote the Furstenberg sets, respectively, for the origi-
+        nal configuration and the configurations in (ii) and (iii). Then
+                                  |F0 |δ    |F∆ |∆       |F Q |δ/∆
+(5.1)                                    ⪆δ        · max           .
+                                   M0        M∆ Q∈D∆ (P ) MQ
+        Here |F0 |δ etc. refer to covering numbers relative to the Euclidean metric on R(d−k)(k+1) .
+
+  Note that no comparison between |P | and |P0 | is asserted. However, if the cardinalities |P0 ∩ Q|,
+Q ∈ D∆ (P0 ), are roughly comparable, then (i) implies that the same holds for |P | and |P0 |.
+
+5.3. Almost covering. Before proving Proposition 5.1, we need to introduce the notion of an almost
+cover and prove that spread-out families are robust under almost covering.
+
+Definition 5.2 (α-almost cover). Let δ, ∆ ∈ 2−N with δ ≤ ∆, and let α > 0. Let J be a finite index
+set, and let {Pj }j∈J be a family of subsets of Dδ (RD ). A family Q ⊂ D∆ (RD ) is an α-almost cover
+of {Pj }j∈J if the following properties hold for some m ∈ 2N0 :
+  (α1 ) |{(j, p) ∈ J × Dδ (RD ) : p ∈ Pj , p ⊂ Q}| ≥ m for all Q ∈ Q;
+                   P
+  (α2 ) m|Q| ≥ α j∈J |Pj |.
+We will use this terminology both for D = d and D = k(d − k).
+
+  The definition of spread-outness has been tailored so that it is robust under almost covering:
+
+Lemma 5.3. Let δ ≤ ∆, let Θj ⊂ Dδ (Gd,k ), j ∈ J, be (δ, β, C)d,k -spread-out families, and let
+Θ∆ ⊂ D∆ (Gd,k ) be an α-almost cover of {Θj }j∈J . Then Θ∆ is (∆, β, α−1 C)d,k -spread-out.
+
+Proof. Let Θ′∆ ⊂ Θ∆ have at least s β-singular scales at every point, and set Θ′j := {I ∈ Θj :
+I ⊂ Θ′∆ }. Since Θ′j ⊂ Θ′∆ , every point of Θ′j has at least s β-singular scales relative to
+     S             S        S                      S
+
+Θ′j between ∆ and 1. If m is the multiplicity in Definition 5.2, spread-outness and the almost-cover
+inequalities imply
+                               X                 X
+                     m|Θ′∆ | ≤    |Θ′j | ≤ C2−βs     |Θj | ≤ α−1 C2−βs m|Θ∆ |.
+                                 j∈J                j∈J
+
+Dividing by m proves the claim.                                                                         □
+32                               TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Corollary 5.4. Let Θ ⊂ Dδ (Gd,k ) be (δ, β, C)d,k -spread-out, and let r ∈ 2−N ∩ [δ, 1]. If the nonzero
+cardinalities |{I ∈ Θ : I ⊂ J}|, J ∈ Dr (Θ), differ by a factor of at most K, then Dr (Θ) is
+(r, β, 2KC)d,k -spread-out.
+
+Proof. Round the minimum descendant count down to a dyadic integer. Then Dr (Θ) is a (2K)−1 -
+almost cover of {Θ}, so Lemma 5.3 applies.                                                □
+
+     Almost covers can be produced by pigeonholing. We record their existence in the following form:
+Proposition 5.5. Let δ, ∆ ∈ 2−N with δ ≤ ∆. Let P be a finite index set, and assume that for
+every p ∈ P , we are given a finite family Θ(p) ⊂ Dδ ([−1, 1]k×(d−k) ). Then there exists a collection
+Θ∆ ⊂ D∆ ([−1, 1]k×(d−k) ) which α-almost covers the family {Θ(p) : p ∈ P } for some α ⪆δ 1.
+Moreover, the number m in Definition 5.2 may be chosen so that
+                       m ≤ |{(p, I) : p ∈ P, I ∈ Θ(p), I ⊂ J}| < 2m,          J ∈ Θ∆ .
+                  P
+Proof. Set S :=      p∈P |Θ(p)|. The claim is trivial if S = 0, so assume that S > 0. For
+                                                               
+                                                         [
+                                          Θ∆ := D∆          Θ(p)
+                                                       p∈P
+
+and J ∈ Θ∆ , write
+                                n(J) := |{(p, I) : p ∈ P, I ∈ Θ(p), I ⊂ J}|.
+We have                           X
+                                        n(J) = S,     |Θ∆ | ≲d,k ∆−k(d−k) .
+                                 J∈Θ∆
+
+The cubes satisfying n(J) < c∆k(d−k) S for c ≪d,k 1 contribute at most S/2 to the sum. For the
+remaining cubes, we can dyadically pigeonhole m ∈ 2N0 such that
+                       1 X
+             m|Θ∆ | ≥         n(J) ⪆δ S where Θ∆ := {J ∈ Θ∆ : m ≤ n(J) < 2m}.
+                       2
+                             J∈Θ∆
+
+This is property (α2 ) for some α ⪆δ 1, while n(J) ≥ m is property (α1 ). The definition of Θ∆ gives
+the asserted upper bound.                                                                         □
+
+5.4. Zoomed-in configurations. The next lemma will help us deal with the zoomed-in configura-
+tions in Proposition 5.1(iii).
+Lemma 5.6. Let Θ0 ⊂ Dδ ([−1, 1]k×(d−k) ) be a (δ, β, C)-spread-out family, and let ∆ ∈ 2−N ∩ [δ, 1].
+Then there exist a subfamily Θ ⊂ Θ0 , a family Θδ/∆ ⊂ Dδ/∆ ([−1, 1]k×(d−k) ), and m ∈ 2N0 such that
+       (i) Θδ/∆ = Dδ/∆ (Θ);
+      (ii) Θδ/∆ is (δ/∆, β, C ′ )-spread-out, where C ′ ≈δ C;
+     (iii) |{I ∈ Θ : I ⊂ J}| ∼ m for all J ∈ Θδ/∆ ;
+     (iv) m|Θδ/∆ | ≈δ |Θ| ⪆δ |Θ0 |.
+
+Proof. Apply Proposition 5.5, with a singleton P and δ/∆ in place of ∆, to the family Θ0 . Let Θδ/∆
+be the resulting almost cover and let m be its multiplicity. Define
+                                Θ := {I ∈ Θ0 : I ⊂ J for some J ∈ Θδ/∆ }.
+Proposition 5.5 yields |{I ∈ Θ : I ⊂ J}| ∈ [m, 2m] for all J ∈ Θδ/∆ , and m|Θδ/∆ | ≈δ |Θ| ⪆δ |Θ0 |.
+These are (i), (iii), and (iv). Since Θδ/∆ is an α-almost cover of Θ0 with α ⪆δ 1, Lemma 5.3 shows
+that it is (δ/∆, β, C ′ )-spread-out with C ′ ≈δ C. This is (ii).                               □
+                            SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                               33
+
+
+5.5. Proof of Proposition 5.1. In this section we prove Proposition 5.1. Throughout the proof, we
+identify each Furstenberg set with the union of the Ad,k -cubes of its defining scale that it intersects.
+We also use the same notation for the family of these cubes; for Furstenberg sets, ∥ · ∥ without a scale
+subscript is the number of affine cubes.
+
+5.5.1. Construction of the coarse-scale families. For each Q ∈ D∆ (P0 ), write q := z(Q) and ap-
+ply Proposition 5.5 to the family {Θ0 (p)}p∈P0 ∩Q . We get a preliminary coarse family Θ∆ (q) ⊂
+D∆ ([−1, 1]k×(d−k) ) and a number HQ ≥ 1 such that
+  (A1) |{(p, I) ∈ (P0 ∩ Q) × Dδ (Rk×(d−k) ) : I ∈ Θ0 (p), I ⊂ J}| ≥ HQ for J ∈ Θ∆ (q);
+  (A2) HQ |Θ∆ (q)| ⪆δ |P0 ∩ Q|M0 .
+Moreover, every Θ∆ (q) is (∆, β, C ∆ )-spread-out by Lemma 5.3, with C ∆ ≈δ C.
+  By dyadic pigeonholing, after restricting to a subcollection Q ⊂ D∆ (P0 ) of comparable cardinality
+                                       S
+and then discarding all points outside Q, we may assume that
+                            M ∆ ≤ |Θ∆ (q)| < 2M ∆ ,            q = z(Q), Q ∈ D∆ (P0 ).
+
+  For Q ∈ D∆ (P0 ) and p ∈ P0 ∩ Q, define the preliminary fine family
+                            Θ(p)
+                            e    := {I ∈ Θ0 (p) : I ⊂ J for some J ∈ Θ∆ (z(Q))}.
+            S
+Let Fe :=  p∈P0 {Vθ + p : θ ∈ z Θ(p)} be the Furstenberg set associated to the configuration (P0 , Θ).
+                                     e                                                               e
+            pre
+  For q ∈ P∆    := {z(Q) : Q ∈ D∆ (P0 )}, write
+                             F ∆ (q) := D∆ ({Vθ + q : θ ∈ zΘ∆ (q)}) ⊂ D∆ (Ad,k ),
+                 S
+and let F ∆ :=          pre F ∆ (q). Fix A ≫d,k 1. For F ∈ D∆ (Ad,k ), let
+                     q∈P∆
+
+                               N∆ (F) := {F′ ∈ D∆ (Ad,k ) : dist(F, F′ ) ≤ A∆}.
+Choose A ≫d,k 1 so that the following holds. If Q ∈ D∆ (P0 ), q = z(Q), p ∈ P0 ∩ Q, I ∈ Θ(p),
+                                                                                        e     and
+I ⊂ J ∈ Θ∆ (q), then
+                                                                 
+(5.2)                         D∆ (Vz(I) + p) ∈ N∆ D∆ (Vz(J) + q) .
+Indeed, (2.3) shows that the affine coordinates of Vz(I) + p and Vz(J) + q differ by O(∆). Thus, writing
+                                            [
+                                 F(Q)
+                                  e    :=        {Vθ + p : θ ∈ z Θ(p)},
+                                                                 e
+                                                p∈P0 ∩Q
+
+we have                                             [
+                                D∆ (F(Q))
+                                    e     ⊂                  N∆ (F),        q = z(Q).
+                                                 F∈F ∆ (q)
+For j ≥ 0, let                       n                                 o
+                                                         [
+                             F ∆,j := F ∈ F ∆ : 2j ≤ Fe ∩ N∆ (F) < 2j+1 .
+                                                                          pre
+Each F ∈ F ∆ has the form F = D∆ (Vz(J) + q) for some q = z(Q) ∈ P∆           and J ∈ Θ∆ (q). By
+(A1), there exist p ∈ P0 ∩ Q and I ∈ Θ0 (p) such that I ⊂ J. Then I ∈ Θ(p), and (5.2) shows that
+                                                                        e
+Fe ∩ N∆ (F) ̸= ∅. Since every affine ∆-cube contains at most (∆/δ)(k+1)(d−k) ≤ δ −(k+1)(d−k) affine
+    S
+
+δ-cubes, and every neighborhood N∆ (F) has bounded cardinality, dyadic pigeonholing yields an index
+j such that, writing
+                                                       pre
+                               N∆ := 2j      and     F∆    := F ∆,j ,
+we have                      X                               X
+                                       pre                                        pre
+                                     |F∆   ∩ F ∆ (q)| ⪆δ            |F ∆ (q)| ∼ |P∆   |M ∆ ,
+                               pre                            pre
+                            q∈P∆                           q∈P∆
+34                                 TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+and
+                                            [                              pre
+(5.3)                           N∆ ≤ Fe ∩       N∆ (F) < 2N∆ ,        F ∈ F∆   .
+
+     From another dyadic pigeonholing, we get a subset Q ⊂ D∆ (P0 ) with |Q| ≈δ |D∆ (P0 )| such that
+                                  pre
+                                |F∆   ∩ F ∆ (q)| ≈δ M ∆ ,      q = z(Q), Q ∈ Q.
+We now define the final coarse plane families by
+                                                           pre
+                 Θ∆ (q) := {J ∈ Θ∆ (q) : D∆ (Vz(J) + q) ∈ F∆   },            q = z(Q), Q ∈ Q.
+Then
+                            |Θ∆ (q)| ≈δ M ∆ ,        q ∈ P∆ := {z(Q) : Q ∈ Q},
+and every Θ∆ (q) is still (∆, β, C∆ )-spread-out with C∆ ≈δ C. The cardinality bound follows from
+(2.4), with Pθ = {q}.
+   We now impose the scale-∆-uniformity from (ii) on these coarse families. Dyadic pigeonholing
+at scale ∆ yields dyadic numbers M∆ , L∆ ≥ 1. After refining P∆ and Q with losses of at most
+(log(1/δ))O(1) and retaining exactly L∆ members of Θ∆ (q) in each occupied ∆-cube, we may assume
+that
+                      M∆ ≤ |Θ∆ (q)| < 2M∆ ,      |{J ∈ Θ∆ (q) : J ⊂ I}| = L∆
+for all q ∈ P∆ and I ∈ D∆ (Θ∆ (q)). Define
+                                 [       [                                   pre
+                          F∆ :=                         D∆ (Vz(J) + z(Q)) ⊂ F∆   .
+                                      Q∈Q J∈Θ∆ (z(Q))
+
+Thus F∆ is the family of dyadic ∆-cubes meeting the Furstenberg set associated to (P∆ , Θ∆ ). Since
+       pre
+F∆ ⊂ F∆    , it holds
+                                      [
+                           N∆ ≤ Fe ∩ N∆ (F) < 2N∆ ,          F ∈ F∆ .
+The verification of (ii) will be completed after the final set P has been fixed.
+
+5.5.2. Refinement of the fine families. For Q ∈ Q and p ∈ P0 ∩ Q, let
+(5.4)                    Θ(p) := {I ∈ Θ0 (p) : I ⊂ J for some J ∈ Θ∆ (z(Q))}.
+For fixed Q ∈ Q, we have
+           X                      X
+               |Θ(p)| =                   |{(p, I) ∈ (P0 ∩ Q) × Dδ (Rk×(d−k) ) : I ∈ Θ0 (p), I ⊂ J}|
+           p∈P0 ∩Q         J∈Θ∆ (z(Q))
+
+                         (A1)                                        (A2)
+                          ≥ |Θ∆ (z(Q))|HQ ⪆δ |Θ∆ (z(Q))|HQ ⪆ δ |P0 ∩ Q|M0 .
+Since |Θ(p)| ≤ |Θ0 (p)| < 2M0 , there exists a subset PQ ⊂ P0 ∩ Q such that
+                         |PQ | ≈δ |P0 ∩ Q|        and       |Θ(p)| ⪆δ M0 ,    p ∈ PQ .
+Every Θ(p), p ∈ PQ , remains (δ, β, C)-spread-out
+                                    e                  e ≈δ C.
+                                                  with C
+  By dyadic pigeonholing, after refining each PQ without changing notation, we may find a dyadic
+         fine
+number MQ     such that
+                                 fine              fine
+                              MQ      ≤ |Θ(p)| < 2MQ    ,  p ∈ PQ .
+        fine
+Since MQ     ≈δ M0 for every Q ∈ Q, another pigeonholing yields a subcollection, still denoted by Q,
+and a dyadic number M ≈δ M0 such that
+(5.5)                |Q| ≈δ |D∆ (P0 )|,        M ≤ |Θ(p)| < 2M,         p ∈ PQ , Q ∈ Q.
+                          SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                             35
+
+
+We keep the corresponding subset of P∆ and the corresponding coarse families Θ∆ (q), still denoting
+them by P∆ and Θ∆ .
+
+5.5.3. Construction of the zoomed-in configurations. We now construct the zoomed-in configurations,
+without further refining the families Θ(p). Fix Q ∈ Q, write q := z(Q) and δ := δ/∆, and let
+P Q := SQ (PQ ). For p0 ∈ PQ , apply Lemma 5.6 to the spread-out family Θ(p0 ) at scale ∆. We get,
+                                                   Q
+for p = SQ (p0 ) ∈ P Q , a spread-out family Θ (p) ⊂ Dδ (Θ(p0 )) and a dyadic number m(p0 ) ≥ 1 such
+that
+                                                                              Q
+                                 |{I ∈ Θ(p0 ) : I ⊂ J}| ∼ m(p0 ),        J ∈ Θ (p),
+and
+                                                   Q
+                                         m(p0 )|Θ (p)| ≈δ |Θ(p0 )| ∼ M.
+                      Q
+Moreover, every Θ (p) is (δ, β, C Q )-spread-out, with C Q ≈δ C.
+                                               Q
+  Dyadically pigeonhole m(p0 ) and |Θ (SQ (p0 ))|. After refining PQ by a subset of cardinality
+≈δ |PQ |, which we continue to denote by PQ , there are dyadic numbers mQ , MQ ≥ 1 such that,
+writing again P Q = SQ (PQ ),
+                                                                 Q
+             mQ ≤ m(p0 ) < 2mQ              and        MQ ≤ |Θ (SQ (p0 ))| < 2MQ ,       p0 ∈ PQ .
+                  Q
+Set ΘQ (p) := Θ (p). Then mQ MQ ≈δ M , and each ΘQ (p) is (δ, β, CQ )-spread-out with CQ ≈δ C.
+The multiplicity bounds in Lemma 5.6, together with (5.5), prove (Zc). Since ΘQ (p) ⊂ Dδ (Θ(p0 ))
+for p = SQ (p0 ), this proves (iii).
+   We now define
+                                                           [
+                                                   P :=         PQ .
+                                                          Q∈Q
+
+Every PQ is nonempty, so D∆ (P ) = Q. The relations |PQ | ≈δ |P0 ∩ Q|, Q ∈ Q, and |Q| ≈δ |P0 |∆
+from (5.5) yield
+
+             |P |∆ = |Q| ≈δ |P0 |∆          and        |P ∩ Q| = |PQ | ≈δ |P0 ∩ Q|,   Q ∈ D∆ (P ).
+
+In particular, P∆ = {z(Q) : Q ∈ D∆ (P )}. By (5.5) and the spread-out property of the families Θ(p),
+the pair (P, Θ) is a (δ, β, C1 , M )-spread-out configuration with C1 ≈δ C and M ≈δ M0 . This proves
+(i). Moreover, by construction,
+                                  [
+                                       Θ(p) ⊂ Θ∆ (z(Q)),       Q ∈ D∆ (P ),
+                                   p∈P ∩Q
+
+so (ii) is now fully verified.
+
+5.5.4. Proof of the Furstenberg estimate. It remains to prove (iv).
+   For Q ∈ Q, let F(Q) ⊂ Fe denote the family of affine δ-cubes arising from pairs (p0 , θ) with
+p0 ∈ PQ and θ ∈ zΘ(p0 ). For each affine δ-cube in F Q , choose one representative pair (SQ (p0 ), J)
+with p0 ∈ PQ and J ∈ ΘQ (SQ (p0 )). Since J contains ≈δ mQ elements of Θ(p0 ), this representative
+gives rise to ≈δ mQ affine δ-cubes in F(Q). After rescaling Q to [0, 1]d , each such affine δ-cube lies
+within Od,k (δ) of the affine δ-cube represented by (SQ (p0 ), J). Hence each affine δ-cube arises from
+Od,k (1) chosen representatives, and therefore
+                                                            M
+(5.6)                            |F (Q)| ⪆δ mQ |F Q | ≈δ       |F Q |,     Q ∈ Q.
+                                                            MQ
+36                              TUOMAS ORPONEN AND PABLO SHMERKIN
+
+                                                                                          pre
+     Now fix F ∈ F∆ (the Furstenberg set defined at the end of Section 5.5.1). Since F ∈ F∆   , we have
+                                                [
+                                   N∆ ≤ Fe ∩ N∆ (F) < 2N∆
+
+by (5.3). Since Fe ⊂ F0 , and the families N∆ (F), F ∈ F∆ , have bounded overlap, this implies
+(5.7)                                              e ≳ N∆ |F∆ |.
+                                          |F0 | ≥ |F|
+                                e for Q ∈ Q with q = z(Q),
+On the other hand, since F(Q) ⊂ F,
+                                        [                  [      
+                       F(Q) ⊂                           Fe ∩ N∆ (F) .
+                                   F∈F∆ ∩D∆ ({Vθ +q:θ∈zΘ∆ (q)})
+
+Indeed, if an affine δ-cube in F(Q) arises from (p, I) with p ∈ PQ and I ∈ Θ(p), then I ⊂ J for
+some J ∈ Θ∆ (q) by construction of Θ(p) (recall (5.4)). By the definition of F∆ , the dyadic cube
+FJ := D∆ (Vz(J) + q) belongs to F∆ . Moreover, (5.2) yields D∆ (Vz(I) + p) ∈ N∆ (FJ ). Therefore
+                       |F(Q)| ≲ |F∆ ∩ D∆ ({Vθ + q : θ ∈ zΘ∆ (q)})| N∆ ∼ M∆ N∆ .
+Combining this upper bound with the lower bound (5.6), we get, for every Q ∈ Q,
+                                                      M
+(5.8)                                      N ∆ ⪆δ          |F Q |.
+                                                     M∆ MQ
+Substituting (5.8) into (5.7), and taking the maximum over Q ∈ Q = D∆ (P ), we deduce that
+                                               |F∆ |                |F Q |
+                                    |F0 | ⪆δ         · M · max             .
+                                                M∆        Q∈D∆ (P ) MQ
+
+Since M ≈δ M0 (recall (5.5)), we conclude that
+                                      |F0 |    |F∆ |         |F Q |
+                                            ⪆δ       · max          .
+                                       M0       M∆ Q∈D∆ (P ) MQ
+This completes the proof of Proposition 5.1.
+
+5.6. Iteration over several scales. We will need to iterate Proposition 5.1 over several scales. The
+following standard definition keeps track of the sizes of uniform sets at all scales.
+
+Definition 5.7 (Branching function). If P is (∆, m)-uniform with branching numbers (Nj )m−1
+                                                                                        j=0 , its
+branching function is the piecewise-linear function f = fP : [0, m] → R determined by
+                                                    i−1
+                                                    X
+                         f (i) := log1/∆ |P |∆i =         log1/∆ Nj ,    i = 0, . . . , m.
+                                                    j=0
+
+It satisfies f (0) = 0 and is non-decreasing and d-Lipschitz.
+
+     Repeated dyadic pigeonholing yields the following statement; see [37, Lemma 7.3].
+
+Lemma 5.8. Fix ∆ ∈ 2−N and m ∈ N, and write δ = ∆m . For any set P ⊂ [0, 1)d there is a subset
+P ′ ⊂ P such that P ′ is (∆, m)-uniform and
+                                   |P ′ |δ ≥ (4(d + 1) log(1/∆))−m |P |δ .
+
+  If S is (∆, m)-uniform and T ⊂ S satisfies |T |∆m ≥ ∆u |S|∆m , then each occupied ∆i -cube of S
+contains the same number of occupied ∆m -cubes, so
+(5.9)            log1/∆ |S|∆i − u ≤ log1/∆ |T |∆i ≤ log1/∆ |S|∆i          (0 ≤ i ≤ m, i ∈ Z).
+                         SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                37
+
+
+Corollary 5.9. Fix C, γ > 0, β ∈ (0, 1], and J0 ∈ N. Let ∆ ∈ 2−N satisfy ∆ ≪d,k,β,J0 ,γ 1, take
+m ≫d,k,β,J0 ,γ,∆ 1, and write δ = ∆m . Let 1 ≤ J ≤ J0 and let 0 = a0 < a1 < · · · < aJ = m be
+integers. Let (P0 , Θ0 ) be a (δ, β, C, M0 )-spread-out configuration whose point set is (∆, m)-uniform,
+and let f be the branching function of P0 . For 1 ≤ j ≤ J, there is an intermediate configuration
+(Pj , Θj ) such that
+                             (Pj , Θj ) is (∆aj −aj−1 , β, δ −γ C, Mj )-spread-out,
+with Furstenberg set Fj , and
+                                                     J
+                                  |F(P0 , Θ0 )|δ    Y   |Fj |∆aj −aj−1
+(5.10)                                           ⪆δ                    ,
+                                      M0            j=1
+                                                             Mj
+
+where the implicit exponent in ⪆δ may depend on J0 . Moreover, the sets Pj are (∆, aj −aj−1 )-uniform,
+and their branching functions gj satisfy
+(5.11)              |gj (i) − f (aj−1 + i) + f (aj−1 )| ≤ γm   for 0 ≤ i ≤ aj − aj−1 .
+
+Proof. We first obtain the asserted configurations with spread-out constants at most
+                                          C(log(1/δ))Oβ,J0 (1)
+and with the right-hand side of (5.11) replaced by
+                                                          
+(5.12)                    OJ0 m log1/∆ (4(d + 1) log(1/∆)) + O∆,J0 (log m).
+We argue by induction on J for these auxiliary conclusions. The case J = 1 follows by tak-
+ing (P1 , Θ1 ) = (P0 , Θ0 ). Suppose that J ≥ 2, and apply Proposition 5.1 to the scale triple
+(∆m , ∆a1 , 1). Take the coarse configuration as (P1 , Θ1 ) and choose a zoomed-in configuration at-
+taining the maximum in (5.1). Lemma 5.8 yields uniform subsets of both point sets containing at
+least (4(d + 1) log(1/∆))−m of their points; restrict the shadings accordingly. Apply the induction
+hypothesis to the zoomed-in configuration and the scales 0, a2 − a1 , . . . , aJ − a1 = m − a1 . These
+restrictions only decrease the right-hand side of (5.1); multiplying that inequality by (5.10) for the
+zoomed-in configuration, we get (5.10) for (P0 , Θ0 ).
+   Before uniformization, Proposition 5.1(i), (ii)(Ca), and (iii)(Za) show that the coarse point set is a
+subset of {z(Q) : Q ∈ D∆a1 (P0 )} of cardinality ≈δ |P0 |∆a1 , while the chosen zoomed-in set is a subset
+of SQ (P0 ∩ Q) of cardinality ≈δ |P0 ∩ Q| for some Q ∈ D∆a1 (P0 ). By (5.9), the branching functions of
+the uniformized coarse and zoomed-in point sets differ from f (i) and f (a1 + i) − f (a1 ), respectively,
+by at most
+                               m log1/∆ (4(d + 1) log(1/∆)) + O∆ (log m).
+Combining these bounds with the induction hypothesis proves (5.11) with γm replaced by (5.12).
+Since J ≤ J0 , the conditions on ∆ and m imply that the spread-out constant is at most δ −γ C and
+that (5.12) is at most γm.                                                                      □
+
+5.7. Sticky spread-out Furstenberg sets. We are now able to complete the proof of Theorem 1.9.
+We use the affine coordinates (2.3). Recall from Section 2.1 that the Grassmannian and Euclidean
+metrics are bi-Lipschitz equivalent on bounded subsets of these coordinates.
+  The proof follows [38, Proof of Theorem 5.2], with Proposition 5.1 replacing [37, Proposition 5.2].
+
+Proof of Theorem 1.9. Take 0 < η ≪t 1. Apply Theorem 4.1 in dimensions (d, d − k) with (s, t, u) =
+(s/4, t, min{t, d − k} − η/4). Choose ε ≪η 1 such that the conclusion of that theorem is valid with
+parameter 3ε, and set N := ε−3 ∈ N. There is Closs = Closs (s, t, η, ε) such that the product of the
+non polylogarithmic losses from the N − 1 applications of Proposition 5.1, the regularity estimates
+38                                  TUOMAS ORPONEN AND PABLO SHMERKIN
+
+                                                                            ′
+for the sets P̌j , and Lemmas 2.10 and 5.3 is at most δ −Closs ε . Choose 0 < ε′ ≪s,t,η,ε 1 such that
+Closs ε′ ≤ ε4 /4.
+     Set
+                                        3
+                      τ := δ 1/N = δ ε ,         ∆j := δτ −j = τ N −j ,           0 ≤ j ≤ N − 1.
+Then ∆0 = δ, ∆j−1 /∆j = τ , and ∆j ≤ τ for 0 ≤ j ≤ N − 1. Taking δ ≪s,t,η,ε 1, Theorem 4.1 applies
+at scale τ . Since N = ε−3 , we may also require that the product of all polylogarithmic factors from
+                                  4
+these applications is at most δ −ε /4 . The product of all losses is therefore at most
+                                                  4
+                                             δ −ε /2 = τ −ε/2 ≤ τ −ε .
+Consequently, every spread-out and regularity constant used in the recursion is at most τ −ε .
+  We now define the multiscale recursion, using checks for the configurations rescaled to [0, 1]d . Set
+                                                                                      ′
+(P0 , Θ0 ) := (P, Θ) and M0 := M , and let F0 := F. Suppose that the (∆j−1 , s, δ −O(ε ) , Mj−1 )-spread-
+out configuration (Pj−1 , Θj−1 ) has been defined.
+   By dyadic pigeonholing, there are Qj ⊂ D∆j (Pj−1 ) and Njpts ∈ 2N0 such that
+                                                          X
+(5.13)        Njpts ≤ |Pj−1 ∩ Q| < 2Njpts (Q ∈ Qj ),            |Pj−1 ∩ Q| ⪆δ |Pj−1 |.
+                                                                     Q∈Qj
+                      S
+Set Pej−1 := Pj−1 ∩       Qj , let Θ
+                                   e j−1 be the restriction of Θj−1 to Pej−1 , and denote its Furstenberg set
+by Fej−1 .
+                                     e j−1 ) with (δ, ∆, ∆) = (∆j−1 , ∆j , τ ). Denote the configuration
+   Apply Proposition 5.1 to (Pej−1 , Θ
+in Proposition 5.1(i) by (Pj−1 , Θj−1 ), and denote the coarse configuration in Proposition 5.1(ii) by
+                           b     b
+(Pj , Θj ), with shading parameter Mj and Furstenberg set Fj . Thus
+                                             Pj = {z(Q) : Q ∈ D∆j (Pbj−1 )},
+                                [
+                                        b j−1 (p) ⊂ Θj (z(Q)),
+                                        Θ                                 Q ∈ D∆j (Pbj−1 ).
+                              bj−1 ∩Q
+                            p∈P
+
+There is also an integer Lj ≥ 1 such that |{J ∈ Θj (q) : J ⊂ I}| = Lj for q ∈ Pj and I ∈ Dτ (Θj (q)).
+For Q ∈ D∆j (Pbj−1 ), denote the configuration in Proposition 5.1(iii) by (P̌j,Q , Θ̌j,Q ), its shading
+parameter by MQ , and its Furstenberg set by F̌j,Q . Then
+                                        P̌j,Q = SQ (Pbj−1 ∩ Q),
+                              Θ̌j,Q (SQ (p)) ⊂ Dτ (Θ
+                                                   b j−1 (p)),            p ∈ Pbj−1 ∩ Q.
+This defines the recursion for 1 ≤ j ≤ N − 1.
+  Choose qN −1 ∈ PN −1 , and let QN −1 ∈ D∆N −1 (PbN −2 ) satisfy z(QN −1 ) = qN −1 . Recursively, after
+choosing Qj+1 , choose qj ∈ Pbj ∩ Qj+1 and let Qj ∈ D∆j (Pbj−1 ) be the cube with z(Qj ) = qj . Then
+
+                          Q1 ⊂ · · · ⊂ QN −1 ,        qj ∈ Pbj ∩ Qj+1 ,         1 ≤ j ≤ N − 2.
+For 1 ≤ j ≤ N − 1, set (P̌j , Θ̌j ) := (P̌j,Qj , Θ̌j,Qj ) and F̌j := F̌j,Qj . Proposition 5.1(iv) gives
+
+                                 |Fj−1 |∆j−1   |Fej−1 |∆j−1    |Fj |∆j |F̌j |τ
+                                             ≥              ⪆δ                 .
+                                   Mj−1           Mj−1           Mj MQj
+Iterating and using |FN −1 |∆N −1 ≥ MN −1 yields
+                                                         N −1
+                                                 |F|δ    Y    |F̌j |τ
+(5.14)                                                ⪆δ              .
+                                                  M      j=1
+                                                              MQj
+                              SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                                 39
+
+                                        ′
+   Each (P̌j , Θ̌j ) is a (τ, s, δ −O(ε ) , MQj )-spread-out configuration, and MQj ≲ τ −k(d−k) . We first
+record the point estimates inherited by these configurations. The Frostman condition at scale δ and
+the covering bound in Definition 1.7 give, respectively
+                          ′                                          ′
+                |P | ≥ δ ε δ −t ,       |P ∩ B(x, R)|r ≲d δ −ε (R/r)t           (x ∈ Rd , δ ≤ r ≤ R).
+Every point of Pj is the lower-left endpoint of a ∆j -cube meeting P , so
+                                                       ′
+(5.15)                    |Pj ∩ B(x, R)|r ≲d δ −ε (R/r)t             (x ∈ Rd , ∆j ≤ r ≤ R).
+Equations (5.13) and (5.15), together with Proposition 5.1(i), imply inductively that, for 1 ≤ j ≤
+N − 1,
+                                                                 ′                   ′                         ′
+     |Pj |Njpts ≈∆j−1 |Pbj−1 | ⪆δ |Pj−1 |,         |Pj | ≥ δ O(ε ) ∆−t
+                                                                    j ,         δ O(ε ) τ −t ≤ Njpts ≤ δ −O(ε ) τ −t .
+
+For Q ∈ D∆j (Pbj−1 ), Proposition 5.1(i) also gives
+
+                                               |Pbj−1 ∩ Q| ≈∆j−1 Njpts .
+                                                                                                                         ′
+Applying SQ , then using (5.15) with j−1 and the lower bound for Njpts , shows that P̌j is (τ, t, δ −O(ε ) )d -
+regular. Hence
+                                              P̌j is (τ, t, τ −ε )d -regular,
+(5.16)
+                                Θ̌j (p) is (τ, s, τ −ε )d,k -spread-out         (p ∈ P̌j ).
+
+   For 1 ≤ j ≤ N − 2, define
+                                    Θj := {z(I) : I ∈ Dτ (Θj (qj ))} ⊂ τ Zk(d−k) .
+Lemma 2.10(ii), Corollary 5.4, and scale τ uniformity show that
+(5.17)                                  mΘj is (τ, s/4, τ −ε )d,k -spread-out.
+
+   If p = SQj (p0 ) ∈ P̌j , we get from Proposition 5.1(ii)(Cb) and (iii)(Zb) that
+                                                    b j−1 (p0 )) ⊂ Dτ (Θj (qj )).
+                                      Θ̌j (p) ⊂ Dτ (Θ
+This implies the first inequality in
+                       MQj ≤ |Θj | = |Dτ (Θj (qj ))| ⪅δ MQj+1 ,                 1 ≤ j ≤ N − 2.
+                                                                                 b j (qj )| ≈δ Lj |Θj |.
+For the second inequality, scale τ uniformity and Proposition 5.1(i) imply that |Θ
+Proposition 5.1(Zc) gives mQj+1 MQj+1 ≈δ |Θj (qj )|, and mQj+1 ≤ Lj .
+                                            b
+ Let E := {j ∈ {1, . . . , N − 2} : MQj+1 ≥ τ −ε MQj }. Multiplying the consecutive ratios and using
+MQj ⪅δ MQj+1 and MQj ≲ τ −k(d−k) , we obtain |E| ≤ 2k(d − k)ε−1 for δ ≪d,k,ε 1.
+   We claim that, for every j ∈ {1, . . . , N − 2} \ E,
+                                            |F̌j |τ
+(5.18)                                              ≥ τ − min{t,d−k}+η/4+3ε .
+                                            MQ j
+Granting this, we combine (5.14) with the trivial bound |F̌j |τ ≥ MQj to obtain
+                              |F|δ
+                                   ⪆δ τ (− min{t,d−k}+η/4+3ε)(N −|E|−2) .
+                               M
+The choice of ε and the bound for |E| imply
+              N − |E| − 2                     η                         η
+                            − min{t, d − k} + + 3ε ≤ − min{t, d − k} + + 4ε < ε.
+                  N                            4                          4
+40                                 TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Since τ = δ 1/N ,
+                                     |F|δ
+                                           ⪆δ δ − min{t,d−k}+η/4+4ε .
+                                      M
+Since ε < η/25, (1.3) follows for δ ≪d,k,s,t,η,ε 1, conditional on (5.18).
+  Fix j ∈ {1, . . . , N − 2} \ E. For θ ∈ Θj , let P θ := {p ∈ P̌j : θ ∈ z Θ̌j (p)}. Since j ∈
+                                                                                             / E and
+|Θj | ⪅δ MQj+1 ,
+                                 X           X
+                                    |P θ | =    |z Θ̌j (p)| ∼ |P̌j |MQj
+                                    θ∈Θj             p∈P̌j
+
+                                                 ≥ τ ε |P̌j |MQj+1 ⪆δ τ ε |P̌j ||Θj |.
+
+Let Θ′ consist of the parameters θ ∈ Θj such that |P θ | ≥ τ 2ε |P̌j |. Discarding the remaining parameters
+from the displayed incidence sum yields |Θ′ | ⪆δ τ ε |Θj | for δ ≪ε 1.
+   Equation (5.17) and Lemma 2.9 show that mΘ′ is (τ, s/4, τ −3ε )d,k -spread-out. Since Θ′ ⊂ Θj ⊂
+τ Zk(d−k) , it is τ -separated. The linear isometry θ 7→ −θ∗ maps Hd,k onto Hd,d−k and preserves the
+dyadic lattice. Thus Lemma 2.10(ii) implies that {−θ∗ : θ ∈ Θ′ } is a τ -separated (τ, s/4, τ −3ε )d,d−k -
+spread-out set. By (5.16), the coordinate permutation (x, y) 7→ (y, x) sends P̌j to a (τ, t, τ −ε )d -regular
+set. Apply Theorem 4.1, in dimensions (d, d−k) and with parameter 3ε, to this set and {−θ∗ : θ ∈ Θ′ }.
+For every θ ∈ Θ′ , the subset P θ satisfies the cardinality hypothesis of the theorem because
+                                |P θ |τ = |P θ | ≥ τ 2ε |P̌j | ≥ τ 3ε |P̌j |τ ,     θ ∈ Θ′ .
+Since π−θ∗ (y, x) = y − θ∗ x = ρθ (x, y), the theorem yields Θ′′ ⊂ Θ′ with |Θ′′ | ≥ (1 − τ 3ε )|Θ′ | ≥ 12 |Θ′ |
+such that
+                                  |ρθ (P θ )|τ ≥ τ − min{t,d−k}+η/4 ,             θ ∈ Θ′′ .
+     Equation (2.4), applied to Θ′′ and the sets P θ , implies
+                                X
+                      |F̌j |τ ≥     |ρθ (P θ )|τ ≥ |Θ′′ |τ − min{t,d−k}+η/4
+                                 θ∈Θ′′
+
+                              ⪆δ τ ε |Θj |τ − min{t,d−k}+η/4 ≥ τ 3ε MQj τ − min{t,d−k}+η/4 ,
+
+where the last inequality follows from δ ≪ε 1 and MQj ≤ |Θj |. This is (5.18).                               □
+
+                                         6. Examples and applications
+
+6.1. Uniformly perfect measures on R are spread-out. Let us first recall (from the introduction)
+the notion of uniformly perfect measures:
+
+Definition 6.1 ((D, β)-uniformly perfect measure). Let D > 1 and β ∈ [0, 1). A locally finite Borel
+measure µ on a metric space (X, ρ) is called (D, β)-uniformly perfect if diam(spt µ) > 0, and
+                                            µ(B(x, r)) ≤ β · µ(B(x, Dr))
+for all closed balls B(x, r) ⊂ X such that spt µ ̸⊂ B(x, Dr).
+
+Proposition 6.2. For every D > 1 and β ∈ [0, 1), there exists ε = ε(D, β) > 0 such that the following
+holds. Let µ be a (D, β)-uniformly perfect measure on G2,1 ∼
+                                                           = R such that
+                         0 < µ(B(0, 1)),        µ(B(0, 5)) ≤ D,          and      spt µ ̸⊂ B(0, 5).
+Then, for every δ ∈ 2−N , µ|B(0,1) is (δ, ε, D)1 -spread-out.
+                         SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                   41
+
+
+Proof. Put c := 1/4. Choose N0 ∈ N with β N0 ≤ c, and then fix 0 < ε = ε(D, β) ≪D,β 1 so
+that 8DN0 ε ≤ 1 and each interval [εr, r] contains fewer than ε−1 dyadic scales. Iterating uniform
+perfectness, we get
+(6.1)                       µ(B(x, 8εr)) ≤ cµ(B(x, r)),       B(x, r) ⊂ B(0, 5).
+Indeed, the balls B(x, Di 8εr), 0 ≤ i ≤ N0 , are contained in B(x, r) ⊂ B(0, 5), so the non-containment
+condition in Definition 6.1 follows from spt µ ̸⊂ B(0, 5).
+   Fix δ ∈ 2−N . Let E ⊂ B(0, 1) ∩ spt µ be a Borel set such that every point x ∈ E has s many
+ε-singular scales in 2−N ∩ [δ, 1], denoted {rj (x)}sj=1 . If E = ∅ or s = 0, the desired estimate follows
+from E ⊂ B(0, 5) and µ(B(0, 5)) ≤ D. Since each block [εr, r] contains fewer than ε−1 dyadic scales,
+we may choose, after discarding extras, a fixed integer s and subsequences {rj (x)}sj=1 ⊂ {rj (x)}sj=1
+such that
+(6.2)              s ≥ εs    and   rj+1 (x) ≤ εrj (x) for all 1 ≤ j ≤ s − 1 and x ∈ E.
+For every selected scale, choose a point aj (x) ∈ R witnessing singularity:
+                                   E ∩ B(x, rj (x)) ⊂ B(aj (x), εrj (x)).
+The scales rj (x) may depend arbitrarily on x, and this poses a technical difficulty. To overcome it,
+we define a ”smoother” version of the scales by the following formula:
+                   ρj (x) := max{rj (y) : y ∈ E and |x − y| < 12 rj (y)},     1 ≤ j ≤ s.
+(The max exists because rj (y) only takes values in 2−N ∩ [δ, 1].) A key point is that whenever
+|x−y| < 21 rj (y), then x ∈ E ∩B(y, rj (y)). Since the affine hyperplanes in R are points, the singularity
+of rj (y) gives
+                E ∩ B x, 12 rj (y) ⊂ E ∩ B(y, rj (y)) ⊂ B aj (y), εrj (y) ⊂ B x, 2εrj (y) .
+                                                                                       
+
+Applying this with the point y which realizes ρj (x), we conclude
+(6.3)                       E ∩ B(x, 12 ρj (x)) ⊂ B(x, 2ερj (x)),    1 ≤ j ≤ s.
+For notational convenience, define ρ0 (x) := ε−1 for all x ∈ E. We will next recursively construct
+families Bj of closed balls, 0 ≤ j ≤ s, with the following properties:
+    (a) E ⊂ B∈Bj 21 B.
+             S
+                            1
+         P                    P
+   (b)     B∈Bj+1 µ(B) ≤ 2      B∈Bj µ(B).
+    (c) Each ball in Bj has the form B(x, 4ερj (x)) for some x ∈ E.
+To initialize the construction, set B0 := {B(x0 , 4)} for x0 ∈ E arbitrary, so (c) is valid. Property (a)
+follows from E ⊂ B(0, 1). Property (b) is vacuous when only B0 has been constructed.
+   We then assume that Bj has been constructed for some 0 ≤ j ≤ s − 1, and we construct Bj+1 . Fix
+                                                                                       S
+B ∈ Bj . The plan is to construct a collection Bj+1 (B), and then set Bj+1 := B∈Bj Bj+1 (B). To
+construct Bj+1 (B), let B j+1 (B) be the family of all closed balls of radius 21 ρj+1 (x) centered at points
+x ∈ E ∩ 12 B. There exists a finite subfamily, still denoted B j+1 (B), with the properties
+                                          [                     X
+(6.4)                      E ∩ 21 B ⊂            B and                  1B ≤ 2.
+                                       B∈Bj+1 (B)            B∈Bj+1 (B)
+
+Recall from (6.3) that, writing B := B(x, 21 ρj+1 (x)), it holds
+                                    E ∩ B ⊂ 4εB = B(x, 2ερj+1 (x)).
+42                                 TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Consequently, writing Bj+1 (B) := {B(x, 4ερj+1 (x)) : B(x, 21 ρj+1 (x)) ∈ B j+1 (B)}, it holds
+                                                    [
+                                    E ∩ 12 B ⊂              1
+                                                            2 B,
+                                                            B∈Bj+1 (B)
+
+and therefore
+                                                                            def.
+                                 [                      [       [                   [
+                        E⊂              (E ∩ 21 B) ⊂                     1
+                                                                         2B =
+                                                                                            1
+                                                                                            2 B.
+                                 B∈Bj                  B∈Bj B∈Bj+1 (B)             B∈Bj+1
+
+This verifies property (a), and (c) is immediate from the definition of Bj+1 (B). To verify (b), we need
+to check the following:
+
+Lemma 6.3. The balls in Bj+1 (B) and B j+1 (B) are contained in B.
+
+Proof. Write B = B(x0 , 4ερj (x0 )) for some x0 ∈ E, and let x ∈ E ∩ 12 B be the center of a ball chosen
+for B j+1 (B).
+  If j = 0, then B = B(x0 , 4) and ρ1 (x) ≤ 1. Since x ∈ B(x0 , 2) and 4ε ≤ 21 , both B(x, 12 ρ1 (x)) and
+B(x, 4ερ1 (x)) are contained in B(x0 , 52 ) ⊂ B.
+     Assume that j ≥ 1, and write ρj+1 (x) = rj+1 (y) for some y ∈ E. Then
+
+                                          |x0 − y| < 2ερj (x0 ) + 12 rj+1 (y).
+
+If 2ερj (x0 ) ≤ rj+1 (y), then
+
+                                   |x0 − y| < 32 rj+1 (y) ≤ 23 εrj (y) < 12 rj (y).
+
+Thus y is admissible in the definition of ρj (x0 ), and hence ρj+1 (x) ≤ ερj (x0 ). In the complementary
+case, ρj+1 (x) ≤ 2ερj (x0 ). Therefore, in either case,
+
+                                                 ρj+1 (x) ≤ 2ερj (x0 ).
+
+Since |x − x0 | ≤ 2ερj (x0 ), it follows that
+
+                                    B(x, 21 ρj+1 (x)) ⊂ B(x0 , 3ερj (x0 )) ⊂ B,
+
+and, using ε ≤ 14 ,
+                           |x − x0 | + 4ερj+1 (x) ≤ (2ε + 8ε2 )ρj (x0 ) ≤ 4ερj (x0 ).
+This also gives B(x, 4ερj+1 (x)) ⊂ B.                                                                  □
+
+   The ball in B0 is contained in B(0, 5), so Lemma 6.3 shows inductively that every ball in Bj , and
+every ball in B j+1 (B) for B ∈ Bj , is contained in B(0, 5). It now follows from (6.1) and (6.4) that
+                 X                  X                      X
+                        µ(B) =              µ(8εB) ≤ c            µ(B) ≤ 2cµ(B) = 12 µ(B),
+              B∈Bj+1 (B)            B∈Bj+1 (B)                 B∈Bj+1 (B)
+
+Summing over B ∈ Bj proves (b), and completes the construction of the families Bj , 0 ≤ j ≤ s.
+     Finally, we may deduce from (a)-(b) that
+                          X                X
+                  µ(E) ≤       µ(B) ≤ 21      µ(B) ≤ . . . ≤ 2−s µ(B(0, 5)) ≤ D2−s .
+                           B∈Bs                 B∈Bs−1
+
+Recalling from (6.2) that s ≥ εs, in particular µ(E) ≤ D2−εs , and we have shown that µ|B(0,1) is
+(δ, ε, D)1 -spread-out.                                                                        □
+                         SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                   43
+
+
+6.2. Applications to discretized sum-product estimates. The discretized sum-product problem
+has received considerable attention since the works of Katz and Tao [25], who introduced the problem,
+and Bourgain [2], who proved the first nontrivial result:
+Theorem 6.4 (Bourgain). For every s ∈ (0, 1) there are ε, κ > 0, depending only on s, such that the
+following holds for δ ≪s 1.
+  Let A ⊂ [1, 2] be (δ, s, δ −ε )-Frostman. Then
+(6.5)                              max{|A + A|δ , |A · A|δ } ≥ δ −(s+κ) .
+
+   It has been an important problem to understand the dependence of κ on s; in Bourgain’s proof
+it was tiny and left uncomputed. Quantitative bounds were provided in [20, 30, 40]. As a corollary
+of their resolution of the Furstenberg set problem, Ren and Wang [40] showed that one can take
+κ = (1/4)s for s ∈ (0, 2/3) (in the case s ∈ (2/3, 1) the sharp upper bound κ = (1 − s)/2 was already
+known).
+    The problem has also attracted attention in the special case in which A has additional structure,
+and in particular in the Ahlfors-regular case. O’Regan [33, Theorem 1.7] proved that, for an s-Ahlfors
+regular set A ⊂ [1, 2] with s ∈ (0, 1/2], one has max{|A + A|δ , |A · A|δ } ≥ δ −4s/3+η for every η > 0 and
+all sufficiently small δ. As a corollary of Theorem 1.9, we obtain an exponent 3/2 when the dimension
+of A is at most 1/2.
+Theorem 6.5. Let s ∈ (0, 1/2] and C ≥ 1, and suppose that A ⊂ [1, 2] is the support of an s-Ahlfors
+regular probability measure with regularity constant C. For every η > 0 and all sufficiently small
+dyadic δ, depending only on s, C, η, we have
+(6.6)                                 |A + A|δ · |A · A|δ ≥ δ η · |A|3δ .
+In particular,
+                                                                            3/2
+                                  max{|A + A|δ , |A · A|δ } ≥ δ η · |A|δ .
+
+Proof. We use Elekes’ argument [15] in dual coordinates. All implicit constants in this proof may
+depend on s, C.
+  Let
+                                                                       
+                               P := zDδ {(b/4, (4 − ab)/16) : a, b ∈ A} .
+The map (a, b) 7→ (b/4, (4 − ab)/16) is bi-Lipschitz on [1, 2]2 . Hence P ⊂ [0, 1]2 is (δ, 2s, O(1))-regular
+and |P | ∼ δ −2s .
+   For every p ∈ P , choose a, b ∈ A such that p = z(Dδ (b/4, (4 − ab)/16)). The Ahlfors regular
+measures on −(a + A)/4 satisfy the hypotheses of Proposition 6.2, with constants depending only on
+s, C. Lemma 2.11 therefore yields a family
+                                         Θ(p) ⊂ Dδ (−(a + A)/4)
+which is (δ, β, ⪅δ 1)2,1 -spread-out for some β > 0 depending only on s, C, and has cardinality ⪆δ δ −s .
+Since |A|δ ∼ δ −s , Lemma 2.9 allows us to restrict these families to a common cardinality M ⪆δ δ −s ,
+with the same spread-out bound.
+   If θ ∈ zΘ(p), choose c ∈ A such that |θ + (a + c)/4| ≤ δ. The affine coordinates of Vθ + p differ by
+O(δ) from                                                               
+                             a + c 4 − ab (a + c)b            a + c 4 + bc
+                           −      ,       +             = −          ,       .
+                               4      16        16              4      16
+It follows that
+                                    |F(P, Θ)|δ ≲ |A + A|δ |A · A|δ .
+44                              TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+Theorem 1.9, applied with t = 2s ≤ 1 and η/2 in place of η, implies
+                               |A + A|δ |A · A|δ ≳ δ η/2−2s M ⪆δ δ η/2 |A|3δ .
+For sufficiently small δ, this proves (6.6).                                                            □
+Remark 6.6. It is perhaps noteworthy that this is the first time in which a bound in the discretized
+sum-product problem has exceeded the best known bound in the discrete problem. Solymosi [45]
+proved that for any finite A ⊂ R,
+                               max{|A + A|, |A · A|} ≳ |A|4/3−o|A|→∞ (1) .
+This has been improved by small amounts, with the current best exponent, due to Cushman [8],
+equaling 4/3 + 10/4407.
+Remark 6.7. Another consequence of (6.6) is
+                               |A + A|δ ≲ |A|δ     =⇒     |A · A|δ ≳ δ η |A|2δ ,
+and, with sums and products interchanged,
+                               |A · A|δ ≲ |A|δ    =⇒     |A + A|δ ≳ δ η |A|2δ .
+This also shows that (6.6) is sharp when A is the δ-neighborhood of a suitable arithmetic or geometric
+progression. In the Ahlfors-regular case, the “few products implies maximal sums” direction was
+already established by O’Regan [33]. The other direction seems to be new even in the Ahlfors-regular
+case, but Demeter and O’Regan proved a general “few sums implies maximal quotients” result in [11,
+Theorem 1.12] under only an s-Frostman assumption, s ≤ 1/2.
+
+   A related sum-product problem concerns the size of A + A · A (see the work of Roche-Newton,
+Ruzsa, Shen and Shkredov [41] for recent progress in the finite case of this problem). For Ahlfors
+regular sets, Theorem 1.1 gives the following dimension bound.
+Corollary 6.8. Let A ⊂ [1, 2] be a nonempty s-Ahlfors regular set with s ∈ (0, 1). Then
+                                     dimH (A + A · A) ≥ min{2s, 1}.
+
+Proof. The set A × A has Hausdorff and packing dimensions 2s. Apply Theorem 1.1 to A × A and
+the Ahlfors regular measure on the directions span(1, a), a ∈ A. For almost every a with respect to
+the Ahlfors regular measure on A, we obtain dimH (A + aA) = min{2s, 1}. Since A + aA ⊂ A + A · A,
+the conclusion follows.                                                                          □
+
+6.3. Triple sums for subsets of the parabola. In this section, we write P := {(x, x2 ) : x ∈ [−1, 1]}.
+Because the addition map (x, y) 7→ x + y is bi-Lipschitz on disjoint arcs of P (see Lemma 6.10 below),
+understanding sums A+B or additive energies E(A, B) for A, B ⊂ P is straightforward. The situation
+is much more subtle for triple sums.
+   For finite subsets of P, third and higher additive energies have been studied in [4, 32] with a recent
+breakthrough achieved in [9]; the corresponding fractal problem was considered in [35, 36], see also
+[12, 13] for closely related work. The first author [35, Corollary 1.3] proved that every closed A ⊂ P
+with 0 < dimH (A) < 1 satisfies dimH (A+A+A) ≥ 2 dimH (A)+ε(dimH (A)) for some ε(dimH (A)) > 0.
+In [36] the result was quantified with ε(dimH A) = min{dimH A/2, 1 − dimH A}. As a particular case
+of their results, Algom and the first author [1] established L2 -flattening of Ahlfors-regular sets on the
+parabola, which yields additive growth through iterated self-convolutions.
+  It follows from [9, Theorem 1.1] and Cauchy–Schwarz that, for every ε > 0 and every finite
+Λ ⊂ P, we have |Λ + Λ + Λ| ≳ε |Λ|3−ε . A natural fractal version of this problem is to ask whether
+                           SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                         45
+
+
+dimH (A + A + A) ≥ 3 dimH (A) when dimH (A) is not too large. As an application of the Furstenberg
+set estimate in Theorem 1.3, we answer this question in the affirmative when A is Ahlfors regular.
+
+Theorem 6.9. Let s ∈ (0, 1], t ∈ [0, 1]. Let A ⊂ P be a non-empty s-Ahlfors regular set, and let
+E ⊂ R2 be a Borel set with dimH E = dimP E = t. Then dimH (A + E) ≥ s + t. In particular, if
+s ≤ 1/2, then dimH (A + A + A) = 3s.
+
+   The following is very standard; we include the short argument for completeness.
+
+Lemma 6.10. Assume that I1 , I2 ⊂ [−1, 1] are intervals such that max I1 ≤ min I2 − c for some
+c > 0. Write Pj := {(x, x2 ) : x ∈ Ij } for j ∈ {1, 2}. Then (z1 , z2 ) 7→ z1 + z2 is O(c−1 )-bi-Lipschitz
+on P1 × P2 .
+
+Proof. For xj , yj ∈ Ij , j = 1, 2, we have
+                                                                                  
+                           x1 + x 2 − y 1 − y 2        1             1        x1 − y 1
+                                                  =                                      .
+                           x21 + x22 − y12 − y22    x1 + y 1      x2 + y2     x2 − y 2
+The matrix entries are bounded by 2, and its determinant is at least 2c. Its inverse therefore has
+norm O(c−1 ). Since x 7→ (x, x2 ) is bi-Lipschitz on [−1, 1], the claimed bound follows.        □
+
+Proof of Theorem 6.9. We follow the reduction from parabola sums to Furstenberg sets used by the
+first author, Puliatti, and Pyörälä [36, §1.1].
+   Set F0 := A + E. For every z ∈ E, the intersection F0 ∩ (z + P) contains the nonempty Ahlfors
+s-regular set z + A.
+    Consider the locally bi-Lipschitz invertible map Ψ(x, y) := (x, x2 − y). For z ∈ R2 , the set Ψ(z + P)
+lies on a line ℓz ∈ A(2, 1); see [36, Proposition 2.6(b)]. We have
+                           Ψ(F0 ) ∩ ℓz ⊃ Ψ(F0 ∩ (z + P)) ⊃ Ψ(z + A),              z ∈ E.
+The map z 7→ ℓz is locally bi-Lipschitz, so the family {ℓz : z ∈ E} has Hausdorff and packing
+dimension t. After point-line duality, Theorem 1.3 implies that dimH (A + E) ≥ s + t.
+   For the final assertion, assume that s ≤ 1/2. We can find subsets A1 , A2 ⊂ A at positive distance
+from each other which are still s-Ahlfors regular. Lemma 6.10 shows that addition is O(1)-bi-Lipschitz
+on A1 × A2 , with the constant depending on the separation of the sets. Thus
+                                   dimH (A1 + A2 ) = dimP (A1 + A2 ) = 2s.
+The first assertion, applied with E = A1 + A2 and t = 2s (this is where we use s ≤ 1/2), yields
+dimH (A + A + A) ≥ 3s. Since addition on A3 is Lipschitz and dimH (A3 ) = 3s, the reverse inequality
+also holds.                                                                                       □
+
+                                                  References
+ [1] Amir Algom and Tuomas Orponen. Uniformly perfect measures on strictly convex planar graphs are L2 -flattening.
+     J. Math. Pures Appl. (9), 213:Paper No. 103940, 2026.
+ [2] Jean Bourgain. On the Erdös-Volkmann and Katz-Tao ring conjectures. Geom. Funct. Anal., 13(2):334–365, 2003.
+ [3] Jean Bourgain. The discretized sum-product and projection theorems. J. Anal. Math., 112:193–236, 2010.
+ [4] Jean Bourgain and Ciprian Demeter. The proof of the l2 decoupling conjecture. Ann. of Math. (2), 182(1):351–389,
+     2015.
+ [5] Changhao Chen. Restricted families of projections and random subspaces. Real Anal. Exchange, 43(2):347–358,
+     2018.
+ [6] Alex Cohen, Pablo Shmerkin, Hong Wang, and Dmitrii Zakharov. Spread-out Furstenberg sets II: general config-
+     urations and fractal restricted projections. arXiv preprint, 2026.
+46                                  TUOMAS ORPONEN AND PABLO SHMERKIN
+
+
+ [7] Marianna Csörnyei and D. M. Stull. Hyperplane incidences and distance sets in higher dimensions. Preprint, 2026.
+     arXiv:2609.38742v1.
+ [8] Adam Cushman. A note on the sum-product problem and the convex sumset problem. arXiv:2512.13849v2, 2025.
+ [9] Adam Cushman, Ciprian Demeter, and Shukun Wu. Near optimal three-fold additive energy bound for points on
+     convex curves. Preprint, 2026. arXiv:2608.12316v3.
+[10] Damian Dabrowski, Tuomas Orponen, and Hong Wang. How much can heavy lines cover? J. Lond. Math. Soc.
+     (2), 109(5):Paper No. e12910, 33, 2024.
+[11] Ciprian Demeter and William O’Regan. Incidence estimates for quasi-product sets and applications.
+     arXiv:2511.15899v1, 2025.
+[12] Ciprian Demeter and William O’Regan. Incidence estimates for quasi-product sets and applications. arXiv e-prints,
+     page arXiv:2511.15899, November 2025.
+[13] Ciprian Demeter and Hong Wang. Szemerédi-Trotter bounds for tubes and applications. Ars Inven. Anal., pages
+     Paper No. 1, 46, 2025.
+[14] Jiahan Du. Restricted Marstrand’s projection theorem for general families of linear subspaces. Preprint, 2025.
+     arXiv:2510.16671v2.
+[15] György Elekes. On the number of sums and products. Acta Arith., 81(4):365–367, 1997.
+[16] Katrin Fässler and Tuomas Orponen. On restricted families of projections in R3 . Proc. Lond. Math. Soc. (3),
+     109(2):353–381, 2014.
+[17] Shengwen Gan, Shaoming Guo, Larry Guth, Terence L. J. Harris, Dominique Maldague, and Hong Wang. On
+     restricted projections to planes in R3 . Amer. J. Math., 148(4):915–960, 2026.
+[18] Shengwen Gan, Shaoming Guo, and Hong Wang. A restricted projection problem for fractal sets in Rn . Camb. J.
+     Math., 12(3):535–561, 2024.
+[19] Shengwen Gan, Larry Guth, and Dominique Maldague. An exceptional set estimate for restricted projections to
+     lines in R3 . J. Geom. Anal., 34(1):Paper No. 15, 13, 2024.
+[20] Larry Guth, Nets Hawk Katz, and Joshua Zahl. On the discretized sum-product problem. Int. Math. Res. Not.
+     IMRN, 2021(13):9769–9785, 2021.
+[21] Weikun He. Orthogonal projections of discretized sets. J. Fractal Geom., 7(3):271–317, 2020.
+[22] Michael Hochman. On self-similar sets with overlaps and inverse theorems for entropy. Ann. of Math. (2),
+     180(2):773–822, 2014.
+[23] Michael Hochman. On self-similar sets with overlaps and inverse theorems for entropy in Rd . Mem. Amer. Math.
+     Soc., 265(1287), 2020.
+[24] Antti Käenmäki, Tuomas Orponen, and Laura Venieri. A Marstrand-type restricted projection theorem in R3 .
+     Amer. J. Math., 147(1):81–123, 2025.
+[25] Nets Hawk Katz and Terence Tao. Some connections between Falconer’s distance set conjecture and sets of Fursten-
+     burg type. New York J. Math., 7:149–187, 2001.
+[26] R. Kaufman and P. Mattila. Hausdorff dimension and exceptional sets of linear transformations. Ann. Acad. Sci.
+     Fenn. Ser. A I Math., 1(2):387–392, 1975.
+[27] Robert Kaufman. On Hausdorff dimension of projections. Mathematika, 15:153–155, 1968.
+[28] Dmitry Kleinbock, Elon Lindenstrauss, and Barak Weiss. On fractal measures and Diophantine approximation.
+     Selecta Math. (N.S.), 10(4):479–523, 2004.
+[29] John M. Marstrand. Some fundamental geometrical properties of plane sets of fractional dimensions. Proc. London
+     Math. Soc. (3), 4:257–302, 1954.
+[30] András Máthé and William Lewis O’Regan. Discretised sum-product theorems by Shannon-type inequalities. J.
+     Lond. Math. Soc., 112(6):Paper No. e70389, 2025.
+[31] Pertti Mattila. Hausdorff dimension, orthogonal projections and intersections with planes. Ann. Acad. Sci. Fenn.
+     Ser. A I Math., 1(2):227–244, 1975.
+[32] Akshat Mudgal. Diameter-free estimates for the quadratic Vinogradov mean value theorem. Proc. Lond. Math.
+     Soc. (3), 126(1):76–128, 2023.
+[33] William O’Regan. Sum-product phenomena for Ahlfors-regular sets. Preprint, 2025. arXiv:2501.02131v4.
+[34] Tuomas Orponen. On arithmetic sums of Ahlfors-regular sets. Geom. Funct. Anal., 32(1):81–134, 2022.
+[35] Tuomas Orponen. Additive properties of fractal sets on the parabola. Ann. Fenn. Math., 48(1):113–139, 2023.
+[36] Tuomas Orponen, Carmelo Puliatti, and Aleksi Pyörälä. On Fourier transforms of fractal measures on the parabola.
+     Trans. Amer. Math. Soc., 378(10):7429–7450, 2025.
+[37] Tuomas Orponen and Pablo Shmerkin. On the Hausdorff dimension of Furstenberg sets and orthogonal projections
+     in the plane. Duke Math. J., 172(18):3559–3632, 2023.
+                            SPREAD-OUT FURSTENBERG SETS I: THE STICKY CASE                                          47
+
+
+[38] Tuomas Orponen and Pablo Shmerkin. Projections, Furstenberg sets, and the ABC sum-product problem. J.
+     Amer. Math. Soc., 39(3):857–913, 2026.
+[39] Malabika Pramanik, Tongou Yang, and Joshua Zahl. A Furstenberg-type problem for circles, and a Kaufman-type
+     restricted projection theorem in R3 . Amer. J. Math. (to appear), 2022. arXiv:2207.02259v3.
+[40] Kevin Ren and Hong Wang. Furstenberg sets estimate in the plane. Preprint, 2023. arXiv:2308.08819v3.
+[41] Oliver Roche-Newton, Imre Z. Ruzsa, Chun-Yen Shen, and Ilya D. Shkredov. On the size of the set AA + A. J.
+     Lond. Math. Soc. (2), 99(2):477–494, 2019.
+[42] Imre Z. Ruzsa. An application of graph theory to additive number theory. Sci. Ser. A Math. Sci. (N.S.), 3:97–109,
+     1989.
+[43] Pablo Shmerkin. On Furstenberg’s intersection conjecture, self-similar measures, and the Lq norms of convolutions.
+     Ann. of Math. (2), 189(2):319–391, 2019.
+[44] Pablo Shmerkin. Inverse theorems for discretized sums and Lq norms of convolutions in Rd . Orbita Math., 2(1):65–
+     82, 2025.
+[45] József Solymosi. Bounding multiplicative energy by the sumset. Adv. Math., 222(2):402–408, 2009.
+[46] Terence Tao and Van Vu. Additive combinatorics, volume 105 of Cambridge Studies in Advanced Mathematics.
+     Cambridge University Press, Cambridge, 2006.
+[47] Hong Wang. Restricted families of orthogonal projections in Rn . In Proceedings of the International Congress
+     of Mathematicians 2026. Volume 4: Invited lectures (Sections 5–8), pages 785–800. Society for Industrial and
+     Applied Mathematics, Philadelphia, PA, 2026.
+[48] Hong Wang and Joshua Zahl. Sticky Kakeya sets and the sticky Kakeya conjecture. J. Amer. Math. Soc., 39(2):515–
+     585, 2026.
+[49] Thomas Wolff. Recent work connected with the Kakeya problem. In Prospects in mathematics (Princeton, NJ,
+     1996), pages 129–162. Amer. Math. Soc., Providence, RI, 1999.
+

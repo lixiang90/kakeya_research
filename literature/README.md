@@ -195,3 +195,6 @@ R0112（2026-10-26）新增五篇固定版本原件与全文：LW2506.18142v2、
 
 
 R0115无新PDF，仍94PDF/98sources。重读WZ Def3/17/19，usual(19)规范、整数allowed子格、γ降级与原平均mass量词见metadata/R0115_source_check.json。完整source条件graft及cap排重由独审稿负责；未证明source排除、无ordinary新界/前沿优先权认证。
+
+
+R0116新增4PDF：Li2607.29042v1(40p)、Orponen–Shmerkin Spread-out I2610.13677v1(47p)、Dahia2610.18859v1(5p)、Kulkarni2025讲座摘要(1p)，共98PDF/103sources。原件/text/metadata/bytesSHA256已存，root视觉读关键页；另Wang ICM官方web可读但PDF CLI403，仅存scope/失败记录，不算本地PDF。精确熵/通维spreadout/randomAP均未付ordinary新初始化；codec有限误差门非新维数界，scope见metadata/R0116_source_check.json。

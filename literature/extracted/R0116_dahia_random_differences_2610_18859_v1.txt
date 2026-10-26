@@ -1,0 +1,210 @@
+                                                   SZEMERÉDI’S THEOREM WITH RANDOM DIFFERENCES
+                                                                AND ARITHMETIC KAKEYA
+
+                                                                                      GABRIEL DAHIA
+
+                                                  Abstract. We prove that there exists an absolute constant c > 0 such that the following
+                                                  holds for every k ≥ 3 and p ≥ n−c/ log log k . Letting δ > 0 and D ∼ [n]p , with high
+                                                  probability every S ⊂ [n] with |S| ≥ δn contains a k-term arithmetic progression whose
+arXiv:2610.18859v1 [math.CO] 13 Oct 2026
+
+
+
+
+                                                  common difference lies in D. This improves the best known bounds for the threshold of
+                                                  Szemerédi’s theorem with random differences for all sufficiently large k, previously of the
+                                                  form p ≥ n−2/k+o(1) , due to Briët and Castro-Silva. We obtain our improvement via a small
+                                                  cover lemma, in the sense of Alon and Pham’s work on random Cayley graphs, and its proof
+                                                  crucially relies on a construction of Green and Ruzsa in the context of the arithmetic Kakeya
+                                                  conjecture. The usage of the latter was suggested to us by GPT 6 Astra.
+
+
+
+
+                                                                                     1. Introduction
+                                              In 1975, Szemerédi [20] proved that subsets of [n] that have no k-term arithmetic progres-
+                                           sions have size at most o(n). Since then, there have been many important generalisations of
+                                           this result. Particularly relevant here is the work of Bergelson and Leibman [6], who estab-
+                                           lished that the same holds if we require the subsets of [n] to avoid only k-APs whose common
+                                           difference is a perfect ℓ-th power, for some fixed ℓ ∈ N. The set of common differences in this
+                                           case is very sparse, but also very structured, so a natural question is how sparse a typical
+                                           set of common differences can be while retaining that property.
+                                              One formulation of this problem, known as Szemerédi’s theorem with random differences,
+                                           is the following. Determine the threshold p = p(n) such that, if D is a p-random subset
+                                           of [n], then with high probability every subset of [n] that avoids k-APs with common dif-
+                                           ference in D has size o(n). The first non-trivial bounds for this problem were established
+                                           independently by Christ [13] and Frantzikinakis, Lesigne and Wierdl [15], who proved that
+                                                                            k−2
+                                           this holds whenever p ≥ n−1/2 +o(1) . This was later improved for k ≥ 5 to p ≥ n−1/k+o(1)
+                                           by Frantzikinakis, Lesigne and Wierdl [16]. The best current bound is that p ≥ n−2/k+o(1)
+                                           suffices, first established by Briët, Dvir and Gopi [9] when k is even (see also [10]) and then
+                                           by Briët and Castro-Silva [8] when it is odd.
+                                              Frantzikinakis, Lesigne and Wierdl [16] conjectured, however, that these bounds are still
+                                           far from the truth: they believe that pn/ log n → ∞ should suffice for fixed k. Altman [4]
+                                           moreover proved that if their conjecture is true, then it depends on the structure of the
+                                           integers: we now know (see also [7, 5]) that the analogous question in the setting of Fdq for
+                                           a fixed prime q ≥ k requires p ≳ (log n)k−1 /n, where n = q d .
+                                              Our main result is an improvement over the p ≥ n−2/k+o(1) bound for all sufficiently large
+                                           k. To state it, let [n]p denote a p-random subset of [n] and
+                                                                          
+                                                                  Dk (S) = d ∈ N : ∃{a, a + d, . . . , a + (k − 1)d} ⊂ S
+                                           denote the set of common differences of the k-APs contained in S.
+                                                                                               1
+Theorem 1.1. There exists c > 0 such that the following holds for every k ≥ 3 and δ > 0.
+Let C = C(δ, k) > 0 and n ∈ N be sufficiently large. If p ≥ Cn−c/ log log k , then
+                                                               
+                      P ∃ S ⊂ [n], |S| ≥ δn : Dk (S) ∩ [n]p = ∅ → 0
+as n → ∞.
+   While the strategies of both Briët, Dvir and Gopi and Briët and Castro-Silva are tech-
+nical, relying on connections to coding theory, our approach is more elementary. The main
+inspiration for our work comes from the problem of determining the independence number
+of sparse random Cayley sum graphs [11, 19, 3], which is closely related to the (non-trivial)
+case of Szemerédi’s theorem with random differences for k = 2.
+   A common feature of the strategies in [11, 19, 3] (inspired by previous work of Alon [1, 2])
+is to replace a union bound over all candidate independent sets by one over a much smaller
+family. In the formulation of Alon and Pham [3], this family is a small cover of sumsets:
+for every large set A, its sumset A + A contains a set in the cover. The sets in the cover
+are moreover required to be sufficiently large. These two properties, combined with the fact
+that the family is small, imply that taking a union bound over the cover succeeds, whereas
+a naive union bound over all independent sets fails.
+   To understand the connection between the approach in the Cayley context and the current
+problem, let Hk be the hypergraph whose vertex set is [n] and each hyperedge corresponds to
+a non-trivial k-AP. Further let Hk,p be the random hypergraph obtained by keeping only the
+edges of Hk that have common difference in [n]p . In this setting1, Theorem 1.1 is bounding
+the probability that α(Hk,p ) ≥ δn.
+   We similarly deduce Theorem 1.1 from a small cover lemma, Lemma 1.2 below. The main
+difference in our argument is that instead of each set F in the cover being sufficiently large,
+it will have large Dk (F ).
+Lemma 1.2. There exists c > 0 such that the following holds for every k ≥ 3 and δ > 0. Let
+C = C(k) > 0 and γ = γ(δ, k) > 0, and let n be sufficiently large. There exists a collection
+F ⊂ 2[n] with the following properties:
+  (a) |F| ≤ Cn exp(n1−c/ log log k ).
+   (b) For each S ⊂ [n] with |S| ≥ δn, there exists F ∈ F such that F ⊂ S.
+   (c) Every F ∈ F satisfies |Dk (F )| ≥ γn.
+  To see why Lemma 1.2 is useful, we give the short deduction of Theorem 1.1.
+Proof of Theorem 1.1. Let F be given by Lemma 1.2 for k, δ and n. By Lemma 1.2(b),
+observing that Dk (F ) ⊂ Dk (S) holds trivially when F ⊂ S, we have
+                                                         X
+            P(∃ S ⊂ [n], |S| ≥ δn : Dk (S) ∩ [n]p = ∅) ≤   P(Dk (F ) ∩ [n]p = ∅) (1)
+                                                               F ∈F
+
+by taking a union bound over all F ∈ F. Moreover, it follows from Lemma 1.2(c) that
+                   P Dk (F ) ∩ [n]p = ∅ ≤ (1 − p)|Dk (F )| ≤ exp(−γpn),
+                                       
+                                                                                    (2)
+  1Indeed, generalising the random sampling argument of [14, Lemma 2.7] (see also [11, Theorem 2.1])
+
+to Hk,p results in a small cover of size exp(n1−1/k+o(1) ), which in turn implies a (suboptimal) bound of
+p ≥ n−1/k+o(1) .
+                                                   2
+for every F ∈ F. Substituting (2) and Lemma 1.2(a) in (1), we conclude that
+     X
+         P Dk (F ) ∩ [n]p = ∅ ≤ exp n1−c/ log log k + 2 log n − γpn ≤ exp −γn1−c/ log log k
+                                                                                          
+    F ∈F
+
+by our choice of p ≥ Cn−c/ log log k , for any C > 3γ −1 .                                       □
+
+                                   2. Proof of Lemma 1.2
+  In the proof of Lemma 1.2, we will use two results. The first is a standard result of
+Varnavides [21], a “supersaturation” form of Szemerédi’s theorem.
+Theorem 2.1 ([21], see [22, Theorem 9.3.1]). Let k ∈ N, δ > 0 and let n ∈ N be sufficiently
+large. If S ⊂ [n] satisfies |S| ≥ δn, then it contains at least εn2 k-APs, for ε = ε(δ, k) > 0.
+   The other, and crucial, input is the following result of Green and Ruzsa [18], which they
+relate to the arithmetic Kakeya conjecture of Katz and Tao.
+Theorem 2.2 ([18, Theorem 1.7]). There exists c > 0 such that the following holds for every
+k ≥ 3 for some C = C(k) > 0. For every sufficiently large n ∈ N, there exists Y ⊂ [Cn]
+with |Y | ≤ n1−c/ log log k which contains, for every d ∈ [n], a k-AP with common difference d.
+   The construction of Y takes a single page of Green and Ruzsa’s paper [18, Section 5].
+They first construct a smaller set Y ′ ⊂ [Ck ], selecting the starting point of each k-AP to be
+the square of its common difference modulo Q, the product of the first few odd primes. The
+Chinese remainder theorem allows them to bound the size of the set of the j-th terms of all
+the k-APs for each j ∈ [k], and then of the entire Y ′ by Q1−c/ log log k . They finally obtain Y
+from Y ′ using the base Q representations of the common differences d ∈ [n].
+   As will become clear in the proof of Lemma 1.2 below, improving the upper bound on |Y |
+in Theorem 2.2 would give a corresponding improvement for the threshold in Szemerédi’s
+theorem with random differences. This reduction then connects two problems in Green’s list
+of 100 open problems, which also highlighted the case k = 3 of Szemerédi’s theorem with
+random differences [17, Problems 10 and 37].
+   However, it is worth noting that no improvement in Theorem 2.2 would lead to a poly-
+nomial improvement for the known bounds when k ∈ {3, 4}. To see why, observe that the
+case k = 2 is equivalent to [n] ⊂ Y − Y , and that forces |Y | ≥ n1/2 . On the other hand, the
+results of Briët and Castro-Silva (in fact, even those in [9, 10] for k = 4) already imply that
+the threshold in these cases is at most n−1/2+o(1) .
+Proof of Lemma 1.2. Let Y be the set given by Theorem 2.2, and, for each d ∈ [n], let
+Pd ⊂ Y be the k-AP with common difference d, and fix a set S ⊂ [n] with |S| ≥ δn.
+Observing that each P ⊂ S, where P is a k-AP, can be written as P = t + Pd for some
+pair (t, d) ∈ {−Cn, . . . , Cn} × [n], it follows from Theorem 2.1 that there are εn2 pairs (t, d)
+where t + Pd ⊂ S. This implies that there is one t∗ such that, letting
+                                        F = (t∗ + Y ) ∩ S,                                      (3)
+we have that the number of t∗ + Pd ⊂ F is at least
+                                         εn2       εn
+                                               ≥        .
+                                       2Cn + 1   2C + 1
+                                                  3
+Consequently, as every Pd ⊂ Y has a distinct common difference d, we conclude that
+                                                  εn
+                                    |Dk (F )| ≥         = γn                                 (4)
+                                                2C + 1
+for γ = ε/(2C + 1). To complete the proof, we let F be the family of the F satisfying (3)
+and (4) for some S ⊂ [n] with |S| ≥ δn, and note that they are fully specified by choosing
+t∗ ∈ {−Cn, . . . , Cn} and one of the 2|Y | ≤ exp(n1−c/ log log k ) sets Y ∩ (S − t∗ ) ⊂ Y .  □
+AI Use. We prompted GPT 6 Astra Pro to see if the ideas in [12] could be used to construct
+a small cover for the hypergraph encoding k-APs. It replied that it could not use those ideas,
+but suggested that the construction from [18] could be used to prove such a result.
+                                       Acknowledgments
+   We are grateful to João Pedro Marciano, Rob Morris, Marcelo Campos and Oliver Janzer
+for suggestions that improved the paper’s presentation. We also thank them for previous
+discussions about the problem of Szemerédi’s theorem with random differences.
+                                            References
+ [1] N. Alon. “Large sets in finite fields are sumsets”. J. Number Theory 126, no. 1 (2007), 110–118.
+ [2] N. Alon. “The chromatic number of random Cayley graphs”. European J. Combin. 34, no. 8 (2013),
+     1232–1243.
+ [3] N. Alon and H. T. Pham. “Random Cayley graphs and random sumsets” (2025). arXiv: 2509.02561
+     [math.CO].
+ [4] D. Altman. “On Szemerédi’s theorem with differences from a random set”. Acta Arith. 195, no. 1
+     (2020), 97–108.
+ [5] D. Altman and N. Tung. “Randomly piercing algebraic sets” (2026). arXiv: 2606.19677 [math.NT].
+ [6] V. Bergelson and A. Leibman. “Polynomial extensions of van der Waerden’s and Szemerédi’s theor-
+     ems”. J. Amer. Math. Soc. 9, no. 3 (1996), 725–753.
+ [7] J. Briët. “Subspaces of tensors with high analytic rank”. Online J. Anal. Comb. 16 (2021), Paper No.
+     6, 9.
+ [8] J. Briët and D. Castro-Silva. “On the threshold for Szemerédi’s theorem with random differences”.
+     Electron. J. Combin. 31, no. 4 (2024), Paper No. 4.8, 17.
+ [9] J. Briët, Z. Dvir and S. Gopi. “Outlaw distributions and locally decodable codes”. Theory Comput.
+     15 (2019), Paper No. 12, 24.
+[10] J. Briët and S. Gopi. “Gaussian width bounds with applications to arithmetic progressions in random
+     settings”. Int. Math. Res. Not. IMRN 22 (2020), 8673–8696.
+[11] M. Campos, G. Dahia and J. P. Marciano. “On the independence number of sparser random Cayley
+     graphs”. J. Lond. Math. Soc. 110, no. 6 (2024), Paper No. e70041, 54.
+[12] J. Chae and H. Lee. “Random Cayley sum hypergraphs and k-fold sumsets” (2026). arXiv: 2610.08629
+     [math.CO].
+[13] M. Christ. “On random multilinear operator inequalities” (2011). arXiv: 1108.5655 [math.CA].
+[14] D. Conlon, J. Fox, H. T. Pham and L. Yepremyan. “On the clique number of random Cayley graphs
+     and related topics” (2024). arXiv: 2412.21194 [math.CO].
+[15] N. Frantzikinakis, E. Lesigne and M. Wierdl. “Random sequences and pointwise convergence of mul-
+     tiple ergodic averages”. Indiana Univ. Math. J. 61, no. 2 (2012), 585–617.
+[16] N. Frantzikinakis, E. Lesigne and M. Wierdl. “Random differences in Szemerédi’s theorem and related
+     results”. J. Anal. Math. 130 (2016), 91–133.
+[17] B. Green. 100 Open Problems. 2025. url: https://people.maths.ox.ac.uk/greenbj/papers/open-
+     problems.pdf (visited on 10th Oct. 2026).
+[18] B. Green and I. Z. Ruzsa. “On the arithmetic Kakeya conjecture of Katz and Tao”. Period. Math.
+     Hungar. 78, no. 2 (2019), 135–151.
+                                                    4
+[19] R. Nenadov. “A remark on the independence number of sparse random Cayley sum graphs” (2025).
+     arXiv: 2503.02100 [math.CO].
+[20] E. Szemerédi. “On sets of integers containing no k elements in arithmetic progression”. In: Proceedings
+     of the International Congress of Mathematicians (Vancouver, B.C., 1974), Vol. 2. Canad. Math.
+     Congr., Montreal, QC, 1975, 503–505.
+[21] P. Varnavides. “On certain sets of positive density”. J. London Math. Soc. 34 (1959), 358–360.
+[22] Y. Zhao. Graph theory and additive combinatorics—exploring structure and randomness. Cambridge
+     University Press, Cambridge, 2023, xvii+316.
+
+  Institute of Mathematics, EPFL, Lausanne, Switzerland
+  Email address: gabriel.dahiafernandes@epfl.ch
+
+
+
+
+                                                     5
+
