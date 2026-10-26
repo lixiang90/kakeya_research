@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-26，R0113：新Goal active。任意Borel三角prefix截距的原正质量marks满Hausdorff维，finite真实原shading有λ^(m+1)δ^(m(1−s))体积界，两独审通过；属于proper类，不是ordinary/完整source新gain或major。固定共同realS+正角质量精确三角化有光滑反攻。jointcap及预定section桥另有限定拒证。下一R114先周期全目标重选，见notes/00_map/R0113_next_complete_goal_reset.md。
+更新2026-10-26，R0114：周期四出口宏观已执行。整δ格原质量discrepancy及fixedC实体carrier强度两独审通过：无条件任意marks规则失败，开放smallfootprint内规则按∃η量词已承担finite排除，未证明任一。旧19.4全ξ-ball cap不新，真实初层CW族无法承后继bulk原I。新center来源原transport公式有限失败，不宣其主定理false。无ordinary/完整source gain/major；94PDF/98sources/78IDs。next见notes/00_map/R0114_next_complete_bulk_source_gate.md。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -262,3 +262,6 @@ R0112：uniform biLip resolution即使保直/nonshort/Jacobian，仍δ^-1方向b
 
 
 R0113：root主proof notes/50_counterexamples/R0113_triangular_Borel_original_shading_proof.md；原平均marks一次潜势筛选、interval diagonal/offdiag及逆序密度/Frostman返回，两独审实读通过。只解三角proper类，无普通新界/major/newID，旧78项不变。两端点jointcap与四预定sections各有限拒桥，完整s3 lift仍旧FSD闭包。93PDF/97sources，source比较不认证新颖/全前沿。新Goal无sourcegain3、旧31保留，R114须先宏观；冻结三角参数/DAG/block同证明续轮。
+
+
+R0114：root主proof notes/40_multiscale/R0114_whole_cell_discrepancy_and_original_carrier_gate.md，两独审通过；cell内Jensen避免boundary误差，原I/log层＋wholeδcells保平均λ，fixedC carrier原则的η/2返回/空前提双向精确。不能反density-dependent C或HRZ/PW。fullgrain旧cap已原19.4；数字unit wholeCW初层scalar原子测试在bulk I/(Nm)≤K^Cδ^(1/3)失败，非fullsource反例。新2609.06556v1原件/公式独审，94PDF/98sources/78IDs。宏观已做，主gain连续4旧31保持，下次不晚R117；下一完整bulk fixed-row资格须先排等价/旧调用。
