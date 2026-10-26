@@ -192,3 +192,6 @@ R0109：88PDF/92sources保持，无新增原件。六维普通Hausdorff primary�
 R0111（2026-10-26）新Goal重启：无新PDF或catalog条目，仍88PDF/92sources。fresh官方单源ref/目录blob及本地SHA一致；GLX/HRZ/KT当前声明和12条有界查询的实际scope见notes/R0111_frontier_update.md与metadata/R0111_source_check.json。未取得新普通高维输入，不认证first/best或重审全部高级proof。
 
 R0112（2026-10-26）新增五篇固定版本原件与全文：LW2506.18142v2、WW2509.21869v3、BN2009.02082v1、OWY2607.08461v1、Ren2309.04097v1。现93PDF/97sources；单篇来源/版本/bytes/SHA/Gitblob/readscope见metadata/R0112_*，总scope见notes/R0112_resolution_twoends_and_actual_construction_sources.md。不认证其wholeproof或新的普通维数改善；OWY PDF/HTML编号差别、LW生成与全部lines量词保留。
+
+
+R0115无新PDF，仍94PDF/98sources。重读WZ Def3/17/19，usual(19)规范、整数allowed子格、γ降级与原平均mass量词见metadata/R0115_source_check.json。完整source条件graft及cap排重由独审稿负责；未证明source排除、无ordinary新界/前沿优先权认证。

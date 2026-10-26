@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-26，R0114：周期四出口宏观已执行。整δ格原质量discrepancy及fixedC实体carrier强度两独审通过：无条件任意marks规则失败，开放smallfootprint内规则按∃η量词已承担finite排除，未证明任一。旧19.4全ξ-ball cap不新，真实初层CW族无法承后继bulk原I。新center来源原transport公式有限失败，不宣其主定理false。无ordinary/完整source gain/major；94PDF/98sources/78IDs。next见notes/00_map/R0114_next_complete_bulk_source_gate.md。
+更新2026-10-26，R0115：完整usual source的time-gap单层数字graft经两独审；强∀grain scalar cap按∃η量词已承担κ1 source排除，未证明任一。fixedγ<=γdust同参，更高γ需降级后调用；非普通Goal等价、非无条件source/Kakeya反例。phase改写与原bulk计数不新。无ordinary/source gain/major；94PDF/98sources/78IDs。提前R116宏观，不续weighted/phase改名；next见notes/00_map/R0115_next_macro_without_local_cap_renaming.md。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -265,3 +265,6 @@ R0113：root主proof notes/50_counterexamples/R0113_triangular_Borel_original_sh
 
 
 R0114：root主proof notes/40_multiscale/R0114_whole_cell_discrepancy_and_original_carrier_gate.md，两独审通过；cell内Jensen避免boundary误差，原I/log层＋wholeδcells保平均λ，fixedC carrier原则的η/2返回/空前提双向精确。不能反density-dependent C或HRZ/PW。fullgrain旧cap已原19.4；数字unit wholeCW初层scalar原子测试在bulk I/(Nm)≤K^Cδ^(1/3)失败，非fullsource反例。新2609.06556v1原件/公式独审，94PDF/98sources/78IDs。宏观已做，主gain连续4旧31保持，下次不晚R117；下一完整bulk fixed-row资格须先排等价/旧调用。
+
+
+R0115：原T不动、原clock富1/4区间保全部层，macro-separated clock添真实数字dust；η整数子格避免错格、严格ξ Oρ及全部coarse Y/Φ lower逐项付。主稿R0115_fixed_row_full_source_countergate.md两独审，γ降级范围及任意dyadicδ明确。strong∀grain cap与κ1 complete-source排除按存在小η同强，均未获证；不是加权goodgrain反例或ordinary新界。另phase双向/原I floor、容量及p² pairs仅排重。无新ID/major，主gain连续5旧31；提前R116四出口宏观，全部旧冻结不解。
