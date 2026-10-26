@@ -1,5 +1,7 @@
 # 一般维度 Kakeya 研究
 
+2026-10-26 R112：已完成[不同输入及原质量宏观](notes/00_map/R0112_macro_and_charged_geometric_return.md)和两独审，严格排除一个好chart直接搬原方向帽的接法；一般猜想仍open，无新维数改善。文献现93PDF/97sources。
+
 2026-10-26：用户授权在六维17/4之后继续研究，[新Goal](GOAL.md)已启动（active）。[R0111](research/rounds/R0111.md)完成宏观重选和旧路线排重，尚无新维数改善；不能用旧17/4再次完成新Goal。[下一输入资格门](notes/00_map/R0111_next_new_input_gate.md)与[独立审查整合](research/reviews/R0111_macro_and_root_integration.md)保存当前边界。
 
 目标：以OpenAI四维Hausdorff Kakeya预印本为起点，研究欧氏空间n≥5或一般维度。R109已按原Goal第3出口审定重大中间结果：**通常引用列明具名定理时，任意六维Kakeya集合的Hausdorff维数至少17/4**。两份独立内部终审及root接受，未经外部同行评审；一般维度满维猜想仍未解决。

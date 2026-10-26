@@ -1,0 +1,3080 @@
+                                                     Discretized Radial Projections in Rd
+arXiv:2309.04097v1 [math.CA] 8 Sep 2023
+
+
+
+
+                                                                              Kevin Ren
+                                                                              June 2022
+
+
+                                                                               Abstract
+                                                     We generalize a Furstenberg-type result of Orponen-Shmerkin to higher
+                                                dimensions, leading to an ε-improvement in Kaufman’s projection theo-
+                                                rem for hyperplanes and an unconditional discretized radial projection
+                                                theorem in the spirit of Orponen-Shmerkin-Wang. Our proof relies on a
+                                                new incidence estimate for δ-tubes and a quasi-product set of δ-balls in
+                                                Rd .
+
+
+                                          Contents
+                                          1 Introduction                                                                     2
+                                            1.1 Connections and related work . . . . . . . . . . . . . . . . . . . .         3
+                                            1.2 Discretized results . . . . . . . . . . . . . . . . . . . . . . . . . .      4
+                                            1.3 Proof ideas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      6
+                                            1.4 Structure of the paper . . . . . . . . . . . . . . . . . . . . . . . .       7
+
+                                          2 Preliminaries                                                                     7
+                                            2.1 Definitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     7
+                                            2.2 Plates . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      8
+                                            2.3 An Elementary Estimate . . . . . . . . . . . . . . . . . . . . . . .         10
+                                            2.4 Multiscale analysis . . . . . . . . . . . . . . . . . . . . . . . . . .      12
+                                            2.5 Uniform sets and branching numbers . . . . . . . . . . . . . . . .           13
+                                            2.6 Combinatorial and probabilistic preliminaries . . . . . . . . . . .          15
+                                            2.7 Energy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     16
+
+                                          3 Improved incidence estimates for quasi-product sets                        17
+                                            3.1 An improved slicing estimate . . . . . . . . . . . . . . . . . . . . 18
+                                            3.2 An improved Furstenberg estimate . . . . . . . . . . . . . . . . . 19
+                                            3.3 From Furstenberg to weak slicing . . . . . . . . . . . . . . . . . . 21
+                                            3.4 An intermediate slicing result . . . . . . . . . . . . . . . . . . . . 22
+                                            3.5 Formal exhaustion argument . . . . . . . . . . . . . . . . . . . . 24
+                                            3.6 Proof of Proposition 3.1 . . . . . . . . . . . . . . . . . . . . . . . 25
+
+
+
+
+                                                                                    1
+4 Improved incidence estimates for regular sets                                27
+  4.1 Initial reductions . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+  4.2 Transferring angular non-concentration to ball non-concentration 29
+  4.3 Finding a special ∆-tube . . . . . . . . . . . . . . . . . . . . . . . 30
+  4.4 Product-like structure . . . . . . . . . . . . . . . . . . . . . . . . 33
+
+5 Improved incidence estimates for general sets                                 33
+
+6 Sets contained in an (r0 , k)-plate                                         34
+  6.1 Multiscale analysis . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+  6.2 Good multiscale decomposition . . . . . . . . . . . . . . . . . . . 39
+
+7 Power decay around k-planes                                                   42
+
+8 Radial projection estimates                                              46
+  8.1 Maximal plate concentration case . . . . . . . . . . . . . . . . . . 46
+  8.2 Proof of Theorem 1.13, general case . . . . . . . . . . . . . . . . 53
+
+9 Corollaries of Radial Projection Estimates                                    54
+
+A Proof of Balog-Szemerédi-Gowers                                              55
+
+
+1    Introduction
+                                                                   y−x
+Let X be a set in Rn , and define the radial projection πx (y) := |y−x| ∈ S n−1 .
+We wish to study the size of radial projections πx (Y ) of Y , where x is taken
+in some set X. Recently, Orponen, Shmerkin, and Wang [19] proved a strong
+radial projection theorem in two dimensions, but they prove a conditional result
+in higher dimensions. In this paper, we shall remove the condition dimH (X) ≥
+k − k1 + η(k) in higher dimensions, which answers Conjecture 1.5 of [26] and
+improves Theorem 1.9 of [19]. We also improve upon the previously known
+result d−1
+        d min(dimH (X), dimH (Y )) + η(d, dimH (X), dimH (Y )) of [25, Theorem
+6.15].
+Theorem 1.1. Let X, Y ⊂ Rd be Borel sets with dimH (X), dimH (Y ) ≤ k. If
+X is not contained in a k-plane, then
+
+              sup dimH (πx (Y \ {x})) ≥ min(dimH (X), dimH (Y )).
+             x∈X
+
+    In fact, we can prove the following slicing result, which improves Proposition
+6.8 of [19] and makes progress towards answering Conjecture 1.10 of [19].
+Corollary 1.2. Let s ∈ (d − 2, d], then there exists ε(s, d) > 0 such that the
+following holds. Let µ, ν be Borel probability measures on Rd with disjoint sup-
+ports that satisfy Es (µ), Es (ν) < ∞ and dimH (spt(ν)) < s + ε(s, d). Further,
+assume that µ, ν don’t simultaneously give full measure to any affine (d − 1)-
+plane H ⊂ Rd . Then there exist restrictions of µ, ν to subsets of positive measure
+
+                                        2
+(which we keep denoting µ, ν) such that the following holds. For almost every
+affine 2-plane W ⊂ Rd (with respect to the natural measure on the affine Grass-
+manian), if the sliced measures µW , νW on W is non-trivial, then they don’t
+simultaneously give full measure to any line. In other words,
+
+(γd,2 ×µ){(V, x) : µV,x (ℓ)νV,x (ℓ) = |µV,x ||νV,x | > 0 for some ℓ ∈ A(V +x, 1)} = 0,
+
+where we parametrize affine 2-planes as V + x, for x ∈ Rd and V in the Grass-
+mannian Gr(d, 2) with the rotationally invariant Haar measure γd,2 .
+    We also deduce an ε-improvement in Kaufman’s projection theorem for hy-
+perplanes. The proof is a standard higher-dimensional generalization of the
+details in [18, Section 3.2] and we will omit it. For σ ∈ S n−1 , let πσ be projec-
+tion in the direction orthogonal to σ.
+Theorem 1.3. For every k < s < t ≤ d, there exists ε(s, t) such that the
+following holds. Let E be an analytic set in Rd with dimH (E) = t. Then
+
+                  dimH {σ ∈ S d−1 : dimH (πσ (E)) ≤ s} ≤ s − ε.
+
+Remark 1.4. Kaufman’s theorem is sharp when s = k and t ∈ (k, k +1] because
+E can be contained within a (k + 1)-plane.
+   We also derive a higher-dimensional version of Beck’s theorem (unlike in
+the discrete setting, the higher-dimensional version cannot proved by projection
+onto a generic 2D plane). The proof again follows similarly to the 2D version
+presented in [19, Corollary 1.4].
+Corollary 1.5. Let X ⊂ Rd be a Borel set such that dimH (X \ H) = dimH X
+for all k-planes H. Then, the line set L(X) spanned by pairs of distinct points
+in X satisfies
+                     dimH (L(X)) ≥ min{2 dimH X, 2k}.
+
+1.1    Connections and related work
+Radial projections have also been used to study the Falconer distance set prob-
+lem, which asks for lower bounds on the Hausdorff dimension of the distance set
+∆(X) := {|x − y| : x, y ∈ X} given the value of dimH (X) for some X ∈ Rd . In
+two dimensions, Wolff [33] used Fourier analysis to show that if dimH (X) ≥ 43 ,
+then ∆(X) has positive Lebesgue measure. Using Orponen’s radial projection
+theorem [17], Guth-Iosevich-Ou-Wang [7] used a good-bad tube decomposition
+and decoupling to improve the threshold to dimH (X) ≥ 45 . See also works of
+Keleti-Shmerkin [14] [14], Shmerkin [28], Liu [15], and Stull [29] which pro-
+vide better lower bounds for dimH (∆(X)) given that dimH (X) ∈ (1, 45 ). In
+higher dimensions, the works of Du-Iosevich-Ou-Wang-Zhang [3] and Wang-
+Zheng [32] used a good-bad tube decomposition using Orponen’s radial projec-
+tion theorem and decoupling techniques [17] to provide state-of-the-art results
+when the dimension d is even; when d is odd, a more classical approach purely
+
+
+                                          3
+based on decoupling gave the best estimates [6], [9]. More recently, Shmerkin
+and Wang [27] prove a radial projection theorem in the spirit of this paper
+to provide an improved lower bound when dimH (X) = d2 , d = 2, 3; using
+their framework combined with updated results of [19], one can show for ex-
+ample that dimH (∆(X)) ≥ 58 when X ⊂ R3 satisfies dimH (X) = 32 . In fact,
+all of these works prove lower bounds on the size of the pinned distance set,
+∆x (X) := {|x − y| : y ∈ X}. In the forthcoming companion papers [4], [5],
+we use Theorem 1.1 to improve the lower bounds for the Falconer distance set
+problem in all dimensions d.
+    Very recently, radial projections in dimension 2 have been used to prove
+the ABC sum-product conjecture and Furstenberg set conjecture, and yield
+progress on the discretized sum-product problem [21], [22]. It is natural to
+wonder whether the exciting progress in 2 dimensions will generalize to higher
+dimensions. The starting point of the breakthrough work of [21] (which was also
+used in [22]) is a sharp radial projection theorem in 2 dimensions, [19, Theorem
+1.1]. We hope to use our higher dimensional radial projection theorem to prove
+analogous results to [21], [22] in all dimensions.
+
+1.2    Discretized results
+We deduce Theorem 1.1 from δ-discretized versions. The following notation will
+be used throughout this paper.
+Definition 1.6. Let P ⊂ Rd be a bounded nonempty set, d ≥ 1. Let δ > 0 be a
+dyadic number, and let 0 ≤ s ≤ d and C > 0. We say that P is a (δ, s, C, k)-set
+if for every (r, k)-plate H with r ∈ [δ, 1], we have
+
+                             |P ∩ H|δ ≤ C · |P |δ · rs .
+
+If k is not specified, we default to k = 0 (which becomes a standard definition
+from [18] because (r, 0)-plates are r-balls).
+Definition 1.7. Let T ⊂ Rd be a bounded nonempty set of dyadic δ-tubes,
+d ≥ 2. Let δ > 0 be a dyadic number, and let 0 ≤ s ≤ d, 0 ≤ k ≤ d − 2, and
+C > 0. We say that T is a (δ, s, C, k)-set of tubes if for every (r, k + 1)-plate H
+and δ ≤ r ≤ 1, we have
+                           |T ∩ H| ≤ C · |T | · rs .                           (1.1)
+If k is not specified, we default to k = 0. We also say T is a (δ, s, C, k)-set
+of tubes from scale r1 to r2 if the non-concentration condition (1.1) holds for
+r2 ≤ r ≤ r1 .
+    A (δ, s, C, k)-set of balls cannot be concentrated in a small neighborhood
+of a k-plane, while a (δ, s, C, k)-set of tubes cannot be concentrated in a small
+neighborhood of a (k + 1)-plane.
+    The main ingredient in the proof of Theorem 1.1 is an ε-improvement to the
+(dual) Furstenberg set problem that generalizes Theorem 1.3 in [18] to higher
+dimensions.
+
+                                         4
+Theorem 1.8. For any 0 ≤ k < d − 1, 0 ≤ s < k + 1, s < t ≤ d, κ > 0,
+there exists ε(s, t, κ, k, d) > 0 such that the following holds for all small enough
+δ ∈ 2−N , depending only on s, t, κ, k, d. Let P ⊂ Dδ be a (δ, t, δ −ε )-set with
+∪P ⊂ [0, 1)d , and let T ⊂ T δ be a family of δ-tubes. Assume that for every
+p ∈ P, there exists a (δ, s, δ −ε , 0) and (δ, κ, δ −ε , k)-set T (p) ⊂ T such that
+T ∩ p 6= ∅ for all T ∈ T (p). Then |T | ≥ δ −2s−ε .
+Remark 1.9. The condition of T (p) being a (δ, κ, δ −ε , k + 1)-set is to prevent
+the counterexample in (say) R3 when s = 1, t ∈ (1, 2], and T is a maximal set
+of δ −2 many essentially distinct tubes in [0, 1]2 . This condition is automatically
+taken care of when s > k: any (δ, s, δ −ε , 1)-set is a (δ, κ, δ −ε , k + 1)-set with
+κ = s − k.
+Remark 1.10. We can make this decay around k-plane assumption assuming
+that (1) P is a (δ, κ, δ −ε , k + 1)-set and (2) for p ∈ P , |T (p) ∩ P | ≥ δ ε |P |.
+This will be useful for radial projection estimates, since we can guarantee (1)
+by Theorem B.1 of [25] and (2) because we can get rid of . δ ε |P | many pairs
+(p, q) for a fixed p.
+    In fact, we can prove the following refined version of Theorem 1.8.
+Theorem 1.11. For any 0 ≤ k < d − 1, 0 ≤ s < k + 1, max(s, k) < t ≤ d,
+κ > 0, r0 ≤ 1, there exists ε(s, t, κ, k, d) > 0 such that the following holds for
+all small enough δ/r0 ∈ 2−N ∩ (0, δ0 ), with δ0 depending only on s, t, κ, k, d. Let
+H be a (r0 , k + 1)-plate, P ⊂ Dδ ∩ H be a (δ, t, (δ/r0 )−ε )-set with ∪P ⊂ [0, 1)d ,
+and let T ⊂ T δ ∩ H be a family of δ-tubes. Assume that for every p ∈ P, there
+exists a set T (p) ⊂ T such that:
+    • T ∩ p 6= ∅ for all T ∈ T (p);
+    • T (p) is a (δ, s, (δ/r0 )−ε r0k−s , 0)-set down from scale r;
+    • T (p) is a (δ, κ, (δ/r0 )−ε r0−κ , k)-set.
+                            2(s−k)
+Then |T | ≥ ( rδ0 )−ε δ −2s r0       .
+Remark 1.12. (a) Given fixed k, κ, the value of ε can be chosen uniformly in
+a compact subset of {(s, t) : 0 ≤ s < k + 1, max(s, k) < t ≤ d}. Indeed, if ε > 0
+works for (s, t), then 2ε works in the 2ε -neighborhood of (s, t).
+    (b) Conjecture: can we replace the condition of being in H by T (p) being a
+(δ, k, (δ/r0 )−ε , 0)-set from scales 1 to r0 ?
+    Using Theorem 1.11, a bootstrap argument based on [19] gives the following.
+Theorem 1.13. Let k ∈ {1, 2, · · · , d − 1}, k − 1 < σ < s ≤ k, and ε > 0.
+There exist N, K0 depending on σ, s, k, and η(ε) > 0 (with η(1) = 1) such that
+the following holds. Fix r0 ≤ 1, and K ≥ K0 . Let µ, ν be ∼ 1-separated s-
+dimensional measures with constant Cµ , Cν supported on E1 , E2 , which lie in
+B(0, 1). Assume that |µ|, |ν| ≤ 1. Let A be the pairs of (x, y) ∈ E1 × E2 that lie
+in some K −1 -concentrated (r0 , k)-plate. Then there exists a set B ⊂ E1 × E2
+
+                                             5
+with µ × ν(B) . K −η such that for every x ∈ E1 and r-tube T through x, we
+have
+                                            rσ
+                  ν(T \ (A|x ∪ B|x )) . σ−(k−1)+N ε K N .
+                                        r0
+The implicit constant may depend on Cµ , Cν , σ, s, k.
+Remark 1.14. (a) It is not assumed that µ, ν are a probability measures, just
+that µ(B(0, 1)), ν(B(0, 1)) ≤ 1.
+    (b) If α > d−1, then the numerology of Theorem 1.13 doesn’t apply. Instead,
+Orponen’s radial projection theorem [17] in dimension d applies. The result
+(stated in [7, Lemma 3.6] for d = 2, but can be generalized to all dimensions d)
+is that for γ = ε/C, there exists a set B ⊂ E1 × E2 with µ1 × µ2 (B) ≤ rγ such
+that for every x ∈ E1 and δ-tube T through x, we have
+                              µ2 (T \ B|x ) . rd−1−ε .
+Note that the set A of “concentrated pairs” is not needed here.
+   (c) If r ∼ r0 , we can obtain a slightly better result by projecting to a generic
+k-dimensional subspace and following the argument in [3, Section 3.2]. The
+result is that for γ = ε/C, there exists a set B ⊂ E1 × E2 with µ1 × µ2 (B) ≤ δ γ
+such that for every x ∈ E1 and r-tube T through x, we have
+                              µ2 (T \ B|x ) . rk−1−ε .
+The set A is again not needed in this case. The main novelty of Theorem 1.13
+comes when r < r0 .
+
+1.3    Proof ideas
+The main proof ideas for Theorem 1.8 are as follows:
+  1. Perform a standard multiscale decomposition argument due to [18] to
+     reduce the original problem to two building blocks: the case when P is
+     a (δ, s)-set and when P is a t-regular set. The first case doesn’t happen
+     all the time and has no loss by an elementary incidence argument, so we
+     focus on gaining an ε-improvement in the second case. A t-regular set P
+     has the special property that |P ∩ Q| is still a (∆, t)-set for Q ∈ D∆ (P),
+     ∆ = δ 1/2 .
+  2. If P is t-regular with ∆ = δ 1/2 , we may find a ∆-tube T such that upon
+     dilation of T to [0, 1]d, we obtain a new Furstenberg problem with the ball
+     set having a quasi-product structure. See Appendix A of [18].
+  3. Finally, we will use discretized sum-product type arguments to conclude
+     an ε-improvement to the dual Furstenberg problem assuming P = X×Y ⊂
+     Rd−1 × R has a quasi-product structure. In very rough terms, we shall
+     lift Y to have dimension close to 1, and apply multi-linear Kakeya. This
+     idea of lifting the dimension was found in He’s work on a higher-rank
+     discretized sum-product theorem [11] in a slightly different context.
+
+                                         6
+    To prove Theorem 1.11, we use a similar multiscale decomposition argument
+as in (1) to reduce to two building blocks: a smaller version of the setting
+of Theorem 1.11 and a smaller version of Theorem 1.8. The smaller version of
+Theorem 1.11 has no loss by an elementary incidence argument, and the smaller
+version of Theorem 1.8 admits a gain.
+    For Theorem 1.13, we first prove the case when µ, ν are supported in a r0 K
+plate (where K is a small power of r0−1 ). This uses a similar argument as in
+[19, Lemma 2.8]. The general case follows from applying this special case many
+times.
+
+1.4    Structure of the paper
+In Section 2, we introduce some key concepts that will be used throughout the
+paper. In Sections 3 through 5, we prove Theorem 1.8 first for quasi-product
+sets following ideas of [10], and then for regular sets and finally for general sets
+following [18]. In Section 6, we prove Theorem 1.11 from Theorem 1.8. In
+Section 7, we generalize a radial projection theorem of Shmerkin [25, Theorem
+6.3] that enables us to assume our sets have power decay around k-planes. In
+Section 8, we prove Theorem 8.1 following ideas from [19]. Finally, in Section
+9, we prove Theorem 1.1 and 1.2 from the discretized results.
+    Acknowledgments. The author is supported by a NSF GRFP fellowship.
+The author would like to thank Xiumin Du, Tuomas Orponen, Yumeng Ou,
+Pablo Shmerkin, Hong Wang, and Ruixiang Zhang for helpful discussions. We
+thank Paige Bright and Yuqiu Fu for suggesting to include a higher-dimensional
+version of Beck’s theorem in this paper.
+
+
+2     Preliminaries
+This section will summarize the argument of [18], and in lieu of proofs (with
+the exception of Proposition 2.9), we either refer the reader to [18] or defer the
+proof to a later section.
+
+2.1    Definitions
+We use A . B to denote A ≤ CB for some constant C. We use A .N B to
+indicate the constant C can depend on N . We will also use A / B in future
+proofs; its exact meaning will always be clarified when used.
+   For a finite set A, let |A| denote the cardinality of A. If A is infinite, let |A|
+denote the Lebesgue measure of A.
+   For a set A, let Ac = Rd \ A.
+   For a tube T , let ℓ(T ) denote the central line segment of T .
+   For a set E, let E (δ) be the δ-neighborhood of E.
+   For A ⊂ X × Y and x ∈ X, define the slice A|x = {y ∈ Y : (x, y) ∈ A} and
+A|y = {x ∈ X : (x, y) ∈ A}.
+
+
+
+
+                                         7
+   For a measure µ and a set G, define the restricted measure µ|G by µ|G (A) =
+                                                             1
+µ(G ∩ A). The renormalized restricted measure is µG = µ(G)      µ|G .
+                                  d
+   For vectors v1 , · · · , vi ∈ R , 1 ≤ i ≤ d, the quantity |v1 ∧ · · · ∧ vi | is the
+non-negative volume of the parallelepiped spanned by v1 through vi .
+   B(x, r) is the ball in Rd of radius r centered at x. We also use the notation
+Br for an arbitrary r-ball in Rd .
+                                              P
+   For sets A, B and P ⊂ A × B, let A + B := {a + b : (a, b) ∈ P }.
+Definition 2.1. We say µ supported in Rd is an α-dimensional measure with
+constant Cµ if µ(Br ) ≤ Cµ rα for all r ≤ 1 and balls Br of radius r.
+
+2.2    Plates
+We work in Rd . An (r, k)-plate is the r-neighborhood of a k-dimensional hyper-
+plane in Rd . We construct a set Er,k of (r, k)-plates with the following properties:
+   • Each ( r2 , k)-plate intersecting B(0, 1) lies in at least one plate of Er,k ;
+                                                      (k+1)(d−k)
+   • For s ≥ r, every (s, k)-plate contains . rs                  many (r, k)-plates
+     of Er,k .
+    For example, when k = 1 and d = 2, we can simply pick ∼ r−1 many r-
+tubes in each of an r-net of directions. This generalizes to higher k and d via a
+standard r-net argument, but we haven’t seen it in the literature, so we provide
+a precise construction.
+    An r-net of a metric space is a subset S such that B(x, r) ∩ B(y, r) = ∅
+for x 6= y, x, y ∈ S. The affine Grassmanian manifold A(k, d) is the set of all
+k-planes in Rd . By counting degrees of freedom, we see that dim A(k, d) =
+(k + 1)(d − k). Any such plane is uniquely V = V0 + a for some k-dimensional
+subspace V0 and a ∈ V0⊥ . For V = V0 + a and W = W0 + b, define their distance
+dA to be (following Section 3.16 of [16]):
+
+                       dA (V, W ) = kπV0 − πW0 kop + |a − b|,
+
+where πV0 : Rd → V0 and πW0 : Rd → W0 are orthogonal projections, and k · kop
+is the usual operator norm for linear maps. Let A0 (k, d) be the submanifold of
+k-planes V0 + a with a ∈ B(0, 10). Since the manifold (A0 (k, d), dA ) is compact
+and smooth, it can be covered by finitely many charts that are ∼ 1-bilipschitz
+to a subset of R(k+1)(d−k) .
+    From a maximal cr-net N of the set of affine planes of A0 (k, d) with c > 0
+a sufficiently small constant, we can construct a set Er,k of (r, k)-plates whose
+central planes are the elements of N . We now check the two properties for Er,k .
+    To prove the first property, let H be a ( r2 , k)-plate intersecting B(0, 1). Then
+the central plane P = PH must lie at distance ≤ 2cr from some element Q of N
+(otherwise, we can add it to the net). Let P = P0 + a and Q = Q0 + b. Hence,
+kπP0 − πQ0 kop ≤ 2cr and |a − b| ≤ 2cr, so for x ∈ P ∩ B(0, 10) (so x − a ∈ P0 ),
+
+           |πQ0 (x − a) − (x − a)| ≤ 2cr|x − a| ≤ 2cr(|x| + |a|) ≤ 40cr.
+
+                                          8
+                                                             1
+Now, note that πQ0 (x − a) + b ∈ Q. It is close to x if c < 100 :
+                                                                       r
+                |πQ0 (x − a) + b − x| ≤ 40cr + |a − b| ≤ 50cr <          .
+                                                                       2
+We have proved P ∩ B(0, 10) ⊂ Q(r/2) and thus P (r/2) ∩ B(0, 10) ⊂ Q(r) . Hence,
+H is contained in the (r, k)-plate with central plane Q.
+     To prove the second property, we note that the set of k-planes in A(k, d)
+whose intersection with B(0, 10) is contained in a given (s, k)-plate is contained
+in an O(s)-ball B of A(k, d). First suppose B is contained within some coor-
+                                                                 (k+1)(d−k)
+dinate chart; we would like to prove that |N ∩ B| . rs                       . To show
+                                                             (r)
+this, note that {B(x, r) : x ∈ N ∩ B} is a packing of B with finitely overlap-
+ping r-balls. Now map the chart to R(k+1)(d−k) . Since the map only distorts
+distances by a constant factor, we can pack |N ∩ B| many finitely overlapping
+c1 r-balls into a ball of radius O(s). Thus by a volume argument, we have
+               (k+1)(d−k)
+|N ∩ B| . rs               . Since there are finitely many charts, we can apply the
+argument to B intersecting each chart, which proves the second property.
+     We specialize our discussion to tubes. For each scale δ, let T δ be a cover of
+[0, 1]d with δ-tubes such that every δ2 -tube (and in particular every r-tube with
+r < 2δ ) is contained in at least 1 and at most Cd many tubes of T δ . Slightly
+abusing notation (á la [18]), we will also use T , Tδ , T∆ to represent sets of tubes,
+where the subscript δ helpfully indicates a set of δ-tubes.
+     In Theorem 1.13, we pay attention to certain plates with disproportionately
+much mass.
+Definition 2.2. We say that a (r, k)-plate H is c-concentrated on µ if µ(H) ≥ c.
+   Other notation is following [18]. Unlike [18], we work with ordinary rather
+than dyadic tubes. The advantage of dyadic tubes is that every 2−n -tube is in a
+unique 2−m -tube if n > m; thus, dyadic tubes will avoid the Cd loss incurred by
+the finitely overlapping cover T δ . However, dyadic tubes have the disadvantage
+that they don’t behave well under rotations or dilations, and it would be more
+cumbersome to define (δ, s, C, k)-sets of dyadic tubes (whereas the definition for
+ordinary tubes is more geometric). Thus, in principle it is possible to work with
+dyadic tubes and save on the Cd loss, but it doesn’t affect our numerology in
+the end (since our losses will depend badly on d anyway), so we chose to work
+with ordinary tubes throughout.
+Definition 2.3. [18] Let P ⊂ Rd be a bounded nonempty set, d ≥ 1. Let
+δ > 0 be a dyadic number, and let 0 ≤ s ≤ d and C > 0. We say that P is a
+(δ, s, C)-set if
+               |P ∩ Q|δ ≤ C · |P |δ · rs ,       Q ∈ Dr (Rd ), r ∈ [δ, 1].
+Definition 2.4. Let T ⊂ Rd be a bounded nonempty set of dyadic δ-tubes,
+d ≥ 2. Let δ > 0 be a dyadic number, and let 0 ≤ s ≤ d, 0 ≤ k ≤ d − 2, and
+C > 0. We say that T is a (δ, s, C, k)-set of tubes if for every (r, k + 1)-plate H
+and δ ≤ r ≤ 1, we have
+                           |T ∩ H| ≤ C · |T | · rs .
+
+                                             9
+If k is not specified, we default to k = 0.
+   The following is a simpler interpretation of (δ, s, C, k)-set if the tubes all pass
+through the same point.
+Definition 2.5. Let σ(t) ∈ S d−1 be the slope of the central axis of t.
+Lemma 2.6. Let T be a set of δ-tubes intersecting p. Then if T is a (δ, s, C, k)-
+set, then σ(T ) is a (δ, s, O(C), k)-set. Conversely, if σ(T ) is a (δ, s, C, k)-set,
+then T is a (δ, s, O(C), k)-set.
+Proof. Let πp : Rd → S d−1 denote spherical projection through p. Then πp (t \
+B(p, 1/2)) is well-defined and equals σ(t), up to an additive loss of Cδ. Fix
+a (r, k)-plate H ∈ S d−1 . Then the set of tubes with slope in H and passing
+through p must lie in a (r + Cδ, k + 1)-plate p(Cδ) + πp−1 (H). Conversely, for
+any (r, k + 1)-plate W containing p, the set of possible slopes of tubes through
+p contained in W is contained in a (r + Cδ, k)-plate (πp (W − p))Cδ .
+   We will need the following lemma from [18].
+Lemma 2.7 ([18], Lemma 2.7). Let P ⊂ [−2, 2]d be a (δ, s, C)-set. Then P
+contains a δ-separated (δ, s, Od (C))-subset P ′ with |P ′ | ≤ δ −s .
+    First, since (δ, κ, δ −ε , k)-sets are (δ, κ, δ −ε , k ′ )-sets for any k ′ < k, we can
+assume that k ≤ s < k + 1. Next, since (δ, t, δ −ε )-sets are (δ, t′ , δ −ε )-sets for
+t′ < t, we may assume t ≤ k + 1. In particular, we get t − s ≤ 1, a useful
+assumption.
+    We record a useful geometric fact about (r, k)-plates.
+Lemma 2.8. Fix Csep ≥ 1, then there exists r0 depending on Csep such that the
+                                                                                     −1
+following is true for r < r0 . If (x, y) lie in an (r, k)-plate H and |x − y| = Csep    ,
+                                               (CCsep r)
+then any r-tube T through x, y will lie in H             , which is a (CCsep r, k)-plate.
+Proof. For C sufficiently large: If T does not lie in H (CCsep r) , then H ∩ T will
+be contained in a (2Csep )−1 -tube segment of T .
+
+2.3     An Elementary Estimate
+We prove a classical estimate which can be viewed as Theorem 1.8 with ε = 0.
+We won’t need the fact that T (p) is a (δ, κ, δ −ε , k)-set. The d = 2 case is proven
+as Proposition 2.13 and Corollary 2.14 of [18]. For higher dimensions, the proof
+is similar and we sketch the details. Let A /δ B denote the inequality
+                                              1
+                                  A ≤ C · log( )C B.
+                                              δ
+Proposition 2.9. Let 0 ≤ s ≤ t ≤ d − 1, and let CP , CT ≥ 1. Let P ⊂ Dδ
+be a (δ, t, CP )-set. Assume that for every p ∈ P there exists a (δ, s, CT )-family
+T (p) ⊂ T δ of dyadic δ-tubes with the property that T ∩ p 6= ∅ for all T ∈ T (p),
+and |T (p)| = M for some M ≥ 1.
+
+                                            10
+   Let T ⊂ T δ be arbitrary, and define I(P, T ) = {(p, T ) ∈ P × T : T ∈ T (p)}.
+Then                           p
+                 |I(P, T )| /δ CP CT · (M δ s )θ/2 · |T |1/2 |P|,
+                    d−1−t
+where θ = θ(s, t) = d−1−s ∈ [0, 1]. (If s = t = d − 1, then θ(s, t) = 0.)
+   The following corollary of Proposition 2.9 is the form we will use.
+Corollary 2.10. Let 0 ≤ s ≤ t ≤ d − 1, and let CP , CT ≥ 1. Let P ⊂ Dδ
+be a (δ, t, CP )-set. Assume that for every p ∈ P there exists a (δ, s, CT )-family
+T (p) ⊂ T δ of dyadic δ-tubes with the property that T ∩ p 6= ∅ for all T ∈ T (p),
+and |T (p)| = M for some M ≥ 1. If T = ∪p∈P T (p), then
+                                                                t−s
+                      |T | 'δ (CP CT )−1 · M δ −s · (M δ s ) d−1−s .
+                         t−s
+(If s = t = d − 1, then d−1−s = 0.)
+Remark 2.11. To use Corollary 2.10, we need t ≤ d − 1. Fortunately, this is
+a harmless assumption because s < d − 1, and changing t to min(t, d − 1) makes
+the hypothesis of Theorem 1.8 weaker.
+Proof. We begin with an application of Cauchy-Schwarz.
+                        X
+           |I(P, T )| =    |{p ∈ P : T ∈ T (p)}|
+                           T ∈T
+                                                                           1/2
+                        ≤ |T |1/2 |{(T, P, P ′ ) : T ∈ T (p) ∩ T (p′ )}|         .
+
+Note that we have the following bounds:
+                                               s            d−1 
+     |T (p) ∩ T (p′ )| . min CT · M · d(p,pδ′ )+δ , d(p,p1′ )+δ        ,             (2.2)
+
+where d(p, p′ ) stands for the distance of the midpoints of p and p′ . To prove (2.2),
+observe that if T ∈ T (p) ∩ T (p′ ), then T lies in a d(p,pδ′ )+δ -tube with central line
+being the line between p and p′ . Thus, the first bound in (2.2) follows from T (p)
+being a (δ, s, CT )-set with |T (p)| = M , and the second bound is the maximum
+number of essentially distinct δ-tubes that can fit inside a d(p,pδ′ )+δ -tube.
+                           (d−1)−t
+   Write θ := θ(s, t) := (d−1)−s   ∈ [0, 1]. (If s = t = d − 1, we set θ := 0.)
+The parameter θ is chosen so that t = sθ + (d − 1)(1 − θ). Then (2.2) and the
+inequality min{a, b} ≤ aθ b1−θ imply that
+
+                      |T (p) ∩ T (p′ )| . (CT M δ s )θ · d(p, p′ )−t .
+
+Since P is a (δ, t, CP )-set, for fixed p ∈ P we have
+  X                             X
+     (d(p, p′ ) + δ)−t .                2tj |{p′ ∈ P : d(p, p′ ) ≤ 2−j }| /δ CP · |P|.
+                          √            √
+   p′                         2·δ≤2−j ≤ 2
+
+
+
+
+                                            11
+We deduce that
+ X                                    X
+     |T (p) ∩ T (p′ )| . (CT M δ s )θ   (d(p, p′ ) + δ)−t /δ CP (CT M δ s )θ · |P|2 ,
+     p,p′                              p,p′
+
+so
+                     1/2
+                                                       p
+     |I(P, T )| /δ CP (CT M δ s )θ/2 · |T |1/2 |P| ≤    CP CT · (M δ s )θ/2 · |T |1/2 |P|.
+
+This proves Proposition 2.9, and Corollary 2.10 follows by observing |I(P, T )| ≥
+M |P|.
+
+2.4         Multiscale analysis
+Following Section 4 of [18], we would like to change scale from δ to ∆ > δ, while
+preserving the properties of T (p). We say A /δ B if there exists an absolute
+constant C ≥ 1 such that A ≤ C · [log(1/δ)]C . We start by naming the objects
+in Theorem 1.8.
+Definition 2.12. Fix δ ∈ 2−N , s ∈ [0, d − 1], C > 0, M ∈ N. We say that a pair
+(P0 , T0 ) ⊂ Dδ ×T δ is a (δ, s, C1 , κ, C2 , M )-nice configuration if for every p ∈ P0 ,
+there exists a (δ, s, C1 , 0) and (δ, κ, C2 , k)-set T (p) ⊂ T0 with |T (p)| = M and
+such that T ∩ p 6= ∅ for all T ∈ T (p).
+    Using the method of induction on scales, we would like to relate nice config-
+                                                        δ
+urations at scale δ to nice configurations at scales ∆, ∆ , where δ < ∆ ≤ 1. The
+following proposition, which combines Propositions 4.1 and 5.2 of [18], gives a
+way of doing so with only polylog losses. Our proof relies on the same ideas as
+[18], with some technical simplifications. We defer the proof to Section 6, where
+we prove a slightly more general version.
+Proposition 2.13. Fix dyadic numbers 0 < δ < ∆ ≤ 1. Let (P0 , T0 ) be a
+(δ, s, C1 , κ, C2 , M )-nice configuration. Then there exist sets P ⊂ P0 , T (p) ⊂
+T0 (p), p ∈ P, and T∆ ⊂ T ∆ such that denoting T = ∪p∈P T (p) the following
+hold:
+  (i) |D∆ (P)| ≈δ |D∆ (P0 )| and |P ∩ Q| ≈δ |P0 ∩ Q| for all Q ∈ D∆ (P).
+ (ii) There exists N such that |T ∩ T| ∼ N for all T ∈ T∆ .
+                               1       2                       1          2
+(iii) (D∆ (P), T∆ ) is (∆, s, C∆ , κ, C∆ , M∆ )-nice for some C∆ ≈δ C1 , C∆ ≈δ
+      C2 , and M∆ ≥ 1.
+ (iv) For each Q ∈ D∆ (P), let T∆ (Q) be the tubes in T∆ through Q. Then for
+      all T ∈ T∆ (Q), we have
+
+                                                                         M · |P ∩ Q|
+              |{(p, T ) ∈ (P ∩ Q) × T : T ∈ T (p) and T ⊂ T}| 'δ                     .
+                                                                          |T∆ (Q)|
+
+
+
+                                              12
+                                            1            2
+ (v) For each Q ∈ D∆ (P), there exist CQ       ≈δ C1 , CQ   ≈δ C2 , MQ ≥ 1, a subset
+     PQ ⊂ P ∩ Q with |PQ | '∆ |P ∩ Q|, and a family of tubes TQ ⊂ T δ/∆ such
+                                       1        2
+     that (SQ (PQ ), TQ ) is (δ/∆, s, CQ , κ, CQ  , MQ )-nice.
+   Furthermore, the families TQ can be chosen so that
+                                                      
+                      |T0 |    |T∆ |             |TQ |
+                            'δ       ·   max             .                         (2.3)
+                       M       M∆       Q∈D∆ (P) MQ
+
+
+   Iterate this proposition to get (for details, see [27, Corollary 4.1])
+Corollary 2.14. Fix N ≥ 2 and a sequence {∆j }nj=0 ⊂ 2−N with
+
+                   0 < δ = ∆N < ∆N −1 < · · · < ∆1 < ∆0 = 1.
+
+Let (P0 , T0 ) ⊂ Dδ × T δ be a (δ, s, C1 , κ, C2 , M )-nice configuration. Then there
+exists a set P ⊂ P0 such that:
+  1. |D∆j (P)| ≈δ |D∆j (P0 )| and |P ∩ p| ≈δ |P0 ∩ p|, 1 ≤ j ≤ N , p ∈ D∆j (P).
+  2. For every 0 ≤ j ≤ N − 1 and p ∈ D∆j , there exist numbers Cp1 ≈δ C 1 ,
+     Cp2 ≈δ C 2 , and Mp ≥ 1, and a family of tubes Tp ⊂ T ∆j+1 /∆j with the
+     property that (Sp (P ∩ p), Tp ) is a (∆j+1 /∆j , s, Cp1 , κ, Cp2 , Mp )-nice config-
+     uration.
+   Furthermore, the families Tp can be chosen such that if pj ∈ D∆j (P) for
+0 ≤ j ≤ N − 1, then
+                                      N −1
+                             |T0 |    Y    |Tpj |
+                                   'δ             .
+                              M       j=0
+                                           Mpj
+
+Here, 'δ means &N log(1/δ)C , and likewise for /δ , ≈δ .
+
+2.5    Uniform sets and branching numbers
+The following exposition borrows heavily from [21, Section 2.3].
+Definition 2.15. Let n ≥ 1 and
+
+                      δ = ∆n < ∆n−1 < · · · < ∆1 ≤ ∆0 = 1
+
+be a sequence of dyadic scales. We say that a set P ⊂ [0, 1)d is {∆j }nj=1 -uniform
+if there is a sequence {Nj }nj=1 such that Nj ∈ 2N and |P ∩ Q|∆j = Nj for all
+j ∈ {1, 2, · · · , n} and Q ∈ D∆j−1 (P ).
+Remark 2.16. By uniformity, we have |P |∆m = |P ∩ Q|∆m |P |∆ℓ for 0 ≤ ℓ <
+m ≤ n and Q ∈ D∆ℓ (P ).
+   As a result, we can always refine a set P to be uniform:
+
+
+
+                                          13
+Lemma 2.17. Let P ⊂ [0, 1)d , m, T ∈ N, and δ = 2−mT . Let ∆j := 2−jT
+for 0 ≤ j ≤ m, so in particular δ = ∆m . Then there is a {∆j }m
+                                                              j=1 -uniform set
+P ′ ⊂ P such that
+                             |P ′ |δ ≥ (2T )−m |P |δ .
+In particular, if ε > 0 and T −1 log(2T ) ≤ ε, then |P ′ | ≥ δ ε |P |.
+   Uniform sets can be encoded by a branching function.
+Definition 2.18. Let T ∈ N, and let P ⊂ [0, 1)d be a {∆j }nj=1 -uniform set,
+with ∆j := 2−jT , and with associated sequence {Nj }nj=1 ⊂ {1, . . . , 2dT }n . We
+define the branching function f : [0, n] → [0, dn] by setting f (0) = 0, and
+                                           j
+                          log |P|2−jT   1 X
+               f (j) :=               =       log Ni ,    i ∈ {1, . . . n},
+                               T        T i=1
+
+and then interpolating linearly between integers.
+
+Definition 2.19. Let sf (a, b) = f (b)−f b−a
+                                             (a)
+                                                 denote the slope of a line segment
+between (a, b) and (f (a), f (b)). We say that a function f : [0, n] → R is ε-
+superlinear on [a, b] ⊂ [0, n], or that (f, a, b) is ε-superlinear, if
+
+                f (x) ≥ f (a) + sf (a, b)(x − a) − ε(b − a), x ∈ [a, b].
+
+We say that (f, a, b) is ε-linear if
+
+               |f (x) − f (a) − sf (a, b)(x − a)| ≤ ε(b − a), x ∈ [a, b].
+
+    The following lemma converts between branching functions and the uniform
+structure of P . It is [18, Lemma 8.3] (or an immediate consequence of the
+definitions)
+Lemma 2.20. Let P be a (∆i )m                            d
+                               i=1 -uniform set in [0, 1) with associated branch-
+                              m
+ing function f , and let δ = ∆ .
+  (i) If f is ε-superlinear on [0, m], then P is a (δ, sf (0, m), O∆ (1)δ −ε )-set.
+ (ii) If f is ε-linear on [0, m], then P is a (δ, sf (0, m), O∆ (1)δ −ε , O∆ (1)δ −ε )-
+      regular set between scales δ and 1.
+   The crucial branching lemma is [18, Lemma 8.5] applied to the function d2 ·f :
+Lemma 2.21. Fix s ∈ (0, 1) and t ∈ (s, d]. For every ε > 0 there is τ =
+τ (ε, s, t) > 0 such that the following holds: for every piecewise affine d-Lipschitz
+function f : [0, m] → R such that
+
+                          f (x) ≥ tx − εm for all x ∈ [0, m],
+
+there exists a family of non-overlapping intervals {[cj , dj ]}nj=1 contained in [0, m]
+such that:
+
+                                           14
+  1. For each j, at least one of the following alternatives holds:
+       (a) (f, cj , dj ) is ε-linear with sf (cj , dj ) ≥ s;
+       (b) (f, cj , dj ) is ε-superlinear with sf (cj , dj ) = s.
+  2. dj − cj ≥ τ m for all j;
+  3. |[0, m] \ ∪j [cj , dj ]| .s,t εm.
+
+2.6    Combinatorial and probabilistic preliminaries
+In this section, we collect a few of the results from additive combinatorics and
+probability that will be used in the following sections.
+    First, we make the following observation (Lemma 19 of [10]) about intersec-
+tions of high-probability events. (That lemma was stated for Lebesgue measure
+but the same proof works for general measures ν.)
+Lemma 2.22. Let A ⊂ Rd equipped with a measure ν and Θ be an index set
+equipped with a probability measure µ. Suppose there is K ≥ 1 and for each
+θ ∈ Θ, a Borel subset Aθ with ν(Aθ ) ≥ ν(A)/K. Then
+
+                                                                       ν(A)       1
+       µ⊗q ({(θ1 , θ2 , · · · , θq ) : ν(Aθ1 ∩ Aθ2 ∩ · · · ∩ Aθq ) ≥        }) ≥      .
+                                                                       2K q      2K q
+   Next, we state Rusza’s triangular inequality [10, Lemma 21] (see also [23]):
+Lemma 2.23. For any sets A, B, C ⊂ Rd , we have
+
+                           |B|δ |A − C|δ .d |A − B|δ |B − C|δ .
+
+    We also would like the Plünnecke-Rusza inequality, in the form stated by
+[10, Lemma 22]:
+
+Lemma 2.24. Let A, B be bounded subsets of Rd . For all K ≥ 1, δ > 0, if
+|A + B|δ ≤ K|B|δ , then for all k, ℓ ≥ 1, we have
+
+                                |kA − ℓA|δ .d K k+ℓ |B|δ .
+
+Here, kA = A + · · · + A.
+           |    {z     }
+                 k times
+
+   In a similar spirit, the set of w such that X + wX is small compared to |X|
+forms a ring. The following is a restatement of [11, Lemma 30(i,ii)] for R. Note
+that End(R) ≃ R with identity 1.
+Lemma 2.25. Define Sδ (X; K) = {w ∈ [−K, K] : |X + wX|δ ≤ K|X|δ }.
+  (i) If a ∈ Sδ (X; δ −ε ) and b ∈ R such that |a−b| ≤ δ 1−ε , then b ∈ Sδ (X; δ −O(ε) ).
+ (ii) If 1, a, b ∈ Sδ (X; δ −ε ), then a + b, a − b, ab all belong to Sδ (X; δ −O(ε) ).
+
+
+                                              15
+    The following theorem (a special case of Theorem 5 of [11]) is a quantitative
+statement that 21 -dimensional subrings of R don’t exist. In fact, by repeated
+sum-product operations, we can get all of R.
+Theorem 2.26. We work in R1 . Given κ, ε0 > 0, there exist ε > 0 and an
+integer s ≥ 1 such that for δ < δ0 (κ, ε0 ), the following holds. For every (κ, δ −ε )-
+set A ⊂ B(0, δ −ε ), we have
+
+                                       B(0, δ ε0 ) ⊂ hAis + B(0, δ),
+
+where hAi1 := A ∪ (−A) and for any integer s ≥ 1, define hAis+1 := hAis ∪
+(hAis + hAi1 ) ∪ (hAis · hAi1 ).
+   Finally, we shall need a discretized variant of the Balog-Szemerédi-Gowers
+theorem. Our version is closest to [20, Theorem 4.38], which is taken from [1,
+p. 196], which in turn refers to Exercise 6.4.10 in [31]. But the exercise is only
+sketched in [31], so for completeness, we provide a proof in Appendix A.
+Theorem 2.27. Let K ≥ 1 and δ > 0 be parameters. Let A, B be bounded
+subsets of Rd , and let P ⊂ A × B satisfy
+
+          |P |δ ≥ K −1 |A|δ |B|δ and |{a + b : (a, b) ∈ P }|δ ≤ K(|A|δ |B|δ )1/2 .
+
+Then one can find subsets A′ ⊂ A, B ′ ⊂ B satisfying
+      • |A′ |δ &d K −2 |A|δ , |B ′ |δ &d K −2 |B|δ ,
+      • |A′ + B ′ |δ .d K 8 (|A|δ |B|δ )1/2 ,
+                                δ |B|δ
+      • |P ∩ (A′ × B ′ )| &d |A|K  2   .
+(Implicit constants depend on d but not on δ, K.)
+      We also need the following version of multi-linear Kakeya.
+Theorem 2.28 (Theorem 1 in [2]). Let 2 ≤ k ≤ d and T1 , T2 , · · · , Tk be families
+of 1-tubes in Rd . Then
+Z                                                                      !1/(k−1)             k
+                                                                                                          !1/(k−1)
+         X              X                                                                   Y
+                 ···            |e(T1 ) ∧ · · · ∧ e(Tk )|χT1 ∩···∩Tk (x)          dx .k,d         |Ti |              .
+ Rd     T1 ∈T1         Tk ∈Tk                                                               i=1
+
+Here, e(Ti ) is the unit vector in the direction of tube Ti .
+
+2.7       Energy
+Definition 2.29. The (s, k)-Riesz energy of a finite Borel measure µ on Rd is
+                Z
+       δ
+      Is,k (µ) = (|(x0 − x1 ) ∧ · · · ∧ (x0 − xk )| + δ)−s dµ(x0 ) · · · dµ(xk ).
+
+If k = 1 and δ = 0, we recover the usual s-dimensional Riesz energy.
+
+                                                      16
+Lemma 2.30. (a) Fix 0 < s < t and a measure µ with total mass C. If
+                                                               0
+   µ(Hr ) ≤ Crt for every (r, k − 1)-plate Hr and r > 0, then Is,k (µ) .s,t C k .
+
+ (b) Fix 0 < δ < 21 . If Isδi ,ki (µ) ≤ C for 1 ≤ i ≤ m, then spt(µ) contains a
+     set which is simultaneously a (δ, ksii , O(1) · (Cm)1/ki log δ −1 , ki − 1)-set for
+     each i.
+Remark 2.31. If k1 = m = 1 in part (b), then we can drop the log factor (c.f.
+proof of Lemma A.6 in [18]). We don’t know if we can drop the log factor for
+k > 1 or m > 1.
+Proof. (a) Let ρi be the distance between xi and the plane spanned by x0 , · · · , xi−1 ;
+                                                Qk
+notice that |(x0 − x1 ) ∧ · · · ∧ (x0 − xk )| = i=1 ρi . Thus, we can rewrite Is,k (µ)
+as an iterated integral
+             Z          Z                Z                Z
+                               −s             −s
+                dµ(x0 ) ρ1 dµ(x1 ) ρ2 dµ(x2 ) · · · ρ−s       k dµ(xk ).
+
+
+RWe−swill be done if we show for all 1 ≤ i ≤ k and choices of x0 , · · · , xi−1 , that
+   ρi dµ(xi ) . C. Let H be the span of x0 through xi−1 , and observe that by
+ definition, {xi : ρi ≥ r} ⊂ H (r) , which is contained in a (r, k − 1)-plate. Thus,
+                    Z                         X
+                       ρ−s
+                        i dµ(xi ) . C +              Cρt−s .s,t C.
+                                         ρ=2−n ,n≥1
+                                 R
+    (b) Let Pi = {x0 ∈ spt(µ) : (|(x0 −x1 )∧· · ·∧(x0 −xki )|+δ)−si dµ(x1 ) · · · dµ(xki ) <
+                                                           1
+2mC}. By Markov’s inequality, µ(Pi ) > 1 − 2m                , so by the union bound,
+        m                           1
+P = ∩i=1 Pi satisfies µ(P ) > 2 .
+    We claim that µ(P ∩Hr ) ≤ Crsi /ki for all (r, ki −1)-plates Hr and δ ≤ r ≤ 1,
+1 ≤ i ≤ m. Indeed, if P ∩Hr = ∅, then we are done. Otherwise, pick x0 ∈ P ∩Hr
+and observe that if x1 , x2 , · · · , xki ∈ Hr , then |(x0 −x1 )∧· · ·∧(x0 −xki )|+δ . r.
+Thus, we get µ(Hr )ki · r−s ≤ 2C, so µ(P ∩ Hr ) ≤ (2Crs )1/ki .
+    Finally,Plet Pc′ ⊂ Dδ (P ) be those dyadic δ-cubes p such that µ(p) ∼ c.
+We know c=2−n ∈[δd ,1] µ(Pc′ ) ≥ 41 , so by dyadic pigeonholing, some µ(Pc′ ) &
+(log δ −1 )−1 . Then Pc′ will be a (δ, ksii , O(1) · (Cm)1/ki log δ −1 , ki − 1)-set for all
+1 ≤ i ≤ m.
+
+
+3     Improved incidence estimates for quasi-product
+      sets
+The main novelty of this paper is the following Proposition, which is a higher-
+dimensional refinement of [20, Proposition 4.36] (see also [18, Proposition A.7]).
+It can be viewed as a variant of Theorem 1.8 for quasi-product sets.
+Proposition 3.1. Given 0 ≤ k < d − 1, 0 ≤ s < k + 1, τ, κ > 0, there exist
+η(s, k, κ, τ, d) > 0 and δ0 (s, k, κ, τ, d) > 0 such that the following holds for all
+δ ∈ (0, δ0 ].
+
+                                          17
+  Let Y ⊂ (δ · Z) ∩ [0, 1) be a (δ, τ, δ −η )-set, and for each y ∈ Y, assume that
+Xy ⊂ (δ · Z)d−1 ∩ [0, 1)d−1 is a (δ, κ, δ −η , k)-set with cardinality ≥ δ −s+η . Let
+                                     [
+                               Z=         Xy × {y}.
+                                     y∈Y
+
+                                                                               1
+For every z ∈ Z, assume that T (z) is a set of δ-tubes each making an angle ≥ 100
+                                       −s+η
+with the plane y = 0 with |T (z)| ≥ δ         such that z ∈ T for all T ∈ T (z).
+Then |T | ≥ δ −2s−η , where T = ∪z∈Z T (z).
+Remark 3.2. In contrast to Theorem 1.8 and [20, Proposition 4.36], we (per-
+haps surprisingly) don’t need any non-concentration assumptions on the tube sets
+T (z) (even when d = 2). Instead, it suffices to have weak non-concentration as-
+sumptions on Y and Xy for each y ∈ Y. The non-concentration assumption
+on Xy is necessary: otherwise, we can take s = k, and let Z to be the δ-balls
+contained in some (δ, k + 1)-plate H, and T to be the δ-tubes contained in H.
+
+3.1    An improved slicing estimate
+We will eventually deduce Proposition 3.1 from the following slicing estimate.
+Theorem 3.3. For 0 ≤ k ≤ d − 2, 0 ≤ s < k + 1, and 0 < κ ≤ 1, there
+exists ε > 0 such that the following holds for sufficiently small δ < δ0 (s, k, d, ε).
+                                                                 1
+Let T be a (δ, κ, δ −ε , k)-set of δ-tubes each making angle ≥ 100  with the plane
+                    −2s+ε
+y = 0 with |T | ≥ δ         . Let µ be a probability measure on R such that for all
+δ ≤ r ≤ 1, we have µ(Br ) ≤ δ −ε rκ . Then there is a set D ⊂ R with µ(D) ≥ 1−δ ε
+such that the slice of ∪T ′ at z = z0 has δ-covering number ≥ δ −s−ε , for every
+subset T ′ ⊂ T with |T ′ | ≥ δ ε |T | and x ∈ D.
+Remark 3.4. One should compare Theorem 3.3 to [10, Theorem 1]. Indeed, if
+k = 0 and d = 2, Theorem 3.3 is a direct corollary of [10, Theorem 1]. We can
+see this by using ball-tube duality, which turns T into a subset of R2 . Under
+this duality, the slice of ∪T ′ at z = z0 becomes the orthogonal projection πz̃0
+to a line in the dual space, for some z̃0 ∈ S 1 . The map z0 → z̃0 induces a
+pushforward measure µ̃ of µ which still satisfies the non-concentration condition
+µ̃(Br ) . δ −ε rκ , so we can apply [10, Theorem 1]. (For more details, see the
+proof of Proposition A.7 in [18].)
+    In higher dimensions, we can still use duality to turn T into a subset of
+A(d, 1) ∼ R2(d−1) , and then slices of ∪T ′ become orthogonal projections to
+(d − 1)-planes. Unfortunately, [10, Theorem 1] does not apply because the push-
+forward measure µ̃ is still supported on a line in S d−1 . This approach is bound
+to fail because [10, Theorem 1] does not use the strong assumption that T is non-
+concentrated around (k + 1)-planes. Using this assumption is the key novelty of
+this proof.
+  Nonetheless, Theorem 3.3 will borrow many ideas from the proof of [10,
+Theorem 1] and He’s previous work [11]. Roughly, the strategy is as follows.
+
+
+                                         18
+   • As in [10], reduce to the following slightly weaker statement: given T and
+     µ, we can find a subset T ′ ⊂ T such that the conclusion of Theorem 3.3
+     holds for T ′ in place of T . This relies on a formal exhaustion argument.
+   • Then, as in [10], reduce this slightly weaker to the following even weaker
+     statement: there exists z0 ∈ E := sptµ such that the slice of ∪T at z = z0
+     has δ-covering number ≥ δ −s−ε . This relies on additive combinatorics
+     (e.g. the Balog-Szemerédi-Gowers theorem) and some probability.
+   • Assume this is false: that for all z0 ∈ E, the slice of ∪T at z = z0 has δ-
+     covering number / δ −s . Using additive combinatorics as in [11], the same
+     conclusion is true for all z0 ∈ E ′ , which is the set of sums or differences of
+     m many terms, each of which is a product of m elements of E. (Here, m
+     will be a fixed large integer.)
+   • Finally, if m is sufficiently large in terms of κ, ε, then E ′ contains a large
+     interval [0, δ ε ] (c.f. [11, Theorem 5]). Essentially, we have a set of ' δ −2s
+     many tubes T , each containing ' δ −1 many δ-balls, such that the union
+     of the δ-balls has cardinality / δ −(s+1) . Without further restrictions, this
+     Furstenberg-type problem doesn’t lead to a contradiction: take s = k and
+     T to be the set of δ-tubes in a (δ, k + 1)-plate. Luckily, our set of tubes T
+     is still a (δ, κ, δ −O(ε) , k)-set, which rules out this counterexample. Indeed,
+     we may finish using multi-linear Kakeya.
+    The reader be warned: we shall execute this strategy in reverse order. This
+is mainly because the main innovation of the paper is the fourth bullet point.
+
+3.2     An improved Furstenberg estimate
+The following estimate complements work of Zahl [34]: we prove an ε-improvement
+on the union of tubes under a mild (k + 1)-plane non-concentration for the set
+of tubes. As in Zahl [34], the key technique is multilinear Kakeya.
+Theorem 3.5. For any 0 ≤ k < d − 1, 0 ≤ s < k + 1, 0 < κ ≤ 1, there exists
+ε > 0 such that the following holds for sufficiently small δ > 0. Let T be a
+(δ, κ, δ −ε , k)-set of δ-tubes with |T | ≥ δ −2s+ε , and for each t ∈ T , let Pt be a set
+of δ-balls intersecting t such that |Pt | ≥ δ −1+ε . Then | ∪ Pt | & δ −(s+1)−ε .
+Proof. The proof below is lossy and can possibly be improved (say by induction
+on scale). Also, the ε can be determined explicitly in terms of the parameters
+but we choose not to do so here.
+    We use ' notation to hide δ −Cε terms, where C can depend on the other
+parameters. Let P = ∪Pt , and suppose |P | / δ −(s+1) . Let T (p) be the set of
+tubes in T through p. Use a bush argument to upper bound |T (p)|:
+                                                   X
+δ −(s+1) ' |P | ≥ |∪t∋p (Pt \B(p, δ 2ε ))| ≥ δ 2dε   |Pt \B(p, δ 2ε )| ≥ δ −1+(2d+1)ε |T (p)|.
+                                                  t∋p
+
+
+
+
+                                           19
+Thus, |T (p)| / δ −s for all p ∈ P . We get the following inequality chain
+
+                  δ −2s−1 / δ −1 |T | / I(P, T ) / δ −s |P | / δ −2s−1.
+
+This means I(P, T ) ≈ δ −2s−1 , |P | ≈ δ −s−1 , and |T | ≈ δ −2s . Now perform a
+dyadic pigeonholing to extract a subset P ′ ⊂ P such that |T (p)| ∈ [M, 2M ] for
+all p ∈ P ′ and I(P ′ , T ) ≈ δ −2s−1 . We know from before that M ≤ δ −s , and
+δ −2s−1 / I(P ′ , T ) ≈ M |P ′ | / M |P | / δ −2s−1 , so M ≈ δ −s and |P ′ | ≈ δ −s .
+(This type of dyadic pigeonholing will also be used later. We also remark that
+dyadic pigeonholing was not necessary to achieve this step; simply let P ′ be the
+set of p ∈ P satisfying |T (p)| ≥ δ −s+Cη for some large C, and use the bound on
+I(P, T ) to get a lower bound for |P ′ |.)
+     Now, we claim that P ′ is a (δ, κ, δ −O(ε) , k + 1)-set. Fix δ < r < 1 and let
+Hr be a (r, k + 1)-plate. We first bound I(P ′ ∩ Hr , T ). Letting Hr′ be the
+(r′ , k + 1)-plate that is a dilate of Hr with the same center, we have
+                                       X
+                 I(P ′ ∩ Hr , T ) ≤           I(P ′ ∩ Hr , Hr′ \ Hr′ /2 )
+                                    r ′ =2−N ∩[r,1]
+                                    X r
+                                ≤         · |T ∩ Hr′ |
+                                     r′ δ
+                                     r′
+                                  X r
+                                ≤         · |T |δ −ε (r′ )κ
+                                     r′ δ
+                                   ′ r
+                                . δ −1 |T |δ −ε rκ .
+
+Thus, since I(P ′ ∩ Hr , T ) ' δ −s |P ′ ∩ Hr |, we have |P ′ ∩ Hr | / δ s−1 |T |rκ ≈
+δ −(s+1) rκ ≈ |P ′ |rκ .
+      Finally, since I(P ′ , T ) ' |P ′ |δ −s ' δ −2s−1 and |T | / δ −2s , by dyadic pi-
+geonholing there exists a subset T ′ ⊂ T with |T ′ | ≈ |T | such that each t ∈ T ′
+contains ≈ δ −1 many δ-balls in P ′ . Now since I(P ′ , T ′ ) ' δ −1 |T ′ | ' δ −2s−1 ,
+|P ′ | / δ −s−1 , and |T (p)| / δ −s for all p ∈ P ′ , by dyadic pigeonholing we can
+find P̃ ⊂ P ′ with |P̃ | ' |P ′ | such that each p ∈ P̃ lies in ≈ δ −s many tubes in
+T ′.
+      Now, we are in good shape to apply multilinear Kakeya. For p ∈ P̃ , let T (p)
+be the tubes in T ′ through p. By a bush argument, ∪T (p) contains ' δ −(s+1)
+many δ-balls in P . Since P ′ is a (δ, κ, δ −O(ε) , k + 1)-set, there are ' δ −(s+1)(k+3)
+many (k + 3)-tuples of points (p0 , p1 , · · · , pk+2 ) such that p0 and pi lie on some
+tube ti ∈ Ti and |e(t1 ) ∧ · · · ∧ e(tk+2 )| ' 1 (where e(t) is the unit vector in the
+direction of tube t). Thus, there is a choice of p1 , · · · , pk+2 such that there are
+' δ −(s+1) many valid choices for p0 . But this leads to a contradiction by the
+following argument. Let Ti be the tubes of T through pi , 1 ≤ i ≤ k + 2; then by
+a rescaled version of Multilinear Kakeya (Theorem 2.28), the number of valid
+                       Q            1/(k+1)
+                           k+2
+choices for p0 is /        i=1 |Ti |          / δ −s(k+2)/(k+1) , which (using s < k + 1)
+is much smaller than δ −(s+1) provided that ε, δ are sufficiently small in terms
+of the parameters. This contradiction completes the proof.
+
+
+                                              20
+3.3     From Furstenberg to weak slicing
+This subsection contains ideas from [11] and [10].
+Theorem 3.6. For 0 ≤ k ≤ d − 2, 0 ≤ s < k + 1, and 0 < κ ≤ 1, there
+exists ε > 0 such that the following holds for sufficiently small δ < δ0 (s, k, d, ε).
+                                                                 1
+Let T be a (δ, κ, δ −ε , k)-set of δ-tubes each making angle ≥ 100  with the plane
+                    −2s+ε
+y = 0 with |T | ≥ δ         . Let µ be a probability measure on R such that for all
+δ ≤ r ≤ 1, we have µ(Br ) ≤ δ −ε rκ . Then there exists z0 ∈ sptµ such that the
+slice of ∪T at z = z0 has δ-covering number ≥ δ −s−ε .
+Proof. We use / to denote ≤ Cδ −Cε , where C may depend on κ, s.
+    Let E := sptµ; without loss of generality, assume E is closed. Let z1 = inf E
+and z2 = sup E; then d(z1 , z2 ) ≥ δ 2ε/κ since µ(B(z1 , δ 2ε/κ )) ≤ δ −ε ·δ 2ε ≤ δ ε < 1.
+    Let X = ∪T (z = z1 ) and Y = ∪T (z = z2 ); we are given that |X|δ , |Y |δ /
+δ −s . On the other hand, since each T ∈ T passes through O(1) many elements
+in X and O(1) many elements in Y , we get that
+
+                            δ −2s ' |X|δ |Y |δ & |T | ' δ −2s ,
+
+so in fact, |X|, |Y | ≈ δ −s and |T | ≈ δ −2s .
+    Let E ′ := [z1 , z2 ] \ (B(z1 , δ 2ε/κ ) ∪ B(z2 , δ 2ε/κ )); then µ(E ′ ) ≥ 1 − 2δ ε ≥ 12
+for δ small enough.
+    Let f (z) = zz−z   1
+                    2 −z
+                         ; note that on E ′ , we have that f is ≈ 1-bilipschitz, and
+f (z) ≈ 1 for all z ∈ E ′ .
+    The problem condition literally states |(z2 − z)X + (z − z1 )Y |δ / δ −s for
+z ∈ E ′ ; since (z2 − z) ≈ 1, we can divide through by (z2 − z) to get
+
+                            |X + f (z)Y |δ / δ −s for z ∈ E ′ .
+
+Now pick an arbitrary z ′ ∈ E ′ . In particular, we get |X + f (z ′ )Y |δ / δ −s , so
+by Lemma 2.23, we have for all z ∈ E ′ ,
+                                                             f (z)
+                    f (z)        |X + f (z)Y |δ |f (z)Y + f (z′ ) X|δ
+             |X −       ′
+                           X|δ ≤                                      / δ −s .
+                    f (z )                  |f (z)Y |δ
+
+In addition, since |X + f (z ′ )Y |δ / δ −s / |X|δ , the Plünnecke-Rusza inequality
+(Lemma 2.24) gives |X + X|δ / |Y |δ / δ −s .
+    Define µ̃ = g∗ (µ), the pushforward of g(z) = ff(z   (z)
+                                                           ′ ) ; then g (like f ) is ' 1-
+                 ′
+bilipschitz on E , so µ̃ also satisfies a non-concentration condition µ̃(Br ) / rκ
+for δ ≤ r ≤ 1. Now pick ε0 > 0, and assume ε is chosen sufficiently small in
+terms of ε0 . By the iterated sum-product Theorem 2.26, we can find an integer
+m ≥ 1 such that for δ < δ0 (κ, ε, ε0 ),
+
+                              B(0, δ ε0 ) ⊂ hAim + B(0, δ),
+
+where hAi1 := A ∪ (−A) and for any integer m ≥ 1, define hAim+1 := hAim ∪
+(hAim + hAi1 ) ∪ (hAim · hAi1 ).
+
+                                             21
+    By applying the ring structure Lemma 2.25 many times, we see that B(0, δ ε0 ) ⊂
+Sδ (X; δ −Om (ε) ) and since 1 ∈ Sδ (X; δ −O(ε) ), that B(1, δ ε0 ) ⊂ Sδ (X; δ −Om (ε) ).
+By definition of Sδ and Lemma 2.23, we get for w ∈ B(1, δ ε0 ),
+
+                                     |X − wX|δ |wX + wf (z ′ )Y |δ
+              |X + wf (z ′ )Y |δ ≤                                 / δ −s .
+                                               |wX|δ
+
+In other words, for all z0 ∈ I := f −1 ([(1 − δ ε0 )f (z ′ ), (1 + δ ε0 )f (z ′ )]), the slice
+∪T (z = z0 ) has δ-covering number / δ −s . Since f is ≈ 1-bilipschitz and
+f (z ′ ) ≈ 1, we have |I| ≈ δ ε0 .
+     Now, we seek a contradiction to Theorem 3.5. For every t ∈ T , we let Pt be
+the δ-balls on t with z-coordinate in I. We observe the following:
+    • Recall our assumption that T is a (δ, κ, δ −ε , k)-set of δ-tubes with |T | ≥
+      δ −2s+ε .
+    • |Pt | & δ −1 |I| ' δ −1+ε0 .
+    • | ∪ Pt | ≤ | ∪z∈I (X∗ + f (z)Y∗ )| / δ −(s+1) .
+Thus, if ε, ε0 are sufficiently small in terms of s, k, κ, then we contradict Theorem
+3.5.
+
+
+3.4     An intermediate slicing result
+This subsection contains ideas from [10].
+   Let E(T , ε) be the set of exceptional slices,
+
+      E(T , ε) = {z0 ∈ R : ∃T ′ ⊂ T , |T ′ | ≥ δ ε |T |, | ∪ T ′ (z = z0 )| < δ −s−ε }.
+
+    Just like in [10, Proposition 25], we will prove a weaker version of Theorem
+3.3; the stronger version follows from a formal exhaustion argument which we
+present in the next subsection.
+Theorem 3.7. With assumptions of Theorem 3.3, there exists T ′ ⊂ T such
+that µ(E(T ′ )) ≤ δ ε .
+Proof. We use / to denote ≤ Cδ −Cε , where C may depend on κ, s. Let π :
+Rd → Rd−1 be the projection onto the plane orthogonal to the z-axis. For a
+tube t, let t(z ′ ) = π(t ∩ {z = z ′ }), and for a set of tubes T , let T (z ′ ) denote the
+slice π(T ∩ {z = z ′ }).
+    We follow the argument in [10, Proof of Proposition 7]. Suppose Theorem
+3.7 is false. We can find z1 and a subset T ′′′ ⊂ T with |T ′′′ | ≥ δ ε |T | such that
+| ∪ T ′′′ (z1 )| < δ −s−ε . For this T ′′′ we have µ(E(T ′′′ )) ≥ δ ε , hence µ(E(T ′′′ ) \
+B(z1 , δ 3ε/κ )) ≥ δ ε − δ 2ε > 0 by the non-concentration property of µ. Thus,
+we can find z2 with |z1 − z2 | ' 1 and T ′′ ⊂ T ′′′ with |T ′′ | ≥ δ 2ε |T | such that
+X := | ∪ T ′′ (z1 )| < δ −s−ε and Y := | ∪ T ′′ (z2 )| < δ −s−ε . Since every t ∈ T ′′
+passes through a point in X and a point in Y , and since there are / 1 many
+
+                                             22
+tubes through given points x ∈ X and y ∈ Y , we can find T ′ ⊂ T ′′ with
+|T ′ | ' |T | ' δ −2s such that for every x ∈ X, y ∈ Y , there is at most one tube
+in T ′ through x, y. In particular,
+                            δ −2s / |T ′ | ≤ |X|δ |Y |δ / δ −2s ,
+and so |X|δ , |Y |δ ' δ −s , |T | / |T ′ | / δ −2s .
+    For this T ′ we have µ(E(T ′ )) ≥ δ ε , so defining D = E(T ′ ) \ (B(z1 , δ 3ε/κ ) ∪
+B(z2 , δ 3ε/κ )), we have µ(D) ≥ δ ε − 2δ 2ε > δ 2ε .
+    Claim 1. For z = az1 + (1 − a)z2 ∈ D, we have a, 1 − a ' 1. Furthermore,
+there exists Xz ⊂ X, Yz ⊂ X, and Tz ⊂ T ′ with |Xz |δ , |Yz |δ ' δ −s , |Tz | ' δ −2s
+                                                                                 (δ)
+such that |Xz + 1−a   a Yz | / δ
+                                  −s
+                                     and for each t ∈ Tz , we have t(z1 ) ∈ Xz and
+            (δ)
+t(z2 ) ∈ Yz .
+    Proof. The first claim is evident by definition of D. For the second claim,
+since z ∈ E(T ′ ), there exists Tz′ ⊂ T ′ such that |Tz′ | ' δ −2s and |Tz′ (z)|δ / δ −s .
+Now notice that for each x ∈ X, y ∈ Y there is at most one tube t ∈ T ′
+passing through x, y. Let P be the set of (x, y) ∈ X × Y with exactly one tube
+tx,y ∈ Tz′ passing through x, y. So |P | ≥ |Tz′ | ' δ −2s . We also observe that
+                                                 P
+|ax + (1 − a)y − tx,y (z)| ≤ δ, and so |aX + (1 − a)Y |δ ≤ |Tz′ (z)|2δ / δ −2s . Thus,
+by the Balog-Szemerédi-Gowers theorem 2.27, we can find Xz ⊂ X, Yz ⊂ Y , and
+Tz ⊂ Tz′ such that |aXz |δ , |(1−a)Yz |δ ' δ −s , |Tz | ' δ −2s , |aXz +(1−a)Yz | / δ −s ,
+                                            (δ)                  (δ)
+and for each t ∈ Tz , we have t(z1 ) ∈ Xz and t(z2 ) ∈ Yz . Then |Xz |δ , |Yz |δ '
+δ −s and |Xz + (1−a)
+                  a Yz | / δ
+                                −s
+                                   , proving the Claim.
+                                                    (δ)      (δ)                 1
+    Now, we apply Lemma 2.22 to the sets Xz × Yz , the measure µ(D)                 µ|D ,
+and K = δ −Cε for a sufficiently large C. The result, after applying Fubini’s
+theorem, is that we can find z∗ , X∗ := Xz∗ ⊂ X, Y∗ := Yz∗ ⊂ Y , and a subset
+D′ ⊂ D with µ(D′ ) ' µ(D) ' 1 and z∗ ∈ D′ such that for all z ∈ D′ , we have
+                          (δ)           (δ)
+                        |X∗ ∩ Xz(δ) ||Y∗      ∩ Yz(δ) | ' δ 2(n−1) δ −2s .
+          (δ)     (δ)                                (δ)     (δ)
+Since |X∗ ∩ Xz | . |X|δ / δ −s and |Y∗ ∩ Yz | . |Y |δ / δ −s , we have in
+         (δ)  (δ)    (δ)     (δ)                           (δ)     (δ)
+fact |X∗ ∩ Xz |, |Y∗ ∩ Yz | ≈ δ −s . In particular, |Xz |, |Yz | ≈ δ −s for all
+z ∈ D′ .
+    The next leg of the proof is to show:
+    Claim 2. For all z ∈ D′ , if we write z = az1 +(1−a)z2, then |X∗ + 1−a
+                                                                         a Y∗ |δ /
+ −s
+δ .
+    Proof. Note that Claim 1 tells us |Xz + 1−a   a Yz |δ / δ
+                                                               −s
+                                                                  . Combining this
+                                                          (δ)      (δ)    (δ)
+with the Rusza triangle inequality (Lemma 2.23), X∗ ∩ Xz ⊂ Xz , and
+  (δ)                                                               d
+|A |δ ∼d |A|δ for any subset A of the doubling metric space R , we have
+           (δ)                                                      |Xz + 1−a     2
+                                                                            a Yz |δ
+ |Xz − X∗ ∩ Xz(δ) |δ . |Xz(δ) − Xz(δ) |δ . |Xz − Xz |δ .                1−a         / δ −s .
+                                                                       | a Yz |
+The same argument shows (where z∗ = a∗ z1 + (1 − a∗ )z2 ):
+
+                    (δ)                                    |X∗ + 1−a     2
+                                                                  a∗ Y∗ |δ
+                                                                     ∗
+
+           |X∗ − X∗ ∩ Xz(δ) |δ . |X∗ − X∗ |δ .                               / δ −s .
+                                                              | 1−a
+                                                                 a∗ Y∗ |
+                                                                    ∗
+
+
+
+
+                                              23
+Thus, by Lemma 2.23 again, we have
+                                     (δ)         (δ)         (δ)     (δ)
+                           |Xz − X∗ ∩ Xz |δ |X∗ − X∗ ∩ Xz |δ
+          |X∗ − Xz |δ .                        (δ   (δ)
+                                                                           / δ −s .
+                                             |X∗ ∩ Xz |δ
+
+Similarly, we have |Y∗ − Yz |δ / δ −s . A final application of Lemma 2.23 gives
+
+                  1−a         |Xz + 1−a
+                                     a Y∗ |δ |Xz − X∗ |δ
+          |X∗ +       Y∗ |δ .
+                   a                    |Xz |δ
+                                  |Xz + 1−a                    1−a
+                                         a Yz |δ |Xz − X∗ |δ | a (Yz − Y∗ )|δ
+                              .
+                                               |Xz |δ | 1−a
+                                                         a Yz |δ
+                                  δ −s δ −s δ −s
+                              /                  ≤ δ −s .
+                                    δ −s δ −s
+This proves Claim 2.
+    Finally, we seek a contradiction by applying Theorem 3.6 to Tz∗ and µ|D′ . We
+satisfy the condition (if ε is sufficiently small) because Claim 1 and |T | / δ −2s
+tell us that Tz∗ is a (δ, κ, δ −O(ε) , k)-set with |Tz∗ | ' δ −2s . But we violate the
+conclusion (if ε is sufficiently small) because Claim 2 tells us that |aX∗ + (1 −
+a)Y∗ |δ / δ −s . This contradiction finishes the proof of Theorem 3.7.
+
+
+3.5     Formal exhaustion argument
+Using Theorem 3.7, we prove the following proposition, which implies Theorem
+3.3 with a different value for ε.
+Proposition 3.8. For 0 ≤ k < d − 1, 0 ≤ s < k + 1, and 0 < κ ≤ 1, there
+exists ε > 0 such that the following holds for sufficiently small δ < δ0 (s, k, d, ε).
+                                                                   1
+Let T be a (δ, κ, δ −ε/2 , k)-set of δ-tubes each making angle ≥ 100   with the plane
+                     −2s+ε/2
+y = 0 with |T | ≥ δ            . Let µ be a probability measure on R such that for
+all δ ≤ r ≤ 1, we have µ(Br ) ≤ δ −ε rκ . Then µ(E(T , 3ε )) ≤ δ ε/2 .
+    The idea is the following. A first application of Theorem 3.7 gives a subset
+T ′ ⊂ T with µ(E(T ′ , ǫ)) ≤ δ ǫ . Either T ′ is large enough in which case we are
+done or we can cut T ′ out of T and apply Theorem 1.8 again. This will give
+us another subset T ′ . Then we iterate until the union of these sets T ′ is large
+enough.
+Proof. Let N ≥ 0 be an integer. Suppose we have already constructed pairwise
+disjoint sets T1 , · · · , TN such that µ(E(Ti , ǫ)) ≤ δ ǫ for every i = 1, · · · , N . Either
+we have
+                                         N
+                                         [           ǫ
+                                     T \   Ti ≤ δ 2 |T |,                                (3.4)
+                                           i=1
+                                     SN
+in which case we stop, or the set T \ i=1 Ti satisfies the conditions of The-
+                                                                 SN
+orem 3.3. In the latter case Theorem 3.3 gives us TN +1 ⊂ T \ i=1 Ti with
+
+                                                 24
+µ(E(AN +1 , ǫ)) ≤ δ ǫ . By construction, TN +1 is disjoint with any of the Ti ,
+i = 1, · · · , N .                           S
+    When this procedure ends write T0 = N                Then (3.4) says |T \ T0 | ≤
+                                                i=1 Ti . P
+  ε                                                       N
+δ |T |. Moreover, since the Ti ’s are disjoint, |T0 | = i=1 |Ti |.
+  2
+
+                 |Ti |
+    Set ai = |T    0|
+                       . We claim that
+                                          ε    [\
+                                     E(T , ) ⊂    E(Ti , ε),
+                                          3
+                                                      I i∈I
+                                                                        P             ε
+where the index set I runs over subsets of {1, 2, · · · , n} with         i∈I ai ≥ δ .
+                                                                                      2
+
+                      ε                                                ε       ε/2
+Since µ(E(Ti ))) ≤ δ for all i, the desired upper bound µ(E(T , 3 )) P     ≤δ      then
+follows immediately from Markov’s inequality applied to the event             ai 1Ti (or
+[10, Lemma 20]).
+     We will now show the claim. Let z0 ∈ E(A, 3ε ), so there exists T ′ ⊂ T with
+         ε                                ε
+|T | ≥ δ 3 |T | and |πz0 (T ′ )|δ ≤ δ −s− 3 . Consider the index set I defined as
+   ′
+
+
+                              I = {1 ≤ i ≤ n | |T ′ ∩ Ti | ≥ δ ε |Ti |}.
+
+We have
+
+                                  δ ε/2 |T | ≤ |T ′ | − |T \ T0 |
+                                               Xn
+                                             ≤       |T ′ ∩ Ti |
+                                                i=1
+                                                X               X
+                                            .         |Ti | +         δ ε |Ti |
+                                                i∈I              /
+                                                                i∈I
+                                                X
+                                            .         ai |T | + δ ε |T |
+                                                i∈I
+        P                ε
+Hence       i∈I ai ≥ δ       . On the other hand, for all i ∈ I, since
+                         2
+
+
+                                                                                  ε
+                             |πz0 (T ′ ∩ Ti ))|δ ≤ |πz0 (T ′ )|δ ≤ δ −s− 3 ,
+
+we have z0 ∈ E(Ti , ε) for all i ∈ I. This finishes the proof of the claim.
+
+3.6     Proof of Proposition 3.1
+This subsection is based on Section A.7 of [18].
+   We restate Proposition 3.1.
+Proposition 3.9. Given 0 ≤ k < d − 1, 0 ≤ s < k + 1, τ, κ > 0, there exist
+η(s, k, κ, τ, d) > 0 and δ0 (s, k, κ, τ, d) > 0 such that the following holds for all
+δ ∈ (0, δ0 ].
+   Let Y ⊂ (δ · Z) ∩ [0, 1) be a (δ, τ, δ −η )-set, and for each y ∈ Y, assume that
+Xy ⊂ (δ · Z)d−1 ∩ [0, 1)d−1 is a (δ, κ, δ −η , k)-set with cardinality ≥ δ −s+η . Let
+                                         [
+                                 Z=         Xy × {y}.
+                                              y∈Y
+
+
+                                                      25
+                                                                               1
+For every z ∈ Z, assume that T (z) is a set of δ-tubes each making an angle ≥ 100
+                                       −s+η
+with the plane y = 0 with |T (z)| ≥ δ         such that z ∈ T for all T ∈ T (z).
+Then |T | ≥ δ −2s−η , where T = ∪z∈Z T (z).
+Proof. Let A / B denote A ≤ Cδ −Cη B for some absolute constant C ≥ 1. A
+(δ, u, m)-set stands for a (δ, u, Cδ −Cη , m)-set.
+    First, without loss of generality, assume |T (z)| = δ −s+η for each z ∈ Z.
+    Suppose |T | ≤ δ −2s−η . Let
+                                           [
+                                T (y) =       T (x, y).
+                                            x∈Xy
+
+                                        1
+Since each tube in T (y) has angle ≥ 100    with the plane y = 0, it only intersects
+O(1) many δ-balls (x, y) for a given y. Since |T (x, y)| ' δ −s for each x ∈ Xy ,
+we get |T (y)| ' δ −s |Xy |. With the counter-assumption |T | / δ −2s , this forces
+|Xy | / δ −s for each y ∈ Y. On the other hand, |Xy | ' δ −s and so |T | ≈ δ −2s .
+    Now, we check that T (y) is a (δ, κ, δ −O(η) , k)-set. Pick a (r, k + 1)-plane H.
+We claim that either T (y) ∩ H = ∅ or H(y = y) is contained in a (O(r), k)-
+plate. Indeed, if H(y = y) is not contained within a (Cr, k)-plate, then H is
+contained within the O(C −1 )-neighborhood of the plane y = y, which means
+that H cannot contain any tubes of T (y) if C is large enough (since the tubes
+                         1
+of T (y) have angle ≥ 100    with that plane). Thus, we may assume H(y = y) is
+contained within a (Cr, k)-plate, which means
+                        [
+  |T (y) ∩ H| = |             T (x, y) ∩ H|
+                    x∈Xy ∩H
+
+                                  ≤ |Xy ∩ H| · δ −s+η / |Xy |rκ · δ −s+η / rκ |T (y)|.
+
+    Since |T (y)| ≈ |T | for each y ∈ Y, there is a subset T ⊂ T such that
+|T | ≈ |T | and each T ∈ T belongs to ≈ |Y| of the sets T (y). We show T is a
+(δ, κ, δ −O(η) , k)-set. Indeed, given a (r, k + 1)-plate H, we have
+               X         1 X
+  |T ∩ H| ≈                  1T (y) (T )
+                        |Y|
+              T ∈T ∩H       y∈Y
+                                   1 X                1 X κ
+                              /        |T (y) ∩ H| /     r |T (y)| ≤ rκ |T |.
+                                  |Y|                |Y|
+                                      y∈Y                     y∈Y
+
+Finally, we refine Y further: since
+             X                  X
+                  |T ∩ T (y)| =     |{y ∈ Y : T ∈ T (Y)}| ≈ |T ||Y|,
+             y∈Y                    T ∈T
+
+we can find a subset Y ⊂ Y with the property that |T (y)| := |T ∩ T (y)| ≈ |T |
+for each y ∈ Y. Also, Y is still a (δ, τ, δ −O(η) )-set.
+    Now for each y ∈ Y, the large subset T (y) ⊂ T has small covering number
+|Xy | ≈ δ −s . On the other hand, |T | ≈ δ −2s . This contradicts Theorem 3.3 if η
+is chosen sufficiently small in terms of the ε of the theorem.
+
+                                              26
+4     Improved incidence estimates for regular sets
+In this section, we prove a version of Theorem 1.8 for regular sets.
+Definition 4.1. Let δ ∈ 2−2N be a dyadic number. Let C, K > 0, and let
+0 ≤ s ≤ d. A non-empty set P ⊂ Dδ is called (δ, s, C, K)-regular if P is a
+(δ, s, C, 0)-set, and
+                          |P|δ1/2 ≤ K · δ −s/2 .
+Theorem 4.2. For any 0 ≤ s, k < d − 1, max(s, k) < t ≤ d, κ > 0, there
+exists ε(s, t, κ, k, d) > 0 such that the following holds for all small enough δ ∈
+2−N , depending only on s, t, κ, k, d. Let P ⊂ Dδ be a (δ, t, δ −ε , δ −ε )-regular set.
+Assume that for every p ∈ P, there exists a (δ, s, δ −ε , 0) and (δ, κ, δ −ε , k)-set
+T (p) ⊂ T with |T (p)| = M such that T ∩ p 6= ∅ for all T ∈ T (p). Then
+|T | ≥ M δ −s−ε .
+
+4.1    Initial reductions
+This subsection is based on Sections 6 and A.1-A.3 of [18].
+    In this section, let A / B denote A ≤ Cδ −Cε B for some constant C ≥ 1
+depending only on s, t, κ, k, d. Also, let P ∩ Q := {p ∈ P : p ⊂ Q}.
+    The proof will be based on contradiction, so assume |T | ≤ M δ −s−ε . Let’s
+rename P to P0 and T to T0 , reserving P, T for the use of Proposition 2.13.
+                                                 t−s
+    By Corollary 2.10, we have 1 ' (M δ s ) d−1−s , so M / δ −s and |T | / δ −2s .
+But T (p) is a (δ, s, δ −ε )-set, so M ≈ δ −s . Finally, by Lemma 2.7, we may
+assume |P0 | ≈ δ −t (passing to subsets will preserve the (δ, t, δ −ε , δ −ε )-regularity
+of P0 ).
+    The next reduction will make the value |P0 ∩ Q| uniform for different Q ∈
+D∆ (P0 ). Let Q0 = D∆ (P0 ). By (δ, t, δ −ε , δ −ε )-regularity of P0 , we have |Q0 | /
+∆−t . On the other hand, since P0 is a (δ, t)-set, we have that for all Q ∈ Q0 ,
+
+                                   |P0 ∩ Q| / ∆−t                                  (4.5)
+
+This means |Q0 | ' ∆−t . Hence, |Q0 | ≈ ∆−t . Now using (4.5) again and
+|P0 | ≈ ∆−2t , there exists Q′0 ⊂ Q0 with |Q′0 | ' |Q0 | such that for each Q ∈ Q′0 ,
+
+                                   |P0 ∩ Q| ≈ ∆−t                                  (4.6)
+
+Using (4.6), we quickly check that Q′0 is a (∆, t)-set. Indeed, for r ∈ (∆, 1) and
+Qr ∈ Dr , we have
+                         (4.6)
+              |Q′0 ∩ Qr | ≈ ∆t · |P0 ∩ Qr | / ∆t · |P0 | · rt ≈ |Q′0 | · rt .   (4.7)
+                                                                         S
+(The second inequality uses that P0 is a (∆, t)-set.) Let P0′ = Q∈Q′ P ∩ Q;
+                                                                              0
+then |P0′ | ≈ |P| and |P0′ ∩ Q| = |P0 ∩ Q| ≈ ∆−t for Q ∈ P0′ . Apply Proposition
+2.13 to find P ⊂ P0′ , T (p) ⊂ T0 (p), T∆ , T , and TQ . Let Q = D∆ (P).
+   Claim. M∆ ≈ ∆−s and |T∆ | / δ −s .
+
+
+                                           27
+                                                                          1       2
+   Proof. By Proposition 2.13(iii), we know that (D∆ (P), T∆ ) is (∆, s, C∆ , κ, C∆ , M∆ )-
+                −s
+nice, so M∆ ' ∆ . Also, by Corollary 2.10, we have that
+                                                           t−s
+                       |T∆ | ' M∆ δ −s/2 · (M∆ δ s/2 ) d−1−s .                (4.8)
+                                                               1       2
+Next, for any Q ∈ Q, we know that (SQ (P ∩ Q), TQ ) is (∆, s, CQ , κ, CQ , MQ )-
+nice. Recall that
+
+                  SQ (P ∩ Q) = {SQ (p) : p ∈ P, p ⊂ Q} ⊂ D∆ .
+
+We also know |P ∩ Q| ≈ |P0′ ∩ Q| ≈ δ −t/2 and P is a (δ, t)-set, so by a similar
+check to (4.7), we get that SQ (P ∩ Q) is a (∆, t)-set. Thus by Corollary 2.10,
+we have
+                              |TQ | ' MQ · δ −s/2
+But by our counterassumption |T0 | / δ −2s , we get from (2.3) in Proposition
+2.13 and M ' δ −s ,
+
+                                |T∆ | |TQ |      |T∆ | −3s/2
+                     δ −2s '         ·      ·M '      ·δ     .
+                                M∆ MQ            M∆
+
+Thus, |T∆ | / M∆ δ −s/2 . Substitute into (4.8) to get
+
+                                |T∆ |                         t−s
+                     δ −s/2 '         ' δ −s/2 · (M∆ δ s/2 ) d−1−s .
+                                M∆
+
+Thus, M∆ δ s/2 / 1, so M∆ / ∆−s and |T∆ | / δ −s , proving the Claim.
+    Thus, we get the higher-dimensional analogues of properties (H1-2), (G1-4)
+of [18] except we only know |T | / δ −2s and not |T | ' δ −2s . But this is not a
+limitation. We repeat and relabel these properties here:
+(G1) |Q| ≈ ∆−t and |P ∩ Q| ≈ ∆−t for all Q ∈ Q.
+(G2) Every tube T ∈ T∆ satisfies |T ∩ T| / δ −s .
+(G3) For every square Q ∈ Q, there corresponds a (∆, s, 0)-set and (∆, κ, k)-set
+     T∆ (Q) ⊂ T∆ of cardinality ≈ M∆ ≈ ∆−s such that T ∩ Q 6= ∅ for all
+     T ∈ T∆ (Q).
+(G4) |T | / δ −2s and |T∆ | ≈ ∆−2s .
+(G5) For T ∈ T∆ (Q), we have
+
+                  |{(p, T ) ∈ (P ∩ Q) × T : T ∈ T (p) ∩ T}| ' ∆−s−t .
+
+   Item (G1) follows from Proposition 2.13(i).
+   Item (G3) follows from Proposition 2.13(iii) and Claim.
+   Item (G4) follows from |T0 | / δ −2s and Claim.
+
+
+
+                                           28
+   Item (G5) follows from Proposition 2.13(iv) and the estimation M · |P ∩
+Q|/|T∆ (Q)| ≈ ∆−s−t , which uses item (G1), item (G3), and the fact M ≈ δ −s
+we proved at the beginning of the argument.
+   Item (G2) follows from Proposition 2.13(ii), the fact that a given δ-tube lies
+in . 1 many of the T’s in T∆ , and item (G4):
+                             X
+              δ −2s ' |T | &     |T ∩ T| ∼ |T∆ | · N ≈ ∆−2s · N.
+                              T∈T∆
+
+
+4.2    Transferring angular non-concentration to ball non-
+       concentration
+ This subsection is based on Section A.4 of [18].
+    We first recall some notation. For a unit vector σ ∈ Rd , define πσ (~v ) :=
+~v − (~v · σ)σ to be the orthogonal projection to the orthogonal complement of σ.
+ For a δ-tube T , let σ(T ) ∈ S d−1 denote the direction of T .
+    In this subsection, we fix a Q ∈ D∆ (P). Our goal is to show that for many
+ T ∈ T∆ (Q), the ∆−1 -rescaled version of πσ(T) (∪(P ∩Q)) contains a (∆, s, 0) and
+ (∆, κ′ , k)-set for some κ′ > 0. This is the content of the next Proposition 4.3,
+ which is a higher-dimensional extension of Lemma A.6 of [18]. The proposition
+ encodes the following principle: If we have a set of orthogonal projections in
+ Gr(d, d − 1) (which we view as S d−1 ) that don’t concentrate around k-planes,
+ and we have a t-dimensional set X with t > k, then many projections of X will
+ not concentrate around k-planes.
+Proposition 4.3. Let 0 ≤ max(s, k) < t ≤ d, κ > 0, and A, B > 0. Let P
+be a (∆, t, ∆−Aε )-set in [0, 1)d , and let Γ ⊂ S d−1 be a (∆, s, ∆−Aε , 0)-set and
+(∆, κ, ∆−Aε , k)-set. There exists a subset Σ ⊂ Γ with |Σ| ≥ 12 |Γ| such that the
+following holds for all σ ∈ Σ: if P ′ ⊂ P is an arbitrary subset of cardinality
+                                                 1
+|P ′ | ≥ ∆Bε |P|, then πσ (P ′ ) contains a (∆, k+1 min( t−k
+                                                          2 , κ), ∆
+                                                                   −C(A+B)ε
+                                                                            , k) and
+          −C(A+B)
+(∆, s, ∆           , 0)-set, where C ≥ 1 is absolute depending on k.
+Proof. We will use a variation of the energy argument due to Kaufman [13] in
+the form used to prove [18, Lemma A.6]. An alternate proof can follow [10,
+Lemma 27], but this approach would give weaker bounds.
+   Let µ be the ∆-discretized probability measure corresponding to P,
+                                        1 X Ld |q
+                                µ :=              ,
+                                       |P|  ∆d
+                                          q∈P
+
+where Ld is d-dimensional Lebesgue measure. Since P is a (∆, t, ∆−Aε )-set, we
+have µ(B(x, r)) / rt for all r > δ, and it’s also true for r < δ since µ behaves like
+Lebesgue measure at small scales. We will choose a uniformly random σ ∈ Γ and
+consider what happens to the energy of µ under projection by σ. By linearity
+of expectation and definition of energy,
+                                Z
+                   ∆
+      Es,1 := Eσ [Is,1 (πσ µ)] = Eσ [(|πσ (x0 − x1 )| + δ)−s ] dµ(x0 )dµ(x1 ).
+
+
+                                         29
+Since Γ is a (∆, s)-set, we have Eσ [(|πσ (x0 −x1 )|+∆)−s ] . (log ∆−1 )·∆−Aε |x0 −
+                                   0
+x1 |−s (c.f. [13]), and so Es,1 / Is,1 (µ) / 1 by Lemma 2.30(a) and s < t.
+    Analogously, we have (let β = min(κ, t−k   2 )):
+                                                                             !−β 
+                                    Z           k+1
+                                                ^
+               ∆
+Eβ,k+1 := Eσ [Iβ,k+1 (πσ µ)] =          Eσ            πσ (x0 − xi ) + ∆            dµ(x0 ) · · · dµ(xk+1 ).
+                                                 i=1
+
+
+Observe that
+k+1
+^                            k+1
+                             ^                               k+1
+                                                             ^                     k+1
+                                                                                   ^
+       πσ (x0 − xi ) = σ ∧         πσ (x0 − xi ) = σ ∧             (x0 − xi ) =           (x0 − xi ) ·ρ,
+ i=1                         i=1                             i=1                    i=1
+
+where ρ is the distance from σ to the plane spanned by x1 −x0 through xk+1 −x0 .
+(The first equality follows since σ is orthogonal to each πσ (x0 − xi ). The second
+equality follows since ∧ is multilinear and σ ∧ σ = 0. The third equality follows
+by the geometric definition of wedge product as a volume of a parallelepiped.)
+Thus, since Γ is a (∆, κ, k)-set and β ≤ κ, we have
+                              !−β                                               −β
+        k+1
+         ^                                  X                     k+1
+                                                                   ^
+                                                      −Aε    κ−β
+ Eσ        πσ (x0 − xi ) + ∆      .               ∆     ·ρ           (x0 − xi )
+          i=1                                  ρ=2−n ∈(∆,1)                      i=1
+
+                                                                       k+1                −β
+                                                                       ^
+                                                       −1      −Aε
+                                          . (log ∆          )·∆              (x0 − xi )        ,
+                                                                       i=1
+
+                     0
+and so Eβ,k+1 / Iβ,k+1   (µ) / 1 by Lemma 2.30(a) and β < t − k.
+    Consequently, by Markov’s inequality we can find Σ ⊂ Γ with |Σ| ≥ 12 |Γ| such
+                                ∆
+that for each σ ∈ Σ, we have Is,1 (πσ µ) ≤ ∆−2C1 Aε and Iβ,k+1∆
+                                                                    (πσ µ) ≤ ∆−2C1 Aε .
+For any P ⊂ P with |P | ≥ ∆ |P|, we have Is,1 (πσ µP ′ ) ≤ ∆−(2C1 A+2B)ε and
+           ′              ′     Bε                 ∆
+ ∆                                                     1
+Iβ,k+1 (πσ µP ′ ) ≤ ∆−(2C1 A+(k+2)B)ε , where µP ′ = µ(P ′ ) µ|P ′ is the renormalized
+                       ′
+restriction of µ to P . Then Lemma 2.30(b) gives the desired conclusion.
+
+4.3      Finding a special ∆-tube
+This subsection is based on Section A.4 of [18].
+   Apply Proposition 4.3 to SQ (P ∩ Q), which is a (∆, t)-set using (G1) and
+the fact that P is a (∆, t)-set. Define
+
+                T∆π (Q) = {T ∈ T∆ (Q) : σ(T) ∈ Σ(Q)},                    Q ∈ Q,
+
+where Σ(Q) is the set of good directions of cardinality |Σ(Q)| ≥ 41 |σ(Q)| ∼
+|T∆ (Q)| (since for a given direction, there are ∼ 1 many ∆-tubes in that direction
+that intersect Q). Then T∆π (Q), Q ∈ Q remain (∆, s)-sets of cardinality ≈ ∆−s ,
+and so the properties (G1)-(G5) remain valid upon replacing T∆ (Q) with T∆ (Q).
+(We leave T∆ unchanged, so only (G3) and (G5) are affected.) Thus, P ∩ Q for
+
+
+                                               30
+Q ∈ Q and their large subsets have nice projections in the sense of Proposition
+4.3 in every direction orthogonal to the tubes T ∈ T∆π (Q). We keep the symbol
+“π” as a reminder of this fact.
+    The next goal is to find a tube T0 with the following properties:
+(P1) The set {Q ∈ Q : T0 ∈ T∆π (Q)} contains a (∆, t − s)-subset, which we
+     denote T0 (Q).
+(P2) |T ∩ T0 | / ∆−2s .
+(P3) For each Q ∈ T0 (Q), there exists a subset PQ ⊂ P ∩ Q such that
+
+                 |PQ | ≈ ∆−t and |T (p) ∩ T0 | ≈ ∆−s for all p ∈ PQ .
+
+(P4) Let σ be the direction of T. Then πσ (SQ (PQ )) contains a (∆, κ′ , k)-set
+                                           1
+     with cardinality ' ∆−s , where κ′ := k+1 min( t−k
+                                                    2 , κ).
+
+To get (P1)- (P3), we will mostly follow Section A.4 of [18]. (We have used
+the fact that T is a (∆, κ, ∆−Aε , k)-set, by converting it into ball concentration
+near (k + 1)-planes in Proposition 4.3; the rest of the argument will only use
+the fact that T is a (∆, s, ∆−Aε , 0)-set.) First, we refine the sets Q and T∆π (Q)
+further to ensure that the family {Q ∈ Q : T ∈ T∆π (Q)} will be (∆, t − s)-sets
+for T ∈ T∆ . Indeed, we have
+        X      X      1T∆π (Q)∩T∆π (Q′ ) (T)            X        |T∆π (Q) ∩ T∆π (Q′ )|
+                                               =
+                          d(Q, Q′ )t−s                               d(Q, Q′ )t−s
+       T∈T∆ Q,Q′ ∈Q                                 Q,Q′ ∈Q,Q6=Q
+                                                               ′
+
+             Q6=Q′
+                                                        X           1
+                                               /                        ′ )t
+                                                                             / ∆−2t .
+                                                                 d(Q, Q
+                                                    Q,Q′ ∈Q,Q6=Q
+                                                               ′
+
+
+
+The first / inequality uses the fact that T∆π (Q) is a (∆, s)-set of tubes with
+|T∆π (Q)| ≈ ∆−s , and the second / inequality uses the fact that Q is a (∆, t)-set
+with |Q| ≈ ∆−t .
+    Thus, by Markov’s inequality, for a fixed absolute large constant C ≥ 1, we
+have
+                      X 1T π (Q)∩T π (Q′ ) (T)
+                              ∆      ∆
+                                      ′ )t−s
+                                               ≥ ∆−Cε+2(s−t)                 (4.9)
+                       ′
+                               d(Q, Q
+                    Q,Q ∈Q
+                     Q6=Q′
+
+can only hold for / ∆Cε−2s many tubes T ∈ T∆ .
+    Claim 2. If C ≥ 1 is sufficiently large, then there exists a subset Q ⊂ Q
+with |Q| ≥ 12 |Q| such that for all Q0 ∈ Q, at most half of the tubes T ∈ T∆π (Q0 )
+satisfy (4.9).
+    Proof. Suppose this is not true: there exists a set Qbad such that for Q0 ∈ Q,
+at least 12 |T∆π (Q0 )| many tubes T ∈ T∆π (Q0 ) satisfy (4.9). Then apply Corollary
+2.10 to Qbad and the bad parts of T∆π (Q0 ), which are still (∆, s)-sets. By
+Corollary 2.10, we have ' ∆−2s many ∆-tubes in T∆ that satisfy (4.9). But we
+
+
+                                               31
+observed before that (4.9) only holds for / ∆Cε−2s many tubes T ∈ T∆ . By
+choosing C large enough (and δ small enough), we obtain a contradiction.
+    In what follows, the C in Claim 2 will be absorbed into the / notation.
+Replace Q by Q and T∆π (Q) by their good subsets without changing notation.
+All of the properties (G1)-(G5) remain valid, and
+       X       1T∆π (Q)∩T∆π (Q′ ) (T)
+                                        / ∆2(s−t) ,      T ∈ T∆π (Q0 ), Q0 ∈ Q.   (4.10)
+         ′
+                  d(Q, Q′ )t−s
+      Q,Q ∈Q
+       Q6=Q′
+
+Now, we will find T0 ∈ T∆ satisfying
+                    |T0 (Q)| := |{Q ∈ Q : T0 ∈ T∆π (Q)}| ' ∆s−t .                 (4.11)
+Indeed, the average tube works, because of the following: since |T∆ | ≈ ∆−2s , |Q| ≈
+∆−t , and |T∆π (Q)| ≈ ∆−s (by (G4), (G1), (G3) respectively), we have
+   1 X                                   1 X π                |Q| · ∆−s
+            |{Q ∈ Q : T0 ∈ T∆π (Q)}| =             |T∆ (Q)| ≈            ≈ ∆s−t .
+ |T∆ |                                 |T∆ |                    ∆−2s
+      T∈T∆                                             Q∈Q
+
+Now, we show that using (4.10) and (4.11), the family T0 (Q) ⊂ {Q ∈ Q :
+Q ∩ T0 6= ∅} contains a (∆, t − s)-set, which proves item (P1). Indeed, rewrite
+(4.10) as
+                         X              1
+                                          ′ )t−s
+                                                 / ∆2(s−t) .             (4.12)
+                         ′
+                                  d(Q,  Q
+                           Q,Q ∈T0 (Q)
+                              Q6=Q′
+Let
+                                           X
+      T′0 (Q) := {Q ∈ T0 (Q) :                        d(Q, Q′ )s−t ≤ ∆s−t−Cε }.   (4.13)
+                                    Q′ ∈T0 (Q)\{Q}
+
+By Markov’s inequality on (4.12), we have |T0 (Q) \ T′0 (Q)| / ∆s−t+Cε . Hence,
+if C is chosen large enough, we have by (4.11), |T′0 (Q)| ≥ 21 |T0 (Q)| ' ∆s−t . By
+Markov’s inequality on (4.13), we have that for all Q ∈ T′0 (Q) and r ∈ (δ, 1),
+                   |{Q′ ∈ T0 (Q) : d(Q, Q′ ) ≤ r}| ≤ ∆s−t−Cε rt−s .
+Thus, T′0 (Q) is a (∆, t − s)-set, which proves (P1).
+  To get (P2), we use (G2).
+                                 |T ∩ T0 | / δ −s = ∆−2s .
+By (G5), we have
+                |{(p, T ) ∈ (P ∩ Q) × T : T ∈ T (p) ∩ T0 }| ' ∆−s−t .             (4.14)
+Fix Q ∈ T0 (Q). Since |P ∩ Q| ≈ ∆−t by (G1) and |T (p) ∩ T0 | / ∆−s since
+T (p) is a (δ, s)-set, we use (4.14) to find a subset PQ ⊂ P ∩ Q with
+         |PQ | ≈ |P ∩ Q| ≈ ∆−t and |T (p) ∩ T0 | ≈ ∆−s for all p ∈ PQ .
+This verifies (P3). Finally, we get (P4) by |PQ | ≥ ∆Bε |P ∩ Q| for some constant
+B ≥ 1 and Proposition 4.3.
+
+                                               32
+4.4    Product-like structure
+This subsection is based on Section A.6 of [18].
+    Our goal is to find a product-type structure and apply Proposition 3.1.
+Choose coordinates such that the y-axis is in the direction of T0 , and let
+π(x, y) := x ∈ Rd−1 denote the orthogonal projection to the orthogonal com-
+plement of the y-axis. Define the function ∆−1 (x, y) = (∆−1 x, y). If T ∈ T0 ,
+then ∆−1 T is roughly a ∆-tube: it is contained in some C∆-tube and contains a
+c∆-tube for some universal constants c, C > 0. This technicality will not cause
+issues in what follows.
+    For each Q ∈ T0 (Q), let yQ ∈ ∆ · Z ∩ [0, 1) be a point such that the plane
+y = yQ intersects Q. By (P1), we know that Y = {yQ : Q ∈ T0 (Q)} is a
+(∆, t − s)-set. By (P4), we know that for each y ∈ Y that π(∆−1 (P ∩ Q))
+contains a (∆, κ′ , k)-set X′y with cardinality ' ∆−s . Let Xy ⊂ (∆ · Z)d ∩ [0, 1]d
+that is X′y rounded to the nearest multiple of ∆.
+                                        √
+    Now, let L = (∆ · Z) ∩ B(0, ∆( d + 1)) and T (Z) = {σ(T ) + x : T ∈
+T ∩ T0 , x ∈ L}. Clearly, |T (Z)| .d |T ∩ T0 | / ∆−2s by (P2). On the other
+hand, we show that |T (z)| := |{T ∈ T (Z) : z ∈ T}| ' ∆−s for any (x, y) ∈ Z.
+This follows since z = (x, yQ ) for some Q and x ∈ Xy . Let p ∈ PQ such
+that d(π(∆−1 p), x) ≤ ∆. We know d((π(∆−1 p), yQ ), ∆−1 p) ≤    √ ∆ since Q has
+diameter ∆, so by triangle inequality, we have d(∆−1 p, z) ≤ ( d + 1)∆. Thus,
+T (z) contains {σ(T ) + x : T ∈ T (p) ∩ T0 } for some suitable x ∈ L. By (P3),
+we get the desired cardinality estimate |T (z)| ≈ ∆−s .
+    Finally, we apply Proposition 3.1 to the sets Z and T (Z) to obtain a con-
+tradiction if ε > 0 is sufficiently small. This proves Theorem 4.2.
+
+
+5     Improved incidence estimates for general sets
+In this section, we will prove the following refinement of Theorem 1.8, following
+Sections 7-9 of [18].
+Theorem 5.1. For any 0 ≤ k < d − 1, 0 ≤ s < k + 1, s < t ≤ d, κ > 0,
+there exist ε(s, t, κ, k, d) > 0 and η(s, t, κ, k, d) > 0 such that the following holds
+for all small enough δ ∈ 2−N , depending only on s, t, κ, k, d. Let P ⊂ Dδ be a
+(δ, t, δ −ε )-set with ∪P ⊂ [0, 1)d , and let T ⊂ T δ be a family of δ-tubes. Assume
+that for every p ∈ P, there exists a (δ, s, δ −λ , 0) and (δ, κ, δ −λ , k)-set T (p) ⊂ T
+with |T (p)| = M such that T ∩ p 6= ∅ for all T ∈ T (p). Then |T | ≥ M δ −s−ε .
+  The original theorem follows from taking ε = η and pigeonholing, since
+M ∈ (δ −s+ε , δ −d ).
+Proof. Before anything else, we state the dependencies of the parameters: ε0 (s, t, κ, k, d),
+ε(ε0 , s, t, κ, k, d), T (ε), τ (s, t, ε), η(ε0 , τ ).
+   First, choose T = T (ε) such that 2 log            T
+                                                        T
+                                                          ≤ ε. By Lemma 2.17 we may find a
+             ′                 ′       ε
+subset P ⊂ P with |P | ≥ δ |P| that is {2−jT }m               j=1 -uniform for 2
+                                                                                 −mT
+                                                                                     = δ with
+
+
+
+                                          33
+associated sequence {Nj }m                   ′
+                              j=1 . Thus, P is a (δ, t, δ
+                                                          −2ε
+                                                              )-set. Replacing P with
+                   ε
+  ′
+P and ε with 2 , we may assume from the start that P is {2−jT }m         j=1 -uniform.
+    Let f be the corresponding branching function. Since P is a (δ, t, δ −ε )-set,
+we have f (x) ≥ tx − εm for all x ∈ [0, m].
+    Let {[cj , dj ]}nj=1 be the intervals from Proposition 2.14 applied with param-
+eters s, t, ε, corresponding to a sequence 0 < δ = ∆n < ∆n−1 < · · · < ∆1 <
+∆0 = 1. We can partition {0, 1, · · · , n − 1} = S ∪ B, “structured” and “bad”
+scales such that:
+        ∆j                                Q
+    • ∆j+1    ≥ δ −τ for all j ∈ S, and j∈B (∆j /∆j+1 ) ≤ δ −ε ;
+
+    • For each j ∈ S and p ∈ D∆j (P), the set Pj := Sp (P ∩ p) is either
+        (i) an (tj , ∆j+1 /∆j , (∆j /∆j+1 )ε , (∆j /∆j+1 )ε )-regular set, where tj ∈
+            (s, 2);
+      (ii) a (s, ∆j+1 /∆j , (∆j /∆j+1 )ε )-set.
+     Q                           Q
+    • j∈S (∆j /∆j+1 )tj ≥ |P| · j∈B (∆j+1 /∆j )d ≥ |P|δ Os,t,d (ε) .
+                                    ∆
+Apply Proposition 2.14 and ∆j+1  j
+                                   ≥ δ −τ to get a family of tubes Tp ⊂ T ∆j+1 /∆j
+with the property that (Sp (P ∩ p), Tp ) is a (∆j+1 /∆j , s, Cj1 , κ, Cj2 Mp )-nice con-
+                                               −1
+figuration for some Cj1 , Cj2 /δ (∆j+1 /∆j )−τ η and
+
+                                              N −1
+                                     |T0 |    Y    |Tpj |
+                                           'δ             .
+                                      M       j=0
+                                                   M pj
+
+Let S1 = {j ∈ S : tj ≥ s+t
+                        2 } and S2 = S \ S1 . Then
+      Y                                        Y                   s+t     t−s
+             (∆j /∆j+1 )tj ≥ |P|δ Os,t,d (ε)          (∆j /∆j+1 )− 2 ≥ δ 2 +Os,t,d (ε) .
+      j∈S1                                     j∈S2
+
+
+    For j ∈ S1 we apply Theorem 4.2 with parameters s, s+t     2 , and for j ∈ S2
+we apply Corollary 2.10. If ε0 (s, t, κ, k, d) is the η from Theorem 4.2, then for
+τ −1 η < ε0 , we get
+                          −s−ε0 Y       −s+O(ε)
+|T0 |    Y           ∆j                ∆j                        t−s
+      'δ                         ·                  ≥ δ −s(1−ε)−( 2 +Os,t,d (ε))ε0 +O(ε) ≥ δ −s−ε
+ M                  ∆j+1              ∆j+1
+         j∈S1                     j∈S2
+
+as long as ε is taken small enough in terms of ε0 , s, t, d.
+
+
+6     Sets contained in an (r0, k)-plate
+We restate Theorem 1.11.
+
+
+
+
+                                                34
+Theorem 6.1. For any 0 ≤ k < d − 1, 0 ≤ s < k + 1, max(s, k) < t ≤ d, κ > 0,
+r0 ≤ 1, there exists ε(s, t, κ, k, d) > 0 such that the following holds for all small
+enough δ/r0 ∈ 2−N ∩ (0, δ0 ), with δ0 depending only on s, t, κ, k, d. Let H be a
+(r0 , k + 1)-plate, P ⊂ Dδ ∩ H be a (δ, t, (δ/r0 )−ε )-set with ∪P ⊂ [0, 1)d , and let
+T ⊂ T δ ∩ H be a family of δ-tubes. Assume that for every p ∈ P, there exists a
+set T (p) ⊂ T such that:
+    • T ∩ p 6= ∅ for all T ∈ T (p);
+    • T (p) is a (δ, s, (δ/r0 )−ε r0k−s , 0)-set down from scale r;
+    • T (p) is a (δ, κ, (δ/r0 )−ε r0−κ , k)-set.
+                            2(s−k)
+Then |T | ≥ ( rδ0 )−ε δ −2s r0       .
+
+6.1      Multiscale analysis
+We will use Theorem 1.8 to prove Theorem 1.11. Let SH be the dilation sending
+H to [0, 1]d . Then P, T (p), and T become deformed under SH , but they satisfy
+the following statistics assumptions for r ∈ [ rδ0 , 1]:
+                                 −ε
+                   −1          δ
+             |P ∩ SH  (Q)| ≤            · |P| · rt ,   Q ∈ Dr (Rd ),            (6.15)
+                               r0
+                            −ε
+                 −1          δ
+       |T (p) ∩ SH  (T)| ≤         · |T (p)| · rs ,    T   r-tube,              (6.16)
+                            r0
+                            −ε
+                −1          δ
+      |T (p) ∩ SH (W )| ≤          · |T (p)| · rκ ,    W    (r, k + 1)-plate.   (6.17)
+                            r0
+                                   −1
+To prove (6.15), observe that SH       (Q) is contained in an r-ball, and then we use
+                          −ε
+that P is a (δ, t, (δ/r0 ) , 0)-set.
+                                        −1
+    To prove (6.16), observe that SH        (T) is contained in a box with k sides of
+length r and d − k sides of length rr0 . This box can be covered by ∼ r0−k many
+rr0 -balls. Finally, use that T (p) is a (δ, s, (δ/r0 )−ε r0k−s , 0)-set.
+                                        −1
+    To prove (6.17), observe that SH        (W ) is contained in a (rr0 , k)-plate.
+    Using these observations, we obtain the following refinement of Proposition
+2.13. We use (δ, s, C1 r0k−s , κ, C2 , M )-nice configuration down from scale r0 to
+indicate that T (p) is a (δ, s, C1 r0k−s , 0)-set down from scale r0 .
+Proposition 6.2. Fix dyadic numbers 0 < δ ′ = rδ0 < ∆ ≤ 1. Let (P0 , T0 )
+be a (δ, s, C1 r0k−s , κ, C2 , M )-nice configuration down from scale r0 , and assume
+P0 ⊂ H for some (r0 , k)-plate H. Then there exist refinements P ⊂ P0 , T (p) ⊂
+T0 (p), p ∈ P, and T∆ (Q) ⊂ T ∆ such that denoting T∆ = ∪Q∈D∆ (SH (P)) T∆ (Q)
+and T = ∪p∈P T (p) the following hold:
+  (i) |D∆ (SH (P))| ≈∆ |D∆ (SH (P0 ))| and |SH (P) ∩ Q| ≈∆ |SH (P0 ) ∩ Q| for all
+      Q ∈ D∆ (P).
+
+
+                                             35
+                        |T0 |
+ (ii) We have |T ∩ T| / |T ∆|
+                              for all T ∈ T∆ .
+                                    1       2                       1          2
+(iii) (D∆ (SH (P)), T∆ ) is (∆, s, C∆ , κ, C∆ , M∆ )-nice for some C∆ ≈∆ C1 , C∆ ≈∆
+      C2 , and M∆ ≥ 1.
+(iv) For all T ∈ T∆ (Q), we have
+
+                                               −1                 M · |SH (P) ∩ Q|
+        |{(p, T ) ∈ P × T : T ∈ T (p) and T ⊂ SH  (T)}| '∆                         .
+                                                                      |T∆ (Q)|
+                                                 1            2
+ (v) For each Q ∈ D∆ (SH (P2 )), there exist CQ    ≈∆ C1 , CQ   ≈∆ C2 , MQ ≥ 1, a
+     subset PQ ⊂ P ∩ Q with |PQ | '∆ |P ∩ Q| and a family of tubes TQ ⊂ T δ/∆
+                 −1                                        1 k−s      2
+     such that (SH  ◦ SQ (SH (P2 ) ∩ Q), TQ ) is (δ/∆, s, CQ r0 , κ, CQ , MQ )-nice
+     down from scale r0 .
+   Furthermore, the families TQ can be chosen so that
+                                                           
+                    |T0 |    |T ∆ (T )|               |TQ |
+                          '∆            ·    max              .                 (6.18)
+                     M          M∆         Q∈D∆ (P2 ) MQ
+
+Proof. The proof will involve many dyadic pigeonholing steps.
+    Step 1: construct T∆ (Q). For a given Q ∈ D∆ (SH (P0 )) := Q0 , we claim
+                                        −1                           −1
+that we can find a subset PQ ⊂ P0 ∩ SH     (Q) with |PQ | ≈∆ |P0 ∩ SH   (Q)| and
+a family of dyadic ∆-tubes T ∆ (Q) intersecting Q such that the following holds:
+                          1                      2                    1    2
+(T1) T ∆ (Q) is a (∆, s, C∆ , 0)-set and (∆, κ, C∆ , k)-set for some C∆ , C∆ ≈∆ C1 .
+(T2) there exists a constant HQ ≈∆ M · |PQ |/|T ∆ (Q)| such that
+                                                −1
+      |{(p, T ) ∈ PQ × T0 : T ∈ T0 (p) and T ⊂ SH  (T)}| & HQ ,          T ∈ T ∆ (Q).
+
+This claim generalizes [18, Proposition 4.1] and relies on the same dyadic pi-
+geonholing steps; for brevity, we only state these steps and refer the reader to
+[18] for the detailed proof. (We essentially follow the same proof for (T2), and
+we introduce a nice shortcut to derive (T1) from (T2).) Let T∆ (Q) ⊂ T ∆ be a
+minimal finitely overlapping cover of SH (TQ ) := ∪p∈P0 ∩Q SH (T0 (p)) by ∆-tubes.
+For p ∈ P0 ∩ Q, define
+                                                             −1
+       T∆,j (p) = {T ∈ T∆ (Q) : 2j−1 < |{T ∈ T (p) : T ⊂ SH     (T)}| ≤ 2j }.
+                                         P
+Since |T∆ (Q)| . 100∆−2(d−1) and M . j 2j · |T∆,j (p)|, we in fact have
+                                   X
+                     M.                       2j · |T∆,j (p)|
+                            M∆2(d−1) /200≤2j ≤M
+
+Thus, by dyadic pigeonholing, there exists j = j(p) such that 2j ·|T∆,j (p)| ≈∆ M .
+Another dyadic pigeonholing allows us to find PQ ⊂ P0 ∩ Q such that j(p) is
+constant for p ∈ PQ . This is the desired refinement PQ of P0 ∩ Q. Finally, let
+
+        T∆,i (Q) := {T ∈ T∆ (Q) : 2i−1 < |{p ∈ PQ : T ∈ T∆ (p)}| ≤ 2i }.
+
+                                         36
+Then by a similar dyadic pigeonholing (for calculations, see [18, Proposition
+4.1]), there is i such that
+        1
+           |PQ |∆d−1 ≤ 2i ≤ |PQ | and 2i+j · |T∆,i (Q)| ≈∆ M · |PQ |.        (6.19)
+       200
+Finally, we define T ∆ (Q) := T∆,i (Q), which is the desired refinement of T∆ (Q).
+   We check (T2) holds with HQ = 2i+j , which satisfies HQ ≈∆ M ·|P∩Q|/|T ∆ |
+by (6.19) and |PQ | ≈∆ |P ∩ Q|. With this choice of HQ , fix T ∈ T ∆ and note
+that
+                                                     X
+                                        −1                                  −1
+  |{(p, T ) ∈ PQ ×T0 : T ∈ T0 (p), T ⊂ SH  (T)}| =       |{T ∈ T (p) : T ⊂ SH  (T)}|
+                                                    p∈PQ
+                                          j
+                                      ≥ 2 |{p ∈ PQ : T ∈ T∆ (p)}| ≥ 2i+j = H.
+
+To check (T1), we first pick a r-tube Tr with r ≥ ∆. Then by (T2) and (6.16),
+
+                             1                                        −1
+  |{T ∈ T ∆ : T ⊂ Tr }| .      |{(p, T ) ∈ PQ × T0 : T ∈ T0 (p), T ⊂ SH  (Tr )}|
+                             H
+                                                   1
+                                                . |PQ | · C1 M rs / C1 |T ∆ |rs .
+                                                  H
+                             1                1
+Thus, T ∆ (Q) is a (∆, s, C∆   , 0)-set with C∆  ≈∆ C1 . Doing the same calcu-
+lation with an (r, k + 1)-plank instead of an r-tube, we get that T ∆ (Q) is a
+         2                2
+(∆, κ, C∆  , k)-set with C∆ ≈∆ C1 . This proves (T1) and thus the claim.
+    Step 2: uniformity of |T0 ∩ T|. By the pigeonhole principle, we can find
+M ∆ ≥ 1 and a subset Q ⊂ D∆ (P) with |Q| ≈∆ |Q0 | such that |T ∆ (Q)| ∼ M ∆
+for all Q ∈ Q. Write                     [
+                                 T∆=        T ∆ (Q).
+                                       Q∈Q
+                                                                  ′
+Next, by another dyadic pigeonholing, we can find a subset T ∆ ⊂ T ∆ such that
+        ′                                               ′
+I(Q, T ∆ ) ' I(Q, T ∆ ) and |T0 ∩ T| ∼ N∆ for all T ∈ T ∆ . Also, |T ∆ (Q)| . M ∆
+for all Q ∈ Q. Thus, we can find Q′ ⊂ Q with |Q′ | ≈∆ |Q|, and for each Q ∈ Q′
+                                                             ′
+a subset T∆ (Q) of cardinality ≈ M ∆ , such that T∆ (Q) ⊂ T ∆ . In other words,
+
+                         |T0 ∩ T| ∼ N∆ for T ∈ T∆ (Q).
+
+Thus, we obtain item (ii).
+
+                    |T0 | ≥ |T∆ | · min |T0 ∩ T| ∼ |T∆ | · N∆ .              (6.20)
+                                  T∈T∆
+
+Reduce the families T∆ (Q) such that their cardinality is M∆ := min(|T∆ (Q)| :
+                                                     1                  2
+Q ∈ Q}) ≈δ M ∆ . By (T1), T∆ (Q) remains a (∆, s, C∆   , 0) and (∆, κ, C∆ , k)-set
+      1     2
+with C∆ , C∆ ≈δ C1 .
+   Finally, define                    [
+                                P=        PQ ,
+                                         Q∈Q
+
+
+                                         37
+                                                               −1
+where Q is the latest refinement of Q0 . Since |PQ | ≈∆ |P0 ∩ SH  (Q)|, we get
+that item (i) holds.
+   For p ∈ PQ = P ∩ Q, Q ∈ Q, define
+                     [                     [              [
+         T (p) =         (T0 (p) ∩ T), T =    T (p), T∆ =     T∆ (Q).
+                  T∈T∆ (Q)                       p∈P             Q∈Q
+
+                                             1        2
+Thus, (D∆ (P), T∆ ) = (Q, T∆ ) is a (∆, s, C∆  , κ, C∆  , M∆ )-nice configuration, es-
+tablishing item (iii). To summarize, in this step, we refined Q and T∆ (Q) for
+Q ∈ Q, so (T2)/(iv) still holds (with same HQ and a weaker implied constant).
+    Step 3: uniformity of T (p) and construct TQ . This step will be devoted
+to verifying (v) and (6.18). We will not change P, T , or T∆ .
+                                     −1
+    Fix Q ∈ Q, and let PQ = P ∩ SH      (Q). Define
+                                          [
+                               T (Q) =         T (p).
+                                            p∈PQ
+
+By dyadic pigeonholing and (T2), we can find a ≈∆ -comparable subset of PQ
+(which we keep denoting PQ ) such that
+                             |T (p)| ≈∆ M,         p ∈ PQ .
+Next,                              X
+                     |T (Q)| ≤              |T ∩ T| /∆ M∆ · N∆ .               (6.21)
+                                 T∈T∆ (Q)
+                                                                           −1
+    For a given p ∈ Q, we consider the tube packet U(p) := T (p) ∩ SH         (Q)
+                                                                          −2(d−1)
+(discarding duplicate tubelets). Each tubelet u ∈ U(p) lies in at most ∆
+many tubes of T (p), so by dyadic pigeonholing, we can refine T (p) by a log ∆−1
+factor to ensure that each tubelet u ∈ U(p) lies in ∼ m(p) many tubes of T (p),
+                          M
+and there are M (p) ≈∆ m(p)   many distinct tubelets through p. By refining PQ
+            −1
+by a (log ∆ )-factor, we may assume m(p) ≈ mQ for each p ∈ PQ . Now, define
+                                               [
+                −1                                   −1
+        P Q := SH  ◦ SQ ◦ SH (PQ ) and TQ :=        SH  ◦ SQ ◦ SH (U(p)).
+                                                   p∈PQ
+
+Since tubelets are essentially distinct and each tubelet in any U(p) corresponds
+to ≈ mQ many tubes in T (Q), we obtain:
+
+                                   [                           M
+                    |T (Q)| '∆           U(p) · mQ & |TQ | ·      .            (6.22)
+                                                               MQ
+                                  p∈PQ
+
+Then (6.18) will follow by combining (6.20), (6.21), and (6.22).
+                                                1 k−s
+    We finally check (P Q , TQ ) is a (δ/∆, s, CQ          2
+                                                  r0 , κ, CQ , MQ )-nice configura-
+tion down from scale r0 . First, for any δ < r < r0 , we have for any (r, 0)-plank
+H in S d−1 ,
+                        1                    1
+     |σ(TQ ) ∩ H| ∼∆      |σ(T (p)) ∩ H| /∆    · C · M · r s = C · MQ · r s .
+                       mQ                   mQ
+
+                                            38
+                           1                                   1
+Thus, σ(TQ ) is a (δ, s, CQ  , 0)-set down from scale r0 with CQ ≈∆ C1 . Similarly,
+                    2                  2
+σ(TQ ) is a (δ, κ, CQ , k)-set with CQ ≈∆ C2 . This shows item (v) and thus the
+proof of the Proposition.
+
+
+6.2    Good multiscale decomposition
+The idea is to apply Proposition 6.2, then apply Theorem 1.8 to bound |T∆ | and
+Corollary 6.5 to bound |TQ |. Unfortunately, while we use pigeonholing to ensure
+                                                        −1
+that D∆ (SH (P)) is a (∆, t)-set, we don’t know that SH    ◦ SQ (SH (P) ∩ Q) is a
+  δ
+( ∆ , t)-set. In fact, we won’t show this statement, but rather a slightly weaker
+statement that is good enough. For this, a good choice of ∆ based on the
+branching structure of P is needed.
+     First, we explain the pigeonholing preliminaries.
+Lemma 6.3. Given P ⊂ Hr , a (r0 , k)-plane, there is a subset P ′ ⊂ P with
+|P ′ |δ ≥ (log( rδ0 ))−1 |P |δ such that |Q∩SH (P )| is constant for all Q ∈ Dδ/r0 (SH (P )).
+                            P           −1                                      −1
+Proof. Let f (N ) P    =       {|P ∩ SH    (Q)|δ : Q ∈ Dδ/r0 ([0, 1]d ), |P ∩ SH   (Q)|δ ∈
+[N, 2N ]}. Then            N dyadic f (N )  = |P | δ . For each N , either  f (N )  = 0 or
+                          d
+N ≤ f (N ) ≤ (r0 /δ)P· N . Hence, if N0 is the largest N for which f (N ) > 0, we
+get f (N0 ) ≥ N0 > M<N0 (δ/r0 )d /100 dyadic f (M ). Thus, we have
+                                  X                            1
+                                                    f (M ) >     |P |δ .
+                                                               2
+                     N0 (δ/r0 )d /100<M<N0 dyadic
+
+
+Thus, by dyadic pigeonholing, there exists M ∈ (N0 (δ/r0 )d /100, N0) such that
+          1
+f (M ) ≥ 20d (log( rδ0 ))−1 |P |δ .
+                                 −1
+    The next step is to make SH     ◦ SQ (SH (P) ∩ Q) satisfy a t′ -dimensional
+                        ′
+spacing condition with t just slightly less than t, for all Q ∈ D∆ (SH (P)) at a
+certain scale ∆. To do so, we need the following lemma.
+Lemma 6.4. Fix C, ε > 0, and let rδ0 = ∆m and P ⊂ Hr be a (δ, t, C, 0)-set
+in Hr , a (r0 , k)-plane. Let L = log( rδ0 ) · (log(1/∆))m . If t′ < t−dε
+                                                                      1−ε , then there
+exists mε ≤ k ≤ m and a subset P ′ ⊂ P with |P ′ | ≥ L−1 |P | such that for any
+k ≤ j ≤ m, Q ∈ D∆k (P ′ ), and R ∈ D∆j (P ′ ) ∩ Q, we have
+                                                                      ′
+                             −1                −1
+                     |P ′ ∩ SH  (R)| ≤ |P ′ ∩ SH  (Q)| · ∆(j−k)t ,                 (6.23)
+
+and for δ ≤ r ≤ rδ0 and a ball Br , we have
+                                                              r t′
+                                                   −1
+                     |P ′ ∩ Br | ≤ C · L · |P ′ ∩ SH  (Q)|                 .       (6.24)
+                                                               ∆k
+Proof. Throughout this proof we will not distinguish between mε and ⌈mε⌉.
+
+
+
+                                           39
+    First, we will make SH (P ) uniform at scales 1, ∆, ∆2 , · · · , ∆m = rδ0 . By
+Lemmas 6.3 and 2.17, we can find |P ′ | ≥ L−1 |P | such that there is a sequence
+(Nj )nj=1 with |SH (P ′ ) ∩ Q|∆k = Nk for all 1 ≤ k ≤ n and Q ∈ D∆k (P ′ ).
+                                                                                 ′
+    Let mε ≤ k ≤ m be the largest index such that Nk ≥ |P ′ |∆mε·d+(k−mε)t
+                                       ′
+for one (equivalently all) Q ∈ D∆k (P ). Certainly k = mε is a valid index since
+|D∆mε | = ∆−dmε .
+    Now, we will check the given conditions. By maximality of k, we have for
+k ≤ j ≤ m,                                    ′            ′
+                      Nj ≤ |P ′ |∆dmε+(j−mε)t ≤ Nk ∆(j−k)t .
+                      −1
+Noticing that |P ′ ∩ SH  (Q)| = |SH (P ′ ) ∩ Q| and likewise for R ∈ D∆j (P ′ ) ∩ Q,
+this proves (6.23).
+                                                                 ′                   ′
+    To check (6.24), we recall that LNk ≥ L·|P ′ |∆dmε+(k−mε)t ≥ |P |∆dmε+(k−mε)t .
+Using r ≤ rδ0 = ∆m , t′ ≤ t−dε
+                            1−ε , and that P is a (δ, t, C)-set, we have
+
+                                                                r t′
+              |P ′ ∩ Br | ≤ |P ∩ Br | ≤ C|P |rt ≤ C · Nk L               .
+                                                                 ∆k
+
+
+   Finally, we will need the following variant of Corollary 2.10.
+Corollary 6.5. Let 0 ≤ max(s, k) < t ≤ d − 1, δ ≤ r ≤ 1, and let CP ≥
+1, CT ≥ 0. Let P ⊂ Dδ be a set contained in an (r0 , k + 1)-plate H satisfying
+the following conditions:
+   • For all rδ0 ≤ r ≤ 1 and balls Br , we have
+                                   −1
+                             |P ∩ SH  (Br )| ≤ CP · |P| · rt .                   (6.25)
+
+   • For all δ ≤ r ≤ rδ0 and balls Br , we have
+
+                                |P ∩ Br | ≤ CP · |P| · rt .                      (6.26)
+
+Assume that for every p ∈ P there exists a family T (p) ⊂ T δ of dyadic δ-tubes
+satisfying the following conditions:
+   • T ∩ p 6= ∅ for all T ∈ T (p);
+   • |T (p) ∩ T| ≤ CT · |T (p)| · r0k−s xs for all x-tubes T with δ ≤ x ≤ r0 .
+Further assume that |T (p)| = M for some M ≥ 1. If T = ∪p∈P T (p), then
+
+                          |T | & (CP CT )−1 · M r0s−k δ −s .
+
+Proof. Let
+                   jP (P, T ) = {(q, t) ∈ P × T (p) : t ∈ T (q)}
+   We have the following:
+
+
+                                         40
+Lemma 6.6. For all p ∈ P, we have jp (P, T ) .s,t,k CP CT |P| · M r0k−s δ s .
+Proof. We count jp (P, T ) by first choosing a dyadic δ < r < 1, then counting
+the number of q ∈ P with |p − q| ∼ r, then finally counting the number of t ∈ T
+that pass through p, q.
+     If r > rδ0 , we claim that if |x − y| ∈ [r, 2r] and some tube through x, y lies in
+                                                   −1
+H, then |SH (x) − SH (y)| ≤ 100r, so y ∈ SH           (B100r (SH (x))).
+                                                 1
+     To prove this, we may assume r0 ≤ 50 , as otherwise we can use the simple
+fact |SH (x)− SH (y)| ≤ r0−1 |x− y| ≤ 100r. Now choose a coordinate system such
+that the first k+1 axes correspond to the long sides of H, and the remaining axes
+correspond to the short sides of H. Let x − y = (~a, ~b) ∈ Rk+1 × Rd−k−1 . Then
+|~a| ≤ |x−y| ≤ r. Furthermore, we have |~b| ≤ 50r0 |~a|, otherwise any tube through
+x, y would be roughly orthogonal to H and intersect H in a subtube with length
+2r0 ≤ 1, contradiction. Thus, we have |SH (x) − SH (y)| ≤ |~a| + r0−1 |~b| ≤ 100r.
+     Using the claim and condition (6.25), we see that there are . CP |P| · rt
+many choices for q. For each q, the set of tubes t ∈ T (p) passing through q
+lies in a δr -tube, so by the tube non-concentration condition (and noting that
+                               k−s δ s
+ δ
+                                        
+ r < r0 ), we have CT · M r0          r   choices for t.
+     Thus, the contribution to jp (P, T ) for a given dyadic r > rδ0 is CP CT |P| ·
+M r0k−s δ s · rs−t , and summing over dyadic r gives CP CT |P| · M r0k−s δ s · Os−t (1).
+     If r < rδ0 , then by condition 6.26 we see that there are . CP |P| · rt many
+choices for q. For each q, the set of tubes t ∈ T (p) passing through q lies in
+a rδ -tube Tδ/r . We note that rδ > r0 , so the tube non-concentration doesn’t
+apply directly, but luckily we note that Tδ/r ∩ H can be covered by ( rrδ0 )k
+many r0 -tubes. Thus, by using tube non-concentration at scale r0 , we have
+CT · M r0k · ( rrδ0 )k choices for t.
+     Thus, the contribution to jp (P, T ) for a given dyadic r < rδ0 is (after some
+manipulation)
+                                             t 
+                                               δ        rr0 t−k
+                            CP CT |P |M r0k          ·           .
+                                              r0         δ
+                                                          s
+Since t > max(k, s), the sum is . CP CT |P |M r0k rδ0 .
+   Adding up both r > rδ0 and r < rδ0 contributions, we prove the Lemma.
+   For t ∈ T , let P(t) = {p ∈ P : t ∈ T (p)}. By Cauchy-Schwarz, we have
+                                        !2
+                         X                            X                      X
+         (M |P|)2 =            |P(t)|        ≤ |T |         |P(t)|2 = |T |         jp (P, T ).
+                         t∈T                          t∈T                    p∈P
+
+By Lemma 6.6, we get
+
+                             M 2 |P|2
+               |T | ≥                          = (CP CT )−1 M r0s−k δ −s .
+                        CP CT |P|2 M r0k−s δ s
+
+
+
+
+                                                 41
+Proof of Theorem 6.1. A small reduction: we would like to assume |T (p)| ∼
+M for all p ∈ P. To assume this, we first observe that |T (p)| ≥ M0 =
+(δ/r0 )−ε r0k−s δ −s for all p ∈ P. On the other hand, if for at least half of
+the p ∈ P (call them P ′ ) we have |T (p)| ≥ M0 (δ/r0 )−1 , then we are imme-
+diately done by Corollary 6.5 applied to P ′ and T (p). Thus, by reducing P
+if necessary, we may assume |T (p)| ∈ (M0 , M0 (δ/r0 )−1 ). Then by reducing P
+further by a . log(δ/r0 )−1 factor, we may assume |T (p)| ∈ (M, 2M ) for some
+M ∈ (M0 , M0 (δ/r0 )−1 ). Finally, we may remove some tubes from each T (p) to
+make |T (p)| = M . Then (P0 , T0 ) is a (δ, s, C1 r0k−s , κ, C2 , M )-nice configuration.
+    Pick β(s, t, k) > 0 such that t−dβ                                    ′
+                                        1−β > max(s, k), and let t = 2 ( 1−β +
+                                                                               1 t−dβ
+
+max(s, k)). Pick ∆ > 0 such that log(1/∆) < ∆−ε . Find ∆′ = ∆k ∈
+(δ/r0 , (δ/r0 )β ) such that the conclusion of Lemma 6.4 holds. Now by Proposi-
+tion 6.2, we have
+                                                  ′
+                                |T |   |TQ | |T ∆ (T )|
+                                     ≥      ·             .
+                                M      MQ       M∆′
+If ε < βη 2 , where η(s, t, κ, k, d) is the parameter in Theorem 5.1, we have
+    ′                √
+|T ∆ (T )|
+   M∆′     ≥ (∆′ )−s− ε .
+                      −1
+    Pick Q. Then SH       ◦ SQ (SH (P) ∩ Q) satisfies the conditions of Corollary 6.5
+              −ε                                       −ε                      −s
+                                                |T |
+with CP = rδ0        · L · ∆−d . Thus, we have MQQ ≥ rδ0       ∆d L−1 · r0s−k ∆δ ′     .
+                                            ε s−k −s
+Using these two bounds and M ≥ (δ/r0 ) r0 δ , we get
+                                      2ε−√εβ
+                                  δ                       2(s−k)
+                     |T | ≥                      ∆−d L−1 r0        · δ −2s .
+                                  r0
+
+It remains to choose ε < β 2 /100 and also for rδ0 small enough, we have ∆−d <
+ −ε             −ε              −2ε                    −ε
+   δ                δ       −εm      δ                        δ     2(s−k)
+  r0    and  L ≤   r0    ∆       ≤   r0     . Thus,  |T | ≥  r0    r0      · δ −2s
+and we are done.
+
+
+7     Power decay around k-planes
+In this section, we will roughly deal with the following situation:
+    • µ, ν are s-Frostman measures with k − 1 < s ≤ k;
+    • ν gives mass ≤ ε to any (r0 , k)-plate.
+In other words, ν does not concentrate around (r0 , k)-plates. We would like to
+understand the ν-mass of (r, k)-plates for r much smaller than r0 . A result of
+Shmerkin [25, Proposition B.1] says that there exist r1 (r0 , s, k), κ(s, k) > 0, a
+subset X ⊂ sptµ with µ(X) > 1 − O(ε), and for each x ∈ X, a subset Yx ⊂ sptν
+with µ(Yx ) > 1 − O(ε) such that ν(H ∩ Yx ) ≤ rη for all r ≤ r1 and (r, k)-plates
+H through x. Thus, we do obtain a power decay for sufficiently small r. But
+what is the optimal starting point of the power decay? Can we hope for a power
+
+
+                                                 42
+decay ν(H ∩Yx ) . K( rr0 )η for all (r, k)-plates through x? The answer is yes, and
+indeed we shall prove it by making small but meaningful tweaks to Shmerkin’s
+argument. But before stating our result, we shall introduce some convenient
+notation. We define thin k-plates, a generalization of thin tubes, as follows.
+Definition 7.1. Let K, t ≥ 0, 1 ≤ k ≤ d − 1, and c ∈ (0, 1]. Let µ, ν ∈ P(Rd )
+supported on X, Y . Fix G ⊂ X × Y . We say (µ, ν) has (t, K, c)-thin k-plates
+on G down from scale r0 if
+
+ ν(H ∩ G|x ) ≤ K · rt    for all r ∈ (0, r0 ) and all (r, k)-plates H containing x.
+                                                                              (7.27)
+
+Remark 7.2. In this paper, we will choose G = (A ∪ B)c where µ × ν(B) is
+small. (The complement is taken with respect to Rd × Rd .) In this case, the
+equation (7.27) becomes
+
+ν(H\(A|x ∪B|x )) ≤ K·rt      for all r ∈ (0, r0 ) and all (r, k)-plates H containing x.
+
+   Now, we can state the main proposition, which generalizes and extends
+Proposition B.1 of [25]. It may be of independent interest.
+Proposition 7.3. Let 1 ≤ k ≤ d−1 and k−1 < s ≤ k. There exist η(κ, k, d) > 0
+and K0 (κ, k, d) > 0 with the following property. Fix r0 ≤ 1 and K ≥ K0 .
+Suppose that µ, ν are positive measures with |µ|, |ν| ≥ 1 and for any (r, k − 1)-
+plate H, we have
+
+                                  µ(H) ≤ Cµ rκ ,
+                                  ν(H) ≤ Cν rκ .
+
+Let A ⊂ X × Y be the pairs of points that lie in some K −1 -concentrated (r0 , k)-
+plate. Then there exists B with µ × ν(B) ≤ K0 K −1 such that (µ, ν) have
+(η, Kr0−η )-thin k-plates on (A ∪ B)c . (The complement is taken with respect to
+Rd × Rd .)
+Remark 7.4. (a) We can apply Proposition 7.3 in case µ, ν are s-dimensional
+with s > k − 1.
+   (b) In Proposition B.1 of [25], the exponents for µ, ν are allowed to differ.
+The proof of Proposition 7.3 is easily modified to include this detail.
+    To prove Proposition 7.3, we need the following two lemmas. Fix r ≤ r0 .
+The first says that there are few dense (r, k)-plates, and the second says that
+for most x ∈ X, the dense (r, k)-plates through x lie in some (r0 , k)-plate.
+Lemma 7.5. There is N = N (κ, k, d) such that the following holds: let ν be
+a measure with mass ≤ 1 such that ν(W ) ≤ Cν ρκ for all (ρ, k − 1)-plates W ,
+1 > ρ > r. Let Er,k be a set of (r, k)-plates such that every (s, k)-plate contains
+     (k+1)(d−k)
+. rs             many r-plates of Er,k (as in Section 2.2). Let H = {H ∈ Er,k :
+ν(H) ≥ a}. Then |H| . ( Caν )N .
+
+
+                                        43
+    Lemma 7.5 follows from the condition on Er,k and the following generalization
+of [25, Lemma B.3]. In the case a = δ η , the resulting bound is stronger but the
+assumption is also stronger.
+Lemma 7.6. Suppose ν(W ) ≤ Cν ρκ for all (ρ, k − 1)-plates W , 1 > ρ > r.
+Then there exists a family of . a−1 many (r(Cν /a2 )1/κ , k)-plates {Tj } such that
+every (r, k)-plate H with ν(H) ≥ a is contained in some plate Tj .
+Proof. Choose a maximal set of (r, k)-plates {Yj }m
+                                                  j=1 such that
+
+   1. ν(Yi ) ≥ a,
+  2. ν(Yi ∩ Yj ) ≤ a2 /2 for 1 ≤ i < j ≤ m.
+We claim m ≤ 2a−1 . Indeed, if S = i=1 ν(Yi ) and f = i=1 1Yi , then, then
+                                      Pm                Pm
+
+       Z       2 Z                     X
+  2
+ S =       f dν    ≤ f 2 dν = S +           ν(Yi ∩ Yj ) ≤ S + m2 a2 /2. (7.28)
+                                          1≤i<j≤m
+
+                                      2
+Now, S ≥ ma > 2, so S 2 − S > S2 . Combining with (7.28) gives S 2 < m2 a2 , a
+contradiction.
+    Let {Tj }m                  2 1/κ
+             j=1 be the (r(Cν /a )    , k)-plates with same central k-plane as Yj .
+We show the problem condition. Given an (r, k)-plate H with ν(H) ≥ a, by
+maximality there exists Yj such that ν(H ∩ Yj ) ≥ a2 /2. Thus, if ∠(H, Yj ) is the
+largest principal angle between the central planes of H and Yj , then H ∩ Yj is
+contained in a box of dimensions
+
+                       1 × · · · × 1 ×r/∠(H, Yj ) × r × · · · × r .
+                       | {z }                       | {z }
+                        (k−1) times                    d−k times
+
+Thus, H ∩ Yj is contained in a (r/∠(H, Yj ), k − 1)-plate, so ν(H ∩ Yj ) ≤
+Cν (r/∠(H, Yj ))κ . Thus, ∠(H, Yj ) . r(Cν /a2 )1/κ , so H is contained in Tj .
+Remark 7.7. We would like to present an alternative proof of Lemma 7.5,
+which was the original one found by the author. It gives slightly worse bounds
+but we believe it is slightly more motivated.
+                                                      1/κ
+   If a > 1 then H = ∅, so assume a ≤ 1. Let ξ = 2Ca ν      ≤ 1. By induction,
+for each 0 ≤ i ≤ k, there exist x0 , · · · , xi such that |x0 ∧ x1 ∧ · · · ∧ xi | ≥ ξ i and
+that lie in at least |H|( a2 )i+1 many elements of H.
+    The base case i = 1 is trivial. For the inductive step, suppose x0 , · · · , xi
+are found. Let Ω be the r̃-neighborhood of the span of x1 , · · · , xi . Then since
+µ(Ω) ≤ Cν ξ κ < 21 a for every H ∈ H, we have µ(H \ Ω) ≥ 21 a. Thus, there is
+xi+1 ∈ Rd \ Ω such that x0 , · · · , xi+1 lie in at least |H|( a2 )(i+2) many elements
+of H, and by construction, |x0 ∧ x1 ∧ · · · ∧ xi+1 | ≥ ξ i+1 . This completes the
+inductive step and thus the proof of the claim.
+    Finally, the set of (r, k)-plates through x1 , · · · , xk must lie in a (rξ −k , k)-
+plate, so at most ξ −k(k+1)(d−k) many (r, k)-plates of Er,k can lie in it. Thus,
+|H| ≤ ( a2 )−(k+1) ξ −k(k+1)(d−k) . ( Caν )N .
+
+                                            44
+   The following lemma is in the same spirit as [25, Proposition B.2].
+Lemma 7.8. Let H be a collection of (r, k)-plates, and suppose µ(W ) ≤ Cµ ρκ
+                     W , 1 > ρ > r. Then for all x ∈ X except a set of
+for all (ρ, k − 1)-plates
+                               κ
+µ-measure ≤ Cµ rr0 |H|2 , there exists an (r0 , k)-plate that contains every
+(r, k)-plate in H that passes through x.
+Proof. The exceptional set is contained in the set of x ∈ X that lies in two plates
+of H with “angle” ≥ r10 . The intersection of two such plates is contained in a
+                           · · × r} × rr0 × 1| × ·{z
+box with dimensions |r × ·{z                       · · × 1}, which in turn is contained in
+                               d−k times           k−1 times
+a ( rr0 , k − 1)-plate (since r0 ≤ 1). Thus, by assumption on µ, this box has mass
+          s−(k−1)
+. Cµ rr0              . Finally, there are |H|2 pairs of plates in H.
+                                                       κ
+Proof of Proposition 7.3. Fix r ≤ r0 , and let η = 4N    , where N is the constant
+in Lemma 7.5. We may assume   η N  ≥  2. By  Lemmas    7.5 and 7.8, we can find a
+                          −2  r
+set Er with µ(Er ) ≤ K        r0   and, for each x ∈ / Er , a set Pr (x) ⊂ Y that is
+                                                                           η
+                      1/2 1/2
+either empty or a (r0 r , k)-plate through x such that ν(W ) ≤ K rr0               for
+every W intersecting Y \ Pr (x).
+    Now, let E = ∪n≥0 Er0 K −2n and P (x) = ∪n≥0 Pr0 K −2n (x). We claim that
+µ(E) ≤ K −1 and if x ∈/ E, then ν(P (x) \ A|x ) . K −1 . Then if r ≥ r0 K −1 , then
+                         η                                      n                      n−1
+                    r
+ν(W ) ≤ 1 ≤ K       r0         for η < 1; for any r0 K −2 ≤ r < r0 K −2                      , we have for
+any (r, k)-plate W ,
+                                                           n−1
+                                                                    !η                η/2
+                                                  r0 K −2                         r
+              ν(W \ Pr0 K −2n (x)) ≤ K                                   ≤K
+                                                      r0                          r0
+                                    −η/2
+Then (µ, ν) have (η/2, K 2 r0     , 1 − K −1 )-thin k-plates relative
+                                                               P∞ to A. n
+    To prove the first claim, we observe that µ(E) ≤ K −2 n=0 K −η2 ≤ K −1
+if K0 is sufficiently large in terms of η.
+    Next, by definition of Pr0 K −2n−1 , we have ν(Pr0 K −2n (x) \ Pr0 K −2n−1 (x)) ≤
+       −2n−1
+               η/2          n−2
+K r0 K r0            ≤ K 1−2 η . We also have the bound ν(Pr0 2−n (x) \ A|x ) ≤
+K −1 from the given condition (note that Pr0 2−n (x) is a (r0 2−(n−1) , k)-plate).
+Thus,
+                    log
+                      X η −1                                    ∞
+                                                                X
+ν(P (x) \ A|x ) ≤              ν(Pr0 K −2n (x) \ A|x ) +                 ν(Pr0 K −2n (x) \ Pr0 K −2n−1 (x))
+                     n=0                                    n=log η −1
+                                              ∞
+                                              X              n−2
+                ≤ log η −1 · K −1 +                     K 1−2       η
+
+                                           n=log η −1
+                      −1
+                .K         ,
+if K0 is chosen large enough.
+
+                                                 45
+8     Radial projection estimates
+In this section, we will first prove a key special case, and then the general case
+of Theorem 1.13.
+
+8.1    Maximal plate concentration case
+This subsection is based on ideas from [19].
+Theorem 8.1. Let k ∈ {1, 2, · · · , d − 1}, k − 1 < σ < s ≤ k, and fix K ≥
+1. There exists N ∈ N and K0 depending on σ, s, k such that the following
+holds. Fix r0 ≤ 1 and K1 , K2 ≥ K0 . Let µ, ν be ∼ 1-separated s-dimensional
+measures with constant Cµ , Cν supported on E1 , E2 , which lie in an (r0 , k)-plate
+Hr . Assume that |µ|, |ν| ≤ 1. Let A be the pairs of (x, y) ∈ E1 × E2 that lie in
+some K1−1 -concentrated ( K
+                          r0
+                            2
+                              , k)-plate. Then there exists a set B ⊂ E1 × E2 with
+              −1
+µ × ν(B) . K1 such that for every x ∈ E1 and r-tube T through x, we have
+                                               rσ
+                    µ(T \ (A|x ∪ B|x )) .     σ−(k−1)
+                                                        (K1 K2 )N .
+                                             r0
+The implicit constant may depend on s, k.
+    Theorem 8.1 is the special case of Theorem 1.13 where (µ, ν) are concentrated
+in a (r0 K, k)-plate for some small K ≪ r0 (we call this the maximal plate
+concentration case). For this, we closely follow the bootstrapping approach of
+[19]. There are three ingredients.
+    • The next Proposition 8.2 will be the base case for the bootstrapping ar-
+      gument (σ = 0).
+    • Proposition 7.3 will ensure power decay for µ, ν around k-planes.
+    • Theorem 1.11 will be used in the bootstrapping step to upgrade σ to σ +η.
+Proposition 8.2. Let 1 ≤ k ≤ d − 1 and k − 1 < s ≤ k, then there exists
+N = N (s, k) such that the following holds. Fix K ≥ K0 . Then for any s-
+dimensional measures µ, ν with constant ∼ 1 contained in the r0 -neighborhood
+of a k-plane and d(µ, ν) & 1, there exists B ⊂ X × Y with µ × ν(B) ≤ K −1
+such that (µ, ν) has (0, K N r0k−1 )-thin tubes on B c down from scale r0 .
+Proof. Let µ̃, ν̃ be the projected measures on the k-plane. Then µ̃, ν̃ satisfy
+s-dimensional Frostman conditions for r0 ≤ r ≤ 1. Let
+       B = {(x, y) : x, y ∈ T for some r0 -tube T with ν(T ) ≥ K N r0k−1 .}
+The rest is a standard argument following [8, Proof of Lemma 3.6]. Define
+                                x−y
+the radial projection Py (x) = |x−y| . Orponen’s radial projection theorem [17,
+Equation (3.5)] can be written in the form (where p = p(s, k) > 1):
+                             Z
+                               kPx µ̃kpLp dµ̃(x) . 1.                    (8.29)
+
+
+                                        46
+To effectively use (8.29), we will show that |Px (B|x )| is small for x ∈ X. Indeed,
+let Tx be a minimal set of finitely overlapping 2r0 -tubes through x such that
+any r0 -tube through x with ν(T ) ≥ K N r0k−1 lies in a 2r0 -tube in Tx . Then
+each 2r0 -tube in Tx has ν-measure ≥ K N r0k−1 . Since d(x, ν) & 1, we conclude
+that |Tx | . K −N r01−k . Therefore, since the Lebesgue measure |Px (T )| . r0k−1
+for a 2r0 -tube T through x, we obtain |Px (B|x )| . K −N . Finally, we can use
+Holder’s inequality and (8.29) to upper bound µ × ν(B):
+                              Z
+                 µ × ν(B) = ν(B|x )dµ(x)
+                              Z Z                 !
+                           =                     Px (ν) dµ(x)
+                                    Px (B|x )
+                                                         Z
+                                                 1−1/p
+                           ≤ sup |Px (B|x )|                 kPx νkLp dµ(x)
+                               x
+                                −N (1−1/p)
+                           .K                .
+
+Choose N = 1 + (1 − 1/p)−1 to finish (the implicit constant is dominated by
+K ≥ K0 if K0 is large enough).
+
+   The bootstrapping step is as follows:
+Proposition 8.3. Let k ∈ {1, · · · , d−1}, 0 ≤ σ ≤ k, max(σ, k−1) < s ≤ k, κ >
+0. There exist η(σ, s, κ, k, d) and K0 (η, k) > 0 such that the following holds. Fix
+r0 ≤ 1 and K ≥ K0 . Let µ, ν be ∼ K −1 -separated s-dimensional measures with
+constant K supported on X, Y , which lie in an (r0 , k)-plate H. Let G ⊂ X × Y .
+                                              −(σ−(k−1))
+Suppose that (µ, ν) and (ν, µ) have (σ, Kr0              )-thin tubes and (κ, Kr0−κ )-
+thin k-plates on G down from scale r0 . Then there exists a set B ⊂ X × Y with
+                                                                  −(σ+η−(k−1))
+µ×ν(B) ≤ K −1 such that (µ, ν) and (ν, µ) have (σ+η, K d+1 r0                  )-thin
+tubes on G \ B down from scale r0 . Furthermore, η(σ, s, κ, k, d) is bounded away
+from zero on any compact subset of {(σ, s, κ, k) : max(σ, k − 1) < s ≤ k ≤ d− 1}.
+Remark 8.4. The reader is advised to set r0 = 1 in the following argument,
+in which case it is a straightforward modification of [19, Lemma 2.8], with one
+small technical exception in the proof of the concentrated case, where we improve
+upon the dyadic pigeonholing step. Also if r0 = 1, then the simpler Theorem 1.8
+can be used instead of Theorem 1.11 in the proof.
+
+
+
+
+                                          47
+Proof. We are given that for all r ∈ (0, r0 ],
+                                     rσ
+     ν(T ∩ G|x ) ≤ K ·          σ−(k−1)
+                                             for all r-tubes T containing x ∈ X,            (8.30)
+                               r0
+                                rσ
+  ν(W ∩ G|x ) ≤ K ·        σ−(k−1)
+                                          for all (r, k)-plates W containing x ∈ X,         (8.31)
+                          r0
+                                     rσ
+      µ(T ∩ G|y ) ≤ K ·         σ−(k−1)
+                                             for all r-tubes T containing y ∈ Y,            (8.32)
+                               r0
+                                  σ
+                                r
+  µ(W ∩ G|y ) ≤ K ·        σ−(k−1)
+                                           for all (r, k)-plates W containing y ∈ Y.        (8.33)
+                          r0
+                             ′′
+For x ∈ X and r ≤ r0 , let Tx,r denote the r-tubes through x such that
+
+                                                             rσ+η
+                            ν(T ∩ G|x ) ≥ K d+1 ·         σ+η−(k−1)
+                                                                       .                    (8.34)
+                                                        r0
+           ′                         ′′
+Now, let Tx,r denote a covering of Tx,r by essentially distinct 2r-tubes. Then for
+                                                           ′
+x ∈ X, since d(x, Y ) ≥ K −1 , we have that the tubes in Tx,r have . K d−1 -overlap
+            ′            r −(σ+η)
+on ν, so |Tx,r |.    −(σ+η−(k−1))         . For a dyadic r ∈ (0, r0 ], let Hr = {(x, y) ∈ G :
+                    r0
+       ′              ′                                      ′
+y ∈ ∪Tx,r }, where ∪Tx,r denotes the union of the tubes in Tx,r .
+                                                               the fol-
+   Claim. There are η(σ, s, κ, k, d) > 0 and K0 (η) > 0 such that
+                                                                                        η
+lowing holds for K ≥ K0 . If rr0 < K −1/η , then µ × ν(Hr ) ≤ 2                    r
+                                                                                   r0       . Fur-
+thermore, η(σ, s, κ, k, d) is bounded away from zero on any compact subset of
+{(σ, s, κ, k, d) : max(σ, k − 1) < s ≤ k ≤ d − 1}.
+    We will be done if we show the claim. Indeed, let B1 = ∪r≤r0 dyadic Hr ; then
+for any dyadic r ≤ r0 and any r-tube T through some x ∈ X, we either have
+        ′
+T ∈ Tx,r  , which means T ∩ G|x \ B1 |x = ∅, or the negation of (8.34) holds. In
+either case, we get
+                                                                rσ+η
+                         ν(T ∩ G|x \ B1 |x ) ≤ K d+1 ·        σ+η−(k−1)
+                                                                             .              (8.35)
+                                                             r0
+We have (8.35) for dyadic r ≤ r0 , but it also holds for all r ≤ r0 at the cost of
+introducing a multiplicative factor of 2σ+η ≤ 2k+1 on the RHS of (8.35). Thus,
+                                −(σ+η−(k−1))
+(µ, ν) have (σ + η, 2k+1 · K d r0            )-thin tubes on G \ B1 down from scale
+r0 . Now we move to upper-bounding µ × ν(B1 ). By (8.30) and (8.34), we have
+Hr 6= ∅ for all r > r0 K −d/η , and so if K ≥ K0 from Claim, then
+                                                                   η
+                      X                               X             r
+µ × ν(B1 ) ≤                      µ × ν(Hr ) ≤                  2       ≤ Cη K −d .
+                                                                    r0
+              r≤r0 K −d/η      dyadic                  r≤r0 K
+                                                     −d/η           dyadic
+
+Let K0 be the maximum of the value of K0 from Claim, 2Cη , and 2k+1 . Since
+                                                                  −(σ+η−(k−1))
+d ≥ 2, we get µ × ν(B1 ) ≤ 21 K −1 and (µ, ν) have (σ + η, K d+1 r0            )-
+thin tubes on G \ B1 down from scale r0 . We can analogously find B2 ⊂ X × Y
+
+                                                  48
+                                                                                     −(σ+η−(k−1))
+with µ × ν(B2 ) ≤ 21 K −1 such that (ν, µ) have (σ + η, K d+1 r0                    )-thin
+tubes on G \ B2 down from scale r0 , and so B = B1 ∪ B2 would be a good
+choice. Now we turn to proving the Claim.
+                                                          15(d−1)
+    Proof of Claim. We will choose η = min{ 21 (6 + s−max(σ,k−1)      )2 , 51 ε2 }, where
+ε is obtained from Theorem 1.11. From Remark 1.12 and the continuity of the
+function (s, σ, k) 7→ (s − max(σ, k − 1))−1 , we see that η(σ, s, κ, k, d) is bounded
+away from zero on any compact subset of {(σ, s, κ, k, d) : max(σ, k − 1) < s ≤
+k ≤ d − 1}.                                                                                  η
+   Suppose that Claim is false. Let X = {x ∈ X : ν(Hr ) ≥ rr0 }. Then
+        η
+µ(X) ≥ rr0 .
+                                                          ′
+   Recall that for x ∈ X, the fiber Hr |x is covered by Tx,r , which is a set of
+                     r −(σ+η)
+cardinality .    −(σ+η−(k−1))     . Let
+                r0
+
+
+                 ′                                     rσ+3η                                   [
+     Tx = {T ∈ Tx,r : ν(T ∩ Hr |x ) ≥              σ+3η−(k−1)
+                                                              },            Yx = (Hr |x ) ∩         Tx .
+                                                 r0
+                η  2η  2η
+Then ν(Yx ) ≥ rr0 − rr0  ≥ rr0  for all x ∈ X. Furthermore, for every
+T ∈ Tx , we have
+
+                            rσ+3η                                      rσ−η
+                         σ+3η−(k−1)
+                                            ≤ ν(T ∩ Yx ) ≤           σ−η−(k−1)
+                                                                                 .                   (8.36)
+                        r0                                          r0
+                                                                                                   −η
+                                                                                                r
+The upper bound follows from Yx ⊂ Hr |x ⊂ G|x , (8.30), and K ≤                                r0         . In
+fact, we have in general,
+                                                −η
+                                            r
+                 ν(T (ρ) ∩ Yx ) ≤                      ρη ,        ρ ∈ [r, 1], T ∈ Tx .
+                                            r0
+
+We also take the time to state the thin plates assumption:
+                                           κ−η
+                                       r
+            ν(W (ρ) ∩ Yx ) ≤                               ρ ∈ [r, 1], W is (ρ, k)-plate.
+                                       r0
+                                                                                           −σ+η
+                                                                           r
+Since ∪Tx covers Yx , we get by the upper bound in (8.36), |Tx | & −σ+η+(k−1)       ν(Yx ) ≥
+                                                                       r0
+                                                      −5η                          −5η
+   r −σ+3η                            −(σ−(k−1))
+ −σ+3η+(k−1) . Hence, Tx is a (r, σ, r0
+                                                   r
+                                                   r0       )-set and (r, κ, r0−κ rr0      , k−
+r0
+1)-set for each x ∈ X.
+                  15η
+    Let γ = s−max(σ,k−1) . Call a tube T ∈ Tx concentrated if there is a ball BT
+              γ
+with radius rr0     such that
+
+                                                              1
+                                ν(T ∩ BT ∩ Yx ) ≥               · ν(T ∩ Yx ).                        (8.37)
+                                                              3
+
+
+                                                      49
+Suppose that there is X′ ⊂ X with µ(X′ ) ≥ µ(X)/2 such that for each x ∈ X′ ,
+at least half the tubes of Tx are non-concentrated. Since µ(X′ ) ≥ 21 µ(X)/2 ≥
+   2η                                         −η                          −3η
+1   r                                            r                             r
+2 r0      and  µ is Frostman with constant K ≤  r0    , we can find a (r, σ,  r0    )-
+set P ⊂ X′ . For each x ∈ X′ , the set of non-concentrated tubes Tx′ ⊂ Tx
+                          −5η                         −5η
+              −(σ−(k−1))  r                         −κ  r
+is a (r, σ, 2r0           r0    )-set and (r, κ, 2r0    r0    , k − 1)-set. Let
+T = ∪x∈P Tx′ . By Lemma 2.8, since d(X, Y ) ≥ K −1 , we have that T is con-
+tained in the O(K) · r0 -neighborhood of H. Now, we apply Theorem 1.11 with
+                                      −η
+r0 := min(O(K)·r0 , 1). Since K ≤ rr0         and σ ≤ k, we still have that for each
+                                                                           −7η
+                                                               −(σ−(k−1))  r
+x ∈ X′ , the set of non-concentrated tubes Tx′ is a (r, σ, 2r 0            r0      )-
+                     −7η
+set and (r, κ, 2r−κ
+                 0
+                      r
+                     r0     , k − 1)-set. At this point, let us remark that implicit
+                               −η
+constants are dominated by rr0         ≥ K η if K ≥ K0 (η) is chosen large enough.
+   Then if η ≤ ε2 /4, where ε is obtained from Theorem 1.11, then
+                                        √             √
+                              r−2σ−2 η           r−2σ− η
+                  |T | ≥                 √ ≥
+                            −2(σ−(k−1))−2 η
+                                                          √ .
+                                              −2(σ−(k−1))− η
+                           r0                r0
+                                        −√η
+                                          r
+In other words, we get a gain of         r0        , which means a two-ends argument
+                                                                    we
+gives an immediate contradiction. Specifically, by (8.36) and (8.37),  have    γ
+                                                                            r
+for each non-concentrated T ∈ T , ν × ν({(x, y) : x, y ∈ T, d(x, y) ≥      r0       }) ≥
+                     2σ+6η
+2           2      r
+3 ν(T ∩ Yx ) ≥ r 2σ+6η−2(k−1) . Thus, by Fubini, there exists a pair (x, y) with
+                 0
+          γ                                                 −√η+6η
+            r                                 r 2σ+6η
+d(x, y) ≥ r0    such that x, y ∈ T for & 2σ+6η−2(k−1) |T | ≥ rr0           many
+                                         r0γ
+tubes T ∈ T . However, since d(x, y) ≥ rr0 , we have that x, y can only lie in
+    −(d−1)γ                                              √
+. rr0          many essentially distinct 2r-tubes. Since η − 6η ≥ (d − 1)γ,
+we get a contradiction.
+    Now we focus on the concentrated case: assume there is a subset X′ ⊂ X
+with µ(X′ ) ≥ µ(X)/2 such that at least half of the tubes in Tx are concentrated
+for all x ∈ X′ . This case is where we use the fact that ν is a s-dimensional
+measure. Let Tx′ denote theconcentrated tubes and {BT : T ∈ Tx′ } denote
+                                  γ
+                             r
+the corresponding heavy      r0       -balls. Because the family Tx has K-overlap on
+spt(ν), the set
+
+            H ′ = {(x, y) : x ∈ X′ , y ∈ T ∩ BT ∩ Yx for some T ∈ Tx′ }
+
+
+
+
+                                              50
+has measure
+
+  (µ × ν)(H ′ ) & K −1 · µ(X′ ) · inf ′ |Tx′ | ·                  inf        ν(T ∩ BT ∩ Yx )
+                                          x∈X                 x∈X′ ,T ∈Tx′
+                                         2η                                                                         8η
+                                     r                   r−σ+3η                       rσ+3η                       r
+                             &                  ·    −(σ−3η−(k−1))
+                                                                             ·    σ+3η−(k−1)
+                                                                                                     =                         .
+                                     r0             r0                           r0                               r0
+
+Notice that if (x, y) ∈ H ′ , then there is a tube T (x, y) ∈ T r containing x, y such
+that
+                                                         rσ+3η
+                    ν(B(y, 2(r/r0 )γ ) ∩ T (x, y)) & σ+3η−(k−1) .
+                                                     r0
+Thus, ν can’t be too concentrated near y:
+                                                                            γ
+                                      1    s                            r
+                  ν(B(y, r)) ≤ K · r ≤ ν(B(y, 2                                   ) ∩ T (x, y)),
+                                      2                                 r0
+                                                                                                                              −η
+                                                                                                                          r
+assuming 4η < s − σ and k − 1 < s. (The relevant inequalities are K ≤                                                     r0
+and rs−σ−3η ≤ r0s−σ−3η ≤ r0k−1−σ−3η .)
+   Therefore, for each (x, y) ∈ H ′ , we can choose a dyadic number r ≤ ξ(x, y) ≤
+(r/r0 )γ such that
+                                                                          σ+4η                    η
+                                                                      r                   ξ(x, y)
+          ν(A(y, ξ(x, y), 2ξ(x, y)) ∩ T (x, y)) ≥                                                             r0k ,
+                                                                      r0                  (r/r0 )γ
+
+where the annulus A(y, ξ, 2ξ) := B(y, 2ξ) \ B(y, ξ). (One remark: [19] used
+dyadic pigeonholing at this step, but we can’t do this because then we would
+                −1
+introduce
+             r0 factor. Fortunately, we are allowed to introduce the decaying
+          a log
+                  η
+        ξ(x,y)
+tail          , which is summable in ξ(x, y).)
+       (r/r0 )γ
+                                        7η                                  γ
+   Then, recalling that (µ×ν)(H ′ ) & rr0    , we can further find r ≤ ξ ≤ rr0
+such that
+               8η              η
+         ′′      r       ξ(x, y)
+(µ×ν)(H ) ≥                          , where H ′′ = {(x, y) ∈ H ′ : ξ(x, y) = ξ} ⊂ G.
+                r0       (r/r0 )γ
+                                                                                     8η                η
+                                                                                  r             ξ(x,y)
+By Fubini, we can find y ∈ Y such that µ(H ′′ |y ) ≥                             r0            (r/r0 )γ        . Then by
+                      ′′ y                                                                                r
+construction, H | can be covered by a collection of tubes Ty ⊂ T                                               containing
+y that satisfy
+                                                                                              σ+4η                          η
+                                                                                          r               ξ(x, y)
+ν(A(y, ξ, 2ξ)∩T ) ≥ ν(A(y, ξ(x, y), 2ξ(x, y))∩T (x, y)) ≥                                                                           r0k .
+                                                                                          r0              (r/r0 )γ
+
+Finally, we claim that Ty contains a subset Ty′ whose directions are separated
+                                                  σ
+by ≥ (r/ξ), such that |Ty′ | & µ(H ′′ |y ) · rη · ξrr0 r0−k if ξ > rr0 and |Ty′ | &
+
+
+                                                         51
+                              σ
+                         ξr0
+µ(H ′′ |y ) · rη ·        r         r0−k if ξ > rr0 if r < ξ < rr0 . Indeed, if ξ > rr0 , then any
+r/ξ-tube T containing y has
+                                                                σ                   η      σ
+                     ′′ y                    y              r                     r          r
+        µ(T ∩ H | ) ≤ µ(T ∩ A| ) ≤ K ·                                r0k ≤              ·         r0k .
+                                                           ξr0                    r0        ξr0
+If ξ < rr0 , then any r/ξ-tube T containing y lies in the union of ( ξrr0 )k many
+r0 -tubes, and so
+                                                    −k         η  k
+                                                  r              r     r
+        µ(T ∩ H ′′ |y ) ≤ µ(T ∩ A|y ) ≤ K ·               r0k ≤     ·      .
+                                                 ξr0             r0    ξ
+                                                      σ
+Thus, if ξ > rr0 , then it takes & µ(H ′′ |y ) · rη · ξrr0 r0−k many (r/ξ)-tubes to
+cover H ′′ |y , and perhaps even more to cover ∪Ty . We may now choose Ty′ ⊂ Ty
+to be a maximal subset with (r/ξ)-separated directions to prove the claim for
+ξ > rr0 . A similar argument holds for ξ < rr0 .
+   Finally, let’s first assume ξ > rr0 . Since T y has bounded overlap in Rd \
+B(y, ξ), we obtain
+           σ+13η                   2η      σ
+       r                     ξ              ξr0
+                                         ·         r0−k
+       r0                 (r/r0 )γ           r
+                                . inf ′ ν(A(y, ξ, 2ξ) ∩ T ) · |Ty′ | . ν(B(y, 2ξ)) ≤ C · (2ξ)s .
+                                     T ∈Ty
+
+We will obtain a contradiction if we show the opposite inequality holds, for
+        15η
+γ = s−max(k,σ)   . Since 2η + σ < s and ξ ≤ ( rr0 )γ , it suffices to check ξ = ( rr0 )γ .
+   If ξ < rr0 , then we obtain
+           σ+13η                   2η      k
+       r                     ξ              ξr0
+                                         ·         r0−k
+       r0                 (r/r0 )γ           r
+                                . inf ′ ν(A(y, ξ, 2ξ) ∩ T ) · |Ty′ | . ν(B(y, 2ξ)) ≤ C · (2ξ)s .
+                                     T ∈Ty
+
+Again, since 2η + k < s, it suffices to check ξ = rr0 .
+  This proves the result.
+                                                       r0
+Proof of Theorem 8.1. By Propositions 7.3 (with K       2
+                                                          for r0 ) and 8.2, there ex-
+                                                −1
+ists a set B0 ⊂ X × Y with µ × ν(B0 ) . K1 such that (µ, ν) and (ν, µ) have
+(0, K1N r0k−1 )-thin tubes on B0c down from scale r0 , and (µ, ν) and (ν, µ) have
+         −κ
+           r0
+(κ, K1 K    2
+                  )-thin k-plates on (A∪B0 )c . Then iterate Proposition 8.3 applied
+to a uniform η(σ, s, κ, k, d). So initially we have K = max(K1N K2κ , K0 (η, k)),
+and after each iteration, K becomes K d+1 . After iterating . η −1 many times
+and letting B1 ⊂ X × Y be the union of the B’s outputted from the Propo-
+sition (so µ × ν(B1 ) . K −1 ≤ K1−1 ), we find that (µ, ν) and (ν, µ) have
+(σ, K (d+1)η r0k−1 )-thin tubes on (A∪B0 ∪B1 )c . Then we can take B := B0 ∪B1
+            −1
+
+
+to be our desired set.
+
+                                                      52
+8.2    Proof of Theorem 1.13, general case
+We will prove Theorem 1.13, which we restate here.
+Theorem 8.5. Let k ∈ {1, 2, · · · , d − 1}, k − 1 < σ < s ≤ k, and ε > 0.
+There exist N, K0 depending on σ, s, k, and η(ε) > 0 (with η(1) = 1) such that
+the following holds. Fix r0 ≤ 1, and K ≥ K0 . Let µ, ν be ∼ 1-separated s-
+dimensional measures with constant Cµ , Cν supported on E1 , E2 , which lie in
+B(0, 1). Assume that |µ|, |ν| ≤ 1. Let A be the pairs of (x, y) ∈ E1 × E2 that lie
+in some K −1 -concentrated (r0 , k)-plate. Then there exists a set B ⊂ E1 × E2
+with µ × ν(B) . K −η such that for every x ∈ E1 and r-tube T through x, we
+have
+                                                rσ
+                    ν(T \ (A|x ∪ B|x )) . σ−(k−1)+N ε K N .
+                                           r0
+The implicit constant may depend on Cµ , Cν , σ, s, k.
+Remark 8.6. Note that in Theorem 8.1, we demand the stronger conclusion
+µ × ν(B) . K −1 .
+    The idea is to apply Theorem 8.1 at different scales. As a start, if ε = 1,
+then we can directly apply Theorem 8.1 with K1 = K2 = K (and thus we may
+take η(1) = 1).
+                          1
+    We may assume ε = M      for some M . Let N be the large constant in Lemma
+7.5, and let ηn = (N + 2)n−M . For 1 ≤ n ≤ M , let An be the pairs of
+(x, y) ∈ E1 × E2 that lie in some K −ηn -concentrated (r0nε , k)-plate. We remark
+that AM = A.
+Lemma 8.7. Fix n ≥ 1. There exists a set Bn ⊂ An with µ × ν(Bn ) . K −ηn
+such that for every x ∈ E1 and r-tube through x that intersects An |x , we have
+                                                   rσ
+                 ν(T \ (An+1 |x ∪ B|x )) .    nε(σ−(k−1))+N ε
+                                                                KN .
+                                             r0
+Proof. By Lemma 2.8, there exists an absolute constant C such that every
+r-tube through some (x, y) ∈ An lies in some K −ηn -concentrated (CK −n , k)-
+plate. We can find a collection H of essentially distinct K −ηn -concentrated
+(2CK −n , k)-plates such that each K −ηn -concentrated (CK −n , k)-plate is con-
+tained within some element of H. By Lemma 7.5, |H| . K −N ηn . By construc-
+tion, every r-tube through some (x, y) ∈ An is contained in some member of H.
+Apply Theorem 8.1 to each H ∈ H with measures µ|H , ν|H and K1 → K −ηn+1 ,
+K2 → 2Cr0−ε , and r0 → r0nε to obtain a set BH with µ × ν(BH ) . K −ηn+1 .
+Let Bn = ∪H∈H BH , and then µ × ν(Bn ) ≤ K N ηn · K −ηn+1 < K −ηn since
+(N + 1)ηn < ηn+1 .
+Proof of Theorem 8.5. Let B = ∪M   n=1 Bn ; then µ × ν(B) ≤ K
+                                                              −η0
+                                                                  . Fix an r-tube
+T and x ∈ E1 . Let n ≤ M − 1 be the largest number such that T passes
+through  points in An |x . Then by Lemma 8.7, we have ν(T \ (An+1 |x ∪ B|x )) .
+     rσ
+K −n(σ−(k−1)
+             K N . If m < M − 1, then T ∩ An+1 |x = ∅. In any case, we have
+                            rσ      N
+ν(T \ (A|x ∪ B|x )) . σ−(k−1)+N  εK   , completing the proof of Theorem 8.5.
+                      r0
+
+
+
+
+                                       53
+9     Corollaries of Radial Projection Estimates
+We prove a variant of Corollary 1.1.
+Proposition 9.1. Fix s ∈ (k − 1, k] and η > 0. Let µ, ν ∈ P(Rd ) be mea-
+sures with Es (µ), Es (ν) < ∞ and ∼ 1-separated supports. Suppose that µ(H) =
+ν(H) = 0 for each k-plane H ∈ A(Rd , k). Then for µ-almost all x, for all sets
+Y of positive ν-measure,
+                              dimH (πx Y ) ≥ s − η.
+Proof. The proof is standard and follows [27, Proof of Proposition 6.9]. By
+Lemma 2.30, by passing to subsets of nearly full measure and replacing s by an
+arbitrary s′ < s, we may assume that µ(Br ), ν(Br ) . rs for all r ∈ (0, 1].
+   Fix ε > 0. By a compactness argument, there exists r0 > 0 such that
+µ(H), ν(H) < ε for all (r0 , k)-plates H. In Theorem 8.1, we know that for
+ε > 0 sufficiently small, the set A = ∅. Thus, there exists B ⊂ X × Y with
+µ × ν(B) . ε such that for every x ∈ X and r-tube through x, we have
+
+                              ν(T \ B|x ) .η,ε,s rs−η .
+
+Thus, there is a set X with µ(X) > 1 − O(ε) such that if x ∈ X, then
+
+                dimH (πx Y ) ≥ s − η for all Y with ν(Y ) ≥ O(ε).
+
+Taking ε → 0 completes the proof.
+    Using this, we prove Corollary 1.2.
+Corollary 9.2. Let s ∈ (d − 2, d], then there exists ε(s, d) > 0 such that the
+following holds. Let µ, ν be Borel probability measures on Rd with disjoint sup-
+ports that satisfy Es (µ), Es (ν) < ∞ and dimH (spt(ν)) < s + ε(s, d). Further,
+assume that µ, ν don’t simultaneously give full measure to any affine (d − 1)-
+plane H ⊂ Rd . Then there exist restrictions of µ, ν to subsets of positive measure
+(which we keep denoting µ, ν) such that the following holds. For almost every
+affine 2-plane W ⊂ Rd (with respect to the natural measure on the affine Grass-
+manian), if the sliced measures µW , νW on W is non-trivial, then they don’t
+simultaneously give full measure to any line. In other words,
+
+(γd,2 ×µ){(V, x) : µV,x (ℓ)νV,x (ℓ) = |µV,x ||νV,x | > 0 for some ℓ ∈ A(V +x, 1)} = 0
+
+where we parametrize affine 2-planes as V + x, for x ∈ Rd and V in the Grass-
+mannian Gr(d, 2) with the rotationally invariant Haar measure γd,2 .
+Proof. First, if µ(H) > 0 for some affine (d − 1)-plane H, then ν(H c ) > 0 where
+H c denotes the complement of H in Rd . By restricting µ to H and ν to H c (and
+calling the results µ, ν), we see that the sliced measures µW and νW can’t give
+full mass to any line ℓ for any affine (d − 1)-plane W , for the simple reason that
+µW (ℓ) > 0 forces ℓ ⊂ H, and νW (ℓ) > 0 forces ℓ ⊂ H c . Likewise, we are done if
+
+
+
+                                          54
+ν(H) > 0 for some affine (d−1)-plane H ⊂ Rd . Thus, assume µ(H) = ν(H) = 0
+for all affine (d − 1)-planes H.
+    With this assumption, the remainder of the proof is nearly identical to the
+proof of Proposition 6.8 in [27], except using Proposition 9.1 instead of [27,
+Proposition 6.9]. One can take ε(s, d) to be arbitrarily close to s − (d − 2).
+    Finally, we can deduce Theorem 1.1 from either Proposition 9.1 or Propo-
+sition 9.2, see [19, Section 4] for details. The only case not yet considered in
+this paper is when either µ, ν gives positive mass to a k-plane. But this special
+case was considered in [19, Section 4] (briefly, if X gives positive mass to some
+k-plane, then radial projections become orthogonal projections and then we ap-
+ply Kaufman’s projection theorem; if Y gives positive mass to some k-plane H,
+then for x ∈/ H, we have dimH (πx (Y )) = dimH (Y ).)
+
+
+A      Proof of Balog-Szemerédi-Gowers
+By a standard covering argument (e.g. see Section 3 of [12]), Theorem 2.27
+follows from the case δ = 0, which we prove below.
+Theorem A.1 (refined Theorem 4.1 of [30]). Let K ≥ 1 be a parameter. Let
+A, B be finite subsets of Rn , and let P ⊂ A × B satisfy |P | ≥ K −1 |A||B|.
+                 P                                  P
+Suppose that |A + B| ≤ K(|A||B|)1/2 , where A + B = {a + b : (a, b) ∈ P }. Then
+                                                        1                  1
+one can find subsets A′ ⊂ A, B ′ ⊂ B with |A′ | ≥ 16K               ′
+                                                           2 |A|, |B | ≥ 16K 2 |B| such
+                                                               |A||B|
+that |A′ + B ′ | ≤ 212 K 8 (|A||B|)1/2 and |P ∩ (A′ × B ′ )| ≥ 16K 2 .
+Proof. We follow the exposition in [24].
+     Claim. There exist subsets A′ ⊂ A, B ′ ⊂ B with |P ∩ (A′ × B ′ )| ≥ |A||B| 16K 2 ,
+                               ′       ′              |A||B|             ′ ′
+such that for each a ∈ A , b ∈ B , there are ≥ 212 K 5 many pairs (a , b ) ∈ A × B
+such that (a, b′ ), (a′ , b′ ), and (a′ , b) ∈ P .
+     Assuming the claim, we will see how the theorem follows. First, we get
+|A′ ||B ′ | ≥ |P ∩ (A′ × B ′ )| ≥ |A||B|               ′             ′
+                                      16K 2 . Since |A | ≤ |A| and |B | ≤ |B|, we get
+           |A|                |B|
+|A| ≥ 16K 2 and |B| ≥ 16K 2 .
+     Next, for a ∈ A′ , b ∈ B ′ , we have
+
+                       a + b = (a + b′ ) − (a′ + b′ ) + (a′ + b).
+
+Thus, there are ≥ |A||B|2−12 K −5 many solutions to a + b = x − y + z with
+           P              P                                             3
+                                                                   K (|A||B|)   3/2
+x, y, z ∈ A +B. Since |A +B| ≤ K(|A||B|)1/2 , we get |A′ +B ′ | . |A||B|2−12 K −5 =
+
+212 K 8 |A|1/2 |B|1/2 .
+    Now, we prove the claim. For convenience, we can prune P to satisfy |P | =
+K −1 |A||B| (this is not necessary but will make the proof look nicer). Treat
+(A ∪ B, P ) as a bipartite graph with an edge between a ∈ A and b ∈ B if
+(a, b) ∈ P . Then we want to find A′ , B ′ such that there are many paths of
+length 3 between any a ∈ A′ , b ∈ B ′ .
+
+
+                                          55
+    The average degree of a vertex in A is K −1 |B|. Thus, if we delete the vertices
+in A with degree ≤ 21 K −1 |B|, then at least 2K 1
+                                                   |A||B| many edges remain. Let
+E be the set of edges. For v ∈ A ∪ B, let N (v) be the set of neighbors of v.
+    Now pick a vertex b ∈ B. On average, it has |E|          1
+                                                    |B| ≥ 2K |A| many neighbors.
+                     ′       2                         ′          1
+    Now, we say (a, a ) ∈ A is bad if |N (a) ∩ N (a )| < 128K       3 |B|. For v ∈ B,
+                                           2               |A|
+                                                               
+let Badv be the set of bad pairs in N (v) . There are 2 many pairs in A, so
+(expectation is taken over uniformly chosen v ∈ B)
+                                   
+                                    |A|       1          |A|2
+                    E[|Badv |] <         ·          <           .
+                                     2     128K 3      256K 3
+                                                             |A|
+If Abad,v is the set of vertices of A that lie in at least 32K   2 many pairs of Bv ,
+
+then
+                                          2E[|Bv |]    |A|
+                         E[|Abad,v |] ≤              <     .
+                                        |A|/(32K 2 )   4K
+Finally, let Av = N (v) \ Abad,v . Then by linearity of expectation,
+
+                                                       |A|   |A|   |A|
+              E[|Av |] = E[|N (v)|] − E[|Abad,v |] >       −     =     .
+                                                       2K    4K    4K
+                                           |A|
+Thus, there exists v ∈ B such that |Av | > 4K  . Then, let A′ = Av and
+
+                                                          |A|
+                       B ′ = {w ∈ B : |N (w) ∩ A′ | ≥          .
+                                                         16K 2
+Let E(X, Y ) be the number of edges between X and Y . We first check that
+E(A′ , B ′ ) ≥ |A||B|                                                |B|
+                16K 2 . Indeed, since every vertex of A has degree ≥ 2K , we have
+
+                                         |A′ ||B|   |A||B|2
+                         |E(A′ , B)| ≥            ≥         .
+                                           2K        8K 2
+                                                                      |A|
+On the other hand, every vertex in B \ B ′ corresponds to fewer than 16K  2 many
+                                          2                                2
+edges of A′ , so |E(A′ , B \ B ′ )| ≤ |A||B|                 ′   ′    |A||B|
+                                         16K 2 . Hence, |E(A , B )| ≥ 16K 2 .
+                                                                             |A|
+    Finally, for any v ∈ A′ , w ∈ B ′ , we know that w has at least 16K          2 many
+                ′                       |A|
+neighbors in A , and fewer than 32K 2 of those form a bad pair with w. For the
+                 |A|               ′
+remaining ≥ 32K      2 vertices v that do not form a bad pair with w, there are
+     |B|
+≥ 128K 3 many vertices w′ ∈ B that are common neighbors of v, v ′ . Thus, we
+              |A|      |B|     |A||B|                    ′ ′
+get at least 32K   · 128K  3 = 212 K 5 many paths (v, w , v , w) between v and w.
+
+
+
+
+References
+ [1] Jean Bourgain. The discretized sum-product and projection theorems.
+     Journal d’Analyse Mathématique, 112(1):193–236, 2010.
+
+
+
+                                          56
+ [2] A. Carbery and S.I. Valdimarsson. The endpoint multilinear Kakeya
+     theorem via the Borsuk–Ulam theorem. Journal of Functional Analysis,
+     264(7):1643–1663, 2013.
+ [3] X. Du, A. Iosevich, Y. Ou, H. Wang, and R. Zhang. An improved result
+     for Falconer’s distance set problem in even dimensions. Mathematische
+     Annalen, 380(3):1215–1231, 2021.
+ [4] X. Du, Y. Ou, K. Ren, and R. Zhang. New improvement to Falconer
+     distance set problem in higher dimensions. arXiv preprint, 2023.
+ [5] X. Du, Y. Ou, K. Ren, and R. Zhang. Weighted refined decoupling esti-
+     mates and application to Falconer distance set problem. arXiv preprint,
+     2023.
+ [6] X. Du and R. Zhang. Sharp l2 estimates of the Schrödinger maximal func-
+     tion in higher dimensions. Annals of Mathematics, 189(3):837–861, 2019.
+ [7] L. Guth, A. Iosevich, Y. Ou, and H. Wang. On Falconer’s distance set
+     problem in the plane. Inventiones Mathematicae, 219(3):779–830, 2020.
+ [8] L. Guth, N. Solomon, and H. Wang. Incidence estimates for well spaced
+     tubes. Geometric and Functional Analysis, 29(6):1844–1863, 2019.
+ [9] T.L.J. Harris. Low-dimensional pinned distance sets via spherical averages.
+     The Journal of Geometric Analysis, 31(11):11410–11416, 2021.
+[10] W. He. Orthogonal projections of discretized sets. Journal of Fractal Ge-
+     ometry, 7(3):271–317, 2020.
+[11] Weikun He. Discretized sum-product estimates in matrix algebras. Journal
+     d’Analyse Mathématique, 139(2):637–676, 2019.
+[12] Nets Hawk Katz and Terence Tao. Some connections between falconer’s
+     distance set conjecture and sets of furstenburg type. New York J. Math,
+     7:149–187, 2001.
+[13] R. Kaufman. On Hausdorff dimension of projections.           Mathematika,
+     15(2):153–155, 1968.
+[14] Tamás Keleti and Pablo Shmerkin. New bounds on the dimensions of planar
+     distance sets. Geometric and Functional Analysis, 29(6):1886–1948, 2019.
+[15] B. Liu. Hausdorff dimension of pinned distance sets and the L2 -method.
+     Proceedings of the American Mathematical Society, 148(1):333–341, 2020.
+[16] P. Mattila. Geometry of sets and measures in Euclidean spaces: fractals
+     and rectifiability. Number 44. Cambridge university press, 1999.
+[17] T. Orponen. On the dimension and smoothness of radial projections. Anal-
+     ysis & PDE, 12(5):1273–1294, 2018.
+
+                                      57
+[18] T. Orponen and P. Shmerkin. On the Hausdorff dimension of Fursten-
+     berg sets and orthogonal projections in the plane. arXiv preprint
+     arXiv:2106.03338, 2021.
+[19] T. Orponen, P. Shmerkin, and H. Wang. Kaufman and Falconer estimates
+     for radial projections and a continuum version of Beck’s Theorem. arXiv
+     preprint arXiv:2209.00348, 2022.
+[20] Tuomas Orponen. An improved bound on the packing dimension of fursten-
+     berg sets in the plane. J. Eur. Math. Soc.(JEMS), 22(3):797–831, 2020.
+[21] Tuomas Orponen and Pablo Shmerkin. Projections, Furstenberg sets, and
+     the abc sum-product problem, 2023.
+[22] Kevin Ren and Hong Wang. Furstenberg sets estimate in the plane, 2023.
+[23] I.Z. Ruzsa. On the cardinality of A+A and A−A. In Combinatorics (Proc.
+     Fifth Hungarian Colloq., Keszthely, 1976), volume 2, pages 933–938, 1978.
+[24] Adam Sheffer. The Balog-Szemerédi-Gowers theorem, 2016.
+[25] P. Shmerkin. A non-linear version of Bourgain’s projection theorem. Jour-
+     nal of the European Mathematical Society, 2022.
+[26] P. Shmerkin and H. Wang. On the distance sets spanned by sets of dimen-
+     sion d/2 in Rd . arXiv preprint arXiv:2112.09044, 2021.
+[27] P. Shmerkin and H. Wang. Dimensions of Furstenberg sets and an extension
+     of Bourgain’s projection theorem. arXiv preprint arXiv:2211.13363, 2022.
+[28] Pablo Shmerkin. Improved bounds for the dimensions of planar distance
+     sets. J. Fractal Geom., 8(1):27–51, 2021.
+[29] D.M. Stull. Pinned distance sets using effective dimension. arXiv preprint
+     arXiv:2207.12501, 2022.
+[30] B. Sudakov, E. Szemerédi, and V.H. Vu. On a question of Erdős and Moser.
+     2005.
+[31] T. Tao and V.H. Vu. Additive combinatorics, volume 105. Cambridge
+     University Press, 2006.
+[32] Z. Wang and J. Zheng. An improvement of the pinned distance set problem
+     in even dimensions. In Colloquium Mathematicum, volume 170, pages 171–
+     191. Instytut Matematyczny Polskiej Akademii Nauk, 2022.
+[33] T. Wolff. Decay of circular means of Fourier transforms of measures. Int.
+     Math. Res. Not., 10:547–567, 1999.
+[34] J. Zahl. Unions of lines in Rn . arXiv preprint arXiv:2208.02913, 2022.
+
+
+
+                                      58
+

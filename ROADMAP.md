@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-26，R0111：用户明确授权在既有六维17/4之后新建并运行一般维度Goal（active）。首轮先宏观与一手前沿/旧闭包核查，未取得新数学输入，不新增ID。旧R109完成与R110双语论文保持；新Goal须超出DIM001。唯一后继资格门notes/00_map/R0111_next_new_input_gate.md；完整整合research/reviews/R0111_macro_and_root_integration.md。
+更新2026-10-26，R0112：新Goal active。本轮具体fixed好chart/保直的原方向帽迁移桥被真实s3/unitaxes/fullmarks族否定，仍非完整G4/Kakeya反例。新增五primary并核WW/Ren/LW/OWY实际输入与量词；无新普通维数/完整source正gain、无新ID。连续两轮主gain为0已全宏观，下一入口notes/00_map/R0112_next_original_input_selection.md。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -257,3 +257,5 @@ R0109：已有DIM001的有限成果审定通过，未新增proof/ID。成果报�
 R0110：用户授权双语论文整理。见papers/manuscripts.json、papers/README.md及research/rounds/R0110_bilingual_latex_editorial.md。修正论文种子zeta定义域为0<zeta<1，不变既有DIM001主结论；其余实际proof及失败历史不改。
 
 R0111：新Goal重启，三独立资格稿与root确认全real seed/KT闭包属R81/R85旧指纹；六维17/4封顶与五维启动障碍只作旧机制审计，不算新成果。fresh一手12queries无可采用新primary；官方单源blob未变，88PDF/92sources/78IDs保持。新Goal数学gain停滞1，历史31保留；下一无gain即宏观，通常不晚于R114。当前no qualified new working，禁止数表/6.7重复/泛assembly改名；原ordinary/fullrough/反例三责任仍open。恢复工具默认精简且识别R110，--full保历史。
+
+R0112：uniform biLip resolution即使保直/nonshort/Jacobian，仍δ^-1方向bin重数；qpacket特例修复与FSD旧闭包明确，不反G4。BN exact解析图数不授δmetric近似，WWGamma/原J去重、Ren真实degree/activeclock、OWY0/1jet、LW生成label/全contained-lines均实际核并两独审。修Mδ网/Ren准确指数门/r=δ^a域。新5PDF后93PDF/97sources/78IDs；sourcegain0连续2宏观已做，旧31保历史；不得以新来源名重开冻结路线。

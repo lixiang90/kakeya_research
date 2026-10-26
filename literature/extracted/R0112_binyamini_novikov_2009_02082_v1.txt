@@ -1,0 +1,463 @@
+                                             THE YOMDIN-GROMOV ALGEBRAIC LEMMA REVISITED
+arXiv:2009.02082v1 [math.AG] 4 Sep 2020
+
+
+
+
+                                                                  GAL BINYAMINI AND DMITRY NOVIKOV
+
+
+                                                  Abstract. In 1987, Yomdin proved a lemma on smooth parametrizations
+                                                  of semialgebraic sets as part of his solution of Shub’s entropy conjecture for
+                                                  C ∞ maps. The statement was further reﬁned by Gromov, producing what is
+                                                  now known as the Yomdin-Gromov algebraic lemma. Several complete proofs
+                                                  based on Gromov’s sketch have appeared in the literature, but these have
+                                                  been considerably more complicated than Gromov’s original presentation due
+                                                  to some technical issues.
+                                                      In this note we give a proof that closely follows Gromov’s original presen-
+                                                  tation. We prove a somewhat stronger statement, where the parameterizing
+                                                  maps are guaranteed to be cellular. It turns out that this additional restriction,
+                                                  along with some elementary lemmas on diﬀerentiable functions in o-minimal
+                                                  structures, allows the induction to be carried out without technical diﬃculties.
+
+
+
+
+                                                                     1. The Yomdin-Gromov lemma
+                                                     r
+                                             For a C -smooth function f : U → Rn on a domain U ⊂ Rm we denote by kf k
+                                          the maximum norm on U and
+                                                                                      kDα f k
+                                                                       kf kr := max           .                   (1)
+                                                                                |α|6r   α!
+                                             In his work on Shub’s entropy conjecture, Yomdin [10, 9] proved a lemma on C r -
+                                          smooth parametrizations of semialgebraic sets. This was further refined by Gromov
+                                          in [4], see also [2], with the following formulation now known as the Yomdin-Gromov
+                                          algebraic lemma.
+                                          Theorem 1 (Yomdin-Gromov algebraic lemma). Let X ⊂ [0, 1]n be a semialgebraic
+                                          set of dimensionPµ defined by conditions pj (x) = 0 or pj (x) < 0 where pj are
+                                          polynomials and     deg pj = β. Let r ∈ N. There exists a constant C = C(n, µ, r, β)
+                                          and semialgebraic maps φ1 , . . . , φC : (0, 1)µ → X such that their images cover X
+                                          and kφj kr 6 1 for j = 1, . . . , C.
+                                             Pila and Wilkie later realized that this theorem has remarkable applications in
+                                          the seemingly unrelated area of Diophantine approximation. For the generality
+                                          required by these applications, they stated and proved an analog of the algebraic
+                                          lemma for general o-minimal structures [7, Theorem 2.3] (see [8] for general back-
+                                          ground on o-minimal geometry).
+
+                                             2010 Mathematics Subject Classification. 03C64, 37B40, 14P10, 11U09 .
+                                             Key words and phrases. Gromov-Yomdin parametrization, o-minimality.
+                                             This research was supported by the ISRAEL SCIENCE FOUNDATION (grant No. 1167/17)
+                                          and by funding received from the MINERVA Stiftung with the funds from the BMBF of the
+                                          Federal Republic of Germany. This project has received funding from the European Research
+                                          Council (ERC) under the European Union’s Horizon 2020 research and innovation programme
+                                          (grant agreement No 802107).
+                                                                                          1
+2                       GAL BINYAMINI AND DMITRY NOVIKOV
+
+
+Theorem (Pila-Wilkie’s version of Yomdin-Gromov). Let X = {Xp ⊂ [0, 1]n } be
+a family of sets definable in an o-minimal structure, with dim Xp 6 µ. There exists
+a constant C = C(X, r) such that for any p there exist definable maps φ1 , . . . , φC :
+(0, 1)µ → Xp such that their images cover Xp and kφj kr 6 1 for j = 1, . . . , C.
+
+   In addition to Pila-Wilkie’s proof, Burguet [2] has also given a proof in the semial-
+gebraic setting around the same time. Both of these proofs roughly follow Gromov’s
+presentation, but the technical details are significantly more involved. This is due
+to an issue with potentially unbounded derivatives that was not explicitly treated
+in Gromov’s text, see the first paragraph of [7, Section 4]. In both Pila-Wilkie’s and
+Burguet’s papers, the problem is resolved by an additional approximation argument
+on C r -smooth maps. We also remark that Kocel-Cynk, Pawlucki and Vallete have
+given a proof based on a somewhat different approach in the general o-minimal
+setting [5].
+   In this paper we give a formal treatment of Gromov’s original proof. In par-
+ticular, we introduce a slightly stronger notion of cellular parametrizations in Def-
+inition 3, and prove the algebraic lemma with the additional requirement that
+the parameterizing maps are cellular. This, in combination with some elementary
+lemmas on differentiable functions in o-minimal structures (see §3.4), allows us to
+recover Gromov’s original inductive argument without any technical complications.
+
+Remark 1 (On the asymptotic constants). The constants C(X, r) and C(n, µ, r, β)
+in these statements are purely existential, and one could ask about their dependence
+on r and on the complexity β in semialgebraic case or, more generally, whenever
+this complexity can be defined (e.g. Pfaffian sets). A good understanding of these
+constants plays a crucial role in some potential applications of the algebraic lemma,
+both in dynamics and in Diophantine approximation. We refer the reader to [1,
+Section 1] for a discussion of these applications.
+   We briefly summarize the current state of the art. Gromov’s presentation [4]
+gives the polynomial dependence on β in the semialgebraic case (but no explicit
+dependence on r). Cluckers, Pila and Wilkie [3] give polynomial dependence on r
+for globally subanalytic (and slightly more general) sets, with no explicit dependence
+on β. In [1] we give a result with polynomial dependence on both r and β in
+the semialgebraic case: this is the statement which is most useful in the potential
+applications. We also give polynomial dependence on r in the globally subanalytic
+case. In a work in progress of the first author and Jones, Schmidt and Thomas, a
+bound polynomial in β (but not in r) is established for sets definable using restricted-
+Pfaffian functions. This is based on a suitable adaptation of the approach presented
+in the present paper to the restricted Pfaffian structure.
+
+1.1. Statement of the main result. We prove a refined version of the Yomdin-
+Gromov algebraic lemma for general o-minimal structures using the notion of cel-
+lular parametrizations introduced below. To simplify the terminology for readers
+not familiar with o-minimal structures, we will assume everywhere below that we
+are working with an o-minimal structure over the reals R. However all the proofs
+carry over to the general case without change.
+   We denote I := (0, 1). For a vector x1..ℓ ∈ Rℓ we denote by x1..i the vector
+consisting of its first i coordinates.
+                THE YOMDIN-GROMOV ALGEBRAIC LEMMA REVISITED                               3
+
+
+Definition 2. A basic cell C ⊂ Rℓ of length ℓ is a product of ℓ finite intervals I
+and singletons {0}. A continuous map f : C → Rℓ is called cellular if for every
+i = 1, . . . , ℓ
+      • fi (x1..ℓ ) = fi (x1..i ), i.e. fi depends only on the first i coordinates of x, and
+      • fi (x1..i−1 , ·) is strictly increasing for every x1..i−1 ∈ C1..i−1 (where the cell
+           C1..i−1 is the coordinate projection of C to Ri−1 = {xi = · · · = xℓ = 0} ⊂
+           Rℓ ).
+   Note in particular that cellular maps preserve dimension and the composition of
+cellular maps is cellular.
+Definition 3. A cellular r-parametrization of a definable set X ⊂ Rℓ is a collection
+Φ = {φα : Cα → X} of definable cellular C r -smooth maps φα with kφα kr 6 1 such
+that X = ∪α φα (Cα ).
+   A cellular r-parametrization of a definable map F : X → Y is a cellular r-
+parametrization Φ of X satisfying kφ∗α F kr 6 1 for every φα ∈ Φ.
+Remark 4. Let X ⊂ Rℓ , Y ⊂ Rq and F : X → Y a definable map. Then
+{φα : Cα → X} is a cellular r-parametrization of a F if and only if {(φα , F ◦ φα ) :
+Cα × {0}n → gr F } is a cellular r-parametrization of the graph gr F .
+   We will prove the Yomdin-Gromov lemma in the following form.
+Theorem 2. Let ℓ, r ∈ N. Then
+Sℓ : Every definable set X ⊂ I ℓ admits a cellular r-parametrization.
+Fℓ : Every definable function F : X → Y with X ⊂ I ℓ and Y ⊂ I q (for any q)
+        admits a cellular r-parametrization.
+   We remark that the cellular formulation of the Yomdin-Gromov lemma makes
+it automatically uniform over parameters: a cellular parametrization of a family
+with the parameters placed as the initial variables gives a cellular parametrization
+of each fiber by restriction. This uniformity is essential in the applications.
+Remark 5. This exposition appeared first as a part of the course “Tame geometry
+and applications” given by authors at the Weizmann Institute of Science, Fall 2018.
+
+                                 2. Why C r -smooth?
+   Before going into the proof of the Yomdin-Gromov lemma we will address a nat-
+ural question. Semialgebraic sets are analytic objects. Why would one, starting
+with such tame objects, venture into the far less rigid smooth category? It would
+certainly seem natural to expect a far more rigid parametrization, say by holomor-
+phic maps with respect to some suitable norm. It turns out that there are deep
+obstructions hiding in the background.
+   Ideally, one would like to replace finite smoothness order r ∈ N by a bound for
+all derivatives,
+                                              kDα f k
+                                kf k∞ := sup          .                        (2)
+                                           α    α!
+If U ⊂ Rm and f : U → Rn has kf k∞ < ∞ then f continues holomorphically to a
+1-neighborhood N1 (U ) ⊂ Cm of U . Moreover in N1/2 U we have
+                                 max |f | 6 const kf k∞ .                               (3)
+                                N1/2 (U)
+4                       GAL BINYAMINI AND DMITRY NOVIKOV
+
+
+So, instead of this ∞-norm we might as well use the norm given by the maximum
+of the analytic continuation of f to a neighborhood of some fixed radius. Below
+we’ll write
+                                    kf kω := max |f |.                              (4)
+                                               N1 (U)
+
+One would ideally like to prove the Yomdin-Gromov lemma with the maps φi
+extendable to 1-neighborhood of (0, 1)k and with this stronger norm. Unfortunately
+this is impossible already for the simple family of semialgebraic sets (originally
+considered in this context by Yomdin),
+                         Xε = [(−1, 1) × (−1, 1)] ∩ {xy = ε}.                       (5)
+We’ll show that an ω-parametrization of Xε will require log | log ε| maps (so can-
+not be uniform in the complexity). To explain this we take a brief detour to the
+geometry of hyperbolic Riemann surfaces.
+
+2.1. Hyperbolic geometry. Recall that the upper half-plane H admits a unique
+hyperbolic metric of constant curvature −4 given by | dz|/2y. A Riemann surface
+U is called hyperbolic if its universal cover is the upper half-plane H. In this case
+U inherits from H a unique metric of constant curvature −4 which we denote by
+dist(·, ·; U ) (we sometimes omit U from this notation if it is clear from the context).
+By the uniformization theorem, a domain U ⊂ C is hyperbolic if and only if its
+complement contains at least two points.
+   The following is a straightforward consequence of the classical Schwarz lemma
+obtained by lifting the map to universal covers.
+Lemma 6 (Schwarz-Pick [6, Theorem 2.11]). If f : S → S ′ is a holomorphic map
+between hyperbolic domains S, S ′ then
+                   dist(f (p), f (q); S ′ ) 6 dist(p, q; S)   ∀p, q ∈ S.            (6)
+2.2. The obstruction. Suppose f : (0, 1) → Xε is a map with kf kω 6 2. Then
+f extends analytically to the 1-neighborhood of (0, 1) in C and is bounded by 2
+there in absolute value. By analytic continuation, f continues to satisfy xy = ε in
+N1 (0, 1), so
+                       f : N1 (0, 1) → {xy = ε} ∩ {|x|, |y| < 2}                    (7)
+Consider the projection π(x, y) = x. Then the composition gives a map
+                   π ◦ f : N1 (0, 1) → {ε/2 < |x| < 2} = A(ε/2, 2).                 (8)
+The domain and the range are hyperbolic domains. So by Schwarz-Pick Lemma 6
+we have
+           diam([π ◦ f ](0, 1); A(ε/2, 2)) 6 diam((0, 1); N1 (0, 1)) = const .      (9)
+We see that the set of x-s covered by f has bounded hyperbolic diameter in
+A(ε/2, 2). We would eventually like to cover every x ∈ π(Xe ) = (ε, 1). A sim-
+ple computation gives
+                          diam((ε, 1); A(ε/2, 2)) ∼ log | log ε|                   (10)
+so indeed at least log | log ε| maps will be needed to cover Xε .
+               THE YOMDIN-GROMOV ALGEBRAIC LEMMA REVISITED                           5
+
+
+Remark 7. One can show that the bound above is asymptotically sharp, i.e. Xε
+can indeed be covered by O(log | log ε|) maps of unit ω-norm. Indeed, it suffices to
+find such a collection of such maps from (0, 1) to Xε which extend analytically to the
+complex disc D(2), with both coordinates bounded by 2 on this disc. Equivalently by
+considering only the x-coordinate, we may look for a collection of maps from (0, 1)
+into (ε, 1) which extend to maps D(2) → A(ε/2, 2). Passing to the logarithmic
+chart, we seek maps from D(2) to the strip
+                            Sε/2 = {log ε − 1 < Re t < 1}                        (11)
+such that the images of (0, 1) cover (log ε, 0). This is easily achieved using affine
+maps, where the radius of the image is taken to be proportional to the distance from
+the boundary of Sε/2 , and we leave it for the reader to verify that in this manner
+one does obtain a covering using O(log | log ε|) maps.
+
+                      3. Proof of the algebraic lemma
+    We start with a trivial transitivity remark. Assume that Φ = {φα : Cα → X}
+is a cellular r-parametrization of X and Φα = {φα,β : Cα,β → Cα } is a cellular
+r-parametrization of Cα . Then the collection {φα ◦ φα,β } is “almost” a cellular
+r-parametrization of X: by the chain rule kφα ◦ φα,β kr = Oℓ,r (1) and a linear
+subdivision reduces the norms to 1. We will use this reduction freely.
+    A similar remark holds for Φ = {φα : Cα → X} a cellular r-parametrization
+of F : X → Y and Φα = {φα,β : Cα,β → Cα } a cellular r-parametrization of
+fα∗ F : Cα → Y .
+    We record the following simple lemma.
+Lemma 8. Let n ∈ N and assume that every definable map F : X → I with
+dim X = n admits a cellular r-parametrization. Then the same is true for every
+definable map F : X → Y with dim X = n.
+Proof. Let Φ be a cellular r-parametrization of F1 . It will be enough to find a
+cellular r-parametrization for F ◦ φ1 for each φ1 ∈ Φ. In other words we may
+reduce to the case kF1 kr = Or (1). We now do the same for F2 , noting that after
+the composition we still have kF1 ◦ φ2 kr = Or (1) by the chain rule, and now also
+kF2 kr = Or (1). Repeating this for each coordinate we finally get kFi kr = Om,r (1)
+for every Fi and an additional linear subdivision finishes the proof.             
+   The proof of the Yomdin-Gromov lemma is by induction on ℓ. Statement S1 is
+trivial. We establish F1 as a base case, and then show S6ℓ + F6ℓ =⇒ Sℓ+1 and
+F<ℓ + S6ℓ =⇒ Fℓ .
+3.1. Proof of F1 . We’ll start with a simple lemma due to Gromov about killing
+derivatives of univariate functions.
+Lemma 9. Let r > 2. Suppose that f : I → I is a definable function with kf kr−1 6
+1. Then f has a cellular r-parametrization.
+Proof. By o-minimality we may divide I into finitely many subintervals where f (r)
+is monotone and continuous. Thus we assume without loss of generality that f (r)
+is positive and monotone decreasing on I. For any x ∈ I
+                  2   f (r−1) (x) − f (r−1) (0)
+                    >                           = f (r) (cx ) > f (r) (x)        (12)
+                  x               x
+6                        GAL BINYAMINI AND DMITRY NOVIKOV
+
+
+where cx ∈ (0, x) is chosen by the mean-value theorem. Let f˜(x) = f (x2 ). When
+computing the f˜(r) we get a bunch of bounded terms plus a term Or (xr f (r) (x2 )),
+which is bounded by Or (xr−2 ). Since r > 2 we get kf˜kr = Or (1) and a linear
+subdivision of I finishes the proof.                                              
+
+    We use this to obtain the following.
+Lemma 10. Let X ⊂ I 2 be a definable curve. For every r ∈ N there exists a
+collection of maps {φα : I → X} such that: i) ∪α φα (I) = X \ Σ for some finite set
+Σ; ii) kφα kr 6 1 for every φα ; iii) every coordinate of every φα is monotone.
+Proof. By cell decomposition we decompose X into finitely many points, intervals
+{x0 } × (a, b) and graphs of definable functions f : (a, b) → I. We denote by Σ the
+set of points, and easily parametrize the vertical intervals as required. It remains
+to parametrize the graphs, and we treat each of them separately.
+    By o-minimality we may assume that f is either constant (the parametrization
+is then trivial) or monotone, continuously differentiable, and one of
+          f ′ 6 −1          −1 6 f ′ < 0              0 < f′ 6 1             1 6 f′   (13)
+holds uniformly. Changing the orientation of (a, b) and exchanging the roles of x
+and y if needed we may assume 0 < f ′ 6 1 in (a, b). We are now in position to
+apply Lemma 9 repeatedly r − 1 times to obtain an r-parametrization {φ̃α : I → I}
+of f . Setting φα = (φ̃α , f ◦ φ̃α ) then gives the required parametrization of the graph
+of f (but note the x and y coordinates may have been exchanged). Condition (iii)
+follows from the monotonicity of φ̃α and of f .                                         
+
+   We are now ready to deduce F1 . For the case q = 1, apply Lemma 10 to the
+graph of F and let {φα = (φxα , φyα )} denote the resulting collection. Then Φ = {φxα }
+(plus the finitely many points x-coordinates of Σ, covered by zero-dimensional basic
+cells) is a cellular r-parametrization of F . Indeed, it is cellular by condition (iii), it
+covers the domain of F since φα covers the graph by condition (i), and
+                                kF ◦ φxα kr = kφyα kr 6 1                             (14)
+by condition (ii).
+  The case of general q now follows by Lemma 8. Note that we could not have
+obtained this directly from Lemma 9 because the assumption r > 2 is crucial there,
+and the reduction in Lemma 10 involves changing the order of the variables and is
+not cellular.
+
+3.2. The step S6ℓ + F6ℓ =⇒ Sℓ+1 . By cell decomposition it is enough to prove
+the claim for every cell C ⊂ Rℓ+1 . We assume that C = C1..ℓ ⊙ (a, b) (the case
+C = C1..ℓ ⊙ {a} is similar but easier). By F6ℓ we may assume that (a, b) already
+admits a cellular r-parametrization by maps fα : Cα → C1..ℓ . Let f : C → C1..ℓ be
+one of these maps. Then kf ∗ akr , kf ∗ bkr 6 1 and setting
+             C′ := C × I,      f ′ (x1..ℓ+1 ) = (f, xℓ+1 f ∗ b + (1 − xℓ+1 )f ∗ a)    (15)
+we have kf ′ kr 6 Oℓ (1). Taking a linear subdivision of C′ finishes the proof.
+
+3.3. The step F<ℓ + S6ℓ =⇒ Fℓ .
+                THE YOMDIN-GROMOV ALGEBRAIC LEMMA REVISITED                            7
+
+
+3.3.1. Reduction to F : I ℓ → I. By Lemma 8 it is enough to prove the claim for a
+function F : X → I. By Sℓ we may start by taking a cellular r-parametrization of
+X and reduce without loss of generality to the case F : C → I for C a basic cell of
+length ℓ. If C has any {0}-coordinates we can just ignore them and reduce to F<ℓ ,
+so we assume F : I ℓ → I.
+
+3.3.2. A family version of Fℓ . We will need a “family version” of Fℓ as follows.
+Fℓ for families: Let {Fλ : X → Y }λ∈I be a definable family. Then there exists (i)
+        a disjoint partition I = ∪Ij into finitely many points and intervals; (ii) for
+        every Ij a collection of basic cells Cα and cellular maps {fα,λ : Cα → X}λ∈Ij
+                                              ∗
+        such that (1) kfα,λ kr 6 1 and kfα,λ     Fλ kr 6 1 for every fixed λ ∈ Iα ; and
+        (2) for every λ ∈ Ij we have X = ∪α fα,λ (Cα ).
+It is not difficult to obtain such a family version by adding parameters to all of
+the statements in §3. However, to simplify the presentation we take a shortcut
+introduced in the Pila-Wilkie paper: we show in §3.5 that the family version of Fℓ
+follows from the regular version by general o-minimality considerations.
+
+3.3.3. Reduction to kF (x1 , ·)kr 6 1 for every x1 ∈ I. By the family version of Fℓ−1
+we may, thinking x1 as a parameter, find a cellular r-parametrization Φ = {φxβ1 }
+of F with respect to the x2..µ variables (we consider each interval Ij separately
+and rescale back to I). Fix one φx1 = φxβ1 and set F̂ = F ◦ (id, φx1 ). Then
+kF̂ (x1 , ·)kr 6 1 for every fixed x1 ∈ I. By o-minimality F̂ is C r -smooth outside a
+positive-codimension set V ⊂ I ℓ .
+   We first use Sℓ to find a cellular r-parametrization {fV,α : CV,α → V }. Each
+CV,α must have dimension strictly smaller than ℓ, i.e. it has a {0}-coordinate, so
+                                                        ∗
+we can find a cellular r-parametrization for each fV,α    F using F<ℓ as above.
+   We now use Sℓ to find a cellular r-parametrization {fα : Cα → I ℓ \ V }. Fixing
+one such C, f we note that f ∗ F̂ is C r -smooth on C, and crucially we still have
+kf ∗ F̂ (x1 , ·)kr = Oℓ,r (1) for every fixed x1 ∈ I because kf kr 6 1 and f1 does not
+depend on x2..ℓ . As before we may assume that C = I ℓ and use linear subdivision
+to get kf ∗ F̂ (x1 , ·)kr 6 1.
+
+3.3.4. Induction over the first unbounded derivative α. We return to our original
+notation replacing F by f ∗ F̂ . We may now assume that F : I ℓ → I is C r -smooth
+and kF (x1 , ·)kr 6 1 for every x1 ∈ I. Let α ∈ Nℓ be the first index, in degree-
+lexicographic order, such that |α| 6 r and kF (α) k > 1. If no such α exists we
+are done. We will reparametrize F by cellular r-maps such that the pullback has
+strictly larger α and then finish the argument by induction on α.
+
+3.3.5. Reparametrization of the x1 variable. By assumption α1 > 0. Using Lemma 12
+and treating the finitely many exceptional x1 values by induction on ℓ, we may as-
+sume without loss of generality that F (α) (x1 , ·) is bounded for every x1 ∈ I. Define
+
+                S := {x1..µ ∈ I ℓ : |F (α) (x1..µ )| > 21 sup |F (α) (x1 , ·)|}    (16)
+                                                          I ℓ−1
+
+Choose a definable curve γ : I → S such that γ1 (x1 ) = x1 . Using F1 we find a
+cellular r-parametrization Φ of (γ, F (α−11 ) ◦ γ). Fix φ ∈ Φ and set F̃ := F ◦ (φ, id).
+8                        GAL BINYAMINI AND DMITRY NOVIKOV
+
+
+3.3.6. Finishing up: a bound on all derivatives up to α. Recall that all derivatives
+of (φ, id) up to order r and all derivatives F (β) with β < α are bounded by 1. It
+follows easily using the chain rule that F̃ (β) = Oℓ,r (1) for β < α. Computing F̃ (α)
+we get a bunch of terms that add up to Oℓ,r (1), plus the term (φ′ )α1 · F (α) ◦ (φ, id).
+Now
+          (φ′ )α1 · F (α) ◦ (φ, id) 6 (φ′ )α1 · 2F (α) ◦ γ ◦ φ 6 2φ′ · F (α) ◦ γ ◦ φ   (17)
+since |φ′ | 6 1 and α1 > 1. To bound the right hand side we compute
+                                                                             
+                                                    µ
+                                                    X
+           (F (α−11 ) ◦ γ ◦ φ)′ = φ′ · F (α) ◦ γ +   γj′ · F (α−11 +1j ) ◦ γ  ◦ φ    (18)
+                                                      j=2
+
+
+and note that the left hand side, φ′ · γj′ ◦ φ and F (α−11 +1j ) are Oℓ,r (1). Therefore
+φ′ ·F (α) ◦γ ◦φ is also Oℓ,r (1), and a further subdivision and linear reparametrization
+finishes our induction on α.
+
+3.4. Boundedness of derivatives. In this section we prove a simple lemma on
+boundedness of derivatives that is used in the proof of Theorem 2. We let µ denote
+the Lebesgue measure (or just sum of lengths of intervals).
+
+Lemma 11. Let {fε (t) : I → I} be a definable family of functions depending on a
+parameter ε. Then for every ε,
+                                                          C
+                             µ {t ∈ I : |fε′ (t)| > M } <
+                                                       
+                                                                                       (19)
+                                                          M
+where C is a constant independent of ε.
+
+Proof. The set where fε′ (t) > M (resp. f ′ (t) < −M ) is a union of intervals, with
+their number uniformly bounded by o-minimality, and each of length at most 1/M :
+otherwise fε would leave I along such an interval.                                
+
+Lemma 12. Let f : I ℓ → I be definable, and suppose that kfj′ k 6 1 for j = 2, . . . , ℓ.
+Then the function f1′ (x1 , ·) is bounded for almost every fixed x1 ∈ I.
+
+Proof. Assume the contrary. Then the set
+                           {x1 ∈ I : |f1′ (x1 , ·)| is unbounded}                      (20)
+contains an interval, and we might as well assume after restriction and rescaling
+that it is I. For each M we can choose a curve γM : I → I ℓ−1 such that
+                              |f1′ (t, γM (t))| > M         ∀t ∈ I,                    (21)
+and we may further assume the dependence on M is definable. Applying Lemma 11
+to the coordinates of γM (t) and to f (t, γM (t)) we see that outside a set of measure
+                 ′
+C̃/M we have kγM   (t)k 6 M/(3ℓ) as well as
+              ′                   ′
+            |f2..ℓ (t, γM (t)) · γM (t) + f1′ (t, γM (t))| = |f (t, γM (t))′ | 6 M/3   (22)
+
+This is impossible as soon as M > C̃: the first summand in the left hand side is
+bounded by M/3, and the second is at least M .                                
+                  THE YOMDIN-GROMOV ALGEBRAIC LEMMA REVISITED                                     9
+
+
+3.5. Automatic uniformity over families. In this section we give a model-
+theoretic proof that the statement Fℓ for an arbitrary o-minimal structure (and
+fixed ℓ, r ∈ N) implies the family version for an arbitrary o-minimal structure (with
+the same ℓ, r). This is the approach employed by Pila and Wilkie [7], and we repeat
+it here with some more explicit details for non-experts in model-theory who are
+nevertheless interested in understanding the mechanics of this general reduction.
+However, a reader unfamiliar with the relevant notions from model theory can
+alternatively check that the family versions can be proven in the same manner as
+the usual statements, essentially verbatim.
+   Let M be an o-minimal structure and consider a family {Fλ : X → Y }λ∈I . Let L
+be the language of M. Let Φ := {φα (p, a)} denote the set of all L-formulas in two
+sets of variables and N ∈ N. For every φ ∈ ΦN we can write the first order formula
+ψφ (λ) stating that “there exists p such that that the formulas φ1 (p, ·), . . . , φN (p, ·)
+define N cellular maps f1 , . . . , fN : X → Y which form a cellular r-parametrization
+of Fλ ”. We claim that there are φ1 , . . . , φq be such that ∀λ ∈ I : ∨qj=1 ψφj (λ) holds
+in M.
+   Suppose not. Let c denote a new constant and consider the theory
+                 T := ThL (M) ∪ {c ∈ I} ∪ {¬ψφ (c) : N ∈ N, φ ∈ ΦN }                           (23)
+This theory is finitely consistent by our assumption (in fact an interpretation for c
+exists in M). It is therefore consistent by compactness, and we have an elementary
+extension M ⊂ M̃ which is again an o-minimal structure. But the axioms of T state
+that FcM̃ has no cellular r-parametrization, and this contradicts Fℓ for M̃.
+   Now choose φ1 , . . . , φq as above and set Ij := {λ ∈ I : ψφj (λ)}. By definable
+choice there’s a definable map λ → p(λ) such that for every λ ∈ Ij the formulas
+                                φj1 (p(λ), x), . . . , φjNj (p(λ), x)                          (24)
+define Nj cellular maps which form a cellular r-parametrization of Fλ . Finally
+∪j Ij = I, and refining this into a partition by points/intervals using o-minimality
+proves the claim.
+
+                                          References
+ [1] Gal Binyamini and Dmitry Novikov. Complex cellular structures. Ann. of Math. (2),
+     190(1):145–248, 2019.
+ [2] David Burguet. A proof of Yomdin-Gromov’s algebraic lemma. Israel J. Math., 168:291–316,
+     2008.
+ [3] Raf Cluckers, Jonathan Pila, and Alex Wilkie. Uniform parameterization of subanalytic sets
+     and diophantine applications, 2016.
+ [4] M. Gromov. Entropy, homology and semialgebraic geometry. Astérisque, (145-146):5, 225–
+     240, 1987. Séminaire Bourbaki, Vol. 1985/86.
+ [5] Beata Kocel-Cynk, WiesL aw PawL ucki, and Anna Valette. Cp -parametrization in o-minimal
+     structures. Canad. Math. Bull., 62(1):99–108, 2019.
+ [6] John Milnor. Dynamics in one complex variable, volume 160 of Annals of Mathematics Stud-
+     ies. Princeton University Press, Princeton, NJ, third edition, 2006.
+ [7] J. Pila and A. J. Wilkie. The rational points of a deﬁnable set. Duke Math. J., 133(3):591–616,
+     2006.
+ [8] Lou van den Dries. Tame topology and o-minimal structures, volume 248 of London Mathe-
+     matical Society Lecture Note Series. Cambridge University Press, Cambridge, 1998.
+ [9] Y. Yomdin. C k -resolution of semialgebraic mappings. Addendum to: “Volume growth and
+     entropy”. Israel J. Math., 57(3):301–317, 1987.
+[10] Y. Yomdin. Volume growth and entropy. Israel J. Math., 57(3):285–300, 1987.
+10                       GAL BINYAMINI AND DMITRY NOVIKOV
+
+
+     Weizmann Institute of Science, Rehovot, Israel
+     E-mail address: gal.binyamini@weizmann.ac.il
+
+     Weizmann Institute of Science, Rehovot, Israel
+     E-mail address: dmitry.novikov@weizmann.ac.il
+

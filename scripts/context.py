@@ -31,7 +31,11 @@ def main():
             items = data.get("items", [])
             summary = {key: data.get(key) for key in (
                 "updated_on", "latest_round", "current_goal_tool_status", "next_main_spec",
-                "active_research_goal", "latest_research_restart") if key in data}
+                "active_research_goal") if key in data}
+            summary["current_round_records"] = {
+                key: value for key, value in data.items()
+                if isinstance(value, dict) and value.get("round") == data.get("latest_round")
+            }
             summary["item_count"] = len(items)
             summary["statuses"] = dict(Counter(item.get("status", "unspecified") for item in items))
             summary["baseline_result"] = next(({
