@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-26，R0112：新Goal active。本轮具体fixed好chart/保直的原方向帽迁移桥被真实s3/unitaxes/fullmarks族否定，仍非完整G4/Kakeya反例。新增五primary并核WW/Ren/LW/OWY实际输入与量词；无新普通维数/完整source正gain、无新ID。连续两轮主gain为0已全宏观，下一入口notes/00_map/R0112_next_original_input_selection.md。
+更新2026-10-26，R0113：新Goal active。任意Borel三角prefix截距的原正质量marks满Hausdorff维，finite真实原shading有λ^(m+1)δ^(m(1−s))体积界，两独审通过；属于proper类，不是ordinary/完整source新gain或major。固定共同realS+正角质量精确三角化有光滑反攻。jointcap及预定section桥另有限定拒证。下一R114先周期全目标重选，见notes/00_map/R0113_next_complete_goal_reset.md。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -259,3 +259,6 @@ R0110：用户授权双语论文整理。见papers/manuscripts.json、papers/REA
 R0111：新Goal重启，三独立资格稿与root确认全real seed/KT闭包属R81/R85旧指纹；六维17/4封顶与五维启动障碍只作旧机制审计，不算新成果。fresh一手12queries无可采用新primary；官方单源blob未变，88PDF/92sources/78IDs保持。新Goal数学gain停滞1，历史31保留；下一无gain即宏观，通常不晚于R114。当前no qualified new working，禁止数表/6.7重复/泛assembly改名；原ordinary/fullrough/反例三责任仍open。恢复工具默认精简且识别R110，--full保历史。
 
 R0112：uniform biLip resolution即使保直/nonshort/Jacobian，仍δ^-1方向bin重数；qpacket特例修复与FSD旧闭包明确，不反G4。BN exact解析图数不授δmetric近似，WWGamma/原J去重、Ren真实degree/activeclock、OWY0/1jet、LW生成label/全contained-lines均实际核并两独审。修Mδ网/Ren准确指数门/r=δ^a域。新5PDF后93PDF/97sources/78IDs；sourcegain0连续2宏观已做，旧31保历史；不得以新来源名重开冻结路线。
+
+
+R0113：root主proof notes/50_counterexamples/R0113_triangular_Borel_original_shading_proof.md；原平均marks一次潜势筛选、interval diagonal/offdiag及逆序密度/Frostman返回，两独审实读通过。只解三角proper类，无普通新界/major/newID，旧78项不变。两端点jointcap与四预定sections各有限拒桥，完整s3 lift仍旧FSD闭包。93PDF/97sources，source比较不认证新颖/全前沿。新Goal无sourcegain3、旧31保留，R114须先宏观；冻结三角参数/DAG/block同证明续轮。
