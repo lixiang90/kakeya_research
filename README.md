@@ -1,5 +1,9 @@
 # 一般维度 Kakeya 研究
 
+2026-10-27：用户停止原独立续研，转读OpenAI最新全维局部光滑发布。[阅读指南](notes/60_external_results/2026_10_local_smoothing/01_reading_guide.md)说明59页新稿的主定理、辅助PDE、Kakeya全维推论与Lean核查边界。原件已存literature；本项目没有重放整套形式化，也不据外部署名自行认证证明。当前不恢复旧Goal。
+
+以下为发现新发布前的历史研究记录，不作为当前前沿状态。
+
 2026-10-26 R112：已完成[不同输入及原质量宏观](notes/00_map/R0112_macro_and_charged_geometric_return.md)和两独审，严格排除一个好chart直接搬原方向帽的接法；一般猜想仍open，无新维数改善。文献现93PDF/97sources。
 
 2026-10-26：用户授权在六维17/4之后继续研究，[新Goal](GOAL.md)已启动（active）。[R0111](research/rounds/R0111.md)完成宏观重选和旧路线排重，尚无新维数改善；不能用旧17/4再次完成新Goal。[下一输入资格门](notes/00_map/R0111_next_new_input_gate.md)与[独立审查整合](research/reviews/R0111_macro_and_root_integration.md)保存当前边界。

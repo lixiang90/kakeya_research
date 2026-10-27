@@ -1,29 +1,23 @@
-# 当前研究交接
+# 当前交接：原研究已停止，改读全维局部光滑新发布
 
-更新2026-10-27，R0117。Goal active，需严格超出旧DIM001六维 Hausdorff 17/4；普通五维/一般满维未解。原 AP 前端的经典反攻及条件 finite 责任经独立逐步审查通过；无新ordinary/source正gain、major、数学ID或真实Kakeya反例，未经外部同行评审。
+2026-10-27。用户明确说不再研究同一个Kakeya问题，要求寻找并解读新文献。原Kakeya续研停止，不恢复原Goal；工具本次返回本线程无活动Goal。未将旧Goal标记complete，也没有把外部成果算成本项目证明。
 
-## 1. 本轮唯一主任务与版本
+## 当前交付与外部新结论
 
-working：research/rounds/R0117_AP_input_qualification_spec.md。主稿：notes/50_counterexamples/R0117_actual_tube_AP_input_gate.md。对固定a∈(0,1)、C≥0、任意η>0，在所有足小dyadicδ，真实R5全方向单位圆管有每管density≥δ^η而无Cδ近似/两gap≥δ^a的clock3AP。经典无进位球层自证；floor覆盖每个δ，ω4δ4(1+16δ/15)端帽、原N/I与可测marks及原Q∩T pieces/null点均支付。给定whole Q⊂T只证其删选闭包，不赠原圆管内足量whole cubes。
+阅读入口notes/60_external_results/2026_10_local_smoothing/01_reading_guide.md，辅助02_auxiliary_pde_reading.md/03_formal_scope_reading.md。round为research/rounds/R0118_release_reading.md；旧R118_macro_reselection_spec已标中断，不再执行。旧研究代理均终态；本次两新代理只写读解稿，没有继续证明研究。
 
-对任意原marks逐管独立phase，Fubini保至少rδ≥cδ^s原质量，piece rounding仅删原pieces，union不增且原T/N/δ/单位长度不变。pt/av分别证；q=1，所以λ'=pλ，不从平均倒推逐管。固定β/a/C/格式/type后，APβ(η)⇒FEβ(η/2)，s=η/4支付density_new≥cδ^(3η/4)≥δ^η；FEβ(η)⇒APβ(η)仅真空。在∃η正幂量词同责任，不是同η或一般Hausdorff等价；任一真值均未证明。
+已确认官方2026-10-26公告及其直接链接59页原稿Local smoothing for the Euclidean wave equation（2026-10-25），固定openai/math commit7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a。Theorem1.1欧氏所有n>=2、2<=p<infty，Sobolev阶max(0,(n-1)/2-n/p)+epsilon；p2允许epsilon0。Theorem1.2在pc=2n/(n-1)给log^(2/pc)频率环界。不是任意流形/所有变系数FIO同指数结论，也不赠无损端点。
 
-主稿rawSHA a5345e1739d32ca8e2e2d886e07c06f70362e7cfeb28df87b66703b2736d6ff8。正式独审research/reviews/R0117_actual_AP_gate_independent_review.md实际全文读对应最终九节，通过无未决必修；root亦实读主稿/最终段/完整review，本人提示不计独审。root审定notes/00_map/R0117_AP_input_qualification_decision.md。数学不是靠档案脚本或有限样本认证。
+Cor9.1(PDF27)直接给Kakeya maximal log^(2(n-1)/n)界及每个全方向单位段集合Hausdorff维数n。第30–31页用变尺度ball cover另付Hausdorff，不仅Minkowski；满维不等于正体积。对六维该外部结论为6，旧17/4仅历史基线。原方法PDE是正守恒张量、quaternionic Monge-Ampere Dirichlet势、修正能量及两次辅助圆环传播，不是四维递推。
 
-## 2. 准确边界与已冻结入口
+## 证据边界与原件
 
-whole-tube bush体积~1，但marked union可小幂缩小；本模型E≈λ，所以不能给固定β、η<β的bad footprint，无samecompact严格Hausdorff上界。经典AP-free配方、长度/phase/格式参数及prototype改名全部停止，不以条件AP改名免费初始化。R114 carrier/∀shading闭包、R115强∀grain cap、R116uniform codec等冻结保持；旧KT全参数表、CP/PM、三角/PDE等不重开。
+root实读intro/§9，视觉读PDF1/5/27/30；主读者读选定§2/4/5及§6/7/9，形式范围读者核docs079、Mathlib-only参照题面、实际solution/config和Hausdorff桥。题面sorry不是作者solution漏洞。配置只允许通常三公理，但本次没有本机kernel/Comparator重放、全依赖独审或外部同行评审认证。官方发布及形式化声明与我们实际核到的范围分开。
 
-source scope为notes/00_map/R0117_AP_source_scope_gate.md。root及代理实读原Defs：原T不动的AD/CW精确保、原labels/coarse覆盖与absolute upper可保；首个未付是surviving canonical访问重组的逐点Φ witnesses/AD lower，再同时付filledX/nativeY及coarse-Y union lower。原E/Φ不动时canonical shading又没改。普通mask闭包不能自动给完整source闭包或其不可能性；原定理/高级wholeproof未重证。
+原件literature/primary/OAI_LOCAL_SMOOTHING_2026_10_25.pdf，59页/810093B，SHA256 9ca156c552f2d940528f7131716326ef0d67a5829e723e1d294d74560c8636ff；text在extracted同stem。scope、challenge/config及五个相关实际文件的部分snapshot存notes/formalization，非完整可独立构建项目。metadata/R0118_release_source_check.json记所有hash/版本。库100PDF/107sources，旧104来源/78结果保留原样，不新增本项目数学ID。
 
-## 3. 下一动作与宏观防漂移
+## 历史与同步
 
-notes/00_map/R0117_next_macro_original_joint_input.md。目前没有qualified替代联合输入，因AP前端被否，R0118先四出口宏观重选，提前于原R119周期；不得直接从AP转source重组新名称或旧局部优化。ordinary/source无正gain连续7，历史旧31保持，与无信息轮计数不同；本轮实际原格式及条件量词审定提供决策信息。完整Goal门槛不变，数学困难不作blocked。
+原GOAL顶部已写用户停止通知，registry历史目标status=stopped_by_user、achieved=false；旧DIM001/papers和失败记录不删，不能当新前沿或新成果。README/ROADMAP当前提示改为新文献解读，以下旧路线为历史。
 
-恢复python scripts/context.py后实读主稿/独审/root审定和next；摘要不代证明。压缩前更新本STATE。所有旧文献/78项、DIM001、GOAL、旧Goal及papers保留原样，不因本轮准入结果完成Goal。
-
-## 4. 文献与同步
-
-新增Green–Wolf0810.0732v1经典PDF(4p)、text/metadata；root视觉读物理页1/3，只比对经典性质，不调用优化界或认证wholeproof。总99PDF/104sources/78旧IDs，旧103来源保持；无fresh全前沿、first/best或外peer认证。
-
-父b40957a99ac1033d43c78ab106e41c1bbecb5600/tree9d0a2144aa43a7f942c20a4841c3f0b4f291a6e2，1860文件，R116实际回执tmp/sync/R0116.json所有fulltree/逐SHA256/同commit/clean已核。按用户逐命令10808代理保历史非force同步；R117最终权威为tmp/sync/R0117.json的fresh remote/fulltree/path/mode/blob/SHA256/同commit/clean实核，不在提交文字预认证未来上传。失败保本地继续可做数学；Goal无预算。
+父62b3234119605ef4622967bb9d87d176162e549f/tree6e4727a8f642d707b578303d23551fb5cc737e4a，1872文件，R117回执已核。按用户既有授权10808代理同步本轮文献与读解，最终事实以tmp/sync/R0118.json fresh remote/fulltree/逐SHA256/同commit/clean为准，提交文字不预认证未来同步。没有待自动运行的证明任务；后续听用户新指令。

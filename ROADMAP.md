@@ -1,6 +1,6 @@
 # 路线台账
 
-更新2026-10-27，R0117：经典AP-free clock在真实全方向单位圆管及原pieces上全dyadic反攻经独审；small-footprint条件APβ(η)⇒finite排除β(η/2)，反向真空，非免费新正机制。marked bush E≈λ，不造开放β/小η反例；完整source canonical Φ/X/Y lower重组未付，AD/CW/uppers保留。99PDF/104sources/78旧IDs，无主gain连续7、旧31保持。AP入口停止，提前R118宏观；next见R0117_next_macro_original_joint_input.md。
+更新2026-10-27，R0118转任务：用户停止原证明续研，改读OpenAI全维局部光滑新发布（稿10/25，公告10/26）。原稿Cor9.1直接声明全维Kakeya极大与任意集合Hausdorff满维；已核主张/读解/形式化范围，未整篇独证或本机Lean重放。旧路线表为发现新发布前的历史，不从其open/queued状态自动恢复Goal。入口notes/60_external_results/2026_10_local_smoothing/01_reading_guide.md，100PDF/107sources/78历史项。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |
 | --- | --- | --- | --- |
@@ -274,3 +274,6 @@ R0116：codec主稿actual_direction_construction_gate.md两独审，finite tuple
 
 
 R0117：真实单位圆管clock AP输入资格完成，主稿actual_tube_AP_input_gate.md经未参与者全文独审；全dyadic/floor、Cδ加piece误差、精确端帽/原N/I、逐管/平均及原pieces/null点均核。任意marks phase删选每管保cδ^s、union不增；固定β/格式/type的条件AP已承担∃η finite排除责任，未证明任一真。经典sphere方法不新，99PDF/104sources/78项。source原T/labels上半段可保，canonical lower重组未付，不据此重开generic regularization。无新维数/major，Goal active；提前R118宏观，不续AP/phase/格式优化。
+
+
+R0118：原宏观因用户停止续研而中断；已找到并归档官方全维local smoothing59页原稿、scope及部分Lean接口，外部Cor9.1直接给通常全维Kakeya结论。阅读主机制为正守恒张量/四元数Dirichlet能量/圆环传播，精细log与epsilon/端点范围注明；不是本项目新proof/major。旧Goal停止、未标完成，78项/旧papers保留历史。100PDF/107sources，阅读交接见STATE与新目录，不自动继续旧待证命题。

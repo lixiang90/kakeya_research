@@ -201,3 +201,6 @@ R0116新增4PDF：Li2607.29042v1(40p)、Orponen–Shmerkin Spread-out I2610.1367
 
 
 R0117新增Green–Wolf0810.0732v1(4p)经典论文原件/text/metadata，root视觉读物理1/3页，99PDF/104sources。用于核AP-free方法的经典性质，不调用优化界或声新构造/新Kakeya gain；全部新应用在主稿自证。原WZ Defs的arbitrary shading/canonical visits及AD lower范围另核，无fresh wholeproof/前沿认证。scope见metadata/R0117_source_check.json。
+
+
+R0118用户转为解读OpenAI全维local smoothing新发布，新增59页10/25原稿、text/metadata、官方10/26公告记录和Lean范围/部分源码快照，库100PDF/107sources。Cor9.1外部声明全n Kakeya maximal/Hausdorff，旧17/4保持历史而非当前未解目标。root视觉读1/5/27/30；没有本机重放或整篇独审/外peer认证。新目录notes/60_external_results/2026_10_local_smoothing保存读解。
