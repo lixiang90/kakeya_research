@@ -1,0 +1,728 @@
+                                           ON THE NON-ARCHIMEDEAN MONGE–AMPÈRE EQUATION
+                                                       IN MIXED CHARACTERISTIC
+
+
+                                                       YANBO FANG, WALTER GUBLER, AND KLAUS KÜNNEMANN
+
+
+                                                   Abstract. Let X be a smooth projective variety over a complete discretely
+                                                   valued field of mixed characteristic. We solve non-Archimedean Monge–Ampère
+arXiv:2203.12282v3 [math.AG] 8 Dec 2025
+
+
+
+
+                                                   equations on X assuming resolution and embedded resolution of singularities.
+                                                   We follow the variational approach of Boucksom, Favre, and Jonsson proving
+                                                   the continuity of the plurisubharmonic envelope of a continuous metric on an
+                                                   ample line bundle on X. We replace the use of multiplier ideals in equicharac-
+                                                   teristic zero by the use of perturbation friendly test ideals introduced by Bhatt,
+                                                   Ma, Patakfalvi, Schwede, Tucker, Waldron, and Witaszek building upon pre-
+                                                   vious constructions by Hacon, Lamarche, and Schwede.
+
+                                                   MSC: Primary 14G22, Secondary 14F18, 32P05, 32U15
+
+
+
+
+                                                                                     Contents
+                                             1. Introduction                                                                             1
+                                             2. Model metrics, curvature forms and psh envelopes                                         3
+                                             3. Global test ideals in mixed characteristic                                               4
+                                             4. Perturbation friendly global test ideals                                                 6
+                                             5. Continuity of the envelope of the zero function                                          8
+                                             6. Resolution of singularities                                                             10
+                                             7. Continuity of the envelope                                                              11
+                                             8. The Monge–Ampère equation                                                              11
+                                             References                                                                                 12
+
+
+
+                                                                                1. Introduction
+                                             Let L be an ample line bundle on an n-dimensional projective variety X over a
+                                          non-Archimedean field K. The non-Archimedean analogue of the famous Calabi–
+                                          Yau problem asks for a given Radon measure µ on the Berkovich analytification
+                                          X an with µ(X an ) = degL (X) whether there exists a continuous semipositive metric
+                                          ∥ ∥ of L, unique up to scaling, such that
+                                          (1.1)                                  c1 (L, ∥ ∥)∧n = µ
+                                          using the non-Archimedean Monge–Ampère measure introduced by Chambert-Loir
+                                          on the left. We call (1.1) the non-Archimedean Monge–Ampère equation. The
+                                          analogous problem over the complex numbers was solved by Yau for Radon measures
+                                          given by smooth volume forms within the class of smooth metrics. Uniqueness was
+                                          shown before by Calabi. Later Kolodziej used pluripotential theory to treat more
+                                          singular measures and solutions [Kol98].
+                                             Yuan and Zhang proved uniqueness up to scaling for solutions of the non-archime-
+                                          dean Monge–Ampère equation [YZ17]. In a groundbreaking work, Boucksom, Favre
+
+                                             Date: December 9, 2025.
+                                             Y. Fang, W. Gubler and K. Künnemann were supported by the collaborative research center
+                                          SFB 1085 Higher Invariants - Interactions between Arithmetic Geometry and Global Analysis
+                                          funded by the Deutsche Forschungsgemeinschaft.
+                                                                                           1
+2                     Y. FANG, W. GUBLER, AND K. KÜNNEMANN
+
+
+and Jonsson solved the non-Archimedean Monge–Ampère equation over a complete
+discretely valued field K of residue characteristic zero assuming that X is smooth
+and that the support of the Radon measure µ is contained in the skeleton of an SNC-
+model (a projective regular model with special fiber having simple normal crossing
+support) [BFJ15]. They assumed also that K is a completion of the function field
+of a curve at a closed point. This geometric condition was later removed by Burgos,
+Jell, Martin and the last two authors of this paper [BGJ+ 20]. Boucksom, Favre,
+and Jonsson used a variational approach to solve (1.1) which relies crucially on the
+continuity of the semipositive envelope of a continuous metric of L. They show
+continuity of this envelope by using multiplier ideals on SNC-models [BFJ16]. In
+their arguments, Hironaka’s resolution of singularities plays an important role in
+order to have sufficiently many SNC-models at hand. Apart from the multiplier
+ideals, it is precisely here where residue characteristic zero is used again.
+    In equicharacteristic p > 0, the following existence result was shown by Jell,
+Martin and the last two authors of this paper [GJKM19]. Similarly as above, it
+is assumed that K is a completion of the function field of a curve over a perfect
+field k of characteristic p > 0. It is also assumed that resolution of singularities and
+embedded resolution of singularities hold in dimension n + 1, see §6.1 for precise
+definitions. Then existence of a solution of (1.1) is shown in [GJKM19] if the
+support of µ is contained in the skeleton of an SNC-model. The proof is along the
+same lines as in [BFJ16, BFJ15] replacing multiplier ideals by test ideals. Note
+that this result is unconditional for n = 2 by using resolution of singularities for
+three-folds proved by Cossart and Piltant.
+    If K has mixed characteristic, then there are results about the non-archimedean
+Monge–Ampère problem for varieties like curves, abelian varieties and toric varieties
+based on their special geometry [Thu05, Liu11, BGJK21].
+    In this paper, we deal with the Monge–Ampère problem for arbitrary smooth
+projective varieties over a complete discretely valued field K of mixed character-
+istic (0, p). For a complete local noetherian domain R of mixed characteristic,
+a theory of test ideals was introduced by Ma and Schwede based on perfectoid
+ideas [MS18, MS21]. Using perfectoid methods, prismatic techniques, and a p-adic
+Riemann-Hilbert correspondence, Bhatt was able in 2020 to show a variant of Ko-
+daira vanishing ‘up to finite covers’ in mixed characteristic [Bha20]. Applications to
+the minimal model program were given by Bhatt, Ma, Patakfalvi, Schwede, Tucker,
+Waldron, and Witaszek [BMP+ 21] and independently by Takamatsu and Yoshikawa
+[TY21]. For projective normal schemes over R, these ideas were extended by Hacon,
+Lamarche and Schwede. They introduced +-test ideals and showed global genera-
+tion results [HLS21]. Their construction, which replaces spaces of global sections by
+so-called spaces of +-stable sections from[BMP+ 21, TY21], is recalled in §3. Hacon,
+Lamarche and Schwede conjecture that subadditivity holds for their +-test ideals
+[HLS21, Conjecture 8.3]. Observe that subaddivity is well known for multiplier
+resp. test ideals in the equicharacteristic case. While this conjecture remains open,
+a modified version of +-test ideals, which we call perturbation friendly global test
+ideals in this article, was introduced by Bhatt, Ma, Patakfalvi, Schwede, Tucker,
+Waldron, and Witaszek [BMP+ 24], again benefiting from a p-adic Riemann-Hilbert
+correspondence. These perturbation friendly test ideals enjoy properties as nice
+as the +-test ideals of Hacon, Lamarche and Schwede, and in addition satisfy the
+subadditivity property. We refer to §4 for details.
+    The contribution of this paper is to show that global +-test ideals and perturba-
+tion friendly global test ideals allow applications to the non-Archimedean Monge–
+Ampère problem in mixed characteristic. More precisely, we prove the following
+results.
+                    MONGE–AMPÈRE IN MIXED CHARACTERISTIC                             3
+
+
+Theorem 1.1. Let L be an ample line bundle on a smooth projective variety X
+over K.
+     (i) If ∥ ∥ is a model metric on L induced by a model (X , L ) of (X, L) with
+         X regular and if L has an ample model A on X , then the semipositive
+         envelope of the metric ∥ ∥ is continuous.
+    (ii) If resolution of singularities holds for projective K ◦ -models of X, then the
+         semipositive envelope of any continuous metric ∥ ∥ of L is continuous.
+   This follows from Theorem 5.1 and Theorem 7.1 by Remark 8.2. This result is
+the key to apply the variational method of Boucksom–Favre–Jonsson as we will see
+in Theorem 8.1.
+Theorem 1.2. Let L be an ample line bundle on an n-dimensional smooth projec-
+tive variety X over K. If resolution of singularities holds for projective models of
+X and embedded resolution of singularities holds for regular projective models of X,
+then the non-Archimedean Monge–Ampère equation (1.1) is solved by a continuous
+semipositive metric ∥ ∥ of L, unique up to scaling, if the positive Radon measure µ
+has support in the skeleton of an SNC-model of X.
+
+          2. Model metrics, curvature forms and psh envelopes
+   Non-Archimedean pluripotential theory in higher dimensions was introduced by
+Boucksom, Favre and Jonsson [BFJ16]. We recall basic notions of non-Archimedean
+pluripotential theory following [GJKM19, 2.1-2.8].
+   Let X be a proper variety over a non-Archimedean field K. Recall that the
+topological space underlying the Berkovich analytification X an of X consists of pairs
+(p, | |p ) with p ∈ X and | |p an absolute value on κ(p) = OX,p /mX,p that extends
+| |K and is equipped with coarsest topology such that the map π : X an → X,
+(p, | |p ) 7→ p is continuous and for all Zariski open subsets U of X and all regular
+functions f ∈ OX (U ) the map |f | : U an = π −1 (U ) → R, (p, | |p ) 7→ |f (p)| :=
+|f + mX,p |p is continuous as well.
+   A model of X is a proper flat scheme X over S := Spec K ◦ together with an
+isomorphism h from X to the generic fiber Xη of the S-scheme X . The special fiber
+of X is denoted by Xs . Given a model X , the valuative criterion for properness
+yields a natural reduction map redX : X an → Xs . Let L be a line bundle over X.
+A model of (X, L) is given by a model X of X and a line bundle L over X with an
+isomorphism of L to h∗ (L |Xη ). A continuous metric ∥ ∥ of L associates with each
+section s ∈ Γ(U, L) on some Zariski open subset U of the variety X a continuous
+function ∥s∥ : U an → [0, ∞) such that one has ∥f · s∥ = |f | · ∥s∥ for each regular
+function f in OX (U ). It is furthermore required that ∥s∥ > 0, if s is a nowhere
+vanishing section of L.
+   Let (X , L ) be a model of (X, L⊗m ) for some     p m ∈ N>0 . The model metric
+∥ ∥L of L over X an is determined by ∥s∥L := m |g| on U an ∩ red−1 (Us ), where
+U is open in X , s is a section of L over U := X ∩ U , b is a nowhere vanishing
+section of L over U , g ∈ OX (U ) is a regular function such that s⊗m = gb over U ,
+and redX : X an → Xs is the reduction map. A model metric ∥ ∥ on OX       an
+                                                                              induces
+                                           an
+a so-called model function − log ∥1∥ : X → R. The Q-vector space of all model
+functions on X is denoted by D(X).
+   Let a be an ideal sheaf on a model X of X which is supported in the special fibre.
+The exceptional divisor E of the blowup Y of X in a defines a model (Y , OY (E))
+of (X, OX ). The associated model function in D(X) is denoted by log |a|.
+   Given a model X of X one defines N 1 (X /S)Q as the quotient of the Q-vector
+space Pic(X )Q := Pic(X ) ⊗Z Q by the subspace generated by line bundles whose
+restriction to every closed curve C in the special fiber Xs has degree zero. Call
+α ∈ N 1 (X /S) := N 1 (X /S)Q ⊗Q R nef if α · C ≥ 0 for all such curves.
+4                     Y. FANG, W. GUBLER, AND K. KÜNNEMANN
+
+
+    The space of closed (1,1)-forms on X is defined as
+                            Z 1,1 (X) := R ⊗Q lim N 1 (X /S)Q
+                                               −→
+where the direct limit is taken over all isomorphism classes of models of X and
+the transition maps are induced by pullback between dominating models. For the
+model metric induced by a model L of L⊗m , its curvature form c1 (L, ∥ ∥L ) is
+                     1
+the image of L ⊗ m ∈ N 1 (X /S)Q in Z 1,1 (X). By construction we have a map
+dd : D(X) → Z (X) given by g 7→ c1 (OX , ∥ ∥ · e−g ). Call a closed (1, 1)-form
+   c               1,1
+
+θ ∈ Z 1,1 (X) semipositive if it can be represented by a nef element in N 1 (X /S)
+for some model X . Denote by N 1 (X) the quotient of Pic(X)R := Pic(X) ⊗Z R by
+numerical equivalence. The map { } : Z 1,1 (X) → N 1 (X) induced by the restriction
+maps N 1 (X /S) → N 1 (X) sends a closed (1, 1)-form θ to its de Rham class {θ}. A
+class in N 1 (X) is called ample if it is an R>0 -linear combination of classes induced
+by ample line bundles on X.
+   We fix θ ∈ Z 1,1 (X). A model function φ ∈ D(X) is called θ-plurisubharmonic
+(θ-psh for short) if the class θ +ddc φ ∈ Z 1,1 (X) is semipositive. The space of all psh
+model functions is denoted by PSHD (X, θ). For a continuous function u ∈ C 0 (X an ),
+its θ-psh envelope Pθ (u) : X an → R ∪ {−∞} is the function defined by
+            Pθ (u)(x) := sup φ(x) φ ∈ PSHD (X, θ), φ ≤ u , (x ∈ X an ).
+                             
+
+    For u ∈ C 0 (X an ), v ∈ D(X) and t ∈ R>0 we have
+(2.1)                      Pθ (u) − v      =   Pθ+ddc v (u − v),
+(2.2)                           Ptθ (tθ)   =   tPθ (u).
+                                 1
+If the de Rham class {θ} ∈ N (X) is ample, then PSHD (X, θ) is non-empty, Pθ (u)
+takes value in R, and we have
+(2.3)                    sup |Pθ (u) − Pθ (u′ )| ≤ sup |u − u′ |.
+                         X an                        X an
+
+for all u, u′ ∈ C 0 (X an ). For further properties of θ-psh model functions and the
+θ-psh envelope we refer to [BFJ16] and [GJKM19, Section 2]
+   For θ ∈ Z 1,1 (X) that has an ample de Rham class {θ}, we consider φ ∈
+PSHD (X, θ) and we assume that there exists a normal model X of X such that θ
+and φ are induced by line bundles M and L on X . The Monge–Ampère measure
+MAθ (φ) is the discrete measure
+                             X
+               MAθ (φ) :=        lengthOXs ,ξ (OXs ,ξV ) degM ⊗L (V ) δxV
+                                               V
+                            V
+
+on X an where V runs through the irreducible components of Xs , xV ∈ X an
+is the unique preimage of the generic point ξV of V under the reduction map
+redX : X an → Xs , and δxV denotes the Dirac probability measure supported in
+xV . For generalization of the Monge–Ampère measure to all θ ∈ Z 1,1 (X) with
+ample de Rham class {θ} and to more general classes of θ-psh functions, we refer
+to [BFJ15], [GJKM19] and Section 8.
+
+               3. Global test ideals in mixed characteristic
+   In this section, we introduce the global +-test ideals defined and studied by
+Hacon, Lamarche and Schwede in [HLS21]. The +-test ideals form a mixed charac-
+teristic analogue of the theories of multiplier ideals in characteristic zero and test
+ideals in positive characteristic. The theory is based on the notion of +-stable
+sections introduced in [BMP+ 21, TY21].
+   Let (R, m, k) be a complete noetherian local ring of mixed characteristic. Let
+p > 0 denote the characteristic of the residue field k. Let X be a normal integral
+scheme which is proper over S := Spec R. The canonical sheaf ωX is reflexive
+                    MONGE–AMPÈRE IN MIXED CHARACTERISTIC                              5
+
+
+([Sta21, Tag 0AWK] and [Har94, Theorem 1.9]) and we fix a canonical divisor KX
+with ωX = OX (KX ) [Sta21, Tag 0EBM].
+Definition 3.1. For a reflexive sheaf M = OX (M ) associated with a divisor M
+and an effective Q-divisor B on X , the subspace of +-stable sections of the adjoint
+line bundle ωX ⊗ M relative to B
+               B0 X , B, OX (KX + M ) ⊂ H 0 X , OX (KX + M )
+                                                                   
+
+is defined by
+       \                                                            
+            Im H 0 Y , OY (KY + ⌈f ∗ (M − B)⌉ −→ H 0 X , OX (KX + M ) ,
+                                             
+
+   f : Y →X
+
+where an algebraic closure κ(X ) of the function field κ(X ) is fixed, and f runs
+through the finite surjective morphisms f : Y → X from a normal integral scheme
+Y together with an embedding κ(Y ) ,→ κ(X ) [HLS21, Definition 3.2 and Lemma
+3.8].
+Remark 3.2. If M − B is Q-Cartier, then Definition 3.1 holds as well if f runs
+through the alterations f : Y → X from a normal integral scheme Y together with
+an embedding κ(Y ) ,→ κ(X ) [HLS21, Lemma 3.8].
+   For the rest of this section, we assume that the scheme X is regular and projec-
+tive over S.
+Definition 3.3. Take a very ample line bundle H on X . For an effective Q-divisor
+B on X and for each i ∈ N the subspace
+                  B0 X , B, ωX ⊗ H i ⊂ H 0 X , ωX ⊗ H i
+                                                          
+(3.1)
+generates the subsheaf Ni ⊂ ωX ⊗ H i which defines
+(3.2)                         Ji := Ni ⊗ H −i ⊂ ωX .
+The sequence (Ji )i∈N is increasing and becomes stationary. Define the +-test
+submodule τ+ (ωX , B) to be Ji for i ≫ 0 [HLS21, Definition 4.3].
+Remark 3.4. (i) Definition 3.3 does not depend on the choice of H [HLS21,
+Proposition 4.5].
+  (ii) For i ≫ 0 we have H 0 (X , τ+ (ωX , B)⊗H i ) = B0 (X , B, ωX ⊗H i )) [HLS21,
+Proposition 4.7]. If B ′ ≥ B, then τ+ (ωX , B ′ ) ⊂ τ+ (ωX , B) and if F is an effective
+Cartier divisor, then [HLS21, Lemma 4.8]
+(3.3)                τ+ (ωX , B + F ) = τ+ (ωX , B) ⊗ OX (−F ).
+  (iii) Equality (3.3) allows one to define τ+ (ωX , B) for a not necessarily effective
+Q-divisor B as τ+ (ωX , B + F ) ⊗ OX (F ) where F is a Cartier divisor such that
+B + F is effective [HLS21, Definition 4.14].
+Definition 3.5. For an effective Q-divisor B on X , the ideal sheaf
+(3.4)                     τ+ (OX , B) := τ+ (ωX , KX + B)
+is the called the +-test ideal associated with B [HLS21, Definition 4.15, Lemma
+4.18]. Using F = −KX in Remark 3.4(iii), this is indeed a coherent ideal sheaf.
+  We recall the subadditivity conjecture of Hacon, Lamarche and Schwede [HLS21,
+Conjecture 8.3].
+Conjecture 3.6. Given effective Q-divisors D and E on X , we have
+                    τ+ (OX , D + E) ⊂ τ+ (OX , D) · τ+ (OX , E).
+   The above conjecture is still open, but Bhatt, Ma, Patakfalvi, Schwede, Tucker,
+Waldron and Witaszek prove subadditivity for their new perturbation-friendly test
+ideals which we will introduce in the next section.
+6                      Y. FANG, W. GUBLER, AND K. KÜNNEMANN
+
+
+                4. Perturbation friendly global test ideals
+    In this section, we present the perturbation friendly global test ideals after Bhatt,
+Ma, Patakfalvi, Schwede, Tucker, Waldron, and Witaszek [BMP+ 24]. They are
+suitable for our purpose as subadditivity is known for them in contrast to the test
+ideals considered in the previous section.
+    Let (R, m, k) be a complete discrete valuation ring of mixed characteristic with
+field of fractions K. We fix a flat projective integral regular scheme X over S =
+Spec(R). We fix a canonical divisor KX with ωX = OX (KX ).
+Definition 4.1. Let B be a Q-divisor on X . By [BMP+ 24, Proposition 7.14(f)],
+there is a unique perturbation friendly test module τ (ωX , B) such that there exists
+an effective Cartier divisor G0 with the property that
+(4.1)                        τ (ωX , B) = τ+ (ωX , B + εG)
+for all divisors G ≥ G on X and all 0 < ε ≪ 1 (depending on G).
+                       0
+
+   We define the perturbation friendly test ideal
+(4.2)                       τ (OX , B) := τ (ωX , KX + B).
+Both the test module τ (ωX , B) and the test ideal τ (OX , B) are coherent [BMP+ 24,
+Definition 7.12, Theorem 7.13]. If B is effective, then the fractional ideal sheaf
+τ (OX , B) is indeed an ideal sheaf in OX [BMP+ 24, Definition 7.18].
+   Here are some properties of perturbation friendly test ideals τ (OX , B) including
+subadditivity which holds only conjecturally [HLS21, Conjecture 8.3] for the test
+ideals τ+ (OX , B).
+Theorem 4.2 (Bhatt, Ma, Patakfalvi, Schwede, Tucker, Waldron, Witaszek). Let
+B, B1 , B2 be Q-divisors on X .
+   (i) There exists a Cartier divisor G0 on X with the property that
+                             τ (OX , B) = τ+ (OX , B + εG)
+for all divisors G ≥ G0 on X and all 0 < ε ≪ 1 (depending on G).
+   (ii) If B is a Q-divisor and F is a divisor on X , then
+(4.3)                   τ (ωX , B + F ) = τ (ωX , B) ⊗ OX (−F ),
+(4.4)                  τ (OX , B + F ) = τ (OX , B) ⊗ OX (−F ).
+   (iii) (Subadditivity) The perturbation friendly test ideals satisfy the subadditivity
+property, i.e. we have
+                     τ (OX , B1 + B2 ) ⊂ τ (OX , B1 ) · τ (OX , B2 )
+for effective Q-divisors B1 , B2 on X .
+   (iv) (Effective global generation) Let B be effective and let D be a divisor such
+that the Q-divisor D − KX − B is big and nef, and let H be a globally gen-
+erated ample divisor. Then τ (OX , B) ⊗ OX (nH + D) is globally generated by
+B0 (X , B, OX (nH + D)) for all n ≥ dim(X ⊗R k).
+   (v) (τ (OX , 0) is vertical) The ideal sheaf τ (OX , 0) is vertical, i.e. its support is
+contained in the special fiber.
+Proof. Everything is shown in [BMP+ 24]. We give precise references. Property (i)
+holds by [BMP+ 24, Corollary 7.19(b)] and (ii) follows from (3.3), (4.1), and (4.2).
+Statement (iii) is the subadditivity property [BMP+ 24, Theorem 7.20(e)] and (iv)
+is the effective global generation property [BMP+ 24, Corollary 7.22]. Recall for (v)
+that a coherent ideal of X is called vertical if its support is contained in the special
+fiber. Let X := X ⊗R K denote the generic fibre of X , put KX := KX |X , and
+recall that the Grauert–Riemenschneider sheaf J (X, ωX ) on the regular scheme
+                     MONGE–AMPÈRE IN MIXED CHARACTERISTIC                            7
+
+
+X equals ωX [BMP+ 24, Definition A.1]. We conclude from [BMP+ 24, Proposition
+7.14(c)], and formula (4.3) above that
+τ (OX , 0)|X = τ (ωX , 0) ⊗OX OX (−KX )|X = J (X, ωX ) ⊗OX OX (−KX ) = OX .
+It follows that the ideal sheaf τ (OX , 0) is vertical.                              □
+Definition 4.3. Let D be a divisor on X with linear series |D| ̸= 0 and λ ∈ Q>0 .
+Define the perturbation friendly test ideal of the linear series |D| to be
+                                            X
+(4.5)                  τ (OX , λ · |D|) :=       τ (OX , λ · E).
+                                              E∈|D|
+
+Thanks to the Noetherian assumption,
+                                Pr         one can pick a finite number of elements
+D1 , . . . , Dr in |D| such that i=1 τ (OX , λ · Di ) agrees with (4.5).
+Lemma 4.4. If D is a divisor on X with linear system |D| ̸= ∅, then
+(4.6)                        τ (OX , |D|) = b|D| · τ (OX , 0)
+where b|D| := Im(H 0 (X , O(D)) ⊗R O(−D) → OX ) denotes the base ideal of the
+linear system |D|.
+Proof. Our proof follows Hacon, Lamarche and Schwede [HLS21, Lemma 7.5(b)].
+Using (4.4) and (4.5), one gets
+                 X                 X
+ τ (OX , |D|) =       τ (OX , E) =    τ (OX , 0) ⊗ OX (−E) = b|D| · τ (OX , 0),
+                 E∈|D|                E∈|D|
+
+which shows (4.6).                                                                   □
+Definition 4.5. Let D be a Q-divisor with Iitaka dimension κ(D) ≥ 0, so mD
+is a divisor such that |mD| ̸= ∅ for all large and sufficiently divisible m ∈ N, and
+λ ∈ Q>0 . Define the asymptotic perturbation friendly test ideal of |D| by
+                                           [         λ        
+(4.7)                τ (OX , λ · ||D||) :=     τ OX ,   · |mD| .
+                                           m>0
+                                                      m
+
+Lemma 4.6. The asymptotic test ideals satisfies the following properties:
+      (i) For large and sufficiently divisible m ∈ N, one has
+                                                      λ         
+(4.8)                    τ (OX , λ · ||D||) = τ OX ,     · |mD| .
+                                                       m
+     (ii) If |D| ̸= ∅, then τ (OX , λ · |D|) ⊂ τ (OX , λ · ||D||).
+    (iii) If λ < µ, (λ, µ) ∈ Q2>0 , then τ (OX , µ · ||D||) ⊂ τ (OX , λ · ||D||).
+    (iv) If k ∈ N>0 , then τ (OX , λ · ||D||) = τ (OX , λk · ||kD||).
+Proof. The stabilization property (i) follows from the Noetherian assumption if one
+observes that τ (OX , mλ
+                         |mD|) ⊂ τ (OX , mλ′ |m′ D|) for all m, m′ ∈ N where m divides
+   ′
+m . Now Properties (ii)–(iv) follow as in [HLS21, Lemma 7.5(a),(c),(d),(f)]. In fact
+(ii) holds by definition, (iii) is a consequence of Remark 3.4(ii) together with (4.1),
+(4.5) and (4.7), and (iv) follows immediately from (i).                              □
+   One can show effective global generation and subadditivity also for the asymp-
+totic perturbation friendly global test ideals.
+Theorem 4.7. Let D be a Q-divisor on X with Iitaka dimension κ(D) ≥ 0.
+  (i) Let H = OX (H) be a globally generated ample line bundle, E be a divisor,
+and λ ∈ Q>0 . Let n = dim X ⊗R k. If E − KX − λD is big and nef, then
+(4.9)                      τ (OX , λ · ||D||) ⊗ OX (nH + E)
+is globally generated by a sub linear series of H 0 (X , OX (nH + E)) for all n ≥
+dim(X ⊗R k).
+8                      Y. FANG, W. GUBLER, AND K. KÜNNEMANN
+
+
+    (ii) For q, r ∈ N>0 , we have
+                                                        q
+                         τ OX , qr · ∥D∥ ⊂ τ OX , r · ∥D∥ .
+Proof. (i) follows from [BMP+ 24, Remark 8.36]. For the convenience of the reader
+we give a proof following [HLS21, Lemma 7.5 (e)]. For sufficiently divisible m ∈ N
+we conclude from (4.8) that
+                                               λ        
+     τ (OX , λ · ||D||) ⊗ OX (nH + E) = τ OX ,    · |mD| ⊗ OX (nH + E)
+                                               m
+                                         r
+                                        X          λ     
+                                      =     τ OX ,    · Di ⊗ OX (nH + E)
+                                        i=1
+                                                    m
+where we pick a finite number of elements D1 , . . . , Dr in |mD| as in Definition 4.3.
+From Remark 4.2(iv) we conclude that
+                                    λ       
+                            τ OX ,      · Di ⊗ OX (nH + E)
+                                     m
+                                    λ
+is globally generated by B0 (X , m    · Di , OX (nH + E)) ⊂ H 0 (X , OX (nH + E)) for
+all n ≥ dim(X ⊗R k). This finishes the proof of (i).
+   (ii) By homogeneity of asymptotic test ideals seen in Lemma 4.6(iv), we may
+assume r = 1. For sufficiently divisible m, we deduce from (4.8) that
+                                                      q       
+                         τ OX , q · ||D|| = τ OX ,
+                                          
+                                                         · |mD| .
+                                                      m
+For any effective divisor Dm ∼ mD, using subadditivity in Remark (4.2)(iii) for the
+            1
+Q-divisor m   Dm , we get
+                      q                        1             1    q
+              τ OX ,      · Dm = τ OX , q · Dm ⊂ τ OX , Dm
+                      m                          m                m
+and hence
+                                             1        q             q
+               τ OX , q · ||D|| ⊂ τ OX ,
+                               
+                                                 · |mD| ⊂ τ OX , ∥D∥
+                                              m
+proving the claim.                                                                   □
+
+            5. Continuity of the envelope of the zero function
+   Let K be a complete discretely valued field of mixed characteristic (0, p). Let X
+be a n-dimensional smooth projective variety over K and L an ample line bundle on
+X. In the approach of Boucksom–Favre–Jonsson [BFJ16, BFJ15] to pluripotential
+theory on X an , a model L of L on the model X induces a curvature form θ on
+X an and we denote by Pθ (u) the θ-psh envelope of a continuous real function u on
+X an , see [GJKM19, 2.4–2.6] for details. We follow the strategy from [BFJ16] and
+[GJKM19] to show continuity of the envelope of the zero function Pθ (0).
+Theorem 5.1. We assume that (X, L) has a model (X , A ) with X regular and
+with A an ample line bundle on X . Let θ be the curvature form on X an induced
+by any model L on X of L and let am be the base ideal of L m on X . Then
+(m−1 log |am |)m∈N>0 is a sequence of θ-psh model functions which converges uni-
+formly on X an to the envelope Pθ (0) of the zero function. It follows in particular
+that Pθ (0) is continuous.
+Proof. Consider the graded sequence (am )m>0 of base ideals
+                          am = H 0 (X , L m ) ⊗ L −m ⊂ OX
+associated with L . Write L = OX (D) for some divisor D on X . Let
+                            bm := τ (OX , m · ∥D∥) ⊂ OX
+denote the associated asymptotic perturbation friendly test ideal of exponent m
+in mixed characteristic. Note that we denote base ideals by a and reserve b for
+                     MONGE–AMPÈRE IN MIXED CHARACTERISTIC                              9
+
+
+test ideals, to keep the same notations as in [BFJ16] and [GJKM19]. Motivated by
+Lemma 4.6 and Remark 4.2(v), we consider also the coherent ideals
+                          a′m := am · τ (OX , 0) ⊂ am ⊂ OX .
+These ideals have the following properties:
+     (a) We have a′m ⊂ bm and these coherent ideal sheaves are vertical for m
+         sufficiently large and divisible.
+     (b) We have bml ⊂ blm for all l, m ∈ N>0 .
+     (c) There exists m0 ≥ 0 such that bm ⊗ A ⊗m0 ⊗ L ⊗m is globally generated
+         for all m > 0.
+Indeed these properties can be seen as follows: by definition of the asymptotic test
+ideals, we have τ (OX , |mD|) ⊂ bm . For sufficiently large and divisible m we have
+                     a′m = am · τ (OX , 0) = τ (OX , |mD|) ⊂ bm
+by Lemma 4.4, and the base ideal am is vertical as L is ample. Since a′m = am ·
+τ (OX , 0), Remark 4.2(v) yields that a′m is vertical. This proves (a).
+   Property (b) follows from Theorem 4.7(ii). Property (c) is shown as follows.
+Choose a divisor H on X such that OX (H) is ample and globally generated. We
+have n = dim X ⊗R k. As A is ample, we can choose m0 ∈ N such that the line
+bundle
+                        A ⊗m0 ⊗ OX −KX − (n + 1)H
+                                                           
+(5.1)
+is globally generated. Given m ∈ N we apply Theorem 4.7(i) to E := mD+H +KX .
+Since E − mD − KX = H is big and nef, we get that
+(5.2)                     bm ⊗ OX (mD + H + KX + nH)
+is globally generated. Taking the tensor product of (5.1) and (5.2) we see that
+bm ⊗ A ⊗m0 ⊗ L ⊗m is globally generated.
+    Finally (a), (b) and (c) imply our claim by the strategy of the proof of [BFJ16,
+Thm. 8.5]. For convenience of the reader, we give here some details. For m ≫ 0,
+let
+                                              1
+                                    φm :=       log |am |
+                                             m
+which is a super-additive sequence of θ-psh functions as shown at the beginning of
+the proof of loc. cit.. Then Step 1 of the quoted proof shows that Pθ (0) = supm φm =
+limm φm on the quasi-monomial points of X an . Using [GJKM19, Proposition 2.10],
+this holds pointwise on the whole X an .
+    We also consider the functions
+                 1              1                              1
+        φ′m :=     log |a′m | =   log |am · τ (OX , 0)| = φm +    log |τ (OX , 0)|.
+                m               m                              m
+It follows from the above that the sequence φ′m also converges pointwise to Pθ (0)
+on X an .
+    Then Step 2 of loc. cit. works again in our setting using (a) – (c) above as follows.
+For m sufficiently large as above and for all l ∈ N>0 , we have seen in (a) and (b)
+that a′ml ⊂ bml ⊂ blm for all l ∈ N>0 and hence
+                       1                 1
+                         log |bm | ≥ sup   log |a′ml | = sup φ′ml
+                       m              l ml                l
+
+on X an . We conclude that
+                            1
+(5.3)                          log |bm | ≥ lim φ′m = Pθ (0)
+                            m               m
+     an
+on X . The remaining part of the proof of Step 2 is literally the same as in loc. cit.
+and even simpler as we have Step 1 on X an and not only on the quasi-monomial
+points of X an . Note that we use the global generation property (c) there.         □
+10                   Y. FANG, W. GUBLER, AND K. KÜNNEMANN
+
+
+                       6. Resolution of singularities
+  Let K ◦ be a complete discrete valuation ring with field of fractions K and S :=
+Spec K ◦ . Let X be a smooth projective variety over K of dimension n.
+Definition 6.1. We say that resolution of singularities holds for projective models
+of X if for every projective model X of X there exists a regular S-scheme X ′ and
+a projective S-morphism X ′ → X which induces an isomorphism on X.
+Remark 6.2. If one chooses an immersion X → Pm        K , then the scheme theoretic
+image X of X in Pm     S defines a projective model of X over S. If resolution of
+singularities holds for projective models of X, then there is a regular projective
+model X ′ of X over S.
+   Resolution of singularities holds if n = 1 [Art86, Theorem (1.1)]. Cossart and
+Piltant have shown that resolution of singularities holds for n = 2 up to the pro-
+jectivity of the morphism X ′ → X [CP19, Theorem 1.1]. It is only shown in
+loc. cit. that this morphism is locally projective.
+   It is essential to show that projective models are dominated by SNC-models. In
+order to prove this we are going to use the following assumption.
+Definition 6.3. We say that embedded resolution of singularities holds for regular
+projective models of X if for every regular projective model and every proper closed
+subset Z of X , there is a projective morphism of S-schemes π : X ′ → X such that
+the set π −1 (Z) is the support of a normal crossing divisor and such that π is an
+isomorphism over X \ Z.
+Lemma 6.4. Let X be projective model of X. We assume that resolution of
+singularities holds for projective models of X. Then for any ample line bundle L on
+X, there exists m ∈ N>0 and an ample extension L ′ of L⊗m to a regular S-model
+X ′ of X with a projective morphism X ′ → X over S extending the identity on X.
+Proof. The arguments are the same as for [GJKM19, Lemma 7.5]. In a first step,
+we start with a projective model Y of X such that L extends to an ample line
+bundle H on Y , possibly replacing L by a positive tensor power. By a result of
+Lütkebohmert [Lüt93, Lemma 2.2], there is a blowing up π : Z → Y in an ideal
+sheaf supported in the special fiber of Y such that the identity on X extends to a
+morphism Z → X . A property of blowing ups [Har77, Proposition II.7.13] shows
+that π ∗ (H ⊗ℓ ) ⊗ OZ /Y (1) is an ample line bundle on Z with generic fiber L⊗ℓ for
+sufficiently large ℓ. Replacing X by Z and L by L⊗ℓ , we conclude that we may
+assume that L extends to an ample line bundle H on X .
+     By a result of Pépin [Pép13, Thm. 3.1], there is a a blowing-up morphism
+π ′ : Z ′ → X centered in the special fiber of X such that Z ′ is semi-factorial. So
+similarly as in the first step, replacing X by Z ′ and L by a positive tensor power,
+we may assume that L extends to an ample line bundle H on a semi-factorial
+projective model X . This is the conclusion of the second step.
+     Then we apply resolution of singularities to X to get a projective S-morphism
+π : X ′ → X which is an isomorphism on generic fibers and so we may identify
+the generic fiber of X ′ with X. Since π is projective, there is an ℓ > 0 such that
+L ′ := π ∗ (H ⊗ℓ ) ⊗ OX ′ /X (1) is an ample line bundle on X ′ . However, we do
+not know if π is a blow up in an ideal supported in the special fiber and hence
+the restriction F of OX ′ /X (1) to the generic fiber X of X ′ might be non-trivial.
+Since X is semi-factorial, F extends to a line bundle F on X and we can replace
+OX ′ /X (1) by OX ′ /X (1) ⊗ φ∗ (F −1 ). Then L ′ is a model of L⊗ℓ proving the
+claim.                                                                             □
+Remark 6.5. If we assume additionally that embedded resolution of singularities
+holds for regular projective models of X, then we can choose X ′ as an SNC-model
+                    MONGE–AMPÈRE IN MIXED CHARACTERISTIC                            11
+
+
+in Lemma 6.4. Indeed, we replace X ′ in the above proof by applying embedded
+resolution of singularities to the closed subset Xs′ of the regular projective model
+X ′ to get an SNC-model of X.
+
+                        7. Continuity of the envelope
+   Let K be a complete discretely valued field of mixed characteristic (0, p) and
+S := Spec K ◦ . Let L be an ample line bundle on a regular projective variety X of
+dimension n over K. Let θ be a closed (1, 1)-form on X with ample de Rham class
+{θ} induced by a model L of L on a model X of X.
+Theorem 7.1. Assume that resolution of singularities holds for projective models
+of X. If u ∈ C 0 (X an ), then Pθ (u) is a uniform limit of θ-psh model functions and
+thus Pθ (u) is continuous on X an .
+Proof. Using that u is a uniform limit of model functions on X, we may assume
+that u is itself a model function by [GJKM19, Proposition 2.9(v)]. The model
+function u is defined by a vertical Q-divisor on a proper model X of X over S. By
+[GJKM19, Proposition 2.9(7)], we may replace (θ, u) for the proof by (mθ, mu) for
+some m ∈ N. Hence we may assume without loss of generality that u is actually
+defined by a vertical divisor on X . If we apply [Lüt93, Lemma 2.2] to X and
+a projective model of X as in Remark 6.2, then X is dominated by a projective
+model of X. Hence we can assume without loss of generality that X is a projective
+model. Then we choose a resolution of singularities X ′ → X as in Lemma 6.4
+such that some power L⊗m of L extends to an ample line bundle A on the regular
+projective model X ′ of X. As before we may assume that m = 1. By [GJKM19,
+Proposition 2.9(4)], we get
+                              Pθ (u) = Pθ+ddc u (0) + u.
+By construction the class θ + ddc u is induced by a line bundle L on X ′ whose
+restriction to X is isomorphic to L and Theorem 5.1 shows that Pθ+ddc u (0) is a
+uniform limit of (θ + ddc u)-psh model functions. This finishes our proof.    □
+
+                       8. The Monge–Ampère equation
+   Let K be a complete discretely valued field with valuation ring R of mixed
+characteristic (0, p). In this section, we consider a projective regular variety X over
+K. We assume that resolution of singularities holds for projective models of X and
+embedded resolution of singularities holds for regular projective models of X. It
+follows that every projective model of X is dominated by a projective SNC-model.
+By Lemma 6.4 and Remark 6.5, any ample line bundle on X extends to an ample
+line bundle on a suitable dominating SNC model after possibly passing to a positive
+tensor power. As explained in [GJKM19, Section 9], these assumptions are enough
+to set up a pluripotential theory for θ-psh functions with respect to a closed (1, 1)-
+form θ on X an with ample de Rham class {θ}. All the results of [BFJ16, Sections
+1–7] hold. If we assume continuity of the envelope for ample line bundles on X, then
+monotone regularization [BFJ16, Theorem 8.7] holds as well in our setting which is
+crucial to extend the Monge–Ampère measure MAθ (φ) from θ-psh model functions
+to bounded θ-psh functions on X an . Then the results from [BFJ16, Sections 4–6]
+hold in our setting by the same arguments.
+Theorem 8.1. Let X be a smooth projective variety over K of dimension n and
+let θ be a closed (1, 1)-form on X an with ample de Rham class {θ} such that res-
+olution of singularities holds for projective models of X and embedded resolution
+of singularities holds for regular projective models of X. We consider a positive
+Radon measure µ on X an of total mass {θ}n which is supported on the skeleton of
+a projective SNC-model of X. Then there is a continuous θ-psh function φ on X an
+such that MAθ (φ) = µ and φ is unique up to additive constants.
+12                        Y. FANG, W. GUBLER, AND K. KÜNNEMANN
+
+
+Proof. Uniqueness follows from a result of Yuan and Zhang, see [BFJ15, §8.1]. To
+prove existence of a θ-psh solution φ, the variational method of Boucksom, Favre,
+and Jonsson is used. Continuity of the envelope for ample line bundles on X holds
+by Theorem 7.1. By [BGJ+ 20, Theorems 6.3.2, 6.3.3], we conclude that θ satisfies
+the crucial orthogonality property (see [BFJ15, Definition 7.1] for the definition).
+Then existence of a continuous solution follows from [BFJ15, Theorem 8.1].        □
+
+Remark 8.2. If L is an ample line bundle on X and if θ is induced by a model
+(X , L ) of (X, L), then there is a bijective correspondence [BFJ15, §2.6]
+(8.1)       {θ-psh functions} ←→ {semipositive metrics of L}, φ 7−→ ∥ ∥L · e−φ .
+It follows that Theorem 5.1 and Theorem 7.1 imply Theorem 1.1 and that Theorem
+8.1 implies Theorem 1.2.
+
+
+                                     Acknowledgements
+    We are grateful to Bhargav Bhatt, Huayi Chen and Mattias Jonsson for remarks
+about previous versions of this paper. We are especially grateful to Karl Schwede
+for discussions and help about subadditivity of global +-test ideals and perturbation
+friendly global test ideals. We are grateful to the referee for helpful remarks and
+suggestions.
+
+                                           References
+[Art86]       Michael Artin. Lipman’s proof of resolution of singularities for surfaces. In Arithmetic
+              geometry (Storrs, Conn., 1984), pages 267–287. Springer, New York, 1986.
+[Bha20]       Bhargav      Bhatt.     Cohen–Macaulayness        of   absolute     integral    closures.
+              arXiv:2008.08070, 2020.
+[BMP+ 21]     Bhargav Bhatt, Linquan Ma, Zsolt Patakfalvi, Karl Schwede, Kevin Tucker, Joe
+              Waldron, and Jakub Witaszek. Globally +regular varieties and the minimal model
+              program for threefolds in mixed characteristic. Publ. Math. Inst. Hautes Études Sci.
+              138: 69–227, 2023.
+[BMP+ 24]     Bhargav Bhatt, Linquan Ma, Zsolt Patakfalvi, Karl Schwede, Kevin Tucker, Joe
+              Waldron, and Jakub Witaszek. Test ideals in mixed characteristic: a unified theory
+              up to perturbation. arXiv:2401.00615, 2024.
+[BFJ15]       Sébastien Boucksom, Charles Favre, and Mattias Jonsson. Solution to a non-
+              Archimedean Monge-Ampère equation. J. Amer. Math. Soc., 28(3):617–667, 2015.
+[BFJ16]       Sébastien Boucksom, Charles Favre, and Mattias Jonsson. Singular semipositive met-
+              rics in non-Archimedean geometry. J. Algebraic Geom., 25(1):77–139, 2016.
+[BGJK21]      José Ignacio Burgos Gil, Walter Gubler, Philipp Jell, and Klaus Künnemann. Pluripo-
+              tential theory for tropical toric varieties and non-Archimedean Monge–Ampère equa-
+              tions. arXiv:2102.07392, 2021. To appear: Kyoto J. Math.
+[BGJ+ 20]     José Ignacio Burgos Gil, Walter Gubler, Philipp Jell, Klaus Künnemann, and Florent
+              Martin. Differentiability of non-Archimedean volumes and non-Archimedean Monge–
+              Ampère equations (with an appendix by Robert Lazarsfeld). Algebraic Geometry,
+              7(2):113–152, 2020.
+[CP19]        Vincent Cossart and Olivier Piltant. Resolution of singularities of arithmetical three-
+              folds. J. Algebra, 529:268–535, 2019.
+[GJKM19]      Walter Gubler, Philipp Jell, Klaus Künnemann, and Florent Martin. Continuity of
+              plurisubharmonic envelopes in non-Archimedean geometry and test ideals. Ann. Inst.
+              Fourier (Grenoble), 69(5):2331–2376, 2019. With an appendix by José Ignacio Burgos
+              Gil and Martı́n Sombra.
+[Har77]       Robin Hartshorne. Algebraic geometry. Springer-Verlag, New York-Heidelberg, 1977.
+              Graduate Texts in Mathematics, No. 52.
+[Har94]       Robin Hartshorne. Generalized divisors on Gorenstein schemes. In Proceedings of
+              Conference on Algebraic Geometry and Ring Theory in honor of Michael Artin,
+              Part III (Antwerp, 1992), volume 8, pages 287–339, 1994.
+[HLS21]       Christopher Hacon, Alicia Lamarche, and Karl Schwede. Global generation of test
+              ideals in mixed characteristic and applications. arXiv:2106.14329, 2021.
+[Kol98]       Slawomir Kolodziej. The complex Monge–Ampère equation. Acta Math., 180:69 –
+              117, 1998.
+                     MONGE–AMPÈRE IN MIXED CHARACTERISTIC                                     13
+
+
+[Liu11]    Yifeng Liu. A non-Archimedean analogue of the Calabi-Yau theorem for totally de-
+           generate abelian varieties. J. Differential Geom., 89(1):87–110, 2011.
+[Lüt93]   Werner Lütkebohmert. On compactification of schemes. Manuscripta Math.,
+           80(1):95–111, 1993.
+[MS18]     Linquan Ma and Karl Schwede. Perfectoid multiplier/test ideals in regular rings and
+           bounds on symbolic powers. Invent. Math., 214(2):913–955, 2018.
+[MS21]     Linquan Ma and Karl Schwede. Singularities in mixed characteristic via perfectoid
+           big Cohen-Macaulay algebras. Duke Math. J., 170(13):2815–2890, 2021.
+[Pép13]   Cédric Pépin. Modèles semi-factoriels et modèles de Néron. Math. Ann., 355(1):147–
+           185, 2013.
+[Sta21]    The Stacks Project Authors. Stacks Project. stacks.math.columbia.edu, 2021.
+[TY21]     Teppei Takamatsu and Shou Yoshikawa. Minimal model program for semi-stable
+           threefolds in mixed characteristic. J. Algebraic Geom., 32(3):429–476, 2023.
+[Thu05]    Amaury Thuillier. Théorie du potentiel sur les courbes en géométrie analytique
+           non archimédienne. Applications à la théorie d’Arakelov. PhD thesis, Université de
+           Rennes, 2005. https://tel.archives-ouvertes.fr/tel-00010990.
+[YZ17]     Xinyi Yuan and Shou-Wu Zhang. The arithmetic Hodge index theorem for adelic line
+           bundles. Math. Ann., 367(3-4):1123–1171, 2017.
+
+   Y. Fang, Mathematik, Universität Regensburg, 93040 Regensburg, Germany
+   Email address: yanbo.fang@mathematik.uni-regensburg.de
+
+   W. Gubler, Mathematik, Universität Regensburg, 93040 Regensburg, Germany
+   Email address: walter.gubler@mathematik.uni-regensburg.de
+
+   K. Künnemann, Mathematik, Universität Regensburg, 93040 Regensburg, Germany
+   Email address: klaus.kuennemann@mathematik.uni-regensburg.de
+

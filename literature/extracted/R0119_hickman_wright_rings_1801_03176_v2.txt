@@ -1,0 +1,3016 @@
+                                                                                    D ISCRETE A NALYSIS , 2018:11, 54 pp.
+                                                                                       www.discreteanalysisjournal.com
+arXiv:1801.03176v2 [math.CA] 28 May 2018
+
+
+
+
+                                                  The Fourier Restriction and Kakeya
+                                               Problems over Rings of Integers Modulo N
+                                                                           Jonathan Hickman ∗                           James Wright
+                                                                               Received 29 January 2018; Published 30 May 2018
+
+
+
+
+                                                   Abstract: The Fourier restriction phenomenon and the size of Kakeya sets are explored in
+                                                   the setting of the ring of integers modulo N for general N and a striking similarity with the
+                                                   corresponding euclidean problems is observed. One should contrast this with known results
+                                                   in the finite field setting.
+
+                                           Key words and phrases: Fourier restriction, Kakeya, Congruence equations.
+
+
+                                           1     Introduction
+                                           In [44] Mockenhaupt and Tao introduced a variant of the classical (euclidean) Fourier restriction problem
+                                           in the setting of finite fields. The point of view espoused in [44], following an initial proposal by Wolff
+                                           for the Kakeya problem, is to seek a model discrete setting in which to study various modern harmonic
+                                           analysis problems (the Fourier restriction, Kakeya and Bochner–Riesz conjectures, et cetera) which
+                                           should highlight certain aspects of the euclidean problem: for instance, the underlying combinatorial or
+                                           incidence-geometric features. The following Fourier restriction problem1 was proposed in the setting of a
+                                           finite abelian group G.
+
+                                           Problem 1.1. Let Σ ⊆ G  bn be a set of frequencies in the n-fold product of the dual group G.
+                                                                                                                                      b Consider the
+                                            r   s
+                                           ` − ` Fourier restriction estimates
+                                                                                   1                 1/s                    1/r
+                                                                                      ∑    |F̂(ξ )|s      ≤ Cr,s,n ∑ |F(x)|r                                                (1)
+                                                                                  |Σ| ξ ∈Σ                         x∈Gn
+
+                                               ∗ Supported by NSF Grant No. DMS-1440140
+                                               1 In [44] the problem was proposed only in the setting of vector spaces over finite fields, but it can be equally formulated over
+
+                                           any finite abelian group.
+
+
+                                           c 2018 J. Hickman and J. Wright
+                                           c b Licensed under a Creative Commons Attribution License (CC-BY)                                             DOI: 10.19086/da.3682
+                                         J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+where |Σ| denotes the cardinality of Σ. The basic problem is to determine, for a given set of frequencies
+Σ, those Lebesgue exponents 1 ≤ r, s ≤ ∞ for which Cr,s,n can be taken to be ‘essentially’ independent of
+the cardinality of G.
+
+     As the estimate (1) indicates, here the dual group G   b is equipped with normalised counting measure
+whereas counting measure is used for the Haar measure on the original group G. These choices for Haar
+measure define the corresponding Lebesgue `r norms on these groups and the Fourier transform of any
+F : Gn → C by F̂(ξ ) = ∑x∈G F(x)ξ (−x) where ξ denotes a character in the dual group.
+     An investigation of this problem was initiated in [44] in the case where G is a finite-dimensional
+vector space over a finite field. This proved to be an interesting discrete model for the Fourier restriction
+problem, isolating and highlighting various combinatorial features. Furthermore, Dvir [17] later solved
+the finite field version of the Kakeya problem as proposed by Wolff and the more quantitative maximal
+Kakeya problem was then established by Ellenberg, R. Oberlin and Tao [18].
+     Naturally, questions arise regarding how well the finite field variant models the euclidean setting
+for these problems. One obvious difference is that there are few scales to work with in the finite field
+setting. This is clearly manifested when studying the Fourier transform of measures carried along
+curves or surfaces: these are exponential sums in the finite field setting and the famous A. Weil [53]
+(or, more generally, Deligne [11]) estimates show that, typically, either the situation is completely non-
+degenerate (corresponding to the non-vanishing curvature case in euclidean restriction theory, with optimal
+exponential sum estimates) or it is completely degenerate and only trivial estimates hold. However, in
+moving from finite fields (for example, the integers modulo a prime p) to the setting of the finite ring of
+integers modulo N for general N, the divisors of N provide additional scales to work with. Consequently,
+it has been proposed that harmonic analysis over Z/NZ may match the euclidean case more closely.
+     In this paper it is shown that this is indeed the case for the Fourier restriction problem. A sample
+theorem is the corresponding Stein–Tomas `2 restriction theorem for the paraboloid
+                                                2
+                             ~ , ω12 + · · · + ωn−1    ~ = (ω1 , . . . , ωn−1 ) ∈ [Z/NZ]n−1 ,
+                           
+                     Σ := (ω                        ): ω                                                  (2)
+
+stated here informally.
+
+Theorem 1.2 (Informal). Let Σ be the paraboloid in [Z/NZ]n as described above. If s = 2, then the
+Fourier restriction estimate (1) holds if and only if 1 ≤ r ≤ 2(n + 1)/(n + 3).
+
+   In the following section the Fourier restriction problem is precisely formulated in the setting of
+[Z/NZ]n ; see (4).
+
+
+2     The basic setup
+To begin some notation is introduced in order to facilitate the comparison between the the rings Z/NZ and
+euclidean space. First, a notion of size or scale is allocated to elements x ∈ Z/NZ. Set |x| := N/ gcd(x, N)
+where gcd(a, b) denotes the greatest common divisor2 of a and b (when N = pα where p is prime, one may
+    2 More precisely, the function |x| := N/ gcd(x, N) is defined for all integers x ∈ Z; if [x] ∈ Z/NZ is a coset containing x ∈ Z,
+
+then |[x]| := |x|. It is easy to see that this function is well-defined.
+
+
+                                            D ISCRETE A NALYSIS, 2018:11, 54pp.                                                   2
+                       F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+think of | · | as a ‘normalised p-adic absolute value’, where the normalisation is with respect to the ring
+Z/pα Z). It is remarked that, algebraically, |x| is the cardinality of the ideal in Z/NZ generated by x. This
+notation is extended to elements ~x = (x1 , . . . , xn ) ∈ [Z/NZ]n by k(x1 , . . . , xn )k := N/ gcd(x1 , . . . , xn , N).
+Next define the partial ordering  amongst the integers by a  b if and only if a | b (similarly, a ≺ b
+will be used to indicate that a is a proper divisor of b). This is used to compare various sizes | · |; for
+example, |x|  |y| if and only if gcd(y, N) | x. In order to isolate elements lying at different scales, one
+may introduce the family of balls {Bd }d|N , indexed by the divisors of N, given by
+
+                                         Bd := {~x ∈ [Z/NZ]n : k~xk  d}.
+
+These balls will play a prominent rôle in the forthcoming analysis. One easily verifies that an element
+(x1 , . . . , xn ) lies in Bd if and only if N/d divides each component x j .
+      As mentioned above, this notation facilitates the analogy with familiar euclidean notions. The analogy
+is more precise if one restricts attention to powers N = pα of a fixed prime p. In this case the divisors
+become totally ordered and, in particular, the above balls {B pβ }0≤β ≤α form a 1-parameter sequence of
+nested sets (similar to the family of euclidean balls centred at 0). The following example provides another
+simple illustration of this analogy, which is relevant to the discussion below.
+
+Example 2.1. Let r ∈ R and compare the ‘integrals’
+                                         ˆ                                 N−1
+                                                 1                                1
+                                          |x|≥1 |x|
+                                                   r
+                                                     dx         and         ∑ |x|r ,
+                                                                            x=0
+
+where the left-hand integral features the usual (euclidean) absolute value and the right-hand sum involves
+the absolute value on Z/NZ defined above. The euclidean integral, of course, converges if and only if
+r > 1. The mod N sum disentangles as ∑d|N φ (d)d −r where φ is the Euler totient function. When N = pα
+this sum is uniformly bounded if and only if r > 1, whereas for general N this is true only when r > 2;
+however, in the range 1 ≤ r ≤ 2 the bound ∑d|N φ (d)d −r ≤ Cε N ε holds for every ε > 0. When r < 1 the
+sum can grow like a positive power of N.
+
+     These observations suggest two natural ways in which to pose the Fourier restriction problem in the
+setting of the integers mod N: one formulation in which N is only allowed to vary over powers of a fixed
+prime, and another for general values of N. These problems are described precisely below.
+     For simplicity, attention is restricted to the case where the set of frequencies Σ is given by the graph
+of a polynomial mapping; this is a natural analogue of a smooth surface in euclidean space. In particular,
+let 1 ≤ d ≤ n − 1 and P1 , . . . , Pn−d ∈ Z[X1 , . . . , Xd ] and define the polynomial mapping
+
+                             ~ = (ω1 , . . . , ωd ) 7→ (ω1 , . . . , ωd , P1 (ω
+                          Γ: ω                                                                   ~ )).
+                                                                              ~ ), . . . , Pn−d (ω
+
+For any positive integer N one may reduce the coefficients of the polynomials modulo N and consider Γ
+as a mapping from [Z/NZ]d to [Z/NZ]n . Thus, Γ simultaneously parametrises a d-dimensional variety in
+[Z/NZ]n for each N ∈ N. By an abuse of notation, in this situation Σ will be used to denote any one of
+these varieties; the choice of variety (that is, the choice of N) should always be clear from the context.
+
+                                       D ISCRETE A NALYSIS, 2018:11, 54pp.                                              3
+                                      J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+Problem 2.2. Given a d-dimensional variety Σ as above, determine the Lebesgue exponents 1 ≤ r, s ≤ ∞
+such that there is a constant C = CΣ,r,s , depending only on Σ, r and s, for which the inequality
+
+                                     1                 1/s                        1/r
+                                        ∑    |F̂(ξ )|s      ≤C     ∑       |F(x)|r                        (3)
+                                    |Σ| ξ ∈Σ                   x∈[Z/pα Z]n
+
+holds for all (or at least all sufficiently large) primes p and all exponents α ∈ N.
+
+     It transpires that Problem 2.2 is remarkably close to the original euclidean Fourier restriction problem,
+both in terms of numerology and available methodologies. In fact, many of the techniques used to study
+the euclidean restriction problem can be translated wholesale into this discrete setting. The striking
+similarity between the two problems can be explained by the fact that Problem 2.2 is in fact equivalent, in
+some precise sense, to a Fourier restriction problem over the (continuous) field of p-adic numbers Q p .3
+This equivalence follows from a ‘correspondence principle’, which is a manifestation of the uncertainty
+principle, that allows one to ‘lift’ restriction problems over the discrete rings Z/pα Z to the continuous
+setting of Q p . Since the fields Q p and R are in many ways closely related (by, for instance, Ostrowski’s
+theorem), once this correspondence is understood it is natural to expect the two problems to behave
+similarly.
+     Working over the rings Z/pα Z or the field Q p provides an effective model for the restriction problem;
+many established techniques become substantially cleaner and simpler when translated into these settings.
+This is mainly due to the strong forms of the uncertainty principle available over Q p , owing to the fact
+that, unlike in the real case, in Q p the closed unit ball forms a subgroup. Analysis over Q p also naturally
+leads one to consider Fourier restriction over other local fields, and in particular the field Fq ((X)) of
+formal Laurent series, which, in many respects, offer even more effective model settings for harmonic
+analysis problems.
+     Problem 2.2 is investigated in detail in §5, where the aforementioned correspondence principle is
+established.
+
+Problem 2.3. Given a d-dimensional variety Σ as above, determine the Lebesgue exponents 1 ≤ r, s ≤ ∞
+such that for every ε > 0 there is a constant Cε = Cε,Σ,r,s , depending only on ε, Σ, r and s, for which the
+inequality
+                             1                 1/s                             1/r
+                                 ∑   |F̂(ξ )|s      ≤ Cε N ε     ∑      |F(x)|r                          (4)
+                            |Σ| ξ ∈Σ                          x∈[Z/NZ]n
+
+holds for all (or at least ‘most’) N ∈ N.
+
+     It is remarked that in practice it is often desirable to work with ‘most’ rather than all N, avoiding
+certain values which lead to degenerate situations (in particular, N with small prime factors relative to the
+ambient dimension n). When stating results, any such technical restrictions on N will always be described
+explicitly.
+     Once again it transpires that the numerology of this problem closely mirrors that of the euclidean case.
+However, the partially-ordered scale structure in Z/NZ complicates matters and typically the arguments
+in this setting require additional number-theoretic information. For this reason, Problem 2.3 is, at least in
+   3 The basic elements of p-adic analysis are reviewed later in §5.
+
+
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                 4
+                        F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+some respects, arguably more complex than the euclidean problem and therefore perhaps unsuitable as a
+model. Restriction theory over Z/NZ for general N nevertheless appears to be rich and interesting in its
+own right, and the majority of the article will focus on exploring this formulation of the problem.
+     In order to understand the rôle of the scaling structure in both of these problems, it is useful to
+examine necessary conditions for the estimates (3) or (4) to hold when Σ is the paraboloid, as defined in
+(2). In this case (4), for instance, can be written as4
+                  1                                                   1/s
+                                                 2             2     s
+                                      |F̂( ~ ,     + · · · +       )|       ≤ Cε N ε kFk`r ([Z/NZ]n ) ,
+                   N n−1 ~ ∑ n−1
+                                          ω    ω1            ω n−1
+                            ω ∈[Z/NZ]∗
+
+where ω~ = (ω1 , . . . , ωn−1 ) and the `r -norm on the right is the same as that appearing in (4): that is, it is
+computed with respect to counting measure on [Z/NZ]n .
+    The analysis follows the usual scaling argument in the euclidean setting; in particular, a discrete
+variant of the standard Knapp example is constructed. Fix a divisor d of N so that its square d 2 is also a
+divisor (this forces d = 1 if N is prime) and consider the parabolic rectangle
+
+                                        ~ ,t) ∈ [Z/NZ]n∗ : kω~ k  |d|, |t|  |d 2 | .
+                                      
+                               θ := (ω
+
+Unraveling the notation, one observes that an element (ω   ~ ,t) = (ω1 , . . . , ωn−1 ,t) belongs to θ if and only
+if d | ω j for each 1 ≤ j ≤ n − 1 and d 2 | t. Let F : [Z/NZ]n → C be defined by F̂ := χθ and apply this
+function to (4). It is easy to check that the left-hand side of the resulting inequality is equal to d −(n−1)/s .
+On the other hand, the Fourier inversion formula can be used to show that F = d −(n+1) χθ ∗ where θ ∗ is
+the dual rectangle
+                              θ ∗ := (~x, xn ) ∈ [Z/NZ]n : k~xk  d, |xn |  d 2 .
+                                     
+
+                                                                                  0
+Hence the `r -norm on the right-hand side of (4) is equal to d −(n+1)/r and the inequality reduces to
+                                                                              0
+                                            d −(n−1)/s ≤ Cε N ε d −(n+1)/r .
+
+If this inequality is to hold for arbitrarily large N and d, then it follows that
+                                                           n+1
+                                                       s       ≤ r0 ;                                                    (5)
+                                                           n−1
+this is the same restriction on the exponents as in the euclidean setting. An almost identical analysis
+applies in the setting of Problem 2.2. The scaling argument does not work, however, over finite fields,
+where there are few divisors; if F is defined by F̂ := δ~0 rather than F̂ := χθ , then plugging this function
+                                                                          n
+into either (3) or (4) yields the less restrictive necessary condition s n−1 ≤ r0 , as observed in [44].
+     Given the relation (5) on the exponents, one now wishes to examine the viable `r range. By duality,
+(4) is equivalent to
+                                           1/r0            1                          1/s0
+                                         r0               ε                           s0
+                          ∑      |EH(~
+                                     x)|          ≤ C   N                    |H( ~  )|                    (6)
+                                                             N n−1 ~ ∑ n−1
+                                                      ε                         ω
+                      ~x∈[Z/NZ]n                                         ω ∈[Z/NZ]∗
+
+    4 Throughout this article the notation [Z/NZ] will be used to indicate the Pontryagin dual group of Z/NZ. The dual
+                                                 ∗
+[Z/NZ]∗ is always tacitly identified with Z/NZ; in practice, the only distinction between Z/NZ and [Z/NZ]∗ is that the latter
+is endowed with the normalised counting measure.
+
+
+                                         D ISCRETE A NALYSIS, 2018:11, 54pp.                                               5
+                                       J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+where E is the extension operator
+                                       1                                                       2        2
+                    EH(~x) :=                   ∑            ~ )e2πi(x1 ω1 +···xn−1 ωn−1 +xn (ω1 +···+ωn−1 ))/N .
+                                                           H(ω
+                                   N n−1   ~ ∈[Z/NZ]∗n−1
+                                           ω
+
+When H := 1 is a constant function, E1(~x) = ∏n−1
+                                              j=1 GN (x j , xn ) where
+
+                                                                1 N−1 2πi(at+bt 2 )/N
+                                             GN (a, b) :=         ∑e
+                                                                N t=0
+
+                  p easily checks that GN (a, b) vanishes unless gcd(b, N) | a in which case, if (say) N is
+is a Gauss sum. One
+odd, |GN (a, b)| = gcd(b, N)/N. Using the above notation, these observations are succinctly expressed
+by the formula5
+                                                  |b|−1/2 if |a|  |b|
+                                              
+                                |GN (a, b)| =                          .                                (7)
+                                                  0        otherwise
+Plugging H := 1 into (6) and applying the identity (7), it follows that the right-hand side is equal to Cε N ε
+whereas the r0 power of the left-hand side is given by (when N is odd)
+                                    N n−1  d (n−1)r0 /2                       0
+                   ∑ ∑                                      = ∑ φ (d) d −(n−1)(r /2−1) .
+                   d|N gcd(x ,N)=d
+                                     d        N                 d|N
+                                   n
+
+This sum is precisely of the form of that considered in Example 2.1. In particular, if (6) is to hold, then
+Example 2.1 implies that necessarily r0 ≥ 2n/(n − 1), which matches the euclidean range, at least up
+to the endpoint. Again, an almost identical analysis applies in the setting of Problem 2.2, utilising the
+differences between the Z/NZ and Z/pα Z described in Example 2.1. Alternatively, the reasoning of
+[44] is valid in any finite abelian group G and shows that if (1) is to hold with a uniform bound Cr,s,n ,
+then necessarily r0 ≥ 2n/d where |Σ| ∼ |G|d . However, the line of argument presented above has the
+advantage over that of [44] in that it reinforces the need to formulate the Fourier restriction problem in
+[Z/NZ]n as in (4). Indeed, strict adherence to a uniform bound for Cr,s,n in the above argument leads to
+the more restrictive necessary condition r0 > 2(n + 1)/(n − 1) for the H = 1 example.
+    If s = 2, then it follows from the preceding examples that (4) fails for the paraboloid if r > 2(n +
+1)/(n + 3). In §6 it is shown that (4) in fact holds for the paraboloid when s = 2 in the optimal range
+1 ≤ r ≤ 2(n + 1)/(n + 3). The full range of `r − `s restriction estimates will then be established in §7
+in the n = 2 case. The numerology will again match that of the classical euclidean estimates, up to
+endpoints.
+   5 It is informative to compare this analysis with its euclidean counterpart. For the euclidean problem one wishes to analyse
+
+the decay rate of the Fourier transform of some smooth, compactly supported density µ on the paraboloid in Rn . In particular, µ̌
+may be expressed in terms of the oscillatory integral
+                                                           ˆ
+                                                                       2
+                                                I(a, b) :=   e2πi(at+bt ) ψ(t) dt,
+                                                            R
+             ∞
+where ψ ∈ C0 (R) is supported in [−1, 1], say. If |a| ≥ C|b|, then the phase has no critical points and therefore I(a, b) is rapidly
+decreasing in |b|. Otherwise, stationary phase [50, Chapter VIII] implies that |I(a, b)| ∼ C|b|−1/2 . This is entirely analogous to
+the behaviour of the Gauss sum GN (a, b) highlighted by the identity (7). Deeper connections between the theory of complete
+exponential sums and the theory of oscillatory integrals have been pursued in a number of papers of the second author [58–60].
+These ideas will be discussed further at the end of §6.
+
+
+                                           D ISCRETE A NALYSIS, 2018:11, 54pp.                                                    6
+                         F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+3     Tools and considerations arising from restriction theory
+The existence of an effective Knapp example in the discrete setting suggests that many of the underlying
+geometric features of the euclidean Fourier restriction problem should admit some analogue over Z/NZ.
+This is explored in detail in the current section; in particular, it is shown that there exists a notion of wave
+packet decomposition over Z/NZ and this leads one to consider certain discrete variants of the Kakeya
+conjecture. For comparison, the relationship between Kakeya and restriction is far more tenuous over
+finite fields [40, 44].
+     For simplicity attention is restricted to the case where the underlying surface Σ is a hypersurface given
+by a graph. In particular, for the duration of this section let h ∈ Z[X1 , . . . , Xn−1 ] be a fixed polynomial and
+Σ denote the variety
+                                      Σ := {(ω~ , h(ω      ~ ∈ [Z/NZ]n−1
+                                                    ~ )) : ω            ∗ }.
+
+Let E denote the extension operator associated to Σ, given by
+                                                   1
+                                    EH(~x ) :=               ∑         e2πiφ (~x ;~ω )/N H(ω
+                                                                                           ~)                              (8)
+                                                 N n−1 ~
+                                                        ω ∈[Z/NZ]n−1
+                                                                 ∗
+
+
+for all H : [Z/NZ]n−1
+                  ∗   → C, where φ is the phase function
+
+                                   ~ ) := x0 · ω
+                           φ (~x ; ω                    ~ ) for all ~x = (x0 , xn ) ∈ [Z/NZ]n .
+                                               ~ + xn h(ω
+
+    Let d | N be a divisor of N. The ball Bd ⊆ Z/NZ, as defined in §2, is a subgroup of Z/NZ and
+therefore its cosets form a partition of the ambient ring into disjoint subsets. Define
+
+                                   Λ(N; d) := {[0], [1], . . . , [(N/d) − 1]} ⊆ Z/NZ,                                      (9)
+
+where the notation [x] is used to indicate the congruence class of x ∈ Z modulo N. Thus, for all k ∈ N the
+set Λ(N; d)k forms a complete set of coset representatives for Bd ⊆ [Z/NZ]k .6 In terms of the scaling
+structure, Λ(N; d)k corresponds to a choice of a maximal d-separated subset of [Z/NZ]k , where the notion
+of ‘separation’ is understood in terms of the ‘norm’ k · k and the  ordering.
+    Turning to the definition of the wave packets, fix some intermediate scale d | N, let d 0 := N/d and Θd
+denote the collection of cosets of Bd 0 in [Z/NZ]n−1
+                                                   ∗   and define
+
+                                                 Td := Θd × Λ(N; d)n−1 .
+
+The notation is chosen here to mirror that recently used in euclidean restriction theory (see, for example,
+[21, 22]). For (θ ,~v) ∈ Td the wave packet ψθ ,~v : [Z/NZ]n−1
+                                                           ∗   → C is defined to be the function given by
+
+                                                  ~ ) := d n−1 e−2πi~v·~ω /N χθ (ω
+                                          ψθ ,~v (ω                              ~ ).
+
+Generalising the Fourier inversion formula for the discrete Fourier transform, any C-valued function on
+[Z/NZ]n−1
+       ∗   can be written as a superposition of wave packets in a natural manner.
+    6 Throughout the article the same notation B is used to denote a balls in [Z/NZ]k or [Z/NZ]k for various k depending on the
+                                                d                                              ∗
+situation. The choice of ambient dimension k should always be clear from the context.
+
+
+                                         D ISCRETE A NALYSIS, 2018:11, 54pp.                                                 7
+                                   J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+Lemma 3.1. For any divisor d | N the formula
+
+                                            ~)=
+                                          H(ω            ∑ (χθ H)q(~v ) · ψθ ,~v (ω~ )
+                                                     (θ ,~v)∈Td
+
+holds for any function H : [Z/NZ]n−1
+                                 ∗   →C.
+    If d = 1, then the collection Θd comprises of a single set θ = [Z/NZ]n−1
+                                                                         ∗   and the above identity
+reduces to
+                                  H(ω~)=     ∑ Ȟ(~v )e−2πi~v·~ω /N ,
+                                                     ~v∈[Z/NZ]n−1
+
+which is precisely the Fourier inversion formula over Z/NZ.
+
+Proof (of Lemma 3.1). The functions χ~v+Bd for ~v ∈ Λ(N; d)n−1 form a partition of unity of [Z/NZ]n−1
+and thus, by the Fourier inversion formula,
+
+                                            ~)=
+                                          H(ω                  ∑      χ̂~v+Bd ∗ H(ω
+                                                                                  ~ ).
+                                                       ~v∈Λ(N;d)n−1
+
+A simple computation shows that
+                                                       χ̂Bd = d n−1 χBd0
+and therefore
+
+                                                               ~ ) = d n−1 (χω~ +Bd0 H)q(~v ) · e−2πi~v·~ω /N .
+                        ~ ) = d n−1 (e2πi~v·( · )/N χBd0 ) ∗ H(ω
+            χ̂~v+Bd ∗ H(ω
+
+                ~ + Bd 0 = θ , and so the desired identity immediately follows.
+   ~ ∈ θ , then ω
+If ω
+
+    The extension operator E has a particularly simple action on wave packets, mapping each ψθ ,~v to a
+modulated characteristic functions of a ‘tube’. In particular, given a divisor d | N and (θ ,~v) ∈ Td , define
+the d-tube Tθ ,~v to be the set
+
+                        Tθ ,~v := ~x = (x0 , xn ) ∈ [Z/NZ]n : kx0 + xn ∂ω h(ω
+                                 
+                                                                            ~ θ ) −~v k  d ,
+
+where ω ~ θ ∈ [Z/NZ]n−1
+                      ∗   denotes the unique coset representative of θ lying in Λ(N; d 0 )n−1 . With this
+definition, one has the following identity.
+Lemma 3.2. Suppose N, d ∈ N are such that d | N and N | d 2 . Then for all (θ ,~v) ∈ Td one has
+
+                                     Eψθ ,~v (~x ) = e2πi(φ (~x ;~ωθ )−~v·~ωθ )/N χTθ ,~v (~x ).
+
+Proof. It follows from the definitions that
+                                               1
+                        Eψθ ,~v (~x ) =                  e2πi(φ (~x ;~ω )−~v·~ω )/N
+                                          (d 0 )n−1 ω~∑
+                                                      ∈θ
+                                                  d −1     0
+                                        1
+                                    = 0 n−1
+                                     (d )          ∑ e2πi(φ (~x ;~ωθ +d~ω )−~v·(~ωθ +d~ω ))/N ,
+                                            ω1 ,...,ωn−1 =0
+
+
+
+                                      D ISCRETE A NALYSIS, 2018:11, 54pp.                                         8
+                         F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+      ~ = (ω1 , . . . , ωn−1 ). Since N | d 2 , one may verify that
+where ω
+
+                                                       ~ θ ) + d x0 + xn ∂ω h(ω
+                                                                                  
+                          φ (~x ; ω      ~ ) ≡ φ (~x ; ω
+                                  ~ θ + dω                                    ~ θ) ·ω
+                                                                                    ~             mod N.
+
+On the other hand, the basic properties of character sums imply the identity
+
+                                                            d −1 0
+                                                  1                         0                        0
+                                χTθ ,~v (~x ) = 0 n−1        ∑        e2πi(x +xn ∂ω h(~ωθ )−~v)·~ω /d .
+                                               (d )   ω1 ,...,ωn−1 =0
+
+Combining these observations, the desired result immediately follows.
+
+    Lemma 3.2 provides a plethora of functions with which to test the extension operator E.
+
+Example 3.3. The Knapp example introduced in §2 falls under the present framework, and simply
+corresponds to testing the extension operator against a single wave packet.
+
+Example 3.4. The constant function 1, which was again considered in §2, can also be analysed via wave
+packets. Indeed, in this case one has a particularly simple decomposition
+
+                                         1
+                                 1=             ∑ ψθ ,~0 (ω~ )                  ~ ∈ [Z/NZ]n−1
+                                                                        for all ω         ∗ .
+                                       d n−1   θ ∈Θd
+
+
+If N | d 2 , then applying Lemma 3.2 to the above identity yields
+
+                                                        1
+                                        E1(~x ) =               ∑ e2πiφ (~x ;~ω )/N χT (~x ).
+                                                                              θ
+                                                                                                                              (10)
+                                                       d n−1   θ ∈Θd
+                                                                                      θ ,~0
+
+
+
+
+Now consider the prototypical example h(ω                       2
+                                          ~ ) := ω12 + · · · + ωn−1 and suppose N is odd. Using (10), one
+may give a conceptually different proof of the estimate
+
+                                    |E1(~x )| ≤ k~x k−(n−1)/2             for all ~x ∈ [Z/NZ]n                                (11)
+
+which was established in §2. For simplicity suppose that N = d 2 is a perfect square and ~x ∈ [Z/NZ]n
+satisfies k~x k = N; extending the argument to general N and ~x involves some technicalities which will not
+be discussed here.7 Under these hypotheses, it is easy to see that ~x can lie in at most one of the tubes Tθ ,~0
+and (11) follows immediately from (10).
+    The inequality (11) can be interpreted as measuring the decay of the Fourier transform of the
+normalised counting measure on Σ; such estimates play an important rôle in §6.
+
+Example 3.5. Consider once again the paraboloid h(ω                       2 . The full conjectured range of
+                                                    ~ ) := ω12 + · · · + ωn−1
+estimates for the extension operator (as computed in §2) would imply the following ‘endpoint’ estimate.
+    7 The proof for general odd N (that is, not necessarily given by a perfect square) relies on evaluating Gauss sums and therefore
+
+does not offer a truly alternative approach to (11) from that used in §2. The wave packet method does, however, provide an
+interesting geometric interpretation of the estimate.
+
+
+                                          D ISCRETE A NALYSIS, 2018:11, 54pp.                                                     9
+                                        J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+Conjecture 3.6 (Fourier restriction conjecture for the paraboloid over Z/NZ). For all ε > 0 there exists
+a constant Cε > 0 for which the inequality8
+
+                                 kEHk`2n/(n−1) ([Z/NZ]n ) ≤ Cε N ε kHk`2n/(n−1) ([Z/NZ]∗n−1 )                      (12)
+
+holds for all odd N ∈ N.
+     Note that the constant in this inequality must involve some dependence on N, even if N is restricted
+to powers of a fixed prime, owing to the behaviour of E1, as discussed above and in §2.
+     Assume Conjecture 3.6 holds and let N = d 2 be an odd perfect square. Fix Θ̃d ⊆ Θd , assign a choice
+of ~vθ ∈ [Z/NZ]n−1 to each θ ∈ Θ̃d and consider the function
+
+                                                    H := ∑ rθ ψθ ,~vθ
+                                                           θ ∈Θ̃d
+
+where each rθ is a choice of complex coefficient with |rθ | = 1. One may easily compute that
+                                                                                (n−1)/2n
+                                           (n+1)(n−1)/2n       (n−1)/2n
+               kHk`2n/(n−1) ([Z/NZ]n−1
+                                   ∗ )
+                                       = d               |Θ̃d |         =    |T
+                                                                            ∑ θ |
+                                                                                          θ ∈Θ̃d
+
+whilst Lemma 3.2 implies that
+
+                                    EH(~x ) = ∑ rθ e2πi(φ (~x ;~ωθ )−~vθ ·~ωθ )/N χTθ (~x )
+                                                 θ ∈Θ̃d
+
+where, for notational simplicity, Tθ := Tθ ,~vθ . If the rθ are chosen to be independent, identically distributed
+random signs (±1), then Khintchine’s inequality (see, for instance, [49, Appendix D], or [23] for the
+precise version used here) implies that the expected value of |EH(~x )| satisfies
+                                                                         1/2
+                                   E[|EH(~x )|] ≥ 2−1/2 ∑ χTθ (~x )            .
+                                                                     θ ∈Θ̃d
+
+Thus, the hypothesised endpoint restriction estimate implies that for all ε > 0 the inequality
+                                                                        (n−1)/n
+                                                        2    ε
+                          ∑ Tθ `n/(n−1) ([Z/NZ]n )
+                             χ                     ≤ 2Cε/2 N     ∑ θ|T  |                                          (13)
+                               θ ∈Θ̃d                                            θ ∈Θ̃d
+
+holds for all odd perfect squares N ∈ N, where Cε is the same constant as that appearing in (12). This
+estimate is a geometric statement concerning intersections of tubes in the module [Z/NZ]n . In particular,
+the expression appearing on the left-hand side of (13) is a discrete analogue of the Kakeya maximal
+operator (see, for instance, [35, 55]). The theory of such maximal operators, which governs the underlying
+geometry of the restriction problem, is investigated systematically in the following section.
+   8 Recall that here one uses counting measure on the group G = [Z/NZ]n−1 and normalised counting measure on dual group
+
+[Z/NZ]n−1
+      ∗   and that these measures define the `r norms. In particular,
+                                                         1                         1/r
+                                   kHk`r ([Z/NZ]n−1   =                   |H(~ξ )|r      .
+                                                ∗   )    N n−1     ∑
+                                                               ~      n−1
+                                                                    ξ ∈[Z/NZ]∗
+
+
+
+
+                                         D ISCRETE A NALYSIS, 2018:11, 54pp.                                         10
+                        F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+4     Kakeya sets in Z/NZ
+4.1     Discrete formulations of the Kakeya conjectures
+The previous section highlighted a connection between estimates for the parabolic extension operator
+over Z/NZ and a discrete variant of the Kakeya maximal operator. Here the theory of Kakeya sets over
+Z/NZ is explored in a more systematic manner, beginning with a cleaner formulation of the maximal
+inequality (13).
+    The Kakeya problem over Z/NZ concerns configurations of lines in [Z/NZ]n that point in ‘different
+directions’. An elegant way to formulate a notion of direction for lines lying in these modules is to use
+the ring-theoretic construction of the projective space.9
+    For future reference it is useful to formulate the definitions at the general level of unital rings. Given
+a ring R with identity define the (n − 1)-dimensional sphere Sn−1 (R) to be the set of all elements of Rn
+that have at least one invertible component. In particular, note that S0 (R) = R× is the group of units of R,
+which acts on the set Sn−1 (R) by left multiplication. The (n − 1)-dimensional projective space Pn−1 (R)
+is defined to be the set of orbits of this action; that is,
+
+                                              Pn−1 (R) := Sn−1 (R)/S0 (R).
+
+ Finally, given ω ∈ Pn−1 (R) a set `ω ⊆ Rn is said to be a line in the direction of ω if there exists some
+~v ∈ Rn such that                              
+                                         `ω = t ω ~ +~v : t ∈ R
+for some (and therefore any) choice of representative ω~ ∈ Sn−1 (R) for ω. In the case R = Z/NZ
+                                                   n−1
+it will often be notationally convenient to write S (N) and Pn−1 (N) rather than Sn−1 (Z/NZ) and
+Pn−1 (Z/NZ).
+Conjecture 4.1 (Kakeya maximal conjecture over Z/NZ). For all ε > 0 there exists a constant Cε > 0
+such that the following holds. If N ∈ N and `ω is a choice of line in the direction of ω for each
+ω ∈ Pn−1 (N), then
+                                                                                             (n−1)/n
+                               ∑        χ`ω `n/(n−1) ([Z/NZ]n ) ≤ Cε N ε      ∑         |`ω |         .   (14)
+                           ω∈Pn−1 (N)                                      ω∈Pn−1 (N)
+
+    If all the lines `ω happened to be disjoint, then the above inequality would hold with equality and
+the constant Cε N ε replaced with 1. Thus, the estimate can be interpreted as stating that collections of
+direction-separated lines in [Z/NZ]n are ‘almost disjoint’.
+    It is not difficult to adapt the analysis of the previous section to show that (at least for N odd) the
+restriction conjecture for the paraboloid over Z/NZ implies the Kakeya maximal conjecture over Z/NZ.
+This closely mirrors the euclidean case; as mentioned previously, the relationship between Kakeya and
+restriction over finite fields is far more tentative [40, 44].
+    Given a commutative ring with identity R, a set K ⊆ Rn is said to be Kakeya if for every ω ∈ Pn−1 (R)
+there exists a line `ω in the direction of ω contained in K. The maximal inequality (14) implies a lower
+bound on the cardinality of Kakeya sets in [Z/NZ]n . Indeed, suppose K ⊆ [Z/NZ]n is Kakeya so that
+    9 This perspective was recently used in connection with the Kakeya problem by Caruso [5].
+
+
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                11
+                                J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+                                                                                   n−1 (N). Observe that (14) together
+  ω∈Pn−1 (N) `ω ⊆ K where each `ω is a line in the direction of ω ∈ P
+S
+
+with Hölder’s inequality imply that
+
+                              ∑         |`ω | =      ∑         χ`ω `1 ([Z/NZ]n )
+                           ω∈Pn−1 (N)             ω∈Pn−1 (N)
+                                                                                   (n−1)/n
+                                            ≤ Cε N ε |K|1/n          ∑        |`ω |         .                    (15)
+                                                                 ω∈Pn−1 (N)
+
+The sum ∑ω∈Pn−1 (N) |`ω | appearing on both sides of this inequality can be explicitly computed. Indeed,
+
+                                        |`ω | = N    for all ω ∈ Pn−1 (N)                                        (16)
+whilst the cardinality of the projective space is given by
+                                                                    n−1
+                               |Pn−1 (N)| = N n−1         ∏ ∑ p− j ≥ N n−1 ,                                     (17)
+                                                        p|N prime j=0
+
+where the product is taken over the set of all distinct prime factors of N. The latter identity is a direct
+consequence of the formula
+                                    |S0 (N)| = N ∏ (1 − 1/p);                                          (18)
+                                                        p|N prime
+
+the details of the (simple) proofs of the identities (17) and (18) are provided at the end of the section.
+    Rearranging (15) and applying the identities (16) and (17), one concludes that the Kakeya maximal
+conjecture implies the following variant of the Kakeya set conjecture.
+Conjecture 4.2 (Kakeya set conjecture over Z/NZ). For all ε > 0 there exists a constant cε,n > 0 such
+that the density bound
+                                           |K|
+                                               ≥ cε,n N −ε
+                                           Nn
+holds for any Kakeya set K ⊆ [Z/NZ]n .
+   This can be understood as a discrete analogue of the upper-Minkowski dimension conjecture for
+Kakeya sets in Rn . It is remarked that similar discrete variants of the Kakeya conjecture have previously
+appeared in the literature: see, for instance, [5, 16, 18].
+
+4.2   Sharpness of the Kakeya conjecture
+It is natural to ask whether the ε-loss in N is necessary in Conjecture 4.2: that is, whether there exists a
+dimensional constant cn > 0 such that N −n |K| ≥ cn holds for all Kakeya sets K ⊆ [Z/NZ]n (independently
+of N). It transpires that such an estimate is false, even if one restricts N to vary over powers of a fixed
+prime.
+Proposition 4.3. For all primes p there exists a strictly increasing integer sequence (α(s))s∈N and family
+of Kakeya sets Ks ⊆ [Z/pα(s) Z]n such that
+                                                       |Ks |
+                                                  lim        = 0.
+                                                  s→∞ pα(s)n
+
+
+                                  D ISCRETE A NALYSIS, 2018:11, 54pp.                                              12
+                         F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+     This observation should be contrasted with Dvir’s theorem in the finite field setting [17]. The latter
+states that there exists a dimensional constant cn > 0 such that q−n |K| ≥ cn holds whenever K ⊆ Fnq is a
+finite field Kakeya set.10
+     Proposition 4.3 follows by adapting a (euclidean-based) construction due to Sawyer [47] (see also
+[54, 56] and [19]).
+
+Proof. It suffices to consider the case n = 2: the general case then follows by taking the Cartesian product
+of the set Ks given by the 2-dimensional example with [Z/pα(s) Z]n−2 for each s ∈ N. Furthermore, it
+suffices to construct a sequence of sets containing lines in only those directions which can be represented
+by an element of the form (1, ω) for some ω ∈ Z/pα Z. Indeed, one may then form a sequence of true
+Kakeya sets by taking finite unions of rotated copies of these objects.
+    Fixing p and s ∈ N, let α := sps . For each ω ∈ Z/pα Z let ω j ∈ {0, 1, . . . , p − 1} for 0 ≤ j ≤ α − 1
+denote the coefficients in the p-adic expansion of the unique class representative of ω in {0, 1 . . . , pα −
+1}.11 Using this notation, for each ω ∈ Z/pα Z define a map φω : Z/pα Z → Z/pα Z by
+
+                                                                 α−1  j 
+                                                                  ∑ s ·ωjpj ,
+                                                                            
+                                             φω (t) := tω +
+                                                                  j=0
+
+where b · c : R → Z denotes the floor function. Thus,
+                                                      
+                                           `[(1,ω)] := (t, φω (t)) : t ∈ Z/pα Z
+
+is a line in the direction of [(1, ω)] ∈ P1 (pα ). Since, by Fubini,
+                                      [
+                                             `[(1,ω)] =      ∑       |{φω (t) : ω ∈ Z/pα Z}|,                                 (19)
+                                  ω∈Z/pα Z                t∈Z/pα Z
+
+
+it suffices to show that
+
+                              |{φω (t) : ω ∈ Z/pα Z}| ≤ pα−s                 for all t ∈ Z/pα Z.                              (20)
+
+Indeed, once this is established one may define Ks to be the union of lines appearing on the left-hand side
+of (19), noting that the above inequality implies that p−2α |Ks | ≤ p−s .
+     Fix t ∈ Z/pα Z and identify this element with a coset representative t ∈ {0, 1, . . . , pα − 1}. Let
+t 0 ∈ {0, . . . , ps − 1} be the unique element satisfying t 0 ≡ −t mod ps and define k := st 0 , noting that
+0 ≤ k ≤ s(ps − 1) ≤ α − s. It follows that
+                                         j
+                                    t ≡−     mod ps             for all k ≤ j ≤ k + s − 1.
+                                          s
+   10 The finite field analogue of the stronger maximal function estimate was established by Ellenberg, Oberlin and Tao in [18].
+
+It is also useful to contrast the form of the conjectured maximal function estimate (14) (and, in particular, the (necessary) ε-loss
+in N in the constant) with the finite field result from [18].
+                                                                                      α−1
+   11 That is, the ω ∈ {0, 1, . . . , p − 1} are uniquely defined by the formula ω =
+                                                                                       ∑ ωjpj .
+                                                                                              
+                     j
+                                                                                     j=0
+
+
+                                          D ISCRETE A NALYSIS, 2018:11, 54pp.                                                   13
+                                      J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+    For any ω 0 ∈ Z/pα Z there exists a unique ω ∈ Λ(pα , pα−k ) such that |ω − ω 0 |  pα−k . Here
+Λ(pα , pα−k ) is the maximal set of pα−k -separated points in Z/pα Z defined in (9). In particular, ω j = ω 0j
+for 0 ≤ j ≤ k − 1 and so
+                                                            α−1          j 
+                                                                                   ω j − ω 0j p j .
+                                                                                             
+                                   |φω (t) − φω 0 (t)| =    ∑ t+ s
+                                                            j=k
+
+
+The construction ensures that t + b sj c  pα−s for all k ≤ j ≤ k + s − 1 from which it follows that
+|φω (t) − φω 0 (t)|  pα−k−s . Thus,
+
+                                                                                   B pα−k−s (φω (t)),
+                                                                       [
+                              {φω (t) : ω ∈ Z/pα Z} ⊆
+                                                                  ω∈Λ(pα ,pα−k )
+
+which immediately yields (20).
+
+4.3   Standard Kakeya estimates over Z/NZ
+Many of the standard techniques used to investigate the euclidean Kakeya problem can be adapted
+to study Conjecture 4.1 and Conjecture 4.2. Here two examples are given: the standard L2 maximal
+argument of Córdoba [10] and a basic slicing argument. The former resolves Conjecture 4.1 (and therefore
+also Conjecture 4.2) in the n = 2 case, whilst the latter provides a discrete analogue of the elementary
+(n + 1)/2-dimensional bound for Kakeya sets.
+
+Córdoba’s argument
+By adapting the classical argument of [10], one may establish the following elementary bound (which
+implies Conjecture 4.1 in the n = 2 case).
+
+Proposition 4.4. For all ε > 0 there exists a constant Cε > 0 such that the following holds. If N ∈ N and
+`ω is a choice of line in the direction of ω for each ω ∈ Pn−1 (N), then
+                                                                                                      1/2
+                                ∑        χ`ω `2 ([Z/NZ]n ) ≤ Cε N n/2−1+ε               ∑        |`ω |     .       (21)
+                            ω∈Pn−1 (N)                                              ω∈Pn−1 (N)
+
+   At its heart, the proof of Proposition 4.4 (that is to say, Córdoba’s argument) exploits the following
+simple geometric fact (here and below F denotes a field):
+
+               A pair of direction-separated lines in Fn can intersect in at most one point.                       (22)
+     The relevance of (22) is most clearly understood by considering Proposition 4.4 in the finite field
+setting, given by restricting N = p to vary over primes p. Indeed, in this case the argument is particularly
+elementary: by (22) one has
+                               2
+                                                                  |`ω ∩ `ω 0 | ≤ |Pn−1 (p)| |Pn−1 (p)| + p − 1 ,
+                                                                                                              
+                ∑         χ`ω `2 ([Z/pZ]n ) =        ∑
+             ω∈Pn−1 (p)                         ω,ω 0 ∈Pn−1 (p)
+
+
+                                         D ISCRETE A NALYSIS, 2018:11, 54pp.                                        14
+                       F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+and bounding the right-hand side of this inequality using (17) yields the desired estimate.
+    The original euclidean problem, as investigated in [10], studies configurations of δ -tubes in Rn rather
+than lines. In this context one does not work with (22) per se, but rather a quantitative version of this
+fact, which states that the measure of the intersection of two tubes is inversely proportional to the angle
+between their directions. In this respect, the Z/NZ setting behaves much more like euclidean space than
+a vector space over a finite field. Indeed, owing to the presence of zero divisors, (22) can fail dramatically
+for lines over Z/NZ: a pair of direction-separated lines in [Z/NZ]n can meet at many points. However,
+in analogy with tubes in Rn , the number of points of intersection is inversely proportional to the angle
+between the directions.
+    To make the above discussion precise requires a notion of angle between elements of Pn−1 (N);
+such a notion is formulated presently. Let ω                            ~ 0 = (ω10 , . . . , ωn0 ) ∈ Sn−1 (N) be class
+                                                ~ = (ω1 , . . . , ωn ), ω
+                         0
+representatives of ω, ω ∈ P (N), respectively, and define the angle ](ω, ω 0 ) by
+                               n−1
+
+                                                                          
+                                            0                     ωi ω j
+                                    ](ω, ω ) := max det                      .                                    (23)
+                                                1≤i< j≤n          ωi0 ω 0j
+
+Here | · | is the size function on Z/NZ introduced at the beginning of §2: that is, |x| := N/ gcd(x, N) for
+all x ∈ Z/NZ. Note that the right-hand side of (23) does not depend on the choice of representatives
+~ and ω
+ω      ~ 0 and therefore ](ω, ω 0 ) is well-defined. A few further comments regarding the definition of
+](ω, ω 0 ) are in order.
+
+  i) The definition (23) is motivated by the formula sin ](ω, ω 0 ) = |ω ∧ ω 0 | for the angle between unit
+     vectors in Rn . Note, in particular, that |ω ∧ ω 0 | can be written in terms of the determinants
+                                                    
+                                            ωi ω j
+                                      det                    for 1 ≤ i < j ≤ n
+                                            ωi0 ω 0j
+
+     via the Cauchy–Binet formula.
+
+ ii) By adapting an argument of Caruso [5], one may easily show that
+
+                                        ](ω, ω 0 ) =       min        max |ω j − ω 0j |,
+                                                       (~  ω 0 )∈ω×ω 0 1≤ j≤n
+                                                        ω ,~
+
+                                                                                          ~ 0 = (ω10 , . . . , ωn0 ) for
+                                                                  ~ = (ω1 , . . . , ωn ), ω
+     where the minimum is over all pairs of class representatives ω
+     ω, ω 0 , respectively.
+
+    In place of the basic geometric fact (22) valid over fields, over Z/NZ there is the following quantitative
+statement.
+
+Lemma 4.5. If ω, ω 0 ∈ Pn−1 (N), then
+                                                                  N
+                                               |`ω ∩ `ω 0 | ≤              .
+                                                                ](ω, ω 0 )
+
+Proof. If ](ω, ω 0 ) = 1, then the result trivially holds and so one may assume that ](ω, ω 0 )  1. Let
+(ω1 , . . . , ωn ), (ω10 , . . . , ωn0 ) ∈ Sn−1 (N) be class representatives for ω, ω 0 , respectively. It is easy to see
+
+                                      D ISCRETE A NALYSIS, 2018:11, 54pp.                                             15
+                                    J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+
+        cardinality of `ω ∩ `ω 0 is given
+that the                                   by the number of solutions (t,t 0 ) ∈ [Z/NZ]2 to the system
+     0                               n
+ t t · Ω =~v for some ~v ∈ [Z/NZ] , where
+                                                                           
+                                                       ω1 . . .         ωn
+                                                 Ω :=                         .
+                                                       ω10 . . .        ωn0
+
+By definition, there exists some 2 × 2 submatrix A of Ω such that | det A| = ](ω, ω 0 ). Since ](ω, ω 0 )  1,
+Lemma A.1 of the appendix implies that for any ~b ∈ [Z/NZ]2 the system
+
+                                               t t 0 · A = ~b
+                                                    
+
+
+has at most N/| det A| solutions, and the desired result follows.
+
+     Given this inequality, it is a simple exercise to translate Córdoba’s approach [10] into the current
+setting (see also [5, 16]) and thereby prove Proposition 4.4.
+
+Proof (of Proposition 4.4). Expanding the left-hand `2 -norm, one obtains
+                                             2
+                              ∑         χ`ω `2 ([Z/NZ]n ) =       ∑       ∑       ∑          |`ω ∩ `ω 0 |.
+                           ω∈Pn−1 (N)                         ω∈Pn−1 (N) d|N ω 0 ∈Pn−1 (N)
+                                                                             ](ω,ω 0 )=d
+
+By Lemma 4.5 and (16), it follows that
+
+                                2                                      |{ω 0 ∈ Pn−1 (N) : ](ω, ω 0 ) = d}|
+                 ∑         χ`ω `2 ([Z/NZ]n ) ≤      ∑         |`ω | ∑                                      .
+              ω∈Pn−1 (N)                         ω∈Pn−1 (N)        d|N
+                                                                                       d
+
+Recalling the standard asymptotics for the divisor function (see, for example, [25, Chapter XVIII]), it
+suffices to show that for all ε > 0 there exists a constant Cε > 0 such that
+
+                                |{ω 0 ∈ Pn−1 (N) : ](ω, ω 0 ) = d}| ≤ Cε N n−2+ε d.
+
+The simple proof of this inequality is postponed until the end of the section.
+
+The slicing argument
+Although Còrdoba’s argument is effective for n = 2, it produces very poor estimates in higher dimen-
+sions. Here a Z/NZ-analogue of the elementary (n + 1)/2-dimensional lower bound for Kakeya sets is
+established. This gives improved partial results towards Conjecture 4.2 in higher dimensions.
+
+Proposition 4.6. For all ε > 0 there exists a constant cε,n > 0 such that the density bound
+
+                                                 |K|
+                                                     ≥ cε,n N −(n−1)/2−ε
+                                                 Nn
+holds for any Kakeya set K ⊆ [Z/NZ]n .
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                    16
+                     F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+   In essence, the proof of Proposition 4.6 relies on the following variant of the key geometric fact (22)
+used above:
+
+
+         For x, y ∈ Fn distinct there exists precisely one line in Fn passing through both x and y.
+
+    Once again, owing to the presence of zero divisors, this property no longer holds over Z/NZ. In its
+place there is the following quantitative version, where the separation between the points is quantified.
+Lemma 4.7. Let `ω , `ω 0 be lines in [Z/NZ]n in the directions ω, ω 0 ∈ Pn−1 (N), respectively. If there
+exist points ~x,~y ∈ `ω ∩ `ω 0 such that k~x −~yk = N, then `ω = `ω 0 .
+Proof. The simple proof is left to the reader.
+
+     Proposition 4.6 is proved by combining Lemma 4.7 with (an adaptation of) a simple and well-known
+slicing argument from euclidean analysis (see, for instance, [35]).
+
+Proof. Suppose K ⊆ [Z/NZ]n is a Kakeya set and let
+
+                         K[t] := K ∩ {~x ∈ [Z/NZ]n : x1 = t} for all t ∈ Z/NZ.
+
+Let C̄ > 0 be a uniform constant, to be determined later in the proof, and define
+                                     n                    C̄ log N o
+                                 E := t ∈ Z/NZ : |K[t]| ≤         |K| .
+                                                              N
+It follows from Chebyshev’s inequality that
+
+                                         |E| ≥ (1 − 1/C̄ log N)N.                                      (24)
+
+ If C̄ is chosen to be sufficiently large, then, by pigeonholing, E will necessarily contain a pair of well-
+ separated points. Indeed, without loss of generality (by translating the Kakeya set) one may suppose that
+~0 ∈ E and, recalling (18), it follows that
+
+                    |{t ∈ Z/NZ : |t| < N}| = N − |S0 (N)| = N · 1 − ∏ (1 − 1/p) .
+                                                                                       
+                                                                     p|N prime
+
+By Mertens’ theorem (see, for instance, [25, Chapter XXII]), the constant C̄ > 0 may be chosen so that
+                                                                         2
+                               ∏ (1 − 1/p) ≥ ∏ (1 − 1/p) ≥ C̄ log N .
+                             p|N prime            2≤p≤N
+                                                  p prime
+
+Combining these observations with (24), one concludes that
+
+                            |{t ∈ Z/NZ : |t| < N}| ≤ N(1 − 2/C̄ log N) < |E|,
+
+and so there must exist an element t ∈ E with |t| = N. By applying a group automorphism to the set K
+one may further assume that t = 1.
+
+                                  D ISCRETE A NALYSIS, 2018:11, 54pp.                                    17
+                                  J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+     Let Ω(N) ⊆ Pn−1 (N) denote the set of all ω ∈ Pn−1 (N) for which the first component of some (and
+                                      ~ ∈ Sn−1 (N) lies in S0 (N). Thus, Ω(N) is the collection of orbits of
+therefore every) class representative ω
+                     0         0
+the free action of S (N) on S (N) × [Z/NZ]n−1 and therefore has cardinality N n−1 . Furthermore, for any
+ω ∈ Ω(N) the line `ω intersects each of the slices K[0] and K[1] at a unique point, denoted by `ω [0] and
+`ω [1], respectively. On the other hand, Lemma 4.7 implies that for any pair of points (~x ,~y ) ∈ K[0] × K[1]
+there exists at most one line `ω such that `ω [0] =~x and `ω [1] =~y. Consequently,
+
+                                                                      C̄2 log2 N 2
+                             N n−1 = |Ω(N)| ≤ |K[0]||K[1]| ≤                    |K| ,
+                                                                          N2
+which implies the desired inequality.
+
+4.4    Remaining estimates and identities
+The proofs of a small number of basic estimates and identities were not presented in the above text; these
+remaining issues are collected in the following lemma and addressed presently.
+Lemma 4.8. For all N ∈ N the following statements hold.
+ i) The cardinalities of S0 (N) and Pn−1 (N) are given by the formulae
+                                                                                                 n−1
+                   |S0 (N)| = N       ∏    (1 − 1/p) and      |Pn−1 (N)| = N n−1            ∏ ∑ p− j .
+                                  p|N prime                                             p|N prime j=0
+
+
+ ii) For all ε > 0 there exists a constant Cε > 0 such that
+
+                                  |{ω 0 ∈ Pn−1 (N) : ](ω, ω 0 ) = d}| ≤ Cε N n−2−ε d
+
+      holds for all ω ∈ Pn−1 (N) and all d | N.
+Proof of Lemma 4.8 i). The cardinality of the group of units is well-known, but nevertheless a proof
+is included in order to express the argument in terms of the | · |,  notation introduced in this article.
+Observe that
+                                                                  BN/p
+                                                           [
+                                 {t ∈ Z/NZ : |t| ≺ N} =
+                                                                p|N prime
+
+and, by the inclusion-exclusion principle,
+                                                 ω(N)                         k
+                                         BN/p = ∑ (−1)k+1                         BN/p j
+                                  [                                           \
+                                                                      ∑
+                                                               p1 <···<pk j=1
+                             p|N prime            k=1
+                                                               p j |N prime
+                                                 ω(N)
+                                               = ∑ (−1)k+1            ∑       BN/p1 ...pk
+                                                  k=1          p1 <···<pk
+                                                               p j |N prime
+                                                                                  
+                                               = N · 1−     ∏ (1 − 1/p) ,
+                                                          p|N prime
+
+
+
+                                      D ISCRETE A NALYSIS, 2018:11, 54pp.                                  18
+                           F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+where ω(N) is the number of distinct prime factors of N. The desired identity for |S0 (N)| immediately
+follows.
+     Since |Pn−1 (N)| is a multiplicative function of N, it suffices to establish the second formula for
+N = pα a power of a prime p; in this case, the desired result was observed by Caruso [5]. A slightly
+different argument to that of [5] is as follows. Since the action of S0 (N) on Sn−1 (N) is free, one deduces
+that
+                                             |Sn−1 (N)| N n − (N − |S0 (N)|)n
+                             |Pn−1 (N)| =              =
+                                              |S0 (N)|           |S0 (N)|
+and, after a short computation, the result follows from the above formula for |S0 (N)|.
+
+Proof of Lemma 4.8 ii). The argument here is rather crude and more precise estimates could be obtained
+(see [5]). Nevertheless, the resulting bounds suffice for the purposes of this article.
+    Fix ω ∈ Pn−1 (N) and d | N and define
+
+                                   Pn−1 (ω; d) := {ω 0 ∈ Pn−1 (N) : ](ω, ω 0 ) = d},
+
+so that the desired estimate reads
+
+                                              |Pn−1 (ω; d)| ≤ Cε N n−2+ε d.
+
+The group of units S0 (N) acts freely on
+                                                                                            
+                                    n                                             ωi ω j           o
+                 S   n−1
+                           (ω; d) := (ω10 , . . . , ωn0 ) ∈ Sn−1 (N) : max    det                =d ,
+                                                                     1≤i< j≤n     ωi0 ω 0j
+
+and it follows that
+                                                               |Sn−1 (ω; d)|
+                                             |Pn−1 (ω; d)| =                 .                                  (25)
+                                                                 |S0 (N)|
+    If d = N, then one may use the trivial estimate
+
+                                      |Sn−1 (ω; d)| ≤ |Sn−1 (N)| ≤ nN n−1 |S0 (N)|
+
+which, combined with (25), yields the desired bound.
+    Now suppose d | N is a proper divisor and fix a representative (ω1 , . . . , ωn ) ∈ Sn−1 (N) of ω. Without
+loss of generality, one may assume that ω1 ∈ S0 (N) and, by possibly choosing an alternative class
+                                          ~ 0 = (ω10 , . . . , ωn0 ) ∈ Sn−1 (ω; d), then it follows that ω10 ∈ S0 (N).
+representative, moreover, that ω1 = 1. If ω
+Indeed, otherwise |ω10 | ≺ N and there must exist some 2 ≤ j ≤ n such that ω 0j ∈ S0 (N); in this case
+                                                                
+                                                      1 ωj
+                                                  det                 = N,
+                                                      ω10 ω 0j
+
+                                  ~ 0 ∈ Sn−1 (ω; d). Thus, one deduces that
+contradicting the assumption that ω
+                                                                            
+                    n−1             0    0              n−1          1 ω2        o
+                   S (ω; d) ⊆ {ω  ~ ∈ S (N) × [Z/NZ]         : det    0    0   ≤d .
+                                                                    ω1 ω2
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                       19
+                                              J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+For any fixed ω10 ∈ S0 (N) and ε > 0 there exists some Cε > 0 such that
+
+              | ω20 ∈ Z/NZ : |ω20 − ω10 ω2 | ≤ d}| =         Bd 0 ≤ ∑                                        d 0 ≤ Cε N ε d.
+                                                       [
+
+                                                                             d 0 |N:d 0 ≤d   d 0 |N:d 0 ≤d
+
+Consequently,
+                                                   |Sn−1 (ω; d)| ≤ Cε N n−2+ε d|S0 (N)|
+and combining this inequality with (25) concludes the proof.
+
+
+5       Fourier restriction over Z/pα Z and Q p
+5.1       Analysis over the p-adic field
+In this section the key features of the Z/pα Z formulation of the restriction problem (that is, Problem 2.2)
+are described. In particular, a correspondence principle is demonstrated that allows one to lift the analysis
+from the finite rings Z/pα Z to the field of p-adic numbers Q p . This correspondence helps to explain
+many of the apparent similarities between the Z/pα Z and euclidean theories, since the fields Q p and R
+are in many respects related. Furthermore, there are a number of euclidean-based techniques which have
+no obvious counterpart or are considerably more difficult to implement in the discrete setting, but can be
+easily adapted to work over Q p . Thus, lifting the problem to the p-adics often significantly simplifies the
+analysis (a striking example of this occurs when one studies the restriction theory for the moment curve;
+this is described in detail in §7). The p-adic field also has a relatively simple algebraic structure since, in
+particular, there are no zero divisors.
+    Before proceeding some basic facts regarding analysis over Q p are reviewed, and the relevant
+notational conventions are established. Fixing a prime p, recall that the p-adic absolute value | · | p : Z →
+{0, p−1 , p−2 , . . . } is defined by
+                                             −k
+                                              p  if x 6= 0 and pk kx for k ∈ N0
+                                   |x| p :=                                     ,
+                                             0   otherwise
+
+where the notation pk kθ is used to denote that pk divides θ (that is, pk | θ ) and no larger power of p
+divides θ . The function | · | p uniquely extends to a non-archimedean absolute value on the rationals Q.12
+The field of p-adic numbers Q p is defined to be the metric completion of Q under the metric induced by
+| · | p . One may verify that Q p indeed has a natural field structure and contains Q as a subfield.
+      Any element x ∈ Q p \ {0} admits a unique p-adic series expansion
+                                                                       ∞
+                                                                 x = ∑ xjpj                                                    (26)
+                                                                      j=J
+
+    12 That is, | · |
+                        p : Q → [0, ∞) satisfies the following properties:
+ i) (Positive definite) |x| p ≥ 0 for all x ∈ Q and |x| p = 0 if and only if x = 0;
+ ii) (Multiplicative) |xy| p = |x| p |y| p for all x, y ∈ Q;
+iii) (Strong triangle inequality) |x + y| p ≤ max{|x| p , |y| p } for all x, y ∈ Q.
+
+
+
+                                                D ISCRETE A NALYSIS, 2018:11, 54pp.                                             20
+                      F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+where J ∈ Z, x j ∈ {0, 1, . . . , p − 1} for all j ∈ Z with xJ 6= 0 (and x j := 0 for j < J). The sum is understood
+as the limit of a sequence of rationals, where the convergence is with respect to the p-adic absolute value.
+In this case, |x| p = p−J . The ring of p-adic numbers Z p is defined to be the set comprised of 0 together
+with all the elements x ∈ Q p \ {0} for which J ≥ 0 in the expansion (26). Thus, Z p = {x ∈ Q p : |x| p ≤ 1},
+and this clearly forms a subring of Q p by the multiplicative property of the absolute value.
+    The field Q p is a locally compact abelian group under the addition operation and the Haar measure of
+a Borel subset E ⊆ Q p is denoted by |E|; this measure is normalised so that |Z p | = 1.´The notation dx is
+used to indicate that an integral is taken with respect to Haar measure (hence, |E| = Q p χE (x) dx for all
+E ⊆ Q p Borel). For any r > 0 and x ∈ Q p the ball Br (x) is defined by
+
+                                       Br (x) := {y ∈ Q p : |x − y| p ≤ r};
+
+these balls are not defined using a strict inequality so that, for instance, Z p = B1 (0). For each α ∈ Z the
+ball B pα (0) = p−α Z p is an additive subgroup of Q p (furthermore, if α ≤ 0, then B pα (0) is an ideal of
+Z p ), and all other balls of radius pα arise as cosets of B pα (0). It immediately follows from the translation
+invariance property of the Haar measure (together with the choice of normalisation) that |B pα (x)| = pα
+for all α ∈ Z and x ∈ Q p .
+     There is an alternative algebraic description of Z p as the inverse limit of the inverse system of groups
+(Z/pα Z)α∈N : that is,
+                                                   Z p = lim Z/pα Z.
+                                                         ←−
+                                                         α∈N
+
+The p-adic numbers Q p can then be described algebraically as the field of fractions of Z p . This
+perspective will not feature heavily here, but it is noted that that the inverse system induces a family of
+natural projection homomorphisms πα : Z p → Z/pα Z. The πα are given by reduction modulo the ideal
+pα Z p and can be expressed in terms of the p-adic expansion; in particular,
+
+                                     α−1                         ∞
+                                     ∑ xjpj            for x = ∑ x j p j ∈ Z p and α ∈ N.
+                                               
+                         πα (x) =
+                                     j=0                         j=0
+
+
+    The vector space Qnp is endowed with the norm
+
+                            |x| p := max |x j | p        for all x = (x1 , . . . , xn ) ∈ Qnp .
+                                     1≤ j≤n
+
+
+All the above definitions and conventions then naturally extend to vector spaces Qnp .
+     By the first isomorphism theorem, the πα : Znp → [Z/pα Z]n induce a natural isomorphism between
+[Z p /pα Z p ]n and [Z/pα Z]n . In particular, the sets πα−1 (~x ) for ~x ∈ [Z/pα Z]n are precisely the cosets of
+pα Z p and so
+                       π −1 {~x} = B p−α (y)         for all ~x ∈ [Z/pα Z]n and y ∈ π −1 {~x}.               (27)
+
+This is the key observation which governs the correspondence principle.
+
+                                    D ISCRETE A NALYSIS, 2018:11, 54pp.                                        21
+                                      J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+5.2     Restriction and Kakeya over the p-adics
+The p-adic field Q p is self-dual in the Pontryagin sense. In particular, if one fixes an additive character
+e : Q p → T such that e restricts to the constant function 1 on Z p and to a non-principal character on
+p−1 Z p , then for any integrable f : Qnp → C the Fourier transform fˆ can be defined by
+                                         ˆ
+                              ˆf (ξ ) :=   f (x)e(−x · ξ ) dx   for all ξ ∈ Qnp .
+                                              Qnp
+
+It will be useful to work with an explicit choice of character e. Define the fractional part function
+{ · } p : Q p → Q as follows: given x ∈ Q p with p-adic expansion ∑∞j=J x j p j , let {x} p := ∑−1       j
+                                                                                                j=J x j p . Observe
+that {x} p = 0 if and only if x ∈ Z p . Defining e : Q p → T by
+
+                                            e(x) := e2πi{x} p      for all x ∈ Q p ,
+it is easy to check that this function has the desired properties.
+     Fix 1 ≤ d ≤ n − 1 and Pn−d+1 , . . . , Pn ∈ Z[X1 , . . . , Xd ]. Let Σ ⊆ Znp denote the image of the the mapping
+
+                                          Γ : ω 7→ (ω, Pn−d−1 (ω), . . . , Pn (ω))                                          (28)
+as a function Zdp → Znp and µ the measure on Σ given by the push-forward of the Haar measure on Zdp
+under (28). One is interested in studying Fourier restriction estimates of the form
+                                                k fˆ|Σ kLs (µ) ≤ Ck f kLr (Qnp ) .                                          (29)
+    The conjectural range of estimates for restriction to, say, a compact piece of the paraboloid over Q p
+is easily seen to imply a p-adic version of the Kakeya conjecture. To make this precise, first note that the
+ring-theoretic definitions of projective space, lines in a given direction and Kakeya sets, as described in
+§4, can all be applied to Z p , and so it makes sense to discuss Kakeya sets K ⊆ Znp . By essentially a repeat
+of the discussion from §3 and §4, the study of restriction estimates over Q p leads one to consider the
+following geometric problem.13
+Conjecture 5.1 (Kakeya set conjecture over Q p ). For all ε > 0 there exists a constant cε,n > 0 such that
+for any Kakeya set K ⊆ Znp the bound
+                                                    |N p−α (K)| ≥ cε,n p−εα
+holds for all α ∈ N.
+      Here for any set E ⊆ Qnp and α ∈ Z the p−α -neighbourhood of E is defined to be the set
+
+                                                 N p−α (E) :=
+                                                                 [
+                                                                       B p−α (y).                                           (30)
+                                                                 y∈E
+
+    It transpires that Conjecture 5.1 is equivalent to the weakened version of Conjecture 4.2 where N
+varies only over powers of the fixed prime p. This equivalence is discussed below, and provides a simple
+instance of the correspondence principle.
+  13 For brevity, only the p-adic Kakeya set conjecture is stated, but it certainly makes sense to also consider the corresponding
+
+maximal conjecture.
+
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                                    22
+                     F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+5.3   Equivalence of the Kakeya problem over Q p and Z/pα Z
+The proof of the equivalence between the Q p and Z/pα Z formulations of the Kakeya set conjecture relies
+on two ingredients, described presently.
+
+1. Correspondence for sets
+Given a set E ⊆ Znp one may easily deduce from (27) and (30) that
+
+                                         N p−α (E) =                πα−1 {~x},
+                                                             [
+                                                                                                           (31)
+                                                        ~x∈πα (E)
+
+
+where the union is, of course, disjoint. The identity (27) also implies that each of the sets πα−1 {~x} has
+Haar measure p−αn and, consequently,
+
+                                                                           |πα (E)|
+                                 |N p−α (E)| =      ∑ |πα−1 {~x}| =          pαn
+                                                                                    .
+                                                 ~x∈πα (E)
+
+Note that the expression on the far left-hand side of this chain of equalities involves the Haar measure on
+Qnp , whilst the expression on the right involves normalised counting measure.
+
+2. Correspondence for directions
+The projective space Pn−1 (Z p ) is naturally related to the discrete projective spaces Pn−1 (Z/pα Z). Indeed,
+as discussed in [5], the inverse system on the family of groups (Z/pα Z)α∈N naturally induces an inverse
+system on the family of sets (Pn−1 (Z/pα Z))α∈N and the projective space Pn−1 (Z p ) can be realised as
+the inverse limit
+                                       Pn−1 (Z p ) = lim Pn−1 (Z/pα Z).
+                                                     ←−
+                                                      n∈N
+
+This gives rise to a family of natural projection mappings
+
+                                      π̃α : Pn−1 (Z p ) → Pn−1 (Z/pα Z).
+
+The π̃α may also be defined in terms of the p-adic expansion for (class representatives of) the ω ∈
+Pn−1 (Z p ); the details are left to the reader. In particular, using this observation one may show that K ⊆ Znp
+is Kakeya if and only if πα (K) ⊆ [Z/pα Z]n is Kakeya for all α ∈ N.
+
+
+
+Combining these correspondences, it is clear that the two formulations of the Kakeya problem are
+completely equivalent. Indeed, given any Kakeya set K ⊆ Znp , it follows that Kα := πα (K) ⊆ [Z/pα Z]n is
+Kakeya for all α ∈ N. Assuming Conjecture 4.2 for N = pα , given ε > 0 there exists some cε,n > 0 such
+that
+                                         |Kα |
+                           |N p−α (K)| = αn ≥ cε,n p−εα         for all α ∈ N,
+                                          p
+
+                                   D ISCRETE A NALYSIS, 2018:11, 54pp.                                       23
+                                 J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+as required. Conversely, if Kα ⊆ [Z/pα Z]n is Kakeya, then K := πα−1 (Kα ) is easily seen to be Kakeya
+with N pα (K) = K. Thus, assuming Conjecture 5.1, given ε > 0 there exists some cε,n > 0 such that
+
+                                       |Kα |
+                                             = |N p−α (K)| ≥ cε,n p−εα ,
+                                        pαn
+as required.
+    The construction described in Proposition 4.3 can be combined with the above observations to yield
+the following result.
+
+Proposition 5.2. There exists a Kakeya set K ⊆ Znp of Haar measure zero.
+
+Proof. The sets constructed in Proposition 4.3 can be lifted to produce Kakeya sets in Znp of arbitrarily
+small measure. A measure zero set is then obtained by a limiting procedure. The details are omitted; see,
+for instance, [56] for a similar argument in the euclidean case.
+
+    It is remarked that such sets have been observed to exist in [5, 19] (see also [16]). The construction
+described here is closely related to that given in [19], and stems from euclidean constructions described
+in [47, 54] (see also [56]).
+
+5.4   A correspondence principle for functions
+Developing a correspondence principle for the restriction problem is a little more involved than the
+Kakeya case. For restriction, one is required to lift functions on [Z/pα Z]n , rather than just sets, and the
+lifting procedure must behave well with respect to taking Fourier transforms. Moreover, one must also
+work over the entire vector space Qnp , and not just the compact piece Znp , and this necessitates the use of a
+2-parameter family of correspondences (the analysis of the previous subsection used just a 1-parameter
+family of maps, namely N p−α (E) 7→ πα (E)).
+     It is first remarked that, for each α ∈ N0 , the observations of the previous subsections imply a
+correspondence between functions f : Qnp → C that are supported in Znp = B1 (0) and are constant on
+cosets of pα Znp = B p−α (0) and functions F : [Z/pα Z]n → C. Indeed, given such a function f , one may
+simply define Fα [ f ] : [Z/pα Z]n → C by
+
+                                      Fα [ f ](~x) := f (y) if y ∈ πα−1 {~x }
+
+for all ~x ∈ [Z/pα Z]n . This is well-defined by the hypotheses on f and f 7→ Fα [ f ] is an isomorphism
+between the relevant function spaces.
+     For the purposes of restriction theory, it is useful to consider a 2-parameter family Fk.l comprised of
+rescaled versions of the isomorphisms Fα . For k, l ∈ N0 let S (Qnp ; k, l) denote the vector subspace of
+L1 (Qnp ) consisting of all f : Qnp → C that are supported on B pl (0) and constant on cosets of B p−k (0). The
+union of the S (Qnp ; k, l) over all k, l ∈ N0 is denoted S (Qnp ). Note that f ∈ S (Qnp ) if and only if it is a
+finite linear combination of characteristic functions of balls.
+     Given f ∈ S (Qnp ; k, l), define Fk,l [ f ] : [Z/pk+l Z]n → C by
+                                                                          −1
+                                Fk,l [ f ](~x) := p−kn f (p−l y) for y ∈ πk+l {~x }                         (32)
+
+                                   D ISCRETE A NALYSIS, 2018:11, 54pp.                                        24
+                           F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+for all ~x ∈ [Z/pk+l Z]n . Once again, this is well-defined and Fk,l [ f ] : S (Qnp ; k, l) → `1 ([Z/pk+l Z]n ) is an
+isomorphism.
+     The space S (Qnp ) is the p-adic analogue of the Schwartz class S (Rn ) from Euclidean analysis. It is
+remarked that both spaces can be viewed as particular instances of a more general construction, namely
+the Schwartz–Bruhat class on an arbitrary LCA group [4, 45] (see also [51]).14 It is a simple consequence
+of the Stone–Weierstrass theorem that S (Qnp ) is dense in Lr (Qnp ) for 1 ≤ r < ∞. Furthermore, for all
+k, l ∈ N0 the Fourier transform restricts to a bijection from S (Qnp ; k, l) to S (Q̂np ; l, k).
+     It is useful to set up a similar correspondence between functions on the dual groups. In particular,
+given g ∈ S (Q̂np ; l, k) define Fbl,k [g] : [Z/pk+l Z]n∗ → C by
+
+                                        Fbl,k [g](~ξ ) := g(p−k η )                   −1 ~
+                                                                             for η ∈ πk+l {ξ }                                (33)
+
+for all ~ξ ∈ [Z/pk+l Z]n∗ .
+    These definitions extend the correspondence for sets detailed above. Indeed, one may easily verify
+that (31) implies that
+                                        Fbα,0 [χN p−α (E) ] = χπα (E)                            (34)
+for all E ⊆ Znp and α ∈ N0 .
+    The normalisation factors p−kn and 1 are chosen so that (32) preserves the L1 -norm and (33) preserves
+the L∞ -norm; this is natural in view of the Riemann–Lebesgue lemma. More generally, the following
+norm identities hold.
+Lemma 5.3. For 1 ≤ r ≤ ∞ and any f ∈ S (Qnp ; k, l) and g ∈ S (Q̂np ; l, k) the following identities hold:15
+                                            0
+a) kFk,l [ f ]k`r ([Z/pk+l Z]n ) = p−kn/r k f kLr (Qnp ) ;
+
+b) kFbl,k [g]k`r ([Z/pk+l Z]n∗ ) = pln/r kgkLr (Q̂np ) .
+Proof. Since b) is essentially just a renormalised version of a), it suffices only to prove a). Fix f ∈
+S (Qnp ; k, l) and observe that
+                                                                                                            1/r
+                                kFk,l [ f ]k`r ([Z/pk+l Z]n ) = p−kn          ∑          | f (p−l y~x )|r
+                                                                        ~x∈[Z/pk+l Z]n
+
+                                                                       −1
+where each y~x ∈ Znp is a fixed (but arbitrary) choice of element in πk+l  {~x }. Since f is constant on cosets
+    k n
+of p Z p , it follows that the above expression may be written as
+                                                     ˆ
+                                         0                                  1/r
+                                 p−knr/r      ∑                | f (y)|r dy      .
+                                                                            −l
+                                                   ~x∈[Z/pk+l Z]n ) B p−k (p y~x )
+
+One may easily observe that {p−l y~x ∈ Qnp :~x ∈ [Z/pk+l Z]n } forms a complete set of coset representatives
+of pk Znp in p−l Znp and a) immediately follows.
+  14 Strictly speaking, the Schwartz–Bruhat spaces are, by definition, topological vector spaces and therefore their full definition
+
+requires a description of their topology. The topology is not discussed here as it plays no rôle in the forthcoming analysis.
+  15 Recall that the `r norms on a finite abelian group G and its dual Ĝ are defined with respect to counting and normalised
+
+counting measure, respectively.
+
+
+                                            D ISCRETE A NALYSIS, 2018:11, 54pp.                                                  25
+                                   J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+      The mappings Fk,l and Fbl,k behave well with respect to taking Fourier transforms.
+
+Lemma 5.4. The diagram
+
+                                    S (Qnp ; k, l)                          S (Q̂np ; l, k)
+                                                               F
+                                      Fk,l                                           Fbl,k
+
+                                  `1 ([Z/pk+l Z]n )                       `∞ ([Z/pk+l Z]n∗ )
+                                                               F
+
+commutes, where each occurrence of F denotes the appropriate Fourier transform.
+
+Proof. Given f ∈ S (Qnp ; k, l) observe that
+
+                                                                                              ~   k+l
+                             (Fk,l [ f ])ˆ(~ξ ) = p−kn         ∑         f (p−l y~x )e−2πi~x·ξ /p
+                                                         ~x∈[Z/pk+l Z]
+
+                                                                                                     −1
+where, as in the proof of Lemma 5.3, each y~x ∈ Qnp is a fixed (but arbitrary) choice of element in πk+l {~x }.
+        −1 ~
+If η ∈ π {ξ }, then it follows that
+          k+l
+
+
+                         (Fk,l [ f ])ˆ(~ξ ) = p−kn       ∑            f (p−l y~x )e(−p−l y~x · p−k η),
+                                                     ~x∈[Z/pk+l Z]
+
+
+where e : Q p → T is the additive character defined earlier. Since the function y 7→ f (y)e(−y · p−k η) is
+constant on cosets of pk Znp , arguing as in the proof of Lemma 5.3, one deduces that
+                                                         ˆ
+                                  (Fk,l [ f ])ˆ(~ξ ) =               f (y)e(−y · p−k η ) dy.
+                                                          B pl (0)
+
+
+Recalling the definition of Fbl,k [ fˆ](~ξ ), this concludes the proof.
+
+5.5     Equivalence of restriction over Q p and Z/pα Z
+Suppose Γ is as in (28) and, as above, define
+
+                                               Σ := {Γ(ω) : ω ∈ Zdp }.
+
+Let µ denote the measure on Σ given by the push-forward of the Haar measure on Zdp under Γ. Furthermore,
+for each α ∈ N let Σα ⊆ [Z/pα Z]n∗ denote the image of the mapping (28) as a function Γ : [Z/pα Z]d →
+[Z/pα Z]n . In the remainder of this section it is shown that p-adic restriction estimates for the surface Σ
+are, in some strong sense, equivalent to discrete restriction estimates for the Σα .
+
+Proposition 5.5. With the above setup, the following are equivalent:
+
+                                     D ISCRETE A NALYSIS, 2018:11, 54pp.                                    26
+                               F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+  i) The p-adic restriction estimate
+                                                              k fˆ|Σ kLs (µ) ≤ C̄k f kLr (Qnp )                                    (35)
+     holds for all f ∈ S (Qnp ).
+
+ ii) For all α ∈ N0 the discrete estimate
+                                                   1                  1/s
+                                                         ∑ |F̂(~ξ )|s      ≤ C̄kFk`r ([Z/pα Z]n )
+                                                 |Σα | ~
+                                                         ξ ∈Σα
+
+     holds for all F : [Z/pα Z]n → C.
+
+The constants appearing in both inequalities are identical.
+
+   The hypothesis that the surface is graph parametrised is essentially for convenience and could be
+weakened. The important property is that each Σα is a ‘d-dimensional object’, in the sense that |Σα | = pdα .
+   Proposition 5.5 is an immediate consequence of the following lemma.
+
+Lemma 5.6. For all l ∈ N0 the following are equivalent:
+
+  i) The estimate
+                                                             k fˆ|Σ kLs (µ) ≤ C̄k f kLr (B pl (0))                                 (36)
+
+     holds for all f ∈ S (Qnp ) supported in B pl (0).
+
+ ii) The estimate16
+                                                     k fˆkLavg
+                                                           s (N
+                                                                p−l
+                                                                    (Σ)) ≤ C̄k f kLr (B pl (0))                                    (37)
+
+     holds for all f ∈ S (Qnp ) supported in B pl (0).
+
+iii) The estimate
+                                                   1                  1/s
+                                                         ∑ |F̂(~ξ )|s      ≤ C̄kFk`r ([Z/pl Z]n )                                  (38)
+                                                  |Σl | ~
+                                                         ξ ∈Σl
+
+     holds for all F : [Z/pl Z]n → C.
+
+The constants appearing in all three inequalities are identical.
+
+    Assuming Lemma 5.6, Proposition 5.5 immediately follows.
+
+Proof (of Proposition 5.5). The (global) restriction estimate (35) is equivalent to the (local) estimates
+(36) holding at each scale l ∈ N0 with the uniform choice of constant C̄. The desired result now follows
+from Lemma 5.6.
+  16 For any Borel set E ⊆ Qn of positive Haar measure the norm k · k s
+                            p                                        Lavg (E) is defined by
+
+                                                                                1/s         1 ˆ                      1/s
+                                        k f kLavg
+                                              s (E) :=            | f (x)|s dx          :=               | f (x)|s dx          .
+                                                              E                               |E|    E
+            ffl
+Note that         E is used to denote the normalised integral over E.
+
+
+                                              D ISCRETE A NALYSIS, 2018:11, 54pp.                                                   27
+                                    J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+    The equivalence i) ⇔ ii) is the p-adic version of a well-known fact in the euclidean case (see, for
+instance, [52]). The simple proof is postponed until the end of the section. On the other hand, the
+equivalence ii) ⇔ iii) follows from the correspondence between S (Qnp ; k, l)-functions and functions on
+the module [Z/pk+l Z]n , as developed in the previous subsection.
+                                                                             −1
+Proof (of Lemma 5.6, ii) ⇔ iii)). It follows from (34) that χN p−l (Σ) = Fbl,0   [χπl (Σ) ]. More generally, the
+same argument yields
+                                             −1
+                             χN p−l (Σ) = Fbl,k [χπk+l (pk Σ) ] for all k ∈ N0 .                            (39)
+    Fix f ∈ S (Qnp ; k, l) for some k ∈ N0 and observe (39) together with Lemma 5.4 imply that
+                                         −1                                 −1
+                      χN p−l (Σ) fˆ = Fbl,k   χπk+l (pk Σ) Fbl,k [ fˆ] = Fbl,k
+                                                                                                        
+                                                                                 χπk+l (pk Σ) (Fk,l [ f ])b .
+
+From this and Lemma 5.3 b) one deduces that
+                                               1                                                              1/s
+                  k fˆkLavg
+                        s (N     (Σ)) =                                       ∑        |(Fk,l [ f ])b(~ξ )|s          .
+                             p−l          |πk+l (pk Σ)| ~
+                                                                     ξ ∈πk+l (pk Σ)
+
+Combining these observations together with Lemma 5.3 a), it follows that the local restriction estimate
+(37) holds for all f ∈ S (Qnp ) supported in B pl (0) if and only if for every k ∈ N0 the estimate
+                                1                                       1/s              0
+                                                ∑           |F̂(~ξ )|s          ≤ C̄qkn/r kFk`r ([Z/pk+l Z]n )            (40)
+                           |πk+l (pk Σ)| ~
+                                         ξ ∈πk+l   (pk Σ)
+
+holds for all F : [Z/pk+l Z]n → C. The k = 0 case of the above inequality is precisely (38). It therefore
+suffices to show that (38) implies (40) holds for all k ∈ N0 . Given F : [Z/pk+l Z]n → C define the function
+Fl : [Z/pl Z]n → C by
+                            Fl (~z ) :=   ∑ F(~x ) for all~z ∈ [Z/pl Z]n .
+                                           ~x∈[Z/pk+l Z]n
+                                             ~x≡~z mod pl
+
+Consider the map δk : [Z/pl Z]n → [Z/pk+l Z]n given by δk~ξ := [pk ξ ] where ξ ∈ Zn is a choice of class
+representative for ~ξ . One may readily check that this mapping is well-defined and restricts to a bijection
+from πl (Σ) to πk+l (pk Σ). Furthermore, for any ~ξ ∈ [Z/pl Z]n it follows that
+                                                                                           ~ l
+                             F̂(δk~ξ ) =         ∑               ∑            F(~x )e2πi~x·ξ /p = F̂l (~ξ )
+                                           ~z∈[Z/pl Z]n ~x∈[Z/pk+l Z]n
+                                                          ~x≡~z mod pl
+
+and, consequently,
+                                  1                                                 1
+                                                  ∑           |F̂(~ξ )|s =                   |F̂l (~ξ )|s .               (41)
+                            |πk+l (pk Σ)| ~                                     |πl (Σ)| ~ ∑
+                                             ξ ∈πk+l (pk Σ)                              ξ ∈πl (Σ)
+
+On the other hand, Hölder’s inequality implies that
+                                                                          0
+                                     kFl k`r ([Z/pl Z]n ) ≤ pkn/r kFk`r ([Z/pk+l Z]n ) .                                  (42)
+
+                                      D ISCRETE A NALYSIS, 2018:11, 54pp.                                                  28
+                     F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+Thus, assuming (38) holds for the function Fl and combining this estimate with (41) and (42), one
+concludes that (40) holds for the function F, as required.
+
+Proof (of Lemma 5.6, i) ⇔ ii)). The proof relies on the identity
+                                               ˆ
+                                | fˆ(η)|s dη =            | fˆ(ξ + η)|s dηdµ(ξ ),                                    (43)
+                                N p−l (Σ)                      Σ B p−l (0)
+
+valid for all f ∈ S (Qnp ). To prove (43), first observe that
+
+                                               N p−l (Σ) =                    πl−1 {Γ(~z)}.
+                                                                    [
+
+                                                              ~z∈[Z/pl Z]d∗
+
+This implies that |N p−l (Σ)| = p−l(n−d) and
+
+                                       | fˆ(η)|s dη = p−ld              ∑                         | fˆ(η)|s dη
+                           N p−l (Σ)                               ~z∈[Z/pl Z]d∗   πl−1 {Γ(~z)}
+
+
+                                                       = p−ld           ∑                            | fˆ(η)|s dη,
+                                                                   ~z∈[Z/pl Z]d∗   B p−l (Γ(ω~z ))
+
+
+where ω~z ∈ Znp is an arbitrary choice of element of πl−1 {~z} for each~z ∈ [Z/pl Z]d∗ . Averaging over all
+possible choices of the ω~z one concludes that
+                                                ˆ
+                                   s
+                             ˆ
+                           | f (η)| dη = ∑                        | fˆ(Γ(ω) + η)|s dηdω,
+                    N p−l (Σ)                      ~z∈[Z/pl Z]d∗    πl−1 {~z} B p−l (0)
+
+and (43) immediately follows.
+    Suppose that (36) holds for all f ∈ S (Qnp ) with supp f ⊆ B pl (0). It follows from the modulation
+invariance of the Lr -norm that
+                         ˆ                                1/s
+                                     | fˆ(ξ + η)|s dηdµ(ξ )     ≤ C̄k f kLr (B pl (0))
+                                  Σ B p−l (0)
+
+for any such function f , and the identity (43) immediately yields (37).
+    Conversely, suppose (37) holds for all f ∈ S (Qnp ) with supp f ⊆ B pl (0). If f is of this type, then
+f = f χB pl (0) , which leads to the reproducing formula
+
+                                    fˆ(ξ ) = fˆ ∗ χ̂B pl (0) (ξ ) =                    fˆ(ξ + η) dη.
+                                                                           B p−l (0)
+
+Thus, by Hölder’s inequality,
+                                                   ˆ                                        1/s
+                                k fˆ|Σ kLs (µ) ≤                       | fˆ(ξ + η)|s dηdµ(ξ )
+                                                        Σ B p−l (0)
+
+and (36) now follows from (43).
+
+                                            D ISCRETE A NALYSIS, 2018:11, 54pp.                                       29
+                                 J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+5.6   Restriction and Kakeya over local fields
+The analysis of this section can be generalised to the setting of non-archimedean local fields. For brevity,
+the relevant definitions are not reviewed here; the interested reader may consult, for instance, [37], [38]
+or [51] for further information. Let K be a field with a discrete non-archimedean absolute value | · |K ,
+suppose π ∈ K is a choice of uniformiser and let o := {x ∈ K : |x|K ≤ 1} denote the ring of integers of K.
+Assume that the residue class field o/πo is finite. One may easily formulate versions of the restriction and
+Kakeya problems over the field K or the quotient rings o/π α o. The resulting theories are then essentially
+equivalent via a correspondence principle which extends that described above. The details can be found
+in [26].
+     It is well-known that any field K satisfying the above properties is isomorphic to either a finite
+extension of Q p for some prime p or the field Fq ((X)) of formal Laurent series over a finite field
+Fq . The local fields Fq ((X)) are particularly well-behaved spaces which act as simplified models of
+Euclidean space. For instance, Fourier analysis over F2 ((X)) corresponds to the study of Fourier–Walsh
+series, which has played a prominent rôle as a model for problems related to Carleson’s theorem and
+time-frequency analysis [13, 14]. Recently there has been increased interest in local field variants of
+other problems in Euclidean harmonic analysis and geometric measure theory, focusing on the Kakeya
+conjecture [5, 16, 18, 19]. In particular, in [18] it is shown that Dvir’s [17] finite field Kakeya theorem can
+be used to prove strengthened bounds on the size of Kakeya sets over Fq ((X)). This simple observation
+stems from the fact that each quotient ring of Fq ((X)) is a vector space over a finite field. It would be
+interesting to see whether it is possible to extend this result to the p-adic setting.
+
+
+6 `2 restriction in Z/NZ
+6.1   An abstract restriction theorem
+In this section a fairly abstract `2 Fourier restriction estimate is established for general sets Σ lying in
+[Z/NZ]n , under certain dimensionality hypotheses. This result is then used to study various prototypical
+cases such as the paraboloid. In order to state the general form of the restriction theorem, it is necessary
+to revisit the scaling structure on Z/NZ described earlier in the article.
+    Recall the collection of balls {Bd }d|N introduced in §2, given by
+
+                                     Bd := {~x ∈ [Z/NZ]n : k~xk  d}.
+
+It was noted in §2 that when N = pα is a power of a fixed prime p these balls form a nested sequence.
+For general N this property does not hold and it is therefore useful to consider the 1-parameter nested
+family of balls
+                               Bρ (~0 ) :=        Bd
+                                            [
+                                                           for all 0 < ρ.
+                                              d|N;d≤ρ
+
+Note that the above union is taken over all divisors d which are at most ρ in the usual sense, whereas the
+inequality k~xk  d defining Bd is with respect to the division ordering. When N = pα the sets Bd are
+already nested and Bρ (~0 ) = B pν where 0 ≤ ν ≤ α is the largest value for which pν ≤ ρ holds. The set
+
+                                  D ISCRETE A NALYSIS, 2018:11, 54pp.                                       30
+                         F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+system Bρ (~0 ) is extended to a translation invariant family on [Z/NZ]n by setting Bρ (~x ) :=~x + Bρ (~0 ) for
+all ~x ∈ [Z/NZ]n and ρ > 0.
+      The term ‘balls’ is used loosely here: the Bρ (~x ) do not arise from a metric, or even a pseudo-metric.
+They do, however, satisfy the following properties:
+  i) Nesting: Bρ (~0 ) ⊆ Bρ 0 (~0 ) for all 0 < ρ ≤ ρ 0 ;
+
+ ii) Symmetry: Bρ (~0 ) = −Bρ (~0 ) for all 0 < ρ;
+
+iii) Covering:
+                     S
+                             ~           n
+                     ρ>0 Bρ (0 ) = [Z/NZ] ;
+
+iv) Translation invariance: Bρ (~x ) =~x + Bρ (~0 ) for all ~x ∈ [Z/NZ]n and 0 < ρ.
+In addition, the balls satisfy a natural regularity condition with respect to the Haar (that is, counting)
+measure on [Z/NZ]n . In particular, for all ε > 0 one has
+
+(R)    |Bρ (~0 )| ≤ Cε N ε ρ n       for all 0 < ρ.
+
+Indeed,
+                                 |Bρ (~0 )| ≤     ∑ |Bd | = ∑ d n ≤ ∑ 1 ρ n
+                                                                                           
+                                                d|N;d≤ρ           d|N;d≤ρ             d|N
+
+and (R) now follows from standard bounds for the divisor function. It is easy to see that when N = pα
+the property (R) holds with a uniform constant (that is, without any ε-loss in N).
+    The dual group [Z/NZ]n∗ is also endowed with a family of balls Bbρ (~ξ ), which are naturally dual to
+the Bρ (~x ). In particular, define
+
+                                     Bbρ (~0 ) :=               BN/d
+                                                       [
+                                                                            for all 0 < ρ
+                                                    d|N;d≥1/ρ
+
+
+and let Bbρ (~ξ ) := ~ξ + Bbρ (~0 ) for all ~ξ ∈ [Z/NZ]n∗ and 0 < ρ.
+    Having made these preliminary definitions, one may now state the abstract `2 Fourier restriction
+theorem mentioned above. Fix N ∈ N and a set of frequencies Σ ⊆ [Z/NZ]n∗ . Mirroring the results in the
+Euclidean setting [3, 42, 43], one assumes that the normalised counting measure on Σ satisfies both a
+dimensional (or regularity) and Fourier-dimensional hypothesis; in particular, for some 0 < b ≤ a < n
+assume that the following hold:
+
+          |Bbρ (~ξ ) ∩ Σ|
+(RΣ)                      ≤ Ara for all ~ξ ∈ [Z/NZ]n∗ ;
+                 |Σ|
+
+           1            ~
+(FΣ)             e2πi~x·ξ /N ≤ Br−b/2 for all ~x ∈
+                                                 / Br (~0 ).
+          |Σ| ~∑
+              ξ ∈Σ
+
+If µ denotes the normalised counting measure on Σ, then the above inequalities can be rewritten as:
+
+(Rµ)      µ(Bbr (~ξ )) ≤ Ara for all ~ξ ∈ [Z/NZ]n∗ ;
+
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                  31
+                                              J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+(Fµ)       |µ̌(~x )| ≤ Br−b/2 for all ~x ∈
+                                         / Br (~0 ).
+These conditions are therefore natural discrete analogues of those featured in [3, 42, 43].
+   With the various definitions now in place, the main theorem is as follows.
+Theorem 6.1. Fix N ∈ N and a set of frequencies Σ ⊆ [Z/NZ]n∗ and suppose Σ satisfies (R Σ) and (F Σ)
+for some 0 < b ≤ a < n and 0 < A, B. Then for all ε > 0, there is a constant Cε such that the inequality
+               1                 1/2
+                       |F̂(~ξ )|2      ≤ Cε Ab/(4(n−a)+2b) B(n−a)/(2(n−a)+b) N ε kFkLr ([Z/NZ]n )   (44)
+                |Σ| ~∑
+                               ξ ∈Σ
+
+holds for all 1 ≤ r ≤ r0 where
+                                                                        4(n − a) + 2b
+                                                                r0 :=                 .                                   (45)
+                                                                        4(n − a) + b
+    Theorem 6.1 is, in fact, a special case of a more general result concerning L2 Fourier restriction on
+locally compact abelian (LCA) groups. In particular, in [27] it is observed that an argument of Bak and
+Seeger [3] can be extended to a class of LCA groups which admit a primitive form of Littlewood–Paley
+theory. Unfortunately, the full details of the hypotheses of the main result in [27] are somewhat involved
+and are therefore not reproduced here. In order to apply the result of [27] in the current context, one
+considers a system of Littlewood–Paley projections defined with respect to the balls Bρ (~x ) and Bbρ (~ξ )
+introduced above. For each ρ > 0 let ϕρ := χBρ (~0 ) denote the characteristic function of the ball Bρ (~0 ).
+For the purpose of the argument, one wishes to show that the projection operators G 7→ G ∗ ϕ̂ρ (defined
+on the class of functions on the dual group [Z/NZ]n∗ ) are well-behaved. Since kϕρ k`∞ ([Z/NZ]n ) ≤ 1, one
+immediately deduces the `2 -bound
+                                                  kG ∗ ϕ̂ρ k`2 ([Z/NZ]n∗ ) ≤ kGk`2 ([Z/NZ]n∗ )
+
+by Plancherel’s theorem. On the other hand, favourable `1 -type bounds follow from pointwise estimates
+for the Fourier transform ϕ̂ρ .
+Proposition 6.2. For ϕρ as defined above, for all ε > 0 there exists a constant Cε > 0 such that the
+following condition holds:
+(F) |ϕ̂ρ (~ξ )| ≤ Cε N ε s−n whenever −~ξ ∈
+                                          / Bbs (~0 ) and s ≥ 1/ρ.
+        The main theorem of [27] reduces the proof of Theorem 6.1 to establishing the condition (F).17
+   17 The hypotheses of the main theorem in [27] also require a uniform `1 bound for the functions ϕ̂
+                                                                                                        ρ , which in the current
+context is the property that for all ε > 0 there exists a constant Cε > 0 such that
+         1
+(F0 )           ∑         |ϕ̂ρ (~ξ )| ≤ Cε N ε for all 0 < ρ.
+         Nn ~
+            ξ ∈[Z/NZ]n∗
+
+However, in [27, Lemma 3.2] it is shown that (44) holds in the non-endpoint range 1 ≤ r < r0 without the hypothesis (F0 ). Since
+here an ε-loss in N is permitted in the constant, the non-endpoint range and endpoint range of inequalities are equivalent via
+Hölder’s inequality.
+   If one wishes to apply the results of [27] to study Problem 2.2, then an ε-loss in the cardinality of the ring is no longer
+acceptable and condition (F0 ) must now also be verified (with a uniform constant appearing on the right-hand side). However, in
+this situation the functions ϕ̂ρ admit a clean, explicit formula and the computations are substantially simpler: see [27, §2].
+
+
+                                                D ISCRETE A NALYSIS, 2018:11, 54pp.                                          32
+                        F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+The proof of Proposition 6.2, which is slightly involved, is given in the following subsection. Some
+consequences of Theorem 6.1 are then discussed.
+
+6.2     The proof of Proposition 6.2
+The proof of the proposition will make repeated use of the following elementary observation.
+
+Lemma 6.3. For p be prime and m, L ∈ N define
+
+                I(m, pL ) := # (x1 , . . . , xm ) ∈ [Z/pL Z]m : gcd(x1 , . . . , xm , p) = 1 .
+                              
+                                                                                                               (46)
+
+Then I(m, pL ) = pLm (1 − p−m ).
+
+Proof. The case m = 1 is readily verified. Let m ≥ 2 and suppose, by way of induction hypothesis, that
+I(m − 1, pL ) = pL(m−1) (1 − p−(m−1) ). Clearly I(m, pL ) can be expressed as the sum of
+
+                     # (x1 , . . . , xm ) ∈ [Z/pL Z]m : p - xm = pL(m−1) · pL (1 − p−1 )
+                      
+
+
+and
+             # (x1 , . . . , xm ) ∈ [Z/pL Z]m : (x1 , . . . , xm−1 , p) = 1; p | xm = I(m − 1, pL ) · pL−1 .
+              
+
+Applying the induction hypothesis, it then follows that
+
+             I(m, pL ) = pL(m−1) · pL (1 − p−1 ) + pL(m−1) (1 − p−(m−1) ) · pL−1 = pL (1 − p−m ),
+
+which closes the induction and completes the proof.
+
+Proof (of Proposition 6.2). Given ε > 0, the problem is to show that there exists a constant Cε > 0 such
+that
+                           ~
+                  ∑ e2πiξ ·~x/N ≤ Cε N ε s−n for all − ~ξ ∈/ Bbs (~0 ), whenever s ≥ 1/ρ.
+                  ~x∈Bρ (~0 )
+
+Recalling the definition of Bρ (~0 ), the left-hand sum may be written as
+
+                                                       ∑        SN,d (~ξ )
+                                                 d|N;d≥N/ρ
+
+where
+                                                                                   ~
+                                       SN,d (~ξ ) :=           ∑              e2πiξ ·~x/N .
+                                                          ~x∈[Z/NZ]n
+                                                       gcd(x1 ,...,xn ,N)=d
+
+By the divisor bound, it suffices to show that for a fixed divisor d|N with d ≥ N/ρ one has
+
+                         |SN,d (~ξ )| ≤ Cs−n   for all − ~ξ ∈
+                                                            / Bbs (~0 ), whenever s ≥ 1/ρ.                     (47)
+
+The inequality (47) is trivial when d = N and so one may assume that d ≺ N is a proper divisor of N.
+
+                                     D ISCRETE A NALYSIS, 2018:11, 54pp.                                        33
+                                        J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+    By rescaling it follows that SN,d (~ξ ) = SN/d,1 (~ξ ). Furthermore, it is not difficult to see that M 7→
+SM,1 (~ξ ) is a multiplicative function and so, writing N/d = pL1 · · · pLr where p1 , . . . , pr are distinct primes,
+                                                                                                   1           r
+it follows that
+                                                                                r
+                                                        SN,d (~ξ ) = ∏ S pLt ,1 (~ξ ).                                                                (48)
+                                                                                          t
+                                                                               t=1
+
+      Let ~ξ = (ξ1 , . . . , ξn ) ∈ [Z/NZ]n∗ and suppose that there exists some 1 ≤ t ≤ r and 1 ≤ k ≤ n such that
+ptLt −1 - ξk . In this case it follows that SN,d (~ξ ) = 0. To see this, write S pLt ,1 (~ξ ) = I + II where
+                                                                                                                            t
+
+                                                                                                   Lt                                            Lt
+                      I :=                    ∑        L
+                                                                      ∏ e2πix ξ /p ×  l l          t
+                                                                                                                   ∑    L
+                                                                                                                                  e2πixk ξk /pt
+                             (x1 ,...xbk ...,xn )∈[Z/pt t Z]n−1 1≤l≤n                                    0≤xk ≤pt t −1
+                               gcd(x1 ,...xbk ...,xn ,pt )=1     l6=k                                       pt |xk
+
+and                                                                                                Lt                                            Lt
+                     II :=                    ∑         L
+                                                                      ∏ e2πix ξ /p ×  l l          t
+                                                                                                                   ∑    L
+                                                                                                                                  e2πixk ξk /pt .
+                             (x1 ,...xbk ...,xn )∈[Z/pt t Z]n−1 1≤l≤n                                    0≤xk ≤pt t −1
+                                                                 l6=k                                       pt -xk
+
+Here the notation xbk is used to denote omission. Since ptLt −1 - ξk , it follows that
+                                                                                L −1
+                                                                               pt t    −1
+                                                                      L                                            Lt −1
+                                                          2πixk ξk /pt t
+                                            ∑         e                    =        ∑ e2πix ξ /p         k k       t            = 0,                  (49)
+                                                L
+                                     0≤xk ≤pt t −1                               xk =0
+                                        pt |xk
+
+implying that I = 0. On the other hand,
+                                                                  L
+                                                                 pt t −1
+                                                        L                                     Lt                                            Lt
+                                            2πixk ξk /pt t
+                             ∑          e                    = ∑ e2πixk ξk /pt −                               ∑                 e2πixk ξk /pt .
+                                 L
+                      0≤xk ≤pt t −1                              xk =0                                              L
+                                                                                                        0≤xk ≤pt t −1
+                         pt -xk                                                                            pt |xk
+
+Since ptLt - ξk , the first sum on the right-hand side is 0, whilst the second sum is 0 by (49). Thus, II = 0,
+and so SN,d (~ξ ) = 0 in this case.
+   Next suppose that ptLt −1 | ξk for all 1 ≤ t ≤ r and all 1 ≤ k ≤ n. Split the prime factors of N/d into
+two sets by defining
+
+                    A := {1 ≤ t ≤ r : ptLt | ξk for 1 ≤ k ≤ n} and                                             B := {1, . . . , r} \ A.
+
+The hypotheses on ~ξ and the definition of A now imply that ~ξ ∈ BN/M where
+
+                                                             M := ∏ ptLt ∏ ptLt −1 .
+                                                                      t∈A           t∈B
+
+On the other hand, if one assumes that −~ξ ∈/ Bbs (~0), then, by definition, ~ξ ∈
+                                                                                / BN/d for all d ≥ 1/s.
+Combining these observations, one deduces the inequality
+
+                                                                      M ≤ 1/s.                                                                        (50)
+
+                                             D ISCRETE A NALYSIS, 2018:11, 54pp.                                                                       34
+                      F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+It therefore suffices to show that
+
+                                           |S pLt ,1 (~ξ )| ≤ ptnLt           for all t ∈ A                                             (51)
+                                                    t
+
+and
+                                                                   n(Lt −1)
+                                        |S pLt ,1 (~ξ )| ≤ pt                       for all t ∈ B.                                      (52)
+                                            t
+
+Indeed, combining these estimates with (48) and (50) yields
+                                                           n(Lt −1)
+                     |SN,d (~ξ )| ≤ ∏ ptnLt ∏ pt                      = M n ≤ s−n             for all −~ξ ∈
+                                                                                                          / Bbs (~0 ),
+                                     t∈A            t∈B
+
+as required.
+    Observe that S pLt ,1 (~ξ ) = I(n, ptLt ) for any t ∈ A, where I(n, ptLt ) is as defined in (46). In this case,
+                    t
+Lemma 6.3 implies that
+                                        S pLt ,1 (~ξ ) = ptnLt (1 − pt−n ) ≤ ptnLt ,
+                                                t
+
+which establishes (51).
+     It remains to verify (52). Fix t ∈ B and assume, without loss of generality, that the components
+    ~
+of ξ = (ξ1 , . . . , ξn ) are ordered so that there exists some 1 ≤ k0 ≤ n satisfying ptLt | ξ1 , . . . , ξn−k0 and
+ptLt - ξn−k0 +1 , . . . , ξn . Arguing by induction, it follows that for all 0 ≤ k ≤ k0 − 1 the identity
+                                                                                              n−k                  Lt
+                                                    k(Lt −1)
+                             S pLt ,1 (~ξ ) = pt                           ∑                  ∏ e2πix ξ /p  l l    t                    (53)
+                                t
+                                                                                     L
+                                                               (x1 ,...,xn−k )∈[Z/pt t Z]n−k l=1
+                                                                 gcd(x1 ,...,xn−k ,pt )=1
+
+holds. Indeed, when k = 0 this is vacuous. Assume that (53) is valid for some 0 ≤ k ≤ k0 − 2 and
+decompose the sum appearing on the right-hand side of (53) into two terms Ik+1 + IIk+1 where
+                                                               n−k−1                  Lt                                          Lt
+               Ik+1 :=                ∑           L
+                                                                ∏ e2πix ξ /p ×l l     t
+                                                                                                    ∑   L
+                                                                                                                  e2πixn−k ξn−k /pt
+                         (x1 ,...,xn−k−1 )∈[Z/pt t Z]n−k−1 l=1                              0≤xn−k ≤pt t −1
+                              gcd(x1 ,...,xn−k−1 ,pt )=1                                       pt |xn−k
+
+and
+                                                               n−k−1                  Lt                                          Lt
+              IIk+1 :=                ∑        L
+                                                                ∏ e2πix ξ /p ×l l     t
+                                                                                                    ∑   L
+                                                                                                                  e2πixn−k ξn−k /pt .
+                         (x1 ,...,xn−k−1 )∈[Z/pt t Z]n−k−1 l=1                              0≤xn−k ≤pt t −1
+                                                                                               pt -xn−k
+
+Recall that, by hypothesis, ptLt −1 | ξn−k , from which one deduces that
+                                                                                           n−k−1                  Lt
+                             Ik+1 = ptLt −1                        ∑                        ∏ e2πix ξ /p .
+                                                                                                        l l       t
+
+                                                                             L
+                                                    (x1 ,...,xn−k−1 )∈[Z/pt t Z]n−k−1 l=1
+                                                         gcd(x1 ,...,xn−k−1 ,pt )=1
+
+On the other hand, since the choice of k and definition of k0 ensure that p - ξn−k−1 , it immediately follows
+that IIk+1 = 0. Combining these observations establishes the inductive step and, in particular, verifies
+(53) for k = k0 − 1.
+
+                                       D ISCRETE A NALYSIS, 2018:11, 54pp.                                                               35
+                                   J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+    Finally, repeat the preceding decomposition to arrive at the identity
+                                                     (k −1)(Lt −1)
+                                   S pLt ,1 (~ξ ) = pt 0
+                                                                             
+                                                                   Ik0 + IIk0 ,
+                                          t
+
+where Ik0 and IIk0 are as defined above. Applying Lemma 6.3, it is easy to verify that
+                                                                        L (n−k0 )
+                         Ik0 = ptLt −1 I(n − k0 , ptLt ) = ptLt −1 · pt t           (1 − p−(n−k0 ) ),
+
+whilst
+                                                             L (n−k0 ) Lt −1
+                                               IIk0 = −pt t           pt .
+Together these identities yield (52).
+
+
+6.3 `2 restriction for the paraboloid: the proof of Theorem 1.2
+One is now in a position to employ the `2 restriction theorem, Theorem 6.1, whenever one has a set of
+frequencies Σ in the dual group [Z/NZ]n∗ satisfying the regularity condition (RΣ) and the Fourier decay
+estimate (FΣ) (or, equivalently, the normalised counting measure on Σ satisfies (Rµ) and (Fµ)). For
+simplicity, first consider the prototypical case where Σ is the paraboloid (2).
+    Let µ denote the normalised counting measure on Σ. In this case one may easily verify that (Rµ)
+holds with a = n − 1. Indeed, if ~ξ ∈ [Z/NZ]n∗ and 0 < ρ, then
+
+                   µ(Bbρ (~ξ )) ≤ ∑ µ(~ξ + BN/d ) ≤ ∑ d −(n−1) ≤ ∑ 1 ρ n−1 ,
+                                                                                
+                                 d|N;d≥1/ρ                           d|N;d≥1/ρ                 d|N
+
+and the assertion now follows from the divisor bound.
+    It remains to establish the Fourier decay condition (Fµ) for a favourable choice of parameters B and
+b, which requires the estimation of the exponential sum
+                                   1                                                     2       2
+                     µ̌(~x) =                 ∑         e2πi(x1 ω1 +···+xn−1 ωn−1 +xn (ω1 +···+ωn−1 ))/N .
+                                N n−1    ~ ∈[Z/NZ]n−1
+                                         ω        ∗
+
+
+As shown in §2, the above expression can be written as a product of Gauss sums µ̌(~x) = ∏n−1     j=1 GN (x j , xn ).
+Recalling (7), this vanishes unless gcd(x1 , . . . , xn , N) = gcd(xn , N) (or, using the established notation,
+k~xk = |xn |), in which case, assuming that N is odd,
+                                                               n−1               n−1
+                                          |µ̌(~x)| ≤ |xn |− 2 = k~xk− 2 .
+
+                          / Bd for all divisors d of N satisfying d ≤ ρ. This implies that ρ ≤ N/d 0 = k~xk
+      / Bρ (~0 ), then ~x ∈
+If ~x ∈
+         0
+where d = gcd(x1 , . . . , xn , N). Therefore,
+
+                                 |µ̌(~x)| ≤ ρ −(n−1)/2                     / Bρ (~0 ),
+                                                               whenever ~x ∈
+
+showing that (Fµ) holds with B = 1 and b = n − 1.
+    Appealing to Theorem 6.1 now completes the proof of Theorem 1.2 with the precise meaning given
+in (4). Explicitly, one has the following result.
+
+                                       D ISCRETE A NALYSIS, 2018:11, 54pp.                                      36
+                          F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+Theorem 6.4. For all ε > 0 there exists a constant Cr,ε > 0 such that the estimate
+                    1                                                         1/2
+                                   ∑                                 2
+                                                  ~ , ω12 + · · · + ωn−1
+                                              |F̂(ω                      )|2          ≤ Cr,ε N ε kFk`r ([Z/NZ]n )
+                    N n−1 ~
+                               ω ∈[Z/NZ]n−1
+                                        ∗
+
+
+holds for all odd N ≥ 1 if and only if 1 ≤ r ≤ 2(n + 1)/(n + 3).
+
+     It is remarked that in the finite field setting Theorem 6.4 is far from sharp. In §2 it was observed that
+necessarily r0 ≥ 2n/(n − 1) but Theorem 6.4 only gives a positive result18 for r0 ≥ 2(n + 1)/(n − 1); see
+[31–34, 36, 39–41, 44] for further improvements in the finite field setting.
+     Finally, the above arguments simplify when one restricts N to prime powers. In particular, in this
+setting a stronger version of Theorem 6.4 holds.
+
+Theorem 6.5 ([27]). There exists a constant Cr > 0 such that the estimate
+                          1                                                        1/2
+                                       ∑                                  2
+                                                       ~ , ω12 + · · · + ωn−1
+                                                   |F̂(ω                      )|2          ≤ Cr kFk`r ([Z/pα Z]n )
+                        pα(n−1) ω~ ∈[Z/pα Z]n−1
+                                               ∗
+
+
+holds for all odd primes p and all α ∈ N if and only if 1 ≤ r ≤ 2(n + 1)/(n + 3).
+
+    This theorem appears in [27] as a simple application of the aforementioned abstract L2 restriction
+result for LCA groups. The uniformity of the constant in Theorem 6.5 is consistent with the formulation
+of the restriction problem described in Problem 2.2.
+
+6.4 `2 restriction for the moment curve
+As in the euclidean setting, `2 restriction arguments based only on the isotropic decay of the Fourier
+transform of µ will not give sharp results outwith the setting of hypersurfaces Σ. To illustrate this (and to
+initiate a discussion for §7), consider the case where Σ is the moment curve, given by
+
+                                              Σ := {(t,t 2 , . . . ,t n ) : t ∈ [Z/NZ]∗ }.
+
+The normalised counting measure µ on Σ in this case has Fourier transform
+
+                                                        1 N−1 2πi(x1t+x2t 2 +···+xnt n )/N
+                                          µ̌(~x) =        ∑e                               .
+                                                        N t=0
+
+This exponential sum has been thoroughly studied by number theorists, beginning with Hua’s [29]
+classical estimate |µ̌(~x)| ≤ Cε,n N ε k~xk−1/n (using the notation of the present article), and improved so
+that there is no epsilon loss; for example, in [6] it was shown that |µ̌(~x)| ≤ Bn k~xk−1/n for a constant
+Bn depending only on the degree n of the phase in the exponential sum (in fact Bn := e4n suffices for
+n ≥ 10). Therefore, arguing as above, one verifies that in this case (Fµ) holds with B = Bn and b = 2/n
+and for any ε > 0 the condition (Rµ) holds with A = Cε N ε and a = 1. Thus, Theorem 6.1 gives an `2
+  18 Strictly speaking, one needs to be slightly careful when running the above argument in the finite field setting to ensure that
+
+the various constants are independent of the cardinality of the field. See [44] or [27] for details.
+
+
+                                         D ISCRETE A NALYSIS, 2018:11, 54pp.                                                    37
+                                  J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+restriction estimate for the curve Σ in the range 1 ≤ r ≤ (n2 − n + 1)/(n2 − n + 1/2). The non-optimality
+of this range is suggested by the scaling argument used in §2 for the paraboloid. Here one considers the
+anisotropic boxes
+                           θ = {(x1 , . . . , xn ) ∈ [Z/NZ]n : d|x1 , d 2 |x2 , . . . , d n |xn },
+where d is divisor of N such that d n is also a divisor. One may then check as before that (4) can only hold
+when
+                                                   n(n + 1)
+                                                 s           ≤ r0 ,                                        (54)
+                                                      2
+which corresponds to condition on the euclidean exponents. When s = 2 this gives the larger range
+1 ≤ r ≤ (n2 + n)/(n2 + n − 1) (a strictly larger range when n ≥ 3, the case when the curve Σ is not a
+hypersurface).
+     It is remarked that this scaling argument does not work in the setting of finite fields. Here, testing the
+Fourier restriction estimate against f defined by fˆ := δ~0 leads to the necessary condition ns ≤ r0 . Recall
+that there is also a necessary condition 2n/d ≤ r0 in the finite field setting with d = 1 for curves. These
+two necessary conditions were shown in [44] to be sufficient for the moment curve in the finite field
+setting if the characteristic of the field is larger than n.
+     The Fourier restriction theory for the moment curve over Z/NZ will be investigated in detail in the
+following section.
+
+6.5 `2 restriction for other surfaces
+One could, of course, consider more general algebraic varieties Σ, say
+
+                     Σ := {(ω
+                            ~ , P1 (ω
+                                    ~ ), . . . , Pn−d (ω      ~ = (ω1 , . . . , ωd ) ∈ [Z/NZ]d∗ }
+                                                       ~ )) : ω
+
+for some 1 ≤ d ≤ n − 1 and polynomials Pj ∈ Z[X1 , . . . , Xd ] for 1 ≤ j ≤ n − d. In this case, for any ε > 0
+the normalised counting measure µ is easily seen to satisfy (Rµ) with A = Cε N ε and a = d. Therefore,
+given an exponential sum estimate of the form (Fµ) for the Fourier transform µ̌, one may employ
+Theorem 6.1 to obtain an `2 restriction estimate. The natural question arises whether such a result is sharp.
+If the polynomials Pj are homogeneous, then one may use the scaling argument as before to deduce a
+necessary condition on the exponents r and s for (4) to hold: namely, that s(d + ∑n−d                   0
+                                                                                          j=1 m j ) ≤ dr where m j
+is the degree of homogeneity of the polynomial Pj . Now further restrict attention to hypersurfaces Σ, so
+that d = n − 1, and let m denote the homogeneous degree of h(ω       ~ ) := pn (ω1 , . . . , ωn−1 ). The necessary
+condition for (4) to hold when s = 2 then reads
+                                                         m
+                                                2(1 +       ) ≤ r0                                          (55)
+                                                        n−1
+
+so that Theorem 6.1 would give a sharp `2 restriction result if (Fµ) were to hold for b = 2(n − 1)/m.
+Such decay estimates for exponent sums are known for the Fourier transform of the normalised counting
+measures µh on
+
+                  Σh := {(ω1 , . . . , ωn−1 , h(ω1 , . . . , ωn−1 ) : (ω1 , . . . , ωn−1 ) ∈ [Z/NZ]n−1
+                                                                                                   ∗ }
+
+
+                                    D ISCRETE A NALYSIS, 2018:11, 54pp.                                        38
+                         F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+for particular choices of h. Here the exponential sum in question is
+
+                                                         1
+                                   µ̌h (~x, xn ) =                     ∑        e2πi(~x·~ω +xn h(~ω ))/N .
+                                                     N n−1     ~ ∈[Z/NZ]n−1
+                                                               ω        ∗
+
+
+When N = pα is a power of a prime p, sharp estimates for this object follow, for instance, from work of
+Denef and Sperber [12] (see also [8] and [9]), resolving a conjecture of Igusa under a non-degeneracy
+condition on the homogeneous polynomial h. The decay rate b in (Fµ) obtained by Denef and Sperber
+is given by the so-called Newton distance d(h) of h which often matches the necessary condition (55)
+but can be larger. The authors hope to investigate sharp exponential sum bounds for certain classes of
+homogeneous varieties (not necessarily hypersurfaces) and corresponding sharp `2 restriction results in a
+future paper.
+
+
+7      Fourier restriction for curves
+7.1      Preliminary discussion
+In this section the Fourier restriction problem for the moment curve
+
+                                             Σ := {(t,t 2 , . . . ,t n ) : t ∈ Z/NZ}
+
+is considered. If N is only allowed to vary over powers of a fixed prime p, then, using the correspondence
+principle developed in §5, it is a straight-forward exercise to adapt existing euclidean arguments to prove
+sharp restriction estimates for Σ.
+
+Theorem 7.1 ([26]). If r0 > n(n + 1)/2 + 1 and r0 ≥ sn(n + 1)/2, then the restriction estimate
+                           1                                         1/s                                          1/r
+                                 ∑α      |F̂(t,t 2 , . . . ,t n )|s          ≤ Cn,r           ∑          |F(~x )|r
+                            pα t∈Z/p Z                                                    ~x∈[Z/pα Z]n
+
+holds uniformly over all primes p > n and all α ∈ N.
+
+    It is remarked that the range of Lebesgue exponents in Theorem 7.1 is sharp, as shown in the following
+subsection.
+    The proof of this theorem follows by lifting the problem to the p-adics using Proposition 5.5 and then
+adapting the classical euclidean argument of Drury [15] to apply in this setting (one could also approach
+the p-adic formulation of the problem using alternative methods, such as those of [24]); see [26] for details
+where similar restriction estimates are established over more general local fields.19 The key advantage
+of working p-adically is that there is a well-developed calculus on Qnp which includes, significantly, a
+change of variables formula (see, for instance, [48, §27], [30, §7.4], or [26]). This facilitates an easy and
+direct translation of various euclidean arguments over to the p-adics.
+    19 The theorem stated in [26] suggests that the constant in the restriction estimate depends on p. Analysing the argument,
+
+however, shows that it yields a uniform estimate.
+
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                                 39
+                                       J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+    The formulation of the problem for general N, rather than powers of a fixed prime, presents a number
+of significant additional difficulties. Recall that here one wishes to prove estimates of the form
+                        1                                        1/s                                                1/r
+                                ∑ |F̂(t,t 2 , . . . ,t n )|s
+                          N t∈Z/NZ
+                                                                         ≤ Cε,r,s,n N ε          ∑         |F(~x )|r              (56)
+                                                                                              ~x∈[Z/NZ]n
+
+
+for all ε > 0 and a large class of integers N ∈ N (for instance, all N for which every prime factor p | N
+satisfies p > n). In this case one can no longer lift the analysis to the p-adic setting20 and the discrete
+problem must be tackled directly. Consequently, many fundamental tools from calculus are no longer
+available, and this leads to some new and interesting questions.
+    The purpose of this section is to describe the difficulties one encounters when attempting to prove
+estimates of the form (56). In particular, the Fourier restriction problem is related to a number-theoretic
+conjecture concerning factorisations of polynomials over Z/NZ. Some partial progress on the number-
+theoretic conjecture is described which, for instance, allows one to establish the modulo N analogue of
+Theorem 7.1 in the n = 2 case.
+
+
+7.2    Necessary conditions
+The first step is to determine necessary conditions on the Lebesgue exponents (r, s) for (56) to hold. As a
+by-product of this analysis, it will also be shown that the range of (r, s) in the statement of Theorem 7.1 is
+sharp.
+    As remarked in the previous section, a simple scaling argument gives rise to the necessary condition
+(54) for the Fourier restriction estimates (56) to hold. One now wishes to determine the possible `r range.
+By duality, (56) is equivalent to
+                                                     0
+                                                          1/r0                    1                          0
+                                                                                                                   1/s0
+                                 ∑        |EH(~x)|r               ≤ Cε,r,s,n N ε               ∑ |H(t)|s                          (57)
+                             ~x∈[Z/NZ]n
+                                                                                     N t∈Z/NZ
+
+where E is the extension operator
+
+                                                   1                     2        n
+                                    EH(~x) =           ∑ H(t)e2πi(x1t+x2t +···+xnt )/N .
+                                                   N t∈Z/NZ
+
+                                                                                                                              0
+When H = 1 the right-hand side of (57) is Cε,r,s,n N ε whilst the left-hand side is the `r -norm of the
+function
+                                              1                    2        n
+                       E1(x1 , . . . , xn ) =     ∑    e2πi(x1t+x2t +···+xnt )/N .                 (58)
+                                              N t∈Z/NZ
+                                                                  0
+Thus, it becomes of interest to determine the `r range for which
+
+                                                  kE1k`r0 ([Z/NZ]n ) ≤ Cε,r N ε                                                   (59)
+
+  20 For instance, the restriction estimate (56) is not multiplicative.
+
+
+
+                                          D ISCRETE A NALYSIS, 2018:11, 54pp.                                                      40
+                      F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+                                                                                                                  0
+holds for every ε > 0. The corresponding euclidean problem is to determine the Lr (Rn ) spaces to which
+the oscillatory integral
+                                                      ˆ 1
+                                                                      2        n
+                              E1(x1 , . . . , xn ) :=     e2πi(x1t+x2t +···+xnt ) dt
+                                                                  0
+
+belongs; this in turn gives rise to a necessary condition on the Lr range for restriction problem for the
+curve t → (t,t 2 , . . . ,t n ) in Rn . It turns out that kE1kLr0 (Rn ) also appears as a constant in the main term
+of an asymptotic formula for the number of solutions to a system of Diophantine equations known as
+Tarry’s Problem. Hence, knowing when kE1kLr0 (Rn ) is finite has significance for harmonic analysts and
+number theorists for different reasons. Motivated by these number-theoretic considerations, Arkhipov,
+                                                                             0
+Chubarikov and Karatsuba [1] (see also [2]) showed that E1 ∈ Lr (Rn ) if and only if r0 > n(n + 1)/2 + 1.
+Reinforcing the theme of the paper, the following discrete analogue holds.
+
+Proposition 7.2. The inequality (59) fails if r0 < n(n + 1)/2 + 1.
+
+   This gives necessary conditions on the exponent r for the restriction estimate (56). The proof of
+Proposition 7.2 will also show the following.
+
+Corollary 7.3. If p > n is a fixed prime, then kE1k`r0 ([Z/pα Z]n ) is unbounded in α for r0 ≤ n(n + 1)/2 + 1.
+
+    Combining Corollary 7.3 with the previous discussion verifies that Theorem 7.1 is sharp. On the
+other hand, for N = pα Theorem 7.1 implies that (59) holds for r0 ≥ n(n + 1)/2 + 1 with a constant
+independent of α ∈ N (but depending on p).
+    Proposition 7.2 is closely related to work of Arkhipov, Chubarikov and Karatsuba [2] on Diophantine
+equations. In particular, restricting to N = pα , observe that
+
+                                                         α            pm −1         pm −1
+                                                                                                         r
+                          kE1kr`r ([Z/pα Z]n )    = ∑                  ∑ · · · ∑ Sm (x1 , . . . , xn )
+                                                        m=0           x1 =0         xn =0
+                                                                      p - gcd(x1 ,...,xn )
+
+
+where
+                                                                       m
+                                                          1 p −1              n   m
+                                 Sm (x1 , . . . , xm ) := m ∑ e2πi(x1t+···+xnt )/p
+                                                         p t=0
+The sums Sm (x1 , . . . , xm ) play a key rôle in the analysis of the singular series σk,m in Tarry’s Problem in
+[2].
+
+Proof (of Proposition 7.2). To establish Proposition 7.2 (and Corollary 7.3) a lower bound is obtained
+          0
+for the `r -norm of the Sm above for any prime p > n, m = nL and r0 ≤ n(n + 1)/2 + 1.
+                               0
+    First observe that kSnL kr`r0 ([Z/pnL Z]n ) may be bounded below by
+
+                         L−1 pnL −1    pnL −1           pnL −1             pnL −1                        r0
+                                                                                               n   nL
+                         ∑ ∑            ∑         ···    ∑        p−nL ∑ e2πi(x1t+···+xnt )/p                 ;
+                         m=0 xn =0    xn−1 =0           x1 =0               t=0
+                              pnm kxn pnm |xn−1         pnm |x1
+
+
+                                      D ISCRETE A NALYSIS, 2018:11, 54pp.                                             41
+                                           J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+recall, the notation pk kθ is used to denote that pk divides θ and no larger power of p divides θ . Splitting
+the above exponential sum by writing t = y + pn(L−m) z where 0 ≤ y ≤ pn(L−m) − 1 and 0 ≤ z ≤ pnm − 1,
+it follows that
+                                                                                      L−1
+                                                                 0
+                                                  kSnL kr`r0 ([Z/pnL Z]n ) ≥ ∑ A(L − m)                                                          (60)
+                                                                                      m=0
+
+where
+                                                       pnM −1 pnM −1             pnM −1
+                                                                                                                r0
+                                   A(M) :=              ∑ ∑ · · · ∑ SnM (x1 , . . . , xn ) .
+                                                       xn =0 xn−1 =0              x1 =0
+                                                        p - xn
+
+for M ∈ N.
+                                                                           0
+Claim 7.4. The inequality A(M) ≥ pn(n+1)/2+1−r A(M − 1) holds for all M ∈ N.
+    Once the claim is established it may be applied iteratively to bound each of the summands in (60) and
+thereby deduce that
+                                                                           L−1
+                                                   0                                                        0
+                                       kSnL kr`r0 ([Z/pnL Z]n ) ≥ ∑ p(L−m)(n(n+1)/2+1−r ) .
+                                                                           m=0
+
+This yields the desired blowup for r0 < n(n + 1)/2 + 1 (and for r0 = n(n + 1)/2 + 1, in the context of
+Corollary 7.3).
+   In order to verify the claim, first note that
+
+                          pnM −1 pnM −1                 pnM −1 p−1                    pnM −1                                            r0
+                                                                               −nM                                       n   nM
+               A(M) ≥         ∑ ∑ ··· ∑ ∑ p                                             ∑ e2πi(x (t+c)+···+x (t+c) )/p
+                                                                                                  1                  n
+                                                                                                                                             ,   (61)
+                              xn =0 xn−1 =0              x1 =0       c=0                t=0
+                              p - xn   p | xn−1         pn−1 | x1
+
+where the right-hand side of the above display can be expressed as
+
+                    pnM −1 pnM−1 −1               pnM−n+1 −1                   pnM −1                                           0
+                                                                                                 n(M−1)+1 +···+x t n /pnM ) r
+                  p ∑                  ∑    ···         ∑            p−nM       ∑ e2πi(x1t/p                    n
+                                                                                                                                    .            (62)
+                     xn =0       xn−1 =0               x1 =0                    t=0
+                     p - xn
+
+
+To see this, consider the map Φ : Z/pZ × [Z/pnM Z]n → [Z/pnM Z]n given by
+                                                    1 2         n n−1  
+                                                                         
+                                                     1  1 c . . . 1c       x1
+                                                         2         n n−2   
+                                                   0        . . .   c       x
+                                                   
+                                                         2         2        .2 
+                                                                          
+                         Φ(c; x1 , . . . , xn ) := 
+                                                    ..  ..  ..       ..         ,
+                                                                              .
+                                                    .    .      .     .  . 
+                                                     0  0    ...      n
+                                                                            xn
+                                                                                                  n
+
+noting that
+                                                                                         n
+                                 x1 (t + c) + · · · + xn (t + c)n = ∑ Φ j (c; x1 , . . . , xn )t j .
+                                                                                        j=1
+
+
+                                            D ISCRETE A NALYSIS, 2018:11, 54pp.                                                                   42
+                     F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+To establish the lower bound (61) for A(M) it suffices to show that Φ restricts to an injection on the set
+
+                    Ω := (c; x1 , . . . , xn ) ∈ Z/pZ × [Z/pnM Z]n : p | xn−1 and p - xn .
+                         
+
+
+If Φ(c;~a) = Φ(d;~b) for (c;~a), (d;~b) ∈ Ω, then it immediately follows that xn = bn and nxn c + xn−1 =
+nbn d + bn−1 . Combining these identities, reducing modulo p and using the fact that p - nxn , one concludes
+that c = d. The injectivity of Φ is now immediate, since the matrix in the definition of Φ has determinant
+1.
+    Now consider the inner exponential sum in (62); by decomposing the sum by writing t = z + pnM−1 y
+this can be expressed as
+                                  pnM−1 −1                                                  p−1
+                                                               n(M−1)+1 +···+x zn /pnM )                     n−1 y/p
+                                     ∑         e2πi(x1 z/p                    n
+                                                                                            ∑ e2πinx z   n
+                                                                                                                       .
+                                     z=0                                                   y=0
+
+Since p > n and p - xn , the sum in y vanishes unless p | z and hence the above expression is equal to
+                        pnM−2 −1
+                                                      n(M−1) +···+x wn /pn(M−1) )
+                    p       ∑        e2πi(x1 w/p                   n
+                                                                                       = pn−1 Sn(M−1) (x1 , . . . , xn ).
+                            w=0
+
+Thus, the right-and side of (62) is equal to
+                                          pnM −1 pnM−1 −1              pnM−n+1 −1
+                                    −r0                                                                                0
+                                p          ∑           ∑         ···       ∑         |Sn(M−1) (x1 , . . . , xn )|r ;
+                                          xn =0      xn−1 =0               x1 =0
+                                           p - xn
+
+this can, in turn, be written as
+                                                    pn(M−1) −1 pn(M−1) −1            pn(M−1) −1
+                        0                                                                                                      0
+                  p−r +n+(n−1)+···+1                   ∑               ∑       ···      ∑         |Sn(M−1) (x1 , . . . , xn )|r ,
+                                                      xn =0        xn−1 =0             x1 =0
+                                                      p - xn
+
+which establishes the claim.
+
+7.3   Sufficient conditions
+Combining the necessary conditions discussed in the previous section, it is natural to conjecture the
+following.
+Conjecture 7.5. If 1 ≤ r, s ≤ ∞ satisfy r0 ≥ n(n + 1)/2 + 1 and r0 ≥ sn(n + 1)/2, then the discrete
+restriction estimate (56) holds whenever each prime factor p of N satisfies p > n.
+    In contrast with the Z/pα Z case treated in Theorem 7.1, there appear to be significant challenges in
+establishing Conjecture 7.5. To exemplify this, it is instructive to attempt to follow the classical argument
+of Prestini [46] and Christ [7] in the mod N setting, with the aim of establishing restriction estimates for
+Σ := {(t,t 2 , . . . ,t n ) : t ∈ Z/NZ} in the restricted `r range r0 ≥ n(n + 2)/2.
+
+                                              D ISCRETE A NALYSIS, 2018:11, 54pp.                                                   43
+                                     J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+   Proceeding by duality, one wishes to prove (57) holds for exponents (r, s) satisfying r0 ≥ n(n + 2)/2
+and r0 ≥ sn(n + 1)/2. The desired estimate can be written succinctly as
+
+                                   k(Hdµ)qk`r0 ([Z/NZ]n ) ≤ Cε N ε kHk`s0 ([Z/NZ]∗ )                                   (63)
+                                                                                            avg
+
+
+where µ is the measure whose Fourier transform is the exponential sum in (58). Letting Hdµ ∗ · · · ∗ Hdµ
+denote the n-fold convolution of Hdµ, one observes by the Hausdorff–Young inequality that
+                                                         n
+                       k(Hdµ)qkn`r0 ([Z/NZ]n ) = k (Hdµ)q k`r0 /n ([Z/NZ]n )
+                                                  
+
+                                                        ≤ k(Hdµ) ∗ · · · ∗ (Hdµ)k`ρ ([Z/NZ]n∗ )                        (64)
+
+where nρ 0 = r0 (note that, since r0 ≥ n(n + 2)/2, the exponent ρ satisfies 1 ≤ ρ ≤ 2). Now, for any test
+function φ : [Z/NZ]n∗ → C one has
+                                                                                n         n
+                                                                1
+                            Hdµ ∗ · · · ∗ Hdµ(φ ) =                     ∑     φ ∑  γ(ti ) ∏ H(ti ),
+                                                                N n ~t∈[Z/NZ]n i=1        i=1
+                                                                                ∗
+
+
+where~t = (t1 , . . . ,tn ) and γ(s) = (s, s2 , . . . , sn ) is the map parametrising the curve Σ. Set Φ(~t ) := ∑ni=1 γ(ti )
+so that
+                                                                                             n
+                                                                1
+                             Hdµ ∗ · · · ∗ Hdµ(φ ) = n ∑ φ (~y ) ∑ ∏ H(ti )
+                                                               N ~y∈[Z/NZ]n    ~t:Φ(~t )=~y i=1
+                                                                            ∗
+
+and hence
+                                                                                            n
+                                     Hdµ ∗ · · · ∗ Hdµ(~y ) =              ∑            ∏ H(ti ).
+                                                                        ~t:Φ(~t )=~y i=1
+
+Taking the `ρ -norm, one therefore deduces that
+                                                                                                  n
+                                                ρ                     1                              ρ
+                       kHdµ ∗ · · · ∗ Hdµk`ρ ([Z/NZ]n ) =                     ∑ n ∑ ∏ H(ti ) .
+                                                            ∗         N n ~y∈[Z/NZ] ~t:Φ(~t )=~y i=1
+                                                                                        ∗
+
+
+Let N(~s; N) denote the number of solutions ~t ∈ [Z/NZ]n to the system Φ(~X) = Φ(~s ); that is,
+
+                                     N(~s; N) := {~t ∈ [Z/NZ]n : Φ(~t ) = Φ(~s )}.
+
+With this notation, one may write the above `ρ -norm as
+                                                                                                       n
+                                       ρ                        1               1                                ρ
+                kHdµ ∗ · · · ∗ Hdµk`ρ ([Z/NZ]n ) =               n    ∑                      ∑        ∏   H(ti ) .
+                                                    ∗           N ~s∈[Z/NZ]n N(~s; N) ~t:Φ(~t )=Φ(~s) i=1
+                                                                            ∗
+
+
+Applying Hölder’s inequality in the ~t sum yields
+                                                                                    n
+                                                                    1
+                                                                                       |H(ti )|r N(~t; N)ρ−1 .
+                                            ρ
+                     kHdµ ∗ · · · ∗ Hdµk`ρ ([Z/NZ]n ) ≤                     ∑      ∏                                   (65)
+                                                        ∗           N n ~t∈[Z/NZ]n i=1
+                                                                                    ∗
+
+
+
+                                       D ISCRETE A NALYSIS, 2018:11, 54pp.                                                44
+                     F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+Up to this point the analysis has closely followed the euclidean argument of Prestini [46] and Christ
+[7]. In the euclidean case the change of variables ~y = Φ(~t ) (performed twice) introduces a power of the
+Jacobian factor
+                                       JΦ (~t ) = ∏ |t j − tk |,
+                                                               1≤ j<k≤n
+
+leading to the estimate
+                                                           ˆ          n
+                                     ρ                                                               1
+                  khdµ ∗ · · · ∗ hdµkLρ (Rn )   ≤ Cn            ∏ |h(ti )|ρ ∏                                d~t.   (66)
+                                                           ~t∈R  n
+                                                                     i=1             1≤ j<k≤n |t j − tk |ρ−1
+
+
+    Comparing (65) and (66) suggests the following conjecture on the number of solutions N(~t; N).
+
+Conjecture 7.6. For all ε > 0 there exists a constant Cε,n > 0 such that if ~t ∈ [Z/NZ]n , then
+
+                                                                                      |t j − tk |−1 , N n .
+                                        
+                          N(~t; N) ≤ min Cε,n N ε+n(n−1)/2                    ∏                                     (67)
+                                                                           1≤ j<k≤n
+
+    The right-hand expression in (67) is written in terms of the absolute value on Z/NZ which, by
+definition, satisfies N|y|−1 = gcd(y, N) for all y ∈ Z/NZ. Thus, to establish Conjecture 7.6 (since the
+estimate N(~t; N) ≤ N n holds trivially) it suffices to show that
+
+                                  N(~t; N) ≤ Cε,n N ε            ∏          gcd(t j − tk , N).
+                                                               1≤ j<k≤n
+
+    Assuming the conjecture holds, one is in position to appeal to a multilinear fractional integral
+inequality of Christ [7]; although presented in the euclidean setting in [7], the statement and proof of the
+multilinear inequality translate directly into the mod N setting. The result may be stated in the following
+way: if Fi and G j,k are functions on [Z/NZ]∗ , then the multilinear form
+                                                 n
+                                  1
+                                          ∑ n ∏ Fi (ti ) ∏ G j,k (t j − tk )
+                                  N n ~t∈[Z/NZ]
+                                                                                                                    (68)
+                                                i=1
+                                                 ∗
+                                                        1≤ j<k≤n
+
+is dominated by (a constant multiple of)
+                                 n
+                                ∏ kFi k` ([Z/NZ] ) ∏
+                                          α
+                                                       ∗
+                                                                           kG j,k k`β ,∞ ([Z/NZ]∗ )                 (69)
+                                i=1                        1≤ j<k≤n
+
+
+whenever α −1 + β −1 (n − 1)/2 ≤ 1 and 1 ≤ α < n, where
+                                                                             1/β
+                     kGk`β ,∞ ([Z/NZ]∗ ) := sup λ N −1 {t ∈ Z/NZ : G(t) ≥ λ }
+                                                λ >0
+
+denotes the weak-type Lorentz norm. The first step in Christ’s proof is to observe that a simple interpo-
+lation argument bounds (68) by an expression given by replacing the weak-type norms k · k`β ,∞ ([Z/NZ]∗ )
+by the strong-type `β -norms k · k`β ([Z/NZ]∗ ) in (69) in the larger `α -range 1 ≤ α ≤ n. In fact, here this
+
+                                     D ISCRETE A NALYSIS, 2018:11, 54pp.                                             45
+                                   J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+weakened estimate is all one needs. Indeed, the multilinear inequality will be applied to the functions
+G j,k (t) := gcd(t, N)ρ−1 with β = 1/(ρ − 1); note that
+                                                    1                 1
+                     k gcd(·, N)k`1 ([Z/NZ]∗ ) =        ∑ gcd(t, N) = N ∑ d ∑ 1,
+                                                    N t∈Z/NZ            d|N t:gcd(t,N)=d
+
+where the latter expression is clearly bounded above by the divisor function and therefore grows sub-
+polynomially in N. Since an ε-loss in N is permissible for the present purpose of establishing inequalities
+of the form (56), one may work with the strong-type `β ([Z/NZ]∗ )−norms of the G j,k . It is remarked that
+if N = pM where p is prime, then the divisors are totally ordered and the weak-type norms of gcd(·, pM )
+are uniformly bounded, whereas the `1 ([Z/NZ]∗ ) norm is equal to M. Thus, if one were to restrict N to
+powers of p and seek stronger Fourier restriction estimates with bounds which are uniform in the power
+M, then the full strength of Christ’s multilinear inequality would be needed.
+    Returning to the present situation, one obtains via the first step of Christ’s argument (simple interpola-
+tion) the inequality
+                                   n
+                   1
+                           ∑      ∏   F(ti ) ∏ gcd(t j − tk , N)γ ≤ Cs,γ,ε N ε kFkn`α ([Z/NZ]∗ )           (70)
+                   N n ~t∈[Z/NZ]n i=1       1≤ j<k≤n
+                               ∗
+
+
+for γ ≤ 2/n and α −1 + γ(n − 1)/2 ≤ 1.
+Remark 7.7. As in the euclidean setting, the stated range of exponents for (70) is sharp. In fact,
+the familiar scaling argument given by taking F := χBd for d a divisor of N shows necessarily that
+α −1 + γ(n − 1)/2 ≤ 1. Furthermore, plugging the function F := 1 into (70) shows that γ ≤ 2/n must
+hold. Indeed, if N = pM where M > n and p is a prime, then, by restricting the range of summation, the
+left-hand side of (70) is bounded below by
+                                                  n      pM −1
+                            1
+                                      ∑          ∏         ∑             ∏        gcd(t j − tk , pM )γ .
+                           pMn 0≤u1 <···<un−1 ≤M i=1      ti =0        1≤ j<k≤n
+                                                       pui kti −ti−1
+
+Each summand ∏ j<k gcd(t j − tk , pM )γ over this restricted range of summation is equal to
+                                           n−1
+                                           ∏ gcd(t j − t j+1 , pM )γ(n− j)
+                                            j=1
+
+and this readily shows that
+                    p−Mn      ∑         ∏         gcd(t j − tk , pM )γ ≥ 2−(n−1) p(n−1)(γn/2−1)M ,
+                          ~t∈[Z/pM Z]n 1≤ j<k≤n
+
+forcing γ ≤ 2/n.
+    Assuming Conjecture 7.6 one may apply (70) to bound the right-hand side of (65) with γ = ρ − 1
+and α satisfying αρ = r0 (the restriction γ ≤ 2/n needed for the application of (70) is equivalent to
+r0 ≥ n(n + 2)/2 and the condition α −1 + γ(n − 1)/2 ≤ 1 is equivalent to r0 ≥ n(n + 1)/2s). Combining
+this inequality with (64), one concludes that, conditionally on Conjecture 7.6, the desired restriction
+estimate (63) holds with sn(n + 1)/2 ≤ r0 in the range r0 ≥ n(n + 2)/2.
+
+                                    D ISCRETE A NALYSIS, 2018:11, 54pp.                                     46
+                      F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+7.4     Remarks and partial progress towards Conjecture 7.6
+In the previous subsection restriction estimates for the moment curve {(t,t 2 , . . . ,t n ) : t ∈ Z/NZ} were
+shown to follow from (the purely number-theoretic) Conjecture 7.6 which concerns the number of
+mutually incongruent solutions to a simple system of equations. In particular, for each fixed ~y ∈ [Z/NZ]n
+one wishes to determine an upper bound for the number N(~y; N) of solutions in [Z/NZ]n to the polynomial
+system
+                               X1 + · · · + Xn ≡ y1 + · · · + yn
+                                                ..                 mod N.                                (71)
+                                                 .
+                                 n           n      n
+                              X1 + · · · + Xn ≡ y1 + · · · + ynn
+
+This problem is arguably of interest in its own right; for instance, it can be reinterpreted as a natural
+question regarding factorisations of polynomials over Z/NZ.
+
+Lemma 7.8. Suppose every prime factor p of N ∈ N satisfies p > n and that F ∈ Z[X] splits over Z/NZ,
+so that F(X) ≡ ∏nj=1 (X − y j ) mod N for some choice of roots ~y = (y1 , . . . , yn ) ∈ [Z/NZ]n . The number
+of ways F can be factorised as a product of linear factors over Z/NZ is N(~y; N).
+
+Proof. Under the hypotheses of the lemma, it suffices to show that the set of solutions to (71) is precisely
+                                            n              n
+                             ~x ∈ [Z/NZ]n : ∏ (X − x j ) ≡ ∏ (X − y j ) mod N .
+                            
+                                             j=1              j=1
+
+Since the coefficients of a polynomial are elementary symmetric functions of the roots, it follows that
+∏nj=1 (X − x j ) ≡ ∏nj=1 (X − y j ) mod N for some ~x ∈ [Z/NZ]n if and only if ek (~x ) ≡ ek (~y ) mod N for
+1 ≤ k ≤ n, where ek ∈ Z[X1 , . . . , Xn ] is the kth elementary symmetric polynomial. By the classical
+Newton–Girard formulæ, if p > n, then this is equivalent to the condition that ~x solves (71).
+
+    Although Conjecture 7.6 remains open, there has been some partial progress on the problem. First
+observe that, by the Chinese remainder theorem, the function N(~y; N) is multiplicative in N and it therefore
+suffices to prove that
+                                 N(~y; pα ) ≤ Cn ∏ gcd(y j − yk , pα )
+                                                   1≤ j<k≤n
+
+uniformly over all primes p > n and α ∈ N. Indeed, this follows from the asymptotics for the distinct
+divisor function ω(N) := ∑ p|N 1, as discussed in the previous section.
+    If the y1 , . . . , yn are sufficiently separated in the p-adic sense, then Conjecture 7.6 is a simple conse-
+quence of Hensel’s classical lemma.
+
+Lemma 7.9. Suppose p > n and α ∈ N. If ~y = (y1 , . . . , yn ) ∈ [Z/pα Z]n satisfies δ < α/2 where
+pδ k ∏ j<k (y j − yk ), then
+
+                            N(~y; pα ) ≤ n!pδ = n!pn(n−1)/2         ∏    |y j − yk |−1 .
+                                                              1≤ j<k≤n
+
+      This bound quickly leads to a resolution of Conjecture 7.6 in the n = 2 case.
+
+                                   D ISCRETE A NALYSIS, 2018:11, 54pp.                                        47
+                                 J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+Corollary 7.10. Suppose p is an odd prime and α ∈ N. For all ~y = (y1 , y2 ) ∈ [Z/pα Z]2 one has
+
+                                          N(~y; pα ) ≤ 2p|y1 − y2 |−1 .                                    (72)
+
+Proof. Let pδ k gcd(y1 − y2 , pα ). Lemma 7.9 implies that (72) holds whenever δ < α/2 and so one may
+assume without loss of generality that δ ≥ α/2. Thus, in particular,
+
+                                               pdα/2e |(y1 − y2 ).                                         (73)
+
+    Let ~x ∈ [Z/pα Z]2 be a solution to the system
+
+                                      X1 + X2 ≡ y1 + y2
+                                                                     mod pα .                              (74)
+                                      X12 + X22 ≡ y21 + y22
+
+By the elementary formula (X1 − X2 )2 = 2(X12 + X22 ) − (X1 + X2 )2 one deduces that (x1 − x2 )2 ≡ (y1 −
+y2 )2 mod pα and, recalling (73), the solution ~x satisfies pdα/2e |(x1 − x2 ). Consequently, x1 is uniquely
+determined modulo pdα/2e by ~y whilst, by the first equation in (74), x2 is determined by x1 and ~y modulo
+pα . One now concludes that there are at most pα−dα/2e ≤ pδ solutions in this case.
+
+    Combining the above solution count with the analysis of the previous subsection, one obtains the
+following discrete analogue of the Fefferman–Zygmund restriction theorem [61] in the plane.
+Theorem 7.11. If 1 ≤ r, s ≤ ∞ satisfy r0 ≥ 4 and r0 ≥ 3s, then for all ε > 0 there exists a constant Cε,r,s > 0
+such that             1                      1/s                                   1/r
+                                          2 s                 ε                     r
+                             ∑    |F̂(t,t  )|      ≤ Cε,r,s N         ∑      |F(~
+                                                                                x )|
+                         N t∈Z/NZ                                 ~x∈[Z/NZ]2
+
+holds for all odd N.
+    The range of Lebesgue exponents in Theorem 7.11 is sharp, as shown by the discussion in §7.2.
+    The proof of Lemma 7.9 relies on the following (well-known) multivariate version of Hensel’s
+classical lemma.
+Lemma 7.12 (Hensel). Let f1 , . . . , fn be polynomials in Z p [X1 , . . . , Xn ] and consider the polynomial
+mapping ~f := ( f1 , . . . , fn ). Suppose ~x ∈ Zn satisfies the system of congruences ~f (~x ) ≡ 0 mod ps and,
+further, that pδ kJ~f (~x ) with 2δ < s, where J~f (~x ) denotes the Jacobian determinant of ~f at ~x. Then there
+exists a unique ~x∗ ∈ Znp such that ~f (~x∗ ) = 0 and ~x∗ ≡~x mod ps−δ .
+    For a proof of this version of Hensel’s lemma see, for instance, [57] or [20, Proposition 5.20].
+
+Proof (of Lemma 7.9). Fix ~y ∈ [Z/pα Z]n satisfying the hypotheses of the lemma. Recall that one wishes
+to estimate the number N(~y; pα ) of solutions ~x ∈ [Z/pα Z]n to the system of congruences (71). Recalling
+the mapping
+                          Φ(X1 , . . . , Xn ) := X1 + · · · + Xn , . . . , X1n + · · · + Xnn
+                                                                                             
+
+introduced in the previous subsection, this system can be concisely written as
+
+                                          Φ(~X) ≡ Φ(~y ) mod pα .                                          (75)
+
+                                   D ISCRETE A NALYSIS, 2018:11, 54pp.                                        48
+                         F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+Let Φ0 (~x ) denote the Jacobian matrix of first order partial derivatives of the components of Φ and
+JΦ (~x ) = n! ∏ j<k (x j − xk ) the corresponding determinant. The hypothesis on ~y is therefore that pδ k JΦ (~y )
+for δ < α/2. If ~x is a solution to (75), then pδ k JΦ (~x ) also holds. Indeed, this simply follows by
+expressing the symmetric discriminant ∏ j<k (X j − Xk )2 as a polynomial of the symmetric power functions
+∑nj=1 X jk via the Newton–Girard formulæ, from which one concludes that
+
+                                      ∏ (x j − xk )2 ≡ ∏ (y j − yk )2                   mod pα
+                                  1≤ j<k≤n                   1≤ j<k≤n
+
+ for a solution ~x to (75).21 One is now in a position to apply Hensel’s lemma which shows that for
+ every solution ~x of (75) there is a unique p-adic solution ~z ∈ Znp to Φ(~z ) = Φ(~y ) in Znp such that
+~x ≡~z mod pα−δ . Since Z p is an integral domain with characteristic 0, a standard argument using the
+ Newton–Girard formulæ shows that there are at most n! p-adic solutions~z, which all arise by permuting
+ the components of the solution ~y = (y1 , . . . , yn ). It therefore suffices to count the solutions ~x to (75) which
+ satisfy ~x ≡~y mod pα−δ ; all other solutions arise by permuting the components of some solution ~x of this
+ form and so the total solution count N(~y; pα ) will differ from this partial count by at most a factor of n!.
+ For such a solution ~x ∈ [Z/pα Z]n one has
+                                  ~x =~yδ + pα−δ~xα−δ          and ~y =~yδ + pα−δ~yα−δ
+for some ~yδ ,~xα−δ ,~yα−δ ∈ [Z/pα Z]n . Since δ < α/2, it follows that
+                                   Φ(~x ) ≡ Φ(~yδ ) + pα−δ Φ0 (~yδ )~xα−δ
+                                                                                        mod pα
+                                   Φ(~y ) ≡ Φ(~yδ ) + pα−δ Φ0 (~yδ )~yα−δ
+and so
+                                         Φ0 (~yδ )(~xα−δ −~yα−δ ) ≡ ~0         mod pδ .                                        (76)
+Note that JΦ (~y ) ≡ JΦ (~yδ ) mod pα−δ and therefore, again using the hypothesis δ < α/2, one deduces that
+pδ kJΦ (~yδ ). Applying Lemma A.1, one concludes that there are at most pδ solutions ~xα−δ ∈ [Z/pα Z]n
+to (76) which are mutually incongruent modulo pδ . This immediately yields the desired bound on
+N(~y; pα ).
+
+    The n = 3 case of Conjecture 7.6 can also be treated using similar (but somewhat more involved)
+arguments. This line of reasoning tends to be rather ad hoc, however, and it is unclear whether it can
+produce a systematic approach which resolves the conjecture for all values of n (already in the n = 4 case
+significant complications arise and, indeed, the problem remains open for n ≥ 4).
+    A counterpoint to Lemma 7.9 was established by the authors in [28]
+Proposition 7.13 ([28]). If n = r(r + 1)/2 for some r ∈ N with r ≥ 2 and p > n is prime, then22
+                                                  N(~0n ; pα ) ≤ Cn α pα(n−r)
+holds for all α ∈ N. The result is sharp in the sense that, provided n 6= 3 and p is sufficiently large
+depending only on n, the reverse inequality also holds for infinitely many α.
+  21 This argument is carried out explicitly for n = 2 in the proof of Corollary 7.10
+  22 The notation of the present article differs slightly with that of [28]: in the latter, N(~0 ; pα ) denotes a normalised solution
+                                                                                                n
+count.
+
+
+                                         D ISCRETE A NALYSIS, 2018:11, 54pp.                                                      49
+                                  J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+    Proposition 7.13 treats a very different situation from that considered in Lemma 7.9: here the
+components of ~y are identical and therefore have no p-adic separation. This result also shows that, in
+general, Conjecture 7.6 is not sharp (this can already be observed from the proof of Corollary 7.10) since
+Conjecture 7.6 only predicts the trivial bound N(~0n ; pα ) ≤ pαn . The restriction to triangular degrees
+n = r(r + 1)/2 in Proposition 7.13 is merely for expository purposes: in [28] sharp estimates for N(~0n ; pα )
+are obtained in all dimensions, but the statement of the result for general n is slightly involved. Curiously,
+the n = 3 case behaves differently from all other degrees.
+    The proof of Proposition 7.13 uses methods akin to those employed by Denef and Sperber [12] (see
+also [8, 9]) to study exponential sum bounds related to the Igusa conjecture. An interesting feature of the
+analysis in [28] is that it applies to systems of polynomial congruences, rather than just a single polynomial
+congruence as considered in [12]. There is mounting evidence that these methods can be pushed to
+prove more substantial partial results on Conjecture 7.6, and perhaps even lead to a full resolution of the
+problem, and the authors hope to investigate this further in future work.
+
+
+Appendix
+
+A     Counting solutions to linear systems of congruences
+The following lemma was used a number of times in the text.
+
+Lemma A.1. Let N ∈ N, ~b ∈ [Z/NZ]n and suppose A ∈ Matn (Z/NZ) satisfies det A 6≡ 0 mod N. The
+number of solutions ~x ∈ [Z/NZ]n to the system of linear congruences A~x = ~b is either 0 or N/| det A|.
+
+Proof. Since the desired estimate is multiplicative, one may assume without loss of generality that
+N = pα is a power of a fixed prime. Furthermore, for any A ∈ Matn (Z/NZ) there exist unimodular
+matrices U,V ∈ GLn (Z/NZ) such that VAU is diagonal (this a consequence of the existence of the Smith
+normal form of the matrix A, which holds for arbitrary (that is, not necessarily square) matrices over any
+principal ideal domain: see, for instance, [37]). Since | det A| = | detVAU| and
+
+                        |{~x ∈ [Z/NZ]n : A~x = ~b}| = |{~x ∈ [Z/NZ]n : VAU~x = V~b}|,
+
+one may further assume that A itself is diagonal.
+    Let λi denote the (i, i)-entry of A and write pψi = gcd(λi , pα ) for i = 1, . . . , n. The number of solutions
+x ∈ Z/pα Z to the univariate system
+                                                   λi x = bi
+is equal to 0 if pψi - bi and is equal to pψi otherwise. Thus, the total number of solutions to the system is
+at most pψ1 +···+ψn . Finally, by hypothesis pα - det A = λ1 . . . λn and so
+
+                                                                         N
+                                    pψ1 +···+ψn = gcd(det A, pα ) =            ,
+                                                                      | det A|
+
+as required.
+
+                                    D ISCRETE A NALYSIS, 2018:11, 54pp.                                         50
+                         F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+Acknowledgments
+This paper updates and expands work that was initiated by the second author over 20 years ago. The
+authors would like to thank M. Cowling for proposing the original line of investigation and for his
+encouragement. This material is based upon work supported by the National Science Foundation under
+Grant No. DMS-1440140 while the first author was in residence at the Mathematical Sciences Research
+Institute in Berkeley, California, during the Spring 2017 semester.
+
+
+References
+ [1] G. I. Arkipov, V. N. Chubarikov, and A. A. Karatsuba, Exponent of convergence of the singular integral in the Terry
+     problem, Dokl. Akad. Nauk SSSR 248 (1979), no. 2, 268–272. MR553185 41
+ [2]          , The theory of multiple trigonometric sums, (Russian), Nauka, Moscow, 1987. 41
+ [3] Jong-Guk Bak and Andreas Seeger, Extensions of the Stein-Tomas theorem, Math. Res. Lett. 18 (2011), no. 4, 767–781.
+     MR2831841 (2012h:42014) 31, 32
+ [4] François Bruhat, Distributions sur un groupe localement compact et applications à l’étude des représentations des groupes
+     ℘-adiques, Bull. Soc. Math. France 89 (1961), 43–75. MR0140941 (25 #4354) 25
+ [5] Xavier Caruso, Almost all non-archimedean Kakeya sets have measure zero, Preprint: arXiv:1608.02720. 11, 12, 15, 16,
+     19, 23, 24, 30
+ [6] Jing Run Chen, On Professor Hua’s estimate of exponential sums, Sci. Sinica 20 (1977), no. 6, 711–719. MR0480375 37
+ [7] Michael Christ, On the restriction of the Fourier transform to curves: endpoint results and the degenerate case, Trans.
+     Amer. Math. Soc. 287 (1985), no. 1, 223–238. MR766216 43, 45
+ [8] Raf Cluckers, Igusa and Denef-Sperber conjectures on nondegenerate p-adic exponential sums, Duke Math. J. 141 (2008),
+     no. 1, 205–216. MR2372152 39, 50
+ [9]        , Exponential sums: questions by Denef, Sperber, and Igusa, Trans. Amer. Math. Soc. 362 (2010), no. 7, 3745–3756.
+       MR2601607 39, 50
+[10] Antonio Cordoba, The Kakeya maximal function and the spherical summation multipliers, Amer. J. Math. 99 (1977), no. 1,
+     1–22. MR0447949 (56 #6259) 14, 15, 16
+[11] Pierre Deligne, La conjecture de Weil. I, Inst. Hautes Études Sci. Publ. Math. (1974), no. 43, 273–307. MR0340258 2
+[12] J. Denef and S. Sperber, Exponential sums mod pn and Newton polyhedra, Bull. Belg. Math. Soc. Simon Stevin (2001),
+     no. suppl., 55–63, A tribute to Maurice Boffa. MR1900398 39, 50
+[13] Francesco Di Plinio, Lacunary Fourier and Walsh-Fourier series near L1 , Collect. Math. 65 (2014), no. 2, 219–232.
+     MR3189278 30
+[14] Yen Q. Do and Michael T. Lacey, On the convergence of lacunacy Walsh-Fourier series, Bull. Lond. Math. Soc. 44 (2012),
+     no. 2, 241–254. MR2914604 30
+[15] Stephen W. Drury, Restrictions of Fourier transforms to curves, Ann. Inst. Fourier (Grenoble) 35 (1985), no. 1, 117–123.
+     MR781781 (86e:42026) 39
+[16] Evan P. Dummit and Márton Hablicsek, Kakeya sets over non-Archimedean local rings, Mathematika 59 (2013), no. 2,
+     257–266. MR3081770 12, 16, 24, 30
+[17] Zeev Dvir, On the size of Kakeya sets in finite fields, J. Amer. Math. Soc. 22 (2009), no. 4, 1093–1097. MR2525780 2, 13,
+     30
+[18] Jordan S. Ellenberg, Richard Oberlin, and Terence Tao, The Kakeya set and maximal conjectures for algebraic varieties
+     over finite fields, Mathematika 56 (2010), no. 1, 1–25. MR2604979 2, 12, 13, 30
+
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                                51
+                                      J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+[19] Robert Fraser, Kakeya-type sets in local fields with finite residue field, Mathematika 62 (2016), no. 2, 614–629. MR3521344
+     13, 24, 30
+[20] Marvin J. Greenberg, Lectures on forms in many variables, W. A. Benjamin, Inc., New York-Amsterdam, 1969. MR0241358
+     (39 #2698) 48
+[21] Larry Guth, Restriction estimates using polynomial partitioning II, Preprint: arXiv:1603.04250. 7
+[22]          , A restriction estimate using polynomial partitioning, J. Amer. Math. Soc. 29 (2016), no. 2, 371–413. MR3454378
+       7
+[23] Uffe Haagerup, The best constants in the Khintchine inequality, Studia Math. 70 (1981), no. 3, 231–283 (1982). MR654838
+     10
+[24] Seheon Ham and Sanghyuk Lee, Restriction estimates for space curves with respect to general measures, Adv. Math. 254
+     (2014), 251–279. MR3161099 39
+[25] G. H. Hardy and E. M. Wright, An introduction to the theory of numbers, sixth ed., Oxford University Press, Oxford, 2008,
+     Revised by D. R. Heath-Brown and J. H. Silverman, With a foreword by Andrew Wiles. MR2445243 16, 17
+[26] Jonathan Hickman, Topics in affine and discrete harmonic analysis, Ph.D. thesis, The University of Edinburgh, 2015. 30,
+     39
+[27] Jonathan Hickman and James Wright, An abstract L2 Fourier restriction theorem, to appear Math. Res. Lett. Preprint:
+     arXiv:1801.03180. 32, 37
+[28]          , Counting factorisations of monomials over rings of integers modulo N, Preprint: arXiv:1711.05673. 49, 50
+[29] Loo-keng Hua, On an exponential sum, J. Chinese Math. Soc. 2 (1940), 301–312. MR0004259 37
+[30] Jun-ichi Igusa, An introduction to the theory of local zeta functions, AMS/IP Studies in Advanced Mathematics, vol. 14,
+     American Mathematical Society, Providence, RI; International Press, Cambridge, MA, 2000. MR1743467 (2001j:11112)
+     39
+[31] Alex Iosevich and Doowon Koh, Extension theorems for the Fourier transform associated with nondegenerate quadratic
+     surfaces in vector spaces over finite fields, Illinois J. Math. 52 (2008), no. 2, 611–628. MR2524655 37
+[32]          , Extension theorems for paraboloids in the finite field setting, Math. Z. 266 (2010), no. 2, 471–487. MR2678639
+       37
+[33]          , Extension theorems for spheres in the finite field setting, Forum Math. 22 (2010), no. 3, 457–483. MR2652707 37
+[34] Alex Iosevich, Doowon Koh, and Mark Lewko, Finite field restriction estimates for the paraboloid in high even dimensions,
+     Preprint: arXiv:1712.05549. 37
+[35] Nets Katz and Terence Tao, Recent progress on the Kakeya conjecture, Proceedings of the 6th International Conference on
+     Harmonic Analysis and Partial Differential Equations (El Escorial, 2000), no. Vol. Extra, 2002, pp. 161–179. MR1964819
+     (2003m:42036) 10, 17
+[36] Doowon Koh, Restriction operators acting on radial functions on vector spaces over finite fields, Canad. Math. Bull. 57
+     (2014), no. 4, 834–844. MR3270804 37
+[37] Serge Lang, Algebra, second ed., Addison-Wesley Publishing Company, Advanced Book Program, Reading, MA, 1984.
+     MR783636 30, 50
+[38]        , Algebraic number theory, second ed., Graduate Texts in Mathematics, vol. 110, Springer-Verlag, New York, 1994.
+       MR1282723 30
+[39] Allison Lewko and Mark Lewko, Endpoint restriction estimates for the paraboloid over finite fields, Proc. Amer. Math.
+     Soc. 140 (2012), no. 6, 2013–2028. MR2888189 37
+[40] Mark Lewko, Finite field restriction estimates based on kakeya maximal operator estimates, Preprint:arXiv:1401.8011v5 .
+     7, 11, 37
+[41]          , New restriction estimates for the 3-d paraboloid over finite fields, Adv. Math. 270 (2015), 457–479. MR3286541
+       37
+
+
+                                        D ISCRETE A NALYSIS, 2018:11, 54pp.                                                  52
+                          F OURIER R ESTRICTION AND K AKEYA OVER R INGS OF I NTEGERS
+
+[42] Themis Mitsis, A Stein-Tomas restriction theorem for general measures, Publ. Math. Debrecen 60 (2002), no. 1-2, 89–99.
+     MR1882456 (2003b:42026) 31, 32
+[43] G. Mockenhaupt, Salem sets and restriction properties of Fourier transforms, Geom. Funct. Anal. 10 (2000), no. 6,
+     1579–1587. MR1810754 (2001m:42026) 31, 32
+[44] Gerd Mockenhaupt and Terence Tao, Restriction and Kakeya phenomena for finite fields, Duke Math. J. 121 (2004), no. 1,
+     35–74. MR2031165 1, 2, 5, 6, 7, 11, 37, 38
+[45] M. Scott Osborne, On the Schwartz-Bruhat space and the Paley-Wiener theorem for locally compact abelian groups, J.
+     Functional Analysis 19 (1975), 40–49. MR0407534 (53 #11307) 25
+[46] E. Prestini, A restriction theorem for space curves, Proc. Amer. Math. Soc. 70 (1978), no. 1, 8–10. MR0467160 43, 45
+[47] Eric Sawyer, Families of plane curves having translates in a set of measure zero, Mathematika 34 (1987), no. 1, 69–76.
+     MR908841 (88i:28015) 13, 24
+[48] W. H. Schikhof, Ultrametric calculus, Cambridge Studies in Advanced Mathematics, vol. 4, Cambridge University Press,
+     Cambridge, 2006, An introduction to p-adic analysis, Reprint of the 1984 original [MR0791759]. MR2444734 39
+[49] Elias M. Stein, Singular integrals and differentiability properties of functions, Princeton Mathematical Series, No. 30,
+     Princeton University Press, Princeton, N.J., 1970. MR0290095 10
+[50]            , Harmonic analysis: real-variable methods, orthogonality, and oscillatory integrals, Princeton Mathematical
+       Series, vol. 43, Princeton University Press, Princeton, NJ, 1993, With the assistance of Timothy S. Murphy, Monographs in
+       Harmonic Analysis, III. MR1232192 6
+[51] M. H. Taibleson, Fourier analysis on local fields, Princeton University Press, Princeton, N.J.; University of Tokyo Press,
+     Tokyo, 1975. MR0487295 25, 30
+[52] Terence Tao, Some recent progress on the restriction conjecture, Fourier analysis and convexity, Appl. Numer. Harmon.
+     Anal., Birkhäuser Boston, Boston, MA, 2004, pp. 217–243. MR2087245 (2005i:42015) 28
+[53] André Weil, On some exponential sums, Proc. Nat. Acad. Sci. U. S. A. 34 (1948), 204–207. MR0027006 2
+[54] Laura Wisewell, Families of surfaces lying in a null set, Mathematika 51 (2004), no. 1-2, 155–162 (2005). MR2220219
+     13, 24
+[55] Thomas Wolff, Recent work connected with the Kakeya problem, Prospects in mathematics (Princeton, NJ, 1996), Amer.
+     Math. Soc., Providence, RI, 1999, pp. 129–162. MR1660476 10
+[56] Thomas H. Wolff, Lectures on harmonic analysis, University Lecture Series, vol. 29, American Mathematical Society,
+     Providence, RI, 2003, With a foreword by Charles Fefferman and preface by Izabella Łaba, Edited by Łaba and Carol
+     Shubin. MR2003254 13, 24
+[57] Trevor D. Wooley, A note on simultaneous congruences, J. Number Theory 58 (1996), no. 2, 288–297. MR1393617
+     (97h:11037) 48
+[58] James Wright, Exponential sums and polynomial congruences in two variables: the quasi-homogeneous case, Preprint:
+     arXiv:1202.2686. 6
+[59]           , From oscillatory integrals and sublevel sets to polynomial congruences and character sums, J. Geom. Anal. 21
+       (2011), no. 1, 224–240. MR2755683 6
+[60]          , From oscillatory integrals to complete exponential sums, Math. Res. Lett. 18 (2011), no. 2, 231–250. MR2784669
+       6
+[61] A. Zygmund, On Fourier coefficients and transforms of functions of two variables, Studia Math. 50 (1974), 189–201.
+     MR0387950 (52 #8788) 48
+
+
+
+
+                                         D ISCRETE A NALYSIS, 2018:11, 54pp.                                                 53
+                        J ONATHAN H ICKMAN AND JAMES W RIGHT
+
+AUTHORS
+
+   Jonathan Hickman
+   Eckhart Hall Room 414,
+   Department of Mathematics,
+   University of Chicago,
+   5734 S. University Avenue,
+   Chicago, Illinois, 60637, US.
+   jehickman [at] uchicago [dot] edu
+   http://math.uchicago.edu/~j.e.hickman/
+
+
+   James Wright
+   Room 4621 James Clerk Maxwell Building,
+   The King’s Buildings,
+   Peter Guthrie Tait Road,
+   Edinburgh,
+   EH9 3FD,
+   UK.
+   j.r.wright [at] ed [dot] ac [dot] uk
+
+
+
+
+                          D ISCRETE A NALYSIS, 2018:11, 54pp.   54
+

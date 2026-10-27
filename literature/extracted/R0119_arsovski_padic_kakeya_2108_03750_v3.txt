@@ -1,0 +1,317 @@
+                                          THE P -ADIC KAKEYA CONJECTURE
+arXiv:2108.03750v3 [math.NT] 1 Nov 2021
+
+
+
+
+                                                                      BODAN ARSOVSKI
+
+
+
+
+                                                 Abstract. We prove that all bounded subsets of Qnp containing
+                                                 a line segment of unit length in every direction have Hausdorff
+                                                 and Minkowski dimension n. This is the analogue of the classical
+                                                 Kakeya conjecture with R replaced by Qp .
+
+                                                                      1. Introduction
+                                             In 1917, Kakeya posed the Kakeya needle problem, asking about
+                                          the minimum area of a region in the plane in which a needle of unit
+                                          length can be rotated around by 360◦ . The problem reduces to asking
+                                          about the minimum area of a Kakeya set in R2 —that is, a bounded
+                                          subset of R2 containing a line segment of unit length in every direction.
+                                          Besicovitch [Bes63] showed that, in a certain sense, the answer is “arbi-
+                                          trarily small”, by constructing a Kakeya set in R2 of Lebesgue measure
+                                          zero. On the other hand, Davies [Dav71] showed that, in a different
+                                          sense, the answer is “large”: a Kakeya set in R2 must have Minkowski
+                                          dimension 2. The construction of [Bes63] extends immediately to Rn
+                                          with n > 3. The higher-dimensional analogue of the result of [Dav71]
+                                          is much more difficult: it is the Minkowski dimension version of the
+                                          notorious Kakeya conjecture, which is one of the most important open
+                                          problems in geometric measure theory, and analysis in general.
+                                          Conjecture A (Kakeya). Let n be a positive integer. All Kakeya sets
+                                          in Rn have Hausdorff and Minkowski dimension n.
+                                             The Kakeya conjecture has deep connections with harmonic anal-
+                                          ysis, PDEs, and combinatorics among other fields, and it is open for
+                                          n > 3. For n ∈ {3, 4}, the state of the art are the results of Katz–
+                                          Zahl [KZ19, KZ21] that all Kakeya sets in R3 have Hausdorff and
+                                          Minkowski dimension at least 5/2 + ε (for some ε > 0), and all Kakeya
+                                          sets in R4 have Hausdorff and Minkowski dimension at least 3.059 (see
+                                          also Wolff [Wol95], Katz–Łaba–Tao [KŁT00], and Łaba–Tao [ŁT01] for
+                                          previous results). For n > 5, the state of the art is the result of Katz–
+                                          Tao [KT02] that all Kakeya sets in Rn have Hausdorff dimension at least
+                                          2020 Mathematics Subject Classification. Primary 28A75, Secondary 14J70.
+                                                                                1
+2                           BODAN ARSOVSKI
+      √
+(2 − 2)(n − 4) + 3 and Minkowski dimension at least (n − 1)/α + 1,
+where α ≈ 1.675 is the largest root of the polynomial z 3 − 4z + 2.
+   As a possible approach to the Kakeya conjecture, Wolff [Wol99] sug-
+gested an analogous conjecture over finite fields, which was then proved
+by Dvir [Dvi09]. As noted by Ellenberg–Oberlin–Tao [EOT10], the
+analogy between the classical and finite field Kakeya conjectures is
+imperfect for two reasons. Firstly, there is no natural non-discrete no-
+tion of distance in finite vector spaces, and the discrete distance does
+not have multiple scales. By contrast, the Euclidean distance in Rn has
+multiple scales. Secondly, the result of [Dvi09] is too strong: all Kakeya
+sets in Fnq (where Fq is a finite field) have, in a certain sense, positive
+measure. In particular, there is no variant in Fnq of the construction of
+Besicovitch of a Kakeya set of measure zero.
+   In light of these two shortcomings, Ellenberg–Oberlin–Tao [EOT10]
+suggested analogues of the Kakeya conjecture over topological fields
+whose metrics capture the multiple scales property of the Euclidean
+metric of Rn . The only (non-discrete) locally compact Hausdorff topo-
+logical fields are the finite extensions of R, Qp , and Fq ((t)) (for vary-
+ing primes p and prime powers q). Moreover, the Kakeya conjecture
+over K ∈ {R, Qp , Fq ((t))} implies the Kakeya conjecture over any fi-
+nite extension L/K, simply by treating Ln as a vector space over K.
+Therefore, other than the classical setting over R, the two other nat-
+ural settings for the Kakeya conjecture (with interesting metrics that
+have multiple scales) are over Qp and Fq ((t)). Both shortcomings are
+resolved in these settings. Firstly, Qnp and Fq ((t))n have metrics that
+have multiple scales, just like the metric of Rn . Secondly, there are
+variants of the Besicovitch construction in both settings: Dummit–
+Hablicsek [DH11] constructed a Kakeya set in Fq ((t))n of measure zero,
+Hickman–Wright [HW18] constructed a Kakeya set in Qnp of measure
+zero, and Fraser [Fra16] constructed more generally a Kakeya set in
+Ln of measure zero, for any finite extension L/K of K ∈ {Qp , Fq ((t))}.
+Moreover, Dummit–Hablicsek [DH11] proved the analogues of the re-
+sult of Davies [Dav71] in Q2p and Fq ((t))2 . All of these theorems suggest
+that the Kakeya conjectures over Qp and Fq ((t)) could be good models
+for the classical Kakeya conjecture over R.
+   In this article we prove the Kakeya conjecture over Qp :
+
+Theorem 1. Let p be a prime number and n a positive integer. All
+Kakeya sets in Qnp have Hausdorff and Minkowski dimension n.
+
+Remark 2. Let p and n be as in theorem 1, and let K/Qp be a finite
+extension. Theorem 1 then implies that all Kakeya sets in K n have
+                      THE P -ADIC KAKEYA CONJECTURE                                     3
+
+Hausdorff and Minkowski dimension n, i.e. the Kakeya conjecture over
+all p-adic local fields (simply by treating K n as a vector space over Qp ).
+Remark 3. The field of p-adic numbers Qp is the completion of Q with
+respect to the p-adic norm |x|p = p−vp (x) , and, in fact, the only com-
+pletions of Q are R and Qp (for varying p). To give some intuition
+behind its topology, the closed unit ball Zp of Qp is homeomorphic to
+the Cantor set C ⊆ [0, 1]. There is a well developed analogue of classi-
+cal analysis over the p-adic numbers called p-adic analysis, which has
+historically been of particular interest in number theory.
+   The proof of theorem 1 is inspired by Dvir’s famous proof of the finite
+field Kakeya conjecture [Dvi09], and the method can be summarized
+as “the polynomial method over discrete valuation rings”. This dis-
+crete valuation polynomial method seems flexible and extensible, and
+we hope that it can be used to adapt other theorems with known poly-
+nomial method proofs, from the finite field setting over Fq , to the p-adic
+setting over K/Qp (and in particular over the finite rings Z/pk Z). We
+prioritize brevity and clarity of exposition, so the implied constants are
+not sharp and can be improved by more careful analysis1.
+
+                                      2. Proof
+  Let p be a prime number, n and k positive integers, and q = pk . Let
+F = Fp , and R = Z/qZ. Let Qp denote the p-adic numbers, and Zp the
+p-adic integers. That is, Qp is the completion of Q with respect to the
+norm |x|p = p−vp (x) , and Zp is the closed unit ball in Qp centered at the
+origin Zp = {z ∈ Qp | |z|p 6 1} ⊆ Qp . We equip Qnp with the maximum
+product norm
+       |(x1 , . . . , xn )|p = maxi∈{1,...,n} |xi |p , for (x1 , . . . , xn ) ∈ Qnp ,
+and by the Hausdorff and Minkowski dimensions of a subset of Qnp we
+of course mean the Hausdorff and Minkowski dimensions with respect
+to this norm. Let ζ be a primitive q th root of unity in the algebraic
+closure of Qp . Let T = Zp (ζ)[t], and let T = F[t] be the reduction of
+T modulo the maximal ideal m = (ζ − 1) of Zp [ζ]. Thus T is a subset
+of the discrete valuation ring T (t) , whose field of fractions is F(t), and
+whose valuation we denote by vt . Let C = {1, . . . , (1 + t)q−1 } ⊆ T , and
+let C ⊆ T be the reduction of C modulo m.
+1In particular, in an earlier version of this manuscript we gave a different proof
+inspired by ideas of Dhar–Dvir [DD], that results in slightly better constants. To
+keep the exposition brief and simple, we omit that proof in favor of the discrete
+valuation polynomial method proof, which feels more conceptual.
+4                                BODAN ARSOVSKI
+
+Definition 4. Let ε, δ ∈ [0, 1]. Let us normalize the measures of the
+closed unit balls Zp ⊆ Qp and Znp ⊆ Qnp to be equal to 1.
+   An (ε, δ)-Kakeya set in Qnp is a bounded subset of Qnp containing at
+least ε of a line segment of unit length in at least δ of directions—that is,
+a bounded subset K ⊆ Qnp with the following property: there is a subset
+D ⊆ Znp of measure at least δ such that, for all x ∈ D, there are bx ∈ Qnp
+and a subset Λx ⊆ Zp of measure at least ε such that bx + λx ∈ K for
+all λ ∈ Λx .2
+  We obtain theorem 1 as a corollary to the following theorem, which
+gives a lower bound on the number of closed balls of radii p−k needed
+to cover an (ε, δ)-Kakeya set in the closed unit ball Znp of Qnp .
+Theorem 5. Let p be a prime number, and n and k positive integers.
+Let ε, δ ∈ [0, 1]. An (ε, δ)-Kakeya set in Znp cannot be covered by fewer
+than
+                                                   
+                                       εδq/pnk+n−1
+                                             n
+
+closed balls of radii p−k .
+    Proof that theorem 5 implies theorem 1. Suppose that
+                                            1          1
+                             ε, δ &p,n log (1/p −k ) = k .
+                                             p
+
+An (ε, δ)-Kakeya set K        ⊆ Qnp is bounded, and therefore contained in
+finitely many disjoint closed unit balls. Suppose that K is covered by
+N(K , p−k ) closed balls of radii p−k . By translating and superimposing
+these closed unit balls onto the closed unit ball Znp , we end up with an
+(ε, δ)-Kakeya set K˜ ⊆ Znp that is covered by N(K , p−k ) closed balls
+of radii p−k , implying, by theorem 5, that
+                                      (εδ) p     n kn        kn
+                                                     p
+                        N(K , p−k ) > (pnk)n n! &p,n k 3n .
+
+
+The standard dyadic method of Bourgain [Bou99] can be used to con-
+clude that the Hausdorff dimension of K is n (and therefore so is the
+Minkowski dimension).
+Lemma 6 (Discrete valuation Schwartz–Zippel). Let the coefficient
+of z1m1 · · · znmn in f ∈ T [z1 , . . . , zn ] be c 6= 0, where mi ∈ {0, . . . , q} for
+all i ∈ {1, . . . , n}, let the coefficient of any monomial that is larger
+than z1m1 · · · znmn in the lexicographic order be zero, and let ν ∈ (0, 1].
+                            n
+The number of s ∈ C such that vt (f (s)) > vt (c) + νnq is at most
+pkq n−1 (m1 + · · · + mn )/ν.
+2The definition of a Kakeya set in Qn is slightly different in [EOT10, HW18, DD]
+                                         p
+(only directions in Pn−1 (Zp ) are considered), but it is equivalent to our definition.
+                          THE P -ADIC KAKEYA CONJECTURE                                        5
+
+  Proof. We use induction. Let n = 1, and suppose, on the contrary,
+that there is a subset S ⊆ C such that |S| > pkm1 /ν, on which f
+has vt -valuation at least vt (c) + νq. Let S = {(1 + t)l | l ∈ L}, so that
+L ⊆ {0, . . . , q − 1} and |L| = |S|. Then L has a subset L0 that contains
+no pair of distinct elements whose difference is divisible by p−⌈logp (k/ν)⌉ q,
+and such that |L0 | = m1 + 1. Let S0 be the subset of S that corresponds
+to L0 . By Lagrange interpolation (in the field F(t) ⊃ T ),
+                                           Q                             −1
+                       1=                  c    u∈S0 \{s} (s − u)               f (s),
+                             P
+                                 s∈S0
+
+so there exists some s ∈ S0 such that
+                                     Q                           
+                                vt        u∈S0 \{s} (s − u)             > νq.
+  L0 = {l0 , . . . , lm1 } with l0 = s. A theorem of Kummer implies that
+Let
+  l
+ w
+     is a unit in F if and only if every p-adic digit of w is at most as
+large as the corresponding p-adic digit of l. So
+                                                                              
+       vt (1 + t)li − (1 + t)l0 = vt (1 + t)li −l0 − 1 = pvp (li −l0 ) ,
+and
+            Q                                Pm1                                      
+                                                               li         l0
+       vt       u∈S0 \{s} (s − u)         =      i=1 vt (1 + t) − (1 + t)
+                                               Pm1       vp (li −l0 )
+                                          =      i=1 p
+                                               P⌈log m1 ⌉
+                                          6      j=1
+                                                     p         p−⌈logp (k/ν)⌉−j q(pj − pj−1)
+                                          < νq⌈logp m1 ⌉/k 6 νq,
+a contradiction. That concludes the case n = 1. For n > 1, we write
+                 f (z1 , . . . , zn ) = z1m1 g(z2 , . . . , zn ) + h(z1 , . . . , zn )
+with the degree of z1 in h less than m1 . We evaluate z1 , . . . , zn on C
+independently and uniformly at random. Let F, G< , and G> be the
+events
+                            F         vt (f ) > vt (c) + νnq,
+                          G<          vt (g) < vt (c) + ν(n − 1)q,
+                          G>          vt (g) > vt (c) + ν(n − 1)q.
+Then
+                 P (F ) = P (F | G< ) P (G< ) + P (F | G> ) P (G> )
+                         6 P (F | G< ) + P (G> )
+                         6 pkm1 /νq + pk(m2 + · · · + mn )/νq,
+where the last line follows from the induction hypothesis, concluding
+the induction step, and with that the proof.
+6                                         BODAN ARSOVSKI
+
+   Proof of theorem 5. The image under the projection Znp → Rn of an
+(ε, δ)-Kakeya set in Znp is a subset of Rn with the following property:
+there is a subset D ⊆ Rn of size at least δ|R|n such that, for all x ∈ D,
+there are bx ∈ Rn and a subset Λx ⊆ R of size at least εq such that
+bx + λx ∈ S for all λ ∈ Λx . Our
+                                 goal is to show that such a subset of
+Rn must have size at least εδq/pnk+n−1
+                                    n
+                                            . Suppose, on the contrary,
+                                                                    
+that there is such a subset S ⊆ R of size less than εδq/pnk+n−1
+                                    n
+                                                              n
+                                                                      . In
+particular, εδ > 0. Let
+                SC = {(ζ s1 , . . . , ζ sn ) ∈ Zp [ζ]n | (s1 , . . . , sn ) ∈ S} .
+Then there is a non-zero polynomial f ∈ Qp (ζ)[z1, . . . , zn ] of total de-
+gree less than εδq/pnk that vanishes on SC . After multiplying f by
+(1 − ζ)m for a suitable m ∈ Z, we may assume that all coefficients
+of f have non-negative vp -valuation and some coefficients of f have
+vp -valuation equal to zero, implying that f ∈ Zp [ζ][z1, . . . , zn ] and the
+reduction f of f modulo m is non-zero. For all x ∈ D and all λ ∈ Λx ,
+      f (ζ (bx )1 +λx1 , . . . , ζ (bx )n +λxn ) = f (ζ (bx )1 (ζ λ )[x1 ] , . . . , ζ (bx )n (ζ λ)[xn ] )
+                                                   = gx (ζ λ ) = 0,
+where, for y ∈ R, [y] is the integer in {0, . . . , q − 1} congruent to y
+modulo q, and gx ∈ Zp [ζ][z] is some polynomial depending on x. So
+            λ                              ⌈εq⌉
+ λ∈Λx (z − ζ ) | gx , implying that (z − 1)     | g x , in turn implying that
+Q
+                                                                                      
+            vt (g x (1 + t)) = vt f ((1 + t)[x1 ] , . . . , (1 + t)[xn ] ) > εq.
+Let
+                                                                     n
+                 n                                                                                  o
+       CD = ((1 + t)[x1 ] , . . . , (1 + t)[xn ] ) ⊆ C | (x1 , . . . , xn ) ∈ D .
+                                              
+Then, for all s ∈ CD , vt f (s) > εq. As f ∈ T [z1 , . . . , zn ] is non-zero,
+has total degree less than εδq/pnk 6 q, and has coefficients in F, it
+follows from lemma 6 with some c ∈ F× and ν = ε/n that
+                δq n 6 |D| = |CD | < pkq n−1 (εδq/pnk)(n/ε) = δq n ,
+which is a contradiction.
+
+                                              References
+ [Bes63] Abram S. Besicovitch, The Kakeya problem, Am. Math. Mon. 70 (1963),
+         no. 7, 697–706.
+[Bou99] Jean Bourgain, On the dimension of Kakeya sets and related maximal
+         inequalities, Geom. Funct. Anal. 9 (1999), no. 2, 256–282.
+[Dav71] Roy O. Davies, Some remarks on the Kakeya problem, Math. Proc. Cam-
+         bridge Philos. Soc. 69 (1971), no. 3, 417–421.
+   [DD] Manik Dhar and Zeev Dvir, Proof of the Kakeya set conjecture over rings
+         of integers modulo square-free N , preprint.
+                      THE P -ADIC KAKEYA CONJECTURE                                 7
+
+   [DH11] Evan P. Dummit and Márton Hablicsek, Kakeya sets over non-
+           archimedean local rings, Mathematika 59 (2011), no. 2, 257–266.
+   [Dvi09] Zeev Dvir, On the size of Kakeya sets in finite fields, J. Amer. Math. Soc.
+           22 (2009), 1093–1097.
+[EOT10] Jordan S. Ellenberg, Richard Oberlin, and Terence Tao, The Kakeya set
+           and maximal conjectures for algebraic varieties over finite fields, Mathe-
+           matika 56 (2010), no. 1, 1–25.
+   [Fra16] Robert Fraser, Kakeya-type sets in local fields with finite residue field,
+           Mathematika 62 (2016), no. 2, 614–629.
+  [HW18] Jonathan Hickman and James Wright, The Fourier restriction and
+           Kakeya problems over rings of integers modulo N , Discrete Anal. 11
+           (2018), 18pp.
+ [KŁT00] Nets H. Katz, Izabella Łaba, and Terence Tao, An improved bound on the
+           Minkowski dimension of Besicovitch sets in R3 , Ann. of Math. (2) 152
+           (2000), no. 2, 383–446.
+   [KT02] Nets H. Katz and Terence Tao, New bounds for Kakeya problems, J. Anal.
+           Math. 87 (2002), 231–263.
+    [ŁT01] Izabella Łaba and Terence Tao, An improved bound for the Minkowski
+           dimension of Besicovitch sets in medium dimension, Geom. Funct. Anal.
+           11 (2001), no. 2, 773–806.
+    [KZ19] Nets Hawk Katz and Joshua Zahl, An improved bound on the Hausdorff
+           dimension of Besicovitch sets in R3 , J. Amer. Math. Soc. 32 (2019), no. 1,
+           195–259.
+    [KZ21]         , A Kakeya maximal function estimate in four dimensions using
+           planebrushes, Rev. Mat. Iberoam. 37 (2021), no. 1, 317–359.
+  [Wol95] Thomas Wolff, An improved bound for Kakeya type maximal functions,
+           Rev. Mat. Iberoam. 11 (1995), 651–674.
+  [Wol99]          , Recent work connected with the Kakeya problem, Prospects in
+           mathematics (Princeton, NJ, 1996) (1999), 129–162.
+
+  School of Mathematics and Statistics, University of Sheffield
+  Email address: bodan.arsovski@outlook.com
+  URL: bodanarsovski.github.io
+

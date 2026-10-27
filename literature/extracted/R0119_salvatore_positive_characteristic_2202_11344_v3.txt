@@ -1,0 +1,762 @@
+                                                    The Kakeya Conjecture on Local Fields of Positive
+                                                                    Characteristic
+                                                                                       Alejo Salvatore
+arXiv:2202.11344v3 [math.NT] 2 Sep 2022
+
+
+
+
+                                                                                           Abstract
+                                                    We state and prove an analogue of the Kakeya conjecture for the local field Fq ((t)). This
+                                                extends Arsovski’s result on the Kakeya conjecture to local fields of positive characteristic. We
+                                                also prove the Kakeya maximal conjecture in this setting.
+
+
+                                          1     Introduction
+                                          A Besicovitch set or Kakeya set is defined as a compact set E ⊆ Rn that contains a unit line segment
+                                          in every direction. The Kakeya conjecture states that every Besicovitch set in Rn has Hausdorff
+                                          dimension n. This problem has been thoroughly researched due to its connections with harmonic
+                                          analysis, differential equations, arithmetic combinatorics and number theory, cf. [Tao01; Bou00;
+                                          Wol99]. The conjecture remains open for n ≥ 3. Let d(n) denote the least possible value for the
+                                          Hausdorff dimension of a Besicovitch set in Rn . Currently the best lower bounds for n = 3, 4 are
+                                          established in [KZ19] and [KZ21], where the authors show that d(3) ≥ 52 + ε0 and d(4) ≥ 3.059,
+                                          respectively. For n = 6, the best known bound is d(n) ≥ 4, proved by Wolff in [Wol95]. For the
+                                          best known results in higher dimensions, see [KT02], [HRZ19] and [Zah21]. In regard to Minkowski
+                                          dimension, Katz and Tao [KT02] showed that every Besicovitch set in Rn has Minkowski dimension
+                                                   n
+                                          at least α + α−1α where α ≈ 1.675.
+                                              In view of the difficulty of this conjecture, Wolff proposed in [Wol99] a finite field analogue of
+                                          the Kakeya conjecture as a toy model for the real case. He asked whether it was possible to find
+                                          constants Cn > 0 such that if Fq is the finite field with q elements, then every Kakeya set E ⊆ Fnq has
+                                          at least Cn q n elements. This was solved affirmatively by Dvir in his influential paper [Dvi09] using
+                                                                                                                 1
+                                          the polynomial method. His original proof gave the value Cn = n!         , which was subsequently improved
+                                                     −n                              1−n
+                                          to Cn = 2      in [Dvi+13] and to Cn = 2        in [BC21]. However, it was noted in [EOT10] that the
+                                          analogy between the classical and finite field Kakeya conjectures is flawed in two ways. Firstly, the
+                                          bound obtained in [Dvi09] is too strong, as it says that all Kakeya sets in Fnq have, in a sense, positive
+                                          measure. In contrast, there are Besicovitch sets in Rn which have Lebesgue measure zero. Another
+                                          deficiency of Fq is that it does not admit “multiple scales”: that is, there is no natural notion of
+                                          distance on this ring that is nontrivial. These problems are related to each other, since the existence
+                                          of multiple scales in Rn is what allows for the construction of Besicovitch sets with measure zero. For
+                                          this reason, in [EOT10], Ellenberg, Oberlin and Tao proposed analogues of the Kakeya conjecture for
+                                          metric rings that have multiple scales, specifically local fields, their rings of integers and quotient rings.
+                                          The question of proving local field variants of the Kakeya conjecture had already been investigated
+                                          in the 1990s by J. Wright, who gave a series of lectures in the University of New South Wales on this
+                                          topic.
+                                              In [DH13], Dummit and Hablicsek contructed Kakeya sets of measure zero in Fq ((t))n for all n ≥ 2,
+                                          and they also showed that Kakeya sets in Fq [[t]]2 or Z2p have Minkowski dimension 2. Fraser [Fra16]
+                                          constructed Kakeya sets of measure zero in Ln , where L is any non-archimedean local field with finite
+                                          residue field. Hickman and Wright [HW18] studied the Kakeya conjecture on Z/N Z in relation with
+                                          the discrete restriction conjecture, and they gave a simpler construction of a Kakeya set in Znp of
+
+
+                                                                                                1
+measure zero. Caruso [Car18] has shown that almost all Kakeya needle sets have measure zero in the
+non-archimedean case. These results show that non-archimedean local fields behave in a similar way
+to R in regard to Kakeya sets.
+   Recently Arsovski [Ars21] proved the Kakeya conjecture for the p-adic field Qp using the polynomial
+method. This result implies the Kakeya conjecture over any finite field extension L/Qp , so the Kakeya
+conjecture holds for any non-archimedean local field of characteristic zero. In this article we will adapt
+Arsovski’s proof to the case of local fields of positive characteristic. The main result of this article is
+the following:
+Theorem 1. All c-Kakeya sets in Fq ((t))n have Hausdorff dimension n.
+    In order to do this one needs to find an appropriate completely ramified extension of Fq ((t)) that is
+analogous to the extension of Qp given by adjoining a primitive pk -th root of unity. This is achieved
+using well-known properties of Lubin–Tate extensions.
+
+1.1    Notation
+We write A & B if there is a constant C > 0 (which may or may not depend on n or q) such that
+A ≥ CB. We may also add n, q or another variable as a subscript in order to specify that the
+implicit constant depends on those variables. Throughout this article, none of the implicit constants
+will depend on k (or on δ = q −k ).
+    H s (·) denotes the s-dimensional Hausdorff content, which is defined as
+                                            ( ∞                   ∞
+                                                                        )
+                                             X                    [
+                              H s (E) = inf     (diam Uj )s : E ⊆     Uj ,
+                                               j=1                       j=1
+
+where diam Uj stands for the diameter of Uj . The Hausdorff dimension of a set E in a metric space
+is then defined as the smallest real number d = dimH (E) such that H s (E) = 0 for all s < d, which
+also happens to be the greatest number such that H s (E) = ∞ for all s > d.
+    For any ring R, let R[[t]] be the ring of formal power series
+
+                                   a(t) = c0 + c1 t + · · · + cn tn + . . . ,                          (1)
+
+where all the coefficients cj are elements of R. We shall denote by K = Fq ((t)) the field of formal
+Laurent series over Fq , which is the quotient field of A = Fq [[t]]. Since every power series a ∈ A with
+nonzero constant term has a multiplicative inverse, it follows that every element of K can be written
+as a(t) = tn0 (c0 + c1 t + . . . ) with c0 6= 0 and n0 ∈ Z. Given a nonzero element a ∈ K, we define vt (a)
+as the smallest integer n0 such that the coefficient of tn0 in a(t) is nonzero. We also set vt (0) = −∞.
+It is easy to show that the function |a| = q −vt (a) is an absolute value that satisfies the ultrametric
+inequality
+                                               |a + b| ≤ max{|a|, |b|},                                 (2)
+for all a, b ∈ K. Therefore it induces a metric d(x, y) = |x − y| on K. We also equip K n with the
+supremum norm
+                                      |(a1 , . . . , an )| = max |aj |.
+                                                           1≤j≤n
+                   n
+With this norm K becomes a complete, locally compact metric group with Hausdorff dimension n.
+Since K n is locally compact, it has a Haar measure, which can be normalized so that |A| = 1. We
+shall also use the notation | · | to denote the cardinality of a finite set, however this is unlikely to
+generate confusion.
+    Given a field F with an absolute value | · | satisfying (2), we define OF = {x ∈ F : |x| ≤ 1}, which
+is called the valuation domain, and mF = {x ∈ F : |x| < 1}. It is easy to show that OF is a subring
+of F and that mF is an ideal of OF . Note that for every x ∈ OF with |x| = 1, its inverse x−1 ∈ F is
+
+
+                                                       2
+also contained in OF . Since every nonzero element of the quotient ring OF /mF is represented by an
+element x ∈ OF of absolute value 1, it follows that OF /mF is a field, and it is called the residue field
+of F . In our case of interest F = K, we have OK = A and mK = tA, so the residue field is A/tA ∼   = Fq .
+A non-archimedean local field can be defined as a field F with an absolute value | · | satisfying (2),
+that is complete as a metric space and such that its residue field OF /mF is a finite field. Thus Fq ((t))
+is a local field for every prime power q. The other main example of a local field is the field Qp of
+p-adic numbers, where p is a prime number. It is defined as the quotient field of the ring
+
+                                           Zp = Z[[t]]/(t − p),
+
+which is an integral domain. The elements of Zp are called p-adic integers. It can be shown (cf.
+[Wei74, Chapter 1] or [Jac89, Thm. 9.16]) that every non-archimedean local field is a finite extension
+of either Fp [[t]] or Qp , for some prime p. Conversely, for every finite separable extension L of either
+Fp [[t]] or Qp , it is possible to extend the absolute value of the base field uniquely so that L becomes a
+local field (cf. [Jac89, §9.8]).
+     Given 0 < c ≤ 1, we define a c-Kakeya set in K n as a compact set E ⊆ K n such that for any
+direction w ∈ Fq [[t]]n there is a set Jw ⊆ Fq [[t]] of measure ≥ c and bw ∈ K n such that bw + Jw .w ⊆ E.
+Acknowledgments. I would like to thank Marcelo Paredes for a careful reading of this article. I
+would also like to thank him, Román Sasyk and the anonymous referee for their useful comments and
+suggestions.
+
+
+2    Overview of the proof
+Both Arsovki’s article and this one use Dvir’s polynomial method, which can be succintly described
+in the following way: given a Kakeya set E of small size, find a nonzero polynomial g of low degree
+that vanishes on E; then use the fact that E contains lines in many different directions to show that
+either g or a related polynomial is zero, arriving at a contradiction.
+    In order to find the polynomial, Dvir’s original argument used the following Lemma whose proof
+is based on dimension counting:
+                                                                                                         
+Lemma 2. Let k, n, d > 0 be integers. Let F be a field, and let S ⊆ F n be a set with less than n+d   n
+elements. Then there is a nonzero polynomial g ∈ F [X1 , . . . , Xn ] of degree ≤ d such that g(s) = 0 for
+all s ∈ S.
+    Afterwards, a method of multiplicities [Dvi+13] was developed, which requires a polynomial that
+vanishes with high multiplicity at each point of E, and obtains better lower bounds in the finite field
+case. However, the proof of Theorem 1 does not require a stronger result than Lemma 2.
+    It is possible to use the polynomial method for local fields since the problem of bounding Hausdorff
+dimension can be discretized. As we shall see in the next section, the proof of Theorem 1 essentially
+boils down down to showing that every Kakeya set E ⊆ (A/tk A)n has at least q kn /u(k, n) elements,
+where u(k, n) .ε q kε for every ε > 0. By treating R = A/tk A as an Fq -vector space of dimension k
+and using lower bounds from the finite field case, one can show that |E| ≥ 2−kn q kn . However, this is
+essentially the best bound obtainable by applying the polynomial method over finite fields, since there
+are examples (cf. [SS08]) of Kakeya sets in Fkn q with & 2
+                                                               −kn kn
+                                                                   q elements. One problem with this
+approach is that polynomials with coefficients in Fq normally do not distinguish between an R-line
+and an arbitrary affine subspace of dimension k over Fq . A subexponential bound for u(k, n) was
+proved for n = 2 in [DH13], but the argument seemingly cannot be generalized to higher dimensions.
+    Arsovski’s innovation consists of working with a primitive pk -th root of unity ζ in an algebraic
+closure of Qp and taking advantage of the group isomorphism ζ Z ∼    = Z/pk Z to map the Kakeya set into
+               Z n           n
+a subset of (ζ ) ⊆ Qp (ζ) . Arsovski then applies the polynomial method on Qp (ζ)n . This solves the
+aforementioned problem, and has the added benefit of preserving some of the algebraic structure of
+E. This is because every line in Rn gets mapped into a translate of a subgroup isomorphic to Z/pk Z.
+
+                                                    3
+    This strategy is not viable over fields of characteristic p > 0, since the only p-th root of unity in
+these fields is 1. However, the multiplicative group ζ Z can be reinterpreted as the orbit of ζ under
+the action of the Galois group Gal(Qp (ζ)/Qp ), and this idea also works in positive characteristic.
+The Galois group needs to be isomorphic to R = A/tk A. Fortunately, the Existence Theorem in
+Local Class Field Theory tells us that for every open subgroup H ⊆ K × of finite index there is a
+corresponding abelian extension L/K with Galois group Gal(L/K) ∼              = K × /H. Since the additive
+            k                                            ×
+group A/t A can be realized as a quotient of K /H (for instance taking H = (1 + tk A) tZ ), this
+gives us the desired extension L/K. It is easy to show that L must necessarily be totally ramified.
+For this type of abelian extensions, Lubin–Tate theory gives a very concrete description of the Galois
+action. More precisely, this action can be realized as the quotient of an A-action on L by power series.
+Moreover, there is a polynomial fk whose splitting field is L, such that its sets of roots Λk is an
+additive group, and the elements of A acts as group endomorphisms, which makes Λk an A-module.
+Addition allows for “lines” in Λnk passing through the origin to be translated.
+    There is also a slight modification in the last part of the argument which arrives at a contradiction,
+in relation to the finite field case. In Dvir’s argument, after homogenizing the polynomial so that it
+can be evaluated in the projective space Pn (Fq ), one uses degree considerations to conclude that the
+homogenization vanishes at the hyperspace at infinity, which corresponds to the set of directions of
+affine lines in Fq . In terms of the original polynomial, this means that its homogeneous component of
+highest degree vanishes, so applying the Schwartz-Zippel Lemma yields a contradiction. In Arsovski’s
+method one works over a finite extension L of the local field. In this setting, we shall reduce the
+coefficients of the polynomial modulo the maximal ideal mL (which can be understood as “evaluating
+at t = 0”) to obtain a polynomial g ∈ B[z1 , . . . , zn ], where B = Fq [X], that takes small values at many
+points y ∈ C n , where C n ⊆ B n is a set that is in one-to-one correspondence with the set of directions
+of Rn . Thus C n is an analogue of the hyperspace at infinity, and the Schwartz-Zippel Lemma will be
+replaced by Lemma 7.
+
+
+3     Reduction to a covering theorem
+Let A = Fq [[t]]. A vector w ∈ An is called primitive or unitary if |w| = 1, this is equivalent to w
+having some coordinate that is not a multiple of t. The set of primitive vectors in An will be denoted
+by S n−1 (A). Likewise, if R = A/tk A, a vector w ∈ Rn is primitive if w ∈       / (tR)n , and we define
+  n−1         n        n                                   n
+S     (R) = R r (tR) , the set of primitive vectors in R .
+    As in [Dvi09] and [Ars21], we define an (ε, ν)-Kakeya set to be a set E ⊆ K n for which there is a
+set Ω ⊆ S n (A) of directions with measure |Ω| ≥ ν, such that for all w ∈ Ω there are bw ∈ K n and a
+subset Jw ⊆ A of measure ≥ ε such that bw + wJw ⊆ E. Similarly, we also say that a subset E ⊆ Rn
+is an (ε, ν)-Kakeya set modulo tk if there is a set Ω ⊆ S n−1 (R) with at least νq nk elements, such that
+for each w ∈ Ω there is a line ℓw ⊆ Rn in the direction of w with |ℓw ∩ E| ≥ εq k .
+    Theorem 1 will be deduced from the following result:
+Theorem 3. Let n, k > 0 be integers, and let ε, ν ∈ (0, 1). Then an (ε, ν)-Kakeya set in Fq [[t]]n
+cannot be covered by less than         νε k−1     
+                                         kn q     +n
+                                              n
+closed balls of radius q −k .
+   Theorem 3 also implies the Kakeya maximal conjecture for Fq [[t]]. As in the real case, this conjecture
+can be stated in several equivalent ways. Here it is preferable to state it in terms of the Kakeya maximal
+operator Kδ , which is defined below.
+   Let δ = q −k , where k > 0 is an integer. A unit line segment in An is a set of the form b + Aw,
+where b, w ∈ An and w is primitive. We define a δ-tube to be the closed δ-neighborhood of a unit line
+
+
+
+                                                     4
+segment, that is, a set of the form
+
+                                      Tδ = Tδ (b, w) = b + Aw + (tk A)n ,
+
+where w is a primitive vector. As one might expect, these sets have measure δ n−1 . Given an integrable
+function φ : An → R, we define its Kakeya maximal function Kδ φ : S n−1 (A) → R as
+                                                        Z
+                                                     1
+                                   Kδ φ(w) = sup n−1               |φ|.                             (3)
+                                             b∈An δ       Tδ (b,w)
+
+Theorem 4 (Kakeya maximal conjecture). Let k > 0 be an integer, let δ = q −k and let φ : An → R
+be a measurable function. Then
+
+                                   kKδ φkLn (S n−1 (A)) .n,q k n+2 kφknLn(An ) .                      (4)
+
+   The constant depends logarithmically on δ = q −k , which is also expected to happen in the real
+case. Similarly to [EOT10], the estimate (4) will be deduced from a distributional estimate
+
+                         |{ω ∈ S n−1 (R) : Kδ φ(ω) ≥ λ}| .n,q k n+1 λ−n kφknLn (An ) ,                (5)
+
+which will be shown to hold for all λ > 0. The proof of (5) exploits the fact that there are only finitely
+many tubes of a given size. Indeed, if w′ = w + atk for some a ∈ A, then Tδ (b, w′ ) = Tδ (b, w). This
+means that Kδ φ is constant on each coset b + (tk A)n , and so it determines a well-defined function on
+S n−1 (R). Moreover, each δ-tube is a disjoint union of closed balls of radius δ. In fact, if π : An → Rn
+denotes the projection to the quotient, the image of any δ-tube T = Tδ (b, w) is a line ℓ = π(b)+ Rπ(w)
+and T = π −1 (ℓ). Hence                  Z
+                                      1                X 1 Z
+                                                    −k
+                                            |φ| = q                |φ|
+                                   δ n−1 T                |Bv | Bv
+                                                               v∈ℓ
+                                      −1
+for anyRfunction φ, where Bv = π ({v}). Therefore the values of Kδ φ only depend on the averages
+|Bv |−1 Bv |φ|. In view of these considerations, the problem can be discretized as follows: given any
+function φ : Rn → R, let φ∗ : S n−1 (R) → R be the function
+                                                          1 X
+                                           φ∗ (w) = sup    k
+                                                              |φ(v)|,
+                                                     ℓkw q      v∈ℓ
+
+where the supremum is taken over all lines ℓ ⊆ Rn that point in the direction of w. Then the bound
+(5) is equivalent to
+Theorem 5 (Kakeya distributional estimate). Let k > 0 be an integer, let R = A/tk A and let
+φ : Rn → R be any function. Then
+
+                            |{w ∈ S n−1 (R) : φ∗ (w) ≥ λ}| .n,q k n+1 λ−n kφknℓn ,                    (6)
+
+for all λ > 0.
+    At the end of this section we will use Theorem 3 to prove Theorem 5 followed by the proof of
+Theorem 4. One can deduce Theorem 1 from the maximal conjecture in an analogous way to the real
+case. However, it is worth mentioning that Theorem 1 can also be deduced directly from Theorem 3
+using the following well-known argument based on q-adic decomposition1 . Let A ⊆ K n be a set of
+representatives for the (countable) quotient group (K/A)n . We may write any c-Kakeya set E as a
+disjoint union                                   [
+                                           E=       E(a),
+                                                       a∈A
+  1 This argument can be found in [Wol99], for instance.
+
+
+
+
+                                                           5
+                                                                              S
+where E(a) = E ∩ (a + An ). Afterwards we can form the set E ′ = a∈A (E(a) − a). Clearly
+dimH (E ′ ) ≤ dimH (E) and it is easy to see that E ′ is also a c-Kakeya set. Hence we may assume that
+E ⊆ An . To prove that dimH (E) = n we must show that H s (E) > 0 for all s < n.
+    Fix s < n. Let {Uj }∞ j=1 be a covering of E by bounded sets of diameter ≤ 1. We cover each Uj by
+a ball Dj = B(yj , rj ) of radius rj = diam Uj . Note that each rj is an integral power of q or zero. For
+k ∈ N, let
+                                        Σk = {j ∈ N : rj = q 1−k },
+                                 S                            n
+let νk = |Σk | and Ek = E ∩        j∈Σk Dj . For each w ∈ A , there exists aw ∈ E and a set Jw ⊆ A
+with |Jw | ≥ c such that aw + wJw ⊆ E. Let φw : Jw → E be the map φw (x) = aw + wx. By
+the pigeonhole principle, we may find an integer k = kw ≥ 1 such that |φ−1                       2
+                                                                               w (Ek )| ≥ cc1 /k , where
+          2                                                 n
+c1 = 6/π . If we denote by Ωm the set of points w ∈ A such that kw = m, applying the pigeonhole
+principle again we can find k ∈ N such that |Ωk | ≥ c1 /k 2 . This implies that Ek is an (ε, δ)-Kakeya
+set, where ε = δ = 2kc 2 . By Theorem 3 we have
+                                    δε k−2     
+                                      kn q     +n     (δε)n q (k−2)n     q kn
+                            νk ≥                    ≥          n
+                                                                     &n,q 5n .
+                                           n            (nk) n!          k
+
+Then
+                               ∞
+                               X
+                                     rjs ≥ νk q (1−k)s &n,q q k(n−s) k −5n &n,q 1.
+                               j=1
+
+The implicit constant does not depend on k, so this shows H s (E) > 0 for all s < n, and therefore
+dimH (E) = n.
+    We now turn to the proof of Theorem 5. We first prove it for characteristic functions. Note the
+slightly improved dependence on k.
+Proposition 6. For every subset E ⊆ Rn the following inequality holds:
+
+                               |{w ∈ S n−1 (R) : 1∗E (w) ≥ λ}| . k n λ−n |E|,                              (7)
+
+where 1E denotes the characteristic function of E.
+Proof. Fix λ > 0 and let Ω = {w ∈ S n−1 (R) : φ∗ (w) ≥ λ}. First assume that |Ω| ≥ 12 q kn . For each
+w ∈ Ω there is a line ℓw in the direction of w such that |E ∩ ℓw | = φ∗ (w)q k ≥ λq k . Hence E is a
+(λ, α)-Kakeya set modulo tk , where α = q −kn |Ω| ≥ 12 . Applying theorem 3 we get that
+                                    λ       k−1
+                                                            
+                                      4kn q             +n            λn (k−1)n       λn
+                           |E| ≥                                 &n      q      & q,n    |Ω|.
+                                              n                       kn              kn
+
+For a general set, we use a random rotation trick. Let J = |Ω| and let m > 0 be the least integer such
+that mJ S≥ 21 q kn . Pick m random
+                              Sm invertible matrices R1 , . . . , Rm ∈ GLn (R) that are independent and
+           m
+set Ω = i=1 Ri (Ω), E ′ = i=1 Ri (E). By independence, each w ∈ S n−1 (R) is contained in Ω′ with
+     ′
+
+probability                                     m                  m
+                                          J                         2
+                              1 − 1 − n−1           ≥1− 1−               & 1.
+                                     |S     (R)|                   m
+By linearity of expectation, it follows that E|Ω′ | & |S n−1 (R)|, so we can choose specific values for
+R1 , . . . , Rm so that |Ω′ | & |S n−1 (R)|. Fixing those matrices, we also have that E ′ contains a proportion
+of at least λ2 of the line ℓw for every w ∈ Ω′ . By the previous part, we get
+
+                                                             λn ′      λn m
+                                      m|E| ≥ |E ′ | &           |Ω | &      |Ω|,
+                                                             kn         kn
+which becomes (7) after rearranging the terms.
+
+                                                                 6
+Proof of Theorem 5. We may assume that φ is non-negative. Note that φ∗ (w) ≥ q −k(2−1/n) kφkℓn for
+all w ∈ S n−1 (R). Indeed, given such w we can partition Rn into M = q k(n−1) parallel lines L1 , . . . , LM
+in the direction of w. Then
+                                                                   M
+                                                                                  !1/n
+                       ∗        −k                        −k   1 X        n
+                      φ (w) = q     max kφkℓ1 (Lj ) ≥ q               kφkℓ1 (Lj )
+                                   1≤j≤M                      M j=1
+                                         M
+                                                        !1/n
+                                −k    1 X      n
+                             ≥q             kφkℓn (Lj )      ≥ q −k(2−1/n) kφkℓn (Rn ) .
+                                     M j=1
+
+Thus we may assume that λ ≥ q −k(2−1/n) kφkℓn from now on. Consider the set
+                                  
+                             D = v ∈ Rn : φ(v) ≥ 2q −2k kφkℓn ,
+
+and let φD (v) = φ(v)1D (v). Observe that
+                          X                      X
+                               φ(v)n < 2n q −2kn   kφknℓn = 2n q −kn kφknℓn ,
+                             v∈Rn \D                      v∈Rn
+
+                                                      9
+so kφ − φD kℓn < 2q −k kφkℓn and therefore kφD kℓn > 10 kφkℓn . Similarly, it is easy to show that
+
+                                           φ∗ (w) ≤ φ∗D (w) + 2q −2k kφkℓn ,
+for every w ∈ S n−1 (R), which implies that
+
+                                       {w : φ∗ (w) ≥ λ} ⊆ {w : φ∗D (w) ≥ 10
+                                                                          9
+                                                                            λ}
+
+since λ ≥ q −k(2−1/n) kφkℓn . Replacing φ with φD we may assume that the range of φ is contained in
+{0} ∪ (q −2k kφkℓn , kφkℓn ]. For 0 ≤ j < 2k define
+
+                           Ej = {v ∈ Rn : q −j−1 kφkℓn < φ(v) ≤ q −j kφkℓn },
+                                                      P2k−1
+and let ψj = q −j kφkℓn 1Ej . Then the function ψ = j=0 ψj satisfies q1 ψ(v) < φ(v) ≤ ψ(v) for all v.
+In particular, q1 kψkℓn < kφkℓn ≤ kψkℓn and q1 ψ ∗ (w) < φ∗ (w) ≤ ψ ∗ (w) for all w ∈ S n−1 (R). For each
+                   n/(n+1)
+j let cj = u1 kψj kℓn        , where
+                                                      2k−1
+                                                       X            n
+                                                 u=          kψj kℓn+1
+                                                                    n  .
+                                                       j=0
+        P2k−1
+Since    j=0    cj = 1, we have
+                                                         2k−1
+                                                          [
+                                  {w : ψ ∗ (w) ≥ λ} ⊆            {w : ψj∗ (w) ≥ cj λ},
+                                                          j=0
+
+so applying Proposition 6 to each ψj we get
+                                        2k−1                     2k−1
+                                k n X kψj knℓn     k n un X           n
+         |{w : ψ ∗ (w) ≥ λ}| .    n        n     =     n
+                                                               kψj kℓn+1
+                                                                      n
+                                λ j=0     cj         λ    j=0
+                                    2k−1
+                                                   !n+1                  2k−1
+                                kn X            n
+                                                           kn         n
+                                                                          X             k n+1
+                               = n       kψj kℓn+1
+                                                n        ≤   n
+                                                               (2k) n+1       kψj knℓn . n kψknℓn ,
+                                λ    j=0
+                                                           λ              j=0
+                                                                                         λ
+
+where the penultimate step uses Hölder’s inequality. Finally, the estimate (6) follows from the last
+inequality since |{w : φ∗ (w) ≥ λ}| ≤ |{w : ψ ∗ (w) ≥ λ}| and kψkℓn ≤ qkφkℓn .
+
+                                                             7
+Proof of theorem 4. Use the identity
+                                                           Z ∞
+                          kKδ φ(w)kLn (S n−1 (A)) = n                |{w : Kδ φ(w) ≥ λ}| λn−1 dλ.
+                                                             0
+
+Let C(n, q) > 0 be the implicit constant in (5). In the proof of Theorem 5 it was shown that
+q −k(2−1/n) kψkℓn ≤ ψ ∗ (v) ≤ kψkℓn for every function ψ : Rn → R. Since Kδ φ can be expressed in
+terms of a discrete maximal function associated to φ, it follows that the same holds for Kδ φ. Then
+we have
+                                         Z kφk
+             kKδ φ(w)kLn (S n−1 (A)) = n       |{w : Kδ φ(w) ≥ λ}| λn−1 dλ
+                                                  0
+                                                Z q−2k kφk                    Z kφk
+                                                                                                                 dλ
+                                          ≤n                 λn−1 dλ + n                     C(n, q)k n+1 kφkn
+                                                  0                               q−2k kφk                        λ
+                                          ≤ kφkn + nC(n, q)k n+1 kφkn ln(q 2k )
+                                          = (1 + 2n ln(q)C(n, q)k n+2 )kφkn .
+
+
+4      A variant of the Schwartz-Zippel Lemma
+It remains to prove Theorem 3. For this we shall need Lemma 7, which is an adaptation of Lemma 6
+from [Ars21] to our case of interest. In order to use the polynomial method we need to introduce an
+additional variable X. This will be the main variable, while all polynomials and power series in t should
+be treated as scalars, since they belong to the base ring A. Let B = Fq [X] and Ak = Fq ⊕ · · · ⊕ Fq tk−1 .
+                                                                                 Pk−1        j
+We associate to each a = a0 + a1 t + · · · + ak−1 tk−1 ∈ Ak a polynomial sa = j=0 aj X q ∈ B. Let
+C = {sa : a ∈ Ak }.
+Lemma 7 (Discrete valuation Schwartz-Zippel lemma). Let f ∈ B[z1 , . . . , zn ] a nonzero polynomial
+whose leading term with respect to the lexicographical ordering is cα z α , where α = (α1 , . . . , αn ) with
+αj < q k for all j. Then for all 0 < θ ≤ 1, the number of elements y ∈ C n such that vX (f (y)) ≥
+vX (cα ) + θnq k is less than
+                                    max{q nk , |α|kq k(n−1)+1 /θ},
+where |α| = α1 + · · · + αn .
+Proof. We proceed by induction on n. Starting with the base case n = 1, assume for the sake of
+contradiction that there
+                        is aset L ⊆ Ak of size ≥ αqk/θ such that vX (f (y)) ≥ vX (cα ) + θq k for all
+y ∈ CL . Let d = logq kθ        ≥ 1. Then L must intersect at least q −d |L| > α congruence classes
+         k−d
+modulo t     , so we may find L′ ⊆ L of size α + 1 that does not contain a pair of elements that are
+congruent modulo tk−d . By Lagrange Interpolation2 we have
+                                   X           Y    z 1 − sw
+                                       f (su )               = f (z1 ),
+                                                    s u − sw
+                                     ′  u∈L     ′      w∈L \{u}
+
+so looking at the degree α coefficients we obtain
+                                                                              !−1
+                                       X                 Y
+                                             f (su )                 (su − sw )       = cα .
+                                      u∈L′             w∈L′ \{u}
+
+Then there must exist u0 ∈ L′ such that
+                                   Q                        
+                                                                  k
+                                vX    w∈L′ \{u0 } (su0 − sw ) ≥ θq .
+
+    2 This identity holds for polynomials over any field, even in positive characteristic, cf. [FIS89, §1.6]
+
+
+
+
+                                                                 8
+However, note that vX (sw − su ) = vX (sw−u ) = q vt (w−u) , so
+                                                    !
+                                  Y                           X
+                         vX             (su0 − sw ) =                                  q vt (w−u0 ) .
+                                     w∈L′ \{u0 }                       w∈L′ \{u0 }
+
+For 0 ≤ j ≤ k − d − 1, define
+
+                                    nj = |{w ∈ L′ \ {u0 } : vt (w − u0 ) = j}|,
+
+                                    Nj = |{w ∈ L′ \ {u0 } : vt (w − u0 ) ≥ j}|.
+By Abel’s summation formula we have
+
+                           X                        k−d−1
+                                                     X                          k−d−1
+                                                                                 X
+                                   q vt (w−u0 ) =           nj q j = N 0 +               Nj (q j − q j−1 ).             (8)
+                     w∈L′ \{u0 }                     j=0                         j=1
+
+
+Now note that Nj ≤ q k−d−j since otherwise the pigeonhole principle would give us two elements of
+L′ which are congruent modulo tk−d . And clearly Nj ≤ α ≤ q r , where r = ⌈logq (α)⌉. For j = 0 we
+have N0 = α ≤ q k−d , so r ≤ k − d. Thus we may bound (8) by
+
+                X                                k−d−r
+                                                  X                                k−d
+                                                                                   X
+                          q vt (w−u0 ) ≤ q r +           q r (q j − q j−1 ) +                  q k−d−j (q j − q j−1 )
+            w∈L′ \{u0 }                           j=1                           j=k−d−r+1
+                                                         k−d
+                                                         X
+                                     = q k−d +                     q k−d−j (q j − q j−1 )
+                                                    j=k−d−r+1
+                                          k−d
+                                     <q          + rq k−d = (r + 1)q k−d ≤ kq k−d ≤ θq k .
+
+We have reached a contradiction, therefore |L| < αqk/θ. Now assume that n ≥ 2, and write f as
+
+                                       f = z1α1 g(z2 , . . . , zn ) + h(z1 , . . . , zn ),
+
+where degz1 (h) < α1 . Fix a tuple y ′ = (y2 , . . . , yn ) ∈ C n−1 and consider two cases. If
+
+                                         vX (g(y ′ )) ≥ vX (cα ) + θ(n − 1)q k ,
+
+there are ≤ (α2 + · · · + αn )kq k(n−2)+1 /θ number of (n − 1)-tuples for which this can hold, which gives
+us at most (α2 + · · · + αn )kq k(n−1)+1 /θ tuples (y1 , . . . , yn ) ∈ C n . Suppose instead that
+
+                                         vX (g(y ′ )) < vX (cα ) + θ(n − 1)q k .
+
+Then P (z) = f (z, y ′ ) is a degree α1 polynomial with leading coefficient g2 (y ′ ). The condition
+
+                                       vX (f (z, y ′ )) ≥ vX (cα ) + θ(n − 1)q k                                        (9)
+
+has less solutions than vX (P (z)) ≥ vX (g(y ′ )) + θq k . And this last inequality has at most α1 kq/θ
+solutions in z for each y ′ . Thus the number of tuples (z, y ′ ) satisfying (9) is ≤ α1 kq k(n−1)+1 /θ in the
+second case. Adding the two bounds gives the result.
+
+
+5     Lubin–Tate theory
+This section is dedicated to establish some results from Lubin–Tate theory needed to prove Theorem
+3, followed by the proof of said Theorem. Lemmas 8 and 10 are special cases of more general theorems
+in this area. The interested reader may consult [Mil20b, Chapter 1].
+
+                                                               9
+    From now on let f (X) = tX + X q . This is an additive polynomial, as is satisfies the equation
+f (X +Y ) = f (X)+f (Y ). The polynomial method will be applied on the set of roots of an iterate of f .
+But first we shall construct the power series [a]f which will determine the action of R = A/tk A on the
+set of roots. GivenPtwo  power series a(X), b(X) with constant term 0, one can define its composition
+                     ∞
+as follows: if a = j=1 cj X j , then
+                                                              ∞
+                                                              X
+                                                a ◦ b(X) =          cj bj (X).
+                                                              j=1
+
+Although this is an infinite sum, the computation of each coefficient in the composition only requires
+a finite number of operations since for any integer m ≥ 0, the coefficient of X m in bj (X) becomes 0
+once j > m. We shall denote by b◦m the m-fold composition of b with itself.
+Lemma 8. (a) For every a ∈ A, there is a unique power series [a]f ∈ A[[X]] such that [a]f (X) ≡ aX
+   (mod X 2 ) and [a]f ◦ f = f ◦ [a]f . Moreover, [a]f is additive.
+ (b) [a + b]f = [a]f + [b]f and [ab]f = [a]f ◦ [b]f for all a, b ∈ A. Moreover, [c]f = cX for all c ∈ Fq
+     and [tm ]f = f ◦m for every integer m > 0.
+ (c) If a = c0 + c1 t + · · · + ck−1 tk−1 ∈ Ak with cj ∈ Fq , then
+                                                      X
+                                              [a]f =       cj f ◦j (X)                                      (10)
+                                                             0≤j<k
+
+     and [a]f ≡ sa (X) (mod t).
+Proof.   (a) We define a sequence (am )m≥0 recursively. Its first term is a0 = a, and for m > 0 we set
+                                                             aqm−1 − am−1
+                                                    am =                  .                                 (11)
+                                                                tq m − t
+                                                                                             m
+     Note that all the elements of the sequence belong to A. Indeed, since tq −1 − 1 is a unit in A,
+     it suffices to show that aqm−1 − am−1 is a multiple of t. If c0 is the degree-0 term of am−1 , then
+     the degree-0 term of aqm−1 − am−1 is cq0 − c0 = 0 since c0 ∈ Fq , which proves the claim.
+                                  P∞         m
+     We now claim that [a]f = m=0 am X q has the desired properties. The first congruence in (a)
+     holds since a0 = a. In regards to the second one, we have
+                                   ∞
+                                   X                 m   X∞        m m           m+1
+                                                                                      
+                        [a]f ◦ f =    am (tX + X q )q =       a m tq X q + X q
+                                     m=0                               m=0
+                                                    ∞
+                                                    X          m       m
+                                   = a0 tX +              am tq + am−1 X q ,
+                                                  m=1
+
+     whereas
+                             ∞
+                             X                      ∞
+                                                    X                             ∞
+                                                                                  X
+                                           qm                     m+1                               m
+                f ◦ [a]f =         tam X        +         aqm X q     = a0 tX +         tam + aqm−1 X q .
+                             m=0                    m=0                           m=1
+
+     These two power series are equal as a consequence of the recursive equation (11) defining (an )n .
+                                        m
+     Finally, [a]f is additive since X q is an additive polynomial for all m ≥ 0.
+ (b) The power series φ(X) = [a]f + [b]f satisfies φ(X) ≡ aX + bX (mod X 2 ) and
+                             φ ◦ f = [a]f ◦ f + [b]f ◦ f = f ◦ [a]f + f ◦ [b]f = f ◦ φ,
+     since f is an additive polynomial. Hence, the uniqueness of [a + b]f implies that [a + b]f =
+     [a]f + [b]f . The proof of the equation [ab]f = [a]f ◦ [b]f is similar. If c ∈ Fq then f (cX) =
+     tcX + cq X q = tcX + cX q = cf (X), so [c]f = cX. Finally, note that for every integer m > 0, the
+     polynomial f ◦m (X) commutes with f and its linear coefficient is tm . It follows that [tm ]f = f ◦m .
+
+                                                             10
+ (c) Equation (10) is a direct consequence of (b). The last congruence follows then from the fact that
+                   j
+     f ◦j (X) ≡ X q (mod t) for every integer j ≥ 0.
+    For general a ∈ A, define Pa (X) = [πk (a)]f , where πk (a) ∈ Ak is the remainder of a modulo tk .
+Let K a be the algebraic closure of K. Given an integer k > 0, let Λk ⊆ K a be the set of roots of f ◦k
+and let L = K(Λk ) be the field generated by these roots. Note that Λk is an additive subgroup of L,
+since f ◦k is an additive polynomial. Recall that it is possible to extend the absolute value of K to
+L in a unique way. Given a power series h = a0 + a1 X + · · · ∈ A[[X]] and an element x0P∈ L with
+                                                                                              ∞
+absolute value |x0 | < 1, it is possible to evaluate h at x0 since the infinite sum h(x0 ) = j=0 aj xj0
+converges.
+Proposition 9. Let h(X) = a0 + a1 X + · · · + am X m ∈ A[X] be a polynomial such that |a0 | = q −1 and
+|aj | < 1 for all 1 < j < m, but |am | = 1. Then any root ζ ∈ K a of h has absolute value |ζ| = q −1/m .
+Proof. See [Mil20a, Prop. 7.55].
+    For every k > 0, the polynomial f ◦k (X) satisfies the conditions of Proposition 9, so it is possible
+to evaluate power series at points in Λk . The map A × Λk → Λk , a · ζ = [a]f (ζ) gives Λk an A-module
+structure. This follows from Lemma 8.
+Lemma 10. Let K a be the algebraic closure of K = Fq ((t)), let Λk ⊆ K a be the set of roots of f ◦k (X)
+and let L = K(Λk ). Then
+ (a) Λk is isomorphic to A/tk A as an A-module.
+ (b) L/K is a totally ramified extension. That is, if OL ⊆ L is the valuation domain of L and mL is
+     its maximal ideal, then OL /mL ∼
+                                    = Fq .
+Proof. See [Mil20b, Prop. 3.4, Thm. 3.6].
+Proof of Theorem 3. Let E ⊆ Fq [[t]]n be an (ε, ν)-Kakeya set. Note that every closed ball of radius
+q −k in An is a coset of the form a + tk An , a ∈ An . Hence the least number of closed balls of radius q −k
+needed to cover E is equal to the cardinality of the projection E    e of E onto (A/tk A)n . The Kakeya
+                                                            k   n
+property of E implies that there is a subset Ω ⊆ (A/t A) of size at least νq kn , such that for all
+w ∈ Ω there exist bw = (bw,1 , . . . , bw,n ) ∈ (A/tk A)n and a set Jw ⊆ A/tk A of size at least εq k such
+                                                                               
+that bw + wJw ⊆ E.  e Suppose for the sake of contradiction that |E|   e < β+n , where β = ⌊ νε q k−1 ⌋.
+                                                                            n                   kn
+    Let ζ1 ∈ Λk be a generator of Λk as an (A/tk A)-module, and consider the set
+                                                                                             e
+                            S = {([s1 ]f (ζ1 ), . . . , [sn ]f (ζ1 )) : (s1 , . . . , sn ) ∈ E}.
+
+By lemma 2 there is a nonzero polynomial g(z1 , . . . , zn ) ∈ L[z1 , . . . , zn ] with degree at most β that
+vanishes on S. We may assume that g ∈ OL [z1 , . . . , zn ] and that its reduction modulo mL is nonzero.
+Given w ∈ Ω, define cw,j = [bw,j ]f (ζ1 ) and
+
+                             hw (X) = g (cw,1 + Pw1 (X), . . . , cw,n + Pwn (X)) .
+
+For all a ∈ Jw we have
+
+                         0 = g ([bw,1 + w1 a]f (ζ1 ), . . . , [bw,n + wn a]f (ζ1 ))
+                           = g (cw,1 + [w1 ]f (ζa ), . . . , cw,n + [wn ]f (ζa )) = hw (ζa ),
+                            Q
+where ζa = [a]f (ζ1 ). Thus a∈Jw (X − ζa ) | hw (X), which implies that the reduction hw (X) ∈ Fq [X]
+modulo mL satisfies vX (hw ) ≥ |Jw | ≥ εq k . Since ζ1 ∈ mL and [bw,j ]f is a polynomial with constant
+term equal to zero, it follows that also cw,j ∈ mL for all j. Therefore
+                                                                       
+                                  hw (X) = g P w1 (X), . . . , P wn (X) ,
+
+                                                            11
+and each P wj ∈ C. Applying Lemma 7 to g with θ = ε/n, we get
+                                                                n
+                                   νq kn ≤ |Ω| < βkq k(n−1)+1     ≤ νq kn ,
+                                                                ε
+which is absurd. This concludes the proof.
+Remark. It is possible to use Lubin–Tate polynomials to prove the Kakeya conjecture for p-adic
+fields, although some adjustments have to be made. In first place, one can no longer take f to
+be an additive polynomial, since the only additive polynomials in characteristic zero are the linear
+polynomials f (X) = aX with constant term equal to zero. However, it can be shown that if f ∈ Qp [X]
+satisfies f (X) ≡ pX (mod X 2 ) and f (X) ≡ X p (mod p), then there is a unique formal group law
+F (X, Y ) ∈ Qp [[X, Y ]] such that f (F (X, Y )) = F (f (X), f (Y )). Instead of the additive property,
+the map [ · ]f satisfies [a + b]f = F ([a]f , [b]f ) for all a, b ∈ Zp . Thus one should choose f so that the
+corresponding power series F (X, Y ) and [a]f take a relatively simple form. A sensible choice is given by
+f (X) = (1+X)p −1, whose associated formal group law is F (X, Y ) = X +Y +XY = (1+X)(1+Y )−1.
+                               k
+The roots of f ◦k = (1 + X)p − 1 are of the form 1 + ζ j , where 0 ≤ j < pk and ζ is a primitive pk -th
+root of unity. Therefore, using this choice of f one recovers Arsovski’s proof.
+
+
+References
+[Ars21]     B. Arsovski. “The p-adic Kakeya conjecture”. In: arXiv e-prints, arXiv:2108.03750 (Aug.
+            2021), arXiv:2108.03750. arXiv: 2108.03750 [math.NT].
+[BC21]      B. Bukh and T.-W. Chao. “Sharp density bounds on the finite field Kakeya problem”. In:
+            Discrete Anal. (2021), Paper No. 26, 9.
+[Bou00]     J. Bourgain. “Harmonic analysis and combinatorics: how much may they contribute to
+            each other?” In: Mathematics: frontiers and perspectives. Amer. Math. Soc., Providence,
+            RI, 2000, pp. 13–32.
+[Car18]     X. Caruso. “Almost all non-archimedean Kakeya sets have measure zero”. In: Confluentes
+            Math. 10.1 (2018), pp. 3–40.
+[DD21]      M. Dhar and Z. Dvir. “Proof of the Kakeya set conjecture over rings of integers modulo
+            square-free N ”. In: Comb. Theory 1 (2021), Paper No. 4, 21.
+[DH13]      E. P. Dummit and M. Hablicsek. “Kakeya sets over non-Archimedean local rings”. In:
+            Mathematika 59.2 (2013), pp. 257–266.
+[Dha21]     M. Dhar. “The Kakeya Set Conjecture for Z/N Z for general N ”. In: arXiv e-prints,
+            arXiv:2110.14889 (Oct. 2021), arXiv:2110.14889. arXiv: 2110.14889 [math.CO].
+[Dvi+13] Z. Dvir, S. Kopparty, S. Saraf, and M. Sudan. “Extensions to the method of multiplicities,
+         with applications to Kakeya sets and mergers”. In: SIAM J. Comput. 42.6 (2013), pp. 2305–
+         2328.
+[Dvi09]     Z. Dvir. “On the size of Kakeya sets in finite fields”. In: J. Amer. Math. Soc. 22.4 (2009),
+            pp. 1093–1097.
+[EM03]      G. A. Edgar and C. Miller. “Borel subrings of the reals”. In: Proc. Amer. Math. Soc. 131.4
+            (2003), pp. 1121–1129.
+[EOT10]     J. S. Ellenberg, R. Oberlin, and T. Tao. “The Kakeya set and maximal conjectures for
+            algebraic varieties over finite fields”. In: Mathematika 56.1 (2010), pp. 1–25.
+[FIS89]     S. H. Friedberg, A. J. Insel, and L. E. Spence. Linear algebra. Second. Prentice Hall, Inc.,
+            Englewood Cliffs, NJ, 1989, pp. xiv+530. isbn: 0-13-537102-3.
+[Fra16]     R. Fraser. “Kakeya-type sets in local fields with finite residue field”. In: Mathematika 62.2
+            (2016), pp. 614–629.
+
+                                                     12
+[Gou97]     F. Q. Gouvêa. p-adic numbers. Second. Universitext. An introduction. Springer-Verlag,
+            Berlin, 1997, pp. vi+298. isbn: 3-540-62911-4.
+[HRZ19]     J. Hickman, K. M. Rogers, and R. Zhang. Improved bounds for the Kakeya maximal con-
+            jecture in higher dimensions. 2019.
+[HW18]      J. Hickman and J. Wright. “The Fourier restriction and Kakeya problems over rings of
+            integers modulo N ”. In: Discrete Anal. (2018), Paper No. 11, 54.
+[Jac89]     N. Jacobson. Basic algebra. II. Second. W. H. Freeman and Company, New York, 1989,
+            pp. xviii+686. isbn: 0-7167-1933-9.
+[KT02]      N. H. Katz and T. Tao. “New bounds for Kakeya problems”. In: vol. 87. Dedicated to the
+            memory of Thomas H. Wolff. 2002, pp. 231–263.
+[KZ19]      N. H. Katz and J. Zahl. “An improved bound on the Hausdorff dimension of Besicovitch
+            sets in R3 ”. In: J. Amer. Math. Soc. 32.1 (2019), pp. 195–259.
+[KZ21]      N. H. Katz and J. Zahl. “A Kakeya maximal function estimate in four dimensions using
+            planebrushes”. In: Rev. Mat. Iberoam. 37.1 (2021), pp. 317–359.
+[Mil20a]    J. S. Milne. Algebraic Number Theory (v3.08). Available at www.jmilne.org/math/. 2020.
+[Mil20b]    J. S. Milne. Class Field Theory (v4.03). Available at www.jmilne.org/math/. 2020.
+[SS08]      S. Saraf and M. Sudan. “An improved lower bound on the size of Kakeya sets over finite
+            fields”. In: Anal. PDE 1.3 (2008), pp. 375–379.
+[Tao01]     T. Tao. “From rotating needles to stability of waves: emerging connections between com-
+            binatorics, analysis, and PDE”. In: Notices Amer. Math. Soc. 48.3 (2001), pp. 294–303.
+[Wei74]     A. Weil. Basic number theory. Third. Die Grundlehren der mathematischen Wissenschaften,
+            Band 144. Springer-Verlag, New York-Berlin, 1974, pp. xviii+325.
+[Wol95]     T. Wolff. “An improved bound for Kakeya type maximal functions”. In: Rev. Mat.
+            Iberoamericana 11.3 (1995), pp. 651–674.
+[Wol99]     T. Wolff. “Recent work connected with the Kakeya problem”. In: Prospects in Mathematics.
+            Princeton, NJ, 1999, pp. 129–162.
+[Zah21]     J. Zahl. “New Kakeya estimates using Gromov’s algebraic lemma”. In: Adv. Math. 380
+            (2021), Paper No. 107596, 42.
+
+
+Department of Mathematics, University of Wisconsin, Madison WI 53706
+E-mail address: amsalvatore@wisc.edu
+
+
+
+
+                                                 13
+

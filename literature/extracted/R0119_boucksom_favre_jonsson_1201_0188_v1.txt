@@ -1,0 +1,2277 @@
+                                          SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION
+
+                                                      SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+arXiv:1201.0188v1 [math.AG] 30 Dec 2011
+
+
+
+
+                                                Abstract. Let X be a smooth projective Berkovich space over a complete discrete valu-
+                                                ation ﬁeld K of residue characteristic zero, and assume that X is deﬁned over a function
+                                                ﬁeld admitting K as a completion. Let further µ be a positive measure on X and L be
+                                                an ample line bundle such that the mass of µ is equal to the degree of L. Then we show
+                                                the existence a continuous semipositive metric whose associated measure is equal to µ in
+                                                the sense of Zhang and Chambert-Loir. This we do under a technical assumption on the
+                                                support of µ, which is, for instance, fulﬁlled if the support is a ﬁnite set of divisorial points.
+                                                Our method draws on analogues of the variational approach developed to solve complex
+                                                Monge-Ampère equations on compact Kähler manifolds by Berman, Guedj, Zeriahi and the
+                                                ﬁrst named author, and of Kolodziej’s C 0 -estimates. It relies in a crucial way on the com-
+                                                pactness properties of singular semipositive metrics, as deﬁned and studied in a companion
+                                                article.
+
+
+
+
+                                                                                         Contents
+                                           1. Introduction                                                                                            2
+                                           2. Background                                                                                              8
+                                           3. Monge-Ampère operator on bounded functions                                                            16
+                                           4. Capacity and quasicontinuity                                                                           20
+                                           5. Locality and the comparison principle                                                                  23
+                                           6. Energy                                                                                                 25
+                                           7. Envelopes and diﬀerentiability                                                                         30
+                                           8. The Monge-Ampère equation                                                                             33
+                                           9. Curves and toric varieties                                                                             38
+                                           Appendix A. Orthogonality                                                                                 40
+                                           References                                                                                                45
+
+
+
+
+                                           Date: October 29, 2018.
+                                                                                                1
+2                 SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+                                           1. Introduction
+   The goal of this paper is to construct continuous solutions to a non-Archimedean analogue
+of certain complex Monge-Ampère equations on projective manifolds, which arose in complex
+geometry as more degenerate versions of the by-now classical equations considered by Aubin,
+Calabi and Yau. More speciﬁcally, our main result can be understood as an analogue of a
+fundamental result by S. Kolodziej [Kol98].
+   Let us brieﬂy recall the complex statement that we have in mind. Let L be an ample
+line bundle on a smooth complex projective variety X of dimension n. Let µ be a positive
+measure on X, of mass equal to c1 (L)n . It was shown in [Kol98] that under a mild regularity
+assumption on µ (which is for instance satisﬁed as soon as µ has Lp -density with respect to
+Lebesgue measure for some p > 1), there exists a continuous metric k · k on L, unique up
+to a multiplicative factor, whose curvature form c1 (L, k · k) is a closed positive (1, 1)-current
+satisfying c1 (L, k · k)n = µ in the sense of pluripotential theory [BT82]. This result relied
+on the work of Aubin, Calabi and Yau, which culminated in the celebrated article [Yau78],
+where it was shown that the solution metric is smooth when µ is a smooth positive volume
+form on X.
+   We next turn to the non-Archimedean analogue, referring to §2 for more details. Let
+K be a complete discrete valuation ﬁeld whose residue ﬁeld k has characteristic zero, so
+that K ≃ k((t)). Let X be a smooth projective variety over K, and write n = dim X.
+Thanks to the non-Archimedean GAGA principle, it is reasonable to also denote by X
+the corresponding K-analytic space in the sense of Berkovich, whose underlying topological
+space is compact Hausdorﬀ. A model of X is a normal scheme X that is ﬂat and projective
+over S := Spec k[[t]], and whose generic ﬁber can be identiﬁed with X.
+   Consider a ample line bundle L on X. A model metric on L is a metric deﬁned by a
+extension L ∈ Pic(X )Q of L to some model X . Such a metric is called semipositive if L is
+nef, i.e. has non-negative degree on all proper curves of the special ﬁber of X . S.-W. Zhang
+introduced in [Zha95] the more ﬂexible notion of semipositive continuous metric as the
+uniform limit of semipositive model metrics.1 In this context, A. Chambert-Loir [CL06]
+deﬁned the Monge-Ampère measure c1 (L, k · k)n of a semipositive continuous metric k · k on
+L. It is a positive Radon measure on X, of mass deg L.
+   V. Berkovich constructed in [Ber99] the skeleton associated to a polystable model of X.
+Since we are assuming K to have residue characteristic zero, it is easier to rely on resolution
+of singularities and instead consider SNC models, i.e. models whose special ﬁber has simple
+normal crossing support (but is not necessarily reduced, as opposed to a semistable model).
+To each SNC model X is associated a dual complex ∆X that encodes the combinatorics of
+the intersections of the components of the special ﬁber, and which embeds in the Berkovich
+space X just as skeletons do. Any ﬁnite set  S of divisorial points is contained in the dual
+complex of some SNC model; in particular X ∆X is dense in X.
+   We can now state our main result. We say that X is algebraizable if there exists a (one-
+variable) function ﬁeld F admitting K as a completion and a smooth projective F -scheme
+Y such that X = YK .
+Theorem A. Let K be a complete discrete valuation field of residue characteristic zero. Let
+X be a smooth projective K-variety that is algebraizable. Let L ∈ Pic(X) be an ample line
+    1We refer to Table 1 in §2.6 below for a comparison of our terminology with existing terminology.
+               SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                          3
+
+bundle and µ be a positive Radon measure on X of mass c1 (L)n . If we further assume that
+µ is supported on the dual complex of some SNC model of X, then there exists a continuous,
+semipositive metric k · k on L such that
+                                   c1 (L, k · k)dim X = µ .                              (1.1)
+This metric is furthermore unique up to a multiplicative constant.
+  Even though the result is most likely true without this assumption, the algebraizability
+condition plays an essential role in our proof, as we shall explain below. Note that the line
+bundle L is not assumed to be deﬁned over a function ﬁeld.
+   The uniqueness part in Theorem A follows from a result of X. Yuan and S.-W. Zhang
+[YZ10] asserting more generally that a continuous semipositive metric k · k is uniquely de-
+termined up to a constant by its Monge-Ampère measure. Their proof is inspired by the
+one given by Blocki [Blo03] in the complex setting.
+   Our approach does not give any information on the regularity of the metric besides con-
+tinuity. It would be interesting to further investigate this issue, for instance when µ is
+supported on ﬁnitely many divisorial points. We refer to §9 for a discussion of this problem
+in the case of toric varieties, based on the recent work [BPS11].
+   Versions of Theorem A are already known in a few cases. For curves (and in fact over any
+complete non-Archimedean, non-trivially valued ﬁeld), it can easily be deduced from results
+of A. Thuillier [Thu05], who developed a theory of singular semipositive metrics on analytic
+curves that is completely analogous to the complex case. Solving (1.1) for curves boils down
+to a system of linear equations and relies on the negativity of the intersection form of the
+special ﬁber of a suitable model, see §9. Alternatively, one can exploit the structure of the
+Berkovich space as a metrized graph as in [BR10, FJ04].
+   In higher dimensions, Y. Liu [Liu10] treated the related case when X is a totally degener-
+ate abelian variety over Cp , and µ is a (smooth) measure supported on the dual complex of
+the canonical formal model of X, as constructed by Mumford. By exploiting the fact that
+this dual complex is a compact (real) torus, one can translate the equation c1 (L, k · k)n = µ
+into a (real) Monge-Ampère equation on this real torus, and apply Yau’s result to its com-
+plexiﬁcation to obtain the metric.
+   A statement very close to Theorem A also appears in an unpublished set of notes by M.
+Kontsevich and Y. Tschinkel [KT00] dating from 2001, where the authors propose a detailed
+strategy of proof in the case µ is a Dirac mass at a divisorial point. Several ingredients in
+their approach also appear in our paper (see Remark 8.7 below).
+   We are now going to present an outline of our proof of Theorem A, which consists in
+mimicking as far as possible the variational approach to complex Monge-Ampère equations
+of [BBGZ09] and the C 0 -estimates of [Kol98]. To that end we will rephrase Theorem A in
+a more analytic language. Let us thus recall the notion of quasi-plurisubharmonic function
+that we developed in [BFJ11] and its main properties.
+   As a variant of [BGS95] we ﬁrst deﬁne the space of closed (1, 1)-forms on X as the direct
+limit
+                                 Z 1,1 (X) := lim N 1 (X /S),
+                                              −→
+                                              X
+4               SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+where X ranges over all models of X and the space of numerical classes N 1 (X /S) is deﬁned
+as Pic(X )R modulo numerical equivalence on the special ﬁber. Each closed (1, 1)-form
+θ ∈ Z 1,1 (X) deﬁnes a class {θ} ∈ N 1 (X), which we refer to as its de Rham class. We say
+that θ ∈ Z 1,1 (X) is semipositive if it is determined by a nef numerical class on some model.
+Each model metric k · k on a line bundle L over X deﬁnes a closed (1, 1)-form c1 (L, k · k)
+that we call the curvature form of the metric. The de Rham class of c1 (L, k · k) is just
+c1 (L) ∈ N 1 (X), and the model metric k · k is semipositive (in the sense of Zhang) iﬀ its
+curvature is. Each model metric on the trivial line bundle is of the form e−ϕ for some
+ϕ ∈ C 0 (X), which is then by deﬁnition a model function. Following complex notation, we
+write ddc ϕ for the curvature form of this metric, so that c1 (L, k · ke−ϕ ) = c1 (L, k · k) + ddc ϕ.
+    Now let ω ∈ Z 1,1 (X) be a reference closed semipositive (1, 1)-form on X, such that {ω} ∈
+   1
+N (X) is furthermore ample. This situation arises for instance when ω is the curvature form
+of a semipositive model metric on an ample line bundle L. As was shown in [BFJ11], one
+may then deﬁne a class PSH(X, ω) of ω-psh functions with the following properties:
+      • Each ϕ ∈ PSH(X, ω) is an upper semicontinuous function X → [−∞, +∞[ whose
+        restriction to the faces of any dual complex is continuous and convex.
+      • The set PSH(X, ω) is convex and stable under max.
+      • A model function ϕ ∈ D(X) is ω-psh iﬀ ω + ddc ϕ ∈ Z 1,1 (X) is semipositive.
+The two main results of [BFJ11] further state that
+      • PSH(X, ω)/R is compact with respect to the topology of uniform convergence on
+        dual complexes.
+      • Every ϕ ∈ PSH(X, ω) is the decreasing limit of a family of ω-psh model functions.
+It follows from the latter property and Dini’s lemma that every continuous ω-psh function is
+a uniform limit over X of ω-psh model functions. This shows in particular that our deﬁnition
+of continuous semipositive metrics is compatible with Zhang’s. Chambert-Loir’s deﬁnition
+of the Monge-Ampère measure of a continuous semipositive metric immediately extends
+to our setting and enables us to associate to any n-tuple of continuous ω-psh functions
+ϕ1 , ..., ϕn ∈ C 0 (X) ∩ PSH(X, ω) a (mixed) Monge-Ampère measure
+
+                                 (ω + ddc ϕ1 ) ∧ ... ∧ (ω + ddc ϕn ),
+
+a positive Radon measure on X of mass {ω}n , which depends continuously on (ϕ1 , ..., ϕn )
+with respect to the topology of uniform convergence on X. As in the complex case, it is
+however not possible to deﬁne such mixed Monge-Ampère measures in a reasonable way for
+arbitrary ω-psh functions, as soon as n ≥ 2.
+  The following result is a slight generalization of Theorem A phrased in the present lan-
+guage.
+
+Theorem A’. Let X be an algebraizable smooth projective K-variety as in Theorem A. Let
+ω ∈ Z 1,1 (X) be a closed semipositive (1, 1)-form such that {ω} ∈ N 1 (X) is ample and let µ
+be a positive Radon measure on X of mass {ω}n . If µ is supported in a dual complex then
+there exists a continuous ω-psh function ϕ such that
+
+                                         (ω + ddc ϕ)n = µ.                                     (1.2)
+
+The function ϕ is furthermore unique up to an additive constant.
+                SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                          5
+
+   This formulation is designed to emphasize the analogy with the complex case. However,
+it is important to keep in mind that the non-Archimedean Monge-Ampère operator is not a
+diﬀerential operator but rather deﬁned in terms of intersection theory.
+  Let us now set up the variational approach we use to solve our non-Archimedean Monge-
+Ampère equation, following [BBGZ09]. A key feature of Monge-Ampère equations is that
+they may be written as Euler-Lagrange equations. This fact goes back at least to Alexan-
+drov [Ale38] in the more classical case of real Monge-Ampère equations, while the relevant
+functional in the complex case has been well-known in Kähler geometry since the works of
+Aubin, Calabi and Yau. We introduce in our setting the energy functional
+                                          n Z
+                                    1 X
+                       Eω (ϕ) :=                ϕ (ω + ddc ϕ)j ∧ ω n−j ,               (1.3)
+                                  n+1
+                                         j=0
+
+deﬁned for the moment for ϕ ∈ C 0 (X) ∩ PSH(X, ω). An easy computation shows that
+                                              Z
+                   d
+                          Eω ((1 − t)ϕ + tψ) = (ψ − ϕ) (ω + ddc ϕ)n              (1.4)
+                  dt t=0+
+
+for any two ϕ, ψ ∈ C 0 (X) ∩ PSH(X, ω), so that (1.2) is indeed the Euler-Lagrange equation
+of the functional                                   Z
+                                  Fµ (ϕ) := Eω (ϕ) −    ϕ dµ.
+
+Observe that the compatibility condition µ(X) = {ω}n guarantees that Fµ is translation-
+invariant, i.e. Fµ (ϕ + c) = Fµ (ϕ) for all c ∈ R. As in the complex case, one shows that the
+functional Eω is concave on C 0 (X)∩PSH(X, ω), so that any solution ϕ to (1.2) is necessarily
+a maximizer of Fµ . The variational method conversely amounts to proving the existence
+of a maximizer of Fµ and showing that it satisﬁes (1.2). But the lack of compactness of
+the space C 0 (X) ∩ PSH(X, ω) where Fµ is deﬁned so far makes it hard to construct a
+maximizer, while it is at any rate non-obvious that such a maximizer should satisfy the
+Euler-Lagrange equation, since it might belong to the boundary of C 0 (X) ∩ PSH(X, ω). In
+order to circumvent these diﬃculties we are going to argue along the following three steps.
+Step 1: Enlarge the space where the variational problem is being considered, in order to gain
+        compactness and construct a maximizer ϕ0 there.
+Step 2: Show that the maximizer is in a natural way a ”generalized solution” of the non-
+        Archimedean Monge-Ampère equation (1.2).
+Step 3: Show the regularity (i.e. continuity) of this generalized solution using capacity esti-
+        mates.
+The general strategy for Steps 1 and 2 follows [BBGZ09], whereas Step 3 follows [Kol98].
+   The condition that µ is supported on a dual complex makes Step 1 relatively easy in our
+case, granted the compactness property of PSH(X, ω)/RR proved in [BFJ11]. Indeed, the
+support condition guarantees that the linear part ϕ 7→ ϕ dµ of Fµ is ﬁnite valued and
+continuous on the whole of PSH(X, ω). Because of that, several complications that occurred
+in [BBGZ09] to handle general measures disappear, since it is enough to extend Eω to a usc
+functional Eω : PSH(X, ω) → [−∞, +∞[, which is done by setting
+                              
+                 Eω (ϕ) := inf Eω (ψ) | ψ ≥ ϕ, ψ ∈ C 0 (X) ∩ PSH(X, ω) .
+6              SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+   Step 2 requires much more work and constitutes the main body of the article, in partic-
+ular because virtually none of the more classical results in pluripotential theory on which
+[BBGZ09] was able to rely were available so far in our non-Archimedean context. The only
+obvious information we have on the maximizer ϕ0 of Fµ is that it lies in the set
+
+                        E 1 (X, ω) := {ϕ ∈ PSH(X, ω), Eω (ϕ) > −∞}
+of ω-psh functions with finite energy. In the complex case, E 1 (X, ω) was introduced in
+[Ceg98, GZ07] as a higher dimensional and non-linear generalization of the classical Dirichlet
+space from potential theory. The goal of Step 2 is to show that the Monge-Ampère operator
+can be naturally extended to E 1 (X, ω), and that ϕ0 satisﬁes
+                                      (ω + ddc ϕ0 )n = µ
+in this generalized sense.
+   In order to do so, we ﬁrst extend the Monge-Ampère operator from continuous to bounded
+ω-psh functions, following the fundamental work of Bedford and Taylor [BT82, BT87]. As in
+the complex case, this mild generalization is in fact crucial in order to develop a reasonable
+capacity theory, and also because the natural bounded approximants max{ϕ, −m}, m ∈ N,
+of a given ω-psh function ϕ are not continuous in general. It is however substantially
+more involved than the continuous case, since uniform convergence has to be replaced with
+monotone convergence. The fact that any (bounded) ω-psh function can be written as a
+decreasing limit of a family of ω-psh model functions, proved in [BFJ11], plays a key role at
+this stage.
+   Of crucial importance is the following locality property of the Monge-Ampère operator: if
+ϕ, ψ are bounded ω-psh functions, then the restrictions of the measures (ω +ddc max{ϕ, ψ})n
+and (ω + ddc ϕ)n to the Borel set {ϕ > ψ} coincide. Note that, even when ϕ, ψ are model
+functions, this fact is not clear from the deﬁnition in terms of intersection numbers.
+   Next, we further extend the Monge-Ampère operator from bounded ω-psh functions to
+functions with ﬁnite energy. The key observation, which goes back to [BT87], is the mono-
+tonicity of the sequence of measures
+                         1{ϕ>−m} (ω + ddc max{ϕ, −m})n (m ∈ N)
+a direct consequence of the locality property. This allows us to deﬁne (ω + ddc ϕ)n as
+the increasing limit of this sequence of measures, which is shown to be well-behaved for
+ϕ ∈ E 1 (X, ω). More generally, mixed Monge-Ampère measures are shown to be well-deﬁned
+for functions in E 1 (X, ω), and (1.3), (1.4) are still valid in this generality.
+   As was already pointed out, these facts are however a priori not enough to show that the
+maximizer ϕ0 of Fµ satisﬁes (ω + ddc ϕ0 )n = µ, because small perturbations of ϕ0 cease to be
+ω-psh in general. In order to handle a similar diﬃculty in the setting of real Monge-Ampère
+equations, Alexandrov devised in [Ale38] an envelope argument, an analogue of which was
+subsequently found in the complex case in [BBGZ09]. Following the same lead, we introduce
+the ω-psh envelope Pω (f ) of a given continuous function f on X by setting for each x ∈ X
+                     Pω (f )(x) := sup {ϕ(x) | ϕ ∈ PSH(X, ω), ϕ ≤ f } .
+It follows from [BFJ11] that Pω (f ) is the largest ω-psh function dominated by f on X.
+The key point is then the following differentiability property, whose complex analogue was
+                SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                                  7
+
+established in [BB10]:
+                                                     Z
+                         d
+                                Eω ◦ Pω (f + tg) =         g (ω + ddc Pω (f ))n                   (1.5)
+                         dt t=0                        X
+for any two f, g ∈ C 0 (X), which may more vividly be written as the chain rule-like formula
+(Eω ◦ Pω )′ = Eω′ ◦ Pω . Granted (1.5), a fairly direct argument based on the monotonicity of
+Eω implies (ω + ddc ϕ0 )n = µ as desired.
+   TheR proof of (1.5) can be reduced by elementary arguments to the diﬀerentiability of
+t 7→ Pω (f + tg) (ω + ddc Pω (f ))n , which in turn ultimately follows from the following
+orthogonality property:
+                             Z
+                                (f − Pω (f )) (ω + ddc Pω (f ))n = 0.                   (1.6)
+                                X
+Since f ≥ Pω (f ), this relation means that (ω + ddc Pω (f ))n is supported on the contact locus
+{f = Pω (f )}, a well-known fact in the complex case where the proof argues by balayage,
+using Bedford and Taylor’s solution to the Dirichlet problem for the homogeneous complex
+Monge-Ampère equation on the ball. Such an approach seems far beyond reach in the non-
+Archimedean case. We proceed instead by translating (1.6) into an intersection theoretic
+statement on a model of X, where it boils down to the orthogonality of relative asymptotic
+Zariski decompositions for a line bundle that is ample on the generic ﬁber. It is precisely
+at this point that we use the assumption that X is algebraizable. Indeed, this allows us
+to choose the model where we work to be algebraic, and therefore compactiﬁable into a
+projective variety over the residue ﬁeld k. As explained in Appendix A, we can then reduce
+to the absolute case of big line bundles on projective varieties treated in [BDPP04].
+   Finally, Step 3 is handled by adapting in a fairly direct manner the capacity estimates
+of Kolodziej [Kol98, Kol03] to prove that ϕ0 is actually continuous. The proof relies on the
+locality property in E 1 (X, ω). This shows the existence part of Theorem A’. Uniqueness is
+proved following [Blo03], as in [YZ10].
+
+   Our result is not optimal, and we next discuss three important assumptions that we use
+in Theorems A and A’.
+   First, the condition that the measure µ be supported on a dual complex is probably
+unnecessarily strong. Relying on ideas of Cegrell [Ceg98], Guedj and Zeriahi [GZ07] have
+deﬁned in the case of compact Kähler manifolds a class E(X, ω) of ω-psh functions where the
+Monge-Ampère operator is well-deﬁned and such that the measures (ω+ddc ϕ)n , ϕ ∈ E(X, ω)
+are exactly the positive measures µ on X giving zero mass to pluripolar2 sets. The function ϕ
+is here again uniquely determined up to an additive constant by its Monge-Ampère measure,
+as was later shown by Dinew [Din09]. We expect the corresponding results to be true in
+our setting, too. The proof would probably require an even more systematic development of
+pluripotential theory in a non-Archimedean setting, something that is certainly of interest.
+   Second, as explained above, the proof of the orthogonality property (1.6) relies in a crucial
+way on the algebraizability assumption for X. It would be interesting to drop this condition,
+which we expect to be an unnecessary restriction.
+   Finally, our variational approach uses the compactness of the space PSH(X, ω)/R, which
+was obtained in [BFJ11]. The proof of this fact relied heavily on the existence of SNC
+  2A subset set A ⊂ X is pluripolar if there exists an ω-psh function ϕ such that A ⊂ {ϕ = −∞}.
+8                SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+models, which are so far only available in residue characteristic zero. It seems to be a
+challenging task to extend our methods and results to local ﬁelds and more general complete
+non-Archimedean ﬁelds. See [FJ04, BFJ08] for related work in the case of a trivially valued
+ﬁeld.
+
+   Let us end this introduction by indicating the structure of the paper.
+   In §2 we give the necessary background on Berkovich spaces, metrized line bundles, ω-psh
+functions and wedge-products of closed (1, 1)-forms. We also recall some facts from measure
+theory.
+   The next three sections, §§3-5, develop some of the basic Bedford-Taylor theory in our non-
+Archimedean setting. The deﬁnition of the Monge-Ampère operator on bounded functions
+and the continuity along decreasing families is carried out in §3. In §4 we introduce a Monge-
+Ampère capacity used to measures the size of subsets of X. We obtain the important result
+that any ω-psh function is quasicontinuous, i.e. continuous outside a set of arbitrarily small
+capacity. We also strengthen the regularization theorem of [BFJ11] and prove that any
+ω-psh function is a decreasing limit of a (countable) sequence of ω-psh model functions.
+Finally, in §5 we prove the locality property. The results in §§3–5 and even some of the
+proofs parallel those in complex analysis (especially the ones on compact Kähler manifolds,
+see [GZ05]). However, the non-Archimedean results ultimately originate in basic properties
+of the intersection form on models whereas the basic results in the complex case concern
+diﬀerential operators.
+   The energy of an ω-psh function is introduced in §6. Following [Ceg98, GZ07] we extend
+the Monge-Ampère operator to the class E 1 (X, ω) of ω-psh functions with ﬁnite energy and
+prove that the locality property continues to hold.
+   In §7 we introduce ω-psh envelopes and prove the related diﬀerentiability theorem. This
+is a key result that leads to the proof of Theorem A’ given in §8. It uses the locality property
+and is based on an orthogonality statement whose proof is given in Appendix A. Here the
+exposition is modeled on [BB10, BBGZ09].
+   We next explain in §8 how to get Theorem A from Theorem A’. Finally, §9 discusses the
+case of curves and toric varieties.
+Acknowledgment. This work has been strongly inﬂuenced by the work of M. Kontsevich and
+Y. Tschinkel. The 2001 colloquium talk of Kontsevich at the Institut de Mathématiques
+de Jussieu served as a guiding source for us. We are also grateful to him for showing to
+us the unpublished preprint [KT00]. We further thank A. Thuillier for several interesting
+discussions, and J.-L. Colliot-Thélène for his help with Lemma A.5.
+   Our work was carried out at several institutions including the IHES, the École Polytech-
+nique, and the University of Michigan. We gratefully acknowledge their support. The second
+author was partially supported by the ANR-grant BERKO. The third author was partially
+supported by the CNRS and the NSF.
+
+                                       2. Background
+    For this section we refer to our companion paper [BFJ11] for details and further references.
+2.1. Berkovich space and models. Let R be a complete discrete valuation ring with
+fraction ﬁeld K and residue ﬁeld k. We shall assume that k has characteristic zero. We
+let t ∈ R be a uniformizing parameter and normalize the corresponding absolute value on
+                SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                            9
+
+K by log |t|−1 = 1. Note that R ≃ k[[t]] and K ≃ k((t)), see for instance [Ser68]. Write
+S := Spec R.
+
+   Let X be a smooth projective K-variety, i.e. an integral (but not necessarily geometrically
+integral) smooth projective K-scheme. A model of X is a normal, ﬂat and projective S-
+scheme X with X as its generic ﬁber. We denote by X0 its special ﬁber, and by Div0 (X ) the
+group of vertical Cartier divisors, i.e. those supported in X0 . We write Div0 (X )R accordingly.
+   Let MX be the set of all isomorphism classes of models of X. Given X ′ , X in MX we
+write X ′ ≥ X if there exists a morphism X ′ → X obtained by blowing up an ideal sheaf
+co-supported on the special ﬁber of X . This turns MX into a directed set.
+   Given a model X , let (Ei )i∈ITbe the set of irreducible components of the special ﬁber. For
+each subset J ⊂ I set EJ := j∈J Ej . A regular model X is an SNC model if the special
+ﬁber has simple normal crossing support and EJ is irreducible (or empty) for each J ⊂ I.
+
+    As a topological space, the Berkovich space X an attached to the given smooth projective
+K-variety X is compact and can be described as follows (cf. [Ber90, Theorem 3.4.1]). Choose
+a ﬁnite cover of X by aﬃne open subsets of the form U = Spec A where A is a K-algebra
+of ﬁnite type. The Berkovich space U an is deﬁned as the set of all multiplicative seminorms
+| · | : A → R+ extending the given absolute value of K, endowed with the topology of
+pointwise convergence. The space X an is obtained by gluing the open sets U an .
+    There is a natural equivalence of categories between projective K-analytic spaces and
+projective K-schemes, see [Ber90, §3.4]. In the sequel we shall therefore always identify a
+projective K-scheme with its associated Berkovich space and write X an = X.
+    Let X be a model of X. To each irreducible component E of the special ﬁber is associated
+a divisorial valuation ordE of the function ﬁeld of X. After rescaling and exponentiating,
+this gives rise to an element xE ∈ X called a divisorial point. The set X div of divisorial
+points is dense in X.
+    WhenP X is an SNC model, we can reﬁne this construction. Write the special ﬁber as
+X0 =       i∈I bi Ei . The dual complex ∆X of X is the simplicial complex whose vertices
+correspond to the irreducible components Ei and whose simplices correspond to nonempty
+intersections EJ . We can equip ∆X with an (integral) aﬃne structure and embed it in the
+Berkovich space X as follows.                                                      P
+    Consider a subset J ⊂ I with EJ 6= ∅ and pick w = (wj )j∈J with wj ≥ 0 and j∈J bj wj =
+1. Let ξJ be the generic point of EJ and pick a system (zj )j∈J of regular parameters for
+OX ,ξJ with zj deﬁning Ej . By Cohen’s structure theorem, O    bX ,ξ ≃ κ(ξJ )[[zj , j ∈ J]]. Let
+                                                                    J
+vJ,w be the restriction to OX ,ξ of the monomialnvaluation on this powero series ring, taking
+                             P           α
+                                                  P                                 −vJ,w ∈ X.
+value wj on zj , i.e. vJ,w     α∈NJ cα z     = min   j∈J wj αj | cα 6= 0 . Then e
+This deﬁnes an embedding embX : ∆X → X, and the parameters w equip ∆X with an aﬃne
+structure.
+    There is also a retraction pX : X → ∆X , deﬁned as follows. Any point x ∈ X admits
+a center on X . This is the unique point ξ = cX (x) ∈ X0 such that |ϕ|x ≤ 1 for ϕ ∈ OX ,ξ
+and |ϕ|x < 1 for ϕ ∈ mX ,ξ . Let J ⊂ I be the maximal subset such that ξ ∈ EJ . Then
+pX (x) ∈ ∆X corresponds to the monomial valuation with weight − log |zj |x , j ∈ J.
+    We have pX = id on ∆X . If Y dominates X , then ∆X ⊂ ∆Y and pX ◦ pY = pX . The
+retractions induce a homeomorphism of X onto the inverse limit lim ∆X .
+                                                                     ←−
+10              SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+  In order to keep notation light, we shall identify ∆X with its image in X under embX .
+Note that this convention diﬀers from the one adopted in [BFJ11]. A point in X lying in
+some dual complex ∆X is called quasi-monomial, and the set of such points is denoted by
+X qm .
+
+2.2. Model functions. Let X be a model of X. A vertical fractional ideal sheaf a is a
+ﬁnitely generated OX -submodule of the function ﬁeld of X such that a|X = OX . Then a
+deﬁnes a continuous function log |a| ∈ C 0 (X) by setting
+                                            
+                         log |a|(x) := max log |f |x | f ∈ acX (x) .
+Note that each vertical Cartier divisor D ∈ Div0 (X ) deﬁnes a vertical fractional ideal sheaf
+OX (D), hence a continuous function fD := log |OX (D)|. Note that fX0 is the constant
+function 1 since log |t|−1 = 1. The map D 7→ fD extends by linearity to Div0 (X )R → C 0 (X).
+Definition 2.1. A function f on X is a model function if there exists a model X and a
+Q-divisor D ∈ Div0 (X )Q such that f = fD . We then call X a determination of f . We let
+D(X) = D(X)Q be the space of model functions on X.
+Proposition 2.2. [BFJ11, Proposition 2.2] The Q-vector space D(X) of model functions
+is stable under max. If f is a model function and X is a determination then f is affine on
+each face of ∆X .
+2.3. Forms and de Rham classes. Let X be a model of X. The space N 1 (X /S) of
+(relative, codimension 1) numerical equivalence classes on X is deﬁned as the quotient of
+Pic(X )R by the subspace spanned by numerically trivial line bundles, i.e. those L ∈ Pic(X )R
+such that L·C = 0 for all projective curves contained in a ﬁber of X → S. It is in fact enough
+to consider vertical curves, i.e. those contained in the special ﬁber X0 . A class θ ∈ N 1 (X /S)
+is nef if θ · C ≥ 0 for all such curves C.
+Definition 2.3. The space of closed (1, 1)-forms on X is defined as the direct limit
+                                 Z 1,1 (X) := lim N 1 (X /S).
+                                              −→
+                                             X ∈MX
+
+    We say that a closed (1, 1)-form θ ∈ Z 1,1 (X) is determined on a given model X if it
+is the image of an element θX ∈ N 1 (X /S). By deﬁnition, two classes θ ∈ N 1 (X /S) and
+θ ′ ∈ N 1 (X ′ /S) deﬁne the same element in Z 1,1 (X) iﬀ they pull back to the same class on a
+model dominating both X and X ′ .
+Definition 2.4. A closed (1, 1)-form θ ∈ Z 1,1 (X) is semipositive if θX ∈ N 1 (X /S) is nef
+for some (or, equivalently, any) determination X of θ.
+   The natural map N 1 (X /S) → N 1 (X) gives rise to a map Z 1,1 (X) → N 1 (X) which in
+fact is surjective. We refer to {θ} as the de Rham class of the closed (1, 1)-form θ. When
+θ is semipositive, the de Rham class {θ} ∈ N 1 (X) is nef on X. In what follows, we shall
+mainly work with forms having ample de Rham class.
+   Any model function f ∈ D(X) induces a form dd    c f ∈ Z 1,1 (X) as follows: for any deter-
+                                                   P                              P
+mination X of f , ddc f is the class of the divisor i∈I bi f (xi )Ei , where X0 = i bi Ei and
+xi ∈ X is the divisorial point associated to Ei .
+               SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                           11
+
+2.4. θ-psh functions. Fix a form θ ∈ Z 1,1 (X) with ample de Rham class {θ} ∈ N 1 (X).
+
+Definition 2.5. A θ-psh function ϕ : X → [−∞, +∞[ is an usc function such that for each
+SNC model X of X on which θ is determined we have
+    (i) ϕ ≤ ϕ ◦ pX on X;
+   (ii) the restriction of ϕ to the dual complex ∆X is a uniform limit of restrictions of model
+        functions ψ such that θ + ddc ψ is a semipositive form.
+We write PSH(X, θ) for the set of θ-psh functions on X.
+
+  It is a nontrivial fact that if ϕ is a θ-psh model function then the form θ + ddc ϕ is in fact
+semipositive, see [BFJ11, Theorem 5.11]. In particular, the zero function is θ-psh iﬀ θ is
+semipositive. In this case, max{ϕ, −t} is θ-psh when ϕ is θ-psh and t ∈ R.
+
+Proposition 2.6. [BFJ11, Proposition 5.10]. The space of model functions D(X) is spanned
+by θ-psh model functions.
+
+Proposition 2.7. [BFJ11, Proposition 7.4]. The set PSH(X, θ) is convex. If ϕ, ψ are θ-psh
+and c ∈ R, then the functions max{ϕ, ψ} and ϕ + c are also θ-psh.
+
+Proposition 2.8. [BFJ11, Proposition 7.5]. Any ϕ ∈ PSH(X, θ) is continuous on the dual
+complex of any SNC model X , and convex on each of its faces.
+
+  In fact, the continuity statement above can be made uniform in ϕ:
+Theorem 2.9. [BFJ11, Corollary 7.7] For any SNC model X , the restrictions of all θ-psh
+functions to the dual complex ∆X form an equicontinuous family.
+
+   We endow PSH(X, θ) with the topology of uniform convergence on dual complexes. Notice
+that the divisorial points are dense on each dual complex ∆X , see [BFJ11, Corollary 3.13]
+or [JM10, Remark 3.9]. As a consequence of equicontinuity we thus have
+
+Theorem 2.10. [BFJ11, Theorem 7.8]. For each model function ψ the map ϕ 7→ supX (ϕ −
+ψ) is continuous and proper on PSH(X, θ). In particular, the space PSH(X, θ)/R is compact.
+Further, the topology on PSH(X, θ) is equivalent to the topology of pointwise convergence on
+X div .
+
+  Finally we have the following regularization result. Its proof relies on multiplier ideals.
+
+Theorem 2.11. [BFJ11, Theorem 8.7]. For any θ-psh function ϕ, there exists a decreasing
+net (ϕj )j of θ-psh model functions that converges pointwise on X to ϕ.
+
+   The complex analogue of this result is due to Demailly [Dem92] (see also [GZ05, Appendix]
+for the case of a line bundle). By Dini’s lemma, we get as a consequence:
+
+Corollary 2.12. [BFJ11, Corollary 8.8] The set D(X) ∩ PSH(X, θ) is dense in C 0 (X) ∩
+PSH(X, θ) with respect to uniform convergence on X.
+
+  Proposition 4.5 below reﬁnes Theorem 2.11 and asserts that any θ-psh function is actually
+the decreasing limit of a sequence of θ-psh model functions (but the proof heavily uses
+Theorem 2.11).
+12               SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+2.5. Envelopes. Let θ be a form as in §2.4.
+Proposition 2.13. [BFJ11, Theorem 7.9]. If (ϕα )α∈A is a family of θ-psh functions that
+is uniformly bounded above, then the usc upper envelope (supα ϕα )∗ is also θ-psh.
+  Recall that the usc regularization u∗ of a function u : X → [−∞, +∞[ is the smallest usc
+function such that u∗ ≥ u.
+Definition 2.14. Let f : X → [−∞, +∞[ be any function. We define its θ-psh envelope
+Pθ (f ) as follows. If there does not exist any ϕ ∈ PSH(X, θ) such that ϕ ≤ f on X then
+we set Pθ (f ) ≡ −∞. Otherwise, we define Pθ (f ) as the usc upper envelope of the set of all
+θ-psh functions ϕ such that ϕ ≤ f on X, i.e. we set
+                        Pθ (f ) := (sup {ϕ | ϕ ∈ PSH(X, ω), ϕ ≤ f })∗ .
+   Thanks to Proposition 2.13 Pθ (f ) is either −∞ or belongs to PSH(X, θ). If f is usc, then
+clearly Pθ (f ) ≤ f on X, and Pθ (f ) is then the largest θ-psh function with this property.
+Proposition 2.15. [BFJ11, Proposition 8.1]
+    (i) Pθ is non-decreasing: f ≤ g ⇒ Pθ (f ) ≤ Pθ (g).
+   (ii) Pθ (f ) is concave in both arguments:
+                      Ptθ+(1−t)θ′ (tf + (1 − t)g) ≥ tPθ (f ) + (1 − t)Pθ′ (g)
+           for 0 ≤ t ≤ 1.
+     (iii) For each c ∈ R we have Pθ (f + c) = Pθ (f ) + c.
+     (iv) Pθ is 1-Lipschitz continuous, i.e. supX |Pθ (f ) − Pθ (g)| ≤ supX |f − g|.
+      (v) Given a bounded function f and a convergent sequence θm → θ in N 1 (X /S) we have
+           Pθm (f ) → Pθ (f ) uniformly on X.
+2.6. Metrized line bundles and curvature forms. We refer to [CL10] for a general
+account of metrized line bundles in a non-Archimedean context. Suﬃce it to say that a
+metric k · k on a line bundle L on X is a way to produce a local continuous function ksk on
+(the Berkovich space) X from any local section s of L.
+   Let X be a model and L a line bundle on X such that L|X = L. To this data one can
+associate a unique metric k · kL on L with the following property: if s is a nonvanishing
+local section of L on an open set U ⊂ X , then kskL ≡ 1 on U := U ∩ X. This makes sense
+since such a section s is uniquely deﬁned up to multiplication by an element of Γ(U , OX ∗ )
+
+and such elements have norm 1.
+   More generally, any L ∈ Pic(X )Q such that L|X = L in Pic(X)Q induces a metric k · kL
+                                1/m
+on L by setting kskL = ks⊗m kmL for any m ∈ N∗ such that mL is an actual line bundle.
+Such a metric is called a model metric on L.
+   Given a model metric k · k, any continuous metric on L is of the form k · ke−ϕ , with
+ϕ ∈ C 0 (X). This is a model metric iﬀ ϕ is a model function. By a singular metric on L we
+mean an expression of the form k · ke−ϕ with ϕ : X → [−∞, +∞[ an arbitrary function.
+   Fix a model metric k · kL on L associated to L ∈ PicQ (X ). The numerical class associated
+to L in N 1 (X /S) induces a form on X in the sense of §2.3. It does not depend on the choice
+of model L deﬁning the metric. We call it the curvature form of the metric and denote it
+by c1 (L, k · k). By construction, its de Rham class is given by
+                                {c1 (L, k · k)} = c1 (L) ∈ N 1 (X).                     (2.1)
+                 SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                               13
+
+If ϕ ∈ D(X) is a model function, then
+                               c1 (L, k · k e−ϕ ) = c1 (L, k · k) + ddc ϕ,
+where the form ddc ϕ ∈ Z 1,1 (X) is deﬁned in §2.3.
+Definition 2.16. Fix a model metric k · k on L with curvature form θ. Then a singular
+metric k · ke−ϕ is semipositive if the function ϕ is θ-psh.
+  The results in §2.4 have obvious counterparts for singular metrics. In particular, we have:
+Theorem 2.17. Let k · k be a model metric on L, associated to a Q-line bundle L on a
+model X of X. Then
+    (i) the metric k · k is semipositive iff L is nef;
+   (ii) a continuous metric k · ke−ϕ is semipositive iff there exists a sequence of semipositive
+        model metrics k · km = k · ke−ϕm such that ϕm → ϕ uniformly on X.
+  This result implies that our deﬁnition of continuous semipositive metric coincides with
+that of Zhang and others. Unfortunately, the terminology is not uniform across the litera-
+ture, see Table 1 below.
+
+    Model metric: [BFJ11, YZ10]            Continuous semipositive metric:
+                                           [BFJ11, CL06, CL10]
+    Algebraic metric: [BPS11, CL06, Liu10] Approachable metric: [BPS11]
+    Smooth metric: [CL10]                  Semipositive metric: [YZ10, Liu10]
+    Root of an algebraic metric: [Gub08]   Semipositive admissible metric: [Gub08]
+                   Table 1. Terminology for metrics on line bundles.
+
+
+
+2.7. Intersection numbers and Monge-Ampère measures. The Monge-Ampère op-
+erator that we will use arises from intersection theory on models.
+   Let X be a model of X, and pick numerical classes θ1,X , . . . , θn,X ∈ N 1 (X /S). For any
+vertical divisor D ∈ Div0 (X ) we deﬁne
+                                           X
+                    D · θ1 · . . . · θn :=   ordE (D) (θ1,X |E · . . . · θn,X |E ),
+                                            E
+where E ranges over all irreducible components of the special ﬁber X0 . We obtain a pairing
+that is linear in each entry and symmetric in the θi ’s.
+Proposition-Definition 2.18. To any n-tuple (θ1 , . . . , θn ) of closed (1, 1)-forms we can
+associated a signed atomic measure θ1 ∧ · · · ∧ θn supported on X div such that
+                    Z                      X
+                       f θ1 ∧ · · · ∧ θn =   bi f (xi ) (θ1,X |Ei · . . . · θn,X |Ei )  (2.2)
+                       X                        i∈I
+for any common determination X of the forms           P       θi , and for any model function f . Here
+we have written the special fiber as X0 =                i∈I bi Ei and xi = xEi is the divisorial point
+associated to Ei .
+   Further, (θ1 , . . . , θn ) 7→ θ1 ∧ · · · ∧ θn is multilinear and symmetric.
+14              SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+                                                                           R
+Proof. Choose a commonR determination of the forms θi , and deﬁne X f (θ1 ∧ · · · ∧ θn )
+using (2.2). The fact that X f (θ1 ∧· · ·∧θn ) does not depend on the choice of a determination
+X is a consequence of the projection formula
+                          π∗ D · θ1,X · . . . · θn,X = D · π ∗ θ1,X · . . . · π ∗ θn,X
+if π : X ′ → X , and D is any vertical divisor in X ′ .                             P
+   Then by construction θ1 ∧· · ·∧θn can be identiﬁed with the atomic measure i wi δxi with
+wi = (θ1,X |Ei · . . . · θn,X |Ei ). This measure is supported on the divisorial points associated
+to the irreducible components of X0 . The last statement is clear.                               
+Proposition 2.19. If the forms θ1 , . . . , θn are semipositive, then θ1 ∧ · · · ∧ θn is a positive
+measure, of mass           Z
+                                           θ1 ∧ · · · ∧ θn = {θ1 } · . . . · {θn }.                               (2.3)
+                                      X
+
+Proof. Pick a model X such that each θi is determined by a nef class θi,X ∈ N 1 (X /S).
+The restriction of θi,X to each component Eω of X0 is then also nef, and it follows that the
+intersection number (θ1,X |E · ... · θn,X |E ) is non-negative, hence the ﬁrst assertion. Since the
+constant function 1 corresponds to the vertical divisor X0 we have by deﬁnition
+                               Z
+                                     θ1 ∧ ... ∧ θn = X0 · θ1 · . . . · θn .
+                                       X
+By [Ful98, Example 20.3.3] this is the same as the intersection number against the generic
+ﬁber of X , and this is equal to {θ1 } · . . . · {θn } by deﬁnition.                    
+   As a special case, ﬁx θ ∈ Z 1,1 (X). To any θ-psh model functions ϕ1 , . . . , ϕn we then
+associate a mixed Monge-Ampère measure
+                                      (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕn ).
+This is an atomic positive measure on X of mass {θ}n .
+  Analogously to the complex case we have the following integration by parts formula:
+Proposition 2.20. If f, g ∈ D(X) are model functions and θ1 , . . . , θn−1 are closed (1, 1)-
+forms then we have
+                 Z                             Z
+                       c
+                   f dd g ∧ θ1 ∧ · · · ∧ θn−1 = g ddc f ∧ θ1 ∧ · · · ∧ θn−1 .
+
+Proof. Pick a common determination X of f, g and the θi ’s, and divisors D, D ′ , Di such that
+f = ϕD , g = ϕD′ and θi is the class in N 1 (X /S) induced by Di . Then by deﬁnition we have
+  Z                                X
+     f ddc g ∧ θ1 ∧ · · · ∧ θn−1 =   ordE (D)(D ′ |E · D1 |E · ... · Dn−1 |E )
+                                           E
+                       X
+                  =           ordE (D) ordE ′ (D ′ ) (D1 |E )|E ′ ∩E · ... · (Dn−1 |E )|E ′ ∩E
+                      E,E ′
+                      X
+                  =           ordE (D) ordE ′ (D ′ ) (D1 |E ′ )|E∩E ′ · ... · (Dn−1 |E ′ )|E∩E ′
+                      E,E ′
+                                                                                      Z
+                                                                                =         g ddc f ∧ θ1 ∧ · · · ∧ θn−1
+                SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                            15
+
+where the third equality follows from [Ful98, Theorem 2.4].                                     
+
+  The next result follows from the Hodge index theorem, compare [YZ10, Theorem 2.1.1].
+Proposition 2.21. Suppose θ1 , . . . , θn−1 are semipositive closed (1, 1)-forms. Then the
+symmetric bilinear form
+                                     Z
+                        (f, g) 7→        f ddc g ∧ θ1 ∧ · · · ∧ θn−1
+                                        X
+
+on D(X) is negative semidefinite. In particular, for any two model functions f , g, the
+following Cauchy-Schwarz inequality holds:
+    Z
+       f ddc g ∧ θ1 ∧ · · · ∧ θn−1 ≤
+    X
+               Z                            1/2  Z                            1/2
+                      c                                   c
+               −  f dd f ∧ θ1 ∧ · · · ∧ θn−1       −  g dd g ∧ θ1 ∧ · · · ∧ θn−1      . (2.4)
+                   X                                     X
+
+Proof of Proposition 2.21. Fix a model function f . We need to prove
+                                 Z
+                            I :=   f ddc f ∧ θ1 ∧ · · · ∧ θn−1 ≤ 0
+                                    X
+
+Choose a common determination X of ϕ and all the θi . By continuity, we may assume
+ϕ = ϕD for some D ∈ Div0 (X )Q , and each form θi is determined by a Q-line bundle Li on
+X . Then I = D 2 · L1 · . . . · Ln−1 and the result follows from [YZ10, Theorem 2.1.1 (a)]. 
+Remark 2.22. In the complex case we have by Stokes’ theorem
+             Z                               Z
+                f ddc g ∧ θ1 ∧ ... ∧ θn−1 = − df ∧ dc g ∧ θ1 ∧ ... ∧ θn−1 ,
+
+and negativity comes from that of the (1, 1)-form df ∧ dc f . Recall also that df ∧ dc f ∧ ω n−1 =
+                                                 R                  1/2
+|df |2ω ω n when ω is a Kähler form, so that − f ddc f ∧ ω n−1          is the L2 -norm of the
+gradient of f .
+2.8. Radon measures and convergence results. We shall make frequent use of basic
+integration and measure theory. Let X be a compact (Hausdorﬀ) space. A Radon measure
+on X is a positive linear functional µ : C 0 (X) → R. With this deﬁnition, it follows from the
+Riesz representation theorem that Radon measures are in 1-1 correspondence with regular
+Borel measures on X; see [Fol99, §7.1–2].
+   Since we shall be dealing with (possibly uncountable) nets rather than sequences, one has
+to be careful using results from integration theory. For example, the monotone convergence
+theorem is of course not true for general nets. However, as the next results show, integration
+of semicontinuous functions against Radon measures is often well behaved.
+Lemma 2.23. [Fol99, Proposition 7.12]. If µ is a positive Radon measure on X and (fj )j
+a decreasing
+     R       Rnet of usc functions on X, converging pointwise to a (usc) function f , then
+limj fj µ = f µ.
+  In particular, one has
+16                   SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+Lemma 2.24. [Fol99, Corollary 7.13]. If µ is a positive Radon measure on X and f is a
+usc function on X, then
+                        Z           Z                      
+                                                        0
+                          f µ = inf    gµ | f ≤ g, g ∈ C (X)
+
+Corollary 2.25. Let (fj )j a decreasing net of usc functions on X converging pointwise to
+a (usc) function f , and (µj )j a net of positive Radon measures on X converging weakly to
+a positive Radon measure µ. Then
+                                           Z         Z
+                                   lim sup fj µj ≤ f µ.
+                                                    j
+                                 R
+Proof. Upon replacing µj with ( µj )−1 µj we may assume that the µj ’s are probability
+measures. RFix anyR ε > 0. By Lemma 2.24 there exists a continuous function g ≥ f on X
+such that gµ < f µ + ε. By Dini’s lemma, we have fj < g + ε for all j ≫ 1, hence
+                       Z              Z           Z           Z
+               lim sup fj µj ≤ lim sup gµj + ε = gµ + ε ≤ f µ + 2ε.
+                           j                    j
+         R           R
+since        gµj →       gµ by the deﬁnition of weak convergence. The result follows.                               
+
+                         3. Monge-Ampère operator on bounded functions
+  From now on we ﬁx a form θ ∈ Z 1,1 (X) whose de Rham class {θ} ∈ N 1 (X) is ample.
+In the next three sections we shall develop some of the Bedford-Taylor theory in our non-
+Archimedean setting.
+  Our ﬁrst main objective is to extend the Monge-Ampère operator deﬁned in §2.7 from
+θ-psh model functions to bounded θ-psh functions.
+Theorem 3.1. There exists a unique operator
+                                (ϕ1 , . . . , ϕn ) 7→ (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕn )
+taking an n-tuple of bounded θ-psh functions to a positive Radon measure on X of mass
+{θ}n and such that
+     • the definition is compatible with the definition for θ-psh model functions given in §2.7;
+     • for any decreasing nets of bounded θ-psh functions ψ j → ψ, and ϕji → ϕi for i =
+        1, . . . , n we have
+       Z                                                Z
+          ψ j (θ + ddc ϕj1 ) ∧ · · · ∧ (θ + ddc ϕjn ) −→ ψ (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕn ).
+
+Remark 3.2. One can also prove continuity along increasing nets but we will not need this.
+   Note that the uniqueness part of Theorem 3.1 follows from the fact that any θ-psh function
+is the decreasing limit of a net of θ-psh model functions, see Theorem 2.11. For the same
+reason, the mapping
+                                (ϕ1 , . . . , ϕn ) 7→ (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕn )
+is symmetric in its arguments, and additive in the following sense:
+     (θ + tddc ϕ1 + (1 − t)ddc ϕ′1 ) ∧ (θ + ddc ϕ2 ) ∧ · · · ∧ (θ + ddc ϕn ) =
+                         t (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕn ) + (1 − t) (θ + ddc ϕ′1 ) ∧ · · · ∧ (θ + ddc ϕn )
+                 SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                                      17
+
+for 0 ≤ t ≤ 1. This additivity property in particular implies
+               (θ + ddc (tϕ + (1 − t)ψ))n ≥ tn (θ + ddc ϕ)n + (1 − t)n (θ + ddc ψ)n                     (3.1)
+in the sense of measures, for all bounded θ-psh functions ϕ, ψ, and any 0 ≤ t ≤ 1.
+   Given bounded θ-psh functions, one can now deﬁne signed measures
+                    ddc ϕ1 ∧ · · · ∧ ddc ϕp ∧ (θ + ddc ϕp+1 ) ∧ · · · ∧ (θ + ddc ϕn )
+by writing ddc ϕi = (θ + ddc ϕi ) − θ and expanding the product formally using multilinearity.
+These products are also continuous along decreasing nets, and we thus obtain
+Corollary 3.3. If ϕ1 , . . . , ϕn−1 are bounded θ-psh functions on X, then the bilinear form
+                              Z
+               (ϕ, ψ) 7→ (−ϕ) ddc ψ ∧ (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕn−1 )
+
+is well-defined and positive semidefinite on the vector space spanned by the set of bounded
+θ-psh functions.
+   In particular, the Cauchy-Schwarz inequality (2.4) holds for all bounded θ-psh functions
+ϕ2 , . . . , ϕn and for all functions ψ, ϕ that are diﬀerences of bounded θ-psh functions.
+3.1. Proof of Theorem 3.1. We adapt to our setting the Bedford-Taylor approach as
+explained, for instance, in [Dem, Theorem 3.7, p.188].
+   Fix 0 ≤ p ≤ n and θ-psh model functions ϕ′p+1 , . . . , ϕ′n . Consider the following statement.
+Assertion A(p). To any p-tuple ϕ1 , . . . , ϕp of bounded θ-psh functions is associated a positive
+Radon measure M(ϕ1 , . . . , ϕp ) of mass {θ}n such that:
+     • if ϕ1 , . . . , ϕp are model functions then
+ M(ϕ1 , . . . , ϕp ) = (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕp ) ∧ (θ + ddc ϕ′p+1 ) ∧ · · · ∧ (θ + ddc ϕ′n ) (3.2)
+      • the mapping                                        Z
+                                (ψ, ϕ1 , . . . , ϕp ) 7→       ψ M(ϕ1 , . . . , ϕp )
+        is continuous along decreasing nets of bounded θ-psh functions.
+  We shall prove A(p) by induction on p. Observe that for p = n, this proves Theorem 3.1.
+  The assertion A(0) is clear, since M(ϕ′1 , . . . , ϕ′n ) is a ﬁnite sum of Dirac masses at divisorial
+points of X. Assume that A(p − 1) holds for any (n − p + 1)-tuple of θ-psh model functions
+and let ϕ′p+1 , . . . , ϕ′n be θ-psh model functions.
+  Given bounded θ-psh functions ϕ1 , . . . , ϕp , we deﬁne M(ϕ1 , . . . , ϕp ) by forcing the inte-
+gration by parts formula
+  Z
+      ψ M(ϕ1 , . . . , ϕp−1 , ϕp ) :=
+    Z
+       ϕp (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕp−1 ) ∧ (θ + ddc ψ) ∧ (θ + ϕ′p+1 ) ∧ · · · ∧ (θ + ddc ϕ′n )
+       Z
+    + (ψ − ϕp )(θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕp−1 ) ∧ θ ∧ (θ + ϕ′p+1 ) ∧ · · · ∧ (θ + ddc ϕ′n ) (†)
+
+for every model function ψ.
+18                  SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+   Observe that the right-hand side is continuous along decreasing nets as a function of
+(ϕ1 , . . . , ϕp ) by the induction hypothesis. Since equality holds in (†) when all the ϕi are
+model functions and since M(ϕ1 , . . . , ϕp ) is a positive measure of mass {θ}n , it follows by
+regularization (Theorem 2.11) that the right-hand side is also linear in ψ, and non-negative
+when ψ ≥ 0.
+   Now the space of model functions is spanned by θ-psh model functions by Proposition 2.6;
+hence M(ϕ1 , . . . , ϕp ) is well-deﬁned as a positive measure of mass {θ}n and is continuous
+along decreasing nets as a function of (ϕ1 , . . . , ϕp ). It remains to show that
+                                                         Z
+                                 (ψ, ϕ1 , . . . , ϕp ) 7→ ψ M(ϕ1 , . . . , ϕp )
+
+is continuous along decreasing nets of bounded θ-psh functions. Let thus (ϕji )j , i = 1, . . . , p
+and ψ j be decreasing nets of θ-psh functions converging, respectively, to bounded θ-psh
+functions ϕi and ψ. Set
+                                            µj := M(ϕj1 , . . . , ϕjp ).
+We already know that µj converges weakly to µ := M(ϕ1 , . . . , ϕp ). Since ψ j is usc for each
+j, Corollary 2.25 yields
+                                      Z         Z
+                               lim sup ψ j µj ≤ ψµ.
+                                                j
+
+For the reverse estimate, we rely on the following approximate monotonicity property:
+Lemma 3.4. Let ψ and χi ≥ ϕi , i = 1, . . . , p be bounded θ-psh functions. Then we have
+        Z                         Z
+           ψ M(χ1 , . . . , χp ) ≥ ψ M(ϕ1 , . . . , ϕp )
+                                          p Z
+                                          X
+                                      +             (ϕi − χi ) M(ϕ1 , . . . , ϕi−1 , 0, χi+1 , . . . , χp ).
+                                          i=1
+
+     The lemma implies that, for each j:
+          Z       Z          Z       X p Z
+             j j        j
+            ψ µ ≥ ψµ ≥ ψµ +                (ϕi − ϕji ) M(ϕ1 , . . . , ϕi−1 , 0, ϕji+1 , . . . , ϕjp ).
+                                                i=1
+
+By the inductive hypothesis,R the sumRin the right-hand side tends to 0 as j → ∞, so we
+infer as desired that lim inf j ψ j µj ≥ ψµ.
+
+Proof of Lemma 3.4. Note ﬁrst that ψ may be assumed to be a model function by
+Lemma 3.5. Let ν be a positive Radon measure on X and let ϕ be a bounded θ-psh function.
+Then we have                      Z           Z
+                                                    ϕν = inf         ψν
+                                                            ψ≥ϕ
+
+where ψ ranges over all θ-psh model functions such that ψ ≥ ϕ.
+   Since we already know that (ϕ1 , . . . , ϕp ) 7→ M(ϕ1 , . . . , ϕp ) is continuous along decreas-
+ing nets, we may by regularization assume that all ϕi and χi are also model functions.
+                  SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                                                 19
+
+Integration by parts (†) then yields
+   Z                             Z
+     ψ M(χ1 , χ2 , . . . , χp ) − ψ M(ϕ1 , χ2 , . . . , χp ) =
+                                   Z                                  Z
+                                 = (χ1 − ϕ1 ) M(ψ, χ2 , . . . , χp ) − (χ1 − ϕ1 ) M(0, χ2 , . . . , χp )
+
+hence
+         Z                             Z                                      Z
+             ψ M(χ1 , . . . , χp ) ≥           ψ M(ϕ1 , χ2 , . . . , χp ) +       (ϕ1 − χ1 ) M(0, χ2 , . . . , χp ).
+
+We similarly have
+               Z                                              Z
+                      ψ M(ϕ1 , χ2 , χ3 , . . . , χp ) ≥            ψ M(ϕ1 , ϕ2 , χ3 , . . . , χp )
+                                                              Z
+                                                          +       (ϕ2 − χ2 ) M(ϕ1 , 0, χ3 , . . . , χp ).
+
+Iterating this argument and summing up then yields the desired result.                                                 
+
+Proof of Lemma 3.5. Let ε > 0. Since ϕ is usc,R LemmaR 2.24 shows that there exists a
+continuous function v on X such that v ≥ ϕ and vν ≤ ϕν + ε. The result now follows
+since [BFJ11, Corollary 8.6] yields an θ-psh model function ψ such that ϕ ≤ ψ ≤ v + ε. 
+Definition 3.6. A pluripolar set is a subset of {ψ = −∞} for some ψ ∈ PSH(X, θ).
+Proposition 3.7. Let ϕ1 , ..., ϕn be bounded θ-psh functions. Then any ψ ∈ PSH(X, θ) is
+integrable with respect to the measure µ := (θ + ddc ϕ1 ) ∧ · · · ∧ (θ + ddc ϕn ). In particular, µ
+does not put mass on pluripolar sets.
+Proof. Pick ϕ0 ∈ PSH(X, θ) ∩ D(X). Upon replacing θ, ϕi , and ψ with θ + ddc ϕ0 , ϕi − ϕ0
+and ψ − ϕ0 respectively, we may assume that θ is semipositive and that ϕi ≤ 0 for all i.
+Adding a constant to ψ we may also assume sup R X ψ = 0. Set M := maxi sup |ϕi |. First
+assume that ψ is also bounded. We claim that −ψµ is bounded by a constant depending
+only on M (but not on supX |ψ|). Integrating by parts we have
+      Z           Z
+  0 ≤ (−ψ)µ = (−ψ)θ ∧ (θ + ddc ϕ2 ) ∧ · · · ∧ (θ + ddc ϕn )
+  Z                                               Z
+                c          c                c
++ (−ϕ1 )(θ +dd ψ)∧(θ +dd ϕ2 )∧· · ·∧(θ +dd ϕn )+ ϕ1 θ ∧(θ +ddc ϕ2 )∧· · ·∧(θ +ddc ϕn ).
+
+Here the second to last integral is bounded by M {θ}n , while the last integral to the right is
+non-positive since θ ∧ (θ + ddc ϕ2 ) ∧ · · · ∧ (θ + ddc ϕn ) is a positive measure. Hence
+              Z           Z
+                (−ψ)µ ≤ (−ψ)θ ∧ (θ + ddc ϕ2 ) ∧ · · · ∧ (θ + ddc ϕn ) + M {θ}n .
+
+Iterating this argument yields
+                                           Z                Z
+                                 0≤             (−ψ)µ ≤           (−ψ)θ n + nM {θ}n .
+20             SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+     R
+Now (−ψ)θ n is bounded above by some C > 0 only depending on θ, by compactness of
+{ψ ∈ PSH(X, θ) | supX ψ = 0} and the fact that θ n is an atomic measure supported at
+ﬁnitely many divisorial points. We conclude that
+                                   Z
+                               0 ≤ (−ψ)µ ≤ C + nM {θ}n                          (3.3)
+
+for some constant C > 0 only depending on θ, as long as ψ is a bounded θ-psh function with
+supX ψ = 0. If ψ is now a possibly unbounded θ-psh function normalized by supX ψ = 0,
+ψ is the decreasing limit of the bounded θ-psh functions ψm := max{ψ, −m}, so that (3.3)
+continues to hold, by monotone convergence.                                             
+
+3.2. The Chambert-Loir measure. We follow the notation and terminology of §2.6. Con-
+sider an ample line bundle L on X and equip L with a model metric k · k. Any continuous
+metric on L is then of the form k · k e−ϕ where ϕ ∈ C 0 (X). Recall that this metric is
+semipositive iﬀ the function ϕ is θ-psh, where θ := c1 (L, k · k). In this case, set
+                               c1 (L, k · ke−ϕ )n := (θ + ddc ϕ)n ,
+where the right hand side is the positive Radon measure in Theorem 3.1.
+   This is the same measure as the one deﬁned by Chambert-Loir in [CL06]. Indeed, this
+is certainly true when ϕ is a model function, as seen by comparing (2.2) and [CL06,
+Déﬁnition 2.4]. In general, Corollary 2.12 yields a sequence (ϕm )∞    m=1 of θ-psh model
+functions converging uniformly to ϕ on X. The measure µ associated to (L, k · ke−ϕ ) by
+Chambert-Loir is the limit of the measures µm := (θ + ddc ϕm )n , see [CL06, Proposition 2.7].
+But after replacing ϕm by ϕm + εm with a suitable sequence εm ց 0, we may assume that
+the sequence ϕm is decreasing, hence µ = (θ + ddc ϕ)n by Theorem 3.1.
+
+                           4. Capacity and quasicontinuity
+   Let ω ∈ Z 1,1 (X) be a closed (1, 1)-form with ample de Rham class {ω} ∈ N 1 (X). It is
+convenient to assume that {ω}n = 1, a harmless assumption by homogeneity. Let us further
+assume from now on that ω is semipositive, that is, R ⊂ PSH(X, ω).
+   In this section, we introduce a capacity that will be used to measure the size of subsets
+of X. It is the analogue of the Monge-Ampère capacity introduced in [BT82] and adapted
+to the case of compact Kähler manifolds in [GZ05].
+   The Monge-Ampere operator of course also depends on the choice of ω but we write
+                    MA(ϕ1 , . . . , ϕn ) := (ω + ddc ϕ1 ) ∧ · · · ∧ (ω + ddc ϕn )
+as well as MA(ϕ) := MA(ϕ, . . . , ϕ) = (ω + ddc ϕ)n to simplify some of the formulas below.
+Definition 4.1. For any Borel set E ⊆ X, set
+                             Z                                    
+              Capω (E) = sup      MA(ϕ) | ϕ ∈ PSH(X, ω), −1 ≤ ϕ ≤ 0 .
+                                    E
+                                                   n
+   By PropositionS 2.19 wePhave 0 ≤ Capω (E) ≤ {ω} . Note that if E1 , E2 , . . . are Borel
+sets, then Capω ( Ej ) ≤ j Capω (Ej ).
+   The Monge-Ampère operator and the capacity of course depend on the choice of ω, but
+we drop this dependence for notational simplicity.
+                 SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                       21
+
+Lemma 4.2. If x ∈ X is a divisorial point, then Capω {x} > 0. As a consequence, every
+nonempty open subset of X has strictly positive capacity.
+Proof. The second statement follows from the ﬁrst since divisorial points are dense in X,
+see §2.1. To prove the ﬁrst statement, pick an SNC model X of X such that x = xE is
+associated to an irreducible component Eω of the special ﬁber. By [BFJ11, Proposition 5.2]
+there exists u ∈ D(X) determined on X such that −1 ≤ u ≤ 0 and ω + ddc u is determined
+by an ample class in N 1 (X /S). Then Capω {x} ≥ MA(u){x} = bE ((ω + ddc u)|E )n > 0,
+see §2.7.                                                                               
+
+  The next two propositions are the main results of this section.
+Proposition 4.3. If ϕ is a bounded ω-psh function then for each ε > 0 there exists an
+open subset G ⊆ X with Capω (G) < ε and a decreasing sequence (ϕm )∞   m=1 of ω-psh model
+                                            c
+functions that converges uniformly to ϕ on G . In particular, ϕ is continuous on Gc .
+Definition 4.4. A function h : X → R is said to be quasicontinuous iff it is continuous
+outside sets of arbitrarily small capacity.
+  The previous result can be thus rephrased by saying that bounded ω-psh functions are
+quasicontinuous.
+  Using the same technique we shall replace nets by sequences in the regularization result for
+ω-psh functions (Theorem 2.11). While not crucial, this result is psychologically satisfying
+and does simplify the proof of Corollary 7.3 below.
+Proposition 4.5. Any ω-psh function ϕ is the limit of a decreasing sequence (ϕm )∞
+                                                                                 m=1 of
+ω-psh model functions.
+  The rest of this section is devoted to the proof of these two propositions. First we state
+and prove two estimates on special Monge-Ampère integrals.
+Lemma 4.6. The Monge-Ampère measure of any bounded ω-psh is linearly bounded by the
+capacity. More precisely, if u is an ω-psh function such that −M ≤ u ≤ 0, where M ≥ 1,
+then
+                                    MA(u) ≤ M n Capω
+on Borel sets.
+Proof. Given a Borel set E ⊂ X we have
+ Z            Z               Z                 Z
+                                                         u
+     MA(u) = (ω + ddc u)n ≤ (M ω + ddc u)n = M n (ω + ddc )n ≤ M n Capω (E).
+   E           E                E                E       M
+Here the ﬁrst inequality follows by writing M ω + ddc u = (M − 1)ω + ω + ddcu and expanding
+the Monge-Ampère measure by multilinearity.                                             
+Lemma 4.7. Suppose ϕ, ψ and ϕ1 , . . . , ϕn are bounded ω-psh functions such that −M ≤
+ϕ ≤ ψ ≤ 0 and −M ≤ ui ≤ 0, where M ≥ 1. Then
+                Z                                  Z                1
+                                                                   ϕ 2n
+             0 ≤ (ψ − ϕ) MA(ϕ1 , . . . , ϕn ) ≤ 4M    (ψ − ϕ) MA( )       .
+                                                                   2
+22             SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+Proof. After regularizing we may assume that all functions involved are model functions.
+Write, symbolically, T = (ω + ddc ϕ2 ) ∧ · · · ∧ (ω + ddc ϕn ). Then
+           Z                               Z                    Z
+             (ψ − ϕ) MA(ϕ1 , . . . , ϕn ) = (ψ − ϕ)ω ∧ T + (ψ − ϕ) ddc ϕ1 ∧ T.
+         R
+Since 0 ≤ (ψ − ϕ)ω ∧ T ≤ M , the ﬁrst term in the right-hand side satisﬁes
+                     Z                      Z               1
+                                          1                    2
+                       (ψ − ϕ)ω ∧ T ≤ M 2       (ψ − ϕ)ω ∧ T     .
+
+By the Cauchy-Schwarz inequality (Corollary 3.3), the second term is bounded by
+                 Z                         1 Z                    1
+                                             2                        2
+                               c                             c
+                    (ψ − ϕ) dd (ϕ − ψ) ∧ T          (−ϕ1 ) dd ϕ1 ∧ T
+                                      R
+By the assumption that −M ≤ u1 ≤ 0 and ω n = 1 we have
+               Z                  Z          Z
+                        c
+           0 ≤ (−ϕ1 ) dd ϕ1 ∧ T = ϕ1 ω ∧ T − ϕ1 (ω + ddc ϕ1 ) ∧ T ≤ M.
+
+Similarly,
+       Z                      Z                        Z
+                c                            c
+  0 ≤ (ψ − ϕ) dd (ϕ − ψ) ∧ T = (ψ − ϕ)(ω + dd ϕ) ∧ T − (ψ − ϕ)(ω + ddc ψ) ∧ T
+                              Z
+                             ≤ (ψ − ϕ)(ω + ddc ϕ) ∧ T.
+
+Putting this together, and using the concavity of the square root, we get
+  Z
+    (ψ − ϕ) MA(ϕ1 , . . . , ϕn ) ≤
+                       Z                  1       Z                               1 !
+                   1                        2                                          2
+               M   2        (ψ − ϕ)ω ∧ T        +        (ψ − ϕ)(ω + ddc ϕ) ∧ T
+
+                                                                        Z                              1
+                                                                                            cϕ
+                                                                    1                                    2
+                                                             ≤ 2M   2        (ψ − ϕ)(ω + dd       )∧T        .
+                                                                                              2
+                                                         1
+The lemma follows (with the constant 4M/(2M ) 2n < 4M ) by repeating this argument n − 1
+times, successively replacing ϕ2 , . . . , ϕn by ϕ/2.                                 
+Proof of Proposition 4.3. Let (ϕj )j be a decreasing net of ω-psh model functions converging
+to ϕ. We may assume that −M ≤ ϕj ≤ 0 for all j, where M ≥ 1. For any ω-psh function
+ψ with −1 ≤ ψ ≤ 0 it follows from Lemma 4.7 that
+                       Z                          Z                 1
+                                                                   ϕ 2n
+                   0 ≤ (ϕj − ϕ) MA(ψ) ≤ 4M            (ϕj − ϕ) MA( )
+                                                                   2
+and the right hand side tends to zero as j → ∞ by Theorem 3.1. It therefore follows from
+the deﬁnition of the capacity and from Chebyshev’s inequality that for each integer m ≥ 1
+                                                          1
+there exists jmSsuch that the open set Gm := {ϕjm − ϕ > m   } has capacity 2−m ε. We can
+then set G := m Gm and ϕm := ϕjm .                                                     
+                  SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                            23
+
+Proof of Proposition 4.5. As above let (ϕj )j be a decreasing net of ω-psh model functions
+converging to ϕ. After adding a constant we may assume that ϕj ≤ 0 for all j. For
+each integer m ≥ 1, the net (max{ϕj , −m})j decreases to the bounded ω-psh function
+max{ϕ, −m}. We can therefore choose jm such that
+          Z                                                     
+                                                    max{ϕ, −m}              n+1
+      0 ≤ (max{ϕjm , −m} − max{ϕ, −m}) MA                          ≤ (2m)−2 .        (4.1)
+                                                          2
+We may further assume jm+1 ≥ jm for all m. Set ϕm := ϕjm . We claim that the decreasing
+sequence (ϕm )∞
+              m=1 converges to ϕ. By Theorem 2.10 it suﬃces to test this at any divisorial
+point x ∈ X. We have 0 ≥ ϕ(x) > −∞ and ϕm (x) ≥ ϕ(x) ≥ −m for m ≥ −ϕ(x) ≥ 0.
+By (4.1), Lemma 4.7 and the deﬁnition of capacity we get
+                                                             1
+                            0 ≤ (ϕm (x) − ϕ(x)) Capω {x} ≤
+                                                             m
+for m ≥ |ϕ(x)|. Now Capω {x} > 0 by Lemma 4.2, thus ϕm (x) converges to ϕ(x), which
+concludes the proof.                                                                    
+
+                       5. Locality and the comparison principle
+   Let ω be a form as in §4 with {ω}n = 1. In this section we prove the following analogue
+of [BT87, Proposition 4.2].
+Theorem 5.1. If ϕ and ψ are bounded ω-psh functions, then
+                          1{ϕ>ψ} MA(max{ϕ, ψ}) = 1{ϕ>ψ} MA(ϕ).                              (5.1)
+  A ﬁrst consequence is the fact that our operator MA is local in nature, something that is
+not an immediate consequence of our deﬁnition in §3.
+Corollary 5.2. Suppose ϕ, ψ are bounded ω-psh functions that agree on an open set G ⊆ X.
+Then MA(ϕ) = MA(ψ) on G.
+Proof. Given ε > 0 we apply Theorem 5.1 to ϕ + ε and ψ. This gives MA(max{ϕ + ε, ψ}) =
+MA(ϕ) on G ⊆ {ϕ+ε > ψ}. Letting ε → 0 and using Theorem 3.1 we get MA(max{ϕ, ψ}) =
+MA(ϕ) on G. Exchanging the roles of ϕ and ψ shows that MA(ϕ) = MA(ψ) on G.           
+  Another key consequence of Theorem 5.1 is the comparison principle:
+Corollary 5.3. If ϕ and ψ are bounded ω-psh functions, then
+                              Z              Z
+                                  MA(ψ) ≤        MA(ϕ).
+                              {ϕ<ψ}             {ϕ<ψ}
+
+Proof. As in [GZ07, Theorem 1.5] the result easily follows from the locality property by
+integration. More precisely, for any ε > 0 we have
+      Z                             Z                          Z
+  1 = MA(max{ϕ, ψ − ε}) ≥                MA(max{ϕ, ψ − ε}) +        MA(max{ϕ, ψ − ε})
+                                {ϕ<ψ−ε}                            {ϕ>ψ−ε}
+              Z                      Z                   Z                       Z
+      (5.1)
+       =             MA(ψ − ε) +             MA(ϕ) =             MA(ψ) + 1 −             MA(ϕ),
+           {ϕ<ψ−ε}                 {ϕ>ψ−ε}             {ϕ<ψ−ε}                 {ϕ≤ψ−ε}
+
+so we obtain the desired estimate by letting ε → 0.                                               
+24               SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+     The rest of this section is devoted to the proof of Theorem 5.1. We shall use
+Lemma 5.4. Let (ϕj )j be a uniformly bounded net of ω-psh functions, and assume that
+MA(ϕj ) converges to MA(ϕ) in the weak sense of measures for some bounded ω-psh function
+ϕ. Then                 Z               Z
+                                 h MA(ϕj ) →       h MA(ϕ)   as j → ∞
+for every bounded, quasicontinuous function h.
+Proof. We may assume 0 ≤ h ≤ 1, −M ≤ ϕ ≤ 0 and −M ≤ ϕj ≤ 0 for all j, where M ≥ 1.
+Given ε > 0, let G be an open set such that Capω (G) < ε and h is continuous on Gc , see
+Deﬁnition 4.4. Using the Tietze extension theorem, we extend h|Gc to a continuous function
+h̃ on all of X such that 0 ≤ h̃ ≤ 1. We then have
+             Z              Z             Z             Z
+                h MA(ϕj ) − h MA(ϕ) = h̃ MA(ϕj ) − h̃ MA(ϕ)
+                                          Z                 Z
+                                       + (h − h̃) MA(ϕj ) − (h − h̃) MA(ϕ).
+                                               G                  G
+It follows from Lemma 4.6 that
+   Z              Z            Z             Z
+      h MA(ϕj ) − h MA(ϕ) ≤      h̃ MA(ϕj ) − h̃ MA(ϕ) + 2 sup |h − h̃|M n Capω (G).
+                          R                R
+Since h̃ is continuous,       h̃ MA(ϕj ) → h̃ MA(ϕ) as j → ∞, thus
+                                       Z            Z
+                               lim sup   h MA(ϕj ) − h MA(ϕ) ≤ 4ε.
+                                 j
+
+Letting ε tend to zero completes the proof.                                                 
+Proof of Theorem 5.1. We prove the result for successively more general functions ϕ, ψ.
+Step 1. First assume ϕ, ψ are ω-psh model functions.
+   Pick an SNC model X on which ϕ, ψ and max{ϕ, ψ} are determined by vertical divisors
+A, B and C respectively. These three functions are then aﬃne on any face of the dual
+complex ∆X . Further, MA(ϕ) and MA(max{ϕ, ψ}) are both atomic measures, supported
+on divisorial points corresponding to irreducible components of the special ﬁber, see §2.7.
+If E is such a component for which ϕ(xE ) > ψ(xE ), then ϕ(xF ) ≥ ψ(xF ) and hence
+max{ϕ(xF ), ψ(xF )} = ϕ(xF ) for all irreducible components F of the special ﬁber intersecting
+Eω , or else max{ϕ, ψ} would not be aﬃne on the face [xE , xF ] in ∆X . We have thus shown
+ordF (A) = ordF (C) for all components F of X0 intersecting Eω . If follows that A|E = C|E
+as numerical classes on Eω , and hence MA(max{ϕ, ψ}){xE } = MA(ϕ){xE } by deﬁnition of
+Monge-Ampère measures of model functions.
+Step 2. Now suppose that ϕ is an ω-psh model function but that ψ is merely a bounded
+ω-psh function.
+   We may assume −M ≤ ϕ, ψ < 0, where M ≥ 1. Note that     R the set Ω := {ϕ > Rψ} is open
+since ϕ is continuous and ψ is usc. It suﬃces to prove that h MA(max{ϕ, ψ}) = h MA(ϕ)
+for all model functions h whose support is contained in Ω and such that 0 ≤ h ≤ 1.
+   Fix a small number δ > 0. By Proposition 4.3 there exists an open set G ⊆ X and a
+decreasing sequence (ψj )∞j=1 of ω-psh model functions on X such that Capω (G) < δ and
+               SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                        25
+
+such that ψj converges uniformly to ψ on Gc . Pick ε > 0 small and rational and write
+Ωj := {ϕ + ε > ψj }. For j ≫ 0, we have Ω ∩ Gc ⊆ Ωj . Since ϕ + ε and ψj are both
+model functions, we have MA(max{ϕ + ε, ψj }) = MA(ϕ) on Ωj by Step 1. It follows from
+Lemma 4.6 that
+    Z                         Z              Z                        Z
+      h MA(max{ϕ + ε, ψj }) − h MA(ϕ) ≤        h MA(max{ϕ + ε, ψ}) − h MA(ϕ)
+                                                 G                          G
+                                              ≤ 2M n δ,
+where we have used 0 ≤ h ≤ 1 and −M ≤ ϕ + ε, ψ ≤ 0.
+   Since h is a model function, it is the diﬀerence of two ω-psh model functions by Proposi-
+tion 2.6. Now max{ϕ + ε, ψj } decreases to max{ϕ, ψ} as j → ∞ and ε → 0, so Theorem 3.1
+and the above inequality imply
+                        Z                        Z
+                          h MA(max{ϕ, ψ}) − h MA(ϕ) ≤ 2M n δ.
+
+We obtain the desired equality letting δ → 0.
+Step 3. Finally we treat the general case when ϕ and ψ are bounded ω-psh functions.
+  Let (ϕj )∞
+           1 be a decreasing net of ω-psh model functions converging to ϕ. Write Ωj :=
+{ϕj > ψ}. This is an open set. Set u := max{0, ϕ − ψ}. Then
+                                                    \
+                               {ϕ > ψ} = {u > 0} ⊆     Ωj .
+                                                          j
+
+By what precedes, MA(max{ϕj , ψ}) = MA(ϕj ) on Ωj . Moreover max{ϕj , ψ} decreases to
+max{ϕ, ψ} and so the measure MA(max{ϕj , ψ}) converges weakly to MA(max{ϕ, ψ}). Let
+f be a continuous function on X. By Proposition 4.3 ϕ, ψ are quasicontinuous. It follows
+that u and f u are also quasicontinuous, and applying Lemma 5.4 twice we get that
+Z                             Z                            Z               Z
+   f u MA(max{ϕ, ψ}) = lim       f u MA(max{ϕj , ψ}) = lim   f u MA(ϕj ) = f u MA(ϕ).
+                         j→∞                                  j→∞
+
+This holds for every f ∈ C 0 (X), so 1{ϕ>ψ} MA(max{ϕ, ψ}) = 1{ϕ>ψ} MA(ϕ), as was to be
+shown.                                                                              
+
+                                        6. Energy
+   Let ω be a form as in §4 with {ω}n = 1. As in the complex case, it turns out that the non-
+Archimedean Monge-Ampère operator admits a primitive, i.e. a functional whose directional
+derivatives at a given ϕ are given by integration against MA(ϕ). Adapting [GZ07, BEGZ10]
+to our case we introduce and study this functional, as well as the resulting class of ω-psh
+functions of ﬁnite energy. While such functions are unbounded in general, they behave from
+many points of view like bounded ω-psh functions.
+
+6.1. Energy of model functions. For any model function ϕ we set
+                                    n Z
+                               1 X
+                     Eω (ϕ) =           ϕ(ω + ddc ϕ)j ∧ ω n−j                           (6.1)
+                              n+1
+                                        j=0
+26               SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+and call Eω (ϕ) the energy of ϕ. It follows formally from an integration by parts argument,
+see Proposition 2.20 and [Tia00, Lemma 6.2] that if ϕ, ψ are any two model functions, then
+                                       n Z
+                                 1 X
+            Eω (ψ) − Eω (ϕ) =               (ψ − ϕ)(ω + ddc ϕ)j ∧ (ω + ddc ψ)n−j .    (6.2)
+                               n+1
+                                      j=0
+
+Writing ϕt = (1 − t)ϕ + tψ, and expanding Eω (ϕt ) − Eω (ϕ) in t leads to the following
+formulas for ﬁrst and second derivatives of Eω :
+                                                 Z
+             ′                d
+           Eω (ϕ) · (ψ − ϕ) =         Eω (ϕt ) = (ψ − ϕ) MA(ϕ);                    (6.3)
+                              dt t=0+
+                                                   Z
+             ′′               d2
+           Eω (ϕ) · (ψ − ϕ) = 2        Eω (ϕt ) = n (ψ − ϕ)ddc (ψ − ϕ) MA(ϕ).      (6.4)
+                              dt t=0+
+Proposition 6.1. The restriction of Eω to the convex set PSH(X, ω) ∩ D(X) is concave,
+nondecreasing, and satisfies Eω (ϕ + c) = Eω (ϕ) + c for any constant c ∈ R.
+Proof. Concavity follows from (6.4) and Proposition 2.21. Monotonicity is a consequence
+of (6.3), and the last equation follows from (6.2) since (ω + ddc ϕ)j ∧ ω n−j is a probability
+measure for each j thanks to Proposition 2.19 and the normalization {ω}n = 1.               
+6.2. Energy of ω-psh functions. For a general ω-psh function ϕ we set
+             Eω (ϕ) := inf {Eω (ψ) | ψ ∈ PSH(X, ω) ∩ D(X), ψ ≥ ϕ} ∈ [−∞, +∞[.
+Proposition 6.2. The extension Eω : PSH(X, ω) → [−∞, +∞[ is non-decreasing, concave,
+and satisfies Eω (ϕ + c) = Eω (ϕ) + c for any c ∈ R. It is also upper semicontinuous, and
+continuous along decreasing nets
+Proof. That Eω is nondecreasing, concave and satisﬁes Eω (ϕ + c) = Eω (ϕ) + c follows
+formally from Proposition 6.1 (using that PSH(X, ω) ∩ D(X) is convex and invariant under
+addition of a constant).
+   Upper semicontinuity is also a direct consequence of these algebraic properties of Eω and
+of Theorem 2.10. Indeed, pick ϕ0 ∈ PSH(X, ω) and t ∈ R such that Eω (ϕ0 ) < t. We need
+to show that Eω (ϕ) < t for ϕ in a neighborhood U of ϕ0 in PSH(X, ω). By deﬁnition, there
+exists ψ0 ∈ PSH(X, ω) ∩ D(X) such that ψ0 ≥ ϕ0 and Eω (ψ0 ) < t − ε for some ε > 0. By
+Theorem 2.10, U := {ϕ ∈ PSH(X, ω) | supX (ϕ − ψ0 ) < ε} is an open neighborhood of ϕ0
+in PSH(X, ω). By (6.2) we have Eω (ϕ) ≤ Eω (ψ0 ) + ε < t for all ϕ ∈ U , which proves upper
+semicontinuity.
+   Finally, being usc and nondecreasing, Eω is automatically continuous along decreasing
+nets.                                                                                      
+Proposition 6.3. Formulas (6.1)-(6.4) are valid for bounded ω-psh functions.
+     This follows from the continuity of Eω along decreasing nets and from Theorem 3.1.
+6.3. Non-pluripolar Monge-Ampère measures. Let us introduce the class of ω-psh
+functions with ﬁnite energy
+                        E 1 (X, ω) := {ϕ ∈ PSH(X, ω) | Eω (ϕ) > −∞} .
+This is a convex set which contains all bounded ω-psh functions.
+                 SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                       27
+
+    In this section and its sequel, we explain how to extend the Monge-Ampère operator to
+E 1 (X, ω) and prove that its basic properties continue to hold in this more general setting.
+    Consider an arbitrary ω-psh function ϕ. In the sequel we shall use the notation
+                                    ϕhti := max{ϕ, −t}.
+Note that for s > t ≥ 1, {ϕ > −t} = {ϕhsi > −t} and max{ϕhsi , −t} = ϕhti ; hence
+Theorem 5.1 implies
+   1{ϕ>−t} MA(ϕhsi ) = 1{ϕhsi >−t} MA(ϕhsi ) = 1{ϕhsi >−t} MA(ϕhti ) = 1{ϕ>−t} MA(ϕhti ).
+  This equation allows us to introduce
+Definition 6.4. [BT87, GZ07] The non-pluripolar Monge-Ampère measure MA(ϕ) of any
+ω-psh function ϕ is the increasing limit of the measures 1{ϕ>−t} MA(ϕhti ) as t → ∞.
+  Here the limit exists in a very strong sense: we have
+                           lim 1{ϕ>−t} MA(ϕhti )(E) = MA(ϕ)(E)                          (6.5)
+                          t→∞
+for any Borel set E.
+Remark 6.5. The terminology ”non-pluripolar” comes from the fact that MA(ϕ) does not
+put mass on pluripolar sets. This in turn follows from Proposition 3.7 applied to the bounded
+ω-psh function ϕhti and from (6.5).
+  The measure MA(ϕ) is always deﬁned and supported on the set {ϕ > −∞}, but its total
+mass may be strictly less than one.
+Definition 6.6. A ω-psh function ϕ has full Monge-Ampère mass when MA(ϕ) is a prob-
+ability measure.
+  This is the case iﬀ MA(ϕhti ){ϕ ≤ −t} → 0 as t → ∞, and implies that MA(ϕhti ) converges
+weakly to MA(ϕ).
+Lemma 6.7. If ϕ ∈ E 1 (X, ω), then MA(ϕhti ){ϕ ≤ −t} = o(t−1 ) as t → ∞; hence ϕ has
+full Monge-Ampère mass.
+Proof. We may assume ϕ ≤ 0. Set µt := MA(ϕhti ). Since (6.2) applies to bounded ω-psh
+functions by Proposition 6.3, we get
+                                  Z                          Z t/2 n                  o
+                               1                          1
+  Eω (ϕht/2i ) − Eω (ϕhti ) ≥       (ϕht/2i − ϕhti )µt =          µt ϕht/2i − ϕhti ≥ s ds
+                              n+1                        n+1 0
+                                  Z t/2 n                    o
+                               1                                        t
+                            ≥          µt ϕht/2i − ϕhti ≥ t/2 ds =           µt {ϕ ≤ −t} ,
+                              n+1 0                                 2(n + 1)
+where µt = MA(ϕhti ). Since limt→∞ Eω (ϕht/2i ) = limt→∞ Eω (ϕhti ) = Eω (ϕ) by the continu-
+ity of Eω along decreasing sequences, the proof is complete.                              
+Lemma 6.8. If 0 ≥ ϕ ∈ E 1 (X, ω) and f ∈ D(X), then
+                Z                Z
+                           hti                 2(n + 1)
+                  f MA(ϕ ) − f MA(ϕ) ≤                  |Eω (ϕ)| sup |f |
+                                                   t              X
+for any t > 0.
+28              SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+Proof. We may assume supX |f | = 1. Pick s ≥ t. The probability measures µt := MA(ϕhti )
+and µs agree on {ϕ > −t}. Hence
+   Z        Z                                Z               Z            
+                                          1          hti             hsi
+      f µt − f µs ≤ (µt + µs ){ϕ ≤ −t} ≤          −ϕ µt + −ϕ µs
+                                          t
+                                       n+1                                  2(n + 1)
+                                     ≤      (|Eω (ϕhti )| + |Eω (ϕhsi )|) ≤          |Eω (ϕ)|.
+                                        t                                       t
+The result follows by letting s → ∞.                                                           
+Proposition 6.9. If ϕ ∈ E 1 (X, ω) and (ϕj )j is a decreasing net of ω-psh functions converg-
+ing to ϕ, then ϕj ∈ E 1 (X, ω) for all j and MA(ϕj ) → MA(ϕ) as j → ∞ in the weak sense
+of measures.
+                                                        R              R
+Proof. Given f ∈ D(X), we have by deﬁnition that f MA(ϕhti ) → f MA(ϕ) as t → ∞
+     R         hti    R
+and f MA(ϕj ) → f MA(ϕj ) as t → ∞ for every j. Moreover, Lemma 6.8 shows that
+                                                                R        hti    R
+the latter convergence is uniform in j. Since for each t we have f MA(ϕj ) → f MA(ϕhti )
+as j → ∞ by Theorem 3.1, the result follows.                                               
+Lemma 6.10. If ϕ, ψ ∈ E 1 (X, ω) and ϕ, ψ ≤ 0, then we have the estimate
+                                                 Z
+                                ϕ+ψ        2−(n+1)
+                    −∞ < E               ≤           (−ψ) MA(ϕ).
+                                  2         n+1
+Proof. Pick s, t > 0. Since (6.1) holds for bounded ω-psh functions, we see using (3.1) that
+                                                   !           Z
+                        ϕ+ψ             ϕhti + ψ hsi     2−(n+1)
+            −∞ < E               ≤E                    ≤           ψ hsi MA(ϕhti ).
+                           2                 2            n+1
+Since ψ hsi decreases to ψ at any point of X, the right hand side converges to
+              Z                         Z                             Z
+     2−(n+1)             hti    2−(n+1)                 hti   2−(n+1)
+                 ψ MA(ϕ ) ≤                     ψ MA(ϕ ) =                     ψ MA(ϕ)
+      n+1                        n + 1 {ϕ>−t}                  n + 1 {ϕ>−t}
+by monotone convergence. We obtain the desired estimate by letting t → ∞.                     
+6.4. Locality and the comparison principle.
+Proposition 6.11. For any ϕ, ψ ∈ E 1 (X, ω), we have
+                          1{ϕ>ψ} MA(max{ϕ, ψ}) = 1{ϕ>ψ} MA(ϕ),                             (6.6)
+and the comparison principle holds:
+                             Z                    Z
+                                        MA(ψ) ≤               MA(ϕ).                       (6.7)
+                                {ϕ<ψ}                 {ϕ<ψ}
+
+Proof. To prove (6.6), ﬁrst assume ψ = −t, where t ≥ 1. Pick s ≥ t so that ϕhti =
+max{ϕs , −t}, {ϕ > −t} = {ϕs > −t}, and
+ 1{ϕ>−t} MA(ϕhti ) = 1{ϕs >−t} MA(ϕhti ) = 1{ϕs >−t} MA(ϕs ) = 1{ϕ>−t} · 1{ϕ>−s} MA(ϕs ),
+where the second equality follows from Theorem 5.1. As s → ∞, 1{ϕ>−s} MA(ϕs )(E) →
+MA(ϕ)(E) for any Borel set E, so the right hand side of the equation above converges to
+1{ϕ>−t} MA(ϕ).
+                 SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                                29
+
+  Now consider ϕ, ψ ∈ E 1 (X, ω) and set u = max{ϕ, ψ} ∈ E 1 (X, ω). Then
+     • 1{ϕhti >ψhti } MA(u) = 1{ϕhti >ψhti } MA(uhti ) since {ϕhti > ψ hti } ⊆ {u > −t};
+     • 1{ϕhti >ψhti } MA(uhti ) = 1{ϕhti >ψhti } MA(ϕhti ) by (5.1) applied to ϕhti and ψ, noticing
+       the inclusion {ϕhti > ψ hti } ⊆ {ϕhti > ψ};
+     • 1{ϕhti >ψhti } MA(ϕhti ) = 1{ϕhti >ψhti } MA(ϕ) by the previous step and the inclusion
+       {ϕhti > ψ hti } ⊆ {ϕhti > −t}.
+To summarize, we get
+                             1{ϕhti >ψhti } MA(u) = 1{ϕhti >ψhti } MA(ϕ).                         (6.8)
+Now
+                 1{ϕhti >ψhti } MA(u) = 1{ϕ>−t≥ψ} MA(u) + 1{ϕ>ψ>−t} MA(u)
+As t → ∞ the ﬁrst term tends to 0 since MA(u) puts no mass on the pluripolar set {ψ = −∞}
+(see Remark 6.5), and the second term converges to 1{ϕ>ψ>−∞} MA(u) = 1{ϕ>ψ} MA(u).
+   Thus the left-hand side of (6.8) tends to 1{ϕ>ψ} MA(u) as t → ∞. Similarly, the right-
+hand side tends to 1{ϕ>ψ} MA(ϕ). Finally the comparison principle follows exactly as in the
+proof of Corollary 5.3. The proof is complete.                                           
+6.5. Differentiability.
+Proposition 6.12. For any ϕ, ψ ∈ E 1 (X, ω), the function t 7→ Eω ((1 − t)ϕ + tψ) is differ-
+entiable on [0, 1], and we have
+                                                             Z
+                ′                d
+             Eω (ϕ) · (ψ − ϕ) :=         Eω ((1 − t)ϕ + tψ) = (ψ − ϕ) MA(ϕ)           (6.9)
+                                 dt t=0+
+for any ϕ, ψ ∈ E 1 (X, ω).
+Proof. Set h(t) := hϕ,ψ (t) := Eω ((1 − t)ϕ + tψ) for 0 ≤ t ≤ 1. Note that h is a polynomial
+of degree at most n when ϕ and ψ are model functions. By continuity of the energy along
+decreasing nets, the same is true in general. In particular, h is diﬀerentiable on [0, 1].
+   Pick any decreasing sequence (ψj )∞j=1 of ω-psh model functions converging to ψ. Note that
+                                                                     d
+hϕhsi ,ψj → hϕ,ψ as polynomials when s → ∞ and j → ∞, hence dt              h
+                                                                       t=0+ ϕhsi ,ψj
+                                                                                     → h′ (0+).
+Since (6.9) holds true for bounded functions by Proposition 6.3, it suﬃces to show
+                              Z                         Z
+                                        hsi       hsi
+                    lim lim (ψj − ϕ ) MA(ϕ ) = (ψ − ϕ) MA(ϕ).
+                     j→∞ s→∞
+
+First, we have
+             Z                           Z                                 Z
+                  hsi         hsi                               hsi
+                 ϕ      MA(ϕ        )=                (−s) MA(ϕ       )+            ϕ MA(ϕhsi )
+                                             {ϕ≤−s}                        {ϕ>−s}
+                                         Z                                 Z
+                                    =                 (−s) MA(ϕhsi ) +              ϕ MA(ϕ)
+                                             {ϕ≤−s}                        {ϕ>−s}
+
+by (6.6). By LemmaR 6.7 the ﬁrst term of the right hand side tends to 0, and the second
+term converges to ϕ MA(ϕ) since MA(ϕ) puts no mass on {ϕ = −∞}.
+                                     R                R
+   Second, for ﬁxed j we have lims→∞ R ψj MA(ϕhsi ) R= ψj MA(ϕ) since ψj is continuous.
+   Finally, Lemma 2.23 yields limj→∞ ψj MA(ϕ) = ψ MA(ϕ), completing the proof. 
+30              SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+                           7. Envelopes and differentiability
+   Let ω be a form as in §4 with {ω}n = 1. As explained in the introduction, the diﬀerentia-
+bility of the energy is not a priori suﬃcient to make the variational approach work, i.e. to
+infer that a maximizer of the relevant functional over E 1 (X, ω) is necessarily a critical point.
+In order to circumvent this diﬃculty, we show as in [BB10] the diﬀerentiability of Eω ◦ Pω ,
+where Pω is the ω-psh envelope operator of §2.5. This idea was originally introduced by
+Alexandrov [Ale38] in the context of real Monge-Ampère equations.
+Definition 7.1. We say that ω has the orthogonality property if
+                            Z
+                              (f − Pω (f )) MA(Pω (f )) = 0
+
+holds for every f ∈ C 0 (X).
+   Since Pω (f ) ≤ f , this property means that MA(Pω (f )) is concentrated on the contact
+locus {Pω (f ) = f }. We refer to Appendix A for more information on the orthogonality
+property.
+   We can state the main result of this section.
+Theorem 7.2. Assume that ω has the orthogonality property. Then the composition Eω ◦
+Pω : C 0 (X) → R is Gâteaux differentiable, with directional derivatives given by
+                                                   Z
+                          d
+                                Eω ◦ Pω (f + tg) = g MA(Pω (f )).
+                         dt t=0
+  Before giving a proof of this crucial result, we state and prove a corollary of it that we
+shall need when solving the Monge-Ampère equation.
+  If ϕ ∈ PSH(X, ω) and f ∈ C 0 (X), observe that Pω (ϕ + f ) is ω-psh (i.e. is not identically
+−∞) since ϕ+f dominates the ω-psh function ϕ+inf X f . Furthermore we have Pω (ϕ+f ) ≤
+ϕ + f since the latter is usc.
+Corollary 7.3. Assume that ω has the orthogonality property. Let ϕ ∈ E 1 (X, ω) and f ∈
+C 0 (X). Then Pω (ϕ + tf ) ∈ E 1 (X, ω) for all t ∈ R and
+                                                       Z
+                            d
+                                   Eω ◦ Pω (ϕ + tf ) = f MA(ϕ).
+                            dt t=0
+Proof. Note that ϕ + tf ≥ ϕ − |t| supX |f | implies Pω (ϕ + tf ) ≥ ϕ − |t| supX |f |, hence
+Pω (ϕ + tf ) ∈ E 1 (X, ω) for all t. We are going to show that
+                                                Z t Z                    
+                  Eω ◦ Pω (ϕ + tf ) = Eω (ϕ) +          f MA(Pω (ϕ + sf )) ds.         (7.1)
+                                                0
+For all t ∈ R. If ϕ is continuous, then the result follows immediately from Theorem 7.2.
+   In general, let (ϕm )∞
+                        m=1 be a decreasing sequence of ω-psh model functions converging to
+ϕ, see Proposition 4.5.
+   For each t ∈ R the sequence (Pω (ϕm +tf ))∞m=1 is a decreasing sequence of ω-psh functions,
+and we claim that limm Pω (ϕm + tf ) = Pω (ϕ + tf ). Indeed let ϕ̃t = limm Pω (ϕm + tf ). Since
+ϕm + tf ≥ ϕ + tf , we have Pω (ϕm + tf ) ≥ Pω (ϕ + tf ), hence ϕ̃t ≥ Pω (ϕ + tf ). Conversely,
+ϕ̃t ≤ Pω (ϕm + tf ) ≤ ϕm + tf for all m, hence ϕ̃t ≤ ϕ + tf and it follows ϕ̃t = Pω (ϕ + tf )
+as required.
+                SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                                   31
+
+  We apply (7.1) to ϕm :
+                                                Z t Z                      
+              Eω (Pω (ϕm + tf )) = Eω (ϕm ) +            f MA(Pω (ϕm + sf )) ds.               (7.2)
+                                                 0
+As m → ∞, Eω (Pω (ϕm +tf    R )) and Eω (ϕm ) decrease to Eω ◦Pω (ϕ+tf
+                                                                  R    ) and Eω (ϕ), respectively
+and by Proposition 6.9, f MA(Pω (ϕm + sf )) converges to f MA(Pω (ϕ + sf )) for each
+s.R Finally (7.1) follows from (7.2) using dominated convergence in view of the upper bound
+| f MA(Pω (ϕm + sf ))| ≤ supX |f | for all m and all s.                                        
+Proof of Theorem 7.2. We follow the exposition in [BB10, §4.3] very closely. Arguing as in
+Corollary 7.3 we may assume that f, g ∈ D(X). Set µ := MA(Pω (f )). We need to prove
+that                                                  Z
+                            d
+                                    Eω ◦ Pω (f + tg) = g µ.                          (7.3)
+                            dt t=0+
+As a ﬁrst step, we linearize the problem and prove that
+                                                        Z
+                      d                         d
+                             Eω ◦ Pω (f + tg) =           Pω (f + tg) µ.                       (7.4)
+                     dt t=0+                    dt t=0+
+Denote the left and right hand sides of (7.4) by a and b, respectively. Note that the one-sided
+derivatives exist since both Eω and Pω are concave.
+  Since Eω is concave on the space of bounded ω-psh functions, the function
+                    [0, 1] ∋ s 7→ h(s) := Eω (sPω (f + tg) + (1 − s)Pω (f ))
+is also concave, hence
+
+  Eω (sPω (f + tg) + (1 − s)Pω (f )) ≤
+                                                                   Z                              
+                                     d
+                      Eω ◦ Pω (f ) +        h = Eω ◦ Pω (f ) + s        (Pω (f + tg) − Pω (f ))µ
+                                     dt t=0
+by Proposition 6.3. Taking s = 1 and letting t → 0 yields a ≤ b.
+  To prove the reverse inequality, ﬁx ε > 0. Then there exists δ > 0 such that
+                           Z                   Z
+                      D :=     Pω (f + δg)µ −    Pω (f )µ ≥ δ(b − ε).
+                               X                     X
+Since µ is the diﬀerential of Eω , there exists γ > 0 such that
+    E ((1 − t)Pω (f ) + tPω (f + δg)) ≥ Eω (Pω (f )) + t(D − δε) ≥ Eω (Pω (f )) + tδ(b − 2ε)
+for 0 ≤ t ≤ γ. The concavity of P yields Pω (f + tδg) ≥ (1 − t)Pω (f ) + tPω (f + δg). Since
+Eω is non-decreasing we get
+        Eω ◦ Pω (f + tδg) ≥ E ((1 − t)Pω (f ) + tPω (f + δg)) ≥ E(Pω (f )) + tδ(b − 2ε)
+for 0 ≤ t ≤ γ. Letting t → 0 and ε → 0 we conclude a ≥ b. This shows that (7.4) holds.
+   In view of (7.4) it remains to show that
+                          Z                                Z
+                             (Pω (f + tg) − Pω (f )) µ = t   gµ + o(t)              (7.5)
+                           X                                X
+as t → 0+.
+32              SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+  Since Pω (f ) ≤ f , the orthogonality property implies Pω (f ) = f for µ-a.e. point. We thus
+have Pω (f + tg) ≤ f + tg = Pω (f ) + tg µ-a.e. We claim that µ(Ωt ) = O(t) with
+                              Ωt := {Pω (f + tg) < Pω (f ) + tg}.
+Observe that |Pω (f + tg) − Pω (f )| ≤ t sup |g| so that the claim implies
+  Z
+     (Pω (f + tg) − Pω (f ) − tg)µ
+   X
+                   Z                               Z
+                =      (Pω (f + tg) − Pω (f ))µ +         (Pω (f + tg) − Pω (f ))µ
+                    Ωt                               X\Ωt
+                             Z                                   Z
+                          =       (Pω (f + tg) − Pω (f ) − tg) +    tg µ
+                               Ωt                                 X
+                             Z                                                    Z
+                         ≤ t g µ + µ(Ωt ) sup |Pω (f + tg) − Pω (f ) − tg| = t g µ + O(t2 )
+                              X              X                                   X
+
+which proves (7.5).
+  The estimate of µ(Ωt ) is based on the comparison principle. Since g is a model function,
+there exists C ≫ 1, ψ ∈ D(X) such that ψ and ψ + g are Cω-psh by Proposition 2.6. Note
+that Ωt = {Pω (f + tg) + tψ < Pω (f ) + t(ψ + g)}, and both functions Pω (f + tg) + tψ and
+Pω (f ) + t(ψ + g) are (1 + Ct)ω-psh. The comparison principle then yields
+   Z                                            Z
+                        c                    n
+        ((1 + Ct)ω + dd (Pω (f ) + t(ψ + g))) ≤    ((1 + Ct)ω + ddc (Pω (f + tg) + tψ))n
+      Ωt                                              Ωt
+
+By expanding as polynomials in t, we get
+              ((1 + Ct)ω + ddc (Pω (f ) + t(ψ + g)))n = (ω + ddc Pω (f ))n + O(t)
+and
+           ((1 + Ct)ω + ddc (Pω (f + tg) + tψ))n = (ω + ddc Pω (f + tg))n + O(t).
+From these three estimates we conclude
+                          Z                Z
+                 µ(Ωt ) =    MA(Pω (f )) ≤            MA(Pω (f + tg)) + O(t).
+                             Ωt                  Ωt
+
+But Ωt ⊆ {Pω (f + tg) < f + tg}, so the orthogonality property implies that the last integral
+vanishes. This concludes the proof.                                                        
+Remark 7.4. Observe that the differentiability property of Theorem 7.2 conversely implies
+the orthogonality
+      R             property. Indeed, pick f ∈ C 0R(X) and set g := Pω (f ) − f . We claim
+that g MA(Pω (f )) = 0. It is enough to prove g MA(Pω (f )) ≥ 0 since g ≤ 0. Now the
+differentiability property yields
+                                                      Z
+                   Eω (Pω (f + εg)) = Eω (Pω (f )) + ε g MA(Pω (f )) + o(ε).
+
+But we have
+               f + εg = (1 − ε)f + εPω (f ) ≥ (1 − ε)Pω (f ) + εPω (f ) = Pω (f ),
+hence Eω (Pω (f + εg)) ≥ Eω (Pω (f )) by monotonicity of Eω , and the result follows.
+               SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                         33
+
+                             8. The Monge-Ampère equation
+  In this section we prove
+Theorem 8.1. Assume that ω is a form as in §4 with {ω}n = 1 that satisfies the orthog-
+onality property (see Definition 7.1). Let µ be a probability measure on X supported on
+the dual complex of some SNC model of X. Then there exists a unique, continuous ω-psh
+function ϕ ∈ PSH(X, ω) such that MA(ϕ) = µ, and sup ϕ = 0.
+   Let us explain how to deduce Theorems A and A’ from the introduction. Let ω be any
+closed semipositive form with {ω} ample, and µ be a positive Radon measure of mass {ω}n .
+Set ω̃ := ω/({ω}n )1/n , and µ̃ = µ/{ω}n . Assume that X is algebraizable. It follows from
+Appendix A that ω and ω̃ satisfy the orthogonality property. Applying Theorem 8.1 to ω̃
+and µ̃ yields a unique ϕ̃ ∈ PSH(X, ω̃) such that sup ϕ̃ = 0 and (ω̃ + ddc ϕ̃)n = µ̃. Theorem
+A’ follows since (ω + ddc ϕ)n = µ with ϕ = ({ω}n )1/n ϕ̃.
+   Now consider an ample line bundle L → X endowed with a semipositive model metric
+k · k. The curvature form ω = c1 (L, k · k) is semipositive and {ω}n = c1 (L)n in view
+of Proposition 2.19 and (2.1). Given any positive Radon measure µ of mass c1 (L)n and
+supported on the dual complex of some SNC model of X, Theorem A’ thus implies the
+existence of a unique continuous ω-psh function ϕ such that MA(ϕ) = µ, and sup ϕ = 0.
+This statement implies Theorem A since c1 (L, k · ke−ϕ )n = MA(ϕ) by deﬁnition.
+  For the rest of this section is a form as in §4 normalized by {ω}n = 1
+
+8.1. Uniqueness. The uniqueness statement in Theorem 8.1 does not require the orthog-
+onality property. Following [Blo03] as in [GZ07, YZ10], one actually proves:
+Proposition 8.2. Let ω be any semipositive closed (1, 1) form. Suppose MA(ϕ) = MA(ψ)
+for any two functions ϕ, ψ ∈ E 1 (X, ω). Then ϕ − ψ is constant.
+Proof. For simplicity we write ωϕ = ω + ddc ϕ.
+   First we brieﬂy indicate how to extend to ω-psh of ﬁnite energy the calculus that we
+developed in §3. Let ϕ, ψ ∈ E 1 (X, ω). Since Eω is convex, (1 − t)ϕ + tψ ∈ E 1 (X, ω) for any
+t ∈ [0, 1]. For any 0 ≤ i ≤ n, deﬁne ωϕi ∧ ωψn−i to be the unique probability measure such
+that
+  X n 
+  n−1
+            (1 − t)k tn−k ωϕk ∧ ωψn−k = MA((1 − t)ϕ + tψ) − (1 − t)n MA(ϕ) − tn MA(ψ) (8.1)
+        k
+ k=0
+
+for any t = j/n with 1 ≤ j ≤ n − 1. By Proposition 6.9, we get ωϕi j ∧ ωψn−i
+                                                                          j
+                                                                             → ωϕi ∧ ωψn−i for
+any decreasing sequence of ω-psh functions ϕj → ϕ and ψj → ψ. In particular, ωϕi ∧ ωψn−i is
+a probability measure. Replacing MA(·) = (ω + ddc ·)n by (ω + ddc ·)i+j ∧ ω n−(i+j) in (8.1),
+we can further deﬁne probability measures of the same mass ωϕi ∧ ωψj ∧ ω n−(i+j) as soon as
+i, j ≥ 0 and i + j ≤ n.
+    Observe that by deﬁnition and Lemma 6.10, these measures integrate ω-psh functions of
+ﬁnite energy. By continuity, it also follows that the Cauchy-Schwarz inequality holds
+                   Z                Z              1/2 Z           1/2
+                          c                  c                 c
+                     −hdd g ∧ T ≤         hdd h ∧ T         gdd g ∧ T
+34              SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+for any h, g lying in the vector space generated by E 1 (X, ω) and for any T a positive linear
+combination of measures of the type ωϕi ∧ ωψj ∧ ω n−(i+j) with i + j ≤ n and ϕ, ψ ∈ E 1 (X, ω).
+     Now pick ϕ, ψ ∈ E 1 (X, ω). We claim that
+            Z                                  Z                       21−n
+                          c           n−1
+              (ϕ − ψ)dd (ϕ − ψ) ∧ ω       ≤C      (ψ − ϕ)(MA(ϕ) − MA(ψ))                   (8.2)
+
+for some constant C depending on ϕ and ψ.
+   Grant this claim, and suppose MA(ϕ) = MA(ψ). We conclude the proof as in [YZ10].
+We may assume sup ϕ = sup ψ. By Cauchy-Schwarz inequality, for any model function h we
+get
+           Z                               Z                            1/2
+              (ϕ − ψ)ddc h ∧ ω n−1 ≤ D 1/2   (ϕ − ψ)ddc (ϕ − ψ) ∧ ω n−1     =0,
+                R
+with 0 ≤ D := −hddc h ∧ ω n−1 < +∞. Let L be any R-line bundle in a model X whose
+numericalPclass is equal to ω. The above equality
+                                            P     applied to the model function determined
+in X by E bE (ϕ − ψ)(ordE )E with X0 =        bE E yields
+                                                    !2
+                             X
+                                 bE (ϕ − ψ)(ordE )E    · Ln−1 = 0
+                               E
+                        P
+which in turn implies E bE (ϕ − ψ)(ordE )E to be proportional to X0 by [YZ10, Theorem
+2.1.1(b)]. Since we normalized ϕ, ψ by sup ϕ = sup ψ, we conclude that ϕ = ψ on the
+vertices of ∆X .
+   Now consider any (suﬃciently) high model π : X ′ → X . By [BFJ11, Proposition 5.2]
+there exists a model function h such that ω ′ = ω + ddc h is induced by a ample divisor in X ′ .
+Then the functions ϕ − h and ψ − h are both ω ′ -psh, normalized by sup(ϕ − h) = sup(ψ − h),
+and satisfy (ω ′ + ddc (ϕ − h))n = (ω ′ + ddc (ψ − h))n . By what precedes we get ϕ = ψ on the
+vertices of X ′ . This implies ϕ = ψ on X div , hence on X qm by Proposition 2.8, hence on X
+since ϕ = supX ϕ ◦ pX for any ω-psh function by [BFJ11, Proposition 7.6].
+   We now prove the claim. For this we reproduce the argument of [Blo03]. By C we will
+denote possibly diﬀerent constants depending on ω, ϕ, ψ. Set ρ = ϕ−ψ. For k = 0, 1, ..., n−1
+we will prove inductively that
+                                 Z
+                                                                   −k
+                            0 ≤ −ρddc ρ ∧ ωϕi ∧ ωψj ∧ ω k ≤ Ca2
+
+where                   Z                                  Z
+                   a=       (ψ − ϕ)(MA(ϕ) − MA(ψ)) =           −ρddc ρ ∧ T ≥ 0
+          Pn−1 l
+with T = l=0     ωϕ ∧ ωψn−1−l , and i, j are such that i + j + k = n − 1. For k = n − 1 we will
+then obtain the desired estimate.
+  If k = 0, then           Z                        Z
+                               ρddc ρ ∧ ωϕi ∧ ωψj ≤    ρddc ρ ∧ T = a
+
+Assume that (3.1) holds for 0, 1, ..., k − 1. We have
+                             ωϕi ∧ ωψj ∧ ω k = ωϕi+k ∧ ωψj − ddc ϕ ∧ α
+                 SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                                        35
+
+where
+                                                                 k−1
+                                                                 X
+                                             α = ωϕi ∧ ωψj ∧           ωϕl ∧ ω k−1−l
+                                                                 l=0
+Therefore
+                 Z                                         Z
+            0≤       −ρdd ρ ∧ ωϕi ∧ ωψj ∧ ω k ≤
+                                c
+                                                           −ρddc ρ ∧ (T − ddc ϕ ∧ α)
+                                                           Z             Z
+                                                               c
+                                                        = − ρdd ρ ∧ T − ρddc ϕ ∧ α ∧ ddc ρ
+
+This means that
+                            Z                                               Z
+                     0≤             −ρdd ρ ∧ ωϕi ∧ ωψj ∧ ω k ≤ a −
+                                         c
+                                                                                  ρddc ϕ ∧ α ∧ ddc ρ.
+
+We have
+                Z                                   Z                                Z
+                        c                     c              c
+            −        ρdd ϕ ∧ α ∧ dd ρ ≤                 ρdd ϕ ∧ α ∧ ωϕ +                 ρddc ϕ ∧ α ∧ ωψ .
+
+If η is equal to ϕ or ψ, the Cauchy-Schwarz inequality gives
+            Z                    Z                 1/2 Z                 1/2
+                  c                     c                       c
+               ρdd ϕ ∧ α ∧ ωη ≤      ρdd ρ ∧ α ∧ ωη          ϕdd ϕ ∧ α ∧ ωη
+                                     R                  −(k−1)
+By the Rinductive assumption, we have −ρddc ρ∧α∧ωη ≤ Ca2       , and since ϕ ∈ E 1 (X, ω)
+we get −ϕddc ϕ ∧ α ∧ ωη < +∞. The proof is complete.                                   
+
+8.2. Existence. As in [BBGZ09], the strategy is to ﬁrst use a variational argument going
+back to Alexandrov [Ale38] in order to produce a solution ϕ ∈ E 1 (X, ω).
+   Consider the functional Fµ : PSH(X, ω) → [−∞, +∞[ deﬁned by
+                                                   Z
+                                 Fµ (ϕ) := Eω (ϕ) − ϕµ.                             (8.3)
+
+   We ﬁrst claim that FRµ is usc on PSH(X, ω). By Proposition 6.2, Eω is usc so that it is
+suﬃcient to prove ϕ 7→ ϕµ is continuous on PSH(X, ω). Pick a net ϕk → ϕ in PSH(X, ω),
+i.e. ϕk (x) → ϕ(x) for any x ∈ X div . Since divisorial points are dense in ∆X by [JM10],
+and the family {ϕk |R∆X } is equicontinuous
+                               R             by Theorem 2.9, it follows that ϕk |∆X → ϕ|∆X
+uniformly. Whence ϕk µ → ϕµ since ∆X contains the support of µ by assumption.
+   Now write PSH0 (X, ω) := {ϕ ∈ PSH(X, ω) | sup ϕ = 0}, and observe that Fµ (ϕ + c) =
+Fµ (ϕ) for any constant c by Proposition 6.2, so that supPSH(X,ω) Fµ = supPSH0 (X,ω) Fµ . Since
+Fµ is usc, and PSH0 (X, ω) is compact by Theorem 2.10, it actually attains its maximum.
+We can thus ﬁnd ϕ ∈ PSH0 (X, ω) such that
+                                                  Fµ (ϕ) =        sup      Fµ .
+                                                             PSH(X,ω)
+
+Clearly Eω (ϕ) > −∞, so ϕ ∈ E 1 (X, ω). Let us show that MA(ϕ) = µ. Pick any model
+function f ≤ 0 on X. For t ∈ R, consider the function
+                                                   Z
+                         h(t) = Eω ◦ Pω (ϕ + tf ) − (ϕ + tf )µ.
+36               SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+In view of Corollary 7.3, h(t) is diﬀerentiable at t = 0 with derivative
+                                        Z               Z
+                                  ′
+                                 h (0) = f MA(ϕ) − f µ.
+
+                                                                         R ) ≤ FµR(ϕ) = h(0)
+But since Pω (ϕ + tf ) ≤ ϕ + tf ≤ 0, it follows that h(t) ≤ Fµ ◦ Pω (ϕ + tf
+for all t. Thus h has a local maximum at t = 0, so h′ (0) = 0, that is f µ = f MA(ϕ).
+This implies MA(ϕ) = µ, as f was an arbitrary model function.
+
+8.3. Continuity. Finally we show that ϕ is continuous. For this we use capacity estimates
+in the spirit of Kolodziej [Kol98, Kol03]; see also [EGZ09]. The following result (and its
+proof) is a translation of [EGZ09, Lemma 2.3].
+Lemma 8.3. Let ϕ, ψ ∈ E 1 (X, ω) with ψ ≤ 0. Then
+                                           Z
+                                        −n
+                     Capω {ϕ < ψ} ≤ t                          MA(ϕ)
+                                                {ϕ<(1−t)ψ+t}
+
+for 0 < t < 1.
+Proof. Fix u ∈ PSH(X, ω) with 0 ≤ u ≤ 1 and set ψt := (1 − t)ψ + tu. We have
+                         {ϕ < ψ} ⊆ {ϕ < ψt } ⊆ {ϕ < (1 − t)ψ + t}.
+since ψ ≤ 0. Now MA(ψt ) ≥ tn MA(u) by (3.1), so
+     Z               Z                Z
+  tn         MA(u) ≤        MA(ψt ) ≤          MA(ψt )
+       {ϕ<ψ}          {ϕ<ψ}            {ϕ<ψt }
+                                                Z              Z
+                                              ≤        MA(ϕ) ≤                        MA(ϕ),
+                                                    {ϕ<ψt }            {ϕ<(1−t)ψ+t}
+
+where the third inequality follows from the comparison principle (6.7). Taking the supremum
+over u completes the proof.                                                               
+
+  As a consequence, we get the following version of the ’domination principle’, suﬃcient for
+our purpose.
+Lemma 8.4. Let ϕ ∈ PSH(X, ω) ∩ C 0 (X) and ψ ∈ E 1 (X, ω). Assume that ν := MA(ψ)
+is supported in the dual complex ∆X of some SNC model X , and that ϕ ≤ ψ ν-a.e. Then
+ϕ ≤ ψ on X.
+Proof. Upon translating by a constant we may assume that 0 ≥ ϕ ≥ −C. Let ε > 0. If we
+choose 0 < t ≪ 1 such that t(C + 1) ≤ ε/2 then we have
+                      ν{ψ + ε < (1 − t)ϕ + t} ≤ ν{ψ + ε/2 < ϕ} = 0.
+By Lemma 8.3 it follows that
+                    Capω {ψ + ε < ϕ} ≤ t−n ν{ψ + ε < (1 − t)ϕ + t} = 0
+(since MA(ψ + ε) = ν). But {ψ + ε < ϕ} is open by continuity of ϕ, hence empty by
+Lemma 4.2. We have thus proved that ϕ ≤ ψ + ε on X for all ε > 0, and the result
+follows.                                                                        
+                SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                             37
+
+   Now let ϕ ∈ E 1 (X, ω) be a solution to MA(ϕ) = µ, with µ supported in a dual complex
+∆X . We may normalize ϕ by supX ϕ = −1. Let (ϕj )j be a decreasing net of ω-psh model
+functions converging to ϕ. We are going to show that ϕj → ϕ uniformly on X, which will
+in particular imply that ϕ is continuous.
+   By Theorem 2.10 we have supX ϕj → supX ϕ, so we may assume ϕj ≤ 0 for all j. Fix
+ε > 0. Since ϕ is continuous on ∆X , the monotone convergence ϕj → ϕ is uniform on ∆X by
+Dini’s lemma. We thus have ϕj ≤ ϕ + ε µ-a.e. for j ≫ 1, and Lemma 8.4 yields ϕj ≤ ϕ + ε
+on X, which concludes the proof.
+
+8.4. An alternative approach. We now give a more explicit description of the solution to
+MA(ϕ) = µ, when µ is a ﬁnite sum of Dirac masses at divisorial points. Let ω be a form as
+in §4 (not necessarily normalized), and assume that ω satisﬁes the orthogonality property.
+Lemma 8.5. Let S = {x1 , ..., xN } ⊂ X div be a finite set of divisorial points, and set for
+t = (t1 , ..., tN ) ∈ RN
+                ϕS,t := sup {ϕ | ϕ ∈ PSH(X, ω), ϕ(xi ) ≤ ti for i = 1, ..., N } .            (8.4)
+Then ϕS,t is a continuous ω-psh function, and MA(ϕS,t ) is supported in S.
+Proof. Let X be an SNC model such that all xi appear as vertices of ∆X . By Theorem
+2.10 there exists a constant M > 0 such that supX ϕ ≤ M for all ϕ ∈ PSH(X, ω) such that
+ϕ(x1 ) ≤ t1 . Since adding a constant c to the ti only replaces ϕS,t with ϕS,t + c, we may
+thus assume ti ≤ −1 and ϕ ≤ −1 as soon as ϕ ∈ PSH(X, ω) satisﬁes ϕ(x1 ) ≤ t1 . Now
+let fX ∈ D(X)R be the unique function that is linear on the faces of ∆X , takes value ti
+at xi for each i, 0 at any other vertex of ∆X , and such that fX = fX ◦ pX . Since each
+ϕ ∈ PSH(X, ω) is convex on the faces of ∆X and satisﬁes ϕ ≤ ϕ ◦ pX , we have ϕ(xi ) ≤ ti for
+all i iﬀ ϕ ≤ fX , hence ϕS,t = Pω (fX ). This already shows that ϕS,t is continuous and ω-psh,
+and the orthogonality property further shows that MA(ϕS,t ) is supportedT       in {fS,t = fX } for
+each SNC model X as above. We thus see that Supp MA(ϕS,t ) ⊂ X {fX < 0}.
+   We claim that the latter intersection is in fact equal to {x1 , ..., xN }, which will conclude
+the proof of the lemma. For each model X and each x ∈ X we may consider the center
+(or reduction) cX (x) ∈ X0 . Let Ei ∈ Div0 (X ) be the component of X0 with generic point
+                         P the model function determined by Ei . For each x ∈ X we have
+cX (xi ), and let ϕX ,i be
+fX (x) = fX (pX (x)) = i ti ϕX ,i (x), hence
+                \              [\n                               o
+                   {fX < 0} =           x ∈ X | cX (x) ∈ cX (xi ) = {x1 , ..., xN }.
+                X                i   X
+                                                                                                 
+  As a consequence of this result, for any divisorial point x ∈ X div then
+                           ϕx := sup {ϕ | ϕ ∈ PSH(X, ω), ϕ(x) ≤ 0}                           (8.5)
+solves MA(ϕx ) = {ω}n δx , since the two measures have the same mass. More generally we
+have:
+Proposition 8.6. Let S = {x1 , ..., xN } ⊂ X div be a finite set of divisorial points and let
+µ be a positive Radon measure of mass {ω}n with support contained in {x1 , ..., xN }. Then
+there exists t ∈ RN such that the function ϕS,t defined by (8.4) solves MA(ϕS,t ) = µ.
+38              SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+Proof. By Theorem A’, we can choose ϕ be a continuous ω-psh function satisfying MA(ϕ) =
+µ. Set ti = ϕ(xi ) for i = 1, ..., N . We claim that ϕS,t = ϕ, which will conclude the proof.
+On the one hand we have ϕ ≤ ϕS,t by (8.4), since ϕ is ω-psh and satisﬁes ϕ(xi ) ≤ ti . On the
+other hand we have ϕS,t = ϕ on the support of MA(ϕ), hence ϕS,t ≤ ϕ by Lemma 8.4. 
+Remark 8.7. Consider the setting of Theorem A, i.e. {ω} is the class of an (ample) line
+bundle L on X. The strategy proposed in the preliminary work [KT00] to solve Monge-
+Ampère equations mostly deals with the case of a Dirac mass µ at a divisorial point x ∈ X div .
+The authors introduce the envelope (8.5), and assume by contradiction that MA(ϕx ) is not
+supported at x. They define a limit functional F obtained by looking at the asymptotics of
+ball volumes in the spaceR of sections of mL as m → ∞, and indicate that F should satisfy
+F (ϕx + εf ) = F (ϕx )+ ε f MA(ϕx )+ O(ε2 ) for each f ∈ C 0 (X). Comparing with [BB10] in
+the complex case, F is likely to coincide with Eω ◦Pω , so that a version of the differentiability
+property (Theorem 7.2) would also be a key ingredient in the approach proposed in [KT00].
+Remark 8.8. We do not know whether the function ϕx in (8.5) is necessarily a model
+function. This is the case on a toric variety, see Proposition 9.1 below, but we suspect the
+answer is no in general.
+   Pick an SNC model X , an extension L ∈ Pic(X )Q of L, let ω be the curvature form of the
+model metric defined by L. Let also E be a component of X corresponding to the divisorial
+point x = xE . We have ϕx = Pω (−fE ) up to a constant. On the other hand, by [BFJ11,
+Theorem 8.5],
+                                                   1
+                                   Pω (−fE ) = lim log |am |
+                                                m m
+where am denotes the base-ideal of mL′ with L′ :=L    L − E. As a consequence, ϕx is indeed
+a model function as soon as the graded S-algebra               0       ′
+                                                         m≥0 H (X , mL ) is finitely generated.
+Building on Nakayama’s counterexample to the existence of Zariski decompositions [Nak04],
+it is reasonable to expect this algebra not to be finitely generated in general, and to subse-
+quently prove that ϕx is not a model function.
+
+                              9. Curves and toric varieties
+9.1. Curves. Potential theory on non-Archimedean analytic curves (over arbitrary com-
+plete valuation ﬁelds) was developed in detail by A.Thuillier in [Thu05]. We only indicate
+how to recover Theorem A’ when dim X = 1 following his approach.
+   Let X be a smooth projective curve over K. Thuillier deﬁned spaces D 0 (X) and D 1 (X)
+of distributions and currents on X as follows. An element of D 0 (X) is an arbitrary function
+X qm → R [Thu05, Proposition 3.3.3]. The ddc -operator extendsR to ddc : D 0 (X) → D 1 (X),
+and its image is exactly the set of currents ρ ∈ D 1 (X) such that X ρ = 0 [Thu05, Théorème
+3.3.13]. By linearity, this fact easily reduces to the existence, for any two x, y ∈ X div , of a
+’Green function’, i.e. a model function gx,y such that ddc gx,y = δx − δy . The existence of gx,y
+is in turn a consequence of the intersection form being negative deﬁnite on Div0 (X )R /RX0 ,
+for a model X such that x and y correspond
+                                    R           to components of X0 .
+   Now let ω be Ra (1, 1)-form
+                        R      with ω > 0, and let µ be an arbitrary positive Radon measure
+on X such that µ = ω. The previous result shows the existence of a distribution ϕµ such
+that
+                                         ω + ddc ϕµ = µ.                                    (9.1)
+               SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                         39
+
+By [Thu05, Lemme 3.4.1] the positivity of the current ω + ddc ϕµ shows that ϕµ uniquely
+extends
+R      R to a ω-psh function, and we conclude that any positive Radon measure µ with
+  µ = ω satisﬁes (9.1) for some ϕ ∈ PSH(X, ω), unique up to an additive constant.
+   Finally, assume that µ is supported on a dual complex ∆X . In order to see that ϕµ ∈
+  0
+C (X), we may assume that X is also a determination of ω. In this one-dimensional setting,
+it is easy to check that composing with the retraction pX : X → ∆X preserves ω-psh
+functions, i.e. ϕ ◦ pX is ω-psh for every ω-psh function ϕ. Since µ is supported on ∆X we
+have (pX )∗ µ = µ, hence θ + ddc (ϕµ ◦ pX ) = µ. It follows that ϕµ ◦ pX = ϕµ by uniqueness up
+to an additive constant, since the two functions coincide on ∆X . Now ϕµ |∆X is continuous,
+hence the continuity of ϕµ .
+  Let us now make the connection with the approach
+                                              R      R we followed in higher dimensions. In
+dimension 1, the energy is equal to E(ϕ) = 2 ϕω + ϕddc ϕ so that a ω-psh function ϕ has
+ﬁnite energy iﬀ ϕ is integrable with respect to the trace measure of ddc ϕ.
+  Now ﬁx a positive Radon measure µ such that the solution ϕµ to (9.1) has ﬁnite energy.
+                                                                                     R
+Then ϕµ is the unique ω-psh function realizing the inﬁmum of the functional E(ϕ) − ϕµ,
+by [Thu05, Proposition 3.5.9].
+  Observe that the assumption on µ is automatically satisﬁed when µ is supported in
+some dual complex ∆X whence Thuillier’s result gives a stronger version than our result in
+dimension 1.
+  We refer to [Thu05] for more on potential theory on non-Archimedean curves including
+the notion of harmonic functions, capacity, and the study of polar sets. See also [BR10] for
+the case of the projective line.
+9.2. Toric varieties. We use [Ful93, KKMS73, BPS11] as references. Let M ≃ Zn be a
+free abelian group, N its dual, and let T = Spec K[M ] be the corresponding split K-torus.
+A projective toric K-variety X is described by a rational fan subdivision Σ of NR , and there
+                                      an
+           Pembedding j : NR → X given by monomial valuations that sends n ∈ NR to
+is a natural
+the norm      am m ∈ K[M ] 7→ max{|am | exp(−hm, ni)}. In particular, j(0) = xG , the Gauss
+point of the open T -orbit.
+   An ample T -line bundle L on X deﬁnes a rational polytope ∆ ⊂ MR with normal fan Σ,
+such that points of M ∩ ∆ identify with T -eigensections of L.
+   According to [BPS11] we have the following description of toric metrics on L. The poly-
+tope ∆ is the Newton polytope of the piecewise Q-linear convex function g∆ = supm∈∆ m
+on the dual space NR = MR   ∗ , and toric bounded (resp. model) metrics k · k on L correspond
+
+to bounded (resp. piecewise Q-aﬃne) functions f on NR such that f − g∆ is bounded. The
+metric k · kf attached to a function f is semipositive iﬀ f is convex.
+   The real Monge-Ampère measure of any convex function f on NR is a well-deﬁned positive
+Radon measure MAR (f ) on NR (see e.g. [RT77]), while the growth condition f = g∆ + O(1)
+further guarantees that            Z
+                                         MAR (f ) = Vol(∆).
+                                    NR
+If f is a convex function on NR with f = g∆ + O(1), and if k · kf is the corresponding
+continuous semipositive metric on L, then [BPS11, Theorem 5.70] relates their Monge-
+Ampère measures as follows:
+                               c1 (L, k · kf )n = n! j∗ MAR (f ).                        (9.2)
+40               SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+Since g∆ is homogeneous, MAR (g∆ ) is a Dirac mass at the origin of mass Vol(∆), and [Ful93,
+p.111] implies the corresponding metric k · kg∆ on L to satisfy
+                                   c1 (L, k · kg∆ )n = c1 (L)n δxG .
+Translating in NR we get:
+Proposition 9.1. Let µ be a Dirac mass on X centered at a toric divisorial point j(x) ∈
+X div , x ∈ NQ . Then c1 (L, k · kx )n = µ, where k · kx is the toric model metric attached to
+the convex piecewise Q-affine function y 7→ g∆ (y − x).
+     In the case of atomic measures supported at toric divisorial points, we can show:
+Proposition
+      P        9.2. Let (X, L) be a polarized toric K-variety. Pick x1 , ...,  PxN ∈ NQ and set
+µw := i wi δj(xi ) for each w ∈ RN +  . Then    for a dense  set of   w ∈ RN ∩{
+                                                                           +     i wi = deg L} the
+semipositive toric metric k · k solving
+                                                      X
+                                  c1 (L, k · kw )n =     wi δj(xi ) .
+                                                       i
+is a model metric.
+Proof. For each t ∈ RN let ft be the upper envelope of the family of piecewise Q-aﬃne
+convex functions f on NR such that f = g∆ + O(1) and f (xi ) ≤ ti for all i, and let k · kt be
+the corresponding continuous
+                      P         toric semipositive metric. By Proposition 8.6, each measure
+µw with w ∈ RN                                                        n             N
+                 + ∩ { i wi = deg L} is of the form c1 (L, k · kt ) for some t ∈ R . Now
+elementary Newton polytope considerations show that ft is piecewise Q-aﬃne when all ti
+are rational, and the result follows by continuity of t 7→ c1 (L, k · kt )n .               
+Remark 9.3. Results of this section are likely to extend to the case of an arbitrary non-
+Archimedean complete non-trivially valued field. We refer to [BPR11, Gub08] for a discus-
+sion of toric varieties in this context.
+
+                               Appendix A. Orthogonality
+  Recall that given θ ∈ Z 1,1 (X) with ample de Rham class {θ} ∈ N 1 (X) and f ∈ C 0 (X)
+we say that (θ, f ) satisﬁes the orthogonality property if
+                              Z
+                                  (Pθ (f ) − f ) (θ + ddc Pθ (f ))n = 0           (A.1)
+                               X
+holds. It is convenient in what follows not to require that θ be semipositive, as opposed to
+the main body of the text.
+Lemma A.1. Fix α ∈ N 1 (X) any ample class. Then the following assertions are equivalent:
+  (1) For any form θ such that {θ} = α and any continuous function f , the pair (θ, f )
+      satisfies the orthogonality property.
+  (2) For any form θ such that {θ} = α and any model function f , the pair (θ, f ) satisfies
+      the orthogonality property.
+  (3) For any form θ such that {θ} = α, the pair (θ, 0) satisfies the orthogonality property.
+   When any of these properties hold, we simply say that the class α (or θ) satisﬁes the
+orthogonality property.
+                SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                         41
+
+Proof. It is clear that (1) ⇒ (2) ⇒ (3). The implication (3) ⇒ (2) follows from the equality
+Pθ (f ) − f = Pθ+ddc f (0). It remains to prove (2) ⇒ (1). We may write a given f ∈ C 0 (X)
+as a uniform limit on X of model functions fj , and Pθ (fj ) → Pθ (f ) uniformly on X thanks
+to the Lipschitz property of Pθ , see Proposition 2.15. By Theorem 3.1 we thus have
+                            (θ + ddc Pθ (fj ))n → (θ + ddc Pθ (f ))n
+in the weak topology of measures. Since Pθ (fj ) − fj → Pθ (f ) − f uniformly on X and the
+measures (θ + ddc Pθ (fj ))n have uniformly bounded (in fact, constant) mass, it follows that
+        Z                                      Z
+          (Pθ (f ) − f ) (θ + dd Pθ (f )) = lim (Pθ (fj ) − fj ) (θ + ddc Pθ (fj ))n = 0.
+                                c        n
+                                             j
+
+Let us prove the ﬁnal assertion. Pick θ ′ ∈ Z 1,1 (X) such that {θ ′ } = {θ} in N 1 (X). By the
+analogue of the ddc -lemma proved in [BFJ11, Theorem 4.3] there exists g ∈ D(X) such that
+θ ′ = θ + ddc g. Observe that a function ϕ is θ ′ -psh iﬀ ϕ + g is θ-psh. As a consequence we
+get Pθ′ (f ) − f = Pθ (f + g) − (f + g), hence
+       Z                                    Z
+                                         n
+          (Pθ′ (f ) − f ) θ + dd Pθ′ (f ) = (Pθ (f + g) − (f + g)) (θ + ddc Pθ (f + g))n
+                           ′    c
+
+
+for all f ∈ C 0 (X).                                                                         
+Lemma A.2. The set of classes in N 1 (X) satisfying the orthogonality property is a closed
+subset of the ample cone.
+Proof. Pick any regular model X . Then the linear map N 1 (X /S) → N 1 (X) is surjective
+hence open. It is thus enough to prove the following claim: let θX ∈ N 1 (X /S) have ample
+image in N 1 (X), and assume that θX is the limit of a sequence θm,X ∈ N 1 (X /S). If the
+corresponding forms θm ∈ Z 1,1 (X) all satisfy the orthogonality property, then so does θ.
+  Let f ∈ C 0 (X). By Proposition 2.15 we have Pθm (f ) → Pθ (f ) uniformly on X. We claim
+that
+                          (θm + ddc Pθm (f ))n → (θ + ddc Pθ (f ))n
+with uniformly bounded mass. Since (Pθm (f ) − f ) → (Pθ (f ) − f ) uniformly on X, we have
+as before
+        Z                                        Z
+          (Pθ (f ) − f ) (θ + ddc Pθ (f ))n = lim (Pθm (f ) − f ) (θ + ddc Pθm (f ))n = 0
+                                            m
+
+which concludes the proof.
+  To prove the claim, pick any model function g ∈ D(X), and ﬁx ε > 0. By Corollary 2.12,
+we can ﬁnd a θ-psh model function ϕ such that sup |ϕ − Pθ (f )| ≤ ε. We then have
+         Z                       Z
+  Im :=    g (θm + dd Pθm (f )) − g (θ + ddc Pθ (f ))n ≤
+                      c        n
+
+   Z                        Z                    Z                    Z
+               c         n              c n
+     g (θm + dd Pθm (f )) − g (θm + dd ϕ) +                    c n
+                                                    g (θm + dd ϕ) − g (θ + ddc ϕ)n +
+                                                Z                   Z
+                                                            c n
+                                                   g (θ + dd ϕ) − g (θ + ddc Pθ (f ))n
+42             SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+Using integration by parts, the last term can be bounded as follows.
+   Z                  Z
+               c n
+     g (θ + dd ϕ) − g (θ + ddc Pθ (f ))n =
+                        Z                           n−1
+                                                    X
+                            (ϕ − Pθ (f )) ddc g ∧         (θ + ddc ϕ)i ∧ (θ + ddc Pθ (f ))n−i−1 ≤ Cε
+                                                    i=0
+
+where ω is a ﬁxed form such that (ω + ddc g) is semipositive, and C = 2{ω} {θ}n−1 .              In a
+similar way, the ﬁrst term is bounded from above by
+         Z                        Z
+           g (θm + dd Pθm (f )) − g (θm + ddc ϕ)n ≤ C sup |Pθm (f ) − ϕ| ≤ 2Cε ,
+                       c       n
+
+
+for m large enough. Finally g and ϕ being model functions, the second term tends to zero
+as m → ∞, and we get lim supm Im ≤ 3Cε. We conclude by letting ε → 0.                 
+   We next translate the orthogonality property into a more geometric condition. Let L be
+a line bundle on a model X and assume that L := L|X is ample. For each m ∈ N let am be
+the base-ideal of mL, i.e. the image of the evaluation map
+                               H 0 (X , mL) ⊗ OX (−mL) → OX .
+Note that the ideal sheaf am is vertical (i.e. cosupported on X0 ) for m ≫ 1, thanks to the
+ampleness condition on the generic ﬁber. Let ρm : Xm → X be the normalized blow-up of X
+along am , so that the base-scheme Fm of ρ∗m (mL) is now a vertical Cartier divisor satisfying
+                                    am · OXm = OXm (−Fm ).
+Finally, let Mm := ρ∗m (mL) − Fm be the base-point free part. The resulting decomposition
+                                     ρ∗m L = m
+                                             1      1
+                                               Mm + m Fm                                        (A.2)
+is sometimes called an approximate Zariski decomposition.
+Lemma A.3. With the previous notation let θ ∈ Z 1,1 (X) be the curvature form of the model
+metric induced by L. Then (θ, 0) satisfies (A.1) iff the approximate Zariski decompositions
+(A.2) are asymptotically orthogonal, in the sense that
+                                       1
+                                             n 1       
+                                lim m    Mm · m     Fm = 0.                          (A.3)
+                                 m→∞
+                                 1             1
+Proof. For all m ≫ 1 set ϕm := m   log |am | = m ϕFm . This is a θ-psh model function, and
+[BFJ11, Theorem 8.5] states that ϕm → Pθ (0) uniformly on X. Unravelling the deﬁnitions,
+we ﬁnd                                         Z
+                                n 1        
+                      − m Mm · m Fm = ϕm (θ + ddc ϕm )n .
+                          1
+
+                                                  R
+By Theorem 3.1 the right-hand side converges to Pθ (0) (θ + ddc Pθ (0))n , which proves the
+result.                                                                                  
+  Recall that X is said to be algebraizable if there exists a (one-variable) function ﬁeld F
+admitting K as a completion and a smooth projective F -scheme Y such that X = YK .
+Theorem A.4. Let X be an algebraizable smooth projective K-variety. Then all ample
+classes in N 1 (X) have the orthogonality property.
+               SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                       43
+
+Proof of Theorem A.4. Let us ﬁx an ample class α ∈ N 1 (X). By Lemma A.2 we may assume
+α ∈ N 1 (X)Q .
+   Since X is algebraizable, we can ﬁnd a smooth projective curve B over the residue ﬁeld
+k such that F = k(B); a closed point 0 ∈ B and a regular parameter t ∈ OB,0 inducing an
+isomorphism S ≃ Spec O   bB,0 ; and a smooth projective variety Y over F such that X = YK .
+   By Lemma A.5 below we may then choose an ample Q-line bundle L ∈ Pic(Y )Q mapping
+to α in NQ1 (X). We can also ﬁnd a normal, ﬂat and projective B-scheme Y having Y as its
+
+generic ﬁber and such that L ∈ Pic(Y )Q extends to L ∈ Pic(Y)Q . The latter is therefore
+ample on the generic ﬁber of the structure morphism π : Y → B, hence in particular π-big.
+Since the natural morphism X := Y ×B S → Y is regular, X is normal, as well as ﬂat and
+projective over S, hence a model of X according to our deﬁnition. The Q-line bundle L
+induces L ∈ Pic(X )Q .
+   The curvature form θ ∈ Z 1,1 (X) of the model metric deﬁned by L has α as its de Rham
+class. Our goal is to show that (A.1) holds for each f ∈ D(X). We may in fact assume that
+f = 0. Indeed let X ′ be a determination of f , which may be taken to dominate Y. The
+model X ′ is then the blow-up of X along a vertical ideal sheaf a. Since (tm ) ⊂ a for some
+m ∈ N, a comes from an ideal sheaf on Y, and the blow-up Y′ of Y along this ideal satisﬁes
+Y′ ×B S = X ′ since blow-ups commute with ﬂat base change. Replacing Y with Y′ , we
+may thus assume that X is a determination of f , so that there exists a vertical Q-divisor
+E ∈ Div0 (X ) such that f = fE . Since E is vertical, it also comes from Y. Replacing L with
+L + E reduces us as desired to the case f = 0.
+   After perhaps passing to a multiple, we may further assume that L ∈ Pic(Y). Accord-
+ing to Lemma A.3, we are to show that the approximate Zariski decompositions of L are
+asymptotically orthogonal.
+   Denote by am the base-ideal of mL on X , and let bm ⊂ OY be the relative base-ideal
+of mL on Y/B. By ﬂat base change we have am = bm · OX . Let ρm : Ym → Y be
+the normalized blow-up of Y, and let Gm be the eﬀective Cartier divisor of Ym such that
+OYm (−Gm ) = bm · OYm . Note that Gm is supported on ﬁnitely many ﬁbers over B for
+m ≫ 1, since mL is π-ample. Observe also that Gm pulls back to the similarly deﬁned
+divisor Fm on Xm := Ym ×B S. Finally set Mm := ρ∗m (mL) − Gm , which pulls back to Mm
+on Xm . Once again by ﬂat base change, it is enough to show that
+                                        1
+                                             n 1        
+                                  lim m   Mm · m     Gm = 0.
+                               m→∞
+We are going to prove this by reducing to the absolute case of a big line bundle D on Y. By
+Lemma A.6 below we may choose an ample line bundle H ∈ Pic(B) such that the sheaves
+                                  OB (mH) ⊗ π∗ OY (mL)
+are globally generated over B for all m ≫ 1 suﬃciently divisible. Since L is π-big, we may
+assume (after perhaps replacing H with a large enough multiple) that D := L + π ∗ H is a
+big line bundle on the projective k-variety Y.
+   The relative base-ideal bm of mL coincides with the relative base-ideal of mD since mL
+and mD are π-linearly equivalent by construction. The fact that
+                           OB (mH) ⊗ π∗ OY (mL) = π∗ OY (mD)
+is globally generated therefore shows that bm is also the (absolute) base-ideal of mD. As
+a consequence we get that Pm := ρ∗m (mD) − Gm is the (absolute) base-point free part
+44             SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+                                                          1
+                                                              n    1
+                                                                         
+of mD, and we infer from [BDPP04, Theorem 4.1] that m       Pm · m    Gm → 0. But
+Pm = Mm + (π ◦ ρm )∗ (mH) implies Mnm · Gm = Pnm · Gm since Gm is supported on ﬁnitely
+many ﬁbers over B, and the result follows.
+                                                                                    
+Lemma A.5. Let Y be smooth proper scheme over a field F , and let K/F be an arbi-
+trary field extension. Then the natural morphism N 1 (Y )Q → N 1 (YK )Q is an isomorphism
+preserving ample classes.
+  Here we write N 1 (Y )Q for the Q-vector space deﬁned as the quotient of Pic(Y ) by the
+subspace spanned by numerically trivial line bundles, i.e. line bundles of degree 0 over all
+curves proper over F . Similarly, the Néron-Severi group NS(Y ) is the quotient of Pic(Y )
+modulo algebraically trivial line bundles, i.e. NS(Y ) = Pic(Y )/ Pic0 (Y ), so that NS(Y ) is
+the group of components of Pic(Y ).
+  When F is algebraically closed, then we have N 1 (Y )Q = NS(Y )Q by [Mat57].
+
+Proof. Let K/F be algebraic closures. The groups of components of the Picard groups
+Pic(YF ) and Pic(YK ) are then isomorphic, so we have an isomorphism N 1 (YF )Q ≃ N 1 (YK )Q
+by the result of [Mat57] recalled above (compare [MP11, Proposition 3.1]). This isomor-
+phism is furthermore compatible with ample classes by the Nakai-Moishezon criterion for
+ampleness.
+   It is enough to show the surjectivity of N 1 (Y )Q → N 1 (YK )Q . Let β ∈ N 1 (YK )Q . By
+the previous result, we ﬁnd L ∈ Pic(YF )Q mapping to the lift of β in N 1 (YK )Q . Since YF
+is in particular reduced, L can be represented by some D̄ ∈ Div(YF )Q . The average of the
+Galois orbit of D̄ is then Gal(F̄ /F )-invariant, hence descends to D ∈ Div(Y )Q by [Car58,
+Proposition 11, §4.6]. By construction, the image of D under the composition
+                             Div(Y )Q → N 1 (YK )Q → N 1 (YK )Q
+coincides with the image of β. But N 1 (YK )Q → N 1 (YK )Q is injective by the projection
+formula, and the result follows.                                                        
+Lemma A.6. Let π : Y → B be a projective and flat morphism, with B a smooth projective
+curve over k. If L ∈ Pic(Y) is ample on the generic fiber of π, then there exists an ample line
+bundle H on B such that OB (mH) ⊗ π∗ OX (mL) is globally generated for all m sufficiently
+large and divisible.
+Proof. Set Fm := π∗ OX (mL), and pick a very ample line bundle H on B. By the Castelnuovo-
+Mumford criterion [Laz04, Theorem 1.8.5] it is enough to show the existence of m0 ∈ N
+such that
+                             H 1 (B, OB (mm0 H) ⊗ Fm ) = 0                           (A.4)
+for all m large and divisible.                                  L
+   Since L is ample over the generic point of B, the OB -algebra m≥0 Fm is ﬁnitely gener-
+ated at the generic point of B. After perhaps replacing L by dL for some d ∈ N, we may
+further assume that the generators have degree 1, so that Fm /F1m has zero-dimensional
+support for all m ≥ 1. As a consequence, the map
+                 H 1 (B, OB (mm0 H) ⊗ F1m ) → H 1 (B, OB (mm0 H) ⊗ Fm )
+                  SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                                       45
+                                                                      L            
+is surjective for all m ≥ 1. Upon replacing X with ProjB        m we are thus reduced
+                                                          m≥0 F1
+to proving (A.4) when L is π-ample, i.e. ample on all ﬁbers of π. In that case we have
+Rq π∗ OX (mL) = 0 for m ≫ 1 and q > 0 by Serre vanishing, and the degeneration of the
+Leray spectral sequence yields
+                    H 1 (B, OB (mm0 H) ⊗ Fm ) ≃ H 1 (X, OX (m(L + m0 π ∗ H)) ,
+which vanishes for all m ≫ 1 if we choose m0 such that L + m0 π ∗ H is ample on Y.                           
+
+                                               References
+[Ale38]  A. D. Alexandrov. On the theory of mixed volumes of convex bodies III: Extension of two theorems
+         of Minkowski on convex polyhedra to arbitrary convex bodies. (Russian) Mat. Sbornik 3 (1938),
+         no 1, 27-44. [English translation available in Selected works. Part I. Selected scientiﬁc papers.
+         Gordon and Breach, Amsterdam, 1996.]
+[BPR11] M. Baker, S. Payne, and J. Rabinoﬀ. Non-archimedean geometry, tropicalization, and metrics on
+         curves. Preprint (2001) arXiv:1104.0320.
+[BR10]   M. Baker, R. Rumely. Potential theory on the Berkovich projective line. Mathematical Surveys
+         and Monographs, 159. American Mathematical Society, Providence, RI, 2010.
+[Ber90]  V.G. Berkovich. Spectral theory and analytic geometry over non-Archimedean fields. Mathematical
+         Surveys and Monographs, 33. American Mathematical Society, Providence, RI (1990).
+[Ber99]  V.G. Berkovich. Smooth p-adic analytic spaces are locally contractible. Invent. Math. 137 (1999),
+         no. 1, 1–84.
+[BB10]   R. Berman, S. Boucksom. Growth of balls of holomorphic sections and energy at equilibrium.
+         Invent. Math. 181 (2010), 337–394.
+[BBGZ09] R. Berman, S. Boucksom, V. Guedj and A. Zeriahi. A variational approach to complex Monge-
+         Ampère equations. Preprint (2009) arXiv:0907.4490
+[BT82]   E. Bedford and B. A. Taylor. A new capacity for plurisubharmonic functions. Acta Math. 149
+         (1982), 1–40.
+[BT87]   E. Bedford and B. A. Taylor. Fine topology, Shilov boundary and (ddc )n . J. Funct. Anal. 72 (1987),
+         225–251.
+[BGS95] S. Bloch, H. Gillet and C. Soulé. Non-Archimedean Arakelov Geometry. J. Algebraic Geom. 4
+         (1995), 427–485.
+[Blo03]  Z. Blocki Uniqueness and stability for the complex Monge-Ampère equation on compact Kähler
+         manifolds. Indiana Univ. Math. J. 52 (2003), 1697–1701.
+[BDPP04] S. Boucksom, J.-P. Demailly, M. Păun and T. Peternell. The pseudo-effective cone of
+         a compact Kähler manifold and varieties of negative Kodaira dimension. Preprint (2004)
+         arXiv:math/0405285.
+[BEGZ10] S. Boucksom, P. Eyssidieux, V. Guedj and A. Zeriahi. Monge-Ampère equations in big cohomology
+         classes. Acta Math. 205 (2010), 199–262.
+[BFJ08]  S. Boucksom, C. Favre and M. Jonsson. Valuations and plurisubharmonic singularities. Publ. Res.
+         Inst. Math. Sci. 44 (2008), 449–494.
+[BFJ11]  S. Boucksom, C. Favre and M. Jonsson. Singular semipositive metrics in non-Archimedean geom-
+         etry. Preprint.
+[BPS11] J.I. Burgos, P. Philippon, and M. Sombra. Arithmetic geometry of toric varieties. Metrics, mea-
+         sures, and heights. arXiv:1105.5584
+[Car58]  P. Cartier. Questions de rationalité des diviseurs en géométrie algébrique. Bull. Soc. Math. France
+         86 (1958) 177–251.
+[Ceg98]  U. Cegrell. Pluricomplex energy. Acta Math. 180 (1998), 187–217.
+[CL06]   A. Chambert-Loir. Mesures et équidistribution sur les espaces de Berkovich. J. Reine Angew.
+         Math. 595 (2006), 215–235.
+[CL10]   A. Chambert-Loir. Heights and measures on analytic spaces. A survey of recent results, and some
+         remarks. arXiv:1001.2517v2.
+46                SÉBASTIEN BOUCKSOM, CHARLES FAVRE, AND MATTIAS JONSSON
+
+[Dem]    J.-P. Demailly. Complex analytic and differential geometry. Book available at the author’s web
+         page www-fourier.ujf-grenoble.fr/∼demailly
+[Dem92] J.-P. Demailly. Regularization of closed positive currents and intersection theory. J. Algebraic
+         Geom. 1 (1992), no. 3, 361–409.
+[DK01]   J.-P. Demailly and J. Kollár. Semi-continuity of complex singularity exponents and Kähler-
+         Einstein metrics on Fano orbifolds. Ann. Sci. École Norm. Sup. (4) 34 (2001), 525–556.
+[Din09]  S. Dinew. Uniqueness in E (X, ω). J. Funct. Anal. 256 (2009), 2113–2122.
+[EGA]    A. Grothendieck. Éléments de géométrie algébrique. Publ. Math. IHES.
+[ELS03]  L. Ein, R. Lazarsfeld, and K. Smith. Uniform approximation of Abhyankar valuation ideals in
+         smooth function fields. Amer. J. Math. 125 (2003), 409–440.
+[EGZ09] P. Eyssidieux, V. Guedj and A. Zeriahi. Singular Kähler-Einstein metrics. J. Amer. Math. Soc.
+         22 (2009), 607–639.
+[FJ04]   C. Favre and M. Jonsson. The valuative tree. Lecture Notes in Mathematics, 1853. Springer-Verlag,
+         Berlin, 2004.
+[FR06]   C. Favre and J. Rivera-Letelier. Équidistribution quantitative des points de petite hauteur sur la
+         droite projective. Math. Ann. 335 (2006), 311–361.
+[Fol99]  G. B. Folland. Real analysis: modern techniques and their applications, second edition. Pure and
+         applied mathematics (New York). A Wiley-Interscience Publication. John Wiley & Sons, Inc.,
+         New York, 1999.
+[Ful93]  W. Fulton. Introduction to toric varieties. Annals of Mathematics Studies, 131. Princeton Uni-
+         versity Press, Princeton, NJ, 1993.
+[Ful98]  W. Fulton. Intersection theory. Second edition. Springer-Verlag, New York, NY, 1998.
+[Gub08] W. Gubler Equidistribution over function fields. Manuscripta Math. 127 (2008), 485–510.
+[Gub11] W. Gubler A guide to tropicalizations. arXiv:1108.6126.
+[GZ05]   V. Guedj and A. Zeriahi. Intrinsic capacities on compact Kähler manifolds. J. Geom. Anal. 15
+         (2005), 607–639.
+[GZ07]   V. Guedj and A. Zeriahi. The weighted Monge-Ampère energy of quasiplurisubharmonic functions.
+         J. Funct. Anal. 250 (2007), 442–482.
+[JM10]   M. Jonsson and M. Musţată. Valuations and asymptotic invariants for sequences of ideals.
+         arXiv:1011.3699. To appear in Ann. Inst. Fourier.
+[KKMS73] G. Kempf, F. Knudsen, D. Mumford and B. Saint-Donat. Toroidal embeddings. I. Lecture Notes
+         in Mathematics, vol. 339. Springer-Verlag, Berlin, 1973.
+[Kol98]  S. Kolodziej. The complex Monge-Ampère equation. Acta Math. 180 (1998), 69–117.
+[Kol03]  S. Kolodziej. The Monge-Ampère equation on compact Kähler manifolds. Indiana Univ. Math. J.
+         52 (2003), 667–686.
+[KT00]   M. Kontsevich and Y. Tschinkel. Non-Archimedean Kähler geometry. Unpublished.
+[Laz04]  R. Lazarsfeld. Positivity in algebraic geometry. I-II. Ergebnisse der Mathematik und ihrer Gren-
+         zgebiete, 48-49. Springer-Verlag, Berlin, 2004.
+[Liu10]  Y. Liu. A non-Archimedean analogue of Calabi-Yau theorem for totally degenerate abelian vari-
+         eties. arXiv:1006.2852.
+[Mat57]  T. Matsusaka. The criteria for algebraic equivalence and the torsion group. Amer. J. Math. 79
+         (1957), 53–66.
+[MP11]   D. Maulik and B. Poonen. Néron-Severi groups under specialization. Preprint available at
+         http://www-math.mit.edu/∼poonen/papers/NSjumping.pdf
+[Nak04]  N. Nakayama. Zariski decompositions and abundance. MSJ Memoirs, 14. Mathematical Society of
+         Japan, Tokyo, 2004.
+[Oda88]  T. Oda. Convex bodies and algebraic geometry. An introduction to the theory of toric varieties.
+         Ergebnisse der Mathematik und ihrer Grenzgebiete (3), 15. Springer-Verlag, Berlin, 1988.
+[RT77]   J. Rauch, and B. A. Taylor. The Dirichlet problem for the multidimensional Monge-Ampère equa-
+         tion. Rocky Mountain J. Math. 7 (1977), no. 2, 345–364.
+[Roc70]  R.T. Rockafellar. Convex analysis. Princeton Mathematical Series, No. 28 Princeton University
+         Press, Princeton, N.J. 1970 xviii+451 pp.
+[Sch93]  R. Schneider. Convex bodies: the Brunn-Minkowski theory. Cambridge Univ. Press, 1993.
+                 SOLUTION TO A NON-ARCHIMEDEAN MONGE-AMPÈRE EQUATION                                        47
+
+[Ser68]   J.-P. Serre. Corps locaux. Publications de l’Université de Nancago, no. VIII. Hermann, Paris,
+          1968.
+[Thu05]   A. Thuillier. Théorie du potentiel sur les courbes en géométrie analytique non archimédienne.
+          Applications á la théorie d’Arakelov. Ph.D. Thesis (2005), Université de Rennes I, available at
+          http://tel.archives-ouvertes.fr/docs/00/04/87/50/PDF/tel-00010990.pdf.
+[Thu07]   A. Thuillier. Géométrie toroı̈dale et géométrie analytique non archimédienne. Application au type
+          d’homotopie de certains schémas formels. Manuscripta Math. 123 (2007), 381–451.
+[Tia00]   G. Tian. Canonical metrics in Kähler geometry. Lectures in Mathematics ETH Zürich. Birkhäuser
+          Verlag, Basel, 2000.
+[Yau78]   S. T. Yau. On the Ricci curvature of a compact Kähler manifold and the complex Monge-Ampère
+          equation. Comm. Pure Appl. Math. 31 (1978), 339–411.
+[YZ10]    X. Yuan and S.-W Zhang. Calabi theorem and algebraic dynamics. Preprint (2010) available at
+          www.math.columbia.edu/ szhang/papers/cyds.pdf.
+[Zha95]   S.-W Zhang. Positive line bundles on arithmetic varieties. J. Amer. Math. Soc. 8 (1995), 187–221.
+
+   CNRS–Université Pierre et Marie Curie, Institut de Mathématiques, F-75251 Paris Cedex
+05, France
+   E-mail address: boucksom@math.jussieu.fr
+
+   CNRS–CMLS, École Polytechnique, F-91128 Palaiseau Cedex, France
+   E-mail address: favre@math.polytechnique.fr
+
+   Dept of Mathematics, University of Michigan, Ann Arbor, MI 48109-1043, USA
+   E-mail address: mattiasj@umich.edu
+

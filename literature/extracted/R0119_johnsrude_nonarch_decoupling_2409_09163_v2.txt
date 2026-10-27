@@ -1,0 +1,2570 @@
+                                               High-low analysis and small cap decoupling over non-Archimedean
+                                                                          local fields
+                                                                                                    Ben Johnsrude
+                                                                                                 September 25, 2025
+arXiv:2409.09163v2 [math.CA] 24 Sep 2025
+
+
+
+
+                                                                                                Abstract
+                                                        We prove a small cap decoupling theorem for the parabola over a general non-Archimedean
+                                                     local field for which 2 ̸= 0. We obtain polylogarithmic dependence on the scale parameter R
+                                                     and polynomial dependence in the residue prime, except for the prime 2 for which the polynomial
+                                                     depends on degree. Our constants are fully explicit.
+
+
+                                           1         Introduction
+                                           In this note, we prove that the small cap decoupling theorem for the parabola may be extended to
+                                           non-Archimedean local fields K of characteristic different from 2. We do so by first adapting the
+                                           “high-amplitude wave envelope estimate” of [17]. In addition to recovering the desired power law in
+                                           the scale parameter, we also obtain a fully explicit subpolynomial factor whose scale dependence is of
+                                           the form (log R)O(1) with O(1) explicit and not too large, and whose dependence on K is polynomial
+                                           in the order of the residue field.
+                                               We recall the standard formalism of small cap decouplings, adapted to the non-Archimedean
+                                           context. Let R > 1 be in the range of | · | = | · |K (the absolute value on K, normalized to be the
+                                           modular function), and write NR−1 (P1 ) for the set
+                                                                              (x, y) ∈ K2 : |x| ≤ 1, |y − x2 | ≤ R−1 .
+                                                                            
+
+                                           Here we write P1 for the truncated parabola {(x, x2 ) ∈ K2 : |x| ≤ 1}. If O = {x ∈ K : |x| ≤ 1} is
+                                           the closed unit ball, and β ∈ [ 12 , 1] is such that Rβ also belongs to the range of | · |K , then we write
+                                           P(O, R−β ) for the partition of O into closed balls of radius R−β , and for each I ∈ P(O, R−β ) we write
+                                           γI for the set
+                                                                                (x, y) ∈ K2 : x ∈ I, |y − x2 | ≤ R−1 .
+                                                                             
+
+                                           We will write
+                                                                                         Γβ (R−1 ) = γI : I ∈ P(O, R−β ) ;
+                                                                                                    
+
+                                           thus, Γβ (R−1 ) is the partition of NR−1 (P1 ) into small caps of dimensions R−β × R−1 .
+                                              For p, q ≥ 1 and R, β as above, we will write Dp,q    K (R; β) for the infimal constant such that, for any
+                                                                       1        2
+                                           Schwartz–Bruhat function f : K → C with Fourier support contained in NR−1 (P1 ), we have
+                                                                                                                            r/q
+
+                                                                                                              ∥fγ ∥qLr (K2 )  .
+                                                                                                       X
+                                                                      ∥f ∥rLr (K2 ) ≤ Dr,q
+                                                                                       K
+                                                                                           (R; β) 
+                                                                                                             γ∈Γβ (R−1 )
+
+                                           Here and elsewhere we will write fγ for the Fourier projection of f onto γ.
+                                              Our primary goal will be to show the following.
+                                               1
+                                                   i.e. a finite linear combination of indicators of metric balls.
+
+
+                                                                                                             1
+Theorem 1.1 (Small cap decoupling over K). Let r, q ≥ 1 satisfy 3r + 1q ≤ 1, R ≥ p32 , and β ∈ [ 12 , 1].
+Then the small cap decoupling constant satisfies
+
+                    K                 q−3 p10          17+6β −1
+                                                                
+                                                                    β(r− rq −1)−1     β( r2 − rq )
+                                                                                                   
+                   Dr,q (R; β) ≤ 2             (log R)            R               + R                .         (1.1)
+                                     (log p)11
+
+Here q = pf = #k is the cardinality of the residue field of K, and p = pK is defined as:
+                                 (
+                                   q K extends Qp or Fp ((t)), p > 2 ,
+                            p=                                                                                 (1.2)
+                                   2d K extends Q2 , [K : Q2 ] = d.
+
+    Note in particular that, when char(k) ̸= 2, the loss in the size q = p of the residue field is reduced
+         7
+to (logpp)11 . The actual inequality we obtain in the proof of Theorem 1.1 in Section 3 is slightly more
+refined; here we have stated a simplified version.
+    The study of non-Archimedean decouplings was initiated in [6], where a bilinear variant of an
+inequality of the form Dr,2q (R; 12 ) ≲r,ε (log R)2r+ε was established for q > 2 to achieve good discrete
+                            Q
+
+restriction estimates for the parabola. It was continued in [16], where Li observed many of the features
+of non-Archimedean analysis that made it particularly appropriate for the setting of decoupling. In [14],
+the current author and Lin generalized the decoupling theorem for the moment curve to the q-adic
+setting for each q > n (with n the ambient dimension); the result there may be extended to any local
+field of characteristic either 0 or greater than n.
+    Aside from decoupling, there has been a recent flurry of non-Archimedean Fourier and harmonic
+analysis in general; see e.g. [1, 4, 9–11, 15, 18, 20] for a short sampling.
+    Over the real numbers, small cap decouplings were introduced in [3], and the estimate Dr,rR (R; β) ≲
+                                                                                                         ε
+  β( r2 −1)+ε                                                       R
+R             was proved (with the natural interpretation of Dr,q ). The work of [5] established the real
+version of the estimate we will show, which is a superlevel set estimate implying sharp bounds on
+the Dr,q □ (R; β) in the regime 1 + 3 ≤ 1. Substantial work has also generalized the idea of small cap
+                                q     r
+decouplings to other manifolds, such as that contained in [7] and [8].
+    Theorem 1.1 will proved by the following auxiliary estimate.
+Theorem 1.2 (Wave envelope estimate). Let f : K2 → C be Schwartz–Bruhat with Fourier support
+in NR−1 (P1 ). Then, for any α > 0,
+                                                                                     2
+                              1                 X       X    X              X
+    α4 µ {x : |f (x)| > α} ≤ q−3 p10 (logp R)10                                |fθ |2  .
+                          
+                                                                  µ(U ) 
+                              50                         τ                U
+                                                  Z          s∈p                 U ∈Gτ                   θ⊆τ
+                                                                      diam(τ )=s
+                                                           R−1/2 ≤s≤1
+
+   Here we use the following notation: each U ∈ Gτ is a rectangle of dimensions R × sR, with long
+edge in the direction of the normal vector to P1 at the center of τ , centered at 0; the set Gτ is the
+subset of the standard tiling of K2 by such rectangles for which the following holds:
+
+                                      e2 (log R)2        X                 α2
+                                                               |fθ |2 ≥          .                             (1.3)
+                                      2 (log p)2       U θ⊆τ              (#τ )2
+
+Here #τ denotes the number of τ of a particular length for which fτ ̸≡ 0. We also write θ for a generic
+cap on P1 of dimensions R−1/2 × R−1 . The choice of Gτ in subsection 2.2 is more technical, but (by
+the “pruning inequalities”) will include strictly fewer envelopes U than in the statement of Theorem
+1.2, hence is sufficient.
+    In [17], these wave envelope estimates were refined to include only those envelopes corresponding
+to “high-amplitude” components of the various square functions. The latter paper demonstrated that
+
+                                                           2
+the wave envelope estimate could also be used to derive the small cap results of [5]. Our argument
+closely follows our earlier paper [12], which in turn was an adaptation of the method in [17].
+    We briefly mention the classification of local fields, to supply examples of the fields we will be
+working over. Any nondiscrete locally compact topological field K whose topology is induced by an
+absolute value (i.e. a multiplicative norm), is necessarily one of the following:
+
+ (a) K = R, C (i.e. the Archimedean cases);
+
+ (b) K = Qp , for some prime p, or a finite extension thereof; or
+
+ (c) K = Fpn ((t)), for some prime p and natural n.
+
+We will restrict our attention to cases (b), (c), i.e. the non-Archimedean local fields of characteristic
+0, resp. p > 2. The reader will generally benefit from imagining the cases Qp , Fp ((t)) with p > 2.
+    We also mention the utility in tracking dependence on p in the above theorems. Over the reals,
+Fourier-analytic methods for counting solutions to Diophantine equations frequently entail a subpoly-
+nomial loss in the diameter of the variable set. For instance, the Bourgain–Demeter–Guth resolution [2]
+of the main conjecture of Vinogradov’s mean value theorem shows the particular result
+                                                                                1
+                                Js,k (A) ≲ε diam(A)ε (As + A2s− 2 k(k+1) ),
+
+whenever A ⊆ Z has #A = A. Here we use the usual notation of
+                                  n               s
+                                                  X                          o
+                      Js,k (A) = # (n, m) ∈ A2s :   njι − mjι = 0, ∀1 ≤ j ≤ k ,
+                                                            ι=1
+
+for each s, k ∈ N. If we instead use the p-adic decoupling theorem for the moment curve (Theorem
+6.1 of [14]), we obtain the alternate estimate
+                                                                                1
+                                Js,k (A) ≲p,ε δp (A)−ε (As + A2s− 2 k(k+1) ).
+
+Here δp (A) = min{|n − m|p : n ̸= m ∈ A}, where | · |p is the usual p-adic norm. In particular, if p does
+not divide any of the differences n − m (say, if p > max(|n| : n ∈ A)), then the subpolynomial factor
+trivializes. However, there are corresponding losses in the choice of prime. Thus, judicious tracking of
+the dependence on p, together with number-theoretic considerations, may reduce the dependence on
+features of A other than its cardinality. See [19] for another approach to the same problem.
+    Next, we record the non-Archimedean version of the “block example” of [5], which demonstrates
+that the estimate in 1.1 cannot be extended to any (p, q) with 1q + p3 > 1 and p > 2 + 2β −1 , in
+the small cap regime β > 12 . Let f = fθ = γ≺θ fγ , where θ is above B(0, R−1/2 ) and each fγ =
+                                                  P
+
+e(cγ · x)1B(0,Rβ )×B(0,R) ; here each cγ is an arbitrary point chosen from γ. It is quick to see that fˆγ is
+supported in γ, for each γ. Then we have
+                                                                   1
+                              f 1B(0,Rβ )×B(0,R2β ) = Rβ− 2 1B(0,Rβ )×B(0,R2β ) ,
+
+so that                                                                    !1
+                                                                            q
+                                       β− 12 + 3β                                      3β
+                                                                                            + 1q (β− 12 )
+                                                                ∥fγ ∥qLp
+                                                        X
+                          ∥f ∥Lp ≥ R            p   ,                           =Rp                         .
+                                                        γ
+
+                                                                                    β(1− 1 − 1 )− 1
+If 1q + p3 > 1 and β > 12 , then the corresponding ratio exceeds R      q  p   p.
+
+     Lastly, we discuss the special role of the prime p = 2 in the above; particularly, why we have
+excluded the fields F2d ((t)), and why p is much larger for extensions of Q2 . In the case of characteristic
+
+                                                            3
+2, say K = F2d ((t)), by the Frobenius identity (x + y)2 = x2 + y 2 we see that P1 is contained in a linear
+subspace of K2 , when the latter is regarded a vector space over Fpd . In particular, linear equations
+among the first powers of frequency variables imply corresponding equations among the second powers.
+A straightforward computation (working first over even integer exponents, then interpolating and
+                                                                                                    F d ((t))                      1 p
+comparing with the trivial Cauchy–Schwarz bounds) supplies the identity Dp,2     2
+                                                                                   (R; 21 ) = R 2 ( 2 −1) ,
+for any R ∈ 2dN and p ≥ 2. One may compare with the proof of the local bilinear restriction estimate
+Theorem 2.4 below to see the effect of the size of 2 in K, when 2 ̸= 0 is small.
+
+1.1    Applications
+To motivate the study of non-Archimedean decoupling theorems, we present some applications of
+Theorem 1.1. We emphasize that all of the integral estimates obtained in this section are real, i.e. in-
+tegrals of functions over subsets of Rn . In the terminal section 4, we will supply the needed transference
+procedure.
+    Our first application is a variant of the well-known fact that small cap decoupling theorems imply
+“short mean-value estimates,” i.e. mean value estimates along certain subsets of the fundamental
+domain. We first demonstrated this consequence in [13]. For comparison, we first state the usual
+result.
+
+Theorem 1.3 (c.f. Corollary 1 of [5]). Let N ∈ N and σ ∈ [0, 1]. Let a1 , . . . , aN ∈ C be arbitrary. Let
+1 ≤ r, q < ∞ satisfy 3r + 1q ≤ 1. Then we have
+
+                                               r
+                       N                                                                             N
+                                                                                                                    !r/q
+                                                                    (r− rq −1)−1−σ        r
+                                                                                            − rq
+                       X                                                                           X
+                              an e nx + n2 t        dxdt ≲ε N ε N                    +N   2                |an |q          .         (1.4)
+       [0,1]×[0,N σ−1 ] n=1                                                                          n=1
+
+   Our variant replaces the “short” domain [0, 1] × [0, N σ−1 ] with a “sparse” domain.
+
+Definition 1.4. Let σ, γ ∈ [0, 1] be two parameters. Let N ∈ N be arbitrary. The (σ, γ)-sparse
+domain at scale N is the set
+                                     N (1+σ)(1−γ)
+                                           [ −1
+                  A(N, σ; γ) :=                      [0, 1] × [jN −σ(1−γ) , jN −σ(1−γ) + N γ(1+σ)−2 ].                               (1.5)
+                                         j=0
+
+Remark 1.5. If γ = 1, the union includes only one term which is simply [0, 1] × [0, N σ−1 ].
+   Alternately, if γ = 0, then A(N, σ; 1) is essentially the vertical N −1 -neighborhood of the maximal
+progression of horizontal lines [0, 1] × {0}, [0, 1] × {N −σ }, [0, 1] × {2N −σ }, . . ., in the range 0 ≤ t < 1.
+   As γ ranges from 0 to 1, the number of thickened lines decreases and the thickness increases.
+Remark 1.6. It always holds that L2 A(N, σ; γ) = N σ−1 (as long as N (1+σ)(1−γ) is an integer). Thus,
+                                                    
+
+the A(N, σ; γ) may be viewed as “cousins” of the short domain [0, 1] × [0, N σ−1 ].
+   With this definition, we may state our first application.
+
+Theorem 1.7. Let N ∈ N and σ, γ ∈ [0, 1]. Suppose that N, N (1+σ)(1−γ) are both powers of a common
+odd prime p. Let a1 , . . . , aN ∈ C be arbitrary. Let 1 ≤ r, q < ∞ satisfy 3r + 1q ≤ 1. Then we have
+
+                                  r
+                N                                                                    N
+                                                                                                                     !r/q
+                                                          (r− rq −1)−1−σ    r
+                                                                              − rq 
+                X                                                                   X
+                                2                  O(1)
+                     an e nx + n t dxdt ≲ (log N )      N                +N 2          |an |q                                  .     (1.6)
+      A(N,σ;γ) n=1                                                                                     n=1
+
+If γ = 0, the (log N )O(1) term may be refined to (log N )23+6σ .
+
+                                                              4
+   Thus, the usual “short” (or “small ball”) mean value estimates (1.4) fit into a family of identical
+mean value estimates (1.6).
+Remark 1.8. By a variant of the tensor product argument that will be used to combine real and p-adic
+decoupling for the proof of Theorem 1.7, it will be possible to somewhat relax the condition that
+N, N (1+σ)(1−γ) are powers of a common odd prime. Indeed, by taking tensors over distinct Qp with p
+ranging over a small number of odd primes, we can allow N, N (1+σ)(1−γ) to have prime factorization
+composed of a small number of small odd primes. We do not pursue this here.
+    The proof of Theorem 1.7 involves three steps. First, we prove a variant of Theorem 1.3 working
+purely over the p-adics for an arbitrary choice of p. Second, we demonstrate a “transference procedure,”
+carrying integrals of certain p-adic exponential sums to integrals of real exponential sums over a special
+domain; at this point, we have handled the γ = 0 case of Theorem 1.7. Lastly, to deal with 0 < γ < 1,
+we regard the desired exponential sum as a sum of tensor products of real and p-adic exponential
+sums, and apply the general fact that decoupling theorems tensorize (see e.g. Lemma 5.5 of [14]) to
+estimate the exponential sum along sets resembling a product of p-adic intervals with real intervals.
+    A related estimate, Prop. 3.1, which is obtained on the way to proving Theorem 1.1, implies
+the following superlevel set estimate for exponential sums. This is the “non-Archimedean” variant of
+Theorem 4 from [5].
+Theorem 1.9. Fix σ ∈ [0, 1], ε > 0, and p ≡ 3 (mod 4). Let N ∈ N be such that N, N σ are both
+powers of p and such that p ≤ Dε N ε/20 . Let S ⊆ {1, . . . , N }. Let {aj }j∈S be a family of complex
+numbers with |aj | ≤ 1.
+   Define the distribution functions:
+                            λk (S) = max # j ∈ S : j ≡ a (mod pk ) .
+                                            
+                                              0≤a<pk
+
+Let f be the exponential sum
+                                                          X         j    j2 
+                                             f (x, t) =         aj e   x + 2t .
+                                                                     N    N
+                                                          j∈S
+
+Let 1 ≤ α ≤ N and Uα = {(x, t) ∈ [0, 1]2 : |f (x, t)| ≥ α}. Then we have the superlevel set estimate
+      L2 Uα ∩ A(N, σ; 0)
+                        
+                               7 −4       ε
+                                                                                                   X
+                         ≲ε p  α   D ε N            max           λ k (S) · λ (1+σ) log   N −k (S)     |aj |4 .
+        L2 A(N, σ; 0)                       1+σ
+                                             2
+                                                log p N ≤k≤log p N
+                                                                                         p
+                                                                                                    j∈S
+
+   Our third application involves a great many possible examples; we select the simplest one, which
+we believe adequately illustrates the general theme. In contrast to the two results above, this involves
+quoting the decoupling theorem over a field extension of some Qp .
+   For σ ∈ [0, 1] and N ∈ N, we write
+                              N (1+σ)
+                                  [ −1
+         A   (2)
+                   (N, σ) =            [0, 1]2 × [jN −σ−1 , jN −σ−1 + N −2 ] × [kN −σ−1 , kN −σ−1 + N −2 ].
+                               j,k=0
+
+Theorem 1.10. Let N ∈ N and σ ∈ [0, 1]. Let {anm }1≤n,m≤N be arbitrary complex numbers. Let
+1 ≤ r, q < ∞ satisfy 3r + 1q ≤ 1. Then we have
+                              N
+                              X                                  r
+                                                     2   2
+                                  anm e nx − my + z(n − m ) − 2wnm dxdydzdw
+              A(2) (N,σ) n,m=1
+                                                                                                                r/q       (1.7)
+                                                                                                       N
+                                                                (r− rq −1)−1−σ        r
+                                                                                        − rq
+                                                                                                       X
+                                         ≲ (log N )23+6σ N                                                 |anm |q 
+                                                                                               
+                                                                                 +N   2                                .
+                                                                                                   n,m=1
+
+
+                                                                 5
+Remark 1.11. The phase function may be substituted with many equivalents, e.g.
+                                      nx + my + z(n2 − m2 ) + 2wmn.
+
+                                    √ the same analysis as was used in Theorem 1.7, with the Qp
+    Theorem 1.10 follows from essentially
+in the latter substituted for K = Qp −1 subject to p ≡ 3 (mod 4).
+    The proofs of Theorems 1.7, 1.9, and 1.10 will be postponed to the end in Section 4.
+
+1.2   Brief overview of method
+We discuss the method for proving Theorem 1.2. We will adopt several temporary notations for the
+sake of an intuitive sketch, which will later be abandoned in favor of the technical approach.
+   The basic decomposition used in the proof of Theorem 1.2 is the two-part decomposition
+                                          G                    G
+                                N (P1 ) =     θ, θ − θ =: δθ =    δθ(k) .
+
+Here the sets δθ(k) are understood as follows: if θ is the cap about 0 for simplicity, that is, θ =
+B(0, R−1/2 ) × B(0, R−1 ), such that in particular θ = δθ (in our non-Archimedean setting), then for
+0 ≤ k ≤ N we write δθ(k) for
+                             n                      k−1       k   o
+                    δθ(k) := (x, y) ∈ δθ : |x| ∈ R 2N −1 , R 2N −1 , 1 ≤ k ≤ N,
+                             n                       o
+                    δθ(0) := (x, y) ∈ δθ : |x| ≤ R−1 .
+
+Here N ∼ log R is an integer. Other δθ will be decomposed similarly; so too for caps of different sizes,
+e.g. the τ of shape R−1/3 × R−2/3 . Thus, the parameter k measures the distance from the center of
+the cap. The raison d’être of this decomposition is the pair of estimates
+                           ˆ X                          2
+                                                                Xˆ X
+                                                                                          2
+
+                                      Pδθ(k) |f |2                           Pδθ(k) |f |2 ,
+                                                                                      
+                                                            ≲                                      (1.8)
+                                 θ                              τ      θ⊆τ
+
+(writing PA for the Fourier projection onto a set A), valid whenever k > 0 and the τ have diameter
+           k
+d(τ ) ≥ R 2N −1 ; and the pointwise estimate
+                                                        2                           2
+                                      X                         X X
+                                          Pδθ(k) [f ]       =             Pδθ(k) [f ] ,            (1.9)
+                                      θ                         τ   θ⊆τ
+                                                                           |k|
+valid whenever k > 0 and the τ have diameter d(τ ) ≥ R− N . (1.8) and (1.9) are known as the high
+and low lemmas, respectively; see Lemmas 2.2 and 2.1 below. By repeatedly applying estimates of
+the form (1.8) and (1.9), together with the usual L4 Córdoba–Fefferman square function estimate, we
+find that for each k ≥ ℓ we have that
+                  ˆ                              N             ˆ X
+                          X                   4  X     X                          2
+                                                                      Pδθ(m) |f |2 .
+                                                                            
+                                  Pδτ (k) [f ] ⪅
+                            τ                           m=ℓ            τ    m       θ⊆τ
+                                 ℓ
+                     diam(τ )=R− N                              diam(τ )=R− N
+
+See the proof of Prop. 2.3 below. It remains to analyze the right-hand side. One may observe that
+                   2 2                                                    m
+                          is constant on rectangles U of dimension R × R1− N , oriented as stated in
+      P
+each    θ⊆τ Pδθ(k) |f |
+Theorem 1.2. Thus, for each U ,
+                         ˆ X
+                                                                       2
+                                         2 2             X          2
+                                  Pδθ(k) |f |  ≤ µ(U )        Pθ [f ]  .
+                            U   θ⊆τ                                       U θ⊆τ
+
+
+                                                                6
+                                                                                        P
+Thus, we are done in the special case that (a) there is some ℓ and k ≥ ℓ such that f = τ :diam(τ )=R−ℓ/N Pτ (k) [f ],
+and that (b) for each m ≥ ℓ and each τ with diam(τ ) = R−m/N we have that θ⊆τ Pδθ(k) |f |2 is
+                                                                                       P             
+
+supported on the rectangles in Gτ . It happens that this special case may be achieved from the general
+one by a pruning procedure on f ; that is, an arbitrary input function f is a sum of functions fm        B
+
+satisfying (a) and (b), plus an inanity f0 which is small for trivial reasons.
+    The argument we follow will put in front the pruned functions fm    B , and the Fourier decomposition
+
+we sketched above will be expressed in somewhat different      F language   (i.e. the high/low analysis of
+                                                                   (k)
+square functions). In particular, the decompositions δθ = δθ discussed above are not referenced
+past this point.
+    The principal thrust of the argument is equivalent to that of [17] and [12], though translated to
+the non-Archimedean setting. This latter stipulation provides many technical advantages, particularly
+related to the absence of Schwartz tails. The most visible consequence of this is the removal of many
+technical weights that were present in earlier papers. As a corollary, our analysis is relatively simple,
+and may be used as a comparative document for those wishing to study the earlier works.
+
+1.3   Initial notation-setting
+Let K be a non-Archimedean local field of characteristic not 2, i.e. a nondiscrete totally disconnected
+locally compact topological field which is equipped with a complete absolute value | · | inducing the
+topology, for which 2 ̸= 0. We normalize |·| by insisting that it is the modular function for K, regarded
+as a LCA group.
+    Let V ⊆ (0, ∞) be the range of | · | on the nonzero members of K. Let m ⊆ O be the maximal ideal,
+and ϖ ∈ m be a uniformizer. Let η ∈ N be minimal such that p = |ϖ|−η satisfies p ≥ |2|−1 ; note that
+this p matches with the choice in (1.2). We will also write q = #k = pf for the cardinality of the
+residue field k of K. Note in particular that q = p if char(k) ̸= 2, and q ≤ p = |2|−1 if char(k) = 2.
+    Fix some R ∈ p2N , and write N = 12 logp (R). For 0 ≤ k ≤ N , we write Rk = pk . Let α ∈ (0, R)
+and Uα = {x ∈ BR : |f (x)| > α}.
+    Write BT = {x ∈ K2 : |x| ≤ T } for each T ∈ R>0 . For each k, write P(O, Rk−1 ) for the partition
+of the unit ball B1 into metric balls of radius Rk−1 . If I ∈ P(O, Rk−1 ), we will write τI for the set
+
+                                        τI = (a, a2 ) + Ma,ϖηk [O2 ],
+
+where a ∈ I is chosen arbitrarily and, for each λ ∈ K× ,
+                                                   
+                                                1 0
+                                     Ma,λ =           .diag(λ, λ2 ).
+                                               2a 1
+
+It is quick to see that τI is independent of a ∈ I. We will write Aa,λ (x) = (a, a2 ) + Ma,λ (x). We will
+also lift the subset partial order ⊆ on the set of metric balls I to the associated caps τI , which we will
+write as ≺. Thus,
+                                          I ⊆ J ⇐⇒ τI ≺ τJ .
+We introduce this special notation ≺ to help clarify at various points that the two objects on either
+side of the relation symbol are objects of a special type (i.e. caps), rather than arbitrary subsets of
+K2 .
+     Let µ denote Haar measure on K1 and K2 ; the choice will always be clear from context. We will
+let e : K → C be some choice of character such that e(O) = {1} ̸= e(ϖ−1 O). A convenient choice for
+Qp and Fp ((t)) would be
+                    ∞                      −1
+                            !                      !
+                   X                      X
+                e      an pn = exp 2πi        an pn , N ∈ Z, {an }n ∈ {0, . . . , p − 1}Z        (1.10)
+                   n=N                      n=N
+
+
+                                                      7
+for Qp , and
+                     ∞
+                                  !
+                     X
+                 e            n
+                           an t       = exp(2πia−1 p−1 ),   N ∈ Z, {an }n ∈ {0, . . . , p − 1}Z
+                     n=N
+
+for Fp ((t)).
+    With respect to e and µ, we understand the Fourier transform to be
+                                            ˆ
+                                    fˆ(ξ) =   e(xξ)f (x)dµ(x),
+                                                    K
+
+for any Schwartz–Bruhat function f : K → C. Functions on Kn will be handled similarly.
+    For I ∈ P(O, Rk−1 ), we will write
+                                             −⊤
+                                      NτI = Ma,1 .diag(ϖ−η(N −k) , ϖ−ηN ),
+
+where we make arbitrary choices of a ∈ I. Let UτI be the image of the set of translates of O2 under
+NτI ; UτI does not depend on the choice of a. For U ∈ UτI , define the averaging operator AU by
+                                                         ˆ
+                                                      −1
+                                      AU [f ] = µ(U )      f dµ.
+                                                               U
+
+   We will use the symbol χ for the indicator functions of annuli, and put the radius bounds in the
+denominator. Thus,
+                        χ≤r = 1Br , χ>r = 1K2 \Br , χ(r1 ,r2 ] = 1Br2 \Br1 .
+   We will use subscripts to denote Fourier projections, e.g. Pθ [f ] = fθ , and hereafter omit the
+projection operators PA discussed exclusively in subseection 1.2. We will write gτ = θ≺τ |fθ |2 .
+                                                                                    P
+
+
+1.4   Overview of remainder of paper
+In Section 2, we prove Theorem 1.2. In the first subsection 2.1, we state and prove the basic lemmas
+that apply to general functions of the prescribed spectral support, which will be the foundation of
+our analysis. In the second subsection 2.2, we fix P theB particular function f and define a pruning
+of that function, to define a decomposition f = m fm      + (f − fN ) + f0 into pieces over which the
+preceding lemmas may be applied fruitfully. The upshot of that subsection is a set of estimates that
+will resolve Theorem 1.2 in the special case of “broad” domination. In the next subsection 2.3, we run
+a broad/narrow analysis to conclude a local version of Theorem 1.2. In the terminal subsection 2.4,
+we prove the full theorem by removing the local assumption. In Section 3, we prove Theorem 1.1 by
+an essentially elementary manipulation of the conclusion of Theorem 1.2.
+
+
+2     Proof of Theorem 1.2
+We begin by establishing a number of technical high/low decomposition results, applicable to a general
+Schwartz–Bruhat function f with Fourier support in NR−1 (P1 ). Later, we will fix a single f and
+perform a pruning procedure, in order to obtain appropriate functions for which the preceding results
+are useful.
+
+
+
+
+                                                        8
+2.1    Technical lemmas
+Lemma 2.1 (Low lemma). Let f have Fourier support in NR−1 (P1 ). For any 1 ≤ m ≤ k ≤ N , and
+0 ≤ s ≤ k,                                    X
+                             |f |2 ∗ χ∨
+                                      ≤R −1 =   |f |2 ∗ χ∨
+                                                         ≤R−1    k                                  k
+                                                                               τk
+
+for any τs .
+Proof. Indeed, if τk ̸= τk′ , then for each x ∈ τk and y ∈ τk′ , |x − y| > Rk−1 . Thus, τk − τk′ is disjoint
+from BR−1 .
+         k
+
+
+Lemma 2.2 (High Lemmas). Let f have Fourier support in NR−1 (P1 ). For any m, k, and l such that
+1 ≤ m ≤ N , l ≤ k, and k + l ≤ N ,
+ (a)                          ˆ        X                               2        Xˆ             X                          2
+                                            |fθ |2
+                                                     ∗ χ∨
+                                                        >Rk /R             ≤                        |fθ |2 ∗ χ∨
+                                                                                                              >Rk /R ,
+                                        θ                                           τk     θ≺τk
+
+ (b)                     ˆ        X                               2                            Xˆ                               2
+                                       |fτk |2 ∗ χ∨
+                                                  >R−1
+                                                                      ≤ |2|−1 pl p−f                      |fτk |2 ∗ χ∨
+                                                                                                                     >R−1
+                                                                                                                                    .
+                                                           k+l                                                            k+l
+                                  τk                                                           τk
+
+Proof. (a): By Plancherel,
+                      ˆ X                                                  ˆ
+                                                                  2                            XX                   2
+                                       |fθ |2
+                                                ∗ χ∨
+                                                   >Rk /R             =                                    |f
+                                                                                                            d   2
+                                                                                                             θ | (ξ) .
+                                   θ                                       |ξ|>Rk /R           τk θ≺τk
+
+                                         \ B 2
+                                  P
+The supports of the summands θ≺τk |f       m,θ | , ranging over distinct τk , are disjoint outside of the ball
+BRk /R . Applying Plancherel, we conclude.
+   (b): Note that |fτk |2 has Fourier support in the set τk − τk . Suppose that τk is centered at γ(t1 )
+and τk′ is centered at γ(t2 ), for some |t1 − t2 | ≥ |2|−1 pl−k . Then, if (τk − τk ) ∩ (τk′ − τk′ ) \ BR−1 is
+                                                                                                         k+l
+nontrivial, then we may find a solution a1 , a2 , b1 , b2 ∈ O to the system
+
+                                                       |a1 |, |a2 | > pk−(k+l) ,
+
+                        (ϖηk (a1 − a2 ), ϖ2ηk (b1 − b2 ) + 2ϖηk (t1 a1 − t2 a2 )) = (0, 0).
+By the first condition on the second display, a1 = a2 . But then
+
+|ϖ2ηk (b1 − b2 ) + 2ϖηk (t1 a1 − t2 a2 )| ≥ |2|p−k |a1 ||t1 − t2 | − p−2k |b1 − b2 | > p−(−k+k−k−l+l−k) − p−2k = 0.
+
+By the strict inequality, the leftmost expression is nonzero, contradicting the previous assummption.
+   Thus, we know that the τk − τk can only overlap on Q2p \ BR−1 with those τk′ − τk′ corresponding
+                                                                                                    k+l
+to time parameters within a distance of |2|−1 pl−k . Thus, appealing to Plancherel,
+                   ˆ X                         ˆ
+                                           2               X          2
+                                 2   ∨                         [    2
+                           |fτk | ∗ χ>R−1 =                   |fτk |
+                                                     k+l               Q2p \B −1
+                             τk                                                 R         τk
+                                                                                          Xˆ
+                                                                                    k+l
+                                                                                                                           2
+                                                                 ≤ |2|−1 pl p−f                         |fτk |2 ∗ χ∨
+                                                                                                                   >R−1
+                                                                                                                    k+l
+                                                                                          τk
+
+by the Schur test.
+
+
+                                                                           9
+Proposition 2.3 (Wave envelope bound of high parts). Let f have Fourier support in NR−1 (P1 ) and
+1 ≤ ℓ < N . Then
+                 ˆ X                                 2                         N Xˆ
+                                                                               X                              X                                2
+                         |fτℓ |    2
+                                       ∗ χ∨
+                                          >Rℓ /R          ≤ 3q  −1 3
+                                                                     p N                                             |fθ |2 ∗ χ≤Rk /R .
+                    τℓ                                                      k=ℓ+1 τk                          θ≺τk
+
+Proof. We decompose
+                    ˆ X                                     2       N ˆ X
+                                                                    X
+                                                                                                                                       2
+                                   |fτℓ |   2
+                                                ∗ χ∨
+                                                   >Rℓ /R       =                              |fτℓ |  2
+                                                                                                           ∗ χ∨
+                                                                                                              (Rk−1 /R,Rk /R]
+                          τℓ                                        k=ℓ+1             τℓ
+                                                                        N ˆ X
+                                                                        X
+                                                                                                                                   2
+                                                                    +                                |fτℓ | 2
+                                                                                                                ∗ χ∨
+                                                                                                                   (Rk−1 ,Rk−1
+                                                                                                                           −1
+                                                                                                                               ]
+                                                                                                                                       .
+                                                                        k=ℓ+1                  τℓ
+
+   Consider the first sum. By the low lemma 2.1,
+                  ˆ X                                ˆ
+                                                  2                                   X                                                2
+                                   ∨
+                               2
+                         |fτℓ | ∗ χ(Rk−1 /R,Rk /R] =                                                |fθ |2 ∗ χ∨
+                                                                                                              (Rk−1 /R,Rk /R] .
+                         τℓ                                                                θ
+
+By the high lemma (a) and Cauchy–Schwarz, we have
+                 ˆ X                                 Xˆ
+                                                2                                                     X                            2
+                                 ∨
+                             2
+                        |fθ | ∗ χ(Rk−1 /R,Rk /R] ≤ p                                                            |fθ |2 ∗ χ∨
+                                                                                                                          ≤Rk /R .
+                           θ                                                      τk                  θ≺τk
+
+   Next, we consider the second sum in our decomposition. For each ℓ + 1 ≤ k ≤ N , by the low
+lemma 2.1,        ˆ X                             ˆ X
+                                               2                              2
+                                    ∨
+                                2
+                          |fτℓ | ∗ χ(R−1 ,R−1 ] =     |fτk−1 |2 ∗ χ∨ −1
+                                                                   (R ,R −1
+                                                                            ]
+                                                                                .
+                                                      k     k−1                                                        k   k−1
+                              τℓ                                                 τk−1
+
+By part (b) of the high lemma 2.2,
+                      ˆ X                                      Xˆ
+                                                   2
+                                    2   ∨                −1 −1
+                            |fτk−1 | ∗ χ(R−1 ,R−1 ] ≤ |2| q p     |fτk−1 |4 .
+                                                            k       k−1
+                               τk−1                                                                           τk−1
+
+By the reverse square function estimate for P1 , Prop. 2.5 below,
+                                   ˆ              ˆ    X          2
+                                             4
+                                     |fτk−1 | ≤ 2           |fθ |2 .
+                                                                                θ≺τk−1
+
+We decompose the right-hand side of the resulting inequality:
+      ˆ X                                          Xˆ
+                                   2                        X        2
+                    2   ∨                 −1 −1
+            |fτk−1 | ∗ χ(R−1 ,R−1 ] ≤ 2|2| q p                |fθ |2
+                                       k    k−1
+          τk−1                                                              τk−1                θ≺τk−1
+                                                                            Xˆ                       X                                     2
+                                                     = 2|2|−1 q−1 p                                           |fθ |2 ∗ χ∨
+                                                                                                                        ≤Rk−1 /R
+                                                                            τk−1                θ≺τk−1
+                                                                               X Xˆ                             X                                  2
+                                                     + 2|2|−1 q−1 p                                                    |fθ |2 ∗ χ∨
+                                                                                                                                 (Rt−1 /R,Rt /R] .
+                                                                            k≤t≤N τk−1                        θ≺τk−1
+
+The first summand is of the desired form. Take now k ≤ t ≤ N . By the high lemma,
+             Xˆ      X                              2   Xˆ X                            2
+                          |fθ |2 ∗ χ∨
+                                    (Rt−1 /R,Rt /R]   ≤        |fθ |2 ∗ χ∨
+                                                                         (Rt−1 /R,Rt /R] .
+             τk−1    θ≺τk−1                                                    τt−1                 θ≺τt−1
+
+
+                                                                          10
+By Cauchy–Schwarz, we have
+              Xˆ      X                                                    2        Xˆ             X                       2
+                                          |fθ | 2
+                                                    ∗ χ∨
+                                                       (Rt−1 /R,Rt /R]         ≤p                         |fθ |2 ∗ χ∨
+                                                                                                                    ≤Rt /R .
+                   τt−1          θ≺τt−1                                              τt            θ≺τt
+
+    Adding our two contributions, we obtain
+             ˆ X                                2        N                               Xˆ
+                                                         X   2p2                                           X                     2
+                       |fτℓ |2
+                                 ∗ χ∨
+                                    >Rℓ /R          ≤                    (k − ℓ) + p                             |fθ |2 ∗ χ≤Rk /R .
+                  τℓ
+                                                                |2|q                          τk
+                                                        k=ℓ+1                                             θ≺τk
+
+
+
+
+   We conclude this subsection by recording the Córdoba–Fefferman argument over K, which is here
+represented by two results: Theorem 2.4 (the local form) and Prop. 2.5 (the global form).
+
+Theorem 2.4 (Local bilinear restriction). Suppose |2| = ϵ ∈ (0, 1] in K. Let
+
+                                                    0 < S ≤ D ≤ ϵΓ ≤ ϵ,               R > 0.
+
+Let J ∈ P(O, Γ) and L, L′ ∈ P(J, ϵ−1 D) be distinct, I, I ′ ∈ P(L, D), P(L′ , D), respectively, and write
+τ = τI , τ ′ = τI ′ for the caps above I, I ′ on P1 . Then we have the estimate
+
+                   ˆ                                                                      ˆ
+                                                                                                                        2
+                                                                                                          X
+                            |fτ |2 |fτ ′ |2 ≤ max(q−2 (Γ/D)2 (SR)−2 , 1)                                         |fτK |2  .
+                       BR                                                                 BR           K∈P(J,S)
+
+Proof. We may assume that J = B(0, Γ). We will use θ, ϑ for various τK with K ∈ P(J, S). Computing
+directly,                  ˆ                     X ˆ
+                               |fτ |2 |fτ ′ |2 =          fθ1 f θ2 fϑ1 f ϑ2 ,
+                                           BR                     θ1 ,θ2 ≺τ     BR
+                                                                  ϑ1 ,ϑ2 ≺τ ′
+
+where a given tuple (θ1 , θ2 , ϑ1 , ϑ2 ) produces a nontrivial summand only if (θ1 −θ2 +ϑ1 −ϑ2 )∩BR−1 ̸= ∅.
+Suppose this is the case. We may find ξ1 , ξ2 , η1 , η2 be such that
+
+                                 (ξ1 , ξ12 ) ∈ θ1 , (ξ2 , ξ22 ) ∈ θ2 ,     (η1 , η12 ) ∈ ϑ1 , (η2 , η22 ) ∈ ϑ2 ,
+
+and such that there are ε1 , ε2 , δ1 , δ2 ∈ K with |ει |, |δι | ≤ S 2 , such that
+
+                       (ξ1 , ξ12 + ε1 ) − (ξ2 , ξ22 + ε2 ) + (η1 , η12 + δ1 ) − (η2 , η22 + δ2 ) ∈ BR−1 .
+
+    Note that
+                                                        |(ξ1 + ξ2 ) − (η1 + η2 )| > D;
+indeed, the two bracketed expressions belong to distinct members of P(O, |2|ϵ−1 D). By the assumption
+on the points, |(ξ1 − ξ2 ) + (η1 − η2 )| ≤ R−1 . Thus,
+
+                        ξ12 − ξ22 + η12 − η22 = (ξ1 − ξ2 )((ξ1 + ξ2 ) − (η1 + η2 )) + O(ΓR−1 ).
+
+The first summand has size > D|ξ1 − ξ2 |, so the vanishing condition may hold only if
+
+                                                    |ξ1 − ξ2 | < D−1 max(ΓR−1 , S 2 ).
+
+
+
+                                                                         11
+Symmetrically, it is necessary for |η1 − η2 | < T := D−1 max(ΓR−1 , S 2 ). We divide into cases. Suppose
+first that T ≤ qS. Then we certainly have
+                        ˆ                      X       X     ˆ
+                                  2       2
+                             |fτ | |fτ ′ | =                    |fτK1 |2 |fτK2 |2 ,
+                             BR                          K1 ∈P(I,S) K2 ∈P(I ′ ,S) BR
+
+and we are done.
+   In the alternate case, we have S < q−1 T , and we take our weaker identity
+                     ˆ                    X           X       ˆ
+                               2       2
+                          |fτ | |fτ ′ | =                         |fτJ1 |2 |fτJ2 |2 ,
+                           BR                                                                       BR
+                                                     J1 ∈P(I,q−1 T ) J2 ∈P(I ′ ,q−1 T )
+
+and apply Cauchy–Schwarz to conclude
+                ˆ                                                    X                    X             ˆ
+                    |fτ |2 |fτ ′ |2 ≤ q−2 S −2 T 2                                                          |fτK1 |2 |fτK2 |2 .
+                      BR                                         K1 ∈P(I,T ) K2 ∈P(I ′ ,T ) BR
+
+Finally, we have the implication
+                                                 S < q−1 T =⇒ S 2 ≤ ΓR−1 ,
+so that our inequalities may take the shape
+
+             ˆ                       ˆ
+                                                                       2         (
+                       2        2
+                                                     X
+                                                                     2             1                                   T ≤ qS
+                   |fτ | |fτ ′ | ≤                            |fτK |            ×
+              BR                       BR       K∈P(J,S)
+                                                                                    q−2 (Γ/D)2 (RS)−2                   S < q−1 T,
+
+which clearly implies our conclusion.
+
+
+   Similarly, we may prove:
+
+Proposition 2.5 (Córdoba–Fefferman square function estimate). Suppose char(K) ̸= 2. If f has
+Fourier support in Nδ (P1 ) ⊆ K2 , then
+                                                     ˆ              ˆ        X
+                                                                                               !2
+                                                           4                               2
+                                                         |f | ≤ 2                      |fθ |        ,
+                                                                                 θ
+
+where the caps θ have size δ × δ 2 .
+
+Proof. We expand out                        ˆ                                ˆ
+                                                                X
+                                                |f |4 =                              fθ1 f θ2 fϑ1 f ϑ2 .
+                                                            θ1 ,θ2 ,ϑ1 ,ϑ2
+
+By essentially the same analysis above, each tuple corresponds to a nontrivial integral only if θ1 =
+θ2 , ϑ1 = ϑ2 or θ1 = ϑ2 , θ2 = ϑ1 . Thus,
+                                   X ˆ                          Xˆ
+                                          fθ1 f θ2 fϑ1 f ϑ2 ≤ 2    |fθ |2 |fϑ |2 .
+                                    θ1 ,θ2 ,ϑ1 ,ϑ2                                       θ,ϑ
+
+The result follows immediately.
+
+
+
+
+                                                                        12
+2.2   Bounding the broad sets
+In this section, we fix a single function f satisfying the hypotheses of Theorem 1.2. We apply the
+results of the previous subsection to pruned functions arising from f .
+    We will first need to define the decomposition. For each I ∈ P(O, R−1/2 ) and associated θ, write
+
+                                                              α2
+                                                                     
+                                                       2
+                               Gθ = U ∈ Uθ :      |fθ | ≥ 2 2           ,
+                                                U         2e N (#θ)2
+
+and                                             X                            X
+                                  fN,θ = fθ             1U ,          fN =             fN,θ .
+                                               U ∈Gθ                           θ
+
+Inductively, set                                                                                     
+                                                      X                                   α2         
+                       Gτk := U ∈ Uτk :                        |fk+1,θ |2 ≥                               ,
+                                               U θ≺τ                          2e2 N 2 (#τk )2 
+                                                           k
+
+and                                                X                           X
+                              fk,θ := fk+1,θ                   1U ,    fk =             fk+1,θ .
+                                                U ∈Gτk                             θ
+
+We will also write                                                             X
+                                   B
+                                  fk,θ = fk,θ − fk−1,θ ,               fkB =             B
+                                                                                        fk,θ
+                                                                                   θ
+                                     2   B                   B 2
+                          P                        P
+   We will write gk,τ =   θ≺τ |fk,θ | , gk,τ =         θ≺τ |fk,θ | .
+                         B is Fourier-supported in θ.
+Remark 2.6. Each fk,θ , fk,θ
+Remark 2.7 (Pruning inequalities). For each 0 ≤ k < N and each θ, we have the pointwise inequalities
+                                               B
+                                                    
+                                max |fk,θ |, |fk,θ | ≤ |fk+1,θ | ≤ |fθ |.                     (2.1)
+
+   An immediate consequence of the pruning is the following lemma, which demonstrates that the
+                                                                                               B.
+terms on the right-hand side of Prop. 2.3 are appropriate for Theorem 1.2 when applied to the fm
+
+Lemma 2.8 (Wave envelope expansion). (a) For each k and τk , we have
+                          ˆ X                        ˆ
+                                                  2                  2
+                                   B 2      ∨                 B
+                                 |fm,θ | ∗ χ≤Rk /R ≤   AUτk [gm,τ k
+                                                                    ] .
+                                    θ≺τk
+
+
+ (b) If N > k ≥ m, then
+
+                              ˆ
+                                                                                                    2
+                                                   2           X                         X
+                                         B
+                                  AUτk [gm,τ k
+                                               ]       ≤              µ(U )                    |fθ |2  .
+                                                           U ∈Gτk                      U θ≺τ
+                                                                                            k
+
+
+                                               B 2      ∨
+                                     P
+Proof. (a): The Fourier support of      θ≺τk |fm,θ | ∗ χ≤Rk /R is contained in the set
+                                       [
+                                             (θ − θ) ∩ BRk /R ⊆ Uτ∗k ,R ,
+                                      θ≺τk
+
+
+
+
+                                                               13
+where Uτ∗k ,R is a rectangle of dimensions Rk /R × R−1 with long edge parallel to tcτk . Thus
+                         ˆ                                             ˆ
+                                X                              2               X                      2
+                                        B 2
+                                      |fm,θ | ∗ χ∨
+                                                 ≤Rk /R            =                   \
+                                                                                      |f B 2
+                                                                                        m,θ | χ≤Rk /R
+                             θ≺τk                                              θ≺τk
+                                                                       ˆ       X                     2
+                                                                   ≤                   \
+                                                                                      |f B 2
+                                                                                        m,θ | 1Uτ ,R
+                                                                                                ∗
+                                                                                                    k
+                                                                               θ≺τk
+                                                                       ˆ              hX                i2
+                                                                                                B 2
+                                                                   =       AUτk               |fm,θ |
+                                                                                       θ≺τk
+
+as claimed.
+                        B | ≤ |f | ≤ |f
+    (b): Since k ≥ m, |fm,θ     k,θ     k+1,θ | ≤ |fθ | by the pruning, so
+                                ˆ                               i2         ˆ
+                                             hX                                                     2
+                                                        B 2
+                                      AUτk            |fm,θ |          ≤        AUτk [gk,τk ] .
+                                             θ≺τk
+
+   By the definition of the pruning, gk,τk is supported on the union over Gτk , so
+                              ˆ                   X ˆ
+                                              2                         2
+                                 AUτk [gk,τk ] =           AUτk [gk,τk ] .
+                                                              U ∈Gτk       U
+
+
+On the other hand, AUτk [gk,τk ] is constant on each such box, so that
+
+                         X ˆ
+                                                                                                        2
+                                                      2        X                         X
+                                      AUτk [gk,τk ]       =            µ(U )                     |fk,θ |2  .
+                       U ∈Gτk    U                            U ∈Gτk                  U θ≺τ
+                                                                                              k
+
+
+
+
+    We now initiate a decomposition of the left-hand side of Theorem 1.2, which has the effect of
+                                            B . This portion of the argument follows closely the approach
+isolating the contributions of the various fm
+of [17], Section 3. Recall that Uα is defined as the set
+                                            
+                                       Uα = x ∈ BR : |f (x)| > α .
+
+We consider also the auxiliary set
+                                    n                                               1  o
+                                Vα = x ∈ BR : |fN (x)| > 1 −                              α .
+                                                                                  21/2 eN
+   We note the relation
+                                                          Uα ⊆ Vα ;                                              (2.2)
+indeed, for any x, from the difference
+                                                              X X
+                                     |f (x) − fN (x)| ≤                        1U (x)|fθ (x)|,
+                                                                θ U ̸∈Gθ
+
+together with the fact that each |fθ | is constant on the sets U , we see that for any U ̸∈ Gθ and x ∈ U ,
+we have the bound                                     1/2
+                                                     2             α
+                               |fθ (x)| =       |fθ |       ≤ 1/2         .
+                                              U              2 eN (#θ)
+
+                                                               14
+Summing over the θ, we obtain (2.2).
+   By the definition of the prunings,
+     n                                        o [N n                                               o
+ Vα ⊆ x ∈ Vα : |f0 (x)| ≥ (N 4 + 1)−1 |fN (x)| ∪               B
+                                                    x ∈ Vα : |fm |(x) ≥ N −1 (1 + N −4 )−1 |fN (x)|
+                                                                    m=1
+                                                                    N
+                                                                    [
+                                                  =: Uα0 ∪                  Uαm .
+                                                                   m=1
+                                                                                                                        (2.3)
+
+   We may immediately verify that the set Uα0 is acceptable from the point of view of Theorem 1.2.
+Proposition 2.9 (Case m = 0). If N > 2 then
+                                                                                                            !2
+                                                                   X                         X
+                              α4 µ(Uα0 ) ≤ 20N 10                       µ(U )                      |fθ |2           .
+                                                               U ∈Gτ0                    U     θ
+
+Proof. Take any x ∈ Uα0 . Then Gτ0 ̸= ∅, in particular is composed of the set BR . Hence we have
+                                                 X
+                                    |f0 (x)| = |   1BR (x)f1,θ (x)|.
+                                                                   θ
+
+Thus, we have an inequality                      ˆ                     Xˆ
+                                                               2
+                                                        |f0 | ≤                     |fθ |2 .
+                                                  Uα0                   θ      BR
+
+Since BR ∈ Gτ0 we have
+                                                           X                     α2
+                                                                   |fθ |2 ≥            .
+                                                      BR                       2e2 N 2
+                                                           θ
+Multiplying the two inequalities together,
+                                             ˆ                                                             !2
+                                   α2                      2
+                                                                                         X
+                                                                                                       2
+                                                      |f0 | ≤ µ(U )                            |fθ |            .
+                                 2e2 N 2        Uα0                                 BR   θ
+
+Finally, on Uα0 we have |f0 (x)| ≥ (1 − 21/21eN ) N 4α+1 ; the result follows.
+
+    In order to bound the contributions of the Uαm , we will need to assert an extra “broad” hypothesis.
+It will happen that this entails a high-frequency dominance property, which will allow us to apply
+Prop. 2.3. The basic result is in the following lemma.
+Lemma 2.10 (Weak high-domination of bad parts). Let 1 ≤ m ≤ ℓ ≤ N and 0 ≤ k < m. Let τk be
+arbitrary.
+
+ (a) For each x, we have
+                                        X
+                                                  B                                          α2 (#τℓ ≺ τk )
+                                                |fm,τ   |2 ∗ χ∨
+                                                              ≤Rℓ /R (x) ≤                                   .
+                                       τℓ ≺τk
+                                                      ℓ
+                                                                                             2e2 N 2 (#τℓ )2
+
+          Cα
+ (b) If 21/2        B
+                ≤ |fm,τ   (x)|, then
+             eN         k
+
+
+                              X
+                                         B                       C2     X
+                                       |fm,τ   |2 (x) ≤                    |f B |2 ∗ χ∨
+                                                                                      >Rℓ /R (x) .
+                              τℓ ≺τk
+                                             ℓ
+                                                               C 2 − 1 τ ≺τ m,τℓ
+                                                                              ℓ     k
+
+
+
+                                                                       15
+Proof. (a): By the low lemma 2.1,
+                          X                          X X
+                               B            ∨              B 2
+                             |fm,τ ℓ
+                                     |2
+                                        ∗ χ ≤Rℓ /R =     |fm,θ | ∗ χ∨
+                                                                    ≤Rℓ /R .
+                              τℓ ≺τk                               τℓ ≺τk θ≺τℓ
+
+If x ∈ U ∈ Uτℓ \ Gτℓ , then a straightforward calculation supplies
+                               X                                            X
+                                        B 2
+                                      |fm,θ | ∗ χ∨
+                                                 ≤Rℓ /R (x) =
+                                                                                           B 2
+                                                                                         |fm,θ | ∗ χ∨
+                                                                                                    ≤Rℓ /R .
+                               θ≺τℓ                                       U θ≺τ
+                                                                                    ℓ
+
+
+By the pruning inequalities (2.1),
+                                      X                                        X
+                                               B 2
+                                             |fm,θ | ∗ χ∨
+                                                        ≤Rℓ /R ≤
+                                                                                           B 2
+                                                                                         |fℓ,θ | ∗ χ∨
+                                                                                                    ≤Rℓ /R .
+                                 U θ≺τ                                    U θ≺τ
+                                         ℓ                                           ℓ
+
+
+By the definition of Gτℓ ,
+                                              X
+                                                        B 2                             α2
+                                                      |fℓ,θ | ∗ χ∨
+                                                                 ≤Rℓ /R ≤                          .
+                                         U θ≺τ                                     2e2 N 2 (#τℓ )2
+                                                  ℓ
+
+Thus, summing over τℓ ≺ τk , we arrive at the estimate
+                                         X
+                                                   B                           α2 (#τℓ ≺ τk )
+                                                 |fm,τ   |2 ∗ χ ∨
+                                                                ≤Rℓ /R ≤                       .
+                                        τℓ ≺τk
+                                                       ℓ
+                                                                               2e2 N 2 (#τℓ )2
+
+   (b): The assumption and Cauchy–Schwarz give
+
+                                             C 2 α2                 X
+                                                                          B
+                                                     ≤ (#τℓ ≺ τk )      |fm,τ   |2 .
+                                             2e2 N 2               τ ≺τ
+                                                                              ℓ
+                                                                               ℓ     k
+
+
+Assuming to the contrary that
+
+                                X                                X
+                                          B                                 B
+                                        |fm,τ ℓ
+                                                |2 (x) < C 2              |fm,τ ℓ
+                                                                                  |2 ∗ χ∨
+                                                                                        ≤Rℓ /R (x) ,
+                               τℓ ≺τk                            τℓ ≺τk
+
+we conclude from (a) that
+                                               C 2 α2    C 2 α2 N 2 (#τℓ ≺ τk )2
+                                                       <                         ,
+                                               2e2 N 2         2e2 (#τℓ )2
+a contradiction. Thus we must have
+                             X
+                                        B                   C2     X
+                                      |fm,τ   |2 (x) ≤                |f B |2 ∗ χ∨
+                                                                                 >Rℓ /R (x) .
+                             τℓ ≺τk
+                                            ℓ
+                                                          C 2 − 1 τ ≺τ m,τℓ
+                                                                    ℓ      k
+
+
+
+
+    Finally, we use the above estimates to control the integrals of the fm   B on broad sets by high-
+
+frequency integrals of the square functions. Define the mth (1 ≤ m ≤ N ) broad sets in Uα to be as
+follows. Fix any τk , τk′ ≺ τk−1 distinct, and write ℓ = max(m − 1, k). We define
+                   n                                                                                       o
+              ′                     −1/2 −1 −1 −1 −1          B                   B          B
+   Brm
+     α (τk , τk ) = x ∈ BR : (1 − 2      e N )e N α ≤ |fm,τ      k−1
+                                                                     (x)| ≤ pN |f m,τ k
+                                                                                        (x)f m,τ ′ (x)|
+                                                                                                       1/2
+                                                                                                            .
+                                                                                                 k
+                                                                                                          (2.4)
+
+                                                                  16
+Proposition 2.11 (High domination of broad integrals). Let N > 2. Let 1 ≤ k ≤ m ≤ N . Suppose
+τk , τk′ ≺ τk−1 are distinct. Write ℓ = max(m − 1, k). Then we have
+                     ˆ                                  ˆ   X                         2
+                                  B    B      2    −2 2            B      2     ∨
+                               |fm,τk fm,τ ′ | ≤ 6q p            |fm,τ ℓ
+                                                                         |  ∗ χ >Rℓ /R .
+                              ′                  k
+                    Brm
+                      α (τk ,τk )                                     Q2p     τℓ ≺τk−1
+
+Proof. By local bilinear restriction 2.4, using the fact that p ≥ |2|−1 , in either case k ≤ m − 1 or
+k ≥ m, we achieve the bound
+                ˆ                                    ˆ                X                2
+                             B      B      2    −2 2                           B
+                           |fm,τ  f
+                                 k m,τ
+                                       ′ |   ≤ q  p                          |fm,τ ℓ
+                                                                                     |2 .
+                            ′                k                             ′
+                  Brm
+                    α (τk ,τk )                                  Brm
+                                                                   α (τk ,τk )+B(0,Rℓ ) τℓ ≺τk−1
+
+
+   For each x ∈ Brm        ′                       B                     −1 −1 α. Thus, by the weak high-
+                  α (τk , τk ), we have that |fm,τk−1 (x)| ≥ 0.915 · e N
+domination lemma 2.10,
+                           X                          X
+                                   B                         B
+                                 |fm,τ ℓ
+                                         |2 (x) ≤ 2.5      |fm,τ ℓ
+                                                                   |2 ∗ χ∨
+                                                                         >Rℓ /R (x) .
+                           τℓ ≺τk−1                            τℓ ≺τk−1
+
+On the other hand, both sides are constant at scale Rℓ , so
+               ˆ                    X               2
+                                            B
+                                         |fm,τ ℓ
+                                                 |2
+                  Brm       ′
+                    α (τk ,τk )+B(0,Rℓ ) τℓ ≺τk−1
+                                                 ˆ                                X                          2
+                                                                                           B
+                                           ≤6                                            |fm,τ ℓ
+                                                                                                 |2 ∗ χ∨
+                                                                                                       >Rℓ /R .
+                                                     Brm       ′
+                                                       α (τk ,τk )+B(0,Rℓ ) τℓ ≺τk−1
+
+
+
+
+Remark 2.12. In the above proposition, we see the appearance of the particular constant used in
+the choice of pruning. It follows that, if the assumptions on the broad sets are weakened, one may
+correspondingly strengthen the assumption on the good envelopes Gτk , and improve the strengths of
+Theorems 1.2 and 1.1.
+
+2.3   Broad/narrow analysis
+Combining Prop.’s 2.9 and 2.11, we produced the desired bounds on the subset of the superlevel set
+for which f is sufficiently broad at some scale. In this subsection, we perform a broad/narrow analysis
+to produced the desired wave envelope estimate in each cube of sidelength R.
+    More precisely, this section is dedicated to establishing the following proposition.
+Proposition 2.13 (Local wave envelope estimate). Suppose N > 6. For each cube BR of sidelength
+R and each α > 0,
+                                                                                    2
+                                                   X X X                X
+        α4 µ {x ∈ BR : |f (x)| > α} ≤ 20q−3 p10 N 10            µ(U )        |fθ |2  .
+                                                                      0≤s≤N τs U ∈Gτs                  U θ≺τ
+                                                                                                               s
+
+
+Lemma 2.14 (Narrow lemma). Suppose 1 ≤ k ≤ N and τk−1 is arbitrary. Then, for each x, either
+                                    B                                       B         B         1/2
+                                  |fm,τ k−1
+                                            (x)| ≤ pN        max          |fm,τ k
+                                                                                  (x)fm,τ ′ (x)|                   (2.5)
+                                                              τk ̸=τk′                    k
+                                                          τk ,τk′ ≺τk−1
+
+or                                                                       
+                                     B                          1                    B
+                                   |fm,τ     (x)| ≤     1+                     max |fm,τ   (x)|.                   (2.6)
+                                         k−1
+                                                              N −1            τk ≺τk−1   k
+
+
+
+
+                                                                17
+Proof. Fix τk′ ≺ τk−1 which realizes the maximum
+                                                 B                  B
+                                               |fm,τ ′ (x)| = max |fm,τ k
+                                                                          (x)|.
+                                                        k          τk ≺τk−1
+
+                                  B                                         B
+                                                               P
+Suppose (2.6) fails. Then, since fm,τ k−1
+                                          (x) =                   τk ≺τk−1 fm,τk (x), we have the inequality
+
+                                                                                            −1
+                        B
+                                              X
+                                                         B                        1                    B
+                      |fm,τ     (x) −                   fm,τ   (x)| <    1+                          |fm,τ     (x)|.
+                            k−1                              k
+                                                                                N −1                       k−1
+                                             τk ̸=τk′
+
+On the other hand,
+                                 X
+                B                           B              B                                   B
+              |fm,τ k−1
+                        (x) −              fm,τ k
+                                                  (x)| ≥ |fm,τ k−1
+                                                                   (x)| − (#τk ≺ τk−1 ) max′ |fm,τ k
+                                                                                                     (x)|;
+                                                                                                            τk ̸=τk
+                                τk ̸=τk′
+
+thus                                                                                               −1 !
+                                       B                                               1                      B
+                 (#τk ≺ τk−1 ) max′ |fm,τ   (x)| >                   1− 1+                                  |fm,τ     (x)|.
+                               τk ̸=τk    k
+                                                                                     N −1                         k−1
+
+
+
+Relating the above to (2.5), for each τk ≺ τk−1 ,
+                                              B              B         B         1/2
+                                            |fm,τ k
+                                                    (x)| ≤ |fm,τ k
+                                                                   (x)fm,τ ′ (x)|    ,
+                                                                                     k
+
+
+and thus
+                                                                        −1 !−1
+                B                                                 1                            B         B         1/2
+              |fm,τk−1 (x)| < (#τk ) 1 − 1 +                                             max |fm,τ   (x)fm,τ ′ (x)|    .
+                                                                N −1                     τk ̸=τk′  k                  k
+
+
+The conclusion follows from the identities
+                                                                        −1 !−1
+                                                        1
+                                                1− 1+                                     =N
+                                                      N −1
+
+and
+                                                            (#τk ≺ τk−1 ) ≤ p.
+
+
+                                                   B |4 into broad and narrow parts, with a small
+   We wish to use this to divide the integral of |fm                    ´ B4      P ´ B 4
+constant on narrow parts. For the narrow component, we wish to relate |fm    | to τ |fm,τ   | , so
+                                    B into broad and narrow components and proceed inductively.
+that we may further decompose each fm,τ
+
+Definition 2.15. We define Broad1,m to be the set
+                                                                               
+                                  m     B                B        B         1/2
+                Broad1,m = x ∈ Uα : |fm (x)| ≤ pN max′ |fm,τ1 (x)fm,τ ′ (x)|      .
+                                                                              τ1 ̸=τ1                        1
+
+
+
+The complementary set Narrow1,m is defined as Uαm \ Broad1,m .
+
+Lemma 2.16 (Decoupling the narrow part (k = 1)). It holds that
+                        ˆ                                               4 X ˆ
+                                             B 4                    1                                    B
+                                           |fm | ≤           1+                                        |fm,τ   |4 .
+                         Narrow1,m                                N −1          τ1       Narrow1,m
+                                                                                                             1
+
+
+
+
+                                                                    18
+Proof. If x ∈ Narrow1,m , then by the narrow lemma 2.14
+                                                     
+                                    B              1      B
+                                  |fm (x)| ≤ 1 +        |fm,τ   (x)|
+                                                 N −1         1
+
+
+
+for a suitable τ1 . Thus,
+                                                            X                              !1/4
+                                 B                     1                    B
+                               |fm (x)| ≤      1+                         |fm,τ   (x)|4                  ,
+                                                     N −1           τ1
+                                                                                1
+
+
+
+and hence               ˆ                                         4 X ˆ
+                                            B 4             1                                      B
+                                          |fm | ≤    1+                                          |fm,τ   |4 .
+                            Narrow1,m                     N −1            τ1     Narrow1,m
+                                                                                                       1
+
+
+
+
+Definition 2.17. Write, for each τ1 ,
+                                                                                               
+                          
+                                                                                               
+                                                                                                
+                                             B                           B        B         1/2
+         Broad2,m (τ1 ) := x ∈ Narrow1,m : |fm,τ 1
+                                                   (x)| ≤ pN max      |fm,τ2 (x)f m,τ2′ (x)|      .
+                          
+                                                            τ2 ̸=τ2′                           
+                                                                                                
+                                                                 ′              τ2 ,τ2 ≺τ1
+
+Write also Narrow2,m (τ1 ) := Narrow1,m \ Broad2,m (τ1 ).
+Definition 2.18. Let 2 ≤ k < N . Suppose τk ≺ τk−1 . We inductively write
+                                                                                                      
+                    
+                                                                                                      
+                                                                                                       
+                                                                                                      
+                                               B                              B          B         1/2
+ Broadk+1,m (τk ) := x ∈ Narrowk,m (τk−1 ) : |fm,τk (x)| ≤ pN      max′     |fm,τk+1 (x)fm,τ ′ (x)|
+                    
+                                                               τk+1 ̸=τk+1                 k+1        
+                                                                                                       
+                                                                   ,τ ′ ≺τ
+                                                             τ
+                                                                                                       
+                                                                                  k+1   k+1        k
+
+
+and Narrowk+1,m (τk ) := Narrowk,m (τk−1 ) \ Broadk+1,m (τk ).
+Lemma 2.19 (Decoupling the narrow part (k ≥ 2)). Fix any 2 ≤ k ≤ N . Then, for each τk−1 ,
+          ˆ                                        4 X ˆ
+                               B       4        1                              B
+                             |fm,τk−1 | ≤ 1 +                                |fm,τ   |4 .
+           Narrowk,m (τk−1 )                  N − 1   τ ≺τ Narrowk,m (τk−1 )
+                                                                                   k
+                                                                          k     k−1
+
+
+Proof. The argument is identical to 2.16.
+
+   Combining Lemmas 2.16 and 2.19, we conclude
+               ˆ                     4N X ˆ
+                      B 4         1                                 X
+                                                                                                                B
+                    |fm | ≤ 1 +                                                                               |fm,τ   |4
+                Uαm             N −1      τ    NarrowN,m (τN −1 ) τ ≺τ
+                                                                                                                    N
+                                                          N −1                               N       N −1
+
+                                    N                 4(k−1) X ˆ
+                                    X             1                                                  B
+                               +           1+                                                      |fm,τ     |4 .
+                                                N −1               τk−1       Broadk,m (τk−1 )
+                                                                                                         k−1
+                                    k=1
+
+   Our next steps are bounding each of the summands in turn.
+Lemma 2.20 (Narrow bound). We have
+                    Xˆ      X              X X                                                          2
+                                   B 4                                                               2
+                                 |fm,θ | ≤     µ(U )                                         |fθ |            .
+                            τN −1   BR θ≺τ                       θ U ∈Gθ                U
+                                             N −1
+
+
+
+                                                            19
+                                                                   B | ≤ |f
+Proof. By the pruning inequalities (2.1), for each θ we may take |fm,θ       N,θ |. By the definition of
+the pruning, for each θ,
+                          ˆ              ˆ                   X ˆ
+                                                X        4
+                                     4
+                              |fN,θ | =             1U fθ ≤         |fθ |4 .
+                                       BR                BR   U ∈Gθ                    U ∈Gθ          U
+
+
+Each |fθ | is constant on the blocks U , so for each θ and U ∈ Gθ we have
+                                                ˆ                                         2
+                                                         4                             2
+                                                      |fθ | = µ(U )            |fθ |            .
+                                                  U                        U
+
+
+
+
+Lemma 2.21 (Broad bound). We have, for each 1 ≤ k ≤ N ,
+
+            Xˆ
+                                                                                                                                            2
+                                                                          X X X                                            X
+                                       B
+                                     |fm,τ k−1
+                                               |4 ≤ 18q−3 p10 N 5                                         µ(U )                        |fθ |2 
+         τk−1     Broadk,m (τk−1 )                                      m≤s≤N τs U ∈Gτs                                 U θ≺τ
+                                                                                                                                    s
+
+
+Proof. By the definition of the broad set, for each τk−1 and each x ∈ Broadk,m (τk−1 ) there is some
+                                  B
+pair τk ̸= τk′ ≺ τk−1 such that |fm,τ k−1
+                                                      B
+                                          (x)| ≤ pN |fm,τ k
+                                                                B
+                                                            (x)fm,τ ′ (x)|
+                                                                          1/2 , as well as
+                                                                                       k
+
+                                                                                B
+                           N −1 (1 − (21/2 eN )−1 )(1 + (N − 1)−1 )−(k−1) α ≤ |fm,τ k−1
+                                                                                        (x)|,
+
+i.e.                                                                   [
+                                                                                            ′
+                                         Broadk,m (τk−1 ) ⊆                      Brm
+                                                                                   α (τk , τk ).
+                                                                 τk ,τk′ ≺τk−1
+                                                                     τk ̸=τk′
+
+Thus,
+                Xˆ                                                  X          X                ˆ
+                                              B                                                                       B
+                                            |fm,τ k−1
+                                                      |4 ≤ p4 N 4                                                   |fm,τ  f B ′ |2 .
+                                                                                                                          k m,τ
+                                                                                                              ′                         k
+                τk−1   Broadk,m (τk−1 )                             τk−1 τk ,τ ′ ≺τk−1              Brm
+                                                                                                      α (τk ,τk )
+                                                                              k
+                                                                             τk ̸=τk′
+
+By Prop. 2.11, for each τk−1 and each distinct τk , τk′ ≺ τk−1 , then
+
+                       ˆ                                              ˆ          X
+                                                                                                                            2
+                                         B
+                                       |fm,τ  f B ′ |2 ≤ 6q−2 p2
+                                             k m,τk
+                                                                                              B
+                                                                                            |fm,τ ℓ
+                                                                                                    |2 ∗ χ∨
+                                                                                                          >Rℓ /R                ,
+                       Brm       ′                                      Q2p τ ≺τ
+                         α (τk ,τk )                                         ℓ   k−1
+
+
+where ℓ = max(m − 1, k). By Prop. 2.3 and the wave envelope expansion lemma,
+
+        ˆ                                         2                                                                                         2
+                  X                                                    N
+                                                                       X         X              X                          X
+                             B
+                           |fm,τ ℓ
+                                   |2 ∗ χ∨
+                                         >Rℓ /R       ≤ 3q−1 p4 N                                         µ(U )                        |fθ |2  .
+          Q2p   τℓ ≺τk−1                                              s=ℓ+1 τs ≺τk−1 U ∈Gτs                             U θ≺τ
+                                                                                                                                    s
+
+
+Combining the above, we obtain
+
+         Xˆ
+                                                                                                                                           2
+                                                                          X X X                                            X
+                                      B
+                                    |fm,τ k−1
+                                              |4 ≤ 18q−3 p10 N 5                                          µ(U )                    |fθ |2  .
+         τk−1    Broadk,m (τk−1 )                                      m≤s≤N τs U ∈Gτs                                  U θ≺τ
+                                                                                                                                s
+
+
+
+
+                                                                 20
+Proof of Prop. 2.13. By (2.2),
+                                                            α4 µ(Uα ) ≤ α4 µ(Vα ).
+Write
+                                                                        N
+                                                                        X
+                                                       α4 µ(Vα ) ≤             α4 µ(Uαm )
+                                                                        m=0
+
+where the sets in the right-hand side are as defined in (2.3). By Prop. 2.9,
+                                                                                                            !2
+                                                                   X                      X
+                                       4
+                                    α µ(Uα0 ) ≤ 20N 10                     µ(U )                |fθ |   2
+                                                                                                                    .
+                                                                  U ∈Gτ0              U     θ
+
+
+We now fix some 1 ≤ m ≤ N . Over Uαm , we have a lower bound on fm       B implying
+
+                                                                         ˆ
+                    α4 µ(Uαm ) ≤ N 4 (1 + N −4 )10 (1 − (21/2 eN )−1 )−1       B 4
+                                                                             |fm | .
+                                                                                                            Uαm
+
+By the definition of the broad/narrow sets above, we may bound
+                        ˆ                                  4N X ˆ
+                                 B 4                  1                                                 X
+                                                                                                                          B 4
+                               |fm | ≤             1+                                                                   |fθ,m |
+                         Uαm                          N            τN −1     NarrowN,m (τN −1 ) θ≺τ
+                                                                                                            N −1
+
+                                               N                 4(k−1) X ˆ
+                                               X              1
+                                           +           1+                                                    |fτBk−1 ,m |4 .
+                                                              N              τk−1   Broadk,m (τk−1 )
+                                               k=1
+
+By the narrow bound 2.20,
+                               Xˆ                  X                    X X                                        2
+                                                              B 4                                               2
+                                                            |fm,θ | ≤                µ(U )              |fθ |             .
+                               τN −1       BR θ≺τ                          θ U ∈Gθ                  U
+                                                     N −1
+
+
+By the broad bound 2.21,
+
+          Xˆ
+                                                                                                                                               2
+                                                                                X X X                                           X
+                                      B
+                                    |fm,τ k−1
+                                              |4 ≤ 18q−3 p10 N 5                                        µ(U )                           |fθ |2  .
+          τk−1   Broadk,m (τk−1 )                                             m≤s≤N τs U ∈Gτ                                  U θ≺τ
+                                                                                                                                     s
+
+
+   Thus, for each 1 ≤ m ≤ N ,
+                                                                                                                                                  2
+                                                                                    X X X                                            X
+        α4 µ(Uαm ) ≤ 18(1 + N −4 )10 (21/2 eN )−1 )−1 p10 N 9                                                µ(U )                           |fθ |2  ,
+                                                                                m≤s≤N τs U ∈Gτ                                  U θ≺τ
+                                                                                                                                          s
+
+
+and hence, using the m = 0 estimate and trivial estimates using N > 6, we conclude that
+                                                                                                                               2
+                                                                  X X X                                     X
+                     α4 µ(Uα ) ≤ 20q−3 p10 N 10                                       µ(U )                            |fθ |2  ,                         (2.7)
+                                                               0≤s≤N τs U ∈Gτs                          U θ≺τ
+                                                                                                                    s
+
+
+as claimed.
+
+
+
+
+                                                                        21
+2.4     Reduction to local estimates
+In the above subsections we produced bounds on the measure of the set Uα = {x ∈ BR : |f (x)| > α}.
+In this subsection we note that, if we can prove Theorem 1.2 in the special case that {x ∈ R2 : |f (x)| >
+α} ⊆ QR for a suitable cube QR of radius R, then we can conclude that Theorem 1.2 is true in the
+general case.
+
+Proof that Prop. 2.13 implies Theorem 1.2. Let f be as in the hypothesis of Theorem 1.2. Then, for
+each metric ball QR ⊆ Q2p of radius R, the function 1QR f satisfies the hypothesis of Prop. 2.13. Thus,
+we have
+                                                                                                 2
+                                                   X      X X                  X
+     µ({x ∈ Q2p : |1QR f | > α}) ≤ 20q−3 p10 N 10                    µ(U )         |(1QR f )θ |2  .
+                                                                                                   U θ≺τ
+                                                             R−1/2 ≤s≤1 τs U ∈Gτs                             s
+
+
+Summing over the QR , we obtain that
+                                                                                                                                 2
+                                                              X       X X                   X                X
+      µ({x ∈ Q2p : |f (x)| > α}) ≤ 20q−3 p10 N 10                                  µ(U )                             |(1QR f )θ |2  .
+                                                                                                        U θ≺τ
+                                                          R−1/2 ≤s≤1 τs U ∈Gτs               QR                   s
+
+
+By Minkowski, for each τs and U ∈ Gτs ,
+                                                       2                                 2 2
+                       X          X                                   X      X
+                                           |(1QR f )θ |2  ≤                |(1QR f )θ |2   .
+                       QR       U θ≺τ                               U θ≺τ     QR
+                                        s                               s
+
+
+By elementary properties of the ultrametric, for each QR and each θ we have
+
+                                                       (1QR f )θ = 1QR fθ ,
+
+so that in fact                                                2 2                           2
+                                   X             X                                 X
+                                                 |(1QR f )θ |2   =                    |fθ |2  .
+                                 U θ≺τ            QR                           U θ≺τ
+                                            s                                          s
+
+The result follows immediately.
+
+
+3      Proof of Theorem 1.1
+                                                                                       2+2β                                −1
+Theorem 1.1 will be proved via first establishing the critical case (r, q) = (2 + β2 , 2β −1 −1 ), and then
+
+interpolating with the easier endpoints (∞, 1) and (3, ∞), together with Hölder inequalities. We will
+repeatedly cite the result of Theorem 1.2, and we will abbreviate the constants as
+                                                                                                                     2
+                                                             X       X X                          X
+                  α4 |{x : |f (x)| > α}| ≤ CN E2                                µ(U )                      |fθ |2  .
+                                                                    τk U ∈Gτk                  U θ≺τ
+                                                           k∈pZ                                         k
+                                                         R−1/2 ≤s≤1
+
+We will in fact make use of the more refined quantities in (2.7).
+  We begin with the partial decoupling statement, using the right-hand side of Theorem 1.2.
+
+
+
+                                                               22
+Proposition 3.1. Suppose r ≥ 4, λ > 0, and Cr > 1. Let 0 ≤ k ≤ N be arbitrary, and fix a canonical
+                       as before that Γβ (R−1 ) is a partition of NR−1 (P1 ) into approximate R−β × R−1
+scale cap τk . Suppose P
+boxes γ. Assume f = γ fγ satisfies the following regularity properties.
+
+ (a) ∥fγ ∥∞ ≤ λ for each γ.
+
+ (b) ∥fγ ∥22 ≤ λ2−r Cr ∥fγ ∥rr for each γ and each r ≥ 1.
+
+Write γk for boxes of dimensions max(R−β , Rk /R) × R−1 . Then
+                                                          2
+                X                          X                    1               r−4
+                        µ(U )                    |fθ |2  ≤ Cr 2 2 eN (#τk )α−1
+               U ∈Gτk                 U θ≺τ
+                                              k
+                                                                                                                                                             (3.1)
+                                                                                                                      r −1 X
+                                                                                                                       2
+                                                                   ×       max #(γ ≺ γk ) × #(γ ≺ τk )                                ∥fγ ∥rr .
+                                                                        γk ≺τk
+                                                                                                                               γ≺τk
+
+
+Proof. For each θ ≺ τk , the small caps γk ≺ θ are max(R−β , Rk /R) ≥ Rk /R-separated. Fix any
+U ∈ Gτk . Since U ∥Uτk ,R has dimensions R/Rk × R, we conclude that the fγk are locally orthogonal on
+U . Thus                             ˆ X           ˆ X
+                                                2
+                                           |fθ | =        |fγk |2 ,
+                                                           U θ≺τ                      U γ ≺τ
+                                                                    k                   k      k
+
+and so, appealing to the definition of Gτk ,
+
+                                                             α2                          X
+                                                                       ≤                           |fγk |2 .
+                                                       2e2 N 2 (#τk )2                U γ ≺τ
+                                                                                         k     k
+
+
+Multiplying the left-hand side of (3.1) by the ( 2r −2)-power of the latter display, we obtain the estimate
+                                             2                                                                                             !r
+                                                                                                                                                 2
+       X                      X                                    r−4 X                                                  X
+                                      |fθ |2  ≤ 21/2 eN (#τk )α−1                                                                 |fγk |2
+                                                
+               µ(U )                                                     µ(U )                                                                      .       (3.2)
+      U ∈Gτk                U θ≺τ                                                                  U ∈Gτk             U γ ≺τ
+                                  k                                                                                        k   k
+
+
+Uniformity assumption (a) implies
+                                      X
+                                              |fγk |2              ≤ λ2 max #(γ ≺ γk ) × #(γ ≺ τk ).
+                                                                                     
+                                                           ∞                γk ≺τk
+                                    γk ≺τk
+
+                                                           2
+                                  P
+By removing factors of                    γk ≺τk |fγk |        ∞
+                                                                       from (3.2), we obtain
+                                                 2
+        X                      X                               r
+                µ(U )                    |fθ |2  ≤ 2 2 −2 er−4 N r−4 (#τk )r−4 λr−2 α4−r
+       U ∈Gτk               U θ≺τ
+                                      k
+                                                                                                               r −1 X ˆ
+                                                                                                                 2                    X
+                                                       ×        max #(γ ≺ γk ) × #(γ ≺ τk )                                                      |fγk |2 ,
+                                                               γk ≺τk                                                              U γ ≺τ
+                                                                                                                      U ∈Gτk          k      k
+
+
+and by local orthogonality and uniformity assumption (b)
+                       X ˆ X                   ˆ X                  X
+                                     |fγk |2 =     |fγ |2 ≤ λ2−r Cr   ∥fγ ∥rr .
+                              U ∈Gτk         U γ ≺τ                           γ≺τk                             γ≺τk
+                                                  k    k
+
+
+
+                                                                                 23
+Together we get the estimate
+                                   2
+            X              X                                 r−4
+                             |fθ |2  ≤ Cr 21/2 eN (#τk )α−1
+                                          
+                 µ(U ) 
+              U ∈Gτk         U θ≺τ
+                                  k
+                                                                                             r −1 X
+                                                                                                 2
+                                               ×       max #(γ ≺ γk ) × #(γ ≺ τk )                          ∥fγ ∥rr ,
+                                                      γk ≺τk
+                                                                                                     γ≺τk
+
+as claimed.
+
+    The above amounts to a proof of Theorem 1.1, in the special case that f satisfies the assumed
+regularity properties. It remains to remove those assumptions, which we do now.
+    We find it convenient to separate out a proof of a superlevel set estimate for small cap decoupling
+at the critical exponent pair. The full result, Theorem 1.1, will follow by an elementary argument and
+interpolation.
+Theorem 3.2 (Main estimate for critical exponents). Suppose R ≥ 16 and N ≥ 10. Let f be
+Schwartz–Bruhat supported in BR with Fourier support in NR−1 (P1 ), such that maxθ ∥fθ ∥∞ = 1. Let
+                   2+2β −1                      −1/2 ≤ α ≤ R1/2 , we have the estimate
+(r, q) = (2 + β2 , 2β −1 −1 ). Then, for each R
+
+
+
+                                                  e4r−3      q−3 p10
+                   αr µ {x : |f (x)| > α} | ≤                          (log R)3r+10
+                                         
+                                                50 · 23r/2 (log p)r+7
+                                                                                               r                       (3.3)
+                                                        β(r− rq −1)−1   β( r − r ) 
+                                                                                     X
+                                                                                                q
+                                              × max R                 ,R 2 q            ∥fγ ∥qr .
+                                                                                             γ
+
+Proof of Theorem 3.2. We may write
+                                X                           X
+                        f=                                                  fγ + N −2 R−1/2 η,
+                                 N −2 R−1/2 <λ≤1        γ∈Γβ (R−1 )
+                                                      ∥fγ ∥∞ ∈(e−1 λ,λ]
+
+where the λ range over values of the form λk+1 = ⌊e−1 λk ⌋, λ0 = 1, and η is Schwartz–Bruhat,
+supported on BR , and uniformly bounded by 1. We abbreviate
+
+                          Γλβ (R−1 ) = γ ∈ Γβ (R−1 ) : ∥fγ ∥∞ ∈ (e−1 λ, λ] .
+                                      
+
+   Then, for each λ, consider the wave envelope expansion
+                                    X             X X
+                                          fγ =            1U fγ ,
+                                       γ∈Γλ    −1 )        γ∈Γλ    −1 ) U
+                                          β (R                β (R
+
+
+where each U has dimensions ∼ Rβ × R and has long edge parallel to ncγ . Since γ ∈ Γλβ (R−1 ),
+there is some U such that ∥1U f ∥∞ ∈ (e−1 λ, λ]. If we write Uλ = Uλγ for the set of U for which
+∥1U fγ ∥∞ ∈ (e−1 λ, λ], then for all γ ∈ Γλβ (R−1 )
+                                                          X                 r
+                           e−r (#Uλ )R1+β λr ≤                      1U fγ       ≤ (#Uλ )R1+β λr ,
+                                                                            r
+                                                         U ∈Uλ
+
+and so
+                             1 X      2                  1 X       r
+                                 1U fγ ≤ (#Uλ )R1+β ≤ er     1U fγ                                                      (3.4)
+                             λ        2                  λ         r
+                               U ∈Uλ                                                U ∈Uλ
+
+
+                                                               24
+and
+                               1 X      r                   1 X       2
+                                   1U fγ ≤ (#Uλγ )R1+β ≤ e2     1U fγ .                                                                (3.5)
+                               λ        r                   λ         2
+                                    U ∈Uλ                                                      U ∈Uλ
+
+For each 1 ≤ t ≤ R and each λ, write Γλ;t        −1
+                                             β (R ) to be the collection of γ                                       ∈ Γλβ (R−1 ) such that
+#Uλγ ∈ (e−1 t, t]. Define for γ ∈ Γλβ (R−1 )
+                                                                1 X
+                                                     gγ(λ) =        1U fγ
+                                                                λ
+                                                                    U ∈Uλ
+
+and                                                                  X
+                                                  g (λ,t) =                         gγ(λ) .
+                                                              γ∈Γλ;t
+                                                                 β (R
+                                                                      −1 )
+
+
+We may observe that g (λ,t) is a Schwartz–Bruhat function with Fourier support in the R−1 -neighborhood
+of the truncated parabola. Thus, for each λ, t, and a > 0 we have
+                                                                                            2
+                                                                                       (λ,t)
+                                              X    X       X                   X
+        a4 µ {x : |λg (λ,t) (x)| > a} ≤ CN E2                                       |λgθ |2  ,
+                                     
+                                                                    µ(U ) 
+                                                        0≤k≤N τk U ∈Gτ [λg (λ,t) ;a]                           U θ≺τ
+                                                                      k                                             k
+
+
+where we have written Gτk [λg (λ,t) ; a] to record that the pruning is with respect to the function λg (λ,t)
+with the amplitude parameter a. For each 0 ≤ k ≤ N and each 1 ≤ s ≤ R1/2 , let Tk (s) denote the
+                                           (λ,t)
+collection of τk such that #{γ ≺ τk : gγ         ̸= 0} ∈ (e−1 s, s]. By pigeonholing, for each k we may find
+ k
+s such that
+                                                                                                         2
+                                                                                                    (λ,t)
+                                                     X       X           X                   X
+a4 µ {x : |λg (λ,t) (x)| > a} ≤ 2−1 CN E2 (log R)                                                |λgθ |2  .
+                             
+                                                                                 µ(U ) 
+                                                            0≤k≤N τk ∈Tk (sk ) U ∈Gτ [λg (λ,t) ;a]                      U θ≺τ
+                                                                                                 k                          k
+
+
+By Prop. 3.1 and (3.4), we have
+                                                    r                            X
+                 ar µ {x : |λg (λ,t) (x)| > a} ≤ C2 2 −3 e2r−4 N r+E2 −4 (log R)   (#Tk (sk ))r−4
+                                              
+
+                                                                                                       0≤k≤N
+                                                                                        r −1 X
+                                                        X                                 2
+                                                                         k
+                                                 ×                      s max #(γ ≺ γk )         ∥λgγ(λ,t) ∥rr ,
+                                                                             γk ≺τk
+                                                     τk ∈Tk (sk )                                           γ≺τk
+
+and by pigeonholing to a single 0 ≤ k∗ ≤ N we have
+ap µ {x : |λg (λ,t) (x)| > a}
+                              
+                                                                                                                         r −1 X
+          r                                                                           X                                    2
+            −3   2r−4              r+E2 −4                      k∗       r−4                           k∗
+   ≤ C2   2      e      (N + 1)N             (log R)(#Tk∗ (s ))                                       s   max #(γ ≺ γk∗ )         ∥λgγ(λ,t) ∥rr
+                                                                                                         γk∗ ≺τk∗
+                                                                                τk∗ ∈Tk∗ (sk∗ )                                        γ≺τk∗
+                                                                                                             r −1
+          r                                                                                                    2
+   ≤ C2 2 −3 e2r−4 (N + 1)N r+E2 −4 (log R)(#Tk∗ (sk∗ ))r−3 sk∗                               max #(γ ≺ γk∗ )       sk∗ λr t · R1+β .
+                                                                                         γk∗ ≺τk∗
+
+We claim that this amounts to a decoupling inequality for the λg (λ,t) . That is,
+Lemma 3.3. For each λ, t, and a, and each r ≥ 4, we have the estimate
+                                                                                                                         r
+                                                                            β(r− rq −1)−1   β( r − r ) 
+                                   r
+                                                                                                         X
+ar µ {x : |λg (λ,t) (x)| > a} ≤ C2 2 −3 e4r−3 (N +1)N r+E2 −4 (log R) max R
+                                                                                                                          q
+                                                                                                            ∥λgγ(λ,t) ∥qr .
+                             
+                                                                                          ,R 2 q
+                                                                                                                                   γ
+                                                                                                                                       (3.6)
+
+                                                                    25
+   We postpone the proof until the end of the argument, to preserve the flow of our calculation.
+Recalling the identity               X
+                            f=                λg (λ) + N −2 R−1/2 η,
+                                           N −2 R−1/2 <λ≤1
+
+and consequently, for a suitable λ∗ ,
+                                                               X      n                    α o
+                  αr µ {x : |f (x)| > α} ≤ αr                           x : |λg (λ) (x)| ≥
+                                        
+                                                                          µ
+                                                                                            Z
+                                                      N −2 R−1/2 <λ≤1
+                                                          α r n                       α o
+                                                 ≤ Z r+1        µ x : |λ∗ g (λ∗ ) (x)| ≥     ,
+                                                           Z                             Z
+(where we have abbreviated Z = 2 log N + 21 log R + 1) and hence, for a suitable t,
+                                               α r n                                α o
+        αr µ {x : |f (x)| > α} ≤ [Z log R]r+1            µ x : |λ∗ g (λ∗ ,t) (x)| ≥
+                              
+                                                                                            ,
+                                               Z log R                              Z log R
+                                  α
+which by (3.6), applied to a = Z log R , implies
+                                            r
+              αr µ {x : |f (x)| > α} | ≤ C2 2 −3 e4r−3 Z r+1 (N + 1)N r+E2 −4 (log R)r+2
+                                    
+                                                                                                   r
+                                                  β(r− rq −1)−1   β( r − r ) 
+                                                                               X
+                                                                                                    q
+                                       × max R                  ,R 2 q            ∥λ∗ gγ(λ∗ ,t) ∥qr .
+                                                                                           γ
+
+                                  (λ ,t)
+Finally, we note that each λ∗ gγ ∗         is obtained by taking a subsum of a partition of unity applied to
+fγ , so we conclude that
+                                               r
+                 αr µ {x : |f (x)| > α} | ≤ C2 2 −3 e4r−3 Z r+1 (N + 1)N r+E2 −4 (log R)r+2
+                                       
+                                                                                            r
+                                                     β(r− rq −1)−1   β( r − r )                           (3.7)
+                                                                                  X
+                                                                                             q
+                                          × max R                  ,R 2 q            ∥fγ ∥qr ,
+                                                                                               γ
+
+as claimed.
+
+
+Proof of Theorem 1.1. By scaling we may assume that maxθ ∥fθ ∥∞ = 1. By [14], Lemma 5.4, we may
+assume that f is supported in BR . By the layer-cake integral
+                                           ˆ              ˆ R1/2
+                                                 r
+                                               |f | = r             αr−1 µ(Uα )dα,
+                                                           0
+
+and the inequalities
+                                           r          r
+                                    R− 2 +2 ≤ R 2 +1−β(r−1) ≤ max ∥fγ ∥rr ,                                (3.8)
+                                                                           γ
+                         ˆ R1/2
+                                  rαr−1 µ(Uα )dα ≤ r(log R)                    sup        αr µ(Uα ),       (3.9)
+                          R−1/2                                        α∈[R−1/2 ,R1/2 ]
+
+we transform (3.7) into the decoupling estimate
+                                                 −1                                                r   r
+                                         e5+2β      q−3 p10                         β    β
+                                                                        17+6β −1 β( 2 − qβ )
+                    DrKβ ,qβ (R; β) ≤           −1           −1 (log R)         R            .
+                                        90 · 23β (log p)9+2β
+   It remains to use interpolation to cover the remaining exponents. The two quantities we will
+compare against are
+                                           K
+                                         D∞,1 (R; β) ≤ 1
+
+                                                               26
+and
+                                                  K
+                                                 D4,4 (R; β) ≤ 2Rβ .
+The latter estimate follows trivially from Córdoba–Fefferman and flat decoupling.
+   For each 3 ≤ r ≤ ∞, write q1r = 1 − 3r . Write rβ = 2 + β2 and qβ = qrβ . Let 3r + 1q ≤ 1. Suppose
+that 2 + β2 ≤ r and β < 1. Then, from the two inequalities
+                                                −1                                       r    r
+                                       e5+2β         q−3 p10                         β    β
+                                                                         17+6β −1 β( 2 − qβ )
+                  DpKβ ,qβ (R; β) ≤                              (log R)         R            ,
+                                      90 · 23β −1 (log p)9+2β −1
+                                                      K
+                                                     D∞,1 (R; β) ≤ 1,
+we interpolate to obtain
+                                           −1
+                  K                e5+2β          q−3 p10                             r
+                                                                       17+6β −1 β(r− qr −1)−1
+                 Dr,qr
+                       (R; β) ≤          3β −1         9+2β −1 (log R)         R              .
+                                  90 · 2       (log p)
+
+By Hölder, we conclude the desired
+                                           −1
+                   K               e5+2β      q−3 p10                           r
+                                                                  17+6β −1 β(r− q −1)−1
+                  Dr,q (R; β) ≤           −1           −1 (log R)         R             .
+                                  90 · 23β (log p)9+2β
+
+Next, suppose that 4 < r ≤ 2 + β2 . We may assume β < 1. Then, from the inequalities
+                                                −1                                       r    r
+                                       e5+2β      q−3 p10                         β    β
+                                                                      17+6β −1 β( 2 − qβ )
+                  DrKβ ,qβ (R; β) ≤           −1           −1 (log R)         R            ,
+                                      90 · 23β (log p)9+2β
+                                                  K
+                                                 D4,4 (R; β) ≤ 2Rβ
+we interpolate to obtain
+                                                −1
+                     K                 e5+2β      q−3 p10                         r    r
+                                                                      17+6β −1 β( 2 − qr )
+                    Dr,q   (R; β) ≤           −1           −1 (log R)         R            .
+                         r
+                                      90 · 23β (log p)9+2β
+
+By Hölder, we obtain the desired
+                                                −1
+                     K                 e5+2β          q−3 p10                          r   r
+                                                                           17+6β −1 β( 2 − q )
+                    Dr,q (R; β) ≤            3β −1         9+2β −1 (log R)         R           .
+                                      90 · 2       (log p)
+
+It remains to consider the regime 3 ≤ r ≤ 4. Then, from the estimates
+                                                  K
+                                                 D4,4 (R; β) ≤ 2Rβ ,
+                                                      K
+                                                     D2,2 (R; β) = 1,
+we obtain the estimate                                          √ β
+                                                 K
+                                                D3,3 (R; β) ≤    2R 2 ,
+whence                                                          √       3β
+                                             K
+                                            D3,∞ (R; β) ≤           2R 2 .
+By interpolation and Hölder, we conclude
+                                             K                   β( r2 − rq )
+                                            Dr,q (R; β) ≤ 2R                    .
+
+                                                           27
+   In all, we conclude the estimate
+                                   −1
+             K               e5+2β         q−3 p10             17+6β −1
+                                                                            
+                                                                                β(r− rq −1)−1     β( r2 − rq )
+                                                                                                               
+            Dr,q (R; β) ≤                              (log R)          max   R               , R                .
+                            90 · 23β −1 (log p)9+2β −1
+The result follows.
+
+
+   To close the argument, it remains only to prove Lemma 3.3.
+
+Proof of Lemma 3.3. The proof is by casework on r and k. Suppose Rk ≥ R1−β . By a straightforward
+calculation (see Case 2 of the proof of Theorem 5 in [17]),
+                                                  r −1
+                                                                           2
+
+                                                                                           β(r− rq −1)−1                       r −1
+          (#Tk∗ (sk∗ ))r−4 sk∗         max           #(γ ≺ γk∗ )              ≤R                           sk∗ × #Tk∗ (sk∗ ) q .
+                                                                
+                                      γk∗ ≺τk∗
+                                    τk∗ ∈Tk∗ (sk∗ )
+
+Consequently,
+
+      ar µ x : |λg (λ,t) (x)| > a
+                                 
+                  r                                                             r
+                                                                      β(r− rq −1)−1       r
+            ≤ C2 2 −3 e2r−4 (N + 1)N r+E2 −4 (log R)R                #Tk∗ (sk∗ ) q (sk∗ ) q λr tR1+β
+                                                                                     r                                                  (3.10)
+                                                      β(r− rq −1)−1
+                 r
+                                                                    X
+            ≤ C2 2 −3 e4r−3 (N + 1)N r+E2 −4 (log R)R
+                                                                                      q
+                                                                        ∥λgγ(λ,t) ∥qr .
+                                                                                             γ
+
+Suppose instead that Rk ≤ R1−β , and 2 + β2 ≤ r ≤ 6. Then, from the inequality
+                                                                      r
+                                                        1 ≤ Rβ( 2 −1) R−1 ,
+
+it follows that for any γk we have
+                                                          r                        r             3− r2
+                                          [#(γ ≺ γk )] 2 −1 ≤ R−1 Rβ( 2 −1) Rk                           .
+
+Rearranging, we have
+                                                                                                             3− r
+                                β(r− rq −3)                                β(r− rq −1)−1
+                                                              r
+                                                                                              
+                                              [#(γ ≺ γk )] 2 −1 ≤ R                               R−β Rk
+                                                                                                                 2
+                            R                                                                                        ,
+
+which implies (using 1q + 3r ≤ 1)
+                                                                                                                3− r
+                                                                               β(r− rq −1)−1                                         r
+                                                                  r
+                                                                                                   
+                 (sk∗ × #Tk∗ (sk∗ ))r−3 [#(γ ≺ γk )] 2 −1 ≤ R                                          R−β Rk
+                                                                                                                         2
+                                                                                                                             (#γ) q .
+
+Note that, for each τk ∈ Tk∗ (sk∗ ),
+                                                              r                    r
+                       (#Tk∗ (sk∗ ))r−4 (#γ ≺ τk ) 2 −1 ≤ (sk∗ )3− 2 (sk∗ × #Tk∗ (sk∗ ))r−4 ,
+
+so that
+                                                          r                            r               β(r− rq −1)−1             r
+                  sk∗ (#Tk∗ (sk∗ ))r−3 (#γ ≺ τk ) 2 −1 [#(γ ≺ γk )] 2 −1 ≤ R                                             (#γ) q .
+Thus, we achieve the estimate
+                                      r                                    β(r− rq −1)−1      r
+  ar µ {x : |λg (λ,t) (x)| > a} ≤ C2 2 −3 e2r−4 (N + 1)N r+E2 −4 (log R)R                (#γ) q λr t · R1+β
+                               
+                                                                                                           r
+                                                                           β(r− rq −1)−1
+                                      r
+                                                                                         X
+                                 ≤ C2 2 −3 e4r−3 (N + 1)N r+E2 −4 (log R)R
+                                                                                                            q
+                                                                                              ∥λgγ(λ,t) ∥qr .
+                                                                                                                                γ
+
+
+                                                                      28
+    It remains to consider the case Rk ≤ R1−β , 4 ≤ r ≤ 2 + β2 . In this case, from the inequalities
+                                   r
+                                       −3
+                               Rk2          ≤ 1,          sk∗ ≤ RRk−1 ,       #Tk∗ (sk∗ ) ≤ Rk ,
+we conclude the inequality
+                                             r
+                                                  − rq                  r− rq −3        β( r2 − rq )
+                                       (sk∗ ) 2          (#Tk∗ (sk∗ ))             ≤R                  .
+Thus,
+                                             r                                β( r2 − rq )         r
+                                   (sk∗ ) 2 (#Tk∗ (sk∗ ))r−3 ≤ R                             (#γ) q ,
+and we conclude that
+                                         r                                   β( r − r )    r
+     ar µ {x : |λg (λ,t) (x)| > a} ≤ C2 2 −3 e2r−4 (N + 1)N r+E2 −4 (log R)R 2 q (#γ) q λr t · R1+β
+                                  
+                                                                                                        r
+                                                                             β( r − r )
+                                         r
+                                                                                        X
+                                    ≤ C2 2 −3 e4r−3 (N + 1)N r+E2 −4 (log R)R 2 q
+                                                                                                         q
+                                                                                           ∥λgγ(λ,t) ∥qr .
+                                                                                                            γ
+
+
+
+
+4    Transference and real integrals
+In this section, we supply the tools needed to convert our main results (Theorems 1.1 and 1.2) into the
+applications described in subsection 1.1. The basic procedure was already described in our previous
+work [13]; we give a simplified account here to be self-contained.
+    We begin by sketching a proof of Theorem 1.7. It will contain many of the details needed to explain
+the other two applications.
+
+Proof sketch of Theorem 1.7. We will first handle the case γ = 0, and then explain the needed modi-
+fications for the general γ case.
+    Let N ∈ N and σ ∈ [0, 1] be such that N, N σ ∈ pZ with p an odd prime. Fix K = Qp . Consider
+the domain D ⊆ Q2p defined by
+                                       D = O × B(0, N σ−1 ).
+Thus, D consists of those (x, y) ∈ Q2p with |x| ≤ 1, |y| ≤ N σ−1 . By appealing to Theorem 1.1, we may
+show
+      N −1                                                                         N −1
+                                                                                               !r/q
+      X           n      n2  r                          (r− r
+                                                                −1)−1−σ    r
+                                                                             − r  X
+           an eQp    x + 2 t dxdt ≲p (log N )O(1) N q                   +N2 q           |an |q      . (4.1)
+   D               N     N
+        n=0                                                                                                n=0
+
+Here we have written e = eQp for the function specified in (1.10). The bound (4.1) follows from
+standard changes-of-variable and periodicity, together with an application of small cap decoupling 1.1.
+   Next, note that
+                                             N −1
+                                             X           n    n2 
+                                  f (x, t) =      an eQp    x + 2t
+                                                          N    N
+                                                            n=0
+
+has the local constancy property f (x+h, t+k) = f (x, t) whenever |h| ≤ N −1 , |t| ≤ N −2 . In particular,
+our integral may be written as the following Riemann sum:
+                                                             N
+                                                             X −1 N 1+σ
+                                                                    X−1
+                               r                    −2−σ
+                       |f (x, t)| dxdt = N                                   |f (a, N 1−σ b)|r
+                   D                                         a=0    b=0
+                                                             N −1 N 1+σ −1    N −1                              r
+                                                    −2−σ
+                                                             X      X         X                  na   n2 b 
+                                            =N                                       an eQp          + 1+σ    .
+                                                                                                   N  N
+                                                             a=0    b=0       n=0
+
+
+                                                                   29
+Each of the arguments in the latter eQp is a rational number whose denominator is a power of p. Thus,
+after inspecting (1.10), we may freely substitute eQp for eR :
+
+                                                              −1 N 1+σ                                            r
+                                                            N
+                                                            X      X−1 NX
+                                                                        −1                      na  n2 b 
+                                   r              −2−σ
+                         |f (x, t)| dxdt = N                                           an eR       + 1+σ    .
+                     D                                                                           N  N
+                                                            a=0     b=0          n=0
+
+Here of course eR is the usual Euclidean phase eR (x) = exp(2πix). In particular, we may write
+                                                        ˆ    N
+                                                             X −1                  r
+                                 |f (x, t)|r dxdt =                  an eR nx + n2 t d∆(x, t),
+                             D                                n=0
+
+where we have written ∆ for the measure on R2 defined by
+
+                                                            N
+                                                            X −1 N 1+σ
+                                                                   X−1
+                                                  −2−σ
+                                          ∆=N                                δ Na ⊗ δ       b    .
+                                                                                         N 1+σ
+                                                            a=0      b=0
+
+Here δc is the Dirac delta mass located at c ∈ R. Since translations (x, t) 7→ (x + x, t + t) amount to
+replacing the coefficients an with unimodular multiples ãn , |an | = |ãn |, we may write
+                         N
+                         X               r          ˆ                            N
+                                                                                   X −1                   r
+                                        2                                                                  2
+                             an e nx + n t dxdt ≤ max                                        ãn e nx + n t d∆(x, t).
+            A(N,σ;0) n=1                                             {ãn }n
+                                                                  |ãn |=|an |         n=0
+
+
+In particular, we obtain the estimate
+                                                                                                                                  !r/q
+               N                  r                                                                              N −1
+                                                         (r− r −1)−1−σ   r
+                                                                           −r 
+               X                                                                                                 X
+                                2
+                     an e nx + n t dxdt ≲p (log N )O(1) N q            +N2 q                                             |an |q          .
+      A(N,σ;0) n=1                                                                                                 n=0
+
+    We have justified Theorem 1.7 when γ = 0. We now discuss the intermediate case γ ∈ (0, 1); recall
+that the γ = 1 case is the usual “short mean value estimate” à la Theorem 1.3, and the logarithmic
+factor for (real) small cap decoupling was obtained in [12]. The basic point is to consider exponential
+sums of the form
+                                               N
+                                               X                      n     n2 
+                          f (x, t, x′ , t′ ) =   an eQp (nx + n2 t)eR    x′ + 2 t ′ ,
+                                                                       N     N
+                                                  n=1
+
+where x, t ∈ Qp and x′ , t′ ∈ R. Thus, f is a complex-valued function defined on the LCA group Qp ×R;
+the general theory of Pontryagin duality implies that the tools of Fourier analysis on the Qp and R
+factors may be freely lifted to the product.
+    We supply several of the technical steps. Let
+                                   N
+                                   X                                                                  n          n2 ′ 
+             g(x, t, x′ , t′ ) =         an 1N −1 Z2p (x, t)ηBN (x′ , t′ )eQp (nx + n2 t)eR                x′ +      t ,
+                                                                                                      N           N2
+                                   n=1
+
+where ηBN is a nonnegative smooth function satisfying ηBN ≳ 1 on BN ⊆ R2 and η̂BN is supported
+in BN −1 . Let gn be the nth summand in the definition of g. By using p-adic decoupling, Minkowski,
+
+
+
+
+                                                                  30
+Fubini, and real decoupling in turn,
+        ˆ ˆ
+               |g(x, t, x′ , t′ )|r dxdtdx′ dt′
+          R2    Q2p
+
+                                ˆ         X ˆ
+                                                                                                   !q/r r/q
+                                      
+                                                                                            r
+                                                             X
+               ≤ p7 B(N 1−γ )                                     gn (x, t, x′ , t′ ) dxdt                             dx′ dt′
+                                R2        τ         Q2p      n∈τ
+
+                             X ˆ                    ˆ
+                            
+                                                                                            r               !q/r r/q
+                                                             X
+                  7
+               ≤ p B(N 1−γ 
+                          )                                        gn (x, t, x′ , t′ ) dx′ dt′ dxdt                      
+                                     τ        Q2p   R2       n∈τ
+
+                                              XX ˆ                      ˆ
+                                          
+                                                                                                                r                    !q/r r/q
+                                                                                  X
+               ≤ p7 B(N 1−γ )B(N γ )                                                       gn (x, t, x′ , t′ ) dx′ dt′ dxdt                    .
+                                               τ        τ′     Q2p      R2       n∈τ ∩τ ′
+
+Here we have the notation
+                                                                    ′        (r− rq −1)−σ−1             r
+                                                                                                            − rq 
+                                    B(M ) = C(log M )C M                                          +M2                ,
+with C, C ′ ≫ 1 constants arising from the decoupling theorem 1.1 and the real analogue in [12]. The
+sets τ range over P(O, N γ−1 ) and the sets τ ′ range over the partition of [0, N ] into intervals of length
+N 1−γ . It follows that the intersections τ ∩ τ ′ are singletons, so
+                     ˆ ˆ                                                     N
+                                                                             X
+                                                                                      !r/q
+                              |g(x, t, x′ , t′ )|r dxdtdx′ dt′ ≤ p7 B(N )N 4   |an |q      .
+                         R2   Q2p                                                                      n=1
+
+Applying the same rescaling, transference, and translation principles as before, we obtain the estimate
+                N               r                                                   N
+                                                                                              !r/q
+                                                             r              r   r
+                                                         (r− −1)−1−σ          −
+               X                                                                   X
+                   e(nx + n2 t) dxdt ≲ p7 (log N )O(1) N q             +N2 q           |an |q      ,
+        A(N,σ;γ) n=1                                                                                                               n=1
+
+as desired.
+
+
+   We sketch the argument for Theorem 1.10 next, which is similar in spirit to the previous result.
+                                             √ 
+Proof of Theorem 1.10. We work over K = Q3 −1 . A uniformizer ω for K is 3; here, we have used
+that p ≡ 3 mod 4. Our choice of basic character is
+                                                            
+                                     eK (x) = eQ3 TrK/Q3 (x) .
+This eK satisfies the necessary condition eK (O) = {1} ̸= eK (3−1 O). We also have
+                                          √ 
+                                 eK a + b −1 = eQ3 (a), a, b ∈ Q3 .
+We study the same mean-value estimate considered in the proof of Theorem 1.7, framed over K instead
+of Qp . We have
+
+                               XN            n + m√−1               √
+                                                             (n + m −1)2 
+                                                                              r
+                                    an,m eK              x+                t
+                O×B(0,N σ−1 ) n,m=1                N               N2
+                                                                                     r/q
+                                                                         N
+                                                   r            r   r
+                                                (r− −1)−1−σ       −
+                                                                         X
+                              ≲ (log N )O(1) N q            +N2 q           |an,m |q 
+                                                                                                         n,m=1
+
+
+                                                                            31
+As in the previous transference
+                          √       argument, we may reduce the integral to√a Riemann sum. Here, we
+select x to run over a + b −1, 0 ≤ a, b ≤ N − 1, and t to run over c + d −1, 0 ≤ c, d ≤ N 1+σ − 1.
+Using the choice of eK , we see that
+                 n + m√−1             √
+                                 (n + m −1)2         na mb (n2 − m2 )c 2nmd 
+             eK             x+                t = eR     −      +             −       .
+                      N               N2               N    N         N2         N2
+The remainder of the transference goes through without substantial modification.
+
+      We end by giving a proof of Theorem 1.9.
+
+Proof of Theorem 1.9. Define the function
+                                                                 X                     
+                             g(x, t) = 1N −1−σ Z2p (x, t)              aj eQp jx + j 2 t .
+                                                                 j∈S
+
+Here Qp is determined by the choice of p in the statement of the theorem. Thus, g is a Schwartz–Bruhat
+function on Q2p .
+    By Theorem 1.2, we have
+                                                                                                    !2
+           2                  1 7           10
+                                                   X            X        X                 X
+                                                                                                  2
+  µ({x ∈ Qp : |g(x)| > α}) ≤ p (logp N )                                      µ(U )          |gθ |     ,
+                             50                                  τ                       U
+                                                      Z    k∈p                           U ∈Gτ [g;α]        θ≺τ
+                                                                          diam(τ )=p−k
+                                                        − 1+σ
+                                                    N      2    ≤p−k ≤1
+
+                                              1+σ
+where the θ are the caps of diameter N − 2 . By Proposition 3.1, for each such k and τ we have
+                                          !2
+                X               X                                      X
+                      µ(U )        |gθ |2    ≤ max #(S ∩ γk )#(S ∩ τ )     N 2+2σ |aj |4 ,
+                                U θ≺τ                   γk ≺τ
+               U ∈Gτ [g;α]                                                                 j∈S∩τ
+
+
+where γk are caps of diameter pk N −1−σ . Summing over τ , we obtain
+                               1 7                                                         X
+  µ({x ∈ Q2p : |g(x)| > α}) ≤     p (logp N )11 α−4 N 2+2σ max λk (S) · λ(1+σ) logp N −k (S)   |aj |4 .
+                              100                           k
+                                                                                                              j∈S
+                                                                                                                   (4.2)
+                               Q2p : |g(x)| > α}) to L2 Uα ∩ A(N, σ; 0) .
+                                                                                              
+It remains to relate µ({x ∈                                                                        If 0 ≤ a ≤ N − 1 and
+0 ≤ b ≤ N 1+σ − 1 are such that ( Na , N 1+σ
+                                         b
+                                             ) ∈ {x ∈ Q2p : |g(x)| > α}, then
+
+                                       X           a       b 
+                                             aj eR j + j 2 1+σ > α.
+                                                    N     N
+                                       j∈S
+
+Let             n                                     a   b                          o
+             A = 0 ≤ a ≤ N − 1, 0 ≤ b ≤ N 1+σ − 1 :     , 1+σ ∈ {x ∈ Q2p : |g(x)| > α} .
+                                                     N N
+Then, by local constancy and periodicity, we find that
+
+                                     µ({x ∈ Q2p : |g(x)| > α}) = N σ #A.
+
+    To get back to Uα , we will need to study random perturbations of our main estimate. For (x, t) ∈
+[0, N −1 ] × [0, N −2 ], define ax,t
+                                 j by
+                                         ax,t               2
+                                          j = aj eR (−jx − j t).
+
+
+                                                           32
+Define g x,t by                                      X x,t            
+                                   g x,t (x, t) =     aj eQp jx + j 2 t ,
+                                                      j∈S
+
+and correspondingly set
+               n                                                   a   b                               o
+         Ax,t = 0 ≤ a ≤ N − 1, 0 ≤ b ≤ N 1+σ − 1 :                   , 1+σ ∈ {x ∈ Q2p : |g x,t (x)| > α} .
+                                                                   N N
+Note that |ax,t
+            j | = |aj | for all x, t. In particular, (4.2) holds for all x, t with the same upper bound,
+ranging over the distinct g x,t .
+   We integrate:
+                                             ˆ              N −1 N 1+σ
+                                                                   X−1           a
+                   2
+                                                           X                                    b        
+                  L Uα ∩ A(N, σ; γ) =        x∈[0,N −1 ]
+                                                                           1Uα        + x,       1+σ
+                                                                                                     +t
+                                                                                 N           N
+                                                 t∈[0,N −2 ] a=0     b=0
+                                             ˆ
+                                         =   x∈[0,N −1 ]
+                                                            #Ax,t
+                                             t∈[0,N −2 ]
+                                             ˆ
+                                         =   x∈[0,N −1 ]
+                                                            N −σ µ({x ∈ Q2p : |g x,t (x)| > α}).
+                                             t∈[0,N −2 ]
+
+Applying our uniform upper bound, we conclude.
+
+
+References
+ [1] Bodan Arsovski. The p-adic Kakeya conjecture. J. Amer. Math. Soc., 37:69–80, 2023.
+
+ [2] Jean Bourgain, Ciprian Demeter, and Larry Guth. Proof of the main conjecture in Vinogradov’s
+     mean value theorem for degrees higher than three. Annals of Mathematics, pages 633–682, 2016.
+
+ [3] Ciprian Demeter, Larry Guth, and Hong Wang. Small cap decouplings. Geometric and Functional
+     Analysis, 30(4):989–1062, 2020.
+
+ [4] Robert Fraser and James Wright. The local sum conjecture in two dimensions. International
+     Journal of Number Theory, 16(08):1667–1699, 2020.
+
+ [5] Yuqiu Fu, Larry Guth, and Dominique Maldague. Sharp superlevel set estimates for small cap
+     decouplings of the parabola. Rev. Mat. Iberoam., 39(3):975–1004, 2023.
+
+ [6] Shaoming Guo, Zane Kun Li, and Po-Lam Yung. Improved discrete restriction for the parabola.
+     Math. Res. Lett., 30(5):1375–1409, 2023.
+
+ [7] Larry Guth and Dominique Maldague. Small cap decoupling for the moment curve in R3 . arXiv
+     preprint arXiv:2206.01574, 2022.
+
+ [8] Larry Guth, Dominique Maldague, and Changkeun Oh. Small cap decoupling for paraboloid in
+     Rn . arXiv preprint arXiv:2307.06445, 2023.
+
+ [9] J. Hickman and J. Wright. A Non-archimedean Variant of Littlwood–Paley Theory for Curves.
+     J. Geom. Anal., 30(104), 2023.
+
+[10] Jonathan Hickman and James Wright. The Fourier restriction and Kakeya problems over rings
+     of integers modulo N . arXiv preprint arXiv:1801.03176, 2018.
+
+                                                            33
+[11] Jonathan Hickman and James Wright. An abstract L2 Fourier restriction theorem. Math. Res.
+     Lett., 26(1):75–100, 2019.
+
+[12] Ben Johnsrude. Small cap decoupling for the parabola with logarithmic constant. arXiv preprint
+     arXiv:2305.00125, 2023.
+
+[13] Ben Johnsrude. Sparse mean value estimates, algebraic number solution counting, and non-
+     archimedean fourier analysis. arXiv preprint arXiv:2503.20015, 2025.
+
+[14] Ben Johnsrude and Zuo Lin. Restricted projections and Fourier decoupling in Qnp . arXiv preprint
+     arXiv:2406.19473, 2024.
+
+[15] Ben Krause, Mariusz Mirek, Sarah Peluse, and James Wright. Polynomial progressions in topo-
+     logical fields. arXiv preprint arXiv:2210.00670, 2022.
+
+[16] Zane Kun Li. An introduction to decoupling and harmonic analysis over Qnp . In Shaoming
+     Guo, Zane Kun Li, and Brian Street, editors, Recent Developments in Harmonic Analysis and its
+     Applications, volume 792 of Contemporary Mathematics. AMS, 2024.
+
+[17] Dominique Maldague and Larry Guth. Amplitude dependent wave envelope estimates for the
+     cone in R3 . 2022.
+
+[18] Alejo Salvatore. The Kakeya conjecture on local fields of positive characteristic. Mathematika,
+     69(1):1–16, 2023.
+
+[19] Trevor D Wooley. Condensation and densification for sets of large diameter. arXiv preprint
+     arXiv:2305.19968, 2023.
+
+[20] James Wright. The H and J functionals in the theory of complete exponential sums. arXiv
+     preprint arXiv:2012.08211, 2020.
+
+
+
+
+                                                 34
+

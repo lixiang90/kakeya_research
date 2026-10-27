@@ -204,3 +204,6 @@ R0117新增Green–Wolf0810.0732v1(4p)经典论文原件/text/metadata，root视
 
 
 R0118用户转为解读OpenAI全维local smoothing新发布，新增59页10/25原稿、text/metadata、官方10/26公告记录和Lean范围/部分源码快照，库100PDF/107sources。Cor9.1外部声明全n Kakeya maximal/Hausdorff，旧17/4保持历史而非当前未解目标。root视觉读1/5/27/30；没有本机重放或整篇独审/外peer认证。新目录notes/60_external_results/2026_10_local_smoothing保存读解。
+
+
+R0119为用户新请求的p-adic方法移植研究：新增8篇官方版本PDF/text/meta（Arsovski7p、HW54p、Kochubei17p、Salvatore13p、BFJ47p、Kozyrev12p、FGK13p、Johnsrude34p）及Arsovski作者主页版本说明，共108PDF/116sources。Dhar既有源沿用，Th1.6整数高度经完整正规化给通常强maximal；不是本轮新Kakeya定理。Arsovski刊本全文未下载，BFJfinal TLS超时实际仅arxivv1成功；arxiv提交日和首页重编译日分开记。Salvatore PDF5/8 norm漏n次幂已像素核，按齐次推导使用。全部raw hash、版本、实际读域/未读范围及有限检索边界见metadata/R0119_source_check.json。只对02单壳测试和04条件波包桥作独立全文数学审查，未取得临界extension输入或移植核心PDE，不认证高级源全证、重大性或新颖性。新入口notes/80_nonarchimedean/2026_10_transfer/00_assessment.md；旧欧氏Goal仍停止。

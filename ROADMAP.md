@@ -1,5 +1,7 @@
 # 路线台账
 
+更新2026-10-27，R0119为用户新请求的有限p-adic可行性研究，已完成。旧欧氏长期Goal保持停止，下面历史open/queued不自动执行。当前入口notes/80_nonarchimedean/2026_10_transfer/00_assessment.md，108PDF/116sources/78历史项。普通Qp Kakeya/maximal已有解；本轮审过实时间norm模型单壳障碍及奇p条件extension→单chart maximal桥，未产出临界extension输入。首要未付是与曲率character相容、能给A_k有效界的正能量/PDE身份；不得以重复下游等价式或已知Kakeya为新方向。没有下一自动proof任务，后续按用户授权固定模型和指标后再研究。
+
 更新2026-10-27，R0118转任务：用户停止原证明续研，改读OpenAI全维局部光滑新发布（稿10/25，公告10/26）。原稿Cor9.1直接声明全维Kakeya极大与任意集合Hausdorff满维；已核主张/读解/形式化范围，未整篇独证或本机Lean重放。旧路线表为发现新发布前的历史，不从其open/queued状态自动恢复Goal。入口notes/60_external_results/2026_10_local_smoothing/01_reading_guide.md，100PDF/107sources/78历史项。
 
 | ID | 方向 | 真实结论/缺口 | 状态/重开条件 |

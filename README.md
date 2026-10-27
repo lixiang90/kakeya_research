@@ -1,5 +1,7 @@
 # 一般维度 Kakeya 研究
 
+2026-10-27 R119：已完成 [p-adic 类比与方法移植研究](notes/80_nonarchimedean/2026_10_transfer/00_assessment.md)。普通 p-adic Kakeya/maximal 已有解答；精确波包与条件 extension→maximal 桥可保留，临界正能量/PDE 输入尚未取得。两项模型计算已独立内部逐式审查，未声新 restriction 解或重大结果。文献108PDF/116sources。原欧氏 Goal 保持停止，本轮未创建长期 Goal。
+
 2026-10-27：用户停止原独立续研，转读OpenAI最新全维局部光滑发布。[阅读指南](notes/60_external_results/2026_10_local_smoothing/01_reading_guide.md)说明59页新稿的主定理、辅助PDE、Kakeya全维推论与Lean核查边界。原件已存literature；本项目没有重放整套形式化，也不据外部署名自行认证证明。当前不恢复旧Goal。
 
 以下为发现新发布前的历史研究记录，不作为当前前沿状态。
@@ -29,6 +31,7 @@
 | `notes/50_counterexamples/` | 候选引理的反例、失败机制 |
 | `notes/60_entropy/` | 同一先验的系数熵率与信息成本 |
 | `notes/70_flags/` | 多轴几何、外积目标、列表匹配与审查边界 |
+| `notes/80_nonarchimedean/` | p-adic/非阿基米德模型、已知定理和方法移植 |
 | `results/` | 分状态存档的可审查结论 |
 | `experiments/` | 可重复计算及原始输出 |
 | `research/rounds/` | 每轮问题、证据、结论、交接 |
