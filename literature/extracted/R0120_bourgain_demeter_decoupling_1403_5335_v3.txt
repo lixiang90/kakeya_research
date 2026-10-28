@@ -1,0 +1,1996 @@
+                                                     THE PROOF OF THE l2 DECOUPLING CONJECTURE
+
+                                                                     JEAN BOURGAIN AND CIPRIAN DEMETER
+
+
+                                                  Abstract. We prove the l2 Decoupling Conjecture for compact hypersurfaces with pos-
+arXiv:1403.5335v3 [math.CA] 26 Jul 2015
+
+
+
+
+                                                  itive definite second fundamental form and also for the cone. This has a wide range of
+                                                  important consequences. One of them is the validity of the Discrete Restriction Con-
+                                                  jecture, which implies the full range of expected Lpx,t Strichartz estimates for both the
+                                                  rational and (up to N ǫ losses) the irrational torus. Another one is an improvement in
+                                                  the range for the discrete restriction theorem for lattice points on the sphere. Various
+                                                  applications to Additive Combinatorics, Incidence Geometry and Number Theory are
+                                                  also discussed. Our argument relies on the interplay between linear and multilinear
+                                                  restriction theory.
+
+
+
+
+                                                                         1. The l2 Decoupling Theorem
+
+
+                                             Let S be a compact C 2 hypersurface in Rn with positive definite second fundamental
+                                          form. Examples include the sphere S n−1 and the truncated (elliptic) paraboloid
+                                                                                                        2
+                                                           P n−1 := {(ξ1 , . . . , ξn−1, ξ12 + . . . + ξn−1 ) ∈ Rn : |ξi | ≤ 1/2}.
+
+                                          Unless specified otherwise, we will implicitly assume throughout the whole paper that
+                                          n ≥ 2. We will write A ∼ B if A . B and B . A. The implicit constants hidden
+                                          inside the symbols . and ∼ will in general depend on fixed parameters such as p, n and
+                                          sometimes on variable parameters such as ǫ, ν. We will not record the dependence on the
+                                          fixed parameters.
+                                             Let Nδ be the δ neighborhood of P n−1 and let Pδ be a finitely overlapping cover of Nδ
+                                          with curved regions θ of the form
+                                                                                              2
+                                                   θ = {(ξ1, . . . , ξn−1, η + ξ12 + . . . + ξn−1 ) : (ξ1 , . . . , ξn−1) ∈ Cθ , |η| ≤ 2δ},   (1)
+                                                                                     1/2   1/2                  1/2
+                                          where Cθ runs over all cubes c + [− δ 2 , δ 2 ]n−1 with c ∈ δ 2 Zn−1 ∩ [−1/2, 1/2]n−1. Note
+                                          that each θ sits inside a ∼ δ 1/2 ×. . . δ 1/2 ×δ rectangular box. It is also important to realize
+                                          that the normals to these boxes are ∼ δ 1/2 separated. A similar decomposition exists for
+                                          any S as above and we will use the same notation Pδ for it. We will denote by fθ the
+                                          Fourier restriction of f to θ.
+                                            Our main result is the proof of the following l2 Decoupling Theorem.
+
+
+                                            Key words and phrases. discrete restriction estimates, Strichartz estimates, additive energy.
+                                            The first author is partially supported by the NSF grant DMS-1301619. The second author is partially
+                                          supported by the NSF Grant DMS-1161752.
+                                                                                                 1
+2                              JEAN BOURGAIN AND CIPRIAN DEMETER
+
+Theorem 1.1. Let S be a compact C 2 hypersurface in Rn with positive definite second
+fundamental form. If supp(fˆ) ⊂ Nδ then for p ≥ 2(n+1)
+                                                   n−1
+                                                         and ǫ > 0
+                                     n−1 n+1      X
+                         kf kp .ǫ δ − 4 + 2p −ǫ (    kfθ k2p )1/2 .               (2)
+                                                            θ∈Pδ
+
+                                                         8         4
+   Theorem 1.1 has been proved in [20] for p > 2 + n−1        − n(n−1) . A standard construction
+                                                 −ǫ
+is presented in [20] to show that, up to the δ term, the exponent of δ is optimal. We
+point out that Wolff [36] has initiated the study of lp decouplings, p > 2 in the case of
+the cone. His work provides part of the inspiration for our paper.
+   A localization argument and interpolation between p = 2(n+1)    n−1
+                                                                         and the trivial bound for
+p = 2 proves the subcritical estimate
+                                                X
+                                kf kp .ǫ δ −ǫ (     kfθ k2p )1/2 ,                             (3)
+                                                     θ∈Pδ
+
+when 2 ≤ p < 2(n+1)
+                  n−1
+                      . Estimate (3) is false for p < 2. This can easily be seen by testing
+it with functions of the form fθ (x) = gθ (x + cθ ), where supp(gbθ ) ⊂ θ and the numbers cθ
+are very far apart from each other.
+                                                                           2n
+   Inequality (3) has been recently proved by the first author for p = n−1    in [11], using a
+variant of the induction on scales from [14] and the multilinear restriction Theorem 6.1.
+   An argument similar to the one in [20] was used in [18] to prove Theorem 1.1 for
+p > 2(n+2)
+      n−1
+           , by interpolating Wolff’s machinery with the estimate p = n−1  2n
+                                                                              from [11]. This
+range is better than the one in [20] due to the use of multilinear theory as opposed to
+bilinear theory.1
+   We mention briefly that there is a stronger form of decoupling, sometimes referred to
+as square function estimate, which predicts that
+                                                X
+                               kf kp .ǫ δ −ǫ k(     |fθ |2 )1/2 kp ,                       (4)
+                                                     θ∈Pδ
+
+                                          2n
+in the slightly smaller range 2 ≤ p ≤ n−1    . When n = 2 this easily follows via a geometric
+argument. Minkowski’s inequality shows that (4) is indeed stronger than (3) in the range
+            2n
+2 ≤ p ≤ n−1    . This is also confirmed by the lack of any results for (4) when n ≥ 3. Our
+methods do not seem to enable any progress on (4).
+   It is reasonable to hope that in the subcritical regime (3) one may be able to replace
+δ −ǫ by a constant Cp,n independent of δ. This is indeed known when n = 2 and p ≤ 4,
+but seems to be in general an extremely difficult question. To the authors’ knowledge, no
+other examples of 2 < p < 2(n+1)n−1
+                                     are known for when this holds.
+   In Section 5 we introduce a multilinear version of the decoupling inequality (2) and
+show that the multilinear and the linear theories are essentially equivalent. This in itself
+is not enough to prove Theorem 1.1, as Theorem 6.1 gives multilinear decoupling only
+in the range 2 ≤ p ≤ n−1   2n                               2n
+                              . To bridge the gap between n−1   and 2(n+1)
+                                                                       n−1
+                                                                            , in Section 6 we
+refine our analysis based on the multilinear theory. In particular we set up an induction
+
+    1While both the bilinear theorem in [33] and the multilinear theorem in [3] are sharp, the latter one is
+”morally” stronger
+                       THE PROOF OF THE l2 DECOUPLING CONJECTURE                                   3
+
+on scales argument that makes use of Theorem 6.1 at each step of the iteration, rather
+than once.
+  Let us now briefly describe some of the consequences of Theorem 1.1. The first one we
+mention is a sharp decoupling for the (truncated) cone
+                                      q                        q
+            n−1
+          C                             2            2                         2
+                = {(ξ1 , . . . , ξn−1, ξ1 + . . . + ξn−1 ), 1 ≤ ξ12 + . . . + ξn−1 ≤ 2}.
+Abusing earlier notation, we let Nδ (C n−1 ) be the δ neighborhood of C n−1 and we let
+Pδ (C n−1 ) be the partition of Nδ (C n−1 ) associated with a given partition of S n−1 into δ 1/2
+caps. More precisely, each θ ∈ Pδ (C n−1 ) is essentially a 1 × δ × δ 1/2 × . . . × δ 1/2 rectangular
+box.
+Theorem 1.2. Assume supp(fˆ) ⊂ Nδ (C n−1 ). Then for each ǫ > 0
+                               n−2  n        X                             2n
+                   kf kp .ǫ δ − 4 + 2p −ǫ (         kfθ k2p )1/2 , if p ≥
+                                                n−1
+                                                                          n−2
+                                               θ∈Pδ (C       )
+
+and                                        X                                        2n
+                     kf kp .ǫ δ −ǫ (                   kfθ k2p )1/2 , if 2 ≤ p ≤       .
+                                                                                   n−2
+                                       θ∈Pδ (C n−1 )
+
+  The proof of Theorem 1.2 is presented in the last section of the paper and it turns
+out to be a surprisingly short application of Theorem 1.1 for the elliptic paraboloid. It
+has some striking consequences, some of which were described in (and provided some of
+the original motivation for) the work [36] of Wolff. Examples include progress on the
+“local smoothing conjecture for the wave equation” (see [30] and [36]), the regularity for
+convolutions with arclength measures on helices [27], and the boundedness properties of
+the Bergman projection in tube domains over full light cones, see [21] and [2]. We refer
+the interested reader to these papers for details.
+   Theorem 1.1 immediately implies the validity of the Discrete Restriction Conjecture in
+the expected range, see Theorem 2.2 below. This in turn has a wide range of interesting
+consequences that are detailed in Section 2. First, we get the full range of expected Lpx,t
+Strichartz estimates for both the rational and (up to N ǫ losses) irrational tori. Second,
+we derive sharp estimates on the additive energies of various sets. These can be rephrased
+as incidence geometry problems and in some cases we are not aware about an alternative
+approach. While our theorems successfully address the case of ”nicely separated” points,
+some intriguing questions are left open for arbitrary points.
+   A third type of applications includes sharp (up to N ǫ losses) estimates for the number
+of solutions of various diophantine inequalities. This is rather surprising given the fact
+that our methods do not rely on any number theory. We believe that they provide a
+new angle by means of our use of induction on scales and the topology of Rn . Indeed,
+the Multilinear Restriction Theorem 6.1 that we use repeatedly in the proof of our main
+Theorem 1.1 relies at its core on the multilinear Kakeya phenomenon, which has some
+topological flavor (see [24], [16]).
+   Finally, we use Theorem 2.2 to improve the range from [12], [13] in the discrete restric-
+tion problem for lattice points on the sphere.
+   In forthcoming papers we will develop the decoupling theory for arbitrary hypersurfaces
+with nonzero Gaussian curvature, as well as for nondegenerate curves.
+4                        JEAN BOURGAIN AND CIPRIAN DEMETER
+
+Acknowledgment. The authors are indebted to the anonymous referees whose comments
+helped improving the presentation in Section 6. The second author has benefited from
+helpful conversations with Nets Katz and Andreas Seeger. The second author would
+like to thank his student Fangye Shi for a careful reading of the original version of the
+manuscript and for pointing out a few typos.
+
+
+
+                                 2. First applications
+ In this section we present the first round of applications of our decoupling theory.
+Additional applications will appear elsewhere.
+
+
+2.1. The discrete restriction phenomenon. To provide some motivation we recall the
+Stein-Tomas Restriction Theorem, see [34].
+Theorem 2.1. Let S be a compact C 2 hypersurface in Rn with nonzero Gaussian cur-
+vature and let dσ denote the natural surface measure on S. Then for p ≥ 2(n+1)
+                                                                         n−1
+                                                                               and
+      2
+f ∈ L (S, dσ) we have
+                               kfd
+                                 dσkLp (Rn ) . kf kL2 (S) .
+  Note that this result only needs nonzero Gaussian curvature. We will use the notation
+e(a) = e2πia . For fixed p ≥ 2(n+1)
+                                n−1
+                                     , it is an easy exercise to see that this theorem is
+equivalent with the statement that
+                           Z    X
+                        1                                  n   n−1
+                    (         |     aξ e(ξ · x)|p )1/p . δ 2p − 4 kaξ kl2 (Λ) ,
+                      |BR | BR ξ∈Λ
+
+for each 0 ≤ δ ≤ 1, each aξ ∈ C, each ball BR ⊂ Rn of radius R ∼ δ −1/2 and each
+δ 1/2 separated set Λ ⊂ S. Thus, the Stein-Tomas Theorem measures the average Lp
+oscillations of exponential sums at spatial scale equal to the inverse of the separation of
+the frequencies. It will be good to keep in mind that for each R & δ −1/2
+                             X
+                           k    aξ e(ξ · x)kL2 (BR ) ∼ |BR |1/2 kaξ k2 ,                (5)
+                           ξ∈Λ
+
+as can be seen using Plancherel’s Theorem.
+  The discrete restriction phenomenon consists in the existence of stronger cancellations
+at the larger scale R & δ −1 . We prove the following.
+Theorem 2.2. Let S be a compact C 2 hypersurface in Rn with positive definite second
+fundamental form. Let Λ ⊂ S be a δ 1/2 - separated set and let R & δ −1 . Then for each
+ǫ>0
+                         Z    X
+                      1                                 n+1 n−1
+                  (         |    aξ e(ξ · x)|p )1/p .ǫ δ 2p − 4 −ǫ kaξ k2           (6)
+                    |BR | BR ξ∈Λ
+
+if p ≥ 2(n+1)
+        n−1
+              .
+                       THE PROOF OF THE l2 DECOUPLING CONJECTURE                                          5
+
+  It has been observed in [11] that Theorem 1.1 for a given p implies (6) for the same p.
+Here is a sketch of the argument. First, note that the statement
+                                   X
+                    kf kp . δ cp (   kfθ k2p )1/2 , whenever supp(fˆ) ⊂ Nδ
+                                       θ∈Pδ
+
+easily implies that for each g : S → C and R & δ −1
+                          Z                     X
+                        (     d p )1/p . δ cp (
+                             |gdσ|                kg[    2
+                                                    θ dσkLp (wB ) )
+                                                                    1/2
+                                                                        ,                               (7)
+                                                                       R
+                            BR                       θ∈Pδ
+
+where here gθ = g1θ is the restriction of g to the δ 1/2 - cap θ on S. See Remark 5.2. Also,
+throughout the paper we write
+                                           Z
+                         kf kLp (wBR ) = (   |f (x)|p wBR (x)dx)1/p
+                                                Rn
+
+for weights wBR which are Fourier supported in B(0, R1 ) and satisfy
+                                                    |x − c(BR )| −10n
+                         1BR (x) . wBR (x) ≤ (1 +                  )    .                    (8)
+                                                          R
+                            P
+It now suffices to use g = ξ∈Λ aξ σ(U(ξ, τ ))−1 1U (ξ,τ ) in (7), where U(ξ, τ ) is a τ - cap on
+S centered at ξ, and to let τ → 0.
+   Using (6) with p = 2(n+1)
+                         n−1
+                               and Hölder’s inequality we determine that
+                                      Z     X
+                                   1
+                    ǫ
+                   δ kaξ k2 .ǫ (          |    aξ e(ξ · x)|p )1/p .ǫ δ −ǫ kaξ k2             (9)
+                                 |BR | BR ξ∈Λ
+
+for 1 ≤ p ≤ 2(n+1)
+              n−1
+                    and R & δ −1 . We mention that prior to our current work, the only
+known results for (6) and (9) were the ones in the range where Theorem 1.1 was known.
+
+
+
+
+2.2. Strichartz estimates for the classical and irrational tori. The discrete restric-
+tion phenomenon has mostly been investigated in the special case when the frequency
+points Λ come from a lattice. There is extra motivation in considering this case coming
+from PDEs, where there is interest in establishing Strichartz estimates for the Schrödinger
+equation on the torus. Prior to the current work, the best known result for the paraboloid
+                                                                     2
+    P n−1 (N) := {ξ := (ξ1 , . . . , ξn ) ∈ Zn : ξn = ξ12 + . . . + ξn−1 , |ξ1 |, . . . , |ξn−1| ≤ N}
+was obtained by the first author [10], [11]. We recall this result below.
+Theorem 2.3 (Discrete restriction: the lattice case (paraboloid)). Let aξ ∈ C and ǫ > 0.
+Then
+   (i) if n ≥ 4 we have
+                        X                             n−1 n+1
+                    k        aξ e(ξ · x)kLp (Tn ) .ǫ N 2 − p +ǫ kaξ kl2 ,
+                        ξ∈P n−1 (N )
+6                                              JEAN BOURGAIN AND CIPRIAN DEMETER
+
+            for p ≥ 2(n+2)
+                     n−1
+                           and
+                                                     X
+                                              k                  aξ e(ξ · x)kLp (Tn ) .ǫ N ǫ kaξ kl2 ,
+                                                  ξ∈P n−1 (N )
+
+                       2n
+         for 1 ≤ p ≤ n−1  .
+    (ii) If n = 2, 3 then
+                                                     X
+                                              k                  aξ e(ξ · x)kLp (Tn ) .ǫ N ǫ kaξ kl2 ,
+                                                  ξ∈P n−1 (N )
+
+            for p = 2(n+1)
+                     n−1
+                           .
+   The proof of (i) combines the implementation of the Stein-Tomas argument via the
+circle method with the inequality (3) proved in [11]. The argument for (ii) is much
+easier, it uses the fact that circles in the plane contain ”few” lattice points. It has been
+conjectured in [10] that (ii) should hold for n ≥ 4, too. This is easily seen to be sharp,
+up to the N ǫ term. We will argue below that our Theorem 2.2 implies this conjecture, in
+fact a more general version of it.
+   The analogous question for the more general irrational tori has been recently investi-
+gated in [9], [17], [19] and [23]. More precisely, fix 21 < θ1 , . . . , θn−1 < 2. For φ ∈ L2 (Tn−1 )
+consider its Laplacian
+                                           ∆φ(x1 , . . . , xn−1 ) =
+             X
+                                           2
+                        (ξ12 θ1 + . . . + ξn−1 θn−1 )φ̂(ξ1 , . . . , ξn−1)e(ξ1 x1 + . . . + ξn−1 xn−1 )
+           (ξ1 ,... ,ξn−1 )∈Zn−1
+                                            Qn−1
+on the irrational torus                        i=1 R/(θi Z). Let also
+
+                                                             eit∆ φ(x1 , . . . , xn−1 , t) =
+                 X
+                                                                                                       2
+                                φ̂(ξ1 , . . . , ξn−1)e(x1 ξ1 + . . . + xn−1 ξn−1 + t(ξ12 θ1 + . . . + ξn−1 θn−1 )).
+        (ξ1 ,... ,ξn−1 )∈Zn−1
+
+We prove
+Theorem 2.4 (Strichartz estimates for irrational tori). Let φ ∈ L2 (Tn−1 ) with supp(φ̂) ⊂
+[−N, N]n−1 . Then for each ǫ > 0, p ≥ 2(n+1)
+                                         n−1
+                                              and each interval I ⊂ R with |I| & 1 we
+have
+                                                                               n−1    n+1
+                                           keit∆ φkLp (Tn−1 ×I) .ǫ N 2 − p +ǫ |I|1/p kφk2 ,                                     (10)
+and the implicit constant does not depend on I, N and θi .
+                                                                                     1/2
+                                                                                     θi ξi
+Proof For −N ≤ ξ1 , . . . , ξn−1 ≤ N define ηi =                                       4N
+                                                                                             and aη = φ̂(ξ). A simple change of
+variables shows that                Z
+                                                                             |eit∆ φ|p .
+                                                                   Tn−1 ×I
+           Z                                  X
+    1
+                                       |                                                                     2
+                                                           aη e(y1 η1 + . . . + yn−1 ηn−1 + yn (η12 + . . . ηn−1 ))|p dy1 . . . dyn ,
+N n+1          |y1 |,... ,|yn−1 |≤8N
+                                           η1 ,... ,ηn−1
+                      yn ∈I 2
+                             N
+                        THE PROOF OF THE l2 DECOUPLING CONJECTURE                                         7
+
+where IN 2 is an interval of length ∼ N 2 |I|. By periodicity in the y1 , . . . , yn−1 variables
+we bound the above by
+                Z           X
+       1
+                        |                                                           2
+                                   aη e(y1 η1 + . . . + yn−1ηn−1 + yn (η12 + . . . ηn−1 ))|p dy1 . . . dyn ,
+N n+1 (N|I|)n−1 BN 2 |I| η ,... ,η
+                             1      n−1
+
+for some ball BN 2 |I| of radius ∼ N 2 |I|. Our result will follow once we note that the points
+                                                                        2
+                                      (η1 , . . . , ηn−1 , η12 + . . . ηn−1 )
+are ∼ N1 separated on P n−1 and then apply Theorem 2.2 with R ∼ N 2 |I|.
+
+
+Remark 2.5. The diagonal form ξ12 θ1 + . . . + ξn−1  2
+                                                          θn−1 may in fact be replaced with an
+arbitrary definite quadratic form Q(ξ1 , . . . , ξn−1 ), to incorporate the more general case of
+flat tori. The case θ1 = . . . = θn−1 = 1 corresponds to the classical (periodic) torus Tn .
+When combined with our Theorem 2.4, Propositions 3.113 and 3.114 from [10] show that
+in fact (10) holds true with ǫ = 0 in the range p > 2(n+1)   n−1
+                                                                  for Tn . Similar partial results
+in the direction of ǫ removal are derived for the irrational torus in [23].
+
+
+
+2.3. The discrete restriction for lattice points on the sphere. Given integers n ≥ 3
+and λ = N 2 ≥ 1 consider the discrete sphere
+                    Fn,N 2 = {ξ = (ξ1 , . . . , ξn ) ∈ Zn : |ξ1 |2 + . . . |ξn |2 = N 2 }.
+In [8], the first author made the following conjecture about the eigenfunctions of the
+Laplacian on the torus and found some partial results
+                                                                     2n
+Conjecture 2.6. For each n ≥ 3, aξ ∈ C, ǫ > 0 and each p ≥ n−2            we have
+                   X                              n−2 n
+                k        aξ e(ξ · x)kLp (Tn ) .ǫ N 2 − p +ǫ kaξ kl2 (Fn,N 2 ) .                        (11)
+                         ξ∈Fn,N 2
+
+                                                                                  2n
+  We refer the reader to [12], [13] for a discussion on why the critical index n−2    for the
+sphere is different from the one for the paraboloid. The conjecture has been verified by
+                              2n
+the authors in [12] for p ≥ n−3   when n ≥ 4 and then later improved in [13] to p ≥ 44      7
+when n = 4 and p ≥ 14   3
+                          when  n =  5. The  methods  in [8], [12] and [13] include  Number
+Theory of various sorts, Incidence Geometry and Fourier Analysis. Using Theorem 2.2
+we can further improve our results.
+Theorem 2.7. Let n ≥ 4. The inequality (11) holds for p ≥ 2(n−1)
+                                                           n−3
+                                                                 .
+Proof Fix kaξ k2 = 1 and define
+                                                      X
+                                          F (x) =              aξ e(x · ξ).
+                                                    ξ∈Fn,N 2
+
+We start by recalling the following estimate (24) from [12], valid for n ≥ 4 and α &ǫ
+ n−1
+N 4 +ǫ
+                                                                 n−1     2
+                                     |{|F | > α}| .ǫ α−2 n−3 N n−3 .                                   (12)
+8                                JEAN BOURGAIN AND CIPRIAN DEMETER
+
+By invoking interpolation with the trivial L∞ bound, it suffices to consider the endpoint
+p = pn = 2(n−1)
+           n−3
+                . Note that kF k∞ ≤ N Cn . It follows that
+    Z           Z                                                                  Z
+           pn                     pn −1                    ( n−1 +ǫ)(pn − 2(n+1) )       2(n+1)
+       |F | =      n−1
+                                α       |{|F | > α}|dα + N    4            n−1       |F | n−1 .
+                          +ǫ
+                  N   4        .ǫ α≤N Cn
+
+The result will follow by applying (12) to the first term and Theorem 2.2 with p = 2(n+1)
+                                                                                    n−1
+to the second term.
+
+
+2.4. Additive energies and Incidence Geometry. The proof of Theorem 1.1 in the
+following sections will implicitly rely on the incidence theory of tubes and cubes. This
+theory manifests itself in the deep multilinear Kakeya phenomenon which lies behind
+Theorem 6.1. It thus should come as no surprise that Theorem 1.1 has applications to
+Incidence Geometry.
+   An interesting question is whether there is a proof of Theorem 2.2 using softer argu-
+ments. Or at least if there is such an argument which recovers (6) for R large enough,
+depending on Λ. When n = 3 and S = P 2 we can prove such a result. In fact our result
+is surprisingly strong, in that the bound |Λ|ǫ does not depend on the separation between
+the points in Λ.
+Theorem 2.8. Let Λ ⊂ P 2 be an arbitrary collection of distinct points. Then for R large
+enough, depending only on the geometry of Λ and on its cardinality |Λ|, we have
+                             Z    X
+                          1
+                      (         |    aξ e(ξ · x)|4 )1/4 .ǫ |Λ|ǫ kaξ k2 .            (13)
+                        |BR | BR ξ∈Λ
+
+  Due to periodicity, this recovers (ii) of Theorem 2.3 for n = 3. To see the proof we
+recall some terminology and well known results.
+  Given an integer k ≥ 2 and a set Λ in Rn we introduce its k-energy
+           Ek (Λ) = |{(λ1 , . . . , λ2k ) ∈ Λ2k : λ1 + . . . + λk = λk+1 + . . . + λ2k }|.
+Note the trivial lower bound |Ek (Λ)| ≥ |Λ|k .
+  We recall the point-line incidence theorem due to Szemerédi and Trotter
+Theorem 2.9 ([31]). There are O(|L| + |P| + (|L||P|)2/3 ) incidences between any collec-
+tions L and P of lines and points in the plane.
+  Up to extra logarithmic factors, the same thing is conjectured to hold if lines are
+replaced with circles. Another related conjecture is
+Conjecture 2.10 (The unit distance conjecture). The number of unit distances between
+N points in the plane is always .ǫ N 1+ǫ
+  The point-circle and the unit distance conjectures are thought to be rather difficult,
+and only partial results are known.
+Proof [of Theorem 2.8]
+ The following parameter encodes the ”additive geometry” of Λ
+                                                                            6 0} .
+           υ := min {|η1 + η2 − η3 − η4 | : ηi ∈ Λ and |η1 + η2 − η3 − η4 | =
+                          THE PROOF OF THE l2 DECOUPLING CONJECTURE                                     9
+                                                             2
+We show that Theorem 2.8 holds if R & |Λ|υ . Fix such an R.
+ Using restricted type interpolation it suffices to prove
+                              Z      X
+                           1
+                                   |      e(x · η)|4 dx .ǫ |Λ′ |2+ǫ ,
+                         |BR | BR       ′           η∈Λ
+
+for each subset Λ′ ⊂ Λ. See Section 6 in [13] for details on this type of approach.
+   Expanding the L4 norm we need to prove
+                     X 1 Z
+                   |      3
+                               e((η1 + η2 − η3 − η4 ) · x)dx| .ǫ |Λ′ |2+ǫ .
+                       ′
+                         R BR
+                        ηi ∈Λ
+
+Note that if A 6= 0
+                                                   Z R
+                                               |         e(At)dt| ≤ A−1 .
+                                                    −R
+Using this we get that
+                 X                        Z
+                                     1                                            |Λ′ |4
+           |                                   e((η1 + η2 − η3 − η4 ) · x)dx| ≤          ≤ |Λ′|2 .
+                    ηi ∈Λ′
+                                     R3   BR                                       Rυ
+              |η1 +η2 −η3 −η4 |6=0
+
+
+  Thus it suffices to prove the following estimate for the additive energy
+                                                   E2 (Λ′ ) .ǫ |Λ′|2+ǫ .                             (14)
+Assume
+                                                   η1 + η2 = η3 + η4 ,                               (15)
+with ηi := (αi , βi , αi2 + βi2 ). It has been observed in [10] that given A, B, C ∈ R, the
+equality
+                                        η1 + η2 = (A, B, C)
+implies that for i ∈ {1, 2}
+                                          A 2        B     2C − A2 − B 2
+                                (αi −       ) + (βi − )2 =               .                           (16)
+                                          2          2          4
+Thus the four points Pi = (αi , βi ) corresponding to any additive quadruple (15) must
+belong to a circle. As observed in [10], this is enough to conclude (14) in the lattice
+case, as circles of radius M contain .ǫ M ǫ lattice points. The bound (14) also follows
+immediately if one assumes the circle-point incidence conjecture.
+   We need however a new observation. Note that if (15) holds then in fact both P1 , P2 and
+P3 , P4 are diametrically opposite on the circle (16). Thus each additive quadruple gives
+rise to a distinct right angle, the one subtended by P1 , P2 , P3 (say). The estimate (14)
+is then an immediate consequence of the following application of the Szemerédi-Trotter
+Theorem.
+
+Theorem 2.11 (Pach, Sharir, [26]). The number of repetitions of a given angle among
+N points in the plane is O(N 2 log N).
+10                              JEAN BOURGAIN AND CIPRIAN DEMETER
+
+   It has been recognized that the restriction theory for the sphere and the paraboloid
+are very similar2. Consequently, one expects not only Theorem 2.8 to be true also for
+S 2 , but for a very similar argument to work in that case, too. If that is indeed the case,
+it does not appear to be obvious. The same argument as above shows that an additive
+quadruple of points on S 2 will belong to a circle on S 2 , and moreover the four points will
+be diametrically opposite in pairs. There will thus be at least E2 (Λ) right angles in Λ.
+This is however of no use in this setting, as Λ lives in three dimensions. It is proved in [1]
+that a set of N points in R3 has O(N 7/3 ) right angles, and moreover this bound is tight
+in general.
+   Another idea is to map an additive quadruple to the plane using the stereographic
+projection. The resulting four points will again belong to a circle, so the bound on the
+energy would follow if the circle-point incidence conjecture is proved. Unfortunately, the
+stereographic projection does not preserve the property of being diametrically opposite
+and thus prevents the application of Theorem 2.11. We thus ask
+Question 2.12. Is it true that E2 (Λ) .ǫ |Λ|2+ǫ for each finite Λ ⊂ S 2 ?
+  One can ask the same question for P n−1 and S n−1 when n ≥ 4. The right conjecture
+seems to be
+                                                          3n−5
+                                           E2 (Λ) .ǫ |Λ| n−1 +ǫ .                                      (17)
+Interestingly, when Λ ⊂ P 3 this follows from the aforementioned result in [1], and in
+fact there is no Λǫ loss this time. However, in the same paper [1] it is proved that this
+argument fails in dimensions five and higher: there is a set with N points in R4 which
+determines & N 3 right angles. We point out that Theorem 2.2 implies (17) for subsets of
+                                                                        1
+P n−1 and S n−1 when n ≥ 3, in the case when the points Λ are ∼ |Λ|− n−1 separated.
+
+  It is also natural to investigate the two dimensional phenomenon, for S = S 1 and
+S = P 1.
+Question 2.13. Is it true that for each Λ ⊂ S
+                                             E3 (Λ) .ǫ |Λ|3+ǫ ?                                        (18)
+   Surprisingly, this question seems to be harder than its three dimensional analogue
+from Theorem 2.8. Note that the case when the points are |Λ|−C separated follows from
+Theorem 2.2. We are not aware of an alternative (softer) argument.
+   A positive answer to Question 2.13 would have surprising applications to Number The-
+ory. In particular it would answer the following question posed in [7].
+Question 2.14. Let N be a positive integer. Does (18) hold when Λ are the lattice points
+on the circle N 1/2 S 1 ?
+  Note that Theorem 2.2 is too weak to answer this question. Indeed, rescaling by N 1/2 ,
+the lattice points in N 1/2 S 1 become N −1/2 -separated points on S 1 . However, it is known
+                      O(1)
+that there are O(N log log N ) lattice points on the circle N 1/2 S 1 .
+     2A notable difference is the lattice case of the discrete restriction, but that has to do with a rather
+specialized scenario
+                     THE PROOF OF THE l2 DECOUPLING CONJECTURE                             11
+
+  The analysis in [7] establishes some partial results as well as some intriguing connections
+to the theory of elliptic curves, see for example Theorem 8 there. An easier question with
+similar flavor is answered in the next subsection.
+  The best that can be said regarding Question 2.13 with topological based methods
+seems to be the following
+Proposition 2.15. Let S be either P 1 or S 1 . For each Λ ⊂ S
+                                                     7
+                                     E3 (Λ) .ǫ |Λ| 2 +ǫ .
+Proof This was observed by Bombieri and the first author [7] when S = S 1 . The proofs
+for P 1 and S 1 are very similar, we briefly sketch the details for S = P 1 . Let N be the
+cardinality of Λ. It goes back to [10] that if
+                            (x1 , x21 ) + (x2 , x22 ) + (x3 , x23 ) = (n, j),           (19)
+                              √
+then the point (3(x1 + x2 ), 3(x1 − x2 )) belongs to the circle centered at (2n, 0) and of
+radius squared equal to 6j − 2n2 . Note that there are N 2 such points with (xi , x2i ) ∈ Λ,
+              of points T . Assume we have Mn such circles containing roughly 2n points
+call this set √
+(3(x1 + x2 ), 3(x1 − x2 )) ∈ T in such a way that (19) is satisfied for some x3 ∈ Λ. Then
+clearly
+                                                     X
+                                        E3 (S) .          Mn 22n .
+                                             2n ≤N
+  It is easy to see that
+                                       Mn 2n . N 3 ,                                    (20)
+as each point in T can belong to at most N circles.
+  The nontrivial estimate is
+                                       Mn 23n . N 4 ,                                   (21)
+which is an immediate consequence of the Szemerédi-Trotter Theorem for curves satisfying
+the following two fundamental axioms: two curves intersect in O(1) points, and there are
+O(1) curves passing through any two given points. The number of incidences between such
+curves and points is the same as in the case of lines and points, see for example Theorem
+8.10 in [32]. Note that since our circles have centers on the x axis, any two points in T
+sitting in the upper (or lower) half plane determine a unique circle. Combining the two
+inequalities we get for each n
+                                                   7
+                                       Mn 22n . N 2 .
+
+
+
+   In the case when Λ ⊂ S 1 , the same argument leads to incidences between unit circles
+and points. The outcome is the same, since for any two points there are at most two unit
+circles passing through them. An interesting observation is the fact that Question 2.13
+has a positive answer if the Unit Distance Conjecture is assumed. Indeed, the argument
+above presents us with a collection T of N 2 points and a collection of . N 3 unit circles.
+For 2n . N let Mn be the number of such circles with ∼ 2n points. There will be at
+least Mn 2n unit distances among the N 2 points and the Mn centers. The Unit Distances
+12                           JEAN BOURGAIN AND CIPRIAN DEMETER
+
+Conjecture forces Mn 2n .ǫ (Mn + N 2 )1+ǫ . Since Mn . N 3 , it immediately follows that
+Mn 22n .ǫ N 3+ǫ which gives the desired bound on the energy.
+   It seems likely that in order to achieve the conjectured bound on E3 (Λ), the structure
+of T must be exploited, paving the way to algebraic methods. One possibility is to make
+use of the fact that T has sumset structure. Another interesting angle for the      √ parabola is
+the following. Recall that whenever (19) holds, the three points (3(xi + xj ), 3(xi − xj )),
+(i, j) ∈ {(1, 2), (2, 3), (3, 1)}, belong to the circle centered at (2n, 0) and of radius squared
+equal to 6j − 2n2 . One can easily check that if fact they form an equilateral triangle! This
+potentially opens up the new toolbox of symmetries, since, for example, the rotation by
+π/3 about the center of any such circle C will preserve C ∩ T .
+
+2.5. Additive energies of annular sets. We start by mentioning a more general version
+of Theorem 2.2.
+Theorem 2.16. Let S be a C 2 compact hypersurface in Rn with positive definite second
+fundamental form. For each θ ∈ Pδ let Λθ be a collection of points in θ and let Λ = ∪θ Λθ .
+Then for each R- ball BR with R & δ −1 we have
+           X                                 X X
+         k     aξ e(x · ξ)k 2(n+1) .ǫ δ −ǫ (  k      aξ e(x · ξ)k2 2(n+1)  )1/2 .
+                             L   n−1   (BR )                          L   n−1   (wBR )
+              ξ∈Λ                                      θ    ξ∈Λθ
+
+  To see why this holds, note first that the case R ∼ δ −1 follows by applying (the localized
+version of) Theorem 1.1 to functions whose Fourier transforms approximate weighted
+sums of Dirac deltas supported on Λ. The case R & δ −1 then follows using Minkowski’s
+inequality.
+  For R > 1 define
+                          AR = {ξ ∈ R2 : R ≤ |ξ| ≤ R + R−1/3 }
+and A′R = AR ∩ Z2 . We prove the following inequality related to Question 2.14.
+Theorem 2.17.
+                                           E3 (A′R ) .ǫ |A′R |3+ǫ .                         (22)
+     Note that this is essentially sharp. The old Van der Corput estimate
+                                        |N(R) − πR2 | = o(R2/3 )
+for the error term in the Gauss circle problem shows that |A′R | = 2πR2/3 + o(R2/3 ). It
+thus suffices to show          X                           1
+                             k      e(ξ · x)kL6 (T2 ) .ǫ R 3 +ǫ .
+                                       ξ∈A′R
+
+Subdivide AR into sectors Aα of size ∼ R1/3 × R−1/3 , so that each of them fits inside
+a rectangle Rα of area < 12 . Applying Theorem 2.16 after rescaling by R and using
+periodicity we get
+                   X                            X X
+                 k    e(ξ · x)kL6 (T2 ) .ǫ Rǫ (  k  e(ξ · x)k2L6 (T2 ) )1/2 ,     (23)
+                     ξ∈A′R                             α     ξ∈A′α
+
+with A′α = Aα ∩ Z2 .
+  An elementary observation which goes back (at least) to Jarnı́k’s work [25] is the fact
+that the area determined by a nondegenerate triangle with vertices in Z2 is half an integer.
+                     THE PROOF OF THE l2 DECOUPLING CONJECTURE                             13
+
+It follows that the points in each A′α lie on a line Lα . In fact they must be equidistant,
+with consecutive points at distant d, for some d ≥ 1. Define now for 1 ≤ 2s . R1/3
+                               Ls = {α : 2s ≤ |A′α | < 2s+1 }.
+Let also Ls,m be those α ∈ Ls for which 2m ≤ d < 2m+1 . Note that if α ∈ Ls,m then
+Lα makes an angle ∼ 2−m 2−s R−1/3 with the long axis of Rα . Thus the directions of the
+lines Lα will be distinct for each collection of α ∈ Ls,m whose corresponding arcs on S 1
+are C2−m 2−s R−1/3 -separated. Obviously there are u, v ∈ A′α such that |u − v| ∼ 2m .
+Since there are O(22m ) lattice points with length ∼ 2m , it follows that there can be
+at most O(22m ) elements α in Ls,m which are C2−m 2−s R−1/3 -separated. Thus |Ls,m| .
+22m R1/3 2−m 2−s . As 2m+s . R1/3 we conclude that |Ls | . R2/3 2−2s .
+   Note that by using Hölder’s inequality with L2 − L∞ endpoints we have
+                                 X
+                               k     e(ξ · x)kL6 (T2 ) ≤ |A′α |5/6 .
+                                ξ∈A′α
+
+Using this, the bound on |Ls | and (23) finishes the proof of (22).
+2.6. Counting solutions of Diophantine inequalities. In this section we show how
+to use the Decoupling Theorem to recover and generalize results from the literature as well
+as to prove some new type of results. We do not aim at providing a systematic study of
+these problems but rather to explain the way our methods become useful in this context.
+   To motivate our first application we consider the system of equations for k ≥ 2
+                            (
+                               nk1 + nk2 + nk3 = nk4 + nk5 + nk6
+                                                                 ,
+                               n1 + n2 + n3 = n4 + n5 + n6
+with 1 ≤ ni ≤ N. It is easy to see that there are 6N 3 trivial solutions. The question here
+is to determine the correct asymptotic for the number Uk (N) of nontrivial solutions. This
+is in part motivated by connections to the Waring problem, see [4]. The case k = 3 known
+as the Segre cubic has been intensely studied. Vaughan and Wooley have proved in [35]
+that U3 (N) ∼ N 2 (log N)5 , see also [15] for a more precise result. For k ≥ 4, Greaves [22]
+                                                  17
+(see also [29]) has proved that Uk (N) = O(N 6 +ǫ ). All these results follow through the
+use of rather delicate Number Theory.
+   While our methods in this paper can not produce such fine estimates, they successfully
+address the perturbed case. The following result is perhaps a surprising consequence of
+Theorem 2.2.
+Theorem 2.18. For fixed k ≥ 2 and C the system
+                   (
+                       |nk1 + nk2 + nk3 − nk4 − nk5 − nk6 | ≤ CN k−2
+                       n1 + n2 + n3 = n4 + n5 + n6
+has O(N 3+ǫ ) solutions with ni ∼ N.
+Proof Apply Theorem 2.2 to the curve
+                                        {(ξ, ξ k ) : |ξ| ∼ 1},
+the points
+                                           n n k
+                                Λ = {(      , ( ) ) : n ∼ N}
+                                           N N
+14                                JEAN BOURGAIN AND CIPRIAN DEMETER
+
+and δ = N −2 . We get that
+                    Z      Z       X
+                 1                       n    n
+                  4
+                                 |    e(x + y( )k )|6 dxdy .ǫ N 3+ǫ .
+                N |x|≤N 2 |y|≤N 2 n∼N    N    N
+Upon rescaling and using periodicity we get
+                          Z     Z          X
+                      k−3
+                    N                    |   e(xn + ynk )|6 dxdy =
+                                      |x|≤N    |y|≤N 2−k      n∼N
+
+                              Z        Z                X
+                        k−2
+                    N                               |         e(xn + ynk )|6 dxdy .ǫ N 3+ǫ .   (24)
+                               |x|≤1    |y|≤N 2−k       n∼N
+
+Let now φ : R → [0, ∞) be a positive Schwartz function with positive Fourier transform
+           b
+satisfying φ(ξ) & 1 for |ξ| ≤ 1. Define φN (y) = φ(N k−2 y). A standard argument allows
+us to replace the cutoff |y| ≤ N 2−k with φN (y) in (24). It suffices then to note that
+                             Z    Z X
+                        k−2
+                      N              |    e(xn + ynk )|6 φN (y)dxdy =
+                                      |x|≤1   R n∼N
+                              X
+                                              b 2−k (nk + nk + nk − nk − nk − nk )).
+                                              φ(N     1    2    3    4    5    6
+                           ni ∼N
+                   n1 +n2 +n3 =n4 +n5 +n6
+
+
+
+
+     Note also that our method proves that
+                         Z   Z            X
+                     k−2
+                   N                    |   e(xn + ynk )|6 dxdy .ǫ N 3+ǫ ,
+                              |x|≤1    |y−c|≤N 2−k      n∼N
+
+for each c ∈ R. The difficulty in proving this for k ≥ 3 using purely number theoretic
+methods comes from estimating the contribution of the minor arcs. When k = 2 the left
+hand side is at least cN 3 log N, which shows that one can not dispense with the N ǫ term.
+This can be seen by evaluating the contribution from the major arcs, see for example page
+118 in [10].
+
+  Our second application generalizes the result from [28] (k = 4) to k ≥ 4. Its original
+motivation lies in the study of the Riemann zeta function on the critical line (cf. [5], [6])
+and also in getting refinements of Heath-Brown’s variant of Weyl’s inequality, see [28].
+Theorem 2.19. For k ≥ 4 and 0 ≤ λ ≤ 1 we have
+             Z     Z λ X
+                      |    e(xn2 + ynk )|6 dxdy .ǫ λN 3+ǫ + N 4−k+ǫ .
+                     |x|≤1    0       n∼N
+
+In particular, the system
+                       (
+                                   |nk1 + nk2 + nk3 − nk4 − nk5 − nk6 | ≤ CN k−1
+                                   n21 + n22 + n23 = n24 + n25 + n26
+has O(N 3+ǫ ) solutions with ni ∼ N.
+                              THE PROOF OF THE l2 DECOUPLING CONJECTURE                                 15
+
+Proof The estimate on the number of solutions follows by using λ = N 1−k . Note that it
+suffices to prove that
+                       Z Z X
+                            |   e(xn2 + ynk )|6 dxdy .ǫ N 4−k+ǫ ,
+                                   |x|≤1       J   n∼N
+
+for each interval J with length N 1−k .
+   We apply Theorem 2.16 to the curve
+                                                            {(ξ 2 , ξ k ) : |ξ| ∼ 1},
+the points
+                                  n 2 n k
+                                               Λ = {((
+                                    ) , ( ) ) : n ∼ N},
+                                  N      N
+ −1        −1
+R = δ = N and BN = [MN, (M + 1)N] × N k J with M ∈ {−N, . . . , 0, . . . , N − 1}.
+Summing over M we get due to periodicity
+                     X       n2       nk
+                   k     e(x′ 2 + y ′ k )kL6 (|x′ |≤N 2 , y′ ∈N k J) .ǫ
+                     n∼N
+                             N        N
+                                X X           2     k
+                              ǫ            ′ n   ′ n
+                            N (   k     e(x 2 + y k )k2L6 (|x′ |≤N 2 , y′ ∈N k J) )1/2 .
+                                α   n∈I
+                                            N     N
+                                                   α
+
+                                  1/2
+Here Iα = [nα , nα + N ] are intervals of length N 1/2 that partition the integers n ∼ N.
+It follows after a change of variables that
+                                               X
+                                        k              e(xn2 + ynk )kL6 (|x|≤1, y∈J) .ǫ
+                                               n∼N
+                                       X X
+                                  N ǫ(  k  e(xn2 + ynk )k2L6 (|x|≤1, y∈J) )1/2 .                      (25)
+                                           α           n∈Iα
+
+Next note that for y ∈ J
+                                                            X
+                                                        |          e(xn2 + ynk )| =
+                                                            n∈Iα
+
+                 N 1/2
+                 X                                     k(k − 1) k−2
+             |           cm,J,nα e(m2 (x +                     nα y) + m(2xnα + knαk−1 y))| + O(1),
+                 m=1
+                                                          2
+with |cm,J,nα | = 1. To estimate the first term we change variables to
+                                 (
+                                      x′ = x + k(k−1)
+                                                  2
+                                                       nαk−2 y
+                                                               .
+                                      y ′ = (2k − k 2 )nαk−1 y
+We get
+                                               X
+                                           k            e(xn2 + ynk )kL6 (|x|≤1, y∈J) .
+                                               n∈Iα
+
+                             N 1/2
+                             X
+                    − k−1                                                                  1−k
+                  nα 6 k             cm,J,nα e(x′ m2 + 2x′ nα m + my ′ )kL6 (BC ) + O(N 6 ) =
+                             m=1
+16                         JEAN BOURGAIN AND CIPRIAN DEMETER
+
+                           N 1/2
+                              X  +nα
+                   − k−1                                                     1−k
+                  nα 6 k               cm,J,nα e(x′ m2 + my ′)kL6 (BC ) + O(N 6 ),
+                           m=1+nα
+                                                                                     1   1−k
+for some ball BC of radius C = O(1). This can further be seen to be O(N 4 + 6 +ǫ ) by the
+                                                     1 1−k
+result in Theorem 2.3. We conclude that (25) is O(N 2 + 6 +ǫ ), as desired.
+
+  There are further number theoretical consequences of the decoupling theory that will
+be investigated elsewhere.
+
+                    3. Norms and wave packet decompositions
+
+  We will use C to denote various constants that are allowed to depend on the fixed
+parameters n, p, but never on the scale δ. | · | will denote both the Lebesgue measure on
+Rn and the cardinality of finite sets.
+  This section and the next one is concerned with introducing some of the tools that will
+be used in the proof of Theorem 1.1 from Section 6. For 2 ≤ p ≤ ∞ we define the norm
+                                              X
+                                  kf kp,δ = (    kfθ k2p )1/2 ,
+                                                  θ∈Pδ
+
+where fθ is the Fourier restriction of f to θ. We note the following immediate consequence
+of Hölder’s inequality
+                                                         2
+                                                      p
+                                                                1− 2
+                                        kf kp,δ ≤ kf k2,δ kf k∞,δp                             (26)
+and the fact that if supp(fˆ) ⊂ Nδ then
+                                            kf k2,δ ∼ kf k2 .
+Definition 3.1. Let N be a real number greater than 1. An N-tube T is an N 1/2 ×
+. . . × N 1/2 × N rectangular parallelepiped in Rn which has dual orientation to some θ =
+θ(T ) ∈ Pδ . We call a collection of N-tubes separated if no more than C tubes with a given
+orientation overlap.
+     Let φ : Rn → R be given by
+                                         φ(x) = (1 + |x|2 )−M ,
+for some M large enough compared to n, whose value will become clear from the argument.
+Define φT = φ ◦ aT , where aT is the affine function mapping T to the unit cube in Rn
+centered at the origin.
+Definition 3.2. An N-function is a function f : Rn → C such that
+                                         X
+                                   f=         fT
+                                                  T ∈T (f )
+
+where T (f ) consists of finitely many separated N-tubes T and moreover
+                                               |fT | ≤ φT ,
+                                   kfT kp ∼ |T |1/p , 1 ≤ p ≤ ∞
+                     THE PROOF OF THE l2 DECOUPLING CONJECTURE                            17
+
+and
+                                      supp(fc
+                                            T ) ⊂ θ(T ).
+
+  For θ ∈ P1/N let T (f, θ) denote the N-tubes in T (f ) dual to θ . An N-function is called
+balanced if |T (f, θ)| ≤ 2|T (f, θ′ )| whenever T (f, θ), T (f, θ′ ) 6= ∅.
+  The k · kp,δ norms of N-functions are asymptotically determined by their plate distri-
+bution over the sectors θ.
+Lemma 3.3. For each N-function f and for 2 ≤ p ≤ ∞
+                                   n+1 X              2
+                      kf kp,1/N ∼ N 2p (   |T (f, θ)| p )1/2 .                         (27)
+                                                   θ
+
+If the N-function is balanced then
+                                             n+1          1   1
+                           kf kp,1/N ∼ N 2p M(f ) 2 − p |T (f )|1/p ,                  (28)
+where M(f ) is the number of sectors θ for which T (f, θ) 6= ∅.
+Proof It suffices to prove (27) when T (f ) = T (f, θ) for some θ. We first observe the
+trivial estimates kf k1 . |T ||T (f )|, kf k∞ . 1 and kf k2 ∼ |T |1/2 |T (f )|1/2 . Applying
+Hölder’s inequality twice we get
+                             2(p−1)    2−p
+                                                                   1/p   ′
+                         kf k2 p kf k1 p ≤ kf kp ≤ kf k1 kf k1/p
+                                                             ∞ ,
+
+which is exactly what we want.
+  The crucial role played by balanced N-functions is encoded by
+Lemma 3.4. (i) Each N-function f can be written as the sum of O(log |T (f )|) balanced
+N-functions.
+  (ii) For each balanced N-function f and 2 ≤ p ≤ ∞ we have the converse of (26),
+namely
+                                                   2
+                                               p           p
+                                                                  1− 2
+                               kf kp,1/N ∼ kf k2,1/N kf k∞,1/N .                       (29)
+
+Proof Note that (i) is immediate by using dyadic ranges. Also, (ii) will follow from (28).
+
+   In the remaining sections we will use the fact that the contribution of f to various
+inequalities comes from logarithmically many N-functions. The basic mechanism is the
+following.
+Lemma 3.5 (Wave packet decomposition). Assume f is Fourier supported in Nδ . Then
+for each dyadic 0 < λ . kf k∞,δ there is an N = δ −1 -function fλ such that
+                                           X
+                                    f=          λfλ
+                                              λ.kf k∞,δ
+
+and for each 2 ≤ p < ∞ we have
+                                n+1
+                           λp N 2 |T (fλ )| ≤ kλfλ kpp,δ . kf kpp,δ .                  (30)
+18                             JEAN BOURGAIN AND CIPRIAN DEMETER
+
+Proof Using a partition of unity write
+                                                                X
+                                                      f=                f˜θ
+                                                                θ∈Pδ
+
+with f˜θ = fθ ∗ Kθ Fourier supported in 10
+                                         9
+                                           θ with kKθ k1 . 1. Consider a windowed Fourier
+series expansion for each f˜θ            X
+                                   f˜θ =     hf˜θ , ϕT iϕT ,
+                                                       T ∈Tθ
+                 2
+where ϕT are L normalized Schwartz functions Fourier localized in θ such that
+                                                  |T |1/2 |ϕT | . φT .
+The tubes in Tθ are separated. Note that by Hölder’s inequality
+                              1
+                    |aT :=         hf˜θ , ϕT i| . kf˜θ k∞ . kfθ k∞ ≤ kf k∞,δ .
+                           |T |1/2
+It is now clear that we should take
+                                   X          X
+                            fλ =                      aT λ−1 |T |1/2 ϕT .
+                                              θ   T ∈Tθ : |aT |∼λ
+
+   To see (30) note that the first inequality follows from (27) and the fact that k · klp/2 ≤
+k · kl1 . To derive the second inequality, it suffices to prove that for each θ
+                                   X
+                              k            hf˜θ , ϕT iϕT kp . kfθ kp .
+                                       T ∈Tθ : |aT |∼λ
+                                                                              R
+Using (27) and the immediate consequence of Hölder’s inequality |aT |p . |f˜θ |p |T |−1/2 ϕT
+we get               X
+                k         hf˜θ , ϕT iϕT kpp . λp |T ||{T ∈ Tθ : |aT | ∼ λ}| .
+                     T ∈Tθ : |aT |∼λ
+                              X                   Z             X              Z               Z
+                     . |T |               p
+                                      |aT | .         |f˜θ |p           φT .       |f˜θ |p .       |fθ |p .
+                              T ∈Tθ                             T ∈Tθ
+
+
+
+
+                                         4. Parabolic rescaling
+
+Proposition 4.1. Let δ ≤ σ < 21 and Kp ( σδ ) be such that
+                                       δ X
+                           kf kp ≤ Kp ( )(        kfθ k2p )1/2 ,
+                                       σ θ∈P
+                                                                        δ
+                                                                        σ
+
+for each f with Fourier support in N δ . Then for each f with Fourier support in Nδ and
+                                     σ
+for each τ ∈ Pσ we have
+                                        δ    X
+                          kfτ kp . Kp ( )(           kfθ k2p )1/2 .
+                                        σ
+                                                            θ∈Pδ : θ∩τ 6=∅
+                            THE PROOF OF THE l2 DECOUPLING CONJECTURE                                                     19
+
+Proof Let a = (a1 , . . . , an−1 ) be the center of the σ 1/2 -cube Cτ , see (1). We will perform
+the parabolic rescaling via the affine transformation
+                                                                                 Pn−1        Pn−1 2
+                           ′            ′       ξ1 − a1       ξn−1 − an−1 ξn − 2 i=1  ai ξi + i=1 ai
+ Lτ (ξ1 , . . . , ξn ) = (ξ1 , . . . , ξn ) = ( 1/2 , . . . ,               ,                        ).
+                                                  σ               σ 1/2               σ
+Note that
+                                                Xn−1                  n−1
+                                                                      X
+                                            ′         ′2    −1
+                                           ξn −      ξi = σ (ξn −         ξi2 ).
+                                             i=1                          i=1
+
+It follows that Lτ maps the Fourier support Nδ ∩ τ of fτ to N δ ∩ ([− 12 , 12 ]n−1 × R). Also,
+                                                                σ
+for each τ ′ ∈ P δ we have that Lτ (θ) = τ ′ for some θ ∈ Pδ with θ ∩ τ 6= ∅. Thus
+                      σ
+
+
+                                         kfτ kpp = kgkpp (det(Lτ ))1−p ,
+where g is the Lτ dilation of fτ Fourier supported in N δ ∩ ([− 12 , 21 ]n−1 × R). By invoking
+                                                           σ
+the hypothesis we get that
+                                          δ X
+                              kgkp . Kp ( )(      kgτ ′ k2p )1/2 .
+                                          σ ′
+                                                         τ ∈P δ
+                                                                σ
+
+We are done if we use the fact that
+                                         kfθ kpp = kgτ ′ kpp (det(Lτ ))1−p
+whenever Lτ (θ) = τ ′ .
+
+
+                            5. Linear versus multilinear decoupling
+  The material in this section is an application of the Bourgain-Guth induction on scales
+[14] and it is most closely connected to the argument in [11]. Let g : P n−1 → C. For
+a cap τ on P n−1 we let gτ = g1τ be the (spatial) restriction of g to τ . We denote by
+π : P n−1 → [−1/2, 1/2]n−1 the projection map.
+Definition 5.1. We say that the caps τ1 , . . . , τn on P n−1 are ν-transverse if the volume
+of the parallelepiped spanned by any unit normals vi at τi is greater than ν.
+  We denote by Cp,n (δ, ν) the smallest constant such that
+                                                                                                              1/n
+             n
+             Y                                                n
+                                                            Y         X                                       
+        k(         |g[
+                     τi dσ|) 1/n
+                                 k  p
+                                   L (Bδ−1 ) ≤ C p,n (δ, ν) 
+                                                             (                     kg[    2
+                                                                                      θ dσkLp (wB      ))
+                                                                                                            1/2 
+                                                                                                                     ,
+                                                                                                δ   −1
+             i=1                                          i=1       θ: δ 1/2 −cap
+                                                                         θ⊂τi
+
+
+for each ν-transverse caps τi ⊂ P n−1 , each δ −1 ball Bδ−1 and each g : P n−1 → C.
+   Let also Kp,n (δ) be the smallest constant such that
+                                                X
+                     d Lp (B ) ≤ Kp,n (δ)(
+                    kgdσk     δ −1
+                                                       kg[    2
+                                                         θ dσkLp (wB ))
+                                                                        1/2
+                                                                            ,
+                                                                                         δ −1
+                                                       θ:δ1/2 −cap
+
+for each g : P n−1 → C and each δ −1 ball Bδ−1 .
+20                          JEAN BOURGAIN AND CIPRIAN DEMETER
+
+Remark 5.2. As before, the norm kf kLp (wBR ) refers to the weighted Lp integral
+                                Z
+                              (    |f (x)|p wBR (x)dx)1/p
+                                        Rn
+for some weight satisfying (8). It is important to realize that there are such weights which
+in addition are Fourier supported in B(0, R−1 ). Note also that if g is supported on P n−1
+and if wd                             −1          d
+         BR is supported in B(0, R ), then (gdσ)wBR has Fourier support inside NR−1 .
+This simple observation justifies the various (entirely routine) localization arguments that
+follow, as well as the interplay between Fourier transforms of functions and Fourier trans-
+                                                              (1)
+forms of measures supported on P n−1. In particular let Kp,n (δ) be the smallest constant
+such that                                         X
+                     d Lp (w
+                   kgdσk      B −1 )
+                                         (1)
+                                     ≤ Kp,n  (δ)(      kg[    2
+                                                         θ dσkLp (wB  )
+                                                                        )1/2 ,
+                                δ                                                      δ −1
+                                                   θ:δ1/2 −cap
+                                                                             (1)
+for each g : P n−1 → C and each δ −1 ball Bδ−1 . Then Kp,n (δ) ∼n,p Kp,n (δ). Also, if
+  (2)      (3)       (4)
+Kp,n (δ), Kp,n (δ), Kp,n (δ) are the smallest constants such that
+                                                      X
+                                             (2)
+                             kf kLp (Rn ) ≤ Kp,n (δ)(   kfθ k2Lp (Rn ) )1/2 ,
+                                                       θ∈Pδ
+                                                        X
+                                             (3)
+                           kf kLp (Bδ−1 ) ≤ Kp,n (δ)(          kfθ k2Lp (Rn ) )1/2 ,
+                                                        θ∈Pδ
+                                                       X
+                                            (4)
+                         kf kLp (wB −1 ) ≤ Kp,n (δ)(          kfθ k2Lp (wB        ))
+                                                                                       1/2
+                                                                                             ,
+                                    δ                                      δ −1
+                                                       θ∈Pδ
+                                                        −1
+for each f Fourier supported in Nδ and each δ                 ball Bδ−1 , then
+                              (2)       (3)       (4)
+                             Kp,n (δ), Kp,n (δ), Kp,n (δ) ∼n,p Kp,n (δ).
+ The same observation applies to the family of constants related to Cp,n (δ, ν) from the
+multilinear inequality.
+
+     Note that due to Hölder’s inequality
+                                        Cp,n (δ, ν) ≤ Kp,n (δ).
+We will show that the reverse inequality essentially holds true.
+Theorem 5.3. Assume one of the following holds
+ (i) n = 2
+                                ′
+ (ii) n ≥ 3 and Kp,d (δ ′ ) .ǫ δ −ǫ for each δ ′ , ǫ > 0 and each 2 ≤ d ≤ n − 1.
+ Then for each 0 < ν ≤ 1 there is ǫ(ν) with limν→0 ǫ(ν) = 0 and Cν such that
+                                    Kp,n (δ) ≤ Cν δ −ǫ(ν) Cp,n (δ, ν)
+for each δ.
+  We prove the case n = 3 and will indicate the modifications needed for n ≥ 4. The
+argument will also show how to deal with the case n = 2.
+Remark 5.4. If Q1 , Q2 , Q3 ∈ [−1/2, 1/2]2 the volume of parallelepiped spanned by the
+unit normals to P 2 at π −1 (Qi ) is comparable to the area of the triangle ∆Q1 Q2 Q3 .
+                     THE PROOF OF THE l2 DECOUPLING CONJECTURE                                             21
+
+  The key step in the proof of Theorem 5.3 for n = 3 is the following.
+Proposition 5.5. Assume Kp,2(δ) .ǫ δ −ǫ for each ǫ > 0. Then for each ǫ there is Cǫ
+such that for each R > 1 and K ≥ 1
+                           X                              X
+     d Lp (w ) ≤ Cǫ K ǫ [(
+   kgdσk      BR
+                                kg[     2
+                                   α dσkLp (wB ) )
+                                                   1/2
+                                                       +(   kg[    2
+                                                              β dσkLp (wB ) )
+                                                                              1/2
+                                                                                  ]+
+                                                                  R                                  R
+                                α⊂P 2                                            β⊂P 2
+                              α: 1 − cap                                      β: 1 − cap
+                                K
+                                                                                K 1/2
+                                                             X
+                     +K 10 Cp,3 (R−1 , K −1 )(                          kg[    2
+                                                                          ∆ dσkLp (wB ) )
+                                                                                          1/2
+                                                                                         R
+                                                           ∆⊂P 2
+                                                        ∆: 1 − cap
+                                                          R1/2
+
+
+Proof Following the standard formalism (see for example sections 2-4 in [14]) we will
+regard |g[
+         α dσ| as being essentially constant on each ball BK . Denote by cα (BK ) this value
+and let α∗ be the cap that maximizes it.
+   The starting point in the argument is the observation that for each BK there exists a
+line L = L(BK ) in the (ξ1 , ξ2 ) plane such that if
+                                                                   C
+                           SL = {(ξ1 , ξ2 ) : dist((ξ1 , ξ2), L) ≤ 1 }
+                                                                  K2
+then for x ∈ BK
+                                             d
+                                            |gdσ(x)|  ≤
+
+                                           C max |g[
+                                                   α dσ(x)| +                                            (31)
+                                                    α
+
+
+                                           C max |g[
+                                                   β dσ(x)| +                                            (32)
+                                                    β
+
+                                                            3
+                                                            Y
+                              K4       max
+                                      α ,α ,α
+                                                        (         |g[
+                                                                    αi dσ(x)|)
+                                                                               1/3
+                                                                                   +                     (33)
+                                        1 2 3
+                                   K −1 −transverse         i=1
+                                                    X
+                                           |                     g[
+                                                                  β dσ(x)|.                              (34)
+                                               β⊂π −1 (S    L)
+
+To see this, we distinguish three scenarios.
+   First, if cα (BK ) ≤ K −2 cα∗ (BK ) for each α with dist(π(α), π(α∗)) ≥ 101 , then the sum
+                                                                           K2
+of (31) and (32) suffices, as
+                               X                               X
+            d
+           |gdσ(x)|  ≤                      |g[
+                                              α dσ(x)| + |                g[
+                                                                           α dσ(x)|.
+                     α: dist(π(α),π(α∗ ))≥ 101                           α: dist(π(α),π(α∗ ))< 101
+                                               K2                                             K2
+
+Otherwise, there is α∗∗ with dist(π(α∗∗ ), π(α∗)) ≥ 101 and cα∗∗ (BK ) ≥ K −2 cα∗ (BK ). The
+                                                        K2
+line L is determined by the centers of α∗ , α∗∗ .
+   Second, if there is α∗∗∗ such that π(α∗∗∗ ) intersects the complement of SL and cα∗∗∗ (BK ) ≥
+K −2 cα∗ (BK ) then (33) suffices. Indeed, note that α∗ , α∗∗ , α∗∗∗ are K −1 transverse by Re-
+mark 5.4.
+   The third case is when cα (BK ) < K −2 cα∗ (BK ) whenever π(α) intersects the complement
+of SL . It is immediate that the sum of (31) and (34) will suffice in this case.
+22                                JEAN BOURGAIN AND CIPRIAN DEMETER
+
+   The only nontrivial case to address is the one corresponding to this latter scenario. We
+                                                                                   1       1
+note that the K −1 neighborhood of each β ⊂ π −1 (SL ) is essentially a K −1 × K − 2 × K − 2
+box whose side of length K −1 points in the direction of the normal vector (2x, 2y, −1),
+for some (x, y) ∈ L. These normal vectors belong to a plane with normal vector v. Thus
+the K −1 neighborhood of π −1 (SL ) sits inside the CK −1 neighborhood of a cylinder in the
+                             1
+direction v, of height ∼ K − 2 , over the parabola π −1 (L).
+   An application of Fubini’s inequality shows that
+                    X                                    X
+                k         g[
+                           β dσkLp (BK ) . Kp,2 (K
+                                                   −1
+                                                      )(   kg[    2
+                                                             β dσkLp (wB ) )
+                                                                             1/2
+                                                                                 .
+                                                                                                        K
+                      β:π(β)⊂SL                                                  β
+
+We are of course relying on the fact that π −1 (L) is a parabola with principal curvature
+roughly 1, and that the angle between the plane of the parabola and v is away from zero.
+  We conclude that in either case
+                            X                               X
+      d Lp (B ) ≤ Cǫ K ǫ [(
+    kgdσk         K
+                                 kg[
+                                   α dσk 2
+                                           p
+                                         L (w   ) ) 1/2
+                                                        + (     kg[  BK
+                                                                       2
+                                                                  β dσkLp (w  ))
+                                                                                 1/2
+                                                                                     ]+                     BK
+                                    α⊂P 2                                              β⊂P 2
+                                   α: 1 cap                                          β: 1    cap
+                                     K
+                                                                                       K 1/2
+
+                                                               3
+                                                               Y
+                            +K     4
+                                           max
+                                          α1 ,α2 ,α3
+                                                          k(         |g[
+                                                                       αi dσ(x)|)
+                                                                                  1/3
+                                                                                      kLp (wBK )
+                                       K −1 −transverse        i=1
+                                             th
+It suffices now to raise to the p power and sum over BK ⊂ BR using Minkowski’s in-
+                                                                           d Lp (w )
+                           d Lp (B ) can be replaced by the weighted norm kgdσk
+equality. Also, the norm kgdσk     R                                              BR
+via the localization argument described in Remark 5.2.
+     Rescaling gives the following.
+                                                                                        ′
+Proposition 5.6. Let τ be a δ cap. Assume Kp,2 (δ ′ ) .ǫ δ −ǫ for each ǫ > 0 and δ ′ . Then
+for each ǫ there is Cǫ such that for each R > δ −2 and K ≥ 1
+                                X                            X
+     kg[                    ǫ
+       τ dσkLp (wBR ) ≤ Cǫ K [(     kg[    2
+                                      α dσkLp (wB ) )
+                                                      1/2
+                                                          +(      kg[    2
+                                                                    β dσkLp (wB ) )
+                                                                                    1/2
+                                                                                        ]+
+                                                                       R                                     R
+                                         α⊂τ                                             β⊂τ
+                                       α: δ cap                                       β: δ
+                                         K                                                    cap
+                                                                                        K 1/2
+                                                                     X
+                        K 10 Cp,3 ((Rδ 2 )−1 , K −1 )(                          kg[    2
+                                                                                  ∆ dσkLp (wB ) )
+                                                                                                  1/2
+                                                                                                    R
+                                                                      ∆⊂τ
+                                                                ∆:     1  cap
+                                                                     R1/2
+
+
+Proof Note that if γ ⊂ [−1/2, 1/2]2 then
+                                   Z
+       g\
+        π −1 γ dσ(x1 , x2 , x3 ) =   πg(ξ1, ξ2 )e(ξ1 x1 + ξ2 x2 + (ξ12 + ξ22 )x3 )dξ1 dξ2.
+                                            Bη (c)
+
+Let a = (a1 , a2 ). Changing variable to ξi = ai + δξi′ and letting
+                                              πg a,δ (ξ ′ ) = πg(a + δξ ′ )
+                                                     γ ′ = δ −1 (γ − a)
+we get
+
+            |g\                               \
+                                           2 a,δ                                             2
+              π −1 γ dσ(x1 , x2 , x3 )| = δ |gπ −1 γ ′ dσ(δ(x1 + 2a1 x3 ), δ(x2 + 2a2 x3 ), δ x3 )|.
+                     THE PROOF OF THE l2 DECOUPLING CONJECTURE                                                   23
+
+In particular
+                         kg\                       2− p4    \
+                                                         kgπa,δ
+                           π −1 γ dσkLp (wBR ) = δ           −1 γ ′ dσkLp (wC ) ,
+                                                                             R
+
+where CR is a ∼ δR × δR × δ 2 R cylinder. Cover CR with balls Bδ2 R . The result now
+follows by applying Proposition 5.5 to g a,δ (with a the center of π(τ )) on each Bδ2 R and
+then summing using Minkowski’s inequality.
+  We are now ready to prove Theorem 5.3 for n = 3. Let K = ν −1 . Iterate Proposition
+5.6 staring with scale δ = 1 until we reach scale δ = R−1/2 . Each iteration lowers the
+scale of the caps from δ to at least K δ1/2 . Thus we have to iterate ∼ logK R times. Since
+                              Cp,3 ((δ 2 R)−1 , K −1 ) . Cp,3 (R−1 , ν)
+we get for each ǫ > 0
+                                                                           X
+       d Lp (w ) ≤ (CCǫ K ǫ )logK R K 10 Cp,3 (R−1 , ν)(
+      kgdσk   BR
+                                                                                       kg[    2
+                                                                                         ∆ dσkLp (wB ) )
+                                                                                                         1/2
+                                                                                                             =
+                                                                                                     R
+                                                                           1
+                                                                     ∆:          cap
+                                                                          R1/2
+                                                             X
+                R− logν (CCǫ )+ǫ ν −10 Cp,3(R−1 , ν)(                     kg[    2
+                                                                            ∆ dσkLp (wB ) )
+                                                                                            1/2
+                                                                                                .
+                                                                                            R
+                                                              1
+                                                        ∆:          cap
+                                                             R1/2
+
+The result follows since C, Cǫ doe not depend on ν.
+   To summarize, the proof of Theorem 5.3 for n = 3 relied on the hypothesis that the
+contribution coming from caps living near the intersection of P 2 with a plane is controlled
+by Kp,2 (δ) = O(δ −ǫ ). When n ≥ 4, the hypothesis Kp,d(δ) = O(δ −ǫ ) for 2 ≤ d ≤ n−1 plays
+the same role, it controls the contribution coming from caps living near lower dimensional
+elliptic paraboloids with principal curvatures roughly 1. And of course, no such hypothesis
+is needed when n = 2. The statement and the proof of Proposition 5.6 for these values of
+n will hold without further modifications.
+
+                  6. Proof of Theorem 1.1 for the paraboloid
+
+  In this section we prove Theorem 1.1 for P n−1. We first consider the open range
+p > 2(n+1)
+      n−1
+           , and in the end of the section we prove the result for the endpoint. We use
+notation from the previous section such as Kp,n (δ), Cp,n (δ, ν) and δ = N −1 .
+  Proposition 4.1 shows that Kp,n (δ) . Kp,n (δ 1/2 )2 . Let .
+                                                    log Kp,n (δ)
+                                     γ = lim inf                 .
+                                             δ→0      log(δ −1 )
+It follows that for each ǫ
+                                δ −γ . Kp,n (δ) .ǫ δ −γ−ǫ .
+Write γ = n−1
+           4
+              − n+1
+                 2p
+                    + α. We have to show that α = 0.
+ The following multilinear restriction estimate from [3] will play a key role in our proof.
+Theorem 6.1. Let τ1 , . . . τn be ν-transverse caps on P n−1 and assume fbi is supported on
+the δ-neighborhood of τi . Then we have
+                      Yn                                    n
+                                                            Y
+                               1/n                 − 12 +ǫ
+                    k( |fi |) k n−1   2n    .ǫ,ν N         ( kfi kL2 )1/n .
+                                      L     (BN )
+                        i=1                                               i=1
+24                                 JEAN BOURGAIN AND CIPRIAN DEMETER
+
+     Using Plancherel’s identity this easily implies that
+                                                       Cp,n (δ, ν) .ǫ,ν δ −ǫ
+         2n
+for p = n−1 . Combined with the Bourgain-Guth induction on scales this further leads to
+                                                         Kp,n (δ) .ǫ δ −ǫ
+             2n
+for 2 ≤ p ≤ n−1 . These inequalities were proved in [11]. We will not rely on them in our
+argument below.
+
+  We now present the first step of our proof, which shows how to interpolate the k · kp,δ
+norms.
+Proposition 6.2. Let τ1 , . . . τn be ν-transverse caps on P n−1 and assume fbi is supported
+                                                        2n
+on the δ-neighborhood of τi . Then we have for each n−1    ≤p≤∞
+                        n
+                        Y                                                                n
+                                                                                         Y
+                                                                  n−1    n2 +n                                   1
+                                       1/n                            − 2p(n−1) +ǫ
+                   k(         |fi |)         kLp (BN ) .ǫ,ν N      4                 (         kfi k p(n−1) ,δ ) n ,                      (35)
+                                                                                                        n
+                        i=1                                                              i=1
+
+and also
+                 n X
+                 Y                                                    n
+                                                                      Y
+                                                             n
+               k[ (  |fi,θ |2 )1/2 ]1/n kLp (BN ) .ǫ,ν N − (n−1)p +ǫ ( kfi k p(n−1) ,δ )1/n .                                             (36)
+                                                                                                            n
+                 i=1 θ∈Pδ                                                                    i=1
+                                                                                         n−1                    Qn                1/n
+Proof Let us start with the proof of (35). Let λn = N 4 and F = (                                                    i=1 |fi |)         . Note
+that by Cauchy-Schwartz we have
+                                                                   n
+                                                                   Y                 1
+                                                kF k∞ ≤ λn (             kfi k∞,δ ) n .
+                                                                   i=1
+
+By combining this with Theorem 6.1 and Hölder’s inequality we find that
+                                        2n                n
+                                                          Y         2n
+                                   1− (n−1)p        n
+                                               ǫ− (n−1)p                      1− 2n        1
+                kF kLp (BN ) .ǫ,ν λn         N           ( (kfi k2(n−1)p kfi k∞,δ(n−1)p )) n .                                            (37)
+                                                                         i=1
+
+     Finally, to get (35), we use the wave packet decomposition and the fact that
+                                                  2n                2n
+                                                             1−
+                                         kf k2(n−1)p kf k∞,δ(n−1)p ∼ kf k p(n−1) ,δ
+                                                                                         n
+
+if f is a balanced N-function. We can assume kfi k p(n−1) ,δ = 1 for each i. Write like in
+                                                      n
+Lemma 3.5                               X
+                                 fi =        λfi,λ .
+                                                            λ.kfi k∞,δ
+
+We use the triangle inequality to estimate the left hand side of (35). In the following C
+will denote a large enough constant depending on n, p. As kfi,λk∞ . 1, we have that
+                                                       kfi,λkLp (BN ) ≤ N C .
+As the right hand side in (35) is & N −C , it follows that the contribution coming from
+λfi,λ with λ . N −C is well controlled.
+                            THE PROOF OF THE l2 DECOUPLING CONJECTURE                                                  25
+
+  On the other hand, recall that by Bernstein’s inequality, kfi k∞,δ . N C . This shows
+that it suffices to consider O(log δ −1 ) many terms in the triangle inequality. Each of these
+terms is dealt with by using (37), Lemma 3.4 and (30).
+  The proof of (36) is very similar. First, a randomization argument and Theorem 6.1
+imply that
+                    Yn X                                            n
+                                                                    Y
+                                   2 1/2 1/n               − 21 +ǫ
+                  k[ (      |fi,θ | ) ] k n−12n    .ǫ,ν N          ( kfi k2 )1/n .
+                                                    L     (BN )
+                        i=1 θ∈Pδ                                                      i=1
+Combining this with the trivial inequality
+                     Yn X                                     n
+                                                              Y
+                   k[ (       |fi,θ |2 )1/2 ]1/n kL∞ (BN ) ≤ ( kfi k∞,δ )1/n
+                              i=1 θ∈Pδ                                          i=1
+
+then with Hölder’s inequality gives
+        Yn X                                               n
+                                                           Y        2n
+                        2 1/2 1/n
+                                                  n
+                                              − (n−1)p +ǫ                     1− 2n
+      k[ (       |fi,θ | ) ] kLp (BN ) .ǫ,ν N             ( (kf k2(n−1)p kfi k∞,δ(n−1)p ))1/n .
+          i=1 θ∈Pδ                                                          i=1
+
+Then (36) follows from interpolation, as explained before.
+
+  At this point it is useful to introduce the local norms for g : P n−1 → C and arbitrary
+balls B                                   X
+                           d p,δ,B = (
+                          kgdσk                  kg[    2
+                                                   θ dσkLp (wB ) )
+                                                                   1/2
+                                                                       .
+                                                   θ: δ1/2 −cap
+     2n
+Fix n−1   < p < ∞. To simplify notation we also introduce the following quantities. First,
+define
+                            2                       n(np − 2n − p − 2)
+                  ξ=                   and η =                           .
+                      (p − 2)(n − 1)                 2p(n − 1)2 (p − 2)
+For a fixed 0 ≤ β ≤ 1 consider the inequality
+       Yn                                 Yn                    n
+                                                          1−β Y                           β
+            d                                 d
+    k( |gi dσ|) kLp (BN ) .ǫ,ν Aβ (N)N ( kgi dσkp,δ,BN ) ( kgd
+                1/n                     ǫ                  n
+                                                                     i dσk p(n−1) ,δ,BN ) n ,
+                                                                              n
+       i=1                                i=1                  i=1                            (38)
+for arbitrary ǫ > 0, ν, N, gi and BN as before.
+   We prove the following result.
+                                                                                                       n−1     n2 +n
+Proposition 6.3. (a) Inequality (38) holds true for β = 1 with A1 (N) = N 4 − 2p(n−1) .
+  (b) Moreover, if we assume (38) for some β ∈ (0, 1], then we also have (38) for βξ with
+                                                                            γ
+                                        Aβξ (N) = Aβ (N 1/2 )N βη+ 2 (1−βξ) .
+Proof The proof of (a) is an immediate consequence of Remark 5.2 and (35). We next
+focus on proving (b). By using Hölder’s inequality on the N 1/2 - ball ∆
+                                                                        2                   2
+
+                         kgd                        d 1− (p−2)(n−1) kgd
+                           i dσk p(n−1) ,δ1/2 ,∆ ≤ kgi dσkp,δ1/2 ,∆
+                                                                           (p−2)(n−1)
+                                                                      i dσk2,δ1/2 ,∆ ,
+                                    n
+
+we get
+              n
+              Y                                                   n
+                                                                  Y                                      1
+         k(         |gd
+                      i dσ|)
+                             1/n
+                                 kLp (∆) .ǫ,ν N ǫ Aβ (N 1/2 )(      (kgd    1−ξβ       d ξβ
+                                                                       i dσkp,δ1/2 ,∆ kgi dσk2,δ1/2 ,∆ ) n .      (39)
+              i=1                                                 i=1
+26                             JEAN BOURGAIN AND CIPRIAN DEMETER
+
+Consider a finitely overlapping cover of BN with balls ∆ of radius N 1/2 . Note that
+                    Yn                      X Y  n
+                        [     1/n
+                  k( |gi dσ|) kLp (BN ) . (    k( |gd i dσ|)
+                                                             1/n p
+                                                                kLp (∆) )1/p .       (40)
+                      i=1                                     ∆        i=1
+                                              Qn
+We will use (39) to bound each k( i=1 |gd i dσ|)
+                                                 1/n
+                                                     kLp (∆) . After raising to the pth power,
+the right hand side of (39) is summed using Hölder’s inequality
+                     X ξβp Y   n          X p         Yn X
+                                  1−ξβ
+                                       p                               1−ξβ
+                         b∆      a∆,i ≤ (
+                                    n
+                                              b∆ ) ξβ
+                                                          (     ap∆,i ) n ,               (41)
+                           ∆        i=1                      ∆              i=1        ∆
+
+with
+                                              a∆,i = kgd
+                                                       i dσkp,δ 12 ,∆
+
+and
+                                                    n
+                                                    Y                              1
+                                           b∆ = (         kgd    p
+                                                            i dσk 1 ) .
+                                                                     np
+                                                                      2,δ 2 ,∆
+                                                    i=1
+  To sum the factors ap∆,i we invoke first Minkowski’s inequality then Proposition 4.1 to
+get
+              X
+                  kgd     p
+                    i dσk 1     . kgd     p
+                                    i dσk 1     . Kp,n (δ 1/2 )p kgd    p
+                                                                   i dσkp,δ,BN .     (42)
+                                p,δ 2 ,∆                  p,δ 2 ,BN
+                  ∆
+
+We next show how to sum the factors bp∆ . Rather than using the n-linear Hölder’s inequal-
+ity followed by Minkowski’s inequality as we did with the terms ap∆,i , we first transform
+bp∆ to make it amenable to another application of Theorem 6.1.
+    To this end we recall the standard formalism (see e.g. sections 2-4 in [14]) that for each
+δ -cap θ, |g[
+  1/2
+               θ dσ| is essentially constant on each ∆. Thus, in particular it is easy to see
+that
+                X Y    n         p       X Y    n    X
+                           d
+                          kgi dσkp,δ,∆ .
+                                 n
+                                             k (          |g\      2 1 p
+                                                            i,θ dσ| ) 2n kLp (w∆ ) .
+              ∆⊂BN i=1                        ∆⊂BN           i=1   θ: δ 1/2 −cap
+                                                                        θ⊂τi
+
+                                   n
+                                   Y            X
+                                                             |g\
+                                                                             1
+                                                                             p
+                                                                      2
+                                 .k (                          i,θ dσ| ) 2n kLp (wB ) .        (43)
+                                                                                           N
+                                       i=1   θ: δ 1/2 −cap
+                                                  θ⊂τi
+
+
+Note also that by orthogonality followed by Hölder’s inequality, for each ∆
+                                                              n 1
+                                                               ( −1) d
+                          kgd                 d
+                            i dσk2,δ 21 ,∆ . kgi dσk2,δ,∆ . N
+                                                              2 2 p kg
+                                                                       i dσkp,δ,∆ .            (44)
+Now (44), (43) and (36) lead to
+                 X p                               n
+                                                   Y
+                                  n        n p
+                                         N 2 2 ( kgd
+                              − (n−1) +ǫ    (  −1)                        1/n
+                    b∆ .ǫ,ν N                        i dσk (n−1)p ,δ,BN )     .                (45)
+                                                                                           n
+                      ∆                                               i=1
+
+To end the argument simply invoke estimates (40), (41), (42) and (45).
+
+   We can now present the final stage of the proof of Theorem 1.1 for p > 2(n+1)
+                                                                           n−1
+                                                                                 . Recall
+from the beginning of this section that this amounts to proving that α = 0. Since
+                        THE PROOF OF THE l2 DECOUPLING CONJECTURE                             27
+
+p > 2(n+1)
+     n−1
+           we have that ξ < 12 . We begin with a general discussion that applies in every
+dimension n, and then conclude with an inductive argument.
+  A simple computation reveals that the inequality α > 0 is equivalent with
+                                  1−ξ     n−1    n2 + n     2η
+                             γ          >     −          +       .
+                                 1 − 2ξ    4    2p(n − 1) 1 − 2ξ
+It follows that if α > 0 we can choose s0 ∈ N large enough and ǫ0 small enough so that
+                                                 1−ξ     ξ(2ξ)s0
+                                           γ(          −         )>
+                                                1 − 2ξ   1 − 2ξ
+
+              n−1    n2 + n                2η                      n
+                  −           + 2s0 ǫ0 +        (1 − (2ξ)s0 ) +          (2ξ)s0 .           (46)
+               4    2p(n − 1)            1 − 2ξ                 (n − 1)p
+  Choose now ν0 > 0 small enough such that ǫ0 > ǫ(ν0 ), with ǫ(ν0 ) as in Theorem 5.3.
+Note that s0 , ǫ0 and ν0 depend only on the fixed parameters p, n, α. As a result, we follow
+our convention and do not record the dependence on them when using the symbol ..
+  Proposition 6.3 implies that for each s ≥ 0
+                                                               s
+                                                Aξs (N) = N ψ(ξ )
+with
+                                       1         γ
+                             ψ(ξ s+1) = ψ(ξ s ) + (1 − ξ s+1 ) + ηξ s .                     (47)
+                                       2         2
+Iterating (47) gives
+                             1                  −s         η γ 2−s − ξ s
+                       ψ(ξ s ) =
+                               ψ(1) +  γ(1  − 2    ) +  2(   − ) −1                         (48)
+                            2s                             ξ    2 ξ −2
+  Note that by Hölder’s inequality
+                  Y n                          Y n
+                                          1                          1     n
+                        d
+                 ( kgi dσk p(n−1) ,δ,BN ) n . ( kgd    i dσkp,δ,BN ) n N
+                                                                         (n−1)p .
+                                       n
+                       i=1                               i=1
+
+Combining this with (38) for β = ξ s we get
+                                                                      nξs
+                                   Cp,n (δ, ν0 ) .ǫ,s δ −ǫ Aξs (N)N (n−1)p .                (49)
+
+
+  To finish the argument, we first consider n = 2. Since (49) (with s = s0 ) holds for
+arbitrarily small δ and ǫ, using Theorem 5.3 we get
+                                            s0     nξ s0
+                                γ − ǫ0 ≤ ψ(ξ ) +          .                       (50)
+                                                 (n − 1)p
+Combining (48) and (50) we find
+            1−ξ      ξ(2ξ)s0                       2η                      n
+       γ(          −         ) ≤ ψ(1) + 2s0 ǫ0 +        (1 − (2ξ)s0 ) +          (2ξ)s0 ,
+            1 − 2ξ   1 − 2ξ                      1 − 2ξ                 (n − 1)p
+which contradicts (46), if α > 0. Thus α = 0 and Theorem 1.1 is proved for n = 2 and
+p > 6.
+28                         JEAN BOURGAIN AND CIPRIAN DEMETER
+
+  The higher dimensional proof follows by induction. Assume that n ≥ 3 and that
+Theorem 1.1 was proved for all 2 ≤ d ≤ n − 1 when p > 2(d+1)
+                                                          d−1
+                                                              . To prove Theorem 1.1 in
+            2(n+1)                          2(n+1)        2n
+Rn for p > n−1 , it suffices to prove it for n−1 < p < n−2 . Note that in this range we
+have p < 2(d+1)
+           d−1
+                 for each 2 ≤ d ≤ n − 1 and thus Theorem 5.3 is applicable, due to the
+induction hypothesis. To finish the argument, one applies the same reasoning as in the
+case n = 2, to conclude that α > 0 leads to as contradiction.
+
+  It remains to see why Theorem 1.1 holds for the endpoint p = pn = 2(n+1) n−1
+                                                                               . Remark 5.2
+shows that it suffices to investigate the best constant in the localized inequality
+                                                   X
+                                          (3)
+                          kf kLp (BN ) ≤ Kp,n (δ)(   kfθ k2Lp (Rn ) )1/2 ,             (51)
+                                                      θ∈Pδ
+
+for each N-ball BN . It suffices now to invoke Theorem 1.1 for p > 2(n+1)
+                                                                    n−1
+                                                                          together with
+                                                 n    n
+                 kf kLpn (BN ) . kf kLp (BN ) N pn − p      (by Hölder’s inequality)
+                               n+1   n+1
+             kfθ kLp (Rn ) . N 2p − 2pn kfθ kLpn (Rn ) (by Bernstein’s inequality),
+and then to let p → pn .
+
+                        7. Extension to other hypersurfaces
+   Let S be a compact C 2 hypersurface in Rn with positive definite second fundamental
+form. Recall that we have proved Theorem 1.1 for P n−1 . By rescaling, the proof extends
+to elliptic paraboloids of the form
+                                                            2
+                 {(ξ1, . . . , ξn−1, θ1 ξ12 + . . . + θn−1 ξn−1 ) ∈ Rn : |ξi | ≤ 1/2},
+with θi ∈ [C −1 , C]. The implicit bounds will of course depend on C > 0.
+   We now show how to extend the result in Theorem 1.1 to S as above. It suffices to
+prove the result for p = 2(n+1)
+                           n−1
+                                 . We can assume that all the principal curvatures of S are
+     −1
+in [C , C].
+   The following argument is sketched in [20] and was worked out in detail for conical
+surfaces in [27]. For δ < 1, let as before Kp (δ) be the smallest constant such that for each
+f with Fourier support in Nδ we have
+                                                 X
+                                 kf kp ≤ Kp (δ)(     kfθ k2p )1/2 .
+                                                     θ∈Pδ
+
+Fix such an f . First, note that
+                                                2
+                                                      X
+                                kf kp ≤ Kp (δ 3 )(             kfτ k2p )1/2 .
+                                                     τ ∈P 2
+                                                          δ3
+
+Second, our assumption on the principal curvatures of S combined with Taylor’s formula
+shows that on each τ ∈ Pδ 32 , S is within δ from a (subset of a) paraboloid with similar
+principal curvatures. By invoking Theorem 1.1 for this paraboloid we get
+                                               X
+                              kfτ kp .ǫ δ −ǫ (     kfθ k2p )1/2 .
+                                                 θ∈Pδ :θ⊂τ
+                        THE PROOF OF THE l2 DECOUPLING CONJECTURE                                        29
+
+For each ǫ > 0, we conclude the existence of Cǫ such that for each δ < 1
+                                                                     2
+                                          Kp (δ) ≤ Cǫ δ −ǫ Kp (δ 3 ).
+By iteration this immediately leads to Kp (δ) .ǫ δ −ǫ .
+                                    8. Proof of Theorem 1.2
+  To simplify notation we present the argument for n = 3. Define the extension operator
+                                  Z                               q
+            ER g(x1 , x2 , x3 ) =   g(ξ1, ξ2 )e(x1 ξ1 + x2 ξ2 + x3 ξ12 + ξ22 )dξ1 dξ2
+                                      R
+for a subset R of the annulus
+                                                          q
+                                A1 = {(ξ1 , ξ2) : 1 ≤           ξ12 + ξ22 ≤ 2}.
+It will suffice to prove that
+                                                       X
+                           kEA1 gkL6(BN ) .ǫ N ǫ (              kES gk2L6 (wB ) )1/2 ,                 (52)
+                                                                              N
+                                                      S⊂A1
+
+where the sum is over a tiling of A1 into sectors S of length 1 and aperture N −1/2 . The idea
+behind the proof is rather simple, we will apply the decoupling inequality from Theorem
+                           2
+1.1 to the parabola (ξ, ξ2 ). The observation that makes this application possible is the
+fact that                            q
+                                                         ξ2
+                                   |( ξ12 + ξ22 − ξ1 ) − 2 |
+                                                         2
+is “small” if ξ1 is “close” to 1 and ξ2 is “close” to 0. It remains to quantify the meaning
+of “small” and “close”.
+   The key step is the following partial decoupling for a “significant” subset of the cone.
+Proposition 8.1. Fix ν, µ > 0 such that 2µ + ν ≤ 1 and 2µ ≥ ν. Given intervals
+I ⊂ [1, 2] and J ⊂ (−π/2, π/2) of lengths N −ν and N −µ respectively, consider the sector
+                                       q
+                                                                 ξ2
+                     S = {(ξ1 , ξ2 ) :  ξ12 + ξ22 ∈ I, arctan( ) ∈ J}
+                                                                 ξ1
+            −ν                −µ
+of length N and aperture N . We have for each ǫ > 0
+                                                X
+                      kES gkL6 (wBN ) .ǫ N νǫ (     kES ′ gk2L6(wB ) )1/2 ,
+                                                                               N
+                                                       S ′ ⊂S
+                                                                                                         ν
+where the sum runs over a tiling of S into sectors S ′ of length N −ν and aperture ∼ N −µ− 2 .
+Proof Due to rotational and radial symmetry it suffices to assume I = [1, 1 + N −ν ] and
+J = [N −µ , 2N −µ ]. Moreover, we may also assume that ξ1 > 0, which implies in particular
+that
+                               |1 − ξ1 | . N −ν , |ξ22| ∼ N −2µ .
+Note that for each function F = F (x1 , x2 , x3 ) we have
+                       1
+     kF kL6 (wBN ) ∼ 1/3 kkF (x1 − y3 , x2 + y2 , x3 + y3 )kL6y2 ,y3 (w[−N,N]2 ) kL6x1 ,x2 ,x3 (wBN ) .
+                      N                                                                                 (53)
+We apply this to
+                                   F (x1 , x2 , x3 ) = ES g(x1 , x2 , x3 ).
+30                             JEAN BOURGAIN AND CIPRIAN DEMETER
+
+Fix (x1 , x2 , x3 ) ∈ BN and evaluate the inner L6 norm in (53) using the change of variables
+                                                      q
+                            (ξ1 , ξ2) 7→ (η, ξ2 ) := ( ξ12 + ξ22 − ξ1 , ξ2 ),
+whose Jacobian J(η, ξ2) is nonzero. We get
+ Z                              q                       q
+k g(ξ1, ξ2 )e(x1 ξ1 + x2 ξ2 + x3 ξ1 + ξ2 )e(y2 ξ2 + y3 ( ξ12 + ξ22 − ξ1 ))dξ1 dξ2kL6y2 ,y3 (w[−N,N]2 )
+                                  2    2
+     S
+                               Z
+                          =k           h(η, ξ2)e(y2 ξ2 + y3 η)dηdξ2kL6y2 ,y3 (w[−N,N]2 ) ,
+
+for some appropriate function h. Note that if (ξ1 , ξ2 ) ∈ S
+                                          p
+                          ξ22    ξ22 (ξ1 + ξ12 + ξ22 − 2)
+                     |η − | = |            p               | . N −2µ−ν .
+                          2          2(ξ1 + ξ12 + ξ22 )
+It follows that the support of h is inside the δ ∼ N −2µ−ν neighborhood of the parabola
+                                                  ξ22
+                                                {( , ξ2), ξ2 ∼ N −µ }.
+                                                  2
+We can now invoke the parabolic rescaling Proposition 4.1 and Theorem 1.1 with f = b
+                                                                                   h
+to conclude that
+                    Z
+                   k h(η, ξ2)e(y2 ξ2 + y3 η)dηdξ2kL6y2 ,y3 (w[−N,N]2 ) .ǫ
+
+                        X              Z
+                ǫν
+              N (                  k            h(η, ξ2 )e(y2 ξ2 + y3 η)dηdξ2k2L6y ,y (w               )1/2 .
+                                                                                   2   3   [−N,N]2 )
+                               ν        ξ2 ∈H
+                     |H|=N −µ− 2
+
+The conclusion of our proposition follows now by changing back to the original variables,
+using Minkowski’s inequality and (53).
+     By iterating this proposition we get the following result.
+Proposition 8.2. Fix ν = M1 , with M ≥ 2 an integer. Given intervals I ⊂ [1, 2] and
+                                           ν
+J ⊂ (−π/2, π/2) of lengths N −ν and N − 2 respectively, consider the sector
+                                       q
+                                                              ξ2
+                     S = {(ξ1 , ξ2 ) :  ξ12 + ξ22 ∈ I, arctan( ) ∈ J}
+                                                              ξ1
+                                            ν
+of length N −ν and aperture N − 2 . We have
+                                                            X
+                             kES gkL6 (BN ) .ǫ N ǫ (             kE∆ gk2L6 (wB ) )1/2 ,
+                                                                               N
+                                                           ∆⊂S
+                                                                                                                1
+where the sum runs over a tiling of S into sectors ∆ of length N −ν and aperture ∼ N − 2 .
+Proof Apply repeatedly Proposition 8.1 with µ = µj = j ν2 staring with j = 1 until
+j = M − 1.
+
+  We are left with proving that inequality (52) follows from this proposition. First, note
+                                3ν                                            ν
+that A1 can be tiled using ∼ N 2 sectors S of length N −ν and aperture N − 2 . Call this
+                        THE PROOF OF THE l2 DECOUPLING CONJECTURE                                      31
+
+collection Lν . Thus, by using the Cauchy-Schwartz inequality and invoking the above
+proposition, we get for arbitrary ǫ > 0
+                                           3ν
+                                               X
+                        kEA1 gkL6(BN ) . N 4 (   kES gk2L6(BN ) )1/2
+                                                        S∈Lν
+
+                                          3ν
+                                               X
+                                 .ǫ N ǫ+ 4 (          kE∆ gk2L6 (wB ) )1/2 ,                         (54)
+                                                                    N
+                                               ∆⊂A1
+                                                                                                       1
+where the sum runs over a tiling of A1 into sectors ∆ of length N −ν and aperture ∼ N − 2 .
+We also observe the following easy inequality
+                                 kE∆ gkL6 (wBN ) . kES ′ gkL6 (wBN ) ,                               (55)
+where S ′ is the sector in A1 of length 1 and aperture N −1/2 containing ∆. Note that
+no curvature is involved in this estimate, as the N −1 neighborhood of ∆ is essentially a
+rectangular parallelepiped. Since each such S ′ contains N ν sectors ∆, we conclude by
+combining (54) and (55) that
+                                           3ν   ν
+                                                    X
+                    kEA1 gkL6 (BN ) .ǫ N ǫ+ 4 + 2 (   kES ′ gk2L6 (wB ) )1/2 .
+                                                                               N
+                                                         S ′ ⊂A1
+
+Inequality (52) now follows by choosing ν appropriately small.
+
+                                               References
+ [1] Appelbaum, R. and Sharir, M. Repeated angles in three and four dimensions, SIAM J. Discrete
+     Math. 19 (2005), no. 2, 294-300 (electronic)
+ [2] Békollé, D; Bonami, A.; Garrigós, G. and Ricci, F. Littlewood-Paley decompositions related to sym-
+     metric cones and Bergman projections in tube domains, Proc. London Math. Soc. (3) 89 (2004),
+     317-360
+ [3] Bennett, J., Carbery, A. and Tao, T. On the multilinear restriction and Kakeya conjectures Acta
+     Math. 196 (2006), no. 2, 261-302
+ [4] Boklan, K., D. The asymptotic formula in Waring’s problem Mathematika 41 (1994), no. 2, 329-347
+ [5] Bombieri, E. and Iwaniec, H. On the order of ζ( 12 + it) Ann. Scuola Norm. Sup. Pisa Cl. Sci. (4) 13
+     (1986), no. 3, 449-472.
+ [6] Bombieri, E. and Iwaniec, H. Some mean-value theorems for exponential sums Ann. Scuola Norm.
+     Sup. Pisa Cl. Sci. (4) 13 (1986), no. 3, 473486
+ [7] Bombieri, E. and Bourgain, J. A problem on sums of two squares, to appear in Internat. Math. Res.
+     Notices
+ [8] Bourgain, J. Eigenfunction bounds for the Laplacian on the n-torus, Internat. Math. Res. Notices
+     (1993), no. 3, 61-66.
+ [9] Bourgain, J. On Strichartzs inequalities and the nonlinear Schrödinger equation on irrational tori,
+     Mathematical aspects of nonlinear dispersive equations, 1-20, Ann. of Math. Stud., 163, Princeton
+     Univ. Press, Princeton, NJ, 2007
+[10] Bourgain, J. Fourier transform restriction phenomena for certain lattice subsets and applications to
+     nonlinear evolution equations. I. Schrödinger equations, Geom. Funct. Anal. 3 (1993), no. 2, 107-156
+[11] Bourgain, J. Moment inequalities for trigonometric polynomials with spectrum in curved hypersur-
+     faces, Israel J. Math. 193 (2013), no. 1, 441-458.
+[12] Bourgain, J. and Demeter, C. Improved estimates for the discrete Fourier restriction to the higher
+     dimensional sphere, Illinois J. Math. 57 (2013), no. 1, 213-227
+[13] Bourgain, J. and Demeter, C. New bounds for the discrete Fourier restriction to the sphere in four
+     and five dimensions, preprint available on arXiv, to appear in Internat. Math. Res. Notices
+32                            JEAN BOURGAIN AND CIPRIAN DEMETER
+
+[14] Bourgain, J. and Guth, L. Bounds on oscillatory integral operators based on multilinear estimates
+     Geom. Funct. Anal. 21 (2011), no. 6, 1239-1295
+[15] de la Bretèche, R. Répartition des points rationnels sur la cubique de Segre (French) [Distribution of
+     rational points on Segre’s cubic] Proc. Lond. Math. Soc. (3) 95 (2007), no. 1, 69-155
+[16] Carbery, A. and Valdimarsson, S. I. The endpoint multilinear Kakeya theorem via the Borsuk-Ulam
+     theorem J. Funct. Anal. 264 (2013), no. 7, 1643-1663
+[17] Catoire, F. and Wang, W.-M. Bounds on Sobolev norms for the defocusing nonlinear Schrödinger
+     equation on general flat tori, Commun. Pure Appl. Anal. 9 (2010), 483-491.
+[18] Demeter, C. Incidence theory and discrete restriction estimates, available at arXiv:1401.1873
+[19] Demirbas, S. Local well-posedness for 2-d Schrödinger equation on irrational tori and bounds on
+     Sobolev norms, arXiv:1307.0051
+[20] Garrigós, G. and Seeger, A. A mixed norm variant of Wolff ’s inequality for paraboloids, Harmonic
+     Analysis and Partial Differential Equations, Contemporary Mathematics, vol. 505, Amer. Math.
+     Soc., Providence, RI, 2010, pp. 179-197
+[21] Garrigós, G. and Seeger, A. On plate decompositions of cone multipliers Proc. Edinb. Math. Soc. (2)
+     52 (2009), no. 3, 631-651
+[22] Greaves, G. Some Diophantine equations with almost all solutions trivial, Mathematika 44 (1997),
+     no. 1, 14-36
+[23] Guo, Z., Oh, T., Wang, Y. Strichartz estimates for Schödinger equations on irrational tori,
+     arXiv:1306.4973
+[24] Guth, L. The endpoint case of the Bennett-Carbery-Tao multilinear Kakeya conjecture, Acta Math.
+     205 (2010), no. 2, 263-286
+[25] Jarnı́k, V. Über die Gitterpunkte auf konvexen Kurven, Math. Z. 24 (1926), pp 500-518
+[26] Pach, J. and Sharir, M. Repeated angles in the plane and related problems, J. Combin. Theory Ser.
+     A, 59 (1992), pp. 12-22.
+[27] Pramanik, M. and Seeger, A. Lp regularity of averages over curves and bounds for associated maximal
+     operators, Amer. J. Math. 129 (2007), no. 1, 61-103
+[28] Robert, O. and Sargos, P. Un théorème de moyenne pour les sommes d’exponentielles. Application
+     l’inégalité de Weyl. (French) [A mean value theorem for exponential sums. Application to the Weyl
+     inequality] Publ. Inst. Math. (Beograd) (N.S.) 67(81) (2000), 14-30
+[29] Skinner, C. M. and Wooley, T. D. On the paucity of non-diagonal solutions in certain diagonal
+     Diophantine systems Quart. J. Math. Oxford Ser. (2) 48 (1997), no. 190, 255-277
+[30] Sogge, C. Propagation of singularities and maximal functions in the plane, Invent. Math. 104 (1991),
+     349-376
+[31] Szemerédi, E. and Trotter, W. T. Jr. Extremal problems in discrete geometry, Combinatorica 3
+     (1983), no. 3-4, 381-392
+[32] Tao, T. and Vu, V. Additive combinatorics, Cambridge Studies in Advanced Mathematics, 105.
+     Cambridge University Press, Cambridge, 2006. xviii+512 pp.
+[33] Tao, T. A sharp bilinear restriction estimate for paraboloids, Geom. Funct. Anal. 13 (2003), no. 6,
+     1359-1384
+[34] Tomas, P. A. A restriction theorem for the Fourier transform. Bull. Amer. Math. Soc. 81 (1975),
+     477-478
+[35] Vaughan, R. C.; Wooley, T. D. On a certain nonary cubic form and related equations, Duke Math.
+     J. 80 (1995), no. 3, 669-735
+[36] Wolff, T. Local smoothing type estimates on Lp for large p, Geom. Funct. Anal. 10 (2000), no. 5,
+     1237-1288
+
+     School of Mathematics, Institute for Advanced Study, Princeton, NJ 08540
+     E-mail address: bourgain@math.ias.edu
+
+  Department of Mathematics, Indiana University, 831 East 3rd St., Bloomington IN
+47405
+  E-mail address: demeterc@indiana.edu
+

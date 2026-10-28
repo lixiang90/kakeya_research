@@ -1,0 +1,1864 @@
+                                                   A NEW BOUND FOR THE GAUSS CIRCLE PROBLEM
+
+                                                         XI CEN, XITAO GAO, CHENG ZHANG, AND JUNYONG ZHANG
+
+
+                                                  Abstract. Let E(X) = #{(a, b) ∈ Z2 : a2 + b2 ≤ X} − πX. We prove that
+                                                  E(X) = Oε (X 209/670+ε ) for every ε > 0, uniformly for real X ≥ 4. This breaks
+arXiv:2610.21730v1 [math.NT] 15 Oct 2026
+
+
+
+
+                                                  the 5/16 threshold suggested by Huxley as a possible limit of the Bombieri–Iwaniec
+                                                  method at the time. The proof introduces two refinements: a cone distribution
+                                                  estimate that preserves separate fourth- and sixth-power contributions in the double
+                                                  large sieve, and an explicit inversion of Taylor-coefficient constraints that cancels
+                                                  the linear error in a pair-counting argument. These refinements, together with the
+                                                  Robert–Sargos and Watt spacing estimates and the Vinogradov mean value theorem,
+                                                  yield the improvement.
+
+
+
+
+                                                                                 1. Introduction
+                                           1.1. Main result. For real X ≥ 0, define the circle remainder by
+                                                                  E(X) = #{(a, b) ∈ Z2 : a2 + b2 ≤ X} − πX,
+                                           where Z denotes the integers and # the cardinality of a finite set. The Gauss circle
+                                           problem asks for the sharp pointwise bound on E(X). Gauss’s geometric argument
+                                           gives E(X) = O(X 1/2 ) [9, p. 280], whereas the conjectured bound is Oε (X 1/4+ε ).
+                                           Successive improvements have been closely tied to the development of exponential-sum
+                                           methods [1, 10, 24, 31]. For nonnegative A, B, we write A ≲ B if A ≤ CB for a constant
+                                           C > 0. A subscript indicates the permitted dependence of C. Our main result is the
+                                           following.
+                                           Theorem 1.1. For every ε > 0 and every real X ≥ 4,
+                                                                               |E(X)| ≲ε X 209/670+ε .
+                                             Theorem 1.1 improves the exponent 0.3144831759741 . . . of Li and Yang [39] and
+                                           breaks the 5/16 threshold:
+                                                                                209    5       3
+                                                                                    =     −       .
+                                                                                670    16 5360
+                                           Huxley [20, p. 280] suggested this threshold as a possible limit of the Bombieri–Iwaniec
+                                           method at the time. See also Popov [45, p. 914], [46, p. 55] and Li and Yang [39, end of
+                                           Section 1].
+                                             The improvement uses two complementary refinements. From Guth–Maldague’s
+                                           amplitude-dependent estimate [11, Theorem 2], we obtain a distribution estimate for
+                                           cone exponential sums whose fourth- and sixth-power terms remain separate through the
+                                           double large sieve, rather than first passing to a single moment estimate (Theorem 6.1).
+                                           In the complementary range, explicit inversion of the Taylor-coefficient constraints
+                                             2020 Mathematics Subject Classification. 11P21, 11L07, 42B20.
+                                             Key words and phrases. Gauss circle problem, exponential sums, decoupling, spacing estimates.
+                                                                                           1
+2                        X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+cancels the linear error and yields a pair count of diagonal size, up to arbitrarily
+small power losses (Proposition 3.1). Together these refinements give 209/670 without
+strengthening Watt’s second-spacing bound [60, Lemma 8.2].
+
+1.2. Historical upper bounds. The table records pointwise bounds E(X) =
+Oε (X θ+ε ), including independent proofs as well as exponent improvements. All expo-
+nents use the squared radius X, so the corresponding radius exponent is 2θ. Logarithmic
+losses are suppressed. Dates are publication dates, except for the marked preprint. For
+early methods and historical accounts, see [1, 31, 56–58, 61].
+    Work                                                 Year        Exponent in X
+    Sierpiński [49]                                     1906             1/3
+    Landau [34, 35]                                      1912–1913        1/3
+    Van der Corput [55]                                  1923           33/100
+    Littlewood–Walfisz, Landau [40]                      1924           37/112
+    Hardy [15]                                           1925           37/112
+    Walfisz [59]                                         1927          163/494
+    Nieland (van der Corput’s method) [42]               1928            27/82
+    Titchmarsh [52]                                      1934           15/46
+    Hua [18]                                             1942           13/40
+    Yin, with Chen’s correction [62]                     1962           12/37
+    Chen [5]                                             1963           12/37
+    Nowak [43]                                           1984           35/108
+    Kolesnik [30]                                        1985          139/429
+    Iwaniec–Mozzochi [25]                                1988            7/22
+    Huxley [20]                                          1993            23/73
+    Huxley [22]                                          2003          131/416
+    Li–Yang [39] (preprint)                              2023      0.3144831759 . . .
+    Theorem 1.1                                                        209/670
+   Several advances arose first in the divisor problem. Kolesnik obtained the exponents
+12/37, 346/1067 and 35/108 in 1969, 1973 and 1982, respectively [27–29]. Nowak
+[43] transferred the last of these to the circle problem through divisors in arithmetic
+progressions. Kolesnik’s later exponent-pair refinement gave 139/429 [30].
+   The Bombieri–Iwaniec method [2], adapted to the circle and divisor problems by
+Iwaniec–Mozzochi [25], introduced a new approach based on rational approximation
+and the double large sieve. It reduces the exponential sums to first- and second-spacing
+problems. Huxley’s development of this method [19–22] culminated in [22, 24]
+                                                       
+                  E(X) = O X 131/416 (log X)18637/8320        (X ≥ 4).
+
+  Bourgain–Watt [4] connected the first-spacing problem with decoupling for perturbed
+cones. Li–Yang [39] then combined Guth–Maldague’s small-cap decoupling theorem [11]
+with second-spacing estimates to improve Huxley’s exponent.
+
+1.3. Lower bounds and conjectures. Write log for the natural logarithm and, for
+sufficiently large X, log2 X = log log X and log3 X = log log log X. For a positive
+function G, the notation E(X) = Ω(G(X)) means lim supX→∞ |E(X)|/G(X) > 0.
+Replacing |E| by E or −E defines Ω+ or Ω− , respectively. We write Ω± when both
+                                 GAUSS CIRCLE PROBLEM                                    3
+
+signs hold. Hardy [13, 14] and Landau [36] established the X 1/4 scale of oscillation. In
+particular, Hardy proved
+                 E(X) = Ω± (X 1/4 ),     E(X) = Ω− (X log X)1/4 .
+                                                                    
+
+Thus E(X) = O(X 1/4 ) is false, but the following power bound is expected.
+Conjecture 1.1 (Hardy’s conjecture). For every ε > 0 and every real X ≥ 4,
+                                   |E(X)| ≲ε X 1/4+ε .
+  Further lower-bound methods were developed by Ingham [23] and Gangadharan [8].
+Corrádi–Kátai [6] and Hafner [12] proved, respectively, that for some constants c, C > 0,
+                                                              
+             E(X) = Ω+ X 1/4 exp c(log2 X)1/4 (log3 X)−3/4 ,
+                                                                p       
+             E(X) = Ω− (X log X)1/4 (log2 X)(log 2)/4 exp −C log3 X .
+For X > exp(1), set
+                                                         3   1/3 −1)
+                         L(X) = (X log X)1/4 (log2 X) 4 (2             .
+Soundararajan [50, Theorem 1] obtained
+                                                 
+                         E(X) = Ω L(X)(log3 X)−5/8 .
+Sourmelidis [51] and Mahatab [41] independently improved the exponent −5/8 to −3/8
+by the resonance method. Lamzouri [33, Theorem 1.1] removed the remaining log3 X
+loss and determined a sign:                         
+                                 E(X) = Ω− L(X) .
+This reaches the scale predicted by [32, Conjecture 1.7].
+Conjecture 1.2 (Lamzouri’s maximal-order conjecture). There are constants c1 , c2 > 0
+such that, for either sign and all sufficiently large X,
+                         c1 L(X) ≤    sup (±E(x)) ≤ c2 L(X).
+                                     X≤x≤2X
+
+   This implies Conjecture 1.1. The negative Ω-result concerns an unbounded sequence
+of arguments, not both signs on every dyadic interval as required here.
+1.4. Mean values and distribution. Cramér [7] established a mean-square asymptotic
+with a positive leading constant. Its remainder was improved by Landau [37], Walfisz [59]
+and Kátai [26]. Preissmann [47] gave a shorter proof of Kátai’s estimate. Nowak [44]
+proved that, for some C > 0,
+                   Z X                                             
+                       E(t)2 dt = CX 3/2 + O X(log X)3/2 log log X .
+                   0
+
+This supports the X 1/4 scale of typical fluctuations, but does not control the maximal
+order. Heath-Brown [17] studied limiting distributions and moments, and Tsang [53]
+obtained higher-moment asymptotics. Lester–Wigman [38] examine correlations of
+lattice points near circles, while Lamzouri [32] studies large deviations of the circle
+remainder.
+4                         X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+1.5. Notation. We write N = {1, 2, . . .}. For z ∈ C and t ∈ R, set
+                          e(z) = exp(2πiz),         ∥t∥ = min |t − j|.
+                                                              j∈Z
+
+For a set U, 1U is its indicator. The floor and ceiling are characterized by ⌊t⌋ ≤ t < ⌊t⌋+1
+and ⌈t⌉ − 1 < t ≤ ⌈t⌉, and {t} = t − ⌊t⌋ is the fractional part.
+                                                               P Sums overP     real intervals
+run over their integer points. Unless stated otherwise, n≤Y means 1≤n≤Y , and
+P
+   d|n runs over the positive divisors of n ∈ N. We write n ≈ M for M ≤ n < 2M . A
+dyadic scale is 2j , j ∈ Z, unless another base is specified. Each dyadic interval may be
+intersected with an arbitrary interval, with either endpoint included or excluded.
+   For nonnegative A, B, write A ≂ B if A ≲ B ≲ A, and A ≳ B if B ≲ A. The notation
+A ∼ B is reserved for asymptotic equivalence, meaning A/B → 1 in the specified limit.
+The notation O(B) denotes a quantity of modulus ≲ B. Subscripts on O and ≲ have the
+same meaning. Every estimate involving ε holds for each ε > 0. Positive constants c, C
+may change from line to line and may depend on fixed hypotheses, but not on varying
+parameters. Parameters are local to a statement or proof unless explicitly retained for
+later sections.
+   For a complex-valued function b on an interval I, set
+                                                                     j
+                                                                     X
+         ∥b∥∞,I = sup |b(x)|,        VarI (b) =         sup                |b(xi ) − b(xi−1 )|.
+                    x∈I                                  j≥1         i=1
+                                                  x0 <···<xj , xi ∈I
+
+These use pointwise values, including values at discontinuities. For integers u ≤ v and a
+finite sequence b = (bn )vn=u , set
+                                                              v−1
+                                                              X
+                    ∥b∥∞ = max |bn |,         Var(b) =              |bn+1 − bn |.
+                             u≤n≤v
+                                                              n=u
+
+For a measurable set U ⊆ Rd , d ∈ N, let |U| denote its Lebesgue measure. For a
+measurable box B ⊆ Rd of positive finite volume and 1 ≤ q < ∞, write
+                                              Z              1/q
+                                             1            q
+                            ∥f ∥Lq (B) =           |f (x)| dx      .
+                                 #          |B| B
+On Rd , ∥f ∥q denotes the usual Lebesgue norm. For x, ξ ∈ Rd , write x · ξ = di=1 xi ξi ,
+                                                                                     P
+|x|∞ = max1≤i≤d |xi |, and let |x| be the Euclidean norm. Set T = R/Z, with Lebesgue
+measure of total mass one. For integrable f, g on Rd and an integrable one-periodic
+function v, our Fourier and convolution conventions are
+                   Z                                           Z
+           f (ξ) =
+           b           f (x)e(−x · ξ) dx,       (f ∗ g)(x) =       f (x − y)g(y) dy,
+                    Rd                                          Rd
+                                    Z 1
+                           vb(j) =      v(t)e(−jt) dt       (j ∈ Z).
+                                     0
+For v : U → C and λ > 0, {|v| > λ} = {x ∈ U : |v(x)| > λ}. For a matrix A, AT is its
+transpose and, when A is invertible, A−T = (A−1 )T . We write S (Rd ) for the Schwartz
+class and supp v for the support of v. Logarithmic factors are absorbed into arbitrarily
+small power losses using
+                    (log(2T ))A ≤ CA,ε T ε        (A ≥ 0, ε > 0, T ≥ 2).
+                                  GAUSS CIRCLE PROBLEM                                    5
+
+1.6. The reciprocal-sum estimate. Let T ≥ 2, H ≥ 1, 1 ≤ M ≤ T 1/2 , and let
+α, κ ∈ R satisfy |α| ≤ 1/4 and |κ| ≤ 1. Let g, G : [1, 2] → C satisfy
+              ∥g∥∞,[1,2] + Var[1,2] (g) ≤ 1,   ∥G∥∞,[1,2] + Var[1,2] (G) ≤ 1.
+Define F (z) = 1/[4(z + α)] + κ for z > −α, and put
+                                                              
+                        X             X             hT
+                    S=       g(h/H)      G(n/M )e      F (n/M ) .                     (1.1)
+                                                    M
+                         h≈H           n≈M
+Each dyadic block may be intersected with an arbitrary interval, with either endpoint
+included or excluded. Set
+                             209           7         123
+                          β=     ,    s= β−1=             .
+                             670           2         1340
+Theorem 1.2. For every ε > 0, uniformly for this family,
+                   |S| ≲ε HT β+ε ,       1 ≤ H ≤ M T −β ,   M ≤ T 1/2 .               (1.2)
+   Define logT x = (log x)/(log T ) for x > 0, and set
+                 HT           HT
+             ρ=      , U=         , p = logT ρ, m = logT M, τ = 1 − p.              (1.3)
+                 M            M2
+Thus H = T m+p−1 , U = T p−m , ρ2 = T HU , and U/H = T /M 2 ≥ 1. The definitions
+in this subsection are retained throughout Sections 2–5. Constants in estimates for
+(1.1) are independent of T, H, M, α, κ, the weights and the interval endpoints. Auxiliary
+estimates may depend on their stated comparison constants and, when indicated, on
+ε or the dimension. In these sections, o(1) refers to T → ∞, uniformly in the stated
+parameter region. Other limits are specified explicitly. For fixed T0 ≥ 2, the range
+                                           1/2
+2 ≤ T ≤ T0 follows from |S|/H ≲ M ≤ T0 .
+1.7. Proof outline. It suffices to prove Theorem 1.2. Section 2 makes this reduction
+using the classical circle-problem identity [10, proof of Theorem 4.8] and Vaaler’s
+approximation [54, Theorem 18]. Classical exponent pairs cover H ≤ T s or p ≤ 42/67.
+The remaining region is
+                                            42
+                             H > T s,           ≤ p ≤ 1 − β,
+                                            67
+which we divide at p = 43/67.
+                               √ pair count. For 42/67 ≤ p ≤ 43/67, a van der Corput
+   The middle range: an explicit
+transformation gives the phase T hq − M αq, with h ≈ H and U/100 ≤ q ≤ 2U . Choose
+J = ⌈T 36/67 /M ⌉. Let B be the ordered-pair count in (3.3), which retains only the
+fourth, fifth and sixth Taylor coefficients. Taylor expansion through degree six, the
+degree-five Vinogradov mean value theorem [3, Theorem 1.1], and the double large sieve
+give                        "                                      #
+                                                    1/30
+                  |S|                             B          M J
+                      ≲ε T ε (T ρ8 (M J)6 )1/30            + √ +1
+                   H                              HU           ρ
+by Lemma 3.1. The key estimate is B ≲ε HU T ε . Section 4 proves it by solving the
+coefficient constraints for the difference of the two h variables. The linear error cancels,
+leaving a quadratic error small enough for Fourier expansion. A further van der Corput
+transformation factors the phase into two functions, each depending on a different pair
+6                       X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+of integer variables. The Robert–Sargos estimates [48] then control both spacing counts.
+This yields Proposition 3.1. Since M J ≂ T 36/67 ,
+                                                            MJ
+              (T ρ8 (M J)6 )1/30 ≲ T (1+8p+6(36/67))/30 ,   √ ≲ T 15/67 .
+                                                             ρ
+The cancellation makes this shift length compatible with a pair count of diagonal size.
+   The larger range: a distributional first-spacing estimate. For 43/67 ≤ p ≤ 1 − β,
+Section 5 applies a Farey dissection, two van der Corput transformations, and Watt’s
+second-spacing bound [60, Lemma 8.2]. The new input is Theorem 6.1, proved in
+Section 6 from Guth–Maldague’s amplitude-dependent estimate [11, Theorem 2] and
+an integer count using exact equalities in two Fourier coordinates. Small angular scales
+yield the fourth-power term in (6.2), while the amplitude-dependent selection of larger
+scales yields the sixth-power term. Keeping these terms separate in the distributional
+double large sieve of Appendix B gives Lemma 5.1. The resulting denominator powers
+are summable, and the interval lengths in (5.1) give |S|/H ≲ε T β+ε .
+   At p = 43/67, the middle-range exponent and the first exponent in (5.5) agree:
+                 1 + 8(43/67) + 6(36/67)   10 − 43/67   209  5
+                                         =            =     < .
+                           30                  30       670  16
+The auxiliary summation and counting results are collected in Appendix A. All reduc-
+tions retain bounded-variation weights and arbitrary interval endpoints, as required to
+recover E(X).
+
+             2. The main theorem: reduction to two estimates
+  We first apply the classical circle-problem reduction, then isolate the two ranges not
+covered by classical exponent pairs.
+
+2.1. Reduction to reciprocal sums.
+Proposition 2.1. Theorem 1.2 implies Theorem 1.1.
+Proof. For t ∈ R, set ψ(t) = t − ⌊t⌋ − 1/2, and fix a nonintegral X ≥ 4. The classical
+reduction [10, proof of Theorem 4.8], followed by dyadic subdivision, expresses E(X),
+up to O(1), as a linear combination with coefficients ±4 of O(log X) sums
+               X X                                                 √
+                                   
+                    ψ     F (n/M ) ,       I ⊆ [M, 2M ], 1 ≤ M ≤ X,
+                        M
+              n∈I∩Z
+
+where I is an interval and F is as in (1.1), with
+                                                      
+                                         1             M
+                         (α, κ) ∈    ±      , 0 , 0, ±       .
+                                        4M             4X
+Thus the four arguments are exactly X/(4n ± 1) and X/(4n) ± 1/4. These are the
+four residue-class and sawtooth phases in the cited circle reduction. This identifies
+that standard reduction with the reciprocal family (1.1) without adding a new analytic
+input. The pointwise Vaaler majorant applies to the convention ψ(t) = {t} − 1/2 used
+                                 GAUSS CIRCLE PROBLEM                                      7
+
+here, including integral arguments. For any integer J ≥ 2, Vaaler’s approximation [54,
+Theorem 18] and partial summation in h give
+         X X                
+              ψ     F (n/M )
+                 M
+       n∈I∩Z
+                                                                                      (2.1)
+           M       X       1                      X     X         hX
+         ≲   +                     sup                          e    F (n/M )       .
+           J               H H≤H ′ ≤min(2H,J)                     M
+                 H=2j <J                        H≤h<H ′ n∈I∩Z
+                   j≥0
+
+For M ≥ 2X β , choose J = ⌊M X −β ⌋.      Then J ≥ 2, M/J ≲ X β , and every H < J
+satisfies H ≤ M X −β . Theorem 1.2, with T = X and g = G = 1, bounds each supremum
+in (2.1) by Oε (HX β+ε ). After multiplication by H −1 , each dyadic h-block therefore
+contributes Oε (X β+ε ). There are only
+                                      P O(log X) such blocks. The dyadic n-blocks
+with M < 2X β have total length O( M <2X β M ) = O(X β ), so their contribution is
+trivial. Absorbing the logarithm into X ε proves the claim for nonintegral X. Finally,
+the counting function in the definition of E(X) is right-continuous, hence so is E(X).
+Letting a nonintegral argument decrease to an integral X gives the same estimate
+there.                                                                              □
+2.2. The two remaining ranges.
+Proposition 2.2 (Classical bounds). For the reciprocal sum (1.1), uniformly on subin-
+tervals,
+                                  M2                               M2
+             |S|/H ≲ (HT )2/7 +      ,     |S|/H ≲ ρ13/31 M 3/31 +     .        (2.2)
+                                  HT                               HT
+Consequently |S|/H ≲ T β if either H ≤ T s or p ≤ 42/67.
+Proof. The exponent pairs (k, l) = (2/7, 4/7) and (13/31, 16/31) [10, Chapter 3, (3.3.4)]
+give, for every integer h ≈ H and every interval I ⊆ [M, 2M ],
+                       X                                       M2
+                                          
+                                  hT
+                           e                ≲ (hT /M 2 )k M l +    .
+                             4(n + M α)                         hT
+                    n∈I∩Z
+The constants are uniform in α. Put u = n+⌊M α⌋ and a = {M α}. Then n+M α = u+a,
+with u ∈ Z, u ≂ M and 0 ≤ a < 1. For real x ≂ M and integers j ≥ 0,
+                   dj         −2       j          −j−2            −1
+                                                                       
+                      (x + a)    = (−1)  (j + 1)!x     1 + O j (M    )   .
+                  dxj
+When hT /M   2
+          √ is bounded, the second-derivative test [10, Theorem 2.2] gives the stronger
+bound O( M ). If M is bounded, both estimates in (2.2) follow from the trivial bound
+after enlarging the absolute constant, so we may assume M is larger than a fixed
+constant. Since ∥G∥∞ + Var(G) ≤ 1, discrete Abel summation reduces the weighted
+n-sum to interval sums of the form just estimated, with no loss beyond an absolute
+constant. The same argument applies to an intersected dyadic interval. Finally, |g| ≤ 1
+and h ≈ H, so summing these bounds over the O(H) admissible integers h and then
+dividing by H gives (2.2). To finish the parameter check,
+        M2               2(1 + s)          13p + 3m   1293
+           ≤ 1,                   = β,              ≤      <β          (p ≤ 42/67).
+        HT                  7                 31      4154
+8                           X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+                                                                                                 □
+Proposition 2.3 (The middle range). Suppose
+                     T 42/67 ≤ ρ ≤ T 43/67 ,      H ≥ T s,       M ≤ T 1/2 .                   (2.3)
+Then, uniformly in the shifts, weights, and interval endpoints,
+                                          |S|/H ≲ε T β+ε .                                     (2.4)
+Proposition 2.4 (The larger-ρ range). Suppose
+                                β ≤ τ ≤ 24/67,     τ + s ≤ m ≤ 1/2.                            (2.5)
+Then, uniformly in the shifts, weights, and interval endpoints,
+                                          |S|/H ≲ε T β+ε .                                     (2.6)
+Proof of Theorem 1.2. If H ≤ T s or p ≤ 42/67, Proposition 2.2 gives the conclu-
+sion. Otherwise m > τ + s, τ ≥ β, and τ < 25/67. For 24/67 ≤ τ < 25/67,
+apply Proposition 2.3. For β ≤ τ ≤ 24/67, apply Proposition 2.4. These cases cover
+Theorem 1.2. Use smaller positive losses in the supporting estimates so that all pow-
+ers and logarithmic factors together are bounded by T ε . Proposition 2.1 then proves
+Theorem 1.1.                                                                       □
+
+                 3. The middle range: reduction to a pair count
+    Throughout Sections 3–4, assume (2.3) and take T sufficiently large. Fix
+                                 &         '
+                                   T 36/67
+                            J=               ,  ω = M α.                                       (3.1)
+                                     M
+The van der Corput transformation and the degree-five Vinogradov mean value theorem
+reduce the estimate to the following pair count.
+
+3.1. The sufficient estimates. For i ∈ {1, . . . , 6}, use 1/2      = i!1 i−1    1
+                                                                        Q
+                                                               i           j=0 ( 2 − j). For
+h, q > 0, define
+                                      1/2 √
+                                        
+                         Ai (h, q) =        T h q 1/2−i − ω1{i=1} .                     (3.2)
+                                       i
+Fix a sufficiently large constant C0 ≥ 1 and put
+                        Ω = ([H, 2H) ∩ Z) × ([U/100, 2U ] ∩ Z),
+                                   ∥A4 (h′ , q ′ ) − A4 (h, q)∥ ≤ C0 J −4 ,                    (3.3)
+                                                                                      
+                        ′   ′        2
+    B = # ((h, q), (h , q )) ∈ Ω :                                                         .
+                                   |Ai (h′ , q ′ ) − Ai (h, q)| ≤ C0 J −i (i = 5, 6)
+We retain J, ω, Ai , Ω, B and C0 in Section 4.
+Lemma 3.1. For the choice (3.1),
+                         "                                  1/30         #
+                                                        B              MJ
+                 |S|/H ≲ε T ε (T ρ8 (M J)6 )1/30                     + √ +1 .                  (3.4)
+                                                        HU              ρ
+
+Proposition 3.1. For the choice (3.1),
+                                           B ≲ε HU T ε .                                       (3.5)
+                                  GAUSS CIRCLE PROBLEM                                     9
+
+Proof of Proposition 2.3. The preceding two estimates give the conclusion, since
+
+                                  T 36/67 ≤ M J ≤ 2T 36/67 ,
+                  (T ρ8 (M J)6 )1/30 ≲ T (1+8·43/67+6·36/67)/30 = T 209/670 ,          (3.6)
+                                   MJ
+                                   √ ≤ 2T 15/67 < 2T β .
+                                     ρ
+
+Use smaller positive losses in the two estimates.                                         □
+
+3.2. Proof of the mean value reduction.
+                                               √
+Proof of Lemma 3.1. For h, q > 0, set fh (q) = T hq − ωq. For each integer h ≈ H, let
+ch ∈ C and let Ih ⊆ [U/100, 2U ] be an interval. Define
+
+                                                 X             X
+                     S=           sup                    ch             e(fh (q)) ,    (3.7)
+                          |ch |≤1, Ih ⊆[U/100,2U ] h≈H        q∈Ih ∩Z
+
+where the supremum is over these coefficient and interval families. Abel summation and
+the van der Corput formula [21, Lemma 5.5.3] give
+
+                            |S|   M                   M
+                                ≲ √ S + log(2 + U ) + √ .                              (3.8)
+                             H   H ρ                   ρ
+
+Here the inversion formula is applied on the actual subinterval of the n-sum. Its endpoint-
+                                        √
+uniform error is the displayed O(M/ ρ + log(2 + U )). The derivative check below gives
+|ϕ′′h | ≂ ρ/M 2 and a dual frequency interval of length O(U ), which are precisely the scales
+entering that error term. If an endpoint derivative is integral, changing the half-weight
+                          √
+convention costs O(M/ ρ) and is already absorbed by the same error. For h > 0 and
+x > −M α, define ϕh (x) = hT /[4(x + M α)]. For q > 0, let xh,q be the unique solution
+of ϕ′h (xh,q ) = −q. Then
+                              √
+                                hT
+                     xh,q = √ − M α,           ϕh (xh,q ) + qxh,q = fh (q),
+                              2 q
+                                                                                        (3.9)
+                      ′′       −1/2   (hT )1/4     M          1/4       −3/4
+                   (ϕh (xh,q ))     =          = √ (h/H) (q/U )              .
+                                       2q 3/4     2 ρ
+
+For h ≈ H and x ∈ [M, 2M ], these frequencies lie in [U/100, 2U ]. ϕ′′h ≂ ρ/M 2 and
+  (j)
+|ϕh | ≲ ρM −j for j = 3, 4. The factor (q/U )−3/4 has uniformly bounded variation on
+[U/100, 2U ]. Apply (A.1) to it and to G. The remaining factors have bounded modulus
+and are absorbed in ch . This proves (3.8), uniformly on the stated intervals.
+   We next prove
+                             "        6 1/30                    #
+                                       ρJ
+                    S ≲ε T ε HJ +                (HU )14/15 B 1/30 .           (3.10)
+                                        U6
+10                           X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+The choice of J and (2.3) imply
+
+                         J ≥ T 5/134 ,                J/U = (M J)/ρ ≲ T −6/67 ,
+              ρ(J/U )7 = (M J)7 /ρ6 ≲ 1,                     ρJ 6 /U 6 = (M J)6 /ρ5 ≥ T 1/67 ,               (3.11)
+                                           5            5    4         −1/134
+                                     ρ/U = M /ρ ≤ T                             .
+
+Averaging over integer shifts 1 ≤ r ≤ J changes each interval sum by O(J). Define the
+Taylor remainder Rh,q by
+                                          6
+                                          X
+               fh (q + r) = fh (q) +             Ai (h, q)ri + Rh,q (r)                       (0 ≤ r ≤ J).
+                                          i=1
+
+Taylor’s formula gives
+                                                                     ρJ 6
+                                    sup |∂r Rh,q (r)| ≲                   ≲ J −1 .
+                                (h,q)∈Ω                              U7
+                                0≤r≤J
+
+For bh,q (r) = e(Rh,q (r)), therefore,
+                                          J−1
+                                          X
+                    sup |bh,q (J)| +                  sup |bh,q (r + 1) − bh,q (r)| ≲ 1.
+                   (h,q)∈Ω                 r=1 (h,q)∈Ω
+
+By (A.1), it suffices to bound, for every integer 1 ≤ j ≤ J and every complex family
+(dh,q )(h,q)∈Ω with |dh,q | ≤ 1,
+                                                 j           6
+                                                                                      !
+                                 X               X           X
+                                                                                  i
+                                          dh,q          e            Ai (h, q)r           .
+                                (h,q)∈Ω          r=1         i=1
+
+For complex coefficients d1 , . . . , dJ and y = (y1 , . . . , y5 ) ∈ T5 , the degree-five Vinogradov
+mean value theorem [3, Theorem 1.1], by expansion and orthogonality, gives
+                                Z     J                5
+                                                                     ! 30
+                                      X                X
+                          sup                  dr e          yi ri          dy ≲ε J 15+ε .                   (3.12)
+                         |dr |≤1 T5 r=1                i=1
+
+Indeed, expansion of the left side leaves only the degree-five Vinogradov system. Every
+surviving coefficient product has modulus at most one, so Theorem 1.1 of [3] with s = 15
+and degree 5 bounds the integral by J15,5 (J) ≲ε J 15+ε . For a sufficiently large fixed
+C ≥ 1, apply (B.1) with moment exponent 30 and
+
+            Di = 1/2 (1 ≤ i ≤ 5),                D6 = Cρ/U 6 ,                  Ei = J i (1 ≤ i ≤ 6).
+
+For (h, q) ∈ Ω, write Ai = Ai (h, q). Use Ai −⌊Ai +1/2⌋ for the first five sieve coordinates
+and A6 for the sixth. The sieve pair count is bounded by B: discard its first three
+restrictions and use |A5 | ≲ ρ/U 5 = o(1), so that the fifth centered representative
+equals A5 . For x = (x1 , . . . , x6 ) ∈ 6i=1 [−Di , Di ], fix x6 and absorb its phase into dr .
+                                        Q
+                                      GAUSS CIRCLE PROBLEM                                      11
+
+Equation (3.12) then gives
+                                      6
+                                    Y                      ρJ 6
+                                   P := (1 + Di Ei ) ≂ J 15 6 ,
+                                                           U
+                                    i=1
+                             j      6
+                                               !
+                             X      X
+                                             i
+                    sup        dr e     xi r                    ≲ε J 1/2+ε .
+                   |dr |≤1   r=1       i=1
+                                                       Q6
+                                                   L30
+                                                    # ( i=1 [−Di ,Di ])
+
+The sieve bound, divided by J, is the second term of (3.10). Abel summation above
+and the O(HJ) endpoint error prove that estimate. Finally, the thirtieth power of the
+resulting main term in (3.8) is
+               "       6 1/30                   #30
+                  M     ρJ             14/15 1/30                   B
+                  √              (HU )      B         = T ρ8 (M J)6    ,
+                 H ρ U6                                             HU
+
+using U = ρ/M and ρ2 = T HU . The other terms are bounded by those in (3.4).                    □
+
+                       4. The pair count: an explicit formula
+  We prove Proposition 3.1. For a pair ((h, q), (h′ , q ′ )) counted in (3.3), we solve
+∥A4 (h′ , q ′ ) − A4 (h, q)∥ ≤ C0 J −4 for h′ − h. Set
+                      U6       ρ5                  U5       ρ4                     Ub
+                 a=        =        ,         b=        =        ,            a=      .       (4.1)
+                      ρJ 6   (M J)6                ρJ 5   (M J)5                   J
+We use the following consequences of (2.3) and M J ≥ T 36/67 :
+              a ≤ T −1/67 ,        U J −5 = ρb/U 4 ≤ T −3/67 ,            Jb ≲ T −43/1340 ,
+                            ρ9                           Hρb3    ρ11 M 4
+                 HJb2 =           ≤ T −4/67 ,                 =           ≤ 1,
+                         T (M J)9                         U3    T (M J)15                     (4.2)
+                 ρb2    ρ6 M 3                          ρb    T M 2ρ
+                     =         ≤ T −3/134 ,                 =        ≤ T −3/67 .
+                 U3    (M J)10                         HU 3   (M J)5
+For Jb, also use M ≥ T 1+s /ρ. Balancing (M J)15 = T ρ11 at ρ = T 43/67 gives M J =
+T 36/67 , explaining (3.1).
+
+4.1. Localization and the explicit formula. For a counted pair, write Ai = Ai (h, q)
+and A′i = Ai (h′ , q ′ ) for 1 ≤ i ≤ 6, and set k = q ′ − q, w = h′ − h. Only these primed
+coefficients denote evaluation at the second point. Primes on functions below denote
+derivatives. The identities
+              5 √                         7 √                       21 √
+     A4 = −          T h q −7/2 , A5 =        T h q −9/2 , A6 = −        T h q −11/2 ,
+             128                         256                      1024                 (4.3)
+                                     4                    10
+                              A5 = − qA6 ,      A4 = − qA5
+                                     3                    7
+give
+ |k| ≲ U a,      h + w = h(1 + k/q)9 + O(Hb),                A′4 − A4 = A4 k/q + O(U J −5 ). (4.4)
+12                          X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+Indeed,
+        |k||A6 | ≲ J −5 + U J −6 ,                                    |A6 | ≂ ρ/U 6 ,
+        ′ 2                     9
+          A5       h+w         q
+                 =                     = 1 + O(b),
+          A5          h     q+k
+                     10
+       A′4 − A4 = −      kA5 + q ′ (A′5 − A5 ) = A4 k/q + O(U J −5 ).
+                                              
+                      7
+           −4
+Since C0 J < 1/2 for large T , there is a unique ℓ ∈ Z with |A′4 − A4 − ℓ| ≤ C0 J −4 . Let
+B 0 count the pairs for which ℓ = 0. In this case the fourth and fifth restrictions imply
+|k| ≲ U b,    |w| ≲ Hb,     h′ = h(1 + k/q)7 + O(HJb/U ),         |qw − 7hk| ≲ HJb + HU b2 .
+The fourth restriction gives
+       k = 0 =⇒ |w| ≲ HJb/U ≤ Jb = o(1),                  w = 0 =⇒ |k| ≲ Jb = o(1).
+These pairs are diagonal. Otherwise fix h, k and the integer D0 = qw − 7hk. The divisor
+bound [16, Theorem 315] applied to qw = 7hk + D0 ̸= 0 leaves Oε (T ε ) choices of (q, w).
+Hence
+                         B 0 ≲ε HU + T ε H(U b)(1 + HJb + HU b2 ),
+and
+                          B0
+                              ≲ε T ε (1 + b + HJb2 + HU b3 ) ≲ε T ε ,                (4.5)
+                         HU
+since HU b3 = aHJb2 and b = aJ/U = o(1).
+    For ℓ ̸= 0, (4.4) and U J −5 = o(1) give |k|ρ/U 5 ≳ 1. Split |k|/U into dyadic ranges
+[r, 2r) with r = 2j , j ∈ Z. Interchanging the two points if necessary, we have
+             k ≂ U r > 0,          w ≂ Hr > 0,      U 4 /ρ ≲ r ≲ a,      b/r = o(1).     (4.6)
+Here w = 9hk/q (1 + O(a)) + O(Hb). Put n = −ℓ ∈ N, K = U r and Z = ρr/U 4 . Then
+n ≂ Z and K, Z, Hr ≳ 1 on every nonempty range. Set δ = (q/q ′ )(1 + w/h)1/9 − 1.
+Since A′5 /A5 = (1 + δ)9/2 , one has |δ| ≲ b and
+                                           A4 ′
+                               A′4 − A4 =        q (1 + δ)9/2 − q ,
+                                                                   
+                                             q
+                              h1/9 k      q′
+                                              
+                1/9    1/9                                           k
+     (h + w) − h =                    1+ δ ,           q=                    + O(U b/r).
+                                q         k                 (1 + w/h)1/9 − 1
+The constant and linear terms cancel in
+                                       q ′ 9/2
+                                          
+           q ′ (1 + δ)9/2 − q − k 1 + δ           = O (q ′ + q ′2 /k)b2 = O(U b2 /r),
+                                                                       
+                                        k
+where |q ′ δ/k| ≲ b/r = o(1). As |A4 |/q ≂ ρ/U 5 , the fourth restriction yields
+                    √
+                  5 T             1/9     1/9 9/2
+                                                          −4   ρb2      ρb2
+                          (h + w)     − h         − n ≲  J    +      ≲       .           (4.7)
+                 128k 7/2                                       U 4r    U 4r
+The last inequality uses J −4 = (r/a)ρb2 /(U 4 r). For fixed k, n ∈ N, define Ak,n , Dr > 0
+and fk,n : (0, ∞) → R by
+                   16384n2 k 7                             1/9                   Hb2
+          Ak,n =               ,       fk,n (h) = (h1/9 + Ak,n )9 − h,    Dr =       .   (4.8)
+                      25T                                                         r
+                                 GAUSS CIRCLE PROBLEM                                    13
+
+Since n ≂ Z, the relative error in (4.7) is O((b/r)2 ) = o(1). Taking the 2/9 power and
+then the ninth power gives
+                                     1/9
+            |(h + w)1/9 − h1/9 − Ak,n | ≲ H 1/9 b2 /r,        |w − fk,n (h)| ≲ Dr .
+
+Moreover, ρ2 = T HU gives
+                         Ak,n ≂ Z 2 K 7 /T = ρ2 r9 /(T U ) = Hr9 ,
+and fk,n (h) ≂ Hr for h ≈ H, uniformly on fixed rectangular enlargements of the n, k
+ranges.
+  For this fixed r, choose intervals I1 ⊆ [cZ, CZ] and I2 ⊆ [cK, CK] containing the
+ranges of n and k, respectively. The intervals do not depend on the summation indices.
+Fix C1 ≥ 1 so that the bound |w − fk,n (h)| ≤ C1 Dr holds for every counted pair. For
+each n, k, h, w, the displayed formula for q leaves O(U b/r) integers q, since U b/r ≳ J.
+Let Br count the pairs with ℓ ̸= 0 and rU ≤ q ′ − q < 2rU . Then
+  Br       b X X X                                                          X
+      ≲                    #{w ∈ Z : |w − fk,n (h)| ≤ C1 Dr },   B ≲ B0 +       Br . (4.9)
+ HU       Hr                                                                 r
+             n∈I1 k∈I2 h≈H
+
+The sum in r has O(log T ) terms, since U r ≳ 1 and r ≲ a.
+
+4.2. Fourier expansion and the classical spacing bounds. Choose a fixed c > 0
+with cC1 ≤ 1/8, and set
+                                             
+                                 ZKb        ρbr
+                          Q= c          = c 3 .                        (4.10)
+                                   r        U
+If Q < 2, (4.9) and the trivial bound O(1 + Dr ) for its innermost count give
+                          Br     ρbr Hρb3
+                              ≲ 3 +       ≲ 1.
+                          HU     U    U3
+Suppose Q ≥ 2. Then Q ≂ ZKb/r and
+                          Hρb3            Q        ρb
+                    QDr ≤ c      ≤ c,        ≲         ≤ T −3/67 .                    (4.11)
+                            U3           Hr      HU 3
+Hence QC1 Dr ≤ 1/8. For real u with ∥u∥ ≤ C1 Dr , the Fejér kernel gives
+                                                                2
+                                               Q−1
+                                             2 X
+                             1{∥u∥≤C1 Dr } ≤ 2     e(ju) .
+                                            Q
+                                                     j=0
+
+For integers 1 ≤ v < Q, put
+                                     X X X
+                              Σv =                   e(vfk,n (h)).
+                                     n∈I1 k∈I2 h≈H
+
+Each triple n, k, h admits at most one w, since 2C1 Dr < 1. Expand the square before
+taking absolute values in n, k. Using Q ≂ ZKb/r in (4.9) gives
+                                Br          X |Σv |
+                                    ≲1+                .                      (4.12)
+                                HU               ZKH
+                                             1≤v<Q
+14                          X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+   Fix V = 2j < Q with an integer j ≥ 0, and put Y = HrV . Throughout the following
+transformation, v is an integer satisfying V ≤ v < min(2V, Q), n ∈ I1 ∩ N and k ∈ I2 ∩ N.
+Since Q ≥ 2, (4.11) gives Y ≥ Hr ≳ T 3/67 . For f = fk,n and H ≤ h ≤ 2H, (4.8) gives
+                               9  
+                              X     9    ν/9
+                      f (h) =          Ak,n h1−ν/9 ,  Ak,n ≂ Hr9 .
+                                    ν
+                                 ν=1
+
+Differentiating this identity, and using r = o(1), yields
+                                                     8
+                           f ′ (h) = 1 + (Ak,n /h)1/9 − 1 ≂ r,
+                                 1/9
+                               8Ak,n                  1/9 7
+                f ′′ (h) = −                                     |f ′′ (h)| ≂ r/H,
+                                                         
+                                      1 +  (A k,n /h)       ,                           (4.13)
+                               9h10/9
+                                            9
+                                            X
+                       |f (j) (h)| ≲ H 1−j      rν ≲ rH 1−j     (j = 3, 4).
+                                           ν=1
+
+For real v, t > 0, define
+                                                                −8
+                               D(v, t) = v −1/8 − (v + t)−1/8         .                 (4.14)
+For fixed k, n, the first formula below defines h∗ > 0 for every v, t > 0. It satisfies
+vf ′ (h∗ ) = t, and direct substitution gives
+                                                −9
+                    h∗ = Ak,n (1 + t/v)1/8 − 1        = −Ak,n ∂t D(v, t),
+                                                                       q          (4.15)
+                                          (v|f ′′ (h∗ )|)−1/2 = Ak,n ∂t2 D(v, t).
+                                                               p
+        vf (h∗ ) − th∗ = Ak,n D(v, t),
+Since v ≂ V and Y = HrV ,
+                |(vf )′′ (h)| ≂ Y /H 2 ,    |(vf )(j) (h)| ≲ Y /H j       (j = 3, 4).
+                                                                                      √
+The van der Corput transformation [21, Lemma 5.5.3] in h therefore has error O(H/ Y +
+log(2 + rV )). The cited lemma is applied on each actual h-subinterval. Since |(vf )′′ | ≂
+Y /H 2 and the derivative range has length O(rV ), this is the √ uniform inversion error. A
+change in the half-weight of an endpoint contributes O(H/ Y ) and is already included.
+Its integer frequencies are restricted by H ≤ h∗ < 2H, and on this range
+                                                               √
+                          t ≂ rV,      (v|f ′′ (h∗ )|)−1/2 ≂ H/ Y .
+The phase and amplitude in (4.15) each factor into a function of (n, k) and a function
+of (v, t). Choose fixed 0 < c2 < C2 so that each stationary frequency satisfies c2 rV ≤
+t ≤ C2 rV , and put
+               I = {(v, t) ∈ N2 : V ≤ v < min(2V, Q), c2 rV ≤ t ≤ C2 rV },
+                                                             r8
+                        xn,k = (n/Z)2 (k/K)7 ,         yv,t =   D(v, t).
+                                                             V
+The normalized coordinates lie in fixed positive intervals, and Ak,n D(v, t) =
+(16384/25)Y xn,k yv,t . If I = ∅, the transformed main sum is zero. Otherwise the
+restriction H ≤ h∗ < 2H is H/Ak,n ≤ −∂t D(v, t) < 2H/Ak,n , and Lemma A.1 sepa-
+rates it at cost O(log T ). For a sufficiently large fixed C ≥ 1, define the following counts,
+                                      GAUSS CIRCLE PROBLEM                                       15
+
+with all indices integer:
+           Bx = #{(n, k, n′ , k ′ ) : n, n′ ∈ I1 , k, k ′ ∈ I2 , |xn,k − xn′ ,k′ | ≤ C/Y },
+           By = #{((v, t), (v ′ , t′ )) ∈ I 2 : |yv,t − yv′ ,t′ | ≤ C/Y }.
+
+We claim
+                                     (ZK)2
+                                          
+                                  ε
+                        Bx ≲ε T ZK +         ,                        By ≲ε T ε V 2 .         (4.16)
+                                       Y
+For the first bound, apply [48, Section 6.1, (6.4)] with monomial exponents 2, 7 and
+tolerance O(Y −1 ). A bounded dyadic subdivision and (A.4) cover the fixed intervals
+I1 , I2 . For the second, use
+                                                                          −1/8
+                              v −1/8 − (v + t)−1/8 = rV −1/8 yv,t .
+
+A pair counted by By therefore satisfies
+
+               |v −1/8 − (v + t)−1/8 − v ′−1/8 + (v ′ + t′ )−1/8 | ≲ (r/Y )V −1/8 .
+
+For sufficiently large T , t ≤ C2 rV ≤ V /8, and hence
+                                     (
+                                      [3V /4, 3V /2]2 , v ≤ 11V /8,
+                        (v, v + t) ∈
+                                      [5V /4, 5V /2]2 , v > 11V /8.
+
+Apply (A.4) to the values v −1/8 − (v + t)−1/8 and these two groups. Within each group
+the injective map
+                               (v, t, v ′ , t′ ) 7−→ (v, v ′ + t′ , v + t, v ′ )
+has all four entries in one interval [A, 2A], with A ≂ V . Robert–Sargos [48, Theorem 2,
+Section 5], with exponent −1/8 and tolerance O(r/Y ), therefore gives
+
+                   By ≲ε T ε (V 2 + rV 4 /Y ) = T ε V 2 (1 + V /H) ≲ T ε V 2 ,
+
+since V /H ≤ Q/H ≲ rT −3/67 ≲ 1 by (4.11) and r ≲ a = o(1).
+   For integers V ≤ v < min(2V, Q), insert complex coefficients cv with |cv | ≤ 1 before
+the transformation. They affect only the (v, t) factor. The double large sieve [48,
+Lemma 8, Section 6.1], (4.15), and (4.16) give
+               1 X |Σv |     Tε p
+                         ≲ε      Bx By + Y −1/2 + H −1 log(2 + rV )
+               V  ZKH       V ZK
+                  v≈V
+                  v<Q                                                                         (4.17)
+                                                                            
+                                ≲ε T ε (ZK)−1/2 + (HrV )−1/2 .
+
+                                              when Σv ̸= 0, and zero otherwise. The
+For the absolute values choose cv = Σv /|Σv | √
+transformation error for each n, k, v is O(H/ Y + log(2 + rV )). Endpoint changes
+are included. The last inequality uses rV ≤ H from (4.11). All parameters are
+bounded by fixed powers of T . Finally, sum (4.17) over dyadic V < Q in (4.12), using
+16                               X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+P                   j ≲ Q and
+                                P             j/2 ≲
+                                                      √
+     j≥0, 2j <Q 2                 j≥0, 2j <Q 2            Q:
+                                                          r     !
+                             Br                     Q       Q
+                                ≲ε T ε         1+ √     +
+                             HU                    ZK       Hr
+                                                  r       r      !                                (4.18)
+                                                    ρb2      ρb
+                                     ≲ε T ε    1+       +          ≲ε T ε .
+                                                    U3      HU 3
+
+Together with (4.5) and the O(log T ) ranges in (4.9), this proves Proposition 3.1.
+
+                     5. The larger range: the second-spacing estimate
+   We prove Proposition 2.4 from Watt’s estimate [60, Lemma 8.2] and Theorem 6.1.
+The role of Watt’s result is only to count nearby minor arcs after the parameter hypothe-
+ses are verified below. The first-spacing input is supplied separately by Theorem 6.1, so
+the two ingredients remain logically distinct. Throughout this section,
+            H = T m−τ ,           M = T m,         β ≤ τ ≤ 24/67,          τ + s ≤ m ≤ 1/2.
+
+5.1. The required estimate and the choice of parameters. Put
+                                    NI = 218/35 M 57/35 H −22/35 T −17/35 ,
+                        NII = (M 6 /(T H 5 ))1/7 ,  NIII = 2(M 6 /(T 2 H))1/3 ,
+                                    (                                                              (5.1)
+                                      ⌈NI ⌉,              HM 9 ≥ T 4 ,
+                               N=
+                                      ⌈min(NII , NIII )⌉, HM 9 < T 4 .
+These are [60, (8.18)–(8.20)] with parameters (2M, 2H, N, 2T ).
+  Let j0 = ⌈2T /M 2 ⌉. For x > −M α and z > −α/2, respectively, define
+                                                T        Tκ
+                                     f (x) =           +    + j0 x,
+                                            4(x + M α)   M
+                                       1                 κ    j0 M 2 2
+                                Φ(z) =    log(z + α/2) + z +        z .
+                                       16                2     2T
+For integer h, n,
+                              2(2T ) ′
+         e(hj0 n) = 1,              Φ (x/(2M )),
+                                f (x) =                              [M, 2M ] = [(2M )/2, 2M ].
+                               2M
+For 1/3 ≤ z ≤ 3, set u = z + α/2. Then
+                            5/24 ≤ u ≤ 25/8,              2 ≤ j0 M 2 /T ≤ 3,
+               j0 M 2      1     14                  (−1)j−1 (j − 1)!                       (5.2)
+      Φ′′ (z) =       −      2
+                               ≥ ,        Φ(j) (z) =           j
+                                                                         (j = 3, 4, 5).
+                  T      16u     25                        16u
+Take Watt’s auxiliary function F to be Φ. The preceding identity then says that Watt’s
+function f (x, 0) is exactly the f (x) used here, so his defining relation (2.1) is satisfied by
+construction. By (5.2), choose fixed positive constants C2 , . . . , C5 satisfying [60, (2.2)–
+(2.5)] for this family, and define CR = 4C3 . In Watt’s notation the auxiliary modulus is
+one. Moreover, M ≤ T 1/2 gives the required lower bound P/Q ≂ (2T )/(2M )2 ≥ 1/2
+                                      GAUSS CIRCLE PROBLEM                                         17
+
+after the parameter substitution below. We also choose c∗ no larger than the fixed
+constant in Watt’s condition (5.2). Now set
+                           lp                 m
+                      R=       CR M 3 /(2N T ) , W = H/R.                     (5.3)
+
+Section 5.2 verifies that R ≂ (M 3 /(N T ))1/2 and N, R, W → ∞.
+
+Lemma 5.1. With these choices,
+                                                       
+                 |S|      ε    M    2/9     M       1/3
+                     ≲ε T √       W     + 3/4 1/4 W       .                                      (5.4)
+                  H            HN        N H
+Proof of Proposition 2.4. Substituting (5.1) and (5.3) gives
+               M
+              √    W 2/9 ≂ T 1/9 M 2/3 H −5/18 N −7/18
+                HN
+                           (                                                                     (5.5)
+                             T (9+τ )/30 ,                                HM 9 ≥ T 4 ,
+                         ≲
+                             T (2m+1)/6 + T (10−7m+4τ )/27 ,              HM 9 < T 4 .
+
+The three exponents satisfy
+                     9+τ    9 + 24/67
+                          ≤           = β,
+                      30        30
+                               2m + 1    9+τ
+              10m − τ < 4 =⇒           <      ,
+                                   6       30
+             10 − 7m + 4τ   10 − 3τ − 7s   10 − 3β − 7s       1
+                          ≤              ≤              =β−       .
+                  27             27             27          36180
+Moreover,
+                                         1/2                 3/2
+               M                      H             M
+                    W 1/3 =                        √    W 2/9          ≲ T (3β−τ )/2 ≤ T β .
+             3/4
+            N H 1/4                   M              HN
+Equation (5.4) proves the proposition.                                                             □
+
+5.2. Verification of the second-spacing hypotheses. The definition (5.3) gives
+
+                       2(R − 1)2 N (2T ) < C3 (2M )3 ≤ 2R2 N (2T ),
+
+the condition [60, (2.6)]. Also (2T )/(2M )2 ≥ 1/2.
+  The powers of T in the three candidate lengths are
+
+        NI ≂ T m+(22τ −17)/35 ,           NII = T (m+5τ −1)/7 ,        NIII = 2T (5m+τ −2)/3 .
+
+Each exponent is at least 443/4020 > 1/10, so taking ceilings changes only fixed factors.
+In the first case, m ≥ (4 + τ )/10. In the second, m < (4 + τ )/10 and N ≲ NII , NIII .
+Consequently
+                    HN T
+                          ≲ T (8−33τ )/70 + T (1−3τ −s)/3 ≤ 2T −37/4020 .
+                     M3
+18                         X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+Thus M 3 /(N T ) ≳ HT 37/4020 → ∞ and R ≂ (M 3 /(N T ))1/2 . The remaining compar-
+isons are
+                       H
+                          ≲ T (17−57τ )/35 + T (2−6τ −2s)/3 ≲ T −37/2010 ,
+                       N
+                       R
+                          ≲ T 3(8τ −3)/35 + T (3τ −2s−1)/6 ≲ T −27/2345 ,
+                       H
+                      N
+                          ≲ T (22τ −17)/35 + T (−τ −6s−1)/7 ≲ T −611/2345 ,                 (5.6)
+                      M
+                      H
+                          ≲ T −37/4020 ,
+                      R2
+                   HN 3 T
+                          ≲ T (31τ −16)/35 + T (τ −1)/5 ≲ T −43/335 .
+                    M4
+For the last hypothesis of Watt’s lemma, use
+
+                                           7/16     9/16
+                       min(NII , NIII ) ≤ NII     NIII     ≂ T m+τ /2−7/16 ,
+                 H 2N 3   H 2N 5T 2
+                        ≂           ≲ T (8τ −3)/7 + T (8τ −3)/16 ≲ T −9/1072 .
+                 M R4        M7
+
+Under the substitution (M∗ , H∗ , T∗ ) = (2M, 2H, 2T ), these comparisons verify Watt’s
+conditions (2.4) and (2.7)–(2.9) for all sufficiently√ large T . Indeed, m ≥ τ + s > 0
+gives M∗ ≥ 4, H/R2 → 0 and R/H → 0 give 4C3 H∗ ≤ R ≤ ε0 H∗ , while H/N → 0,
+N/M → 0, and HN 3 T /M 4 → 0 give (2.8)–(2.9) after increasing the fixed lower
+threshold for T . The last displayed estimate similarly gives (8.14), including its fixed
+constant. Thus, together with the exact verification of (2.6) above, all hypotheses
+of [60, Lemmas 8.1–8.2] used below are satisfied. We also have
+
+                                                HN 2   HN 3 T
+                        N, R, W → ∞,                 ≂        = o(1).
+                                                M R2    M4
+
+   Extend the original n interval by 2N to the left, and denote its consecutive length-
+N intervals by I0 , I1 , . . .. Apply [60, Section 2, (2.10)–(2.23)] with modulus one to
+the derivative intervals f ′ (Ii ). Group the Ii whose images form a long major arc, as
+in [60, (2.13)]. For each remaining I = Ii meeting the original summation range, one
+has i ≥ 2. Let aI ∈ Z and dI ∈ N be coprime, with dI ≥ R, so that aI /dI is the selected
+fraction in f ′ (Ii−2 ). Let mI be an integer nearest the unique solution of f ′ (x) = aI /dI
+in Ii−2 . For Q = 2j R with an integer j ≥ 0, let IQ be the collection of these remaining
+intervals I satisfying Q ≤ dI < 2Q. By [60, (2.16), (2.23)] and [4, (7.9)],
+
+                                                                                  M R2
+          n ∈ I =⇒ N ≤ n − mI ≤ 3N,                R ≤ dI ≲ H,           #IQ ≲         .    (5.7)
+                                                                                  N Q2
+
+For each I, define
+
+     γI = 12 f ′′ (mI ) ≂ (N R2 )−1 ,   bI = ⌊dI f (mI )⌋,         κI = dI f (mI ) − bI .   (5.8)
+                                       GAUSS CIRCLE PROBLEM                                     19
+
+For each I, let āI be the modular inverse specified by 0 ≤ āI < dI and aI āI ≡ 1
+(mod dI ). Let BQ count the ordered pairs (I, I ′ ) ∈ IQ
+                                                       2 satisfying
+
+
+                            āI   āI ′          R4         γI ′ d3I ′       R2
+                                −           ≤         ,                − 1 ≤    ,
+                            dI    dI ′          HN Q2       γI d3I           HN
+                                                                                              (5.9)
+                      āI bI   āI ′ bI ′     R2                            Q
+                             −              ≤    ,            |κI − κI ′ | ≤ .
+                        dI       dI ′         HQ                            H
+For a sufficiently small fixed c∗ > 0, Watt’s estimate [60, Lemma 8.2, (8.17)–(8.20)] is
+                                   2 4
+                                        2/3
+                               εM R     Q
+                     BQ ≲ε T      2  4
+                                                ,    R ≤ Q ≤ c∗ H.                (5.10)
+                                H N     H
+Indeed, in the first case its additional factor is 1 + (T 4 /(64HM 9 ))1/5 = O(1). In the
+second, (8.20) applies. The ceilings give N/2 < NI ≤ N or N/2 < min(NII , NIII ) ≤ N
+for large T . The conditions (5.9) are [60, (8.2), (8.5)–(8.7)]. Fixed changes in their
+tolerances follow from (A.4), using log(γI d3I ) in the second coordinate. The explanation
+on pp. 380–381 of [60] shows that this count uses only the function denoted there by
+f (x, 0). With parameters (2M, 2H, N, 2T ) and auxiliary function Φ, that function is
+exactly the f defined above. We invoke this arc-pair count, not a bound for Watt’s
+original difference-phase exponential sum.
+
+5.3. The double large sieve and the sum over denominators. The following
+definitions are used throughout the rest of this section. Fix a sufficiently large comparison
+constant C6 ≥ 2. Then choose a sufficiently large fixed Cη > 0 and, if necessary, decrease
+the constant c∗ in (5.10). For each denominator scale Q = 2j R, j ≥ 0, use all dyadic
+pairs (K, L) satisfying the first line below, and define the other quantities by
+       C6−1 N Q/R2 ≤ K ≤ C6 N Q/R2 ,                   C6−1 HQ/R2 ≤ L ≤ C6 HQ/R2 ,
+                            η = Cη R2 /(N H),             Z = ηK 2 ,                         (5.11)
+                     E4 = [KL2 (L + Z)]1/4 ,              E6 = (KL)1/2 .
+There are O(1) such rectangles [K, 2K) × [L, 2L). Section 5.4 shows that they cover all
+the transformed integer frequencies. For I ∈ IQ and integers k ≈ K, l ≈ L, define
+               tI = (γI d3I )−1/2 ,        xI = (āI /dI , {āI bI /dI }, tI , −κI tI /2),
+                                                      √      √                               (5.12)
+                                       ykl = (kl, l, l k, l/ k).
+The first two coordinates of xI lie in [0, 1). Taking the fractional part does not change
+e(xI · ykl ), since kl, l ∈ Z. For each rectangle, Section 5.4 supplies finite families of
+coefficients aI,j and functions bj (k, l). They may depend on Q, K, L and satisfy the
+coefficient bound below. If IQ = ∅, set SQ = 0. Otherwise define
+
+                               R2 X X X
+                 SQ = max                                aI,j bj (k, l)e(xI · ykl ) ,
+                         (K,L) Q
+                                   j I∈IQ k≈K, l≈L                                           (5.13)
+                             X
+                                 sup |aI,j | sup |bj (k, l)| ≲ log2 T.
+                                j     I          k,l
+20                        X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+The maximum is over the dyadic pairs in (5.11). Their number is bounded, so Section 5.4
+gives
+                                   p              X
+                      |S| ≲ε T ε M H/N +                  SQ .                   (5.14)
+                                                        Q=2j R
+                                                    j≥0, R≤Q≤c∗ H
+
+
+Proof of Lemma 5.1. Fix Q = 2j R with j ≥ 0 and R ≤ Q ≤ c∗ H. The case SQ = 0 is
+immediate. Otherwise fix a rectangle attaining the maximum. For a sufficiently large
+fixed constant C, choose the box widths in (B.2) as
+
+                D = (N R2 /Q3 )1/2 ,         (D1 , D2 , D3 , D4 ) = C(1, 1, D, D),
+                                                             √       √
+                       (E1 , E2 , E3 , E4 ) = C(KL, L, L K, L/ K).
+
+Write x = (x1 , . . . , x4 ) ∈ X = 4i=1 [−Di , Di ] for the integration variable. Then tI ≂ D,
+                                      Q
+and the four products have sizes
+
+                                              N HQ2 HQ N H H
+                                                                   
+                                      4
+                              (Di Ei )i=1 ≂          , 2 , 2 ,        .
+                                                R4     R     R Q
+
+They are bounded below by fixed positive constants, so
+                                  4
+                                  Y                H 4 N 2 Q2
+                             P :=   (1 + Di Ei ) ≂            .
+                                                       R8
+                                    i=1
+
+The first two sieve restrictions give the corresponding conditions in (5.9). The other
+two imply
+                        γI ′ d3I ′       |tI − tI ′ |        1        R2
+                                   − 1 ≲              ≲       √   ≂        ,
+                        γI d3I               D           DL K        HN
+                                         |κI tI − κI ′ tI ′ | |tI − tI ′ |
+                         |κI − κI ′ | ≲                      +
+                                         √      D                 D
+                                            K          1        Q
+                                       ≲       +       √ ≲ .
+                                         LD        DL K         H
+Thus the sieve pair count is O(BQ ), by (A.4).
+  The cone hypotheses follow from
+
+     L ≳ W → ∞,       K/L ≂ N/H → ∞,                ηK ≂ Cη Q/H,               ηKL ≂ Cη (Q/R)2 .
+
+The√preceding choices of Cη and c∗ ensure 1 ≤ L < K ≤ η −1 ≤ KL. Also D ≂
+(ηL K)−1 . After interchanging the first two coordinates, cover their box and the
+third-coordinate
+          √      interval by a bounded number of translates of a box with side lengths
+2, 2, 2(ηL K)−1 . Translation multiplies the coefficients
+                                                √         by constants of modulus one. At
+each fixed fourth coordinate x4 , absorb e(x4 l/ k) into those coefficients. Theorem 6.1,
+followed by integration in x4 , gives the distribution hypothesis of Lemma B.1 with
+                                   GAUSS CIRCLE PROBLEM                                         21
+
+constants cq ≲ε T ε Eqq for q ∈ {4, 6}. Hence (5.7) and (5.10) give
+                                 R2 X                         1/q
+                      SQ ≲ε T ε            P 1/q (#IQ )1−2/q BQ Eq
+                                 Q
+                                     q∈{4,6}
+                                                                                            (5.15)
+                                MR X
+                         ≲ε T ε      (R/Q)3−20/(3q) W 4/(3q) Eq .
+                                N
+                                        q∈{4,6}
+
+More explicitly,                                  √
+                                          NH Q
+                                        E6 ≂     ,
+                                           R R
+                          N 1/4 H 3/4 Q N 1/2 H 1/4 Q 5/4
+                                                      
+                     E4 ≲               +                      ,
+                               R      R       R3/4     R
+and therefore                  
+                     SQ      ε    M
+                        ≲ε T √         W 2/9 (R/Q)8/9
+                     H             HN
+                                       M
+                                 + 3/4 1/4 W 1/3 (R/Q)1/3
+                                    N H
+                                     M R1/4
+                                                              
+                                                1/3      1/12
+                                 + 1/2 3/4 W (R/Q)              .
+                                    N H
+For each δ > 0, j≥0 2−jδ = (1 − 2−δ )−1 . Sum the last display over Q = 2j R and use
+               P
+
+                    M R1/4                     M
+                     1/2  3/4
+                              W 1/3 = W −5/36 √    W 2/9 ,    W ≥ 1.
+                  N H                           HN
+The error in (5.14), divided by H, is also bounded by the first term of (5.4).                  □
+5.4. The two van der Corput transformations. We prove (5.13) and (5.14). By
+(A.1), it suffices to take g = G = 1 and retain arbitrary subintervals.
+   Let J correspond to a long major arc with reduced fraction a0 /d0 . By [60, (2.10),
+(2.13)],
+     d0 ≲ R2 /H,       |f ′ (x) − a0 /d0 | ≲ (Hd0 )−1 ,      f ′′ (x) ≂ (N R2 )−1   (x ∈ J ).
+Thus the phase gh (x) = h(f (x) − a0 x/d0 ) satisfies
+                |gh′ (x)| ≲ d−1
+                             0 ,      gh′′ (x) ≂ H/(N R2 )    (h ≈ H, x ∈ J ).
+These are the derivative bounds used in the major-arc argument of [60, (3.7)–(3.12),
+Lemma 3.1], with auxiliary modulus one. Applied directly to hf (x), that argument
+gives
+           X X                    R√         p
+                      e(hf (n)) ≲     HN + R N/H + (H + d0 ) log(2d0 )
+                                  d0
+            h≈H n∈J ∩Z
+                                   R√
+                                    ≲  HN log T,
+                                   d0
+uniformly on subintervals. Indeed, d0 ≲ R2 /H and R < H < N imply
+                  p
+                R N/H          d0             H + d0       R
+                     √       =    ≲ 1,             √   ≲√     ≲ 1.
+              (R/d0 ) HN       H            (R/d0 ) HN    HN
+22                             X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+There are O(d0 T /M 2 ) possible numerators and O(1) intervals per fraction. Thus the
+total is
+                      X d0 T R √             MR             p
+           ≲ log T             2
+                                    HN ≲ √       log T ≤ M H/N log T.
+                             M d0             HN
+                   d ≲R2 /H
+                         0
+
+   Fix I ∈ IQ . While I is fixed, write a = aI , d = dI , ā = āI , and retain the scales K, L
+from (5.11), and put x = n − mI . For N ≤ x ≤ 3N , define
+                                              1 x
+                                                 Z
+                                     a
+                EI (x) = f ′ (mI ) −      x+        (x − t)2 f ′′′ (mI + t) dt.
+                                      d       2 0
+Since mI is within 1/2 of a solution of f ′ = a/d,
+                                 bI + κI     a
+                   f (mI + x) =           + x + γI x2 + EI (x),
+                                    d        d
+            ′                    2 −1
+          |f (mI ) − a/d| ≲ (N R ) ,        |f ′′′ (mI + x)| ≲ (M N R2 )−1 ,             (5.16)
+
+      H ∥EI ∥∞,[N,3N ] + N ∥EI′ ∥∞,[N,3N ] ≲ H/R2 + HN 2 /(M R2 ) = o(1).
+                                          
+
+Consequently H i N j |∂hi ∂xj e(hEI (x))| ≲ 1 for H ≤ h ≤ 2H, N ≤ x ≤ 3N and i, j ∈ {0, 1}.
+For real endpoints satisfying H ≤ H− ≤ H+ ≤ 2H and N ≤ N− ≤ N+ ≤ 3N , (A.2)
+reduces the sum to
+                                                                        
+                      X            X          ahx + (bI + κI )h        2
+                                          e                     + γI hx .
+                                                     d
+                      H− ≤h≤H+ N− ≤x≤N+
+
+     For l ∈ N, choose hl ∈ {0, . . . , d − 1} with hl ≡ −āl (mod d). For h > 0, define
+                             Jl = [H− , H+ ] ∩ [l/(2γI dN+ ), l/(2γI dN− )],
+                   ϕI,l (h) = κI h/d − l2 /(4γI d2 h),          AI (h) = (2γI h)−1/2 .
+The first transformation [60, Lemma 4.1, (4.22)], with its auxiliary modulus equal to
+one and its character identically one, gives
+    X                        X                                  √              
+         e(1/8 − ābI l/d)           AI (h)e(ϕI,l (h)) + O (Q/R) HN log(2HN ) .
+       l∈N                     h∈Jl ∩(hl +dZ)
+
+Only l ≂ L occur. Write h = hl + dv. Summation uses v ∈ Z. For real v with
+H ≤ h ≤ 2H and j = 2, 3, 4,
+                                                        (−1)j+1 j!l2 dj−2
+                                 ∂vj ϕI,l (hl + dv) =                     ,
+                                                           4γI hj+1
+                           NH                                                         p
+      |∂vj ϕI,l (hl + dv)| ≂    (d/H) j
+                                        ,     ∥AI ∥ ∞,[H,2H]   + Var[H,2H] (A I ) ≲ R  N/H.
+                            R2
+Apply [21, Lemma 5.5.3] in v, at scale H/d. The modulus of its second derivative
+is comparable to N d2 /(HR2 ) ≳ N/H → ∞. For k, l ∈ N, define h∗ , x∗ > 0 by the
+formulas below. They are well-defined because 0 ≤ κI < 1, and they satisfy
+                                                                        s
+                 ′                                l                         k − κI
+               dϕI,l (h∗ ) = k,     h∗ = p                   ,     x∗ =             .
+                                           2 γI d(k − κI )                    γI d
+                                    √
+                                   l k − κI            A (h )                  1
+         ϕI,l (h∗ ) − kh∗ /d = − p           ,       q I ∗         = p                 .
+                                      γI d 3              ′′          2 γI d(k − κI )
+                                                    d |ϕ (h∗ )| I,l
+                                         GAUSS CIRCLE PROBLEM                          23
+
+The restrictions x∗ ∈ [N− , N+ ] imply k ≂ K. The progression contributes e(khl /d) =
+e(−ākl/d). The factors e(1/8) and e(−1/8) cancel. The transformed sum is
+                                           √
+                                                                  Q√
+                                                    p
+                      e(−āl(k + bI )/d − l k − κI / γI d3 )
+         X                                                                        
+                                   p                         +O      HN log(2HN ) .
+                                  2 γI d(k − κI )                 R
+          k,l∈N
+x∗ ∈[N− ,N+ ], h∗ ∈[H− ,H+ ]
+
+                                      p                                   (5.17)
+The second
+      p     transformation costs O(LR   N/H  log(2HN )).  Endpoint changes  cost
+                   2
+O(LR N/H + LR /Q). Both are included in (5.17).
+     p d ≥ c∗ H, the first transformation has O(L(1 + H/d)) terms, each of size
+   When
+O(R N/H). Using (5.7), the large denominators and all transformation errors con-
+tribute at most
+                       X      M R2 Q √                   MR
+                                  2
+                                       HN log(2HN ) + √
+                         j
+                              NQ R                       HN
+                             Q=2 R
+                          j≥0, R≤Q≲H
+                                                   p
+                                              ≲M    H/N log(2HN ).
+For the remaining denominators, replace k − κI by k only in the interval restrictions
+of (5.17). For fixed l, the restrictions specify one interval in k − κI . Translation by
+0 ≤ κI < 1 changes at most two integers. The cost is
+                                                                 p
+     O(LR2 /Q) = O(H) per interval,          O(M H/N ) ≤ O(M H/N ) in total.
+
+For real k > κI and l > 0, define
+                                                                  √
+                                                  p                          
+                                                                         κI
+                               RI (k, l) = tI l        k − κI −       k+ √        .
+                                                                        2 k
+After conjugation, the exponential factor is e(xI · ykl + RI (k, l)). For real K ≤ k ≤ 2K,
+L ≤ l ≤ 2L and i, j ∈ {0, 1},
+
+                                                             HR2
+                       K i Lj |∂ki ∂lj RI | ≲ tI LK −3/2 ≂        ≲ H/N = o(1).
+                                                             N Q2
+On the same rectangle, the normalized amplitude satisfies
+                                             !
+                i j  i j      Qe(RI (k, l))
+             K L ∂k ∂l         p               ≲1        (i, j ∈ {0, 1}).
+                           2R2 γI d(k − κI )
+
+These are the bounds required by (A.2). The remaining restrictions are
+           √      p         p              √      p            p
+             k ∈ [ γI d N− , γI d N+ ],  l/ k ∈ [2 γI d H− , 2 γI d H+ ].
+
+Apply Lemma A.1 to these two restrictions and (A.2) to the amplitude. Their total
+coefficient bound is O(log2 (2 + KL)) = O(log2 T ), proving (5.13). To sum the absolute
+values over I, first multiply each interval sum by a scalar of modulus at most one making
+it nonnegative. The preceding error bounds give (5.14).
+24                         X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+       6. A distribution estimate for exponential sums on the cone
+   We combine Guth–Maldague’s amplitude-dependent estimate [11, Theorem 2] with
+an integer count. The purpose of this section is to convert that wave-envelope estimate
+into the two-term distribution bound in (6.2). The geometric input and the subsequent
+lattice count are kept separate so that the dependence of the fourth- and sixth-power
+terms can be read directly.
+6.1. Reduction to two estimates. Let K, L, η > 0 satisfy
+                          1 ≤ L < K ≤ η −1 ≤ KL,            Z = ηK 2 .                  (6.1)
+For complex coefficients c = (ckl ) with |ckl | ≤ 1, indexed by integers k ≈ K, l ≈ L, and
+for x ∈ R3 , λ > 0, define
+                                                √           √
+                        B = [−1, 1]2 × [−(ηL K)−1 , (ηL K)−1 ],
+                                   X                         √
+                        Fc (x) =         ckl e(lx1 + klx2 + l k x3 ),
+                                  k≈K, l≈L
+                                       |{x ∈ B : |Fc (x)| > λ}|
+                    D(λ) = sup                                     (λ > 0).
+                              |ckl |≤1            |B|
+Zero coefficients allow arbitrary interval restrictions.
+Theorem 6.1 (First spacing). Under (6.1), for every λ > 0,
+                    D(λ) ≲ε (KL)ε (KL)3 λ−6 + KL2 (L + Z)λ−4 .
+                                                            
+                                                                                        (6.2)
+  If K ≤ 4, then L < K ≤ 4 and |Fc | ≲ KL give (6.2). Henceforth assume K > 4. Fix
+coefficients c = (ckl ) as above, a level λ > 0 and a sufficiently small constant c0 > 0.
+Choose φ ∈ S (R) with supp φ   b ⊆ [−c0 , c0 ] and |φ| ≥ 1 on [−2, 2]. Put
+                                                                       √
+                                    √                                    K   K|B|
+        χ(x) = φ(x1 /K)φ(x2 )φ(ηL K x3 ),          f = χFc ,     V =       =      .
+                                                                       ηL     8
+                                                               √           √
+Periodicity in x1 and |χ| ≥ 1 on [−K, K] × [−1, 1] × [−(ηL K)−1 , (ηL K)−1 ] give
+                       |{x ∈ B : |Fc (x)| > λ}|
+                   V                            ≲ |{x ∈ R3 : |f (x)| > λ}|.             (6.3)
+                                  |B|
+For ξ = (ξ1 , ξ2 , ξ3 ) ∈ R3 , use normalized frequency coordinates
+                                                        
+                                           ξ1 ξ2     ξ3
+                                     ζ=      ,    , √      .
+                                           L KL L K
+In these coordinates, the frequencies of Fc satisfy ζ1 ζ2 = ζ32 . The linear map
+                                                          
+                                      ζ3 ζ2 − ζ 1 ζ2 + ζ 1
+                              ζ 7−→     ,        ,
+                                      2     4         4
+maps them into the truncated cone
+                   {(z1 , z2 , z3 ) ∈ R3 : z12 + z22 = z32 , 1/2 ≤ z3 ≤ 3/2}.
+The standard cone in [11, Theorem 2] is truncated to height between 1/2 and 1. A fixed
+finite radial subdivision, followed by fixed dilations, reduces the displayed height interval
+to this model. We apply the estimate to the resulting pieces separately. The associated
+                                  GAUSS CIRCLE PROBLEM                                        25
+
+smooth frequency cutoffs preserve the Fourier L1 and spatial L2 bounds on the projected
+summands used below, up to absolute factors. Thus the subdivisions do not change
+any power of K, L or η. In the ζ coordinates, supp χ    b lies in [−c0 /(KL), c0 /(KL)]2 ×
+[−c0 η, c0 η]. Since (KL)−1 ≤ η, choose a power of four R ≥ 4 with R ≤ η −1 < 4R and
+apply [11, Theorem 2, Section 5, (29)–(30)].
+  Use the sectors and boxes in [11, Section 5, items (1)–(3)], transported to the original
+coordinates. A finest sector θ has angular width comparable to R−1/2 . Define fbθ = 1θ fb.
+All sums in θ are over this finite partition, with the displayed containment restrictions.
+For σ ∈ {1, 1/2, . . . , R−1/2 }, put ∆ = Kσ. Let P∆ consist of the sectors ϑ of angular
+width comparable to σ that meet supp fb. Then
+                               √
+                                 Z ≲ ∆ ≲ K,      #P∆ ≲ K/∆,
+and the k indices contributing to each ϑ lie in an interval of length O(∆). The scales ∆
+have ratio two.
+   For each scale ∆ and ϑ ∈ P∆ , let Bϑ be the centered parallelepiped obtained
+by transporting the box in [11, Section 5, item (2)] to the x coordinates. Write
+Bϑ = Aϑ [−1, 1]3 with Aϑ invertible, and define the dual box Bϑ∗ = A−T            3
+                                                                         ϑ [−1, 1] . The
+translates Q = z + Bϑ , with z ∈ 2Aϑ Z3 , tile R3 up to boundaries. Let WQ be the
+corresponding weight from [11, Section 5, item (3)]. In the adapted box coordinates,
+this weight is an affine pullback of the fixed polynomial product weight of [11, (13)].
+Its comparison constants are uniform in the translation, orientation and dimensions of
+Q. We make the Fourier-supported majorant explicit, as in [11, Definition 4, (36)]. For
+u = (u1 , u2 , u3 ) ∈ R3 , put
+                                        Y3
+                                w(u) =      (1 + u2j )−100 .
+                                            j=1
+
+Choose a fixed nonnegative ψ0 ∈ S (R3 ) with ψ0 = 1, ψ0 > 0 on [−1, 1]3 , and
+                                                 R
+
+supp ψb0 ⊆ [−1, 1]3 . Set w
+                                             R
+                          e = ψ0 ∗ w and cw = we > 0. Then
+
+           e ≂ w,
+           w                be ⊆ [−1, 1]3 ,
+                       supp w                 w(u + v) ≂ w(u) (|v|∞ ≤ 1).
+The first comparison follows by integrating w(u − v) ≲ w(u) 3j=1 (1 + vj2 )100 against
+                                                             Q
+
+ψ0 (v) and using the last comparison for the lower bound. Define
+                                 e −1
+                                 w(A  ϑ x)
+                     ψϑ (x) =                 ,         ψbϑ (ξ) = c−1 be T ξ).
+                                                                   w w(A ϑ
+                                cw | det Aϑ |
+For Q = z+Bϑ , the weights above satisfy WQ (y) ≲ w(A−1
+                                                     ϑ (y−z)). Since |Q| = 8| det Aϑ |
+      −1
+and |Aϑ (x − z)|∞ ≤ 1 for x ∈ Q, we obtain
+
+                      ψϑ ≥ 0,         ∥ψϑ ∥1 = 1,            supp ψbϑ ⊆ Bϑ∗ ,
+                                                                                            (6.4)
+           |Q|−1 WQ (y) ≲ | det Aϑ |−1 w(A−1
+                                          ϑ (x − y)) ≲ ψϑ (x − y)                (x ∈ Q).
+Define
+                                                  X
+                                  Tϑ = ψϑ ∗             |fθ |2 ≥ 0.
+                                                  θ⊆ϑ
+26                      X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+For every translate Q = z + Bϑ in this tiling,
+                          Z X
+                       1
+                                 |fθ (y)|2 WQ (y) dy ≲ inf Tϑ (x).
+                      |Q| R3                           x∈Q
+                               θ⊆ϑ
+
+The selection condition in [11, Theorem 2] and #P∆ ≲ K/∆ therefore imply that, for
+each δ > 0, there is a fixed constant cδ > 0 such that
+                                       X X Z
+               4                     δ
+              λ |{|f | > λ}| ≲δ (KL)                            Tϑ2 .        (6.5)
+                                       ∆ ϑ∈P∆    {Tϑ ≥cδ (KL)−δ λ2 ∆2 /K 2 }
+
+In the notation of [11, Theorem 2], #τ counts the active coarse sectors at scale σ = ∆/K,
+not the finest sectors lying inside a particular coarse sector. The bound #P∆ ≲ K/∆
+gives (#τ )−2 ≳ ∆2 /K 2 . Thus every envelope selected by Theorem 2 meets the weaker
+threshold used on the right of (6.5). The fixed linear normalization above takes the
+O(η) Fourier neighborhood to the O(R−1 ) cone neighborhood required there. Indeed,
+the preceding average estimate gives
+                                                     2
+                          Z X                             Z
+                     1 
+                                  |fθ (y)|2 WQ (y) dy  ≲    Tϑ (x)2 dx.
+                    |Q|    R3                              Q
+                             θ⊆ϑ
+
+The selection condition places each retained Q inside the integration set in (6.5). The
+translates tile space and R ≤ KL.
+Lemma 6.1. For ϑ ∈ P∆ ,
+                        V −1 ∥Tϑ ∥22 ≲ε (KL)ε ∆L2 (∆ + L + Z).                      (6.6)
+Also,
+                          ∆≥L+Z          =⇒     ∥Tϑ ∥∞ ≲ ∆L.                        (6.7)
+Proof of Theorem 6.1. Apply Lemma 6.1 with loss δ > 0. Since #P∆ ≲ K/∆,
+                         X
+                    V −1     ∥Tϑ ∥22 ≲δ (KL)δ KL2 (∆ + L + Z).
+                          ϑ∈P∆
+
+For ∆ < L + Z, summing over O(log(2K)) scales gives
+                      X X
+                 V −1            ∥Tϑ ∥22 ≲δ (KL)2δ KL2 (L + Z).
+                        ∆<L+Z ϑ∈P∆
+
+For ∆ ≥ L + Z, a nonempty integration set in (6.5) requires
+            cδ (KL)−δ λ2 ∆2 /K 2 ≤ ∥Tϑ ∥∞ ≲ ∆L,        ∆ ≲δ (KL)δ K 2 L/λ2 .
+The geometric sum of these ∆ is bounded by twice its largest term. Substitution in
+(6.5), followed by (6.3), yields
+                                                      K 3 L3
+                                                            
+                       4             3δ    2
+                      λ D(λ) ≲δ (KL)     KL (L + Z) +          .
+                                                       λ2
+Take δ = ε/4.                                                                         □
+                                   GAUSS CIRCLE PROBLEM                                          27
+
+6.2. Fourier support and the integer count.
+Proof of Lemma 6.1. For each finest sector θ and integers k ≈ K, l ≈ L, define uθ,kl by
+                                             √             X
+            u                 χ ξ − (l, kl, l k) ,
+            bθ,kl (ξ) = 1θ (ξ)b                     fθ =         ckl uθ,kl .
+                                                                    k≈K, l≈L
+
+Fourier inversion and Plancherel give
+                       χ∥1 ≲ 1,
+          ∥uθ,kl ∥∞ ≤ ∥b                ∥uθ,kl ∥2 ≤ ∥χ∥2 ≲ V 1/2 ,           ∥uθ,kl ∥44 ≲ V.
+  Fix ϑ ∈ P∆ . Choose an interval in [K, 2K] of length O(∆) containing every   p k for
+which uθ,kl ̸≡ 0 for some θ ⊆ ϑ and l ≈ L. Let k0 be its midpoint, and put t0 = k0 /K.
+Use the frequency coordinates
+                             (ζ1 , ζ3 − t0 ζ1 , ζ2 − 2t0 ζ3 + t20 ζ1 ).
+                       √
+The frequency (l, kl, l k) has coordinates
+                                                         
+                          l l p            l p          2
+                            , ( k/K − t0 ), ( k/K − t0 ) ,
+                          L L              L
+and the widths of Bϑ∗ are comparable to η/σ 2 , η/σ, η, where σ = ∆/K. For θ ⊆ ϑ and
+integers k, k ′ ≈ K, l, l′ ≈ L, the condition ψϑ ∗ (uθ,kl uθ,k′ l′ ) ̸≡ 0 and (6.4) imply
+                                       |l′ − l| ≲ LZ/∆2 ,
+                            √     p         √      p          √
+                       |l′ ( k ′ − k0 ) − l( k − k0 )| ≲ LZ/(∆ K).
+                                                                            √     √
+              b are absorbed because ηKL ≥ 1 and σ ≤ 1. As l′ ≂ L and | k − k0 | ≲
+The√widths of χ
+∆/ K,
+                       L|k ′ − k|     LZ       LZ ∆           LZ
+                          √       ≲ √ + 2√ ≲ √ .
+                             K       ∆ K       ∆      K     ∆ K
+Thus
+                        |k ′ − k| ≲ Z/∆,       |l′ − l| ≲ LZ/∆2 .                     (6.8)
+  Each translated support meets O(1) finest sectors. For a fixed (k, l), (6.8) allows at
+most C(1 + Z/∆)(1 + LZ/∆2 ) choices of (k ′ , l′ ). Since there are O(∆L) choices of (k, l),
+              ∥Tϑ ∥∞ ≲ ∆L(1 + Z/∆)(1 + LZ/∆2 ) ≲ ∆L                       (∆ ≥ L + Z).
+This proves (6.7).
+  For every pair of projected summands, Young’s and Hölder’s inequalities give
+                         ∥ψϑ ∗ (uθ,kl uθ,k′ l′ )∥2 ≤ ∥uθ,kl ∥4 ∥uθ,k′ l′ ∥4 ≲ V 1/2 .
+Each term in the expansion of R3 Tϑ (x)2 dx is therefore O(V ). In a nonzero term, the
+                                      R
+
+integers ki , ki′ lie in the fixed interval for ϑ, and li , li′ ≈ L for i = 1, 2. Fourier support
+gives
+                   X2                                    X 2
+                         ′
+                       (li − li ) ≤ 4c0 /K < 1,               (ki′ li′ − ki li ) ≤ 4c0 < 1.
+                i=1                                   i=1
+Both sums vanish. Define di = ki′ − ki for i = 1, 2, and v = l1′ − l1 . Then
+      l2′ − l2 = −v,      l1 d1 + l2 d2 = v(k2′ − k1′ ),      |di | ≲ Z/∆      (i = 1, 2).     (6.9)
+For this upper bound, discard the l-difference restriction in (6.8).
+28                            X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+                                                                 ̸ 0. Choose k1′ , k2′ , v, d2 , l2
+   If (d1 , d2 ) ̸= (0, 0), interchange the two pairs so that d1 =
+first. The number of choices is
+                     O(∆2 ) O(L) O(1 + Z/∆) O(L) = O ∆2 L2 (1 + Z/∆) .
+                                                                        
+
+For an admissible choice, the nonzero integer D = v(k2′ − k1′ ) − l2 d2 satisfies
+                    l1 d1 = D,          0 < |D| = |l1 d1 | ≲ L(1 + Z/∆) ≲ KL.
+The divisor bound [16, Theorem 315] gives Oε ((KL)ε ) choices of (l1 , d1 ). All remaining
+indices are determined by
+                  ki = ki′ − di     (i = 1, 2),         l1′ = l1 + v,        l2′ = l2 − v.
+If d1 = d2 = 0, (6.9) reduces to v(k2′ − k1′ ) = 0. The cases v = 0 and v ̸= 0 give,
+respectively,
+                              O(∆2 L2 ),       O(∆L3 ).
+Consequently
+                          V −1 ∥Tϑ ∥22 ≲ε (KL)ε ∆2 L2 (1 + Z/∆) + ∆L3
+                                                                                  
+
+                                        = (KL)ε ∆L2 (∆ + L + Z),
+which is (6.6).                                                                                      □
+
+                         Appendix A. Summation and pair counts
+A.1. Abel summation. Let u, v ∈ Z with u ≤ v, and let bu , . . . , bv be complex. For
+u ≤ n ≤ v, discrete Abel summation gives
+                  v−1
+                  X                                         v−1
+                                                            X
+     bn = bv +          (bj − bj+1 )1n≤j ,        |bv | +         |bj − bj+1 | ≤ ∥b∥∞ + Var(b).   (A.1)
+                  j=u                                       j=u
+
+Thus estimates uniform on subintervals extend to bounded-variation weights, using their
+actual values at jumps. Let I be a nonempty index set, and let Q ⊆ R2 be a closed
+rectangle with side lengths X, Y ≥ 1 in the x, y directions. Suppose the complex-valued
+functions AI , I ∈ I, are twice continuously differentiable on a neighborhood of Q. With
+all norms below taken on Q, assume
+                                                                        
+           sup ∥AI ∥∞ + X∥∂x AI ∥∞ + Y ∥∂y AI ∥∞ + XY ∥∂x ∂y AI ∥∞ ≤ C.
+              I
+
+Applying (A.1) in each coordinate gives finite families of integers kj , lj and coefficients
+aI,j such that, on Q ∩ Z2 ,
+                              X                     X
+                  AI (k, l) =   aI,j 1k≤kj 1l≤lj ,      sup |aI,j | ≲ C.               (A.2)
+                                    j                                j   I
+
+The integers kj , lj are independent of I. The coefficients are endpoint values and first
+or mixed differences, whose sums of suprema are bounded by the displayed derivative
+bounds.
+   The van der Corput transformations are cited directly from [21, Lemma 5.5.3]. Real
+and imaginary parts allow complex weights, and conjugation allows either sign of the
+second derivative. For a bounded-variation amplitude A on an interval I and a real
+phase ϕ with |ϕ′′ | ≂ Λ > 0 on I, changing endpoint conventions costs O((∥A∥∞,I +
+                                      GAUSS CIRCLE PROBLEM                                          29
+
+VarI (A))(1 + Λ−1/2 )), which is included in the cited error. The scale in that lemma is
+kept fixed on subintervals.
+A.2. Interval restrictions.
+Lemma A.1. Let Ω and I be nonempty finite sets, let c1 , c2 : Ω → R, and let
+JI,1 , JI,2 ⊆ R be intervals for I ∈ I. There are finite families of coefficients aI,j and
+functions bj : Ω → C such that, for every I ∈ I and ν ∈ Ω,
+                                                         X
+                          1JI,1 (c1 (ν))1JI,2 (c2 (ν)) =   aI,j bj (ν),
+                                                                     j
+                           X                                                                     (A.3)
+                                 sup |aI,j | sup |bj (ν)| ≲ log2 (2 + #Ω).
+                                  I           ν
+                            j
+
+For one interval restriction the bound is O(log(2 + #Ω)).
+Proof. For c : Ω → R, define
+                    Nc = #c(Ω),               rc (ν) = #{t ∈ c(Ω) : t < c(ν)}.
+For an interval J ⊆ R, define AJ = {rc (ν) : ν ∈ Ω, c(ν) ∈ J}. This is aP   possibly empty in-
+                                                                         −1
+terval of integers in {0, . . . , Nc −1}. For 0 ≤ j < Nc , set γJ (j) = Nc   v∈AJ e(−jv/Nc ).
+Finite Fourier inversion and summation of a geometric progression give
+                                               c −1
+                                              NX
+                                1J (c(ν)) =           γJ (j)e(jrc (ν)/Nc ),
+                                               j=0
+                                                              c −1
+                                                             NX
+                                  1
+             |γJ (j)| ≲                      ,                       sup |γJ (j)| ≲ log(2Nc ).
+                          1 + min(j, Nc − j)                             J
+                                                             j=0
+
+Apply this to c1 , c2 and multiply. Repeated values have the same rank, and all endpoint
+conventions are retained.                                                             □
+A.3. Pair counts. Let d, n, r ∈ N, xj = (xj,1 , . . . , xj,d ) ∈ Rd for 1 ≤ j ≤ n, and
+δ = (δ1 , . . . , δd ) ∈ (0, ∞)d . Define
+             B(δ) = #{(j, j ′ ) ∈ {1, . . . , n}2 : |xj,i − xj ′ ,i | ≤ δi (1 ≤ i ≤ d)}.
+Partition the indices into r groups, and let Bℓ (δ) count the pairs within group ℓ. For
+every fixed A ≥ 1,
+                                              Xr
+                                B(Aδ) ≲A,d r      Bℓ (δ).                         (A.4)
+                                                         ℓ=1
+For ν ∈ Zd and 1 ≤ ℓ ≤ r, let nν,ℓ count group ℓ in the half-open box di=1 [νi δi , (νi +1)δi ),
+                                                                        Q
+
+and put nν = rℓ=1 nν,ℓ . All sums over ν, µ below run through Zd , and ℓ runs from 1 to
+             P
+r. Then
+                        X                     X           X             r
+                                                                        X
+          B(Aδ) ≤                  nν nµ ≲A,d     n2ν ≤ r     n2ν,ℓ ≤ r   Bℓ (δ).
+                     |ν−µ|∞ ≤⌈A⌉+1                       ν                   ℓ,ν     ℓ=1
+
+The same argument applies when some coordinates lie in T, using periodic distance and
+intervals of length comparable to min(δi , 1). All counts retain index multiplicities.
+30                           X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+                         Appendix B. The double large sieve
+Lemma B.1 (Double large sieve). Let d, n ∈ N, let Di , Ei > 0 for 1 ≤ i ≤ d, and
+let I be finite. Suppose xj = (xj,1 , . . . , xj,d ) ∈ X = di=1 [−Di , Di ] for 1 ≤ j ≤ n, and
+                                                            Q
+
+yν = (yν,1 , . . . , yν,d ) ∈ di=1 [−Ei , Ei ] for ν ∈ I. For x ∈ Rd and complex coefficients
+                             Q
+b = (bν )ν∈I with |bν | ≤ 1, put
+                                 X                                   d
+                                                                     Y
+                      Fb (x) =           bν e(x · yν ),        P =         (1 + Di Ei ),
+                                   ν∈I                               i=1
+              B = #{(j, j ′ ) ∈ {1, . . . , n}2 : |xj,i − xj ′ ,i | ≤ Ei−1 (1 ≤ i ≤ d)}.
+For q > 2, set Aq = sup|bν |≤1 ∥Fb ∥Lq (X ) . For complex coefficients a1 , . . . , an with
+                                     #
+|aj | ≤ 1,
+                             n
+                             X
+                                   aj Fb (xj ) ≲d,q P 1/q n1−2/q B 1/q Aq .                (B.1)
+                             j=1
+
+If c4 , c6 ≥ 0 satisfy, for every λ > 0,
+                              |{x ∈ X : |Fb (x)| > λ}|
+                       sup                             ≤ c4 λ−4 + c6 λ−6 ,
+                      |bν |≤1           |X |
+then
+                         n
+                         X                           X
+                               aj Fb (xj ) ≲d                P 1/q n1−2/q B 1/q c1/q
+                                                                                 q .       (B.2)
+                         j=1                       q∈{4,6}
+
+The count B includes all ordered pairs of indices, with their multiplicities.
+Proof. The moment estimate (B.1) is [4, Section 5, (5.5)], with bounded coefficients as
+in [4, Section 9, (9.1)–(9.4)]. For (B.2), partition X into axis-parallel boxes Q of side
+lengths
+                           2Di
+               δi =                    ,    δi Ei ≤ 1,    |Q|−1 ≲d P/|X |.
+                     max{1, ⌈2Di Ei ⌉}
+Assign each xj to one box containing it, and let nQ be the number of assigned indices.
+Then                           X                X
+                                  nQ = n,           n2Q ≤ B.
+                                    Q                         Q
+
+Fix the coefficient sequence b. For µ ∈ {0, 1}d , define
+                                            X        d
+                                                     Y
+                           Fb,µ (x) =             bν   (yν,i /Ei )µi e(x · yν ).
+                                            ν∈I      i=1
+
+These coefficients have modulus at most one. With ∂ µ = ∂xµ11 · · · ∂xµdd ,
+                                      d
+                                                    !
+                                     Y
+                             µ                   µi
+                            ∂ Fb =      (2πiEi )      Fb,µ .
+                                                  i=1
+                                     GAUSS CIRCLE PROBLEM                                           31
+
+Applying the fundamental theorem of calculus in each coordinate gives, for xj ∈ Q,
+                                d      Z                  X Z
+                         1  X Y     µi      µ         1
+           |Fb (xj )| ≤           δi      |∂ Fb | ≲d               |Fb,µ |.
+                        |Q|             Q            |Q|      d Q
+                              dµ∈{0,1} i=1                                   µ∈{0,1}
+
+For λ > 0, integration of the distribution function gives
+       Z                                                 Z ∞
+                            2   2
+                     |Fb,µ | = λ |X ∩ {|Fb,µ | > λ}| + 2     t|X ∩ {|Fb,µ | > t}| dt
+          X ∩{|Fb,µ |>λ}                                                 λ
+                                              −2            −4
+                                                                 
+                                ≲ |X | c4 λ        + c6 λ            .
+Split each integral over Q at |Fb,µ | = λ and use Cauchy–Schwarz. For every λ > 0,
+        n
+                                         !1/2                                    !1/2
+       X                         X n2Q          X       Z
+                                                                               2
+           aj Fb (xj ) ≲d nλ +                                          |Fb,µ |
+                                     |Q|                 X ∩{|Fb,µ |>λ}               (B.3)
+       j=1                        Q           µ∈{0,1}d
+                                                        1/2
+                       ≲d nλ + (P B)1/2 c4 λ−2 + c6 λ−4      .
+If c4 = c6 = 0, let λ ↓ 0 in (B.3). Otherwise take λ = (P Bc4 /n2 )1/4 + (P Bc6 /n2 )1/6 > 0.
+For q ∈ {4, 6}, P Bcq λ2−q ≤ n2 λ2 , which proves (B.2).                                  □
+
+Funding C.Z. is partially supported by the National Key R&D Program of China
+No. 2024YFA1015300 and NSFC Grant No. 12371097. J.Z. is partially supported by
+NSFC Grant No. 12531005.
+Conflicts of Interest The authors declare that there are no conflicts of interest.
+AI disclosure. During the preparation of this manuscript, the authors used ChatGPT
+and Codex to discuss possible proof strategies, assist in drafting and checking parts of the
+mathematical arguments, organize references, and improve the clarity and readability
+of the exposition. All mathematical statements and proofs in the final manuscript
+were written, reviewed, and verified by the authors, who take full responsibility for the
+content of this manuscript.
+
+                                           References
+ [1] B. C. Berndt, S. Kim, and A. Zaharescu, The circle problem of Gauss and the divisor problem of
+     Dirichlet—still unsolved, Amer. Math. Monthly 125 (2) (2018) 99–114. 1, 2
+ [2] E. Bombieri and H. Iwaniec, On the order of ζ(1/2 + it), Ann. Scuola Norm. Sup. Pisa Cl. Sci. (4)
+     13 (3) (1986) 449–472. 2
+ [3] J. Bourgain, C. Demeter, and L. Guth, Proof of the main conjecture in Vinogradov’s Mean Value
+     Theorem for degrees higher than three, Ann. of Math. 184 (2016) 633–682, Theorem 1.1, p. 633. 5,
+     10
+ [4] J. Bourgain and N. Watt, Decoupling for perturbed cones and the mean square of |ζ(1/2 + it)|, Int.
+     Math. Res. Not. IMRN 2018 (17) (2018) 5219–5296. Version-specific references are to arXiv 1505.
+     04161v1 (15 May 2015), Sections 5, 7 and 9, (5.5), (7.9), and (9.1)–(9.4). 2, 18, 30
+ [5] J. R. Chen, The lattice points in a circle, Sci. Sinica 12 (1963) 633–649. 2
+ [6] K. Corrádi and I. Kátai, A comment on K. S. Gangadharan’s paper entitled “Two classical lattice
+     point problems”, Magyar Tud. Akad. Mat. Fiz. Oszt. Közl. 17 (1967) 89–97 (in Hungarian). 3
+ [7] H. Cramér, Über zwei Sätze des Herrn G. H. Hardy, Math. Z. 15 (1922) 201–210. 3
+ [8] K. S. Gangadharan, Two classical lattice point problems, Proc. Cambridge Philos. Soc. 57 (1961)
+     699–721. 3
+32                           X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+ [9] C. F. Gauss, Werke, vol. II, Königliche Gesellschaft der Wissenschaften, Göttingen, 1863, pp. 269–
+     291, especially p. 280. 1
+[10] S. W. Graham and G. Kolesnik, Van der Corput’s Method of Exponential Sums, LMS Lecture
+     Note Series, vol. 126, Cambridge University Press, 1991. 1, 5, 6, 7
+[11] L. Guth and D. Maldague, Amplitude dependent wave envelope estimates for the cone in R3 ,
+     arXiv 2206.01093v2 (13 August 2022), Theorem 2, p. 2, Section 5, (29)–(30) and items (1)–(3),
+     pp. 22–23, Definition 4 and (36), p. 27. 1, 2, 6, 24, 25, 26
+[12] J. L. Hafner, New omega theorems for two classical lattice point problems, Invent. Math. 63 (1981)
+     181–186. 3
+[13] G. H. Hardy, On the expression of a number as the sum of two squares, Quart. J. Pure Appl. Math.
+     46 (1915) 263–283. 3
+[14] G. H. Hardy, On Dirichlet’s divisor problem, Proc. London Math. Soc. (2) 15 (1916) 1–25. 3
+[15] G. H. Hardy, The lattice points of a circle, Proc. Roy. Soc. London Ser. A 107 (1925) 623–635. 2
+[16] G. H. Hardy and E. M. Wright, An Introduction to the Theory of Numbers, 4th ed., Clarendon
+     Press, Oxford, 1960, Section 18.1, Theorem 315, p. 260. 12, 28
+[17] D. R. Heath-Brown, The distribution and moments of the error term in the Dirichlet divisor
+     problem, Acta Arith. 60 (1992) 389–415. 3
+[18] L. K. Hua, The lattice-points in a circle, Quart. J. Math. Oxford Ser. 13 (1942) 18–29. 2
+[19] M. N. Huxley, Exponential sums and lattice points, Proc. London Math. Soc. (3) 60 (1990) 471–502.
+     Corrigenda, ibid. 66 (1993) p. 70. 2
+[20] M. N. Huxley, Exponential sums and lattice points II, Proc. London Math. Soc. (3) 66 (1993)
+     279–301. Corrigenda, ibid. 68 (1994) p. 264. 1, 2
+[21] M. N. Huxley, Area, Lattice Points, and Exponential Sums, London Mathematical Society Mono-
+     graphs, New Series 13, Clarendon Press, Oxford, 1996, Lemma 5.5.3. 2, 9, 14, 22, 28
+[22] M. N. Huxley, Exponential sums and lattice points III, Proc. London Math. Soc. (3) 87 (3) (2003)
+     591–609. 2
+[23] A. E. Ingham, On two classical lattice point problems, Proc. Cambridge Philos. Soc. 36 (1940)
+     131–138. 3
+[24] A. Ivić, E. Krätzel, M. Kühleitner, and W. G. Nowak, Lattice points in large regions and related
+     arithmetic functions: Recent developments in a very classic topic, in: W. Schwarz, J. Steuding
+     (Eds.), Elementare und analytische Zahlentheorie, Schr. Wiss. Ges. Johann Wolfgang Goethe Univ.
+     Frankfurt am Main, vol. 20, Franz Steiner Verlag, Stuttgart, 2006, pp. 89–128. 1, 2
+[25] H. Iwaniec and C. J. Mozzochi, On the divisor and circle problems, J. Number Theory 29 (1) (1988)
+     60–93. 2
+[26] I. Kátai, The number of lattice points in a circle, Ann. Univ. Sci. Budapest. Eötvös Sect. Math. 8
+     (1965) 39–60 (in Russian). 3
+[27] G. A. Kolesnik, Improvement of remainder term for the divisors problem, Mat. Zametki 6 (1969)
+     545–554 (in Russian). English translation, Math. Notes 6 (1969) 784–791. 2
+[28] G. A. Kolesnik, On the estimation of some trigonometric sums, Acta Arith. 25 (1973) 7–30 (in
+     Russian). 2
+[29] G. A. Kolesnik, On the order of ζ(1/2 + it) and ∆(R), Pacific J. Math. 98 (1982) 107–122. 2
+[30] G. A. Kolesnik, On the method of exponent pairs, Acta Arith. 45 (1985) 115–143. 2
+[31] E. Krätzel, Lattice Points, Mathematics and its Applications (East European Series), vol. 33,
+     Kluwer Academic Publishers, Dordrecht, 1988. 1, 2
+[32] Y. Lamzouri, On the distribution of the error terms in the divisor and circle problems, Int. Math.
+     Res. Not. IMRN 2025 (3) (2025) rnaf006. Conjecture 1.7 in arXiv 2410.03652. 3
+[33] Y. Lamzouri, Sharp omega results for the divisor and circle problems, arXiv 2605.21476v1 (20 May
+     2026), Theorem 1.1. 3
+[34] E. Landau, Die Bedeutung der Pfeiffer’schen Methode für die analytische Zahlentheorie, Sitzungsber.
+     Kaiserl. Akad. Wiss. Wien, Math.-Naturw. Kl. 121 (1912) 2298–2328. 2
+[35] E. Landau, Über die Zerlegung der Zahlen in zwei Quadrate, Ann. Mat. Pura Appl. (3) 20 (1913)
+     1–28. 2
+[36] E. Landau, Über die Gitterpunkte in einem Kreise. II, Nachr. Ges. Wiss. Göttingen, Math.-Phys.
+     Kl. (1915) 161–171. 3
+                                      GAUSS CIRCLE PROBLEM                                            33
+
+[37] E. Landau, Über die Gitterpunkte in einem Kreise. Vierte Mitteilung, Nachr. Ges. Wiss. Göttingen,
+     Math.-Phys. Kl. (1923) 58–65. 3
+[38] S. Lester and I. Wigman, Around the Gauss circle problem: Hardy’s conjecture and the distribution
+     of lattice points near circles, J. London Math. Soc. (2) 110 (3) (2024) e12977. 3
+[39] X. Li and X. Yang, An improvement on Gauss’s circle problem and Dirichlet’s divisor problem,
+     preprint, arXiv 2308.14859v2 (14 September 2023), Theorem 1.2. 1, 2
+[40] J. E. Littlewood and A. Walfisz, The lattice points of a circle, Proc. Roy. Soc. London Ser. A 106
+     (1924) 478–488, including E. Landau’s appended note on pp. 487–488. 2
+[41] K. Mahatab, Omega results for the divisor and circle problems using the resonance method,
+     Ramanujan J. 69 (2026) Article 91. 3
+[42] L. W. Nieland, Zum Kreisproblem, Math. Ann. 98 (1928) 717–736. 2
+[43] W. G. Nowak, Lattice points in a circle and divisors in arithmetic progressions, Manuscripta Math.
+     49 (1984) 195–205. 2
+[44] W. G. Nowak, Lattice points in a circle: An improved mean-square asymptotics, Acta Arith. 113
+     (3) (2004) 259–272. 3
+[45] D. A. Popov, Circle problem and the spectrum of the Laplace operator on closed 2-manifolds,
+     Russian Math. Surveys 74 (5) (2019) 909–925. 1
+[46] D. A. Popov, Voronoi’s formulae and the Gauss problem, Russian Math. Surveys 79 (1) (2024)
+     53–126. 1
+[47] E. Preissmann, Sur la moyenne quadratique du terme de reste du problème du cercle, C. R. Acad.
+     Sci. Paris Sér. I Math. 306 (1988) 151–154. 3
+[48] O. Robert and P. Sargos, Three-dimensional exponential sums with monomials, J. Reine Angew.
+     Math. 591 (2006) 1–20. Theorem 2, Section 5, (5.1)–(5.2), and Lemma 8, Section 6.1, (6.1)–(6.4).
+     6, 15
+[49] W. Sierpiński, O pewnem zagadnieniu z rachunku funkcyj asymptotycznych, Prace Matematyczno-
+     Fizyczne 17 (1906) 77–118. 2
+[50] K. Soundararajan, Omega results for the divisor and circle problems, Int. Math. Res. Not. IMRN
+     2003 (36) (2003) 1987–1998, Theorem 1. 3
+[51] A. Sourmelidis, An additive application of the resonance method, Mathematika 72 (3) (2026)
+     e70106. 3
+[52] E. C. Titchmarsh, The lattice points in a circle, Proc. London Math. Soc. (2) 38 (1934) 96–115.
+     Corrigendum, ibid., p. 555. 2
+[53] K. M. Tsang, Higher-power moments of ∆(x), E(t) and P (x), Proc. London Math. Soc. (3) 65
+     (1992) 65–84. 3
+[54] J. D. Vaaler, Some extremal functions in Fourier analysis, Bull. Amer. Math. Soc. (N.S.) 12 (2)
+     (1985) 183–216, Theorem 18. 5, 7
+[55] J. G. van der Corput, Neue zahlentheoretische Abschätzungen, Math. Ann. 89 (1923) 215–254. 2
+[56] J. G. van der Corput, Zum Teilerproblem, Math. Ann. 98 (1928) 697–716. 2
+[57] J. van de Lune and E. Wattel, Systematic computations on Gauss’ lattice point problem, Report
+     AM-R9008, Centrum voor Wiskunde en Informatica, Amsterdam, 1990. 2
+[58] A. Walfisz, Über zwei Gitterpunktprobleme, Math. Ann. 95 (1926) 69–83. 2
+[59] A. Walfisz, Teilerprobleme, Math. Z. 26 (1927) 66–88. 2, 3
+[60] N. Watt, On the mean squared modulus of a Dirichlet L-function over a short segment of the
+     critical line, Acta Arith. 111 (4) (2004) 307–403. Section 2, (2.10)–(2.23), pp. 317–319, Lemma 3.1,
+     (3.11)–(3.13), Lemma 4.1 and (4.22), Lemmas 8.1–8.2 and (8.17)–(8.20), pp. 380–382. 2, 6, 16, 17,
+     18, 19, 21, 22
+[61] J. R. Wilton, The lattice points of a circle: An historical account of the problem, Messenger Math.
+     58 (1928) 67–80. 2
+[62] W. L. Yin, The lattice points in a circle, Sci. Sinica 11 (1962) 10–15. Correction by J. R. Chen,
+     ibid., p. 1725. 2
+34                      X. CEN, X. GAO, C. ZHANG, AND J. ZHANG
+
+   Xi Cen, School of Science, China University of Mining and Technology-Beijing, Beijing
+100083, People’s Republic of China
+   Email address: xicenmath@gmail.com
+
+   Xitao Gao, Department of Mathematics, Beijing Institute of Technology, Beijing
+100081, People’s Republic of China
+   Email address: xitao gao@bit.edu.cn
+
+  Cheng Zhang, Yau Mathematical Sciences Center, Tsinghua University, Beijing, 100084,
+P.R. China
+  Email address: czhang98@tsinghua.edu.cn
+
+   Junyong Zhang, Department of Mathematics, Beijing Institute of Technology, Beijing
+100081, People’s Republic of China
+   Email address: zhang junyong@bit.edu.cn
+

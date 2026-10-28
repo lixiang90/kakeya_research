@@ -1,0 +1,2243 @@
+                                            PROOF OF THE MAIN CONJECTURE IN VINOGRADOV’S MEAN
+                                              VALUE THEOREM FOR DEGREES HIGHER THAN THREE
+
+                                                            JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+                                                  Abstract. We prove the main conjecture in Vinogradov’s Mean Value Theorem for
+arXiv:1512.01565v3 [math.NT] 1 Apr 2016
+
+
+
+
+                                                  degrees higher than three. This will be a consequence of a sharp decoupling inequality
+                                                  for curves.
+
+
+
+
+                                                                                      1. Introduction
+                                             For each integers s ≥ 1 and n, N ≥ 2 denote by Js,n (N ) the number of integral solutions
+                                          for the following system
+                                                                                       i
+                                                                  X1i + . . . + Xsi = Xs+1            i
+                                                                                           + . . . + X2s , 1 ≤ i ≤ n,
+                                          with 1 ≤ X1 , . . . , X2s ≤ N . The number Js,n (N ) has the following analytic representation
+                                                                      Z       N
+                                                                              X
+                                                         Js,n (N ) =        |   e(x1 j + x2 j 2 + . . . + xn j n )|2s dx1 . . . dxn .
+                                                                       [0,1]n   j=1
+
+                                          Here and throughout the rest of the paper we will write
+                                                                                      e(z) = e2πiz , z ∈ R.
+                                            Our main result is the proof of the so called main conjecture in Vinogradov’s Mean
+                                          Value Theorem. Apart from the N  loss, this bound has been known to be sharp. The
+                                          case n = 2 follows easily from elementary estimates for the divisor function.
+                                          Theorem 1.1. For each s ≥ 1 and n, N ≥ 2 we have the upper bound
+                                                                                                         n(n+1)
+                                                                          Js,n (N ) . N s+ + N 2s−        2
+                                                                                                                +
+                                                                                                                     .
+                                             In spite of its name, this result was in fact a conjecture until fairly recently, for n ≥ 3.
+                                          The case n = 3 was solved by Wooley in [18], a major achievement of his remarkable
+                                          efficient congruencing method. Variants of this method also led to significant progress
+                                          for larger values of n, see [13], [19]. We refer the reader to the survey paper [20] for
+                                          a description of related results. This paper is also an excellent reference for the known
+                                          consequences of Theorem 1.1. See also [21] for connections to the asymptotic formula in
+                                          Waring’s problem.
+                                             The N  loss in Theorem 1.1 can be removed for p > n(n + 1), see (7) below.
+
+                                            Key words and phrases. discrete restriction estimates, Strichartz estimates, additive energy.
+                                            The first author is partially supported by the NSF grant DMS-1301619. The second author is partially
+                                          supported by the NSF Grant DMS-1161752. The third author is supported by a Simons Investigator
+                                          award.
+                                            AMS subject classification: Primary 11L07; Secondary 42A45.
+                                                                                                1
+2                   JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+   All the progress on Vinogradov’s Mean Value Theorem has so far relied on number
+theoretic methods. We will take a different approach here, one that relies solely on
+harmonic analysis techniques. The consequences of our approach will be far more general
+than Theorem 1.1. In particular we will see that integers can be replaced with arbitrary
+well separated real numbers. The relevant machinery that we now call decouplings, showed
+its initial potential for applications in papers such as [17], [14], [16] and [4]. Its full strength
+became apparent in the recent joint work [7] of the first two authors, where sharp results
+were proved for hyper-surfaces. The decoupling theory has since proved to be a very
+successful tool for a wide variety of problems in number theory that involve exponential
+sums. See [5], [6], [8],[9], [10] and [11]. In particular, a line of attack on Vinogradov’s
+Mean Value Theorem was initiated in [9] and here we will rely on some of the tools that
+were developed there.
+
+   For a positive weight v : Rn → [0, ∞) and for f : Rn → C we define the weighted
+integral                              Z
+                                  kf kLp (v) = (         |f (x)|p v(x)dx)1/p .
+                                                    Rn
+Also, for each ball B = B(cB , R) in Rn centered at cB and with radius R, we will introduce
+the weight
+                                                  1
+                                 wB (x) =                     .
+                                           (1 + |x−c
+                                                  R
+                                                     B | 100n
+                                                        )
+We denote by Γ = Γn the curve
+(1)                            Γ = {Φ(t) = (t, t2 , . . . , tn ) : 0 ≤ t ≤ 1}.
+                                                                                                 (n)
+Given g : [0, 1] → C and an interval J ⊂ [0, 1], we define the extension operator EJ = EJ
+in Rn as follows                 Z
+                         EJ g(x) =           g(t)e(tx1 + t2 x2 + . . . + tn xn )dt,
+                                         J
+with
+                                    x = (x1 , . . . , xn ).
+Theorem 1.1 will follow from the following general result. The connection is explained in
+Section 4.
+Theorem 1.2. Let n ≥ 2 and 0 < δ ≤ 1. For each ball B ⊂ Rn with radius δ −n and each
+g : [0, 1] → C we have
+                                                     X
+                   kE[0,1] gkLn(n+1) (wB ) . δ − (   kEJ gk2Ln(n+1) (wB ) )1/2 .
+                                                          J⊂[0,1]
+                                                           |J|=δ
+
+The implicit constant is independent of δ, B, g.
+                 P
+  A sum such as J⊂[0,1] will always be understood when the reciprocal of δ is an integer,
+                       |J|=δ
+
+and J ranges over the intervals [jδ, (j + 1)δ], 0 ≤ j ≤ δ −1 − 1.
+Acknowledgment. The authors thank T. Wooley for stimulating discussions over the
+last two years and they thank T. Tao for a careful reading of an earlier version of the
+manuscript and for pointing out a few typos. They also thank G. Liu for some mumerics
+                      PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                   3
+
+related to the theorem in the Appendix. The second author is grateful to his student Fangye
+Shi for a few suggestions that have increased the readability of the manuscript.
+
+
+                                          2. Notation
+
+   Throughout the paper we will write A .υ B to denote the fact that A ≤ CB for a
+certain implicit constant C that depends on the parameter υ. Typically, this parameter
+is either  or K. The implicit constant will never depend on the scale δ, on the balls
+we integrate over, or on the function g. It will however most of the times depend on
+the degree n and on the Lebesgue index p. Since these can be thought of as being fixed
+parameters, we will in general not write .p,n .
+   We will denote by BR an arbitrary ball of radius R. We use the following two notations
+for averaged integrals                   Z            Z
+                                                   1
+                                         F =             F,
+                                                  |B| B
+                                         B
+                                                     Z
+                                                  1
+                               kF kLp] (wB ) = (        |F |p wB )1/p .
+                                                 |B|
+|A| will refer to either the cardinality of A if A is finite, or to its Lebesgue measure if A
+has positive measure.
+   For an interval J ⊂ [0, 1], we will write
+                                 ΓJ = {(t, t2 , . . . , tn ) : t ∈ J}.
+
+
+                               3. Overview of the method
+   The proof of Theorem 1.2 builds on significant progress recorded over the last ten
+years in an area of harmonic analysis called restriction theory. This area that emerged
+in the late 1960s was initially concerned with understanding the Lp norms of the Fourier
+transforms of measures supported on hyper-surfaces. It has since grown into a field with
+fascinating connections to incidence geometry and with far-reaching consequences in PDEs
+and number theory.
+
+  There are three major ingredients that make our argument work. One is the use of
+multilinear Kakeya-type theorems. These results are essentially about how families of
+transverse rectangular boxes in Rn intersect. There is a hierarchy of such results, illus-
+trated by Theorem 6.5. In the earlier work [9], only the weakest result in this hierarchy
+was used (a variant of the k = 1 case from Theorem 6.5). One novelty in the present
+paper is the fact that we manage to bring to bear the more complex results in the hier-
+archy. These include the one where the boxes are thin tubes, a landmark result due to
+Bennett, Carbery and Tao [1]. These theorems become available to us once we set up a
+multilinear version of the decoupling inequality we need to prove. We make use of these
+multilinear Kakeya-type results to derive the key new inequality (11) in Theorem 6.6. We
+call this a ball inflation. This process enlarges the size of the spatial balls, thus facilitating
+a subsequent decoupling into smaller intervals.
+4                   JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+   A second major ingredient is a form of the induction on scales from [12], which will
+allow us to establish that the linear decoupling is essentially equivalent with its multilinear
+version. This observation will allow for a certain bootstrapping argument to gradually
+force the decoupling constants to get closer and closer to their conjectured values.
+
+   The third ingredient is an iteration scheme, whose end result is the multi-scale in-
+equality in Theorem 8.3. This scheme builds on its earlier incarnation from [9], but is
+significantly more complex. In addition to using L2 decoupling as in our previous related
+papers on curves, we now employ two new tools: lower dimensional decoupling and ball
+inflation. These will expose new features of the curve Γn at appropriate scales. Each scale
+corresponds to a particular result from the hierarchy in Theorem 6.5.
+
+   We have put some effort into making our paper accessible to a large audience, one that
+is not necessarily familiar with the subtleties of multilinear harmonic analysis. But we
+also believe that familiarity with some of the previous papers on decouplings, especially
+[7], will help the reader build some gradual understanding of our method.
+
+                      4. From decouplings to exponential sums
+  We start with the following discrete restriction estimate which follows quite easily from
+our Theorem 1.2.
+Theorem 4.1. For each 1 ≤ i ≤ N , let ti be a point in ( i−1          N N
+                                                                         , i ]. Then for each R & N n ,
+each ball BR in Rn , each ai ∈ C and each p ≥ 2 we have
+                   Z X  N
+               1                                                                           1
+           (         |     ai e(x1 ti + x2 t2i + . . . + xn tni )|p wBR (x)dx1 . . . dxn ) p .
+             |BR |     i=1
+
+                                           1      n(n+1)
+(2)                          . (N  + N 2 (1−       p
+                                                         )+
+                                                               )kai kl2 ({1,...,N }) ,
+and the implicit constant does not depend on N , R and ai .
+Proof. By invoking Hölder and the trivial bound for L∞ , it suffices to prove the result for
+p = n(n + 1). Let B be a finitely overlapping cover of BR with balls BN n . An elementary
+computation shows that
+                                     X
+(3)                                       wBN n . wBR ,
+                                        BN n ∈B
+
+with the implicit constant independent of N, R. Invoking Theorem 1.2 for each BN n ∈ B,
+then summing up and using (3) we obtain
+                                     kE[0,1] gkLn(n+1) (wB ) .
+                                                          R
+                                      X
+                                  
+                              . N (                  2
+                                              kE∆ gkLn(n+1) (wB ) )1/2 .
+                                                                          R
+                                        ∆⊂[0,1]
+                                      l(∆)=N −1
+
+Apply this inequality to
+                                                  N
+                                         1 X
+                                     g=        ai 1(ti −τ,ti +τ ) ,
+                                        2τ i=1
+                       PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                             5
+
+then let τ go to 0.
+                                                                                            
+   For each 1 ≤ i ≤ N consider some real numbers i − 1 < Xi ≤ i. We do not insist that
+Xi be integers. Let SX = {X1 , . . . , XN }. For each s ≥ 1, denote by Js,n (SX ) the number
+of solutions of the following system of inequalities
+                                         i
+                  |X1i + . . . + Xsi − (Xs+1            i
+                                             + . . . + X2s )| ≤ N i−n , 1 ≤ i ≤ n
+with Xi ∈ SX .
+  We can now prove the following generalization of Theorem 1.1.
+Corollary 4.2. For each integer s ≥ 1 and each SX as above we have that
+                                                                  n(n+1)
+                                 Js,n (SX ) . N s+ + N 2s−         2
+                                                                         +
+                                                                              ,
+where the implicit constant does not depend on SX .
+Proof. Let φ : Rn → [0, ∞) be a positive Schwartz function with positive Fourier transform
+           b ≥ 1 for |ξ| . 1. Define φN (x) = φ( x ). Using the Schwartz decay, (2) with
+satisfying φ(ξ)                                           N
+ai = 1 implies that for each s ≥ 1
+                         Z              N
+                    1                  X                                                 1
+                (            φN n (x)|     e(x1 ti + . . . + xn tni )|2s dx1 . . . dxn ) 2s
+                  |BN n | Rn           i=1
+
+                                                1            n(n+1)
+(4)                                       . N 2 + + N 1−     4s
+                                                                    +
+                                                                         ,
+whenever ti ∈ [ i−1
+                 N N
+                    , i ). Apply (4) to ti = XNi . Let now
+                                                             x1       x2
+                        φN,1 (x1 , x2 , . . . , xn ) = φ( n−1 , n−2 , . . . , xn ).
+                                                          N        N
+  After making a change of variables and expanding the product, the term
+                       Z               X N
+                           φN n (x)|          e(x1 ti + . . . + xn tni )|2s dx1 . . . dxn
+                         Rn               i=1
+
+can be written as the sum over all Xi ∈ SX of
+                            Z
+                     n(n+1)
+                   N 2        φN,1 (x)e(x1 Z1 + . . . + xn Zn )dx1 . . . dxn ,
+                                 Rn
+
+where
+                                                       i
+                            Zi = X1i + . . . + Xsi − (Xs+1            i
+                                                           + . . . + X2s ).
+Each such term is equal to
+                                      2
+                                     b n−1 Z1 , N n−2 Z2 , . . . , Zn ).
+                                 N n φ(N
+                                                                                  2
+Recall that this is always positive, and in fact greater than N n at least Js,n (SX ) times.
+It now suffices to use (4).                                                               
+6                         JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+                                        5. The  removal argument
+    For x = (x1 , . . . , xn ) let
+                                                     N
+                                                     X
+                                  F (x; N ) =              e(x1 j + x2 j 2 + . . . + xn j n ).
+                                                     j=1
+                   1
+Write L = N       2n   . For 1 ≤ q ≤ L, 1 ≤ aj ≤ q (1 ≤ j ≤ n) with (q, a1 , ..., an ) = 1, define the
+major arc
+                 M(q, a) = {x ∈ [0, 1)n : |xj − aj /q| ≤ LN −j (1 ≤ j ≤ n)}.
+Let M be the union of all major arcs and write m = [0, 1)n \ M for the minor arcs. We
+recall the following two estimates from Section 7 in [22]
+(5)                                   sup |F (x; N )| . N β , for some β < 1
+                                      x∈m
+
+and (Lemma 7.1)
+                              Z
+                                                                   n(n+1)
+(6)                                 |F (x; N )|p dx . N p−            2      , for p > n(n + 1).
+                                M
+Fix now p > n(n + 1). On the minor arcs we can write using (5) and Theorem 1.1
+                        Z                                                Z
+                                         p                 β(p−n(n+1))
+                              |F (x; N )| dx . N                                |F (x; N )|n(n+1) dx .
+                          m                                                 m
+                                                              n(n+1)                 n(n+1)
+                         N β(p−n(n+1)) N          . N p− 2 .     2
+                                                                     +
+
+Combining this with (6) we get
+                           Z
+                                                       n(n+1)
+(7)                              |F (x; N )|p dx . N p− 2 .
+                                            [0,1]n
+
+                                      6. Transition to larger balls
+   Our goal in this section is to prove Theorem 6.6. This will be the main tool that governs
+the ball inflation process that we use in the next section.
+   For 1 ≤ j ≤ m and 1 ≤ k ≤ n − 1, let Vj be k−dimensional linear subspaces of Rn and
+let πj : Rn → Vj be the associated orthogonal projections. Each Vj will be equipped with
+the k−dimensional Lebesgue measure. We recall the following theorem from [2].
+Theorem 6.1. The quantity
+                                                                       1
+                                                    k( m
+                                                      Q
+                                                        j=1 |gj ◦ πj |) kL 2n
+                                                                       m
+                                                                             k (Rn )
+                                          sup           Qm                   1
+                                       gj ∈L2 (Vj )    ( j=1 kgj kL2 (Vj ) ) m
+                                         gj 6≡0
+
+
+is finite if and only if the following transversality requirement holds
+                              m
+                          n X
+(8)           dim(V ) ≤           dim(πj (V )), for every linear subspace V ⊂ Rn .
+                         km j=1
+
+    We will be interested in the following consequence.
+                      PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                    7
+
+Proposition 6.2. Consider m families Pj consisting of rectangular boxes P in Rn , which
+we will refer to as plates, having the following properties
+  (i) k of the axes of each plate P ∈ Pj have side lengths equal to R1/2 and span Vj , while
+the remaining n − k axes have side lengths equal to R (and are orthogonal to Vj )
+  (ii) we allow each P to appear multiple times within a family Pj
+  (iii) all plates are subsets of a ball B4R of radius 4R.
+  Then, assuming (8) holds, we have the following inequality
+                                                                       2n
+                                                                          k
+                 Z Y  m                                    m Z
+                               1 2n                                  1
+                                                          Y
+(9)               |     Fj | 2m k ≤ C(V1 , . . . , Vm )  |  Fj | 2m 
+                    B4R     j=1                                        j=1 B
+                                                                             4R
+
+for all functions Fj of the form                      X
+                                             Fj =            cP 1P .
+                                                     P ∈Pj
+
+The finite quantity C(V1 , . . . , Vm ) will not depend on R, cP , Pj , but will depend on Vj .
+Proof. Since we allow multiple repetitions, it suffices to prove (9) under the assumption
+that cP = 1 for each P . Indeed, the case of rational cP is then immediate, while the case
+of arbitrary cP ∈ C follows by density arguments. Let Nj be the number of plates in Pj .
+We need to prove that
+                           Z     m X                     m
+                                Y            n
+                                                         Y    n
+                                                     n/2
+                               (        1P ) . R
+                                            mk             Njmk .
+                                  B4R j=1 P ∈P                         j=1
+                                               j
+
+  For each P ∈ Pj , there exists vP ∈ Vj such that
+                                     P ⊂ {x ∈ Rn : πj (x) ∈ QP },
+where QP is a cube in Vj centered at vP , with side length R1/2 . Apply Theorem 6.1 to
+the functions                            X
+                                 gj = (      1QP )1/2 .
+                                                    P ∈Pj
+It suffices to note that
+                                                   X
+                               gj ◦ πj (x) ≥ (             1P )1/2 (x), x ∈ Rn
+                                                   P ∈Pj
+
+and that                                                       1
+                                         kgj kL2 (Vj ) ∼ Nj2 Rk/4 .
+                                                                                                  
+
+  For 1 ≤ k ≤ n − 1, we will consider the following k−dimensional linear spaces in Rn
+                           Vk (t) = hΦ0 (t), Φ00 (t), . . . , Φ(k) (t)i, t ∈ [0, 1].
+Recall that Φ gives the parametric representation (1) of the curve Γ.
+Lemma 6.3. Let Mn = n!. Then for each Mn pairwise distinct points tj in [0, 1], the
+spaces (Vk (tj ))M
+                 j=1 satisfy the non-degeneracy condition (8) with m = Mn .
+                   n
+8                    JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+Proof. Let πj be the orthogonal projection associated with Vk (tj ). Fix a linear space V
+in Rn , and denote by γ1 the orthogonal projection of Γ onto V . Then
+                                      γ1 (t) = (P1 (t), . . . , Pn (t)),
+for some polynomials Pj of degree at most n. Write
+                                            Φ(t) = γ1 (t) + γ2 (t)
+and note that for each t
+                                                (i)
+                                    γ2 (t) ⊥ V, i ≥ 0.
+Inequality (8) is trivial when dim(V ) = n, so we may assume that dim(V ) ≤ n − 1.
+  Let us start with the case dim(V ) ≤ k. We will show that
+                                           dim(πj (V )) < dim(V )
+can only happen for at most (n − 1)! values of j.
+   Pick j so that dim(πj (V )) < dim(V ). Then there must exist vj ∈ V orthogonal to
+                                                                  (i)                 (i)
+Vk (tj ). It follows that vj is orthogonal to the vectors γ1 (tj ), 1 ≤ i ≤ k. Since γ1 (tj ) ∈ V ,
+we infer that
+                                   (1)                (dim(V ))
+                                  γ1 (tj ) ∧ . . . ∧ γ1         (tj ) = 0.
+Assume for contradiction that this held true for at least (n − 1)! + 1 points tj . By the
+Fundamental Theorem of Algebra, this would force
+                                     (1)                  (dim(V ))
+                                   γ1 (t) ∧ . . . ∧ γ1                (t) ≡ 0.
+Using a Wronskian argument, it further follows that the whole curve γ1 lives in a linear
+subspace of V with dimension dim(V ) − 1. This leads to the contradiction that Γ lives in
+an n − 1 dimensional subspace of Rn . It suffices now to note that
+                    Mn
+                 n X                            n n! − (n − 1)!
+                        dim(πj (V )) ≥ dim(V )                  = dim(V ).
+                kMn j=1                        n−1      n!
+
+    When k ≤ dim(V ) ≤ n − 1, the argument above shows that
+                                                dim(πj (V )) = k
+for all but at most (n − 1)! values of j. We can write now
+                      Mn
+                   n X                     n! − (n − 1)!
+                          dim(πj (V )) ≥ n               = n − 1 ≥ dim(V ).
+                  kMn j=1                        n!
+                                                                                                   
+
+    We will need the following uniform version of Proposition 6.2.
+Proposition 6.4. For each K ≥ Mn we have
+                                  sup           C(Vk (t1 ), . . . , Vk (tMn )) < ∞,
+                            (t1 ,...,tMn )∈SK
+
+where
+                                                                  1
+          SK = {(t1 , . . . , tMn ) ∈ [0, 1]Mn : |ti − tj | ≥       , for all 1 ≤ i 6= j ≤ Mn }.
+                                                                  K
+                       PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                           9
+
+Proof. Let πVk (t) be the orthogonal projection associated with Vk (t). The proof of Propo-
+sition 6.2 shows that it suffices to prove that
+                                                                              1
+                                                   k( M
+                                                     Q n
+                                                      j=1 |gj ◦ πVk (tj ) |)
+                                                                             Mn k 2n
+                                                                                  L k (Rn )
+                       sup            sup                                          1        < ∞.
+                                                      ( M
+                                                       Q    n
+               (t1 ,...,tMn )∈SK gj ∈L2 (Vk (tj ))
+                                                         j=1  kg k   2
+                                                                j L (Vk (tj ))  ) Mn
+
+
+The function
+                                                                  QMn                        1
+                                                             k(    j=1 |gj ◦ πVk (tj ) |)   k 2n
+                                                                                            Mn
+                                                                                              L k (Rn )
+                H(t1 , . . . , tMn ) =        sup                   Q Mn                       1
+                                         gj ∈L2 (Vk (tj ))         ( j=1 kgj kL2 (Vk (tj )) ) Mn
+is finite on SK due to Theorem 6.1 and Lemma 6.3. Moreover, Theorem 1.1 in [3] proves
+that if H(t1 , . . . , tMn ) < ∞ for some (t1 , . . . , tMn ) ∈ [0, 1]Mn , then
+                                         sup H(t01 , . . . , t0Mn ) < ∞
+on some neighborhood of (t1 , . . . , tMn ). It now suffices to note that SK is compact.
+                                                                                                          
+  We can now extend the result of Proposition 6.2 to get a multilinear Kakeya-type
+inequality for plates. For some K ≥ 2Mn , let I1 , . . . , IMn be intervals of length K1 in [0, 1],
+which in addition are assumed to be separated by at least K1 .
+Theorem 6.5. Consider Mn families Pj consisting of plates P in Rn having the following
+properties
+  (i) for each P ∈ Pj there exists tP ∈ Ij such that k of the axes of P have side lengths
+equal to R1/2 and span Vk (tP ), while the remaining n − k axes have side lengths equal to
+R (we will refer to the orientation of such a P as being (Vk (tP ), Vk (tP )⊥ ))
+  (ii) all plates are subsets of a ball B4R of radius 4R
+  Then we have the following inequality
+                                                                  2n
+                                                                     k
+                          Z Y Mn                      M n Z
+                                       1 2n          Y         1
+                                                  
+(10)                       |    Fj | 2Mn k .,K R  |  Fj | 2Mn 
+                         B4R   j=1                                   j=1 B
+                                                                          4R
+
+for all functions Fj of the form                             X
+                                                Fj =               cP 1P .
+                                                         P ∈Pj
+The implicit constant will not depend on R, cP , Pj .
+Proof. There is a rather short proof of the case k = n − 1 in [15], that easily extends to
+the other values of k. See also [8] for a further discussion.                           
+
+   Let ρ < K1 . We close this section by proving the key new inequality in this paper, that
+shows how to pass from balls of smaller radius to balls of larger radius. Note that (11)
+is not a decoupling inequality, as the intervals Ji remain unchanged from left to right.
+However, the ball on the right is larger, which will allow for subsequent decouplings into
+smaller intervals (via both L2 and lower dimensional decouplings). The general underlying
+principle is that the larger the ball, the smaller the decoupling intervals are.
+10                     JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+Theorem 6.6. Fix 1 ≤ k ≤ n − 1 and p ≥ 2n. Let B be an arbitrary ball in Rn with
+radius ρ−(k+1) , and let B be a finitely overlapping cover of B with balls ∆ of radius ρ−k .
+Then for each g : [0, 1] → C we have
+(11)
+                                         p/Mn                                         p/Mn
+           M n                                             M n
+   1 X Y X                                              Y X
+          (         kEJi gk2 pk     )1/2      .,K ρ−  (        kEJi gk2 pk     )1/2      .
+                                                                                        
+  |B| ∆∈B i=1 J ⊂I            n
+                            L] (w∆ )
+                                                           i=1 J ⊂I
+                                                                             n
+                                                                           L] (wB )
+                    i   i                                                       i   i
+                  |Ji |=ρ                                                     |Ji |=ρ
+
+Moreover, the implicit constant is independent of g, ρ, B.
+Proof. Since we can afford logarithmic losses in ρ, it suffices to prove the inequality with
+the summation on both sides restricted to families of Ji for which kEJi gk pk    n
+                                                                                        have
+                                                                                                     L] (wB )
+comparable size (up to a factor of 2), for each i. Indeed, the Ji0 satisfying
+                              kEJi0 gk pk
+                                       n
+                                                    ≤ ρC max kEJi gk pk
+                                                                     n
+                                       L] (wB )              i               L] (wB )
+
+can be easily dealt with by using the triangle inequality, since we automatically have
+                            max kEJi0 gk pk
+                                         n
+                                                      ≤ ρC max kEJi gk pk
+                                                                       n
+                                                                                          .
+                            ∆∈B          L] (w∆ )                    i         L] (wB )
+
+This leaves only log2 (ρ−O(1) ) sizes to consider.
+     Let us now assume that we have Ni intervals Ji , with kEJi gk pk
+                                                                   n
+                                                                                               of comparable size.
+                                                                                    L] (wB )
+Since p ≥ 2n, by Hölder’s inequality the left hand side is at most
+                  Mn
+                                           "M                           # kMn
+                                               n X                           n
+                            pk p/Mn 1
+                        1   n                               pk
+                  Y
+                        2
+                          −            X    Y
+(12)             ( Ni         )                 (   kEJi gk pk
+                                                            n
+                                                                      )        .
+                  i=1
+                                   |B| ∆∈B i=1 J            L]n (w∆ )
+                                                                 i
+
+
+   Fix B, a ball of radius ρ−k−1 , and a cover B by balls ∆. For each interval J = Ji of the
+form [tJ − ρ/2, tJ + ρ/2] we cover ∪∆∈B ∆ with a family FJ of tiles TJ with orientation
+(Vk (tJ ), Vk (tJ )⊥ ), k short sides of length ρ−k and n − k longer sides of length ρ−k−1 .
+Moreover, we can assume these tiles to be inside the ball 4B. We let TJ (x) be the tile
+containing x, and we let 2TJ be the dilation of TJ by a factor of 2 around its center.
+                                                                  n
+   Let us use q to abbreviate pk/n, and α to abbreviate kM          n
+                                                                      . Our goal is to control the
+expression
+                                                                 !α
+                                         Y X
+                                 Avg∆∈B          kEJi gkqLq (w∆ ) .
+                                                                         ]
+                                              i       Ji
+     We now define FJ for x ∈ ∪TJ ∈FJ TJ by
+
+                                  FJ (x) :=       sup kEJ gkLq] (wB(y,ρ−k ) ) .
+                                              y∈2TJ (x)
+     For any point x ∈ ∆ we have ∆ ⊂ 2TJ (x), and so we also have
+
+                                        kEJ gkLq] (w∆ ) ≤ FJ (x).
+     Therefore,
+                          PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                                 11
+
+                                                                                   !α    Z YX
+                                       Y X
+                        Avg∆∈B                             kEJi gkqLq (w∆ )             .  ( FJqi )α .
+                                                                    ]
+                                          i          Ji                                     4B    i   Ji
+
+  Moreover, the function FJ is constant on each tile TJ ∈ FJ . Applying Theorem 6.5
+(note that FJ satisfy a stronger property than what is needed), we get the bound
+                                                              α
+                       Z YX                       Y   X Z
+                            (   FJqi )α .,K ρ−       FJqi  .
+                             4B       i        Ji                                  i      Ji 4B
+
+  It remains to check that for each J = Ji
+
+(13)                                                kFJ kLq] (4B) . kEJ gkLq] (wB ) .
+Once this is established, it follows that (12) is dominated by
+                                      Mn        1     n
+                                                              Mn X
+                                      Y             − pk      Y                              pk             n
+(14)                       ρ− (              Ni2        p/Mn
+                                                          )               (        kEJi gk npk           ) kMn .
+                                      i=1                           i=1       Ji             L]n (wB )
+
+Recalling the restriction we have made on Ji , (14) is comparable to
+                               "M                          #p/Mn
+                                Y n X
+
+                           ρ−     (  kEJi gk2 pk     )1/2       ,
+                                                                              L]n (wB )
+                                                i=1        Ji
+
+as desired.
+
+QnTo prove      (13), we may assume J = [−ρ/2, ρ/2] and thus E             J g will be supported in
+                                                                          d
+          j    j
+  j=1 [−ρ   , ρ  ]. Fix x = (x 1 , . . . , x n ) with TJ (x) ∈ FJ and y ∈ 2T  J (x). Note that TJ (x)
+has sides parallel to the coordinate axes. In particular, y = x + y 0 with |yj0 | < 4ρ−k for
+1 ≤ j ≤ k and |yj0 | < 4ρ−k−1 , for k + 1 ≤ j ≤ n. Then
+(15)                                                      kEJ gkqLq (w              )   .
+                                                                          B(y,ρ−k )
+   Z
+                                                        0
+       |EJ g(x1 + u1 , . . . , xk + uk , xk+1 + uk+1 + yk+1 , . . . , xn + un + yn0 )|q wB(0,ρ−k ) (u)du.
+Now, using Taylor expansion we get
+                                                               0
+            |EJ g(x1 + u1 , . . . , xk + uk , xk+1 + uk+1 + yk+1  , . . . , xn + un + yn0 )|
+                     Z
+                                                            0                0
+                 =| E    d J g(λ)e(λ · (x + u))e(λk+1 yk+1 ) . . . e(λn yn )dλ| ≤
+
+        ∞                 ∞
+             100sk+1           100sn
+                                        Z
+        X                X                                           λk+1 sk+1            λn
+    ≤                ...               | E d  J g(λ)e(λ · (x + u))(      k+1
+                                                                             )    . . . ( k+1 )sn dλ|
+      s  =0
+              sk+1 !     s =0
+                                  sn !                              2ρ                   2ρ
+        k+1                       n
+                           ∞                      ∞
+                           X        100sk+1      X    100sn
+                      =                      ...             |Msk+1 ,...,sn (EJ g)(x + u)|.
+                          sk+1   =0
+                                     s k+1 !     s =0
+                                                       s n !
+                                                                n
+                                                                             λ
+Here Msk+1 ,...,sn is the operator with Fourier multiplier msk+1 ,...,sn ( 2ρk+1 ), where
+              msk+1 ,...,sn (λ) = (λk+1 )sk+1 . . . (λn )sn 1[−1/2,1/2] (λk+1 ) . . . 1[−1/2,1/2] (λn ).
+12                    JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+We are able to insert the cutoff because of our initial restriction on the Fourier support
+of EJ g.
+   Plugging this estimate into (15) we obtain
+                                      ∞                 ∞
+                                      X   100sk+1      X    100sn
+        kEJ gkqLq (w          )
+                                .                  ...             kMsk+1 ,...,sn (EJ g)kqLq (w(x,ρ−k )) .
+                ]   B(y,ρ−k )
+                                    s  =0
+                                           s k+1 !     s =0
+                                                             s n !                         ]
+                                     k+1                       n
+
+
+Recalling the definition of FJ and the fact that
+                            Z
+                               wB(x,ρ−k ) (z)dx . wB (z), z ∈ Rn
+                                     4B
+
+we conclude that
+                                    ∞                 ∞
+                                    X   100sk+1      X    100sn
+(16)           kFJ kqLq (4B) .                   ...             kMsk+1,...,sn (EJ g)kqLq (wB ) .
+                      ]
+                                  s  =0
+                                         s k+1 !     s =0
+                                                           s n !                        ]
+                                    k+1                    n
+
+
+  Note that msk+1 ,...,sn admits a smooth extension to the whole Rn (and we will use
+the same notation for it) with derivatives of any given order uniformly bounded over
+sk+1 , . . . , sn . It follows that
+                                      |m
+                                       b sk+1 ,...,sn (x)| . ξ(xk+1 , . . . , xn ),
+with implicit constants independent of sk+1 , . . . , sn , where
+                         ξ(xk+1 , . . . , xn ) .M (1 + (x2k+1 + . . . + x2n )1/2 )−M ,
+for all M > 0. We can now write
+                                    |Msk+1 ,...,sn (EJ g)(x)| . |EJ g|        ξρk+1
+where      denotes the convolution with respect to the last n − k variables x̄, and
+                                          ξρk+1 (x̄) = ρ(n−k)(k+1) ξ(ρk+1 x̄).
+Using this, one can easily check that
+                          kMsk+1,...,sn (EJ g)kqLq (wB ) . h|EJ g|q            ξρk+1 , wB i
+
+                                  = h|EJ g|q , ξρk+1       wB i . h|EJ g|q , wB i.
+Combining this with (16) leads to the proof of (13)
+                                              ∞                 ∞
+                                              X   100sk+1      X    100sn
+                      kFJ kqLq (4B) .                      ...             kEJ gkqLq (wB )
+                              ]
+                                            s  =0
+                                                   s k+1 !     s =0
+                                                                     s n !         ]
+                                             k+1                       n
+
+
+                                                   . kEJ gkqLq (wB ) .
+                                                                   ]
+
+The argument is now complete.
+                                                                                                             
+
+
+  For future use, we will record here the following easy analogue of Theorem 6.6 for k = n.
+Let B be an arbitrary ball in Rn with radius R, and let B be a finitely overlapping cover
+                     PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                13
+
+of B with balls ∆ of radius r < R2 . No other relation between ρ, r, R is assumed. Then
+for each g : [0, 1] → C and p ≥ 2 we have
+                                                p/Mn                                 p/Mn
+                    M n                                  M n
+         1 X Y         X                              Y X
+(17)               (      kEJi gk2Lp (w∆ ) )1/2     . (        kEJi gk2Lp (wB ) )1/2      .
+                                                                                       
+        |B| ∆∈B i=1 J ⊂I            ]
+                                                         i=1 J ⊂I
+                                                                           ]
+                        i   i                                            i   i
+                      |Ji |=ρ                                          |Ji |=ρ
+
+The proof relies on the inequality
+                                                X
+                                                      w∆ . wB ,
+                                                ∆∈B
+
+on Hölder’s inequality, and on the following consequence of Minkowski’s inequality
+                         XX                      p     X                     p
+                            (   kfk k2Lp (wi ) ) 2 ≤ (   kfk k2Lp (Pi wi ) ) 2 ,
+                          i     k                           k
+
+valid for arbitrary fk : Rn → C and arbitrary positive functions wi : Rn → [0, ∞).
+
+
+                                      7. A few basic tools
+  Fix a positive Schwartz function η : Rn → [0, ∞). For each ball B = B(c, R) in Rn ,
+define
+                                                   x−c
+                                       ηB (x) = η(      ).
+                                                    R
+Lemma 7.1. Let W be the collection of all weights, that is, positive, integrable functions
+on Rn . Fix a radius R > 0. Let Q1 , Q2 : W → [0, ∞] have the following four properties:
+  (1) Q1 (1B ) . Q2 (ηB ) for all balls B ⊂ Rn of radius R
+  (2) Q1 (u + v) ≤ Q1 (u) + Q1 (v), for each u, v ∈ W
+  (3) Q2 (u + v) ≥ Q2 (u) + Q2 (v), for each u, v ∈ W
+  (4) If u ≤ v then Qi (u) ≤ Qi (v).
+  Then
+                                       Q1 (wB ) . Q2 (wB )
+for each ball B with radius R. The implicit constant is independent of R.
+Proof. Let B be a finitely overlapping cover of Rn with balls B 0 = B 0 (cB 0 , R). It suffices
+to note that                            X
+                               wB (x) .     1B 0 (x)wB (cB 0 )
+                                                  B 0 ∈B
+and that                            X
+                                             ηB 0 (x)wB (cB 0 ) . wB (x).
+                                    B 0 ∈B
+                                                                                             
+  Here is one useful consequence of the lemma.
+Corollary 7.2. For each q ≥ p ≥ 1 and each ball B in Rn with radius at least 1 we have
+(18)                            kE[0,1] gkLq (wB ) . kE[0,1] gkLp (wB ) ,
+with the implicit constant independent of B and g.
+14                  JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+Proof. Let η be a positive smooth function on Rn satisfying 1B ≤ ηB and such that the
+                       1
+Fourier transform of η p is supported in B(0, 1). We can thus write
+                                                                        1
+                      kE[0,1] gkLq (B) . kE[0,1] gk q     q
+                                                          p
+                                                                 = kηBp E[0,1] gkLq (Rn ) .
+                                                      L (ηB )
+                                       1
+Since the Fourier transform of ηBp E[0,1] g is supported in the ball B(0, 3), we have
+                         1                      1
+                    kηBp E[0,1] gkLq (Rn ) . kηBp E[0,1] gkLp (Rn ) = kE[0,1] gkLp (ηB ) .
+Apply now Lemma 7.1 with Q1 (u) = kE[0,1] gkqLq (u) and Q2 (u) = kE[0,1] gkqLp (u) .
+                                                                                                  
+
+   We continue by recalling a few basic tools and inequalities from [9], that will be used
+in our iteration scheme.
+   Let n ≥ 2, p ≥ 2, 0 < δ ≤ 1. We will denote by Vp (δ) = Vp,n (δ) the smallest constant
+such that the inequality
+                                                   X
+                      kE[0,1] gkLp (wB ) ≤ Vp (δ)(   kEJ gk2Lp (wB ) )1/2
+                                                        J⊂[0,1]
+                                                         |J|=δ
+
+
+holds true for each ball B ⊂ Rn with radius δ −n and each g : [0, 1] → C.
+
+  We will rely on the following generalization of parabolic rescaling. See for example
+Section 7 in [8] for a proof.
+Lemma 7.3. Let 0 < ρ ≤ 1. For each interval I ⊂ [0, 1] with length δ ρ and each ball
+B ⊂ Rn with radius δ −n we have
+                                                   X
+(19)                 kEI gkLp (wB ) . Vp (δ 1−ρ )(   kEJ gk2Lp (wB ) )1/2 .
+                                                          J⊂I
+                                                         |J|=δ
+
+
+   Let us now introduce a multilinear version of Vp (δ). Recall the relevance of Mn = n!
+from Section 6. Given also K ≥ 2Mn , we will denote by Vp (δ, K) = Vp,n (δ, K) the smallest
+constant such that the inequality
+                   Mn                               Mn X
+                   Y                                Y                       1
+                          1/Mn
+                 k( EIi g)     kLp (wB ) ≤ Vp (δ, K) (   kEJ gk2Lp (wB ) ) 2Mn
+                   i=1                                       i=1     J⊂Ii
+                                                                     |J|=δ
+
+
+holds true for each ball B ⊂ Rn with radius δ −n , each g : [0, 1] → C and all intervals
+I1 , . . . , IMn of the form [ Ki , i+1
+                                     K
+                                        ] in [0, 1], that in addition are assumed to be non adjacent.
+
+
+  It is immediate that Vp (δ, K) ≤ Vp (δ). The reverse inequality is also essentially true,
+apart from negligible losses. The proof is very similar to that of Theorem 8.1 in [8].
+Theorem 7.4. For each K there exists p (K) with limK→∞ p (K) = 0 and CK,p so that
+(20)                           Vp (δ) ≤ CK,p δ −p (K) sup Vp (δ 0 , K),
+                                                          δ.δ 0 <1
+
+for each 0 < δ ≤ 1.
+                      PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                               15
+
+   It is worth mentioning that the value of Mn , as long as it only depends on n, is irrelevant
+for the validity of (20).
+
+
+                                8. The iteration scheme
+  The goal of this section is to prove the multi-scale inequality in Theorem 8.3. There
+will be three different principles that we will apply repeatedly.
+   • L2 decoupling: This exploits L2 orthogonality and will allow us to decouple to the
+smallest possible scale, equal to the inverse of the radius of the ball. This principle is
+illustrated by the following simple result.
+Lemma 8.1. Let Ji be arbitrary collections of pairwise disjoint intervals J with length
+equal to an integer multiple of R−1 . Then for each integer M ≥ 1 and each BR ⊂ Rn we
+have
+            M X                               M
+          Y              2
+                                        1
+                                     1/2 M
+                                             Y    X                           1
+              (     kEJ gkL2 (wB ) )       .    (          kE∆ gk2L2 (wB ) )1/2 M .
+                            ]   R                                        ]   R
+           i=1 J∈Ji                           i=1   |∆|=R−1 , ∆⊂J
+                                                     for some J∈Ji
+
+
+Proof. The proof will not exploit any transversality, so the value of M will not matter. It
+suffices to prove that
+                                            X
+(21)                   kEJ gk2L2 (wB ) .             kE∆ gk2L2 (wB ) .
+                                    R                                R
+                                          |∆|=R−1 , ∆⊂J
+                                                                       √
+Fix a positive Schwartz function η such that the Fourier transform of η is supported in
+a small neighborhood of the origin, and whose values are nonzero on the unit ball B(0, 1).
+For a ball B = B(c, R) define
+                                                   x−c
+                                       ηB (x) = η(     ).
+                                                    R
+By invoking Lemma 7.1 we see that inequality (21) will follow once we check that
+                                               X
+(22)                     kEJ gk2L2 (B 0 ) .           kE∆ gk2L2 (ηB0 )
+                                          |∆|=R−1 , ∆⊂J
+
+holds true for each ball B 0 with radius R.
+                                         √
+   Note that the Fourier transform of ηB 0 EJ g will be supported inside some R−1 −neighborhood
+of the arc ΓJ , and that these neighborhoods are pairwise disjoint for two non adjacent
+arcs. Since
+                                                            √
+                     kEJ gk2L2 (B 0 ) . kEJ gk2L2 (ηB0 ) = k ηB 0 EJ gk2L2 (Rn ) ,
+                                                                                   √
+(22) will now immediately follow from the L2 orthogonality of the functions ηB 0 EJ g.
+                                                                                         
+
+  • Lower dimensional decoupling: Various arcs on the curve Γn in Rn will look lower
+dimensional at the appropriate scale. As a result, they will be decoupled into smaller arcs
+using Theorem 1.2 in lower dimensions. This is illustrated by the following result. To
+avoid confusion, we will use the notation E (n) for the extension operator relative to Γn in
+Rn .
+16                     JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+Lemma 8.2. Let I = [t0 , t0 + σ] ⊂ [0, 1] and let 3 ≤ k ≤ n. Then for each σ −k+1 . R,
+each ball B ⊂ Rn with radius R and each p ≥ 2 we have
+                 (n)
+                                               X         (n)
+               kEI gkLp] (wB ) . Vp,k−1 (σ)(           kEJ gk2Lp (wB ) )1/2 .
+                                                                                  ]
+                                                                −    1
+                                                        |J|=R       k−1 , J⊂I
+
+
+Proof. To simplify numerology, let us assume k = n = 3. The proof in the general case
+follows via trivial modifications. We rely on three observations. First, note that it suffices
+to consider the case R ∼ σ −2 . The general case follows by summing over balls with radius
+R ∼ σ −2 .
+   Second, using the change of variables s = t − t0 we can rewrite
+                              Z σ
+      (3)
+    |EI g(x1 , x2 , x3 )| = |     gt0 (s)e(s(x1 + 2t0 x2 + 3t20 x3 ) + s2 (x2 + 3t0 x3 ) + s3 x3 )ds|,
+                                     0
+                                 Z
+       (3)
+     |EJ g(x1 , x2 , x3 )| = |           gt0 (s)e(s(x1 + 2t0 x2 + 3t20 x3 ) + s2 (x2 + 3t0 x3 ) + s3 x3 )ds|,
+                                 J−t0
+with
+                                                gt0 (s) = g(s + t0 ).
+Since the linear transformation
+                         (x1 , x2 , x3 ) 7→ (x1 + 2t0 x2 + 3t20 x3 , x2 + 3t0 x3 , x3 )
+has bounded distortion for t0 ∈ [0, 1], it suffices to prove that for each g : [0, σ] → C
+                                            1
+                 (3)
+                                                    X          (3)
+(23)         kE[0,σ] gkLp] (wB ) . Vp,2 (R− 2 )(            kEJ gk2Lp (wB ) )1/2 .
+                                                                                      ]
+                                                                    1
+                                                         |J|=R− 2 , J⊂[0,σ]
+
+Third, we observe that since σ 3 . R−1 ∼ σ 2 , the curve
+                                              {(t, t2 , t3 ), t ∈ [0, σ]}
+is within an O(R−1 )−neighborhood of the (planar) parabola
+                                               (t, t2 , 0), t ∈ [0, σ].
+  Since we decouple on balls B of radius R, the two curves are indistinguishable at this
+scale and (23) follows via standard mollification arguments. See for example [7] or [9].
+                                                                                         
+
+  • Ball inflation: We will iterate our multi-scale inequality by repeatedly passing to
+balls of larger radius, a process we call ball inflation. This is encoded by Theorem 6.6
+and by inequality (17), that will work as a substitute for Theorem 6.6, when k = n. The
+motivation for the ball inflation is that once we integrate on larger balls, we are able
+to decouple into intervals of finer scales, by combining the previously mentioned L2 and
+lower dimensional decouplings.
+  The proof of the ball inflation inequality (11) relies on the hierarchy of multilinear
+Kakeya-type inequalities described in Theorem 6.5. This is the place in our argument
+where the merit of the multilinear perspective is revealed.
+
+   For the remainder of the section we fix an integer K ≥ 2Mn and the intervals I1 , . . . , IMn
+of the form [ Ki , i+1
+                    K
+                       ], with i in a collection of non consecutive integers among 0, 1, . . . , K −1.
+                      PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                      17
+
+Note that there are finitely many such choices of intervals, so the implicit constants below
+(such as the one in (24)) can be taken to be uniform over the intervals we are using.
+
+  Given a function g : [0, 1] → C, a ball B r with radius δ −r in Rn , t ≥ 1 and q ≤ s ≤ r,
+write
+                                               Mn
+                                              Y    X                          1
+             Dt (q, B r ) = Dt (q, B r , g) =     (   kEJi,q gk2Lt (wBr ) )1/2 Mn .
+                                                                                 ]
+                                                    i=1    Ji,q ⊂Ii
+                                                          |Ji,q |=δ q
+
+Also, given a finitely overlapping cover Bs (B r ) of B r with balls B s , we let
+                                                         1      X                1
+             Ap (q, B r , s) = Ap (q, B r , s, g) =        r
+                                                                    D2 (q, B s )p p .
+                                                    |Bs (B )| s   r     B ∈Bs (B )
+
+The letter A will remind us that we have an average. Note that when r = s,
+                                    Ap (q, B r , r) = D2 (q, B r ).
+The function g will be fixed throughout the section, so we can drop the dependence on g.
+All implicit constants will be independent of g, δ. We will spend the rest of this section
+proving the following key result. The main philosophy behind our proof is to gradually
+increase the size of the balls and then to decrease the size of the intervals.
+Theorem 8.3. Fix n ≥ 3 and let p < n(n + 1) be sufficiently close to n(n + 1). Assume
+Theorem 1.2 holds for all smaller values of n, including n = 2. Then for each W > 0,
+there exist finitely many positive weights bI , γI satisfying
+                                        X
+                                             γI < 1,
+                                                I
+                                           X
+                                                    bI γI > W,
+                                            I
+so that for each sufficiently small u > 0 (how small will only depend on W ), the following
+inequality holds for each 0 < δ ≤ 1 and for each ball B n in Rn of radius δ −n
+                                                               P                     P
+(24)              Ap (u, B n , u) .,K,W δ − Vp,n (δ)1− I γI Dp (1, B n )1−             I γI   ×
+                                      Y
+                                         Ap (ubI , B n , ubI )γI .
+                                       I
+
+  In the next subsection we prove this theorem for n = 3. Then we reinforce the ideas
+behind the proof in the case n = 4, before explaining the case of arbitrary dimension.
+
+8.1. The case n = 3. In this subsection we will operate under the knowledge that
+Theorem 1.2 holds true for n = 2, as proved in [7]. In other words, we will use that
+(25)                                       V6,2 (δ) . δ − .
+Alternatively, one may reprove this fact by a rather straightforward adaptation of the
+arguments in this paper. The proof is fairly short, and it involves only one type of ball
+inflation. The details are left to the interested reader.
+   We fix an integer K ≥ 2M3 and the intervals I1 , . . . , IM3 of the form [ Ki , i+1
+                                                                                    K
+                                                                                       ], with i in
+a collection of non consecutive integers among 0, 1, . . . , K − 1. Note that there are finitely
+18                   JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+many such choices of intervals, so the implicit constants in the inequalities in this section
+will not depend on the intervals we are using.
+  From now on, we will denote by B r an arbitrary ball of radius δ −r in R3 .
+Proposition 8.4. For p ≥ 6, let α1 = α1 (p) satisfy
+                                                     1      α1 1 − α1
+                                                     p    = 2p +      .
+                                                     3       3
+                                                                  2
+Fix a ball B 2 ⊂ R3 with radius δ −2 , and let B1 (B 2 ) be a finitely overlapping cover of B 2
+with balls B 1 . The following inequality holds
+                                                M3
+                     1             X           Y    X                          p 1
+(26)                                               (   kEJi,1 gk2L2 (w 1 ) )1/2 M3 p .,K δ −
+                |B1 (B 2 )|                              Ji,1 ⊂Ii
+                                                                                  ]       B
+                              B 1 ∈B1 (B 2 )    i=1
+                                                         |Ji,1 |=δ
+
+
+                                     M3
+                                    Y    X                          1−α1
+                                   ×    (   kEJi,2 gk2L2 (w 2 ) )1/2 M3
+                                                                          ]      B
+                                        i=1      Ji,2 ⊂Ii
+                                                |Ji,2 |=δ 2
+
+
+                                     M3
+                                    Y    X                                                    α1
+                                   ×    (   kEJi,1 gk2 2p                                 )1/2 M3 .
+                                                Ji,1 ⊂Ii
+                                                                       L]3 (wB 2 )
+                                        i=1
+                                                |Ji,1 |=δ
+
+
+Proof. Since p ≥ 6, we have that
+                                      kEJi,1 gkL2] (wB1 ) ≤ kEJi,1 gk p3                           .
+                                                                                      L] (wB 1 )
+
+Using this and Theorem 6.6 with k = 1, the term (26) is now controlled by
+                                            M3 X
+                                           Y                                                           1
+                                               −
+                                   .,K δ (      kEJi,1 gk2 p3                                 ) 2M3
+                                                                                  L] (wB 2 )
+                                                    i=1 Ji,1 ⊂Ii
+                                                          |Ji,1 |=δ
+
+
+Using Hölder’s inequality we can dominate this by
+                   M3 X                                               M3 X
+                   Y                                       1   1−α    Y                                                    α1
+              ≤(                   kEJi,1 gk2L2 (w 2 ) ) 2M3 (                            kEJi,1 gk2 2p                  ) 2M3 .
+                                              ]   B
+                                                                                                           L]3 (wB 2 )
+                   i=1 Ji,1 ⊂Ii                                       i=1 Ji,1 ⊂Ii
+                       |Ji,1 |=δ                                              |Ji,1 |=δ
+
+
+It suffices now to apply L2 decoupling via Lemma 8.1 to the first term from above.
+                                                                                                                                   
+
+     The sequence of inequalities from Proposition 8.4 can be summarized as follows
+                                  Ap (1, B 2 , 1) .,K δ − D p3 (1, B 2 ) .,K δ −
+
+(27)                                                 × Ap (2, B 2 , 2)1−α1
+
+(28)                                                     × D 2p (1, B 2 )α1 .
+                                                                3
+                       PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                 19
+
+We have so far performed one ball inflation, replacing B 1 with B 2 . A few preliminary
+remarks are in order. Note that the terms of type Ap (u, B, v) have u = v. This sym-
+metry will always be preserved throughout the iteration and will facilitate the transition
+from Proposition 8.7 to Theorem 8.8. The reason we build our iteration scheme around
+the pivotal terms Ap (v, B, v) may seem rather subtle at this point, but we hope it will
+become more transparent throughout the argument. Suffices to say that we could have
+alternatively worked with other pivotal terms (see for comparison our argument in [9]),
+however the use of Ap (v, B, v) will make the L2 decoupling rather streamlined.
+  We will illustrate (27), (28) using the following tree.
+
+                                                             Figure 1
+
+                                                          Ap (1, B 1 , 1)
+                                                               
+                                                               
+                                                               y
+                                                           D p3 (1, B 2 )
+                                                   1−α1
+                                                             .              &α1
+                                      Ap (2, B 2 , 2)                       D 2p (1, B 2 )
+                                                                               3
+
+
+
+  In the next stage we process the term (28). We proceed with a second ball inflation,
+shifting from balls B 2 to balls B 3 and invoking the multilinear Kakeya-type inequality
+(10) with k = 2. We continue with a lower dimensional decoupling followed by L2 de-
+coupling. The term (27) will not undergo any serious modification, it will simply become
+Ap (2, B 3 , 2)1−α1 . For p ≥ 9 let α2 , β2 ∈ [0, 1] satisfy
+                                                   1          1 − α2 α2
+                                                   2p    =          + ,
+                                                    3
+                                                                 6   p
+
+                                                   1   1 − β2 β2
+                                                     =       + 2p .
+                                                   6     2      3
+
+Proposition 8.5. Fix a ball B 3 ⊂ R3 with radius δ −3 . Let B2 (B 3 ) be a finitely overlapping
+cover of B 3 with balls B 2 . For each B 2 , let B1 (B 2 ) be a finitely overlapping cover of B 2
+with balls B 1 . Define
+                         B1 (B 3 ) = {B 1 : B1 ∈ B1 (B 2 ), B 2 ∈ B2 (B 3 )}.
+Then
+                                               M3
+                    1            X            Y    X                          p 1
+                                                  (   kEJi,1 gk2L2 (w 1 ) )1/2 M3 p .,K δ −
+               |B1 (B 3 )|                              Ji,1 ⊂Ii
+                                                                               ]   B
+                             B 1 ∈B1 (B 3 )    i=1
+                                                        |Ji,1 |=δ
+
+
+                                                    M3
+                      1                X           Y    X                          p  1−α1
+               ×                                       (   kEJi,2 gk2L2 (w 2 ) )1/2 M3 p
+                 |B2 (B 3 )|                                   Ji,2 ⊂Ii
+                                                                                       ]   B
+                                  B 2 ∈B2 (B 3 )       i=1
+                                                              |Ji,2 |=δ 2
+20                  JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+                               M3
+                              Y           X                                         α1 (1−αM2 )(1−β2 )
+                          ×          (                 kEJi,3 gk2L2 (w 3 ) )1/2                    3
+                                                                      ]   B
+                               i=1        Ji,3 ⊂Ii
+                                         |Ji,3 |=δ 3
+
+
+                               M3
+                              Y    X                                                       α1 (1−α 2 )β2
+                          ×       (                      kEJi, 3 gk2 2p             )1/2          M    3
+
+                                          J 3 ⊂Ii
+                                                               2      L]3 (wB 3 )
+                               i=1          i, 2
+                                                  3
+                                         |J 3 |=δ 2
+                                           i, 2
+
+                                 M3
+                                Y    X                          α1 α2
+                               ×    (   kEJi,1 gk2Lp (w 3 ) )1/2 M3 .
+                                                                          ]   B
+                                         i=1    Ji,1 ⊂Ii
+                                                |Ji,1 |=δ
+
+
+Proof. There are four different stages in the argument.
+ In the first one we average inequality (27)-(28) raised to the power p over all balls
+     2
+B ∈ B2 (B 3 ). Then use Hölder’s inequality and Theorem 6.6 with k = 2 to get
+                                                       Ap (1, B 3 , 1)p .,K
+                                                            1          X                                     α1
+                δ − Ap (2, B 3 , 2)p(1−α1 )                                           D 2p (1, B 2 )p
+                                                       
+                                                                                                                   .,K
+                                                        |B2 (B 3 )|                        3
+                                                                      B 2 ∈B2 (B 3 )
+
+                                δ − Ap (2, B 3 , 2)p(1−α1 ) D 2p (1, B 3 )pα1 .
+                                                                              3
+
+We thus can write
+(29)                  Ap (1, B 3 , 1) .,K δ − Ap (2, B 3 , 2)1−α1 D 2p (1, B 3 )α1 .
+                                                                                               3
+
+The second step is simply Hölder’s inequality
+(30)                          D 2p (1, B 3 ) ≤ D6 (1, B 3 )1−α2 Dp (1, B 3 )α2 .
+                                 3
+
+                         6
+To justify the use of L we move to the third stage of the argument. The key observation is
+that the δ 3 −neighborhood of each arc ΓJ on the curve (t, t2 , t3 ) with |J| = δ is essentially
+a δ 3 −neighborhood of an arc of similar length on a rigid motion of a parabola (t, t2 ). By
+applying lower dimensional decoupling, Lemma 8.2 with n = k = 3 and p = 6, we can
+write (recalling (25))
+                                                         3
+(31)                            D6 (1, B 3 ) . δ − D6 ( , B 3 ).
+                                                         2
+In the fourth stage of the argument we use Hölder
+                             3               3                  3
+(32)                     D6 ( , B 3 ) ≤ D2 ( , B 3 )1−β2 D 2p ( , B 3 )β2
+                             2               2              3   2
+       2
+and L decoupling
+                                       3
+(33)                              D2 ( , B 3 ) . D2 (3, B 3 ).
+                                       2
+It suffices now to combine (29)–(33).
+                                                                                                                          
+                     PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                               21
+
+  We can summarize the new inequality as follows
+                                   Ap (1, B 3 , 1) .,K δ − ×
+
+(34)                                  Ap (2, B 3 , 2)1−α1 ×
+
+(35)                             Ap (3, B 3 , 3)α1 (1−α2 )(1−β2 ) ×
+                                         3
+(36)                               D 2p ( , B 3 )α1 (1−α2 )β2 ×
+                                      3  2
+(37)                                    Dp (1, B 3 )α1 α2 .
+Let us briefly compare this with its previous incarnation, (27)-(28). Note that the term
+(27) has become (34) without undergoing any processing. Most importantly, the term
+(28) has reincarnated into the three terms (35)–(37), via the use of ball inflation, L2
+decoupling and lower dimensional decoupling. We will illustrate this new inequality using
+the following tree.
+
+
+
+
+ The four leaves in the tree correspond to the terms (34)–(37), and the weights are
+multiplied along the edges to create the exponents in (34)-(37).
+
+  This completes the basic step of our iteration scheme. So far we have performed two
+ball inflations. The original one was by a (logarithmic) factor of 2, from B 1 to B 2 . We
+will not perform such an inflation again. The second one was by a factor of 32 , from B 2
+to B 3 . This type of inflation will appear in each step of the iteration.
+  Let us explain how to iterate one more time. We increase again the size of the ball, by
+                       3
+replacing B 3 with B 2 ·3 . We sum (34)–(37) raised to the power p over a finitely overlapping
+             9       9
+cover B3 (B 2 ) of B 2 with balls B 3 , and proceed exactly as in the proof of Proposition 8.5
+to get
+                                             9
+                                    Ap (1, B 2 , 1)p .,K δ − ×
+22                JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+                                                             9
+(38)                                          Ap (2, B 2 , 2)p(1−α1 ) ×
+                                                    9
+(39)                                    Ap (3, B 2 , 3)pα1 (1−α2 )(1−β2 ) ×
+                                1                X               3        α (1−α2 )β2
+                                                           D 2p ( , B 3 )p 1
+                      
+(40)                                9                                                  ×
+                          |B3 (B )| 2
+                                                         9
+                                                              3  2
+                                            B 3 ∈B3 (B 2 )
+
+                                        1               X                                α1 α2
+                                                                         Dp (1, B 3 )p
+                            
+(41)                                         9                                                    .
+                                |B3 (B )|    2
+                                                             9
+                                                  B 3 ∈B3 (B 2 )
+
+By using (17) for the term (41) and Theorem 6.6 with k = 2 for (40), we can further
+dominate the above by
+                                                             9
+(42)                                          Ap (2, B 2 , 2)p(1−α1 ) ×
+                                                    9
+(43)                                    Ap (3, B 2 , 3)pα1 (1−α2 )(1−β2 ) ×
+                                                  3 9
+(44)                                        D 2p ( , B 2 )pα1 (1−α2 )β2 ×
+                                               3  2
+                                                                     9
+(45)                                              Dp (1, B 2 )pα1 α2 .
+The only term that needs further processing is (44), and this is done following the argu-
+ment in stages 2-4 of the proof of Proposition 8.5. More exactly, we can write
+                                         3 9
+                                   D 2p ( , B 2 ) . δ − ×
+                                      3  2
+                                             9 9 9
+(46)                                     Ap ( , B 2 , )(1−α2 )(1−β2 ) ×
+                                             2       2
+                                                   9 9
+(47)                                         D 2p ( , B 2 )(1−α2 )β2 ×
+                                                3  4
+                                          3 9
+(48)                                 Dp ( , B 2 )α2 .
+                                          2
+Putting together (38)–(48) we arrive at the following new version of our main inequality
+                                                         9
+                                            Ap (1, B 2 , 1) .,K δ − ×
+                                                                 9
+                                                 Ap (2, B 2 , 2)1−α1 ×
+                                                     9
+                                 Ap (3, B 2 , 3)α1 (1−α2 )(1−β2 ) ×
+                                 9 9 9
+                             Ap ( , B 2 , )(1−α2 )(1−β2 )α1 (1−α2 )β2 ×
+                                 2       2
+                                     9 9 (1−α2 )β2 α1 (1−α2 )β2
+                               D 2p ( , B 2 )                      ×
+                                  3  4
+                                                 9
+                                        Dp (1, B 2 )α1 α2 ×
+                                         3 9
+                                    Dp ( , B 2 )α2 α1 (1−α2 )β2 .
+                                         2
+                     PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                                  23
+
+   This completes the second iteration. The tree associated with this inequality is as
+follows. The six terms on the right hand side of the inequality from above correspond to
+the six leaves of the tree. There are additional features of this tree that will be discussed
+in the end of this subsection.
+
+
+
+
+  We can iterate this further, by increasing each time the exponent of the radius of the
+ball with a factor of 32 , and processing the term D 2p using ball inflation, lower dimensional
+                                                      3
+decoupling and L2 decoupling. After r iterations we get the following inequality
+                                                r
+                        −               1−α1
+                                                Y          3          3                                  i−1
+    Ap (1, B, 1) .,K,r δ Ap (2, B, 2)               Ap (2( )i , B, 2( )i )α1 (1−α2 )(1−β2 )[(1−α2 )β2 ]
+                                                 i=1
+                                                           2          2
+
+                                           3                       r
+                                   ×D 2p (( )r , B)α1 [(1−α2 )β2 ]
+                                       3   2
+                                   r−1
+                                   Y        3                         i
+                               ×       Dp (( )i , B)α1 α2 [(1−α2 )β2 ] ,
+                                   i=0
+                                            2
+                                           3 r
+for each ball B ⊂ R3 with radius δ −2( 2 ) and p ≥ 9.
+
+  Next, invoke Hölder to argue that
+                                       3               3
+                                D 2p (( )r , B) . Dp (( )r , B),
+                                   3   2               2
+24                      JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+and use this inequality to write
+                                                          r
+                                −                 1−α1
+                                                          Y          3          3                                  i−1
+      Ap (1, B, 1) .,K,r δ Ap (2, B, 2)                       Ap (2( )i , B, 2( )i )α1 (1−α2 )(1−β2 )[(1−α2 )β2 ]
+                                                           i=1
+                                                                     2          2
+
+                             r−1
+                             Y        3                         i     3                      r
+                        ×        Dp (( )i , B)α1 α2 [(1−α2 )β2 ] Dp (( )r , B)α1 [(1−α2 )β2 ] .
+                             i=0
+                                      2                               2
+   Note that by raising this to the power p and summing over finitely overlapping families
+                                                                                      3 r
+of balls, the above inequality holds in fact for all balls B of radius at least δ −2( 2 ) . By
+renaming the variable δ, we can rewrite the new inequality as follows.
+Proposition 8.6. Let p > 9. Let u > 0 be such that
+                                                          3
+                                                         ( )r u ≤ 1.
+                                                          2
+Then for each ball B 3 of radius δ −3 we have
+                                                                      r−1
+                                        3                           r
+                                                                      Y        3                             i
+       Ap (u, B 3 , u) .,K,r δ − Dp (( )r u, B 3 )α1 [(1−α2 )β2 ]       Dp (( )i u, B 3 )α1 α2 [(1−α2 )β2 ] ×
+                                        2                             i=0
+                                                                               2
+                                            r
+                         3           1−α1
+                                            Y         3              3                                  i−1
+              Ap (2u, B , 2u)                   Ap (2( )i u, B 3 , 2( )i u)α1 (1−α2 )(1−β2 )[(1−α2 )β2 ] .
+                                            i=1
+                                                      2              2
+
+     To simplify notation, we will write
+                                                         γ0 = 1 − α1
+
+                            γi = α1 (1 − α2 )(1 − β2 )[(1 − α2 )β2 ]i−1 , 1 ≤ i ≤ r
+                                            3
+                                    bi = 2( )i , 0 ≤ i ≤ r.
+                                            2
+We will also use the trivial fact that
+                             3
+(49)                   Dp (( )i u, B 3 ) ≤ Vp (δ)Dp (1, B 3 ), 0 ≤ i ≤ r.
+                             2
+Note that this inequality involves no rescaling. Some elementary computations show that
+the inequality in Proposition 8.6 can now be rewritten as follows.
+Proposition 8.7. Let p > 9. Let u > 0 be such that
+                                                          3
+                                                         ( )r u ≤ 1.
+                                                          2
+Then for each ball B 3 of radius δ −3 we have
+                                                                     Pr                     Pr
+                        Ap (u, B 3 , u) .,K,r δ − Vp (δ)1−            0 γj   Dp (1, B 3 )1−   0 γj   ×
+                                                 r
+                                                 Y
+                                                       Ap (bj u, B 3 , bj u)γj .
+                                                 j=0
+                     PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                                             25
+
+  Note that 1 − rj=0 γj > 0, since all terms of type Dp from Proposition 8.6 have a
+                 P
+positive exponent.
+
+   The next step is to iterate Proposition 8.7. We start by noting that if the following
+stronger condition holds
+                                                 3
+                                              2( )2r u ≤ 1,
+                                                 2
+then u0 = bi u satisfies the condition
+                                                3
+                                               ( )r u0 ≤ 1,
+                                                2
+for each 0 ≤ i ≤ r. Thus by applying Proposition 8.7 with u0 replacing u we can also
+write                                                          Pr               Pr
+                  Ap (bi u, B 3 , bi u) .,K,r δ − Vp (δ)1− 0 γj Dp (1, B 3 )1− 0 γj ×
+                                       Yr
+                                           Ap (bj bi u, B 3 , bj bi u)γj .
+                                         j=0
+Combining these estimates with the inequality in Proposition 8.7 we get
+                                                                Pr          2
+                                                                                                   Pr         2
+                 Ap (u, B 3 , u) .,K,r δ − Vp (δ)1−(             0 γj )       Dp (1, B 3 )1−(         0 γj )    ×
+                                         r
+                                       r Y
+                                       Y
+                                                 Ap (bj bi u, B 3 , bj bi u)γj γi .
+                                       j=0 i=0
+By iterating this process M times we arrive at the following result.
+Theorem 8.8. Let p > 9. Given the integers r, M ≥ 1, let u > 0 be such that
+                                      3
+                                   [2( )r ]M u ≤ 2.
+                                      2
+                    3           −3
+Then for each ball B of radius δ and p ≥ 9 we have
+                                                                 Pr      M
+                                                                                                    Pr         M
+               Ap (u, B 3 , u) .,K,r,M δ − Vp (δ)1−(             0 γj )        Dp (1, B 3 )1−(         0 γj )       ×
+                         r              r              M                        M
+                         Y              Y              Y                        Y         QM
+                                                                   3
+                                 ...           Ap (u         bjl , B , u              bjl ) l=1 γjl .
+                         j1 =0         jM =0           l=1                      l=1
+
+
+  An easy computation shows that
+                          r
+                          X                           9         12 − p
+                      lim    bj γj =                     (1 + 2           ).
+                          r→∞
+                                  j=0
+                                                     p−3     p − 12p + 18
+It is easy to see that
+                                                   ∞
+                                                   X
+(50)                                                      bj γj > 1,
+                                                    j=0
+
+                                                             QM12.. This observation
+for p sufficiently close to, but less than the critical exponent          QM         con-
+cludes the proof of Theorem 8.3 for n = 3, by taking bI = l=1 bjl , γI = l=1 γjl and M
+large enough.
+26                  JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+   While (50) is easily seen to be true via direct computations in the case n = 3, a more
+abstract argument will be needed to address the similar question in higher dimensions. In
+preparation
+P∞              for that, we close the subsection with a different perspective on the quantity
+   j=0 bj γj . Combining this perspective with the result in the Appendix will immediately
+verify (50) for all n ≥ 3.
+   To present this new perspective, let us take another look at the tree from Figure 3.
+We should in fact envision this as being part of an infinite tree T, corresponding to an
+infinite number of iterations. Note the weights ω1 , ω2 , η1 , η2 on the tree T. The tree in
+Figure 3 focuses attention only on the information that was relevant for our derivation of
+Proposition 8.7. First, the leaves Ap (2( 23 )j ) on the left side of T are abbreviations of the
+terms Ap (2( 32 )j , B, 2( 32 )j ). This way we encode the fact that such a term contributes with
+weight bj = 2( 23 )j to the sum (50).
+   Second, the leaves Dp on the right side of T do not undergo any processing throughout
+the iteration, other than being associated with increasingly larger balls. The way they
+are estimated at the end of the argument is simply using the definition of Vp , with no
+rescaling (the gain via rescaling is actually negligible, and only complicates the argument).
+See (49).
+   Third, note the way we specify the entries of the terms D 2p . The size of the ball 2( 32 )j
+                                                                      3
+specifies the precise scale at which that particular term is being processed with Theorem
+                                                                3 j
+6.6. Note that each time such a term D 2p (( 32 )j−1 , B 2( 2 ) ) is processed this way, it gets
+                                                   3
+replaced with three other terms:
+                                           3 j+1
+   • the similar term D 2p (( 32 )j , B 2( 2 ) ), note the increment j 7→ j + 1
+                                3
+   • Ap (2( 32 )j ), via L2 decoupling,
+   • a term of type Dp .
+
+     The quantity ω1 = ω1 (p) attached to the root of T is
+                                             X∞
+                                       ω1 :=     bj γj .
+                                                 j=0
+
+The root collects contributions to the sum (50) from both of its bifurcations. Of course,
+only the terms Ap (2( 23 )j ), j ≥ 0, will produce contributions. For example, the contribution
+from the first left leaf is 2(1 − α1 ), which corresponds to the term b0 γ0 in (50). We write
+η1 = 2, to denote the contribution coming from Ap (2).
+   Similarly, we denote by ω2 the contribution coming from the part of T that is rooted
+                 3
+at D 2p (1, B 2· 2 ). We can write our first equation as follows
+       3
+
+(51)                                ω1 = (1 − α1 )η1 + α1 ω2 .
+                                                                                                  3
+Similarly, let η2 be the contribution coming from the part of T that is rooted at D6 ( 23 , B 2· 2 ).
+Noting that the Dp term on the right of T produces no contribution, we can write the
+second equation as follows
+(52)                                ω2 = (1 − α2 )η2 + α2 ω3 ,
+with the understanding that ω3 = 0.
+  Let us now write an equation for η2 . Note that η2 collects contributions from the left
+and the right branches. The contribution from the left comes with weight 1 − β2 and it
+                      PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                  27
+
+equals 32 η1 , due to the self similarity of T and the ball inflation. The one from the right
+is β2 23 ω2 , due to same reasons. Thus, the third and final equation is
+                                            3       3
+(53)                          η2 = (1 − β2 ) η1 + β2 ω2 .
+                                            2       2
+We summarize the equations (51)-(53) into the following system, when n = 3
+           (
+             ωj = (1 − αj )ηj + αj ωj+1         : 1 ≤ j ≤ n − 1, ωn = 0
+(54)                       j+1          j+1                             .
+             ηj = (1 − βj ) j ηj−1 + βj j ωj : 2 ≤ j ≤ n − 1, η1 = 2
+   This system will also describe the higher dimensional case n ≥ 4, as will become clear
+in the following subsections. And again, it can be easily solved by hand for small values
+on n. In particular, when n = 3 one gets
+                                       9          12 − p
+                            ω1 (p) =      (1 + 2              ),
+                                     p−3       p − 12p + 18
+as observed before. For higher values of n, the analysis will be done in the Appendix.
+
+8.2. The case n = 4. It will help the reader if we briefly describe the iteration scheme
+for n = 4, before we move on to the general case. The new feature is that, in addition
+to the initial ball inflation by a factor of 2, there will be two ball inflations that we will
+perform repeatedly: by a factor of 23 and by a factor of 43 . We will follow the notation and
+philosophy from Subsection 8.1, with the obvious necessary modifications. For example,
+we replace M3 = 3! with M4 = 4! in the definitions of the terms of type Ap and Dp .
+   The relevant Lebesgue indices in the case n = 4 are p4 , 2p , 3p , 4p = p and also 2 = 2 · 1,
+                                                              4 4 4
+6 = 3 · 2, 12 = 4 · 3 and 20 = 5 · 4. The relevant weights are α1 , α2 , α3 and β2 , β3 , specified
+by the equalities
+                                       1    1 − α1 α1
+                                       p =         + p,
+                                        4
+                                               2      24
+                                       1    1 − α2 α2
+                                       2p =         + p,
+                                        4
+                                               6      34
+                                       1         1 − α3 α3
+                                       3p    =         + ,
+                                        4
+                                                   12   p
+                                       1   1 − β2 β2
+                                         =       + p,
+                                       6     2    24
+                                        1   1 − β3 β3
+                                          =         + p.
+                                       12      6       34
+   Throughout this subsection we will implicitly assume that p is sufficiently close to the
+critical index 20 = 5 · 4, so that all weights are in [0, 1].
+   Most importantly, we will operate under the assumption that Theorem 1.2 holds true
+for n = 3, n = 2. In other words, we will assume that
+(55)                                        V6,2 (δ) . δ − ,
+
+(56)                                       V12,3 (δ) . δ − .
+28                    JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+Figure 4 below is of the same type as Figure 3, except that it only presents one iteration,
+containing one of each of the three types of ball inflation:
+                                         B 1 7→ B 2 7→ B 3 7→ B 4 .
+The way to continue this tree is to bifurcate each of the terms of type D p2 and D 3p ,
+                                                                                              p
+according to the rules specified in Figure 4. As we will make clear below, the next term
+                                                         3
+that will be processed will be the leaf D p2 ( 32 , B 3· 2 ). That will happen when we increment
+                 3
+from B 4 to B 3· 2 .
+
+
+
+
+     We start with the following analog of Proposition 8.4.
+Proposition 8.9. For each ball B 2 ⊂ R4 with radius δ −2 we have
+(57)        Ap (1, B 2 , 1) .,K δ − D p4 (1, B 2 ) .,K δ − Ap (2, B 2 , 2)1−α1 D 2p (1, B 2 )α1 .
+                                                                                       4
+
+  We next perform the first ball inflation, in order to process the term D 2p (1, B 2 ), by
+                                                                                   4
+averaging (57) over a finitely overlapping cover B2 (B 3 ) of B 3 with balls B 2 .
+Proposition 8.10. For each ball B 3 ⊂ R4 with radius δ −3 we have
+                                         Ap (1, B 3 , 1) .,K δ − ×
+
+(58)                                         Ap (2, B 3 , 2)1−α1 ×
+                     PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                 29
+
+(59)                                  Ap (3, B 3 , 3)α1 (1−α2 )(1−β2 ) ×
+                                                    3
+(60)                                          D 2p ( , B 3 )α1 (1−α2 )β2 ×
+                                                 4  2
+(61)                                              D 3p (1, B 3 )α1 α2 .
+                                                     4
+
+Proof. The argument follows closely the one in the proof of Proposition 8.5. We first
+use Theorem 6.6 with k = 2 to replace D 2p (1, B 2 ) with D 2p (1, B 3 ). Then we interpolate
+                                                         4                   4
+(Hölder) 2p
+           4
+             between 6 and 3p
+                            4
+                              . Finally, we use (55) and lower dimensional decoupling for
+      6            2
+the L term, and L decoupling to arrive at the Ap term.
+                                                                                       
+   There is only one thing left to do to finish the first iteration, that is to process the term
+(61). To do so, we increase from B 3 to B 4 . Let B3 (B 4 ) be a finitely overlapping cover of
+B 4 with balls B 3 .
+Proposition 8.11. For each ball B 4 ⊂ R4 with radius δ −4 we have
+                                           Ap (1, B 4 , 1) .,K δ − ×
+
+(62)                                            Ap (2, B 4 , 2)1−α1 ×
+
+(63)                                  Ap (3, B 4 , 3)α1 (1−α2 )(1−β2 ) ×
+
+(64)                             Ap (4, B 4 , 4)α1 α2 (1−α3 )(1−β3 )(1−β2 ) ×
+                                 1              X            3         1 α (1−α2 )β2
+                                                       D 2p ( , B 3 )p p 1
+                        
+(65)                                                                                  ×
+                            |B3 (B 4 )|                   4  2
+                                                     4
+                                          B 3 ∈B3 (B )
+
+
+(66)                                D 2p (2, B 4 )α1 α2 (1−α3 )(1−β3 )β2 ×
+                                          4
+
+
+                                                4
+(67)                                      D 3p ( , B 4 )α1 α2 (1−α3 )β3 ×
+                                             4  3
+(68)                                             Dp (1, B 4 )α1 α2 α3 .
+Proof. Average the inequality from Proposition 8.10 raised to the power p, over all the
+balls in B3 (B 4 ). Use Theorem 6.6 with k = 3, then use Hölder to interpolate 3p
+                                                                                 4
+                                                                                   between
+                                               3
+12 and p, lower dimensional decoupling in R for the D12 term (use (56)), Hölder again
+to interpolate 12 between 6 and 3p 4
+                                     , lower dimensional decoupling in R2 for the D6 term
+(use (55)) and finally, L2 decoupling for the Ap term.
+                                                                                        
+   This ends the first iteration. The seven terms (62)-(68) correspond to the seven leaves
+of the tree in Figure 4.
+   Note that (60) does not fully get processed in this first iteration, and becomes (65).
+                                                   3
+However, this term will be processed on balls B 3· 2 , at the next ball inflation, where the
+                               3                                             3
+increment is from B 4 to B 3· 2 . The argument goes as follows. Let B4 (B 3· 2 ) be a finitely
+30                  JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+                            3
+overlapping cover of B 3· 2 with balls B 4 . Let B3 (B 4 ) be a finitely overlapping cover of B 4
+with balls B 3 . Then
+                                                                            p 1/p
+                  1         X               1        X            3 3 p  p1  
+                                                             D 2p ( , B )         =
+                                  
+                      3
+            |B4 (B 3· 2 )|              |B3 (B 4 )| 3              2
+                                                               4
+                                 3                         4         B ∈B3 (B )
+                          B 4 ∈B4 (B 3· 2 )
+
+                                           1 X        3        1
+(69)                                             D 2p ( , B 3 )p p ,
+                                           |B| 3    4  2
+                                                     B ∈B
+
+where                                            [
+                                B=                               {B 3 : B 3 ∈ B3 (B 4 )}
+                                                             3
+                                        B 4 ∈B4 (B 3· 2 )
+                                                   3
+is a finitely overlapping cover of B 3· 2 with balls B 3 . Using Theorem 6.6 with n = 4 and
+k = 2, the term (69) is dominated by
+                                                   3       3
+                                   .,K δ − D 2p ( , B 3· 2 ).
+                                                4  2
+
+
+  Imagine now an infinite version T of the tree in Figure 4. The only leaves that we
+would see are the Ap terms on the left and the Dp terms on the right. The terms Dp
+get processed in each stage of the iteration via (17). Also, all the terms of type D 2p or
+                                                                                        4
+D 3p get eventually processed. If we count all the balls that take part in the inflation, we
+     4
+                                              3 i 4 j
+will find all radii of the form δ −3( 2 ) ( 3 ) with i, j ≥ 0, in addition to the initial radii δ −1
+and δ −2 . The inflations occur in increasing order of these radii. We have explained the
+following sequence of inflations
+                                                 3        4       3
+                               1 7→ 2 7→ 2 · 7→ 3 · 7→ 3 · .
+                                                 2        3       2
+                                                                         3 i 4 j
+A term of type D 2p gets processed on a ball B 3( 2 ) ( 3 ) , if its path back to the root of T
+                  4
+encounters exactly i terms of type D 2p and exactly j terms of type D 3p . A term of type
+                                                         4                                               4
+                                      3( 32 )i ( 34 )j
+D 3p gets processed on a ball B           , if its path back to the root of T encounters exactly
+   4
+i + 1 terms of type D 2p and exactly j − 1 terms of type D 3p .
+                           4                                      4
+   Each time a term of type D 2p is processed, it gets replaced with three terms of type
+                                   4
+Ap , D 2p , D 3p . Each time a term of type D 3p is processed, it gets replaced with four terms
+        4      4                                 4
+of type Ap , D 2p , D 3p , D 4p .
+               4     4     4
+
+
+  While this process may be complicated, the features that are relevant for us turn out
+to be rather simple. We summarize them in the following analog of Proposition 8.7.
+Proposition 8.12. Assume (55) and (56), and let p be sufficiently close to 20. Let u > 0
+be sufficiently close to 0, depending on how large r is (the exact dependence is irrelevant).
+Then for each ball B 4 of radius δ −4 in R4 we have
+                                                                        Pr                    Pr
+                    Ap (u, B 4 , u) .,K,r δ − Vp,4 (δ)1−                0 γj   Dp (1, B 4 )1−   0 γj   ×
+                      PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                                        31
+
+                                             r
+                                             Y
+                                                   Ap (bj u, B 4 , bj u)γj ,
+                                             j=0
+
+for some γj , bj > 0. Also, we have the crucial identity
+                                                               ∞
+                                                               X
+(70)                                               ω1 :=             bj γj ,
+                                                               j=0
+
+where ω1 = ω1 (p) is the solution of the system (54) with n = 4.
+Proof. Apart from (70), the statement is rather tautological. Indeed, using simple in-
+equalities such as (17),
+                                  D 2p (u, B 4 ), D 3p (u, B 4 ) . Dp (u, B 4 )
+                                     4                   4
+
+and
+                              Dp (v, B 4 ) ≤ Vp,4 (δ)Dp (1, B 4 ), v ≥ 1
+we obviously end up only with terms of type Ap (bj u, B 4 , bj u), Dp (1, B 4 ), Vp (δ), for appro-
+priate bj , whose values will not be important. The resulting inequality will necessarily be
+of the type
+                      Ap (u, B 4 , u) .,K,r δ − Vp,4 (δ)1−Dr Dp (1, B 4 )1−Cr ×
+                                             r
+                                             Y
+                                                   Ap (bj u, B 4 , bj u)γj ,
+                                             j=0
+
+for some Cr ≤ Dr . Since Vp,4 (δ) ≥ 1, wePmight as well replace Dr with Cr . Whatever
+the values of γj are, the fact that Cr = rj=0 γj follows from scaling considerations, by
+recalling the definition of the Ap , Dp terms.
+  The identity (70) follows from the observations we made earlier, exactly like in the case
+n = 3, which was explained at the end of the previous subsection.
+                                                                                         
+  By iterating Proposition 8.12 M times, in the same way we did it for n = 3, we arrive
+at the following inequality.
+Theorem 8.13. Let p be sufficiently close to 20. Assume (55) and (56) hold. Let r, M ≥
+1. Then for u > 0 sufficiently close to 0 (how small depends on r and M ) and for each
+ball B 4 in R4 of radius δ −4 we have
+                                                                     Pr      M
+                                                                                                       Pr     M
+               Ap (u, B 4 , u) .,K,r,M δ − Vp,4 (δ)1−(               0 γj )    Dp (1, B 4 )1−(        0 γj )    ×
+                          r              r               M                     M
+                          Y              Y               Y                     Y         QM
+                                                                       4
+                                  ...            Ap (u         bjl , B , u           bjl ) l=1 γjl .
+                          j1 =0          jM =0           l=1                   l=1
+
+Moreover, γj , bj satisfy (70).
+  Combining this with Theorem               QMAppendix finishes the proof of Theorem
+                             QM 10.1 from the
+8.3 for n = 4, by taking bI = l=1 bjl , γI = l=1 γjl and M large enough.
+32                  JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+8.3. The case of arbitrary n. A careful reading of the previous two subsections allows
+for a rather straightforward extension of our iteration scheme to all dimensions. We will
+have n − 1 types of increments in the ball inflation, by factors j+1
+                                                                  j
+                                                                     , 1 ≤ j ≤ n − 1. The one
+corresponding to j = 1 is performed only once, at the very beginning of the argument.
+The ones corresponding to j ≥ 2 will be performed repeatedly.
+
+
+
+
+  The relevant Lebesgue indices are now jp     n
+                                                 , 2 ≤ j ≤ n and also j(j + 1), 1 ≤ j ≤ n.
+The relevant weights are α1 , . . . , αn−1 and β2 , . . . , βn−1 . Their exact values are
+
+
+
+                                              p
+                                              n
+                                                − (j + 1)
+                                       αj =      p        ,
+                                                 n
+                                                   −j
+
+
+
+
+                                                    2p
+                                                     n
+                                   βj =                        .
+                                          (j + 1)( np − j + 1)
+
+
+
+
+Throughout this section we will implicitly assume that p is sufficiently close to the critical
+index n(n + 1), so that all weights are in [0, 1].
+   Most importantly, we will operate under the assumption that Theorem 1.2 holds true
+in all dimensions smaller than n. In other words, we will assume that
+
+
+
+
+(71)                    Vj(j+1),j (δ) . δ − , 2 ≤ j ≤ n − 1, 0 < δ ≤ 1.
+
+
+
+
+     Figure 5 below is of the same type as Figure 4 from previous subsection.
+                    PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                                       33
+
+
+
+
+Theorem 8.14. Let p be sufficiently close to n(n + 1). Assume (71). Let r, M ≥ 1. Then
+for u > 0 sufficiently close to 0, for each 0 < δ ≤ 1 and for each ball B n in Rn of radius
+δ −n we have
+                                                                  Pr       M
+                                                                                                    Pr     M
+             Ap (u, B n , u) .,K,r,M δ − Vp,n (δ)1−(               0 γj )    Dp (1, B n )1−(       0 γj )    ×
+                        r             r               M                     M
+                        Y             Y               Y                     Y         QM
+                                                                    n
+                                ...           Ap (u         bjl , B , u           bjl ) l=1 γjl .
+                        j1 =0         jM =0           l=1                   l=1
+Moreover, we have the crucial identity
+                                                            ∞
+                                                            X
+                                                ω1 :=             bj γj ,
+                                                            j=0
+
+where ω1 = ω1 (p) is the solution of the system (54).
+  The proof of Theorem 8.14 is virtually identical to the one of its lower dimensional
+                                                                               QM from
+counterparts presented in the earlier subsections. Combining this with Theorem 10.1
+the Appendix finishes the proof of Theorem 8.3 for arbitrary n, by taking bI = l=1 bjl ,
+γI = M
+     Q
+       l=1 γjl and M large enough.
+34                   JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+                         9. The proof of Theorem 1.2 for n ≥ 3
+  In this section we prove Theorem 1.2 for n ≥ 3. For p ≥ 2, let ηp ≥ 0 be the unique
+number such that
+(72)                           lim Vp,n (δ)δ ηp +σ = 0, for each σ > 0
+                               δ→0
+
+and
+(73)                        lim sup Vp,n (δ)δ ηp −σ = ∞, for each σ > 0.
+                              δ→0
+
+It is immediate that ηp is a finite number.
+
+  We start by presenting the following rather immediate consequence of Theorem 8.3. It
+will be helpful to start indexing the terms Ap , Dp by the function g.
+Theorem 9.1. Fix n ≥ 3 and let p < n(n + 1) be sufficiently close to n(n + 1). Assume
+Theorem 1.2 holds for all smaller values of n. Then for each W > 0, for each sufficiently
+small u > 0, the following inequality holds for each g : [0, 1] → C, 0 < δ ≤ 1 and for each
+ball B n in Rn of radius δ −n
+                       Ap (u, B n , u, g) .,K,W δ −(1−uW )(ηp +) Dp (1, B n , g).
+Proof. Let bI , γI be the weights corresponding to W from Theorem 8.3. Recall that we
+have for all small enough u > 0
+                                              P                      P     Y
+(74) Ap (u, B n , u, g) .,K,W δ − Vp,n (δ)1− I γI Dp (1, B n , g)1− I γI   Ap (ubI , B n , ubI , g)γI .
+                                                                                I
+
+  Assume in addition that u is so small that uW < 1 and ubI < 1 for each I. First,
+Hölder’s inequality shows that
+(75)                           Ap (bI u, B n , bI u, g) . Dp (bI u, B n , g).
+Next, rescaling as in (19) leads to
+(76)                        Dp (bI u, B n , g) . Vp,n (δ 1−ubI )Dp (1, B n , g).
+It suffices now to combine (72), (74), (75) and (76).
+                                                                                                      
+
+     Recall that we need to prove that
+(77)                                     Vn(n+1),n (δ) .,p δ − .
+It turns out that it suffices to prove a similar statement with n(n + 1) replaced by p <
+n(n + 1).
+Lemma 9.2. Inequality (77) follows if
+(78)                                        Vp,n (δ) .,p δ −
+holds for each p < pn = n(n + 1) sufficiently close to n(n + 1).
+                        PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                       35
+
+Proof. Let B ⊂ Rn be a ball with radius δ −n . Using inequality (18), for p < pn we have
+                                  kE[0,1] gkLpn (wB ) . kE[0,1] gkLp (wB ) .
+Combining this with Hölder’s inequality we get
+                                                                    X
+                        kE[0,1] gkLpn (wB ) . Vp,n (δ)(                        kEJ gk2Lp (wB ) )1/2
+                                                                   J⊂[0,1]
+                                                                    |J|=δ
+
+                                                                X
+                         . Vp,n (δ)k1k q−1
+                                        q                  (             kEJ gk2Lpn (wB ) )1/2 .
+                                            L      (wB )
+                                                               J⊂[0,1]
+                                                                |J|=δ
+
+It suffices to note that q → 1 as p → pn .
+                                                                                                       
+  We now return to proving (77). The proof is by induction. Recall that the case n = 2
+was proved in [7]. Assume that we have proved (77) for all values less than n. Using the
+previous lemma, it will suffice to prove (78).
+  For the rest of the argument fix p < pn so that Theorem 9.1 holds. Recall that we need
+to prove that ηp = 0.
+
+  Fix K ≥ 2Mn , 0 < δ ≤ K −1 , and I1 , . . . , IMn , as in the previous section. Let W, u be
+as in Theorem 9.1. Let B n be an arbitrary ball with radius δ −n in Rn .
+  Start by applying Cauchy–Schwarz
+               Mn                                Mn
+               Y                             u
+                                                Y   X               1
+                       1/Mn                −
+             k( EIi g)      kLp] (wBn ) ≤ δ 2 k(      |EJi,u g|2 ) 2Mn kLp] (wBn )
+               i=1                                              i=1    Ji,u ⊂Ii
+                                                                      |Ji,u |=δ u
+
+
+
+                                                          Mn
+                   −u        1            X              Y   X               1             1
+(79)          .δ    2                                  k(      |EJi,u g|2 ) 2Mn kpLp (wBu ) p .
+                        |Bu (B n )|                                                                ]
+                                      B u ∈Bu (B n )     i=1      Ji,u ⊂Ii
+                                                                 |Ji,u |=δ u
+
+
+Here Bu (B n ) is a finitely overlapping cover of B n with balls B u of radius δ −u . Using
+Minkowski’s inequality, (79) is dominated by
+                             u      1      X                      1/p
+                          δ− 2        n
+                                                 Dp (u, B u , g)p      .
+                               |Bu (B )| u     n  B ∈Bu (B )
+
+On the other hand, inequality (18) shows that Dp (u, B u , g) . D2 (u, B u , g), and conse-
+quently
+                     1       X                      1/p
+                       n
+                                   Dp (u, B u , g)p      . Ap (u, B n , u, g).
+                |Bu (B )| u      nB ∈Bu (B )
+
+We conclude that
+                           Mn
+                                                         u
+                           Y
+(80)                     k( EIi g)1/Mn kLp] (wBn ) ≤ δ − 2 Ap (u, B n , u, g).
+                            i=1
+36                  JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+Next, use Theorem 9.1, (72) and (80) to write for each σ > 0
+              Mn
+                                                      u
+              Y
+            k( EIi g)1/Mn kLp] (wBn ) .σ,,K,W δ −(+ 2 +(ηp +σ)(1−uW )) Dp (1, B n , g).
+              i=1
+
+Note that this inequality holds uniformly over all g and B n , so we can take the supremum
+over these elements to get
+                                                       u
+                           Vp (δ, K) .σ,,K,W δ −(+ 2 +(ηp +σ)(1−uW )) .
+Using (20) and (73) we can now write
+                                                           u
+                         δ −ηp +p (K)+σ .σ,,K,W δ −(+ 2 +(ηp +σ)(1−uW )) .
+Since this holds true for δ arbitrarily close to 0, it further leads to
+                                                u
+                       ηp − p (K) − σ ≤  + + (ηp + σ)(1 − uW ),
+                                                2
+which can be rewritten as follows
+                                  1       + p (K) + σ(2 − uW )
+                           ηp ≤       +                            .
+                                 2W                 uW
+This holds true for each , σ > 0 and each K ≥ 2Mn . Recalling that
+                                          lim p (K) = 0,
+                                         K→∞
+
+we can further write
+                                           1
+                                            ηp ≤
+                                              .
+                                          2W
+Letting now W → ∞ leads to ηp = 0, as desired.
+
+
+                                         10. Appendix
+  Fix n ≥ 3. For ∆ in a small neighborhood of n + 1, let
+                                 ∆ − (j + 1)
+                           αj =              , 1 ≤ j ≤ n − 1,
+                                   ∆−j
+                                     2∆
+                        βj =                    , 2 ≤ j ≤ n − 1.
+                             (j + 1)(∆ − j + 1)
+We will be concerned with proving the following result, which was instrumental in achiev-
+ing the conclusion of Theorem 8.3.
+Theorem 10.1. For ∆ < n + 1 sufficiently close to n + 1, the solution ω1 (∆) of the
+system
+              
+              
+               ωj = (1 − αj )ηj + αj ωj+1      : 1≤j ≤n−1
+              η = (1 − β ) j+1 η + β j+1 ω : 2 ≤ j ≤ n − 1
+              
+                 j         j   j  j−1     j j j
+(81)
+              
+              
+               ωn = 0
+                η1 = 2
+              
+
+satisfies
+                                            ω1 (∆) > 1.
+                     PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                  37
+
+Proof. For arbitrary θ ∈ R, consider the related system
+                  
+                  
+                   ωj = (1 − αj )ηj + αj ωj+1        : 1≤j ≤n−1
+                  η = (1 − β ) j+1 η + β j+1 ω : 2 ≤ j ≤ n − 1
+                  
+                     j         j   j  j−1     j j  j
+(82)
+                  
+                  
+                   ωn = θ
+                    η1 = 2,
+                  
+
+and call ωj (∆, θ), ηj (∆, θ) its solution.
+   Iterating the first equation in (82) a few times leads to
+                         1                                  ∆−n
+(83)            ωj =        (ηj + ηj+1 + . . . + ηn−1 ) +          θ, 1 ≤ j ≤ n − 1.
+                      ∆−j                                   ∆−j
+Substituting (83) in the second equation from (82) leads to
+                                               2∆              j+1
+(84)                       ηj = (1 −                         )      ηj−1 +
+                                       (j + 1)(∆ − j + 1) j
+                          2∆                                           2∆(∆ − n)
+                                       (ηj + ηj+1 + . . . + ηn−1 ) +               θ,
+                j(∆ − j)(∆ − j + 1)                                   j(∆ − j + 1)
+for 2 ≤ j ≤ n − 1.
+   Together with the initial condition η1 = 2, (84) determines all ηj . Then (83) determines
+all ωj .
+   It is an easy verification that
+                                                                  n−j
+(85)                         ηj (n + 1, 0) = 2ωj (n + 1, 0) = 2
+                                                                  n−1
+and in fact more generally, for each ∆ close to n + 1
+                           ∆−n−1                   ∆−n−1              ∆−j−1
+(86)                ηj (∆,            ) = 2ωj (∆,               )=2             .
+                             ∆−2                     ∆−2                ∆−2
+In particular,
+                                             ∆−n−1
+(87)                                  ω1 (∆,              ) = 1.
+                                               ∆−2
+It will suffice to prove that for each ∆ sufficiently close to n + 1, the function θ 7→ ω1 (∆, θ)
+is increasing in a neighborhood of 0. Indeed, combining this with (87) for ∆ < n + 1
+sufficiently close to n + 1 and with the fact that ∆−n−1  ∆−2
+                                                                 < 0 for such ∆, we get
+                                                   ∆−n−1
+                              ω1 (∆, 0) > ω1 (∆,         ) = 1,
+                                                    ∆−2
+as desired.
+  Now, (87) will follow if we prove that
+(88)                              ω1 (∆, θ) = A(∆) + B(∆)θ
+with B(∆) > 0, for ∆ close to n + 1. The linear representation is clear from (83), (84).
+Invoking continuity of the rational function B(∆), it will suffice to argue that B(n+1) > 0.
+   To simplify notation, we fix θ and denote by ωj , ηj the solution ωj (n + 1, θ), ηj (n + 1, θ)
+of the system (82) corresponding to ∆ = n + 1. The first two equations of the system (82)
+can be written as follows
+                              ωj = fj (ηj , ωj+1 ), 1 ≤ j ≤ n − 2
+38                  JEAN BOURGAIN, CIPRIAN DEMETER, AND LARRY GUTH
+
+                                        ωn−1 = fn−1 (ηn−1 , θ)
+
+                                ηj = gj (ηj−1 , ωj ), 2 ≤ j ≤ n − 2,
+with fj (·, ·), gj (·, ·) linear. Moreover, the coefficients of all fj , gj are strictly positive. We
+can iterate these equations as many times as we wish, by each time paying attention to
+the new representation for ω1 as a function of ω2 , . . . , ωn−1 , θ, η2 , . . . , ηn−1 . For example,
+iterating twice amounts to writing
+
+                                       ω1 = f1 (2, f2 (η2 , ω3 )),
+
+while iterating again leads to
+
+                               ω1 = f1 (2, f2 (g2 (2, ω2 ), f3 (η3 , ω4 ))).
+
+Note that all these iterations lead to affine combinations. Write the result after r iterations
+as follows
+
+(89)        ω1 = Ar + Br θ + a1,r ω1 + . . . + an−1,r ωn−1 + b2,r η2 + . . . bn−1,r ηn−1 ,
+
+with all coefficients Ar , Br , ai,r , bi,r ≥ 0 and independent of θ. It is fairly immediate to
+note that Br > 0 for r ≥ n − 1, and that Ar , Br are nondecreasing functions of r.
+  By using θ = 0 in (89), combined with (85) and (87), we find that
+                                               n−1         n−1
+                                               X  n−i      X        n−i
+(90)            1 = ω1 (n + 1, 0) = Ar +     ai,r       +2     bi,r       ≥ Ar .
+                                         i=1
+                                                  n − 1    i=2
+                                                                    n − 1
+
+The key observation is that
+                                             n−1
+                                             X              n−1
+                                                            X
+(91)                                lim (          ai,r +         bi,r ) = 0.
+                                    r→∞
+                                             i=1            i=2
+
+We will argue that if this were not true, it would force Ar to approach ∞, contradicting
+(90). Indeed, note that since η1 > 0 and the coefficients of fj , gj are > 0, iterating the
+term
+                       a1,r ω1 + . . . + an−1,r ωn−1 + b2,r η2 + . . . bn−1,r ηn−1
+sufficiently many times will add to the value of Ar a nonzero fraction of
+                                             n−1
+                                             X              n−1
+                                                            X
+                                         (         ai,r +         bi,r ).
+                                             i=1            i=2
+
+Finally, use (91) and let r → ∞ in (89) to write
+
+                                              ω1 = A + Bθ,
+
+with A := limr→∞ Ar , B := limr→∞ Br . The fact that B > 0 follows from previous
+observations.
+                                                                              
+                       PROOF OF VINOGRADOV’S MEAN VALUE THEOREM                                       39
+
+                                            References
+ [1] Bennett, J., Carbery, A. and Tao, T. On the multilinear restriction and Kakeya conjectures, Acta
+     Math. 196 (2006), no. 2, 261-302
+ [2] Bennett, J., Carbery, A., Christ, M and Tao, T. Finite bounds for Hölder–Brascamp–Lieb multilinear
+     inequalities, Math. Res. Lett. 17 (2010), no. 4, 647-666
+ [3] Bennett, J., Bez, N., Flock, T. and Lee, S. Stability of Brascamp-Lieb constant and applications,
+     preprint available on arXiv
+ [4] Bourgain, J. Moment inequalities for trigonometric polynomials with spectrum in curved hypersur-
+     faces, Israel J. Math. 193 (2013), no. 1, 441-458.
+ [5] Bourgain, J. Decoupling, exponential sums and the Riemann zeta function, available on arXiv
+ [6] Bourgain, J. Decoupling inequalities and some mean-value theorems, to appear in Journal d’Analyse
+     Mathematique.
+ [7] Bourgain, J. and Demeter, C. The proof of the l2 Decoupling Conjecture, Annals of Math. 182 (2015),
+     no. 1, 351-389.
+ [8] Bourgain, J. and Demeter, C. Mean value estimates for Weyl sums in two dimensions, preprint
+     available on arXiv.
+ [9] Bourgain, J. and Demeter, C. Decouplings for curves and hypersurfaces with nonzero Gaussian
+     curvature, to appear in Journal d’Analyse Mathematique.
+[10] Bourgain, J. and Demeter, C. Decouplings for surfaces in R4 , to appear in Journal of Functional
+     Analysis.
+[11] Bourgain, J. and Watt, N. Decoupling for perturbed cones and mean square of ζ( 21 + it), preprint
+     available on arXiv.
+[12] Bourgain, J. and Guth, L. Bounds on oscillatory integral operators based on multilinear estimates,
+     Geom. Funct. Anal. 21 (2011), no. 6, 1239-1295
+[13] Ford, K. and Wooley, T. D. On Vinogradov’s mean value theorem: strongly diagonal behaviour via
+     efficient congruencing Acta Math. 213 (2014), no. 2, 199-236
+[14] Garrigós, G. and Seeger, A. On plate decompositions of cone multipliers Proc. Edinb. Math. Soc. (2)
+     52 (2009), no. 3, 631-651
+[15] Guth, L. A short proof of the multilinear Kakeya inequality, Math. Proc. Cambridge Philos. Soc. 158
+     (2015), no. 1, 147-153
+[16] Pramanik, M. and Seeger, A. Lp regularity of averages over curves and bounds for associated maximal
+     operators, Amer. J. Math. 129 (2007), no. 1, 61-103
+[17] Wolff, T. Local smoothing type estimates on Lp for large p, Geom. Funct. Anal. 10 (2000), no. 5,
+     1237-1288
+[18] Wooley, T. D., The cubic case of the main conjecture in Vinogradov’s mean value theorem, available
+     on arXiv.
+[19] Wooley, T. D., Approximating the main conjecture in Vinogradov’s Mean value Theorem, available
+     on arXiv.
+[20] Wooley, T. D., Translation invariance, exponential sums, and Warings problem, available on arXiv.
+[21] Wooley, T. D., The asymptotic formula in Waring’s problem, Int. Math. Res. Not. IMRN 2012, no.
+     7, 1485-1504.
+[22] Wooley, T. D., Discrete Fourier restriction via efficient congruencing: basic principles,
+     arXiv:1508.05329
+
+  School of Mathematics, Institute for Advanced Study, Princeton NJ
+  E-mail address: bourgain@@math.ias.edu
+
+  Department of Mathematics, Indiana University, Bloomington IN
+  E-mail address: demeterc@@indiana.edu
+
+  Department of Mathematics, MIT, Cambridge MA
+  E-mail address: lguth@@math.mit.edu
+

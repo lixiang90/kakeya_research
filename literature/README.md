@@ -207,3 +207,6 @@ R0118用户转为解读OpenAI全维local smoothing新发布，新增59页10/25�
 
 
 R0119为用户新请求的p-adic方法移植研究：新增8篇官方版本PDF/text/meta（Arsovski7p、HW54p、Kochubei17p、Salvatore13p、BFJ47p、Kozyrev12p、FGK13p、Johnsrude34p）及Arsovski作者主页版本说明，共108PDF/116sources。Dhar既有源沿用，Th1.6整数高度经完整正规化给通常强maximal；不是本轮新Kakeya定理。Arsovski刊本全文未下载，BFJfinal TLS超时实际仅arxivv1成功；arxiv提交日和首页重编译日分开记。Salvatore PDF5/8 norm漏n次幂已像素核，按齐次推导使用。全部raw hash、版本、实际读域/未读范围及有限检索边界见metadata/R0119_source_check.json。只对02单壳测试和04条件波包桥作独立全文数学审查，未取得临界extension输入或移植核心PDE，不认证高级源全证、重大性或新颖性。新入口notes/80_nonarchimedean/2026_10_transfer/00_assessment.md；旧欧氏Goal仍停止。
+
+
+R0120解析数论应用审查新增6篇官方版本PDF/text/meta：BD1403.5335v3(32p)、BDG1512.01565v3(39p)、Bourgain1408.5794v2(22p)、ISS math/0205127v1(18p)、CGZZ2610.21730v1(34p)、GM2405.20552v2(52p)。另7条明确web-only读域/状态记录，共114PDF/129sources；源PDF原样，文本LF哈希与仓库字节相容。Bourgainv2实际13/84与abs旧53/342、GM实际52p与comments48分开；BW撤回不作有效输入。root实看6首页及原OpenAI PDF37，选读接口而非高级源整证；实际读域/hash/version见metadata/R0120_source_check.json。自含周期化/算术预算/聚焦/方差/复平移计算已分别独审，未产新经典数论指数、重大或新颖性认证；旧Goal仍停止。

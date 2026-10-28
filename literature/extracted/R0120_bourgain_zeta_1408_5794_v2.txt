@@ -1,0 +1,1369 @@
+                                               Decoupling, exponential sums and the Riemann zeta function
+arXiv:1408.5794v2 [math.NT] 22 Feb 2016
+
+
+
+
+                                                                                                     J. Bourgain∗
+                                                                             Institute for Advanced Study, Princeton, NJ 08540
+                                                                                             bourgain@math.ias.edu
+
+                                                                                                February 23, 2016
+
+
+
+                                                                                                        Abstract
+
+                                                         We establish a new decoupling inequality for curves in the spirit of [B-D1],[B-D2] which implies a new mean
+                                                   value theorem for certain exponential sums crucial to the Bombieri-Iwaniec method as developed further in [H].
+                                                   In particular, this leads to an improved bound |ζ( 12 + it)| ≪ t13/84+ε for the zeta function on the critical line.
+
+
+
+                                          0        Introduction
+                                          The main result of the paper is the essentially sharp bound on the mean-value expression for r = 6 (see [H] for
+                                          details)
+                                                                                                                                                 2r
+                                                    1             Z 1Z 1Z 1 Z 1
+                                                        1                               X                             1               1   1
+                                              Ar      ,    =                                   e(nx1 + n2 x2 + N n3/2 x3 + N n x4 )
+                                                                                                                       2               2   2          dx1 dx2 dx3 dx4 . (0.1)
+                                                    N2 N             0   0    −1   −1 1≤n≤N
+
+
+                                               It is proven indeed that A6 ≪ N 6+ε (see Theorem 2 below). The bound A5 (δ, δN ) ≪ δN 7+ε , N12 ≤ δ ≤ N1 ,
+                                          established in [H-K], plays a key role in the refinement of the Bombieri-Iwaniec approach [B-I1] to bounding
+                                          exponential sums as developed mainly by Huxley (see [H] for an expository presentation). As pointed out in [H],
+                                          obtaining good bounds on A6 leads to further improvements and this objective was our main motivation.
+                                               In [B], we recovered the [H-K] A5 -result (in fact in a sharper form) as a consequence of certain general
+                                          decoupling inequalities related to the harmonic analysis of curves in Rd . Those inequalities were derived from the
+                                          results in [B-D1] (see also [B-D2]). Theorem 2 will similarly be derived from a decoupling theorem, formulated
+                                          as Theorem 1.
+                                              ∗ This work was partially supported by NSF grants DMS-1301619
+
+
+
+
+                                                                                                              1
+   Let us next briefly recall the basic structure of the Bombieri-Iwaniec argument. Given an exponential sum
+P               m
+                   
+  m∼M e T F ( M ) with T > M and F a smooth function satisfying appropriate derivative conditions, the sum
+P                                     P
+  m∼M is replaced by shorter sums         m∈I , I ranging over size-N intervals here N is a parameter to be chosen
+                                
+and is not the same as in (0.1) . For each I, the phase may be replaced by a cubic polynomial and, by Poisson
+                                   P               m
+                                                      
+summation, the exponential sum m∈I e T F ( M         ) transformed (effectively) in a sum of the form
+                                X                                                     
+                                    e x1 (I)h + x2 (I)h2 + x3 (I)h3/2 + x4 (I)h1/2                            (0.2)
+                                 h≤H
+                              
+where the vector x(I) = xj (I) 1≤j≤4 ∈ R4 depends on the interval I.
+      At this point, one needs to analyze the distributions of
+
+                                           (h, h2 , h3/2 , h1/2 ) (1 ≤ h ≤ H)                                (0.3)
+
+and
+                                        the vector function x(I) of the interval I                           (0.4)
+
+which Huxley refers to as the first and second spacing problems.
+      Before applying a large sieve estimate, one takes an r-fold convolution of (0.3) whose L2 -norm is expressed
+by mean values of the form (0.1) with N replaced by H. Roughly speaking, the L2 -norm of the distribution (0.4)
+is bounded by a certain parameter B, whose evaluation is highly non-trivial and so far sub-optimal. The only input
+of this paper is to provide an optimal result for the first spacing problem (see Corollary 3 below). Combined with
+available treatments of the second spacing problem, it leads to improved exponential sum estimates.
+      New exponential sum bounds are presented in §3. They are based on combining Corollary 3 with known
+estimates on the parameter B from the second spacing problem (see the Acknowledgement below).
+      The conclusion is stated as Theorem 4.
+
+      In §4, we establish our new estimate on |ζ( 12 + it)|.
+
+Theorem 5.
+                                                     1                   13
+                                                 ζ        + it       ≪ |t| 84 +ε .                           (0.5)
+                                                      2
+
+
+      It is implied by the classical approximate functional equation (cf. [T]) together with Theorem 4 and some
+further (known) exponential sum bounds.
+                                                                                                      9
+      Recall that the original Bombieri-Iwaniec argument provided the estimate ζ 21 + it                       9
+                                                                                                ≪ |t| 56 +ε , 56 =
+0, 16071 (see [B-I1] [B-I2]). The work of Huxley in [H1] (resp. [H2]) produced the exponents
+                                     89                   32
+                                         = 0.15614... and     = 0.15609..., resp
+                                     570                  205
+
+                                                                 2
+while our A6 -bound leads to the exponent 13                                              1
+                                          84 = 0.15476..., hence doubling the saving over 6 obtained in [B-I1].
+
+    In §5 we highlight a new exponent pair that results from our work.
+
+Acknowledgement
+    The author is grateful to C. Demeter for various comments leading to simplification of an earlier version.
+Most importantly, he is greatly indebted to one of the referees for clarifying several matters related to the ‘second
+spacing problem’ and providing an alternative treatment of Section 3 in the original manuscript that moreover leads
+to an improved exponent in Theorem 5. The presentation of the last 3 sections of the paper follows closely his
+suggestions.
+
+
+
+1    A decoupling inequality for curves
+Let Φ = (φ1 , . . . , φd ) : [0, 1] → Γ ⊂ Rd be a smooth parametrization of a non-degenerate curve in Rd , more
+specifically we assume the Wronskian determinant
+
+                                           (s)
+                                   det[φj (ts )1≤j,s≤d ] 6= 0 for all t1 , . . . , td ∈ [0, 1].                (1.1)
+
+Let us assume moreover that d is even. For Ω ⊂ Rd a bounded set of positive measure, denote by
+                                             Z                   Z
+                                                    p   1     1             1
+                                kf kLp#(Ω) = ( |f | dx) =
+                                                        p           |f |p dx p
+                                                             |Ω| Ω
+                                                           Ω
+
+               p
+the average L -norm and let Bρ be the ρ-cube in Rd centered at 0. We prove the following decoupling property in
+the spirit of results in [B], [B-D2].
+
+Theorem 1. Let Γ be as above and I1 , . . . , I d ⊂ [0, 1] subintervals that are O(1)-separated, let N be large and
+                                                       2
+                                   1
+{Iτ } a partition of [0, 1] in N − 2 -intervals. Then for arbitrary coefficient functions aj = aj (t)
+                                 d/2 Z
+                                 Y                              2/d
+                                                 aj (t)e x.Φ(t) dt                    ≪
+                                           Ij                              L3d
+                                                                            # (BN )
+                                 j=1
+                                                                                                               (1.2)
+                                          d/2 h
+                                          Y     X              Z                                 i 3d
+                                   1                                               6               1
+
+                               N   6 +ε                             aj (t)e x.Φ(t) dt 6
+                                                               Iτ                     L# (BN )
+                                          j=1     τ ;Iτ ⊂Ij
+
+holds, with ε > 0 arbitrary.
+
+    Here e(z) stands for e2πiz as usual. Strictly speaking, L6# (BN ) in the right hand side of (1.2) should be some
+weighted space L6# (wN ) with weight 1BN (x) . wN (x) ≤ (1 + |x|
+                                                             N )
+                                                                 −10d
+                                                                             bN ⊂ B N1 (cf. [B-D1] and
+                                                                      , supp w
+[B-D2]). For simplicity, this technical point will be ignored here and in the sequel.
+
+                                                                     3
+      Let us say a few words about the role of Theorem 1 in the proof of Theorem 2 stated below. First, the inequality
+in Theorem 2 can be rewritten as
+                                                                        1/12
+                                          Z        X
+                                   1         |
+                                                                  n 12 
+                                                          e(x · Φ( ))| dx
+                                                                                   1
+                                                                               ≪ N 2 +ǫ
+                                   |Ω̃|   Ω̃ n≤N                  N
+
+with
+                                       Ω̃ = [0, N ] × [0, N 2 ] × [0, N 2 ] × [0, N ]
+
+and
+                                                       Φ(t) = (t, t2 , t3/2 , t1/2 ).
+
+      Theorem 1 implies via a standard discretization argument that the average over each ball BN 2 with radius N 2
+satisfies                                v                     12 1/12
+                                  Z        u 2
+                         1                u Y    X         n                 1
+                                         t    |   e(x · Φ( ))|  dx     ≪ N 2 +ǫ .
+                          |BN 2 | |BN 2 |   j=1
+                                                            N
+                                                           n∈Ij
+
+This estimate is weaker than the one in Theorem 2 in two regards. First, in Theorem 2 one is interested in averages
+over the smaller region Ω̃. This issue is dealt with in the first half of Section 2, by using two further standard 2D
+decouplings and exploiting periodicity.
+      The second difference between Theorems 1 and 2 is that the former produces a bilinear estimate, while the
+latter requires a linear estimate. This issue is addressed in the second part of Section 2, and relies on a variant of
+the induction on scales from [B-G].
+
+Remarks.
+
+(1.3) Obviously (1.2) implies the same inequality for BN replaced by any translate.
+
+(1.4) The case d = 2 is an immediate consequence of te L6 -decoupling inequality for planar curves Γ of non-
+        vanishing curvature
+                        Z 1                                              X Z                                     21
+                                                                                                    2
+                              a(t)e x.Φ(t) dt                     ≪ Nε                  a(t)e x.Φ(t) dt                 (1.5)
+                          0                            L6 (BN )                    Iτ                 L6 (BN )
+                                                                            τ
+
+        where Φ : [0, 1] → Γ ⊂ R2 with |Φ′′ | ∼ 1 and {Iτ } as above, established in [B-D1]. In fact, (1.5) will
+        be the main analytical input required for the proof of (1.2). We mention for future use also the following
+        discrete version of (1.5)
+                                                                              1/6
+                                          Z            X
+                                 1                |
+                                                                        n 6 
+                                                             an e(x · Φ( ))| dx     ≪ N ǫ kan kl2 ,
+                                 |BN |        BN                        N
+                                                       n≤N
+
+
+
+                                                                     4
+      for each complex coefficients an .
+
+(1.6) In the language of [B-D1], [B-D2], (1.2) may be reformulated as follows. Let Γ1 , . . . , Γd/2 ⊂ Γ be O(1)-
+      separated arcs and f1 , . . . , f d ∈ L1 (Rd ) satisfy supp fbj ⊂ Γj + B N1 . Denote fτ = (fˆ|Φ(Iτ )+B 1 )∨ the
+                                        2                                                                   N
+                                          1          1      1
+      Fourier restriction of f to the       × ···×      × √N tube Φ(Iτ ) + B N1 .
+                                         |N   {z N}
+                                                        d−1
+
+   Then
+                                d/2                                                d/2                                       3d
+                                Y                                          1
+                                                                                   Y     X                                      1
+
+                                       |fj |2/d                     ≪ N 6 +ε                       kfj,τ k6L6 (BN )                 .           (1.7)
+                                                       L3d
+                                                        #
+                                                           (BN )                                              #
+                                j=1                                                j=1        τ
+
+(1.8) It may be worthwhile to explain the relation between (1.7) and other known decoupling inequalities for
+      curves in Rd .
+
+   Firstly, with Γ as above and Γ1 , . . . , Γd ⊂ Γ O(1)-separated, one has a d-linear inequality (the analogue of
+[B-C-T] for curves)
+                                    d
+                                    Y                                          d X
+                                                                               Y                                      2d
+                                                                                                                        1
+                                                   1
+                                             |fj | d                    ≤ cΓ                  kfj,τ k2L2 (BN )                .                 (1.9)
+                                                        L2d
+                                                         # (BN )
+                                                                                                          #
+                                    j=1                                        j=1       τ
+
+   This inequality turns out to be elementary. Using the fact that the map I1 × · · · × Id → Rd : (t1 , . . . , td ) 7→
+Φ(t1 )+· · ·+Φ(td ) is a diffeomorphism for I1 , . . . , Id O(1)-separated by assumption (1.1) and Parseval’s theorem,
+one sees indeed that
+                                  d
+                                  Y Z                                                                 d
+                                                                                                      Y
+                                                                 
+                                                   aj (t)e x.Φ(t) dt                             ≤c         kaj kL2 (Ij ) .                    (1.10)
+                                              Ij                                   L2 (BN )
+                                  j=1                                                                 j=1
+On the other hand, one has the (d − 1)-linear inequality (see [B-D2])
+                       d−1
+                       Y           1                                       1       Y hX
+                                                                                   d−1                      2(d+1)
+                                                                                                             d−1
+                                                                                                                                    i 2(d+1)
+                                                                                                                                         1
+
+                             |fj | d−1        2(d+1)
+                                                                ≪ N 2(d+1)                         fj,τ       2(d+1)                           (1.11)
+                       j=1
+                                             L#         (BN )
+                                                                                   j=1       τ              L#d−1 (BN )
+
+                                                             
+and one observes, for d even, that the pair 2(d + 1), 2(d+1)
+                                                       d−1)    in (1.11) is obtained by interpolation between the
+pairs (2d, 2) from (1.9) and (3d, 6) from (1.7). The issue of what’s the analogue of Theorem 1 for odd d will not
+be considered here. In fact, our main interest is d = 4, which provides the required ingredient for the exponential
+sum application.
+   Before passing to the proof of Theorem 1, we make a few preliminary observations.
+   Note that in the setting of Theorem 1, (1.9) also implies the inequality
+                                             d/2
+                                             Y   X                         2/d
+                                                            aj (t)e x.Φ(t) dt                                 ≤
+                                                                                                 Ld
+                                                                                                  # (BN )
+                                             j=1       Ij
+                                                                                                                                               (1.12)
+                                             d/2 h
+                                             Y     X            Z                                                 i d1
+                                                                                       2
+                                         c                              aj (t)e x.Φ(t) dt 2                              .
+                                                                   Iτ                                 L# (BN )
+                                             j=1    Iτ ⊂Ij
+
+
+                                                                               5
+                                  P                                             
+To see this, take fj (x) = √1N                         k            d
+                                  0≤k≤N εk e x.Φ( N ) for j = 2 + 1, . . . , d with εk = ±1 independent random
+                                   k
+                                   N ∈Ij
+                                                                                      1
+variables and average over {εk }, noting that Eε [|fj |2 ] ≍ 1 and Eε [|fτ |2 ] ≍ N − 2 .
+    There is also the trivial bound
+                                       d/2 Z
+                                       Y                                     2/d
+                                                              aj (t)e x.Φ(t) dt                              ≤
+                                                         Ij                                     L∞ (BN )
+                                       j=1
+                                                                                                                           (1.13)
+                                             d/2
+                                             Y                        Z
+                                           1                                                  2/d
+                                      N2                 max                   aj (t)e x.Φ(t) dt                   .
+                                                         Iτ ⊂Ij       Iτ                              L∞ (BN )
+                                               j=1
+
+    Interpolation between (1.12) and (1.13) using appropriate wave packet decomposition as explained in [B-D1]
+                                                                  1
+(note that it is essential here that the Iτ are N − 2 -intervals) gives
+                                   d/2 Z
+                                   Y                                   2/d
+                                                        aj (t)e x.Φ(t) dt                              ≤
+                                                   Ij                                    L3d
+                                                                                          # (BN )
+                                   j=1
+                                                                                                                           (1.14)
+                                               d/2 h
+                                               Y     X                Z                                             i 3d
+                                       1                                                      6                       1
+
+                                  CN   3                                       aj (t)e x.Φ(t) dt 6
+                                                                          Iτ                           L# (BN )
+                                           j=1           Iτ ⊂Ij
+
+                              1
+with {Iτ } a partition in N − 2 -intervals.
+    More generally, if ∆ = ∆K ⊂ Rd is a K-cube, we have (by translation)
+                                     d/2 Z
+                                     Y                                  2/d
+                                                         aj (t)e x.Φ(t) dt                            ≤
+                                                    Ij                                     L3d
+                                                                                            # (∆)
+                                    j=1
+                                                                                                                           (1.15)
+                                               d/2
+                                               Y                      Z                                            i 3d
+                                           1        X                                        6                      1
+
+                                  CK       3                                   aj (t)e x.Φ(t) dt 6
+                                                                          Ij                              L# (∆)
+                                               j=1        Iτ ⊂Ij
+
+                                               1
+where {Iτ } is now a partition in K − 2 -intervals.
+    The main point of (1.15) is to provide a preliminary L6 − L3d inequality; the prefactor K 1/3 is not important
+                                                                  1
+for what follows as it will be improved to K ε+ 6 using a bootstrap argument.
+    Returning to (1.1), it follows from the mean value theorem that
+                                                                                        Y
+                                                   | det[φ′i (tj )1≤i,j≤d ]| ∼                 |ti − tj |.                 (1.16)
+                                                                                        i6=j
+                                                           
+By (1.16) and since φ′′ (t) = lims→0 1s φ′ (t + s) − φ′ (t) , it follows that for t1 < · · · < td/2 ∈ [0, 1] O(1)-
+separated,
+                          |φ′ (t1 ) ∧ φ′′ (t1 ) ∧ φ′ (t2 ) ∧ φ′′ (t2 ) ∧ · · · ∧ φ′ (t d ) ∧ φ′′ (t d )| > c               (1.17)
+                                                                                                      2                2
+
+
+holds.
+
+                                                                                    6
+Proof of Theorem 1.
+    Introduce numbers b(N ) > 0 for which the inequality, with arbitrary {aj },
+                                      d/2 Z
+                                      Y                          2/d
+                                                  aj (t)e x.Φ(t) dt                              ≤
+                                             Ij                                       L3d
+                                                                                       # (BN )
+                                     j=1
+                                                                                                                           (1.18)
+                                                 d/2 h
+                                                 Y     X           Z                                            i 3d
+                                             1                                            6                       1
+
+                                 b(N )N      6                             aj (t)e x.Φ(t) dt 6
+                                                                      Iτ                             L# (BN )
+                                                 j=1     Iτ ⊂Ij
+
+
+holds. Our aim is to establish a bootstrap inequality. By (1.14), b(N ) ≤ N 1/6 . With K < N to specify, partition
+BN in K-cubes ∆ = ∆K . We may bound for each ∆ (since the inequalities for BK and ∆K are equivalent)
+                                     Z Y
+                                       d/2 Z
+                                                            6
+                                            aj (t)e x.Φ(t) dt dx ≤
+                                                  Ij
+                                     ∆ j=1
+                                                                                                                           (1.19)
+                                                       d/2 h
+                                                       Y     X             Z                                      i
+                                                   d                                              6
+                                     b(K)3d K      2                               aj (t)e x.Φ(t) dt 6
+                                                                           Iσ                           L# (∆)
+                                                       j=1   Iσ ⊂Ij
+
+                                 1
+with {Iσ } a partition in K − 2 -intervals. Summation over ∆ ⊂ BN implies then
+         Z Y
+           d/2 Z
+                                6
+                aj (t)e x.Φ(t) dt dx ≤
+                    Ij
+         BN j=1
+                                                            d/2 Z
+                                                       Z nZ Y                                                              (1.20)
+              3d   d
+                                X                                                                           6 oY
+        b(K) K     2                                                               aj (t)e (x + zj ).Φ(t) dt dx dzj .
+                                                                               Iσj
+                       Iσ1 ⊂I1 ,...,Iσd/2 ⊂Id/2
+                                                   BK
+                                                       d/2   BN j=1                                                    j
+
+
+                           1
+Fix Iσj = [tj , tj + K − 2 ] ⊂ Ij and write for t = tj + s ∈ Iσj
+
+                                                                         1
+                (x + zj ).Φ(t) = (x + zj ).Φ(tj ) + (x + zj ).Φ′ (tj )s + (x + zj ).Φ′′ (tj )s2 + o(1)                     (1.21)
+                                                                         2
+
+provided
+                                                                  N = o(K 3/2 ).                                           (1.22)
+
+The inner integral in (1.20) may then be replaced by
+                     d/2 Z K − 21
+                   Z Y
+                                                                    1                      6
+                                 aj (tj + s)e (x + zj ).Φ′ (tj )s + (x + zj ).Φ′′ (tj )s2 ds dx                           (1.23)
+                     j=1  0                                         2
+                   BN
+
+the o(1)-term in (1.21) producing a harmless smooth Fourier multiplier that may be ignored.
+    Next, since t1 < t2 < · · · < td/2 are O(1)-separated, (1.17) applies and therefore the map Rd → Rd :
+                                                                       
+x 7→ x.Φ′ (t1 ), 21 x.Φ′′ (t1 ), . . . , x.Φ′ (td/2 ), 21 x.Φ′′ (td/2 ) is a linear homeomorphism. The image measure of the
+
+                                                                               7
+normalized measure on BN may be bounded by the normalized measure on BCN , up to a factor and
+                                       d/2
+                                       Y              Z          Z K − 12                                       6
+                          (1.23) .                                            aj (tj + s) e(us + vs2 )ds dudv.           (1.24)
+                                       j=1                           0
+                                              |u|,|v|<CN
+
+This factorization is the main point in the argument.
+                                                                 1
+    We may now apply (after rescaling s = k − 2 s1 ) to each factor in (1.24) the 2D-decoupling inequality (1.5)
+                                                                                             1
+with Γ the parabola (s1 , s21 ) and perform a decoupling at scale ( K
+                                                                    N ) . Thus, by another change of variables,
+                                                                       2
+
+
+
+                                                      d/2 h
+                                                      Y     X              Z                         2               i3
+                                                  ε
+                             (1.24) ≪ N                                             aj (t) e(ut)dt
+                                                                               Iτ                    L6# [|u|<CN ]
+                                                      j=1    Iτ ⊂Iσj
+
+                               1
+with {Iτ } a partition in N − 2 -intervals
+                                                d/2 h
+                                        N  d2 Y     X                    Z                                         i
+                                                                                                    6
+                             ≪ Nε                                                   aj (t) e x.Φ(t) dt 6              .   (1.25)
+                                        K             j=1                      Iτ                         L# (BN )
+                                                             Iτ ⊂Iσj
+
+
+Substituting (1.25) in (1.20) leads to the estimate
+                                                      d/2 h
+                                                      Y     X              Z                                         i
+                                              d                                                     6
+                             b(K)3d N 2 +ε                                          aj (t) e x.Φ(t) dt 6              .   (1.26)
+                                                                            Iτ                           L# (BN )
+                                                      j=1    Iτ ⊂Ij
+
+Recalling (1.22), one may conclude that
+                                                             b(N ) ≪ b(N 2/3 )N ε
+
+and Theorem 1 follows by iteration.
+
+
+
+2     A mean value theorem
+From now on, we focus on d = 4 (in view of the application to exponential sums) and consider Φ : [0, 1] → Γ ⊂ R4
+satisfying (1.1). If I1 , I2 ⊂ {1, . . . , N } are ∼ N separated, we get from Theorem 1
+                                    2
+                                    Y X                         n   12
+                                                          an e Φ     .x                            ≪
+                                   j=1 n∈Ij
+                                                                 N                      L12
+                                                                                         # (BN )
+                                                                                                                           (2.1)
+                                              2  X
+                                              Y                      X          n  6          12
+                                                                                                   1
+                                       1
+                                   N   6 +ε                                an e Φ   .x
+                                              j=1
+                                                                                  N    L6# (BN )
+                                                          J⊂Ij       n∈J
+
+                                                      1
+with {J} a partition of {1, . . . , N } in N 2 -intervals.
+
+
+
+                                                                               8
+    Again in view of the application, specify
+
+                                                           φ1 (t) = t, φ2 (t) = t2                              (2.2)
+
+and assume
+                                                                 |φ′′′
+                                                                   3 | > c.                                     (2.3)
+
+In order to perform a further decoupling in (2.1), we enlarge the domain BN , considering first
+
+                                            Ω = [0, N ] × [0, N 3/2 ] × [0, N 3/2 ] × [0, N ]
+
+which we partition in N -cubes ∆N .
+    Let I1 , I2 be as above. Application of (2.1) on ∆N gives
+                                    2
+                                    Y X                   n   21
+                                                    an e Φ     .x                     ≪
+                                    j=1 n∈Ij
+                                                           N               L12
+                                                                            # (∆N )
+
+
+
+                                    1
+                                             2  X
+                                            hY                X          n  6         i 12
+                                                                                              1
+
+                                 N 6 +ε                             an e Φ   .x
+                                              j=1
+                                                                           N    L6# (∆N )
+                                                     J⊂Ij     n∈J
+
+and summing over ∆N
+      2
+      Y X              1
+                       2
+                 ···                ≪
+                           L12
+                            # (Ω)
+      j=1 n∈Ij
+             h X       Z             Z     X      n         6 X      n           6 i 12
+                                                                                              1                 (2.4)
+       1
+    N 6 +ε                    dzdz ′  dx   an e Φ    .(x + z)     an e Φ   (x + z ′ )         .
+                                                    N                      N
+             J1 ⊂I1 B ×B                Ω       n∈J1                                  n∈J2
+             J2 ⊂I2 N   N
+
+
+                           1                           1
+Let J1 = [h1 , h1 + N 2 ], J2 = [h2 , h2 + N 2 ] with h1 − h2 ≍ N . Write for n ∈ J1 , n = h1 + m, recalling (2.2)
+           n                  h 
+                                   1
+       Φ         .(x + z) =Φ          .(x + z)+
+             N                    N
+                               m               h1              h                  h           
+                                                                  1                    1
+                                   x1 + z1 + 2 (x2 + z2 ) + φ′3     (x3 + z3 ) + φ′4     (x4 + z4 ) +           (2.5)
+                               N                N                N                    N
+                               m2        1 ′′  h1  
+                                    x2 + φ3          x3 + O(1)
+                               N2         2      N
+                                                                                      1
+recalling that |z|, |x1 |, |x4 | < N and |x2 |, |x3 | < N 3/2 while |m| < N 2 . Proceed similarly for
+   
+    n
+Φ N     .(x + z ′ ), n ∈ J2 .
+    Observe that z1 , z1′ have range [0, N ], so that periodicity considerations and a change of variables in z1 , z1′
+permit to replace the phase (2.5) by
+
+                                                  m     m2    1  h1  
+                                                    z1 + 2 x2 + φ′′3   x3
+                                                  N     N      2     N
+
+                                                                      9
+and
+                                                         m ′   m2    1  h2  
+                                                           z1 + 2 x2 + φ′′3   x3 .
+                                                         N     N      2     N
+Since h1 − h2 ≍ N and (2.3), one more change of variables in x2 , x3 gives the phases
+                                           
+                                           
+                                           mu1 + m1/2  2
+
+                                                     N
+                                                           w1
+                                                                                                                                    (2.6)
+                                                                          2
+                                                                  mu2 + m1/2 w2
+                                                                              N
+
+
+with u1 , u2 , w1 , w2 ranging in [0, 1]. Hence we obtain again a factorization of the integrand in (2.4), i.e.
+                      Z 1Z 1Z 1Z 1                                           X                              6
+                                                                                                      m21
+                                                   du1 du2 dw1 dw2                  ah1 +m1 e m1 u1 + 1/2 w1
+                            0   0        0     0                               √                     N
+                                                                           m1 < N
+                                                                                                            6                     (2.7)
+                                                                             X                        m22
+                                                                                    ah2 +m2 e m2 u2 + 1/2 w2
+                                                                               √                     N
+                                                                           m2 < N
+
+
+and the 2D-decoupling result applied to each factor enables to make a further decoupling at scale N 1/4 . This
+clearly permits to bound (2.4) by
+
+                        1           1
+                                             h X Z 1Z 1 X                               6   X                 6          i 12
+                                                                                                                           1
+
+                    N   6 +ε    N   12 +ε                                  an e(nu1 )               an e(nu2 ) du1 du2              (2.8)
+                                                         0    0    n∈J1′                    n∈J2′
+                                               J1′ ⊂I1
+                                               J2′ ⊂I2
+
+                                     1                                                                            2
+with {J ′ } a partition in N 4 -intervals. The fact that we have dropped the term Nn1/2 wi that appears in (2.7)
+                                                                                                                                2
+deserves a word of explanation. Note that if n ∈ Ji′ then n = hi + m with m ≤ N 1/4 . Thus Nn1/2 w =
+  h2     2hm
+                                                                                    2h
+                                                                                           
+ N 1/2
+       +N  1/2 w + O(1), which permits us to replace in (2.7) the argument by m u + N 1/2 w and hence mu by
+
+
+change of variable.
+    If instead we consider a translate Ω + y of Ω, the expression (2.8) needs to be modified replacing an by
+         n
+               
+an e Φ( N   ).y .
+      Finally, consider the domain (according to Huxley’s A6 -problem)
+
+                                                   Ω̃ = [0, N ] × [0, N 2 ] × [0, N 2 ] × [0, N ]
+
+which we partition in domains Ωα = Ω + yα with Ω as above. Thus for each α (2.8) implies
+                      2
+                      Y X                      1
+                                               2
+                                         ···                  ≪
+                                                   L12
+                                                    # (Ωα )
+                      j=1 n∈Ij
+
+                        1
+                                h X Z 1Z 1 X                         n           6 X        6       i 12
+                                                                                                           1
+
+                   N 4 +ε                                       an e Φ   .yα e(nu1 )      · · · du1 du2
+                                               0   0                   N
+                                J1′ ⊂I1                  n∈J1 ′                         ′             n∈J2
+                                J2′ ⊂I2
+
+
+
+                                                                            10
+and
+                    2
+                    Y X                    1
+                                           2
+                                   ···                   ≪
+                                               L12
+                                                # (Ω̃)
+                    j=1 n∈Ij
+
+                      1
+                             h X Z Z 1Z 1 X       n         6 X        6        i 12
+                                                                                       1                                             (2.9)
+                  N   4 +ε                  an e Φ   .y + nu1       · · · dydu1 du2 .
+                                    0  0            N
+                               ′
+                              J1 ⊂I1       ′             n∈J1      ′                               n∈J2
+                                      Ω̃
+                              J2′ ⊂I2
+                                                                    1                         1
+      Proceeding as before, let J1′ = [h1 , h1 + N 4 ], J2′ = [h2 , h2 + N 4 ], h1 − h2 ≍ N .
+      Write for n ∈ J1′ , n = h1 + m
+                              n
+                            Φ      .y + nu1 =
+                               N
+                              h 
+                                1
+                            Φ      .y + h1 u1 +
+                               N
+                                        y1      h        1  h1      1  h1  
+                                                   1
+                                m u1 +       +2       y2 + φ′3       y3 + φ′4    y4
+                                         N        N        N    N        N    N
+                                      2                
+                                    m          1    h1
+                                 + 2 y2 + φ′′3          y3 + O(1).
+                                    N          2    N
+                                                                1
+Since |y2 |, |y3 | < N 2 , |y4 | < N and |m| < N 4 .
+      Again by periodicity, (2.3) and change of variables, we obtain the phases
+
+                                                                        mu1 + m2 w1
+
+and
+                                                                        mu2 + m2 w2
+
+with u1 , u2 , w1 , w2 ∈ [0, 1] and the L6 -norms are bounded by the ℓ2 -norms of the coefficients (see Remark 1.4).
+In conclusion, we proved that
+                                           2
+                                           Y X                 n   21                           1
+                                                         an e Φ     .x                        ≪ N 2 +ε kāk∞                        (2.10)
+                                           j=1 n∈Ij
+                                                                N                L12
+                                                                                  # (Ω̃)
+
+
+
+with Φ satisfying (1.1), (2.2), (2.3), i.e.
+
+                                                                             φ′′′
+                                                                              3 (s)       φ′′′
+                                                                                           4 (s)
+                      φ1 (t) = t, φ2 (t) = t2 , |φ′′3 | > c and                                         > c for s, t ∈ [0, 1].      (2.11)
+                                                                             φ′′′′   ′′′′
+                                                                              3 (t) φ4 (t)
+
+      The following statement is the mean value estimate for A6 in [H].
+
+Theorem 2.
+     Z 1Z 1Z 1 Z 1              X                                                                  12
+                                                                        1             1   1
+                                      e(nx1 + n2 x2 + N 2 n3/2 x3 + N 2 n 2 x4 )                        dx1 dx2 dx3 dx4 ≪ N 6+ε .   (2.12)
+          0   0   −1    −1      n≤N
+
+
+
+                                                                            11
+Proof. Let I ⊂ [1, N ] be an interval of the form [N0 , N0 + M ], 100M < N0 ≤ N , and assume I1 , I2 ⊂ I
+subintervals of size ∼ M that are ∼ M -separated.
+
+    We first estimate
+                         Z nY
+                            2 X                                                                  6o
+                                               e(nx1 + n2 x2 + N 1/2 n3/2 x3 + N 1/2 n1/2 x4 )    dx.   (2.13)
+                              j=1 n∈Ij
+
+Clearly (2.13) amounts to the number of solutions of the system
+
+
+   m1 + m2 + m3 − m4 − m5 − m6 = m7 + m8 + m9 − m10 − m11 − m12                                                 (2.14)
+
+
+
+
+
+   m21 + m22 + m23 − m24 − m25 − m26 = m27 + m28 + m29 − m210 − m211 − m212                                     (2.15)
+
+
+
+
+ (N + m )3/2 + (N + m )3/2 + (N + m )3/2 − (N + m )3/2 − (N + m )3/2 − (N + m )3/2 =                            (2.16)
+       0      1           0    2          0     3           0   4        0   5     0 6
+
+                3/2             3/2               3/2            3/2          3/2             1
+    (N0 + m7 )) + (N0 + m8 ) + (N0 + m9 ) − (N0 + m10 ) − (N0 + m11 ) − (N0 + m12 )3/2 + O(N − 2 )
+
+
+
+
+
+
+                1
+    (N0 + m1 ) 2 + · · · − (N0 + m6 )1/2 =
+
+
+
+
+ (N + m ) 21 + · · · − (N + m ) 12 + O(N − 21 ).                                                                (2.17)
+        0       7                0         12
+
+
+with m1 , . . . , m6 ∈ I1′ = I1 − N0 ; m7 , . . . , m12 ∈ I2′ = I2 − N0 .
+    Write (N0 + m)3/2 , (N0 + m)1/2 in the form
+
+                                   3 1         3 −1              m
+                              3/2                        −3/2
+            (N0 + m)3/2 = N0    + N02 m + N0 2 m2 + M 3 N0    φ3                                        (2.18)
+                                   2           8                   M
+                                1 −1          1 −3                m                m
+                         1/2                             −5/2                −7/2
+      (N0 + m)1/2 = N0 + N0 2 m − N0 2 m2 − M 3 N0            φ3      + M 4 N0    φ4                    (2.19)
+                                2             8                    M                  M
+                                     
+                3         M                          4
+where φ3 (t) ∼ t 1 + O N0 t + · · · , φ4 (t) ∼ t .
+                                      
+   Hence Φ(t) = t, t2 , φ3 (t), φ4 (t) satisfies (2.11).
+    From (2.14), (2.15), (2.18), (2.19), inequalities (2.16), (2.17) may be replaced by
+                                          m                    m 
+                                            1                       12           1   3/2
+                                     φ3           + · · · + φ3           < O(N − 2 N0 M −3 )            (2.20)
+                                           M                        M
+                                      m                       m 
+                                            1                       12           1   7/2
+                                 φ4              + · · · + φ4            < O(N − 2 N0 M −4 ).           (2.21)
+                                           M                        M
+The number of solutions of (2.14), (2.15), (2.20), (2.21) may be evaluated by
+            Z         nY                                m     N 2 M 4  m   6o
+                       2 X                                   1    1
+                                                  2       N 2 M3
+                                e(mx1 + m x2 +   3/2
+                                                     φ3    x3 +    7/2
+                                                                       φ4    x4   dx.                   (2.22)
+            [−1,1]4   j=1 m∈Ij                 N         M       N        M
+                              ′                                 0                    0
+
+
+According to (2.10), (2.22) and hence (2.13) are bounded by
+                                      n   N
+                                            3/2 o n
+                                                       N0
+                                                         7/2 o
+                                 M 6+ε 1 + 10      1 + 1/2     ≪ N 4+ε M 2 .                            (2.23)
+                                          N 2M        N M3
+
+                                                                    12
+Returning to (2.12), let b(N )N 6 be a bound on the left hand side We use the same reduction procedure to multi-
+linear (here bi-linear) inequalities as in [B], [B-D2] (and originating from [B-G]). Denote K a large constant and
+                                                                                          
+partition [0, N ] in intervals I0 , I1 , . . . , IK , where |I0 | = 100N               100 N
+                                                                     K and |Is | = 1 − K K = M0 for 1 ≤ s ≤ K.
+
+   Bound                       Z                     Z
+                                   X 12                    X 12                          X Z             X 12
+                                             ≤ 212                    + (2K)12                                      .                  (2.24)
+                                   n≤N                     n∈I0                       1≤s≤K             n∈Is
+                                                                         
+                                                                  100N
+The first term of (2.24) is bounded by 212 1006K −6 b              K          N 6.
+   For the remaining terms, write Is = [Ns , Ns + M0 ], Ns > 100M0, and make a further partition of Is in
+consecutive intervals Is,1 , . . . , Is,K of size M1 = M0
+                                                       K . The key point (going back to [B-G]) is an estimate of the
+
+from            Z   X 12                 X Z         X       12                   X          Z n       X        6       X     6o
+                                    12                                    18
+                               ≤4                                 +K                                                               .   (2.25)
+                    n∈Is                 s1 ≤K   n∈Is,s1                        s1 ,s2 ≤K             n∈Is,s1       n∈Is,s2
+                                                                               |s1 −s2 |≥2
+
+Recall that (2.25) follows from considering the (pointwise in x) decreasing rearrangement η1 ≥ η2 ≥ · · · ≥ ηK of
+                P           
+the sequence        n∈Is,s   1≤s1 ≤K
+                                     and distinguishing the cases η4 < K11 η1 and η4 ≥ K11 η1 .
+                           1
+
+
+   Application of (2.23) gives for |s1 − s2 | ≥ 2
+                                       Z n X                 6       X          6o
+                                                                                     ≪ N 6+ε
+                                                 n∈Is,s1          n∈Is,s2
+
+and hence the second sum in (2.25) contributes at most for C(K)N 6+ε . Replace the second term in the r.h.s. of
+(2.24) by                                                                  Z
+                                                              X                      X       12
+                                                 12 12
+                                             (2K) 4                                               .
+                                                           s≤K,s1 ≤K              n∈Is,s1
+
+Repeating the procedure, partition each Is,s1 in intervals Is,s1 ,s2 of size M2 = M1
+                                                                                  K and apply the decomposition
+               P
+(2.25) for each n∈Is,s etc.
+                           1
+
+   In general, one gets bilinear contributions of the form
+                                                     X Z n X 6 X 6o
+                                   (2K)12 412α K 18                 .                                                                  (2.26)
+                                                             J,J ′             n∈J       n∈J ′
+
+where the sum extends over pairs J, J ′ of intervals of size Mα = KN
+                                                                   α+1 , α ≥ 1 that are at least Mα -separated and
+
+                                                              1
+contained in an interval of the form [N0 , N0 + KMα ], KMα < 100 N0 . Again by (2.23)
+                                       Z n X 6 X 6o
+                                                           ≪ N 4+ε Mα2
+                                                     n∈J      n∈J ′
+
+implying that
+                                                            N 4+ε 2          412 α
+                                   (2.26) ≪ C(K)412α           N Mα ≪ N 6+ε          .
+                                                            Mα                K
+
+                                                                     13
+Summing over α eventually leads to the bound
+                                                             100N 
+                                          212 1006 K −6 b              N 6 + N 6+ε .                          (2.27)
+                                                               K
+
+On the l.h.s. of (2.24). Therefore
+                                                                    100N 
+                                        b(N ) ≤ 212 1006 K −6 b                       + Cε N ε
+                                                                       K
+
+implying b(N ) ≪ N ε and Theorem 2.
+
+     Using the notation from [H], Theorem 2 implies
+
+Corollary 3. Let N12 ≤ δ ≤ 1, N1 ≤ ∆ ≤ 1. Then
+                     Z 1Z 1Z 1 Z 1       X               1  n 3/2      1  n 1/2  12
+    A6 (N, δ, ∆) =                        e nx1 + n2 x2 +            x3 +           x4    dx ≪ δ∆N 9+ε .
+                      0   0   −1   −1                     δ N             ∆ N
+                                        n≤N
+                                                                                                              (2.28)
+
+     Considering the major arc contribution, (2.28) is clearly seen to be essentially best possible.
+
+
+
+3     Applications to exponential sums
+Let F be a smooth function on [ 21 , 1] satisfying, for some constant c ∈ (0, 1], the condition
+
+                                                                           ′′′′
+                                         min{|F ′′ (x)|, |F ′′′ (x)|, |F          (x)|} > c.                   (3.1)
+
+Given T sufficiently large, M ≥ 1, put : f (u) = T F (u/M ) with M
+                                                                 2 ≤ u ≤ M and
+
+                                                           X           
+                                                    S=          e f (m) .                                      (3.2)
+                                                          m∼M
+                                     √
+In what follows, we assume M ≤        T , in view of the application to |ζ( 12 + it)|. We use notation and background
+from [H] and also rely on [H-W] and §7 and §8 in [H1].
+     Once the parameter N ∈ (1, M ) is chosen, R is defined by the relation
+                                                          l 2M 3 1/2 m
+                                                    R=                            ,                            (3.3)
+                                                              cN T
+
+so that, for each relevant size-N interval I ⊂ [M/2, M ], the corresponding ‘arc’ J(I) = {f ′′ (u)/2 : u ∈ I} will
+be an interval of length exceeding 1/R2 . We assume that N and R satisfy the conditions
+
+                                                        R ≤ N ≤ R2
+
+                                                              14
+              √
+(given that       T ≥ M , these conditions imply that 2 ≤ R ≤ N ≪ M 3/2 T −1/2 ≪ M T −1/4 ≤ M 1/2 and
+N ≫ M T −1/3 ≫ 1). By following (in all but certain inessential respects) the steps of §4 in [H-W] that precede
+Equation (4.8) there, while slightly modifying the application of the lemma on ‘partial sums by Fourier transforms’
+(i.e. [H-W], Lemma 3.4), one obtains a result implying that, for some Q, ℓ, H, α ∈ C satisfying
+                                                                                           p
+      Q, H ∈ N, ℓ ∈ {0, 1, 2}, α ∈ {e(−η) : −1/2 ≤ η ≤ 1/2}, Q ≥ R ≫                        Q and H ≥ N Q/R2 ≫ H,
+
+one has an upper bound
+                       M log N   R log2 N             X         X                                              Q
+              |S| ≪            +                                       αh e x(I) · h, h2 , h3/2 , h1/2        +        (3.4)
+                        N 1/2      Q1/2                          h≤H
+                                                                                                                  R
+                                                    I∈I(Q,ℓ)
+
+in which x is a certain mapping from the set I(Q, ℓ) into [−X1 , X1 ] × · · · × [−X4 , X4 ] ⊂ R4 , where
+                                              1                     R 2
+                                 X1 = X2 =      and X3 = X4 =                H 1/2 ,
+                                              2                       Q
+while I(Q, ℓ) is the set of those I ∈ {[kN, N + kN ] : k ∈ N and M/(2N ) ≤ k ≤ (M − 3N )/N } that, via the
+procedures set out in [H-W], §4, Step 1, are associated with a reduced rational a/q ∈ J(I) that happens to satisfy
+Q ≤ q < 2Q and Q ≡ ±ℓ(mod 4) (in the terminology of [H-W], §4, Step 1, these I’s are ‘minor arcs’). The
+details of the ‘second spacing problem’ are not amongst the main points of interest in this paper, so we skip the
+definition of x(I) and mention only that this element of R4 is essentially identical to the vector y = y(k) defined
+in [H-W], §4 Step 4 (the index ‘k ′ there corresponds to our ‘I’).
+   By an appropriate application of [H-W], Lemma 2.1, one finds that
+                                           2
+                                           X                   M R2   R2   M R2
+                                                 |I(Q, ℓ)| ≪        +    ≍      .
+                                                               N Q2   Q    N Q2
+                                           ℓ=0
+
+Given this estimate, that in (3.4) and the trivial upper bound for the modulus of the sum over h in (3.4), it follows
+by the sixth-power Hölder inequality that, either
+                                                                 M log2 N
+                                                         |S| ≪                                                         (3.5)
+                                                                  N 1/2
+or else
+                                                   R ≤ Q < R2/3 N 1/3 ≤ N                                              (3.6)
+
+and one has
+                                   R log2 N 6  M R2 5        X       X                  
+                       |S|6 ≪                                                  e x(I) · y(h) ω(I)Ω(h),                 (3.7)
+                                      Q1/2          N Q2
+                                                               I∈I(Q,ℓ) h∈N6
+
+where
+                            6
+                            X                3/2   1/2                               1/2             1/2
+                   y(h) =         (hj , h2j , hj , hj ) = (h1 + · · · + h6 , . . . , h1    + · · · + h 6 ) ∈ R4 ,
+                            j=1
+
+
+                                                                 15
+while ω is a certain complex-valued function that takes values that are (without exception) of modulus not exceed-
+ing unity, as does Ω(h) (which is equal to αy1 (h) if hj ≤ H for j = 1, . . . , 6, and is zero otherwise).
+      Suppose now that (3.6) and (3.7) hold. Then, similarly to what is observed at the end of ‘Step 4’, in [H-W], §4,
+it follows by the Bombieri-Iwaniec ‘double large sieve’ [B-I1], Lemma 2.4 (or see [H-W], Lemma 3.6) that one
+has
+                               X         X                                    4
+                                                                              Y
+                                                                      2
+                                                 e x(I) · y(h) ω(I)Ω(h) ≪ AB1   (Xj Yj + 1).                                                 (3.8)
+                           I∈I(Q,ℓ) h∈N6                                                             j=1
+
+where
+                        Y1 = 6H,           Y2 = 6H 2 ,    Y3 = 6H 3/2 ,         Y4 = 6H 1/2 ,
+                                                                                1                                                           (3.9)
+                    B1 = I, I ′ ) : I, I ′ ∈ I(Q, ℓ) and |xj (I) − xj (I ′ )| <     (j = 1, . . . , 4)
+                                                                                2Yj
+and
+                                                                                   1
+               A=      (h, h′ ) : h, h′ ∈ (N ∩ (0, H])6 and |yj (h) − yj (h′ )| <       (j = 1, . . . , 4) .
+                                                                                  2Xj
+It is worth remarking here that the conditions on (h, h′ ) in the above definition of the number A actually imply the
+                                                                   
+equality of the ordered pairs y1 (h), y2 (h) and y1 (h′ ), y2 (h′ ) (both of which lie in Z2 ): hence the traditional
+definition of the ‘first spacing problem’ as a question concerning the order of magnitude of the number of solutions
+in integers h1 , h′1 , . . . , hr , h′r ∈ (0, H] of a certain system of two equations and two inequalities see for example
+                                                         1
+[H], (11.1.1)-(11.1.5) . Given that |y − y ′ | < 2X          implies |y − y ′ | < X1 (whenever X, y, y ′ ∈ R), it is a corollary
+of [H], Lemma 5.6.5 (for example) that we have here:
+            π 2 4      1       Z X1 Z X2 Z X3 Z X4                                 X                                       2
+  0≤A≤                                                                                              e(y(h) · (z1 , . . . , z4 ) dz1 dz2 dz3 dz4
+             2        X1 · · · X4 −X1 −X2 −X3 −X4
+                                                                                      h∈N6
+                                                                                 hj ≤H(j=1,...,6)
+                      Z 1 Z 1 Z R2 √2H Z R2 √2H                   X
+             π 8 Q4                 Q                Q                                                                12
+           =                                                            e (h, h2 , h3/2 , h1/2 ) · (z1 , . . . , z4 )     dz1 dz2 dz3 dz4
+             4HR4      0   0    −   R2
+                                         √
+                                             H
+                                                 −   R2
+                                                          √
+                                                              H
+                                     Q2               Q2          h≤H
+
+           = (π 8 /4)A6 (H; δ, Hδ).
+with A6 (L; γ, Γ) defined according to (2.28), and with
+                                                                             Q2
+                                                                      δ=
+                                                                            H 2 R2
+so that 1/H ≤ Hδ ≤ Q/N ≤ 1. Therefore it follows by Corollary 3 that we have
+
+                                                                   A ≪ δ 2 H 10+ε .                                                         (3.10)
+
+With regard to the ‘second spacing problem’ one uses the treatment of the second spacing problem in [H-W], rather
+than the more advanced treatment in [H1]). One obtains
+                                              M 2  Q 4
+                                B1 ≪ ∆1 ∆2                 if N = M T −2/7
+                                                N      R
+
+                                                                            16
+where
+                                  1       1      R4              1        Q2      R2
+                          ∆1 =         =      <        and ∆2 =       =         <    .
+                                 X2 Y2   3H 2   N 2 Q2          X3 Y3   6R2 H 2   N2
+Hence, with N = M T −2/7
+                                                              M 2 R 2 Q2
+                                                       B1 ≪                                                      (3.11)
+                                                                 N6
+     It follows from (3.5)-(3.8), (3.10) and (3.11) that
+                          n M 6+ε  M 5+ε R4 N  M RQ o  M 6+ε  N 
+             |S|6 ≪ max          ,                       ≤               for N = M T −2/7 .                      (3.12)
+                             N3        Q7          N3        N3      R
+
+Recalling (3.3) the above bound for |S|6 implies
+                                       M 6+ε  N 3 T 1/2        M ε+9/2 T 1/2
+                             |S|6 ≪                           =                  = M 3+ε T 13/14 ,
+                                           N3         M3              N 3/2
+     √
+If       T ≥ M ≥ cT 3/7 (where c is the positive constant in (3.1) and (3.3)) then the conditions N ∈ (1, M ) and
+R ≤ N ≤ R2 are satisfied, with N = M T −2/7 and R as in (3.3). That is, we have:
+
+                                                  1                 √
+                                       |S| ≪ M 2 T ε+13/84 for       T ≥ M ≥ cT 3/7 .                            (3.13)
+
+     The M -range for which the bound (3.13) holds may be extended by invoking the treatment in [H1] which we
+discuss next.
+     It was observed by Huxley, at the start of §7 in [H1], that for an arbitrary V ≥ 1 the structure of the Bombieri-
+Iwaniec ‘double large sieve’ implies that if the factor X2 Y2 +1 on the right-hand side of the bound (3.8) is increased
+to X2 Y2 V + 1 ≤ (X2 Y2 + 1)V then the adjacent term B1 may be replaced by a term BV ≤ B1 , the definition
+                                         
+of which differs from that of B1 in (3.9) only insofar as it involves an upper bound on |x2 (I) − x2 (I ′ )| that
+is stronger by a factor V than is the case in (3.9). This observation plays a crucial part in Huxley’s method of
+‘resonance curves’, through which the most recent progress [H1], [H], [H2] on the ‘second spacing problem’ was
+                                                                     Q
+achieved; we apply it here, in combination with (3.10) and the bounds j≤4 (Xj Yj + 1) =
+(3H + 1)(3H 2 + 1)(6δ −1 + 1)(6(Hδ)−1 + 1) ≪ H 2 /δ 2 , in order to deduce that
+                           M 5 R16 log12 N                           M 5 R4 N 1+ε 
+                 |S|6 ≪                         H 6+ε (V BV )1/2 ≪                       (V BV )1/2   (V ≥ 1).   (3.14)
+                                 N 5 Q13                                      Q7
+
+    In [H1] Huxley invented an approach to the ‘second spacing problem’ based on a theory involving certain
+                                                                                                             √
+‘resonance curves’. In his first application of this, in [H1], §7, he obtained a result implying that, if M ≤ T (as
+we suppose), and if one has either V = N/Q ≪ R4 /N 2 , or else V = R4 /N 2 (so that V ≥ 1 in either case, given
+that Q ≤ N ≤ R2 ), then
+                                                 V M R2                      M 2  Q 4
+                                                                       2/3
+                                     V BV ≪                + ∆1 ∆2 ∆4                                            (3.15)
+                                                   N Q2                       N       R
+
+                                                              17
+where ∆1 , ∆2 are as above, while
+                                                     1       Q2    Q
+                                             ∆4 =         =       < .
+                                                    X4 Y4   6R2 H  N
+By (3.14) and (3.15), one obtains:
+
+                         M 5+ε R4 N  n N 1/2 R2 o M 1/2  Q 1/3  R 7/3  M 
+               |S|6 ≪                       min  ,             +
+                          Q7               Q       N      N       R       N        N
+                     M 5+ε N      n N 1/2 R2 o M 1/2  R 7/3  M 
+                  ≤              min          ,             +                                   (3.16)
+                        R3              R       N     N         N      N
+                        n M ε+11/2 N M ε+11/2 o  M 6+ε  N 2/3
+                  = min              ,          +
+                             R7/2      RN 1/2         N3     R
+        ε+11/2      1/2       4+ε 1/2
+                                                       
+ with M        /(RN ) ≍ M        T , by virtue of (3.3) . When M > T 11/30 and R is given by (3.3), the
+upper bound (3.16) may be optimized by putting N = max{M T −17/57 , M 1/2 T −1/12 }: for each such M, T, N
+and R, the bound (3.16) is equivalent to:
+                                               M 6+ε  N 2/3    M 5+ε T 1/3
+                                     |S|6 ≪                       ≍            .                       (3.17)
+                                                  N3   R              N2
+                                                                    √
+One can check that if T is sufficiently large (in terms of c−1 ), if T ≥ M ≥ T 5/12 , and if N is as assumed
+in (3.17), then N does satisfy our initial assumptions that 1 < N < M and R ≤ N ≤ R2 , with R given by
+     
+(3.3) . In fact our optimal choice of N in connection with the application of (3.15) is, unsurprisingly, identical to
+the choice of N found to be optimal in [H1], §8. The same is true in cases where M < T 5/12 . The problem with
+such cases is that the choice of N assumed in (3.17) is too large to satisfy the condition N ≤ R2 . The solution
+to this problem (utilized in [H1]) is to switch to a smaller value of N satisfying N ≤ R2 ≪ N . This is achieved
+                                     1/2
+here by putting N = 2M 3 /(cT )           , which satisfies all of our assumptions considering N and R whenever
+T 5/12 ≥ M ≥ 2(cT )1/3 . It moreover follows from (3.16) and (3.3) that one obtains (3.17) for this alternate choice
+of N (satisfying N ≍ R2 ).
+   By the above observations, and the further observation that M T −17/57 ≫ M 1/2 T −1/12 if and only if M ≫
+T 49/114 , we arrive at the upper bounds.
+                                                              √
+                                    
+                                      3+ε 53/57
+                                                                T ≥ M > T 49/114 ;
+                                    M
+                                    
+                                           T              if
+                                    
+                              |S|6 ≪ M 4+ε T 1/2          if T 49/114 ≥ M ≥ T 5/12 ;                          (3.18)
+                                    
+                                    
+                                    
+                                    
+                                    M 2+ε T 4/3          if T 5/12 > M ≥ 2(cT )1/3 .
+                                                                 √
+Note that this bound is min{M 3+ε T 53/57 , M 4+ε T 1/2 } when    T ≥ M ≥ T 5/12 .
+                                                       49
+   Using (3.18) if M < T 3/7 (noting the inequalities 114        5
+                                                          > 73 > 12 ), one verifies that the bound on |S| in (3.13)
+        √
+holds if T ≥ M ≥ T 17/42 . Thus we establish
+
+                                                         18
+Theorem 4. With the above notation, one has that
+
+                                                                        1     log M    17
+                                    |S| ≪ M 1/2 T ε+13/84 if              ≥α=        ≥    .                    (3.19)
+                                                                        2      log T   42
+
+
+
+
+4    Bounding the zeta-function on the critical line
+For the application to |ζ(1/2 + it)| one wants to show that (3.19) also holds when 17/42 > α ≥ 0. The cases with
+0 ≤ α ≤ 13/42 are trivial (there one can just use |S| ≤ M ), so all that remains to be done is establishing that
+(3.19) holds when α lies in the interval (13/42, 17/42). To achieve this one can employ the bound
+
+                                                    1
+                                     |S| ≪ T 128 (4+103α)+ε                  (12/31 < α ≤ 1),                   (4.1)
+
+which is [H1], Theorem 3, in combination with the exponent pair estimate
+                                          T 1/9
+                              |S| ≪                     M 13/18 = M 11/18 T 1/9      (0 ≤ α ≤ 1),               (4.2)
+                                           M
+
+which corresponds to the exponent pair ( 19 , 18
+                                              13
+                                                 ) = ABA2 B(0, 1) mentioned in [T], §5 20. It should be noted
+                         
+that (4.2) and also (4.1) assume additional hypotheses concerning the function F , beyond condition (3.1). This,
+however, is not an obstacle to the application to |ζ(1/2 + it)|, since that only requires consideration of cases in
+                                                                                                                 
+which F (x) = log x a function that does satisfy all the unmentioned conditions attached to (4.1) and (4.2) .
+Assume henceforth that F is “a suitable function”. such that (4.1) and (4.2) are applicable. A calculation shows
+that (3.19) is implied by (4.1) for all α in the interval (12/31, 332/819], and is implied by (4.2) for all α in the
+interval [0, 11/28]: noting that 11/28 = 0.39285 . . . > 0.38709 . . . = 12/31, we find that the union of these two
+intervals is [0, 332/819] = [0, 0.40537 . . .] ⊃ (0.30952 . . . , 0.40476 . . .) = (13/42, 17/42).
+
+    By the preceding one has the bound (3.19) whenever 0 ≤ α ≤ 1/2 (at least this is so in the case F (x) = log x).
+It follows from the ‘approximate functional equation’ for ζ(s) in the critical strip, see [T] (4.12.4), that
+                                    1                      X           1
+                                ζ        + it       ≤2                n− 2 +it + O(1) (t → ∞).                  (4.3)
+                                     2                         √
+                                                          n≤   t/2π
+
+From partial summation and dyadic dissection, Theorem 5 now follows in the usual way.
+
+Remark.
+    Bombieri and Iwaniec achieved the exponent 9/56 = (1 − 1/28)/6 using an essentially optimal bound on
+                                                                                                             
+A4 (δ, Hδ), so that the exponent 13/84 = (1−1/14)/6 achieved with an essentially optimal bound for A6 (δ, Hδ)
+
+                                                                   19
+represents exactly a doubling of Bombieri and Iwaniec’s improvement over the classical ‘1/6’ (with their essentially
+optimal bound on A5 (δ, Hδ) Huxley and Kolesnik, in 1991, got the exponent 17/108 = (1 − 1/18)/6, and would
+in fact have got 11/70 = (1 − 2/35)/6, except for the fact that cases with α near to 23/54 were a problem at that
+time).
+
+
+
+5       Further comments
+Recalling (3.2), the preceding shows that one has the estimate
+
+                                                1     13     1     log M
+                                      |S| ≪ M 2 T ε+ 84 if     ≥α=        >0                                      (5.1)
+                                                             2      log T
+
+provided f is in the class of functions to which the exponent pair theory applies (see for instance [G-K], Ch. 3 for
+details). In fact
+                    13
+                                
+     Theorem 6. ε + 84 , ε + 55
+                             84 is an exponent pair.
+                                                     13      55         1   13
+     One needs to obtain the bound |S| ≪ (T /M ) 84 +ε M 84 +ε = M 2 T 84 +ε subject to conditions that are weaker,
+in two respects, than the conditions under which direct application of (5.1) gives this bound on |S|. More specifi-
+cally
+
+    (a) the relevant ‘M ’ may exceed the square root of the relevant ‘T ’ (although one will at least not have M > T );
+
+    (b) the summation may not be over [M/2, M ] ∩ Z it may just be over some set [a, b] ∩ Z, where [a, b] is
+                                       
+        some proper subset of (M/2, M ) . Moreover the function f that one is ‘given’ may only be defined on the
+         subinterval [a, b] (this is, for example, what occurs in the theory of exponent pairs developed in [G-K]).
+
+     As a first step to getting around the problem (a), one can note that in the absence of problem (b) the desired
+result in any cases with T < M 2 ≪ T can be seen to follow from (5.1). For in such cases one may replace c, F, T
+by c1 = T M −2 c, F1 = T M −2 F and T1 = M 2 without invalidating (3.1) or causing any change in the value of
+the sum S.
+     Secondly, just to secure any extreme cases, one can deal with the cases in which M ≥ T 9/10 (say) simply by
+an appeal to the exponent pair (1/2, 1/2) (this is analogous to using the trivial bound |S| ≤ M when α is in a
+neighborhood of 0).
+     Cases with T 1/2 < M < T 9/10 become manageable after they are converted, through Poisson summation
+and partial summation, into cases involving (in place of M and T ) an M ′ ≍ T /M and a T ′ ≍ T , so that one
+has (T ′ )1/10 ≪ M 1 ≪ (T ′ )1/2 . The details of this conversion are essentially the same as what goes on in the
+
+                                                           20
+verification of the ‘B-process’ of exponent pair theory (see, for example, [G-K], §3.5); its efficacy, in disposing of
+problem (a), is related to the fact that, when 0 ≤ k ≤ 12 and l = k + 12 , one has B(k, l) := (l − 21 , k + 12 ) = (k, l).
+      Problem (b) is also remarked upon in Sargos’s paper [S] (see the remark on p. 310). Firstly one constructs
+a suitable extension of the function f (x), so that the resulting function f1 (x) has domain [M/2, M ], is identical
+to f (x) on the subinterval [a, b], and satisfies (on [M/2, M ]) the requisite set of conditions on its derivatives
+(these conditions being such as to make the theory of exponent pairs applicable). If s > 0 and yx−s is the relevant
+‘monomial’ approximation to f ′ (x) on [a, b] (such as must be present when the exponent pair theory is applicable),
+                                                                                                Rx
+then it is enough to consider an extension f1 of f that, for b < x ≤ M , satisfies f1 (x) = y b u−s du + a0 +
+                                                                                                                  (P )
+a1 x + · · · + aP xP , where a0 , a1 , . . . , aP are certain constants (determined by the requirement that f1 (x) be
+continuous at x = b): given that the derivatives f ′ (x), . . . , f (P ) (x) satisfy the requisite conditions on the interval
+[a, b] (for which see [G-K], Condition (3.3.3)) one may deduce that the constants a1 , . . . , aP are small enough not
+                                                                      (P )
+to prevent those same conditions being satisfied by f1′ (x), . . . , f1 (x) on the longer interval [a, M ]. By a similar
+construction one obtains an extension of f , (and so also of f ) that has domain [M/2, M ] and is of the class to
+which the exponent pair theory applies.
+                                      
+   Once the extension of f to M  2 , M is obtained, one can employ [S], lemma 2.1 to solve problem (b) at the
+
+cost of losing a harmless factor O(log M ) in the final estimate.
+
+
+
+References
+[B]     J. Bourgain, Decoupling inequalities and some mean-value theorems, preprint available on arxiv.
+
+[B-D1] J. Bourgain, C. Demeter, The proof of the l2 -decoupling conjecture, arXiv: 1405335.
+
+[B-D2] J. Bourgain, C. Demeter, ℓp decouplings for hypersurfaces with nonzero Gaussian curvature,
+        arXiv:14070291.
+
+[B-I1] E. Bombieri, H. Iwaniec, On the order of ζ( 12 + it), Ann. Scuola Norm. Sup. Pisa Cl. Sci (4) 13 (1986),
+        449–472.
+
+[B-I2] E. Bombieri, H. Iwaniec, Some mean value theorems for exponential sums, Ann. Scuola Norm. Sup.Pisa
+        Cl. Sci (4) 13(1986), 473–486.
+
+[B-G] J. Bourgain, L. Guth, Bounds on oscillatory integral operators based on multilinear estimates, GAFA 21
+        (2011), no 6, 1239-1295.
+
+
+
+                                                             21
+[B-C-T] J. Bennett, A. Carberry, T. Tao, On the multilinear restriction and Kakeya conjectures, Acta Math. 196
+      (2006), no 2, 261–302.
+
+[G-K] S.W. Graham, G. Kolesnik, Van der Dorput’s Method of Exponential Sums, London Math. Soc Lecture
+      Note Series 126, Cambridge University Press, 1991.
+
+[H]   M.N. Huxley, Area, Lattice Points and Exponential Sums, LMS monographs, 13 (1996).
+
+[H1] M.N. Huxley, Exponential sums and the Riemann zeta function, IV, Proc. London Math. Soc. (3) 66 (1993),
+      1–40.
+
+[H2] M.N. Huxley, Exponential sums and the Riemann zeta function, V, Proc. London Math. Soc (3) 90 (2005),
+      1–41,
+
+[H-K] M.N. Huxley, G. Kolesnik, Exponential sums and the Riemann zeta function III, Proc. London Math. Soc.
+      (3) 62 (1991), 449–468.
+
+[H-W] M.N. Huxley, N. Watt, Exponential sums and the Riemann zeta function, Proc. London Math. Soc. (3) 57
+      (1988), 1–24.
+
+[S]   P. Sargos, Points entiers au voisinage d’une courbe, sommes trigonometriques courtes et paires d’exposants,
+      Proc. Londom Math. Soc. (3) 70 (1995), 285–312.
+
+[T]   E.C. Titchmarsh, The Theory of the Riemann Zeta-function (2nd edition), Oxford (1986).
+
+
+
+
+                                                      22
+
