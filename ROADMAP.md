@@ -1,5 +1,7 @@
 # 路线台账
 
+更新2026-10-29，R0121继续Dirichlet大值路线并提前macro：指定μ的两变量有界normal-stress PSD lifting被合法三频率否定，με预算至少c/ε；pure distinct-cycle正性被合法−6例否定。冻结plain二阶Gaussian、generic powers、该两变量lifting，不换名续跑。A3∞→1只是源GM既有中间门，无新上界；下一非等价输入是原l∞/W相关下的新抵消，或增加辅助变量/变密度并真实支付stress/trace成本。旧Goal保持停止。入口notes/90_analytic_number_theory/2026_10_dirichlet_energy/00_decision_and_macro.md，115PDF/130sources/78项。
+
 更新2026-10-29，R0120有限解析数论应用审查完成；入口notes/90_analytic_number_theory/2026_10_transfer/00_assessment.md，114PDF/129sources/78历史项。旧Goal仍停止，无自动下一proof。已付周期化、范数gap、聚焦/平移/复平移测试，但未得数论新幂。后续若授权，先固定cone first-spacing或Dirichlet大值原参数/有界系数类，证明新能量能比已有算术输入更强，再进下游机器；不把continuous restriction/Lp平均换名为l² decoupling或经典问题突破。
 
 更新2026-10-27，R0119为用户新请求的有限p-adic可行性研究，已完成。旧欧氏长期Goal保持停止，下面历史open/queued不自动执行。当前入口notes/80_nonarchimedean/2026_10_transfer/00_assessment.md，108PDF/116sources/78历史项。普通Qp Kakeya/maximal已有解；本轮审过实时间norm模型单壳障碍及奇p条件extension→单chart maximal桥，未产出临界extension输入。首要未付是与曲率character相容、能给A_k有效界的正能量/PDE身份；不得以重复下游等价式或已知Kakeya为新方向。没有下一自动proof任务，后续按用户授权固定模型和指标后再研究。
